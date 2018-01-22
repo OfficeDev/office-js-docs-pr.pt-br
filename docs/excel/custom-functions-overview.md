@@ -4,7 +4,7 @@ Funções personalizadas (semelhantes a funções definidas pelo usuário ou UDF
 
 A ilustração a seguir mostra como as funções personalizadas funcionam na interface de usuário do Excel.
 
-<img src="../../images/custom-function.gif" width="579" height="383" />
+<img src="../images/custom-function.gif" width="579" height="383" />
 
 Aqui está o código de um exemplo de função personalizada que soma 42 a um par de números.
 

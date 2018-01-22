@@ -17,7 +17,7 @@ Há duas versões do esquema **VersionOverrides**.
 | 1.0 | Oferece suporte para comandos de suplementos para versões de área de trabalho dos aplicativos do Office. | 
 | 1.1 | Adiciona suporte para [painéis de tarefas que podem ser ficados](https://docs.microsoft.com/outlook/add-ins/pinnable-taskpane) e suplementos móveis. **Observação:** atualmente, compatível apenas com o Outlook 2016 para Windows e o Outlook para iOS |
 
-Um suplemento pode oferecer suporte a várias versões do esquema **VersionOverrides** aninhando as versões mais recentes em uma versão anterior. Isso permite que os clientes ofereçam suporte a versões mais recentes para aproveitar os novos recursos, ao mesmo tempo em que permite que os clientes mais antigos carreguem a versão mais antiga. Para saber mais, confira [Implementar várias versões](../../reference/manifest/versionoverrides.md#implementing-multiple-versions).
+Um suplemento pode oferecer suporte a várias versões do esquema **VersionOverrides** aninhando as versões mais recentes em uma versão anterior. Isso permite que os clientes ofereçam suporte a versões mais recentes para aproveitar os novos recursos, ao mesmo tempo em que permite que os clientes mais antigos carreguem a versão mais antiga. Para saber mais, confira [Implementar várias versões](http://dev.office.com/reference/add-ins/manifest/versionoverrides#implementing-multiple-versions).
 
 O elemento **VersionOverrides** inclui os seguintes elementos filho:
 

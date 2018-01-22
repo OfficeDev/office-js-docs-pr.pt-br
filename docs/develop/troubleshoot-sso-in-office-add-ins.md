@@ -24,7 +24,7 @@ A API [getAccessTokenAsync](http://dev.office.com/reference/add-ins/shared/offic
 
 ### <a name="13001"></a>13001
 
-O usuário não iniciou sessão no Office. Seu código deve chamar novamente o método `getAccessTokenAsync` e passar a opção `forceAddAccount: true` no parâmetro [opções](../../reference/shared/office.context.auth.getAccessTokenAsync.md#parameters). 
+O usuário não iniciou sessão no Office. Seu código deve chamar novamente o método `getAccessTokenAsync` e passar a opção `forceAddAccount: true` no parâmetro [opções](http://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync#parameters). 
 
 ### <a name="13002"></a>13002
 
@@ -64,7 +64,7 @@ O usuário desencadeou uma operação que chama o `getAccessTokenAsync` antes de
  
 Em certas configurações de identidade no AAD e no Office 365, é possível que alguns recursos que são acessíveis com o Microsoft Graph exijam autenticação multifator (MFA), mesmo quando o locatário do Office 365 do usuário não exija. Quando o AAD recebe uma solicitação de um token para o recurso protegido por MFA, através do fluxo Em Nome De, ele retorna ao serviço Web do seu suplemento uma mensagem JSON que contém uma propriedade `claims`. A propriedade de reivindicações tem informações sobre quais outros fatores de autenticação são necessários. 
 
-Seu código do lado do servidor deve testar esta mensagem e transmitir o valor das reivindicações ao seu código do lado do cliente. Você precisa dessa informação no cliente porque o Office processa a autenticação para os suplementos de SSO. A mensagem para o cliente pode ser um erro (como `500 Server Error` ou `401 Unauthorized`) ou estar no corpo de uma resposta de sucesso (como `200 OK`). Em ambos os casos, o retorno de chamada (falha ou sucesso) da chamada AJAX do lado do cliente do seu código para a API da Web do seu suplemento deve testar essa resposta. Se o valor das solicitações tiver sido retransmitido, seu código deve chamar novamente o `getAccessTokenAsync` e passar a opção `authChallenge: CLAIMS-STRING-HERE` no parâmetro [opções](../../reference/shared/office.context.auth.getAccessTokenAsync.md#parameters). Quando o AAD vir essa string, ele solicita ao usuário o(s) fator(es) adicional(ais) e, em seguida, retorna um novo token de acesso que será aceito no fluxo Em Nome De.
+Seu código do lado do servidor deve testar esta mensagem e transmitir o valor das reivindicações ao seu código do lado do cliente. Você precisa dessa informação no cliente porque o Office processa a autenticação para os suplementos de SSO. A mensagem para o cliente pode ser um erro (como `500 Server Error` ou `401 Unauthorized`) ou estar no corpo de uma resposta de sucesso (como `200 OK`). Em ambos os casos, o retorno de chamada (falha ou sucesso) da chamada AJAX do lado do cliente do seu código para a API da Web do seu suplemento deve testar essa resposta. Se o valor das solicitações tiver sido retransmitido, seu código deve chamar novamente o `getAccessTokenAsync` e passar a opção `authChallenge: CLAIMS-STRING-HERE` no parâmetro [opções](http://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync#parameters). Quando o AAD vir essa string, ele solicita ao usuário o(s) fator(es) adicional(ais) e, em seguida, retorna um novo token de acesso que será aceito no fluxo Em Nome De.
 
 Temos algumas amostras para ilustrar este tratamento MFA: 
 

@@ -263,7 +263,7 @@ O painel de tarefas mostra o nome de exibição do suplemento na parte superior,
           </tr>
         </table>
       </div>
-      <img alt="Corporation" class="logo" src="../../images/NewLogo.png" />
+      <img alt="Corporation" class="logo" src="../images/NewLogo.png" />
       <br />
       <textarea id="odataText" rows="12" cols="40"></textarea>
     </body>
@@ -750,7 +750,7 @@ Mesmo que seu suplemento tenha funcionado corretamente nos testes anteriores, h�
           </tr>
         </table>
       </div>
-      <img alt="Corporation" class="logo" src="../../images/NewLogo.png" />
+      <img alt="Corporation" class="logo" src="../images/NewLogo.png" />
       <br />
       <textarea id="odataText" rows="12" cols="40"></textarea>
     </body>

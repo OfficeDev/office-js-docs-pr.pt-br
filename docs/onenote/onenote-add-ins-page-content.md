@@ -11,8 +11,8 @@ Na API JavaScript de suplementos do OneNote, o conteúdo da página é represent
 
 Para criar uma página em branco do OneNote, use um dos seguintes métodos:
 
-- [Section.addPage](../../reference/onenote/section.md#addpagetitle-string)
-- [Page.insertPageAsSibling](../../reference/onenote/page.md#insertpageassiblinglocation-string-title-string)
+- [Section.addPage](http://dev.office.com/reference/add-ins/onenote/section#addpagetitle-string)
+- [Page.insertPageAsSibling](http://dev.office.com/reference/add-ins/onenote/page#insertpageassiblinglocation-string-title-string)
 
 Em seguida, use métodos nos seguintes objetos para trabalhar com o conteúdo da página, como Page.addOutline e Outline.appendHtml. 
 
