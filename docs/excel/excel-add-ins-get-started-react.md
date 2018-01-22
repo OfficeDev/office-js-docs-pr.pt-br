@@ -41,7 +41,7 @@ Cada suplemento requer um arquivo de manifesto para definir seus recursos e conf
     ```bash
     yo office
     ```
-    ![Gerador do Yeoman](../../images/yo-office.png)
+    ![Gerador do Yeoman](../images/yo-office.png)
     >**Observação**: Se for solicitada a substituição de **package.json**, responda **Não** (não substituir).
 
 3. Abra o arquivo de manifesto (isto é, o arquivo no diretório raiz do aplicativo com um nome que termina em "manifest.xml"). Substitua todas as ocorrências de `https://localhost:3000` por `http://localhost:3000` e salve o arquivo.
@@ -154,11 +154,11 @@ Cada suplemento requer um arquivo de manifesto para definir seus recursos e conf
 
 2. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Botão do Suplemento do Excel](../../images/excel_quickstart_addin_2a.png)
+    ![Botão do Suplemento do Excel](../images/excel_quickstart_addin_2a.png)
 
 3. No painel de tarefas, escolha o botão **Colorir-me** para definir a cor do intervalo selecionado como verde.
 
-    ![Suplemento do Excel](../../images/excel_quickstart_addin_2b.png)
+    ![Suplemento do Excel](../images/excel_quickstart_addin_2b.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -30,11 +30,11 @@ Os suplementos eficazes oferecem uma funcionalidade exclusiva e fascinante que e
 
  - Forneça uma interface do usuário informativa e torne sua interface do usuário pessoal.
 
-    ![Uma captura de tela que mostra um painel de tarefas de suplemento com etapas de introdução ao lado de um suplemento sem etapas de introdução](../../images/586202ad-333b-417c-ad31-cc6eb952b239.png)
+    ![Uma captura de tela que mostra um painel de tarefas de suplemento com etapas de introdução ao lado de um suplemento sem etapas de introdução](../images/586202ad-333b-417c-ad31-cc6eb952b239.png)
 
   - Se seu suplemento de conteúdo estiver vinculado a dados no documento do usuário, inclua exemplos de dados ou um modelo para mostrar aos usuários o formato de dados a ser usado.
 
-    ![Uma captura de tela que mostra um suplemento de conteúdo com dados ao lado de um suplemento de conteúdo sem dados](../../images/7de2215f-ccef-4f82-aa9d-babcbddae0c6.png)
+    ![Uma captura de tela que mostra um suplemento de conteúdo com dados ao lado de um suplemento de conteúdo sem dados](../images/7de2215f-ccef-4f82-aa9d-babcbddae0c6.png)
 
 - Ofereça [avaliações gratuitas](https://msdn.microsoft.com/en-us/library/dn456317.aspx#Anchor_1). Caso o suplemento exija uma assinatura, disponibilize algumas funcionalidades sem a necessidade da assinatura.
 

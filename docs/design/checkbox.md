@@ -6,7 +6,7 @@ Uma caixa de seleção é um elemento da interface de usuário que permite aos u
 
 <br/>
 
-![Uma imagem que mostra uma caixa de seleção](../../images/overview_withApp_checkbox.png)
+![Uma imagem que mostra uma caixa de seleção](../images/overview_withApp_checkbox.png)
 
 <br/>
 
@@ -14,7 +14,7 @@ Uma caixa de seleção é um elemento da interface de usuário que permite aos u
 
 |**Faça**|**Não faça**|
 |:------------|:--------------|
-|Use caixas de seleção para indicar o status.<br/><br/>![Exemplo de caixa de seleção do que fazer](../../images/checkboxDo.png)<br/>|Não use caixas de seleção para mostrar/indicar uma ação.<br/><br/>![Exemplo de caixa de seleção do que não fazer](../../images/checkboxDont.png)<br/>|
+|Use caixas de seleção para indicar o status.<br/><br/>![Exemplo de caixa de seleção do que fazer](../images/checkboxDo.png)<br/>|Não use caixas de seleção para mostrar/indicar uma ação.<br/><br/>![Exemplo de caixa de seleção do que não fazer](../images/checkboxDont.png)<br/>|
 |Use várias caixas de seleção quando os usuários puderem selecionar várias opções e as opções não forem mutuamente exclusivas.|Não use uma caixa de seleção quando os usuários puderem escolher apenas uma opção. Quando selecionar apenas uma opção for necessário, use botões de opção.|
 |Permita que os usuários escolham qualquer combinação de opções quando várias caixas de seleção estiverem agrupadas.|Não coloque dois grupos de caixas de seleção um ao lado do outro. Separe os dois grupos com rótulos.|
 |Use uma única caixa de seleção para uma configuração secundária. Por exemplo, a caixa de seleção **Lembrar-me?** é uma configuração secundária usada em um cenário de login.|Não use caixas de seleção para ativar ou desativar as configurações. Para mudar entre um estado ativado ou desativado, use uma alternância.|
@@ -23,10 +23,10 @@ Uma caixa de seleção é um elemento da interface de usuário que permite aos u
 
 |**Variação**|**Descrição**|**Exemplo**|
 |:------------|:--------------|:----------|
-|**Caixa de seleção não controlada**|Use como o estado padrão da caixa de seleção. |![Imagem de caixa de seleção não controlada](../../images/checkbox_unchecked.png)|
-|**Caixa de seleção não controlada marcada por padrão**|Use quando a instância da caixa de seleção mantiver seu próprio estado. |![Imagem da caixa de seleção não controlada marcada por padrão](../../images/checkbox_checked.png)|
-|**Caixa de seleção desativada e não controlada marcada por padrão**|Estado desativado da caixa de seleção. |![Imagem de caixa de seleção desativada e não controlada marcada por padrão](../../images/checkbox_disabled.png)|
-|**Caixa de seleção controlada**|O estado verificado desta caixa de seleção é decidido em outro local da interface de usuário. Nesse cenário, o valor correto é passado para a caixa de seleção por um evento **onChange** e com uma nova renderização da interface do usuário. |![Imagem de caixa de seleção controlada](../../images/checkbox_unchecked.png)|
+|**Caixa de seleção não controlada**|Use como o estado padrão da caixa de seleção. |![Imagem de caixa de seleção não controlada](../images/checkbox_unchecked.png)|
+|**Caixa de seleção não controlada marcada por padrão**|Use quando a instância da caixa de seleção mantiver seu próprio estado. |![Imagem da caixa de seleção não controlada marcada por padrão](../images/checkbox_checked.png)|
+|**Caixa de seleção desativada e não controlada marcada por padrão**|Estado desativado da caixa de seleção. |![Imagem de caixa de seleção desativada e não controlada marcada por padrão](../images/checkbox_disabled.png)|
+|**Caixa de seleção controlada**|O estado verificado desta caixa de seleção é decidido em outro local da interface de usuário. Nesse cenário, o valor correto é passado para a caixa de seleção por um evento **onChange** e com uma nova renderização da interface do usuário. |![Imagem de caixa de seleção controlada](../images/checkbox_unchecked.png)|
 
 ## <a name="implementation"></a>Implementação
 

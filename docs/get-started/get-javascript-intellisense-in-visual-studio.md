@@ -36,7 +36,7 @@ A técnica básica é incluir antes da variável (ou do parâmetro e assim por d
 /** @type {Excel.Range} */
 var subsetRange;
 ```
-![IntelliSense para variável](../../images/IntellisenseVS17Var.png)
+![IntelliSense para variável](../images/IntellisenseVS17Var.png)
 
 ### <a name="parameter"></a>Parâmetro
 
@@ -46,7 +46,7 @@ function myFunc(paragraphs){
 
 }
 ```
-![IntelliSense para parâmetro](../../images/IntellisenseVS17Param.png)
+![IntelliSense para parâmetro](../images/IntellisenseVS17Param.png)
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -56,7 +56,7 @@ function myFunc() {
 
 }
 ```
-![IntelliSense para valor de retorno](../../images/IntellisenseVS17Return.png)
+![IntelliSense para valor de retorno](../images/IntellisenseVS17Return.png)
 
 ### <a name="complex-types"></a>Tipos complexos
 
@@ -68,7 +68,7 @@ function myFunc() {
 
 }
 ```
-![IntelliSense para tipo complexo](../../images/IntellisenseVS17ComplexType.png)
+![IntelliSense para tipo complexo](../images/IntellisenseVS17ComplexType.png)
 
 ##<a name="additional-resources"></a>Recursos adicionais
 

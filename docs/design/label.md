@@ -6,7 +6,7 @@ Use rótulos para nomear ou dar título a um componente ou grupo de componentes.
 
 <br/>
 
-![Uma imagem mostrando o rótulo](../../images/overview_withApp_label.png)
+![Uma imagem mostrando o rótulo](../images/overview_withApp_label.png)
 
 <br/>
 
@@ -22,9 +22,9 @@ Use rótulos para nomear ou dar título a um componente ou grupo de componentes.
 
 |**Variação**|**Descrição**|**Exemplo**|
 |:------------|:--------------|:----------|
-|**Rótulo padrão**|Use para rótulos padrão.|![Imagem do rótulo padrão](../../images/label.png)<br/>|
-|**Rótulo desabilitado**|Use quando o componente relacionado for desabilitado.|![Imagem do rótulo desabilitado](../../images/labelDisabled.png)<br/>|
-|**Rótulo obrigatório**|Use quando o componente relacionado for necessário.|![Imagem do rótulo obrigatório](../../images/labelRequired.png)<br/>|
+|**Rótulo padrão**|Use para rótulos padrão.|![Imagem do rótulo padrão](../images/label.png)<br/>|
+|**Rótulo desabilitado**|Use quando o componente relacionado for desabilitado.|![Imagem do rótulo desabilitado](../images/labelDisabled.png)<br/>|
+|**Rótulo obrigatório**|Use quando o componente relacionado for necessário.|![Imagem do rótulo obrigatório](../images/labelRequired.png)<br/>|
 
 ## <a name="implementation"></a>Implementação
 

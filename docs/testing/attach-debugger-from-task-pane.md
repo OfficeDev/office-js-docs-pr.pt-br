@@ -8,11 +8,11 @@ Para iniciar a ferramenta **Anexar Depurador**, escolha o canto superior direito
    - Atualmente, a única ferramenta de depuração com suporte é o [Visual Studio 2015](https://www.visualstudio.com/downloads/) com a [Atualização 3](https://msdn.microsoft.com/en-us/library/mt752379.aspx) ou posterior. Se você não tiver o Visual Studio instalado, selecionar a opção **Anexar Depurador** não resultará em nenhuma ação.   
    - Só é possível depurar o JavaScript do lado do cliente com a ferramenta **Anexar Depurador**. Para depurar o código do lado do servidor, como com um servidor Node.js, há várias opções. Confira informações sobre como depurar com o Visual Studio Code em [Depuração do Node.js no VS Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging). Se você não estiver usando o Visual Studio Code, pesquise por "depurar Node.js" ou "depurar {nome do servidor}".
 
-![Captura de tela do menu Anexar Depurador](../../images/attach-debugger.png)
+![Captura de tela do menu Anexar Depurador](../images/attach-debugger.png)
 
 Selecione **Anexar Depurador**. Isso inicia a caixa de diálogo **Depurador Just-In-Time do Visual Studio**, conforme mostrado na imagem a seguir. 
 
-![Captura de tela da caixa de diálogo Depurador JIT do Visual Studio](../../images/visual-studio-debugger.png)
+![Captura de tela da caixa de diálogo Depurador JIT do Visual Studio](../images/visual-studio-debugger.png)
 
 No Visual Studio, você verá os arquivos de código no **Gerenciador de Soluções**.   Você pode definir pontos de interrupção na linha de código que deseja depurar no Visual Studio.
 

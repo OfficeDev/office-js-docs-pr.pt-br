@@ -13,7 +13,7 @@ Um modelo de permissões de acesso da API JavaScript com cinco níveis fornece a
 
 **Figura 1. Modelo de permissão com cinco níveis para os suplementos do conteúdo e do painel de tarefas**
 
-![Levels of permissions for task pane apps](../../images/off15appsdk_TaskPaneAppPermission.gif)
+![Levels of permissions for task pane apps](../images/off15appsdk_TaskPaneAppPermission.gif)
 
 
 

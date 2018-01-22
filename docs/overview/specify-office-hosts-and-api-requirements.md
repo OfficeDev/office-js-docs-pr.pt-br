@@ -56,7 +56,7 @@ Se você usar as verificações no tempo de execução, faça referência à ver
 Ao especificar os hosts do Office ou os requisitos de API, há vários fatores a considerar. O diagrama a seguir mostra como decidir sobre qual técnica usar em seu suplemento.
 
 
-![Escolha a melhor opção para o seu suplemento ao especificar os hosts do Office ou os requisitos de API](../../images/e3498f8f-7c7c-461c-84f3-b93910b088b9.png)
+![Escolha a melhor opção para o seu suplemento ao especificar os hosts do Office ou os requisitos de API](../images/e3498f8f-7c7c-461c-84f3-b93910b088b9.png)
 
 - Se o seu suplemento for executado em um host do Office, defina o elemento **Hosts** no manifesto. Para saber mais, confira [Definir o elemento Hosts](../../docs/overview/specify-office-hosts-and-api-requirements.md#set-the-hosts-element).
     

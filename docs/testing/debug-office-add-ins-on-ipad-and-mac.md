@@ -79,7 +79,7 @@ Para depurar um aplicativo usando o Vorlon.JS, adicione uma marca `<script>` à 
 
 O suplemento aparecerá na lista de Clientes no Vorlon.JS (no lado esquerdo da interface do Vorlon.JS) como **{OS} - n**, para um determinado número *n* e em que *{OS}* é o tipo de dispositivo, como "Macintosh". 
 
-![Captura de tela que mostra a interface do Vorlon.js](../../images/vorlon_interface.png)
+![Captura de tela que mostra a interface do Vorlon.js](../images/vorlon_interface.png)
 
 A ferramenta Vorlon tem uma variedade de plug-ins. Os que estiverem habilitados no momento serão exibidos como guias na parte superior da ferramenta. (É possível habilitar mais plug-ins escolhendo o ícone de engrenagem no canto esquerdo). Esses plug-ins são semelhantes às funções nas ferramentas F12. Por exemplo, você pode realçar elementos DOM, executar comandos e muito mais. Para obter mais detalhes, veja [Principais plug-ins da documentação do Vorlon](http://vorlonjs.com/documentation/#console) 
 

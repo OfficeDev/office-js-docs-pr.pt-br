@@ -6,7 +6,7 @@ As listas fornecem um layout consistente ao interagir com grandes coleções de 
 
 <br/>
 
-![Uma imagem mostrando uma lista](../../images/overview_withApp_list.png)
+![Uma imagem mostrando uma lista](../images/overview_withApp_list.png)
 
 <br/>
 
@@ -24,8 +24,8 @@ As listas fornecem um layout consistente ao interagir com grandes coleções de 
 
 |**Variação**|**Descrição**|**Exemplo**|
 |:------------|:--------------|:----------|
-|**Lista de grade**|Use quando forem necessárias informações detalhadas com cada item de lista.|![Imagem de lista de grade](../../images/list.png)<br/>|
-|**Lista de itens de altura variável**|Use quando forem necessários imagens e texto grandes.|![Imagem de item de lista de altura variável](../../images/listGrid.png)<br/>|
+|**Lista de grade**|Use quando forem necessárias informações detalhadas com cada item de lista.|![Imagem de lista de grade](../images/list.png)<br/>|
+|**Lista de itens de altura variável**|Use quando forem necessários imagens e texto grandes.|![Imagem de item de lista de altura variável](../images/listGrid.png)<br/>|
 
 <br/>
 

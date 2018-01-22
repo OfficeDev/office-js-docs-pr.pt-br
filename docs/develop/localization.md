@@ -260,7 +260,7 @@ A Figura 3 mostra o elemento do cabeçalho (h1) e o elemento do parágrafo (p) q
 
 **Figura 3. IU do suplemento**
 
-![App user interface with sections highlighted.](../../images/off15App_HowToLocalize_fig03.png)
+![App user interface with sections highlighted.](../images/off15App_HowToLocalize_fig03.png)
 
 ### <a name="add-the-resource-file-that-contains-the-localized-strings"></a>Adicionar o arquivo de recurso que contém as cadeias de caracteres localizadas
 
@@ -395,7 +395,7 @@ Para alterar o idioma usado para exibir ou editar no seu suplemento:
     
     **Figura 4. Opções de idioma na caixa de diálogo Opções do Word 2013**
 
-    ![Word 2013 Options dialog.](../../images/off15App_HowToLocalize_fig04.png)
+    ![Word 2013 Options dialog.](../images/off15App_HowToLocalize_fig04.png)
 
 2. Em **Escolher Idiomas de Exibição e da Ajuda**, selecione o idioma desejado para exibição, por exemplo, espanhol, e selecione a seta para cima para mover o idioma espanhol para a primeira posição na lista. Ou, para alterar o idioma usado para edição, em **Escolher idiomas de edição**, escolha o idioma que você deseja usar para edição, por exemplo, espanhol, e selecione **Definir como Padrão**.
     
@@ -406,7 +406,7 @@ Execute o suplemento de exemplo. O suplemento do painel de tarefas é carregado 
 
 **Figura 5. IU do Suplemento com o texto localizado**
 
-![App with localized UI text.](../../images/off15App_HowToLocalize_fig05.png)
+![App with localized UI text.](../images/off15App_HowToLocalize_fig05.png)
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

@@ -38,7 +38,7 @@ Este exemplo usa o Word e um suplemento gratuito da Office Store.
     
     Por exemplo, selecione **home.html**. 
     
-    ![Tela do F12Chooser, apontando para o suplemento bolhas](../../images/4f8823a3-595a-4657-83ac-8b235a7ba087.png)
+    ![Tela do F12Chooser, apontando para o suplemento bolhas](../images/4f8823a3-595a-4657-83ac-8b235a7ba087.png)
 
 4. Na janela F12, selecione o arquivo que você deseja depurar.
     
@@ -48,13 +48,13 @@ Este exemplo usa o Word e um suplemento gratuito da Office Store.
     
     To set the breakpoint in home.js, choose line 144, which is in the  _textChanged_ function. You will see a red dot to the left of the line and a corresponding line in the **Callstack and Breakpoints** (bottom right) pane. For other ways to set a breakpoint, see [Inspect running JavaScript with the Debugger](https://msdn.microsoft.com/library/dn255007%28v=vs.85%29.aspx). 
     
-    ![Depurador com ponto de interrupção no arquivo home.js](../../images/e3cbc7ca-8b21-4ebb-b7a1-93e2364f1d16.png)
+    ![Depurador com ponto de interrupção no arquivo home.js](../images/e3cbc7ca-8b21-4ebb-b7a1-93e2364f1d16.png)
 
 6. Execute o suplemento para acionar o ponto de interrupção.
     
     Escolha a caixa de texto da URL na parte superior do painel QR4Office para alterar o texto. No Depurador, no painel **Pilha de Chamadas e Pontos de Interrupção**, você verá que o ponto de interrupção está disparado e mostra várias informações. Talvez você precise atualizar a ferramenta F12 para ver os resultados.
     
-    ![Depurador com resultados do ponto de interrupção disparado](../../images/e0bcd036-91ce-4509-ae98-6c10b593d61b.png)
+    ![Depurador com resultados do ponto de interrupção disparado](../images/e0bcd036-91ce-4509-ae98-6c10b593d61b.png)
 
 
 ## <a name="additional-resources"></a>Recursos adicionais

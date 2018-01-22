@@ -9,7 +9,7 @@ Um suplemento deve garantir que o DOM e o ambiente de tempo de execução de Sup
 
 A figura a seguir mostra o fluxo de eventos envolvidos na inicialização de um suplemento de conteúdo ou de painel de tarefas no Excel, no PowerPoint, no Project, no Word ou no Access.
 
-![Fluxo de eventos ao iniciar um suplemento de conteúdo ou de painel de tarefas](../../images/off15appsdk_LoadingDOMAgaveRuntime.png)
+![Fluxo de eventos ao iniciar um suplemento de conteúdo ou de painel de tarefas](../images/off15appsdk_LoadingDOMAgaveRuntime.png)
 
 Os eventos a seguir ocorrem quando um suplemento de conteúdo ou de painel de tarefas é iniciado: 
 
@@ -36,7 +36,7 @@ Os eventos a seguir ocorrem quando um suplemento de conteúdo ou de painel de ta
 
 A figura a seguir mostra o fluxo de eventos envolvidos na inicialização de um suplemento do Outlook em execução no desktop, tablet ou smartphone.
 
-![Fluxo de eventos ao inicializar um suplemento do Outlook](../../images/olowawecon15_LoadingDOMAgaveRuntime.png)
+![Fluxo de eventos ao inicializar um suplemento do Outlook](../images/olowawecon15_LoadingDOMAgaveRuntime.png)
 
 Os eventos a seguir ocorrem quando um suplemento Outlook é iniciado: 
 

@@ -20,7 +20,7 @@ Para obter a versão mais recente:
 
 Quando o processo de instalação for concluído, você terá os últimos aplicativos do Office 2016 instalados. Para verificar se você tem a última compilação, vá para **Arquivo**  >  **Conta** em qualquer aplicativo do Office. Em Atualizações do Office, você verá o rótulo (Office Insiders) acima do número de versão.
 
-![Uma captura de tela que mostra informações do produto com o rótulo Office Insiders](../../images/officeinsider.PNG)
+![Uma captura de tela que mostra informações do produto com o rótulo Office Insiders](../images/officeinsider.PNG)
 
 ## <a name="minimum-office-builds-for-office-javascript-api-requirement-sets"></a>Builds mínimos do Office para conjuntos de requisitos de API JavaScript para Office
 

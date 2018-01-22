@@ -6,7 +6,7 @@ Os dinâmicos oferecem uma navegação rápida para conteúdo acessado com frequ
 
 <br/>
 
-![Uma imagem mostrando o dinâmico](../../images/overview_withApp_pivot.png)
+![Uma imagem mostrando o dinâmico](../images/overview_withApp_pivot.png)
 
 <br/>
 
@@ -24,8 +24,8 @@ Os dinâmicos oferecem uma navegação rápida para conteúdo acessado com frequ
 
 |**Variação**|**Descrição**|**Exemplo**|
 |:------------|:--------------|:----------|
-|**Exemplo básico**|Use como a opção padrão de tabela dinâmica.|![Imagem do exemplo básico](../../images/pivotBasic.png)<br/>|
-|**Links no estilo de guia**|Use quando botões de tabela dinâmica em estilo de guia forem preferenciais.|![Imagem de links no estilo de guia](../../images/pivotTab.png)<br/>|
+|**Exemplo básico**|Use como a opção padrão de tabela dinâmica.|![Imagem do exemplo básico](../images/pivotBasic.png)<br/>|
+|**Links no estilo de guia**|Use quando botões de tabela dinâmica em estilo de guia forem preferenciais.|![Imagem de links no estilo de guia](../images/pivotTab.png)<br/>|
 
 ## <a name="implementation"></a>Implementação
 

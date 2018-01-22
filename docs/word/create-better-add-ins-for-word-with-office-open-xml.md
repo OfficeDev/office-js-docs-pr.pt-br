@@ -17,28 +17,28 @@ Para começar, veja alguns dos tipos de conteúdo que você pode inserir usando 
 **Figura 1. Texto com formatação direta.**
 
 
-![Texto com formatação direta aplicada.](../../images/off15app_CreateWdAppUsingOOXML_fig01.png)
+![Texto com formatação direta aplicada.](../images/off15app_CreateWdAppUsingOOXML_fig01.png)
 
 Você pode usar a formatação direta para especificar a aparência exata que o texto terá, independentemente da formatação existente no documento do usuário.
 
 **Figura 2. Texto formatado com um estilo.**
 
 
-![Texto formatado com estilo de parágrafo.](../../images/off15app_CreateWdAppUsingOOXML_fig02.png)
+![Texto formatado com estilo de parágrafo.](../images/off15app_CreateWdAppUsingOOXML_fig02.png)
 
 Você pode usar um estilo para coordenar automaticamente a aparência do texto que insere com o documento do usuário.
 
 **Figura 3. Uma imagem simples.**
 
 
-![Imagem de um logotipo.](../../images/off15app_CreateWdAppUsingOOXML_fig03.png)
+![Imagem de um logotipo.](../images/off15app_CreateWdAppUsingOOXML_fig03.png)
 
 Você pode usar o mesmo método para inserir qualquer formato de imagem compatível com o Office.
 
 **Figura 4. Uma imagem formatada usando efeitos e estilos de imagem.**
 
 
-![Imagem formatada no Word 2013.](../../images/off15app_CreateWdAppUsingOOXML_fig04.png)
+![Imagem formatada no Word 2013.](../images/off15app_CreateWdAppUsingOOXML_fig04.png)
 
 
 A adição de efeitos e formatação de alta qualidade às imagens requer muito menos marcação do que você poderia esperar.
@@ -46,49 +46,49 @@ A adição de efeitos e formatação de alta qualidade às imagens requer muito 
 **Figura 5. Um controle de conteúdo.**
 
 
-![Text within a bound content control.](../../images/off15app_CreateWdAppUsingOOXML_fig05.png)
+![Text within a bound content control.](../images/off15app_CreateWdAppUsingOOXML_fig05.png)
 
 Você pode usar controles de conteúdo com o suplemento para adicionar conteúdo em um local especificado (associado) em vez de na seleção.
 
 **Figura 6. Uma caixa de texto com formatação do WordArt.**
 
 
-![Texto formatado com efeitos de texto WordArt.](../../images/off15app_CreateWdAppUsingOOXML_fig06.png)
+![Texto formatado com efeitos de texto WordArt.](../images/off15app_CreateWdAppUsingOOXML_fig06.png)
 
 Os efeitos de texto estão disponíveis no Word para o texto dentro de uma caixa de texto (como mostrado aqui) ou para o corpo do texto normal.
 
 **Figura 7. Uma forma.**
 
 
-![Uma forma de desenho do Office 2013 no Word 2013.](../../images/off15app_CreateWdAppUsingOOXML_fig07.png)
+![Uma forma de desenho do Office 2013 no Word 2013.](../images/off15app_CreateWdAppUsingOOXML_fig07.png)
 
 Você pode inserir formas de desenho internas ou personalizadas, com ou sem texto e efeitos de formatação.
 
 **Figura 8. Uma tabela com formatação direta.**
 
 
-![Uma tabela formatada no Word 2013.](../../images/off15app_CreateWdAppUsingOOXML_fig08.png)
+![Uma tabela formatada no Word 2013.](../images/off15app_CreateWdAppUsingOOXML_fig08.png)
 
 Você pode incluir formatação de texto, bordas, sombreamento, dimensionamento de células ou qualquer formatação de tabela que seja necessária.
 
 **Figura 9. Uma tabela formatada usando um estilo de tabela.**
 
 
-![Uma tabela formatada no Word 2013.](../../images/off15app_CreateWdAppUsingOOXML_fig09.png)
+![Uma tabela formatada no Word 2013.](../images/off15app_CreateWdAppUsingOOXML_fig09.png)
 
 Você pode usar estilos de tabela internos ou personalizados com a mesma facilidade com que usa um estilo de parágrafo para o texto.
 
 **Figura 10. Um diagrama do SmartArt.**
 
 
-![Um diagrama SmartArt dinâmico no Word 2013.](../../images/off15app_CreateWdAppUsingOOXML_fig10.png)
+![Um diagrama SmartArt dinâmico no Word 2013.](../images/off15app_CreateWdAppUsingOOXML_fig10.png)
 
 O Office 2013 oferece uma ampla variedade de layouts de diagrama do SmartArt (e você pode usar o Office Open XML  para criar os seus próprios).
 
 **Figura 11. Um gráfico.**
 
 
-![Um gráfico no Word 2013.](../../images/off15app_CreateWdAppUsingOOXML_fig11.png)
+![Um gráfico no Word 2013.](../images/off15app_CreateWdAppUsingOOXML_fig11.png)
 
 Você pode inserir gráficos do Excel como gráficos dinâmicos em documentos do Word, o que também significa que você pode usá-los no seu suplemento do Word. Como você pode ver pelos exemplos anteriores, é possível usar a coerção do Office Open XML para inserir praticamente qualquer tipo de conteúdo que um usuário pode inserir em seu próprio documento. Há duas maneiras simples de obter a marcação do Office Open XML necessária. Adicionar conteúdo avançado a um documento do Word 2013 em branco e salvar o arquivo no formato de Documento XML do Word ou usar um suplemento de teste com o método [getSelectedDataAsync](http://msdn.microsoft.com/en-us/library/fp142294.aspx) para obter a marcação. As duas abordagens fornecem basicamente o mesmo resultado.
 
@@ -112,11 +112,11 @@ Por exemplo, digamos que você queira inserir apenas um parágrafo de texto com 
 
 **Figura 12. Recolher e expandir partes do pacote para facilitar a edição no Visual Studio 2015**
 
-![Trecho de código do Office Open XML de uma parte de pacote.](../../images/off15app_CreateWdAppUsingOOXML_fig12.png)
+![Trecho de código do Office Open XML de uma parte de pacote.](../images/off15app_CreateWdAppUsingOOXML_fig12.png)
 
 **Figura 13. As partes incluídas em um pacote de documento básico do Office Open XML do Word**
 
-![Trecho de código do Office Open XML de uma parte de pacote.](../../images/off15app_CreateWdAppUsingOOXML_fig13.png)
+![Trecho de código do Office Open XML de uma parte de pacote.](../images/off15app_CreateWdAppUsingOOXML_fig13.png)
 
 Com toda essa marcação, você poderá se surpreender ao descobrir que os únicos elementos realmente necessários para inserir o exemplo de texto formatado são pedaços da parte .rels e a parte document.xml.
 
@@ -324,7 +324,7 @@ Como document.xml é a parte do documento principal em que você coloca o conte�
 
 **Figura 14. Como marcas comuns em document.xml estão relacionadas ao conteúdo e ao layout de um documento do Word.**
 
-![Elementos do Office Open XML em um documento do Word.](../../images/off15app_CreateWdAppUsingOOXML_fig14.png)
+![Elementos do Office Open XML em um documento do Word.](../images/off15app_CreateWdAppUsingOOXML_fig14.png)
     
 **Dica:**  na marcação que você criar, talvez haja outro atributo em várias marcas que inclui os caracteres **w:rsid**, que você não vê nos exemplos usados neste tópico. Esses são identificadores de revisão. Eles são usados no Word para o recurso Combinar Documentos e estão ativados por padrão. Você nunca precisará deles na marcação que está inserindo com o suplemento, e desativá-los torna a marcação bem mais limpa. Você pode facilmente remover marcas RSID existentes ou desabilitar o recurso (conforme descrito no procedimento a seguir) para que eles não sejam adicionados à marcação para o novo conteúdo.
  
@@ -385,7 +385,7 @@ No Word, localize os controles de conteúdo na guia Desenvolvedor da faixa de op
 
 **Figura 15. O grupo Controles na guia Desenvolvedor no Word.**
 
-![Grupo de Controles de conteúdo na faixa de opções do Word 2013.](../../images/off15app_CreateWdAppUsingOOXML_fig15.png)
+![Grupo de Controles de conteúdo na faixa de opções do Word 2013.](../images/off15app_CreateWdAppUsingOOXML_fig15.png)
 
 Os tipos de controles de conteúdo no Word incluem RTF, texto sem formatação, imagem, galeria de blocos de construção, caixa de seleção, lista suspensa, caixa de combinação, seletor de data e seção de repetição. 
 

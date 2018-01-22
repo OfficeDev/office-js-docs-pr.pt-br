@@ -169,13 +169,13 @@ No procedimento 2, o suplemento Pesquisa do Bing é instalado no computador loca
 
     **Figura 1. Usando a Central de Confiabilidade para adicionar catálogos de manifestos de suplemento**
 
-    ![Using the Trust Center to add app manifests](../../images/pj15_AgaveOverview_TrustCenter.PNG)
+    ![Using the Trust Center to add app manifests](../images/pj15_AgaveOverview_TrustCenter.PNG)
 
 7. Na faixa de opções **Project**, escolha o menu suspenso **Suplementos do Office** e escolha **Ver Tudo**. Na caixa de diálogo **Inserir Suplemento**, escolha **PASTA COMPARTILHADA** (confira a Figura 2).
     
     **Figura 2. Iniciando um suplemento que está em um compartilhamento de arquivos**
 
-    ![Starting an Office app that is on a file share](../../images/pj15_AgaveOverview_StartAgaveApp.PNG)
+    ![Starting an Office app that is on a file share](../images/pj15_AgaveOverview_StartAgaveApp.PNG)
 
 8. Selecione o suplemento Pesquisa do Bing e escolha **Inserir**.
     
@@ -183,7 +183,7 @@ O suplemento Pesquisa do Bing é exibido em um painel de tarefas, como na Figura
 
 **Figura 3. Usando o suplemento Pesquisa do Bing**
 
-![Using the Bing Search app](../../images/pj15_AgaveOverview_BingSearch.gif)
+![Using the Bing Search app](../images/pj15_AgaveOverview_BingSearch.gif)
 
 
 ## <a name="distributing-project-add-ins"></a>Distribuir suplementos do Project

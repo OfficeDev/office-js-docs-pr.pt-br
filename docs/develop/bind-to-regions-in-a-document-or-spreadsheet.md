@@ -94,7 +94,7 @@ A Figura 1 mostra o prompt de seleção do intervalo interno no Excel.
 
 **Figura 1. Selecionar IU de Dados do Excel**
 
-![Selecionar IU de Dados do Excel](../../images/AgaveAPIOverview_ExcelSelectionUI.png)
+![Selecionar IU de Dados do Excel](../images/AgaveAPIOverview_ExcelSelectionUI.png)
 
 
 ## <a name="add-a-binding-to-a-named-item"></a>Adicionar uma associação a um item nomeado

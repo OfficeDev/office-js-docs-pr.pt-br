@@ -10,7 +10,7 @@ O diagrama a seguir mostra o fluxo de execução de uma chamada para um método 
 **Figura 1. Fluxo de execução da programação assíncrono**
 
 
-![Fluxo de execução do thread da programação assíncrono](../../images/off15appAsyncProgFig01.png)
+![Fluxo de execução do thread da programação assíncrono](../images/off15appAsyncProgFig01.png)
 
 O suporte a esse design assíncrono em clientes Web e avançados faz parte das metas de design "gravar plataforma cruzada já executada" do modelo de desenvolvimento de Suplementos do Office. Por exemplo, você pode um suplemento do painel de tarefas ou conteúdo com uma única base de código que será executada no Excel 2013 e Excel Online.
 

@@ -187,7 +187,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
 
 2. No painel à direita, escolha qualquer um dos botões para adicionar o texto clichê ao documento.
 
-![Imagem do aplicativo Word com o suplemento de texto clichê carregado](../../images/boilerplateAddin.png)
+![Imagem do aplicativo Word com o suplemento de texto clichê carregado](../images/boilerplateAddin.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 

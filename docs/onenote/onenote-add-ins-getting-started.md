@@ -5,7 +5,7 @@ Este artigo ajuda você a criar um suplemento simples de painel de tarefas que a
 
 A imagem a seguir mostra o suplemento que você criará.
 
-   ![O suplemento do OneNote criado a partir deste passo a passo](../../images/onenote-first-add-in.png)
+   ![O suplemento do OneNote criado a partir deste passo a passo](../images/onenote-first-add-in.png)
 
 <a name="setup"></a>
 ## Etapa 1: Configurar o seu ambiente de desenvolvimento e criar um projeto de suplemento
@@ -117,7 +117,7 @@ function addOutlineToPage() {
   
   A imagem a seguir mostra a guia **MEUS SUPLEMENTOS** para blocos de anotações do consumidor.
 
-  ![O diálogo Suplementos do Office mostrando a guia MEUS SUPLEMENTOS](../../images/onenote-office-add-ins-dialog.png)
+  ![O diálogo Suplementos do Office mostrando a guia MEUS SUPLEMENTOS](../images/onenote-office-add-ins-dialog.png)
 
 5 – No diálogo Carregar suplemento, navegue até **onenote-add-in-manifest.xml** na pasta do projeto e escolha **Carregar**. O arquivo do manifesto será colocado no armazenamento local do navegador durante o teste.
 
@@ -129,7 +129,7 @@ function addOutlineToPage() {
 
 -Quando você inspecionar um objeto do OneNote, as propriedades que estão atualmente disponíveis usam valores reais de exibição. As propriedades que precisam ser carregadas exibem *indefinido*. Expanda o nó `_proto_` para ver as propriedades definidas no objeto, mas que ainda não foram carregadas.
 
-![Carregar o objeto do OneNote em um depurador](../../images/onenote-debug.png)
+![Carregar o objeto do OneNote em um depurador](../images/onenote-debug.png)
 
 Você precisa habilitar conteúdo misto no navegador, se o seu suplemento usar todos os recursos HTTP. Os suplementos de produção devem usar apenas recursos HTTPS seguros.
 

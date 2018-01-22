@@ -28,7 +28,7 @@ Verifique se os seguintes itens estão instalados:
 1.  Abra o Visual Studio e vá para **Arquivo** > **Novo** > **Projeto**. 
 2.  Em **Office/SharePoint**, escolha **Suplemento do Excel** e, em seguida, selecione **OK**.
 
-    ![Modelo de Suplemento do Excel no Visual Studio](../../images/visual-studio-addin-template.png)
+    ![Modelo de Suplemento do Excel no Visual Studio](../images/visual-studio-addin-template.png)
 
 3.  No assistente de criação de aplicativos, selecione **Adicionar novas funcionalidades ao Excel** e **Concluir**.
 4.  Faça um teste rápido do suplemento do Excel recém-criado pressionando F5 ou o botão verde **Iniciar** para iniciar o suplemento. O suplemento será hospedado localmente no IIS e o Excel abrirá com o suplemento carregado.
@@ -39,13 +39,13 @@ Verifique se os seguintes itens estão instalados:
 2. Selecione **Sim** para confirmar que você tem certeza de que deseja alterar a extensão do nome de arquivo.  
 3. Selecione **Sim** quando surgir a pergunta se você deseja procurar tipificações de TypeScript no nuget, conforme mostrado na captura de tela a seguir. Isso abre o **Gerenciador de Pacotes do NuGet**.
 
-    ![Pesquisar por caixa de diálogo de tipificações de TypeScript](../../images/search-typescript-typings.png)
+    ![Pesquisar por caixa de diálogo de tipificações de TypeScript](../images/search-typescript-typings.png)
 
 4. Escolha **Procurar** no **Gerenciador de Pacotes do Nuget**.  
 5. Na caixa de pesquisa, digite **office-js tag:typescript**.
 6. Instale o **office.js.TypeScript.DefinitelyTyped** e o **jquery.TypeScript.DefinitelyTyped**, conforme exibido na seguinte captura de tela.
 
-    ![TypeScript DefinitelyTyped NuGets](../../images/typescript-definitelytyped-nugets.png)
+    ![TypeScript DefinitelyTyped NuGets](../images/typescript-definitelytyped-nugets.png)
 
 7. Abra o Home.ts (anteriormente conhecido como Home.js). Remova a seguinte referência da parte superior do arquivo Home.ts:
 

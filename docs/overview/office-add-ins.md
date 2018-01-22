@@ -32,7 +32,7 @@ Os suplementos do Office fornecem as seguintes vantagens em relação aos suplem
 Um suplemento do Office inclui dois componentes básicos: um arquivo de manifesto XML e seu próprio aplicativo Web. O manifesto define várias configurações, incluindo como o suplemento é integrado a clientes do Office. O aplicativo Web deve ser hospedado em um servidor Web ou serviço de hospedagem na Web, como o Microsoft Azure.
 
 **Manifesto + página da Web = um Suplemento do Office**
-![Manifesto mais página da Web é igual a Suplemento do Office](../../images/DK2_AgaveOverview01.png)
+![Manifesto mais página da Web é igual a Suplemento do Office](../images/DK2_AgaveOverview01.png)
 
 ### <a name="manifest"></a>Manifesto 
 
@@ -50,7 +50,7 @@ O Suplemento do Office mais básico consiste em uma página HTML estática que �
 
 **Componentes de um suplemento Hello World do Office**
 
-![Componentes de um suplemento Hello World](../../images/DK2_AgaveOverview07.png)
+![Componentes de um suplemento Hello World](../images/DK2_AgaveOverview07.png)
 
 ## <a name="extending-and-interacting-with-office-clients"></a>Estender os clientes do Office e interagir com eles 
 
@@ -75,14 +75,14 @@ Painéis personalizados de interface do usuário e de tarefa são especificados 
 Você pode adicionar itens de menu e botões da faixa de opções personalizados à faixa de opções, tanto no Office para Área de Trabalho do Windows quanto no Office Online. Isso facilita aos usuários o acesso ao suplemento diretamente do aplicativo do Office. Botões de comando podem iniciar diferentes ações, como mostrar um painel de tarefas com código HTML personalizado ou executar uma função JavaScript.  
 
 **Comandos de suplemento executando na área de trabalho do Excel**
-![Botões e comandos de menu personalizados](../../images/add-in-commands-overview..png)
+![Botões e comandos de menu personalizados](../images/add-in-commands-overview..png)
 
 #### <a name="task-panes"></a>Painéis de tarefas  
 
 Você pode usar painéis de tarefas, além dos comandos de suplemento para permitir que os usuários interajam com sua solução. Os clientes que não suportam os comandos de suplemento (Office 2013 e Office para iPad) executarão seu suplemento como um painel de tarefas. Os usuários iniciam os suplementos do painel de tarefas através do botão **Meus suplementos** na guia Inserir. 
 
 **Painel de tarefas**
-![Painel de tarefas](../../images/task-pane-overview.jpg)
+![Painel de tarefas](../images/task-pane-overview.jpg)
 
 ### <a name="extend-outlook-functionality"></a>Estender a funcionalidade do Outlook 
 
@@ -98,7 +98,7 @@ Você pode inserir objetos baseados na web em documentos do Excel e PowerPoint �
 
 **Suplemento de conteúdo**
 
-![Suplemento no conteúdo](../../images/DK2_AgaveOverview05.png)
+![Suplemento no conteúdo](../images/DK2_AgaveOverview05.png)
 
 ## <a name="office-javascript-apis"></a>APIs JavaScript para Office 
 

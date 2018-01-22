@@ -11,7 +11,7 @@ Este tópico descreve como implementar um fluxo de autenticação no suplemento 
 
 O diagrama a seguir mostra os componentes necessários e o fluxo de eventos que ocorrem durante a implementação da autenticação no suplemento.
 
-![Realizar uma autenticação OAuth em um Suplemento do Office](../../images/OAuthInOfficeAddin.png)
+![Realizar uma autenticação OAuth em um Suplemento do Office](../images/OAuthInOfficeAddin.png)
 
 O diagrama mostra como os seguintes componentes necessários são usados:
 

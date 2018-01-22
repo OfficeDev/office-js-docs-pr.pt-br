@@ -5,7 +5,7 @@ Os usuários entram no Office (online, em dispositivos móveis e plataformas des
 * Autorizar o usuário a fazer logon em seu suplemento.
 * Autorizar o suplemento a acessar o [Microsoft Graph](https://developer.microsoft.com/graph/docs).
 
-![Imagem mostrando o processo de logon de um suplemento](../../images/OfficeHostTitleBarLogin.png)
+![Imagem mostrando o processo de logon de um suplemento](../images/OfficeHostTitleBarLogin.png)
 
 >**Observação:** A API de logon único tem suporte para Word, Excel e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](../../reference/requirement-sets/identity-api-requirement-sets.md).
 > O logon único está no modo de visualização do Outlook. Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Office 365. Para obter informações sobre como fazer isso, consulte [Exchange Online: Como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
@@ -22,7 +22,7 @@ O manifesto do suplemento contém a marcação que especifica como ele está reg
 
 O diagrama a seguir mostra como funciona o processo de SSO.
 <!-- Minor fixes to the text in the diagram - change V2 to v2.0, and change "(e.g. Word, Excel, etc.)" to "(for example, Word, Excel)". -->
-![Diagrama que mostra o processo de SSO](../../images/SSOOverviewDiagram.png)
+![Diagrama que mostra o processo de SSO](../images/SSOOverviewDiagram.png)
 
 1. No suplemento, o JavaScript chama uma nova API Office.js `getAccessTokenAsync`. Isso informa ao aplicativo host do Office para obter um token de acesso para o suplemento. (A partir daqui, chamaremos ele de **token do suplemento**).
 1. Se o usuário não estiver conectado, o aplicativo host do Office abrirá uma janela pop-up para o usuário entrar.

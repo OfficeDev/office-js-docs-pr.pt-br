@@ -44,19 +44,19 @@ Além de interagir com o conteúdo da pasta de trabalho, os suplementos do Excel
 
 **Botões personalizados da faixa de opções**
 
-![Comandos de suplemento](../../images/Excel_add-in_commands_Script-Lab.png)
+![Comandos de suplemento](../images/Excel_add-in_commands_Script-Lab.png)
 
 **Painel de tarefas**
 
-![Painel de tarefas do suplemento](../../images/Excel_add-in_task_pane_Insights.png)
+![Painel de tarefas do suplemento](../images/Excel_add-in_task_pane_Insights.png)
 
 **Caixa de diálogo**
 
-![Caixa de diálogo do suplemento](../../images/Excel_add-in_dialog_choose-number.png)
+![Caixa de diálogo do suplemento](../images/Excel_add-in_dialog_choose-number.png)
 
 **Suplemento de conteúdo**
 
-![Suplemento de conteúdo](../../images/Excel_add-in_content_map.png)
+![Suplemento de conteúdo](../images/Excel_add-in_content_map.png)
 
 ## <a name="javascript-apis-to-interact-with-workbook-content"></a>APIs JavaScript para interagir com o conteúdo da pasta de trabalho
 

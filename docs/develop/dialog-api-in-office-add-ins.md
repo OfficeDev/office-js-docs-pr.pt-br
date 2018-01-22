@@ -18,7 +18,7 @@ Considere abrir uma caixa de diálogo em um painel de tarefas ou suplemento de c
 
 A imagem abaixo mostra um exemplo de uma caixa de diálogo.
 
-![Comandos de suplemento](../../images/Auth0DialogOpen.PNG)
+![Comandos de suplemento](../images/Auth0DialogOpen.PNG)
 
 A caixa de diálogo sempre abre no centro da tela. O usuário pode movê-la e redimensioná-la. A janela é *não modal*: o usuário pode continuar a interagir com o documento no aplicativo do Office do host e com a página host no painel de tarefas, caso houver uma.
 
@@ -362,7 +362,7 @@ Para mostrar um vídeo em uma caixa de diálogo:
 
 Para ver um exemplo que usa um vídeo na caixa de diálogo, confira o [padrão de design do video placemat](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/video-placemat) no repositório [padrões de design da experiência do usuário para Suplementos do Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
 
-![Captura de tela de um vídeo mostrando uma caixa de diálogo de suplemento.](../../images/VideoPlacematDialogOpen.PNG)
+![Captura de tela de um vídeo mostrando uma caixa de diálogo de suplemento.](../images/VideoPlacematDialogOpen.PNG)
 
 ## <a name="use-the-dialog-apis-in-an-authentication-flow"></a>Usar as APIs de Caixa de diálogo em um fluxo de autenticação
 

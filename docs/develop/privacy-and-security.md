@@ -35,14 +35,14 @@ No Windows Desktop, o Modo Protegido no Internet Explorer deve ser ativado para 
 
 **Figura 1. Ambiente de execução dos Suplementos do Office nos clientes Windows para área de trabalho e tablet**
 
-![Infraestrutura de cliente avançado](../../images/DK2_AgaveOverview02.png)
+![Infraestrutura de cliente avançado](../images/DK2_AgaveOverview02.png)
 
 Como mostrado na Figura 2, em um computador de mesa Mac OS X, a página da Web do suplemento é hospedada em um processo de host de tempo de execução WebKit em área restrita que ajuda a fornecer um nível semelhante de segurança e proteção de desempenho. 
 
 
 **Figura 2. Ambiente de execução dos Suplementos do Office nos clientes Mac OS X**
 
-![Aplicativos do ambiente de execução do Office no Mac OS X](../../images/DK2_AgaveOverview_Mac_02.png)
+![Aplicativos do ambiente de execução do Office no Mac OS X](../images/DK2_AgaveOverview_Mac_02.png)
 
 O tempo de execução de Suplementos do Office gerencia a comunicação entre processos, a conversão de eventos e chamadas à API JavaScript em itens nativos, bem como o suporte de comunicação remota da interface do usuário para habilitar o suplemento a ser processado dentro do documento, em um painel de tarefas ou de forma adjacente a uma mensagem de e-mail, solicitação de reunião ou compromisso.
 
@@ -54,7 +54,7 @@ Em clientes Web com suporte, como o Excel Online e o Outlook Web App, os Supleme
 
 **Figura 3. Infraestrutura que dá suporte aos Suplementos do Office nos clientes Web do Office**
 
-![Infraestrutura do cliente Web](../../images/DK2_AgaveOverview03.png)
+![Infraestrutura do cliente Web](../images/DK2_AgaveOverview03.png)
 
 
 ## <a name="add-in-integrity-in-the-office-store"></a>Integridade de suplementos na Office Store

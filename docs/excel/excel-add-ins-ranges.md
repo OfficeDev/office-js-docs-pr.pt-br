@@ -91,11 +91,11 @@ Excel.run(function (context) {
 
 **Dados antes da inserção do intervalo**
 
-![Dados no Excel antes da inserção do intervalo](../../images/Excel-range-start.png)
+![Dados no Excel antes da inserção do intervalo](../images/Excel-range-start.png)
 
 **Dados após a inserção do intervalo**
 
-![Dados no Excel após a inserção do intervalo](../../images/Excel-range-after-insert.png)
+![Dados no Excel após a inserção do intervalo](../images/Excel-range-after-insert.png)
 
 ## <a name="clear-a-range-of-cells"></a>Limpar um intervalo de células
 
@@ -114,11 +114,11 @@ Excel.run(function (context) {
 
 **Dados antes da limpeza do intervalo**
 
-![Dados no Excel antes da limpeza do intervalo](../../images/Excel-range-start.png)
+![Dados no Excel antes da limpeza do intervalo](../images/Excel-range-start.png)
 
 **Dados após a limpeza do intervalo**
 
-![Dados no Excel após a limpeza do intervalo](../../images/Excel-range-after-clear.png)
+![Dados no Excel após a limpeza do intervalo](../images/Excel-range-after-clear.png)
 
 ## <a name="delete-a-range-of-cells"></a>Excluir um intervalo de células
 
@@ -137,11 +137,11 @@ Excel.run(function (context) {
 
 **Dados antes da exclusão do intervalo**
 
-![Dados no Excel antes da exclusão do intervalo](../../images/Excel-range-start.png)
+![Dados no Excel antes da exclusão do intervalo](../images/Excel-range-start.png)
 
 **Dados após a exclusão do intervalo**
 
-![Dados no Excel após a exclusão do intervalo](../../images/Excel-range-after-delete.png)
+![Dados no Excel após a exclusão do intervalo](../images/Excel-range-after-delete.png)
 
 ## <a name="set-the-selected-range"></a>Definir o intervalo selecionado
 
@@ -160,7 +160,7 @@ Excel.run(function (context) {
 
 **Intervalo selecionado B2:E6**
 
-![Intervalo selecionado no Excel](../../images/Excel-range-set-selection.png)
+![Intervalo selecionado no Excel](../images/Excel-range-set-selection.png)
 
 ## <a name="get-the-selected-range"></a>Obter o intervalo selecionado
 
@@ -200,11 +200,11 @@ Excel.run(function (context) {
 
 **Dados antes da atualização do valor da célula**
 
-![Dados no Excel antes da atualização do valor da célula](../../images/Excel-range-set-start.png)
+![Dados no Excel antes da atualização do valor da célula](../images/Excel-range-set-start.png)
 
 **Dados após a atualização do valor da célula**
 
-![Dados no Excel após a atualização do valor da célula](../../images/Excel-range-set-cell-value.png)
+![Dados no Excel após a atualização do valor da célula](../images/Excel-range-set-cell-value.png)
 
 ### <a name="set-values-for-a-range-of-cells"></a>Definir valores para um intervalo de células
 
@@ -228,11 +228,11 @@ Excel.run(function (context) {
 
 **Dados antes da atualização dos valores da célula**
 
-![Dados no Excel antes da atualização dos valores da célula](../../images/Excel-range-set-start.png)
+![Dados no Excel antes da atualização dos valores da célula](../images/Excel-range-set-start.png)
 
 **Dados após a atualização dos valores da célula**
 
-![Dados no Excel após a atualização dos valores da célula](../../images/Excel-range-set-cell-values.png)
+![Dados no Excel após a atualização dos valores da célula](../images/Excel-range-set-cell-values.png)
 
 ### <a name="set-formula-for-a-single-cell"></a>Definir fórmula para uma única célula
 
@@ -252,11 +252,11 @@ Excel.run(function (context) {
 
 **Dados antes da definição da fórmula da célula**
 
-![Dados no Excel antes da definição da fórmula da célula](../../images/Excel-range-start-set-formula.png)
+![Dados no Excel antes da definição da fórmula da célula](../images/Excel-range-start-set-formula.png)
 
 **Dados após a definição da fórmula da célula**
 
-![Dados no Excel após a definição da fórmula da célula](../../images/Excel-range-set-formula.png)
+![Dados no Excel após a definição da fórmula da célula](../images/Excel-range-set-formula.png)
 
 ### <a name="set-formulas-for-a-range-of-cells"></a>Definir fórmulas para um intervalo de células
 
@@ -283,11 +283,11 @@ Excel.run(function (context) {
 
 **Dados antes da definição das fórmulas da célula**
 
-![Dados no Excel antes da definição das fórmulas da célula](../../images/Excel-range-start-set-formula.png)
+![Dados no Excel antes da definição das fórmulas da célula](../images/Excel-range-start-set-formula.png)
 
 **Dados após a definição das fórmulas da célula**
 
-![Dados no Excel após a definição das fórmulas da célula](../../images/Excel-range-set-formulas.png)
+![Dados no Excel após a definição das fórmulas da célula](../images/Excel-range-set-formulas.png)
 
 ## <a name="get-values-text-or-formulas"></a>Obter valores, texto ou fórmulas
 
@@ -312,7 +312,7 @@ Excel.run(function (context) {
 
 **Dados no intervalo (valores na coluna E são um resultado de fórmulas)**
 
-![Dados no Excel após a definição das fórmulas da célula](../../images/Excel-range-set-formulas.png)
+![Dados no Excel após a definição das fórmulas da célula](../images/Excel-range-set-formulas.png)
 
 **range.values (conforme registrado em log no console pelo exemplo de código acima)**
 
@@ -370,7 +370,7 @@ Excel.run(function (context) {
 
 **Dados no intervalo (valores na coluna E são um resultado de fórmulas)**
 
-![Dados no Excel após a definição das fórmulas da célula](../../images/Excel-range-set-formulas.png)
+![Dados no Excel após a definição das fórmulas da célula](../images/Excel-range-set-formulas.png)
 
 **range.text (conforme registrado em log no console pelo exemplo de código acima)**
 
@@ -428,7 +428,7 @@ Excel.run(function (context) {
 
 **Dados no intervalo (valores na coluna E são um resultado de fórmulas)**
 
-![Dados no Excel após a definição das fórmulas da célula](../../images/Excel-range-set-formulas.png)
+![Dados no Excel após a definição das fórmulas da célula](../images/Excel-range-set-formulas.png)
 
 **range.formulas (conforme registrado em log no console pelo exemplo de código acima)**
 
@@ -489,11 +489,11 @@ Excel.run(function (context) {
 
 **Dados no intervalo antes da definição da cor da fonte e da cor de preenchimento**
 
-![Dados no Excel antes da definição do formato](../../images/Excel-range-format-before.png)
+![Dados no Excel antes da definição do formato](../images/Excel-range-format-before.png)
 
 **Dados no intervalo após a definição da cor da fonte e da cor de preenchimento**
 
-![Dados no Excel após a definição do formato](../../images/Excel-range-format-font-and-fill.png)
+![Dados no Excel após a definição do formato](../images/Excel-range-format-font-and-fill.png)
 
 ### <a name="set-number-format"></a>Definir formato de número
 
@@ -518,11 +518,11 @@ Excel.run(function (context) {
 
 **Dados no intervalo antes da definição do formato de número**
 
-![Dados no Excel antes da definição do formato](../../images/Excel-range-format-font-and-fill.png)
+![Dados no Excel antes da definição do formato](../images/Excel-range-format-font-and-fill.png)
 
 **Dados no intervalo após a definição do formato de número**
 
-![Dados no Excel após a definição do formato](../../images/Excel-range-format-numbers.png)
+![Dados no Excel após a definição do formato](../images/Excel-range-format-numbers.png)
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

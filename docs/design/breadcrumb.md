@@ -6,7 +6,7 @@ Em Suplementos do Office, use a navegação estrutural. Ela mostra a localizaç�
 
 <br/>
 
-![Uma imagem mostrando a navegação estrutural](../../images/overview_withApp_breadcrumb.png)
+![Uma imagem mostrando a navegação estrutural](../images/overview_withApp_breadcrumb.png)
 
 <br/>
 
@@ -14,7 +14,7 @@ Em Suplementos do Office, use a navegação estrutural. Ela mostra a localizaç�
 
 |**Faça**|**Não faça**|
 |:------------|:--------------|
-|Coloque a navegação estrutural na parte superior de um layout em um suplemento, acima de uma lista de itens ou acima do conteúdo principal de um layout.<br/><br/>![Criar imagem de Navegação estrutural](../../images/breadcrumbDo.png) |Não use a navegação estrutural como a principal maneira de navegar para outras páginas.<br/><br/>![Não criar imagem de Navegação estrutural](../../images/breadcrumbDont.png)|
+|Coloque a navegação estrutural na parte superior de um layout em um suplemento, acima de uma lista de itens ou acima do conteúdo principal de um layout.<br/><br/>![Criar imagem de Navegação estrutural](../images/breadcrumbDo.png) |Não use a navegação estrutural como a principal maneira de navegar para outras páginas.<br/><br/>![Não criar imagem de Navegação estrutural](../images/breadcrumbDont.png)|
 
 <br/>
 

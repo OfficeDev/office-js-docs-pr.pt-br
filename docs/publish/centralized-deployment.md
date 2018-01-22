@@ -46,7 +46,7 @@ Se sua organização atender aos requisitos, conclua as etapas a seguir para pub
     - **Tenho o arquivo de manifesto (.xml) neste dispositivo.** Para esta opção, escolha **Navegar** para localizar o arquivo de manifesto (.xml) que você deseja usar.
     - **Tenho uma URL para o arquivo de manifesto.** Para esta opção, digite a URL do manifesto no campo fornecido.
 
-    ![Caixa de diálogo de novo suplemento no Centro de administração do Office 365](../../images/b3abd42f-63d8-4a5f-8893-d1ae38f4e9b2.png)
+    ![Caixa de diálogo de novo suplemento no Centro de administração do Office 365](../images/b3abd42f-63d8-4a5f-8893-d1ae38f4e9b2.png)
 
 7.  Escolha **Avançar**.
 
@@ -54,22 +54,22 @@ Se sua organização atender aos requisitos, conclua as etapas a seguir para pub
 
     >**Observação:** Com a opção da Office Store, as atualizações e os aprimoramentos do suplemento serão disponibilizadas automaticamente para usuários sem necessidade de intervenção.
 
-    ![Caixa de diálogo Selecionar um suplemento no Centro de administração do Office 365](../../images/2a8de1f4-03b0-4ab6-aa99-4451ee30a64c.png)
+    ![Caixa de diálogo Selecionar um suplemento no Centro de administração do Office 365](../images/2a8de1f4-03b0-4ab6-aa99-4451ee30a64c.png)
 
 9. O suplemento já está habilitado. Na página para o suplemento, o status é **Ativo**, como o mostrado para o suplemento Bloco do Power BI na captura de tela abaixo. Na seção **Quem tem acesso**, escolha **Editar** para atribuir o suplemento para usuários e/ou grupos.
 
-    ![A página do suplemento Bloco do Power BI no Centro de administração do Office 365](../../images/0faa60e8-1e71-4ed1-bbc1-5a2f85ebf981.png)
+    ![A página do suplemento Bloco do Power BI no Centro de administração do Office 365](../images/0faa60e8-1e71-4ed1-bbc1-5a2f85ebf981.png)
 
 10. Na **página Editar quem tem acesso**, escolha **Todos** ou **Usuários/grupos específicos**. Use a caixa Pesquisar para encontrar usuários e/ou grupos para quem você quer implantar o suplemento.
 
-    ![Página Editar quem tem acesso no Centro de administração do Office 365](../../images/46571963-5938-4c7d-b60e-a3ad06758ddf.png)
+    ![Página Editar quem tem acesso no Centro de administração do Office 365](../images/46571963-5938-4c7d-b60e-a3ad06758ddf.png)
 
     >**Observação:** para suplementos de SSO (logon único), os usuários e grupos atribuídos também serão compartilhados com suplementos que compartilham a mesma ID de Aplicativo do Azure. Todas as alterações nas atribuições do usuário também se aplicarão a esses suplementos. Os suplementos relacionados serão mostrados nessa página. Apenas em suplementos de SSO, essa página exibirá a lista de permissões do Microsoft Graph exigida pelo suplemento.
 
 11. Depois de terminar, escolha **Salvar**, revise as configurações do suplemento e escolha **Fechar**. Você verá o suplemento juntamente com outros aplicativos no Office 365.
     >**Observação:** quando um administrador escolhe **Salvar**, o consentimento é fornecido para todos os usuários. 
 
-    ![lista de aplicativos no Centro de administração do Office 365](../../images/71bfd837-20bc-4517-9513-33fc70147669.png)
+    ![lista de aplicativos no Centro de administração do Office 365](../images/71bfd837-20bc-4517-9513-33fc70147669.png)
 
 >**Dica:** Quando você implanta um novo suplemento para usuários e/ou grupos em sua organização, envie um email descrevendo quando e como usar o suplemento e incluindo links para conteúdo relevante da Ajuda, perguntas frequentes ou outros recursos de suporte.
 
@@ -109,7 +109,7 @@ Depois que um suplemento tiver sido publicado por meio de Implantação Centrali
 
 Se o suplemento tiver suporte para comandos, eles serão exibidos na Faixa de Opções do Office a todos os usuários para os quais o suplemento for implantado. No exemplo a seguir, o comando **Pesquisar Citação** aparece na faixa de opções para o suplemento **Citações**. 
 
-![A captura de tela mostra uma seção da faixa de opções do Office com o comando Pesquisar Citação realçado no suplemento Citações](../../images/553b0c0a-65e9-4746-b3b0-8c1b81715a86.png)
+![A captura de tela mostra uma seção da faixa de opções do Office com o comando Pesquisar Citação realçado no suplemento Citações](../images/553b0c0a-65e9-4746-b3b0-8c1b81715a86.png)
 
 Caso contrário, os usuários podem adicioná-lo ao aplicativo do Office da seguinte maneira:
 
@@ -117,4 +117,4 @@ Caso contrário, os usuários podem adicioná-lo ao aplicativo do Office da segu
 2.  Escolha **Administrador Gerenciado**, na janela do suplemento.
 3.  Escolha o suplemento e escolha **Adicionar**. 
 
-    ![A captura de tela mostra a guia Administração Gerenciada da página Suplementos do Office de um aplicativo do Office. O suplemento Citações é exibido na guia.](../../images/fd36ba81-9882-40f0-9fce-74f991aa97d5.png)
+    ![A captura de tela mostra a guia Administração Gerenciada da página Suplementos do Office de um aplicativo do Office. O suplemento Citações é exibido na guia.](../images/fd36ba81-9882-40f0-9fce-74f991aa97d5.png)

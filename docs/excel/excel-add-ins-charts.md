@@ -24,7 +24,7 @@ Excel.run(function (context) {
 
 **Novo gráfico de linhas**
 
-![Novo gráfico de linhas no Excel](../../images/Excel-chart-create-line.png)
+![Novo gráfico de linhas no Excel](../images/Excel-chart-create-line.png)
 
 
 ## <a name="add-a-data-series-to-a-chart"></a>Adicionar uma série de dados a um gráfico
@@ -48,11 +48,11 @@ Excel.run(function (context) {
 
 **Gráfico antes da adição da série de dados de 2016**
 
-![Gráfico no Excel antes da adição da série de dados de 2016](../../images/Excel-chart-data-series-before.png)
+![Gráfico no Excel antes da adição da série de dados de 2016](../images/Excel-chart-data-series-before.png)
 
 **Gráfico após a adição da série de dados de 2016**
 
-![Gráfico no Excel após a adição da série de dados de 2016](../../images/Excel-chart-data-series-after.png)
+![Gráfico no Excel após a adição da série de dados de 2016](../images/Excel-chart-data-series-after.png)
 
 ## <a name="set-chart-title"></a>Definir título do gráfico
 
@@ -71,7 +71,7 @@ Excel.run(function (context) {
 
 **Gráfico após definição do título**
 
-![Gráfico com título no Excel](../../images/Excel-chart-title-set.png)
+![Gráfico com título no Excel](../images/Excel-chart-title-set.png)
 
 ## <a name="set-properties-of-an-axis-in-a-chart"></a>Definir propriedades de um eixo em um gráfico
 
@@ -94,7 +94,7 @@ Excel.run(function (context) {
 
 **Gráfico após definição do título do eixo das categorias**
 
-![Gráfico com título do eixo no Excel](../../images/Excel-chart-axis-title-set.png)
+![Gráfico com título do eixo no Excel](../images/Excel-chart-axis-title-set.png)
 
 ### <a name="set-axis-display-unit"></a>Definir unidade de exibição do eixo
 
@@ -115,7 +115,7 @@ Excel.run(function (context) {
 
 **Gráfico após a definição da unidade de exibição do eixo dos valores**
 
-![Gráfico com unidade de exibição do eixo no Excel](../../images/Excel-chart-axis-display-unit-set.png)
+![Gráfico com unidade de exibição do eixo no Excel](../images/Excel-chart-axis-display-unit-set.png)
 
 ## <a name="set-visibility-of-gridlines-in-a-chart"></a>Definir visibilidade de linhas de grade em um gráfico
 
@@ -134,7 +134,7 @@ Excel.run(function (context) {
 
 **Gráfico com linhas de grade ocultas**
 
-![Gráfico com linhas de grade ocultas no Excel](../../images/Excel-chart-gridlines-removed.png)
+![Gráfico com linhas de grade ocultas no Excel](../images/Excel-chart-gridlines-removed.png)
 
 ## <a name="chart-trendlines"></a>Linhas de tendência do gráfico
 
@@ -158,7 +158,7 @@ Excel.run(function (context) {
 
 **Gráfico com linha de tendência de média móvel**
 
-![Gráfico com linha de tendência de média móvel no Excel](../../images/Excel-chart-create-trendline.png)
+![Gráfico com linha de tendência de média móvel no Excel](../images/Excel-chart-create-trendline.png)
 
 ### <a name="update-a-trendline"></a>Atualizar uma linha de tendência
 
@@ -181,7 +181,7 @@ Excel.run(function (context) {
 
 **Gráfico com linha de tendência linear**
 
-![Gráfico com linha de tendência linear no Excel](../../images/Excel-chart-trendline-linear.png)
+![Gráfico com linha de tendência linear no Excel](../images/Excel-chart-trendline-linear.png)
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

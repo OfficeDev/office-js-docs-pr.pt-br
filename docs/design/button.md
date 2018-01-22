@@ -6,7 +6,7 @@ Use botões no suplemento do Office para permitir que os usuários confirmem alt
 
 <br/>
 
-![Uma imagem mostrando o botão](../../images/overview_withApp_button.png)
+![Uma imagem mostrando o botão](../images/overview_withApp_button.png)
 
 <br/>
 
@@ -24,9 +24,9 @@ Use botões no suplemento do Office para permitir que os usuários confirmem alt
 
 |**Variação**|**Descrição**|**Exemplo**|
 |:------------|:--------------|:----------|
-|**Botão primário**|Botões primários herdam a cor de tema no estado de repouso. Use botões primários para realçar o plano de ação principal.|![Imagem de botão primário](../../images/button_primary.png)|
-|**Botão padrão**|Botões padrão sempre devem realizar operações seguras e nunca causar exclusões.|![Imagem de botão padrão](../../images/button_default.png)|
-|**Botão composto**|Use botões compostos para causar ações que realizem uma tarefa ou para promover uma tarefa de transição.|![Imagem de botão composto](../../images/button_compound.png)|
+|**Botão primário**|Botões primários herdam a cor de tema no estado de repouso. Use botões primários para realçar o plano de ação principal.|![Imagem de botão primário](../images/button_primary.png)|
+|**Botão padrão**|Botões padrão sempre devem realizar operações seguras e nunca causar exclusões.|![Imagem de botão padrão](../images/button_default.png)|
+|**Botão composto**|Use botões compostos para causar ações que realizem uma tarefa ou para promover uma tarefa de transição.|![Imagem de botão composto](../images/button_compound.png)|
 
 ## <a name="implementation"></a>Implementação
 

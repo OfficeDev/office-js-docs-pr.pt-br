@@ -6,7 +6,7 @@ Um menu suspenso é uma lista de opções que é mostrada clicando em um botão 
 
 <br/>
 
-![Uma imagem mostrando o menu suspenso](../../images/overview_withApp_dropdown.png)
+![Uma imagem mostrando o menu suspenso](../images/overview_withApp_dropdown.png)
 
 <br/>
 
@@ -22,9 +22,9 @@ Um menu suspenso é uma lista de opções que é mostrada clicando em um botão 
 
 |**Variação**|**Descrição**|**Exemplo**|
 |:------------|:--------------|:----------|
-|**Menu suspenso básico e não controlado **|Use quando houver muitas opções disponíveis para escolha.|![Imagem no menu suspenso básico e não controlado](../../images/dropdownUncontrolled.png)<br/>|
-|**Menu suspenso não controlado e desabilitado com o defaultSelectedKey**|Estado desabilitado do menu suspenso.|![Menu suspenso não controlado e desabilitado com a imagem defaultSelectedKey](../../images/dropdownDisabled.png)<br/>|
-|**Menu suspenso controlado**|Use quando o item selecionado padrão for influenciado por outra localização em sua interface de usuário, e o item selecionado no menu suspenso precisar ser mantido.|![Imagem do menu suspenso controlado](../../images/dropdownControlled.png)<br/>|
+|**Menu suspenso básico e não controlado **|Use quando houver muitas opções disponíveis para escolha.|![Imagem no menu suspenso básico e não controlado](../images/dropdownUncontrolled.png)<br/>|
+|**Menu suspenso não controlado e desabilitado com o defaultSelectedKey**|Estado desabilitado do menu suspenso.|![Menu suspenso não controlado e desabilitado com a imagem defaultSelectedKey](../images/dropdownDisabled.png)<br/>|
+|**Menu suspenso controlado**|Use quando o item selecionado padrão for influenciado por outra localização em sua interface de usuário, e o item selecionado no menu suspenso precisar ser mantido.|![Imagem do menu suspenso controlado](../images/dropdownControlled.png)<br/>|
 
 ## <a name="implementation"></a>Implementação
 

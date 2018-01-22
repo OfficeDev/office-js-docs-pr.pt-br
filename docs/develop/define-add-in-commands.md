@@ -29,7 +29,7 @@ O elemento **VersionOverrides** inclui os seguintes elementos filho:
 
 O diagrama a seguir mostra a hierarquia de elementos usada para definir comandos do suplemento. 
 
-![Hierarquia dos elementos dos comandos de suplemento no manifesto](../../images/080da303-51c4-4882-b74a-7ba11517c0ad.png)
+![Hierarquia dos elementos dos comandos de suplemento no manifesto](../images/080da303-51c4-4882-b74a-7ba11517c0ad.png)
 
 ## <a name="sample-manifests"></a>Exemplos de manifestos
 

@@ -9,11 +9,11 @@ Para obter uma visão geral do recurso, confira o vídeo [Comandos de Suplemento
 
 **Suplemento com comandos em execução na Área de Trabalho do Excel**
 
-![Captura de tela de um comando de suplemento no Excel](../../images/addincommands1.png)
+![Captura de tela de um comando de suplemento no Excel](../images/addincommands1.png)
 
 **Suplemento com comandos em execução no Excel Online**
 
-![Captura de tela de um comando de suplemento no Excel Online](../../images/addincommands2.png)
+![Captura de tela de um comando de suplemento no Excel Online](../images/addincommands2.png)
 
 ## <a name="command-capabilities"></a>Recursos de comandos
 Os seguintes recursos de comando são compatíveis no momento.
@@ -62,7 +62,7 @@ Aplique as seguintes práticas recomendadas ao desenvolver comandos de suplement
 - Para todos os ícones, siga as [diretrizes de design do ícone](../design/design-icons.md).
 - Forneça uma versão do seu suplemento que também funcione em hosts que não tenham suporte para comandos. Um manifesto de suplemento único poderá funcionar tanto em hosts cientes do comando (com os comandos) quanto em hosts não cientes do comando (como um painel de tarefas).
 
-    ![Uma captura de tela que mostra um suplemento de painel de tarefas no Office 2013 e o mesmo suplemento usando comandos de suplementos no Office 2016](../../images/4f90a3cc-8cc4-4879-9a03-0bb2b6079026.png)
+    ![Uma captura de tela que mostra um suplemento de painel de tarefas no Office 2013 e o mesmo suplemento usando comandos de suplementos no Office 2016](../images/4f90a3cc-8cc4-4879-9a03-0bb2b6079026.png)
 
 
 ## <a name="next-steps-to-get-started"></a>Próximas etapas para começar

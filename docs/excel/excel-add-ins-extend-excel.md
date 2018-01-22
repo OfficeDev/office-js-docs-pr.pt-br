@@ -8,7 +8,7 @@ Os comandos de suplemento são elementos da interface de usuário que estendem a
 
 **Comandos de suplemento**
 
-![Comandos de suplemento no Excel](../../images/Excel_add-in_commands_Script-Lab.png)
+![Comandos de suplemento no Excel](../images/Excel_add-in_commands_Script-Lab.png)
 
 Para saber mais sobre recursos de comando, plataformas suportadas e práticas recomendadas para o desenvolvimento de comandos de suplemento, confira [Comandos de suplemento para Excel, Word e PowerPoint](../design/add-in-commands.md).
 
@@ -18,7 +18,7 @@ Os painéis de tarefas são superfícies de interface que normalmente são exibi
 
 **Painel de tarefas**
 
-![Suplemento do painel de tarefas no Excel](../../images/Excel_add-in_task_pane_Insights.png)
+![Suplemento do painel de tarefas no Excel](../images/Excel_add-in_task_pane_Insights.png)
 
 Para saber mais sobre os painéis de tarefas, confira [Painéis de tarefas nos Suplementos do Office](../design/task-pane-add-ins.md). Para ver uma amostra que implementa um painel de tarefas no Excel, confira [Suplemento do Excel JS WoodGrove Expense Trends](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends).
 
@@ -28,7 +28,7 @@ As caixas de diálogo são superfícies que flutuam acima da janela do aplicativ
 
 **Caixa de diálogo**
 
-![Caixa de diálogo do suplemento no Excel](../../images/Excel_add-in_dialog_choose-number.png)
+![Caixa de diálogo do suplemento no Excel](../images/Excel_add-in_dialog_choose-number.png)
 
 Para saber mais sobre caixas de diálogo e a API da Caixa de Diálogo, confira [Caixas de diálogo nos Suplementos do Office](../design/dialog-boxes.md) e [Usar a API da Caixa de Diálogo em Suplementos do Office](../develop/dialog-api-in-office-add-ins.md).
 
@@ -38,7 +38,7 @@ Os suplementos de conteúdo são superfícies que podem ser inseridas diretament
 
 **Suplemento de conteúdo**
 
-![Suplemento de conteúdo no Excel](../../images/Excel_add-in_content_map.png)
+![Suplemento de conteúdo no Excel](../images/Excel_add-in_content_map.png)
 
 Para saber mais sobre suplementos conteúdos, confira [Suplementos do Office de conteúdo](../design/content-add-ins.md). Para ver um exemplo que implementa um suplemento de conteúdo no Excel, confira [Suplemento de conteúdo do Excel Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance) no GitHub.
 

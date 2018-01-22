@@ -5,7 +5,7 @@ As alternâncias representam uma opção física para ativar ou desativar recurs
 #### <a name="example-toggle-in-a-task-pane"></a>Exemplo: Alternância em um painel de tarefas
 
 
-![Uma imagem mostrando a alternância](../../images/overview_withApp_toggle.png)
+![Uma imagem mostrando a alternância](../images/overview_withApp_toggle.png)
 
 <br/>
 
@@ -13,17 +13,17 @@ As alternâncias representam uma opção física para ativar ou desativar recurs
 
 |**Faça**|**Não faça**|
 |:------------|:--------------|
-|Use alternâncias para configurações binárias quando as alterações são imediatamente aplicadas.<br/><br/>![Exemplo do que fazer com alternâncias](../../images/toggleDo.png)<br/>|Não use alternâncias se os usuários tiverem que executar uma etapa adicional antes que as alterações entrem em vigor.<br/><br/>![Exemplo do que não fazer com alternâncias](../../images/toggleDont.png)<br/>|
+|Use alternâncias para configurações binárias quando as alterações são imediatamente aplicadas.<br/><br/>![Exemplo do que fazer com alternâncias](../images/toggleDo.png)<br/>|Não use alternâncias se os usuários tiverem que executar uma etapa adicional antes que as alterações entrem em vigor.<br/><br/>![Exemplo do que não fazer com alternâncias](../images/toggleDont.png)<br/>|
 |Substitua os rótulos **Ativar** e **Desativar** somente se houver rótulos mais específicos a serem usados para uma configuração. Use rótulos curtos (três a quatro caracteres) que representem opostos binários.| |
 
 ## <a name="variants"></a>Variantes
 
 |**Variação**|**Descrição**|**Exemplo**|
 |:------------|:--------------|:----------|
-|**Ativado e marcado**|Use quando o estado de alternância estiver ativo.|![Imagem de habilitado e marcado](../../images/toggleEnabledOn.png)<br/>|
-|**Habilitado e desmarcado**|Use quando o estado de alternância estiver inativo.|![Imagem de ativado e desmarcado](../../images/toggleEnabledOff.png)<br/>|
-|**Desabilitado e marcado**|Use quando o estado ativo não puder ser alterado.|![Imagem de desabilitado e marcado](../../images/toggleDisabledOn.png)<br/>|
-|**Desabilitado e desmarcado**|Use quando o estado inativo não puder ser alterado.|![Imagem de desabilitado e desmarcado](../../images/toggleDisabledOff.png)<br/>|
+|**Ativado e marcado**|Use quando o estado de alternância estiver ativo.|![Imagem de habilitado e marcado](../images/toggleEnabledOn.png)<br/>|
+|**Habilitado e desmarcado**|Use quando o estado de alternância estiver inativo.|![Imagem de ativado e desmarcado](../images/toggleEnabledOff.png)<br/>|
+|**Desabilitado e marcado**|Use quando o estado ativo não puder ser alterado.|![Imagem de desabilitado e marcado](../images/toggleDisabledOn.png)<br/>|
+|**Desabilitado e desmarcado**|Use quando o estado inativo não puder ser alterado.|![Imagem de desabilitado e desmarcado](../images/toggleDisabledOff.png)<br/>|
 
 ## <a name="implementation"></a>Implementação
 

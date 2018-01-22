@@ -4,7 +4,7 @@ Caixas de diálogo são superfícies que flutuam acima da janela do aplicativo d
 
 **Exemplo: Caixa de diálogo**
 
-![Uma imagem de exemplo que exibe um layout típico de uma caixa de diálogo](../../images/overview_withApp_dialog.png)
+![Uma imagem de exemplo que exibe um layout típico de uma caixa de diálogo](../images/overview_withApp_dialog.png)
 
 ### <a name="best-practices"></a>Práticas recomendadas
 

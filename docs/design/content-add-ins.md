@@ -4,7 +4,7 @@ Suplementos de conteúdo são superfícies que podem ser incorporadas diretament
 
 **Exemplo: Suplemento de conteúdo**
 
-![Imagem de exemplo exibindo um layout típico de suplementos de conteúdo.](../../images/overview_withApp_content.png)
+![Imagem de exemplo exibindo um layout típico de suplementos de conteúdo.](../images/overview_withApp_content.png)
 
 ## <a name="best-practices"></a>Práticas recomendadas
 
@@ -23,13 +23,13 @@ Menus de personalidade podem obstruir elementos de navegação e comando localiz
 
 No Windows, o menu de personalidade mede 12 x 32 pixels, conforme mostrado.
 
-![Imagem mostrando o menu do personalidade na área de trabalho do Windows](../../images/personalityMenu_Win.png)
+![Imagem mostrando o menu do personalidade na área de trabalho do Windows](../images/personalityMenu_Win.png)
 
 **Menu de personalidade no Mac**
 
 No Mac, o menu de personalidade mede 26 x 26 pixels, mas flutua 8 pixels a partir da direita e 6 pixels a partir do topo, o que aumenta o espaço ocupado para 34 x 32 pixels, como mostrado.
 
-![Imagem mostrando o menu de personalidade na área de trabalho do Mac](../../images/personalityMenu_Mac.png)
+![Imagem mostrando o menu de personalidade na área de trabalho do Mac](../images/personalityMenu_Mac.png)
 
 ## <a name="implementation"></a>Implementação
 

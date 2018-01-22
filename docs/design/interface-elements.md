@@ -4,7 +4,7 @@ Você pode usar vários tipos de elementos para estender a interface do usuário
 
 A imagem a seguir mostra os tipos de elementos de interface do usuário do Office que você pode criar.
 
-![Uma imagem que mostra comandos de suplemento na faixa de opções, um painel de tarefas e uma caixa de diálogo em um documento do Office](../../images/overview_withApp_interfaceElements.png)
+![Uma imagem que mostra comandos de suplemento na faixa de opções, um painel de tarefas e uma caixa de diálogo em um documento do Office](../images/overview_withApp_interfaceElements.png)
 
 ## <a name="add-in-commands"></a>Comandos de suplemento
 

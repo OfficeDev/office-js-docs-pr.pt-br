@@ -74,19 +74,19 @@ O Office Developer Tools para Visual Studio inclui um modelo de suplemento de pa
     
     **Criando um Suplemento do Office**
 
-    ![Criando um aplicativo para o Office 2013](../../images/pj15_HelloProjectOData_CreatingApp.png)
+    ![Criando um aplicativo para o Office 2013](../images/pj15_HelloProjectOData_CreatingApp.png)
 
 5. Na caixa de diálogo **Escolha o tipo de suplemento**, selecione **Painel de tarefas** e escolha **Avançar** (veja a captura de tela a seguir).
     
     **Escolhendo o tipo de suplemento para criar**
 
-    ![Escolhendo o tipo de arquivo a ser criado](../../images/pj15_HelloProjectOData_ChooseProject.png)
+    ![Escolhendo o tipo de arquivo a ser criado](../images/pj15_HelloProjectOData_ChooseProject.png)
 
 6. Na caixa de diálogo **Escolha os aplicativos host**, desmarque todas as caixas de seleção, exceto o **Project** (veja a captura de tela a seguir) e escolha **Concluir**.
     
     **Escolhendo o aplicativo host**
 
-    ![Escolher o Project como o único aplicativo host](../../images/b2144f2c-51f6-4e61-bc0d-972125c57031.png)
+    ![Escolher o Project como o único aplicativo host](../images/b2144f2c-51f6-4e61-bc0d-972125c57031.png)
     
     O Visual Studio cria o projeto **HelloProjectOdata** e o projeto **HelloProjectODataWeb**.
     
@@ -94,7 +94,7 @@ A pasta **AddIn** (veja a captura de tela a seguir) contém o arquivo App.css pa
 
 **Exibindo arquivos de projeto Web padrão no Gerenciador de Soluções**
 
-![Exibindo os arquivos do projeto Web no Gerenciador de Soluções](../../images/pj15_HelloProjectOData_InitialSolutionExplorer.png)
+![Exibindo os arquivos do projeto Web no Gerenciador de Soluções](../images/pj15_HelloProjectOData_InitialSolutionExplorer.png)
 
 O manifesto para o projeto **HelloProjectOData** é o arquivo HelloProjectOData.xml. Opcionalmente, você pode modificar o manifesto para adicionar uma descrição do suplemento, uma referência a um ícone, informações de linguagem adicionais e outras configurações. O Procedimento 3 simplesmente modifica o nome de exibição e a descrição do suplemento e adiciona um ícone.
 
@@ -118,7 +118,7 @@ As etapas a seguir mostram como adicionar um arquivo de ícone à solução do V
     
 2. Para ser exibido na lista suspensa **Suplementos do Office**, o ícone deve ter 32 x 32 pixels. Por exemplo, instale o SDK do Project 2013, escolha a pasta **Imagens** e adicione o seguinte arquivo do SDK: `\Samples\Apps\HelloProjectOData\HelloProjectODataWeb\Images\NewIcon.png`
     
-    Alternately, use your own 32 x 32 icon; or, copy the following image to a file named NewIcon.png, and then add that file to the  `HelloProjectODataWeb\Images` folder: ![Ícone do aplicativo HelloProjectOData](../../images/pj15_HelloProjectData_NewIcon.jpg)
+    Alternately, use your own 32 x 32 icon; or, copy the following image to a file named NewIcon.png, and then add that file to the  `HelloProjectODataWeb\Images` folder: ![Ícone do aplicativo HelloProjectOData](../images/pj15_HelloProjectData_NewIcon.jpg)
 
 3. No manifesto HelloProjectOData.xml, adicione um elemento **IconUrl** abaixo do elemento **Description**, em que o valor da URL do ícone é o caminho relativo para o arquivo do ícone de 32 x 32 pixels. Por exemplo, adicione a seguinte linha: **<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />**. O arquivo de manifesto HelloProjectOData.xml agora contém o seguinte (seu valor **Id** será diferente):
 
@@ -578,7 +578,7 @@ Os testes básicos devem incluir o seguinte:
     
     **Figura 4. Iniciando o suplemento HelloProjectOData**
 
-    ![Testing the HelloProjectOData app](../../images/pj15_HelloProjectData_TestTheApp.png)
+    ![Testing the HelloProjectOData app](../images/pj15_HelloProjectData_TestTheApp.png)
 
 4. No painel de tarefas **Hello ProjectData**, selecione **Obter Ponto de Extremidade de ProjectData**. A linha **projectDataEndPoint** deve mostrar a URL do serviço **ProjectData** e o botão **Comparar Todos os Projetos** deve estar habilitado (confira a Figura 5).
     
@@ -586,7 +586,7 @@ Os testes básicos devem incluir o seguinte:
     
     **Figura 5. Exibindo resultados da consulta REST**
 
-    ![Viewing results of the REST query](../../images/pj15_HelloProjectData_RESTresults.gif)
+    ![Viewing results of the REST query](../images/pj15_HelloProjectData_RESTresults.gif)
 
 6. Examine a saída na caixa de texto. Ela deve mostrar o caminho do documento, a consulta REST, as informações de status e os resultados JSON das chamadas a **ajax** e **parseODataResult**. A saída ajuda a entender, a criar e a depurar o código no método **parseODataResult**, como `projCost += Number(res.d.results[i].ProjectCost);`.
     
@@ -644,7 +644,7 @@ Os testes básicos devem incluir o seguinte:
     
     **Figura 6. Usando o suplemento sem uma conexão do Project Web App**
 
-    ![Using the app without a Project Web App connection](../../images/pj15_HelloProjectData_NoConnection.gif)
+    ![Using the app without a Project Web App connection](../images/pj15_HelloProjectData_NoConnection.gif)
 
 8. Pare a depuração e pressione **F5** novamente. Faça logon no Project Web App e crie um projeto com dados de custo e de trabalho. Você pode salvar o projeto, mas não o publique.
     
@@ -653,7 +653,7 @@ Os testes básicos devem incluir o seguinte:
 
     **Figura 7. Comparando um projeto não publicado com outros projetos**
 
-    ![Comparing an unpublished project with others](../../images/pj15_HelloProjectData_NotPublished.gif)
+    ![Comparing an unpublished project with others](../images/pj15_HelloProjectData_NotPublished.gif)
 
 Mesmo que seu suplemento tenha funcionado corretamente nos testes anteriores, há outros testes que devem ser executados. Por exemplo:
 

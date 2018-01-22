@@ -4,7 +4,7 @@ O componente ChoiceGroup, também conhecido como um botão de opção, apresenta
   
 #### <a name="example-choicegroup-in-a-task-pane"></a>Exemplo: ChoiceGroup em um painel de tarefas
 
- ![Imagem mostrando um ChoiceGroup](../../images/overview_withApp_choicegroup.png)
+ ![Imagem mostrando um ChoiceGroup](../images/overview_withApp_choicegroup.png)
 
 <br/>
 
@@ -12,7 +12,7 @@ O componente ChoiceGroup, também conhecido como um botão de opção, apresenta
 
 |**Faça**|**Não faça**|
 |:------------|:--------------|
-|Mantenha as opções de ChoiceGroup no mesmo nível.<br/><br/>![Exemplo do que fazer com ChoiceGroup](../../images/choiceDo.png)<br/>|Não utilize ChoiceGroups ou caixas de seleção aninhados.<br/><br/>![Exemplo do que não fazer com ChoiceGroup](../../images/choiceDont.png)<br/>|
+|Mantenha as opções de ChoiceGroup no mesmo nível.<br/><br/>![Exemplo do que fazer com ChoiceGroup](../images/choiceDo.png)<br/>|Não utilize ChoiceGroups ou caixas de seleção aninhados.<br/><br/>![Exemplo do que não fazer com ChoiceGroup](../images/choiceDont.png)<br/>|
 |Use ChoiceGroups com duas a sete opções, verificando se há espaço suficiente na tela para mostrar todas as opções. Caso contrário, use uma caixa de seleção ou lista suspensa.|Não use quando as opções forem números com um passo fixo, por exemplo 10, 20, 30 e assim por diante. Em vez disso, use um componente de controle deslizante.|
 |Se os usuários não puderem escolher nenhuma das opções, considere incluir uma opção como **Nenhum** ou **Não se aplica**.|Não use dois botões de ChoiceGroup para uma única opção binária.|
 |Se possível, alinhe os botões de ChoiceGroup verticalmente em vez de horizontalmente. O alinhamento horizontal é mais difícil de ler e localizar.||
@@ -22,8 +22,8 @@ O componente ChoiceGroup, também conhecido como um botão de opção, apresenta
 
 |**Variação**|**Descrição**|**Exemplo**|
 |:------------|:--------------|:----------|
-|**ChoiceGroups**|Use quando não forem necessárias imagens para fazer uma escolha.|![Imagem da variante de ChoiceGroup](../../images/radio.png)<br/>|
-|**ChoiceGroups usando imagens**|Use quando forem necessárias imagens para fazer uma escolha.|![Variante de ChoiceGroup com imagem](../../images/radioImage.png)<br/>|
+|**ChoiceGroups**|Use quando não forem necessárias imagens para fazer uma escolha.|![Imagem da variante de ChoiceGroup](../images/radio.png)<br/>|
+|**ChoiceGroups usando imagens**|Use quando forem necessárias imagens para fazer uma escolha.|![Variante de ChoiceGroup com imagem](../images/radioImage.png)<br/>|
 
 ## <a name="implementation"></a>Implementação
 

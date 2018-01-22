@@ -2,7 +2,7 @@
 
 Na API JavaScript de suplementos do OneNote, o conteúdo da página é representado pelo seguinte modelo de objeto.
 
-  ![Diagrama do modelo de objeto da página do OneNote](../../images/OneNoteOM-page.png)
+  ![Diagrama do modelo de objeto da página do OneNote](../images/OneNoteOM-page.png)
 
 - Um objeto Page contém um conjunto de objetos PageContent.
 - Um objeto PageContent contém um tipo de conteúdo de Estrutura de Tópicos, Imagem ou Outro.

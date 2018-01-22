@@ -25,7 +25,7 @@ Se ainda não tiver feito anteriormente, instale o [Yeoman](https://github.com/y
     ```bash
     yo office
     ```
-    ![Gerador do Yeoman](../../images/yo-office-jquery.png)
+    ![Gerador do Yeoman](../images/yo-office-jquery.png)
 
 
 4. No editor de código, abra **index.html** na raiz do projeto. Esse arquivo especifica o HTML que será renderizado no painel de tarefas do suplemento. 
@@ -147,13 +147,13 @@ Os Suplementos Web do Office devem usar HTTPS, não HTTP, mesmo quando você est
 
 3. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Botão do Suplemento do Excel](../../images/excel_quickstart_addin_2a.png)
+    ![Botão do Suplemento do Excel](../images/excel_quickstart_addin_2a.png)
 
 4. Selecione um intervalo de células na planilha.
 
 5. No painel de tarefas, escolha o botão **Colorir-me** para definir a cor do intervalo selecionado como verde.
 
-    ![Suplemento do Excel](../../images/excel_quickstart_addin_2b.png)
+    ![Suplemento do Excel](../images/excel_quickstart_addin_2b.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 

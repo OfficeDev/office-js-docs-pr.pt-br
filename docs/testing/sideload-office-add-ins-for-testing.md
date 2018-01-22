@@ -22,11 +22,11 @@ O vídeo a seguir fornece orientações para o processo de sideload do seu suple
     
 4. Na caixa de diálogo **Suplementos do Office**, selecione a guia **MINHA ORGANIZAÇÃO** e **Carregar Meu Suplemento**.
     
-    ![Uma caixa de diálogo intitulada Suplemento do Office com um link perto do canto superior esquerdo que diz "Carregar Meu Suplemento".](../../images/0e49f780-019a-4d97-9310-0eaddfa0c4dc.png)
+    ![Uma caixa de diálogo intitulada Suplemento do Office com um link perto do canto superior esquerdo que diz "Carregar Meu Suplemento".](../images/0e49f780-019a-4d97-9310-0eaddfa0c4dc.png)
 
 5.  **Navegue** até o arquivo de manifesto do suplemento e selecione **Carregar**.
     
-    ![A caixa de diálogo Carregar suplemento com botões para pesquisar, carregar e cancelar.](../../images/039aef16-b12f-4d01-ad46-f13e01dd3162.png)
+    ![A caixa de diálogo Carregar suplemento com botões para pesquisar, carregar e cancelar.](../images/039aef16-b12f-4d01-ad46-f13e01dd3162.png)
 
 6. Verifique se o suplemento está instalado. Por exemplo, se for um comando do suplemento, ele deve aparecer na faixa de opções ou no menu de contexto. Se for um suplemento de painel de tarefas, o painel deve ser exibido.
     
@@ -42,11 +42,11 @@ O vídeo a seguir fornece orientações para o processo de sideload do seu suple
     
 4. Na caixa de diálogo **Suplementos do Office**, selecione a guia **MEUS SUPLEMENTOS**, escolha **Gerenciar Meus Suplementos** e **Carregar Meu Suplemento**.
     
-    ![A caixa de diálogo Suplementos do Office com um menu suspenso no canto superior direito, que diz "Gerenciar meus suplementos" e um menu suspenso abaixo dele com a opção "Carregar Meu Suplemento"](../../images/d630d9d1-7dd5-45e3-860d-0ab069882548.png)
+    ![A caixa de diálogo Suplementos do Office com um menu suspenso no canto superior direito, que diz "Gerenciar meus suplementos" e um menu suspenso abaixo dele com a opção "Carregar Meu Suplemento"](../images/d630d9d1-7dd5-45e3-860d-0ab069882548.png)
 
 5.  **Navegue** até o arquivo de manifesto do suplemento e selecione **Carregar**.
     
-    ![A caixa de diálogo Carregar suplemento com botões para pesquisar, carregar e cancelar.](../../images/039aef16-b12f-4d01-ad46-f13e01dd3162.png)
+    ![A caixa de diálogo Carregar suplemento com botões para pesquisar, carregar e cancelar.](../images/039aef16-b12f-4d01-ad46-f13e01dd3162.png)
 
 6. Verifique se o suplemento está instalado. Por exemplo, se for um comando do suplemento, ele deve aparecer na faixa de opções ou no menu de contexto. Se for um suplemento de painel de tarefas, o painel deve ser exibido.
 

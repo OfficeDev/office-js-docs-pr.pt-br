@@ -724,19 +724,19 @@ O Procedimento 3 mostra como instalar e usar os recursos do suplemento Teste de 
     
     **Figura 1. Adicionar um compartilhamento de arquivos de rede para manifestos de suplementos**
 
-    ![Adding a network file share for app manifests](../../images/pj15_CreateSimpleAgave_ManageCatalogs.png)
+    ![Adding a network file share for app manifests](../images/pj15_CreateSimpleAgave_ManageCatalogs.png)
 
 6. Depois de adicionar novos suplementos ou alterar o código-fonte, reinicie o Project. Na faixa de opções **PROJETO**, escolha o menu suspenso **Suplementos do Office** e escolha **Ver Tudo**. Na caixa de diálogo **Inserir Suplemento**, escolha **PASTA COMPARTILHADA** (confira a Figura 2), selecione **Teste de modelo de objeto do Project** e escolha **Inserir**. O suplemento Teste de modelo de objeto do Project inicia em um painel de tarefas.
     
     **Figura 2. Iniciando o suplemento do Teste de Modelo de Objeto do Project contido em um compartilhamento de arquivo**
 
-    ![Inserting an app](../../images/pj15_CreateSimpleAgave_StartAgaveApp.png)
+    ![Inserting an app](../images/pj15_CreateSimpleAgave_StartAgaveApp.png)
 
 7. No Project, crie e salve um projeto simples que tenha pelo menos duas tarefas. Por exemplo, crie tarefas chamadas T1 e T2 e um marco chamado M1, e defina as durações das tarefas e os predecessores de maneira semelhante à Figura 3. Escolha a guia **PROJETO** na faixa de opções, selecione a linha inteira para a tarefa T2 e escolha o botão **getSelectedDataAsync** no painel de tarefas. A Figura 3 mostra os dados que estão selecionados na caixa de texto do suplemento **Teste de modelo de objeto do Project**.
     
     **Figura 3. Usando o suplemento do Teste de Modelo de Objeto do Project**
 
-    ![Using the Project OM Test app](../../images/pj15_CreateSimpleAgave_ProjectOMTest.gif)
+    ![Using the Project OM Test app](../images/pj15_CreateSimpleAgave_ProjectOMTest.gif)
 
 8. Selecione a célula na coluna **Duração** da primeira tarefa e escolha o botão **getSelectedDataAsync** no suplemento **Teste de modelo de objeto do Project**. A função **getSelectedDataAsync** define o valor da caixa de texto para mostrar `2 days`. 
     
@@ -1122,7 +1122,7 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 
 **Figura 4. Funções no arquivo SurfaceErrors.js podem mostrar uma notificação "toast"**
 
-![Using the SurfaceError routines to show an error](../../images/pj15_CreateSimpleAgave_SurfaceError.gif)
+![Using the SurfaceError routines to show an error](../images/pj15_CreateSimpleAgave_SurfaceError.gif)
 
 
 ## <a name="additional-resources"></a>Recursos adicionais

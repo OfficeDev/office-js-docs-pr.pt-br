@@ -11,7 +11,7 @@ Em um suplemento de painel de tarefas de dicionário típico, um usuário seleci
 **Figura 1. Suplemento de dicionário exibindo definições para a palavra selecionada**
 
 
-![Um aplicativo de dicionário exibindo uma definição](../../images/DictionaryAgave01.jpg)
+![Um aplicativo de dicionário exibindo uma definição](../images/DictionaryAgave01.jpg)
 
 Você determina se clicar no link **Ver Mais** na interface do usuário HTML do suplemento de dicionário exibe mais informações no painel de tarefas ou abre uma janela separada do navegador para a página da Web completa para a palavra ou frase selecionada. A Figura 2 mostra o comando do menu de contexto **Definir** que habilita os usuários a iniciar rapidamente os dicionários instalados. As Figuras 3 a 5 mostram os locais na interface do usuário do Office em que os serviços de dicionário XML são usados para fornecer definições no Word 2013.
 
@@ -19,22 +19,22 @@ Você determina se clicar no link **Ver Mais** na interface do usuário HTML do 
 
 
 
-![Menu de contexto de Definir](../../images/DictionaryAgave02.jpg)
+![Menu de contexto de Definir](../images/DictionaryAgave02.jpg)
 
 **Figura 3. Definições nos painéis Ortografia e Gramática**
 
 
-![Definições nos painéis Ortografia e Gramática](../../images/DictionaryAgave03.jpg)
+![Definições nos painéis Ortografia e Gramática](../images/DictionaryAgave03.jpg)
 
 **Figura 4. Definições no painel Dicionário de Sinônimos**
 
 
-![Definições no painel Dicionário de Sinônimos](../../images/DictionaryAgave04.jpg)
+![Definições no painel Dicionário de Sinônimos](../images/DictionaryAgave04.jpg)
 
 **Figura 5. Definições no Modo de Leitura**
 
 
-![Definitions in Reading Mode](../../images/DictionaryAgave05.jpg)
+![Definitions in Reading Mode](../images/DictionaryAgave05.jpg)
 
 Para criar um suplemento de painel de tarefas que forneça uma pesquisa de dicionário, crie dois componentes principais: 
 
@@ -533,7 +533,7 @@ a:hover, a:active
 
 **Figura 6. Demonstração da interface de usuário do dicionário**
 
-![Demonstração da interface de usuário do dicionário](../../images/DictionaryAgave06.jpg)
+![Demonstração da interface de usuário do dicionário](../images/DictionaryAgave06.jpg)
 
 
 ### <a name="writing-the-javascript-implementation"></a>Escrever a implementação de JavaScript

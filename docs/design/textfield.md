@@ -4,7 +4,7 @@ Um campo de texto permite aos usuários digitar texto. Geralmente, são usados p
   
 #### <a name="example-textfield-in-a-task-pane"></a>Exemplo: TextField em um painel de tarefas
 
-![Imagem mostrando o TextField](../../images/overview_withApp_textField.png)
+![Imagem mostrando o TextField](../images/overview_withApp_textField.png)
 
 <br/>
 
@@ -23,11 +23,11 @@ Um campo de texto permite aos usuários digitar texto. Geralmente, são usados p
 
 |**Variação**|**Descrição**|**Exemplo**|
 |:------------|:--------------|:----------|
-|**TextField padrão**|Use como o campo de texto padrão.|![Imagem de TextField padrão](../../images/textfieldDefault.png)<br/>|
-|**TextField desativado**|Use quando o campo de texto estiver desativado.|![Imagem de TextField desativado](../../images/textfieldDisabled.png)<br/>|
-|**TextField obrigatório**|Use quando a entrada do campo de texto for obrigatória.|![Imagem de TextField obrigatório](../../images/textfieldRequired.png)<br/>|
-|**TextField com um espaço reservado**|Use quando um texto de espaço reservado for necessário.|![Imagem de TextField com um espaço reservado](../../images/textfieldPlaceholder.png)<br/>|
-|**TextField com várias linhas**|Use quando muitas linhas de texto forem necessárias.|![Imagem de TextField com um espaço reservado](../../images/textfieldMulti.png)<br/>|
+|**TextField padrão**|Use como o campo de texto padrão.|![Imagem de TextField padrão](../images/textfieldDefault.png)<br/>|
+|**TextField desativado**|Use quando o campo de texto estiver desativado.|![Imagem de TextField desativado](../images/textfieldDisabled.png)<br/>|
+|**TextField obrigatório**|Use quando a entrada do campo de texto for obrigatória.|![Imagem de TextField obrigatório](../images/textfieldRequired.png)<br/>|
+|**TextField com um espaço reservado**|Use quando um texto de espaço reservado for necessário.|![Imagem de TextField com um espaço reservado](../images/textfieldPlaceholder.png)<br/>|
+|**TextField com várias linhas**|Use quando muitas linhas de texto forem necessárias.|![Imagem de TextField com um espaço reservado](../images/textfieldMulti.png)<br/>|
 
 ## <a name="implementation"></a>Implementação
 

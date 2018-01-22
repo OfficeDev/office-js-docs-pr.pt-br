@@ -15,7 +15,7 @@ Os suplementos consistem de dois componentes básicos:
 
 **Suplemento do Office = manifesto + página da Web**
 
-![Um suplemento do Office consiste em um manifesto e uma página da Web](../../images/onenote-add-in.png)
+![Um suplemento do Office consiste em um manifesto e uma página da Web](../images/onenote-add-in.png)
 
 ## <a name="using-the-javascript-api"></a>Usar a API JavaScript
 
@@ -111,7 +111,7 @@ Em geral, você só pode usar a API comum para fazer algo que não seja compatí
 ## <a name="onenote-object-model-diagram"></a>Diagrama do modelo de objeto do OneNote 
 O diagrama a seguir representa o que está disponível atualmente na API JavaScript do OneNote.
 
-  ![Diagrama do modelo de objeto do OneNote](../../images/onenote-om.png)
+  ![Diagrama do modelo de objeto do OneNote](../images/onenote-om.png)
 
 
 ## <a name="additional-resources"></a>Recursos adicionais

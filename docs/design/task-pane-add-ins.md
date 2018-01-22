@@ -4,7 +4,7 @@ Painéis de tarefas são superfícies de interface que normalmente são exibidas
 
 **Exemplo: Painel de tarefas**
 
-![Imagem exibindo um layout típico de painel de tarefas](../../images/overview_withApp_taskPane.png)
+![Imagem exibindo um layout típico de painel de tarefas](../images/overview_withApp_taskPane.png)
 
 ## <a name="best-practices"></a>Práticas recomendadas
 
@@ -22,7 +22,7 @@ As imagens a seguir mostram vários tamanhos de painel de tarefas com a faixa de
 
 **Tamanhos de painel de tarefas da área de trabalho do Office 2016**
 
-![Imagem exibindo os tamanhos de painel de tarefas da área de trabalho em 1366 x 768](../../images/addinTaskpaneSizes_desktop.png)
+![Imagem exibindo os tamanhos de painel de tarefas da área de trabalho em 1366 x 768](../images/addinTaskpaneSizes_desktop.png)
 
 - Excel - 320 x 455
 - PowerPoint - 320 x 531
@@ -31,7 +31,7 @@ As imagens a seguir mostram vários tamanhos de painel de tarefas com a faixa de
 
 **Tamanhos de painel de tarefas do Office 365**
 
-![Imagem exibindo os tamanhos de painel de tarefas da área de trabalho em 1366 x 768](../../images/addinTaskpaneSizes_online.png)
+![Imagem exibindo os tamanhos de painel de tarefas da área de trabalho em 1366 x 768](../images/addinTaskpaneSizes_online.png)
 
 - Excel - 350 x 378
 - PowerPoint - 348 x 391
@@ -46,13 +46,13 @@ Menus de personalidade podem obstruir elementos de navegação e comando localiz
 
 No Windows, o menu de personalidade mede 12 x 32 pixels, conforme mostrado.
 
-![Imagem mostrando o menu do personalidade na área de trabalho do Windows](../../images/personalityMenu_Win.png)
+![Imagem mostrando o menu do personalidade na área de trabalho do Windows](../images/personalityMenu_Win.png)
 
 **Menu de personalidade no Windows**
 
 No Mac, no menu de personalidade mede 26 x 26 pixels, mas flutua 8 pixels a partir da direita e 6 pixels a partir do topo, o que aumenta o espaço para 34 x 32 pixels, como mostrado.
 
-![Imagem mostrando o menu de personalidade na área de trabalho do Mac](../../images/personalityMenu_Mac.png)
+![Imagem mostrando o menu de personalidade na área de trabalho do Mac](../images/personalityMenu_Mac.png)
 
 ## <a name="implementation"></a>Implementação
 

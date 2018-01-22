@@ -61,7 +61,7 @@ O gerador solicitará o seguinte:
 >- Adicione [TypeScript](https://www.typescriptlang.org/) – use _Y_
 >- Escolha uma estrutura – use _React_
 
-![Gif do gerador Yeoman solicitando uma entrada do projeto](../../images/gettingstarted-fast.gif)
+![Gif do gerador Yeoman solicitando uma entrada do projeto](../images/gettingstarted-fast.gif)
 
 Isso cria a estrutura e os arquivos básicos para o suplemento.
 
@@ -80,7 +80,7 @@ npm start
 O Browsersync iniciará um servidor HTTPS e inicializará o arquivo index.html no seu projeto. Você verá uma mensagem de erro informando "Há um problema com o certificado de segurança deste site".
 
 
-![Gif mostrando o processo para ignorar o erro e ver o arquivo de index.html padrão](../../images/ssl-chrome-bypass.gif)
+![Gif mostrando o processo para ignorar o erro e ver o arquivo de index.html padrão](../images/ssl-chrome-bypass.gif)
 
 Esse erro ocorre porque o Browsersync contém um certificado SSL autoassinado no qual seu ambiente de desenvolvimento deve confiar. Confira mais informações sobre como resolver esse erro em [Adicionar certificados autoassinados](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
 

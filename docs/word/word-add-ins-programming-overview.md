@@ -12,7 +12,7 @@ A figura a seguir mostra um exemplo de um suplemento do Word que é executado em
 
 **Figura 1. Suplemento em execução em um painel de tarefas no Word**
 
-![Suplemento em execução em um painel de tarefas no Word](../../images/WordAddinShowHostClient.png)
+![Suplemento em execução em um painel de tarefas no Word](../images/WordAddinShowHostClient.png)
 
 O suplemento do Word (1) pode enviar solicitações para o documento do Word (2) e usar o JavaScript para acessar o objeto parágrafo e atualizar, excluir ou mover o parágrafo. Por exemplo, o código a seguir mostra como acrescentar uma nova sentença a esse parágrafo.
 
