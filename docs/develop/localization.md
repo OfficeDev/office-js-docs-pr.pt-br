@@ -419,7 +419,7 @@ Execute o suplemento de exemplo. O suplemento do painel de tarefas é carregado 
 [DisplayName]:           http://dev.office.com/reference/add-ins/manifest/displayname
 [IconUrl]:               http://dev.office.com/reference/add-ins/manifest/iconurl
 [HighResolutionIconUrl]: http://dev.office.com/reference/add-ins/manifest/highresolutioniconurl
-[Resources]:             ../../reference/manifest/resources
+[Resources]:             https://dev.office.com/reference/add-ins/manifest/resources
 [SourceLocation]:        http://dev.office.com/reference/add-ins/manifest/sourcelocation
 [Override]:              http://dev.office.com/reference/add-ins/manifest/override
 [DesktopSettings]:       http://dev.office.com/reference/add-ins/manifest/desktopsettings

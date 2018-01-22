@@ -4,7 +4,7 @@ Este artigo descreve como atualizar os arquivos do JavaScript (Office.js e arqui
 
 ## <a name="using-the-most-up-to-date-project-files"></a>Usar os arquivos de projeto mais atualizados
 
-Se estiver usando o Visual Studio para desenvolver o suplemento, para usar os [membros mais recentes](../../reference/what's-changed-in-the-javascript-api-for-office.md) da API JavaScript para Office e os [recursos da v1.1 do manifesto do suplemento](../../docs/overview/add-in-manifests.md) (que é validado em relação a offappmanifest 1.1.xsd), é preciso baixar e instalar o [Visual Studio 2015 e a versão mais recente das Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs).
+Se estiver usando o Visual Studio para desenvolver o suplemento, para usar os [membros mais recentes](https://dev.office.com/reference/add-ins/what's-changed-in-the-javascript-api-for-office) da API JavaScript para Office e os [recursos da v1.1 do manifesto do suplemento](../../docs/overview/add-in-manifests.md) (que é validado em relação a offappmanifest 1.1.xsd), é preciso baixar e instalar o [Visual Studio 2015 e a versão mais recente das Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs).
 
 Se estiver usando um editor de texto ou IDE que não o Visual Studio para desenvolver o suplemento, é precisa atualizar as referências à CDN para o Office.js e a versão do esquema consultada pelo manifesto do suplemento.
 
