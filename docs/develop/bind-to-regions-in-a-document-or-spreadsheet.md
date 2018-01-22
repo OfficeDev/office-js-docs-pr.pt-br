@@ -326,7 +326,7 @@ A função anônima que é transmitida para a função é um retorno de chamada 
 ## <a name="detect-changes-to-data-or-the-selection-in-a-binding"></a>Detectar alterações nos dados ou a seleção em uma associação
 
 
-O exemplo a seguir mostra como anexar um manipulador de eventos ao evento [DataChanged](../../reference/shared/binding.bindingdatachangedevent.md) de uma associação com uma id "MyBinding".
+O exemplo a seguir mostra como anexar um manipulador de eventos ao evento [DataChanged](http://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent) de uma associação com uma id "MyBinding".
 
 
 ```js

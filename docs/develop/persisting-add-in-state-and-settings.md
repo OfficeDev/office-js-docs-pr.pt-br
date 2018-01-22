@@ -54,14 +54,14 @@ Depois que o conjunto de propriedades de configurações é salvo durante a sess
 
 Para persistir as configurações de estado ou personalizadas de um suplemento de conteúdo ou de painel de tarefas para Word, Excel ou PowerPoint, use o objeto [Settings](http://dev.office.com/reference/add-ins/shared/settings) e seus métodos. O conjunto de propriedades criado com os métodos do objeto **Settings** está disponível apenas para a instância do suplemento de conteúdo ou de painel de tarefas que o criou e apenas por meio do documento no qual é salvo.
 
-O objeto **Settings** é carregado automaticamente como parte do objeto [Document](http://dev.office.com/reference/add-ins/shared/document) e está disponível quando o suplemento de conteúdo ou de painel de tarefas é ativado. Depois que o objeto **Document** é instanciado, você pode acessar o objeto **Settings** com a propriedade [settings](../../reference/shared/document.settings.md) do objeto **Document**. Durante o tempo de vida da sessão, você pode simplesmente usar os métodos **Settings.get**, **Settings.set** e **Settings.remove** para ler, gravar ou remover configurações persistentes e o estado do suplementos da cópia na memória do conjunto de propriedades.
+O objeto **Settings** é carregado automaticamente como parte do objeto [Document](http://dev.office.com/reference/add-ins/shared/document) e está disponível quando o suplemento de conteúdo ou de painel de tarefas é ativado. Depois que o objeto **Document** é instanciado, você pode acessar o objeto **Settings** com a propriedade [settings](http://dev.office.com/reference/add-ins/shared/document.settings) do objeto **Document**. Durante o tempo de vida da sessão, você pode simplesmente usar os métodos **Settings.get**, **Settings.set** e **Settings.remove** para ler, gravar ou remover configurações persistentes e o estado do suplementos da cópia na memória do conjunto de propriedades.
 
-Como os métodos set e remove operam apenas em relação à cópia na memória do conjunto de propriedades de configurações, para salvar configurações novas ou alteradas no documento ao qual o suplemento está associado, você deve chamar o método [Settings.saveAsync](../../reference/shared/settings.saveasync.md).
+Como os métodos set e remove operam apenas em relação à cópia na memória do conjunto de propriedades de configurações, para salvar configurações novas ou alteradas no documento ao qual o suplemento está associado, você deve chamar o método [Settings.saveAsync](http://dev.office.com/reference/add-ins/shared/settings.saveasync).
 
 
 ### <a name="creating-or-updating-a-setting-value"></a>Criar ou atualizar um valor de configuração
 
-O exemplo de código a seguir mostra como usar o método [Settings.set](../../reference/shared/settings.set.md) para criar uma configuração chamada `'themeColor'` com um valor `'green'`. O primeiro parâmetro do método set é _name_ (Id) da configuração a ser definida ou criada, que diferencia maiúsculas de minúsculas. O segundo parâmetro é o _value_ da configuração.
+O exemplo de código a seguir mostra como usar o método [Settings.set](http://dev.office.com/reference/add-ins/shared/settings.set) para criar uma configuração chamada `'themeColor'` com um valor `'green'`. O primeiro parâmetro do método set é _name_ (Id) da configuração a ser definida ou criada, que diferencia maiúsculas de minúsculas. O segundo parâmetro é o _value_ da configuração.
 
 
 ```
@@ -73,7 +73,7 @@ Office.context.document.settings.set('themeColor', 'green');
 
 ### <a name="getting-the-value-of-a-setting"></a>Obter o valor de uma configuração
 
-O exemplo a seguir mostra como usar o método [Settings.get](../../reference/shared/settings.get.md) para obter o valor de uma configuração chamada "themeColor". O único parâmetro do método **get** é o _name_ da configuração (que diferencia maiúsculas de minúsculas).
+O exemplo a seguir mostra como usar o método [Settings.get](http://dev.office.com/reference/add-ins/shared/settings.get) para obter o valor de uma configuração chamada "themeColor". O único parâmetro do método **get** é o _name_ da configuração (que diferencia maiúsculas de minúsculas).
 
 
 ```js
@@ -90,7 +90,7 @@ function write(message){
 
 ### <a name="removing-a-setting"></a>Remover uma configuração
 
-O exemplo a seguir mostra como usar o método [Settings.remove](../../reference/shared/settings.removehandlerasync.md) para remover uma configuração com o nome "themeColor". O único parâmetro do método **remove** é o _name_ da configuração (que diferencia maiúsculas de minúsculas).
+O exemplo a seguir mostra como usar o método [Settings.remove](http://dev.office.com/reference/add-ins/shared/settings.removehandlerasync) para remover uma configuração com o nome "themeColor". O único parâmetro do método **remove** é o _name_ da configuração (que diferencia maiúsculas de minúsculas).
 
 
 ```
@@ -102,7 +102,7 @@ Nada acontecerá se a configuração não existir. Use o método **Settings.save
 
 ### <a name="saving-your-settings"></a>Salvar suas configurações
 
-Para salvar adições, alterações ou exclusões que o suplemento fez na cópia na memória do conjunto de propriedades de configurações durante a sessão atual, você deve chamar o método [Settings.saveAsync](../../reference/shared/settings.saveasync.md) para armazená-lo no documento. O único parâmetro do método **saveAsync** é _callback_, que é uma função de retorno de chamada com um único parâmetro. 
+Para salvar adições, alterações ou exclusões que o suplemento fez na cópia na memória do conjunto de propriedades de configurações durante a sessão atual, você deve chamar o método [Settings.saveAsync](http://dev.office.com/reference/add-ins/shared/settings.saveasync) para armazená-lo no documento. O único parâmetro do método **saveAsync** é _callback_, que é uma função de retorno de chamada com um único parâmetro. 
 
 
 ```js
@@ -131,7 +131,7 @@ Um suplemento do Outlook pode usar o objeto [RoamingSettings](http://dev.office.
 ### <a name="loading-roaming-settings"></a>Carregar configurações móveis
 
 
-Um suplemento do Outlook normalmente carrega configurações móveis no manipulador de eventos [Office.initialize](../../reference/shared/office.initialize.md). O exemplo de código JavaScript a seguir mostra como carregar configurações móveis existentes.
+Um suplemento do Outlook normalmente carrega configurações móveis no manipulador de eventos [Office.initialize](http://dev.office.com/reference/add-ins/shared/office.initialize). O exemplo de código JavaScript a seguir mostra como carregar configurações móveis existentes.
 
 
 ```
@@ -197,7 +197,7 @@ function removeAppSetting()
 
 As propriedades personalizadas permitem que o suplemento do Outlook armazene informações sobre um item com o qual está trabalhando. Por exemplo, se o suplemento do Outlook criar um compromisso com base em uma sugestão de reunião em uma mensagem, você pode usar propriedades personalizadas para armazenar o fato de que a reunião foi criada. Isso garante que, se a mensagem for aberta novamente, o suplemento do Outlook não se ofereça para criar novamente o compromisso.
 
-Para poder usar propriedades personalizadas para uma mensagem, um compromisso ou um item de solicitação de reunião específico, você deve carregar as propriedades na memória chamando o método [loadCustomPropertiesAsync](../../reference/outlook/Office.context.mailbox.item.md) do objeto **Item**. Se propriedades personalizadas já estiverem definidas para o item atual, elas serão carregadas do servidor Exchange nesse momento. Após carregar as propriedades, você pode usar os métodos [set](http://dev.office.com/reference/add-ins/outlook/CustomProperties) e [get](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) para o objeto **CustomProperties** para adicionar, atualizar e recuperar propriedades na memória. Para salvar as alterações feitas nas propriedades personalizadas do item, você deve usar o método [saveAsync](http://dev.office.com/reference/add-ins/outlook/CustomProperties) para persistir as alterações no item no servidor Exchange.
+Para poder usar propriedades personalizadas para uma mensagem, um compromisso ou um item de solicitação de reunião específico, você deve carregar as propriedades na memória chamando o método [loadCustomPropertiesAsync](http://dev.office.com/reference/add-ins/outlook/Office.context.mailbox.item) do objeto **Item**. Se propriedades personalizadas já estiverem definidas para o item atual, elas serão carregadas do servidor Exchange nesse momento. Após carregar as propriedades, você pode usar os métodos [set](http://dev.office.com/reference/add-ins/outlook/CustomProperties) e [get](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) para o objeto **CustomProperties** para adicionar, atualizar e recuperar propriedades na memória. Para salvar as alterações feitas nas propriedades personalizadas do item, você deve usar o método [saveAsync](http://dev.office.com/reference/add-ins/outlook/CustomProperties) para persistir as alterações no item no servidor Exchange.
 
 
 ### <a name="custom-properties-example"></a>Exemplo de propriedades personalizadas

@@ -17,7 +17,7 @@ Ao desenvolver sua API de serviço, você também pode tentar:
 
 ### <a name="13000"></a>13000
 
-A API [getAccessTokenAsync](../../reference/shared/office.context.auth.getAccessTokenAsync.md) não é compatível pelo suplemento ou pela versão do Office. 
+A API [getAccessTokenAsync](http://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync) não é compatível pelo suplemento ou pela versão do Office. 
 
 - A versão do Office não é compatível com o SSO. A versão necessária é o Office 2016, versão 1710, build 8629.nnnn ou posterior (a versão de assinatura do Office 365, às vezes chamada de "Clique para Executar"). Você talvez precise ser um participante do programa Office Insider para obter essa versão. Para obter mais informações, confira a página [Seja um Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1). 
 - O manifesto do suplemento está sem a seção [WebApplicationInfo](http://dev.office.com/reference/add-ins/manifest/webapplicationinfo) adequada.

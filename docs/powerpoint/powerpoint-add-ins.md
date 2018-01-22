@@ -22,11 +22,11 @@ Esses exemplos de código exigem que seu projeto faça [referência à bibliotec
 Se você estiver criando um suplemento de conteúdo, será necessário obter o modo de exibição ativo da apresentação e manipular o evento ActiveViewChanged como parte do manipulador Office.Initialize.
 
 
-- A função `getActiveFileView` chama o método [Document.getActiveViewAsync](../../reference/shared/document.getactiveviewasync.md) para retornar se o modo de exibição atual da apresentação for "edição" (qualquer um dos modos de exibição em que é possível editar slides, como **Normal** ou **Modo de Exibição de Estrutura de Tópicos**) ou "leitura" ( **Apresentação de Slides** ou **Modo de Exibição de Leitura**).
+- A função `getActiveFileView` chama o método [Document.getActiveViewAsync](http://dev.office.com/reference/add-ins/shared/document.getactiveviewasync) para retornar se o modo de exibição atual da apresentação for "edição" (qualquer um dos modos de exibição em que é possível editar slides, como **Normal** ou **Modo de Exibição de Estrutura de Tópicos**) ou "leitura" ( **Apresentação de Slides** ou **Modo de Exibição de Leitura**).
 
 
-- A função `registerActiveViewChanged` chama o método [addHandlerAsync](../../reference/shared/document.addhandlerasync.md) para registrar um manipulador para o evento [Document.ActiveViewChanged](../../reference/shared/document.activeviewchanged.md). 
-> Observação: No PowerPoint Online, o evento [Document.ActiveViewChanged](../../reference/shared/document.activeviewchanged.md) nunca será acionado porque o modo de Apresentação de Slides é tratado como uma nova sessão. Nesse caso, o suplemento deve obter o modo de exibição ativo ao carregar, conforme observado abaixo.
+- A função `registerActiveViewChanged` chama o método [addHandlerAsync](http://dev.office.com/reference/add-ins/shared/document.addhandlerasync) para registrar um manipulador para o evento [Document.ActiveViewChanged](http://dev.office.com/reference/add-ins/shared/document.activeviewchanged). 
+> Observação: No PowerPoint Online, o evento [Document.ActiveViewChanged](http://dev.office.com/reference/add-ins/shared/document.activeviewchanged) nunca será acionado porque o modo de Apresentação de Slides é tratado como uma nova sessão. Nesse caso, o suplemento deve obter o modo de exibição ativo ao carregar, conforme observado abaixo.
 
 
 
@@ -79,7 +79,7 @@ function registerActiveViewChanged() {
 
 ## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>Navegar até um determinado slide na apresentação
 
-A função `getSelectedRange` chama o método [Document.getSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md) para obter um objeto JSON retornado por `asyncResult.value`, que contém uma matriz chamada "slides" contendo as ids, títulos e índices do intervalo selecionado de slides (ou apenas do slide atual). Ela também salva a id do primeiro slide no intervalo selecionado em uma variável global.
+A função `getSelectedRange` chama o método [Document.getSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) para obter um objeto JSON retornado por `asyncResult.value`, que contém uma matriz chamada "slides" contendo as ids, títulos e índices do intervalo selecionado de slides (ou apenas do slide atual). Ela também salva a id do primeiro slide no intervalo selecionado em uma variável global.
 
 
 ```js
@@ -99,7 +99,7 @@ function getSelectedRange() {
 }
 ```
 
-A função `goToFirstSlide` chama o método [Document.goToByIdAsync](../../reference/shared/document.gotobyidasync.md) para ir até a id do primeiro slide armazenado pela função `getSelectedRange` acima.
+A função `goToFirstSlide` chama o método [Document.goToByIdAsync](http://dev.office.com/reference/add-ins/shared/document.gotobyidasync) para ir até a id do primeiro slide armazenado pela função `getSelectedRange` acima.
 
 
 
@@ -143,7 +143,7 @@ function goToSlideByIndex() {
 
 ## <a name="get-the-url-of-the-presentation"></a>Obter a URL da apresentação
 
-A função `getFileUrl` chama o método [Document.getFileProperties](../../reference/shared/document.getfilepropertiesasync.md) para obter a URL do arquivo da apresentação.
+A função `getFileUrl` chama o método [Document.getFileProperties](http://dev.office.com/reference/add-ins/shared/document.getfilepropertiesasync) para obter a URL do arquivo da apresentação.
 
 
 ```js

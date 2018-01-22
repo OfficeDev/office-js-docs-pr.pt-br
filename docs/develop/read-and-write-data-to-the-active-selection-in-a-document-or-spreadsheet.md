@@ -9,7 +9,7 @@ O método **getSelectedDataAsync** só funciona em relação à seleção atual 
 ## <a name="read-selected-data"></a>Ler dados selecionados
 
 
-O exemplo a seguir mostra como obter dados de uma seleção em um documento usando o método [getSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md).
+O exemplo a seguir mostra como obter dados de uma seleção em um documento usando o método [getSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document.getselecteddataasync).
 
 
 ```js
@@ -28,14 +28,14 @@ function write(message){
 }
 ```
 
-No exemplo, o primeiro parâmetro _coercionType_ é especificado como **Office.CoercionType.Text** (você também pode especificar esse parâmetro usando a cadeia de caracteres literal `"text"`). Isso significa que a propriedade [value](../../reference/shared/asyncresult.status.md) do objeto [AsyncResult](http://dev.office.com/reference/add-ins/shared/asyncresult), que está disponível por meio do parâmetro _asyncResult_ na função de retorno de chamada, retorna uma **string** que contém o texto selecionado no documento. A especificação de tipos diferentes de coerção resulta em valores diferentes. [Office.CoercionType](http://dev.office.com/reference/add-ins/shared/coerciontype-enumeration) é uma enumeração dos valores de tipos de coerção disponíveis. **Office.CoercionType.Text** é avaliado como a cadeia de caracteres "text".
+No exemplo, o primeiro parâmetro _coercionType_ é especificado como **Office.CoercionType.Text** (você também pode especificar esse parâmetro usando a cadeia de caracteres literal `"text"`). Isso significa que a propriedade [value](http://dev.office.com/reference/add-ins/shared/asyncresult.status) do objeto [AsyncResult](http://dev.office.com/reference/add-ins/shared/asyncresult), que está disponível por meio do parâmetro _asyncResult_ na função de retorno de chamada, retorna uma **string** que contém o texto selecionado no documento. A especificação de tipos diferentes de coerção resulta em valores diferentes. [Office.CoercionType](http://dev.office.com/reference/add-ins/shared/coerciontype-enumeration) é uma enumeração dos valores de tipos de coerção disponíveis. **Office.CoercionType.Text** é avaliado como a cadeia de caracteres "text".
 
 
  >**Dica:**   **Quando devo usar a matriz ou a tabela coercionType para o acesso de dados?** Se for preciso que os dados tabulares selecionados cresçam dinamicamente quando linhas e colunas forem adicionadas, e você precisar trabalhar com os cabeçalhos da tabela, use o tipo de dados da tabela (especificando o parâmetro _coercionType_ do método **getSelectedDataAsync** como `"table"` ou **Office.CoercionType.Table**). A adição de linhas e colunas na estrutura de dados tem suporte nos dados de tabela e matriz, mas o acréscimo de linhas e colunas só tem suporte para dados de tabela. Se você não planeja adicionar linhas e colunas, e os dados não exigem a funcionalidade do cabeçalho, use o tipo de dados de matriz (especificando o parâmetro _coercionType_ do método **getSelecteDataAsync** como `"matrix"` ou **Office.CoercionType.Matrix**), que fornece um modelo mais simples para interagir com os dados.
 
-A função anônima que é transmitida para a função como o segundo parâmetro de _callback_ é executada quando a operação **getSelectedDataAsync** é concluída. A função é chamada com um único parâmetro, _asyncResult_, que contém o resultado e o status da chamada. Se a chamada falhar, a propriedade [error](../../reference/shared/asyncresult.context.md) do objeto **AsyncResult** fornece acesso ao objeto [Error](http://dev.office.com/reference/add-ins/shared/error). Você pode verificar o valor das propriedades [Error.name](../../reference/shared/error.name.md) e [Error.message](../../reference/shared/error.message.md) para determinar por quê a operação set falhou. Caso contrário, o texto selecionado no documento é exibido.
+A função anônima que é transmitida para a função como o segundo parâmetro de _callback_ é executada quando a operação **getSelectedDataAsync** é concluída. A função é chamada com um único parâmetro, _asyncResult_, que contém o resultado e o status da chamada. Se a chamada falhar, a propriedade [error](http://dev.office.com/reference/add-ins/shared/asyncresult.context) do objeto **AsyncResult** fornece acesso ao objeto [Error](http://dev.office.com/reference/add-ins/shared/error). Você pode verificar o valor das propriedades [Error.name](http://dev.office.com/reference/add-ins/shared/error.name) e [Error.message](http://dev.office.com/reference/add-ins/shared/error.message) para determinar por quê a operação set falhou. Caso contrário, o texto selecionado no documento é exibido.
 
-A propriedade [AsyncResult.status](../../reference/shared/asyncresult.error.md) é usada na instrução **if** para testar se a chamada foi bem-sucedida. [Office.AsyncResultStatus](http://dev.office.com/reference/add-ins/shared/asyncresultstatus-enumeration) é uma enumeração de valores disponíveis da propriedade **AsyncResult.status**. **Office.AsyncResultStatus.Failed** é avaliado na cadeia de caracteres "failed" (e também pode ser especificado como essa cadeia de caracteres literal).
+A propriedade [AsyncResult.status](http://dev.office.com/reference/add-ins/shared/asyncresult.error) é usada na instrução **if** para testar se a chamada foi bem-sucedida. [Office.AsyncResultStatus](http://dev.office.com/reference/add-ins/shared/asyncresultstatus-enumeration) é uma enumeração de valores disponíveis da propriedade **AsyncResult.status**. **Office.AsyncResultStatus.Failed** é avaliado na cadeia de caracteres "failed" (e também pode ser especificado como essa cadeia de caracteres literal).
 
 
 ## <a name="write-data-to-the-selection"></a>Gravar dados na seleção
@@ -59,7 +59,7 @@ function write(message){
 
 Passar diferentes tipos de objeto para o parâmetro _data_ terá resultados diferentes. O resultado depende do que está selecionado no documento no momento, qual aplicativo está hospedando o suplemento e se os dados passados podem ser forçados para a seleção atual.
 
-A função anônima passada para o método [setSelectedDataAsync](../../reference/shared/document.setselecteddataasync.md) como o parâmetro _callback_ é executada quando a chamada assíncrona é concluída. Ao gravar dados na seleção usando o método **setSelectedDataAsync**, o parâmetro _asyncResult_ do retorno de chamada fornece acesso somente ao status da chamada e ao objeto [Error](http://dev.office.com/reference/add-ins/shared/error), se a chamada falhar.
+A função anônima passada para o método [setSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) como o parâmetro _callback_ é executada quando a chamada assíncrona é concluída. Ao gravar dados na seleção usando o método **setSelectedDataAsync**, o parâmetro _asyncResult_ do retorno de chamada fornece acesso somente ao status da chamada e ao objeto [Error](http://dev.office.com/reference/add-ins/shared/error), se a chamada falhar.
 
  **Observação:** a partir da versão do Excel 2013 SP1 e da compilação correspondente do Excel Online, agora é possível [definir a formatação ao gravar uma tabela na seleção atual](../../docs/excel/format-tables-in-add-ins-for-excel.md).
 
@@ -67,7 +67,7 @@ A função anônima passada para o método [setSelectedDataAsync](../../referenc
 ## <a name="detect-changes-in-the-selection"></a>Detectar alterações na seleção
 
 
-O exemplo a seguir mostra como detectar alterações na seleção usando o método [Document.addHandlerAsync](../../reference/shared/document.addhandlerasync.md) para adicionar um manipulador de eventos ao evento [SelectionChanged](../../reference/shared/document.selectionchanged.event.md) no documento.
+O exemplo a seguir mostra como detectar alterações na seleção usando o método [Document.addHandlerAsync](http://dev.office.com/reference/add-ins/shared/document.addhandlerasync) para adicionar um manipulador de eventos ao evento [SelectionChanged](http://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) no documento.
 
 
 ```
@@ -87,7 +87,7 @@ function write(message){
 
 O primeiro parâmetro _eventType_ especifica o nome do evento a ser assinado. Passar a cadeia de caracteres `"documentSelectionChanged"` para esse parâmetro é equivalente a passar o tipo de evento **Office.EventType.DocumentSelectionChanged** da enumeração [Office.EventType](http://dev.office.com/reference/add-ins/shared/eventtype-enumeration).
 
-A função `myHander()` que é passada para a função como o segundo parâmetro _handler_ é um manipulador de eventos executado ao alterar a seleção no documento. A função é chamada com um único parâmetro, _eventArgs_, que conterá uma referência a um objeto [DocumentSelectionChangedEventArgs](../../reference/shared/document.selectionchangedeventargs.md) quando a operação assíncrona for concluída. Você pode usar a propriedade [DocumentSelectionChangedEventArgs.document](../../reference/shared/document.selectionchangedeventargs.document.md) para acessar o documento que gerou o evento.
+A função `myHander()` que é passada para a função como o segundo parâmetro _handler_ é um manipulador de eventos executado ao alterar a seleção no documento. A função é chamada com um único parâmetro, _eventArgs_, que conterá uma referência a um objeto [DocumentSelectionChangedEventArgs](http://dev.office.com/reference/add-ins/shared/document.selectionchangedeventargs) quando a operação assíncrona for concluída. Você pode usar a propriedade [DocumentSelectionChangedEventArgs.document](http://dev.office.com/reference/add-ins/shared/document.selectionchangedeventargs.document) para acessar o documento que gerou o evento.
 
 
  >**Observação**  É possível adicionar vários manipuladores de eventos para um evento específico chamando o método **addHandlerAsync** novamente e passando uma função de manipulador de eventos adicional para o parâmetro _handler_. Isso funcionará corretamente, contanto que o nome de cada função do manipulador de eventos seja exclusivo.
@@ -96,7 +96,7 @@ A função `myHander()` que é passada para a função como o segundo parâmetro
 ## <a name="stop-detecting-changes-in-the-selection"></a>Parar de detectar alterações na seleção
 
 
-O exemplo a seguir mostra como deixar de ouvir o evento [Document.SelectionChanged](../../reference/shared/document.selectionchanged.event.md) chamando o método [document.removeHandlerAsync](../../reference/shared/document.removehandlerasync.md).
+O exemplo a seguir mostra como deixar de ouvir o evento [Document.SelectionChanged](http://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) chamando o método [document.removeHandlerAsync](http://dev.office.com/reference/add-ins/shared/document.removehandlerasync).
 
 
 ```

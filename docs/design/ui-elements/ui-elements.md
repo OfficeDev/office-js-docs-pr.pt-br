@@ -50,7 +50,7 @@ Se você decidir usar sua própria paleta de cores, considere o seguinte:
 Não importa se você deseja adotar o esquema de cores do Office ou usar seu próprio esquema de cores, recomendamos a você usar nossas APIs de Temas. Os suplementos que fazem parte da experiência de temas do Office parecerão muito mais integrados ao Office.
 
 
-- Para suplementos do painel de tarefas e email, use a propriedade [Context.officeTheme](../../../reference/shared/office.context.officetheme.md) para combinar o tema dos aplicativos do Office. Atualmente, essa API só está disponível no Office 2016.  
+- Para suplementos do painel de tarefas e email, use a propriedade [Context.officeTheme](http://dev.office.com/reference/add-ins/shared/office.context.officetheme) para combinar o tema dos aplicativos do Office. Atualmente, essa API só está disponível no Office 2016.  
 - Para suplementos de conteúdo do PowerPoint, confira [Usar os temas do Office em seus suplementos do PowerPoint](../../powerpoint/use-document-themes-in-your-powerpoint-add-ins.md).
 
 <!-- Link to theming API docs and Humberto's seed sample. Add screenshot of themed add-in. -->

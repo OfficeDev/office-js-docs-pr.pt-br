@@ -34,13 +34,13 @@ Por exemplo, você pode criar um suplemento de conteúdo que exibe visualizaçõ
 - A planilha oculta do Usuário A é atualizada com o novo valor de laranja.
 - As visualizações personalizadas do Usuário A continuam azuis. 
 
-Se quiser que as visualizações personalizadas do Usuário A respondam às alterações feitas pelos coautores na planilha oculta, use o evento [BindingDataChanged](../../reference/shared/binding.bindingdatachangedevent.md). Isso garante que as alterações no conteúdo da pasta de trabalho feitas pelos coautores sejam refletidas no estado do seu suplemento.
+Se quiser que as visualizações personalizadas do Usuário A respondam às alterações feitas pelos coautores na planilha oculta, use o evento [BindingDataChanged](http://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent). Isso garante que as alterações no conteúdo da pasta de trabalho feitas pelos coautores sejam refletidas no estado do seu suplemento.
 
 ## <a name="caveats-to-using-events-with-co-authoring"></a>Advertências para usar eventos com coautoria 
 
 Conforme descrito anteriormente, em alguns cenários, acionar eventos para todos os coautores proporciona uma experiência do usuários aprimorada. No entanto, lembre-se de que, em alguns cenários, esse comportamento pode resultar em uma má experiência do usuário. 
 
-Por exemplo, em cenários de validação de dados, é comum exibir a interface do usuário em resposta a eventos. O evento [BindingDataChanged](../../reference/shared/binding.bindingdatachangedevent.md) descrito na seção anterior é executado quando um usuário local ou coautor (remoto) altera o conteúdo da pasta de trabalho na associação. Se o manipulador de eventos do evento **BindingDataChanged** exibir a interface do usuário, os usuários verão a interface do usuário que não está relacionada às alterações em que eles estavam trabalhando na pasta de trabalho, levando a uma má experiência do usuário. Evite a exibição da interface do usuário ao usar eventos no suplemento.
+Por exemplo, em cenários de validação de dados, é comum exibir a interface do usuário em resposta a eventos. O evento [BindingDataChanged](http://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent) descrito na seção anterior é executado quando um usuário local ou coautor (remoto) altera o conteúdo da pasta de trabalho na associação. Se o manipulador de eventos do evento **BindingDataChanged** exibir a interface do usuário, os usuários verão a interface do usuário que não está relacionada às alterações em que eles estavam trabalhando na pasta de trabalho, levando a uma má experiência do usuário. Evite a exibição da interface do usuário ao usar eventos no suplemento.
 
 ## <a name="see-also"></a>Veja também 
 

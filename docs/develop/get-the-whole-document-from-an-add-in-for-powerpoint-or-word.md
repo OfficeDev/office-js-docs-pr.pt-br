@@ -134,7 +134,7 @@ input [type="submit"], input[type="button"]
 ## <a name="add-the-javascript-to-get-the-document"></a>Adicionar o JavaScript para obter o documento
 
 
-No código para o suplemento, um manipulador para o evento [Office.initialize](../../reference/shared/office.initialize.md) adiciona um manipulador para o evento de clique do botão **Enviar** no formulário e informa aos usuários que o suplemento está pronto.
+No código para o suplemento, um manipulador para o evento [Office.initialize](http://dev.office.com/reference/add-ins/shared/office.initialize) adiciona um manipulador para o evento de clique do botão **Enviar** no formulário e informa aos usuários que o suplemento está pronto.
 
 O exemplo de código a seguir mostra o manipulador de eventos do evento **Office.initialize** juntamente com a função auxiliar, `updateStatus`, para escrever na div de status.
 
@@ -167,11 +167,11 @@ function updateStatus(message) {
 
 
 
-Quando você escolhe o botão **Enviar** na interface do usuário, o suplemento chama a função `sendFile`, que contém uma chamada para o método [Document.getFileAsync](../../reference/shared/document.getfileasync.md). O método **getFileAsync** usa o padrão assíncrono, semelhante a outros métodos na API JavaScript para Office. Ele tem um parâmetro obrigatório, _fileType_, e dois parâmetros opcionais,  _options_ e _callback_. 
+Quando você escolhe o botão **Enviar** na interface do usuário, o suplemento chama a função `sendFile`, que contém uma chamada para o método [Document.getFileAsync](http://dev.office.com/reference/add-ins/shared/document.getfileasync). O método **getFileAsync** usa o padrão assíncrono, semelhante a outros métodos na API JavaScript para Office. Ele tem um parâmetro obrigatório, _fileType_, e dois parâmetros opcionais,  _options_ e _callback_. 
 
 O parâmetro _fileType_ espera uma das três constantes da enumeração [FileType](http://dev.office.com/reference/add-ins/shared/filetype-enumeration): **Office.FileType.Compressed** ("compactado"), **Office.FileType.PDF** ("PDF"), ou **Office.FileType.Text** ("texto"). O PowerPoint só suporta **Compressed** como argumento; o Word suporta todos os três. Quando você transmite **Compressed** para o parâmetro _fileType_, o método **getFileAsync** retorna o documento como um arquivo de apresentação do PowerPoint 2013 (*.pptx) ou arquivo de documento do Word 2013 (*.docx) criando uma cópia temporária do arquivo no computador local.
 
-O método **getFileAsync** retorna uma referência para o arquivo como um objeto [File](http://dev.office.com/reference/add-ins/shared/file). O objeto **File** expõe quatro membros: a propriedade [size](../../reference/shared/file.size.md), a propriedade [sliceCount](../../reference/shared/file.slicecount.md), o método [getSliceAsync](../../reference/shared/file.getsliceasync.md) e o método [closeAsync](../../reference/shared/file.closeasync.md). A propriedade **size** retorna o número de bytes no arquivo. A propriedade **sliceCount** retorna o número de objetos [Slice](http://dev.office.com/reference/add-ins/shared/document) (será discutido posteriormente neste artigo) no arquivo.
+O método **getFileAsync** retorna uma referência para o arquivo como um objeto [File](http://dev.office.com/reference/add-ins/shared/file). O objeto **File** expõe quatro membros: a propriedade [size](http://dev.office.com/reference/add-ins/shared/file.size), a propriedade [sliceCount](http://dev.office.com/reference/add-ins/shared/file.slicecount), o método [getSliceAsync](http://dev.office.com/reference/add-ins/shared/file.getsliceasync) e o método [closeAsync](http://dev.office.com/reference/add-ins/shared/file.closeasync). A propriedade **size** retorna o número de bytes no arquivo. A propriedade **sliceCount** retorna o número de objetos [Slice](http://dev.office.com/reference/add-ins/shared/document) (será discutido posteriormente neste artigo) no arquivo.
 
 Use o código a seguir para obter o documento do PowerPoint ou Word como um objeto **File** usando o método **Document.getFileAsync** e, em seguida, faça uma chamada para a função `getSlice` definida localmente. Observe que o objeto **File**, uma variável de contador e o número total de fatias no arquivo são transmitidos na chamada para `getSlice` em um objeto anônimo.
 
@@ -209,7 +209,7 @@ function sendFile() {
 
 A função local `getSlice` faz uma chamada para o método **File.getSliceAsync** para recuperar uma fatia do objeto **File**. O método **getSliceAsync** retorna um objeto **Slice** do conjunto de fatias. Ele tem dois parâmetros obrigatórios, _sliceIndex_ e _callback_. O parâmetro _sliceIndex_ usa um número inteiro como um indexador na coleção de fatias. Como outras funções na API JavaScript para Office, o método **getSliceAsync** também usa uma função de retorno de chamada como um parâmetro para manipular os resultados da chamada do método.
 
-O objeto **Slice** dá a você acesso aos dados contidos no arquivo. A menos que seja especificado de outra forma no parâmetro _options_ do método **getFileAsync**, o objeto **Slice** tem 4 MB de tamanho. O objeto **Slice** expõe três propriedades: [size](../../reference/shared/slice.size.md), [data](../../reference/shared/slice.data.md) e [index](../../reference/shared/slice.index.md). A propriedade **size** tem o tamanho, em bytes, da fatia. A propriedade **index** tem um número inteiro que representa a posição da fatia na coleção de fatias.
+O objeto **Slice** dá a você acesso aos dados contidos no arquivo. A menos que seja especificado de outra forma no parâmetro _options_ do método **getFileAsync**, o objeto **Slice** tem 4 MB de tamanho. O objeto **Slice** expõe três propriedades: [size](http://dev.office.com/reference/add-ins/shared/slice.size), [data](http://dev.office.com/reference/add-ins/shared/slice.data) e [index](http://dev.office.com/reference/add-ins/shared/slice.index). A propriedade **size** tem o tamanho, em bytes, da fatia. A propriedade **index** tem um número inteiro que representa a posição da fatia na coleção de fatias.
 
 
 

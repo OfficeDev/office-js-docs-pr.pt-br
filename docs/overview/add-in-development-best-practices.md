@@ -76,7 +76,7 @@ Para modelos que aplicam os princípios de design que você pode usar e personal
 
 
 
-- Use a propriedade [Context.touchEnabled](../../reference/shared/office.context.touchenabled.md) para descobrir se o aplicativo host que executa o suplemento é habilitado para toque.
+- Use a propriedade [Context.touchEnabled](http://dev.office.com/reference/add-ins/shared/office.context.touchenabled) para descobrir se o aplicativo host que executa o suplemento é habilitado para toque.
 
      >**Observação** Essa propriedade não tem suporte no Outlook.
 - Verifique se todos os controles são dimensionados adequadamente para interação por toque. Por exemplo, se os botões têm destinos de toque adequados e se as caixas de entrada têm a dimensão correta para que os usuários insiram entradas.

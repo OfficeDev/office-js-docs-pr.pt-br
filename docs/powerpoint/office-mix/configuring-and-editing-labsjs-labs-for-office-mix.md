@@ -7,7 +7,7 @@ O Office Mix fornece métodos do office.js para obter e definir configurações 
 
 ## <a name="getting-the-lab-editor"></a>Como obter o editor de laboratório
 
-O editor de laboratório, o objeto [Labs.LabEditor](../../../reference/office-mix/labs.labeditor.md), permite que você edite seu laboratório e obtenha e defina a configuração de seu laboratório. Ao terminar de editar seu laboratório, você precisa chamar o método **Done**. No entanto, chamar o método **Done** não é necessário, exceto quando você está tentando obter ou executar um laboratório que você está editando. Observe que é possível abrir apenas uma instância do laboratório por vez.
+O editor de laboratório, o objeto [Labs.LabEditor](http://dev.office.com/reference/add-ins/office-mix/labs.labeditor), permite que você edite seu laboratório e obtenha e defina a configuração de seu laboratório. Ao terminar de editar seu laboratório, você precisa chamar o método **Done**. No entanto, chamar o método **Done** não é necessário, exceto quando você está tentando obter ou executar um laboratório que você está editando. Observe que é possível abrir apenas uma instância do laboratório por vez.
 
 O código a seguir mostra como obter o editor de laboratório.
 
@@ -24,7 +24,7 @@ Labs.editLab((err, labEditor) => {
 });
 ```
 
-Use os métodos **getConfiguration** e **setConfiguration** no [Labs.LabEditor](../../../reference/office-mix/labs.labeditor.md) para armazenar a configuração de um determinado laboratório. A configuração ([Labs.Core.IConfiguration](../../../reference/office-mix/labs.core.iconfiguration.md)) indica ao Office Mix quais dados serão coletados e processados pelo laboratório. Uma configuração contém informações gerais sobre um laboratório, incluindo nome, versão e outras opções de configuração. A parte mais importante da configuração é a definição dos componentes de laboratório.
+Use os métodos **getConfiguration** e **setConfiguration** no [Labs.LabEditor](http://dev.office.com/reference/add-ins/office-mix/labs.labeditor) para armazenar a configuração de um determinado laboratório. A configuração ([Labs.Core.IConfiguration](http://dev.office.com/reference/add-ins/office-mix/labs.core.iconfiguration)) indica ao Office Mix quais dados serão coletados e processados pelo laboratório. Uma configuração contém informações gerais sobre um laboratório, incluindo nome, versão e outras opções de configuração. A parte mais importante da configuração é a definição dos componentes de laboratório.
 
 O código a seguir mostra como definir e obter uma configuração. Para definir uma configuração, basta criar o objeto da configuração e, em seguida, chamar o método **setConfiguration**. Para recuperar depois a configuração, chame o método **getConfiguration** no objeto do editor de laboratório.
 
@@ -79,7 +79,7 @@ Depois de definir a configuração do laboratório, você está pronto para come
 
 ### <a name="getting-the-lab-instance"></a>Como obter a instância do laboratório
 
-Interaja com o laboratório usando o objeto [Labs.LabInstance](../../../reference/office-mix/labs.labinstance.md), que é uma instância do laboratório configurado para o usuário atual. Para executar (ou "obter") o laboratório, chame a função [Labs.takeLab](../../../reference/office-mix/labs.takelab.md).
+Interaja com o laboratório usando o objeto [Labs.LabInstance](http://dev.office.com/reference/add-ins/office-mix/labs.labinstance), que é uma instância do laboratório configurado para o usuário atual. Para executar (ou "obter") o laboratório, chame a função [Labs.takeLab](http://dev.office.com/reference/add-ins/office-mix/labs.takelab).
 
 
 ```js
@@ -90,7 +90,7 @@ Labs.takeLab((err, labInstance) => {
 });
 ```
 
-O objeto da instância contém uma matriz de instâncias do componente ([Labs.ComponentInstanceBase](../../../reference/office-mix/labs.componentinstancebase.md), [Labs.ComponentInstance](../../../reference/office-mix/labs.componentinstance.md)) que mapeia para os componentes especificados na configuração. Na verdade, uma instância é simplesmente uma versão transformada da configuração usada para conectar IDs do lado do servidor a objetos da instância, bem como ocultar determinados campos do usuário quando for aplicável (por exemplo, dicas, respostas etc).
+O objeto da instância contém uma matriz de instâncias do componente ([Labs.ComponentInstanceBase](http://dev.office.com/reference/add-ins/office-mix/labs.componentinstancebase), [Labs.ComponentInstance](http://dev.office.com/reference/add-ins/office-mix/labs.componentinstance)) que mapeia para os componentes especificados na configuração. Na verdade, uma instância é simplesmente uma versão transformada da configuração usada para conectar IDs do lado do servidor a objetos da instância, bem como ocultar determinados campos do usuário quando for aplicável (por exemplo, dicas, respostas etc).
 
 
 ### <a name="managing-state"></a>Como gerenciar o estado

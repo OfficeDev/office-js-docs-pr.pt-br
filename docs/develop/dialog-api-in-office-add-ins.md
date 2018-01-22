@@ -24,11 +24,11 @@ A caixa de diálogo sempre abre no centro da tela. O usuário pode movê-la e re
 
 ## <a name="dialog-api-scenarios"></a>Cenários da API de Caixa de diálogo
 
-As APIs JavaScript para Office têm suporte para os seguintes cenários com um objeto [Dialog](../../reference/shared/officeui.dialog.md) e duas funções no [namespace Office.context.ui](http://dev.office.com/reference/add-ins/shared/officeui).
+As APIs JavaScript para Office têm suporte para os seguintes cenários com um objeto [Dialog](http://dev.office.com/reference/add-ins/shared/officeui.dialog) e duas funções no [namespace Office.context.ui](http://dev.office.com/reference/add-ins/shared/officeui).
 
 ### <a name="open-a-dialog-box"></a>Abrir uma caixa de diálogo.
 
-Para abrir uma caixa de diálogo, seu código no painel de tarefas chama o método [displayDialogAsync](../../reference/shared/officeui.displaydialogasync.md) e transmite a ele a URL do recurso que você deseja abrir. Isso geralmente é uma página, mas pode ser um método controlador em um aplicativo MVC, uma rota, um método de serviço Web ou qualquer outro recurso. Neste artigo, 'página' ou 'site' refere-se ao recurso na caixa de diálogo. O código a seguir é um exemplo simples:
+Para abrir uma caixa de diálogo, seu código no painel de tarefas chama o método [displayDialogAsync](http://dev.office.com/reference/add-ins/shared/officeui.displaydialogasync) e transmite a ele a URL do recurso que você deseja abrir. Isso geralmente é uma página, mas pode ser um método controlador em um aplicativo MVC, uma rota, um método de serviço Web ou qualquer outro recurso. Neste artigo, 'página' ou 'site' refere-se ao recurso na caixa de diálogo. O código a seguir é um exemplo simples:
 
 ```js
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
