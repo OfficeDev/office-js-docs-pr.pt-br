@@ -69,7 +69,7 @@ Aplique as seguintes práticas recomendadas ao desenvolver comandos de suplement
 
 A melhor maneira de começar a usar os comandos de suplemento é conferir os [exemplos de comandos de Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) no GitHub.
 
-Para saber mais sobre como especificar comandos de suplemento no manifesto, confira [Definir comandos de suplemento no manifesto](../develop/define-add-in-commands.md) e o conteúdo de referência de [VersionOverrides](../../reference/manifest/versionoverrides.md).
+Para saber mais sobre como especificar comandos de suplemento no manifesto, confira [Definir comandos de suplemento no manifesto](../develop/define-add-in-commands.md) e o conteúdo de referência de [VersionOverrides](http://dev.office.com/reference/add-ins/manifest/versionoverrides).
 
 
 

@@ -20,7 +20,7 @@ Ao desenvolver sua API de serviço, você também pode tentar:
 A API [getAccessTokenAsync](../../reference/shared/office.context.auth.getAccessTokenAsync.md) não é compatível pelo suplemento ou pela versão do Office. 
 
 - A versão do Office não é compatível com o SSO. A versão necessária é o Office 2016, versão 1710, build 8629.nnnn ou posterior (a versão de assinatura do Office 365, às vezes chamada de "Clique para Executar"). Você talvez precise ser um participante do programa Office Insider para obter essa versão. Para obter mais informações, confira a página [Seja um Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1). 
-- O manifesto do suplemento está sem a seção [WebApplicationInfo](../../reference/manifest/webapplicationinfo.md) adequada.
+- O manifesto do suplemento está sem a seção [WebApplicationInfo](http://dev.office.com/reference/add-ins/manifest/webapplicationinfo) adequada.
 
 ### <a name="13001"></a>13001
 
@@ -78,7 +78,7 @@ Se o AAD não tiver um registro de que o consentimento (para o recurso Microsoft
 ### <a name="invalid-or-missing-scope-permission-errors"></a>Erros de escopo (permissão) inválidos ou ausentes
 
 - Seu código do lado do servidor deve enviar uma resposta `403 Forbidden` ao cliente que deve apresentar uma mensagem amigável ao usuário. Se possível, registre o erro no console ou grave-o em um registro.
-- Certifique-se de que sua seção de [Escopos](../../reference/manifest/scopes.md) do manifesto do suplemento especifique todas as permissões necessárias. E certifique-se de que seu registro do serviço Web do suplemento especifique as mesmas permissões. Verifique também os erros de ortografia. Para obter mais informações, consulte [Registrar o suplemento com o ponto de extremidade v2.0 do Azure AD](../../docs/develop/create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (ASP.NET) ou [Registrar o suplemento com o ponto de extremidade v2.0 do Azure AD](../../docs/develop/create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (Nó JS), e [Configurar o suplemento](../../docs/develop/create-sso-office-add-ins-aspnet.md#configure-the-add-in) (ASP.NET) ou [Configurar o suplemento](../../docs/develop/create-sso-office-add-ins-nodejs.md#configure-the-add-in) (Nó JS).
+- Certifique-se de que sua seção de [Escopos](http://dev.office.com/reference/add-ins/manifest/scopes) do manifesto do suplemento especifique todas as permissões necessárias. E certifique-se de que seu registro do serviço Web do suplemento especifique as mesmas permissões. Verifique também os erros de ortografia. Para obter mais informações, consulte [Registrar o suplemento com o ponto de extremidade v2.0 do Azure AD](../../docs/develop/create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (ASP.NET) ou [Registrar o suplemento com o ponto de extremidade v2.0 do Azure AD](../../docs/develop/create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (Nó JS), e [Configurar o suplemento](../../docs/develop/create-sso-office-add-ins-aspnet.md#configure-the-add-in) (ASP.NET) ou [Configurar o suplemento](../../docs/develop/create-sso-office-add-ins-nodejs.md#configure-the-add-in) (Nó JS).
 
 ### <a name="expired-or-invalid-token-errors-when-calling-microsoft-graph"></a>Erros de token expirados ou inválidos ao chamar o Microsoft Graph
 

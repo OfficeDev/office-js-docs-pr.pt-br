@@ -198,4 +198,4 @@ Parabéns, você criou com êxito um suplemento do Word usando o jQuery! Em segu
 * [Visão geral dos suplementos do Word](word-add-ins-programming-overview.md)
 * [Explorar trechos com o Script Lab](https://store.office.com/en-001/app.aspx?assetid=WA104380862&ui=en-US&rs=en-001&ad=US&appredirect=false)
 * [Exemplos de código do suplemento do Word](http://dev.office.com/code-samples#?filters=word,office%20add-ins)
-* [Referências da API JavaScript do Word](../../reference/word/word-add-ins-reference-overview.md)
+* [Referências da API JavaScript do Word](http://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview)

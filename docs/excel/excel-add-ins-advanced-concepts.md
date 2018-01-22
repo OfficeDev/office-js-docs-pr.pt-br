@@ -6,19 +6,19 @@ Este artigo foi criado com base nas informações em [conceitos principais da AP
 
 Um suplemento do Excel interage com objetos no Excel usando a API JavaScript para Office, que inclui dois modelos de objeto JavaScript:
 
-* **API JavaScript do Excel**: introduzida com o Office 2016, a [API JavaScript do Excel](../../reference/excel/excel-add-ins-reference-overview.md) fornece objetos fortemente tipados que você pode usar para acessar planilhas, intervalos, tabelas, gráficos e muito mais. 
+* **API JavaScript do Excel**: introduzida com o Office 2016, a [API JavaScript do Excel](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview) fornece objetos fortemente tipados que você pode usar para acessar planilhas, intervalos, tabelas, gráficos e muito mais. 
 
-* **APIs comuns**: introduzidas com o Office 2013, as APIs comuns (também conhecidas como a [API Compartilhada](../../reference/javascript-api-for-office.md)) podem ser usadas para acessar recursos como interface de usuário, caixas de diálogo e configurações de cliente, que são comuns entre vários tipos de aplicativos host, como Word, Excel ou PowerPoint.
+* **APIs comuns**: introduzidas com o Office 2013, as APIs comuns (também conhecidas como a [API Compartilhada](http://dev.office.com/reference/add-ins/javascript-api-for-office)) podem ser usadas para acessar recursos como interface de usuário, caixas de diálogo e configurações de cliente, que são comuns entre vários tipos de aplicativos host, como Word, Excel ou PowerPoint.
 
 Enquanto você provavelmente use a API JavaScript do Excel para desenvolver a maioria das funcionalidades em suplementos que visam o Excel 2016, você também usará objetos na API Compartilhada. Por exemplo:
 
-- [Context](../../reference/shared/context.md): O objeto **Context** representa o ambiente de tempo de execução do suplemento e fornece acesso a objetos principais da API. Ele consiste em detalhes da configuração da pasta de trabalho, como `contentLanguage` e `officeTheme`, além de fornecer informações sobre o ambiente de tempo de execução do suplemento, como `host` e `platform`. Além disso, ele fornece o método `requirements.isSetSupported()`, que você pode usar para verificar se o conjunto de requisitos especificado é suportado pelo aplicativo Excel onde o suplemento está sendo executado. 
+- [Context](http://dev.office.com/reference/add-ins/shared/context): O objeto **Context** representa o ambiente de tempo de execução do suplemento e fornece acesso a objetos principais da API. Ele consiste em detalhes da configuração da pasta de trabalho, como `contentLanguage` e `officeTheme`, além de fornecer informações sobre o ambiente de tempo de execução do suplemento, como `host` e `platform`. Além disso, ele fornece o método `requirements.isSetSupported()`, que você pode usar para verificar se o conjunto de requisitos especificado é suportado pelo aplicativo Excel onde o suplemento está sendo executado. 
 
-- [Document](../../reference/shared/document.md): O objeto **Document** fornece o método `getFileAsync()`, que você pode usar para baixar o arquivo Excel onde o suplemento está em execução. 
+- [Document](http://dev.office.com/reference/add-ins/shared/document): O objeto **Document** fornece o método `getFileAsync()`, que você pode usar para baixar o arquivo Excel onde o suplemento está em execução. 
 
 ## <a name="requirement-sets"></a>Conjuntos de requisitos
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Um Suplemento do Office pode executar uma verificação de tempo de execução ou usar conjuntos de requisitos especificados no manifesto para determinar se um host do Office dá suporte às APIs necessárias ao suplemento. Para identificar os conjuntos de requisitos específicos que estão disponíveis em cada plataforma suportada, confira [Conjuntos de requisitos da API JavaScript do Excel](../../reference/requirement-sets/excel-api-requirement-sets.md).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Um Suplemento do Office pode executar uma verificação de tempo de execução ou usar conjuntos de requisitos especificados no manifesto para determinar se um host do Office dá suporte às APIs necessárias ao suplemento. Para identificar os conjuntos de requisitos específicos que estão disponíveis em cada plataforma suportada, confira [Conjuntos de requisitos da API JavaScript do Excel](http://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets).
 
 ### <a name="checking-for-requirement-set-support-at-runtime"></a>Verificando o suporte ao conjunto de requisitos no tempo de execução
 
@@ -35,7 +35,7 @@ else {
 
 ### <a name="defining-requirement-set-support-in-the-manifest"></a>Definindo o suporte ao conjunto de requisitos no manifesto
 
-Você pode usar o [elemento Requirements](../../reference/manifest/requirements.md) no manifesto do suplemento para especificar os conjuntos de requisitos mínimos e/ou os métodos de API exigidos pelo suplemento para ser ativado. Se a plataforma ou o host do Office não der suporte aos conjuntos de requisitos ou aos métodos de API que são especificados no elemento **Requirements** do manifesto, o suplemento não será executado nesse host ou plataforma e não será exibido na lista de suplementos que são mostrados em **Meus Suplementos**. 
+Você pode usar o [elemento Requirements](http://dev.office.com/reference/add-ins/manifest/requirements) no manifesto do suplemento para especificar os conjuntos de requisitos mínimos e/ou os métodos de API exigidos pelo suplemento para ser ativado. Se a plataforma ou o host do Office não der suporte aos conjuntos de requisitos ou aos métodos de API que são especificados no elemento **Requirements** do manifesto, o suplemento não será executado nesse host ou plataforma e não será exibido na lista de suplementos que são mostrados em **Meus Suplementos**. 
 
 O exemplo de código a seguir mostra o elemento **Requirements** em um manifesto de suplemento que especifica se o suplemento deve ser carregado em todos os aplicativos host do Office que dão suporte ao conjunto de requisitos ExcelApi, versão 1.3 ou superior.
 
@@ -51,7 +51,7 @@ O exemplo de código a seguir mostra o elemento **Requirements** em um manifesto
 
 ### <a name="requirement-sets-for-the-officejs-common-api"></a>Conjuntos de requisitos para a API comum Office.js
 
-Para saber mais sobre conjuntos de requisitos de API comum, confira [Conjuntos de requisitos de API comum do Office](../../reference/requirement-sets/office-add-in-requirement-sets.md).
+Para saber mais sobre conjuntos de requisitos de API comum, confira [Conjuntos de requisitos de API comum do Office](http://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets).
 
 ## <a name="loading-the-properties-of-an-object"></a>Carregando as propriedades de um objeto
 
@@ -131,7 +131,7 @@ myWorksheets.load({
 
 ## <a name="scalar-and-navigation-properties"></a>Propriedades escalares e de navegação 
 
-Na documentação de referência da API JavaScript do Excel, você pode notar que os membros do objeto são agrupados em duas categorias: **propriedades** e **relações**. Uma propriedade de um objeto é um membro escalar como uma cadeia de caracteres, um número inteiro ou um valor booliano, enquanto uma relação de um objeto (também conhecida como uma propriedade de navegação) é um membro que é ou um objeto ou uma coleção de objetos. Por exemplo, os membros `name` e `position` no objeto [Worksheet](../../reference/excel/worksheet.md) são propriedades escalares, enquanto `protection` e `tables` são relações (propriedades de navegação). 
+Na documentação de referência da API JavaScript do Excel, você pode notar que os membros do objeto são agrupados em duas categorias: **propriedades** e **relações**. Uma propriedade de um objeto é um membro escalar como uma cadeia de caracteres, um número inteiro ou um valor booliano, enquanto uma relação de um objeto (também conhecida como uma propriedade de navegação) é um membro que é ou um objeto ou uma coleção de objetos. Por exemplo, os membros `name` e `position` no objeto [Worksheet](http://dev.office.com/reference/add-ins/excel/worksheet) são propriedades escalares, enquanto `protection` e `tables` são relações (propriedades de navegação). 
 
 ### <a name="scalar-properties-and-navigation-properties-with-objectload"></a>Propriedades escalares e propriedades de navegação com `object.load()`
 
@@ -221,4 +221,4 @@ dataSheet.position = 1;
  
 * [Principais conceitos da API JavaScript do Excel](excel-add-ins-core-concepts.md)
 * [Exemplos de código de suplementos do Excel](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Referência da API JavaScript do Excel](../../reference/excel/excel-add-ins-reference-overview.md)
+* [Referência da API JavaScript do Excel](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

@@ -36,4 +36,4 @@ Quando uma solicitação da API JavaScript do Excel não é bem-sucedida, a API 
 ## <a name="additional-resources"></a>Recursos adicionais
 
 - [Principais conceitos da API JavaScript do Excel](excel-add-ins-core-concepts.md)
-- [Objeto OfficeExtension.Error (API JavaScript para Excel)](../../reference/excel/error.md)
+- [Objeto OfficeExtension.Error (API JavaScript para Excel)](http://dev.office.com/reference/add-ins/excel/error)

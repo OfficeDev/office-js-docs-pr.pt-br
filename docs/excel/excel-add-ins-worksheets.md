@@ -1,6 +1,6 @@
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Trabalhar com planilhas usando a API JavaScript do Excel
 
-Este artigo fornece exemplos de código que mostram como executar tarefas comuns com planilhas usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos aos quais os objetos **Worksheet** e **WorksheetCollection** dão suporte, confira [Objeto Worksheet (API JavaScript para Excel)](../../reference/excel/worksheet.md) e [Objeto WorksheetCollection (API JavaScript para Excel)](../../reference/excel/worksheetcollection.md).
+Este artigo fornece exemplos de código que mostram como executar tarefas comuns com planilhas usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos aos quais os objetos **Worksheet** e **WorksheetCollection** dão suporte, confira [Objeto Worksheet (API JavaScript para Excel)](http://dev.office.com/reference/add-ins/excel/worksheet) e [Objeto WorksheetCollection (API JavaScript para Excel)](http://dev.office.com/reference/add-ins/excel/worksheetcollection).
 
 **Observação**: As informações deste artigo se aplicam apenas a planilhas regulares; elas não se aplicam às folhas "gráfico" ou "macro".
 
@@ -269,5 +269,5 @@ Para obter exemplos que mostram como obter um intervalo em uma planilha, confira
 ## <a name="additional-resources"></a>Recursos adicionais
 
 - [Principais conceitos da API JavaScript do Excel](excel-add-ins-core-concepts.md)
-- [Objeto Worksheet (API JavaScript para Excel)](../../reference/excel/worksheet.md)
-- [Objeto WorksheetCollection (API JavaScript para Excel)](../../reference/excel/worksheetcollection.md)
+- [Objeto Worksheet (API JavaScript para Excel)](http://dev.office.com/reference/add-ins/excel/worksheet)
+- [Objeto WorksheetCollection (API JavaScript para Excel)](http://dev.office.com/reference/add-ins/excel/worksheetcollection)

@@ -200,7 +200,7 @@ Você pode distribuir suplementos usando um compartilhamento de arquivos, um cat
     
 - [Manifesto XML dos suplementos do Office](../../docs/overview/add-in-manifests.md)
     
-- [API JavaScript para Office](../../reference/javascript-api-for-office.md)
+- [API JavaScript para Office](http://dev.office.com/reference/add-ins/javascript-api-for-office)
     
 - [Criar seu primeiro suplemento de painel de tarefas para o Project 2013 usando um editor de texto](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
     

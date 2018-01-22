@@ -7,7 +7,7 @@ Os usuários entram no Office (online, em dispositivos móveis e plataformas des
 
 ![Imagem mostrando o processo de logon de um suplemento](../images/OfficeHostTitleBarLogin.png)
 
->**Observação:** A API de logon único tem suporte para Word, Excel e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](../../reference/requirement-sets/identity-api-requirement-sets.md).
+>**Observação:** A API de logon único tem suporte para Word, Excel e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](http://dev.office.com/reference/add-ins/requirement-sets/identity-api-requirement-sets).
 > O logon único está no modo de visualização do Outlook. Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Office 365. Para obter informações sobre como fazer isso, consulte [Exchange Online: Como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 Para os usuários, o logon único torna a experiência de execução do suplemento mais fácil. Para os desenvolvedores, isso significa que o suplemento poderá autenticar os usuários e obter acesso autorizado aos dados deles por meio do Microsoft Graph com as credenciais que o usuário já tenha fornecido para o aplicativo do Office.

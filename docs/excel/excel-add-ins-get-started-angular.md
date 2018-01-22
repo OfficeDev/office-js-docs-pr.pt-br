@@ -194,4 +194,4 @@ Parabéns, você criou com êxito um suplemento do Excel usando o Angular! Em se
 
 * [Principais conceitos da API JavaScript do Excel](excel-add-ins-core-concepts.md)
 * [Exemplos de código do suplemento do Excel](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Referência da API JavaScript do Excel](../../reference/excel/excel-add-ins-reference-overview.md)
+* [Referência da API JavaScript do Excel](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

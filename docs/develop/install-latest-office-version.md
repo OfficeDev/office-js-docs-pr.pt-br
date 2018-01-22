@@ -26,8 +26,8 @@ Quando o processo de instalação for concluído, você terá os últimos aplica
 
 Para saber mais sobre os builds mínimos de produtos para cada plataforma dos conjuntos de requisitos de API, confira o seguinte:
 
-- [Conjuntos de requisitos de API JavaScript do Word](../../reference/requirement-sets/word-api-requirement-sets.md)
-- [Conjuntos de requisitos de API JavaScript do Excel](../../reference/requirement-sets/excel-api-requirement-sets.md)
-- [Conjuntos de requisitos de API JavaScript do OneNote](../../reference/requirement-sets/onenote-api-requirement-sets.md)
-- [Conjuntos de requisitos da Dialog API](../../reference/requirement-sets/dialog-api-requirement-sets.md)
-- [Conjuntos de requisitos da API do Office](../../reference/requirement-sets/office-add-in-requirement-sets.md)
+- [Conjuntos de requisitos de API JavaScript do Word](http://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets)
+- [Conjuntos de requisitos de API JavaScript do Excel](http://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets)
+- [Conjuntos de requisitos de API JavaScript do OneNote](http://dev.office.com/reference/add-ins/requirement-sets/onenote-api-requirement-sets)
+- [Conjuntos de requisitos da Dialog API](http://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets)
+- [Conjuntos de requisitos da API do Office](http://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets)

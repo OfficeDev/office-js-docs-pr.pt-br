@@ -72,7 +72,7 @@ Por exemplo:
     }
 ```
 
-Você pode encontrar objetos do OneNote e operações compatíveis na [Referência API](../../reference/onenote/onenote-add-ins-javascript-reference.md).
+Você pode encontrar objetos do OneNote e operações compatíveis na [Referência API](http://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference).
 
 ### <a name="accessing-the-common-api-through-the-document-object"></a>Acessar a API comum por meio do objeto *Document*
 
@@ -117,6 +117,6 @@ O diagrama a seguir representa o que está disponível atualmente na API JavaScr
 ## <a name="additional-resources"></a>Recursos adicionais
 
 - [Crie seu primeiro suplemento do OneNote](onenote-add-ins-getting-started.md)
-- [Referência da API JavaScript do OneNote](../../reference/onenote/onenote-add-ins-javascript-reference.md)
+- [Referência da API JavaScript do OneNote](http://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)
 - [Amostra de Rubric Grader](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Visão geral da plataforma de Suplementos do Office](https://dev.office.com/docs/add-ins/overview/office-add-ins)

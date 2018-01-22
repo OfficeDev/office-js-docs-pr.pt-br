@@ -93,7 +93,7 @@ O Procedimento 2 mostra como criar o arquivo HTML que o manifesto JSOM_SimpleOMC
     
 2. Crie um arquivo JavaScript denominado JSOM_Sample.js na mesma pasta do arquivo de JSOMCall.html. O código a seguir obtém as informações de contexto e documentação do aplicativo usando funções no arquivo Office.js. O objeto **text** é a ID do controle **textarea** no arquivo HTML.
     
-    A variável **_projDoc** é inicializada com um objeto **ProjectDocument**. O código inclui algumas funções de tratamento de erros simples e a função **getContextValues** que obtém o contexto do aplicativo e as propriedades contextuais do documento do Project. Para saber mais sobre o modelo de objeto JavaScript para o Project, confira [API do JavaScript para Office](../../reference/javascript-api-for-office.md).
+    A variável **_projDoc** é inicializada com um objeto **ProjectDocument**. O código inclui algumas funções de tratamento de erros simples e a função **getContextValues** que obtém o contexto do aplicativo e as propriedades contextuais do documento do Project. Para saber mais sobre o modelo de objeto JavaScript para o Project, confira [API do JavaScript para Office](http://dev.office.com/reference/add-ins/javascript-api-for-office).
     
 
 
@@ -158,11 +158,11 @@ function getApplicationDisplayLanguage() {
 ```
 
 
-    For information about the functions in the Office.debug.js file, see [JavaScript API for Office](../../reference/javascript-api-for-office.md). For example, the  **getDocumentUrl** function gets the URL or file path of the open project.
+    For information about the functions in the Office.debug.js file, see [JavaScript API for Office](http://dev.office.com/reference/add-ins/javascript-api-for-office). For example, the  **getDocumentUrl** function gets the URL or file path of the open project.
     
 3. Adicione funções JavaScript que chamam funções assíncronas em Office.js e Project-15.js para acessar dados selecionados:
     
-      - Por exemplo, **getSelectedDataAsync** é uma função geral no Office.js que obtém texto não formatado para os dados selecionados. Para saber mais, confira [objeto AsyncResult](../../reference/shared/asyncresult.md).
+      - Por exemplo, **getSelectedDataAsync** é uma função geral no Office.js que obtém texto não formatado para os dados selecionados. Para saber mais, confira [objeto AsyncResult](http://dev.office.com/reference/add-ins/shared/asyncresult).
     
   - A função **getSelectedTaskAsync** em Project-15.js obtém o GUID da tarefa selecionada. Da mesma forma, a função **getSelectedResourceAsync** obtém o GUID do recurso selecionado. Se você chamar essas funções quando uma tarefa ou um recurso não estiver selecionado, as funções mostrarão um erro indefinido.
     
@@ -175,7 +175,7 @@ function getApplicationDisplayLanguage() {
     
   - Se o projeto é sincronizado com uma lista de tarefas do SharePoint, a função **getWSSUrlAsync** obtém a URL e o nome da lista de tarefas. Se o projeto não está sincronizado com uma lista de tarefas do SharePoint, a função **getWSSUrlAsync** falha.
     
-     >**Observação** Para obter a URL do SharePoint e o nome da lista de tarefas, recomendamos que você use a função **getProjectFieldAsync** com as constantes **WSSUrl** e **WSSList** na enumeração [ProjectProjectFields](../../reference/shared/projectprojectfields-enumeration.md).
+     >**Observação** Para obter a URL do SharePoint e o nome da lista de tarefas, recomendamos que você use a função **getProjectFieldAsync** com as constantes **WSSUrl** e **WSSList** na enumeração [ProjectProjectFields](http://dev.office.com/reference/add-ins/shared/projectprojectfields-enumeration).
 
     Cada uma das funções no código a seguir inclui uma função anônima que é especificada por `function (asyncResult)`, que é um retorno de chamada que obtém o resultado assíncrono. Em vez de funções anônimas, você poderia usar funções nomeadas, que podem ajudar na capacidade de manutenção de suplementos complexos.
     
@@ -1133,7 +1133,7 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
     
 - [Noções básicas da API JavaScript para suplementos](../develop/understanding-the-javascript-api-for-office.md)
     
-- [API JavaScript para suplementos do Office](../../reference/javascript-api-for-office.md)
+- [API JavaScript para suplementos do Office](http://dev.office.com/reference/add-ins/javascript-api-for-office)
 
 - [Referência de esquema para manifestos de Suplementos do Office (v1.1)](../overview/add-in-manifests.md)     
     

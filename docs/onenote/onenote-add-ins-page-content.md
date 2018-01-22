@@ -16,9 +16,9 @@ Para criar uma página em branco do OneNote, use um dos seguintes métodos:
 
 Em seguida, use métodos nos seguintes objetos para trabalhar com o conteúdo da página, como Page.addOutline e Outline.appendHtml. 
 
-- [Página](../../reference/onenote/page.md)
-- [Estrutura de tópicos](../../reference/onenote/outline.md)
-- [Parágrafo](../../reference/onenote/paragraph.md)
+- [Página](http://dev.office.com/reference/add-ins/onenote/page)
+- [Estrutura de tópicos](http://dev.office.com/reference/add-ins/onenote/outline)
+- [Parágrafo](http://dev.office.com/reference/add-ins/onenote/paragraph)
 
 O conteúdo e a estrutura da página do OneNote são representados por HTML. Apenas um subconjunto de HTML é compatível com a criação e a atualização do conteúdo da página, conforme descrito abaixo.
 
@@ -44,6 +44,6 @@ Metadados, como título, ainda podem ser consultados para qualquer página.
 ## <a name="additional-resources"></a>Recursos adicionais
 
 - [Visão geral sobre a programação da API JavaScript do OneNote](onenote-add-ins-programming-overview.md)
-- [Referência da API JavaScript do OneNote](../../reference/onenote/onenote-add-ins-javascript-reference.md)
+- [Referência da API JavaScript do OneNote](http://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)
 - [Amostra de Rubric Grader](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Visão geral da plataforma de Suplementos do Office](https://dev.office.com/docs/add-ins/overview/office-add-ins)

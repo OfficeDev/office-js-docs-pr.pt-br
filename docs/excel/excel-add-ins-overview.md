@@ -21,7 +21,7 @@ A plataforma Suplementos do Office fornece a estrutura e as APIs JavaScript Offi
 
 Um suplemento do Excel inclui dois componentes básicos: um aplicativo Web e um arquivo de configuração, chamado de arquivo de manifesto. 
 
-O aplicativo Web usa a [API JavaScript para Office](../../reference/javascript-api-for-office.md) para interagir com objetos no Excel e também pode facilitar a interação com recursos online. Por exemplo, um suplemento pode executar alguma das seguintes tarefas:
+O aplicativo Web usa a [API JavaScript para Office](http://dev.office.com/reference/add-ins/javascript-api-for-office) para interagir com objetos no Excel e também pode facilitar a interação com recursos online. Por exemplo, um suplemento pode executar alguma das seguintes tarefas:
 
 * Criar, ler, atualizar e excluir dados na pasta de trabalho (planilhas, intervalos, tabelas, gráficos, itens nomeados e muito mais).
 * Executar autorização de usuário em um serviço online usando o fluxo padrão OAuth 2.0.
@@ -60,9 +60,9 @@ Além de interagir com o conteúdo da pasta de trabalho, os suplementos do Excel
 
 ## <a name="javascript-apis-to-interact-with-workbook-content"></a>APIs JavaScript para interagir com o conteúdo da pasta de trabalho
 
-Um suplemento do Excel interage com objetos no Excel usando a [API JavaScript para Office](../../reference/javascript-api-for-office.md), que inclui dois modelos de objeto JavaScript:
+Um suplemento do Excel interage com objetos no Excel usando a [API JavaScript para Office](http://dev.office.com/reference/add-ins/javascript-api-for-office), que inclui dois modelos de objeto JavaScript:
 
-* **API JavaScript do Excel**: Introduzida com o Office 2016, a [API JavaScript do Excel](../../reference/excel/excel-add-ins-reference-overview.md) fornece objetos do Excel fortemente tipados que você pode usar para acessar planilhas, intervalos, tabelas, gráficos e muito mais. 
+* **API JavaScript do Excel**: Introduzida com o Office 2016, a [API JavaScript do Excel](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview) fornece objetos do Excel fortemente tipados que você pode usar para acessar planilhas, intervalos, tabelas, gráficos e muito mais. 
 
 * **API compartilhada**: Introduzida com o Office 2013, a API compartilhada permite acessar recursos como interface de usuário, caixas de diálogo e configurações de cliente, que são comuns entre vários tipos de aplicativos host, como Word, Excel e PowerPoint. Como a API compartilhada fornece funcionalidade limitada para interação do Excel, você poderá usá-la se seu suplemento precisar ser executado no Excel 2013.
 
@@ -76,4 +76,4 @@ Introdução à [criação de seu primeiro suplemento do Excel](excel-add-ins-ge
 - [Práticas recomendadas para o desenvolvimento de Suplementos do Office](../overview/add-in-development-best-practices.md)
 - [Diretrizes de design para suplementos do Office](../design/add-in-design.md)
 - [Principais conceitos da API JavaScript do Excel](excel-add-ins-core-concepts.md)
-- [Referência da API JavaScript do Excel](../../reference/excel/excel-add-ins-reference-overview.md)
+- [Referência da API JavaScript do Excel](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

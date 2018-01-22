@@ -1,6 +1,6 @@
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Trabalhar com intervalos usando a API JavaScript do Excel
 
-Este artigo fornece exemplos de código que mostram como executar tarefas comuns com intervalos usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos que o objeto **Range** suporta, confira [Objeto Range (API JavaScript para Excel)](../../reference/excel/range.md).
+Este artigo fornece exemplos de código que mostram como executar tarefas comuns com intervalos usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos que o objeto **Range** suporta, confira [Objeto Range (API JavaScript para Excel)](http://dev.office.com/reference/add-ins/excel/range).
 
 ## <a name="get-a-range"></a>Obter um intervalo
 
@@ -527,4 +527,4 @@ Excel.run(function (context) {
 ## <a name="additional-resources"></a>Recursos adicionais
 
 - [Principais conceitos da API JavaScript do Excel](excel-add-ins-core-concepts.md)
-- [Objeto Range (API JavaScript para Excel)](../../reference/excel/range.md)
+- [Objeto Range (API JavaScript para Excel)](http://dev.office.com/reference/add-ins/excel/range)

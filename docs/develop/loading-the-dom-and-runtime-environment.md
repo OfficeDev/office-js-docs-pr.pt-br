@@ -25,7 +25,7 @@ Os eventos a seguir ocorrem quando um suplemento de conteúdo ou de painel de ta
     
 4. O controle do navegador carrega o corpo do HTML e DOM e chama o manipulador de eventos para o evento **window.onload**.
     
-5. O aplicativo host do Office carrega o ambiente de tempo de execução, que baixa e armazena em cache a API do JavaScript para arquivos da biblioteca a partir do servidor da rede de distribuição de conteúdo (CDN) e chama manipulador de eventos do suplemento para o evento [initialize](../../reference/shared/office.initialize.md) do objeto [Office](../../reference/shared/office.md).
+5. O aplicativo host do Office carrega o ambiente de tempo de execução, que baixa e armazena em cache a API do JavaScript para arquivos da biblioteca a partir do servidor da rede de distribuição de conteúdo (CDN) e chama manipulador de eventos do suplemento para o evento [initialize](../../reference/shared/office.initialize.md) do objeto [Office](http://dev.office.com/reference/add-ins/shared/office).
     
 6. Quando o corpo de HTML e DOM terminar de carregar e o suplemento finalizar a inicialização, a função principal do suplemento poderá prosseguir.
     
@@ -52,7 +52,7 @@ Os eventos a seguir ocorrem quando um suplemento Outlook é iniciado:
     
 5. O controle do navegador carrega o corpo do HTML e DOM e chama o manipulador de eventos para o evento **onload**.
     
-6. O Outlook chama o manipulador de eventos para o evento [initialize](../../reference/shared/office.initialize.md) do objeto [Office](../../reference/shared/office.md) do suplemento.
+6. O Outlook chama o manipulador de eventos para o evento [initialize](../../reference/shared/office.initialize.md) do objeto [Office](http://dev.office.com/reference/add-ins/shared/office) do suplemento.
     
 7. Quando o corpo de HTML e DOM terminar de carregar e o suplemento finalizar a inicialização, a função principal do suplemento poderá prosseguir.
     

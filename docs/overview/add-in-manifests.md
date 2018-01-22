@@ -58,19 +58,19 @@ A tabela a seguir especifica os elementos exigidos para os três tipos de Suplem
 
 - Verifique se a identificação do suplemento é um GUID válido e exclusivo. Diversas ferramentas de gerador de GUID estão disponíveis na Web e podem ser usadas para criar um GUID exclusivo. 
 
-- Todas as URLs, como os locais dos arquivos de origem especificados no elemento [SourceLocation](../../reference/manifest/sourcelocation.md), devem estar **protegidos por SSL (HTTPS)**.
+- Todas as URLs, como os locais dos arquivos de origem especificados no elemento [SourceLocation](http://dev.office.com/reference/add-ins/manifest/sourcelocation), devem estar **protegidos por SSL (HTTPS)**.
 
 - Todas as URLs com ícone, como aquelas usadas nas superfícies de comando, devem **permitir armazenamento em cache**. O servidor Web NÃO deve retornar cabeçalhos HTTP como não-cache/não-armazenamento 
 
-- Os suplementos enviados à Office Store também devem conter o elemento [SupportUrl](../../reference/manifest/supporturl.md). Para saber mais, confira [Quais são os erros de envio comuns que devem ser evitados?](http://msdn.microsoft.com/library/0ceb385c-a608-40cc-8314-78e39d6c75d0%28Office.15%29.aspx#bk_q2)
+- Os suplementos enviados à Office Store também devem conter o elemento [SupportUrl](http://dev.office.com/reference/add-ins/manifest/supporturl). Para saber mais, confira [Quais são os erros de envio comuns que devem ser evitados?](http://msdn.microsoft.com/library/0ceb385c-a608-40cc-8314-78e39d6c75d0%28Office.15%29.aspx#bk_q2)
 
-- Como prática recomendada, use apenas o elemento [AppDomains](../../reference/manifest/appdomains.md) para especificar domínios diferentes daqueles especificados no elemento [SourceLocation](../../reference/manifest/sourcelocation.md) para cenários de autenticação.
+- Como prática recomendada, use apenas o elemento [AppDomains](http://dev.office.com/reference/add-ins/manifest/appdomains) para especificar domínios diferentes daqueles especificados no elemento [SourceLocation](http://dev.office.com/reference/add-ins/manifest/sourcelocation) para cenários de autenticação.
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>Especificar os domínios que você deseja abrir na janela do suplemento
 
-Por padrão, se o suplemento tentar acessar uma URL em um domínio diferente do domínio que hospeda a página inicial (conforme especificado no elemento [SourceLocation](../../reference/manifest/sourcelocation.md) do arquivo de manifesto), essa URL abrirá em uma nova janela de navegador fora do painel de suplementos do aplicativo host do Office. Esse comportamento padrão protege o usuário contra a navegação de página inesperada dentro do painel de suplemento de elementos **iFrame**.
+Por padrão, se o suplemento tentar acessar uma URL em um domínio diferente do domínio que hospeda a página inicial (conforme especificado no elemento [SourceLocation](http://dev.office.com/reference/add-ins/manifest/sourcelocation) do arquivo de manifesto), essa URL abrirá em uma nova janela de navegador fora do painel de suplementos do aplicativo host do Office. Esse comportamento padrão protege o usuário contra a navegação de página inesperada dentro do painel de suplemento de elementos **iFrame**.
 
-Para substituir esse comportamento, especifique cada domínio que você deseja abrir na janela do suplemento na lista de domínios especificados no elemento [AppDomains](../../reference/manifest/appdomains.md) do arquivo de manifesto. Se o suplemento tentar acessar uma URL em um domínio que não está na lista, essa URL abre em uma nova janela do navegador (fora do painel de suplementos).
+Para substituir esse comportamento, especifique cada domínio que você deseja abrir na janela do suplemento na lista de domínios especificados no elemento [AppDomains](http://dev.office.com/reference/add-ins/manifest/appdomains) do arquivo de manifesto. Se o suplemento tentar acessar uma URL em um domínio que não está na lista, essa URL abre em uma nova janela do navegador (fora do painel de suplementos).
 
 O exemplo de manifesto XML a seguir hospeda sua página de suplemento principal no domínio `https://www.contoso.com`, conforme especificado no elemento **SourceLocation**. Ele também especifica o domínio `https://www.northwindtraders.com` em um elemento [AppDomain](http://msdn.microsoft.com/en-us/library/2a0353ec-5e09-6fbf-1636-4bb5dcebb9bf%28Office.15%29.aspx), dentro da lista de elementos **AppDomains** Se o suplemento acessar uma página no domínio www.northwindtraders.com, essa página abrirá no painel do suplemento.
 

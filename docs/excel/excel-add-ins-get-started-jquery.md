@@ -164,4 +164,4 @@ Parabéns, você criou com êxito um suplemento do Excel usando o jQuery! Em seg
 * [Principais conceitos da API JavaScript do Excel](excel-add-ins-core-concepts.md)
 * [Explorar trechos com o Script Lab](https://store.office.com/en-001/app.aspx?assetid=WA104380862&ui=en-US&rs=en-001&ad=US&appredirect=false)
 * [Exemplos de código do suplemento do Excel](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Referência da API JavaScript do Excel](../../reference/excel/excel-add-ins-reference-overview.md)
+* [Referência da API JavaScript do Excel](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

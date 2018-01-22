@@ -27,7 +27,7 @@ Há [três tipos diferentes de associações][Office.BindingType] que podem ser 
 
     No Excel, qualquer seleção contínua de células pode ser usada para estabelecer uma associação de matriz. No Word, somente as tabelas são compatíveis com a associação de matriz.
 
-3. **[Table Binding][TableBinding]**: associa uma região de um documento que contém uma tabela com cabeçalhos. Os dados em uma associação de tabela são gravados ou lidos como um objeto [TableData](../../reference/shared/tabledata.md). O objeto `TableData` expõe os dados por meio das propriedades `headers` e `rows`.
+3. **[Table Binding][TableBinding]**: associa uma região de um documento que contém uma tabela com cabeçalhos. Os dados em uma associação de tabela são gravados ou lidos como um objeto [TableData](http://dev.office.com/reference/add-ins/shared/tabledata). O objeto `TableData` expõe os dados por meio das propriedades `headers` e `rows`.
 
     Qualquer tabela do Excel ou Word pode ser a base para uma associação de tabela. Após estabelecer uma associação de tabelas, as linhas ou colunas novas que um usuário adicionar à tabela são automaticamente incluídas na associação. 
 

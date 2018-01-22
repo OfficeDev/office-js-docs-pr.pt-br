@@ -2,7 +2,7 @@
 
 **Aplica-se a:** Excel 2016 | Suplementos do Office | PowerPoint 2016 | Word 2016
 
-Use **[VersionOverrides](../../reference/manifest/versionoverrides.md)** no manifesto para definir comandos de suplemento para Excel, Word e PowerPoint. Os comandos de suplemento fornecem uma maneira fácil de personalizar a interface do usuário padrão do Office com elementos de interface do usuário especificados que executam ações. Você pode usar comandos de suplemento para:
+Use **[VersionOverrides](http://dev.office.com/reference/add-ins/manifest/versionoverrides)** no manifesto para definir comandos de suplemento para Excel, Word e PowerPoint. Os comandos de suplemento fornecem uma maneira fácil de personalizar a interface do usuário padrão do Office com elementos de interface do usuário especificados que executam ações. Você pode usar comandos de suplemento para:
 - Criar elementos de interface do usuário ou pontos de entrada que facilitam o uso da funcionalidade dos suplementos.  
   
 - Adicionar botões ou uma lista suspensa de botões à faixa de opções.    

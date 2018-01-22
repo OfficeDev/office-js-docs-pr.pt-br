@@ -1,6 +1,6 @@
 # <a name="excel-javascript-api-core-concepts"></a>Principais conceitos da API JavaScript do Excel
  
-Este artigo descreve como usar a [API JavaScript do Excel](../../reference/excel/excel-add-ins-reference-overview.md) para desenvolver suplementos para o Excel 2016. Ele apresenta os conceitos básicos que são fundamentais para usar a API e fornece orientações para executar tarefas específicas, como leitura ou gravação em um intervalo grande, atualização de todas as células do intervalo e muito mais.
+Este artigo descreve como usar a [API JavaScript do Excel](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview) para desenvolver suplementos para o Excel 2016. Ele apresenta os conceitos básicos que são fundamentais para usar a API e fornece orientações para executar tarefas específicas, como leitura ou gravação em um intervalo grande, atualização de todas as células do intervalo e muito mais.
 
 ## <a name="asynchronous-nature-of-excel-apis"></a>Natureza assíncrona das APIs do Excel
 
@@ -127,8 +127,8 @@ object.load({ loadOption });
  
 _Onde:_
  
-* `properties` é a lista de propriedades e/ou nomes de relações a serem carregados, especificados como cadeias de caracteres delimitadas por vírgulas ou uma matriz de nomes. Para saber mais, veja os métodos **load()** definidos para objetos na [referência da API JavaScript do Excel](../../reference/excel/excel-add-ins-reference-overview.md).
-* `loadOption` especifica um objeto que descreve as opções de seleção, expansão, topo e pulo. Confira as [opções](../../reference/excel/loadoption.md) de carregamento de objeto para saber mais.
+* `properties` é a lista de propriedades e/ou nomes de relações a serem carregados, especificados como cadeias de caracteres delimitadas por vírgulas ou uma matriz de nomes. Para saber mais, veja os métodos **load()** definidos para objetos na [referência da API JavaScript do Excel](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview).
+* `loadOption` especifica um objeto que descreve as opções de seleção, expansão, topo e pulo. Confira as [opções](http://dev.office.com/reference/add-ins/excel/loadoption) de carregamento de objeto para saber mais.
 
 Para saber mais sobre o método **load()**, confira os [conceitos avançados da API JavaScript do Excel](excel-add-ins-advanced-concepts.md).
 
@@ -271,4 +271,4 @@ Quando ocorrer um erro de API, a API retornará um objeto **error** que contém 
  
 * [Introdução aos suplementos do Excel](excel-add-ins-get-started-overview.md)
 * [Exemplos de código de suplementos do Excel](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Referência da API JavaScript do Excel](../../reference/excel/excel-add-ins-reference-overview.md)
+* [Referência da API JavaScript do Excel](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

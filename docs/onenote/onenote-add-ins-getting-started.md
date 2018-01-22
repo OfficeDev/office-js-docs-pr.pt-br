@@ -139,6 +139,6 @@ Você precisa habilitar conteúdo misto no navegador, se o seu suplemento usar t
 <a id="additional-resources" class="xliff"></a>
 
 - [Visão geral sobre a programação da API JavaScript do OneNote](onenote-add-ins-programming-overview.md)
-- [Referência da API JavaScript do OneNote](../../reference/onenote/onenote-add-ins-javascript-reference.md)
+- [Referência da API JavaScript do OneNote](http://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)
 - [Amostra de Rubric Grader](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Visão geral da plataforma de Suplementos do Office](https://dev.office.com/docs/add-ins/overview/office-add-ins)

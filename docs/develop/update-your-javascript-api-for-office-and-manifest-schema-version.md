@@ -65,7 +65,7 @@ No arquivo de manifesto do suplemento atualize o atributo **xmlns** do elemento 
 </OfficeApp>
 ```
 
-> **Observação:** Após atualizar a versão do esquema do manifesto do suplemento para 1.1, será preciso remover os elementos **Capabilities** e **Capability** e substituí-los pelos [Hosts](../../reference/manifest/hosts.md) e elementos [Host](../../reference/manifest/hosts.md) ou pelos [elementos Requirements e Requirement](../../docs/overview/specify-office-hosts-and-api-requirements.md).
+> **Observação:** Após atualizar a versão do esquema do manifesto do suplemento para 1.1, será preciso remover os elementos **Capabilities** e **Capability** e substituí-los pelos [Hosts](http://dev.office.com/reference/add-ins/manifest/hosts) e elementos [Host](http://dev.office.com/reference/add-ins/manifest/hosts) ou pelos [elementos Requirements e Requirement](../../docs/overview/specify-office-hosts-and-api-requirements.md).
 
 ## <a name="updating-an-office-add-in-project-created-with-a-text-editor-or-other-ide"></a>Atualização de um projeto de suplemento do Office criado com um editor de texto ou outro IDE
 
@@ -105,7 +105,7 @@ No arquivo de manifesto do suplemento atualize o atributo **xmlns** do elemento 
 </OfficeApp>
 ```
 
-> **Observação:** Após atualizar a versão do esquema do manifesto do suplemento para 1.1, será preciso remover os elementos **Capabilities** e **Capability** e substituí-los pelos [Hosts](../../reference/manifest/hosts.md) e elementos [Host](../../reference/manifest/hosts.md) ou pelos [elementos Requirements e Requirement](../../docs/overview/specify-office-hosts-and-api-requirements.md).
+> **Observação:** Após atualizar a versão do esquema do manifesto do suplemento para 1.1, será preciso remover os elementos **Capabilities** e **Capability** e substituí-los pelos [Hosts](http://dev.office.com/reference/add-ins/manifest/hosts) e elementos [Host](http://dev.office.com/reference/add-ins/manifest/hosts) ou pelos [elementos Requirements e Requirement](../../docs/overview/specify-office-hosts-and-api-requirements.md).
     
 
 ## <a name="additional-resources"></a>Recursos adicionais
@@ -114,7 +114,7 @@ No arquivo de manifesto do suplemento atualize o atributo **xmlns** do elemento 
     
 - [Noções básicas da API JavaScript para Office](../../docs/develop/understanding-the-javascript-api-for-office.md)
     
-- [API JavaScript para Office](../../reference/javascript-api-for-office.md)
+- [API JavaScript para Office](http://dev.office.com/reference/add-ins/javascript-api-for-office)
     
 - [Referência de esquema para manifestos de suplementos do Office (versão 1.1)](../overview/add-in-manifests.md)
     

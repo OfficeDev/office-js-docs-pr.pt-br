@@ -1,10 +1,10 @@
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Use a API de Caixa de diálogo em seus Suplementos do Office
 
-Você pode usar a [API de Caixa de diálogo](../../reference/shared/officeui.md) para abrir caixas de diálogo no seu Suplemento do Office. Este artigo fornece orientações para usar a API de Caixa de diálogo em seu Suplemento do Office.
+Você pode usar a [API de Caixa de diálogo](http://dev.office.com/reference/add-ins/shared/officeui) para abrir caixas de diálogo no seu Suplemento do Office. Este artigo fornece orientações para usar a API de Caixa de diálogo em seu Suplemento do Office.
 
 > **Observações:**
 
-> Para informações sobre os programas para os quais a API de Caixa de diálogo tem suporte no momento, confira [Conjuntos de requisitos da API de Caixa de diálogo](../../reference/requirement-sets/dialog-api-requirement-sets.md). Atualmente, a API de Caixa de diálogo tem suporte para Word, Excel, PowerPoint e Outlook.
+> Para informações sobre os programas para os quais a API de Caixa de diálogo tem suporte no momento, confira [Conjuntos de requisitos da API de Caixa de diálogo](http://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets). Atualmente, a API de Caixa de diálogo tem suporte para Word, Excel, PowerPoint e Outlook.
 
 > Um cenário primário para as APIs de Caixa de diálogo é habilitar a autenticação com um recurso como o Google ou o Facebook. Se o seu suplemento exigir dados sobre o usuário do Office ou seus recursos acessíveis através do Microsoft Graph, como o Office 365 ou o OneDrive, recomendamos que você use a API de logon único sempre que puder. Se você usa as APIs para o logon único, então você não precisará da API de Caixa de diálogo. Para mais detalhes, consulte [Habilitar o logon único para Suplementos do Office](http://dev.office.com/docs/add-ins/develop/sso-in-office-add-ins).
 
@@ -24,7 +24,7 @@ A caixa de diálogo sempre abre no centro da tela. O usuário pode movê-la e re
 
 ## <a name="dialog-api-scenarios"></a>Cenários da API de Caixa de diálogo
 
-As APIs JavaScript para Office têm suporte para os seguintes cenários com um objeto [Dialog](../../reference/shared/officeui.dialog.md) e duas funções no [namespace Office.context.ui](../../reference/shared/officeui.md).
+As APIs JavaScript para Office têm suporte para os seguintes cenários com um objeto [Dialog](../../reference/shared/officeui.dialog.md) e duas funções no [namespace Office.context.ui](http://dev.office.com/reference/add-ins/shared/officeui).
 
 ### <a name="open-a-dialog-box"></a>Abrir uma caixa de diálogo.
 

@@ -136,4 +136,4 @@ Baixe o exemplo [Office 365: associar e manipular dados em um aplicativo Web do 
 
 - [Entender a API JavaScript para suplementos](../develop/understanding-the-javascript-api-for-office.md)
 
-- [API JavaScript para Office](../../reference/javascript-api-for-office.md)
+- [API JavaScript para Office](http://dev.office.com/reference/add-ins/javascript-api-for-office)

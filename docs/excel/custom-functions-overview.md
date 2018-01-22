@@ -79,8 +79,8 @@ O **registro** da função personalizada usa o bloco de código `Excel.Script.cu
 -   `helpUrl`: Quando o usuário solicitar a ajuda para uma função, o Excel abre um painel de tarefas e exibe a página da Web encontrada neste URL.
 -   `result`: Define o tipo de informação retornada pela função do Excel.
 
-    -   `resultType`: Sua função pode retornar uma `"string"` ou um `"number"` (também usados para datas e moedas). Confira mais informações em [Enumerações das funções personalizadas](../../reference/excel/customfunctionsenumerations.md).
-    -   `resultDimensionality`: Sua função poderá retornar um único valor (`"scalar"`) ou uma `"matrix"` de valores. Ao retornar uma matriz de valores, a função retornará uma matriz, onde cada elemento da matriz é outra matriz que representa uma linha de valores. Confira mais informações em [Enumerações das funções personalizadas](../../reference/excel/customfunctionsenumerations.md). O exemplo a seguir retorna uma matriz de 2 colunas e 3 linhas de valores de uma função personalizada.
+    -   `resultType`: Sua função pode retornar uma `"string"` ou um `"number"` (também usados para datas e moedas). Confira mais informações em [Enumerações das funções personalizadas](http://dev.office.com/reference/add-ins/excel/customfunctionsenumerations).
+    -   `resultDimensionality`: Sua função poderá retornar um único valor (`"scalar"`) ou uma `"matrix"` de valores. Ao retornar uma matriz de valores, a função retornará uma matriz, onde cada elemento da matriz é outra matriz que representa uma linha de valores. Confira mais informações em [Enumerações das funções personalizadas](http://dev.office.com/reference/add-ins/excel/customfunctionsenumerations). O exemplo a seguir retorna uma matriz de 2 colunas e 3 linhas de valores de uma função personalizada.
 
 ```js
 return [["first","row"],["second","row"],["third","row"]];
