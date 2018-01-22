@@ -8,13 +8,13 @@ Você pode usar dois tipos de elementos de interface do usuário nos seus Suplem
 ## <a name="add-in-commands"></a>Comandos de suplemento
 Os comandos são definidos no [manifesto XML do suplemento](../../../docs/develop/define-add-in-commands.md) e são renderizados como extensões UX nativas na interface do usuário do Office. Por exemplo, você pode usar comandos de suplemento para adicionar botões à faixa de opções do Office. 
 
-![Uma imagem mostrando comandos do suplemento e elementos personalizados da interface do usuário HTML em um suplemento](../../../images/layouts_addInCommands_v0.03.png)
+![Uma imagem mostrando comandos do suplemento e elementos personalizados da interface do usuário HTML em um suplemento](../../images/layouts_addInCommands_v0.03.png)
 
 Atualmente, suplemento comandos só há suporte para suplementos do email. Para saber mais, consulte [comandos do suplemento para email](../../outlook/add-in-commands-for-outlook.md). 
 
 O Excel, o PowerPoint e o Word têm pontos de entrada predefinidos para suplementos de conteúdo e painel de tarefas na guia Inserir da faixa de opções do Office. A funcionalidade de comando personalizado para suplementos do painel de tarefas e conteúdo estará disponível em breve. 
 
-![Uma imagem que mostra a guia Inserir da faixa de opções do Word](../../../images/Word-insert-tab.png)
+![Uma imagem que mostra a guia Inserir da faixa de opções do Word](../../images/Word-insert-tab.png)
 
 ## <a name="custom-html-based-ui"></a>Interface de usuário personalizada baseada em HTML
 Os suplementos podem incorporar interfaces de usuários personalizadas baseadas em HTML em clientes do Office. Os contêineres que estão disponíveis para exibir a interface do usuário variam de acordo com o tipo de suplemento. Por exemplo, os suplementos do painel de tarefas exibem interfaces de usuários personalizadas baseadas em HTML no painel à direita do documento; os suplementos de conteúdo exibem a interface do usuário personalizada diretamente no documento do Office.

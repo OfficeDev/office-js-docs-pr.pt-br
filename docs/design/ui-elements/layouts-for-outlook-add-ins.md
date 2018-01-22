@@ -16,7 +16,7 @@ Para obter diretrizes sobre o texto da interface do usuário nos suplementos, co
 
 A imagem a seguir mostra o layout recomendado para um [suplemento de email contextual](https://msdn.microsoft.com/EN-US/library/office/dn893542.aspx).
 
-![Layout de um suplemento de email contextual](../../../images/mail-add-in-contextual-card.png)
+![Layout de um suplemento de email contextual](../../images/mail-add-in-contextual-card.png)
 
 ##<a name="functions-with-infobar-notifications"></a>Funções com notificações da Barra de Informações
 

@@ -7,7 +7,7 @@ Crie uma aparência consistente para os contêineres do painel de tarefas usando
 - Conteúdo do suplemento
 - Elemento de identidade visual (opcional)
 
-![Layout de um painel de tarefas, mostrando a identidade visual, a navegação e os elementos do conteúdo](../../../images/layouts_taskpane_v0.02.png)
+![Layout de um painel de tarefas, mostrando a identidade visual, a navegação e os elementos do conteúdo](../../images/layouts_taskpane_v0.02.png)
 
 Você também pode adicionar uma [interface de usuário baseada em HTML personalizada](ui-elements.md#custom-HTML-based-UI) ao seu painel de tarefas.
 

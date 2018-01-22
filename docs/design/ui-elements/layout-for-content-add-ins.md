@@ -6,7 +6,7 @@ Crie uma aparência consistente para os suplementos de conteúdo usando o layout
 - Conteúdo do suplemento
 - Elemento de identidade visual (opcional)
 
-![Layout de um suplemento de conteúdo, conteúdo e uma barra de comando](../../../images/layouts_content_v0.02.png)
+![Layout de um suplemento de conteúdo, conteúdo e uma barra de comando](../../images/layouts_content_v0.02.png)
 
 Você pode também adicionar uma [interface do usuário personalizada com base em HTML](ui-elements.md#custom-HTML-based-UI) ao suplemento de conteúdo.
 
