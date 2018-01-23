@@ -57,7 +57,7 @@ Depois de criar seu laboratório, você pode publicá-lo e enviá-lo para o repo
 
 O manifesto de aplicativo é um documento XML que descreve seu laboratório LabJS. Ele fornece uma referência para a URL na qual o laboratório está hospedado e fornece detalhes sobre o laboratório, incluindo o nome de exibição, a descrição, os ícones, o tamanho etc.
 
-Incluímos um exemplo de manifesto, "SampleManifest.xml". Para saber mais sobre o esquema de manifesto e obter um link para a definição do esquema, confira [Manifesto XML dos suplementos do Office](../../../docs/overview/add-in-manifests.md).
+Incluímos um exemplo de manifesto, "SampleManifest.xml". Para saber mais sobre o esquema de manifesto e obter um link para a definição do esquema, confira [Manifesto XML dos suplementos do Office](../../overview/add-in-manifests.md).
 
 Para carregar seu manifesto em seu site do SharePoint, primeiro vá para seu catálogo de aplicativos, que geralmente está na URL <code>https://\<your site\>/sites/AppCatalog</code>. Depois, escolha o botão **Novo aplicativo** e siga as etapas para carregar seu manifesto de aplicativo.
 
@@ -92,7 +92,7 @@ Para enviar seu laboratório à Office Store, confira [Publicar seu Suplemento d
 
 - [Suplementos do Office Mix](../../powerpoint/office-mix/office-mix-add-ins.md)
     
-- [Suplementos do Office](../../../docs/overview/office-add-ins.md)
+- [Suplementos do Office](../../overview/office-add-ins.md)
     
 - [Criando o seu primeiro laboratório para o Office Mix](../../powerpoint/office-mix/creating-your-first-lab-for-office-mix.md)
     

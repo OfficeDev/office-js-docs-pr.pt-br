@@ -72,7 +72,7 @@ Para publicar um suplemento em um catálogo suplementos, conclua as etapas a seg
     
 2. Escolha o link **Clique para adicionar um novo item**.
     
-3. Escolha **Procurar** e especifique o [manifesto](../../docs/overview/add-in-manifests.md) para carregar.
+3. Escolha **Procurar** e especifique o [manifesto](../overview/add-in-manifests.md) para carregar.
     
     Os suplementos de conteúdo e de painel de tarefas deste catálogo já estão disponíveis na caixa de diálogo **Suplementos do Office**. Para acessá-los, escolha **Meus Suplementos** na guia **Inserir** e, em seguida, escolha **MINHA ORGANIZAÇÃO**.
 

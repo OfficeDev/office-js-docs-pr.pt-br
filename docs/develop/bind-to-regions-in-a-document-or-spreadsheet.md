@@ -320,7 +320,7 @@ No exemplo, o primeiro parâmetro é o valor a definir em `myBinding`. Como esta
 
 A função anônima que é transmitida para a função é um retorno de chamada executado quando a operação é concluída. A função é chamada com um único parâmetro, `asyncResult`, que contém o status do resultado.
 
- > **Observação:** a partir da versão do Excel 2013 SP1 e da compilação correspondente do Excel Online é possível [definir a formatação ao escrever e atualizar dados em tabelas de associação](../../docs/excel/format-tables-in-add-ins-for-excel.md).
+ > **Observação:** a partir da versão do Excel 2013 SP1 e da compilação correspondente do Excel Online é possível [definir a formatação ao escrever e atualizar dados em tabelas de associação](../excel/format-tables-in-add-ins-for-excel.md).
 
 
 ## <a name="detect-changes-to-data-or-the-selection-in-a-binding"></a>Detectar alterações nos dados ou a seleção em uma associação
@@ -373,11 +373,11 @@ function removeEventHandlerFromBinding() {
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- [Noções básicas da API JavaScript para Office](../../docs/develop/understanding-the-javascript-api-for-office.md)
+- [Noções básicas da API JavaScript para Office](../develop/understanding-the-javascript-api-for-office.md)
     
-- [Programação assíncrona nos Suplementos do Office](../../docs/develop/asynchronous-programming-in-office-add-ins.md)
+- [Programação assíncrona nos Suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md)
     
-- [Leia e grave dados na seleção ativa, em um documento ou em uma planilha](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
+- [Leia e grave dados na seleção ativa, em um documento ou em uma planilha](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
     
 [Associação]:               http://dev.office.com/reference/add-ins/shared/binding
 [MatrixBinding]:         http://dev.office.com/reference/add-ins/shared/binding.matrixbinding

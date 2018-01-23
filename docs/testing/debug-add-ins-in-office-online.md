@@ -23,7 +23,7 @@ Para depurar seu suplemento usando o Office Online:
     
      >**Observação:**  recomendamos que você use o [gerador Yeoman](https://github.com/OfficeDev/generator-office) para criar e hospedar seu suplemento.
      
-2. No seu [arquivo de manifesto de suplemento](../../docs/overview/add-in-manifests.md), atualize o valor do elemento **SourceLocation** para incluir um URI absoluto, em vez de relativo. Por exemplo:
+2. No seu [arquivo de manifesto de suplemento](../overview/add-in-manifests.md), atualize o valor do elemento **SourceLocation** para incluir um URI absoluto, em vez de relativo. Por exemplo:
     
     ```xml
     <SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />

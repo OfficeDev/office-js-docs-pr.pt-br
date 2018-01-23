@@ -106,15 +106,15 @@ As APIs JavaScript para Office contêm objetos e membros para a criação de sup
 
 ## <a name="next-steps"></a>Próximas etapas 
 
-Para saber mais sobre como começar a criar seu suplemento do Office, teste a experiência [Começar](https://dev.office.com/getting-started/addins). Você pode começar a criar suplementos imediatamente usando o [Visual Studio](../../docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md) ou [suas próprias ferramentas](../../docs/get-started/create-an-office-add-in-using-any-editor). 
+Para saber mais sobre como começar a criar seu suplemento do Office, teste a experiência [Começar](https://dev.office.com/getting-started/addins). Você pode começar a criar suplementos imediatamente usando o [Visual Studio](../get-started/create-and-debug-office-add-ins-in-visual-studio.md) ou [suas próprias ferramentas](../get-started/create-an-office-add-in-using-any-editor). 
 
-Para começar a planejar soluções que criem experiências de usuário eficazes e atraentes, familiarize-se com as [diretrizes de design](../../docs/design/add-in-design) e as [práticas recomendadas](../../docs/add-ins/overview/add-in-development-best-practices) para suplementos do Office.    
+Para começar a planejar soluções que criem experiências de usuário eficazes e atraentes, familiarize-se com as [diretrizes de design](../design/add-in-design) e as [práticas recomendadas](../add-ins/overview/add-in-development-best-practices) para suplementos do Office.    
    
 ## <a name="additional-resources"></a>Recursos adicionais
 
 - [Exemplos de suplemento do Office](https://dev.office.com/code-samples)
     
-- [Noções básicas da API JavaScript para Office](../../docs/develop/understanding-the-javascript-api-for-office.md)
+- [Noções básicas da API JavaScript para Office](../develop/understanding-the-javascript-api-for-office.md)
 
 - [Disponibilidade de host e plataforma para suplementos do Office](https://dev.office.com/add-in-availability)
 

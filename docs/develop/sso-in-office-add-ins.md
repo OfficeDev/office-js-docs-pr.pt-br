@@ -43,8 +43,8 @@ O diagrama a seguir mostra como funciona o processo de SSO.
 
 Esta seção descreve as tarefas envolvidas na criação de um suplemento do Office que usa SSO. Essas tarefas descritas aqui apresentam uma linguagem e uma estrutura de forma agnóstica. Confira exemplos de explicações detalhadas em:
 
-* [Criar um Suplemento do Office com Node.js que usa logon único](../../docs/develop/create-sso-office-add-ins-nodejs.md)
-* [Criar um Suplemento do Office com ASP.NET que usa logon único](../../docs/develop/create-sso-office-add-ins-aspnet.md)
+* [Criar um Suplemento do Office com Node.js que usa logon único](../develop/create-sso-office-add-ins-nodejs.md)
+* [Criar um Suplemento do Office com ASP.NET que usa logon único](../develop/create-sso-office-add-ins-aspnet.md)
 
 ### <a name="create-the-service-application"></a>Criar o aplicativo de serviço
 

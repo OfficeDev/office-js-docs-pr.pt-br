@@ -65,5 +65,5 @@ Para obter um exemplo de como criar seu próprio proxy usando IFRAME e PUBLICAR 
 ## <a name="additional-resources"></a>Recursos adicionais
 
 
-- [Privacidade e segurança para os Suplementos do Office](../../docs/develop/privacy-and-security.md)
+- [Privacidade e segurança para os Suplementos do Office](../develop/privacy-and-security.md)
     

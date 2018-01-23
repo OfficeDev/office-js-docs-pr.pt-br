@@ -14,7 +14,7 @@ Os exemplos de código no artigo mostram algumas tarefas básicas para desenvolv
 
 Para exibir as informações, esses exemplos dependem da função `app.showNotification`, incluída em modelos de projeto de Suplementos do Office do Visual Studio. Se você não estiver usando o Visual Studio para desenvolver seu suplemento, será necessário substituir a função `showNotification` por seu próprio código. Vários desses exemplos também dependem desse objeto `globals`, que é declarado fora do escopo destas funções: `var globals = {activeViewHandler:0, firstSlideId:0};`
 
-Esses exemplos de código exigem que seu projeto faça [referência à biblioteca Office.js v1.1 ou posterior](../../docs/develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md).
+Esses exemplos de código exigem que seu projeto faça [referência à biblioteca Office.js v1.1 ou posterior](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md).
 
 
 ## <a name="detect-the-presentations-active-view-and-handle-the-activeviewchanged-event"></a>Detectar a exibição ativa da apresentação e manipular o evento ActiveViewChanged
@@ -166,11 +166,11 @@ function getFileUrl() {
 ## <a name="additional-resources"></a>Recursos adicionais
 - [Exemplos de Código do PowerPoint](https://dev.office.com/code-samples#?filters=powerpoint)
 
-- [Como salvar o estado e as configurações do suplemento por documento para suplementos de conteúdo e de painel de tarefas](../../docs/develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
+- [Como salvar o estado e as configurações do suplemento por documento para suplementos de conteúdo e de painel de tarefas](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 
-- [Leia e grave dados na seleção ativa, em um documento ou em uma planilha](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
+- [Leia e grave dados na seleção ativa, em um documento ou em uma planilha](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
     
-- [Obter todo o documento por meio de um suplemento para PowerPoint ou Word](../../docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)
+- [Obter todo o documento por meio de um suplemento para PowerPoint ou Word](../develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)
     
 - [Usar temas de documentos nos suplementos do PowerPoint](../powerpoint/use-document-themes-in-your-powerpoint-add-ins.md)
     

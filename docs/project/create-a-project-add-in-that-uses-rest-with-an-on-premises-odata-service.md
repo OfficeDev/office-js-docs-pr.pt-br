@@ -98,7 +98,7 @@ A pasta **AddIn** (veja a captura de tela a seguir) contém o arquivo App.css pa
 
 O manifesto para o projeto **HelloProjectOData** é o arquivo HelloProjectOData.xml. Opcionalmente, você pode modificar o manifesto para adicionar uma descrição do suplemento, uma referência a um ícone, informações de linguagem adicionais e outras configurações. O Procedimento 3 simplesmente modifica o nome de exibição e a descrição do suplemento e adiciona um ícone.
 
-Para saber mais sobre o manifesto, confira [Manifesto XML de suplementos do Office](../../docs/overview/add-in-manifests.md) e [Referência de esquema para manifestos de suplementos do Office (versão 1.1)](../overview/add-in-manifests.md).
+Para saber mais sobre o manifesto, confira [Manifesto XML de suplementos do Office](../overview/add-in-manifests.md) e [Referência de esquema para manifestos de suplementos do Office (versão 1.1)](../overview/add-in-manifests.md).
 
 
 ### <a name="procedure-3-to-modify-the-add-in-manifest"></a>Procedimento 3. Para modificar o manifesto do suplemento
@@ -146,7 +146,7 @@ As etapas a seguir mostram como adicionar um arquivo de ícone à solução do V
 
 ## <a name="creating-the-html-content-for-the-helloprojectodata-add-in"></a>Criar conteúdo HTML para o suplemento HelloProjectOData
 
-O suplemento **HelloProjectOData** é um exemplo que inclui as saídas de erro e de depuração. Ele não se destina a uso em produção. Antes de começar a escrever conteúdo HTML, crie a interface do usuário e a experiência para o suplemento, e descreva as funções JavaScript que interagem com o código HTML. Para saber mais, confira [Diretrizes de design para suplementos do Office](../../docs/design/add-in-design.md). 
+O suplemento **HelloProjectOData** é um exemplo que inclui as saídas de erro e de depuração. Ele não se destina a uso em produção. Antes de começar a escrever conteúdo HTML, crie a interface do usuário e a experiência para o suplemento, e descreva as funções JavaScript que interagem com o código HTML. Para saber mais, confira [Diretrizes de design para suplementos do Office](../design/add-in-design.md). 
 
 O painel de tarefas mostra o nome de exibição do suplemento na parte superior, que é o valor do elemento **DisplayName** no manifesto. O elemento **body** no arquivo HelloProjectOData.html contém outros elementos de interface do usuário, da seguinte maneira:
 
@@ -367,7 +367,7 @@ O restante do arquivo HelloProjectOData.js inclui duas funções: a função **r
 
 3. Adicione a função **retrieveOData** que relaciona valores da consulta REST e chama a função **ajax** no jQuery para obter os dados solicitados do serviço **ProjectData**. A variável **support.cors** habilita o CORS (compartilhamento de recursos entre origens) com a função **ajax**. Se a instrução **support.cors** estiver ausente ou definida como **false**, a função **ajax** retorna um erro **Sem transporte**.
     
-     >**Observação**  O seguinte código funciona com uma instalação no local do Project Server 2013. Para o Project Online, use o OAuth para autenticação baseada em token. Para saber mais, confira [Como lidar com limitações de política de mesma origem nos Suplementos do Office](../../docs/develop/addressing-same-origin-policy-limitations.md).
+     >**Observação**  O seguinte código funciona com uma instalação no local do Project Server 2013. Para o Project Online, use o OAuth para autenticação baseada em token. Para saber mais, confira [Como lidar com limitações de política de mesma origem nos Suplementos do Office](../develop/addressing-same-origin-policy-limitations.md).
 
     Na chamada **ajax**, use o parâmetro _headers_ ou o parâmetro _beforeSend_. O parâmetro _complete_ é uma função anônima, por isso está no mesmo escopo das variáveis no **retrieveOData**. A função para o parâmetro _complete_ exibe os resultados no controle **odataText** e também chama o método **parseODataResul**t para analisar e exibir a resposta JSON. O parâmetro _error_ especifica a função **getProjectDataErrorHandler** nomeada, que grava uma mensagem de erro para o controle **odataText** e também usa o método **throwError** para exibir uma mensagem pop-up.
     
@@ -1142,7 +1142,7 @@ Se você modificar o suplemento **HelloProjectOData** para uso em produção, si
     
 - [ProjectData - referência do serviço OData do Project](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx)
     
-- [Manifesto XML dos Suplementos do Office](../../docs/overview/add-in-manifests.md)
+- [Manifesto XML dos Suplementos do Office](../overview/add-in-manifests.md)
     
 - [Publicar seu Suplemento do Office](../publish/publish.md)
     

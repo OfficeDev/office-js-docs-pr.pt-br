@@ -6,7 +6,7 @@ Você pode usar dois tipos de elementos de interface do usuário nos seus Suplem
 - Interfaces baseadas em HTML personalizadas
 
 ## <a name="add-in-commands"></a>Comandos de suplemento
-Os comandos são definidos no [manifesto XML do suplemento](../../../docs/develop/define-add-in-commands.md) e são renderizados como extensões UX nativas na interface do usuário do Office. Por exemplo, você pode usar comandos de suplemento para adicionar botões à faixa de opções do Office. 
+Os comandos são definidos no [manifesto XML do suplemento](../../develop/define-add-in-commands.md) e são renderizados como extensões UX nativas na interface do usuário do Office. Por exemplo, você pode usar comandos de suplemento para adicionar botões à faixa de opções do Office. 
 
 ![Uma imagem mostrando comandos do suplemento e elementos personalizados da interface do usuário HTML em um suplemento](../../images/layouts_addInCommands_v0.03.png)
 

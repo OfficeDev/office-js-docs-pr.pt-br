@@ -3,7 +3,7 @@
 
 O objeto [Document](http://dev.office.com/reference/add-ins/shared/document) expõe métodos que permitem ler e gravar a seleção atual do usuário em um documento ou uma planilha. Para fazer isso, o objeto **Document** fornece os métodos **getSelectedDataAsync** e **setSelectedDataAsync**. Este tópico também descreve como ler, gravar e criar manipuladores de eventos para detectar alterações na seleção do usuário.
 
-O método **getSelectedDataAsync** só funciona em relação à seleção atual do usuário. Se você precisar persistir a seleção no documento de forma que a mesma seleção esteja disponível para ler e gravar entre sessões de execução do suplemento, adicione uma associação usando o método[Bindings.addFromSelectionAsync](http://msdn.microsoft.com/en-us/library/edc99214-e63e-43f2-9392-97ead42fc155.aspx) (ou crie uma associação com um dos outros métodos "addFrom" do objeto [Bindings](http://msdn.microsoft.com/en-us/library/09979e31-3bfb-45be-adda-0f7cc2db1fe1.aspx)). Para saber mais sobre como criar uma associação a uma região de um documento e a leitura e a gravação em uma associação, confira [Associar a regiões em um documento ou uma planilha](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md).
+O método **getSelectedDataAsync** só funciona em relação à seleção atual do usuário. Se você precisar persistir a seleção no documento de forma que a mesma seleção esteja disponível para ler e gravar entre sessões de execução do suplemento, adicione uma associação usando o método[Bindings.addFromSelectionAsync](http://msdn.microsoft.com/en-us/library/edc99214-e63e-43f2-9392-97ead42fc155.aspx) (ou crie uma associação com um dos outros métodos "addFrom" do objeto [Bindings](http://msdn.microsoft.com/en-us/library/09979e31-3bfb-45be-adda-0f7cc2db1fe1.aspx)). Para saber mais sobre como criar uma associação a uma região de um documento e a leitura e a gravação em uma associação, confira [Associar a regiões em um documento ou uma planilha](../develop/bind-to-regions-in-a-document-or-spreadsheet.md).
 
 
 ## <a name="read-selected-data"></a>Ler dados selecionados
@@ -61,7 +61,7 @@ Passar diferentes tipos de objeto para o parâmetro _data_ terá resultados dife
 
 A função anônima passada para o método [setSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) como o parâmetro _callback_ é executada quando a chamada assíncrona é concluída. Ao gravar dados na seleção usando o método **setSelectedDataAsync**, o parâmetro _asyncResult_ do retorno de chamada fornece acesso somente ao status da chamada e ao objeto [Error](http://dev.office.com/reference/add-ins/shared/error), se a chamada falhar.
 
- **Observação:** a partir da versão do Excel 2013 SP1 e da compilação correspondente do Excel Online, agora é possível [definir a formatação ao gravar uma tabela na seleção atual](../../docs/excel/format-tables-in-add-ins-for-excel.md).
+ **Observação:** a partir da versão do Excel 2013 SP1 e da compilação correspondente do Excel Online, agora é possível [definir a formatação ao gravar uma tabela na seleção atual](../excel/format-tables-in-add-ins-for-excel.md).
 
 
 ## <a name="detect-changes-in-the-selection"></a>Detectar alterações na seleção

@@ -3,7 +3,7 @@
 
 Você pode usar o modelo JavaScript de Suplemento do Office no Visual Studio para criar um suplemento que usa TypeScript. Depois de criar o novo suplemento no Visual Studio, você pode converter o projeto para TypeScript.  Dessa forma, não é preciso começar o projeto em TypeScript de Suplemento do Office do zero.  
 
-   > **Observação:** Para saber como criar um projeto em TypeScript de Suplemento do Office sem o Visual Studio, confira [Criar um Suplemento usando qualquer editor](../../docs/get-started/create-an-office-add-in-using-any-editor.md).
+   > **Observação:** Para saber como criar um projeto em TypeScript de Suplemento do Office sem o Visual Studio, confira [Criar um Suplemento usando qualquer editor](../get-started/create-an-office-add-in-using-any-editor.md).
 
 Em seu projeto em TypeScript, você pode ter uma combinação de arquivos TypeScript e JavaScript e seu projeto irá compilar. Isso ocorre porque o TypeScript é um superconjunto tipado do JavaScript que compila o JavaScript. 
 

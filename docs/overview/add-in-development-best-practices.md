@@ -105,7 +105,7 @@ Para modelos que aplicam os princípios de design que você pode usar e personal
 
 - Siga as práticas da Web padrão para otimizar a página. Use apenas versões reduzidas das bibliotecas na produção. Carregue somente os recursos que você precisar e otimize como os recursos são carregados.
 
-- Se o tempo de execução das operações demorar, forneça feedback aos usuários. Observe os limites relacionados na tabela a seguir. Veja também [Limites de recurso e otimização de desempenho para Suplementos do Office](../../docs/develop/resource-limits-and-performance-optimization.md).
+- Se o tempo de execução das operações demorar, forneça feedback aos usuários. Observe os limites relacionados na tabela a seguir. Veja também [Limites de recurso e otimização de desempenho para Suplementos do Office](../develop/resource-limits-and-performance-optimization.md).
 
 
 |**Classe de interação**|**Destino**|**Limite superior**|**Percepção humana**|

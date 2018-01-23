@@ -98,5 +98,5 @@ Se o suplemento incluir mais de uma página, essa página deverá incluir ou cha
 
 
 
-- [Noções básicas da API JavaScript para Office](../../docs/develop/understanding-the-javascript-api-for-office.md)
+- [Noções básicas da API JavaScript para Office](../develop/understanding-the-javascript-api-for-office.md)
     

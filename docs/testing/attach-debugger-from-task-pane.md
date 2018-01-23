@@ -24,6 +24,6 @@ Confira mais informações sobre depuração no Visual Studio em:
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- [Criar e depurar suplementos do Office no Visual Studio](../../docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md)
-- [Criar um Suplemento do Office usando qualquer editor](../../docs/get-started/create-an-office-add-in-using-any-editor.md)
+- [Criar e depurar suplementos do Office no Visual Studio](../get-started/create-and-debug-office-add-ins-in-visual-studio.md)
+- [Criar um Suplemento do Office usando qualquer editor](../get-started/create-an-office-add-in-using-any-editor.md)
 - [Publicar seu Suplemento do Office](../publish/publish.md)

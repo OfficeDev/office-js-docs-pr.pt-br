@@ -410,7 +410,7 @@ Execute o suplemento de exemplo. O suplemento do painel de tarefas é carregado 
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- [Diretrizes de design para suplementos do Office](../../docs/design/add-in-design.md)
+- [Diretrizes de design para suplementos do Office](../design/add-in-design.md)
     
 - [Identificadores de idioma e valores da ID de OptionState no Office 2013](http://technet.microsoft.com/en-us/library/cc179219%28Office.15%29.aspx)
 

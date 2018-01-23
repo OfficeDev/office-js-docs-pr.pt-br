@@ -106,7 +106,7 @@ Embora os limites de recursos para o uso de CPU e memória, a tolerância a falh
 
 
 
-- [Privacidade e segurança para os Suplementos do Office](../../docs/develop/privacy-and-security.md)
+- [Privacidade e segurança para os Suplementos do Office](../develop/privacy-and-security.md)
     
 - [Limites de ativação e da API do JavaScript API para suplementos do Outlook](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
     

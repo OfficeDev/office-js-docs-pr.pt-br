@@ -426,14 +426,14 @@ As seções a seguir mostram exemplos de arquivos XML de manifesto v1.1 para sup
 
 ## <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>Validar e solucionar problemas com seu manifesto
 
-Para solucionar problemas com seu manifesto, confira [Validar e solucionar problemas com seu manifesto](../../docs/testing/troubleshoot-manifest.md). Lá, você encontrará informações sobre como validar o manifesto em relação à [Definição de esquema XML (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas) e também como usar o log de tempo de execução para depurar o manifesto.
+Para solucionar problemas com seu manifesto, confira [Validar e solucionar problemas com seu manifesto](../testing/troubleshoot-manifest.md). Lá, você encontrará informações sobre como validar o manifesto em relação à [Definição de esquema XML (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas) e também como usar o log de tempo de execução para depurar o manifesto.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
 
-- [Definir comandos de suplemento no manifesto](../../docs/develop/define-add-in-commands.md)
-- [Especificar hosts do Office e requisitos da API](../../docs/overview/specify-office-hosts-and-api-requirements.md)
-- [Localização para suplementos do Office](../../docs/develop/localization.md)
+- [Definir comandos de suplemento no manifesto](../develop/define-add-in-commands.md)
+- [Especificar hosts do Office e requisitos da API](../overview/specify-office-hosts-and-api-requirements.md)
+- [Localização para suplementos do Office](../develop/localization.md)
 - [Referência de esquema para manifestos de suplementos do Office](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas)
-- [Validar e solucionar problemas com seu manifesto](../../docs/testing/troubleshoot-manifest.md)
+- [Validar e solucionar problemas com seu manifesto](../testing/troubleshoot-manifest.md)
 

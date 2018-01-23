@@ -1,10 +1,10 @@
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>Criar um Suplemento do Office com Node.js que usa logon único
 
-Os usuários podem entrar no Office, e o Suplemento Web do Office pode aproveitar esse processo de entrada para autorizá-los a acessar seu suplemento e o Microsoft Graph sem exigir que os eles façam logon uma segunda vez. Para obter uma visão geral, confira o artigo [Habilitar o SSO em um Suplemento do Office](../../docs/develop/sso-in-office-add-ins.md).
+Os usuários podem entrar no Office, e o Suplemento Web do Office pode aproveitar esse processo de entrada para autorizá-los a acessar seu suplemento e o Microsoft Graph sem exigir que os eles façam logon uma segunda vez. Para obter uma visão geral, confira o artigo [Habilitar o SSO em um Suplemento do Office](../develop/sso-in-office-add-ins.md).
 
 Este artigo apresenta o processo passo a passo de habilitação do logon único (SSO) em um suplemento que foi criado com Node.js e express. 
 
-> **Observação:** Para ler um artigo semelhante sobre um suplemento baseado em ASP.NET, confira [Criar um Suplemento do Office com ASP.NET que usa o logon único](../../docs/develop/create-sso-office-add-ins-aspnet.md).
+> **Observação:** Para ler um artigo semelhante sobre um suplemento baseado em ASP.NET, confira [Criar um Suplemento do Office com ASP.NET que usa o logon único](../develop/create-sso-office-add-ins-aspnet.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 

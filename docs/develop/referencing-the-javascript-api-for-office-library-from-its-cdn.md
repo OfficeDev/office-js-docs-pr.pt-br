@@ -21,6 +21,6 @@ Se planeja publicar seu Suplemento do Office por meio da Office Store, você dev
 
 
 
-- [Noções básicas da API JavaScript para Office](../../docs/develop/understanding-the-javascript-api-for-office.md)    
+- [Noções básicas da API JavaScript para Office](../develop/understanding-the-javascript-api-for-office.md)    
 - [API JavaScript para Office](http://dev.office.com/reference/add-ins/javascript-api-for-office)
     

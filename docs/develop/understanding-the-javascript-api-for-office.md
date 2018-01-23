@@ -3,7 +3,7 @@
 
 
 
-Este artigo fornece informações sobre a API JavaScript para Office e como usá-la. Para referenciar as informações, consulte [API JavaScript para Office](http://dev.office.com/reference/add-ins/javascript-api-for-office). Para obter informações sobre como atualizar os arquivos de projeto do Visual Studio para a versão mais recente da API JavaScript para Office, consulte [Atualizar a versão da API JavaScript para Office e arquivos de esquema do manifesto](../../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md).
+Este artigo fornece informações sobre a API JavaScript para Office e como usá-la. Para referenciar as informações, consulte [API JavaScript para Office](http://dev.office.com/reference/add-ins/javascript-api-for-office). Para obter informações sobre como atualizar os arquivos de projeto do Visual Studio para a versão mais recente da API JavaScript para Office, consulte [Atualizar a versão da API JavaScript para Office e arquivos de esquema do manifesto](../develop/update-your-javascript-api-for-office-and-manifest-schema-version.md).
 
 >
   **Observação:** Caso pretenda [publicar](../publish/publish.md) o suplemento na Office Store depois de criá-lo, verifique se você está em conformidade com as [Políticas de validação da Office Store](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Por exemplo, para passar na validação, seu suplemento deve funcionar em todas as plataformas com suporte aos métodos que você definir (para mais informações, confira a [seção 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) e a [Página de hospedagem e disponibilidade do suplemento do Office](https://dev.office.com/add-in-availability)).
@@ -45,7 +45,7 @@ Office.initialize = function () {
 ```
 Todas as páginas dentro de Suplementos do Office são necessárias para atribuir um manipulador de eventos ao evento de inicialização, **Office.initialize**. Se você não incluir um manipulador de eventos, o suplemento poderá gerar um erro ao iniciar. Além disso, se um usuário tentar usar o suplemento com um cliente Web do Office Online, como o Excel Online, o PowerPoint Online ou o Outlook Web App, ele não funcionará. Se você não precisar de nenhum código de inicialização, então, o corpo da função atribuída a **Office.initialize** poderá ficar vazio, como no primeiro exemplo acima.
 
-Para obter mais detalhes sobre a sequência de eventos na inicialização do suplemento, consulte [Carregar o DOM e o ambiente de execução](../../docs/develop/loading-the-dom-and-runtime-environment.md).
+Para obter mais detalhes sobre a sequência de eventos na inicialização do suplemento, consulte [Carregar o DOM e o ambiente de execução](../develop/loading-the-dom-and-runtime-environment.md).
 
 #### <a name="initialization-reason"></a>Motivo da inicialização
 Para suplementos de conteúdo e de painel de tarefas, o Office.initialize fornece um parâmetro _reason_ adicional. Esse parâmetro pode ser usado para determinar como um suplemento foi adicionado ao documento atual. Você pode usar isso para fornecer lógica diferente para quando um suplemento pela primeira vez em comparação com quando já existia dentro do documento. 
@@ -144,7 +144,7 @@ Se os dados não puderem ser forçados para o tipo especificado, a propriedade [
 
 O objeto **Document** expõe métodos que permitem ler e gravar a seleção atual do usuário de uma maneira "obter e definir". Para fazer isso, o objeto **Document** fornece os métodos **getSelectedDataAsync** e **setSelectedDataAsync**.
 
-Para obter exemplos de códigos que demostram como realizar tarefas com seleções, consulte [Ler e gravar dados na seleção ativa em um documento ou uma planilha](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md).
+Para obter exemplos de códigos que demostram como realizar tarefas com seleções, consulte [Ler e gravar dados na seleção ativa em um documento ou uma planilha](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md).
 
 
 ## <a name="working-with-bindings-using-the-bindings-and-binding-objects"></a>Trabalhar com associações usando os objetos Bindings e Binding
@@ -174,7 +174,7 @@ Há três tipos diferentes de associações que podem ser especificadas com o pa
 |Associação de tabelas|Associa a uma região de um documento que contém uma tabela com cabeçalhos. Os dados em uma associação de tabela são gravados ou lidos como um objeto [TableData](http://dev.office.com/reference/add-ins/shared/tabledata). O objeto **TableData** expõe os dados por meio das propriedades **headers** e **rows**.|Qualquer tabela do Excel ou Word pode ser a base para uma associação de tabela. Após estabelecer uma associação de tabelas, as linhas ou colunas novas que um usuário adicionar à tabela são automaticamente incluídas na associação.  |
 Depois que uma associação é criada usando um dos três métodos "add" do objeto **Bindings**, é possível trabalhar com os dados e as propriedades da associação usando os métodos do objeto correspondente: [MatrixBinding](http://dev.office.com/reference/add-ins/shared/binding.matrixbinding), [TableBinding](http://dev.office.com/reference/add-ins/shared/binding.tablebinding) ou [TextBinding](http://dev.office.com/reference/add-ins/shared/binding.textbinding). Esses três objetos herdam os métodos [getDataAsync](http://dev.office.com/reference/add-ins/shared/binding.getdataasync) e [setDataAsync](http://dev.office.com/reference/add-ins/shared/binding.setdataasync) do objeto **Binding**, o que o habilita a interagir com os dados associados.
 
-Para obter exemplos de códigos que demonstram como realizar tarefas com associações, consulte [Associar a regiões em um documento ou uma planilha](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md).
+Para obter exemplos de códigos que demonstram como realizar tarefas com associações, consulte [Associar a regiões em um documento ou uma planilha](../develop/bind-to-regions-in-a-document-or-spreadsheet.md).
 
 
 ## <a name="working-with-custom-xml-parts-using-the-customxmlparts-and-customxmlpart-objects"></a>Trabalhar com partes XML personalizadas usando os objetos CustomXmlParts e CustomXmlPart
@@ -190,7 +190,7 @@ Os objetos [CustomXmlParts](http://dev.office.com/reference/add-ins/shared/custo
 
  **Aplica-se a:** suplementos de painel de tarefas para Word e PowerPoint
 
-O método [Document.getFileAsync](http://dev.office.com/reference/add-ins/shared/document.getfileasync) e os membros dos objetos [File](http://dev.office.com/reference/add-ins/shared/file) e [Slice](http://dev.office.com/reference/add-ins/shared/slice) fornecem a funcionalidade necessária para obter documentos inteiros do Word e PowerPoint em fatias (frações) de até 4 MB por vez. Para saber mais, consulte [Como obter todo o conteúdo do arquivo a partir de um documento em um suplemento](../../docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md).
+O método [Document.getFileAsync](http://dev.office.com/reference/add-ins/shared/document.getfileasync) e os membros dos objetos [File](http://dev.office.com/reference/add-ins/shared/file) e [Slice](http://dev.office.com/reference/add-ins/shared/slice) fornecem a funcionalidade necessária para obter documentos inteiros do Word e PowerPoint em fatias (frações) de até 4 MB por vez. Para saber mais, consulte [Como obter todo o conteúdo do arquivo a partir de um documento em um suplemento](../develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md).
 
 
 ## <a name="mailbox-object"></a>Objeto Mailbox
@@ -224,7 +224,7 @@ Para saber mais sobre como usar o JavaScript em suplementos do Outlook, consulte
 ## <a name="api-support-matrix"></a>Matriz de suporte da API
 
 
-Esta tabela resume a API e os recursos compatíveis com os tipos de suplemento (conteúdo, painel de tarefas e Outlook) e os aplicativos do Office que podem hospedá-los quando o usuário especifica os [aplicativos hospedados pelo Office compatíveis com o suplemento](http://msdn.microsoft.com/library/cff9fbdf-a530-4f6e-91ca-81bcacd90dcd%28Office.15%29.aspx) usando o [esquema 1.1 do manifesto de suplementos e recursos compatíveis com a v1.1 da API JavaScript para Office](../../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md).
+Esta tabela resume a API e os recursos compatíveis com os tipos de suplemento (conteúdo, painel de tarefas e Outlook) e os aplicativos do Office que podem hospedá-los quando o usuário especifica os [aplicativos hospedados pelo Office compatíveis com o suplemento](http://msdn.microsoft.com/library/cff9fbdf-a530-4f6e-91ca-81bcacd90dcd%28Office.15%29.aspx) usando o [esquema 1.1 do manifesto de suplementos e recursos compatíveis com a v1.1 da API JavaScript para Office](../develop/update-your-javascript-api-for-office-and-manifest-schema-version.md).
 
 
 |||||||||

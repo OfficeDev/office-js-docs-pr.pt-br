@@ -41,7 +41,7 @@ Ao concluir o assistente, o Visual Studio cria uma solução que contém dois pr
 ## <a name="modify-your-add-in-settings"></a>Modificar as configurações de suplemento
 
 
-Para alterar as configurações do seu suplemento, edite o arquivo de manifesto XML do projeto. No **Gerenciador de Soluções**, expanda o nó de projeto do suplemento, expanda a pasta que contém o manifesto XML e escolha o manifesto XML. Você pode apontar para qualquer elemento do arquivo para exibir uma dica de ferramenta que descreve a finalidade do elemento. Para saber mais sobre o arquivo de manifesto, confira [Manifesto XML de suplementos do Office](../../docs/overview/add-in-manifests.md).
+Para alterar as configurações do seu suplemento, edite o arquivo de manifesto XML do projeto. No **Gerenciador de Soluções**, expanda o nó de projeto do suplemento, expanda a pasta que contém o manifesto XML e escolha o manifesto XML. Você pode apontar para qualquer elemento do arquivo para exibir uma dica de ferramenta que descreve a finalidade do elemento. Para saber mais sobre o arquivo de manifesto, confira [Manifesto XML de suplementos do Office](../overview/add-in-manifests.md).
 
 
 ## <a name="develop-the-contents-of-your-add-in"></a>Desenvolver o conteúdo do suplemento
@@ -158,7 +158,7 @@ O Visual Studio não mostra erros de validação na janela **OUTPUT** ao compila
     
 - [CSS, confira Validação, CSS, editor de texto, caixa de diálogo Opções](http://go.microsoft.com/fwlink/?LinkID=238780)
     
-Para examinar as regras de validação do arquivo de manifesto XML no projeto, confira [Manifesto XML de suplementos do Office](../../docs/overview/add-in-manifests.md).
+Para examinar as regras de validação do arquivo de manifesto XML no projeto, confira [Manifesto XML de suplementos do Office](../overview/add-in-manifests.md).
 
 
 ### <a name="show-an-add-in-in-excel-word-or-project-and-step-through-your-code"></a>Mostrar um suplemento no Excel, no Word ou no Project e percorrer o código

@@ -2,7 +2,7 @@
 
 _Aplica-se a: Word 2016, Word para iPad, Word para Mac_
 
-Um suplemento do Word é executado no Word e pode interagir com o conteúdo do documento usando a API JavaScript para Word, que faz parte do modelo de programação dos Suplementos do Office para estender aplicativos do Office. Neste modelo de programação do suplemento, você pode usar a plataforma e o idioma de sua preferência para criar o aplicativo Web que hospeda sua extensão no Word e usar o [manifesto](../../docs/overview/add-in-manifests.md) do suplemento para definir suas configurações e recursos.
+Um suplemento do Word é executado no Word e pode interagir com o conteúdo do documento usando a API JavaScript para Word, que faz parte do modelo de programação dos Suplementos do Office para estender aplicativos do Office. Neste modelo de programação do suplemento, você pode usar a plataforma e o idioma de sua preferência para criar o aplicativo Web que hospeda sua extensão no Word e usar o [manifesto](../overview/add-in-manifests.md) do suplemento para definir suas configurações e recursos.
 
 Neste artigo, você passará pelo processo de criar um suplemento do Word usando o jQuery e a API JavaScript para Word. 
 

@@ -75,6 +75,6 @@ Especificamente para o OWA para Dispositivos e o Outlook Web App em execução e
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- [Visão geral da plataforma de suplementos do Office](../../docs/overview/office-add-ins.md)
+- [Visão geral da plataforma de suplementos do Office](../overview/office-add-ins.md)
 - [Disponibilidade de host e plataforma para suplementos do Office](http://dev.office.com/add-in-availability)
 

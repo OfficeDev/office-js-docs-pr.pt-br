@@ -1,10 +1,10 @@
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>Criar um Suplemento do Office com ASP.NET que usa logon único
 
-Quando os usuários estão conectados ao Office, o seu suplemento pode usar as mesmas credenciais para permitir que os usuários acessem vários aplicativos sem exigir que eles entrem uma segunda vez. Confira uma visão geral no artigo [Habilitar o SSO em um Suplemento do Office](../../docs/develop/sso-in-office-add-ins.md).
+Quando os usuários estão conectados ao Office, o seu suplemento pode usar as mesmas credenciais para permitir que os usuários acessem vários aplicativos sem exigir que eles entrem uma segunda vez. Confira uma visão geral no artigo [Habilitar o SSO em um Suplemento do Office](../develop/sso-in-office-add-ins.md).
 
 Este artigo apresenta o processo passo a passo de habilitação do logon único (SSO) em um suplemento que foi criado com ASP.NET, OWIN e com a Biblioteca de Autenticação da Microsoft (MSAL) para .NET.
 
-> **Observação:** Para ler um artigo semelhante sobre um suplemento baseado em Node.js, confira [Criar um Suplemento do Office com Node.js que usa o logon único](../../docs/develop/create-sso-office-add-ins-nodejs.md).
+> **Observação:** Para ler um artigo semelhante sobre um suplemento baseado em Node.js, confira [Criar um Suplemento do Office com Node.js que usa o logon único](../develop/create-sso-office-add-ins-nodejs.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 

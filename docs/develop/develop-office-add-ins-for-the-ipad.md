@@ -9,7 +9,7 @@ A tabela a seguir lista as tarefas a realizar para desenvolver um Suplemento do 
 |:-----|:-----|:-----|
 |Atualize seu suplemento para dar suporte ao Office.js versão 1.1.|Atualize os arquivos de JavaScript (Office.js e arquivos .js específicos do aplicativo) e o arquivo de validação de manifesto de suplemento usados no projeto do seu Suplemento do Office para a versão 1.1.|[O que mudou na API JavaScript para Office](https://dev.office.com/reference/add-ins/what's-changed-in-the-javascript-api-for-office)|
 |Aplique as práticas recomendadas de design de interface do usuário.|Integre perfeitamente a interface do usuário do seu suplemento à experiência para iOS.|[Projetar para o iOS](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/)|
-|Aplique as práticas recomendadas de design de suplemento.|Verifique se o suplemento fornece um valor claro, é dedicado e tem um desempenho consistente.|[Práticas recomendadas para desenvolvimento de suplementos do Office](../../docs/overview/add-in-development-best-practices.md)|
+|Aplique as práticas recomendadas de design de suplemento.|Verifique se o suplemento fornece um valor claro, é dedicado e tem um desempenho consistente.|[Práticas recomendadas para desenvolvimento de suplementos do Office](../overview/add-in-development-best-practices.md)|
 |Otimize seu suplemento para toque.|Torne sua interface do usuário responsiva a entradas de toque, além de mouse e teclado.|[Aplicar os princípios de design da UX](https://msdn.microsoft.com/EN-US/library/mt590883.aspx#Anchor_3)|
 |Torne seu suplemento gratuito.|O Office no iPad é um canal pelo qual você pode atingir mais usuários e promover seus serviços. Esses novos usuários têm potencial para se tornarem seus clientes.|[Política de validação 10.8](http://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe%28Office.15%29.aspx)|
 |Torne a comercialização do seu suplemento gratuita.|Seu suplemento não deve oferecer compras no aplicativo, ofertas de avaliação, interfaces de usuários com o objetivo de maximizar as vendas nem links para lojas online onde os usuários possam comprar ou adquirir outros conteúdos, aplicativos ou suplementos. Suas páginas de Política de Privacidade e Termos de Uso também não devem ter nenhuma interface de usuário destinada ao comércio ou links para lojas.|[Política de validação 3.4](http://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe%28Office.15%29.aspx)|
@@ -29,16 +29,16 @@ Aplique as seguintes práticas recomendadas para desenvolver suplementos para ex
     
 -  **Especifique os requisitos da API no manifesto do seu suplemento ou com verificações da execução.**
     
-    Ao especificar os requisitos da API no manifesto do suplemento, o Office determinará se o aplicativo host é compatível com esses membros da API. Se os membros da API estiverem disponíveis no host, o suplemento ficará disponível nesse aplicativo host. Como alternativa, é possível realizar uma verificação de tempo de execução para determinar se um método está disponível no host antes de usá-lo em seu suplemento. As verificações de tempo de execução garantem que o suplemento sempre esteja disponível no host e proporciona recursos adicionais se os métodos estiverem disponíveis. Para saber mais, consulte [Especificar requisitos de hosts e API para o Office](../../docs/overview/specify-office-hosts-and-api-requirements.md).
+    Ao especificar os requisitos da API no manifesto do suplemento, o Office determinará se o aplicativo host é compatível com esses membros da API. Se os membros da API estiverem disponíveis no host, o suplemento ficará disponível nesse aplicativo host. Como alternativa, é possível realizar uma verificação de tempo de execução para determinar se um método está disponível no host antes de usá-lo em seu suplemento. As verificações de tempo de execução garantem que o suplemento sempre esteja disponível no host e proporciona recursos adicionais se os métodos estiverem disponíveis. Para saber mais, consulte [Especificar requisitos de hosts e API para o Office](../overview/specify-office-hosts-and-api-requirements.md).
     
-Para ter acesso às práticas recomendadas gerais de desenvolvimento de suplementos, confira [Práticas recomendadas para desenvolvimento de Suplementos do Office](../../docs/overview/add-in-development-best-practices.md).
+Para ter acesso às práticas recomendadas gerais de desenvolvimento de suplementos, confira [Práticas recomendadas para desenvolvimento de Suplementos do Office](../overview/add-in-development-best-practices.md).
 
 
 ## <a name="additional-resources"></a>Recursos adicionais
 <a name="bk_addresources"> </a>
 
 
-- [Realizar o sideload de um Suplemento do Office no iPad e no Mac](../../docs/testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+- [Realizar o sideload de um Suplemento do Office no iPad e no Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
     
-- [Depurar Suplementos do Office no iPad e no Mac](../../docs/testing/debug-office-add-ins-on-ipad-and-mac.md)
+- [Depurar Suplementos do Office no iPad e no Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)
     

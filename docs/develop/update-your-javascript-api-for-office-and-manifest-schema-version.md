@@ -4,7 +4,7 @@ Este artigo descreve como atualizar os arquivos do JavaScript (Office.js e arqui
 
 ## <a name="using-the-most-up-to-date-project-files"></a>Usar os arquivos de projeto mais atualizados
 
-Se estiver usando o Visual Studio para desenvolver o suplemento, para usar os [membros mais recentes](https://dev.office.com/reference/add-ins/what's-changed-in-the-javascript-api-for-office) da API JavaScript para Office e os [recursos da v1.1 do manifesto do suplemento](../../docs/overview/add-in-manifests.md) (que é validado em relação a offappmanifest 1.1.xsd), é preciso baixar e instalar o [Visual Studio 2015 e a versão mais recente das Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs).
+Se estiver usando o Visual Studio para desenvolver o suplemento, para usar os [membros mais recentes](https://dev.office.com/reference/add-ins/what's-changed-in-the-javascript-api-for-office) da API JavaScript para Office e os [recursos da v1.1 do manifesto do suplemento](../overview/add-in-manifests.md) (que é validado em relação a offappmanifest 1.1.xsd), é preciso baixar e instalar o [Visual Studio 2015 e a versão mais recente das Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs).
 
 Se estiver usando um editor de texto ou IDE que não o Visual Studio para desenvolver o suplemento, é precisa atualizar as referências à CDN para o Office.js e a versão do esquema consultada pelo manifesto do suplemento.
 
@@ -65,7 +65,7 @@ No arquivo de manifesto do suplemento atualize o atributo **xmlns** do elemento 
 </OfficeApp>
 ```
 
-> **Observação:** Após atualizar a versão do esquema do manifesto do suplemento para 1.1, será preciso remover os elementos **Capabilities** e **Capability** e substituí-los pelos [Hosts](http://dev.office.com/reference/add-ins/manifest/hosts) e elementos [Host](http://dev.office.com/reference/add-ins/manifest/hosts) ou pelos [elementos Requirements e Requirement](../../docs/overview/specify-office-hosts-and-api-requirements.md).
+> **Observação:** Após atualizar a versão do esquema do manifesto do suplemento para 1.1, será preciso remover os elementos **Capabilities** e **Capability** e substituí-los pelos [Hosts](http://dev.office.com/reference/add-ins/manifest/hosts) e elementos [Host](http://dev.office.com/reference/add-ins/manifest/hosts) ou pelos [elementos Requirements e Requirement](../overview/specify-office-hosts-and-api-requirements.md).
 
 ## <a name="updating-an-office-add-in-project-created-with-a-text-editor-or-other-ide"></a>Atualização de um projeto de suplemento do Office criado com um editor de texto ou outro IDE
 
@@ -105,14 +105,14 @@ No arquivo de manifesto do suplemento atualize o atributo **xmlns** do elemento 
 </OfficeApp>
 ```
 
-> **Observação:** Após atualizar a versão do esquema do manifesto do suplemento para 1.1, será preciso remover os elementos **Capabilities** e **Capability** e substituí-los pelos [Hosts](http://dev.office.com/reference/add-ins/manifest/hosts) e elementos [Host](http://dev.office.com/reference/add-ins/manifest/hosts) ou pelos [elementos Requirements e Requirement](../../docs/overview/specify-office-hosts-and-api-requirements.md).
+> **Observação:** Após atualizar a versão do esquema do manifesto do suplemento para 1.1, será preciso remover os elementos **Capabilities** e **Capability** e substituí-los pelos [Hosts](http://dev.office.com/reference/add-ins/manifest/hosts) e elementos [Host](http://dev.office.com/reference/add-ins/manifest/hosts) ou pelos [elementos Requirements e Requirement](../overview/specify-office-hosts-and-api-requirements.md).
     
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- [Especificar hosts do Office e requisitos da API](../../docs/overview/specify-office-hosts-and-api-requirements.md)
+- [Especificar hosts do Office e requisitos da API](../overview/specify-office-hosts-and-api-requirements.md)
     
-- [Noções básicas da API JavaScript para Office](../../docs/develop/understanding-the-javascript-api-for-office.md)
+- [Noções básicas da API JavaScript para Office](../develop/understanding-the-javascript-api-for-office.md)
     
 - [API JavaScript para Office](http://dev.office.com/reference/add-ins/javascript-api-for-office)
     

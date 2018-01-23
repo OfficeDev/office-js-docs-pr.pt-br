@@ -96,7 +96,7 @@ A plataforma de suplementos lida com as preocupações com privacidade dos usuá
 
   - A execução em um controle de navegador da Web permite que o suplemento faça quase tudo que uma página da Web regular em execução em um navegador pode fazer, mas, ao mesmo tempo, restringe o suplemento a observar a política de mesma origem para o isolamento de domínio e as zonas segurança.
 
-Os suplementos do Outlook fornecem recursos adicionais de segurança e desempenho por meio do monitoramento de uso de recursos específicos do suplemento do Outlook. Para saber mais, consulte [Privacidade, permissões e segurança de suplementos do Outlook](../../docs/outlook/privacy-and-security.md).
+Os suplementos do Outlook fornecem recursos adicionais de segurança e desempenho por meio do monitoramento de uso de recursos específicos do suplemento do Outlook. Para saber mais, consulte [Privacidade, permissões e segurança de suplementos do Outlook](../outlook/privacy-and-security.md).
 
 
 ### <a name="developer-guidelines-to-handle-pii"></a>Diretrizes de desenvolvedor para lidar com PII
@@ -148,9 +148,9 @@ Para saber mais sobre isso para suplementos de painel de tarefas e de conteúdo,
 
 Para saber mais sobre isso para suplementos do Outlook, confira os tópicos a seguir:
 
-- [Privacidade, permissões e segurança para suplementos do Outlook](../../docs/outlook/privacy-and-security.md)
+- [Privacidade, permissões e segurança para suplementos do Outlook](../outlook/privacy-and-security.md)
 
-- [Noções básicas sobre permissões de suplemento do Outlook](../../docs/outlook/understanding-outlook-add-in-permissions.md)
+- [Noções básicas sobre permissões de suplemento do Outlook](../outlook/understanding-outlook-add-in-permissions.md)
 
 
 ### <a name="same-origin-policy"></a>Política de mesma origem
@@ -175,7 +175,7 @@ function loadVideoDetails(videoIndex) {
 }
 ```
 
-O Exchange e o SharePoint fornecem proxies do lado do cliente para habilitar o acesso de domínio cruzado. Em geral, a política de mesma origem em uma intranet não é tão estrita como na Internet. Para saber mais, confira [Política de mesma origem, parte 1: sem exibição](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx) e [Como lidar com limitações de política de mesma origem nos Suplementos do Office](../../docs/develop/addressing-same-origin-policy-limitations.md).
+O Exchange e o SharePoint fornecem proxies do lado do cliente para habilitar o acesso de domínio cruzado. Em geral, a política de mesma origem em uma intranet não é tão estrita como na Internet. Para saber mais, confira [Política de mesma origem, parte 1: sem exibição](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx) e [Como lidar com limitações de política de mesma origem nos Suplementos do Office](../develop/addressing-same-origin-policy-limitations.md).
 
 
 ### <a name="tips-to-prevent-malicious-cross-site-scripting"></a>Dicas para evitar scripts mal-intencionados entre sites

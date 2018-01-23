@@ -9,7 +9,7 @@ Você pode usar a [API JavaScript para Office](http://dev.office.com/reference/a
     
 2.  **O objeto Document.** A maior parte da API disponível para suplementos de conteúdo e de painel de tarefas é exposta por meio dos métodos, propriedades e eventos do objeto [Document](http://dev.office.com/reference/add-ins/shared/document). Um suplemento de conteúdo ou de painel de tarefas pode usar a propriedade [Office.context.document](http://dev.office.com/reference/add-ins/shared/office.context.document) para acessar o objeto **Document** e, por meio dele, pode acessar os membros-chave da API para trabalhar com dados em documentos, como os objetos [Bindings](http://dev.office.com/reference/add-ins/shared/bindings.bindings) e [CustomXmlParts](http://dev.office.com/reference/add-ins/shared/customxmlparts.customxmlparts) e os métodos [getSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document.getselecteddataasync), [setSelectedDataAsync](http://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) e [getFileAsync](http://dev.office.com/reference/add-ins/shared/document.getfileasync). O objeto **Document** também fornece a propriedade [mode](http://dev.office.com/reference/add-ins/shared/document.mode) para determinar se um documento é somente leitura ou está no modo de edição, a propriedade [url](http://dev.office.com/reference/add-ins/shared/document.url) para obter a URL do documento atual e acesso ao objeto [Settings](http://dev.office.com/reference/add-ins/shared/settings). O objeto **Document** também dá suporte à adição de manipuladores de eventos para o evento [SelectionChanged](http://dev.office.com/reference/add-ins/shared/document.selectionchanged.event). Portanto, é possível detectar quando um usuário altera sua seleção no documento.
     
-   Um suplemento de conteúdo ou painel de tarefas só pode acessar o objeto **Document** depois que o DOM e o ambiente de tempo de execução são carregados, normalmente no manipulador de eventos para o evento [Office.initialize](http://dev.office.com/reference/add-ins/shared/office.initialize). Para saber mais sobre o fluxo de eventos quando um suplemento é inicializado e como verificar se o DOM e o tempo de execução foram carregados com êxito, confira [Carregar o DOM e o ambiente de tempo de execução](../../docs/develop/loading-the-dom-and-runtime-environment.md).
+   Um suplemento de conteúdo ou painel de tarefas só pode acessar o objeto **Document** depois que o DOM e o ambiente de tempo de execução são carregados, normalmente no manipulador de eventos para o evento [Office.initialize](http://dev.office.com/reference/add-ins/shared/office.initialize). Para saber mais sobre o fluxo de eventos quando um suplemento é inicializado e como verificar se o DOM e o tempo de execução foram carregados com êxito, confira [Carregar o DOM e o ambiente de tempo de execução](../develop/loading-the-dom-and-runtime-environment.md).
     
 3.  **Objetos para trabalhar com recursos específicos.** Para trabalhar com recursos específicos da API, use as seguintes objetos e métodos:
     
@@ -24,7 +24,7 @@ Você pode usar a [API JavaScript para Office](http://dev.office.com/reference/a
 
  >**Importante**  Alguns dos membros da API não têm suporte em todos os aplicativos do Office que podem hospedar suplementos de conteúdo e de painel de tarefas. Para determinar quais membros têm suporte, confira o seguinte:
 
-Para obter um resumo do suporte à API JavaScript para Office entre os aplicativos host do Office, confira [Noções básicas sobre a API JavaScript para Office](../../docs/develop/understanding-the-javascript-api-for-office.md).
+Para obter um resumo do suporte à API JavaScript para Office entre os aplicativos host do Office, confira [Noções básicas sobre a API JavaScript para Office](../develop/understanding-the-javascript-api-for-office.md).
 
 
 ## <a name="reading-and-writing-to-an-active-selection"></a>Ler e gravar em uma seleção ativa
@@ -50,7 +50,7 @@ function write(message){
 
 ```
 
-Para saber mais e obter exemplos, consulte [Ler e gravar dados na seleção ativa em um documento ou planilha](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md).
+Para saber mais e obter exemplos, consulte [Ler e gravar dados na seleção ativa em um documento ou planilha](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md).
 
 
 ## <a name="binding-to-a-region-in-a-document-or-spreadsheet"></a>Associar a uma região em um documento ou planilha
@@ -80,7 +80,7 @@ function write(message){
 }
 ```
 
-Para saber mais e obter exemplos, consulte [Associar a regiões em um documento ou planilha](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md).
+Para saber mais e obter exemplos, consulte [Associar a regiões em um documento ou planilha](../develop/bind-to-regions-in-a-document-or-spreadsheet.md).
 
 
 ## <a name="getting-entire-documents"></a>Obter documentos inteiros
@@ -89,7 +89,7 @@ Se o suplemento de painel de tarefas for executado no PowerPoint ou no Word, voc
 
 Ao chamar **Document.getFileAsync**, você obtém uma cópia do documento em um objeto [File](http://dev.office.com/reference/add-ins/shared/file). O objeto **File** fornece acesso ao documento em "partes" representadas como objetos [Slice](http://dev.office.com/reference/add-ins/shared/document). Ao chamar **getFileAsync**, você pode especificar o tipo de arquivo (texto ou formato Open XML do Office compactado) e o tamanho das fatias (até 4 MB). Para acessar o conteúdo do objeto **File**, chame **File.getSliceAsync**, que retorna os dados brutos na propriedade [Slice.data](http://dev.office.com/reference/add-ins/shared/slice.data). Se tiver especificado o formato compactado, você obterá os dados do arquivo como uma matriz de bytes. Se estiver transmitindo o arquivo para um serviço Web, você poderá transformar os dados brutos compactados em uma cadeia de caracteres codificada na base 64 antes do envio. Finalmente, ao terminar de obter fatias do arquivo, use o método **File.closeAsync** para fechar o documento.
 
-Para saber mais, veja como [obter todo o documento por meio de um suplemento para PowerPoint ou Word](../../docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md). 
+Para saber mais, veja como [obter todo o documento por meio de um suplemento para PowerPoint ou Word](../develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md). 
 
 
 ## <a name="reading-and-writing-custom-xml-parts-of-a-word-document"></a>Ler e gravar partes XML personalizadas de um documento do Word
@@ -102,7 +102,7 @@ Você também pode usar o método [CustomXmlParts.getByIdAsync](http://dev.offic
 
 Para adicionar um novo componente XML personalizado a um documento, use a propriedade **Document.customXmlParts** para bloquear as partes XML personalizadas que estão no documento e chame o método [CustomXmlParts.addAsync](http://dev.office.com/reference/add-ins/shared/customxmlparts.addasync).
 
-Para saber mais sobre como trabalhar com partes XML personalizadas em um suplemento de painel de tarefas, consulte [Criar suplementos melhores para o Word com o Office Open XML](../../docs/word/create-better-add-ins-for-word-with-office-open-xml.md).
+Para saber mais sobre como trabalhar com partes XML personalizadas em um suplemento de painel de tarefas, consulte [Criar suplementos melhores para o Word com o Office Open XML](../word/create-better-add-ins-for-word-with-office-open-xml.md).
 
 
 ## <a name="persisting-add-in-settings"></a>Persistir configurações de suplemento
@@ -121,14 +121,14 @@ Office.context.document.settings.set('themeColor', 'green');
 
 Como os dados de configurações criados ou excluídos com os métodos **set** e **remove** atuam em uma cópia dos dados na memória, você deve chamar **saveAsync** para persistir as alterações feitas nos dados de configurações no documento com o qual o suplemento está trabalhando.
 
-Para saber mais sobre como trabalhar com dados personalizados usando os métodos do objeto **Settings**, consulte [Persistir o estado e as configurações do suplemento](../../docs/develop/persisting-add-in-state-and-settings.md).
+Para saber mais sobre como trabalhar com dados personalizados usando os métodos do objeto **Settings**, consulte [Persistir o estado e as configurações do suplemento](../develop/persisting-add-in-state-and-settings.md).
 
 
 ## <a name="reading-properties-of-a-project-document"></a>Ler propriedades de um documento do Project
 
 Se o suplemento de painel de tarefas for executado no Project, o suplemento poderá ler dados de alguns dos campos de projeto, recursos e campos de tarefa do projeto ativo. Para fazer isso, você usa os métodos e eventos do objeto [ProjectDocument](http://dev.office.com/reference/add-ins/shared/projectdocument.projectdocument), que estende o objeto **Document** para fornecer funcionalidade adicional específica do Project.
 
-Para obter exemplos de leitura de dados do Project, consulte [Criar seu primeiro suplemento de painel de tarefas do Project 2013 usando um editor de texto](../../docs/project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md).
+Para obter exemplos de leitura de dados do Project, consulte [Criar seu primeiro suplemento de painel de tarefas do Project 2013 usando um editor de texto](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md).
 
 
 ## <a name="permissions-model-and-governance"></a>Modelo de permissões e governança
@@ -148,7 +148,7 @@ O suplemento usa o elemento **Permissions** em seu manifesto para solicitar perm
 
 ```
 
-Para saber mais, consulte [Solicitação de permissões para uso da API em suplementos de conteúdo e de painel de tarefas](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md).
+Para saber mais, consulte [Solicitação de permissões para uso da API em suplementos de conteúdo e de painel de tarefas](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md).
 
 
 ## <a name="additional-resources"></a>Recursos adicionais
@@ -158,5 +158,5 @@ Para saber mais, consulte [Solicitação de permissões para uso da API em suple
     
 - [Referência de esquema para os manifestos dos Suplementos do Office](http://msdn.microsoft.com/en-us/library/7e0cadc3-f613-8eb9-57ef-9032cbb97f92.aspx)
     
-- [Solucionar erros de usuários com suplementos do Office](../../docs/testing/testing-and-troubleshooting.md)
+- [Solucionar erros de usuários com suplementos do Office](../testing/testing-and-troubleshooting.md)
     

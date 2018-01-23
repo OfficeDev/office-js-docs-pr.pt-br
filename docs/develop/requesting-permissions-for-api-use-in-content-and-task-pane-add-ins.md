@@ -43,7 +43,7 @@ A tabela a seguir descreve o subconjunto da API JavaScript que é habilitado por
 ## <a name="additional-resources"></a>Recursos adicionais
 
     
-- [Privacidade e segurança para os Suplementos do Office](../../docs/develop/privacy-and-security.md)
+- [Privacidade e segurança para os Suplementos do Office](../develop/privacy-and-security.md)
     
 
 
