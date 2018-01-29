@@ -8,14 +8,14 @@ Para fazer isso, você pode:
 
 - Usar membros da API JavaScript para Office que armazenam dados como pares de nome/valor em um conjunto de propriedades armazenado em um local que depende do tipo de suplemento.
     
-- Usar técnicas fornecidas pelo controle de navegador subjacente: cookies de navegador ou armazenamento Web HTML5 ([localStorage](http://msdn.microsoft.com/en-us/library/cc848902%28v=vs.85%29.aspx) ou [sessionStorage](http://msdn.microsoft.com/en-us/library/cc197020%28v=vs.85%29.aspx)).
+- Usar técnicas fornecidas pelo controle de navegador subjacente: cookies de navegador ou armazenamento Web HTML5 ([localStorage](http://msdn.microsoft.com/pt-br/library/cc848902%28v=vs.85%29.aspx) ou [sessionStorage](http://msdn.microsoft.com/pt-br/library/cc197020%28v=vs.85%29.aspx)).
     
 Este artigo concentra-se em como usar a API JavaScript para Office para persistir o estado do suplemento. Para obter exemplos do uso de cookies de navegador e armazenamento na Web, confira [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings).
 
 ## <a name="persisting-add-in-state-and-settings-with-the-javascript-api-for-office"></a>Persistir o estado e as configurações do suplemento com a API JavaScript para Office
 
 
-A API JavaScript para Office fornece os objetos [Settings](http://dev.office.com/reference/add-ins/shared/settings), [RoamingSettings](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) e [CustomProperties](http://dev.office.com/reference/add-ins/outlook/CustomProperties) para salvar o estado do suplemento entre sessões, conforme descrito na tabela a seguir. Em todos os casos, os valores de configurações salvos são associados à [Id](http://msdn.microsoft.com/en-us/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx) do suplemento que os criou.
+A API JavaScript para Office fornece os objetos [Settings](http://dev.office.com/reference/add-ins/shared/settings), [RoamingSettings](http://dev.office.com/reference/add-ins/outlook/RoamingSettings) e [CustomProperties](http://dev.office.com/reference/add-ins/outlook/CustomProperties) para salvar o estado do suplemento entre sessões, conforme descrito na tabela a seguir. Em todos os casos, os valores de configurações salvos são associados à [Id](http://msdn.microsoft.com/pt-br/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx) do suplemento que os criou.
 
 
 

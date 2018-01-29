@@ -102,7 +102,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 ## <a name="configure-the-add-in"></a>Configurar o suplemento
 
-1. Na seguinte cadeia de caracteres, substitua o espaço reservado "{tenant_ID}" pela ID de locatário do Office 365 obtida anteriormente. Se por algum motivo, você não obteve a ID anteriormente, use um dos métodos descritos em [Localizar a ID de locatário do Office 365](https://support.office.com/en-us/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b) para obtê-la.
+1. Na seguinte cadeia de caracteres, substitua o espaço reservado "{tenant_ID}" pela ID de locatário do Office 365 obtida anteriormente. Se por algum motivo, você não obteve a ID anteriormente, use um dos métodos descritos em [Localizar a ID de locatário do Office 365](https://support.office.com/pt-br/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b) para obtê-la.
 
     `https://login.microsoftonline.com/{tenant_ID}/v2.0`
 

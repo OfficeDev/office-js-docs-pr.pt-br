@@ -1,7 +1,7 @@
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>Usar temas de documentos em seus suplementos do PowerPoint
 
 
-Um [tema do Office](https://support.office.com/en-US/Article/What-is-a-theme--7528ccc2-4327-4692-8bf5-9b5a3f2a5ef5) é composto, em parte, por um conjunto visualmente coordenado de fontes e cores que você pode aplicar em apresentações, documentos, planilhas e emails. Para aplicar ou personalizar o tema de uma apresentação no PowerPoint, use os grupos **Temas** e **Variantes** na guia **Design** da faixa de opções.  O PowerPoint atribui uma nova apresentação em branco com o **Tema do Office** padrão, mas você pode escolher outros temas disponíveis na guia **Design**, baixar temas adicionais do Office.com ou criar e personalizar seu próprio tema.
+Um [tema do Office](https://support.office.com/pt-br/Article/What-is-a-theme--7528ccc2-4327-4692-8bf5-9b5a3f2a5ef5) é composto, em parte, por um conjunto visualmente coordenado de fontes e cores que você pode aplicar em apresentações, documentos, planilhas e emails. Para aplicar ou personalizar o tema de uma apresentação no PowerPoint, use os grupos **Temas** e **Variantes** na guia **Design** da faixa de opções.  O PowerPoint atribui uma nova apresentação em branco com o **Tema do Office** padrão, mas você pode escolher outros temas disponíveis na guia **Design**, baixar temas adicionais do Office.com ou criar e personalizar seu próprio tema.
 
 O OfficeThemes.css ajuda você a criar suplementos coordenados com o PowerPoint de duas maneiras:
 

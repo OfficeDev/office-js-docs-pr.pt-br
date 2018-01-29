@@ -47,7 +47,7 @@ Outra maneira para resolver as limitações de política de mesma origem é impl
 
 Para obter um exemplo que use OAuth para autenticação, confira [Web part do SharePoint no Twitter com OAuth](http://aidangarnish.net/post/Twitter-SharePoint-Web-Part-With-OAuth).
 
-Para obter um exemplo de código do lado do servidor que mostre como usar o objeto `Cookie` em `System.Net` para obter e definir valores de cookies, confira a propriedade [Value](http://msdn2.microsoft.com/EN-US/library/4f772twc).
+Para obter um exemplo de código do lado do servidor que mostre como usar o objeto `Cookie` em `System.Net` para obter e definir valores de cookies, confira a propriedade [Value](http://msdn2.microsoft.com/pt-br/library/4f772twc).
 
 
 ## <a name="using-cross-origin-resource-sharing-cors"></a>Usar o CORS (compartilhamento de recursos entre origens)

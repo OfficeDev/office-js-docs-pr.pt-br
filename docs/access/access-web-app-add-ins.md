@@ -4,7 +4,7 @@
 
 Este artigo mostra como usar o Visual Studio 2015 para desenvolver um Suplemento do Office destinado a aplicativos Web do Access.
 
->**Observação:** Para obter informações sobre como desenvolver soluções para o Access usando o VBA, confira [Access](https://msdn.microsoft.com/en-us/library/fp179695.aspx) na MSDN.
+>**Observação:** Para obter informações sobre como desenvolver soluções para o Access usando o VBA, confira [Access](https://msdn.microsoft.com/pt-br/library/fp179695.aspx) na MSDN.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 

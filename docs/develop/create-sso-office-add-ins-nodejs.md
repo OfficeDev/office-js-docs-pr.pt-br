@@ -106,7 +106,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 4. Na propriedade `audience`, substitua o espaço reservado `{audience GUID}` pela ID do aplicativo que você salvou ao registrar o suplemento. (Exatamente o mesmo valor que você atribuiu à propriedade `client_id`.)
   
-3. Na cadeia de caracteres atribuída à propriedade `issuer`, você verá o espaço reservado *{O365 tenant GUID}*. Substitua-o pela ID de locação do Office 365 que você salvou no final do último procedimento. Se por algum motivo, você não obteve a ID anteriormente, use um dos métodos descritos em [Localizar a ID de locatário do Office 365](https://support.office.com/en-us/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b) para obtê-la. Quando terminar, o valor da propriedade `issuer` deve ser algo parecido com isto:
+3. Na cadeia de caracteres atribuída à propriedade `issuer`, você verá o espaço reservado *{O365 tenant GUID}*. Substitua-o pela ID de locação do Office 365 que você salvou no final do último procedimento. Se por algum motivo, você não obteve a ID anteriormente, use um dos métodos descritos em [Localizar a ID de locatário do Office 365](https://support.office.com/pt-br/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b) para obtê-la. Quando terminar, o valor da propriedade `issuer` deve ser algo parecido com isto:
 
     `https://login.microsoftonline.com/12345678-1234-1234-1234-123456789012/v2.0`
 
@@ -444,7 +444,7 @@ Há dois arquivos do lado do servidor que precisam ser modificados.
 
 Agora é preciso informar ao Office onde encontrar o suplemento.
 
-1. Crie um compartilhamento de rede ou [compartilhe uma pasta na rede](https://technet.microsoft.com/en-us/library/cc770880.aspx).
+1. Crie um compartilhamento de rede ou [compartilhe uma pasta na rede](https://technet.microsoft.com/pt-br/library/cc770880.aspx).
 
 2. Coloque uma cópia do arquivo de manifesto Office-Add-in-NodeJS-SSO.xml, da raiz do projeto, dentro da pasta compartilhada.
 

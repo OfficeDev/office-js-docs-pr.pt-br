@@ -14,7 +14,7 @@ Para os usuários, o logon único torna a experiência de execução do suplemen
 
 ## <a name="sso-add-in-architecture"></a>Arquitetura do suplemento de SSO
 
-Além de hospedar as páginas e o JavaScript do aplicativo web, o suplemento também deve hospedar, ao mesmo tempo o [nome de domínio totalmente qualificado](https://msdn.microsoft.com/en-us/library/windows/desktop/ms682135.aspx#_dns_fully_qualified_domain_name_fqdn__gly), uma ou mais APIs web que obterá um token de acesso ao Microsoft Graph e fará solicitações a ele.
+Além de hospedar as páginas e o JavaScript do aplicativo web, o suplemento também deve hospedar, ao mesmo tempo o [nome de domínio totalmente qualificado](https://msdn.microsoft.com/pt-br/library/windows/desktop/ms682135.aspx#_dns_fully_qualified_domain_name_fqdn__gly), uma ou mais APIs web que obterá um token de acesso ao Microsoft Graph e fará solicitações a ele.
 
 O manifesto do suplemento contém a marcação que especifica como ele está registrado no ponto de extremidade v2.0 do Azure Active Directory (Azure AD) e especifica todas as permissões para o Microsoft Graph que o suplemento precisa.
 
@@ -32,7 +32,7 @@ O diagrama a seguir mostra como funciona o processo de SSO.
 1. O aplicativo host do Office envia o **token do suplemento** ao suplemento como parte do objeto de resultado que retornou pela chamada de `getAccessTokenAsync`.
 1. O JavaScript no suplemento faz uma solicitação HTTP a uma API web que está hospedada no mesmo domínio totalmente qualificado que o suplemento e inclui o **token do suplemento** como prova de autorização.  
 1. O código do lado do servidor valida o **token do suplemento** que chega.
-1. O código do lado do servidor usa o fluxo "on behalf of" (em nome de) (definidos nos documentos [Exchange Token OAuth2](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02) [Troca de Token do OAuth2] e [aplicativo para servidor ou daemon para um cenário com API web do Azure](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-authentication-scenarios#daemon-or-server-application-to-web-api)) para obter um token de acesso para o Microsoft Graph (a partir daqui chamado de **token do MSG**) em troca do token do suplemento.
+1. O código do lado do servidor usa o fluxo "on behalf of" (em nome de) (definidos nos documentos [Exchange Token OAuth2](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02) [Troca de Token do OAuth2] e [aplicativo para servidor ou daemon para um cenário com API web do Azure](https://docs.microsoft.com/pt-br/azure/active-directory/develop/active-directory-authentication-scenarios#daemon-or-server-application-to-web-api)) para obter um token de acesso para o Microsoft Graph (a partir daqui chamado de **token do MSG**) em troca do token do suplemento.
 1. O Azure AD retorna o **token do MSG** (e um token de atualização, se o suplemento solicitar a permissão *offline_access*) para ele próprio.
 1. O código do lado do servidor armazena em cache o(s) **token(s) do MSG**.
 1. O código do lado do servidor faz solicitações ao Microsoft Graph e inclui o **token do MSG**.

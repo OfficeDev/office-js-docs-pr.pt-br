@@ -51,7 +51,7 @@ Cada Suplemento do Office especifica um elemento [DefaultLocale] e uma localidad
 |[SourceLocation]   |Os usuários em cada localidade especificada podem ver uma página da Web que você projetou especificamente para o suplemento dessa localidade. |
 
 
- > **Observação:** Você só pode localizar o nome de exibição e a descrição das localidades que oferecem suporte ao Office. Veja [Identificadores de idioma e valores de OptionState Id no Office 2013](http://technet.microsoft.com/en-us/library/cc179219.aspx) para obter uma lista de idiomas e localidades para a versão atual do Office.
+ > **Observação:** Você só pode localizar o nome de exibição e a descrição das localidades que oferecem suporte ao Office. Veja [Identificadores de idioma e valores de OptionState Id no Office 2013](http://technet.microsoft.com/pt-br/library/cc179219.aspx) para obter uma lista de idiomas e localidades para a versão atual do Office.
 
 
 ### <a name="examples"></a>Exemplos
@@ -412,7 +412,7 @@ Execute o suplemento de exemplo. O suplemento do painel de tarefas é carregado 
 
 - [Diretrizes de design para suplementos do Office](../design/add-in-design.md)
     
-- [Identificadores de idioma e valores da ID de OptionState no Office 2013](http://technet.microsoft.com/en-us/library/cc179219%28Office.15%29.aspx)
+- [Identificadores de idioma e valores da ID de OptionState no Office 2013](http://technet.microsoft.com/pt-br/library/cc179219%28Office.15%29.aspx)
 
 [DefaultLocale]:         http://dev.office.com/reference/add-ins/manifest/defaultlocale
 [Description]:           http://dev.office.com/reference/add-ins/manifest/description

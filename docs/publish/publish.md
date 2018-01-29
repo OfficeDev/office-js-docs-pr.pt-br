@@ -62,7 +62,7 @@ Requisitos de implantação de suplemento do Outlook:
 - Office 365, Exchange Online ou Exchange Server 2013 ou posterior
 - Outlook 2013 ou posterior
 
-Para atribuir suplementos a locatários, use o Centro de administração do Exchange para carregar o manifesto diretamente de um arquivo ou de uma URL ou para adicionar um suplemento da Office Store. Para atribuir suplementos a usuários individuais, é necessário usar o Exchange PowerShell. Para saber mais, confira o artigo [Instalar ou remover suplementos do Outlook para a organização](https://technet.microsoft.com/en-us/library/jj943752(v=exchg.150).aspx) no TechNet.
+Para atribuir suplementos a locatários, use o Centro de administração do Exchange para carregar o manifesto diretamente de um arquivo ou de uma URL ou para adicionar um suplemento da Office Store. Para atribuir suplementos a usuários individuais, é necessário usar o Exchange PowerShell. Para saber mais, confira o artigo [Instalar ou remover suplementos do Outlook para a organização](https://technet.microsoft.com/pt-br/library/jj943752(v=exchg.150).aspx) no TechNet.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

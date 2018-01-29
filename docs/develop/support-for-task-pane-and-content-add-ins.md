@@ -156,7 +156,7 @@ Para saber mais, consulte [Solicitação de permissões para uso da API em suple
 
 - [API JavaScript para Office](http://dev.office.com/reference/add-ins/javascript-api-for-office)
     
-- [Referência de esquema para os manifestos dos Suplementos do Office](http://msdn.microsoft.com/en-us/library/7e0cadc3-f613-8eb9-57ef-9032cbb97f92.aspx)
+- [Referência de esquema para os manifestos dos Suplementos do Office](http://msdn.microsoft.com/pt-br/library/7e0cadc3-f613-8eb9-57ef-9032cbb97f92.aspx)
     
 - [Solucionar erros de usuários com suplementos do Office](../testing/testing-and-troubleshooting.md)
     

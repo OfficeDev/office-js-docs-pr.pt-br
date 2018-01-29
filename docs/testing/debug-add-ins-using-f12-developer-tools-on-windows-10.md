@@ -63,5 +63,5 @@ Este exemplo usa o Word e um suplemento gratuito da Office Store.
 
 - [Inspecionar executando JavaScript com o Depurador](https://msdn.microsoft.com/library/dn255007%28v=vs.85%29.aspx)
     
-- [Usando as ferramentas de desenvolvedor F12](https://msdn.microsoft.com/en-us/library/bg182326%28v=vs.85%29.aspx)
+- [Usando as ferramentas de desenvolvedor F12](https://msdn.microsoft.com/pt-br/library/bg182326%28v=vs.85%29.aspx)
     

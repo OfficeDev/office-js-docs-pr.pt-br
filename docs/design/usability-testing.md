@@ -13,7 +13,7 @@ Esses serviços de teste o ajudam a simplificar a criação do plano de teste e 
 Você precisa de apenas cinco participantes para descobrir a maioria dos problemas de usabilidade no seu design. Incorpore testes pequenos regularmente durante o ciclo de desenvolvimento para garantir que seu produto seja centralizado no usuário.
 
 > 
-  **Observação:** Recomendamos que você teste a usabilidade do seu suplemento em várias plataformas. Para [publicar seu suplemento à Office Store](https://msdn.microsoft.com/en-us/library/office/jj220037.aspx), ele deve funcionar em todas as [plataformas compatíveis com os métodos que você define](https://dev.office.com/add-in-availability).
+  **Observação:** Recomendamos que você teste a usabilidade do seu suplemento em várias plataformas. Para [publicar seu suplemento à Office Store](https://msdn.microsoft.com/pt-br/library/office/jj220037.aspx), ele deve funcionar em todas as [plataformas compatíveis com os métodos que você define](https://dev.office.com/add-in-availability).
 
 ## <a name="1----sign-up-for-a-testing-service"></a>1.    Inscreva-se em um serviço de teste
 

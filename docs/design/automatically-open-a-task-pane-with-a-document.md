@@ -104,7 +104,7 @@ A parte webextension também inclui uma referência para a loja ou o catálogo c
 
 >\*Para localizar a ID de ativos e a versão de um suplemento na Office Store, vá para a página inicial do suplemento na Office Store. A ID de ativo é exibida na barra de endereços no navegador. A versão é listada na seção **Detalhes** da página.
 
-Confira mais informações sobre a marcação webextension em [[MS-OWEXML] 2.2.5. WebExtensionReference](https://msdn.microsoft.com/en-us/library/hh695383(v=office.12).aspx).
+Confira mais informações sobre a marcação webextension em [[MS-OWEXML] 2.2.5. WebExtensionReference](https://msdn.microsoft.com/pt-br/library/hh695383(v=office.12).aspx).
 
 O exemplo a seguir mostra como adicionar a parte do painel de tarefas.
 

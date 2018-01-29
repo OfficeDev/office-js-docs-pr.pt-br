@@ -36,7 +36,7 @@ Ao concluir o assistente, o Visual Studio cria uma solução que contém dois pr
 |**Project**|**Descrição**|
 |:-----|:-----|
 |Projeto de suplemento|Contém somente um arquivo de manifesto XML, que contém todas as configurações que descrevem o suplemento. As configurações ajudam o host do Office a determinar quando o suplemento deverá ser ativado e onde ele deverá aparecer. O Visual Studio gera o conteúdo desse arquivo para que você possa executar o projeto e usar o suplemento imediatamente . Você pode alterar as configurações a qualquer momento usando o editor de Manifesto.|
-|Projeto de aplicativo Web|Contém as páginas de conteúdo do suplemento, incluindo todos os arquivos e referências de arquivo de que você precisa para desenvolver páginas HTML e JavaScript com reconhecimento do Office. Enquanto você desenvolve o suplemento, o Visual Studio hospeda o aplicativo Web no servidor IIS local. Quando estiver pronto para publicar, você terá de localizar um servidor para hospedar o projeto. Para saber mais sobre projetos de aplicativos Web ASP.NET, confira [Projetos Web ASP.NET](http://msdn.microsoft.com/en-us/library/cdcd712f-96b0-4165-8b5d-9d0566650a28%28Office.15%29.aspx).|
+|Projeto de aplicativo Web|Contém as páginas de conteúdo do suplemento, incluindo todos os arquivos e referências de arquivo de que você precisa para desenvolver páginas HTML e JavaScript com reconhecimento do Office. Enquanto você desenvolve o suplemento, o Visual Studio hospeda o aplicativo Web no servidor IIS local. Quando estiver pronto para publicar, você terá de localizar um servidor para hospedar o projeto. Para saber mais sobre projetos de aplicativos Web ASP.NET, confira [Projetos Web ASP.NET](http://msdn.microsoft.com/pt-br/library/cdcd712f-96b0-4165-8b5d-9d0566650a28%28Office.15%29.aspx).|
 
 ## <a name="modify-your-add-in-settings"></a>Modificar as configurações de suplemento
 
@@ -143,7 +143,7 @@ O Visual Studio compila o projeto e faz o seguinte:
 Depois, o Visual Studio faz o seguinte:
 
 
-1. Modifica o elemento [SourceLocation](http://msdn.microsoft.com/en-us/library/e6ea8cd4-7c8b-1da7-d8f8-8d3c80a088bc%28Office.15%29.aspx) do arquivo de manifesto XML, substituindo o token ~remoteAppUrl pelo endereço totalmente qualificado da página inicial (por exemplo, http://localhost/MyAgave.html).
+1. Modifica o elemento [SourceLocation](http://msdn.microsoft.com/pt-br/library/e6ea8cd4-7c8b-1da7-d8f8-8d3c80a088bc%28Office.15%29.aspx) do arquivo de manifesto XML, substituindo o token ~remoteAppUrl pelo endereço totalmente qualificado da página inicial (por exemplo, http://localhost/MyAgave.html).
     
 2. Inicia o projeto de aplicativo Web no IIS Express.
     
@@ -154,7 +154,7 @@ O Visual Studio não mostra erros de validação na janela **OUTPUT** ao compila
 
 - [Opções, editor de texto, JavaScript, IntelliSense](http://go.microsoft.com/fwlink/?LinkID=238779)
     
-- [Tutorial: Definir opções de validação para edição de HTML no Visual Web Developer](http://msdn.microsoft.com/en-us/library/vstudio/0byxkfet%28v=vs.100%29.aspx)
+- [Tutorial: Definir opções de validação para edição de HTML no Visual Web Developer](http://msdn.microsoft.com/pt-br/library/vstudio/0byxkfet%28v=vs.100%29.aspx)
     
 - [CSS, confira Validação, CSS, editor de texto, caixa de diálogo Opções](http://go.microsoft.com/fwlink/?LinkID=238780)
     

@@ -25,7 +25,7 @@ E o uso de memória, CPU e recursos de rede por suplementos do Office é govern�
 
 As seções a seguir descrevem brevemente como a arquitetura de tempo de execução dá suporte a suplementos em execução em clientes do Office em dispositivos Windows, em dispositivos Mac OS X e em clientes do Office Online na Web.
 
-> **Observação:** Para saber mais sobre como usar WIP e Intune com os Suplementos do Office, confira [Usar WIP e Intune para proteger dados corporativos em documentos executando os Suplementos do Office](https://docs.microsoft.com/en-us/microsoft-365-enterprise/office-add-ins-wip).
+> **Observação:** Para saber mais sobre como usar WIP e Intune com os Suplementos do Office, confira [Usar WIP e Intune para proteger dados corporativos em documentos executando os Suplementos do Office](https://docs.microsoft.com/pt-br/microsoft-365-enterprise/office-add-ins-wip).
 
 ### <a name="clients-for-windows-and-os-x-devices"></a>Clientes para dispositivos Windows e OS X
 
@@ -88,7 +88,7 @@ A plataforma de suplementos lida com as preocupações com privacidade dos usuá
 
 - Ao compartilhar um documento, os usuários também compartilham suplementos que foram inseridos no documento ou associados a ele. Se um usuário abrir um documento que contenha um suplemento que o usuário não usou antes, o aplicativo host solicitará que o usuário conceda permissão para que o suplemento seja executado no documento. Em um ambiente empresarial, o aplicativo host do Office também consultará o usuário se o documento for proveniente de uma fonte externa.
 
-- Os usuários podem habilitar ou desabilitar o acesso à Office Store. Para os suplementos do conteúdo e do painel de tarefas, os usuários gerenciam o acesso aos suplementos e catálogos confiáveis na **Central de Confiabilidade** no cliente host do Office (aberto com **Arquivo** > **Opções** > **Central de Confiabilidade** > **Configurações da Central de Confiabilidade** > **Catálogos de Suplementos Confiáveis**). Para os suplementos do Outlook, os usuários podem gerenciar os suplementos escolhendo o botão **Gerenciar Suplementos**: no Outlook para Windows, escolha **Arquivo** > **Gerenciar Suplementos**. No Outlook para Mac, escolha o botão **Gerenciar Suplementos** na barra de suplementos. No Outlook Web App, escolha o menu **Configurações** (ícone de engrenagem) > **Gerenciar suplementos**. Os administradores também podem gerenciar esse acesso [usando a política de grupo](http://technet.microsoft.com/en-us/library/jj219429.aspx#BKMK_Managing).
+- Os usuários podem habilitar ou desabilitar o acesso à Office Store. Para os suplementos do conteúdo e do painel de tarefas, os usuários gerenciam o acesso aos suplementos e catálogos confiáveis na **Central de Confiabilidade** no cliente host do Office (aberto com **Arquivo** > **Opções** > **Central de Confiabilidade** > **Configurações da Central de Confiabilidade** > **Catálogos de Suplementos Confiáveis**). Para os suplementos do Outlook, os usuários podem gerenciar os suplementos escolhendo o botão **Gerenciar Suplementos**: no Outlook para Windows, escolha **Arquivo** > **Gerenciar Suplementos**. No Outlook para Mac, escolha o botão **Gerenciar Suplementos** na barra de suplementos. No Outlook Web App, escolha o menu **Configurações** (ícone de engrenagem) > **Gerenciar suplementos**. Os administradores também podem gerenciar esse acesso [usando a política de grupo](http://technet.microsoft.com/pt-br/library/jj219429.aspx#BKMK_Managing).
 
 - O design da plataforma do suplemento fornece segurança e desempenho aos usuários finais das seguintes maneiras:
 
@@ -101,7 +101,7 @@ Os suplementos do Outlook fornecem recursos adicionais de segurança e desempenh
 
 ### <a name="developer-guidelines-to-handle-pii"></a>Diretrizes de desenvolvedor para lidar com PII
 
-Você pode ler as diretrizes gerais de proteção de PII para administradores de TI e desenvolvedores em [Proteger a privacidade no desenvolvimento e teste de aplicativos de recursos humanos](http://technet.microsoft.com/en-us/library/gg447064.aspx). A seguir são listadas algumas diretrizes de proteção específicas de PII para você, como desenvolvedor de Suplementos do Office:
+Você pode ler as diretrizes gerais de proteção de PII para administradores de TI e desenvolvedores em [Proteger a privacidade no desenvolvimento e teste de aplicativos de recursos humanos](http://technet.microsoft.com/pt-br/library/gg447064.aspx). A seguir são listadas algumas diretrizes de proteção específicas de PII para você, como desenvolvedor de Suplementos do Office:
 
 
 - O objeto [Settings](http://dev.office.com/reference/add-ins/shared/settings) destina-se a persistir configurações e dados de estado de suplementos entre sessões para um suplemento de conteúdo ou de painel de tarefas, mas não armazena senhas e outros itens de PII confidenciais no objeto **Settings**. Os dados no objeto **Settings** não ficam visíveis para os usuários finais, mas são armazenados como parte do formato de arquivo do documento, que está prontamente acessível. Você deve limitar o uso de PII pelo suplemento e armazenar quaisquer itens de PII necessários ao suplemento no servidor que hospeda o suplemento como um recurso protegido pelo usuário.
@@ -183,7 +183,7 @@ O Exchange e o SharePoint fornecem proxies do lado do cliente para habilitar o a
 Um usuário mal-intencionado pode atacar a origem de um suplemento inserindo um script mal-intencionado por meio do documento ou de campos no suplemento. Um desenvolvedor deve processar a entrada do usuário para evitar a execução de JavaScript de um usuário mal-intencionado em seu domínio. Estas são algumas práticas recomendadas a seguir para manipular a entrada do usuário em um documento ou uma mensagem de e-mail ou por meio de campos em um suplemento:
 
 
-- Em vez da propriedade DOM [innerHTML](http://msdn.microsoft.com/en-us/library/ie/ms533897.aspx), use as propriedades [innerText](https://msdn.microsoft.com/library/ms533899.aspx) e [textContent](https://developer.mozilla.org/en-US/docs/DOM/Node.textContent) quando apropriado. Faça o seguinte para o suporte entre navegadores do Internet Explorer e do Firefox:
+- Em vez da propriedade DOM [innerHTML](http://msdn.microsoft.com/pt-br/library/ie/ms533897.aspx), use as propriedades [innerText](https://msdn.microsoft.com/library/ms533899.aspx) e [textContent](https://developer.mozilla.org/en-US/docs/DOM/Node.textContent) quando apropriado. Faça o seguinte para o suporte entre navegadores do Internet Explorer e do Firefox:
 
 ```js
      var text = x.innerText || x.textContent
@@ -191,15 +191,15 @@ Um usuário mal-intencionado pode atacar a origem de um suplemento inserindo um 
 
    Para saber mais sobre as diferenças entre **innerText** e **textContent**, confira [Node.textContent](https://developer.mozilla.org/en-US/docs/DOM/Node.textContent). Para saber mais sobre a compatibilidade de DOM entre navegadores comuns, consulte [Compatibilidade de DOM W3C ‒ HTML](http://www.quirksmode.org/dom/w3c_html.html#t07).
 
-- Se precisar usar **innerHTML**, verifique se a entrada do usuário não tem conteúdo mal-intencionado antes de passá-la para **innerHTML**. Para saber mais e obter um exemplo de como usar **innerHTML** com segurança, confira a propriedade [innerHTML](http://msdn.microsoft.com/en-us/library/ie/ms533897.aspx).
+- Se precisar usar **innerHTML**, verifique se a entrada do usuário não tem conteúdo mal-intencionado antes de passá-la para **innerHTML**. Para saber mais e obter um exemplo de como usar **innerHTML** com segurança, confira a propriedade [innerHTML](http://msdn.microsoft.com/pt-br/library/ie/ms533897.aspx).
 
 - Se estiver usando jQuery, use o método [.text()](http://api.jquery.com/text/) em vez do método [.html()](http://api.jquery.com/html/).
 
-- Use o método [toStaticHTML](http://msdn.microsoft.com/en-us/library/ie/cc848922.aspx) para remover atributos e elementos HTML dinâmicos da entrada dos usuários antes de passá-la para **innerHTML**.
+- Use o método [toStaticHTML](http://msdn.microsoft.com/pt-br/library/ie/cc848922.aspx) para remover atributos e elementos HTML dinâmicos da entrada dos usuários antes de passá-la para **innerHTML**.
 
-- Use a função [encodeURIComponent](http://msdn.microsoft.com/en-us/library/8202bce6-1342-40dc-a5ef-ac6d210a7d15.aspx) ou [encodeURI](http://msdn.microsoft.com/en-us/library/17bab5a2-bcd4-46c2-8b52-b2b5a0ed98a3.aspx) para codificar texto que se destina a ser uma URL que vem da entrada do usuário ou a contém.
+- Use a função [encodeURIComponent](http://msdn.microsoft.com/pt-br/library/8202bce6-1342-40dc-a5ef-ac6d210a7d15.aspx) ou [encodeURI](http://msdn.microsoft.com/pt-br/library/17bab5a2-bcd4-46c2-8b52-b2b5a0ed98a3.aspx) para codificar texto que se destina a ser uma URL que vem da entrada do usuário ou a contém.
 
-- Consulte [Desenvolver suplementos seguros](http://msdn.microsoft.com/en-us/library/windows/apps/hh849625.aspx) para obter mais práticas recomendadas para criar soluções Web mais seguras.
+- Consulte [Desenvolver suplementos seguros](http://msdn.microsoft.com/pt-br/library/windows/apps/hh849625.aspx) para obter mais práticas recomendadas para criar soluções Web mais seguras.
 
 
 ### <a name="tips-to-prevent-clickjacking"></a>Dicas para impedir "clickjacking"

@@ -11,5 +11,5 @@ Para alinhar seu texto aos princípios do tom do Office:
 - **Seja prestativo e empático.** Torne seu texto positivo, gentil, solidário e estimulante. Enfatize o que os usuários podem conseguir, não o que eles não podem.
 - **Conheça seus clientes.** Leve em consideração as questões culturais e a globalização ao usar expressões idiomáticas e coloquialismos.
 
-Se você planeja tornar seu suplemento [disponível na Office Store](https://msdn.microsoft.com/EN-US/library/dn708487.aspx), certifique-se de que a linguagem e o conteúdo estejam compatíveis com as [Políticas de validação](https://msdn.microsoft.com/EN-US/library/office/jj220035.aspx).
+Se você planeja tornar seu suplemento [disponível na Office Store](https://msdn.microsoft.com/pt-br/library/dn708487.aspx), certifique-se de que a linguagem e o conteúdo estejam compatíveis com as [Políticas de validação](https://msdn.microsoft.com/pt-br/library/office/jj220035.aspx).
 

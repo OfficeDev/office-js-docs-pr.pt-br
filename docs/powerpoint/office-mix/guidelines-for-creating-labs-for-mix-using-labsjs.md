@@ -91,7 +91,7 @@ Depois de inicializar, você pode chamar outros métodos para a API labs.js. O p
 
 ### <a name="time-format"></a>Formato de hora
 
-A Labs.js armazena números como milissegundos decorridos desde 1º de janeiro de 1970 UTC. Isso coincide com o formato de data no [objeto Date](http://msdn.microsoft.com/en-us/library/ie/cd9w2te4%28v=vs.94%29.aspx) JavaScript.
+A Labs.js armazena números como milissegundos decorridos desde 1º de janeiro de 1970 UTC. Isso coincide com o formato de data no [objeto Date](http://msdn.microsoft.com/pt-br/library/ie/cd9w2te4%28v=vs.94%29.aspx) JavaScript.
 
 
 ### <a name="timeline"></a>Linha do tempo

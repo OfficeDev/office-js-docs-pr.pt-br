@@ -1,6 +1,6 @@
 # <a name="coauthoring-in-excel-add-ins"></a>Coautoria em suplementos do Excel  
 
-Com a [coautoria](https://support.office.com/en-US/article/Collaborate-on-Excel-workbooks-at-the-same-time-with-co-authoring-7152aa8b-b791-414c-a3bb-3024e46fb104), várias pessoas podem trabalhar juntas e editar simultaneamente a mesma pasta de trabalho do Excel. Todos os coautores de uma pasta de trabalho podem ver as alterações de outros coautores assim que o coautor salva a pasta de trabalho. Para ser coautor de uma pasta de trabalho do Excel, esta deve ser armazenada no OneDrive, OneDrive for Business ou SharePoint Online.
+Com a [coautoria](https://support.office.com/pt-br/article/Collaborate-on-Excel-workbooks-at-the-same-time-with-co-authoring-7152aa8b-b791-414c-a3bb-3024e46fb104), várias pessoas podem trabalhar juntas e editar simultaneamente a mesma pasta de trabalho do Excel. Todos os coautores de uma pasta de trabalho podem ver as alterações de outros coautores assim que o coautor salva a pasta de trabalho. Para ser coautor de uma pasta de trabalho do Excel, esta deve ser armazenada no OneDrive, OneDrive for Business ou SharePoint Online.
 
 > **Importante:** no Excel 2016 para Office 365, você verá o Salvamento Automático no canto superior esquerdo. Quando o Salvamento Automático estiver ativado, os coautores verão as respectivas alterações em tempo real. Considere o impacto desse comportamento no design do seu suplemento do Excel. Os usuários podem desativar o Salvamento Automático pelo botão no canto superior esquerdo da janela do Excel.
 
@@ -44,5 +44,5 @@ Por exemplo, em cenários de validação de dados, é comum exibir a interface d
 
 ## <a name="see-also"></a>Veja também 
 
-- [Sobre a coautoria no Excel (VBA)](https://msdn.microsoft.com/en-us/vba/excel-vba/articles/about-coauthoring-in-excel) 
-- [Como o Salvamento Automático afeta suplementos e macros (VBA)](https://msdn.microsoft.com/en-us/vba/office-shared-vba/articles/how-autosave-impacts-addins-and-macros) 
+- [Sobre a coautoria no Excel (VBA)](https://msdn.microsoft.com/pt-br/vba/excel-vba/articles/about-coauthoring-in-excel) 
+- [Como o Salvamento Automático afeta suplementos e macros (VBA)](https://msdn.microsoft.com/pt-br/vba/office-shared-vba/articles/how-autosave-impacts-addins-and-macros) 

@@ -90,7 +90,7 @@ O Office 2013 oferece uma ampla variedade de layouts de diagrama do SmartArt (e 
 
 ![Um gráfico no Word 2013.](../images/off15app_CreateWdAppUsingOOXML_fig11.png)
 
-Você pode inserir gráficos do Excel como gráficos dinâmicos em documentos do Word, o que também significa que você pode usá-los no seu suplemento do Word. Como você pode ver pelos exemplos anteriores, é possível usar a coerção do Office Open XML para inserir praticamente qualquer tipo de conteúdo que um usuário pode inserir em seu próprio documento. Há duas maneiras simples de obter a marcação do Office Open XML necessária. Adicionar conteúdo avançado a um documento do Word 2013 em branco e salvar o arquivo no formato de Documento XML do Word ou usar um suplemento de teste com o método [getSelectedDataAsync](http://msdn.microsoft.com/en-us/library/fp142294.aspx) para obter a marcação. As duas abordagens fornecem basicamente o mesmo resultado.
+Você pode inserir gráficos do Excel como gráficos dinâmicos em documentos do Word, o que também significa que você pode usá-los no seu suplemento do Word. Como você pode ver pelos exemplos anteriores, é possível usar a coerção do Office Open XML para inserir praticamente qualquer tipo de conteúdo que um usuário pode inserir em seu próprio documento. Há duas maneiras simples de obter a marcação do Office Open XML necessária. Adicionar conteúdo avançado a um documento do Word 2013 em branco e salvar o arquivo no formato de Documento XML do Word ou usar um suplemento de teste com o método [getSelectedDataAsync](http://msdn.microsoft.com/pt-br/library/fp142294.aspx) para obter a marcação. As duas abordagens fornecem basicamente o mesmo resultado.
 
     
  >**Observação**  Um documento do Office Open XML é realmente um pacote compactado de arquivos que representa o conteúdo do documento. Salvar o arquivo no formato de Documento XML do Word lhe fornece todo o pacote do Office Open XML compactado em um arquivo XML, que também é o que você obtém ao usar **getSelectedDataAsync** para recuperar a marcação XML do Office Open XML.
@@ -100,7 +100,7 @@ Se você salvar o arquivo em um formato XML do Word, observe que há duas opçõ
 ## <a name="exploring-the-office-open-xml-document-package"></a>Explorar o pacote de documento do Office Open XML
 
 
-Ao usar [getSelectedDataAsync](http://msdn.microsoft.com/en-us/library/fp142294.aspx) para recuperar o Office Open XML para uma seleção de conteúdo (ou ao salvar o documento no formato de Documento XML do Word), o que você obtém não é apenas a marcação que descreve o conteúdo selecionado, é um documento inteiro com várias opções e configurações das quais você certamente não necessita. De fato, se você usar esse método com um documento que contenha um suplemento de painel de tarefas, a marcação obtida incluirá até mesmo o painel de tarefas.
+Ao usar [getSelectedDataAsync](http://msdn.microsoft.com/pt-br/library/fp142294.aspx) para recuperar o Office Open XML para uma seleção de conteúdo (ou ao salvar o documento no formato de Documento XML do Word), o que você obtém não é apenas a marcação que descreve o conteúdo selecionado, é um documento inteiro com várias opções e configurações das quais você certamente não necessita. De fato, se você usar esse método com um documento que contenha um suplemento de painel de tarefas, a marcação obtida incluirá até mesmo o painel de tarefas.
 
 Até mesmo um pacote de documento simples do Word inclui partes para propriedades de documentos, estilos, tema (configurações de formatação), configurações da Web, fontes e muito mais, além de partes para o conteúdo real.
 
@@ -201,7 +201,7 @@ Editamos o exemplo do Office Open XML mostrado aqui, conforme descrito na seçã
 
 Após salvar o Office Open XML anterior como um arquivo XML que pode ser acessado por meio de sua solução, você poderá usar a função a seguir para definir o conteúdo de texto formatado no documento usando a coerção do Office Open XML. 
 
-Nessa função, observe que, exceto pela última linha, tudo é usado para acessar a marcação salva para uso na chamada de método [setSelectedDataAsync](http://msdn.microsoft.com/en-us/library/fp142145.aspx) no fim da função. **setSelectedDataASync** requer apenas que você especifique o conteúdo a ser inserido e o tipo de coerção.
+Nessa função, observe que, exceto pela última linha, tudo é usado para acessar a marcação salva para uso na chamada de método [setSelectedDataAsync](http://msdn.microsoft.com/pt-br/library/fp142145.aspx) no fim da função. **setSelectedDataASync** requer apenas que você especifique o conteúdo a ser inserido e o tipo de coerção.
 
 
  >**Observação**  Substitua _yourXMLfilename_ pelo nome e pelo caminho do arquivo XML que você salvou na solução. Se não tiver certeza de onde incluir arquivos XML na solução ou como referenciá-los no código, confira o exemplo de código [Word-Add-in-Load-and-write-Open-XML](https://github.com/OfficeDev/Word-Add-in-Load-and-write-Open-XML) para obter exemplos disso e um exemplo operacional da marcação e do JavaScript mostrado aqui.
@@ -528,7 +528,7 @@ function addAndBindControl() {
 O código mostrado aqui realiza as seguintes etapas:
 
 
-- Tenta associar ao controle de conteúdo nomeado, usando [addFromNamedItemAsync](http://msdn.microsoft.com/en-us/library/fp123590.aspx). 
+- Tenta associar ao controle de conteúdo nomeado, usando [addFromNamedItemAsync](http://msdn.microsoft.com/pt-br/library/fp123590.aspx). 
     
     Execute esta etapa primeiro se houver uma possibilidade para seu suplemento em que o controle nomeado pode já existir no documento quando o código for executado. Por exemplo, faça isto se o suplemento foi inserido em e salvo com um modelo projetado para funcionar com o suplemento, em que o controle foi colocado anteriormente. Você também precisa fazer isto caso necessite associar a um controle que foi colocado anteriormente pelo suplemento.
     
@@ -819,7 +819,7 @@ Ao usar modelos com o aplicativo, se o suplemento será residente no modelo no m
 
 
 
-- [API JavaScript para Office](http://msdn.microsoft.com/en-us/library/fp142185.aspx)
+- [API JavaScript para Office](http://msdn.microsoft.com/pt-br/library/fp142185.aspx)
     
 - [Padrão ECMA-376: Formatos do Office Open XML](http://www.ecma-international.org/publications/standards/Ecma-376.md) (acesse a referência de linguagem completa e a documentação relacionada do Open XML aqui)
     

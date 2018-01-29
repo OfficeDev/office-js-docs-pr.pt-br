@@ -2,8 +2,8 @@
 
 O OneNote introduz uma API JavaScript para os suplementos do OneNote Online. Você pode criar suplementos de painel de tarefas e de conteúdo e comandos de suplemento que interagem com objetos do OneNote e conectam-se a serviços Web ou a outros recursos baseados na Web.
 
->
-  **Observação:** Caso pretenda [publicar](../publish/publish.md) o suplemento na Office Store depois de criá-lo, verifique se você está em conformidade com as [Políticas de validação da Office Store](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Por exemplo, para passar na validação, seu suplemento deve funcionar em todas as plataformas com suporte aos métodos que você definir (para mais informações, confira a [seção 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) e a [Página de hospedagem e disponibilidade do suplemento do Office](https://dev.office.com/add-in-availability)).
+> [!NOTE]
+>  Caso pretenda [publicar](../publish/publish.md) o suplemento na Office Store depois de criá-lo, verifique se você está em conformidade com as [Políticas de validação da Office Store](https://msdn.microsoft.com/pt-br/library/jj220035.aspx). Por exemplo, para passar na validação, seu suplemento deve funcionar em todas as plataformas com suporte aos métodos que você definir (para mais informações, confira a [seção 4.12](https://msdn.microsoft.com/pt-br/library/jj220035.aspx#Anchor_3) e a [Página de hospedagem e disponibilidade do suplemento do Office](https://dev.office.com/add-in-availability)).
 
 ## <a name="components-of-an-office-add-in"></a>Componentes de um suplemento do Office
 
@@ -98,10 +98,10 @@ Os suplementos do OneNote são compatíveis apenas com as seguintes APIs comuns:
 
 | API | Observações |
 |:------|:------|
-| [Office.context.document.getSelectedDataAsync](https://msdn.microsoft.com/en-us/library/office/fp142294.aspx) | Apenas **Office.CoercionType.Text** e **Office.CoercionType.Matrix** |
-| [Office.context.document.setSelectedDataAsync](https://msdn.microsoft.com/en-us/library/office/fp142145.aspx) | Apenas **Office.CoercionType.Text**, **Office.CoercionType.Image** e **Office.CoercionType.Html** | 
-| [var mySetting = Office.context.document.settings.get(nome);](https://msdn.microsoft.com/en-us/library/office/fp142180.aspx) | As configurações são compatíveis apenas com os suplementos de conteúdo | 
-| [Office.context.document.settings.set(nome, valor);](https://msdn.microsoft.com/en-us/library/office/fp161063.aspx) | As configurações são compatíveis apenas com os suplementos de conteúdo | 
+| [Office.context.document.getSelectedDataAsync](https://msdn.microsoft.com/pt-br/library/office/fp142294.aspx) | Apenas **Office.CoercionType.Text** e **Office.CoercionType.Matrix** |
+| [Office.context.document.setSelectedDataAsync](https://msdn.microsoft.com/pt-br/library/office/fp142145.aspx) | Apenas **Office.CoercionType.Text**, **Office.CoercionType.Image** e **Office.CoercionType.Html** | 
+| [var mySetting = Office.context.document.settings.get(nome);](https://msdn.microsoft.com/pt-br/library/office/fp142180.aspx) | As configurações são compatíveis apenas com os suplementos de conteúdo | 
+| [Office.context.document.settings.set(nome, valor);](https://msdn.microsoft.com/pt-br/library/office/fp161063.aspx) | As configurações são compatíveis apenas com os suplementos de conteúdo | 
 | [Office.EventType.DocumentSelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) ||
 
 Em geral, você só pode usar a API comum para fazer algo que não seja compatível com a API avançada. Para saber mais sobre como usar a API comum, confira a [documentação](https://dev.office.com/docs/add-ins/overview/office-add-ins) e a [referência](https://dev.office.com/reference/add-ins/javascript-api-for-office) dos suplementos do Office.
