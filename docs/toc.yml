@@ -1,18 +1,18 @@
-- name: Office Add-ins Documentation
+- name: Documentação de Suplementos do Office
   href: index.yml
   displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
 - name: Visão geral
   items:
-  - name: About Office Add-ins
+  - name: Sobre os Suplementos do Office
     href: overview/office-add-ins.md
     displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
   - name: Disponibilidade da plataforma e do host
     href: overview/office-add-in-availability.md
     displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
 
-- name: Quickstarts
+- name: Guias de início rápido
   items:
-  - name: Create Excel add-in
+  - name: Criar um suplemento do Excel
     items:
     - name: Use o React
       href: quickstarts/excel-quickstart-react.md
@@ -23,28 +23,28 @@
     - name: Use o JQuery
       href: quickstarts/excel-quickstart-jquery.md
       displayName: Excel
-  - name: Create Word add-in
+  - name: Criar um suplemento do Word
     href: quickstarts/word-quickstart.md
     displayName: Word
-  - name: Create OneNote add-in
+  - name: Criar um suplemento do OneNote
     href: quickstarts/onenote-quickstart.md
     displayName: OneNote
-  - name: Create Outlook add-in
-    href: https://docs.microsoft.com/en-us/outlook/add-ins/quick-start
+  - name: Criar um suplemento do Outlook
+    href: https://docs.microsoft.com/pt-br/outlook/add-ins/quick-start
     displayName: Outlook
-  - name: Create PowerPoint add-in
+  - name: Criar um suplemento do PowerPoint
     href: quickstarts/powerpoint-quickstart.md
     displayName: PowerPoint
-  - name: Create Project add-in
+  - name: Criar um suplemento do Project
     href: quickstarts/project-quickstart.md
     displayName: Project
 
-- name: Tutorials
+- name: Tutoriais
   items:
-  - name: Excel add-in tutorial
+  - name: Tutorial de suplemento do Excel
     href: tutorials/excel-tutorial.yml
     
-- name: Concepts
+- name: Conceitos
   items:
   - name: Requisitos para executar suplementos
     href: concepts/requirements-for-running-office-add-ins.md
@@ -57,10 +57,10 @@
   - name: Desempenho
     href: concepts/resource-limits-and-performance-optimization.md
 
-- name: How-to guides
+- name: Guias de Instruções
   items:
 
-  - name: Design the User Interface
+  - name: Projetar a interface do usuário
     href: design/add-in-design.md
     items:
     - name: Diretrizes
@@ -109,15 +109,15 @@
         href: design/choicegroup.md
       - name: Lista suspensa
         href: design/dropdown.md
-      - name: Rotular
+      - name: Rótulo
         href: design/label.md
       - name: Listar
         href: design/list.md
-      - name: Dinamizar
+      - name: Navegação dinâmica
         href: design/pivot.md
       - name: Campo de texto
         href: design/textfield.md
-      - name: Alternar
+      - name: Alternância
         href: design/toggle.md
 
   - name: Desenvolver
@@ -141,7 +141,7 @@
     - name: Manifesto
       href: develop/add-in-manifests.md
       items:
-      - name: Create add-in commands
+      - name: Criar comandos de suplemento
         href: develop/create-addin-commands.md
       - name: Especifique hosts do Office
         href: develop/specify-office-hosts-and-api-requirements.md
@@ -159,7 +159,7 @@
           href: develop/create-sso-office-add-ins-aspnet.md
         - name: Criar um suplemento com SSO usando Node.js
           href: develop/create-sso-office-add-ins-nodejs.md
-        - name: Troubleshoot error messages for single sign-on (SSO)
+        - name: Solucionar problemas de mensagens de erro no logon único (SSO)
           href: develop/troubleshoot-sso-in-office-add-ins.md
       - name: Autorizar serviços externos
         href: develop/auth-external-add-ins.md
@@ -171,9 +171,9 @@
     - name: Localização
       href: develop/localization.md
 
-    - name: Develop add-ins with Visual Studio
+    - name: Desenvolver suplementos com o Visual Studio
       items:
-      - name: Create and debug Office Add-ins in Visual Studio
+      - name: Criar e depurar suplementos do Office no Visual Studio
         href: develop/create-and-debug-office-add-ins-in-visual-studio.md
         items:
       - name: Obter o JavaScript IntelliSense no Visual Studio
@@ -183,14 +183,14 @@
 
     - name: Desenvolver suplementos para o iPad
       href: develop/develop-office-add-ins-for-the-ipad.md
-    - name: Develop add-ins with Angular
+    - name: Desenvolver suplementos com o Angular
       href: develop/add-ins-with-angular2.md
 
-  - name: Excel add-ins
+  - name: Suplementos do Excel
     href: excel/excel-add-ins-overview.md
     displayName: Excel
     items:
-    - name: Build your first Excel add-in
+    - name: Crie o seu primeiro suplemento do Excel
       href: excel/excel-add-ins-get-started-overview.md
       displayName: Excel
       items:
@@ -207,19 +207,19 @@
       href: excel/excel-add-ins-core-concepts.md
       displayName: Excel
       items:
-      - name: Custom functions
+      - name: Funções personalizadas
         href: excel/custom-functions-overview.md
         displayName: Excel
-      - name: Charts
+      - name: Gráficos
         href: excel/excel-add-ins-charts.md
         displayName: Excel
-      - name: Events
+      - name: Eventos
         href: excel/excel-add-ins-events.md
         displayName: Excel
-      - name: Ranges
+      - name: Intervalos
         href: excel/excel-add-ins-ranges.md
         displayName: Excel
-      - name: Tables
+      - name: Tabelas
         href: excel/excel-add-ins-tables.md
         displayName: Excel
       - name: Worksheets
@@ -229,7 +229,7 @@
       href: excel/excel-add-ins-advanced-concepts.md
       displayName: Excel
       items:
-      - name: Calling built-in functions
+      - name: Chamando funções internas
         href: excel/excel-add-ins-worksheet-functions.md
         displayName: Excel
       - name: Coautoria em suplementos do Excel
@@ -242,7 +242,7 @@
       href: https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview
       displayName: Excel
 
-  - name: Word add-ins
+  - name: Suplementos do Word
     href: word/word-add-ins-programming-overview.md
     displayName: Word
     items:
@@ -255,38 +255,38 @@
     - name: Suplementos de painel de tarefas de dicionário
       href: word/dictionary-task-pane-add-ins.md
       displayName: Word
-    - name: Get the whole document from an add-in
+    - name: Obter todo o documento por meio de um suplemento
       href: word/get-the-whole-document-from-an-add-in-for-word.md
       displayName: Word
-    - name: Read and write data to the active selection
+    - name: Ler e gravar dados na seleção ativa
       href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
       displayName: Word
-    - name: Bind to regions in a document
+    - name: Associar a regiões em um documento
       href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
       displayName: Word
-    - name: Word JavaScript API reference
+    - name: Referências da API JavaScript do Word
       href: https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview
       displayName: Word
 
-  - name: Outlook add-ins
-    href: https://docs.microsoft.com/en-us/outlook/add-ins/
+  - name: Suplementos do Outlook
+    href: https://docs.microsoft.com/pt-br/outlook/add-ins/
     displayName: Outlook
 
-  - name: PowerPoint add-ins
+  - name: Suplementos do PowerPoint
     href: powerpoint/powerpoint-add-ins.md
     displayName: PowerPoint
     items:
-    - name: Build your first PowerPoint add-in
+    - name: Criar o primeiro suplemento do PowerPoint
       href: powerpoint/powerpoint-add-ins-get-started.md
       displayName: PowerPoint
     - name: Usar temas de documentos em seus suplementos do PowerPoint
       href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
       displayName: PowerPoint
-    - name: Get the whole document from an add-in
+    - name: Obter todo o documento por meio de um suplemento
       href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
       displayName: PowerPoint
 
-  - name: OneNote add-ins
+  - name: Suplementos do OneNote
     href: onenote/onenote-add-ins-programming-overview.md
     displayName: OneNote
     items:
@@ -296,7 +296,7 @@
     - name: Trabalhar com conteúdo da página do OneNote
       href: onenote/onenote-add-ins-page-content.md
       displayName: OneNote
-    - name: OneNote JavaScript API reference
+    - name: Referência da API JavaScript do OneNote
       href: https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference
       displayName: OneNote
 
@@ -304,7 +304,7 @@
     href: project/project-add-ins.md
     displayName: Project
     items:
-    - name: Build your first Project add-in
+    - name: Criar o primeiro suplemento do Project
       href: project/project-add-ins-get-started.md
       displayName: Project
     - name: Crie um suplemento do Project que usa REST com um serviço OData local
@@ -319,7 +319,7 @@
     items:
     - name: Windows
       items: 
-      - name: Sideload Office Add-ins on Windows
+      - name: Fazer sideload de Suplementos do Office no Windows
         href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
       - name: Anexar um depurador do painel de tarefas
         href: testing/attach-debugger-from-task-pane.md
@@ -327,19 +327,19 @@
         href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
     - name: Office Online
       items: 
-      - name: Sideload Office Add-ins in Office Online
+      - name: Fazer sideload de Suplementos do Office no Office Online
         href: testing/sideload-office-add-ins-for-testing.md
       - name: Depurar no Office Online
         href: testing/debug-add-ins-in-office-online.md
-    - name: iPad and Mac
+    - name: iPad e Mac
       items:
-      - name: Sideload Office Add-ins on iPad and Mac
+      - name: Fazer sideload de Suplementos do Office no iPad e no Mac
         href: testing/sideload-an-office-add-in-on-ipad-and-mac.md
       - name: Depurar no iPad e no Mac
         href: testing/debug-office-add-ins-on-ipad-and-mac.md
     - name: Solucionar problemas de erros de usuário
       href: testing/testing-and-troubleshooting.md
-    - name: Validate an add-in manifest and troubleshoot issues
+    - name: Validar e solucionar problemas com o manifesto do suplemento
       href: testing/troubleshoot-manifest.md
 
   - name: Publicar
@@ -353,35 +353,35 @@
       href: publish/centralized-deployment.md
     - name: Publicar suplementos em um catálogo do SharePoint
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
-    - name: Publish add-ins to AppSource
-      href: https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store
-    - name: AppSource validation policies
-      href: https://docs.microsoft.com/en-us/office/dev/store/validation-policies
+    - name: Publicar suplementos no AppSource
+      href: https://docs.microsoft.com/pt-br/office/dev/store/submit-to-the-office-store
+    - name: Políticas de validação do AppSource
+      href: https://docs.microsoft.com/pt-br/office/dev/store/validation-policies
 
-- name: Reference
+- name: Referências
   items:
-  - name: Office Add-in Manifest
+  - name: Manifesto de Suplemento do Office
     href: https://dev.office.com/reference/add-ins/manifest/allowsnapshot
     displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
   - name: API JavaScript para Office
     href: https://dev.office.com/reference/add-ins/javascript-api-for-office
     displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
-  - name: Excel JavaScript API
+  - name: API JavaScript do Excel
     href: https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview
     displayName: Excel
-  - name: Word JavaScript API
+  - name: API JavaScript do Word
     href: https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview
     displayName: Word
-  - name: OneNote JavaScript API
+  - name: API JavaScript do OneNote
     href: https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference
     displayName: OneNote
-  - name: Outlook JavaScript API
+  - name: API JavaScript do Outlook
     href: https://dev.office.com/reference/add-ins/outlook/tutorial-api-requirement-sets
     displayName: Outlook
-  - name: API open specifications
+  - name: Especificações abertas da API
     href: https://dev.office.com/reference/add-ins/openspec
     displayName: Excel, Word
 
-- name: Resources
+- name: Recursos
   href: resources/resources-links-help.md
   displayName: Excel, Word, Outlook, PowerPoint, OneNote, Project
