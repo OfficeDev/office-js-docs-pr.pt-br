@@ -1,0 +1,44 @@
+### YamlMime:Tutorial
+documentType: Tutorial
+title: Tutorial de suplemento do Excel
+metadata:
+  title: Tutorial de suplemento do Excel
+  description: Neste tutorial, você criará um suplemento do Excel que cria, preenche, filtra e classifica uma tabela, cria um gráfico, congela um cabeçalho de tabela, protege uma planilha e abre uma caixa de diálogo
+  audience: Desenvolvedor
+  level: Iniciante
+  displayType: one-column
+  ms.date: 01/18/2018
+items:
+- durationInMinutes: 1
+  content: |
+    Este tutorial ensina como criar um suplemento do Excel que interage com tabelas, gráficos, planilhas e caixas de diálogo em uma pasta de trabalho do Excel. Você começará criando um suplemento do Excel que cria, preenche e formata uma tabela. Em cada etapa subsequente, você adicionará mais funcionalidades ao suplemento. Se ocorrer algum problema durante o processo, <a href="https://github.com/OfficeDev/office-js-docs-pr/issues">fale conosco</a>.
+- title: Criar o projeto do suplemento
+  durationInMinutes: 5
+  content: |
+    [!INCLUDE [](../includes/excel-tutorial-setup.md)]
+- title: Criar uma tabela
+  durationInMinutes: 15
+  content: |
+    [!INCLUDE [](../includes/excel-tutorial-create-table.md)]
+- title: Filtrar e classificar uma tabela
+  durationInMinutes: 10
+  content: |
+    [!INCLUDE [](../includes/excel-tutorial-filter-and-sort-table.md)]
+- title: Criar um gráfico
+  durationInMinutes: 7
+  content: |
+    [!INCLUDE [](../includes/excel-tutorial-create-chart.md)]
+- title: Congelar um cabeçalho de tabela
+  durationInMinutes: 6
+  content: |
+    [!INCLUDE [](../includes/excel-tutorial-freeze-header.md)]
+- title: Proteger uma planilha
+  durationInMinutes: 20
+  content: |
+    [!INCLUDE [](../includes/excel-tutorial-protect-worksheet.md)]
+- title: Abrir uma caixa de diálogo
+  durationInMinutes: 7
+  content: |
+    [!INCLUDE [](../includes/excel-tutorial-open-dialog.md)]
+- content: |
+    Você concluiu o tutorial de suplemento do Excel. Para saber mais sobre como criar suplementos do Excel, confira <a href="../excel/excel-add-ins-overview.md">Visão geral de suplementos do Excel</a>.
