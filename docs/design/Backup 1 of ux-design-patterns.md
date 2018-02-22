@@ -31,7 +31,7 @@ Para usar as especificações para criar uma simulação da interface do usuári
     * [Padrões de design da experiência do usuário](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/README.md)
     * Práticas recomendadas para [projetar seus Suplementos do Office](add-in-design.md)
     * 
-  [Kits de ferramentas do Office UI Fabric](https://developer.microsoft.com/pt-br/fabric#/resources)
+  [Kits de ferramentas do Office UI Fabric](https://developer.microsoft.com/en-us/fabric#/resources)
 
 Para adicionar o código-fonte:
 
