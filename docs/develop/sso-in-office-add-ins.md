@@ -1,16 +1,23 @@
-# <a name="enable-single-sign-on-for-office-add-ins"></a>Habilitar o logon único para Suplementos do Office
+---
+title: Habilitar o logon único para Suplementos do Office
+description: ''
+ms.date: 12/04/2017
+---
+
+# <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Habilitar o logon único para Suplementos do Office (visualização)
 
 Os usuários entram no Office (online, em dispositivos móveis e plataformas desktop) usando tanto a conta pessoal deles da Microsoft, como a conta corporativa ou de estudante (Office 365). Você pode tirar proveito disso e usar o SSO para fazer o seguinte, sem exigir que o usuário entre uma segunda vez:
 
 * Autorizar o usuário a fazer logon em seu suplemento.
 * Autorizar o suplemento a acessar o [Microsoft Graph](https://developer.microsoft.com/graph/docs).
 
-![Imagem mostrando o processo de logon de um suplemento](../images/OfficeHostTitleBarLogin.png)
+![Imagem mostrando o processo de logon de um suplemento](../images/office-host-title-bar-sign-in.png)
 
->**Observação:** A API de logon único tem suporte para Word, Excel e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](http://dev.office.com/reference/add-ins/requirement-sets/identity-api-requirement-sets).
-> O logon único está no modo de visualização do Outlook. Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Office 365. Para obter informações sobre como fazer isso, consulte [Exchange Online: Como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> [!NOTE]
+> Atualmente a API de logon único tem suporte para Word, Excel e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](https://dev.office.com/reference/add-ins/requirement-sets/identity-api-requirement-sets).
+> Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Office 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
-Para os usuários, o logon único torna a experiência de execução do suplemento mais fácil. Para os desenvolvedores, isso significa que o suplemento poderá autenticar os usuários e obter acesso autorizado aos dados deles por meio do Microsoft Graph com as credenciais que o usuário já tenha fornecido para o aplicativo do Office.
+Para os usuários, o logon único facilita a experiência de execução do suplemento. Para os desenvolvedores, significa que o suplemento poderá autenticar os usuários e obter acesso autorizado aos dados deles por meio do Microsoft Graph com as credenciais que o usuário já tenha fornecido para o aplicativo do Office.
 
 ## <a name="sso-add-in-architecture"></a>Arquitetura do suplemento de SSO
 
@@ -22,9 +29,10 @@ O manifesto do suplemento contém a marcação que especifica como ele está reg
 
 O diagrama a seguir mostra como funciona o processo de SSO.
 <!-- Minor fixes to the text in the diagram - change V2 to v2.0, and change "(e.g. Word, Excel, etc.)" to "(for example, Word, Excel)". -->
-![Diagrama que mostra o processo de SSO](../images/SSOOverviewDiagram.png)
 
-1. No suplemento, o JavaScript chama uma nova API Office.js `getAccessTokenAsync`. Isso informa ao aplicativo host do Office para obter um token de acesso para o suplemento. (A partir daqui, chamaremos ele de **token do suplemento**).
+![Diagrama que mostra o processo de SSO](../images/sso-overview-diagram.png)
+
+1. No suplemento, o JavaScript chama uma nova API Office.js `getAccessTokenAsync`, que informa ao aplicativo host do Office para obter um token de acesso para o suplemento. (A partir daqui, ele será chamado de **token do suplemento**).
 1. Se o usuário não estiver conectado, o aplicativo host do Office abrirá uma janela pop-up para o usuário entrar.
 1.  Se essa é a primeira vez que o usuário atual usa seu suplemento, será solicitado que ele dê o consentimento.
 1. O aplicativo host do Office solicita o **token do suplemento** do ponto de extremidade v 2.0 do Azure AD para o usuário atual. 
@@ -43,8 +51,8 @@ O diagrama a seguir mostra como funciona o processo de SSO.
 
 Esta seção descreve as tarefas envolvidas na criação de um suplemento do Office que usa SSO. Essas tarefas descritas aqui apresentam uma linguagem e uma estrutura de forma agnóstica. Confira exemplos de explicações detalhadas em:
 
-* [Criar um Suplemento do Office com Node.js que usa logon único](../develop/create-sso-office-add-ins-nodejs.md)
-* [Criar um Suplemento do Office com ASP.NET que usa logon único](../develop/create-sso-office-add-ins-aspnet.md)
+* [Criar um Suplemento do Office com Node.js que usa logon único](create-sso-office-add-ins-nodejs.md)
+* [Criar um Suplemento do Office com ASP.NET que usa logon único](create-sso-office-add-ins-aspnet.md)
 
 ### <a name="create-the-service-application"></a>Criar o aplicativo de serviço
 
@@ -59,11 +67,11 @@ Registre o suplemento no portal de registro para o ponto de extremidade v 2.0 do
 
 Adicione novas marcações ao manifesto do suplemento:
 
-* **WebApplicationInfo** - o pai dos seguintes elementos.
-* **Id** - a ID de cliente do suplemento.
-* **Resource** - A URL do suplemento.
-* **Scopes** - O pai de uma ou mais elementos **Scope**.
-* **Scope** - Especifica uma permissão que seu suplemento precisa para o Microsoft Graph. Por exemplo, `User.Read`, `Mail.Read` ou `offline_access`). Para saber mais, veja [Permissões do Microsoft Graph](https://developer.microsoft.com/en-us/graph/docs/concepts/permissions_reference).
+* **WebApplicationInfo** – o pai dos seguintes elementos.
+* **Id** – a ID de cliente do suplemento.
+* **Resource** – A URL do suplemento.
+* **Scopes** – O pai de uma ou mais elementos **Scope**.
+* **Scope** – Especifica uma permissão que seu suplemento precisa para o Microsoft Graph. Por exemplo, `User.Read`, `Mail.Read` ou `offline_access`). Para saber mais, veja [Permissões do Microsoft Graph](https://developer.microsoft.com/en-us/graph/docs/concepts/permissions_reference).
 
 Para hosts do Office diferentes do Outlook, adicione a marcação no final da seção `<VersionOverrides ... xsi:type="VersionOverridesV1_0">`. Para o Outlook, adicione a marcação no final da seção `<VersionOverrides ... xsi:type="VersionOverridesV1_1">`.
 

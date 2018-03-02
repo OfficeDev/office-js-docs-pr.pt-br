@@ -1,14 +1,16 @@
+---
+title: Componente Label no Office UI Fabric
+description: ''
+ms.date: 12/04/2017
+---
+
 # <a name="label-component-in-office-ui-fabric"></a>Componente Label no Office UI Fabric
 
 Use rótulos para nomear ou dar título a um componente ou grupo de componentes. Quando combinados a outro componente ou grupo de componentes, os rótulos devem estar perto dos componentes ou grupos relacionados. Alguns componentes têm rótulos predefinidos, como uma lista suspensa ou um botão de alternância.
   
-#### <a name="example-label-in-a-task-pane"></a>Exemplo: Rótulo em um painel de tarefas
+#### <a name="example-label-in-a-task-pane"></a>Exemplo: rótulo em um painel de tarefas
 
-<br/>
-
-![Uma imagem mostrando o rótulo](../images/overview_withApp_label.png)
-
-<br/>
+![Uma imagem mostrando o rótulo](../images/overview-with-app-label.png)
 
 ## <a name="best-practices"></a>Práticas recomendadas
 
@@ -23,15 +25,14 @@ Use rótulos para nomear ou dar título a um componente ou grupo de componentes.
 |**Variação**|**Descrição**|**Exemplo**|
 |:------------|:--------------|:----------|
 |**Rótulo padrão**|Use para rótulos padrão.|![Imagem do rótulo padrão](../images/label.png)<br/>|
-|**Rótulo desabilitado**|Use quando o componente relacionado for desabilitado.|![Imagem do rótulo desabilitado](../images/labelDisabled.png)<br/>|
-|**Rótulo obrigatório**|Use quando o componente relacionado for necessário.|![Imagem do rótulo obrigatório](../images/labelRequired.png)<br/>|
+|**Rótulo desabilitado**|Use quando o componente relacionado for desabilitado.|![Imagem do rótulo desabilitado](../images/label-disabled.png)<br/>|
+|**Rótulo obrigatório**|Use quando o componente relacionado for necessário.|![Imagem do rótulo obrigatório](../images/label-required.png)<br/>|
 
 ## <a name="implementation"></a>Implementação
 
-Para obter detalhes, confira [Rótulo](https://dev.office.com/fabric#/components/label) e [Introdução com exemplo de código do Fabric React](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact).
+Confira mais detalhes em [Rótulo](https://dev.office.com/fabric#/components/label) e [Introdução com exemplo de código do Fabric React](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact).
 
-## <a name="additional-resources"></a>Recursos adicionais
+## <a name="see-also"></a>Veja também
 
 - [Padrões de design da experiência do usuário](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
-
 - [Office UI Fabric em Suplementos do Office](office-ui-fabric.md)

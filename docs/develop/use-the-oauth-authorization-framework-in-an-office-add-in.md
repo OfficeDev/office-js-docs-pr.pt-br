@@ -1,3 +1,9 @@
+---
+title: Usar a estrutura de autorização OAuth em um Suplemento do Office
+description: ''
+ms.date: 12/04/2017
+---
+
 
 # <a name="use-the-oauth-authorization-framework-in-an-office-add-in"></a>Usar a estrutura de autorização OAuth em um Suplemento do Office
 
@@ -7,11 +13,12 @@ Os provedores de serviços online podem fornecer APIs públicas expostas via RES
 
 Este tópico descreve como implementar um fluxo de autenticação no suplemento para executar a autenticação do usuário. Os segmentos de código incluídos neste tópico são obtidos do exemplo de código [Office-Add-in-NodeJS-ServerAuth](https://github.com/OfficeDev/Office-Add-in-NodeJS-ServerAuth).
 
- **Observação** Por motivos de segurança, os navegadores não têm permissão para exibir páginas de entrada em um IFrame. Dependendo da versão do Office que seus clientes usam, principalmente versões baseadas na Web, o suplemento é exibido em um IFrame. Isso impõe algumas considerações sobre como gerenciar o fluxo de autenticação. 
+> [!NOTE]
+> Por motivos de segurança, os navegadores não têm permissão para exibir páginas de entrada em um IFrame. Dependendo da versão do Office que seus clientes usam, principalmente versões baseadas na Web, o suplemento é exibido em um IFrame. Isso impõe algumas considerações sobre como gerenciar o fluxo de autenticação. 
 
 O diagrama a seguir mostra os componentes necessários e o fluxo de eventos que ocorrem durante a implementação da autenticação no suplemento.
 
-![Realizar uma autenticação OAuth em um Suplemento do Office](../images/OAuthInOfficeAddin.png)
+![Realizar uma autenticação OAuth em um Suplemento do Office](../images/oauth-in-office-add-in.png)
 
 O diagrama mostra como os seguintes componentes necessários são usados:
 
@@ -24,10 +31,11 @@ O diagrama mostra como os seguintes componentes necessários são usados:
     
 
     
- **Importante** Os tokens de acesso não podem ser retornados ao painel de tarefas, mas podem ser usados no servidor. Neste exemplo de código, os tokens de acesso são armazenados no banco de dados por dois minutos. Após dois minutos, os tokens são limpos do banco de dados e os usuários são solicitados a realizar a autenticação novamente. Antes de alterar esse período de tempo em sua própria implementação, considere os riscos de segurança associados ao armazenamento de tokens de acesso em um banco de dados por um período de tempo de mais de dois minutos.
+> [!IMPORTANT]
+> Os tokens de acesso não podem ser retornados ao painel de tarefas, mas podem ser usados no servidor. Neste exemplo de código, os tokens de acesso são armazenados no banco de dados por dois minutos. Após dois minutos, os tokens são limpos do banco de dados e os usuários são solicitados a realizar a autenticação novamente. Antes de alterar esse período de tempo em sua própria implementação, considere os riscos de segurança associados ao armazenamento de tokens de acesso em um banco de dados por um período de tempo de mais de dois minutos.
 
 
-## <a name="step-1---start-socket-and-open-a-pop-up-window"></a>Etapa 1 ‒ iniciar o soquete e abrir uma janela pop-up
+## <a name="step-1---start-socket-and-open-a-pop-up-window"></a>Etapa 1: iniciar o soquete e abrir uma janela pop-up
 
 Quando você executa este código de exemplo, um suplemento de painel de tarefas é exibido no Office. Quando o usuário escolhe um provedor OAuth no qual fazer logon, primeiro o suplemento cria um soquete. Este exemplo usa um soquete para fornecer uma boa experiência do usuário no suplemento. O suplemento usa o soquete para comunicar o sucesso ou a falha da autenticação ao usuário. Com o uso de um soquete, a página principal do suplemento é facilmente atualizada com o status de autenticação e não requer interação com o usuário nem sondagem. O segmento de código a seguir, obtido de routes/connect.js, mostra como iniciar o soquete. O soquete é nomeado usando **decodedNodeCookie**, que é a ID de sessão do suplemento Este exemplo de código cria o soquete usando [socket.io](http://socket.io/).
 
@@ -70,7 +78,7 @@ onclick="window.open('/connect/azure/#{sessionID}', 'AuthPopup', 'width=500,heig
 ```
 
 
-## <a name="steps-2-amp-3---start-the-authentication-flow-and-show-the-sign-in-page"></a>Etapas 2 &amp; 3 ‒ iniciar o fluxo de autenticação e mostrar a página de entrada
+## <a name="steps-2-amp-3---start-the-authentication-flow-and-show-the-sign-in-page"></a>Etapas 2 &amp; 3: iniciar o fluxo de autenticação e mostrar a página de entrada
 
 O suplemento deve iniciar o fluxo de autenticação. O segmento de código abaixo usa a biblioteca Passport OAuth. Ao iniciar o fluxo de autenticação, passe a URL de autorização do provedor OAuth e a ID de sessão do suplemento. A ID de sessão do suplemento deve ser passada no parâmetro de estado. Agora a janela pop-up exibe a página de entrada do provedor OAuth para que os usuários possam entrar.
 
@@ -84,7 +92,7 @@ router.get('/azure/:sessionID', function(req, res, next) {
 ```
 
 
-## <a name="steps-4-5-amp-6---user-signs-in-and-web-server-receives-tokens"></a>Etapas 4, 5 &amp; 6 ‒ o usuário entra e o servidor Web recebe tokens
+## <a name="steps-4-5-amp-6---user-signs-in-and-web-server-receives-tokens"></a>Etapas 4, 5 &amp; 6: o usuário entra e o servidor Web recebe tokens
 
  Após uma entrada bem-sucedida, um token de acesso, um token de atualização e um parâmetro de estado são retornados para o suplemento. O parâmetro de estado contém a ID de sessão, que é usada para enviar informações de status de autenticação ao soquete na etapa 7. O segmento de código a seguir, obtido de app.js, armazena o token de acesso no banco de dados.
 
@@ -101,7 +109,7 @@ router.get('/azure/:sessionID', function(req, res, next) {
 ```
 
 
-## <a name="step-7---show-authentication-information-in-the-add-ins-ui"></a>Etapa 7 ‒ mostrar informações de autenticação na interface do usuário do suplemento
+## <a name="step-7---show-authentication-information-in-the-add-ins-ui"></a>Etapa 7: mostrar informações de autenticação na interface do usuário do suplemento
 
 O segmento de código a seguir, obtido de connect.js, atualiza interface do usuário do suplemento com as informações de status de autenticação. A interface do usuário do suplemento é atualizada usando o soquete que foi criado na etapa 1.
 
@@ -114,9 +122,7 @@ O segmento de código a seguir, obtido de connect.js, atualiza interface do usu�
 ```
 
 
-## <a name="additional-resources"></a>Recursos adicionais
-<a name="bk_addresources"> </a>
-
+## <a name="see-also"></a>Veja também
 
 - [Exemplo de Autenticação do Servidor de Suplemento do Office para Node.js](https://github.com/OfficeDev/Office-Add-in-Nodejs-ServerAuth/blob/master/README.md)
     

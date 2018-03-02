@@ -1,8 +1,16 @@
+---
+title: Trabalhar com planilhas usando a API JavaScript do Excel
+description: ''
+ms.date: 12/04/2017
+---
+
+
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Trabalhar com planilhas usando a API JavaScript do Excel
 
-Este artigo fornece exemplos de código que mostram como executar tarefas comuns com planilhas usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos aos quais os objetos **Worksheet** e **WorksheetCollection** dão suporte, confira [Objeto Worksheet (API JavaScript para Excel)](http://dev.office.com/reference/add-ins/excel/worksheet) e [Objeto WorksheetCollection (API JavaScript para Excel)](http://dev.office.com/reference/add-ins/excel/worksheetcollection).
+Este artigo fornece exemplos de código que mostram como executar tarefas comuns com planilhas usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos aos quais os objetos **Worksheet** e **WorksheetCollection** dão suporte, confira [Objeto Worksheet (API JavaScript para Excel)](https://dev.office.com/reference/add-ins/excel/worksheet) e [Objeto WorksheetCollection (API JavaScript para Excel)](https://dev.office.com/reference/add-ins/excel/worksheetcollection).
 
-**Observação**: As informações deste artigo se aplicam apenas a planilhas regulares; elas não se aplicam às folhas "gráfico" ou "macro".
+> [!NOTE]
+> As informações deste artigo se aplicam apenas a planilhas regulares; elas não se aplicam às folhas "gráfico" ou "macro".
 
 ## <a name="get-worksheets"></a>Obter planilhas
 
@@ -27,7 +35,8 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Observação**: A propriedade **id** de uma planilha identifica exclusivamente a planilha em uma determinada pasta de trabalho e seu valor permanecerá igual, mesmo quando a planilha for renomeada ou movida. Quando uma planilha é excluída de uma pasta de trabalho no Excel para Mac, a **id** da planilha excluída pode ser reatribuída a uma nova planilha que é subsequentemente criada.
+> [!NOTE]
+> A propriedade **id** de uma planilha identifica exclusivamente a planilha em uma determinada pasta de trabalho e seu valor permanecerá igual, mesmo quando a planilha for renomeada ou movida. Quando uma planilha é excluída de uma pasta de trabalho no Excel para Mac, a **id** da planilha excluída pode ser reatribuída a uma nova planilha que é subsequentemente criada.
 
 ## <a name="get-the-active-worksheet"></a>Obter a planilha ativa
 
@@ -264,10 +273,10 @@ Excel.run(function (context) {
 
 ## <a name="get-a-range-within-a-worksheet"></a>Obter um intervalo em uma planilha
 
-Para obter exemplos que mostram como obter um intervalo em uma planilha, confira [Trabalhar com intervalos usando a API JavaScript do Excel](excel-add-ins-ranges.md).
+Confira exemplos que mostram como obter um intervalo em uma planilha em [Trabalhar com intervalos usando a API JavaScript do Excel](excel-add-ins-ranges.md).
 
-## <a name="additional-resources"></a>Recursos adicionais
+## <a name="see-also"></a>Veja também
 
 - [Principais conceitos da API JavaScript do Excel](excel-add-ins-core-concepts.md)
-- [Objeto Worksheet (API JavaScript para Excel)](http://dev.office.com/reference/add-ins/excel/worksheet)
-- [Objeto WorksheetCollection (API JavaScript para Excel)](http://dev.office.com/reference/add-ins/excel/worksheetcollection)
+- [Objeto Worksheet (API JavaScript para Excel)](https://dev.office.com/reference/add-ins/excel/worksheet)
+- [Objeto WorksheetCollection (API JavaScript para Excel)](https://dev.office.com/reference/add-ins/excel/worksheetcollection)

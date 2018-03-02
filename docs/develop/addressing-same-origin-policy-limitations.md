@@ -1,3 +1,9 @@
+---
+title: Como lidar com limitações de política de mesma origem nos Suplementos do Office
+description: ''
+ms.date: 12/04/2017
+---
+
 
 # <a name="addressing-same-origin-policy-limitations-in-office-add-ins"></a>Como lidar com limitações de política de mesma origem nos Suplementos do Office
 
@@ -47,7 +53,7 @@ Outra maneira para resolver as limitações de política de mesma origem é impl
 
 Para obter um exemplo que use OAuth para autenticação, confira [Web part do SharePoint no Twitter com OAuth](http://aidangarnish.net/post/Twitter-SharePoint-Web-Part-With-OAuth).
 
-Para obter um exemplo de código do lado do servidor que mostre como usar o objeto `Cookie` em `System.Net` para obter e definir valores de cookies, confira a propriedade [Value](http://msdn2.microsoft.com/pt-br/library/4f772twc).
+Para obter um exemplo de código do lado do servidor que mostre como usar o objeto `Cookie` em `System.Net` para obter e definir valores de cookies, confira a propriedade [Value](https://msdn.microsoft.com/pt-br/library/4f772twc).
 
 
 ## <a name="using-cross-origin-resource-sharing-cors"></a>Usar o CORS (compartilhamento de recursos entre origens)
@@ -59,11 +65,10 @@ Para obter um exemplo de como usar o compartilhamento de recursos entre origens 
 ## <a name="building-your-own-proxy-using-iframe-and-post-message"></a>Criar seu próprio proxy usando IFRAME e PUBLICAR MENSAGEM
 
 
-Para obter um exemplo de como criar seu próprio proxy usando IFRAME e PUBLICAR MENSAGEM, consulte [Mensagens entre janelas](http://ejohn.org/blog/cross-window-messaging/).
+Confira um exemplo de como criar seu próprio proxy usando IFRAME e PUBLICAR MENSAGEM em [Mensagens entre janelas](http://ejohn.org/blog/cross-window-messaging/).
 
 
-## <a name="additional-resources"></a>Recursos adicionais
+## <a name="see-also"></a>Veja também
 
-
-- [Privacidade e segurança para os Suplementos do Office](../develop/privacy-and-security.md)
+- [Privacidade e segurança para Suplementos do Office](../concepts/privacy-and-security.md)
     

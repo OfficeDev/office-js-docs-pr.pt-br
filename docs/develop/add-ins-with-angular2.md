@@ -1,17 +1,28 @@
-# <a name="tips-for-creating-office-add-ins-with-angular"></a>Dicas para a criação de Suplementos do Office com o Angular
+---
+title: Desenvolver suplementos do Office para o Angular
+description: ''
+ms.date: 12/04/2017
+---
+
+# <a name="develop-office-add-ins-with-angular"></a>Desenvolver suplementos do Office para o Angular
 
 Este artigo fornece orientações sobre como usar o Angular 2+ para criar um Suplemento do Office como um aplicativo de página única.
 
->**Observação:** Você tem alguma contribuição a fazer com base na sua experiência de uso do Angular para criar Suplementos do Office? Você pode contribuir com este artigo no [GitHub](https://github.com/OfficeDev/office-js-docs) ou enviando seus comentários por meio de uma [questão](https://github.com/OfficeDev/office-js-docs/issues) no repositório. 
+> [!NOTE]
+> Você tem alguma contribuição a fazer com base na sua experiência de uso do Angular para criar Suplementos do Office? É possível contribuir com este artigo no [GitHub](https://github.com/OfficeDev/office-js-docs) ou enviando seus comentários por meio de uma [questão](https://github.com/OfficeDev/office-js-docs-pr/issues) no repositório. 
 
-Para obter um exemplo de Suplementos do Office criado utilizando a estrutura do Angular, confira o [Suplemento de Verificação de Estilo do Word Criado no Angular](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker).
+Para ver um exemplo de Suplementos do Office criado utilizando a estrutura do Angular, confira o [Suplemento de Verificação de Estilo do Word Criado no Angular](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker).
 
 ## <a name="install-the-typescript-type-definitions"></a>Instalar as definições de tipo TypeScript
-Abra uma janela de nodejs e insira o seguinte na linha de comando: `npm install --save-dev @types/office-js`.
+Abra uma janela de nodejs e insira o seguinte na linha de comando: 
+
+```bash
+npm install --save-dev @types/office-js`
+```
 
 ## <a name="bootstrapping-must-be-inside-officeinitialize"></a>A inicialização deve ocorrer no Office.initialize
 
-Em qualquer página que chame as APIs do JavaScript do Office, do Word ou do Excel, seu código deve atribuir primeiro um método para a propriedade `Office.initialize`. (Se você não tiver nenhum código de inicialização, o corpo do método poderá ser apenas símbolos "`{}`" vazios, mas você não deve deixar a propriedade `Office.initialize` indefinida. Para mais detalhes, confira [Iniciar o suplemento](http://dev.office.com/docs/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in).) O Office chama esse método imediatamente depois que ele inicializa as bibliotecas JavaScript do Office.
+Em qualquer página que chame as APIs do JavaScript do Office, do Word ou do Excel, seu código deve atribuir primeiro um método para a propriedade `Office.initialize`. (Se você não tiver nenhum código de inicialização, o corpo do método poderá ser apenas símbolos "`{}`" vazios, mas você não deve deixar a propriedade `Office.initialize` indefinida. Para mais detalhes, confira [Iniciar o suplemento](understanding-the-javascript-api-for-office.md#initializing-your-add-in).) O Office chama esse método imediatamente depois que ele inicializa as bibliotecas JavaScript do Office.
 
 **O seu código de inicialização do Angular deve ser chamado dentro do método atribuído a `Office.initialize`** para garantir que as bibliotecas JavaScript do Office inicializem primeiro. O exemplo a seguir mostra como fazer isso. Este código deve estar no arquivo main.ts do projeto.
 
@@ -77,7 +88,7 @@ O método [displayDialogAsync](http://dev.office.com/reference/add-ins/shared/of
 
 Em um aplicativo do Angular, às vezes, a interface do usuário não é atualizada. Isso ocorre porque essa parte do código fica sem a zona do Angular. A solução é colocar o código na região, conforme mostrado no exemplo a seguir.
 
-```ts
+```js
 import { NgZone } from '@angular/core';
 
 export class MyComponent {

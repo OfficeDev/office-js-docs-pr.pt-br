@@ -1,3 +1,10 @@
+---
+title: Introdução aos suplementos do Excel
+description: ''
+ms.date: 01/23/2018
+---
+
+
 # <a name="get-started-with-excel-add-ins"></a>Introdução aos suplementos do Excel
 
 Você pode criar um suplemento do Excel usando tecnologias da Web conhecidas, como HTML, CSS e JavaScript. 
@@ -8,6 +15,6 @@ Para começar, conclua um dos passo a passos desta seção para criar um supleme
 
 ## <a name="explore-snippets-with-script-lab"></a>Explorar trechos com o Script Lab
 
-O Script Lab é uma ferramenta que permite criar, executar e compartilhar o código do Suplemento do Office diretamente de aplicativos do Office, como Excel, Word e PowerPoint. É possível [instalar o Script Lab gratuitamente da Office Store](https://store.office.com/app.aspx?assetid=WA104380862) e iniciá-lo no Excel para explorar as respectivas amostras internas da coleção que interagem com dados na pasta de trabalho. Em seguida, use-o para gravar e executar seu próprio código da API JavaScript do Excel que interage com sua planilha. Para saber mais, confira [Script Lab, um projeto Microsoft Garage](https://github.com/OfficeDev/script-lab/blob/master/README.md).
+O Script Lab é uma ferramenta que permite criar, executar e compartilhar o código do Suplemento do Office diretamente de aplicativos do Office, como Excel, Word e PowerPoint. É possível [instalar o Script Lab gratuitamente do AppSource](https://appsource.microsoft.com/en-us/product/office/WA104380862?src=office&corrid=ed93ce54-3f2c-48ab-9df7-d9913f7b190b&omexanonuid=4a0102fb-b31a-4b9f-9bb0-39d4cc6b789d) e iniciá-lo no Excel para explorar as respectivas amostras internas da coleção que interagem com dados na pasta de trabalho. Em seguida, use-o para gravar e executar seu próprio código da API JavaScript do Excel que interage com sua planilha. Para saber mais, confira [Script Lab, um projeto Microsoft Garage](https://github.com/OfficeDev/script-lab/blob/master/README.md).
 
-> **Importante**: O Script Lab é uma ferramenta experimental com informações disponíveis sobre o desenvolvimento de Suplementos do Office, nos aplicativos Excel, Word e PowerPoint. Desenvolvemos esse recurso como um [projeto do Microsoft Garage](https://www.microsoft.com/pt-BR/garage/about/), portanto não se trata de um produto oficial da Microsoft. A Microsoft não faz garantias, expressas ou implícitas, em relação ao Script Lab.
+[!include[Script Lab support](../includes/alert-script-lab-support.md)]

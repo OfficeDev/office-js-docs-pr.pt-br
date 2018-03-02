@@ -1,3 +1,11 @@
+---
+title: Diretrizes de estilo de visualização de dados para Suplementos do Office
+description: ''
+ms.date: 12/04/2017
+---
+
+
+
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Diretrizes de estilo de visualização de dados para Suplementos do Office
 
 Boas visualizações de dados ajudam os usuários a encontrarem informações em seus dados. Eles podem usar essas informações para contar histórias que informam e convencem. Este artigo fornece diretrizes para ajudá-lo a criar visualizações de dados eficazes em seus suplementos para o Excel e outros aplicativos do Office.
@@ -14,8 +22,8 @@ Recomendamos que você use o [Office UI Fabric](http://dev.office.com/fabric) pa
 
 As visualizações de dados compartilham uma estrutura geral e elementos comuns visuais e interativos, incluindo títulos, rótulos e plotagens de dados, conforme mostrado nas figuras a seguir.
 
-![Imagem de um gráfico de linhas com título, eixos, legenda e uma área de plotagem rotulada](../images/data_visualization_line_chart.png)
-![Imagem de um gráfico de coluna com eixos, linhas de grade, legenda e plotagem de dados rotulada](../images/data_visualization_column_chart.png)
+![Imagem de um gráfico de linhas com título, eixos, legenda e uma área de plotagem rotulada](../images/data-visualization-line-chart.png)
+![Imagem de um gráfico de coluna com eixos, linhas de grade, legenda e plotagem de dados rotulada](../images/data-visualization-column-chart.png)
 
 ### <a name="chart-titles"></a>Títulos de gráfico
 
@@ -23,13 +31,13 @@ Siga estas diretrizes para títulos de gráfico:
 
 - Deixe seus títulos de gráfico bem legíveis. Posicione-os para criar uma hierarquia visual em relação ao restante do gráfico.
 - Em geral, use maiúsculas nas frases (a primeira letra da primeira palavra em letra maiúscula). Para criar o contraste ou reforçar hierarquias, você poderá usar todas em maiúsculas, mas use isso com moderação.
-- Incorpore a [rampa de tipos do Office UI Fabric](http://dev.office.com/fabric#/styles/typography) para deixar seus gráficos consistentes com a IU do Office, que usa o Segoe. Você também pode usar outra fonte para diferenciar o conteúdo do gráfico da interface do usuário.
+- Incorpore a [typeramp do Office UI Fabric](http://dev.office.com/fabric#/styles/typography) para deixar seus gráficos consistentes com a interface de usuário do Office, que usa o Segoe. Você também pode usar outra fonte para diferenciar o conteúdo do gráfico da interface do usuário.
 - Use tipos sem serifa com contadores grandes.
 
 Os exemplos a seguir mostram tipos com serifa e sem serifa usados em títulos de gráfico. Observe como o contraste de escala e o uso eficaz do espaço em branco criam uma hierarquia visual forte.
 
-![Imagem de uma visualização de dados com fontes com serifa](../images/data_visualization_serif.png)
-![Imagem de uma visualização de dados com fontes sem serifa](../images/data_visualization_san_serif.png)
+![Imagem de uma visualização de dados com fontes com serifa](../images/data-visualization-serif.png)
+![Imagem de uma visualização de dados com fontes sem serifa](../images/data-visualization-sans-serif.png)
 
 ### <a name="axis-labels"></a>Rótulos dos eixos
 
@@ -60,7 +68,7 @@ Cinza claro é mais eficaz para linhas de grade. Se você estiver usando o Fabri
 
 A imagem a seguir mostra uma visualização de dados com linhas de grade.
 
-![Imagem de uma visualização de dados com linhas de grade](../images/data_visualization_gridlines.png)
+![Imagem de uma visualização de dados com linhas de grade](../images/data-visualization-gridlines.png)
 
 ### <a name="legends"></a>Legendas
 
@@ -136,8 +144,8 @@ A animação segue os dados.
 - Torne todos os elementos interativos, como botões de ação ou listas de escolha, acessíveis a partir de um teclado.
 - Envie eventos de acessibilidade para leitores de tela para anunciar alterações de foco, dicas de ferramentas e assim por diante.
 
-## <a name="additional-resources"></a>Recursos adicionais 
+## <a name="see-also"></a>Veja também 
 
-- [Dados + Design: Uma introdução simples para preparar e  visualizar as informações](https://infoactive.co/data-design)
+- [Dados + Design: uma introdução simples para preparar e  visualizar as informações](https://infoactive.co/data-design)
 - [As cinco melhores bibliotecas para criar visualizações de dados](http://www.fastcompany.com/3029760/the-five-best-libraries-for-building-data-vizualizations)
 - [Exibição Visual de informações quantitativas](https://www.edwardtufte.com/tufte/books_vdqi)

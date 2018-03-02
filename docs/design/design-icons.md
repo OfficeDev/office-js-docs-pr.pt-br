@@ -1,4 +1,12 @@
-# <a name="design-icons-for-add-in-commands"></a>Desenvolva ícones para comandos de suplemento
+---
+title: Desenvolver ícones para comandos de suplemento
+description: ''
+ms.date: 12/04/2017
+---
+
+
+
+# <a name="design-icons-for-add-in-commands"></a>Desenvolver ícones para comandos de suplemento
 
 Os [Comandos de suplementos](add-in-commands.md) adicionam botões, texto e ícones à interface do usuário do Office. Os botões de comando de suplemento devem fornecer ícones significativos e rótulos que identifiquem claramente a ação que o usuário está realizando ao usar um comando. Este artigo fornece diretrizes de estilo e produção que ajudam você a desenvolver ícones que se integrem perfeitamente ao Office. 
 
@@ -14,7 +22,7 @@ Os ícones do Office são baseados nas seguintes princípios de design:
 
 A imagem a seguir mostra ícones que aplicam os princípios modernos de design.
 
-![Imagem mostrando ícones antigos do Office e a interpretação moderna e atualizada dos ícones](../images/icons_image.PNG)
+![Imagem mostrando ícones antigos do Office e a interpretação moderna e atualizada dos ícones](../images/icons-images.png)
 
 ## <a name="icon-guidelines"></a>Diretrizes de ícones
 Siga estas diretrizes ao criar seus ícones: 
@@ -46,7 +54,7 @@ Os ícones de área de trabalho do Office 2016 são imagens bitmap. Tamanhos dif
 
 Não se esqueça de redesenhar seus ícones para cada tamanho em vez de reduzi-los para que caibam.
 
-![Ilustração que mostra a recomendação de redimensionar os ícones em vez de reduzi-los](../images/icon_resizing.png)
+![Ilustração que mostra a recomendação de redimensionar os ícones em vez de reduzi-los](../images/icon-resizing.png)
 
 <!--
 The following table shows the icon sizes that render for different modes at different DPI settings.
@@ -61,7 +69,8 @@ The following table shows the icon sizes that render for different modes at diff
 |250%|40px||||80px||120px|
 |300%|48px||||96px||144px
 
->**Note:** At DPI settings of 150% or greater, the icon does not get swapped out for a larger size when Touch mode is engaged. At DPI settings greater than 250%, Touch mode is turned off by default.
+> [!NOTE]
+> At DPI settings of 150% or greater, the icon does not get swapped out for a larger size when Touch mode is engaged. At DPI settings greater than 250%, Touch mode is turned off by default.
 
 The following table lists the locations for certain icon sizes.
 
@@ -82,7 +91,7 @@ Para criar comandos que se alinhem à interface do usuário do Office, siga as d
 
 A imagem a seguir mostra o layout de elementos básicos e modificadores em um ícone do Office.
 
-![Imagem mostrando o elemento básico de um ícone no centro com um modificador no canto inferior direito e um modificador de ação no canto superior esquerdo](../images/icon_layout.PNG)
+![Imagem mostrando o elemento básico de um ícone no centro com um modificador no canto inferior direito e um modificador de ação no canto superior esquerdo](../images/icon-layouts.png)
 
 - Elementos básicos centrais no quadro do pixel com preenchimento todo vazio.
 - Coloque modificadores de ação na parte superior esquerda. 
@@ -125,26 +134,27 @@ Os ícones do Office têm uma paleta de cores limitada. Use as cores listadas na
 
 |**Nome da cor**|**RGB**|**Hex**|**Cor**|**Categoria**|
 |:---|:---|:---|:---|:---|
-|Texto Cinza (80)|80, 80, 80|#505050|![Imagem colorida texto cinza 80](../images/textGray_80.gif)|Texto|
-|Texto Cinza (95)|95, 95, 95|#5F5F5F|![Imagem colorida texto cinza 95](../images/textGray_95.gif)|Texto|
-|Texto Cinza (105)|105, 105, 105|#696969|![Imagem colorida texto cinza 105](../images/textGray_105.gif)|Texto|
-|Cinza Escuro 32|128, 128, 128|#808080|![Imagem colorida cinza escuro 32](../images/darkGray_32.gif)|32 e acima|
-|Cinza Médio 32|158, 158, 158|#9E9E9E|![Imagem colorida cinza médio 32](../images/mediumGray_32.gif)|32 e acima|
-|Cinza Claro TODO|179, 179, 179|#B3B3B3|![Imagem colorida cinza claro todo](../images/lightGray_all.gif)|Todos os tamanhos|
-|Cinza Escuro 16|114, 114, 114|#727272|![Imagem colorida cinza escuro 16](../images/darkGray_16.gif)|16 e abaixo|
-|Cinza Médio 16|144, 144, 144|#909090|![Imagem colorida cinza médio 16](../images/mediumGray_16.gif)|16 e abaixo|
-|Azul 32|77, 130, 184|#4d82B8|![Imagem colorida azul 32](../images/blue_32.gif)|32 e acima|
-|Azul 16|74, 125, 177|#4A7DB1|![Imagem colorida azul 16](../images/blue_16.gif)|16 e abaixo|
-|Amarelo TODO|234, 194, 130|#EAC282|![Imagem colorida amarelo todo](../images/yellow_all.gif)|Todos os tamanhos|
-|Laranja 32|231, 142, 70|#E78E46|![Imagem colorida laranja 32](../images/orange_32.gif)|32 e acima|
-|Laranja 16|227, 142, 70|#E3751C|![Imagem colorida laranja 16](../images/orange_16.gif)|16 e abaixo|
-|Rosa TODO|230, 132, 151|#E68497|![Imagem colorida rosa todo](../images/pink_all.gif)|Todos os tamanhos|
-|Verde 32|118, 167, 151|#76A797|![Imagem colorida verde 32](../images/green_32.gif)|32 e acima|
-|Verde 16|104, 164, 144|#68A490|![Imagem colorida verde 16](../images/green_16.gif)|16 e abaixo|
-|Vermelho 32|216, 99, 68|#D86344|![Imagem colorida vermelho 32](../images/red_32.gif)|32 e acima|
-|Vermelho 16|214, 85, 50|#D65532|![Imagem colorida vermelho 16](../images/red_16.gif)|16 e abaixo|
-|Roxo 32|152, 104, 185|#9868B9|![Imagem colorida roxo 32](../images/purple_32.gif)|32 e acima|
-|Roxo 16|137, 89, 171|#8959AB|![Imagem colorida roxo 16](../images/purple_16.gif)|16 e abaixo|
+|Texto Cinza (80)|80, 80, 80|#505050| ![Imagem colorida texto cinza 80](../images/color-text-gray-80.png) |Texto|
+|Texto Cinza (95)|95, 95, 95|#5F5F5F| ![Imagem colorida texto cinza 95](../images/color-text-gray-95.png) |Texto|
+|Texto Cinza (105)|105, 105, 105|#696969| ![Imagem colorida texto cinza 105](../images/color-text-gray-105.png) |Texto|
+|Cinza Escuro 32|128, 128, 128|#808080| ![Imagem colorida cinza escuro 32](../images/color-dark-gray-32.png) |32 e acima|
+|Cinza Médio 32|158, 158, 158|#9E9E9E| ![Imagem colorida cinza médio 32](../images/color-medium-gray-32.png) |32 e acima|
+|Cinza Claro TODO|179, 179, 179|#B3B3B3| ![Imagem colorida cinza claro todo](../images/color-light-gray-all.png) |Todos os tamanhos|
+|Cinza Escuro 16|114, 114, 114|#727272| ![Imagem colorida cinza escuro 16](../images/color-dark-gray-16.png) |16 e abaixo|
+|Cinza Médio 16|144, 144, 144|#909090| ![Imagem colorida cinza médio 16](../images/color-medium-gray-16.png) |16 e abaixo|
+|Azul 32|77, 130, 184|#4d82B8| ![Imagem colorida azul 32](../images/color-blue-32.png) |32 e acima|
+|Azul 16|74, 125, 177|#4A7DB1| ![Imagem colorida azul 16](../images/color-blue-16.png) |16 e abaixo|
+|Amarelo TODO|234, 194, 130|#EAC282| ![Imagem colorida amarelo todo](../images/color-yellow-all.png) |Todos os tamanhos|
+|Laranja 32|231, 142, 70|#E78E46| ![Imagem colorida laranja 32](../images/color-orange-32.png) |32 e acima|
+|Laranja 16|227, 142, 70|#E3751C| ![Imagem colorida laranja 16](../images/color-orange-16.png) |16 e abaixo|
+|Rosa TODO|230, 132, 151|#E68497| ![Imagem colorida rosa todo](../images/color-pink-all.png) |Todos os tamanhos|
+|Verde 32|118, 167, 151|#76A797| ![Imagem colorida verde 32](../images/color-green-32.png) |32 e acima|
+|Verde 16|104, 164, 144|#68A490| ![Imagem colorida verde 16](../images/color-green-16.png) |16 e abaixo|
+|Vermelho 32|216, 99, 68|#D86344| ![Imagem colorida vermelho 32](../images/color-red-32.png) |32 e acima|
+|Vermelho 16|214, 85, 50|#D65532| ![Imagem colorida vermelho 16](../images/color-red-16.png) |16 e abaixo|
+|Roxo 32|152, 104, 185|#9868B9| ![Imagem colorida roxo 32](../images/color-purple-32.png) |32 e acima|
+|Roxo 16|137, 89, 171|#8959AB| ![Imagem colorida roxo 16](../images/color-purple-16.png) |16 e abaixo|
+
 
 ## <a name="icons-in-high-contrast-modes"></a>Ícones em modos de alto contraste
 
@@ -156,7 +166,7 @@ Os ícones do Office foram projetados para renderizar bem em modos de alto contr
 - Evite o uso de gradientes.
 - Evite blocos grandes de cores com valores similares.
 
-## <a name="additional-resources"></a>Recursos adicionais
+## <a name="see-also"></a>Veja também
 
-- [Práticas recomendadas de desenvolvimento de suplementos](../overview/add-in-development-best-practices.md)
+- [Práticas recomendadas de desenvolvimento de suplementos](../concepts/add-in-development-best-practices.md)
 - [Comandos de suplemento para Excel, Word e PowerPoint](../design/add-in-commands.md)

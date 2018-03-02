@@ -1,6 +1,13 @@
+---
+title: Principais conceitos da API JavaScript do Excel
+description: ''
+ms.date: 12/04/2017
+---
+
+
 # <a name="excel-javascript-api-core-concepts"></a>Principais conceitos da API JavaScript do Excel
  
-Este artigo descreve como usar a [API JavaScript do Excel](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview) para desenvolver suplementos para o Excel 2016. Ele apresenta os conceitos básicos que são fundamentais para usar a API e fornece orientações para executar tarefas específicas, como leitura ou gravação em um intervalo grande, atualização de todas as células do intervalo e muito mais.
+Este artigo descreve como usar a [API JavaScript do Excel](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview) para desenvolver suplementos para o Excel 2016. Ele apresenta os conceitos básicos que são fundamentais para usar a API e fornece orientações para executar tarefas específicas, como leitura ou gravação em um intervalo grande, atualização de todas as células do intervalo e muito mais.
 
 ## <a name="asynchronous-nature-of-excel-apis"></a>Natureza assíncrona das APIs do Excel
 
@@ -46,7 +53,8 @@ selectedRange.format.autofitColumns();
  
 Chamar o método **sync()** no contexto de solicitação sincroniza o estado entre objetos proxy e objetos no documento do Excel. O método **sync()** executa todos os comandos que são enfileirados no contexto de solicitação e recupera valores para qualquer propriedade que deva ser carregada nos objetos proxy. O método **sync()** é executado de modo assíncrono e retorna uma [promessa](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), que é resolvida quando o método **sync()** é concluído.
  
->**Observação**: Na API JavaScript do Excel, **sync()** é a única operação assíncrona. Para otimizar o desempenho, você deve enfileirar o máximo de alterações possíveis antes de chamar **sync()** e minimizar o número de vezes que chama **sync()**.
+> [!NOTE]
+> Na API JavaScript do Excel, **sync()** é a única operação assíncrona. Para otimizar o desempenho, você deve enfileirar o máximo de alterações possíveis antes de chamar **sync()** e minimizar o número de vezes que chama **sync()**.
  
 O exemplo a seguir mostra uma função de lote que define um objeto proxy JavaScript local (**selectedRange**), carrega uma propriedade desse objeto e, em seguida, usa o padrão Promessas do JavaScript para chamar **context.sync()** a fim de sincronizar o estado entre objetos proxy e objetos no documento do Excel.
  
@@ -74,9 +82,10 @@ Como **sync()** é uma operação assíncrona que retorna uma promessa, você se
  
 Para que você possa ler as propriedades de um objeto proxy, é preciso carregar explicitamente as propriedades para popular o objeto proxy com dados do documento do Excel e chamar **context.sync()**. Por exemplo, se você criar um objeto proxy para fazer referência a um intervalo selecionado e, em seguida, quiser ler a propriedade **address** do intervalo selecionado, será preciso carregar a propriedade **address** para que seja possível lê-la. Para solicitar que as propriedades de um objeto proxy sejam carregadas, chame o método **load()** no objeto e especifique as propriedades a serem carregadas. 
 
->**Observação**: Se estiver apenas chamando métodos ou definindo propriedades em um objeto proxy, você não precisa chamar o método **load()**. O método **load()** é necessário somente quando você deseja ler propriedades em um objeto proxy.
+> [!NOTE]
+> Se estiver apenas chamando métodos ou definindo propriedades em um objeto proxy, você não precisa chamar o método **load()**. O método **load()** só é necessário quando você deseja ler propriedades em um objeto proxy.
  
-Assim como as solicitações para definir propriedades ou invocar métodos em objetos proxy, as solicitações para carregar propriedades em objetos proxy são adicionadas à fila de comandos pendentes no contexto de solicitação, sendo executadas na próxima vez que você chamar o método **sync()**. Você pode enfileirar quantas chamadas a **load()** no contexto de solicitação forem necessárias.
+Assim como as solicitações para definir propriedades ou invocar métodos em objetos proxy, as solicitações para carregar propriedades em objetos proxy são adicionadas à fila de comandos pendentes no contexto de solicitação, sendo executadas na próxima vez que você chamar o método **sync()**. É possível enfileirar quantas chamadas de **load()** forem necessárias no contexto de solicitação.
  
 No exemplo a seguir, somente propriedades específicas do intervalo são carregadas.
  
@@ -127,8 +136,8 @@ object.load({ loadOption });
  
 _Onde:_
  
-* `properties` é a lista de propriedades e/ou nomes de relações a serem carregados, especificados como cadeias de caracteres delimitadas por vírgulas ou uma matriz de nomes. Para saber mais, veja os métodos **load()** definidos para objetos na [referência da API JavaScript do Excel](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview).
-* `loadOption` especifica um objeto que descreve as opções de seleção, expansão, topo e pulo. Confira as [opções](http://dev.office.com/reference/add-ins/excel/loadoption) de carregamento de objeto para saber mais.
+* `properties` é a lista de propriedades e/ou nomes de relações a serem carregados, especificados como cadeias de caracteres delimitadas por vírgulas ou uma matriz de nomes. Para saber mais, veja os métodos **load()** definidos para objetos na [referência da API JavaScript do Excel](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview).
+* `loadOption` especifica um objeto que descreve as opções de seleção, expansão, topo e ignorar. Confira as [opções](https://dev.office.com/reference/add-ins/excel/loadoption) de carregamento do objeto para saber mais.
 
 Para saber mais sobre o método **load()**, confira os [conceitos avançados da API JavaScript do Excel](excel-add-ins-advanced-concepts.md).
 
@@ -145,7 +154,7 @@ range.values = [['Eurasia', '29.96', '0.25', '15-Feb' ]];
 range.numberFormat = [[null, null, null, 'm/d/yyyy;@']];
 ```
  
-### <a name="null-input-for-a-property"></a>Entrada nula para uma propriedade
+### <a name="null-input-for-a-property"></a>entrada nula para uma propriedade
  
 `null` não é uma entrada válida para uma propriedade única. Por exemplo, o trecho de código a seguir não é válido, pois a propriedade **values** do intervalo não pode ser definida como `null`.
  
@@ -267,8 +276,8 @@ Quando ocorrer um erro de API, a API retornará um objeto **error** que contém 
 |InsertDeleteConflict|A tentativa de operação de exclusão ou inserção resultou em um conflito.|
 |InvalidOperation|A tentativa de operação é inválida no objeto.|
  
-## <a name="additional-resources"></a>Recursos adicionais
+## <a name="see-also"></a>Veja também
  
 * [Introdução aos suplementos do Excel](excel-add-ins-get-started-overview.md)
 * [Exemplos de código de suplementos do Excel](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Referência da API JavaScript do Excel](http://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
+* [Referência da API JavaScript do Excel](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

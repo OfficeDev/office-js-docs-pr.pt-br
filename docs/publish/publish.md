@@ -1,3 +1,9 @@
+---
+title: Implantar e publicar seu suplemento do Office
+description: ''
+ms.date: 01/23/2018
+---
+
 # <a name="deploy-and-publish-your-office-add-in"></a>Implantar e publicar seu suplemento do Office
 
 Você pode usar um dos vários métodos para implantar o suplemento do Office para teste ou distribuição aos usuários.
@@ -7,10 +13,13 @@ Você pode usar um dos vários métodos para implantar o suplemento do Office pa
 |[Sideload](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|Usado como parte do processo de desenvolvimento para testar o suplemento em execução no Windows, Office Online, iPad ou Mac.|
 |[Implantação Centralizada](centralized-deployment.md)|Em uma implantação híbrida ou de nuvem para distribuir seu suplemento aos usuários na sua organização usando o centro de administração do Office 365.|
 |[Catálogo do SharePoint](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|Usado para distribuir o suplemento aos usuários da organização em um ambiente local.|
-|[Office Store](https://dev.office.com/officestore/docs/submit-to-the-office-store)|Usado para distribuir o suplemento publicamente aos usuários.|
+|
+  [AppSource](https://docs.microsoft.com/pt-br/office/dev/store/submit-to-the-office-store)|Usado para distribuir o suplemento publicamente aos usuários.|
 |[Servidor Exchange](#outlook-add-in-deployment)|Usado para distribuir suplementos do Outlook aos usuários em um ambiente local ou online.|
+|[Compartilhamento de rede](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|No computador do Windows em uma rede na qual você deseja hospedar seu suplemento, acesse a pasta pai ou letra da unidade da pasta que você deseja usar como seu catálogo de pasta compartilhada.|
 
->**Observação:** caso pretenda enviar o suplemento para a Office Store, verifique se você está em conformidade com as [políticas de validação da Office Store](https://msdn.microsoft.com/pt-BR/library/jj220035.aspx). Por exemplo, para passar na validação, o suplemento deve funcionar em todas as plataformas com suporte para os métodos definidos. Saiba mais na [seção 4.12](https://dev.office.com/officestore/docs/validation-policies#4-apps-and-add-ins-behave-predictably) e na [página de hospedagem e disponibilidade do Suplemento do Office](https://dev.office.com/add-in-availability).
+> [!NOTE]
+> Caso pretenda [publicar](../publish/publish.md) o suplemento na experiência do Office depois de criá-lo, verifique se você está em conformidade com as [Políticas de validação do AppSource](https://docs.microsoft.com/pt-br/office/dev/store/validation-policies). Por exemplo, para passar na validação, seu suplemento deve funcionar em todas as plataformas com suporte aos métodos que você definir (para mais informações, confira a [seção 4.12](https://docs.microsoft.com/pt-br/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) e a [Página de hospedagem e disponibilidade de suplementos do Office](../overview/office-add-in-availability.md)).
 
 ## <a name="deployment-options-by-office-host"></a>Opções de implantação pelo host do Office
 
@@ -18,20 +27,20 @@ As opções de implantação disponíveis dependem do host do Office que você p
 
 ### <a name="deployment-options-for-word-excel-and-powerpoint-add-ins"></a>Opções de implantação de suplementos para Word, Excel e PowerPoint
 
-| Ponto de extensão | Sideloading | Centro de administração do Office 365 |Office Store| Catálogo do SharePoint*  |
-|:----------------|:------------|:-------------------|:--------------------------------|:-------------|
-| Conteúdo         | X           | X                  | X                               | X|
-| Painel de tarefas       | X           | X                  | X                               | X|
-| Comando         | X           | X                  | X                               |  |
+| Ponto de extensão | Sideloading | Centro de administração do Office 365 |AppSource| Catálogo do SharePoint\*  |
+|:----------------|:-----------:|:-----------------------:|:----------:|:--------------------:|
+| Conteúdo         | X           | X                       | X          | X                    |
+| Painel de tarefas       | X           | X                       | X          | X                    |
+| Comando           | X           | X                       | X          |                      |
 
 &#42; Os catálogos do SharePoint não são compatíveis com o Office 2016 para Mac.
 
 ### <a name="deployment-options-for-outlook-add-ins"></a>Opções de implantação para suplementos do Outlook
 
-| Ponto de extensão | Sideloading | Servidor Exchange | Office Store |
-|:---------|:------------|:----------------|:-------------|
-| Aplicativo de email | X           | X               | X            |
-| Comando  | X           | X               | X            |
+| Ponto de extensão | Sideloading | Servidor Exchange | AppSource |
+|:----------------|:-----------:|:---------------:|:------------:|
+| Aplicativo de email        | X           | X               | X            |
+| Comando         | X           | X               | X            |
 
 ## <a name="deployment-methods"></a>Métodos de implantação
 
@@ -41,17 +50,18 @@ Saiba mais sobre como os usuários finais podem adquirir, inserir e executar sup
 
 ### <a name="centralized-deployment-via-the-office-365-admin-center"></a>Implantação Centralizada por meio do centro de administração do Office 365 
 
-No centro de administração do Office 365, fica mais fácil para o administrador implantar Suplementos do Office para usuários e grupos dentro da organização. Os suplementos implantados por meio do Centro de administração ficam disponíveis imediatamente para os usuários nos aplicativos do Office, sem a necessidade de configuração do cliente. Você pode usar a Implantação Centralizada para implantar suplementos internos, além de suplementos fornecidos por ISVs.
+No Centro de administração do Office 365, é mais fácil para o administrador implantar Suplementos do Office para usuários e grupos dentro da organização. Os suplementos implantados por meio do Centro de administração ficam disponíveis imediatamente para os usuários nos aplicativos do Office, sem a necessidade de configuração do cliente. É possível usar a Implantação Centralizada para implantar suplementos internos, além de suplementos fornecidos por ISVs.
 
 Confira mais informações em [Publicar Suplementos do Office usando a Implantação Centralizada por meio do Centro de Administração do Office 365](centralized-deployment.md).
 
 ### <a name="sharepoint-catalog-deployment"></a>Implantação de catálogo do SharePoint
 
-O catálogo de suplementos do SharePoint é uma coleção de sites especial que você pode criar para hospedar suplementos dos aplicativos Word, Excel e PowerPoint. Como os catálogos do SharePoint não oferecem suporte para os novos recursos de suplemento implementados no nó `VersionOverrides` do manifesto, inclusive comandos do suplemento, recomendamos usar a Implantação Centralizada por meio do centro de administração, se possível. Por padrão, os comandos do suplemento implantados por meio do catálogo do SharePoint abrem em um painel de tarefas.
+O catálogo de suplementos do SharePoint é uma coleção de sites especial que você pode criar para hospedar suplementos dos aplicativos Word, Excel e PowerPoint. Como os catálogos do SharePoint não oferecem suporte para os novos recursos de suplemento implementados no nó `VersionOverrides` do manifesto, inclusive comandos do suplemento, recomendamos usar a implantação centralizada por meio do centro de administração, se possível. Por padrão, os comandos do suplemento implantados por meio do catálogo do SharePoint abrem em um painel de tarefas.
 
 Se você está implantando suplementos em um ambiente local, use um catálogo do SharePoint. Para saber mais, confira, [Publicar suplementos de conteúdo e de painel de tarefas em um catálogo do SharePoint](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
->**Observação:** Os catálogos do SharePoint não são compatíveis com o Office 2016 para Mac. Para implantar Suplementos do Office em clientes do Mac, você deve enviá-los para a [Office Store]. 
+> [!NOTE]
+> Os catálogos do SharePoint não são compatíveis com o Office 2016 para Mac. Para implantar Suplementos do Office em clientes do Mac, você deve encaminhá-los ao [AppSource]. 
 
 ### <a name="outlook-add-in-deployment"></a>Implantação de suplemento do Outlook
 
@@ -62,15 +72,17 @@ Requisitos de implantação de suplemento do Outlook:
 - Office 365, Exchange Online ou Exchange Server 2013 ou posterior
 - Outlook 2013 ou posterior
 
-Para atribuir suplementos a locatários, use o Centro de administração do Exchange para carregar o manifesto diretamente de um arquivo ou de uma URL ou para adicionar um suplemento da Office Store. Para atribuir suplementos a usuários individuais, é necessário usar o Exchange PowerShell. Para saber mais, confira o artigo [Instalar ou remover suplementos do Outlook para a organização](https://technet.microsoft.com/pt-br/library/jj943752(v=exchg.150).aspx) no TechNet.
+Para atribuir suplementos a locatários, use o Centro de administração do Exchange para carregar o manifesto diretamente de um arquivo ou de uma URL ou para adicionar um suplemento do AppSource. Para atribuir suplementos a usuários individuais, é necessário usar o Exchange PowerShell. Para saber mais, confira o artigo [Instalar ou remover suplementos do Outlook para a organização](https://technet.microsoft.com/pt-br/library/jj943752(v=exchg.150).aspx) no TechNet.
 
-## <a name="additional-resources"></a>Recursos adicionais
+## <a name="see-also"></a>Veja também
 
-- [Implantar e instalar suplementos do Outlook para teste](../outlook/testing-and-tips.md) 
-- [Enviar para a Office Store][Office Store]
-- [Diretrizes de design para suplementos do Office](../design/add-in-design)
-- [Criar suplementos eficientes para a Office Store](https://msdn.microsoft.com/pt-BR/library/jj635874.aspx)
+- [Realizar sideload de suplementos do Outlook para teste](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+- [Enviar para o AppSource][AppSource]
+- [Diretrizes de design para suplementos do Office](../design/add-in-design.md)
+- 
+  [Criar listagens eficazes do AppSource](https://docs.microsoft.com/pt-br/office/dev/store/create-effective-office-store-listings)
 - [Solucionar erros de usuários com suplementos do Office](../testing/testing-and-troubleshooting.md)
 
-[Office Store]: http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx
-[Office Add-in host and platform availability]: http://dev.office.com/add-in-availability
+
+  [AppSource]: https://docs.microsoft.com/pt-br/office/dev/store/submit-to-the-office-store
+[Office Add-in host and platform availability]: ../overview/office-add-in-availability

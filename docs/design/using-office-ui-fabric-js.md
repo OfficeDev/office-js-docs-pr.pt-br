@@ -1,3 +1,8 @@
+---
+title: Usar o Office UI Fabric JS em Suplementos do Office
+description: ''
+ms.date: 12/04/2017
+---
 
 # <a name="use-office-ui-fabric-js-in-office-add-ins"></a>Usar o Office UI Fabric JS em Suplementos do Office
 
@@ -8,9 +13,11 @@ Este artigo explica as noções básicas do uso do Fabric JS.
 ## <a name="add-the-fabric-cdn-references"></a>Adicionar as referências de CDN do Fabric
 Para fazer referência ao Fabric a partir da CDN, adicione o seguinte código HTML à página.
 
-    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.min.css">
-    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.components.min.css">
-    <script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/js/fabric.min.js"></script>
+```html
+<link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.min.css">
+<link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.components.min.css">
+<script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/js/fabric.min.js"></script>
+```
 
 ## <a name="use-fabric-js-ux-components"></a>Usar os componentes da experiência de usuário do Fabric JS
 
@@ -45,16 +52,16 @@ Se você já está usando uma versão anterior do Office UI Fabric e pretende mi
 - Atualizamos alguns estilos e nomes de classe de ícones.
 - A alteração mais significativa é o uso do elemento `<label>` em vários componentes. O elemento `<label>` controla o estilo do componente. Pode ser necessário atualizar o código da experiência de usuário para usar o elemento `<label>`. Por exemplo, alterar o valor do atributo verificado `<input>` do elemento em uma caixa de seleção do Fabric JS não afeta a caixa de seleção. Em vez disso, use as funções `check`, `unCheck` ou `toggle`.   
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="implementation"></a>Implementação
 Se estiver procurando um exemplo de código de ponta a ponta que mostra como usar o Fabric JS, abordamos esse conteúdo para você. Confira o seguinte recurso:
 
 - [Excel Sales Tracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) 
 
-## <a name="related-resources"></a>Recursos relacionados
+## <a name="see-also"></a>Veja também
 Se estiver procurando exemplos de códigos ou documentação de uma versão anterior do Fabric, confira as seguintes opções:
 
 - [Padrões de design da experiência de usuário (usa o Fabric 2.6.1)](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code) 
 - [Amostra de Fabric UI do suplemento do Office (usa o Fabric 1.0)](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample) 
-- [Usar o Fabric 2.6.1 em um suplemento do Office](https://dev.office.com/docs/add-ins/design/ui-elements/using-office-ui-fabric)
+- [Usar o Fabric 2.6.1 em um Suplemento do Office](ui-elements/using-office-ui-fabric.md)
  
 

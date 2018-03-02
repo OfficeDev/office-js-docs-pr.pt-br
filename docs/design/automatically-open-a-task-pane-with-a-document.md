@@ -1,3 +1,10 @@
+---
+title: Abrir automaticamente um painel de tarefas com um documento
+description: ''
+ms.date: 01/23/2018
+---
+
+
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Abrir automaticamente um painel de tarefas com um documento
 
 Você pode usar comandos de suplemento no seu Suplemento do Office para estender a interface do usuário do Office adicionando botões à faixa de opções do Office. Quando os usuários clicam no botão de comando, ocorre uma ação, como abrir um painel de tarefas. 
@@ -16,7 +23,7 @@ O recurso autoopen atualmente tem suporte do <!-- in **developer preview** and i
 
 |**Produtos**|**Plataformas**|
 |:-----------|:------------|
-|<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|<ul><li>Office para a Área de Trabalho do Windows Build 16.0.8121.1000+</li><li>Office para Mac Build 15.34.17051500+</li><li>Office Online</li></ul>|
+|<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|<ul><li>Office para Windows Desktop. Versão 16.0.8121.1000+</li><li>Office para Mac. Versão 15.34.17051500+</li><li>Office Online</li></ul>|
 
 
 ## <a name="best-practices"></a>Práticas recomendadas
@@ -30,7 +37,8 @@ Aplique as seguintes práticas recomendadas ao usar o recurso autoopen:
 - Use a detecção de configuração de exigência para determinar se o recurso autoopen está disponível e fornecer um comportamento de fallback se ele não estiver disponível.
 - Não use o recurso autoopen para aumentar artificialmente o uso do seu suplemento. Se não faz sentido seu suplemento abrir automaticamente em determinados documentos, esse recurso pode incomodar os usuários. 
 
-    >**Observação:** Se a Microsoft detectar abuso do recurso autoopen, seu suplemento pode ser rejeitado na Office Store. 
+    > [!NOTE]
+    > Se a Microsoft detectar abuso do recurso autoopen, seu suplemento poderá ser rejeitado no AppSource. 
 
 - Não use esse recurso para fixar vários painéis de tarefas. Você só pode definir um painel do suplemento para abrir automaticamente com um documento.  
 
@@ -40,9 +48,10 @@ Para implementar o recurso autoopen:
 - Especifique o painel de tarefas a ser aberto automaticamente.
 - Marque o documento para abrir o painel de tarefas automaticamente.
 
->**Importante:** O painel que você designar para abrir automaticamente só será aberto se o suplemento já estiver instalado no dispositivo do usuário. Se o usuário não tiver o suplemento instalado quando abrir um documento, o recurso autoopen não funcionará e a configuração será ignorada. Se você também exigir que o suplemento seja distribuído com o documento, será preciso definir a propriedade de visibilidade como 1; isso só pode ser feito usando OpenXML, um exemplo será fornecido posteriormente neste artigo. 
+> [!IMPORTANT]
+> O painel que você designar para abrir automaticamente só será aberto se o suplemento já estiver instalado no dispositivo do usuário. Se o usuário não tiver o suplemento instalado quando abrir um documento, o recurso autoopen não funcionará, e a configuração será ignorada. Se você também exigir que o suplemento seja distribuído com o documento, será preciso definir a propriedade de visibilidade como 1. Isso só pode ser feito usando OpenXML. Um exemplo será fornecido posteriormente neste artigo. 
 
-### <a name="step-1-specify-the-task-pane-to-open"></a>Etapa 1: Especifique o painel de tarefas que será aberto
+### <a name="step-1-specify-the-task-pane-to-open"></a>Etapa 1: especificar o painel de tarefas que será aberto
 Para especificar o painel de tarefas que será aberto automaticamente, defina o valor [TaskpaneId](https://dev.office.com/reference/add-ins/manifest/action#taskpaneid) para **Office.AutoShowTaskpaneWithDocument**. Você só pode definir esse valor em um painel de tarefas. Se você definir esse valor em vários painéis de tarefas, a primeira ocorrência do valor será reconhecida e as outras serão ignoradas. 
 
 O exemplo a seguir mostra o valor TaskPaneId configurado para Office.AutoShowTaskpaneWithDocument.
@@ -54,7 +63,7 @@ O exemplo a seguir mostra o valor TaskPaneId configurado para Office.AutoShowTas
 </Action>
 ```     
 
-### <a name="step-2-tag-the-document-to-automatically-open-the-task-pane"></a>Etapa 2: Marque o documento para abrir o painel de tarefas automaticamente
+### <a name="step-2-tag-the-document-to-automatically-open-the-task-pane"></a>Etapa 2: marcar o documento para abrir o painel de tarefas automaticamente
 
 Você pode marcar o documento para acionar o recurso autoopen de duas maneiras. Escolha a alternativa que funciona melhor para o seu cenário.  
 
@@ -81,7 +90,7 @@ O exemplo a seguir mostra como adicionar a parte webextension.
 
 ```xml
 <we:webextension xmlns:we="http://schemas.microsoft.com/office/webextensions/webextension/2010/11" id="[ADD-IN ID PER MANIFEST]">
-  <we:reference id="[GUID or Office Store asset ID]" version="[your add-in version]" store="[Pointer to store or catalog]" storeType="[Store or catalog type]"/>
+  <we:reference id="[GUID or AppSource asset ID]" version="[your add-in version]" store="[Pointer to store or catalog]" storeType="[Store or catalog type]"/>
   <we:alternateReferences/>
   <we:properties>
     <we:property name="Office.AutoShowTaskpaneWithDocument" value="true"/>
@@ -97,12 +106,13 @@ A parte webextension também inclui uma referência para a loja ou o catálogo c
 
 | **valor `storeType`** | **valor `id`**    |**valor `store`** | **valor `version`**|
 |:---------------|:---------------|:---------------|:---------------|
-|OMEX (a Office Store)|A ID de ativo da Office Store do suplemento.\*|A localidade da Office Store. Por exemplo, "pt-br".|A versão no catálogo da Office Store.\*|
+|OMEX (AppSource)|A ID do ativo do suplemento no AppSource (confira a observação)|A localidade do AppSource, por exemplo, "pt-br".|A versão no catálogo do AppSource (confira a observação)|
 |FileSystem (um compartilhamento de rede)|O GUID do suplemento no manifesto do suplemento.|O caminho do compartilhamento de rede. Por exemplo, "\\\\Meu Computador\\Minha Pasta Compartilhada".|A versão no manifesto do suplemento.|
 |EXCatalog (implantação por meio do servidor Exchange) |O GUID do suplemento no manifesto do suplemento.|"EXCatalog"|A versão no manifesto do suplemento.
 |Registro (registro de sistema)|O GUID do suplemento no manifesto do suplemento.|"developer"|A versão no manifesto do suplemento.|
 
->\*Para localizar a ID de ativos e a versão de um suplemento na Office Store, vá para a página inicial do suplemento na Office Store. A ID de ativo é exibida na barra de endereços no navegador. A versão é listada na seção **Detalhes** da página.
+> [!NOTE]
+> Para localizar a ID de ativos e a versão de um suplemento no AppSource, vá para a página inicial do suplemento no AppSource. A ID de ativo aparece na barra de endereços no navegador. A versão aparece na seção **Detalhes** da página.
 
 Confira mais informações sobre a marcação webextension em [[MS-OWEXML] 2.2.5. WebExtensionReference](https://msdn.microsoft.com/pt-br/library/hh695383(v=office.12).aspx).
 
@@ -120,11 +130,12 @@ Se o elemento `visibility` é definido como "1", o painel de tarefas abrirá aut
 
 Definir o `visibility` como "1" é uma boa opção quando o suplemento e o modelo ou o conteúdo do documento são muito estreitamente integrados de modo que o usuário não poderia optar por cancelar o recurso autoopen. 
 
->**Observação:** Se você quiser distribuir seu suplemento com o documento, para que os usuários sejam solicitados a instalá-lo, você deverá definir a propriedade de visibilidade para 1. Você só pode fazer isso por meio do Open XML.
+> [!NOTE]
+> Se quiser distribuir seu suplemento com o documento, para que os usuários sejam solicitados a instalá-lo, você deverá definir a propriedade de visibilidade para 1. Isso só pode ser feito pelo Open XML.
 
 Uma maneira fácil de escrever o XML é primeiro executar seu suplemento e [marcar o documento no lado do cliente](#tag-the-document-on-the-client-side) para escrever o valor e, em seguida, salvar o documento e inspecionar o XML que é gerado. O Office detectará e fornecerá os valores de atributo apropriados. Você também pode usar a [Ferramenta de Produtividade Open XML SDK 2.5](https://www.microsoft.com/en-us/download/details.aspx?id=30425) para gerar o código C# para adicionar por meio de programação a marcação com base no XML que você gerou.
 
-## <a name="additional-resources"></a>Recursos adicionais
+## <a name="see-also"></a>Veja também
 
 Para saber como usar o recurso autoopen, confira os [exemplos de comandos do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane). 
 

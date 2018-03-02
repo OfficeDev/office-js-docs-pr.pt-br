@@ -1,23 +1,26 @@
+---
+title: Suplementos do painel de tarefas para Project
+description: ''
+ms.date: 01/23/2018
+---
 
 # <a name="task-pane-add-ins-for-project"></a>Suplementos do painel de tarefas para Project
 
-
 Tanto o Project Standard 2013 quanto o Project Professional 2013 incluem suporte para suplementos de painel de tarefas. Você pode executar suplementos de painel de tarefas comuns que foram desenvolvidos para o Word 2013 ou o Excel 2013. Você também pode desenvolver suplementos personalizados que manipulam eventos de seleção no Project e integram tarefas, recursos, exibição e outros dados de nível de célula em um projeto com listas do SharePoint, Suplementos do SharePoint, Web Parts, serviços Web e aplicativos corporativos.
 
- >**Observação** O [download do SDK do Project 2013](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20) inclui suplementos de exemplo que mostram como usar o modelo de objeto do suplemento no Project e como usar o serviço OData para relatar os dados no Project Server 2013. Ao extrair e instalar o SDK, confira o subdiretório `\Samples\Apps\`.
+> [!NOTE]
+> O [download do SDK do Project 2013](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20) inclui suplementos de exemplo que mostram como usar o modelo de objeto do suplemento no Project e como usar o serviço OData para relatar os dados no Project Server 2013. Ao extrair e instalar o SDK, confira o subdiretório `\Samples\Apps\`.
 
 Para ver uma introdução sobre os suplementos do Office, confira [Visão geral da plataforma de suplementos do Office](../overview/office-add-ins.md).
 
 ## <a name="add-in-scenarios-for-project"></a>Cenários de suplementos do Project
 
-
 Os gerentes de projeto podem usar suplementos de painel de tarefas do Project para ajudá-los nas atividades de gerenciamento de projeto. Em vez de sair do Project e abrir outro aplicativo para procurar informações usadas com frequência, os gerentes de projeto podem acessar as informações diretamente no projeto. O conteúdo de um suplemento de painel de tarefas pode ser contextual, baseado na tarefa selecionada, no recurso, no modo de exibição ou em outros dados em uma célula de um gráfico de Gantt, no modo de exibição de uso da tarefa ou no modo de exibição de uso dos recursos.
 
-
- >**Observação**  Com o Project Professional 2013, você pode desenvolver suplementos de painel de tarefas que acessam instalações locais do Project Server 2013, do Project Online e locais ou online do SharePoint 2013. O Project Standard 2013 não dá suporte à integração direta com dados do Project Server ou listas de tarefas do SharePoint que são sincronizadas com o Project Server.
+> [!NOTE]
+> Com o Project Professional 2013, é possível desenvolver suplementos de painel de tarefas que acessam instalações locais do Project Server 2013, do Project Online e instalações locais ou online do SharePoint 2013. O Project Standard 2013 não dá suporte à integração direta com dados do Project Server ou listas de tarefas do SharePoint que são sincronizadas com o Project Server.
 
 Cenários de suplementos do Project incluem o seguinte:
-
 
 -  **Plano de projeto** Exibir dados de projetos relacionados que podem afetar o agendamento. Um suplemento de painel de tarefas pode integrar dados relevantes de outros projetos no Project Server 2013. Por exemplo, você pode exibir a coleção de departamento de projetos e datas de marco ou exibir dados específicos de outros projetos que são baseados em um campo personalizado selecionado.
     
@@ -37,9 +40,7 @@ Cenários de suplementos do Project incluem o seguinte:
     
     Por exemplo, confira [Criar um suplemento do Project que usa REST com um serviço OData local do Project Server](../project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md).
     
-
 ## <a name="developing-project-add-ins"></a>Desenvolver suplementos do Project
-
 
 A biblioteca JavaScript para suplementos do Project inclui extensões do alias de namespace do **Office** que permitem que os desenvolvedores acessem propriedades de aplicativo do Project e tarefas, recursos e modos de exibição em um projeto. As extensões de biblioteca JavaScript no arquivo Project-15.js são usadas em um suplemento do Project criado com o Visual Studio 2015. Office.js, Office.debug.js, Project-15.js, Project-15.debug.js e arquivos relacionados também são fornecidos no download do SDK do Project 2013.
 
@@ -66,33 +67,33 @@ O arquivo de manifesto especifica a URL do suplemento, a página da Web ou aplic
 ### <a name="procedure-1-to-create-the-add-in-manifest-file-for-bing-search"></a>Procedimento 1. Para criar o arquivo de manifesto do suplemento para Pesquisa do Bing
 
 
-- Crie um arquivo XML em um diretório local. O arquivo XML inclui o elemento **OfficeApp** e elementos filhos, que estão descritos em [Manifesto XML dos suplementos do Office](../overview/add-in-manifests.md). Por exemplo, crie um arquivo denominado BingSearch.xml que contém o XML a seguir.
+- Crie um arquivo XML em um diretório local. O arquivo XML inclui o elemento **OfficeApp** e elementos filhos, que estão descritos em [Manifesto XML dos suplementos do Office](../develop/add-in-manifests.md). Por exemplo, crie um arquivo denominado BingSearch.xml que contém o XML a seguir.
     
-```XML
-   <?xml version="1.0" encoding="utf-8"?>
- <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" 
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-           xsi:type="TaskPaneApp">
-   <Id>1234-5678</Id>
-   <Version>15.0</Version>
-   <ProviderName>Microsoft</ProviderName>
-   <DefaultLocale>en-us</DefaultLocale>
-   <DisplayName DefaultValue="Bing Search">
-   </DisplayName>
-   <Description DefaultValue="Search selected data on Bing">
-   </Description>
-   <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg">
-   </IconUrl>
-   <Capabilities>
-     <Capability Name="Project"/>
-   </Capabilities>
-   <DefaultSettings>
-     <SourceLocation DefaultValue="http://m.bing.com">
-     </SourceLocation>
-   </DefaultSettings>
-   <Permissions>ReadWriteDocument</Permissions>
- </OfficeApp>
-```
+    ```XML
+    <?xml version="1.0" encoding="utf-8"?>
+    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" 
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:type="TaskPaneApp">
+      <Id>1234-5678</Id>
+      <Version>15.0</Version>
+      <ProviderName>Microsoft</ProviderName>
+      <DefaultLocale>en-us</DefaultLocale>
+      <DisplayName DefaultValue="Bing Search">
+      </DisplayName>
+      <Description DefaultValue="Search selected data on Bing">
+      </Description>
+      <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg">
+      </IconUrl>
+      <Capabilities>
+        <Capability Name="Project"/>
+      </Capabilities>
+      <DefaultSettings>
+        <SourceLocation DefaultValue="http://m.bing.com">
+        </SourceLocation>
+      </DefaultSettings>
+      <Permissions>ReadWriteDocument</Permissions>
+    </OfficeApp>
+    ```
 
 - Abaixo estão os elementos obrigatórios no manifesto do suplemento:
   - No elemento **OfficeApp**, o atributo `xsi:type="TaskPaneApp"` especifica que o suplemento é um tipo de painel de tarefas.
@@ -106,46 +107,47 @@ O arquivo de manifesto especifica a URL do suplemento, a página da Web ou aplic
     
 - (Opcional) Adicione elementos **Override** que têm valores de outras localidades. Por exemplo, o manifesto a seguir fornece elementos **Override** para valores em francês de **DisplayName**, **Description**, **IconUrl** e **SourceLocation**.
     
-```XML
-   <?xml version="1.0" encoding="utf-8"?>
- <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" 
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-           xsi:type="TaskPaneApp">
-   <Id>1234-5678</Id>
-   <Version>15.0</Version>
-   <ProviderName>Microsoft</ProviderName>
-   <DefaultLocale>en-us</DefaultLocale>
-   <DisplayName DefaultValue="Bing Search">
-     <Override Locale="fr-fr" Value="Bing Search"/>
-   </DisplayName>
-   <Description DefaultValue="Search selected data on Bing">
-     <Override Locale="fr-fr" Value="Search selected data on Bing"></Override>
-   </Description>
-   <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg">
-     <Override Locale="fr-fr" Value="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg"/>
-   </IconUrl>
-   <Capabilities>
-     <Capability Name="Project"/>
-   </Capabilities>
-   <DefaultSettings>
-     <SourceLocation DefaultValue="http://m.bing.com">
-       <Override Locale="fr-fr" Value="http://m.bing.com"/>
-     </SourceLocation>
-   </DefaultSettings>
-   <Permissions>ReadWriteDocument</Permissions>
- </OfficeApp>
-```
+    ```XML
+    <?xml version="1.0" encoding="utf-8"?>
+    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" 
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:type="TaskPaneApp">
+      <Id>1234-5678</Id>
+      <Version>15.0</Version>
+      <ProviderName>Microsoft</ProviderName>
+      <DefaultLocale>en-us</DefaultLocale>
+      <DisplayName DefaultValue="Bing Search">
+        <Override Locale="fr-fr" Value="Bing Search"/>
+      </DisplayName>
+      <Description DefaultValue="Search selected data on Bing">
+        <Override Locale="fr-fr" Value="Search selected data on Bing"></Override>
+      </Description>
+      <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg">
+        <Override Locale="fr-fr" Value="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg"/>
+      </IconUrl>
+      <Capabilities>
+        <Capability Name="Project"/>
+      </Capabilities>
+      <DefaultSettings>
+        <SourceLocation DefaultValue="http://m.bing.com">
+          <Override Locale="fr-fr" Value="http://m.bing.com"/>
+        </SourceLocation>
+      </DefaultSettings>
+      <Permissions>ReadWriteDocument</Permissions>
+    </OfficeApp>
+    ```
 
 
 ## <a name="installing-project-add-ins"></a>Instalar suplementos do Project
 
 
-No Project 2013, você pode instalar suplementos como soluções autônomas em um compartilhamento de arquivos ou em um catálogo de suplementos particular. Você também pode avaliar e comprar suplementos na Office Store pública.
+No Project 2013, é possível instalar suplementos como soluções autônomas em um compartilhamento de arquivos ou em um catálogo de suplementos particular. Também é possível avaliar e comprar suplementos no AppSource.
 
 Pode haver vários arquivos XML do manifesto do suplemento e subdiretórios em um compartilhamento de arquivos. Você pode adicionar ou remover locais e catálogos do diretório do manifesto usando a guia **Catálogos de Suplementos Confiáveis** na caixa de diálogo **Central de Confiabilidade** no Project 2013. Para mostrar um suplemento no Project, o elemento **SourceLocation** em um manifesto deve apontar para um site ou arquivo de origem HTML existente.
 
 
- >**Observação** O Internet Explorer 9 ou posterior precisa estar instalado, mas não precisa ser o navegador padrão. Os Suplementos do Office exigem componentes no Internet Explorer 9. O navegador padrão pode ser o Internet Explorer 9, o Safari 5.0.6, o Firefox 5, o Chrome 13 ou uma versão mais recente de um desses navegadores.
+> [!NOTE]
+> O Internet Explorer 9 ou posterior precisa estar instalado, mas não precisa ser o navegador padrão. Os Suplementos do Office exigem componentes no Internet Explorer 9. O navegador padrão pode ser o Internet Explorer 9, o Safari 5.0.6, o Firefox 5, o Chrome 13 ou uma versão mais recente de um desses navegadores.
 
 No procedimento 2, o suplemento Pesquisa do Bing é instalado no computador local onde o Project 2013 está instalado. No entanto, como a infraestrutura do suplemento não usa caminhos de arquivo local diretamente, como `C:\Project\AppManifests`, você pode criar um compartilhamento de rede no computador local. Se preferir, você pode criar um compartilhamento de arquivos em um computador remoto.
 
@@ -165,48 +167,41 @@ No procedimento 2, o suplemento Pesquisa do Bing é instalado no computador loca
     
 6. No painel **Catálogos de Suplementos Confiáveis** (confira a Figura 1), adicione o caminho `\\ServerName\AppManifests` à caixa de texto **URL do Catálogo**, escolha **Adicionar Catálogo** e escolha **OK**.
     
-     >**Observação** A Figura 1 mostra dois compartilhamentos de arquivo e uma URL hipotética para um catálogo particular na lista **Endereços do Catálogo Confiável**. Apenas um compartilhamento de arquivo pode ser o compartilhamento de arquivos padrão, e apenas uma URL de catálogo pode ser o catálogo padrão. Por exemplo, se você definir `\\Server2\AppManifests` como o padrão, o Project limpará a caixa de seleção **Padrão** para `\\ServerName\AppManifests`. Se você alterar a seleção padrão, escolha **Limpar** para remover suplementos instalados e reinicie o Project. Se você adicionar um suplemento ao compartilhamento de arquivo padrão ou catálogo do SharePoint enquanto o Project estiver aberto, reinicie o Project.
+    > [!NOTE]
+    > A Figura 1 mostra dois compartilhamentos de arquivo e uma URL hipotética para um catálogo particular na lista **Endereços do Catálogo Confiável**. Apenas um compartilhamento de arquivo pode ser o compartilhamento de arquivos padrão, e apenas uma URL de catálogo pode ser o catálogo padrão. Por exemplo, se você definir `\\Server2\AppManifests` como o padrão, o Project limpará a caixa de seleção **Padrão** para `\\ServerName\AppManifests`. Se você alterar a seleção padrão, escolha **Limpar** para remover suplementos instalados e reinicie o Project. Se você adicionar um suplemento ao compartilhamento de arquivo padrão ou catálogo do SharePoint enquanto o Project estiver aberto, reinicie o Project.
 
-    **Figura 1. Usando a Central de Confiabilidade para adicionar catálogos de manifestos de suplemento**
+    *Figura 1. Usando a Central de Confiabilidade para adicionar catálogos de manifestos de suplemento*
 
-    ![Using the Trust Center to add app manifests](../images/pj15_AgaveOverview_TrustCenter.PNG)
+    ![Using the Trust Center to add app manifests](../images/pj15-agave-overview-trust-centers.png)
 
 7. Na faixa de opções **Project**, escolha o menu suspenso **Suplementos do Office** e escolha **Ver Tudo**. Na caixa de diálogo **Inserir Suplemento**, escolha **PASTA COMPARTILHADA** (confira a Figura 2).
     
-    **Figura 2. Iniciando um suplemento que está em um compartilhamento de arquivos**
+    *Figura 2. Iniciando um suplemento que está em um compartilhamento de arquivos*
 
-    ![Starting an Office app that is on a file share](../images/pj15_AgaveOverview_StartAgaveApp.PNG)
+    ![Starting an Office app that is on a file share](../images/pj15-agave-overview-start-agave-apps.png)
 
 8. Selecione o suplemento Pesquisa do Bing e escolha **Inserir**.
     
-O suplemento Pesquisa do Bing é exibido em um painel de tarefas, como na Figura 3. Você pode redimensionar o painel de tarefas manualmente e usar o suplemento Pesquisa do Bing.
+    O suplemento Pesquisa do Bing é exibido em um painel de tarefas, como na Figura 3. Você pode redimensionar o painel de tarefas manualmente e usar o suplemento Pesquisa do Bing.
 
-**Figura 3. Usando o suplemento Pesquisa do Bing**
+    *Figura 3. Usando o suplemento Pesquisa do Bing*
 
-![Using the Bing Search app](../images/pj15_AgaveOverview_BingSearch.gif)
+    ![Using the Bing Search app](../images/pj15-agave-overview-bing-search.png)
 
 
 ## <a name="distributing-project-add-ins"></a>Distribuir suplementos do Project
 
 
-Você pode distribuir suplementos usando um compartilhamento de arquivos, um catálogo de suplementos em uma biblioteca do SharePoint ou um suplemento do Project na Office Store. Para saber mais, confira [Publicar seu suplemento do Office](../publish/publish.md).
+É possível distribuir suplementos usando um compartilhamento de arquivos, um catálogo de suplementos em uma biblioteca do SharePoint ou o AppSource. Saiba mais em [Publicar seu suplemento do Office](../publish/publish.md).
 
 
-## <a name="additional-resources"></a>Recursos adicionais
+## <a name="see-also"></a>Veja também
 
-
-
-- [Visão geral da plataforma de suplementos do Office](../overview/office-add-ins.md)
-    
-- [Manifesto XML dos suplementos do Office](../overview/add-in-manifests.md)
-    
-- [API JavaScript para Office](http://dev.office.com/reference/add-ins/javascript-api-for-office)
-    
-- [Criar seu primeiro suplemento de painel de tarefas para o Project 2013 usando um editor de texto](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
-    
-- [Criar um suplemento do Project que usa REST com um serviço OData local do Project Server](../project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
-    
+- [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
+- [Manifesto XML dos Suplementos do Office](../develop/add-in-manifests.md)
+- [JavaScript API para Office](https://dev.office.com/reference/add-ins/javascript-api-for-office)
+- [Criar seu primeiro suplemento de painel de tarefas para o Project 2013 usando um editor de texto](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
+- [Criar um suplemento de Project que usa REST com um serviço local do Project Server OData](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
 - [Conectar um suplemento de painel de tarefas do Project ao PWA](http://blogs.msdn.com/b/project_programmability/archive/2012/11/02/connecting-a-project-task-pane-app-to-pwa.aspx)
-    
 - [Download do SDK do Project 2013](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)
     

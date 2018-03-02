@@ -1,8 +1,16 @@
+---
+title: Tratamento de erros
+description: ''
+ms.date: 12/04/2017
+---
+
+
 # <a name="error-handling"></a>Tratamento de erros
 
 Quando você cria um suplemento usando a API JavaScript do Excel, certifique-se de incluir a lógica de tratamento de erro para lidar com os erros de tempo de execução. Isso é fundamental devido à natureza assíncrona da API.
 
-**Observação**: Para saber mais sobre o método **sync()** e a natureza assíncrona da API JavaScript do Excel, confira [Principais conceitos da API JavaScript do Excel](excel-add-ins-core-concepts.md).
+> [!NOTE]
+> Para saber mais sobre o método **sync()** e a natureza assíncrona da API JavaScript do Excel, confira [Principais conceitos da API JavaScript do Excel](excel-add-ins-core-concepts.md).
 
 ## <a name="best-practices"></a>Práticas recomendadas
 
@@ -31,9 +39,10 @@ Quando uma solicitação da API JavaScript do Excel não é bem-sucedida, a API 
 
 - **debugInfo**: Quando presente, a propriedade `debugInfo` da mensagem de erro fornece informações adicionais que você pode usar para compreender a causa raiz do erro. 
 
-**Observação**: Se você usar `console.log()` para imprimir mensagens de erro no console, essas mensagens ficarão visíveis apenas no servidor. Os usuários finais não verão essas mensagens de erro no painel de tarefas do suplemento nem em outro lugar do aplicativo host.
+> [!NOTE]
+> Se você usar `console.log()` para imprimir mensagens de erro no console, essas mensagens ficarão visíveis apenas no servidor. Os usuários finais não verão essas mensagens de erro no painel de tarefas do suplemento nem em outro lugar do aplicativo host.
 
-## <a name="additional-resources"></a>Recursos adicionais
+## <a name="see-also"></a>Veja também
 
 - [Principais conceitos da API JavaScript do Excel](excel-add-ins-core-concepts.md)
-- [Objeto OfficeExtension.Error (API JavaScript para Excel)](http://dev.office.com/reference/add-ins/excel/error)
+- [Objeto OfficeExtension.Error (API JavaScript para Excel)](https://dev.office.com/reference/add-ins/excel/error)

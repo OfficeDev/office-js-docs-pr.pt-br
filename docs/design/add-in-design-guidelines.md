@@ -1,8 +1,16 @@
+---
+title: Diretrizes de design de suplementos do Office
+description: ''
+ms.date: 01/23/2018
+---
+
+
+
 # <a name="office-add-in-design-guidelines"></a>Diretrizes de design de suplementos do Office
 
 Aprimore a experiência do usuário no suplemento do Office desenvolvendo uma interface do usuário que corresponda à voz do Office e aplique as diretrizes de acessibilidade para garantir que o suplemento seja acessível a todos os usuários.
 
-Se você planeja tornar seu suplemento [disponível na Office Store](https://dev.office.com/officestore/docs/submit-to-the-office-store), certifique-se de que a linguagem e o conteúdo estejam compatíveis com as [Políticas de validação](https://dev.office.com/officestore/docs/validation-policies).
+Se você pretende [disponibilizar seu suplemento no AppSource](https://docs.microsoft.com/pt-br/office/dev/store/submit-to-the-office-store), a linguagem e o conteúdo devem ser compatíveis com as [Políticas de validação](https://docs.microsoft.com/pt-br/office/dev/store/validation-policies).
 
 ## <a name="voice-guidelines"></a>Diretrizes de voz 
 
@@ -13,7 +21,7 @@ Para alinhar seu texto aos princípios do tom do Office:
 - **Use um estilo natural.** Escreva da maneira como você fala. Evite jargões e frases ou palavras muito técnicas. Use termos que sejam familiares aos usuários.
 - **Use uma linguagem simples e direta.** Use palavras e frases curtas, e a voz ativa no seu texto. 
 - **Seja consistente.** Use sempre as mesmas palavras para os mesmos conceitos.
-- **Envolva os usuários.** Use o pronome “você” para falar com os usuários. Evite usar a terceira pessoa. Use imperativos para as tarefas do usuário.
+- **Envolva os usuários.** Use o pronome "você" para falar com os usuários. Evite usar a terceira pessoa. Use imperativos para as tarefas do usuário.
 - **Seja prestativo e empático.** Torne seu texto positivo, gentil, solidário e estimulante. Enfatize o que os usuários podem conseguir, não o que eles não podem.
 - **Conheça seus clientes.** Leve em consideração as questões culturais e a globalização ao usar expressões idiomáticas e coloquialismos.
 
@@ -49,7 +57,7 @@ Para alinhar seu texto aos princípios do tom do Office:
 - Forneça uma maneira para os usuários ativarem legendas ou descrições de áudio com fontes de áudio.
 - Forneça alternativas para o som como um meio para alertar os usuários, como indicações visuais ou vibrações.
 
-### <a name="accessibility-resources"></a>Recursos de acessibilidade
+## <a name="see-also"></a>Veja também
 
 - [Diretrizes de Acessibilidade para Conteúdo da Web (WCAG) 2.0](http://www.w3.org/TR/wcag2ict/#REF-WCAG20)
 - [Orientações sobre a Aplicação das WCAG 2.0 para Tecnologias de Comunicação e Informação que não Sejam da Web (WCAG2ICT)](http://www.w3.org/TR/wcag2ict/)

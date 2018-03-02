@@ -1,3 +1,11 @@
+---
+title: Teste de usabilidade de Suplementos do Office
+description: ''
+ms.date: 01/23/2018
+---
+
+
+
 # <a name="usability-testing-for-office-add-ins"></a>Teste de usabilidade de Suplementos do Office
 
 Um excelente design de suplemento considera os comportamentos do usuário. Como seus próprios conceitos prévios influenciam suas decisões de design, é importante testar designs com usuários reais para garantir que seus suplementos funcionem bem para seus clientes. 
@@ -12,10 +20,10 @@ Esses serviços de teste o ajudam a simplificar a criação do plano de teste e 
 
 Você precisa de apenas cinco participantes para descobrir a maioria dos problemas de usabilidade no seu design. Incorpore testes pequenos regularmente durante o ciclo de desenvolvimento para garantir que seu produto seja centralizado no usuário.
 
-> 
-  **Observação:** Recomendamos que você teste a usabilidade do seu suplemento em várias plataformas. Para [publicar seu suplemento à Office Store](https://msdn.microsoft.com/pt-br/library/office/jj220037.aspx), ele deve funcionar em todas as [plataformas compatíveis com os métodos que você define](https://dev.office.com/add-in-availability).
+> [!NOTE]
+> Recomendamos que você teste a usabilidade do seu suplemento em várias plataformas. Para [publicar](https://docs.microsoft.com/pt-br/office/dev/store/submit-to-the-office-store) seu suplemento no AppSource, ele deve funcionar em todas as [plataformas compatíveis com os métodos que você definir](../overview/office-add-in-availability.md).
 
-## <a name="1----sign-up-for-a-testing-service"></a>1.    Inscreva-se em um serviço de teste
+## <a name="1---sign-up-for-a-testing-service"></a>1.   Inscreva-se em um serviço de teste
 
 Saiba mais em [Seleção de uma ferramenta online para o teste de usuário remoto não moderado.](https://www.nngroup.com/articles/unmoderated-user-testing-tools/)
 
@@ -25,7 +33,7 @@ As perguntas da pesquisa definem os objetivos de sua pesquisa e guiam seu plano 
  
 A seguir, alguns exemplos de perguntas de pesquisa:
   
- **Específicas**  
+**Específicas**  
 
  - Os usuários percebem o link "avaliação gratuita" na página inicial?
  - Quando os usuários inserem conteúdo do suplemento em seu documento eles entendem onde é inserido no documento?
@@ -38,8 +46,8 @@ A seguir, alguns exemplos de perguntas de pesquisa:
 
 É importante obter dados de toda a jornada do usuário – da descoberta do suplemento à instalação e utilização dele. Considere perguntas de pesquisa que abordem os seguintes aspectos da experiência do usuário no suplemento:
  
- - Localizando o suplemento na Loja
- - Escolhendo instalar o suplemento
+ - Localização do suplemento na Loja
+ - Escolha da instalação do suplemento
  - Experiência de primeira execução
  - Comandos da faixa de opções
  - Interface do Usuário do Suplemento
@@ -59,23 +67,22 @@ O verificador é o conjunto de perguntas e requisitos que você apresentará aos
 Por exemplo, se deseja encontrar participantes que estão familiarizados com o GitHub, para filtrar os usuários que possam se mostrar incorretamente, inclua respostas falsas na lista de possíveis respostas.
 
 **Com quais dos seguintes repositórios de código fonte você tem familiaridade?**  
- a.    SourceShelf [*Rejeitar*]  
- b.    CodeContainer [*Rejeitar*]  
- c.    GitHub [*Deve selecionar*]  
- d.    BitBucket [*Pode selecionar*]  
- e.    CloudForge [*Pode selecionar*]  
-
+ a. SourceShelf [*Rejeitar*]  
+ b. CodeContainer [*Rejeitar*]  
+ c. GitHub [*Deve selecionar*]  
+ d. BitBucket [*Pode selecionar*]  
+ e. CloudForge [*Pode selecionar*]  
 
 Se estiver planejando testar uma compilação em funcionamento do suplemento, as perguntas a seguir podem verificar os usuários que conseguirão fazer isso. 
 
-   **Este teste requer que você tenha o Microsoft PowerPoint 2016. Você tem o PowerPoint 2016?**  
-   a.    Sim [*Deve selecionar*]  
-   b.    Não [*Rejeitar*]  
-   c.    Não sei [*Rejeitar*]  
+**Este teste requer que você tenha o Microsoft PowerPoint 2016. Você tem o PowerPoint 2016?**  
+ a. Sim [*Deve selecionar*]  
+ b. Não [*Rejeitar*]  
+ c. Não sei [*Rejeitar*]  
 
-   **Este teste requer que você instale um suplemento gratuito para PowerPoint 2016 e crie uma conta gratuita para usá-lo. Você está disposto a instalar um suplemento e criar uma conta gratuita?**  
-    a.    Sim [*Deve selecionar*]  
-    b.    Não [*Rejeitar*]  
+**Este teste requer que você instale um suplemento gratuito para PowerPoint 2016 e crie uma conta gratuita para usá-lo. Você está disposto a instalar um suplemento e criar uma conta gratuita?**  
+ a. Sim [*Deve selecionar*]  
+ b. Não [*Rejeitar*]  
 
 Para saber mais, veja [Práticas recomendadas do verificador de perguntas.](http://help.usertesting.com/customer/en/portal/articles/2077835-screener-question-best-practices)
  
@@ -127,7 +134,7 @@ Um único participante com um problema de usabilidade não é suficiente para ge
 Em geral, tome cuidado com como você usa seus dados para tirar conclusões. Não caia na armadilha de tentar fazer com que os dados se ajustem a uma determinada narrativa. Seja honesto sobre o que os dados realmente comprovam, refutam ou apenas falham em oferecer informações. Mantenha a mente aberta. O comportamento do usuário com frequência desafia as expectativas do designer.
  
 
-## <a name="additional-resources"></a>Recursos adicionais
+## <a name="see-also"></a>Veja também
  
  - [Como conduzir testes de usabilidade](http://whatpixel.com/howto-conduct-usability-testing/)  
  - [Práticas recomendadas](http://help.usertesting.com/customer/en/portal/articles/1680726-best-practices)  
