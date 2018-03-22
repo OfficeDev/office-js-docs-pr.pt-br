@@ -213,7 +213,7 @@ Excel.run(function (ctx) {
 ```
 ## <a name="42ornullobject-methods"></a>Métodos &#42;OrNullObject
 
-Muitos métodos de API JavaScript do Excel retornarão uma exceção quando a condição da API não for atendida. Por exemplo, se você tentar obter uma planilha especificando um nome de planilha que não existe na pasta de trabalho, o método `getItem()` retornará uma exceção `ItemNotFound`. 
+Muitos métodos da API JavaScript do Excel retornarão uma exceção quando a condição da API não for atendida. Por exemplo, se você tentar obter uma planilha especificando um nome de planilha que não existe na pasta de trabalho, o método `getItem()` retornará uma exceção `ItemNotFound`. 
 
 Em vez de implementar a lógica complexa de tratamento de exceção para cenários como este, você pode usar a variante do método `*OrNullObject` que está disponível para vários métodos na API JavaScript do Excel. Um método `*OrNullObject` retornará um objeto nulo (não o `null` do JavaScript), em vez de emitir uma exceção se o item especificado não existir. Por exemplo, você pode chamar o método `getItemOrNullObject()` em uma coleção, como **Worksheets**, para tentar recuperar um item da coleção. O método `getItemOrNullObject()` retornará o item especificado se ele existir; caso contrário, ele retornará um objeto nulo. O objeto nulo que é retornado contém a propriedade booliana `isNullObject`, que você pode avaliar para determinar se o objeto existe.
 

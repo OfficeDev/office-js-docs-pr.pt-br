@@ -1,5 +1,8 @@
 Quando uma tabela for longa o suficiente para que um usuário precise rolar para ver algumas linhas, a linha de cabeçalho poderá ficar fora da vista. Nesta etapa do tutorial, você precisará congelar a linha do cabeçalho da tabela que criou anteriormente para que ela permaneça visível, mesmo que o usuário role ao longo da planilha. 
 
+> [!NOTE]
+> Esta página descreve uma etapa individual do tutorial de suplemento do Excel. Se você chegou aqui por meio dos resultados de mecanismos de pesquisa ou via outro link direto, acesse a página de Introdução do [tutorial de suplemento do Excel](../tutorials/excel-tutorial.yml) para começá-lo do início.
+
 ## <a name="freeze-the-tables-header-row"></a>Congelar a linha de cabeçalho da tabela
 
 1. Abra o projeto em seu editor de código. 
@@ -40,8 +43,8 @@ Quando uma tabela for longa o suficiente para que um usuário precise rolar para
     ``` 
 
 7. Substitua `TODO1` pelo código a seguir. Observação:
-   - O conjunto `Worksheet.freezePanes` é um conjunto de painéis da planilha que fica fixado ou congelado no mesmo lugar quando rolamos a planilha.
-   - O método `freezeRows` considera como um parâmetro o número de linhas, começando da parte superior, que devem ser fixadas no local. Passamos `1` para fixar a primeira linha.
+   - A coleção `Worksheet.freezePanes` é um conjunto de painéis da planilha que fica congelado ou fixado no mesmo lugar quando rolamos a planilha.
+   - O método `freezeRows` considera como parâmetro o número de linhas, começando da parte superior, que devem ser fixadas no local. Passamos `1` para fixar a primeira linha no local.
 
     ```js
     const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();

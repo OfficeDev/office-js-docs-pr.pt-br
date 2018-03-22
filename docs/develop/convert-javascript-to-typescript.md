@@ -37,7 +37,7 @@ Este artigo mostra como criar um suplemento do Excel usando o Visual Studio e de
 
 4. Na janela **Criar Suplemento do Office**, escolha **Adicionar novas funcionalidades para o Excel**e clique em **Concluir** para criar o projeto.
 
-5. O Visual Studio cria uma solução e os dois projetos são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.
+5. O Visual Studio cria uma solução, e os dois projetos dele são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.
 
 ## <a name="convert-the-add-in-project-to-typescript"></a>Converter o projeto do suplemento para TypeScript
 
@@ -225,7 +225,7 @@ declare var fabric: any;
 })();
 ```
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Veja também
 
 * [Discussão de implementação do Promise no StackOverflow](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
 * [Exemplos de Suplementos do Office no GitHub](https://github.com/officedev)

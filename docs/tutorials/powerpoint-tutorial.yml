@@ -1,0 +1,40 @@
+### YamlMime:Tutorial
+documentType: Tutorial
+title: Tutorial de suplemento do PowerPoint
+metadata:
+  title: Tutorial de suplemento do PowerPoint
+  description: Neste tutorial, você vai criar um suplemento do PowerPoint que insere imagem, texto, obtém metadados do slide e navega entre slides.
+  audience: Desenvolvedor
+  level: Iniciante
+  displayType: one-column
+  ms.date: 02/28/2018
+items:
+- durationInMinutes: 1
+  content: |
+    Este tutorial ensina a criar um suplemento do painel de tarefas do PowerPoint que adiciona a foto do dia do <a href="https://www.bing.com">Bing</a> a um slide, adiciona texto, obtém metadados do slide e navega entre slides. Se ocorrer algum problema durante o processo, <a href="https://github.com/OfficeDev/office-js-docs-pr/issues">fale conosco</a>.
+- title: Criar seu projeto do suplemento
+  durationInMinutes: 5
+  content: |
+    [!INCLUDE [](../includes/powerpoint-tutorial-setup.md)]
+- title: Inserir uma imagem
+  durationInMinutes: 8
+  content: |
+    [!INCLUDE [](../includes/powerpoint-tutorial-insert-image.md)]
+- title: Personalizar os elementos da IU (interface do usuário)
+  durationInMinutes: 3
+  content: |
+    [!INCLUDE [](../includes/powerpoint-tutorial-customize-ui.md)]
+- title: Inserir texto
+  durationInMinutes: 4
+  content: |
+    [!INCLUDE [](../includes/powerpoint-tutorial-insert-text.md)]
+- title: Obter metadados do slide
+  durationInMinutes: 4
+  content: |
+    [!INCLUDE [](../includes/powerpoint-tutorial-get-slide-metadata.md)]
+- title: Navegar entre slides
+  durationInMinutes: 5
+  content: |
+    [!INCLUDE [](../includes/powerpoint-tutorial-navigate-slides.md)]
+- content: |
+    Você concluiu o tutorial de suplemento do PowerPoint. Saiba mais sobre a criação de suplementos do PowerPoint em <a href="../powerpoint/powerpoint-add-ins.md">Visão geral de suplementos do PowerPoint</a>.

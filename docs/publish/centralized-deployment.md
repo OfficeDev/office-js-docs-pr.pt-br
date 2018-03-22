@@ -114,7 +114,7 @@ Depois de um suplemento do Office ter sido publicado por meio de Implantação C
 
 - **Suplemento de linha de negócios**: Se um administrador tiver carregado explicitamente um arquivo de manifesto durante a implementação da Implantação Centralizada por meio do Centro de administração do Office 365, o administrador deverá carregar um novo arquivo de manifesto que contém as alterações desejadas. Depois que o arquivo de manifesto atualizado for carregado, o suplemento será atualizado na próxima vez que os aplicativos relevantes do Office iniciarem.
 
-- **Suplemento do AppSource**: se um administrador selecionar um suplemento do AppSource durante a implementação da Implantação Centralizada pelo Centro de administração do Office 365 e as atualizações de suplementos no AppSource, o suplemento será atualizado posteriormente pela Implantação Centralizada. Na próxima vez que os aplicativos relevantes do Office iniciarem, o suplemento será atualizado.
+- **Suplemento do AppSource**: se um administrador selecionar um suplemento do AppSource durante a implementação da Implantação Centralizada pelo Centro de administração do Office 365, e as atualizações de suplementos ocorrerem no AppSource, o suplemento será atualizado posteriormente pela Implantação Centralizada. Da próxima vez que os aplicativos relevantes do Office iniciarem, o suplemento será atualizado.
 
 ## <a name="end-user-experience-with-add-ins"></a>Experiência do usuário final com suplementos
 

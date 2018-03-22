@@ -1,9 +1,12 @@
 Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, passa uma mensagem do processo de caixa de diálogo para o processo de painel de tarefas e fecha a caixa de diálogo. As caixas de diálogo do Suplemento do Office são *não modais*: o usuário pode continuar a interagir com o documento no aplicativo do Office do host e com a página host no painel de tarefas.
 
+> [!NOTE]
+> Esta página descreve uma etapa individual do tutorial de suplemento do Excel. Se você chegou aqui por meio dos resultados de mecanismos de pesquisa ou via outro link direto, acesse a página de Introdução do [tutorial de suplemento do Excel](../tutorials/excel-tutorial.yml) para começá-lo do início.
+
 ## <a name="create-the-dialog-page"></a>Crie a página da caixa de diálogo
 
 1. Abra o projeto em seu editor de código.
-2. Crie um arquivo na raiz do projeto (onde index.html se encontra) chamado popup.html.
+2. Crie um arquivo chamado popup.html na raiz do projeto (onde se encontra index.html).
 3. Adicione a marcação a seguir em popup.html. Observação:
    - A página tem um `<input>` onde o usuário insere o nome dele e um botão que enviará o nome para a página no painel de tarefas onde ele será exibido.
    - A marcação carrega um script chamado popup.js que você criará em uma etapa posterior.
@@ -40,10 +43,10 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
     </html>
     ```
 
-4. Crie um arquivo na raiz do projeto chamado o popup.js.
+4. Crie um arquivo chamado popup.js na raiz do projeto.
 5. Adicione o código a seguir a popup.js. Observação:
    - *Todas as páginas que chamam APIs na biblioteca Office.JS devem atribuir uma função à propriedade `Office.initialize`.* Se nenhuma inicialização for necessária, a função poderá ter um corpo vazio, mas a propriedade não deve ser deixada indefinida, atribuída a nulo ou a um valor que não seja uma função. Por exemplo, veja o arquivo app.js na raiz do projeto. O código que cria a tarefa deve ser executado antes de qualquer chamada para Office.JS; por isso, a tarefa se encontra em um arquivo de script que é carregado pela página, como neste caso.
-   - A função `ready` do jQuery é chamada dentro do método `initialize`. É uma regra quase universal que o código de carregamento, inicialização ou bootstrapping de outras bibliotecas JavaScript devem estar dentro da função `Office.initialize`.
+   - A função jQuery `ready` é chamada dentro do método `initialize`. É uma regra quase universal que o código de carregamento, inicialização ou bootstrapping de outras bibliotecas JavaScript deva estar dentro da função `Office.initialize`.
 
     ```js
     (function () {
@@ -110,13 +113,13 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
     $('#open-dialog').click(openDialog);
     ```
 
-6. Abaixo da função `freezeHeader`, adicione a declaração seguir. Essa variável é usada para armazenar um objeto no contexto de execução da página pai que atua como um intermediador no contexto de execução da página da caixa de diálogo.
+6. Abaixo da função `freezeHeader`, adicione a declaração seguinte. Essa variável é usada para armazenar um objeto no contexto de execução da página pai que atua como um intermediador no contexto de execução da página da caixa de diálogo.
 
     ```js
     let dialog = null;
     ```
 
-7. Abaixo da declaração de `dialog`, adicione a função seguir. É importante observar o que esse código *não* contém: não há nenhuma chamada de `Excel.run`. Isso ocorre porque a API para abrir uma caixa de diálogo é compartilhada com todos os hosts do Office, portanto, ela faz parte da API de Office JavaScript Common, não da API específica do Excel.
+7. Abaixo da declaração de `dialog`, adicione a função a seguir. É importante observar o que esse código *não* contém: não há nenhuma chamada de `Excel.run`. Isso ocorre porque a API para abrir uma caixa de diálogo é compartilhada com todos os hosts do Office, portanto, ela faz parte da API de Office JavaScript Common, não da API específica do Excel.
 
     ```js
     function openDialog() {
@@ -138,10 +141,10 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
     );
     ``` 
 
-## <a name="process-the-message-from-the-dialog-and-close-the-dialog"></a>Processe a mensagem da caixa de diálogo e feche a caixa de diálogo
+## <a name="process-the-message-from-the-dialog-and-close-the-dialog"></a>Processar a mensagem da caixa de diálogo e depois fechá-la
 
 1. Continue no arquivo app.js e substitua `TODO2` pelo código a seguir. Observação:
-   - O retorno de chamada é executado imediatamente depois que a caixa de diálogo é aberta com êxito e antes de usuário executar a ação na caixa de diálogo.
+   - O retorno de chamada é executado logo após a caixa de diálogo ser aberta com êxito e antes de o usuário executar qualquer ação nela.
    - O `result.value` é o objeto que funciona como um tipo de intermediário entre contextos execução das páginas de pai e de caixa de diálogo.
    - A função `processMessage` será criada em uma etapa posterior. Esse identificador processará os valores que sejam enviados da página da caixa de diálogo com chamadas da função `messageParent`.
 
@@ -161,9 +164,9 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
     }
     ```
 
-## <a name="test-the-add-in"></a>Teste o suplemento
+## <a name="test-the-add-in"></a>Testar o suplemento
 
-1. Se a janela Git bash ou o prompt de sistema habilitado para Node.JS do tutorial anterior ainda estiver aberto, insira Ctrl + C duas vezes para interromper a execução do servidor Web. Caso contrário, abra uma janela Git bash ou um prompt de sistema habilitado para Node.JS e navegue para a pasta **Iniciar** do projeto.
+1. Se a janela Git bash ou o prompt de sistema habilitado para Node.JS do tutorial anterior ainda estiverem abertos, digite Ctrl + C duas vezes para interromper a execução do servidor Web. Caso contrário, abra uma janela Git bash ou um prompt de sistema habilitado para Node.JS e navegue até a pasta **Iniciar** do projeto.
 
      > [!NOTE]
      > Embora o servidor de sincronização do navegador recarregue o suplemento no painel de tarefas sempre que você fizer uma alteração em algum arquivo, incluindo o arquivo app.js, ele não transcompila o JavaScript, portanto, é necessário repetir o comando de compilação para que as alterações em app.js as entrem em vigor. Para fazer isso, interrompa o processo do servidor para obter uma solicitação para inserir o comando de compilação. Após a compilação, reinicie o servidor. As próximas etapas executam esse processo.

@@ -48,7 +48,7 @@ Conclua as etapas a seguir para empacotar seu suplemento usando o Visual Studio 
 
     O Visual Studio gera os arquivos nos quais você precisa publicar seu suplemento e, em seguida, abre a pasta de saída de publicação. 
     
-Se você pretende enviar seu suplemento ao AppSource, pode escolher o link **Executar uma verificação de validação** para identificar problemas que possam impedir a aceitação do seu suplemento. Você deve resolver todos os problemas antes de enviar seu suplemento para o repositório.
+Se você planeja enviar seu suplemento ao AppSource, pode escolher o link **Executar uma verificação de validação** para identificar problemas que possam impedir a aceitação de seu suplemento. Resolva todos os problemas antes de enviar seu suplemento para a loja.
 
 Agora é possível carregar seu manifesto XML no local apropriado para [publicar seu suplemento](../publish/publish.md). É possível encontrar o manifesto XML em `OfficeAppManifests` na pasta `app.publish`. Por exemplo:
 

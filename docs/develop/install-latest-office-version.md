@@ -12,7 +12,7 @@ Novos recursos de desenvolvedor, inclusive os que ainda estão na visualização
 
 Aceitar para receber as versões mais recentes do Office 2016: 
 
-- Se você é assinante do Office 365 Home, Personal ou University, confira [Ser um Office Insider](https://products.office.com/en-us/office-insider).
+- Se você é assinante do Office 365 Home, Personal ou University, confira [Ser um Office Insider](https://products.office.com/pt-br/office-insider).
 - Se você for um cliente corporativo do Office 365, confira [Instalar a versão de Primeiro Lançamento do Office 365 para clientes corporativos](https://support.office.com/pt-br/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead?ui=en-US&rs=en-US&ad=US).
 - Se você estiver executando o Office 2016 em um Mac:
     - Inicie um programa do Office 2016 para Mac.

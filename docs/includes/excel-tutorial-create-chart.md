@@ -1,5 +1,8 @@
 Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que você criou anteriormente e depois vai formatar o gráfico.
 
+> [!NOTE]
+> Esta página descreve uma etapa individual do tutorial de suplemento do Excel. Se você chegou aqui por meio dos resultados de mecanismos de pesquisa ou via outro link direto, acesse a página de Introdução do [tutorial de suplemento do Excel](../tutorials/excel-tutorial.yml) para começá-lo do início.
+
 ## <a name="chart-table-data"></a>Dados de tabela do gráfico
 
 1. Abra o projeto em seu editor de código. 
@@ -52,7 +55,7 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
     ``` 
 
 8. Substitua `TODO2` pelo código a seguir. Observe os seguintes parâmetros:
-   - O primeiro parâmetro do método `add` especifica o tipo de gráfico. Existem vários tipos. 
+   - O primeiro parâmetro para o método `add` especifica o tipo de gráfico. Há diversos tipos. 
    - O segundo parâmetro especifica um intervalo de dados a incluir no gráfico. 
    - O terceiro parâmetro determina se uma série de pontos de dados da tabela deve estar representada por linha ou por coluna. A opção `auto` informa ao Excel para decidir o melhor método.
 

@@ -22,7 +22,7 @@ function add42 (a, b) {
 
 As funções personalizadas agora estão disponíveis na visualização. Siga estas etapas para experimentá-las:
 
-1.  Participe do programa [Office Insider](https://products.office.com/en-us/office-insider) para instalar a versão do Excel 2016 necessária para personalizar funções no computador (versão 16.8711 ou posterior). Você deve escolher canal "Insider" para a visualização de funções personalizadas funcionarem.
+1.  Participe do programa [Office Insider](https://products.office.com/pt-br/office-insider) para instalar a versão do Excel 2016 necessária para personalizar funções no computador (versão 16.8711 ou posterior). Você deve escolher canal "Insider" para a visualização de funções personalizadas funcionarem.
 2.  Clone o repositório [Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) e siga as instruções em *README.md* para iniciar o suplemento no Excel.
 3.  Digite `=CONTOSO.ADD42(1,2)` em qualquer célula e pressione **Enter** para executar a função personalizada.
 4.  Se tiver dúvidas, faça perguntas no Stack Overflow com a marcação [office-js](https://stackoverflow.com/questions/tagged/office-js).
@@ -187,9 +187,9 @@ Para funções de streaming, o parâmetro final, `caller`, não é especificado 
 Você pode cancelar funções e funções assíncronas de streaming. É importante cancelar as chamadas de função para reduzir o consumo de largura de banda, a memória de trabalho e a carga da CPU. O Excel cancela chamadas de funções nas seguintes situações:
 - O usuário edita ou exclui uma célula que faz referência à função.
 - É alterado um dos argumentos (entradas) para a função. Nesse caso, uma nova chamada de função é disparada, além do cancelamento.
-- O usuário aciona manualmente um recálculo. Como no caso acima, uma nova chamada de função é disparada, além do cancelamento.
+- O usuário aciona um recálculo manualmente. Como no caso acima, uma nova chamada de função é disparada, além do cancelamento.
 
-O código a seguir mostra o exemplo anterior com o cancelamento implementado. No código, o objeto `caller` contém uma função `onCanceled` que deve ser definida para cada função personalizada.
+O código a seguir mostra o exemplo anterior com o cancelamento implementado. No código, o objeto `caller` contém uma propriedade `onCanceled` que deve ser definida para cada função personalizada. Para que o Excel chame a função `onCanceled`, é necessário declarar o suporte para o cancelamento durante o registro da função, definindo o parâmetro `cancelable` para `true`.
 
 ```js
 function incrementValue(increment, caller){ 
@@ -266,7 +266,7 @@ function secondHighestTemp(temperatures){
  }
 ```
 
-Se você cria uma função que retorna um intervalo de dados, é necessário inserir uma fórmula de matriz no Excel para ver todo o intervalo de valores. Para saber mais, confira [Diretrizes e exemplos de fórmulas de matrizes](https://support.office.com/pt-br/article/Guidelines-and-examples-of-array-formulas-7d94a64e-3ff3-4686-9372-ecfd5caa57c7).
+Se você criar uma função que retorna um intervalo de dados, será necessário inserir uma fórmula de matriz no Excel para ver todo o intervalo de valores. Saiba mais em [Diretrizes e exemplos de fórmulas de matriz](https://support.office.com/pt-br/article/Guidelines-and-examples-of-array-formulas-7d94a64e-3ff3-4686-9372-ecfd5caa57c7).
 
 ## <a name="known-issues"></a>Problemas conhecidos
 

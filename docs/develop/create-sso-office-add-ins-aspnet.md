@@ -17,7 +17,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 * A versão mais recente disponível do Visual Studio 2017 Preview.
 
-* Office 2016, versão 1708, build 8424.nnnn ou posterior (a versão de assinatura do Office 365, às vezes chamada de "Clique para Executar"). Você talvez precise ser um participante do programa Office Insider para obter essa versão. Para obter mais informações, confira a página [Seja um Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1).
+* Office 2016, versão 1708, build 8424.nnnn ou posterior (a versão de assinatura do Office 365, às vezes chamada de "Clique para Executar"). Você talvez precise ser um participante do programa Office Insider para obter essa versão. Para obter mais informações, confira a página [Seja um Office Insider](https://products.office.com/pt-br/office-insider?tab=tab-1).
 
 ## <a name="set-up-the-starter-project"></a>Configure o projeto inicial
 
@@ -41,7 +41,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
    >    `Install-Package Microsoft.Identity.Client -Version 1.1.1-alpha0393 -Source https://www.myget.org/F/aad-clients-nightly/api/v3/index.json`
 
-   > 3. No **Gerenciador de Soluções**, clique com o botão direito do mouse em **Referências**. Verifique se **Microsoft.Identity.Client** está na lista. Se não estiver ou se houver um ícone de aviso na entrada, exclua a entrada e use o assistente do Visual Studio Add Reference para adicionar uma referência à montagem em **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.1-alpha0393\lib\net45\Microsoft.Identity.Client.dll**
+   > 3. No **Explorador de soluções**, clique com o botão direito em **Referências**. Confirme que o **Microsoft.Identity.Client** está listado. Se não estiver, ou se houver um ícone de aviso na entrada dele, exclua a entrada e use o assistente do Visual Studio Add Reference para adicionar uma referência à montagem em **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.1-alpha0393\lib\net45\Microsoft.Identity.Client.dll**
 
 1. Crie o projeto pela segunda vez.
 
@@ -94,7 +94,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     * perfil
 
     > [!NOTE]
-    > A permissão `User.Read` pode já estar listada por padrão. É uma boa prática não pedir permissões que não são necessárias, por isso recomendamos que você desmarque a caixa para essa permissão.
+    > A permissão `User.Read` pode já estar listada por padrão. É uma boa prática não pedir permissões desnecessárias, por isso recomendamos desmarcar a caixa para essa permissão.
 
 1. Na parte inferior da caixa de diálogo, clique em **OK**.
 
@@ -103,7 +103,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 ## <a name="grant-admin-consent-to-the-add-in"></a>Conceder consentimento de administrador para o suplemento
 
 > [!NOTE]
-> Este procedimento só será necessário quando você estiver desenvolvendo o suplemento. Quando o seu suplemento de produção é implantado no AppSource ou em um catálogo de suplementos, os usuários confiarão individualmente nele ou um administrador concordará pela organização na instalação.
+> Este procedimento só é necessário durante a criação do suplemento. Quando o suplemento de produção for implantado no AppSource ou em um catálogo de suplementos, os usuários confiarão individualmente nele ou um administrador concordará pela organização na instalação.
 
 1. Se o suplemento não estiver em execução no Visual Studio, pressione **F5** para executá-lo. Ele precisa estar em execução no IIS para que este procedimento seja concluído sem problemas.
 
@@ -223,7 +223,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 1. Abaixo da atribuição a `Office.initialize`, adicione o código a seguir. Observe o seguinte sobre este código:
 
     * O processamento de erros no suplemento às vezes tentará novamente obter um token de acesso automaticamente, usando um conjunto diferente de opções. A variável de contador `timesGetOneDriveFilesHasRun` e a variáveis de sinalizador `triedWithoutForceConsent` são usadas para garantir que o usuário não seja trocado repetidas vezes em tentativas falhas de obter um token. 
-    * Você criará um método `getDataWithToken` na próxima etapa, mas observe que ele define uma opção chamada `forceConsent` para `false`. A próxima etapa apresenta mais informações a respeito.
+    * Você criará um método `getDataWithToken` na próxima etapa, mas observe que ele define uma opção chamada `forceConsent` como `false`. Trataremos mais disso na etapa seguinte.
 
     ```javascript
     var timesGetOneDriveFilesHasRun = 0;
@@ -264,7 +264,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     getData("/api/values", accessToken);
     ```
 
-1. Abaixo do método `getOneDriveFiles`, adicione o seguinte. Sobre este código, observe:
+1. Abaixo do método `getOneDriveFiles`, adicione o seguinte. Observe isto sobre este código:
 
     * Este método utilitário chama um ponto de extremidade da API Web especificado e transmite a ela o mesmo token de acesso que aplicativo host do Office usou para obter acesso ao seu suplemento. No lado do servidor, esse token de acesso será usado no fluxo "on behalf of" (em nome de) para obter um token de acesso para o Microsoft Graph.
     * Você criará o método `handleServerSideErrors` em uma etapa posterior.
@@ -348,7 +348,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     > [!NOTE]
     > Os erros 13004 e 13005 não são processados neste método, pois eles só ocorrem em desenvolvimento. Eles não podem ser corrigidos pelo código de tempo de execução e não seria útil reportá-lo a um usuário final.
 
-1. Substitua `TODO5` pelo código a seguir. O erro 13006 ocorre quando há um erro especificado no host do Office que pode indicar que o host está instável. Peça que o usuário reinicie o Office.
+1. Substitua `TODO5` pelo seguinte código. O Erro 13006 ocorre quando houve um erro não especificado no host do Office, que pode indicar a instabilidade do host. Peça ao usuário para reiniciar o Office.
 
     ```javascript
     case 13006:
@@ -364,7 +364,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
         break;      
     ```
 
-1. Substitua `TODO7` pelo código a seguir. O erro 13008 ocorre quando o usuário aciona uma operação que chama o `getAccessTokenAsync` antes que uma chamada anterior dele seja concluída.
+1. Substitua `TODO7` pelo código a seguir. O Erro 13008 ocorre quando o usuário aciona uma operação que chama `getAccessTokenAsync` antes que uma chamada anterior dele seja concluída.
 
     ```javascript
     case 13008:
@@ -393,7 +393,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     ```  
 
 
-1. Abaixo do método `handleClientSideErrors`, adicione o método a seguir. Esse método processará os erros no serviço Web do suplemento quando algo der errado na execução do fluxo on-behalf-of ou ao obter dados do Microsoft Graph.
+1. Abaixo do método `handleClientSideErrors`, adicione o seguinte método. Esse método processará os erros no serviço Web do suplemento quando algo der errado na execução do fluxo on-behalf-of ou ao obter dados do Microsoft Graph.
 
     ```javascript
     function handleServerSideErrors(result) {
@@ -458,7 +458,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 1. Substitua `TODO13` pelo código a seguir. Observação sobre este código:
 
-    * O erro 70011 tem vários significados. O que é relevante para esse suplemento é quando ele significa que um escopo inválido (permissão) foi solicitado, então o código verifica a descrição completa do erro, não apenas o número.
+    * O Erro 70011 tem muitos significados. O que importa para este suplemento é quando ele significa que um escopo inválido (permissão) foi solicitado, então o código verifica a descrição completa do erro, não apenas o número.
     * O suplemento deverá relatar o erro.
 
     ```javascript
@@ -480,7 +480,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 1. Substitua `TODO15` pelo código a seguir. Observação sobre este código:
 
-    * A biblioteca de identidade que você estiver usando no código do servidor (Biblioteca de Autenticação da Microsoft - MSAL) deve garantir que nenhum token inválido ou expirado seja enviado para o Microsoft Graph, mas, se isso acontecer, o erro retornado para serviço Web do suplemento do Microsoft Graph terá o código `InvalidAuthenticationToken`. O código de servidor criado em uma etapa posterior transmitirá essa mensagem para cliente do suplemento.
+    * A biblioteca de identidade que você usará no código do lado do servidor (Biblioteca de Autenticação da Microsoft - MSAL) deve garantir que nenhum token inválido ou expirado seja enviado para o Microsoft Graph. Contudo, se isso ocorrer, o erro retornado para serviço Web do suplemento do Microsoft Graph terá o código `InvalidAuthenticationToken`. O código do lado do servidor que você criará em uma etapa futura transmitirá essa mensagem ao cliente do suplemento.
     * Nesse caso, o suplemento deverá iniciar o processo de autenticação completo ao redefinir o contador e as variáveis de sinalizador e, em seguida, chamando novamente o método de identificador de botão.
 
     ```javascript
@@ -565,7 +565,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
         };
     ```
 
-1. Substitua TODO4 pelo seguinte código. Observação sobre o código:
+1. Substitua TODO4 pelo seguinte. Observação sobre este código:
 
     * O método `UseOAuthBearerAuthentication` é chamado em vez do `UseWindowsAzureActiveDirectoryBearerAuthentication` que é mais comum, porque este último não é compatível com o ponto de extremidade V2 do Azure AD.
     * A URL de descoberta transmitida ao método é onde o middleware OWIN obtém instruções para conseguir a chave que precisa para verificar a assinatura no token de acesso recebido do host do Office.
@@ -673,8 +673,8 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 8. Substitua `TODO3a` pelo código a seguir. Observação sobre este código:
 
-    * Se a autenticação multifator for requerida pelo recurso MS Graph e o usuário ainda não a tiver fornecido, o AAD retornará "400 Solicitação Incorreta" com o erro AADSTS50076 e propriedade **Claims**. O MSAL exibe **MsalUiRequiredException** (que herda de **MsalServiceException**) com essas informações. 
-    * O valor da propriedade**Claims** deve ser passado para o cliente, que o passará para o host do Office, que, em seguida, o incluirá em um pedido para um novo token. O AAD solicitará ao usuário todas as formas de autenticação requeridas.
+    * Se a autenticação multifator for exigida pelo recurso MS Graph e o usuário ainda não a tiver fornecido, o AAD retornará "400 Bad Request" com o erro AADSTS50076 e uma propriedade **Declarações**. O MSAL lançará uma **MsalUiRequiredException** (que herda de **MsalServiceException**) com essas informações. 
+    * O valor da propriedade **Declarações** deve ser passado para o cliente, que deve passá-lo para o host do Office, que, por sua vez, o incluirá em um pedido para um novo token. O AAD solicitará ao usuário todas as formas de autenticação necessárias.
     * As APIs que criam respostas HTTP a partir de exceções não conhecem a propriedade **Claims**, portanto, elas não a incluem no objeto de resposta. É necessário criar manualmente uma mensagem que inclua esse recurso. Uma propriedade **Message** personalizada, no entanto, impede a criação de uma propriedade **ExceptionMessage**, portanto, a única maneira de obter a ID de erro `AADSTS50076` para o cliente é adicioná-la à **Message** personalizada. O JavaScript no cliente precisará descobrir se uma resposta tem uma **Message** ou **ExceptionMessage** para saber qual ler.
     * A mensagem personalizada é formatada como JSON para que o JavaScript do cliente possa analisá-la com métodos de objeto `JSON` conhecidos.
     * Você criará o método `SendErrorToClient` em uma etapa posterior. É segundo parâmetro é um objeto **Exception**. Nesse caso, o código passa `null` porque incluir o objeto **Exception** bloqueia a inclusão da propriedade **Message** na resposta HTTP que é gerada.
@@ -686,12 +686,12 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     }
     ```
 
-9. Substitua `TODO3b` e `TODO3c` pelo código a seguir. Observação sobre o código:
+9. Substitua `TODO3b` e `TODO3c` pelo código a seguir. Observação sobre este código:
 
     * Se a chamada para o AAD contiver pelo menos um escopo (permissão) que não tenha sido consentido pelo usuário ou por um administrador de locatários (ou se o consentimento foi revogado), o AAD retornará "400 Solicitação Incorreta" com o erro `AADSTS65001`. O MSAL exibe um **MsalUiRequiredException** com essas informações. O cliente deve chamar `getAccessTokenAsync` novamente com a opção `{ forceConsent: true }`.
     *  Se a chamada para o AAD contiver pelo menos um escopo que AAD não reconhece, o AAD retornará "400 Solicitação Incorreta" com o erro `AADSTS70011`. O MSAL exibe um **MsalUiRequiredException** com essas informações. O cliente deve informar o usuário.
     *  A descrição completa é incluída porque 70011 é retornado em outras condições e ele deve ser processado nesse suplemento somente quando significar que há um escopo inválido. 
-    *  O objeto **MsalUiRequiredException** é passado para `SendErrorToClient`. Isso garante que uma propriedade **ExceptionMessage** que contém as informações de erro seja incluída na resposta HTTP.
+    *  O objeto **MsalUiRequiredException** é passado para `SendErrorToClient`. Isso garante que uma propriedade **ExceptionMessage** contendo as informações de erro seja incluída na resposta HTTP.
     *  Não há uma mensagem personalizada, portanto, `null` é passado para o terceiro parâmetro.
 
     ```csharp

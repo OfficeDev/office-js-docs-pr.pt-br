@@ -1,4 +1,4 @@
-# <a name="build-your-first-word-add-in"></a>Compilar seu primeiro suplemento do Word
+# <a name="build-your-first-word-add-in"></a>Crie o seu primeiro suplemento do Word
 
 _Aplica-se a: Word 2016, Word para iPad, Word para Mac_
 
@@ -210,7 +210,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
 
 ### <a name="try-it-out"></a>Experimente
 
-1. Usando o Visual Studio, teste o suplemento do Word recém-criado ao pressionar F5 ou escolha o botão **Iniciar** para abrir o Word com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
+1. Usando o Visual Studio, teste o suplemento do Word recém-criado pressionando F5 ou escolhendo o botão **Iniciar** para abrir o Word com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
 
 2. No Word, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
@@ -455,11 +455,11 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
 
 ### <a name="try-it-out"></a>Experimente
 
-1. Para realizar o sideload do suplemento no Word, siga as instruções para a plataforma que você usará para executar o suplemento.
+1. Para realizar sideload do suplemento no Word, siga as instruções para a plataforma que você usará para executar o suplemento.
 
-    - Windows: [Realizar o sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Word Online: [Realizar o sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad e Mac: [Fazer sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    - Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Word Online: [Realizar sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
+    - iPad e Mac: [Realizar sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 2. No Word, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 

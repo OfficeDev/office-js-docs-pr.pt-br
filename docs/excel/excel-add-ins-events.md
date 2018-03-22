@@ -36,11 +36,11 @@ Todas as alterações que sejam compatíveis com o comportamento padrão do Exce
 
 ### <a name="lifecycle-of-an-event-handler"></a>Ciclo de vida de um manipulador de eventos
 
-Um manipulador de eventos é criado quando um suplemento registra o manipulador de eventos e ele é destruído quando o suplemento cancela o registro de manipulador de eventos ou quando o suplemento for fechado. Manipuladores de eventos não persistem como parte do arquivo do Excel.
+Um manipulador de eventos é criado quando um suplemento o registra e é destruído quando o suplemento cancela seu registro ou quando o suplemento for fechado. Os manipuladores de eventos não persistem como parte do arquivo de Excel.
 
 ### <a name="events-and-coauthoring"></a>Eventos e coautoria
 
-Com a [coautoria](co-authoring-in-excel-add-ins.md), várias pessoas podem trabalhar juntas e editar simultaneamente a mesma pasta de trabalho do Excel. Em eventos que podem ser disparados por um coautor, como `onDataChanged`, o objeto de **evento** correspondente conterá a propriedade **fonte** que indica se o evento foi acionado localmente pelo usuário atual (`event.source = Local`) ou se foi acionado pelo coautor remoto (`event.source = Remote`).
+Com a [coautoria](co-authoring-in-excel-add-ins.md), várias pessoas podem trabalhar em conjunto e editar a mesma pasta de trabalho do Excel simultaneamente. Em eventos que podem ser disparados por um coautor, como `onDataChanged`, o objeto de **evento** respectivo conterá a propriedade **fonte** que indica se o evento foi acionado localmente pelo usuário atual (`event.source = Local`) ou pelo coautor remoto (`event.source = Remote`).
 
 ## <a name="register-an-event-handler"></a>Registrar um manipulador de eventos.
 
@@ -116,7 +116,7 @@ function remove() {
 }
 ```
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Veja também
 
 - [Principais conceitos da API JavaScript do Excel](excel-add-ins-core-concepts.md)
 - [Especificação para abrir API JavaScript do Excel](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)

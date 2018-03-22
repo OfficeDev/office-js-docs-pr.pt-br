@@ -22,7 +22,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 * Office 2016, versão 1708, build 8424.nnnn ou posterior (a versão de assinatura do Office 365, às vezes chamada de "Clique para Executar")
 
-  Talvez seja necessário ser um Office Insider para obter essa versão. Para saber mais, confira [Seja um Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1).
+  Talvez seja necessário ser um Office Insider para obter essa versão. Para saber mais, confira [Seja um Office Insider](https://products.office.com/pt-br/office-insider?tab=tab-1).
 
 ## <a name="set-up-the-starter-project"></a>Configure o projeto inicial
 
@@ -88,7 +88,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     * perfil
 
     > [!NOTE]
-    > A permissão `User.Read` pode já estar listada por padrão. É uma boa prática não pedir permissões que não são necessárias, por isso recomendamos que você desmarque a caixa para essa permissão.
+    > A permissão `User.Read` pode já estar listada por padrão. É uma boa prática não pedir permissões desnecessárias, por isso recomendamos desmarcar a caixa para essa permissão.
 
 1. Clique em **OK** no final da caixa de diálogo.
 
@@ -167,7 +167,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 11. Abaixo da atribuição a `Office.initialize`, adicione o código a seguir. Observe o seguinte sobre este código:
 
     * O processamento de erros no suplemento às vezes tentará novamente obter um token de acesso automaticamente, usando um conjunto diferente de opções. A variável de contador `timesGetOneDriveFilesHasRun` e as variáveis sinalizador `triedWithoutForceConsent` e `timesMSGraphErrorReceived` são usadas para garantir que o usuário não seja trocado repetidas vezes em tentativas falhas de obter um token. 
-    * Você criará um método `getDataWithToken` na próxima etapa, mas observe que ele define uma opção chamada `forceConsent` para `false`. A próxima etapa apresenta mais informações a respeito.
+    * Você criará um método `getDataWithToken` na próxima etapa, mas observe que ele define uma opção chamada `forceConsent` como `false`. Trataremos mais disso na etapa seguinte.
 
     ```javascript
     var timesGetOneDriveFilesHasRun = 0;
@@ -209,7 +209,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     getData("/api/values", accessToken);
     ```
 
-1. Abaixo do método `getOneDriveFiles`, adicione o seguinte. Sobre este código, observe:
+1. Abaixo do método `getOneDriveFiles`, adicione o seguinte. Observe isto sobre este código:
 
     * Este método utilitário chama um ponto de extremidade da API Web especificado e transmite a ela o mesmo token de acesso que aplicativo host do Office usou para obter acesso ao seu suplemento. No lado do servidor, esse token de acesso será usado no fluxo "on behalf of" (em nome de) para obter um token de acesso para o Microsoft Graph.
     * Você criará o método `handleServerSideErrors` em uma etapa posterior.
@@ -293,7 +293,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     > [!NOTE]
     > Os erros 13004 e 13005 não são processados neste método, pois eles só ocorrem em desenvolvimento. Eles não podem ser corrigidos pelo código de tempo de execução e não seria útil reportá-lo a um usuário final.
 
-1. Substitua `TODO5` pelo código a seguir. O erro 13006 ocorre quando há um erro especificado no host do Office que pode indicar que o host está instável. Peça que o usuário reinicie o Office.
+1. Substitua `TODO5` pelo seguinte código. O Erro 13006 ocorre quando houve um erro não especificado no host do Office, que pode indicar a instabilidade do host. Peça ao usuário para reiniciar o Office.
 
     ```javascript
     case 13006:
@@ -309,7 +309,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
         break;      
     ```
 
-1. Substitua `TODO7` pelo código a seguir. O erro 13008 ocorre quando o usuário aciona uma operação que chama o `getAccessTokenAsync` antes que uma chamada anterior dele seja concluída.
+1. Substitua `TODO7` pelo código a seguir. O Erro 13008 ocorre quando o usuário aciona uma operação que chama `getAccessTokenAsync` antes que uma chamada anterior dele seja concluída.
 
     ```javascript
     case 13008:
@@ -337,7 +337,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
         break;
     ```  
 
-1. Abaixo do método `handleClientSideErrors`, adicione o método a seguir. Esse método processará os erros no serviço Web do suplemento quando algo der errado na execução do fluxo on-behalf-of ou ao obter dados do Microsoft Graph.
+1. Abaixo do método `handleClientSideErrors`, adicione o seguinte método. Esse método processará os erros no serviço Web do suplemento quando algo der errado na execução do fluxo on-behalf-of ou ao obter dados do Microsoft Graph.
 
     ```javascript
     function handleServerSideErrors(result) {
@@ -371,7 +371,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     }
     ```
 
-1. Substitua `TODO11` pelo seguinte código *logo abaixo da última chave de fechamento do código adicionado na etapa anterior*. Observação sobre o código:
+1. Substitua `TODO11` pelo seguinte código *logo abaixo da última chave de fechamento do código adicionado na etapa anterior*. Observação sobre esse código:
 
     * O erro 65001 significa que o consentimento para acessar o Microsoft Graph não foi concedido (ou foi revogado) para uma ou mais permissões. 
     * O suplemento deverá obter um novo token com a opção `forceConsent` definida como `true`.
@@ -390,7 +390,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     }
     ```
 
-1. Substitua `TODO12` pelo seguinte código *logo abaixo da última chave de fechamento do código adicionado na etapa anterior*. Observação sobre o código:
+1. Substitua `TODO12` pelo seguinte código *logo abaixo da última chave de fechamento do código adicionado na etapa anterior*. Observação sobre esse código:
 
     * O erro 70011 significa que um escopo inválido (permissão) foi solicitado. O suplemento deverá relatar o erro.
     * O código registra qualquer outro erro com um número de erro do AAD.
@@ -403,7 +403,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     }
     ```
 
-1. Substitua `TODO13` pelo seguinte código *logo abaixo da última chave de fechamento do código adicionado na etapa anterior*. Observação sobre o código:
+1. Substitua `TODO13` pelo seguinte código *logo abaixo da última chave de fechamento do código adicionado na etapa anterior*. Observação sobre esse código:
 
     * Código de servidor criado em uma etapa posterior enviará a mensagem terminada em `... expected access_as_user` se a o escopo `access_as_user` (permissão) não for o token de acesso que o cliente do suplemento enviar para o ADD para ser usado no fluxo on-behalf-of.
     * O suplemento deverá relatar o erro.
@@ -415,7 +415,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     }
     ```
 
-1. Substitua `TODO14` pelo seguinte código *logo abaixo da última chave de fechamento do código adicionado na etapa anterior*. Observação sobre o código:
+1. Substitua `TODO14` pelo seguinte código *logo abaixo da última chave de fechamento do código adicionado na etapa anterior*. Observação sobre esse código:
 
     * É improvável que um token expirado ou inválido seja enviado para o Microsoft Graph, mas, se isso acontecer, o código de servidor que você criará em uma etapa posterior terminará com a cadeia de caracteres `Microsoft Graph error`.
     * Nesse caso, o suplemento deverá iniciar o processo de autenticação completo ao redefinir o contador `timesGetOneDriveFilesHasRun` e as variáveis de sinalizador `timesGetOneDriveFilesHasRun` e, em seguida, chamando novamente o método de identificador de botão. No entanto, isso deve ser feito apenas uma vez. Se isso acontecer novamente, o erro deve ser apenas registrado.
@@ -651,7 +651,7 @@ Há dois arquivos do lado do servidor que precisam ser modificados.
     }
     ```
 
-1.  Substitua `TODO1` pelo código a seguir. Observe que o código pressupõe que os dados são retornados como JSON.
+1.  Substitua `TODO1` pelo código a seguir. Observe que o código pressupõe que os dados retornados são JSON.
 
     ```javascript
     let parsedBody = JSON.parse(body);
@@ -728,7 +728,7 @@ Há duas maneiras de criar e executar o projeto dependendo se você estiver ou n
 
 5. Na faixa de opções **Página Inicial**, há um novo grupo chamado **SSO NodeJS** com um botão com o rótulo **Mostrar Suplemento** e um ícone. 
 
-## <a name="test-the-add-in"></a>Teste o suplemento
+## <a name="test-the-add-in"></a>Testar o suplemento
 
 1. Certifique-se de ter alguns arquivos no seu OneDrive para que você possa verificar os resultados.
 

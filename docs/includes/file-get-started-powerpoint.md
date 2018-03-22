@@ -1,4 +1,4 @@
-# <a name="build-your-first-powerpoint-add-in"></a>Criar o seu primeiro suplemento do PowerPoint
+# <a name="build-your-first-powerpoint-add-in"></a>Crie o seu primeiro suplemento do PowerPoint
 
 Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint usando o jQuery e a API JavaScript para Office.
 
@@ -22,7 +22,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
 
 4. Na caixa de diálogo **Criar suplementos do Office**, escolha **Adicionar novas funcionalidades ao PowerPoint**e depois **Concluir** para criar o projeto.
 
-5. O Visual Studio cria uma solução e os dois projetos são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.
+5. O Visual Studio cria uma solução, e os dois projetos dele são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.
     
 ### <a name="explore-the-visual-studio-solution"></a>Explorar a solução do Visual Studio
 
@@ -132,7 +132,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
 
 2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o com seu nome.
 
-3. O atributo `DefaultValue` do elemento `DisplayName` tem um espaço reservado. Substitua-o com **suplementos do Office de minha**.
+3. O atributo `DefaultValue` do elemento `DisplayName` tem um espaço reservado. Substitua-o pelo **suplementos do My Office**.
 
 4. O atributo `DefaultValue` do elemento `Description` tem um espaço reservado. Substitua-o com **um suplemento do painel de tarefas do PowerPoint**.
 
@@ -150,7 +150,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
 
 ### <a name="try-it-out"></a>Experimente
 
-1. Usando o Visual Studio, teste o suplemento do PowerPoint recém-criado ao pressionar F5 ou escolha o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
+1. Usando o Visual Studio, teste o suplemento do PowerPoint recém-criado pressionando F5 ou escolhendo o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
 
 2. No PowerPoint, insira um novo slide em branco, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
@@ -193,9 +193,9 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
     ```
 
     - **Would you like to create a new subfolder for your project?:** `No`
-    - **Como você deseja nomear o suplemento?:** `My Office Add-in`
+    - **What do you want to name your add-in?:** `My Office Add-in`
     - **Which Office client application would you like to support?:** `PowerPoint`
-    - **Você gostaria de criar um novo suplemento?:** `Yes`
+    - **Would you like to create a new add-in?:** `Yes`
     - **Would you like to use TypeScript?:** `No`
     - **Escolha a estrutura:** `Jquery`
 
@@ -334,9 +334,9 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
 
 1. Siga as instruções para a plataforma que você usará para executar o suplemento e realizar sideload do suplemento no PowerPoint.
 
-    - Windows: [Realizar o sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
     - PowerPoint Online: [Realizar sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad e Mac: [Realizar o sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    - iPad e Mac: [Realizar sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 2. No PowerPoint, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
@@ -354,7 +354,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Parabéns, você criou com êxito um suplemento do PowerPoint! Em seguida, saiba mais sobre os recursos de um suplemento do PowerPoint e explore as amostras de código para cenários comuns.
+Você criou com êxito um suplemento do PowerPoint, parabéns! Agora, saiba mais sobre os recursos dos suplementos do PowerPoint e explore amostras de código para cenários comuns.
 
 > [!div class="nextstepaction"]
 > [Suplementos do PowerPoint](../powerpoint/powerpoint-add-ins.md)

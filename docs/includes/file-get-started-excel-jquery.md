@@ -131,7 +131,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 
 ### <a name="try-it-out"></a>Experimente
 
-1. Usando o Visual Studio, teste o suplemento do Excel recém-criado ao pressionar F5 ou escolha o botão **Iniciar** para abrir o Excel com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
+1. Usando o Visual Studio, teste o suplemento do Excel recém-criado pressionando F5 ou escolhendo o botão **Iniciar** para abrir o Excel com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
 
 2. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
@@ -165,7 +165,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
     cd my-addin
     ```
 
-3. Use o gerador do Yeoman de modo a gerar o arquivo de manifesto para o suplemento. Execute o comando a seguir e responda aos prompts, conforme mostrado na seguinte captura de tela:
+3. Use o gerador do Yeoman para gerar o arquivo de manifesto para o seu suplemento. Execute o comando a seguir e responda aos prompts, conforme mostrado na seguinte captura de tela:
 
     ```bash
     yo office
@@ -293,11 +293,11 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 
 ### <a name="try-it-out"></a>Experimente
 
-1. Siga as instruções para a plataforma que você usará para executar o suplemento e fazer sideload do suplemento no Excel.
+1. Siga as instruções para a plataforma que você usará para executar o suplemento e realizar sideload do suplemento no Excel.
 
-    - Windows: [Realizar o sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online: [Fazer sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad e Mac: [Fazer sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    - Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Excel Online: [Realizar sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
+    - iPad e Mac: [Realizar sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 2. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
@@ -313,7 +313,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Parabéns, você criou com êxito um suplemento do Excel usando o jQuery! Em seguida, saiba mais sobre os recursos de um suplemento do Excel e crie um suplemento mais complexo seguindo as etapas deste tutorial de suplemento do Excel.
+Você criou com êxito um suplemento do Excel usando jQuery!, parabéns! Agora, saiba mais sobre os recursos dos suplementos do Excel e crie um mais complexo, acompanhando o tutorial de suplemento do Excel.
 
 > [!div class="nextstepaction"]
 > [Tutorial de suplemento do Excel](../tutorials/excel-tutorial-create-table.md)

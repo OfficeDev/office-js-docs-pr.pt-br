@@ -14,15 +14,18 @@
   items:
   - name: Criar um suplemento do Excel
     items:
-    - name: Use o React
-      href: quickstarts/excel-quickstart-react.md
-      displayName: Excel
-    - name: Adicionar Angular
+    - name: Use o Angular
       href: quickstarts/excel-quickstart-angular.md
       displayName: Excel
     - name: Use o JQuery
       href: quickstarts/excel-quickstart-jquery.md
       displayName: Excel
+    - name: Use o React
+      href: quickstarts/excel-quickstart-react.md
+      displayName: Excel
+    - name: Use o Vue
+      href: quickstarts/excel-quickstart-vue.md
+      displayName: Excel 
   - name: Criar um suplemento do Word
     href: quickstarts/word-quickstart.md
     displayName: Word
@@ -43,7 +46,11 @@
   items:
   - name: Tutorial de suplemento do Excel
     href: tutorials/excel-tutorial.yml
-    
+    displayName: Excel
+  - name: Tutorial de suplemento do PowerPoint
+    href: tutorials/powerpoint-tutorial.yml
+    displayName: PowerPoint
+
 - name: Conceitos
   items:
   - name: Requisitos para executar suplementos
@@ -194,15 +201,21 @@
       href: excel/excel-add-ins-get-started-overview.md
       displayName: Excel
       items:
-      - name: Use o React
-        href: excel/excel-add-ins-get-started-react.md
-        displayName: Excel
-      - name: Adicionar Angular
+      - name: Use o Angular
         href: excel/excel-add-ins-get-started-angular.md
         displayName: Excel
       - name: Use o JQuery
         href: excel/excel-add-ins-get-started-jquery.md
         displayName: Excel
+      - name: Use o React
+        href: excel/excel-add-ins-get-started-react.md
+        displayName: Excel
+      - name: Use o Vue
+        href: excel/excel-add-ins-get-started-vue.md
+        displayName: Excel
+    - name: Tutorial de suplemento do Excel
+      href: tutorials/excel-tutorial.yml
+      displayName: Excel
     - name: Principais conceitos
       href: excel/excel-add-ins-core-concepts.md
       displayName: Excel
@@ -246,7 +259,7 @@
     href: word/word-add-ins-programming-overview.md
     displayName: Word
     items:
-    - name: Compilar seu primeiro suplemento do Word
+    - name: Crie o seu primeiro suplemento do Word
       href: word/word-add-ins.md
       displayName: Word
     - name: Criar suplementos melhores para o Word com o Office Open XML
@@ -276,8 +289,11 @@
     href: powerpoint/powerpoint-add-ins.md
     displayName: PowerPoint
     items:
-    - name: Criar o primeiro suplemento do PowerPoint
+    - name: Crie o seu primeiro suplemento do PowerPoint
       href: powerpoint/powerpoint-add-ins-get-started.md
+      displayName: PowerPoint
+    - name: Tutorial de suplemento do PowerPoint
+      href: tutorials/powerpoint-tutorial.yml
       displayName: PowerPoint
     - name: Usar temas de documentos em seus suplementos do PowerPoint
       href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
@@ -290,7 +306,7 @@
     href: onenote/onenote-add-ins-programming-overview.md
     displayName: OneNote
     items:
-    - name: Crie seu primeiro suplemento do OneNote
+    - name: Crie o seu primeiro suplemento do OneNote
       href: onenote/onenote-add-ins-getting-started.md
       displayName: OneNote
     - name: Trabalhar com conteúdo da página do OneNote
@@ -304,7 +320,7 @@
     href: project/project-add-ins.md
     displayName: Project
     items:
-    - name: Criar o primeiro suplemento do Project
+    - name: Crie o seu primeiro suplemento do Project
       href: project/project-add-ins-get-started.md
       displayName: Project
     - name: Crie um suplemento do Project que usa REST com um serviço OData local
@@ -319,7 +335,7 @@
     items:
     - name: Windows
       items: 
-      - name: Fazer sideload de Suplementos do Office no Windows
+      - name: Realizar sideload de Suplementos do Office no Windows
         href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
       - name: Anexar um depurador do painel de tarefas
         href: testing/attach-debugger-from-task-pane.md
@@ -327,13 +343,13 @@
         href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
     - name: Office Online
       items: 
-      - name: Fazer sideload de Suplementos do Office no Office Online
+      - name: Realizar sideload de Suplementos do Office no Office Online
         href: testing/sideload-office-add-ins-for-testing.md
       - name: Depurar no Office Online
         href: testing/debug-add-ins-in-office-online.md
     - name: iPad e Mac
       items:
-      - name: Fazer sideload de Suplementos do Office no iPad e no Mac
+      - name: Realizar sideload de Suplementos do Office no iPad e no Mac
         href: testing/sideload-an-office-add-in-on-ipad-and-mac.md
       - name: Depurar no iPad e no Mac
         href: testing/debug-office-add-ins-on-ipad-and-mac.md

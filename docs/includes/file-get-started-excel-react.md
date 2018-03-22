@@ -24,9 +24,9 @@ Use Criar aplicativo do React para gerar seu aplicativo do React. No terminal, e
 create-react-app my-addin
 ```
 
-## <a name="generate-the-manifest-file-and-sideload-the-add-in"></a>Gerar o arquivo de manifesto e fazer sideload do suplemento
+## <a name="generate-the-manifest-file-and-sideload-the-add-in"></a>Gerar o arquivo de manifesto e realizar sideload do suplemento
 
-Cada suplemento requer um arquivo de manifesto para definir seus recursos e configurações.
+Cada suplemento requer um arquivo de manifesto para definir os recursos e configurações.
 
 1. Navegue até a pasta do seu aplicativo.
 
@@ -34,7 +34,7 @@ Cada suplemento requer um arquivo de manifesto para definir seus recursos e conf
     cd my-addin
     ```
 
-2. Use o gerador do Yeoman de modo a gerar o arquivo de manifesto para o suplemento. Execute o comando a seguir e responda aos prompts, conforme mostrado na seguinte captura de tela:
+2. Use o gerador do Yeoman para gerar o arquivo de manifesto para o seu suplemento. Execute o comando a seguir e responda aos prompts, conforme mostrado na seguinte captura de tela:
 
     ```bash
     yo office
@@ -52,11 +52,11 @@ Cada suplemento requer um arquivo de manifesto para definir seus recursos e conf
     > [!NOTE]
     > Se for solicitada a substituição de **package.json**, responda **Não** (não substituir).
 
-3. Siga as instruções para a plataforma que você usará para executar o suplemento e fazer sideload do suplemento no Excel.
+3. Siga as instruções da plataforma que você usará para executar o suplemento e realizar sideload do suplemento no Excel.
 
-    - Windows: [Realizar o sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online: [Fazer sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad e Mac: [Fazer sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    - Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Excel Online: [Realizar sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
+    - iPad e Mac: [Realizar sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 ## <a name="update-the-app"></a>Atualizar o aplicativo
 
@@ -179,7 +179,7 @@ Cada suplemento requer um arquivo de manifesto para definir seus recursos e conf
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Parabéns, você criou com êxito um suplemento do Excel usando o React! Em seguida, saiba mais sobre os recursos de um suplemento do Excel e crie um suplemento mais complexo seguindo as etapas deste tutorial de suplemento do Excel.
+Você criou com êxito um suplemento do Excel usando o React, parabéns! Agora, saiba mais sobre os recursos dos suplementos do Excel e crie um mais complexo, acompanhando o tutorial de suplemento do Excel.
 
 > [!div class="nextstepaction"]
 > [Tutorial de suplemento do Excel](../tutorials/excel-tutorial-create-table.md)

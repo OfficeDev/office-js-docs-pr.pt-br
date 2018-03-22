@@ -1,5 +1,8 @@
 Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou anteriormente.
 
+> [!NOTE]
+> Esta página descreve uma etapa individual do tutorial de suplemento do Excel. Se você chegou aqui por meio dos resultados de mecanismos de pesquisa ou via outro link direto, acesse a página de Introdução do [tutorial de suplemento do Excel](../tutorials/excel-tutorial.yml) para começá-lo do início.
+
 ## <a name="filter-the-table"></a>Filtrar a tabela
 
 1. Abra o projeto em seu editor de código. 

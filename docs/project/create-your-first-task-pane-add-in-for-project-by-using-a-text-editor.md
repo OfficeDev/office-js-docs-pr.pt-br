@@ -12,7 +12,7 @@ O Project 2013 usa o mesmo esquema de manifesto de suplemento que outros cliente
 
 O suplemento de exemplo Teste de modelo de objeto do Project pode obter o GUID de uma tarefa, as propriedades do aplicativo e o projeto ativo. Se o Project Professional 2013 abre um projeto que está em uma biblioteca do SharePoint, o suplemento pode mostrar a URL do projeto. 
 
-O [download do SDK do Project 2013](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20) inclui o código-fonte completo. Ao extrair e instalar o SDK e exemplos que estão no arquivo Project2013SDK.msi, confira o subdiretório `\Samples\Apps\Copy_to_AppManifests_FileShare` do arquivo de manifesto e o subdiretório `\Samples\Apps\Copy_to_AppSource_FileShare` do código-fonte. 
+O [download do SDK do Project 2013](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20) inclui o código-fonte completo. Ao extrair e instalar o SDK e exemplos que estão no arquivo Project2013SDK.msi, confira o `\Samples\Apps\Copy_to_AppManifests_FileShare`subdiretório do arquivo de manifesto e o `\Samples\Apps\Copy_to_AppSource_FileShare`subdiretório do código-fonte. 
 
 O exemplo JSOMCall.html usa funções JavaScript nos arquivos office.js e project-15.js, que estão incluídos. Você pode usar os arquivos de depuração correspondentes (office.debug.js e project-15.debug.js) para examinar as funções.
 
@@ -1086,7 +1086,7 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 ![Usando as rotinas do SurfaceError para mostrar um erro](../images/pj15-create-simple-agave-surface-error.png)
 
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Veja também
 
 - [Suplementos do painel de tarefas para Project](../project/project-add-ins.md)
 - [Noções básicas da API JavaScript para suplementos](../develop/understanding-the-javascript-api-for-office.md)

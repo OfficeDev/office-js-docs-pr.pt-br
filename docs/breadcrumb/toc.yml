@@ -12,3 +12,6 @@
       - name: Tutorial de suplemento do Excel
         tocHref: /office/dev/add-ins/tutorials/excel-tutorial
         topicHref: /office/dev/add-ins/tutorials/excel-tutorial
+      - name: Tutorial de suplemento do PowerPoint
+        tocHref: /office/dev/add-ins/tutorials/powerpoint-tutorial
+        topicHref: /office/dev/add-ins/tutorials/powerpoint-tutorial
