@@ -8,9 +8,6 @@ ms.date: 12/04/2017
 
 Serviços online populares, incluindo o Office 365, o Google, o Facebook, o LinkedIn, o SalesForce e o GitHub, permitem que os desenvolvedores forneçam acesso para os usuários a suas contas em outros aplicativos, o que possibilita que você inclua esses serviços no seu Suplemento do Office.
 
-> [!NOTE]
-> Se o serviço externo for acessível através do Microsoft Graph, como o Office 365 ou o OneDrive, você pode então fornecer a melhor experiência para seus usuários e a experiência de desenvolvimento mais fácil para você, usando o sistema de logon único descrito em [Habilitar o logon único para Suplementos do Office](sso-in-office-add-ins.md) e seus artigos relacionados. As técnicas descritas neste artigo são melhores para usar em serviços externos que não sejam acessíveis com o Microsoft Graph. No entanto, elas *podem* ser usadas para acessar o Microsoft Graph, e você pode preferir as vantagens do logon único. Por exemplo, o sistema de logon único requer código do lado do servidor, portanto, ele não pode ser usado com um aplicativo de página única. Além disso, o sistema de logon único ainda não é compatível com todas as plataformas.
-
 A estrutura padrão do setor para habilitar o acesso de aplicativos Web a um serviço online é **OAuth 2.0**. Na maioria das situações, você não precisa saber os detalhes de como a estrutura funciona para usá-la no seu suplemento. Estão disponíveis muitas bibliotecas que simplificam os detalhes para você.
 
 Uma ideia fundamental do OAuth é que um aplicativo pode ser uma entidade de segurança por si só, assim como um usuário ou um grupo, com sua própria identidade e conjunto de permissões. Nos cenários mais comuns, quando o usuário realiza uma ação no suplemento do Office que requer o serviço online, o suplemento envia ao serviço uma solicitação para um conjunto específico de permissões para a conta do usuário. Em seguida, o serviço solicita que o usuário conceda essas permissões ao suplemento. Após a concessão das permissões, o serviço envia ao suplemento um pequeno *token de acesso* codificado. O suplemento pode usar o serviço, incluindo o token, em todas as suas solicitações para as APIs do serviço. Porém, o suplemento só pode agir dentro das permissões concedidas a ele pelo usuário. O token também expira após um tempo especificado.
@@ -25,7 +22,11 @@ A finalidade dos fluxos do OAuth é proteger a identidade e a autorização do a
 Você deve estar familiarizado com os prós e os contras do fluxo implícito e o fluxo do Código de Autorização. Para obter mais informações sobre esses dois fluxos, consulte [Código de Autorização](https://tools.ietf.org/html/rfc6749#section-1.3.1) e [Implícito](https://tools.ietf.org/html/rfc6749#section-1.3.2).
 
 > [!NOTE]
-> Você também tem a opção de usar um serviço intermediário para executar a autorização e passar o token de acesso ao seu suplemento. Para obter detalhes sobre esse cenário, consulte a seção **Serviços intermediários** mais adiante neste artigo.
+> Você também tem a opção de usar um serviço intermediário para executar a autorização e passar o token de acesso ao seu suplemento. Confira detalhes sobre esse cenário na seção **Serviços intermediários** mais adiante neste artigo.
+
+## <a name="authorization-to-microsoft-graph"></a>Autorização para o Microsoft Graph
+
+Se o serviço externo for acessível através do Microsoft Graph, como o Office 365 ou o OneDrive, você pode então fornecer a melhor experiência para seus usuários e a experiência de desenvolvimento mais fácil para você, usando o sistema de logon único descrito em [Habilitar o logon único para Suplementos do Office](sso-in-office-add-ins.md) e seus artigos relacionados. As técnicas descritas neste artigo são melhores para usar em serviços externos que não sejam acessíveis com o Microsoft Graph. No entanto, elas *podem* ser usadas para acessar o Microsoft Graph, e você pode preferir as vantagens do logon único. Por exemplo, o sistema de logon único requer código do lado do servidor, portanto, ele não pode ser usado com um aplicativo de página única. Além disso, o sistema de logon único ainda não é compatível com todas as plataformas.
 
 ## <a name="using-the-implicit-flow-in-office-add-ins"></a>Usando o fluxo Implícito em suplementos do Office
 A melhor maneira de descobrir se um serviço online suporta o fluxo implícito é consultar a documentação do serviço. Para serviços que suportam o fluxo implícito, você pode usar a biblioteca de JavaScript **Office-js-helpers** para fazer todo o trabalho detalhado para você:

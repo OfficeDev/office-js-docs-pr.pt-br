@@ -45,12 +45,16 @@ No Mac, o menu de personalidade mede 26 x 26 pixels, mas flutua 8 pixels a parti
 Para ver um exemplo que implementa um suplemento de conteúdo, confira [Suplemento de conteúdo do Excel Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance) no GitHub.
 
 ## <a name="support-considerations"></a>Considerações sobre o suporte
-- Verifique se os suplementos do Office funcionarão em uma [plataforma de host do Office específica](/overview/office-add-in-availability.md). 
-- Alguns suplementos de conteúdo podem obrigar o usuário a "confiar" nele para ler e gravar no Excel ou PowerPoint. Você pode declarar no manifesto do suplemento quais [níveis de permissão](/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md) deseja que o usuário tenha.  
+- Verifique se os suplementos do Office funcionarão em uma [plataforma de host do Office específica](https://docs.microsoft.com/pt-br/office/dev/add-ins/overview/office-add-in-availability). 
+- Alguns suplementos de conteúdo podem obrigar o usuário a "confiar" nele para ler e gravar no Excel ou PowerPoint. Você pode declarar no manifesto do suplemento quais [níveis de permissão](https://docs.microsoft.com/pt-br/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins) deseja que o usuário tenha.  
 - Os suplementos de conteúdo são compatíveis com o Excel e PowerPoint nas versões do Office 2013 e posteriores. Se você abrir um suplemento em uma versão do Office não compatível com os suplementos web do Office, eles aparecerão como imagem.
 
-## <a name="see-also"></a>Veja também
-- [Disponibilidade de host e plataforma para suplementos do Office](/overview/office-add-in-availability.md)
-- [Office UI Fabric em Suplementos do Office](office-ui-fabric.md) 
-- [Padrões de design da experiência do usuário para suplementos do Office](ux-design-patterns.md)
-- [Solicitar permissões para uso da API em suplementos do painel de tarefas e conteúdo](/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
+## <a name="see-also"></a>Confira também
+- 
+  [Disponibilidade de host e plataforma para suplementos do Office](https://docs.microsoft.com/pt-br/office/dev/add-ins/overview/office-add-in-availability)
+- 
+  [Office UI Fabric em Suplementos do Office](https://docs.microsoft.com/pt-br/office/dev/add-ins/design/office-ui-fabric) 
+- 
+  [Padrões de design da experiência do usuário para suplementos do Office](https://docs.microsoft.com/pt-br/office/dev/add-ins/design/ux-design-patterns)
+- 
+  [Solicitar permissões para uso da API em suplementos do painel de tarefas e conteúdo](https://docs.microsoft.com/pt-br/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)

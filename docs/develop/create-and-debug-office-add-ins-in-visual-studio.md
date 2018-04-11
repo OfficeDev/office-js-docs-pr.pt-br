@@ -1,7 +1,7 @@
 ---
 title: Criar e depurar Suplementos do Office no Visual Studio
 description: ''
-ms.date: 12/04/2017
+ms.date: 03/14/2018
 ---
 
 
@@ -15,7 +15,7 @@ Esse artigo descreve como usar o Visual Studio para criar o seu primeiro supleme
 ## <a name="create-an-office-add-in-project-in-visual-studio"></a>Criar um projeto de suplemento do Office no Visual Studio
 
 
-Para começar, verifique se você tem as [Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx) instaladas e uma versão do Microsoft Office. Você pode ingressar no [Programa do desenvolvedor do Office 365](https://dev.office.com/devprogram) ou seguir estas instruções para obter a [última versão](../develop/install-latest-office-version.md).
+Para começar, verifique se você tem as [Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx) instaladas e uma versão do Microsoft Office. É possível ingressar no [Programa do Desenvolvedor do Office 365](https://developer.microsoft.com/en-us/office/dev-program) ou seguir estas instruções para receber a [última versão](../develop/install-latest-office-version.md).
 
 
 1. Na barra de menus do Visual Studio, selecione **Arquivo**  >  **Novo**  >  **Projeto**.
@@ -102,7 +102,7 @@ A tabela a seguir descreve as propriedades do projeto.
 |**Projeto da Web**|Especifica o nome do projeto Web associado ao suplemento.|
 |**Endereço de Email** (apenas suplementos do Outlook)|Especifica o endereço de email da conta de usuário no Exchange Server ou no Exchange Online com a qual você deseja testar o suplemento do Outlook.|
 |**Url EWS** (apenas suplementos do Outlook)|URL do serviço Web do Exchange (por exemplo: https://www.contoso.com/ews/exchange.aspx). |
-|**Url OWA** (apenas suplementos do Outlook)|URL do Outlook Web App (por exemplo: https://www.contoso.com/owa).|
+|**Url OWA** (apenas suplementos do Outlook)|URL do Outlook Web App (Por exemplo: https://www.contoso.com/owa).|
 |**Nome de usuário** (apenas suplementos do Outlook)|Especifica o nome de sua conta de usuário no Exchange Server ou no Exchange Online.|
 |**Arquivo do projeto**|Especifica o nome do arquivo que contém informações de compilação, configuração e outras informações sobre o projeto.|
 |**Pasta do projeto**|O local do arquivo do projeto.|

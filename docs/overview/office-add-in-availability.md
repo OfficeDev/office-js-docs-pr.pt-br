@@ -1,7 +1,7 @@
 ---
 title: Disponibilidade de host e plataforma para suplementos do Office
 description: 'Conjuntos de requisitos compatíveis com Excel, Word, Outlook, PowerPoint e OneNote.'
-ms.date: 12/01/2017
+ms.date: 3/20/2018
 ---
 
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilidade de host e plataforma para suplementos do Office
@@ -137,12 +137,11 @@ Se uma célula de tabela apresenta um asterisco (*), significa que estamos traba
     <td> - Leitura de email<br>
       - Composição de email<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
-    <td> - Mailbox 1.0<br>
-      - Mailbox 1.1<br>
-      - Mailbox 1.2<br>
-      - Mailbox 1.3<br>
-      - Mailbox 1.4<br>
-      - Mailbox 1.5</td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1"> Caixa de correio 1.1</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Caixa de correio 1.2</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3"> Caixa de correio 1.3</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4"> Caixa de correio 1.4</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5"> Caixa de correio 1.5</a></td>
     <td>não disponível</td>
   </tr>
   <tr>
@@ -150,11 +149,10 @@ Se uma célula de tabela apresenta um asterisco (*), significa que estamos traba
     <td> - Leitura de email<br>
       - Composição de email<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
-    <td> - Mailbox 1.0<br>
-      - Mailbox 1.1<br>
-      - Mailbox 1.2<br>
-      - Mailbox 1.3<br>
-      - Mailbox 1.4</td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1"> Caixa de correio 1.1</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Caixa de correio 1.2</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3"> Caixa de correio 1.3</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4"> Caixa de correio 1.4</a></td>
     <td>não disponível</td>
   </tr>
   <tr>
@@ -163,19 +161,23 @@ Se uma célula de tabela apresenta um asterisco (*), significa que estamos traba
       - Composição de email<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a><br>
       - Módulos</td>
-    <td> - Mailbox 1.0<br>
-      - Mailbox 1.1<br>
-      - Mailbox 1.2<br>
-      - Mailbox 1.3<br>
-      - Mailbox 1.4<br>
-      - Mailbox 1.5</td></td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1"> Caixa de correio 1.1</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Caixa de correio 1.2</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3"> Caixa de correio 1.3</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4"> Caixa de correio 1.4</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5"> Caixa de correio 1.5</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Caixa de correio 1.6</a></td>
     <td>não disponível</td> 
   </tr>
   <tr>
     <td>Office para iOS</td>
     <td> - Leitura de email<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
-    <td> - Mailbox 1.4</td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1"> Caixa de correio 1.1</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Caixa de correio 1.2</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3"> Caixa de correio 1.3</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4"> Caixa de correio 1.4</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5"> Caixa de correio 1.5</a></td>    
     <td>não disponível</td>
   </tr>
   <tr>
@@ -183,19 +185,21 @@ Se uma célula de tabela apresenta um asterisco (*), significa que estamos traba
     <td> - Leitura de email<br>
       - Composição de email<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
-    <td> - Mailbox 1.0<br>
-      - Mailbox 1.1<br>
-      - Mailbox 1.2<br>
-      - Mailbox 1.3<br>
-      - Mailbox 1.4<br>
-      - Mailbox 1.5</td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1"> Caixa de correio 1.1</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Caixa de correio 1.2</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3"> Caixa de correio 1.3</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4"> Caixa de correio 1.4</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5"> Caixa de correio 1.5</a></td>
     <td>não disponível</td>
   </tr>
   <tr>
     <td>Office para Android</td>
     <td> - Leitura de email<br>
       - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
-    <td> - Mailbox 1.4</td>
+    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1"> Caixa de correio 1.1</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Caixa de correio 1.2</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3"> Caixa de correio 1.3</a><br>
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4"> Caixa de correio 1.4</a></td>
     <td>não disponível</td>
   </tr>
 </table>

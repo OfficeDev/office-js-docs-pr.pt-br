@@ -6,7 +6,7 @@ ms.date: 12/04/2017
 
 # <a name="office-add-in-design-language"></a>Idioma de design de suplemento do Office
 
-A linguagem de design do Office é um sistema visual claro e simples que garante a consistência nas experiências. Ela contém um conjunto de elementos visuais que definem as interfaces do Office, incluindo: 
+A linguagem de design do Office é um sistema visual claro e simples que garante a consistência nas experiências. Ela contém um conjunto de elementos visuais que definem as interfaces do Office, incluindo:
 
 - Um tipo de fonte padrão
 - Uma paleta de cores comuns
@@ -65,14 +65,14 @@ Para obter diretrizes de layout, confira [Painel de tarefas](task-pane-add-ins.m
 
 Aplique as seguintes diretrizes gerais aos layouts:
 
-*   Evite margens estreitas ou amplas em contêineres HTML. 20 pixels é um ótimo padrão. 
+*   Evite margens estreitas ou amplas em contêineres HTML. 20 pixels é um ótimo padrão.
 *   Alinhe os elementos intencionalmente. Recuos extras e novos pontos de alinhamento devem auxiliar na hierarquia visual.
-*   As interfaces do Office estão em uma grade de 4px. Procure manter o preenchimento entre os elementos como múltiplos de 4. 
-*   Sobrecarregar a interface pode causar confusão e prejudicar a facilidade de uso com interações de toque. 
-*   Mantenha layouts consistentes entre as telas. Alterações de layout inesperadas parecem bugs visuais que contribuem para a falta de confiança na solução. 
+*   As interfaces do Office estão em uma grade de 4px. Procure manter o preenchimento entre os elementos como múltiplos de 4.
+*   Sobrecarregar a interface pode causar confusão e prejudicar a facilidade de uso com interações de toque.
+*   Mantenha layouts consistentes entre as telas. Alterações de layout inesperadas parecem bugs visuais que contribuem para a falta de confiança na solução.
 *   Siga os padrões de layout comuns. As convenções ajudam os usuários a compreender como usar uma interface.
 *   Evite elementos redundantes como identidade visual ou comandos.
-*   Consolide os controles e modos de exibição para evitar exigir muitos movimentos do mouse. 
+*   Consolide os controles e modos de exibição para evitar exigir muitos movimentos do mouse.
 *   Crie experiências ágeis que se adaptem a alturas e larguras de contêineres HTML.
 
 ## <a name="component-language"></a>Linguagem de componente
@@ -86,7 +86,7 @@ Aplique as seguintes diretrizes gerais aos componentes:
 *   Não replique a faixa de opções do Office no suplemento
 *   Evite criar menus, botões ou outros componentes que se comportem de forma diferente de componentes do Office.
 *   Use os componentes do [Office UI Fabric](office-ui-fabric.md) que recomendamos para suplementos.
-*   Use os [modelos de padrões de design da experiência do usuário](ux-design-patterns.md) para componentes da interface do usuário do Office comuns. 
+*   Use os [modelos de padrões de design da experiência do usuário](ux-design-patterns.md) para componentes da interface do usuário do Office comuns.
 
 ## <a name="icons"></a>Ícones
 Ícones são a representação visual de um comportamento ou conceito. Eles são usados frequentemente para adicionar significado a controles e comandos. Os elementos visuais, realistas ou simbólicos, habilitam o usuário a navegar pela interface do usuário da mesma maneira como os avisos ajudam os usuários a navegar pelo ambiente. Eles devem ser simples e claros e conter apenas os detalhes necessários para permitir que os clientes analisem rapidamente a ação que ocorrerá quando eles escolherem um controle.
@@ -102,22 +102,8 @@ Aplique as seguintes diretrizes gerais aos ícones:
 * Reutilize metáforas visuais comuns do Office, como o pincel para formatar ou a lupa para localizar.
 * Não use indevidamente metáforas para ações não relacionadas. Usar o mesmo elemento visual para um comportamento ou conceito diferente pode causar confusão para os usuários.
 
-## <a name="animation"></a>Animações
-Componentes, controles e elementos da interface do usuário geralmente têm comportamentos interativos que exigem transições, movimento ou animação. Características comuns de movimento entre elementos da interface do usuário definem os aspectos de animação de uma linguagem de design. Como o Office é voltado para a produtividade, a linguagem de animação do Office dá suporte ao objetivo de ajudar os clientes a realizar tarefas. Ela permite o equilíbrio entre a resposta de alto desempenho, a coreografia confiável e a satisfação detalhada.
-
-O Office UI Fabric inclui uma biblioteca de animação para controlar a animação em contêineres HTML. Use para ajustar perfeitamente no Office. Ele ajudará a criar experiências que são mais sentidas do que observadas. As classes CSS de animação fornecem direcionalidade, entrada/saída e especificações de duração que reforçam modelos mentais do Office e fornecem oportunidades para que os clientes saibam como interagir com o suplemento. 
-
-Se o suplemento tem sua própria linguagem de animação, use-a. Procure oportunidades para manter sua animação de identidade visual durante a integração ao Office. Tenha cuidado para não interferir ou entrar em conflito com padrões de movimento comuns no Office. Evite criar experiências que sejam ornamentos que apenas desviam a atenção dos clientes.
-
-Aplique as seguintes diretrizes gerais às animações:
-
-* As animações devem ser sentidas e experimentadas de forma subconsciente, para não impedir a conclusão da tarefa.
-* Evite antecipações, saltos, pulos ou outros efeitos que emulem as características físicas do mundo natural.
-* Coreografe os elementos para reforçar a hierarquia e os modelos mentais.
-* Use o movimento para orientar o usuário e fornecer foco composicional sobre os principais elementos para conclusão da tarefa. 
-* Considere a origem do elemento de disparo. Use animação para criar um vínculo entre a ação e a interface de usuário resultante.
-* Considere o tom e a finalidade do conteúdo ao escolher animações. Lide com mensagens críticas de forma diferente da navegação exploratória.
 
 ## <a name="see-also"></a>Veja também
 
 - [Diretrizes de design de suplementos do Office](add-in-design-guidelines.md)
+- [Usar movimento em suplementos do Office](using-motion-office-addins.md)

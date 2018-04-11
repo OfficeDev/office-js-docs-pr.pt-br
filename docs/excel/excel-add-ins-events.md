@@ -4,7 +4,7 @@ description: ''
 ms.date: 01/29/2018
 ---
 
-# <a name="work-with-events-using-the-excel-javascript-api"></a>Trabalhar com eventos usando a API JavaScript do Excel
+# <a name="work-with-events-using-the-excel-javascript-api"></a>Trabalhar com eventos usando a API JavaScript do Excel 
 
 Este artigo descreve conceitos importantes relacionados ao trabalho com eventos no Excel e fornece exemplos de código que mostram como registrar manipuladores de eventos, lidar com eventos e remover manipuladores de eventos usando as APIs JavaScript do Excel. 
 
@@ -18,10 +18,9 @@ Sempre que ocorrerem certos tipos de alterações em uma pasta de trabalho do Ex
 | Evento | Descrição | Objetos com suporte |
 |:---------------|:-------------|:-----------|
 | `onAdded` | Evento que ocorre quando um objeto é adicionado. | **WorksheetCollection** |
-| `onDeleted`  | Evento que ocorre quando um objeto é excluído. | **WorksheetCollection** |
 | `onActivated` | Evento que ocorre quando um objeto é ativado. | **WorksheetCollection**, **Planilha** |
 | `onDeactivated` | Evento que ocorre quando um objeto é desativado. | **WorksheetCollection**, **Planilha** |
-| `onDataChanged` | Evento que ocorre quando os dados de células são alterados. | **Planilha**, **tabela**, **TableCollection**, **associação** |
+| `onChanged` | Evento que ocorre quando os dados de células são alterados. | **Planilha**, **tabela**, **TableCollection**, **associação** |
 | `onSelectionChanged` | Evento que ocorre quando uma célula ativa ou um intervalo selecionado são alterados. | **Planilha**, **tabela**, **associação** |
 
 ### <a name="event-triggers"></a>Gatilhos de eventos
@@ -40,20 +39,20 @@ Um manipulador de eventos é criado quando um suplemento o registra e é destru�
 
 ### <a name="events-and-coauthoring"></a>Eventos e coautoria
 
-Com a [coautoria](co-authoring-in-excel-add-ins.md), várias pessoas podem trabalhar em conjunto e editar a mesma pasta de trabalho do Excel simultaneamente. Em eventos que podem ser disparados por um coautor, como `onDataChanged`, o objeto de **evento** respectivo conterá a propriedade **fonte** que indica se o evento foi acionado localmente pelo usuário atual (`event.source = Local`) ou pelo coautor remoto (`event.source = Remote`).
+Com a [coautoria](co-authoring-in-excel-add-ins.md), várias pessoas podem trabalhar em conjunto e editar a mesma pasta de trabalho do Excel simultaneamente. Em eventos que podem ser disparados por um coautor, como `onChanged`, o objeto de **evento** respectivo conterá a propriedade **fonte** que indica se o evento foi acionado localmente pelo usuário atual (`event.source = Local`) ou pelo coautor remoto (`event.source = Remote`).
 
 ## <a name="register-an-event-handler"></a>Registrar um manipulador de eventos.
 
-O exemplo de código a seguir registra um manipulador de eventos para o evento `onDataChanged` na planilha **Sample**. O código especifica que, quando os dados forem alterados na planilha, a função `handleDataChange` deve ser executada.
+O exemplo de código a seguir registra um manipulador de eventos para o evento `onChanged` na planilha **Sample**. O código especifica que, quando os dados forem alterados na planilha, a função `handleDataChange` deve ser executada.
 
 ```js
 Excel.run(function (context) {
     var worksheet = context.workbook.worksheets.getItem("Sample");
-    worksheet.onDataChanged.add(handleDataChange);
+    worksheet.onChanged.add(handleDataChange);
 
     return context.sync()
         .then(function () {
-            console.log("Event handler successfully registered for onDataChanged event in the worksheet.");
+            console.log("Event handler successfully registered for onChanged event in the worksheet.");
         });
 }).catch(errorHandlerFunction);
 ```

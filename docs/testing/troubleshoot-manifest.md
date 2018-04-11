@@ -38,7 +38,9 @@ Para ajudar a garantir que o arquivo de manifesto que descreve o suplemento do O
 
 ## <a name="validate-your-manifest-against-the-xml-schema"></a>Validar seu manifesto em relação ao esquema XML
 
-Para ajudar a garantir que o arquivo de manifesto siga o esquema correto, valide-o com base nos arquivos [XSD (definição de esquema XML)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas). É possível usar uma ferramenta de validação para executar essa validação. 
+Para ajudar a garantir que o arquivo de manifesto segue o esquema correto, incluindo todos os namespaces de elementos que você está usando. Se você copiou elementos de outros manifestos da amostra, verifique também **incluir os namespaces apropriado**. É possível validar um manifesto em relação aos arquivos de [Definição de esquema XML (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas). É possível usar uma ferramenta de validação de esquema XML para executar essa validação. 
+
+
 
 ### <a name="to-use-a-command-line-xml-schema-validation-tool-to-validate-your-manifest"></a>Para usar uma ferramenta de validação de esquema XML da linha de comando para validar seu manifesto
 

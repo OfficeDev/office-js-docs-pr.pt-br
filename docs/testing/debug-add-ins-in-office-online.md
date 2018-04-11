@@ -1,7 +1,7 @@
 ---
 title: Depurar suplementos no Office Online
-description: ''
-ms.date: 01/23/2018
+description: Como usar o Office Online para testar e depurar seus suplementos.
+ms.date: 03/14/2018
 ---
 
 # <a name="debug-add-ins-in-office-online"></a>Depurar suplementos no Office Online
@@ -16,7 +16,7 @@ Para começar:
 - Obtenha uma conta de desenvolvedor do Office 365, se já não tiver uma, ou o acesso a um site do SharePoint.
     
   > [!NOTE]
-  > Para se inscrever para uma conta gratuita de desenvolvedor do Office 365, ingresse no [Programa de desenvolvedor do Office 365](https://dev.office.com/devprogram).
+  > Para se inscrever para uma assinatura gratuita de desenvolvedor do Office 365, ingresse no [Programa de Desenvolvedor do Office 365](https://developer.microsoft.com/en-us/office/dev-program). Confira as instruções passo a passo sobre como participar do Programa para Desenvolvedores do Office 365, entrar e configurar sua assinatura na [documentação do Programa para Desenvolvedores do Office 365](https://docs.microsoft.com/pt-br/office/developer-program/office-365-developer-program).
      
 - Configure um catálogo de suplementos no Office 365 (SharePoint Online). Um catálogo de suplementos é um conjunto de sites dedicado no SharePoint Online que hospeda bibliotecas de documentos para suplementos do Office. Se você tiver seu próprio site do SharePoint, pode configurar uma biblioteca de documentos do catálogo de suplementos. Para saber mais, confira [Publicar suplementos de conteúdo e de painel de tarefas em um catálogo de suplementos no SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
     
