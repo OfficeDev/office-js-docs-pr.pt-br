@@ -1,0 +1,90 @@
+---
+title: Comandos de suplemento para Excel, Word e PowerPoint
+description: ''
+ms.date: 01/23/2018
+ms.openlocfilehash: 42a46bf88cc3f72f94ff5f9162a247d90b33e5c7
+ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 05/23/2018
+---
+# <a name="add-in-commands-for-excel-word-and-powerpoint"></a><span data-ttu-id="ebb36-102">Comandos de suplemento para Excel, Word e PowerPoint</span><span class="sxs-lookup"><span data-stu-id="ebb36-102">Add-in commands for Excel, Word, and PowerPoint</span></span>
+
+<span data-ttu-id="ebb36-p101">Comandos de suplemento s?o elementos de interface do usu?rio que estendem a interface do usu?rio do Office e iniciam a??es no suplemento. Voc? pode usar comandos de suplemento para adicionar um bot?o ? faixa de op??es ou um item a um menu de contexto. Ao selecionar um comando de suplemento, os usu?rios iniciam a??es como executar c?digo JavaScript ou exibir uma p?gina do suplemento em um painel de tarefas. Os comandos de suplemento ajudam os usu?rios a localizar e usar o suplemento, o que pode ajud?-lo a aumentar a ado??o e a reutiliza??o do suplemento, al?m de melhorar a reten??o de clientes.</span><span class="sxs-lookup"><span data-stu-id="ebb36-p101">Add-in commands are UI elements that extend the Office UI and start actions in your add-in. You can use add-in commands to add a button on the ribbon or an item to a context menu. When users select an add-in command, they initiate actions such as running JavaScript code, or showing a page of the add-in in a task pane. Add-in commands help users find and use your add-in, which can help increase your add-in's adoption and reuse, and improve customer retention.</span></span>
+
+<span data-ttu-id="ebb36-107">Para uma vis?o geral do recurso, confira o v?deo [Comandos de Suplemento na Faixa de Op??es do Office](https://channel9.msdn.com/events/Build/2016/P551).</span><span class="sxs-lookup"><span data-stu-id="ebb36-107">For an overview of the feature, see the video [Add-in Commands in the Office Ribbon](https://channel9.msdn.com/events/Build/2016/P551).</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="ebb36-p102">Os cat?logos do SharePoint n?o s?o compat?veis com os comandos de suplemento. ? poss?vel implantar comandos de suplemento pela [Implanta??o centralizada](../publish/centralized-deployment.md) ou pelo [AppSource](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store) ou usar [sideload](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) para implantar seu comando de suplemento para testes.</span><span class="sxs-lookup"><span data-stu-id="ebb36-p102">SharePoint catalogs do not support add-in commands. You can deploy add-in commands via [Centralized Deployment](../publish/centralized-deployment.md) or [AppSource](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store), or use [sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) to deploy your add-in command for testing.</span></span> 
+
+<span data-ttu-id="ebb36-110">*Figura 1. Suplemento com comandos em execu??o na ?rea de Trabalho do Excel*</span><span class="sxs-lookup"><span data-stu-id="ebb36-110">*Figure 1. Add-in with commands running in Excel Desktop*</span></span>
+
+![Captura de tela de um comando de suplemento no Excel](../images/add-in-commands-1.png)
+
+<span data-ttu-id="ebb36-112">*Figura 2. Suplemento com comandos em execu??o no Excel Online*</span><span class="sxs-lookup"><span data-stu-id="ebb36-112">*Figure 2. Add-in with commands running in Excel Online*</span></span>
+
+![Captura de tela de um comando de suplemento no Excel Online](../images/add-in-commands-2.png)
+
+## <a name="command-capabilities"></a><span data-ttu-id="ebb36-114">Recursos de comandos</span><span class="sxs-lookup"><span data-stu-id="ebb36-114">Command capabilities</span></span>
+<span data-ttu-id="ebb36-115">Os seguintes recursos de comando s?o compat?veis no momento.</span><span class="sxs-lookup"><span data-stu-id="ebb36-115">The following command capabilities are currently supported.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="ebb36-116">Atualmente os suplementos de conte?do n?o d?o suporte a comandos de suplemento.</span><span class="sxs-lookup"><span data-stu-id="ebb36-116">Content add-ins do not currently support add-in commands.</span></span>
+
+<span data-ttu-id="ebb36-117">**Pontos de extens?o**</span><span class="sxs-lookup"><span data-stu-id="ebb36-117">**Extension points**</span></span>
+
+- <span data-ttu-id="ebb36-118">Guias da faixa de op??es: estender as guias internas ou criar uma nova guia personalizada.</span><span class="sxs-lookup"><span data-stu-id="ebb36-118">Ribbon tabs - Extend built-in tabs or create a new custom tab.</span></span>
+- <span data-ttu-id="ebb36-119">Menus de contexto: estender os menus de contexto selecionados.</span><span class="sxs-lookup"><span data-stu-id="ebb36-119">Context menus - Extend selected context menus.</span></span> 
+
+<span data-ttu-id="ebb36-120">**Tipos de controle**</span><span class="sxs-lookup"><span data-stu-id="ebb36-120">**Control types**</span></span>
+
+- <span data-ttu-id="ebb36-121">Bot?es simples: disparar a??es espec?ficas.</span><span class="sxs-lookup"><span data-stu-id="ebb36-121">Simple buttons - trigger specific actions.</span></span>
+- <span data-ttu-id="ebb36-122">Menus ? menu suspenso simples com bot?es que disparam a??es.</span><span class="sxs-lookup"><span data-stu-id="ebb36-122">Menus - simple menu dropdown with buttons that trigger actions.</span></span>
+
+<span data-ttu-id="ebb36-123">**A??es**</span><span class="sxs-lookup"><span data-stu-id="ebb36-123">**Actions**</span></span>
+
+- <span data-ttu-id="ebb36-124">ShowTaskpane: exibe um ou v?rios pain?is que carregam p?ginas HTML personalizadas dentro deles.</span><span class="sxs-lookup"><span data-stu-id="ebb36-124">ShowTaskpane - Displays one or multiple panes that load custom HTML pages inside them.</span></span>
+- <span data-ttu-id="ebb36-p103">ExecuteFunction: carrega uma p?gina HTML invis?vel e executa uma fun??o JavaScript dentro dela. Para mostrar a interface do usu?rio dentro de sua fun??o (como erros, progresso ou entrada adicional), voc? pode usar a API [displayDialog](http://dev.office.com/reference/add-ins/shared/officeui).</span><span class="sxs-lookup"><span data-stu-id="ebb36-p103">ExecuteFunction - Loads an invisible HTML page and then execute a JavaScript function within it. To show UI within your function (such as errors, progress, or additional input) you can use the [displayDialog](http://dev.office.com/reference/add-ins/shared/officeui) API.</span></span>  
+
+## <a name="supported-platforms"></a><span data-ttu-id="ebb36-127">Plataformas com suporte</span><span class="sxs-lookup"><span data-stu-id="ebb36-127">Supported platforms</span></span>
+<span data-ttu-id="ebb36-128">Os comandos de suplemento atualmente t?m suporte nas seguintes plataformas:</span><span class="sxs-lookup"><span data-stu-id="ebb36-128">Add-in commands are currently supported on the following platforms:</span></span>
+
+- <span data-ttu-id="ebb36-129">Office para ?rea de Trabalho do Windows 2016 (compila??o 16.0.6769+)</span><span class="sxs-lookup"><span data-stu-id="ebb36-129">Office for Windows Desktop 2016 (build 16.0.6769+)</span></span>
+- <span data-ttu-id="ebb36-130">Office para Mac (compila??o 15.33+)</span><span class="sxs-lookup"><span data-stu-id="ebb36-130">Office for Mac (build 15.33+)</span></span>
+- <span data-ttu-id="ebb36-131">Office Online</span><span class="sxs-lookup"><span data-stu-id="ebb36-131">Office Online</span></span> 
+
+<span data-ttu-id="ebb36-132">Mais plataformas ser?o inclu?das em breve.</span><span class="sxs-lookup"><span data-stu-id="ebb36-132">More platforms are coming soon.</span></span>
+
+## <a name="best-practices"></a><span data-ttu-id="ebb36-133">Pr?ticas recomendadas</span><span class="sxs-lookup"><span data-stu-id="ebb36-133">Best practices</span></span>
+
+<span data-ttu-id="ebb36-134">Aplique as seguintes pr?ticas recomendadas ao desenvolver comandos de suplementos:</span><span class="sxs-lookup"><span data-stu-id="ebb36-134">Apply the following best practices when you develop add-in commands:</span></span>
+
+- <span data-ttu-id="ebb36-p104">Use os comandos para representar uma a??o espec?fica com um resultado claro e espec?fico para os usu?rios. N?o combine v?rias a??es em um ?nico bot?o.</span><span class="sxs-lookup"><span data-stu-id="ebb36-p104">Use commands to represent a specific action with a clear and specific outcome for users. Do not combine multiple actions in a single button.</span></span>
+- <span data-ttu-id="ebb36-p105">Forne?a a??es granulares que tornam a realiza??o de tarefas comuns no seu suplemento mais eficiente. Minimize o n?mero de etapas necess?rias para concluir uma tarefa.</span><span class="sxs-lookup"><span data-stu-id="ebb36-p105">Provide granular actions that make common tasks within your add-in more efficient to perform. Minimize the number of steps an action takes to complete.</span></span>
+- <span data-ttu-id="ebb36-139">Para o posicionamento dos comandos na faixa de op??es do Office:</span><span class="sxs-lookup"><span data-stu-id="ebb36-139">For the placement of your commands in the Office ribbon:</span></span>
+    - <span data-ttu-id="ebb36-p106">Insira os comandos em uma guia existente (Inserir, Revisar e assim por diante) se a funcionalidade fornecida se encaixar ali. Por exemplo, se seu suplemento permitir que os usu?rios insiram m?dia, adicione um grupo ? guia Inserir. Observe que nem todas as guias est?o dispon?veis em todas as vers?es do Office. Para saber mais, confira o [Manifesto XML dos Suplementos do Office](../develop/add-in-manifests.md).</span><span class="sxs-lookup"><span data-stu-id="ebb36-p106">Place commands on an existing tab (Insert, Review, and so on) if the functionality provided fits there. For example, if your add-in enables users to insert media, add a group to the Insert tab. Note that not all tabs are available across all Office versions. For more information, see [Office Add-ins XML manifest](../develop/add-in-manifests.md).</span></span> 
+    - <span data-ttu-id="ebb36-p107">Insira comandos na guia P?gina Inicial se a funcionalidade n?o se encaixar em outra guia e voc? menos de seis comandos de n?vel superior. Voc? tamb?m pode adicionar comandos ? guia P?gina Inicial se seu suplemento precisar funcionar em diferentes vers?es do Office (como o Office para ?rea de trabalho e o Office Online) e uma guia n?o estiver dispon?vel em todas as vers?es (por exemplo, a guia Design n?o existe no Office Online).</span><span class="sxs-lookup"><span data-stu-id="ebb36-p107">Place commands on the Home tab if the functionality doesn't fit on another tab, and you have fewer than six top-level commands. You can also add commands to the Home tab if your add-in needs to work across Office versions (such as Office Desktop and Office Online) and a tab is not available in all versions (for example, the Design tab doesn't exist in Office Online).</span></span>  
+    - <span data-ttu-id="ebb36-145">Coloque os comandos em uma guia personalizada se voc? tiver mais de seis comandos de n?vel superior.</span><span class="sxs-lookup"><span data-stu-id="ebb36-145">Place commands on a custom tab if you have more than six top-level commands.</span></span> 
+    - <span data-ttu-id="ebb36-p108">Nomeie seu grupo de acordo com o nome do seu suplemento. Se voc? tiver v?rios grupos, nomeie cada grupo com base na funcionalidade que os comandos nesse grupo fornecem.</span><span class="sxs-lookup"><span data-stu-id="ebb36-p108">Name your group to match the name of your add-in. If you have multiple groups, name each group based on the functionality that the commands in that group provide.</span></span>
+    - <span data-ttu-id="ebb36-148">N?o adicione bot?es sup?rfluos para aumentar o estado real do seu suplemento.</span><span class="sxs-lookup"><span data-stu-id="ebb36-148">Do not add superfluous buttons to increase the real estate of your add-in.</span></span>
+
+     > [!NOTE]
+     > <span data-ttu-id="ebb36-149">Os suplementos que ocupam muito espa?o podem n?o passar na [Valida??o do AppSource](https://docs.microsoft.com/en-us/office/dev/store/validation-policies).</span><span class="sxs-lookup"><span data-stu-id="ebb36-149">Add-ins that take up too much space might not pass [AppSource validation](https://docs.microsoft.com/en-us/office/dev/store/validation-policies).</span></span>
+
+- <span data-ttu-id="ebb36-150">Para todos os ?cones, siga as [diretrizes de design de ?cones](design-icons.md).</span><span class="sxs-lookup"><span data-stu-id="ebb36-150">For all icons, follow the [icon design guidelines](design-icons.md).</span></span>
+- <span data-ttu-id="ebb36-p109">Forne?a uma vers?o do seu suplemento que tamb?m funcione em hosts que n?o tenham suporte para comandos. Um manifesto de suplemento ?nico poder? funcionar tanto em hosts cientes do comando (com os comandos) quanto em hosts n?o cientes do comando (como um painel de tarefas).</span><span class="sxs-lookup"><span data-stu-id="ebb36-p109">Provide a version of your add-in that also works on hosts that do not support commands. A single add-in manifest can work in both command-aware (with commands) and non-command-aware (as a taskpane) hosts.</span></span>
+
+   <span data-ttu-id="ebb36-153">*Figura 3. Suplemento de painel de tarefas no Office 2013 e o mesmo suplemento usando comandos de suplementos no Office 2016*</span><span class="sxs-lookup"><span data-stu-id="ebb36-153">*Figure 3. Task pane add-in in Office 2013 and the same add-in using add-in commands in Office 2016*</span></span>
+
+   ![Uma captura de tela que mostra um suplemento de painel de tarefas no Office 2013 e o mesmo suplemento usando comandos de suplementos no Office 2016](../images/office-task-pane-add-ins.png)
+
+
+## <a name="next-steps"></a><span data-ttu-id="ebb36-155">Pr?ximas etapas</span><span class="sxs-lookup"><span data-stu-id="ebb36-155">Next steps</span></span>
+
+<span data-ttu-id="ebb36-156">A melhor maneira de come?ar a usar os comandos de suplemento ? conferir os [exemplos de comandos de Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) no GitHub.</span><span class="sxs-lookup"><span data-stu-id="ebb36-156">The best way to get started using add-in commands is to take a look at the [Office Add-in commands samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) on GitHub.</span></span>
+
+<span data-ttu-id="ebb36-157">Saiba mais sobre como especificar comandos de suplemento no manifesto em [Criar comandos de suplemento no manifesto](../develop/create-addin-commands.md) e no conte?do de refer?ncia [VersionOverrides](https://dev.office.com/reference/add-ins/manifest/versionoverrides).</span><span class="sxs-lookup"><span data-stu-id="ebb36-157">For more information about specifying add-in commands in your manifest, see [Create add-in commands in your manifest](../develop/create-addin-commands.md) and the [VersionOverrides](https://dev.office.com/reference/add-ins/manifest/versionoverrides) reference content.</span></span>
+
+
+
+
