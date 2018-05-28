@@ -1,8 +1,14 @@
 # <a name="build-an-excel-add-in-using-react"></a>Criar um suplemento do Excel usando o React
 
-Neste artigo, você passará pelo processo de criar um suplemento do Excel usando o React e a API JavaScript do Excel.
+Neste artigo, voc? passar? pelo processo de criar um suplemento do Excel usando o React e a API JavaScript do Excel.
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="environment"></a>Ambiente
+
+- **?rea de Trabalho do Office**: Verifique se voc? tem a ?ltima vers?o do Office instalada. Comandos de suplemento precisam da compila??o 16.0.6769.0000 ou superior (**16.0.6868.0000** recomendada). Saiba como [Instalar a ?ltima vers?o dos aplicativos do Office](http://aka.ms/latestoffice). 
+ 
+- **Office Online**: N?o h? configura??o adicional. Observe que o suporte para comandos no Office Online para contas de trabalho/escola est? em vers?o pr?via.
+
+## <a name="prerequisites"></a>Pr?-requisitos
 
 - Instale globalmente [Criar aplicativo do React](https://github.com/facebookincubator/create-react-app).
 
@@ -10,7 +16,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
     npm install -g create-react-app
     ```
 
-- Instale a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador do Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.
+- Instale a ?ltima vers?o do [Yeoman](https://github.com/yeoman/yo) e o [gerador do Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.
 
     ```bash
     npm install -g yo generator-office
@@ -26,9 +32,9 @@ create-react-app my-addin
 
 ## <a name="generate-the-manifest-file-and-sideload-the-add-in"></a>Gerar o arquivo de manifesto e realizar sideload do suplemento
 
-Cada suplemento requer um arquivo de manifesto para definir os recursos e configurações.
+Cada suplemento requer um arquivo de manifesto para definir os recursos e configura??es.
 
-1. Navegue até a pasta do seu aplicativo.
+1. Navegue at? a pasta do seu aplicativo.
 
     ```bash
     cd my-addin
@@ -40,19 +46,19 @@ Cada suplemento requer um arquivo de manifesto para definir os recursos e config
     yo office
     ```
 
-    - **Would you like to create a new subfolder for your project?:** `No`
-    - **What do you want to name your add-in?:** `My Office Add-in`
-    - **Which Office client application would you like to support?:** `Excel`
-    - **Would you like to create a new add-in?:** `No`
+    - **Gostaria de criar uma nova subpasta para o seu projeto?:** `No`
+    - **Como deseja nomear seu suplemento?:** `My Office Add-in`
+    - **Para qual aplicativo cliente do Office voc? deseja suporte?:** `Excel`
+    - **Gostaria de criar um novo suplemento?:** `No`
 
-    O gerador perguntará se você deseja abrir **resource.html**. Não é necessário abri-lo para este tutorial, mas fique à vontade em fazer isso se tiver curiosidade. Escolha Sim ou Não para concluir o assistente e deixar o gerador fazer seu trabalho.
+    O gerador perguntar? se voc? deseja abrir **resource.html**. N?o ? necess?rio abri-lo para este tutorial, mas fique ? vontade em fazer isso se tiver curiosidade. Escolha Sim ou N?o para concluir o assistente e deixar o gerador fazer seu trabalho.
 
     ![Gerador do Yeoman](../images/yo-office.png)
     
     > [!NOTE]
-    > Se for solicitada a substituição de **package.json**, responda **Não** (não substituir).
+    > Se for solicitada a substitui??o de **package.json**, responda **N?o** (n?o substituir).
 
-3. Siga as instruções da plataforma que você usará para executar o suplemento e realizar sideload do suplemento no Excel.
+3. Siga as instru??es da plataforma que voc? usar? para executar o suplemento e realizar sideload do suplemento no Excel.
 
     - Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
     - Excel Online: [Realizar sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
@@ -66,7 +72,7 @@ Cada suplemento requer um arquivo de manifesto para definir os recursos e config
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
     ```
 
-2. Abra **src/index.js**, substitua `ReactDOM.render(<App />, document.getElementById('root'));` pelo código a seguir e salve o arquivo. 
+2. Abra **src/index.js**, substitua `ReactDOM.render(<App />, document.getElementById('root'));` pelo c?digo a seguir e salve o arquivo. 
 
     ```typescript
     const Office = window.Office;
@@ -76,7 +82,7 @@ Cada suplemento requer um arquivo de manifesto para definir os recursos e config
     };
     ```
 
-3. Abra **src/App.js**, substitua o conteúdo do arquivo pelo código a seguir e salve o arquivo. 
+3. Abra **src/App.js**, substitua o conte?do do arquivo pelo c?digo a seguir e salve o arquivo. 
 
     ```js
     import React, { Component } from 'react';
@@ -121,7 +127,7 @@ Cada suplemento requer um arquivo de manifesto para definir os recursos e config
     export default App;
     ```
 
-4. Abra **src/App.css**, substitua o conteúdo do arquivo pelo código de CSS a seguir e salve o arquivo. 
+4. Abra **src/App.css**, substitua o conte?do do arquivo pelo c?digo de CSS a seguir e salve o arquivo. 
 
     ```css
     #content-header {
@@ -165,28 +171,28 @@ Cada suplemento requer um arquivo de manifesto para definir os recursos e config
     ```
 
    > [!NOTE]
-   > Uma nova janela de navegador será aberta contendo o suplemento. Feche esta janela.
+   > Uma nova janela de navegador ser? aberta contendo o suplemento. Feche esta janela.
 
-2. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
+2. No Excel, escolha a guia **P?gina Inicial** e o bot?o **Mostrar Painel de Tarefas** na faixa de op??es para abrir o painel de tarefas do suplemento.
 
-    ![Botão do Suplemento do Excel](../images/excel-quickstart-addin-2b.png)
+    ![Bot?o do Suplemento do Excel](../images/excel-quickstart-addin-2b.png)
 
-3. Selecione um intervalo de células na planilha.
+3. Selecione um intervalo de c?lulas na planilha.
 
-4. No painel de tarefas, escolha o botão **Definir cor** para definir a cor do intervalo selecionado como verde.
+4. No painel de tarefas, escolha o bot?o **Definir cor** para definir a cor do intervalo selecionado como verde.
 
     ![Suplemento do Excel](../images/excel-quickstart-addin-2c.png)
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>Pr?ximas etapas
 
-Você criou com êxito um suplemento do Excel usando o React, parabéns! Agora, saiba mais sobre os recursos dos suplementos do Excel e crie um mais complexo, acompanhando o tutorial de suplemento do Excel.
+Voc? criou com ?xito um suplemento do Excel usando o React, parab?ns! Agora, saiba mais sobre os recursos dos suplementos do Excel e crie um mais complexo, acompanhando o tutorial de suplemento do Excel.
 
 > [!div class="nextstepaction"]
-> [Tutorial de suplemento do Excel](../tutorials/excel-tutorial-create-table.md)
+> [Tutorial de suplemento do Excel](../tutorials/excel-tutorial.yml)
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Veja tamb?m
 
 * [Tutorial de suplemento do Excel](../tutorials/excel-tutorial-create-table.md)
 * [Principais conceitos da API JavaScript do Excel](../excel/excel-add-ins-core-concepts.md)
-* [Exemplos de código do suplemento do Excel](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Referência da API JavaScript do Excel](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
+* [Exemplos de c?digo do suplemento do Excel](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
+* [Refer?ncia da API JavaScript do Excel](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

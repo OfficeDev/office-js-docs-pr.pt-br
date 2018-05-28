@@ -1,18 +1,20 @@
 ---
-title: Trabalhar com gráficos usando a API JavaScript do Excel
+title: Trabalhar com gr?ficos usando a API JavaScript do Excel
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: c0f45892cb937a565a6855390344855f75e7473e
+ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 05/23/2018
 ---
+# <a name="work-with-charts-using-the-excel-javascript-api"></a>Trabalhar com gr?ficos usando a API JavaScript do Excel
 
+Este artigo fornece exemplos de c?digo que mostram como executar tarefas comuns com gr?ficos usando a API JavaScript do Excel. Para obter a lista completa de propriedades e m?todos aos quais os objetos **Chart** e **ChartCollection** d?o suporte, confira [Objeto Chart (API JavaScript para Excel)](https://dev.office.com/reference/add-ins/excel/chart) e [Objeto Chart Collection (API JavaScript para Excel)](https://dev.office.com/reference/add-ins/excel/chartcollection).
 
+## <a name="create-a-chart"></a>Criar um gr?fico
 
-# <a name="work-with-charts-using-the-excel-javascript-api"></a>Trabalhar com gráficos usando a API JavaScript do Excel
-
-Este artigo fornece exemplos de código que mostram como executar tarefas comuns com gráficos usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos aos quais os objetos **Chart** e **ChartCollection** dão suporte, confira [Objeto Chart (API JavaScript para Excel)](https://dev.office.com/reference/add-ins/excel/chart) e [Objeto Chart Collection (API JavaScript para Excel)](https://dev.office.com/reference/add-ins/excel/chartcollection).
-
-## <a name="create-a-chart"></a>Criar um gráfico
-
-O exemplo de código a seguir cria um gráfico na planilha chamada **Amostra**. O gráfico é de **Linha** e se baseia em dados do intervalo **A1:B13**.
+O exemplo de c?digo a seguir cria um gr?fico na planilha chamada **Amostra**. O gr?fico ? de **Linha** e se baseia em dados do intervalo **A1:B13**.
 
 ```js
 Excel.run(function (context) {
@@ -30,17 +32,17 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Novo gráfico de linhas**
+**Novo gr?fico de linhas**
 
-![Novo gráfico de linhas no Excel](../images/excel-charts-create-line.png)
+![Novo gr?fico de linhas no Excel](../images/excel-charts-create-line.png)
 
 
-## <a name="add-a-data-series-to-a-chart"></a>Adicionar uma série de dados a um gráfico
+## <a name="add-a-data-series-to-a-chart"></a>Adicionar uma s?rie de dados a um gr?fico
 
-O exemplo de código a seguir adiciona uma série de dados ao primeiro gráfico na planilha. A nova série de dados corresponde à coluna chamada **2016** e baseia-se em dados do intervalo **D2:D5**.
+O exemplo de c?digo a seguir adiciona uma s?rie de dados ao primeiro gr?fico na planilha. A nova s?rie de dados corresponde ? coluna chamada **2016** e baseia-se em dados do intervalo **D2:D5**.
 
 > [!NOTE]
-> Este exemplo usa APIs que no momento só estão disponíveis na versão prévia pública (beta). Para executar este exemplo, você deve usar a biblioteca beta da CDN Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> Essa amostra usa APIs que s? est?o dispon?veis na vers?o pr?via p?blica (beta) no momento. Para executar essa amostra, voc? deve usar a biblioteca beta do CDN do Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 
 ```js
 Excel.run(function (context) {
@@ -55,17 +57,17 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Gráfico antes da adição da série de dados de 2016**
+**Gr?fico antes da adi??o da s?rie de dados de 2016**
 
-![Gráfico no Excel antes da adição da série de dados de 2016](../images/excel-charts-data-series-before.png)
+![Gr?fico no Excel antes da adi??o da s?rie de dados de 2016](../images/excel-charts-data-series-before.png)
 
-**Gráfico após a adição da série de dados de 2016**
+**Gr?fico ap?s a adi??o da s?rie de dados de 2016**
 
-![Gráfico no Excel após a adição da série de dados de 2016](../images/excel-charts-data-series-after.png)
+![Gr?fico no Excel ap?s a adi??o da s?rie de dados de 2016](../images/excel-charts-data-series-after.png)
 
-## <a name="set-chart-title"></a>Definir título do gráfico
+## <a name="set-chart-title"></a>Definir t?tulo do gr?fico
 
-O exemplo de código a seguir define o título do primeiro gráfico na planilha para **Sales Data by Year**. 
+O exemplo de c?digo a seguir define o t?tulo do primeiro gr?fico na planilha para **Sales Data by Year**. 
 
 ```js
 Excel.run(function (context) {
@@ -78,17 +80,17 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Gráfico após definição do título**
+**Gr?fico ap?s defini??o do t?tulo**
 
-![Gráfico com título no Excel](../images/excel-charts-title-set.png)
+![Gr?fico com t?tulo no Excel](../images/excel-charts-title-set.png)
 
-## <a name="set-properties-of-an-axis-in-a-chart"></a>Definir propriedades de um eixo em um gráfico
+## <a name="set-properties-of-an-axis-in-a-chart"></a>Definir propriedades de um eixo em um gr?fico
 
-Os gráficos que usam o [Sistema de coordenadas cartesiano](https://en.wikipedia.org/wiki/Cartesian_coordinate_system), como gráficos de colunas, gráfico de barras e gráficos de dispersão contêm um eixo de categorias e um eixo de valores. Estes exemplos mostram como definir o título e exibem a unidade de um eixo em um gráfico.
+Os gr?ficos que usam o [Sistema de coordenadas cartesiano](https://en.wikipedia.org/wiki/Cartesian_coordinate_system), como gr?ficos de colunas, gr?fico de barras e gr?ficos de dispers?o cont?m um eixo de categorias e um eixo de valores. Estes exemplos mostram como definir o t?tulo e exibem a unidade de um eixo em um gr?fico.
 
-### <a name="set-axis-title"></a>Definir título do eixo
+### <a name="set-axis-title"></a>Definir t?tulo do eixo
 
-O exemplo de código a seguir define o título do eixo das categorias para o primeiro gráfico na planilha como **Product**.
+O exemplo de c?digo a seguir define o t?tulo do eixo das categorias para o primeiro gr?fico na planilha como **Product**.
 
 ```js
 Excel.run(function (context) {
@@ -101,16 +103,16 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Gráfico após definição do título do eixo das categorias**
+**Gr?fico ap?s defini??o do t?tulo do eixo das categorias**
 
-![Gráfico com título do eixo no Excel](../images/excel-charts-axis-title-set.png)
+![Gr?fico com t?tulo do eixo no Excel](../images/excel-charts-axis-title-set.png)
 
-### <a name="set-axis-display-unit"></a>Definir unidade de exibição do eixo
+### <a name="set-axis-display-unit"></a>Definir unidade de exibi??o do eixo
 
-O exemplo de código a seguir define a unidade de exibição do eixo dos valores para o primeiro gráfico na planilha como **Hundreds**.
+O exemplo de c?digo a seguir define a unidade de exibi??o do eixo dos valores para o primeiro gr?fico na planilha como **Hundreds**.
 
 > [!NOTE]
-> Este exemplo usa APIs que no momento só estão disponíveis na versão prévia pública (beta). Para executar este exemplo, você deve usar a biblioteca beta da CDN Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> Essa amostra usa APIs que s? est?o dispon?veis na vers?o pr?via p?blica (beta) no momento. Para executar essa amostra, voc? deve usar a biblioteca beta do CDN do Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 
 ```js
 Excel.run(function (context) {
@@ -123,13 +125,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Gráfico após a definição da unidade de exibição do eixo dos valores**
+**Gr?fico ap?s a defini??o da unidade de exibi??o do eixo dos valores**
 
-![Gráfico com unidade de exibição do eixo no Excel](../images/excel-charts-axis-display-unit-set.png)
+![Gr?fico com unidade de exibi??o do eixo no Excel](../images/excel-charts-axis-display-unit-set.png)
 
-## <a name="set-visibility-of-gridlines-in-a-chart"></a>Definir visibilidade de linhas de grade em um gráfico
+## <a name="set-visibility-of-gridlines-in-a-chart"></a>Definir visibilidade de linhas de grade em um gr?fico
 
-O exemplo de código a seguir oculta as principais linhas de grade para o eixo dos valores do primeiro gráfico na planilha. Você pode mostrar as principais linhas de grade do eixo dos valores do gráfico, definindo `chart.axes.valueAxis.majorGridlines.visible` como **true**.
+O exemplo de c?digo a seguir oculta as principais linhas de grade para o eixo dos valores do primeiro gr?fico na planilha. Voc? pode mostrar as principais linhas de grade do eixo dos valores do gr?fico, definindo `chart.axes.valueAxis.majorGridlines.visible` como **true**.
 
 ```js
 Excel.run(function (context) {
@@ -142,18 +144,18 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Gráfico com linhas de grade ocultas**
+**Gr?fico com linhas de grade ocultas**
 
-![Gráfico com linhas de grade ocultas no Excel](../images/excel-charts-gridlines-removed.png)
+![Gr?fico com linhas de grade ocultas no Excel](../images/excel-charts-gridlines-removed.png)
 
-## <a name="chart-trendlines"></a>Linhas de tendência do gráfico
+## <a name="chart-trendlines"></a>Linhas de tend?ncia do gr?fico
 
-### <a name="add-a-trendline"></a>Adicionar uma linha de tendência
+### <a name="add-a-trendline"></a>Adicionar uma linha de tend?ncia
 
-O exemplo de código a seguir adiciona uma linha de tendência de média móvel à primeira série no primeiro gráfico da planilha chamada **Amostra**. A linha de tendência mostra uma média móvel de cinco períodos.
+O exemplo de c?digo a seguir adiciona uma linha de tend?ncia de m?dia m?vel ? primeira s?rie no primeiro gr?fico da planilha chamada **Amostra**. A linha de tend?ncia mostra uma m?dia m?vel de cinco per?odos.
 
 > [!NOTE]
-> Este exemplo usa APIs que no momento só estão disponíveis na versão prévia pública (beta). Para executar este exemplo, você deve usar a biblioteca beta da CDN Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> Essa amostra usa APIs que s? est?o dispon?veis na vers?o pr?via p?blica (beta) no momento. Para executar essa amostra, voc? deve usar a biblioteca beta do CDN do Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 
 ```js
 Excel.run(function (context) {
@@ -167,16 +169,16 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Gráfico com linha de tendência de média móvel**
+**Gr?fico com linha de tend?ncia de m?dia m?vel**
 
-![Gráfico com linha de tendência de média móvel no Excel](../images/excel-charts-create-trendline.png)
+![Gr?fico com linha de tend?ncia de m?dia m?vel no Excel](../images/excel-charts-create-trendline.png)
 
-### <a name="update-a-trendline"></a>Atualizar uma linha de tendência
+### <a name="update-a-trendline"></a>Atualizar uma linha de tend?ncia
 
-O exemplo de código a seguir define a linha de tendência para o tipo **Linear** para a primeira série no primeiro gráfico da planilha chamada **Amostra**.
+O exemplo de c?digo a seguir define a linha de tend?ncia para o tipo **Linear** para a primeira s?rie no primeiro gr?fico da planilha chamada **Amostra**.
 
 > [!NOTE]
-> Este exemplo usa APIs que no momento só estão disponíveis na versão prévia pública (beta). Para executar este exemplo, você deve usar a biblioteca beta da CDN Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> Essa amostra usa APIs que s? est?o dispon?veis na vers?o pr?via p?blica (beta) no momento. Para executar essa amostra, voc? deve usar a biblioteca beta do CDN do Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 
 ```js
 Excel.run(function (context) {
@@ -191,11 +193,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Gráfico com linha de tendência linear**
+**Gr?fico com linha de tend?ncia linear**
 
-![Gráfico com linha de tendência linear no Excel](../images/excel-charts-trendline-linear.png)
+![Gr?fico com linha de tend?ncia linear no Excel](../images/excel-charts-trendline-linear.png)
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Veja tamb?m
 
 - [Principais conceitos da API JavaScript do Excel](excel-add-ins-core-concepts.md)
 - [Objeto Chart (API JavaScript para Excel)](https://dev.office.com/reference/add-ins/excel/chart) 
