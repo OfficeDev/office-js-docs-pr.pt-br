@@ -1,0 +1,43 @@
+### YamlMime:Tutorial
+title: <span data-ttu-id="5993f-101">Tutorial sobre o suplemento do PowerPoint</span><span class="sxs-lookup"><span data-stu-id="5993f-101">PowerPoint add-in tutorial</span></span>
+metadata:
+  title: Tutorial sobre o suplemento do PowerPoint
+  description: Neste tutorial, voc? criar? um suplemento do PowerPoint que insere uma imagem, insere texto, obt?m os metadados do slide e navega entre os slides.
+  audience: Developer
+  level: Beginner
+  displayType: one-column
+  ms.date: 02/28/2018
+  ms.openlocfilehash: 8ef93ed2a55f427f2c162d76231d9bf4801fa69a
+  ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+  ms.translationtype: HT
+  ms.contentlocale: pt-BR
+  ms.lasthandoff: 05/23/2018
+items:
+- durationInMinutes: 1
+  content: >
+    <span data-ttu-id="5993f-104">Este tutorial ensina a criar um suplemento do painel de tarefas do PowerPoint que adiciona a foto do dia do <a href="https://www.bing.com">Bing</a> a um slide, adiciona texto a um slide, obt?m os metadados do slide e navega entre os slides.</span><span class="sxs-lookup"><span data-stu-id="5993f-104">This tutorial teaches you how to build an PowerPoint task pane add-in that adds the <a href="https://www.bing.com">Bing</a> photo of the day to a slide, adds text to a slide, gets slide metadata, and navigates between slides.</span></span> <span data-ttu-id="5993f-105">Se tiver problemas ao longo do processo, n?o deixe de <a href="https://github.com/OfficeDev/office-js-docs-pr/issues">nos informar</a>.</span><span class="sxs-lookup"><span data-stu-id="5993f-105">If you run into any issues along the way, please <a href="https://github.com/OfficeDev/office-js-docs-pr/issues">let us know</a>.</span></span>
+- title: <span data-ttu-id="5993f-106">Criar seu projeto de suplemento</span><span class="sxs-lookup"><span data-stu-id="5993f-106">Create your add-in project</span></span>
+  durationInMinutes: 5
+  content: >
+    [!INCLUDE [](../includes/powerpoint-tutorial-setup.md)]
+- title: <span data-ttu-id="5993f-107">Inserir uma imagem</span><span class="sxs-lookup"><span data-stu-id="5993f-107">Insert an image</span></span>
+  durationInMinutes: 8
+  content: >
+    [!INCLUDE [](../includes/powerpoint-tutorial-insert-image.md)]
+- title: <span data-ttu-id="5993f-108">Personalizar os elementos da interface do usu?rio (UI)</span><span class="sxs-lookup"><span data-stu-id="5993f-108">Customize User Interface (UI) elements in your PowerPoint task pane add-in</span></span>
+  durationInMinutes: 3
+  content: >
+    [!INCLUDE [](../includes/powerpoint-tutorial-customize-ui.md)]
+- title: <span data-ttu-id="5993f-109">Inserir texto</span><span class="sxs-lookup"><span data-stu-id="5993f-109">Insert text</span></span>
+  durationInMinutes: 4
+  content: >
+    [!INCLUDE [](../includes/powerpoint-tutorial-insert-text.md)]
+- title: <span data-ttu-id="5993f-110">Obter metadados do slide</span><span class="sxs-lookup"><span data-stu-id="5993f-110">Get slide metadata</span></span>
+  durationInMinutes: 4
+  content: >
+    [!INCLUDE [](../includes/powerpoint-tutorial-get-slide-metadata.md)]
+- title: <span data-ttu-id="5993f-111">Navegar entre slides</span><span class="sxs-lookup"><span data-stu-id="5993f-111">Navigate between slides in the presentation</span></span>
+  durationInMinutes: 5
+  content: >
+    [!INCLUDE [](../includes/powerpoint-tutorial-navigate-slides.md)]
+- content: <span data-ttu-id="5993f-112">Voc? concluiu o tutorial sobre o suplemento do PowerPoint.</span><span class="sxs-lookup"><span data-stu-id="5993f-112">You've completed the PowerPoint add-in tutorial.</span></span> <span data-ttu-id="5993f-113">Para saber mais sobre como criar suplementos do PowerPoint, consulte <a href="../powerpoint/powerpoint-add-ins.md">Vis?o geral dos suplementos do PowerPoint</a>.</span><span class="sxs-lookup"><span data-stu-id="5993f-113">To learn more about building PowerPoint add-ins, see <a href="../powerpoint/powerpoint-add-ins.md">PowerPoint add-ins overview</a>.</span></span>
