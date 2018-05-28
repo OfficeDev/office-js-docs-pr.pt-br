@@ -1,140 +1,142 @@
 ---
-title: Práticas recomendadas para o desenvolvimento de suplementos do Office
+title: Pr?ticas recomendadas para o desenvolvimento de suplementos do Office
 description: ''
 ms.date: 01/23/2018
+ms.openlocfilehash: e089b5ccbe9e8aa06a1622dba354b81bce1ddd4a
+ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 05/23/2018
 ---
+# <a name="best-practices-for-developing-office-add-ins"></a>Pr?ticas recomendadas para o desenvolvimento de suplementos do Office
 
-
-
-# <a name="best-practices-for-developing-office-add-ins"></a>Práticas recomendadas para o desenvolvimento de suplementos do Office
-
-Os suplementos eficazes oferecem uma funcionalidade exclusiva e fascinante que estende os aplicativos do Office de uma maneira visualmente atraente. Para criar um excelente suplemento, ofereça uma primeira experiência envolvente para seus usuários, desenvolva uma experiência de interface de usuário de alto nível e otimize o desempenho do seu suplemento. Aplique as práticas recomendadas descritas neste artigo para criar suplementos que ajudem os usuários a concluir suas tarefas de forma rápida e eficiente.
+Os suplementos eficazes oferecem uma funcionalidade exclusiva e fascinante que estende os aplicativos do Office de uma maneira visualmente atraente. Para criar um excelente suplemento, ofere?a uma primeira experi?ncia envolvente para seus usu?rios, desenvolva uma experi?ncia de interface de usu?rio de alto n?vel e otimize o desempenho do seu suplemento. Aplique as pr?ticas recomendadas descritas neste artigo para criar suplementos que ajudem os usu?rios a concluir suas tarefas de forma r?pida e eficiente.
 
 > [!NOTE]
-> Caso pretenda [publicar](../publish/publish.md) o suplemento na experiência do Office depois de criá-lo, verifique se você está em conformidade com as [Políticas de validação do AppSource](https://docs.microsoft.com/pt-br/office/dev/store/validation-policies). Por exemplo, para passar na validação, seu suplemento deve funcionar em todas as plataformas com suporte aos métodos que você definir (para mais informações, confira a [seção 4.12](https://docs.microsoft.com/pt-br/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) e a [Página de hospedagem e disponibilidade de suplementos do Office](../overview/office-add-in-availability.md)). 
+> Caso pretenda [publicar](../publish/publish.md) o suplemento na experi?ncia do Office depois de cri?-lo, verifique se voc? est? em conformidade com as [Pol?ticas de valida??o do AppSource](https://docs.microsoft.com/en-us/office/dev/store/validation-policies). Por exemplo, para passar na valida??o, seu suplemento deve funcionar em todas as plataformas com suporte aos m?todos que voc? definir (para mais informa??es, confira a [se??o 4.12](https://docs.microsoft.com/en-us/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) e a [P?gina de hospedagem e disponibilidade de suplementos do Office](../overview/office-add-in-availability.md)). 
 
 ## <a name="provide-clear-value"></a>Fornecer um valor claro
 
-- Crie suplementos que ajudem os usuários a concluir tarefas de forma rápida e eficiente. Concentre-se nos cenários que fazem sentido para aplicativos do Office. Por exemplo:
- - Torne as principais tarefas de criação mais rápidas e fáceis, com menos interrupções.
- - Habilite novos cenários no Office.
- - Incorpore serviços complementares nos hosts do Office.
- - Melhore a experiência do Office para aumentar a produtividade.
-- Certifique-se de que o valor do seu suplemento seja claro para os usuários desde o princípio, [criando uma experiência envolvente na primeira execução](#create-an-engaging-first-run-experience).
-- Crie uma [listagem eficaz do AppSource](https://docs.microsoft.com/pt-br/office/dev/store/create-effective-office-store-listings). Deixe claro quais são os benefícios do seu suplemento no título e na descrição. Não dependa da sua marca para dizer o que seu suplemento faz.
+- Crie suplementos que ajudem os usu?rios a concluir tarefas de forma r?pida e eficiente. Concentre-se nos cen?rios que fazem sentido para aplicativos do Office. Por exemplo:
+ - Torne as principais tarefas de cria??o mais r?pidas e f?ceis, com menos interrup??es.
+ - Habilite novos cen?rios no Office.
+ - Incorpore servi?os complementares nos hosts do Office.
+ - Melhore a experi?ncia do Office para aumentar a produtividade.
+- Certifique-se de que o valor do seu suplemento seja claro para os usu?rios desde o princ?pio, [criando uma experi?ncia envolvente na primeira execu??o](#create-an-engaging-first-run-experience).
+- Crie uma [listagem eficaz do AppSource](https://docs.microsoft.com/en-us/office/dev/store/create-effective-office-store-listings). Deixe claro quais s?o os benef?cios do seu suplemento no t?tulo e na descri??o. N?o dependa da sua marca para dizer o que seu suplemento faz.
 
 
-## <a name="create-an-engaging-first-run-experience"></a>Criar uma experiência envolvente na primeira execução
+## <a name="create-an-engaging-first-run-experience"></a>Criar uma experi?ncia envolvente na primeira execu??o
 
-- Envolva os novos usuários com uma primeira experiência altamente útil e intuitiva. Observe que, mesmo depois de baixar o suplemento da loja, os usuários ainda estão decidindo se vão utilizá-lo.
+- Envolva os novos usu?rios com uma primeira experi?ncia altamente ?til e intuitiva. Observe que, mesmo depois de baixar o suplemento da loja, os usu?rios ainda est?o decidindo se v?o utiliz?-lo.
 
-- Deixe claro quais são as etapas que usuário terá que seguir para se envolver com seu suplemento. Use vídeos, diagramas, painéis de paginação ou outros recursos para atrair usuários.
+- Deixe claro quais s?o as etapas que usu?rio ter? que seguir para se envolver com seu suplemento. Use v?deos, diagramas, pain?is de pagina??o ou outros recursos para atrair usu?rios.
 
-- Reforce a proposta de valor do seu suplemento no início, em vez de apenas pedir que seus usuários entrem.
+- Reforce a proposta de valor do seu suplemento no in?cio, em vez de apenas pedir que seus usu?rios entrem.
 
-- Forneça uma interface do usuário informativa e torne sua interface do usuário pessoal.
+- Forne?a uma interface do usu?rio informativa e torne sua interface do usu?rio pessoal.
 
-   ![Uma captura de tela que mostra um painel de tarefas de suplemento com etapas de introdução ao lado de um suplemento sem etapas de introdução](../images/contoso-part-catalog-do-dont.png)
+   ![Uma captura de tela que mostra um painel de tarefas de suplemento com etapas de introdu??o ao lado de um suplemento sem etapas de introdu??o](../images/contoso-part-catalog-do-dont.png)
 
-- Se seu suplemento de conteúdo estiver vinculado a dados no documento do usuário, inclua exemplos de dados ou um modelo para mostrar aos usuários o formato de dados a ser usado.
+- Se seu suplemento de conte?do estiver vinculado a dados no documento do usu?rio, inclua exemplos de dados ou um modelo para mostrar aos usu?rios o formato de dados a ser usado.
 
-   ![Uma captura de tela que mostra um suplemento de conteúdo com dados ao lado de um suplemento de conteúdo sem dados](../images/add-in-title.png)
+   ![Uma captura de tela que mostra um suplemento de conte?do com dados ao lado de um suplemento de conte?do sem dados](../images/add-in-title.png)
 
-- Ofereça [avaliações gratuitas](https://docs.microsoft.com/pt-br/office/dev/store/decide-on-a-pricing-model#office-store-pricing-options). Caso o suplemento exija uma assinatura, disponibilize algumas funcionalidades sem a necessidade da assinatura.
+- Ofere?a [avalia??es gratuitas](https://docs.microsoft.com/en-us/office/dev/store/decide-on-a-pricing-model#office-store-pricing-options). Caso o suplemento exija uma assinatura, disponibilize algumas funcionalidades sem a necessidade da assinatura.
 
-- Simplifique o processo de inscrição. Preencha automaticamente as informações (email, nome de exibição) e ignore as verificações de email.
+- Simplifique o processo de inscri??o. Preencha automaticamente as informa??es (email, nome de exibi??o) e ignore as verifica??es de email.
 
-- Evite os pop-ups. Se você tiver de usá-los, oriente o usuário sobre como habilitar o seu pop-up.
+- Evite os pop-ups. Se voc? tiver de us?-los, oriente o usu?rio sobre como habilitar o seu pop-up.
 
-- Use a [autenticação de logon único (SSO)](https://docs.microsoft.com/pt-br/outlook/add-ins/authenticate-a-user-with-an-identity-token).
+- Use a [autentica??o de logon ?nico (SSO)](https://docs.microsoft.com/en-us/outlook/add-ins/authenticate-a-user-with-an-identity-token).
 
-Para modelos que ilustram padrões que podem ser aplicados enquanto você desenvolve sua experiência na primeira execução, consulte [padrões de design UX para Suplementos do Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
+Para modelos que ilustram padr?es que podem ser aplicados enquanto voc? desenvolve sua experi?ncia na primeira execu??o, consulte [padr?es de design UX para Suplementos do Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
 
 ## <a name="use-add-in-commands"></a>Usar comandos de suplemento
 
-- Fornece ao suplemento pontos de entrada relevantes da interface do usuário usando os comandos do suplemento. Confira mais detalhes, inclusive as práticas recomendadas de design, nos [comandos de suplemento](../design/add-in-commands.md).
+- Fornece ao suplemento pontos de entrada relevantes da interface do usu?rio usando os comandos do suplemento. Confira mais detalhes, inclusive as pr?ticas recomendadas de design, nos [comandos de suplemento](../design/add-in-commands.md).
 
-## <a name="apply-ux-design-principles"></a>Aplicar os princípios de design de UX
+## <a name="apply-ux-design-principles"></a>Aplicar os princ?pios de design de UX
 
-- Assegure-se de que a aparência e a funcionalidade de seus suplementos complementam a experiência do Office. Use o [Office UI Fabric](https://dev.office.com/fabric).
+- Assegure-se de que a apar?ncia e a funcionalidade de seus suplementos complementam a experi?ncia do Office. Use o [Office UI Fabric](https://dev.office.com/fabric).
 
-- Favoreça o conteúdo através do Chrome. Evite elementos de interface do usuário supérfluos que não agregam valor à experiência do usuário.
+- Favore?a o conte?do atrav?s do Chrome. Evite elementos de interface do usu?rio sup?rfluos que n?o agregam valor ? experi?ncia do usu?rio.
 
-- Mantenha os usuários no controle. Verifique se os usuários compreenderam as decisões importantes e podem reverter facilmente as ações realizadas pelo suplemento.
+- Mantenha os usu?rios no controle. Verifique se os usu?rios compreenderam as decis?es importantes e podem reverter facilmente as a??es realizadas pelo suplemento.
 
-- Use uma identidade visual para inspirar confiança e orientar os usuários. Não use o recurso de identidade visual para sobrecarregar ou enviar anúncios aos usuários.
+- Use uma identidade visual para inspirar confian?a e orientar os usu?rios. N?o use o recurso de identidade visual para sobrecarregar ou enviar an?ncios aos usu?rios.
 
-- Evite a necessidade de rolagem. Otimize para a resolução 1366 x 768.
+- Evite a necessidade de rolagem. Otimize para a resolu??o 1366 x 768.
 
-- Não inclua imagens não licenciadas.
+- N?o inclua imagens n?o licenciadas.
 
 - Use uma [linguagem clara e simples](../design/add-in-design-guidelines.md#voice-guidelines) no seu suplemento.
 
-- Preocupe-se com a [acessibilidade](../design/ui-elements/accessibility-guidelines.md) – facilite a interação dos usuários com o seu suplemento e inclua tecnologias auxiliares, como leitores de tela.
+- Preocupe-se com a acessibilidade ? facilite a intera??o dos usu?rios com o seu suplemento e inclua tecnologias auxiliares, como leitores de tela.
 
-- Desenvolva para todas as plataformas e métodos de entrada, incluindo teclado/mouse e [toque](#optimize-for-touch). Certifique-se de que sua interface do usuário seja responsiva a diferentes fatores de forma.
+- Desenvolva para todas as plataformas e m?todos de entrada, incluindo teclado/mouse e [toque](#optimize-for-touch). Certifique-se de que sua interface do usu?rio seja responsiva a diferentes fatores de forma.
 
-Para modelos que aplicam os princípios de design que você pode usar e personalizar durante o desenvolvimento do suplemento, consulte [padrões de design UX para Suplementos do Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
+Para modelos que aplicam os princ?pios de design que voc? pode usar e personalizar durante o desenvolvimento do suplemento, consulte [padr?es de design UX para Suplementos do Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
 
 ### <a name="optimize-for-touch"></a>Otimizar para toque
 
-- Use a propriedade [Context.touchEnabled](https://dev.office.com/reference/add-ins/shared/office.context.touchenabled) para descobrir se o aplicativo host que executa o suplemento está habilitado para toque.
+- Use a propriedade [Context.touchEnabled](https://dev.office.com/reference/add-ins/shared/office.context.touchenabled) para descobrir se o aplicativo host que executa o suplemento est? habilitado para toque.
 
   > [!NOTE]
-  > Essa propriedade não tem suporte no Outlook.
+  > Essa propriedade n?o tem suporte no Outlook.
 
-- Verifique se todos os controles são dimensionados adequadamente para interação por toque. Por exemplo, se os botões têm destinos de toque adequados e se as caixas de entrada têm a dimensão correta para que os usuários insiram entradas.
+- Verifique se todos os controles s?o dimensionados adequadamente para intera??o por toque. Por exemplo, se os bot?es t?m destinos de toque adequados e se as caixas de entrada t?m a dimens?o correta para que os usu?rios insiram entradas.
 
-- Não confie nos métodos de entrada sem toque, como passar o cursor ou clicar com o botão direito do mouse.
+- N?o confie nos m?todos de entrada sem toque, como passar o cursor ou clicar com o bot?o direito do mouse.
 
 - Verifique se o suplemento funciona nos modos retrato e paisagem. Observe que em dispositivos de toque, parte do suplemento pode ficar oculta pelo teclado virtual.
 
 - Teste seu suplemento em um dispositivo real usando o [sideload](../testing/sideload-an-office-add-in-on-ipad-and-mac.md).
 
 > [!NOTE]
-> Se você está usando o [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric) nos seus elementos de design, muitos desses elementos já foram tratados.
+> Se voc? est? usando o [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric) nos seus elementos de design, muitos desses elementos j? foram tratados.
 
 
 ## <a name="optimize-and-monitor-add-in-performance"></a>Otimizar e monitorar o desempenho do suplemento
 
-- Crie a percepção de respostas rápidas da interface do usuário. Seu suplemento deverá ser carregado em 500 ms ou menos.
+- Crie a percep??o de respostas r?pidas da interface do usu?rio. Seu suplemento dever? ser carregado em 500 ms ou menos.
 
-- Certifique-se de que todas as interações do usuário respondam em menos de um segundo.
+- Certifique-se de que todas as intera??es do usu?rio respondam em menos de um segundo.
 
--  Forneça indicadores de carregamento para operações com longa execução.
+-  Forne?a indicadores de carregamento para opera??es com longa execu??o.
 
-- Use uma CDN para hospedar imagens, recursos e bibliotecas comuns. Carregue o máximo possível de um só lugar.
+- Use uma CDN para hospedar imagens, recursos e bibliotecas comuns. Carregue o m?ximo poss?vel de um s? lugar.
 
-- Siga as práticas da Web padrão para otimizar a página. Use apenas versões reduzidas das bibliotecas na produção. Carregue somente os recursos que você precisar e otimize como os recursos são carregados.
+- Siga as pr?ticas da Web padr?o para otimizar a p?gina. Use apenas vers?es reduzidas das bibliotecas na produ??o. Carregue somente os recursos que voc? precisar e otimize como os recursos s?o carregados.
 
-- Se o tempo de execução das operações demorar, forneça feedback aos usuários. Observe os limites relacionados na tabela a seguir. Saiba mais em [Limites de recurso e otimização de desempenho para Suplementos do Office](../concepts/resource-limits-and-performance-optimization.md).
+- Se o tempo de execu??o das opera??es demorar, forne?a feedback aos usu?rios. Observe os limites relacionados na tabela a seguir. Saiba mais em [Limites de recurso e otimiza??o de desempenho para Suplementos do Office](../concepts/resource-limits-and-performance-optimization.md).
 
-  |**Classe de interação**|**Destino**|**Limite superior**|**Percepção humana**|
+  |**Classe de intera??o**|**Destino**|**Limite superior**|**Percep??o humana**|
   |:-----|:-----|:-----|:-----|
-  |Instantâneo|<=50 ms|100 ms|Nenhum atraso considerável.|
-  |Rápida|50 – 100 ms.|200 ms|Atraso mínimo considerável. Não são necessários comentários.|
-  |Típico|100 – 300 ms|500 ms|Rápido, mas não o suficiente para ser descrito como rápido. Não são necessários comentários.|
-  |Dinâmico|300 – 500 ms.|1 segundo|Não muito rápido, embora pareça ser dinâmico. Não são necessários comentários.|
-  |Contínuo|>500 ms|5 segundos|Tempo de espera médio, já não parece ser dinâmico. Podem ser necessários comentários.|
-  |Cativo|>500 ms|10 segundos|Longo, mas não o suficiente para fazer executar outra ação. Podem ser necessários comentários.|
-  |Estendida|>500 ms|>10 segundos|Longo o suficiente para realizar outra ação durante o tempo de espera. Podem ser necessários comentários.|
-  |Execução longa|>5 ms|>1 minuto|Os usuários certamente farão algo mais.|
+  |Instant?neo|<=50 ms|100 ms|Nenhum atraso consider?vel.|
+  |R?pida|50 ? 100 ms.|200 ms|Atraso m?nimo consider?vel. N?o s?o necess?rios coment?rios.|
+  |T?pico|100 ? 300 ms|500 ms|R?pido, mas n?o o suficiente para ser descrito como r?pido. N?o s?o necess?rios coment?rios.|
+  |Din?mico|300 ? 500 ms.|1 segundo|N?o muito r?pido, embora pare?a ser din?mico. N?o s?o necess?rios coment?rios.|
+  |Cont?nuo|>500 ms|5 segundos|Tempo de espera m?dio, j? n?o parece ser din?mico. Podem ser necess?rios coment?rios.|
+  |Cativo|>500 ms|10 segundos|Longo, mas n?o o suficiente para fazer executar outra a??o. Podem ser necess?rios coment?rios.|
+  |Estendida|>500 ms|>10 segundos|Longo o suficiente para realizar outra a??o durante o tempo de espera. Podem ser necess?rios coment?rios.|
+  |Execu??o longa|>5 ms|>1 minuto|Os usu?rios certamente far?o algo mais.|
 
-- Monitore a integridade do serviço e use a telemetria para monitorar o sucesso do usuário.
+- Monitore a integridade do servi?o e use a telemetria para monitorar o sucesso do usu?rio.
 
 
 ## <a name="market-your-add-in"></a>Comercializar seu suplemento
 
-- Publique seu suplemento no [AppSource](https://docs.microsoft.com/pt-br/office/dev/store/submit-to-the-office-store) e [promova-o](https://docs.microsoft.com/pt-br/office/dev/store/promote-your-office-store-solution) pelo seu site. Crie uma [listagem eficaz do AppSource](https://docs.microsoft.com/pt-br/office/dev/store/create-effective-office-store-listings).
+- Publique seu suplemento no [AppSource](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store) e [promova-o](https://docs.microsoft.com/en-us/office/dev/store/promote-your-office-store-solution) pelo seu site. Crie uma [listagem eficaz do AppSource](https://docs.microsoft.com/en-us/office/dev/store/create-effective-office-store-listings).
 
-- Use títulos sucintos e descritivos para o suplemento. Inclua no máximo 128 caracteres.
+- Use t?tulos sucintos e descritivos para o suplemento. Inclua no m?ximo 128 caracteres.
 
-- Escreva descrições curtas e atraentes para o seu suplemento. Responda a pergunta "Qual problema este suplemento resolve?".
+- Escreva descri??es curtas e atraentes para o seu suplemento. Responda a pergunta "Qual problema este suplemento resolve?".
 
-- Transmita a proposta de valor do seu suplemento em seu título e descrição. Não confie apenas em sua marca.
+- Transmita a proposta de valor do seu suplemento em seu t?tulo e descri??o. N?o confie apenas em sua marca.
 
-- Crie um site para ajudar os usuários a encontrar e utilizar seu suplemento.
+- Crie um site para ajudar os usu?rios a encontrar e utilizar seu suplemento.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Veja tamb?m
 
-- [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
+- [Vis?o geral da plataforma Suplementos do Office](../overview/office-add-ins.md)

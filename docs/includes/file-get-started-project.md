@@ -1,12 +1,12 @@
 # <a name="build-your-first-project-add-in"></a>Criar o primeiro suplemento do Project
 
-Neste artigo, você passará pelo processo de criar um suplemento do Project usando o jQuery e a API JavaScript para Office.
+Neste artigo, voc? passar? pelo processo de criar um suplemento do Project usando o jQuery e a API JavaScript para Office.
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Pr?-requisitos
 
 - [Node.js](https://nodejs.org)
 
-- Instale a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador do Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.
+- Instale a ?ltima vers?o do [Yeoman](https://github.com/yeoman/yo) e o [gerador do Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.
 
     ```bash
     npm install -g yo generator-office
@@ -14,9 +14,9 @@ Neste artigo, você passará pelo processo de criar um suplemento do Project usa
 
 ## <a name="create-the-add-in"></a>Criar o suplemento
 
-1. Crie uma pasta na sua unidade local e nomeie-a como `my-project-addin`. Esse é o local em que você criará os arquivos para seu suplemento.
+1. Crie uma pasta na sua unidade local e nomeie-a como `my-project-addin`. Esse ? o local em que voc? criar? os arquivos para seu suplemento.
 
-2. Navegue até a nova pasta.
+2. Navegue at? a nova pasta.
 
     ```bash
     cd my-project-addin
@@ -28,22 +28,22 @@ Neste artigo, você passará pelo processo de criar um suplemento do Project usa
     yo office
     ```
 
-    - **Would you like to create a new subfolder for your project?:** `No`
-    - **What do you want to name your add-in?:** `My Office Add-in`
-    - **Which Office client application would you like to support?:** `Project`
-    - **Would you like to create a new add-in?:** `Yes`
-    - **Would you like to use TypeScript?:** `No`
+    - **Gostaria de criar uma nova subpasta para o seu projeto?** `No`
+    - **Como deseja nomear seu suplemento?:** `My Office Add-in`
+    - **Para qual aplicativo cliente do Office voc? deseja suporte?** `Project`
+    - **Gostaria de criar um novo suplemento?:** `Yes`
+    - **Gostaria de usar o TypeScript?** `No`
     - **Escolha a estrutura:** `Jquery`
 
-    O gerador perguntará se você deseja abrir **resource.html**. Não é necessário abri-lo para este tutorial, mas fique à vontade em fazer isso se tiver curiosidade. Escolha Sim ou Não para concluir o assistente e deixar o gerador fazer seu trabalho.
+    O gerador perguntar? se voc? deseja abrir **resource.html**. N?o ? necess?rio abri-lo para este tutorial, mas fique ? vontade em fazer isso se tiver curiosidade. Escolha Sim ou N?o para concluir o assistente e deixar o gerador fazer seu trabalho.
 
     ![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-project-jquery.png)
 
-## <a name="update-the-code"></a>Atualizar o código
+## <a name="update-the-code"></a>Atualizar o c?digo
 
-1. No editor de código, abra **index.html** na raiz do projeto. Esse arquivo contém o HTML que será renderizado no painel de tarefas do suplemento.
+1. No editor de c?digo, abra **index.html** na raiz do projeto. Esse arquivo cont?m o HTML que ser? renderizado no painel de tarefas do suplemento.
 
-2. Substitua o elemento `<header>` dentro do elemento `<body>` com a marcação a seguir.
+2. Substitua o elemento `<header>` dentro do elemento `<body>` com a marca??o a seguir.
 
     ```html
     <div id="content-header">
@@ -53,7 +53,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Project usa
     </div>
     ```
 
-3. Substitua o elemento `<main>` dentro do elemento `<body>` com a marcação a seguir e salve o arquivo.
+3. Substitua o elemento `<main>` dentro do elemento `<body>` com a marca??o a seguir e salve o arquivo.
 
     ```html
     <div id="content-main">
@@ -70,7 +70,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Project usa
     </div>
     ```
 
-4. Abra o arquivo **app.js** para especificar o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
+4. Abra o arquivo **app.js** para especificar o script do suplemento. Substitua todo o conte?do pelo c?digo a seguir e salve o arquivo.
 
     ```js
     'use strict';
@@ -123,7 +123,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Project usa
     })();
     ```
 
-4. Abra o arquivo **app.css** na raiz do projeto para especificar os estilos personalizados do suplemento. Substitua todo o conteúdo pelo que está a seguir e salve o arquivo.
+4. Abra o arquivo **app.css** na raiz do projeto para especificar os estilos personalizados do suplemento. Substitua todo o conte?do pelo que est? a seguir e salve o arquivo.
 
     ```css
     #content-header {
@@ -154,11 +154,11 @@ Neste artigo, você passará pelo processo de criar um suplemento do Project usa
 
 ## <a name="update-the-manifest"></a>Atualizar o manifesto
 
-1. Abra o arquivo **my-office-add-in-manifest.xml** para definir as configurações e os recursos do suplemento.
+1. Abra o arquivo **my-office-add-in-manifest.xml** para definir as configura??es e os recursos do suplemento.
 
-2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o com seu nome.
+2. O elemento `ProviderName` tem um valor de espa?o reservado. Substitua-o com seu nome.
 
-3. O atributo `DefaultValue` do elemento `Description` tem um espaço reservado. Substitua-o com **um suplemento do painel de tarefas do Project**.
+3. O atributo `DefaultValue` do elemento `Description` tem um espa?o reservado. Substitua-o com **um suplemento do painel de tarefas do Project**.
 
 4. Salve o arquivo.
 
@@ -180,7 +180,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Project usa
 
 1. No Project, crie um projeto simples que tenha pelo menos uma tarefa.
 
-2. Siga as instruções para a plataforma que você usará para executar o suplemento e para fazer o sideload do suplemento no Project.
+2. Siga as instru??es para a plataforma que voc? usar? para executar o suplemento e para fazer o sideload do suplemento no Project.
 
     - Windows: [Realizar o sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
     - Project Online: [Realizar o sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
@@ -190,17 +190,17 @@ Neste artigo, você passará pelo processo de criar um suplemento do Project usa
 
     ![Uma captura de tela de um plano de projeto no Project com uma tarefa selecionada](../images/project_quickstart_addin_1.png)
 
-4. No painel de tarefas, escolha o botão **Obter GUID de tarefas** para gravar a GUID de tarefas na caixa de texto **Resultados**.
+4. No painel de tarefas, escolha o bot?o **Obter GUID de tarefas** para gravar a GUID de tarefas na caixa de texto **Resultados**.
 
     ![Captura de tela de um plano de projeto no Project com uma tarefa selecionada e a GUID de tarefas gravada na caixa de texto no painel de tarefas](../images/project_quickstart_addin_2.png)
 
-5. No painel de tarefas, escolha o botão **Obter dados da tarefa** para gravar várias propriedades da tarefa selecionada na caixa de texto **Resultados**.
+5. No painel de tarefas, escolha o bot?o **Obter dados da tarefa** para gravar v?rias propriedades da tarefa selecionada na caixa de texto **Resultados**.
 
-    ![Captura de tela de um plano de projeto no Project com uma tarefa selecionada e várias propriedades de tarefas gravadas na caixa de texto do painel de tarefas](../images/project_quickstart_addin_3.png)
+    ![Captura de tela de um plano de projeto no Project com uma tarefa selecionada e v?rias propriedades de tarefas gravadas na caixa de texto do painel de tarefas](../images/project_quickstart_addin_3.png)
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>Pr?ximas etapas
 
-Parabéns, você criou com êxito um suplemento do Project! Em seguida, saiba mais sobre os recursos de um suplemento do Project e explore os cenários comuns.
+Parab?ns, voc? criou com ?xito um suplemento do Project! Em seguida, saiba mais sobre os recursos de um suplemento do Project e explore os cen?rios comuns.
 
 > [!div class="nextstepaction"]
 > [Suplementos do Project](../project/project-add-ins.md)

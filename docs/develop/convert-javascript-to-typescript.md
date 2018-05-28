@@ -2,28 +2,32 @@
 title: Converter um projeto de Suplemento do Office no Visual Studio para TypeScript
 description: ''
 ms.date: 01/19/2018
+ms.openlocfilehash: 05e845b9d085b64b0534d28053dcd5ca3c7b403e
+ms.sourcegitcommit: 17f60431644b448a4816913039aaebfa328f9b0a
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 05/25/2018
 ---
-
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Converter um projeto de Suplemento do Office no Visual Studio para TypeScript
 
-Você pode usar o modelo de Suplemento do Office no Visual Studio para criar um suplemento que usa JavaScript e depois converter esse projeto de suplemento para o TypeScript. Use o Visual Studio para criar projeto suplemento, evite ter que criar desde o início o projeto de suplemento do Office no TypeScript. 
+Voc? pode usar o modelo de Suplemento do Office no Visual Studio para criar um suplemento que usa JavaScript e depois converter esse projeto de suplemento para o TypeScript. Use o Visual Studio para criar projeto suplemento, evite ter que criar desde o in?cio o projeto de suplemento do Office no TypeScript. 
 
-Este artigo mostra como criar um suplemento do Excel usando o Visual Studio e depois converter o projeto do suplemento do JavaScript para o TypeScript. Você pode usar o mesmo processo para converter outros tipos de projetos de JavaScript para suplementos do Office para o TypeScript no Visual Studio.
+Este artigo mostra como criar um suplemento do Excel usando o Visual Studio e depois converter o projeto do suplemento do JavaScript para o TypeScript. Voc? pode usar o mesmo processo para converter outros tipos de projetos de JavaScript para Suplementos do Office para o TypeScript no Visual Studio.
 
 > [!NOTE]
-> Para criar um projeto de suplementos do Office para o TypeScript sem usar o Visual Studio, siga as instruções na seção "Qualquer editor" de um [início rápido em 5 minutos](../index.yml) e escolha `TypeScript` quando for solicitado pelo [Gerador de suplementos do Office do Yeoman](https://github.com/OfficeDev/generator-office).
+> Para criar um projeto TypeScript do Suplemento do Office sem usar o Visual Studio, siga as instru??es na se??o "Qualquer editor" de qualquer [In?cio r?pido de 5 minutos](../index.yml) e escolha `TypeScript` quando solicitado pelo [Gerador Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office).
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>Pr?-requisitos
 
 - [Visual Studio 2017](https://www.visualstudio.com/vs/) com a carga de trabalho de **desenvolvimento do Office/SharePoint** instalada
 
     > [!NOTE]
-    > Se você já instalou o Visual Studio 2017, [use o Instalador do Visual Studio](https://docs.microsoft.com/pt-br/visualstudio/install/modify-visual-studio) para garantir que a carga de trabalho de **desenvolvimento do Office/SharePoint** seja instalada. 
+    > Se voc? j? instalou o Visual Studio 2017, [use o Instalador do Visual Studio](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio) para garantir que a carga de trabalho de **desenvolvimento do Office/SharePoint** seja instalada. 
 
 - TypeScript 2.3 para Visual Studio 2017
 
     > [!NOTE]
-    > O TypeScript deve ser instalado por padrão com o Visual Studio 2017, mas você pode [usar o Instalador do Visual Studio](https://docs.microsoft.com/pt-br/visualstudio/install/modify-visual-studio) para confirmar se ele foi instalado. No Instalador do Visual Studio, selecione a guia **Componentes individuais** e verifique se a opção**TypeScript 2.3 SDK** está selecionada em **SDKs, bibliotecas e estruturas**.
+    > O TypeScript deve ser instalado por padr?o com o Visual Studio 2017, mas voc? pode [usar o Instalador do Visual Studio](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio) para confirmar se ele foi instalado. No Instalador do Visual Studio, selecione a guia **Componentes individuais** e verifique se a op??o**TypeScript 2.3 SDK** est? selecionada em **SDKs, bibliotecas e estruturas**.
 
 - Excel 2016
 
@@ -31,38 +35,38 @@ Este artigo mostra como criar um suplemento do Excel usando o Visual Studio e de
 
 1. Na barra de menus do Visual Studio, selecione **Arquivo** > **Novo**  >  **Projeto**.
 
-2. Na lista de tipos de projeto em **Visual C#** ou em **Visual Basic**, expanda a opção **Office/SharePoint**, escolha **Suplementos** e depois **Suplemento da Web do Outlook** como o tipo de projeto. 
+2. Na lista de tipos de projeto em **Visual C#** ou em **Visual Basic**, expanda a op??o **Office/SharePoint**, escolha **Suplementos** e depois **Suplemento da Web do Outlook** como o tipo de projeto. 
 
-3. Dê um nome ao projeto e escolha **OK**.
+3. D? um nome ao projeto e escolha **OK**.
 
 4. Na janela **Criar Suplemento do Office**, escolha **Adicionar novas funcionalidades para o Excel**e clique em **Concluir** para criar o projeto.
 
-5. O Visual Studio cria uma solução, e os dois projetos dele são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.
+5. O Visual Studio cria uma solu??o, e os dois projetos dele s?o exibidos no **Gerenciador de Solu??es**. O arquivo **Home.html** ? aberto no Visual Studio.
 
 ## <a name="convert-the-add-in-project-to-typescript"></a>Converter o projeto do suplemento para TypeScript
 
-1. No **Gerenciador de Soluções**, renomeie o arquivo **Home.js** como **Home.ts**.
+1. No **Gerenciador de Solu??es**, renomeie o arquivo **Home.js** como **Home.ts**.
 
     > [!NOTE]
-    > Em seu projeto em TypeScript, você pode ter uma combinação de arquivos TypeScript e JavaScript e seu projeto irá compilar. Isso ocorre porque o TypeScript é um superconjunto tipado do JavaScript que compila o JavaScript. 
+    > Em seu projeto em TypeScript, voc? pode ter uma combina??o de arquivos TypeScript e JavaScript e seu projeto ir? compilar. Isso ocorre porque o TypeScript ? um superconjunto tipado do JavaScript que compila o JavaScript. 
 
-2. Selecione **Sim** para confirmar que você deseja alterar a extensão do nome de arquivo.
+2. Selecione **Sim** para confirmar que voc? deseja alterar a extens?o do nome de arquivo.
 
 3. Crie um novo arquivo chamado **Office.d.ts** na raiz do projeto de aplicativo Web.
 
-4. No navegador, abra o [arquivo de definições de tipo para o Office.js](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js/index.d.ts). Copie o conteúdo do arquivo para a área de transferência.
+4. No navegador, abra o [arquivo de defini??es de tipo para o Office.js](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js/index.d.ts). Copie o conte?do do arquivo para a ?rea de transfer?ncia.
 
-5. No Visual Studio, abra o arquivo **Office.d.ts**, cole o conteúdo de sua área de transferência de arquivo e salve-o.
+5. No Visual Studio, abra o arquivo **Office.d.ts**, cole o conte?do de sua ?rea de transfer?ncia de arquivo e salve-o.
 
 6. Crie um novo arquivo chamado **jQuery.d.ts** na raiz do projeto de aplicativo Web.
 
-7. No navegador, abra o [arquivo de definições de tipos para jQuery](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/jquery/index.d.ts). Copie o conteúdo do arquivo para a área de transferência.
+7. No navegador, abra o [arquivo de defini??es de tipos para jQuery](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/jquery/index.d.ts). Copie o conte?do do arquivo para a ?rea de transfer?ncia.
 
-8. No Visual Studio, abra o arquivo **jQuery.d.ts**, cole o conteúdo de sua área de transferência nesse arquivo e salve-o.
+8. No Visual Studio, abra o arquivo **jQuery.d.ts**, cole o conte?do de sua ?rea de transfer?ncia nesse arquivo e salve-o.
 
 9. No Visual Studio, crie um novo arquivo chamado **tsconfig.json** na raiz do projeto de aplicativo web.
 
-10. Abra o arquivo **tsconfig.json**, adicione o conteúdo a seguir no arquivo e salve-o:
+10. Abra o arquivo **tsconfig.json**, adicione o conte?do a seguir no arquivo e salve-o:
 
     ```javascript
     {
@@ -73,7 +77,7 @@ Este artigo mostra como criar um suplemento do Excel usando o Visual Studio e de
     }
     ```
 
-11. Abra o arquivo **Home.ts** e adicione a seguinte declaração à parte superior do arquivo:
+11. Abra o arquivo **Home.ts** e adicione a seguinte declara??o ? parte superior do arquivo:
 
     ```javascript
     declare var fabric: any;
@@ -87,17 +91,17 @@ Este artigo mostra como criar um suplemento do Excel usando o Visual Studio e de
 
 ## <a name="run-the-converted-add-in-project"></a>Executar o projeto do suplemento convertido
 
-1. No Visual Studio, pressione F5 ou clique no botão **Iniciar** para iniciar o Excel com o botão do suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
+1. No Visual Studio, pressione F5 ou clique no bot?o **Iniciar** para iniciar o Excel com o bot?o do suplemento **Mostrar painel de tarefas** exibido na faixa de op??es. O suplemento ser? hospedado localmente no IIS.
 
-2. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
+2. No Excel, escolha a guia **P?gina Inicial** e o bot?o **Mostrar Painel de Tarefas** na faixa de op??es para abrir o painel de tarefas do suplemento.
 
-3. Na planilha, selecione as nove células que contêm números.
+3. Na planilha, selecione as nove c?lulas que cont?m n?meros.
 
-4. Pressione o botão **Realçar** no painel de tarefas para realçar a célula no intervalo selecionado com o maior valor.
+4. Pressione o bot?o **Real?ar** no painel de tarefas para real?ar a c?lula no intervalo selecionado com o maior valor.
 
-## <a name="homets-code-file"></a>Arquivo de código Home.ts
+## <a name="homets-code-file"></a>Arquivo de c?digo Home.ts
 
-Para sua referência o trecho de código a seguir mostra o conteúdo do arquivo **Home.ts** após a aplicação das alterações descritas anteriormente. Esse código contém o número mínimo de alterações necessárias para que seu suplemento seja executado.
+Para sua refer?ncia o trecho de c?digo a seguir mostra o conte?do do arquivo **Home.ts** ap?s a aplica??o das altera??es descritas anteriormente. Esse c?digo cont?m o n?mero m?nimo de altera??es necess?rias para que seu suplemento seja executado.
 
 ```javascript
 declare var fabric: any;
@@ -225,7 +229,7 @@ declare var fabric: any;
 })();
 ```
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira tamb?m
 
-* [Discussão de implementação do Promise no StackOverflow](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
+* [Discuss?o de implementa??o do Promise no StackOverflow](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
 * [Exemplos de Suplementos do Office no GitHub](https://github.com/officedev)

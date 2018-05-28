@@ -1,6 +1,6 @@
 # <a name="build-your-first-powerpoint-add-in"></a>Crie o seu primeiro suplemento do PowerPoint
 
-Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint usando o jQuery e a API JavaScript para Office.
+Neste artigo, voc? passar? pelo processo de criar um suplemento do PowerPoint usando o jQuery e a API JavaScript para Office.
 
 ## <a name="create-the-add-in"></a>Criar o suplemento 
 
@@ -8,29 +8,29 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-### <a name="prerequisites"></a>Pré-requisitos
+### <a name="prerequisites"></a>Pr?-requisitos
 
-[!include[Quickstart prerequisites](../includes/quickstart-vs-prerequisites.md)]
+[!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
 ### <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
 1. Na barra de menus do Visual Studio, selecione **Arquivo**  >  **Novo**  >  **Projeto**.
     
-2. Na lista de tipos de projeto em **Visual C#** ou no **Visual Basic**, expanda a opção **Office/SharePoint**, escolha **Suplementos** e depois **Suplemento da Web do PowerPoint** como o tipo de projeto. 
+2. Na lista de tipos de projeto em **Visual C#** ou no **Visual Basic**, expanda a op??o **Office/SharePoint**, escolha **Suplementos** e depois **Suplemento da Web do PowerPoint** como o tipo de projeto. 
 
-3. Dê um nome ao projeto e escolha **OK**.
+3. D? um nome ao projeto e escolha **OK**.
 
-4. Na caixa de diálogo **Criar suplementos do Office**, escolha **Adicionar novas funcionalidades ao PowerPoint**e depois **Concluir** para criar o projeto.
+4. Na caixa de di?logo **Criar suplementos do Office**, escolha **Adicionar novas funcionalidades ao PowerPoint**e depois **Concluir** para criar o projeto.
 
-5. O Visual Studio cria uma solução, e os dois projetos dele são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.
+5. O Visual Studio cria uma solu??o, e os dois projetos dele s?o exibidos no **Gerenciador de Solu??es**. O arquivo **Home.html** ? aberto no Visual Studio.
     
-### <a name="explore-the-visual-studio-solution"></a>Explorar a solução do Visual Studio
+### <a name="explore-the-visual-studio-solution"></a>Explorar a solu??o do Visual Studio
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
-### <a name="update-the-code"></a>Atualizar o código
+### <a name="update-the-code"></a>Atualizar o c?digo
 
-1. **Home.html** especifica o HTML que será renderizado no painel de tarefas do suplemento. Em **Home.html**, substitua o elemento `<body>` pela marcação a seguir e salve o arquivo.
+1. **Home.html** especifica o HTML que ser? renderizado no painel de tarefas do suplemento. Em **Home.html**, substitua o elemento `<body>` pela marca??o a seguir e salve o arquivo.
  
     ```html
     <body class="ms-font-m ms-welcome">
@@ -52,7 +52,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
     </body>
     ```
 
-2. Abra o arquivo **Home.js** na raiz do projeto do aplicativo Web. Este arquivo especifica o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
+2. Abra o arquivo **Home.js** na raiz do projeto do aplicativo Web. Este arquivo especifica o script do suplemento. Substitua todo o conte?do pelo c?digo a seguir e salve o arquivo.
 
     ```js
     'use strict';
@@ -97,7 +97,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
     })();
     ```
 
-3. Abra o arquivo **Home.css** na raiz do projeto do aplicativo Web. Este arquivo especifica os estilos personalizados para o suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
+3. Abra o arquivo **Home.css** na raiz do projeto do aplicativo Web. Este arquivo especifica os estilos personalizados para o suplemento. Substitua todo o conte?do pelo c?digo a seguir e salve o arquivo.
 
     ```css
     #content-header {
@@ -128,13 +128,13 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
 
 ### <a name="update-the-manifest"></a>Atualizar o manifesto
 
-1. Abra o arquivo de manifesto XML do projeto do Suplemento. Este arquivo define as configurações e os recursos do suplemento.
+1. Abra o arquivo de manifesto XML do projeto do Suplemento. Este arquivo define as configura??es e os recursos do suplemento.
 
-2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o com seu nome.
+2. O elemento `ProviderName` tem um valor de espa?o reservado. Substitua-o com seu nome.
 
-3. O atributo `DefaultValue` do elemento `DisplayName` tem um espaço reservado. Substitua-o pelo **suplementos do My Office**.
+3. O atributo `DefaultValue` do elemento `DisplayName` tem um espa?o reservado. Substitua-o pelo **suplementos do My Office**.
 
-4. O atributo `DefaultValue` do elemento `Description` tem um espaço reservado. Substitua-o com **um suplemento do painel de tarefas do PowerPoint**.
+4. O atributo `DefaultValue` do elemento `Description` tem um espa?o reservado. Substitua-o com **um suplemento do painel de tarefas do PowerPoint**.
 
 5. Salve o arquivo.
 
@@ -150,27 +150,27 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
 
 ### <a name="try-it-out"></a>Experimente
 
-1. Usando o Visual Studio, teste o suplemento do PowerPoint recém-criado pressionando F5 ou escolhendo o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
+1. Usando o Visual Studio, teste o suplemento do PowerPoint rec?m-criado pressionando F5 ou escolhendo o bot?o **Iniciar** para abrir o PowerPoint com o bot?o de suplemento **Mostrar painel de tarefas** exibido na faixa de op??es. O suplemento ser? hospedado localmente no IIS.
 
-2. No PowerPoint, insira um novo slide em branco, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
+2. No PowerPoint, insira um novo slide em branco, escolha a guia **P?gina Inicial** e o bot?o **Mostrar Painel de Tarefas** na faixa de op??es para abrir o painel de tarefas do suplemento.
 
-    ![Uma captura de tela do PowerPoint com o botão Mostrar painel de tarefas realçado](../images/powerpoint_quickstart_addin_1.png)
+    ![Uma captura de tela do PowerPoint com o bot?o Mostrar painel de tarefas real?ado](../images/powerpoint_quickstart_addin_1.png)
 
-3. No painel de tarefas, escolha o botão **Inserir imagem** para adicionar uma imagem no slide selecionado.
+3. No painel de tarefas, escolha o bot?o **Inserir imagem** para adicionar uma imagem no slide selecionado.
 
     ![Uma captura de tela do PowerPoint com a imagem de um cachorro exibida no slide](../images/powerpoint_quickstart_addin_2.png)
 
-4. No painel de tarefas, escolha o botão **Inserir texto** para adicionar texto no slide selecionado.
+4. No painel de tarefas, escolha o bot?o **Inserir texto** para adicionar texto no slide selecionado.
 
-    ![Uma captura de tela do PowerPoint com a imagem de um cachorro e o texto "Olá, mundo" exibidos no slide](../images/powerpoint_quickstart_addin_3.png)
+    ![Uma captura de tela do PowerPoint com a imagem de um cachorro e o texto "Ol?, mundo" exibidos no slide](../images/powerpoint_quickstart_addin_3.png)
 
 # <a name="any-editortabvisual-studio-code"></a>[Qualquer editor](#tab/visual-studio-code)
 
-### <a name="prerequisites"></a>Pré-requisitos
+### <a name="prerequisites"></a>Pr?-requisitos
 
 - [Node.js](https://nodejs.org)
 
-- Instale a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador do Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.
+- Instale a ?ltima vers?o do [Yeoman](https://github.com/yeoman/yo) e o [gerador do Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.
 
     ```bash
     npm install -g yo generator-office
@@ -178,9 +178,9 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
 
 ### <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
-1. Crie uma pasta na sua unidade local e nomeie-a como `my-powerpoint-addin`. Esse é o local em que você criará os arquivos para seu suplemento.
+1. Crie uma pasta na sua unidade local e nomeie-a como `my-powerpoint-addin`. Esse ? o local em que voc? criar? os arquivos para seu suplemento.
 
-2. Navegue até a nova pasta.
+2. Navegue at? a nova pasta.
 
     ```bash
     cd my-powerpoint-addin
@@ -192,22 +192,22 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
     yo office
     ```
 
-    - **Would you like to create a new subfolder for your project?:** `No`
-    - **What do you want to name your add-in?:** `My Office Add-in`
-    - **Which Office client application would you like to support?:** `PowerPoint`
-    - **Would you like to create a new add-in?:** `Yes`
-    - **Would you like to use TypeScript?:** `No`
+    - **Gostaria de criar uma nova subpasta para o seu projeto?** `No`
+    - **Como deseja nomear seu suplemento?** `My Office Add-in`
+    - **Para qual aplicativo cliente do Office voc? deseja suporte?** `PowerPoint`
+    - **Gostaria de criar um novo suplemento?** `Yes`
+    - **Gostaria de usar o TypeScript?** `No`
     - **Escolha a estrutura:** `Jquery`
 
-    O gerador perguntará se você deseja abrir **resource.html**. Não é necessário abri-lo para este tutorial, mas fique à vontade em fazer isso se tiver curiosidade. Escolha Sim ou Não para concluir o assistente e deixar o gerador fazer seu trabalho.
+    O gerador perguntar? se voc? deseja abrir **resource.html**. N?o ? necess?rio abri-lo para este tutorial, mas fique ? vontade em fazer isso se tiver curiosidade. Escolha Sim ou N?o para concluir o assistente e deixar o gerador fazer seu trabalho.
 
     ![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-powerpoint-jquery.png)
 
-### <a name="update-the-code"></a>Atualizar o código
+### <a name="update-the-code"></a>Atualizar o c?digo
 
-1. No editor de código, abra **index.html** na raiz do projeto. Esse arquivo contém o HTML que será renderizado no painel de tarefas do suplemento.
+1. No editor de c?digo, abra **index.html** na raiz do projeto. Esse arquivo cont?m o HTML que ser? renderizado no painel de tarefas do suplemento.
 
-2. Substitua o elemento `<header>` dentro do elemento `<body>` com a marcação a seguir.
+2. Substitua o elemento `<header>` dentro do elemento `<body>` com a marca??o a seguir.
 
     ```html
     <div id="content-header">
@@ -217,7 +217,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
     </div>
     ```
 
-3. Substitua o elemento `<main>` dentro do elemento `<body>` com a marcação a seguir e salve o arquivo.
+3. Substitua o elemento `<main>` dentro do elemento `<body>` com a marca??o a seguir e salve o arquivo.
 
     ```html
     <div id="content-main">
@@ -232,7 +232,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
     </div>
     ```
 
-4. Abra o arquivo **app.js** na raiz do projeto para especificar o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
+4. Abra o arquivo **app.js** na raiz do projeto para especificar o script do suplemento. Substitua todo o conte?do pelo c?digo a seguir e salve o arquivo.
 
     ```js
     'use strict';
@@ -277,7 +277,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
     })();
     ```
 
-5. Abra o arquivo **app.css** na raiz do projeto para especificar os estilos personalizados do suplemento. Substitua todo o conteúdo pelo que está a seguir e salve o arquivo.
+5. Abra o arquivo **app.css** na raiz do projeto para especificar os estilos personalizados do suplemento. Substitua todo o conte?do pelo que est? a seguir e salve o arquivo.
 
     ```css
     #content-header {
@@ -308,11 +308,11 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
 
 ### <a name="update-the-manifest"></a>Atualizar o manifesto
 
-1. Abra o arquivo **my-office-add-in-manifest.xml** para definir as configurações e os recursos do suplemento.
+1. Abra o arquivo **my-office-add-in-manifest.xml** para definir as configura??es e os recursos do suplemento.
 
-2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o com seu nome.
+2. O elemento `ProviderName` tem um valor de espa?o reservado. Substitua-o com seu nome.
 
-3. O atributo `DefaultValue` do elemento `Description` tem um espaço reservado. Substitua-o com **um suplemento do painel de tarefas do PowerPoint**.
+3. O atributo `DefaultValue` do elemento `Description` tem um espa?o reservado. Substitua-o com **um suplemento do painel de tarefas do PowerPoint**.
 
 4. Salve o arquivo.
 
@@ -332,30 +332,29 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
 
 ### <a name="try-it-out"></a>Experimente
 
-1. Siga as instruções para a plataforma que você usará para executar o suplemento e realizar sideload do suplemento no PowerPoint.
+1. Siga as instru??es para a plataforma que voc? usar? para executar o suplemento e realizar sideload do suplemento no PowerPoint.
 
     - Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
     - PowerPoint Online: [Realizar sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
     - iPad e Mac: [Realizar sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-2. No PowerPoint, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
+2. No PowerPoint, escolha a guia **P?gina Inicial** e o bot?o **Mostrar Painel de Tarefas** na faixa de op??es para abrir o painel de tarefas do suplemento.
 
-    ![Uma captura de tela do PowerPoint com o botão Mostrar painel de tarefas realçado](../images/powerpoint_quickstart_addin_1b.png)
+    ![Uma captura de tela do PowerPoint com o bot?o Mostrar painel de tarefas real?ado](../images/powerpoint_quickstart_addin_1b.png)
 
-3. No painel de tarefas, escolha o botão **Inserir imagem** para adicionar uma imagem no slide selecionado.
+3. No painel de tarefas, escolha o bot?o **Inserir imagem** para adicionar uma imagem no slide selecionado.
 
     ![Uma captura de tela do PowerPoint com a imagem de um cachorro exibida no slide](../images/powerpoint_quickstart_addin_2b.png)
 
-4. No painel de tarefas, escolha o botão **Inserir texto** para adicionar texto no slide selecionado.
+4. No painel de tarefas, escolha o bot?o **Inserir texto** para adicionar texto no slide selecionado.
 
-    ![Uma captura de tela do PowerPoint com a imagem de um cachorro e o texto "Olá, mundo" exibidos no slide](../images/powerpoint_quickstart_addin_3b.png)
+    ![Uma captura de tela do PowerPoint com a imagem de um cachorro e o texto "Ol?, mundo" exibidos no slide](../images/powerpoint_quickstart_addin_3b.png)
 
 ---
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>Pr?ximas etapas
 
-Você criou com êxito um suplemento do PowerPoint, parabéns! Agora, saiba mais sobre os recursos dos suplementos do PowerPoint e explore amostras de código para cenários comuns.
+Parab?ns, voc? criou com ?xito um suplemento do PowerPoint! Em seguida, saiba mais sobre os recursos de um suplemento do PowerPoint e crie um suplemento mais complexo seguindo as etapas deste tutorial do suplemento do PowerPoint.
 
 > [!div class="nextstepaction"]
-> [Suplementos do PowerPoint](../powerpoint/powerpoint-add-ins.md)
-
+> [Tutorial do suplemento do PowerPoint](../tutorials/powerpoint-tutorial.yml)

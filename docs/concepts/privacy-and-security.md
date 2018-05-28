@@ -1,126 +1,129 @@
 ---
-title: Privacidade e segurança para suplementos do Office
+title: Privacidade e seguran?a para suplementos do Office
 description: ''
 ms.date: 01/23/2018
+ms.openlocfilehash: 326c8095b6ced105cc21492dc290a443212b3d3f
+ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 05/23/2018
 ---
+# <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e seguran?a para suplementos do Office
 
-# <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
+## <a name="understanding-the-add-in-runtime"></a>No??es b?sicas sobre o tempo de execu??o do suplemento
 
-## <a name="understanding-the-add-in-runtime"></a>Noções básicas sobre o tempo de execução do suplemento
+Os suplementos do Office s?o protegidos por um ambiente de tempo de execu??o de suplemento, um modelo de permiss?es com v?rias camadas e administradores de desempenho. Essa estrutura protege a experi?ncia do usu?rio das seguintes maneiras: 
 
-Os suplementos do Office são protegidos por um ambiente de tempo de execução de suplemento, um modelo de permissões com várias camadas e administradores de desempenho. Essa estrutura protege a experiência do usuário das seguintes maneiras: 
+- O acesso ao quadro da interface do usu?rio do aplicativo host ? gerenciado.
 
-- O acesso ao quadro da interface do usuário do aplicativo host é gerenciado.
+- ? permitido somente o acesso indireto ao thread da interface do usu?rio do aplicativo host.
 
-- É permitido somente o acesso indireto ao thread da interface do usuário do aplicativo host.
+- As intera??es modais n?o s?o permitidas. Por exemplo, chamadas ?s fun??es **alert**, **confirm** e **prompt** do JavaScript n?o s?o permitidas porque s?o modais.
 
-- As interações modais não são permitidas. Por exemplo, chamadas às funções **alert**, **confirm** e **prompt** do JavaScript não são permitidas porque são modais.
+Al?m disso, a estrutura de tempo de execu??o fornece os seguintes benef?cios para garantir que um suplemento do Office n?o possa danificar o ambiente do usu?rio:
 
-Além disso, a estrutura de tempo de execução fornece os seguintes benefícios para garantir que um suplemento do Office não possa danificar o ambiente do usuário:
+- Isola o processo no qual o suplemento ? executado.
 
-- Isola o processo no qual o suplemento é executado.
+- N?o exige substitui??o de .dll ou de .exe ou de componentes ActiveX.
 
-- Não exige substituição de .dll ou de .exe ou de componentes ActiveX.
+- Facilita a instala??o e a desinstala??o do suplemento.
 
-- Facilita a instalação e a desinstalação do suplemento.
+E o uso de mem?ria, CPU e recursos de rede por suplementos do Office ? govern?vel para garantir que o bom desempenho e a confiabilidade sejam mantidos. 
 
-E o uso de memória, CPU e recursos de rede por suplementos do Office é governável para garantir que o bom desempenho e a confiabilidade sejam mantidos. 
+As se??es a seguir descrevem brevemente como a arquitetura de tempo de execu??o d? suporte a suplementos em execu??o em clientes do Office em dispositivos Windows, em dispositivos Mac OS X e em clientes do Office Online na Web.
 
-As seções a seguir descrevem brevemente como a arquitetura de tempo de execução dá suporte a suplementos em execução em clientes do Office em dispositivos Windows, em dispositivos Mac OS X e em clientes do Office Online na Web.
-
-> 
-  **OBSERVAÇÃO:** para saber mais sobre como usar WIP e Intune com os Suplementos do Office, confira [Usar o WIP e o Intune para proteger dados empresariais em documentos executando suplementos do Office](https://docs.microsoft.com/pt-br/microsoft-365-enterprise/office-add-ins-wip).
+> **OBSERVA??O:** para saber mais sobre como usar WIP e Intune com os Suplementos do Office, confira [Usar o WIP e o Intune para proteger dados empresariais em documentos executando suplementos do Office](https://docs.microsoft.com/en-us/microsoft-365-enterprise/office-add-ins-wip).
 
 ### <a name="clients-for-windows-and-os-x-devices"></a>Clientes para dispositivos Windows e OS X
 
-Em clientes com suporte para dispositivos de área de trabalho e de tablet, como Excel, Outlook e Outlook para Mac, há suporte a suplementos do Office por meio da integração de um componente no processo, o tempo de execução de Suplementos do Office, que gerencia o ciclo de vida do suplemento e habilita a interoperabilidade entre o suplemento e o aplicativo cliente. A página da Web do suplemento em si é hospedada fora do processo. Como mostrado na Figura 1, em um dispositivo Windows para área de trabalho ou tablet, a página da Web do suplemento é hospedada em um controle do Internet Explorer que, por sua vez, é hospedado em um processo de tempo de execução de suplemento que fornece segurança e isolamento de desempenho.
+Em clientes com suporte para dispositivos de ?rea de trabalho e de tablet, como Excel, Outlook e Outlook para Mac, h? suporte a suplementos do Office por meio da integra??o de um componente no processo, o tempo de execu??o de Suplementos do Office, que gerencia o ciclo de vida do suplemento e habilita a interoperabilidade entre o suplemento e o aplicativo cliente. A p?gina da Web do suplemento em si ? hospedada fora do processo. Como mostrado na Figura 1, em um dispositivo Windows para ?rea de trabalho ou tablet, a p?gina da Web do suplemento ? hospedada em um controle do Internet Explorer que, por sua vez, ? hospedado em um processo de tempo de execu??o de suplemento que fornece seguran?a e isolamento de desempenho.
 
-No Windows Desktop, o Modo Protegido no Internet Explorer deve ser ativado para a Zona de Site Restrito. Ele geralmente está habilitado por padrão. Se estiver desabilitado, um [erro ocorrerá](https://support.microsoft.com/en-us/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer) quando você tentar iniciar um suplemento.
+No Windows Desktop, o Modo Protegido no Internet Explorer deve ser ativado para a Zona de Site Restrito. Ele geralmente est? habilitado por padr?o. Se estiver desabilitado, um [erro ocorrer?](https://support.microsoft.com/en-us/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer) quando voc? tentar iniciar um suplemento.
 
-*Figura 1. Ambiente de execução dos Suplementos do Office nos clientes Windows para área de trabalho e tablet*
+*Figura 1. Ambiente de execu??o dos Suplementos do Office nos clientes Windows para ?rea de trabalho e tablet*
 
-![Infraestrutura de cliente avançado](../images/dk2-agave-overview-02.png)
+![Infraestrutura de cliente avan?ado](../images/dk2-agave-overview-02.png)
 
-Como mostrado na figura a seguir, em um computador de mesa Mac OS X, a página da Web do suplemento é hospedada em um processo de host de tempo de execução WebKit em área restrita que ajuda a fornecer um nível semelhante de segurança e proteção de desempenho. 
+Como mostrado na figura a seguir, em um computador de mesa Mac OS X, a p?gina da Web do suplemento ? hospedada em um processo de host de tempo de execu??o WebKit em ?rea restrita que ajuda a fornecer um n?vel semelhante de seguran?a e prote??o de desempenho. 
 
-*Figura 2. Ambiente de execução dos Suplementos do Office nos clientes Mac OS X*
+*Figura 2. Ambiente de execu??o dos Suplementos do Office nos clientes Mac OS X*
 
-![Apps for Office runtime environment on OS X Mac](../images/dk2-agave-overview-mac-02.png)
+![Aplicativos para o ambiente de execu??o do Office no Mac OS X](../images/dk2-agave-overview-mac-02.png)
 
-O tempo de execução de Suplementos do Office gerencia a comunicação entre processos, a conversão de eventos e chamadas à API JavaScript em itens nativos, bem como o suporte de comunicação remota da interface do usuário para habilitar o suplemento a ser processado dentro do documento, em um painel de tarefas ou de forma adjacente a uma mensagem de e-mail, solicitação de reunião ou compromisso.
+O tempo de execu??o de Suplementos do Office gerencia a comunica??o entre processos, a convers?o de eventos e chamadas ? API JavaScript em itens nativos, bem como o suporte de comunica??o remota da interface do usu?rio para habilitar o suplemento a ser processado dentro do documento, em um painel de tarefas ou de forma adjacente a uma mensagem de e-mail, solicita??o de reuni?o ou compromisso.
 
 ### <a name="web-clients"></a>Clientes Web
 
-Em clientes Web com suporte, como o Excel Online e o Outlook Web App, os Suplementos do Office são hospedados em um **iframe** que é executado usando o atributo **sandbox** do HTML5. Não são permitidos componentes ActiveX nem a navegação na página principal do cliente Web. O suporte a Suplementos do Office é habilitado em clientes Web por meio da integração da API JavaScript para Office. De maneira semelhante aos aplicativos cliente de área de trabalho, a API JavaScript gerencia o ciclo de vida do suplemento e a interoperabilidade entre o suplemento e o cliente Web. Essa interoperabilidade é implementada por meio de uma infraestrutura especial de comunicação de mensagens de publicação entre quadros. A mesma biblioteca JavaScript (Office.js) que é usada em clientes de área de trabalho, está disponível para interagir com o cliente Web. A figura a seguir ilustra a infraestrutura que dá suporte aos Suplementos do Office no Office Online (em execução no navegador) e os componentes relevantes (o cliente Web, o **iframe**, o tempo de execução de Suplementos do Office e a API JavaScript para o Office) que são necessários para dar suporte a eles.
+Em clientes Web com suporte, como o Excel Online e o Outlook Web App, os Suplementos do Office s?o hospedados em um **iframe** que ? executado usando o atributo **sandbox** do HTML5. N?o s?o permitidos componentes ActiveX nem a navega??o na p?gina principal do cliente Web. O suporte a Suplementos do Office ? habilitado em clientes Web por meio da integra??o da API JavaScript para Office. De maneira semelhante aos aplicativos cliente de ?rea de trabalho, a API JavaScript gerencia o ciclo de vida do suplemento e a interoperabilidade entre o suplemento e o cliente Web. Essa interoperabilidade ? implementada por meio de uma infraestrutura especial de comunica??o de mensagens de publica??o entre quadros. A mesma biblioteca JavaScript (Office.js) que ? usada em clientes de ?rea de trabalho, est? dispon?vel para interagir com o cliente Web. A figura a seguir ilustra a infraestrutura que d? suporte aos Suplementos do Office no Office Online (em execu??o no navegador) e os componentes relevantes (o cliente Web, o **iframe**, o tempo de execu??o de Suplementos do Office e a API JavaScript para o Office) que s?o necess?rios para dar suporte a eles.
 
-*Figura 3. Infraestrutura que dá suporte aos Suplementos do Office nos clientes Web do Office*
+*Figura 3. Infraestrutura que d? suporte aos Suplementos do Office nos clientes Web do Office*
 
 ![Infraestrutura do cliente Web](../images/dk2-agave-overview-03.png)
 
 ## <a name="add-in-integrity-in-appsource"></a>Integridade do suplemento no AppSource
 
-Você pode disponibilizar os Suplementos do Office para o público publicando-os no AppSource, que impõe as seguintes medidas para manter a integridade dos suplementos:
+Voc? pode disponibilizar os Suplementos do Office para o p?blico publicando-os no AppSource, que imp?e as seguintes medidas para manter a integridade dos suplementos:
 
 
 - Requer que o servidor host de um Suplemento do Office sempre use o protocolo SSL para se comunicar.
 
-- Requer que um desenvolvedor forneça uma prova de identidade, um acordo contratual e uma política de privacidade compatível para enviar suplementos.
+- Requer que um desenvolvedor forne?a uma prova de identidade, um acordo contratual e uma pol?tica de privacidade compat?vel para enviar suplementos.
 
-- Garante que a origem dos suplementos seja acessível no modo somente leitura.
+- Garante que a origem dos suplementos seja acess?vel no modo somente leitura.
 
-- Dá suporte a um sistema de revisão pelo usuário para os suplementos disponíveis para promover uma comunidade autovigilante.
+- D? suporte a um sistema de revis?o pelo usu?rio para os suplementos dispon?veis para promover uma comunidade autovigilante.
 
-## <a name="addressing-end-users-privacy-concerns"></a>Lidar com as preocupações de privacidade dos usuários finais
+## <a name="addressing-end-users-privacy-concerns"></a>Lidar com as preocupa??es de privacidade dos usu?rios finais
 
-Esta seção descreve a proteção oferecida pela plataforma de Suplementos do Office da perspectiva do cliente (usuário final) e fornece as diretrizes sobre como dar suporte às expectativas dos usuários e como manipular com segurança as PII (informações de identificação pessoal) dos usuários.
+Esta se??o descreve a prote??o oferecida pela plataforma de Suplementos do Office da perspectiva do cliente (usu?rio final) e fornece as diretrizes sobre como dar suporte ?s expectativas dos usu?rios e como manipular com seguran?a as PII (informa??es de identifica??o pessoal) dos usu?rios.
 
-### <a name="end-users-perspective"></a>Perspectiva dos usuários finais
+### <a name="end-users-perspective"></a>Perspectiva dos usu?rios finais
 
-Os Suplementos do Office são criados usando tecnologias da Web que são executadas em um controle de navegador ou em um **iframe**. Por isso, o uso de suplementos é semelhante à navegação em sites na Internet ou na intranet. Os suplementos podem ser externos à organização (se você adquire o suplemento do AppSource) ou internos (se você adquire o suplemento de um catálogo de suplementos do Exchange Server, de um catálogo de suplementos do SharePoint ou de um compartilhamento de arquivos na rede da organização). Os suplementos têm acesso limitado à rede, e a maioria dos suplementos pode ler ou gravar no documento ou item de email ativo. A plataforma de suplementos aplica certas restrições antes que um usuário ou administrador instale ou inicie um suplemento. Porém, como ocorre com qualquer modelo de extensibilidade, os usuários devem ser cuidadosos antes de iniciar um suplemento desconhecido.
+Os Suplementos do Office s?o criados usando tecnologias da Web que s?o executadas em um controle de navegador ou em um **iframe**. Por isso, o uso de suplementos ? semelhante ? navega??o em sites na Internet ou na intranet. Os suplementos podem ser externos ? organiza??o (se voc? adquire o suplemento do AppSource) ou internos (se voc? adquire o suplemento de um cat?logo de suplementos do Exchange Server, de um cat?logo de suplementos do SharePoint ou de um compartilhamento de arquivos na rede da organiza??o). Os suplementos t?m acesso limitado ? rede, e a maioria dos suplementos pode ler ou gravar no documento ou item de email ativo. A plataforma de suplementos aplica certas restri??es antes que um usu?rio ou administrador instale ou inicie um suplemento. Por?m, como ocorre com qualquer modelo de extensibilidade, os usu?rios devem ser cuidadosos antes de iniciar um suplemento desconhecido.
 
-A plataforma de suplementos lida com as preocupações com privacidade dos usuários finais das seguintes maneiras:
+A plataforma de suplementos lida com as preocupa??es com privacidade dos usu?rios finais das seguintes maneiras:
 
-- Os dados comunicados com o servidor Web que hospeda um suplemento de conteúdo, do Outlook ou de painel de tarefas, bem como a comunicação entre o suplemento e quaisquer serviços Web que ele usa, devem ser criptografados usando o protocolo SSL.
+- Os dados comunicados com o servidor Web que hospeda um suplemento de conte?do, do Outlook ou de painel de tarefas, bem como a comunica??o entre o suplemento e quaisquer servi?os Web que ele usa, devem ser criptografados usando o protocolo SSL.
 
-- Antes de instalar um suplemento do AppSource, o usuário pode exibir a política de privacidade e os requisitos desse suplemento. Além disso, os suplementos do Outlook que interagem com caixas de correio dos usuários expõem as permissões específicas das quais precisam. O usuário pode examinar os termos de uso, as permissões solicitadas e a política de privacidade antes de instalar um suplemento do Outlook.
+- Antes de instalar um suplemento do AppSource, o usu?rio pode exibir a pol?tica de privacidade e os requisitos desse suplemento. Al?m disso, os suplementos do Outlook que interagem com caixas de correio dos usu?rios exp?em as permiss?es espec?ficas das quais precisam. O usu?rio pode examinar os termos de uso, as permiss?es solicitadas e a pol?tica de privacidade antes de instalar um suplemento do Outlook.
 
-- Ao compartilhar um documento, os usuários também compartilham suplementos que foram inseridos no documento ou associados a ele. Se um usuário abrir um documento que contenha um suplemento que o usuário não usou antes, o aplicativo host solicitará que o usuário conceda permissão para que o suplemento seja executado no documento. Em um ambiente empresarial, o aplicativo host do Office também consultará o usuário se o documento for proveniente de uma fonte externa.
+- Ao compartilhar um documento, os usu?rios tamb?m compartilham suplementos que foram inseridos no documento ou associados a ele. Se um usu?rio abrir um documento que contenha um suplemento que o usu?rio n?o usou antes, o aplicativo host solicitar? que o usu?rio conceda permiss?o para que o suplemento seja executado no documento. Em um ambiente empresarial, o aplicativo host do Office tamb?m consultar? o usu?rio se o documento for proveniente de uma fonte externa.
 
-- Os usuários podem habilitar ou desabilitar o acesso ao AppSource. Para os suplementos do conteúdo e do painel de tarefas, os usuários gerenciam o acesso aos suplementos e catálogos confiáveis na **Central de Confiabilidade** no cliente host do Office (aberto com **Arquivo** > **Opções** > **Central de Confiabilidade** > **Configurações da Central de Confiabilidade** > **Catálogos de Suplementos Confiáveis**). Para os suplementos do Outlook, os usuários podem gerenciar os suplementos escolhendo o botão **Gerenciar Suplementos**: no Outlook para Windows, escolha **Arquivo** > **Gerenciar Suplementos**. No Outlook para Mac, escolha o botão **Gerenciar Suplementos** na barra de suplementos. No Outlook Web App, escolha o menu **Configurações** (ícone de engrenagem) > **Gerenciar suplementos**. Os administradores também podem gerenciar esse acesso [usando a política de grupo](http://technet.microsoft.com/pt-br/library/jj219429.aspx#BKMK_Managing).
+- Os usu?rios podem habilitar ou desabilitar o acesso ao AppSource. Para os suplementos do conte?do e do painel de tarefas, os usu?rios gerenciam o acesso aos suplementos e cat?logos confi?veis na **Central de Confiabilidade** no cliente host do Office (aberto com **Arquivo** > **Op??es** > **Central de Confiabilidade** > **Configura??es da Central de Confiabilidade** > **Cat?logos de Suplementos Confi?veis**). Para os suplementos do Outlook, os usu?rios podem gerenciar os suplementos escolhendo o bot?o **Gerenciar Suplementos**: no Outlook para Windows, escolha **Arquivo** > **Gerenciar Suplementos**. No Outlook para Mac, escolha o bot?o **Gerenciar Suplementos** na barra de suplementos. No Outlook Web App, escolha o menu **Configura??es** (?cone de engrenagem) > **Gerenciar suplementos**. Os administradores tamb?m podem gerenciar esse acesso [usando a pol?tica de grupo](http://technet.microsoft.com/en-us/library/jj219429.aspx#BKMK_Managing).
 
-- O design da plataforma do suplemento fornece segurança e desempenho aos usuários finais das seguintes maneiras:
+- O design da plataforma do suplemento fornece seguran?a e desempenho aos usu?rios finais das seguintes maneiras:
 
-  - Um Suplemento do Office é executado em um controle de navegador da Web hospedado em um ambiente de tempo de execução de suplementos separado do aplicativo host do Office. Esse design fornece segurança e isolamento de desempenho do aplicativo host.
+  - Um Suplemento do Office ? executado em um controle de navegador da Web hospedado em um ambiente de tempo de execu??o de suplementos separado do aplicativo host do Office. Esse design fornece seguran?a e isolamento de desempenho do aplicativo host.
 
-  - A execução em um controle de navegador da Web permite que o suplemento faça quase tudo que uma página da Web regular em execução em um navegador pode fazer, mas, ao mesmo tempo, restringe o suplemento a observar a política de mesma origem para o isolamento de domínio e as zonas segurança.
+  - A execu??o em um controle de navegador da Web permite que o suplemento fa?a quase tudo que uma p?gina da Web regular em execu??o em um navegador pode fazer, mas, ao mesmo tempo, restringe o suplemento a observar a pol?tica de mesma origem para o isolamento de dom?nio e as zonas seguran?a.
 
-Os suplementos do Outlook fornecem recursos adicionais de segurança e desempenho por meio do monitoramento de uso de recursos específicos do suplemento do Outlook. Para saber mais, consulte [Privacidade, permissões e segurança de suplementos do Outlook](https://docs.microsoft.com/pt-br/outlook/add-ins/privacy-and-security).
+Os suplementos do Outlook fornecem recursos adicionais de seguran?a e desempenho por meio do monitoramento de uso de recursos espec?ficos do suplemento do Outlook. Para saber mais, consulte [Privacidade, permiss?es e seguran?a de suplementos do Outlook](https://docs.microsoft.com/en-us/outlook/add-ins/privacy-and-security).
 
 ### <a name="developer-guidelines-to-handle-pii"></a>Diretrizes de desenvolvedor para lidar com PII
 
-Você pode ler as diretrizes gerais de proteção de PII para administradores de TI e desenvolvedores em [Proteger a privacidade no desenvolvimento e teste de aplicativos de recursos humanos](http://technet.microsoft.com/pt-br/library/gg447064.aspx). A seguir são listadas algumas diretrizes de proteção específicas de PII para você, como desenvolvedor de Suplementos do Office:
+Voc? pode ler as diretrizes gerais de prote??o de PII para administradores de TI e desenvolvedores em [Proteger a privacidade no desenvolvimento e teste de aplicativos de recursos humanos](http://technet.microsoft.com/en-us/library/gg447064.aspx). A seguir s?o listadas algumas diretrizes de prote??o espec?ficas de PII para voc?, como desenvolvedor de Suplementos do Office:
 
-- O objeto [Settings](https://dev.office.com/reference/add-ins/shared/settings) destina-se a persistir configurações e dados de estado de suplementos entre sessões para um suplemento de conteúdo ou de painel de tarefas, mas não armazena senhas e outros itens de PII confidenciais no objeto **Settings**. Os dados no objeto **Settings** não ficam visíveis para os usuários finais, mas são armazenados como parte do formato de arquivo do documento, que está prontamente acessível. Você deve limitar o uso de PII pelo suplemento e armazenar quaisquer itens de PII necessários ao suplemento no servidor que hospeda o suplemento como um recurso protegido pelo usuário.
+- O objeto [Settings](https://dev.office.com/reference/add-ins/shared/settings) destina-se a persistir configura??es e dados de estado de suplementos entre sess?es para um suplemento de conte?do ou de painel de tarefas, mas n?o armazena senhas e outros itens de PII confidenciais no objeto **Settings**. Os dados no objeto **Settings** n?o ficam vis?veis para os usu?rios finais, mas s?o armazenados como parte do formato de arquivo do documento, que est? prontamente acess?vel. Voc? deve limitar o uso de PII pelo suplemento e armazenar quaisquer itens de PII necess?rios ao suplemento no servidor que hospeda o suplemento como um recurso protegido pelo usu?rio.
 
-- O uso de alguns aplicativos pode revelar itens de PII. Armazene com segurança os dados de identidade, local, horas de acesso e outras credenciais dos usuários para que os dados não sejam disponibilizados para outros usuários do suplemento.
+- O uso de alguns aplicativos pode revelar itens de PII. Armazene com seguran?a os dados de identidade, local, horas de acesso e outras credenciais dos usu?rios para que os dados n?o sejam disponibilizados para outros usu?rios do suplemento.
 
-- Se o suplemento estiver disponível no AppSource, o requisito do AppSource por HTTPS protegerá os itens de PII transmitidos entre o servidor Web e o dispositivo ou computador cliente. No entanto, se você retransmitir esses dados para outros servidores, observe o mesmo nível de proteção.
+- Se o suplemento estiver dispon?vel no AppSource, o requisito do AppSource por HTTPS proteger? os itens de PII transmitidos entre o servidor Web e o dispositivo ou computador cliente. No entanto, se voc? retransmitir esses dados para outros servidores, observe o mesmo n?vel de prote??o.
 
-- Se você armazenar itens de PII dos usuários, revele esse fato e forneça uma maneira para que os usuários os inspecionem e excluam. Se você enviar o suplemento ao AppSource, poderá indicar na política de privacidade os dados que coleta e como eles são usados.
+- Se voc? armazenar itens de PII dos usu?rios, revele esse fato e forne?a uma maneira para que os usu?rios os inspecionem e excluam. Se voc? enviar o suplemento ao AppSource, poder? indicar na pol?tica de privacidade os dados que coleta e como eles s?o usados.
 
-## <a name="developers-permission-choices-and-security-practices"></a>Opções de permissão e práticas de segurança de desenvolvedores
+## <a name="developers-permission-choices-and-security-practices"></a>Op??es de permiss?o e pr?ticas de seguran?a de desenvolvedores
 
-Siga estas diretrizes gerais para dar suporte ao modelo de segurança de Suplementos do Office e analisar detalhadamente cada tipo de suplemento.
+Siga estas diretrizes gerais para dar suporte ao modelo de seguran?a de Suplementos do Office e analisar detalhadamente cada tipo de suplemento.
 
-### <a name="permissions-choices"></a>Opções de permissões
+### <a name="permissions-choices"></a>Op??es de permiss?es
 
-A plataforma de suplementos fornece um modelo de permissões que o suplemento usa para declarar o nível de acesso aos dados de um usuário de que necessita para seus recursos. Cada nível de permissão corresponde ao subconjunto da API JavaScript para Office que o suplemento tem permissão para usar para seus recursos. Por exemplo, a permissão **WriteDocument** para suplementos de conteúdo e de painel de tarefas permite acessar o método [Document.setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync), que permite que um suplemento grave no documento do usuário, mas não permite o acesso a nenhum dos métodos para ler dados do documento. Esse nível de permissão faz sentido para suplementos que só precisam gravar em um documento, como um suplemento em que o usuário pode consultar dados para inserir em seu documento.
+A plataforma de suplemento fornece um modelo de permiss?es que o seu suplemento usa para declarar o n?vel de acesso aos dados de um usu?rio que ele exige para seus recursos. Cada n?vel de permiss?o corresponde ao subconjunto da API JavaScript para Office que seu suplemento pode usar em seus recursos. Por exemplo, a permiss?o **WriteDocument** para os suplementos do conte?do e do painel de tarefas permite acesso ao m?todo [Document.setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync), que permite que um suplemento grave no documento do usu?rio, mas n?o permite acesso a qualquer um dos m?todos para ler dados do documento. Esse n?vel de permiss?o faz sentido para suplementos que precisam apenas gravar em um documento, como um suplemento no qual o usu?rio pode consultar dados para inserir em seus documentos.
 
-Como prática recomendada, você deve solicitar permissões com base no princípio de _menor privilégio_. Ou seja, você deve solicitar permissão para acessar apenas o subconjunto mínimo da API que o suplemento requer para funcionar corretamente. Por exemplo, se o suplemento precisa apenas ler dados no documento de um usuário para seus recursos, você não deve solicitar mais do que a permissão **ReadDocument**. (Porém, lembre-se de que a solicitação de permissões insuficientes fará com que a plataforma de suplementos bloqueie o uso de algumas APIs pelo suplemento e gerará erros em tempo de execução.)
+Como pr?tica recomendada, voc? deve solicitar permiss?es com base no princ?pio de _menor privil?gio_. Ou seja, voc? deve solicitar permiss?o para acessar apenas o subconjunto m?nimo da API que o suplemento requer para funcionar corretamente. Por exemplo, se o suplemento precisa apenas ler dados no documento de um usu?rio para seus recursos, voc? n?o deve solicitar mais do que a permiss?o **ReadDocument**. (Por?m, lembre-se de que a solicita??o de permiss?es insuficientes far? com que a plataforma de suplementos bloqueie o uso de algumas APIs pelo suplemento e gerar? erros em tempo de execu??o.)
 
-Você especifica permissões no manifesto do suplemento, conforme mostrado no exemplo abaixo nesta seção, e os usuários finais podem ver o nível de permissão solicitado de um suplemento antes de decidirem instalar ou ativar o suplemento pela primeira vez. Além disso, os suplementos do Outlook que solicitam a permissão **ReadWriteMailbox** exigem o privilégio de administrador explícito para serem instalados.
+Voc? especifica permiss?es no manifesto do suplemento, conforme mostrado no exemplo abaixo nesta se??o, e os usu?rios finais podem ver o n?vel de permiss?o solicitado de um suplemento antes de decidirem instalar ou ativar o suplemento pela primeira vez. Al?m disso, os suplementos do Outlook que solicitam a permiss?o **ReadWriteMailbox** exigem o privil?gio de administrador expl?cito para serem instalados.
 
-O exemplo a seguir mostra como um suplemento de painel de tarefas especifica a permissão **ReadDocument** em seu manifesto. Para manter as permissões em destaque, outros elementos no manifesto não são exibidos.
+O exemplo a seguir mostra como um suplemento de painel de tarefas especifica a permiss?o **ReadDocument** em seu manifesto. Para manter as permiss?es em destaque, outros elementos no manifesto n?o s?o exibidos.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -135,21 +138,21 @@ O exemplo a seguir mostra como um suplemento de painel de tarefas especifica a p
 </OfficeApp>
 ```
 
-Para saber mais sobre permissões para suplementos de painel de tarefas e de conteúdo, consulte [Solicitar permissões para uso da API em suplementos de conteúdo e de painel de tarefas](https://docs.microsoft.com/pt-br/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins).
+Para saber mais sobre permiss?es para suplementos de painel de tarefas e de conte?do, consulte [Solicitar permiss?es para uso da API em suplementos de conte?do e de painel de tarefas](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins).
 
-Para saber mais sobre permissões para suplementos do Outlook, confira os tópicos a seguir:
+Para saber mais sobre permiss?es para suplementos do Outlook, confira os t?picos a seguir:
 
-- [Privacidade, permissões e segurança de suplementos do Outlook](https://docs.microsoft.com/outlook/add-ins/privacy-and-security)
+- [Privacidade, permiss?es e seguran?a de suplementos do Outlook](https://docs.microsoft.com/outlook/add-ins/privacy-and-security)
 
-- [Noções básicas sobre permissões de suplemento do Outlook](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)
+- [No??es b?sicas sobre permiss?es de suplemento do Outlook](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)
 
-### <a name="same-origin-policy"></a>Política de mesma origem
+### <a name="same-origin-policy"></a>Pol?tica de mesma origem
 
-Como os suplementos do Office são páginas da Web executadas em um controle de navegador da Web, eles devem seguir a política de mesma origem imposta pelo navegador: por padrão, uma página da Web em um domínio não pode fazer chamadas ao serviço Web [XmlHttpRequest](http://www.w3.org/TR/XMLHttpRequest/) para outro domínio que não aquele em que está hospedada.
+Como os suplementos do Office s?o p?ginas da Web executadas em um controle de navegador da Web, eles devem seguir a pol?tica de mesma origem imposta pelo navegador: por padr?o, uma p?gina da Web em um dom?nio n?o pode fazer chamadas ao servi?o Web [XmlHttpRequest](http://www.w3.org/TR/XMLHttpRequest/) para outro dom?nio que n?o aquele em que est? hospedada.
 
-Uma maneira de superar essa limitação é usar JSON/P: forneça um proxy para o serviço Web incluindo uma marca **script** com um atributo **src** que aponte para algum script hospedado em outro domínio. Você pode criar as marcas**script** via programação gerando de forma dinâmica a URL para a qual apontar o atributo **src** e passando parâmetros à URL por meio de parâmetros da consulta de URI. Os provedores de serviços Web criam e hospedam o código JavaScript em URLs específicas e retornam scripts diferentes, dependendo dos parâmetros de consulta de URI. Em seguida, esses scripts são executados onde estão inseridos e funcionam como esperado.
+Uma maneira de superar essa limita??o ? usar JSON/P: forne?a um proxy para o servi?o Web incluindo uma marca **script** com um atributo **src** que aponte para algum script hospedado em outro dom?nio. Voc? pode criar as marcas**script** via programa??o gerando de forma din?mica a URL para a qual apontar o atributo **src** e passando par?metros ? URL por meio de par?metros da consulta de URI. Os provedores de servi?os Web criam e hospedam o c?digo JavaScript em URLs espec?ficas e retornam scripts diferentes, dependendo dos par?metros de consulta de URI. Em seguida, esses scripts s?o executados onde est?o inseridos e funcionam como esperado.
 
-A seguir há um exemplo de JSON/P no exemplo de suplemento do Outlook. 
+A seguir h? um exemplo de JSON/P no exemplo de suplemento do Outlook. 
 
 ```js
 // Dynamically create an HTML SCRIPT element that obtains the details for the specified video.
@@ -165,93 +168,92 @@ function loadVideoDetails(videoIndex) {
 }
 ```
 
-O Exchange e o SharePoint fornecem proxies do lado do cliente para habilitar o acesso de domínio cruzado. Em geral, a política de mesma origem em uma intranet não é tão estrita como na Internet. Para saber mais, confira [Política de mesma origem, parte 1: sem exibição](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx) e [Como lidar com limitações de política de mesma origem nos Suplementos do Office](../develop/addressing-same-origin-policy-limitations.md).
+O Exchange e o SharePoint fornecem proxies do lado do cliente para habilitar o acesso de dom?nio cruzado. Em geral, a pol?tica de mesma origem em uma intranet n?o ? t?o estrita como na Internet. Para saber mais, confira [Pol?tica de mesma origem, parte 1: sem exibi??o](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx) e [Como lidar com limita??es de pol?tica de mesma origem nos Suplementos do Office](../develop/addressing-same-origin-policy-limitations.md).
 
 ### <a name="tips-to-prevent-malicious-cross-site-scripting"></a>Dicas para evitar scripts mal-intencionados entre sites
 
-Um usuário mal-intencionado pode atacar a origem de um suplemento inserindo um script mal-intencionado por meio do documento ou de campos no suplemento. Um desenvolvedor deve processar a entrada do usuário para evitar a execução de JavaScript de um usuário mal-intencionado em seu domínio. Estas são algumas práticas recomendadas a seguir para manipular a entrada do usuário em um documento ou uma mensagem de e-mail ou por meio de campos em um suplemento:
+Um usu?rio mal-intencionado pode atacar a origem de um suplemento inserindo um script mal-intencionado no documento ou nos campos do suplemento. Um desenvolvedor deve processar a entrada do usu?rio para evitar a execu??o do JavaScript de um usu?rio mal-intencionado em seu dom?nio. A seguir est?o algumas boas pr?ticas a serem seguidas para manipular a entrada do usu?rio a partir de um documento ou mensagem de e-mail, ou por meio de campos em um suplemento:
 
 
-- Em vez da propriedade DOM [innerHTML](http://msdn.microsoft.com/pt-br/library/ie/ms533897.aspx), use as propriedades [innerText](https://msdn.microsoft.com/library/ms533899.aspx) e [textContent](https://developer.mozilla.org/en-US/docs/DOM/Node.textContent) quando apropriado. Faça o seguinte para o suporte entre navegadores do Internet Explorer e do Firefox:
+- Em vez da propriedade DOM [innerHTML](http://msdn.microsoft.com/en-us/library/ie/ms533897.aspx), use as propriedades [innerText](https://msdn.microsoft.com/library/ms533899.aspx) e [textContent](https://developer.mozilla.org/en-US/docs/DOM/Node.textContent) quando apropriado. Fa?a o seguinte para o suporte entre navegadores do Internet Explorer e do Firefox:
 
     ```js
      var text = x.innerText || x.textContent
     ```
 
-    Para saber mais sobre as diferenças entre **innerText** e **textContent**, confira [Node.textContent](https://developer.mozilla.org/en-US/docs/DOM/Node.textContent). Para saber mais sobre a compatibilidade de DOM entre navegadores comuns, consulte [Compatibilidade de DOM W3C ‒ HTML](http://www.quirksmode.org/dom/w3c_html.html#t07).
+    Para saber mais sobre as diferen?as entre **innerText** e **textContent**, confira [Node.textContent](https://developer.mozilla.org/en-US/docs/DOM/Node.textContent). Para saber mais sobre a compatibilidade de DOM entre navegadores comuns, consulte [Compatibilidade de DOM W3C ? HTML](http://www.quirksmode.org/dom/w3c_html.html#t07).
 
-- Se precisar usar **innerHTML**, verifique se a entrada do usuário não tem conteúdo mal-intencionado antes de passá-la para **innerHTML**. Para saber mais e obter um exemplo de como usar **innerHTML** com segurança, confira a propriedade [innerHTML](http://msdn.microsoft.com/pt-br/library/ie/ms533897.aspx).
+- Se precisar usar **innerHTML**, verifique se a entrada do usu?rio n?o tem conte?do mal-intencionado antes de pass?-la para **innerHTML**. Para saber mais e obter um exemplo de como usar **innerHTML** com seguran?a, confira a propriedade [innerHTML](http://msdn.microsoft.com/en-us/library/ie/ms533897.aspx).
 
-- Se estiver usando jQuery, use o método [.text()](http://api.jquery.com/text/) em vez do método [.html()](http://api.jquery.com/html/).
+- Se estiver usando jQuery, use o m?todo [.text()](http://api.jquery.com/text/) em vez do m?todo [.html()](http://api.jquery.com/html/).
 
-- Use o método [toStaticHTML](http://msdn.microsoft.com/pt-br/library/ie/cc848922.aspx) para remover atributos e elementos HTML dinâmicos da entrada dos usuários antes de passá-la para **innerHTML**.
+- Use o m?todo [toStaticHTML](http://msdn.microsoft.com/en-us/library/ie/cc848922.aspx) para remover atributos e elementos HTML din?micos da entrada dos usu?rios antes de pass?-la para **innerHTML**.
 
-- Use a função [encodeURIComponent](http://msdn.microsoft.com/pt-br/library/8202bce6-1342-40dc-a5ef-ac6d210a7d15.aspx) ou [encodeURI](http://msdn.microsoft.com/pt-br/library/17bab5a2-bcd4-46c2-8b52-b2b5a0ed98a3.aspx) para codificar texto que se destina a ser uma URL que vem da entrada do usuário ou a contém.
+- Use a fun??o [encodeURIComponent](http://msdn.microsoft.com/en-us/library/8202bce6-1342-40dc-a5ef-ac6d210a7d15.aspx) ou [encodeURI](http://msdn.microsoft.com/en-us/library/17bab5a2-bcd4-46c2-8b52-b2b5a0ed98a3.aspx) para codificar texto que se destina a ser uma URL que vem da entrada do usu?rio ou a cont?m.
 
-- Consulte [Desenvolver suplementos seguros](http://msdn.microsoft.com/pt-br/library/windows/apps/hh849625.aspx) para obter mais práticas recomendadas para criar soluções Web mais seguras.
+- Consulte [Desenvolver suplementos seguros](http://msdn.microsoft.com/en-us/library/windows/apps/hh849625.aspx) para obter mais pr?ticas recomendadas para criar solu??es Web mais seguras.
 
 ### <a name="tips-to-prevent-clickjacking"></a>Dicas para impedir "clickjacking"
 
-Como os suplementos do Office são processados em um iframe durante a execução em um navegador com aplicativos de host do Office Online, use as dicas a seguir para reduzir o risco de [clickjacking](http://en.wikipedia.org/wiki/Clickjacking), uma técnica explorada por hackers para induzir os usuários a revelarem informações confidenciais.
+Como os suplementos do Office s?o processados em um iframe durante a execu??o em um navegador com aplicativos de host do Office Online, use as dicas a seguir para reduzir o risco de [clickjacking](http://en.wikipedia.org/wiki/Clickjacking), uma t?cnica explorada por hackers para induzir os usu?rios a revelarem informa??es confidenciais.
 
-Em primeiro lugar, identifique ações confidenciais que o suplemento pode executar. Elas incluem ações que um usuário não autorizado pode usar de forma mal-intencionada, como iniciar uma transação financeira ou publicar dados confidenciais. Por exemplo, o suplemento pode permitir que o usuário envie um pagamento a um destinatário definido pelo usuário.
+Em primeiro lugar, identifique a??es confidenciais que o suplemento pode executar. Elas incluem a??es que um usu?rio n?o autorizado pode usar de forma mal-intencionada, como iniciar uma transa??o financeira ou publicar dados confidenciais. Por exemplo, o suplemento pode permitir que o usu?rio envie um pagamento a um destinat?rio definido pelo usu?rio.
 
-Segundo, para ações confidenciais, o suplemento deve confirmar com o usuário antes de executar a ação. A confirmação deve detalhar o efeito que a ação terá. Também deve detalhar como o usuário pode impedir a ação, se necessário, escolhendo um botão específico marcado como "Não Permitir" ou ignorando a confirmação.
+Segundo, para a??es confidenciais, o suplemento deve confirmar com o usu?rio antes de executar a a??o. A confirma??o deve detalhar o efeito que a a??o ter?. Tamb?m deve detalhar como o usu?rio pode impedir a a??o, se necess?rio, escolhendo um bot?o espec?fico marcado como "N?o Permitir" ou ignorando a confirma??o.
 
-Terceiro, para garantir que nenhum possível hacker possa ocultar ou mascarar a confirmação, você deve exibi-la fora do contexto do suplemento (ou seja, não em uma caixa de diálogo HTML).
+Terceiro, para garantir que nenhum poss?vel hacker possa ocultar ou mascarar a confirma??o, voc? deve exibi-la fora do contexto do suplemento (ou seja, n?o em uma caixa de di?logo HTML).
 
-Aqui estão alguns exemplos de como obter uma confirmação:
+Aqui est?o alguns exemplos de como obter uma confirma??o:
 
-- Envie um e-mail ao usuário com um link de confirmação.
+- Envie um e-mail ao usu?rio com um link de confirma??o.
 
-- Envie uma mensagem de texto ao usuário com um código de confirmação para ele inserir no suplemento.
+- Envie uma mensagem de texto ao usu?rio com um c?digo de confirma??o para ele inserir no suplemento.
 
-- Abra um diálogo de confirmação em uma nova janela do navegador para uma página que não possa ser exibida em iframe. Geralmente, esse é o padrão usado por páginas de login. Use a [API de diálogo](../develop/dialog-api-in-office-add-ins.md) para criar um novo diálogo.
+- Abra um di?logo de confirma??o em uma nova janela do navegador para uma p?gina que n?o possa ser exibida em iframe. Geralmente, esse ? o padr?o usado por p?ginas de login. Use a [API de di?logo](../develop/dialog-api-in-office-add-ins.md) para criar um novo di?logo.
 
-Verifique também se o endereço usado para entrar em contato com o usuário não pode ter sido fornecido por um possível hacker. Por exemplo, para confirmações de pagamento, use o endereço arquivado na conta autorizada do usuário.
+Verifique tamb?m se o endere?o usado para entrar em contato com o usu?rio n?o pode ter sido fornecido por um poss?vel hacker. Por exemplo, para confirma??es de pagamento, use o endere?o arquivado na conta autorizada do usu?rio.
 
-### <a name="other-security-practices"></a>Outras práticas de segurança
+### <a name="other-security-practices"></a>Outras pr?ticas de seguran?a
 
-Os desenvolvedores também devem observar as seguintes práticas de segurança:
+Os desenvolvedores tamb?m devem observar as seguintes pr?ticas de seguran?a:
 
 
-- Os desenvolvedores não devem usar controles ActiveX em Suplementos do Office, pois os controles ActiveX não dão suporte à natureza de plataforma cruzada da plataforma de suplementos.
+- Os desenvolvedores n?o devem usar controles ActiveX em Suplementos do Office, pois os controles ActiveX n?o d?o suporte ? natureza de plataforma cruzada da plataforma de suplementos.
 
-- Os suplementos de conteúdo e de painel de tarefas presumem o uso das mesmas configurações de SSL que o Internet Explorer usa por padrão e permitem que a maioria do conteúdo seja fornecida apenas por SSL. Os suplementos do Outlook exigem que todo o conteúdo seja fornecido por SSL. Os desenvolvedores devem especificar no elemento **SourceLocation** do manifesto do suplemento uma URL que use HTTPS, para identificar o local do arquivo HTML do suplemento.
+- Os suplementos de conte?do e de painel de tarefas presumem o uso das mesmas configura??es de SSL que o Internet Explorer usa por padr?o e permitem que a maioria do conte?do seja fornecida apenas por SSL. Os suplementos do Outlook exigem que todo o conte?do seja fornecido por SSL. Os desenvolvedores devem especificar no elemento **SourceLocation** do manifesto do suplemento uma URL que use HTTPS, para identificar o local do arquivo HTML do suplemento.
 
-    Para garantir que os suplementos não estejam fornecendo conteúdo usando HTTP, ao testá-los os desenvolvedores devem se certificar que as seguintes configurações estão selecionadas no Internet Explorer e que não há avisos de segurança aparecendo em seus cenários de teste:
+    Para garantir que os suplementos n?o estejam fornecendo conte?do usando HTTP, ao test?-los os desenvolvedores devem se certificar que as seguintes configura??es est?o selecionadas no Internet Explorer e que n?o h? avisos de seguran?a aparecendo em seus cen?rios de teste:
 
-    - Verifique se a configuração de segurança **Exibir conteúdo misto** da zona **Internet** está definida para **Perguntar**. Você pode fazer isso selecionando o seguinte no Internet Explorer: na guia **Segurança** da caixa de diálogo **Opções da Internet**, selecione a zona **Internet**, escolha **Nível personalizado**, role até **Exibir conteúdo misto** e marque **Perguntar** se essa opção não estiver marcada.
+    - Verifique se a configura??o de seguran?a **Exibir conte?do misto** da zona **Internet** est? definida para **Perguntar**. Voc? pode fazer isso selecionando o seguinte no Internet Explorer: na guia **Seguran?a** da caixa de di?logo **Op??es da Internet**, selecione a zona **Internet**, escolha **N?vel personalizado**, role at? **Exibir conte?do misto** e marque **Perguntar** se essa op??o n?o estiver marcada.
 
-    - Verifique se a opção **Avisar ao alterar o modo de segurança** está marcada na guia **Avançado** da caixa de diálogo **Opções da Internet**.
+    - Verifique se a op??o **Avisar ao alterar o modo de seguran?a** est? marcada na guia **Avan?ado** da caixa de di?logo **Op??es da Internet**.
 
-- Para garantir que os suplementos não usem excessivamente os recursos de memória ou do núcleo da CPU e causem a negação de serviço em um computador cliente, a plataforma de suplementos estabelece limites de uso de recursos. Como parte dos testes, os desenvolvedores devem verificar se o desempenho de um suplemento está dentro dos limites de uso de recursos.
+- Para garantir que os suplementos n?o usem excessivamente os recursos de mem?ria ou do n?cleo da CPU e causem a nega??o de servi?o em um computador cliente, a plataforma de suplementos estabelece limites de uso de recursos. Como parte dos testes, os desenvolvedores devem verificar se o desempenho de um suplemento est? dentro dos limites de uso de recursos.
 
-- Antes de publicar um suplemento, os desenvolvedores devem verificar se as informações de identificação pessoal expostas nos arquivos do suplemento estão seguras.
+- Antes de publicar um suplemento, os desenvolvedores devem verificar se as informa??es de identifica??o pessoal expostas nos arquivos do suplemento est?o seguras.
 
-- Os desenvolvedores não devem inserir chaves usadas para acessar APIs ou serviços de terceiros (como o Bing, Google ou Facebook) diretamente nas páginas HTML do suplemento. Em vez disso, devem criar um serviço Web personalizado ou armazenar as chaves em alguma outra forma de armazenamento seguro na Web, que podem então chamar para passar o valor de chave ao suplemento.
+- Os desenvolvedores n?o devem inserir chaves usadas para acessar APIs ou servi?os de terceiros (como o Bing, Google ou Facebook) diretamente nas p?ginas HTML do suplemento. Em vez disso, devem criar um servi?o Web personalizado ou armazenar as chaves em alguma outra forma de armazenamento seguro na Web, que podem ent?o chamar para passar o valor de chave ao suplemento.
 
-- Os desenvolvedores devem fazer o seguinte ao enviar um suplemento à AppSource:
+- Os desenvolvedores devem fazer o seguinte ao enviar um suplemento ? AppSource:
 
-  - Hospedar o suplemento que estão enviando em um servidor Web que dê suporte a SSL.
-  - Produzir uma declaração com uma política de privacidade compatível.
+  - Hospedar o suplemento que est?o enviando em um servidor Web que d? suporte a SSL.
+  - Produzir uma declara??o com uma pol?tica de privacidade compat?vel.
   - Estar preparados para assinar um acordo contratual ao enviar o suplemento.
 
-Além das regras de uso de recursos, os desenvolvedores de suplementos do Outlook também devem verificar se os suplementos estão de acordo com os limites para a especificação de regras de ativação e se usam a API JavaScript. Para saber mais, confira [Limites de ativação e API JavaScript para suplementos do Outlook](http://msdn.microsoft.com/library/e0c9e3d0-517e-4333-b8bd-e169c51a07f6.aspx).
+Al?m das regras de uso de recursos, os desenvolvedores de suplementos do Outlook tamb?m devem verificar se os suplementos est?o de acordo com os limites para a especifica??o de regras de ativa??o e se usam a API JavaScript. Para saber mais, confira [Limites de ativa??o e API JavaScript para suplementos do Outlook](http://msdn.microsoft.com/library/e0c9e3d0-517e-4333-b8bd-e169c51a07f6.aspx).
 
 ## <a name="it-administrators-control"></a>Controle de administradores de TI
 
-Em uma configuração corporativa, os administradores de TI têm autoridade final para habilitar ou desabilitar o acesso ao AppSource e a catálogos particulares.
+Em uma configura??o corporativa, os administradores de TI t?m autoridade final para habilitar ou desabilitar o acesso ao AppSource e a cat?logos particulares.
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Confira tamb?m
 
-- [Solicitar permissões para uso da API em suplementos de painel de tarefas e de conteúdo](http://msdn.microsoft.com/library/da2efadc-4ebf-45fe-be39-397ac1eb1dbd.aspx)
-- [Privacidade, permissões e segurança de suplementos do Outlook](http://msdn.microsoft.com/library/44208fc4-05d4-42d8-ab20-faa89624de1c.aspx)
-- 
-  [Noções básicas sobre permissões de suplemento do Outlook](https://docs.microsoft.com/pt-br/outlook/add-ins/understanding-outlook-add-in-permissions)
-- [Limites de ativação e da API do JavaScript API para suplementos do Outlook](http://msdn.microsoft.com/library/e0c9e3d0-517e-4333-b8bd-e169c51a07f6.aspx)
-- [Como lidar com limitações de política de mesma origem nos suplementos do Office](http://msdn.microsoft.com/library/36c800ae-1dda-4ea8-a558-37c89ffb161b.aspx)
-- [Política de Mesma Origem](http://www.w3.org/Security/wiki/Same_Origin_Policy)
-- [Política de Mesma Origem Parte 1: Sem Inspecionar](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)
-- [Política de mesma origem para JavaScript](https://developer.mozilla.org/En/Same_origin_policy_for_JavaScript)
+- [Solicitar permiss?es para uso da API em suplementos de painel de tarefas e de conte?do](http://msdn.microsoft.com/library/da2efadc-4ebf-45fe-be39-397ac1eb1dbd.aspx)
+- [Privacidade, permiss?es e seguran?a de suplementos do Outlook](http://msdn.microsoft.com/library/44208fc4-05d4-42d8-ab20-faa89624de1c.aspx)
+- [No??es b?sicas sobre permiss?es de suplemento do Outlook](https://docs.microsoft.com/en-us/outlook/add-ins/understanding-outlook-add-in-permissions)
+- [Limites de ativa??o e da API do JavaScript API para suplementos do Outlook](http://msdn.microsoft.com/library/e0c9e3d0-517e-4333-b8bd-e169c51a07f6.aspx)
+- [Como lidar com limita??es de pol?tica de mesma origem nos suplementos do Office](http://msdn.microsoft.com/library/36c800ae-1dda-4ea8-a558-37c89ffb161b.aspx)
+- [Pol?tica de Mesma Origem](http://www.w3.org/Security/wiki/Same_Origin_Policy)
+- [Pol?tica de Mesma Origem Parte 1: Sem Inspecionar](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)
+- [Pol?tica de mesma origem para JavaScript](https://developer.mozilla.org/En/Same_origin_policy_for_JavaScript)
 - [Modo Protegido do IE](https://support.microsoft.com/en-us/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)
