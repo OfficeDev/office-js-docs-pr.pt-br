@@ -7,6 +7,7 @@ ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "19437336"
 ---
 # <a name="grant-administrator-consent-to-the-add-in"></a>Conceder consentimento do administrador ao suplemento
 

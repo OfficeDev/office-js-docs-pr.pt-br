@@ -1,5 +1,5 @@
 ---
-title: Habilitar o logon ?nico para Suplementos do Office
+title: Habilitar o logon único para Suplementos do Office
 description: ''
 ms.date: 04/10/2018
 ms.openlocfilehash: 45bd63150ffa8e46bf9c0fa54711ac907b8490ce
@@ -7,66 +7,67 @@ ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "19437511"
 ---
-# <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Habilitar o logon ?nico para Suplementos do Office (visualiza??o)
+# <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Habilitar o logon único para Suplementos do Office (visualização)
 
-Os usu?rios entram no Office (online, em dispositivos m?veis e plataformas desktop) usando tanto a conta pessoal deles da Microsoft, como a conta corporativa ou de estudante (Office 365). Voc? pode aproveitar isso e usar o logon ?nico (SSO) para autorizar o usu?rio ao seu suplemento sem exigir que o usu?rio fa?a login uma segunda vez.
+Os usuários entram no Office (online, em dispositivos móveis e plataformas desktop) usando tanto a conta pessoal deles da Microsoft, como a conta corporativa ou de estudante (Office 365). Você pode aproveitar isso e usar o logon único (SSO) para autorizar o usuário ao seu suplemento sem exigir que o usuário faça login uma segunda vez.
 
 
 ![Imagem mostrando o processo de logon de um suplemento](../images/office-host-title-bar-sign-in.png)
 
 > [!NOTE]
-> Atualmente a API de logon ?nico tem suporte para Word, Excel e PowerPoint. Confira mais informa??es sobre os programas para os quais a API de logon ?nico tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](https://dev.office.com/reference/add-ins/requirement-sets/identity-api-requirement-sets).
-> Se voc? estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autentica??o Moderna para a loca??o do Office 365. Confira mais informa??es sobre como fazer isso em [Exchange Online: como habilitar seu locat?rio para autentica??o moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> Atualmente a API de logon único tem suporte para Word, Excel e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](https://dev.office.com/reference/add-ins/requirement-sets/identity-api-requirement-sets).
+> Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Office 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
-Para os usu?rios, isso torna a experi?ncia de execu??o do suplemento mais f?cil com apenas um ?nico logon. Para os desenvolvedores, isso significa que o suplemento n?o precisa manter suas pr?prias tabelas de usu?rio com senhas criptografadas.
+Para os usuários, isso torna a experiência de execução do suplemento mais fácil com apenas um único logon. Para os desenvolvedores, isso significa que o suplemento não precisa manter suas próprias tabelas de usuário com senhas criptografadas.
 
-### <a name="how-it-works-at-runtime"></a>Como ele funciona em tempo de execu??o
+### <a name="how-it-works-at-runtime"></a>Como ele funciona em tempo de execução
 
 O diagrama a seguir mostra como funciona o processo de SSO.
 
 ![Diagrama que mostra o processo de SSO](../images/sso-overview-diagram.png)
 
 1. No suplemento, o JavaScript chama uma nova API Office.js `getAccessTokenAsync`. Isso notifica o aplicativo host do Office para que obtenha um token de acesso para o suplemento. Veja [Exemplo de token de acesso](#example-access-token).
-2. Se o usu?rio n?o estiver conectado, o aplicativo host do Office abrir? uma janela pop-up para o usu?rio entrar.
-3. Se essa ? a primeira vez que o usu?rio atual usa seu suplemento, ser? solicitado que ele d? o consentimento.
-4. O aplicativo host do Office solicita o **token do suplemento** do ponto de extremidade v 2.0 do Azure AD para o usu?rio atual.
+2. Se o usuário não estiver conectado, o aplicativo host do Office abrirá uma janela pop-up para o usuário entrar.
+3. Se essa é a primeira vez que o usuário atual usa seu suplemento, será solicitado que ele dê o consentimento.
+4. O aplicativo host do Office solicita o **token do suplemento** do ponto de extremidade v 2.0 do Azure AD para o usuário atual.
 5. O Azure AD envia o token do suplemento ao aplicativo host do Office.
 6. O aplicativo host do Office envia o **token do suplemento** ao suplemento como parte do objeto de resultado que retornou pela chamada de `getAccessTokenAsync`.
-7. O JavaScript no suplemento pode analisar o token e extrair as informa??es necess?rias, como o endere?o de email do usu?rio. 
-8. Opcionalmente, o suplemento pode enviar uma solicita??o HTTP para o servidor para obter mais dados sobre o usu?rio, tais como as prefer?ncias do usu?rio. Ou ent?o, o pr?prio token de acesso pode ser enviado para o servidor para an?lise e valida??o. 
+7. O JavaScript no suplemento pode analisar o token e extrair as informações necessárias, como o endereço de email do usuário. 
+8. Opcionalmente, o suplemento pode enviar uma solicitação HTTP para o servidor para obter mais dados sobre o usuário, tais como as preferências do usuário. Ou então, o próprio token de acesso pode ser enviado para o servidor para análise e validação. 
 
 ## <a name="develop-an-sso-add-in"></a>Desenvolver um suplemento com SSO
 
-Esta se??o descreve as tarefas envolvidas na cria??o de um suplemento do Office que usa SSO. Essas tarefas descritas aqui apresentam uma linguagem e uma estrutura de forma agn?stica. Confira exemplos de explica??es detalhadas em:
+Esta seção descreve as tarefas envolvidas na criação de um suplemento do Office que usa SSO. Essas tarefas descritas aqui apresentam uma linguagem e uma estrutura de forma agnóstica. Confira exemplos de explicações detalhadas em:
 
-* [Criar um Suplemento do Office com Node.js que usa logon ?nico](create-sso-office-add-ins-nodejs.md)
-* [Criar um Suplemento do Office com ASP.NET que usa logon ?nico](create-sso-office-add-ins-aspnet.md)
+* [Criar um Suplemento do Office com Node.js que usa logon único](create-sso-office-add-ins-nodejs.md)
+* [Criar um Suplemento do Office com ASP.NET que usa logon único](create-sso-office-add-ins-aspnet.md)
 
-### <a name="create-the-service-application"></a>Criar o aplicativo de servi?o
+### <a name="create-the-service-application"></a>Criar o aplicativo de serviço
 
-Registre o suplemento no portal de registro para o ponto de extremidade v2.0 do Azure: https://apps.dev.microsoft.com. Esse ? um processo que leva de 5 a 10 minutos e inclui as seguintes tarefas:
+Registre o suplemento no portal de registro para o ponto de extremidade v2.0 do Azure: https://apps.dev.microsoft.com. Esse é um processo que leva de 5 a 10 minutos e inclui as seguintes tarefas:
 
 * Obter uma ID do cliente e o segredo para o suplemento.
-* Especificar as permiss?es que seu suplemento precisa para o AAD v. Ponto de extremidade 2.0 (e, opcionalmente, para o Microsoft Graph). A permiss?o "perfil" ? sempre necess?ria.
-* Conceder a rela??o de confian?a do aplicativo host do Office para o suplemento.
-* Autorizar previamente o aplicativo host do Office para o suplemento com a permiss?o padr?o *access_as_user*.
+* Especificar as permissões que seu suplemento precisa para o AAD v. Ponto de extremidade 2.0 (e, opcionalmente, para o Microsoft Graph). A permissão "perfil" é sempre necessária.
+* Conceder a relação de confiança do aplicativo host do Office para o suplemento.
+* Autorizar previamente o aplicativo host do Office para o suplemento com a permissão padrão *access_as_user*.
 
 Para mais detalhes sobre este processo, veja [Registrar um suplemento do Office que usa SSO com o ponto de extremidade v2.0 do Azure AD](register-sso-add-in-aad-v2.md).
 
 ### <a name="configure-the-add-in"></a>Configurar o suplemento
 
-Adicione novas marca??es ao manifesto do suplemento:
+Adicione novas marcações ao manifesto do suplemento:
 
-* **WebApplicationInfo** ? O respons?vel dos seguintes elementos.
-* **Id** - A ID do cliente do suplemento. Esta ? uma ID do aplicativo que voc? obt?m como parte do registro do suplemento. Veja [Registrar um Suplemento do Office que usa SSO com o ponto de extremidade v2.0 do Azure AD](register-sso-add-in-aad-v2.md).
-* **Recurso** ? O URL do suplemento.
-* **Escopos** ? O respons?vel de um ou mais elementos de **Escopo**.
-* **Escopo** ? Especifica uma permiss?o que o suplemento precisa para o AAD. A permiss?o `profile` ? sempre necess?ria e pode ser a ?nica permiss?o necess?ria, se seu suplemento n?o acessar o Microsoft Graph. Se isso acontecer, voc? tamb?m precisar? dos elementos do **Escopo** para as permiss?es necess?rias do Microsoft Graph; por exemplo, `User.Read`, `Mail.Read`. Bibliotecas que voc? usa no seu c?digo para acessar o Microsoft Graph podem precisar de permiss?es adicionais. Por exemplo, a Microsoft Authentication Library (MSAL) para .NET requer a permiss?o `offline_access`. Para mais informa??es, veja [Autorizar para o Microsoft Graph de um suplemento do Office](authorize-to-microsoft-graph.md).
+* **WebApplicationInfo** – O responsável dos seguintes elementos.
+* **Id** - A ID do cliente do suplemento. Esta é uma ID do aplicativo que você obtém como parte do registro do suplemento. Veja [Registrar um Suplemento do Office que usa SSO com o ponto de extremidade v2.0 do Azure AD](register-sso-add-in-aad-v2.md).
+* **Recurso** – O URL do suplemento.
+* **Escopos** – O responsável de um ou mais elementos de **Escopo**.
+* **Escopo** – Especifica uma permissão que o suplemento precisa para o AAD. A permissão `profile` é sempre necessária e pode ser a única permissão necessária, se seu suplemento não acessar o Microsoft Graph. Se isso acontecer, você também precisará dos elementos do **Escopo** para as permissões necessárias do Microsoft Graph; por exemplo, `User.Read`, `Mail.Read`. Bibliotecas que você usa no seu código para acessar o Microsoft Graph podem precisar de permissões adicionais. Por exemplo, a Microsoft Authentication Library (MSAL) para .NET requer a permissão `offline_access`. Para mais informações, veja [Autorizar para o Microsoft Graph de um suplemento do Office](authorize-to-microsoft-graph.md).
 
-Para hosts do Office diferentes do Outlook, adicione a marca??o no final da se??o `<VersionOverrides ... xsi:type="VersionOverridesV1_0">`. Para o Outlook, adicione a marca??o no final da se??o `<VersionOverrides ... xsi:type="VersionOverridesV1_1">`.
+Para hosts do Office diferentes do Outlook, adicione a marcação no final da seção `<VersionOverrides ... xsi:type="VersionOverridesV1_0">`. Para o Outlook, adicione a marcação no final da seção `<VersionOverrides ... xsi:type="VersionOverridesV1_1">`.
 
-Veja a seguir um exemplo da marca??o:
+Veja a seguir um exemplo da marcação:
 
 ```xml
 <WebApplicationInfo>
@@ -80,17 +81,17 @@ Veja a seguir um exemplo da marca??o:
 </WebApplicationInfo>
 ```
 
-### <a name="add-client-side-code"></a>Adicionar c?digo do cliente
+### <a name="add-client-side-code"></a>Adicionar código do cliente
 
 Adicionar o JavaScript ao suplemento para:
 
 * Chamar [Office.context.auth.getAccessTokenAsync](https://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync).
-* Analisar o token de acesso ou pass?-lo para o c?digo do servidor do suplemento. 
+* Analisar o token de acesso ou passá-lo para o código do servidor do suplemento. 
 
-Aqui est? um exemplo simples de uma chamada para `getAccessTokenAsync`. 
+Aqui está um exemplo simples de uma chamada para `getAccessTokenAsync`. 
 
 > [!Note]
-> Este exemplo manipula apenas um tipo de erro explicitamente. Para exemplos de manipula??o de erro mais elaborados, veja [Home.js no Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/Home.js) e [program.js em Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/public/program.js). E veja [Solucionar problemas de mensagens de erro no logon ?nico (SSO)](troubleshoot-sso-in-office-add-ins.md).
+> Este exemplo manipula apenas um tipo de erro explicitamente. Para exemplos de manipulação de erro mais elaborados, veja [Home.js no Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/Home.js) e [program.js em Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/public/program.js). E veja [Solucionar problemas de mensagens de erro no logon único (SSO)](troubleshoot-sso-in-office-add-ins.md).
  
 
 ```js
@@ -110,7 +111,7 @@ Office.context.auth.getAccessTokenAsync(function (result) {
 });
 ```
 
-Aqui est? um exemplo simples de passagem do token do suplemento para o servidor. O token ? inclu?do como um cabe?alho `Authorization` ao enviar uma solicita??o de volta para o servidor. Este exemplo prev? o envio de dados JSON e, portanto, ele usa o m?todo `POST`, mas `GET` ? suficiente para enviar o token de acesso quando voc? n?o estiver gravando no servidor.
+Aqui está um exemplo simples de passagem do token do suplemento para o servidor. O token é incluído como um cabeçalho `Authorization` ao enviar uma solicitação de volta para o servidor. Este exemplo prevê o envio de dados JSON e, portanto, ele usa o método `POST`, mas `GET` é suficiente para enviar o token de acesso quando você não estiver gravando no servidor.
 
 ```js
 $.ajax({
@@ -130,56 +131,56 @@ $.ajax({
 });
 ```
 
-#### <a name="when-to-call-the-method"></a>Quando chamar o m?todo
+#### <a name="when-to-call-the-method"></a>Quando chamar o método
 
-Se o seu suplemento n?o puder ser usado quando nenhum usu?rio estiver conectado no Office, voc? dever? chamar `getAccessTokenAsync` *quando o suplemento for iniciado*.
+Se o seu suplemento não puder ser usado quando nenhum usuário estiver conectado no Office, você deverá chamar `getAccessTokenAsync` *quando o suplemento for iniciado*.
 
-Se o suplemento tiver alguma funcionalidade que n?o exija um usu?rio conectado, voc? poder? chamar `getAccessTokenAsync` *quando o usu?rio realizar uma a??o que exija um usu?rio conectado*. N?o h? uma degrada??o do desempenho significativa com chamadas redundantes de `getAccessTokenAsync` porque o Office armazena em cache o token de acesso e o reutiliza at? que ele expire, sem fazer outra chamada para o ponto de extremidade v2.0 do AAD sempre que o `getAccessTokenAsync` for chamado. Portanto, voc? pode adicionar chamadas de `getAccessTokenAsync` para todas as fun??es e manipuladores que iniciam uma a??o onde o token ? necess?rio.
+Se o suplemento tiver alguma funcionalidade que não exija um usuário conectado, você poderá chamar `getAccessTokenAsync` *quando o usuário realizar uma ação que exija um usuário conectado*. Não há uma degradação do desempenho significativa com chamadas redundantes de `getAccessTokenAsync` porque o Office armazena em cache o token de acesso e o reutiliza até que ele expire, sem fazer outra chamada para o ponto de extremidade v2.0 do AAD sempre que o `getAccessTokenAsync` for chamado. Portanto, você pode adicionar chamadas de `getAccessTokenAsync` para todas as funções e manipuladores que iniciam uma ação onde o token é necessário.
 
-### <a name="add-server-side-code"></a>Adicionar c?digo do servidor
+### <a name="add-server-side-code"></a>Adicionar código do servidor
 
-Na maioria dos cen?rios, n?o haver? muitas raz?es para obter o token de acesso, se o suplemento n?o o passar no lado do servidor e o utilizar l?. Algumas tarefas do servidor que seu suplemento pode fazer:
+Na maioria dos cenários, não haverá muitas razões para obter o token de acesso, se o suplemento não o passar no lado do servidor e o utilizar lá. Algumas tarefas do servidor que seu suplemento pode fazer:
 
-* Criar um ou mais m?todos da API da Web que usem informa??es sobre o usu?rio extra?do do token; por exemplo, um m?todo que procura as prefer?ncias do usu?rio em sua base de dados hospedada. (Veja **Usar o token SSO como uma identidade** abaixo.) Dependendo do seu idioma e estrutura, as bibliotecas podem estar dispon?veis para simplificar o c?digo que voc? precisa escrever.
-* Obter dados do Microsoft Graph. O c?digo do servidor precisa fazer o seguinte:
+* Criar um ou mais métodos da API da Web que usem informações sobre o usuário extraído do token; por exemplo, um método que procura as preferências do usuário em sua base de dados hospedada. (Veja **Usar o token SSO como uma identidade** abaixo.) Dependendo do seu idioma e estrutura, as bibliotecas podem estar disponíveis para simplificar o código que você precisa escrever.
+* Obter dados do Microsoft Graph. O código do servidor precisa fazer o seguinte:
 
     * Validar o token de acesso (veja **Validar o token de acesso** abaixo).
-    * Iniciar o fluxo "em nome de" com uma chamada para o ponto de extremidade v2.0 do Azure AD que inclui o token de acesso, alguns metadados sobre o usu?rio e as credenciais do suplemento (sua ID e segredo). Nesse contexto, o token de acesso ? chamado de token de inicializa??o.
-    * Armazenar em cache o novo token de acesso que ? retornado do fluxo em nome de.
+    * Iniciar o fluxo "em nome de" com uma chamada para o ponto de extremidade v2.0 do Azure AD que inclui o token de acesso, alguns metadados sobre o usuário e as credenciais do suplemento (sua ID e segredo). Nesse contexto, o token de acesso é chamado de token de inicialização.
+    * Armazenar em cache o novo token de acesso que é retornado do fluxo em nome de.
     * Obter os dados do Microsoft Graph usando o novo token.
 
- Para mais detalhes sobre como obter acesso autorizado aos dados do Microsoft Graph do usu?rio, veja [Autorizar para o Microsoft Graph no seu Suplemento do Office](authorize-to-microsoft-graph.md).
+ Para mais detalhes sobre como obter acesso autorizado aos dados do Microsoft Graph do usuário, veja [Autorizar para o Microsoft Graph no seu Suplemento do Office](authorize-to-microsoft-graph.md).
 
 #### <a name="validate-the-access-token"></a>Validar o token de acesso
 
-Ap?s a API Web receber o token de acesso, ela deve valid?-lo antes que ele possa ser usado. O token ? um Token Web JSON (JWT) e isso significa que valida??o funciona como uma valida??o de token na maioria dos fluxos padr?o do OAuth. H? diversas bibliotecas dispon?veis que podem lidar com a valida??o de JWT. No entanto, as no??es b?sicas incluem:
+Após a API Web receber o token de acesso, ela deve validá-lo antes que ele possa ser usado. O token é um Token Web JSON (JWT) e isso significa que validação funciona como uma validação de token na maioria dos fluxos padrão do OAuth. Há diversas bibliotecas disponíveis que podem lidar com a validação de JWT. No entanto, as noções básicas incluem:
 
 - Verificar se o token foi bem formado
 - Verificar se o token foi emitido pela autoridade desejada
-- Verificar se o token est? direcionado para a API Web
+- Verificar se o token está direcionado para a API Web
 
 Ao validar o token, lembre-se das seguintes diretrizes:
 
-- Os tokens SSO v?lidos ser?o emitidos pela autoridade do Azure, `https://login.microsoftonline.com`. A declara??o `iss` no token deve come?ar com esse valor.
-- O par?metro `aud` do token ser? configurado como a ID de aplicativo do registro do suplemento.
-- O par?metro `scp` do token ser? definido como `access_as_user`.
+- Os tokens SSO válidos serão emitidos pela autoridade do Azure, `https://login.microsoftonline.com`. A declaração `iss` no token deve começar com esse valor.
+- O parâmetro `aud` do token será configurado como a ID de aplicativo do registro do suplemento.
+- O parâmetro `scp` do token será definido como `access_as_user`.
 
 #### <a name="using-the-sso-token-as-an-identity"></a>Usar o token SSO como uma identidade
 
-Se o suplemento precisar verificar a identidade do usu?rio, o token SSO cont?m informa??es que podem ser usadas para estabelecer a identidade. As seguintes declara??es no token est?o relacionadas ? identidade.
+Se o suplemento precisar verificar a identidade do usuário, o token SSO contém informações que podem ser usadas para estabelecer a identidade. As seguintes declarações no token estão relacionadas à identidade.
 
-- `name` ? O nome para exibi??o do usu?rio.
-- `preferred_username` O endere?o de email do usu?rio.
-- `oid` ? Um GUID que representa a ID do usu?rio no Active Directory do Azure.
-- `tid` ? Um GUID que representa a ID da organiza??o do usu?rio no Active Directory do Azure.
+- `name` – O nome para exibição do usuário.
+- `preferred_username` O endereço de email do usuário.
+- `oid` – Um GUID que representa a ID do usuário no Active Directory do Azure.
+- `tid` – Um GUID que representa a ID da organização do usuário no Active Directory do Azure.
 
-Como os valores `name` e `preferred_username` podem mudar, recomendamos que os valores `oid` e `tid` sejam usados ??para correlacionar a identidade com o servi?o de autoriza??o do back-end.
+Como os valores `name` e `preferred_username` podem mudar, recomendamos que os valores `oid` e `tid` sejam usados ​​para correlacionar a identidade com o serviço de autorização do back-end.
 
-Por exemplo, o servi?o poderia formatar os valores em conjunto como `{oid-value}@{tid-value}` e armazen?-los como um valor no registro do usu?rio no banco de dados do usu?rio interno. Em seguida, nas solicita??es subsequentes, o usu?rio poderia ser recuperado usando o mesmo valor e o acesso a recursos espec?ficos poderia ser determinado com base em seus mecanismos de controle de acesso existentes.
+Por exemplo, o serviço poderia formatar os valores em conjunto como `{oid-value}@{tid-value}` e armazená-los como um valor no registro do usuário no banco de dados do usuário interno. Em seguida, nas solicitações subsequentes, o usuário poderia ser recuperado usando o mesmo valor e o acesso a recursos específicos poderia ser determinado com base em seus mecanismos de controle de acesso existentes.
 
 ### <a name="example-access-token"></a>Exemplo de token de acesso
 
-A seguir, um conte?do decodificado t?pico de um token de acesso. Para mais informa??es sobre as propriedades, veja [Refer?ncia de tokens do Active Directory do Azure v2.0](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-tokens).
+A seguir, um conteúdo decodificado típico de um token de acesso. Para mais informações sobre as propriedades, veja [Referência de tokens do Active Directory do Azure v2.0](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-tokens).
 
 
 ```js
@@ -206,4 +207,4 @@ A seguir, um conte?do decodificado t?pico de um token de acesso. Para mais infor
 
 ## <a name="using-sso-with-and-outlook-add-in"></a>Usar o SSO com o suplemento do Outlook
 
-Existem algumas diferen?as pequenas, mas importantes, no uso do SSO com o suplemento do Outlook para us?-lo como suplemento do Excel, PowerPoint ou Word. Certifique-se de ler [Autenticar um usu?rio com um token de logon ?nico em um suplemento do Outlook](https://docs.microsoft.com/en-us/outlook/add-ins/authenticate-a-user-with-an-sso-token) e [Cen?rio: implementar o logon ?nico no servi?o em um suplemento do Outlook](https://docs.microsoft.com/en-us/outlook/add-ins/implement-sso-in-outlook-add-in).
+Existem algumas diferenças pequenas, mas importantes, no uso do SSO com o suplemento do Outlook para usá-lo como suplemento do Excel, PowerPoint ou Word. Certifique-se de ler [Autenticar um usuário com um token de logon único em um suplemento do Outlook](https://docs.microsoft.com/en-us/outlook/add-ins/authenticate-a-user-with-an-sso-token) e [Cenário: implementar o logon único no serviço em um suplemento do Outlook](https://docs.microsoft.com/en-us/outlook/add-ins/implement-sso-in-outlook-add-in).

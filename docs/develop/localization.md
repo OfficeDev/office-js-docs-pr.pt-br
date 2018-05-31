@@ -1,5 +1,5 @@
 ---
-title: Localiza??o para Suplementos do Office
+title: Localização para Suplementos do Office
 description: ''
 ms.date: 01/23/2018
 ms.openlocfilehash: d7888859ca29a62541020b45b0b7a3638c41f4f2
@@ -7,16 +7,17 @@ ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "19437735"
 ---
-# <a name="localization-for-office-add-ins"></a>Localiza??o para Suplementos do Office
+# <a name="localization-for-office-add-ins"></a>Localização para Suplementos do Office
 
-Voc? pode implementar qualquer esquema de localiza??o que seja apropriado para o seu Suplemento do Office. A API JavaScript e o esquema do manifesto da plataforma de Suplementos do Office oferecem algumas op??es. Voc? pode usar a API JavaScript para Office para determinar uma localidade e exibir cadeias de caracteres com base na localidade do aplicativo host ou para interpretar ou exibir dados com base na localidade dos dados. Voc? pode usar o manifesto para especificar informa??es descritivas e o local do arquivo do suplemento espec?fico da localidade. Como alternativa, voc? pode usar o script do Microsoft Ajax para dar suporte ? globaliza??o e localiza??o.
+Você pode implementar qualquer esquema de localização que seja apropriado para o seu Suplemento do Office. A API JavaScript e o esquema do manifesto da plataforma de Suplementos do Office oferecem algumas opções. Você pode usar a API JavaScript para Office para determinar uma localidade e exibir cadeias de caracteres com base na localidade do aplicativo host ou para interpretar ou exibir dados com base na localidade dos dados. Você pode usar o manifesto para especificar informações descritivas e o local do arquivo do suplemento específico da localidade. Como alternativa, você pode usar o script do Microsoft Ajax para dar suporte à globalização e localização.
 
-## <a name="use-the-javascript-api-to-determine-locale-specific-strings"></a>Usar a API JavaScript para determinar cadeias de caracteres espec?ficas da localidade
+## <a name="use-the-javascript-api-to-determine-locale-specific-strings"></a>Usar a API JavaScript para determinar cadeias de caracteres específicas da localidade
 
-A API JavaScript para Office fornece duas propriedades que oferecem suporte ? exibi??o ou interpreta??o de valores consistentes com a localidade do aplicativo host e dos dados:
+A API JavaScript para Office fornece duas propriedades que oferecem suporte à exibição ou interpretação de valores consistentes com a localidade do aplicativo host e dos dados:
 
-- [Context.displayLanguage][displayLanguage] especifica a localidade (ou idioma) da interface do usu?rio do aplicativo host. O exemplo a seguir verifica se o aplicativo host usa a localidade en-US ou fr-FR e exibe uma sauda??o espec?fica para a localidade.
+- [Context.displayLanguage][displayLanguage] especifica a localidade (ou idioma) da interface do usuário do aplicativo host. O exemplo a seguir verifica se o aplicativo host usa a localidade en-US ou fr-FR e exibe uma saudação específica para a localidade.
     
     ```js
     function sayHelloWithDisplayLanguage() {
@@ -37,31 +38,31 @@ A API JavaScript para Office fornece duas propriedades que oferecem suporte ? ex
     }
     ```
 
-- [Context.contentLanguage][contentLanguage] especifica a localidade (ou o idioma) dos dados. Estendendo o ?ltimo exemplo de c?digo, em vez de verificar a propriedade [displayLanguage], atribua `myLanguage` ? propriedade [contentLanguage] e use o restante do mesmo c?digo para exibir uma sauda??o com base na localidade dos dados:
+- [Context.contentLanguage][contentLanguage] especifica a localidade (ou o idioma) dos dados. Estendendo o último exemplo de código, em vez de verificar a propriedade [displayLanguage], atribua `myLanguage` à propriedade [contentLanguage] e use o restante do mesmo código para exibir uma saudação com base na localidade dos dados:
     
     ```js
     var myLanguage = Office.context.contentLanguage;
     ```
 
-## <a name="control-localization-from-the-manifest"></a>Controlar a localiza??o do manifesto
+## <a name="control-localization-from-the-manifest"></a>Controlar a localização do manifesto
 
 
-Cada Suplemento do Office especifica um elemento [DefaultLocale] e uma localidade em seu manifesto. Por padr?o, a plataforma do Suplemento do Office e os aplicativos host do Office aplicam os valores dos elementos [Description], [DisplayName], [IconUrl], [HighResolutionIconUrl] e [SourceLocation] a todas as localidades. Como op??o, voc? pode dar suporte a valores espec?ficos para localidades espec?ficas, especificando um elemento-filho [Override]para cada localidade adicional, para qualquer um desses cinco elementos. O valor do elemento [DefaultLocale] e do atributo `Locale` do elemento [Override] ? especificado de acordo com o [RFC 3066], "Marcas para a Identifica??o dos Idiomas". A Tabela 1 descreve o suporte de localiza??o para esses elementos.
+Cada Suplemento do Office especifica um elemento [DefaultLocale] e uma localidade em seu manifesto. Por padrão, a plataforma do Suplemento do Office e os aplicativos host do Office aplicam os valores dos elementos [Description], [DisplayName], [IconUrl], [HighResolutionIconUrl] e [SourceLocation] a todas as localidades. Como opção, você pode dar suporte a valores específicos para localidades específicas, especificando um elemento-filho [Override]para cada localidade adicional, para qualquer um desses cinco elementos. O valor do elemento [DefaultLocale] e do atributo `Locale` do elemento [Override] é especificado de acordo com o [RFC 3066], "Marcas para a Identificação dos Idiomas". A Tabela 1 descreve o suporte de localização para esses elementos.
 
-**Tabela 1. Suporte de localiza??o**
+**Tabela 1. Suporte de localização**
 
 
-|**Elemento**|**Suporte de localiza??o**|
+|**Elemento**|**Suporte de localização**|
 |:-----|:-----|
-|[Descri??o]   |Os usu?rios de cada localidade especificada podem ver uma descri??o localizada do suplemento no AppSource (ou no cat?logo privado).<br/>Para os suplementos do Outlook, os usu?rios podem ver a descri??o no Centro de Administra??o do Exchange (EAC) ap?s a instala??o.|
-|[DisplayName]   |Os usu?rios de cada localidade especificada podem ver uma descri??o localizada do suplemento no AppSource (ou no cat?logo privado).<br/>Para os suplementos do Outlook, os usu?rios podem ver o nome de exibi??o como um r?tulo para o bot?o de suplemento do Outlook e no EAC ap?s a instala??o.<br/>Para os suplementos do painel de tarefas e do conte?do, os usu?rios podem ver o nome de exibi??o na faixa de op??es ap?s a instala??o do suplemento.|
-|[IconUrl]        |A imagem do ?cone ? opcional. Voc? pode usar a mesma t?cnica de substitui??o para especificar uma determinada imagem para uma cultura espec?fica. Se voc? usar e localizar um ?cone, os usu?rios em cada localidade que voc? especificar poder?o ver uma imagem de ?cone localizada para o suplemento.<br/>Para suplementos do Outlook, os usu?rios podem ver o ?cone no EAC depois de instalar o suplemento.<br/>Para os suplementos do painel de tarefas e do conte?do, os usu?rios podem ver o ?cone na faixa de op??es ap?s a instala??o do suplemento.|
-|[HighResolutionIconUrl] **Importante:** este elemento s? fica dispon?vel ao usar a vers?o 1.1 do manifesto do suplemento.|A imagem do ?cone de alta resolu??o ? opcional, mas se ela for especificada, dever? ocorrer ap?s o elemento [IconUrl]. Quando [HighResolutionIconUrl] for especificado e o suplemento estiver instalado em um dispositivo que ofere?a suporte ? resolu??o dpi alto, o valor [HighResolutionIconUrl] ? usado em vez do valor para [IconUrl].<br/>Voc? pode usar a mesma t?cnica de substitui??o para especificar uma determinada imagem para uma cultura espec?fica. Se voc? usar e localizar um ?cone, os usu?rios em cada localidade que voc? especificar podem ver uma imagem de ?cone localizada para o suplemento.<br/>Para suplementos do Outlook, os usu?rios podem ver o ?cone no EAC depois de instalar o suplemento.<br/>Para os suplementos do painel de tarefas e do conte?do, os usu?rios podem ver o ?cone na faixa de op??es ap?s a instala??o do suplemento.|
-|[Recursos] **Importante:** este elemento s? fica dispon?vel ao usar a vers?o 1.1 do manifesto do suplemento.   |Os usu?rios em cada localidade especificada podem ver recursos de cadeias de caracteres e de ?cones que voc? projetou especificamente para o suplemento dessa localidade. |
-|[SourceLocation]   |Os usu?rios em cada localidade especificada podem ver uma p?gina da Web que voc? projetou especificamente para o suplemento dessa localidade. |
+|[Descrição]   |Os usuários de cada localidade especificada podem ver uma descrição localizada do suplemento no AppSource (ou no catálogo privado).<br/>Para os suplementos do Outlook, os usuários podem ver a descrição no Centro de Administração do Exchange (EAC) após a instalação.|
+|[DisplayName]   |Os usuários de cada localidade especificada podem ver uma descrição localizada do suplemento no AppSource (ou no catálogo privado).<br/>Para os suplementos do Outlook, os usuários podem ver o nome de exibição como um rótulo para o botão de suplemento do Outlook e no EAC após a instalação.<br/>Para os suplementos do painel de tarefas e do conteúdo, os usuários podem ver o nome de exibição na faixa de opções após a instalação do suplemento.|
+|[IconUrl]        |A imagem do ícone é opcional. Você pode usar a mesma técnica de substituição para especificar uma determinada imagem para uma cultura específica. Se você usar e localizar um ícone, os usuários em cada localidade que você especificar poderão ver uma imagem de ícone localizada para o suplemento.<br/>Para suplementos do Outlook, os usuários podem ver o ícone no EAC depois de instalar o suplemento.<br/>Para os suplementos do painel de tarefas e do conteúdo, os usuários podem ver o ícone na faixa de opções após a instalação do suplemento.|
+|[HighResolutionIconUrl] **Importante:** este elemento só fica disponível ao usar a versão 1.1 do manifesto do suplemento.|A imagem do ícone de alta resolução é opcional, mas se ela for especificada, deverá ocorrer após o elemento [IconUrl]. Quando [HighResolutionIconUrl] for especificado e o suplemento estiver instalado em um dispositivo que ofereça suporte à resolução dpi alto, o valor [HighResolutionIconUrl] é usado em vez do valor para [IconUrl].<br/>Você pode usar a mesma técnica de substituição para especificar uma determinada imagem para uma cultura específica. Se você usar e localizar um ícone, os usuários em cada localidade que você especificar podem ver uma imagem de ícone localizada para o suplemento.<br/>Para suplementos do Outlook, os usuários podem ver o ícone no EAC depois de instalar o suplemento.<br/>Para os suplementos do painel de tarefas e do conteúdo, os usuários podem ver o ícone na faixa de opções após a instalação do suplemento.|
+|[Recursos] **Importante:** este elemento só fica disponível ao usar a versão 1.1 do manifesto do suplemento.   |Os usuários em cada localidade especificada podem ver recursos de cadeias de caracteres e de ícones que você projetou especificamente para o suplemento dessa localidade. |
+|[SourceLocation]   |Os usuários em cada localidade especificada podem ver uma página da Web que você projetou especificamente para o suplemento dessa localidade. |
 
 
-> **OBSERVA??O:** voc? s? pode localizar o nome de exibi??o e a descri??o das localidades que oferecem suporte ao Office. Veja [Identificadores de idioma e valores de OptionState Id no Office 2013](http://technet.microsoft.com/en-us/library/cc179219.aspx) para obter uma lista de idiomas e localidades para a vers?o atual do Office.
+> **OBSERVAÇÃO:** você só pode localizar o nome de exibição e a descrição das localidades que oferecem suporte ao Office. Veja [Identificadores de idioma e valores de OptionState Id no Office 2013](http://technet.microsoft.com/en-us/library/cc179219.aspx) para obter uma lista de idiomas e localidades para a versão atual do Office.
 
 
 ### <a name="examples"></a>Exemplos
@@ -77,13 +78,13 @@ Por exemplo, um Suplemento do Office pode especificar o [DefaultLocale] como `en
 </DisplayName>
 ```
 
-> **OBSERVA??O:** se for preciso localizar para mais de uma ?rea dentro de uma fam?lia de idiomas, como `de-de` e `de-at`, recomendamos que voc? use elementos `Override` separados para cada ?rea. Usar apenas o nome do idioma sozinho, nesse caso, `de`, n?o tem suporte em todas as combina??es de plataformas e aplicativos de host do Office.
+> **OBSERVAÇÃO:** se for preciso localizar para mais de uma área dentro de uma família de idiomas, como `de-de` e `de-at`, recomendamos que você use elementos `Override` separados para cada área. Usar apenas o nome do idioma sozinho, nesse caso, `de`, não tem suporte em todas as combinações de plataformas e aplicativos de host do Office.
 
-Isso significa que o suplemento pressup?e a localidade `en-us` como padr?o. Os usu?rios veem o nome de exibi??o em ingl?s "Video player" para todas as localidades, a menos que a localidade do computador cliente fosse `fr-fr`, nesse caso os usu?rios veria o nome de exibi??o em franc?s "Lecteur vid?o".
+Isso significa que o suplemento pressupõe a localidade `en-us` como padrão. Os usuários veem o nome de exibição em inglês "Video player" para todas as localidades, a menos que a localidade do computador cliente fosse `fr-fr`, nesse caso os usuários veria o nome de exibição em francês "Lecteur vidéo".
 
-> **Observa??o:** voc? s? pode especificar uma ?nica substitui??o por idioma, inclusive para a localidade padr?o. Por exemplo, se sua localidade padr?o ? `en-us`, n?o ? poss?vel especificar tamb?m uma substitui??o para `en-us`. 
+> **Observação:** você só pode especificar uma única substituição por idioma, inclusive para a localidade padrão. Por exemplo, se sua localidade padrão é `en-us`, não é possível especificar também uma substituição para `en-us`. 
 
-O exemplo a seguir se aplica a uma substitui??o de localidade para o elemento [Description]. Primeiro especifica a localidade padr?o `en-us` e uma descri??o em ingl?s e, em seguida, especifica uma pol?tica de [Override] com uma descri??o francesa para a localidade `fr-fr`:
+O exemplo a seguir se aplica a uma substituição de localidade para o elemento [Description]. Primeiro especifica a localidade padrão `en-us` e uma descrição em inglês e, em seguida, especifica uma política de [Override] com uma descrição francesa para a localidade `fr-fr`:
 
 ```xml
 <DefaultLocale>en-us</DefaultLocale>
@@ -97,9 +98,9 @@ O exemplo a seguir se aplica a uma substitui??o de localidade para o elemento [D
 </Description>
 ```
 
-Isso significa que o suplemento pressup?e a localidade `en-us` como padr?o. Os usu?rios veriam a descri??o em ingl?s no atributo `DefaultValue` para todas as localidades, a menos que a localidade do computador cliente fosse `fr-fr`, nesse caso, eles veriam a descri??o em franc?s.
+Isso significa que o suplemento pressupõe a localidade `en-us` como padrão. Os usuários veriam a descrição em inglês no atributo `DefaultValue` para todas as localidades, a menos que a localidade do computador cliente fosse `fr-fr`, nesse caso, eles veriam a descrição em francês.
 
-No exemplo a seguir, o suplemento especifica uma imagem separada mais apropriada para a localidade e a cultura `fr-fr`. Os usu?rios ver?o a imagem DefaultLogo.png por padr?o, exceto quando a localidade do computador cliente for `fr-fr`. Nesse caso, os usu?rios veriam a imagem FrenchLogo.png. 
+No exemplo a seguir, o suplemento especifica uma imagem separada mais apropriada para a localidade e a cultura `fr-fr`. Os usuários verão a imagem DefaultLogo.png por padrão, exceto quando a localidade do computador cliente for `fr-fr`. Nesse caso, os usuários veriam a imagem FrenchLogo.png. 
 
 
 ```xml
@@ -108,7 +109,7 @@ No exemplo a seguir, o suplemento especifica uma imagem separada mais apropriada
 <Override Locale="fr-fr" Value="https://<domain>/FrenchLogo.png"/>
 ```
 
-O exemplo a seguir mostra como localizar um recurso na se??o `Resources`. Ele aplica um substituto local para uma imagem que ? mais apropriada para a cultura `ja-jp`.
+O exemplo a seguir mostra como localizar um recurso na seção `Resources`. Ele aplica um substituto local para uma imagem que é mais apropriada para a cultura `ja-jp`.
 
 ```xml
 <Resources>
@@ -120,9 +121,9 @@ O exemplo a seguir mostra como localizar um recurso na se??o `Resources`. Ele ap
 ```
 
 
-Para o elemento [SourceLocation], o suporte a localidades adicionais significa fornecer um arquivo HTML de origem separado para cada um dos locais especificados. Os usu?rios de cada localidade que voc? especificar poder?o ver uma p?gina da Web personalizada que foi projetada para eles.
+Para o elemento [SourceLocation], o suporte a localidades adicionais significa fornecer um arquivo HTML de origem separado para cada um dos locais especificados. Os usuários de cada localidade que você especificar poderão ver uma página da Web personalizada que foi projetada para eles.
 
-Para suplementos do Outlook, o elemento [SourceLocation] tamb?m atribui o fator forma, o que permite que voc? forne?a um arquivo HTML de origem localizado e distinto para cada fator de foram correspondente. Voc? pode especificar um ou mais elementos filho [Override] em cada configura??o aplic?vel ([DesktopSettings], [TabletSettings] ou [PhoneSettings]). O exemplo a seguir mostra os elementos de configura??es para fatores de forma de desktop, tablet e smartphone, cada um com um arquivo HTML para a localidade padr?o e outro para a localidade francesa.
+Para suplementos do Outlook, o elemento [SourceLocation] também atribui o fator forma, o que permite que você forneça um arquivo HTML de origem localizado e distinto para cada fator de foram correspondente. Você pode especificar um ou mais elementos filho [Override] em cada configuração aplicável ([DesktopSettings], [TabletSettings] ou [PhoneSettings]). O exemplo a seguir mostra os elementos de configurações para fatores de forma de desktop, tablet e smartphone, cada um com um arquivo HTML para a localidade padrão e outro para a localidade francesa.
 
 
 ```xml
@@ -145,67 +146,67 @@ Para suplementos do Outlook, o elemento [SourceLocation] tamb?m atribui o fator 
 </PhoneSettings>
 ```
 
-## <a name="match-datetime-format-with-client-locale"></a>Fazer a correspond?ncia entre o formato de data/hora e a localidade do cliente
+## <a name="match-datetime-format-with-client-locale"></a>Fazer a correspondência entre o formato de data/hora e a localidade do cliente
 
-Voc? pode obter a localidade da interface do usu?rio do aplicativo host usando a propriedade [displayLanguage]. Em seguida, pode exibir valores de data e hora em um formato consistente com a localidade atual do aplicativo host. Uma maneira de fazer isso ? preparar um arquivo de recurso que especifica o formato de exibi??o de data/hora a ser usado em cada localidade com suporte do seu Suplemento do Office. Na execu??o, seu suplemento pode usar o arquivo de recurso e fazer a correspond?ncia entre o formato de data/hora apropriado e a localidade obtida na propriedade [displayLanguage]
+Você pode obter a localidade da interface do usuário do aplicativo host usando a propriedade [displayLanguage]. Em seguida, pode exibir valores de data e hora em um formato consistente com a localidade atual do aplicativo host. Uma maneira de fazer isso é preparar um arquivo de recurso que especifica o formato de exibição de data/hora a ser usado em cada localidade com suporte do seu Suplemento do Office. Na execução, seu suplemento pode usar o arquivo de recurso e fazer a correspondência entre o formato de data/hora apropriado e a localidade obtida na propriedade [displayLanguage]
 
-Voc? pode obter a localidade dos dados do aplicativo host usando a propriedade [contentLanguage]. Com base nesse valor, voc? pode, ent?o, interpretar ou exibir adequadamente as cadeias de caracteres de data/hora. Por exemplo, a localidade `jp-JP` expressa valores de data/hora como `yyyy/MM/dd`, e a localidade `fr-FR` como `dd/MM/yyyy`.
-
-
-## <a name="use-ajax-for-globalization-and-localization"></a>Usar o Ajax para a globaliza??o e a localiza??o
+Você pode obter a localidade dos dados do aplicativo host usando a propriedade [contentLanguage]. Com base nesse valor, você pode, então, interpretar ou exibir adequadamente as cadeias de caracteres de data/hora. Por exemplo, a localidade `jp-JP` expressa valores de data/hora como `yyyy/MM/dd`, e a localidade `fr-FR` como `dd/MM/yyyy`.
 
 
-Se voc? usar o Visual Studio para criar Suplementos do Office, o .NET Framework e Ajax fornecem maneiras de globalizar e localizar arquivos de script de cliente.
+## <a name="use-ajax-for-globalization-and-localization"></a>Usar o Ajax para a globalização e a localização
 
-Voc? pode globalizar e utilizar as extens?es do tipo JavaScript de [Data](http://msdn.microsoft.com/library/caf98d32-2de2-4704-8198-692350343681.aspx) e [N?mero](http://msdn.microsoft.com/library/c216d3a1-12ae-47d1-bca1-c3666d04572f.aspx) e o objeto [Data](http://msdn.microsoft.com/library/ce2202bb-7ec9-4f5a-bf48-3a04feff283e.aspx) do JavaScript no c?digo do JavaScript para um suplemento do Office para exibir valores com base nas configura??es de localiza??o do navegador atual. Para saber mais, confira [Passo a passo: como globalizar uma data usando o script de cliente](http://msdn.microsoft.com/library/69b34e6d-d590-4d03-a763-b7ae54b47d74.aspx).
 
-Voc? pode incluir cadeias de caracteres de recurso localizadas diretamente em arquivos de JavaScript aut?nomos para fornecer arquivos de script de cliente para diferentes locais, que s?o definidos no navegador ou fornecidos pelo usu?rio. Crie um arquivo de script separado para cada localidade com suporte. Em cada arquivo de script, inclua um objeto no formato JSON que contenha as cadeias de caracteres de recursos para essa localidade. Os valores localizados ser?o aplicados quando o script for executado no navegador. 
+Se você usar o Visual Studio para criar Suplementos do Office, o .NET Framework e Ajax fornecem maneiras de globalizar e localizar arquivos de script de cliente.
+
+Você pode globalizar e utilizar as extensões do tipo JavaScript de [Data](http://msdn.microsoft.com/library/caf98d32-2de2-4704-8198-692350343681.aspx) e [Número](http://msdn.microsoft.com/library/c216d3a1-12ae-47d1-bca1-c3666d04572f.aspx) e o objeto [Data](http://msdn.microsoft.com/library/ce2202bb-7ec9-4f5a-bf48-3a04feff283e.aspx) do JavaScript no código do JavaScript para um suplemento do Office para exibir valores com base nas configurações de localização do navegador atual. Para saber mais, confira [Passo a passo: como globalizar uma data usando o script de cliente](http://msdn.microsoft.com/library/69b34e6d-d590-4d03-a763-b7ae54b47d74.aspx).
+
+Você pode incluir cadeias de caracteres de recurso localizadas diretamente em arquivos de JavaScript autônomos para fornecer arquivos de script de cliente para diferentes locais, que são definidos no navegador ou fornecidos pelo usuário. Crie um arquivo de script separado para cada localidade com suporte. Em cada arquivo de script, inclua um objeto no formato JSON que contenha as cadeias de caracteres de recursos para essa localidade. Os valores localizados serão aplicados quando o script for executado no navegador. 
 
 
 ## <a name="example-build-a-localized-office-add-in"></a>Exemplo: Criar um Suplemento do Office localizado
 
-Esta se??o fornece exemplos que mostram como localizar uma descri??o do Suplemento do Office, o nome de exibi??o e interface do usu?rio.
+Esta seção fornece exemplos que mostram como localizar uma descrição do Suplemento do Office, o nome de exibição e interface do usuário.
 
-Para executar o c?digo de amostra fornecido, configure o Microsoft Office 2013 em seu computador para usar idiomas adicionais para que voc? possa testar seu suplemento, alternando o idioma usado para exibi??o em menus e em comandos para edi??o e revis?o de texto ou ambos.
+Para executar o código de amostra fornecido, configure o Microsoft Office 2013 em seu computador para usar idiomas adicionais para que você possa testar seu suplemento, alternando o idioma usado para exibição em menus e em comandos para edição e revisão de texto ou ambos.
 
-Al?m disso, voc? precisar? criar um projeto de Suplemento do Office do Visual Studio 2015.
+Além disso, você precisará criar um projeto de Suplemento do Office do Visual Studio 2015.
 
-> **Observa??o:** para baixar o Visual Studio 2015, confira a [P?gina do Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs). Esta p?gina tamb?m tem um link para o Office Developer Tools.
+> **Observação:** para baixar o Visual Studio 2015, confira a [Página do Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs). Esta página também tem um link para o Office Developer Tools.
 
-### <a name="configure-office-2013-to-use-additional-languages-for-display-or-editing"></a>Configurar o Office 2013 para usar idiomas adicionais para exibi??o ou edi??o
+### <a name="configure-office-2013-to-use-additional-languages-for-display-or-editing"></a>Configurar o Office 2013 para usar idiomas adicionais para exibição ou edição
 
-Voc? pode usar um Pacote de idiomas do Office 2013 para instalar um idioma adicional. Para saber mais sobre os Pacotes de idioma e onde obt?-los, veja [Op??es de idioma do Office 2013](http://office.microsoft.com/en-us/language-packs/).
+Você pode usar um Pacote de idiomas do Office 2013 para instalar um idioma adicional. Para saber mais sobre os Pacotes de idioma e onde obtê-los, veja [Opções de idioma do Office 2013](http://office.microsoft.com/en-us/language-packs/).
 
-> **OBSERVA??O:** se voc? for assinante do MSDN, ? poss?vel que j? tenha os Pacotes de Idiomas do Office 2013. Para determinar se a sua assinatura oferece Pacotes de Idiomas do Office 2013 para download, v? para [P?gina Inicial de Assinaturas do MSDN](https://msdn.microsoft.com/subscriptions/manage/), insira Pacote de Idiomas do Office 2013 em **Downloads de Softwares**, escolha **Pesquisa** e selecione **Produtos dispon?veis com minha assinatura**. Em **Idioma**, marque a caixa de sele??o do Pacote de Idiomas que voc? deseja baixar e, em seguida, selecione **Ir**. 
+> **OBSERVAÇÃO:** se você for assinante do MSDN, é possível que já tenha os Pacotes de Idiomas do Office 2013. Para determinar se a sua assinatura oferece Pacotes de Idiomas do Office 2013 para download, vá para [Página Inicial de Assinaturas do MSDN](https://msdn.microsoft.com/subscriptions/manage/), insira Pacote de Idiomas do Office 2013 em **Downloads de Softwares**, escolha **Pesquisa** e selecione **Produtos disponíveis com minha assinatura**. Em **Idioma**, marque a caixa de seleção do Pacote de Idiomas que você deseja baixar e, em seguida, selecione **Ir**. 
 
-Depois de instalar o Pacote de Idiomas, voc? pode configurar o Office 2013 para usar o idioma instalado para exibir na interface do usu?rio, para edi??o de conte?do do documento, ou ambos. O exemplo neste artigo usa uma instala??o do Office 2013 que tenha o Pacote de Idiomas do espanhol aplicado.
+Depois de instalar o Pacote de Idiomas, você pode configurar o Office 2013 para usar o idioma instalado para exibir na interface do usuário, para edição de conteúdo do documento, ou ambos. O exemplo neste artigo usa uma instalação do Office 2013 que tenha o Pacote de Idiomas do espanhol aplicado.
 
 ### <a name="create-an-office-add-in-project"></a>Criar um projeto de Suplemento do Office
 
 1. No Visual Studio, escolha **Arquivo**  >  **Novo Projeto**.
     
-2. Na caixa de di?logo **Novo Projeto**, em **Modelos**, expanda **Visual Basic** ou **Visual C#**, expanda **Office/SharePoint** e, em seguida, selecione **Suplementos do Office**.
+2. Na caixa de diálogo **Novo Projeto**, em **Modelos**, expanda **Visual Basic** ou **Visual C#**, expanda **Office/SharePoint** e, em seguida, selecione **Suplementos do Office**.
     
 3. Escolha **Suplemento do Office** e, em seguida, nomeie seu suplemento, por exemplo WorldReadyAddIn. Escolha **OK**.
     
-4. Na caixa de di?logo **Criar Suplemento do Office**, selecione **Painel de tarefas** e selecione **Pr?ximo**. Na pr?xima p?gina, desmarque e marque as caixas de todos os aplicativos, exceto do Word. Selecione **Concluir** para criar o projeto.
+4. Na caixa de diálogo **Criar Suplemento do Office**, selecione **Painel de tarefas** e selecione **Próximo**. Na próxima página, desmarque e marque as caixas de todos os aplicativos, exceto do Word. Selecione **Concluir** para criar o projeto.
     
 
 ### <a name="localize-the-text-used-in-your-add-in"></a>Localizar o texto usado no seu suplemento
 
-O texto que voc? deseja localizar para outro idioma aparece em duas ?reas:
+O texto que você deseja localizar para outro idioma aparece em duas áreas:
 
--  **Nome de exibi??o e descri??o do suplemento**. Isso ? controlado por entradas no arquivo do manifesto do suplemento.
+-  **Nome de exibição e descrição do suplemento**. Isso é controlado por entradas no arquivo do manifesto do suplemento.
     
--  **Interface do Usu?rio do Suplemento**. Voc? pode localizar as cadeias de caracteres que aparecem na interface do usu?rio do seu suplemento usando c?digos do JavaScript, por exemplo, usando um arquivo de recurso separado que contenha as cadeias de caracteres localizadas.
+-  **Interface do Usuário do Suplemento**. Você pode localizar as cadeias de caracteres que aparecem na interface do usuário do seu suplemento usando códigos do JavaScript, por exemplo, usando um arquivo de recurso separado que contenha as cadeias de caracteres localizadas.
     
-Para localizar o nome de exibi??o e a descri??o do suplemento:
+Para localizar o nome de exibição e a descrição do suplemento:
 
-1. Em **Gerenciador de Solu??es**, expanda **WorldReadyAddIn**, **WorldReadyAddInManifest** e, em seguida, selecione **WorldReadyAddIn.xml**.
+1. Em **Gerenciador de Soluções**, expanda **WorldReadyAddIn**, **WorldReadyAddInManifest** e, em seguida, selecione **WorldReadyAddIn.xml**.
     
-2. No WorldReadyAddInManifest.xml, substitua os elementos [DisplayName] e [Description] com o seguinte bloqueio de c?digo:
+2. No WorldReadyAddInManifest.xml, substitua os elementos [DisplayName] e [Description] com o seguinte bloqueio de código:
     
-    > **OBSERVA??O:** voc? pode substituir as cadeias de caracteres do idioma espanhol localizado usadas neste exemplo pelos elementos [DisplayName] e [Description] pelas cadeias de caracteres localizadas de qualquer outro idioma.
+    > **OBSERVAÇÃO:** você pode substituir as cadeias de caracteres do idioma espanhol localizado usadas neste exemplo pelos elementos [DisplayName] e [Description] pelas cadeias de caracteres localizadas de qualquer outro idioma.
 
     ```xml
     <DisplayName DefaultValue="World Ready add-in">
@@ -216,11 +217,11 @@ Para localizar o nome de exibi??o e a descri??o do suplemento:
     </Description>
     ```
 
-3. Quando voc? altera o idioma de exibi??o do Office 2013 do ingl?s para o espanhol, por exemplo, e executa o suplemento, o nome de exibi??o do suplemento e a descri??o s?o mostrados com texto localizado. 
+3. Quando você altera o idioma de exibição do Office 2013 do inglês para o espanhol, por exemplo, e executa o suplemento, o nome de exibição do suplemento e a descrição são mostrados com texto localizado. 
     
-Para definir a interface do usu?rio do suplemento:
+Para definir a interface do usuário do suplemento:
 
-1. No Visual Studio, no **Gerenciador de Solu??es**, selecione **Home.html**.
+1. No Visual Studio, no **Gerenciador de Soluções**, selecione **Home.html**.
     
 2. Substitua o HTML em Home.html pelo seguinte HTML.
     
@@ -264,25 +265,25 @@ Para definir a interface do usu?rio do suplemento:
 
 3. No Visual Studio, selecione **Arquivo**,  **Salvar Suplemento\Home\Home.html**.
     
-A figura a seguir mostra o elemento do cabe?alho (h1) e o elemento do par?grafo (p) que exibir? o texto localizado quando seu suplemento de amostra for executado.
+A figura a seguir mostra o elemento do cabeçalho (h1) e o elemento do parágrafo (p) que exibirá o texto localizado quando seu suplemento de amostra for executado.
 
-*Figura 1. A interface do usu?rio do suplemento*
+*Figura 1. A interface do usuário do suplemento*
 
-![Interface de usu?rio do aplicativo com as se??es real?adas.](../images/office15-app-how-to-localize-fig03.png)
+![Interface de usuário do aplicativo com as seções realçadas.](../images/office15-app-how-to-localize-fig03.png)
 
-### <a name="add-the-resource-file-that-contains-the-localized-strings"></a>Adicionar o arquivo de recurso que cont?m as cadeias de caracteres localizadas
+### <a name="add-the-resource-file-that-contains-the-localized-strings"></a>Adicionar o arquivo de recurso que contém as cadeias de caracteres localizadas
 
-O arquivo de recurso do JavaScript cont?m as cadeias de caracteres usadas para a interface do usu?rio do suplemento. A interface do usu?rio do suplemento de amostra tem um elemento h1 que exibe uma sauda??o e um elemento p que apresenta o suplemento ao usu?rio. 
+O arquivo de recurso do JavaScript contém as cadeias de caracteres usadas para a interface do usuário do suplemento. A interface do usuário do suplemento de amostra tem um elemento h1 que exibe uma saudação e um elemento p que apresenta o suplemento ao usuário. 
 
-Para habilitar cadeias de caracteres para o cabe?alho e par?grafo, coloque as cadeias de caracteres em um arquivo de recurso separado. O arquivo de recurso cria um objeto do JavaScript que cont?m um objeto JSON (JavaScript Object Notation) separado para cada conjunto de cadeias de caracteres localizadas. O arquivo de recurso tamb?m fornece um m?todo para obter o objeto JSON apropriado de volta para uma determinada localidade. 
+Para habilitar cadeias de caracteres para o cabeçalho e parágrafo, coloque as cadeias de caracteres em um arquivo de recurso separado. O arquivo de recurso cria um objeto do JavaScript que contém um objeto JSON (JavaScript Object Notation) separado para cada conjunto de cadeias de caracteres localizadas. O arquivo de recurso também fornece um método para obter o objeto JSON apropriado de volta para uma determinada localidade. 
 
 Para adicionar o arquivo de recurso ao projeto do suplemento:
 
-1. No **Gerenciador de Solu??es** no Visual Studio, escolha a pasta **Suplemento** no projeto da Web para o suplemento de amostra e selecione **Adicionar**  >  **Arquivo JavaScript**.
+1. No **Gerenciador de Soluções** no Visual Studio, escolha a pasta **Suplemento** no projeto da Web para o suplemento de amostra e selecione **Adicionar**  >  **Arquivo JavaScript**.
     
-2. Na caixa de di?logo **Especificar o nome do item**, insira UIStrings.js.
+2. Na caixa de diálogo **Especificar o nome do item**, insira UIStrings.js.
     
-3. Adicione o c?digo a seguir ao arquivo UIStrings.js.
+3. Adicione o código a seguir ao arquivo UIStrings.js.
 
     ```js
     /* Store the locale-specific strings */
@@ -332,28 +333,28 @@ Para adicionar o arquivo de recurso ao projeto do suplemento:
     })();
     ```
 
-O arquivo de recurso UIStrings.js cria o objeto, **UIStrings**, que cont?m as cadeias de caracteres localizadas para a interface do usu?rio do suplemento. 
+O arquivo de recurso UIStrings.js cria o objeto, **UIStrings**, que contém as cadeias de caracteres localizadas para a interface do usuário do suplemento. 
 
-### <a name="localize-the-text-used-for-the-add-in-ui"></a>Localizar o texto usado na interface do usu?rio do suplemento
+### <a name="localize-the-text-used-for-the-add-in-ui"></a>Localizar o texto usado na interface do usuário do suplemento
 
-Para usar o arquivo de recurso no seu suplemento, voc? precisar? adicionar a ele uma marca de script em Home.html. Quando Home.html for carregado, o UIStrings.js ser? executado e o objeto **UIStrings** que voc? utiliza para obter a cadeia de caracteres ficar? dispon?vel para seu c?digo. Adicione o seguinte HTML ? marca de cabe?alho do Home.html para tornar **UIStrings** dispon?vel para seu c?digo.
+Para usar o arquivo de recurso no seu suplemento, você precisará adicionar a ele uma marca de script em Home.html. Quando Home.html for carregado, o UIStrings.js será executado e o objeto **UIStrings** que você utiliza para obter a cadeia de caracteres ficará disponível para seu código. Adicione o seguinte HTML à marca de cabeçalho do Home.html para tornar **UIStrings** disponível para seu código.
 
 ```html
 <!-- Resource file for localized strings:                                                          -->
 <script src="../UIStrings.js" type="text/javascript"></script>
 ```
 
-Agora voc? pode usar o objeto **UIStrings** para definir as cadeias de caracteres da interface do usu?rio do seu suplemento.
+Agora você pode usar o objeto **UIStrings** para definir as cadeias de caracteres da interface do usuário do seu suplemento.
 
-Se voc? quiser alterar a localiza??o do seu suplemento com base no idioma usado para exibi??o nos menus e comandos no aplicativo host, use a propriedade **Office.context.displayLanguage** para obter a localidade desse idioma. Por exemplo, se o idioma do aplicativo host utilizar espanhol para exibir menus e comandos, a propriedade **Office.context.displayLanguage** retornar? o c?digo es-ES.
+Se você quiser alterar a localização do seu suplemento com base no idioma usado para exibição nos menus e comandos no aplicativo host, use a propriedade **Office.context.displayLanguage** para obter a localidade desse idioma. Por exemplo, se o idioma do aplicativo host utilizar espanhol para exibir menus e comandos, a propriedade **Office.context.displayLanguage** retornará o código es-ES.
 
-Se voc? quiser alterar a localiza??o do seu suplemento com base no idioma que est? sendo usado para editar o conte?do do documento, use a propriedade **Office.context.contentLanguage** para obter a localidade do idioma. Por exemplo, se o idioma do aplicativo host utilizar espanhol para editar o conte?do do documento, a propriedade **Office.context.contentLanguage** retornar? o c?digo es-ES.
+Se você quiser alterar a localização do seu suplemento com base no idioma que está sendo usado para editar o conteúdo do documento, use a propriedade **Office.context.contentLanguage** para obter a localidade do idioma. Por exemplo, se o idioma do aplicativo host utilizar espanhol para editar o conteúdo do documento, a propriedade **Office.context.contentLanguage** retornará o código es-ES.
 
-Depois que voc? souber o idioma que o aplicativo host est? utilizando, ? poss?vel usar **UIStrings** para obter o conjunto de cadeias de caracteres localizadas correspondentes ao idioma do aplicativo host.
+Depois que você souber o idioma que o aplicativo host está utilizando, é possível usar **UIStrings** para obter o conjunto de cadeias de caracteres localizadas correspondentes ao idioma do aplicativo host.
 
-Substitua o c?digo no arquivo Home.js pelo c?digo a seguir. O c?digo mostra como voc? pode alterar as cadeias de caracteres usadas nos elementos da interface do usu?rio no Home.html com base no idioma de exibi??o do aplicativo host ou no idioma de edi??o do aplicativo host.
+Substitua o código no arquivo Home.js pelo código a seguir. O código mostra como você pode alterar as cadeias de caracteres usadas nos elementos da interface do usuário no Home.html com base no idioma de exibição do aplicativo host ou no idioma de edição do aplicativo host.
 
-> **OBSERVA??O:** para alternar entre a altera??o da localiza??o do suplemento com base no idioma usado para edi??o, remova o coment?rio da linha de c?digo `var myLanguage = Office.context.contentLanguage;` e inclua o coment?rio na linha de c?digo `var myLanguage = Office.context.displayLanguage;`
+> **OBSERVAÇÃO:** para alternar entre a alteração da localização do suplemento com base no idioma usado para edição, remova o comentário da linha de código `var myLanguage = Office.context.contentLanguage;` e inclua o comentário na linha de código `var myLanguage = Office.context.displayLanguage;`
 
 ```js
 /// <reference path="../App.js" />
@@ -398,36 +399,36 @@ Para testar seu suplemento localizado, altere o idioma usado para exibir ou edit
 
 Para alterar o idioma usado para exibir ou editar no seu suplemento:
 
-1. No Word 2013, selecione **Arquivo** > , **Op??es** > , **Idioma**. A figura a seguir mostra a caixa de di?logo **Op??es do Word** aberta na guia Idioma.
+1. No Word 2013, selecione **Arquivo** > , **Opções** > , **Idioma**. A figura a seguir mostra a caixa de diálogo **Opções do Word** aberta na guia Idioma.
     
-    *Figura 2. Op??es de idioma na caixa de di?logo Op??es do Word 2013*
+    *Figura 2. Opções de idioma na caixa de diálogo Opções do Word 2013*
 
-    ![Caixa de di?logo Op??es do Word 2013.](../images/office15-app-how-to-localize-fig04.png)
+    ![Caixa de diálogo Opções do Word 2013.](../images/office15-app-how-to-localize-fig04.png)
 
-2. Em **Escolher idiomas de exibi??o e da ajuda**, selecione o idioma desejado para exibi??o, por exemplo, espanhol, e selecione a seta para cima para mover o idioma espanhol para a primeira posi??o na lista. Ou, para alterar o idioma usado para edi??o, em **Escolher idiomas de edi??o**, escolha o idioma que voc? deseja usar para edi??o, por exemplo, espanhol, e selecione **Definir como Padr?o**.
+2. Em **Escolher idiomas de exibição e da ajuda**, selecione o idioma desejado para exibição, por exemplo, espanhol, e selecione a seta para cima para mover o idioma espanhol para a primeira posição na lista. Ou, para alterar o idioma usado para edição, em **Escolher idiomas de edição**, escolha o idioma que você deseja usar para edição, por exemplo, espanhol, e selecione **Definir como Padrão**.
     
-3. Escolha **OK** para confirmar sua sele??o e feche o Word.
+3. Escolha **OK** para confirmar sua seleção e feche o Word.
     
-Execute o suplemento de exemplo. O suplemento do painel de tarefas ? carregado no Word 2013 e as cadeias de caracteres na interface do usu?rio do suplemento s?o alteradas para corresponder ao idioma usado pelo aplicativo host, conforme mostrado na figura a seguir.
+Execute o suplemento de exemplo. O suplemento do painel de tarefas é carregado no Word 2013 e as cadeias de caracteres na interface do usuário do suplemento são alteradas para corresponder ao idioma usado pelo aplicativo host, conforme mostrado na figura a seguir.
 
 
-*Figura 3. Interface do usu?rio do suplemento com o texto localizado*
+*Figura 3. Interface do usuário do suplemento com o texto localizado*
 
-![Aplicativo com texto localizado da interface do usu?rio.](../images/office15-app-how-to-localize-fig05.png)
+![Aplicativo com texto localizado da interface do usuário.](../images/office15-app-how-to-localize-fig05.png)
 
-## <a name="see-also"></a>Confira tamb?m
+## <a name="see-also"></a>Confira também
 
 - [Diretrizes de design para suplementos do Office](../design/add-in-design.md)    
 - [Identificadores de idioma e valores da ID de OptionState no Office 2013](http://technet.microsoft.com/en-us/library/cc179219%28Office.15%29.aspx)
 
 [DefaultLocale]:        https://dev.office.com/reference/add-ins/manifest/defaultlocale
-[Descri??o]:          https://dev.office.com/reference/add-ins/manifest/description
+[Descrição]:          https://dev.office.com/reference/add-ins/manifest/description
 [DisplayName]:          https://dev.office.com/reference/add-ins/manifest/displayname
 [IconUrl]:              https://dev.office.com/reference/add-ins/manifest/iconurl
 [HighResolutionIconUrl]:https://dev.office.com/reference/add-ins/manifest/highresolutioniconurl
 [Recursos]:            https://dev.office.com/reference/add-ins/manifest/resources
 [SourceLocation]:       https://dev.office.com/reference/add-ins/manifest/sourcelocation
-[Substitui??o]:             https://dev.office.com/reference/add-ins/manifest/override
+[Substituição]:             https://dev.office.com/reference/add-ins/manifest/override
 [DesktopSettings]:      https://dev.office.com/reference/add-ins/manifest/desktopsettings
 [TabletSettings]:       https://dev.office.com/reference/add-ins/manifest/tabletsettings
 [PhoneSettings]:        https://dev.office.com/reference/add-ins/manifest/phonesettings

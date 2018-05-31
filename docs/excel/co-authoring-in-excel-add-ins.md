@@ -7,53 +7,54 @@ ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "19437567"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>Coautoria em suplementos do Excel  
 
-Com a [coautoria](https://support.office.com/en-US/article/Collaborate-on-Excel-workbooks-at-the-same-time-with-co-authoring-7152aa8b-b791-414c-a3bb-3024e46fb104), v?rias pessoas podem trabalhar juntas e editar simultaneamente a mesma pasta de trabalho do Excel. Todos os coautores de uma pasta de trabalho podem ver as altera??es de outros coautores assim que o coautor salva a pasta de trabalho. Para ser coautor de uma pasta de trabalho do Excel, esta deve ser armazenada no OneDrive, OneDrive for Business ou SharePoint Online.
+Com a [coautoria](https://support.office.com/en-US/article/Collaborate-on-Excel-workbooks-at-the-same-time-with-co-authoring-7152aa8b-b791-414c-a3bb-3024e46fb104), várias pessoas podem trabalhar juntas e editar simultaneamente a mesma pasta de trabalho do Excel. Todos os coautores de uma pasta de trabalho podem ver as alterações de outros coautores assim que o coautor salva a pasta de trabalho. Para ser coautor de uma pasta de trabalho do Excel, esta deve ser armazenada no OneDrive, OneDrive for Business ou SharePoint Online.
 
 > [!IMPORTANT]
-> No Excel 2016 para Office 365, voc? ver? o Salvamento Autom?tico no canto superior esquerdo. Quando o Salvamento Autom?tico estiver ativado, os coautores ver?o as respectivas altera??es em tempo real. Considere o impacto desse comportamento no design do seu suplemento do Excel. Os usu?rios podem desativar o Salvamento Autom?tico pelo bot?o no canto superior esquerdo da janela do Excel.
+> No Excel 2016 para Office 365, você verá o Salvamento Automático no canto superior esquerdo. Quando o Salvamento Automático estiver ativado, os coautores verão as respectivas alterações em tempo real. Considere o impacto desse comportamento no design do seu suplemento do Excel. Os usuários podem desativar o Salvamento Automático pelo botão no canto superior esquerdo da janela do Excel.
 
-A coautoria est? dispon?vel nas seguintes plataformas:
+A coautoria está disponível nas seguintes plataformas:
 
 - Excel Online
 - Excel para Android
 - Excel para iOS
 - Excel Mobile para Windows 10
-- Excel para Windows Desktop para clientes do Office 365 (compila??o 16.0.8326.2076 ou posterior do Windows Desktop, que est? dispon?vel para clientes do canal atual em vigor desde agosto de 2017)
+- Excel para Windows Desktop para clientes do Office 365 (compilação 16.0.8326.2076 ou posterior do Windows Desktop, que está disponível para clientes do canal atual em vigor desde agosto de 2017)
 
-## <a name="coauthoring-overview"></a>Vis?o geral da coautoria
+## <a name="coauthoring-overview"></a>Visão geral da coautoria
  
-Quando voc? altera o conte?do de uma pasta de trabalho, o Excel sincroniza automaticamente essas altera??es entre todos os coautores. Os coautores podem alterar o conte?do de uma pasta de trabalho, assim como o c?digo em execu??o em um suplemento do Excel. Por exemplo, quando o seguinte c?digo JavaScript ? executado em um suplemento do Office, o valor de um intervalo ? definido como Contoso:
+Quando você altera o conteúdo de uma pasta de trabalho, o Excel sincroniza automaticamente essas alterações entre todos os coautores. Os coautores podem alterar o conteúdo de uma pasta de trabalho, assim como o código em execução em um suplemento do Excel. Por exemplo, quando o seguinte código JavaScript é executado em um suplemento do Office, o valor de um intervalo é definido como Contoso:
 
 ```js
 range.values = [['Contoso']];
 ```
-Depois que "Contoso" ? sincronizado entre todos os coautores, qualquer usu?rio ou suplemento em execu??o na mesma pasta de trabalho ver? o novo valor do intervalo. 
+Depois que "Contoso" é sincronizado entre todos os coautores, qualquer usuário ou suplemento em execução na mesma pasta de trabalho verá o novo valor do intervalo. 
 
-A coautoria sincroniza apenas o conte?do dentro da pasta de trabalho compartilhada. Os valores copiados da pasta de trabalho em vari?veis de JavaScript em um suplemento do Excel n?o s?o sincronizados. Por exemplo, se seu suplemento armazenar o valor de uma c?lula (como "Contoso") em uma vari?vel de JavaScript e um coautor alterar o valor da c?lula para "Exemplo", ap?s a sincroniza??o todos os coautores ver?o "Exemplo" na c?lula. No entanto, o valor da vari?vel de JavaScript continuar? definido como "Contoso". Al?m disso, quando v?rios autores usarem o mesmo suplemento, cada coautor ter? sua pr?pria c?pia da vari?vel, que n?o ? sincronizada. Quando voc? usar vari?veis que usam o conte?do da pasta de trabalho, n?o se esque?a de verificar se h? valores atualizados na pasta de trabalho antes de usar a vari?vel. 
+A coautoria sincroniza apenas o conteúdo dentro da pasta de trabalho compartilhada. Os valores copiados da pasta de trabalho em variáveis de JavaScript em um suplemento do Excel não são sincronizados. Por exemplo, se seu suplemento armazenar o valor de uma célula (como "Contoso") em uma variável de JavaScript e um coautor alterar o valor da célula para "Exemplo", após a sincronização todos os coautores verão "Exemplo" na célula. No entanto, o valor da variável de JavaScript continuará definido como "Contoso". Além disso, quando vários autores usarem o mesmo suplemento, cada coautor terá sua própria cópia da variável, que não é sincronizada. Quando você usar variáveis que usam o conteúdo da pasta de trabalho, não se esqueça de verificar se há valores atualizados na pasta de trabalho antes de usar a variável. 
 
-## <a name="use-events-to-manage-the-in-memory-state-of-your-add-in"></a>Usar eventos para gerenciar o estado na mem?ria do suplemento
+## <a name="use-events-to-manage-the-in-memory-state-of-your-add-in"></a>Usar eventos para gerenciar o estado na memória do suplemento
  
-Os suplementos do Excel podem ler conte?do da pasta de trabalho (de planilhas ocultas e um objeto de configura??o) e armazen?-lo em estruturas de dados, como vari?veis. Depois que os valores originais s?o copiados em qualquer uma dessas estruturas de dados, os coautores podem atualizar o conte?do da pasta de trabalho original. Isso significa que os valores copiados nas estruturas de dados agora est?o fora de sincronia com o conte?do da pasta de trabalho. Ao criar seus suplementos, lembre-se dessa separa??o do conte?do da pasta de trabalho e dos valores armazenados em estruturas de dados.
+Os suplementos do Excel podem ler conteúdo da pasta de trabalho (de planilhas ocultas e um objeto de configuração) e armazená-lo em estruturas de dados, como variáveis. Depois que os valores originais são copiados em qualquer uma dessas estruturas de dados, os coautores podem atualizar o conteúdo da pasta de trabalho original. Isso significa que os valores copiados nas estruturas de dados agora estão fora de sincronia com o conteúdo da pasta de trabalho. Ao criar seus suplementos, lembre-se dessa separação do conteúdo da pasta de trabalho e dos valores armazenados em estruturas de dados.
 
-Por exemplo, voc? pode criar um suplemento de conte?do que exibe visualiza??es personalizadas. O estado de suas visualiza??es personalizadas pode ser salvo em uma planilha oculta. Quando coautores usarem a mesma pasta de trabalho, o seguinte cen?rio poder? ocorrer:
+Por exemplo, você pode criar um suplemento de conteúdo que exibe visualizações personalizadas. O estado de suas visualizações personalizadas pode ser salvo em uma planilha oculta. Quando coautores usarem a mesma pasta de trabalho, o seguinte cenário poderá ocorrer:
 
-- O Usu?rio A abre o documento e as visualiza??es personalizadas s?o mostradas na pasta de trabalho. As visualiza??es personalizadas leem dados de uma planilha oculta (por exemplo, a cor das visualiza??es ? definida como azul).
-- O usu?rio B abre o mesmo documento e come?a a modificar as visualiza??es personalizadas. O usu?rio B define a cor das visualiza??es personalizadas para laranja. A cor laranja ? salva para a planilha oculta.
-- A planilha oculta do Usu?rio A ? atualizada com o novo valor laranja.
-- As visualiza??es personalizadas do Usu?rio A continuam azuis. 
+- O Usuário A abre o documento e as visualizações personalizadas são mostradas na pasta de trabalho. As visualizações personalizadas leem dados de uma planilha oculta (por exemplo, a cor das visualizações é definida como azul).
+- O usuário B abre o mesmo documento e começa a modificar as visualizações personalizadas. O usuário B define a cor das visualizações personalizadas para laranja. A cor laranja é salva para a planilha oculta.
+- A planilha oculta do Usuário A é atualizada com o novo valor laranja.
+- As visualizações personalizadas do Usuário A continuam azuis. 
 
-Se quiser que as visualiza??es personalizadas do Usu?rio A respondam ?s altera??es feitas pelos coautores na planilha oculta, use o evento [BindingDataChanged](https://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent). Isso garante que as altera??es no conte?do da pasta de trabalho feitas pelos coautores sejam refletidas no estado do seu suplemento.
+Se quiser que as visualizações personalizadas do Usuário A respondam às alterações feitas pelos coautores na planilha oculta, use o evento [BindingDataChanged](https://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent). Isso garante que as alterações no conteúdo da pasta de trabalho feitas pelos coautores sejam refletidas no estado do seu suplemento.
 
-## <a name="caveats-to-using-events-with-coauthoring"></a>Advert?ncias para usar eventos com coautoria 
+## <a name="caveats-to-using-events-with-coauthoring"></a>Advertências para usar eventos com coautoria 
 
-Conforme descrito anteriormente, em alguns cen?rios, acionar eventos para todos os coautores proporciona uma experi?ncia do usu?rios aprimorada. No entanto, lembre-se de que, em alguns cen?rios, esse comportamento pode resultar em uma m? experi?ncia do usu?rio. 
+Conforme descrito anteriormente, em alguns cenários, acionar eventos para todos os coautores proporciona uma experiência do usuários aprimorada. No entanto, lembre-se de que, em alguns cenários, esse comportamento pode resultar em uma má experiência do usuário. 
 
-Por exemplo, em cen?rios de valida??o de dados, ? comum exibir a interface do usu?rio em resposta a eventos. O evento [BindingDataChanged](https://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent) descrito na se??o anterior ? executado quando um usu?rio local ou coautor (remoto) altera o conte?do da pasta de trabalho na associa??o. Se o manipulador de eventos do evento **BindingDataChanged** exibir a interface do usu?rio, os usu?rios ver?o a interface do usu?rio que n?o est? relacionada ?s altera??es em que eles estavam trabalhando na pasta de trabalho, levando a uma m? experi?ncia do usu?rio. Evite a exibi??o da interface do usu?rio ao usar eventos no suplemento.
+Por exemplo, em cenários de validação de dados, é comum exibir a interface do usuário em resposta a eventos. O evento [BindingDataChanged](https://dev.office.com/reference/add-ins/shared/binding.bindingdatachangedevent) descrito na seção anterior é executado quando um usuário local ou coautor (remoto) altera o conteúdo da pasta de trabalho na associação. Se o manipulador de eventos do evento **BindingDataChanged** exibir a interface do usuário, os usuários verão a interface do usuário que não está relacionada às alterações em que eles estavam trabalhando na pasta de trabalho, levando a uma má experiência do usuário. Evite a exibição da interface do usuário ao usar eventos no suplemento.
 
-## <a name="see-also"></a>Veja tamb?m 
+## <a name="see-also"></a>Veja também 
 
 - [Sobre a coautoria no Excel (VBA)](https://msdn.microsoft.com/en-us/vba/excel-vba/articles/about-coauthoring-in-excel) 
-- [Como o Salvamento Autom?tico afeta suplementos e macros (VBA)](https://msdn.microsoft.com/en-us/vba/office-shared-vba/articles/how-autosave-impacts-addins-and-macros) 
+- [Como o Salvamento Automático afeta suplementos e macros (VBA)](https://msdn.microsoft.com/en-us/vba/office-shared-vba/articles/how-autosave-impacts-addins-and-macros) 

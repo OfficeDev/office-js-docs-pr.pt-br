@@ -1,5 +1,5 @@
 ---
-title: Criar um suplemento de Project que usa REST com um servi?o OData local do Project Server
+title: Criar um suplemento de Project que usa REST com um serviço OData local do Project Server
 description: ''
 ms.date: 01/23/2018
 ms.openlocfilehash: ce481438086f7e55dd27acb61010e61dff7153dc
@@ -7,40 +7,41 @@ ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "19439205"
 ---
-# <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>Criar um suplemento de Project que usa REST com um servi?o OData local do Project Server
+# <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>Criar um suplemento de Project que usa REST com um serviço OData local do Project Server
 
-Este artigo descreve como criar um suplemento de painel tarefas do Project Professional 2013 que compara dados de custo e de trabalho no projeto ativo com m?dias de todos os projetos da inst?ncia atual do Project Web App. O suplemento usa REST com a biblioteca jQuery para acessar o servi?o de relat?rio OData **ProjectData** no Project Server 2013.
-
-
-O c?digo deste artigo ? baseado em um exemplo desenvolvido por Saurabh Sanghvi e Arvind Iyer, da Microsoft Corporation.
-
-## <a name="prerequisites-for-creating-a-task-pane-add-in-that-reads-project-server-reporting-data"></a>Pr?-requisitos para a cria??o de um suplemento de painel de tarefas que l? dados de relat?rio do Project Server
+Este artigo descreve como criar um suplemento de painel tarefas do Project Professional 2013 que compara dados de custo e de trabalho no projeto ativo com médias de todos os projetos da instância atual do Project Web App. O suplemento usa REST com a biblioteca jQuery para acessar o serviço de relatório OData **ProjectData** no Project Server 2013.
 
 
-A seguir temos os pr?-requisitos para a cria??o de um suplemento de painel de tarefas do Project que l? o servi?o **ProjectData** de uma inst?ncia do Project Web App em uma instala??o local do Project Server 2013:
+O código deste artigo é baseado em um exemplo desenvolvido por Saurabh Sanghvi e Arvind Iyer, da Microsoft Corporation.
+
+## <a name="prerequisites-for-creating-a-task-pane-add-in-that-reads-project-server-reporting-data"></a>Pré-requisitos para a criação de um suplemento de painel de tarefas que lê dados de relatório do Project Server
 
 
-- Verifique se voc? instalou os service packs e as atualiza??es mais recentes do Windows em seu computador de desenvolvimento local. O sistema operacional pode ser Windows 7, Windows 8, Windows Server 2008 ou Windows Server 2012.
+A seguir temos os pré-requisitos para a criação de um suplemento de painel de tarefas do Project que lê o serviço **ProjectData** de uma instância do Project Web App em uma instalação local do Project Server 2013:
+
+
+- Verifique se você instalou os service packs e as atualizações mais recentes do Windows em seu computador de desenvolvimento local. O sistema operacional pode ser Windows 7, Windows 8, Windows Server 2008 ou Windows Server 2012.
     
-- O Project Professional 2013 ? necess?rio para a conex?o com o Project Web App. O computador de desenvolvimento deve ter o Project Professional 2013 instalado para habilitar a depura??o **F5** com o Visual Studio.
+- O Project Professional 2013 é necessário para a conexão com o Project Web App. O computador de desenvolvimento deve ter o Project Professional 2013 instalado para habilitar a depuração **F5** com o Visual Studio.
     
     > [!NOTE]
-    > O Project Standard 2013 tamb?m pode hospedar suplementos de painel de tarefas, mas n?o pode fazer logon no Project Web App.
+    > O Project Standard 2013 também pode hospedar suplementos de painel de tarefas, mas não pode fazer logon no Project Web App.
 
-- O Visual Studio 2015 com Office Developer Tools para Visual Studio inclui modelos para criar suplementos do Office e do SharePoint. Verifique se voc? instalou a vers?o mais recente do Office Developer Tools. Confira a se??o _Ferramentas_ de [Download de suplementos do Office e do SharePoint](http://msdn.microsoft.com/en-us/office/apps/fp123627.aspx).
+- O Visual Studio 2015 com Office Developer Tools para Visual Studio inclui modelos para criar suplementos do Office e do SharePoint. Verifique se você instalou a versão mais recente do Office Developer Tools. Confira a seção _Ferramentas_ de [Download de suplementos do Office e do SharePoint](http://msdn.microsoft.com/en-us/office/apps/fp123627.aspx).
     
-- Os procedimentos e exemplos de c?digo neste artigo acessam o servi?o **ProjectData** do Project Server 2013 em um dom?nio local. Os m?todos jQuery neste artigo n?o funcionam com o Project Online.
+- Os procedimentos e exemplos de código neste artigo acessam o serviço **ProjectData** do Project Server 2013 em um domínio local. Os métodos jQuery neste artigo não funcionam com o Project Online.
     
-    Verifique se o servi?o **ProjectData** est? acess?vel do seu computador de desenvolvimento.
+    Verifique se o serviço **ProjectData** está acessível do seu computador de desenvolvimento.
     
 
-### <a name="procedure-1-to-verify-that-the-projectdata-service-is-accessible"></a>Procedimento 1. Para verificar se o servi?o ProjectData est? acess?vel
+### <a name="procedure-1-to-verify-that-the-projectdata-service-is-accessible"></a>Procedimento 1. Para verificar se o serviço ProjectData está acessível
 
 
-1. Para permitir que seu navegador mostre os dados XML de consultas REST diretamente, desative o modo de exibi??o de leitura de feed. Para saber mais sobre como fazer isso no Internet Explorer, confira o Procedimento 1, etapa 4 em [Consultar feeds OData para dados de relat?rio do Project](http://msdn.microsoft.com/library/3eafda3b-f006-48be-baa6-961b2ed9fe01%28Office.15%29.aspx).
+1. Para permitir que seu navegador mostre os dados XML de consultas REST diretamente, desative o modo de exibição de leitura de feed. Para saber mais sobre como fazer isso no Internet Explorer, confira o Procedimento 1, etapa 4 em [Consultar feeds OData para dados de relatório do Project](http://msdn.microsoft.com/library/3eafda3b-f006-48be-baa6-961b2ed9fe01%28Office.15%29.aspx).
     
-2. Consultar o servi?o **ProjectData** usando seu navegador com a seguinte URL: **http://ServerName/ProjectServerName /_api/ProjectData**. Por exemplo, se a inst?ncia do Project Web App for `http://MyServer/pwa`, o navegador mostra os seguintes resultados:
+2. Consultar o serviço **ProjectData** usando seu navegador com a seguinte URL: **http://ServerName/ProjectServerName /_api/ProjectData**. Por exemplo, se a instância do Project Web App for `http://MyServer/pwa`, o navegador mostra os seguintes resultados:
     
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -60,80 +61,80 @@ A seguir temos os pr?-requisitos para a cria??o de um suplemento de painel de ta
         </service>
     ```
 
-3. Pode ser necess?rio fornecer as credenciais de rede para ver os resultados. Se o navegador exibir "Erro 403, acesso negado", voc? n?o tem permiss?o de logon para essa inst?ncia do Project Web App ou h? algum problema de rede que exige ajuda administrativa.
+3. Pode ser necessário fornecer as credenciais de rede para ver os resultados. Se o navegador exibir "Erro 403, acesso negado", você não tem permissão de logon para essa instância do Project Web App ou há algum problema de rede que exige ajuda administrativa.
     
 
 ## <a name="using-visual-studio-to-create-a-task-pane-add-in-for-project"></a>Usar o Visual Studio para criar um suplemento de painel de tarefas para o Project
 
-O Office Developer Tools para Visual Studio inclui um modelo de suplemento de painel de tarefas para o Project 2013. Se voc? criar uma solu??o denominada **HelloProjectOData**, ela conter? os dois projetos do Visual Studio a seguir:
+O Office Developer Tools para Visual Studio inclui um modelo de suplemento de painel de tarefas para o Project 2013. Se você criar uma solução denominada **HelloProjectOData**, ela conterá os dois projetos do Visual Studio a seguir:
 
 
-- O projeto de suplemento usa o nome da solu??o. Ele inclui o arquivo de manifesto XML para o suplemento e serve para o .NET Framework 4.5. O Procedimento 3 mostra as etapas para modificar o manifesto para o suplemento **HelloProjectOData**.
+- O projeto de suplemento usa o nome da solução. Ele inclui o arquivo de manifesto XML para o suplemento e serve para o .NET Framework 4.5. O Procedimento 3 mostra as etapas para modificar o manifesto para o suplemento **HelloProjectOData**.
     
-- O projeto Web ? denominado **HelloProjectODataWeb**. Ele inclui as p?ginas da Web, os arquivos JavaScript, os arquivos CSS, as imagens, as refer?ncias e os arquivos de configura??o para o conte?do Web no painel de tarefas. O projeto Web serve para o .NET Framework 4. Os Procedimentos 4 e 5 mostram como modificar os arquivos no projeto Web para criar a funcionalidade do suplemento **HelloProjectOData**.
+- O projeto Web é denominado **HelloProjectODataWeb**. Ele inclui as páginas da Web, os arquivos JavaScript, os arquivos CSS, as imagens, as referências e os arquivos de configuração para o conteúdo Web no painel de tarefas. O projeto Web serve para o .NET Framework 4. Os Procedimentos 4 e 5 mostram como modificar os arquivos no projeto Web para criar a funcionalidade do suplemento **HelloProjectOData**.
     
 
 ### <a name="procedure-2-to-create-the-helloprojectodata-add-in-for-project"></a>Procedimento 2. Para criar o suplemento HelloProjectOData para o Project
 
 
-1. Execute o Visual Studio 2015 como administrador e selecione **Novo Projeto** na p?gina Iniciar.
+1. Execute o Visual Studio 2015 como administrador e selecione **Novo Projeto** na página Iniciar.
     
-2. Na caixa de di?logo **Novo Projeto**, expanda os n?s **Modelos**, **Visual C#** e **Office/SharePoint** e selecione **Suplementos do Office**. Selecione **.NET Framework 4.5.2** na lista suspensa de estrutura de destino na parte superior do painel central e, em seguida, selecione **Suplemento do Office** (veja a captura de tela a seguir).
+2. Na caixa de diálogo **Novo Projeto**, expanda os nós **Modelos**, **Visual C#** e **Office/SharePoint** e selecione **Suplementos do Office**. Selecione **.NET Framework 4.5.2** na lista suspensa de estrutura de destino na parte superior do painel central e, em seguida, selecione **Suplemento do Office** (veja a captura de tela a seguir).
     
-3. Para colocar ambos os projetos do Visual Studio no mesmo diret?rio, selecione **Criar diret?rio para solu??o** e navegue at? o local desejado.
+3. Para colocar ambos os projetos do Visual Studio no mesmo diretório, selecione **Criar diretório para solução** e navegue até o local desejado.
     
 4. No campo **Nome**, digite HelloProjectOData e escolha **OK**.
     
-    *Figura 1. Cria??o de um suplemento do Office*
+    *Figura 1. Criação de um suplemento do Office*
 
     ![Criar um Suplemento do Office](../images/pj15-hello-project-o-data-creating-app.png)
 
-5. Na caixa de di?logo **Escolha o tipo de suplemento**, selecione **Painel de tarefas** e escolha **Avan?ar** (veja a captura de tela a seguir).
+5. Na caixa de diálogo **Escolha o tipo de suplemento**, selecione **Painel de tarefas** e escolha **Avançar** (veja a captura de tela a seguir).
     
     *Figura 2. Como escolher o tipo de suplemento a criar*
 
     ![Escolher o tipo de suplemento a criar](../images/pj15-hello-project-o-data-choose-project.png)
 
-6. Na caixa de di?logo **Escolha os aplicativos host**, desmarque todas as caixas de sele??o, exceto o **Project** (veja a captura de tela a seguir) e escolha **Concluir**.
+6. Na caixa de diálogo **Escolha os aplicativos host**, desmarque todas as caixas de seleção, exceto o **Project** (veja a captura de tela a seguir) e escolha **Concluir**.
     
     *Figura 3. Como escolher o aplicativo host*
 
-    ![Escolher o Project como o ?nico aplicativo host](../images/create-office-add-in.png)
+    ![Escolher o Project como o único aplicativo host](../images/create-office-add-in.png)
     
     O Visual Studio cria o projeto **HelloProjectOdata** e o projeto **HelloProjectODataWeb**.
     
-A pasta **AddIn** (veja a captura de tela a seguir) cont?m o arquivo App.css para estilos CSS personalizados. Na subpasta **Home**, o arquivo Home.html cont?m refer?ncias para arquivos CSS e JavaScript que o suplemento usa, e o conte?do HTML5 para o suplemento. Al?m disso, o arquivo Home.js ? para o seu c?digo JavaScript personalizado. A pasta **Scripts** inclui os arquivos da biblioteca jQuery. A subpasta **Office** inclui as bibliotecas JavaScript, como office.js e project-15.js, al?m das bibliotecas de linguagem para cadeias de caracteres padr?o nos suplementos do Office. Na pasta **Content**, o arquivo Office.css cont?m os estilos padr?o para todos os suplementos do Office.
+A pasta **AddIn** (veja a captura de tela a seguir) contém o arquivo App.css para estilos CSS personalizados. Na subpasta **Home**, o arquivo Home.html contém referências para arquivos CSS e JavaScript que o suplemento usa, e o conteúdo HTML5 para o suplemento. Além disso, o arquivo Home.js é para o seu código JavaScript personalizado. A pasta **Scripts** inclui os arquivos da biblioteca jQuery. A subpasta **Office** inclui as bibliotecas JavaScript, como office.js e project-15.js, além das bibliotecas de linguagem para cadeias de caracteres padrão nos suplementos do Office. Na pasta **Content**, o arquivo Office.css contém os estilos padrão para todos os suplementos do Office.
 
-*Figura 4. Exibi??o de arquivos de projeto Web padr?o no Gerenciador de Solu??es*
+*Figura 4. Exibição de arquivos de projeto Web padrão no Gerenciador de Soluções*
 
-![Exibir os arquivos do projeto Web no Gerenciador de Solu??es](../images/pj15-hello-project-o-data-initial-solution-explorer.png)
+![Exibir os arquivos do projeto Web no Gerenciador de Soluções](../images/pj15-hello-project-o-data-initial-solution-explorer.png)
 
-O manifesto para o projeto **HelloProjectOData** ? o arquivo HelloProjectOData.xml. Opcionalmente, voc? pode modificar o manifesto para adicionar uma descri??o do suplemento, uma refer?ncia a um ?cone, informa??es de linguagem adicionais e outras configura??es. O Procedimento 3 simplesmente modifica o nome de exibi??o e a descri??o do suplemento e adiciona um ?cone.
+O manifesto para o projeto **HelloProjectOData** é o arquivo HelloProjectOData.xml. Opcionalmente, você pode modificar o manifesto para adicionar uma descrição do suplemento, uma referência a um ícone, informações de linguagem adicionais e outras configurações. O Procedimento 3 simplesmente modifica o nome de exibição e a descrição do suplemento e adiciona um ícone.
 
-Para saber mais sobre o manifesto, confira [Manifesto XML de suplementos do Office](../develop/add-in-manifests.md) e [Refer?ncia de esquema para manifestos de suplementos do Office (vers?o 1.1)](../develop/add-in-manifests.md#see-also).
+Para saber mais sobre o manifesto, confira [Manifesto XML de suplementos do Office](../develop/add-in-manifests.md) e [Referência de esquema para manifestos de suplementos do Office (versão 1.1)](../develop/add-in-manifests.md#see-also).
 
 ### <a name="procedure-3-to-modify-the-add-in-manifest"></a>Procedimento 3. Para modificar o manifesto do suplemento
 
 
 1. No Visual Studio, abra o arquivo HelloProjectOData.xml.
     
-2. O nome de exibi??o padr?o ? o nome do projeto do Visual Studio ("HelloProjectOData"). Por exemplo, altere o valor padr?o do elemento **DisplayName** para "Hello ProjectData".
+2. O nome de exibição padrão é o nome do projeto do Visual Studio ("HelloProjectOData"). Por exemplo, altere o valor padrão do elemento **DisplayName** para "Hello ProjectData".
     
-3. A descri??o padr?o tamb?m ? "HelloProjectOData". Por exemplo, altere o valor padr?o do elemento Description para "Testar consultas REST do servi?o ProjectData".
+3. A descrição padrão também é "HelloProjectOData". Por exemplo, altere o valor padrão do elemento Description para "Testar consultas REST do serviço ProjectData".
     
-4. Adicione um ?cone para mostrar a lista suspensa **Suplementos do Office** na guia **PROJETO** da faixa de op??es. Voc? pode adicionar um arquivo de ?cone na solu??o do Visual Studio ou usar uma URL para um ?cone. 
+4. Adicione um ícone para mostrar a lista suspensa **Suplementos do Office** na guia **PROJETO** da faixa de opções. Você pode adicionar um arquivo de ícone na solução do Visual Studio ou usar uma URL para um ícone. 
 
-As etapas a seguir mostram como adicionar um arquivo de ?cone ? solu??o do Visual Studio:
+As etapas a seguir mostram como adicionar um arquivo de ícone à solução do Visual Studio:
     
-1. No **Gerenciador de Solu??es**, v? at? a pasta chamada Imagens.
+1. No **Gerenciador de Soluções**, vá até a pasta chamada Imagens.
     
-2. Para ser exibido na lista suspensa **Suplementos do Office**, o ?cone deve ter 32 x 32 pixels. Por exemplo, instale o SDK do Project 2013, escolha a pasta **Imagens** e adicione o seguinte arquivo do SDK: `\Samples\Apps\HelloProjectOData\HelloProjectODataWeb\Images\NewIcon.png`
+2. Para ser exibido na lista suspensa **Suplementos do Office**, o ícone deve ter 32 x 32 pixels. Por exemplo, instale o SDK do Project 2013, escolha a pasta **Imagens** e adicione o seguinte arquivo do SDK: `\Samples\Apps\HelloProjectOData\HelloProjectODataWeb\Images\NewIcon.png`
     
-    Como alternativa, use seu pr?prio ?cone de 32 x 32 ou copie a imagem a seguir para um arquivo chamado NewIcon.png e, em seguida, adicione esse arquivo ? pasta `HelloProjectODataWeb\Images`:
+    Como alternativa, use seu próprio ícone de 32 x 32 ou copie a imagem a seguir para um arquivo chamado NewIcon.png e, em seguida, adicione esse arquivo à pasta `HelloProjectODataWeb\Images`:
     
-    ![?cone do aplicativo HelloProjectOData](../images/pj15-hello-project-data-new-icon.jpg)
+    ![Ícone do aplicativo HelloProjectOData](../images/pj15-hello-project-data-new-icon.jpg)
 
-3. No manifesto HelloProjectOData.xml, adicione um elemento **IconUrl** abaixo do elemento **Description**, em que o valor da URL do ?cone ? o caminho relativo para o arquivo do ?cone de 32 x 32 pixels. Por exemplo, adicione a seguinte linha: **<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />**. O arquivo de manifesto HelloProjectOData.xml agora cont?m o seguinte (seu valor **Id** ser? diferente):
+3. No manifesto HelloProjectOData.xml, adicione um elemento **IconUrl** abaixo do elemento **Description**, em que o valor da URL do ícone é o caminho relativo para o arquivo do ícone de 32 x 32 pixels. Por exemplo, adicione a seguinte linha: **<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />**. O arquivo de manifesto HelloProjectOData.xml agora contém o seguinte (seu valor **Id** será diferente):
 
     ```XML
     <?xml version="1.0" encoding="UTF-8"?>
@@ -157,38 +158,38 @@ As etapas a seguir mostram como adicionar um arquivo de ?cone ? solu??o do Visua
     </OfficeApp>
     ```
 
-## <a name="creating-the-html-content-for-the-helloprojectodata-add-in"></a>Criar conte?do HTML para o suplemento HelloProjectOData
+## <a name="creating-the-html-content-for-the-helloprojectodata-add-in"></a>Criar conteúdo HTML para o suplemento HelloProjectOData
 
-O suplemento **HelloProjectOData** ? um exemplo que inclui as sa?das de erro e de depura??o. Ele n?o se destina a uso em produ??o. Antes de come?ar a escrever conte?do HTML, crie a interface do usu?rio e a experi?ncia para o suplemento, e descreva as fun??es JavaScript que interagem com o c?digo HTML. Para saber mais, confira [Diretrizes de design para suplementos do Office](../design/add-in-design.md). 
+O suplemento **HelloProjectOData** é um exemplo que inclui as saídas de erro e de depuração. Ele não se destina a uso em produção. Antes de começar a escrever conteúdo HTML, crie a interface do usuário e a experiência para o suplemento, e descreva as funções JavaScript que interagem com o código HTML. Para saber mais, confira [Diretrizes de design para suplementos do Office](../design/add-in-design.md). 
 
-O painel de tarefas mostra o nome de exibi??o do suplemento na parte superior, que ? o valor do elemento **DisplayName** no manifesto. O elemento **body** no arquivo HelloProjectOData.html cont?m outros elementos de interface do usu?rio, da seguinte maneira:
+O painel de tarefas mostra o nome de exibição do suplemento na parte superior, que é o valor do elemento **DisplayName** no manifesto. O elemento **body** no arquivo HelloProjectOData.html contém outros elementos de interface do usuário, da seguinte maneira:
 
-- Um subt?tulo indica a funcionalidade ou o tipo de opera??o geral, por exemplo, **CONSULTA REST ODATA**.
+- Um subtítulo indica a funcionalidade ou o tipo de operação geral, por exemplo, **CONSULTA REST ODATA**.
     
-- O bot?o **Obter Ponto de Extremidade de ProjectData** chama a fun??o **setOdataUrl** para obter o ponto de extremidade do servi?o **ProjectData** e exibi-lo em uma caixa de texto. Se o projeto n?o estiver conectado ao Project Web App, o suplemento chama um identificador de erro para exibir uma mensagem de erro pop-up.
+- O botão **Obter Ponto de Extremidade de ProjectData** chama a função **setOdataUrl** para obter o ponto de extremidade do serviço **ProjectData** e exibi-lo em uma caixa de texto. Se o projeto não estiver conectado ao Project Web App, o suplemento chama um identificador de erro para exibir uma mensagem de erro pop-up.
     
-- O bot?o **Comparar Todos os Projetos** fica desabilitado at? que o suplemento obtenha um ponto de extremidade OData v?lido. Ao selecionar o bot?o, ele chama a fun??o **retrieveOData**, que usa uma consulta REST para obter os dados de trabalho e custo do projeto do servi?o **ProjectData**.
+- O botão **Comparar Todos os Projetos** fica desabilitado até que o suplemento obtenha um ponto de extremidade OData válido. Ao selecionar o botão, ele chama a função **retrieveOData**, que usa uma consulta REST para obter os dados de trabalho e custo do projeto do serviço **ProjectData**.
     
-- Uma tabela exibe os valores m?dios de custo do projeto, custo real, trabalho e porcentagem conclu?da. A tabela tamb?m compara os valores atuais do projeto ativo com a m?dia. Se o valor atual for maior que a m?dia de todos os projetos, ser? exibido em vermelho. Se o valor atual for menor que a m?dia, ser? exibido em verde. Se o valor atual n?o estiver dispon?vel, a tabela exibir? **NA** em azul.
+- Uma tabela exibe os valores médios de custo do projeto, custo real, trabalho e porcentagem concluída. A tabela também compara os valores atuais do projeto ativo com a média. Se o valor atual for maior que a média de todos os projetos, será exibido em vermelho. Se o valor atual for menor que a média, será exibido em verde. Se o valor atual não estiver disponível, a tabela exibirá **NA** em azul.
     
-    A fun??o **retrieveOData** aciona a fun??o **parseODataResult**, que calcula e exibe os valores da tabela.
+    A função **retrieveOData** aciona a função **parseODataResult**, que calcula e exibe os valores da tabela.
     
     > [!NOTE]
-    > Neste exemplo, os dados de trabalho e custo para o projeto ativo s?o derivados dos valores publicados. Se voc? alterar os valores no Project, o servi?o **ProjectData** n?o ter? as altera??es at? que o projeto seja publicado.
+    > Neste exemplo, os dados de trabalho e custo para o projeto ativo são derivados dos valores publicados. Se você alterar os valores no Project, o serviço **ProjectData** não terá as alterações até que o projeto seja publicado.
 
 
-### <a name="procedure-4-to-create-the-html-content"></a>Procedimento 4. Para criar o conte?do HTML
+### <a name="procedure-4-to-create-the-html-content"></a>Procedimento 4. Para criar o conteúdo HTML
 
-1. No elemento **head** do arquivo Home.html, adicione elementos **link** extras para os arquivos CSS que seu suplemento usa. O modelo de projeto do Visual Studio inclui um link para o arquivo App.css que voc? pode usar para os estilos CSS personalizados.
+1. No elemento **head** do arquivo Home.html, adicione elementos **link** extras para os arquivos CSS que seu suplemento usa. O modelo de projeto do Visual Studio inclui um link para o arquivo App.css que você pode usar para os estilos CSS personalizados.
     
-2. Adicione elementos **script** extras para bibliotecas JavaScript que o suplemento usa. O modelo de projeto inclui links para os arquivos jQuery- _[vers?o]_.js, office.js e MicrosoftAjax.js na pasta **Scripts**.
+2. Adicione elementos **script** extras para bibliotecas JavaScript que o suplemento usa. O modelo de projeto inclui links para os arquivos jQuery- _[versão]_.js, office.js e MicrosoftAjax.js na pasta **Scripts**.
     
     > [!NOTE]
-    > Antes de implantar o suplemento, mude a refer?ncia office.js e a refer?ncia jQuery para a refer?ncia CDN (rede de distribui??o de conte?do). A refer?ncia CDN fornece a vers?o mais recente e melhora o desempenho.
+    > Antes de implantar o suplemento, mude a referência office.js e a referência jQuery para a referência CDN (rede de distribuição de conteúdo). A referência CDN fornece a versão mais recente e melhora o desempenho.
 
-    O suplemento **HelloProjectOData** tamb?m usa o arquivo SurfaceErrors.js, que exibe os erros em uma mensagem pop-up. Voc? pode copiar o c?digo da se??o _Programa??o Robusta_ de [Cria seu primeiro suplemento do painel de tarefas do Project 2013 usando um editor de texto](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md) e adicionar um arquivo SurfaceErrors.js na pasta **Scripts\Office** do projeto **HelloProjectODataWeb**.
+    O suplemento **HelloProjectOData** também usa o arquivo SurfaceErrors.js, que exibe os erros em uma mensagem pop-up. Você pode copiar o código da seção _Programação Robusta_ de [Cria seu primeiro suplemento do painel de tarefas do Project 2013 usando um editor de texto](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md) e adicionar um arquivo SurfaceErrors.js na pasta **Scripts\Office** do projeto **HelloProjectODataWeb**.
     
-    Esse ? o c?digo HTML atualizado para o elemento **head**, com a linha adicional para o arquivo SurfaceErrors.js:
+    Esse é o código HTML atualizado para o elemento **head**, com a linha adicional para o arquivo SurfaceErrors.js:
     
     ```HTML
     <!DOCTYPE html>
@@ -224,9 +225,9 @@ O painel de tarefas mostra o nome de exibi??o do suplemento na parte superior, q
     </html>
     ```
 
-3. No elemento **corpo**, exclua o c?digo existente do modelo e adicione o c?digo para a interface de usu?rio. Se um elemento deve ser preenchido com os dados ou manipulado por uma instru??o jQuery, deve incluir um atributo **id** exclusivo. No c?digo a seguir, os atributos **id** para os elementos **button**, **span** e **td** (defini??o de c?lula de tabela) que as fun??es jQuery usam s?o mostrados em negrito.
+3. No elemento **corpo**, exclua o código existente do modelo e adicione o código para a interface de usuário. Se um elemento deve ser preenchido com os dados ou manipulado por uma instrução jQuery, deve incluir um atributo **id** exclusivo. No código a seguir, os atributos **id** para os elementos **button**, **span** e **td** (definição de célula de tabela) que as funções jQuery usam são mostrados em negrito.
     
-   O seguinte HTML adiciona uma imagem gr?fica, que poderia ser um logotipo da empresa. Voc? pode usar o logotipo que quiser ou copiar o arquivo NewLogo.png do download do Project 2013 SDK e depois usar o **Gerenciamento de Solu??es** para adicionar o arquivo ? pasta `HelloProjectODataWeb\Images`.
+   O seguinte HTML adiciona uma imagem gráfica, que poderia ser um logotipo da empresa. Você pode usar o logotipo que quiser ou copiar o arquivo NewLogo.png do download do Project 2013 SDK e depois usar o **Gerenciamento de Soluções** para adicionar o arquivo à pasta `HelloProjectODataWeb\Images`.
     
     ```HTML
     <body>
@@ -283,17 +284,17 @@ O painel de tarefas mostra o nome de exibi??o do suplemento na parte superior, q
     ```
 
 
-## <a name="creating-the-javascript-code-for-the-add-in"></a>Criar o c?digo JavaScript para o suplemento
+## <a name="creating-the-javascript-code-for-the-add-in"></a>Criar o código JavaScript para o suplemento
 
-O modelo para um suplemento de painel de tarefas do Project inclui c?digo de inicializa??o padr?o que foi projetado para demonstrar a??es get e set b?sicas para dados em um documento no caso de um suplemento t?pico do Office 2013. Como o Project 2013 n?o d? suporte a a??es que gravam no projeto ativo e o suplemento **HelloProjectOData** n?o usa o m?todo **getSelectedDataAsync**, voc? pode excluir o script na fun??o **Office.initialize** e excluir as fun??es **setData** e **getData** do arquivo HelloProjectOData.js padr?o.
+O modelo para um suplemento de painel de tarefas do Project inclui código de inicialização padrão que foi projetado para demonstrar ações get e set básicas para dados em um documento no caso de um suplemento típico do Office 2013. Como o Project 2013 não dá suporte a ações que gravam no projeto ativo e o suplemento **HelloProjectOData** não usa o método **getSelectedDataAsync**, você pode excluir o script na função **Office.initialize** e excluir as funções **setData** e **getData** do arquivo HelloProjectOData.js padrão.
 
-O JavaScript inclui constantes globais para a consulta REST e vari?veis globais que s?o usadas em v?rias fun??es. O bot?o **Obter Ponto de Extremidade de ProjectData** chama a fun??o **setOdataUrl**, que inicia as vari?veis globais e determina se o Project est? conectado ao Project Web App.
+O JavaScript inclui constantes globais para a consulta REST e variáveis globais que são usadas em várias funções. O botão **Obter Ponto de Extremidade de ProjectData** chama a função **setOdataUrl**, que inicia as variáveis globais e determina se o Project está conectado ao Project Web App.
 
-O restante do arquivo HelloProjectOData.js inclui duas fun??es: a fun??o **retrieveOData** ? chamada quando o usu?rio seleciona **Comparar Todos os Projetos** e a fun??o **parseODataResult** calcula m?dias e preenche a tabela de compara??o com valores que s?o formatados com cores e unidades.
+O restante do arquivo HelloProjectOData.js inclui duas funções: a função **retrieveOData** é chamada quando o usuário seleciona **Comparar Todos os Projetos** e a função **parseODataResult** calcula médias e preenche a tabela de comparação com valores que são formatados com cores e unidades.
 
-### <a name="procedure-5-to-create-the-javascript-code"></a>Procedimento 5. Para criar o c?digo JavaScript
+### <a name="procedure-5-to-create-the-javascript-code"></a>Procedimento 5. Para criar o código JavaScript
 
-1. Exclua todo o c?digo do arquivo HelloProjectOData.js padr?o e adicione as vari?veis globais e a fun??o **Office.initialize**. Nomes de vari?veis que est?o totalmente em mai?sculas sugerem que estas s?o constantes. Elas ser?o usadas mais tarde com a vari?vel **_pwa** para criar a consulta REST neste exemplo.
+1. Exclua todo o código do arquivo HelloProjectOData.js padrão e adicione as variáveis globais e a função **Office.initialize**. Nomes de variáveis que estão totalmente em maiúsculas sugerem que estas são constantes. Elas serão usadas mais tarde com a variável **_pwa** para criar a consulta REST neste exemplo.
     
     ```js
     var PROJDATA = "/_api/ProjectData";
@@ -315,10 +316,10 @@ O restante do arquivo HelloProjectOData.js inclui duas fun??es: a fun??o **retri
     }
     ```
 
-2. Adicione **setOdataUrl** e as fun??es relacionadas. A fun??o **setOdataUrl** chama **getProjectGuid** e **getDocumentUrl** para iniciar as vari?veis globais. No [m?todo getProjectFieldAsync](https://dev.office.com/reference/add-ins/shared/projectdocument.getprojectfieldasync), a fun??o an?nima para o par?metro _callback_ habilita o bot?o **Comparar Todos os Projetos** usando o m?todo **removeAttr** na biblioteca jQuery e exibe a URL do servi?o **ProjectData**. Se o Project n?o estiver conectado ao Project Web App, a fun??o gera um erro e exibe uma mensagem de erro pop-up. O arquivo SurfaceErrors.js inclui o m?todo **throwError**.
+2. Adicione **setOdataUrl** e as funções relacionadas. A função **setOdataUrl** chama **getProjectGuid** e **getDocumentUrl** para iniciar as variáveis globais. No [método getProjectFieldAsync](https://dev.office.com/reference/add-ins/shared/projectdocument.getprojectfieldasync), a função anônima para o parâmetro _callback_ habilita o botão **Comparar Todos os Projetos** usando o método **removeAttr** na biblioteca jQuery e exibe a URL do serviço **ProjectData**. Se o Project não estiver conectado ao Project Web App, a função gera um erro e exibe uma mensagem de erro pop-up. O arquivo SurfaceErrors.js inclui o método **throwError**.
     
    > [!NOTE]
-   > Se voc? executar o Visual Studio no computador do Project Server, use a depura??o **F5**, sem comentar o c?digo ap?s a linha que inicializa a vari?vel global **_pwa**. Para ativar usando o m?todo jQuery **ajax** ao depurar no computador do Project Server, defina o valor **localhost** para a URL PWA. Se voc? executar o Visual Studio em um computador remoto, a URL do **localhost** n?o ser? necess?ria. Antes de implantar o suplemento, comente o c?digo.
+   > Se você executar o Visual Studio no computador do Project Server, use a depuração **F5**, sem comentar o código após a linha que inicializa a variável global **_pwa**. Para ativar usando o método jQuery **ajax** ao depurar no computador do Project Server, defina o valor **localhost** para a URL PWA. Se você executar o Visual Studio em um computador remoto, a URL do **localhost** não será necessária. Antes de implantar o suplemento, comente o código.
 
     ```js
     function setOdataUrl() {
@@ -376,12 +377,12 @@ O restante do arquivo HelloProjectOData.js inclui duas fun??es: a fun??o **retri
     }
     ```
 
-3. Adicione a fun??o **retrieveOData** que relaciona valores da consulta REST e chama a fun??o **ajax** no jQuery para obter os dados solicitados do servi?o **ProjectData**. A vari?vel **support.cors** habilita o CORS (compartilhamento de recursos entre origens) com a fun??o **ajax**. Se a instru??o **support.cors** estiver ausente ou definida como **false**, a fun??o **ajax** retorna um erro **Sem transporte**.
+3. Adicione a função **retrieveOData** que relaciona valores da consulta REST e chama a função **ajax** no jQuery para obter os dados solicitados do serviço **ProjectData**. A variável **support.cors** habilita o CORS (compartilhamento de recursos entre origens) com a função **ajax**. Se a instrução **support.cors** estiver ausente ou definida como **false**, a função **ajax** retorna um erro **Sem transporte**.
     
    > [!NOTE]
-   > O seguinte c?digo funciona com uma instala??o no local do Project Server 2013. Para o Project Online, use o OAuth para autentica??o baseada em token. Para saber mais, confira [Como lidar com limita??es de pol?tica de mesma origem nos Suplementos do Office](../develop/addressing-same-origin-policy-limitations.md).
+   > O seguinte código funciona com uma instalação no local do Project Server 2013. Para o Project Online, use o OAuth para autenticação baseada em token. Para saber mais, confira [Como lidar com limitações de política de mesma origem nos Suplementos do Office](../develop/addressing-same-origin-policy-limitations.md).
 
-   Na chamada **ajax**, use o par?metro _headers_ ou o par?metro _beforeSend_. O par?metro _complete_ ? uma fun??o an?nima, por isso est? no mesmo escopo das vari?veis no **retrieveOData**. A fun??o para o par?metro _complete_ exibe os resultados no controle **odataText** e tamb?m chama o m?todo **parseODataResult** para analisar e exibir a resposta JSON. O par?metro _error_ especifica a fun??o **getProjectDataErrorHandler** nomeada, que grava uma mensagem de erro para o controle **odataText** e tamb?m usa o m?todo **throwError** para exibir uma mensagem pop-up.
+   Na chamada **ajax**, use o parâmetro _headers_ ou o parâmetro _beforeSend_. O parâmetro _complete_ é uma função anônima, por isso está no mesmo escopo das variáveis no **retrieveOData**. A função para o parâmetro _complete_ exibe os resultados no controle **odataText** e também chama o método **parseODataResult** para analisar e exibir a resposta JSON. O parâmetro _error_ especifica a função **getProjectDataErrorHandler** nomeada, que grava uma mensagem de erro para o controle **odataText** e também usa o método **throwError** para exibir uma mensagem pop-up.
 
     ```js
     /****************************************************************
@@ -439,9 +440,9 @@ O restante do arquivo HelloProjectOData.js inclui duas fun??es: a fun??o **retri
     }
     ```
 
-4. Adicione o m?todo **parseODataResult**, que desserializa e processa a resposta JSON do servi?o OData. O m?todo **parseODataResult** calcula valores m?dios dos dados de trabalho e de custo com precis?o de uma ou duas casas decimais, formata valores com a cor correta, adiciona uma unidade (**$**, **hrs** ou **%**) e finalmente exibe os valores nas c?lulas da tabela especificada.
+4. Adicione o método **parseODataResult**, que desserializa e processa a resposta JSON do serviço OData. O método **parseODataResult** calcula valores médios dos dados de trabalho e de custo com precisão de uma ou duas casas decimais, formata valores com a cor correta, adiciona uma unidade (**$**, **hrs** ou **%**) e finalmente exibe os valores nas células da tabela especificada.
     
-   Se o GUID do projeto ativo corresponde ao valor **ProjectId**, a vari?vel **myProjectIndex** ? definida para o ?ndice do projeto. Se **myProjectIndex** indica que o projeto ativo ? publicado no Project Server, o m?todo **parseODataResult** formata e exibe os dados de custo e trabalhos para o projeto. Se o projeto ativo n?o for publicado, os valores para o projeto ativo ser?o exibidos como um **ND** azul.
+   Se o GUID do projeto ativo corresponde ao valor **ProjectId**, a variável **myProjectIndex** é definida para o índice do projeto. Se **myProjectIndex** indica que o projeto ativo é publicado no Project Server, o método **parseODataResult** formata e exibe os dados de custo e trabalhos para o projeto. Se o projeto ativo não for publicado, os valores para o projeto ativo serão exibidos como um **ND** azul.
 
     ```js
     // Calculate the average values of actual cost, cost, work, and percent complete   
@@ -555,46 +556,46 @@ O restante do arquivo HelloProjectOData.js inclui duas fun??es: a fun??o **retri
 
 ## <a name="testing-the-helloprojectodata-add-in"></a>Testar o aplicativo HelloProjectOData
 
-Para testar e depurar o suplemento **HelloProjectOData** com o Visual Studio 2015, o Project Professional 2013 deve estar instalado no computador de desenvolvimento. Para habilitar cen?rios de teste diferentes, certifique-se de poder escolher se o Project abre no caso de arquivos no computador local ou se ele se conecta ao Project Web App. Por exemplo, siga estas etapas:
+Para testar e depurar o suplemento **HelloProjectOData** com o Visual Studio 2015, o Project Professional 2013 deve estar instalado no computador de desenvolvimento. Para habilitar cenários de teste diferentes, certifique-se de poder escolher se o Project abre no caso de arquivos no computador local ou se ele se conecta ao Project Web App. Por exemplo, siga estas etapas:
 
-1. Na guia **ARQUIVO** na faixa de op??es, escolha a guia **Informa??es** no modo de exibi??o Backstage e escolha **Gerenciar Contas**.
+1. Na guia **ARQUIVO** na faixa de opções, escolha a guia **Informações** no modo de exibição Backstage e escolha **Gerenciar Contas**.
     
-2. Na caixa de di?logo **Contas do Project Web App**, a lista **Contas dispon?veis** pode ter v?rias contas do Project Web App al?m da conta **Computador** local. Na se??o **Ao iniciar**, selecione **Escolher uma conta**.
+2. Na caixa de diálogo **Contas do Project Web App**, a lista **Contas disponíveis** pode ter várias contas do Project Web App além da conta **Computador** local. Na seção **Ao iniciar**, selecione **Escolher uma conta**.
     
-3. Feche o Project para que o Visual Studio possa inici?-lo na depura??o do suplemento.
+3. Feche o Project para que o Visual Studio possa iniciá-lo na depuração do suplemento.
     
-Os testes b?sicos devem incluir o seguinte:
+Os testes básicos devem incluir o seguinte:
 
-- Execute o suplemento no Visual Studio, e abra um projeto publicado do Project Web App que cont?m dados de custos e trabalho. Verifique se o suplemento exibe o ponto de extremidade **ProjectData** e se exibe corretamente os dados de custo e de trabalho na tabela. Voc? pode usar a sa?da no controle **odataText** para verificar a consulta REST e outras informa??es.
+- Execute o suplemento no Visual Studio, e abra um projeto publicado do Project Web App que contém dados de custos e trabalho. Verifique se o suplemento exibe o ponto de extremidade **ProjectData** e se exibe corretamente os dados de custo e de trabalho na tabela. Você pode usar a saída no controle **odataText** para verificar a consulta REST e outras informações.
     
-- Execute o suplemento novamente escolhendo o perfil do computador local na caixa de di?logo **Login** quando o Project inicia. Abra um arquivo .mpp local e teste o suplemento. Verifique se o suplemento exibe uma mensagem de erro ao tentar acessar o ponto de extremidade **ProjectData**.
+- Execute o suplemento novamente escolhendo o perfil do computador local na caixa de diálogo **Login** quando o Project inicia. Abra um arquivo .mpp local e teste o suplemento. Verifique se o suplemento exibe uma mensagem de erro ao tentar acessar o ponto de extremidade **ProjectData**.
     
-- Execute o suplemento novamente e crie um projeto com tarefas com dados de custo e de trabalho. Voc? pode salvar o projeto no Project Web App, mas n?o o publique. Verifique se o suplemento exibe dados do Project Server, mas **NA** para o projeto atual.
+- Execute o suplemento novamente e crie um projeto com tarefas com dados de custo e de trabalho. Você pode salvar o projeto no Project Web App, mas não o publique. Verifique se o suplemento exibe dados do Project Server, mas **NA** para o projeto atual.
     
 
 ### <a name="procedure-6-to-test-the-add-in"></a>Procedimento 6. Para testar o suplemento
 
-1. Execute o Project Professional 2013, conecte-se ao Project Web App e crie um projeto de teste. Atribua tarefas aos recursos locais ou a recursos da empresa, defina v?rios valores de porcentagem conclu?da em algumas tarefas e publique o projeto. Feche o projeto, o que permite que o Visual Studio inicie o Project para depurar o suplemento.
+1. Execute o Project Professional 2013, conecte-se ao Project Web App e crie um projeto de teste. Atribua tarefas aos recursos locais ou a recursos da empresa, defina vários valores de porcentagem concluída em algumas tarefas e publique o projeto. Feche o projeto, o que permite que o Visual Studio inicie o Project para depurar o suplemento.
     
-2. No Visual Studio, pressione **F5**. Fa?a logon no Project Web App e abra o projeto que voc? criou na etapa anterior. Voc? pode abrir o projeto no modo somente leitura ou no modo de edi??o.
+2. No Visual Studio, pressione **F5**. Faça logon no Project Web App e abra o projeto que você criou na etapa anterior. Você pode abrir o projeto no modo somente leitura ou no modo de edição.
     
-3. Na guia **PROJETO** da faixa de op??es, na lista suspensa **Suplementos do Office**, selecione **Hello ProjectData** (confira a Figura 5). O bot?o **Comparar Todos os Projetos** deve estar desativado.
+3. Na guia **PROJETO** da faixa de opções, na lista suspensa **Suplementos do Office**, selecione **Hello ProjectData** (confira a Figura 5). O botão **Comparar Todos os Projetos** deve estar desativado.
     
     *Figura 5. Iniciando o suplemento HelloProjectOData*
 
     ![Testando o aplicativo HelloProjectOData](../images/pj15-hello-project-data-test-the-app.png)
 
-4. No painel de tarefas **Hello ProjectData**, selecione **Obter Ponto de Extremidade de ProjectData**. A linha **projectDataEndPoint** deve mostrar a URL do servi?o **ProjectData** e o bot?o **Comparar Todos os Projetos** deve estar habilitado (confira a Figura 6).
+4. No painel de tarefas **Hello ProjectData**, selecione **Obter Ponto de Extremidade de ProjectData**. A linha **projectDataEndPoint** deve mostrar a URL do serviço **ProjectData** e o botão **Comparar Todos os Projetos** deve estar habilitado (confira a Figura 6).
     
-5. Selecione **Comparar Todos os Projetos**. O suplemento pode pausar enquanto recupera os dados do servi?o **ProjectData** e deve exibir os valores m?dios e atuais formatados na tabela.
+5. Selecione **Comparar Todos os Projetos**. O suplemento pode pausar enquanto recupera os dados do serviço **ProjectData** e deve exibir os valores médios e atuais formatados na tabela.
     
     *Figura 6. Exibindo resultados da consulta REST*
 
     ![Exibindo resultados da consulta REST](../images/pj15-hello-project-data-rest-results.png)
 
-6. Examine a sa?da na caixa de texto. Ela deve mostrar o caminho do documento, a consulta REST, as informa??es de status e os resultados JSON das chamadas a **ajax** e **parseODataResult**. A sa?da ajuda a entender, a criar e a depurar o c?digo no m?todo **parseODataResult**, como `projCost += Number(res.d.results[i].ProjectCost);`.
+6. Examine a saída na caixa de texto. Ela deve mostrar o caminho do documento, a consulta REST, as informações de status e os resultados JSON das chamadas a **ajax** e **parseODataResult**. A saída ajuda a entender, a criar e a depurar o código no método **parseODataResult**, como `projCost += Number(res.d.results[i].ProjectCost);`.
     
-    Veja a seguir um exemplo de sa?da com quebras de linha e espa?os adicionados ao texto para fins de esclarecimentos, para tr?s projetos em uma inst?ncia do Project Web App:
+    Veja a seguir um exemplo de saída com quebras de linha e espaços adicionados ao texto para fins de esclarecimentos, para três projetos em uma instância do Project Web App:
 
     ```json
     Document path: <>\WinProj test1
@@ -642,39 +643,39 @@ Os testes b?sicos devem incluir o seguinte:
     ]}}
     ```
 
-7. Pare a depura??o (pressione **Shift+F5**) e pressione **F5** novamente para executar uma nova inst?ncia do Project. Na caixa de di?logo **Login**, escolha o perfil local **Computador**, e n?o o Project Web App. Crie ou abra um arquivo .mpp de projeto local, abra o painel de tarefas **Hello ProjectData** e selecione **Obter Ponto de Extremidade de ProjectData**. O suplemento deve exibir um erro **Sem conex?o!** (confira a Figura 7) e o bot?o **Comparar Todos os Projetos** deve permanecer desativado.
+7. Pare a depuração (pressione **Shift+F5**) e pressione **F5** novamente para executar uma nova instância do Project. Na caixa de diálogo **Login**, escolha o perfil local **Computador**, e não o Project Web App. Crie ou abra um arquivo .mpp de projeto local, abra o painel de tarefas **Hello ProjectData** e selecione **Obter Ponto de Extremidade de ProjectData**. O suplemento deve exibir um erro **Sem conexão!** (confira a Figura 7) e o botão **Comparar Todos os Projetos** deve permanecer desativado.
     
-   *Figura 7. Uso do suplemento sem uma conex?o do Project Web App*
+   *Figura 7. Uso do suplemento sem uma conexão do Project Web App*
 
-   ![Usando o aplicativo sem uma conex?o do Project Web App](../images/pj15-hello-project-data-no-connection.png)
+   ![Usando o aplicativo sem uma conexão do Project Web App](../images/pj15-hello-project-data-no-connection.png)
 
-8. Pare a depura??o e pressione **F5** novamente. Fa?a logon no Project Web App e crie um projeto com dados de custo e de trabalho. Voc? pode salvar o projeto, mas n?o o publique.
+8. Pare a depuração e pressione **F5** novamente. Faça logon no Project Web App e crie um projeto com dados de custo e de trabalho. Você pode salvar o projeto, mas não o publique.
     
-   No painel de tarefas **Hello ProjectData**, quando voc? seleciona **Comparar Todos os Projetos**, deve ver um **ND** nos campos da coluna **Atual** (confira a Figura 8).
+   No painel de tarefas **Hello ProjectData**, quando você seleciona **Comparar Todos os Projetos**, deve ver um **ND** nos campos da coluna **Atual** (confira a Figura 8).
     
-   *Figura 8. Compara??o de um projeto n?o publicado com outros projetos*
+   *Figura 8. Comparação de um projeto não publicado com outros projetos*
 
-   ![Como comparar um projeto n?o publicado com outros](../images/pj15-hello-project-data-not-published.png)
+   ![Como comparar um projeto não publicado com outros](../images/pj15-hello-project-data-not-published.png)
 
-Mesmo que seu suplemento tenha funcionado corretamente nos testes anteriores, h? outros testes que devem ser executados. Por exemplo:
+Mesmo que seu suplemento tenha funcionado corretamente nos testes anteriores, há outros testes que devem ser executados. Por exemplo:
 
-- Abra um projeto do Project Web App que n?o tenha nenhum dado de custo ou de trabalho para as tarefas. Voc? deve ver valores zerados nos campos da coluna **Atual**.
+- Abra um projeto do Project Web App que não tenha nenhum dado de custo ou de trabalho para as tarefas. Você deve ver valores zerados nos campos da coluna **Atual**.
     
 - Teste um projeto sem tarefas.
     
-- Se voc? modificar o suplemento e public?-lo, deve executar testes semelhantes novamente com o suplemento publicado. Para outras considera??es, confira [Pr?ximas etapas](#next-steps).
+- Se você modificar o suplemento e publicá-lo, deve executar testes semelhantes novamente com o suplemento publicado. Para outras considerações, confira [Próximas etapas](#next-steps).
     
 
 > [!NOTE]
-> H? limites para a quantidade de dados que pode ser retornada em uma consulta do servi?o **ProjectData**. A quantidade de dados varia conforme a entidade. Por exemplo, o conjunto de entidades **Projects** tem um limite padr?o de 100 projetos por consulta, mas o conjunto de entidades **Risks** tem um limite padr?o de 200. Para uma instala??o de produ??o, o c?digo no exemplo **HelloProjectOData** deve ser modificado para habilitar consultas de mais de 100 projetos. Para saber mais, confira [Pr?ximas etapas](#next-steps) e [Consultar feeds OData para dados de relat?rio do Project](http://msdn.microsoft.com/library/3eafda3b-f006-48be-baa6-961b2ed9fe01%28Office.15%29.aspx).
+> Há limites para a quantidade de dados que pode ser retornada em uma consulta do serviço **ProjectData**. A quantidade de dados varia conforme a entidade. Por exemplo, o conjunto de entidades **Projects** tem um limite padrão de 100 projetos por consulta, mas o conjunto de entidades **Risks** tem um limite padrão de 200. Para uma instalação de produção, o código no exemplo **HelloProjectOData** deve ser modificado para habilitar consultas de mais de 100 projetos. Para saber mais, confira [Próximas etapas](#next-steps) e [Consultar feeds OData para dados de relatório do Project](http://msdn.microsoft.com/library/3eafda3b-f006-48be-baa6-961b2ed9fe01%28Office.15%29.aspx).
 
 
-## <a name="example-code-for-the-helloprojectodata-add-in"></a>Exemplo de c?digo para o suplemento de HelloProjectOData
+## <a name="example-code-for-the-helloprojectodata-add-in"></a>Exemplo de código para o suplemento de HelloProjectOData
 
 
 ### <a name="helloprojectodatahtml-file"></a>Arquivo HelloProjectOData.html
 
-O c?digo a seguir est? no arquivo `Pages\HelloProjectOData.html` do projeto **HelloProjectODataWeb**.
+O código a seguir está no arquivo `Pages\HelloProjectOData.html` do projeto **HelloProjectODataWeb**.
 
 ```HTML
 <!DOCTYPE html>
@@ -763,7 +764,7 @@ O c?digo a seguir est? no arquivo `Pages\HelloProjectOData.html` do projeto **He
 
 ### <a name="helloprojectodatajs-file"></a>Arquivo HelloProjectOData.js
 
-O c?digo a seguir est? no arquivo `Scripts\Office\HelloProjectOData.js` do projeto **HelloProjectODataWeb**.
+O código a seguir está no arquivo `Scripts\Office\HelloProjectOData.js` do projeto **HelloProjectODataWeb**.
 
 ```js
 /* File: HelloProjectOData.js
@@ -1012,7 +1013,7 @@ function parseODataResult(oDataResult, currentProjectGuid) {
 
 ### <a name="appcss-file"></a>Arquivo App.css
 
-O c?digo a seguir est? no arquivo `Content\App.css` do projeto **HelloProjectODataWeb**.
+O código a seguir está no arquivo `Content\App.css` do projeto **HelloProjectODataWeb**.
 
 ```css
 /*
@@ -1108,39 +1109,39 @@ Table styles
 
 ### <a name="surfaceerrorsjs-file"></a>Arquivo SurfaceErrors.js
 
-Voc? pode copiar o c?digo para o arquivo SurfaceErrors.js da se??o _Programa??o Robusta_ de [Criar seu primeiro suplemento de painel de tarefas para o Project 2013 usando um editor de texto](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md).
+Você pode copiar o código para o arquivo SurfaceErrors.js da seção _Programação Robusta_ de [Criar seu primeiro suplemento de painel de tarefas para o Project 2013 usando um editor de texto](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md).
 
 
-## <a name="next-steps"></a>Pr?ximas etapas
+## <a name="next-steps"></a>Próximas etapas
 
-Se **HelloProjectOData** fosse um suplemento de produ??o a ser vendido no AppSource ou distribu?do em um cat?logo de suplementos do SharePoint, ele deveria ser projetado de forma diferente. Por exemplo, n?o haveria nenhuma sa?da de depura??o em uma caixa de texto e provavelmente nenhum bot?o para obter o ponto de extremidade do **ProjectData**. Voc? tamb?m precisaria reescrever a fun??o **retireveOData** para lidar com inst?ncias do Project Web App que tenham mais de 100 projetos.
+Se **HelloProjectOData** fosse um suplemento de produção a ser vendido no AppSource ou distribuído em um catálogo de suplementos do SharePoint, ele deveria ser projetado de forma diferente. Por exemplo, não haveria nenhuma saída de depuração em uma caixa de texto e provavelmente nenhum botão para obter o ponto de extremidade do **ProjectData**. Você também precisaria reescrever a função **retireveOData** para lidar com instâncias do Project Web App que tenham mais de 100 projetos.
 
-O suplemento deveria conter mais verifica??es de erro, al?m de l?gica para capturar e explicar ou mostrar casos extremos. Por exemplo, se uma inst?ncia do Project Web App tiver mil projetos com uma dura??o m?dia de cinco dias e custo m?dio de US$ 2.400, e o projeto ativo for o ?nico que tem uma dura??o de mais de 20 dias, a compara??o de custo e trabalho poder? ficar desequilibrada. Isso poderia ser exibido com um gr?fico de frequ?ncia. Voc? poderia adicionar op??es para exibir a dura??o, comparar projetos de tamanhos semelhantes ou comparar projetos de um mesmo departamento ou de departamentos diferentes. Ou poderia adicionar uma forma de o usu?rio selecionar os campos a exibir em uma lista.
+O suplemento deveria conter mais verificações de erro, além de lógica para capturar e explicar ou mostrar casos extremos. Por exemplo, se uma instância do Project Web App tiver mil projetos com uma duração média de cinco dias e custo médio de US$ 2.400, e o projeto ativo for o único que tem uma duração de mais de 20 dias, a comparação de custo e trabalho poderá ficar desequilibrada. Isso poderia ser exibido com um gráfico de frequência. Você poderia adicionar opções para exibir a duração, comparar projetos de tamanhos semelhantes ou comparar projetos de um mesmo departamento ou de departamentos diferentes. Ou poderia adicionar uma forma de o usuário selecionar os campos a exibir em uma lista.
 
-Para outras consultas do servi?o **ProjectData**, h? limites para o comprimento da cadeia de consulta, que afeta o n?mero de etapas que uma consulta pode executar de um conjunto pai para um objeto em um conjunto filho. Por exemplo, uma consulta de duas etapas de **Projects** para **Tasks** para itens de tarefa funciona, mas uma consulta de tr?s etapas, como **Projects** para **Tasks** para **Assignments** para itens de atribui??o pode exceder o comprimento m?ximo de URL padr?o. Para saber mais, confira [Consultar feeds OData para dados de relat?rio do Project](http://msdn.microsoft.com/library/3eafda3b-f006-48be-baa6-961b2ed9fe01%28Office.15%29.aspx).
+Para outras consultas do serviço **ProjectData**, há limites para o comprimento da cadeia de consulta, que afeta o número de etapas que uma consulta pode executar de um conjunto pai para um objeto em um conjunto filho. Por exemplo, uma consulta de duas etapas de **Projects** para **Tasks** para itens de tarefa funciona, mas uma consulta de três etapas, como **Projects** para **Tasks** para **Assignments** para itens de atribuição pode exceder o comprimento máximo de URL padrão. Para saber mais, confira [Consultar feeds OData para dados de relatório do Project](http://msdn.microsoft.com/library/3eafda3b-f006-48be-baa6-961b2ed9fe01%28Office.15%29.aspx).
 
-Se voc? modificar o suplemento **HelloProjectOData** para uso em produ??o, siga estas etapas:
+Se você modificar o suplemento **HelloProjectOData** para uso em produção, siga estas etapas:
 
-- No arquivo HelloProjectOData.html, para obter melhor desempenho, mude a refer?ncia ao office.js do projeto local para a refer?ncia da CDN:
+- No arquivo HelloProjectOData.html, para obter melhor desempenho, mude a referência ao office.js do projeto local para a referência da CDN:
     
     ```HTML
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
     ```
 
-- Reescreva a fun??o **retrieveOData** para habilitar consultas de mais de 100 projetos. Por exemplo, voc? pode obter o n?mero de projetos com uma consulta `~/ProjectData/Projects()/$count` e para usar os operadores _$skip_ e _$top_ na consulta REST para dados de projeto. Execute v?rias consultas em sequ?ncia e tire a m?dia dos dados de cada consulta. Cada consulta de dados de projeto teria a forma: 
+- Reescreva a função **retrieveOData** para habilitar consultas de mais de 100 projetos. Por exemplo, você pode obter o número de projetos com uma consulta `~/ProjectData/Projects()/$count` e para usar os operadores _$skip_ e _$top_ na consulta REST para dados de projeto. Execute várias consultas em sequência e tire a média dos dados de cada consulta. Cada consulta de dados de projeto teria a forma: 
 
   `~/ProjectData/Projects()?skip= [numSkipped]&amp;$top=100&amp;$filter=[filter]&amp;$select=[field1,field2, ???????]`
     
-  Para mais informa??os, veja [Op??es de consulta do sistema OData usando o ponto de extremidade REST](http://msdn.microsoft.com/library/8a938b9b-7fdb-45a3-a04c-4d2d5cf2e353.aspx). Voc? tamb?m pode usar o comando [Set-SPProjectOdataConfiguration](http://technet.microsoft.com/library/jj219516%28v=office.15%29.aspx) no Windows PowerShell para substituir o tamanho de p?gina padr?o para uma consulta do conjunto de entidades **Projetos** (ou de qualquer um dos 33 conjuntos de entidades). Veja [ProjectData - Refer?ncia do servi?o OData do projeto](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx).
+  Para mais informaçãos, veja [Opções de consulta do sistema OData usando o ponto de extremidade REST](http://msdn.microsoft.com/library/8a938b9b-7fdb-45a3-a04c-4d2d5cf2e353.aspx). Você também pode usar o comando [Set-SPProjectOdataConfiguration](http://technet.microsoft.com/library/jj219516%28v=office.15%29.aspx) no Windows PowerShell para substituir o tamanho de página padrão para uma consulta do conjunto de entidades **Projetos** (ou de qualquer um dos 33 conjuntos de entidades). Veja [ProjectData - Referência do serviço OData do projeto](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx).
     
 - Para implantar o suplemento, confira [Publicar seu suplemento do Office](../publish/publish.md).
     
 
-## <a name="see-also"></a>Confira tamb?m
+## <a name="see-also"></a>Confira também
 
 - [Suplementos do painel de tarefas para Project](project-add-ins.md)
 - [Criar seu primeiro suplemento de painel de tarefas para o Project 2013 usando um editor de texto](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
-- [ProjectData - refer?ncia do servi?o OData do Project](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx) 
+- [ProjectData - referência do serviço OData do Project](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx) 
 - [Manifesto XML dos Suplementos do Office](../develop/add-in-manifests.md) 
 - [Publicar seu Suplemento do Office](../publish/publish.md)
     

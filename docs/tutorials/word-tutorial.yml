@@ -2,7 +2,7 @@
 title: Tutorial do suplemento do Word
 metadata:
   title: Tutorial do suplemento do Word
-  description: Neste tutorial, voc? criar? um suplemento do Word que insere (e substitui) intervalos de texto, par?grafos, imagens, HTML, tabelas e controles de conte?do. Voc? tamb?m aprender? como formatar textos e inserir (e substituir) conte?do nos controles de conte?do.
+  description: Neste tutorial, você criará um suplemento do Word que insere (e substitui) intervalos de texto, parágrafos, imagens, HTML, tabelas e controles de conteúdo. Você também aprenderá como formatar textos e inserir (e substituir) conteúdo nos controles de conteúdo.
   audience: Developer
   level: Beginner
   displayType: one-column
@@ -12,10 +12,11 @@ metadata:
   ms.translationtype: HT
   ms.contentlocale: pt-BR
   ms.lasthandoff: 05/23/2018
+  ms.locfileid: "19439639"
 items:
 - durationInMinutes: 1
   content: >
-    Este tutorial ensina como criar um suplemento do Word que insere e substitui texto, imagens e outros conte?dos. Voc? iniciar? criando um suplemento do Word que insere um par?grafo. Em cada etapa subsequente do tutorial, voc? adicionar? mais funcionalidades ao suplemento. Se tiver problemas ao longo do processo, n?o deixe de <a href="https://github.com/OfficeDev/office-js-docs-pr/issues">nos informar</a>.
+    Este tutorial ensina como criar um suplemento do Word que insere e substitui texto, imagens e outros conteúdos. Você iniciará criando um suplemento do Word que insere um parágrafo. Em cada etapa subsequente do tutorial, você adicionará mais funcionalidades ao suplemento. Se tiver problemas ao longo do processo, não deixe de <a href="https://github.com/OfficeDev/office-js-docs-pr/issues">nos informar</a>.
 - title: Criar seu projeto de suplemento
   durationInMinutes: 5
   content: >
@@ -28,7 +29,7 @@ items:
   durationInMinutes: 15
   content: >
     [!INCLUDE [](../includes/word-tutorial-format-text.md)]
-- title: Substituir texto e inserir texto em v?rios locais
+- title: Substituir texto e inserir texto em vários locais
   durationInMinutes: 20
   content: >
     [!INCLUDE [](../includes/word-tutorial-replace-text.md)]
@@ -36,8 +37,8 @@ items:
   durationInMinutes: 6
   content: >
     [!INCLUDE [](../includes/word-tutorial-insert-image-html-table.md)]
-- title: Criar controles de conte?do e substituir o conte?do neles
+- title: Criar controles de conteúdo e substituir o conteúdo neles
   durationInMinutes: 8
   content: >
     [!INCLUDE [](../includes/word-tutorial-content-control.md)]
-- content: Voc? concluiu o tutorial de suplemento do Word. Para saber mais sobre como criar suplementos do Word, consulte <a href="../word/word-add-ins-programming-overview.md">Vis?o geral dos suplementos do Word</a>.
+- content: Você concluiu o tutorial de suplemento do Word. Para saber mais sobre como criar suplementos do Word, consulte <a href="../word/word-add-ins-programming-overview.md">Visão geral dos suplementos do Word</a>.

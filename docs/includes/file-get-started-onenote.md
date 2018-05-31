@@ -1,12 +1,12 @@
 # <a name="build-your-first-onenote-add-in"></a>Criar seu primeiro suplemento do OneNote
 
-Neste artigo, voc? passar? pelo processo de criar um suplemento do OneNote usando o jQuery e a API JavaScript para Office.
+Neste artigo, você passará pelo processo de criar um suplemento do OneNote usando o jQuery e a API JavaScript para Office.
 
-## <a name="prerequisites"></a>Pr?-requisitos
+## <a name="prerequisites"></a>Pré-requisitos
 
 - [Node.js](https://nodejs.org)
 
-- Instale a ?ltima vers?o do [Yeoman](https://github.com/yeoman/yo) e o [gerador do Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.
+- Instale a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador do Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.
 
     ```bash
     npm install -g yo generator-office
@@ -14,9 +14,9 @@ Neste artigo, voc? passar? pelo processo de criar um suplemento do OneNote usand
 
 ## <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
-1. Crie uma pasta na sua unidade local e nomeie-a como `my-onenote-addin`. Esse ? o local em que voc? criar? os arquivos para seu suplemento.
+1. Crie uma pasta na sua unidade local e nomeie-a como `my-onenote-addin`. Esse é o local em que você criará os arquivos para seu suplemento.
 
-2. Navegue at? a nova pasta.
+2. Navegue até a nova pasta.
 
     ```bash
     cd my-onenote-addin
@@ -30,21 +30,21 @@ Neste artigo, voc? passar? pelo processo de criar um suplemento do OneNote usand
 
     - **Gostaria de criar uma nova subpasta para o seu projeto?:** `No`
     - **Como deseja nomear seu suplemento?:** `OneNote Add-in`
-    - **Para qual aplicativo cliente do Office voc? deseja suporte?:** `OneNote`
+    - **Para qual aplicativo cliente do Office você deseja suporte?:** `OneNote`
     - **Gostaria de criar um novo suplemento?:** `Yes`
     - **Gostaria de usar o TypeScript?:** `No`
     - **Escolha a estrutura:** `Jquery`
 
-    O gerador perguntar? se voc? deseja abrir **resource.html**. N?o ? necess?rio abri-lo para este tutorial, mas fique ? vontade em fazer isso se tiver curiosidade. Escolha Sim ou N?o para concluir o assistente e deixar o gerador fazer seu trabalho.
+    O gerador perguntará se você deseja abrir **resource.html**. Não é necessário abri-lo para este tutorial, mas fique à vontade em fazer isso se tiver curiosidade. Escolha Sim ou Não para concluir o assistente e deixar o gerador fazer seu trabalho.
 
     ![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-onenote-jquery.png)
 
 
-## <a name="update-the-code"></a>Atualizar o c?digo
+## <a name="update-the-code"></a>Atualizar o código
 
-1. No editor de c?digo, abra **index.html** na raiz do projeto. Esse arquivo cont?m o HTML que ser? renderizado no painel de tarefas do suplemento.
+1. No editor de código, abra **index.html** na raiz do projeto. Esse arquivo contém o HTML que será renderizado no painel de tarefas do suplemento.
 
-2. Substitua o elemento `<main>` dentro do elemento `<body>` com a marca??o a seguir e salve o arquivo. Isso adiciona uma ?rea de texto e um bot?o usando [componentes do Office UI Fabric](http://dev.office.com/fabric/components).
+2. Substitua o elemento `<main>` dentro do elemento `<body>` com a marcação a seguir e salve o arquivo. Isso adiciona uma área de texto e um botão usando [componentes do Office UI Fabric](http://dev.office.com/fabric/components).
 
     ```html
     <main class="ms-welcome__main">
@@ -61,7 +61,7 @@ Neste artigo, voc? passar? pelo processo de criar um suplemento do OneNote usand
     </main>
     ```
 
-3. Abra o arquivo **app.js** para especificar o script do suplemento. Substitua todo o conte?do pelo c?digo a seguir e salve o arquivo.
+3. Abra o arquivo **app.js** para especificar o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
 
     ```js
     'use strict';
@@ -110,11 +110,11 @@ Neste artigo, voc? passar? pelo processo de criar um suplemento do OneNote usand
 
 ## <a name="update-the-manifest"></a>Atualizar o manifesto
 
-1. Abra o arquivo **one-note-add-in-manifest.xml** para definir as configura??es e os recursos do suplemento.
+1. Abra o arquivo **one-note-add-in-manifest.xml** para definir as configurações e os recursos do suplemento.
 
-2. O elemento `ProviderName` tem um valor de espa?o reservado. Substitua-o com seu nome.
+2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o com seu nome.
 
-3. O atributo `DefaultValue` do elemento `Description` tem um espa?o reservado. Substitua-o por **um suplemento do painel de tarefas do OneNote**.
+3. O atributo `DefaultValue` do elemento `Description` tem um espaço reservado. Substitua-o por **um suplemento do painel de tarefas do OneNote**.
 
 4. Salve o arquivo.
 
@@ -134,48 +134,48 @@ Neste artigo, voc? passar? pelo processo de criar um suplemento do OneNote usand
 
 ## <a name="try-it-out"></a>Experimente
 
-1. No [OneNote Online](https://www.onenote.com/notebooks), abra um bloco de anota??es.
+1. No [OneNote Online](https://www.onenote.com/notebooks), abra um bloco de anotações.
 
-2. Escolha **Inserir > Suplementos do Office** para abrir a caixa de di?logo Suplementos do Office.
+2. Escolha **Inserir > Suplementos do Office** para abrir a caixa de diálogo Suplementos do Office.
 
-    - Se voc? estiver conectado ? sua conta de consumidor, selecione a guia **MEUS SUPLEMENTOS** e escolha  **Carregar Meu Suplemento**.
+    - Se você estiver conectado à sua conta de consumidor, selecione a guia **MEUS SUPLEMENTOS** e escolha  **Carregar Meu Suplemento**.
 
-    - Se voc? estiver conectado ? sua conta corporativa ou de estudante, selecione a guia **MINHA ORGANIZA??O** e escolha  **Carregar Meu Suplemento**. 
+    - Se você estiver conectado à sua conta corporativa ou de estudante, selecione a guia **MINHA ORGANIZAÇÃO** e escolha  **Carregar Meu Suplemento**. 
 
-    A imagem a seguir mostra a guia **MEUS SUPLEMENTOS** para blocos de anota??es do consumidor.
+    A imagem a seguir mostra a guia **MEUS SUPLEMENTOS** para blocos de anotações do consumidor.
 
     <img alt="The Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
 
-3. Na caixa de di?logo Carregar suplemento, navegue at? **one-note-add-in-manifest.xml** na pasta do projeto e escolha **Carregar**. 
+3. Na caixa de diálogo Carregar suplemento, navegue até **one-note-add-in-manifest.xml** na pasta do projeto e escolha **Carregar**. 
 
-4. Na guia **P?gina Inicial**, escolha o bot?o **Exibir painel de tarefas** na faixa de op??es. O painel de tarefas do suplemento abre em um iFrame perto da p?gina do OneNote.
+4. Na guia **Página Inicial**, escolha o botão **Exibir painel de tarefas** na faixa de opções. O painel de tarefas do suplemento abre em um iFrame perto da página do OneNote.
 
-5. Insira algum texto na ?rea de texto e escolha **Adicionar estrutura de t?picos**. O texto inserido ? adicionado ? pagina. 
+5. Insira algum texto na área de texto e escolha **Adicionar estrutura de tópicos**. O texto inserido é adicionado à pagina. 
 
     ![O suplemento do OneNote criado a partir deste passo a passo](../images/onenote-first-add-in.png)
 
-## <a name="troubleshooting-and-tips"></a>Dicas e solu??o de problemas
+## <a name="troubleshooting-and-tips"></a>Dicas e solução de problemas
 
-- Voc? pode depurar o suplemento usando as ferramentas de desenvolvedor do seu navegador. Quando voc? estiver usando o servidor Web Gulp e depurando no Internet Explore ou no Chrome, voc? pode salvar as altera??es localmente e apenas atualize o iFrame do suplemento.
+- Você pode depurar o suplemento usando as ferramentas de desenvolvedor do seu navegador. Quando você estiver usando o servidor Web Gulp e depurando no Internet Explore ou no Chrome, você pode salvar as alterações localmente e apenas atualize o iFrame do suplemento.
 
-- Quando voc? inspecionar um objeto do OneNote, as propriedades que est?o atualmente dispon?veis usam valores reais de exibi??o. As propriedades que precisam ser carregadas exibem *undefined*. Expanda o n? `_proto_` para ver as propriedades definidas no objeto, mas que ainda n?o foram carregadas.
+- Quando você inspecionar um objeto do OneNote, as propriedades que estão atualmente disponíveis usam valores reais de exibição. As propriedades que precisam ser carregadas exibem *undefined*. Expanda o nó `_proto_` para ver as propriedades definidas no objeto, mas que ainda não foram carregadas.
 
    ![Carregar o objeto do OneNote em um depurador](../images/onenote-debug.png)
 
-- Voc? precisa habilitar conte?do misto no navegador, se o seu suplemento usar todos os recursos HTTP. Os suplementos de produ??o devem usar apenas recursos HTTPS seguros.
+- Você precisa habilitar conteúdo misto no navegador, se o seu suplemento usar todos os recursos HTTP. Os suplementos de produção devem usar apenas recursos HTTPS seguros.
 
-- ? poss?vel abrir os suplementos do Painel de Tarefas em praticamente qualquer lugar, mas os suplementos de conte?do podem ser inseridos apenas no conte?do normal da p?gina (ou seja, fora t?tulos, imagens, iFrames, etc.). 
+- É possível abrir os suplementos do Painel de Tarefas em praticamente qualquer lugar, mas os suplementos de conteúdo podem ser inseridos apenas no conteúdo normal da página (ou seja, fora títulos, imagens, iFrames, etc.). 
 
-## <a name="next-steps"></a>Pr?ximas etapas
+## <a name="next-steps"></a>Próximas etapas
 
-Parab?ns, voc? criou com ?xito um suplemento do OneNote! Em seguida, saiba mais sobre os principais conceitos de cria??o de suplementos do OneNote.
+Parabéns, você criou com êxito um suplemento do OneNote! Em seguida, saiba mais sobre os principais conceitos de criação de suplementos do OneNote.
 
 > [!div class="nextstepaction"]
-> [Vis?o geral da programa??o da API JavaScript do OneNote](../onenote/onenote-add-ins-programming-overview.md)
+> [Visão geral da programação da API JavaScript do OneNote](../onenote/onenote-add-ins-programming-overview.md)
 
-## <a name="see-also"></a>Veja tamb?m
+## <a name="see-also"></a>Veja também
 
-- [Vis?o geral da programa??o da API JavaScript do OneNote](../onenote/onenote-add-ins-programming-overview.md)
-- [Refer?ncia da API JavaScript do OneNote](https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)
+- [Visão geral da programação da API JavaScript do OneNote](../onenote/onenote-add-ins-programming-overview.md)
+- [Referência da API JavaScript do OneNote](https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)
 - [Amostra de Rubric Grader](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
-- [Vis?o geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
+- [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)

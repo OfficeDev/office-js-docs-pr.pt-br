@@ -1,5 +1,5 @@
 ---
-title: Trabalhar com conte?do da p?gina do OneNote
+title: Trabalhar com conteúdo da página do OneNote
 description: ''
 ms.date: 12/04/2017
 ms.openlocfilehash: d05f251a798a7670983187bfa4c80140b30f6147
@@ -7,34 +7,35 @@ ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "19438855"
 ---
-# <a name="work-with-onenote-page-content"></a>Trabalhar com conte?do da p?gina do OneNote 
+# <a name="work-with-onenote-page-content"></a>Trabalhar com conteúdo da página do OneNote 
 
-Na API JavaScript de suplementos do OneNote, o conte?do da p?gina ? representado pelo seguinte modelo de objeto.
+Na API JavaScript de suplementos do OneNote, o conteúdo da página é representado pelo seguinte modelo de objeto.
 
-  ![Diagrama do modelo de objeto da p?gina do OneNote](../images/one-note-om-page.png)
+  ![Diagrama do modelo de objeto da página do OneNote](../images/one-note-om-page.png)
 
-- Um objeto Page cont?m um conjunto de objetos PageContent.
-- Um objeto PageContent cont?m um tipo de conte?do de Estrutura de T?picos, Imagem ou Outro.
-- Um objeto Outline cont?m um conjunto de objetos Paragraph.
-- Um objeto Paragraph cont?m um tipo de conte?do RichText, Image, Table ou Other.
+- Um objeto Page contém um conjunto de objetos PageContent.
+- Um objeto PageContent contém um tipo de conteúdo de Estrutura de Tópicos, Imagem ou Outro.
+- Um objeto Outline contém um conjunto de objetos Paragraph.
+- Um objeto Paragraph contém um tipo de conteúdo RichText, Image, Table ou Other.
 
-Para criar uma p?gina em branco do OneNote, use um dos seguintes m?todos:
+Para criar uma página em branco do OneNote, use um dos seguintes métodos:
 
 - [Section.addPage](https://dev.office.com/reference/add-ins/onenote/section#addpagetitle-string)
 - [Page.insertPageAsSibling](https://dev.office.com/reference/add-ins/onenote/page#insertpageassiblinglocation-string-title-string)
 
-Em seguida, use m?todos nos seguintes objetos para trabalhar com o conte?do da p?gina, como Page.addOutline e Outline.appendHtml. 
+Em seguida, use métodos nos seguintes objetos para trabalhar com o conteúdo da página, como Page.addOutline e Outline.appendHtml. 
 
-- [P?gina](https://dev.office.com/reference/add-ins/onenote/page)
-- [Estrutura de t?picos](https://dev.office.com/reference/add-ins/onenote/outline)
-- [Par?grafo](https://dev.office.com/reference/add-ins/onenote/paragraph)
+- [Página](https://dev.office.com/reference/add-ins/onenote/page)
+- [Estrutura de tópicos](https://dev.office.com/reference/add-ins/onenote/outline)
+- [Parágrafo](https://dev.office.com/reference/add-ins/onenote/paragraph)
 
-O conte?do e a estrutura da p?gina do OneNote s?o representados por HTML. Apenas um subconjunto de HTML ? compat?vel com a cria??o e a atualiza??o do conte?do da p?gina, conforme descrito abaixo.
+O conteúdo e a estrutura da página do OneNote são representados por HTML. Apenas um subconjunto de HTML é compatível com a criação e a atualização do conteúdo da página, conforme descrito abaixo.
 
 ## <a name="supported-html"></a>HTML com suporte
 
-A API JavaScript do suplemento do OneNote d? suporte ao HTML a seguir para a cria??o e a atualiza??o do conte?do da p?gina:
+A API JavaScript do suplemento do OneNote dá suporte ao HTML a seguir para a criação e a atualização do conteúdo da página:
 
 - `<html>`, `<body>`, `<div>`, `<span>`, `<br/>` 
 - `<p>`
@@ -45,15 +46,15 @@ A API JavaScript do suplemento do OneNote d? suporte ao HTML a seguir para a cri
 - `<h1>` ... `<h6>`
 - `<b>`, `<em>`, `<strong>`, `<i>`, `<u>`, `<del>`, `<sup>`, `<sub>`, `<cite>`
 
-## <a name="accessing-page-contents"></a>Acessar o conte?do da p?gina
+## <a name="accessing-page-contents"></a>Acessar o conteúdo da página
 
-S? ? poss?vel acessar o *Conte?do da P?gina* via `Page#load` para a p?gina ativa no momento. Para alterar a p?gina ativa, invoque `navigateToPage($page)`.
+Só é possível acessar o *Conteúdo da Página* via `Page#load` para a página ativa no momento. Para alterar a página ativa, invoque `navigateToPage($page)`.
 
-Metadados, como t?tulos, ainda podem ser consultados para qualquer p?gina.
+Metadados, como títulos, ainda podem ser consultados para qualquer página.
 
-## <a name="see-also"></a>Veja tamb?m
+## <a name="see-also"></a>Veja também
 
-- [Vis?o geral da programa??o da API JavaScript do OneNote](onenote-add-ins-programming-overview.md)
-- [Refer?ncia da API JavaScript do OneNote](https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)
+- [Visão geral da programação da API JavaScript do OneNote](onenote-add-ins-programming-overview.md)
+- [Referência da API JavaScript do OneNote](https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)
 - [Amostra de Rubric Grader](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
-- [Vis?o geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
+- [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)

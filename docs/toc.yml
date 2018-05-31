@@ -1,7 +1,7 @@
-- name: Documenta??o dos Suplementos do Office
+- name: Documentação dos Suplementos do Office
   href: index.yml
   displayName: 'Excel, Word, Outlook, PowerPoint, OneNote, Project'
-- name: Vis?o geral
+- name: Visão geral
   items:
     - name: Sobre os Suplementos do Office
       href: overview/office-add-ins.md
@@ -9,7 +9,7 @@
     - name: Disponibilidade de host e plataforma
       href: overview/office-add-in-availability.md
       displayName: 'Excel, Word, Outlook, PowerPoint, OneNote, Project'
-- name: In?cios r?pidos
+- name: Inícios rápidos
   items:
     - name: Criar suplemento do Excel
       items:
@@ -53,29 +53,29 @@
       displayName: Word
 - name: Conceitos
   items:
-    - name: Requisitos para a execu??o de suplementos
+    - name: Requisitos para a execução de suplementos
       href: concepts/requirements-for-running-office-add-ins.md
-    - name: Pr?ticas recomendadas de desenvolvimento de suplementos
+    - name: Práticas recomendadas de desenvolvimento de suplementos
       href: concepts/add-in-development-best-practices.md
     - name: Ciclo de vida do desenvolvimento de suplementos
       href: concepts/add-in-development-lifecycle.md
-    - name: Privacidade e seguran?a
+    - name: Privacidade e segurança
       href: concepts/privacy-and-security.md
     - name: Desempenho
       href: concepts/resource-limits-and-performance-optimization.md
-- name: Guias pr?ticos
+- name: Guias práticos
   items:
-    - name: Projetar a interface do usu?rio
+    - name: Projetar a interface do usuário
       href: design/add-in-design.md
       items:
-        - name: Orienta??es
+        - name: Orientações
           href: design/add-in-design-guidelines.md
           items:
             - name: Linguagem de design
               href: design/add-in-design-language.md
             - name: Uso de movimento
               href: design/using-motion-office-addins.md
-            - name: Modelos de design da experi?ncia do usu?rio (UX)
+            - name: Modelos de design da experiência do usuário (UX)
               href: design/ux-design-patterns.md
             - name: Testes de usabilidade
               href: design/usability-testing.md
@@ -85,40 +85,40 @@
             - name: Comandos de suplemento
               href: design/add-in-commands.md
               items:
-                - name: Diretrizes de ?cones
+                - name: Diretrizes de ícones
                   href: design/design-icons.md
-            - name: Pain?is de tarefas
+            - name: Painéis de tarefas
               href: design/task-pane-add-ins.md
               items:
                 - name: Abrir automaticamente um painel de tarefas com um documento
                   href: design/automatically-open-a-task-pane-with-a-document.md
-            - name: Caixas de di?logo
+            - name: Caixas de diálogo
               href: design/dialog-boxes.md
-            - name: Suplementos de conte?do
+            - name: Suplementos de conteúdo
               href: design/content-add-ins.md
               items:
-                - name: Diretrizes de estilo de visualiza??o de dados
+                - name: Diretrizes de estilo de visualização de dados
                   href: design/data-visualization-guidelines.md
         - name: Office UI Fabric
           href: design/office-ui-fabric.md
           items:
             - name: Comece a usar o Fabric React
               href: design/using-office-ui-fabric-react.md
-            - name: Navega??o estrutural
+            - name: Navegação estrutural
               href: design/breadcrumb.md
-            - name: Bot?es
+            - name: Botões
               href: design/button.md
-            - name: Caixa de sele??o
+            - name: Caixa de seleção
               href: design/checkbox.md
             - name: ChoiceGroup
               href: design/choicegroup.md
             - name: DropDown
               href: design/dropdown.md
-            - name: R?tulo
+            - name: Rótulo
               href: design/label.md
             - name: Lista
               href: design/list.md
-            - name: Navega??o din?mica
+            - name: Navegação dinâmica
               href: design/pivot.md
             - name: TextField
               href: design/textfield.md
@@ -126,22 +126,22 @@
               href: design/toggle.md
     - name: Desenvolver
       items:
-        - name: Vers?es do Office e conjuntos de requisitos
+        - name: Versões do Office e conjuntos de requisitos
           href: develop/office-versions-and-requirement-sets.md
-        - name: Instale a vers?o mais recente do Office
+        - name: Instale a versão mais recente do Office
           href: develop/install-latest-office-version.md
         - name: API JavaScript para Office
           href: develop/understanding-the-javascript-api-for-office.md
           items:
-            - name: Suporte para suplementos do painel de conte?do e de tarefas
+            - name: Suporte para suplementos do painel de conteúdo e de tarefas
               href: develop/support-for-task-pane-and-content-add-ins.md
             - name: Referenciar Office.js
               href: develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md
             - name: Carregar Office.js
               href: develop/loading-the-dom-and-runtime-environment.md
-            - name: Programa??o ass?ncrona em Suplementos do Office
+            - name: Programação assíncrona em Suplementos do Office
               href: develop/asynchronous-programming-in-office-add-ins.md
-            - name: Estado e configura??es persistentes
+            - name: Estado e configurações persistentes
               href: develop/persisting-add-in-state-and-settings.md
         - name: Manifesto
           href: develop/add-in-manifests.md
@@ -150,11 +150,11 @@
               href: develop/create-addin-commands.md
             - name: Especifique os hosts do Office
               href: develop/specify-office-hosts-and-api-requirements.md
-            - name: Solicite permiss?es para usar a API em suplementos do painel de conte?do e de tarefas
+            - name: Solicite permissões para usar a API em suplementos do painel de conteúdo e de tarefas
               href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
-            - name: Atualizar a API e a vers?o do manifesto
+            - name: Atualizar a API e a versão do manifesto
               href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
-        - name: Autentica??o e autoriza??o
+        - name: Autenticação e autorização
           items:
             - name: Ativar SSO em um suplemento
               href: develop/sso-in-office-add-ins.md
@@ -165,19 +165,19 @@
                   href: develop/create-sso-office-add-ins-nodejs.md
                 - name: Registrar um suplemento do Office que usa SSO com o Azure AD v2.0
                   href: develop/register-sso-add-in-aad-v2.md
-                - name: Conceder autoriza??o do administrador ao suplemento
+                - name: Conceder autorização do administrador ao suplemento
                   href: develop/grant-admin-consent-to-an-add-in.md
-                - name: Solucionar problemas de mensagens de erro no logon ?nico (SSO)
+                - name: Solucionar problemas de mensagens de erro no logon único (SSO)
                   href: develop/troubleshoot-sso-in-office-add-ins.md
-            - name: Autorizar servi?os externos
+            - name: Autorizar serviços externos
               href: develop/auth-external-add-ins.md
             - name: Autorizar para o Microsoft Graph
               href: develop/authorize-to-microsoft-graph.md
-        - name: Usar a API de Caixa de Di?logo
+        - name: Usar a API de Caixa de Diálogo
           href: develop/dialog-api-in-office-add-ins.md
-        - name: Resolver as limita??es de pol?tica de mesma origem
+        - name: Resolver as limitações de política de mesma origem
           href: develop/addressing-same-origin-policy-limitations.md
-        - name: Localiza??o
+        - name: Localização
           href: develop/localization.md
         - name: Desenvolver suplementos com o Visual Studio
           items:
@@ -219,10 +219,10 @@
           href: excel/excel-add-ins-core-concepts.md
           displayName: Excel
           items:
-            - name: Fun??es personalizadas
+            - name: Funções personalizadas
               href: excel/custom-functions-overview.md
               displayName: Excel
-            - name: Gr?ficos
+            - name: Gráficos
               href: excel/excel-add-ins-charts.md
               displayName: Excel
             - name: Eventos
@@ -237,26 +237,26 @@
             - name: Planilhas
               href: excel/excel-add-ins-worksheets.md
               displayName: Excel
-        - name: Conceitos avan?ados
+        - name: Conceitos avançados
           href: excel/excel-add-ins-advanced-concepts.md
           displayName: Excel
           items:
-            - name: Chamada de fun??es internas
+            - name: Chamada de funções internas
               href: excel/excel-add-ins-worksheet-functions.md
               displayName: Excel
             - name: Coautoria em suplementos do Excel
               href: excel/co-authoring-in-excel-add-ins.md
               displayName: Excel
-            - name: Valida??o de dados
+            - name: Validação de dados
               href: excel/excel-add-ins-data-validation.md
               displayName: Excel
             - name: Tratamento de erros
               href: excel/excel-add-ins-error-handling.md
               displayName: Excel
-            - name: Otimiza??o do desempenho
+            - name: Otimização do desempenho
               href: excel/performance.md
               displayName: Excel
-        - name: Refer?ncia da API JavaScript do Excel
+        - name: Referência da API JavaScript do Excel
           href: 'https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview'
           displayName: Excel
     - name: Suplementos do Word
@@ -272,19 +272,19 @@
         - name: Criar suplementos melhores para o Word com o Office Open XML
           href: word/create-better-add-ins-for-word-with-office-open-xml.md
           displayName: Word
-        - name: Suplementos do painel de tarefas do dicion?rio
+        - name: Suplementos do painel de tarefas do dicionário
           href: word/dictionary-task-pane-add-ins.md
           displayName: Word
         - name: Obtenha todo o documento por meio de um suplemento
           href: word/get-the-whole-document-from-an-add-in-for-word.md
           displayName: Word
-        - name: Ler e gravar dados na sele??o ativa
+        - name: Ler e gravar dados na seleção ativa
           href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
           displayName: Word
-        - name: Vincular a regi?es em um documento
+        - name: Vincular a regiões em um documento
           href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
           displayName: Word
-        - name: Refer?ncias da API JavaScript do Word
+        - name: Referências da API JavaScript do Word
           href: 'https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview'
           displayName: Word
     - name: Suplementos do Outlook
@@ -313,10 +313,10 @@
         - name: Criar o primeiro suplemento do OneNote
           href: onenote/onenote-add-ins-getting-started.md
           displayName: OneNote
-        - name: Trabalhar com conte?do da p?gina do OneNote
+        - name: Trabalhar com conteúdo da página do OneNote
           href: onenote/onenote-add-ins-page-content.md
           displayName: OneNote
-        - name: Refer?ncia da API JavaScript do OneNote
+        - name: Referência da API JavaScript do OneNote
           href: 'https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference'
           displayName: OneNote
     - name: Suplementos do Project
@@ -326,7 +326,7 @@
         - name: Criar o primeiro suplemento do Project
           href: project/project-add-ins-get-started.md
           displayName: Project
-        - name: Criar um suplemento do Project que usa REST com um servi?o OData no local
+        - name: Criar um suplemento do Project que usa REST com um serviço OData no local
           href: project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md
           displayName: Project
         - name: Criar o primeiro suplemento do painel de tarefas para o Project usando um editor de texto
@@ -355,7 +355,7 @@
               href: testing/sideload-an-office-add-in-on-ipad-and-mac.md
             - name: Depurar no iPad e no Mac
               href: testing/debug-office-add-ins-on-ipad-and-mac.md
-        - name: Solucionar problemas de erros de usu?rio
+        - name: Solucionar problemas de erros de usuário
           href: testing/testing-and-troubleshooting.md
         - name: Validar um manifesto de suplemento e solucionar problemas
           href: testing/troubleshoot-manifest.md
@@ -366,15 +366,15 @@
           href: publish/host-an-office-add-in-on-microsoft-azure.md
         - name: Empacotar o suplemento usando o Visual Studio
           href: publish/package-your-add-in-using-visual-studio.md
-        - name: Publicar suplementos por meio da Implanta??o Centralizada
+        - name: Publicar suplementos por meio da Implantação Centralizada
           href: publish/centralized-deployment.md
-        - name: Publicar suplementos em um cat?logo do SharePoint
+        - name: Publicar suplementos em um catálogo do SharePoint
           href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
         - name: Publicar suplementos no AppSource
           href: 'https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store'
-        - name: Pol?ticas de valida??o do AppSource
+        - name: Políticas de validação do AppSource
           href: 'https://docs.microsoft.com/en-us/office/dev/store/validation-policies'
-- name: Refer?ncia
+- name: Referência
   items:
     - name: Manifesto de suplemento do Office
       href: 'https://dev.office.com/reference/add-ins/manifest/allowsnapshot'
@@ -394,7 +394,7 @@
     - name: API JavaScript do Outlook
       href: 'https://dev.office.com/reference/add-ins/outlook/tutorial-api-requirement-sets'
       displayName: Outlook
-    - name: Especifica??es para abrir a API
+    - name: Especificações para abrir a API
       href: 'https://dev.office.com/reference/add-ins/openspec'
       displayName: 'Excel, Word'
 - name: Recursos

@@ -1,5 +1,5 @@
 ---
-title: Criar um suplemento de painel de tarefas de dicion?rio
+title: Criar um suplemento de painel de tarefas de dicionário
 description: ''
 ms.date: 12/04/2017
 ms.openlocfilehash: 781e2d07c88e56cbb64a7e7c5671dbbbc1b00894
@@ -7,59 +7,60 @@ ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "19438862"
 ---
-# <a name="create-a-dictionary-task-pane-add-in"></a>Criar um suplemento de painel de tarefas de dicion?rio
+# <a name="create-a-dictionary-task-pane-add-in"></a>Criar um suplemento de painel de tarefas de dicionário
 
 
-Este artigo mostra um exemplo de um suplemento de painel de tarefas e o servi?o Web correspondente que fornece defini??es de dicion?rio ou sin?nimos de dicion?rio de sin?nimos para a sele??o do usu?rio atual em um documento do Word 2013. 
+Este artigo mostra um exemplo de um suplemento de painel de tarefas e o serviço Web correspondente que fornece definições de dicionário ou sinônimos de dicionário de sinônimos para a seleção do usuário atual em um documento do Word 2013. 
 
-Um Suplemento do Office de dicion?rio baseia-se no suplemento de painel de tarefas padr?o, com recursos adicionais para dar suporte a consultas e exibir defini??es de um servi?o Web XML de dicion?rio em locais adicionais na interface do usu?rio do aplicativo do Office. 
+Um Suplemento do Office de dicionário baseia-se no suplemento de painel de tarefas padrão, com recursos adicionais para dar suporte a consultas e exibir definições de um serviço Web XML de dicionário em locais adicionais na interface do usuário do aplicativo do Office. 
 
-Em um suplemento de painel de tarefas de dicion?rio t?pico, um usu?rio seleciona uma palavra ou frase no documento e a l?gica de JavaScript por tr?s do suplemento passa essa sele??o ao servi?o Web XML do provedor do dicion?rio. A p?gina Web do provedor do dicion?rio ent?o ? atualizada para mostrar as defini??es para a sele??o ao usu?rio. O componente do servi?o Web XML retorna at? tr?s defini??es no formato definido pelo esquema OfficeDefinitions XML, que s?o exibidas para o usu?rio em outros locais na interface do usu?rio do aplicativo host do Office. A Figura 1 mostra a experi?ncia de sele??o e exibi??o para um suplemento de dicion?rio com a marca do Bing que est? em execu??o no Word 2013.
+Em um suplemento de painel de tarefas de dicionário típico, um usuário seleciona uma palavra ou frase no documento e a lógica de JavaScript por trás do suplemento passa essa seleção ao serviço Web XML do provedor do dicionário. A página Web do provedor do dicionário então é atualizada para mostrar as definições para a seleção ao usuário. O componente do serviço Web XML retorna até três definições no formato definido pelo esquema OfficeDefinitions XML, que são exibidas para o usuário em outros locais na interface do usuário do aplicativo host do Office. A Figura 1 mostra a experiência de seleção e exibição para um suplemento de dicionário com a marca do Bing que está em execução no Word 2013.
 
-*Figura 1. Suplemento de dicion?rio exibindo defini??es para a palavra selecionada*
+*Figura 1. Suplemento de dicionário exibindo definições para a palavra selecionada*
 
-![Um aplicativo de dicion?rio exibindo uma defini??o](../images/dictionary-agave-01.jpg)
+![Um aplicativo de dicionário exibindo uma definição](../images/dictionary-agave-01.jpg)
 
-Voc? determina se clicar no link **Ver Mais** na interface do usu?rio HTML do suplemento de dicion?rio exibe mais informa??es no painel de tarefas ou abre uma janela separada do navegador para a p?gina da Web completa para a palavra ou frase selecionada. A Figura 2 mostra o comando do menu de contexto **Definir** que habilita os usu?rios a iniciar rapidamente os dicion?rios instalados. As Figuras 3 a 5 mostram os locais na interface do usu?rio do Office em que os servi?os de dicion?rio XML s?o usados para fornecer defini??es no Word 2013.
+Você determina se clicar no link **Ver Mais** na interface do usuário HTML do suplemento de dicionário exibe mais informações no painel de tarefas ou abre uma janela separada do navegador para a página da Web completa para a palavra ou frase selecionada. A Figura 2 mostra o comando do menu de contexto **Definir** que habilita os usuários a iniciar rapidamente os dicionários instalados. As Figuras 3 a 5 mostram os locais na interface do usuário do Office em que os serviços de dicionário XML são usados para fornecer definições no Word 2013.
 
 *Figura 2. Comando Definir no menu de contexto*
 
 ![Menu de contexto de Definir](../images/dictionary-agave-02.jpg)
 
 
-*Figura 3. Defini??es nos pain?is Ortografia e Gram?tica*
+*Figura 3. Definições nos painéis Ortografia e Gramática*
 
-![Defini??es nos pain?is Ortografia e Gram?tica](../images/dictionary-agave-03.jpg)
-
-
-*Figura 4. Defini??es no painel Dicion?rio de Sin?nimos*
-
-![Defini??es no painel Dicion?rio de Sin?nimos](../images/dictionary-agave-04.jpg)
+![Definições nos painéis Ortografia e Gramática](../images/dictionary-agave-03.jpg)
 
 
-*Figura 5. Defini??es no Modo de Leitura*
+*Figura 4. Definições no painel Dicionário de Sinônimos*
 
-![Defini??es em modo de leitura](../images/dictionary-agave-05.jpg)
-
-Para criar um suplemento de painel de tarefas que forne?a uma pesquisa de dicion?rio, crie dois componentes principais: 
+![Definições no painel Dicionário de Sinônimos](../images/dictionary-agave-04.jpg)
 
 
-- Um servi?o Web XML que pesquisa defini??es de um servi?o de dicion?rio e, em seguida, retorna os valores em um formato XML que pode ser consumido e exibido pelo suplemento de dicion?rio.
+*Figura 5. Definições no Modo de Leitura*
+
+![Definições em modo de leitura](../images/dictionary-agave-05.jpg)
+
+Para criar um suplemento de painel de tarefas que forneça uma pesquisa de dicionário, crie dois componentes principais: 
+
+
+- Um serviço Web XML que pesquisa definições de um serviço de dicionário e, em seguida, retorna os valores em um formato XML que pode ser consumido e exibido pelo suplemento de dicionário.
     
-- Um suplemento de painel de tarefas que envia a sele??o atual do usu?rio ao servi?o Web de dicion?rio, exibe defini??es e, opcionalmente, pode inserir esses valores no documento.
+- Um suplemento de painel de tarefas que envia a seleção atual do usuário ao serviço Web de dicionário, exibe definições e, opcionalmente, pode inserir esses valores no documento.
     
-As se??es a seguir fornecem exemplos de como criar esses componentes.
+As seções a seguir fornecem exemplos de como criar esses componentes.
 
-## <a name="creating-a-dictionary-xml-web-service"></a>Criar um servi?o Web XML de dicion?rio
+## <a name="creating-a-dictionary-xml-web-service"></a>Criar um serviço Web XML de dicionário
 
 
-O servi?o Web XML deve retornar consultas ao servi?o Web como XML que estejam de acordo com o esquema XML OfficeDefinitions. As duas se??es a seguir descrevem o esquema XML OfficeDefinitions e fornecem um exemplo de como escrever c?digo para um servi?o Web XML que retorna consultas nesse formato XML.
+O serviço Web XML deve retornar consultas ao serviço Web como XML que estejam de acordo com o esquema XML OfficeDefinitions. As duas seções a seguir descrevem o esquema XML OfficeDefinitions e fornecem um exemplo de como escrever código para um serviço Web XML que retorna consultas nesse formato XML.
 
 
 ### <a name="officedefinitions-xml-schema"></a>Esquema XML OfficeDefinitions
 
-O c?digo a seguir mostra o XSD para o esquema XML OfficeDefinitions.
+O código a seguir mostra o XSD para o esquema XML OfficeDefinitions.
 
 
 ```XML
@@ -91,7 +92,7 @@ O c?digo a seguir mostra o XSD para o esquema XML OfficeDefinitions.
 </xs:schema>
 ```
 
-O XML retornado que est? de acordo com o esquema OfficeDefinitions consiste em um elemento raiz **Result** que cont?m um elemento **Definitions** com zero a tr?s elementos filho **Definition**, cada um dos quais cont?m defini??es com no m?ximo 400 caracteres. Al?m disso, a URL da p?gina completa no site do dicion?rio deve ser fornecida com o elemento **SeeMoreURL**. O exemplo a seguir mostra a estrutura do XML retornado que est? em conformidade com o esquema OfficeDefinitions.
+O XML retornado que está de acordo com o esquema OfficeDefinitions consiste em um elemento raiz **Result** que contém um elemento **Definitions** com zero a três elementos filho **Definition**, cada um dos quais contém definições com no máximo 400 caracteres. Além disso, a URL da página completa no site do dicionário deve ser fornecida com o elemento **SeeMoreURL**. O exemplo a seguir mostra a estrutura do XML retornado que está em conformidade com o esquema OfficeDefinitions.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -107,9 +108,9 @@ O XML retornado que est? de acordo com o esquema OfficeDefinitions consiste em u
 ```
 
 
-### <a name="sample-dictionary-xml-web-service"></a>Servi?o Web XML de dicion?rio de exemplo
+### <a name="sample-dictionary-xml-web-service"></a>Serviço Web XML de dicionário de exemplo
 
-O c?digo C# a seguir fornece um exemplo simples de como escrever c?digo para um servi?o Web XML que retorna o resultado de uma consulta ao dicion?rio no formato XML OfficeDefinitions.
+O código C# a seguir fornece um exemplo simples de como escrever código para um serviço Web XML que retorna o resultado de uma consulta ao dicionário no formato XML OfficeDefinitions.
 
 
 ```cs
@@ -179,22 +180,22 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-## <a name="creating-the-components-of-a-dictionary-add-in"></a>Criar os componentes de um suplemento de dicion?rio
+## <a name="creating-the-components-of-a-dictionary-add-in"></a>Criar os componentes de um suplemento de dicionário
 
 
-Um suplemento de dicion?rio consiste em tr?s arquivos de componentes principais:
+Um suplemento de dicionário consiste em três arquivos de componentes principais:
 
 
 - Um arquivo de manifesto XML que descreve o suplemento.
     
-- Um arquivo HTML que fornece a interface do usu?rio do suplemento.
+- Um arquivo HTML que fornece a interface do usuário do suplemento.
     
-- Um arquivo JavaScript que fornece a l?gica para obter a sele??o do usu?rio do documento, envia a sele??o como uma consulta ao servi?o Web e exibe os resultados retornados na interface do usu?rio do suplemento.
+- Um arquivo JavaScript que fornece a lógica para obter a seleção do usuário do documento, envia a seleção como uma consulta ao serviço Web e exibe os resultados retornados na interface do usuário do suplemento.
     
 
-### <a name="creating-a-dictionary-add-ins-manifest-file"></a>Criar um arquivo de manifesto de um suplemento de dicion?rio
+### <a name="creating-a-dictionary-add-ins-manifest-file"></a>Criar um arquivo de manifesto de um suplemento de dicionário
 
-A seguir h? um arquivo de manifesto de exemplo para um suplemento de dicion?rio.
+A seguir há um arquivo de manifesto de exemplo para um suplemento de dicionário.
 
 
 ```XML
@@ -254,13 +255,13 @@ A seguir h? um arquivo de manifesto de exemplo para um suplemento de dicion?rio.
 </OfficeApp>
 ```
 
-O elemento **Dictionary** e seus elementos filho que s?o espec?ficos para a cria??o do arquivo de manifesto de um suplemento de dicion?rio s?o descritos nas se??es a seguir. Para obter informa??es sobre os outros elementos no arquivo de manifesto, confira [Manifesto XML de suplementos do Office](../develop/add-in-manifests.md).
+O elemento **Dictionary** e seus elementos filho que são específicos para a criação do arquivo de manifesto de um suplemento de dicionário são descritos nas seções a seguir. Para obter informações sobre os outros elementos no arquivo de manifesto, confira [Manifesto XML de suplementos do Office](../develop/add-in-manifests.md).
 
 
 ### <a name="dictionary-element"></a>Elemento Dictionary
 
 
-Especifica configura??es para suplementos de dicion?rio.
+Especifica configurações para suplementos de dicionário.
 
  **Elemento pai**
 
@@ -270,15 +271,15 @@ Especifica configura??es para suplementos de dicion?rio.
 
  `<TargetDialects>`,  `<QueryUri>`,  `<CitationText>`,  `<DictionaryName>`,  `<DictionaryHomePage>`
 
- **Coment?rios**
+ **Comentários**
 
-O elemento **Dictionary** e seus elementos filho s?o adicionados ao manifesto de um suplemento de painel de tarefas ao criar um suplemento de dicion?rio.
+O elemento **Dictionary** e seus elementos filho são adicionados ao manifesto de um suplemento de painel de tarefas ao criar um suplemento de dicionário.
 
 
 #### <a name="targetdialects-element"></a>Elemento TargetDialects
 
 
-Especifica os idiomas regionais aos quais o dicion?rio oferece suporte. Necess?rio para suplementos de dicion?rio.
+Especifica os idiomas regionais aos quais o dicionário oferece suporte. Necessário para suplementos de dicionário.
 
  **Elemento pai**
 
@@ -288,9 +289,9 @@ Especifica os idiomas regionais aos quais o dicion?rio oferece suporte. Necess?r
 
  `<TargetDialect>`
 
- **Coment?rios**
+ **Comentários**
 
-O elemento **TargetDialects** e os elementos filho dele especificam o conjunto de idiomas regionais que o dicion?rio cont?m. Por exemplo, se o dicion?rio se aplica a Espanhol (M?xico) e Espanhol (Peru), mas n?o a Espanhol (Espanha), ? poss?vel especificar isso nesse elemento. N?o especifique mais de um idioma (por exemplo, espanhol e ingl?s) nesse manifesto. Publique idiomas separados como dicion?rios separados.
+O elemento **TargetDialects** e os elementos filho dele especificam o conjunto de idiomas regionais que o dicionário contém. Por exemplo, se o dicionário se aplica a Espanhol (México) e Espanhol (Peru), mas não a Espanhol (Espanha), é possível especificar isso nesse elemento. Não especifique mais de um idioma (por exemplo, espanhol e inglês) nesse manifesto. Publique idiomas separados como dicionários separados.
 
  **Exemplo**
 
@@ -321,13 +322,13 @@ O elemento **TargetDialects** e os elementos filho dele especificam o conjunto d
 #### <a name="targetdialect-element"></a>Elemento TargetDialect
 
 
-Especifica um idioma regional ao qual o dicion?rio oferece suporte. Necess?rio para suplementos de dicion?rio.
+Especifica um idioma regional ao qual o dicionário oferece suporte. Necessário para suplementos de dicionário.
 
  **Elemento pai**
 
  `<TargetDialects>`
 
- **Coment?rios**
+ **Comentários**
 
 Especifique o valor para um idioma regional no formato de tag de `language` RFC1766, como PT-BR.
 
@@ -342,15 +343,15 @@ Especifique o valor para um idioma regional no formato de tag de `language` RFC1
 #### <a name="queryuri-element"></a>Elemento QueryUri
 
 
-Especifica o ponto de extremidade do servi?o de consulta de dicion?rio. Necess?rio para suplementos de dicion?rio.
+Especifica o ponto de extremidade do serviço de consulta de dicionário. Necessário para suplementos de dicionário.
 
  **Elemento pai**
 
  `<Dictionary>`
 
- **Coment?rios**
+ **Comentários**
 
-Esse ? o URI do servi?o Web XML para o provedor do dicion?rio. A consulta com escape correto ser? anexada a esse URI. 
+Esse é o URI do serviço Web XML para o provedor do dicionário. A consulta com escape correto será anexada a esse URI. 
 
  **Exemplo**
 
@@ -363,17 +364,17 @@ Esse ? o URI do servi?o Web XML para o provedor do dicion?rio. A consulta com es
 #### <a name="citationtext-element"></a>Elemento CitationText
 
 
-Especifica o texto a ser usado em cita??es. Necess?rio para suplementos de dicion?rio.
+Especifica o texto a ser usado em citações. Necessário para suplementos de dicionário.
 
  **Elemento pai**
 
  `<Dictionary>`
 
- **Coment?rios**
+ **Comentários**
 
-Esse elemento especifica o in?cio do texto de cita??o que ser? exibido em uma linha abaixo do conte?do que ? retornado do servi?o Web (por exemplo, "Resultados do:" ou "Da plataforma:").
+Esse elemento especifica o início do texto de citação que será exibido em uma linha abaixo do conteúdo que é retornado do serviço Web (por exemplo, "Resultados do:" ou "Da plataforma:").
 
-Para esse elemento, voc? pode especificar valores para localidades adicionais usando o elemento **Override**. Por exemplo, se um usu?rio est? executando a SKU do portugu?s brasileiro do Office, mas usando um dicion?rio de ingl?s, isso permite que a linha de cita??o seja "Resultados por: Bing"em vez de "Results by: Bing". Para saber mais sobre como especificar valores para localidades adicionais, confira a se??o "Fornecer configura??es para localidades diferentes" em [Manifesto XML de suplementos do Office](../develop/add-in-manifests.md).
+Para esse elemento, você pode especificar valores para localidades adicionais usando o elemento **Override**. Por exemplo, se um usuário está executando a SKU do português brasileiro do Office, mas usando um dicionário de inglês, isso permite que a linha de citação seja "Resultados por: Bing"em vez de "Results by: Bing". Para saber mais sobre como especificar valores para localidades adicionais, confira a seção "Fornecer configurações para localidades diferentes" em [Manifesto XML de suplementos do Office](../develop/add-in-manifests.md).
 
  **Exemplo**
 
@@ -386,17 +387,17 @@ Para esse elemento, voc? pode especificar valores para localidades adicionais us
 #### <a name="dictionaryname-element"></a>Elemento DictionaryName
 
 
-Especifica o nome deste dicion?rio. Necess?rio para suplementos de dicion?rio.
+Especifica o nome deste dicionário. Necessário para suplementos de dicionário.
 
  **Elemento pai**
 
  `<Dictionary>`
 
- **Coment?rios**
+ **Comentários**
 
-Esse elemento especifica o texto do link no texto de cita??o. O texto de cita??o ? exibido em uma linha abaixo do conte?do que ? retornado do servi?o Web.
+Esse elemento especifica o texto do link no texto de citação. O texto de citação é exibido em uma linha abaixo do conteúdo que é retornado do serviço Web.
 
-Para esse elemento, voc? pode especificar valores para localidades adicionais.
+Para esse elemento, você pode especificar valores para localidades adicionais.
 
  **Exemplo**
 
@@ -408,17 +409,17 @@ Para esse elemento, voc? pode especificar valores para localidades adicionais.
 #### <a name="dictionaryhomepage-element"></a>Elemento DictionaryHomePage
 
 
-Especifica a URL da p?gina inicial do dicion?rio. Necess?rio para suplementos de dicion?rio.
+Especifica a URL da página inicial do dicionário. Necessário para suplementos de dicionário.
 
  **Elemento pai**
 
  `<Dictionary>`
 
- **Coment?rios**
+ **Comentários**
 
-Esse elemento especifica a URL do link no texto de cita??o. O texto de cita??o ? exibido em uma linha abaixo do conte?do que ? retornado do servi?o Web.
+Esse elemento especifica a URL do link no texto de citação. O texto de citação é exibido em uma linha abaixo do conteúdo que é retornado do serviço Web.
 
-Para esse elemento, voc? pode especificar valores para localidades adicionais.
+Para esse elemento, você pode especificar valores para localidades adicionais.
 
  **Exemplo**
 
@@ -428,9 +429,9 @@ Para esse elemento, voc? pode especificar valores para localidades adicionais.
 ```
 
 
-### <a name="creating-a-dictionary-add-ins-html-user-interface"></a>Criar a interface do usu?rio HTML de um suplemento de dicion?rio
+### <a name="creating-a-dictionary-add-ins-html-user-interface"></a>Criar a interface do usuário HTML de um suplemento de dicionário
 
-Os dois exemplos a seguir mostram os arquivos HTML e CSS para a interface do usu?rio do suplemento de Dicion?rio de Demonstra??o. Para ver como a interface do usu?rio ? exibida no suplemento de painel de tarefas, confira a Figura 6 ap?s o c?digo. Para ver como a implementa??o do JavaScript no arquivo Dictionary.js fornece l?gica de programa??o para essa interface do usu?rio HTML, confira "Escrever a implementa??o de JavaScript" imediatamente ap?s esta se??o.
+Os dois exemplos a seguir mostram os arquivos HTML e CSS para a interface do usuário do suplemento de Dicionário de Demonstração. Para ver como a interface do usuário é exibida no suplemento de painel de tarefas, confira a Figura 6 após o código. Para ver como a implementação do JavaScript no arquivo Dictionary.js fornece lógica de programação para essa interface do usuário HTML, confira "Escrever a implementação de JavaScript" imediatamente após esta seção.
 
 ```HTML
 <!DOCTYPE html>
@@ -471,7 +472,7 @@ Os dois exemplos a seguir mostram os arquivos HTML e CSS para a interface do usu
 </html>
 ```
 
-O exemplo a seguir mostra o conte?do de Style.css.
+O exemplo a seguir mostra o conteúdo de Style.css.
 
 ```CSS
 #mainContainer
@@ -512,30 +513,30 @@ a:hover, a:active
 }
 ```
 
-*Figura 6. Demonstra??o da interface de usu?rio do dicion?rio*
+*Figura 6. Demonstração da interface de usuário do dicionário*
 
-![Demonstra??o da interface de usu?rio do dicion?rio](../images/dictionary-agave-06.jpg)
-
-
-### <a name="writing-the-javascript-implementation"></a>Escrever a implementa??o de JavaScript
+![Demonstração da interface de usuário do dicionário](../images/dictionary-agave-06.jpg)
 
 
-O exemplo a seguir mostra a implementa??o de JavaScript no arquivo Dictionary.js que ? chamada da p?gina HTML do suplemento para fornecer a l?gica de programa??o ao suplemento de Dicion?rio de Demonstra??o. Esse script reutiliza o servi?o Web XML descrito anteriormente. Quando colocado no mesmo diret?rio que o servi?o Web de exemplo, o script obter? defini??es desse servi?o. Para us?-lo com um servi?o Web XML p?blico em conformidade com OfficeDefinitions, modifique a vari?vel `xmlServiceURL` no in?cio do arquivo e substitua a chave API do Bing para pron?ncias com um script registrado corretamente.
-
-Os membros prim?rios da API JavaScript para Office (Office.js) que s?o chamados por essa implementa??o s?o os seguintes:
+### <a name="writing-the-javascript-implementation"></a>Escrever a implementação de JavaScript
 
 
-- O evento [initialize](https://dev.office.com/reference/add-ins/shared/office.initialize) do objeto **Office**, que ? gerado quando o contexto do suplemento ? inicializado e fornece acesso a uma inst?ncia de objeto [Document](https://dev.office.com/reference/add-ins/shared/document) que representa o documento com o qual o suplemento est? interagindo.
+O exemplo a seguir mostra a implementação de JavaScript no arquivo Dictionary.js que é chamada da página HTML do suplemento para fornecer a lógica de programação ao suplemento de Dicionário de Demonstração. Esse script reutiliza o serviço Web XML descrito anteriormente. Quando colocado no mesmo diretório que o serviço Web de exemplo, o script obterá definições desse serviço. Para usá-lo com um serviço Web XML público em conformidade com OfficeDefinitions, modifique a variável `xmlServiceURL` no início do arquivo e substitua a chave API do Bing para pronúncias com um script registrado corretamente.
+
+Os membros primários da API JavaScript para Office (Office.js) que são chamados por essa implementação são os seguintes:
+
+
+- O evento [initialize](https://dev.office.com/reference/add-ins/shared/office.initialize) do objeto **Office**, que é gerado quando o contexto do suplemento é inicializado e fornece acesso a uma instância de objeto [Document](https://dev.office.com/reference/add-ins/shared/document) que representa o documento com o qual o suplemento está interagindo.
     
-- O m?todo [addHandlerAsync](https://dev.office.com/reference/add-ins/shared/document.addhandlerasync) do objeto **Document**, que ? chamado na fun??o **initialize** para adicionar um manipulador de eventos ao evento [SelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) do documento para escutar altera??es de sele??o de usu?rio.
+- O método [addHandlerAsync](https://dev.office.com/reference/add-ins/shared/document.addhandlerasync) do objeto **Document**, que é chamado na função **initialize** para adicionar um manipulador de eventos ao evento [SelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) do documento para escutar alterações de seleção de usuário.
     
-- O m?todo [getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) do objeto **Document**, que ? chamado na fun??o `tryUpdatingSelectedWord()` quando o manipulador de eventos **SelectionChanged** ? gerado para obter a palavra ou frase que o usu?rio selecionou, fazer a coer??o dela para texto sem formata??o e executar a fun??o `selectedTextCallback` de retorno de chamada ass?ncrono.
+- O método [getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) do objeto **Document**, que é chamado na função `tryUpdatingSelectedWord()` quando o manipulador de eventos **SelectionChanged** é gerado para obter a palavra ou frase que o usuário selecionou, fazer a coerção dela para texto sem formatação e executar a função `selectedTextCallback` de retorno de chamada assíncrono.
     
-- Quando a fun??o de retorno de chamada ass?ncrono `selectTextCallback` que ? passada como o argumento _callback_ do m?todo **getSelectedDataAsync** ? executada, obt?m o valor do texto selecionado quando o retorno de chamada retorna. Ela obt?m o valor do argumento _selectedText_ do retorno de chamada (que ? do tipo [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult)) usando a propriedade [value](https://dev.office.com/reference/add-ins/shared/asyncresult.status) do objeto **AsyncResult** retornado.
+- Quando a função de retorno de chamada assíncrono `selectTextCallback` que é passada como o argumento _callback_ do método **getSelectedDataAsync** é executada, obtém o valor do texto selecionado quando o retorno de chamada retorna. Ela obtém o valor do argumento _selectedText_ do retorno de chamada (que é do tipo [AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult)) usando a propriedade [value](https://dev.office.com/reference/add-ins/shared/asyncresult.status) do objeto **AsyncResult** retornado.
     
-- O restante do c?digo na fun??o `selectedTextCallback` consulta o servi?o Web XML para obter defini??es. Tamb?m chama as APIs do Microsoft Translator para fornecer a URL de um arquivo .wav que tem a pron?ncia da palavra selecionada.
+- O restante do código na função `selectedTextCallback` consulta o serviço Web XML para obter definições. Também chama as APIs do Microsoft Translator para fornecer a URL de um arquivo .wav que tem a pronúncia da palavra selecionada.
     
-- O c?digo restante em Dictionary.js exibe a lista de defini??es e o link de pron?ncia na interface do usu?rio HTML do suplemento.
+- O código restante em Dictionary.js exibe a lista de definições e o link de pronúncia na interface do usuário HTML do suplemento.
     
 
 

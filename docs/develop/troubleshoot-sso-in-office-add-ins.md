@@ -1,5 +1,5 @@
 ---
-title: Solucionar problemas de mensagens de erro no logon ?nico (SSO)
+title: Solucionar problemas de mensagens de erro no logon único (SSO)
 description: ''
 ms.date: 12/08/2017
 ms.openlocfilehash: 39099d746db3b5bea8a1ef629872006ba4ee087a
@@ -7,129 +7,130 @@ ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "19437546"
 ---
-# <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>Solucionar problemas de mensagens de erro no logon ?nico (SSO) (visualiza??o)
+# <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>Solucionar problemas de mensagens de erro no logon único (SSO) (visualização)
 
-Este artigo fornece algumas orienta??es sobre como solucionar problemas com o logon ?nico (SSO) nos suplementos do Office e como fazer com que seu suplemento habilitado para SSO lide de forma robusta com os erros ou condi??es especiais.
+Este artigo fornece algumas orientações sobre como solucionar problemas com o logon único (SSO) nos suplementos do Office e como fazer com que seu suplemento habilitado para SSO lide de forma robusta com os erros ou condições especiais.
 
-## <a name="debugging-tools"></a>Ferramentas de depura??o
+## <a name="debugging-tools"></a>Ferramentas de depuração
 
-Recomendamos fortemente que voc? use uma ferramenta que possa interceptar e exibir as solicita??es HTTP a partir de seu servi?o Web do suplemento, al?m de respostas para ele, quando voc? estiver desenvolvendo. Duas das ferramentas mais populares s?o: 
+Recomendamos fortemente que você use uma ferramenta que possa interceptar e exibir as solicitações HTTP a partir de seu serviço Web do suplemento, além de respostas para ele, quando você estiver desenvolvendo. Duas das ferramentas mais populares são: 
 
-- [Fiddler](http://www.telerik.com/fiddler): gratuita ([Documenta??o](http://docs.telerik.com/fiddler/configure-fiddler/tasks/configurefiddler))
-- [Charles](https://www.charlesproxy.com/): gratuita por 30 dias. ([Documenta??o](https://www.charlesproxy.com/documentation/))
+- [Fiddler](http://www.telerik.com/fiddler): gratuita ([Documentação](http://docs.telerik.com/fiddler/configure-fiddler/tasks/configurefiddler))
+- [Charles](https://www.charlesproxy.com/): gratuita por 30 dias. ([Documentação](https://www.charlesproxy.com/documentation/))
 
-Ao desenvolver sua API de servi?o, voc? tamb?m pode tentar:
+Ao desenvolver sua API de serviço, você também pode tentar:
 
-- [Postman](http://www.getpostman.com/postman): Gratuita ([Documenta??o](https://www.getpostman.com/docs/))
+- [Postman](http://www.getpostman.com/postman): Gratuita ([Documentação](https://www.getpostman.com/docs/))
 
 ## <a name="causes-and-handling-of-errors-from-getaccesstokenasync"></a>Causas e tratamento dos erros do getAccessTokenAsync
 
-Para acessar exemplos de tratamento de erro descritos nesta se??o, confira:
+Para acessar exemplos de tratamento de erro descritos nesta seção, confira:
 - [Home.js em Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/Home.js)
 - [program.js em Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/public/program.js)
 
 > [!NOTE]
-> Al?m das sugest?es feitas nesta se??o, um suplemento do Outlook tem uma maneira adicional de responder a qualquer erro 13*nnn*. Para mais detalhes, consulte [Cen?rio: implementar o logon ?nico em seu servi?o em um suplemento do Outlook](https://docs.microsoft.com/en-us/outlook/add-ins/implement-sso-in-outlook-add-in) e [Suplemento de amostra AttachmentsDemo](https://github.com/OfficeDev/outlook-add-in-attachments-demo). 
+> Além das sugestões feitas nesta seção, um suplemento do Outlook tem uma maneira adicional de responder a qualquer erro 13*nnn*. Para mais detalhes, consulte [Cenário: implementar o logon único em seu serviço em um suplemento do Outlook](https://docs.microsoft.com/en-us/outlook/add-ins/implement-sso-in-outlook-add-in) e [Suplemento de amostra AttachmentsDemo](https://github.com/OfficeDev/outlook-add-in-attachments-demo). 
 
 ### <a name="13000"></a>13000
 
-A API [getAccessTokenAsync](https://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync) n?o tem suporte do suplemento ou da vers?o do Office. 
+A API [getAccessTokenAsync](https://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync) não tem suporte do suplemento ou da versão do Office. 
 
-- A vers?o do Office n?o d? suporte a SSO. Office 2016, vers?o 1710, build 8629.nnnn ou posterior (a vers?o de assinatura do Office 365, ?s vezes chamada de "Clique para Executar"). Talvez voc? precise ser um participante do programa Office Insider para obter essa vers?o. Para saber mais, confira a p?gina [Seja um Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1). 
-- O manifesto do suplemento est? sem a se??o [WebApplicationInfo](https://dev.office.com/reference/add-ins/manifest/webapplicationinfo) adequada.
+- A versão do Office não dá suporte a SSO. Office 2016, versão 1710, build 8629.nnnn ou posterior (a versão de assinatura do Office 365, às vezes chamada de "Clique para Executar"). Talvez você precise ser um participante do programa Office Insider para obter essa versão. Para saber mais, confira a página [Seja um Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1). 
+- O manifesto do suplemento está sem a seção [WebApplicationInfo](https://dev.office.com/reference/add-ins/manifest/webapplicationinfo) adequada.
 
 ### <a name="13001"></a>13001
 
-O usu?rio n?o iniciou sess?o no Office. Seu c?digo deve chamar novamente o m?todo `getAccessTokenAsync` e passar a op??o `forceAddAccount: true` no par?metro [options](https://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync#parameters). Mas n?o fa?a isso mais de uma vez. O usu?rio pode ter decidido n?o fazer login.
+O usuário não iniciou sessão no Office. Seu código deve chamar novamente o método `getAccessTokenAsync` e passar a opção `forceAddAccount: true` no parâmetro [options](https://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync#parameters). Mas não faça isso mais de uma vez. O usuário pode ter decidido não fazer login.
 
-Este erro n?o ? visto no Office Online. Se os cookies do usu?rio expirarem, o Office Online retornar? o erro 13006. 
+Este erro não é visto no Office Online. Se os cookies do usuário expirarem, o Office Online retornará o erro 13006. 
 
 ### <a name="13002"></a>13002
 
-O usu?rio cancelou a sess?o ou consentiu; por exemplo, escolhendo **Cancelar** no di?logo de consentimento. 
-- Se o seu suplemento fornece fun??es que n?o exigem que o usu?rio esteja conectado (ou que tenha concedido o consentimento), seu c?digo deve capturar esse erro e permitir que o suplemento permane?a em execu??o.
-- Se o suplemento exigir um usu?rio conectado que concedeu consentimento, seu c?digo deve solicitar ao usu?rio que repita a opera??o, mas n?o mais do que uma vez. 
+O usuário cancelou a sessão ou consentiu; por exemplo, escolhendo **Cancelar** no diálogo de consentimento. 
+- Se o seu suplemento fornece funções que não exigem que o usuário esteja conectado (ou que tenha concedido o consentimento), seu código deve capturar esse erro e permitir que o suplemento permaneça em execução.
+- Se o suplemento exigir um usuário conectado que concedeu consentimento, seu código deve solicitar ao usuário que repita a operação, mas não mais do que uma vez. 
 
 ### <a name="13003"></a>13003
 
-Tipo de Usu?rio n?o suportado. O usu?rio n?o iniciou sess?o no Office com uma conta Microsoft v?lida ou uma conta corporativa ou de estudante. Isso pode acontecer se o Office funcionar com uma conta de dom?nio no local, por exemplo. Seu c?digo deve solicitar ao usu?rio que fa?a login no Office.
+Tipo de Usuário não suportado. O usuário não iniciou sessão no Office com uma conta Microsoft válida ou uma conta corporativa ou de estudante. Isso pode acontecer se o Office funcionar com uma conta de domínio no local, por exemplo. Seu código deve solicitar ao usuário que faça login no Office.
 
 ### <a name="13004"></a>13004
 
-Recurso inv?lido. O manifesto do suplemento n?o foi configurado corretamente. Atualize o manifesto. Para obter mais informa??es, consulte [Validar e solucionar problemas com seu manifesto](../testing/troubleshoot-manifest.md). O problema mais comum ? que o elemento **Recurso** (no elemento **WebApplicationInfo**) tem um dom?nio que n?o corresponde ao dom?nio do suplemento. Embora a parte do protocolo do valor do Recurso deva ser "api" e n?o "https"; todas as outras partes do nome de dom?nio (incluindo a porta, se houver) devem ser as mesmas do suplemento.
+Recurso inválido. O manifesto do suplemento não foi configurado corretamente. Atualize o manifesto. Para obter mais informações, consulte [Validar e solucionar problemas com seu manifesto](../testing/troubleshoot-manifest.md). O problema mais comum é que o elemento **Recurso** (no elemento **WebApplicationInfo**) tem um domínio que não corresponde ao domínio do suplemento. Embora a parte do protocolo do valor do Recurso deva ser "api" e não "https"; todas as outras partes do nome de domínio (incluindo a porta, se houver) devem ser as mesmas do suplemento.
 
 ### <a name="13005"></a>13005
 
-Concess?o inv?lida. Isso geralmente significa que o Office n?o foi pr?-autorizado para o servi?o Web do suplemento. Para obter mais informa??es, consulte [Criar o aplicativo de servi?o](sso-in-office-add-ins.md#create-the-service-application) e [Registrar o suplemento com o ponto de extremidade v2.0 do Azure AD](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) ou [Registrar o suplemento com o ponto de extremidade v2.0 do Azure AD](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (N? JS). Isso tamb?m pode acontecer se o usu?rio n?o concedeu as permiss?es de aplicativo de servi?o para o seu `profile`.
+Concessão inválida. Isso geralmente significa que o Office não foi pré-autorizado para o serviço Web do suplemento. Para obter mais informações, consulte [Criar o aplicativo de serviço](sso-in-office-add-ins.md#create-the-service-application) e [Registrar o suplemento com o ponto de extremidade v2.0 do Azure AD](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) ou [Registrar o suplemento com o ponto de extremidade v2.0 do Azure AD](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (Nó JS). Isso também pode acontecer se o usuário não concedeu as permissões de aplicativo de serviço para o seu `profile`.
 
 ### <a name="13006"></a>13006
 
-Erro do cliente. Seu c?digo deve sugerir que o usu?rio saia e reinicie o Office ou reinicie a sess?o do Office Online.
+Erro do cliente. Seu código deve sugerir que o usuário saia e reinicie o Office ou reinicie a sessão do Office Online.
 
 ### <a name="13007"></a>13007
 
-O host do Office n?o conseguiu obter um token de acesso ao servi?o Web do suplemento.
-- Se esse erro ocorrer durante o desenvolvimento, certifique-se de que o registro e o manifesto do suplemento especifiquem as permiss?es `openid` e `profile`. Para obter mais informa??es, consulte [Registrar o suplemento com o ponto de extremidade v2.0 do Azure AD](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) ou [Registrar o suplemento com o ponto de extremidade v2.0 do Azure AD](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (N? JS), e [Configurar o suplemento](create-sso-office-add-ins-aspnet.md#configure-the-add-in) (ASP.NET) ou [Configurar o suplemento](create-sso-office-add-ins-nodejs.md#configure-the-add-in) (N? JS).
-- Na produ??o, existem v?rias coisas que podem causar esse erro. Algumas s?o:
-    - O usu?rio revogou o consentimento, ap?s conced?-lo anteriormente. Seu c?digo deve chamar novamente o `getAccessTokenAsync` m?todo com a op??o `forceConsent: true`, mas n?o mais que uma vez.
-    - O usu?rio tem uma identidade de conta da Microsoft (MSA). Algumas situa??es que causariam um dos outros erros 13nnn com uma conta Work ou School causar?o um 13007 quando um MSA for usado. 
+O host do Office não conseguiu obter um token de acesso ao serviço Web do suplemento.
+- Se esse erro ocorrer durante o desenvolvimento, certifique-se de que o registro e o manifesto do suplemento especifiquem as permissões `openid` e `profile`. Para obter mais informações, consulte [Registrar o suplemento com o ponto de extremidade v2.0 do Azure AD](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) ou [Registrar o suplemento com o ponto de extremidade v2.0 do Azure AD](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (Nó JS), e [Configurar o suplemento](create-sso-office-add-ins-aspnet.md#configure-the-add-in) (ASP.NET) ou [Configurar o suplemento](create-sso-office-add-ins-nodejs.md#configure-the-add-in) (Nó JS).
+- Na produção, existem várias coisas que podem causar esse erro. Algumas são:
+    - O usuário revogou o consentimento, após concedê-lo anteriormente. Seu código deve chamar novamente o `getAccessTokenAsync` método com a opção `forceConsent: true`, mas não mais que uma vez.
+    - O usuário tem uma identidade de conta da Microsoft (MSA). Algumas situações que causariam um dos outros erros 13nnn com uma conta Work ou School causarão um 13007 quando um MSA for usado. 
 
-  Em todos esses casos, se voc? j? tiver tentado a op??o `forceConsent` uma vez, seu c?digo poder? sugerir que o usu?rio tente novamente a opera??o mais tarde.
+  Em todos esses casos, se você já tiver tentado a opção `forceConsent` uma vez, seu código poderá sugerir que o usuário tente novamente a operação mais tarde.
 
 ### <a name="13008"></a>13008
 
-O usu?rio desencadeou uma opera??o que chama o `getAccessTokenAsync` antes de uma chamada anterior do `getAccessTokenAsync` conclu?da. Seu c?digo deve solicitar ao usu?rio que repita a opera??o ap?s a conclus?o da opera??o anterior.
+O usuário desencadeou uma operação que chama o `getAccessTokenAsync` antes de uma chamada anterior do `getAccessTokenAsync` concluída. Seu código deve solicitar ao usuário que repita a operação após a conclusão da operação anterior.
 
 ### <a name="13009"></a>13009
 
-O suplemento chama o m?todo `getAccessTokenAsync` com a op??o `forceConsent: true`, mas o manifesto de suplemento foi implantado para um tipo de cat?logo n?o oferece suporte para for?ar o consentimento. Seu c?digo deve chamar novamente o m?todo `getAccessTokenAsync` e passar a op??o `forceConsent: false` no par?metro [options](https://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync#parameters). No entanto, a chamada de `getAccessTokenAsync` com `forceConsent: true` pode ser uma resposta autom?tica para uma falha de chamada `getAccessTokenAsync` com `forceConsent: false`, assim o c?digo deve acompanhar se `getAccessTokenAsync` com `forceConsent: false` j? foi chamado. Em caso positivo, o c?digo deve informar para o usu?rio sair e entrar novamente no Office.
+O suplemento chama o método `getAccessTokenAsync` com a opção `forceConsent: true`, mas o manifesto de suplemento foi implantado para um tipo de catálogo não oferece suporte para forçar o consentimento. Seu código deve chamar novamente o método `getAccessTokenAsync` e passar a opção `forceConsent: false` no parâmetro [options](https://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync#parameters). No entanto, a chamada de `getAccessTokenAsync` com `forceConsent: true` pode ser uma resposta automática para uma falha de chamada `getAccessTokenAsync` com `forceConsent: false`, assim o código deve acompanhar se `getAccessTokenAsync` com `forceConsent: false` já foi chamado. Em caso positivo, o código deve informar para o usuário sair e entrar novamente no Office.
 
 > [!NOTE]
-> A Microsoft n?o imp?e necessariamente essa restri??o em quaisquer tipos de cat?logos de suplementos. Nesse caso, esse erro nunca ser? exibido.
+> A Microsoft não impõe necessariamente essa restrição em quaisquer tipos de catálogos de suplementos. Nesse caso, esse erro nunca será exibido.
 
 ### <a name="13010"></a>13010
 
-O usu?rio est? executando o suplemento no Office Online e usando o Edge ou o Internet Explorer. O dom?nio do Office 365 do usu?rio e o dom?nio login.microsoftonline.com est?o em zonas de seguran?a diferentes nas configura??es do navegador. Se esse erro for retornado, o usu?rio j? ter? visto uma mensagem explicando o erro e vinculando a uma p?gina sobre como alterar a configura??o da zona. Se o seu suplemento fornece fun??es que n?o exigem que o usu?rio esteja conectado, o c?digo deve capturar esse erro e permitir que o suplemento permane?a em execu??o.
+O usuário está executando o suplemento no Office Online e usando o Edge ou o Internet Explorer. O domínio do Office 365 do usuário e o domínio login.microsoftonline.com estão em zonas de segurança diferentes nas configurações do navegador. Se esse erro for retornado, o usuário já terá visto uma mensagem explicando o erro e vinculando a uma página sobre como alterar a configuração da zona. Se o seu suplemento fornece funções que não exigem que o usuário esteja conectado, o código deve capturar esse erro e permitir que o suplemento permaneça em execução.
 
 ### <a name="50001"></a>50001
 
-Este erro (que n?o ? espec?fico para `getAccessTokenAsync`) pode indicar que o navegador retirou uma c?pia antiga dos arquivos office.js. Limpe o cache do navegador. Outra possibilidade ? que a vers?o do Office n?o ? recente o suficiente para suportar o SSO. Consulte [Pr?-requisitos](create-sso-office-add-ins-aspnet.md#prerequisites).
+Este erro (que não é específico para `getAccessTokenAsync`) pode indicar que o navegador retirou uma cópia antiga dos arquivos office.js. Limpe o cache do navegador. Outra possibilidade é que a versão do Office não é recente o suficiente para suportar o SSO. Consulte [Pré-requisitos](create-sso-office-add-ins-aspnet.md#prerequisites).
 
 ## <a name="errors-on-the-server-side-from-azure-active-directory"></a>Erros do servidor do Active Directory do Azure
 
-Para exemplos do tratamento de erro descritos nesta se??o, confira:
+Para exemplos do tratamento de erro descritos nesta seção, confira:
 - [Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)
 - [Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)
 
 
-### <a name="conditional-access--multifactor-authentication-errors"></a>Erros no acesso condicional/autentica??o multifatorial
+### <a name="conditional-access--multifactor-authentication-errors"></a>Erros no acesso condicional/autenticação multifatorial
  
-Em certas configura??es de identidade no AAD e no Office 365, ? poss?vel que alguns recursos que s?o acess?veis com o Microsoft Graph exijam autentica??o multifator (MFA), mesmo quando o locat?rio do Office 365 do usu?rio n?o exija. Quando o AAD recebe uma solicita??o de um token para o recurso protegido por MFA, atrav?s do fluxo Em Nome De, ele retorna ao servi?o Web do seu suplemento uma mensagem JSON que cont?m uma propriedade `claims`. A propriedade de reivindica??es tem informa??es sobre quais outros fatores de autentica??o s?o necess?rios. 
+Em certas configurações de identidade no AAD e no Office 365, é possível que alguns recursos que são acessíveis com o Microsoft Graph exijam autenticação multifator (MFA), mesmo quando o locatário do Office 365 do usuário não exija. Quando o AAD recebe uma solicitação de um token para o recurso protegido por MFA, através do fluxo Em Nome De, ele retorna ao serviço Web do seu suplemento uma mensagem JSON que contém uma propriedade `claims`. A propriedade de reivindicações tem informações sobre quais outros fatores de autenticação são necessários. 
 
-Seu c?digo do lado do servidor deve testar esta mensagem e transmitir o valor das reivindica??es ao seu c?digo do lado do cliente. Voc? precisa dessa informa??o no cliente porque o Office processa a autentica??o para os suplementos de SSO. A mensagem para o cliente pode ser um erro (como `500 Server Error` ou `401 Unauthorized`) ou estar no corpo de uma resposta de sucesso (como `200 OK`). Em ambos os casos, o retorno de chamada (falha ou sucesso) da chamada AJAX do lado do cliente do seu c?digo para a API da Web do seu suplemento deve testar essa resposta. Se o valor das solicita??es tiver sido retransmitido, seu c?digo deve chamar novamente o `getAccessTokenAsync` e passar a op??o `authChallenge: CLAIMS-STRING-HERE` no par?metro [op??es](https://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync#parameters). Quando o AAD vir essa string, ele solicitar? ao usu?rio os fatores adicionais e retornar? um novo token de acesso que ser? aceito no fluxo Em Nome De.
+Seu código do lado do servidor deve testar esta mensagem e transmitir o valor das reivindicações ao seu código do lado do cliente. Você precisa dessa informação no cliente porque o Office processa a autenticação para os suplementos de SSO. A mensagem para o cliente pode ser um erro (como `500 Server Error` ou `401 Unauthorized`) ou estar no corpo de uma resposta de sucesso (como `200 OK`). Em ambos os casos, o retorno de chamada (falha ou sucesso) da chamada AJAX do lado do cliente do seu código para a API da Web do seu suplemento deve testar essa resposta. Se o valor das solicitações tiver sido retransmitido, seu código deve chamar novamente o `getAccessTokenAsync` e passar a opção `authChallenge: CLAIMS-STRING-HERE` no parâmetro [opções](https://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync#parameters). Quando o AAD vir essa string, ele solicitará ao usuário os fatores adicionais e retornará um novo token de acesso que será aceito no fluxo Em Nome De.
 
 ### <a name="consent-missing-errors"></a>Erros de falta de consentimento
 
-Se o AAD n?o tiver um registro de que o consentimento (para o recurso Microsoft Graph) foi concedido ao suplemento pelo usu?rio (ou administrador do locat?rio), o AAD enviar? uma mensagem de erro ao seu servi?o Web. Seu c?digo deve dizer ao cliente (no corpo de uma resposta `403 Forbidden`, por exemplo) para chamar novamente o `getAccessTokenAsync` com a op??o `forceConsent: true`.
+Se o AAD não tiver um registro de que o consentimento (para o recurso Microsoft Graph) foi concedido ao suplemento pelo usuário (ou administrador do locatário), o AAD enviará uma mensagem de erro ao seu serviço Web. Seu código deve dizer ao cliente (no corpo de uma resposta `403 Forbidden`, por exemplo) para chamar novamente o `getAccessTokenAsync` com a opção `forceConsent: true`.
 
-### <a name="invalid-or-missing-scope-permission-errors"></a>Erros de escopos (permiss?es) inv?lidos ou ausentes
+### <a name="invalid-or-missing-scope-permission-errors"></a>Erros de escopos (permissões) inválidos ou ausentes
 
-- Seu c?digo do lado do servidor deve enviar a resposta `403 Forbidden` ao cliente, que deve apresentar uma mensagem amig?vel ao usu?rio. Se poss?vel, registre o erro no console ou grave-o em um registro.
-- Certifique-se de que a se??o de [Escopos](https://dev.office.com/reference/add-ins/manifest/scopes) do manifesto do seu suplemento especifique todas as permiss?es necess?rias. E certifique-se de que seu registro do servi?o Web do suplemento especifique as mesmas permiss?es. Verifique tamb?m os erros de ortografia. Para obter mais informa??es, consulte [Registrar o suplemento com o ponto de extremidade v2.0 do Azure AD](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) ou [Registrar o suplemento com o ponto de extremidade v2.0 do Azure AD](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (N? JS), e [Configurar o suplemento](create-sso-office-add-ins-aspnet.md#configure-the-add-in) (ASP.NET) ou [Configurar o suplemento](create-sso-office-add-ins-nodejs.md#configure-the-add-in) (N? JS).
+- Seu código do lado do servidor deve enviar a resposta `403 Forbidden` ao cliente, que deve apresentar uma mensagem amigável ao usuário. Se possível, registre o erro no console ou grave-o em um registro.
+- Certifique-se de que a seção de [Escopos](https://dev.office.com/reference/add-ins/manifest/scopes) do manifesto do seu suplemento especifique todas as permissões necessárias. E certifique-se de que seu registro do serviço Web do suplemento especifique as mesmas permissões. Verifique também os erros de ortografia. Para obter mais informações, consulte [Registrar o suplemento com o ponto de extremidade v2.0 do Azure AD](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) ou [Registrar o suplemento com o ponto de extremidade v2.0 do Azure AD](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (Nó JS), e [Configurar o suplemento](create-sso-office-add-ins-aspnet.md#configure-the-add-in) (ASP.NET) ou [Configurar o suplemento](create-sso-office-add-ins-nodejs.md#configure-the-add-in) (Nó JS).
 
-### <a name="expired-or-invalid-token-errors-when-calling-microsoft-graph"></a>Erros de token expirados ou inv?lidos ao chamar o Microsoft Graph
+### <a name="expired-or-invalid-token-errors-when-calling-microsoft-graph"></a>Erros de token expirados ou inválidos ao chamar o Microsoft Graph
 
-Algumas bibliotecas de autentica??o e autoriza??o, incluindo o MSAL, evitam erros de token expirados usando um token de atualiza??o em cache sempre que necess?rio. Voc? tamb?m pode codificar seu pr?prio sistema de cache de token. Para uma amostra que faz isso, consulte [Suplemento do Office NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO), especialmente o arquivo [auth.ts](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/src/auth.ts).
+Algumas bibliotecas de autenticação e autorização, incluindo o MSAL, evitam erros de token expirados usando um token de atualização em cache sempre que necessário. Você também pode codificar seu próprio sistema de cache de token. Para uma amostra que faz isso, consulte [Suplemento do Office NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO), especialmente o arquivo [auth.ts](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/src/auth.ts).
 
-Mas se voc? receber um token expirado ou um erro de token inv?lido, seu c?digo deve dizer ao cliente (no corpo de uma resposta `401 Unauthorized`, por exemplo) para chamar novamente o `getAccessTokenAsync` e repetir a chamada para o ponto de extremidade de sua API da Web do suplemento, que repetir? o fluxo Em Nome De para obter um novo token para o Microsoft Graph. 
+Mas se você receber um token expirado ou um erro de token inválido, seu código deve dizer ao cliente (no corpo de uma resposta `401 Unauthorized`, por exemplo) para chamar novamente o `getAccessTokenAsync` e repetir a chamada para o ponto de extremidade de sua API da Web do suplemento, que repetirá o fluxo Em Nome De para obter um novo token para o Microsoft Graph. 
 
-### <a name="invalid-token-error-when-calling-microsoft-graph"></a>Erro de token inv?lido ao chamar o Microsoft Graph
+### <a name="invalid-token-error-when-calling-microsoft-graph"></a>Erro de token inválido ao chamar o Microsoft Graph
 
-Lide com esse erro da mesma forma que um erro de token expirado. Consulte a se??o anterior.
+Lide com esse erro da mesma forma que um erro de token expirado. Consulte a seção anterior.
 
-### <a name="invalid-audience-error"></a>Erro de audi?ncia inv?lida
+### <a name="invalid-audience-error"></a>Erro de audiência inválida
 
-Seu c?digo do lado do servidor deve enviar uma resposta `403 Forbidden` ao cliente que deve apresentar uma mensagem amig?vel ao usu?rio e, possivelmente, tamb?m registrar o erro no console ou grav?-lo em um registro.
+Seu código do lado do servidor deve enviar uma resposta `403 Forbidden` ao cliente que deve apresentar uma mensagem amigável ao usuário e, possivelmente, também registrar o erro no console ou gravá-lo em um registro.
 
-Para obter mais informa??es sobre a adi??o de suporte de v?rios locat?rios para valida??o de token, consulte a [Amostra de v?rios locat?rios do Azure](https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-multitenant-openidconnect).
+Para obter mais informações sobre a adição de suporte de vários locatários para validação de token, consulte a [Amostra de vários locatários do Azure](https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-multitenant-openidconnect).

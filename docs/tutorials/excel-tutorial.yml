@@ -2,7 +2,7 @@
 title: Tutorial de suplemento do Excel
 metadata:
   title: Tutorial de suplemento do Excel
-  description: Neste tutorial, voc? criar? um suplemento do Excel que cria, preenche, filtra e classifica uma tabela, cria um gr?fico, congela um cabe?alho de tabela, protege uma planilha e abre uma caixa de di?logo.
+  description: Neste tutorial, você criará um suplemento do Excel que cria, preenche, filtra e classifica uma tabela, cria um gráfico, congela um cabeçalho de tabela, protege uma planilha e abre uma caixa de diálogo.
   audience: Developer
   level: Beginner
   displayType: one-column
@@ -12,10 +12,11 @@ metadata:
   ms.translationtype: HT
   ms.contentlocale: pt-BR
   ms.lasthandoff: 05/23/2018
+  ms.locfileid: "19438652"
 items:
 - durationInMinutes: 1
   content: >
-    Esse tutorial ensina como criar um suplemento do Excel que interaja com tabelas, gr?ficos, planilhas e di?logos em uma pasta de trabalho do Excel. Voc? come?ar? criando um suplemento do Excel que cria, preenche e formata uma tabela. Em cada etapa subsequente do tutorial, voc? adicionar? mais funcionalidades ao suplemento. Se tiver problemas ao longo do processo, n?o deixe de <a href="https://github.com/OfficeDev/office-js-docs-pr/issues">nos informar</a>.
+    Esse tutorial ensina como criar um suplemento do Excel que interaja com tabelas, gráficos, planilhas e diálogos em uma pasta de trabalho do Excel. Você começará criando um suplemento do Excel que cria, preenche e formata uma tabela. Em cada etapa subsequente do tutorial, você adicionará mais funcionalidades ao suplemento. Se tiver problemas ao longo do processo, não deixe de <a href="https://github.com/OfficeDev/office-js-docs-pr/issues">nos informar</a>.
 - title: Criar seu projeto do suplemento
   durationInMinutes: 5
   content: >
@@ -28,11 +29,11 @@ items:
   durationInMinutes: 10
   content: >
     [!INCLUDE [](../includes/excel-tutorial-filter-and-sort-table.md)]
-- title: Criar um gr?fico
+- title: Criar um gráfico
   durationInMinutes: 7
   content: >
     [!INCLUDE [](../includes/excel-tutorial-create-chart.md)]
-- title: Congelar um cabe?alho de tabela
+- title: Congelar um cabeçalho de tabela
   durationInMinutes: 6
   content: >
     [!INCLUDE [](../includes/excel-tutorial-freeze-header.md)]
@@ -40,8 +41,8 @@ items:
   durationInMinutes: 20
   content: >
     [!INCLUDE [](../includes/excel-tutorial-protect-worksheet.md)]
-- title: Abrir um di?logo
+- title: Abrir um diálogo
   durationInMinutes: 7
   content: >
     [!INCLUDE [](../includes/excel-tutorial-open-dialog.md)]
-- content: Voc? concluiu o tutorial de suplemento do Excel. Para saber mais sobre como criar suplementos do Excel, veja <a href="../excel/excel-add-ins-overview.md">Vis?o geral dos suplementos do Excel</a>.
+- content: Você concluiu o tutorial de suplemento do Excel. Para saber mais sobre como criar suplementos do Excel, veja <a href="../excel/excel-add-ins-overview.md">Visão geral dos suplementos do Excel</a>.
