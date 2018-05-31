@@ -1,49 +1,49 @@
-# <a name="build-your-first-project-add-in"></a><span data-ttu-id="d33ca-101">Criar o primeiro suplemento do Project</span><span class="sxs-lookup"><span data-stu-id="d33ca-101">Build your first Project add-in</span></span>
+# <a name="build-your-first-project-add-in"></a><span data-ttu-id="c932a-101">Criar o primeiro suplemento do Project</span><span class="sxs-lookup"><span data-stu-id="c932a-101">Build your first Project add-in</span></span>
 
-<span data-ttu-id="d33ca-102">Neste artigo, voc? passar? pelo processo de criar um suplemento do Project usando o jQuery e a API JavaScript para Office.</span><span class="sxs-lookup"><span data-stu-id="d33ca-102">In this article, you'll walk through the process of building a Project add-in by using jQuery and the Office JavaScript API.</span></span>
+<span data-ttu-id="c932a-102">Neste artigo, você passará pelo processo de criar um suplemento do Project usando o jQuery e a API JavaScript para Office.</span><span class="sxs-lookup"><span data-stu-id="c932a-102">In this article, you'll walk through the process of building a Project add-in by using jQuery and the Office JavaScript API.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="d33ca-103">Pr?-requisitos</span><span class="sxs-lookup"><span data-stu-id="d33ca-103">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="c932a-103">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="c932a-103">Prerequisites</span></span>
 
-- [<span data-ttu-id="d33ca-104">Node.js</span><span class="sxs-lookup"><span data-stu-id="d33ca-104">Node.js</span></span>](https://nodejs.org)
+- [<span data-ttu-id="c932a-104">Node.js</span><span class="sxs-lookup"><span data-stu-id="c932a-104">Node.js</span></span>](https://nodejs.org)
 
-- <span data-ttu-id="d33ca-105">Instale a ?ltima vers?o do [Yeoman](https://github.com/yeoman/yo) e o [gerador do Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.</span><span class="sxs-lookup"><span data-stu-id="d33ca-105">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
+- <span data-ttu-id="c932a-105">Instale a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador do Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.</span><span class="sxs-lookup"><span data-stu-id="c932a-105">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
 
     ```bash
     npm install -g yo generator-office
     ```
 
-## <a name="create-the-add-in"></a><span data-ttu-id="d33ca-106">Criar o suplemento</span><span class="sxs-lookup"><span data-stu-id="d33ca-106">Create the add-in</span></span>
+## <a name="create-the-add-in"></a><span data-ttu-id="c932a-106">Criar o suplemento</span><span class="sxs-lookup"><span data-stu-id="c932a-106">Create the add-in</span></span>
 
-1. <span data-ttu-id="d33ca-107">Crie uma pasta na sua unidade local e nomeie-a como `my-project-addin`.</span><span class="sxs-lookup"><span data-stu-id="d33ca-107">Create a folder on your local drive and name it `my-project-addin`.</span></span> <span data-ttu-id="d33ca-108">Esse ? o local em que voc? criar? os arquivos para seu suplemento.</span><span class="sxs-lookup"><span data-stu-id="d33ca-108">This is where you'll create the files for your add-in.</span></span>
+1. <span data-ttu-id="c932a-107">Crie uma pasta na sua unidade local e nomeie-a como `my-project-addin`.</span><span class="sxs-lookup"><span data-stu-id="c932a-107">Create a folder on your local drive and name it `my-project-addin`.</span></span> <span data-ttu-id="c932a-108">Esse é o local em que você criará os arquivos para seu suplemento.</span><span class="sxs-lookup"><span data-stu-id="c932a-108">This is where you'll create the files for your add-in.</span></span>
 
-2. <span data-ttu-id="d33ca-109">Navegue at? a nova pasta.</span><span class="sxs-lookup"><span data-stu-id="d33ca-109">Navigate to your new folder.</span></span>
+2. <span data-ttu-id="c932a-109">Navegue até a nova pasta.</span><span class="sxs-lookup"><span data-stu-id="c932a-109">Navigate to your new folder.</span></span>
 
     ```bash
     cd my-project-addin
     ```
 
-3. <span data-ttu-id="d33ca-110">Use o gerador Yeoman para criar um projeto de suplemento do Project.</span><span class="sxs-lookup"><span data-stu-id="d33ca-110">Use the Yeoman generator to create a Project add-in project.</span></span> <span data-ttu-id="d33ca-111">Execute o comando a seguir e responda aos prompts da seguinte forma:</span><span class="sxs-lookup"><span data-stu-id="d33ca-111">Run the following command and then answer the prompts as follows:</span></span>
+3. <span data-ttu-id="c932a-110">Use o gerador Yeoman para criar um projeto de suplemento do Project.</span><span class="sxs-lookup"><span data-stu-id="c932a-110">Use the Yeoman generator to create a Project add-in project.</span></span> <span data-ttu-id="c932a-111">Execute o comando a seguir e responda aos prompts da seguinte forma:</span><span class="sxs-lookup"><span data-stu-id="c932a-111">Run the following command and then answer the prompts as follows:</span></span>
 
     ```bash
     yo office
     ```
 
-    - <span data-ttu-id="d33ca-112">**Gostaria de criar uma nova subpasta para o seu projeto?** `No`</span><span class="sxs-lookup"><span data-stu-id="d33ca-112">**Would you like to create a new subfolder for your project?:** `No`</span></span>
-    - <span data-ttu-id="d33ca-113">**Como deseja nomear seu suplemento?:** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="d33ca-113">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
-    - <span data-ttu-id="d33ca-114">**Para qual aplicativo cliente do Office voc? deseja suporte?** `Project`</span><span class="sxs-lookup"><span data-stu-id="d33ca-114">**Which Office client application would you like to support?:** `Project`</span></span>
-    - <span data-ttu-id="d33ca-115">**Gostaria de criar um novo suplemento?:** `Yes`</span><span class="sxs-lookup"><span data-stu-id="d33ca-115">**Would you like to create a new add-in?:** `Yes`</span></span>
-    - <span data-ttu-id="d33ca-116">**Gostaria de usar o TypeScript?** `No`</span><span class="sxs-lookup"><span data-stu-id="d33ca-116">**Would you like to use TypeScript?:** `No`</span></span>
-    - <span data-ttu-id="d33ca-117">**Escolha a estrutura:** `Jquery`</span><span class="sxs-lookup"><span data-stu-id="d33ca-117">**Choose a framework:** `Jquery`</span></span>
+    - <span data-ttu-id="c932a-112">**Gostaria de criar uma nova subpasta para o seu projeto?** `No`</span><span class="sxs-lookup"><span data-stu-id="c932a-112">**Would you like to create a new subfolder for your project?:** `No`</span></span>
+    - <span data-ttu-id="c932a-113">**Como deseja nomear seu suplemento?:** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="c932a-113">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
+    - <span data-ttu-id="c932a-114">**Para qual aplicativo cliente do Office você deseja suporte?** `Project`</span><span class="sxs-lookup"><span data-stu-id="c932a-114">**Which Office client application would you like to support?:** `Project`</span></span>
+    - <span data-ttu-id="c932a-115">**Gostaria de criar um novo suplemento?:** `Yes`</span><span class="sxs-lookup"><span data-stu-id="c932a-115">**Would you like to create a new add-in?:** `Yes`</span></span>
+    - <span data-ttu-id="c932a-116">**Gostaria de usar o TypeScript?** `No`</span><span class="sxs-lookup"><span data-stu-id="c932a-116">**Would you like to use TypeScript?:** `No`</span></span>
+    - <span data-ttu-id="c932a-117">**Escolha a estrutura:** `Jquery`</span><span class="sxs-lookup"><span data-stu-id="c932a-117">**Choose a framework:** `Jquery`</span></span>
 
-    <span data-ttu-id="d33ca-p103">O gerador perguntar? se voc? deseja abrir **resource.html**. N?o ? necess?rio abri-lo para este tutorial, mas fique ? vontade em fazer isso se tiver curiosidade. Escolha Sim ou N?o para concluir o assistente e deixar o gerador fazer seu trabalho.</span><span class="sxs-lookup"><span data-stu-id="d33ca-p103">The generator will then ask you if you want to open **resource.html**. It isn't necessary to open it for this tutorial, but feel free to open it if you're curious! Choose yes or no to complete the wizard and allow the generator to do its work.</span></span>
+    <span data-ttu-id="c932a-p103">O gerador perguntará se você deseja abrir **resource.html**. Não é necessário abri-lo para este tutorial, mas fique à vontade em fazer isso se tiver curiosidade. Escolha Sim ou Não para concluir o assistente e deixar o gerador fazer seu trabalho.</span><span class="sxs-lookup"><span data-stu-id="c932a-p103">The generator will then ask you if you want to open **resource.html**. It isn't necessary to open it for this tutorial, but feel free to open it if you're curious! Choose yes or no to complete the wizard and allow the generator to do its work.</span></span>
 
     ![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-project-jquery.png)
 
-## <a name="update-the-code"></a><span data-ttu-id="d33ca-122">Atualizar o c?digo</span><span class="sxs-lookup"><span data-stu-id="d33ca-122">Update the code</span></span>
+## <a name="update-the-code"></a><span data-ttu-id="c932a-122">Atualizar o código</span><span class="sxs-lookup"><span data-stu-id="c932a-122">Update the code</span></span>
 
-1. <span data-ttu-id="d33ca-123">No editor de c?digo, abra **index.html** na raiz do projeto.</span><span class="sxs-lookup"><span data-stu-id="d33ca-123">In your code editor, open **index.html** in the root of the project.</span></span> <span data-ttu-id="d33ca-124">Esse arquivo cont?m o HTML que ser? renderizado no painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="d33ca-124">This file contains the HTML that will be rendered in the add-in's task pane.</span></span>
+1. <span data-ttu-id="c932a-123">No editor de código, abra **index.html** na raiz do projeto.</span><span class="sxs-lookup"><span data-stu-id="c932a-123">In your code editor, open **index.html** in the root of the project.</span></span> <span data-ttu-id="c932a-124">Esse arquivo contém o HTML que será renderizado no painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="c932a-124">This file contains the HTML that will be rendered in the add-in's task pane.</span></span>
 
-2. <span data-ttu-id="d33ca-125">Substitua o elemento `<header>` dentro do elemento `<body>` com a marca??o a seguir.</span><span class="sxs-lookup"><span data-stu-id="d33ca-125">Replace the `<header>` element inside the `<body>` element with the following markup.</span></span>
+2. <span data-ttu-id="c932a-125">Substitua o elemento `<header>` dentro do elemento `<body>` com a marcação a seguir.</span><span class="sxs-lookup"><span data-stu-id="c932a-125">Replace the `<header>` element inside the `<body>` element with the following markup.</span></span>
 
     ```html
     <div id="content-header">
@@ -53,7 +53,7 @@
     </div>
     ```
 
-3. <span data-ttu-id="d33ca-126">Substitua o elemento `<main>` dentro do elemento `<body>` com a marca??o a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="d33ca-126">Replace the `<main>` element inside the `<body>` element with the following markup and save the file.</span></span>
+3. <span data-ttu-id="c932a-126">Substitua o elemento `<main>` dentro do elemento `<body>` com a marcação a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="c932a-126">Replace the `<main>` element inside the `<body>` element with the following markup and save the file.</span></span>
 
     ```html
     <div id="content-main">
@@ -70,7 +70,7 @@
     </div>
     ```
 
-4. <span data-ttu-id="d33ca-127">Abra o arquivo **app.js** para especificar o script do suplemento.</span><span class="sxs-lookup"><span data-stu-id="d33ca-127">Open the file **app.js** to specify the script for the add-in.</span></span> <span data-ttu-id="d33ca-128">Substitua todo o conte?do pelo c?digo a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="d33ca-128">Replace the entire contents with the following code and save the file.</span></span>
+4. <span data-ttu-id="c932a-127">Abra o arquivo **app.js** para especificar o script do suplemento.</span><span class="sxs-lookup"><span data-stu-id="c932a-127">Open the file **app.js** to specify the script for the add-in.</span></span> <span data-ttu-id="c932a-128">Substitua todo o conteúdo pelo código a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="c932a-128">Replace the entire contents with the following code and save the file.</span></span>
 
     ```js
     'use strict';
@@ -123,7 +123,7 @@
     })();
     ```
 
-4. <span data-ttu-id="d33ca-129">Abra o arquivo **app.css** na raiz do projeto para especificar os estilos personalizados do suplemento.</span><span class="sxs-lookup"><span data-stu-id="d33ca-129">Open the file **app.css** in the root of the project to specify the custom styles for the add-in.</span></span> <span data-ttu-id="d33ca-130">Substitua todo o conte?do pelo que est? a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="d33ca-130">Replace the entire contents with the following and save the file.</span></span>
+4. <span data-ttu-id="c932a-129">Abra o arquivo **app.css** na raiz do projeto para especificar os estilos personalizados do suplemento.</span><span class="sxs-lookup"><span data-stu-id="c932a-129">Open the file **app.css** in the root of the project to specify the custom styles for the add-in.</span></span> <span data-ttu-id="c932a-130">Substitua todo o conteúdo pelo que está a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="c932a-130">Replace the entire contents with the following and save the file.</span></span>
 
     ```css
     #content-header {
@@ -152,15 +152,15 @@
     }
     ```
 
-## <a name="update-the-manifest"></a><span data-ttu-id="d33ca-131">Atualizar o manifesto</span><span class="sxs-lookup"><span data-stu-id="d33ca-131">Update the manifest</span></span>
+## <a name="update-the-manifest"></a><span data-ttu-id="c932a-131">Atualizar o manifesto</span><span class="sxs-lookup"><span data-stu-id="c932a-131">Update the manifest</span></span>
 
-1. <span data-ttu-id="d33ca-132">Abra o arquivo **my-office-add-in-manifest.xml** para definir as configura??es e os recursos do suplemento.</span><span class="sxs-lookup"><span data-stu-id="d33ca-132">Open the file **my-office-add-in-manifest.xml** to define the add-in's settings and capabilities.</span></span>
+1. <span data-ttu-id="c932a-132">Abra o arquivo **my-office-add-in-manifest.xml** para definir as configurações e os recursos do suplemento.</span><span class="sxs-lookup"><span data-stu-id="c932a-132">Open the file **my-office-add-in-manifest.xml** to define the add-in's settings and capabilities.</span></span>
 
-2. <span data-ttu-id="d33ca-133">O elemento `ProviderName` tem um valor de espa?o reservado.</span><span class="sxs-lookup"><span data-stu-id="d33ca-133">The `ProviderName` element has a placeholder value.</span></span> <span data-ttu-id="d33ca-134">Substitua-o com seu nome.</span><span class="sxs-lookup"><span data-stu-id="d33ca-134">Replace it with your name.</span></span>
+2. <span data-ttu-id="c932a-133">O elemento `ProviderName` tem um valor de espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="c932a-133">The `ProviderName` element has a placeholder value.</span></span> <span data-ttu-id="c932a-134">Substitua-o com seu nome.</span><span class="sxs-lookup"><span data-stu-id="c932a-134">Replace it with your name.</span></span>
 
-3. <span data-ttu-id="d33ca-135">O atributo `DefaultValue` do elemento `Description` tem um espa?o reservado.</span><span class="sxs-lookup"><span data-stu-id="d33ca-135">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="d33ca-136">Substitua-o com **um suplemento do painel de tarefas do Project**.</span><span class="sxs-lookup"><span data-stu-id="d33ca-136">Replace it with **A task pane add-in for Project**.</span></span>
+3. <span data-ttu-id="c932a-135">O atributo `DefaultValue` do elemento `Description` tem um espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="c932a-135">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="c932a-136">Substitua-o com **um suplemento do painel de tarefas do Project**.</span><span class="sxs-lookup"><span data-stu-id="c932a-136">Replace it with **A task pane add-in for Project**.</span></span>
 
-4. <span data-ttu-id="d33ca-137">Salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="d33ca-137">Save the file.</span></span>
+4. <span data-ttu-id="c932a-137">Salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="c932a-137">Save the file.</span></span>
 
     ```xml
     ...
@@ -172,35 +172,35 @@
     ...
     ```
 
-## <a name="start-the-dev-server"></a><span data-ttu-id="d33ca-138">Iniciar o servidor de desenvolvimento</span><span class="sxs-lookup"><span data-stu-id="d33ca-138">Start the dev server</span></span>
+## <a name="start-the-dev-server"></a><span data-ttu-id="c932a-138">Iniciar o servidor de desenvolvimento</span><span class="sxs-lookup"><span data-stu-id="c932a-138">Start the dev server</span></span>
 
 [!include[Start server section](../includes/quickstart-yo-start-server.md)] 
 
-## <a name="try-it-out"></a><span data-ttu-id="d33ca-139">Experimente</span><span class="sxs-lookup"><span data-stu-id="d33ca-139">Try it out</span></span>
+## <a name="try-it-out"></a><span data-ttu-id="c932a-139">Experimente</span><span class="sxs-lookup"><span data-stu-id="c932a-139">Try it out</span></span>
 
-1. <span data-ttu-id="d33ca-140">No Project, crie um projeto simples que tenha pelo menos uma tarefa.</span><span class="sxs-lookup"><span data-stu-id="d33ca-140">In Project, create a simple project that has at least one task.</span></span>
+1. <span data-ttu-id="c932a-140">No Project, crie um projeto simples que tenha pelo menos uma tarefa.</span><span class="sxs-lookup"><span data-stu-id="c932a-140">In Project, create a simple project that has at least one task.</span></span>
 
-2. <span data-ttu-id="d33ca-141">Siga as instru??es para a plataforma que voc? usar? para executar o suplemento e para fazer o sideload do suplemento no Project.</span><span class="sxs-lookup"><span data-stu-id="d33ca-141">Follow the instructions for the platform you'll use to run your add-in to sideload the add-in within Project.</span></span>
+2. <span data-ttu-id="c932a-141">Siga as instruções para a plataforma que você usará para executar o suplemento e para fazer o sideload do suplemento no Project.</span><span class="sxs-lookup"><span data-stu-id="c932a-141">Follow the instructions for the platform you'll use to run your add-in to sideload the add-in within Project.</span></span>
 
-    - <span data-ttu-id="d33ca-142">Windows: [Realizar o sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span><span class="sxs-lookup"><span data-stu-id="d33ca-142">Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span></span>
-    - <span data-ttu-id="d33ca-143">Project Online: [Realizar o sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)</span><span class="sxs-lookup"><span data-stu-id="d33ca-143">Project Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)</span></span>
-    - <span data-ttu-id="d33ca-144">iPad e Mac: [Fazer sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span><span class="sxs-lookup"><span data-stu-id="d33ca-144">iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span></span>
+    - <span data-ttu-id="c932a-142">Windows: [Realizar o sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span><span class="sxs-lookup"><span data-stu-id="c932a-142">Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span></span>
+    - <span data-ttu-id="c932a-143">Project Online: [Realizar o sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)</span><span class="sxs-lookup"><span data-stu-id="c932a-143">Project Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)</span></span>
+    - <span data-ttu-id="c932a-144">iPad e Mac: [Fazer sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span><span class="sxs-lookup"><span data-stu-id="c932a-144">iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span></span>
 
-3. <span data-ttu-id="d33ca-145">No Project, selecione uma tarefa.</span><span class="sxs-lookup"><span data-stu-id="d33ca-145">In Project, select a task.</span></span>
+3. <span data-ttu-id="c932a-145">No Project, selecione uma tarefa.</span><span class="sxs-lookup"><span data-stu-id="c932a-145">In Project, select a task.</span></span>
 
     ![Uma captura de tela de um plano de projeto no Project com uma tarefa selecionada](../images/project_quickstart_addin_1.png)
 
-4. <span data-ttu-id="d33ca-147">No painel de tarefas, escolha o bot?o **Obter GUID de tarefas** para gravar a GUID de tarefas na caixa de texto **Resultados**.</span><span class="sxs-lookup"><span data-stu-id="d33ca-147">In the task pane, choose the **Get Task GUID** button to write the task GUID to the **Results** textbox.</span></span>
+4. <span data-ttu-id="c932a-147">No painel de tarefas, escolha o botão **Obter GUID de tarefas** para gravar a GUID de tarefas na caixa de texto **Resultados**.</span><span class="sxs-lookup"><span data-stu-id="c932a-147">In the task pane, choose the **Get Task GUID** button to write the task GUID to the **Results** textbox.</span></span>
 
     ![Captura de tela de um plano de projeto no Project com uma tarefa selecionada e a GUID de tarefas gravada na caixa de texto no painel de tarefas](../images/project_quickstart_addin_2.png)
 
-5. <span data-ttu-id="d33ca-149">No painel de tarefas, escolha o bot?o **Obter dados da tarefa** para gravar v?rias propriedades da tarefa selecionada na caixa de texto **Resultados**.</span><span class="sxs-lookup"><span data-stu-id="d33ca-149">In the task pane, choose the **Get Task data** button to write several properties of the selected task to the **Results** textbox.</span></span>
+5. <span data-ttu-id="c932a-149">No painel de tarefas, escolha o botão **Obter dados da tarefa** para gravar várias propriedades da tarefa selecionada na caixa de texto **Resultados**.</span><span class="sxs-lookup"><span data-stu-id="c932a-149">In the task pane, choose the **Get Task data** button to write several properties of the selected task to the **Results** textbox.</span></span>
 
-    ![Captura de tela de um plano de projeto no Project com uma tarefa selecionada e v?rias propriedades de tarefas gravadas na caixa de texto do painel de tarefas](../images/project_quickstart_addin_3.png)
+    ![Captura de tela de um plano de projeto no Project com uma tarefa selecionada e várias propriedades de tarefas gravadas na caixa de texto do painel de tarefas](../images/project_quickstart_addin_3.png)
 
-## <a name="next-steps"></a><span data-ttu-id="d33ca-151">Pr?ximas etapas</span><span class="sxs-lookup"><span data-stu-id="d33ca-151">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="c932a-151">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="c932a-151">Next steps</span></span>
 
-<span data-ttu-id="d33ca-152">Parab?ns, voc? criou com ?xito um suplemento do Project!</span><span class="sxs-lookup"><span data-stu-id="d33ca-152">Congratulations, you've successfully created a Project add-in!</span></span> <span data-ttu-id="d33ca-153">Em seguida, saiba mais sobre os recursos de um suplemento do Project e explore os cen?rios comuns.</span><span class="sxs-lookup"><span data-stu-id="d33ca-153">Next, learn more about the capabilities of a Project add-in and explore common scenarios.</span></span>
+<span data-ttu-id="c932a-152">Parabéns, você criou com êxito um suplemento do Project!</span><span class="sxs-lookup"><span data-stu-id="c932a-152">Congratulations, you've successfully created a Project add-in!</span></span> <span data-ttu-id="c932a-153">Em seguida, saiba mais sobre os recursos de um suplemento do Project e explore os cenários comuns.</span><span class="sxs-lookup"><span data-stu-id="c932a-153">Next, learn more about the capabilities of a Project add-in and explore common scenarios.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="d33ca-154">Suplementos do Project</span><span class="sxs-lookup"><span data-stu-id="d33ca-154">Project add-ins</span></span>](../project/project-add-ins.md)
+> [<span data-ttu-id="c932a-154">Suplementos do Project</span><span class="sxs-lookup"><span data-stu-id="c932a-154">Project add-ins</span></span>](../project/project-add-ins.md)
