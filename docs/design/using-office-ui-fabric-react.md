@@ -2,12 +2,12 @@
 title: Usar o Office UI Fabric React em Suplementos do Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 8ae8bac8c8043b51188d765dd7170922dcc1c84e
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: e078640cbcc6217e9ed0a1ad99ef02afbfd317a8
+ms.sourcegitcommit: 4e4f7c095e8f33b06bd8a02534ee901125eb1d17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437595"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "20084074"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>Usar o Office UI Fabric React em Suplementos do Office
 
@@ -108,28 +108,12 @@ Adicione `ButtonPrimaryExample` ao suplemento abrindo **src\components\app.tsx**
 
 Salve suas alterações. Todas as instâncias abertas do navegador, inclusive o suplemento, são atualizadas automaticamente e mostram o componente do React `ButtonPrimaryExample`. Observe que o texto padrão e o botão são substituídos pelo texto e o botão principal definidos em `ButtonPrimaryExample`.
 
-## <a name="recommended-components"></a>Componentes recomendados
 
-Veja a seguir uma lista de componentes da experiência de usuário do Fabric React recomendados para uso em suplementos:
-
-- [Navegação estrutural](breadcrumb.md)
-- [Botão](button.md)
-- [Caixa de seleção](checkbox.md)
-- [ChoiceGroup](choicegroup.md)
-- [Lista suspensa](dropdown.md)
-- [Rótulo](label.md)
-- [Lista](list.md)
-- [Tabela dinâmica](pivot.md)
-- [TextField](textfield.md)
-- [Alternância](toggle.md)
-
-> [!NOTE]
-> Adicionaremos outros componentes ao longo do tempo.
 
 ## <a name="see-also"></a>Veja também
 
 - [Office UI Fabric React](https://dev.office.com/fabric#/)
 - [Introdução ao exemplo de código do Fabric React](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)
 - [Padrões de design da experiência de usuário (usa o Fabric 2.6.1)](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
-- [Amostra de Fabric UI do suplemento do Office (usa o Fabric 1.0)](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample)
+- [Amostra de Fabric UI de suplemento do Office (usa o Fabric 1.0)](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample)
 - [Gerador Yeoman para o Office](https://github.com/OfficeDev/generator-office)

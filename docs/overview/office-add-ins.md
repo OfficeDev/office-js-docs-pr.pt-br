@@ -2,12 +2,12 @@
 title: Visão geral da plataforma de Suplementos do Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: f0f20371eee759a449773effaff1ce365e32bf48
-ms.sourcegitcommit: 17f60431644b448a4816913039aaebfa328f9b0a
+ms.openlocfilehash: f7b1f4add776f1971e9762c5cb80dabed45b0a1c
+ms.sourcegitcommit: a0e0416289b293863b8b4d3f9a12581a9e681b27
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/25/2018
-ms.locfileid: "19476519"
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "20023162"
 ---
 # <a name="office-add-ins-platform-overview"></a>Visão geral da plataforma de Suplementos do Office
 
@@ -39,9 +39,9 @@ Os suplementos do Office fornecem as seguintes vantagens em relação aos suplem
 
 Um suplemento do Office inclui dois componentes básicos: um arquivo de manifesto XML e seu próprio aplicativo Web. O manifesto define várias configurações, incluindo como o suplemento é integrado a clientes do Office. O aplicativo Web deve ser hospedado em um servidor Web ou serviço de hospedagem na Web, como o Microsoft Azure.
 
-*Figura 1. Manifesto + página da Web = um Suplemento do Office*
+*Figura 1. Manifesto do suplemento (XML) + página da Web (HTML, JS) = um suplemento do Office*
 
-![Manifesto mais página da Web é igual a suplemento do Office](../images/dk2-agave-overview-01.png)
+![Manifesto mais página da Web é igual a suplemento do Office](../images/about-addins-manifestwebpage.png)
 
 ### <a name="manifest"></a>Manifesto 
 
@@ -59,7 +59,7 @@ O Suplemento do Office mais básico consiste em uma página HTML estática que �
 
 *Figura 2. Componentes de um suplemento Hello World do Office*
 
-![Componentes de um suplemento Hello World](../images/dk2-agave-overview-07.png)
+![Componentes de um suplemento Hello World](../images/about-addins-componentshelloworldoffice.png)
 
 ## <a name="extending-and-interacting-with-office-clients"></a>Estender os clientes do Office e interagir com eles 
 
@@ -83,9 +83,9 @@ Painéis personalizados de interface do usuário e de tarefa são especificados 
 
 Você pode adicionar itens de menu e botões da faixa de opções personalizados à faixa de opções, tanto no Office para Área de Trabalho do Windows quanto no Office Online. Isso facilita aos usuários o acesso ao suplemento diretamente do aplicativo do Office. Botões de comando podem iniciar diferentes ações, como mostrar um painel de tarefas com código HTML personalizado ou executar uma função JavaScript.  
 
-*Figura 3. Comandos do suplemento em execução na Área de Trabalho do Excel*
+*Figura 3. Comandos do suplemento na faixa de opções*
 
-![Botões e comandos de menu personalizados](../images/add-in-commands-overview.png)
+![Botões e comandos de menu personalizados](../images/about-addins-addincommands.png)
 
 #### <a name="task-panes"></a>Painéis de tarefas  
 
@@ -93,7 +93,7 @@ Você pode usar painéis de tarefas, além dos comandos de suplemento, para perm
 
 *Figura 4. Painel de tarefas*
 
-![Painel de tarefas](../images/task-pane-overview.jpg)
+![Painel de tarefas](../images/about-addins-taskpane.png)
 
 ### <a name="extend-outlook-functionality"></a>Estender a funcionalidade do Outlook 
 
@@ -109,7 +109,7 @@ Você pode inserir objetos baseados na web, chamados de suplementos de conteúdo
 
 *Figura 5. Suplemento de conteúdo*
 
-![Suplemento de conteúdo](../images/dk2-agave-overview-05.png)
+![Suplemento de conteúdo](../images/about-addins-contentaddin.png)
 
 ## <a name="office-javascript-apis"></a>APIs JavaScript para Office 
 
@@ -117,7 +117,7 @@ As APIs JavaScript para Office contêm objetos e membros para a criação de sup
 
 ## <a name="next-steps"></a>Próximas etapas 
 
-Para saber mais sobre como começar a criar o seu Suplemento do Office, experimente o nosso [Inícios Rápidos de 5 minutos](https://docs.microsoft.com/en-us/office/dev/add-ins/). Você pode começar a criar suplementos imediatamente usando o Visual Studio ou qualquer outro editor. 
+Para saber mais sobre como começar a compilar seu suplemento do Office, experimente o nosso [Inícios Rápidos de 5 minutos](https://docs.microsoft.com/en-us/office/dev/add-ins/). Você pode começar a compilar suplementos imediatamente usando o Visual Studio ou qualquer outro editor. 
 
 Para começar a planejar soluções que criem experiências de usuário eficazes e atraentes, familiarize-se com as [diretrizes de design](../design/add-in-design.md) e as [práticas recomendadas](../concepts/add-in-development-best-practices.md) para suplementos do Office.    
    

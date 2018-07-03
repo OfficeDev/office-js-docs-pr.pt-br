@@ -28,16 +28,14 @@ Neste artigo, você passará pelo processo de criar um suplemento do OneNote usa
     yo office
     ```
 
-    - **Gostaria de criar uma nova subpasta para o seu projeto?:** `No`
-    - **Como deseja nomear seu suplemento?:** `OneNote Add-in`
-    - **Para qual aplicativo cliente do Office você deseja suporte?:** `OneNote`
-    - **Gostaria de criar um novo suplemento?:** `Yes`
-    - **Gostaria de usar o TypeScript?:** `No`
-    - **Escolha a estrutura:** `Jquery`
-
-    O gerador perguntará se você deseja abrir **resource.html**. Não é necessário abri-lo para este tutorial, mas fique à vontade em fazer isso se tiver curiosidade. Escolha Sim ou Não para concluir o assistente e deixar o gerador fazer seu trabalho.
+    - **Escolha um tipo de projeto:** `Jquery`
+    - **Escolha um tipo de script:** `Javascript`
+    - **Como deseja nomear seu suplemento?** `My Office Add-in`
+    - **Para qual aplicativo cliente do Office você deseja suporte?** `Onenote`
 
     ![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-onenote-jquery.png)
+    
+    Depois de concluir o assistente, o gerador criará o projeto e instalará os componentes do nó de suporte.
 
 
 ## <a name="update-the-code"></a>Atualizar o código
@@ -146,11 +144,11 @@ Neste artigo, você passará pelo processo de criar um suplemento do OneNote usa
 
     <img alt="The Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
 
-3. Na caixa de diálogo Carregar suplemento, navegue até **one-note-add-in-manifest.xml** na pasta do projeto e escolha **Carregar**. 
+3. No diálogo Carregar suplemento, navegue até **one-note-add-in-manifest.xml** na pasta do projeto e escolha **Carregar**. 
 
 4. Na guia **Página Inicial**, escolha o botão **Exibir painel de tarefas** na faixa de opções. O painel de tarefas do suplemento abre em um iFrame perto da página do OneNote.
 
-5. Insira algum texto na área de texto e escolha **Adicionar estrutura de tópicos**. O texto inserido é adicionado à pagina. 
+5. Insira algum texto na área de texto e escolha **Adicionar estrutura de tópicos**. O texto inserido é adiciona à pagina. 
 
     ![O suplemento do OneNote criado a partir deste passo a passo](../images/onenote-first-add-in.png)
 

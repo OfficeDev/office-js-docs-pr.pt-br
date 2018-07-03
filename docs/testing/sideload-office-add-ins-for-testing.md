@@ -2,8 +2,13 @@
 title: Realizar sideload de suplementos do Office no Office Online para teste
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 69b255545525ff667618c9f8bd1e1b7953592967
+ms.sourcegitcommit: 58af795c3d0393a4b1f6425fa1cbdca1e48fb473
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "20138846"
 ---
-
 # <a name="sideload-office-add-ins-in-office-online-for-testing"></a>Realizar sideload de suplementos do Office no Office Online para teste
 
 Você pode instalar um suplemento do Office para teste usando sideload, sem precisar primeiro colocá-lo em um catálogo de suplementos. O sideload pode ser feito no Office 365 ou no Office Online. O procedimento é ligeiramente diferente nas duas plataformas. 
@@ -12,7 +17,7 @@ Quando você realiza o sideload de um suplemento, o manifesto do suplemento é a
 
 
 > [!NOTE]
-> A realização do sideload como descrito neste artigo tem suporte no Word, no Excel e no PowerPoint. Para realizar o sideload de um suplemento do Outlook, confira [Realizar sideload de suplementos do Outlook para teste](https://docs.microsoft.com/pt-br/outlook/add-ins/sideload-outlook-add-ins-for-testing).
+> A realização do sideload como descrito neste artigo tem suporte no Word, no Excel e no PowerPoint. Para realizar o sideload de um suplemento do Outlook, confira [Realizar sideload de suplementos do Outlook para teste](https://docs.microsoft.com/en-us/outlook/add-ins/sideload-outlook-add-ins-for-testing).
 
 O vídeo a seguir oferece orientações para o processo de sideload do seu suplemento no Office para área de trabalho ou no Office Online.  
 
@@ -57,6 +62,11 @@ O vídeo a seguir oferece orientações para o processo de sideload do seu suple
     ![A caixa de diálogo Carregar suplemento com botões para pesquisar, carregar e cancelar.](../images/upload-add-in.png)
 
 6. Verifique se o suplemento está instalado. Por exemplo, se for um comando do suplemento, ele deve aparecer na faixa de opções ou no menu de contexto. Se for um suplemento de painel de tarefas, o painel deve ser exibido.
+
+> [!NOTE]
+>Para testar o seu suplemento do Office com o Edge, digite “**about: flags**na barra de pesquisa do Edge para exibir as opções de Configurações do Desenvolvedor.  Marque a opção “**Permitir loopback do host local**” e reinicie o Edge.
+
+>    ![A opção permitir loopback do host local com a caixa marcada.](../images/allow-localhost-loopback.png)
 
 ## <a name="sideload-an-add-in-when-using-visual-studio"></a>Fazer sideload de um suplemento usando o Visual Studio
 

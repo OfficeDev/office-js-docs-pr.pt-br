@@ -48,7 +48,7 @@ Antes de começar esta etapa do tutorial, recomendamos a criação e manipulaç�
     }
     ``` 
 
-7.  Substitua `TODO1` pelo código a seguir. Observação:
+7. Substitua `TODO1` pelo código a seguir. Observação:
    - o código tem como objetivo dispor a frase "Office 365" em um controle de conteúdo. Para simplificar, ele faz uma pressuposição de que a cadeia de caracteres está presente, e que o usuário a selecionou.
    - A propriedade `ContentControl.title` especifica o título visível do controle de conteúdo. 
    - A propriedade `ContentControl.tag` especifica uma marca que pode ser usada para obter uma referência a um controle de conteúdo usando o método `ContentControlCollection.getByTag`, que você usará em uma função posterior. 
@@ -67,24 +67,27 @@ Antes de começar esta etapa do tutorial, recomendamos a criação e manipulaç�
 ## <a name="replace-the-content-of-the-content-control"></a>Substituir o conteúdo do controle de conteúdo
 
 1. Abra o arquivo index.html.
-3. Abaixo do `div` que contém o botão `create-content-control`, adicione a marcação a seguir:
+2. Abaixo do `div` que contém o botão `create-content-control`, adicione a marcação a seguir:
+
     ```html
     <div class="padding">            
         <button class="ms-Button" id="replace-content-in-control">Rename Service</button>            
     </div>
     ```
 
-4. Abra o arquivo app.js.
+3. Abra o arquivo app.js.
 
-5. Abaixo da linha que atribui um identificador de clique ao botão `create-content-control`, adicione o seguinte código:
+4. Abaixo da linha que atribui um identificador de clique ao botão `create-content-control`, adicione o seguinte código:
 
     ```js
     $('#replace-content-in-control').click(replaceContentInControl);
     ```
 
-6. Abaixo da função `createContentControl`, adicione a função a seguir:
+5. Abaixo da função `createContentControl`, adicione a função a seguir:
 
-    ```js    função replaceContentInControl() {      Word.run(função) (contexto) {
+    ```js
+    function replaceContentInControl() {
+        Word.run(function (context) {
             
             // TODO1: Queue commands to replace the text in the Service Name
             //        content control.
@@ -100,9 +103,9 @@ Antes de começar esta etapa do tutorial, recomendamos a criação e manipulaç�
     }
     ``` 
 
-7. Replace `TODO1` with the following code. 
+7. Substitua `TODO1` pelo código a seguir. 
     > [!NOTE]
-    > The `ContentControlCollection.getByTag` method returns a `ContentControlCollection` of all content controls of the specified tag. We use `getFirst` to get a reference to the desired control.
+    > O método `ContentControlCollection.getByTag` retorna um `ContentControlCollection` de todos os controles de conteúdo da marca especificada. Nós usamos `getFirst` para obter uma referência do controle desejado.
 
     ```js
     const serviceNameContentControl = context.document.contentControls.getByTag("serviceName").getFirst();

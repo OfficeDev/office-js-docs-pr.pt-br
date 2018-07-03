@@ -1,6 +1,6 @@
 # <a name="build-an-excel-add-in-using-react"></a>Criar um suplemento do Excel usando o React
 
-Neste artigo, você passará pelo processo de criar um suplemento do Excel usando o React e a API JavaScript do Excel.
+Neste artigo, você passará pelo processo de criação de um suplemento do Excel usando o React e a API JavaScript do Excel.
 
 ## <a name="environment"></a>Ambiente
 
@@ -43,16 +43,16 @@ Cada suplemento requer um arquivo de manifesto para definir os recursos e config
 2. Use o gerador do Yeoman para gerar o arquivo de manifesto para o seu suplemento. Execute o comando a seguir e responda aos prompts, conforme mostrado na seguinte captura de tela:
 
     ```bash
-    yo office
+    yo office 
     ```
 
-    - **Gostaria de criar uma nova subpasta para o seu projeto?:** `No`
+    - **Escolha um tipo de projeto:** `Manifest`
     - **Como deseja nomear seu suplemento?:** `My Office Add-in`
     - **Para qual aplicativo cliente do Office você deseja suporte?:** `Excel`
-    - **Gostaria de criar um novo suplemento?:** `No`
 
-    O gerador perguntará se você deseja abrir **resource.html**. Não é necessário abri-lo para este tutorial, mas fique à vontade em fazer isso se tiver curiosidade. Escolha Sim ou Não para concluir o assistente e deixar o gerador fazer seu trabalho.
 
+    Depois de concluir o assistente, um arquivo de manifesto e um arquivo de recurso estarão disponíveis para você criar seu projeto.
+    
     ![Gerador do Yeoman](../images/yo-office.png)
     
     > [!NOTE]

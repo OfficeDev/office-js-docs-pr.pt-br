@@ -2,12 +2,12 @@
 title: Práticas recomendadas para o desenvolvimento de suplementos do Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: e089b5ccbe9e8aa06a1622dba354b81bce1ddd4a
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 777cc45570474bc422056cefbe4bd79107bd1fb4
+ms.sourcegitcommit: 4e4f7c095e8f33b06bd8a02534ee901125eb1d17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437721"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "20084032"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Práticas recomendadas para o desenvolvimento de suplementos do Office
 
@@ -59,7 +59,7 @@ Para modelos que ilustram padrões que podem ser aplicados enquanto você desenv
 
 ## <a name="apply-ux-design-principles"></a>Aplicar os princípios de design de UX
 
-- Assegure-se de que a aparência e a funcionalidade de seus suplementos complementam a experiência do Office. Use o [Office UI Fabric](https://dev.office.com/fabric).
+- Assegure-se de que a aparência e a funcionalidade de seus suplementos complementam a experiência do Office. Use o [Office UI Fabric](https://developer.microsoft.com/en-us/fabric).
 
 - Favoreça o conteúdo através do Chrome. Evite elementos de interface do usuário supérfluos que não agregam valor à experiência do usuário.
 
@@ -71,11 +71,11 @@ Para modelos que ilustram padrões que podem ser aplicados enquanto você desenv
 
 - Não inclua imagens não licenciadas.
 
-- Use uma [linguagem clara e simples](../design/add-in-design-guidelines.md#voice-guidelines) no seu suplemento.
+- Use uma [linguagem clara e simples](../design/voice-guidelines.md) no seu suplemento.
 
 - Preocupe-se com a acessibilidade – facilite a interação dos usuários com o seu suplemento e inclua tecnologias auxiliares, como leitores de tela.
 
-- Desenvolva para todas as plataformas e métodos de entrada, incluindo teclado/mouse e [toque](#optimize-for-touch). Certifique-se de que sua interface do usuário seja responsiva a diferentes fatores de forma.
+- Desenvolva para todas as plataformas e métodos de entrada, incluindo teclado/mouse e [toque](#optimize-for-touch). Certifique-se de que sua interface do usuário seja responsiva a diferentes fatores forma.
 
 Para modelos que aplicam os princípios de design que você pode usar e personalizar durante o desenvolvimento do suplemento, consulte [padrões de design UX para Suplementos do Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
 

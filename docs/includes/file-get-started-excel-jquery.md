@@ -150,7 +150,6 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 - [Node.js](https://nodejs.org)
 
 - Instale a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador do Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.
-
     ```bash
     npm install -g yo generator-office
     ```
@@ -171,17 +170,16 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
     yo office
     ```
 
-    - **Gostaria de criar uma nova subpasta para o seu projeto?** `No`
+    - **Escolha um tipo de projeto:** `Jquery`
+    - **Escolha um tipo de script:** `Javascript`
     - **Como deseja nomear seu suplemento?** `My Office Add-in`
     - **Para qual aplicativo cliente do Office você deseja suporte?** `Excel`
-    - **Gostaria de criar um novo suplemento?** `Yes`
-    - **Gostaria de usar o TypeScript?** `No`
-    - **Escolha a estrutura:** `Jquery`
-
-    O gerador perguntará se você deseja abrir **resource.html**. Não é necessário abri-lo para este tutorial, mas fique à vontade em fazer isso se tiver curiosidade. Escolha Sim ou Não para concluir o assistente e deixar o gerador fazer seu trabalho.
 
     ![Gerador do Yeoman](../images/yo-office-jquery.png)
+    
+    Depois de concluir o assistente, o gerador criará o projeto e instalará os componentes do nó de suporte.
 
+    
 
 4. No editor de código, abra **index.html** na raiz do projeto. Esse arquivo especifica o HTML que será renderizado no painel de tarefas do suplemento. 
  

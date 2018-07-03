@@ -1,6 +1,6 @@
 # <a name="create-custom-functions-in-excel-preview"></a>Criar funções personalizadas no Excel (Visualização)
 
-Funções personalizadas (semelhantes a funções definidas pelo usuário ou UDFs) permitem que os desenvolvedores adicionem qualquer função JavaScript no Excel usando um suplemento. Os usuários podem acessar funções personalizadas como qualquer outra função nativa no Excel (como `=SUM()`). Este artigo explica como criar funções personalizadas no Excel.
+Funções personalizadas (semelhantes a funções definidas pelo usuário ou UDFs) permitem que os desenvolvedores adicionem qualquer função JavaScript no Excel usando um suplemento. Os usuários então podem acessar funções personalizadas como qualquer outra função nativa do Excel (como `=SUM()`). Este artigo explica como criar funções personalizadas no Excel.
 
 A ilustração a seguir mostra como um usuário final pode inserir uma função personalizada em uma célula. A função que adiciona 42 a um par de números.
 
@@ -18,7 +18,7 @@ As funções personalizadas agora estão disponíveis no Developer Preview para 
 
 1.  Instale o Office (compilação 9325 no Windows ou 13.329 no Mac) e participe do programa [Office Insider](https://products.office.com/en-us/office-insider). (Observe que não é suficiente apenas obter a compilação mais recente; o recurso será desabilitado em qualquer compilação até você ingressar no programa Insider)
 2.  Clone o repositório [Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) e siga as instruções no README.md para iniciar o suplemento no Excel, fazer alterações no código e depurar.
-3.  Digite `=CONTOSO.ADD42(1,2)` em qualquer célula e pressione **Inserir** para executar a função personalizada.
+3.  Digite `=CONTOSO.ADD42(1,2)` em qualquer célula e pressione **Enter** para executar a função personalizada.
 
 Confira a seção **Problemas conhecidos** no final deste artigo, que inclui as limitações atuais das funções personalizadas e que será atualizado com o tempo.
 
@@ -28,7 +28,7 @@ No repositório de exemplo clonado, você verá os seguintes arquivos:
 
 - **customfunctions.js**, que contém o código de função personalizado (veja o exemplo de código simples acima para a `ADD42` função).
 - **customfunctions.json**, que contém o registro JSON que informa ao Excel sobre sua função personalizada. O registro faz com que suas funções personalizadas apareçam na lista de funções disponíveis exibidas quando um usuário digita em uma célula.
-- **customfunctions.html**, que fornece um &lt;Script&gt; de referência para o arquivo JS. Este arquivo não é exibido na interface do usuário do Excel.
+- **customfunctions.html**, que fornece um &lt;Script&gt; de referência para o arquivo JS. Este arquivo não é exibido na interface do usuário no Excel.
 - **customfunctions.xml**, que informa ao Excel a localização dos arquivos HTML, JavaScript e JSON; e também especifica um namespace para todas as funções personalizadas instaladas com o suplemento.
 
 ### <a name="json-file-customfunctionsjson"></a>Arquivo JSON (customfunctions.json)
@@ -36,13 +36,13 @@ No repositório de exemplo clonado, você verá os seguintes arquivos:
 O código a seguir em customfunctions.json especifica os metadados para a mesma função `ADD42`.
 
 > [!NOTE]
-> Informações de referência detalhadas para o arquivo JSON, incluindo opções não usadas neste exemplo, estão em [Registro de Funções Personalizadas JSON](https://dev.office.com/reference/add-ins/custom-functions-json).
+> Informações de referência detalhadas para o arquivo JSON, incluindo opções não usadas neste exemplo, estão em [Registro de Funções Personalizadas JSON](custom-functions-json.md).
 
 Observe que, para este exemplo:
 
 - Há apenas uma função personalizada, portanto, há apenas um membro da `functions` matriz.
 - A propriedade `name` define o nome da função. Como você viu no gif animado mostrado anteriormente, um namespace (`CONTOSO`) é anexado ao nome da função no menu de preenchimento automático do Excel. Esse prefixo é definido no manifesto do suplemento, descrito abaixo. O prefixo e o nome da função são separados por um ponto e, por convenção, nomes de função e prefixos são maiúsculos. Para usar a função personalizada, o usuário digita o namespace seguido pelo nome da função (`ADD42`) em uma célula, neste caso `=CONTOSO.ADD42`. O prefixo deve ser usado como identificador para a sua empresa ou para o suplemento. 
-- O `description` aparece no menu de preenchimento automático do Excel.
+- O `description`  aparece no menu de preenchimento automático do Excel.
 - Quando o usuário solicitar ajuda para uma função, o Excel abre um painel de tarefas e exibe a página da Web encontrada no URL especificado em `helpUrl` .
 - A propriedade `result` especifica o tipo de informação retornada pela função para o Excel. A propriedade filho `type` pode `"string"`, `"number"`ou `"boolean"`. A propriedade `dimensionality` pode ser `scalar` ou `matrix` (uma matriz bidimensional de valores do `type` especificado.)
 - A matriz `parameters` especifica, *em ordenar*, o tipo de dado em cada parâmetro que é passado para a função. As propriedades filho `name` e `description` são usadas no intellisense do Excel. As propriedades filho `type` e `dimensionality` são idênticas às propriedades filho da propriedade `result` descrita acima.
@@ -158,7 +158,7 @@ Por outro lado, se sua função personalizada recupera dados da Web, ela deverá
 1. Retornar uma Promise do JavaScript para o Excel.
 3. Resolver a Promise com o valor final usando a função de retorno de chamada.
 
-O código a seguir mostra um exemplo de uma função assíncrona que recupera a temperatura de um termômetro. Observe que `sendWebRequest` é uma função hipotética, não especificada aqui, que usa o XHR para chamar um serviço da Web de temperatura.
+O código a seguir mostra um exemplo de função assíncrona personalizada que recupera a temperatura de um termômetro. Observe que `sendWebRequest` é uma função hipotética, não especificada aqui, que usa o XHR para chamar um serviço da Web de temperatura.
 
 ```js
 function getTemperature(thermometerID){
@@ -175,9 +175,9 @@ Funções assíncronas exibem um erro temporário `GETTING_DATA` na célula enqu
 > [!NOTE]
 > Funções personalizadas são assíncronas por padrão. Para designar funções como síncronas, defina a opção `"sync": true` na propriedade `options` para a função personalizada no arquivo JSON de registro.
 
-## <a name="streamed-functions"></a>Funções de fluxo contínuo
+## <a name="streamed-functions"></a>Funções de transmissão
 
-Uma função assíncrona pode ser de fluxo contínuo. Funções personalizadas de fluxo contínuo permitem que você insira dados em células repetidamente ao longo do tempo, sem precisar esperar que o Excel ou os usuários solicitem recálculos. O exemplo a seguir é uma função personalizada que adiciona um número ao resultado a cada segundo. Observe o seguinte sobre este código:
+Uma função assíncrona pode ser de fluxo contínuo. Funções personalizadas de transmissão permitem que você insira dados em células repetidamente ao longo do tempo, sem precisar esperar que o Excel ou os usuários solicitem recálculos. O exemplo a seguir é uma função personalizada que adiciona um número ao resultado a cada segundo. Observe o seguinte sobre este código:
 
 - O Excel exibe cada novo valor automaticamente usando o retorno de chamada `setResult`.
 - O parâmetro final, `caller`, nunca é especificado no código de registro e nunca é exibido no menu de preenchimento automático para usuários do Excel ao inserir a função. É a função de retorno de chamada `setResult` usada para passar dados da função para o Excel para atualizar o valor de uma célula.
@@ -223,11 +223,11 @@ function incrementValue(increment, caller){
 
 ## <a name="saving-and-sharing-state"></a>Compartilhamento e salvamento de estado
 
-Funções personalizadas assíncronas podem salvar dados em variáveis JavaScript globais. Em chamadas subsequentes, sua função personalizada pode usar os valores salvos nessas variáveis. O estado salvo é útil quando os usuários adicionam a mesma função personalizada a mais de uma célula, porque todas as instâncias da função podem compartilhar o estado. Por exemplo, você pode salvar os dados retornados de uma chamada para um recurso da Web para evitar fazer chamadas adicionais para o mesmo recurso da Web.
+Funções personalizadas assíncronas podem salvar dados em variáveis JavaScript globais. Em chamadas subsequentes, sua função personalizada pode usar valores salvos nessas variáveis. O estado salvo é útil quando os usuários adicionam a mesma função personalizada a mais de uma célula, porque todas as instâncias da função podem compartilhar o estado. Por exemplo, você pode salvar os dados retornados de uma chamada para um recurso da Web para evitar fazer chamadas adicionais para o mesmo recurso da Web.
 
-O código a seguir mostra uma implementação da função de fluxo contínuo anterior de temperatura que salva o estado de forma global. Observe o seguinte sobre este código:
+O código a seguir mostra uma implementação da função anterior de fluxo contínuo de temperatura que salva o estado de forma global. Observe o seguinte sobre este código:
 
-- `refreshTemperature` é uma função de fluxo contínuo que lê a temperatura de um determinado termômetro a cada segundo. Novas temperaturas são salvas na variável `savedTemperatures`, mas o valor da célula não é atualizado diretamente. Não deve ser chamada diretamente de uma célula da planilha, *por isso não está registrada no arquivo JSON*.
+- `refreshTemperature` é uma função de transmissão que lê a temperatura de um determinado termômetro a cada segundo. Novas temperaturas são salvas na variável `savedTemperatures`, mas o valor da célula não é atualizado diretamente. Não deve ser chamada diretamente de uma célula da planilha, *por isso não está registrada no arquivo JSON*.
 - `streamTemperature` atualiza os valores de temperatura exibidos na célula a cada segundo e usa variável `savedTemperatures` como fonte de dados. Deve ser registrada no arquivo JSON e nomeada com todas as letras maiúsculas, `STREAMTEMPERATURE`.
 - Os usuários podem chamar `streamTemperature` de várias células na interface de usuário do Excel. Cada chamada lê dados da mesma variável `savedTemperatures`.
 
@@ -287,7 +287,7 @@ Como pode ver, os intervalos são tratados em JavaScript como matrizes de matriz
 
 ## <a name="known-issues"></a>Problemas conhecidos
 
-- Descrições de parâmetro e URLs de Ajuda ainda não são usados pelo Excel.
+- As descrições de URLs e parâmetros de ajuda ainda não são usadas pelo Excel.
 - Funções personalizadas não estão atualmente disponíveis no Excel para clientes móveis.
 - Atualmente, os suplementos dependem de um processo de navegador oculto para executar funções personalizadas assíncronas. No futuro, o JavaScript será executado diretamente em algumas plataformas para garantir que as funções personalizadas sejam mais rápidas e usem menos memória. Além disso, a página HTML referenciada pelo elemento `<Page>` no manifesto não será necessária para a maioria das plataformas, já que o Excel executa o JavaScript diretamente. Para se preparar para essa alteração, certifique-se de que suas funções personalizadas não usem o DOM da página da Web. As APIs de hospedagem suportadas para acessar a Web serão [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) e [XHR](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) usando GET ou POST.
 - Funções voláteis (aquelas que recalculam automaticamente sempre que dados não relacionados são alterados na planilha) ainda não são suportadas.
@@ -299,5 +299,5 @@ Como pode ver, os intervalos são tratados em JavaScript como matrizes de matriz
 
 - **7 de novembro de 2017**: enviados exemplos e visualizações de funções personalizadas
 - **20 de Nov de 2017**: correção de bug de compatibilidade para quem usa as versões 8801 e posteriores
-- **28 de novembro de 2017**: Enviado o suporte para cancelamento em funções assíncronas (requer alteração para funções de fluxo contínuo)
+- **28 de novembro de 2017**: enviado o suporte para cancelamento em funções assíncronas (requer a alteração de funções de streaming)
 - **7 de maio de 2018**: enviado o suporte para Mac, Excel Online e funções síncronas em execução no processo

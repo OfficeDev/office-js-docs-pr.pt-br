@@ -2,12 +2,12 @@
 title: Depurar suplementos do Office no iPad e no Mac
 description: ''
 ms.date: 03/21/2018
-ms.openlocfilehash: 5d68fa000e19d81ebbcd1b383a790958f2bbac72
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: e9efae76aa3341eacfd73d6afcc3a3274536aa9d
+ms.sourcegitcommit: 6fbf42723f9c1b72095700c20458fd0e8c572794
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19439632"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "19722328"
 ---
 # <a name="debug-office-add-ins-on-ipad-and-mac"></a>Depurar suplementos do Office no iPad e no Mac
 
@@ -15,7 +15,7 @@ Você pode usar o Visual Studio para desenvolver e depurar suplementos no Window
 
 ## <a name="debugging-with-safari-web-inspector-on-a-mac"></a>Depuração com o Safari Web Inspector em um Mac
 
-Você pode depurar um suplemento do Office usando o Safari Web Inspector. 
+Se você tiver um suplemento que mostre a interface do usuário em um painel de tarefas ou em um suplemento de conteúdo, você pode depurar um suplemento do Office usando o Safari Web Inspector. 
 
 Para poder depurar suplementos do Office no Mac, você deve ter o Mac OS High Sierra e Mac Office Versão: 16.9.1 (compilação 18012504) ou posterior. Se você não tiver uma compilação do Office Mac, poderá obter uma ao adquirir o [programa Office 365 Developer](https://aka.ms/o365devprogram).
 
@@ -41,7 +41,7 @@ Para depurar um suplemento no iPad ou Mac, você pode usar o Vorlon.JS, um depur
 
 ### <a name="install-and-set-up-vorlonjs"></a>Instalar e configurar o Vorlon.JS  
 
-1.  Faça logon no dispositivo como um administrador.
+1.  Faça logon no dispositivo como administrador.
 
 2.  Instale o [Node.js](https://nodejs.org) se ele ainda não estiver instalado. 
 

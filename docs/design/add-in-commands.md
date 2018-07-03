@@ -2,12 +2,12 @@
 title: Comandos de suplemento para Excel, Word e PowerPoint
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 42a46bf88cc3f72f94ff5f9162a247d90b33e5c7
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 68eee18233b6b874f237ded41009561dbde774de
+ms.sourcegitcommit: 4e4f7c095e8f33b06bd8a02534ee901125eb1d17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437413"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "20084060"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Comandos de suplemento para Excel, Word e PowerPoint
 
@@ -72,7 +72,7 @@ Aplique as seguintes práticas recomendadas ao desenvolver comandos de suplement
      > [!NOTE]
      > Os suplementos que ocupam muito espaço podem não passar na [Validação do AppSource](https://docs.microsoft.com/en-us/office/dev/store/validation-policies).
 
-- Para todos os ícones, siga as [diretrizes de design de ícones](design-icons.md).
+- Para todos os ícones, siga as [diretrizes de design de ícones](add-in-icons.md).
 - Forneça uma versão do seu suplemento que também funcione em hosts que não tenham suporte para comandos. Um manifesto de suplemento único poderá funcionar tanto em hosts cientes do comando (com os comandos) quanto em hosts não cientes do comando (como um painel de tarefas).
 
    *Figura 3. Suplemento de painel de tarefas no Office 2013 e o mesmo suplemento usando comandos de suplementos no Office 2016*

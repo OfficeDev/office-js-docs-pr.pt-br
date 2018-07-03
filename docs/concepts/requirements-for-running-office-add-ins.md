@@ -2,12 +2,12 @@
 title: Requisitos para a execução de Suplementos do Office
 description: ''
 ms.date: 02/09/2018
-ms.openlocfilehash: a4859af73d8e9cf041990a3533894b24f1cbde6f
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 944ac0c26b864124a8c86b46e023609120d8ea75
+ms.sourcegitcommit: 3e4e3a45a07ed91176cab182c44184c196c23d35
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437420"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "20159674"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Requisitos para a execução de Suplementos do Office
 
@@ -50,6 +50,10 @@ O software a seguir é necessário para o desenvolvimento de um Suplemento do Of
     - [Office 2013 para Casa (.exe)](https://c2rsetup.officeapps.live.com/c2r/download.aspx?productReleaseID=O365HomePremRetail&platform=X86&language=en-us&version=O15GA&source=O15OLSO365) 
 
 - Internet Explorer 11 ou posterior, que deve estar instalado, mas não precisa ser o navegador padrão. Para oferecer suporte aos Suplementos do Office, o cliente do Office que atua como host usa os componentes do navegador que fazem parte do Internet Explorer 11 ou posterior.
+
+  > [!NOTE]
+  > A Configuração de Segurança Aprimorada (ESC) do Internet Explorer deve estar desativada para que os suplementos do Office Web funcionem. Se você estiver usando um computador com Windows Server como cliente para desenvolver suplementos, saiba que a ESC é ativada por padrão nele.
+
 - Um dos navegadores seguintes como o padrão: Internet Explorer 11 ou posterior, ou a versão mais recente do Microsoft Edge, Chrome, Firefox ou Safari (Mac OS).
 - Um editor de HTML e JavaScript, como o Bloco de Notas, o [Visual Studio e Ferramentas de Desenvolvimento da Microsoft](https://www.visualstudio.com/features/office-tools-vs), ou uma ferramenta de desenvolvimento para Web de terceiros.
 

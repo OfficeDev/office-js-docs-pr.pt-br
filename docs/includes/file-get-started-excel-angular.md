@@ -39,14 +39,15 @@ Um arquivo de manifesto do suplemento define seus recursos e configurações.
 2. Use o gerador do Yeoman para gerar o arquivo de manifesto para o seu suplemento. Execute o comando a seguir e responda aos prompts conforme mostrado abaixo.
 
     ```bash
-    yo office
+    yo office 
     ```
-    - **Gostaria de criar uma nova subpasta para o seu projeto?** `No`
+
+    - **Escolha um tipo de projeto:** `Manifest`
     - **Como deseja nomear seu suplemento?** `My Office Add-in`
     - **Para qual aplicativo cliente do Office você deseja suporte?** `Excel`
-    - **Gostaria de criar um novo suplemento?** `No`
 
-    O gerador perguntará se você deseja abrir **resource.html**. Não é necessário abri-lo para este tutorial, mas fique à vontade em fazer isso se tiver curiosidade. Escolha Sim ou Não para concluir o assistente e deixar o gerador fazer seu trabalho.
+
+    Depois de concluir o assistente, um arquivo de manifesto e um arquivo de recurso estarão disponíveis para você criar o seu projeto.
 
     ![Gerador do Yeoman](../images/yo-office.png)
     
@@ -57,7 +58,7 @@ Um arquivo de manifesto do suplemento define seus recursos e configurações.
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-Para este início rápido, é possível usar os certificados fornecidos pelo **gerador Yeoman para Suplementos do Office**. Você já instalou o gerador globalmente (como parte dos **Pré-requisitos** para este início rápido), portanto só precisa copiar os certificados do local de instalação global para a pasta do aplicativo. As etapas a seguir descrevem como concluir esse processo.
+Para este início rápido, é possível usar os certificados fornecidos pelo **Gerador Yeoman para Suplementos do Office**. Você já instalou o gerador globalmente (como parte dos **Pré-requisitos** para este início rápido), então só será preciso copiar os certificados do local de instalação global para a pasta do aplicativo. As etapas a seguir descrevem como concluir esse processo.
 
 1. No terminal, execute o seguinte comando para identificar a pasta onde as bibliotecas globais **npm** estão instaladas:
 

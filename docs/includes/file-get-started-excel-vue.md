@@ -42,18 +42,18 @@ Cada suplemento requer um arquivo de manifesto para definir os recursos e config
     cd my-add-in
     ```
 
-2. Use o gerador do Yeoman para gerar o arquivo de manifesto para o seu suplemento. Execute o comando a seguir e responda aos prompts conforme mostrado abaixo.
+2. Use o gerador do Yeoman para gerar o arquivo de manifesto para o seu suplemento. Execute o comando a seguir e responda às solicitações conforme mostrado abaixo.
 
     ```bash
-    yo office
+    yo office 
     ```
 
-    - **Gostaria de criar uma nova subpasta para o seu projeto?:** `No`
+    - **Escolha um tipo de projeto:** `Manifest`
     - **Como deseja nomear seu suplemento?** `My Office Add-in`
     - **Para qual aplicativo cliente do Office você deseja suporte?:** `Excel`
-    - **Gostaria de criar um novo suplemento?** `No`
 
-    O gerador perguntará se você deseja abrir **resource.html**. Não é necessário abri-lo para este tutorial, mas fique à vontade em fazer isso se tiver curiosidade. Escolha Sim ou Não para concluir o assistente e deixar o gerador fazer seu trabalho.
+
+    Depois de concluir o assistente, um arquivo de manifesto e um arquivo de recurso estarão disponíveis para você criar o seu projeto.
 
     ![Gerador do Yeoman](../images/yo-office.png)
     
