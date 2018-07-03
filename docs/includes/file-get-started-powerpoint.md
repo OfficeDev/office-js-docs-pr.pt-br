@@ -192,16 +192,14 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
     yo office
     ```
 
-    - **Gostaria de criar uma nova subpasta para o seu projeto?** `No`
+    - **Escolha um tipo de projeto:** `Jquery`
+    - **Escolha um tipo de script:** `Javascript`
     - **Como deseja nomear seu suplemento?** `My Office Add-in`
-    - **Para qual aplicativo cliente do Office você deseja suporte?** `PowerPoint`
-    - **Gostaria de criar um novo suplemento?** `Yes`
-    - **Gostaria de usar o TypeScript?** `No`
-    - **Escolha a estrutura:** `Jquery`
-
-    O gerador perguntará se você deseja abrir **resource.html**. Não é necessário abri-lo para este tutorial, mas fique à vontade em fazer isso se tiver curiosidade. Escolha Sim ou Não para concluir o assistente e deixar o gerador fazer seu trabalho.
+    - **Para qual aplicativo cliente do Office você deseja suporte?** `Powerpoint`
 
     ![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-powerpoint-jquery.png)
+    
+    Depois de concluir o assistente, o gerador criará o projeto e instalará os componentes do nó de suporte.
 
 ### <a name="update-the-code"></a>Atualizar o código
 
@@ -354,7 +352,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Parabéns, você criou com êxito um suplemento do PowerPoint! Em seguida, saiba mais sobre os recursos de um suplemento do PowerPoint e crie um suplemento mais complexo seguindo as etapas deste tutorial do suplemento do PowerPoint.
+Parabéns, você criou com êxito um suplemento do PowerPoint! Em seguida, saiba mais sobre os recursos de um suplemento do PowerPoint e crie um suplemento mais complexo seguindo as etapas deste tutorial de suplemento do PowerPoint.
 
 > [!div class="nextstepaction"]
 > [Tutorial do suplemento do PowerPoint](../tutorials/powerpoint-tutorial.yml)
