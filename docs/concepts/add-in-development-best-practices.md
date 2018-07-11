@@ -2,12 +2,12 @@
 title: Práticas recomendadas para o desenvolvimento de suplementos do Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 777cc45570474bc422056cefbe4bd79107bd1fb4
-ms.sourcegitcommit: 4e4f7c095e8f33b06bd8a02534ee901125eb1d17
+ms.openlocfilehash: abb04439d40d412acba51d62bcc7544d01810f52
+ms.sourcegitcommit: 376a80e8bc740a80802af81cabcdabe099217b3e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "20084032"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "20246084"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Práticas recomendadas para o desenvolvimento de suplementos do Office
 
@@ -75,7 +75,7 @@ Para modelos que ilustram padrões que podem ser aplicados enquanto você desenv
 
 - Preocupe-se com a acessibilidade – facilite a interação dos usuários com o seu suplemento e inclua tecnologias auxiliares, como leitores de tela.
 
-- Desenvolva para todas as plataformas e métodos de entrada, incluindo teclado/mouse e [toque](#optimize-for-touch). Certifique-se de que sua interface do usuário seja responsiva a diferentes fatores forma.
+- Desenvolva para todas as plataformas e métodos de entrada, incluindo teclado/mouse e [toque](#optimize-for-touch). Certifique-se de que sua interface do usuário seja responsiva a diferentes fatores de forma.
 
 Para modelos que aplicam os princípios de design que você pode usar e personalizar durante o desenvolvimento do suplemento, consulte [padrões de design UX para Suplementos do Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
 
@@ -121,7 +121,7 @@ Para modelos que aplicam os princípios de design que você pode usar e personal
   |Contínuo|>500 ms|5 segundos|Tempo de espera médio, já não parece ser dinâmico. Podem ser necessários comentários.|
   |Cativo|>500 ms|10 segundos|Longo, mas não o suficiente para fazer executar outra ação. Podem ser necessários comentários.|
   |Estendida|>500 ms|>10 segundos|Longo o suficiente para realizar outra ação durante o tempo de espera. Podem ser necessários comentários.|
-  |Execução longa|>5 ms|>1 minuto|Os usuários certamente farão algo mais.|
+  |Execução longa|>5 segundos|>1 minuto|Os usuários certamente farão algo mais.|
 
 - Monitore a integridade do serviço e use a telemetria para monitorar o sucesso do usuário.
 
