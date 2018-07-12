@@ -8,7 +8,7 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
 1. Abra o projeto em seu editor de código.
 2. Crie um arquivo chamado popup.html na raiz do projeto (onde se encontra index.html).
 3. Adicione a marcação a seguir em popup.html. Observação:
-   - A página tem um `<input>` onde o usuário insere seu nome e um botão que enviará o nome para a página no painel de tarefas onde ele será exibido.
+   - A página tem um `<input>` onde o usuário insere seu nome e um botão que envia o nome para a página no painel de tarefas onde ele será exibido.
    - A marcação carrega um script chamado popup.js que você criará em uma etapa posterior.
    - Ela também carrega uma biblioteca Office.JS e jQuery porque elas serão usadas em popup.js.
 
@@ -44,7 +44,7 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
     ```
 
 4. Crie um arquivo chamado popup.js na raiz do projeto.
-5. Adicione o código a seguir ao popup.js. Observação:
+5. Adicione o código a seguir a popup.js. Observação:
    - *Todas as páginas que chamam APIs na biblioteca Office.JS devem atribuir uma função à propriedade `Office.initialize`.* Se nenhuma inicialização for necessária, a função poderá ter um corpo vazio, mas a propriedade não deve ser deixada indefinida, atribuída a nulo ou a um valor que não seja uma função. Por exemplo, veja o arquivo app.js na raiz do projeto. O código que cria a tarefa deve ser executado antes de qualquer chamada para Office.JS; por isso, a tarefa se encontra em um arquivo de script que é carregado pela página, como neste caso.
    - A função jQuery `ready` é chamada dentro do método `initialize`. É uma regra quase universal que o código de carregamento, inicialização ou bootstrapping de outras bibliotecas JavaScript deva estar dentro da função `Office.initialize`.
 

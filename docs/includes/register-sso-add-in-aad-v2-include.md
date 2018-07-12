@@ -1,12 +1,12 @@
 
 
-1. Navegar para [https://apps.dev.microsoft.com/](https://apps.dev.microsoft.com).
+1. Acesse [https://apps.dev.microsoft.com/](https://apps.dev.microsoft.com).
 
-1. Entre com as credenciais de administrador em seu locatário do Office 365. Por exemplo: MeuNome@contoso.onmicrosoft.com
+1. Entre com as credenciais de administrador em sua locação do Office 365. Por exemplo, MeuNome@contoso.onmicrosoft.com
 
 1. Clique em **Adicionar um aplicativo**.
 
-1. Quando solicitado, digite **$ADD-IN-NAME$** como o nome do aplicativo e pressione **Criar aplicativo**.
+1. Quando solicitado, insira **$ ADD-IN-NAME $** como o nome do aplicativo e pressione **Criar aplicativo**.
 
 1. Quando a página de configuração do aplicativo abrir, copie a **ID do aplicativo** e salve-a. Você a usará em um procedimento posterior.
 
@@ -25,9 +25,9 @@
     > Se você receber um erro informando que o domínio já tem um dono, mas você é o proprietário, siga o procedimento em [Início rápido: adicionar um nome de domínio personalizado ao Active Directory do Azure](https://docs.microsoft.com/en-us/azure/active-directory/add-custom-domain) para registrá-lo e repita este passo.
 
     > [!NOTE]
-    > A parte do domínio do nome do **Escopo** logo abaixo da **URI da ID do aplicativo** mudará automaticamente para corresponder, com `/access_as_user` anexado ao final; por exemplo, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`.
+    > A parte do domínio do nome do **Escopo** logo abaixo da **URI da ID do aplicativo** mudará automaticamente, com `/access_as_user` anexado ao final; por exemplo, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`.
 
-1. Na seção **Aplicativos pré-autorizados** , você identifica os aplicativos que deseja autorizar para o aplicativo da Web do seu suplemento. Cada uma das seguintes IDs precisa ser pré-autorizada. Cada vez que você inserir uma, uma nova caixa de texto vazia aparece. (Insira apenas o GUID.)
+1. Na seção **Aplicativos pré-autorizados**, você identifica os aplicativos que deseja autorizar para o aplicativo da Web do seu suplemento. Cada uma das seguintes IDs precisa ser pré-autorizada. Cada vez que você inserir uma, uma nova caixa de texto vazia aparece. (Insira apenas o GUID.)
     * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
     * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office Online)
     * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Office Online)
@@ -48,8 +48,8 @@
     * perfil
 
     > [!NOTE]
-    > A permissão `User.Read` pode já estar listada por padrão. É uma boa prática não solicitar permissões que não sejam necessárias, portanto, recomendamos que desmarque a caixa para essa permissão se o seu suplemento realmente não precisar.
+    > A permissão `User.Read` pode já estar listada por padrão. É uma boa prática não solicitar permissões que não sejam necessárias, portanto, recomendamos que desmarque a caixa para essa permissão se o seu suplemento realmente não precisar dela.
 
 1. Na parte inferior da caixa de diálogo, clique em **OK**.
 
-1. Clique em**Salvar** na parte inferior da página de registro.
+1. Clique em **Salvar** na parte inferior da página de registro.
