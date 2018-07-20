@@ -30,8 +30,8 @@ Neste artigo, você passará pelo processo de criar um suplemento do OneNote usa
 
     - **Escolha um tipo de projeto:** `Jquery`
     - **Escolha um tipo de script:** `Javascript`
-    - **Como deseja nomear seu suplemento?** `My Office Add-in`
-    - **Para qual aplicativo cliente do Office você deseja suporte?** `Onenote`
+    - **Qual será o nome do suplemento?:** `My Office Add-in`
+    - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?:** `Onenote`
 
     ![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-onenote-jquery.png)
     
@@ -59,7 +59,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do OneNote usa
     </main>
     ```
 
-3. Abra o arquivo **app.js** para especificar o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
+3. Abra o arquivo **index/src.js** para especificar o script do suplemento. Substitua todo o conteúdo com o seguinte código e salve o arquivo.
 
     ```js
     'use strict';
@@ -68,8 +68,6 @@ Neste artigo, você passará pelo processo de criar um suplemento do OneNote usa
 
         Office.initialize = function (reason) {
             $(document).ready(function () {
-                app.initialize();
-
                 // Set up event handler for the UI.
                 $('#addOutline').click(addOutlineToPage);
             });
