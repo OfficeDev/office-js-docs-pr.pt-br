@@ -53,7 +53,7 @@
       displayName: Word
 - name: Conceitos
   items:
-    - name: Requisitos para a execução de suplementos
+    - name: Requisitos para execução de suplementos
       href: concepts/requirements-for-running-office-add-ins.md
     - name: Práticas recomendadas de desenvolvimento de suplementos
       href: concepts/add-in-development-best-practices.md
@@ -286,6 +286,9 @@
         - name: Vincular as regiões em um documento
           href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
           displayName: Word
+        - name: Usar as opções de pesquisa para encontrar texto no seu suplemento do Word
+          href: word/search-option-guidance.md
+          displayName: Word
         - name: Referências da API JavaScript do Word
           href: 'https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview'
           displayName: Word
@@ -328,7 +331,7 @@
         - name: Criar o primeiro suplemento do Project
           href: project/project-add-ins-get-started.md
           displayName: Project
-        - name: Criar um suplemento do projeto que usa REST com um serviço OData no local
+        - name: Criar um suplemento do projeto que use REST com um serviço OData local
           href: project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md
           displayName: Project
         - name: Crie seu primeiro suplemento do painel de tarefas para o Project usando um editor de texto
