@@ -1,19 +1,29 @@
 ---
-title: Realizar sideload de suplementos do Office para teste
+title: Fazer sideload de suplementos do Office para teste
 description: ''
 ms.date: 01/25/2018
+ms.openlocfilehash: e5769ef40868ec996194725d98913e61b76279bc
+ms.sourcegitcommit: 9e0952b3df852bd2896e9f4a6f59f5b89fc1ae24
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "21270290"
 ---
+# <a name="sideload-office-add-ins-for-testing"></a>Fazer sideload de suplementos do Office para teste
 
-# <a name="sideload-office-add-ins-for-testing"></a>Realizar sideload de suplementos do Office para teste
+Você pode instalar um suplemento do Office para teste em um cliente do Office em execução no Windows por meio de um dos seguintes métodos:
 
-Você pode instalar um suplemento do Office para testá-lo em um cliente do Office em execução no Windows usando um catálogo de pasta compartilhada para publicar o manifesto em um compartilhamento de arquivos de rede. 
+- Usando um catálogo de pastas compartilhadas para publicar o manifesto em um compartilhamento de arquivos de rede (instruções abaixo)
+- [Executando o comando "**npm run sideload**" da raiz da pasta do projeto de suplemento.](sideload-office-addin-using-sideload-command.md) 
+>[!NOTE]
+>O método "npm run sideload" funciona apenas para suplementos do Excel, Word e PowerPoint.
 
 Se não estiver testando um suplemento do Word, do Excel ou do PowerPoint no Windows, confira um dos tópicos a seguir para fazer sideload do suplemento:
 
 - [Sideload de suplementos do Office para teste no Office Online](sideload-office-add-ins-for-testing.md)
 - [Sideload dos suplementos do Office para teste em um iPad ou Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
 
-O vídeo a seguir oferece orientações para o processo de sideload do seu suplemento no Office para área de trabalho ou no Office Online.  
+O vídeo a seguir oferece orientações para o processo de sideload do seu suplemento no Office para área de trabalho ou no Office Online usando um catálogo de pasta compartilhada.  
 
 
 > [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]

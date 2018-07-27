@@ -2,12 +2,12 @@
 title: Trabalhar com eventos usando a API JavaScript do Excel
 description: ''
 ms.date: 05/25/2018
-ms.openlocfilehash: 575e4112ed5f55356020eed8327d309fc58cd643
-ms.sourcegitcommit: 9685fd83136bd2106f4c5595bda0010bc1b1950b
+ms.openlocfilehash: 5b48712b0b1b5bd0dd7492ee7c692104a99678a7
+ms.sourcegitcommit: 9e0952b3df852bd2896e9f4a6f59f5b89fc1ae24
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "20596515"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "21270269"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Trabalhar com eventos usando a API JavaScript do Excel 
 
@@ -24,9 +24,22 @@ Sempre que ocorrerem certos tipos de alterações em uma pasta de trabalho do Ex
 | `onActivated` | Evento que ocorre quando um objeto é ativado. | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection), [**Planilha**](https://dev.office.com/reference/add-ins/excel/worksheet) |
 | `onDeactivated` | Evento que ocorre quando um objeto é desativado. | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection), [**Planilha**](https://dev.office.com/reference/add-ins/excel/worksheet) |
 | `onChanged` | Evento que ocorre quando os dados de células são alterados. | [**Planilha**](https://dev.office.com/reference/add-ins/excel/worksheet), [**Tabela**](https://dev.office.com/reference/add-ins/excel/table), [**TableCollection**](https://dev.office.com/reference/add-ins/excel/tablecollection) |
-| `onDataChanged` | Evento que ocorre quando os dados ou a formatação dentro da associação são alterados. | [**Associação**](https://dev.office.com/reference/add-ins/excel/binding) |
+| `onDataChanged` | Evento que ocorre quando os dados ou a formatação na associação são alterados. | [**Associação**](https://dev.office.com/reference/add-ins/excel/binding) |
 | `onSelectionChanged` | Evento que ocorre quando uma célula ativa ou um intervalo selecionado são alterados. | [**Planilha**](https://dev.office.com/reference/add-ins/excel/worksheet), [**Tabela**](https://dev.office.com/reference/add-ins/excel/table), [**Associação**](https://dev.office.com/reference/add-ins/excel/binding) |
 | `onSettingsChanged` | Evento que ocorre quando as Configurações no documento são alteradas. | [**SettingCollection**](https://dev.office.com/reference/add-ins/excel/settingcollection) |
+
+## <a name="preview-beta-events-in-excel"></a>Visualizar eventos (beta) no Excel
+
+> [!NOTE]
+> Esses eventos estão atualmente disponíveis apenas na visualização pública (beta). Para usar esses recursos, você deve usar a biblioteca beta do CDN do Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+
+| Evento | Descrição | Objetos com suporte |
+|:---------------|:-------------|:-----------|
+| `onAdded` | Evento que ocorre quando um gráfico é adicionado. | [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
+| `onDeleted` | Evento que ocorre quando um gráfico é excluído. | [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
+| `onActivated` | Evento que ocorre quando um gráfico é ativado. | [**Gráfico**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md), [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
+| `onDeactivated` | Evento que ocorre quando um gráfico é desativado. | [**Gráfico**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md), [**ChartCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
+| `onCalculated` | Evento que ocorre quando uma planilha termina o cálculo (ou todas as planilhas da coleção foram concluídas). | [**WorksheetCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md), [**Planilha**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/new-events.md) |
 
 ### <a name="event-triggers"></a>Gatilhos de eventos
 

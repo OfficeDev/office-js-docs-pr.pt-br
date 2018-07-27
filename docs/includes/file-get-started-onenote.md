@@ -59,7 +59,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do OneNote usa
     </main>
     ```
 
-3. Abra o arquivo **index/src.js** para especificar o script do suplemento. Substitua todo o conteúdo com o seguinte código e salve o arquivo.
+3. Abra o arquivo **src\index.js** para especificar o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
 
     ```js
     'use strict';
@@ -146,7 +146,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do OneNote usa
 
 4. Na guia **Página Inicial**, escolha o botão **Exibir painel de tarefas** na faixa de opções. O painel de tarefas do suplemento abre em um iFrame perto da página do OneNote.
 
-5. Insira algum texto na área de texto e escolha **Adicionar estrutura de tópicos**. O texto inserido é adiciona à pagina. 
+5. Insira algum texto na área de texto e escolha **Adicionar estrutura de tópicos**. O texto inserido é adicionado à pagina. 
 
     ![O suplemento do OneNote criado a partir deste passo a passo](../images/onenote-first-add-in.png)
 

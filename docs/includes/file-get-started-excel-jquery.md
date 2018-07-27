@@ -172,8 +172,8 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 
     - **Escolha um tipo de projeto:** `Jquery`
     - **Escolha um tipo de script:** `Javascript`
-    - **Como deseja nomear seu suplemento?** `My Office Add-in`
-    - **Para qual aplicativo cliente do Office você deseja suporte?** `Excel`
+    - **Qual será o nome do suplemento?:** `My Office Add-in`
+    - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?:** `Excel`
 
     ![Gerador do Yeoman](../images/yo-office-jquery.png)
     
@@ -206,7 +206,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
     </div>
     ```
 
-7. Abra o arquivo **app.js** para especificar o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
+7. Abra o arquivo **src\index.js** para especificar o script do suplemento. Substitua todo o conteúdo pelo seguinte código e salve o arquivo.
 
     ```js
     'use strict';

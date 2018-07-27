@@ -2,12 +2,12 @@
 title: Criar um Suplemento do Office com ASP.NET que usa logon único
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 6a1c8ea7a8634d701a43e08fd8bb9c5f9c1863cd
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: be7d6a8ab7f646c1ef9e77a2b459c41000c49f43
+ms.sourcegitcommit: eea7f2b1679cf9a209d35880b906e311bdf1359c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437714"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "21241135"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>Criar um Suplemento do Office com ASP.NET que use logon único (visualização)
 
@@ -42,15 +42,15 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
    > 1. No menu **Ferramentas**, navegue até **Nuget Package Manager** > **Console do Gerenciador de Pacotes**. 
 
-   > 2. No console, execute o seguinte comando: Pode levar um minuto ou mais para concluir, mesmo com uma conexão rápida à Internet. Quando terminar, você deve ver **Microsoft.Identity.Client 1.1.1-alpha0393' instalado com sucesso...** perto do final da saída no console.
+   > 2. No console, execute o seguinte comando. Pode ser que leve um minuto ou mais para conclusão, mesmo com uma conexão de Internet rápida. Quando a execução terminar, você verá a mensagem **'Microsoft.Identity.Client 1.1.4-preview0002' instalado com sucesso...** próxima à extremidade da saída do console.
 
-   >    `Install-Package Microsoft.Identity.Client -Version 1.1.1-alpha0393 -Source https://www.myget.org/F/aad-clients-nightly/api/v3/index.json`
+   >    `Install-Package Microsoft.Identity.Client -Version 1.1.4-preview0002`
 
-   > 3. No **Explorador de soluções**, clique com o botão direito em **Referências**. Confirme que o **Microsoft.Identity.Client** está listado. Se não estiver, ou se houver um ícone de aviso na entrada dele, exclua a entrada e use o assistente do Visual Studio Add Reference para adicionar uma referência à montagem em **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.1-alpha0393\lib\net45\Microsoft.Identity.Client.dll**
+   > 3. No **Explorador de soluções**, clique com o botão direito em **Referências**. Confirme se o **Microsoft.Identity.Client** está listado. Se não estiver, ou se houver um ícone de aviso na entrada dele, exclua a entrada e use o assistente do Visual Studio Add Reference para adicionar uma referência à montagem em **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.4-preview0002\lib\net45\Microsoft.Identity.Client.dll**
 
 1. Crie o projeto pela segunda vez.
 
-## <a name="register-the-add-in-with-azure-ad-v20-endpoint"></a>Registre o suplemento com o ponto de extremidade do Azure AD v2.0
+## <a name="register-the-add-in-with-azure-ad-v20-endpoint"></a>Registre o suplemento com o ponto de extremidade v2.0 do Azure AD
 
 As instruções a seguir foram escritas de modo genérico para que possam ser usadas em diversos lugares. Para este artigo, faça o seguinte:
 - Substitua o espaço reservado **$ADD-IN-NAME$** por `Office-Add-in-ASPNET-SSO`.
@@ -120,13 +120,13 @@ As instruções a seguir foram escritas de modo genérico para que possam ser us
     </WebApplicationInfo>
     ```
 
-1. Substitua o espaço reservado "{application_GUID here}" *nos dois lugares* na marcação pela ID do Aplicativo que você copiou ao registrar seu suplemento. Os "{}" não fazem parte do ID, portanto não os inclua. Essa é a mesma ID usada para a ClientID e a Audience no web.config.
+1. Substitua o espaço reservado "{application_GUID here}" *nos dois lugares* na marcação pela ID do Aplicativo que você copiou ao registrar seu suplemento. O símbolo "{}" não faz parte da ID, portanto não o inclua. Essa é a mesma ID usada para a ClientID e a Audience no web.config.
 
     > [!NOTE]
     > * O valor de **Resource** é o **URI da ID do Aplicativo** que você definiu quando adicionou a plataforma API Web no registro do suplemento.
     > * A seção **Scopes** só será usada para gerar uma caixa de diálogo de consentimento se o suplemento for vendido no AppSource.
 
-1. Abra a guia **Avisos** da **Lista de Erros** no Visual Studio. Se houver um aviso informando que `<WebApplicationInfo>` não é um filho válido de `<VersionOverrides>`, sua versão do Visual Studio 2017 Preview não reconhecerá a marcação SSO. Para solucionar esse problema, faça o seguinte para um suplemento do Word, Excel ou PowerPoint. Se você estiver trabalhando com um suplemento do Outlook, confira a solução abaixo.
+1. Abra a guia **Avisos** da **Lista de Erros** no Visual Studio. Se houver um aviso informando que `<WebApplicationInfo>` não é um filho válido de `<VersionOverrides>`, sua versão prévia do Visual Studio 2017 não reconhecerá a marcação SSO. Para solucionar esse problema, faça o seguinte para um suplemento do Word, Excel ou PowerPoint. Se você estiver trabalhando com um suplemento do Outlook, confira a solução abaixo.
 
    - **Solução alternativa para Word, Excel e PowerPoint**
 
