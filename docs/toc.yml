@@ -124,7 +124,7 @@
       items:
         - name: Versões do Office e conjuntos de requisitos
           href: develop/office-versions-and-requirement-sets.md
-        - name: Instalar a versão mais recente do Office
+        - name: Desenvolver
           href: develop/install-latest-office-version.md
         - name: API JavaScript para Office
           href: develop/understanding-the-javascript-api-for-office.md
@@ -344,6 +344,8 @@
           items:
             - name: Fazer sideload de Suplementos do Office no Windows
               href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
+            - name: Fazer sideload de Suplementos do Office usando o comando sideload
+              href: testing/sideload-office-addin-using-sideload-command.md
             - name: Anexar um depurador do painel de tarefas
               href: testing/attach-debugger-from-task-pane.md
             - name: Depurar usando as ferramentas de desenvolvedor F12
