@@ -2,12 +2,12 @@
 title: Manifesto XML dos Suplementos do Office
 description: ''
 ms.date: 02/09/2018
-ms.openlocfilehash: 24c212335fa50feb4d13b6069a24cacbd9849715
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 71c77e190d5d2d6cc67ada671b9efe3168b7f7b5
+ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437616"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "21703816"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifesto XML dos Suplementos do Office
 
@@ -107,11 +107,14 @@ Use apenas o elemento [AppDomains](https://dev.office.com/reference/add-ins/mani
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>Especificar os domínios que você deseja abrir na janela do suplemento
 
-Por padrão, se o suplemento tentar acessar uma URL em um domínio diferente do domínio que hospeda a página inicial (conforme especificado no elemento [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) do arquivo de manifesto), essa URL abrirá em uma nova janela de navegador fora do painel de suplementos do aplicativo host do Office. Esse comportamento padrão protege o usuário contra a navegação de página inesperada dentro do painel de suplemento de elementos **iFrame**.
+Durante a execução no Office Online, o painel de tarefas pode ser navegado para qualquer URL. No entanto, nas plataformas para desktop, se o suplemento tentar acessar uma URL em um domínio diferente do domínio que hospeda a página inicial (conforme especificado no elemento [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) do arquivo de manifesto), essa URL abrirá em uma nova janela de navegador fora do painel de suplementos do aplicativo host do Office.
 
-Para substituir esse comportamento, especifique cada domínio que você deseja abrir na janela do suplemento na lista de domínios especificados no elemento [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains) do arquivo de manifesto. Se o suplemento tentar acessar uma URL em um domínio que não está na lista, essa URL abre em uma nova janela do navegador (fora do painel de suplementos).
+Para substituir esse comportamento (Office para desktop), especifique cada domínio que você deseja abrir na janela do suplemento na lista de domínios especificados no elemento [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains) do arquivo de manifesto. Se o suplemento tentar ir para uma URL em um domínio que esteja na lista, ele será aberto no painel de tarefas do Office para desktop e do Office Online. Se ele tentar ir para uma URL que não esteja na lista, no Office para desktop, essa URL será aberta em uma nova janela do navegador (fora do painel de suplementos).
 
-O exemplo de manifesto XML a seguir hospeda sua página de suplemento principal no domínio `https://www.contoso.com`, conforme especificado no elemento **SourceLocation**. Ele também especifica o domínio `https://www.northwindtraders.com` em um elemento [AppDomain](http://msdn.microsoft.com/en-us/library/2a0353ec-5e09-6fbf-1636-4bb5dcebb9bf%28Office.15%29.aspx), dentro da lista de elementos **AppDomains**. Se o suplemento acessar uma página no domínio www.northwindtraders.com, essa página abrirá no painel do suplemento.
+> [!NOTE]
+> Esse comportamento aplica-se somente ao painel raiz do suplemento. Se houver um iframe incorporado na página do suplemento, o iframe poderá ser direcionado para qualquer URL, independentemente de estar listado em **AppDomains**, mesmo no Office para desktop.
+
+O exemplo de manifesto XML a seguir hospeda sua página de suplemento principal no domínio `https://www.contoso.com`, conforme especificado no elemento **SourceLocation**. Também especifica o domínio `https://www.northwindtraders.com` em um elemento [AppDomain](https://dev.office.com/reference/add-ins/manifest/appdomain) dentro da lista de elementos **AppDomains**. Se o suplemento for para uma página no domínio www.northwindtraders.com, essa página será aberta no painel de suplementos, mesmo no Office para desktop.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>

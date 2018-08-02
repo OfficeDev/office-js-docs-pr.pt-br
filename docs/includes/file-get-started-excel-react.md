@@ -1,6 +1,6 @@
 # <a name="build-an-excel-add-in-using-react"></a>Criar um suplemento do Excel usando o React
 
-Neste artigo, você passará pelo processo de criação de um suplemento do Excel usando o React e a API JavaScript do Excel.
+Neste artigo, você passará pelo processo de criar um suplemento do Excel usando o React e a API JavaScript do Excel.
 
 ## <a name="environment"></a>Ambiente
 
@@ -46,7 +46,7 @@ Cada suplemento requer um arquivo de manifesto para definir os recursos e config
     yo office 
     ```
 
-    - **Escolha um tipo de projeto:** `Manifest`
+    - **Escolha um tipo de projeto:** `Office Add-in containing the manifest only`
     - **Como deseja nomear seu suplemento?:** `My Office Add-in`
     - **Para qual aplicativo cliente do Office você deseja suporte?:** `Excel`
 

@@ -242,18 +242,18 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
     cd my-word-addin
     ```
 
-3. Use o gerador Yeoman para criar um projeto do suplemento do Word. Execute o comando a seguir e responda às solicitações da seguinte forma:
+3. Use o gerador Yeoman para criar um projeto do suplemento do Word. Execute o comando a seguir e responda aos prompts da seguinte forma:
 
     ```bash
     yo office
     ```
 
-    - **Escolha um tipo de projeto:** `Jquery`
+    - **Escolha um tipo de projeto:** `Office Add-in project using Jquery framework`
     - **Escolha um tipo de script:** `Javascript`
-    - **Como deseja nomear o seu suplemento?:** `My Office Add-in`
-    - **Para qual aplicativo cliente do Office você deseja oferecer suporte?:** `Word`
+    - **Qual será o nome do suplemento?:** `My Office Add-in`
+    - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?:** `Word`
 
-    ![Uma captura de tela das solicitações e respostas do gerador Yeoman](../images/yo-office-word-jquery.png)
+    ![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-word-jquery.png)
     
     Depois de concluir o assistente, o gerador criará o projeto e instalará os componentes do nó de suporte.
 

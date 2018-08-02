@@ -28,10 +28,10 @@ Neste artigo, você passará pelo processo de criar um suplemento do Project usa
     yo office
     ```
 
-    - **Escolha um tipo de projeto:** `Jquery`
+    - **Escolha um tipo de projeto:** `Office Add-in project using Jquery framework`
     - **Escolha um tipo de script:** `Javascript`
-    - **Como deseja nomear seu suplemento?** `My Office Add-in`
-    - **Para qual aplicativo cliente do Office você deseja suporte?** `Project`
+    - **Qual será o nome do suplemento?:** `My Office Add-in`
+    - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?:** `Project`
 
     ![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-project-jquery.png)
     

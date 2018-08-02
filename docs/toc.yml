@@ -124,7 +124,7 @@
       items:
         - name: Versões do Office e conjuntos de requisitos
           href: develop/office-versions-and-requirement-sets.md
-        - name: Desenvolver
+        - name: Instalar a versão mais recente do Office
           href: develop/install-latest-office-version.md
         - name: API JavaScript para Office
           href: develop/understanding-the-javascript-api-for-office.md
@@ -135,6 +135,8 @@
               href: develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md
             - name: Carregar o Office.js
               href: develop/loading-the-dom-and-runtime-environment.md
+            - name: Modelo de objeto da API JavaScript para Office
+              href: develop/office-javascript-api-object-model.md
             - name: Programação assíncrona em Suplementos do Office
               href: develop/asynchronous-programming-in-office-add-ins.md
             - name: Persistir o estado e as configurações
@@ -331,7 +333,7 @@
         - name: Criar o primeiro suplemento do Project
           href: project/project-add-ins-get-started.md
           displayName: Project
-        - name: Criar um suplemento do projeto que use REST com um serviço OData local
+        - name: Criar um suplemento do Project que use REST com um serviço OData local
           href: project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md
           displayName: Project
         - name: Crie seu primeiro suplemento do painel de tarefas para o Project usando um editor de texto

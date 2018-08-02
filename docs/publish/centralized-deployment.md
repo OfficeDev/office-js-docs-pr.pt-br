@@ -2,12 +2,12 @@
 title: Publicar Suplementos do Office usando a Implantação Centralizada por meio do Centro de administração do Office 365
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 42ef569ddc868fb82730e445d4d34fd9caa94b0e
-ms.sourcegitcommit: eea7f2b1679cf9a209d35880b906e311bdf1359c
+ms.openlocfilehash: b16d38d9e4dff46257dfe04b280eab4752558a01
+ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "21241212"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "21703893"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-office-365-admin-center"></a>Publicar Suplementos do Office usando a Implantação Centralizada por meio do Centro de administração do Office 365
 
@@ -69,7 +69,7 @@ Se sua organização atender aos requisitos, conclua as etapas a seguir para pub
 
     ![Caixa de diálogo Selecionar um suplemento no Centro de administração do Office 365](../images/select-an-add-in.png)
 
-9. O suplemento agora está disponível para atribuição. Na página do suplemento, seu status é **Ativado**, como exibido para o suplemento Blocos do Power BI na captura de tela abaixo. Na seção **Quem tem acesso**, escolha **Editar** para atribuir o suplemento aos usuários e/ou grupos.
+9. O suplemento está agora disponível para atribuição. Na página para o suplemento, o status é **Ativo**, como o mostrado para o suplemento Blocos do Power BI na captura de tela abaixo. Na seção **Quem tem acesso**, escolha **Editar** para atribuir o suplemento para usuários e/ou grupos.
 
     ![A página do suplemento Bloco do Power BI no Centro de administração do Office 365](../images/power-bi-tiles.png)
 
@@ -136,6 +136,14 @@ Caso contrário, os usuários podem adicioná-lo ao aplicativo do Office da segu
 
     ![A captura de tela mostra a guia Administração Gerenciada da página Suplementos do Office de um aplicativo do Office. O suplemento Citações é exibido na guia.](../images/office-add-ins-admin-managed.png)
     
-## <a name="see-also"></a>Confira também
+No entanto, para o Outlook, os usuários podem fazer o seguinte:
+
+1.  No Outlook 2016, escolha **Início** > **Repositório**.
+2.  Escolha o item **Gerenciado pelo administrador** na guia do suplemento.
+3.  Escolha o suplemento e escolha **Adicionar**.
+
+    ![A captura de tela mostra a área gerenciada pelo administrador da página Repositório do aplicativo Outlook.](../images/outlook-add-ins-admin-managed.png)
+
+## <a name="see-also"></a>Veja também
 [Determinar se a Implantação Centralizada de suplementos funciona para sua organização do Office 365](https://support.office.com/en-us/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-b4527d49-4073-4b43-8274-31b7a3166f92)
     

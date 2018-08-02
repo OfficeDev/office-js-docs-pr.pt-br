@@ -2,21 +2,22 @@
 title: Fazer sideload de suplementos do Office para teste
 description: ''
 ms.date: 01/25/2018
-ms.openlocfilehash: e5769ef40868ec996194725d98913e61b76279bc
-ms.sourcegitcommit: 9e0952b3df852bd2896e9f4a6f59f5b89fc1ae24
+ms.openlocfilehash: 42af5d0665fc6cb1135103789adcb4414c4763ff
+ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "21270290"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "21703802"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>Fazer sideload de suplementos do Office para teste
 
 Você pode instalar um suplemento do Office para teste em um cliente do Office em execução no Windows por meio de um dos seguintes métodos:
 
 - Usando um catálogo de pastas compartilhadas para publicar o manifesto em um compartilhamento de arquivos de rede (instruções abaixo)
-- [Executando o comando "**npm run sideload**" da raiz da pasta do projeto de suplemento.](sideload-office-addin-using-sideload-command.md) 
->[!NOTE]
->O método "npm run sideload" funciona apenas para suplementos do Excel, Word e PowerPoint.
+- [Executando o comando "**npm run sideload**" da raiz da pasta do projeto de suplemento.](sideload-office-addin-using-sideload-command.md)
+
+    > [!NOTE]
+    > O método "npm run sideload" funciona apenas para suplementos do Excel, Word e PowerPoint.
 
 Se não estiver testando um suplemento do Word, do Excel ou do PowerPoint no Windows, confira um dos tópicos a seguir para fazer sideload do suplemento:
 

@@ -2,12 +2,12 @@
 title: Limites de recurso e otimização de desempenho para Suplementos do Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 1f352cfe07b114a7c2622e68a0bf41fb5878d982
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: f5f24faf337a40caf7245d45052208ef6f46af1a
+ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437693"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "21703823"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites de recurso e otimização de desempenho para Suplementos do Office
 
@@ -46,11 +46,11 @@ Além do núcleo da CPU, da memória e de regras de confiabilidade, os suplement
 
 - **Tempo de resposta de expressões regulares**: um limite padrão de 1.000 milissegundos para que o Outlook avalie todas as expressões regulares no manifesto de um suplemento do Outlook. Exceder o limite faz com que o Outlook repita a avaliação posteriormente.
 
-    Usando uma política de grupo ou uma configuração específica para um aplicativo no registro do Windows, os administradores podem ajustar esse valor limite padrão de 1.000 milissegundos na configuração **OutlookActivationAlertThreshold**. Para saber mais, consulte [Substituir as configurações de uso de recursos para desempenho de suplementos do Office](http://msdn.microsoft.com/library/da14ec8c-5075-4035-a951-fc3c2b15c04b%28Office.15%29.aspx).
+    Usando uma política de grupo ou uma configuração específica no registro do Windows, os administradores podem ajustar esse valor limite padrão de 1.000 milissegundos na configuração **OutlookActivationAlertThreshold**.
 
 - **Reavaliação de expressões regulares**: um limite padrão de três vezes para que o Outlook reavalie todas as expressões regulares em um manifesto. Se a avaliação falhar todas as três vezes excedendo o limite aplicável (que é o padrão de 1.000 milissegundos ou um valor especificado por **OutlookActivationAlertThreshold**, se essa configuração existir no Registro do Windows), o Outlook desabilitará o suplemento do Outlook. O Centro de Administração do Exchange exibe o status desabilitado, e o suplemento é desabilitado para uso nos clientes avançados do Outlook, no Outlook Web App e no OWA para Dispositivos.
 
-    Usando uma política de grupo ou uma configuração específica para um aplicativo no registro do Windows, os administradores podem ajustar esse número de tentativas de avaliação na configuração **OutlookActivationManagerRetryLimit**. Para saber mais, consulte [Substituir as configurações de uso de recursos para desempenho de suplementos do Office](http://msdn.microsoft.com/library/da14ec8c-5075-4035-a951-fc3c2b15c04b%28Office.15%29.aspx).
+    Usando uma política de grupo ou uma configuração específica para um aplicativo no registro do Windows, os administradores podem ajustar esse número de novas tentativas de avaliação na configuração **OutlookActivationManagerRetryLimit**.
 
 ### <a name="task-pane-and-content-add-ins"></a>Suplementos de painel de tarefas e de conteúdo
     

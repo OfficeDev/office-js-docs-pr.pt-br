@@ -48,15 +48,13 @@ Considere o tamanho da tela HTML (painel de tarefas, caixa de diálogo ou suplem
 
 |Fazer|Não fazer|
 |:-----|:-----|
-| Use [durações de movimento recomendadas](https://developer.microsoft.com/en-us/fabric#/styles/animations). | Não use animações exageradas. Evite criar experiências belas, mas que desviam a atenção dos clientes.
-| Siga as curvas de atenuação recomendadas no [Guia de Animação da Microsoft](https://microsoft.sharepoint.com/teams/BrandCentral/Pages/The-Microsoft-brand-Core-elements-Motion.aspx#topic_0).  |Não mova os elementos de uma maneira irregular ou desconexa. Evite antecipações, saltos, pulos ou outros efeitos que emulem as características físicas do mundo natural.|
+| Use [durações de movimento recomendadas](https://developer.microsoft.com/fabric#/styles/animations). | Não use animações exageradas. Evite criar experiências belas, mas que desviam a atenção dos clientes.
+| Acompanhe [curvas de suavização recomendadas](https://docs.microsoft.com/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion).  |Não mova os elementos de uma maneira irregular ou desconexa. Evite antecipações, saltos, pulos ou outros efeitos que emulem as características físicas do mundo natural.|
 
 ![GIF que mostra blocos carregando usando um esmaecimento sutil ao lado de um gif que mostra blocos carregando com um salto](../images/add-in-motion-character.gif)
 
 ## <a name="see-also"></a>Veja também
 
-* 
-  [Diretrizes de animação do Fabric](https://developer.microsoft.com/en-us/fabric#/styles/animations)
-* 
-  [Movimento para aplicativos da Plataforma Universal do Windows](https://docs.microsoft.com/pt-br/windows/uwp/design/motion/)
+* [Diretrizes de animação do Fabric](https://developer.microsoft.com/fabric#/styles/animations)
+* [Movimento para aplicativos da Plataforma Universal do Windows](https://docs.microsoft.com/windows/uwp/design/motion)
 

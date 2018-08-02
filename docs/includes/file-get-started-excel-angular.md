@@ -42,7 +42,7 @@ Um arquivo de manifesto do suplemento define seus recursos e configurações.
     yo office 
     ```
 
-    - **Escolha um tipo de projeto:** `Manifest`
+    - **Escolha um tipo de projeto:** `Office Add-in containing the manifest only`
     - **Como deseja nomear seu suplemento?** `My Office Add-in`
     - **Para qual aplicativo cliente do Office você deseja suporte?** `Excel`
 

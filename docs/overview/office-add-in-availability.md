@@ -1,13 +1,13 @@
 ---
 title: Disponibilidade de host e plataforma para suplementos do Office
 description: Conjuntos de requisitos compatíveis com Excel, Word, Outlook, PowerPoint e OneNote.
-ms.date: 03/23/2018
-ms.openlocfilehash: f50ab7e5312702eb25fbb2c8a25291c5ff5027a7
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.date: 07/31/2018
+ms.openlocfilehash: 084029c0a5b70b73eaa0b3fcc180f4a813fb8b72
+ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19438869"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "21703907"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilidade de host e plataforma para suplementos do Office
 
@@ -38,6 +38,9 @@ Se uma célula de tabela apresenta um asterisco (*), significa que estamos traba
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>
         - BindingEvents<br>
@@ -77,6 +80,9 @@ Se uma célula de tabela apresenta um asterisco (*), significa que estamos traba
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
         - DocumentEvents<br>
@@ -95,6 +101,10 @@ Se uma célula de tabela apresenta um asterisco (*), significa que estamos traba
     <td>- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
         - DocumentEvents<br>
@@ -114,6 +124,10 @@ Se uma célula de tabela apresenta um asterisco (*), significa que estamos traba
     <td>- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
+        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
         - DocumentEvents<br>
@@ -148,7 +162,7 @@ Se uma célula de tabela apresenta um asterisco (*), significa que estamos traba
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Caixa de correio 1.4</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Caixa de correio 1.5</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Caixa de correio 1.6</a></td>
-    <td>não disponível</td>
+    <td>Não disponível</td>
   </tr>
   <tr>
     <td>Office 2013 para Windows</td>
@@ -159,7 +173,7 @@ Se uma célula de tabela apresenta um asterisco (*), significa que estamos traba
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Caixa de correio 1.2</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Caixa de correio 1.3</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Caixa de correio 1.4</a></td>
-    <td>não disponível</td>
+    <td>Não disponível</td>
   </tr>
   <tr>
     <td>Office 2016 para Windows</td>
@@ -172,8 +186,8 @@ Se uma célula de tabela apresenta um asterisco (*), significa que estamos traba
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Caixa de correio 1.3</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Caixa de correio 1.4</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Caixa de correio 1.5</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Caixa de correio 1.6</a></td>
-    <td>não disponível</td> 
+      - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Caixa de correio 1.4</a></td>
+    <td>Não disponível</td> 
   </tr>
   <tr>
     <td>Office para iOS</td>
@@ -184,7 +198,7 @@ Se uma célula de tabela apresenta um asterisco (*), significa que estamos traba
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Caixa de correio 1.3</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Caixa de correio 1.4</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Caixa de correio 1.5</a></td>    
-    <td>não disponível</td>
+    <td>Não disponível</td>
   </tr>
   <tr>
     <td>Office 2016 para Mac</td>
@@ -197,7 +211,7 @@ Se uma célula de tabela apresenta um asterisco (*), significa que estamos traba
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Caixa de correio 1.4</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Caixa de correio 1.5</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Caixa de correio 1.6</a></td>
-    <td>não disponível</td>
+    <td>Não disponível</td>
   </tr>
   <tr>
     <td>Office para Android</td>
@@ -208,7 +222,7 @@ Se uma célula de tabela apresenta um asterisco (*), significa que estamos traba
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Caixa de correio 1.3</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Caixa de correio 1.4</a><br>
       - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Caixa de correio 1.5</a></td>
-    <td>não disponível</td>
+    <td>Não disponível</td>
   </tr>
 </table>
 
@@ -456,35 +470,9 @@ Se uma célula de tabela apresenta um asterisco (*), significa que estamos traba
          - HtmlCoercion<br>
          - ImageCoercion</td>
   </tr>
-  <tr>
-    <td>Office 2013 para Windows</td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-  </tr> 
-  <tr>
-    <td>Office 2016 para Windows</td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td> 
-  </tr>
-  <tr>
-    <td>Office para iOS</td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-  </tr>
-  <tr>
-    <td>Office 2016 para Mac</td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* </td>
-  </tr>
 </table>
 
 <br/>
-
-\* = Estamos trabalhando nisso. 
 
 ## <a name="see-also"></a>Veja também
 

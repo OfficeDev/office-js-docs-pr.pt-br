@@ -1,10 +1,15 @@
 ---
-title: Atualize para a API de JavaScript mais recente da biblioteca do Office e o esquema de manifesto do suplemento da versão 1.1
-description: ''
+title: Atualize para a biblioteca mais recente da API JavaScript para Office e o esquema de manifesto do suplemento da versão 1.1
+description: Atualize os arquivos de JavaScript (Office.js e arquivos .js específicos do aplicativo) e o arquivo de validação de manifesto de suplemento no projeto do seu Suplemento do Office para a versão 1.1.
 ms.date: 12/04/2017
+ms.openlocfilehash: 2ebfa5e908f278fd3abe754e536625fe6e7d9870
+ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "21703781"
 ---
-
-# <a name="update-to-the-latest-javascript-api-for-office-library-and-version-11-add-in-manifest-schema"></a>Atualize para a API de JavaScript mais recente da biblioteca do Office e o esquema de manifesto do suplemento da versão 1.1
+# <a name="update-to-the-latest-javascript-api-for-office-library-and-version-11-add-in-manifest-schema"></a>Atualize para a biblioteca mais recente da API JavaScript para Office e o esquema de manifesto do suplemento da versão 1.1
 
 Este artigo descreve como atualizar os arquivos do JavaScript (Office.js e arquivos .js específicos do aplicativo) e o arquivo de validação do manifesto do suplemento no projeto do suplemento do Office para a versão 1.1.
 
@@ -53,7 +58,8 @@ Observe que o processo de atualização é aplicado _por projeto_. Você precisa
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
     ```
 
-    > **OBSERVAÇÃO**: O `/1/` na frente de `office.js` na URL de CDN especifica o uso da versão incremental mais recente na versão 1 do Office.js.   
+   > [!NOTE] 
+   > O `/1/` na frente de `office.js` na URL de CDN especifica o uso da versão incremental mais recente na versão 1 do Office.js.   
 
 
 ### <a name="update-the-manifest-file-in-your-project-to-use-schema-version-11"></a>Atualizar o arquivo de manifesto no projeto para usar a versão 1.1 do esquema
@@ -71,7 +77,8 @@ No arquivo de manifesto do suplemento atualize o atributo **xmlns** do elemento 
 </OfficeApp>
 ```
 
-> **OBSERVAÇÃO:** Após atualizar a versão do esquema do manifesto do suplemento para 1.1, será preciso remover os elementos **Capabilities** e **Capability** e substituí-los pelos [Hosts](https://dev.office.com/reference/add-ins/manifest/hosts) e elementos [Host](https://dev.office.com/reference/add-ins/manifest/hosts) ou pelos [elementos Requirements e Requirement](specify-office-hosts-and-api-requirements.md).
+> [!NOTE] 
+> Após atualizar a versão do esquema do manifesto do suplemento para 1.1, será preciso remover os elementos **Capabilities** e **Capability** e substituí-los pelos [Hosts](https://dev.office.com/reference/add-ins/manifest/hosts) e elementos [Host](https://dev.office.com/reference/add-ins/manifest/hosts) ou pelos [elementos Requirements e Requirement](specify-office-hosts-and-api-requirements.md).
 
 ## <a name="updating-an-office-add-in-project-created-with-a-text-editor-or-other-ide"></a>Atualização de um projeto de suplemento do Office criado com um editor de texto ou outro IDE
 
@@ -81,7 +88,8 @@ O processo de atualização é aplicado _por projeto_. Você precisará repetir 
 
 Você não precisa de cópias locais dos arquivos da API JavaScript para Office (Office.js e arquivos .js específicos do aplicativo) para desenvolver um suplemento do Office (a referência à CDN para Office.js baixa os arquivos necessários no tempo de execução). Porém, se desejar uma cópia local dos arquivos da biblioteca, pode usar o [Utilitário de Linha de Comando NuGet](http://docs.nuget.org/consume/installing-nuget) e o comando `Install-Package Microsoft.Office.js` para baixá-los.
 
-> **OBSERVAÇÃO:** Para obter uma cópia da XSD (Definição de esquema XML) para o manifesto do suplemento v1.1, confira a listagem em [Referência de esquema para manifestos de Suplementos do Office (v1.1)](../develop/add-in-manifests.md).
+> [!NOTE] 
+> Para obter uma cópia da XSD (Definição de esquema XML) para o manifesto do suplemento v1.1, confira a listagem em [Referência de esquema para manifestos de Suplementos do Office (v1.1)](../develop/add-in-manifests.md).
 
 
 ### <a name="update-the-javascript-api-for-office-library-files-in-your-project-to-use-the-newest-release"></a>Atualizar os arquivos da biblioteca da API JavaScript para Office em seu projeto para usar a versão mais recente
@@ -94,7 +102,8 @@ Você não precisa de cópias locais dos arquivos da API JavaScript para Office 
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
     ```
 
-    > **OBSERVAÇÃO**: O `/1/` na frente de `office.js` na URL de CDN especifica o uso da versão incremental mais recente na versão 1 do Office.js.   
+   > [!NOTE] 
+   > O `/1/` na frente de `office.js` na URL de CDN especifica o uso da versão incremental mais recente na versão 1 do Office.js.   
 
 ### <a name="update-the-manifest-file-in-your-project-to-use-schema-version-11"></a>Atualizar o arquivo de manifesto no projeto para usar a versão 1.1 do esquema
 
@@ -111,7 +120,8 @@ No arquivo de manifesto do suplemento atualize o atributo **xmlns** do elemento 
 </OfficeApp>
 ```
 
-> **OBSERVAÇÃO:** Após atualizar a versão do esquema do manifesto do suplemento para 1.1, será preciso remover os elementos **Capabilities** e **Capability** e substituí-los pelos [Hosts](https://dev.office.com/reference/add-ins/manifest/hosts) e elementos [Host](https://dev.office.com/reference/add-ins/manifest/hosts) ou pelos [elementos Requirements e Requirement](specify-office-hosts-and-api-requirements.md).
+> [!NOTE] 
+> Após atualizar a versão do esquema do manifesto do suplemento para 1.1, será preciso remover os elementos **Capabilities** e **Capability** e substituí-los pelos [Hosts](https://dev.office.com/reference/add-ins/manifest/hosts) e elementos [Host](https://dev.office.com/reference/add-ins/manifest/hosts) ou pelos [elementos Requirements e Requirement](specify-office-hosts-and-api-requirements.md).
     
 
 ## <a name="see-also"></a>Veja também

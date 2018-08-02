@@ -28,7 +28,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do OneNote usa
     yo office
     ```
 
-    - **Escolha um tipo de projeto:** `Jquery`
+    - **Escolha um tipo de projeto:** `Office Add-in project using Jquery framework`
     - **Escolha um tipo de script:** `Javascript`
     - **Qual será o nome do suplemento?:** `My Office Add-in`
     - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?:** `Onenote`
@@ -146,7 +146,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do OneNote usa
 
 4. Na guia **Página Inicial**, escolha o botão **Exibir painel de tarefas** na faixa de opções. O painel de tarefas do suplemento abre em um iFrame perto da página do OneNote.
 
-5. Insira algum texto na área de texto e escolha **Adicionar estrutura de tópicos**. O texto inserido é adicionado à pagina. 
+5. Insira algum texto na área de texto e escolha **Adicionar estrutura de tópicos**. O texto inserido é adiciona à pagina. 
 
     ![O suplemento do OneNote criado a partir deste passo a passo](../images/onenote-first-add-in.png)
 
