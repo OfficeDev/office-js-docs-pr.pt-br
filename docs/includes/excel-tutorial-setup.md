@@ -7,7 +7,7 @@ Neste tutorial, comece configurando seu projeto de desenvolvimento.
 
 Para usar este tutorial, você precisa instalar o seguinte. 
 
-- Excel 2016, versão 1711 (build 8730.1000 do Clique para Executar) ou posterior. Talvez você precise ser um participante do programa Office Insider para ter essa versão. Para saber mais, confira a página [Seja um Office Insider](https://products.office.com/pt-br/office-insider?tab=tab-1).
+- Excel 2016, versão 1711 (build 8730.1000 do Clique para Executar) ou posterior. Talvez você precise ser um participante do programa Office Insider para ter essa versão. Para saber mais, confira a página [Seja um Office Insider](https://products.office.com/office-insider?tab=tab-1).
 - [Nó e npm](https://nodejs.org/en/) 
 - [Git Bash](https://git-scm.com/downloads) (ou outro cliente Git)
 
