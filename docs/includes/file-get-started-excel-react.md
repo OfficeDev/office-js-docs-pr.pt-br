@@ -10,150 +10,59 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- Instale globalmente [Criar aplicativo do React](https://github.com/facebookincubator/create-react-app).
-
-    ```bash
-    npm install -g create-react-app
-    ```
+- [Node.js](https://nodejs.org)
 
 - Instale a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador do Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.
-
     ```bash
     npm install -g yo generator-office
     ```
 
-## <a name="generate-a-new-react-app"></a>Gerar um novo aplicativo do React
+### <a name="create-the-web-app"></a>Criar o aplicativo Web
 
-Use Criar aplicativo do React para gerar seu aplicativo do React. No terminal, execute o seguinte comando:
+1. Crie uma pasta na sua unidade local e nomeie-a como **my-addin**. Esse é o local em que você criará os arquivos para seu aplicativo.
 
-```bash
-create-react-app my-addin
-```
-
-## <a name="generate-the-manifest-file-and-sideload-the-add-in"></a>Gerar o arquivo de manifesto e realizar sideload do suplemento
-
-Cada suplemento requer um arquivo de manifesto para definir os recursos e configurações.
-
-1. Navegue até a pasta do seu aplicativo.
+2. Navegue até a pasta do seu aplicativo.
 
     ```bash
     cd my-addin
     ```
 
-2. Use o gerador do Yeoman para gerar o arquivo de manifesto para o seu suplemento. Execute o comando a seguir e responda aos prompts, conforme mostrado na seguinte captura de tela:
+3. Use o gerador do Yeoman para gerar o arquivo de manifesto para o seu suplemento. Execute o comando a seguir e responda aos prompts, conforme mostrado na seguinte captura de tela.
 
     ```bash
-    yo office 
+    yo office
     ```
 
-    - **Escolha um tipo de projeto:** `Office Add-in containing the manifest only`
-    - **Como deseja nomear seu suplemento?:** `My Office Add-in`
-    - **Para qual aplicativo cliente do Office você deseja suporte?:** `Excel`
+    - **Escolha um tipo de projeto:** `Office Add-in project using React framework`
+    - **Como deseja nomear seu suplemento?** `My Office Add-in`
+    - **Para qual aplicativo cliente do Office você deseja suporte?** `Excel`
 
-
-    Depois de concluir o assistente, um arquivo de manifesto e um arquivo de recurso estarão disponíveis para você criar seu projeto.
+    ![Gerador do Yeoman](../images/yo-office-excel-react.png)
     
-    ![Gerador do Yeoman](../images/yo-office.png)
-    
-    > [!NOTE]
-    > Se for solicitada a substituição de **package.json**, responda **Não** (não substituir).
+    Depois de concluir o assistente, o gerador criará o projeto e instalará os componentes do nó de suporte.
 
-3. Siga as instruções da plataforma que você usará para executar o suplemento e realizar sideload do suplemento no Excel.
-
-    - Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online: [Realizar sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad e Mac: [Realizar sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
-
-## <a name="update-the-app"></a>Atualizar o aplicativo
-
-1. Abra **public/index.html**, adicione a marca `<script>` a seguir imediatamente antes da marca `</head>` e salve o arquivo.
-
-    ```html
-    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
-    ```
-
-2. Abra **src/index.js**, substitua `ReactDOM.render(<App />, document.getElementById('root'));` pelo código a seguir e salve o arquivo. 
-
-    ```typescript
-    const Office = window.Office;
-    
-    Office.initialize = () => {
-      ReactDOM.render(<App />, document.getElementById('root'));
-    };
-    ```
-
-3. Abra **src/App.js**, substitua o conteúdo do arquivo pelo código a seguir e salve o arquivo. 
+4.  Abra **src/components/App.tsx**, procure o comentário "Atualizar a cor de preenchimento", altere a cor de preenchimento de "amarelo" para "azul" e salve o arquivo. 
 
     ```js
-    import React, { Component } from 'react';
-    import './App.css';
+    range.format.fill.color = 'blue'
 
-    class App extends Component {
-      constructor(props) {
-        super(props);
-
-        this.onSetColor = this.onSetColor.bind(this);
-      }
-
-      onSetColor() {
-        window.Excel.run(async (context) => {
-          const range = context.workbook.getSelectedRange();
-          range.format.fill.color = 'green';
-          await context.sync();
-        });
-      }
-
-      render() {
-        return (
-          <div id="content">
-            <div id="content-header">
-              <div className="padding">
-                  <h1>Welcome</h1>
-              </div>
-            </div>
-            <div id="content-main">
-              <div className="padding">
-                  <p>Choose the button below to set the color of the selected range to green.</p>
-                  <br />
-                  <h3>Try it out</h3>
-                  <button onClick={this.onSetColor}>Set color</button>
-              </div>
-            </div>
-          </div>
-        );
-      }
-    }
-
-    export default App;
     ```
 
-4. Abra **src/App.css**, substitua o conteúdo do arquivo pelo código de CSS a seguir e salve o arquivo. 
+5. No bloco `return` da função `render` em **src/components/App.tsx**, atualize `<Herolist>` para o código abaixo e salve o arquivo. 
 
-    ```css
-    #content-header {
-        background: #2a8dd4;
-        color: #fff;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 80px; 
-        overflow: hidden;
-    }
+    ```js
+      <HeroList message='Discover what My Office Add-in can do for you today!' items={this.state.listItems}>
+        <p className='ms-font-l'>Choose the button below to set the color of the selected range to blue. <b>Set color</b>.</p>
+        <Button className='ms-welcome__action' buttonType={ButtonType.hero} iconProps={{ iconName: 'ChevronRight' }} onClick={this.click}>Run</Button>
+    </HeroList>
+    ```
 
-    #content-main {
-        background: #fff;
-        position: fixed;
-        top: 80px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        overflow: auto; 
-    }
+6. Execute as etapas em [Adicionar certificados autoassinados como certificado raiz confiáveis](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) para confiar no certificado do sistema operacional do seu computador de desenvolvimento.
 
-    .padding {
-        padding: 15px;
-    }
+7. Carregue seu suplemento para que ele apareça no Excel. No terminal, execute o comando a seguir: 
+    
+    ```bash
+    npm run sideload
     ```
 
 ## <a name="try-it-out"></a>Experimente
@@ -162,16 +71,8 @@ Cada suplemento requer um arquivo de manifesto para definir os recursos e config
 
     Windows:
     ```bash
-    set HTTPS=true&&npm start
+    npm start
     ```
-
-    macOS:
-    ```bash
-    HTTPS=true npm start
-    ```
-
-   > [!NOTE]
-   > Uma nova janela de navegador será aberta contendo o suplemento. Feche esta janela.
 
 2. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 

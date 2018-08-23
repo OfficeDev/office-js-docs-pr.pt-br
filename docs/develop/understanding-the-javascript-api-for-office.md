@@ -2,19 +2,19 @@
 title: Noções básicas da API JavaScript para Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: fef2cdad69408f099296461066f1ea380e3b118b
-ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.openlocfilehash: ccc5122061e267fec875fcbbb5b2083e1b934f9d
+ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "21703809"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "22546785"
 ---
 # <a name="understanding-the-javascript-api-for-office"></a>Noções básicas da API JavaScript para Office
 
 Este artigo fornece informações sobre a API JavaScript para Office e como usá-la. Para referenciar as informações, consulte [API JavaScript para Office](https://dev.office.com/reference/add-ins/javascript-api-for-office). Para obter informações sobre como atualizar os arquivos de projeto do Visual Studio para a versão mais recente da API JavaScript para Office, consulte [Atualizar a versão da API JavaScript para Office e arquivos de esquema do manifesto](update-your-javascript-api-for-office-and-manifest-schema-version.md).
 
 > [!NOTE]
-> Caso pretenda [publicar](../publish/publish.md) o suplemento na experiência do Office depois de criá-lo, verifique se você está em conformidade com as [Políticas de validação do AppSource](https://docs.microsoft.com/en-us/office/dev/store/validation-policies). Por exemplo, para passar na validação, seu suplemento deve funcionar em todas as plataformas com suporte aos métodos que você definir (para mais informações, confira a [seção 4.12](https://docs.microsoft.com/en-us/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) e a [Página de hospedagem e disponibilidade de suplementos do Office](../overview/office-add-in-availability.md)). 
+> Caso pretenda [publicar](../publish/publish.md) o suplemento na experiência do Office depois de criá-lo, verifique se você está em conformidade com as [Políticas de validação do AppSource](https://docs.microsoft.com/office/dev/store/validation-policies). Por exemplo, para passar na validação, seu suplemento deve funcionar em todas as plataformas com suporte aos métodos que você definir (para mais informações, confira a [seção 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) e a [Página de hospedagem e disponibilidade de suplementos do Office](../overview/office-add-in-availability.md)). 
 
 ## <a name="referencing-the-javascript-api-for-office-library-in-your-add-in"></a>Fazer referência à biblioteca da API JavaScript para Office no suplemento
 
@@ -26,7 +26,7 @@ A biblioteca da [API JavaScript para Office](https://dev.office.com/reference/ad
 
 Isso baixará e colocará os arquivos da API JavaScript para Office em cache quando o suplemento for carregado pela primeira vez a fim de garantir que o suplemento esteja usando a implementação mais recente do Office.js e de seus arquivos associados na versão especificada.
 
-Para saber mais sobre a CDN do Office.js, incluindo como é feito o controle de versão e como lidar com a compatibilidade com versões anteriores, confira [Fazer referência à biblioteca da API JavaScript para Office de sua rede de distribuição de conteúdo (CDN)](referencing-the-javascript-api-for-office-library-from-its-cdn.md).
+Para saber mais sobre a CDN do Office.js, incluindo como é feito o controle de versão e como lidar com a compatibilidade com versões anteriores, veja [Fazer referência à biblioteca da API JavaScript para Office de sua rede de distribuição de conteúdo (CDN)](referencing-the-javascript-api-for-office-library-from-its-cdn.md).
 
 ## <a name="initializing-your-add-in"></a>Iniciar o suplemento
 
@@ -71,7 +71,7 @@ Para obter mais informações, confira [Evento Office.initialize](https://dev.of
 
 ## <a name="office-javascript-api-object-model"></a>Modelo de objeto da API JavaScript para Office
 
-Uma vez inicializado, o suplemento pode interagir com o host (por exemplo, Excel, Outlook). A página [Modelo de objeto da API JavaScript para Office](/office-javascript-api-object-model.md) tem mais detalhes sobre padrões de uso específicos. Há também documentação de referência detalhada para as [APIs compartilhadas](https://dev.office.com/reference/add-ins/javascript-api-for-office) e hosts específicos.
+Uma vez inicializado, o suplemento pode interagir com o host (por exemplo, Excel, Outlook). A página [Modelo de objeto da API JavaScript para Office](office-javascript-api-object-model.md) tem mais detalhes sobre padrões de uso específicos. Há também documentação de referência detalhada para as [APIs compartilhadas](https://dev.office.com/reference/add-ins/javascript-api-for-office) e hosts específicos.
 
 ## <a name="api-support-matrix"></a>Matriz de suporte da API
 
@@ -81,8 +81,8 @@ Esta tabela resume a API e os recursos compatíveis com os tipos de suplemento (
 
 |||||||||
 |:-----|:-----|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-||**Nome do host**|Banco de dados|Pasta de trabalho|Caixa de correio|Apresentação|Documento|Project|
-||**Aplicativos host** **compatíveis**|Aplicativos Web do Access|Excel,<br/>Excel Online|Outlook,<br/>Outlook Web App,<br/>OWA para dispositivos|PowerPoint,<br/>PowerPoint Online|Word|Project|
+||**Nome do host**|Banco de dados|Pasta de trabalho|Caixa de correio|Apresentação|Documento|Projeto|
+||**Aplicativos host** **compatíveis**|Aplicativos Web do Access|Excel,<br/>Excel Online|Outlook,<br/>Outlook Web App,<br/>OWA para dispositivos|PowerPoint,<br/>PowerPoint Online|Word|Projeto|
 |**Tipos de suplemento com suporte**|Conteúdo|S|S||S|||
 ||Painel de tarefas||S||S|S|S|
 ||Outlook|||S||||
