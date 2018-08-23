@@ -2,9 +2,13 @@
 title: Usar a estrutura de autorização OAuth em um Suplemento do Office
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 36eb0e34ed96bb9289926170bea1b82546695fa8
+ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "19437371"
 ---
-
-
 # <a name="use-the-oauth-authorization-framework-in-an-office-add-in"></a>Usar a estrutura de autorização OAuth em um Suplemento do Office
 
 OAuth é o padrão aberto para autorização que provedores de serviço online como Office 365, Facebook, Google, SalesForce, LinkedIn e outros usam para executar a autenticação do usuário. A estrutura de autorização OAuth é o protocolo de autorização padrão usado no Azure e no Office 365. A estrutura de autorização OAuth é usada em cenários empresariais (corporativos) e de consumidor.

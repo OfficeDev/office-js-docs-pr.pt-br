@@ -2,10 +2,13 @@
 title: Diretrizes de estilo de visualização de dados para Suplementos do Office
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 3255c1aeff6cba4b9f13aa2555b8c84ac773fb75
+ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "19437350"
 ---
-
-
-
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Diretrizes de estilo de visualização de dados para Suplementos do Office
 
 Boas visualizações de dados ajudam os usuários a encontrarem informações em seus dados. Eles podem usar essas informações para contar histórias que informam e convencem. Este artigo fornece diretrizes para ajudá-lo a criar visualizações de dados eficazes em seus suplementos para o Excel e outros aplicativos do Office.

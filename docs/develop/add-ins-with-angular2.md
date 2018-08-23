@@ -2,8 +2,13 @@
 title: Desenvolver suplementos do Office para o Angular
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: c3aa67d7427249fb04d9777dc0d76098ea607582
+ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "19437504"
 ---
-
 # <a name="develop-office-add-ins-with-angular"></a>Desenvolver suplementos do Office para o Angular
 
 Este artigo fornece orientações sobre como usar o Angular 2+ para criar um Suplemento do Office como um aplicativo de página única.
@@ -17,7 +22,7 @@ Para ver um exemplo de Suplementos do Office criado utilizando a estrutura do An
 Abra uma janela de nodejs e insira o seguinte na linha de comando: 
 
 ```bash
-npm install --save-dev @types/office-js`
+npm install --save-dev @types/office-js
 ```
 
 ## <a name="bootstrapping-must-be-inside-officeinitialize"></a>A inicialização deve ocorrer no Office.initialize

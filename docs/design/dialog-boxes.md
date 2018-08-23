@@ -2,9 +2,13 @@
 title: Caixas de diálogo em Suplementos do Office
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: af47fd338872d3ecfce06145783fcc9ff314f7bc
+ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "19437140"
 ---
-
-
 # <a name="dialog-boxes-in-office-add-ins"></a>Caixas de diálogo em Suplementos do Office
  
 Caixas de diálogo são superfícies que flutuam acima da janela do aplicativo do Office ativo. Você pode usar caixas de diálogo para fornecer espaço adicional na tela para tarefas como páginas de entrada que não podem ser abertas diretamente em um painel de tarefas ou solicitações para confirmar uma ação executada por um usuário ou mostrar vídeos que podem ser muito pequenos se confinados a um painel de tarefas.

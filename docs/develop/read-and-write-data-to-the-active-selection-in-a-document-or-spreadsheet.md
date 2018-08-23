@@ -2,9 +2,13 @@
 title: Ler e gravar dados na seleção ativa em um documento ou em uma planilha
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 6d0aa8a27223a436b7f8e99cbbab0c21dd93f2b5
+ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "19437532"
 ---
-
-
 # <a name="read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet"></a>Ler e gravar dados na seleção ativa em um documento ou em uma planilha
 
 O objeto [Document](https://dev.office.com/reference/add-ins/shared/document) expõe métodos que permitem ler e gravar a seleção atual do usuário em um documento ou uma planilha. Para fazer isso, o objeto **Document** fornece os métodos **getSelectedDataAsync** e **setSelectedDataAsync**. Este tópico também descreve como ler, gravar e criar manipuladores de eventos para detectar alterações na seleção do usuário.
