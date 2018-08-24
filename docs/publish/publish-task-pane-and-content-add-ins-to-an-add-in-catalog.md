@@ -2,8 +2,13 @@
 title: Publicar suplementos de conteúdo e de painel de tarefas em um catálogo do SharePoint
 description: ''
 ms.date: 01/23/2018
+ms.openlocfilehash: 6bf63c36d952b901faaa16b0d93748023ac0fef9
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925294"
 ---
-
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-catalog"></a>Publicar suplementos de conteúdo e de painel de tarefas em um catálogo do SharePoint
 
 Um catálogo de suplementos é um conjunto de sites dedicado em um aplicativo Web do SharePoint ou em locatário do SharePoint Online que hospeda bibliotecas de documentos para Suplementos do SharePoint e do Office. Para disponibilizar suplementos do Office nas empresas, os administradores podem carregar arquivos de manifesto de Suplementos do Office no catálogo de suplementos para uso em suas organizações. Quando um administrador registra um catálogo de suplementos como um catálogo confiável, os usuários podem inserir o suplemento a partir da interface de usuário em um aplicativo cliente do Office.
@@ -11,7 +16,7 @@ Um catálogo de suplementos é um conjunto de sites dedicado em um aplicativo We
 > [!IMPORTANT]
 > - Os catálogos de suplementos no SharePoint não são compatíveis com recursos de suplementos implementados no nó `VersionOverrides` do [manifesto do suplemento](../develop/add-in-manifests.md), como comandos de suplemento.
 > - Se você está direcionando para um ambiente híbrido ou de nuvem, recomendamos [usar a Implantação Centralizada por meio do Centro de Administração do Office 365](../publish/centralized-deployment.md) para publicar os suplementos.
-> - Catálogos do SharePoint não são compatíveis com o Office 2016 para Mac. Para implantar Suplementos do Office em clientes do Mac, você deve enviá-los para o [AppSource](https://docs.microsoft.com/pt-br/office/dev/store/submit-to-the-office-store).   
+> - Catálogos do SharePoint não são compatíveis com o Office 2016 para Mac. Para implantar Suplementos do Office em clientes do Mac, você deve enviá-los para o [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store).   
 
 ## <a name="set-up-an-add-in-catalog"></a>Configurar um catálogo de suplementos
 
@@ -97,4 +102,4 @@ Os usuários finais podem acessar o catálogo de suplementos em um aplicativo do
     
 3. Feche e reabra o aplicativo do Office. O catálogo de suplementos estará disponível na caixa de diálogo **Suplementos do Office**.
 
-Como alternativa, um administrador pode especificar um catálogo de Suplementos do Office no SharePoint usando políticas de grupo. Confira mais detalhes na seção [Usar Política de Grupo para gerenciar como usuários podem instalar e usar os suplementos do Office](https://technet.microsoft.com/pt-br/library/jj219429.aspx#BKMK_GP) no TechNet.
+Como alternativa, um administrador pode especificar um catálogo de Suplementos do Office no SharePoint usando políticas de grupo. Confira mais detalhes na seção [Usar uma Política de Grupo para gerenciar como usuários podem instalar e usar os Suplementos do Office](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).

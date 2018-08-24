@@ -2,12 +2,12 @@
 title: Limites de recurso e otimização de desempenho para Suplementos do Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: f5f24faf337a40caf7245d45052208ef6f46af1a
-ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.openlocfilehash: 57004d5f3b38bfb1c58cefbccf22a2ea0aa0b16f
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "21703823"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925385"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites de recurso e otimização de desempenho para Suplementos do Office
 
@@ -52,7 +52,7 @@ Além do núcleo da CPU, da memória e de regras de confiabilidade, os suplement
 
     Usando uma política de grupo ou uma configuração específica para um aplicativo no registro do Windows, os administradores podem ajustar esse número de novas tentativas de avaliação na configuração **OutlookActivationManagerRetryLimit**.
 
-### <a name="task-pane-and-content-add-ins"></a>Suplementos de painel de tarefas e de conteúdo
+### <a name="task-pane-and-content-add-ins"></a>Suplementos do painel de tarefas e de conteúdo
     
 Se qualquer suplemento de painel de tarefas ou de conteúdo exceder os limites anteriores no uso de núcleo da CPU, de memória ou no limite de tolerância a falhas, o aplicativo host correspondente exibe um aviso ao usuário. Neste momento, o usuário pode tomar uma das seguintes ações:
 
@@ -85,7 +85,7 @@ A tabela a seguir lista os eventos que o Log de Telemetria acompanha para os Sup
 |19|O suplemento encontrou um erro de tempo de execução|Crítico|O suplemento do Office teve um problema que causou sua falha. Para saber mais, examine o log de **Alertas do Microsoft Office** usando o Visualizador de Eventos do Windows no computador que encontrou o erro.|
 |20|Falha ao verificar a licença do suplemento|Crítico|As informações de licenciamento do suplemento do Office não puderam ser verificadas e podem ter expirado. Para saber mais, examine o log de **Alertas do Microsoft Office** usando o Visualizador de Eventos do Windows no computador que encontrou o erro.|
 
-Saiba mais em [Implantar o Painel de Telemetria](http://msdn.microsoft.com/en-us/library/f69cde72-689d-421f-99b8-c51676c77717%28Office.15%29.aspx) e [Solução de problemas de arquivos do Office e soluções personalizadas com o log de telemetria](http://msdn.microsoft.com/library/ef88e30e-7537-488e-bc72-8da29810f7aa%28Office.15%29.aspx).
+Saiba mais em [Implantar o Painel de Telemetria](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219431(v=office.15)) e [Solução de problemas de arquivos do Office e soluções personalizadas com o log de telemetria](https://docs.microsoft.com/office/client-developer/shared/troubleshooting-office-files-and-custom-solutions-with-the-telemetry-log).
 
 
 ## <a name="design-and-implementation-techniques"></a>Técnicas de design e implementação
@@ -94,9 +94,9 @@ Embora os limites de recursos para o uso de CPU e memória, a tolerância a falh
 
 - Em um cenário em que o suplemento precisa ler um grande volume de dados de um conjunto de dados não associado, você pode aplicar a paginação ao ler os dados de uma tabela ou reduzir o tamanho dos dados em cada operação de leitura mais curta, em vez de tentar concluir a leitura em uma única operação. 
     
-   Para obter exemplos de códigos JavaScript e jQuery que mostram a divisão de uma série de operações de entrada e saída em dados não associados (que possivelmente consumiria muitos recursos de CPU e demoraria em demasiado), consulte [Como posso passar o controle de volta (brevemente) ao navegador durante um processamento de JavaScript que consome muitos recursos?](http://stackoverflow.com/questions/210821/how-can-i-give-control-back-briefly-to-the-browser-during-intensive-javascript). Este exemplo usa o método [setTimeout](http://msdn.microsoft.com/en-us/library/ie/ms536753%28v=vs.85%29.aspx) do objeto global para limitar a duração da entrada e da saída. Também manipula os dados em pedaços definidos, ao invés de dados não associados de forma aleatória.
+   Para obter exemplos de códigos JavaScript e jQuery que mostram a divisão de uma série de operações de entrada e saída em dados não associados (que possivelmente consumiria muitos recursos de CPU e demoraria em demasiado), consulte [Como posso passar o controle de volta (brevemente) ao navegador durante um processamento de JavaScript que consome muitos recursos?](http://stackoverflow.com/questions/210821/how-can-i-give-control-back-briefly-to-the-browser-during-intensive-javascript). Este exemplo usa o método [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) do objeto global para limitar a duração da entrada e da saída. Também manipula os dados em pedaços definidos, ao invés de dados não associados de forma aleatória.
     
-- Se o suplemento usa um algoritmo com uso intensivo de CPU para processar um grande volume de dados, você pode usar os web workers para executar a tarefa demorada em segundo plano enquanto executa um script separado em primeiro plano, como exibir o andamento na interface do usuário. Os Web workers não bloqueiam atividades do usuário e permitem que a página HTML continue respondendo. Para obter um exemplo de Web workers, confira [Noções básicas de Web workers](https://www.html5rocks.com/en/tutorials/workers/basics/). Confira [Web workers](http://msdn.microsoft.com/en-us/library/IE/hh772807%28v=vs.85%29.aspx) para saber mais sobre a API Web workers do Internet Explorer.
+- Se o suplemento usa um algoritmo com uso intensivo de CPU para processar um grande volume de dados, você pode usar os web workers para executar a tarefa demorada em segundo plano enquanto executa um script separado em primeiro plano, como exibir o andamento na interface do usuário. Os Web workers não bloqueiam atividades do usuário e permitem que a página HTML continue respondendo. Para obter um exemplo de Web workers, confira [Noções básicas de Web workers](https://www.html5rocks.com/en/tutorials/workers/basics/). Confira [Web workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API) para saber mais sobre a API Web workers do Internet Explorer.
     
 - Se o suplemento usa um algoritmo com uso intensivo de CPU, mas é possível dividir a entrada ou a saída de dados em conjuntos menores, considere criar um serviço Web passando os dados para o serviço Web para aliviar a carga da CPU e aguarde um retorno de chamada assíncrono.
     
@@ -106,5 +106,5 @@ Embora os limites de recursos para o uso de CPU e memória, a tolerância a falh
 ## <a name="see-also"></a>Veja também
 
 - [Privacidade e segurança para Suplementos do Office](../concepts/privacy-and-security.md)
-- [Limites de ativação e da API do JavaScript API para suplementos do Outlook](https://docs.microsoft.com/en-us/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
+- [Limites de ativação e da API do JavaScript API para suplementos do Outlook](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
     

@@ -2,12 +2,12 @@
 title: Depurar suplementos do Office no iPad e no Mac
 description: ''
 ms.date: 03/21/2018
-ms.openlocfilehash: e9efae76aa3341eacfd73d6afcc3a3274536aa9d
-ms.sourcegitcommit: 6fbf42723f9c1b72095700c20458fd0e8c572794
+ms.openlocfilehash: 24a95799ba400aa6ecf93ee5431cf3fd64779d75
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "19722328"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925203"
 ---
 # <a name="debug-office-add-ins-on-ipad-and-mac"></a>Depurar suplementos do Office no iPad e no Mac
 
@@ -41,7 +41,7 @@ Para depurar um suplemento no iPad ou Mac, você pode usar o Vorlon.JS, um depur
 
 ### <a name="install-and-set-up-vorlonjs"></a>Instalar e configurar o Vorlon.JS  
 
-1.  Faça logon no dispositivo como administrador.
+1.  Faça logon no dispositivo como um administrador.
 
 2.  Instale o [Node.js](https://nodejs.org) se ele ainda não estiver instalado. 
 
@@ -115,7 +115,7 @@ Para depurar um aplicativo usando o Vorlon.JS, adicione uma marca `<script>` à 
 
 3.  Abra uma janela do navegador e vá para `https://localhost:1337`, que é a interface do Vorlon.JS.
 
-4. Realize o sideload do suplemento. Para o Excel, PowerPoint ou Word, realize o sideload conforme descrito em [Realizar sideload de um suplemento do Office no iPad e no Mac](sideload-an-office-add-in-on-ipad-and-mac.md). Se for um suplemento do Outlook, realize o sideload conforme descrito em [Realizar sideload de suplementos do Outlook para teste](https://docs.microsoft.com/en-us/outlook/add-ins/sideload-outlook-add-ins-for-testing). Se o suplemento não usar comandos de suplemento, ele será imediatamente aberto. Caso contrário, escolha o botão para abrir o suplemento. Dependendo da compilação do aplicativo host do Office, o botão será exibido em ambas guias **Página Inicial** ou em uma guia **Suplemento**.
+4. Realize o sideload do suplemento. Para o Excel, PowerPoint ou Word, realize o sideload conforme descrito em [Realizar sideload de um suplemento do Office no iPad e no Mac](sideload-an-office-add-in-on-ipad-and-mac.md). Se for um suplemento do Outlook, realize o sideload conforme descrito em [Realizar sideload de suplementos do Outlook para teste](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing). Se o suplemento não usar comandos de suplemento, ele será imediatamente aberto. Caso contrário, escolha o botão para abrir o suplemento. Dependendo da compilação do aplicativo host do Office, o botão será exibido em ambas guias **Página Inicial** ou em uma guia **Suplemento**.
 
 O suplemento aparecerá na lista de Clientes no Vorlon.JS (no lado esquerdo da interface do Vorlon.JS) como **{OS} - n**, para um determinado número *n* e onde *{OS}* é o tipo de dispositivo, como "Macintosh". 
 

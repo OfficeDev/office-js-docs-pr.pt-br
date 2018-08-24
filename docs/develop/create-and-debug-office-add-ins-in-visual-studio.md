@@ -2,12 +2,12 @@
 title: Criar e depurar Suplementos do Office no Visual Studio
 description: ''
 ms.date: 03/14/2018
-ms.openlocfilehash: 3e4fbcd3919be0d5510b36ae77a6e3706eab9689
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: c903f3d475e46ee09a3c350f79c1e3d671ae5923
+ms.sourcegitcommit: 28fc652bded31205e393df9dec3a9dedb4169d78
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437602"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "22927444"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Criar e depurar Suplementos do Office no Visual Studio
 
@@ -19,7 +19,7 @@ Esse artigo descreve como usar o Visual Studio para criar o seu primeiro supleme
 ## <a name="create-an-office-add-in-project-in-visual-studio"></a>Criar um projeto de suplemento do Office no Visual Studio
 
 
-Para começar, verifique se você tem as [Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx) instaladas e uma versão do Microsoft Office. É possível ingressar no [Programa do Desenvolvedor do Office 365](https://developer.microsoft.com/en-us/office/dev-program) ou seguir estas instruções para receber a [última versão](../develop/install-latest-office-version.md).
+Para começar, verifique se você tem as [Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx) instaladas e uma versão do Microsoft Office. É possível ingressar no [Programa do Desenvolvedor do Office 365](https://developer.microsoft.com/office/dev-program) ou seguir estas instruções para receber a [última versão](../develop/install-latest-office-version.md).
 
 
 1. Na barra de menus do Visual Studio, selecione **Arquivo**  >  **Novo**  >  **Projeto**.
@@ -48,7 +48,7 @@ Ao concluir o assistente, o Visual Studio cria uma solução que contém dois pr
 |**Projeto**|**Descrição**|
 |:-----|:-----|
 |Projeto de suplemento|Contém somente um arquivo de manifesto XML, que contém todas as configurações que descrevem o suplemento. As configurações ajudam o host do Office a determinar quando o suplemento deverá ser ativado e onde ele deverá aparecer. O Visual Studio gera o conteúdo desse arquivo para que você possa executar o projeto e usar o suplemento imediatamente . Você pode alterar as configurações a qualquer momento usando o editor de Manifesto.|
-|Projeto de aplicativo Web|Contém as páginas de conteúdo do suplemento, incluindo todos os arquivos e referências de arquivo de que você precisa para desenvolver páginas HTML e JavaScript com reconhecimento do Office. Enquanto você desenvolve o suplemento, o Visual Studio hospeda o aplicativo Web no servidor IIS local. Quando estiver pronto para publicar, você terá de localizar um servidor para hospedar o projeto. Para saber mais sobre projetos de aplicativos Web ASP.NET, confira [Projetos Web ASP.NET](http://msdn.microsoft.com/en-us/library/cdcd712f-96b0-4165-8b5d-9d0566650a28%28Office.15%29.aspx).|
+|Projeto de aplicativo Web|Contém as páginas de conteúdo do suplemento, incluindo todos os arquivos e referências de arquivo de que você precisa para desenvolver páginas HTML e JavaScript com reconhecimento do Office. Enquanto você desenvolve o suplemento, o Visual Studio hospeda o aplicativo Web no servidor IIS local. Quando estiver pronto para publicar, você terá de localizar um servidor para hospedar o projeto. Para saber mais sobre projetos de aplicativos Web ASP.NET, confira [Projetos Web ASP.NET](http://msdn.microsoft.com/library/cdcd712f-96b0-4165-8b5d-9d0566650a28%28Office.15%29.aspx).|
 
 ## <a name="modify-your-add-in-settings"></a>Modificar as configurações de suplemento
 
@@ -91,7 +91,7 @@ Antes de iniciar a solução, verifique se o Visual Studio abrirá o aplicativo 
 ### <a name="to-open-the-property-pages-of-a-project"></a>Para abrir as páginas de propriedades de um projeto
 
 
-1. No **Gerenciador de Soluções**, escolha o nome do projeto.
+1. No **Gerenciador de Soluções**, escolha o projeto de suplemento básico (não o projeto Web).
     
 2. Na barra de menus, escolha **Exibir**, **Janela Propriedades**.
     
@@ -152,26 +152,26 @@ O Visual Studio compila o projeto e faz o seguinte:
 
 1. Cria uma cópia do arquivo de manifesto XML e a adiciona ao diretório _NomedoProjeto_\Output. O aplicativo host consome esta cópia quando você inicia o Visual Studio e depura o suplemento.
     
-2. Cria um conjunto de entradas de registro no computador que permitem que o suplemento seja exibido no aplicativo host.
+2. Cria um conjunto de entradas de registro no computador que habilitam o suplemento a aparecer no aplicativo host.
     
-3. Compila o projeto de aplicativo da Web e o implanta no servidor Web IIS local (http://localhost). 
+3. Compila o projeto de aplicativo Web e o implanta no servidor Web IIS local (http://localhost). 
     
 Depois, o Visual Studio faz o seguinte:
 
 
-1. Modifica o elemento [SourceLocation](http://msdn.microsoft.com/en-us/library/e6ea8cd4-7c8b-1da7-d8f8-8d3c80a088bc%28Office.15%29.aspx) do arquivo de manifesto XML, substituindo o token ~ remoteAppUrl pelo endereço totalmente qualificado da página inicial (por exemplo, http://localhost/MyAgave.html).
+1. Modifica o elemento [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) do arquivo de manifesto XML, substituindo o token ~remoteAppUrl pelo endereço totalmente qualificado da página inicial (por exemplo, http://localhost/MyAgave.html).
     
-2. Inicia o projeto de aplicativo da Web no IIS Express.
+2. Inicia o projeto de aplicativo Web no IIS Express.
     
 3. Abre o aplicativo host. 
     
-O Visual Studio não mostra erros de validação na janela **OUTPUT** ao compilar o projeto. O Visual Studio relata erros e avisos na janela **ERRORLIST** à medida que eles ocorrem. O Visual Studio também relata erros de validação mostrando sublinhados ondulados (conhecidos como rabiscos) de cores diferentes no editor de código e texto. Essas marcas o notificam de problemas que o Visual Studio detectou no código. Para saber mais, confira [Editor de código e texto](https://msdn.microsoft.com/en-us/library/se2f663y(v=vs.140).aspx). Para saber mais sobre como habilitar ou desabilitar a validação, confira: 
+O Visual Studio não mostra erros de validação na janela **OUTPUT** ao compilar o projeto. O Visual Studio relata erros e avisos na janela **ERRORLIST** à medida que eles ocorrem. O Visual Studio também relata erros de validação mostrando sublinhados ondulados (conhecidos como rabiscos) de cores diferentes no editor de código e texto. Essas marcas o notificam de problemas que o Visual Studio detectou no código. Para saber mais, confira [Editor de código e texto](https://msdn.microsoft.com/library/se2f663y(v=vs.140).aspx). Para saber mais sobre como habilitar ou desabilitar a validação, confira: 
 
-- [Opções, editor de texto, JavaScript, IntelliSense](https://msdn.microsoft.com/en-us/library/hh362485(v=vs.140).aspx)
+- [Opções, editor de texto, JavaScript, IntelliSense](https://msdn.microsoft.com/library/hh362485(v=vs.140).aspx)
     
-- [Tutorial: Definir opções de validação para edição de HTML no Visual Web Developer](https://msdn.microsoft.com/en-us/library/0byxkfet(v=vs.100).aspx)
+- [Tutorial: Definir opções de validação para edição de HTML no Visual Web Developer](https://msdn.microsoft.com/library/0byxkfet(v=vs.100).aspx)
     
-- [CSS, confira Validação, CSS, editor de texto, caixa de diálogo Opções](https://msdn.microsoft.com/en-us/library/se2f663y(v=vs.140).aspx)
+- [CSS, confira Validação, CSS, editor de texto, caixa de diálogo Opções](https://msdn.microsoft.com/library/se2f663y(v=vs.140).aspx)
     
 Para examinar as regras de validação do arquivo de manifesto XML no projeto, confira [Manifesto XML de suplementos do Office](../develop/add-in-manifests.md).
 

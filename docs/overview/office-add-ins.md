@@ -2,12 +2,12 @@
 title: Visão geral da plataforma de Suplementos do Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: f7b1f4add776f1971e9762c5cb80dabed45b0a1c
-ms.sourcegitcommit: a0e0416289b293863b8b4d3f9a12581a9e681b27
+ms.openlocfilehash: a35e0db20f5c573357b12b9034d9b13ce0cc3a27
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "20023162"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925273"
 ---
 # <a name="office-add-ins-platform-overview"></a>Visão geral da plataforma de Suplementos do Office
 
@@ -101,7 +101,7 @@ Os suplementos do Outlook podem estender a faixa de opções do Office e também
 
 Os suplementos do Outlook podem acessar informação contextual do item, como o endereço ou a ID de rastreamento, e, em seguida, usar estes dados para acessarem informações adicionais sobre o servidor e de serviços da Web para criar experiências do usuário envolventes. Na maioria dos casos, um suplemento do Outlook é executado sem modificação nos vários aplicativos host com suporte, incluindo Outlook, Outlook para Mac, Outlook Web App e Outlook Web App para Dispositivos para fornecer uma experiência perfeita na área de trabalho, na Web e em tablets e dispositivos móveis. 
 
-Confira a visão geral dos suplementos do Outlook em [Visão geral dos suplementos do Outlook](https://docs.microsoft.com/en-us/outlook/add-ins/). 
+Confira a visão geral dos suplementos do Outlook em [Visão geral dos suplementos do Outlook](https://docs.microsoft.com/outlook/add-ins/). 
 
 ### <a name="create-new-objects-in-office-documents"></a>Criar novos objetos nos documentos do Office 
 
@@ -117,13 +117,13 @@ As APIs JavaScript para Office contêm objetos e membros para a criação de sup
 
 ## <a name="next-steps"></a>Próximas etapas 
 
-Para saber mais sobre como começar a compilar seu suplemento do Office, experimente o nosso [Inícios Rápidos de 5 minutos](https://docs.microsoft.com/en-us/office/dev/add-ins/). Você pode começar a compilar suplementos imediatamente usando o Visual Studio ou qualquer outro editor. 
+Para saber mais sobre como começar a compilar seu suplemento do Office, experimente nossos [Inícios Rápidos de 5 minutos](https://docs.microsoft.com/office/dev/add-ins/). Você pode começar a compilar suplementos imediatamente usando o Visual Studio ou qualquer outro editor. 
 
 Para começar a planejar soluções que criem experiências de usuário eficazes e atraentes, familiarize-se com as [diretrizes de design](../design/add-in-design.md) e as [práticas recomendadas](../concepts/add-in-development-best-practices.md) para suplementos do Office.    
    
 ## <a name="see-also"></a>Confira também
 
-- [Exemplos de suplementos do Office](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples)
+- [Exemplos de suplementos do Office](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
 - [Noções básicas da API JavaScript para Office](../develop/understanding-the-javascript-api-for-office.md)
 - [Disponibilidade de host e plataforma para suplementos do Office](../overview/office-add-in-availability.md)
 

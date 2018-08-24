@@ -2,12 +2,12 @@
 title: Criar seu primeiro suplemento de painel de tarefas para o Project 2013 usando um editor de texto
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: eda7555d2ac054ff233482309d733f74d1946aa6
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: a09da8fd3ab4989afb8a6ec6e6b2ae226b6f18d5
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19438883"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925546"
 ---
 # <a name="create-your-first-task-pane-add-in-for-project-2013-by-using-a-text-editor"></a>Criar seu primeiro suplemento de painel de tarefas para o Project 2013 usando um editor de texto
 
@@ -17,7 +17,7 @@ O Project 2013 usa o mesmo esquema de manifesto de suplemento que outros cliente
 
 O suplemento de exemplo Teste de modelo de objeto do Project pode obter o GUID de uma tarefa, as propriedades do aplicativo e o projeto ativo. Se o Project Professional 2013 abre um projeto que está em uma biblioteca do SharePoint, o suplemento pode mostrar a URL do projeto. 
 
-O [download do SDK do Project 2013](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20) inclui o código-fonte completo. Ao extrair e instalar o SDK e exemplos que estão no arquivo Project2013SDK.msi, confira o `\Samples\Apps\Copy_to_AppManifests_FileShare`subdiretório do arquivo de manifesto e o `\Samples\Apps\Copy_to_AppSource_FileShare`subdiretório do código-fonte. 
+O [download do SDK do Project 2013](https://www.microsoft.com/download/details.aspx?id=30435%20) inclui o código-fonte completo. Ao extrair e instalar o SDK e exemplos que estão no arquivo Project2013SDK.msi, confira o `\Samples\Apps\Copy_to_AppManifests_FileShare`subdiretório do arquivo de manifesto e o `\Samples\Apps\Copy_to_AppSource_FileShare`subdiretório do código-fonte. 
 
 O exemplo JSOMCall.html usa funções JavaScript nos arquivos office.js e project-15.js, que estão incluídos. Você pode usar os arquivos de depuração correspondentes (office.debug.js e project-15.debug.js) para examinar as funções.
 
@@ -766,7 +766,7 @@ O Procedimento 2 mostra como criar o arquivo HTML que o manifesto JSOM_SimpleOMC
     - Prioridade: `500`
     - Observações: essa é uma anotação de tarefa T2. É apenas uma anotação de teste. Se fosse uma anotação de verdade, teria algumas informações reais.
 
-13. Escolha o botão **getWSSUrlAsync**. Se o projeto é um dos tipos a seguir, os resultados mostram o URL e o nome da lista de tarefas.
+13. Selecione o botão **getWSSUrlAsync**. Se o projeto é um dos tipos a seguir, os resultados mostram a URL e o nome da lista de tarefas.
     
     - Uma lista de tarefas do SharePoint importada no Project Server.
     - Uma lista de tarefas do SharePoint importada no Project Professional, depois salva novamente no SharePoint (sem usar o Project Server).
@@ -1097,5 +1097,5 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 - [Noções básicas da API JavaScript para suplementos](../develop/understanding-the-javascript-api-for-office.md)
 - [API JavaScript para suplementos do Office](https://dev.office.com/reference/add-ins/javascript-api-for-office)
 - [Referência de esquema para manifestos de Suplementos do Office (v1.1)](../develop/add-in-manifests.md)     
-- [Download do SDK do Project 2013](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)
+- [Download do SDK do Project 2013](https://www.microsoft.com/download/details.aspx?id=30435%20)
     

@@ -2,12 +2,12 @@
 title: Persistir o estado e as configurações do suplemento
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: b4d1cdf2ce127d140153b6db02bc9a337a37bb5d
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: ee65d6b1f033b012a548bc685b9228679bec8c5e
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437861"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925567"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>Persistir o estado e as configurações do suplemento
 
@@ -17,7 +17,7 @@ Essencialmente, os suplementos do Office são aplicativos Web em execução no a
     -  Pares de nome/valor em um recipiente de propriedades armazenado em um local que depende do tipo de suplemento.
     -  XML personalizado armazenado no documento.
     
-- Usar técnicas fornecidas pelo controle de navegador subjacente: cookies de navegador ou armazenamento Web HTML5 ([localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) ou [sessionStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage)).
+- Usar técnicas fornecidas pelo controle de navegador subjacente: cookies de navegador ou armazenamento Web HTML5 ([localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) ou [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)).
     
 Este artigo concentra-se em como usar a API JavaScript para Office para persistir o estado do suplemento. Para obter exemplos do uso de cookies de navegador e armazenamento na Web, confira [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings).
 
@@ -189,7 +189,7 @@ function getReviewers() {
 Um suplemento do Outlook pode usar o objeto [RoamingSettings](https://dev.office.com/reference/add-ins/outlook/RoamingSettings) para salvar o estado do suplemento e os dados de configurações específicos da caixa de correio do usuário. Esses dados são acessíveis apenas por esse suplemento do Outlook em nome do usuário que está executando o suplemento. Os dados são armazenados na caixa de correio do Exchange Server do usuário e podem ser acessados ​​quando o usuário faz logon em sua conta e executa o suplemento do Outlook.
 
 
-### <a name="loading-roaming-settings"></a>Carregar configurações móveis
+### <a name="loading-roaming-settings"></a>Carregar configurações de roaming
 
 
 Um suplemento do Outlook normalmente carrega configurações móveis no manipulador de eventos [Office.initialize](https://dev.office.com/reference/add-ins/shared/office.initialize). O exemplo de código JavaScript a seguir mostra como carregar configurações móveis existentes.
@@ -333,6 +333,6 @@ function saveCallback(asyncResult) {
 ## <a name="see-also"></a>Confira também
 
 - [Noções básicas da API JavaScript para Office](understanding-the-javascript-api-for-office.md)
-- [Suplementos do Outlook](https://docs.microsoft.com/en-us/outlook/add-ins/)
+- [Suplementos do Outlook](https://docs.microsoft.com/outlook/add-ins/)
 - [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)
     

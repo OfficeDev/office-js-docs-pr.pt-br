@@ -2,12 +2,12 @@
 title: Abrir automaticamente um painel de tarefas com um documento
 description: ''
 ms.date: 05/02/2018
-ms.openlocfilehash: 06e1cce3a45a5af744a1be4b3feabbf051940d76
-ms.sourcegitcommit: 4e4f7c095e8f33b06bd8a02534ee901125eb1d17
+ms.openlocfilehash: 4f3d677619610208b585df72dd1764be39fd9e35
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "20085273"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925350"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Abrir automaticamente um painel de tarefas com um documento
 
@@ -118,7 +118,7 @@ A parte webextension também inclui uma referência para a loja ou o catálogo c
 > [!NOTE]
 > Para localizar a ID de ativos e a versão de um suplemento no AppSource, vá para a página inicial do suplemento no AppSource. A ID de ativo aparece na barra de endereços no navegador. A versão aparece na seção **Detalhes** da página.
 
-Confira mais informações sobre a marcação webextension em [[MS-OWEXML] 2.2.5. WebExtensionReference](https://msdn.microsoft.com/en-us/library/hh695383(v=office.12).aspx).
+Confira mais informações sobre a marcação webextension em [[MS-OWEXML] 2.2.5. WebExtensionReference](https://msdn.microsoft.com/library/hh695383(v=office.12).aspx).
 
 O exemplo a seguir mostra como adicionar a parte do painel de tarefas.
 
@@ -137,10 +137,10 @@ Definir o `visibility` como "1" é uma boa opção quando o suplemento e o model
 > [!NOTE]
 > Se quiser distribuir seu suplemento com o documento, para que os usuários sejam solicitados a instalá-lo, você deverá definir a propriedade de visibilidade para 1. Isso só pode ser feito pelo Open XML.
 
-Uma maneira fácil de escrever o XML é primeiro executar seu suplemento e [marcar o documento no lado do cliente](#tag-the-document-on-the-client-side) para escrever o valor e, em seguida, salvar o documento e inspecionar o XML que é gerado. O Office detectará e fornecerá os valores de atributo apropriados. Você também pode usar a [Ferramenta de Produtividade Open XML SDK 2.5](https://www.microsoft.com/en-us/download/details.aspx?id=30425) para gerar o código C# para adicionar por meio de programação a marcação com base no XML que você gerou.
+Uma maneira fácil de escrever o XML é primeiro executar seu suplemento e [marcar o documento no lado do cliente](#tag-the-document-on-the-client-side) para escrever o valor e, em seguida, salvar o documento e inspecionar o XML que é gerado. O Office detectará e fornecerá os valores de atributo apropriados. Você também pode usar a [Ferramenta de Produtividade Open XML SDK 2.5](https://www.microsoft.com/download/details.aspx?id=30425) para gerar o código C# para adicionar por meio de programação a marcação com base no XML que você gerou.
 
 ## <a name="test-and-verify-opening-taskpanes"></a>Teste e verifique a abertura dos painéis de tarefas
-Você pode implantar uma versão de teste do seu suplemento que abrirá automaticamente um painel de tarefas usando a Implantação Centralizada através do Centro de administração do Office 365. O exemplo a seguir mostra como os suplementos são inseridos a partir do catálogo de Implantação Centralizada usando a versão da loja do EXCatalog.
+Você pode implantar uma versão de teste do seu suplemento que abrirá automaticamente um painel de tarefas usando a Implantação Centralizada por meio do Centro de administração do Office 365. O exemplo a seguir mostra como os suplementos são inseridos do catálogo de Implantação Centralizada usando a versão da loja EXCatalog.
 
 ```xml
 <we:webextension xmlns:we="http://schemas.microsoft.com/office/webextensions/webextension/2010/11" id="{52811C31-4593-43B8-A697-EB873422D156}">
@@ -151,11 +151,11 @@ Você pode implantar uma versão de teste do seu suplemento que abrirá automati
     <we:snapshot xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"/>
 </we:webextension>
 ```
-Para testar o exemplo anterior, consulte [Configurar seu ambiente de desenvolvimento do Office 365](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment) e considere assinar uma [Conta para desenvolvedores do Office 365](https://developer.microsoft.com/en-us/office/dev-program). Você pode fazer um test drive da Implantação Centralizada e verificar se o suplemento funciona conforme o esperado.
+Para testar o exemplo anterior, considere participar do [Programa de desenvolvedores do Office 365](https://docs.microsoft.com/office/developer-program/office-365-developer-program) e criar uma [conta de desenvolvedor do Office 365](https://developer.microsoft.com/office/dev-program) se você ainda não tem uma assinatura do Office 365. Você pode fazer um test drive da Implantação Centralizada e verificar se o suplemento funciona conforme o esperado.
 
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Veja também
 
 Para saber como usar o recurso autoopen, confira os [exemplos de comandos do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane). 
-[Junte-se ao programa para desenvolvedores do Office 365](https://docs.microsoft.com/en-us/office/developer-program/office-365-developer-program). 
+[Junte-se ao programa para desenvolvedores do Office 365](https://docs.microsoft.com/office/developer-program/office-365-developer-program). 
 

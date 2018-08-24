@@ -1,12 +1,12 @@
 ---
 title: Criar um Suplemento do Office com Node.js que usa logon único
 description: 23/01/2018
-ms.openlocfilehash: 4086471bec2ded671e1b3eafebc4fe69e9818344
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 70ce81a1cd0038d3219763fb1e15bc3089e06f57
+ms.sourcegitcommit: 28fc652bded31205e393df9dec3a9dedb4169d78
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437644"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "22927387"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Crie um Suplemento do Office com Node.js que use logon único (prévia)
 
@@ -27,16 +27,17 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 * Office 2016, versão 1708, build 8424.nnnn ou posterior (a versão de assinatura do Office 365, às vezes chamada de "Clique para Executar")
 
-  Talvez seja necessário ser um Office Insider para obter essa versão. Para saber mais, confira [Seja um Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1).
+  Talvez seja necessário ser um Office Insider para obter essa versão. Para saber mais, confira [Seja um Office Insider](https://products.office.com/office-insider?tab=tab-1).
 
 ## <a name="set-up-the-starter-project"></a>Configure o projeto inicial
 
 1. Clone ou baixe o repositório em [SSO com Suplemento NodeJS do Office](https://github.com/officedev/office-add-in-nodejs-sso). 
 
     > [!NOTE]
-    > Há duas versões do exemplo:  
+    > Há três versões da amostra:  
     > * A pasta **Before** (antes) traz um projeto inicial. A interface do usuário e outros aspectos do suplemento que não estão diretamente ligados ao SSO ou à autorização já estão prontos. As próximas seções deste artigo apresentam uma orientação passo a passo para concluir o projeto. 
     > * A versão **Completed** (concluído) do exemplo apresenta como seria o suplemento quando concluídos os procedimentos apresentados neste artigo, com exceção de que o projeto concluído traz comentários de códigos que seriam redundantes neste artigo. Para usar a versão concluída, apenas siga as instruções apresentadas neste artigo, substituindo "Before" por "Completed" e pulando as seções **Codificar o lado do cliente** e **Codificar o lado do servidor**.
+    > * A versão **Multilocatário Completa** é uma amostra completa que oferece suporte a multilocação. Explore esta amostra se você pretende oferecer suporte a contas da Microsoft de domínios diferentes com o SSO.
 
 2. Abra um console Git bash na pasta **Before**.
 
@@ -63,17 +64,17 @@ As instruções a seguir foram escritas de modo genérico para que possam ser us
 
 [!INCLUDE[](../includes/grant-admin-consent-to-an-add-in-include.md)]
 
-## <a name="configure-the-add-in"></a>Configure o suplemento
+## <a name="configure-the-add-in"></a>Configurar o suplemento
 
 1. Em seu editor de códigos, abra o arquivo src\server.ts. Perto da parte superior, há uma chamada para um construtor de uma classe `AuthModule`. Há alguns parâmetros de cadeia de caracteres no construtor aos quais você precisa atribuir valores.
 
-2. Na propriedade `client_id`, substitua o espaço reservado `{client GUID}` pelo ID do aplicativo que você salvou ao registrar o suplemento. Ao terminar, deve haver apenas um GUID entre aspas simples. Não deve haver nenhum caractere "{}".
+2. Na propriedade `client_id`, substitua o espaço reservado `{client GUID}` pela ID do aplicativo que você salvou ao registrar o suplemento. Ao terminar, deve haver apenas um GUID entre aspas simples. Não deve haver nenhum caractere "{}".
 
 3. Na propriedade `client_secret`, substitua o espaço reservado `{client secret}` pelo segredo do aplicativo que você salvou ao registrar o suplemento.
 
 4. Na propriedade `audience`, substitua o espaço reservado `{audience GUID}` pela ID do aplicativo que você salvou ao registrar o suplemento. (Exatamente o mesmo valor que você atribuiu à propriedade `client_id`.)
   
-3. Na sequência atribuída à propriedade `issuer`, você verá o espaço reservado *{O365 tenant GUID}*. Substitua-o pelo ID de locação do Office 365. Use um dos métodos em [Encontre seu ID de locatário do Office 365](https://support.office.com/en-us/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b) para obtê-lo. Quando você terminar, o `issuer` valor da propriedade deve ser algo como isto:
+3. Na sequência atribuída à propriedade `issuer`, você verá o espaço reservado *{O365 tenant GUID}*. Substitua-o pelo ID de locação do Office 365. Use um dos métodos em [Encontre seu ID de locatário do Office 365](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id) para obtê-lo. Quando você terminar, o `issuer` valor da propriedade deve ser algo como isto:
 
     `https://login.microsoftonline.com/12345678-1234-1234-1234-123456789012/v2.0`
 
@@ -96,7 +97,7 @@ As instruções a seguir foram escritas de modo genérico para que possam ser us
     </WebApplicationInfo>
     ```
 
-1. Substitua o espaço reservado "{application_GUID here}" *nos dois lugares* na marcação pelo ID do Aplicativo que você copiou ao registrar seu suplemento. (Os "{}"não fazem parte do ID, portanto, não inclua-os.) Esse é o mesmo ID usado para o ClientID e Audience no web.config.
+1. Substitua o espaço reservado "{application_GUID here}" *nos dois lugares* na marcação pela ID do Aplicativo que você copiou ao registrar seu suplemento. (O símbolo "{}" não faz parte da ID, portanto não o inclua.) Essa é a mesma ID usada para ClientID e Audience no web.config.
 
     > [!NOTE]
     > * O valor de **Resource** é o **URI da ID do Aplicativo** que você definiu quando adicionou a plataforma API Web no registro do suplemento.
@@ -627,7 +628,7 @@ Há dois arquivos do lado do servidor que precisam ser modificados.
 
 Agora é preciso informar ao Office onde encontrar o suplemento.
 
-1. Crie um compartilhamento de rede ou [compartilhe uma pasta na rede](https://technet.microsoft.com/en-us/library/cc770880.aspx).
+1. Crie um compartilhamento de rede ou [compartilhe uma pasta na rede](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770880(v=ws.11)).
 
 2. Coloque uma cópia do arquivo de manifesto Office-Add-in-NodeJS-SSO.xml, da raiz do projeto, dentro da pasta compartilhada.
 

@@ -2,12 +2,12 @@
 title: Principais conceitos da API JavaScript do Excel
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: fb22ae41718c459366a628c8f06531cc6978a178
-ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.openlocfilehash: 37d652d2ad2f323d0f94583e530e91e775e06ddf
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "21703837"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925406"
 ---
 # <a name="excel-javascript-api-core-concepts"></a>Principais conceitos da API JavaScript do Excel
  
@@ -15,7 +15,7 @@ Este artigo descreve como usar a [API JavaScript do Excel](https://dev.office.co
 
 ## <a name="asynchronous-nature-of-excel-apis"></a>Natureza assíncrona das APIs do Excel
 
-Os suplementos do Excel baseados na Web são executados dentro de um contêiner de navegador que é inserido no aplicativo do Office em plataformas baseadas em desktop, como Office para Windows, e executado dentro de um iFrame HTML no Office Online. Não é possível habilitar a API Office.js para interagir de modo síncrono com o host do Excel em todas as plataformas suportadas devido às considerações de desempenho. Desse modo, a chamada à API **sync()** na Office.js retorna uma [promessa](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) que é resolvida quando o aplicativo Excel conclui as ações solicitadas de leitura ou gravação. Além disso, você pode enfileirar várias ações, como configurar propriedades ou invocar métodos, e executá-las como um lote de comandos com uma única chamada a **sync()**, em vez de enviar uma solicitação separada para cada ação. As seções a seguir descrevem como fazer isso usando as APIs **Excel.run()** e **sync()**.
+Os suplementos do Excel baseados na Web são executados dentro de um contêiner de navegador que é inserido no aplicativo do Office em plataformas baseadas em desktop, como Office para Windows, e executado dentro de um iFrame HTML no Office Online. Não é possível habilitar a API Office.js para interagir de modo síncrono com o host do Excel em todas as plataformas suportadas devido às considerações de desempenho. Desse modo, a chamada à API **sync()** na Office.js retorna uma [promessa](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) que é resolvida quando o aplicativo Excel conclui as ações solicitadas de leitura ou gravação. Além disso, você pode enfileirar várias ações, como configurar propriedades ou invocar métodos, e executá-las como um lote de comandos com uma única chamada a **sync()**, em vez de enviar uma solicitação separada para cada ação. As seções a seguir descrevem como fazer isso usando as APIs **Excel.run()** e **sync()**.
  
 ## <a name="excelrun"></a>Excel.run
  
@@ -55,7 +55,7 @@ selectedRange.format.autofitColumns();
  
 ### <a name="sync"></a>sync()
  
-Chamar o método **sync()** no contexto de solicitação sincroniza o estado entre objetos proxy e objetos no documento do Excel. O método **sync()** executa todos os comandos que são enfileirados no contexto de solicitação e recupera valores para qualquer propriedade que deva ser carregada nos objetos proxy. O método **sync()** é executado de modo assíncrono e retorna uma [promessa](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), que é resolvida quando o método **sync()** é concluído.
+Chamar o método **sync()** no contexto de solicitação sincroniza o estado entre objetos proxy e objetos no documento do Excel. O método **sync()** executa todos os comandos que são enfileirados no contexto de solicitação e recupera valores para qualquer propriedade que deva ser carregada nos objetos proxy. O método **sync()** é executado de modo assíncrono e retorna uma [promessa](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise), que é resolvida quando o método **sync()** é concluído.
  
 O exemplo a seguir mostra uma função de lote que define um objeto proxy JavaScript local (**selectedRange**), carrega uma propriedade desse objeto e, em seguida, usa o padrão Promessas do JavaScript para chamar **context.sync()** a fim de sincronizar o estado entre objetos proxy e objetos no documento do Excel.
  

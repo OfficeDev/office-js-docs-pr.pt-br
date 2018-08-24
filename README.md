@@ -1,8 +1,8 @@
 # <a name="office-javascript-apis"></a>APIs JavaScript para Office
 
-Bem-vindo à documentação conceitual da API JavaScript do Office. Neste repositório, é possível encontrar os arquivos de origem da documentação para os conceitos, guias de início rápido, tutoriais e guias explicativos da API JavaScript do Office. Para ter a melhor experiência, recomendamos que você veja esse conteúdo em [docs.microsoft.com](https://docs.microsoft.com/en-us/office/dev/add-ins/).
+Bem-vindo à documentação conceitual da API JavaScript do Office Neste repositório, é possível encontrar os arquivos de origem da documentação para os conceitos, guias de início rápido, tutoriais e guias explicativos da API JavaScript do Office. Para ter a melhor experiência, recomendamos que você veja esse conteúdo em [docs.microsoft.com](https://docs.microsoft.com/office/dev/add-ins).
 
-> **Observação**: é possível encontrar os arquivos de origem da documentação de referência da API JavaScript Office no repositório [office-js-doc](https://github.com/OfficeDev/office-js-docs).
+> **Observação**: é possível encontrar os arquivos de origem da documentação de referência da API JavaScript Office no repositório [office-js-docs-reference](https://github.com/OfficeDev/office-js-docs-reference).
 
 ## <a name="give-us-your-feedback"></a>Envie-nos os seus comentários
 

@@ -2,12 +2,12 @@
 title: Criar um suplemento de Project que usa REST com um serviço OData local do Project Server
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: ce481438086f7e55dd27acb61010e61dff7153dc
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 23f9a2f1f2272d5fce4609e111932f4b585caa31
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19439205"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925539"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>Criar um suplemento de Project que usa REST com um serviço OData local do Project Server
 
@@ -29,7 +29,7 @@ A seguir temos os pré-requisitos para a criação de um suplemento de painel de
     > [!NOTE]
     > O Project Standard 2013 também pode hospedar suplementos de painel de tarefas, mas não pode fazer logon no Project Web App.
 
-- O Visual Studio 2015 com Office Developer Tools para Visual Studio inclui modelos para criar suplementos do Office e do SharePoint. Verifique se você instalou a versão mais recente do Office Developer Tools. Confira a seção _Ferramentas_ de [Download de suplementos do Office e do SharePoint](http://msdn.microsoft.com/en-us/office/apps/fp123627.aspx).
+- O Visual Studio 2015 com Office Developer Tools para Visual Studio inclui modelos para criar suplementos do Office e do SharePoint. Verifique se você instalou a versão mais recente do Office Developer Tools. Confira a seção _Ferramentas_ de [Download de suplementos do Office e do SharePoint](https://developer.microsoft.com/office/docs).
     
 - Os procedimentos e exemplos de código neste artigo acessam o serviço **ProjectData** do Project Server 2013 em um domínio local. Os métodos jQuery neste artigo não funcionam com o Project Online.
     
@@ -39,9 +39,9 @@ A seguir temos os pré-requisitos para a criação de um suplemento de painel de
 ### <a name="procedure-1-to-verify-that-the-projectdata-service-is-accessible"></a>Procedimento 1. Para verificar se o serviço ProjectData está acessível
 
 
-1. Para permitir que seu navegador mostre os dados XML de consultas REST diretamente, desative o modo de exibição de leitura de feed. Para saber mais sobre como fazer isso no Internet Explorer, confira o Procedimento 1, etapa 4 em [Consultar feeds OData para dados de relatório do Project](http://msdn.microsoft.com/library/3eafda3b-f006-48be-baa6-961b2ed9fe01%28Office.15%29.aspx).
+1. Para permitir que seu navegador mostre os dados XML de consultas REST diretamente, desative o modo de exibição de leitura de feed. Para saber mais sobre como fazer isso no Internet Explorer, confira o Procedimento 1, etapa 4 em [Consultar feeds OData para dados de relatório do Project](https://docs.microsoft.com/previous-versions/office/project-odata/jj163048(v=office.15)).
     
-2. Consultar o serviço **ProjectData** usando seu navegador com a seguinte URL: **http://ServerName/ProjectServerName /_api/ProjectData**. Por exemplo, se a instância do Project Web App for `http://MyServer/pwa`, o navegador mostra os seguintes resultados:
+2. Consulte o serviço  **ProjectData** usando seu navegador com a seguinte URL: **http://ServerName /ProjectServerName /_api/ProjectData**. Por exemplo, se a instância do Project Web App for `http://MyServer/pwa`, o navegador mostrará os seguintes resultados:
     
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -667,7 +667,7 @@ Mesmo que seu suplemento tenha funcionado corretamente nos testes anteriores, h�
     
 
 > [!NOTE]
-> Há limites para a quantidade de dados que pode ser retornada em uma consulta do serviço **ProjectData**. A quantidade de dados varia conforme a entidade. Por exemplo, o conjunto de entidades **Projects** tem um limite padrão de 100 projetos por consulta, mas o conjunto de entidades **Risks** tem um limite padrão de 200. Para uma instalação de produção, o código no exemplo **HelloProjectOData** deve ser modificado para habilitar consultas de mais de 100 projetos. Para saber mais, confira [Próximas etapas](#next-steps) e [Consultar feeds OData para dados de relatório do Project](http://msdn.microsoft.com/library/3eafda3b-f006-48be-baa6-961b2ed9fe01%28Office.15%29.aspx).
+> Há limites para a quantidade de dados que pode ser retornada em uma consulta do serviço **ProjectData**. A quantidade de dados varia conforme a entidade. Por exemplo, o conjunto de entidades **Projects** tem um limite padrão de 100 projetos por consulta, mas o conjunto de entidades **Risks** tem um limite padrão de 200. Para uma instalação de produção, o código no exemplo **HelloProjectOData** deve ser modificado para habilitar consultas de mais de 100 projetos. Para saber mais, confira [Próximas etapas](#next-steps) e [Consultar feeds OData para dados de relatório do Project](https://docs.microsoft.com/previous-versions/office/project-odata/jj163048(v=office.15)).
 
 
 ## <a name="example-code-for-the-helloprojectodata-add-in"></a>Exemplo de código para o suplemento de HelloProjectOData
@@ -1118,7 +1118,7 @@ Se **HelloProjectOData** fosse um suplemento de produção a ser vendido no AppS
 
 O suplemento deveria conter mais verificações de erro, além de lógica para capturar e explicar ou mostrar casos extremos. Por exemplo, se uma instância do Project Web App tiver mil projetos com uma duração média de cinco dias e custo médio de US$ 2.400, e o projeto ativo for o único que tem uma duração de mais de 20 dias, a comparação de custo e trabalho poderá ficar desequilibrada. Isso poderia ser exibido com um gráfico de frequência. Você poderia adicionar opções para exibir a duração, comparar projetos de tamanhos semelhantes ou comparar projetos de um mesmo departamento ou de departamentos diferentes. Ou poderia adicionar uma forma de o usuário selecionar os campos a exibir em uma lista.
 
-Para outras consultas do serviço **ProjectData**, há limites para o comprimento da cadeia de consulta, que afeta o número de etapas que uma consulta pode executar de um conjunto pai para um objeto em um conjunto filho. Por exemplo, uma consulta de duas etapas de **Projects** para **Tasks** para itens de tarefa funciona, mas uma consulta de três etapas, como **Projects** para **Tasks** para **Assignments** para itens de atribuição pode exceder o comprimento máximo de URL padrão. Para saber mais, confira [Consultar feeds OData para dados de relatório do Project](http://msdn.microsoft.com/library/3eafda3b-f006-48be-baa6-961b2ed9fe01%28Office.15%29.aspx).
+Para outras consultas do serviço **ProjectData**, há limites para o comprimento da cadeia de consulta, que afeta o número de etapas que uma consulta pode executar de um conjunto pai para um objeto em um conjunto filho. Por exemplo, uma consulta de duas etapas de **Projects** para **Tasks** para itens de tarefa funciona, mas uma consulta de três etapas, como **Projects** para **Tasks** para **Assignments** para itens de atribuição pode exceder o comprimento máximo de URL padrão. Para saber mais, confira [Consultar feeds OData para dados de relatório do Project](https://docs.microsoft.com/previous-versions/office/project-odata/jj163048(v=office.15)).
 
 Se você modificar o suplemento **HelloProjectOData** para uso em produção, siga estas etapas:
 
@@ -1132,7 +1132,7 @@ Se você modificar o suplemento **HelloProjectOData** para uso em produção, si
 
   `~/ProjectData/Projects()?skip= [numSkipped]&amp;$top=100&amp;$filter=[filter]&amp;$select=[field1,field2, ???????]`
     
-  Para mais informaçãos, veja [Opções de consulta do sistema OData usando o ponto de extremidade REST](http://msdn.microsoft.com/library/8a938b9b-7fdb-45a3-a04c-4d2d5cf2e353.aspx). Você também pode usar o comando [Set-SPProjectOdataConfiguration](http://technet.microsoft.com/library/jj219516%28v=office.15%29.aspx) no Windows PowerShell para substituir o tamanho de página padrão para uma consulta do conjunto de entidades **Projetos** (ou de qualquer um dos 33 conjuntos de entidades). Veja [ProjectData - Referência do serviço OData do projeto](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx).
+  Para mais informaçãos, veja [Opções de consulta do sistema OData usando o ponto de extremidade REST](https://docs.microsoft.com/previous-versions/dynamicscrm-2015/developers-guide/gg309461(v=crm.7)). Você também pode usar o comando [Set-SPProjectOdataConfiguration](http://technet.microsoft.com/library/jj219516%28v=office.15%29.aspx) no Windows PowerShell para substituir o tamanho de página padrão para uma consulta do conjunto de entidades **Projetos** (ou de qualquer um dos 33 conjuntos de entidades). Veja [ProjectData - Referência do serviço OData do projeto](https://docs.microsoft.com/previous-versions/office/project-odata/jj163015(v=office.15)).
     
 - Para implantar o suplemento, confira [Publicar seu suplemento do Office](../publish/publish.md).
     
@@ -1141,7 +1141,7 @@ Se você modificar o suplemento **HelloProjectOData** para uso em produção, si
 
 - [Suplementos do painel de tarefas para Project](project-add-ins.md)
 - [Criar seu primeiro suplemento de painel de tarefas para o Project 2013 usando um editor de texto](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
-- [ProjectData - referência do serviço OData do Project](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx) 
+- [ProjectData - referência do serviço OData do Project](https://docs.microsoft.com/previous-versions/office/project-odata/jj163015(v=office.15)) 
 - [Manifesto XML dos Suplementos do Office](../develop/add-in-manifests.md) 
 - [Publicar seu Suplemento do Office](../publish/publish.md)
     

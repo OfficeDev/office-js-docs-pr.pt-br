@@ -2,12 +2,12 @@
 title: Empacotar seu suplemento usando o Visual Studio para preparar a publicação
 description: ''
 ms.date: 01/25/2018
-ms.openlocfilehash: e03959294536eeb416a1531d2d281ba83f2d3732
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 89f59d06ff305e0d0fd062a36f7e9f756415df45
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19438750"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925245"
 ---
 # <a name="package-your-add-in-using-visual-studio-to-prepare-for-publishing"></a>Empacotar seu suplemento usando o Visual Studio para preparar a publicação
 
@@ -28,11 +28,11 @@ Conclua as etapas a seguir para implantar seu projeto Web usando o Visual Studio
 
     Se você escolher **Novo...**, o assistente **Criar perfil de publicação** será exibido. Use esse assistente para importar um perfil de publicação de um site de hospedagem, como o Microsoft Azure, ou criar um novo perfil e adicionar seu servidor, as credenciais e outras configurações no procedimento seguinte.
     
-    Para mais informações sobre como importar perfis de publicação ou criar novos perfis de publicação, confira [Criar um Perfil de Publicação](http://msdn.microsoft.com/en-us/library/dd465337.aspx#creating_a_profile).
+    Para mais informações sobre como importar perfis de publicação ou criar novos perfis de publicação, confira [Criar um Perfil de Publicação](http://msdn.microsoft.com/library/dd465337.aspx#creating_a_profile).
     
 3. Na página **Publicar seu suplemento**, escolha o link **Implantar seu projeto Web**.
     
-    A caixa de diálogo  **Publicar Web** aparece. Para mais informações sobre a utilização do desse assistente, veja [Instruções: Implantar um Projeto da Web usando o On-Click Publishing no Visual Studio](http://msdn.microsoft.com/en-us/library/dd465337.aspx).
+    A caixa de diálogo  **Publicar Web** aparece. Para mais informações sobre a utilização do desse assistente, veja [Instruções: Implantar um Projeto da Web usando o On-Click Publishing no Visual Studio](http://msdn.microsoft.com/library/dd465337.aspx).
     
 
 ## <a name="to-package-your-add-in-using-visual-studio-2015"></a>Para empacotar seu suplemento usando o Visual Studio 2015
@@ -62,5 +62,5 @@ Agora é possível carregar seu manifesto XML no local apropriado para [publicar
 ## <a name="see-also"></a>Veja também
 
 - [Publicar seu Suplemento do Office](../publish/publish.md)
-- [Disponibilizar suas soluções no AppSource e no Office](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store)
+- [Disponibilizar suas soluções no AppSource e no Office](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)
     

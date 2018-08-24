@@ -68,7 +68,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Project usa
     </div>
     ```
 
-4. Abra o arquivo **app.js** para especificar o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
+4. Abra o arquivo **index/src.js** para especificar o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
 
     ```js
     'use strict';

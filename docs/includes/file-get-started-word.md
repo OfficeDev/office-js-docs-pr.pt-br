@@ -270,7 +270,6 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
             <title>Boilerplate text app</title>
             <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
             <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
-            <script src="app.js" type="text/javascript"></script>
             <link href="app.css" rel="stylesheet" type="text/css" />
         </head>
         <body>
@@ -297,7 +296,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
     </html>
     ```
 
-2. Abra o arquivo **app.js** para especificar o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo. Esse script contém códigos de inicialização além do código que faz alterações no documento do Word inserindo texto no documento quando um botão é escolhido. 
+2. Abrir o arquivo **src/index.js** para especificar o script do suplemento. Substitua todo o conteúdo com o código a seguir e salve o arquivo. Esse script contém o código de inicialização, bem como o código que faz alterações ao documento do Word, inserindo texto no documento, quando um botão é escolhido. 
 
     ```js
     'use strict';

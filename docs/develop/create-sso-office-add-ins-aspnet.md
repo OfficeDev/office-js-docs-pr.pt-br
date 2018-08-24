@@ -2,12 +2,12 @@
 title: Criar um Suplemento do Office com ASP.NET que usa logon único
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: be7d6a8ab7f646c1ef9e77a2b459c41000c49f43
-ms.sourcegitcommit: eea7f2b1679cf9a209d35880b906e311bdf1359c
+ms.openlocfilehash: 70662a01d86d3fa111b39deb4c16702a4f8530f5
+ms.sourcegitcommit: e1c92ba882e6eb03a165867c6021a6aa742aa310
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "21241135"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "22925637"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>Criar um Suplemento do Office com ASP.NET que use logon único (visualização)
 
@@ -22,7 +22,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 * A versão mais recente disponível do Visual Studio 2017 Preview.
 
-* Office 2016, versão 1708, build 8424.nnnn ou posterior (a versão de assinatura do Office 365, às vezes chamada de "Clique para Executar"). Você talvez precise ser um participante do programa Office Insider para obter essa versão. Para obter mais informações, confira a página [Seja um Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1).
+* Office 2016, versão 1708, build 8424.nnnn ou posterior (a versão de assinatura do Office 365, às vezes chamada de "Clique para Executar"). Você talvez precise ser um participante do programa Office Insider para obter essa versão. Para obter mais informações, confira a página [Seja um Office Insider](https://products.office.com/office-insider?tab=tab-1).
 
 ## <a name="set-up-the-starter-project"></a>Configure o projeto inicial
 
@@ -38,15 +38,15 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     > [!NOTE]
     > Você receberá um erro sobre o namespace Identity. Este é um efeito colateral de um problema de configuração que você corrigirá no próximo passo. O importante é que os pacotes estejam instalados.
 
-1. Atualmente, a versão da biblioteca MSAL (Microsoft.Identity.Client) necessária para SSO (versão `1.1.1-alpha0393`) não faz parte do catálogo padrão de nuget, portanto, não está listada no package.config e deve ser instalada separadamente. 
+1. Atualmente, a versão da biblioteca MSAL (Microsoft.Identity.Client) necessária para SSO (versão `1.1.4-preview0002`) não faz parte do catálogo padrão de nuget, portanto, não está listada no package.config e deve ser instalada separadamente. 
 
    > 1. No menu **Ferramentas**, navegue até **Nuget Package Manager** > **Console do Gerenciador de Pacotes**. 
 
-   > 2. No console, execute o seguinte comando. Pode ser que leve um minuto ou mais para conclusão, mesmo com uma conexão de Internet rápida. Quando a execução terminar, você verá a mensagem **'Microsoft.Identity.Client 1.1.4-preview0002' instalado com sucesso...** próxima à extremidade da saída do console.
+   > 2. No console, execute o seguinte comando: Pode levar um minuto ou mais para concluir, mesmo com uma conexão de Internet rápida. Quando terminar, você deve ver **'Microsoft.Identity.Client 1.1.4-preview0002' instalado com sucesso...** perto do final da saída no console.
 
    >    `Install-Package Microsoft.Identity.Client -Version 1.1.4-preview0002`
 
-   > 3. No **Explorador de soluções**, clique com o botão direito em **Referências**. Confirme se o **Microsoft.Identity.Client** está listado. Se não estiver, ou se houver um ícone de aviso na entrada dele, exclua a entrada e use o assistente do Visual Studio Add Reference para adicionar uma referência à montagem em **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.4-preview0002\lib\net45\Microsoft.Identity.Client.dll**
+   > 3. No **Gerenciador de Soluções**, clique com o botão direito do mouse em **Referências**. Verifique se **Microsoft.Identity.Client** está na lista. Se não estiver ou se houver um ícone de aviso na entrada, exclua a entrada e use o assistente de Adicionar Referência do Visual Studio para adicionar uma referência à montagem em **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.4-preview0002\lib\net45\Microsoft.Identity.Client.dll**
 
 1. Crie o projeto pela segunda vez.
 
@@ -55,7 +55,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 As instruções a seguir foram escritas de modo genérico para que possam ser usadas em diversos lugares. Para este artigo, faça o seguinte:
 - Substitua o espaço reservado **$ADD-IN-NAME$** por `Office-Add-in-ASPNET-SSO`.
 - Substitua o espaço reservado **$FQDN-WITHOUT-PROTOCOL$** por `localhost:44355`.
-- Quando você especifica permissões no diálogo **Selecionar Permissões**, marque as caixas para as permissões a seguir. Somente a primeira é realmente exigida pelo suplemento propriamente dito, mas a biblioteca MSAL usada pelo código de servidor exige `offline_access` e `openid`. A permissão `profile` é necessária para que o host do Office obtenha um token no aplicativo Web do seu suplemento.
+- Quando você especifica permissões no diálogo **Selecionar Permissões**, marque as caixas para as permissões a seguir. Somente a primeira é realmente exigida pelo suplemento propriamente dito, mas a biblioteca MSAL usada pelo código do servidor exige `offline_access` e `openid`. A permissão `profile` é necessária para que o host do Office obtenha um token no aplicativo Web do seu suplemento.
     * Files.Read.All
     * offline_access
     * openid
@@ -70,11 +70,11 @@ As instruções a seguir foram escritas de modo genérico para que possam ser us
 
 ## <a name="configure-the-add-in"></a>Configurar o suplemento
 
-1. Na cadeia de caracteres a seguir, substitua o espaço reservado "{tenant_ID}" pelo ID de locatário do Office 365. Use um dos métodos em [Encontre seu ID de locatário do Office 365](https://support.office.com/en-us/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b) para obtê-lo.
+1. Na cadeia de caracteres a seguir, substitua o espaço reservado "{tenant_ID}" pelo ID de locatário do Office 365. Use um dos métodos em [Encontre seu ID de locatário do Office 365](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id) para obtê-lo.
 
     `https://login.microsoftonline.com/{tenant_ID}/v2.0`
 
-2. No Visual Studio, abra o Web.config. Existem algumas chaves na seção **appSettings** às quais você precisa atribuir valores.
+2. No Visual Studio, abra o web.config. Existem algumas chaves na seção **appSettings** às quais você precisa atribuir valores.
 
 3. Use a cadeia de caracteres construída na etapa 1 como o valor para a chave denominada "ida:Issuer". Não deixe espaços em branco no valor.
 
@@ -120,13 +120,13 @@ As instruções a seguir foram escritas de modo genérico para que possam ser us
     </WebApplicationInfo>
     ```
 
-1. Substitua o espaço reservado "{application_GUID here}" *nos dois lugares* na marcação pela ID do Aplicativo que você copiou ao registrar seu suplemento. O símbolo "{}" não faz parte da ID, portanto não o inclua. Essa é a mesma ID usada para a ClientID e a Audience no web.config.
+1. Substitua o espaço reservado "{application_GUID here}" *nos dois lugares* na marcação pela ID do Aplicativo que você copiou ao registrar seu suplemento. O símbolo "{}" não faz parte da ID, portanto não o inclua. Essa é a mesma ID usada para ClientID e Audience no web.config.
 
     > [!NOTE]
     > * O valor de **Resource** é o **URI da ID do Aplicativo** que você definiu quando adicionou a plataforma API Web no registro do suplemento.
     > * A seção **Scopes** só será usada para gerar uma caixa de diálogo de consentimento se o suplemento for vendido no AppSource.
 
-1. Abra a guia **Avisos** da **Lista de Erros** no Visual Studio. Se houver um aviso informando que `<WebApplicationInfo>` não é um filho válido de `<VersionOverrides>`, sua versão prévia do Visual Studio 2017 não reconhecerá a marcação SSO. Para solucionar esse problema, faça o seguinte para um suplemento do Word, Excel ou PowerPoint. Se você estiver trabalhando com um suplemento do Outlook, confira a solução abaixo.
+1. Abra a guia **Avisos** da **Lista de Erros** no Visual Studio. Se houver um aviso informando que `<WebApplicationInfo>` não é um filho válido de `<VersionOverrides>`, sua versão prévia do Visual Studio 2017 não reconhece a marcação SSO. Para solucionar esse problema, faça o seguinte para um suplemento do Word, Excel ou PowerPoint. Se você estiver trabalhando com um suplemento do Outlook, confira a solução abaixo.
 
    - **Solução alternativa para Word, Excel e PowerPoint**
 
@@ -548,7 +548,7 @@ As instruções a seguir foram escritas de modo genérico para que possam ser us
 3. Logo acima da linha que declara o `ValuesController`, adicione o atributo `[Authorize]`. Isso garante que seu suplemento executará o processo de autorização configurado no último procedimento sempre que um método controlador for chamado. Apenas os chamadores com um token de acesso válido para o seu suplemento podem invocar os métodos do controlador.
 
     > [!NOTE]
-    > Um serviço da ASP.NET MVC Web API de produção deve ter lógica personalizada para o fluxo on-behalf-of em uma ou mais classes [FilterAttribute](https://msdn.microsoft.com/en-us/library/system.web.http.filters(v=vs.108).aspx) personalizadas. Este exemplo educacional coloca a lógica no controlador de principal para que o fluxo de autorização e dados busca lógica inteiro possa ser acompanhado facilmente. Isso também faz com que o exemplo fique consistente com os exemplos de padrão de autorização nos [Exemplos do Azure](https://github.com/Azure-Samples/).    
+    > Um serviço da ASP.NET MVC Web API de produção deve ter lógica personalizada para o fluxo on-behalf-of em uma ou mais classes [FilterAttribute](https://docs.microsoft.com/previous-versions/aspnet/web-frameworks/hh834645(v=vs.108)) personalizadas. Este exemplo educacional coloca a lógica no controlador de principal para que o fluxo de autorização e dados busca lógica inteiro possa ser acompanhado facilmente. Isso também faz com que o exemplo fique consistente com os exemplos de padrão de autorização nos [Exemplos do Azure](https://github.com/Azure-Samples/).    
 
 4. Adicione o método a seguir ao `ValuesController`. Observe que é o valor de retorno é `Task<HttpResponseMessage>` em vez de `Task<IEnumerable<string>>`, como seria mais comum para um método `GET api/values`. Este é um efeito colateral do fato de que nossa lógica de autorização personalizada estará no controlador: algumas condições de erro nessa lógica exigem que um objeto de resposta HTTP seja enviado para o cliente do suplemento. 
 

@@ -2,12 +2,12 @@
 title: Solucionar problemas de mensagens de erro no logon único (SSO)
 description: ''
 ms.date: 12/08/2017
-ms.openlocfilehash: 39099d746db3b5bea8a1ef629872006ba4ee087a
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 8906a168db7be938ecc572ad41a9feec2500c189
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437546"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925497"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>Solucionar problemas de mensagens de erro no logon único (SSO) (visualização)
 
@@ -31,13 +31,13 @@ Para acessar exemplos de tratamento de erro descritos nesta seção, confira:
 - [program.js em Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/public/program.js)
 
 > [!NOTE]
-> Além das sugestões feitas nesta seção, um suplemento do Outlook tem uma maneira adicional de responder a qualquer erro 13*nnn*. Para mais detalhes, consulte [Cenário: implementar o logon único em seu serviço em um suplemento do Outlook](https://docs.microsoft.com/en-us/outlook/add-ins/implement-sso-in-outlook-add-in) e [Suplemento de amostra AttachmentsDemo](https://github.com/OfficeDev/outlook-add-in-attachments-demo). 
+> Além das sugestões feitas nesta seção, um suplemento do Outlook tem uma maneira adicional de responder a qualquer erro 13*nnn*. Para detalhes, consulte [Cenário: implementar o logon único em seu serviço em um suplemento do Outlook](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in) e [AnexosDemo Sample Add-in](https://github.com/OfficeDev/outlook-add-in-attachments-demo). 
 
 ### <a name="13000"></a>13000
 
 A API [getAccessTokenAsync](https://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync) não tem suporte do suplemento ou da versão do Office. 
 
-- A versão do Office não dá suporte a SSO. Office 2016, versão 1710, build 8629.nnnn ou posterior (a versão de assinatura do Office 365, às vezes chamada de "Clique para Executar"). Talvez você precise ser um participante do programa Office Insider para obter essa versão. Para saber mais, confira a página [Seja um Office Insider](https://products.office.com/en-us/office-insider?tab=tab-1). 
+- A versão do Office não dá suporte a SSO. Office 2016, versão 1710, build 8629.nnnn ou posterior (a versão de assinatura do Office 365, às vezes chamada de "Clique para Executar"). Talvez você precise ser um participante do programa Office Insider para obter essa versão. Para saber mais, confira a página [Seja um Office Insider](https://products.office.com/office-insider?tab=tab-1). 
 - O manifesto do suplemento está sem a seção [WebApplicationInfo](https://dev.office.com/reference/add-ins/manifest/webapplicationinfo) adequada.
 
 ### <a name="13001"></a>13001
@@ -62,7 +62,7 @@ Recurso inválido. O manifesto do suplemento não foi configurado corretamente. 
 
 ### <a name="13005"></a>13005
 
-Concessão inválida. Isso geralmente significa que o Office não foi pré-autorizado para o serviço Web do suplemento. Para obter mais informações, consulte [Criar o aplicativo de serviço](sso-in-office-add-ins.md#create-the-service-application) e [Registrar o suplemento com o ponto de extremidade v2.0 do Azure AD](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) ou [Registrar o suplemento com o ponto de extremidade v2.0 do Azure AD](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (Nó JS). Isso também pode acontecer se o usuário não concedeu as permissões de aplicativo de serviço para o seu `profile`.
+Concessão inválida. Isso geralmente significa que o Office não foi pré-autorizado para o serviço Web do suplemento. Para obter mais informações, consulte [Criar o aplicativo de serviço](sso-in-office-add-ins.md#create-the-service-application) e [Registrar o suplemento com o ponto de extremidade v2.0 do Azure AD](create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v20-endpoint) (ASP.NET) ou [Registrar o suplemento com o ponto de extremidade v2.0 do Azure AD](create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v20-endpoint) (Nó JS). Isso também pode acontecer caso o usuário não tenha concedido as permissões de aplicativo de serviço para o seu `profile`.
 
 ### <a name="13006"></a>13006
 
@@ -87,7 +87,7 @@ O usuário desencadeou uma operação que chama o `getAccessTokenAsync` antes de
 O suplemento chama o método `getAccessTokenAsync` com a opção `forceConsent: true`, mas o manifesto de suplemento foi implantado para um tipo de catálogo não oferece suporte para forçar o consentimento. Seu código deve chamar novamente o método `getAccessTokenAsync` e passar a opção `forceConsent: false` no parâmetro [options](https://dev.office.com/reference/add-ins/shared/office.context.auth.getAccessTokenAsync#parameters). No entanto, a chamada de `getAccessTokenAsync` com `forceConsent: true` pode ser uma resposta automática para uma falha de chamada `getAccessTokenAsync` com `forceConsent: false`, assim o código deve acompanhar se `getAccessTokenAsync` com `forceConsent: false` já foi chamado. Em caso positivo, o código deve informar para o usuário sair e entrar novamente no Office.
 
 > [!NOTE]
-> A Microsoft não impõe necessariamente essa restrição em quaisquer tipos de catálogos de suplementos. Nesse caso, esse erro nunca será exibido.
+> A Microsoft não impõe, necessariamente, essa restrição em quaisquer tipos de catálogos de suplementos. Nesse caso, esse erro nunca será exibido.
 
 ### <a name="13010"></a>13010
 
@@ -97,7 +97,7 @@ O usuário está executando o suplemento no Office Online e usando o Edge ou o I
 
 Este erro (que não é específico para `getAccessTokenAsync`) pode indicar que o navegador retirou uma cópia antiga dos arquivos office.js. Limpe o cache do navegador. Outra possibilidade é que a versão do Office não é recente o suficiente para suportar o SSO. Consulte [Pré-requisitos](create-sso-office-add-ins-aspnet.md#prerequisites).
 
-## <a name="errors-on-the-server-side-from-azure-active-directory"></a>Erros do servidor do Active Directory do Azure
+## <a name="errors-on-the-server-side-from-azure-active-directory"></a>Erros no lado do servidor do Azure Active Directory
 
 Para exemplos do tratamento de erro descritos nesta seção, confira:
 - [Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)

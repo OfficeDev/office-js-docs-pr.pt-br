@@ -1,4 +1,4 @@
-# <a name="ux-design-patterns-for-office-add-ins"></a>Padrões de design de UX para Suplementos do Office
+# <a name="ux-design-patterns-for-office-add-ins"></a>Padrões de UX (design do usuário) para suplementos do Office
 
 O design de UX (experiência do usuário) para Suplementos do Office deve fornecer uma experiência atraente para os usuários do Office e estender a experiência geral do Office por meio do ajuste perfeito à interface do usuário padrão do Office.  
 
@@ -12,7 +12,7 @@ Use os modelos padrão de UX para:
 
 * Aplicar soluções a cenários comuns de clientes.
 * Aplicar as práticas recomendadas de design.
-* Incorporar componentes e estilos do [Office UI Fabric](https://developer.microsoft.com/en-us/fabric#/get-started).
+* Incorporar componentes e estilos do [Office UI Fabric](https://developer.microsoft.com/fabric#/get-started).
 * Criar suplementos que se integram visualmente à interface do usuário padrão do Office.
 * Idealizar e visualizar a UX.
 
@@ -35,8 +35,8 @@ Procure cada agrupamento para ter uma ideia de como você pode criar seu supleme
 
 
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Veja também
 * [Kits de ferramentas de design](design-toolkits.md)
-* [Office UI Fabric](https://developer.microsoft.com/en-us/fabric)
-* [Práticas recomendadas para o desenvolvimento de suplementos do Office](https://docs.microsoft.com/en-us/office/dev/add-ins/concepts/add-in-development-best-practices)
-* [Comece a usar o Fabric React](https://docs.microsoft.com/en-us/office/dev/add-ins/design/using-office-ui-fabric-react)
+* [Office UI Fabric](https://developer.microsoft.com/fabric)
+* [Práticas recomendadas para o desenvolvimento de suplementos do Office](https://docs.microsoft.com/office/dev/add-ins/concepts/add-in-development-best-practices)
+* [Comece a usar o Fabric React](https://docs.microsoft.com/office/dev/add-ins/design/using-office-ui-fabric-react)

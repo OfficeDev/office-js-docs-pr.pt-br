@@ -15,7 +15,7 @@ Suplementos podem exigir que os usuários entrem ou se inscrevam para acessar re
 |Fornecer uma maneira para os usuários saírem e se autenticarem novamente.    |Forçar usuários a desinstalar para alternar entre identidades.|
 
 > [!NOTE]
-> Atualmente a API de logon único tem suporte em versão prévia para Word, Excel e Outlook e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](https://dev.office.com/reference/add-ins/requirement-sets/identity-api-requirement-sets). Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Office 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> Atualmente a API de logon único tem suporte para Word, Excel e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](https://dev.office.com/reference/add-ins/requirement-sets/identity-api-requirement-sets). Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Office 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 
 ## <a name="authentication-flow"></a>Fluxo de autenticação
@@ -29,7 +29,7 @@ Se o logon único ainda não estiver disponível para seus usuários, considere 
 
 
 
-3. Conexão do Provedor de Identidade: o provedor de identidade terá sua própria interface do usuário. O Active Directory do Microsoft Azure permite a personalização de páginas de credenciais e de painel de acesso para uma aparência consistente com seu serviço. [Saiba mais](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/customize-branding).
+3. Conexão do Provedor de Identidade: o provedor de identidade terá sua própria interface do usuário. O Active Directory do Microsoft Azure permite a personalização de páginas de credenciais e de painel de acesso para uma aparência consistente com seu serviço. [Saiba mais](https://docs.microsoft.com/azure/active-directory/fundamentals/customize-branding).
 ![](../images/add-in-auth-identity-sign-in.png)
 
 4. Andamento: indica o andamento enquanto as configurações e a interface do usuário são carregadas.
@@ -48,5 +48,5 @@ O logon único ainda é uma versão prévia. Assim que ele estiver disponível a
 2. O suplemento será carregado depois que o usuário der seu consentimento. É possível extrair do usuário e exibir a ele qualquer informação personalizada necessária.
 ![](../images/add-in-ribbon.png)
 
-## <a name="see-also"></a>Confira também
-- Saiba mais sobre [desenvolvimento de suplementos de logon único](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/sso-in-office-add-ins)
+## <a name="see-also"></a>Veja também
+- Saiba mais sobre [desenvolvimento de suplementos de logon único](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins)

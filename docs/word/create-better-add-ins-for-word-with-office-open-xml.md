@@ -2,12 +2,12 @@
 title: Criar suplementos melhores para o Word com o Office Open XML
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: ed44b9d331670ac7bf9fb625555dcd05f7bff7ec
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 2e8545f175143c26b3f65af78ad4c47053e927cd
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19439716"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925553"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Criar suplementos melhores para o Word com o Office Open XML
 
@@ -857,5 +857,5 @@ Ao usar modelos com o aplicativo, se o suplemento será residente no modelo no m
 - [API JavaScript para Office ](https://dev.office.com/reference/add-ins/javascript-api-for-office) 
 - [Padrão ECMA-376: Formatos do Office Open XML](http://www.ecma-international.org/publications/standards/Ecma-376.htm) (acesse a referência de linguagem completa e a documentação relacionada do Open XML aqui) 
 - [OpenXMLDeveloper.org](http://www.openxmldeveloper.org)
-- [Como explorar a API JavaScript para Office: associação de dados e partes XML personalizadas](https://msdn.microsoft.com/en-us/magazine/dn166930.aspx)
+- [Como explorar a API JavaScript para Office: associação de dados e partes XML personalizadas](https://msdn.microsoft.com/magazine/dn166930.aspx)
     
