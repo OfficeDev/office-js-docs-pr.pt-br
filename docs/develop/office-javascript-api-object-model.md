@@ -2,12 +2,12 @@
 title: Modelo de objeto da API JavaScript para Office
 description: ''
 ms.date: 07/27/2018
-ms.openlocfilehash: a1fca2c8dd5a92cadb6f2798c3732093578360e5
-ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.openlocfilehash: 999383ae07472ec8d07be0fa714a44339c8ce76d
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "21719878"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925504"
 ---
 # <a name="office-javascript-api-object-model"></a>Modelo de objeto da API JavaScript para Office
 Os suplementos JavaScript do Office fornecem acesso à funcionalidade subjacente do host. A maior parte desse acesso passa por alguns objetos importantes. O objeto [Context](#context-object) dá acesso ao ambiente de tempo de execução após a inicialização. O objeto [Document](#document-object) dá ao usuário controle sobre um documento do Excel, PowerPoint ou Word. O objeto [Mailbox](#mailbox-object) fornece um acesso de suplemento do Outlook para mensagens e perfis de usuário. Entender os relacionamentos entre esses objetos de alto nível é a base de um suplemento JavaScript.
@@ -16,7 +16,7 @@ Os suplementos JavaScript do Office fornecem acesso à funcionalidade subjacente
 
 **Aplica-se a:** todos os tipos de suplementos
 
-Quando um suplemento é [inicializado](https://docs.microsoft.com/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in), ele tem muitos objetos diferentes com os quais ele pode interagir no ambiente de tempo de execução. O contexto de tempo de execução do suplemento é refletido na API pelo objeto [Context](https://dev.office.com/reference/add-ins/shared/office.context). O **Context** é o objeto principal que fornece acesso aos objetos mais importantes da API, como os objetos [Document](https://dev.office.com/reference/add-ins/shared/document) e [Mailbox](https://dev.office.com/reference/add-ins/outlook/Office.context.mailbox), que, por sua vez, fornecem acesso ao conteúdo de documentos e caixas de correio.
+Quando um suplemento é [inicializado](https://docs.microsoft.com/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in), ele tem muitos objetos diferentes com os quais ele pode interagir no ambiente de tempo de execução. O contexto de tempo de execução do suplemento é refletido na API pelo objeto [Context](https://dev.office.com/reference/add-ins/shared/office.context). O **Context** é o objeto principal e que fornece acesso aos objetos mais importantes da API, como [Document](https://dev.office.com/reference/add-ins/shared/document) e [Mailbox](https://dev.office.com/reference/add-ins/outlook/Office.context.mailbox), os quais, por sua vez, fornecem acesso ao conteúdo de documentos e caixas de correio.
 
 Por exemplo, nos suplementos do painel de tarefas e de conteúdo, é possível usar a propriedade [documento](https://dev.office.com/reference/add-ins/shared/office.context.document) do objeto **Context** para acessar as propriedades e os métodos do objeto **Document**. Isso permite interagir com o conteúdo de documentos do Word, planilhas do Excel ou tarefas do Project. Do mesmo modo, com os suplementos do Outlook, você pode usar a propriedade [mailbox](https://dev.office.com/reference/add-ins/outlook/Office.context.mailbox) do objeto **Context** para acessar as propriedades e os métodos do objeto **Mailbox** e interagir com a mensagem, a solicitação de reunião ou o conteúdo do compromisso.
 
@@ -171,4 +171,4 @@ Além disso, os suplementos do Outlook podem usar os seguintes objetos:
     
 -  Objeto **RoamingSettings**: para salvar as configurações personalizadas do suplemento do Outlook na caixa de correio do usuário em que o suplemento está instalado.
     
-Para obter informações sobre como usar o JavaScript em suplementos do Outlook, confira [Suplementos do Outlook](https://docs.microsoft.com/en-us/outlook/add-ins/).
+Para obter informações sobre como usar o JavaScript em suplementos do Outlook, confira [Suplementos do Outlook](https://docs.microsoft.com/outlook/add-ins/).

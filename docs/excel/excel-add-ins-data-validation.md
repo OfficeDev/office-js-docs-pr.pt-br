@@ -2,12 +2,12 @@
 title: Adicionar validação de dados a intervalos do Excel
 description: ''
 ms.date: 04/13/2018
-ms.openlocfilehash: 3d6a901e2f8296806cff470340b40f4d77e79e34
-ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.openlocfilehash: af965df4a1aece5b7f8d5ea89664519b576a4850
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "21703942"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925308"
 ---
 # <a name="add-data-validation-to-excel-ranges-preview"></a>Adicionar validação de dados a intervalos do Excel (versão prévia)
 
@@ -19,9 +19,9 @@ ms.locfileid: "21703942"
 
 A Biblioteca JavaScript do Excel fornece APIs para permitir que seu suplemento adicione validação de dados automática a tabelas, colunas, linhas e outros intervalos em uma pasta de trabalho. Para entender os conceitos e a terminologia de validação de dados, consulte os artigos a seguir sobre como os usuários adicionam validação de dados por meio da interface do usuário do Excel:
 
-- [Aplicar validação de dados a células](https://support.office.com/en-us/article/Apply-data-validation-to-cells-29FECBCC-D1B9-42C1-9D76-EFF3CE5F7249)
-- [Mais sobre validação de dados](https://support.office.com/en-us/article/More-on-data-validation-f38dee73-9900-4ca6-9301-8a5f6e1f0c4c)
-- [Descrição e exemplos de validação de dados no Excel](https://support.microsoft.com/en-us/help/211485/description-and-examples-of-data-validation-in-excel)
+- [Aplicar validação de dados a células](https://support.office.com/article/Apply-data-validation-to-cells-29FECBCC-D1B9-42C1-9D76-EFF3CE5F7249)
+- [Mais sobre validação de dados](https://support.office.com/article/More-on-data-validation-f38dee73-9900-4ca6-9301-8a5f6e1f0c4c)
+- [Descrição e exemplos de validação de dados no Excel](https://support.microsoft.com/help/211485/description-and-examples-of-data-validation-in-excel)
 
 ## <a name="programmatic-control-of-data-validation"></a>Controle programático de validação de dados
 

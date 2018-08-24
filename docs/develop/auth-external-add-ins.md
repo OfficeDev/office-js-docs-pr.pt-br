@@ -2,12 +2,12 @@
 title: Autorizar serviços externos no seu suplemento do Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 34e8119d4ecf6432cde7f06552584d164b8c9b8e
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 12f6f80b1679eeec8aec569b534aca074610e929
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437448"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925287"
 ---
 # <a name="authorize-external-services-in-your-office-add-in"></a>Autorizar serviços externos no seu suplemento do Office
 
@@ -31,7 +31,7 @@ Você deve estar familiarizado com os prós e os contras do fluxo implícito e o
 
 ## <a name="authorization-to-microsoft-graph"></a>Autorização para o Microsoft Graph
 
-Se o serviço externo puder ser acessado por meio do Microsoft Graph, como o Office 365 ou o OneDrive, você poderá fornecer a melhor experiência para os usuários e a experiência de desenvolvimento mais fácil para você, usando o sistema de logon único descrito em [Autorizar para o Microsoft Graph no suplemento do Office](authorize-to-microsoft-graph.md) e seus artigos relacionados. As técnicas descritas neste artigo são ideais para serviços externos que não podem ser acessados com o Microsoft Graph. No entanto, elas *podem* ser usadas para acessar o Microsoft Graph, e você pode preferir as vantagens do logon único. Por exemplo, o sistema de logon único requer código do lado do servidor, portanto, ele não pode ser usado com um aplicativo de página única. Além disso, o sistema de logon único ainda não é compatível com todas as plataformas.
+Se o serviço externo puder ser acessado por meio do Microsoft Graph, como o Office 365 ou o OneDrive, você poderá fornecer a melhor experiência para os usuários e a experiência de desenvolvimento mais fácil para você com o uso do sistema de logon único descrito em [Autorizar para o Microsoft Graph no suplemento do Office](authorize-to-microsoft-graph.md) e seus artigos relacionados. As técnicas descritas neste artigo são melhores para usar em serviços externos que não sejam acessíveis com o Microsoft Graph. No entanto, elas *podem* ser usadas para acessar o Microsoft Graph, e você pode preferir as vantagens do logon único. Por exemplo, o sistema de logon único requer código do lado do servidor, portanto, ele não pode ser usado com um aplicativo de página única. Além disso, o sistema de logon único ainda não é compatível com todas as plataformas.
 
 ## <a name="using-the-implicit-flow-in-office-add-ins"></a>Usando o fluxo Implícito em suplementos do Office
 A melhor maneira de descobrir se um serviço online suporta o fluxo implícito é consultar a documentação do serviço. Para serviços que suportam o fluxo implícito, você pode usar a biblioteca de JavaScript **Office-js-helpers** para fazer todo o trabalho detalhado para você:
@@ -51,7 +51,7 @@ As seguintes amostras fornecem exemplos de suplementos que implementam o Fluxo d
 
 ### <a name="relayproxy-functions"></a>Funções de retransmissão/Proxy
 
-Você pode usar o fluxo do Código de Autorização mesmo com um aplicativo Web sem servidor armazenando os valores de **ID do cliente** e **segredo cliente** em uma função simples hospedada em um serviço como o [Azure Functions](https://azure.microsoft.com/en-us/services/functions) ou o [Amazon Lambda](https://aws.amazon.com/lambda). A função troca um código específico por um **token de acesso** e transmite-o de volta para o cliente. A segurança dessa abordagem depende do quanto protegido é o acesso à função.
+Você pode usar o fluxo do Código de Autorização mesmo com um aplicativo Web sem servidor armazenando os valores de **ID do cliente** e **segredo cliente** em uma função simples hospedada em um serviço como o [Azure Functions](https://azure.microsoft.com/services/functions) ou o [Amazon Lambda](https://aws.amazon.com/lambda). A função troca um código específico por um **token de acesso** e transmite-o de volta para o cliente. A segurança dessa abordagem depende do quanto protegido é o acesso à função.
 
 Para usar essa técnica, o suplemento exibe uma interface do usuário/pop-up para mostrar a tela de logon do serviço online (Google, Facebook e assim por diante). Quando o usuário se conecta e concede ao suplemento a permissão para acessar seus recursos no serviço online, o suplemento recebe um código que então pode ser enviado para a função online. Os serviços descritos em **Serviços intermediários** neste artigo usam um fluxo semelhante a esse.
 
@@ -59,7 +59,7 @@ Para usar essa técnica, o suplemento exibe uma interface do usuário/pop-up par
 
 As bibliotecas estão disponíveis para vários idiomas e plataformas, tanto para o fluxo implícito quanto para o fluxo do Código de Autorização. Algumas bibliotecas são de propósito geral, enquanto outras são para serviços online específicos.
 
-**Office 365 e outros serviços que usam o Azure Active Directory como provedor de autorização**: [Bibliotecas de autenticação do Active Directory do Azure](https://azure.microsoft.com/en-us/documentation/articles/active-directory-authentication-libraries/). Também está disponível uma visualização da [Biblioteca de Autenticação da Microsoft](https://www.nuget.org/packages/Microsoft.Identity.Client).
+**Office 365 e outros serviços que usam o Azure Active Directory como provedor de autorização**: [Bibliotecas de autenticação do Active Directory do Azure](https://azure.microsoft.com/documentation/articles/active-directory-authentication-libraries/). Também está disponível uma visualização da [Biblioteca de Autenticação da Microsoft](https://www.nuget.org/packages/Microsoft.Identity.Client).
 
 **Google**: Pesquise "auth" ou o nome da sua linguagem no [GitHub.com/Google](https://github.com/google). A maioria dos repositórios relevantes se chama `google-auth-library-[name of language]`.
 
@@ -79,4 +79,4 @@ Para obter exemplos de suplementos que usam um serviço intermediário para auto
 
 ## <a name="what-is-cors"></a>O que é CORS?
 
-CORS significa [Compartilhamento de Recursos Entre Origens](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS). Para obter informações sobre como usar o CORS nos suplementos, confira [Como lidar com as limitações da política de mesma origem nos suplementos do Office](addressing-same-origin-policy-limitations.md).
+CORS significa [Compartilhamento de Recursos Entre Origens](https://developer.mozilla.org/docs/Web/HTTP/Access_control_CORS). Para obter informações sobre como usar o CORS nos suplementos, confira [Como lidar com as limitações da política de mesma origem nos suplementos do Office](addressing-same-origin-policy-limitations.md).

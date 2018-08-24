@@ -1,4 +1,10 @@
 ### YamlMime:YamlDocument
+ms.openlocfilehash: c56cc86f11a43fff1a089dc4e24eced24799c327
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925322"
 documentType: LandingData
 title: Documentação dos Suplementos do Office
 metadata:
@@ -8,19 +14,13 @@ metadata:
   ms.topic: landing-page
   ms.date: 12/04/2017
   ms.author: o365devx
-  ms.openlocfilehash: 4e5d08869ab343abe6915d4039a7124ac10b386a
-  ms.sourcegitcommit: 17f60431644b448a4816913039aaebfa328f9b0a
-  ms.translationtype: HT
-  ms.contentlocale: pt-BR
-  ms.lasthandoff: 05/25/2018
-  ms.locfileid: "19476442"
 abstract:
-  description: A <a href="https://docs.microsoft.com/en-us/office/dev/add-ins/overview/office-add-ins">plataforma de Suplementos do Office</a> permite que você crie soluções que estendam aplicativos do Office e interajam com o conteúdo em documentos do Office. Com os Suplementos do Office, você pode usar tecnologias da Web familiares, como HTML, CSS e JavaScript, para estender e interagir com o Word, Excel, PowerPoint, OneNote, Project e Outlook. Sua solução pode ser executada no Office por meio de várias plataformas, incluindo o Office para Windows, Office Online, Office para Mac e Office para iPad. Aprenda como criar Suplementos do Office com nossos inícios rápidos, guias de instruções e documentação de referência da API.<br/><br/><b>Observação:</b> Para obter informações sobre os suplementos COM ou VSTO, veja a <a href="https://msdn.microsoft.com/en-us/library/fp161347.aspx" target="_blank">documentação do MSDN</a>.
+  description: A <a href="https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins">plataforma de Suplementos do Office</a> permite que você crie soluções que estendam aplicativos do Office e interajam com o conteúdo em documentos do Office. Com os Suplementos do Office, você pode usar tecnologias da Web familiares, como HTML, CSS e JavaScript, para estender e interagir com o Word, Excel, PowerPoint, OneNote, Project e Outlook. Sua solução pode ser executada no Office por meio de várias plataformas, incluindo Office para Windows, Office Online, Office para Mac e Office para iPad. Aprenda como criar Suplementos do Office com nossos inícios rápidos, guias de instruções e documentação de referência da API.<br/><br/><b>Observação:</b> Para obter informações sobre os suplementos COM ou VSTO, veja a <a href="https://msdn.microsoft.com/library/fp161347.aspx" target="_blank">documentação do MSDN</a>.
   aside:
     image:
       alt: 
       height: 130
-      src: https://docs.microsoft.com/en-us/office/dev/add-ins/images/office-add-ins-video-thumbnail.png
+      src: https://docs.microsoft.com/office/dev/add-ins/images/office-add-ins-video-thumbnail.png
       width: 250
     title: Comece com os Suplementos do Office. (14:10)
     href: https://channel9.msdn.com/Events/Connect/2017/T192
@@ -34,29 +34,29 @@ sections:
     style: icon48
     items:
     - image:
-        src: https://docs.microsoft.com/en-us/office/dev/add-ins/images/index/ExcelLogoColor.svg
+        src: https://docs.microsoft.com/office/dev/add-ins/images/index/ExcelLogoColor.svg
       text: Excel
-      href: https://docs.microsoft.com/en-us/office/dev/add-ins/quickstarts/excel-quickstart-jquery
+      href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/excel-quickstart-jquery
     - image:
-        src: https://docs.microsoft.com/en-us/office/dev/add-ins/images/index/WordLogoColor.svg
+        src: https://docs.microsoft.com/office/dev/add-ins/images/index/WordLogoColor.svg
       text: Word
-      href: https://docs.microsoft.com/en-us/office/dev/add-ins/quickstarts/word-quickstart
+      href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/word-quickstart
     - image:
-        src: https://docs.microsoft.com/en-us/office/dev/add-ins/images/index/OneNoteLogoColor.svg
+        src: https://docs.microsoft.com/office/dev/add-ins/images/index/OneNoteLogoColor.svg
       text: OneNote
-      href: https://docs.microsoft.com/en-us/office/dev/add-ins/quickstarts/onenote-quickstart
+      href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/onenote-quickstart
     - image:
-        src: https://docs.microsoft.com/en-us/office/dev/add-ins/images/index/OutlookLogoColor.svg
+        src: https://docs.microsoft.com/office/dev/add-ins/images/index/OutlookLogoColor.svg
       text: Outlook
-      href: https://docs.microsoft.com/en-us/outlook/add-ins/quick-start
+      href: https://docs.microsoft.com/outlook/add-ins/quick-start
     - image:
-        src: https://docs.microsoft.com/en-us/office/dev/add-ins/images/index/PowerPointLogoColor.svg
+        src: https://docs.microsoft.com/office/dev/add-ins/images/index/PowerPointLogoColor.svg
       text: PowerPoint
-      href: https://docs.microsoft.com/en-us/office/dev/add-ins/quickstarts/powerpoint-quickstart
+      href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/powerpoint-quickstart
     - image:
-        src: https://docs.microsoft.com/en-us/office/dev/add-ins/images/index/ProjectLogoColor.svg
-      text: Project
-      href: https://docs.microsoft.com/en-us/office/dev/add-ins/quickstarts/project-quickstart
+        src: https://docs.microsoft.com/office/dev/add-ins/images/index/ProjectLogoColor.svg
+      text: Projeto
+      href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/project-quickstart
 - title: Guias de instruções
   items:
   - type: paragraph
@@ -65,15 +65,15 @@ sections:
     style: unordered
     className: spaced bullet
     items:
-    - html: <a href="/en-us/office/dev/add-ins/design/add-in-design">Projetar a Interface do Usuário de um Suplemento do Office</a>
-    - html: <a href="/en-us/office/dev/add-ins/excel/excel-add-ins-overview">Desenvolvimento do suplemento do Excel</a>
-    - html: <a href="/en-us/office/dev/add-ins/word/word-add-ins-programming-overview">Desenvolvimento do suplemento do Word</a>
-    - html: <a href="/en-us/office/dev/add-ins/onenote/onenote-add-ins-programming-overview">Desenvolvimento do suplemento do OneNote</a>
+    - html: <a href="/office/dev/add-ins/design/add-in-design">Projetar a Interface do Usuário de um Suplemento do Office</a>
+    - html: <a href="/office/dev/add-ins/excel/excel-add-ins-overview">Desenvolvimento do suplemento do Excel</a>
+    - html: <a href="/office/dev/add-ins/word/word-add-ins-programming-overview">Desenvolvimento do suplemento do Word</a>
+    - html: <a href="/office/dev/add-ins/onenote/onenote-add-ins-programming-overview">Desenvolvimento do suplemento do OneNote</a>
     - html: <a href="https://docs.microsoft.com/outlook/add-ins">Desenvolvimento do suplemento do Outlook</a>
-    - html: <a href="/en-us/office/dev/add-ins/powerpoint/powerpoint-add-ins">Desenvolvimento do suplemento do PowerPoint</a>
-    - html: <a href="/en-us/office/dev/add-ins/project/project-add-ins">Desenvolvimento do suplemento do Project</a>
-    - html: <a href="/en-us/office/dev/add-ins/testing/test-debug-office-add-ins">Testar e depurar um Suplemento do Office</a>
-    - html: <a href="/en-us/office/dev/add-ins/publish/publish">Publicar um Suplemento do Office</a>
+    - html: <a href="/office/dev/add-ins/powerpoint/powerpoint-add-ins">Desenvolvimento do suplemento do PowerPoint</a>
+    - html: <a href="/office/dev/add-ins/project/project-add-ins">Desenvolvimento do suplemento do Project</a>
+    - html: <a href="/office/dev/add-ins/testing/test-debug-office-add-ins">Testar e depurar um Suplemento do Office</a>
+    - html: <a href="/office/dev/add-ins/publish/publish">Publicar um Suplemento do Office</a>
 - title: Referência
   items:
   - type: list
@@ -81,7 +81,7 @@ sections:
     className: cardsD
     items:
     - title: APIs comuns (2013)
-      html: <p><a href="https://dev.office.com/reference/add-ins/javascript-api-for-office" target="_blank">JavaScript API para Office</a></p>
+      html: <p><a href="https://dev.office.com/reference/add-ins/javascript-api-for-office" target="_blank">API JavaScript para Office</a></p>
     - title: APIs específicas do host (2016)
       html: <p><a href="https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview" target="_blank">API JavaScript do Excel</a></p><p><a href="https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview" target="_blank">API JavaScript do Word</a></p><p><a href="https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference" target="_blank">API JavaScript do OneNote</a></p><p><a href="https://dev.office.com/reference/add-ins/outlook/tutorial-api-requirement-sets" target="_blank">API JavaScript do Outlook</a></p>
     - title: Outros

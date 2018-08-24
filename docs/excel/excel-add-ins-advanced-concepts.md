@@ -2,12 +2,12 @@
 title: Conceitos avançados da API JavaScript do Excel
 description: ''
 ms.date: 1/18/2018
-ms.openlocfilehash: 89db69e124475c882448a2105837787ce2c84753
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 7abf905233a872de07410b6ae6f0da4330bec7b7
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437553"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925392"
 ---
 # <a name="excel-javascript-api-advanced-concepts"></a>Conceitos avançados da API JavaScript do Excel
 
@@ -240,5 +240,5 @@ return context.sync()
  
 * [Principais conceitos da API JavaScript do Excel](excel-add-ins-core-concepts.md)
 * [Exemplos de código de suplementos do Excel](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Otimização de desempenho da API JavaScript do Excel](https://dev.office.com/reference/add-ins/excel/performance.md)
+* [Otimização de desempenho da API JavaScript do Excel](performance.md)
 * [Referência da API JavaScript do Excel](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)

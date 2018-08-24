@@ -25,7 +25,7 @@ Os elementos padrão usados em um suplemento podem incorporar movimentos a fim d
 
 
 ## <a name="use-expected-motions"></a>Usar movimentos esperados
-Recomendamos usar o [Office UI Fabric](https://developer.microsoft.com/en-us/fabric) para criar uma conexão visual com a plataforma do Office, e também incentivamos o uso de [Animações do Fabric](https://developer.microsoft.com/en-us/fabric#/styles/animations) para criar movimentos alinhados à linguagem de movimento do Fabric. 
+Recomendamos usar o [Office UI Fabric](https://developer.microsoft.com/fabric) para criar uma conexão visual com a plataforma do Office, e também incentivamos o uso de [Animações do Fabric](https://developer.microsoft.com/fabric#/styles/animations) para criar movimentos alinhados à linguagem de movimento do Fabric. 
 
 Use para ajustar perfeitamente no Office. Ele ajudará a criar experiências que são mais sentidas do que observadas. As classes CSS de animação fornecem direção, entrada/saída e especificações de duração que reforçam modelos mentais do Office e fornecem oportunidades para que os clientes saibam como interagir com o suplemento.
 

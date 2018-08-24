@@ -2,12 +2,12 @@
 title: Office UI Fabric em suplementos do Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 04964d5864eea4a960f7b57e5df6f7bd7c844fde
-ms.sourcegitcommit: 4e4f7c095e8f33b06bd8a02534ee901125eb1d17
+ms.openlocfilehash: b573f720ebe4f90f7d4dbfdb05693871b93a2258
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "20084067"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925189"
 ---
 # <a name="office-ui-fabric-in-office-add-ins"></a>Office UI Fabric em suplementos do Office 
 
@@ -49,16 +49,16 @@ O Fabric oferece uma variedade de componentes da experiência do usuário que vo
 
 Nem todos os componentes do Fabric são recomendados para uso em suplementos. Aqui está uma lista de componentes do Fabric React UX que recomendamos para suplementos:
 
-- [Navegação de trilha](https://developer.microsoft.com/en-us/fabric#/components/breadcrumb)
-- [Botão](https://developer.microsoft.com/en-us/fabric#/components/button)
-- [Caixa de seleção](https://developer.microsoft.com/en-us/fabric#/components/checkbox)
-- [ChoiceGroup](https://developer.microsoft.com/en-us/fabric#/components/choicegroup)
-- [Lista suspensa](https://developer.microsoft.com/en-us/fabric#/components/dropdown)
-- [Rótulo](https://developer.microsoft.com/en-us/fabric#/components/label)
-- [Lista](https://developer.microsoft.com/en-us/fabric#/components/list)
-- [Tabela dinâmica](https://developer.microsoft.com/en-us/fabric#/components/pivot)
-- [TextField](https://developer.microsoft.com/en-us/fabric#/components/textfield)
-- [Alternância](https://developer.microsoft.com/en-us/fabric#/components/toggle)
+- [Navegação estrutural](https://developer.microsoft.com/fabric#/components/breadcrumb)
+- [Botão](https://developer.microsoft.com/fabric#/components/button)
+- [Caixa de seleção](https://developer.microsoft.com/fabric#/components/checkbox)
+- [ChoiceGroup](https://developer.microsoft.com/fabric#/components/choicegroup)
+- [Lista suspensa](https://developer.microsoft.com/fabric#/components/dropdown)
+- [Rótulo](https://developer.microsoft.com/fabric#/components/label)
+- [Lista](https://developer.microsoft.com/fabric#/components/list)
+- [Tabela dinâmica](https://developer.microsoft.com/fabric#/components/pivot)
+- [Campo de texto](https://developer.microsoft.com/fabric#/components/textfield)
+- [Alternância](https://developer.microsoft.com/fabric#/components/toggle)
 
 Você pode usar diferentes estruturas do JavaScript, como Angular ou React, para criar o suplemento. Para começar a usar componentes do Fabric com sua estrutura, confira os recursos a seguir.
 
