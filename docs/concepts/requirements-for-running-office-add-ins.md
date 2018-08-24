@@ -2,19 +2,19 @@
 title: Requisitos para a execução de Suplementos do Office
 description: ''
 ms.date: 02/09/2018
-ms.openlocfilehash: 944ac0c26b864124a8c86b46e023609120d8ea75
-ms.sourcegitcommit: 3e4e3a45a07ed91176cab182c44184c196c23d35
+ms.openlocfilehash: 0602bd05927eebabec64f771025be5e064a2a355
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "20159674"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925420"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Requisitos para a execução de Suplementos do Office
 
 Este artigo descreve os requisitos de software e de dispositivo para execução de Suplementos do Office.
 
 > [!NOTE]
-> Caso pretenda [publicar](../publish/publish.md) o suplemento na experiência do Office depois de criá-lo, verifique se você está em conformidade com as [Políticas de validação do AppSource](https://docs.microsoft.com/en-us/office/dev/store/validation-policies). Por exemplo, para passar na validação, seu suplemento deve funcionar em todas as plataformas com suporte aos métodos que você definir (para mais informações, confira a [seção 4.12](https://docs.microsoft.com/en-us/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) e a [Página de hospedagem e disponibilidade de suplementos do Office](../overview/office-add-in-availability.md)). 
+> Caso pretenda [publicar](../publish/publish.md) o suplemento na experiência do Office depois de criá-lo, verifique se você está em conformidade com as [Políticas de validação do AppSource](https://docs.microsoft.com/office/dev/store/validation-policies). Por exemplo, para passar na validação, seu suplemento deve funcionar em todas as plataformas com suporte aos métodos que você definir (para mais informações, confira a [seção 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) e a [Página de hospedagem e disponibilidade de suplementos do Office](../overview/office-add-in-availability.md)). 
 
 Confira uma visão avançada da compatibilidade atual dos suplementos do Office no momento na página [Disponibilidade de hosts e plataformas de suplementos do Office](../overview/office-add-in-availability.md).
 

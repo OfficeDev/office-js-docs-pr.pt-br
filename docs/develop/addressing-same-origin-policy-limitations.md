@@ -2,9 +2,13 @@
 title: Como lidar com limitações de política de mesma origem nos Suplementos do Office
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 536e02d2367bef81d4a6e49098d66833c99f5e50
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925105"
 ---
-
-
 # <a name="addressing-same-origin-policy-limitations-in-office-add-ins"></a>Como lidar com limitações de política de mesma origem nos Suplementos do Office
 
 
@@ -51,9 +55,7 @@ function loadVideoDetails(videoIndex) {
 
 Outra maneira para resolver as limitações de política de mesma origem é implementar a página da Web do suplemento como uma página ASP que usa o OAuth ou armazena em cache credenciais em cookies.
 
-Para obter um exemplo que use OAuth para autenticação, confira [Web part do SharePoint no Twitter com OAuth](http://aidangarnish.net/post/Twitter-SharePoint-Web-Part-With-OAuth).
-
-Para obter um exemplo de código do lado do servidor que mostre como usar o objeto `Cookie` em `System.Net` para obter e definir valores de cookies, confira a propriedade [Value](https://msdn.microsoft.com/pt-br/library/4f772twc).
+Para obter um exemplo de código do lado do servidor que mostre como usar o objeto `Cookie` em `System.Net` para obter e definir valores de cookies, confira a propriedade [Value](https://msdn.microsoft.com/library/4f772twc).
 
 
 ## <a name="using-cross-origin-resource-sharing-cors"></a>Usar o CORS (compartilhamento de recursos entre origens)

@@ -2,8 +2,13 @@
 title: Depurar suplementos no Office Online
 description: Como usar o Office Online para testar e depurar seus suplementos.
 ms.date: 03/14/2018
+ms.openlocfilehash: fac57e136c07bf33dce62908ea2c12d8be806f7b
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925336"
 ---
-
 # <a name="debug-add-ins-in-office-online"></a>Depurar suplementos no Office Online
 
 
@@ -16,7 +21,7 @@ Para começar:
 - Obtenha uma conta de desenvolvedor do Office 365, se já não tiver uma, ou o acesso a um site do SharePoint.
     
   > [!NOTE]
-  > Para se inscrever para uma assinatura gratuita de desenvolvedor do Office 365, ingresse no [Programa de Desenvolvedor do Office 365](https://developer.microsoft.com/en-us/office/dev-program). Confira as instruções passo a passo sobre como participar do Programa para Desenvolvedores do Office 365, entrar e configurar sua assinatura na [documentação do Programa para Desenvolvedores do Office 365](https://docs.microsoft.com/pt-br/office/developer-program/office-365-developer-program).
+  > Para se inscrever para uma assinatura gratuita de desenvolvedor do Office 365, ingresse no [Programa de Desenvolvedor do Office 365](https://developer.microsoft.com/office/dev-program). Confira o passo a passo de como participar do Programa para Desenvolvedores do Office 365, entre e configure sua assinatura na [documentação do Programa para Desenvolvedores do Office 365](https://docs.microsoft.com/office/developer-program/office-365-developer-program).
      
 - Configure um catálogo de suplementos no Office 365 (SharePoint Online). Um catálogo de suplementos é um conjunto de sites dedicado no SharePoint Online que hospeda bibliotecas de documentos para suplementos do Office. Se você tiver seu próprio site do SharePoint, pode configurar uma biblioteca de documentos do catálogo de suplementos. Para saber mais, confira [Publicar suplementos de conteúdo e de painel de tarefas em um catálogo de suplementos no SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
     
@@ -58,8 +63,8 @@ A seguir apresentamos alguns problemas que você pode encontrar ao depurar:
 
 - [Práticas recomendadas para o desenvolvimento de suplementos do Office](../concepts/add-in-development-best-practices.md)
 - 
-  [Políticas de validação do AppSource](https://docs.microsoft.com/pt-br/office/dev/store/validation-policies)  
+  [Políticas de validação do AppSource](https://docs.microsoft.com/office/dev/store/validation-policies)  
 - 
-  [Criar aplicativos e suplementos eficazes para o AppSource](https://docs.microsoft.com/pt-br/office/dev/store/create-effective-office-store-listings)  
+  [Criar aplicativos e suplementos eficazes para o AppSource](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings)  
 - [Solucionar erros de usuários com suplementos do Office](testing-and-troubleshooting.md)
     

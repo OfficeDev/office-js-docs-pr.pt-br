@@ -2,12 +2,12 @@
 title: Comandos de suplemento para Excel, Word e PowerPoint
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 68eee18233b6b874f237ded41009561dbde774de
-ms.sourcegitcommit: 4e4f7c095e8f33b06bd8a02534ee901125eb1d17
+ms.openlocfilehash: 621c3e991d6ec4930cd11e39e19cca1c8a1fa3d8
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "20084060"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925196"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Comandos de suplemento para Excel, Word e PowerPoint
 
@@ -16,7 +16,7 @@ Comandos de suplemento são elementos de interface do usuário que estendem a in
 Para uma visão geral do recurso, confira o vídeo [Comandos de Suplemento na Faixa de Opções do Office](https://channel9.msdn.com/events/Build/2016/P551).
 
 > [!NOTE]
-> Os catálogos do SharePoint não são compatíveis com os comandos de suplemento. É possível implantar comandos de suplemento pela [Implantação centralizada](../publish/centralized-deployment.md) ou pelo [AppSource](https://docs.microsoft.com/en-us/office/dev/store/submit-to-the-office-store) ou usar [sideload](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) para implantar seu comando de suplemento para testes. 
+> Os catálogos do SharePoint não são compatíveis com os comandos de suplemento. É possível implantar comandos de suplemento pela [Implantação centralizada](../publish/centralized-deployment.md) ou pelo [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store) ou usar [sideload](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) para implantar seu comando de suplemento para testes. 
 
 *Figura 1. Suplemento com comandos em execução na Área de Trabalho do Excel*
 
@@ -70,7 +70,7 @@ Aplique as seguintes práticas recomendadas ao desenvolver comandos de suplement
     - Não adicione botões supérfluos para aumentar o estado real do seu suplemento.
 
      > [!NOTE]
-     > Os suplementos que ocupam muito espaço podem não passar na [Validação do AppSource](https://docs.microsoft.com/en-us/office/dev/store/validation-policies).
+     > Os suplementos que ocupam muito espaço podem não passar na [Validação do AppSource](https://docs.microsoft.com/office/dev/store/validation-policies).
 
 - Para todos os ícones, siga as [diretrizes de design de ícones](add-in-icons.md).
 - Forneça uma versão do seu suplemento que também funcione em hosts que não tenham suporte para comandos. Um manifesto de suplemento único poderá funcionar tanto em hosts cientes do comando (com os comandos) quanto em hosts não cientes do comando (como um painel de tarefas).

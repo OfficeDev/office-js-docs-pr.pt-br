@@ -2,16 +2,16 @@
 title: Coautoria em suplementos do Excel
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: d0ef481f9efd6b977963091d5d0a123c30a5a789
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 1919f66a3c93c42ec24520f971eda33dac491355
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437567"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925238"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>Coautoria em suplementos do Excel  
 
-Com a [coautoria](https://support.office.com/en-US/article/Collaborate-on-Excel-workbooks-at-the-same-time-with-co-authoring-7152aa8b-b791-414c-a3bb-3024e46fb104), várias pessoas podem trabalhar juntas e editar simultaneamente a mesma pasta de trabalho do Excel. Todos os coautores de uma pasta de trabalho podem ver as alterações de outros coautores assim que o coautor salva a pasta de trabalho. Para ser coautor de uma pasta de trabalho do Excel, esta deve ser armazenada no OneDrive, OneDrive for Business ou SharePoint Online.
+Com a [coautoria](https://support.office.com/article/Collaborate-on-Excel-workbooks-at-the-same-time-with-co-authoring-7152aa8b-b791-414c-a3bb-3024e46fb104), várias pessoas podem trabalhar juntas e editar simultaneamente a mesma pasta de trabalho do Excel. Todos os coautores de uma pasta de trabalho podem ver as alterações de outros coautores assim que o coautor salva a pasta de trabalho. Para ser coautor de uma pasta de trabalho do Excel, esta deve ser armazenada no OneDrive, OneDrive for Business ou SharePoint Online.
 
 > [!IMPORTANT]
 > No Excel 2016 para Office 365, você verá o Salvamento Automático no canto superior esquerdo. Quando o Salvamento Automático estiver ativado, os coautores verão as respectivas alterações em tempo real. Considere o impacto desse comportamento no design do seu suplemento do Excel. Os usuários podem desativar o Salvamento Automático pelo botão no canto superior esquerdo da janela do Excel.
@@ -56,5 +56,5 @@ Por exemplo, em cenários de validação de dados, é comum exibir a interface d
 
 ## <a name="see-also"></a>Veja também 
 
-- [Sobre a coautoria no Excel (VBA)](https://msdn.microsoft.com/en-us/vba/excel-vba/articles/about-coauthoring-in-excel) 
-- [Como o Salvamento Automático afeta suplementos e macros (VBA)](https://msdn.microsoft.com/en-us/vba/office-shared-vba/articles/how-autosave-impacts-addins-and-macros) 
+- [Sobre a coautoria no Excel (VBA)](https://msdn.microsoft.com/vba/excel-vba/articles/about-coauthoring-in-excel) 
+- [Como o Salvamento Automático afeta suplementos e macros (VBA)](https://msdn.microsoft.com/vba/office-shared-vba/articles/how-autosave-impacts-addins-and-macros) 

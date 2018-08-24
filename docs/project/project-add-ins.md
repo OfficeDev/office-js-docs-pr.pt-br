@@ -2,19 +2,19 @@
 title: Suplementos do painel de tarefas para Project
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 07e64cca1d50f51e34f75f878044f2e02c9c4425
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: aa7117ebc1c5bf0038346881b2c6e6f7a80e1bac
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19439646"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925483"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Suplementos do painel de tarefas para Project
 
 Tanto o Project Standard 2013 quanto o Project Professional 2013 incluem suporte para suplementos de painel de tarefas. Você pode executar suplementos de painel de tarefas comuns que foram desenvolvidos para o Word 2013 ou o Excel 2013. Você também pode desenvolver suplementos personalizados que manipulam eventos de seleção no Project e integram tarefas, recursos, exibição e outros dados de nível de célula em um projeto com listas do SharePoint, Suplementos do SharePoint, Web Parts, serviços Web e aplicativos corporativos.
 
 > [!NOTE]
-> O [download do SDK do Project 2013](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20) inclui suplementos de exemplo que mostram como usar o modelo de objeto do suplemento no Project e como usar o serviço OData para relatar os dados no Project Server 2013. Ao extrair e instalar o SDK, confira o subdiretório `\Samples\Apps\`.
+> O [download do SDK do Project 2013](https://www.microsoft.com/download/details.aspx?id=30435%20) inclui suplementos de exemplo que mostram como usar o modelo de objeto do suplemento no Project e como usar o serviço OData para relatar os dados no Project Server 2013. Ao extrair e instalar o SDK, confira o subdiretório `\Samples\Apps\`.
 
 Para ver uma introdução sobre os suplementos do Office, confira [Visão geral da plataforma de suplementos do Office](../overview/office-add-ins.md).
 
@@ -208,5 +208,5 @@ No procedimento 2, o suplemento Pesquisa do Bing é instalado no computador loca
 - [Criar seu primeiro suplemento de painel de tarefas para o Project 2013 usando um editor de texto](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [Criar um suplemento de Project que usa REST com um serviço local do Project Server OData](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
 - [Conectar um suplemento de painel de tarefas do Project ao PWA](http://blogs.msdn.com/b/project_programmability/archive/2012/11/02/connecting-a-project-task-pane-app-to-pwa.aspx)
-- [Download do SDK do Project 2013](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)
+- [Download do SDK do Project 2013](https://www.microsoft.com/download/details.aspx?id=30435%20)
     

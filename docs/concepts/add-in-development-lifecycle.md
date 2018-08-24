@@ -2,12 +2,17 @@
 title: Ciclo de vida de desenvolvimento de suplementos do Office
 description: ''
 ms.date: 01/23/2018
+ms.openlocfilehash: 8da351a87fdf455d3ae8f8583f2db3226a3cb340
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925434"
 ---
-
 # <a name="office-add-ins-development-lifecycle"></a>Ciclo de vida de desenvolvimento de suplementos do Office
 
 > [!NOTE]
-> Caso pretenda [publicar](../publish/publish.md) o suplemento na experiência do Office depois de criá-lo, verifique se você está em conformidade com as [Políticas de validação do AppSource](https://docs.microsoft.com/pt-br/office/dev/store/validation-policies). Por exemplo, para passar na validação, seu suplemento deve funcionar em todas as plataformas com suporte aos métodos que você definir (para mais informações, confira a [seção 4.12](https://docs.microsoft.com/pt-br/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) e a [Página de hospedagem e disponibilidade de suplementos do Office](../overview/office-add-in-availability.md)). 
+> Caso pretenda [publicar](../publish/publish.md) o suplemento na experiência do Office depois de criá-lo, verifique se você está em conformidade com as [Políticas de validação do AppSource](https://docs.microsoft.com/office/dev/store/validation-policies). Por exemplo, para passar na validação, seu suplemento deve funcionar em todas as plataformas com suporte aos métodos que você definir (para mais informações, confira a [seção 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) e a [Página de hospedagem e disponibilidade de suplementos do Office](../overview/office-add-in-availability.md)). 
 
 O ciclo de vida de desenvolvimento típico de um Suplemento do Office inclui as seguintes etapas:
 
@@ -44,7 +49,7 @@ Considere o seguinte para identificar os cenários:
     
     Se a resposta for Sim para qualquer uma dessas perguntas, considere a criação de um **suplemento do Outlook**. Identifique o contexto que acionará seu suplemento (por exemplo, o usuário está usando um formulário de composição, tipos de mensagem específicos, a presença de um anexo, um endereço, uma sugestão de tarefa ou de reunião, ou certos padrões de cadeia de caracteres no conteúdo de um compromisso ou um email). 
         
-    Para descobrir como é possível ativar o suplemento Outlook contextualmente, confira as [Regras de ativação para suplementos do Outlook](https://docs.microsoft.com/pt-br/outlook/add-ins/activation-rules). 
+    Para descobrir como é possível ativar o suplemento Outlook contextualmente, confira as [Regras de ativação para suplementos do Outlook](https://docs.microsoft.com/outlook/add-ins/activation-rules). 
     
 - Os clientes usarão o suplemento para aprimorar a experiência de criação ou de exibição de um documento? Em caso afirmativo, convém considerar a criação de um **suplemento de painel de tarefas**. 
 
@@ -69,7 +74,7 @@ Para suplementos do Outlook, é possível especificar o contexto (com base na me
     
 Coloque os arquivos HTML e todos os arquivos JavaScript e CSS nos servidores Web especificados no arquivo de manifesto do suplemento. O processo de instalação de um suplemento depende do tipo de suplemento. Para obter detalhes, confira [Realizar Sideload de Suplementos do Office para teste](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
     
-Para suplementos do Outlook, instale-os em uma caixa de correio do Exchange e especifique o local do arquivo de manifesto do suplemento no Centro de Administração do Exchange (EAC). Para saber mais, consulte [Implementar e instalar suplementos do Outlook para teste](https://docs.microsoft.com/pt-br/outlook/add-ins/testing-and-tips).
+Para suplementos do Outlook, instale-os em uma caixa de correio do Exchange e especifique o local do arquivo de manifesto do suplemento no Centro de Administração do Exchange (EAC). Para saber mais, consulte [Implementar e instalar suplementos do Outlook para teste](https://docs.microsoft.com/outlook/add-ins/testing-and-tips).
 
     
 ## <a name="7-publish-the-add-in"></a>7. Publique o suplemento.

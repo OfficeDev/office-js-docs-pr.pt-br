@@ -2,12 +2,12 @@
 title: Solucionar erros de usuários com suplementos do Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 375b3819d423362c7d5e124700a0bea2dcf6e9e0
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: b9f55b5487aec1a2e700863e58cd5bbbf2daf146
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19438820"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925455"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Solucionar erros de usuários com suplementos do Office
 
@@ -15,7 +15,7 @@ ms.locfileid: "19438820"
 
 Também é possível usar o [Fiddler](http://www.telerik.com/fiddler) para identificar e depurar problemas com os suplementos.
 
-Depois de resolver o problema do usuário, é possível [responder diretamente às avaliações dos clientes no AppSource](https://docs.microsoft.com/en-us/office/dev/store/create-effective-office-store-listings).
+Depois de resolver o problema do usuário, é possível [responder diretamente às avaliações dos clientes no AppSource](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings).
 
 ## <a name="common-errors-and-troubleshooting-steps"></a>Erros comuns e etapas de solução de problemas
 
@@ -26,7 +26,7 @@ A tabela a seguir lista as mensagens de erro comuns que os usuários podem receb
 |**Mensagem de erro**|**Resolução**|
 |:-----|:-----|
 |Erro do aplicativo: catálogo não pôde ser alcançado|Verifique as configurações do firewall. "Catálogo" refere-se ao AppSource. Essa mensagem indica que o usuário não consegue acessar o AppSource.|
-|ERRO DO APLICATIVO: este aplicativo não pôde ser iniciado. Feche essa caixa de diálogo para ignorar o problema ou clique em "Reiniciar"para tentar novamente.|Verifique se as atualizações mais recentes do Office foram instaladas ou baixe a [atualização do Office 2013](https://support.microsoft.com/en-us/kb/2986156/).|
+|ERRO DO APLICATIVO: este aplicativo não pôde ser iniciado. Feche essa caixa de diálogo para ignorar o problema ou clique em "Reiniciar"para tentar novamente.|Verifique se as atualizações mais recentes do Office foram instaladas ou baixe a [atualização do Office 2013](https://support.microsoft.com/kb/2986156/).|
 |Erro: objeto não dá suporte à propriedade ou ao método 'defineProperty'|Confirme se o Internet Explorer não está sendo executado no modo de compatibilidade. Vá para Ferramentas >  **Configurações do Modo de Exibição de Compatibilidade**.|
 |Não foi possível carregar o aplicativo porque não há suporte para sua versão do navegador. Clique aqui para obter uma lista de versões do navegador compatíveis.|Verifique se o navegador dá suporte a armazenamento local HTML5 ou redefina as configurações do Internet Explorer. Para saber mais sobre os navegadores compatíveis, confira [Requisitos para a execução de Suplementos do Office](../concepts/requirements-for-running-office-add-ins.md).|
 
@@ -54,7 +54,7 @@ Se o suplemento não for ativado quando o usuário executar as seguintes etapas:
     
 3. Verificar a identidade ao ser solicitado quando tentar inserir um suplemento.
     
-Verifique se as atualizações mais recentes do Office foram instaladas ou baixe a [atualização do Office 2013](https://support.microsoft.com/en-us/kb/2986156/).
+Verifique se as atualizações mais recentes do Office foram instaladas ou baixe a [atualização do Office 2013](https://support.microsoft.com/kb/2986156/).
 
 
 ## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>Não é possível carregar o suplemento no painel de tarefas ou outros problemas relacionados ao manifesto do suplemento

@@ -2,12 +2,16 @@
 title: Obtenha o JavaScript IntelliSense no Visual Studio 2017
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 1d112ba2374ca8f05fb1ed79407ef8549e88c72c
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925280"
 ---
-
-
 # <a name="get-javascript-intellisense-in-visual-studio-2017"></a>Obtenha o JavaScript IntelliSense no Visual Studio 2017 
 
-Quando você usa o Visual Studio 2017 para desenvolver suplementos do Office, pode usar o JSDoc para habilitar o IntelliSense para as variáveis, os objetos, os parâmetros e os valores de retorno de JavaScript. Este artigo fornece uma visão geral do JSDoc e como usá-lo para criar IntellSense no Visual Studio. Confira mais detalhes em [JavaScript IntelliSense](https://docs.microsoft.com/pt-br/visualstudio/ide/javascript-intellisense) e [Suporte ao JSDoc no JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript). 
+Quando você usa o Visual Studio 2017 para desenvolver suplementos do Office, pode usar o JSDoc para habilitar o IntelliSense para as variáveis, os objetos, os parâmetros e os valores de retorno de JavaScript. Este artigo fornece uma visão geral do JSDoc e como usá-lo para criar IntellSense no Visual Studio. Confira mais detalhes em [JavaScript IntelliSense](https://docs.microsoft.com/visualstudio/ide/javascript-intellisense) e [Suporte ao JSDoc no JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript). 
 
 ## <a name="officejs-type-definitions"></a>Definições de tipo do Office.js
 
