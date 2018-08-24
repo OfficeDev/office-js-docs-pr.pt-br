@@ -46,7 +46,6 @@ Um arquivo de manifesto do suplemento define seus recursos e configurações.
     - **Como deseja nomear seu suplemento?** `My Office Add-in`
     - **Para qual aplicativo cliente do Office você deseja suporte?** `Excel`
 
-
     Depois de concluir o assistente, um arquivo de manifesto e um arquivo de recurso estarão disponíveis para você criar o seu projeto.
 
     ![Gerador do Yeoman](../images/yo-office.png)
@@ -58,7 +57,7 @@ Um arquivo de manifesto do suplemento define seus recursos e configurações.
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-Para este início rápido, é possível usar os certificados fornecidos pelo **Gerador Yeoman para Suplementos do Office**. Você já instalou o gerador globalmente (como parte dos **Pré-requisitos** para este início rápido), então só será preciso copiar os certificados do local de instalação global para a pasta do aplicativo. As etapas a seguir descrevem como concluir esse processo.
+Para este início rápido, é possível usar os certificados fornecidos pelo **Gerador do Yeoman para Suplementos do Office**. Você já instalou o gerador globalmente (como parte dos **Pré-requisitos** para este início rápido), então só será preciso copiar os certificados do local de instalação global para a pasta do aplicativo. As etapas a seguir descrevem como concluir esse processo.
 
 1. No terminal, execute o seguinte comando para identificar a pasta onde as bibliotecas globais **npm** estão instaladas:
 
