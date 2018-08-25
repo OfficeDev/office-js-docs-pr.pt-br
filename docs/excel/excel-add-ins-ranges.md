@@ -2,9 +2,13 @@
 title: Trabalhar com intervalos usando a API JavaScript do Excel
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 48784d14542bcff4a2aab416c5f91c132f6c172d
+ms.sourcegitcommit: e1c92ba882e6eb03a165867c6021a6aa742aa310
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "22925616"
 ---
-
-
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Trabalhar com intervalos usando a API JavaScript do Excel
 
 Este artigo fornece exemplos de código que mostram como executar tarefas comuns com intervalos usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos que o objeto **Range** suporta, confira [Objeto Range (API JavaScript para Excel)](https://dev.office.com/reference/add-ins/excel/range).
@@ -530,6 +534,67 @@ Excel.run(function (context) {
 **Dados no intervalo após a definição do formato de número**
 
 ![Dados no Excel após a definição do formato](../images/excel-ranges-format-numbers.png)
+
+## <a name="copy-and-paste"></a>Copiar e colar
+
+> [!NOTE]
+> A função copyFrom está atualmente disponível somente na visualização pública (beta). Para usar esse recurso, você deve usar a biblioteca de beta do CDN do Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> Se você estiver usando o TypeScript ou se seu editor de códigos usa um arquivo de definição do tipo TypeScript para IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+
+A função de copyFrom do intervalo replica o comportamento de copiar e colar da interface do usuário do Excel. O objeto range a partir do qual copyFrom é chamado é destination. O original a ser copiado é passado como um intervalo ou um endereço de seuquência de caracteres que representa um intervalo. O exemplo de código a seguir copia os dados de **A1: E1** para o intervalo começando em **G1** (que acaba sendo colado em **G1:K1**).
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    // copy a range starting at a single cell destination
+    sheet.getRange("G1").copyFrom("A1:E1");
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+Range.copyFrom tem três parâmetros opcionais.
+
+```ts
+copyFrom(sourceRange: Range | string, copyType?: "All" | "Formulas" | "Values" | "Formats", skipBlanks?: boolean, transpose?: boolean): void;
+``` 
+
+`copyType` especifica quais dados são copiados da origem para o destino. 
+`“Formulas”` transfere as fórmulas nas células de origem e preserva o posicionamento relativo dos intervalos dessas fórmulas. Todas as entradas que não são fórmulas são copiadas como são. 
+`“Values”` copia os valores de dados e, no caso de fórmulas, seu resultado. 
+`“Formats”` copia a formatação do intervalo, incluindo a fonte, cor e outras configurações de formato, mas sem valores. 
+`”All”` (a opção padrão) copia os dados e a formatação, preservando as fórmulas das células, quando encontradas.
+
+`skipBlanks` define se células vazias são copiadas para o destino. Quando definido como true, `copyFrom` ignora células vazias no intervalo de origem. Células ignoradas não substituem os dados existentes das células correspondentes no intervalo de destino. O padrão é False.
+
+O exemplo de código e as imagens a seguir demonstram esse comportamento em um cenário simples. 
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    // copy a range, omitting the blank cells so existing data is not overwritten in those cells
+    sheet.getRange("D1").copyFrom("A1:C1",
+        Excel.RangeCopyType.all,
+        true, // skipBlanks
+        false); // transpose
+    // copy a range, including the blank cells which will overwrite existing data in the target cells
+    sheet.getRange("D2").copyFrom("A2:C2",
+        Excel.RangeCopyType.all,
+        false, // skipBlanks
+        false); // transpose
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+*Antes da função anterior ter sido executada.*
+
+![Dados no Excel antes do método de cópia do intervalo ter sido executado.](../images/excel-range-copyfrom-skipblanks-before.png)
+
+*Depois que a função anterior foi executada.*
+
+![Dados no Excel após a execução do método de cópia do intervalo.](../images/excel-range-copyfrom-skipblanks-after.png)
+
+`transpose` determina se os dados são transpostos ou não, o que significa que suas linhas e colunas são invertidas no local de origem. Um intervalo transposto é invertido na diagonal principal, de forma que as linhas **1**, **2** e **3** se tornam as colunas **A**, **B** e **C**. 
+
 
 ## <a name="see-also"></a>Veja também
 

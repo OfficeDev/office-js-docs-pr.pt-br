@@ -2,12 +2,12 @@
 title: Depurar suplementos usando as ferramentas de desenvolvedor F12 no Windows 10
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: e1e4cde4a1a0fe27058346b93e8aaa39dd75a4e3
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 226773962fb1777a3a1f0e09445721ae2b8b5f5b
+ms.sourcegitcommit: e1c92ba882e6eb03a165867c6021a6aa742aa310
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19438722"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "22925602"
 ---
 # <a name="debug-add-ins-using-f12-developer-tools-on-windows-10"></a>Depurar suplementos usando as ferramentas de desenvolvedor F12 no Windows 10
 
@@ -38,15 +38,15 @@ Este exemplo usa o Word e um suplemento gratuito do AppSource.
     
 3. Inicie as ferramentas de desenvolvimento F12 que correspondem à sua versão do Office:
     
-   - Para a versão de 32 bits do Office, use C:\Windows\System32\F12\F12Chooser.exe
+   - Para a versão de 32 bits do Office, use C:\Windows\System32\F12\IEChooser.exe
     
-   - Para a versão de 64 bits do Office, use C:\Windows\SysWOW64\F12\F12Chooser.exe
+   - Para a versão de 64 bits do Office, use C:\Windows\SysWOW64\F12\IEChooser.exe
     
-   Quando você inicia F12Chooser, uma janela separada denominada "Escolher destino para depurar" exibe os possíveis aplicativos para depurar. Selecione o aplicativo do seu interesse. Se você estiver escrevendo seu próprio suplemento, selecione o site onde você deseja ter o suplemento implantado, que pode ser uma URL de localhost. 
+   Quando você inicia o IEChooser, uma janela separada denominada "Escolher destino para depurar" exibe os possíveis aplicativos para depuração. Selecione o aplicativo do seu interesse. Se você estiver escrevendo seu próprio suplemento, selecione o site onde você deseja ter o suplemento implantado, que pode ser uma URL de localhost. 
     
    Por exemplo, selecione **home.html**. 
     
-   ![Tela do F12Chooser, apontando para o suplemento bolhas](../images/choose-target-to-debug.png)
+   ![Tela do IEChooser, apontando para o suplemento de bolhas](../images/choose-target-to-debug.png)
 
 4. Na janela F12, selecione o arquivo que você deseja depurar.
     
@@ -54,7 +54,7 @@ Este exemplo usa o Word e um suplemento gratuito do AppSource.
     
 5. Defina o ponto de interrupção.
     
-   Para definir um ponto de interrupção, escolha a linha 144, que está na função _textChanged_. Você verá um ponto vermelho na parte esquerda da linha e uma linha correspondente no painel **Pilha de Chamadas e Pontos de Interrupção** (parte inferior direita). Para ver outras formas de definir um ponto de interrupção, confira [Inspecionar executando JavaScript com o Depurador](https://msdn.microsoft.com/library/dn255007%28v=vs.85%29.aspx). 
+   Para definir um ponto de interrupção, escolha a linha 144, que está na função _textChanged_. Você verá um ponto vermelho na parte esquerda da linha e uma linha correspondente no painel **Pilha de Chamadas e Pontos de Interrupção** (parte inferior direita). Para ver outras formas de definir um ponto de interrupção, confira [Inspecionar executando JavaScript com o Depurador](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85)). 
     
    ![Depurador com ponto de interrupção no arquivo home.js](../images/debugger-home-js-02.png)
 
@@ -67,6 +67,6 @@ Este exemplo usa o Word e um suplemento gratuito do AppSource.
 
 ## <a name="see-also"></a>Veja também
 
-- [Inspecionar executando JavaScript com o Depurador](https://msdn.microsoft.com/library/dn255007%28v=vs.85%29.aspx)
-- [Usando as ferramentas de desenvolvedor F12](https://msdn.microsoft.com/en-us/library/bg182326%28v=vs.85%29.aspx)
+- [Inspecionar executando JavaScript com o Depurador](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85))
+- [Usando as ferramentas de desenvolvedor F12](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85))
     
