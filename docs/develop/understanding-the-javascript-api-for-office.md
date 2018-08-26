@@ -2,12 +2,12 @@
 title: Noções básicas da API JavaScript para Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: ccc5122061e267fec875fcbbb5b2083e1b934f9d
-ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.openlocfilehash: a9e1e26d4ba94a933ecb98250c19afee90750f5d
+ms.sourcegitcommit: 28fc652bded31205e393df9dec3a9dedb4169d78
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "22546785"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "22928032"
 ---
 # <a name="understanding-the-javascript-api-for-office"></a>Noções básicas da API JavaScript para Office
 
@@ -26,7 +26,7 @@ A biblioteca da [API JavaScript para Office](https://dev.office.com/reference/ad
 
 Isso baixará e colocará os arquivos da API JavaScript para Office em cache quando o suplemento for carregado pela primeira vez a fim de garantir que o suplemento esteja usando a implementação mais recente do Office.js e de seus arquivos associados na versão especificada.
 
-Para saber mais sobre a CDN do Office.js, incluindo como é feito o controle de versão e como lidar com a compatibilidade com versões anteriores, veja [Fazer referência à biblioteca da API JavaScript para Office de sua rede de distribuição de conteúdo (CDN)](referencing-the-javascript-api-for-office-library-from-its-cdn.md).
+Para saber mais sobre a CDN do Office.js, incluindo como é feito o controle de versão e como lidar com a compatibilidade com versões anteriores, veja [Fazer referência à biblioteca da API JavaScript para Office a partir da sua rede de distribuição de conteúdo (CDN)](referencing-the-javascript-api-for-office-library-from-its-cdn.md).
 
 ## <a name="initializing-your-add-in"></a>Iniciar o suplemento
 
@@ -71,7 +71,7 @@ Para obter mais informações, confira [Evento Office.initialize](https://dev.of
 
 ## <a name="office-javascript-api-object-model"></a>Modelo de objeto da API JavaScript para Office
 
-Uma vez inicializado, o suplemento pode interagir com o host (por exemplo, Excel, Outlook). A página [Modelo de objeto da API JavaScript para Office](office-javascript-api-object-model.md) tem mais detalhes sobre padrões de uso específicos. Há também documentação de referência detalhada para as [APIs compartilhadas](https://dev.office.com/reference/add-ins/javascript-api-for-office) e hosts específicos.
+Uma vez inicializado, o suplemento pode interagir com o host (ex. Excel, Outlook). A página do [Modelo de Objeto da API Javascript do Office](office-javascript-api-object-model.md) tem mais detalhes sobre modelos de uso específicos. Também há documentação de referência detalhada para [APIs compartilhadas](https://dev.office.com/reference/add-ins/javascript-api-for-office) e hosts específicos.
 
 ## <a name="api-support-matrix"></a>Matriz de suporte da API
 

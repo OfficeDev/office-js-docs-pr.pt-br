@@ -2,25 +2,25 @@
 title: Fazer sideload de suplementos do Office para teste
 description: ''
 ms.date: 01/25/2018
-ms.openlocfilehash: b143999422866dba9b43432359c12f3607261c60
-ms.sourcegitcommit: e094aaa06d9aff3d13f8ffd3429d4a31f0b65b81
+ms.openlocfilehash: 94803a2c610fc869aefb6c77d53965981778e62e
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "21782809"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925119"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>Fazer sideload de suplementos do Office para teste
 
-Você pode instalar um suplemento do Office para teste em um cliente do Office em execução no Windows ao publicar o manifesto em um compartilhamento de arquivos de rede (instruções abaixo).
+Você pode instalar um suplemento do Office para teste em um cliente do Office no Windows publicando o manifesto em um compartilhamento de arquivos na rede (instruções abaixo).
 
 > [!NOTE]
-> Se o seu projeto de suplemento foi criado com a ferramenta [**yo office**, existe](https://github.com/OfficeDev/generator-office) uma forma alternativa de sideload que pode funcionar para você. Para mais detalhes, acesse [Fazer sideload de Suplementos do Office usando o comando sideload](sideload-office-addin-using-sideload-command.md).
+> Se o seu projeto de suplemento foi criado com a ferramenta [**yo office**, existe](https://github.com/OfficeDev/generator-office) uma forma alternativa de sideload que pode funcionar para você. Para mais detalhes, confira [Fazer sideload de Suplementos do Office usando o comando sideload](sideload-office-addin-using-sideload-command.md).
 
 Este artigo se aplica somente ao teste de suplementos do Word, Excel ou PowerPoint no Windows. Se quiser fazer testes em outra plataforma ou se quiser testar um suplemento do Outlook, confira um dos tópicos a seguir para fazer o sideload do seu suplemento:
 
 - [Sideload de suplementos do Office para teste no Office Online](sideload-office-add-ins-for-testing.md)
 - [Sideload dos suplementos do Office para teste em um iPad ou Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
-- [Fazer sideload de suplementos do Outlook para teste](../../../../outlook/add-ins/sideload-outlook-add-ins-for-testing)
+- [Realizar sideload de Suplementos do Outlook para teste](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)
 
 
 O vídeo a seguir oferece orientações para o processo de sideload do seu suplemento na área de trabalho do Office ou no Office Online usando um catálogo de pasta compartilhada.  
@@ -61,7 +61,8 @@ O vídeo a seguir oferece orientações para o processo de sideload do seu suple
 
 ## <a name="sideload-your-add-in"></a>Realizar o sideload do seu suplemento
 
-1. Coloque o arquivo de manifesto de qualquer suplemento que você está testando no catálogo de pasta compartilhada. Observe que você implanta o próprio aplicativo Web em um servidor Web. Não deixe de especificar a URL no elemento **SourceLocation** do arquivo de manifesto.
+
+1. Coloque o arquivo XML do manifesto de qualquer suplemento que você está testando no catálogo de pasta compartilhada. Observe que você implanta o próprio aplicativo Web em um servidor Web. Não deixe de especificar a URL no elemento **SourceLocation** do arquivo de manifesto.
 
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)]
@@ -76,5 +77,5 @@ O vídeo a seguir oferece orientações para o processo de sideload do seu suple
 ## <a name="see-also"></a>Veja também
 
 - [Validar e solucionar problemas com seu manifesto](troubleshoot-manifest.md)
-- [Publicar seu suplemento do Office](../publish/publish.md)
+- [Publicar seu Suplemento do Office](../publish/publish.md)
     
