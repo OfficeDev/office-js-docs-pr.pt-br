@@ -2,12 +2,12 @@
 title: Trabalhar com eventos usando a API JavaScript do Excel
 description: ''
 ms.date: 05/25/2018
-ms.openlocfilehash: 5b48712b0b1b5bd0dd7492ee7c692104a99678a7
-ms.sourcegitcommit: 9e0952b3df852bd2896e9f4a6f59f5b89fc1ae24
+ms.openlocfilehash: 3d94a36a60220b856795b8d0abf5387fcb8c1bad
+ms.sourcegitcommit: e1c92ba882e6eb03a165867c6021a6aa742aa310
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "21270269"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "22925623"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Trabalhar com eventos usando a API JavaScript do Excel 
 
@@ -31,7 +31,7 @@ Sempre que ocorrerem certos tipos de alterações em uma pasta de trabalho do Ex
 ## <a name="preview-beta-events-in-excel"></a>Visualizar eventos (beta) no Excel
 
 > [!NOTE]
-> Esses eventos estão atualmente disponíveis apenas na visualização pública (beta). Para usar esses recursos, você deve usar a biblioteca beta do CDN do Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> Esses eventos estão atualmente disponíveis apenas na versão prévia pública (beta). Para usar esses recursos, você deve usar a biblioteca beta do CDN do Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 
 | Evento | Descrição | Objetos com suporte |
 |:---------------|:-------------|:-----------|
@@ -133,7 +133,33 @@ function remove() {
 }
 ```
 
-## <a name="see-also"></a>Confira também
+## <a name="enable-and-disable-events"></a>Ativar e desativar eventos
+
+> [!NOTE]
+> Este recurso está atualmente disponível somente na versão prévia pública (beta). Para usá-lo, você deve fazer referência a biblioteca beta da CDN do Office. js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+
+Eventos são ativados e desativados em [tempo de execução](https://docs.microsoft.com/en-us/javascript/api/excel/excel.runtime?view=office-js). A propriedade `enableEvents` determina se os eventos são disparados e seus manipuladores serão ativados. Desativar eventos é útil quando o desempenho é crítico ou durante a edição de várias entidades e se deseja evitar o acionamento de eventos até terminar.
+
+O exemplo de código a seguir mostra como ativar e desativar eventos.
+
+```typescript
+async function toggleEvents() {
+    await Excel.run(async (context) => {
+        context.runtime.load("enableEvents");
+        await context.sync();
+        const eventBoolean = !context.runtime.enableEvents
+        context.runtime.enableEvents = eventBoolean;
+        if (eventBoolean) {
+            console.log("Events are currently on.");
+        } else {
+            console.log("Events are currently off.");
+        }
+        await context.sync();
+    });
+}
+```
+
+## <a name="see-also"></a>Veja também
 
 - [Principais conceitos da API JavaScript do Excel](excel-add-ins-core-concepts.md)
 - [Especificação para abrir API JavaScript do Excel](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)
