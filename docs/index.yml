@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: c56cc86f11a43fff1a089dc4e24eced24799c327
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: e3a2ccbc7a8d626ad48f7ff8513bbf4acd5910ea
+ms.sourcegitcommit: 90d3b64219f14dd9cfe23ee9746477734195cb8f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925322"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "23271340"
 documentType: LandingData
 title: Documentação dos Suplementos do Office
 metadata:
@@ -15,7 +15,7 @@ metadata:
   ms.date: 12/04/2017
   ms.author: o365devx
 abstract:
-  description: A <a href="https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins">plataforma de Suplementos do Office</a> permite que você crie soluções que estendam aplicativos do Office e interajam com o conteúdo em documentos do Office. Com os Suplementos do Office, você pode usar tecnologias da Web familiares, como HTML, CSS e JavaScript, para estender e interagir com o Word, Excel, PowerPoint, OneNote, Project e Outlook. Sua solução pode ser executada no Office por meio de várias plataformas, incluindo Office para Windows, Office Online, Office para Mac e Office para iPad. Aprenda como criar Suplementos do Office com nossos inícios rápidos, guias de instruções e documentação de referência da API.<br/><br/><b>Observação:</b> Para obter informações sobre os suplementos COM ou VSTO, veja a <a href="https://msdn.microsoft.com/library/fp161347.aspx" target="_blank">documentação do MSDN</a>.
+  description: A <a href="https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins">plataforma de Suplementos do Office</a> permite que você crie soluções que estendam aplicativos do Office e interajam com o conteúdo em documentos do Office. Com os Suplementos do Office, você pode usar tecnologias da Web familiares, como HTML, CSS e JavaScript, para estender e interagir com o Word, Excel, PowerPoint, OneNote, Project e Outlook. Sua solução pode ser executada no Office por meio de várias plataformas, incluindo Office para Windows, Office Online, Office para Mac e Office para iPad. Aprenda como criar Suplementos do Office com nossos inícios rápidos, guias de instruções e documentação de referência da API.<br/><br/><b>Nota:</b> Para obter informações sobre suplementos COM ou VSTO, consulte a <a href="https://docs.microsoft.com/office/client-developer/office-client-development" target="_blank">documentação de desenvolvimento de cliente do Office</a>.
   aside:
     image:
       alt: 
