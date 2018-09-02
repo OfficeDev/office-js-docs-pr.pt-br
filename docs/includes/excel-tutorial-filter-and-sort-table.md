@@ -43,7 +43,7 @@ Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou ante
     }
     ``` 
 
-7. Substitua `TODO1` pelo código a seguir. Observação:
+7. Substitua `TODO1` pelo código a seguir. Nota:
    - O código primeiro faz referência à coluna que precisa de filtragem ao passar o nome da coluna para o método `getItem`, em vez de passar o índice para o método `getItemAt` como o método `createTable` faz. Como os usuários podem mover as colunas da tabela, a coluna de um determinado índice pode mudar depois da criação da tabela. Portanto, é mais seguro usar o nome da coluna como referência dela. Usamos de forma segura `getItemAt` em um tutorial anterior porque usamos o mesmo método que cria a tabela. Assim não existe a chance de um usuário mover a coluna.
    - O método `applyValuesFilter` é um dos vários métodos de filtragem do objeto `Filter`.
 
@@ -92,10 +92,10 @@ Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou ante
     }
     ``` 
 
-7. Substitua `TODO1` pelo código a seguir. Observação:
+7. Substitua `TODO1` pelo código a seguir. Nota:
    - O código cria uma matriz de objetos `SortField` que tem apenas um membro, já que o suplemento só classifica a coluna Comerciante.
    - A propriedade `key` de um objeto `SortField` é o índice com base em zero da coluna a classificar.
-   - O membro `sort` de uma `Table` é um objeto `TableSort`, não um método. Os `SortField`s são passados para o método `apply` do objeto `TableSort`.
+   - O membro `sort` de uma `Table` é um objeto `TableSort`, não um método. Os `SortField`s são passados para o método `TableSort` do objeto `apply`.
 
     ```js
     const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
