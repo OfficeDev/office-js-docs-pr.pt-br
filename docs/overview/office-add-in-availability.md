@@ -1,19 +1,19 @@
 ---
 title: Disponibilidade de host e plataforma para suplementos do Office
 description: Conjuntos de requisitos compatíveis com Excel, Word, Outlook, PowerPoint e OneNote.
-ms.date: 07/31/2018
-ms.openlocfilehash: 084029c0a5b70b73eaa0b3fcc180f4a813fb8b72
-ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.date: 08/30/2018
+ms.openlocfilehash: 06fb073693bd8adca7d196f4361699ac3f54cee1
+ms.sourcegitcommit: 78b28ae88d53bfef3134c09cc4336a5a8722c70b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "21703907"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "23797298"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilidade de host e plataforma para suplementos do Office
 
-Seu suplemento do Office pode depender de um host específico do Office, um conjunto de requisitos, um membro de API ou uma versão da API para funcionar conforme o esperado. As tabelas a seguir contêm as plataformas disponíveis, os pontos de extensão, os conjuntos de requisitos de API e os conjuntos de requisitos comuns de API que atualmente são compatíveis com cada aplicativo do Office. 
+Seu suplemento do Office pode depender de um host específico do Office, um conjunto de requisitos, um membro de API ou uma versão da API para funcionar conforme o esperado. As tabelas a seguir contêm as plataformas disponíveis, os pontos de extensão, os conjuntos de requisitos de API e os conjuntos de requisitos comuns de API que atualmente são compatíveis com cada aplicativo do Office.
 
-Se uma célula de tabela apresenta um asterisco (*), significa que estamos trabalhando no assunto. Confira os conjuntos de requisitos do Project ou do Access em [Conjuntos de requisitos comuns do Office](https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets).  
+Se uma célula de tabela apresenta um asterisco (*), significa que estamos trabalhando no assunto. Confira os conjuntos de requisitos do Project ou do Access em [Conjuntos de requisitos comuns do Office](https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets).  
 
 > [!NOTE]
 > O número do build do Office 2016 instalado via MSI é 16.0.4266.1001. Esta versão só contém os conjuntos de requisitos ExcelApi 1.1, WordApi 1.1 e os conjuntos de requisitos comuns de API.
@@ -23,35 +23,37 @@ Se uma célula de tabela apresenta um asterisco (*), significa que estamos traba
 <table style="width:80%">
   <tr>
     <th style="width:10%">Plataforma</th>
-    <th style="width:10%">Pontos de extensão</th> 
-    <th style="width:20%">Conjuntos de requisitos da API</th> 
-    <th style="width:40%"><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>APIs comuns</b></a></th> 
+    <th style="width:10%">Pontos de extensão</th>
+    <th style="width:20%">Conjuntos de requisitos da API</th>
+    <th style="width:40%"><a href="https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets"><b>APIs comuns</b></a></th>
   </tr>
   <tr>
     <td>Office Online</td>
     <td> - Painel de tarefas<br>
         - Conteúdo<br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a>
     </td>
     <td>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>
         - BindingEvents<br>
+        - CompressedFile<br>
         - DocumentEvents<br>
+        - Arquivo<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
+        - Seleção<br>
+        - Configurações<br>
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
-        - CompressedFile<br>
-        - Configurações<br>
         - TextCoercion</td>
   </tr>
   <tr>
@@ -59,80 +61,98 @@ Se uma célula de tabela apresenta um asterisco (*), significa que estamos traba
     <td>
         - Painel de tarefas<br>
         - Conteúdo</td>
-    <td>  - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td>  - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>
         - BindingEvents<br>
+        - CompressedFile<br>
         - DocumentEvents<br>
+        - Arquivo<br>
+        - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
+        - Seleção<br>
+        - Configurações<br>
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
-        - Configurações<br>
         - TextCoercion</td>
   </tr>
   <tr>
     <td>Office 2016 para Windows</td>
     <td>- Painel de tarefas<br>
         - Conteúdo<br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
-    <td>- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
+    <td>- <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
+        - CompressedFile<br>
         - DocumentEvents<br>
+        - Arquivo<br>
+        - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
+        - Seleção<br>
+        - Configurações<br>
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
-        - Configurações<br>
-        - TextCoercion</td> 
+        - TextCoercion</td>
   </tr>
   <tr>
     <td>Office para iOS</td>
     <td>- Painel de tarefas<br>
         - Conteúdo</td>
-    <td>- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td>- <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
+        - CompressedFile<br>
         - DocumentEvents<br>
+        - Arquivo<br>
+        - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
+        - Seleção<br>
+        - Configurações<br>
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
-        - Configurações<br>
         - TextCoercion</td>
   </tr>
   <tr>
     <td>Office 2016 para Mac</td>
     <td>- Painel de tarefas<br>
         - Conteúdo<br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
-    <td>- <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
+    <td>- <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.2</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.3</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.4</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.5</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.6</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets">ExcelApi 1.7</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>- BindingEvents<br>
+        - CompressedFile<br>
         - DocumentEvents<br>
+        - Arquivo<br>
+        - ImageCoercion<br>
         - MatrixBindings<br>
         - MatrixCoercion<br>
+        - PdfFile<br>
+        - Seleção<br>
+        - Configurações<br>
         - TableBindings<br>
         - TableCoercion<br>
         - TextBindings<br>
@@ -147,81 +167,81 @@ Se uma célula de tabela apresenta um asterisco (*), significa que estamos traba
 <table style="width:80%">
   <tr>
     <th>Plataforma</th>
-    <th>Pontos de extensão</th> 
-    <th>Conjuntos de requisitos da API</th> 
-    <th><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>APIs comuns</b></a></th> 
+    <th>Pontos de extensão</th>
+    <th>Conjuntos de requisitos da API</th>
+    <th><a href="https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets"><b>APIs comuns</b></a></th>
   </tr>
   <tr>
     <td>Office Online</td>
     <td> - Leitura de email<br>
       - Composição de email<br>
-      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Caixa de correio 1.1</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Caixa de correio 1.2</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Caixa de correio 1.3</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Caixa de correio 1.4</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Caixa de correio 1.5</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Caixa de correio 1.6</a></td>
+      - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Caixa de correio 1.1</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Caixa de correio 1.2</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Caixa de correio 1.3</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Caixa de correio 1.4</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Caixa de correio 1.5</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Caixa de correio 1.6</a></td>
     <td>Não disponível</td>
   </tr>
   <tr>
     <td>Office 2013 para Windows</td>
     <td> - Leitura de email<br>
       - Composição de email<br>
-      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Caixa de correio 1.1</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Caixa de correio 1.2</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Caixa de correio 1.3</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Caixa de correio 1.4</a></td>
+      - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Caixa de correio 1.1</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Caixa de correio 1.2</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Caixa de correio 1.3</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Caixa de correio 1.4</a></td>
     <td>Não disponível</td>
   </tr>
   <tr>
     <td>Office 2016 para Windows</td>
     <td> - Leitura de email<br>
       - Composição de email<br>
-      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a><br>
       - Módulos</td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Caixa de correio 1.1</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Caixa de correio 1.2</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Caixa de correio 1.3</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Caixa de correio 1.4</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Caixa de correio 1.5</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Caixa de correio 1.4</a></td>
-    <td>Não disponível</td> 
+    <td> - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Caixa de correio 1.1</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Caixa de correio 1.2</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Caixa de correio 1.3</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Caixa de correio 1.4</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Caixa de correio 1.5</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Caixa de correio 1.6</a></td>
+    <td>Não disponível</td>
   </tr>
   <tr>
     <td>Office para iOS</td>
     <td> - Leitura de email<br>
-      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Caixa de correio 1.1</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Caixa de correio 1.2</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Caixa de correio 1.3</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Caixa de correio 1.4</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Caixa de correio 1.5</a></td>    
+      - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Caixa de correio 1.1</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Caixa de correio 1.2</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Caixa de correio 1.3</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Caixa de correio 1.4</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Caixa de correio 1.5</a></td>
     <td>Não disponível</td>
   </tr>
   <tr>
     <td>Office 2016 para Mac</td>
     <td> - Leitura de email<br>
       - Composição de email<br>
-      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Caixa de correio 1.1</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Caixa de correio 1.2</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Caixa de correio 1.3</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Caixa de correio 1.4</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Caixa de correio 1.5</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.6/index?product=outlook&version=v1.6">Caixa de correio 1.6</a></td>
+      - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Caixa de correio 1.1</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Caixa de correio 1.2</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Caixa de correio 1.3</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Caixa de correio 1.4</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Caixa de correio 1.5</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Caixa de correio 1.6</a></td>
     <td>Não disponível</td>
   </tr>
   <tr>
     <td>Office para Android</td>
     <td> - Leitura de email<br>
-      - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/outlook/1.1/index?product=outlook&version=v1.1">Caixa de correio 1.1</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.2/index?product=outlook&version=v1.2">Caixa de correio 1.2</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.3/index?product=outlook&version=v1.3">Caixa de correio 1.3</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.4/index?product=outlook&version=v1.4">Caixa de correio 1.4</a><br>
-      - <a href="https://dev.office.com/reference/add-ins/outlook/1.5/index?product=outlook&version=v1.5">Caixa de correio 1.5</a></td>
+      - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1">Caixa de correio 1.1</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Caixa de correio 1.2</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Caixa de correio 1.3</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Caixa de correio 1.4</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Caixa de correio 1.5</a></td>
     <td>Não disponível</td>
   </tr>
 </table>
@@ -233,128 +253,141 @@ Se uma célula de tabela apresenta um asterisco (*), significa que estamos traba
 <table style="width:80%">
   <tr>
     <th>Plataforma</th>
-    <th>Pontos de extensão</th> 
-    <th>Conjuntos de requisitos da API</th> 
-    <th><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>APIs comuns</b></a></th> 
+    <th>Pontos de extensão</th>
+    <th>Conjuntos de requisitos da API</th>
+    <th><a href="https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets"><b>APIs comuns</b></a></th>
   </tr> 
   </tr>
   <tr>
     <td>Office Online</td>
     <td> - Painel de tarefas<br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - BindingEvents<br>
          - CustomXmlParts<br>
+         - DocumentEvents<br>
+         - Arquivo<br>
+         - HtmlCoercion<br>
+         - ImageCoercion<br>
          - MatrixBindings<br>
          - MatrixCoercion<br>
+         - OoxmlCoercion<br>
+         - PdfFile<br>
+         - Seleção<br>
+         - Configurações<br>
          - TableBindings<br>
          - TableCoercion<br>
          - TextBindings<br>
-         - DocumentEvents<br>
-         - TextFile<br>
-         - ImageCoercion<br>
-         - Configurações<br>
-         - TextCoercion</td>
+         - TextCoercion<br>
+         - TextFile</td>
   </tr>
   <tr>
     <td>Office 2013 para Windows</td>
     <td> - Painel de tarefas</td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - BindingEvents<br>
          - CompressedFile<br>
-         - CustomXmlPart<br>
+         - CustomXmlParts<br>
          - DocumentEvents<br>
          - Arquivo<br>
          - HtmlCoercion<br>
          - ImageCoercion<br>
+         - MatrixBindings<br>
+         - MatrixCoercion<br>
          - OoxmlCoercion<br>
+         - PdfFile<br>
+         - Seleção<br>
+         - Configurações<br>
          - TableBindings<br>
          - TableCoercion<br>
          - TextBindings<br>
-         - TextFile<br>
-         - Configurações<br>
          - TextCoercion<br>
-         - MatrixCoercion<br>
-         - Associações de matriz</td>
+         - TextFile</td>
   </tr>
   <tr>
     <td>Office 2016 para Windows</td>
     <td> - Painel de tarefas<br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - BindingEvents<br>
          - CompressedFile<br>
-         - CustomXmlPart<br>
+         - CustomXmlParts<br>
          - DocumentEvents<br>
          - Arquivo<br>
          - HtmlCoercion<br>
          - ImageCoercion<br>
+         - MatrixBindings<br>
+         - MatrixCoercion<br>
          - OoxmlCoercion<br>
+         - PdfFile<br>
+         - Seleção<br>
+         - Configurações<br>
          - TableBindings<br>
          - TableCoercion<br>
          - TextBindings<br>
-         - TextFile<br>
-         - Configurações<br>
          - TextCoercion<br>
-         - MatrixCoercion<br>
-         - Associações de matriz </td> 
+         - TextFile </td>
   </tr>
   <tr>
     <td>Office para iOS</td>
     <td> - Painel de tarefas</td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
 </td>
     <td> - BindingEvents<br>
          - CompressedFile<br>
-         - CustomXmlPart<br>
+         - CustomXmlParts<br>
          - DocumentEvents<br>
          - Arquivo<br>
          - HtmlCoercion<br>
          - ImageCoercion<br>
+         - MatrixBindings<br>
+         - MatrixCoercion<br>
          - OoxmlCoercion<br>
+         - PdfFile<br>
+         - Seleção<br>
+         - Configurações<br>
          - TableBindings<br>
          - TableCoercion<br>
          - TextBindings<br>
-         - TextFile<br>
-         - Configurações<br>
          - TextCoercion<br>
-         - MatrixCoercion<br>
-         - Associações de matriz </td> 
+         - TextFile </td>
   </tr>
   <tr>
     <td>Office 2016 para Mac</td>
     <td> - Painel de tarefas<br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
-        - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/word-api-requirement-sets">WordApi 1.3</a><br>
+        - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
 </td>
     <td> - BindingEvents<br>
          - CompressedFile<br>
-         - CustomXmlPart<br>
+         - CustomXmlParts<br>
          - DocumentEvents<br>
          - Arquivo<br>
          - HtmlCoercion<br>
          - ImageCoercion<br>
+         - MatrixBindings<br>
+         - MatrixCoercion<br>
          - OoxmlCoercion<br>
+         - PdfFile<br>
+         - Seleção<br>
+         - Configurações<br>
          - TableBindings<br>
          - TableCoercion<br>
          - TextBindings<br>
-         - TextFile<br>
-         - Configurações<br>
          - TextCoercion<br>
-         - MatrixCoercion<br>
-         - Associações de matriz </td> 
+         - TextFile </td>
   </tr>
 </table>
 
@@ -365,36 +398,40 @@ Se uma célula de tabela apresenta um asterisco (*), significa que estamos traba
 <table style="width:80%">
   <tr>
     <th>Plataforma</th>
-    <th>Pontos de extensão</th> 
-    <th>Conjuntos de requisitos da API</th> 
-    <th><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>APIs comuns</b></a></th> 
+    <th>Pontos de extensão</th>
+    <th>Conjuntos de requisitos da API</th>
+    <th><a href="https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets"><b>APIs comuns</b></a></th>
   </tr> 
   </tr>
   <tr>
     <td>Office Online</td>
     <td> - Conteúdo<br>
          - Painel de tarefas<br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - ActiveView<br>
          - CompressedFile<br>
+         - DocumentEvents<br>
          - Arquivo<br>
+         - ImageCoercion<br>
+         - PdfFile<br>
          - Seleção<br>
          - Configurações<br>
-         - TextCoercion<br>
-         - ImageCoercion</td>
+         - TextCoercion</td>
   </tr>
   <tr>
     <td>Office 2013 para Windows</td>
     <td> - Conteúdo<br>
          - Painel de tarefas<br>
     </td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>
 </td>
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
          - Arquivo<br>
+         - ImageCoercion<br>
+         - PdfFile<br>
          - Seleção<br>
          - Configurações<br>
          - TextCoercion</td>
@@ -403,26 +440,28 @@ Se uma célula de tabela apresenta um asterisco (*), significa que estamos traba
     <td>Office 2016 para Windows</td>
     <td> - Conteúdo<br>
          - Painel de tarefas<br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
          - Arquivo<br>
+         - ImageCoercion<br>
+         - PdfFile<br>
          - Seleção<br>
          - Configurações<br>
-         - TextCoercion<br>
-         - ImageCoercion</td>
+         - TextCoercion</td>
   </tr>
   <tr>
     <td>Office para iOS</td>
     <td> - Conteúdo<br>
          - Painel de tarefas</td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
      <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
          - Arquivo<br>
+         - PdfFile<br>
          - Seleção<br>
          - Configurações<br>
          - TextCoercion<br>
@@ -432,16 +471,17 @@ Se uma célula de tabela apresenta um asterisco (*), significa que estamos traba
     <td>Office 2016 para Mac</td>
     <td> - Conteúdo<br>
          - Painel de tarefas<br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - ActiveView<br>
          - CompressedFile<br>
          - DocumentEvents<br>
          - Arquivo<br>
+         - ImageCoercion<br>
+         - PdfFile<br>
          - Seleção<br>
          - Configurações<br>
-         - TextCoercion<br>
-         - ImageCoercion</td>
+         - TextCoercion</td>
   </tr>
 </table>
 
@@ -452,23 +492,23 @@ Se uma célula de tabela apresenta um asterisco (*), significa que estamos traba
 <table style="width:80%">
   <tr>
     <th>Plataforma</th>
-    <th>Pontos de extensão</th> 
-    <th>Conjuntos de requisitos da API</th> 
-    <th><a href="https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets"><b>APIs comuns</b></a></th> 
+    <th>Pontos de extensão</th>
+    <th>Conjuntos de requisitos da API</th>
+    <th><a href="https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets"><b>APIs comuns</b></a></th>
   </tr> 
   </tr>
   <tr>
     <td>Office Online</td>
     <td> - Conteúdo<br>
          - Painel de tarefas<br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
-    <td> - <a href="https://dev.office.com/reference/add-ins/requirement-sets/onenote-api-requirement-sets">OneNoteApi 1.1</a><br>
-         - <a href="https://dev.office.com/reference/add-ins/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
+    <td> - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/onenote-api-requirement-sets">OneNoteApi 1.1</a><br>
+         - <a href="https://docs.microsoft.com/javascript/office/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td> - DocumentEvents<br>
-         - Configurações<br>
-         - TextCoercion<br>
          - HtmlCoercion<br>
-         - ImageCoercion</td>
+         - ImageCoercion<br>
+         - Configurações<br>
+         - TextCoercion</td>
   </tr>
 </table>
 
@@ -477,7 +517,6 @@ Se uma célula de tabela apresenta um asterisco (*), significa que estamos traba
 ## <a name="see-also"></a>Veja também
 
 - [Visão geral da plataforma Suplementos do Office](office-add-ins.md)
-- [Conjuntos de requisitos comuns da API](https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets)
-- [Conjuntos de requisitos dos comandos de suplemento](https://dev.office.com/reference/add-ins/requirement-sets/add-in-commands-requirement-sets)
-- [Referência da API JavaScript do Office](https://dev.office.com/reference/add-ins/javascript-api-for-office)
-
+- [Conjuntos de requisitos comuns da API](https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets)
+- [Conjuntos de requisitos dos comandos de suplemento](https://docs.microsoft.com/javascript/office/requirement-sets/add-in-commands-requirement-sets)
+- [Referência da API JavaScript do Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office)

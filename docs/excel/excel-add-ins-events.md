@@ -2,12 +2,12 @@
 title: Trabalhar com eventos usando a API JavaScript do Excel
 description: ''
 ms.date: 05/25/2018
-ms.openlocfilehash: 3d94a36a60220b856795b8d0abf5387fcb8c1bad
-ms.sourcegitcommit: e1c92ba882e6eb03a165867c6021a6aa742aa310
+ms.openlocfilehash: df3a677cc804e0cc066a6a380e2eb8aac39a1d92
+ms.sourcegitcommit: 78b28ae88d53bfef3134c09cc4336a5a8722c70b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "22925623"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "23797277"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Trabalhar com eventos usando a API JavaScript do Excel 
 
@@ -19,19 +19,19 @@ Sempre que ocorrerem certos tipos de alterações em uma pasta de trabalho do Ex
 
 | Evento | Descrição | Objetos com suporte |
 |:---------------|:-------------|:-----------|
-| `onAdded` | Evento que ocorre quando um objeto é adicionado. | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection) |
-| `onDeleted` | Evento que ocorre quando um objeto é excluído. | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection) |
-| `onActivated` | Evento que ocorre quando um objeto é ativado. | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection), [**Planilha**](https://dev.office.com/reference/add-ins/excel/worksheet) |
-| `onDeactivated` | Evento que ocorre quando um objeto é desativado. | [**WorksheetCollection**](https://dev.office.com/reference/add-ins/excel/worksheetcollection), [**Planilha**](https://dev.office.com/reference/add-ins/excel/worksheet) |
-| `onChanged` | Evento que ocorre quando os dados de células são alterados. | [**Planilha**](https://dev.office.com/reference/add-ins/excel/worksheet), [**Tabela**](https://dev.office.com/reference/add-ins/excel/table), [**TableCollection**](https://dev.office.com/reference/add-ins/excel/tablecollection) |
-| `onDataChanged` | Evento que ocorre quando os dados ou a formatação na associação são alterados. | [**Associação**](https://dev.office.com/reference/add-ins/excel/binding) |
-| `onSelectionChanged` | Evento que ocorre quando uma célula ativa ou um intervalo selecionado são alterados. | [**Planilha**](https://dev.office.com/reference/add-ins/excel/worksheet), [**Tabela**](https://dev.office.com/reference/add-ins/excel/table), [**Associação**](https://dev.office.com/reference/add-ins/excel/binding) |
-| `onSettingsChanged` | Evento que ocorre quando as Configurações no documento são alteradas. | [**SettingCollection**](https://dev.office.com/reference/add-ins/excel/settingcollection) |
+| `onAdded` | Evento que ocorre quando um objeto é adicionado. | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
+| `onDeleted` | Evento que ocorre quando um objeto é excluído. | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
+| `onActivated` | Evento que ocorre quando um objeto é ativado. | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection), [**Planilha**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
+| `onDeactivated` | Evento que ocorre quando um objeto é desativado. | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection), [**Planilha**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
+| `onChanged` | Evento que ocorre quando os dados das células são alterados. | [**Planilha**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet), [**Tabela**](https://docs.microsoft.com/javascript/api/excel/excel.table), [**TableCollection**](https://docs.microsoft.com/javascript/api/excel/excel.tablecollection) |
+| `onDataChanged` | Evento que ocorre quando os dados ou a formatação dentro da associação são alterados. | [**Associação**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
+| `onSelectionChanged` | Evento que ocorre quando uma célula ativa ou um intervalo selecionado são alterados. | [**Planilha**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet), [**Tabela**](https://docs.microsoft.com/javascript/api/excel/excel.table), [**Associação**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
+| `onSettingsChanged` | Evento que ocorre quando as Configurações no documento são alteradas. | [**SettingCollection**](https://docs.microsoft.com/javascript/api/excel/excel.settingcollection) |
 
 ## <a name="preview-beta-events-in-excel"></a>Visualizar eventos (beta) no Excel
 
 > [!NOTE]
-> Esses eventos estão atualmente disponíveis apenas na versão prévia pública (beta). Para usar esses recursos, você deve usar a biblioteca beta do CDN do Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> Esses eventos estão disponíveis atualmente apenas na visualização pública (beta). Para usar esses recursos, você deve usar a biblioteca beta do CDN do Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 
 | Evento | Descrição | Objetos com suporte |
 |:---------------|:-------------|:-----------|
@@ -95,7 +95,7 @@ function handleChange(event)
 
 ## <a name="remove-an-event-handler"></a>Remover um manipulador de eventos
 
-O exemplo de código a seguir registra um manipulador de eventos para o evento `onSelectionChanged` na planilha **Sample** e define a função `handleSelectionChange` a executar quando o evento ocorrer. Também define a função `remove()` que pode ser chamada posteriormente para remover aquele manipulador de eventos.
+O exemplo de código a seguir registra um manipulador de eventos para o evento `onSelectionChanged` na planilha **Sample** e define a função `handleSelectionChange` a executar quando o evento ocorrer. Também define a `remove()` função que pode ser chamada posteriormente para remover aquele manipulador de eventos.
 
 ```js
 var eventResult;
@@ -136,30 +136,31 @@ function remove() {
 ## <a name="enable-and-disable-events"></a>Ativar e desativar eventos
 
 > [!NOTE]
-> Este recurso está atualmente disponível somente na versão prévia pública (beta). Para usá-lo, você deve fazer referência a biblioteca beta da CDN do Office. js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> Este recurso está atualmente disponível somente na versão prévia pública (beta). Para usá-lo, você deve fazer referência à biblioteca beta do Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 
-Eventos são ativados e desativados em [tempo de execução](https://docs.microsoft.com/en-us/javascript/api/excel/excel.runtime?view=office-js). A propriedade `enableEvents` determina se os eventos são disparados e seus manipuladores serão ativados. Desativar eventos é útil quando o desempenho é crítico ou durante a edição de várias entidades e se deseja evitar o acionamento de eventos até terminar.
+O desempenho de um suplemento pode ser melhorado desativando eventos. Por exemplo, seu aplicativo talvez nunca precise receber eventos ou pode ignorar eventos enquanto realiza edições em lote de várias entidades. 
+
+Os eventos são habilitados e desabilitados no nível de [tempo de execução](https://docs.microsoft.com/javascript/api/excel/excel.runtime). A propriedade `enableEvents` determina se os eventos serão disparados e se seus manipuladores serão ativados. 
 
 O exemplo de código a seguir mostra como ativar e desativar eventos.
 
-```typescript
-async function toggleEvents() {
-    await Excel.run(async (context) => {
-        context.runtime.load("enableEvents");
-        await context.sync();
-        const eventBoolean = !context.runtime.enableEvents
-        context.runtime.enableEvents = eventBoolean;
-        if (eventBoolean) {
-            console.log("Events are currently on.");
-        } else {
-            console.log("Events are currently off.");
-        }
-        await context.sync();
-    });
-}
+```js
+Excel.run(function (context) {
+    context.runtime.load("enableEvents");
+    return context.sync()
+        .then(function () {
+            var eventBoolean = !context.runtime.enableEvents;
+            context.runtime.enableEvents = eventBoolean;
+            if (eventBoolean) {
+                console.log("Events are currently on.");
+            } else {
+                console.log("Events are currently off.");
+            }
+        }).then(context.sync);
+}).catch(errorHandlerFunction);
 ```
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 - [Principais conceitos da API JavaScript do Excel](excel-add-ins-core-concepts.md)
-- [Especificação para abrir API JavaScript do Excel](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)
+- [Especificação Aberta da API JavaScript do Excel](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)
