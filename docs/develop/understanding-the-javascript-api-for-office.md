@@ -2,12 +2,12 @@
 title: Noções básicas da API JavaScript para Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: a9e1e26d4ba94a933ecb98250c19afee90750f5d
-ms.sourcegitcommit: 28fc652bded31205e393df9dec3a9dedb4169d78
+ms.openlocfilehash: 12e7d9030ec37746f84e3fc725cddda2a5675761
+ms.sourcegitcommit: 5bef9828f047da03ecf2f43c6eb5b8514eff28ce
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "22928032"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "23782791"
 ---
 # <a name="understanding-the-javascript-api-for-office"></a>Noções básicas da API JavaScript para Office
 
@@ -28,34 +28,104 @@ Isso baixará e colocará os arquivos da API JavaScript para Office em cache qua
 
 Para saber mais sobre a CDN do Office.js, incluindo como é feito o controle de versão e como lidar com a compatibilidade com versões anteriores, veja [Fazer referência à biblioteca da API JavaScript para Office a partir da sua rede de distribuição de conteúdo (CDN)](referencing-the-javascript-api-for-office-library-from-its-cdn.md).
 
-## <a name="initializing-your-add-in"></a>Iniciar o suplemento
+## <a name="initializing-your-add-in"></a>Inicializar o seu suplemento
 
 **Aplica-se a:** todos os tipos de suplementos
 
-O Office.js fornece um evento de inicialização que é acionado quando a API está totalmente carregada e pronta para começar a interação com o usuário. Você pode usar o manipulador de eventos **initialize** para implementar cenários comuns de inicialização de suplementos, como solicitar que o usuário selecione algumas células no Excel e, em seguida, insira um gráfico gerado a partir desses valores selecionados. Você também pode usar o manipulador de eventos de inicialização para inicializar outras lógicas personalizadas do suplemento, como estabelecer associações, solicitar valores padrão de configuração do suplemento e assim por diante.
+Suplementos do Office geralmente têm uma lógica de inicialização para realizar tarefas como:
 
-No mínimo, o evento de inicialização se pareceria com o exemplo a seguir:     
+- Verificar se a versão do Office do usuário tem suporte para todas as APIs do Office chamadas pelo seu código.
+
+- Garantir a existência de determinados artefatos, como uma planilha com um nome específico.
+
+- Solicitar que o usuário selecione algumas células no Excel e, em seguida, inserir um gráfico inicializado com esses valores selecionados.
+
+- Estabelecer associações.
+
+- Use a caixa de diálogo da API do Office para solicitar valores padrão de configurações de suplementos para o usuário.
+
+Mas o seu código de inicialização não deve chamar nenhuma API do Office.js até que a biblioteca esteja totalmente carregada. Existem duas maneiras do seu código garantir que a biblioteca está carregada. Eles são descritos nas seções a seguir. Recomendamos que você use a técnica mais recente e flexível, chamando `Office.onReady()`. Ainda há suporte para a técnica antiga, que atribui um manipulador a `Office.initialize`. Consulte também [Principais diferenças entre Office.initialize e Office.onReady()](#major-differences-between-office-initialize-and-office-onready).
+
+Para obter mais detalhes sobre a sequência de eventos na inicialização de suplementos, consulte [Carregar o DOM e o ambiente de execução](loading-the-dom-and-runtime-environment.md).
+
+### <a name="initialize-with-officeonready"></a>A inicialização com Office.onReady()
+
+`Office.onReady()` é um método assíncrono que retorna um objeto Promise enquanto verifica se a biblioteca do Office.js foi totalmente carregada. Somente quando a biblioteca for carregada, ele resolve o Promise como um objeto que especifica o aplicativo de host do Office com um valor de enumeração `Office.HostType` (`Excel`, `Word`, etc) e a plataforma com um valor de enumeração `Office.PlatformType` (`PC`, `Mac`, `OfficeOnline`, etc.). Se a biblioteca já estiver carregada quando `Office.onReady()` é chamado, o objeto Promise é resolvido imediatamente.
+
+Uma maneira de chamar `Office.onReady()` é passando um método de retorno para ele. Por exemplo:
 
 ```js
-Office.initialize = function () { };
+Office.onReady(function(info) {
+    if (info.host === Office.HostType.Excel) {
+        // Do Excel-specific initialization (for example, make add-in task pane's
+        // appearance compatible with Excel "green").
+    }
+    if (info.platform === Office.PlatformType.PC) {
+        // Make minor layout changes in the task pane.
+    }
+    console.log(`Office.js is now ready in ${info.host} on ${info.platform}`);
+});
 ```
-Se você estiver usando estruturas JavaScript adicionais que incluem seus próprios manipuladores de inicialização ou testes, esses devem ser colocados dentro do evento Office.initialize. Por exemplo, a função [JQuery](https://jquery.com) `$(document).ready()` seria referenciada da seguinte maneira:
+
+Outra opção é encadear um método `then()` para a chamada de `Office.onReady()`, em vez de passar um retorno. Por exemplo, o código a seguir verifica se a versão do Excel do usuário oferece suporte a todas as APIs que o suplemento pode chamar.
+
+```js
+Office.onReady()
+    .then(function() {
+        if (!Office.context.requirements.isSetSupported('ExcelApi', '1.7')) {
+            console.log("Sorry, this add-in only works with newer versions of Excel.");
+        }
+    });
+```
+
+Este é o mesmo exemplo, usando as palavras-chave `async` e `await` em TypeScript:
+
+```typescript
+(async () => {
+    await Office.onReady();
+    if (!Office.context.requirements.isSetSupported('ExcelApi', '1.7')) {
+        console.log("Sorry, this add-in only works with newer versions of Excel.");
+    }
+})();
+```
+
+Se você estiver usando estruturas adicionais do JavaScript que incluem seu próprio manipulador de inicialização ou testes, elas *normalmente* devem ser colocadas dentro da resposta para `Office.onReady()`. Por exemplo, a função [JQuery](https://jquery.com) `$(document).ready()` seria referenciada da seguinte maneira:
+
+```js
+Office.onReady(function() {
+    // Office is ready
+    $(document).ready(function () {
+        // The document is ready
+    });
+});
+```
+
+No entanto, há exceções a essa prática. Por exemplo, suponha que você deseja abrir o suplemento em um navegador (em vez de fazer o sideload em um host do Office) para depurar sua interface de usuário com as ferramentas do navegador. Como o Office.js não é carregado no navegador, `onReady` não é executado e `$(document).ready` não é executado se chamado dentro do `onReady` do Office. Outra exceção: você quer que um indicador de andamento apareça no painel de tarefas enquanto o suplemento está sendo carregado. Nesse cenário, seu código deve chamar o `ready` do jQuery e usar seu retorno para renderizar o indicador de andamento. Em seguida, o retorno do `onReady` do Office pode substituir o indicador de andamento com a interface final do usuário. 
+
+### <a name="initialize-with-officeinitialize"></a>Inicializar com Office.initialize
+
+Um evento initialize é acionado quando a biblioteca do Office.js está totalmente carregada e pronta para interação com o usuário. Você pode atribuir um manipulador a `Office.initialize`, que implementa a lógica de inicialização. O exemplo a seguir verifica se a versão do Excel do usuário oferece suporte a todas as APIs que o suplemento pode chamar.
+
+```js
+Office.initialize = function () {
+    if (!Office.context.requirements.isSetSupported('ExcelApi', '1.7')) {
+        console.log("Sorry, this add-in only works with newer versions of Excel.");
+    }
+};
+```
+
+Se você estiver usando estruturas adicionais do JavaScript que incluem seu próprio manipulador de inicialização ou testes, elas *normalmente* devem ser colocadas dentro do evento `Office.initialize`. (Mas as exceções descritas na seção anterior, **Inicializar com Office.onReady()**, também se aplicam a este caso.) Por exemplo, a função do [JQuery](https://jquery.com) `$(document).ready()` seria referenciada da seguinte maneira:
 
 ```js
 Office.initialize = function () {
     // Office is ready
-    $(document).ready(function () {        
+    $(document).ready(function () {
         // The document is ready
     });
   };
 ```
 
-Todas as páginas dentro de Suplementos do Office são necessárias para atribuir um manipulador de eventos ao evento de inicialização, **Office.initialize**. Se você não incluir um manipulador de eventos, o suplemento poderá gerar um erro ao iniciar. Além disso, se um usuário tentar usar o suplemento com um cliente Web do Office Online, como o Excel Online, o PowerPoint Online ou o Outlook Web App, ele não funcionará. Se você não precisar de nenhum código de inicialização, então, o corpo da função atribuída a **Office.initialize** poderá ficar vazio, como no primeiro exemplo acima.
-
-Para obter mais detalhes sobre a sequência de eventos na inicialização do suplemento, consulte [Carregar o DOM e o ambiente de execução](loading-the-dom-and-runtime-environment.md).
-
-#### <a name="initialization-reason"></a>Motivo da inicialização
-Para suplementos de conteúdo e de painel de tarefas, o Office.initialize fornece um parâmetro _reason_ adicional. Esse parâmetro pode ser usado para determinar como um suplemento foi adicionado ao documento atual. Você pode usar isso para fornecer lógica diferente para quando um suplemento pela primeira vez em comparação com quando já existia dentro do documento. 
+Para suplementos de conteúdo e painel de tarefas, `Office.initialize` fornece um parâmetro adicional _reason_. Esse parâmetro especifica como um suplemento foi adicionado ao documento atual. Você pode usar isso para fornecer uma lógica diferente para quando um suplemento for inserido pela primeira vez, em contraste com a usada quando ele já existia dentro do documento.
 
 ```js
 Office.initialize = function (reason) {
@@ -67,14 +137,31 @@ Office.initialize = function (reason) {
     });
  };
 ```
-Para obter mais informações, confira [Evento Office.initialize](https://dev.office.com/reference/add-ins/shared/office.initialize) e [Enumeração InitializationReason](https://dev.office.com/reference/add-ins/shared/initializationreason-enumeration). 
 
-## <a name="office-javascript-api-object-model"></a>Modelo de objeto da API JavaScript para Office
+Para obter mais informações, confira [Evento Office.initialize](https://dev.office.com/reference/add-ins/shared/office.initialize) e [Enumeração InitializationReason](https://dev.office.com/reference/add-ins/shared/initializationreason-enumeration).
 
-Uma vez inicializado, o suplemento pode interagir com o host (ex. Excel, Outlook). A página do [Modelo de Objeto da API Javascript do Office](office-javascript-api-object-model.md) tem mais detalhes sobre modelos de uso específicos. Também há documentação de referência detalhada para [APIs compartilhadas](https://dev.office.com/reference/add-ins/javascript-api-for-office) e hosts específicos.
+### <a name="major-differences-between-officeinitialize-and-officeonready"></a>Principais diferenças entre Office.initialize e Office.onReady()
+
+- Você pode atribuir apenas um manipulador para `Office.initialize` e ele é chamado apenas uma vez pela infraestrutura do Office; mas você pode chamar `Office.onReady()` em diferentes locais do seu código e usar diferentes retornos de chamada. Por exemplo, seu código pode chamar `Office.onReady()` assim que seu script personalizado for carregado com um retorno de chamada que executa a lógica de inicialização; seu código também pode ter um botão no painel de tarefas cujo script chama `Office.onReady()` com um retorno de chamada diferente. Nesse caso, o segundo retorno de chamada é executado quando o botão é clicado.
+
+- O evento `Office.initialize` é acionado ao final do processo interno no qual Office.js inicializa a si mesmo. E ele é acionado *imediatamente* após o término do processo interno. Se o código em que você atribui um manipulador para o evento é executado muito tempo depois do evento ser acionado, o seu manipulador não é executado. Por exemplo, se você estiver usando o gerenciador de tarefas WebPack, ele pode configurar a página inicial do suplemento para carregar arquivos polyfill após carregar o Office.js e antes de carregar seu JavaScript personalizado. Quando o seu script carregar e atribuir o manipulador, o evento initialize já terá acontecido. Mas nunca é "tarde demais" para chamar `Office.onReady()`. Se o evento initialize já tiver acontecido, o retorno de chamada é executado imediatamente.
+
+> [!NOTE]
+> Mesmo se você não tiver uma lógica de inicialização, é uma boa prática chamar `Office.onReady()` ou atribuir uma função vazia a `Office.initialize` quando o JavaScript do seu suplemento for carregado, pois algumas combinações de plataforma e host do Office não carregam o painel de tarefas até que um desses aconteça. As linhas a seguir mostram as duas maneiras de que isso pode ser feito:
+>
+>```js
+>Office.onReady();
+>```
+>
+>```js
+>Office.initialize = function () {};
+>```
+
+## <a name="office-javascript-api-object-model"></a>Modelo de objeto da API JavaScript do Office
+
+Uma vez inicializado, o suplemento pode interagir com o host (por exemplo, Excel, Outlook). A página [Modelo de objeto da API JavaScript do Office](office-javascript-api-object-model.md) tem mais detalhes sobre padrões de uso específicos. Há também documentação de referência detalhada para as [APIs compartilhadas](https://dev.office.com/reference/add-ins/javascript-api-for-office) e hosts específicos.
 
 ## <a name="api-support-matrix"></a>Matriz de suporte da API
-
 
 Esta tabela resume a API e os recursos compatíveis com os tipos de suplemento (conteúdo, painel de tarefas e Outlook) e os aplicativos do Office que podem hospedá-los quando o usuário especifica os aplicativos hospedados pelo Office compatíveis com o suplemento usando o [esquema 1.1 do manifesto de suplementos e recursos compatíveis com a v1.1 da API JavaScript para Office](update-your-javascript-api-for-office-and-manifest-schema-version.md).
 
@@ -82,7 +169,7 @@ Esta tabela resume a API e os recursos compatíveis com os tipos de suplemento (
 |||||||||
 |:-----|:-----|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
 ||**Nome do host**|Banco de dados|Pasta de trabalho|Caixa de correio|Apresentação|Documento|Projeto|
-||**Aplicativos host** **compatíveis**|Aplicativos Web do Access|Excel,<br/>Excel Online|Outlook,<br/>Outlook Web App,<br/>OWA para dispositivos|PowerPoint,<br/>PowerPoint Online|Word|Projeto|
+||**Aplicativos host** **compatíveis**|Aplicativos Web do Access|Excel,<br/>Excel Online|Outlook,<br/>Aplicativo Web do Outlook,<br/>OWA para dispositivos|PowerPoint,<br/>PowerPoint Online|Word|Projeto|
 |**Tipos de suplemento com suporte**|Conteúdo|S|S||S|||
 ||Painel de tarefas||S||S|S|S|
 ||Outlook|||S||||
@@ -90,7 +177,7 @@ Esta tabela resume a API e os recursos compatíveis com os tipos de suplemento (
 ||Ler/gravar matriz||S|||S||
 ||Ler/gravar tabela||S|||S||
 ||Ler/gravar HTML|||||S||
-||Leitura/gravação<br/>Office Open XML|||||S||
+||Leitura/gravação<br/>Open XML do Office|||||S||
 ||Ler propriedades de tarefa, recurso, modo de exibição e campo||||||S|
 ||Eventos alterados pela seleção||S|||S||
 ||Obter documento inteiro||||S|S||
