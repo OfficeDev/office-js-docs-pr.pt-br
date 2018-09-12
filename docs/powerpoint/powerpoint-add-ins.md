@@ -2,12 +2,12 @@
 title: Suplementos do PowerPoint
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: e5c605410601d711e28ca04ff6e26387019cbb41
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 21f6ec0b00003a90df6850562e399d33da7b49b9
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925315"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23943884"
 ---
 # <a name="powerpoint-add-ins"></a>Suplementos do PowerPoint
 
@@ -30,13 +30,13 @@ Esses exemplos de código exigem que seu projeto faça [referência à bibliotec
 Se você estiver criando um suplemento de conteúdo, será necessário obter o modo de exibição ativo da apresentação e manipular o evento ActiveViewChanged como parte do manipulador Office.Initialize.
 
 
-- A função `getActiveFileView` chama o método [Document.getActiveViewAsync](https://dev.office.com/reference/add-ins/shared/document.getactiveviewasync) para retornar se o modo de exibição atual da apresentação for "edição" (qualquer um dos modos de exibição em que é possível editar slides, como **Normal** ou **Modo de Exibição de Estrutura de Tópicos**) ou "leitura" ( **Apresentação de Slides** ou **Modo de Exibição de Leitura**).
+- A função `getActiveFileView` chama o método [Document.getActiveViewAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getactiveviewasync-options--callback-) para retornar se o modo de exibição atual da apresentação for "edição" (qualquer um dos modos de exibição em que é possível editar slides, como **Normal** ou **Modo de Exibição de Estrutura de Tópicos**) ou "leitura" ( **Apresentação de Slides** ou **Modo de Exibição de Leitura**).
 
 
-- A função `registerActiveViewChanged` chama o método [addHandlerAsync](https://dev.office.com/reference/add-ins/shared/document.addhandlerasync) para registrar um manipulador para o evento [Document.ActiveViewChanged](https://dev.office.com/reference/add-ins/shared/document.activeviewchanged). 
+- A função `registerActiveViewChanged` chama o método [addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#addhandlerasync-eventtype--handler--options--callback-) para registrar um manipulador para o evento [Document.ActiveViewChanged](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js). 
 
 > [!NOTE]
-> No PowerPoint Online, o evento [Document.ActiveViewChanged](https://dev.office.com/reference/add-ins/shared/document.activeviewchanged) nunca será acionado porque o modo de Apresentação de Slides é tratado como uma nova sessão. Nesse caso, o suplemento deve obter o modo de exibição ativo ao carregar, como observado abaixo.
+> No PowerPoint Online, o evento [Document.ActiveViewChanged](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js) nunca será acionado porque o modo de Apresentação de Slides é tratado como uma nova sessão. Nesse caso, o suplemento deve obter o modo de exibição ativo ao carregar, como observado abaixo.
 
 ```js
 //general Office.initialize function. Fires on load of the add-in.
@@ -85,7 +85,7 @@ function registerActiveViewChanged() {
 
 ## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>Navegar até um determinado slide na apresentação
 
-A função `getSelectedRange` chama o método [Document.getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) para obter um objeto JSON retornado por `asyncResult.value`, que contém uma matriz chamada "slides" contendo as ids, títulos e índices do intervalo selecionado de slides (ou apenas do slide atual). Ela também salva a id do primeiro slide no intervalo selecionado em uma variável global.
+A função `getSelectedRange` chama o método [Document.getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) para obter um objeto JSON retornado por `asyncResult.value`, que contém uma matriz chamada "slides" contendo as ids, títulos e índices do intervalo selecionado de slides (ou apenas do slide atual). Ela também salva a id do primeiro slide no intervalo selecionado em uma variável global.
 
 
 ```js
@@ -105,7 +105,7 @@ function getSelectedRange() {
 }
 ```
 
-A função `goToFirstSlide` chama o método [Document.goToByIdAsync](https://dev.office.com/reference/add-ins/shared/document.gotobyidasync) para ir até a id do primeiro slide armazenado pela função `getSelectedRange` acima.
+A função `goToFirstSlide` chama o método [Document.goToByIdAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#gotobyidasync-id--gototype--options--callback-) para ir até a id do primeiro slide armazenado pela função `getSelectedRange` acima.
 
 
 
@@ -149,7 +149,7 @@ function goToSlideByIndex() {
 
 ## <a name="get-the-url-of-the-presentation"></a>Obter a URL da apresentação
 
-A função `getFileUrl` chama o método [Document.getFileProperties](https://dev.office.com/reference/add-ins/shared/document.getfilepropertiesasync) para obter a URL do arquivo da apresentação.
+A função `getFileUrl` chama o método [Document.getFileProperties](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getfilepropertiesasync-options--callback-) para obter a URL do arquivo da apresentação.
 
 
 ```js
@@ -170,7 +170,7 @@ function getFileUrl() {
 
 
 ## <a name="see-also"></a>Veja também
-- [Exemplos de Código do PowerPoint](https://dev.office.com/code-samples#?filters=powerpoint)
+- [Exemplos de Código do PowerPoint](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,PowerPoint)
 - [Como salvar o estado e as configurações do suplemento por documento para suplementos de conteúdo e de painel de tarefas](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 - [Ler e gravar dados na seleção ativa em um documento ou planilha](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
 - [Obter todo o documento por meio de um suplemento para PowerPoint ou Word](../powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md)

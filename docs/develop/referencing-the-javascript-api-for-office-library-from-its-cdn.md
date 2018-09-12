@@ -2,17 +2,17 @@
 title: Fazer referência à biblioteca da API JavaScript para Office de sua CDN (rede de distribuição de conteúdo)
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 6d435c0e3a0383d03f28e095c56b62e967394e22
-ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.openlocfilehash: 9d3328ba09e2f69e76bd55f21064d52a8537cfa9
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "19437133"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23943898"
 ---
 # <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-cdn"></a>Fazer referência à biblioteca da API JavaScript para Office de sua CDN (rede de distribuição de conteúdo)
 
 
-A biblioteca da [API JavaScript para Office](https://dev.office.com/reference/add-ins/javascript-api-for-office) consiste no arquivo Office.js e nos arquivos .js específicos do aplicativo de host associado, como Excel-15.js e Outlook-15.js. 
+A biblioteca da [API JavaScript para Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js) consiste no arquivo Office.js e nos arquivos .js específicos do aplicativo de host associado, como Excel-15.js e Outlook-15.js. 
 
 
 A maneira mais simples de fazer referência à API é usar nossa CDN adicionando o seguinte `<script>` à marca `<head>` da sua página:  
@@ -31,5 +31,5 @@ Caso planeje publicar seu Suplemento do Office no AppSource, você deve usar est
 ## <a name="see-also"></a>Veja também
 
 - [Noções básicas da API JavaScript para Office](understanding-the-javascript-api-for-office.md)    
-- [API JavaScript para Office](https://dev.office.com/reference/add-ins/javascript-api-for-office)
+- [API JavaScript para Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)
     

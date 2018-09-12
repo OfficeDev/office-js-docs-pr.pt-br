@@ -2,12 +2,12 @@
 title: Visão geral dos suplementos do Word
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 90b6ad29b4d1fe4ecffd3a1e57d76d16752ee77a
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 51ab24fa12017fc16a49d5ac2f97dad288bcfcfe
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925427"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944638"
 ---
 # <a name="word-add-ins-overview"></a>Visão geral dos suplementos do Word
 
@@ -52,11 +52,11 @@ Redija seu suplemento uma vez e ele será executado em todas as versões do Word
 
 ## <a name="javascript-apis-for-word"></a>APIs JavaScript para Word
 
-Você pode usar dois conjuntos de APIs JavaScript para interagir com metadados e objetos em um documento do Word. O primeiro é o [API JavaScript para Office](https://dev.office.com/reference/add-ins/javascript-api-for-office?product=word), que foi introduzido no Office 2013. Esta é uma API compartilhada – muitos dos objetos podem ser usados em suplementos hospedados por dois ou mais clientes do Office. Essa API usa retornos de chamadas de maneira ampla. 
+Você pode usar dois conjuntos de APIs JavaScript para interagir com metadados e objetos em um documento do Word. O primeiro é o [API JavaScript para Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js?product=word), que foi introduzido no Office 2013. Esta é uma API compartilhada – muitos dos objetos podem ser usados em suplementos hospedados por dois ou mais clientes do Office. Essa API usa retornos de chamadas de maneira ampla. 
 
-O segundo é a [API JavaScript do Word](https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview). Este é um modelo de objeto fortemente tipado que você pode usar para criar suplementos do Word que se destinam ao Word 2016 para Mac e Windows. Este modelo de objeto usa promessas e fornece acesso a objetos específicos do Word como [corpo](https://dev.office.com/reference/add-ins/word/body), [controles de conteúdo](https://dev.office.com/reference/add-ins/word/contentcontrol), [imagens embutidas](https://dev.office.com/reference/add-ins/word/inlinepicture) e [parágrafos](https://dev.office.com/reference/add-ins/word/paragraph). A API JavaScript do Word inclui definições do TypeScript e arquivos vsdoc para que você possa obter dicas de código em seu IDE.
+O segundo é a [API JavaScript do Word](https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js). Este é um modelo de objeto fortemente tipado que você pode usar para criar suplementos do Word que se destinam ao Word 2016 para Mac e Windows. Este modelo de objeto usa promessas e fornece acesso a objetos específicos do Word como [corpo](https://docs.microsoft.com/javascript/api/word/word.body?view=office-js), [controles de conteúdo](https://docs.microsoft.com/javascript/api/word/word.contentcontrol?view=office-js), [imagens embutidas](https://docs.microsoft.com/javascript/api/word/word.inlinepicture?view=office-js) e [parágrafos](https://docs.microsoft.com/javascript/api/word/word.paragraph?view=office-js). A API JavaScript do Word inclui definições do TypeScript e arquivos vsdoc para que você possa obter dicas de código em seu IDE.
 
-Atualmente, todos os clientes do Word oferecem suporte à API JavaScript para Office compartilhada, e a maioria dos clientes oferece suporte à API JavaScript do Word. Para obter detalhes sobre clientes com suporte, consulte a [documentação de referência da API](https://dev.office.com/reference/add-ins/javascript-api-for-office?product=word).
+Atualmente, todos os clientes do Word oferecem suporte à API JavaScript para Office compartilhada, e a maioria dos clientes oferece suporte à API JavaScript do Word. Para obter detalhes sobre clientes com suporte, consulte a [documentação de referência da API](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js?product=word).
 
 Recomendamos que você comece com a API JavaScript do Word porque o modelo de objeto é mais fácil de usar. Use a API JavaScript do Word se precisar:
 
@@ -74,7 +74,7 @@ Use a API JavaScript para Office compartilhada quando precisar:
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Pronto para criar seu primeiro suplemento do Word? Confira [Compilar seu primeiro suplemento do Word](word-add-ins.md). Também é possível tentar nossa [Experiência de introdução](http://dev.office.com/getting-started/addins?product=Word) interativa. Use um [manifesto do suplemento](../develop/add-in-manifests.md) para descrever onde seu suplemento está hospedado e como ele é exibido, além de definir permissões e outras informações.
+Pronto para criar seu primeiro suplemento do Word? Confira [Compilar seu primeiro suplemento do Word](word-add-ins.md). Também é possível tentar nossa [Experiência de introdução](https://docs.microsoft.com/office/dev/add-ins/?product=Word) interativa. Use um [manifesto do suplemento](../develop/add-in-manifests.md) para descrever onde seu suplemento está hospedado e como ele é exibido, além de definir permissões e outras informações.
 
 Para saber mais sobre como projetar um suplemento do Word de classe internacional que cria uma ótima experiência para seus usuários, consulte [Diretrizes de design](../design/add-in-design.md) e [Práticas recomendadas](../concepts/add-in-development-best-practices.md).
 
@@ -82,10 +82,10 @@ Depois de desenvolver seu suplemento, é possível [publicá-lo](../publish/publ
 
 ## <a name="whats-coming-up-for-word-add-ins"></a>O que está surgindo para os suplementos do Word?
 
-À medida que criamos e desenvolvemos novas APIs para suplementos do Word, elas ficam disponíveis na nossa página [Especificações abertas da API](https://dev.office.com/reference/add-ins/openspec) para você deixar seus comentários. Descubra que novos recursos estão no pipeline para as APIs JavaScript do Word e forneça comentários sobre nossas especificações de design.
+À medida que criamos e desenvolvemos novas APIs para suplementos do Word, elas ficam disponíveis na nossa página [Especificações abertas da API](https://docs.microsoft.com/javascript/office/openspec?view=office-js) para você deixar seus comentários. Descubra que novos recursos estão no pipeline para as APIs JavaScript do Word e forneça comentários sobre nossas especificações de design.
 
 ## <a name="see-also"></a>Veja também
 
 * [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
-* [Referências da API JavaScript do Word](https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview)
+* [Referências da API JavaScript do Word](https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js)
 

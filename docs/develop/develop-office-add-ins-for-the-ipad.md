@@ -2,12 +2,12 @@
 title: Desenvolver suplementos do Office para iPad
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 96743b343aca28e7a35e78c587a9b39cf050a539
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 77e67c361d227babebdd081ecdf308fc7469e507
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925112"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944351"
 ---
 # <a name="develop-office-add-ins-for-the-ipad"></a>Desenvolver suplementos do Office para iPad
 
@@ -17,7 +17,7 @@ A tabela a seguir lista as tarefas a realizar para desenvolver um Suplemento do 
 
 |**Tarefa**|**Descrição**|**Recursos**|
 |:-----|:-----|:-----|
-|Atualize seu suplemento para dar suporte ao Office.js versão 1.1.|Atualize os arquivos de JavaScript (Office.js e arquivos .js específicos do aplicativo) e o arquivo de validação de manifesto de suplemento usados no projeto do seu Suplemento do Office para a versão 1.1.|[O que mudou na API JavaScript para Office](https://dev.office.com/reference/add-ins/what's-changed-in-the-javascript-api-for-office)|
+|Atualize seu suplemento para dar suporte ao Office.js versão 1.1.|Atualize os arquivos de JavaScript (Office.js e arquivos .js específicos do aplicativo) e o arquivo de validação de manifesto de suplemento usados no projeto do seu Suplemento do Office para a versão 1.1.|[O que mudou na API JavaScript para Office](https://docs.microsoft.com/javascript/office/what's-changed-in-the-javascript-api-for-office?view=office-js)|
 |Aplique as práticas recomendadas de design de interface do usuário.|Integre perfeitamente a interface do usuário do seu suplemento à experiência para iOS.|[Projetar para o iOS](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/)|
 |Aplique as práticas recomendadas de design de suplemento.|Verifique se o suplemento fornece um valor claro, é dedicado e tem um desempenho consistente.|[Práticas recomendadas para desenvolvimento de suplementos do Office](../concepts/add-in-development-best-practices.md)|
 |Otimize seu suplemento para toque.|Torne sua interface do usuário responsiva a entradas de toque, além de mouse e teclado.|[Aplicar os princípios de design da UX](../concepts/add-in-development-best-practices.md#apply-ux-design-principles)|
@@ -26,8 +26,8 @@ A tabela a seguir lista as tarefas a realizar para desenvolver um Suplemento do 
 |Enviar soluções ao AppSource|No Painel do Vendedor, selecione a caixa **Disponibilizar este suplemento no Catálogo de Suplementos do Office no iPad** e forneça sua ID de desenvolvedor da Apple na caixa ID da Apple. Examine o [Contrato do Provedor de Aplicativo do AppSource](https://sellerdashboard.microsoft.com/Assets/Content/Agreements/en-US/Office_Store_Seller_Agreement_20120927.htm) para ter certeza de que você o compreendeu.|[Disponibilizar suas soluções no AppSource e no Office](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store)|
 
 Seu suplemento pode permanecer como está para aplicativos do Office que estão sendo executados em outras plataformas. Você também pode fornecer uma interface de usuário diferente com base no navegador/dispositivo em que seu suplemento está sendo executado. Para detectar se seu suplemento está sendo executado em um iPad, você pode usar as seguintes APIs:
-- var isTouchEnabled = [Office.context.touchEnabled](https://dev.office.com/reference/add-ins/shared/office.context.touchenabled)
-- var allowCommerce = [Office.context.commerceAllowed](https://dev.office.com/reference/add-ins/shared/office.context.commerceallowed)
+- var isTouchEnabled = [Office.context.touchEnabled](https://docs.microsoft.com/javascript/api/office/office.context?view=office-js#touchenabled)
+- var allowCommerce = [Office.context.commerceAllowed](https://docs.microsoft.com/javascript/api/office/office.context?view=office-js#commerceallowed)
     
 
 ## <a name="best-practices-for-developing-office-add-ins-for-ios-and-mac"></a>Práticas recomendadas para desenvolver Suplementos do Office para iOS e Mac

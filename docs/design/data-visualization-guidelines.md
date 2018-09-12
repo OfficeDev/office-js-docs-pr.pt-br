@@ -2,18 +2,18 @@
 title: Diretrizes de estilo de visualização de dados para Suplementos do Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 3255c1aeff6cba4b9f13aa2555b8c84ac773fb75
-ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.openlocfilehash: 27de6b6b2f4352488ad8f63c3b6e1250cbfbb324
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "19437350"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945789"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Diretrizes de estilo de visualização de dados para Suplementos do Office
 
 Boas visualizações de dados ajudam os usuários a encontrarem informações em seus dados. Eles podem usar essas informações para contar histórias que informam e convencem. Este artigo fornece diretrizes para ajudá-lo a criar visualizações de dados eficazes em seus suplementos para o Excel e outros aplicativos do Office.
 
-Recomendamos que você use o [Office UI Fabric](http://dev.office.com/fabric) para criar o cromado para suas visualizações de dados. O Office UI Fabric inclui estilos e componentes que se integram perfeitamente com a aparência do Office. 
+Recomendamos que você use o [Office UI Fabric](https://developer.microsoft.com/fabric) para criar o cromado para suas visualizações de dados. O Office UI Fabric inclui estilos e componentes que se integram perfeitamente com a aparência do Office. 
 
 <!--The following figure shows a data visualization in an add-in that uses Fabric.
 
@@ -34,7 +34,7 @@ Siga estas diretrizes para títulos de gráfico:
 
 - Deixe seus títulos de gráfico bem legíveis. Posicione-os para criar uma hierarquia visual em relação ao restante do gráfico.
 - Em geral, use maiúsculas nas frases (a primeira letra da primeira palavra em letra maiúscula). Para criar o contraste ou reforçar hierarquias, você poderá usar todas em maiúsculas, mas use isso com moderação.
-- Incorpore a [typeramp do Office UI Fabric](http://dev.office.com/fabric#/styles/typography) para deixar seus gráficos consistentes com a interface de usuário do Office, que usa o Segoe. Você também pode usar outra fonte para diferenciar o conteúdo do gráfico da interface do usuário.
+- Incorpore a [typeramp do Office UI Fabric](https://developer.microsoft.com/fabric#/styles/typography) para deixar seus gráficos consistentes com a interface de usuário do Office, que usa o Segoe. Você também pode usar outra fonte para diferenciar o conteúdo do gráfico da interface do usuário.
 - Use tipos sem serifa com contadores grandes.
 
 Os exemplos a seguir mostram tipos com serifa e sem serifa usados em títulos de gráfico. Observe como o contraste de escala e o uso eficaz do espaço em branco criam uma hierarquia visual forte.
@@ -46,7 +46,7 @@ Os exemplos a seguir mostram tipos com serifa e sem serifa usados em títulos de
 
 Deixe os rótulos dos eixos escuros para serem lidos claramente, com um bom contraste entre as cores do plano de fundo e do texto. Verifique se não estão tão escuros que competem com a tinta dos dados.
 
-Cinza claro é mais eficaz para rótulos dos eixos. Se você estiver usando o Fabric, consulte a [Paleta de cores neutras](http://dev.office.com/fabric#/styles/colors).
+Cinza claro é mais eficaz para rótulos dos eixos. Se você estiver usando o Fabric, consulte a [Paleta de cores neutras](https://developer.microsoft.com/fabric#/styles/colors).
 
 ### <a name="data-ink"></a>Tinta dos dados
 
@@ -67,7 +67,7 @@ Para ver as práticas recomendadas para o uso de cores nas visualizações de da
 
 As linhas de grade geralmente são necessárias para a leitura precisa de um gráfico, mas elas devem ser apresentadas como um elemento visual secundário, aprimorando a tinta dos dados e não competindo com ela. Use linhas de grade estáticas finas e leves, a menos que elas tenham sido projetadas especificamente para alto contraste. Você também pode usar interação para criar linhas de grade dinâmicas, que aparecem no contexto quando um usuário interage com um gráfico.
 
-Cinza claro é mais eficaz para linhas de grade. Se você estiver usando o Fabric, consulte a [Paleta de cores neutras](http://dev.office.com/fabric#/styles/colors).
+Cinza claro é mais eficaz para linhas de grade. Se você estiver usando o Fabric, consulte a [Paleta de cores neutras](https://developer.microsoft.com/fabric#/styles/colors).
 
 A imagem a seguir mostra uma visualização de dados com linhas de grade.
 

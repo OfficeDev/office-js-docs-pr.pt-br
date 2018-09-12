@@ -2,12 +2,12 @@
 title: Como lidar com limitações de política de mesma origem nos Suplementos do Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 536e02d2367bef81d4a6e49098d66833c99f5e50
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: cfd61a78bf3dc1602ce140296d3a3d8afa9845eb
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925105"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944052"
 ---
 # <a name="addressing-same-origin-policy-limitations-in-office-add-ins"></a>Como lidar com limitações de política de mesma origem nos Suplementos do Office
 
@@ -55,7 +55,7 @@ function loadVideoDetails(videoIndex) {
 
 Outra maneira para resolver as limitações de política de mesma origem é implementar a página da Web do suplemento como uma página ASP que usa o OAuth ou armazena em cache credenciais em cookies.
 
-Para obter um exemplo de código do lado do servidor que mostre como usar o objeto `Cookie` em `System.Net` para obter e definir valores de cookies, confira a propriedade [Value](https://msdn.microsoft.com/library/4f772twc).
+Para obter um exemplo de código do lado do servidor que mostre como usar o objeto `Cookie` em `System.Net` para obter e definir valores de cookies, confira a propriedade [Value](https://docs.microsoft.com/dotnet/api/system.net.cookie.value?view=netframework-4.7.2).
 
 
 ## <a name="using-cross-origin-resource-sharing-cors"></a>Usar o CORS (compartilhamento de recursos entre origens)

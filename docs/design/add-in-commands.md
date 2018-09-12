@@ -2,12 +2,12 @@
 title: Comandos de suplemento para Excel, Word e PowerPoint
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 621c3e991d6ec4930cd11e39e19cca1c8a1fa3d8
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 101c34748f0eba5502caeab63ecbc00992ac548e
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925196"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944513"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Comandos de suplemento para Excel, Word e PowerPoint
 
@@ -45,9 +45,10 @@ Os seguintes recursos de comando são compatíveis no momento.
 **Ações**
 
 - ShowTaskpane: exibe um ou vários painéis que carregam páginas HTML personalizadas dentro deles.
-- ExecuteFunction: carrega uma página HTML invisível e executa uma função JavaScript dentro dela. Para mostrar a interface do usuário dentro de sua função (como erros, progresso ou entrada adicional), você pode usar a API [displayDialog](http://dev.office.com/reference/add-ins/shared/officeui).  
+- ExecuteFunction: carrega uma página HTML invisível e executa uma função JavaScript dentro dela. Para mostrar a interface do usuário dentro de sua função (como erros, progresso ou entrada adicional), você pode usar a API [displayDialog](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js).  
 
 ## <a name="supported-platforms"></a>Plataformas com suporte
+
 Os comandos de suplemento atualmente têm suporte nas seguintes plataformas:
 
 - Office para Área de Trabalho do Windows 2016 (compilação 16.0.6769+)
@@ -84,7 +85,7 @@ Aplique as seguintes práticas recomendadas ao desenvolver comandos de suplement
 
 A melhor maneira de começar a usar os comandos de suplemento é conferir os [exemplos de comandos de Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) no GitHub.
 
-Saiba mais sobre como especificar comandos de suplemento no manifesto em [Criar comandos de suplemento no manifesto](../develop/create-addin-commands.md) e no conteúdo de referência [VersionOverrides](https://dev.office.com/reference/add-ins/manifest/versionoverrides).
+Saiba mais sobre como especificar comandos de suplemento no manifesto em [Criar comandos de suplemento no manifesto](../develop/create-addin-commands.md) e no conteúdo de referência [VersionOverrides](https://docs.microsoft.com/javascript/office/manifest/versionoverrides?view=office-js).
 
 
 

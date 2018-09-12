@@ -2,12 +2,12 @@
 title: Suplementos do painel de tarefas para Project
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: aa7117ebc1c5bf0038346881b2c6e6f7a80e1bac
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: f8e36e157ce78f4c93dc192c42c997e5f022a4d2
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925483"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945768"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Suplementos do painel de tarefas para Project
 
@@ -204,7 +204,7 @@ No procedimento 2, o suplemento Pesquisa do Bing é instalado no computador loca
 
 - [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
 - [Manifesto XML dos Suplementos do Office](../develop/add-in-manifests.md)
-- [JavaScript API para Office](https://dev.office.com/reference/add-ins/javascript-api-for-office)
+- [JavaScript API para Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)
 - [Criar seu primeiro suplemento de painel de tarefas para o Project 2013 usando um editor de texto](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [Criar um suplemento de Project que usa REST com um serviço local do Project Server OData](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
 - [Conectar um suplemento de painel de tarefas do Project ao PWA](http://blogs.msdn.com/b/project_programmability/archive/2012/11/02/connecting-a-project-task-pane-app-to-pwa.aspx)
