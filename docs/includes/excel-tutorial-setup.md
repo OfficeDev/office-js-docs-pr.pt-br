@@ -14,7 +14,10 @@ Para usar este tutorial, você precisa instalar o seguinte.
 ## <a name="setup"></a>Configurar
 
 1. Clone o repositório do GitHub com o [Tutorial de suplemento do Excel](https://github.com/OfficeDev/Excel-Add-in-Tutorial).
-2. Abra uma janela Git bash ou um prompt de sistema habilitado para Node.JS e navegue para a pasta **Iniciar** do projeto.
+
+2. Abra uma janela bash do Git ou um prompt do sistema habilitado para Node.JS e navegue para a pasta **Iniciar** do projeto.
+
 3. Execute o comando `npm install` para instalar as ferramentas e bibliotecas listadas no arquivo package.json. 
+
 4. Execute as etapas em [Adicionar certificados autoassinados como certificado raiz confiáveis](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) para confiar no certificado do sistema operacional do seu computador de desenvolvimento.
 
