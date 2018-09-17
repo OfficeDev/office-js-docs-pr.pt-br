@@ -109,7 +109,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 
 ### <a name="update-the-manifest"></a>Atualizar o manifesto
 
-1. Abra o arquivo de manifesto XML do projeto do Suplemento. Este arquivo define as configurações e os recursos do suplemento.
+1. Abra o arquivo XML do manifesto do projeto de suplemento. Esse arquivo define as configurações e funcionalidades do suplemento.
 
 2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o com seu nome.
 
@@ -135,7 +135,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 
 2. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Botão do Suplemento do Excel](../images/excel-quickstart-addin-2a.png)
+    ![Botão do suplemento do Excel](../images/excel-quickstart-addin-2a.png)
 
 3. Selecione um intervalo de células na planilha.
 
@@ -164,7 +164,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
     cd my-addin
     ```
 
-3. Use o gerador do Yeoman para gerar o arquivo de manifesto para o seu suplemento. Execute o comando a seguir e responda aos prompts, conforme mostrado na seguinte captura de tela:
+3. Use o gerador do Yeoman para gerar o arquivo de manifesto para o seu suplemento. Execute o comando a seguir e responda aos prompts, conforme mostrado na captura de tela a seguir:
 
     ```bash
     yo office
@@ -173,9 +173,9 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
     - **Escolha um tipo de projeto:** `Office Add-in project using Jquery framework`
     - **Escolha um tipo de script:** `Javascript`
     - **Qual será o nome do suplemento?:** `My Office Add-in`
-    - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?:** `Excel`
+    - **Qual aplicativo cliente do Office você gostaria de suportar?:** `Excel`
 
-    ![Gerador do Yeoman](../images/yo-office-jquery.png)
+    ![Gerador Yeoman](../images/yo-office-jquery.png)
     
     Depois de concluir o assistente, o gerador criará o projeto e instalará os componentes do nó de suporte.
 
@@ -299,7 +299,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 
 2. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Botão do Suplemento do Excel](../images/excel-quickstart-addin-2b.png)
+    ![Botão do suplemento do Excel](../images/excel-quickstart-addin-2b.png)
 
 3. Selecione um intervalo de células na planilha.
 
@@ -320,5 +320,5 @@ Você criou com êxito um suplemento do Excel usando jQuery!, parabéns! Agora, 
 
 * [Tutorial de suplemento do Excel](../tutorials/excel-tutorial-create-table.md)
 * [Principais conceitos da API JavaScript do Excel](../excel/excel-add-ins-core-concepts.md)
-* [Exemplos de código do suplemento do Excel](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Referência da API JavaScript do Excel](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
+* [Exemplos de código do suplemento do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [Referência da API JavaScript do Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)

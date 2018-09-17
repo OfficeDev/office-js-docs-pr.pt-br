@@ -2,12 +2,12 @@
 title: Criar e depurar Suplementos do Office no Visual Studio
 description: ''
 ms.date: 03/14/2018
-ms.openlocfilehash: c903f3d475e46ee09a3c350f79c1e3d671ae5923
-ms.sourcegitcommit: 28fc652bded31205e393df9dec3a9dedb4169d78
+ms.openlocfilehash: 2e5c08a72ec97e26000d6ea7e53dd1d0f2c9e6dc
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "22927444"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945352"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Criar e depurar Suplementos do Office no Visual Studio
 
@@ -154,12 +154,12 @@ O Visual Studio compila o projeto e faz o seguinte:
     
 2. Cria um conjunto de entradas de registro no computador que habilitam o suplemento a aparecer no aplicativo host.
     
-3. Compila o projeto de aplicativo Web e o implanta no servidor Web IIS local (http://localhost). 
+3. Compila o projeto de aplicativo da Web e o implanta no servidor Web IIS local (http://localhost). 
     
 Depois, o Visual Studio faz o seguinte:
 
 
-1. Modifica o elemento [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) do arquivo de manifesto XML, substituindo o token ~remoteAppUrl pelo endereço totalmente qualificado da página inicial (por exemplo, http://localhost/MyAgave.html).
+1. Modifica o elemento [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation?view=office-js) do arquivo de manifesto XML, substituindo o token ~remoteAppUrl pelo endereço totalmente qualificado da página inicial (por exemplo, http://localhost/MyAgave.html).
     
 2. Inicia o projeto de aplicativo Web no IIS Express.
     
@@ -167,7 +167,7 @@ Depois, o Visual Studio faz o seguinte:
     
 O Visual Studio não mostra erros de validação na janela **OUTPUT** ao compilar o projeto. O Visual Studio relata erros e avisos na janela **ERRORLIST** à medida que eles ocorrem. O Visual Studio também relata erros de validação mostrando sublinhados ondulados (conhecidos como rabiscos) de cores diferentes no editor de código e texto. Essas marcas o notificam de problemas que o Visual Studio detectou no código. Para saber mais, confira [Editor de código e texto](https://msdn.microsoft.com/library/se2f663y(v=vs.140).aspx). Para saber mais sobre como habilitar ou desabilitar a validação, confira: 
 
-- [Opções, editor de texto, JavaScript, IntelliSense](https://msdn.microsoft.com/library/hh362485(v=vs.140).aspx)
+- [Opções, editor de texto, JavaScript, IntelliSense](https://docs.microsoft.com/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2015)
     
 - [Tutorial: Definir opções de validação para edição de HTML no Visual Web Developer](https://msdn.microsoft.com/library/0byxkfet(v=vs.100).aspx)
     

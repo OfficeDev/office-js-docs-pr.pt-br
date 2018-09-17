@@ -231,7 +231,7 @@ Para este início rápido, é possível usar os certificados fornecidos pelo **G
    
 2. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Botão do Suplemento do Excel](../images/excel-quickstart-addin-2a.png)
+    ![Botão do suplemento do Excel](../images/excel-quickstart-addin-2a.png)
 
 3. Selecione um intervalo de células na planilha.
 
@@ -250,5 +250,5 @@ Você criou com êxito um suplemento do Excel usando o Angular!, parabéns! Agor
 
 * [Tutorial de suplemento do Excel](../tutorials/excel-tutorial-create-table.md)
 * [Principais conceitos da API JavaScript do Excel](../excel/excel-add-ins-core-concepts.md)
-* [Exemplos de código do suplemento do Excel](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Referência da API JavaScript do Excel](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
+* [Exemplos de código do suplemento do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [Referência da API JavaScript do Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)

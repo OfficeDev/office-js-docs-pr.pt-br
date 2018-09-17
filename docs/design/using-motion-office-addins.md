@@ -1,4 +1,4 @@
-# <a name="using-motion-in-office-add-ins"></a>Usar movimento em suplementos do Office
+# <a name="using-motion-in-office-add-ins"></a>Usar movimento em Suplementos do Office
 
 Ao criar um Suplemento do Office, é possível usar movimento para aprimorar a experiência do usuário. Os componentes, os controles e os elementos da interface do usuário geralmente têm comportamentos interativos que exigem transições, movimento ou animação. Características comuns de movimento entre elementos da interface do usuário definem os aspectos de animação de uma linguagem de design. 
 
@@ -48,8 +48,8 @@ Considere o tamanho da tela HTML (painel de tarefas, caixa de diálogo ou suplem
 
 |Fazer|Não fazer|
 |:-----|:-----|
-| Use [durações de movimento recomendadas](https://developer.microsoft.com/fabric#/styles/animations). | Não use animações exageradas. Evite criar experiências belas, mas que desviam a atenção dos clientes.
-| Acompanhe [curvas de suavização recomendadas](https://docs.microsoft.com/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion).  |Não mova os elementos de uma maneira irregular ou desconexa. Evite antecipações, saltos, pulos ou outros efeitos que emulem as características físicas do mundo natural.|
+| Use [durações de movimento recomendadas](https://developer.microsoft.com/fabric#/styles/animations). | Não use animações exageradas. Evite criar experiências que embelezam e desviam a atenção dos clientes.
+| Siga as [curvas de suavização recomendadas](https://docs.microsoft.com/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion).  |Não mova os elementos de uma maneira irregular ou desconexa. Evite antecipações, saltos, pulos ou outros efeitos que emulem as características físicas do mundo natural.|
 
 ![GIF que mostra blocos carregando usando um esmaecimento sutil ao lado de um gif que mostra blocos carregando com um salto](../images/add-in-motion-character.gif)
 

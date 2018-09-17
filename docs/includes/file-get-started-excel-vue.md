@@ -42,20 +42,19 @@ Cada suplemento requer um arquivo de manifesto para definir os recursos e config
     cd my-add-in
     ```
 
-2. Use o gerador do Yeoman para gerar o arquivo de manifesto para o seu suplemento. Execute o comando a seguir e responda às solicitações conforme mostrado abaixo.
+2. Use o gerador do Yeoman para gerar o arquivo de manifesto para o seu suplemento. Execute o comando a seguir e responda aos prompts conforme mostrado abaixo.
 
     ```bash
     yo office 
     ```
 
-    - **Escolha um tipo de projeto:** `Manifest`
+    - **Escolha um tipo de projeto:** `Office Add-in containing the manifest only`
     - **Como deseja nomear seu suplemento?** `My Office Add-in`
     - **Para qual aplicativo cliente do Office você deseja suporte?:** `Excel`
 
-
     Depois de concluir o assistente, um arquivo de manifesto e um arquivo de recurso estarão disponíveis para você criar o seu projeto.
 
-    ![Gerador do Yeoman](../images/yo-office.png)
+    ![Gerador Yeoman](../images/yo-office.png)
     
     > [!NOTE]
     > Se for solicitada a substituição de **package.json**, responda **Não** (não substituir).
@@ -191,7 +190,7 @@ Para ativar o HTTPS para o seu aplicativo, abra **package.json** na raiz do proj
 
 2. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Botão do Suplemento do Excel](../images/excel-quickstart-addin-2a.png)
+    ![Botão do suplemento do Excel](../images/excel-quickstart-addin-2a.png)
 
 3. Selecione um intervalo de células na planilha.
 
@@ -210,5 +209,5 @@ Você criou com êxito um suplemento do Excel usando o Vue, parabéns! Agora, sa
 
 * [Tutorial de suplemento do Excel](../tutorials/excel-tutorial-create-table.md)
 * [Principais conceitos da API JavaScript do Excel](../excel/excel-add-ins-core-concepts.md)
-* [Exemplos de código do suplemento do Excel](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Referência da API JavaScript do Excel](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
+* [Exemplos de código do suplemento do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [Referência da API JavaScript do Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)

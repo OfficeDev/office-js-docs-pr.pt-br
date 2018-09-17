@@ -2,17 +2,17 @@
 title: Usar as opções de pesquisa para encontrar texto no seu suplemento do Word
 description: ''
 ms.date: 7/20/2018
-ms.openlocfilehash: 9dcd5e42de9cc0816797a4a14b40a0e3e376f158
-ms.sourcegitcommit: eea7f2b1679cf9a209d35880b906e311bdf1359c
+ms.openlocfilehash: d81ffdcec49d59c175c3e5ecdf82ad1f796fdb3e
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "21254858"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944097"
 ---
 # <a name="use-search-options-to-find-text-in-your-word-add-in"></a>Usar as opções de pesquisa para encontrar texto no seu suplemento do Word 
 
 Os suplementos frequentemente precisam agir com base no texto de um documento.
-Uma função de pesquisa é exposta por todos os controles de conteúdo (isso inclui [Body](https://dev.office.com/reference/add-ins/word/body), [Paragraph](https://dev.office.com/reference/add-ins/word/paragraph), [Range](https://dev.office.com/reference/add-ins/word/range), [Table](https://dev.office.com/reference/add-ins/word/table), [TableRow](https://dev.office.com/reference/add-ins/word/tablerow) e o objeto de base [ContentControl](https://dev.office.com/reference/add-ins/word/contentcontrol)). Essa função recebe uma sequência de caracteres (ou expressão wldcard) representando o texto que você está procurando e um objeto [SearchOptions](https://dev.office.com/reference/add-ins/word/searchoptions). |||UNTRANSLATED_CONTENT_START|||It returns a collection of ranges which match the search text.|||UNTRANSLATED_CONTENT_END|||
+Uma função de pesquisa é exposta por todos os controles de conteúdo (isso inclui [Body](https://docs.microsoft.com/javascript/api/word/word.body?view=office-js), [Paragraph](https://docs.microsoft.com/javascript/api/word/word.paragraph?view=office-js), [Range](https://docs.microsoft.com/javascript/api/word/word.range?view=office-js), [Table](https://docs.microsoft.com/javascript/api/word/word.table?view=office-js), [TableRow](https://docs.microsoft.com/javascript/api/word/word.tablerow?view=office-js) e o objeto de base [ContentControl](https://docs.microsoft.com/javascript/api/word/word.contentcontrol?view=office-js)). Essa função recebe uma sequência de caracteres (ou expressão wldcard) representando o texto que você está procurando e um objeto [SearchOptions](https://docs.microsoft.com/javascript/api/word/word.searchoptions?view=office-js). |||UNTRANSLATED_CONTENT_START|||It returns a collection of ranges which match the search text.|||UNTRANSLATED_CONTENT_END|||
 
 ## <a name="search-options"></a>Opções de pesquisa
 As opções de pesquisa são uma coleção de valores booleanos que definem como o parâmetro de pesquisa deve ser tratado. 
@@ -41,10 +41,10 @@ A tabela a seguir fornece diretrizes sobre os curingas de pesquisa da API JavaSc
 |Qualquer caractere único, exceto os caracteres do intervalo entre colchetes|[!x-z] |t[!a-m]que localiza toque e trunque, mas não localiza taque ou tique.|
 |Número de ocorrências exatas do caractere ou expressão anterior|{n} |fe{2}d localiza feed, mas não fed.|
 |Número mínimo de ocorrências do caractere ou expressão anterior|{n,} |fe{1,}d localiza fed e feed.|
-|Número de ocorrências do caractere ou expressão anterior dentro de um intervalo|{n,m} |10{1,3} localiza 10, 100 e 1000.|
+|De n a m ocorrências do caractere ou expressão anterior|{n,m} |10{1,3} localiza 10, 100 e 1000.|
 |Uma ou mais ocorrências do caractere ou expressão anterior|@ |re@r localiza reter e reverter.|
 
-### <a name="escaping-the-special-characters"></a>Escapar os caracteres especiais
+### <a name="escaping-the-special-characters"></a>Escape de caracteres especiais
 
 A pesquisa com caracteres curinga é essencialmente igual à pesquisa em uma expressão regular. Há caracteres especiais em expressões regulares, como “[', ']”, “(', ')”, “{”, “}”, “\*”, “?”, “<”, “>”, “!” e “@”. Se um desses caracteres fizer parte da cadeia de caracteres literal que o código está procurando, ele precisará ser escapado para que o Word saiba que ele deve ser tratado literalmente e não como parte da lógica da expressão regular. Para escapar um caractere na pesquisa da interface de usuário do Word, prefixe-o com um caractere “\'”, mas, para escapá-lo programaticamente, coloque-o entre caracteres “[]”. Por exemplo, “[\*]\*” pesquisa qualquer cadeia de caracteres que comece com “\*” seguido por qualquer número de outros caracteres. 
 
@@ -200,4 +200,4 @@ Word.run(function (context) {
 });
 ```
 
-Mais informações podem ser encontradas na [API de referência JavaScript do Word](https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview).
+Mais informações podem ser encontradas na [API de referência JavaScript do Word](https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js).

@@ -2,12 +2,12 @@
 title: Hospedar um Suplemento do Office no Microsoft Azure
 description: ''
 ms.date: 01/25/2018
-ms.openlocfilehash: a7a364db256a64a224ed6895ed710bb0592fa72f
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 62fc3c6dc212efc47493f2bcb3a994fb4db6a752
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925518"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945562"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>Hospedar um Suplemento do Office no Microsoft Azure
 
@@ -22,10 +22,10 @@ Este artigo descreve como implantar o aplicativo Web de um suplemento no Azure e
     > [!NOTE]
     > Se você tiver instalado o Visual Studio 2017 anteriormente, [use o Instalador do Visual Studio](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) para garantir que a carga de trabalho de **desenvolvimento do Azure** esteja instalada. 
 
-2. Instale o Office 2016. 
+2. Instalar o Office. 
     
     > [!NOTE]
-    > Se você ainda não tem o Office 2016, [registre-se para fazer uma avaliação gratuita de um mês](http://office.microsoft.com/try/?WT%2Eintid1=ODC%5FENUS%5FFX101785584%5FXT104056786).
+    > Se você ainda não tem o Office, [registre-se para fazer uma avaliação gratuita de um mês](http://office.microsoft.com/try/?WT%2Eintid1=ODC%5FENUS%5FFX101785584%5FXT104056786).
 
 3.  Obtenha uma assinatura do Azure.
     
@@ -49,10 +49,10 @@ Este artigo descreve como implantar o aplicativo Web de um suplemento no Azure e
 
 ## <a name="step-2-add-the-file-share-to-the-trusted-add-ins-catalog"></a>Etapa 2:adicionar o compartilhamento de arquivos ao catálogo de suplementos confiáveis
 
-1.  Inicie o Word 2016 e crie um documento.
+1.  Inicie o Word e crie um documento.
 
     > [!NOTE]
-    > Embora este exemplo use o Word 2016, é possível usar qualquer aplicativo do Office que dê suporte a Suplementos do Office, como Excel, Outlook, PowerPoint ou Project 2016.
+    > Embora este exemplo use o Word, é possível usar qualquer aplicativo do Office que dê suporte a Suplementos do Office, como Excel, Outlook, PowerPoint ou Project.
     
 2.  Escolha **Arquivo**  >  **Opções**.
     
@@ -65,7 +65,7 @@ Este artigo descreve como implantar o aplicativo Web de um suplemento no Azure e
     > [!NOTE]
     > Ao armazenar um arquivo de manifesto XML de suplemento em um compartilhamento especificado como um catálogo de suplementos da Web confiável, o suplemento aparece em **Pasta Compartilhada** na caixa de diálogo **Suplementos do Office** quando o usuário navega até a guia **Inserir** na faixa de opções e escolhe **Meus Suplementos**.
 
-6. Feche o Word 2016.
+6. Feche o Word.
 
 ## <a name="step-3-create-a-web-app-in-azure"></a>Etapa 3: criar um aplicativo Web no Azure
 
@@ -184,7 +184,7 @@ O Visual Studio cria um suplemento básico do Word que você pode publicar como 
 
 ## <a name="step-7-insert-and-run-the-add-in-in-the-office-client-application"></a>Etapa 7: inserir e executar o suplemento no aplicativo cliente do Office
 
-1. Inicie o Word 2016 e crie um documento.
+1. Inicie o Word e crie um documento.
     
 2. Na faixa de opções, escolha **Inserir** > **Meus Suplementos**. 
     

@@ -2,12 +2,12 @@
 title: Implantar e publicar seu suplemento do Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 83581b729f5004c36d267bda14795275a5153a9c
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: b35c50c65a5d8b8b3f1a5e9724fa9072285fb7ae
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925343"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944337"
 ---
 # <a name="deploy-and-publish-your-office-add-in"></a>Implantar e publicar seu suplemento do Office
 
@@ -31,17 +31,17 @@ As opções de implantação disponíveis dependem do host do Office que você p
 
 ### <a name="deployment-options-for-word-excel-and-powerpoint-add-ins"></a>Opções de implantação de suplementos para Word, Excel e PowerPoint
 
-| Ponto de extensão | Sideload | Centro de administração do Office 365 |AppSource| Catálogo do SharePoint\*  |
+| Ponto de extensão | Sideload | Centro de administração do Office 365 |AppSource   | Catálogo do SharePoint\* |
 |:----------------|:-----------:|:-----------------------:|:----------:|:--------------------:|
 | Conteúdo         | X           | X                       | X          | X                    |
 | Painel de tarefas       | X           | X                       | X          | X                    |
-| Comando           | X           | X                       | X          |                      |
+| Comando         | X           | X                       | X          |                      |
 
-* Os catálogos do SharePoint não são compatíveis com o Office 2016 para Mac.
+* Os catálogos do SharePoint não são compatíveis com o Office para Mac.
 
 ### <a name="deployment-options-for-outlook-add-ins"></a>Opções de implantação para suplementos do Outlook
 
-| Ponto de extensão | Sideload | Servidor Exchange | AppSource |
+| Ponto de extensão | Sideload | Servidor Exchange | AppSource    |
 |:----------------|:-----------:|:---------------:|:------------:|
 | Aplicativo de email        | X           | X               | X            |
 | Comando         | X           | X               | X            |
@@ -65,7 +65,7 @@ O catálogo de suplementos do SharePoint é uma coleção de sites especial que 
 Se você está implantando suplementos em um ambiente local, use um catálogo do SharePoint. Para saber mais, confira, [Publicar suplementos de conteúdo e de painel de tarefas em um catálogo do SharePoint](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
 > [!NOTE]
-> Os catálogos do SharePoint não são compatíveis com o Office 2016 para Mac. Para implantar Suplementos do Office em clientes do Mac, você deve encaminhá-los ao [AppSource]. 
+> Os catálogos do SharePoint não são compatíveis com o Office para Mac. Para implantar Suplementos do Office em clientes do Mac, você deve enviá-los para o [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store). 
 
 ### <a name="outlook-add-in-deployment"></a>Implantação de suplemento do Outlook
 
@@ -81,7 +81,7 @@ Para atribuir suplementos a locatários, use o Centro de administração do Exch
 ## <a name="see-also"></a>Veja também
 
 - [Realizar sideload de suplementos do Outlook para teste](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-- [Enviar para o AppSource][AppSource]
+- [Enviar aplicativos para o AppSource][AppSource]
 - [Diretrizes de design para suplementos do Office](../design/add-in-design.md)
 - [Criar listagens eficazes do AppSource](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings)
 - [Solucionar erros de usuários com suplementos do Office](../testing/testing-and-troubleshooting.md)

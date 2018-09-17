@@ -2,34 +2,34 @@
 title: Conceitos avançados da API JavaScript do Excel
 description: ''
 ms.date: 1/18/2018
-ms.openlocfilehash: 7abf905233a872de07410b6ae6f0da4330bec7b7
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 403ef9441e9f1d20ba071ce7ef03033be13a018b
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925392"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945117"
 ---
 # <a name="excel-javascript-api-advanced-concepts"></a>Conceitos avançados da API JavaScript do Excel
 
-Este artigo foi criado com base nas informações em [conceitos principais da API JavaScript do Excel](excel-add-ins-core-concepts.md) para descrever alguns dos conceitos mais avançados que são essenciais para criar suplementos complexos para o Excel 2016. 
+Este artigo foi criado com base nas informações em [Conceitos principais da API JavaScript do Excel](excel-add-ins-core-concepts.md) para descrever alguns dos conceitos mais avançados essenciais para criar suplementos complexos para o Excel 2016 ou posterior.
 
 ## <a name="officejs-apis-for-excel"></a>APIs Office.js para Excel
 
 Um suplemento do Excel interage com objetos no Excel usando a API JavaScript para Office, que inclui dois modelos de objeto JavaScript:
 
-* **API JavaScript do Excel**: introduzida com o Office 2016, a [API JavaScript do Excel](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview) fornece objetos fortemente tipados que você pode usar para acessar planilhas, intervalos, tabelas, gráficos e muito mais. 
+* **API JavaScript do Excel**: introduzida com o Office 2016, a [API JavaScript do Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js) fornece objetos fortemente tipados que você pode usar para acessar planilhas, intervalos, tabelas, gráficos e muito mais. 
 
-* **APIs comuns**: introduzidas com o Office 2013, as APIs comuns (também conhecidas como a [API Compartilhada](https://dev.office.com/reference/add-ins/javascript-api-for-office)) podem ser usadas para acessar recursos como interface de usuário, caixas de diálogo e configurações de cliente, que são comuns entre vários tipos de aplicativos host, como Word, Excel ou PowerPoint.
+* **APIs comuns**: introduzidas com o Office 2013, as APIs comuns (também conhecidas como a [API Compartilhada](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)) podem ser usadas para acessar recursos como interface de usuário, caixas de diálogo e configurações de cliente, que são comuns entre vários tipos de aplicativos host, como Word, Excel ou PowerPoint.
 
-Enquanto você provavelmente use a API JavaScript do Excel para desenvolver a maioria das funcionalidades em suplementos que visam o Excel 2016, você também usará objetos na API Compartilhada. Por exemplo:
+Enquanto você provavelmente use a API JavaScript do Excel para desenvolver a maioria das funcionalidades em suplementos que visam o Excel 2016 ou posterior , você também usará objetos na API Compartilhada. Por exemplo:
 
-- [Contexto](https://dev.office.com/reference/add-ins/shared/context): o objeto **Context** representa o ambiente de tempo de execução do suplemento e oferece acesso aos principais objetos da API. Ele consiste em detalhes da configuração da pasta de trabalho, como `contentLanguage` e `officeTheme`, além de fornecer informações sobre o ambiente de tempo de execução do suplemento, como `host` e `platform`. Além disso, ele fornece o método `requirements.isSetSupported()`, que você pode usar para verificar se o conjunto de requisitos especificado é suportado pelo aplicativo Excel onde o suplemento está sendo executado. 
+- [Contexto](https://docs.microsoft.com/javascript/api/office/office.context?view=office-js): o objeto **Context** representa o ambiente de tempo de execução do suplemento e oferece acesso aos principais objetos da API. Ele consiste em detalhes da configuração da pasta de trabalho, como `contentLanguage` e `officeTheme`, além de fornecer informações sobre o ambiente de tempo de execução do suplemento, como `host` e `platform`. Além disso, ele fornece o método `requirements.isSetSupported()`, que você pode usar para verificar se o conjunto de requisitos especificado é suportado pelo aplicativo Excel onde o suplemento está sendo executado. 
 
-- [Document](https://dev.office.com/reference/add-ins/shared/document): O objeto **Document** fornece o método `getFileAsync()`, que você pode usar para baixar o arquivo Excel onde o suplemento está em execução. 
+- [Document](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js): O objeto **Document** fornece o método `getFileAsync()`, que você pode usar para baixar o arquivo Excel onde o suplemento está em execução. 
 
 ## <a name="requirement-sets"></a>Conjuntos de requisitos
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Um Suplemento do Office pode executar uma verificação de tempo de execução ou usar conjuntos de requisitos especificados no manifesto para determinar se um host do Office dá suporte às APIs necessárias ao suplemento. Para identificar os conjuntos de requisitos específicos que estão disponíveis em cada plataforma suportada, confira [Conjuntos de requisitos da API JavaScript do Excel](https://dev.office.com/reference/add-ins/requirement-sets/excel-api-requirement-sets).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Um Suplemento do Office pode executar uma verificação de tempo de execução ou usar conjuntos de requisitos especificados no manifesto para determinar se um host do Office dá suporte às APIs necessárias ao suplemento. Para identificar os conjuntos de requisitos específicos que estão disponíveis em cada plataforma suportada, confira [Conjuntos de requisitos da API JavaScript do Excel](https://docs.microsoft.com/javascript/office/requirement-sets/excel-api-requirement-sets?view=office-js).
 
 ### <a name="checking-for-requirement-set-support-at-runtime"></a>Verificando o suporte ao conjunto de requisitos no tempo de execução
 
@@ -46,7 +46,7 @@ else {
 
 ### <a name="defining-requirement-set-support-in-the-manifest"></a>Definindo o suporte ao conjunto de requisitos no manifesto
 
-Você pode usar o [elemento Requirements](https://dev.office.com/reference/add-ins/manifest/requirements) no manifesto do suplemento para especificar os conjuntos de requisitos mínimos e/ou os métodos de API exigidos pelo suplemento para ser ativado. Se a plataforma ou o host do Office não der suporte aos conjuntos de requisitos ou aos métodos de API que são especificados no elemento **Requirements** do manifesto, o suplemento não será executado nesse host ou plataforma e não será exibido na lista de suplementos que são mostrados em **Meus Suplementos**. 
+Você pode usar o [elemento Requirements](https://docs.microsoft.com/javascript/office/manifest/requirements?view=office-js) no manifesto do suplemento para especificar os conjuntos de requisitos mínimos e/ou os métodos de API exigidos pelo suplemento para ser ativado. Se a plataforma ou o host do Office não der suporte aos conjuntos de requisitos ou aos métodos de API que são especificados no elemento **Requirements** do manifesto, o suplemento não será executado nesse host ou plataforma e não será exibido na lista de suplementos que são mostrados em **Meus Suplementos**. 
 
 O exemplo de código a seguir mostra o elemento **Requirements** em um manifesto de suplemento que especifica se o suplemento deve ser carregado em todos os aplicativos host do Office que dão suporte ao conjunto de requisitos ExcelApi, versão 1.3 ou superior.
 
@@ -63,7 +63,7 @@ O exemplo de código a seguir mostra o elemento **Requirements** em um manifesto
 
 ### <a name="requirement-sets-for-the-officejs-common-api"></a>Conjuntos de requisitos para a API comum Office.js
 
-Para saber mais sobre conjuntos de requisitos de API comum, confira [Conjuntos de requisitos de API comum do Office](https://dev.office.com/reference/add-ins/requirement-sets/office-add-in-requirement-sets).
+Para saber mais sobre conjuntos de requisitos de API comum, confira [Conjuntos de requisitos de API comum do Office](https://docs.microsoft.com/javascript/office/requirement-sets/office-add-in-requirement-sets?view=office-js).
 
 ## <a name="loading-the-properties-of-an-object"></a>Carregando as propriedades de um objeto
 
@@ -144,7 +144,7 @@ myWorksheets.load({
 
 ## <a name="scalar-and-navigation-properties"></a>Propriedades escalares e de navegação 
 
-Na documentação de referência da API JavaScript do Excel, você pode notar que os membros do objeto são agrupados em duas categorias: **propriedades** e **relações**. Uma propriedade de um objeto é um membro escalar como uma cadeia de caracteres, um número inteiro ou um valor booliano, enquanto uma relação de um objeto (também conhecida como uma propriedade de navegação) é um membro que é ou um objeto ou uma coleção de objetos. Por exemplo, os membros `name` e `position` no objeto [Worksheet](https://dev.office.com/reference/add-ins/excel/worksheet) são propriedades escalares, enquanto `protection` e `tables` são relações (propriedades de navegação). 
+Na documentação de referência da API JavaScript do Excel, você pode notar que os membros do objeto são agrupados em duas categorias: **propriedades** e **relações**. Uma propriedade de um objeto é um membro escalar como uma cadeia de caracteres, um número inteiro ou um valor booliano, enquanto uma relação de um objeto (também conhecida como uma propriedade de navegação) é um membro que é ou um objeto ou uma coleção de objetos. Por exemplo, os membros `name` e `position` no objeto [Worksheet](https://docs.microsoft.com/javascript/api/excel/excel.worksheet?view=office-js) são propriedades escalares, enquanto `protection` e `tables` são relações (propriedades de navegação). 
 
 ### <a name="scalar-properties-and-navigation-properties-with-objectload"></a>Propriedades escalares e propriedades de navegação com `object.load()`
 
@@ -239,6 +239,6 @@ return context.sync()
 ## <a name="see-also"></a>Veja também
  
 * [Principais conceitos da API JavaScript do Excel](excel-add-ins-core-concepts.md)
-* [Exemplos de código de suplementos do Excel](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
+* [Exemplos de código de suplementos do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Otimização de desempenho da API JavaScript do Excel](performance.md)
-* [Referência da API JavaScript do Excel](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
+* [Referência da API JavaScript do Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)

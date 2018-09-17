@@ -1,13 +1,13 @@
 ---
 title: Publicar suplementos de conteúdo e de painel de tarefas em um catálogo do SharePoint
-description: ''
+description: Para tornar os suplementos do Office acessíveis aos usuários da organização, os administradores podem carregar arquivos de manifesto de suplementos do Office para o catálogo de suplementos da sua organização.
 ms.date: 01/23/2018
-ms.openlocfilehash: 6bf63c36d952b901faaa16b0d93748023ac0fef9
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 2d1328b9944366d063934ff5781029beccfc82c8
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925294"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944843"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-catalog"></a>Publicar suplementos de conteúdo e de painel de tarefas em um catálogo do SharePoint
 
@@ -16,7 +16,7 @@ Um catálogo de suplementos é um conjunto de sites dedicado em um aplicativo We
 > [!IMPORTANT]
 > - Os catálogos de suplementos no SharePoint não são compatíveis com recursos de suplementos implementados no nó `VersionOverrides` do [manifesto do suplemento](../develop/add-in-manifests.md), como comandos de suplemento.
 > - Se você está direcionando para um ambiente híbrido ou de nuvem, recomendamos [usar a Implantação Centralizada por meio do Centro de Administração do Office 365](../publish/centralized-deployment.md) para publicar os suplementos.
-> - Catálogos do SharePoint não são compatíveis com o Office 2016 para Mac. Para implantar Suplementos do Office em clientes do Mac, você deve enviá-los para o [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store).   
+> - Catálogos do SharePoint não são compatíveis com o Office para Mac. Para implantar suplementos do Office para clientes Mac, você deve enviá-los para o [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store).   
 
 ## <a name="set-up-an-add-in-catalog"></a>Configurar um catálogo de suplementos
 
@@ -102,4 +102,4 @@ Os usuários finais podem acessar o catálogo de suplementos em um aplicativo do
     
 3. Feche e reabra o aplicativo do Office. O catálogo de suplementos estará disponível na caixa de diálogo **Suplementos do Office**.
 
-Como alternativa, um administrador pode especificar um catálogo de Suplementos do Office no SharePoint usando políticas de grupo. Confira mais detalhes na seção [Usar uma Política de Grupo para gerenciar como usuários podem instalar e usar os Suplementos do Office](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
+Como alternativa, um administrador pode especificar um catálogo de Suplementos do Office no SharePoint usando políticas de grupo. Confira mais detalhes na seção [Usar uma Política de Grupo para gerenciar como usuários podem instalar e usar Suplementos do Office](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).

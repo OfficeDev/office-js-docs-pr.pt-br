@@ -2,17 +2,17 @@
 title: Depurar suplementos no Office Online
 description: Como usar o Office Online para testar e depurar seus suplementos.
 ms.date: 03/14/2018
-ms.openlocfilehash: fac57e136c07bf33dce62908ea2c12d8be806f7b
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: ee458352c78a3bb7828e66df9fcde12958f3df93
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925336"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945761"
 ---
 # <a name="debug-add-ins-in-office-online"></a>Depurar suplementos no Office Online
 
 
-Você pode criar e depurar suplementos em um computador que não esteja executando o Windows ou os clientes de área de trabalho do Office 2013 ou do Office 2016, por exemplo, se você estiver desenvolvendo no Mac. Este artigo descreve como usar o Office Online para testar e depurar seus suplementos. 
+Você pode compilar e depurar suplementos em um computador que não esteja executando o Windows ou o cliente de desktop do Office&mdash;por exemplo, se você estiver desenvolvendo em um Mac. Este artigo descreve como usar o Office Online para testar e depurar seus suplementos. 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -62,9 +62,7 @@ A seguir apresentamos alguns problemas que você pode encontrar ao depurar:
 ## <a name="see-also"></a>Veja também
 
 - [Práticas recomendadas para o desenvolvimento de suplementos do Office](../concepts/add-in-development-best-practices.md)
-- 
-  [Políticas de validação do AppSource](https://docs.microsoft.com/office/dev/store/validation-policies)  
-- 
-  [Criar aplicativos e suplementos eficazes para o AppSource](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings)  
+- [Políticas de validação do AppSource](https://docs.microsoft.com/office/dev/store/validation-policies)  
+- [Criar aplicativos e suplementos eficazes para o AppSource](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings)  
 - [Solucionar erros de usuários com suplementos do Office](testing-and-troubleshooting.md)
     

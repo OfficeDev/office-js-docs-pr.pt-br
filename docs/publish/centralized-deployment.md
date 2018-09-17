@@ -2,12 +2,12 @@
 title: Publicar Suplementos do Office usando a Implantação Centralizada por meio do Centro de administração do Office 365
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: b16d38d9e4dff46257dfe04b280eab4752558a01
-ms.sourcegitcommit: bc68b4cf811b45e8b8d1cbd7c8d2867359ab671b
+ms.openlocfilehash: 12b44b86f94f5807ce514f48b00b1dbfd4fe99bf
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "21703893"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945782"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-office-365-admin-center"></a>Publicar Suplementos do Office usando a Implantação Centralizada por meio do Centro de administração do Office 365
 
@@ -24,14 +24,14 @@ Atualmente, o Centro de administração do Office 365 tem suporte para os seguin
 - Instalação automática de um suplemento para usuários que iniciam o aplicativo do Office.
 - Remoção automática de um suplemento para os usuários se o administrador desativar ou excluir o suplemento ou se os usuários forem removidos do Azure Active Directory ou de um grupo no qual o suplemento foi implantado.
 
-A Implantação Centralizada é a maneira recomendada para o administrador do Office 365 implantar Suplementos do Office em uma organização, desde que a organização atenda a todos os requisitos para usar a Implantação Centralizada. Confira informações sobre como determinar se sua organização pode usar a Implantação Centralizada em [Determinar se a Implantação Centralizada de suplementos funciona para sua organização do Office 365](https://support.office.com/en-us/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-B4527D49-4073-4B43-8274-31B7A3166F92).
+A implantação centralizada é a maneira recomendada para um administrador do Office 365 implantar suplementos do Office em uma organização, desde que a organização atenda todos os requisitos para uso da implantação centralizada. Para obter informações sobre como determinar se a sua organização pode usar a implantação centralizada, consulte [Determinar se a implantação centralizada de suplementos funciona para a sua organização do Office 365](https://support.office.com/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-B4527D49-4073-4B43-8274-31B7A3166F92).
 
 > [!NOTE]
-> Em um ambiente local sem conexão com o Office 365, ou para implantar Suplementos do SharePoint ou Office que visam o Office 2013, use um [Catálogo de suplementos do SharePoint](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md). Para implantar suplementos COM ou VSTO, use o Windows Installer ou o recurso ClickOnce, como descrito em [Implantando uma solução do Office](https://msdn.microsoft.com/en-us/library/bb386179.aspx).
+> Em um ambiente local sem conexão com o Office 365, ou para implantar Suplementos do SharePoint ou Office que visam o Office 2013, use um [Catálogo de suplementos do SharePoint](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md). Para implantar suplementos COM ou VSTO, use o Windows Installer ou o recurso ClickOnce, como descrito em [Implantando uma solução do Office](https://docs.microsoft.com/visualstudio/vsto/deploying-an-office-solution).
 
 ## <a name="recommended-approach-for-deploying-office-add-ins"></a>Abordagem recomendada para implantar Suplementos do Office
 
-Implante os suplementos do Office em fases para ajudar a garantir que a implantação corra bem. Recomendamos o plano a seguir:
+Considere implantar os suplementos do Office em fases para ajudar a garantir que a implantação corra bem. Recomendamos o plano a seguir:
 
 1. Implante o suplemento em um pequeno conjunto de partes interessadas de negócios e membros do departamento de TI. Se a implantação for bem-sucedida, vá para a etapa 2.
 
@@ -43,7 +43,7 @@ Dependendo do tamanho do público-alvo, convém adicionar etapas a ou remover et
 
 ## <a name="publish-an-office-add-in-via-centralized-deployment"></a>Publicar um suplemento por meio da Implantação Centralizada
 
-Antes de começar, confirme se a sua organização atende a todos os requisitos para usar a Implantação Centralizada, conforme descrito em [Determinar se a Implantação Centralizada de suplementos funciona para sua organização do Office 365](https://support.office.com/en-us/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-B4527D49-4073-4B43-8274-31B7A3166F92).
+Antes de começar, confirme se a sua organização atende a todos os requisitos para usar a Implantação Centralizada, conforme descrito em [Determinar se a Implantação Centralizada de suplementos funciona para sua organização do Office 365](https://support.office.com/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-B4527D49-4073-4B43-8274-31B7A3166F92).
 
 Se sua organização atender aos requisitos, conclua as etapas a seguir para publicar um suplemento do Office por meio da Implantação Centralizada:
 
@@ -62,14 +62,14 @@ Se sua organização atender aos requisitos, conclua as etapas a seguir para pub
 
 7.  Escolha **Avançar**.
 
-8.  Se tiver selecionado a opção para adicionar um suplemento do AppSource, escolha o suplemento. É possível exibir suplementos disponíveis por meio das categorias **Sugeridos para você**, **Classificação** ou **Nome**. Você só pode adicionar suplementos gratuitos do AppSource. Atualmente não é possível adicionar suplementos pagos.
+8.  Se você selecionou a opção para adicionar um suplemento do AppSource, saiba que você pode visualizar os suplementos disponíveis por meio das categorias **Sugeridos para você**, **Classificação**ou **Nome**. Você só pode adicionar suplementos gratuitos do AppSource; ainda não há suporte para adicionar suplementos pagos.
 
     > [!NOTE]
     > Com a opção do AppSource, as atualizações e os aprimoramentos do suplemento serão disponibilizadas automaticamente para usuários sem necessidade de intervenção.
 
     ![Caixa de diálogo Selecionar um suplemento no Centro de administração do Office 365](../images/select-an-add-in.png)
 
-9. O suplemento está agora disponível para atribuição. Na página para o suplemento, o status é **Ativo**, como o mostrado para o suplemento Blocos do Power BI na captura de tela abaixo. Na seção **Quem tem acesso**, escolha **Editar** para atribuir o suplemento para usuários e/ou grupos.
+9. O suplemento está agora disponível para atribuição. Na página para o suplemento, o status é **Ativo**, como o mostrado para o suplemento Bloco do Power BI na captura de tela abaixo. Na seção **Quem tem acesso**, escolha **Editar** para atribuir o suplemento para usuários e/ou grupos.
 
     ![A página do suplemento Bloco do Power BI no Centro de administração do Office 365](../images/power-bi-tiles.png)
 
@@ -130,20 +130,21 @@ Se o suplemento tiver suporte para comandos, eles serão exibidos na Faixa de Op
 
 Caso contrário, os usuários podem adicioná-lo ao aplicativo do Office da seguinte maneira:
 
-1.  Nos aplicativos Word 2016, Excel 2016 ou PowerPoint 2016, escolha **Inserir** > **Meus Suplementos**.
+1.  No Word 2016, Excel 2016 ou PowerPoint 2016 ou posteriores, escolha **Inserir** > **Meus suplementos**.
 2.  Escolha **Administrador Gerenciado**, na janela do suplemento.
 3.  Escolha o suplemento e escolha **Adicionar**. 
 
     ![A captura de tela mostra a guia Administração Gerenciada da página Suplementos do Office de um aplicativo do Office. O suplemento Citações é exibido na guia.](../images/office-add-ins-admin-managed.png)
     
-No entanto, para o Outlook, os usuários podem fazer o seguinte:
+No entanto, para o Outlook 2016 ou posterior, os usuários podem fazer o seguinte:
 
-1.  No Outlook 2016, escolha **Início** > **Repositório**.
+1.  No Outlook, escolha **Início** > **Repositório**.
 2.  Escolha o item **Gerenciado pelo administrador** na guia do suplemento.
 3.  Escolha o suplemento e escolha **Adicionar**.
 
     ![A captura de tela mostra a área gerenciada pelo administrador da página Repositório do aplicativo Outlook.](../images/outlook-add-ins-admin-managed.png)
 
-## <a name="see-also"></a>Veja também
-[Determinar se a Implantação Centralizada de suplementos funciona para sua organização do Office 365](https://support.office.com/en-us/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-b4527d49-4073-4b43-8274-31b7a3166f92)
+## <a name="see-also"></a>Confira também
+
+- [Determinar se a Implantação Centralizada de suplementos funciona para sua organização do Office 365](https://support.office.com/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-b4527d49-4073-4b43-8274-31b7a3166f92)
     

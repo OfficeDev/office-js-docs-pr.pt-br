@@ -46,7 +46,7 @@ items:
   - name: Tutorial de suplemento do Excel
     displayName: Excel
     href: tutorials/excel-tutorial.yml
-  - name: Tutorial de suplemento do PowerPoint
+  - name: Tutorial sobre suplementos do PowerPoint
     displayName: PowerPoint
     href: tutorials/powerpoint-tutorial.yml
   - name: Tutorial sobre suplementos do Word
@@ -94,7 +94,7 @@ items:
     - name: Elementos de interface
       href: design/interface-elements.md
       items:
-      - name: Comandos de suplemento
+      - name: Comandos de suplementos
         href: design/add-in-commands.md
       - name: Painéis de tarefas
         href: design/task-pane-add-ins.md
@@ -102,7 +102,7 @@ items:
         href: design/dialog-boxes.md
       - name: Suplementos de conteúdo
         href: design/content-add-ins.md
-    - name: Modelos de design UX
+    - name: Modelos de design de UX
       href: design/ux-design-pattern-templates.md
       items:
       - name: Autenticação
@@ -125,7 +125,7 @@ items:
     items:
     - name: Versões do Office e conjuntos de requisitos
       href: develop/office-versions-and-requirement-sets.md
-    - name: Instalar a versão mais recente do Office
+    - name: Instalar a última versão do Office
       href: develop/install-latest-office-version.md
     - name: API JavaScript para Office
       href: develop/understanding-the-javascript-api-for-office.md
@@ -263,6 +263,9 @@ items:
       - name: Otimização do desempenho
         displayName: Excel
         href: excel/performance.md
+      - name: Trabalhar com vários intervalos
+        displayName: Excel
+        href: excel/excel-add-ins-multiple-ranges.md
     - name: Referência da API JavaScript do Excel
       displayName: Excel
       href: https://docs.microsoft.com/en-us/javascript/office/overview/excel-add-ins-reference-overview?view=office-js
@@ -419,9 +422,9 @@ items:
     href: https://docs.microsoft.com/javascript/office/openspec?view=office-js
 - name: Recursos
   href: resources/resources-links-help.md
-ms.openlocfilehash: 1dd64f00bdf9327b47e74dcc4527d7c6364f8821
-ms.sourcegitcommit: 28fc652bded31205e393df9dec3a9dedb4169d78
+ms.openlocfilehash: 8ba30f4411fd0744d2271e64c694279561cb4e22
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "22928046"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945810"

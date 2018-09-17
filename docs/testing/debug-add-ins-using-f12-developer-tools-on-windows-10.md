@@ -2,12 +2,12 @@
 title: Depurar suplementos usando as ferramentas de desenvolvedor F12 no Windows 10
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 226773962fb1777a3a1f0e09445721ae2b8b5f5b
-ms.sourcegitcommit: e1c92ba882e6eb03a165867c6021a6aa742aa310
+ms.openlocfilehash: 57e0818da0a115380bcb11f1226c48d3ded1078a
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "22925602"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23943723"
 ---
 # <a name="debug-add-ins-using-f12-developer-tools-on-windows-10"></a>Depurar suplementos usando as ferramentas de desenvolvedor F12 no Windows 10
 
@@ -34,7 +34,7 @@ Este exemplo usa o Word e um suplemento gratuito do AppSource.
 
 1. Abra o Word e escolha um documento em branco. 
     
-2. Na guia **Inserir**, no grupo Suplementos, escolha **Repositório** e selecione o suplemento QR4Office. É possível carregar qualquer suplemento da Store ou seu catálogo de suplementos.
+2. Na guia  **Inserir**, no grupo Suplementos, escolha **Repositório** e selecione o suplemento QR4Office. (É possível carregar qualquer suplemento do Repositório ou de seu catálogo de suplementos.)
     
 3. Inicie as ferramentas de desenvolvimento F12 que correspondem à sua versão do Office:
     
@@ -42,7 +42,7 @@ Este exemplo usa o Word e um suplemento gratuito do AppSource.
     
    - Para a versão de 64 bits do Office, use C:\Windows\SysWOW64\F12\IEChooser.exe
     
-   Quando você inicia o IEChooser, uma janela separada denominada "Escolher destino para depurar" exibe os possíveis aplicativos para depuração. Selecione o aplicativo do seu interesse. Se você estiver escrevendo seu próprio suplemento, selecione o site onde você deseja ter o suplemento implantado, que pode ser uma URL de localhost. 
+   Quando você inicia IEChooser, uma janela separada denominada "Escolher destino para depurar" exibe os possíveis aplicativos para depurar. Selecione o aplicativo do seu interesse. Se você estiver escrevendo seu próprio suplemento, selecione o site onde você deseja ter o suplemento implantado, que pode ser uma URL de localhost. 
     
    Por exemplo, selecione **home.html**. 
     

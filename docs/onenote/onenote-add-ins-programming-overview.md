@@ -2,12 +2,12 @@
 title: Visão geral da programação da API JavaScript do OneNote
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: a2161484991888a6a8c834ba61398cc8c0afb955
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: d45e73841c191d5760963cbc684f03cf23ea1989
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925168"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944148"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>Visão geral da programação da API JavaScript do OneNote
 
@@ -84,11 +84,12 @@ function getPagesInSection() {
 }
 ```
 
-Você pode encontrar objetos do OneNote e operações compatíveis na [Referência API](https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference).
+Você pode encontrar objetos do OneNote e operações compatíveis na [Referência API](https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js).
 
 ### <a name="accessing-the-common-api-through-the-document-object"></a>Acessar a API comum por meio do objeto *Document*
 
-Use o objeto **Document** para acessar a API comum, como os métodos [getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) e [setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync). 
+Use o objeto **Document** para acessar a API comum, como os métodos [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) e [setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#setselecteddataasync-data--options--callback-). 
+
 
 Por exemplo:  
 
@@ -110,13 +111,13 @@ Os suplementos do OneNote são compatíveis apenas com as seguintes APIs comuns:
 
 | API | Observações |
 |:------|:------|
-| [Office.context.document.getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) | Apenas **Office.CoercionType.Text** e **Office.CoercionType.Matrix** |
-| [Office.context.document.setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) | Apenas **Office.CoercionType.Text**, **Office.CoercionType.Image** e **Office.CoercionType.Html** | 
-| [var mySetting = Office.context.document.settings.get(nome);](https://dev.office.com/reference/add-ins/shared/settings.get) | As configurações são compatíveis apenas com os suplementos de conteúdo | 
-| [Office.context.document.settings.set(nome, valor);](https://dev.office.com/reference/add-ins/shared/settings.set) | As configurações são compatíveis apenas com os suplementos de conteúdo | 
-| [Office.EventType.DocumentSelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) ||
+| [Office.context.document.getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) | Apenas **Office.CoercionType.Text** e **Office.CoercionType.Matrix** |
+| [Office.context.document.setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#setselecteddataasync-data--options--callback-) | Apenas **Office.CoercionType.Text**, **Office.CoercionType.Image** e **Office.CoercionType.Html** | 
+| [var mySetting = Office.context.document.settings.get(nome);](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#get-name-) | As configurações são compatíveis apenas com os suplementos de conteúdo | 
+| [Office.context.document.settings.set(nome, valor);](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#set-name--value-) | As configurações são compatíveis apenas com os suplementos de conteúdo | 
+| [Office.EventType.DocumentSelectionChanged](https://docs.microsoft.com/javascript/api/office/office.documentselectionchangedeventargs?view=office-js) ||
 
-Em geral, você só pode usar a API comum para fazer algo que não seja compatível com a API avançada. Para saber mais sobre como usar a API comum, confira os suplementos do Office [documentação](../overview/office-add-ins.md) e [referência](https://dev.office.com/reference/add-ins/javascript-api-for-office).
+Em geral, você só pode usar a API comum para fazer algo que não seja compatível com a API avançada. Para saber mais sobre como usar a API comum, confira os suplementos do Office [documentação](../overview/office-add-ins.md) e [referência](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js).
 
 
 <a name="om-diagram"></a>
@@ -129,6 +130,6 @@ O diagrama a seguir representa o que está disponível atualmente na API JavaScr
 ## <a name="see-also"></a>Veja também
 
 - [Criar seu primeiro suplemento do OneNote](onenote-add-ins-getting-started.md)
-- [Referência da API JavaScript do OneNote](https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)
+- [Referência da API JavaScript do OneNote](https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js)
 - [Amostra de Rubric Grader](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)

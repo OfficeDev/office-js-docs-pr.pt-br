@@ -1,6 +1,6 @@
 # <a name="build-an-excel-add-in-using-react"></a>Criar um suplemento do Excel usando o React
 
-Neste artigo, você passará pelo processo de criar um suplemento do Excel usando o React e a API JavaScript do Excel.
+Neste artigo, você verá um passo a passo do processo de criar um suplemento do Excel usando o React e a API JavaScript do Excel.
 
 ## <a name="environment"></a>Ambiente
 
@@ -35,7 +35,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 
     - **Escolha um tipo de projeto:** `Office Add-in project using React framework`
     - **Como deseja nomear seu suplemento?** `My Office Add-in`
-    - **Para qual aplicativo cliente do Office você deseja suporte?** `Excel`
+    - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?:** `Excel`
 
     ![Gerador do Yeoman](../images/yo-office-excel-react.png)
     
@@ -76,11 +76,11 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 
 2. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Botão do Suplemento do Excel](../images/excel-quickstart-addin-2b.png)
+    ![Botão do suplemento do Excel](../images/excel-quickstart-addin-2b.png)
 
 3. Selecione um intervalo de células na planilha.
 
-4. No painel de tarefas, escolha o botão **Definir cor** para definir a cor do intervalo selecionado como verde.
+4. No painel de tarefas, escolha o botão **Definir cor** para definir a cor do intervalo selecionado como azul.
 
     ![Suplemento do Excel](../images/excel-quickstart-addin-2c.png)
 
@@ -95,5 +95,5 @@ Você criou com êxito um suplemento do Excel usando o React, parabéns! Agora, 
 
 * [Tutorial de suplemento do Excel](../tutorials/excel-tutorial-create-table.md)
 * [Principais conceitos da API JavaScript do Excel](../excel/excel-add-ins-core-concepts.md)
-* [Exemplos de código do suplemento do Excel](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
-* [Referência da API JavaScript do Excel](https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview)
+* [Exemplos de código do suplemento do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [Referência da API JavaScript do Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)

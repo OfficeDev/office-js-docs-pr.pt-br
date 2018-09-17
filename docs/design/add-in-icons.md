@@ -1,7 +1,7 @@
 # <a name="icons"></a>Ícones
 Ícones são a representação visual de um comportamento ou conceito. Eles costumam ser usados ​​para adicionar significado a controles e comandos. Os visuais, realistas ou simbólicos, permitem ao usuário navegar na interface do usuário da mesma forma que os sinais os ajudam a navegar em seu ambiente. Eles devem ser simples, claros e conter apenas os detalhes necessários para permitir que os clientes analisem rapidamente qual ação ocorrerá quando escolherem um controle.
 
-As interfaces da faixa de opções do Office têm um estilo visual padrão. Isso garante consistência e familiaridade entre os aplicativos do Office. As diretrizes ajudarão você a criar um conjunto de recursos do PNG para sua solução que se encaixe como parte natural do Office.
+As interfaces da faixa de opções do Office têm um estilo visual padrão. Isso garante consistência e familiaridade entre os aplicativos do Office. As diretrizes ajudarão você a criar um conjunto de recursos PNG para sua solução que se encaixe como parte natural do Office.
 
 Muitos contêineres HTML contêm controles com iconografia. Use a fonte personalizada do Office UI Fabric para renderizar os ícones com o estilo do Office no suplemento. A fonte de ícone do Fabric contém muitos glifos para metáforas comuns do Office que você pode dimensionar, colorir e estilizar para atender às suas necessidades. Se você tiver uma linguagem visual existente com seu próprio conjunto de ícones, fique à vontade para usá-la em telas HTML. Criar continuidade com sua própria marca com um conjunto de ícones padrão é uma parte importante de qualquer linguagem de design. Tenha cuidado para não criar confusão para os clientes entrando em conflito com as metáforas do Office.
 
@@ -33,7 +33,7 @@ Siga estas diretrizes ao criar seus ícones:
 |Mantenha o visual simples e claro, concentrando-se no(s) elemento(s)-chave da comunicação.| Não use artefatos que façam seu ícone parecer confuso.|
 |Use a linguagem de ícones do Office para representar comportamentos ou conceitos.|Não reutilize glifos do Office UI Fabric para comandos de suplemento na faixa de opções do Office ou em menus contextuais. Os ícones do Fabric são estilisticamente diferentes e não serão compatíveis.|
 |Reutilize metáforas visuais comuns do Office, como o pincel para formatar ou a lupa para localizar.|Não reutilize metáforas visuais para comandos diferentes. Usar o mesmo ícone para comportamentos e conceitos diferentes pode causar confusão. |
-|Redesenhe seus ícones para torná-los pequenos ou maiores. Aproveite o tempo para redesenhar recortes, cantos e bordas arredondadas para maximizar a clareza da linha. |Não redimensione seus ícones diminuindo ou aumentando de tamanho. Isso pode levar à baixa qualidade visual e ações pouco claras. Ícones complexos criados em um tamanho maior podem perder a clareza se redimensionados para serem menores sem redesenhar. |
+|Redesenhe seus ícones para torná-los pequenos ou maiores. Redesenhe recortes, cantos e bordas arredondadas com calma e cuidado para maximizar a clareza da linha. |Não redimensione seus ícones diminuindo ou aumentando de tamanho. Isso pode levar à baixa qualidade visual e ações pouco claras. Ícones complexos criados em um tamanho maior podem perder a clareza se redimensionados para serem menores sem redesenhar. |
 |Use um preenchimento branco para acessibilidade. A maioria dos objetos em seus ícones exigirá um fundo branco para ser legível nos temas da interface do usuário do Office e nos modos de alto contraste.  ||
 |Use o formato PNG com uma tela de fundo transparente. ||
 |Evite usar conteúdo localizável em seus ícones, como caracteres tipográficos, indicações de parágrafos e pontos de interrogação. ||
@@ -42,7 +42,7 @@ Siga estas diretrizes ao criar seus ícones:
 
 ## <a name="icon-size-recommendations-and-requirements"></a>Recomendações e requisitos de tamanho de ícone
 
-Os ícones de área de trabalho do Office 2016 são imagens bitmap. Tamanhos diferentes serão renderizados, dependendo do modo de toque e da configuração de DPI do usuário. Inclua todos os oito tamanhos com suporte para criar a melhor experiência para todas as resoluções e contextos com suporte. Estes são os tamanhos compatíveis (três são obrigatórios):
+Os ícones de área de trabalho do Office são imagens bitmap. Tamanhos diferentes serão renderizados de acordo com o modo de toque e da configuração de DPI do usuário. Inclua todos os oito tamanhos com suporte para criar a melhor experiência para todas as resoluções e contextos suportados. Estes são os tamanhos compatíveis (três são obrigatórios):
 
 - 16 px (obrigatório)
 - 20 px

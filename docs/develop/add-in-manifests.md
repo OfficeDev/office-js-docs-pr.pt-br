@@ -2,12 +2,12 @@
 title: Manifesto XML dos Suplementos do Office
 description: ''
 ms.date: 02/09/2018
-ms.openlocfilehash: 449c6ae3f98383ddff5f866cc47d19ea82ea89c2
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 5c24f0c773195ee7b2ed5c6fc9eccfd5840e2651
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925399"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944929"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifesto XML dos Suplementos do Office
 
@@ -17,7 +17,7 @@ Um arquivo de manifesto XML com base nesse esquema permite que um Suplemento do 
 
 * Descreva a si mesmo fornecendo ID, versão, descrição, nome para exibição e local padrão.
 
-* Especifique as imagens usadas para identidade visual do suplemento e a iconografia usada para os [Comandos do suplemento][] na Faixa de Opções do Office.
+* Especifique as imagens usadas para identidade visual do suplemento e a iconografia usada para os [comandos do suplemento][] na Faixa de Opções do Office.
 
 * Especifique como o suplemento se integra ao Office, incluindo qualquer interface do usuário personalizada, como botões da faixa de opções criados pelo suplemento.
 
@@ -63,58 +63,58 @@ _\*Adicionados no esquema de manifesto de suplementos da versão 1.1 do Office._
 
 <!-- Links for above table -->
 
-[officeapp]: https://dev.office.com/reference/add-ins/manifest/officeapp
-[id]: https://dev.office.com/reference/add-ins/manifest/id
-[versão]: https://dev.office.com/reference/add-ins/manifest/version
-[providername]: https://dev.office.com/reference/add-ins/manifest/providername
-[defaultlocale]: https://dev.office.com/reference/add-ins/manifest/defaultlocale
-[displayname]: https://dev.office.com/reference/add-ins/manifest/displayname
-[descrição]: https://dev.office.com/reference/add-ins/manifest/description
-[iconurl]: https://dev.office.com/reference/add-ins/manifest/iconurl
-[highresolutioniconurl]: https://dev.office.com/reference/add-ins/manifest/highresolutioniconurl
-[defaultsettings (contentapp)]: https://dev.office.com/reference/add-ins/manifest/defaultsettings
-[defaultsettings (taskpaneapp)]: https://dev.office.com/reference/add-ins/manifest/defaultsettings
-[sourcelocation (contentapp)]: https://dev.office.com/reference/add-ins/manifest/sourcelocation
-[sourcelocation (taskpaneapp)]: https://dev.office.com/reference/add-ins/manifest/sourcelocation
+[officeapp]: https://docs.microsoft.com/javascript/office/manifest/officeapp?view=office-js
+[id]: https://docs.microsoft.com/javascript/office/manifest/id
+[versão]: https://docs.microsoft.com/javascript/office/manifest/version
+[providername]: https://docs.microsoft.com/javascript/office/manifest/providername
+[defaultlocale]: https://docs.microsoft.com/javascript/office/manifest/defaultlocale
+[displayname]: https://docs.microsoft.com/javascript/office/manifest/displayname
+[descrição]: https://docs.microsoft.com/javascript/office/manifest/description
+[iconurl]: https://docs.microsoft.com/javascript/office/manifest/iconurl
+[highresolutioniconurl]: https://docs.microsoft.com/javascript/office/manifest/highresolutioniconurl
+[defaultsettings (contentapp)]: https://docs.microsoft.com/javascript/office/manifest/defaultsettings
+[defaultsettings (taskpaneapp)]: https://docs.microsoft.com/javascript/office/manifest/defaultsettings
+[sourcelocation (contentapp)]: https://docs.microsoft.com/javascript/office/manifest/sourcelocation
+[sourcelocation (taskpaneapp)]: https://docs.microsoft.com/javascript/office/manifest/sourcelocation
 [desktopsettings]: https://msdn.microsoft.com/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c(Office.15).aspx
 [sourcelocation (mailapp)]: http://msdn.microsoft.com/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx
-[permissões (contentapp)]: https://dev.office.com/reference/add-ins/manifest/permissions
-[permissões (taskpaneapp)]: https://dev.office.com/reference/add-ins/manifest/permissions
-[permissões (mailapp)]: https://dev.office.com/reference/add-ins/manifest/permissions
-[regra (rulecollection)]: https://dev.office.com/reference/add-ins/manifest/rule
-[regra (mailapp)]: https://dev.office.com/reference/add-ins/manifest/rule
-[requisitos (mailapp)]: https://dev.office.com/reference/add-ins/manifest/requirements
-[conjunto*]: https://dev.office.com/reference/add-ins/manifest/set
-[conjuntos (mailapprequirements)*]: https://dev.office.com/reference/add-ins/manifest/sets
-[formulário*]: https://dev.office.com/reference/add-ins/manifest/form
-[formsettings*]: https://dev.office.com/reference/add-ins/manifest/formsettings
-[conjuntos (requisitos)*]: https://dev.office.com/reference/add-ins/manifest/sets
-[hosts*]: https://dev.office.com/reference/add-ins/manifest/hosts
+[permissões (contentapp)]: https://docs.microsoft.com/javascript/office/manifest/permissions
+[permissões (taskpaneapp)]: https://docs.microsoft.com/javascript/office/manifest/permissions
+[permissões (mailapp)]: https://docs.microsoft.com/javascript/office/manifest/permissions
+[regra (rulecollection)]: https://docs.microsoft.com/javascript/office/manifest/rule
+[regra (mailapp)]: https://docs.microsoft.com/javascript/office/manifest/rule
+[requisitos (mailapp)]: https://docs.microsoft.com/javascript/office/manifest/requirements
+[conjunto*]: https://docs.microsoft.com/javascript/office/manifest/set
+[conjuntos (mailapprequirements)*]: https://docs.microsoft.com/javascript/office/manifest/sets
+[formulário*]: https://docs.microsoft.com/javascript/office/manifest/form
+[formsettings*]: https://docs.microsoft.com/javascript/office/manifest/formsettings
+[conjuntos (requisitos)*]: https://docs.microsoft.com/javascript/office/manifest/sets
+[hosts*]: https://docs.microsoft.com/javascript/office/manifest/hosts
 
 ## <a name="hosting-requirements"></a>Requisitos de hospedagem
 
-Todas as imagem URIs, como as usadas para os [Comandos do suplemento][], devem ser compatíveis com armazenamento em cache. O servidor que hospeda a imagem não deve retornar um cabeçalho `Cache-Control` especificando `no-cache`, `no-store` ou opções semelhantes na resposta HTTP.
+Todos os URIs de imagem, como aqueles usados para [comandos de suplemento][], deve oferecer suporte a cache. O servidor que hospeda a imagem não deve retornar um cabeçalho `Cache-Control` especificando `no-cache`, `no-store`, ou opções similares na resposta HTTP.
 
-Todas as URLs, como os locais dos arquivos de origem especificados no elemento [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation), devem estar **protegidos por SSL (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
+Todas as URLs, como os locais dos arquivos de origem especificados no elemento [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation), devem estar **protegidos por SSL (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
 
 ## <a name="best-practices-for-submitting-to-appsource"></a>Práticas recomendadas de envio ao AppSource
 
 Verifique se a identificação do suplemento é um GUID válido e exclusivo. Diversas ferramentas de gerador de GUID estão disponíveis na Web e podem ser usadas para criar um GUID exclusivo.
 
-Os suplementos enviados ao AppSource também devem conter o elemento [SupportUrl](https://dev.office.com/reference/add-ins/manifest/supporturl). Saiba mais em [Políticas de validação para aplicativos e suplementos enviados ao AppSource](https://docs.microsoft.com/office/dev/store/validation-policies).
+Os suplementos enviados ao AppSource também devem conter o elemento [SupportUrl](https://docs.microsoft.com/javascript/office/manifest/supporturl). Saiba mais em [Políticas de validação para aplicativos e suplementos enviados ao AppSource](https://docs.microsoft.com/office/dev/store/validation-policies).
 
-Use apenas o elemento [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains) para especificar domínios diferentes daqueles especificados no elemento [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) para cenários de autenticação.
+Use apenas o elemento [AppDomains](https://docs.microsoft.com/javascript/office/manifest/appdomains) para especificar domínios diferentes daqueles especificados no elemento [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation) para cenários de autenticação.
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>Especificar os domínios que você deseja abrir na janela do suplemento
 
-Durante a execução no Office Online, o painel de tarefas pode ser navegado para qualquer URL. No entanto, nas plataformas para desktop, se o suplemento tentar acessar uma URL em um domínio diferente do domínio que hospeda a página inicial (conforme especificado no elemento [SourceLocation](https://dev.office.com/reference/add-ins/manifest/sourcelocation) do arquivo de manifesto), essa URL abrirá em uma nova janela de navegador fora do painel do suplemento do aplicativo host do Office.
+Durante a execução no Office Online, o painel de tarefas pode ser navegado para qualquer URL. No entanto, nas plataformas para desktop, se o suplemento tentar acessar uma URL em um domínio diferente do domínio que hospeda a página inicial (conforme especificado no elemento [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation) do arquivo de manifesto), essa URL abrirá em uma nova janela de navegador fora do painel do suplemento do aplicativo host do Office.
 
-Para substituir esse comportamento (Office para desktop), especifique cada domínio que você deseja abrir na janela do suplemento na lista de domínios especificados no elemento [AppDomains](https://dev.office.com/reference/add-ins/manifest/appdomains) do arquivo de manifesto. Se o suplemento tentar ir para uma URL em um domínio que esteja na lista, ele será aberto no painel de tarefas do Office para desktop e do Office Online. Se ele tentar ir para uma URL que não está na lista, no Office para desktop, essa URL será aberta em uma nova janela do navegador (fora do painel do suplemento).
+Para substituir esse comportamento (do Office para desktop), especifique cada domínio que você deseja abrir na janela do suplemento na lista de domínios especificados no elemento [AppDomains](https://docs.microsoft.com/javascript/office/manifest/appdomains) do arquivo de manifesto. Se o suplemento tentar ir para uma URL em um domínio que esteja na lista, ele será aberto no painel de tarefas do Office para desktop e do Office Online. Se ele tentar ir para uma URL que não está na lista, no Office para desktop, essa URL será aberta em uma nova janela do navegador (fora do painel do suplemento).
 
 > [!NOTE]
 > Esse comportamento aplica-se somente ao painel raiz do suplemento. Se houver um iframe incorporado na página do suplemento, o iframe poderá ser direcionado para qualquer URL, independentemente de estar listado em **AppDomains**, mesmo no Office para desktop.
 
-O exemplo de manifesto XML a seguir hospeda a página principal do suplemento no domínio `https://www.contoso.com`, conforme especificado no elemento **SourceLocation**. Também especifica o domínio `https://www.northwindtraders.com` em um elemento [AppDomain](https://dev.office.com/reference/add-ins/manifest/appdomain) dentro da lista de elementos **AppDomains**. Se o suplemento for para uma página no domínio www.northwindtraders.com, essa página será aberta no painel do suplemento, mesmo no Office para desktop.
+O exemplo de manifesto XML a seguir hospeda a página principal do suplemento no domínio `https://www.contoso.com`, conforme especificado no elemento **SourceLocation**. Também especifica o domínio `https://www.northwindtraders.com` em um elemento [AppDomain](https://docs.microsoft.com/javascript/office/manifest/appdomain) dentro da lista de elementos **AppDomains**. Se o suplemento for para uma página no domínio www.northwindtraders.com, essa página será aberta no painel do suplemento, mesmo no Office para desktop.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>

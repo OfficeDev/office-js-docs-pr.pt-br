@@ -42,7 +42,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do OneNote usa
 
 1. No editor de código, abra **index.html** na raiz do projeto. Esse arquivo contém o HTML que será renderizado no painel de tarefas do suplemento.
 
-2. Substitua o elemento `<main>` dentro do elemento `<body>` com a marcação a seguir e salve o arquivo. Isso adiciona uma área de texto e um botão usando [componentes do Office UI Fabric](http://dev.office.com/fabric/components).
+2. Substitua o elemento `<main>` dentro do elemento `<body>` com a marcação a seguir e salve o arquivo. Isso adiciona uma área de texto e um botão usando [componentes do Office UI Fabric](https://developer.microsoft.com/en-us/fabric#/components).
 
     ```html
     <main class="ms-welcome__main">
@@ -142,13 +142,13 @@ Neste artigo, você passará pelo processo de criar um suplemento do OneNote usa
 
     <img alt="The Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
 
-3. No diálogo Carregar suplemento, navegue até **one-note-add-in-manifest.xml** na pasta do projeto e escolha **Carregar**. 
+3. No caixa de diálogo Carregar suplemento, navegue até **one-note-add-in-manifest.xml** na pasta do seu projeto e escolha **Carregar**. 
 
 4. Na guia **Página Inicial**, escolha o botão **Exibir painel de tarefas** na faixa de opções. O painel de tarefas do suplemento abre em um iFrame perto da página do OneNote.
 
-5. Insira algum texto na área de texto e escolha **Adicionar estrutura de tópicos**. O texto inserido é adiciona à pagina. 
+5. Insira algum texto na área de texto e escolha **Adicionar Estrutura do Código**. O texto inserido é adicionado à pagina. 
 
-    ![O suplemento do OneNote criado a partir deste passo a passo](../images/onenote-first-add-in.png)
+    ![O suplemento do OneNote criado a partir desse passo a passo](../images/onenote-first-add-in.png)
 
 ## <a name="troubleshooting-and-tips"></a>Dicas e solução de problemas
 
@@ -172,6 +172,6 @@ Parabéns, você criou com êxito um suplemento do OneNote! Em seguida, saiba ma
 ## <a name="see-also"></a>Veja também
 
 - [Visão geral da programação da API JavaScript do OneNote](../onenote/onenote-add-ins-programming-overview.md)
-- [Referência da API JavaScript do OneNote](https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference)
+- [Referência da API JavaScript do OneNote](https://docs.microsoft.com/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js)
 - [Amostra de Rubric Grader](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)

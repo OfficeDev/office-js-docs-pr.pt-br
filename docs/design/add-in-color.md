@@ -6,7 +6,7 @@ O Office UI Fabric inclui um conjunto padrão de cores de tema. Quando o Fabric 
 Os aplicativos do Office permitem que os clientes personalizem as interfaces aplicando um tema de interface do usuário do Office. Os clientes podem escolher entre quatro temas de interface do usuário para variar o estilo de telas de fundo e botões no Word, no PowerPoint, no Excel e em outros aplicativos do Office. Para que os suplementos pareçam uma parte natural do Office e reajam à personalização, use nossas APIs de Temas. Por exemplo, as cores de tela de fundo do painel de tarefas alternam para um cinza escuro em alguns temas. Nossas APIs de temas permitem que faça o mesmo e ajuste o texto de primeiro plano para garantir a [acessibilidade](../design/accessibility-guidelines.md).
 
 > [!NOTE]
-> - Para suplementos do painel de tarefas e email, use a propriedade [Context.officeTheme](https://dev.office.com/reference/add-ins/shared/office.context.officetheme) para combinar o tema dos aplicativos do Office. Atualmente, essa API só está disponível no Office 2016.
+> - Para suplementos do painel de tarefas e email, use a propriedade [Context.officeTheme](https://docs.microsoft.com/javascript/api/office/office.context?view=office-js) para combinar o tema dos aplicativos do Office. Atualmente, essa API só está disponível no Office 2016.
 > - Para suplementos de conteúdo do PowerPoint, confira [Usar os temas do Office em seus suplementos do PowerPoint](../powerpoint/use-document-themes-in-your-powerpoint-add-ins.md).
 
 Aplique as seguintes diretrizes gerais para as cores:

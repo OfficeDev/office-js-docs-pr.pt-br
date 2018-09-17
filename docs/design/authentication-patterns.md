@@ -2,7 +2,7 @@
 
 Suplementos podem exigir que os usuários entrem ou se inscrevam para acessar recursos e funcionalidades. Caixas de entrada para nome de usuário e senha ou botões que iniciam fluxos de credenciais de terceiros são controles de interface comuns em experiências de autenticação. Uma experiência de autenticação simples e eficiente é um passo inicial importante para que os usuários comecem a interagir com seu suplemento.
 
-## <a name="best-practices"></a>Melhores práticas
+## <a name="best-practices"></a>Práticas recomendadas
 
 |Fazer|Não fazer|
 |:----|:----|
@@ -15,7 +15,7 @@ Suplementos podem exigir que os usuários entrem ou se inscrevam para acessar re
 |Fornecer uma maneira para os usuários saírem e se autenticarem novamente.    |Forçar usuários a desinstalar para alternar entre identidades.|
 
 > [!NOTE]
-> Atualmente a API de logon único tem suporte para Word, Excel e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](https://dev.office.com/reference/add-ins/requirement-sets/identity-api-requirement-sets). Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Office 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> Atualmente a API de logon único tem suporte em versão prévia para Word, Excel e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](https://docs.microsoft.com/javascript/office/requirement-sets/identity-api-requirement-sets?view=office-js). Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Office 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 
 ## <a name="authentication-flow"></a>Fluxo de autenticação
@@ -48,5 +48,5 @@ O logon único ainda é uma versão prévia. Assim que ele estiver disponível a
 2. O suplemento será carregado depois que o usuário der seu consentimento. É possível extrair do usuário e exibir a ele qualquer informação personalizada necessária.
 ![](../images/add-in-ribbon.png)
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 - Saiba mais sobre [desenvolvimento de suplementos de logon único](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins)

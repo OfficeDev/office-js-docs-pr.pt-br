@@ -27,11 +27,11 @@ Confira a seção **Problemas conhecidos** no final deste artigo, que inclui as 
 No repositório de exemplo clonado, você verá os seguintes arquivos:
 
 - **./src/customfunctions.js**, que contém o código de função personalizada (veja o exemplo de código simples acima para a função `ADD42`).
-- **./config/customfunctions.json**, que contém o JSON de registro que informa o Excel a respeito da sua função personalizada. O registro faz com que as suas funções personalizadas apareçam na lista de funções disponíveis exibida quando um usuário digita em uma célula.
-- **./index.html**, que fornece uma referência de &lt;Script&gt; para o arquivo JS. Esse arquivo não exibe a interface do usuário no Excel.
+- **./config/customfunctions.json**, que contém o registro JSON que informa ao Excel sobre sua função personalizada. O registro faz com que suas funções personalizadas apareçam na lista de funções disponíveis exibidas quando um usuário digita em uma célula.
+- **./index.html**, que fornece um &lt;Script&gt; de referência para o arquivo JS. Este arquivo não é exibido na interface do usuário do Excel.
 - **./manifest.xml**, que informa ao Excel a localização dos arquivos HTML, JavaScript e JSON; e também especifica um namespace para todas as funções personalizadas instaladas com o suplemento.
 
-### <a name="json-file-configcustomfunctionsjson"></a> Arquivo JSON (./config/customfunctions.json)
+### <a name="json-file-configcustomfunctionsjson"></a>Arquivo JSON (./config/customfunctions.json)
 
 O código a seguir em customfunctions.json especifica os metadados para a mesma função `ADD42`.
 
@@ -48,38 +48,38 @@ Observe que, para este exemplo:
 - A matriz `parameters` especifica, *em ordenar*, o tipo de dado em cada parâmetro que é passado para a função. As propriedades filho `name` e `description` são usadas no intellisense do Excel. As propriedades filho `type` e `dimensionality` são idênticas às propriedades filho da propriedade `result` descrita acima.
 - A propriedade `options` permite que você personalize alguns aspectos de como e quando o Excel executa a função. Há mais informações sobre essas opções posteriormente neste artigo.
 
- ```js
-{
-    "$schema": "https://developer.microsoft.com/json-schemas/office-js/custom-functions.schema.json",
-    "functions": [
-        {
-            "name": "ADD42", 
-            "description":  "adds 42 to the input numbers",
-            "helpUrl": "http://dev.office.com",
-            "result": {
-                "type": "number",
-                "dimensionality": "scalar"
-            },
-            "parameters": [
-                {
-                    "name": "number 1",
-                    "description": "the first number to be added",
+```js
+    {
+        "$schema": "https://developer.microsoft.com/json-schemas/office-js/custom-functions.schema.json",
+        "functions": [
+            {
+                "name": "ADD42", 
+                "description":  "adds 42 to the input numbers",
+                "helpUrl": "http://dev.office.com",
+                "result": {
                     "type": "number",
                     "dimensionality": "scalar"
                 },
-                {
-                    "name": "number 2",
-                    "description": "the second number to be added",
-                    "type": "number",
-                    "dimensionality": "scalar"
+                "parameters": [
+                    {
+                        "name": "number 1",
+                        "description": "the first number to be added",
+                        "type": "number",
+                        "dimensionality": "scalar"
+                    },
+                    {
+                        "name": "number 2",
+                        "description": "the second number to be added",
+                        "type": "number",
+                        "dimensionality": "scalar"
+                    }
+                ],
+                "options": {
+                    "sync": true
                 }
-            ],
-            "options": {
-                "sync": true
             }
-        }
-    ]
-}
+        ]
+    }
 ```
 
 > [!NOTE]
@@ -174,7 +174,7 @@ A função `ADD42` acima é síncrona em relação ao Excel (designada pela conf
 
 Por outro lado, se sua função personalizada recupera dados da Web, ela deverá ser assíncrona em relação ao Excel. Funções assíncronas devem:
 
-1. Retornar uma Promessa do JavaScript para o Excel.
+1. Retornar uma Promise do JavaScript para o Excel.
 3. Resolver a Promise com o valor final usando a função de retorno de chamada.
 
 O código a seguir mostra um exemplo de função assíncrona personalizada que recupera a temperatura de um termômetro. Observe que `sendWebRequest` é uma função hipotética, não especificada aqui, que usa o XHR para chamar um serviço da Web de temperatura.
@@ -194,9 +194,9 @@ Funções assíncronas exibem um erro temporário `GETTING_DATA` na célula enqu
 > [!NOTE]
 > Funções personalizadas são assíncronas por padrão. Para designar funções como síncronas, defina a opção `"sync": true` na propriedade `options` para a função personalizada no arquivo JSON de registro.
 
-## <a name="streamed-functions"></a>Funções de fluxo
+## <a name="streamed-functions"></a>Funções de streaming
 
-Uma função assíncrona pode ser de fluxo contínuo. Funções personalizadas de fluxo permitem que você insira dados em células repetidamente ao longo do tempo, sem precisar esperar que o Excel ou os usuários solicitem recálculos. O exemplo a seguir é uma função personalizada que adiciona um número ao resultado a cada segundo. Observe o seguinte sobre este código:
+Uma função assíncrona pode ser de fluxo contínuo. Funções personalizadas de streaming permitem que você insira dados em células repetidamente ao longo do tempo, sem precisar esperar que o Excel ou os usuários solicitem recálculos. O exemplo a seguir é uma função personalizada que adiciona um número ao resultado a cada segundo. Observe o seguinte sobre este código:
 
 - O Excel exibe cada novo valor automaticamente usando o retorno de chamada `setResult`.
 - O parâmetro final, `caller`, nunca é especificado no código de registro e nunca é exibido no menu de preenchimento automático para usuários do Excel ao inserir a função. É a função de retorno de chamada `setResult` usada para passar dados da função para o Excel para atualizar o valor de uma célula.
@@ -246,7 +246,7 @@ Funções personalizadas assíncronas podem salvar dados em variáveis JavaScrip
 
 O código a seguir mostra uma implementação da função anterior de fluxo contínuo de temperatura que salva o estado de forma global. Observe o seguinte sobre este código:
 
-- `refreshTemperature` é uma função de fluxo que lê a temperatura de um determinado termômetro a cada segundo. Novas temperaturas são salvas na variável `savedTemperatures`, mas o valor da célula não é atualizado diretamente. Não deve ser chamada diretamente de uma célula da planilha, *por isso não está registrada no arquivo JSON*.
+- `refreshTemperature` é uma função de streaming que lê a temperatura de um determinado termômetro a cada segundo. Novas temperaturas são salvas na variável `savedTemperatures`, mas o valor da célula não é atualizado diretamente. Não deve ser chamada diretamente de uma célula da planilha, *por isso não está registrada no arquivo JSON*.
 - `streamTemperature` atualiza os valores de temperatura exibidos na célula a cada segundo e usa variável `savedTemperatures` como fonte de dados. Deve ser registrada no arquivo JSON e nomeada com todas as letras maiúsculas, `STREAMTEMPERATURE`.
 - Os usuários podem chamar `streamTemperature` de várias células na interface de usuário do Excel. Cada chamada lê dados da mesma variável `savedTemperatures`.
 

@@ -2,12 +2,12 @@
 title: Autorizar serviços externos no seu suplemento do Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 12f6f80b1679eeec8aec569b534aca074610e929
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: ee88019e85ba37f24c81fd7bf3663ee7cf066d45
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925287"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945740"
 ---
 # <a name="authorize-external-services-in-your-office-add-in"></a>Autorizar serviços externos no seu suplemento do Office
 
@@ -31,7 +31,7 @@ Você deve estar familiarizado com os prós e os contras do fluxo implícito e o
 
 ## <a name="authorization-to-microsoft-graph"></a>Autorização para o Microsoft Graph
 
-Se o serviço externo puder ser acessado por meio do Microsoft Graph, como o Office 365 ou o OneDrive, você poderá fornecer a melhor experiência para os usuários e a experiência de desenvolvimento mais fácil para você com o uso do sistema de logon único descrito em [Autorizar para o Microsoft Graph no suplemento do Office](authorize-to-microsoft-graph.md) e seus artigos relacionados. As técnicas descritas neste artigo são melhores para usar em serviços externos que não sejam acessíveis com o Microsoft Graph. No entanto, elas *podem* ser usadas para acessar o Microsoft Graph, e você pode preferir as vantagens do logon único. Por exemplo, o sistema de logon único requer código do lado do servidor, portanto, ele não pode ser usado com um aplicativo de página única. Além disso, o sistema de logon único ainda não é compatível com todas as plataformas.
+Se o serviço externo puder ser acessado por meio do Microsoft Graph, como o Office 365 ou o OneDrive, você poderá fornecer a melhor experiência para os usuários e ter a experiência de desenvolvimento mais fácil com o uso do sistema de logon único descrito em [Autorizar o Microsoft Graph no suplemento do Office](authorize-to-microsoft-graph.md) e seus artigos relacionados. As técnicas descritas neste artigo são melhores para usar em serviços externos que não sejam acessíveis com o Microsoft Graph. No entanto, elas *podem* ser usadas para acessar o Microsoft Graph, e você pode preferir as vantagens do logon único. Por exemplo, o sistema de logon único requer código do lado do servidor, portanto, ele não pode ser usado com um aplicativo de página única. Além disso, o sistema de logon único ainda não é compatível com todas as plataformas.
 
 ## <a name="using-the-implicit-flow-in-office-add-ins"></a>Usando o fluxo Implícito em suplementos do Office
 A melhor maneira de descobrir se um serviço online suporta o fluxo implícito é consultar a documentação do serviço. Para serviços que suportam o fluxo implícito, você pode usar a biblioteca de JavaScript **Office-js-helpers** para fazer todo o trabalho detalhado para você:

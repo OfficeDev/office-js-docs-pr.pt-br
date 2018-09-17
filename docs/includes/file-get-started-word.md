@@ -73,11 +73,11 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
                     $('#emerson').click(insertEmersonQuoteAtSelection);
                     $('#checkhov').click(insertChekhovQuoteAtTheBeginning);
                     $('#proverb').click(insertChineseProverbAtTheEnd);
-                    $('#supportedVersion').html('This code is using Word 2016 or greater.');
+                    $('#supportedVersion').html('This code is using Word 2016 or later.');
                 }
                 else {
                     // Just letting you know that this code will not work with your version of Word.
-                    $('#supportedVersion').html('This code requires Word 2016 or greater.');
+                    $('#supportedVersion').html('This code requires Word 2016 or later.');
                 }
             });
         };
@@ -188,7 +188,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
 
 ### <a name="update-the-manifest"></a>Atualizar o manifesto
 
-1. Abra o arquivo de manifesto XML do projeto do Suplemento. Este arquivo define as configurações e os recursos do suplemento.
+1. Abra o arquivo de manifesto XML do projeto de suplemento. Esse arquivo define as configurações e recursos do suplemento.
 
 2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o com seu nome.
 
@@ -296,7 +296,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
     </html>
     ```
 
-2. Abrir o arquivo **src/index.js** para especificar o script do suplemento. Substitua todo o conteúdo com o código a seguir e salve o arquivo. Esse script contém o código de inicialização, bem como o código que faz alterações ao documento do Word, inserindo texto no documento, quando um botão é escolhido. 
+2. Abra o arquivo **src\index.js** para especificar o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo. Esse script contém códigos de inicialização além do código que faz alterações no documento do Word inserindo texto no documento quando um botão é escolhido. 
 
     ```js
     'use strict';
@@ -313,11 +313,11 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
                     $('#emerson').click(insertEmersonQuoteAtSelection);
                     $('#checkhov').click(insertChekhovQuoteAtTheBeginning);
                     $('#proverb').click(insertChineseProverbAtTheEnd);
-                    $('#supportedVersion').html('This code is using Word 2016 or greater.');
+                    $('#supportedVersion').html('This code is using Word 2016 or later.');
                 }
                 else {
                     // Just letting you know that this code will not work with your version of Word.
-                    $('#supportedVersion').html('This code requires Word 2016 or greater.');
+                    $('#supportedVersion').html('This code requires Word 2016 or later.');
                 }
             });
         };
@@ -475,8 +475,8 @@ Parabéns, você criou com êxito um suplemento do Word usando o jQuery! Em segu
 > [!div class="nextstepaction"]
 > [Tutorial do suplemento do Word](../tutorials/word-tutorial.yml)
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 * [Visão geral dos suplementos do Word](../word/word-add-ins-programming-overview.md)
-* [Exemplos de código do suplemento do Word](http://dev.office.com/code-samples#?filters=word,office%20add-ins)
-* [Referências da API JavaScript do Word](https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview)
+* [Exemplos de código do suplemento do Word](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
+* [Referências da API JavaScript do Word](https://docs.microsoft.com/javascript/office/overview/word-add-ins-reference-overview?view=office-js)

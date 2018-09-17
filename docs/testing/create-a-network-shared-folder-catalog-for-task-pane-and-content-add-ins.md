@@ -2,12 +2,12 @@
 title: Fazer sideload de suplementos do Office para teste
 description: ''
 ms.date: 01/25/2018
-ms.openlocfilehash: 94803a2c610fc869aefb6c77d53965981778e62e
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 0f11544566b998b9dd364ad25a58b256383192a4
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925119"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23943968"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>Fazer sideload de suplementos do Office para teste
 
@@ -20,7 +20,7 @@ Este artigo se aplica somente ao teste de suplementos do Word, Excel ou PowerPoi
 
 - [Sideload de suplementos do Office para teste no Office Online](sideload-office-add-ins-for-testing.md)
 - [Sideload dos suplementos do Office para teste em um iPad ou Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
-- [Realizar sideload de Suplementos do Outlook para teste](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)
+- [Realizar sideload de suplementos do Outlook para teste](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)
 
 
 O vídeo a seguir oferece orientações para o processo de sideload do seu suplemento na área de trabalho do Office ou no Office Online usando um catálogo de pasta compartilhada.  
@@ -62,7 +62,7 @@ O vídeo a seguir oferece orientações para o processo de sideload do seu suple
 ## <a name="sideload-your-add-in"></a>Realizar o sideload do seu suplemento
 
 
-1. Coloque o arquivo XML do manifesto de qualquer suplemento que você está testando no catálogo de pasta compartilhada. Observe que você implanta o próprio aplicativo Web em um servidor Web. Não deixe de especificar a URL no elemento **SourceLocation** do arquivo de manifesto.
+1. Coloque o arquivo XML de manifesto de qualquer suplemento que você está testando no catálogo de pasta compartilhada. Observe que você implanta o próprio aplicativo Web em um servidor Web. Certifique-se de especificar a URL no elemento **SourceLocation** do arquivo de manifesto.
 
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)]

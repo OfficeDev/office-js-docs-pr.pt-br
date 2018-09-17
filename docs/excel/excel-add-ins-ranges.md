@@ -2,16 +2,16 @@
 title: Trabalhar com intervalos usando a API JavaScript do Excel
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 48784d14542bcff4a2aab416c5f91c132f6c172d
-ms.sourcegitcommit: e1c92ba882e6eb03a165867c6021a6aa742aa310
+ms.openlocfilehash: 2760e3991951088edb8cd9c1aab7b242a8f105bb
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "22925616"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945775"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Trabalhar com intervalos usando a API JavaScript do Excel
 
-Este artigo fornece exemplos de código que mostram como executar tarefas comuns com intervalos usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos que o objeto **Range** suporta, confira [Objeto Range (API JavaScript para Excel)](https://dev.office.com/reference/add-ins/excel/range).
+Este artigo fornece exemplos de código que mostram como executar tarefas comuns com intervalos usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos que o objeto **Range** suporta, confira [Objeto Range (API JavaScript para Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range?view=office-js).
 
 ## <a name="get-a-range"></a>Obter um intervalo
 
@@ -538,7 +538,7 @@ Excel.run(function (context) {
 ## <a name="copy-and-paste"></a>Copiar e colar
 
 > [!NOTE]
-> A função copyFrom está atualmente disponível somente na visualização pública (beta). Para usar esse recurso, você deve usar a biblioteca de beta do CDN do Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> A função copyFrom está atualmente disponível somente na visualização pública (beta). Para usar esse recurso, você deve usar a biblioteca beta do CDN do Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 > Se você estiver usando o TypeScript ou se seu editor de códigos usa um arquivo de definição do tipo TypeScript para IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
 
 A função de copyFrom do intervalo replica o comportamento de copiar e colar da interface do usuário do Excel. O objeto range a partir do qual copyFrom é chamado é destination. O original a ser copiado é passado como um intervalo ou um endereço de seuquência de caracteres que representa um intervalo. O exemplo de código a seguir copia os dados de **A1: E1** para o intervalo começando em **G1** (que acaba sendo colado em **G1:K1**).
@@ -596,7 +596,7 @@ Excel.run(function (context) {
 `transpose` determina se os dados são transpostos ou não, o que significa que suas linhas e colunas são invertidas no local de origem. Um intervalo transposto é invertido na diagonal principal, de forma que as linhas **1**, **2** e **3** se tornam as colunas **A**, **B** e **C**. 
 
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 - [Principais conceitos da API JavaScript do Excel](excel-add-ins-core-concepts.md)
-- [Objeto Range (API JavaScript para Excel)](https://dev.office.com/reference/add-ins/excel/range)
+

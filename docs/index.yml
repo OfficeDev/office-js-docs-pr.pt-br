@@ -1,12 +1,12 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: e3a2ccbc7a8d626ad48f7ff8513bbf4acd5910ea
-ms.sourcegitcommit: 90d3b64219f14dd9cfe23ee9746477734195cb8f
+ms.openlocfilehash: 31011aefa0ae026ed6b0bcae4c8538834ee7e6dd
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "23271340"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944571"
 documentType: LandingData
-title: Documentação dos Suplementos do Office
+title: Documentação de Suplementos do Office
 metadata:
   title: Documentação dos Suplementos do Office - Inícios Rápidos, Referência da API
   meta.description: Learn how to build Office Add-ins.
@@ -15,14 +15,14 @@ metadata:
   ms.date: 12/04/2017
   ms.author: o365devx
 abstract:
-  description: A <a href="https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins">plataforma de Suplementos do Office</a> permite que você crie soluções que estendam aplicativos do Office e interajam com o conteúdo em documentos do Office. Com os Suplementos do Office, você pode usar tecnologias da Web familiares, como HTML, CSS e JavaScript, para estender e interagir com o Word, Excel, PowerPoint, OneNote, Project e Outlook. Sua solução pode ser executada no Office por meio de várias plataformas, incluindo Office para Windows, Office Online, Office para Mac e Office para iPad. Aprenda como criar Suplementos do Office com nossos inícios rápidos, guias de instruções e documentação de referência da API.<br/><br/><b>Nota:</b> Para obter informações sobre suplementos COM ou VSTO, consulte a <a href="https://docs.microsoft.com/office/client-developer/office-client-development" target="_blank">documentação de desenvolvimento de cliente do Office</a>.
+  description: A <a href="https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins">plataforma de Suplementos do Office</a> permite que você crie soluções que estendam aplicativos do Office e interajam com o conteúdo em documentos do Office. Com os Suplementos do Office, você pode usar tecnologias da Web familiares, como HTML, CSS e JavaScript, para estender e interagir com o Word, Excel, PowerPoint, OneNote, Project e Outlook. Sua solução pode ser executada no Office em várias plataformas, incluindo Office para Windows, Office Online, Office para Mac e Office para iPad. Aprenda como criar Suplementos do Office com nossos guias de início rápido, tutoriais e documentação de referência da API.<br/><br/><b>Nota:</b> Para obter informações sobre suplementos COM ou VSTO, consulte a <a href="https://docs.microsoft.com/office/client-developer/office-client-development" target="_blank">Documentação de desenvolvimento de cliente do Office</a>.
   aside:
     image:
       alt: 
       height: 130
       src: https://docs.microsoft.com/office/dev/add-ins/images/office-add-ins-video-thumbnail.png
       width: 250
-    title: Comece com os Suplementos do Office. (14:10)
+    title: Introdução aos Suplementos do Office. (14:10)
     href: https://channel9.msdn.com/Events/Connect/2017/T192
     width: 250
 sections:
@@ -55,7 +55,7 @@ sections:
       href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/powerpoint-quickstart
     - image:
         src: https://docs.microsoft.com/office/dev/add-ins/images/index/ProjectLogoColor.svg
-      text: Projeto
+      text: Project
       href: https://docs.microsoft.com/office/dev/add-ins/quickstarts/project-quickstart
 - title: Guias de instruções
   items:
@@ -69,7 +69,7 @@ sections:
     - html: <a href="/office/dev/add-ins/excel/excel-add-ins-overview">Desenvolvimento do suplemento do Excel</a>
     - html: <a href="/office/dev/add-ins/word/word-add-ins-programming-overview">Desenvolvimento do suplemento do Word</a>
     - html: <a href="/office/dev/add-ins/onenote/onenote-add-ins-programming-overview">Desenvolvimento do suplemento do OneNote</a>
-    - html: <a href="https://docs.microsoft.com/outlook/add-ins">Desenvolvimento do suplemento do Outlook</a>
+    - html: <a href="/office/dev/add-ins/outlook/add-ins">Desenvolvimento do suplemento do Outlook</a>
     - html: <a href="/office/dev/add-ins/powerpoint/powerpoint-add-ins">Desenvolvimento do suplemento do PowerPoint</a>
     - html: <a href="/office/dev/add-ins/project/project-add-ins">Desenvolvimento do suplemento do Project</a>
     - html: <a href="/office/dev/add-ins/testing/test-debug-office-add-ins">Testar e depurar um Suplemento do Office</a>
@@ -81,8 +81,8 @@ sections:
     className: cardsD
     items:
     - title: APIs comuns (2013)
-      html: <p><a href="https://dev.office.com/reference/add-ins/javascript-api-for-office" target="_blank">API JavaScript para Office</a></p>
+      html: <p><a href="https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js" target="_blank">API JavaScript do Office</a></p>
     - title: APIs específicas do host (2016)
-      html: <p><a href="https://dev.office.com/reference/add-ins/excel/excel-add-ins-reference-overview" target="_blank">API JavaScript do Excel</a></p><p><a href="https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview" target="_blank">API JavaScript do Word</a></p><p><a href="https://dev.office.com/reference/add-ins/onenote/onenote-add-ins-javascript-reference" target="_blank">API JavaScript do OneNote</a></p><p><a href="https://dev.office.com/reference/add-ins/outlook/tutorial-api-requirement-sets" target="_blank">API JavaScript do Outlook</a></p>
+      html: <p><a href="https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js" target="_blank">API JavaScript do Excel</a></p><p><a href="https://docs.microsoft.com/en-us/javascript/office/overview/word-add-ins-reference-overview?view=office-js" target="_blank">API JavaScript do Word</a></p><p><a href="https://docs.microsoft.com/en-us/javascript/office/overview/onenote-add-ins-javascript-reference?view=office-js" target="_blank">API JavaScript do OneNote</a></p><p><a href="https://docs.microsoft.com/en-us/javascript/office/requirement-sets/outlook-api-requirement-sets?view=office-js" target="_blank">API JavaScript do Outlook</a></p>
     - title: Outros
-      html: <p><a href="https://dev.office.com/reference/add-ins/openspec" target="_blank">Especificações para abrir a API</a></p><p><a href="https://dev.office.com/reference/add-ins/manifest/allowsnapshot" target="_blank">Manifesto dos Suplementos do Office</a></p>
+      html: <p><a href="https://docs.microsoft.com/javascript/office/openspec?view=office-js" target="_blank">Especificações para abrir a API</a></p><p><a href="https://docs.microsoft.com/en-us/javascript/office/manifest/allowsnapshot?view=office-js" target="_blank">Manifesto dos Suplementos do Office</a></p>

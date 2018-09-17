@@ -2,12 +2,12 @@
 title: Office UI Fabric em suplementos do Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: b573f720ebe4f90f7d4dbfdb05693871b93a2258
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 7b1e4a9c377c9a60195a51115d7f275603f1ca5a
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925189"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944031"
 ---
 # <a name="office-ui-fabric-in-office-add-ins"></a>Office UI Fabric em suplementos do Office 
 
@@ -36,20 +36,20 @@ Para começar a usar o Fabric Core:
     <i class="ms-Icon ms-font-xl ms-Icon--Table ms-fontColor-themePrimary"></i>
     ```
 
-    Para localizar mais ícones disponíveis no Office UI Fabric, use o recurso de pesquisa na página [Ícones](https://dev.office.com/fabric#/styles/icons). Quando encontrar um ícone para usar no suplemento, não deixe de adicionar um prefixo ao nome do ícone com `ms-Icon--`. 
+    Para localizar mais ícones disponíveis no Office UI Fabric, use o recurso de pesquisa na página [Ícones](https://developer.microsoft.com/fabric#/styles/icons). Quando encontrar um ícone para usar no suplemento, não deixe de adicionar um prefixo ao nome do ícone com `ms-Icon--`. 
 
-    Para saber mais sobre os tamanhos de fonte e as cores disponíveis no Office UI Fabric, confira [Tipografia](https://dev.office.com/fabric#/styles/typography) e [Cores](https://dev.office.com/fabric#/styles/colors).
+    Para saber mais sobre os tamanhos de fonte e as cores disponíveis no Office UI Fabric, confira [Tipografia](https://developer.microsoft.com/fabric#/styles/typography) e [Cores](https://developer.microsoft.com/fabric#/styles/colors).
  
 ## <a name="use-fabric-components"></a>Uso dos componentes do Fabric 
 O Fabric oferece uma variedade de componentes da experiência do usuário que você pode usar para criar o suplemento. Alguns desses componentes incluem:
 
 - Componentes de entrada – por exemplo, botão, caixa de seleção e alternância
-- Componentes de navegação – por exemplo, tabela dinâmica e navegação de trilha
+- Componentes de navegação – por exemplo, Pivot e Breadcrumb
 - Componentes de notificação – por exemplo, MessageBar e balão  
 
 Nem todos os componentes do Fabric são recomendados para uso em suplementos. Aqui está uma lista de componentes do Fabric React UX que recomendamos para suplementos:
 
-- [Navegação estrutural](https://developer.microsoft.com/fabric#/components/breadcrumb)
+- [Breadcrumb](https://developer.microsoft.com/fabric#/components/breadcrumb)
 - [Botão](https://developer.microsoft.com/fabric#/components/button)
 - [Caixa de seleção](https://developer.microsoft.com/fabric#/components/checkbox)
 - [ChoiceGroup](https://developer.microsoft.com/fabric#/components/choicegroup)
@@ -57,12 +57,12 @@ Nem todos os componentes do Fabric são recomendados para uso em suplementos. Aq
 - [Rótulo](https://developer.microsoft.com/fabric#/components/label)
 - [Lista](https://developer.microsoft.com/fabric#/components/list)
 - [Tabela dinâmica](https://developer.microsoft.com/fabric#/components/pivot)
-- [Campo de texto](https://developer.microsoft.com/fabric#/components/textfield)
+- [TextField](https://developer.microsoft.com/fabric#/components/textfield)
 - [Alternância](https://developer.microsoft.com/fabric#/components/toggle)
 
 Você pode usar diferentes estruturas do JavaScript, como Angular ou React, para criar o suplemento. Para começar a usar componentes do Fabric com sua estrutura, confira os recursos a seguir.
 
 |**Estrutura**|**Exemplo**|
 |:------------|:----------|
-|**React**|[Uso do Office UI Fabric React em suplementos do Office](using-office-ui-fabric-react.md )|
+|**Reagir**|[Uso do Office UI Fabric React em suplementos do Office](using-office-ui-fabric-react.md )|
 |**Angular**| Confira [ngOfficeUIFabric](http://ngofficeuifabric.com/), que é um projeto comunitário com diretivas do Angular 1.5, e [Considere a possibilidade de dispor componentes do Fabric com componentes do Angular 2](../develop/add-ins-with-angular2.md#consider-wrapping-fabric-components-with-angular-components)|

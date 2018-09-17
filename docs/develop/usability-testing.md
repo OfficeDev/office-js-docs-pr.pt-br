@@ -2,12 +2,12 @@
 title: Teste de usabilidade de Suplementos do Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 4b21af2502c9357e8a7d2c953cd5182833577ac9
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 0c90cc4e573d24f9c7c4e5c4f6a77853ec9fc93e
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925448"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945600"
 ---
 # <a name="usability-testing-for-office-add-ins"></a>Teste de usabilidade de Suplementos do Office
 
@@ -78,12 +78,12 @@ Por exemplo, se deseja encontrar participantes que estão familiarizados com o G
 
 Se estiver planejando testar uma compilação em funcionamento do suplemento, as perguntas a seguir podem verificar os usuários que conseguirão fazer isso. 
 
-**Este teste requer que você tenha o Microsoft PowerPoint 2016. Você tem o PowerPoint 2016?**  
+**Esse teste requer que você tenha a última versão do Microsoft PowerPoint. Você tem a última versão do PowerPoint?**  
  a. Sim [*Deve selecionar*]  
  b. Não [*Rejeitar*]  
  c. Não sei [*Rejeitar*]  
 
-**Este teste requer que você instale um suplemento gratuito para PowerPoint 2016 e crie uma conta gratuita para usá-lo. Você está disposto a instalar um suplemento e criar uma conta gratuita?**  
+**Este teste requer que você instale um suplemento gratuito para PowerPoint e crie uma conta gratuita para usá-lo. Você está disposto a instalar um suplemento e criar uma conta gratuita?**  
  a. Sim [*Deve selecionar*]  
  b. Não [*Rejeitar*]  
 
@@ -103,13 +103,13 @@ Saiba mais em [Como escrever tarefas excelentes.](http://help.usertesting.com/cu
 
 ## <a name="6-create-a-prototype-to-match-the-tasks-and-questions"></a>6. Crie um protótipo para corresponder às tarefas e perguntas
  
-Você também pode testar o suplemento em funcionamento ou pode testar um protótipo. Tenha em mente que, se você deseja testar o suplemento em funcionamento, é necessário buscar participantes que tenham o Office 2016, estejam dispostos a instalar o suplemento e criar uma conta (a menos que você tenha as credenciais de logon para fornecer). Você precisará certificar-se de que o suplemento será instalado com êxito. 
+Você também pode testar o suplemento em funcionamento ou um protótipo. Tenha em mente que, se você deseja testar o suplemento em funcionamento, é necessário buscar participantes que tenham a última versão do Office, estejam dispostos a instalar o suplemento e criar uma conta (a menos que você tenha as credenciais de logon para fornecer). Você precisará certificar-se de que o suplemento será instalado com êxito. 
 
 Em média, são necessários cerca de cinco minutos para orientar os usuários sobre como instalar um suplemento. A seguir, um exemplo de etapas de instalação claras e concisas. Ajuste as etapas com base nas condições específicas do teste.
 
-**Instale o suplemento (insira o nome do suplemento aqui) para o PowerPoint 2016 usando as seguintes instruções:** 
+**Instale o suplemento (insira o nome do suplemento aqui) para o PowerPoint usando as seguintes instruções:** 
 
-1. Abra o Microsoft PowerPoint 2016.
+1. Abra o Microsoft PowerPoint.
 2. Selecione **Apresentação em Branco.**
 3. Vá para **Inserir > Meus Suplementos.**
 5. Na janela pop-up, escolha **Loja.**

@@ -2,12 +2,12 @@
 title: Adicionar validação de dados a intervalos do Excel
 description: ''
 ms.date: 04/13/2018
-ms.openlocfilehash: af965df4a1aece5b7f8d5ea89664519b576a4850
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: fd40cab045da0472a060752651a27f0b26028b4b
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925308"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944874"
 ---
 # <a name="add-data-validation-to-excel-ranges-preview"></a>Adicionar validação de dados a intervalos do Excel (versão prévia)
 
@@ -38,11 +38,11 @@ A propriedade`Range.dataValidation`, a qual usa um objeto[DataValidation](https:
 
 ### <a name="creating-validation-rules"></a>Criando regras de validação
 
-Para adicionar validação de dados a um intervalo, seu código deve definir propriedade `rule` do objeto `DataValidation` em `Range.dataValidation`. Usa-se um objeto [DataValidationRule](https://dev.office.com/reference/add-ins/excel/datavalidationrule) que tem sete propriedades opcionais. *Não pode haver mais do que uma dessas propriedades presente em qualquer objeto `DataValidationRule`.* A propriedade incluída por você determina o tipo de validação.
+Para adicionar validação de dados a um intervalo, seu código deve definir propriedade `rule` do objeto `DataValidation` em `Range.dataValidation`. Usa-se um objeto [DataValidationRule](https://docs.microsoft.com/javascript/api/excel?view=office-js) que tem sete propriedades opcionais. *Não pode haver mais do que uma dessas propriedades presente em qualquer objeto `DataValidationRule`.* A propriedade incluída por você determina o tipo de validação.
 
 #### <a name="basic-and-datetime-validation-rule-types"></a>Tipos de regra de validação Básico e DateTime
 
-As três primeiras propriedades `DataValidationRule` (isto é, tipos de regra de validação) usam um objeto [BasicDataValidation](https://docs.microsoft.com/javascript/api/excel/excel.basicdatavalidation) como seu valor.
+As três primeiras propriedades `DataValidationRule` (isto é, tipos de regra de validação) usam um objeto [BasicDataValidation](https://docs.microsoft.com/javascript/api/excel?view=office-js) como seu valor.
 
 - `wholeNumber` – Requer um número inteiro, além de qualquer outra validação especificada pelo objeto `BasicDataValidation`.
 - `decimal` – Requer um número decimal, além de qualquer outra validação especificada pelo objeto `BasicDataValidation`.
@@ -165,7 +165,7 @@ Excel.run(function (context) {
 
 ### <a name="create-validation-error-alerts"></a>Criar alertas de erro de validação
 
-É possível criar um alerta de erro personalizado que aparecerá quando um usuário tentar inserir dados inválidos em uma célula. Há um exemplo simples a seguir. Observe o seguinte sobre este código:
+É possível criar um alerta de erro personalizado que aparecerá quando um usuário tentar inserir dados inválidos em uma célula. Veja um exemplo simples a seguir. Observe o seguinte sobre este código:
 
 - A propriedade `style` determina se o usuário recebe um alerta informativo, um aviso ou um alerta do tipo “pare”. Somente `Stop` impede de verdade que o usuário adicione dados inválidos. O pop-up para `Warning` e `Information` tem opções que permitem que o usuário insira os dados inválidos.
 - A propriedade `showAlert` se torna padrão para `true`. Isso significa que o host do Excel exibirá um alerta pop-up genérico (do tipo `Stop`) a menos que seja criado um alerta personalizado que defina `showAlert` para `false` ou defina uma mensagem, um título e um estilo personalizados. Esse código define uma mensagem personalizada e um título.
@@ -227,7 +227,7 @@ Não é necessário que o intervalo limpo seja exatamente o mesmo de um interval
 > [!NOTE]
 > A limpeza da validação de dados de um intervalo também limpará qualquer validação de dados que um usuário tenha adicionado manualmente ao intervalo.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 - [Principais conceitos da API JavaScript do Excel](excel-add-ins-core-concepts.md)
 - [Objeto DataValidation (API JavaScript para Excel)](https://docs.microsoft.com/javascript/api/excel/excel.datavalidation)

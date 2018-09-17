@@ -2,18 +2,18 @@
 title: Usar a estrutura de autorização OAuth em um Suplemento do Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 36eb0e34ed96bb9289926170bea1b82546695fa8
-ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.openlocfilehash: cd9f15b66b7509f5fd9b1e8d9c7e1e2978968116
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "19437371"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944742"
 ---
 # <a name="use-the-oauth-authorization-framework-in-an-office-add-in"></a>Usar a estrutura de autorização OAuth em um Suplemento do Office
 
 OAuth é o padrão aberto para autorização que provedores de serviço online como Office 365, Facebook, Google, SalesForce, LinkedIn e outros usam para executar a autenticação do usuário. A estrutura de autorização OAuth é o protocolo de autorização padrão usado no Azure e no Office 365. A estrutura de autorização OAuth é usada em cenários empresariais (corporativos) e de consumidor.
 
-Os provedores de serviços online podem fornecer APIs públicas expostas via REST. Os desenvolvedores podem usar essas APIs públicas em suplementos do Office para ler ou gravar dados para o provedor de serviços online. A integração de dados de provedores de serviços online em um suplemento aumenta seu valor, o que leva a uma maior adoção pelos usuários. Ao usar essas APIs em seu suplemento, os usuários deverão fazer a autenticação usando a estrutura de autorização OAuth.
+Provedores de serviço online podem oferecer APIs públicas expostas via REST. Os desenvolvedores podem usar essas APIs públicas em seus suplementos do Office para ler ou gravar dados para o provedor de serviços online. Integração de dados de provedores de serviços online em um suplemento aumenta seu valor, o que leva a uma maior adoção por parte dos usuários. Ao usar essas APIs em seu suplemento, os usuários serão solicitados a se autenticar usando a estrutura de autorização OAuth.
 
 Este tópico descreve como implementar um fluxo de autenticação no suplemento para executar a autenticação do usuário. Os segmentos de código incluídos neste tópico são obtidos do exemplo de código [Office-Add-in-NodeJS-ServerAuth](https://github.com/OfficeDev/Office-Add-in-NodeJS-ServerAuth).
 

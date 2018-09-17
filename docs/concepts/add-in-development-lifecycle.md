@@ -2,12 +2,12 @@
 title: Ciclo de vida de desenvolvimento de suplementos do Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 8da351a87fdf455d3ae8f8583f2db3226a3cb340
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 713daff9a0d16f904209f8b4561f3cf51bd9a9c9
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925434"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944279"
 ---
 # <a name="office-add-ins-development-lifecycle"></a>Ciclo de vida de desenvolvimento de suplementos do Office
 
@@ -53,10 +53,10 @@ Considere o seguinte para identificar os cenários:
     
 - Os clientes usarão o suplemento para aprimorar a experiência de criação ou de exibição de um documento? Em caso afirmativo, convém considerar a criação de um **suplemento de painel de tarefas**. 
 
-O suporte para determinadas APIs de suplementos pode ser diferente entre aplicativos do Office e de acordo com a plataforma em que estão sendo executados (no Windows, no Mac, na Web ou em dispositivos móveis). Para ver a cobertura da API atual pelo cliente e a plataforma, veja nossa página [Disponibilidade de plataforma e host para o Suplemento do Office](../overview/office-add-in-availability.md).  
+O suporte para determinadas APIs de suplementos pode ser diferente entre aplicativos do Office e de acordo com a plataforma em que estão sendo executados (no Windows, em Macs, na Web ou em dispositivos móveis). Para ver quais clientes e plataformas são abrangidos pela API atual, confira nossa página [Disponibilidade de plataforma e hosts para Suplementos do Office](../overview/office-add-in-availability.md).  
 
     
-## <a name="4-design-and-implement-the-user-experience-and-user-interface-for-the-add-in"></a>4. Desenvolva e implemente a experiência do usuário e a interface do usuário para o suplemento.
+## <a name="4-design-and-implement-the-user-experience-and-user-interface-for-the-add-in"></a>4. Desenvolva e implemente a experiência do usuário e a interface do usuário para o suplemento
     
 Projete uma experiência de usuário rápida e fluida, que seja consistente, fácil de usar e com cenários primários que requerem apenas algumas etapas para serem executados. Dependendo da finalidade do suplemento, use APIs ou serviços da Web de terceiros.
     
@@ -86,5 +86,5 @@ Você pode enviar o suplemento no AppSource, de onde os clientes podem instalá-
     
 Se o suplemento chamar um serviço Web e você atualizar o serviço Web depois de publicar o suplemento, não será preciso publicar o suplemento novamente. No entanto, se você alterar os itens ou dados enviados ao suplemento, por exemplo, o manifesto do suplemento, capturas de tela, ícones, arquivos HTML ou JavaScript, você precisará publicá-lo novamente. 
     
-Especificamente, se você publicar o suplemento no AppSource, será preciso reenviar o suplemento para que o AppSource possa implementar as alterações. Você deve reenviar o suplemento com o manifesto de suplemento atualizado que inclui um novo número da versão. Você também deve se certificar de atualizar o número da versão do suplemento no formulário de envio para corresponder ao novo número da versão do manifesto. Para suplementos do Outlook, verifique se o elemento [Id](https://dev.office.com/reference/add-ins/manifest/id) contém um UUID diferente do manifesto de suplemento.
+Especificamente, se você publicar o suplemento no AppSource, será preciso reenviar o suplemento para que o AppSource possa implementar as alterações. Você deve reenviar o suplemento com o manifesto de suplemento atualizado que inclui um novo número da versão. Você também deve se certificar de atualizar o número da versão do suplemento no formulário de envio para corresponder ao novo número da versão do manifesto. Para suplementos do Outlook, verifique se o elemento [Id](https://docs.microsoft.com/javascript/office/manifest/id?view=office-js) contém um UUID diferente do manifesto de suplemento.
     

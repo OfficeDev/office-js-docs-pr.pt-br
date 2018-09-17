@@ -2,12 +2,12 @@
 title: Criar seu primeiro suplemento de painel de tarefas para o Project 2013 usando um editor de texto
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: a09da8fd3ab4989afb8a6ec6e6b2ae226b6f18d5
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: ca00d1922ed3959ea9ab013f4d7f59ded084b241
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925546"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945698"
 ---
 # <a name="create-your-first-task-pane-add-in-for-project-2013-by-using-a-text-editor"></a>Criar seu primeiro suplemento de painel de tarefas para o Project 2013 usando um editor de texto
 
@@ -106,7 +106,7 @@ O Procedimento 2 mostra como criar o arquivo HTML que o manifesto JSOM_SimpleOMC
 
    O código a seguir obtém as informações de contexto e documentação do aplicativo usando funções no arquivo Office.js. O objeto **text** é a ID do controle **textarea** no arquivo HTML.
     
-   A variável **\_projDoc** é inicializada com um objeto **ProjectDocument**. O código inclui algumas funções de tratamento de erros simples e a função **getContextValues** que obtém o contexto do aplicativo e as propriedades contextuais do documento do Project. Para saber mais sobre o modelo de objeto do JavaScript para o Project, confira [API do JavaScript para Office](https://dev.office.com/reference/add-ins/javascript-api-for-office).
+   A variável **\_projDoc** é inicializada com um objeto **ProjectDocument**. O código inclui algumas funções de tratamento de erros simples e a função **getContextValues** que obtém o contexto do aplicativo e as propriedades contextuais do documento do Project. Para saber mais sobre o modelo de objeto do JavaScript para o Project, confira [API do JavaScript para Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js).
 
     ```javascript
     /*
@@ -168,11 +168,11 @@ O Procedimento 2 mostra como criar o arquivo HTML que o manifesto JSOM_SimpleOMC
     }
     ```
 
-   Confira as informações sobre as funções no arquivo Office.debug.js em [API JavaScript para Office](https://dev.office.com/reference/add-ins/javascript-api-for-office). Por exemplo, a função **getDocumentUrl** obtém o caminho de URL ou do arquivo do projeto aberto.
+   Confira as informações sobre as funções no arquivo Office.debug.js em [API JavaScript para Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js). Por exemplo, a função **getDocumentUrl** obtém o caminho de URL ou do arquivo do projeto aberto.
     
 3. Adicione funções JavaScript que acionam funções assíncronas em Office.js e Project-15.js para acessar dados selecionados:
     
-   - Por exemplo, **getSelectedDataAsync** é uma função geral no Office.js que obtém texto não formatado para os dados selecionados. Para saber mais, confira [objeto AsyncResult](https://dev.office.com/reference/add-ins/shared/asyncresult).
+   - Por exemplo, **getSelectedDataAsync** é uma função geral no Office.js que obtém texto não formatado para os dados selecionados. Para saber mais, confira [objeto AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js).
     
    - A função **getSelectedTaskAsync** em Project-15.js obtém o GUID da tarefa selecionada. Da mesma forma, a função **getSelectedResourceAsync** obtém o GUID do recurso selecionado. Se você chamar essas funções quando uma tarefa ou um recurso não estiver selecionado, as funções mostrarão um erro indefinido.
     
@@ -188,7 +188,7 @@ O Procedimento 2 mostra como criar o arquivo HTML que o manifesto JSOM_SimpleOMC
    - Se o projeto é sincronizado com uma lista de tarefas do SharePoint, a função **getWSSUrlAsync** obtém a URL e o nome da lista de tarefas. Se o projeto não está sincronizado com uma lista de tarefas do SharePoint, a função **getWSSUrlAsync** falha.
     
      > [!NOTE]
-     > Para obter a URL do SharePoint e o nome da lista de tarefas, recomendamos que você use a função **getProjectFieldAsync** com as constantes **WSSUrl** e **WSSList** na enumeração [ProjectProjectFields](https://dev.office.com/reference/add-ins/shared/projectprojectfields-enumeration).
+     > Para obter a URL do SharePoint e o nome da lista de tarefas, recomendamos que você use a função **getProjectFieldAsync** com as constantes **WSSUrl** e **WSSList** na enumeração [ProjectProjectFields](https://docs.microsoft.com/javascript/api/office/office.projectprojectfields?view=office-js).
 
    Cada uma das funções no código a seguir inclui uma função anônima que é especificada por `function (asyncResult)`, que é um retorno de chamada que obtém o resultado assíncrono. Em vez de funções anônimas, você poderia usar funções nomeadas, que podem ajudar na capacidade de manutenção de suplementos complexos.
 
@@ -1095,7 +1095,7 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 
 - [Suplementos do painel de tarefas para Project](../project/project-add-ins.md)
 - [Noções básicas da API JavaScript para suplementos](../develop/understanding-the-javascript-api-for-office.md)
-- [API JavaScript para suplementos do Office](https://dev.office.com/reference/add-ins/javascript-api-for-office)
+- [API JavaScript para suplementos do Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)
 - [Referência de esquema para manifestos de Suplementos do Office (v1.1)](../develop/add-in-manifests.md)     
 - [Download do SDK do Project 2013](https://www.microsoft.com/download/details.aspx?id=30435%20)
     

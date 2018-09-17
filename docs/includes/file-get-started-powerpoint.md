@@ -128,7 +128,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
 
 ### <a name="update-the-manifest"></a>Atualizar o manifesto
 
-1. Abra o arquivo de manifesto XML do projeto do Suplemento. Este arquivo define as configurações e os recursos do suplemento.
+1. Abra o arquivo de manifesto XML do projeto de suplemento. Esse arquivo define as configurações e recursos do suplemento.
 
 2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o com seu nome.
 

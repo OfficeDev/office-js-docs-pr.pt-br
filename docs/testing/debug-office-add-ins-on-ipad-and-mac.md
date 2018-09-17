@@ -2,12 +2,12 @@
 title: Depurar suplementos do Office no iPad e no Mac
 description: ''
 ms.date: 03/21/2018
-ms.openlocfilehash: 24a95799ba400aa6ecf93ee5431cf3fd64779d75
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: 6f6ba8744a6510a37166325595407c990a53b079
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925203"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945033"
 ---
 # <a name="debug-office-add-ins-on-ipad-and-mac"></a>Depurar suplementos do Office no iPad e no Mac
 
@@ -115,7 +115,7 @@ Para depurar um aplicativo usando o Vorlon.JS, adicione uma marca `<script>` à 
 
 3.  Abra uma janela do navegador e vá para `https://localhost:1337`, que é a interface do Vorlon.JS.
 
-4. Realize o sideload do suplemento. Para o Excel, PowerPoint ou Word, realize o sideload conforme descrito em [Realizar sideload de um suplemento do Office no iPad e no Mac](sideload-an-office-add-in-on-ipad-and-mac.md). Se for um suplemento do Outlook, realize o sideload conforme descrito em [Realizar sideload de suplementos do Outlook para teste](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing). Se o suplemento não usar comandos de suplemento, ele será imediatamente aberto. Caso contrário, escolha o botão para abrir o suplemento. Dependendo da compilação do aplicativo host do Office, o botão será exibido em ambas guias **Página Inicial** ou em uma guia **Suplemento**.
+4. Faça o sideload do suplemento. Para o Excel, PowerPoint ou Word, faça o sideload conforme descrito em [Fazer sideload de um suplemento do Office no iPad e no Mac](sideload-an-office-add-in-on-ipad-and-mac.md). Se for um suplemento do Outlook, faça o sideload conforme descrito em [Fazer sideload de suplementos do Outlook para teste](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing). Se o suplemento não usar comandos de suplemento, ele será imediatamente aberto. Caso contrário, escolha o botão para abrir o suplemento. Dependendo da compilação do aplicativo host do Office, o botão será exibido na guia **Página Inicial** ou **Suplemento**.
 
 O suplemento aparecerá na lista de Clientes no Vorlon.JS (no lado esquerdo da interface do Vorlon.JS) como **{OS} - n**, para um determinado número *n* e onde *{OS}* é o tipo de dispositivo, como "Macintosh". 
 

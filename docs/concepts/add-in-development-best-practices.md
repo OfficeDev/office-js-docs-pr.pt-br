@@ -2,12 +2,12 @@
 title: Práticas recomendadas para o desenvolvimento de suplementos do Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 2ad5cf1e4c34fdbae827cdd115c57313f6faeda9
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: efb637cfd31f95688d6b0db0e17b24fefe51c2fc
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925476"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944645"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Práticas recomendadas para o desenvolvimento de suplementos do Office
 
@@ -73,15 +73,15 @@ Para modelos que ilustram padrões que podem ser aplicados enquanto você desenv
 
 - Use uma [linguagem clara e simples](../design/voice-guidelines.md) no seu suplemento.
 
-- Preocupe-se com a acessibilidade – facilite a interação dos usuários com o seu suplemento e inclua tecnologias auxiliares, como leitores de tela.
+- Preocupe-se com a acessibilidade – facilite a interação dos usuários com o seu suplemento e inclua tecnologias adaptativas, como leitores de tela.
 
-- Desenvolva para todas as plataformas e métodos de entrada, incluindo teclado/mouse e [toque](#optimize-for-touch). Certifique-se de que sua interface do usuário seja responsiva a diferentes fatores de forma.
+- Desenvolva para todas as plataformas e métodos de entrada, incluindo teclado/mouse e [touch](#optimize-for-touch). Certifique-se de que sua interface do usuário seja responsiva a diferentes fatores de formulários.
 
 Para modelos que aplicam os princípios de design que você pode usar e personalizar durante o desenvolvimento do suplemento, consulte [padrões de design UX para Suplementos do Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
 
 ### <a name="optimize-for-touch"></a>Otimizar para toque
 
-- Use a propriedade [Context.touchEnabled](https://dev.office.com/reference/add-ins/shared/office.context.touchenabled) para descobrir se o aplicativo host que executa o suplemento está habilitado para toque.
+- Use a propriedade [Context.touchEnabled](https://docs.microsoft.com/javascript/api/office/office.context?view=office-js) para descobrir se o aplicativo host que executa o suplemento está habilitado para toque.
 
   > [!NOTE]
   > Essa propriedade não tem suporte no Outlook.
