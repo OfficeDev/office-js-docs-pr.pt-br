@@ -2,12 +2,12 @@
 title: Desenvolver suplementos do Office para o Angular
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: c3aa67d7427249fb04d9777dc0d76098ea607582
-ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+ms.openlocfilehash: 6ce0080bcff67956665cf25f45df8c598b781538
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "19437504"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23944554"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Desenvolver suplementos do Office para o Angular
 
@@ -77,14 +77,14 @@ export class AppRoutingModule { }
 
 ## <a name="consider-wrapping-fabric-components-with-angular-components"></a>Considere a possibilidade de dispor componentes do Fabric com componentes do Angular
 
-Recomendamos usar o uso do estilo [Office UI Fabric](http://dev.office.com/fabric#/fabric-js) no seu suplemento. O Fabric contém componentes que vêm com em várias versões, incluindo uma versão [baseada no TypeScript](https://github.com/OfficeDev/office-ui-fabric-js). Considere o uso de componentes do Fabric no seu suplemento dispondo-os em componentes do Angular. Para ver um exemplo de como fazer isso, consulte [Suplemento de verificação de estilo do Word criado no Angular](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker). Observe, por exemplo, como o componente do Angular definido em [fabric.textfield.wrapper](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/shared/office-fabric-component-wrappers/fabric.textfield.wrapper.component.ts) importa o arquivo do Fabric TextField.ts, onde o componente do Fabric é definido. 
+Recomendamos usar o uso do estilo [Office UI Fabric](https://developer.microsoft.com/fabric#/fabric-js) no seu suplemento. O Fabric contém componentes que vêm com em várias versões, incluindo uma versão [baseada no TypeScript](https://github.com/OfficeDev/office-ui-fabric-js). Considere o uso de componentes do Fabric no seu suplemento dispondo-os em componentes do Angular. Para ver um exemplo de como fazer isso, consulte [Suplemento de verificação de estilo do Word criado no Angular](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker). Observe, por exemplo, como o componente do Angular definido em [fabric.textfield.wrapper](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/shared/office-fabric-component-wrappers/fabric.textfield.wrapper.component.ts) importa o arquivo do Fabric TextField.ts, onde o componente do Fabric é definido. 
 
 
 ## <a name="using-the-office-dialog-api-with-angular"></a>Usar a API de diálogo do Office com o Angular
 
-A API de Diálogo do Suplemento do Office permite que seu suplemento abra uma página em uma caixa de diálogo semi-modal que pode trocar informações com a página principal, que, em geral, está no painel de tarefas. 
+A API de Diálogo do Suplemento do Office permite que seu suplemento abra uma página em uma caixa de diálogo semi-modal que pode trocar informações com a página principal, que costuma ficar no painel de tarefas. 
 
-O método [displayDialogAsync](http://dev.office.com/reference/add-ins/shared/officeui.displaydialogasync) usa um parâmetro que especifica a URL da página que deve ser aberta na caixa de diálogo. Seu suplemento pode ter uma página HTML distinta (diferente da página de base) para transmitir esse parâmetro ou você pode transmitir a URL de uma rota em um aplicativo do Angular. 
+O método [displayDialogAsync](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) usa um parâmetro que especifica a URL da página que deve ser aberta na caixa de diálogo. Seu suplemento pode ter uma página HTML distinta (diferente da página de base) para transmitir esse parâmetro ou você pode transmitir a URL de uma rota em um aplicativo do Angular. 
 
 É importante lembrar, se você transmitir uma rota, que a caixa de diálogo cria uma nova janela com seu próprio contexto de execução. Sua página de base e todos os códigos de inicialização são executados novamente nesse novo contexto e todas as variáveis são definidas para seus valores iniciais na caixa de diálogo. Então essa técnica lança uma segunda instância do seu aplicativo com uma única página na caixa de diálogo. O código que altera as variáveis na caixa de diálogo não altera a versão do painel tarefas das mesmas variáveis. Da mesma forma, a caixa de diálogo tem seu próprio armazenamento de sessão, que não pode ser acessado a partir do código no painel de tarefas.  
 
