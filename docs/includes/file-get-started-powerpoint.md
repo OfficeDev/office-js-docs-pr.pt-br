@@ -28,7 +28,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
-### <a name="update-the-code"></a>Atualizar o código
+### <a name="update-the-code"></a>Atualize o código
 
 1. **Home.html** especifica o HTML que será renderizado no painel de tarefas do suplemento. Em **Home.html**, substitua o elemento `<body>` pela marcação a seguir e salve o arquivo.
  
@@ -128,7 +128,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
 
 ### <a name="update-the-manifest"></a>Atualizar o manifesto
 
-1. Abra o arquivo de manifesto XML do projeto de suplemento. Esse arquivo define as configurações e recursos do suplemento.
+1. Abra o arquivo XML do manifesto no projeto do Suplemento. Este arquivo define as configurações e os recursos do suplemento.
 
 2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o com seu nome.
 
@@ -200,8 +200,14 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
     ![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-powerpoint-jquery.png)
     
     Depois de concluir o assistente, o gerador criará o projeto e instalará os componentes do nó de suporte.
+    
+4. Navegue até a pasta raiz do projeto do aplicativo da Web.
 
-### <a name="update-the-code"></a>Atualizar o código
+    ```bash
+    cd "My Office Add-in"
+    ```
+
+### <a name="update-the-code"></a>Atualize o código
 
 1. No editor de código, abra **index.html** na raiz do projeto. Esse arquivo contém o HTML que será renderizado no painel de tarefas do suplemento.
 
@@ -352,7 +358,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Parabéns, você criou com êxito um suplemento do PowerPoint! Em seguida, saiba mais sobre os recursos de um suplemento do PowerPoint e crie um suplemento mais complexo seguindo as etapas deste tutorial de suplemento do PowerPoint.
+Parabéns, você criou um suplemento do PowerPoint! Em seguida, saiba mais sobre os recursos de um suplemento do PowerPoint e crie um suplemento mais complexo seguindo as etapas do tutorial de suplemento do PowerPoint.
 
 > [!div class="nextstepaction"]
 > [Tutorial do suplemento do PowerPoint](../tutorials/powerpoint-tutorial.yml)

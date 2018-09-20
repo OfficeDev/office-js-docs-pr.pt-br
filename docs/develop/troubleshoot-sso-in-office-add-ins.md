@@ -2,20 +2,20 @@
 title: Solucionar problemas de mensagens de erro no logon único (SSO)
 description: ''
 ms.date: 12/08/2017
-ms.openlocfilehash: 1dd36d99715937e12a9194baace3731ac331e658
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: a0eb0839596bad0dfe45c2cbbc05c2c3d74eda24
+ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945436"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "24016315"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>Solucionar problemas de mensagens de erro no logon único (SSO) (visualização)
 
 Este artigo fornece algumas orientações sobre como solucionar problemas com o logon único (SSO) nos suplementos do Office e como fazer com que seu suplemento habilitado para SSO lide de forma robusta com os erros ou condições especiais.
 
 > [!NOTE]
-> Atualmente a API de logon único tem suporte para Word, Excel e PowerPoint. Para obter mais informações sobre onde a API de logon único é suportada no momento, consulte [conjuntos de requisito IdentityAPI]https://docs.microsoft.com/javascript/office/requirement-sets/identity-api-requirement-sets).
-> Para usar SSO, você precisa carregar a versão beta da Biblioteca JavaScript para Office de https://appsforoffice.microsoft.com/lib/beta/hosted/office.js na página HTML de inicialização do suplemento.
+> Atualmente a API de logon único tem suporte em versão prévia para Word, Excel, Outlook e PowerPoint. Para obter mais informações sobre onde a API de logon único é suportada no momento, confira [conjuntos de requisitos IdentityAPI]https://docs.microsoft.com/javascript/office/requirement-sets/identity-api-requirement-sets).
+> Para usar SSO, você precisa carregar a versão beta da Biblioteca JavaScript para Office a partir de https://appsforoffice.microsoft.com/lib/beta/hosted/office.js na página HTML de inicialização do suplemento.
 > Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Office 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 ## <a name="debugging-tools"></a>Ferramentas de depuração
@@ -49,7 +49,7 @@ A API [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develo
 
 O usuário não iniciou sessão no Office. Seu código deve chamar novamente o método `getAccessTokenAsync` e passar a opção `forceAddAccount: true` no parâmetro [options](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference). Mas não faça isso mais de uma vez. O usuário pode ter decidido não fazer login.
 
-Este erro não é visto no Office Online. Se os cookies do usuário expirarem, o Office Online retornará o erro 13006. 
+Este erro nunca é visto no Office Online. Se os cookies do usuário expirarem, o Office Online retornará o erro 13006. 
 
 ### <a name="13002"></a>13002
 
@@ -63,7 +63,7 @@ Tipo de Usuário não suportado. O usuário não iniciou sessão no Office com u
 
 ### <a name="13004"></a>13004
 
-Recurso inválido. O manifesto do suplemento não foi configurado corretamente. Atualize o manifesto. Para obter mais informações, consulte [Validar e solucionar problemas com seu manifesto](../testing/troubleshoot-manifest.md). O problema mais comum é que o elemento **Recurso** (no elemento **WebApplicationInfo**) tem um domínio que não corresponde ao domínio do suplemento. Embora a parte do protocolo do valor do Recurso deva ser "api" e não "https"; todas as outras partes do nome de domínio (incluindo a porta, se houver) devem ser as mesmas do suplemento.
+Recurso inválido. O manifesto do suplemento não foi configurado corretamente. Atualize o manifesto. Para obter mais informações, confira [Validar e solucionar problemas com seu manifesto](../testing/troubleshoot-manifest.md). O problema mais comum é que o elemento **Recurso** (no elemento **WebApplicationInfo**) tem um domínio que não corresponde ao domínio do suplemento. Embora a parte do protocolo do valor do Recurso deva ser "api" e não "https"; todas as outras partes do nome de domínio (incluindo a porta, se houver) devem ser as mesmas do suplemento.
 
 ### <a name="13005"></a>13005
 
@@ -98,11 +98,15 @@ O suplemento chama o método `getAccessTokenAsync` com a opção `forceConsent: 
 
 O usuário está executando o suplemento no Office Online e usando o Edge ou o Internet Explorer. O domínio do Office 365 do usuário e o domínio login.microsoftonline.com estão em zonas de segurança diferentes nas configurações do navegador. Se esse erro for retornado, o usuário já terá visto uma mensagem explicando o erro e vinculando a uma página sobre como alterar a configuração da zona. Se o seu suplemento fornece funções que não exigem que o usuário esteja conectado, o código deve capturar esse erro e permitir que o suplemento permaneça em execução.
 
+### <a name="13012"></a>13012
+
+O suplemento está sendo executado em uma plataforma que não oferece suporte à API `getAccessTokenAsync`. Por exemplo, não é suportado no iPad. Confira também [Conjuntos de requisitos de APIs de identidade](https://docs.microsoft.com/javascript/office/requirement-sets/identity-api-requirement-sets).
+
 ### <a name="50001"></a>50001
 
-Este erro (que não é específico para `getAccessTokenAsync`) pode indicar que o navegador retirou uma cópia antiga dos arquivos office.js. Limpe o cache do navegador. Outra possibilidade é que a versão do Office não é recente o suficiente para suportar o SSO. Consulte [Pré-requisitos](create-sso-office-add-ins-aspnet.md#prerequisites).
+Este erro (que não é específico de `getAccessTokenAsync`) pode indicar que o navegador armazenou em cache uma cópia antiga dos arquivos office.js. Limpe o cache do navegador. Outra possibilidade é que a versão do Office não é recente o suficiente para suportar o SSO. Consulte [Pré-requisitos](create-sso-office-add-ins-aspnet.md#prerequisites).
 
-## <a name="errors-on-the-server-side-from-azure-active-directory"></a>Erros no lado do servidor do Azure Active Directory
+## <a name="errors-on-the-server-side-from-azure-active-directory"></a>Erros no lado do servidor do Active Directory do Azure
 
 Para exemplos do tratamento de erro descritos nesta seção, confira:
 - [Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)
