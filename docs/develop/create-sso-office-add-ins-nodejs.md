@@ -1,12 +1,12 @@
 ---
 title: Criar um Suplemento do Office com Node.js que usa logon único
 description: 23/01/2018
-ms.openlocfilehash: 62d32a3f2c8946b21eabd5b0f71aaeeea7c85bb4
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: b257729bbf868c91b2e98509b6ef04a0c38d9b42
+ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945733"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "24016420"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Crie um Suplemento do Office com Node.js que use logon único (prévia)
 
@@ -34,12 +34,12 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 1. Clone ou baixe o repositório em [SSO com Suplemento NodeJS do Office](https://github.com/officedev/office-add-in-nodejs-sso). 
 
     > [!NOTE]
-    > Há três versões da amostra:  
+    > Há três versões do exemplo:  
     > * A pasta **Before** (antes) traz um projeto inicial. A interface do usuário e outros aspectos do suplemento que não estão diretamente ligados ao SSO ou à autorização já estão prontos. As próximas seções deste artigo apresentam uma orientação passo a passo para concluir o projeto. 
     > * A versão **Completed** (concluído) do exemplo apresenta como seria o suplemento quando concluídos os procedimentos apresentados neste artigo, com exceção de que o projeto concluído traz comentários de códigos que seriam redundantes neste artigo. Para usar a versão concluída, apenas siga as instruções apresentadas neste artigo, substituindo "Before" por "Completed" e pulando as seções **Codificar o lado do cliente** e **Codificar o lado do servidor**.
     > * A versão **Multilocatário Completa** é uma amostra completa que oferece suporte a multilocação. Explore esta amostra se você pretende oferecer suporte a contas da Microsoft de domínios diferentes com o SSO.
 
-2. Abra um console Git bash na pasta **Before**.
+2. Abra um console Git bash na pasta **Antes**.
 
 3. Insira `npm install` no console para instalar todas as dependências discriminadas no arquivo package.json.
 
@@ -55,16 +55,16 @@ As instruções a seguir foram escritas de modo genérico para que possam ser us
 - Substitua o espaço reservado **$FQDN-WITHOUT-PROTOCOL$** por `localhost:3000`.
 - Quando você especificar permissões na caixa de diálogo **Selecionar Permissões**, marque as caixas para as permissões a seguir. Apenas a primeira é realmente necessária pelo seu suplemento; mas a `profile` permissão é necessária para que o host do Office obtenha um token para seu suplemento de aplicativo da Web.
     * Files.Read.All
-    * perfil
+    * profile
 
 [!INCLUDE[](../includes/register-sso-add-in-aad-v2-include.md)]
 
 
-## <a name="grant-administrator-consent-to-the-add-in"></a>Conceder permissão de administrador ao suplemento
+## <a name="grant-administrator-consent-to-the-add-in"></a>Concessão de consentimento de administrador ao suplemento
 
 [!INCLUDE[](../includes/grant-admin-consent-to-an-add-in-include.md)]
 
-## <a name="configure-the-add-in"></a>Configurar o suplemento
+## <a name="configure-the-add-in"></a>Configuração do suplemento
 
 1. Em seu editor de códigos, abra o arquivo src\server.ts. Perto da parte superior, há uma chamada para um construtor de uma classe `AuthModule`. Há alguns parâmetros de cadeia de caracteres no construtor aos quais você precisa atribuir valores.
 
@@ -97,10 +97,10 @@ As instruções a seguir foram escritas de modo genérico para que possam ser us
     </WebApplicationInfo>
     ```
 
-1. Substitua o espaço reservado "{application_GUID here}" *nos dois lugares* na marcação pela ID do Aplicativo que você copiou ao registrar seu suplemento. ("{}" não faz parte do ID, portanto não inclua.) Esse é o mesmo ID usado para o ClientID e Audience no web.config.
+1. Substitua o espaço reservado "{application_GUID here}" *nos dois lugares* na marcação pelo ID do Aplicativo que você copiou ao registrar seu suplemento. ("{}" não faz parte do ID, portanto não inclua.) Esse é o mesmo ID usado para o ClientID e Audience no web.config.
 
     > [!NOTE]
-    > * O valor de **Resource** é o **URI da ID do Aplicativo** que você definiu quando adicionou a plataforma API Web no registro do suplemento.
+    > * O valor de **Resource** é o **URI do ID do Aplicativo** que você definiu quando adicionou a plataforma da API Web no registro do suplemento.
     > * A seção **Scopes** só será usada para gerar uma caixa de diálogo de consentimento se o suplemento for vendido no AppSource.
 
 1. Salve e feche o arquivo.
@@ -113,7 +113,7 @@ As instruções a seguir foram escritas de modo genérico para que possam ser us
     * Um método `showResult` que exibirá os dados retornados do Microsoft Graph (ou uma mensagem de erro) na parte inferior do painel de tarefas.
     * Um método `logErrors` que registrará erros de console que não são destinados ao usuário final.
 
-11. Abaixo da atribuição a `Office.initialize`, adicione o código a seguir. Observe o seguinte sobre este código:
+11. Abaixo da atribuição para `Office.initialize`, adicione o código a seguir. Observe o seguinte sobre este código:
 
     * O processamento de erros no suplemento às vezes tentará novamente obter um token de acesso automaticamente, usando um conjunto diferente de opções. A variável de contador `timesGetOneDriveFilesHasRun` e as variáveis sinalizador `triedWithoutForceConsent` e `timesMSGraphErrorReceived` são usadas para garantir que o usuário não seja trocado repetidas vezes em tentativas falhas de obter um token. 
     * Você criará um método `getDataWithToken` na próxima etapa, mas observe que ele define uma opção chamada `forceConsent` como `false`. Trataremos mais disso na etapa seguinte.
@@ -132,7 +132,7 @@ As instruções a seguir foram escritas de modo genérico para que possam ser us
 
 1. Abaixo do método `getOneDriveFiles`, adicione o código a seguir. Observe o seguinte sobre este código:
 
-    * O [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) é a nova API no Office.js que permite que um suplemento solicite ao aplicativo host do Office (Excel, PowerPoint, Word, etc.) um token de acesso para o suplemento (para o usuário conectado ao Office). O aplicativo host do Office, por sua vez, solicita o token ao ponto de extremidade 2.0 do AD do Azure. Uma vez que você previamente autorizou o host do Office para o seu suplemento ao registrá-lo, o AD do Azure enviará o token.
+    * [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) é a nova API no Office.js que permite que um suplemento solicite ao aplicativo host do Office (Excel, PowerPoint, Word, etc.) um token de acesso para o suplemento (para o usuário conectado ao Office). O aplicativo host do Office, por sua vez, solicita o token ao ponto de extremidade 2.0 do Azure AD. Uma vez que você previamente autorizou o host do Office para o seu suplemento ao registrá-lo, o Azure AD enviará o token.
     * Se nenhum usuário estiver conectado ao Office, o host do Office solicitará que o usuário se conecte.
     * O parâmetro de opções configura o `forceConsent` como `false`. Dessa forma, não será solicitado que o usuário consinta o acesso ao host do Office ao seu suplemento sempre que ele o usar. Na primeira vez que o usuário tiver o suplemento, a chamada de `getAccessTokenAsync` falhará, mas lógica de processamento de erros que você adicionará em uma etapa posterior será automaticamente chamada com a opção `forceConsent` definida como `true` e o usuário será solicitado a consentir, mas somente essa primeira vez.
     * Você criará o método `handleClientSideErrors` em uma etapa posterior.
@@ -258,7 +258,7 @@ As instruções a seguir foram escritas de modo genérico para que possam ser us
         break;      
     ```
 
-1. Substitua `TODO7` pelo código a seguir. O Erro 13008 ocorre quando o usuário aciona uma operação que chama `getAccessTokenAsync` antes que uma chamada anterior dele seja concluída.
+1. Substitua `TODO7` pelo código a seguir. O Erro 13008 ocorre quando o usuário dispara uma operação que chama `getAccessTokenAsync` antes que uma chamada anterior seja concluída.
 
     ```javascript
     case 13008:
@@ -664,7 +664,12 @@ Há duas maneiras de criar e executar o projeto dependendo se você estiver ou n
 
 ## <a name="add-the-add-in-to-an-office-document"></a>Adicionar o suplemento em um documento do Office
 
-1. Reinicie o PowerPoint, abra ou crie uma apresentação. 
+1. Reinicie o PowerPoint, abra ou crie uma apresentação.
+
+1. Se a guia **Desenvolvedor** não estiver visível na faixa de opções, habilite-a com as seguintes etapas:
+ 1. Navegue até **Arquivo** | **Opções** | **Personalizar faixa de opções**.
+ 2. Clique na caixa de seleção para habilitar **Desenvolvedor** na árvore de nomes de controle à direita da página **Personalizar faixa de opções**.
+ 3. Pressione **OK**.
 
 2. Na guia **Desenvolvedor** no PowerPoint, escolha **Meus Suplementos**.
 
