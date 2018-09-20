@@ -2,7 +2,7 @@
 
 Ao incluir [funções personalizadas](custom-functions-overview.md) em um suplemento do Excel, você deve hospedar um arquivo JSON que contenha metadados sobre as funções (além de hospedar um arquivo JavaScript com as funções e um arquivo HTML sem interface do usuário para servir como pai do arquivo JavaScript). Este artigo descreve o formato do arquivo JSON com exemplos.
 
-Há um arquivo JSON de amostra completo disponível [aqui](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/customfunctions.json).
+Há um arquivo JSON de amostra completo disponível [aqui](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/config/customfunctions.json).
 
 ## <a name="functions-array"></a>Matriz de funções
 
@@ -17,15 +17,14 @@ Os metadados são um objeto JSON que contém uma única propriedade `functions` 
 |  `parameters`  |  matriz  |  Sim  |  Metadados sobre os parâmetros para a função. Consulte [matriz de parâmetros](#parameters-array) para obter detalhes. |
 |  `result`  |  objeto  |  Sim  |  Metadados sobre o valor retornado pela função. Consulte [objeto de resultado](#result-object) para obter detalhes. |
 
-## <a name="options-object"></a>Objeto de opções
+## <a name="options-object"></a>Objeto Options
 
 O objeto `options` configura como o Excel processa a função. A tabela a seguir contém suas propriedades:
 
 |  Propriedade  |  Tipo de dados  |  Obrigatório?  |  Descrição  |
 |:-----|:-----|:-----|:-----|
-|  `cancelable`  |  booleano  |  Não, o padrão é `false`.  |  Se for `true`, o Excel chama o manipulador `onCanceled` sempre que o usuário executar uma ação que tenha o efeito de cancelar a função; por exemplo, ao disparar manualmente o recálculo ou ao editar uma célula referenciada pela função. Caso você use essa opção, o Excel chamará a função JavaScript com um parâmetro `caller` adicional. (***Não*** registre esse parâmetro na propriedade `parameters`). No corpo da função, um manipulador deve ser atribuído ao membro `caller.onCanceled`. Observe que `cancelable` e `sync` não podem ambos ser `true`.  |
-|  `stream`  |  booleano  |  Não, o padrão é `false`.  |  Se for `true`, a função pode ser repetidamente a saída da célula, mesmo quando invocada apenas uma vez. Essa opção é útil para fontes de dados que mudam rapidamente, como o preço de uma ação. Caso você use essa opção, o Excel chamará a função JavaScript com um parâmetro `caller` adicional. (***Não*** registre esse parâmetro na propriedade `parameters`). A função não deve ter a instrução `return`. Em vez disso, o valor do resultado é passado como o argumento do método de retorno de chamada `caller.setResult`. Observe que `stream` e `sync` não podem ambos ser `true`.|
-|  `sync`  |  booleano  |  Não, o padrão é `false`  |  Se for `true`, a função é executada de forma síncrona e deve retornar um valor. Se for `false`, a função é executada de forma assíncrona e deve retornar o objeto `OfficeExtension.Promise`. Observe que talvez `sync` não seja `true` se `cancelable` ou `stream` for `true`.  |
+|  `cancelable`  |  booleano  |  Não, o padrão é `false`.  |  Se `true`, o Excel chama o manipulador de `onCanceled` sempre que o usuário realizar uma ação que tem o efeito de cancelar a função; por exemplo, disparando manualmente o recálculo ou editando uma célula referenciada pela função. Se você usar essa opção, o Excel chamará a função JavaScript com o parâmetro adicional `caller`. (***Não*** registre esse parâmetro na propriedade `parameters`). No corpo da função, um manipulador deve ser atribuído ao membro `caller.onCanceled`.|
+|  `stream`  |  booleano  |  Não, o padrão é `false`.  |  Se for `true`, a função pode ser repetidamente a saída da célula, mesmo quando invocada apenas uma vez. Essa opção é útil para fontes de dados que mudam rapidamente, como o preço de uma ação. Caso você use essa opção, o Excel chamará a função JavaScript com um parâmetro `caller` adicional. (***Não*** registre esse parâmetro na propriedade `parameters`). A função não deve ter a instrução `return`. Em vez disso, o valor do resultado é passado como o argumento do método de retorno de chamada `caller.setResult`.|
 
 ## <a name="parameters-array"></a>Matriz de parâmetros
 
@@ -69,10 +68,7 @@ O código JSON a seguir é um exemplo de um arquivo de metadados para funções 
                     "type": "number",
                     "dimensionality": "scalar"
                 }
-            ],
-            "options": {
-                "sync": true
-            }
+            ]
         },
         {
             "name": "ADD42ASYNC", 
@@ -89,10 +85,7 @@ O código JSON a seguir é um exemplo de um arquivo de metadados para funções 
                     "type": "number",
                     "dimensionality": "scalar"
                 }
-            ],
-            "options": {
-                "sync": false
-            }
+            ]
         },
         {
             "name": "ISEVEN", 
@@ -109,10 +102,7 @@ O código JSON a seguir é um exemplo de um arquivo de metadados para funções 
                     "type": "number",
                     "dimensionality": "scalar"
                 }
-            ],
-            "options": {
-                "sync": true
-            }
+            ]
         },
         {
             "name": "GETDAY",
@@ -121,10 +111,7 @@ O código JSON a seguir é um exemplo de um arquivo de metadados para funções 
             "result": {
                 "type": "string"
             },
-            "parameters": [],
-            "options": {
-                "sync": true
-            }
+            "parameters": []
         },
         {
             "name": "INCREMENTVALUE", 
@@ -143,7 +130,6 @@ O código JSON a seguir é um exemplo de um arquivo de metadados para funções 
                 }
             ],
             "options": {
-                "sync": false,
                 "stream": true,
                 "cancelable": true
             }
@@ -163,10 +149,7 @@ O código JSON a seguir é um exemplo de um arquivo de metadados para funções 
                     "type": "number",
                     "dimensionality": "matrix"
                 }
-            ],
-            "options": {
-                "sync": true
-            }
+            ]
         }
     ]
 }
