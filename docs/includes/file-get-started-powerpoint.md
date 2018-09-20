@@ -1,36 +1,36 @@
-# <a name="build-your-first-powerpoint-add-in"></a><span data-ttu-id="5b8ac-101">Crie o seu primeiro suplemento do PowerPoint</span><span class="sxs-lookup"><span data-stu-id="5b8ac-101">Build your first PowerPoint add-in</span></span>
+# <a name="build-your-first-powerpoint-add-in"></a><span data-ttu-id="1fd99-101">Crie o seu primeiro suplemento do PowerPoint</span><span class="sxs-lookup"><span data-stu-id="1fd99-101">Build your first PowerPoint add-in</span></span>
 
-<span data-ttu-id="5b8ac-102">Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint usando o jQuery e a API JavaScript para Office.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-102">In this article, you'll walk through the process of building a PowerPoint add-in by using jQuery and the Office JavaScript API.</span></span>
+<span data-ttu-id="1fd99-102">Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint usando o jQuery e a API JavaScript para Office.</span><span class="sxs-lookup"><span data-stu-id="1fd99-102">In this article, you'll walk through the process of building a PowerPoint add-in by using jQuery and the Office JavaScript API.</span></span>
 
-## <a name="create-the-add-in"></a><span data-ttu-id="5b8ac-103">Criar o suplemento</span><span class="sxs-lookup"><span data-stu-id="5b8ac-103">Create the add-in</span></span> 
+## <a name="create-the-add-in"></a><span data-ttu-id="1fd99-103">Criar o suplemento</span><span class="sxs-lookup"><span data-stu-id="1fd99-103">Create the add-in</span></span> 
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="5b8ac-104">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="5b8ac-104">Visual Studio</span></span>](#tab/visual-studio)
+# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="1fd99-104">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="1fd99-104">Visual Studio</span></span>](#tab/visual-studio)
 
-### <a name="prerequisites"></a><span data-ttu-id="5b8ac-105">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="5b8ac-105">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="1fd99-105">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="1fd99-105">Prerequisites</span></span>
 
 [!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
-### <a name="create-the-add-in-project"></a><span data-ttu-id="5b8ac-106">Criar o projeto do suplemento</span><span class="sxs-lookup"><span data-stu-id="5b8ac-106">Create the add-in project</span></span>
+### <a name="create-the-add-in-project"></a><span data-ttu-id="1fd99-106">Criar o projeto do suplemento</span><span class="sxs-lookup"><span data-stu-id="1fd99-106">Create the add-in project</span></span>
 
-1. <span data-ttu-id="5b8ac-107">Na barra de menus do Visual Studio, selecione **Arquivo**  >  **Novo**  >  **Projeto**.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-107">On the Visual Studio menu bar, choose  **File** > **New** > **Project**.</span></span>
+1. <span data-ttu-id="1fd99-107">Na barra de menus do Visual Studio, selecione **Arquivo**  >  **Novo**  >  **Projeto**.</span><span class="sxs-lookup"><span data-stu-id="1fd99-107">On the Visual Studio menu bar, choose  **File** > **New** > **Project**.</span></span>
     
-2. <span data-ttu-id="5b8ac-108">Na lista de tipos de projeto em **Visual C#** ou no **Visual Basic**, expanda a opção **Office/SharePoint**, escolha **Suplementos** e depois **Suplemento da Web do PowerPoint** como o tipo de projeto.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-108">In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **PowerPoint Web Add-in** as the project type.</span></span> 
+2. <span data-ttu-id="1fd99-108">Na lista de tipos de projeto em **Visual C#** ou no **Visual Basic**, expanda a opção **Office/SharePoint**, escolha **Suplementos** e depois **Suplemento da Web do PowerPoint** como o tipo de projeto.</span><span class="sxs-lookup"><span data-stu-id="1fd99-108">In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **PowerPoint Web Add-in** as the project type.</span></span> 
 
-3. <span data-ttu-id="5b8ac-109">Dê um nome ao projeto e escolha **OK**.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-109">Name the project, and then choose **OK**.</span></span>
+3. <span data-ttu-id="1fd99-109">Dê um nome ao projeto e escolha **OK**.</span><span class="sxs-lookup"><span data-stu-id="1fd99-109">Name the project, and then choose **OK**.</span></span>
 
-4. <span data-ttu-id="5b8ac-110">Na caixa de diálogo **Criar suplementos do Office**, escolha **Adicionar novas funcionalidades ao PowerPoint**e depois **Concluir** para criar o projeto.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-110">In the **Create Office Add-in** dialog window, choose **Add new functionalities to PowerPoint**, and then choose **Finish** to create the project.</span></span>
+4. <span data-ttu-id="1fd99-110">Na caixa de diálogo **Criar suplementos do Office**, escolha **Adicionar novas funcionalidades ao PowerPoint**e depois **Concluir** para criar o projeto.</span><span class="sxs-lookup"><span data-stu-id="1fd99-110">In the **Create Office Add-in** dialog window, choose **Add new functionalities to PowerPoint**, and then choose **Finish** to create the project.</span></span>
 
-5. <span data-ttu-id="5b8ac-p101">O Visual Studio cria uma solução, e os dois projetos dele são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-p101">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
+5. <span data-ttu-id="1fd99-p101">O Visual Studio cria uma solução, e os dois projetos dele são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="1fd99-p101">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
     
-### <a name="explore-the-visual-studio-solution"></a><span data-ttu-id="5b8ac-113">Explorar a solução do Visual Studio</span><span class="sxs-lookup"><span data-stu-id="5b8ac-113">Explore the Visual Studio solution</span></span>
+### <a name="explore-the-visual-studio-solution"></a><span data-ttu-id="1fd99-113">Explorar a solução do Visual Studio</span><span class="sxs-lookup"><span data-stu-id="1fd99-113">Explore the Visual Studio solution</span></span>
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
-### <a name="update-the-code"></a><span data-ttu-id="5b8ac-114">Atualizar o código</span><span class="sxs-lookup"><span data-stu-id="5b8ac-114">Update the code</span></span>
+### <a name="update-the-code"></a><span data-ttu-id="1fd99-114">Atualize o código</span><span class="sxs-lookup"><span data-stu-id="1fd99-114">Update the code</span></span>
 
-1. <span data-ttu-id="5b8ac-115">**Home.html** especifica o HTML que será renderizado no painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-115">**Home.html** specifies the HTML that will be rendered in the add-in's task pane.</span></span> <span data-ttu-id="5b8ac-116">Em **Home.html**, substitua o elemento `<body>` pela marcação a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-116">In **Home.html**, replace the `<body>` element with the following markup and save the file.</span></span>
+1. <span data-ttu-id="1fd99-115">**Home.html** especifica o HTML que será renderizado no painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="1fd99-115">**Home.html** specifies the HTML that will be rendered in the add-in's task pane.</span></span> <span data-ttu-id="1fd99-116">Em **Home.html**, substitua o elemento `<body>` pela marcação a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="1fd99-116">In **Home.html**, replace the `<body>` element with the following markup and save the file.</span></span>
  
     ```html
     <body class="ms-font-m ms-welcome">
@@ -52,7 +52,7 @@
     </body>
     ```
 
-2. <span data-ttu-id="5b8ac-117">Abra o arquivo **Home.js** na raiz do projeto do aplicativo Web.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-117">Open the file **Home.js** in the root of the web application project.</span></span> <span data-ttu-id="5b8ac-118">Este arquivo especifica o script do suplemento.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-118">This file specifies the script for the add-in.</span></span> <span data-ttu-id="5b8ac-119">Substitua todo o conteúdo pelo código a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-119">Replace the entire contents with the following code and save the file.</span></span>
+2. <span data-ttu-id="1fd99-117">Abra o arquivo **Home.js** na raiz do projeto do aplicativo Web.</span><span class="sxs-lookup"><span data-stu-id="1fd99-117">Open the file **Home.js** in the root of the web application project.</span></span> <span data-ttu-id="1fd99-118">Este arquivo especifica o script do suplemento.</span><span class="sxs-lookup"><span data-stu-id="1fd99-118">This file specifies the script for the add-in.</span></span> <span data-ttu-id="1fd99-119">Substitua todo o conteúdo pelo código a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="1fd99-119">Replace the entire contents with the following code and save the file.</span></span>
 
     ```js
     'use strict';
@@ -97,7 +97,7 @@
     })();
     ```
 
-3. <span data-ttu-id="5b8ac-120">Abra o arquivo **Home.css** na raiz do projeto do aplicativo Web.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-120">Open the file **Home.css** in the root of the web application project.</span></span> <span data-ttu-id="5b8ac-121">Este arquivo especifica os estilos personalizados para o suplemento.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-121">This file specifies the custom styles for the add-in.</span></span> <span data-ttu-id="5b8ac-122">Substitua todo o conteúdo pelo código a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-122">Replace the entire contents with the following code and save the file.</span></span>
+3. <span data-ttu-id="1fd99-120">Abra o arquivo **Home.css** na raiz do projeto do aplicativo Web.</span><span class="sxs-lookup"><span data-stu-id="1fd99-120">Open the file **Home.css** in the root of the web application project.</span></span> <span data-ttu-id="1fd99-121">Este arquivo especifica os estilos personalizados para o suplemento.</span><span class="sxs-lookup"><span data-stu-id="1fd99-121">This file specifies the custom styles for the add-in.</span></span> <span data-ttu-id="1fd99-122">Substitua todo o conteúdo pelo código a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="1fd99-122">Replace the entire contents with the following code and save the file.</span></span>
 
     ```css
     #content-header {
@@ -126,17 +126,17 @@
     }
     ```
 
-### <a name="update-the-manifest"></a><span data-ttu-id="5b8ac-123">Atualizar o manifesto</span><span class="sxs-lookup"><span data-stu-id="5b8ac-123">Update the manifest</span></span>
+### <a name="update-the-manifest"></a><span data-ttu-id="1fd99-123">Atualizar o manifesto</span><span class="sxs-lookup"><span data-stu-id="1fd99-123">Update the manifest</span></span>
 
-1. <span data-ttu-id="5b8ac-p105">Abra o arquivo de manifesto XML do projeto de suplemento. Esse arquivo define as configurações e recursos do suplemento.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-p105">Open the XML manifest file in the Add-in project. This file defines the add-in's settings and capabilities.</span></span>
+1. <span data-ttu-id="1fd99-124">Abra o arquivo XML do manifesto no projeto do Suplemento.</span><span class="sxs-lookup"><span data-stu-id="1fd99-124">Open the XML manifest file in the Add-in project.</span></span> <span data-ttu-id="1fd99-125">Este arquivo define as configurações e os recursos do suplemento.</span><span class="sxs-lookup"><span data-stu-id="1fd99-125">This file defines the add-in's settings and capabilities.</span></span>
 
-2. <span data-ttu-id="5b8ac-126">O elemento `ProviderName` tem um valor de espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-126">The `ProviderName` element has a placeholder value.</span></span> <span data-ttu-id="5b8ac-127">Substitua-o com seu nome.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-127">Replace it with your name.</span></span>
+2. <span data-ttu-id="1fd99-126">O elemento `ProviderName` tem um valor de espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="1fd99-126">The `ProviderName` element has a placeholder value.</span></span> <span data-ttu-id="1fd99-127">Substitua-o com seu nome.</span><span class="sxs-lookup"><span data-stu-id="1fd99-127">Replace it with your name.</span></span>
 
-3. <span data-ttu-id="5b8ac-128">O atributo `DefaultValue` do elemento `DisplayName` tem um espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-128">The `DefaultValue` attribute of the `DisplayName` element has a placeholder.</span></span> <span data-ttu-id="5b8ac-129">Substitua-o pelo **suplementos do My Office**.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-129">Replace it with **My Office Add-in**.</span></span>
+3. <span data-ttu-id="1fd99-128">O atributo `DefaultValue` do elemento `DisplayName` tem um espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="1fd99-128">The `DefaultValue` attribute of the `DisplayName` element has a placeholder.</span></span> <span data-ttu-id="1fd99-129">Substitua-o pelo **suplementos do My Office**.</span><span class="sxs-lookup"><span data-stu-id="1fd99-129">Replace it with **My Office Add-in**.</span></span>
 
-4. <span data-ttu-id="5b8ac-130">O atributo `DefaultValue` do elemento `Description` tem um espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-130">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="5b8ac-131">Substitua-o com **um suplemento do painel de tarefas do PowerPoint**.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-131">Replace it with **A task pane add-in for PowerPoint**.</span></span>
+4. <span data-ttu-id="1fd99-130">O atributo `DefaultValue` do elemento `Description` tem um espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="1fd99-130">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="1fd99-131">Substitua-o com **um suplemento do painel de tarefas do PowerPoint**.</span><span class="sxs-lookup"><span data-stu-id="1fd99-131">Replace it with **A task pane add-in for PowerPoint**.</span></span>
 
-5. <span data-ttu-id="5b8ac-132">Salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-132">Save the file.</span></span>
+5. <span data-ttu-id="1fd99-132">Salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="1fd99-132">Save the file.</span></span>
 
     ```xml
     ...
@@ -148,64 +148,70 @@
     ...
     ```
 
-### <a name="try-it-out"></a><span data-ttu-id="5b8ac-133">Experimente</span><span class="sxs-lookup"><span data-stu-id="5b8ac-133">Try it out</span></span>
+### <a name="try-it-out"></a><span data-ttu-id="1fd99-133">Experimente</span><span class="sxs-lookup"><span data-stu-id="1fd99-133">Try it out</span></span>
 
-1. <span data-ttu-id="5b8ac-p109">Usando o Visual Studio, teste o suplemento do PowerPoint recém-criado pressionando F5 ou escolhendo o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-p109">Using Visual Studio, test the newly created PowerPoint add-in by pressing F5 or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
+1. <span data-ttu-id="1fd99-p109">Usando o Visual Studio, teste o suplemento do PowerPoint recém-criado pressionando F5 ou escolhendo o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.</span><span class="sxs-lookup"><span data-stu-id="1fd99-p109">Using Visual Studio, test the newly created PowerPoint add-in by pressing F5 or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
 
-2. <span data-ttu-id="5b8ac-136">No PowerPoint, insira um novo slide em branco, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-136">In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+2. <span data-ttu-id="1fd99-136">No PowerPoint, insira um novo slide em branco, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="1fd99-136">In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![Uma captura de tela do PowerPoint com o botão Mostrar painel de tarefas realçado](../images/powerpoint_quickstart_addin_1.png)
 
-3. <span data-ttu-id="5b8ac-138">No painel de tarefas, escolha o botão **Inserir imagem** para adicionar uma imagem no slide selecionado.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-138">In the task pane, choose the **Insert Image** button to add an image to the selected slide.</span></span>
+3. <span data-ttu-id="1fd99-138">No painel de tarefas, escolha o botão **Inserir imagem** para adicionar uma imagem no slide selecionado.</span><span class="sxs-lookup"><span data-stu-id="1fd99-138">In the task pane, choose the **Insert Image** button to add an image to the selected slide.</span></span>
 
     ![Uma captura de tela do PowerPoint com a imagem de um cachorro exibida no slide](../images/powerpoint_quickstart_addin_2.png)
 
-4. <span data-ttu-id="5b8ac-140">No painel de tarefas, escolha o botão **Inserir texto** para adicionar texto no slide selecionado.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-140">In the task pane, choose the **Insert Text** button to add text to the selected slide.</span></span>
+4. <span data-ttu-id="1fd99-140">No painel de tarefas, escolha o botão **Inserir texto** para adicionar texto no slide selecionado.</span><span class="sxs-lookup"><span data-stu-id="1fd99-140">In the task pane, choose the **Insert Text** button to add text to the selected slide.</span></span>
 
     ![Uma captura de tela do PowerPoint com a imagem de um cachorro e o texto "Olá, mundo" exibidos no slide](../images/powerpoint_quickstart_addin_3.png)
 
-# <a name="any-editortabvisual-studio-code"></a>[<span data-ttu-id="5b8ac-142">Qualquer editor</span><span class="sxs-lookup"><span data-stu-id="5b8ac-142">Any editor</span></span>](#tab/visual-studio-code)
+# <a name="any-editortabvisual-studio-code"></a>[<span data-ttu-id="1fd99-142">Qualquer editor</span><span class="sxs-lookup"><span data-stu-id="1fd99-142">Any editor</span></span>](#tab/visual-studio-code)
 
-### <a name="prerequisites"></a><span data-ttu-id="5b8ac-143">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="5b8ac-143">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="1fd99-143">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="1fd99-143">Prerequisites</span></span>
 
-- [<span data-ttu-id="5b8ac-144">Node.js</span><span class="sxs-lookup"><span data-stu-id="5b8ac-144">Node.js</span></span>](https://nodejs.org)
+- [<span data-ttu-id="1fd99-144">Node.js</span><span class="sxs-lookup"><span data-stu-id="1fd99-144">Node.js</span></span>](https://nodejs.org)
 
-- <span data-ttu-id="5b8ac-145">Instale a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador do Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-145">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
+- <span data-ttu-id="1fd99-145">Instale a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador do Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.</span><span class="sxs-lookup"><span data-stu-id="1fd99-145">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
 
     ```bash
     npm install -g yo generator-office
     ```
 
-### <a name="create-the-add-in-project"></a><span data-ttu-id="5b8ac-146">Criar o projeto do suplemento</span><span class="sxs-lookup"><span data-stu-id="5b8ac-146">Create the add-in project</span></span>
+### <a name="create-the-add-in-project"></a><span data-ttu-id="1fd99-146">Criar o projeto do suplemento</span><span class="sxs-lookup"><span data-stu-id="1fd99-146">Create the add-in project</span></span>
 
-1. <span data-ttu-id="5b8ac-147">Crie uma pasta na sua unidade local e nomeie-a como `my-powerpoint-addin`.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-147">Create a folder on your local drive and name it `my-powerpoint-addin`.</span></span> <span data-ttu-id="5b8ac-148">Esse é o local em que você criará os arquivos para seu suplemento.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-148">This is where you'll create the files for your add-in.</span></span>
+1. <span data-ttu-id="1fd99-147">Crie uma pasta na sua unidade local e nomeie-a como `my-powerpoint-addin`.</span><span class="sxs-lookup"><span data-stu-id="1fd99-147">Create a folder on your local drive and name it `my-powerpoint-addin`.</span></span> <span data-ttu-id="1fd99-148">Esse é o local em que você criará os arquivos para seu suplemento.</span><span class="sxs-lookup"><span data-stu-id="1fd99-148">This is where you'll create the files for your add-in.</span></span>
 
-2. <span data-ttu-id="5b8ac-149">Navegue até a nova pasta.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-149">Navigate to your new folder.</span></span>
+2. <span data-ttu-id="1fd99-149">Navegue até a nova pasta.</span><span class="sxs-lookup"><span data-stu-id="1fd99-149">Navigate to your new folder.</span></span>
 
     ```bash
     cd my-powerpoint-addin
     ```
 
-3. <span data-ttu-id="5b8ac-150">Use o gerador Yeoman para criar um projeto do suplemento do PowerPoint.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-150">Use the Yeoman generator to create a PowerPoint add-in project.</span></span> <span data-ttu-id="5b8ac-151">Execute o comando a seguir e responda aos prompts da seguinte forma:</span><span class="sxs-lookup"><span data-stu-id="5b8ac-151">Run the following command and then answer the prompts as follows:</span></span>
+3. <span data-ttu-id="1fd99-150">Use o gerador Yeoman para criar um projeto do suplemento do PowerPoint.</span><span class="sxs-lookup"><span data-stu-id="1fd99-150">Use the Yeoman generator to create a PowerPoint add-in project.</span></span> <span data-ttu-id="1fd99-151">Execute o comando a seguir e responda aos prompts da seguinte forma:</span><span class="sxs-lookup"><span data-stu-id="1fd99-151">Run the following command and then answer the prompts as follows:</span></span>
 
     ```bash
     yo office
     ```
 
-    - <span data-ttu-id="5b8ac-152">**Escolha um tipo de projeto:** `Office Add-in project using Jquery framework`</span><span class="sxs-lookup"><span data-stu-id="5b8ac-152">**Choose a project type:** `Office Add-in project using Jquery framework`</span></span>
-    - <span data-ttu-id="5b8ac-153">**Escolha um tipo de script:** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="5b8ac-153">**Choose a script type:** `Javascript`</span></span>
-    - <span data-ttu-id="5b8ac-154">**Qual será o nome do suplemento?:** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="5b8ac-154">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
-    - <span data-ttu-id="5b8ac-155">**Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?:** `Powerpoint`</span><span class="sxs-lookup"><span data-stu-id="5b8ac-155">**Which Office client application would you like to support?:** `Powerpoint`</span></span>
+    - <span data-ttu-id="1fd99-152">**Escolha um tipo de projeto:** `Office Add-in project using Jquery framework`</span><span class="sxs-lookup"><span data-stu-id="1fd99-152">**Choose a project type:** `Office Add-in project using Jquery framework`</span></span>
+    - <span data-ttu-id="1fd99-153">**Escolha um tipo de script:** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="1fd99-153">**Choose a script type:** `Javascript`</span></span>
+    - <span data-ttu-id="1fd99-154">**Qual será o nome do suplemento?:** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="1fd99-154">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
+    - <span data-ttu-id="1fd99-155">**Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?:** `Powerpoint`</span><span class="sxs-lookup"><span data-stu-id="1fd99-155">**Which Office client application would you like to support?:** `Powerpoint`</span></span>
 
     ![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-powerpoint-jquery.png)
     
-    <span data-ttu-id="5b8ac-157">Depois de concluir o assistente, o gerador criará o projeto e instalará os componentes do nó de suporte.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-157">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
+    <span data-ttu-id="1fd99-157">Depois de concluir o assistente, o gerador criará o projeto e instalará os componentes do nó de suporte.</span><span class="sxs-lookup"><span data-stu-id="1fd99-157">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
+    
+4. <span data-ttu-id="1fd99-158">Navegue até a pasta raiz do projeto do aplicativo da Web.</span><span class="sxs-lookup"><span data-stu-id="1fd99-158">Navigate to the root folder of the web application project.</span></span>
 
-### <a name="update-the-code"></a><span data-ttu-id="5b8ac-158">Atualizar o código</span><span class="sxs-lookup"><span data-stu-id="5b8ac-158">Update the code</span></span>
+    ```bash
+    cd "My Office Add-in"
+    ```
 
-1. <span data-ttu-id="5b8ac-159">No editor de código, abra **index.html** na raiz do projeto.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-159">In your code editor, open **index.html** in the root of the project.</span></span> <span data-ttu-id="5b8ac-160">Esse arquivo contém o HTML que será renderizado no painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-160">This file contains the HTML that will be rendered in the add-in's task pane.</span></span>
+### <a name="update-the-code"></a><span data-ttu-id="1fd99-159">Atualize o código</span><span class="sxs-lookup"><span data-stu-id="1fd99-159">Update the code</span></span>
 
-2. <span data-ttu-id="5b8ac-161">Substitua o elemento `<header>` dentro do elemento `<body>` com a marcação a seguir.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-161">Replace the `<header>` element inside the `<body>` element with the following markup.</span></span>
+1. <span data-ttu-id="1fd99-160">No editor de código, abra **index.html** na raiz do projeto.</span><span class="sxs-lookup"><span data-stu-id="1fd99-160">In your code editor, open **index.html** in the root of the project.</span></span> <span data-ttu-id="1fd99-161">Esse arquivo contém o HTML que será renderizado no painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="1fd99-161">This file contains the HTML that will be rendered in the add-in's task pane.</span></span>
+
+2. <span data-ttu-id="1fd99-162">Substitua o elemento `<header>` dentro do elemento `<body>` com a marcação a seguir.</span><span class="sxs-lookup"><span data-stu-id="1fd99-162">Replace the `<header>` element inside the `<body>` element with the following markup.</span></span>
 
     ```html
     <div id="content-header">
@@ -215,7 +221,7 @@
     </div>
     ```
 
-3. <span data-ttu-id="5b8ac-162">Substitua o elemento `<main>` dentro do elemento `<body>` com a marcação a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-162">Replace the `<main>` element inside the `<body>` element with the following markup and save the file.</span></span>
+3. <span data-ttu-id="1fd99-163">Substitua o elemento `<main>` dentro do elemento `<body>` com a marcação a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="1fd99-163">Replace the `<main>` element inside the `<body>` element with the following markup and save the file.</span></span>
 
     ```html
     <div id="content-main">
@@ -230,7 +236,7 @@
     </div>
     ```
 
-4. <span data-ttu-id="5b8ac-163">Abra o arquivo **src\index.js** para especificar o script do suplemento.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-163">Open the file **app.js** to specify the script for the add-in.</span></span> <span data-ttu-id="5b8ac-164">Substitua todo o conteúdo pelo código a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-164">Replace the entire contents with the following code and save the file.</span></span>
+4. <span data-ttu-id="1fd99-164">Abra o arquivo **src\index.js** para especificar o script do suplemento.</span><span class="sxs-lookup"><span data-stu-id="1fd99-164">Open the file **app.js** to specify the script for the add-in.</span></span> <span data-ttu-id="1fd99-165">Substitua todo o conteúdo pelo código a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="1fd99-165">Replace the entire contents with the following code and save the file.</span></span>
 
     ```js
     'use strict';
@@ -275,7 +281,7 @@
     })();
     ```
 
-5. <span data-ttu-id="5b8ac-165">Abra o arquivo **app.css** na raiz do projeto para especificar os estilos personalizados do suplemento.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-165">Open the file **app.css** in the root of the project to specify the custom styles for the add-in.</span></span> <span data-ttu-id="5b8ac-166">Substitua todo o conteúdo pelo que está a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-166">Replace the entire contents with the following and save the file.</span></span>
+5. <span data-ttu-id="1fd99-166">Abra o arquivo **app.css** na raiz do projeto para especificar os estilos personalizados do suplemento.</span><span class="sxs-lookup"><span data-stu-id="1fd99-166">Open the file **app.css** in the root of the project to specify the custom styles for the add-in.</span></span> <span data-ttu-id="1fd99-167">Substitua todo o conteúdo pelo que está a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="1fd99-167">Replace the entire contents with the following and save the file.</span></span>
 
     ```css
     #content-header {
@@ -304,15 +310,15 @@
     }
     ```
 
-### <a name="update-the-manifest"></a><span data-ttu-id="5b8ac-167">Atualizar o manifesto</span><span class="sxs-lookup"><span data-stu-id="5b8ac-167">Update the manifest</span></span>
+### <a name="update-the-manifest"></a><span data-ttu-id="1fd99-168">Atualizar o manifesto</span><span class="sxs-lookup"><span data-stu-id="1fd99-168">Update the manifest</span></span>
 
-1. <span data-ttu-id="5b8ac-168">Abra o arquivo **my-office-add-in-manifest.xml** para definir as configurações e os recursos do suplemento.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-168">Open the file **my-office-add-in-manifest.xml** to define the add-in's settings and capabilities.</span></span>
+1. <span data-ttu-id="1fd99-169">Abra o arquivo **my-office-add-in-manifest.xml** para definir as configurações e os recursos do suplemento.</span><span class="sxs-lookup"><span data-stu-id="1fd99-169">Open the file **my-office-add-in-manifest.xml** to define the add-in's settings and capabilities.</span></span>
 
-2. <span data-ttu-id="5b8ac-169">O elemento `ProviderName` tem um valor de espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-169">The `ProviderName` element has a placeholder value.</span></span> <span data-ttu-id="5b8ac-170">Substitua-o com seu nome.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-170">Replace it with your name.</span></span>
+2. <span data-ttu-id="1fd99-170">O elemento `ProviderName` tem um valor de espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="1fd99-170">The `ProviderName` element has a placeholder value.</span></span> <span data-ttu-id="1fd99-171">Substitua-o com seu nome.</span><span class="sxs-lookup"><span data-stu-id="1fd99-171">Replace it with your name.</span></span>
 
-3. <span data-ttu-id="5b8ac-171">O atributo `DefaultValue` do elemento `Description` tem um espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-171">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="5b8ac-172">Substitua-o com **um suplemento do painel de tarefas do PowerPoint**.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-172">Replace it with **A task pane add-in for PowerPoint**.</span></span>
+3. <span data-ttu-id="1fd99-172">O atributo `DefaultValue` do elemento `Description` tem um espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="1fd99-172">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="1fd99-173">Substitua-o com **um suplemento do painel de tarefas do PowerPoint**.</span><span class="sxs-lookup"><span data-stu-id="1fd99-173">Replace it with **A task pane add-in for PowerPoint**.</span></span>
 
-4. <span data-ttu-id="5b8ac-173">Salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-173">Save the file.</span></span>
+4. <span data-ttu-id="1fd99-174">Salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="1fd99-174">Save the file.</span></span>
 
     ```xml
     ...
@@ -324,35 +330,35 @@
     ...
     ```
 
-### <a name="start-the-dev-server"></a><span data-ttu-id="5b8ac-174">Iniciar o servidor de desenvolvimento</span><span class="sxs-lookup"><span data-stu-id="5b8ac-174">Start the dev server</span></span>
+### <a name="start-the-dev-server"></a><span data-ttu-id="1fd99-175">Iniciar o servidor de desenvolvimento</span><span class="sxs-lookup"><span data-stu-id="1fd99-175">Start the dev server</span></span>
 
 [!include[Start server section](../includes/quickstart-yo-start-server.md)] 
 
-### <a name="try-it-out"></a><span data-ttu-id="5b8ac-175">Experimente</span><span class="sxs-lookup"><span data-stu-id="5b8ac-175">Try it out</span></span>
+### <a name="try-it-out"></a><span data-ttu-id="1fd99-176">Experimente</span><span class="sxs-lookup"><span data-stu-id="1fd99-176">Try it out</span></span>
 
-1. <span data-ttu-id="5b8ac-176">Siga as instruções para a plataforma que você usará para executar o suplemento e realizar sideload do suplemento no PowerPoint.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-176">Follow the instructions for the platform you'll use to run your add-in to sideload the add-in within PowerPoint.</span></span>
+1. <span data-ttu-id="1fd99-177">Siga as instruções para a plataforma que você usará para executar o suplemento e realizar sideload do suplemento no PowerPoint.</span><span class="sxs-lookup"><span data-stu-id="1fd99-177">Follow the instructions for the platform you'll use to run your add-in to sideload the add-in within PowerPoint.</span></span>
 
-    - <span data-ttu-id="5b8ac-177">Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span><span class="sxs-lookup"><span data-stu-id="5b8ac-177">Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span></span>
-    - <span data-ttu-id="5b8ac-178">PowerPoint Online: [Realizar sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)</span><span class="sxs-lookup"><span data-stu-id="5b8ac-178">PowerPoint Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)</span></span>
-    - <span data-ttu-id="5b8ac-179">iPad e Mac: [Realizar sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span><span class="sxs-lookup"><span data-stu-id="5b8ac-179">iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span></span>
+    - <span data-ttu-id="1fd99-178">Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span><span class="sxs-lookup"><span data-stu-id="1fd99-178">Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span></span>
+    - <span data-ttu-id="1fd99-179">PowerPoint Online: [Realizar sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)</span><span class="sxs-lookup"><span data-stu-id="1fd99-179">PowerPoint Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)</span></span>
+    - <span data-ttu-id="1fd99-180">iPad e Mac: [Realizar sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span><span class="sxs-lookup"><span data-stu-id="1fd99-180">iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span></span>
 
-2. <span data-ttu-id="5b8ac-180">No PowerPoint, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-180">In PowerPoint, create a new file, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+2. <span data-ttu-id="1fd99-181">No PowerPoint, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="1fd99-181">In PowerPoint, create a new file, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![Uma captura de tela do PowerPoint com o botão Mostrar painel de tarefas realçado](../images/powerpoint_quickstart_addin_1b.png)
 
-3. <span data-ttu-id="5b8ac-182">No painel de tarefas, escolha o botão **Inserir imagem** para adicionar uma imagem no slide selecionado.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-182">In the task pane, choose the **Insert Image** button to add an image to the selected slide.</span></span>
+3. <span data-ttu-id="1fd99-183">No painel de tarefas, escolha o botão **Inserir imagem** para adicionar uma imagem no slide selecionado.</span><span class="sxs-lookup"><span data-stu-id="1fd99-183">In the task pane, choose the **Insert Image** button to add an image to the selected slide.</span></span>
 
     ![Uma captura de tela do PowerPoint com a imagem de um cachorro exibida no slide](../images/powerpoint_quickstart_addin_2b.png)
 
-4. <span data-ttu-id="5b8ac-184">No painel de tarefas, escolha o botão **Inserir texto** para adicionar texto no slide selecionado.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-184">In the task pane, choose the **Insert Text** button to add text to the selected slide.</span></span>
+4. <span data-ttu-id="1fd99-185">No painel de tarefas, escolha o botão **Inserir texto** para adicionar texto no slide selecionado.</span><span class="sxs-lookup"><span data-stu-id="1fd99-185">In the task pane, choose the **Insert Text** button to add text to the selected slide.</span></span>
 
     ![Uma captura de tela do PowerPoint com a imagem de um cachorro e o texto "Olá, mundo" exibidos no slide](../images/powerpoint_quickstart_addin_3b.png)
 
 ---
 
-## <a name="next-steps"></a><span data-ttu-id="5b8ac-186">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="5b8ac-186">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="1fd99-187">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="1fd99-187">Next steps</span></span>
 
-<span data-ttu-id="5b8ac-187">Parabéns, você criou com êxito um suplemento do PowerPoint!</span><span class="sxs-lookup"><span data-stu-id="5b8ac-187">Congratulations, you've successfully created a PowerPoint add-in!</span></span> <span data-ttu-id="5b8ac-188">Em seguida, saiba mais sobre os recursos de um suplemento do PowerPoint e crie um suplemento mais complexo seguindo as etapas deste tutorial de suplemento do PowerPoint.</span><span class="sxs-lookup"><span data-stu-id="5b8ac-188">Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.</span></span>
+<span data-ttu-id="1fd99-188">Parabéns, você criou um suplemento do PowerPoint!</span><span class="sxs-lookup"><span data-stu-id="1fd99-188">Congratulations, you've successfully created a PowerPoint add-in!</span></span> <span data-ttu-id="1fd99-189">Em seguida, saiba mais sobre os recursos de um suplemento do PowerPoint e crie um suplemento mais complexo seguindo as etapas do tutorial de suplemento do PowerPoint.</span><span class="sxs-lookup"><span data-stu-id="1fd99-189">Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="5b8ac-189">Tutorial do suplemento do PowerPoint</span><span class="sxs-lookup"><span data-stu-id="5b8ac-189">PowerPoint add-in tutorial</span></span>](../tutorials/powerpoint-tutorial.yml)
+> [<span data-ttu-id="1fd99-190">Tutorial do suplemento do PowerPoint</span><span class="sxs-lookup"><span data-stu-id="1fd99-190">PowerPoint add-in tutorial</span></span>](../tutorials/powerpoint-tutorial.yml)
