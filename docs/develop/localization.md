@@ -2,12 +2,12 @@
 title: Localização para Suplementos do Office
 description: Você pode usar a API JavaScript para Office para determinar uma localidade e exibir sequências de caracteres com base na localidade do aplicativo host, ou interpretar, ou exibir dados com base na sua localidade.
 ms.date: 01/23/2018
-ms.openlocfilehash: ba8388b965458edcf9e8abef05f9991abe2fdcbf
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 2b47a54acd2018be0d4c6c6fdac2e5d3bd1d6770
+ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945654"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "24016441"
 ---
 # <a name="localization-for-office-add-ins"></a>Localização para Suplementos do Office
 
@@ -63,7 +63,7 @@ Cada Suplemento do Office especifica um elemento [DefaultLocale] e uma localidad
 
 
 > [!NOTE] 
-> Você pode localizar a descrição e o nome para exibição apenas para as localidades que o Office oferece suporte. Para obter uma lista de idiomas e localidades para a versão atual do Office, consulte [Identificadores de idioma e valores de Id de OptionState no Office 2013](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15)).
+> Você pode localizar a descrição e o nome para exibição apenas para as localidades que o Office oferece suporte. Para obter uma lista de idiomas e localidades para a versão atual do Office, confira [Identificadores de idioma e valores de OptionState Id no Office 2013](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15)).
 
 
 ### <a name="examples"></a>Exemplos
@@ -80,12 +80,12 @@ Por exemplo, um Suplemento do Office pode especificar o [DefaultLocale] como `en
 ```
 
 > [!NOTE] 
-> Se você precisar localizar mais de uma área dentro de uma família de idiomas, como `de-de` e `de-at`, recomendamos que você use elementos `Override` individuais para cada área. Usar apenas o nome de idioma, nesse caso, `de`, não é suportado em todas as combinações de plataformas e aplicativos host do Office.
+> Se você precisar localizar mais de uma área dentro de uma família de idiomas, como `de-de` e `de-at`, recomendamos que use elementos `Override` separados para cada área. Usar apenas o nome do idioma, nesse caso, `de`, não é suportado em todas as combinações de plataformas e aplicativos host do Office.
 
 Isso significa que o suplemento pressupõe a localidade `en-us` como padrão. Os usuários veem o nome de exibição em inglês "Video player" para todas as localidades, a menos que a localidade do computador cliente fosse `fr-fr`, nesse caso os usuários veria o nome de exibição em francês "Lecteur vidéo".
 
 > [!NOTE] 
-> Você só pode especificar uma única substituição por idioma, inclusive para a localidade padrão. Por exemplo, se sua localidade padrão é `en-us` não é possível especificar uma substituição para `en-us` também. 
+> Você só pode especificar uma única substituição por idioma, inclusive para a localidade padrão. Por exemplo, se sua localidade padrão é `en-us`, não é possível especificar uma substituição para `en-us` também. 
 
 O exemplo a seguir se aplica a uma substituição de localidade para o elemento [Description]. Primeiro especifica a localidade padrão `en-us` e uma descrição em inglês e, em seguida, especifica uma política de [Override] com uma descrição francesa para a localidade `fr-fr`:
 
@@ -175,14 +175,14 @@ Para executar o código de amostra fornecido, configure o Microsoft Office 2013 
 Além disso, você precisará criar um projeto de Suplemento do Office do Visual Studio 2015.
 
 > [!NOTE] 
-> Para baixar o Visual Studio 2015, consulte a [página Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs). Esta página também tem um link para a Office Developer Tools.
+> Para baixar o Visual Studio 2015, confira a [página Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs). Esta página também tem um link para Office Developer Tools.
 
 ### <a name="configure-office-2013-to-use-additional-languages-for-display-or-editing"></a>Configurar o Office 2013 para usar idiomas adicionais para exibição ou edição
 
 Você pode usar um Pacote de idiomas do Office 2013 para instalar um idioma adicional. Para saber mais sobre os Pacotes de idioma e onde obtê-los, veja [Opções de idioma do Office 2013](http://office.microsoft.com/language-packs/).
 
 > [!NOTE] 
-> Se você é um assinante do MSDN, pode ser que os pacotes de idiomas do Office 2013 já estejam disponíveis para você. Para determinar se a sua assinatura oferece pacotes de idiomas do Office 2013 para download, vá para a [Página inicial de assinaturas do MSDN](https://msdn.microsoft.com/subscriptions/manage/), insira "Pacote de idiomas do Office 2013" em **Downloads de Software**, escolha **Pesquisar** e selecione **Produtos disponíveis com a minha assinatura**. Em **Idioma**, marque a caixa de seleção para o pacote de idiomas que você deseja baixar e clique em **Ir**. 
+> Se você é um assinante do MSDN, pode ser que os pacotes de idiomas do Office 2013 já estejam disponíveis para você. Para determinar se a sua assinatura oferece pacotes de idiomas do Office 2013 para download, vá para a [Página inicial de assinaturas do MSDN](https://msdn.microsoft.com/subscriptions/manage/), insira "Pacote de idiomas do Office 2013" em **Downloads de Software**, escolha **Pesquisar** e selecione **Produtos disponíveis para a minha assinatura**. Em **Idioma**, marque a caixa de seleção para o pacote de idiomas que você deseja baixar e clique em **Ir**. 
 
 Depois de instalar o Pacote de Idiomas, você pode configurar o Office 2013 para usar o idioma instalado para exibir na interface do usuário, para edição de conteúdo do documento, ou ambos. O exemplo neste artigo usa uma instalação do Office 2013 que tenha o Pacote de Idiomas do espanhol aplicado.
 
@@ -209,10 +209,10 @@ Para localizar o nome de exibição e a descrição do suplemento:
 
 1. Em **Gerenciador de Soluções**, expanda **WorldReadyAddIn**, **WorldReadyAddInManifest** e, em seguida, selecione **WorldReadyAddIn.xml**.
     
-2. No WorldReadyAddInManifest.xml, substitua os elementos [DisplayName] e [Description] com o seguinte bloco de código:
+2. No WorldReadyAddInManifest.xml, substitua os elementos [DisplayName] e [Description] pelo seguinte bloco de código:
     
     > [!NOTE] 
-    > Você pode substituir as sequências de caracteres localizadas do idioma espanhol usadas neste exemplo pelos elementos [DisplayName] e [Description] com as sequências de caracteres localizadas para qualquer outro idioma.
+    > Você pode substituir as sequências de caracteres localizadas em espanhol usadas neste exemplo pelos elementos [DisplayName] e [Description] com as sequências de caracteres localizadas em qualquer outro idioma.
 
     ```xml
     <DisplayName DefaultValue="World Ready add-in">
@@ -361,7 +361,7 @@ Depois que você souber o idioma que o aplicativo host está utilizando, é poss
 Substitua o código no arquivo Home.js pelo código a seguir. O código mostra como você pode alterar as cadeias de caracteres usadas nos elementos da interface do usuário no Home.html com base no idioma de exibição do aplicativo host ou no idioma de edição do aplicativo host.
 
 > [!NOTE] 
-> Para alternar entre a alteração da localização do suplemento com base no idioma usado para edição, remova a marca de comentário da linha de código `var myLanguage = Office.context.contentLanguage;` e inclua o comentário fora da linha de código `var myLanguage = Office.context.displayLanguage;`
+> Para alternar entre a alteração da localização do suplemento com base no idioma usado para edição, remova a marca de comentário da linha de código `var myLanguage = Office.context.contentLanguage;` e comente a linha de código `var myLanguage = Office.context.displayLanguage;`
 
 ```js
 /// <reference path="../App.js" />
@@ -428,17 +428,17 @@ Execute o suplemento de exemplo. O suplemento do painel de tarefas é carregado 
 - [Diretrizes de design para suplementos do Office](../design/add-in-design.md)    
 - [Identificadores de idioma e valores da ID de OptionState no Office 2013](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
 
-[DefaultLocale]:        https://docs.microsoft.com/en-us/javascript/office/manifest/defaultlocale?view=office-js
-[Descrição]:          https://docs.microsoft.com/en-us/javascript/office/manifest/description?view=office-js
-[DisplayName]:          https://docs.microsoft.com/en-us/javascript/office/manifest/displayname?view=office-js
-[IconUrl]:              https://docs.microsoft.com/en-us/javascript/office/manifest/iconurl?view=office-js
-[HighResolutionIconUrl]:https://docs.microsoft.com/en-us/javascript/office/manifest/highresolutioniconurl?view=office-js
-[Recursos]:            https://docs.microsoft.com/en-us/javascript/office/manifest/resources?view=office-js
-[SourceLocation]:       https://docs.microsoft.com/en-us/javascript/office/manifest/sourcelocation?view=office-js
-[Substituição]:             https://docs.microsoft.com/en-us/javascript/office/manifest/override?view=office-js
-[DesktopSettings]:      https://docs.microsoft.com/en-us/javascript/office/manifest/desktopsettings?view=office-js
-[TabletSettings]:       https://docs.microsoft.com/en-us/javascript/office/manifest/tabletsettings?view=office-js
-[PhoneSettings]:        https://docs.microsoft.com/en-us/javascript/office/manifest/phonesettings?view=office-js
-[displayLanguage]:  https://docs.microsoft.com/en-us/javascript/api/office/office.context?view=office-js#displaylanguage 
-[contentLanguage]:  https://docs.microsoft.com/en-us/javascript/api/office/office.context?view=office-js#contentlanguage 
+[DefaultLocale]:        https://docs.microsoft.com/javascript/office/manifest/defaultlocale?view=office-js
+[Descrição]:          https://docs.microsoft.com/javascript/office/manifest/description?view=office-js
+[DisplayName]:          https://docs.microsoft.com/javascript/office/manifest/displayname?view=office-js
+[IconUrl]:              https://docs.microsoft.com/javascript/office/manifest/iconurl?view=office-js
+[HighResolutionIconUrl]:https://docs.microsoft.com/javascript/office/manifest/highresolutioniconurl?view=office-js
+[Recursos]:            https://docs.microsoft.com/javascript/office/manifest/resources?view=office-js
+[SourceLocation]:       https://docs.microsoft.com/javascript/office/manifest/sourcelocation?view=office-js
+[Substituição]:             https://docs.microsoft.com/javascript/office/manifest/override?view=office-js
+[DesktopSettings]:      https://docs.microsoft.com/javascript/office/manifest/desktopsettings?view=office-js
+[TabletSettings]:       https://docs.microsoft.com/javascript/office/manifest/tabletsettings?view=office-js
+[PhoneSettings]:        https://docs.microsoft.com/javascript/office/manifest/phonesettings?view=office-js
+[displayLanguage]:  https://docs.microsoft.com/javascript/api/office/office.context?view=office-js#displaylanguage 
+[contentLanguage]:  https://docs.microsoft.com/javascript/api/office/office.context?view=office-js#contentlanguage 
 [RFC 3066]: https://www.rfc-editor.org/info/rfc3066

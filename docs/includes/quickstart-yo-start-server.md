@@ -1,4 +1,4 @@
-1. Abra um terminal bash na raiz do projeto e execute o seguinte comando para iniciar o servidor de desenvolvimento.
+1. Abra um terminal bash na raiz do projeto (**[…] /Meu suplemento office**) e execute o seguinte comando para iniciar o servidor de desenvolvimento.
 
     ```bash
     npm start

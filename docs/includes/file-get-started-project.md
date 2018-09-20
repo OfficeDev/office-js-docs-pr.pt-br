@@ -36,8 +36,14 @@ Neste artigo, você passará pelo processo de criar um suplemento do Project usa
     ![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-project-jquery.png)
     
     Depois de concluir o assistente, o gerador criará o projeto e instalará os componentes do nó de suporte.
+    
+4. Navegue até a pasta raiz do projeto de aplicativo da Web.
 
-## <a name="update-the-code"></a>Atualizar o código
+    ```bash
+    cd "My Office Add-in"
+    ```
+
+## <a name="update-the-code"></a>Atualize o código
 
 1. No editor de código, abra **index.html** na raiz do projeto. Esse arquivo contém o HTML que será renderizado no painel de tarefas do suplemento.
 
@@ -68,7 +74,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Project usa
     </div>
     ```
 
-4. Abra o arquivo **index/src.js** para especificar o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
+4. Abra o arquivo **src\index.js** para especificar o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
 
     ```js
     'use strict';

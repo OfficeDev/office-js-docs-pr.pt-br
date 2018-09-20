@@ -2,21 +2,21 @@
 title: Converter um projeto de Suplemento do Office no Visual Studio para TypeScript
 description: ''
 ms.date: 01/19/2018
-ms.openlocfilehash: 894cdcb8360a26dfb0f2d5ddbf06cbd7c52d5623
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 015fd9d7e9bf4412c09b76f0de5a97c9946e4d58
+ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945345"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "24016329"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Converter um projeto de Suplemento do Office no Visual Studio para TypeScript
 
 Você pode usar o modelo de Suplemento do Office no Visual Studio para criar um suplemento que usa JavaScript e depois converter esse projeto de suplemento para o TypeScript. Use o Visual Studio para criar projeto suplemento, evite ter que criar desde o início o projeto de suplemento do Office no TypeScript. 
 
-Este artigo mostra como criar um suplemento do Excel usando o Visual Studio e depois converter o projeto do suplemento do JavaScript para o TypeScript. Você pode usar o mesmo processo para converter outros tipos de projetos de JavaScript para suplementos do Office para o TypeScript no Visual Studio.
+Este artigo mostra como criar um suplemento do Excel usando o Visual Studio e depois converter o projeto do suplemento do JavaScript para o TypeScript. Você pode usar o mesmo processo para converter outros tipos de projetos JavaScript para Suplementos do Office para TypeScript no Visual Studio.
 
 > [!NOTE]
-> Para criar um projeto de Suplementos do Office para o TypeScript sem usar o Visual Studio, siga as instruções na seção "Qualquer editor" de um [início rápido em 5 minutos](../index.yml) e escolha `TypeScript` quando for solicitado pelo [Gerador de Suplementos do Office do Yeoman](https://github.com/OfficeDev/generator-office).
+> Para criar um projeto TypeScript de Suplementos do Office sem usar o Visual Studio, siga as instruções na seção "Qualquer editor" de um [Início rápido em 5 minutos](../index.yml) e escolha `TypeScript` quando for solicitado pelo [Gerador Yeoman de Suplementos do Office](https://github.com/OfficeDev/generator-office).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -30,7 +30,7 @@ Este artigo mostra como criar um suplemento do Excel usando o Visual Studio e de
     > [!NOTE]
     > O TypeScript deve ser instalado por padrão com o Visual Studio 2017, mas você pode [usar o Instalador do Visual Studio](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) para confirmar se ele foi instalado. No Instalador do Visual Studio, selecione a guia **Componentes individuais** e verifique se a opção**TypeScript 2.3 SDK** está selecionada em **SDKs, bibliotecas e estruturas**.
 
-- Excel 2016 ou posteriores
+- Excel 2016 ou posterior
 
 ## <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 

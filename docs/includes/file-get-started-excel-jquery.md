@@ -109,7 +109,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 
 ### <a name="update-the-manifest"></a>Atualizar o manifesto
 
-1. Abra o arquivo XML do manifesto do projeto de suplemento. Esse arquivo define as configurações e funcionalidades do suplemento.
+1. Abra o arquivo de manifesto XML no projeto do Suplemento. Este arquivo define as configurações e os recursos do suplemento.
 
 2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o com seu nome.
 
@@ -164,7 +164,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
     cd my-addin
     ```
 
-3. Use o gerador do Yeoman para gerar o arquivo de manifesto para o seu suplemento. Execute o comando a seguir e responda aos prompts, conforme mostrado na captura de tela a seguir:
+3. Use o gerador do Yeoman para gerar o arquivo de manifesto para o seu suplemento. Execute o comando a seguir e responda aos prompts, conforme mostrado na seguinte captura de tela:
 
     ```bash
     yo office
@@ -179,11 +179,15 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
     
     Depois de concluir o assistente, o gerador criará o projeto e instalará os componentes do nó de suporte.
 
-    
+4. Navegue até a pasta raiz do projeto de aplicativo da Web.
 
-4. No editor de código, abra **index.html** na raiz do projeto. Esse arquivo especifica o HTML que será renderizado no painel de tarefas do suplemento. 
+    ```bash
+    cd "My Office Add-in"
+    ```
+
+5. No editor de código, abra a **index.html** na raiz do projeto. Esse arquivo especifica o HTML que será renderizado no painel de tarefas do suplemento. 
  
-5. Dentro de **index.html**, substitua a marca `header` gerada pela seguinte marcação.
+6. Dentro de **index.html**, substitua a marca `header` gerada pela seguinte marcação.
  
     ```html
     <div id="content-header">
@@ -193,7 +197,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
     </div>
     ```
 
-6. Dentro de **index.html**, substitua a marca `main` gerada pela marcação a seguir e salve o arquivo.
+7. Dentro de **index.html**, substitua a marca `main` gerada pela marcação a seguir e salve o arquivo.
 
     ```html
     <div id="content-main">
@@ -206,7 +210,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
     </div>
     ```
 
-7. Abra o arquivo **src\index.js** para especificar o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
+8. Abra o arquivo **src\index.js** para especificar o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
 
     ```js
     'use strict';
@@ -234,7 +238,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
     })();
     ```
 
-8. Abra o arquivo **app.css** para especificar os estilos personalizados do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
+9. Abra o arquivo **app.css** para especificar os estilos personalizados do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
 
     ```css
     #content-header {

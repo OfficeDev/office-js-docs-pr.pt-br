@@ -36,13 +36,18 @@ Neste artigo, você passará pelo processo de criar um suplemento do OneNote usa
     ![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-onenote-jquery.png)
     
     Depois de concluir o assistente, o gerador criará o projeto e instalará os componentes do nó de suporte.
+    
+4. Navegue até a pasta raiz do projeto de aplicativo da Web.
 
+    ```bash
+    cd "My Office Add-in"
+    ```
 
 ## <a name="update-the-code"></a>Atualizar o código
 
 1. No editor de código, abra **index.html** na raiz do projeto. Esse arquivo contém o HTML que será renderizado no painel de tarefas do suplemento.
 
-2. Substitua o elemento `<main>` dentro do elemento `<body>` com a marcação a seguir e salve o arquivo. Isso adiciona uma área de texto e um botão usando [componentes do Office UI Fabric](https://developer.microsoft.com/en-us/fabric#/components).
+2. Substitua o elemento `<main>` dentro do elemento `<body>` com a marcação a seguir e salve o arquivo. Isso adiciona uma área de texto e um botão usando os [componentes do Office UI Fabric](https://developer.microsoft.com/en-us/fabric#/components).
 
     ```html
     <main class="ms-welcome__main">
@@ -142,11 +147,11 @@ Neste artigo, você passará pelo processo de criar um suplemento do OneNote usa
 
     <img alt="The Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
 
-3. No caixa de diálogo Carregar suplemento, navegue até **one-note-add-in-manifest.xml** na pasta do seu projeto e escolha **Carregar**. 
+3. Na caixa de diálogo Carregar suplemento, navegue até **one-note-add-in-manifest.xml** na pasta do projeto e escolha **Carregar**. 
 
-4. Na guia **Página Inicial**, escolha o botão **Exibir painel de tarefas** na faixa de opções. O painel de tarefas do suplemento abre em um iFrame perto da página do OneNote.
+4. Na guia **Início**, escolha o botão **Mostrar Painel de Tarefas** na faixa de opções. O painel de tarefas do suplemento abre em um iFrame perto da página do OneNote.
 
-5. Insira algum texto na área de texto e escolha **Adicionar Estrutura do Código**. O texto inserido é adicionado à pagina. 
+5. Insira algum texto na área de texto e escolha **Adicionar Estrutura de Tópicos**. O texto inserido é adiciona à pagina. 
 
     ![O suplemento do OneNote criado a partir desse passo a passo](../images/onenote-first-add-in.png)
 

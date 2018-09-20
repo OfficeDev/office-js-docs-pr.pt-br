@@ -2,12 +2,12 @@
 title: Criar e depurar Suplementos do Office no Visual Studio
 description: ''
 ms.date: 03/14/2018
-ms.openlocfilehash: 2e5c08a72ec97e26000d6ea7e53dd1d0f2c9e6dc
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 991b5cf31f05f18f315311a5735d3ed207a655c6
+ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945352"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "24016413"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Criar e depurar Suplementos do Office no Visual Studio
 
@@ -152,14 +152,14 @@ O Visual Studio compila o projeto e faz o seguinte:
 
 1. Cria uma cópia do arquivo de manifesto XML e a adiciona ao diretório _NomedoProjeto_\Output. O aplicativo host consome esta cópia quando você inicia o Visual Studio e depura o suplemento.
     
-2. Cria um conjunto de entradas de registro no computador que habilitam o suplemento a aparecer no aplicativo host.
+2. Cria um conjunto de entradas de registro no seu computador que permitem que o suplemento apareça no aplicativo host.
     
 3. Compila o projeto de aplicativo da Web e o implanta no servidor Web IIS local (http://localhost). 
     
 Depois, o Visual Studio faz o seguinte:
 
 
-1. Modifica o elemento [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation?view=office-js) do arquivo de manifesto XML, substituindo o token ~remoteAppUrl pelo endereço totalmente qualificado da página inicial (por exemplo, http://localhost/MyAgave.html).
+1. Modifica o elemento [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation?view=office-js) do arquivo XML de manifesto substituindo o token ~remoteAppUrl pelo endereço totalmente qualificado da página inicial (por exemplo, http://localhost/MyAgave.html).
     
 2. Inicia o projeto de aplicativo Web no IIS Express.
     
