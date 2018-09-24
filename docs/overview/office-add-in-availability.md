@@ -1,13 +1,13 @@
 ---
 title: Disponibilidade de host e plataforma para suplementos do Office
 description: Conjuntos de requisitos compatíveis com Excel, Word, Outlook, PowerPoint e OneNote.
-ms.date: 08/30/2018
-ms.openlocfilehash: 06fb073693bd8adca7d196f4361699ac3f54cee1
-ms.sourcegitcommit: 78b28ae88d53bfef3134c09cc4336a5a8722c70b
+ms.date: 09/19/2018
+ms.openlocfilehash: 09fb72c88bd0496c413f94b7ba4149192380d664
+ms.sourcegitcommit: e7e4d08569a01c69168bb005188e9a1e628304b9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "23797298"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "24967701"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilidade de host e plataforma para suplementos do Office
 
@@ -206,7 +206,8 @@ Se uma célula de tabela apresenta um asterisco (*), significa que estamos traba
       - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Caixa de correio 1.3</a><br>
       - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Caixa de correio 1.4</a><br>
       - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Caixa de correio 1.5</a><br>
-      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Caixa de correio 1.6</a></td>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Caixa de correio 1.6</a><br>
+      - <a href="https://docs.microsoft.com/javascript/office/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Caixa de correio 1.7</a></td>
     <td>Não disponível</td>
   </tr>
   <tr>
