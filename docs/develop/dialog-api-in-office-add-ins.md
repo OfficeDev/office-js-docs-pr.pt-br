@@ -2,12 +2,12 @@
 title: Use a API de Caixa de diálogo em seus Suplementos do Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 65ac55baa31f298ea5a17d789ba96772c8f5bb02
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 569aa6fe6a16b4dc158f0b4e0f5b457650a5a46a
+ms.sourcegitcommit: 470d8212b256275587e651abaa6f28beafebcab4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945601"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "24062134"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Use a API de Caixa de Diálogo em seus Suplementos do Office
 
@@ -47,7 +47,10 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 
 > [!NOTE]
 > - A URL usa o protocolo HTTP**S**. Isso é obrigatório para todas as páginas carregadas em uma caixa diálogo, não apenas para a primeira página carregada.
-> - O domínio é o mesmo que o domínio da página host, que pode ser a página em um painel de tarefas ou o [arquivo de função](https://docs.microsoft.com/javascript/office/manifest/functionfile?view=office-js) de um comando de suplemento. Isso é necessário: a página, o método o controlador ou outro recurso que é passado para o método `displayDialogAsync` deve estar no mesmo domínio que a página de host.
+> - O domínio do recurso da caixa de diálogo é o mesmo que o domínio da página host, que pode ser a página em um painel de tarefas ou o [arquivo de função](https://docs.microsoft.com/javascript/office/manifest/functionfile?view=office-js) de um comando de suplemento. Isto é necessário: a página, o método do controlador ou outro recurso que é passado para o método `displayDialogAsync` devem estar no mesmo domínio que a página de host.
+
+> [!IMPORTANT]
+> A página de host e os recursos da caixa de diálogo devem ter o mesmo domínio completo. Se você tentar passar `displayDialogAsync` um subdomínio do domínio do suplemento, ele não funcionará. O domínio completo, incluindo qualquer subdomínio, deve corresponder.
 
 Após o carregamento da primeira página (ou de outro recurso), um usuário pode ir para qualquer site (ou outro recurso) que usa HTTPS. Também é possível criar a primeira página para redirecionar imediatamente para outro site.
 
@@ -391,8 +394,8 @@ O que vem a seguir é um fluxo de autenticação simples e típico:
 
 Para ver suplementos de exemplo que usam esse padrão, confira:
 
-- [Inserir gráficos do Excel usando o Microsoft Graph em um Suplemento do PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart): O recurso que é inicialmente aberto na janela de diálogo é um método controlador que não tem seu próprio modo de exibição. Ele redireciona para a página de entrada do Office 365.
-- [Autenticação de Cliente do Office 365 de Suplementos do Office para AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth): O recurso que é inicialmente aberto na janela de diálogo é uma página.
+- [Inserir gráficos do Excel usando o Microsoft Graph em um Suplemento do PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart): o recurso que é inicialmente aberto na janela de diálogo é um método controlador que não tem seu próprio modo de exibição. Ele redireciona para a página de entrada do Office 365.
+- [Autenticação de Cliente do Office 365 de Suplementos do Office para AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth): o recurso que é inicialmente aberto na janela de diálogo é uma página.
 
 #### <a name="support-multiple-identity-providers"></a>Prestar suporte a vários provedores de identidade
 
@@ -415,7 +418,7 @@ Você pode usar as APIs de Caixa de Diálogo para gerenciar esse processo usando
 - A janela de diálogo envia o token de acesso à janela do host usando `messageParent` para enviar o token de acesso em formato de cadeia de caracteres ou armazenando o token de acesso em um local onde a janela do host poderá recuperá-lo. O token tem um limite de tempo, mas enquanto durar, a janela do host poder usá-lo para acessar recursos do usuário de forma direta, sem outras solicitações.
 
 Os exemplos a seguir usam as APIs de Caixa de diálogo para essa finalidade:
-- [Inserir gráficos do Excel usando o Microsoft Graph em um Suplemento do PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart): Armazena o token de acesso em um banco de dados.
+- [Inserir gráficos do Excel usando o Microsoft Graph em um Suplemento do PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart): armazena o token de acesso em um banco de dados.
 - [Suplemento do Office que usa o Serviço do OAuth.io para Simplificar o Acesso a Serviços Populares Online](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 Para mais informações sobre a autenticação e autorização em suplementos, consulte:

@@ -2,20 +2,14 @@
 title: Adicionar validação de dados a intervalos do Excel
 description: ''
 ms.date: 04/13/2018
-ms.openlocfilehash: fd40cab045da0472a060752651a27f0b26028b4b
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 7e545ccca01a12257f4083f19135a320b2693190
+ms.sourcegitcommit: e7e4d08569a01c69168bb005188e9a1e628304b9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944874"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "24967687"
 ---
 # <a name="add-data-validation-to-excel-ranges-preview"></a>Adicionar validação de dados a intervalos do Excel (versão prévia)
-
-> [!NOTE]
-> Enquanto as APIs de validação de dados estão em versão prévia, você deve carregar a versão beta da biblioteca JavaScript do Office para usá-las. A URL é https://appsforoffice.microsoft.com/lib/beta/hosted/office.js. Se você estiver usando o TypeScript ou se seu editor de código usa um arquivo de definição do tipo TypeScript para IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
-
-> [!NOTE]
-> Embora as APIs de validação de dados estejam em versão prévia, os links neste artigo para a referência da API não funcionarão. Enquanto isso, você pode usar a [referência da API do Excel de rascunho](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec/reference/excel).
 
 A Biblioteca JavaScript do Excel fornece APIs para permitir que seu suplemento adicione validação de dados automática a tabelas, colunas, linhas e outros intervalos em uma pasta de trabalho. Para entender os conceitos e a terminologia de validação de dados, consulte os artigos a seguir sobre como os usuários adicionam validação de dados por meio da interface do usuário do Excel:
 
@@ -42,7 +36,7 @@ Para adicionar validação de dados a um intervalo, seu código deve definir pro
 
 #### <a name="basic-and-datetime-validation-rule-types"></a>Tipos de regra de validação Básico e DateTime
 
-As três primeiras propriedades `DataValidationRule` (isto é, tipos de regra de validação) usam um objeto [BasicDataValidation](https://docs.microsoft.com/javascript/api/excel?view=office-js) como seu valor.
+As três primeiras propriedades `DataValidationRule` (isto é, tipos de regra de validação) usam um objeto [BasicDataValidation](https://docs.microsoft.com/javascript/api/excel) como seu valor.
 
 - `wholeNumber` – Requer um número inteiro, além de qualquer outra validação especificada pelo objeto `BasicDataValidation`.
 - `decimal` – Requer um número decimal, além de qualquer outra validação especificada pelo objeto `BasicDataValidation`.
