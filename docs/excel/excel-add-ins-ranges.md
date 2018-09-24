@@ -2,24 +2,24 @@
 title: Trabalhar com intervalos usando a API JavaScript do Excel
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 2760e3991951088edb8cd9c1aab7b242a8f105bb
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: dea015c028d58a708bb83f79fcbfebc3cf3bfc1e
+ms.sourcegitcommit: e7e4d08569a01c69168bb005188e9a1e628304b9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945775"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "24967708"
 ---
-# <a name="work-with-ranges-using-the-excel-javascript-api"></a><span data-ttu-id="d2ff3-102">Trabalhar com intervalos usando a API JavaScript do Excel</span><span class="sxs-lookup"><span data-stu-id="d2ff3-102">Work with ranges using the Excel JavaScript API</span></span>
+# <a name="work-with-ranges-using-the-excel-javascript-api"></a><span data-ttu-id="aecbe-102">Trabalhar com intervalos usando a API JavaScript do Excel</span><span class="sxs-lookup"><span data-stu-id="aecbe-102">Work with ranges using the Excel JavaScript API</span></span>
 
-<span data-ttu-id="d2ff3-103">Este artigo fornece exemplos de código que mostram como executar tarefas comuns com intervalos usando a API JavaScript do Excel.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-103">This article provides code samples that show how to perform common tasks with ranges using the Excel JavaScript API.</span></span> <span data-ttu-id="d2ff3-104">Para obter a lista completa de propriedades e métodos que o objeto **Range** suporta, confira [Objeto Range (API JavaScript para Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range?view=office-js).</span><span class="sxs-lookup"><span data-stu-id="d2ff3-104">For the complete list of properties and methods that the **Range** object supports, see [Range Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range?view=office-js).</span></span>
+<span data-ttu-id="aecbe-103">Este artigo fornece exemplos de código que mostram como executar tarefas comuns com intervalos usando a API JavaScript do Excel.</span><span class="sxs-lookup"><span data-stu-id="aecbe-103">This article provides code samples that show how to perform common tasks with ranges using the Excel JavaScript API.</span></span> <span data-ttu-id="aecbe-104">Para obter a lista completa de propriedades e métodos que o objeto **Range** suporta, confira [Objeto Range (API JavaScript para Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range).</span><span class="sxs-lookup"><span data-stu-id="aecbe-104">For the complete list of properties and methods that the **Range** object supports, see [Range Object (JavaScript API for Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range).</span></span>
 
-## <a name="get-a-range"></a><span data-ttu-id="d2ff3-105">Obter um intervalo</span><span class="sxs-lookup"><span data-stu-id="d2ff3-105">Get a range</span></span>
+## <a name="get-a-range"></a><span data-ttu-id="aecbe-105">Obter um intervalo</span><span class="sxs-lookup"><span data-stu-id="aecbe-105">Get a range</span></span>
 
-<span data-ttu-id="d2ff3-106">Os exemplos a seguir mostram diferentes maneiras de obter uma referência a um intervalo em uma planilha.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-106">The following examples show different ways to get a reference to a range within a worksheet.</span></span>
+<span data-ttu-id="aecbe-106">Os exemplos a seguir mostram diferentes maneiras de obter uma referência a um intervalo em uma planilha.</span><span class="sxs-lookup"><span data-stu-id="aecbe-106">The following examples show different ways to get a reference to a range within a worksheet.</span></span>
 
-### <a name="get-range-by-address"></a><span data-ttu-id="d2ff3-107">Obter intervalo por endereço</span><span class="sxs-lookup"><span data-stu-id="d2ff3-107">Get range by address</span></span>
+### <a name="get-range-by-address"></a><span data-ttu-id="aecbe-107">Obter intervalo por endereço</span><span class="sxs-lookup"><span data-stu-id="aecbe-107">Get range by address</span></span>
 
-<span data-ttu-id="d2ff3-108">O exemplo de código a seguir obtém o intervalo com o endereço **B2:B5** da planilha chamada **Amostra**, carrega sua propriedade **address** e grava uma mensagem no console.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-108">The following code sample gets the range with address **B2:B5** from the worksheet named **Sample**, loads its **address** property, and writes a message to the console.</span></span>
+<span data-ttu-id="aecbe-108">O exemplo de código a seguir obtém o intervalo com o endereço **B2:B5** da planilha chamada **Amostra**, carrega sua propriedade **address** e grava uma mensagem no console.</span><span class="sxs-lookup"><span data-stu-id="aecbe-108">The following code sample gets the range with address **B2:B5** from the worksheet named **Sample**, loads its **address** property, and writes a message to the console.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -34,9 +34,9 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-### <a name="get-range-by-name"></a><span data-ttu-id="d2ff3-109">Obter intervalo por nome</span><span class="sxs-lookup"><span data-stu-id="d2ff3-109">Get range by name</span></span>
+### <a name="get-range-by-name"></a><span data-ttu-id="aecbe-109">Obter intervalo por nome</span><span class="sxs-lookup"><span data-stu-id="aecbe-109">Get range by name</span></span>
 
-<span data-ttu-id="d2ff3-110">O exemplo de código a seguir obtém o intervalo chamado **MyRange** da planilha chamada **Amostra**, carrega sua propriedade **address** e grava uma mensagem no console.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-110">The following code sample gets the range named **MyRange** from the worksheet named **Sample**, loads its **address** property, and writes a message to the console.</span></span>
+<span data-ttu-id="aecbe-110">O exemplo de código a seguir obtém o intervalo chamado **MyRange** da planilha chamada **Amostra**, carrega sua propriedade **address** e grava uma mensagem no console.</span><span class="sxs-lookup"><span data-stu-id="aecbe-110">The following code sample gets the range named **MyRange** from the worksheet named **Sample**, loads its **address** property, and writes a message to the console.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -51,9 +51,9 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-### <a name="get-used-range"></a><span data-ttu-id="d2ff3-111">Obter intervalo usado</span><span class="sxs-lookup"><span data-stu-id="d2ff3-111">Get used range</span></span>
+### <a name="get-used-range"></a><span data-ttu-id="aecbe-111">Obter intervalo usado</span><span class="sxs-lookup"><span data-stu-id="aecbe-111">Get used range</span></span>
 
-<span data-ttu-id="d2ff3-112">O exemplo de código a seguir obtém o intervalo usado da planilha chamada **Amostra**, carrega sua propriedade **address** e grava uma mensagem no console.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-112">The following code sample gets the used range from the worksheet named **Sample**, loads its **address** property, and writes a message to the console.</span></span> <span data-ttu-id="d2ff3-113">O intervalo usado é o menor intervalo que abrange todas as células na planilha que têm um valor ou uma formatação atribuída a elas.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-113">The used range is the smallest range that encompasses any cells in the worksheet that have a value or formatting assigned to them.</span></span> <span data-ttu-id="d2ff3-114">Se a planilha inteira estiver em branco, o método **getUsedRange()** retornará um intervalo que consiste apenas na célula superior esquerda da planilha.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-114">If the entire worksheet is blank, the **getUsedRange()** method returns a range that consists of only the top-left cell in the worksheet.</span></span>
+<span data-ttu-id="aecbe-112">O exemplo de código a seguir obtém o intervalo usado da planilha chamada **Amostra**, carrega sua propriedade **address** e grava uma mensagem no console.</span><span class="sxs-lookup"><span data-stu-id="aecbe-112">The following code sample gets the used range from the worksheet named **Sample**, loads its **address** property, and writes a message to the console.</span></span> <span data-ttu-id="aecbe-113">O intervalo usado é o menor intervalo que abrange todas as células na planilha que têm um valor ou uma formatação atribuída a elas.</span><span class="sxs-lookup"><span data-stu-id="aecbe-113">The used range is the smallest range that encompasses any cells in the worksheet that have a value or formatting assigned to them.</span></span> <span data-ttu-id="aecbe-114">Se a planilha inteira estiver em branco, o método **getUsedRange()** retornará um intervalo que consiste apenas na célula superior esquerda da planilha.</span><span class="sxs-lookup"><span data-stu-id="aecbe-114">If the entire worksheet is blank, the **getUsedRange()** method returns a range that consists of only the top-left cell in the worksheet.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -68,9 +68,9 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-### <a name="get-entire-range"></a><span data-ttu-id="d2ff3-115">Obter intervalo inteiro</span><span class="sxs-lookup"><span data-stu-id="d2ff3-115">Get entire range</span></span>
+### <a name="get-entire-range"></a><span data-ttu-id="aecbe-115">Obter intervalo inteiro</span><span class="sxs-lookup"><span data-stu-id="aecbe-115">Get entire range</span></span>
 
-<span data-ttu-id="d2ff3-116">O exemplo de código a seguir obtém todo o intervalo da planilha chamada **Amostra**, carrega sua propriedade **address** e grava uma mensagem no console.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-116">The following code sample gets the entire worksheet range from the worksheet named **Sample**, loads its **address** property, and writes a message to the console.</span></span>
+<span data-ttu-id="aecbe-116">O exemplo de código a seguir obtém todo o intervalo da planilha chamada **Amostra**, carrega sua propriedade **address** e grava uma mensagem no console.</span><span class="sxs-lookup"><span data-stu-id="aecbe-116">The following code sample gets the entire worksheet range from the worksheet named **Sample**, loads its **address** property, and writes a message to the console.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -85,9 +85,9 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="insert-a-range-of-cells"></a><span data-ttu-id="d2ff3-117">Inserir um intervalo de células</span><span class="sxs-lookup"><span data-stu-id="d2ff3-117">Insert a range of cells</span></span>
+## <a name="insert-a-range-of-cells"></a><span data-ttu-id="aecbe-117">Inserir um intervalo de células</span><span class="sxs-lookup"><span data-stu-id="aecbe-117">Insert a range of cells</span></span>
 
-<span data-ttu-id="d2ff3-118">O exemplo de código a seguir insere um intervalo de células no local **B4:E4** e desloca outras células para baixo a fim de fornecer espaço para as novas células.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-118">The following code sample inserts a range of cells in location **B4:E4** and shifts other cells down to provide space for the new cells.</span></span>
+<span data-ttu-id="aecbe-118">O exemplo de código a seguir insere um intervalo de células no local **B4:E4** e desloca outras células para baixo a fim de fornecer espaço para as novas células.</span><span class="sxs-lookup"><span data-stu-id="aecbe-118">The following code sample inserts a range of cells in location **B4:E4** and shifts other cells down to provide space for the new cells.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -100,17 +100,17 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="d2ff3-119">**Dados antes da inserção do intervalo**</span><span class="sxs-lookup"><span data-stu-id="d2ff3-119">**Data before range is inserted**</span></span>
+<span data-ttu-id="aecbe-119">**Dados antes da inserção do intervalo**</span><span class="sxs-lookup"><span data-stu-id="aecbe-119">**Data before range is inserted**</span></span>
 
 ![Dados no Excel antes da inserção do intervalo](../images/excel-ranges-start.png)
 
-<span data-ttu-id="d2ff3-121">**Dados após a inserção do intervalo**</span><span class="sxs-lookup"><span data-stu-id="d2ff3-121">**Data after range is inserted**</span></span>
+<span data-ttu-id="aecbe-121">**Dados após a inserção do intervalo**</span><span class="sxs-lookup"><span data-stu-id="aecbe-121">**Data after range is inserted**</span></span>
 
 ![Dados no Excel após a inserção do intervalo](../images/excel-ranges-after-insert.png)
 
-## <a name="clear-a-range-of-cells"></a><span data-ttu-id="d2ff3-123">Limpar um intervalo de células</span><span class="sxs-lookup"><span data-stu-id="d2ff3-123">Clear a range of cells</span></span>
+## <a name="clear-a-range-of-cells"></a><span data-ttu-id="aecbe-123">Limpar um intervalo de células</span><span class="sxs-lookup"><span data-stu-id="aecbe-123">Clear a range of cells</span></span>
 
-<span data-ttu-id="d2ff3-124">O exemplo de código a seguir limpa todo o conteúdo e a formatação das células no intervalo **E2:E5**.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-124">The following code sample clears all contents and formatting of cells in the range **E2:E5**.</span></span>  
+<span data-ttu-id="aecbe-124">O exemplo de código a seguir limpa todo o conteúdo e a formatação das células no intervalo **E2:E5**.</span><span class="sxs-lookup"><span data-stu-id="aecbe-124">The following code sample clears all contents and formatting of cells in the range **E2:E5**.</span></span>  
 
 ```js
 Excel.run(function (context) {
@@ -123,17 +123,17 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="d2ff3-125">**Dados antes da limpeza do intervalo**</span><span class="sxs-lookup"><span data-stu-id="d2ff3-125">**Data before range is cleared**</span></span>
+<span data-ttu-id="aecbe-125">**Dados antes da limpeza do intervalo**</span><span class="sxs-lookup"><span data-stu-id="aecbe-125">**Data before range is cleared**</span></span>
 
 ![Dados no Excel antes da limpeza do intervalo](../images/excel-ranges-start.png)
 
-<span data-ttu-id="d2ff3-127">**Dados após a limpeza do intervalo**</span><span class="sxs-lookup"><span data-stu-id="d2ff3-127">**Data after range is cleared**</span></span>
+<span data-ttu-id="aecbe-127">**Dados após a limpeza do intervalo**</span><span class="sxs-lookup"><span data-stu-id="aecbe-127">**Data after range is cleared**</span></span>
 
 ![Dados no Excel após a limpeza do intervalo](../images/excel-ranges-after-clear.png)
 
-## <a name="delete-a-range-of-cells"></a><span data-ttu-id="d2ff3-129">Excluir um intervalo de células</span><span class="sxs-lookup"><span data-stu-id="d2ff3-129">Delete a range of cells</span></span>
+## <a name="delete-a-range-of-cells"></a><span data-ttu-id="aecbe-129">Excluir um intervalo de células</span><span class="sxs-lookup"><span data-stu-id="aecbe-129">Delete a range of cells</span></span>
 
-<span data-ttu-id="d2ff3-130">O exemplo de código a seguir exclui as células no intervalo **B4:E4** e desloca outras células para cima a fim de preencher o espaço deixado pelas células excluídas.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-130">The following code sample deletes the cells in the range **B4:E4** and shift other cells up to fill the space that was vacated by the deleted cells.</span></span>
+<span data-ttu-id="aecbe-130">O exemplo de código a seguir exclui as células no intervalo **B4:E4** e desloca outras células para cima a fim de preencher o espaço deixado pelas células excluídas.</span><span class="sxs-lookup"><span data-stu-id="aecbe-130">The following code sample deletes the cells in the range **B4:E4** and shift other cells up to fill the space that was vacated by the deleted cells.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -146,17 +146,17 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="d2ff3-131">**Dados antes da exclusão do intervalo**</span><span class="sxs-lookup"><span data-stu-id="d2ff3-131">**Data before range is deleted**</span></span>
+<span data-ttu-id="aecbe-131">**Dados antes da exclusão do intervalo**</span><span class="sxs-lookup"><span data-stu-id="aecbe-131">**Data before range is deleted**</span></span>
 
 ![Dados no Excel antes da exclusão do intervalo](../images/excel-ranges-start.png)
 
-<span data-ttu-id="d2ff3-133">**Dados após a exclusão do intervalo**</span><span class="sxs-lookup"><span data-stu-id="d2ff3-133">**Data after range is deleted**</span></span>
+<span data-ttu-id="aecbe-133">**Dados após a exclusão do intervalo**</span><span class="sxs-lookup"><span data-stu-id="aecbe-133">**Data after range is deleted**</span></span>
 
 ![Dados no Excel após a exclusão do intervalo](../images/excel-ranges-after-delete.png)
 
-## <a name="set-the-selected-range"></a><span data-ttu-id="d2ff3-135">Definir o intervalo selecionado</span><span class="sxs-lookup"><span data-stu-id="d2ff3-135">Set the selected range</span></span>
+## <a name="set-the-selected-range"></a><span data-ttu-id="aecbe-135">Definir o intervalo selecionado</span><span class="sxs-lookup"><span data-stu-id="aecbe-135">Set the selected range</span></span>
 
-<span data-ttu-id="d2ff3-136">O exemplo de código a seguir seleciona o intervalo **B2:E6** na planilha ativa.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-136">The following code sample selects the range **B2:E6** in the active worksheet.</span></span>
+<span data-ttu-id="aecbe-136">O exemplo de código a seguir seleciona o intervalo **B2:E6** na planilha ativa.</span><span class="sxs-lookup"><span data-stu-id="aecbe-136">The following code sample selects the range **B2:E6** in the active worksheet.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -169,13 +169,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="d2ff3-137">**Intervalo selecionado B2:E6**</span><span class="sxs-lookup"><span data-stu-id="d2ff3-137">**Selected range B2:E6**</span></span>
+<span data-ttu-id="aecbe-137">**Intervalo selecionado B2:E6**</span><span class="sxs-lookup"><span data-stu-id="aecbe-137">**Selected range B2:E6**</span></span>
 
 ![Intervalo selecionado no Excel](../images/excel-ranges-set-selection.png)
 
-## <a name="get-the-selected-range"></a><span data-ttu-id="d2ff3-139">Obter o intervalo selecionado</span><span class="sxs-lookup"><span data-stu-id="d2ff3-139">Get the selected range</span></span>
+## <a name="get-the-selected-range"></a><span data-ttu-id="aecbe-139">Obter o intervalo selecionado</span><span class="sxs-lookup"><span data-stu-id="aecbe-139">Get the selected range</span></span>
 
-<span data-ttu-id="d2ff3-140">O exemplo de código a seguir obtém o intervalo selecionado, carrega sua propriedade **address** e grava uma mensagem no console.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-140">The following code sample gets the selected range, loads its **address** property, and writes a message to the console.</span></span> 
+<span data-ttu-id="aecbe-140">O exemplo de código a seguir obtém o intervalo selecionado, carrega sua propriedade **address** e grava uma mensagem no console.</span><span class="sxs-lookup"><span data-stu-id="aecbe-140">The following code sample gets the selected range, loads its **address** property, and writes a message to the console.</span></span> 
 
 ```js
 Excel.run(function (context) {
@@ -189,13 +189,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="set-values-or-formulas"></a><span data-ttu-id="d2ff3-141">Definir valores ou fórmulas</span><span class="sxs-lookup"><span data-stu-id="d2ff3-141">Set values or formulas</span></span>
+## <a name="set-values-or-formulas"></a><span data-ttu-id="aecbe-141">Definir valores ou fórmulas</span><span class="sxs-lookup"><span data-stu-id="aecbe-141">Set values or formulas</span></span>
 
-<span data-ttu-id="d2ff3-142">Os exemplos a seguir mostram como definir valores e fórmulas para uma única célula ou um intervalo de células.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-142">The following examples show how to set values and formulas for a single cell or a range of cells.</span></span>
+<span data-ttu-id="aecbe-142">Os exemplos a seguir mostram como definir valores e fórmulas para uma única célula ou um intervalo de células.</span><span class="sxs-lookup"><span data-stu-id="aecbe-142">The following examples show how to set values and formulas for a single cell or a range of cells.</span></span>
 
-### <a name="set-value-for-a-single-cell"></a><span data-ttu-id="d2ff3-143">Definir valor para uma única célula</span><span class="sxs-lookup"><span data-stu-id="d2ff3-143">Set value for a single cell</span></span>
+### <a name="set-value-for-a-single-cell"></a><span data-ttu-id="aecbe-143">Definir valor para uma única célula</span><span class="sxs-lookup"><span data-stu-id="aecbe-143">Set value for a single cell</span></span>
 
-<span data-ttu-id="d2ff3-144">O exemplo de código a seguir define o valor da célula **C3** como "5" e, em seguida, define a largura das colunas para melhor ajustar os dados.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-144">The following code sample sets the value of cell **C3** to "5" and then sets the width of the columns to best fit the data.</span></span>
+<span data-ttu-id="aecbe-144">O exemplo de código a seguir define o valor da célula **C3** como "5" e, em seguida, define a largura das colunas para melhor ajustar os dados.</span><span class="sxs-lookup"><span data-stu-id="aecbe-144">The following code sample sets the value of cell **C3** to "5" and then sets the width of the columns to best fit the data.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -209,17 +209,17 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="d2ff3-145">**Dados antes da atualização do valor da célula**</span><span class="sxs-lookup"><span data-stu-id="d2ff3-145">**Data before cell value is updated**</span></span>
+<span data-ttu-id="aecbe-145">**Dados antes da atualização do valor da célula**</span><span class="sxs-lookup"><span data-stu-id="aecbe-145">**Data before cell value is updated**</span></span>
 
 ![Dados no Excel antes da atualização do valor da célula](../images/excel-ranges-set-start.png)
 
-<span data-ttu-id="d2ff3-147">**Dados após a atualização do valor da célula**</span><span class="sxs-lookup"><span data-stu-id="d2ff3-147">**Data after cell value is updated**</span></span>
+<span data-ttu-id="aecbe-147">**Dados após a atualização do valor da célula**</span><span class="sxs-lookup"><span data-stu-id="aecbe-147">**Data after cell value is updated**</span></span>
 
 ![Dados no Excel após a atualização do valor da célula](../images/excel-ranges-set-cell-value.png)
 
-### <a name="set-values-for-a-range-of-cells"></a><span data-ttu-id="d2ff3-149">Definir valores para um intervalo de células</span><span class="sxs-lookup"><span data-stu-id="d2ff3-149">Set values for a range of cells</span></span>
+### <a name="set-values-for-a-range-of-cells"></a><span data-ttu-id="aecbe-149">Definir valores para um intervalo de células</span><span class="sxs-lookup"><span data-stu-id="aecbe-149">Set values for a range of cells</span></span>
 
-<span data-ttu-id="d2ff3-150">O exemplo de código a seguir define valores das células no intervalo **B5:D5** e, em seguida, define a largura das colunas para melhor ajustar os dados.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-150">The following code sample sets values for the cells in the range **B5:D5** and then sets the width of the columns to best fit the data.</span></span>
+<span data-ttu-id="aecbe-150">O exemplo de código a seguir define valores das células no intervalo **B5:D5** e, em seguida, define a largura das colunas para melhor ajustar os dados.</span><span class="sxs-lookup"><span data-stu-id="aecbe-150">The following code sample sets values for the cells in the range **B5:D5** and then sets the width of the columns to best fit the data.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -237,17 +237,17 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="d2ff3-151">**Dados antes da atualização dos valores da célula**</span><span class="sxs-lookup"><span data-stu-id="d2ff3-151">**Data before cell values are updated**</span></span>
+<span data-ttu-id="aecbe-151">**Dados antes da atualização dos valores da célula**</span><span class="sxs-lookup"><span data-stu-id="aecbe-151">**Data before cell values are updated**</span></span>
 
 ![Dados no Excel antes da atualização dos valores da célula](../images/excel-ranges-set-start.png)
 
-<span data-ttu-id="d2ff3-153">**Dados após a atualização dos valores da célula**</span><span class="sxs-lookup"><span data-stu-id="d2ff3-153">**Data after cell values are updated**</span></span>
+<span data-ttu-id="aecbe-153">**Dados após a atualização dos valores da célula**</span><span class="sxs-lookup"><span data-stu-id="aecbe-153">**Data after cell values are updated**</span></span>
 
 ![Dados no Excel após a atualização dos valores da célula](../images/excel-ranges-set-cell-values.png)
 
-### <a name="set-formula-for-a-single-cell"></a><span data-ttu-id="d2ff3-155">Definir fórmula para uma única célula</span><span class="sxs-lookup"><span data-stu-id="d2ff3-155">Set formula for a single cell</span></span>
+### <a name="set-formula-for-a-single-cell"></a><span data-ttu-id="aecbe-155">Definir fórmula para uma única célula</span><span class="sxs-lookup"><span data-stu-id="aecbe-155">Set formula for a single cell</span></span>
 
-<span data-ttu-id="d2ff3-156">O exemplo de código a seguir define uma fórmula para a célula **E3** e, em seguida, define a largura das colunas para melhor ajustar os dados.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-156">The following code sample sets a formula for cell **E3** and then sets the width of the columns to best fit the data.</span></span>
+<span data-ttu-id="aecbe-156">O exemplo de código a seguir define uma fórmula para a célula **E3** e, em seguida, define a largura das colunas para melhor ajustar os dados.</span><span class="sxs-lookup"><span data-stu-id="aecbe-156">The following code sample sets a formula for cell **E3** and then sets the width of the columns to best fit the data.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -261,17 +261,17 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="d2ff3-157">**Dados antes da definição da fórmula da célula**</span><span class="sxs-lookup"><span data-stu-id="d2ff3-157">**Data before cell formula is set**</span></span>
+<span data-ttu-id="aecbe-157">**Dados antes da definição da fórmula da célula**</span><span class="sxs-lookup"><span data-stu-id="aecbe-157">**Data before cell formula is set**</span></span>
 
 ![Dados no Excel antes da definição da fórmula da célula](../images/excel-ranges-start-set-formula.png)
 
-<span data-ttu-id="d2ff3-159">**Dados após a definição da fórmula da célula**</span><span class="sxs-lookup"><span data-stu-id="d2ff3-159">**Data after cell formula is set**</span></span>
+<span data-ttu-id="aecbe-159">**Dados após a definição da fórmula da célula**</span><span class="sxs-lookup"><span data-stu-id="aecbe-159">**Data after cell formula is set**</span></span>
 
 ![Dados no Excel após a definição da fórmula da célula](../images/excel-ranges-set-formula.png)
 
-### <a name="set-formulas-for-a-range-of-cells"></a><span data-ttu-id="d2ff3-161">Definir fórmulas para um intervalo de células</span><span class="sxs-lookup"><span data-stu-id="d2ff3-161">Set formulas for a range of cells</span></span>
+### <a name="set-formulas-for-a-range-of-cells"></a><span data-ttu-id="aecbe-161">Definir fórmulas para um intervalo de células</span><span class="sxs-lookup"><span data-stu-id="aecbe-161">Set formulas for a range of cells</span></span>
 
-<span data-ttu-id="d2ff3-162">O exemplo de código a seguir define fórmulas para células no intervalo **E2:E6** e, em seguida, define a largura das colunas para melhor ajustar os dados.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-162">The following code sample sets formulas for cells in the range **E2:E6** and then sets the width of the columns to best fit the data.</span></span>
+<span data-ttu-id="aecbe-162">O exemplo de código a seguir define fórmulas para células no intervalo **E2:E6** e, em seguida, define a largura das colunas para melhor ajustar os dados.</span><span class="sxs-lookup"><span data-stu-id="aecbe-162">The following code sample sets formulas for cells in the range **E2:E6** and then sets the width of the columns to best fit the data.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -292,21 +292,21 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="d2ff3-163">**Dados antes da definição das fórmulas da célula**</span><span class="sxs-lookup"><span data-stu-id="d2ff3-163">**Data before cell formulas are set**</span></span>
+<span data-ttu-id="aecbe-163">**Dados antes da definição das fórmulas da célula**</span><span class="sxs-lookup"><span data-stu-id="aecbe-163">**Data before cell formulas are set**</span></span>
 
 ![Dados no Excel antes da definição das fórmulas da célula](../images/excel-ranges-start-set-formula.png)
 
-<span data-ttu-id="d2ff3-165">**Dados após a definição das fórmulas da célula**</span><span class="sxs-lookup"><span data-stu-id="d2ff3-165">**Data after cell formulas are set**</span></span>
+<span data-ttu-id="aecbe-165">**Dados após a definição das fórmulas da célula**</span><span class="sxs-lookup"><span data-stu-id="aecbe-165">**Data after cell formulas are set**</span></span>
 
 ![Dados no Excel após a definição das fórmulas da célula](../images/excel-ranges-set-formulas.png)
 
-## <a name="get-values-text-or-formulas"></a><span data-ttu-id="d2ff3-167">Obter valores, texto ou fórmulas</span><span class="sxs-lookup"><span data-stu-id="d2ff3-167">Get values, text, or formulas</span></span>
+## <a name="get-values-text-or-formulas"></a><span data-ttu-id="aecbe-167">Obter valores, texto ou fórmulas</span><span class="sxs-lookup"><span data-stu-id="aecbe-167">Get values, text, or formulas</span></span>
 
-<span data-ttu-id="d2ff3-168">Estes exemplos mostram como obter valores, texto e fórmulas de um intervalo de células.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-168">These examples show how to get values, text, and formulas from a range of cells.</span></span>
+<span data-ttu-id="aecbe-168">Estes exemplos mostram como obter valores, texto e fórmulas de um intervalo de células.</span><span class="sxs-lookup"><span data-stu-id="aecbe-168">These examples show how to get values, text, and formulas from a range of cells.</span></span>
 
-### <a name="get-values-from-a-range-of-cells"></a><span data-ttu-id="d2ff3-169">Obter valores de um intervalo de células</span><span class="sxs-lookup"><span data-stu-id="d2ff3-169">Get values from a range of cells</span></span>
+### <a name="get-values-from-a-range-of-cells"></a><span data-ttu-id="aecbe-169">Obter valores de um intervalo de células</span><span class="sxs-lookup"><span data-stu-id="aecbe-169">Get values from a range of cells</span></span>
 
-<span data-ttu-id="d2ff3-170">O exemplo de código a seguir obtém o intervalo **B2:E6**, carrega sua propriedade **values** e grava os valores no console.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-170">The following code sample gets the range **B2:E6**, loads its **values** property, and writes the values to the console.</span></span> <span data-ttu-id="d2ff3-171">A propriedade **values** de um intervalo especifica os novos valores brutos que as células contêm.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-171">The **values** property of a range specifies the raw values that the cells contain.</span></span> <span data-ttu-id="d2ff3-172">Mesmo que algumas células em um intervalo contenham fórmulas, a propriedade **values** do intervalo especifica os valores brutos para essas células, não alguma das fórmulas.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-172">Even if some cells in a range contain formulas, the **values** property of the range specifies the raw values for those cells, not any of the formulas.</span></span>
+<span data-ttu-id="aecbe-170">O exemplo de código a seguir obtém o intervalo **B2:E6**, carrega sua propriedade **values** e grava os valores no console.</span><span class="sxs-lookup"><span data-stu-id="aecbe-170">The following code sample gets the range **B2:E6**, loads its **values** property, and writes the values to the console.</span></span> <span data-ttu-id="aecbe-171">A propriedade **values** de um intervalo especifica os novos valores brutos que as células contêm.</span><span class="sxs-lookup"><span data-stu-id="aecbe-171">The **values** property of a range specifies the raw values that the cells contain.</span></span> <span data-ttu-id="aecbe-172">Mesmo que algumas células em um intervalo contenham fórmulas, a propriedade **values** do intervalo especifica os valores brutos para essas células, não alguma das fórmulas.</span><span class="sxs-lookup"><span data-stu-id="aecbe-172">Even if some cells in a range contain formulas, the **values** property of the range specifies the raw values for those cells, not any of the formulas.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -321,11 +321,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="d2ff3-173">**Dados no intervalo (valores na coluna E são um resultado de fórmulas)**</span><span class="sxs-lookup"><span data-stu-id="d2ff3-173">**Data in range (values in column E are a result of formulas)**</span></span>
+<span data-ttu-id="aecbe-173">**Dados no intervalo (valores na coluna E são um resultado de fórmulas)**</span><span class="sxs-lookup"><span data-stu-id="aecbe-173">**Data in range (values in column E are a result of formulas)**</span></span>
 
 ![Dados no Excel após a definição das fórmulas da célula](../images/excel-ranges-set-formulas.png)
 
-<span data-ttu-id="d2ff3-175">**range.values (conforme registrado em log no console pelo exemplo de código acima)**</span><span class="sxs-lookup"><span data-stu-id="d2ff3-175">**range.values (as logged to the console by the code sample above)**</span></span>
+<span data-ttu-id="aecbe-175">**range.values (conforme registrado em log no console pelo exemplo de código acima)**</span><span class="sxs-lookup"><span data-stu-id="aecbe-175">**range.values (as logged to the console by the code sample above)**</span></span>
 
 ```json
 [
@@ -362,9 +362,9 @@ Excel.run(function (context) {
 ]
 ```
 
-### <a name="get-text-from-a-range-of-cells"></a><span data-ttu-id="d2ff3-176">Obter texto de um intervalo de células</span><span class="sxs-lookup"><span data-stu-id="d2ff3-176">Get text from a range of cells</span></span>
+### <a name="get-text-from-a-range-of-cells"></a><span data-ttu-id="aecbe-176">Obter texto de um intervalo de células</span><span class="sxs-lookup"><span data-stu-id="aecbe-176">Get text from a range of cells</span></span>
 
-<span data-ttu-id="d2ff3-177">O exemplo de código a seguir obtém o intervalo **B2:E6**, carrega sua propriedade **text** e o grava no console.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-177">The following code sample gets the range **B2:E6**, loads its **text** property, and writes it to the console.</span></span>  <span data-ttu-id="d2ff3-178">A propriedade **text** de um intervalo especifica os valores de exibição para as células no intervalo.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-178">The **text** property of a range specifies the display values for cells in the range.</span></span> <span data-ttu-id="d2ff3-179">Mesmo que algumas células em um intervalo contenham fórmulas, a propriedade **text** do intervalo especifica os valores de exibição para essas células, não alguma das fórmulas.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-179">Even if some cells in a range contain formulas, the **text** property of the range specifies the display values for those cells, not any of the formulas.</span></span>
+<span data-ttu-id="aecbe-177">O exemplo de código a seguir obtém o intervalo **B2:E6**, carrega sua propriedade **text** e o grava no console.</span><span class="sxs-lookup"><span data-stu-id="aecbe-177">The following code sample gets the range **B2:E6**, loads its **text** property, and writes it to the console.</span></span>  <span data-ttu-id="aecbe-178">A propriedade **text** de um intervalo especifica os valores de exibição para as células no intervalo.</span><span class="sxs-lookup"><span data-stu-id="aecbe-178">The **text** property of a range specifies the display values for cells in the range.</span></span> <span data-ttu-id="aecbe-179">Mesmo que algumas células em um intervalo contenham fórmulas, a propriedade **text** do intervalo especifica os valores de exibição para essas células, não alguma das fórmulas.</span><span class="sxs-lookup"><span data-stu-id="aecbe-179">Even if some cells in a range contain formulas, the **text** property of the range specifies the display values for those cells, not any of the formulas.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -379,11 +379,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="d2ff3-180">**Dados no intervalo (valores na coluna E são um resultado de fórmulas)**</span><span class="sxs-lookup"><span data-stu-id="d2ff3-180">**Data in range (values in column E are a result of formulas)**</span></span>
+<span data-ttu-id="aecbe-180">**Dados no intervalo (valores na coluna E são um resultado de fórmulas)**</span><span class="sxs-lookup"><span data-stu-id="aecbe-180">**Data in range (values in column E are a result of formulas)**</span></span>
 
 ![Dados no Excel após a definição das fórmulas da célula](../images/excel-ranges-set-formulas.png)
 
-<span data-ttu-id="d2ff3-182">**range.text (conforme registrado em log no console pelo exemplo de código acima)**</span><span class="sxs-lookup"><span data-stu-id="d2ff3-182">**range.text (as logged to the console by the code sample above)**</span></span>
+<span data-ttu-id="aecbe-182">**range.text (conforme registrado em log no console pelo exemplo de código acima)**</span><span class="sxs-lookup"><span data-stu-id="aecbe-182">**range.text (as logged to the console by the code sample above)**</span></span>
 
 ```json
 [
@@ -420,9 +420,9 @@ Excel.run(function (context) {
 ]
 ```
 
-### <a name="get-formulas-from-a-range-of-cells"></a><span data-ttu-id="d2ff3-183">Obter fórmulas de um intervalo de células</span><span class="sxs-lookup"><span data-stu-id="d2ff3-183">Get formulas from a range of cells</span></span>
+### <a name="get-formulas-from-a-range-of-cells"></a><span data-ttu-id="aecbe-183">Obter fórmulas de um intervalo de células</span><span class="sxs-lookup"><span data-stu-id="aecbe-183">Get formulas from a range of cells</span></span>
 
-<span data-ttu-id="d2ff3-184">O exemplo de código a seguir obtém o intervalo **B2:E6**, carrega sua propriedade **formulas** e o grava no console.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-184">The following code sample gets the range **B2:E6**, loads its **formulas** property, and writes it to the console.</span></span>  <span data-ttu-id="d2ff3-185">A propriedade **formulas** de um intervalo especifica as fórmulas para células no intervalo que contêm fórmulas e os valores brutos para células no intervalo que não contêm fórmulas.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-185">The **formulas** property of a range specifies the formulas for cells in the range that contain formulas and the raw values for cells in the range that do not contain formulas.</span></span>
+<span data-ttu-id="aecbe-184">O exemplo de código a seguir obtém o intervalo **B2:E6**, carrega sua propriedade **formulas** e o grava no console.</span><span class="sxs-lookup"><span data-stu-id="aecbe-184">The following code sample gets the range **B2:E6**, loads its **formulas** property, and writes it to the console.</span></span>  <span data-ttu-id="aecbe-185">A propriedade **formulas** de um intervalo especifica as fórmulas para células no intervalo que contêm fórmulas e os valores brutos para células no intervalo que não contêm fórmulas.</span><span class="sxs-lookup"><span data-stu-id="aecbe-185">The **formulas** property of a range specifies the formulas for cells in the range that contain formulas and the raw values for cells in the range that do not contain formulas.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -437,11 +437,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="d2ff3-186">**Dados no intervalo (valores na coluna E são um resultado de fórmulas)**</span><span class="sxs-lookup"><span data-stu-id="d2ff3-186">**Data in range (values in column E are a result of formulas)**</span></span>
+<span data-ttu-id="aecbe-186">**Dados no intervalo (valores na coluna E são um resultado de fórmulas)**</span><span class="sxs-lookup"><span data-stu-id="aecbe-186">**Data in range (values in column E are a result of formulas)**</span></span>
 
 ![Dados no Excel após a definição das fórmulas da célula](../images/excel-ranges-set-formulas.png)
 
-<span data-ttu-id="d2ff3-188">**range.formulas (conforme registrado em log no console pelo exemplo de código acima)**</span><span class="sxs-lookup"><span data-stu-id="d2ff3-188">**range.formulas (as logged to the console by the code sample above)**</span></span>
+<span data-ttu-id="aecbe-188">**range.formulas (conforme registrado em log no console pelo exemplo de código acima)**</span><span class="sxs-lookup"><span data-stu-id="aecbe-188">**range.formulas (as logged to the console by the code sample above)**</span></span>
 
 ```json
 [
@@ -478,13 +478,13 @@ Excel.run(function (context) {
 ]
 ```
 
-## <a name="set-range-format"></a><span data-ttu-id="d2ff3-189">Definir formato do intervalo</span><span class="sxs-lookup"><span data-stu-id="d2ff3-189">Set range format</span></span>
+## <a name="set-range-format"></a><span data-ttu-id="aecbe-189">Definir formato do intervalo</span><span class="sxs-lookup"><span data-stu-id="aecbe-189">Set range format</span></span>
 
-<span data-ttu-id="d2ff3-190">Os exemplos a seguir mostram como definir a cor da fonte, a cor de preenchimento e o formato de número para células em um intervalo.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-190">The following examples show how to set font color, fill color, and number format for cells in a range.</span></span>
+<span data-ttu-id="aecbe-190">Os exemplos a seguir mostram como definir a cor da fonte, a cor de preenchimento e o formato de número para células em um intervalo.</span><span class="sxs-lookup"><span data-stu-id="aecbe-190">The following examples show how to set font color, fill color, and number format for cells in a range.</span></span>
 
-### <a name="set-font-color-and-fill-color"></a><span data-ttu-id="d2ff3-191">Definir cor da fonte e cor de preenchimento</span><span class="sxs-lookup"><span data-stu-id="d2ff3-191">Set font color and fill color</span></span>
+### <a name="set-font-color-and-fill-color"></a><span data-ttu-id="aecbe-191">Definir cor da fonte e cor de preenchimento</span><span class="sxs-lookup"><span data-stu-id="aecbe-191">Set font color and fill color</span></span>
 
-<span data-ttu-id="d2ff3-192">O exemplo de código a seguir define a cor da fonte e a cor de preenchimento para células no intervalo **B2:E2**.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-192">The following code sample sets the font color and fill color for cells in range **B2:E2**.</span></span>
+<span data-ttu-id="aecbe-192">O exemplo de código a seguir define a cor da fonte e a cor de preenchimento para células no intervalo **B2:E2**.</span><span class="sxs-lookup"><span data-stu-id="aecbe-192">The following code sample sets the font color and fill color for cells in range **B2:E2**.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -498,17 +498,17 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="d2ff3-193">**Dados no intervalo antes da definição da cor da fonte e da cor de preenchimento**</span><span class="sxs-lookup"><span data-stu-id="d2ff3-193">**Data in range before font color and fill color are set**</span></span>
+<span data-ttu-id="aecbe-193">**Dados no intervalo antes da definição da cor da fonte e da cor de preenchimento**</span><span class="sxs-lookup"><span data-stu-id="aecbe-193">**Data in range before font color and fill color are set**</span></span>
 
 ![Dados no Excel antes da definição do formato](../images/excel-ranges-format-before.png)
 
-<span data-ttu-id="d2ff3-195">**Dados no intervalo após a definição da cor da fonte e da cor de preenchimento**</span><span class="sxs-lookup"><span data-stu-id="d2ff3-195">**Data in range after font color and fill color are set**</span></span>
+<span data-ttu-id="aecbe-195">**Dados no intervalo após a definição da cor da fonte e da cor de preenchimento**</span><span class="sxs-lookup"><span data-stu-id="aecbe-195">**Data in range after font color and fill color are set**</span></span>
 
 ![Dados no Excel após a definição do formato](../images/excel-ranges-format-font-and-fill.png)
 
-### <a name="set-number-format"></a><span data-ttu-id="d2ff3-197">Definir formato de número</span><span class="sxs-lookup"><span data-stu-id="d2ff3-197">Set number format</span></span>
+### <a name="set-number-format"></a><span data-ttu-id="aecbe-197">Definir formato de número</span><span class="sxs-lookup"><span data-stu-id="aecbe-197">Set number format</span></span>
 
-<span data-ttu-id="d2ff3-198">O exemplo de código a seguir define o formato de número para as células no intervalo **D3:E5**.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-198">The following code sample sets the number format for the cells in range **D3:E5**.</span></span>
+<span data-ttu-id="aecbe-198">O exemplo de código a seguir define o formato de número para as células no intervalo **D3:E5**.</span><span class="sxs-lookup"><span data-stu-id="aecbe-198">The following code sample sets the number format for the cells in range **D3:E5**.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -527,21 +527,21 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="d2ff3-199">**Dados no intervalo antes da definição do formato de número**</span><span class="sxs-lookup"><span data-stu-id="d2ff3-199">**Data in range before number format is set**</span></span>
+<span data-ttu-id="aecbe-199">**Dados no intervalo antes da definição do formato de número**</span><span class="sxs-lookup"><span data-stu-id="aecbe-199">**Data in range before number format is set**</span></span>
 
 ![Dados no Excel antes da definição do formato](../images/excel-ranges-format-font-and-fill.png)
 
-<span data-ttu-id="d2ff3-201">**Dados no intervalo após a definição do formato de número**</span><span class="sxs-lookup"><span data-stu-id="d2ff3-201">**Data in range after number format is set**</span></span>
+<span data-ttu-id="aecbe-201">**Dados no intervalo após a definição do formato de número**</span><span class="sxs-lookup"><span data-stu-id="aecbe-201">**Data in range after number format is set**</span></span>
 
 ![Dados no Excel após a definição do formato](../images/excel-ranges-format-numbers.png)
 
-## <a name="copy-and-paste"></a><span data-ttu-id="d2ff3-203">Copiar e colar</span><span class="sxs-lookup"><span data-stu-id="d2ff3-203">Copy and paste</span></span>
+## <a name="copy-and-paste"></a><span data-ttu-id="aecbe-203">Copiar e colar</span><span class="sxs-lookup"><span data-stu-id="aecbe-203">Copy and paste</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="d2ff3-204">A função copyFrom está atualmente disponível somente na visualização pública (beta).</span><span class="sxs-lookup"><span data-stu-id="d2ff3-204">The copyFrom function is currently available only in public preview (beta).</span></span> <span data-ttu-id="d2ff3-205">Para usar esse recurso, você deve usar a biblioteca beta do CDN do Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-205">To use these features, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.</span></span>
-> <span data-ttu-id="d2ff3-206">Se você estiver usando o TypeScript ou se seu editor de códigos usa um arquivo de definição do tipo TypeScript para IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-206">If you are using TypeScript or your code editor uses a TypeScript type definition file for intellisense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.</span></span>
+> <span data-ttu-id="aecbe-204">A função copyFrom está atualmente disponível somente na visualização pública (beta).</span><span class="sxs-lookup"><span data-stu-id="aecbe-204">The copyFrom function is currently available only in public preview (beta).</span></span> <span data-ttu-id="aecbe-205">Para usar esse recurso, você deve usar a biblioteca beta do CDN do Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.</span><span class="sxs-lookup"><span data-stu-id="aecbe-205">To use these features, you must use the beta library of the Office.js CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.</span></span>
+> <span data-ttu-id="aecbe-206">Se você estiver usando o TypeScript ou se seu editor de códigos usa um arquivo de definição do tipo TypeScript para IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.</span><span class="sxs-lookup"><span data-stu-id="aecbe-206">If you are using TypeScript or your code editor uses a TypeScript type definition file for intellisense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.</span></span>
 
-<span data-ttu-id="d2ff3-207">A função de copyFrom do intervalo replica o comportamento de copiar e colar da interface do usuário do Excel.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-207">Range’s copyFrom function replicates the copy-and-paste behavior of the Excel UI.</span></span> <span data-ttu-id="d2ff3-208">O objeto range a partir do qual copyFrom é chamado é destination.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-208">The range object that copyFrom is called on is the destination.</span></span> <span data-ttu-id="d2ff3-209">O original a ser copiado é passado como um intervalo ou um endereço de seuquência de caracteres que representa um intervalo.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-209">The source to be copied is passed as a range or a string address representing a range.</span></span> <span data-ttu-id="d2ff3-210">O exemplo de código a seguir copia os dados de **A1: E1** para o intervalo começando em **G1** (que acaba sendo colado em **G1:K1**).</span><span class="sxs-lookup"><span data-stu-id="d2ff3-210">The following code sample copies the data from **A1:E1** into the range starting at **G1** (which ends up pasting into **G1:K1**).</span></span>
+<span data-ttu-id="aecbe-207">A função de copyFrom do intervalo replica o comportamento de copiar e colar da interface do usuário do Excel.</span><span class="sxs-lookup"><span data-stu-id="aecbe-207">Range’s copyFrom function replicates the copy-and-paste behavior of the Excel UI.</span></span> <span data-ttu-id="aecbe-208">O objeto range a partir do qual copyFrom é chamado é destination.</span><span class="sxs-lookup"><span data-stu-id="aecbe-208">The range object that copyFrom is called on is the destination.</span></span> <span data-ttu-id="aecbe-209">O original a ser copiado é passado como um intervalo ou um endereço de seuquência de caracteres que representa um intervalo.</span><span class="sxs-lookup"><span data-stu-id="aecbe-209">The source to be copied is passed as a range or a string address representing a range.</span></span> <span data-ttu-id="aecbe-210">O exemplo de código a seguir copia os dados de **A1: E1** para o intervalo começando em **G1** (que acaba sendo colado em **G1:K1**).</span><span class="sxs-lookup"><span data-stu-id="aecbe-210">The following code sample copies the data from **A1:E1** into the range starting at **G1** (which ends up pasting into **G1:K1**).</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -552,21 +552,21 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="d2ff3-211">Range.copyFrom tem três parâmetros opcionais.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-211">Range.copyFrom has three optional parameters.</span></span>
+<span data-ttu-id="aecbe-211">Range.copyFrom tem três parâmetros opcionais.</span><span class="sxs-lookup"><span data-stu-id="aecbe-211">Range.copyFrom has three optional parameters.</span></span>
 
 ```ts
 copyFrom(sourceRange: Range | string, copyType?: "All" | "Formulas" | "Values" | "Formats", skipBlanks?: boolean, transpose?: boolean): void;
 ``` 
 
-<span data-ttu-id="d2ff3-212">`copyType` especifica quais dados são copiados da origem para o destino.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-212">`copyType` specifies what data gets copied from the source to the destination.</span></span> 
-<span data-ttu-id="d2ff3-213">`“Formulas”` transfere as fórmulas nas células de origem e preserva o posicionamento relativo dos intervalos dessas fórmulas.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-213">`“Formulas”` transfers the formulas in the source cells and preserves the relative positioning of those formulas’ ranges.</span></span> <span data-ttu-id="d2ff3-214">Todas as entradas que não são fórmulas são copiadas como são.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-214">Any non-formula entries are copied as-is.</span></span> 
-<span data-ttu-id="d2ff3-215">`“Values”` copia os valores de dados e, no caso de fórmulas, seu resultado.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-215">`“Values”` copies the data values and, in the case of formulas, the result of the formula.</span></span> 
-<span data-ttu-id="d2ff3-216">`“Formats”` copia a formatação do intervalo, incluindo a fonte, cor e outras configurações de formato, mas sem valores.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-216">`“Formats”` copies the formatting of the range, including font, color, and other format settings, but no values.</span></span> 
-<span data-ttu-id="d2ff3-217">`”All”` (a opção padrão) copia os dados e a formatação, preservando as fórmulas das células, quando encontradas.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-217">`”All”` (the default option) copies both data and formatting, preserving cells’ formulas if found.</span></span>
+<span data-ttu-id="aecbe-212">`copyType` especifica quais dados são copiados da origem para o destino.</span><span class="sxs-lookup"><span data-stu-id="aecbe-212">`copyType` specifies what data gets copied from the source to the destination.</span></span> 
+<span data-ttu-id="aecbe-213">`“Formulas”` transfere as fórmulas nas células de origem e preserva o posicionamento relativo dos intervalos dessas fórmulas.</span><span class="sxs-lookup"><span data-stu-id="aecbe-213">`“Formulas”` transfers the formulas in the source cells and preserves the relative positioning of those formulas’ ranges.</span></span> <span data-ttu-id="aecbe-214">Todas as entradas que não são fórmulas são copiadas como são.</span><span class="sxs-lookup"><span data-stu-id="aecbe-214">Any non-formula entries are copied as-is.</span></span> 
+<span data-ttu-id="aecbe-215">`“Values”` copia os valores de dados e, no caso de fórmulas, seu resultado.</span><span class="sxs-lookup"><span data-stu-id="aecbe-215">`“Values”` copies the data values and, in the case of formulas, the result of the formula.</span></span> 
+<span data-ttu-id="aecbe-216">`“Formats”` copia a formatação do intervalo, incluindo a fonte, cor e outras configurações de formato, mas sem valores.</span><span class="sxs-lookup"><span data-stu-id="aecbe-216">`“Formats”` copies the formatting of the range, including font, color, and other format settings, but no values.</span></span> 
+<span data-ttu-id="aecbe-217">`”All”` (a opção padrão) copia os dados e a formatação, preservando as fórmulas das células, quando encontradas.</span><span class="sxs-lookup"><span data-stu-id="aecbe-217">`”All”` (the default option) copies both data and formatting, preserving cells’ formulas if found.</span></span>
 
-<span data-ttu-id="d2ff3-218">`skipBlanks` define se células vazias são copiadas para o destino.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-218">`skipBlanks` sets whether blank cells are copied into the destination.</span></span> <span data-ttu-id="d2ff3-219">Quando definido como true, `copyFrom` ignora células vazias no intervalo de origem.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-219">When true, `copyFrom` skips blank cells in the source range.</span></span> <span data-ttu-id="d2ff3-220">Células ignoradas não substituem os dados existentes das células correspondentes no intervalo de destino.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-220">Skipped cells will not overwrite the existing data of their corresponding cells in the destination range.</span></span> <span data-ttu-id="d2ff3-221">O padrão é False.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-221">The default is False.</span></span>
+<span data-ttu-id="aecbe-218">`skipBlanks` define se células vazias são copiadas para o destino.</span><span class="sxs-lookup"><span data-stu-id="aecbe-218">`skipBlanks` sets whether blank cells are copied into the destination.</span></span> <span data-ttu-id="aecbe-219">Quando definido como true, `copyFrom` ignora células vazias no intervalo de origem.</span><span class="sxs-lookup"><span data-stu-id="aecbe-219">When true, `copyFrom` skips blank cells in the source range.</span></span> <span data-ttu-id="aecbe-220">Células ignoradas não substituem os dados existentes das células correspondentes no intervalo de destino.</span><span class="sxs-lookup"><span data-stu-id="aecbe-220">Skipped cells will not overwrite the existing data of their corresponding cells in the destination range.</span></span> <span data-ttu-id="aecbe-221">O padrão é False.</span><span class="sxs-lookup"><span data-stu-id="aecbe-221">The default is False.</span></span>
 
-<span data-ttu-id="d2ff3-222">O exemplo de código e as imagens a seguir demonstram esse comportamento em um cenário simples.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-222">The following code sample and images demonstrate this behavior in a simple scenario.</span></span> 
+<span data-ttu-id="aecbe-222">O exemplo de código e as imagens a seguir demonstram esse comportamento em um cenário simples.</span><span class="sxs-lookup"><span data-stu-id="aecbe-222">The following code sample and images demonstrate this behavior in a simple scenario.</span></span> 
 
 ```js
 Excel.run(function (context) {
@@ -585,18 +585,18 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="d2ff3-223">*Antes da função anterior ter sido executada.*</span><span class="sxs-lookup"><span data-stu-id="d2ff3-223">*Before the preceeding function has been run.*</span></span>
+<span data-ttu-id="aecbe-223">*Antes da função anterior ter sido executada.*</span><span class="sxs-lookup"><span data-stu-id="aecbe-223">*Before the preceeding function has been run.*</span></span>
 
 ![Dados no Excel antes do método de cópia do intervalo ter sido executado.](../images/excel-range-copyfrom-skipblanks-before.png)
 
-<span data-ttu-id="d2ff3-225">*Depois que a função anterior foi executada.*</span><span class="sxs-lookup"><span data-stu-id="d2ff3-225">*After the preceeding function has been run.*</span></span>
+<span data-ttu-id="aecbe-225">*Depois que a função anterior foi executada.*</span><span class="sxs-lookup"><span data-stu-id="aecbe-225">*After the preceeding function has been run.*</span></span>
 
 ![Dados no Excel após a execução do método de cópia do intervalo.](../images/excel-range-copyfrom-skipblanks-after.png)
 
-<span data-ttu-id="d2ff3-227">`transpose` determina se os dados são transpostos ou não, o que significa que suas linhas e colunas são invertidas no local de origem.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-227">`transpose` determines whether or not the data is transposed, meaning its rows and columns are switched, into the source location.</span></span> <span data-ttu-id="d2ff3-228">Um intervalo transposto é invertido na diagonal principal, de forma que as linhas **1**, **2** e **3** se tornam as colunas **A**, **B** e **C**.</span><span class="sxs-lookup"><span data-stu-id="d2ff3-228">A transposed range is flipped along the main diagonal, so rows **1**, **2**, and **3** will become columns **A**, **B**, and **C**.</span></span> 
+<span data-ttu-id="aecbe-227">`transpose` determina se os dados são transpostos ou não, o que significa que suas linhas e colunas são invertidas no local de origem.</span><span class="sxs-lookup"><span data-stu-id="aecbe-227">`transpose` determines whether or not the data is transposed, meaning its rows and columns are switched, into the source location.</span></span> <span data-ttu-id="aecbe-228">Um intervalo transposto é invertido na diagonal principal, de forma que as linhas **1**, **2** e **3** se tornam as colunas **A**, **B** e **C**.</span><span class="sxs-lookup"><span data-stu-id="aecbe-228">A transposed range is flipped along the main diagonal, so rows **1**, **2**, and **3** will become columns **A**, **B**, and **C**.</span></span> 
 
 
-## <a name="see-also"></a><span data-ttu-id="d2ff3-229">Confira também</span><span class="sxs-lookup"><span data-stu-id="d2ff3-229">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="aecbe-229">Confira também</span><span class="sxs-lookup"><span data-stu-id="aecbe-229">See also</span></span>
 
-- [<span data-ttu-id="d2ff3-230">Principais conceitos da API JavaScript do Excel</span><span class="sxs-lookup"><span data-stu-id="d2ff3-230">Excel JavaScript API core concepts</span></span>](excel-add-ins-core-concepts.md)
+- [<span data-ttu-id="aecbe-230">Principais conceitos da API JavaScript do Excel</span><span class="sxs-lookup"><span data-stu-id="aecbe-230">Excel JavaScript API core concepts</span></span>](excel-add-ins-core-concepts.md)
 
