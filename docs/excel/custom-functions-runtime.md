@@ -2,16 +2,16 @@
 ms.date: 09/20/2018
 description: Funções personalizadas do Excel usam um novo tempo de execução do JavaScript que difere do tempo de execução de controle do modo de exibição da Web para suplementos padrão.
 title: Tempo de execução de funções personalizados do Excel
-ms.openlocfilehash: d31002096fccd682c0f2a23a8b43249af5d4df8f
-ms.sourcegitcommit: 470d8212b256275587e651abaa6f28beafebcab4
+ms.openlocfilehash: fa2b2030259e05f64b8b4660ded8b80c6af1eb5a
+ms.sourcegitcommit: 8ce9a8d7f41d96879c39cc5527a3007dff25bee8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "24068808"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "24985792"
 ---
-# <a name="runtime-for-excel-custom-functions"></a>Tempo de execução de funções personalizados do Excel
+# <a name="runtime-for-excel-custom-functions-preview"></a>Runtime de funções personalizadas do Excel (Versão prévia)
 
-Funções personalizadas estendem os recursos do Excel usando um novo tempo de execução do JavaScript que usa um mecanismo de JavaScript em área restrita em vez de um navegador da web. Como as funções personalizadas não precisam renderizar elementos de interface do usuário, o novo tempo de execução do JavaScript é otimizado para fazer cálculos, permitindo que você execute milhares de funções personalizadas simultaneamente.
+As funções personalizadas estendem os recursos do Excel usando um novo runtime do JavaScript que usa um mecanismo de JavaScript em área restrita em vez de um navegador da web. Como as funções personalizadas não precisam renderizar elementos de interface do usuário, o novo tempo de execução do JavaScript é otimizado para fazer cálculos, permitindo que você execute milhares de funções personalizadas simultaneamente.
 
 ## <a name="key-facts-about-the-new-javascript-runtime"></a>Fatos importantes sobre o novo tempo de execução do JavaScript 
 
