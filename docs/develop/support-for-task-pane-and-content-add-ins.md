@@ -2,12 +2,12 @@
 title: Suporte da API JavaScript para Office para suplementos de conteúdo e de painel de tarefas no Office 2013
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 54e14f27f7acc9c61e613e834ff0dff0d466e916
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: cb4bb003966639fd5518fefcd3983ee9ca2fb101
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945495"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25005006"
 ---
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>Suporte da API JavaScript para Office para suplementos de conteúdo e de painel de tarefas no Office 2013
 
@@ -121,7 +121,7 @@ Para saber mais sobre como trabalhar com partes XML personalizadas em um supleme
 
 Muitas vezes, você precisa salvar dados personalizados no suplemento, como preferências do usuário ou o estado do suplemento, e acessar esses dados na próxima vez que o suplemento for aberto. Você pode usar técnicas de programação comuns para salvar os dados, como cookies do navegador ou armazenamento na Web em HTML 5. Como alternativa, se o suplemento for executado no Excel, no PowerPoint ou no Word, você poderá usar os métodos do objeto [Settings](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js). Os dados criados com o objeto **Settings** são armazenados na planilha, na apresentação ou no documento em que o suplemento foi inserido e salvo. Esses dados estão disponíveis apenas para o suplemento que os criou.
 
-Para evitar viagens de ida e volta ao servidor onde o documento está armazenado, dados criados com o objeto **Settings** são gerenciados na memória em tempo de execução. Dados de configurações salvos anteriormente são carregados na memória quando o suplemento é inicializado, e alterações nesses dados só são salvas de volta no documento quando você chama o método [Settings.saveAsync](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#saveasync-options--callback-). Internamente, os dados são armazenados em um objeto JSON serializado como pares de nome/valor. Você usa os métodos [get](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#get-name-), [set](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#set-name--value-) e [remove](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#remove-name-) para o objeto **Settings**, para ler, gravar e excluir itens da cópia dos dados na memória. A linha de código a seguir mostra como criar uma configuração denominada `themeColor` e definir seu valor como 'green'.
+Para evitar percursos circulares para o servidor onde o documento está armazenado, dados criados com o objeto de **Configurações** são gerenciados na memória no tempo de execução. Dados de configurações salvos anteriormente são carregados na memória quando o suplemento é inicializado e alterações nos dados são salvas no documento somente quando você chama o método [Settings.saveAsync](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#saveasync-options--callback-). Internamente, os dados são armazenados em um objeto JSON serializado como pares de valor/nome. Você pode usar os métodos[get](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#get-name-), [set](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#set-name--value-)e [remove](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js#remove-name-) do objeto **Configurações**para ler, gravar e excluir itens da cópia gravada na memória dos dados. A linha de código a seguir mostra como criar uma configuração denominada `themeColor` e defina seu valor como "verde".
 
 
 
@@ -150,7 +150,7 @@ O suplemento usa o elemento **Permissions** em seu manifesto para solicitar perm
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
  xsi:type="TaskPaneApp">
 ???<!-- Other manifest elements omitted. -->
   <Permissions>ReadDocument</Permissions>

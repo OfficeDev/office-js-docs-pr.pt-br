@@ -1,15 +1,15 @@
 ---
-title: Implantar e publicar seu suplemento do Office
-description: ''
+title: Implantar e publicar seu Suplemento do Office | Documentos Microsoft
+description: Métodos e opções para implantar o Suplemento do Office para testes ou distribuição para usuários.
 ms.date: 01/23/2018
-ms.openlocfilehash: b35c50c65a5d8b8b3f1a5e9724fa9072285fb7ae
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: ada786ed7ded1f34d564389c09c2cd5c25c2a331
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944337"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25004928"
 ---
-# <a name="deploy-and-publish-your-office-add-in"></a>Implantar e publicar seu suplemento do Office
+# <a name="deploy-and-publish-your-office-add-in"></a>Implantar e publicar seu Suplemento do Office
 
 Você pode usar um dos vários métodos para implantar o suplemento do Office para teste ou distribuição aos usuários.
 
@@ -37,7 +37,7 @@ As opções de implantação disponíveis dependem do host do Office que você p
 | Painel de tarefas       | X           | X                       | X          | X                    |
 | Comando         | X           | X                       | X          |                      |
 
-* Os catálogos do SharePoint não são compatíveis com o Office para Mac.
+* Os catálogos do SharePoint não têm suporte para Office para Mac.
 
 ### <a name="deployment-options-for-outlook-add-ins"></a>Opções de implantação para suplementos do Outlook
 
@@ -48,7 +48,7 @@ As opções de implantação disponíveis dependem do host do Office que você p
 
 ## <a name="deployment-methods"></a>Métodos de implantação
 
-As seções a seguir fornecem informações adicionais sobre os métodos de implantação mais comumente usados para distribuir suplementos do Office para usuários da organização.
+As seções a seguir fornecem informações adicionais sobre os métodos de implantação mais usados para distribuir Suplementos do Office para usuários em uma organização.
 
 Saiba mais sobre como os usuários finais podem adquirir, inserir e executar suplementos em [Começar a usar seu Suplemento do Office](https://support.office.com/en-ie/article/Start-using-your-Office-Add-in-82e665c4-6700-4b56-a3f3-ef5441996862?ui=en-US&rs=en-IE&ad=IE).
 
@@ -65,9 +65,9 @@ O catálogo de suplementos do SharePoint é uma coleção de sites especial que 
 Se você está implantando suplementos em um ambiente local, use um catálogo do SharePoint. Para saber mais, confira, [Publicar suplementos de conteúdo e de painel de tarefas em um catálogo do SharePoint](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
 > [!NOTE]
-> Os catálogos do SharePoint não são compatíveis com o Office para Mac. Para implantar Suplementos do Office em clientes do Mac, você deve enviá-los para o [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store). 
+> Os catálogos do SharePoint não têm suporte para Office para Mac. Para implantar suplementos do Office em clientes Mac, você deve enviá-los para o [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store). 
 
-### <a name="outlook-add-in-deployment"></a>Implantação de suplemento do Outlook
+### <a name="outlook-add-in-deployment"></a>Implantação de suplementos do Outlook
 
 Em relação aos ambientes locais e online que não usam o serviço de identidade do Microsoft Azure AD, é possível implantar suplementos do Outlook por meio do servidor Exchange. 
 

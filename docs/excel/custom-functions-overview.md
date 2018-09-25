@@ -2,12 +2,12 @@
 ms.date: 09/20/2018
 description: Criar uma função personalizada no Excel usando o JavaScript.
 title: Criar funções personalizadas no Excel (Visualização)
-ms.openlocfilehash: abfc43872c84ac7a86e59d70ef616308ba3d4231
-ms.sourcegitcommit: 8ce9a8d7f41d96879c39cc5527a3007dff25bee8
+ms.openlocfilehash: b214329fe50955d0f39d50f674152f475ca24b4d
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "24985806"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25005040"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Criar funções personalizadas no Excel (Visualização)
 
@@ -85,14 +85,14 @@ O arquivo de manifesto XML para um suplemento que define as funções personaliz
 ```
 
 > [!NOTE]
-> As funções do Excel estão anexadas pelo namespace especificado em seu arquivo de manifesto XML. Um namespace de uma função vem antes do nome da função e são separados por um período. Por exemplo, para chamar a função `ADD42()` na célula de uma planilha do Excel, você digitaria `=CONTOSO.ADD42`, porque CONTOSO é o namespace e `ADD42` é o nome da função especificada no arquivo JSON. O prefixo namespace deve ser usado como identificador para a sua empresa ou para o suplemento. 
+> As funções do Excel estão anexadas pelo namespace especificado em seu arquivo de manifesto XML. Um namespace de uma função vem antes do nome da função e são separados por um período. Por exemplo, para chamar a função `ADD42()` na célula de uma planilha do Excel, você digitaria `=CONTOSO.ADD42`, porque CONTOSO é o namespace e `ADD42` é o nome da função especificada no arquivo JSON. O prefixo de namespace deve ser usado como identificador para a sua empresa ou para o suplemento. 
 
 ### <a name="json-file-configcustomfunctionsjson"></a>Arquivo JSON (./config/customfunctions.json)
 
 Um arquivo de metadados de funções personalizadas fornece as informações que o Excel precisa para registrar as funções personalizadas e torná-las disponíveis aos usuários finais. As funções personalizadas são registradas quando um usuário executa o suplemento pela primeira vez. Depois disso, elas estarão disponíveis para esse mesmo usuário em todas as pastas de trabalho (ou seja, não apenas na pasta de trabalho onde o suplemento inicialmente executou.)
 
 > [!TIP]
-> As configurações do servidor para o arquivo JSON devem ter [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) habilitado para que funções personalizadas funcionem corretamente no Excel Online.
+> As configurações do servidor que hospedam o arquivo JSON devem ter [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) habilitado para que funções personalizadas funcionem corretamente no Excel Online.
 
 O código a seguir em **customfunctions.json** especifica os metadados para a função `ADD42` descrita anteriormente neste artigo. Esses metadados definem o nome da função, descrição, valor de retorno, parâmetros de entrada e demais dados. A tabela que segue o exemplo de código a seguir fornece informações detalhadas sobre as propriedades individuais dentro desse objeto JSON.
 
@@ -216,7 +216,7 @@ function incrementValue(increment, handler){
 
 Funções personalizadas podem salvar os dados em variáveis JavaScript globais. Em chamadas subsequentes, sua função personalizada pode usar valores salvos nessas variáveis. O estado salvo é útil quando os usuários adicionam a mesma função personalizada a mais de uma célula, porque todas as instâncias da função podem compartilhar o estado. Por exemplo, você pode salvar os dados retornados de uma chamada para um recurso da Web para evitar fazer chamadas adicionais para o mesmo recurso da Web.
 
-O código de exemplo a seguir mostra uma implementação da função anterior de fluxo contínuo de temperatura que salva o estado de forma global. Observe o seguinte sobre este código:
+O exemplo de código a seguir mostra uma implementação da função anterior de fluxo contínuo de temperatura que salva o estado de forma global. Observe o seguinte sobre este código:
 
 - `refreshTemperature` é uma função de streaming que lê a temperatura de um determinado termômetro a cada segundo. Novas temperaturas são salvas na variável `savedTemperatures`, mas o valor da célula não é atualizado diretamente. Não deve ser chamada diretamente de uma célula da planilha, *por isso não está registrada no arquivo JSON*.
 
@@ -275,12 +275,11 @@ function secondHighest(values){
 
 ## <a name="handling-errors"></a>Lidar com erros
 
-Quando você criar um suplemento que define funções personalizadas, certifique-se de incluir a lógica de manipulação de erro para considerar os erros de tempo de execução. O tratamento de erros de funções personalizadas é o mesmo que [o tratamento de erros para a API do JavaScript Excel em geral](excel-add-ins-error-handling.md). No exemplo de código a seguir, `.catch` manipulará os erros que ocorreram anteriormente no código.
+Quando você criar um suplemento que defina funções personalizadas, certifique-se de incluir a lógica de manipulação de erro para considerar os erros de tempo de execução. O tratamento de erros de funções personalizadas é o mesmo que [o tratamento de erros para a API do JavaScript Excel em geral](excel-add-ins-error-handling.md). No exemplo de código a seguir, `.catch` manipulará os erros que ocorreram anteriormente no código.
 
 ```js
 function getComment(x) {
-    //this delivers a section of lorem ipsum from the jsonplaceholder API
-    let url = "https://jsonplaceholder.typicode.com/comments/" + x;
+    let url = "https://yourhypotheticalapi/comments/" + x;
 
     return fetch(url)
         .then(function (data) {

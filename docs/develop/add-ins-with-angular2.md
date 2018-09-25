@@ -2,12 +2,12 @@
 title: Desenvolver suplementos do Office para o Angular
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 6ce0080bcff67956665cf25f45df8c598b781538
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 65b2a229e0379106b63b0f1abaaa8b66d7cdf367
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944554"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25004970"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Desenvolver suplementos do Office para o Angular
 
@@ -111,7 +111,7 @@ export class MyComponent {
 
 O Angular usa o RxJS (Expansões Reativas para JavaScript) e o RxJS introduz os objetos `Observable` e `Observer` para implementar o processamento assíncrono. Esta seção fornece uma breve introdução ao uso de `Observables`; para saber mais informações, consulte a documentação de [RxJS](http://reactivex.io/rxjs/) oficial.
 
-Um `Observable` é como um objeto `Promise` em certos aspectos. Ele é retornado diretamente de uma chamada assíncrona, mas poderá só ser resolvido algum tempo depois. Contudo, embora `Promise` seja um único valor (que pode ser um objeto de matriz), um `Observable` é uma matriz de objetos (possivelmente com apenas um único membro). Isso permite que o código chame [métodos de matriz](http://www.w3schools.com/jsref/jsref_obj_array.asp), como `concat`, `map` e `filter`, em objetos `Observable`. 
+Um `Observable` é como um objeto `Promise` em certos aspectos. Ele é retornado diretamente de uma chamada assíncrona, mas poderá só ser resolvido algum tempo depois. Contudo, embora `Promise` seja um único valor (que pode ser um objeto de matriz), um `Observable` é uma matriz de objetos (possivelmente com apenas um único membro). Isso permite que o código chame [métodos de matriz](https://www.w3schools.com/jsref/jsref_obj_array.asp), como `concat`, `map` e `filter`, em objetos `Observable`. 
 
 ### <a name="pushing-instead-of-pulling"></a>Obter em vez de enviar
 

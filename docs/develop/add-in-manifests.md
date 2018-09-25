@@ -2,12 +2,12 @@
 title: Manifesto XML dos Suplementos do Office
 description: ''
 ms.date: 02/09/2018
-ms.openlocfilehash: 5c24f0c773195ee7b2ed5c6fc9eccfd5840e2651
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: b2e0db2712ecfcd9e7df740548968c91ff1c1af2
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944929"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25004984"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifesto XML dos Suplementos do Office
 
@@ -93,7 +93,7 @@ _\*Adicionados no esquema de manifesto de suplementos da versão 1.1 do Office._
 
 ## <a name="hosting-requirements"></a>Requisitos de hospedagem
 
-Todos os URIs de imagem, como aqueles usados para [comandos de suplemento][], deve oferecer suporte a cache. O servidor que hospeda a imagem não deve retornar um cabeçalho `Cache-Control` especificando `no-cache`, `no-store`, ou opções similares na resposta HTTP.
+Todas as imagens de URIs, como as usadas para os [comandos do suplemento][] devem ser compatíveis com armazenamento em cache. O servidor que hospeda a imagem não deve retornar um cabeçalho `Cache-Control` especificando `no-cache`, `no-store` ou opções semelhantes na resposta HTTP.
 
 Todas as URLs, como os locais dos arquivos de origem especificados no elemento [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation), devem estar **protegidos por SSL (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
 
@@ -107,18 +107,18 @@ Use apenas o elemento [AppDomains](https://docs.microsoft.com/javascript/office/
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>Especificar os domínios que você deseja abrir na janela do suplemento
 
-Durante a execução no Office Online, o painel de tarefas pode ser navegado para qualquer URL. No entanto, nas plataformas para desktop, se o suplemento tentar acessar uma URL em um domínio diferente do domínio que hospeda a página inicial (conforme especificado no elemento [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation) do arquivo de manifesto), essa URL abrirá em uma nova janela de navegador fora do painel do suplemento do aplicativo host do Office.
+Durante a execução no Office Online, o painel de tarefas pode ser navegado para qualquer URL. No entanto, em plataformas desktop, se o seu suplemento tentar acessar uma URL em um domínio diferente daquele que hospeda a página inicial (conforme especificado no elemento [SourceLocation](https://docs.microsoft.com/javascript/office/manifest/sourcelocation) do arquivo de manifesto), essa URL será aberta em uma nova janela de navegador fora do painel do suplemento do aplicativo host do Office.
 
-Para substituir esse comportamento (do Office para desktop), especifique cada domínio que você deseja abrir na janela do suplemento na lista de domínios especificados no elemento [AppDomains](https://docs.microsoft.com/javascript/office/manifest/appdomains) do arquivo de manifesto. Se o suplemento tentar ir para uma URL em um domínio que esteja na lista, ele será aberto no painel de tarefas do Office para desktop e do Office Online. Se ele tentar ir para uma URL que não está na lista, no Office para desktop, essa URL será aberta em uma nova janela do navegador (fora do painel do suplemento).
+Para substituir esse comportamento (do Office para desktop), especifique cada domínio que você deseja abrir na janela do suplemento na lista de domínios especificados no elemento [AppDomains](https://docs.microsoft.com/javascript/office/manifest/appdomains) do arquivo de manifesto. Se o suplemento tentar ir para uma URL em um domínio que esteja na lista, ele será aberto no painel de tarefas do Office para desktop e do Office Online. Se ele tentar acessar uma URL que não está na lista, no Office para desktop, essa URL será aberta em uma nova janela do navegador (fora do painel do suplemento).
 
 > [!NOTE]
 > Esse comportamento aplica-se somente ao painel raiz do suplemento. Se houver um iframe incorporado na página do suplemento, o iframe poderá ser direcionado para qualquer URL, independentemente de estar listado em **AppDomains**, mesmo no Office para desktop.
 
-O exemplo de manifesto XML a seguir hospeda a página principal do suplemento no domínio `https://www.contoso.com`, conforme especificado no elemento **SourceLocation**. Também especifica o domínio `https://www.northwindtraders.com` em um elemento [AppDomain](https://docs.microsoft.com/javascript/office/manifest/appdomain) dentro da lista de elementos **AppDomains**. Se o suplemento for para uma página no domínio www.northwindtraders.com, essa página será aberta no painel do suplemento, mesmo no Office para desktop.
+O exemplo de manifesto XML a seguir hospeda a página principal do suplemento no domínio `https://www.contoso.com`, conforme especificado no elemento **SourceLocation**. Também especifica o domínio `https://www.northwindtraders.com` em um elemento [AppDomain](https://docs.microsoft.com/javascript/office/manifest/appdomain) dentro da lista de elementos **AppDomains**. Se o suplemento acessar uma página no domínio www.northwindtraders.com, essa página será aberta no painel do suplemento, mesmo no Office para desktop.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
   <Id>c6890c26-5bbb-40ed-a321-37f07909a2f0</Id>
   <Version>1.0</Version>
   <ProviderName>Contoso, Ltd</ProviderName>
@@ -135,7 +135,7 @@ O exemplo de manifesto XML a seguir hospeda a página principal do suplemento no
 </OfficeApp>
 ```
 
-## <a name="manifest-v11-xml-file-examples-and-schemas"></a>Exemplos e esquemas do arquivo XML de manifesto v1.1
+## <a name="manifest-v11-xml-file-examples-and-schemas"></a>Exemplos e esquemas do arquivo XML do manifesto v1.1
 As seções a seguir mostram exemplos de arquivos XML de manifesto v1.1 para suplementos de conteúdo, de painel de tarefas e do Outlook.
 
 # <a name="task-panetabtabid-1"></a>[Painel de tarefas](#tab/tabid-1)
@@ -144,7 +144,7 @@ As seções a seguir mostram exemplos de arquivos XML de manifesto v1.1 para sup
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
 
 <!-- See https://github.com/OfficeDev/Office-Add-in-Commands-Samples for documentation-->
 
@@ -343,7 +343,7 @@ As seções a seguir mostram exemplos de arquivos XML de manifesto v1.1 para sup
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp
   xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
   xsi:type="ContentApp">
   <Id>01eac144-e55a-45a7-b6e3-f1cc60ab0126</Id>
   <AlternateId>en-US\WA123456789</AlternateId>
@@ -380,7 +380,7 @@ As seções a seguir mostram exemplos de arquivos XML de manifesto v1.1 para sup
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns=
   "http://schemas.microsoft.com/office/appforoffice/1.1"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
   xsi:type="MailApp">
 
   <Id>971E76EF-D73E-567F-ADAE-5A76B39052CF</Id>

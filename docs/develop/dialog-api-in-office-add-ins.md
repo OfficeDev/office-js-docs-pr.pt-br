@@ -2,12 +2,12 @@
 title: Use a API de Caixa de diálogo em seus Suplementos do Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 569aa6fe6a16b4dc158f0b4e0f5b457650a5a46a
-ms.sourcegitcommit: 470d8212b256275587e651abaa6f28beafebcab4
+ms.openlocfilehash: 148f4b564169e62f6444e87074c45cb8e4ce5c63
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "24062134"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25005054"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Use a API de Caixa de Diálogo em seus Suplementos do Office
 
@@ -47,10 +47,10 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 
 > [!NOTE]
 > - A URL usa o protocolo HTTP**S**. Isso é obrigatório para todas as páginas carregadas em uma caixa diálogo, não apenas para a primeira página carregada.
-> - O domínio do recurso da caixa de diálogo é o mesmo que o domínio da página host, que pode ser a página em um painel de tarefas ou o [arquivo de função](https://docs.microsoft.com/javascript/office/manifest/functionfile?view=office-js) de um comando de suplemento. Isto é necessário: a página, o método do controlador ou outro recurso que é passado para o método `displayDialogAsync` devem estar no mesmo domínio que a página de host.
+> - A caixa de diálogo domínio do recurso é igual ao domínio da página host, que pode ser a página em um painel de tarefas ou o [arquivo de função](https://docs.microsoft.com/javascript/office/manifest/functionfile?view=office-js) de um comando de suplemento. Isso é obrigatório: a página, o método de controlador ou outro recurso passado para o `displayDialogAsync` método deve estar no mesmo domínio que a página host.
 
 > [!IMPORTANT]
-> A página de host e os recursos da caixa de diálogo devem ter o mesmo domínio completo. Se você tentar passar `displayDialogAsync` um subdomínio do domínio do suplemento, ele não funcionará. O domínio completo, incluindo qualquer subdomínio, deve corresponder.
+> A página host e os recursos da caixa de diálogo devem ter o mesmo domínio completo. Se você tentar passar `displayDialogAsync` um subdomínio do domínio do suplemento, ele não funcionará. O domínio completo, incluindo qualquer subdomínio, deve corresponder.
 
 Após o carregamento da primeira página (ou de outro recurso), um usuário pode ir para qualquer site (ou outro recurso) que usa HTTPS. Também é possível criar a primeira página para redirecionar imediatamente para outro site.
 
@@ -164,7 +164,7 @@ function processMessage(arg) {
 }
 ```
 
-Para ver um exemplo de um suplemento que faz isso, confira o exemplo [Inserir gráficos do Excel usando o Microsoft Graph em um Suplemento do PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart).
+Para ver um exemplo de um suplemento que faz isso, confira o exemplo [Inserir gráficos do Excel usando o Microsoft Graph em um suplemento do PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart).
 
 #### <a name="conditional-messaging"></a>Mensagens condicionais
 Como você pode enviar várias chamadas `messageParent` a partir da caixa de diálogo, mas tem apenas um manipulador na página host do evento `DialogMessageReceived`, o manipulador tem que usar a lógica condicional para distinguir mensagens diferentes. Por exemplo, se a caixa de diálogo solicitar que o usuário entre em um provedor de identidade como a Conta da Microsoft ou o Google, ele enviará o perfil do usuário como uma mensagem. Se a autenticação falhar, a caixa de diálogo enviará informações de erro à página host, como no exemplo a seguir:
@@ -318,7 +318,7 @@ Para ver um suplemento de exemplo que manipula erros dessa forma, confira [Exemp
 Às vezes, a página host precisa transmitir informações para a caixa de diálogo. Você pode fazer isso de duas maneiras principais:
 
 - Adicionar parâmetros de consulta à URL que é transmitida para `displayDialogAsync`.
-- Armazenar as informações em outro local que seja acessível para a janela do host e para a caixa de diálogo. As duas janelas não compartilham um armazenamento de sessão comum, mas *se elas tiverem o mesmo domínio* (incluindo o número da porta, se houver algum), compartilharão um [local de armazenamento](http://www.w3schools.com/html/html5_webstorage.asp) comum.
+- Armazenar as informações em outro local que seja acessível para a janela do host e para a caixa de diálogo. As duas janelas não compartilham um armazenamento de sessão comum, mas *se elas tiverem o mesmo domínio* (incluindo o número da porta, se houver algum), compartilharão um [local de armazenamento](https://www.w3schools.com/html/html5_webstorage.asp) comum.
 
 ### <a name="use-local-storage"></a>Usar o armazenamento local
 
@@ -349,7 +349,7 @@ O exemplo a seguir mostra como transmitir dados com um parâmetro de consulta:
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?clientID=15963ac5-314f-4d9b-b5a1-ccb2f1aea248');
 ```
 
-Para ver um exemplo que usa essa técnica, confira [Inserir gráficos do Excel usando o Microsoft Graph em um Suplemento do PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart).
+Para ver um exemplo que usa essa técnica, confira [Inserir gráficos do Excel usando o Microsoft Graph em um suplemento do PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart).
 
 O código na janela de diálogo pode analisar a URL e ler o valor do parâmetro.
 
@@ -392,10 +392,10 @@ O que vem a seguir é um fluxo de autenticação simples e típico:
 3. Quando a página redirectPage.html é aberta, ela chama `messageParent` para relatar o êxito ou falha na página host e opcionalmente também informar dados do usuário ou dados de erro.
 4. O evento `DialogMessageReceived` é acionado na página host e seu manipulador fecha a janela de diálogo e, opcionalmente, faz outro processamento da mensagem.
 
-Para ver suplementos de exemplo que usam esse padrão, confira:
+Para ver exemplos de suplementos que usam esse padrão, confira:
 
-- [Inserir gráficos do Excel usando o Microsoft Graph em um Suplemento do PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart): o recurso que é inicialmente aberto na janela de diálogo é um método controlador que não tem seu próprio modo de exibição. Ele redireciona para a página de entrada do Office 365.
-- [Autenticação de Cliente do Office 365 de Suplementos do Office para AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth): o recurso que é inicialmente aberto na janela de diálogo é uma página.
+- [Inserir gráficos do Excel usando o Microsoft Graph em um suplemento do PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart): o recurso que é aberto inicialmente na janela de diálogo é um método controlador que não tem seu próprio modo de exibição. Ele redireciona para a página de entrada do Office 365.
+- [Suplemento do Office de Autenticação de Cliente do Office 365 para AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth): o recurso que é aberto inicialmente na janela de diálogo é uma página.
 
 #### <a name="support-multiple-identity-providers"></a>Prestar suporte a vários provedores de identidade
 
@@ -418,7 +418,7 @@ Você pode usar as APIs de Caixa de Diálogo para gerenciar esse processo usando
 - A janela de diálogo envia o token de acesso à janela do host usando `messageParent` para enviar o token de acesso em formato de cadeia de caracteres ou armazenando o token de acesso em um local onde a janela do host poderá recuperá-lo. O token tem um limite de tempo, mas enquanto durar, a janela do host poder usá-lo para acessar recursos do usuário de forma direta, sem outras solicitações.
 
 Os exemplos a seguir usam as APIs de Caixa de diálogo para essa finalidade:
-- [Inserir gráficos do Excel usando o Microsoft Graph em um Suplemento do PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart): armazena o token de acesso em um banco de dados.
+- [Inserir gráficos do Excel usando o Microsoft Graph em um suplemento do PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) - armazena o token de acesso em um banco de dados.
 - [Suplemento do Office que usa o Serviço do OAuth.io para Simplificar o Acesso a Serviços Populares Online](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 Para mais informações sobre a autenticação e autorização em suplementos, consulte:

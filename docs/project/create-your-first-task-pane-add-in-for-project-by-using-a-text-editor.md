@@ -2,12 +2,12 @@
 title: Criar seu primeiro suplemento de painel de tarefas para o Project 2013 usando um editor de texto
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: ca00d1922ed3959ea9ab013f4d7f59ded084b241
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: eb12f1d15135301fe27b143781e1f622475f7b66
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945698"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25004893"
 ---
 # <a name="create-your-first-task-pane-add-in-for-project-2013-by-using-a-text-editor"></a>Criar seu primeiro suplemento de painel de tarefas para o Project 2013 usando um editor de texto
 
@@ -30,7 +30,7 @@ Crie um arquivo XML em um diretório local. O arquivo XML inclui o elemento **Of
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
-              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
               xsi:type="TaskPaneApp">
      <Id>93A26520-9414-492F-994B-4983A1C7A607</Id>
      <Version>15.0</Version>

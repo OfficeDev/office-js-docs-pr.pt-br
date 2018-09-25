@@ -2,8 +2,13 @@
 title: Validar e solucionar problemas com seu manifesto
 description: Use estes métodos para validar o manifesto de suplementos do Office
 ms.date: 12/04/2017
+ms.openlocfilehash: c3eed1a74cf4830556d977e6217a89c1fd016548
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25004949"
 ---
-
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>Validar e solucionar problemas com seu manifesto
 
 Use esses métodos para validar e solucionar problemas no manifesto de seu suplemento do Office. 
@@ -52,9 +57,9 @@ Para ajudar a garantir que o arquivo de manifesto segue o esquema correto, inclu
     xmllint --noout --schema XSD_FILE XML_FILE
     ```
 
-## <a name="use-runtime-logging-to-debug-your-add-in-manifest"></a>Usar o log do tempo de execução para depurar seu manifesto de suplemento
+## <a name="use-runtime-logging-to-debug-your-add-in"></a>Use o log de tempo de execução para depurar seu manifesto de suplemento 
 
-Você pode usar o log do tempo de execução para depurar o manifesto do seu suplemento. Esse recurso pode ajudá-lo a identificar e corrigir problemas com seu manifesto que não são detectados pela validação de esquema XSD, como uma incompatibilidade entre as identificações dos recursos. O log do tempo de execução é particularmente útil para depurar suplementos que implementam comandos de suplemento.  
+Você pode usar o log de tempo de execução para depurar o manifesto do seu suplemento, bem como vários erros de instalação. Esse recurso pode ajudá-lo a identificar e corrigir problemas com seu manifesto que não são detectados pela validação de esquema XSD, como uma incompatibilidade entre as identificações dos recursos. O log de tempo de execução é particularmente útil para depurar suplementos que implementam comandos de suplemento e funções personalizadas do Excel.   
 
 > [!NOTE]
 > O recurso de log de tempo de execução está atualmente disponível para o Office 2016 para área de trabalho.
@@ -68,7 +73,7 @@ Para ativar o log de tempo de execução:
 
 1. Verifique se você está executando o Office 2016 para área de trabalho na compilação **16.0.7019** ou posterior. 
 
-2. Adicione a chave do registro `RuntimeLogging` em `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\` 
+2. Adicione a chave do registro `RuntimeLogging` em`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\` 
 
 3. Defina o valor padrão da chave para o caminho completo do arquivo onde você deseja que o log seja gravado. Para obter um exemplo, veja [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip). 
 

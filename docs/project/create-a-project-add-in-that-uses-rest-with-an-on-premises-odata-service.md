@@ -2,12 +2,12 @@
 title: Criar um suplemento de Project que usa REST com um serviço OData local do Project Server
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 462b151a12c7c19f445e86bf59af633b699e7e60
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 7a632b708ebcf714ce1fa6ca2f5feb095fcd9f9d
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945705"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25005033"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>Criar um suplemento de Project que usa REST com um serviço OData local do Project Server
 
@@ -46,8 +46,8 @@ A seguir temos os pré-requisitos para a criação de um suplemento de painel de
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
         <service xml:base="http://myserver/pwa/_api/ProjectData/" 
-        xmlns="http://www.w3.org/2007/app" 
-        xmlns:atom="http://www.w3.org/2005/Atom">
+        xmlns="https://www.w3.org/2007/app" 
+        xmlns:atom="https://www.w3.org/2005/Atom">
         <workspace>
             <atom:title>Default</atom:title>
             <collection href="Projects">
@@ -103,7 +103,7 @@ O Office Developer Tools para Visual Studio inclui um modelo de suplemento de pa
     
     O Visual Studio cria o projeto **HelloProjectOdata** e o projeto **HelloProjectODataWeb**.
     
-A pasta **AddIn** (veja a captura de tela a seguir) contém o arquivo App.css para estilos CSS personalizados. Na subpasta **Home**, o arquivo Home.html contém referências para arquivos CSS e JavaScript que o suplemento usa, e o conteúdo HTML5 para o suplemento. Além disso, o arquivo Home.js é para o seu código JavaScript personalizado. A pasta **Scripts** inclui os arquivos da biblioteca jQuery. A subpasta **Office** inclui as bibliotecas JavaScript, como office.js e project-15.js, além das bibliotecas de linguagem para sequências de caracteres padrão nos suplementos do Office. Na pasta **Content**, o arquivo Office.css contém os estilos padrão para todos os suplementos do Office.
+A pasta **AddIn** (consulte a próxima captura de tela) contém o arquivo de App.css para estilos CSS personalizados. Na subpasta **Home**, o arquivo Home.html contém referências para os arquivos CSS e os arquivos JavaScript que o suplemento usa, além do conteúdo do HTML5 para o suplemento. Além disso, o arquivo Home.js é para o código JavaScript personalizado. A pasta **Scripts** inclui os arquivos da biblioteca jQuery. A subpasta **Office** inclui as bibliotecas de JavaScript, como office. js e project-15.js, além de bibliotecas de idioma para sequências de caracteres padrão nos suplementos do Office. Na pasta **Content**, o arquivo Office.css contém os estilos padrão para todos os suplementos do Office.
 
 *Figura 4. Exibição de arquivos de projeto Web padrão no Gerenciador de Soluções*
 
@@ -139,7 +139,7 @@ As etapas a seguir mostram como adicionar um arquivo de ícone à solução do V
     ```XML
     <?xml version="1.0" encoding="UTF-8"?>
     <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+            xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
         <Id>c512df8d-a1c5-4d74-8a34-d30f6bbcbd82 </Id>
         <Version>1.0</Version>
         <ProviderName> [Provider name]</ProviderName>
