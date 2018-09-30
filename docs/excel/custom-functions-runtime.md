@@ -1,42 +1,44 @@
 ---
-ms.date: 09/20/2018
+ms.date: 09/27/2018
 description: Funções personalizadas do Excel usam um novo tempo de execução do JavaScript que difere do tempo de execução de controle do modo de exibição da Web para suplementos padrão.
-title: Tempo de execução de funções personalizados do Excel
-ms.openlocfilehash: fa2b2030259e05f64b8b4660ded8b80c6af1eb5a
-ms.sourcegitcommit: 8ce9a8d7f41d96879c39cc5527a3007dff25bee8
+title: Tempo de execução de funções personalizadas do Excel
+ms.openlocfilehash: 7489cd66851d1e0c24ef573ffa920b794cf749c2
+ms.sourcegitcommit: 1852ae367de53deb91d03ca55d16eb69709340d3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "24985792"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "25348756"
 ---
-# <a name="runtime-for-excel-custom-functions-preview"></a><span data-ttu-id="dcc2b-103">Runtime de funções personalizadas do Excel (Versão prévia)</span><span class="sxs-lookup"><span data-stu-id="dcc2b-103">Runtime for Excel custom functions</span></span>
+# <a name="runtime-for-excel-custom-functions-preview"></a><span data-ttu-id="4cc30-103">Tempo de execução de funções personalizadas do Excel (versão prévia)</span><span class="sxs-lookup"><span data-stu-id="4cc30-103">Runtime for Excel custom functions</span></span>
 
-<span data-ttu-id="dcc2b-104">As funções personalizadas estendem os recursos do Excel usando um novo runtime do JavaScript que usa um mecanismo de JavaScript em área restrita em vez de um navegador da web.</span><span class="sxs-lookup"><span data-stu-id="dcc2b-104">Custom functions extend Excel’s capabilities by using a new JavaScript runtime that uses a sandboxed JavaScript engine rather than a web browser.</span></span> <span data-ttu-id="dcc2b-105">Como as funções personalizadas não precisam renderizar elementos de interface do usuário, o novo tempo de execução do JavaScript é otimizado para fazer cálculos, permitindo que você execute milhares de funções personalizadas simultaneamente.</span><span class="sxs-lookup"><span data-stu-id="dcc2b-105">Because custom functions do not need to render UI elements, the new JavaScript runtime is optimized for performing calculations, enabling you to run thousands of custom functions simultaneously.</span></span>
+<span data-ttu-id="4cc30-104">As funções personalizadas estendem as funcionalidades do Excel usando um novo tempo de execução do JavaScript que usa um mecanismo de JavaScript em área restrita em vez de um navegador da web.</span><span class="sxs-lookup"><span data-stu-id="4cc30-104">Custom functions extend Excel’s capabilities by using a new JavaScript runtime that uses a sandboxed JavaScript engine rather than a web browser.</span></span> <span data-ttu-id="4cc30-105">Como as funções personalizadas não precisam renderizar elementos de interface do usuário, o novo tempo de execução do JavaScript é otimizado para fazer cálculos, permitindo que você execute milhares de funções personalizadas simultaneamente.</span><span class="sxs-lookup"><span data-stu-id="4cc30-105">Because custom functions do not need to render UI elements, the new JavaScript runtime is optimized for performing calculations, enabling you to run thousands of custom functions simultaneously.</span></span>
 
-## <a name="key-facts-about-the-new-javascript-runtime"></a><span data-ttu-id="dcc2b-106">Fatos importantes sobre o novo tempo de execução do JavaScript</span><span class="sxs-lookup"><span data-stu-id="dcc2b-106">Key facts about the new JavaScript runtime</span></span> 
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-<span data-ttu-id="dcc2b-107">Somente as funções personalizadas de um suplemento usam o novo tempo de execução do JavaScript descrito neste artigo.</span><span class="sxs-lookup"><span data-stu-id="dcc2b-107">Only custom functions within an add-in will use the new JavaScript runtime that's described in this article.</span></span> <span data-ttu-id="dcc2b-108">Se um suplemento incluir outros componentes, como painéis de tarefas e outros elementos de interface do usuário, além das funções personalizadas, esses outros componentes do suplemento continuarão operando no tempo de execução de exibição da Web com aparência de navegador.</span><span class="sxs-lookup"><span data-stu-id="dcc2b-108">If an add-in includes other components such as task panes and other UI elements, in addition to custom functions, these other components of the add-in will continue to run in the browser-like WebView runtime.</span></span>  <span data-ttu-id="dcc2b-109">Além disso:</span><span class="sxs-lookup"><span data-stu-id="dcc2b-109">Additionally:</span></span> 
+## <a name="key-facts-about-the-new-javascript-runtime"></a><span data-ttu-id="4cc30-106">Fatos importantes sobre o novo tempo de execução do JavaScript</span><span class="sxs-lookup"><span data-stu-id="4cc30-106">Key facts about the new JavaScript runtime</span></span> 
 
-- <span data-ttu-id="dcc2b-110">O tempo de execução do JavaScript não fornece acesso ao Document Object Model (DOM) ou a bibliotecas de suporte, como jQuery, que dependem do DOM.</span><span class="sxs-lookup"><span data-stu-id="dcc2b-110">The JavaScript runtime does not provide access to the Document Object Model (DOM) or support libraries like jQuery that rely on the DOM.</span></span>
+<span data-ttu-id="4cc30-107">Somente as funções personalizadas de um suplemento usam o novo tempo de execução do JavaScript descrito neste artigo.</span><span class="sxs-lookup"><span data-stu-id="4cc30-107">Only custom functions within an add-in will use the new JavaScript runtime that's described in this article.</span></span> <span data-ttu-id="4cc30-108">Se um suplemento incluir outros componentes, como painéis de tarefas e outros elementos de interface do usuário, além das funções personalizadas, esses outros componentes do suplemento continuarão operando no tempo de execução de exibição da Web com aparência de navegador.</span><span class="sxs-lookup"><span data-stu-id="4cc30-108">If an add-in includes other components such as task panes and other UI elements, in addition to custom functions, these other components of the add-in will continue to run in the browser-like WebView runtime.</span></span>  <span data-ttu-id="4cc30-109">Além disso:</span><span class="sxs-lookup"><span data-stu-id="4cc30-109">Additionally:</span></span> 
 
-- <span data-ttu-id="dcc2b-111">Uma função personalizada que é definida em um arquivo JavaScript de um suplemento pode retornar um `Promise` regular do JavaScript em vez de retornar `OfficeExtension.Promise`.</span><span class="sxs-lookup"><span data-stu-id="dcc2b-111">A custom function that's defined in an add-in's JavaScript file can return a regular JavaScript `Promise` instead of returning `OfficeExtension.Promise`.</span></span>  
+- <span data-ttu-id="4cc30-110">O tempo de execução do JavaScript não fornece acesso ao Document Object Model (DOM) ou a bibliotecas de suporte, como jQuery, que dependem do DOM.</span><span class="sxs-lookup"><span data-stu-id="4cc30-110">The JavaScript runtime does not provide access to the Document Object Model (DOM) or support libraries like jQuery that rely on the DOM.</span></span>
 
-- <span data-ttu-id="dcc2b-112">O arquivo JSON que especifica a função personalizada metatdata não precisa especificar **sync** ou **async** nas **opções**.</span><span class="sxs-lookup"><span data-stu-id="dcc2b-112">The JSON file that specifies custom function metatdata does not need to specify **sync** or **async** within **options**.</span></span>
+- <span data-ttu-id="4cc30-111">Uma função personalizada que é definida em um arquivo JavaScript de um suplemento pode retornar um `Promise` regular do JavaScript em vez de retornar `OfficeExtension.Promise`.</span><span class="sxs-lookup"><span data-stu-id="4cc30-111">A custom function that's defined in an add-in's JavaScript file can return a regular JavaScript `Promise` instead of returning `OfficeExtension.Promise`.</span></span>  
 
-## <a name="new-apis"></a><span data-ttu-id="dcc2b-113">Novas APIs</span><span class="sxs-lookup"><span data-stu-id="dcc2b-113">New Excel JavaScript APIs</span></span> 
+- <span data-ttu-id="4cc30-112">O arquivo JSON que especifica a função personalizada metatdata não precisa especificar **sync** ou **async** nas **opções**.</span><span class="sxs-lookup"><span data-stu-id="4cc30-112">The JSON file that specifies custom function metatdata does not need to specify **sync** or **async** within **options**.</span></span>
 
-<span data-ttu-id="dcc2b-114">O tempo de execução do JavaScript que é usado pelas funções personalizadas tem as seguintes APIs:</span><span class="sxs-lookup"><span data-stu-id="dcc2b-114">The JavaScript runtime that's used by custom functions has the following APIs:</span></span>
+## <a name="new-apis"></a><span data-ttu-id="4cc30-113">Novas APIs</span><span class="sxs-lookup"><span data-stu-id="4cc30-113">New Excel JavaScript APIs</span></span> 
 
-- [<span data-ttu-id="dcc2b-115">XHR</span><span class="sxs-lookup"><span data-stu-id="dcc2b-115">XHR</span></span>](#xhr)
-- [<span data-ttu-id="dcc2b-116">WebSockets</span><span class="sxs-lookup"><span data-stu-id="dcc2b-116">WebSockets</span></span>](#websockets)
-- [<span data-ttu-id="dcc2b-117">AsyncStorage</span><span class="sxs-lookup"><span data-stu-id="dcc2b-117">AsyncStorage</span></span>](#asyncstorage)
-- [<span data-ttu-id="dcc2b-118">API de diálogo</span><span class="sxs-lookup"><span data-stu-id="dcc2b-118">Dialog API requirement sets</span></span>](#dialog-api)
+<span data-ttu-id="4cc30-114">O tempo de execução do JavaScript que é usado pelas funções personalizadas tem as seguintes APIs:</span><span class="sxs-lookup"><span data-stu-id="4cc30-114">The JavaScript runtime that's used by custom functions has the following APIs:</span></span>
 
-### <a name="xhr"></a><span data-ttu-id="dcc2b-119">XHR</span><span class="sxs-lookup"><span data-stu-id="dcc2b-119">XHR</span></span>
+- [<span data-ttu-id="4cc30-115">XHR</span><span class="sxs-lookup"><span data-stu-id="4cc30-115">XHR</span></span>](#xhr)
+- [<span data-ttu-id="4cc30-116">WebSockets</span><span class="sxs-lookup"><span data-stu-id="4cc30-116">WebSockets</span></span>](#websockets)
+- [<span data-ttu-id="4cc30-117">AsyncStorage</span><span class="sxs-lookup"><span data-stu-id="4cc30-117">AsyncStorage</span></span>](#asyncstorage)
+- [<span data-ttu-id="4cc30-118">API de diálogo</span><span class="sxs-lookup"><span data-stu-id="4cc30-118">Dialog API requirement sets</span></span>](#dialog-api)
 
-<span data-ttu-id="dcc2b-120">XHR significa [XmlHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), uma API da Web padrão que emite solicitações HTTP para interagir com os servidores.</span><span class="sxs-lookup"><span data-stu-id="dcc2b-120">XHR stands for [XmlHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.</span></span> <span data-ttu-id="dcc2b-121">No novo tempo de execução do JavaScript, XHR implementa medidas adicionais de segurança, exigindo a [Mesma diretiva de origem](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) e [CORS](https://www.w3.org/TR/cors/) simples.</span><span class="sxs-lookup"><span data-stu-id="dcc2b-121">In the new JavaScript runtime, XHR implements additional security measures by requiring [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).</span></span>  
+### <a name="xhr"></a><span data-ttu-id="4cc30-119">XHR</span><span class="sxs-lookup"><span data-stu-id="4cc30-119">XHR</span></span>
 
-<span data-ttu-id="dcc2b-122">No exemplo de código a seguir, a função `getTemperature()` envia uma solicitação da web para obter a temperatura de uma determinada área com base na ID de termômetro.</span><span class="sxs-lookup"><span data-stu-id="dcc2b-122">In the following code sample, the `getTemperature()` function sends a web request to get the temperature of a particular area based on thermometer ID.</span></span> <span data-ttu-id="dcc2b-123">A função `sendWebRequest()` usa XHR para emitir uma solicitação `GET` para um ponto de extremidade que pode fornecer os dados.</span><span class="sxs-lookup"><span data-stu-id="dcc2b-123">The `sendWebRequest()` function uses XHR to issue a `GET` request to an endpoint that can provide the data.</span></span>  
+<span data-ttu-id="4cc30-120">XHR significa [XmlHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), uma API da Web padrão que emite solicitações HTTP para interagir com os servidores.</span><span class="sxs-lookup"><span data-stu-id="4cc30-120">XHR stands for [XmlHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.</span></span> <span data-ttu-id="4cc30-121">No novo tempo de execução do JavaScript, XHR implementa medidas adicionais de segurança, exigindo a [Mesma diretiva de origem](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) e [CORS](https://www.w3.org/TR/cors/) simples.</span><span class="sxs-lookup"><span data-stu-id="4cc30-121">In the new JavaScript runtime, XHR implements additional security measures by requiring [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).</span></span>  
+
+<span data-ttu-id="4cc30-122">No exemplo de código a seguir, a função `getTemperature()` envia uma solicitação da web para obter a temperatura de uma determinada área com base na ID de termômetro.</span><span class="sxs-lookup"><span data-stu-id="4cc30-122">In the following code sample, the `getTemperature()` function sends a web request to get the temperature of a particular area based on thermometer ID.</span></span> <span data-ttu-id="4cc30-123">A função `sendWebRequest()` usa XHR para emitir uma solicitação `GET` para um ponto de extremidade que pode fornecer os dados.</span><span class="sxs-lookup"><span data-stu-id="4cc30-123">The `sendWebRequest()` function uses XHR to issue a `GET` request to an endpoint that can provide the data.</span></span>  
 
 ```js
 function getTemperature(thermometerID) {
@@ -62,13 +64,13 @@ function sendWebRequest(thermometerID, data) {
 
 ```
 
-### <a name="websockets"></a><span data-ttu-id="dcc2b-124">WebSockets</span><span class="sxs-lookup"><span data-stu-id="dcc2b-124">WebSockets</span></span>
+### <a name="websockets"></a><span data-ttu-id="4cc30-124">WebSockets</span><span class="sxs-lookup"><span data-stu-id="4cc30-124">WebSockets</span></span>
 
-<span data-ttu-id="dcc2b-125">[WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) é um protocolo de rede que cria a comunicação em tempo real entre um servidor e um ou mais clientes.</span><span class="sxs-lookup"><span data-stu-id="dcc2b-125">[WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) is a networking protocol that creates real-time communication between a server and one or more clients.</span></span> <span data-ttu-id="dcc2b-126">Ele é frequentemente usado para aplicativos de bate-papo porque permite que você possa ler e gravar texto simultaneamente.</span><span class="sxs-lookup"><span data-stu-id="dcc2b-126">It is often used for chat applications because it allows you to read and write text simultaneously.</span></span>  
+<span data-ttu-id="4cc30-125">[WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) é um protocolo de rede que cria a comunicação em tempo real entre um servidor e um ou mais clientes.</span><span class="sxs-lookup"><span data-stu-id="4cc30-125">[WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) is a networking protocol that creates real-time communication between a server and one or more clients.</span></span> <span data-ttu-id="4cc30-126">Ele é frequentemente usado para aplicativos de bate-papo porque permite que você possa ler e gravar texto simultaneamente.</span><span class="sxs-lookup"><span data-stu-id="4cc30-126">It is often used for chat applications because it allows you to read and write text simultaneously.</span></span>  
 
-<span data-ttu-id="dcc2b-127">Como mostra o exemplo de código a seguir, as funções personalizadas podem usar WebSockets.</span><span class="sxs-lookup"><span data-stu-id="dcc2b-127">As shown in the following code sample, custom functions can use WebSockets.</span></span> <span data-ttu-id="dcc2b-128">Neste exemplo, o WebSocket registra cada mensagem que recebe.</span><span class="sxs-lookup"><span data-stu-id="dcc2b-128">In this example, the WebSocket logs each message that it receives.</span></span>
+<span data-ttu-id="4cc30-127">Como mostra o exemplo de código a seguir, as funções personalizadas podem usar WebSockets.</span><span class="sxs-lookup"><span data-stu-id="4cc30-127">As shown in the following code sample, custom functions can use WebSockets.</span></span> <span data-ttu-id="4cc30-128">Neste exemplo, o WebSocket registra cada mensagem que recebe.</span><span class="sxs-lookup"><span data-stu-id="4cc30-128">In this example, the WebSocket logs each message that it receives.</span></span>
 
-```ts
+```typescript
 const ws = new WebSocket('wss://bundles.office.com');
 ws.onmessage = (message) => {
     console.log(`Received: ${message}`);
@@ -78,17 +80,17 @@ ws.onerror = (error) => {
 }
 ```
 
-### <a name="asyncstorage"></a><span data-ttu-id="dcc2b-129">AsyncStorage</span><span class="sxs-lookup"><span data-stu-id="dcc2b-129">AsyncStorage</span></span>
+### <a name="asyncstorage"></a><span data-ttu-id="4cc30-129">AsyncStorage</span><span class="sxs-lookup"><span data-stu-id="4cc30-129">AsyncStorage</span></span>
 
-<span data-ttu-id="dcc2b-130">AsyncStorage é um sistema de armazenamento de chave-valor que pode ser usado para armazenar os tokens de autenticação.</span><span class="sxs-lookup"><span data-stu-id="dcc2b-130">AsyncStorage is a key-value storage system that can be used to store authentication tokens.</span></span> <span data-ttu-id="dcc2b-131">Ele é:</span><span class="sxs-lookup"><span data-stu-id="dcc2b-131">It is framework-agnostic.</span></span>
+<span data-ttu-id="4cc30-130">AsyncStorage é um sistema de armazenamento de chave-valor que pode ser usado para armazenar os tokens de autenticação.</span><span class="sxs-lookup"><span data-stu-id="4cc30-130">AsyncStorage is a key-value storage system that can be used to store authentication tokens.</span></span> <span data-ttu-id="4cc30-131">Ele é:</span><span class="sxs-lookup"><span data-stu-id="4cc30-131">It is framework-agnostic.</span></span>
 
-- <span data-ttu-id="dcc2b-132">Persistente</span><span class="sxs-lookup"><span data-stu-id="dcc2b-132">Persistent Property</span></span>
-- <span data-ttu-id="dcc2b-133">Não encriptado</span><span class="sxs-lookup"><span data-stu-id="dcc2b-133">Unencrypted</span></span>
-- <span data-ttu-id="dcc2b-134">Assíncrono</span><span class="sxs-lookup"><span data-stu-id="dcc2b-134">Asynchronous calls</span></span>
+- <span data-ttu-id="4cc30-132">Persistente</span><span class="sxs-lookup"><span data-stu-id="4cc30-132">Persistent Property</span></span>
+- <span data-ttu-id="4cc30-133">Não encriptado</span><span class="sxs-lookup"><span data-stu-id="4cc30-133">Unencrypted</span></span>
+- <span data-ttu-id="4cc30-134">Assíncrono</span><span class="sxs-lookup"><span data-stu-id="4cc30-134">Asynchronous calls</span></span>
 
-<span data-ttu-id="dcc2b-135">AsyncStorage fica disponível globalmente para todas as partes do seu suplemento.</span><span class="sxs-lookup"><span data-stu-id="dcc2b-135">AsyncStorage is globally available to all parts of your add-in.</span></span> <span data-ttu-id="dcc2b-136">Para funções personalizadas, `AsyncStorage` é exposto como um objeto global.</span><span class="sxs-lookup"><span data-stu-id="dcc2b-136">For custom functions, `AsyncStorage` is exposed as a global object.</span></span> <span data-ttu-id="dcc2b-137">(Para outras partes do seu suplemento, como painéis de tarefas e outros elementos que usam o tempo de execução de exibição da Web, AsyncStorage é exposto por meio do `OfficeRuntime`.) Cada suplemento tem sua própria partição de armazenamento, com um tamanho padrão de 5 MB.</span><span class="sxs-lookup"><span data-stu-id="dcc2b-137">(For other parts of your add-in, such as task panes and other elements that use the WebView runtime, AsyncStorage is exposed through `OfficeRuntime`.) Each add-in has its own storage partition, with a default size of 5MB.</span></span> 
+<span data-ttu-id="4cc30-135">AsyncStorage fica disponível globalmente para todas as partes do seu suplemento.</span><span class="sxs-lookup"><span data-stu-id="4cc30-135">AsyncStorage is globally available to all parts of your add-in.</span></span> <span data-ttu-id="4cc30-136">Para funções personalizadas, `AsyncStorage` é exposto como um objeto global.</span><span class="sxs-lookup"><span data-stu-id="4cc30-136">For custom functions, `AsyncStorage` is exposed as a global object.</span></span> <span data-ttu-id="4cc30-137">(Para outras partes do seu suplemento, como painéis de tarefas e outros elementos que usam o tempo de execução de exibição da Web, AsyncStorage é exposto por meio do `OfficeRuntime`.) Cada suplemento tem sua própria partição de armazenamento, com um tamanho padrão de 5 MB.</span><span class="sxs-lookup"><span data-stu-id="4cc30-137">(For other parts of your add-in, such as task panes and other elements that use the WebView runtime, AsyncStorage is exposed through `OfficeRuntime`.) Each add-in has its own storage partition, with a default size of 5MB.</span></span> 
 
-<span data-ttu-id="dcc2b-138">Os métodos a seguir estão disponíveis no objeto `AsyncStorage`:</span><span class="sxs-lookup"><span data-stu-id="dcc2b-138">The following methods are available on the `AsyncStorage` object:</span></span>
+<span data-ttu-id="4cc30-138">Os métodos a seguir estão disponíveis no objeto `AsyncStorage`:</span><span class="sxs-lookup"><span data-stu-id="4cc30-138">The following methods are available on the `AsyncStorage` object:</span></span>
  
  - `getItem`
  - `setItem`
@@ -100,11 +102,11 @@ ws.onerror = (error) => {
  - `multiSet`
  - `multiRemove`
  
-<span data-ttu-id="dcc2b-139">Neste momento, os métodos `mergeItem` e `multiMerge` não são suportados.</span><span class="sxs-lookup"><span data-stu-id="dcc2b-139">At this time, the `mergeItem` and `multiMerge` methods are not supported.</span></span>
+<span data-ttu-id="4cc30-139">Neste momento, os métodos `mergeItem` e `multiMerge` não são suportados.</span><span class="sxs-lookup"><span data-stu-id="4cc30-139">At this time, the `mergeItem` and `multiMerge` methods are not supported.</span></span>
 
-<span data-ttu-id="dcc2b-140">O seguinte código de amostra chama a função `AsyncStorage.getItem` para recuperar um valor de armazenamento.</span><span class="sxs-lookup"><span data-stu-id="dcc2b-140">The following code sample calls the `AsyncStorage.getItem` function to retrieve a value from storage.</span></span>
+<span data-ttu-id="4cc30-140">O seguinte código de amostra chama a função `AsyncStorage.getItem` para recuperar um valor de armazenamento.</span><span class="sxs-lookup"><span data-stu-id="4cc30-140">The following code sample calls the `AsyncStorage.getItem` function to retrieve a value from storage.</span></span>
 
-```js
+```typescript
 _goGetData = async () => {
     try {
         const value = await AsyncStorage.getItem('toDoItem');
@@ -118,11 +120,11 @@ _goGetData = async () => {
 }
 ```
 
-### <a name="dialog-api"></a><span data-ttu-id="dcc2b-141">API de diálogo</span><span class="sxs-lookup"><span data-stu-id="dcc2b-141">Dialog API scenarios</span></span>
+### <a name="dialog-api"></a><span data-ttu-id="4cc30-141">API de diálogo</span><span class="sxs-lookup"><span data-stu-id="4cc30-141">Dialog API scenarios</span></span>
 
-<span data-ttu-id="dcc2b-142">A API de diálogo permite que você abra uma caixa de diálogo que solicita a entrada do usuário.</span><span class="sxs-lookup"><span data-stu-id="dcc2b-142">The Dialog API enables you to open a dialog box that prompts user sign-in.</span></span> <span data-ttu-id="dcc2b-143">Você pode usar a API de diálogo para exigir a autenticação de usuário por meio de um recurso externo, como Google ou Facebook, para que o usuário possa usar sua função.</span><span class="sxs-lookup"><span data-stu-id="dcc2b-143">You can use the Dialog API to require user authentication through an outside resource, such as Google or Facebook, before the user can use your function.</span></span>   
+<span data-ttu-id="4cc30-142">A API de diálogo permite que você abra uma caixa de diálogo que solicita a entrada do usuário.</span><span class="sxs-lookup"><span data-stu-id="4cc30-142">The Dialog API enables you to open a dialog box that prompts user sign-in.</span></span> <span data-ttu-id="4cc30-143">Você pode usar a API de diálogo para exigir a autenticação de usuário por meio de um recurso externo, como Google ou Facebook, para que o usuário possa usar sua função.</span><span class="sxs-lookup"><span data-stu-id="4cc30-143">You can use the Dialog API to require user authentication through an outside resource, such as Google or Facebook, before the user can use your function.</span></span>   
 
-<span data-ttu-id="dcc2b-144">No exemplo de código a seguir, o método `getTokenViaDialog()` usa o método `displayWebDialog()` da API de diálogo para abrir uma caixa de diálogo.</span><span class="sxs-lookup"><span data-stu-id="dcc2b-144">In the following code sample, the `getTokenViaDialog()` method uses the Dialog API’s `displayWebDialog()` method to open a dialog box.</span></span>
+<span data-ttu-id="4cc30-144">No exemplo de código a seguir, o método `getTokenViaDialog()` usa o método `displayWebDialog()` da API de diálogo para abrir uma caixa de diálogo.</span><span class="sxs-lookup"><span data-stu-id="4cc30-144">In the following code sample, the `getTokenViaDialog()` method uses the Dialog API’s `displayWebDialog()` method to open a dialog box.</span></span>
 
 ```js
 // Get auth token before calling my service, a hypothetical API that will deliver a stock price based on stock ticker string, such as "MSFT"
@@ -130,11 +132,11 @@ _goGetData = async () => {
 function getStock (ticker) {
   return new Promise(function (resolve, reject) {
     // Get a token
-    getToken("https://myauthurl")
+    getToken("https://www.contoso.com/auth")
     .then(function (token) {
       
       // Use token to get stock price
-      fetch("https://myservice.com/?token=token&ticker= + ticker")
+      fetch("https://www.contoso.com/?token=token&ticker= + ticker")
       .then(function (result) {
 
         // Return stock price to cell
@@ -204,10 +206,11 @@ function getStock (ticker) {
 ```
 
 > [!NOTE]
-> <span data-ttu-id="dcc2b-145">A API de diálogo descrita nesta seção faz parte do novo tempo de execução do JavaScript para funções personalizadas e pode ser usada somente nas funções personalizadas.</span><span class="sxs-lookup"><span data-stu-id="dcc2b-145">The Dialog API described in this section is part of the new JavaScript runtime for custom functions and can be used only within custom functions.</span></span> <span data-ttu-id="dcc2b-146">Essa API é diferente da [API de diálogo](../develop/dialog-api-in-office-add-ins.md) que pode ser usada nos painéis de tarefas e comandos do suplemento.</span><span class="sxs-lookup"><span data-stu-id="dcc2b-146">This API is different from the [Dialog API](../develop/dialog-api-in-office-add-ins.md) that can be used within task panes and add-in commands.</span></span>
+> <span data-ttu-id="4cc30-145">A API de diálogo descrita nesta seção faz parte do novo tempo de execução do JavaScript para funções personalizadas e pode ser usada somente nas funções personalizadas.</span><span class="sxs-lookup"><span data-stu-id="4cc30-145">The Dialog API described in this section is part of the new JavaScript runtime for custom functions and can be used only within custom functions.</span></span> <span data-ttu-id="4cc30-146">Essa API é diferente da [API de diálogo](../develop/dialog-api-in-office-add-ins.md) que pode ser usada nos painéis de tarefas e comandos do suplemento.</span><span class="sxs-lookup"><span data-stu-id="4cc30-146">This API is different from the [Dialog API](../develop/dialog-api-in-office-add-ins.md) that can be used within task panes and add-in commands.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="dcc2b-147">Confira também</span><span class="sxs-lookup"><span data-stu-id="dcc2b-147">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4cc30-147">Confira também</span><span class="sxs-lookup"><span data-stu-id="4cc30-147">See also</span></span>
 
-* [<span data-ttu-id="dcc2b-148">Criar funções personalizadas no Excel</span><span class="sxs-lookup"><span data-stu-id="dcc2b-148">Create custom functions in Excel (Preview)</span></span>](custom-functions-overview.md)
-* [<span data-ttu-id="dcc2b-149">Metadados de funções personalizadas</span><span class="sxs-lookup"><span data-stu-id="dcc2b-149">Custom functions metadata</span></span>](custom-functions-json.md)
-* [<span data-ttu-id="dcc2b-150">Melhores práticas de funções personalizadas</span><span class="sxs-lookup"><span data-stu-id="dcc2b-150">Custom functions best practices</span></span>](custom-functions-best-practices.md)
+* [<span data-ttu-id="4cc30-148">Criar funções personalizadas no Excel</span><span class="sxs-lookup"><span data-stu-id="4cc30-148">Create custom functions in Excel (Preview)</span></span>](custom-functions-overview.md)
+* [<span data-ttu-id="4cc30-149">Metadados de funções personalizadas</span><span class="sxs-lookup"><span data-stu-id="4cc30-149">Custom functions metadata</span></span>](custom-functions-json.md)
+* [<span data-ttu-id="4cc30-150">Melhores práticas de funções personalizadas</span><span class="sxs-lookup"><span data-stu-id="4cc30-150">Custom functions best practices</span></span>](custom-functions-best-practices.md)
+* [<span data-ttu-id="4cc30-151">Tutorial de funções personalizadas do Excel</span><span class="sxs-lookup"><span data-stu-id="4cc30-151">Excel custom functions tutorial</span></span>](excel-tutorial-custom-functions.md)
