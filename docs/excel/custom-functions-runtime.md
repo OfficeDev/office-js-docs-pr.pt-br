@@ -1,17 +1,19 @@
 ---
-ms.date: 09/20/2018
+ms.date: 09/27/2018
 description: Funções personalizadas do Excel usam um novo tempo de execução do JavaScript que difere do tempo de execução de controle do modo de exibição da Web para suplementos padrão.
-title: Tempo de execução de funções personalizados do Excel
-ms.openlocfilehash: fa2b2030259e05f64b8b4660ded8b80c6af1eb5a
-ms.sourcegitcommit: 8ce9a8d7f41d96879c39cc5527a3007dff25bee8
+title: Tempo de execução de funções personalizadas do Excel
+ms.openlocfilehash: 7489cd66851d1e0c24ef573ffa920b794cf749c2
+ms.sourcegitcommit: 1852ae367de53deb91d03ca55d16eb69709340d3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "24985792"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "25348756"
 ---
-# <a name="runtime-for-excel-custom-functions-preview"></a>Runtime de funções personalizadas do Excel (Versão prévia)
+# <a name="runtime-for-excel-custom-functions-preview"></a>Tempo de execução de funções personalizadas do Excel (versão prévia)
 
-As funções personalizadas estendem os recursos do Excel usando um novo runtime do JavaScript que usa um mecanismo de JavaScript em área restrita em vez de um navegador da web. Como as funções personalizadas não precisam renderizar elementos de interface do usuário, o novo tempo de execução do JavaScript é otimizado para fazer cálculos, permitindo que você execute milhares de funções personalizadas simultaneamente.
+As funções personalizadas estendem as funcionalidades do Excel usando um novo tempo de execução do JavaScript que usa um mecanismo de JavaScript em área restrita em vez de um navegador da web. Como as funções personalizadas não precisam renderizar elementos de interface do usuário, o novo tempo de execução do JavaScript é otimizado para fazer cálculos, permitindo que você execute milhares de funções personalizadas simultaneamente.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="key-facts-about-the-new-javascript-runtime"></a>Fatos importantes sobre o novo tempo de execução do JavaScript 
 
@@ -68,7 +70,7 @@ function sendWebRequest(thermometerID, data) {
 
 Como mostra o exemplo de código a seguir, as funções personalizadas podem usar WebSockets. Neste exemplo, o WebSocket registra cada mensagem que recebe.
 
-```ts
+```typescript
 const ws = new WebSocket('wss://bundles.office.com');
 ws.onmessage = (message) => {
     console.log(`Received: ${message}`);
@@ -104,7 +106,7 @@ Neste momento, os métodos `mergeItem` e `multiMerge` não são suportados.
 
 O seguinte código de amostra chama a função `AsyncStorage.getItem` para recuperar um valor de armazenamento.
 
-```js
+```typescript
 _goGetData = async () => {
     try {
         const value = await AsyncStorage.getItem('toDoItem');
@@ -130,11 +132,11 @@ No exemplo de código a seguir, o método `getTokenViaDialog()` usa o método `d
 function getStock (ticker) {
   return new Promise(function (resolve, reject) {
     // Get a token
-    getToken("https://myauthurl")
+    getToken("https://www.contoso.com/auth")
     .then(function (token) {
       
       // Use token to get stock price
-      fetch("https://myservice.com/?token=token&ticker= + ticker")
+      fetch("https://www.contoso.com/?token=token&ticker= + ticker")
       .then(function (result) {
 
         // Return stock price to cell
@@ -211,3 +213,4 @@ function getStock (ticker) {
 * [Criar funções personalizadas no Excel](custom-functions-overview.md)
 * [Metadados de funções personalizadas](custom-functions-json.md)
 * [Melhores práticas de funções personalizadas](custom-functions-best-practices.md)
+* [Tutorial de funções personalizadas do Excel](excel-tutorial-custom-functions.md)
