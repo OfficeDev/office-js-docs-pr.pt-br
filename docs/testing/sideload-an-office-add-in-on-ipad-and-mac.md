@@ -2,16 +2,16 @@
 title: Realizar o sideload de suplementos do Office em um iPad ou Mac para teste
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 48f685cc6c3f1a5193ad4dbd3f9ba27f5f855b05
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: e5ec6924917f2351da77c8b9a84eb8de77b3864e
+ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944442"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "25348125"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>Realizar o sideload de suplementos do Office em um iPad ou Mac para teste
 
-Para ver como seu suplemento será executado no Office para iOS, você pode realizar o sideload do manifesto do seu suplemento em um iPad usando o iTunes, ou realizar o sideload do manifesto do suplemento diretamente no Office para Mac. Esta ação não permite definir pontos de interrupção e depurar o código do seu suplemento enquanto ele estiver em execução, mas é possível ver como ele se comporta e verificar se a interface do usuário é utilizável e está sendo processada adequadamente. 
+Para ver como seu suplemento será executado no Office para iOS, você pode realizar o sideload do manifesto do suplemento em um iPad usando o iTunes ou diretamente no Office para Mac. Esta ação não permite definir pontos de interrupção e depurar o código do suplemento enquanto ele estiver sendo executado, mas é possível ver como ele se comporta e se a interface do usuário é utilizável e está sendo processada adequadamente. 
 
 ## <a name="prerequisites-for-office-for-ios"></a>Pré-requisitos do Office para iOS
 
@@ -19,7 +19,7 @@ Para ver como seu suplemento será executado no Office para iOS, você pode real
     
 - Um iPad executando o iOS 8.2 ou posterior com [Excel para iPad](https://itunes.apple.com/us/app/microsoft-excel/id586683407?mt=8) instalado e um cabo de sincronização.
     
-- O arquivo de manifesto .xml para o suplemento que você deseja testar.
+- O arquivo de manifesto .xml do suplemento que você deseja testar.
     
 
 ## <a name="prerequisites-for-office-for-mac"></a>Pré-requisitos do Office para Mac
@@ -32,12 +32,12 @@ Para ver como seu suplemento será executado no Office para iOS, você pode real
 
 - PowerPoint para Mac versão 15.24 (160614)
     
-- O arquivo de manifesto .xml para o suplemento que você deseja testar.
+- O arquivo de manifesto .xml do suplemento que você deseja testar.
     
 
-## <a name="sideload-an-add-in-on-excel-or-word-for-ipad"></a>Realizar um sideload de um suplemento no Excel ou no Word para iPad
+## <a name="sideload-an-add-in-on-excel-or-word-for-ipad"></a>Realizar o sideload de um suplemento no Excel ou no Word para iPad
 
-1. Use um cabo de sincronização para conectar seu iPad ao computador. Se estiver conectando o iPad ao computador pela primeira vez, será solicitado a responder **Confiar Neste Computador?** Escolha **Confiar** para continuar.
+1. Use um cabo de sincronização para conectar seu iPad ao computador. Se estiver conectando o iPad ao computador pela primeira vez, deverá responder **Confiar neste computador?** Escolha **Confiar** para continuar.
 
 2. No iTunes, escolha o ícone do **iPad** abaixo da barra de menus.
     
@@ -45,19 +45,19 @@ Para ver como seu suplemento será executado no Office para iOS, você pode real
 
 3. Em **Ajustes** no lado esquerdo do iTunes, escolha **Aplicativos**.
     
-    ![Configurações de aplicativos do iTunes](../images/file-settings-apps.png)
+    ![Configurações de aplicativos no iTunes](../images/file-settings-apps.png)
 
 4. No lado direito do iTunes, role para baixo até **Compartilhamento de Arquivos**, e escolha **Excel** ou **Word** na coluna **Aplicativos**.
     
-    ![Compartilhamento de arquivos do iTunes](../images/file-sharing.png)
+    ![Compartilhamento de arquivos no iTunes](../images/file-sharing.png)
 
 5. Na parte inferior da coluna Documentos do **Excel** ou do **Word**, escolha **Adicionar Arquivo** e selecione o arquivo de manifesto .xml do suplemento para o qual você deseja realizar sideload. 
     
-6. Abra o aplicativo Excel ou Word em seu iPad. Se já estiver executando o aplicativo Excel ou Word, escolha o botão **Início**, feche e reinicie o aplicativo.
+6. Abra o aplicativo Excel ou Word no seu iPad. Se o aplicativo Excel ou Word já estiver em execução, escolha o botão **Início**, feche e reinicie o aplicativo.
     
 7. Abra um documento.
     
-8. Escolha **Suplementos** na guia **Inserir**. O suplemento com sideload está disponível para inserção no cabeçalho **Desenvolvedor** na interface de usuário **Suplementos**.
+8. Escolha **Suplementos** na guia **Inserir**. O suplemento com sideload está disponível para inserção no cabeçalho **Desenvolvedor** da interface de usuário **Suplementos**.
     
     ![Inserir Suplementos no aplicativo do Excel](../images/excel-insert-add-in.png)
 
@@ -77,23 +77,23 @@ Para ver como seu suplemento será executado no Office para iOS, você pode real
     
     ![Pasta Wef no Office para Mac](../images/all-my-files.png)
 
-3. Abra o Word e abra um documento. Reinicie o Word se já estiver em execução.
+3. Abra o Word e, em seguida, abra um documento. Reinicie o Word se ele já estiver em execução.
     
-4. No Word, escolha **Inserir** > **Suplementos** > **Meus Suplementos** (menu suspenso) e escolha seu suplemento.
+4. No Word, escolha **Inserir** > **Suplementos** > **Meus Suplementos** (menu suspenso) e escolha o seu suplemento.
     
     ![Meus Suplementos no Office para Mac](../images/my-add-ins-wikipedia.png)
 
     > [!IMPORTANT]
-    > Aplicativos em que foi feito o sideload não aparecerão na caixa de diálogo Meus Suplementos. Eles só ficam visíveis dentro do menu suspenso (pequena seta para baixo à direita de Meus Suplementos na guia **Inserir**). Os suplementos em que foi feito o sideload são exibidos na lista sob o título **Suplementos do Desenvolvedor** nesse menu. 
+    > Os suplementos para os quais foi realizado o sideload não aparecerão na caixa de diálogo Meus Suplementos. Eles só ficam visíveis dentro do menu suspenso (pequena seta para baixo à direita de Meus Suplementos na guia **Inserir**). Esse suplementos são exibidos na lista sob o título **Suplementos do Desenvolvedor** nesse menu. 
     
 5. Verifique se o seu suplemento é exibido no Word.
     
     ![Suplemento do Office exibido no Office para Mac](../images/lorem-ipsum-wikipedia.png)
     
     > [!NOTE]
-    > Os Suplementos muitas vezes são armazenados em cache no Office para Mac por questão de desempenho. Se você precisar forçar um recarregamento do seu suplemento enquanto estiver desenvolvendo-o, limpe a pasta `Users/<usr>/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
+    > Por motivos de desempenho, o Office para Mac costuma armazenar os suplementos no cache. Se você precisar forçar um novo carregamento do suplemento durante o desenvolvimento, pode limpar a pasta `Users/<usr>/Library/Containers/com.Microsoft.OsfWebHost/Data/`. Se essa pasta não existir, exclua os arquivos da pasta `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 - [Depurar suplementos do Office no iPad e no Mac](debug-office-add-ins-on-ipad-and-mac.md)
     

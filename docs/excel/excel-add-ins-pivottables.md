@@ -2,18 +2,18 @@
 title: Trabalhar com tabelas dinâmicas usando a API do JavaScript Excel
 description: Use a API do JavaScript Excel para criar tabelas dinâmicas e interagir com seus componentes.
 ms.date: 09/21/2018
-ms.openlocfilehash: b8704389ced3686858f488b2a50f80c22b1b8bd6
-ms.sourcegitcommit: e7e4d08569a01c69168bb005188e9a1e628304b9
+ms.openlocfilehash: 7178ae0d578e9f52bd9590c764c488c7fa4d2b43
+ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "24967666"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "25348181"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Trabalhar com tabelas dinâmicas usando a API do JavaScript Excel
 
-As tabelas dinâmicas simplificam conjuntos de dados maiores. Elas permitem a rápida manipulação de dados agrupados. A API do JavaScript Excel permite que seu suplemento criar tabelas dinâmicas e interaja com seus componentes. 
+As tabelas dinâmicas simplificam conjuntos de dados maiores. Elas permitem a rápida manipulação de dados agrupados. A API JavaScript do Excel permite que seu suplemento crie tabelas dinâmicas e interaja com seus componentes. 
 
-Se não estiver familiarizado com a funcionalidade das tabelas dinâmicas, considere explorá-las como um usuário final. Veja [Criar uma tabela dinâmica para analisar dados de planilha](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) para uma boa orientação sobre essas ferramentas. 
+Se você não estiver familiarizado com a funcionalidade das tabelas dinâmicas, considere explorá-las como um usuário final. Consulte [Criar uma tabela dinâmica para analisar dados da planilha](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) para uma boa orientação sobre essas ferramentas. 
 
 Este artigo fornece exemplos de código para cenários comuns. Para enriquecer a compreensão da API de tabela dinâmica, veja [**Tabela dinâmica**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable) e [**Coleção de tabelas dinâmicas**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable).
 
