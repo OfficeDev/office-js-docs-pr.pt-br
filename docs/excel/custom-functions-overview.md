@@ -1,17 +1,19 @@
 ---
-ms.date: 09/20/2018
+ms.date: 09/27/2018
 description: Criar uma função personalizada no Excel usando o JavaScript.
-title: Criar funções personalizadas no Excel (Visualização)
-ms.openlocfilehash: b214329fe50955d0f39d50f674152f475ca24b4d
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+title: Criar funções personalizadas no Excel (versão prévia)
+ms.openlocfilehash: c8a2d8755a68530ecf8743c4a8ab65a4bed5b849
+ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25005040"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "25348153"
 ---
-# <a name="create-custom-functions-in-excel-preview"></a>Criar funções personalizadas no Excel (Visualização)
+# <a name="create-custom-functions-in-excel-preview"></a>Criar funções personalizadas no Excel (versão prévia)
 
-Funções personalizadas permitem que os desenvolvedores adicionem novas funções para o Excel, definindo essas funções em JavaScript como parte de um suplemento. Os usuários podem então acessar funções personalizadas como qualquer outra função nativa do Excel (como `SUM()`). Este artigo explica como criar as funções personalizadas no Excel.
+As funções personalizadas permitem que desenvolvedores adicionem novas funções ao Excel definindo essas funções em JavaScript, como parte de um suplemento. Os usuários podem acessar as funções personalizadas como fazem com qualquer função nativa no Excel, como `SUM()`. Este artigo descreve como criar funções personalizadas no Excel.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 A ilustração a seguir mostra um usuário final inserindo uma função personalizada em uma célula de uma planilha do Excel. A `CONTOSO.ADD42` função personalizada foi projetada para adicionar 42 ao par de números que o usuário especifica como parâmetros de entrada para a função.
 
@@ -20,36 +22,133 @@ A ilustração a seguir mostra um usuário final inserindo uma função personal
 O código a seguir define a função personalizada `ADD42`.
 
 ```js
-function ADD42(a, b) {
-    return a + b + 42;
+function add42(a, b) {
+  return a + b + 42;
 }
 ```
 
-As funções personalizadas agora estão disponíveis no Developer Preview para Windows, Mac e Excel Online. Para testá-las, conclua estas etapas:
-
-1. Instale o Office (compilação 10827 no Windows ou 13.329 no Mac) e participe do programa [Office Insider](https://products.office.com/office-insider). Você deve se associar ao programa Office Insider para ter acesso às funções personalizadas; atualmente as funções personalizadas estão desabilitadas em todas as versões do Office, a menos que você seja um membro do programa Office Insider.
-
-2. Use [Yo Office](https://github.com/OfficeDev/generator-office) para criar um projeto de suplemento de funções personalizadas do Excel e siga as instruções no [README OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/README.md) para usar o projeto.
-
-3. Digite `=CONTOSO.ADD42(1,2)` em qualquer célula de uma planilha do Excel e pressione **Enter** para executar a função personalizada.
-
 > [!NOTE]
-> A seção de [Problemas conhecidos](#known-issues) neste artigo especifica as limitações atuais de funções personalizadas.
+> A seção de [Problemas conhecidos](#known-issues) neste artigo especifica as limitações atuais das funções personalizadas.
 
-## <a name="learn-the-basics"></a>Noções básicas
+## <a name="components-of-a-custom-functions-add-in-project"></a>Componentes de um projeto de suplemento de funções personalizadas
 
-No projeto de funções personalizadas que você criou usando o [Office Yo](https://github.com/OfficeDev/generator-office), você verá os seguintes arquivos:
+Se você usar o [gerador de Yo Office](https://github.com/OfficeDev/generator-office) para criar um projeto de suplemento de funções personalizadas do Excel, verá os seguintes arquivos no projeto criado pelo gerador:
 
 | Arquivo | Formato do arquivo | Descrição |
 |------|-------------|-------------|
-| **./src/customfunctions.js** | JavaScript | Contém o código que define as funções personalizadas. |
-| **./config/customfunctions.json** | JSON | Contém metadados que descrevem as funções personalizadas e permitem ao Excel registrar as funções personalizadas para torná-las disponíveis aos usuários finais. |
+| **./src/customfunctions.js**<br/>ou<br/>**./src/customfunctions.ts** | JavaScript<br/>ou<br/>TypeScript | Contém o código que define as funções personalizadas. |
+| **./config/customfunctions.json** | JSON | Contém metadados que descrevem as funções personalizadas e permitem que Excel registre e disponibilize as funções personalizadas para o usuário final. |
 | **./index.html** | HTML | Fornece uma referência de &lt;script&gt; ao arquivo JavaScript que define as funções personalizadas. |
-| **./manifest.xml** | XML | Especifica o namespace para todas as funções personalizadas dentro do suplemento e o local dos arquivos JavaScript, JSON e HTML que estão listados anteriormente nesta tabela. |
+| **./manifest.xml** | XML | Especifica o namespace para todas as funções personalizadas dentro do suplemento e o local dos arquivos JavaScript, JSON e HTML listados anteriormente nesta tabela. |
 
-### <a name="manifest-file-manifestxml"></a>Arquivo de manifesto (./manifest.xml)
+As seções a seguir fornecem mais informações sobre esses arquivos.
 
-O arquivo de manifesto XML para um suplemento que define as funções personalizadas especifica o namespace para todas as funções personalizadas dentro do suplemento e do local dos arquivos JavaScript, JSON e HTML. A marcação XML a seguir mostra um exemplo dos elementos `<ExtensionPoint>` e `<Resources>` que você deve incluir em manifesto de um suplemento para habilitar o Excel a executar funções personalizadas.  
+### <a name="script-file"></a>Arquivo de script 
+
+O arquivo de script (**./src/customfunctions.js** ou **./src/customfunctions.ts** no projeto criado pelo gerador Yo Office) contém o código que define as funções personalizadas e mapeia os nomes das funções personalizadas para os objetos no [arquivo de metadados JSON](#json-metadata-file). 
+
+Por exemplo, o código a seguir define as funções personalizadas `add` e `increment` e, em seguida, especifica o mapeamento de ambas as funções. A função`add` é mapeada para o objeto no arquivo de metadados JSON onde o valor da propriedade `id` é **ADD** e a função `increment` é mapeada para o objeto no arquivo de metadados onde o valor da propriedade `id` é **INCREMENT**. Confira o artigo [Práticas recomendadas para funções personalizadas](custom-functions-best-practices.md#mapping-function-names-to-json-metadata) para obter mais informações sobre o mapeamento de nomes de função no arquivo de script para objetos no arquivo de metadados JSON.
+
+```js
+function add(first, second){
+  return first + second;
+}
+
+function increment(incrementBy, callback) {
+  var result = 0;
+  var timer = setInterval(function() {
+    result += incrementBy;
+    callback.setResult(result);
+  }, 1000);
+
+  callback.onCanceled = function() {
+    clearInterval(timer);
+  };
+}
+
+// map `id` values in the JSON metadata file to the JavaScript function names
+CustomFunctionMappings.ADD = add;
+CustomFunctionMappings.INCREMENT = increment;
+```
+
+### <a name="json-metadata-file"></a>Arquivo de metadados JSON 
+
+O arquivo de metadados de funções personalizadas (**./config/customfunctions.json** no projeto criado pelo gerador Yo Office) fornece as informações que o Excel precisa para registrar as funções personalizadas e disponibilizá-las para o usuário final. As funções personalizadas são registradas quando um usuário executa o suplemento pela primeira vez. Depois disso, elas estarão disponíveis para esse mesmo usuário em todas as pastas de trabalho (ou seja, não apenas na pasta de trabalho onde o suplemento inicialmente executou.)
+
+> [!TIP]
+> As configurações do servidor que hospeda o arquivo JSON devem ter [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) habilitado para que funções personalizadas funcionem corretamente no Excel Online.
+
+O código a seguir em **customfunctions.json** especifica os metadados para as funções `add` e `increment` descritas anteriormente. A tabela que segue o exemplo de código a seguir fornece informações detalhadas sobre as propriedades individuais dentro desse objeto JSON. Confira o artigo [Práticas recomendadas para funções personalizadas](custom-functions-best-practices.md#mapping-function-names-to-json-metadata) para obter mais informações sobre como especificar o valor das propriedades `id` e `name` no arquivo de metadados JSON.
+
+```json
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/office-js/custom-functions.schema.json",
+  "functions": [
+    {
+      "id": "ADD",
+      "name": "ADD",
+      "description": "Add two numbers",
+      "helpUrl": "http://www.contoso.com",
+      "result": {
+        "type": "number",
+        "dimensionality": "scalar"
+      },
+      "parameters": [
+        {
+          "name": "first",
+          "description": "first number to add",
+          "type": "number",
+          "dimensionality": "scalar"
+        },
+        {
+          "name": "second",
+          "description": "second number to add",
+          "type": "number",
+          "dimensionality": "scalar"
+        }
+      ]
+    },
+    {
+      "id": "INCREMENT",
+      "name": "INCREMENT",
+      "description": "Periodically increment a value",
+      "helpUrl": "http://www.contoso.com",
+      "result": {
+          "type": "number",
+          "dimensionality": "scalar"
+    },
+    "parameters": [
+        {
+            "name": "increment",
+            "description": "Amount to increment",
+            "type": "number",
+            "dimensionality": "scalar"
+        }
+    ],
+    "options": {
+        "cancelable": true,
+        "stream": true
+      }
+    }
+  ]
+}
+```
+
+A tabela a seguir lista as propriedades que estão geralmente presentes no arquivo de metadados JSON. Para obter informações mais detalhadas sobre o arquivo de metadados JSON, confira [Metadados de funções personalizadas](custom-functions-json.md).
+
+| Propriedade  | Descrição |
+|---------|---------|
+| `id` | Um ID exclusivo para a função. Esse ID não deve ser alterado depois de definido. |
+| `name` | Nome da função que o usuário final vê no Excel. No Excel, esse nome de função será prefixado pelo namespace de funções personalizadas especificado no [arquivo de manifesto XML](#manifest-file). |
+| `helpUrl` | URL da página que é exibida quando o usuário solicita ajuda. |
+| `description` | Descreve o que a função faz. Esse valor aparece como uma dica de ferramenta quando a função é o item selecionado no menu Preenchimento Automático dentro do Excel. |
+| `result`  | Objeto que define o tipo de informação que é retornado pela função. O valor da propriedade filho `type` pode ser uma **sequência de caracteres**, **número** ou **booleano**. O valor da propriedade filho `dimensionality` pode ser **scalar** ou **matrix** (uma matriz bidimensional de valores do `type` especificado). |
+| `parameters` | Matriz que define os parâmetros de entrada para a função. As propriedades filho `name` e `description` são usadas no Intellisense do Excel. O valor da propriedade filho `type` pode ser **string**, **number** ou **boolean**. O valor da propriedade filho `dimensionality` pode ser **scalar** ou **matrix** (uma matriz bidimensional de valores do `type` especificado). |
+| `options` | Permite que você personalize alguns aspectos de como e quando o Excel executa a função. Para obter mais informações sobre como essa propriedade pode ser usada, consulte [Funções de fluxo contínuo](#streamed-functions) e [Cancelamento de uma função](#canceling-a-function) mais adiante neste artigo. |
+
+### <a name="manifest-file"></a>Arquivo de manifesto
+
+O arquivo de manifesto XML de um suplemento que define funções personalizadas (**./manifest.xml** no projeto criado pelo gerador Yo Office) especifica o namespace de todas as funções personalizadas dentro do suplemento e o local dos arquivos JavaScript, JSON e HTML. A marcação XML a seguir mostra um exemplo dos elementos `<ExtensionPoint>` e `<Resources>` que você deve incluir no manifesto de um suplemento para habilitar funções personalizadas.  
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -78,78 +177,26 @@ O arquivo de manifesto XML para um suplemento que define as funções personaliz
             <bt:Url id="HTML-URL" DefaultValue="http://127.0.0.1:8080/index.html" /> <!--specifies the location of your HTML file-->
         </bt:Urls>
         <bt:ShortStrings>
-            <bt:String id="namespace" DefaultValue="CONTOSO" /> <!--specifies the namespace that will be prepended to a function's name when it is called in Excel. For example, a function named "ADD42" is invoked as `=CONTOSO.ADD42` in Excel.-->
+            <bt:String id="namespace" DefaultValue="CONTOSO" /> <!--specifies the namespace that will be prepended to a function's name when it is called in Excel. -->
         </bt:ShortStrings>
     </Resources>
 </VersionOverrides>
 ```
 
 > [!NOTE]
-> As funções do Excel estão anexadas pelo namespace especificado em seu arquivo de manifesto XML. Um namespace de uma função vem antes do nome da função e são separados por um período. Por exemplo, para chamar a função `ADD42()` na célula de uma planilha do Excel, você digitaria `=CONTOSO.ADD42`, porque CONTOSO é o namespace e `ADD42` é o nome da função especificada no arquivo JSON. O prefixo de namespace deve ser usado como identificador para a sua empresa ou para o suplemento. 
-
-### <a name="json-file-configcustomfunctionsjson"></a>Arquivo JSON (./config/customfunctions.json)
-
-Um arquivo de metadados de funções personalizadas fornece as informações que o Excel precisa para registrar as funções personalizadas e torná-las disponíveis aos usuários finais. As funções personalizadas são registradas quando um usuário executa o suplemento pela primeira vez. Depois disso, elas estarão disponíveis para esse mesmo usuário em todas as pastas de trabalho (ou seja, não apenas na pasta de trabalho onde o suplemento inicialmente executou.)
-
-> [!TIP]
-> As configurações do servidor que hospedam o arquivo JSON devem ter [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) habilitado para que funções personalizadas funcionem corretamente no Excel Online.
-
-O código a seguir em **customfunctions.json** especifica os metadados para a função `ADD42` descrita anteriormente neste artigo. Esses metadados definem o nome da função, descrição, valor de retorno, parâmetros de entrada e demais dados. A tabela que segue o exemplo de código a seguir fornece informações detalhadas sobre as propriedades individuais dentro desse objeto JSON.
-
-```json
-{
-    "$schema": "https://developer.microsoft.com/json-schemas/office-js/custom-functions.schema.json",
-    "functions": [
-        {
-            "id": "ADD42",
-            "name": "ADD42",
-            "description":  "adds 42 to the input numbers",
-            "helpUrl": "http://dev.office.com",
-            "result": {
-                "type": "number",
-                "dimensionality": "scalar"
-            },
-            "parameters": [                {
-                    "name": "number 1",
-                    "description": "the first number to be added",
-                    "type": "number",
-                    "dimensionality": "scalar"
-                },
-                {
-                    "name": "number 2",
-                    "description": "the second number to be added",
-                    "type": "number",
-                    "dimensionality": "scalar"
-                }
-            ],
-        }
-    ]
-}
-```
-
-A tabela a seguir lista as propriedades que estão normalmente presentes no arquivo de metadados JSON. Para obter informações mais detalhadas sobre o arquivo de metadados JSON, incluindo opções não usadas no exemplo anterior, consulte [Metadados de funções personalizadas](custom-functions-json.md).
-
-| Propriedade  | Descrição |
-|---------|---------|
-| `id` | Uma ID exclusiva para a função. Essa ID não deve ser alterada depois de ser definida. |
-| `name` | O nome da função que é mostrado no menu de preenchimento automático à medida que um usuário digita uma fórmula dentro de uma célula. No menu de preenchimento automático, esse valor será prefixado pelo namespace das funções personalizadas especificado no arquivo de manifesto XML. |
-| `helpUrl` | URL de uma página que é exibida quando o usuário solicita ajuda. |
-| `description` | Descreve o que significa a função. Esse valor aparece como uma dica de ferramenta quando a função é o item selecionado no menu Preenchimento Automático dentro do Excel. |
-| `result`  | Objeto que define o tipo de informação que é retornado pela função. O valor da propriedade filho `type` pode ser uma **sequência de caracteres**, **número** ou **booleano**. O valor da propriedade filho `dimensionality` pode ser **scalar** ou **matrix** (uma matriz bidimensional de valores do `type` especificado). |
-| `parameters` | Matriz que define os parâmetros de entrada para a função. As propriedades filho `name` e `description` são usadas no Intellisense do Excel. As propriedades filho `type` e `dimensionality` são idênticas às propriedades filho do objeto `result` descrito anteriormente nesta tabela. |
-| `options` | Permite que você personalize alguns aspectos de como e quando o Excel executa a função. Para obter mais informações sobre como essa propriedade pode ser usada, consulte [Funções em fluxo contínuo](#streamed-functions) e [Cancelamento](#canceling-a-function) mais adiante neste artigo. |
+> As funções do Excel recebem o prefixo do namespace especificado em seu arquivo de manifesto XML. Um namespace de uma função vem antes do nome da função e são separados por um período. Por exemplo, para chamar a função `ADD42` na célula de uma planilha do Excel, você digitaria `=CONTOSO.ADD42`, porque CONTOSO é o namespace e `ADD42` é o nome da função especificada no arquivo JSON. O namespace deve ser usado como identificador da sua empresa ou do suplemento. 
 
 ## <a name="functions-that-return-data-from-external-sources"></a>Funções que retornam dados de fontes externas
 
 Se uma função personalizada recupera dados de uma fonte externa, como web, ela deve:
 
-1. Retornar uma Promise do JavaScript para o Excel.
+1. Retornar um Promise do JavaScript para o Excel.
 
 2. Resolver a Promise com o valor final usando a função de retorno de chamada.
 
 Funções personalizadas exibem um resultado temporário `#GETTING_DATA` na célula enquanto o Excel aguarda o resultado final. Os usuários podem interagir normalmente com o restante da planilha enquanto aguardam o resultado.
 
-No exemplo de código a seguir, a função personalizada `getTemperature()` recupera a temperatura atual de um termômetro. Observe que `sendWebRequest` é uma função hipotética (não especificada aqui) que usa o XHR para chamar um serviço Web de temperatura.
+No exemplo de código a seguir, a função personalizada `getTemperature()` recupera a temperatura atual de um termômetro. Observe que `sendWebRequest` é uma função hipotética (não especificada aqui) que usa [XHR](custom-functions-runtime.md#xhr) para chamar um serviço Web de temperatura.
 
 ```js
 function getTemperature(thermometerID){
@@ -161,27 +208,58 @@ function getTemperature(thermometerID){
 }
 ```
 
-## <a name="streamed-functions"></a>Funções de streaming
+## <a name="streamed-functions"></a>Funções de fluxo contínuo
 
-Funções personalizadas em fluxo contínuo permitem que você transmita para células repetidamente ao longo do tempo, sem exigir que um usuário solicite explicitamente o recálculo. O exemplo de código a seguir é uma função personalizada que adiciona um número ao resultado a cada segundo. Observe o seguinte sobre este código:
+Funções personalizadas de fluxo contínuo permitem que você atribua valores para as células repetidamente ao longo do tempo sem que o usuário precise solicitar explicitamente uma atualização. O exemplo de código a seguir é uma função personalizada que adiciona um número ao resultado a cada segundo. Observe o seguinte sobre este código:
 
 - O Excel exibe cada novo valor automaticamente usando o retorno de chamada `setResult`.
 
-- O parâmetro final `handler` nunca é especificado no seu código de registro e nunca é exibido no menu de preenchimento automático para usuários do Excel ao inserir a função. É a função de retorno de chamada `setResult` usada para passar dados da função para o Excel para atualizar o valor de uma célula.
+- O segundo parâmetro de entrada, `handler`, não é exibido para o usuário final no Excel, quando ele seleciona a função no menu de Preenchimento Automático.
 
-- Para que o Excel passe a função `setResult` no objeto `handler`, você deve declarar suporte para fluxo contínuo durante o registro da função, definindo a opção `"stream": true` na propriedade `options` para a função personalizada no arquivo de metadados JSON.
+- O retorno de chamada `onCanceled` define a função que é executada quando a função for cancelada. Você deve implementar um manipulador de cancelamento para qualquer função de fluxo contínuo. Para obter mais informações, confira[Cancelamento de função](#canceling-a-function). 
 
 ```js
 function incrementValue(increment, handler){
-    var result = 0;
-    setInterval(function(){
-         result += increment;
-         handler.setResult(result);
-    }, 1000);
+  var result = 0;
+  setInterval(function(){
+    result += increment;
+    handler.setResult(result);
+  }, 1000);
+
+  handler.onCanceled = function(){
+    clearInterval(timer);
+  }
 }
 ```
 
-## <a name="canceling-a-function"></a>Cancelamento de uma função
+Quando você especifica os metadados de uma função de fluxo contínuo no arquivo de metadados JSON, deve definir as propriedades `"cancelable": true` e `"stream": true` dentro do objeto `options`, conforme mostrado no exemplo a seguir.
+
+```json
+{
+  "id": "INCREMENT",
+  "name": "INCREMENT",
+  "description": "Periodically increment a value",
+  "helpUrl": "http://www.contoso.com",
+  "result": {
+    "type": "number",
+    "dimensionality": "scalar"
+  },
+  "parameters": [
+    {
+      "name": "increment",
+      "description": "Amount to increment",
+      "type": "number",
+      "dimensionality": "scalar"
+    }
+  ],
+  "options": {
+    "cancelable": true,
+    "stream": true
+  }
+}
+```
+
+## <a name="canceling-a-function"></a>Cancelamento de função
 
 Em alguns casos, talvez seja necessário cancelar a execução de uma função personalizada em fluxo contínuo para reduzir seu consumo de largura de banda, a memória de trabalho e a carga da CPU. O Excel cancela a execução de uma função nas seguintes situações:
 
@@ -189,36 +267,17 @@ Em alguns casos, talvez seja necessário cancelar a execução de uma função p
 
 - Quando um dos argumentos (entradas) para a função é alterado. Nesse caso, uma nova chamada de função é disparada após o cancelamento.
 
-- O usuário aciona manualmente um recálculo. Nesse caso, uma nova chamada de função é disparada após o cancelamento.
+- O usuário aciona o recálculo manualmente. Nesse caso, uma nova chamada de função é disparada após o cancelamento.
 
-> [!NOTE]
-> Você deve implementar um manipulador de cancelamento para todas as funções de fluxo contínuo.
+Para habilitar a capacidade de cancelar uma função, é preciso implementar um manipulador de cancelamento dentro da função JavaScript e especificar a propriedade `"cancelable": true` dentro do objeto `options` nos metadados JSON que descrevem a função. Os exemplos de código na seção anterior deste artigo fornecem um exemplo dessas técnicas.
 
-Para tornar uma função cancelável, defina a opção `"cancelable": true` na propriedade `options` para a função personalizada no arquivo de metadados JSON.
-
-O código a seguir mostra a mesma função `incrementValue` descrita anteriormente, mas desta vez com um manipulador de cancelamento implementado. Neste exemplo, `clearInterval()` será executado quando a função `incrementValue` for cancelada.
-
-```js
-function incrementValue(increment, handler){
-    var result = 0;
-    var timer = setInterval(function(){
-         result += increment;
-         handler.setResult(result);
-    }, 1000);
-
-    handler.onCanceled = function(){
-        clearInterval(timer);
-    }
-}
-```
-
-## <a name="saving-and-sharing-state"></a>Compartilhamento e salvamento de estado
+## <a name="saving-and-sharing-state"></a>Compartilhamento e gravação de estado
 
 Funções personalizadas podem salvar os dados em variáveis JavaScript globais. Em chamadas subsequentes, sua função personalizada pode usar valores salvos nessas variáveis. O estado salvo é útil quando os usuários adicionam a mesma função personalizada a mais de uma célula, porque todas as instâncias da função podem compartilhar o estado. Por exemplo, você pode salvar os dados retornados de uma chamada para um recurso da Web para evitar fazer chamadas adicionais para o mesmo recurso da Web.
 
-O exemplo de código a seguir mostra uma implementação da função anterior de fluxo contínuo de temperatura que salva o estado de forma global. Observe o seguinte sobre este código:
+O código de exemplo a seguir mostra uma implementação da função de fluxo contínuo de temperatura que salva o estado de forma global. Observe o seguinte sobre esse código:
 
-- `refreshTemperature` é uma função de streaming que lê a temperatura de um determinado termômetro a cada segundo. Novas temperaturas são salvas na variável `savedTemperatures`, mas o valor da célula não é atualizado diretamente. Não deve ser chamada diretamente de uma célula da planilha, *por isso não está registrada no arquivo JSON*.
+- `refreshTemperature` é uma função de streaming que lê a temperatura de um determinado termômetro a cada segundo. Novas temperaturas são salvas na variável `savedTemperatures`, mas não o valor da célula não é atualizado diretamente. Não deve ser chamada diretamente de uma célula da planilha, *por isso não está registrada no arquivo JSON*.
 
 - `streamTemperature` atualiza os valores de temperatura exibidos na célula a cada segundo e usa variável `savedTemperatures` como fonte de dados. Deve ser registrada no arquivo JSON e nomeada com todas as letras maiúsculas, `STREAMTEMPERATURE`.
 
@@ -228,24 +287,24 @@ O exemplo de código a seguir mostra uma implementação da função anterior de
 var savedTemperatures;
 
 function streamTemperature(thermometerID, handler){
-     if(!savedTemperatures[thermometerID]){
-         refreshTemperatures(thermometerID); // starts fetching temperatures if the thermometer hasn't been read yet
-     }
+  if(!savedTemperatures[thermometerID]){
+    refreshTemperatures(thermometerID); // starts fetching temperatures if the thermometer hasn't been read yet
+  }
 
-     function getNextTemperature(){
-         handler.setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to Excel.
-         setTimeout(getNextTemperature, 1000); // Wait 1 second before updating Excel again.
-     }
-     getNextTemperature();
+  function getNextTemperature(){
+    handler.setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to Excel.
+    setTimeout(getNextTemperature, 1000); // Wait 1 second before updating Excel again.
+  }
+  getNextTemperature();
 }
 
 function refreshTemperature(thermometerID){
-     sendWebRequest(thermometerID, function(data){
-         savedTemperatures[thermometerID] = data.temperature;
-     });
-     setTimeout(function(){
-         refreshTemperature(thermometerID);
-     }, 1000); // Wait 1 second before reading the thermometer again, and then update the saved temperature of thermometerID.
+  sendWebRequest(thermometerID, function(data){
+    savedTemperatures[thermometerID] = data.temperature;
+  });
+  setTimeout(function(){
+    refreshTemperature(thermometerID);
+  }, 1000); // Wait 1 second before reading the thermometer again, and then update the saved temperature of thermometerID.
 }
 ```
 
@@ -257,40 +316,40 @@ Por exemplo, suponha que sua função retorne o segundo maior valor de um interv
 
 ```js
 function secondHighest(values){
-     let highest = values[0][0], secondHighest = values[0][0];
-     for(var i = 0; i < values.length; i++){
-         for(var j = 1; j < values[i].length; j++){
-             if(values[i][j] >= highest){
-                 secondHighest = highest;
-                 highest = values[i][j];
-             }
-             else if(values[i][j] >= secondHighest){
-                 secondHighest = values[i][j];
-             }
-         }
-     }
-     return secondHighest;
- }
+  let highest = values[0][0], secondHighest = values[0][0];
+  for(var i = 0; i < values.length; i++){
+    for(var j = 1; j < values[i].length; j++){
+      if(values[i][j] >= highest){
+        secondHighest = highest;
+        highest = values[i][j];
+      }
+      else if(values[i][j] >= secondHighest){
+        secondHighest = values[i][j];
+      }
+    }
+  }
+  return secondHighest;
+}
 ```
 
 ## <a name="handling-errors"></a>Lidar com erros
 
-Quando você criar um suplemento que defina funções personalizadas, certifique-se de incluir a lógica de manipulação de erro para considerar os erros de tempo de execução. O tratamento de erros de funções personalizadas é o mesmo que [o tratamento de erros para a API do JavaScript Excel em geral](excel-add-ins-error-handling.md). No exemplo de código a seguir, `.catch` manipulará os erros que ocorreram anteriormente no código.
+Quando você criar um suplemento que define funções personalizadas, certifique-se de incluir a lógica de manipulação de erro para considerar os erros de tempo de execução. O tratamento de erros de funções personalizadas é o mesmo que [tratamento de erros para a API do JavaScript Excel em geral](excel-add-ins-error-handling.md). No exemplo de código a seguir, `.catch` manipulará os erros que ocorreram anteriormente no código.
 
 ```js
 function getComment(x) {
-    let url = "https://yourhypotheticalapi/comments/" + x;
+  let url = "https://www.contoso.com/comments/" + x;
 
-    return fetch(url)
-        .then(function (data) {
-            return data.json();
-        })
-        .then((json) => {
-            return json.body;
-        })
-        .catch(function (error) {
-            throw error;
-        })
+  return fetch(url)
+    .then(function (data) {
+      return data.json();
+    })
+    .then((json) => {
+      return json.body;
+    })
+    .catch(function (error) {
+      throw error;
+    })
 }
 ```
 
@@ -307,7 +366,7 @@ function getComment(x) {
 ## <a name="changelog"></a>Log de mudanças
 
 - **7 de novembro de 2017**: Enviados* exemplos e versão prévia de funções personalizadas
-- **20 de Nov de 2017**: correção de bug de compatibilidade para quem usa as versões 8801 e posteriores
+- **20 de Novembro de 2017**: correção de bug de compatibilidade para quem usa o build 8801 e posteriores
 - **28 de novembro de 2017**: Enviado* suporte para cancelamento em funções assíncronas (requer alteração para funções de fluxo contínuo)
 - **7 de maio de 2018**: Enviado* o suporte para Mac, Excel Online e funções síncronas executadas no processo
 - **20 de setembro de 2018**: Enviado suporte para tempo de execução do JavaScript para funções personalizadas. Para obter mais informações, consulte [Tempo de execução para funções personalizadas do Excel](custom-functions-runtime.md).
