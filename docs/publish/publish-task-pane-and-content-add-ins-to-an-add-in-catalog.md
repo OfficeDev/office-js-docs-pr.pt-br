@@ -2,12 +2,12 @@
 title: Publicar suplementos de conteúdo e de painel de tarefas em um catálogo do SharePoint
 description: Para tornar os suplementos do Office acessíveis aos usuários da organização, os administradores podem carregar arquivos de manifesto de suplementos do Office para o catálogo de suplementos da sua organização.
 ms.date: 01/23/2018
-ms.openlocfilehash: 2d1328b9944366d063934ff5781029beccfc82c8
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 5ba6a54c4540f79c65082cd7de3b76f300831341
+ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944843"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "25348118"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-catalog"></a>Publicar suplementos de conteúdo e de painel de tarefas em um catálogo do SharePoint
 
@@ -22,15 +22,18 @@ Um catálogo de suplementos é um conjunto de sites dedicado em um aplicativo We
 
 Conclua as etapas em uma das seções a seguir para configurar um catálogo de suplementos no SharePoint ou no Office 365.
 
-### <a name="to-set-up-an-add-in-catalog-on-sharepoint"></a>Para configurar um catálogo de suplementos no SharePoint
+### <a name="to-set-up-an-add-in-catalog-for-on-premises-sharepoint"></a>Para configurar um catálogo de suplementos do SharePoint local
 
-1. Navegue até o **site de administração central** (**Iniciar** > **Todos os programas** > **Produtos do Microsoft SharePoint 2013** > **Administração Central do SharePoint 2013**).
+> [!NOTE]
+> A interface do usuário no SharePoint local ainda se refere aos suplementos como **aplicativos**.
+
+1. Navegue até o **Site da Administração Central**.
     
-2. No painel de tarefas à esquerda, escolha **Suplementos**.
+2. No painel de tarefas esquerdo, escolha **Aplicativos**.
     
-3. Na página **Suplementos**, em **Gerenciamento de Suplemento**, escolha  **Gerenciar Catálogo de Suplementos**.
+3. Na página **Aplicativos**, em **Gerenciamento de aplicativos**, escolha **Gerenciar o catálogo de aplicativos**.
     
-4. Na página**Gerenciar Catálogo de Suplementos**, verifique se você tem o aplicativo Web correto selecionado no **Seletor de Aplicativo Web**.
+4. Na página** Gerenciar Catálogo de Suplementos**, verifique se você tem o aplicativo da Web correto selecionado no **Seletor de Aplicativo da Web**.
     
 5. Escolha **Exibir configurações do site**.
     
@@ -38,9 +41,9 @@ Conclua as etapas em uma das seções a seguir para configurar um catálogo de s
     
 7. Para conceder permissões de site aos usuários, escolha **Permissões de Site** e **Conceder Permissões**.
     
-8. Na caixa de diálogo **Compartilhar "Site do Catálogo de Aplicativos"**, especifique um ou mais usuários do site, defina as permissões apropriadas, defina outras opções se for o caso e escolha **Compartilhar**.
+8. Na caixa de diálogo **Compartilhar "Site do Catálogo de Aplicativos"**, especifique um ou mais usuários do site, defina as permissões apropriadas, defina outras opções, se for o caso, e escolha **Compartilhar**.
     
-9. Para adicionar suplementos ao catálogo de Suplementos do Office, escolha **Suplementos do Office**.
+9. Para adicionar suplementos ao catálogo de Suplementos do Office, escolha **Aplicativos do Office**.
 
 ### <a name="to-set-up-an-add-in-catalog-on-office-365"></a>Para configurar um catálogo de suplementos no Office 365
 
@@ -52,13 +55,13 @@ Conclua as etapas em uma das seções a seguir para configurar um catálogo de s
     
 4. Na página **Site do Catálogo de Suplementos**, escolha **OK** para aceitar a opção padrão e criar um novo site de catálogo de suplementos.
     
-5. Na página **Criar Conjunto de Sites do Catálogo de Suplementos**, especifique o título do seu site de Catálogo de Suplementos.
+5. Na página **Criar Conjunto de Sites de Catálogo de Suplementos**, especifique o título do seu site de Catálogo de Suplementos.
     
 6. Especifique o endereço do site da Web.
     
 7. Defina a **cota de armazenamento** como o menor valor possível (atualmente 110). Você só instalará pacotes de suplementos neste conjunto de sites e eles são muito pequenos.
     
-8. Defina a **Cota de Recursos de Servidor** como 0 (zero). (A cota de recursos de servidor está relacionada à limitação das soluções de área restrita com mau desempenho, mas não instala soluções de área restrita no seu site de catálogo de suplementos.)
+8. Defina a **Cota de Recursos de Servidor** como 0 (zero). (A cota de recursos de servidor está relacionada à limitação das soluções de área restrita com mau desempenho, mas você não vai instalar soluções de área restrita no seu site de catálogo de suplementos.)
     
 9. Escolha **OK**.
     
@@ -70,7 +73,7 @@ Para publicar um suplemento em um catálogo suplementos, conclua as etapas a seg
 
 1. Navegue até o catálogo de suplementos:
 
-    - Abra a página principal Administração Central do SharePoint.
+    - Abra a página principal da Administração Central do SharePoint.
     
     - Selecione **Suplementos**.
     
@@ -82,7 +85,7 @@ Para publicar um suplemento em um catálogo suplementos, conclua as etapas a seg
     
 3. Escolha **Procurar** e especifique o [manifesto](../develop/add-in-manifests.md) para carregar.
     
-    Suplementos de conteúdo e de painel de tarefas neste catálogo agora ficam disponíveis na caixa de diálogo **Suplementos do Office**. Para acessá-los, escolha **Meus Suplementos** na guia **Inserir** e, em seguida, escolha **MINHA ORGANIZAÇÃO**.
+    Suplementos de conteúdo e de painel de tarefas neste catálogo agora estão disponíveis na caixa de diálogo **Suplementos do Office**. Para acessá-los, escolha **Meus Suplementos** na guia **Inserir** e, em seguida, escolha **MINHA ORGANIZAÇÃO**.
 
 ## <a name="end-user-experience-with-the-add-in-catalog"></a>Experiência do usuário final com o catálogo de suplementos
 
@@ -92,7 +95,7 @@ Os usuários finais podem acessar o catálogo de suplementos em um aplicativo do
     
 2. Especifique a URL do _conjunto de sites do SharePoint pai_ do catálogo de suplementos. 
     
-    Por exemplo, se a URL do catálogo de Suplementos do Office é:
+    Por exemplo, se a URL do catálogo de Suplementos do Office for:
     
     - `https:// _domain_ /sites/ _AddinCatalogSiteCollection_ /AgaveCatalog`
     
