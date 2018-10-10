@@ -2,7 +2,7 @@
 
 ## <a name="introduction"></a>Introdução
 
-Funções personalizadas permitem que você adicione novas funções ao Excel definindo essas funções em JavaScript como parte de um suplemento. Os usuários no Excel podem acessar funções personalizadas tal como fariam com qualquer função nativa no Excel, como `SUM()`. É possível criar funções personalizadas que executem tarefas simples, como cálculos personalizados ou as tarefas mais complexas, como o fluxo contínuo de dados em tempo real da Web a uma planilha.
+As funções personalizadas permitem adicionar novas funções ao Excel, definindo essas funções em JavaScript como parte de um suplemento. Os usuários do Excel podem acessar funções personalizadas da mesma forma que qualquer função nativa no Excel, como `SUM()`. Você pode criar funções personalizadas que executam tarefas simples, como cálculos personalizados ou tarefas mais complexas, como a transmissão de dados em tempo real da Web para uma planilha.
 
 Neste tutorial, você irá:
 > [!div class="checklist"]
@@ -19,13 +19,13 @@ Neste tutorial, você irá:
 
 * [Git Bash](https://git-scm.com/downloads) (ou outro cliente Git)
 
-* A última versão do [Yeoman](http://yeoman.io/) e o [gerador Yo Office](https://www.npmjs.com/package/generator-office). Para instalar essas ferramentas globalmente, execute o comando a seguir via prompt de comando:
+* A versão mais recente do [Yeoman](http://yeoman.io/) e o [gerador Yo Office](https://www.npmjs.com/package/generator-office). Para instalar essas ferramentas globalmente, execute o seguinte comando via prompt de comando:
 
     ```bash
     npm install -g yo generator-office
     ```
 
-* Excel para Windows (número da versão 10827 ou posterior) ou Excel Online
+* Excel para Windows (número de build 10827 ou posterior) ou Excel Online
 
 * [Ingressar no programa Office Insider](https://products.office.com/office-insider)
 
@@ -45,7 +45,7 @@ Este tutorial começa usando o gerador Yo Office para criar os arquivos que voc�
 
     ![O Yo Office busca prompts de funções personalizadas](../images/yo-office-cfs-stock-ticker-3.png)
 
-    Depois de concluir o assistente, o gerador criará os arquivos do projeto e instalará os componentes do nós de suporte.
+    Depois de concluir o assistente, o gerador criará os arquivos do projeto e instalará os componentes Node de suporte. Os arquivos de projeto vêm do repositório [Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) do GitHub.
 
 2. Navegue até a pasta do projeto.
 
@@ -75,10 +75,10 @@ Antes de poder usar qualquer uma das funções personalizadas pré-criadas, é p
 
 * Se for usar o Excel para Windows para testar suas funções personalizadas:
 
-    1. No Excel, escolha a guia **Inserir**, depois escolha a seta para baixo localizada à direita de **Meus suplementos**.  ![Insira a faixa de opções no Excel para Windows com a seta Meus suplementos realçada](../images/excel-cf-register-add-in-1b.png)
+    1. No Excel, escolha a guia **Inserir** e depois escolha a seta para baixo localizada à direita de **Meus suplementos**.   ![Insira a faixa de opções no Excel para Windows com a seta Meus suplementos realçada](../images/excel-cf-register-add-in-1b.png)
 
     2. Na lista de suplementos disponíveis, localize a seção **Suplementos do desenvolvedor** depois selecione o suplemento **Funções personalizados do Excel** para registrá-lo.
-        ![Inserir a faixa de opções no Excel para Windows com o suplemento Funções personalizadas do Excel destacado na lista Meus suplementos](../images/excel-cf-register-add-in-2.png)
+        ![Inserir faixa de opções no Excel para Windows com o suplemento Excel Custom Functions realçado  na lista Meus suplementos](../images/excel-cf-register-add-in-2.png)
 
 * Se for usar o Excel Online para testar suas funções personalizadas: 
 
@@ -161,14 +161,14 @@ Conclua as seguintes etapas para criar uma função personalizada denominada `st
 
         1. Feche e reabra o Excel.
 
-        2. No Excel, escolha a guia **Inserir**, depois escolha a seta para baixo localizada à direita de **Meus suplementos**.  ![Insira a faixa de opções no Excel para Windows com a seta Meus suplementos realçada](../images/excel-cf-register-add-in-1b.png)
+        2. No Excel, escolha a guia **Inserir** e depois escolha a seta para baixo localizada à direita de **Meus suplementos**.   ![Insira a faixa de opções no Excel para Windows com a seta Meus suplementos realçada](../images/excel-cf-register-add-in-1b.png)
 
         1. Na lista de suplementos disponíveis, localize a seção **Suplementos do desenvolvedor** depois selecione o suplemento **Funções personalizados do Excel** para registrá-lo.
-            ![Inserir a faixa de opções no Excel para Windows com o suplemento Funções personalizadas do Excel destacado na lista Meus suplementos](../images/excel-cf-register-add-in-2.png)
+            ![Inserir faixa de opções no Excel para Windows com o suplemento Excel Custom Functions realçado  na lista Meus suplementos](../images/excel-cf-register-add-in-2.png)
 
     * Se estiver usando o Excel Online: 
 
-        1. No Excel Online, escolha a guia **Inserir**, depois escolha **Suplementos**.  ![Inserir a faixa de opções no Excel Online com o ícone Meus suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
+        1. No Excel Online, escolha a guia **Inserir** e depois escolha **Suplementos**.  ![Inserir faixa de opções no Excel Online com o ícone Meus suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
 
         2. Escolha **Gerenciar Meus Suplementos** e selecione **Carregar Meu Suplemento**. 
 
@@ -258,14 +258,14 @@ Conclua as seguintes etapas para criar uma função personalizada denominada `st
 
         1. Feche e reabra o Excel.
         
-        2. No Excel, escolha a guia **Inserir**, depois escolha a seta para baixo localizada à direita de **Meus suplementos**.  ![Insira a faixa de opções no Excel para Windows com a seta Meus suplementos realçada](../images/excel-cf-register-add-in-1b.png)
+        2. No Excel, escolha a guia **Inserir** e depois escolha a seta para baixo localizada à direita de **Meus suplementos**.   ![Insira a faixa de opções no Excel para Windows com a seta Meus suplementos realçada](../images/excel-cf-register-add-in-1b.png)
 
         3. Na lista de suplementos disponíveis, localize a seção **Suplementos do desenvolvedor** depois selecione o suplemento **Funções personalizados do Excel** para registrá-lo.
-            ![Inserir a faixa de opções no Excel para Windows com o suplemento Funções personalizadas do Excel destacado na lista Meus suplementos](../images/excel-cf-register-add-in-2.png)
+            ![Inserir faixa de opções no Excel para Windows com o suplemento Excel Custom Functions realçado  na lista Meus suplementos](../images/excel-cf-register-add-in-2.png)
 
     * Se estiver usando o Excel Online: 
 
-        1. No Excel Online, escolha a guia **Inserir**, depois escolha **Suplementos**.  ![Inserir a faixa de opções no Excel Online com o ícone Meus suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
+        1. No Excel Online, escolha a guia **Inserir** e depois escolha **Suplementos**.  ![Inserir faixa de opções no Excel Online com o ícone Meus suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
 
         2. Escolha **Gerenciar Meus Suplementos** e selecione **Carregar Meu Suplemento**. 
 

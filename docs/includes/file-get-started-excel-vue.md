@@ -10,7 +10,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
     npm install -g vue-cli
     ```
 
-- Instale a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador do Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.
+- Instalar a última versão do [Yeoman](https://github.com/yeoman/yo) e do [Gerador Yeoman para suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.
 
     ```bash
     npm install -g yo generator-office
@@ -18,15 +18,15 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 
 ## <a name="generate-a-new-vue-app"></a>Gerar um novo aplicativo Vue
 
-Use a CLI do Vue para gerar um novo aplicativo Vue. No terminal, execute o comando a seguir e responda aos prompts conforme descrito abaixo.
+Use a CLI do Vue para gerar um novo aplicativo Vue. Do terminal, execute o seguinte comando e, em seguida, responda aos prompts conforme descrito abaixo.
 
 ```bash
 vue init webpack my-add-in
 ```
 
-Ao responder aos prompts gerados pelo comando anterior, substitua as respostas padrão das três instruções a seguir. Para os demais prompts, você pode aceitar as respostas padrão.
+Ao responder aos prompts gerados pelo comando anterior, substitua as respostas padrão pelos 3 prompts a seguir. Você pode aceitar as respostas padrão para todos os outros prompts.
 
-- **Instalar o roteador vue?** `No`
+- **Instalar o vue-router?** `No`
 - **Configurar testes de unidades:** `No`
 - **Configurar testes e2e com Nightwatch?** `No`
 
@@ -42,7 +42,7 @@ Cada suplemento requer um arquivo de manifesto para definir os recursos e config
     cd my-add-in
     ```
 
-2. Use o gerador do Yeoman para gerar o arquivo de manifesto para o seu suplemento. Execute o comando a seguir e responda aos prompts conforme mostrado abaixo.
+2. Use o gerador Yeoman para gerar o arquivo de manifesto para o seu suplemento. Execute o seguinte comando e responda aos prompts conforme mostrado abaixo.
 
     ```bash
     yo office 
@@ -50,7 +50,7 @@ Cada suplemento requer um arquivo de manifesto para definir os recursos e config
 
     - **Escolha um tipo de projeto:** `Office Add-in containing the manifest only`
     - **Como deseja nomear seu suplemento?** `My Office Add-in`
-    - **Para qual aplicativo cliente do Office você deseja suporte?:** `Excel`
+    - **Para qual aplicativo cliente do Office você deseja oferecer suporte?** `Excel`
 
     Depois de concluir o assistente, um arquivo de manifesto e um arquivo de recurso estarão disponíveis para você criar o seu projeto.
 
@@ -89,7 +89,7 @@ Para ativar o HTTPS para o seu aplicativo, abra **package.json** na raiz do proj
     })
     ```
     
-    Depois adicione o código seguinte no mesmo local e salve o arquivo. 
+    Depois, adicione o código a seguir no mesmo local e salve o arquivo. 
                                                          
     ```js
     const Office = window.Office
@@ -176,13 +176,13 @@ Para ativar o HTTPS para o seu aplicativo, abra **package.json** na raiz do proj
     npm start
     ```
 
-2. Em um navegador da web, acesse `https://localhost:8080`. Se o navegador indicar que o certificado do site não é confiável, configure o computador para confiar no certificado. 
+2. Em um navegador, acesse `https://localhost:8080`. Se o navegador indicar que o certificado do site não é confiável, configure o computador para confiar no certificado. 
 
 3. Depois que o navegador carregar a página do suplemento sem erros de certificado, será possível testar o suplemento. 
 
 ## <a name="try-it-out"></a>Experimente
 
-1. Siga as instruções da plataforma que você usará para executar o suplemento e realizar sideload do suplemento no Excel.
+1. Siga as instruções da plataforma que você usará para executar o suplemento e faça o sideload do suplemento no Excel.
 
     - Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
     - Excel Online: [Realizar sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
@@ -192,7 +192,7 @@ Para ativar o HTTPS para o seu aplicativo, abra **package.json** na raiz do proj
 
     ![Botão do suplemento do Excel](../images/excel-quickstart-addin-2a.png)
 
-3. Selecione um intervalo de células na planilha.
+3. Selecione qualquer intervalo de células na planilha.
 
 4. No painel de tarefas, escolha o botão **Definir cor** para definir a cor do intervalo selecionado como verde.
 
@@ -200,14 +200,14 @@ Para ativar o HTTPS para o seu aplicativo, abra **package.json** na raiz do proj
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Você criou com êxito um suplemento do Excel usando o Vue, parabéns! Agora, saiba mais sobre os recursos dos suplementos do Excel e crie um mais complexo, acompanhando o tutorial de suplemento do Excel.
+Você criou um suplemento do Excel usando o Vue, parabéns! Agora, saiba mais sobre os recursos dos suplementos do Excel e crie um mais complexo, acompanhando o tutorial de suplementos do Excel.
 
 > [!div class="nextstepaction"]
-> [Tutorial de suplemento do Excel](../tutorials/excel-tutorial.yml)
+> [Tutorial de suplementos do Excel](../tutorials/excel-tutorial.yml)
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
-* [Tutorial de suplemento do Excel](../tutorials/excel-tutorial-create-table.md)
-* [Principais conceitos da API JavaScript do Excel](../excel/excel-add-ins-core-concepts.md)
+* [Tutorial de suplementos do Excel](../tutorials/excel-tutorial-create-table.md)
+* [Conceitos de programação fundamentais com a API JavaScript do Excel](../excel/excel-add-ins-core-concepts.md)
 * [Exemplos de código do suplemento do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Referência da API JavaScript do Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)

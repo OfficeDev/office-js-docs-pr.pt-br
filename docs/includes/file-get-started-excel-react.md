@@ -4,22 +4,22 @@ Neste artigo, você verá um passo a passo do processo de criar um suplemento do
 
 ## <a name="environment"></a>Ambiente
 
-- **Área de Trabalho do Office**: Verifique se você tem a última versão do Office instalada. Comandos de suplemento precisam da compilação 16.0.6769.0000 ou superior (**16.0.6868.0000** recomendada). Saiba como [Instalar a última versão dos aplicativos do Office](http://aka.ms/latestoffice). 
+- **Área de trabalho do Office**: Verifique se você tem a versão mais recente do Office instalada. Comandos de suplemento exigem o build 16.0.6769.0000 ou superior (**16.0.6868.0000** recomendado). Saiba como [Instalar a versão mais recente dos aplicativos do Office](http://aka.ms/latestoffice). 
  
-- **Office Online**: Não há configuração adicional. Observe que o suporte para comandos no Office Online para contas de trabalho/escola está em versão prévia.
+- **Office Online**: não há nenhuma configuração adicional. Observe que o suporte para comandos no Office Online para contas de trabalho/escola está em versão prévia.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - [Node.js](https://nodejs.org)
 
-- Instale a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador do Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.
+- Instale a última versão do [Yeoman](https://github.com/yeoman/yo) e o [Gerador Yeoman para suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.
     ```bash
     npm install -g yo generator-office
     ```
 
-### <a name="create-the-web-app"></a>Criar o aplicativo Web
+### <a name="create-the-web-app"></a>Criar o aplicativo web
 
-1. Crie uma pasta na sua unidade local e nomeie-a como **my-addin**. Esse é o local em que você criará os arquivos para seu aplicativo.
+1. Crie uma pasta em sua unidade local e nomeie-a **my-addin**. É aqui que você criará os arquivos para seu aplicativo.
 
 2. Navegue até a pasta do seu aplicativo.
 
@@ -27,7 +27,7 @@ Neste artigo, você verá um passo a passo do processo de criar um suplemento do
     cd my-addin
     ```
 
-3. Use o gerador do Yeoman para gerar o arquivo de manifesto para o seu suplemento. Execute o comando a seguir e responda aos prompts, conforme mostrado na seguinte captura de tela.
+3. Use o gerador Yeoman para gerar o arquivo de manifesto para o seu suplemento. Execute o seguinte comando e responda aos prompts, conforme mostrado na captura de tela a seguir.
 
     ```bash
     yo office
@@ -35,7 +35,7 @@ Neste artigo, você verá um passo a passo do processo de criar um suplemento do
 
     - **Escolha um tipo de projeto:** `Office Add-in project using React framework`
     - **Como deseja nomear seu suplemento?** `My Office Add-in`
-    - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?:** `Excel`
+    - **Qual aplicativo cliente do Office você gostaria de suportar?:** `Excel`
 
     ![Gerador do Yeoman](../images/yo-office-excel-react.png)
     
@@ -57,9 +57,9 @@ Neste artigo, você verá um passo a passo do processo de criar um suplemento do
     </HeroList>
     ```
 
-6. Execute as etapas em [Adicionar certificados autoassinados como certificado raiz confiáveis](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) para confiar no certificado do sistema operacional do seu computador de desenvolvimento.
+6. Execute as etapas em [Adicionar certificados autoassinados como certificado raiz confiáveis](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) para confiar no certificado do sistema operacional no computador onde você desenvolve.
 
-7. Carregue seu suplemento para que ele apareça no Excel. No terminal, execute o comando a seguir: 
+7. Faça sideload do seu suplemento para que ele apareça no Excel. No terminal, execute o seguinte comando: 
     
     ```bash
     npm run sideload
@@ -86,14 +86,14 @@ Neste artigo, você verá um passo a passo do processo de criar um suplemento do
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Você criou com êxito um suplemento do Excel usando o React, parabéns! Agora, saiba mais sobre os recursos dos suplementos do Excel e crie um mais complexo, acompanhando o tutorial de suplemento do Excel.
+Parabéns, você criou com sucesso um suplemento do Excel usando o React! Em seguida, aprenda mais sobre os recursos de um suplemento do Excel e crie um suplemento mais complexo seguindo o tutorial do suplemento do Excel.
 
 > [!div class="nextstepaction"]
-> [Tutorial de suplemento do Excel](../tutorials/excel-tutorial.yml)
+> [Tutorial de suplementos do Excel](../tutorials/excel-tutorial.yml)
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
-* [Tutorial de suplemento do Excel](../tutorials/excel-tutorial-create-table.md)
-* [Principais conceitos da API JavaScript do Excel](../excel/excel-add-ins-core-concepts.md)
+* [Tutorial de suplementos do Excel](../tutorials/excel-tutorial-create-table.md)
+* [Conceitos de programação fundamentais com a API JavaScript do Excel](../excel/excel-add-ins-core-concepts.md)
 * [Exemplos de código do suplemento do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Referência da API JavaScript do Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)

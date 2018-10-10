@@ -1,50 +1,50 @@
 ---
-title: Trabalhar com tabelas dinâmicas usando a API do JavaScript Excel
+title: Trabalhar com tabelas dinâmicas usando a API JavaScript do Excel
 description: Use a API do JavaScript Excel para criar tabelas dinâmicas e interagir com seus componentes.
 ms.date: 09/21/2018
-ms.openlocfilehash: 5245665bad2933df205bcda29e226a965de1c356
-ms.sourcegitcommit: 64da9ed76d22b14df745b1f0ef97a8f5194400e4
+ms.openlocfilehash: 00dd982d4ba4de0db34277cd546b572d4394e258
+ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "25361021"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "25459277"
 ---
-# <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Trabalhar com tabelas dinâmicas usando a API do JavaScript Excel
+# <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Trabalhar com tabelas dinâmicas usando a API JavaScript do Excel
 
-As tabelas dinâmicas simplificam conjuntos de dados maiores. Elas permitem a rápida manipulação de dados agrupados. A API JavaScript do Excel permite que seu suplemento crie tabelas dinâmicas e interaja com os seus componentes. 
+As tabelas dinâmicas simplificam os conjuntos de dados maiores. Permitem a manipulação rápida de dados agrupados. A API JavaScript do Excel possibilita que os suplementos criem tabelas dinâmicas e interajam com seus componentes. 
 
-Se você não estiver familiarizado com a funcionalidade de tabelas dinâmicas, considere explorá-las como um usuário final. Confira [Criar uma tabela dinâmica para analisar dados de planilha](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) para uma boa introdução sobre essas ferramentas. 
+Se não está familiarizado com a funcionalidade das tabelas dinâmicas, considere explorá-las como usuário final. Consulte [Criar uma tabela dinâmica para analisar dados de planilhas](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) para obter uma boa orientação sobre essas ferramentas. 
 
-Este artigo fornece exemplos de código para cenários comuns. Para enriquecer a compreensão da API de tabela dinâmica, veja [**Tabela dinâmica**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable) e [**Coleção de tabelas dinâmicas**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable).
+Este artigo fornece exemplos de código para cenários comuns. Para enriquecer a compreensão da API de tabela dinâmica, consulte [**PivotTable**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable) e [**PivotTableCollection**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable).
 
 > [!IMPORTANT]
-> Tabelas dinâmicas criadas com OLAP não são suportadas no momento.
+> As tabelas dinâmicas criadas com OLAP não são suportadas no momento.
 
 ## <a name="hierarchies"></a>Hierarquias
 
-Tabelas dinâmicas são organizadas com base em quatro categorias de hierarquia: linha, coluna, dados e filtro. Os dados a seguir que descrevem vendas fruta de diversas fazendas serão usados ao longo deste artigo.
+As tabelas dinâmicas são organizadas com base em quatro categorias de hierarquia: linha, coluna, dados e filtro. Os dados a seguir, que descrevem as vendas de frutas de várias fazendas, serão utilizados ao longo deste artigo.
 
-![Uma coleção de vendas de frutas de diferentes tipos de diferentes fazendas.](../images/excel-pivots-raw-data.png)
+![Conjunto das vendas de fruta de diferentes tipos provenientes de várias fazendas.](../images/excel-pivots-raw-data.png)
 
-Esses dados têm cinco hierarquias: **Fazendas**, **Tipo**, **Classificação**, **Caixas vendidas na fazenda**e **Caixas vendidas no atacado**. Cada hierarquia só pode existir em uma das quatro categorias. Se **Tipo** for adicionado às hierarquias de coluna e depois for adicionados às hierarquias de linha, ele apenas permanecerá nas últimas.
+Esses dados têm cinco hierarquias: **Fazendas**, **Tipo**, **Classificação**, **Caixas vendidas na fazenda**, e **Caixas vendidas por atacado**. Cada hierarquia só pode existir em uma das quatro categorias. Se **Tipo** for adicionado as hierarquias de coluna e depois adicionado as hierarquias de linha, ele permanecerá apenas no último.
 
-Hierarquias de linha e de coluna definem como os dados serão agrupados. Por exemplo, uma hierarquia de linha de **Fazendas** agrupará todos os conjuntos de dados da mesma fazenda. A escolha entre a hierarquia de linha e de coluna define a orientação da tabela dinâmica.
+As hierarquias de linha e coluna definem como os dados serão agrupados. Por exemplo, uma hierarquia de linha de **Fazendas** agrupará todos os conjuntos de dados da mesma fazenda. A escolha entre hierarquia de linha e coluna define a orientação da tabela dinâmica.
 
-As hierarquias de dados são os valores a serem agregados com base nas hierarquias de linha e de coluna. Uma tabela dinâmica com uma hierarquia de linha de **Fazendas** e uma hierarquia de dados de **Caixas vendidas no atacado** mostra a soma total (por padrão) de todas as frutas diferentes para cada fazenda.
+As hierarquias de dados são os valores a serem agregados com base nas hierarquias de linhas e colunas. Uma tabela dinâmica com a hierarquia de linhas **Fazendas** e a hierarquia de dados  **Caixas vendidas por atacado** mostra a soma total (por padrão) de todas as frutas diferentes para cada fazenda.
 
-Hierarquias de filtro incluem ou excluem dados da tabela dinâmica com base nos valores dentro desse tipo filtrado. Uma hierarquia de filtro de **Classificação** com o tipo **Orgânico** selecionado mostra apenas os dados de frutas orgânicas.
+As hierarquias de filtro incluem ou excluem dados do pivô com base nos valores desse tipo filtrado. Uma hierarquia de filtro de **Classificação** com o tipo **Orgânico** selecionado mostra apenas os dados para fruta orgânica.
 
-Aqui estão os dados da fazenda novamente, junto com uma tabela dinâmica. A tabela dinâmica está usando **Fazenda** e **Tipo** como as hierarquias de linha, **Caixas vendidas na fazenda** e **Caixas vendidas no atacado** como as hierarquias de dados (com a função de agregação padrão de soma) e **Classificação** como uma hierarquia de filtro (com **Orgânico** selecionado). 
+Aqui estão os dados da fazenda novamente, junto com uma tabela dinâmica. A tabela dinâmica está usando **Fazenda** e **Tipo** como as hierarquias de linha, **Caixas vendidas na fazenda** e **Caixas vendidas por atacado** como as hierarquias de dados (com a função de agregação de soma padrão) e **Classificação** como uma hierarquia de filtro (com **Orgânico** selecionado). 
 
-![Uma seleção de dados de vendas de frutas ao lado de uma tabela dinâmica com hierarquias de linha, dados e filtro.](../images/excel-pivot-table-and-data.png)
+![Uma seleção de dados de vendas de frutas ao lado de uma tabela dinâmica com hierarquias de linhas, dados e filtros.](../images/excel-pivot-table-and-data.png)
 
-Esta tabela dinâmica poderia ser gerada por meio da API do JavaScript ou por meio da interface do usuário do Excel. As duas opções permitem manipulação adicional por meio de suplementos.
+Esta tabela dinâmica pode ser gerada por meio da API do JavaScript ou da interface gráfica do Excel. Ambas as opções permitem mais manipulação através de suplementos.
 
 ## <a name="create-a-pivottable"></a>Criar uma tabela dinâmica
 
-Tabelas dinâmicas precisam de um nome, origem e destino. A fonte pode ser um endereço de intervalo ou um nome da tabela (passado como um tipo `Range`, `string` ou `Table`). O destino é um endereço de intervalo (dado como um `Range` ou `string`). Os exemplos a seguir mostram várias técnicas de criação de uma tabela dinâmica.
+Tabelas dinâmicas precisam de um nome, origem e destino. A origem pode ser um endereço de intervalo ou um nome de tabela  (transmitido como um tipo `Range`, `string` ou `Table` ). O destino é um endereço de intervalo (fornecido como `Range` ou `string`). Os exemplos a seguir mostram várias técnicas de criação de tabelas dinâmicas.
 
-### <a name="create-a-pivottable-with-range-addresses"></a>Criar uma tabela dinâmica com o endereços de intervalo
+### <a name="create-a-pivottable-with-range-addresses"></a>Criar uma tabela dinâmica com endereços de intervalo
 
 ```typescript
 await Excel.run(async (context) => {
@@ -84,9 +84,9 @@ await Excel.run(async (context) => {
 
 ## <a name="use-an-existing-pivottable"></a>Usar uma tabela dinâmica existente
 
-A criação de tabelas dinâmicas manualmente também é acessível por meio da coleção de tabelas dinâmicas da pasta de trabalho ou das planilhas individuais. 
+As tabelas dinâmicas criadas manualmente também são acessíveis através da coleção de tabela dinâmica da pasta de trabalho ou de planilhas individuais. 
 
-O código a seguir obtém a primeira tabela dinâmica na pasta de trabalho. Ele então oferece um nome para a tabela para facilitar a referência futura.
+O código a seguir obtém a primeira tabela dinâmica na pasta de trabalho. Em seguida, fornece um nome para a tabela para facilitar a referência futura.
 
 ```typescript
 await Excel.run(async (context) => {
@@ -97,11 +97,11 @@ await Excel.run(async (context) => {
 
 ## <a name="add-rows-and-columns-to-a-pivottable"></a>Adicionar linhas e colunas à tabela dinâmica
 
-Linhas e colunas articulam os dados em torno desses campos de valores.
+As linhas e colunas articulam os dados em torno dos valores desses campos.
 
-Adicionar a coluna **Fazenda** articula todas as vendas ao redor de cada fazenda. Adicionar as linhas **Tipo** e **Classificação** quebra os dados com base em qual fruta foi vendida e se ela era orgânica ou não.
+Adicionar a coluna **Fazenda** articula todas as vendas ao redor de cada fazenda. Adicionar as linhas **Tipo** e **Classificação** divide ainda mais os dados com base no tipo de fruta vendida e se a mesma era orgânica ou não.
 
-![Uma tabela dinâmica com uma coluna Fazenda e linhas Tipo e Classificação.](../images/excel-pivots-table-rows-and-columns.png)
+![Uma tabela dinâmica com a coluna Fazenda e as linhas Tipo e Classificação.](../images/excel-pivots-table-rows-and-columns.png)
 
 ```typescript
 await Excel.run(async (context) => {
@@ -131,9 +131,9 @@ await Excel.run(async (context) => {
 
 ## <a name="add-data-hierarchies-to-the-pivottable"></a>Adicionar hierarquias de dados à tabela dinâmica
 
-Hierarquias de dados preenchem a tabela dinâmica com informações para combinar com base nas linhas e colunas. Adicionar as hierarquias de dados de **Caixas vendidas na fazenda** e **Caixas vendidas no atacado** dá somas àqueles valores para cada linha e coluna. 
+As hierarquias de dados preenchem a tabela dinâmica com informações para combinar com base nas linhas e colunas. Adicionar as hierarquias de dados de **Caixas vendidas na fazenda** e **Caixas vendidas por atacado** fornece a soma desses números para cada linha e coluna. 
 
-No exemplo, tanto **Fazenda** quanto **Tipo** são linhas, com as vendas das caixas como os dados. 
+No exemplo, **Fazenda** e **Tipo** são linhas com os dados das vendas de caixas. 
 
 ![Uma tabela dinâmica que mostra as vendas totais das diferentes frutas com base na fazenda de onde elas vieram.](../images/excel-pivots-data-hierarchy.png)
 
@@ -156,7 +156,7 @@ await Excel.run(async (context) => {
 
 ## <a name="change-aggregation-function"></a>Alterar a função de agregação
 
-Hierarquias de dados têm seus valores agregados. Para conjuntos de dados de números, essa é uma soma por padrão. A propriedade `summarizeBy` define esse comportamento com base em um tipo `AggregrationFunction`. 
+As hierarquias de dados têm seus valores agregados. Para conjuntos de dados de números, por padrão, isso corresponde a uma soma. Esse comportamento é definido pela propriedade `summarizeBy` com base no tipo `AggregrationFunction` . 
 
 Os tipos de função agregada suportados atualmente são `Sum`, `Count`, `Average`, `Max`, `Min`, `Product`, `CountNumbers`, `StandardDeviation`, `StandardDeviationP`, `Variance`, `VarianceP` e `Automatic` (padrão).
 
@@ -177,16 +177,16 @@ await Excel.run(async (context) => {
 
 ## <a name="change-calculations-with-a-showasrule"></a>Altere os cálculos com ShowAsRule
 
-As tabelas dinâmicas, por padrão, agregam os dados de suas hierarquias de linha e coluna de forma independente. Uma `ShowAsRule` altera a hierarquia dos dados para valores de saída com base em outros itens da tabela dinâmica.
+As tabelas dinâmicas, por padrão, agregam os dados de suas hierarquias de linha e coluna de forma independente. Uma `ShowAsRule` altera a hierarquia dos dados para valores de saída com base em outros itens na tabela dinâmica.
 
 O objeto `ShowAsRule` tem três propriedades:
 -   `calculation`: O tipo de cálculo relativo para aplicar à hierarquia de dados (o padrão é `none`).
--   `baseField`: O campo dentro da hierarquia que contém os dados de base antes do cálculo ser aplicado. O `PivotField` normalmente tem o mesmo nome que sua hierarquia pai.
+-   `baseField`: O campo dentro da hierarquia que contém os dados de base antes que o cálculo seja aplicado. O `PivotField` geralmente tem o mesmo nome que sua hierarquia pai.
 -   `baseItem`: O item individual comparado com os valores dos campos de base de acordo com o tipo de cálculo. Nem todos os cálculos exigem esse campo.
 
-O exemplo a seguir define o cálculo da hierarquia de dados **Soma de caixas vendidas na fazenda** como uma porcentagem do total de coluna. Ainda queremos a granularidade para estender o nível de tipo de fruta, então usaremos a hierarquia de linha de **Tipo** e seu campo subjacente. O exemplo também tem **Fazenda** como a primeira linha da hierarquia, assim, o total de entradas da fazenda também mostra a porcentagem que cada fazenda é responsável por produzir.
+O exemplo a seguir define o cálculo na hierarquia de dados **Soma das caixas vendidas na Fazenda** para uma porcentagem do total da coluna. Ainda queremos que a granularidade se estenda ao nível do tipo de fruta, então usaremos a hierarquia de linha **Tipo** e o campo subjacente. O exemplo também tem **Fazenda** como a primeira hierarquia de linha, de modo que a entrada total da fazenda exibe também a porcentagem que cada fazenda é responsável por produzir.
 
-![Uma tabela dinâmica mostrando as porcentagens de venda de frutas em relação ao total geral, tanto por fazenda quanto por tipo de fruta dentro de cada fazenda.](../images/excel-pivots-showas-percentage.png)
+![Uma tabela dinâmica que mostra as porcentagens de venda de frutas em relação ao total geral, tanto por fazenda quanto por tipo de fruta dentro de cada fazenda.](../images/excel-pivots-showas-percentage.png)
 
 ``` TypeScript
 await Excel.run(async (context) => {
@@ -207,11 +207,11 @@ await Excel.run(async (context) => {
 });
 ```
 
-O exemplo anterior define o cálculo para a coluna em relação à hierarquia de uma linha individual. Quando o cálculo está relacionado a um item individual, use a propriedade `baseItem`. 
+O exemplo anterior definiu o cálculo para a coluna, relativo a uma hierarquia de linha individual. Quando o cálculo está relacionado a um item individual, use a propriedade `baseItem` . 
 
-O exemplo a seguir mostra o cálculo `differenceFrom`. Ele mostra a diferença entre das entradas na hierarquia de dados de vendas de caixas na fazenda em relação à "Fazendas A". O `baseField` é **Fazenda**, portanto, vemos as diferenças entre as outras fazendas, bem como o detalhe de cada tipo de fruta (**Tipo** também é uma hierarquia de linha neste exemplo).
+O exemplo a seguir mostra o cálculo `differenceFrom` . Exibe a diferença das entradas da hierarquia de dados de vendas de caixas na fazenda em relação  àquelas das "Fazendas A". O `baseField` é **Fazenda**, portanto, vemos as diferenças entre as outras fazendas, bem como as divisões para cada tipo de fruta (**Tipo** também é uma hierarquia de linha neste exemplo).
 
-![Uma tabela dinâmica mostrando as diferenças das vendas de fruta entre "Fazendas A" e as outras. Mostra tanto a diferença na venda total de frutas das fazendas como  as vendas por tipo de fruta. Se "Fazendas A" não vender um tipo específico de fruta, é exibido "# N/D".](../images/excel-pivots-showas-differencefrom.png)
+![Uma Tabela Dinâmica mostrando as diferenças de vendas de frutas entre “Fazendas A” e as outras. Isso mostra a diferença no total de vendas de frutas das fazendas e as vendas de tipos de frutas. Se “Fazendas A” não vendeu um tipo específico de fruta,  é exibida a mensagem “#N/A”.](../images/excel-pivots-showas-differencefrom.png)
 
 ``` TypeScript
 await Excel.run(async (context) => {
@@ -235,13 +235,13 @@ await Excel.run(async (context) => {
 
 ## <a name="pivottable-layouts"></a>Layouts de tabela dinâmica
 
-Um layout de tabela dinâmica define o posicionamento das hierarquias e seus dados. Você acessa o layout para determinar os intervalos de onde os dados são armazenados. 
+Um layout de tabela dinâmica define o posicionamento de hierarquias e seus dados. Você acessa o layout para determinar os intervalos em que os dados são armazenados. 
 
-O diagrama a seguir mostra qual chamadas de funções de layout correspondem a quais intervalos da tabela dinâmica.
+O diagrama a seguir mostra as chamadas de funções de layout que correspondem a cada intervalo da tabela dinâmica.
 
-![Um diagrama que mostra quais seções de uma tabela dinâmica são retornadas pelas funções de intervalo obtidas do layout.](../images/excel-pivots-layout-breakdown.png)
+![Um diagrama que mostra quais seções de uma tabela dinâmica são retornadas pelas funções de intervalo do layout.](../images/excel-pivots-layout-breakdown.png)
 
-O código a seguir demonstra como obter a última linha de dados da tabela dinâmica por meio do layout. Esses valores são somados para um total geral.
+O código a seguir demonstra como obter a última linha dos dados de tabela dinâmica percorrendo o layout. Esses valores são então somados para obter um total geral.
 
 ```typescript
 await Excel.run(async (context) => {
@@ -260,11 +260,11 @@ await Excel.run(async (context) => {
 });
 ```
 
-As tabelas dinâmicas têm três estilos de layout: Compacto, Contorno e Tabular. Vimos o estilo compacto nos exemplos anteriores. 
+As tabelas dinâmicas tês três estilos de layout: Compacto, Estrutura do Código e Tabular. Nos exemplos anteriores foi usado o estilo compacto. 
 
-Os exemplos a seguir usam os estilos contorno e tabular, respectivamente. O exemplo de código mostra como fazer o ciclo entre os diferentes layouts.
+Os exemplos a seguir usam os estilos de estrutura de código e tabular, respectivamente. O exemplo de código mostra como alternar entre os diferentes layouts.
 
-### <a name="outline-layout"></a>Layout contorno
+### <a name="outline-layout"></a>Layout de estrutura do código
 
 ![Uma tabela dinâmica usando o layout de estrutura de tópicos.](../images/excel-pivots-outline-layout.png)
 
@@ -274,7 +274,7 @@ Os exemplos a seguir usam os estilos contorno e tabular, respectivamente. O exem
 
 ## <a name="change-hierarchy-names"></a>Alterar os nomes de hierarquia
 
-Campos de hierarquia são editáveis. O código a seguir demonstra como alterar os nomes exibidos de duas hierarquias de dados.
+Os campos de hierarquia são editáveis. O código a seguir demonstra como alterar os nomes exibidos de duas hierarquias de dados.
 
 ```typescript
 await Excel.run(async (context) => {
@@ -304,5 +304,5 @@ await Excel.run(async (context) => {
 
 ## <a name="see-also"></a>Confira também
 
-- [Principais conceitos da API JavaScript do Excel](excel-add-ins-core-concepts.md)
+- [Conceitos básicos de programação com a API JavaScript do Excel](excel-add-ins-core-concepts.md)
 - [Referência da API JavaScript do Excel](https://docs.microsoft.com/javascript/api/excel)

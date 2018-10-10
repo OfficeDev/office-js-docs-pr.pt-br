@@ -2,12 +2,16 @@
 title: Trabalhar com planilhas usando a API JavaScript do Excel
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 9ceb2187cdd7f503fb39171e420adabcc2f13041
+ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "25459130"
 ---
-
-
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Trabalhar com planilhas usando a API JavaScript do Excel
 
-Este artigo fornece exemplos de código que mostram como executar tarefas comuns com planilhas usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos aos quais os objetos **Worksheet** e **WorksheetCollection** dão suporte, confira [Objeto Worksheet (API JavaScript para Excel)](https://dev.office.com/reference/add-ins/excel/worksheet) e [Objeto WorksheetCollection (API JavaScript para Excel)](https://dev.office.com/reference/add-ins/excel/worksheetcollection).
+Este artigo fornece exemplos de código que mostram como executar tarefas comuns com planilhas usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos aos quais os objetos **Worksheet** e **WorksheetCollection** dão suporte, confira [Objeto Worksheet (API JavaScript para Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheet?view=office-js) e [Objeto WorksheetCollection (API JavaScript para Excel)](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection?view=office-js).
 
 > [!NOTE]
 > As informações deste artigo se aplicam apenas a planilhas regulares; elas não se aplicam às folhas "gráfico" ou "macro".
@@ -36,7 +40,7 @@ Excel.run(function (context) {
 ```
 
 > [!NOTE]
-> A propriedade **id** de uma planilha identifica exclusivamente a planilha em uma determinada pasta de trabalho e seu valor permanecerá igual, mesmo quando a planilha for renomeada ou movida. Quando uma planilha é excluída de uma pasta de trabalho no Excel para Mac, a **id** da planilha excluída pode ser reatribuída a uma nova planilha que é subsequentemente criada.
+> A propriedade **id** de uma planilha identifica exclusivamente a planilha em uma determinada pasta de trabalho e seu valor permanecerá igual, mesmo quando a planilha é renomeada ou movida.. Quando uma planilha é excluída de uma pasta de trabalho no Excel para Mac, a **id** da planilha excluída pode ser reatribuída a uma nova planilha que é subsequentemente criada.
 
 ## <a name="get-the-active-worksheet"></a>Obter a planilha ativa
 
@@ -56,7 +60,7 @@ Excel.run(function (context) {
 
 ## <a name="set-the-active-worksheet"></a>Definir a planilha ativa
 
-O exemplo de código a seguir define a planilha ativa para a planilha chamada **Amostra**, carrega sua propriedade **name** e grava uma mensagem no console. Se não houver planilha com esse nome, o método **activate()** gerará um erro **ItemNotFound**.
+O exemplo de código a seguir define a planilha ativa para a planilha chamada **Sample**, carrega sua propriedade **name** e grava uma mensagem no console. Se não houver planilha com esse nome, o método **activate()** gerará um erro **ItemNotFound**.
 
 ```js
 Excel.run(function (context) {
@@ -143,7 +147,7 @@ Excel.run(function (context) {
 
 ## <a name="add-a-worksheet"></a>Adicionar uma planilha
 
-O exemplo de código a seguir adiciona uma nova planilha chamada **Amostra** à pasta de trabalho, carrega suas propriedades **name** e **position** e grava uma mensagem no console. A nova planilha é adicionada após todas as planilhas existentes.
+O exemplo de código a seguir adiciona uma nova planilha chamada **Sample** à pasta de trabalho, carrega suas propriedades **name** e **position** e grava uma mensagem no console. A nova planilha é adicionada após todas as planilhas existentes.
 
 ```js
 Excel.run(function (context) {
@@ -186,7 +190,7 @@ Excel.run(function (context) {
 
 ## <a name="rename-a-worksheet"></a>Renomear uma planilha
 
-O exemplo de código a seguir altera o nome da planilha ativa para **Novo Nome**.
+O exemplo de código a seguir altera o nome da planilha ativa para **New Name**.
 
 ```js
 Excel.run(function (context) {
@@ -222,7 +226,7 @@ Esses exemplos mostram como definir a visibilidade de uma planilha.
 
 ### <a name="hide-a-worksheet"></a>Ocultar uma planilha
 
-O exemplo de código a seguir define a visibilidade da planilha chamada **Amostra** para oculta, carrega sua propriedade **name** e grava uma mensagem no console.
+O exemplo de código a seguir define a visibilidade da planilha chamada **Sample** para oculta, carrega sua propriedade **name** e grava uma mensagem no console.
 
 ```js
 Excel.run(function (context) {
@@ -239,7 +243,7 @@ Excel.run(function (context) {
 
 ### <a name="unhide-a-worksheet"></a>Reexibir uma planilha
 
-O exemplo de código a seguir define a visibilidade da planilha chamada **Amostra** para visível, carrega sua propriedade **name** e grava uma mensagem no console.
+O exemplo de código a seguir define a visibilidade da planilha chamada **Sample** para visível, carrega sua propriedade **name** e grava uma mensagem no console.
 
 ```js
 Excel.run(function (context) {
@@ -256,7 +260,7 @@ Excel.run(function (context) {
 
 ## <a name="get-a-cell-within-a-worksheet"></a>Obter uma célula em uma planilha
 
-O exemplo de código a seguir obtém a célula que está localizada na linha 2, coluna 5 da planilha chamada **Amostra**, carrega suas propriedades **address** e **values** e grava uma mensagem no console. Os valores que são passados no método **getCell(row: number, column:number)** são número de linha e número de coluna indexados por zero para a célula que está sendo recuperada.
+O exemplo de código a seguir obtém a célula que está localizada na linha 2, coluna 5 da planilha chamada **Sample**, carrega suas propriedades **address** e **values** e grava uma mensagem no console. Os valores que são passados no método **getCell(row: number, column:number)** são número de linha e número de coluna indexados por zero para a célula que está sendo recuperada.
 
 ```js
 Excel.run(function (context) {
@@ -275,8 +279,7 @@ Excel.run(function (context) {
 
 Confira exemplos que mostram como obter um intervalo em uma planilha em [Trabalhar com intervalos usando a API JavaScript do Excel](excel-add-ins-ranges.md).
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
-- [Principais conceitos da API JavaScript do Excel](excel-add-ins-core-concepts.md)
-- [Objeto Worksheet (API JavaScript para Excel)](https://dev.office.com/reference/add-ins/excel/worksheet)
-- [Objeto WorksheetCollection (API JavaScript para Excel)](https://dev.office.com/reference/add-ins/excel/worksheetcollection)
+- [Conceitos de programação fundamentais com a API do JavaScript do Excel](excel-add-ins-core-concepts.md)
+

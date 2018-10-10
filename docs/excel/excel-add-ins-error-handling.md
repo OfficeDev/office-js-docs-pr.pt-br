@@ -2,23 +2,23 @@
 title: Tratamento de erros
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 23a70b1d66befb971c3c1394eb9162c19f2ee176
-ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
+ms.openlocfilehash: b07012516cbe15374d0707c157738117a9c8fe96
+ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "25348083"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "25459228"
 ---
 # <a name="error-handling"></a>Tratamento de erros
 
-Ao criar um suplemento usando a API JavaScript do Excel, certifique-se de incluir a lógica de tratamento de erro para lidar com os erros em tempo de execução. Isso é fundamental devido à natureza assíncrona da API.
+Quando você cria um suplemento usando a API JavaScript do Excel, certifique-se de incluir a lógica de manipulação de erros para considerar os erros de tempo de execução. Fazer isso é fundamental, devido à natureza assíncrona da API.
 
 > [!NOTE]
-> Para saber mais sobre o método **sync()** e a natureza assíncrona da API JavaScript do Excel, confira [Principais conceitos da API JavaScript do Excel](excel-add-ins-core-concepts.md).
+> Para obter mais informações sobre o método **sync()** e a natureza assíncrona do Excel API do JavaScript, consulte [conceitos fundamentais de programação com a API do JavaScript do Excel](excel-add-ins-core-concepts.md).
 
 ## <a name="best-practices"></a>Práticas recomendadas
 
-Em todos os exemplos de código desta documentação, você notará que cada chamada a `Excel.run` é acompanhada de uma instrução `catch` para capturar todos os erros que ocorrem no `Excel.run`. É recomendável usar o mesmo padrão ao criar um suplemento usando as APIs JavaScript do Excel.
+Ao longo dos exemplos de código nesta documentação, você notará que todas as chamadas para `Excel.run` são acompanhadas por uma instrução `catch` para detectar quaisquer erros que ocorram dentro de `Excel.run`. Recomendamos que você use o mesmo padrão ao criar um suplemento usando as APIs JavaScript do Excel.
 
 ```js
 Excel.run(function (context) { 
@@ -37,16 +37,16 @@ Excel.run(function (context) {
 
 Quando uma solicitação da API JavaScript do Excel não é bem-sucedida, a API retorna um objeto de erro que contém as seguintes propriedades: 
 
-- **code**:  A propriedade `code` de uma mensagem de erro contém uma cadeia de caracteres que faz parte da lista `OfficeExtension.ErrorCodes` ou `Excel.ErrorCodes`. Por exemplo, o código de erro "InvalidReference" indica que a referência não é válida para a operação especificada. Os códigos de erro não são localizados. 
+- **código**: A propriedade `code` de uma mensagem de erro contém uma cadeia de caracteres que faz parte da lista `OfficeExtension.ErrorCodes` ou `Excel.ErrorCodes` . Por exemplo, o código de erro "InvalidReference" indica que a referência não é válida para a operação especificada. Códigos de erro não são localizados. 
 
-- **message**: A propriedade `message` de uma mensagem de erro contém um resumo do erro na cadeia de caracteres localizada. A mensagem de erro não se destina ao usuário final; você deve usar o código de erro e a lógica de negócios adequada para determinar a mensagem de erro que seu suplemento deve mostrar aos usuários finais.
+- **mensagem**: A propriedade `message` de uma mensagem de erro contém um resumo do erro na seqüência localizada. A mensagem de erro não é destinada ao consumo por usuários finais; você deve usar o código de erro e a lógica de negócios apropriada para determinar a mensagem de erro que seu suplemento mostra aos usuários finais.
 
-- **debugInfo**: Se estiver presente, a propriedade `debugInfo` da mensagem de erro fornece informações adicionais que você pode usar para compreender a causa raiz do erro. 
+- **debugInfo**: Quando presente, a propriedade `debugInfo` da mensagem de erro fornece informações adicionais que você pode usar para entender a causa raiz do erro. 
 
 > [!NOTE]
-> Se você usar `console.log()` para exibir as mensagens de erro no console, essas mensagens ficarão visíveis apenas no servidor. Os usuários finais não verão essas mensagens de erro no painel de tarefas do suplemento nem em nenhum outro lugar do aplicativo host.
+> Se você usar `console.log()` para imprimir mensagens de erro no console, essas mensagens só serão visíveis no servidor. Os usuários finais não verão essas mensagens de erro no painel de tarefas do suplemento ou em qualquer lugar no aplicativo host.
 
 ## <a name="see-also"></a>Confira também
 
-- [Principais conceitos da API JavaScript do Excel](excel-add-ins-core-concepts.md)
+- [Conceitos de programação fundamentais com a API JavaScript do Excel](excel-add-ins-core-concepts.md)
 - [Objeto OfficeExtension.Error (API JavaScript para Excel)](https://docs.microsoft.com/javascript/api/office/officeextension.error?view=office-js)
