@@ -4,7 +4,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- Verifique se você já tem os [pré-requisitos de CLI do Angular](https://github.com/angular/angular-cli#prerequisites) e instale todos os pré-requisitos ausentes.
+- Verifique se você já tem os [pré-requisitos de CLI do Angular](https://github.com/angular/angular-cli#prerequisites) e instale todos os pré-requisitos que estiver faltando.
 
 - Instale globalmente a [CLI do Angular](https://github.com/angular/angular-cli). 
 
@@ -12,7 +12,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
     npm install -g @angular/cli
     ```
 
-- Instale a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador do Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.
+- Instale a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador Yeoman para suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.
 
     ```bash
     npm install -g yo generator-office
@@ -20,13 +20,13 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 
 ## <a name="generate-a-new-angular-app"></a>Gerar um novo aplicativo do Angular
 
-Use a CLI do Angular para gerar seu aplicativo do Angular. No terminal, execute o seguinte comando:
+Use a CLI do Angular para gerar o seu aplicativo Angular. Do terminal, execute o seguinte comando:
 
 ```bash
 ng new my-addin
 ```
 
-## <a name="generate-the-manifest-file"></a>Gerar o arquivo de manifesto.
+## <a name="generate-the-manifest-file"></a>Gerar o arquivo de manifesto
 
 Um arquivo de manifesto do suplemento define seus recursos e configurações.
 
@@ -36,19 +36,19 @@ Um arquivo de manifesto do suplemento define seus recursos e configurações.
     cd my-addin
     ```
 
-2. Use o gerador do Yeoman para gerar o arquivo de manifesto para o seu suplemento. Execute o comando a seguir e responda aos prompts conforme mostrado abaixo.
+2. Use o gerador Yeoman para gerar o arquivo de manifesto para o seu suplemento. Execute o seguinte comando e responda aos prompts conforme mostrado abaixo.
 
     ```bash
     yo office 
     ```
 
     - **Escolha um tipo de projeto:** `Office Add-in containing the manifest only`
-    - **Como deseja nomear seu suplemento?** `My Office Add-in`
-    - **Para qual aplicativo cliente do Office você deseja suporte?** `Excel`
+    - **Como deseja nomear seu suplemento?:** `My Office Add-in`
+    - **Para qual aplicativo cliente do Office você deseja oferecer suporte?** `Excel`
 
     Depois de concluir o assistente, um arquivo de manifesto e um arquivo de recurso estarão disponíveis para você criar o seu projeto.
 
-    ![Gerador do Yeoman](../images/yo-office.png)
+    ![Gerador Yeoman](../images/yo-office.png)
     
     > [!NOTE]
     > Se for solicitada a substituição de **package.json**, responda **Não** (não substituir).
@@ -57,7 +57,7 @@ Um arquivo de manifesto do suplemento define seus recursos e configurações.
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-Para este início rápido, é possível usar os certificados fornecidos pelo **Gerador do Yeoman para Suplementos do Office**. Você já instalou o gerador globalmente (como parte dos **Pré-requisitos** para este início rápido), então só será preciso copiar os certificados do local de instalação global para a pasta do aplicativo. As etapas a seguir descrevem como concluir esse processo.
+Para este início rápido, você pode usar os certificados que o **Yeoman gerador de suplementos do Office** fornece. Você já instalou o gerador de globalmente (como parte dos **pré-requisitos** para este início rápido), portanto você precisará apenas copiar os certificados de global local de instalação para a sua pasta de aplicativos. As etapas a seguir descrevem como concluir este processo.
 
 1. No terminal, execute o seguinte comando para identificar a pasta onde as bibliotecas globais **npm** estão instaladas:
 
@@ -68,19 +68,19 @@ Para este início rápido, é possível usar os certificados fornecidos pelo **G
     > [!TIP]    
     > A primeira linha de saída gerada por esse comando especifica a pasta onde as bibliotecas globais **npm** estão instaladas.          
     
-2. Usando o Explorador de arquivos, navegue até a pasta `{global libraries folder}/node_modules/generator-office/generators/app/templates/js/base`. A partir desse local, copie a pasta `certs` para a área de transferência.
+2. Usando o Gerenciador de arquivos, navegue até a pasta `{global libraries folder}/node_modules/generator-office/generators/app/templates/js/base`. A partir desse local, copie a pasta `certs` para a área de transferência.
 
 3. Navegue até a pasta raiz do aplicativo Angular que você criou na etapa 1 da seção anterior e cole a pasta `certs` da área de transferência para essa pasta.
 
 ## <a name="update-the-app"></a>Atualizar o aplicativo
 
-1. No editor de código, abra **package.json** na raiz do projeto. Modifique o script `start` para especificar que o servidor execute em SSL e porta 3000 e salve o arquivo.
+1. No seu editor de código, abra **package.json** na raiz do projeto. Modifique o script `start` para especificar que o servidor deve executar usando SSL e a porat 3000 e salve o arquivo.
 
     ```json
     "start": "ng serve --ssl true --port 3000"
     ```
 
-2. Abra **.angular-cli.json** na raiz do projeto. Modifique o objeto **padrões** para especificar o local dos arquivos de certificado e salve o arquivo.
+2. Abra **.angular-cli.json** na raiz do projeto. Modifique o objeto **defaults** para especificar o local dos arquivos de certificado e salve o arquivo.
 
     ```json
     "defaults": {
@@ -93,13 +93,13 @@ Para este início rápido, é possível usar os certificados fornecidos pelo **G
     }
     ```
 
-3. Abra **src/index.html**, adicione a marca `<script>` a seguir imediatamente antes da marca `</head>` e salve o arquivo.
+3. Abra **src/index.html**, adicione a marca `<script>` imediatamente antes da marca `</head>` e salve o arquivo.
 
     ```html
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
     ```
 
-4. Abra **src/main.ts**, substitua `platformBrowserDynamic().bootstrapModule(AppModule).catch(err => console.log(err));` pelo código a seguir e salve o arquivo. 
+4. Abra o **src/main.ts**, substitua `platformBrowserDynamic().bootstrapModule(AppModule).catch(err => console.log(err));` pelo código a seguir e salve o arquivo. 
 
     ```typescript 
     declare const Office: any;
@@ -116,7 +116,7 @@ Para este início rápido, é possível usar os certificados fornecidos pelo **G
     import 'core-js/client/shim';
     ```
 
-6. No **src/polyfills.ts**, remova a marca de comentário das linhas a seguir e salve o arquivo.
+6. Em **src/polyfills.ts**, descomente as linhas a seguir e salve o arquivo.
 
     ```typescript
     import 'core-js/es6/symbol';
@@ -213,27 +213,27 @@ Para este início rápido, é possível usar os certificados fornecidos pelo **G
     npm run start
     ```
 
-2. Em um navegador da web, acesse `https://localhost:3000`. Se o navegador indicar que o certificado do site não é confiável, adicione o certificado como confiável. Veja detalhes em [Adicionar certificados autoassinados como certificados raiz confiáveis](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
+2. Em um navegador da web, acesse `https://localhost:3000`. Se o navegador indicar que o certificado do site não é confiável, você precisará adicionar o certificado como um certificado confiável. Confira detalhes em [Adicionar certificados autoassinados como certificados raiz confiáveis](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
 
     > [!NOTE]
-    > O Chrome (navegador da Web) pode continuar a indicar que o certificado do site não é confiável, mesmo depois de concluir o processo descrito em [Adição de certificados autoassinados como certificado raiz confiável](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md). Você pode ignorar esse aviso no Chrome e verificar se o certificado é confiável ao navegar até `https://localhost:3000` no Microsoft Edge ou no Internet Explorer. 
+    > Chrome (navegador da web) pode continuar para indicar o certificado do site não é confiável, mesmo depois de concluir o processo descrito em [Adicionar certificados autoassinados como certificados raiz confiáveis](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md). Você pode ignorar esse aviso no Chrome e pode verificar que o certificado é confiável navegando até `https://localhost:3000` no Internet Explorer ou no Microsoft Edge. 
 
 3. Depois que o navegador carregar a página do suplemento sem erros de certificado, será possível testar o suplemento. 
 
 ## <a name="try-it-out"></a>Experimente
 
-1. Siga as instruções da plataforma que você usará para executar o suplemento e realizar sideload do suplemento no Excel.
+1. Siga as instruções da plataforma que você usará para executar o suplemento e faça o sideload do suplemento no Excel.
 
-    - Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online: [Realizar sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad e Mac: [Realizar sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    - Windows: [Fazer o sideload de suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Excel Online: [Fazer o sideload dos suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
+    - iPad e Mac: [Fazer o sideload dos suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
    
 2. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
     ![Botão do suplemento do Excel](../images/excel-quickstart-addin-2a.png)
 
-3. Selecione um intervalo de células na planilha.
+3. Selecione qualquer intervalo de células na planilha.
 
 4. No painel de tarefas, escolha o botão **Definir cor** para definir a cor do intervalo selecionado como verde.
 
@@ -241,14 +241,14 @@ Para este início rápido, é possível usar os certificados fornecidos pelo **G
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Você criou com êxito um suplemento do Excel usando o Angular!, parabéns! Agora, saiba mais sobre os recursos dos suplementos do Excel e crie um mais complexo, acompanhando o tutorial de suplemento do Excel.
+Parabéns, você criou um suplemento do Excel usando o Angular com sucesso! Em seguida, aprenda mais sobre os recursos de um suplemento do Excel e crie um suplemento mais complexo seguindo o tutorial do suplemento do Excel.
 
 > [!div class="nextstepaction"]
 > [Tutorial de suplemento do Excel](../tutorials/excel-tutorial.yml)
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 * [Tutorial de suplemento do Excel](../tutorials/excel-tutorial-create-table.md)
-* [Principais conceitos da API JavaScript do Excel](../excel/excel-add-ins-core-concepts.md)
+* [Conceitos fundamentais de programação com a API JavaScript do Excel](../excel/excel-add-ins-core-concepts.md)
 * [Exemplos de código do suplemento do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Referência da API JavaScript do Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)

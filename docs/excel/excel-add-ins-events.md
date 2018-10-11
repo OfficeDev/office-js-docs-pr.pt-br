@@ -2,12 +2,12 @@
 title: Trabalhar com eventos usando a API JavaScript do Excel
 description: ''
 ms.date: 09/21/2018
-ms.openlocfilehash: 6da36938d13c540b310fb5870f310681364803e9
-ms.sourcegitcommit: e7e4d08569a01c69168bb005188e9a1e628304b9
+ms.openlocfilehash: b56d25e7e0306b4881115397d4136e63ddc03e5c
+ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "24967694"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "25459172"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Trabalhar com eventos usando a API JavaScript do Excel 
 
@@ -15,7 +15,7 @@ Este artigo descreve conceitos importantes relacionados ao trabalho com eventos 
 
 ## <a name="events-in-excel"></a>Eventos no Excel
 
-Sempre que ocorrerem certos tipos de alterações em uma pasta de trabalho do Excel, uma notificação do evento será ativada. Ao usar as APIs JavaScript do Excel, você pode registrar manipuladores de eventos que permitem que o suplemento execute automaticamente uma função designada quando ocorre um evento específico. Os eventos a seguir têm suporte no momento:
+Sempre que ocorrerem determinados tipos de alterações em uma pasta de trabalho do Excel, uma notificação de evento é acionada. Usando a API JavaScript do Excel, você pode registrar manipuladores de eventos que permitem o suplemento executar automaticamente uma função designada, quando ocorre um evento específico. Os eventos a seguir são suportados no momento.
 
 | Evento | Descrição | Objetos com suporte |
 |:---------------|:-------------|:-----------|
@@ -33,9 +33,9 @@ Sempre que ocorrerem certos tipos de alterações em uma pasta de trabalho do Ex
 
 Os eventos em uma pasta de trabalho do Excel podem ser acionados por:
 
-- Interação do usuário por meio da interface do usuário (UI) do Excel que altere a pasta de trabalho
+- Interação do usuário por meio da interface do usuário (UI) do Excel que altera a pasta de trabalho
 - Código de suplemento do Office (JavaScript) que altera a pasta de trabalho
-- Código de suplemento de VBA (macro) que altere a pasta de trabalho
+- Código de suplemento de VBA (macro) que altera a pasta de trabalho
 
 Todas as alterações que sejam compatíveis com o comportamento padrão do Excel acionarão eventos correspondentes em uma pasta de trabalho.
 
@@ -45,11 +45,11 @@ Um manipulador de eventos é criado quando um suplemento o registra e é destru�
 
 ### <a name="events-and-coauthoring"></a>Eventos e coautoria
 
-Com a [coautoria](co-authoring-in-excel-add-ins.md), várias pessoas podem trabalhar em conjunto e editar a mesma pasta de trabalho do Excel simultaneamente. Em eventos que podem ser disparados por um coautor, como `onChanged`, o objeto de **evento** respectivo conterá a propriedade **fonte** que indica se o evento foi acionado localmente pelo usuário atual (`event.source = Local`) ou pelo coautor remoto (`event.source = Remote`).
+Com a [coautoria](co-authoring-in-excel-add-ins.md), várias pessoas podem trabalhar em conjunto e editar a mesma pasta de trabalho do Excel simultaneamente. Em eventos que podem ser acionados por um coautor, como `onChanged`, o objeto **Event** correspondente conterá a propriedade **source** que indica se o evento foi acionado localmente pelo usuário atual (`event.source = Local`) ou pelo coautor remoto (`event.source = Remote`).
 
 ## <a name="register-an-event-handler"></a>Registrar um manipulador de eventos.
 
-O exemplo de código a seguir registra um manipulador de eventos para o evento `onChanged` na planilha **Sample**. O código especifica que, quando os dados forem alterados na planilha, a função `handleDataChange` deve ser executada.
+O exemplo de código a seguir registra um manipulador de eventos para o `onChanged` evento na planilha chamada **Amostra**. O código especifica que, quando dados são alterados nessa planilha, a função `handleDataChange` deverá ser executada.
 
 ```js
 Excel.run(function (context) {
@@ -65,7 +65,7 @@ Excel.run(function (context) {
 
 ## <a name="handle-an-event"></a>Manipular um evento
 
-Como mostrado no exemplo anterior, quando você registrar um manipulador de eventos, indica a função a ser executada quando o evento especificado ocorre. Você pode criar essa função para executar as ações que seu cenário exige. O exemplo de código a seguir mostra uma função de manipulador de eventos que simplesmente grava informações sobre o evento no console. 
+Conforme mostrado no exemplo anterior, quando você registra um manipulador de eventos, você indica a função que deverá ser executada quando ocorre o evento específico. Você pode projetar aquela função para realizar quaisquer ações que seu cenário exigir. O exemplo de código a seguir mostra uma função de manipulador de eventos que simplesmente escreve informações sobre o evento no console. 
 
 ```js
 function handleChange(event)
@@ -83,7 +83,7 @@ function handleChange(event)
 
 ## <a name="remove-an-event-handler"></a>Remover um manipulador de eventos
 
-O exemplo de código a seguir registra um manipulador de eventos para o evento `onSelectionChanged` na planilha **Sample** e define a função `handleSelectionChange` a executar quando o evento ocorrer. Também define a função `remove()` que pode ser chamada posteriormente para remover aquele manipulador de eventos.
+O exemplo de código a seguir registra um manipulador de eventos para o `onSelectionChanged` evento na planilha denominada **Amostra** e define a função `handleSelectionChange` que será executada quando o evento ocorre. Ele também define a função `remove()` que poderá subsequentemente ser chamada para remover o manipulador de eventos.
 
 ```js
 var eventResult;
@@ -123,9 +123,9 @@ function remove() {
 
 ## <a name="enable-and-disable-events"></a>Ativar e desativar eventos
 
-O desempenho de um suplemento pode ser melhorado desativando eventos. Por exemplo, seu aplicativo talvez nunca precise receber eventos ou pode ignorar eventos enquanto realiza edições em lote de várias entidades. 
+O desempenho de um suplemento pode ser aprimorado por meio da desabilitação de eventos. Por exemplo, seu aplicativo pode nunca precisar receber eventos ou ele poderia ignorar eventos enquanto executa edições de lote de várias entidades. 
 
-Os eventos são habilitados e desabilitados no nível de [tempo de execução](https://docs.microsoft.com/javascript/api/excel/excel.runtime). A propriedade `enableEvents` determina se os eventos são disparados e seus manipuladores serão ativados. 
+Eventos são habilitados e desabilitados no nível de [tempo de execução](https://docs.microsoft.com/javascript/api/excel/excel.runtime) . A propriedade `enableEvents` determina se os eventos serão acionados e seus manipuladores serão ativados. 
 
 O exemplo de código a seguir mostra como ativar e desativar eventos.
 
@@ -147,4 +147,4 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>Confira também
 
-- [Principais conceitos da API JavaScript do Excel](excel-add-ins-core-concepts.md)
+- [Conceitos de programação fundamentais com a API JavaScript do Excel](excel-add-ins-core-concepts.md)
