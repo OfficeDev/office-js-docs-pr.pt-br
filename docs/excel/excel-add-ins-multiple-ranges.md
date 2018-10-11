@@ -2,42 +2,42 @@
 title: Trabalhar com vários intervalos simultaneamente em suplementos do Excel
 description: ''
 ms.date: 9/4/2018
-ms.openlocfilehash: bcb14d1f4c015fe675c2d65cb5f1198d485dd4c5
-ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
+ms.openlocfilehash: 2387be8dc17d85028b1d086cb192ac1accf167d5
+ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "24016455"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "25459193"
 ---
-# <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins-preview"></a>Trabalhar com vários intervalos simultaneamente em Excel suplementos (Versão Prévia)
+# <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins-preview"></a>Trabalhar com vários intervalos simultaneamente em suplementos do Excel (Versão Prévia)
 
-A biblioteca JavaScript do Excel permite ao suplemento executar operações e definir propriedades em vários intervalos simultaneamente. Os intervalos não precisam ser contíguos. Além de tornar o seu código mais simples, esta maneira de configurar uma propriedade é executada de forma muito mais rápida do que configurar a mesma propriedade individualmente para cada um dos intervalos.
+A biblioteca JavaScript do Excel permite que o seu suplemento execute operações e defina propriedades em vários intervalos simultaneamente. Os intervalos não precisam ser contíguos. Além de simplificar o seu código, essa maneira de definir uma propriedade é mais rápida do que configurar a mesma propriedade individualmente para cada um dos intervalos.
 
 > [!NOTE]
-> As APIs descritas neste artigo exigem a **versão Office 2016 Click-to-Run 1809 Build 10820.20000** ou posterior. (Talvez você precise ingressar no [programa Office Insider](https://products.office.com/office-insider) para obter uma compilação apropriada.) Além disso, você deve carregar a versão beta da biblioteca do Office JavaScript do [Office. js CDN](https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). Por fim, ainda não temos páginas de referência para essas APIs. Mas o arquivo de definição a seguir tem descrições para elas: [beta office.d.ts](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts).
+> As APIs descritas neste artigo exigem a **versão 1809 do Office 2016 Clique para Executar, Build 10820.20000** ou posterior. (Talvez você precise ingressar no [programa Office Insider](https://products.office.com/office-insider) para obter o build apropriado.) Além disso, você deve carregar a versão beta da biblioteca do JavaScript do Office encontrada em [Office.js CDN](https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). Por último, infelizmente ainda não temos páginas de referência para essas APIs. Mas o tipo de arquivo de definição a seguir traz descrições para eles: [office.d.ts beta](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts).
 
 ## <a name="rangeareas"></a>RangeAreas
 
-Um conjunto de intervalos (possivelmente não adjacentes) é representado por um objeto `Excel.RangeAreas` . Ele tem propriedades e métodos semelhantes ao tipo `Range` (vários com nomes semelhantes ou iguais), contudo, ajustes foram feitos nos:
+Um conjunto de intervalos (possivelmente não contíguos) é representado por um objeto `Excel.RangeAreas`. Ele tem propriedades e métodos semelhantes ao tipo `Range` (vários com nomes semelhantes ou iguais), mas alguns ajustes foram feitos em:
 
-- Tipos de dados para as propriedades e no comportamento dos setters e getters.
+- Os tipos de dados para as propriedades e o comportamento dos setters e getters.
 - Tipos de dados dos parâmetros do método e nos comportamentos do método.
 - Valores retornados dos tipos de dados do método.
 
 Alguns exemplos:
 
 - `RangeAreas` tem uma propriedade  `address` que retorna uma sequência de caracteres delimitada por vírgula do intervalo de endereços, em vez de apenas um endereço como na propriedade `Range.address` .
-- `RangeAreas` tem uma propriedade `dataValidation` que retorna um objeto  `DataValidation` que representa a validação de dados de todos os intervalos no `RangeAreas`, caso seja consistente. A propriedade é `null` se objetos `DataValidation` idênticos não forem aplicados a todos os intervalos em `RangeAreas`. Esse é um princípio geral, mas não universal, com o objeto `RangeAreas` : *se uma propriedade não tiver valores consistentes em todos os intervalos no `RangeAreas`, então ela é `null`.* Confira [Propriedades de leitura de RangeAreas](#reading-properties-of-rangeareas) para obter mais informações e conhecer algumas exceções.
+- `RangeAreas` tem uma propriedade `dataValidation` que retorna um objeto `DataValidation` que representa a validação de dados de todos os intervalos em `RangeAreas`, caso seja consistente. A propriedade é `null` se objetos `DataValidation` idênticos não forem aplicados a todos os intervalos em `RangeAreas`. Esse é um princípio geral, mas não universal, do objeto `RangeAreas`: *Se uma propriedade não tiver valores consistentes em todos os intervalos em `RangeAreas`, então, é `null`.* Consulte [Propriedades de leitura de RangeAreas](#reading-properties-of-rangeareas) para obter mais informações e algumas exceções.
 - `RangeAreas.cellCount` obtém o número total de células em todos os intervalos de `RangeAreas`.
 - `RangeAreas.calculate` recalcula as células de todos os intervalos de `RangeAreas`.
-- `RangeAreas.getEntireColumn` e `RangeAreas.getEntireRow` retorna outro objeto `RangeAreas` que representa todas as colunas (ou linhas) em todos os intervalos de `RangeAreas`. Por exemplo, se o `RangeAreas` representa "A1: C4" e "F14:L15", então `RangeAreas.getEntireColumn` retorna um objeto `RangeAreas` que representa "A:C" e "F:L".
+- `RangeAreas.getEntireColumn` e `RangeAreas.getEntireRow` retorna outro objeto `RangeAreas` que representa todas as colunas (ou linhas) em todos os intervalos de `RangeAreas`. Por exemplo, se `RangeAreas` representa "A1:C4" e "F14:L15", então, `RangeAreas.getEntireColumn` retorna um objeto `RangeAreas` que representa "A:C" e "F:L".
 - `RangeAreas.copyFrom` pode receber um parâmetro `Range` ou `RangeAreas` que representa o(s) intervalo(s) de origem da operação de cópia.
 
 #### <a name="complete-list-of-range-members-that-are-also-available-on-rangeareas"></a>Lista completa dos membros de Range que também estão disponíveis em RangeAreas
 
 ##### <a name="properties"></a>Propriedades
 
-Esteja familiarizado com [as propriedades de leitura de RangeAreas](#reading-properties-of-rangeareas) antes de escrever código para ler as propriedades listadas. Há sutilezas para o que é retornado.
+Conheça as [Propriedades de leitura de RangeAreas](#reading-properties-of-rangeareas) antes de escrever códigos que leiam as propriedades listadas. Há sutilezas quanto a o que é retornado.
 
 - address
 - addressLocal
@@ -79,31 +79,31 @@ Métodos de Range em versão prévia estão marcados.
 
 ### <a name="rangearea-specific-properties-and-methods"></a>Propriedades e métodos específicos de RangeArea
 
-O tipo `RangeAreas` tem algumas propriedades e métodos que não estão no objeto`Range`. A seguir está uma seleção deles:
+O tipo `RangeAreas` tem algumas propriedades e métodos que não estão no objeto `Range`. Veja a seguir uma seleção deles:
 
-- `areas`: Um objeto `RangeCollection` que contém todos os intervalos representados pelo objeto `RangeAreas`. O objeto  `RangeCollection` também é novo e é similar a outros objetos da coleção do Excel. Ele tem uma propriedade `items` que é uma matriz de objetos `Range` que representa os intervalos.
-- `areaCount`: O número total de intervalos no `RangeAreas`.
+- `areas`: Um objeto `RangeCollection` que contém todos os intervalos representados pelo objeto `RangeAreas`. O objeto `RangeCollection` também é novo e é semelhante a outros objetos da coleção do Excel. Ele tem uma propriedade `items` que é uma matriz de objetos `Range` que representam os intervalos.
+- `areaCount`: O número total de intervalos em `RangeAreas`.
 - `getOffsetRangeAreas`: Funciona exatamente como [Range.getOffsetRange](https://docs.microsoft.com/javascript/api/excel/excel.range#getoffsetrange-rowoffset--columnoffset-), exceto que um `RangeAreas` é retornado e contém intervalos que são um deslocamento de um dos intervalos no `RangeAreas` original.
 
 ## <a name="create-rangeareas-and-set-properties"></a>Criar RangeAreas e definir propriedades
 
 Você pode criar o objeto  `RangeAreas` de duas formas básicas:
 
-- Chamar `Worksheet.getRanges()` e passar a ele uma sequência de caracteres com um intervalo de endereços delimitados por vírgula. Se algum intervalo que você deseja incluir tiver sido transformado em [NamedItem](https://docs.microsoft.com/javascript/api/excel/excel.nameditem), você pode incluir o nome, em vez do endereço, na sequência de caracteres.
-- Chame `Workbook.getSelectedRanges()`. Esse método retorna um `RangeAreas` que representa todos os intervalos selecionados na planilha ativa no momento.
+- Chame `Worksheet.getRanges()` e passe para ele uma sequência de caracteres com endereços de intervalo delimitados por vírgula. Se algum dos intervalos que você deseja incluir tiver sido transformado em um [getNamedItem](https://docs.microsoft.com/javascript/api/excel/excel.nameditem), você pode incluir o nome, em vez do endereço, na sequência de caracteres.
+- Chame `Workbook.getSelectedRanges()`. Esse método retorna `RangeAreas` que representa todos os intervalos selecionados na planilha ativa no momento.
 
-Depois que você tiver um objeto `RangeAreas` , você pode criar outros usando os métodos no objeto que retornam `RangeAreas` como `getOffsetRangeAreas` e `getIntersection`.
+Depois que você tiver um objeto `RangeAreas` , você pode criar outros usando os métodos no objeto que retornam `RangeAreas`, como `getOffsetRangeAreas` e `getIntersection`.
 
 > [!NOTE]
-> Você não pode adicionar diretamente intervalos adicionais para um objeto `RangeAreas` . Por exemplo, a coleção em `RangeAreas.areas` não tem um método `add` .
+> Você não pode adicionar intervalos adicionais diretamente em um objeto `RangeAreas`. Por exemplo, a coleção em `RangeAreas.areas` não tem um método `add`.
 
 
 > [!WARNING] 
-> Não tente adicionar ou excluir membros diretamente na matriz `RangeAreas.areas.items` . Isso levará a um comportamento indesejável em seu código. Por exemplo, é possível adicionar um objeto  `Range` na matriz, mas isso causará erros, porque os métodos e propriedades `RangeAreas` se comportarão como se o novo item não estivesse lá. Por exemplo, a propriedade  `areaCount` não inclui intervalos adicionados dessa maneira e o `RangeAreas.getItemAt(index)` gera um erro se `index` for maior do que `areasCount-1`. Da mesma forma, excluir um objeto `Range` na matriz `RangeAreas.areas.items` obtendo uma referência a ele e chamando seu método `Range.delete` causará bugs: embora o objeto `Range` *esteja* excluído, as propriedades e os métodos do objeto pai `RangeAreas` se comportam, ou tentam, como se ele ainda existisse. Por exemplo, se o seu código chama `RangeAreas.calculate`, o Office tentará calcular o intervalo, mas apresentará um erro, porque o objeto do intervalo não existirá.
+> Não tente adicionar ou excluir membros da matriz `RangeAreas.areas.items` diretamente. Isso causará um comportamento indesejável no seu código. Por exemplo, é possível inserir um objeto `Range` adicional na matriz, mas isso irá causar erros porque métodos e propriedades `RangeAreas` se comportam como se o novo item não estivesse lá. Por exemplo, a propriedade `areaCount` não inclui intervalos inseridos dessa maneira e `RangeAreas.getItemAt(index)` gera um erro se `index` for maior do que `areasCount-1`. Da mesma forma, excluir um objeto `Range` da matriz `RangeAreas.areas.items` obtendo uma referência a ele e chamando o método `Range.delete` causará erros: embora o objeto `Range` *seja* excluído, as propriedades e métodos do objeto `RangeAreas` pai se comportam, ou tentam se comportar, como se ele ainda existisse. Por exemplo, se o seu código chamar `RangeAreas.calculate`, o Office tentará calcular o intervalo, mas apresentará um erro, pois o objeto range não existe mais.
 
-Configurar a propriedade em um `RangeAreas` define a propriedade correspondente em todos os intervalos na coleção `RangeAreas.areas` .
+Configurar uma propriedade em um `RangeAreas` define a propriedade correspondente em todos os intervalos na coleção `RangeAreas.areas` .
 
-A seguir está um exemplo sobre configuração de propriedade em vários intervalos. A função realça os intervalos **F3:F5** e **H3:H5**.
+A seguir, veja um exemplo de definição de uma propriedade em vários intervalos. A função realça os intervalos **F3:F5** e **H3:H5**.
 
 ```js
 Excel.run(function (context) {
@@ -115,16 +115,16 @@ Excel.run(function (context) {
 })
 ```
 
-Este exemplo se aplica a cenários nos quais você pode codificar os endereços de intervalo que você passa para `getRanges` ou facilmente os calcula em tempo de execução. Alguns dos cenários em que isso seria verdadeiro são: 
+Este exemplo se aplica a cenários nos quais você pode codificar os endereços do intervalo que você passa para `getRanges` ou facilmente calculá-los no tempo de execução. Alguns dos cenários em que isso seria possível incluem: 
 
 - O código é executado no contexto de um modelo conhecido.
 - O código é executado no contexto de dados importados onde o esquema dos dados é conhecido.
 
-Quando você não sabe em tempo de codificação quais intervalos que você precisa operar, você deve descobri-los em tempo de execução. A próxima seção discute esses cenários.
+Quando você não sabe durante a codificação quais os intervalos em que você precisa para operar, você deve descobri-los no tempo de execução. A próxima seção discute esses cenários.
 
 ### <a name="discover-range-areas-programmatically"></a>Descobrir áreas de intervalo programaticamente
 
-Os métodos `Range.getSpecialCells()` e `Range.getSpecialCellsOrNullObject()` permitem que você encontre em tempo de execução os intervalos que você deseja operar com base nas características das células e no tipo dos valores das células. Aqui estão as assinaturas dos métodos dos arquivos de dados TypeScript:
+Os métodos `Range.getSpecialCells()` e `Range.getSpecialCellsOrNullObject()` permitem que você descubra, durante o tempo de execução, os intervalos em que você deseja operar com base nas características das células e no tipo dos valores das células. Aqui estão as assinaturas dos métodos do arquivo de tipos de dados TypeScript:
 
 ```typescript
 getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
@@ -134,10 +134,10 @@ getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCe
 getSpecialCellsOrNullObject(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
 ```
 
-A seguir está um exemplo do primeiro caso. Sobre este código, observe:
+A seguir, veja um exemplo de uso do primeiro. Sobre este código, observe:
 
 - Ele limita a parte da planilha que precisa ser pesquisada chamando primeiro `Worksheet.getUsedRange` e chamando `getSpecialCells` somente para aquele intervalo.
-- Ele passa em forma de parâmetro para `getSpecialCells`, a versão da sequência de caracteres de um valor da enumeração `Excel.SpecialCellType` . Alguns outros valores que também podem ser passados são "Blanks" para células vazias, "Constants" para células com valores literais em vez de fórmulas e "SameConditionalFormat" para células que possuem a mesma formatação condicional como a primeira célula no `usedRange`. A primeira célula é a primeira célula no canto esquerdo superior. Para obter uma lista completa dos valores na enumeração, consulte [beta office.d.ts](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts).
+- Ele passa como um parâmetro para `getSpecialCells` a versão de sequência de caracteres de um valor a partir da enumeração `Excel.SpecialCellType`. Alguns dos outros valores que podem ser passados, em vez disso, são "Blanks" para células vazias, "Constants" para células com valores literais em vez de fórmulas e "SameConditionalFormat" para células com a mesma formatação condicional que a primeira célula em `usedRange`. A primeira célula é a célula superior mais à esquerda. Para obter uma lista completa dos valores na enumeração, consulte [office.d.ts beta](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts).
 - O método `getSpecialCells` retorna um objeto `RangeAreas`, portanto todas as células com fórmulas serão cor de rosa, mesmo que não sejam contíguas. 
 
 ```js
@@ -151,13 +151,13 @@ Excel.run(function (context) {
 })
 ```
 
-Às vezes, o intervalo não tem *nenhuma* célula com a característica procurada. Se `getSpecialCells` não encontrar nada, ele gera um erro de **ItemNotFound**. Isso desviaria o fluxo de controle para um bloco/método `catch` , se houver um. Se não houver, o erro interrompe a função. Pode haver cenários nos quais gerar um erro é exatamente o que você deseja quando não há nenhuma célula com a característica alvo. 
+Em alguns casos, o intervalo não tem *nenhuma* célula com a característica alvo. Se `getSpecialCells` não encontrar nenhuma, ele gera um erro de **ItemNotFound** . Isso desviaria o fluxo de controle para um bloco/método `catch`, casa haja um. Se não houver, o erro interrompe a função. Pode haver cenários nos quais emitir o erro é exatamente o que você deseja que aconteça, quando não há nenhuma célula com a característica alvo. 
 
-Mas em cenários onde é normal, mas talvez incomum, não existir nenhuma célula correspondente, seu código deve verificar essa possibilidade e gerencia-la normalmente sem exibir um erro. Para esses cenários, use o método `getSpecialCellsOrNullObject` e teste a propriedade `RangeAreas.isNullObject`. Apresentamos um exemplo a seguir. Observação sobre o código:
+Mas há cenários nos quais é normal, mas talvez incomum, que não haja nenhuma célula correspondente; seu código deve verificar essa possibilidade e lidar com ela sem dificuldades e sem gerar um erro. Para esses cenários, use o método `getSpecialCellsOrNullObject` e teste a propriedade `RangeAreas.isNullObject`. Veja um exemplo a seguir. Nota sobre este código:
 
-- O método `getSpecialCellsOrNullObject` sempre retorna um objeto de proxy, portanto, ele nunca é `null` no sentido comum do JavaScript. Mas se nenhuma célula correspondente for encontrada, a propriedade  `isNullObject` do objeto é definida como `true`.
-- Ele chama `context.sync` *antes* de testar a propriedade `isNullObject` . Esse é um requisito com todas as propriedades e métodos `*OrNullObject`, porque você sempre precisa carregar e sincronizar uma propriedade a fim de lê-la. No entanto, não é necessário *explicitamente* carregar a propriedade `isNullObject` . Ela é carregada automaticamente pelo `context.sync`, mesmo se `load`  não é chamado no objeto. Para obter mais informações, consulte [\*OrNullObject](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods).
-- Você pode testar esse código selecionando um intervalo que tenha células sem fórmulas e o executando. Em seguida, selecione um intervalo que tenha pelo menos uma célula com fórmula e o execute novamente.
+- O método `getSpecialCellsOrNullObject` sempre retorna um objeto proxy, isso significa que nunca é `null` no sentido comum do JavaScript. Mas se nenhuma célula correspondente for encontrada, a propriedade `isNullObject` do objeto é definida como `true`.
+- Ele chama `context.sync` *antes* de testar a propriedade `isNullObject`. Esse é um requisito de todos os métodos e propriedades `*OrNullObject`, pois você sempre precisa carregar e sincronizar uma propriedade para poder lê-la. No entanto, não é necessário carregar *explicitamente* a propriedade `isNullObject`. Ela é carregado automaticamente por `context.sync` , mesmo que `load` não seja chamado no objeto. Para obter mais informações, consulte [\*OrNullObject](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods).
+- Para testar esse código, selecione um intervalo que não tenha células com fórmulas e execute-o. Depois, selecione um intervalo que tenha pelo menos uma célula com fórmula e execute-o novamente.
 
 ```js
 Excel.run(function (context) {
@@ -180,10 +180,10 @@ Para manter a simplicidade, todos os outros exemplos neste artigo usam o método
 
 #### <a name="narrow-the-target-cells-with-cell-value-types"></a>Restringir as células de destino com tipos de valores de célula
 
-Há um segundo parâmetro opcional, do tipo enumerado `Excel.SpecialCellValueType`, que restringe ainda mais as células de destino. Você pode usá-lo apenas quando você passá "Formulas" ou "Constants" para `getSpecialCells` ou `getSpecialCellsOrNullObject`. O parâmetro especifica que você apenas deseja as células com determinados tipos de valores. Há quatro tipos básicos: "Erro", "Lógico" (que é booleano), "Números" e "Texto". (A enumeração tem outros valores além desses quatro abordados abaixo). A seguir está um exemplo. Sobre este código, observe:
+Este é um segundo parâmetro opcional, de `Excel.SpecialCellValueType` tipo enumerado, que restringe ainda mais as células alvo. Você pode usá-lo somente quando passa "Formulas" ou "Constants" para `getSpecialCells` ou `getSpecialCellsOrNullObject`. O parâmetro especifica que você deseja somente células com certos tipos de valores. Existem quatro tipos básicos: "Error", "Logical" (que significa booleano), "Numbers", e "Text". (A enumeração tem outros valores além desses quatro discutidos adiante.) Veja um exemplo a seguir. Sobre este código, note:
 
-- Ele realçará somente células que têm um valor numérico literal. Ele não irá realçar células que têm uma fórmula (mesmo se o resultado é um número) ou uma célula que contenha um valor booleano, texto ou erro.
-- Para testar o código, certifique-se de que a planilha possua algumas células com valores numéricos literais, algumas com outros tipos de valores literais e algumas células com fórmulas.
+- Ele realçará somente células que tenha um valor de número literal. Ele não realçará células que tenham uma fórmula (mesmo que o resultado seja um número), um valor booleano, texto ou células de estado de erro.
+- Para testar o código, certifique-se de que a planilha possui algumas células com valores numéricos literais, outras com outros tipos de valores literais e algumas células com fórmulas.
 
 ```js
 Excel.run(function (context) {
@@ -196,7 +196,7 @@ Excel.run(function (context) {
 })
 ```
 
-Em alguns casos, você precisa operar em mais de um tipo de valor de célula, como valores de texto e valores booleanos ("Lógica"). A enumeração `Excel.SpecialCellValueType` tem valores que permitem que você combine tipos. Por exemplo, "LogicalText" irá marcar todas as células com valores booleanos e todas as células com valores de texto. Você pode combinar dois ou três dos quatro tipos básicos. Os nomes desses valores de enumeração que combinam os tipos básicos sempre estão em ordem alfabética. Portanto para combinar células com valor de erro, valor de texto e valor booleano, use "ErrorLogicalText", e não "LogicalErrorText" ou "TextErrorLogical". O parâmetro padrão "All", combina todos os quatro tipos. O exemplo a seguir realça todas as células com fórmulas que geraram valores booleanos ou números:
+Às vezes, é necessário operar em mais de um tipo de valor de célula, como células com valores todos de texto ou todos booleanos ("Logical"). A enumeração `Excel.SpecialCellValueType` possui valores que permitem que você combine tipos. Por exemplo, "LogicalText" tem como alvo todas as células com valores completamente de texto ou completamente booleanos. Você pode combinar quaisquer dois ou três dos quatro tipos básicos. Os nomes desses valores enumerados que combinam tipos básicos sempre seguem a ordem alfabética. Então, para combinar células com valores de erros, texto e booleanos, use "ErrorLogicalText", não "LogicalErrorText" nem "TextErrorLogical". O parâmetro padrão "all" combina todos os quatro tipos. O exemplo a seguir realça todas as células com fórmulas que produzem valores numéricos ou booleanos.
 
 ```js
 Excel.run(function (context) {
@@ -214,11 +214,11 @@ Excel.run(function (context) {
 
 ### <a name="get-rangeareas-within-rangeareas"></a>Obter RangeAreas dentro de RangeAreas
 
-O tipo `RangeAreas` possui métodos  `getSpecialCells` e `getSpecialCellsOrNullObject` que obtêm os mesmos dois parâmetros. Esses métodos retornam todas as células de destino de todos os intervalos da coleção `RangeAreas.areas` . Há uma pequena diferença no comportamento dos métodos quando chamado em um objeto `RangeAreas` , em vez de um objeto  `Range` : quando você passá "SameConditionalFormat" como o primeiro parâmetro, o método retornará todas as células que tenham a mesma formatação condicional como o célula mais à esquerda no canto superior *do primeiro intervalo na coleção `RangeAreas.areas` *. O mesmo ponto aplica-se a "SameDataValidation": quando passados para `Range.getSpecialCells`, ele retorna todas as células que tenham a mesma regra de validação de dados como a célula mais à esquerda no canto superior *no intervalo*. Mas, quando ele é passado para `RangeAreas.getSpecialCells`, ele retorna todas as células que possuem a mesma regra de validação de dados como a célula mais à esquerda no canto superior *no primeiro intervalo na coleção `RangeAreas.areas`  *.
+O próprio tipo `RangeAreas` também tem métodos `getSpecialCells` e `getSpecialCellsOrNullObject` que usam os mesmos dois parâmetros. Esses métodos retornam todas as células alvo de todos os intervalos do conjunto `RangeAreas.areas`. Há uma pequena diferença no comportamento dos métodos quando chamados em um objeto `RangeAreas`, em vez de um objeto `Range`: quando você passa "SameConditionalFormat" como o primeiro parâmetro, o método retorna todas as células com formatação condicional igual a da célula superior mais à esquerda *do primeiro intervalo da `RangeAreas.areas` coleção*. O mesmo aplica-se a "SameDataValidation": quando passado para `Range.getSpecialCells`, retorna todas as células com a mesma regra de validação de dados que a célula superior mais à esquerda *no intervalo*. Mas quando ele é passado para `RangeAreas.getSpecialCells`, retorna todas as células com a mesma regra de validação de dados que a célula superior mais à esquerda *do primeiro intervalo da `RangeAreas.areas` coleção*.
 
 ## <a name="read-properties-of-rangeareas"></a>Propriedades de leitura das RangeAreas
 
-Ler os valores da propriedade de `RangeAreas` requer cuidado, pois uma determinada propriedade pode ter valores diferentes para diferentes intervalos dentro de `RangeAreas`. A regra geral é que, se um valor consistente *puder* ser retornado, ele será retornado. Por exemplo, no código a seguir, o código RGB para rosa (`#FFC0CB`) e `true` serão registrados no console porque ambos os intervalos no objeto  `RangeAreas` possuem um preenchimento rosa e ambos são colunas inteiras.
+A leitura de valores de propriedade de `RangeAreas` requer cuidado, pois uma determinada propriedade pode ter valores diferentes para intervalos diferentes dentro de `RangeAreas`. A regra geral é que, se um valor consistente *pode* ser retornado, ele será retornado. Por exemplo, no código a seguir, o código RGB para rosa (`#FFC0CB`) e `true` serão registrados no console pois ambos os intervalos no objeto `RangeAreas` possuem preenchimento rosa e ambos são colunas inteiras.
 
 ```js
 Excel.run(function (context) {
@@ -239,13 +239,13 @@ Excel.run(function (context) {
 })
 ```
 
-As coisas ficam mais complicadas quando a consistência não é possível. O comportamento das propriedades `RangeAreas` segue estes três princípios:
+As coisas se complicam quando a consistência não é possível. O comportamento das propriedades `RangeAreas` segue estes três princípios:
 
-- Uma propriedade booleana de um objeto  `RangeAreas` retorna `false` , a menos que a propriedade seja verdadeira (true) para todos os intervalos membro.
+- Uma propriedade booleana de um objeto  `RangeAreas` retorna `false` , a menos que a propriedade seja verdadeira (true) para todos os intervalos membros.
 - Propriedades não-booleanas, com exceção da propriedade `address` , retornam `null` , a menos que a propriedade correspondente em todos os intervalos membro tenha o mesmo valor.
-- A propriedade  `address` retornará uma sequência de caracteres delimitada por vírgulas dos endereços dos intervalos membro.
+- A propriedade  `address` retornará uma sequência de caracteres delimitada por vírgulas dos endereços dos intervalos membros.
 
-Por exemplo, o código a seguir cria um `RangeAreas` em que somente um intervalo é uma coluna inteira e apenas um é preenchido com rosa. O console mostrará `null` para a cor de preenchimento, `false` para a propriedade `isEntireRow` e "Sheet1! F3:F5, Sheet1! H:H"(supondo que o nome da planilha seja "Sheet1") para a propriedade `address`. 
+Por exemplo, o código a seguir cria um `RangeAreas` em que somente um intervalo é uma coluna inteira e apenas um é preenchido com rosa. O console mostrará `null` para a cor de preenchimento, `false` para a propriedade `isEntireRow` e "Sheet1!F3:F5, Sheet1!H:H"(supondo que o nome da planilha seja "Sheet1") para a propriedade `address`. 
 
 ```js
 Excel.run(function (context) {
@@ -269,6 +269,6 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>Confira também
 
-- [Principais conceitos da API JavaScript do Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview)
+- [Conceitos de programação fundamentais com a API JavaScript do Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview)
 - [Objeto Range (API JavaScript para Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range)
-- [Objeto RangeAreas (API JavaScript para Excel)](https://docs.microsoft.com/javascript/api/excel/excel.rangeareas) (Este link pode não funcionar enquanto a API estiver em versão prévia. Como alternativa, confira [beta office.d.ts](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts).)
+- [Objeto RangeAreas (API JavaScript para Excel)](https://docs.microsoft.com/javascript/api/excel/excel.rangeareas) (Este link pode não funcionar enquanto a API estiver na versão prévia. Como alternativa, consulte [office.d.ts beta](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)).
