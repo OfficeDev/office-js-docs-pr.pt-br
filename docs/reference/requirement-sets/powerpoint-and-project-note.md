@@ -1,0 +1,9 @@
+# <a name="powerpoint-and-project-in-the-javascript-api"></a><span data-ttu-id="c6e5a-101">PowerPoint e Project na API JavaScript</span><span class="sxs-lookup"><span data-stu-id="c6e5a-101">PowerPoint and Project in the JavaScript API</span></span>
+
+<span data-ttu-id="c6e5a-102">PowerPoint e Project suportam os suplementos feitos com a API JavaScript.</span><span class="sxs-lookup"><span data-stu-id="c6e5a-102">PowerPoint and Project support add-ins made with the JavaScript API.</span></span> <span data-ttu-id="c6e5a-103">No entanto, no momento não têm APIs específicas de host.</span><span class="sxs-lookup"><span data-stu-id="c6e5a-103">However, they currently do not have host-specific APIs.</span></span> <span data-ttu-id="c6e5a-104">Você interage com esses hosts por meio da API compartilhada</span><span class="sxs-lookup"><span data-stu-id="c6e5a-104">You interact with these hosts through the Shared API.</span></span> 
+
+## <a name="see-also"></a><span data-ttu-id="c6e5a-105">Confira também</span><span class="sxs-lookup"><span data-stu-id="c6e5a-105">See also</span></span>
+
+- [<span data-ttu-id="c6e5a-106">JavaScript API para Office</span><span class="sxs-lookup"><span data-stu-id="c6e5a-106">JavaScript API for Office</span></span>](/javascript/office/javascript-api-for-office)
+- [<span data-ttu-id="c6e5a-107">Disponibilidade de host e plataforma para suplementos do Office</span><span class="sxs-lookup"><span data-stu-id="c6e5a-107">Office Add-in host and platform availability</span></span>](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-in-availability)
+- [<span data-ttu-id="c6e5a-108">Referência de API compartilhada</span><span class="sxs-lookup"><span data-stu-id="c6e5a-108">Shared API Reference</span></span>](/javascript/api/overview/office)
