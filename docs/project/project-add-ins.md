@@ -2,16 +2,16 @@
 title: Suplementos do painel de tarefas para o Project
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 2aa8a88878082357949935305b9d39d203f5fb5d
-ms.sourcegitcommit: fdf7f4d686700edd6e6b04b2ea1bd43e59d4a03a
+ms.openlocfilehash: 1b7554920c0f6e76ec0b351e103781e152c70a9d
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "25348160"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25506102"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Suplementos do painel de tarefas para o Project
 
-O Project Standard 2013 e o Project Professional 2013 (versão 15.1 ou superior) incluem suporte para suplementos do painel de tarefas. Você pode executar suplementos gerais do painel de tarefas que são desenvolvidos para o Word 2013 ou Excel 2013. Também é possível desenvolver suplementos personalizados que lidam com eventos de seleção no Project e integram tarefas, recursos, visualizações e outros dados no nível da célula em um projeto com listas do SharePoint, Suplementos do SharePoint, Web Parts, serviços da Web e aplicativos corporativos.
+Project Standard 2013 and Project Professional 2013 (version 15.1 or higher) both include support for task pane add-ins. You can run general task pane add-ins that are developed for Word 2013 or Excel 2013. You can also develop custom add-ins that handle selection events in Project and integrate task, resource, view, and other cell-level data in a project with SharePoint lists, SharePoint Add-ins, Web Parts, web services, and enterprise applications.
 
 > [!NOTE]
 > O [download do SDK do Project 2013](https://www.microsoft.com/download/details.aspx?id=30435%20) inclui exemplos de suplementos que mostram como usar o modelo de objeto de suplemento para o Project e como usar o serviço OData para relatar dados no Project Server 2013. Ao extrair e instalar o SDK, consulte o subdiretório `\Samples\Apps\`.
@@ -204,7 +204,7 @@ No procedimento 2, o suplemento Pesquisa do Bing é instalado no computador loca
 
 - [Visão geral da plataforma de Suplementos do Office](../overview/office-add-ins.md)
 - [Manifesto XML dos Suplementos do Office](../develop/add-in-manifests.md)
-- [API JavaScript para Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js)
+- [API JavaScript para Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)
 - [Criar seu primeiro suplemento de painel de tarefas para o Project 2013 usando um editor de texto](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [Criar um suplemento de Project que usa REST com um serviço OData local do Project Server](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
 - [Conectar um suplemento de painel de tarefas do Project ao PWA](http://blogs.msdn.com/b/project_programmability/archive/2012/11/02/connecting-a-project-task-pane-app-to-pwa.aspx)
