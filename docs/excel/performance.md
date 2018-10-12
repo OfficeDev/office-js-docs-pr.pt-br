@@ -2,24 +2,24 @@
 title: Otimização de desempenho da API JavaScript do Excel
 description: Otimize o desempenho usando a API JavaScript do Excel
 ms.date: 03/28/2018
-ms.openlocfilehash: 50fac999093abb3fbfe1bd5be1cd6a77dc930399
-ms.sourcegitcommit: 78b28ae88d53bfef3134c09cc4336a5a8722c70b
+ms.openlocfilehash: 83150e01a691379f244ce1ce43c190ea32dd170f
+ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "23797312"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "25459123"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Otimização de desempenho usando a API JavaScript do Excel
 
-Existem várias maneiras de executar tarefas comuns com a API JavaScript do Excel. Você encontrará diferenças de desempenho significativas entre as diferentes abordagens. Este artigo fornece diretrizes e exemplos de código para mostrar como executar tarefas comuns com eficiência usando a API JavaScript do Excel.
+Há várias maneiras de realizar tarefas comuns com a API JavaScript do Excel. Você encontrará diferenças significativas de desempenho entre várias abordagens. Este artigo oferece orientação e códigos de exemplo para mostrar como executar tarefas comuns com eficiência usando a API JavaScript do Excel.
 
-## <a name="minimize-the-number-of-sync-calls"></a>Minimizar o número de chamadas sync()
+## <a name="minimize-the-number-of-sync-calls"></a>Minimize o número de chamadas sync()
 
-Na API JavaScript do Excel, ```sync()``` é a única operação assíncrona e pode ser lenta em determinadas circunstâncias, especialmente no Excel Online. Para otimizar o desempenho, minimize o número de chamadas para ```sync()```, colocando em fila o maior número possível de alterações antes de chamá-la.
+Na API JavaScript do Excel, ```sync()``` é a única operação assíncrona, e ela pode ser lenta em algumas circunstâncias, especialmente no Excel Online. Para otimizar o desempenho, minimize o número de chamadas para ```sync()``` enfileirando o máximo possível de alterações antes de chamá-la.
 
-Veja [Conceitos Básicos - sync()](excel-add-ins-core-concepts.md#sync) para obter exemplos de código que seguem essa prática.
+Confira [Conceitos Básicos - sync()](excel-add-ins-core-concepts.md#sync) para obter exemplos de código que seguem essa prática.
 
-## <a name="minimize-the-number-of-proxy-objects-created"></a>Minimizar o número de objetos de proxy criados
+## <a name="minimize-the-number-of-proxy-objects-created"></a>Minimize o número de objetos de proxy criados
 
 Evite criar repetidamente o mesmo objeto de proxy. Em vez disso, se precisar usar um mesmo objeto de proxy em mais de uma operação, crie-o uma única vez, atribua-o a uma variável e use essa variável no código.
 
@@ -47,11 +47,11 @@ worksheet.getRange("A1").set({
 });
 ```
 
-## <a name="load-necessary-properties-only"></a>Carregar apenas as propriedades necessárias
+## <a name="load-necessary-properties-only"></a>Carregue apenas as propriedades necessárias
 
-Na API JavaScript do Excel, é preciso carregar explicitamente as propriedades de um objeto de proxy. Embora seja possível carregar todas as propriedades de uma só vez com uma chamada vazia de ```load()```, essa abordagem pode sobrecarregar significativamente o desempenho. Em vez disso, sugerimos carregar apenas as propriedades necessárias, especialmente para aqueles objetos que possuem um grande número de propriedades.
+Na API JavaScript do Excel, você precisa carregar explicitamente as propriedades de um objeto de proxy. Embora você possa carregar todas as propriedades de uma só vez com uma chamada de  ```load()``` vazio, essa abordagem pode afetar o desempenho de maneira significativa. Em vez disso, sugerimos que você carregue apenas as propriedades necessárias, especialmente para os objetos que têm um grande número de propriedades.
 
-Por exemplo, se sua intenção é apenas ler a propriedade **address** de um objeto de intervalo, especifique somente essa propriedade quando chamar o método **load()**:
+Por exemplo, se sua intenção é apenas ler a propriedade **address** de um objeto range, especifique apenas essa propriedade quando chamar o método **load()**:
  
 ```js
 range.load('address');
@@ -71,16 +71,16 @@ object.load({ loadOption });
  
 _Onde:_
  
-* `properties` é a lista de propriedades a serem carregadas especificadas como sequências de caracteres delimitadas por vírgula ou como uma matriz de nomes. Para saber mais, veja os métodos **load()** definidos para objetos na [referência da API JavaScript do Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview).
-* `loadOption` especifica um objeto que descreve as opções de seleção, expansão, topo e ignorar. Confira as [opções](https://docs.microsoft.com/javascript/api/office/officeextension.loadoption) de carregamento do objeto obter detalhes.
+* `properties` é a lista de propriedades que devem ser carregadas, especificada como sequências de caracteres delimitadas por vírgula ou como uma matriz de nomes. Para obter mais informações, consulte os métodos **load ()** definidos para os objetos na [referência de API JavaScript do Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview).
+* `loadOption` especifica um objeto que descreve as opções de seleção, expansão, topo e ignorar. Confira as [opções](https://docs.microsoft.com/javascript/api/office/officeextension.loadoption) de carregamento do objeto para saber mais.
 
-Observe que algumas das “propriedades” sob um objeto podem ter o mesmo nome que outro objeto. Por exemplo, `format` é uma propriedade do objeto de intervalo, mas `format` em si também é um objeto. Assim, se você fizer uma chamada como `range.load("format")`, isso será equivalente a `range.format.load()`, que é uma chamada vazia de load() que pode causar problemas de desempenho, conforme descrito anteriormente. Para evitar isso, o código deve carregar apenas os "nós folha" em uma árvore de objetos. 
+Esteja ciente de que algumas das "propriedades" em um objeto podem ter o mesmo nome de outro objeto. Por exemplo, `format` é uma propriedade em um objeto range, mas `format` também é um objeto. Portanto, se você faz uma chamada como `range.load("format")`, isto é equivalente a `range.format.load()`, que é uma chamada load () vazia que pode causar problemas de desempenho, conforme descrito anteriormente. Para evitar isso, seu código deve carregar apenas  "nós folha" em uma árvore de objeto. 
 
-## <a name="suspend-calculation-temporarily"></a>Suspender os cálculos temporariamente
+## <a name="suspend-calculation-temporarily"></a>Suspenda os cálculos temporariamente
 
-Se estiver tentando executar uma operação em um grande número de células (por exemplo, configurando o valor de um objeto de intervalo enorme) e não se importar em suspender temporariamente os cálculos no Excel enquanto a operação é concluída, recomendamos suspender os cálculos até a chamada da próxima ```context.sync()```.
+Se você estiver tentando executar uma operação em um grande número de células (por exemplo, configurar o valor de um objeto range enorme) e não se importar em suspender temporariamente os cálculos no Excel até que a operação seja concluída, recomendamos suspender os cálculos até a chamada da próxima ```context.sync()```.
 
-Veja a documentação de referência do [Objeto de Aplicativo](https://docs.microsoft.com/javascript/api/excel/excel.application) para obter informações sobre como usar a ```suspendApiCalculationUntilNextSync()``` API para suspender e reativar os cálculos de forma muito conveniente. O seguinte código demonstra como suspender os cálculos temporariamente:
+Confira a documentação de referência do [Objeto Application](https://docs.microsoft.com/javascript/api/excel/excel.application) para obter informações sobre como usar a API ```suspendApiCalculationUntilNextSync()``` para suspender e reativar os cálculos de uma maneira muito conveniente. O código a seguir demonstra como suspender temporariamente o cálculo:
 
 ```js
 Excel.run(async function(ctx) {
@@ -121,20 +121,20 @@ Excel.run(async function(ctx) {
 })
 ```
 
-## <a name="update-all-cells-in-a-range"></a>Atualizar todas as células em um intervalo 
+## <a name="update-all-cells-in-a-range"></a>Atualize todas as células em um intervalo 
 
-Quando você precisa atualizar todas as células de um intervalo com um mesmo valor ou propriedade, poderá ser lento fazer isso por meio de uma matriz bidimensional que especifica repetidamente o mesmo valor, já que essa abordagem exige que o Excel execute uma iteração em todas as células do intervalo para definir cada uma separadamente. O Excel tem uma maneira mais eficiente para atualizar todas as células de um intervalo com um mesmo valor ou propriedade.
+Quando você precisar atualizar todas as células em um intervalo com o mesmo valor ou propriedade, pode ser lento fazer isso por meio de uma matriz bidimensional que atribui o mesmo valor repetidamente, pois essa abordagem exige que o Excel itere todas as células no intervalo para definir cada uma em separado. O Excel tem uma maneira mais eficiente para atualizar todas as células em um intervalo com o mesmo valor ou propriedade.
 
-Se você precisar aplicar o mesmo valor, formato de número ou fórmula a um intervalo de células, será mais eficiente especificar um único valor em vez de uma matriz de valores. Isso aumentará significativamente o desempenho. Para obter um exemplo de código que mostre essa abordagem em ação, veja [Conceitos principais - Atualizar todas as células em um intervalo](excel-add-ins-core-concepts.md#update-all-cells-in-a-range).
+Se você precisa aplicar o mesmo valor, a mesma formatação de número ou a mesma fórmula para um intervalo de células, é mais eficiente especificar um valor único, em vez de uma matriz de valores. Isso melhorará significativamente o desempenho. Para um exemplo de código que mostra essa abordagem em ação, confira [Conceitos fundamentais - atualizar todas as células em um intervalo](excel-add-ins-core-concepts.md#update-all-cells-in-a-range).
 
-Um cenário comum em que você pode aplicar essa abordagem é ao definir formatos numéricos diferentes em colunas diferentes em uma planilha. Nesse caso, você pode simplesmente iterar pelas colunas e definir o formato numérico em cada coluna com um valor único. Trate cada coluna como um intervalo, conforme mostrado no exemplo de código em [Atualizar todas as células em um intervalo](excel-add-ins-core-concepts.md#update-all-cells-in-a-range).
+Um cenário comum onde você pode aplicar essa abordagem é quando aplica formatos diferentes de números em colunas diferentes da planilha. Nesse caso, você pode simplesmente percorrer as colunas e definir o formato de número em cada coluna com um único valor. Trate cada coluna como um intervalo, conforme mostrado no exemplo de código de [atualização de todas as células em um intervalo](excel-add-ins-core-concepts.md#update-all-cells-in-a-range) .
 
 > [!NOTE]
-> Se estiver usando o TypeScript, você observará um erro de compilação informando que um valor único não pode ser definido como uma matriz 2D.  Isso é inevitável, já que os valores *são* uma matriz 2D ao recuperar as propriedades e o TypeScript não permite tipos diferentes de setter versus getter.  No entanto, uma solução simples é definir os valores com um sufixo `as any`, por exemplo, `range.values = "hello world" as any`.
+> Se você estiver usando TypeScript, perceberá um erro de compilação dizendo que um único valor não pode ser atribuído a uma matriz bidimensional. Isso é inevitável, pois os valores *formam* uma matriz bidimensional quando as propriedades são recuperadas e o TypeScript não permite tipos diferentes tipos setter vs getter.  No entanto, uma solução alternativa simples é definir os valores com um sufixo`as any`, por exemplo, `range.values = "hello world" as any`.
 
-## <a name="importing-data-into-tables"></a>Importação de dados em tabelas
+## <a name="importing-data-into-tables"></a>Importar dados em tabelas
 
-Ao tentar importar uma enorme quantidade de dados diretamente para um objeto [Table](https://docs.microsoft.com/javascript/api/excel/excel.table) (por exemplo, usando `TableRowCollection.add()`), o desempenho poderá ser mais lento. Se você estiver tentando adicionar uma nova tabela, deverá preencher os dados primeiro, definindo `range.values` e chamando `worksheet.tables.add()` para criar uma tabela no intervalo. Se você estiver tentando gravar dados em uma tabela existente, grave-os em um objeto de intervalo por meio de `table.getDataBodyRange()` e a tabela será expandida automaticamente. 
+Ao tentar importar uma grande quantidade de dados em um objeto [Table](https://docs.microsoft.com/javascript/api/excel/excel.table) diretamente (por exemplo, usando `TableRowCollection.add()`), você pode sofrer lentidão. Se você estiver tentando adicionar uma nova tabela, você deve preencher os dados primeiro, atribuindo `range.values` e então chamar `worksheet.tables.add()` para criar a tabela com o intervalo. Se você estiver tentando gravar dados em uma tabela existente, grave os dados em um objeto range via `table.getDataBodyRange()`, e a tabela se expandirá automaticamente. 
 
 Veja um exemplo dessa abordagem:
 
@@ -162,13 +162,13 @@ Excel.run(async (ctx) => {
 > [!NOTE]
 > É possível converter convenientemente um objeto Table em um objeto Range usando o método [Table.convertToRange()](https://docs.microsoft.com/javascript/api/excel/excel.table#converttorange--).
 
-## <a name="enable-and-disable-events"></a>Ativar e desativar eventos
+## <a name="enable-and-disable-events"></a>Ative e desative eventos
 
-O desempenho de um suplemento pode ser melhorado por meio da desabilitação de eventos. Um exemplo de código mostrando como habilitar e desabilitar eventos está no artigo [Trabalho com eventos](excel-add-ins-events.md#enable-and-disable-events) .
+O desempenho de um suplemento pode ser melhorado com a desativação de eventos. Confira um exemplo de código mostrando como ativar e desativar eventos no artigo [Trabalhando com eventos](excel-add-ins-events.md#enable-and-disable-events) .
 
 ## <a name="see-also"></a>Confira também
 
-- [Principais conceitos da API JavaScript do Excel](excel-add-ins-core-concepts.md)
-- [Conceitos avançados da API JavaScript do Excel](excel-add-ins-advanced-concepts.md)
+- [Conceitos fundamentais de programação com a API JavaScript do Excel](excel-add-ins-core-concepts.md)
+- [Conceitos avançados de programação com a API JavaScript do Excel](excel-add-ins-advanced-concepts.md)
 - [Especificação aberta da API JavaScript do Excel](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)
-- [Objeto de funções de planilha (API JavaScript para Excel)](https://docs.microsoft.com/javascript/api/excel/excel.functions)
+- [Objeto Worksheet Functions (API JavaScript para Excel)](https://docs.microsoft.com/javascript/api/excel/excel.functions)
