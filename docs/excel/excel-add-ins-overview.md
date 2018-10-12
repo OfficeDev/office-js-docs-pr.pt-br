@@ -2,12 +2,12 @@
 title: Visão geral dos suplementos do Excel
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 8ce01df60489d05f1ba9f4b53f04fa99f61e1d36
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.openlocfilehash: 6d67cd05e7021c8b76fb69135000d4079024713a
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459095"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25505955"
 ---
 # <a name="excel-add-ins-overview"></a>Visão geral dos suplementos do Excel
 
@@ -33,7 +33,7 @@ A plataforma de Suplementos do Office fornece a estrutura e as APIs JavaScript O
 
 Um suplemento do Excel inclui dois componentes básicos: um aplicativo da web e um arquivo de configuração, chamado de arquivo de manifesto. 
 
-O aplicativo da web usa a [API JavaScript para Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js) para interagir com objetos no Excel, e também pode facilitar a interação com recursos online. Por exemplo, um suplemento pode executar qualquer uma das seguintes tarefas:
+O aplicativo da web usa a [API JavaScript para Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js) para interagir com objetos no Excel, e também pode facilitar a interação com recursos online. Por exemplo, um suplemento pode executar qualquer uma das seguintes tarefas:
 
 * Criar, ler, atualizar e excluir dados na pasta de trabalho (planilhas, intervalos, tabelas, gráficos, itens nomeados e muito mais).
 * Executar a autorização do usuário em um serviço online usando o fluxo padrão do OAuth 2.0.
@@ -96,9 +96,9 @@ Para obter mais informações sobre suplementos de conteúdo, confira [Suplement
 
 ## <a name="javascript-apis-to-interact-with-workbook-content"></a>APIs JavaScript para interagir com o conteúdo da pasta de trabalho
 
-Um suplemento do Excel interage com objetos no Excel usando a [API JavaScript para Office](https://docs.microsoft.com/javascript/office/javascript-api-for-office?view=office-js), que inclui dois modelos de objeto JavaScript:
+Um suplemento do Excel interage com objetos no Excel usando a [API JavaScript para Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js), que inclui dois modelos de objeto JavaScript:
 
-* **API JavaScript do Excel**: Introduzida com o Office 2016, a [API JavaScript do Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js) fornece objetos do Excel fortemente tipados que você pode usar para acessar planilhas, intervalos, tabelas, gráficos e muito mais. 
+* **API JavaScript do Excel**: Introduzida com o Office 2016, a [API JavaScript do Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js) fornece objetos do Excel fortemente tipados que você pode usar para acessar planilhas, intervalos, tabelas, gráficos e muito mais. 
 
 * **API compartilhada**: introduzida com o Office 2013, a API compartilhada permite acessar recursos como interface do usuário, caixas de diálogo e configurações de cliente, que são comuns entre vários tipos de aplicativos host como o Word, Excel e PowerPoint. Como a API compartilhada fornece funcionalidade limitada para interação com o Excel, você pode usá-la se seu suplemento precisa ser executado no Excel 2013.
 
@@ -106,10 +106,10 @@ Um suplemento do Excel interage com objetos no Excel usando a [API JavaScript pa
 
 Comece criando [seu suplemento do Excel](excel-add-ins-get-started-overview.md). Em seguida, aprenda sobre os [conceitos básicos](excel-add-ins-core-concepts.md) de criação de suplementos do Excel.
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Veja também
 
 - [Visão geral da plataforma de Suplementos do Office](../overview/office-add-ins.md)
 - [Práticas recomendadas para o desenvolvimento de Suplementos do Office](../concepts/add-in-development-best-practices.md)
 - [Diretrizes de design para Suplementos do Office](../design/add-in-design.md)
-- [Conceitos de programação fundamentais com a API JavaScript do Excel](excel-add-ins-core-concepts.md)
-- [Referência da API JavaScript do Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
+- [Conceitos fundamentais de programação com a API JavaScript do Excel](excel-add-ins-core-concepts.md)
+- [Referência da API JavaScript do Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)
