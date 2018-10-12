@@ -2,12 +2,12 @@
 title: Trabalhar com vários intervalos simultaneamente em suplementos do Excel
 description: ''
 ms.date: 9/4/2018
-ms.openlocfilehash: 2387be8dc17d85028b1d086cb192ac1accf167d5
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.openlocfilehash: a00bbf15b53649147fb2c2b1dfa590f15c5739be
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459193"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25506291"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins-preview"></a>Trabalhar com vários intervalos simultaneamente em suplementos do Excel (Versão Prévia)
 
@@ -269,6 +269,6 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>Confira também
 
-- [Conceitos de programação fundamentais com a API JavaScript do Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview)
+- [Conceitos fundamentais de programação com a API JavaScript do Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
 - [Objeto Range (API JavaScript para Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range)
 - [Objeto RangeAreas (API JavaScript para Excel)](https://docs.microsoft.com/javascript/api/excel/excel.rangeareas) (Este link pode não funcionar enquanto a API estiver na versão prévia. Como alternativa, consulte [office.d.ts beta](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)).
