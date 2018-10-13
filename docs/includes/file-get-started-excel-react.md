@@ -12,7 +12,7 @@ Neste artigo, você verá um passo a passo do processo de criar um suplemento do
 
 - [Node.js](https://nodejs.org)
 
-- Instale a última versão do [Yeoman](https://github.com/yeoman/yo) e o [Gerador Yeoman para suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.
+- Instale a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador Yeoman para suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.
     ```bash
     npm install -g yo generator-office
     ```
@@ -34,7 +34,7 @@ Neste artigo, você verá um passo a passo do processo de criar um suplemento do
     ```
 
     - **Escolha um tipo de projeto:** `Office Add-in project using React framework`
-    - **Como deseja nomear seu suplemento?** `My Office Add-in`
+    - **Como deseja nomear seu suplemento?:** `My Office Add-in`
     - **Qual aplicativo cliente do Office você gostaria de suportar?:** `Excel`
 
     ![Gerador do Yeoman](../images/yo-office-excel-react.png)
@@ -93,7 +93,7 @@ Parabéns, você criou com sucesso um suplemento do Excel usando o React! Em seg
 
 ## <a name="see-also"></a>Confira também
 
-* [Tutorial de suplementos do Excel](../tutorials/excel-tutorial-create-table.md)
-* [Conceitos de programação fundamentais com a API JavaScript do Excel](../excel/excel-add-ins-core-concepts.md)
+* [Tutorial de suplemento do Excel](../tutorials/excel-tutorial-create-table.md)
+* [Conceitos fundamentais de programação com a API JavaScript do Excel](../excel/excel-add-ins-core-concepts.md)
 * [Exemplos de código do suplemento do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Referência da API JavaScript do Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
+* [Referência da API JavaScript do Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)
