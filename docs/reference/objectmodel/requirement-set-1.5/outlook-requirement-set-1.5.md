@@ -3,7 +3,7 @@
 O subconjunto da API JavaScript para Office  da API para suplementos do Outlook inclui objetos, métodos, propriedades e eventos que você pode usar em um suplemento do Outlook.
 
 > [!NOTE]
-> Esta documentação destina-se a um [conjunto de requisitos](/javascript/office/requirement-sets/outlook-api-requirement-sets) diferente do conjunto de requisitos mais recente.
+> Esta documentação destina-se a um [conjunto de requisitos](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) diferente do conjunto de requisitos mais recente.
 
 ## <a name="whats-new-in-15"></a>Novidades na versão 1.5?
 
