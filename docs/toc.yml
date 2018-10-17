@@ -185,7 +185,7 @@ items:
       href: develop/localization.md
     - name: Desenvolver suplementos com o Visual Studio
       items:
-      - name: Criação e depuração de Suplementos do Office no Visual Studio
+      - name: Criar e depurar Suplementos do Office no Visual Studio
         href: develop/create-and-debug-office-add-ins-in-visual-studio.md
       - name: Obter o JavaScript IntelliSense no Visual Studio
         href: develop/get-javascript-intellisense-in-visual-studio.md
@@ -296,7 +296,7 @@ items:
     - name: Tutorial de suplementos do Word
       displayName: Word
       href: tutorials/word-tutorial.yml
-    - name: Crie suplementos melhores para o Word com o Office Open XML
+    - name: Criar suplementos melhores para o Word com o Office Open XML
       displayName: Word
       href: word/create-better-add-ins-for-word-with-office-open-xml.md
     - name: Suplementos do painel de tarefas do dicionário
@@ -311,13 +311,13 @@ items:
     - name: Vincular a regiões em um documento
       displayName: Word
       href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
-    - name: Usar opções de pesquisa para encontrar texto no seu suplemento do Word
+    - name: Usar as opções de pesquisa para encontrar texto no seu suplemento do Word
       displayName: Word
       href: word/search-option-guidance.md
     - name: Visão geral da API JavaScript do Word
       displayName: Word
       href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js
-    - name: Referências da API JavaScript do Word
+    - name: Referência da API JavaScript do Word
       displayName: Word
       href: https://docs.microsoft.com/en-us/javascript/api/word?view=office-js
   - name: Suplementos do Outlook
@@ -691,7 +691,7 @@ items:
       href: reference/manifest/targetdialect.md
     - name: TargetDialects
       href: reference/manifest/targetdialects.md
-    - name: Version
+    - name: Versão
       href: reference/manifest/version.md
     - name: VersionOverrides
       href: reference/manifest/versionoverrides.md
@@ -736,15 +736,17 @@ items:
         href: reference/manifest/script.md
       - name: SourceLocation (funções personalizadas)
         href: reference/manifest/customfunctionssourcelocation.md
-      - name: Superdica
+      - name: Dica detalhada
         href: reference/manifest/supertip.md
+      - name: SupportsSharedFolders
+        href: reference/manifest/supportssharedfolders.md
       - name: WebApplicationInfo
         href: reference/manifest/webapplicationinfo.md
 - name: Recursos
   href: resources/resources-links-help.md
-ms.openlocfilehash: e050a9d566314bc6dd7a8e146e6fd32733b92738
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.openlocfilehash: 554141ecd56a9f08e38b0d579f96a6d239ac7a22
+ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25506277"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "25579881"
