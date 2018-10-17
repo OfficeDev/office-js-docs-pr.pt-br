@@ -1,17 +1,17 @@
 ---
-ms.date: 09/27/2018
-description: Criar uma função personalizada no Excel usando o JavaScript.
-title: Criar funções personalizadas no Excel (visualização)
-ms.openlocfilehash: f6b658bbd119a785b342ec22bc1b341f6902da3f
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.date: 10/09/2018
+description: Criar funções personalizadas no Excel usando JavaScript.
+title: Criar funções personalizadas no Excel (versão prévia)
+ms.openlocfilehash: e52039f2618f793f688cd89c5d62bac0a8632667
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459340"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25506116"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Criar funções personalizadas no Excel (versão prévia)
 
-Funções personalizadas permitem que os desenvolvedores adicionem novas funções ao Excel, definindo-as em JavaScript como parte de um suplemento. Os usuários no Excel podem acessar funções personalizadas tal como fariam com qualquer função nativa do Excel, como `SUM()`. Este artigo explica como criar funções personalizadas no Excel.
+As funções personalizadas permitem que desenvolvedores adicionem novas funções ao Excel definindo essas funções em JavaScript como parte de um suplemento. Os usuários podem acessar as funções personalizadas como fazem com qualquer função nativa no Excel, como `SUM()`. Este artigo descreve como criar funções personalizadas no Excel.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -143,8 +143,8 @@ A tabela a seguir lista as propriedades normalmente presentes no arquivo de meta
 | `helpUrl` | URL da página que é exibida quando o usuário solicita ajuda. |
 | `description` | Descreve o que a função faz. Esse valor aparece como uma dica de ferramenta quando a função é o item selecionado no menu de preenchimento automático dentro do Excel. |
 | `result`  | Objeto que define o tipo de informação retornada pela função. O valor da propriedade filha `type` pode ser **string**, **number** ou **boolean**. O valor da propriedade filha `dimensionality` pode ser **scalar** ou **matrix** (uma matriz bidimensional de valores do `type` especificado). |
-| `parameters` | Uma matriz que define os parâmetros de entrada da função. As propriedades filhas `name` e `description` aparecem no intelliSense do Excel. O valor da propriedade filha `type` pode ser **string**, **number** ou **boolean**. O valor da propriedade filha `dimensionality` pode ser **scalar** ou **matrix** (uma matriz bidimensional de valores do `type` especificado). |
-| `options` | Permite personalizar alguns aspectos da como e quando o Excel executa a função. Para obter mais informações sobre como essa propriedade pode ser usada, consulte [Funções de fluxo contínuo](#streaming-functions) e [Cancelar uma função](#canceling-a-function) mais à frente neste artigo. |
+| `parameters` | Uma matriz que define os parâmetros de entrada da função. As propriedades filhas `name` e `description` aparecem no IntelliSense do Excel. O valor da propriedade filha `type` pode ser **string**, **number** ou **boolean**. O valor da propriedade filha `dimensionality` pode ser **scalar** ou **matrix** (uma matriz bidimensional de valores do `type` especificado). |
+| `options` | Permite que você personalize alguns aspectos de como e quando o Excel executa a função. Para obter mais informações sobre como essa propriedade pode ser usada, consulte [Funções de fluxo contínuo](#streaming-functions) e [Cancelamento de uma função](#canceling-a-function) mais adiante neste artigo. |
 
 ### <a name="manifest-file"></a>Arquivo de manifesto
 
@@ -210,13 +210,13 @@ function getTemperature(thermometerID){
 
 ## <a name="streaming-functions"></a>Funções de fluxo contínuo
 
-Funções personalizadas de fluxo contínuo permitem múltiplos dados de saída em uma célula ao longo do tempo, sem precisar que o usuário explicitamente solicite a atualização dos dados. O exemplo de código a seguir é uma função personalizada que adiciona um número ao resultado a cada segundo. Observe o seguinte sobre este código:
+Funções personalizadas de fluxo contínuo permitem que você atribua dados para as células repetidamente ao longo do tempo, sem que o usuário precise solicitar explicitamente uma atualização de dados. O exemplo de código a seguir é uma função personalizada que adiciona um número ao resultado a cada segundo. Observe o seguinte sobre este código:
 
 - O Excel exibe cada novo valor automaticamente usando o retorno de chamada `setResult`.
 
-- O segundo parâmetro de entrada, `handler`, não é exibido para o usuário final no Excel quando ele seleciona a função no menu de preenchimento automático.
+- O segundo parâmetro de entrada, `handler`, não é exibido para o usuário final no Excel, quando ele seleciona a função do menu de preenchimento automático.
 
-- O retorno de chamada `onCanceled` define a função que é executada quando a função for cancelada. Você deve implementar um manipulador de cancelamento como este para qualquer função de fluxo contínuo. Para obter mais informações, consulte [Cancelar uma função](#canceling-a-function). 
+- O retorno de chamada `onCanceled` define a função que é executada quando a função for cancelada. Você deve implementar um manipulador de cancelamento como este para qualquer função de fluxo contínuo. Para obter mais informações, confira [Cancelamento de função](#canceling-a-function).
 
 ```js
 function incrementValue(increment, handler){
@@ -259,7 +259,7 @@ Quando você especifica os metadados de uma função de fluxo contínuo no arqui
 }
 ```
 
-## <a name="canceling-a-function"></a>Cancelar uma função
+## <a name="canceling-a-function"></a>Cancelamento de uma função
 
 Em alguns casos, talvez seja necessário cancelar a execução de uma função personalizada de fluxo contínuo para reduzir seu consumo de largura de banda, a memória de trabalho e a carga da CPU. O Excel cancela a execução de uma função nas seguintes situações:
 
@@ -271,29 +271,36 @@ Em alguns casos, talvez seja necessário cancelar a execução de uma função p
 
 Para habilitar a capacidade de cancelar uma função, você deve implementar um manipulador de cancelamento dentro da função do JavaScript e especificar a propriedade `"cancelable": true` dentro do objeto `options` nos metadados JSON que descrevem a função. Os exemplos de código na seção anterior deste artigo fornecem um exemplo dessas técnicas.
 
-## <a name="saving-and-sharing-state"></a>Compartilhar e salvar um estado
+## <a name="saving-and-sharing-state"></a>Compartilhamento e salvamento de estado
 
-Funções personalizadas podem salvar dados em variáveis globais do JavaScript. Em chamadas subsequentes, sua função personalizada pode usar os valores salvos nessas variáveis. Um estado salvo é útil quando usuários adicionam a mesma função personalizada a mais de uma célula, pois todas as instâncias da função podem compartilhar o estado. Por exemplo, você pode salvar os dados retornados de uma chamada para um recurso da Web para evitar fazer chamadas adicionais para esse mesmo recurso.
+Funções personalizadas podem salvar dados em variáveis globais do JavaScript, que podem ser usadas em chamadas subsequentes. Um estado salvo é útil quando usuários chamam a mesma função personalizada a partir de mais de uma célula, porque todas as instâncias da função podem acessar o estado. Por exemplo, você pode salvar os dados retornados de uma chamada para um recurso da web para evitar fazer chamadas adicionais para o mesmo recurso da web.
 
 O exemplo de código a seguir mostra a implementação de uma função de fluxo contínuo de temperatura que salva o estado globalmente. Observe o seguinte sobre este código:
 
-- `refreshTemperature` é uma função de fluxo contínuo que lê a temperatura de um determinado termômetro a cada segundo. Novas temperaturas são salvas na variável `savedTemperatures`, mas não atualiza diretamente o valor da célula. Ela não deve ser chamada diretamente de uma célula da planilha, *então não fica registrada no arquivo JSON*.
+- A função `streamTemperature` atualiza o valor de temperatura que é exibido na célula cada segundo e usa a variável `savedTemperatures` como sua fonte de dados.
 
-- `streamTemperature` atualiza os valores de temperatura exibidos na célula a cada segundo e usa a variável `savedTemperatures` como sua fonte de dados. Deve ser registrada no arquivo JSON e nomeada apenas com letras maiúsculas, `STREAMTEMPERATURE`.
+- Como `streamTemperature` é uma função de fluxo contínuo, ela implementa um manipulador de cancelamento que será executado quando a função for cancelada.
 
-- Os usuários podem chamar `streamTemperature` de várias células na interface do usuário do Excel. Cada chamada lê os dados da mesma variável `savedTemperatures`.
+- Se um usuário chama a função `streamTemperature` a partir de várias células no Excel, a função `streamTemperature` lê os dados da mesma `savedTemperatures` variável cada vez que ela é executada. 
+
+- A função `refreshTemperature` lê a temperatura de um determinado termômetro a cada segundo e armazena o resultado na variável `savedTemperatures`. Como a função `refreshTemperature` não está exposta aos usuários finais no Excel, ela não precisa ser registrada no arquivo JSON.
 
 ```js
 var savedTemperatures;
 
 function streamTemperature(thermometerID, handler){
   if(!savedTemperatures[thermometerID]){
-    refreshTemperatures(thermometerID); // starts fetching temperatures if the thermometer hasn't been read yet
+    refreshTemperature(thermometerID); // starts fetching temperatures if the thermometer hasn't been read yet
   }
 
   function getNextTemperature(){
     handler.setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to Excel.
-    setTimeout(getNextTemperature, 1000); // Wait 1 second before updating Excel again.
+    var delayTime = 1000; // Amount of milliseconds to delay a request by.
+    setTimeout(getNextTemperature, delayTime); // Wait 1 second before updating Excel again.
+
+    handler.onCancelled() = function {
+      clearTimeout(delayTime);
+    }
   }
   getNextTemperature();
 }
@@ -308,7 +315,7 @@ function refreshTemperature(thermometerID){
 }
 ```
 
-## <a name="working-with-ranges-of-data"></a>Trabalhar com intervalos de dados
+## <a name="working-with-ranges-of-data"></a>Trabalhando com intervalos de dados
 
 Sua função personalizada pode aceitar um intervalo de dados como um parâmetro de entrada ou pode retornar um intervalo de dados. No JavaScript, um intervalo de dados é representado como uma matriz bidimensional.
 

@@ -2,12 +2,12 @@
 title: Otimização de desempenho da API JavaScript do Excel
 description: Otimize o desempenho usando a API JavaScript do Excel
 ms.date: 03/28/2018
-ms.openlocfilehash: 83150e01a691379f244ce1ce43c190ea32dd170f
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.openlocfilehash: ee1687fcb1a5db74e65f5e73994653df235b4823
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459123"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25505374"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Otimização de desempenho usando a API JavaScript do Excel
 
@@ -71,7 +71,7 @@ object.load({ loadOption });
  
 _Onde:_
  
-* `properties` é a lista de propriedades que devem ser carregadas, especificada como sequências de caracteres delimitadas por vírgula ou como uma matriz de nomes. Para obter mais informações, consulte os métodos **load ()** definidos para os objetos na [referência de API JavaScript do Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview).
+* `properties` é a lista de propriedades que devem ser carregadas, especificada como sequências de caracteres delimitadas por vírgula ou como uma matriz de nomes. Para obter mais informações, consulte os métodos **load ()** definidos para os objetos na [referência de API JavaScript do Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview).
 * `loadOption` especifica um objeto que descreve as opções de seleção, expansão, topo e ignorar. Confira as [opções](https://docs.microsoft.com/javascript/api/office/officeextension.loadoption) de carregamento do objeto para saber mais.
 
 Esteja ciente de que algumas das "propriedades" em um objeto podem ter o mesmo nome de outro objeto. Por exemplo, `format` é uma propriedade em um objeto range, mas `format` também é um objeto. Portanto, se você faz uma chamada como `range.load("format")`, isto é equivalente a `range.format.load()`, que é uma chamada load () vazia que pode causar problemas de desempenho, conforme descrito anteriormente. Para evitar isso, seu código deve carregar apenas  "nós folha" em uma árvore de objeto. 

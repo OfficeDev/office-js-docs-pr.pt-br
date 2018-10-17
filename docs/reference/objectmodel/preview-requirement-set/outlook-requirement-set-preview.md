@@ -1,11 +1,11 @@
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Conjunto de requisitos da API de suplementos do Outlook em versão prévia
 
-O subconjunto da API JavaScript para Office  da API para suplementos do Outlook inclui objetos, métodos, propriedades e eventos que você pode usar em um suplemento do Office.
+O subconjunto da API de suplemento do Outlook da API JavaScript para o Office inclui objetos, métodos, propriedades e eventos que você pode usar em um suplemento do Outlook.
 
 > [!NOTE]
-> Esta documentação refere-se à **versão prévia** do [conjunto de requisitos](/javascript/office/requirement-sets/outlook-api-requirement-sets). Esse conjunto de requisitos ainda não está totalmente implementado e os clientes não informarão precisamente o suporte para ele. Você não deve especificar a esse conjunto de requisitos em seu manifesto de suplemento. Os métodos e propriedades introduzidos neste conjunto de requisitos devem ser testados individualmente para verificar sua disponibilidade antes de usá-los.
+> Esta documentação é para um **conjunto de requisitos** [de visualização](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets). Este conjunto de requisitos ainda não foi totalmente implementado e os clientes não relatarão suporte para ele de maneira precisa. Você não deve especificar esse conjunto de requisitos em seu manifesto do suplemento. Métodos e propriedades que são introduzidos neste conjunto de requisitos devem ser testados individualmente em relação à disponibilidade antes de serem usados.
 
-O conjunto de requisitos em versão prévia inclui todos os recursos do [Conjunto de requisitos 1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md).
+O conjunto de requisitos de visualização inclui todos os recursos do [Conjunto de requisitos 1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md).
 
 ## <a name="features-in-preview"></a>Recursos em versão prévia
 

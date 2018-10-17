@@ -1,17 +1,17 @@
 ---
-title: Conceitos de programação fundamentais com a API JavaScript do Excel
+title: Conceitos fundamentais de programação com a API JavaScript do Excel
 description: Usar a API JavaScript do Excel para criar suplementos para o Excel.
 ms.date: 10/03/2018
-ms.openlocfilehash: c66d44b76fad9f1559da7514997b62670a0f9360
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.openlocfilehash: f93ec7b5e34f90f2d61f29d861b7e0c19f66f6e3
+ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459200"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "25505983"
 ---
-# <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Conceitos de programação fundamentais com a API JavaScript do Excel
+# <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Conceitos fundamentais de programação com a API JavaScript do Excel
  
-Este artigo descreve como usar a [API JavaScript do Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js) para criar suplementos para o Excel 2016 ou posterior. Ele apresenta os principais conceitos fundamentais para o uso da API e fornece orientação para a realização de tarefas específicas, como fazer a leitura ou gravação em um intervalo grande, atualizar todas as células de um intervalo e muito mais.
+Este artigo descreve como usar a [API JavaScript do Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js) para criar suplementos para o Excel 2016 ou posterior. Ele apresenta os principais conceitos fundamentais para o uso da API e fornece orientação para a realização de tarefas específicas, como fazer a leitura ou gravação em um intervalo grande, atualizar todas as células de um intervalo e muito mais.
 
 ## <a name="asynchronous-nature-of-excel-apis"></a>Natureza assíncrona das APIs do Excel
 
@@ -115,9 +115,9 @@ Excel.run(function (context) {
 });
 ```
  
-No exemplo anterior, como `format/font` não é especificado na chamada para **myRange.load()**, a propriedade `format.font.color` não pode ser lida.
+No exemplo anterior, como `format/font` não é especificado na chamada a **myRange.load()**, a propriedade `format.font.color` não pode ser lida.
 
-Para otimizar o desempenho, você deve especificar explicitamente as propriedades e relacionamentos que serão carregados ao usar o método **load()** em um objeto, conforme discutido em [Otimizações de desempenho da API JavaScript do Excel](performance.md). Para obter mais informações sobre o método **load()** , consulte [Conceitos de programação avançados com a API JavaScript do Excel](excel-add-ins-advanced-concepts.md).
+Para otimizar o desempenho, você deve especificar explicitamente as propriedades e relações a serem carregadas ao usar o método **load()** em um objeto, conforme abordado em [Otimizações de desempenho da API JavaScript do Excel](performance.md). Para obter mais informações sobre o método **Load** , consulte [Conceitos de programação avançados com a API JavaScript do Excel](excel-add-ins-advanced-concepts.md).
 
 ## <a name="null-or-blank-property-values"></a>Valores de propriedade null ou blank
  
@@ -254,10 +254,10 @@ Quando ocorre um erro de API, a API retorna um objeto de **erro** que contém um
 |InsertDeleteConflict|A operação de exclusão ou inserção resultou em um conflito.|
 |InvalidOperation|A operação é inválida no objeto.|
  
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Veja também
  
 * [Introdução aos suplementos do Excel](excel-add-ins-get-started-overview.md)
 * [Exemplos de códigos de suplementos do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
 * [Conceitos de programação avançados com a API JavaScript do Excel](excel-add-ins-advanced-concepts.md)
 * [Otimização de desempenho da API JavaScript do Excel](https://docs.microsoft.com/office/dev/add-ins/excel/performance)
-* [Referência da API JavaScript do Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
+* [Referência da API JavaScript do Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)
