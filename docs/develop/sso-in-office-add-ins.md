@@ -2,12 +2,12 @@
 title: Habilitar o logon único para Suplementos do Office
 description: ''
 ms.date: 09/26/2018
-ms.openlocfilehash: fb4eacee9419339116e15ef3fccc03b291faf3ec
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.openlocfilehash: 1a75f7d619d2375a2f7fcb07f6afb7e0d6261ead
+ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25506025"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "25579902"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Habilitar o logon único para Suplementos do Office (versão prévia)
 
@@ -179,8 +179,8 @@ Se seu suplemento precisa verificar a identidade do usuário, o token SSO conté
 
 - `name` – O nome para exibição do usuário.
 - `preferred_username` - O endereço de email do usuário.
-- `oid` – Uma GUID que representa a ID do usuário no Active Directory do Azure.
-- `tid` – Uma GUID que representa a ID da organização do usuário no Active Directory do Azure.
+- `oid` – Uma GUID que representa o ID do usuário no Active Directory do Azure.
+- `tid` – Uma GUID que representa o ID da organização do usuário no Active Directory do Azure.
 
 Como os valores `name` e `preferred_username` podem mudar, recomendamos que os valores `oid` e `tid` sejam usados ​​para correlacionar a identidade com o serviço de autorização do seu back-end.
 
@@ -234,13 +234,13 @@ O método chama o ponto de extremidade do Active Directory do Azure V 2.0 para o
 
 <table><tr><td>Hosts</td><td>Excel, OneNote, Outlook, PowerPoint, Word</td></tr>
 
- <tr><td>Conjuntos de requisitos</td><td>[IdentityAPI](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)</td></tr></table>
+ <tr><td>[Conjuntos de requisitos](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)</td><td>[IdentityAPI](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets?view=office-js)</td></tr></table>
 
 #### <a name="parameters"></a>Parâmetros
 
-`options` - Opcional. Aceita um objeto `AuthOptions` (veja abaixo) para definir os comportamentos de logon.
+`options` Opcional. Aceita um objeto `AuthOptions` (veja abaixo) para definir os comportamentos de logon.
 
-`callback` - Opcional. Aceita um método de retorno de chamada que pode analisar o token para a ID do usuário ou usar o token no fluxo de "em nome de" para obter acesso ao Microsoft Graph. Se [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult)`.status` tiver "êxito", `AsyncResult.value` será o token de acesso formatado do AAD v. 2.0 bruto.
+`callback` - Opcional. Aceita um método de retorno de chamada que pode analisar o token para o ID do usuário ou usar o token no fluxo de "em nome de" para obter acesso ao Microsoft Graph. Se [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult)`.status` tiver "êxito", `AsyncResult.value` será o token de acesso formatado do AAD v. 2.0 bruto.
 
 A interface `AuthOptions` oferece opções para a experiência do usuário quando o Office obtém um token de acesso para o suplemento do AAD v. 2.0 com o método `getAccessTokenAsync`.
 

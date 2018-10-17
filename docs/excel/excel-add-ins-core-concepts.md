@@ -1,15 +1,15 @@
 ---
-title: Conceitos fundamentais de programação com a API JavaScript do Excel
+title: Conceitos de programação fundamentais com a API JavaScript do Excel
 description: Usar a API JavaScript do Excel para criar suplementos para o Excel.
-ms.date: 10/03/2018
-ms.openlocfilehash: f93ec7b5e34f90f2d61f29d861b7e0c19f66f6e3
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.date: 10/16/2018
+ms.openlocfilehash: 21fcbc32dab2057f6d1f5e97a62a6b00bf1f7f03
+ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25505983"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "25579888"
 ---
-# <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Conceitos fundamentais de programação com a API JavaScript do Excel
+# <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Conceitos de programação fundamentais com a API JavaScript do Excel
  
 Este artigo descreve como usar a [API JavaScript do Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js) para criar suplementos para o Excel 2016 ou posterior. Ele apresenta os principais conceitos fundamentais para o uso da API e fornece orientação para a realização de tarefas específicas, como fazer a leitura ou gravação em um intervalo grande, atualizar todas as células de um intervalo e muito mais.
 
@@ -228,33 +228,11 @@ Excel.run(function (context) {
 });
 ```
  
-## <a name="error-messages"></a>Mensagens de erro
+##<a name="handle-errors"></a>Lidar com erros
+
+Quando ocorrer um erro de API, a API retornará um objeto **error** que contém um código e uma mensagem. Para obter informações detalhadas sobre o tratamento de erros, incluindo uma lista dos erros de API, consulte o [tratamento de erros](excel-add-ins-error-handling.md).
  
-Quando ocorre um erro de API, a API retorna um objeto de **erro** que contém um código e uma mensagem. A tabela a seguir define uma lista de erros que a API pode retornar.
- 
-|error.code | error.message |
-|:----------|:--------------|
-|InvalidArgument |O argumento é inválido, ausente ou tem um formato incorreto.|
-|InvalidRequest  |Não é possível processar a solicitação.|
-|InvalidReference|Essa referência não é válida para a operação atual.|
-|InvalidBinding  |Essa associação de objetos não é mais válida devido a atualizações anteriores.|
-|InvalidSelection|A seleção atual é inválida para esta operação.|
-|Unauthenticated |Informações de autenticação necessárias estão ausentes ou inválidas.|
-|AccessDenied |Você não pode realizar a operação solicitada.|
-|ItemNotFound |O recurso solicitado não existe.|
-|ActivityLimitReached|O limite de atividades foi alcançado.|
-|GeneralException|Ocorreu um erro interno ao processar a solicitação.|
-|NotImplemented  |O recurso solicitado não foi implementado.|
-|ServiceNotAvailable|O serviço não está disponível.|
-|Conflict              |A solicitação não pôde ser processada devido a um conflito.|
-|ItemAlreadyExists|O recurso que está sendo criado já existe.|
-|UnsupportedOperation|Não há suporte para a operação.|
-|RequestAborted|A solicitação foi anulada durante o tempo de execução.|
-|ApiNotAvailable|A API solicitada não está disponível.|
-|InsertDeleteConflict|A operação de exclusão ou inserção resultou em um conflito.|
-|InvalidOperation|A operação é inválida no objeto.|
- 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
  
 * [Introdução aos suplementos do Excel](excel-add-ins-get-started-overview.md)
 * [Exemplos de códigos de suplementos do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples)

@@ -1,13 +1,13 @@
 ---
 title: Tratamento de erros
 description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: b07012516cbe15374d0707c157738117a9c8fe96
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.date: 10/16/2018
+ms.openlocfilehash: caba29f7d6949cc6d9df1498ac0a3d4f5de6c4ee
+ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459228"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "25579811"
 ---
 # <a name="error-handling"></a>Tratamento de erros
 
@@ -46,7 +46,33 @@ Quando uma solicitação da API JavaScript do Excel não é bem-sucedida, a API 
 > [!NOTE]
 > Se você usar `console.log()` para imprimir mensagens de erro no console, essas mensagens só serão visíveis no servidor. Os usuários finais não verão essas mensagens de erro no painel de tarefas do suplemento ou em qualquer lugar no aplicativo host.
 
+## <a name="error-messages"></a>Mensagens de erro
+
+A tabela a seguir define uma lista de erros que a API pode retornar.
+
+|error.code | error.message |
+|:----------|:--------------|
+|InvalidArgument |O argumento é inválido, ausente ou tem um formato incorreto.|
+|InvalidRequest  |Não é possível processar a solicitação.|
+|InvalidReference|Essa referência não é válida para a operação atual.|
+|InvalidBinding  |Essa associação de objetos não é mais válida devido a atualizações anteriores.|
+|InvalidSelection|A seleção atual é inválida para esta operação.|
+|Unauthenticated |Informações de autenticação necessárias estão ausentes ou inválidas.|
+|AccessDenied |Você não pode realizar a operação solicitada.|
+|ItemNotFound |O recurso solicitado não existe.|
+|ActivityLimitReached|O limite de atividades foi alcançado.|
+|GeneralException|Ocorreu um erro interno ao processar a solicitação.|
+|NotImplemented  |O recurso solicitado não foi implementado.|
+|ServiceNotAvailable|O serviço não está disponível.|
+|Conflict|A solicitação não pôde ser processada devido a um conflito.|
+|ItemAlreadyExists|O recurso que está sendo criado já existe.|
+|UnsupportedOperation|Não há suporte para a operação.|
+|RequestAborted|A solicitação foi anulada durante o tempo de execução.|
+|ApiNotAvailable|A API solicitada não está disponível.|
+|InsertDeleteConflict|A operação de exclusão ou inserção resultou em um conflito.|
+|InvalidOperation|A operação é inválida no objeto.|
+
 ## <a name="see-also"></a>Confira também
 
-- [Conceitos de programação fundamentais com a API JavaScript do Excel](excel-add-ins-core-concepts.md)
+- [Conceitos fundamentais de programação com a API JavaScript do Excel](excel-add-ins-core-concepts.md)
 - [Objeto OfficeExtension.Error (API JavaScript para Excel)](https://docs.microsoft.com/javascript/api/office/officeextension.error?view=office-js)

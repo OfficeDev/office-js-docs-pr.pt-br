@@ -6,7 +6,7 @@ Bem-vindo à documentação conceitual da API JavaScript do Office Neste reposit
 
 ## <a name="give-us-your-feedback"></a>Envie-nos os seus comentários
 
-Seus comentários são importantes para nós. 
+Seus comentários são importantes para nós.
 * Para nos informar sobre dúvidas ou problemas encontrados nos documentos, [envie uma questão](https://github.com/OfficeDev/office-js-docs-pr/issues) neste repositório. Não deixe de informar o número da versão e da compilação do cliente que você está usando. Forneça as etapas de reprodução, a saída do console e as mensagens de erro, conforme apropriado. 
 * Recomendamos que você faça a bifurcação, a correção e uma solicitação de recebimento das suas alterações propostas. Para mais detalhes, confira [Contribuir para este artigo](Contributing.md). 
 * Para nos informar sobre sua experiência de programação, o que você gostaria de ver em versões futuras, exemplos de código, entre outros, insira suas sugestões e ideias no [UserVoice da Plataforma do Desenvolvedor do Office](https://officespdev.uservoice.com/).

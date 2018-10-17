@@ -4,10 +4,6 @@ Especifica as configurações de um suplemento para o fator forma da área de tr
 
 Cada definição de DesktopFormFactor contém o elemento **FunctionFile** e um ou mais elementos **ExtensionPoint**. Para saber mais, confira [Elemento FunctionFile](functionfile.md) e [Elemento ExtensionPoint](extensionpoint.md).
 
-> [!IMPORTANT]
-> O elemento SupportsSharedFolders só está disponível no Conjunto de Requerimentos em versão prévia para suplementos do Outlook contra o Exhange Online.
-> Suplementos que usam esse elemento não são permitidos na Office Store ou na Implantação Centralizada.
-
 ## <a name="child-elements"></a>Elementos filho
 
 | Elemento                               | Obrigatório | Descrição  |
@@ -15,7 +11,7 @@ Cada definição de DesktopFormFactor contém o elemento **FunctionFile** e um o
 | [ExtensionPoint](extensionpoint.md)   | Sim      | Define onde um suplemento expõe a funcionalidade. |
 | [FunctionFile](functionfile.md)       | Sim      | Uma URL para um arquivo que contém funções JavaScript.|
 | [GetStarted](getstarted.md)           | Não       | Define o texto explicativo que aparece ao instalar o suplemento em hosts do Word, Excel ou PowerPoint. |
-| SupportsSharedFolders                 | Não       | Define se o suplemento do Outlook está disponível nos cenários de representante e é definido como *false* por padrão. Conjunto de requisitos em versão prévia|
+| [SupportsSharedFolders](supportssharedfolders.md) | Não | Define se o suplemento do Outlook está disponível nos cenários de representante e é definido como *false* por padrão.<br><br>**Importante**: esse elemento só está disponível no requisito de visualização do Outlook suplementos definido contra o Exchange Online. Suplementos que usam esse elemento não podem ser publicados no AppSource ou implantados por meio da implantação centralizada. |
 
 ## <a name="desktopformfactor-example"></a>Exemplo de DesktopFormFactor
 

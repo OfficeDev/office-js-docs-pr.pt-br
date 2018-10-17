@@ -19,6 +19,7 @@ Os seguintes recursos estão em versão prévia.
 - [Office.context.auth.getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) – Foi adicionado acesso ao `getAccessTokenAsync`, que permite que os suplementos [obtenham um token de acesso](https://docs.microsoft.com/outlook/add-ins/authenticate-a-user-with-an-sso-token) da API do Microsoft Graph.
 - [Office.MailboxEnums.DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions) - foi adicionada uma nova enumeração de sinalizador que especifica as permissões de representante.
 - [Office.EventType](/javascript/api/office/office.eventtype) - foi modificado para dar suporte ao evento OfficeThemeChanged por meio da adição da entrada `OfficeThemeChanged`.
+- [Que elemento de manifesto de SupportsSharedFolders](../../manifest/supportssharedfolders.md) - adicionado a um elemento filho ao elemento [DesktopFormFactor](../../manifest/desktopformfactor.md) manifesto. Ele define se o suplemento está disponível em cenários de representante.
 
 ## <a name="see-also"></a>Confira também
 
