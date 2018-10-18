@@ -2,12 +2,12 @@
 title: Privacidade e segurança para suplementos do Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: e627c847f203205b808918acf3af3154bdbe04ce
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: c8fb61d6366d36ab14a072af80702226fe5efa9c
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945576"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25005047"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 
@@ -129,7 +129,7 @@ O exemplo a seguir mostra como um suplemento de painel de tarefas especifica a p
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0"
-           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+           xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
            xmlns:ver="http://schemas.microsoft.com/office/appforoffice/1.0"
            xsi:type="TaskPaneApp">
 
@@ -149,7 +149,7 @@ Para saber mais sobre permissões para suplementos do Outlook, confira os tópic
 
 ### <a name="same-origin-policy"></a>Política de mesma origem
 
-Como os suplementos do Office são páginas da Web executadas em um controle de navegador da Web, eles devem seguir a política de mesma origem imposta pelo navegador: por padrão, uma página da Web em um domínio não pode fazer chamadas ao serviço Web [XmlHttpRequest](http://www.w3.org/TR/XMLHttpRequest/) para outro domínio que não aquele em que está hospedada.
+Como os suplementos do Office são páginas da Web executadas em um controle de navegador da Web, eles devem seguir a política de mesma origem imposta pelo navegador: por padrão, uma página da Web em um domínio não pode fazer chamadas ao serviço Web [XmlHttpRequest](https://www.w3.org/TR/XMLHttpRequest/) para outro domínio que não aquele em que está hospedada.
 
 Uma maneira de superar essa limitação é usar JSON/P: forneça um proxy para o serviço Web incluindo uma marca **script** com um atributo **src** que aponte para algum script hospedado em outro domínio. Você pode criar as marcas**script** via programação gerando de forma dinâmica a URL para a qual apontar o atributo **src** e passando parâmetros à URL por meio de parâmetros da consulta de URI. Os provedores de serviços Web criam e hospedam o código JavaScript em URLs específicas e retornam scripts diferentes, dependendo dos parâmetros de consulta de URI. Em seguida, esses scripts são executados onde estão inseridos e funcionam como esperado.
 
@@ -188,7 +188,7 @@ Um usuário mal-intencionado pode atacar a origem de um suplemento inserindo um 
 
 - Se estiver usando jQuery, use o método [.text()](http://api.jquery.com/text/) em vez do método [.html()](http://api.jquery.com/html/).
 
-- Use o método [toStaticHTML](http://msdn.microsoft.com/library/ie/cc848922.aspx) para remover atributos e elementos HTML dinâmicos da entrada dos usuários antes de passá-la para **innerHTML**.
+- Use o método [toStaticHTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) para remover atributos e elementos HTML dinâmicos da entrada dos usuários antes de passá-la para **innerHTML**.
 
 - Use a função [encodeURIComponent](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuricomponent) ou [encodeURI](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuri) para codificar texto que se destina a ser uma URL que vem da entrada do usuário ou a contém.
 
@@ -254,7 +254,7 @@ Em uma configuração corporativa, os administradores de TI têm autoridade fina
 - [Noções básicas sobre permissões de suplemento do Outlook](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)
 - [Limites de ativação e da API do JavaScript API para suplementos do Outlook](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
 - [Como lidar com limitações de política de mesma origem nos suplementos do Office](https://docs.microsoft.com/office/dev/add-ins/develop/addressing-same-origin-policy-limitations)
-- [Política de Mesma Origem](http://www.w3.org/Security/wiki/Same_Origin_Policy)
+- [Política de Mesma Origem](https://www.w3.org/Security/wiki/Same_Origin_Policy)
 - [Política de Mesma Origem Parte 1: Sem Inspecionar](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)
 - [Política de mesma origem para JavaScript](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)
 - [Modo Protegido do IE](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)
