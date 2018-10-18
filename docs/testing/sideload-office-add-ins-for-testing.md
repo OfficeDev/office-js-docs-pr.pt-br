@@ -2,12 +2,12 @@
 title: Realizar sideload de suplementos do Office no Office Online para teste
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 69b255545525ff667618c9f8bd1e1b7953592967
-ms.sourcegitcommit: 58af795c3d0393a4b1f6425fa1cbdca1e48fb473
+ms.openlocfilehash: 10e236366012bb402b968d0f61ea64326bb9172d
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "20138846"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925301"
 ---
 # <a name="sideload-office-add-ins-in-office-online-for-testing"></a>Realizar sideload de suplementos do Office no Office Online para teste
 
@@ -17,7 +17,7 @@ Quando você realiza o sideload de um suplemento, o manifesto do suplemento é a
 
 
 > [!NOTE]
-> A realização do sideload como descrito neste artigo tem suporte no Word, no Excel e no PowerPoint. Para realizar o sideload de um suplemento do Outlook, confira [Realizar sideload de suplementos do Outlook para teste](https://docs.microsoft.com/en-us/outlook/add-ins/sideload-outlook-add-ins-for-testing).
+> A realização do sideload como descrito neste artigo tem suporte no Word, no Excel e no PowerPoint. Para realizar o sideload de um suplemento do Outlook, confira [Realizar sideload de suplementos do Outlook para teste](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing).
 
 O vídeo a seguir oferece orientações para o processo de sideload do seu suplemento no Office para área de trabalho ou no Office Online.  
 

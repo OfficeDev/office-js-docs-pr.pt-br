@@ -91,4 +91,4 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
 5. Se, por algum motivo, a tabela estiver não na planilha aberta, no painel de tarefas, escolha **Criar tabela** e depois os botões **Filtrar tabela** e **Classificar tabela ** em qualquer ordem.
 6. Clique no botão **Criar gráfico**. Um gráfico é criado e incluirá somente os dados das linhas que foram filtradas. Os rótulos dos pontos de dados na parte inferior estão na ordem de classificação do gráfico, ou seja, nomes de comerciantes em ordem alfabética inversa.
 
-    ![Tutorial do Excel - Criar gráfico ](../images/excel-tutorial-create-chart.png)
+    ![Tutorial do Excel - Criar gráfico](../images/excel-tutorial-create-chart.png)

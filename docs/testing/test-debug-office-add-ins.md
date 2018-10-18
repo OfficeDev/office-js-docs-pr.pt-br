@@ -1,9 +1,14 @@
 ---
 title: Testar e depurar suplementos do Office
-description: null
+description: ''
 ms.date: 11/24/2017
+ms.openlocfilehash: f645482fa92faad2e28484fa4b878bd35c0a27b6
+ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "22925259"
 ---
-
 # <a name="test-and-debug-office-add-ins"></a>Testar e depurar suplementos do Office
 
 Esta seção contém orientações sobre testes, depuração de bugs e solução de problemas em suplementos do Office.
@@ -18,8 +23,7 @@ Esta seção contém orientações sobre testes, depuração de bugs e solução
 
 - [Fazer sideload de Suplementos do Office no iPad e no Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
 
-- 
-  [Realizar sideload de suplementos do Outlook para teste](https://docs.microsoft.com/pt-br/outlook/add-ins/sideload-outlook-add-ins-for-testing)
+- [Realizar sideload de suplementos do Outlook para teste](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)
 
 ## <a name="debug-an-office-add-in"></a>Depurar um suplemento do Office
 

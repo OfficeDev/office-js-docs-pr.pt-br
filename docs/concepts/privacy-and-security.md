@@ -2,12 +2,12 @@
 title: Privacidade e segurança para suplementos do Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 76408abe96b07e793a72a8cbd177a29428366dd0
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: e627c847f203205b808918acf3af3154bdbe04ce
+ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925525"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "23945576"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 
@@ -104,7 +104,7 @@ Os suplementos do Outlook fornecem recursos adicionais de segurança e desempenh
 
 A seguir, são listadas algumas diretrizes de proteção de PII específicas para você como um desenvolvedor de Suplementos do Office:
 
-- O objeto [Settings](https://dev.office.com/reference/add-ins/shared/settings) destina-se a persistir configurações e dados de estado de suplementos entre sessões para um suplemento de conteúdo ou de painel de tarefas, mas não armazena senhas e outros itens de PII confidenciais no objeto **Settings**. Os dados no objeto **Settings** não ficam visíveis para os usuários finais, mas são armazenados como parte do formato de arquivo do documento, que está prontamente acessível. Você deve limitar o uso de PII pelo suplemento e armazenar quaisquer itens de PII necessários ao suplemento no servidor que hospeda o suplemento como um recurso protegido pelo usuário.
+- O objeto [Settings](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js) destina-se a persistir configurações e dados de estado de suplementos entre sessões para um suplemento de conteúdo ou de painel de tarefas, mas não armazena senhas e outros itens de PII confidenciais no objeto **Settings**. Os dados no objeto **Settings** não ficam visíveis para os usuários finais, mas são armazenados como parte do formato de arquivo do documento, que está prontamente acessível. Você deve limitar o uso de PII pelo suplemento e armazenar quaisquer itens de PII necessários ao suplemento no servidor que hospeda o suplemento como um recurso protegido pelo usuário.
 
 - O uso de alguns aplicativos pode revelar itens de PII. Armazene com segurança os dados de identidade, local, horas de acesso e outras credenciais dos usuários para que os dados não sejam disponibilizados para outros usuários do suplemento.
 
@@ -118,7 +118,7 @@ Siga estas diretrizes gerais para dar suporte ao modelo de segurança de Supleme
 
 ### <a name="permissions-choices"></a>Opções de permissões
 
-A plataforma de suplemento fornece um modelo de permissões que o seu suplemento usa para declarar o nível de acesso aos dados de um usuário que ele exige para seus recursos. Cada nível de permissão corresponde ao subconjunto da API JavaScript para Office que seu suplemento pode usar em seus recursos. Por exemplo, a permissão **WriteDocument** para os suplementos do conteúdo e do painel de tarefas permite acesso ao método [Document.setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync), que permite que um suplemento grave no documento do usuário, mas não permite acesso a qualquer um dos métodos para ler dados do documento. Esse nível de permissão faz sentido para suplementos que precisam apenas gravar em um documento, como um suplemento no qual o usuário pode consultar dados para inserir em seus documentos.
+A plataforma de suplemento fornece um modelo de permissões que o seu suplemento usa para declarar o nível de acesso aos dados de um usuário que ele exige para seus recursos. Cada nível de permissão corresponde ao subconjunto da API JavaScript para Office que seu suplemento pode usar em seus recursos. Por exemplo, a permissão **WriteDocument** para os suplementos do conteúdo e do painel de tarefas permite acesso ao método [Document.setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js), que permite que um suplemento grave no documento do usuário, mas não permite acesso a qualquer um dos métodos para ler dados do documento. Esse nível de permissão faz sentido para suplementos que precisam apenas gravar em um documento, como um suplemento no qual o usuário pode consultar dados para inserir em seus documentos.
 
 Como prática recomendada, você deve solicitar permissões com base no princípio de _menor privilégio_. Ou seja, você deve solicitar permissão para acessar apenas o subconjunto mínimo da API que o suplemento requer para funcionar corretamente. Por exemplo, se o suplemento precisa apenas ler dados no documento de um usuário para seus recursos, você não deve solicitar mais do que a permissão **ReadDocument**. (Porém, lembre-se de que a solicitação de permissões insuficientes fará com que a plataforma de suplementos bloqueie o uso de algumas APIs pelo suplemento e gerará erros em tempo de execução.)
 

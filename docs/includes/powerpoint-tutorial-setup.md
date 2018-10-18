@@ -5,7 +5,7 @@ Neste tutorial, comece configurando seu projeto de desenvolvimento.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-[!include[Quickstart prerequisites](../includes/quickstart-vs-prerequisites.md)]
+[!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
 ## <a name="setup"></a>Configurar
 
