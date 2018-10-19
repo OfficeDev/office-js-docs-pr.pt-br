@@ -213,7 +213,7 @@ Neste artigo, você fará um passo a passo do processo de criar um suplemento do
 
 ### <a name="update-the-code"></a>Atualizar o código
 
-1. No seu editor de código, abra o arquivo **index.html** na raiz do projeto. Esse arquivo contém o HTML que será processado no painel de tarefas do suplemento.
+1. No seu editor de código, abra o arquivo **index.html** que está na raiz do projeto. Esse arquivo contém o HTML que será processado no painel de tarefas do suplemento.
 
 2. Substitua o elemento `<body>` pela marcação a seguir:
 
@@ -284,7 +284,7 @@ Neste artigo, você fará um passo a passo do processo de criar um suplemento do
     })();
     ```
 
-4. Abra o arquivo **app.css** na raiz do projeto para especificar os estilos personalizados do suplemento. Substitua todo o conteúdo pelo que está a seguir e salve o arquivo.
+4. Abra o arquivo **app.css** na raiz para especificar os estilos personalizados do suplemento. Substitua todo o conteúdo pelo seguinte código e salve o arquivo.
 
     ```css
     #content-header {
@@ -315,11 +315,11 @@ Neste artigo, você fará um passo a passo do processo de criar um suplemento do
 
 ### <a name="update-the-manifest"></a>Atualizar o manifesto
 
-1. Abra o arquivo **my-office-add-in-manifest.xml** para definir as configurações e os recursos do suplemento.
+1. Abra o arquivo **manifest.xml** para definir as configurações e os recursos do suplemento.
 
 2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o pelo seu nome.
 
-3. O atributo `DefaultValue` do elemento `Description` tem um espaço reservado. Substitua-o com **Um suplemento do painel de tarefas do PowerPoint**.
+3. O atributo `DefaultValue` do elemento `Description` tem um espaço reservado. Substitua-o por **um suplemento de painel de tarefas para o PowerPoint**.
 
 4. Salve o arquivo.
 
@@ -355,13 +355,13 @@ Neste artigo, você fará um passo a passo do processo de criar um suplemento do
 
 4. No painel de tarefas, escolha o botão **Inserir Texto** para adicionar texto no slide selecionado.
 
-    ![Uma captura de tela do PowerPoint com a imagem de um cachorro e o texto "Olá, Mundo" exibidos no slide](../images/powerpoint_quickstart_addin_3b.png)
+    ![Uma captura de tela do PowerPoint com a imagem de um cachorro e o texto "Olá, Mundo" exibido no slide](../images/powerpoint_quickstart_addin_3b.png)
 
 ---
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Parabéns, você criou um suplemento do PowerPoint! Em seguida, saiba mais sobre os recursos de um suplemento do PowerPoint e crie um suplemento mais complexo seguindo as etapas deste tutorial de suplemento do PowerPoint.
+Parabéns, você criou com êxito um suplemento do PowerPoint! Em seguida, aprenda mais sobre os recursos de um suplemento do PowerPoint e crie um suplemento mais complexo seguindo o tutorial do suplemento do PowerPoint.
 
 > [!div class="nextstepaction"]
 > [Tutorial do suplemento do PowerPoint](../tutorials/powerpoint-tutorial.yml)
