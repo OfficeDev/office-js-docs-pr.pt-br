@@ -200,7 +200,7 @@ As solicitações de pull geralmente são analisadas em 10 dias úteis.
 ## <a name="more-resources"></a>Mais recursos
 
 * Para saber mais sobre o Markdown, acesse o site do criador do Git [Daring Fireball].
-* Para saber mais sobre como usar o Git e o GitHub, primeiro confira a [seção de ajuda do GitHub].
+* Para saber mais sobre como usar o Git e o GitHub, primeiro confira a seção de [ajuda do GitHub].
 
 [GitHub Home]: http://github.com
 [Ajuda do GitHub]: http://help.github.com/
