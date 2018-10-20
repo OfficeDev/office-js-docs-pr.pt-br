@@ -34,7 +34,7 @@ items:
     href: quickstarts/onenote-quickstart.md
   - name: Criar suplemento do Outlook
     displayName: Outlook
-    href: https://docs.microsoft.com/outlook/add-ins/quick-start
+    href: /outlook/add-ins/quick-start
   - name: Criar suplemento do PowerPoint
     displayName: PowerPoint
     href: quickstarts/powerpoint-quickstart.md
@@ -282,10 +282,10 @@ items:
         href: excel/excel-add-ins-worksheets.md
     - name: Visão geral da API JavaScript do Excel
       displayName: Excel
-      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js
+      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview
     - name: Referência da API JavaScript do Excel
       displayName: Excel
-      href: https://docs.microsoft.com/javascript/api/excel?view=office-js
+      href: /javascript/api/excel
   - name: Suplementos do Word
     displayName: Word
     href: word/word-add-ins-programming-overview.md
@@ -316,13 +316,13 @@ items:
       href: word/search-option-guidance.md
     - name: Visão geral da API JavaScript do Word
       displayName: Word
-      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js
+      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview
     - name: Referência da API JavaScript do Word
       displayName: Word
-      href: https://docs.microsoft.com/en-us/javascript/api/word?view=office-js
+      href: /javascript/api/word
   - name: Suplementos do Outlook
     displayName: Outlook
-    href: https://docs.microsoft.com/outlook/add-ins/
+    href: /outlook/add-ins/
   - name: Suplementos do PowerPoint
     displayName: PowerPoint
     href: powerpoint/powerpoint-add-ins.md
@@ -343,7 +343,7 @@ items:
     displayName: OneNote
     href: onenote/onenote-add-ins-programming-overview.md
     items:
-    - name: Crie seu primeiro suplemento do OneNote
+    - name: Criar seu primeiro suplemento do OneNote
       displayName: OneNote
       href: onenote/onenote-add-ins-getting-started.md
     - name: Trabalhar com conteúdo da página do OneNote
@@ -351,10 +351,10 @@ items:
       href: onenote/onenote-add-ins-page-content.md
     - name: Visão geral da API JavaScript do OneNote
       displayName: OneNote
-      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js
+      href: https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference
     - name: Referência da API JavaScript do OneNote
       displayName: OneNote
-      href: https://docs.microsoft.com/en-us/javascript/api/onenote?view=office-js
+      href: /javascript/api/onenote
   - name: Suplementos do Project
     displayName: Project
     href: project/project-add-ins.md
@@ -411,9 +411,9 @@ items:
     - name: Publicação de suplementos em um catálogo do SharePoint
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
     - name: Publicar suplementos no AppSource
-      href: https://docs.microsoft.com/office/dev/store/submit-to-the-office-store
+      href: /office/dev/store/submit-to-the-office-store
     - name: Políticas de validação do AppSource
-      href: https://docs.microsoft.com/office/dev/store/validation-policies
+      href: /office/dev/store/validation-policies
 - name: Referência
   items:
   - name: API JavaScript para Office
@@ -661,7 +661,7 @@ items:
       href: reference/manifest/officeapp.md
     - name: Substituição
       href: reference/manifest/override.md
-    - name: Permissões
+    - name: Permissions
       href: reference/manifest/permissions.md
     - name: PhoneSettings
       href: reference/manifest/phonesettings.md
@@ -691,7 +691,7 @@ items:
       href: reference/manifest/targetdialect.md
     - name: TargetDialects
       href: reference/manifest/targetdialects.md
-    - name: Versão
+    - name: Version
       href: reference/manifest/version.md
     - name: VersionOverrides
       href: reference/manifest/versionoverrides.md
@@ -744,9 +744,9 @@ items:
         href: reference/manifest/webapplicationinfo.md
 - name: Recursos
   href: resources/resources-links-help.md
-ms.openlocfilehash: 554141ecd56a9f08e38b0d579f96a6d239ac7a22
-ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
+ms.openlocfilehash: 1102af4ae8618cd2c2ced018bffa7e64c4fb2ece
+ms.sourcegitcommit: a6d6348075c1abed76d2146ddfc099b0151fe403
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "25579881"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "25640082"
