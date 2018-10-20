@@ -1,13 +1,13 @@
 ---
 title: Criar um suplemento do Excel usando o Angular
 description: ''
-ms.date: 12/29/2017
+ms.date: 10/19/2018
 ROBOTS: NOINDEX
-ms.openlocfilehash: b96679449931e8dfbc16976f9e6073e449d13cfb
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.openlocfilehash: 5157b9a3d7db0cd0d1b5997ea00f77406e2a4225
+ms.sourcegitcommit: c400a220783b03a739449e2d3ff00bbffe5ec7c1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437175"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "25681704"
 ---
 [!include[Excel add-ins get started Angular](../includes/file-get-started-excel-angular.md)]
