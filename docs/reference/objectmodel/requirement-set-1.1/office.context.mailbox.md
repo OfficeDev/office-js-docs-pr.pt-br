@@ -1,7 +1,7 @@
 
-# <a name="mailbox"></a>mailbox
+# <a name="mailbox"></a>caixa de correio
 
-### [Office](Office.md)[.context](Office.context.md). caixa de correio
+### [Office](Office.md)[.context](Office.context.md). mailbox
 
 Fornece acesso ao modelo de objeto do suplemento do Outlook para o Microsoft Outlook e o Microsoft Outlook na Web.
 
@@ -9,9 +9,9 @@ Fornece acesso ao modelo de objeto do suplemento do Outlook para o Microsoft Out
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restrito|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Nível mínimo de permissão](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restrito|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ### <a name="namespaces"></a>Namespaces
 
@@ -28,19 +28,19 @@ Fornece acesso ao modelo de objeto do suplemento do Outlook para o Microsoft Out
 Obtém a URL do ponto de extremidade dos Serviços Web do Exchange (EWS) para esta conta de email. Somente modo de leitura.
 
 > [!NOTE]
-> Esse membro não é suportado no Outlook para iOS ou no Outlook para Android.
+> Esse membro não é compatível com o Outlook para iOS ou o Outlook para Android.
 
 O valor `ewsUrl` pode ser usado por um serviço remoto para fazer chamadas do EWS à caixa de correio do usuário. Por exemplo, você pode criar um serviço remoto para [obter anexos do item selecionado](https://docs.microsoft.com/outlook/add-ins/get-attachments-of-an-outlook-item).
 
 ##### <a name="type"></a>Tipo:
 
-*   Sequência de caracteres
+*   String
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Leitura|
 
@@ -50,23 +50,23 @@ O valor `ewsUrl` pode ser usado por um serviço remoto para fazer chamadas do EW
 
 Obtém um dicionário contendo informações da hora local do cliente.
 
-As datas e horas usadas por um aplicativo de email para Outlook ou pelo aplicativo Web do Outlook podem usar fusos horários diferentes. O Outlook usa o fuso horário do computador cliente; o o aplicativo Web do Outlook usa o fuso horário definido no Centro de administração do Exchange (EAC). Você deve controlar os valores de data e hora para que os valores exibidos na interface do usuário sejam sempre consistentes com o fuso horário que o usuário espera.
+As datas e horas usadas por um aplicativo de email para o Outlook ou o Outlook Web App podem usar fusos horários diferentes. O Outlook usa o fuso horário do computador cliente; O Outlook Web App usa o fuso horário definido no Centro de Administração do Exchange (EAC). Você deve manipular valores de data e hora para que os valores exibidos na interface do usuário sejam sempre consistentes com o fuso horário esperado pelo usuário.
 
-Se o aplicativo de email estiver em execução no Outlook, o método `convertToLocalClientTime` retornará um objeto de dicionário com os valores definidos para o fuso horário do computador do cliente. Se o aplicativo de email estiver em execução no aplicativo Web do Outlook, o método `convertToLocalClientTime` retornará um objeto de dicionário com os valores definidos para o fuso horário especificado no EAC.
+Se o aplicativo de email estiver sendo executado no Outlook, o método `convertToLocalClientTime` retornará um objeto de dicionário com os valores definidos para o fuso horário do computador do cliente. Se o aplicativo de email estiver sendo executado no Outlook Web App, o método `convertToLocalClientTime` retornará um objeto de dicionário com os valores definidos para o fuso horário especificado no EAC.
 
 ##### <a name="parameters"></a>Parâmetros:
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`timeValue`| Data|Um objeto Date|
+|`timeValue`| Date|Um objeto Date|
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Nível mínimo de permissão](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="returns"></a>Retorna:
 
@@ -82,15 +82,15 @@ O método `convertToUtcClientTime` converte um dicionário que contém uma data 
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`input`| [LocalClientTime](/javascript/api/outlook_1_1/office.LocalClientTime)|O valor de hora local para converter.|
+|`input`| [LocalClientTime](/javascript/api/outlook_1_1/office.LocalClientTime)|O valor de hora local a ser convertido.|
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="returns"></a>Retorna:
 
@@ -100,7 +100,7 @@ Um objeto Date com o horário expresso em UTC.
 
 <dt>Tipo</dt>
 
-<dd>Data</dd>
+<dd>Date</dd>
 
 </dl>
 
@@ -109,13 +109,13 @@ Um objeto Date com o horário expresso em UTC.
 Exibe um compromisso de calendário existente.
 
 > [!NOTE]
-> Esse método não é suportado no Outlook para iOS ou no Outlook para Android.
+> Esse método não  é suportado no Outlook para iOS nem no Outlook para Android.
 
 O método `displayAppointmentForm` abre um compromisso de calendário existente em uma nova janela na área de trabalho ou em uma caixa de diálogo em dispositivos móveis.
 
-No Outlook para Mac, você pode usar esse método para exibir um único compromisso que não faz parte de uma série recorrente, ou o compromisso mestre de uma série recorrente, mas não pode exibir uma instância da série. Isso ocorre porque no Outlook para Mac você não pode acessar as propriedades (incluindo a ID do item) das instâncias de uma série recorrente.
+No Outlook para Mac, você pode usar esse método para exibir um único compromisso que não faz parte de uma série recorrente ou o compromisso principal de uma série recorrente, mas você não pode exibir uma instância da série. Isso ocorre porque no Outlook para Mac você não pode acessar as propriedades (incluindo a ID do item) de instâncias de uma série recorrente.
 
-No Outlook Web App, esse método abre o formulário especificado somente se o corpo do formulário for menor ou igual ao número de caracteres de 32 KB.
+No aplicativo Web do Outlook, esse método abre o formulário especificado somente se o corpo do formulário for menor ou igual a um número de caracteres de 32KB.
 
 Se o identificador de item especificado não identificar um compromisso existente, um painel em branco será aberto no computador ou no dispositivo cliente e nenhuma mensagem de erro será retornada.
 
@@ -123,15 +123,15 @@ Se o identificador de item especificado não identificar um compromisso existent
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`itemId`| Sequência de caracteres|O identificador de serviços da Web do Exchange (EWS) para um compromisso de calendário existente.|
+|`itemId`| String|O identificador de serviços da Web do Exchange (EWS) para um compromisso de calendário existente.|
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
@@ -144,29 +144,29 @@ Office.context.mailbox.displayAppointmentForm(appointmentId);
 Exibe uma mensagem existente.
 
 > [!NOTE]
-> Esse método não é suportado no Outlook para iOS ou no Outlook para Android.
+> Esse método não  é suportado no Outlook para iOS nem no Outlook para Android.
 
 O método `displayMessageForm` abre uma mensagem existente em uma nova janela na área de trabalho ou em uma caixa de diálogo em dispositivos móveis.
 
-No aplicativo Web do Outlook, este método abre o formulário especificado somente se o corpo do formulário for menor que ou igual ao número de caracteres de 32 KB.
+No aplicativo Web do Outlook, este método abre o formulário especificado somente se o corpo do formulário for menor que ou igual a um número de caracteres de 32 KB.
 
-Se o identificador do item especificado não identificar uma mensagem existente, não será exibida mensagem no computador cliente e não será exibida nenhuma mensagem de erro.
+Se o identificador do item especificado não identificar uma mensagem existente, não será exibida uma mensagem no computador cliente e nenhuma mensagem de erro será retornada.
 
 Não use o método `displayMessageForm` com um `itemId` que representa um compromisso. Use o método `displayAppointmentForm` para exibir um compromisso existente e `displayNewAppointmentForm` para exibir um formulário e criar um novo compromisso.
 
 ##### <a name="parameters"></a>Parâmetros:
 
-|Name| Type| Description|
+|Nome| Tipo| Descrição|
 |---|---|---|
-|`itemId`| Sequência de caracteres|O identificador dos Serviços Web do Exchange (EWS) para uma mensagem existente.|
+|`itemId`| String|O identificador dos Serviços Web do Exchange (EWS) para uma mensagem existente.|
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
@@ -179,35 +179,35 @@ Office.context.mailbox.displayMessageForm(messageId);
 Exibe um formulário para criar um novo compromisso no calendário.
 
 > [!NOTE]
-> Esse método não é suportado no Outlook para iOS ou no Outlook para Android.
+> Esse método não  é suportado no Outlook para iOS nem no Outlook para Android.
 
 O método `displayNewAppointmentForm` abre um formulário que permite ao usuário criar um novo compromisso ou reunião. Se os parâmetros forem especificados, os campos de formulário do compromisso serão preenchidos automaticamente com o conteúdo dos parâmetros.
 
-No aplicativo Web do Outlook e no OWA para Dispositivos, esse método sempre exibe um formulário com um campo de participantes. Se você não especificar nenhum participante como argumento de entrada, o método exibe um formulário com um botão **Salvar**. Se você especificar participantes, o formulário inclui os participantes e um botão **Enviar**.
+No aplicativo Web do Outlook e no OWA para Dispositivos, esse método sempre exibe um formulário com um campo de participantes. Se você não especificar nenhum participante como argumento de entrada, o método exibirá um formulário com um botão **Salvar** . Se você especificar participantes, o formulário incluirá os participantes e um botão **Enviar**.
 
-No cliente avançado do Outlook e no Outlook RT, se você especificar quaisquer participantes ou recursos nos parâmetros `requiredAttendees`, `optionalAttendees` ou `resources`, o método exibirá um formulário de reunião com um botão **Enviar**. Se você não especificar destinatários, o método exibirá um formulário de compromisso com um botão **Salvar & Fechar**.
+No cliente avançado do Outlook e no Outlook RT, se você especificar quaisquer participantes ou recursos nos parâmetros `requiredAttendees`, `optionalAttendees` ou `resources`, o método exibirá um formulário de reunião com um botão **Enviar** . Se você não especificar destinatários, o método exibirá um formulário de compromisso com um botão **Salvar & Fechar**.
 
-Se algum dos parâmetros exceder os limites de tamanho especificados ou se um nome de parâmetro desconhecido for especificado, uma exceção será gerada.
+Se algum dos parâmetros exceder os limites de tamanho especificados ou se um nome de parâmetro desconhecido for especificado, será gerada uma exceção.
 
 ##### <a name="parameters"></a>Parâmetros:
 
-|Name| Type| Description|
+|Nome| Tipo| Descrição|
 |---|---|---|
 | `parameters` | Objeto | Um dicionário de parâmetros que descreve o novo compromisso. |
 | `parameters.requiredAttendees` | Array.&lt;String&gt; | Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)&gt; | Uma matriz de sequências de caracteres que contém os endereços de email ou uma matriz contendo um objeto `EmailAddressDetails` para cada um dos participantes obrigatórios do compromisso. A matriz está limitada a um máximo de 100 entradas. |
 | `parameters.optionalAttendees` | Array.&lt;String&gt; | Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_1/office.emailaddressdetails)&gt; | Uma matriz de sequências de caracteres que contém os endereços de email ou uma matriz contendo um objeto `EmailAddressDetails` para cada um dos participantes opcionais do compromisso. A matriz está limitada a um máximo de 100 entradas. |
 | `parameters.start` | Date | Um objeto `Date` que especifica a data e a hora de início do compromisso. |
 | `parameters.end` | Date | Um objeto `Date` que especifica a data e a hora de término do compromisso. |
-| `parameters.location` | Sequência de caracteres | Uma sequência de caracteres que contém o local do compromisso. Está limitada a um máximo de 255 caracteres. |
+| `parameters.location` | String | Uma sequência de caracteres que contém o local do compromisso. Está limitada a um máximo de 255 caracteres. |
 | `parameters.resources` | Array.&lt;String&gt; | Uma matriz de sequências de caracteres que contém os recursos necessários para o compromisso. A matriz está limitada a um máximo de 100 entradas. |
-| `parameters.subject` | Sequência de caracteres | Uma sequência de caracteres que contém o assunto do compromisso. Está limitada a um máximo de 255 caracteres. |
-| `parameters.body` | Sequência de caracteres | O corpo do compromisso. O conteúdo do corpo está limitado a um tamanho máximo de 32 KB. |
+| `parameters.subject` | String | Uma sequência de caracteres que contém o assunto do compromisso. Está limitada a um máximo de 255 caracteres. |
+| `parameters.body` | String | O corpo do compromisso. O conteúdo do corpo está limitado a um tamanho máximo de 32 KB. |
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Leitura|
 
@@ -243,16 +243,16 @@ Seu aplicativo deve ter a permissão **ReadItem** especificada em seu manifesto 
 
 ##### <a name="parameters"></a>Parâmetros:
 
-|Name| Type| Attributes| Description|
+|Nome| Tipo| Atributos| Descrição|
 |---|---|---|---|
-|`callback`| função||Quando o método for concluído, a função passada no parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O token é fornecido como uma sequência de caracteres na propriedade `asyncResult.value`.|
-|`userContext`| Objeto| &lt;opcional&gt;|Qualquer dado de estado que é passado para o método assíncrono.|
+|`callback`| function||Quando o método for concluído, a função passada no parâmetro `callback` é chamada com um parâmetro único, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O token é fornecido como uma sequência de caracteres na propriedade `asyncResult.value`.|
+|`userContext`| Objeto| &lt;opcional&gt;|Quaisquer dados de estado que são passados ao método assíncrono.|
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Leitura|
 
@@ -276,18 +276,18 @@ O método `getUserIdentityTokenAsync` retorna um token que pode ser utilizado pa
 
 ##### <a name="parameters"></a>Parâmetros:
 
-|Name| Type| Attributes| Description|
+|Nome| Tipo| Atributos| Descrição|
 |---|---|---|---|
-|`callback`| função||Quando o método for concluído, a função passada no parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O token é fornecido como uma sequência de caracteres na propriedade `asyncResult.value`.|
-|`userContext`| Objeto| &lt;opcional&gt;|Qualquer dado de estado que é passado para o método assíncrono.|
+|`callback`| function||Quando o método for concluído, a função passada no parâmetro `callback` é chamada com um parâmetro único, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O token é fornecido como uma sequência de caracteres na propriedade `asyncResult.value`.|
+|`userContext`| Objeto| &lt;opcional&gt;|Quaisquer dados de estado que são passados ao método assíncrono.|
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
@@ -303,7 +303,7 @@ function cb(asyncResult) {
 
 ####  <a name="makeewsrequestasyncdata-callback-usercontext"></a>makeEwsRequestAsync(data, callback, [userContext])
 
-Faz uma solicitação assíncrona em um serviço dos Serviços Web do Exchange (EWS) no Exchange Server que hospeda a caixa de correio do usuário.
+Faz uma solicitação assíncrona em um dos Serviços Web do Exchange (EWS) no Exchange Server que hospeda a caixa de correio do usuário.
 
 > [!NOTE]
 > Esse método não é suportado nos seguintes cenários.
@@ -312,9 +312,9 @@ Faz uma solicitação assíncrona em um serviço dos Serviços Web do Exchange (
 > 
 > Nesses casos, os suplementos devem [usar APIs REST](https://docs.microsoft.com/outlook/add-ins/use-rest-api) para acessar a caixa de correio do usuário.
 
-O método `makeEwsRequestAsync` envia uma solicitação do EWS em nome do suplemento ao Exchange. Para obter uma lista de operações EWS compatíveis, consulte [Chamar serviços Web de um suplemento do Outlook](https://docs.microsoft.com/outlook/add-ins/web-services#ews-operations-that-add-ins-support) .
+O método `makeEwsRequestAsync` envia uma solicitação do EWS em nome do suplemento ao Exchange. Para obter uma lista de operações EWS compatíveis, confira [Chamar serviços Web de um suplemento do Outlook](https://docs.microsoft.com/outlook/add-ins/web-services#ews-operations-that-add-ins-support) .
 
-Não é possível solicitar os itens associados da pasta com o método `makeEwsRequestAsync`.
+Não é possível solicitar os itens associados à pasta com o método `makeEwsRequestAsync`.
 
 A solicitação XML deve especificar a codificação UTF-8.
 
@@ -322,10 +322,10 @@ A solicitação XML deve especificar a codificação UTF-8.
 <?xml version="1.0" encoding="utf-8"?>
 ```
 
-O suplemento deve ter a permissão **ReadWriteMailbox** para usar o método `makeEwsRequestAsync`. Para obter mais informações sobre como usar a permissão **ReadWriteMailbox** e as operações do EWS que você pode chamar com o método `makeEwsRequestAsync`, consulte [Especificar permissões para acesso do suplemento de email na caixa de correio do usuário](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions).
+O suplemento deve ter a permissão **ReadWriteMailbox** para usar o método `makeEwsRequestAsync`. Para obter mais informações sobre como usar a permissão **ReadWriteMailbox** e as operações do EWS que você pode chamar com o método `makeEwsRequestAsync`, confira [Especificar permissões para acesso do suplemento de email na caixa de correio do usuário](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions).
 
 > [!NOTE]
-> O administrador do servidor deve definir `OAuthAuthentication` como true no diretório do EWS para o servidor de Acesso para Cliente, para que o método `makeEwsRequestAsync` possa realizar solicitações EWS.
+> O administrador do servidor deve definir `OAuthAuthentication` como verdadeiro no diretório EWS do Servidor de Acesso para Cliente para ativar o método `makeEwsRequestAsync` para fazer solicitações do EWS.
 
 ##### <a name="version-differences"></a>Diferenças de versão
 
@@ -335,23 +335,23 @@ Ao usar o método `makeEwsRequestAsync` nos aplicativos de email em execução e
 <?xml version="1.0" encoding="iso-8859-1"?>
 ```
 
-Não é necessário definir o valor de codificação quando o aplicativo de email estiver em execução no Outlook na Web. Você pode determinar se o aplicativo de email está em execução no Outlook ou no Outlook na Web usando a propriedade mailbox.diagnostics.hostName. Para determinar qual versão do Outlook está em execução, use a propriedade mailbox.diagnostics.hostVersion.
+Você não precisa definir o valor de codificação quando seu aplicativo de email estiver sendo executado no Outlook na Web. Você pode determinar se o seu aplicativo de email está sendo executado no Outlook ou no Outlook na Web usando a propriedade mailbox.diagnostics.hostName. Você pode determinar qual versão do Outlook está sendo executada usando a propriedade mailbox.diagnostics.hostVersion.
 
 ##### <a name="parameters"></a>Parâmetros:
 
-|Name| Type| Attributes| Description|
+|Nome| Tipo| Atributos| Descrição|
 |---|---|---|---|
-|`data`| Sequência de caracteres||A solicitação do EWS.|
-|`callback`| função||Quando o método for concluído, a função passada no parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O resultado XML da chamada do EWS é fornecido como uma sequência de caracteres na propriedade `asyncResult.value`. Se o resultado exceder 1 MB, será exibida uma mensagem de erro.|
-|`userContext`| Objeto| &lt;opcional&gt;|Qualquer dado de estado que é passado para o método assíncrono.|
+|`data`| String||A solicitação do EWS.|
+|`callback`| function||Quando o método for concluído, a função passada no parâmetro `callback` é chamada com um parâmetro único, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O resultado XML da chamada do EWS é fornecido como uma sequência de caracteres na propriedade `asyncResult.value`. Se o resultado exceder 1 MB, será exibida uma mensagem de erro.|
+|`userContext`| Objeto| &lt;opcional&gt;|Quaisquer dados de estado que são passados ao método assíncrono.|
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadWriteMailbox|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Nível mínimo de permissão](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadWriteMailbox|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="example"></a>Exemplo
 

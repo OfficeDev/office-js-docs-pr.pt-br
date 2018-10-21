@@ -2,12 +2,12 @@
 ms.date: 10/03/2018
 description: Saiba mais sobre melhores práticas e padrões recomendados para funções personalizadas do Excel.
 title: Práticas recomendadas para funções personalizadas
-ms.openlocfilehash: f6781de97f912df70800532032162187ae9f9344
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.openlocfilehash: 218e62cd074ccf3f3708bba90c938f7ddef059cb
+ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459109"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "25579818"
 ---
 # <a name="custom-functions-best-practices-preview"></a>Práticas recomendadas para funções personalizadas (versão prévia)
 
@@ -37,9 +37,9 @@ function getComment(x) {
 
 ## <a name="debugging"></a>Depuração
 
-Atualmente, o melhor método para depurar funções personalizadas do Excel é primeiro [fazer sideload](../testing/sideload-office-add-ins-for-testing.md) do seu suplemento no **Excel Online**. Em seguida, você pode depurar suas funções personalizadas, usando a [ferramenta de depuração F12 nativa do seu navegador](../testing/debug-add-ins-in-office-online.md) em combinação com as técnicas a seguir:
+Atualmente, o melhor método para depuração de funções personalizadas do Excel é primeiro fazer o [sideload](../testing/sideload-office-add-ins-for-testing.md) do seu suplemento no **Excel Online**. Dessa forma você pode depurar as funções personalizadas usando a [ferramenta de depuração F12 nativa do navegador](../testing/debug-add-ins-in-office-online.md) em combinação com as técnicas a seguir:
 
-- Use `console.log` instruções dentro do seu código de funções personalizadas para enviar a saída para o console em tempo real.
+- Use instruções `console.log` no seu código de funções personalizadas para enviar a saída para o console em tempo real.
 
 - Use `debugger;` instruções dentro de seu código de funções personalizadas para especificar os pontos de interrupção onde a execução fará uma pausa quando a janela F12 estiver aberta. Por exemplo, se a função a seguir for executada enquanto a janela F12 estiver aberta, a execução fará uma pausa sobre a instrução `debugger;` , permitindo que você inspecione manualmente os valores de parâmetro antes que a função retorne. A instrução `debugger;` não tem efeito no Excel Online quando a janela F12 não estiver aberta. Atualmente, a instrução `debugger;` não tem efeito no Excel para Windows.
 
@@ -74,9 +74,11 @@ Tenha em mente as seguintes práticas recomendadas ao criar funções personaliz
 
 * No arquivo de metadados JSON, especifique o valor de cada propriedade `name` em letras maiusculas. A propriedade `name` define o nome da função que os usuários finais verão no Excel. Usar letras maiúsculas para o nome de cada função personalizada fornece uma experiência consistente para usuários finais no Excel, onde todos os nomes de função interna estão em letras maiúsculas.
 
-* No arquivo de metadados JSON, especifique o valor de cada propriedade `id` em letras maiúsculas. Isso torna óbvio qual parte da instrução `CustomFunctionMappings` em seu código JavaScript corresponde à propriedade `id` no arquivo de metadados JSON (desde que o seu nome de função use camelCase, conforme recomendado anteriormente).
+* No arquivo de metadados JSON, especifique o valor de cada propriedade `id` em letras maiúsculas. Isso torna óbvio qual parte da instrução `CustomFunctionMappings` no seu código JavaScript corresponde à propriedade `id` no arquivo de metadados JSON (desde que o seu nome da função use camelCase, conforme recomendado anteriormente).
 
-* No arquivo de metadados JSON, verifique se o valor de cada propriedade `id` é exclusivo dentro do escopo do arquivo. Ou seja, não deve haver dois objetos de função no arquivo de metadados com o mesmo valor `id` . Além disso, não especifique dois valores `id` no arquivo de metadados que diferem somente por caso. Por exemplo, não defina um objeto de função com um valor `id` de **add** e outro objeto de função com um valor `id` de **ADD**.
+* No arquivo de metadados JSON, verifique se o valor de cada propriedade `id` contém apenas caracteres alfanuméricos e pontos. 
+
+* No arquivo de metadados JSON, verifique se o valor de cada propriedade `id` é exclusivo dentro do escopo do arquivo. Ou seja, não deve haver dois objetos function no arquivo de metadados com o mesmo valor de `id` . Além disso, não especifique dois valores `id` no arquivo de metadados que diferem somente por maiúsculas e minúsculas. Por exemplo, não defina um objeto function com um valor de `id` igual a **add** e outro objeto function com um valor de `id` igual a **ADD**.
 
 * Não altere o valor de uma propriedade `id` no arquivo de metadados JSON depois que ela foi mapeada para um nome de função JavaScript correspondente. Você pode alterar o nome da função que os usuários finais veem no Excel, atualizando a propriedade `name` dentro do arquivo de metadados JSON, mas você nunca deve alterar o valor de uma propriedade `id` depois que ela foi estabelecida.
 

@@ -6,9 +6,9 @@
 
 |Requisito| Valor|
 |---|---|
-|[Versão do conjunto mínimo de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="members-and-methods"></a>Membros e métodos
 
@@ -22,7 +22,7 @@
 
 ####  <a name="displayname-string"></a>displayName :String
 
-Obtém o nome de exibição do usuário.
+Obtém o nome para exibição do usuário.
 
 ##### <a name="type"></a>Tipo:
 
@@ -32,9 +32,9 @@ Obtém o nome de exibição do usuário.
 
 |Requisito| Valor|
 |---|---|
-|[Versão do conjunto mínimo de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
@@ -55,9 +55,9 @@ Obtém o endereço de email SMTP do usuário.
 
 |Requisito| Valor|
 |---|---|
-|[Versão do conjunto mínimo de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
@@ -78,9 +78,9 @@ Obtém o fuso horário padrão do usuário.
 
 |Requisito| Valor|
 |---|---|
-|[Versão do conjunto mínimo de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="example"></a>Exemplo
 

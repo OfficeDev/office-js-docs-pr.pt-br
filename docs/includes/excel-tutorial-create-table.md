@@ -31,7 +31,7 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
 7. Substitua o `TODO3` pelo código a seguir. Observe o seguinte:
    - A lógica de negócios de Excel.js será adicionada à função que passar por `Excel.run`. Essa lógica não é executada imediatamente. Em vez disso, ela é adicionada à fila de comandos pendentes.
    - O método `context.sync` envia todos os comandos da fila para execução no Excel.
-   - `Excel.run` é seguido por um bloco `catch`. Essa é uma prática recomendada que você sempre deve seguir. 
+   - é seguido por um bloco `catch`.`Excel.run` Essa é uma prática recomendada que você sempre deve seguir. 
 
     ```js
     function createTable() {
@@ -91,7 +91,7 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
      > Os objetos do conjunto Excel.js, como `TableCollection`, `WorksheetCollection`, e `TableColumnCollection`, têm a propriedade `items` que é como uma matriz dos tipos de objetos filhos, como `Table` ou `Worksheet` ou `TableColumn`; mas um objeto `*Collection` não é uma matriz.
 
    - O código formata o intervalo da coluna **quantidade** como Euros com um segundo decimal. 
-   - Por fim, isso garante que a largura das colunas e a altura das linhas sejam grandes o suficiente para o maior (ou o mais alto) item de dados. Observe que o código deve receber os objetos `Range` a formatar. Os objetos `TableColumn` e `TableRow` não têm propriedades de formato.
+   - Por fim, isso garante que a largura das colunas e a altura das linhas sejam grandes o suficiente para o maior (ou o mais alto) item de dados. Observe que o código deve receber os objetos `Range` a formatar. `TableColumn` Os objetos `TableColumn` e `TableRow` não têm propriedades de formato.
 
         ```js
         expensesTable.columns.getItemAt(3).getRange().numberFormat = [['€#,##0.00']];
@@ -107,7 +107,7 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
 4. Realize o sideload do suplemento usando um dos métodos a seguir:
     - Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
     - Excel Online: [Realizar sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad e Mac: [Realizar sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    - iPad e Mac: [Realizar o sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 5. Sobre o menu da **Página Inicial**, escolha **Mostrar painel de tarefas**.
 6. No painel de tarefas, escolha **Criar tabela**.
 

@@ -7,9 +7,9 @@
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="members-and-methods"></a>Membros e métodos
 
@@ -25,9 +25,9 @@
 ####  <a name="accounttype-string"></a>accountType :String
 
 > [!NOTE]
-> Esse membro tem suporte somente no Outlook 2016 ou posterior para Mac (build 16.9.1212 ou posterior).
+> Esse membro é compatível somente no Outlook 2016 ou posterior para Mac (build 16.9.1212 ou posterior).
 
-Obtém o tipo de conta do usuário associado à caixa de correio. Os valores possíveis são listados na tabela a seguir.
+Obtém o tipo de conta do usuário associado com a caixa de correio. Os valores possíveis são listados na tabela a seguir.
 
 | Valor | Descrição |
 |-------|-------------|
@@ -44,9 +44,9 @@ Obtém o tipo de conta do usuário associado à caixa de correio. Os valores pos
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.6 |
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.6 |
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
@@ -66,9 +66,9 @@ Obtém o nome para exibição do usuário.
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
@@ -89,9 +89,9 @@ Obtém o endereço de email SMTP do usuário.
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
@@ -112,9 +112,9 @@ Obtém o fuso horário padrão do usuário.
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="example"></a>Exemplo
 

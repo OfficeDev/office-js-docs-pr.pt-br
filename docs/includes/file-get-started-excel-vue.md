@@ -49,7 +49,7 @@ Cada suplemento requer um arquivo de manifesto para definir os recursos e config
     ```
 
     - **Escolha um tipo de projeto:** `Office Add-in containing the manifest only`
-    - **Como deseja nomear seu suplemento?** `My Office Add-in`
+    - **Como deseja nomear seu suplemento?:** `My Office Add-in`
     - **Para qual aplicativo cliente do Office você deseja oferecer suporte?** `Excel`
 
     Depois de concluir o assistente, um arquivo de manifesto e um arquivo de recurso estarão disponíveis para você criar o seu projeto.
@@ -184,9 +184,9 @@ Para ativar o HTTPS para o seu aplicativo, abra **package.json** na raiz do proj
 
 1. Siga as instruções da plataforma que você usará para executar o suplemento e faça o sideload do suplemento no Excel.
 
-    - Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online: [Realizar sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad e Mac: [Realizar sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    - Windows: [Fazer o sideload de suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Excel Online: [Fazer o sideload dos suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
+    - iPad e Mac: [Fazer o sideload dos suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 2. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
@@ -203,11 +203,11 @@ Para ativar o HTTPS para o seu aplicativo, abra **package.json** na raiz do proj
 Você criou um suplemento do Excel usando o Vue, parabéns! Agora, saiba mais sobre os recursos dos suplementos do Excel e crie um mais complexo, acompanhando o tutorial de suplementos do Excel.
 
 > [!div class="nextstepaction"]
-> [Tutorial de suplementos do Excel](../tutorials/excel-tutorial.yml)
+> [Tutorial de suplemento do Excel](../tutorials/excel-tutorial.yml)
 
 ## <a name="see-also"></a>Confira também
 
-* [Tutorial de suplementos do Excel](../tutorials/excel-tutorial-create-table.md)
-* [Conceitos de programação fundamentais com a API JavaScript do Excel](../excel/excel-add-ins-core-concepts.md)
+* [Tutorial de suplemento do Excel](../tutorials/excel-tutorial-create-table.md)
+* [Conceitos fundamentais de programação com a API JavaScript do Excel](../excel/excel-add-ins-core-concepts.md)
 * [Exemplos de código do suplemento do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Referência da API JavaScript do Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
+* [Referência da API JavaScript do Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)

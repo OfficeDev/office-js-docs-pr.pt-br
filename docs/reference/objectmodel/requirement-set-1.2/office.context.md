@@ -10,8 +10,8 @@ O namespace Office.context fornece interfaces compartilhadas que são usadas pel
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Modo aplicável do Outlook](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ### <a name="namespaces"></a>Namespaces
 
@@ -27,14 +27,14 @@ O valor `displayLanguage` reflete a configuração atual do **Idioma de Exibiç�
 
 ##### <a name="type"></a>Tipo:
 
-*   Sequência de caracteres
+*   String
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Modo aplicável do Outlook](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
@@ -70,6 +70,6 @@ O objeto `RoamingSettings` permite armazenar e acessar dados para um suplemento 
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restrito|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Nível mínimo de permissão](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restrito|
+|[Modo aplicável do Outlook](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|

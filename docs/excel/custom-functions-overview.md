@@ -1,17 +1,17 @@
 ---
-ms.date: 09/27/2018
-description: Criar uma função personalizada no Excel usando o JavaScript.
-title: Criar funções personalizadas no Excel (visualização)
-ms.openlocfilehash: f6b658bbd119a785b342ec22bc1b341f6902da3f
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.date: 10/17/2018
+description: Criar funções personalizadas no Excel usando JavaScript.
+title: Criar funções personalizadas no Excel (versão prévia)
+ms.openlocfilehash: cc06664a0acb582344448ceec1ec36319d1c3b4c
+ms.sourcegitcommit: a6d6348075c1abed76d2146ddfc099b0151fe403
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459340"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "25640096"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Criar funções personalizadas no Excel (versão prévia)
 
-Funções personalizadas permitem que os desenvolvedores adicionem novas funções ao Excel, definindo-as em JavaScript como parte de um suplemento. Os usuários no Excel podem acessar funções personalizadas tal como fariam com qualquer função nativa do Excel, como `SUM()`. Este artigo explica como criar funções personalizadas no Excel.
+As funções personalizadas permitem que desenvolvedores adicionem novas funções ao Excel definindo essas funções em JavaScript como parte de um suplemento. Os usuários podem acessar as funções personalizadas como fazem com qualquer função nativa no Excel, como `SUM()`. Este artigo descreve como criar funções personalizadas no Excel.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -138,7 +138,7 @@ A tabela a seguir lista as propriedades normalmente presentes no arquivo de meta
 
 | Propriedade  | Descrição |
 |---------|---------|
-| `id` | Uma ID exclusiva para a função. Essa ID não deve ser alterada depois de definida. |
+| `id` | Uma ID exclusiva para a função. Esta ID pode conter apenas caracteres alfanuméricos e pontos e não deve ser alterada depois de ser definida. |
 | `name` | O nome da função exibido para os usuários finais no Excel. No Excel, esse nome de função será prefixado pelo namespace das funções personalizadas especificado no [arquivo de manifesto XML](#manifest-file). |
 | `helpUrl` | URL da página que é exibida quando o usuário solicita ajuda. |
 | `description` | Descreve o que a função faz. Esse valor aparece como uma dica de ferramenta quando a função é o item selecionado no menu de preenchimento automático dentro do Excel. |
@@ -148,7 +148,7 @@ A tabela a seguir lista as propriedades normalmente presentes no arquivo de meta
 
 ### <a name="manifest-file"></a>Arquivo de manifesto
 
-O arquivo de manifesto XML para um suplemento que define funções personalizadas (**./manifest.xml** no projeto que criado pelo gerador Yo Office) especifica o namespace para todas as funções personalizadas dentro do suplemento e o local dos arquivos JavaScript, JSON e HTML. A marcação XML a seguir mostra um exemplo dos elementos `<ExtensionPoint>` e `<Resources>` que você deve incluir no manifesto de um suplemento para habilitar funções personalizadas.  
+O arquivo de manifesto XML para um suplemento que define funções personalizadas (**./manifest.xml** no projeto criado pelo gerador Yo Office) especifica o namespace para todas as funções personalizadas dentro do suplemento e o local dos arquivos JavaScript, JSON e HTML. A marcação XML a seguir mostra um exemplo dos elementos `<ExtensionPoint>` e `<Resources>` que você deve incluir no manifesto de um suplemento para habilitar funções personalizadas.  
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -177,14 +177,14 @@ O arquivo de manifesto XML para um suplemento que define funções personalizada
             <bt:Url id="HTML-URL" DefaultValue="http://127.0.0.1:8080/index.html" /> <!--specifies the location of your HTML file-->
         </bt:Urls>
         <bt:ShortStrings>
-            <bt:String id="namespace" DefaultValue="CONTOSO" /> <!--specifies the namespace that will be prepended to a function's name when it is called in Excel. -->
+            <bt:String id="namespace" DefaultValue="CONTOSO" /> <!--specifies the namespace that will be prepended to a function's name when it is called in Excel. Can only contain alphanumeric characters and periods.-->
         </bt:ShortStrings>
     </Resources>
 </VersionOverrides>
 ```
 
 > [!NOTE]
-> Funções do Excel são pré-inseridas pelo namespace especificado em seu arquivo de manifesto XML. O namespace de uma função vem antes do nome dela e é separado por um ponto. Por exemplo, para chamar a função `ADD42` na célula de uma planilha do Excel, você digitaria `=CONTOSO.ADD42`, porque a CONTOSO é o namespace e `ADD42` é o nome da função especificado no arquivo JSON. O namespace funciona como um identificador para a sua empresa ou para o suplemento. 
+> As funções do Excel recebem o prefixo do namespace especificado em seu arquivo de manifesto XML. Um namespace de uma função vem antes do nome da função e são separados por um ponto. Por exemplo, para chamar a função `ADD42` na célula de uma planilha do Excel, você digitaria `=CONTOSO.ADD42`, porque `CONTOSO` é o namespace e `ADD42` é o nome da função especificada no arquivo JSON. O namespace deve ser usado como identificador da sua empresa ou do suplemento. Um namespace só pode conter caracteres alfanuméricos e pontos.
 
 ## <a name="functions-that-return-data-from-external-sources"></a>Funções que retornam dados de fontes externas
 
@@ -216,7 +216,7 @@ Funções personalizadas de fluxo contínuo permitem múltiplos dados de saída 
 
 - O segundo parâmetro de entrada, `handler`, não é exibido para o usuário final no Excel quando ele seleciona a função no menu de preenchimento automático.
 
-- O retorno de chamada `onCanceled` define a função que é executada quando a função for cancelada. Você deve implementar um manipulador de cancelamento como este para qualquer função de fluxo contínuo. Para obter mais informações, consulte [Cancelar uma função](#canceling-a-function). 
+- O retorno de chamada `onCanceled` define a função que é executada quando a função for cancelada. Você deve implementar um manipulador de cancelamento como este para qualquer função de fluxo contínuo. Para obter mais informações, consulte [Cancelar uma função](#canceling-a-function).
 
 ```js
 function incrementValue(increment, handler){
@@ -271,29 +271,36 @@ Em alguns casos, talvez seja necessário cancelar a execução de uma função p
 
 Para habilitar a capacidade de cancelar uma função, você deve implementar um manipulador de cancelamento dentro da função do JavaScript e especificar a propriedade `"cancelable": true` dentro do objeto `options` nos metadados JSON que descrevem a função. Os exemplos de código na seção anterior deste artigo fornecem um exemplo dessas técnicas.
 
-## <a name="saving-and-sharing-state"></a>Compartilhar e salvar um estado
+## <a name="saving-and-sharing-state"></a>Compartilhamento e salvamento de estado
 
-Funções personalizadas podem salvar dados em variáveis globais do JavaScript. Em chamadas subsequentes, sua função personalizada pode usar os valores salvos nessas variáveis. Um estado salvo é útil quando usuários adicionam a mesma função personalizada a mais de uma célula, pois todas as instâncias da função podem compartilhar o estado. Por exemplo, você pode salvar os dados retornados de uma chamada para um recurso da Web para evitar fazer chamadas adicionais para esse mesmo recurso.
+Funções personalizadas podem salvar dados em variáveis globais do JavaScript, que podem ser usadas em chamadas subsequentes. Um estado salvo é útil quando usuários chamam a mesma função personalizada a partir de mais de uma célula, porque todas as instâncias da função podem acessar o estado. Por exemplo, você pode salvar os dados retornados de uma chamada para um recurso da web para evitar fazer chamadas adicionais para o mesmo recurso da web.
 
 O exemplo de código a seguir mostra a implementação de uma função de fluxo contínuo de temperatura que salva o estado globalmente. Observe o seguinte sobre este código:
 
-- `refreshTemperature` é uma função de fluxo contínuo que lê a temperatura de um determinado termômetro a cada segundo. Novas temperaturas são salvas na variável `savedTemperatures`, mas não atualiza diretamente o valor da célula. Ela não deve ser chamada diretamente de uma célula da planilha, *então não fica registrada no arquivo JSON*.
+- A função `streamTemperature` atualiza o valor de temperatura que é exibido na célula cada segundo e usa a variável `savedTemperatures` como sua fonte de dados.
 
-- `streamTemperature` atualiza os valores de temperatura exibidos na célula a cada segundo e usa a variável `savedTemperatures` como sua fonte de dados. Deve ser registrada no arquivo JSON e nomeada apenas com letras maiúsculas, `STREAMTEMPERATURE`.
+- Como `streamTemperature` é uma função de fluxo contínuo, ela implementa um manipulador de cancelamento que será executado quando a função for cancelada.
 
-- Os usuários podem chamar `streamTemperature` de várias células na interface do usuário do Excel. Cada chamada lê os dados da mesma variável `savedTemperatures`.
+- Se um usuário chama a função `streamTemperature` a partir de várias células no Excel, a função `streamTemperature` lê os dados da mesma variável `savedTemperatures` cada vez que ela é executada. 
+
+- A função `refreshTemperature` lê a temperatura de um determinado termômetro a cada segundo e armazena o resultado na variável `savedTemperatures`. Como a função `refreshTemperature` não está exposta aos usuários finais no Excel, ela não precisa ser registrada no arquivo JSON.
 
 ```js
 var savedTemperatures;
 
 function streamTemperature(thermometerID, handler){
   if(!savedTemperatures[thermometerID]){
-    refreshTemperatures(thermometerID); // starts fetching temperatures if the thermometer hasn't been read yet
+    refreshTemperature(thermometerID); // starts fetching temperatures if the thermometer hasn't been read yet
   }
 
   function getNextTemperature(){
     handler.setResult(savedTemperatures[thermometerID]); // setResult sends the saved temperature value to Excel.
-    setTimeout(getNextTemperature, 1000); // Wait 1 second before updating Excel again.
+    var delayTime = 1000; // Amount of milliseconds to delay a request by.
+    setTimeout(getNextTemperature, delayTime); // Wait 1 second before updating Excel again.
+
+    handler.onCancelled() = function {
+      clearTimeout(delayTime);
+    }
   }
   getNextTemperature();
 }
@@ -369,9 +376,9 @@ function getComment(x) {
 - **20 de Novembro de 2017**: Correção de bug de compatibilidade para quem usa o build 8801 e posteriores
 - **28 de novembro de 2017**: Enviado* suporte para cancelamento em funções assíncronas (requer alteração para funções de fluxo contínuo)
 - **7 de maio de 2018**: Enviado* o suporte para Mac, Excel Online e funções síncronas executadas no processo
-- **20 de setembro de 2018**: Enviado o suporte para funções personalizadas de tempo de execução do JavaScript. Para obter mais informações, consulte o [Funções personalizadas para tempo de execução do Excel](custom-functions-runtime.md).
+- **20 de setembro de 2018**: Disponibilizado o suporte a funções personalizadas em tempo de execução do JavaScript. Para obter mais informações, consulte [Funções personalizadas em tempo de execução do Excel](custom-functions-runtime.md).
 
-\* para o Canal Office Insiders
+\* para o canal [Office Insider](https://products.office.com/office-insider) (anteriormente denominado "Insider Fast")
 
 ## <a name="see-also"></a>Confira também
 

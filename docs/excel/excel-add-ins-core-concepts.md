@@ -1,17 +1,17 @@
 ---
 title: Conceitos de programação fundamentais com a API JavaScript do Excel
 description: Usar a API JavaScript do Excel para criar suplementos para o Excel.
-ms.date: 10/03/2018
-ms.openlocfilehash: c66d44b76fad9f1559da7514997b62670a0f9360
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.date: 10/16/2018
+ms.openlocfilehash: 21fcbc32dab2057f6d1f5e97a62a6b00bf1f7f03
+ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459200"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "25579888"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Conceitos de programação fundamentais com a API JavaScript do Excel
  
-Este artigo descreve como usar a [API JavaScript do Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js) para criar suplementos para o Excel 2016 ou posterior. Ele apresenta os principais conceitos fundamentais para o uso da API e fornece orientação para a realização de tarefas específicas, como fazer a leitura ou gravação em um intervalo grande, atualizar todas as células de um intervalo e muito mais.
+Este artigo descreve como usar a [API JavaScript do Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js) para criar suplementos para o Excel 2016 ou posterior. Ele apresenta os principais conceitos fundamentais para o uso da API e fornece orientação para a realização de tarefas específicas, como fazer a leitura ou gravação em um intervalo grande, atualizar todas as células de um intervalo e muito mais.
 
 ## <a name="asynchronous-nature-of-excel-apis"></a>Natureza assíncrona das APIs do Excel
 
@@ -115,9 +115,9 @@ Excel.run(function (context) {
 });
 ```
  
-No exemplo anterior, como `format/font` não é especificado na chamada para **myRange.load()**, a propriedade `format.font.color` não pode ser lida.
+No exemplo anterior, como `format/font` não é especificado na chamada a **myRange.load()**, a propriedade `format.font.color` não pode ser lida.
 
-Para otimizar o desempenho, você deve especificar explicitamente as propriedades e relacionamentos que serão carregados ao usar o método **load()** em um objeto, conforme discutido em [Otimizações de desempenho da API JavaScript do Excel](performance.md). Para obter mais informações sobre o método **load()** , consulte [Conceitos de programação avançados com a API JavaScript do Excel](excel-add-ins-advanced-concepts.md).
+Para otimizar o desempenho, você deve especificar explicitamente as propriedades e relações a serem carregadas ao usar o método **load()** em um objeto, conforme abordado em [Otimizações de desempenho da API JavaScript do Excel](performance.md). Para obter mais informações sobre o método **Load** , consulte [Conceitos de programação avançados com a API JavaScript do Excel](excel-add-ins-advanced-concepts.md).
 
 ## <a name="null-or-blank-property-values"></a>Valores de propriedade null ou blank
  
@@ -228,31 +228,9 @@ Excel.run(function (context) {
 });
 ```
  
-## <a name="error-messages"></a>Mensagens de erro
- 
-Quando ocorre um erro de API, a API retorna um objeto de **erro** que contém um código e uma mensagem. A tabela a seguir define uma lista de erros que a API pode retornar.
- 
-|error.code | error.message |
-|:----------|:--------------|
-|InvalidArgument |O argumento é inválido, ausente ou tem um formato incorreto.|
-|InvalidRequest  |Não é possível processar a solicitação.|
-|InvalidReference|Essa referência não é válida para a operação atual.|
-|InvalidBinding  |Essa associação de objetos não é mais válida devido a atualizações anteriores.|
-|InvalidSelection|A seleção atual é inválida para esta operação.|
-|Unauthenticated |Informações de autenticação necessárias estão ausentes ou inválidas.|
-|AccessDenied |Você não pode realizar a operação solicitada.|
-|ItemNotFound |O recurso solicitado não existe.|
-|ActivityLimitReached|O limite de atividades foi alcançado.|
-|GeneralException|Ocorreu um erro interno ao processar a solicitação.|
-|NotImplemented  |O recurso solicitado não foi implementado.|
-|ServiceNotAvailable|O serviço não está disponível.|
-|Conflict              |A solicitação não pôde ser processada devido a um conflito.|
-|ItemAlreadyExists|O recurso que está sendo criado já existe.|
-|UnsupportedOperation|Não há suporte para a operação.|
-|RequestAborted|A solicitação foi anulada durante o tempo de execução.|
-|ApiNotAvailable|A API solicitada não está disponível.|
-|InsertDeleteConflict|A operação de exclusão ou inserção resultou em um conflito.|
-|InvalidOperation|A operação é inválida no objeto.|
+##<a name="handle-errors"></a>Lidar com erros
+
+Quando ocorrer um erro de API, a API retornará um objeto **error** que contém um código e uma mensagem. Para obter informações detalhadas sobre o tratamento de erros, incluindo uma lista dos erros de API, consulte o [tratamento de erros](excel-add-ins-error-handling.md).
  
 ## <a name="see-also"></a>Confira também
  
@@ -260,4 +238,4 @@ Quando ocorre um erro de API, a API retorna um objeto de **erro** que contém um
 * [Exemplos de códigos de suplementos do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
 * [Conceitos de programação avançados com a API JavaScript do Excel](excel-add-ins-advanced-concepts.md)
 * [Otimização de desempenho da API JavaScript do Excel](https://docs.microsoft.com/office/dev/add-ins/excel/performance)
-* [Referência da API JavaScript do Excel](https://docs.microsoft.com/javascript/office/overview/excel-add-ins-reference-overview?view=office-js)
+* [Referência da API JavaScript do Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)

@@ -8,8 +8,8 @@ O namespace Office fornece interfaces compartilhadas que são usadas por supleme
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Modo aplicável do Outlook](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|
 
 ##### <a name="members-and-methods"></a>Membros e métodos
 
@@ -34,45 +34,45 @@ Especifica o resultado de uma chamada assíncrona.
 
 ##### <a name="type"></a>Tipo:
 
-*   String
+*   sequência de caracteres
 
 ##### <a name="properties"></a>Propriedades:
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`Succeeded`| String|A chamada foi bem-sucedida.|
-|`Failed`| String|A chamada falhou.|
+|`Succeeded`| sequência de caracteres|A chamada foi bem-sucedida.|
+|`Failed`| sequência de caracteres|A chamada falhou.|
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Modo aplicável do Outlook](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|
 
 ---
 
 ####  <a name="coerciontype-string"></a>CoercionType :String
 
-Especifica como forçar os dados retornados ou definir de acordo com o método invocado.
+Especifica como forçar os dados retornados ou definidos de acordo com o método invocado.
 
 ##### <a name="type"></a>Tipo:
 
-*   String
+*   sequência de caracteres
 
 ##### <a name="properties"></a>Propriedades:
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`Html`| String|Solicita que os dados sejam retornados no formato HTML.|
-|`Text`| String|Solicita que os dados sejam retornados no formato de texto.|
+|`Html`| sequência de caracteres|Solicita que os dados sejam retornados no formato HTML.|
+|`Text`| sequência de caracteres|Solicita que os dados sejam retornados no formato de texto.|
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Modo aplicável do Outlook](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|
 
 ---
 
@@ -82,41 +82,41 @@ Especifica o evento associado a um manipulador de eventos.
 
 ##### <a name="type"></a>Tipo:
 
-*   String
+*   sequência de caracteres
 
 ##### <a name="properties"></a>Propriedades:
 
 | Nome | Tipo | Descrição |
 |---|---|---|
-|`ItemChanged`| String | O item selecionado foi alterado. |
+|`ItemChanged`| sequência de caracteres | O item selecionado foi alterado. |
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.5 |
-|[Modo aplicável do Outlook](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler |
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura |
 
 ---
 
 ####  <a name="sourceproperty-string"></a>SourceProperty :String
 
-Especifica a origem dos dados retornados pelo método chamado.
+Especifica a origem dos dados retornados pelo método invocado.
 
 ##### <a name="type"></a>Tipo:
 
-*   String
+*   sequência de caracteres
 
 ##### <a name="properties"></a>Propriedades:
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`Body`| String|A origem dos dados é do corpo de uma mensagem.|
-|`Subject`| String|A origem dos dados é do assunto de uma mensagem.|
+|`Body`| sequência de caracteres|A origem dos dados é do corpo de uma mensagem.|
+|`Subject`| sequência de caracteres|A origem dos dados é do assunto de uma mensagem.|
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Modo aplicável do Outlook](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|

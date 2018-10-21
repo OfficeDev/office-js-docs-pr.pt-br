@@ -9,7 +9,7 @@ O namespace do Office.context fornece interfaces compartilhadas que são usadas 
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
 
 ### <a name="namespaces"></a>Namespaces
@@ -26,13 +26,13 @@ O valor `displayLanguage` reflete a configuração atual do **Idioma de Exibiç�
 
 ##### <a name="type"></a>Tipo:
 
-*   Sequência de caracteres
+*   String
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
 
 ##### <a name="example"></a>Exemplo
@@ -72,16 +72,16 @@ Usando as cores de tema do Office, você pode coordenar o esquema de cores do se
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`bodyBackgroundColor`| Sequência de caracteres|Obtém a cor do plano de fundo do corpo do tema do Office como um trio de cores hexadecimais.|
-|`bodyForegroundColor`| Sequência de caracteres|Obtém a cor de primeiro plano do corpo do tema do Office como um trio de cores hexadecimais.|
-|`controlBackgroundColor`| Sequência de caracteres|Obtém o tema do Office para controlar a cor do plano de fundo como um trio de cores hexadecimais.|
-|`controlForegroundColor`| Sequência de caracteres|Obtém a cor de controle do corpo do tema do Office como um trio de cores hexadecimais.|
+|`bodyBackgroundColor`| String|Obtém a cor do plano de fundo do corpo do tema do Office como um trio de cores hexadecimais.|
+|`bodyForegroundColor`| String|Obtém a cor de primeiro plano do corpo do tema do Office como um trio de cores hexadecimais.|
+|`controlBackgroundColor`| String|Obtém o tema do Office para controlar a cor do plano de fundo como um trio de cores hexadecimais.|
+|`controlForegroundColor`| String|Obtém a cor de controle do corpo do tema do Office como um trio de cores hexadecimais.|
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.3|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
 |[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
 
 ##### <a name="example"></a>Exemplo
@@ -113,6 +113,6 @@ O objeto `RoamingSettings` permite armazenar e acessar dados para um suplemento 
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restrito|
 |[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|

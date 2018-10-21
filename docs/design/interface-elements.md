@@ -2,9 +2,13 @@
 title: Elementos da interface do usuário do Office para suplementos do Office
 description: ''
 ms.date: 12/04/2017
+ms.openlocfilehash: 8282caff412a9a258e54092bc77e07571f0d8ac1
+ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "19437301"
 ---
-
-
 # <a name="office-ui-elements-for-office-add-ins"></a>Elementos da interface do usuário do Office para suplementos do Office
 
 Você pode usar vários tipos de elementos para estender a interface do usuário do Office, incluindo comandos de suplemento e contêineres HTML. Esses elementos de interface do usuário parecem uma extensão natural do Office e funcionam entre plataformas. Você pode inserir um código personalizado baseado na Web em qualquer um desses elementos.

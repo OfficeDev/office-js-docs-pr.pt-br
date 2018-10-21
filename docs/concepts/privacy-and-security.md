@@ -2,12 +2,12 @@
 title: Privacidade e segurança para suplementos do Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 76408abe96b07e793a72a8cbd177a29428366dd0
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: c8fb61d6366d36ab14a072af80702226fe5efa9c
+ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925525"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "25005047"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 
@@ -104,7 +104,7 @@ Os suplementos do Outlook fornecem recursos adicionais de segurança e desempenh
 
 A seguir, são listadas algumas diretrizes de proteção de PII específicas para você como um desenvolvedor de Suplementos do Office:
 
-- O objeto [Settings](https://dev.office.com/reference/add-ins/shared/settings) destina-se a persistir configurações e dados de estado de suplementos entre sessões para um suplemento de conteúdo ou de painel de tarefas, mas não armazena senhas e outros itens de PII confidenciais no objeto **Settings**. Os dados no objeto **Settings** não ficam visíveis para os usuários finais, mas são armazenados como parte do formato de arquivo do documento, que está prontamente acessível. Você deve limitar o uso de PII pelo suplemento e armazenar quaisquer itens de PII necessários ao suplemento no servidor que hospeda o suplemento como um recurso protegido pelo usuário.
+- O objeto [Settings](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js) destina-se a persistir configurações e dados de estado de suplementos entre sessões para um suplemento de conteúdo ou de painel de tarefas, mas não armazena senhas e outros itens de PII confidenciais no objeto **Settings**. Os dados no objeto **Settings** não ficam visíveis para os usuários finais, mas são armazenados como parte do formato de arquivo do documento, que está prontamente acessível. Você deve limitar o uso de PII pelo suplemento e armazenar quaisquer itens de PII necessários ao suplemento no servidor que hospeda o suplemento como um recurso protegido pelo usuário.
 
 - O uso de alguns aplicativos pode revelar itens de PII. Armazene com segurança os dados de identidade, local, horas de acesso e outras credenciais dos usuários para que os dados não sejam disponibilizados para outros usuários do suplemento.
 
@@ -118,7 +118,7 @@ Siga estas diretrizes gerais para dar suporte ao modelo de segurança de Supleme
 
 ### <a name="permissions-choices"></a>Opções de permissões
 
-A plataforma de suplemento fornece um modelo de permissões que o seu suplemento usa para declarar o nível de acesso aos dados de um usuário que ele exige para seus recursos. Cada nível de permissão corresponde ao subconjunto da API JavaScript para Office que seu suplemento pode usar em seus recursos. Por exemplo, a permissão **WriteDocument** para os suplementos do conteúdo e do painel de tarefas permite acesso ao método [Document.setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync), que permite que um suplemento grave no documento do usuário, mas não permite acesso a qualquer um dos métodos para ler dados do documento. Esse nível de permissão faz sentido para suplementos que precisam apenas gravar em um documento, como um suplemento no qual o usuário pode consultar dados para inserir em seus documentos.
+A plataforma de suplemento fornece um modelo de permissões que o seu suplemento usa para declarar o nível de acesso aos dados de um usuário que ele exige para seus recursos. Cada nível de permissão corresponde ao subconjunto da API JavaScript para Office que seu suplemento pode usar em seus recursos. Por exemplo, a permissão **WriteDocument** para os suplementos do conteúdo e do painel de tarefas permite acesso ao método [Document.setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js), que permite que um suplemento grave no documento do usuário, mas não permite acesso a qualquer um dos métodos para ler dados do documento. Esse nível de permissão faz sentido para suplementos que precisam apenas gravar em um documento, como um suplemento no qual o usuário pode consultar dados para inserir em seus documentos.
 
 Como prática recomendada, você deve solicitar permissões com base no princípio de _menor privilégio_. Ou seja, você deve solicitar permissão para acessar apenas o subconjunto mínimo da API que o suplemento requer para funcionar corretamente. Por exemplo, se o suplemento precisa apenas ler dados no documento de um usuário para seus recursos, você não deve solicitar mais do que a permissão **ReadDocument**. (Porém, lembre-se de que a solicitação de permissões insuficientes fará com que a plataforma de suplementos bloqueie o uso de algumas APIs pelo suplemento e gerará erros em tempo de execução.)
 
@@ -129,7 +129,7 @@ O exemplo a seguir mostra como um suplemento de painel de tarefas especifica a p
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0"
-           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+           xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
            xmlns:ver="http://schemas.microsoft.com/office/appforoffice/1.0"
            xsi:type="TaskPaneApp">
 
@@ -149,7 +149,7 @@ Para saber mais sobre permissões para suplementos do Outlook, confira os tópic
 
 ### <a name="same-origin-policy"></a>Política de mesma origem
 
-Como os suplementos do Office são páginas da Web executadas em um controle de navegador da Web, eles devem seguir a política de mesma origem imposta pelo navegador: por padrão, uma página da Web em um domínio não pode fazer chamadas ao serviço Web [XmlHttpRequest](http://www.w3.org/TR/XMLHttpRequest/) para outro domínio que não aquele em que está hospedada.
+Como os suplementos do Office são páginas da Web executadas em um controle de navegador da Web, eles devem seguir a política de mesma origem imposta pelo navegador: por padrão, uma página da Web em um domínio não pode fazer chamadas ao serviço Web [XmlHttpRequest](https://www.w3.org/TR/XMLHttpRequest/) para outro domínio que não aquele em que está hospedada.
 
 Uma maneira de superar essa limitação é usar JSON/P: forneça um proxy para o serviço Web incluindo uma marca **script** com um atributo **src** que aponte para algum script hospedado em outro domínio. Você pode criar as marcas**script** via programação gerando de forma dinâmica a URL para a qual apontar o atributo **src** e passando parâmetros à URL por meio de parâmetros da consulta de URI. Os provedores de serviços Web criam e hospedam o código JavaScript em URLs específicas e retornam scripts diferentes, dependendo dos parâmetros de consulta de URI. Em seguida, esses scripts são executados onde estão inseridos e funcionam como esperado.
 
@@ -188,7 +188,7 @@ Um usuário mal-intencionado pode atacar a origem de um suplemento inserindo um 
 
 - Se estiver usando jQuery, use o método [.text()](http://api.jquery.com/text/) em vez do método [.html()](http://api.jquery.com/html/).
 
-- Use o método [toStaticHTML](http://msdn.microsoft.com/library/ie/cc848922.aspx) para remover atributos e elementos HTML dinâmicos da entrada dos usuários antes de passá-la para **innerHTML**.
+- Use o método [toStaticHTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) para remover atributos e elementos HTML dinâmicos da entrada dos usuários antes de passá-la para **innerHTML**.
 
 - Use a função [encodeURIComponent](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuricomponent) ou [encodeURI](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuri) para codificar texto que se destina a ser uma URL que vem da entrada do usuário ou a contém.
 
@@ -254,7 +254,7 @@ Em uma configuração corporativa, os administradores de TI têm autoridade fina
 - [Noções básicas sobre permissões de suplemento do Outlook](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)
 - [Limites de ativação e da API do JavaScript API para suplementos do Outlook](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
 - [Como lidar com limitações de política de mesma origem nos suplementos do Office](https://docs.microsoft.com/office/dev/add-ins/develop/addressing-same-origin-policy-limitations)
-- [Política de Mesma Origem](http://www.w3.org/Security/wiki/Same_Origin_Policy)
+- [Política de Mesma Origem](https://www.w3.org/Security/wiki/Same_Origin_Policy)
 - [Política de Mesma Origem Parte 1: Sem Inspecionar](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)
 - [Política de mesma origem para JavaScript](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)
 - [Modo Protegido do IE](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)

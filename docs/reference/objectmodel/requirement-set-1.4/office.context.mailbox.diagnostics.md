@@ -9,9 +9,9 @@ Fornece informações de diagnóstico para um suplemento do Outlook.
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ### <a name="members"></a>Membros
 
@@ -29,9 +29,9 @@ Uma sequência de caracteres que pode ser um dos valores a seguir: `Outlook`, `O
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo aplicável ao Outlook](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ####  <a name="hostversion-string"></a>hostVersion :String
 
@@ -47,9 +47,9 @@ Se o suplemento de email estiver em execução no cliente da área de trabalho d
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo aplicável ao Outlook](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ####  <a name="owaview-string"></a>OWAView :String
 
@@ -57,11 +57,11 @@ Obtém uma sequência de caracteres que representa o modo de exibição atual do
 
 A sequência de caracteres retornada pode ser um dos valores a seguir: `OneColumn`, `TwoColumns` ou `ThreeColumns`.
 
-Se o aplicativo host não for o Outlook Web App, acessar essa propriedade resultará em `undefined`.
+Se o aplicativo host não for o Outlook Web App, o acesso a essa propriedade resultará em `undefined`.
 
-O Outlook Web App tem três modos de exibição que correspondem à largura da tela e da janela e à quantidade de colunas que pode ser exibida:
+O Outlook Web App tem três modos de exibição que correspondem à largura da tela e da janela, e ao número de colunas que pode ser exibido:
 
-*   `OneColumn`, que é exibido quando a tela é estreita. O Outlook Web App usa esse layout de coluna única na tela inteira de um smartphone.
+*   `OneColumn`, que é exibido quando a tela é estreita. O Outlook Web App usa esse layout de coluna única em toda a tela de um smartphone.
 *   `TwoColumns`, que é exibido quando a tela é mais larga. O Outlook Web App usa esse modo de exibição na maioria dos tablets.
 *   `ThreeColumns`, que é exibido quando a tela é larga. Por exemplo, o Outlook Web App usa esse modo de exibição em uma janela de tela inteira em um computador.
 
@@ -73,6 +73,6 @@ O Outlook Web App tem três modos de exibição que correspondem à largura da t
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/javascript/office/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redigir ou ler|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|

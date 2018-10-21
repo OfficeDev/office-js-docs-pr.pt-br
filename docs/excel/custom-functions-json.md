@@ -2,18 +2,18 @@
 ms.date: 09/27/2018
 description: Defina metadados para funções personalizadas no Excel.
 title: Metadados para funções personalizadas no Excel
-ms.openlocfilehash: e8af13b8855d6c5e1a3b1ce99edb24445e066756
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.openlocfilehash: b7c7f26d56309f43758b9b13025ebaad661aeaed
+ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459235"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "25579867"
 ---
 # <a name="custom-functions-metadata-preview"></a>Metadados de funções personalizadas (versão prévia)
 
-Quando você define [funções personalizadas](custom-functions-overview.md) no seu suplemento do Excel, seu projeto de suplemento deve incluir um arquivo de metadados JSON que fornece as informações que o Excel precisa para registrar as funções personalizadas e torná-las disponíveis para os usuários finais. Este artigo descreve o formato do arquivo JSON de metadados.
+Quando você define [funções personalizadas](custom-functions-overview.md) no suplemento do Excel, o projeto de suplemento deve incluir um arquivo de metadados JSON que forneça as informações necessárias para o Excel registrar as funções personalizadas e disponibilizá-las aos usuários finais. Este artigo descreve o formato do arquivo de metadados JSON.
 
-Para obter informações sobre os outros arquivos que você deve incluir em seu projeto de suplemento para habilitar funções personalizadas, confira [Criação de funções personalizadas no Excel](custom-functions-overview.md).
+Para obter informações sobre os outros arquivos que você deve incluir no projeto de suplemento para habilitar funções personalizadas, confira [Criar funções personalizadas no Excel](custom-functions-overview.md).
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -111,9 +111,9 @@ A `functions` propriedade é uma matriz de objetos de função personalizada. A 
 
 |  Propriedade  |  Tipo de dados  |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|:-----|
-|  `description`  |  sequência de caracteres  |  Não  |  O nome da função que os usuários finais veem no Excel. Por exemplo, **Converte um valor Celsius em Fahrenheit**. |
-|  `helpUrl`  |  sequência de caracteres  |   Não  |  URL que fornece informações sobre a função. (É exibida em um painel de tarefas.) Por exemplo, **http://contoso.com/help/convertcelsiustofahrenheit.html**. |
-| `id`     | sequência de caracteres | Sim | Um ID exclusivo para a função. Esse ID não deve ser alterado depois de definido. |
+|  `description`  |  sequência de caracteres  |  Não  |  A descrição da função que os usuários finais veem no Excel. Por exemplo, **Converte um valor de Celsius para Fahrenheit**. |
+|  `helpUrl`  |  sequência de caracteres  |   Não  |  URL que fornece informações sobre a função. (Ela é exibida em um painel de tarefas.) Por exemplo, **http://contoso.com/help/convertcelsiustofahrenheit.html**. |
+| `id`     | sequência de caracteres | Sim | Um ID exclusivo para a função. Este ID pode conter apenas caracteres alfanuméricos e períodos e não deve ser alterado depois que é definido. |
 |  `name`  |  sequência de caracteres  |  Sim  |  O nome da função que os usuários finais veem no Excel. No Excel, esse nome de função será prefixado pelo namespace das funções personalizadas que é especificado no arquivo de manifesto XML. |
 |  `options`  |  objeto  |  Não  |  Permite personalizar alguns aspectos de como e quando o Excel executa a função. Consulte o [objeto options](#options-object) para obter detalhes. |
 |  `parameters`  |  matriz  |  Sim  |  Matriz que define os parâmetros de entrada para a função. Consulte a [matriz de parâmetros](#parameters-array) , para obter detalhes. |
@@ -126,7 +126,7 @@ O objeto  `options` permite personalizar alguns aspectos do como e quando o Exce
 |  Propriedade  |  Tipo de dados  |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|:-----|
 |  `cancelable`  |  booleano  |  Não<br/><br/>O valor padrão é `false`.  |  Se `true`, o Excel chama o manipulador de `onCanceled` sempre que o usuário realizar uma ação que tem o efeito de cancelar a função; por exemplo, disparando manualmente o recálculo ou editando uma célula referenciada pela função. Se você usar essa opção, o Excel chamará a função JavaScript com o parâmetro adicional `caller`. (***Não*** registre esse parâmetro na propriedade `parameters`). No corpo da função, um manipulador deve ser atribuído ao membro `caller.onCanceled`. Para saber mais, confira [Cancelar uma função](custom-functions-overview.md#canceling-a-function). |
-|  `stream`  |  booleano  |  Não<br/><br/>O valor padrão é `false`.  |  Se `true`, a função pode atualizar o valor da célula repetidamente, mesmo quando invocada apenas uma vez. Essa opção é útil para alterar fontes de dados rapidamente, como um preço de ação. Se você usar essa opção, o Excel chamará a função JavaScript com o parâmetro adicional `caller`. (***Não*** registre esse parâmetro na propriedade `parameters` ). A função não deve ter a instrução `return`. Em vez disso, o valor de resultado é passado como o argumento do `caller.setResult` método de retorno de chamada. Para obter mais informações, consulte [Funções de fluxo contínuo](custom-functions-overview.md#streaming-functions). |
+|  `stream`  |  booleano  |  Não<br/><br/>O valor padrão é `false`.  |  Se for `true`, a função pode modificar o valor da célula repetidamente, mesmo quando invocada apenas uma vez. Essa opção é útil para fontes de dados que mudam rapidamente, como o preço de uma ação. Caso você use essa opção, o Excel chamará a função JavaScript com um parâmetro `caller` adicional. (***Não*** registre esse parâmetro na propriedade `parameters`). A função não deve ter a instrução `return`. Em vez disso, o valor do resultado é passado como o argumento do método de retorno de chamada `caller.setResult`. Para obter mais informações, consulte [funções de fluxo contínuo](custom-functions-overview.md#streaming-functions). |
 
 ## <a name="parameters"></a>parameters
 
