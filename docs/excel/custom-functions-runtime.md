@@ -1,30 +1,30 @@
 ---
-ms.date: 10/03/2018
+ms.date: 10/17/2018
 description: Compreenda os principais cenários no desenvolvimento de funções personalizadas do Excel que usam o novo runtime do JavaScript.
 title: Runtime de funções personalizadas do Excel
-ms.openlocfilehash: a48b02a8ca404b51740d9052d199da934eb9312e
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.openlocfilehash: 333816c3916af1490d14b8344c4bb49094f9a7f9
+ms.sourcegitcommit: a6d6348075c1abed76d2146ddfc099b0151fe403
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459102"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "25640012"
 ---
-# <a name="runtime-for-excel-custom-functions-preview"></a>Runtime de funções personalizadas do Excel (versão prévia)
+# <a name="runtime-for-excel-custom-functions-preview"></a>Tempo de execução de funções personalizadas do Excel (versão prévia)
 
-As funções personalizadas usam um novo runtime JavaScript que difere do runtime usado por outras partes de um suplemento, como o painel de tarefas ou outros elementos de interface do usuário. Esse runtime Javascript é projetado para otimizar o desempenho dos cálculos em funções personalizadas e expõe novas APIs que você pode usar para executar ações comuns baseadas na Web dentro de funções personalizadas como solicitar dados externos ou trocar dados sobre uma conexão persistente com um servidor. Esse runtime JavaScript também dá acesso a novas APIs no namespace `OfficeRuntime` que podem ser usadas em funções personalizadas ou por outras partes de um suplemento como armazenamento de dados ou exibição de uma caixa de diálogo. Este artigo descreve como usar essas APIs em funções personalizadas e também lista considerações adicionais que você deve ter em mente ao desenvolver funções personalizadas.
+Funções personalizadas usam um novo tempo de execução do JavaScript que difere do tempo de execução usado por outras partes de um suplemento, como o painel de tarefas ou outros elementos de interface do usuário. Esse tempo de execução do JavaScript foi projetado para otimizar o desempenho dos cálculos em funções personalizadas e expõe novas APIs que você pode usar para executar ações comuns baseadas na web dentro de funções personalizadas, como solicitar dados externos ou troca de dados em uma conexão persistente com um servidor. O tempo de execução do JavaScript também fornece acesso às novas APIs no namespace `OfficeRuntime` que pode ser usado dentro de funções personalizadas ou por outras partes de um suplemento para armazenar dados ou exibir uma caixa de diálogo. Este artigo descreve como usar essas APIs dentro de funções personalizadas e também descreve considerações adicionais para se ter em mente ao desenvolver funções personalizadas.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="requesting-external-data"></a>Solicitação de dados externos
 
-Em uma função personalizada, você pode solicitar dados externos usando uma API como [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) ou usando [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), uma API da web padrão que envia solicitações HTTP para interagir com os servidores. No novo runtime do JavaScript, XHR implementa medidas adicionais de segurança, exigindo a [Política de mesma origem](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) e [CORS](https://www.w3.org/TR/cors/) simples.  
+Dentro de uma função personalizada, você poderá solicitar dados externos usando uma API como [Buscar](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) ou usando [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), uma API da web padrão que emite solicitações HTTP para interagir com os servidores. Dentro do tempo de execução do JavaScript, XHR implementa medidas de segurança adicionais, exigindo a [Diretiva de mesma origem](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) e [CORS](https://www.w3.org/TR/cors/) simples.  
 
 ### <a name="xhr-example"></a>Exemplo XHR
 
-No exemplo de código a seguir, a função `getTemperature` chama a função `sendWebRequest` para obter a temperatura de uma determinada área com base no ID de termômetro. A função `sendWebRequest` usa XHR para fazer uma solicitação `GET` para um ponto de extremidade que pode fornecer os dados. 
+No exemplo de código a seguir, a função `getTemperature` chama a função `sendWebRequest` para obter a temperatura de uma determinada área com base na ID de termômetro. A função `sendWebRequest` usa XHR para emitir uma solicitação `GET` para um ponto de extremidade que pode fornecer os dados. 
 
 > [!NOTE] 
-> Ao  efetuar fetch ou usar XHR, um novo `Promise` JavaScript é retornado. Até antes de setembro de 2018, você tinha que especificar `OfficeExtension.Promise` para usar promessas na API JavaScript do Office, mas agora, pode simplesmente usar um `Promise` JavaScript.
+> Ao usar a busca ou XHR, um novo `Promise` JavaScript é retornado. Antes de setembro de 2018, era necessário especificar `OfficeExtension.Promise` para usar promessas dentro da API JavaScript do Office, mas agora você pode simplesmente usar um JavaScript `Promise`.
 
 ```js
 function getTemperature(thermometerID) {
@@ -51,7 +51,7 @@ function sendWebRequest(thermometerID, data) {
 
 ## <a name="receiving-data-via-websockets"></a>Receber dados via WebSockets
 
-Dentro de uma função personalizada, você pode usar [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) para trocar dados através de uma conexão persistente com um servidor. Usando WebSockets, a sua função personalizada por abrir uma conexão com um servidor e receber mensagens automaticamente quando certos eventos ocorrerem, sem precisar explicitamente buscar dados do servidor .
+Dentro de uma função personalizada, você pode usar [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) para trocar dados em uma conexão persistente com um servidor. Usando  WebSockets, sua função personalizada poderá abrir uma conexão com um servidor e, em seguida, automaticamente receber mensagens do servidor quando determinados eventos ocorrerem, sem precisar explicitamente sondar o servidor de dados.
 
 ### <a name="websockets-example"></a>Exemplo de WebSockets
 
@@ -69,9 +69,9 @@ ws.onerror = (error) => {
 
 ## <a name="storing-and-accessing-data"></a>Armazenamento e acesso a dados
 
-Em  uma função personalizada (ou em qualquer parte de um suplemento), você pode armazenar e acessar dados usando o objeto `OfficeRuntime.AsyncStorage` . `AsyncStorage` é um sistema de armazenamento de chave-valor persistente e descriptografados que oferece uma alternativa a [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) que não pode ser usado em funções personalizadas. Um suplemento pode armazenar até 10 MB de dados usando `AsyncStorage`.
+Dentro de uma função personalizada (ou em qualquer parte de um suplemento), você pode armazenar e acessar dados usando o objeto `OfficeRuntime.AsyncStorage`. `AsyncStorage` é um sistema de armazenamento persistente, não criptografado e de chave-valor que fornece uma alternativa ao [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), que não pode ser usado dentro de funções personalizadas. Um suplemento pode armazenar até 10 MB de dados usando `AsyncStorage`.
 
-Os métodos a seguir estão disponíveis no objeto `AsyncStorage`:
+Os métodos a seguir estão disponíveis no objeto `AsyncStorage` :
  
  - `getItem`
  - `setItem`
@@ -102,7 +102,7 @@ _goGetData = async () => {
 
 ## <a name="displaying-a-dialog-box"></a>Exibição de uma caixa de diálogo
 
-Em uma função personalizada (ou em qualquer parte de um suplemento), você pode usar a API `OfficeRuntime.displayWebDialogOptions` para exibir uma caixa de diálogo. Essa API de caixa de diálogo oferece uma alternativa para a [API de diálogo](../develop/dialog-api-in-office-add-ins.md) que pode ser usada em painéis de tarefas e comandos do suplemento, mas não em funções personalizadas.
+Dentro de uma função personalizada (ou em qualquer parte de um suplemento), você pode usar a API `OfficeRuntime.displayWebDialogOptions` para exibir uma caixa de diálogo. Essa API de diálogo oferece uma alternativa para a [API de diálogo](../develop/dialog-api-in-office-add-ins.md) que pode ser usada dentro painéis de tarefas e comandos de suplemento, mas não dentro de funções personalizadas.
 
 ### <a name="dialog-api-example"></a>Exemplo da API de diálogo 
 
@@ -189,7 +189,7 @@ function getStock (ticker) {
 
 ## <a name="additional-considerations"></a>Considerações adicionais
 
-Para criar um suplemento que possa ser executado em múltiplas plataformas (um dos locatários principais de Suplementos do Office), você não deve acessar o Document Object Model (DOM) em funções personalizadas ou usar bibliotecas como a jQuery que dependem do DOM. No Excel para Windows, onde as funções personalizadas usam o runtime do JavaScript, elas não podem acessar o DOM.
+Para criar um suplemento que será executado em várias plataformas (um dos locatários principais de suplementos do Office), você não deve acessar o modelo de objeto de documento (DOM) em funções personalizadas ou usar bibliotecas como jQuery que dependem de DOM. No Excel para Windows, onde as funções personalizadas usam o tempo de execução do JavaScript, funções personalizadas não podem acessar o DOM.
 
 ## <a name="see-also"></a>Confira também
 
