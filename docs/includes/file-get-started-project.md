@@ -14,19 +14,7 @@ Neste artigo, você será guiado pelo processo de criação de um suplemento do 
 
 ## <a name="create-the-add-in"></a>Criar o suplemento
 
-1. Crie uma pasta na unidade local e chame-a de `my-project-addin`.  É aqui que você criará os arquivos para o seu suplemento.
-
-    ```bash
-    mkdir my-project-addin
-    ```
-
-2. Navegue até a nova pasta.
-
-    ```bash
-    cd my-project-addin
-    ```
-
-3. Use o gerador Yeoman para criar um projeto de suplemento do Project. Execute o seguinte comando e responda as solicitações da seguinte maneira:
+1. Use o gerador Yeoman para criar um projeto de suplemento do Project. Execute o seguinte comando e responda às solicitações da seguinte maneira:
 
     ```bash
     yo office
@@ -41,7 +29,7 @@ Neste artigo, você será guiado pelo processo de criação de um suplemento do 
     
     Depois de concluir o assistente, o gerador criará o projeto e instalará os componentes do nó de suporte.
     
-4. Navegue até a pasta raiz do projeto de aplicativo da Web.
+2. Navegue até a pasta raiz do projeto.
 
     ```bash
     cd "My Office Add-in"
@@ -130,7 +118,7 @@ Neste artigo, você será guiado pelo processo de criação de um suplemento do 
     })();
     ```
 
-4. Abra o arquivo **app.css** que está na raiz do projeto para especificar os estilos personalizados do suplemento. Substitua todo o conteúdo pelo que está a seguir e salve o arquivo.
+4. Abra o arquivo **app.css** na raiz do projeto para especificar os estilos personalizados do suplemento. Substitua todo o conteúdo pelo seguinte código e salve o arquivo.
 
     ```css
     #content-header {
@@ -161,11 +149,11 @@ Neste artigo, você será guiado pelo processo de criação de um suplemento do 
 
 ## <a name="update-the-manifest"></a>Atualizar o manifesto
 
-1. Abra o arquivo **my-office-add-in-manifest.xml** para definir as configurações e os recursos do suplemento.
+1. Abra o arquivo **manifest.xml** para definir as configurações e os recursos do suplemento.
 
 2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o pelo seu nome.
 
-3. O atributo `DefaultValue` do elemento `Description` tem um espaço reservado. Substitua-o com **um suplemento do painel de tarefas do Project**.
+3. O atributo `DefaultValue` do elemento `Description` tem um espaço reservado. Substitua-o com **Um suplemento do painel de tarefas do Project**.
 
 4. Salve o arquivo.
 
@@ -207,7 +195,7 @@ Neste artigo, você será guiado pelo processo de criação de um suplemento do 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Parabéns, você criou com êxito um suplemento do Project! A seguir, aprenda mais sobre os recursos de um suplemento do Project e explore cenários comuns.
+Parabéns, você criou com êxito um suplemento do Project! Em seguida, saiba mais sobre os recursos de um suplemento do Project e explore os cenários comuns.
 
 > [!div class="nextstepaction"]
 > [Suplementos do Project](../project/project-add-ins.md)
