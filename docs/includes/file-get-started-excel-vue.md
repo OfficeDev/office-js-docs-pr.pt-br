@@ -4,6 +4,8 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
+- [Node.js](https://nodejs.org)
+
 - Instalar a [CLI do Vue](https://github.com/vuejs/vue-cli) globalmente.
 
     ```bash
@@ -50,20 +52,17 @@ Cada suplemento requer um arquivo de manifesto para definir os recursos e config
 
     - **Escolha um tipo de projeto:** `Office Add-in containing the manifest only`
     - **Como deseja nomear seu suplemento?:** `My Office Add-in`
-    - **Para qual aplicativo cliente do Office você deseja oferecer suporte?** `Excel`
+    - **Qual aplicativo cliente do Office você gostaria de suportar?:** `Excel`
 
-    Depois de concluir o assistente, um arquivo de manifesto e um arquivo de recurso estarão disponíveis para você criar o seu projeto.
-
-    ![Gerador Yeoman](../images/yo-office.png)
+    ![Gerador do Yeoman](../images/yo-office.png)
     
-    > [!NOTE]
-    > Se for solicitada a substituição de **package.json**, responda **Não** (não substituir).
+    Após concluir o assistente, o gerador cria o arquivo de manifesto.
 
 ## <a name="secure-the-app"></a>Proteger o aplicativo
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-Para ativar o HTTPS para o seu aplicativo, abra **package.json** na raiz do projeto, modifique o script `dev` para adicionar o sinalizador `--https` e salve o arquivo.
+Para ativar o HTTPS para o seu aplicativo, abra o arquivo **package.json** na pasta raiz do projeto Vue, modifique o script `dev` para adicionar o sinalizador `--https` e salve o arquivo.
 
 ```json
 "dev": "webpack-dev-server --https --inline --progress --config build/webpack.dev.conf.js"
@@ -71,9 +70,11 @@ Para ativar o HTTPS para o seu aplicativo, abra **package.json** na raiz do proj
 
 ## <a name="update-the-app"></a>Atualizar o aplicativo
 
-1. No editor de código, abra o arquivo de manifesto (o arquivo no diretório raiz do aplicativo com um nome que termina em "manifest.xml"). Substitua todas as ocorrências de `https://localhost:3000` por `https://localhost:8080` e salve o arquivo.
+1. No editor de código, abra a pasta **Meu Suplemento do Office** que o Yo Office criou na raiz do seu projeto Vue. Nessa pasta, você verá o arquivo de manifesto que define as configurações do seu suplemento: **manifest.xml**.
 
-2. Abra **index.html**, adicione a marca `<script>` a seguir imediatamente antes da marca `</head>` e salve o arquivo.
+2. Abra o arquivo de manifesto, substitua todas as ocorrências de `https://localhost:3000` com `https://localhost:8080` e salve o arquivo.
+
+3. Abra o arquivo **index.html** (localizado na raiz do seu projeto Vue), adicione a seguinte tag `<script>` imediatamente antes da tag `</head>` e salve o arquivo.
 
     ```html
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>

@@ -234,19 +234,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
 
 ### <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
-1. Crie uma pasta na unidade local e nomeie-a `my-word-addin`.  É aqui que criará os arquivos para seu aplicativo.
-
-    ```bash
-    mkdir my-word-addin
-    ```
-
-2. Navegue até a nova pasta.
-
-    ```bash
-    cd my-word-addin
-    ```
-
-3. Use o gerador Yeoman para criar um projeto de suplemento do Word. Execute o seguinte comando e responda as solicitações da seguinte maneira:
+1. Use o gerador Yeoman para criar um projeto de suplemento do Word. Execute o seguinte comando e responda às solicitações da seguinte maneira:
 
     ```bash
     yo office
@@ -261,7 +249,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
     
     Depois de concluir o assistente, o gerador criará o projeto e instalará os componentes do nó de suporte.
     
-4. Navegue até a pasta raiz do projeto de aplicativo da Web.
+2. Navegue até a pasta raiz do projeto.
 
     ```bash
     cd "My Office Add-in"
@@ -299,7 +287,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
     </body>
     ```
 
-2. Abra o arquivo **src\index.js** para especificar o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo. Esse script contém códigos de inicialização além do código que faz alterações no documento do Word inserindo texto no documento quando um botão é escolhido. 
+2. Abra o arquivo **src\index.js** para especificar o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo. Esse script contém códigos de inicialização, além do código que faz alterações no documento do Word, inserindo texto no documento quando um botão é escolhido. 
 
     ```js
     'use strict';
@@ -400,7 +388,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
     })();
     ```
 
-3. Abra o arquivo **app.css** na raiz do projeto para especificar os estilos personalizados do suplemento. Substitua todo o conteúdo pelo que está a seguir e salve o arquivo.
+3. Abra o arquivo **app.css** na raiz do projeto para especificar os estilos personalizados do suplemento. Substitua todo o conteúdo pelo seguinte código e salve o arquivo.
 
     ```css
     #content-header {
@@ -431,7 +419,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
 
 ### <a name="update-the-manifest"></a>Atualizar o manifesto
 
-1. Abra o arquivo **my-office-add-in-manifest.xml** para definir as configurações e os recursos do suplemento.
+1. Abra o arquivo **manifest.xml** para definir as configurações e os recursos do suplemento.
 
 2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o pelo seu nome.
 

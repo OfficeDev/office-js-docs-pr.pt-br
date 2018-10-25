@@ -14,19 +14,7 @@ Neste artigo, você percorrerá o processo de criação de um suplemento do OneN
 
 ## <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
-1. Crie uma pasta na unidade local e nomeie-a `my-onenote-addin`.  É aqui que criará os arquivos para seu aplicativo.
-
-    ```bash
-    mkdir my-onenote-addin
-    ```
-
-2. Navegue até a nova pasta.
-
-    ```bash
-    cd my-onenote-addin
-    ```
-
-3. Use o gerador Yeoman para criar um projeto de suplemento do OneNote. Execute o seguinte comando e responda as solicitações da seguinte maneira:
+1. Use o gerador Yeoman para criar um projeto do suplemento do OneNote. Execute o seguinte comando e responda às solicitações da seguinte maneira:
 
     ```bash
     yo office
@@ -41,7 +29,7 @@ Neste artigo, você percorrerá o processo de criação de um suplemento do OneN
     
     Depois de concluir o assistente, o gerador criará o projeto e instalará os componentes do nó de suporte.
     
-4. Navegue até a pasta raiz do projeto de aplicativo da Web.
+2. Navegue até a pasta raiz do projeto.
 
     ```bash
     cd "My Office Add-in"
@@ -49,9 +37,9 @@ Neste artigo, você percorrerá o processo de criação de um suplemento do OneN
 
 ## <a name="update-the-code"></a>Atualizar o código
 
-1. No seu editor de código, abra o **index.html** na raiz do projeto. Esse arquivo especifica o HTML que será processado no painel de tarefas do suplemento.
+1. No seu editor de código, abra o arquivo **index.html** na raiz do projeto. Esse arquivo contém o HTML que será processado no painel de tarefas do suplemento.
 
-2. |||UNTRANSLATED_CONTENT_START|||Replace the `<body>` element with the following markup and save the file.|||UNTRANSLATED_CONTENT_END||| 
+2. Substitua o elemento `<body>` pela marcação a seguir e salve o arquivo. 
 
     ```html
     <body class="ms-font-m ms-welcome">
@@ -73,7 +61,7 @@ Neste artigo, você percorrerá o processo de criação de um suplemento do OneN
     </body>
     ```
 
-3. Abra o arquivo **src\index.js** para especificar o script do suplemento. Substitua todo o conteúdo pelo seguinte código e salve o arquivo.
+3. Abra o arquivo **src\index.js** para especificar o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
 
     ```js
     import * as OfficeHelpers from "@microsoft/office-js-helpers";
@@ -196,11 +184,11 @@ Neste artigo, você percorrerá o processo de criação de um suplemento do OneN
 
 ## <a name="update-the-manifest"></a>Atualizar o manifesto
 
-1. Abra o arquivo **my-office-add-in-manifest.xml** para definir as configurações e os recursos do suplemento.
+1. Abra o arquivo **manifest.xml** para definir as configurações e os recursos do suplemento.
 
 2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o pelo seu nome.
 
-3. O atributo `DefaultValue` do elemento `Description` tem um espaço reservado. Substitua-o por **um suplemento do painel de tarefas do OneNote**.
+3. O atributo `DefaultValue` do elemento `Description` tem um espaço reservado. Substitua-o por **Um suplemento de painel de tarefas para OneNote**.
 
 4. Salve o arquivo.
 
@@ -228,15 +216,15 @@ Neste artigo, você percorrerá o processo de criação de um suplemento do OneN
 
     - Se estiver conectado com sua conta corporativa ou de estudante, selecione a guia **MINHA ORGANIZAÇÃO** e escolha  **Carregar meu suplemento**. 
 
-    A imagem a seguir mostra a guia **MEUS SUPLEMENTOS** para blocos de anotações do consumidor.
+    A imagem a seguir mostra a guia **MEUS SUPLEMENTOS** para blocos de anotações de consumidor.
 
     <img alt="The Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
 
-3. No diálogo Carregar suplemento, navegue até **one-note-add-in-manifest.xml** na pasta do projeto e escolha **Carregar**. 
+3. Na caixa de diálogo Carregar suplemento, navegue até **manifest.xml** na pasta do projeto e escolha **Carregar**. 
 
-4. Na guia **Página Inicial**, escolha o botão **Exibir painel de tarefas** na faixa de opções. O painel de tarefas do suplemento abre em um iFrame perto da página do OneNote.
+4. Na guia **Página inicial** , escolha o botão **Mostrar painel de tarefas** na faixa de opções. O painel de tarefas do suplemento abre em um iFrame ao lado da página do OneNote.
 
-5. Insira o seguinte conteúdo HTML na área de texto e escolha **Adicionar estrutura de tópicos**.  
+5. Insira o seguinte conteúdo HTML na área de texto e escolha **Adicionar estrutura do código**.  
 
     ```html
     <ol>
@@ -265,7 +253,7 @@ Neste artigo, você percorrerá o processo de criação de um suplemento do OneN
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Parabéns, você criou com êxito um suplemento do OneNote! Em seguida, saiba mais sobre os principais conceitos de criação de suplementos do OneNote.
+Parabéns, você criou com êxito um suplemento do OneNote! Em seguida, conheça mais sobre os principais conceitos de criação de suplementos do OneNote.
 
 > [!div class="nextstepaction"]
 > [Visão geral da programação da API JavaScript do OneNote](../onenote/onenote-add-ins-programming-overview.md)
