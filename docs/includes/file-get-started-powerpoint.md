@@ -178,19 +178,7 @@ Neste artigo, você fará um passo a passo do processo de criar um suplemento do
 
 ### <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
-1. Crie uma pasta na unidade local e nomeie-a `my-powerpoint-addin`.  É aqui que criará os arquivos para seu aplicativo.
-
-    ```bash
-    mkdir my-powerpoint-addin
-    ```
-
-2. Navegue até a nova pasta.
-
-    ```bash
-    cd my-powerpoint-addin
-    ```
-
-3. Use o gerador Yeoman para criar um projeto de suplemento do PowerPoint. Execute o seguinte comando e responda as solicitações da seguinte maneira:
+1. Use o gerador Yeoman para criar um projeto de suplemento do PowerPoint. Execute o seguinte comando e responda as solicitações da seguinte maneira:
 
     ```bash
     yo office
@@ -203,9 +191,9 @@ Neste artigo, você fará um passo a passo do processo de criar um suplemento do
 
     ![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-powerpoint-jquery.png)
     
-    Depois de concluir o assistente, o gerador criará o projeto e instalará os componentes do nó de suporte.
+    Depois de concluir o assistente, o gerador criará os arquivos do projeto e instalará os componentes Node de suporte.
     
-4. Navegue até a pasta raiz do projeto de aplicativo da Web.
+2. Navegue até a pasta raiz do projeto.
 
     ```bash
     cd "My Office Add-in"
@@ -239,7 +227,7 @@ Neste artigo, você fará um passo a passo do processo de criar um suplemento do
     </body>
     ```
 
-3. Abra o arquivo **src\index.js** para especificar o script do suplemento. Substitua todo o conteúdo pelo seguinte código e salve o arquivo.
+3. Abra o arquivo **src\index.js** para especificar o script para o suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
 
     ```js
     'use strict';
@@ -284,7 +272,7 @@ Neste artigo, você fará um passo a passo do processo de criar um suplemento do
     })();
     ```
 
-4. Abra o arquivo **app.css** na raiz para especificar os estilos personalizados do suplemento. Substitua todo o conteúdo pelo seguinte código e salve o arquivo.
+4. Abra o arquivo **app.css** na raiz do projeto para especificar os estilos personalizados do suplemento. Substitua todo o conteúdo pelo seguinte código e salve o arquivo.
 
     ```css
     #content-header {

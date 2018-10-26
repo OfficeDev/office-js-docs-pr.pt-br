@@ -154,17 +154,9 @@ Neste artigo, você passará pelo processo de criação de um suplemento do Exce
     npm install -g yo generator-office
     ```
 
-### <a name="create-the-web-app"></a>Criar o aplicativo web
+### <a name="create-the-web-app"></a>Criar o aplicativo Web
 
-1. Crie uma pasta em sua unidade local e nomeie-a **my-addin**. É aqui que você criará os arquivos para seu aplicativo.
-
-2. Navegue até a pasta do seu aplicativo.
-
-    ```bash
-    cd my-addin
-    ```
-
-3. Use o gerador Yeoman para gerar o arquivo de manifesto para o seu suplemento. Execute o seguinte comando e responda aos prompts, conforme mostrado na captura de tela a seguir:
+1. Use o gerador Yeoman para criar um projeto de suplemento do Excel. Execute o comando a seguir e responda às mensagens da seguinte forma:
 
     ```bash
     yo office
@@ -177,40 +169,41 @@ Neste artigo, você passará pelo processo de criação de um suplemento do Exce
 
     ![Gerador do Yeoman](../images/yo-office-jquery.png)
     
-    Depois de concluir o assistente, o gerador criará o projeto e instalará os componentes do Nó de suporte.
+    Depois de concluir o assistente, o gerador criará o projeto e instalará os componentes de suporte do Node.
 
-4. Navegue até a pasta raiz do projeto de aplicativo da web.
+2. Navegue até a pasta raiz do projeto.
 
     ```bash
     cd "My Office Add-in"
     ```
 
-5. No seu editor de código, abra o **index.html** na raiz do projeto. Este arquivo especifica o HTML que será processado no painel de tarefas do suplemento. 
+### <a name="update-the-code"></a>Atualizar o código 
+
+1. No editor de código, abra o **index.html** na raiz do projeto. Este arquivo especifica o HTML que será processado no painel de tarefas do suplemento. 
  
-6. Dentro de **index.html**, substitua a marca `header` gerada pela seguinte marcação.
+2. Dentro do **index.html**, substitua a tag `body` pela marcação a seguir e salve o arquivo.
  
     ```html
-    <div id="content-header">
-        <div class="padding">
-            <h1>Welcome</h1>
+    <body class="ms-font-m ms-welcome">
+        <div id="content-header">
+            <div class="padding">
+                <h1>Welcome</h1>
+            </div>
         </div>
-    </div>
+        <div id="content-main">
+            <div class="padding">
+                <p>Choose the button below to set the color of the selected range to green.</p>
+                <br />
+                <h3>Try it out</h3>
+                <button class="ms-Button" id="set-color">Set color</button>
+            </div>
+        </div>
+        <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
+    </body>    
     ```
 
-7. Dentro de **index.html**, substitua a marca `main` gerada pela marcação a seguir e salve o arquivo.
-
-    ```html
-    <div id="content-main">
-        <div class="padding">
-            <p>Choose the button below to set the color of the selected range to green.</p>
-            <br />
-            <h3>Try it out</h3>
-            <button class="ms-Button" id="set-color">Set color</button>
-        </div>
-    </div>
-    ```
-
-8. Abra o arquivo **src\index.js** para especificar o script do suplemento. Substitua todo o conteúdo pelo seguinte código e salve o arquivo.
+3. Abra o arquivo **src/index.js** para especificar o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
 
     ```js
     'use strict';
@@ -238,7 +231,7 @@ Neste artigo, você passará pelo processo de criação de um suplemento do Exce
     })();
     ```
 
-9. Abra o arquivo **app.css** para especificar os estilos personalizados para o suplemento. Substitua todo o conteúdo com o código a seguir e salve o arquivo.
+4. Abra o arquivo **app.css** para especificar os estilos personalizados para o suplemento. Substitua todo o conteúdo com o código a seguir e salve o arquivo.
 
     ```css
     #content-header {
@@ -269,15 +262,13 @@ Neste artigo, você passará pelo processo de criação de um suplemento do Exce
 
 ### <a name="update-the-manifest"></a>Atualizar o manifesto
 
-1. Abra o arquivo **my-office-add-in-manifest.xml** para definir as configurações e os recursos do suplemento. 
+1. Abra o arquivo **manifest.xml** para definir as configurações e os recursos do suplemento. 
 
-2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o pelo seu nome.
+2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o com seu nome.
 
-3. O atributo `DefaultValue` do elemento `DisplayName` tem um espaço reservado. Substitua-o pelo **Meu suplemento do Office**.
+3. O atributo `DefaultValue` do elemento `Description` tem um espaço reservado. Substitua-o por **Um suplemento do painel de tarefas para o Excel**.
 
-4. O atributo `DefaultValue` do elemento `Description` tem um espaço reservado. Substitua-o por **Um suplemento do painel de tarefas para o Excel**.
-
-5. Salve o arquivo.
+4. Salve o arquivo.
 
     ```xml
     ...
