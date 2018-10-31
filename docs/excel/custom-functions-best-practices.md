@@ -1,13 +1,13 @@
 ---
-ms.date: 10/03/2018
+ms.date: 10/17/2018
 description: Saiba mais sobre melhores práticas e padrões recomendados para funções personalizadas do Excel.
 title: Práticas recomendadas para funções personalizadas
-ms.openlocfilehash: 218e62cd074ccf3f3708bba90c938f7ddef059cb
-ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
+ms.openlocfilehash: 10ba29966c1e991ca23674ce3e5da88de2772e00
+ms.sourcegitcommit: a6d6348075c1abed76d2146ddfc099b0151fe403
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "25579818"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "25639998"
 ---
 # <a name="custom-functions-best-practices-preview"></a>Práticas recomendadas para funções personalizadas (versão prévia)
 
@@ -128,7 +128,7 @@ Tenha em mente as seguintes práticas recomendadas ao criar funções personaliz
 
 ## <a name="additional-considerations"></a>Considerações adicionais
 
-Para criar um suplemento que possa ser executado em múltiplas plataformas (um dos locatários chaves de Suplementos do Office), você não deve acessar o Document Object Model (DOM) em funções personalizadas ou usar bibliotecas como a jQuery que dependem do DOM. No Excel para Windows, onde as funções personalizadas usam o  [tempo de execução do JavaScript](custom-functions-runtime.md), as funções personalizadas não podem acessar o DOM.
+Para criar um suplemento que será executado em várias plataformas (um dos locatários principais de suplementos do Office), você não deve acessar o Modelo de Objeto do Documento (DOM) em funções personalizadas ou usar bibliotecas como jQuery que dependam do DOM. No Excel para Windows, onde as funções personalizadas usam o [tempo de execução do JavaScript](custom-functions-runtime.md), funções personalizadas não podem acessar o DOM.
 
 ## <a name="see-also"></a>Confira também
 

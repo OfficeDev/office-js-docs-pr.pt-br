@@ -1,13 +1,13 @@
 ---
-ms.date: 09/27/2018
+ms.date: 10/17/2018
 description: Defina metadados para funções personalizadas no Excel.
 title: Metadados para funções personalizadas no Excel
-ms.openlocfilehash: b7c7f26d56309f43758b9b13025ebaad661aeaed
-ms.sourcegitcommit: f47654582acbe9f618bec49fb97e1d30f8701b62
+ms.openlocfilehash: cff1cbc22f39c99597d4abe7005d7b8bbce6e185
+ms.sourcegitcommit: a6d6348075c1abed76d2146ddfc099b0151fe403
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "25579867"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "25640005"
 ---
 # <a name="custom-functions-metadata-preview"></a>Metadados de funções personalizadas (versão prévia)
 
@@ -111,10 +111,10 @@ A `functions` propriedade é uma matriz de objetos de função personalizada. A 
 
 |  Propriedade  |  Tipo de dados  |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|:-----|
-|  `description`  |  sequência de caracteres  |  Não  |  A descrição da função que os usuários finais veem no Excel. Por exemplo, **Converte um valor de Celsius para Fahrenheit**. |
-|  `helpUrl`  |  sequência de caracteres  |   Não  |  URL que fornece informações sobre a função. (Ela é exibida em um painel de tarefas.) Por exemplo, **http://contoso.com/help/convertcelsiustofahrenheit.html**. |
-| `id`     | sequência de caracteres | Sim | Um ID exclusivo para a função. Este ID pode conter apenas caracteres alfanuméricos e períodos e não deve ser alterado depois que é definido. |
-|  `name`  |  sequência de caracteres  |  Sim  |  O nome da função que os usuários finais veem no Excel. No Excel, esse nome de função será prefixado pelo namespace das funções personalizadas que é especificado no arquivo de manifesto XML. |
+|  `description`  |  string  |  Não  |  A descrição da função que os usuários finais veem no Excel. Por exemplo, **Converte um valor de Celsius para Fahrenheit**. |
+|  `helpUrl`  |  string  |   Não  |  URL que fornece informações sobre a função. (Ela é exibida em um painel de tarefas.) Por exemplo, **http://contoso.com/help/convertcelsiustofahrenheit.html**. |
+| `id`     | string | Sim | Um ID exclusivo da função. Este ID pode conter apenas caracteres alfanuméricos e pontos e não deve ser alterado depois de definido. |
+|  `name`  |  string  |  Sim  |  O nome da função que os usuários finais veem no Excel. No Excel, esse nome de função será prefixado pelo namespace das funções personalizadas que é especificado no arquivo de manifesto XML. |
 |  `options`  |  objeto  |  Não  |  Permite personalizar alguns aspectos de como e quando o Excel executa a função. Consulte o [objeto options](#options-object) para obter detalhes. |
 |  `parameters`  |  matriz  |  Sim  |  Matriz que define os parâmetros de entrada para a função. Consulte a [matriz de parâmetros](#parameters-array) , para obter detalhes. |
 |  `result`  |  objeto  |  Sim  |  Objeto que define o tipo de informação que é retornado pela função. Consulte o [objeto result](#result-object) para obter detalhes. |
@@ -126,7 +126,7 @@ O objeto  `options` permite personalizar alguns aspectos do como e quando o Exce
 |  Propriedade  |  Tipo de dados  |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|:-----|
 |  `cancelable`  |  booleano  |  Não<br/><br/>O valor padrão é `false`.  |  Se `true`, o Excel chama o manipulador de `onCanceled` sempre que o usuário realizar uma ação que tem o efeito de cancelar a função; por exemplo, disparando manualmente o recálculo ou editando uma célula referenciada pela função. Se você usar essa opção, o Excel chamará a função JavaScript com o parâmetro adicional `caller`. (***Não*** registre esse parâmetro na propriedade `parameters`). No corpo da função, um manipulador deve ser atribuído ao membro `caller.onCanceled`. Para saber mais, confira [Cancelar uma função](custom-functions-overview.md#canceling-a-function). |
-|  `stream`  |  booleano  |  Não<br/><br/>O valor padrão é `false`.  |  Se for `true`, a função pode modificar o valor da célula repetidamente, mesmo quando invocada apenas uma vez. Essa opção é útil para fontes de dados que mudam rapidamente, como o preço de uma ação. Caso você use essa opção, o Excel chamará a função JavaScript com um parâmetro `caller` adicional. (***Não*** registre esse parâmetro na propriedade `parameters`). A função não deve ter a instrução `return`. Em vez disso, o valor do resultado é passado como o argumento do método de retorno de chamada `caller.setResult`. Para obter mais informações, consulte [funções de fluxo contínuo](custom-functions-overview.md#streaming-functions). |
+|  `stream`  |  booleano  |  Não<br/><br/>O valor padrão é `false`.  |  Se `true`, a função pode atualizar o valor da célula repetidamente, mesmo quando invocada apenas uma vez. Essa opção é útil para alterar fontes de dados rapidamente, como um preço de ação. Se você usar essa opção, o Excel chamará a função JavaScript com o parâmetro adicional `caller`. (***Não*** registre esse parâmetro na propriedade `parameters` ). A função não deve ter a instrução `return`. Em vez disso, o valor de resultado é passado como o argumento do `caller.setResult` método de retorno de chamada. Para obter mais informações, consulte [Funções de fluxo contínuo](custom-functions-overview.md#streaming-functions). |
 
 ## <a name="parameters"></a>parameters
 
@@ -134,10 +134,10 @@ A propriedade  `parameters` é uma matriz de parâmetros. A tabela a seguir list
 
 |  Propriedade  |  Tipo de dados  |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|:-----|
-|  `description`  |  sequência de caracteres  |  Não |  Uma descrição do parâmetro.  |
-|  `dimensionality`  |  sequência de caracteres  |  Não  |  Deve ser **scalar** (um valor não-matriz) ou **matrix** (uma matriz bidimensional).  |
-|  `name`  |  sequência de caracteres  |  Sim  |  O nome do parâmetro. Esse nome é exibido no intelliSense do Excel.  |
-|  `type`  |  sequência de caracteres  |  Não  |  O tipo de dados do parâmetro. Deve ser **boolean**, **number** ou **string**.  |
+|  `description`  |  string  |  Não |  Uma descrição do parâmetro.  |
+|  `dimensionality`  |  string  |  Não  |  Deve ser **scalar** (um valor não-matriz) ou **matrix** (uma matriz bidimensional).  |
+|  `name`  |  string  |  Sim  |  O nome do parâmetro. Esse nome é exibido no intelliSense do Excel.  |
+|  `type`  |  string  |  Não  |  O tipo de dados do parâmetro. Deve ser **boolean**, **number** ou **string**.  |
 
 ## <a name="result"></a>result
 
@@ -145,8 +145,8 @@ O objeto  `results` define o tipo de informação retornado pela função. A tab
 
 |  Propriedade  |  Tipo de dados  |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|:-----|
-|  `dimensionality`  |  sequência de caracteres  |  Não  |  Deve ser **scalar** (um valor não-matriz) ou **matrix** (uma matriz bidimensional). |
-|  `type`  |  sequência de caracteres  |  Sim  |  O tipo de dados do parâmetro. Deve ser **boolean**, **number** ou **string**.  |
+|  `dimensionality`  |  string  |  Não  |  Deve ser **scalar** (um valor não-matriz) ou **matrix** (uma matriz bidimensional). |
+|  `type`  |  string  |  Sim  |  O tipo de dados do parâmetro. Deve ser **boolean**, **number** ou **string**.  |
 
 ## <a name="see-also"></a>Confira também
 

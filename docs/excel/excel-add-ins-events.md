@@ -1,13 +1,13 @@
 ---
 title: Trabalhar com eventos usando a API JavaScript do Excel
 description: ''
-ms.date: 09/21/2018
-ms.openlocfilehash: b56d25e7e0306b4881115397d4136e63ddc03e5c
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.date: 10/17/2018
+ms.openlocfilehash: c3fbdf27dcbedf0d006973e6ebc2e01b02e6cec2
+ms.sourcegitcommit: a6d6348075c1abed76d2146ddfc099b0151fe403
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459172"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "25639935"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Trabalhar com eventos usando a API JavaScript do Excel 
 
@@ -41,7 +41,10 @@ Todas as alterações que sejam compatíveis com o comportamento padrão do Exce
 
 ### <a name="lifecycle-of-an-event-handler"></a>Ciclo de vida de um manipulador de eventos
 
-Um manipulador de eventos é criado quando um suplemento o registra e é destruído quando o suplemento cancela seu registro ou quando o suplemento for fechado. Os manipuladores de eventos não persistem como parte do arquivo de Excel.
+Um manipulador de eventos é criado quando um suplemento registra o manipulador de eventos. Ele é destruído quando o suplemento cancela o registro do manipulador de eventos ou quando os suplementos são atualizados, recarregados ou fechados. Manipuladores de eventos não persistem como parte do arquivo do Excel, ou em sessões com Excel Online.
+
+> [!CAUTION]
+> Quando um objeto ao qual os eventos são registrados for excluído (por exemplo, uma tabela com um evento `onChanged` registrado), o manipulador de eventos não dispara mais, porém permanece na memória até o suplemento ou sessão de Excel for atualizado(a) ou fechado(a).
 
 ### <a name="events-and-coauthoring"></a>Eventos e coautoria
 
@@ -147,4 +150,4 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>Confira também
 
-- [Conceitos de programação fundamentais com a API JavaScript do Excel](excel-add-ins-core-concepts.md)
+- [Conceitos fundamentais de programação com a API JavaScript do Excel](excel-add-ins-core-concepts.md)
