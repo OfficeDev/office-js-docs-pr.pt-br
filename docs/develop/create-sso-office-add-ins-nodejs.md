@@ -1,12 +1,12 @@
 ---
-title: Criar um Suplemento do Office com Node.js que usa logon único
+title: Crie um Suplemento do Office com Node.js que use logon único
 description: 23/01/2018
-ms.openlocfilehash: b257729bbf868c91b2e98509b6ef04a0c38d9b42
-ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
+ms.openlocfilehash: a6e91b84de69e4b2da5cc10277f0ca3579287b96
+ms.sourcegitcommit: 9b021af6cb23a58486d6c5c7492be425e309bea1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "24016420"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "26533760"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Crie um Suplemento do Office com Node.js que use logon único (prévia)
 
@@ -37,9 +37,11 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     > Há três versões do exemplo:  
     > * A pasta **Before** (antes) traz um projeto inicial. A interface do usuário e outros aspectos do suplemento que não estão diretamente ligados ao SSO ou à autorização já estão prontos. As próximas seções deste artigo apresentam uma orientação passo a passo para concluir o projeto. 
     > * A versão **Completed** (concluído) do exemplo apresenta como seria o suplemento quando concluídos os procedimentos apresentados neste artigo, com exceção de que o projeto concluído traz comentários de códigos que seriam redundantes neste artigo. Para usar a versão concluída, apenas siga as instruções apresentadas neste artigo, substituindo "Before" por "Completed" e pulando as seções **Codificar o lado do cliente** e **Codificar o lado do servidor**.
-    > * A versão **Multilocatário Completa** é uma amostra completa que oferece suporte a multilocação. Explore esta amostra se você pretende oferecer suporte a contas da Microsoft de domínios diferentes com o SSO.
+    > * A versão **Multilocatário completa** é um exemplo completo que ofereça suporte para multilocação. Explore este exemplo, se você pretende oferecer suporte para contas da Microsoft de domínios diferentes com SSO.
+    >
+    > _Independentemente de qual versão você usa, será necessário ter um certificado confiável para um localhost. Confira a observação “IMPORTANTE” no Leiame do repositório._
 
-2. Abra um console Git bash na pasta **Antes**.
+2. Abra um console Git bash na pasta **Before**.
 
 3. Insira `npm install` no console para instalar todas as dependências discriminadas no arquivo package.json.
 
@@ -50,31 +52,31 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 ## <a name="register-the-add-in-with-azure-ad-v20-endpoint"></a>Registre o suplemento com o ponto de extremidade v2.0 do Azure AD
 
-As instruções a seguir foram escritas de modo genérico para que possam ser usadas em diversos lugares. Para este artigo, faça o seguinte:
+As instruções a seguir são escritas de forma geral, elas podem ser usadas em vários locais. Para este artigo faça o seguinte:
 - Substitua o espaço reservado **$ADD-IN-NAME$** por `“Office-Add-in-NodeJS-SSO`.
 - Substitua o espaço reservado **$FQDN-WITHOUT-PROTOCOL$** por `localhost:3000`.
-- Quando você especificar permissões na caixa de diálogo **Selecionar Permissões**, marque as caixas para as permissões a seguir. Apenas a primeira é realmente necessária pelo seu suplemento; mas a `profile` permissão é necessária para que o host do Office obtenha um token para seu suplemento de aplicativo da Web.
+- Quando você especificar permissões na caixa de diálogo **Selecionar permissões**, marque as caixas das seguintes permissões. Somente a primeira permissão é realmente necessária pelo suplemento em si, mas a permissão `profile` é necessária para que o host do Office obtenha um token no aplicativo Web do seu suplemento.
     * Files.Read.All
     * profile
 
 [!INCLUDE[](../includes/register-sso-add-in-aad-v2-include.md)]
 
 
-## <a name="grant-administrator-consent-to-the-add-in"></a>Concessão de consentimento de administrador ao suplemento
+## <a name="grant-administrator-consent-to-the-add-in"></a>Conceder consentimento ao administrador para o suplemento
 
 [!INCLUDE[](../includes/grant-admin-consent-to-an-add-in-include.md)]
 
-## <a name="configure-the-add-in"></a>Configuração do suplemento
+## <a name="configure-the-add-in"></a>Configurar o suplemento
 
 1. Em seu editor de códigos, abra o arquivo src\server.ts. Perto da parte superior, há uma chamada para um construtor de uma classe `AuthModule`. Há alguns parâmetros de cadeia de caracteres no construtor aos quais você precisa atribuir valores.
 
-2. Na propriedade `client_id`, substitua o espaço reservado `{client GUID}` pelo ID do aplicativo que você salvou ao registrar o suplemento. Ao terminar, deve haver apenas um GUID entre aspas simples. Não deve haver nenhum caractere "{}".
+2. Na propriedade `client_id`, substitua o espaço reservado `{client GUID}` pela ID do aplicativo que você salvou ao registrar o suplemento. Quando terminar, deverá haver apenas um GUID entre aspas simples. Não deverá haver nenhum caractere “{}”.
 
 3. Na propriedade `client_secret`, substitua o espaço reservado `{client secret}` pelo segredo do aplicativo que você salvou ao registrar o suplemento.
 
 4. Na propriedade `audience`, substitua o espaço reservado `{audience GUID}` pela ID do aplicativo que você salvou ao registrar o suplemento. (Exatamente o mesmo valor que você atribuiu à propriedade `client_id`.)
   
-3. Na sequência atribuída à propriedade `issuer`, você verá o espaço reservado *{O365 tenant GUID}*. Substitua-o pelo ID de locação do Office 365. Use um dos métodos em [Encontre seu ID de locatário do Office 365](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id) para obtê-lo. Quando você terminar, o `issuer` valor da propriedade deve ser algo como isto:
+3. Na cadeia de caracteres atribuída à propriedade `issuer`, você verá o espaço reservado *{O365 tenant GUID}*. Substitua pela ID de locatário do Office 365. Use os métodos em [Encontrar sua ID de locatário do Office 365](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id) para obtê-la. Quando terminar, o valor da propriedade `issuer` deve ser algo parecido com isto:
 
     `https://login.microsoftonline.com/12345678-1234-1234-1234-123456789012/v2.0`
 
@@ -97,10 +99,10 @@ As instruções a seguir foram escritas de modo genérico para que possam ser us
     </WebApplicationInfo>
     ```
 
-1. Substitua o espaço reservado "{application_GUID here}" *nos dois lugares* na marcação pelo ID do Aplicativo que você copiou ao registrar seu suplemento. ("{}" não faz parte do ID, portanto não inclua.) Esse é o mesmo ID usado para o ClientID e Audience no web.config.
+1. Substitua o espaço reservado "{application_GUID here}" *nos dois lugares* na marcação pela ID do Aplicativo que você copiou ao registrar seu suplemento. (O símbolo “{}” não faz parte da ID, portanto não o inclua.) Essa é a mesma ID usada para a ClientID e a Audience no web.config.
 
     > [!NOTE]
-    > * O valor de **Resource** é o **URI do ID do Aplicativo** que você definiu quando adicionou a plataforma da API Web no registro do suplemento.
+    > * O valor de **Resource** é o **URI da ID do Aplicativo** que você definiu quando adicionou a plataforma API Web no registro do suplemento.
     > * A seção **Scopes** só será usada para gerar uma caixa de diálogo de consentimento se o suplemento for vendido no AppSource.
 
 1. Salve e feche o arquivo.
@@ -113,7 +115,7 @@ As instruções a seguir foram escritas de modo genérico para que possam ser us
     * Um método `showResult` que exibirá os dados retornados do Microsoft Graph (ou uma mensagem de erro) na parte inferior do painel de tarefas.
     * Um método `logErrors` que registrará erros de console que não são destinados ao usuário final.
 
-11. Abaixo da atribuição para `Office.initialize`, adicione o código a seguir. Observe o seguinte sobre este código:
+11. Abaixo da atribuição a `Office.initialize`, adicione o código a seguir. Observe o seguinte sobre este código:
 
     * O processamento de erros no suplemento às vezes tentará novamente obter um token de acesso automaticamente, usando um conjunto diferente de opções. A variável de contador `timesGetOneDriveFilesHasRun` e as variáveis sinalizador `triedWithoutForceConsent` e `timesMSGraphErrorReceived` são usadas para garantir que o usuário não seja trocado repetidas vezes em tentativas falhas de obter um token. 
     * Você criará um método `getDataWithToken` na próxima etapa, mas observe que ele define uma opção chamada `forceConsent` como `false`. Trataremos mais disso na etapa seguinte.
@@ -132,7 +134,7 @@ As instruções a seguir foram escritas de modo genérico para que possam ser us
 
 1. Abaixo do método `getOneDriveFiles`, adicione o código a seguir. Observe o seguinte sobre este código:
 
-    * [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) é a nova API no Office.js que permite que um suplemento solicite ao aplicativo host do Office (Excel, PowerPoint, Word, etc.) um token de acesso para o suplemento (para o usuário conectado ao Office). O aplicativo host do Office, por sua vez, solicita o token ao ponto de extremidade 2.0 do Azure AD. Uma vez que você previamente autorizou o host do Office para o seu suplemento ao registrá-lo, o Azure AD enviará o token.
+    * O [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) é a nova API no Office.js que permite que um suplemento solicite ao aplicativo host do Office (Excel, PowerPoint, Word, etc.) um token de acesso para o suplemento (para o usuário conectado ao Office). O aplicativo host do Office, por sua vez, solicita o token ao ponto de extremidade 2.0 do Azure AD. Uma vez que você previamente autorizou o host do Office para o seu suplemento ao registrá-lo, o Azure AD enviará o token.
     * Se nenhum usuário estiver conectado ao Office, o host do Office solicitará que o usuário se conecte.
     * O parâmetro de opções configura o `forceConsent` como `false`. Dessa forma, não será solicitado que o usuário consinta o acesso ao host do Office ao seu suplemento sempre que ele o usar. Na primeira vez que o usuário tiver o suplemento, a chamada de `getAccessTokenAsync` falhará, mas lógica de processamento de erros que você adicionará em uma etapa posterior será automaticamente chamada com a opção `forceConsent` definida como `true` e o usuário será solicitado a consentir, mas somente essa primeira vez.
     * Você criará o método `handleClientSideErrors` em uma etapa posterior.
@@ -258,7 +260,7 @@ As instruções a seguir foram escritas de modo genérico para que possam ser us
         break;      
     ```
 
-1. Substitua `TODO7` pelo código a seguir. O Erro 13008 ocorre quando o usuário dispara uma operação que chama `getAccessTokenAsync` antes que uma chamada anterior seja concluída.
+1. Substitua `TODO7` pelo código a seguir. O Erro 13008 ocorre quando o usuário aciona uma operação que chama `getAccessTokenAsync` antes que uma chamada anterior dele seja concluída.
 
     ```javascript
     case 13008:
@@ -407,7 +409,7 @@ Há dois arquivos do lado do servidor que precisam ser modificados.
     * O parâmetro de recurso é opcional. Não deve ser usado quando o STS é o ponto de extremidade V 2.0 do AAD. ele infere o recurso dos escopos e retorna um erro se um recurso é enviado na Solicitação HTTP. 
     * Gerar uma exceção no bloco `catch` *não* causará o envio imediato do "500 Erro Interno do Servidor" para o cliente. Chamar o código no arquivo server.js acionará essa exceção e a transformará em uma mensagem de erro que será enviada para o cliente.
 
-        ```javascript
+        ```typescript
         private async exchangeForToken(jwt: string, scopes: string[] = ['openid'], resource?: string) {
             try {
                 // TODO3: Construct the parameters that will be sent in the body of the 
@@ -428,7 +430,7 @@ Há dois arquivos do lado do servidor que precisam ser modificados.
     * Um STS com suporte para o fluxo "on behalf of" espera determinados pares de valor/propriedade no corpo da solicitação HTTP. Esse código constrói um objeto que se tornará o corpo da solicitação. 
     * Uma propriedade de recurso é adicionada ao corpo se, e somente se, um recurso é transmitido para o método.
 
-        ```javascript
+        ```typescript
         const v2Params = {
                 client_id: this.clientId,
                 client_secret: this.clientSecret,
@@ -451,7 +453,7 @@ Há dois arquivos do lado do servidor que precisam ser modificados.
 
 3. Substitua `TODO4` pelo código a seguir que envia a solicitação HTTP para o ponto de extremidade do token do STS.
 
-    ```javascript
+    ```typescript
     const res = await fetch(`${this.stsDomain}/${this.tenant}/${this.tokenURLsegment}`, {
         method: 'POST',
         body: form(finalParams),
@@ -464,7 +466,7 @@ Há dois arquivos do lado do servidor que precisam ser modificados.
 
 4. Substitua `TODO5` pelo código a seguir. Observe que gerar uma exceção *não* causará o envio imediato do "500 Erro Interno do Servidor" para o cliente. Chamar o código no arquivo server.js acionará essa exceção e a transformará em uma mensagem de erro que será enviada para o cliente.
 
-    ```javascript
+    ```typescript
      if (res.status !== 200) {
         const exception = await res.json();
         throw exception;                
@@ -473,7 +475,7 @@ Há dois arquivos do lado do servidor que precisam ser modificados.
 
 5. Substitua `TODO6` pelo código a seguir. Observe que o código persiste no token de acesso ao recurso, e é a hora de expiração, além de retorná-lo. O código de chamada pode evitar chamadas desnecessárias ao STS reutilizando um token de acesso não expirado ao recurso. Você verá como fazer isso na próxima seção.
 
-    ```javascript  
+    ```typescript  
     const json = await res.json();
     const resourceToken = json['access_token'];
     ServerStorage.persist('ResourceToken', resourceToken);
@@ -492,7 +494,7 @@ Há dois arquivos do lado do servidor que precisam ser modificados.
     * Os comentários acima sobre os parâmetros para o método `exchangeForToken` aplicam-se aos parâmetros deste método também.
     * O método primeiro verifica o armazenamento persistente para um token de acesso ao recurso que não expirou e não vai expirar no próximo minuto. Ele chama o método `exchangeForToken` que você criou na última seção somente se necessário.
 
-    ```javascript
+    ```typescript
     async acquireTokenOnBehalfOf(jwt: string, scopes: string[] = ['openid'], resource?: string) {
         const resourceTokenExpirationTime = ServerStorage.retrieve('ResourceTokenExpiresAt');
         if (moment().add(1, 'minute').diff(resourceTokenExpirationTime) < 1 ) {
@@ -513,14 +515,14 @@ Há dois arquivos do lado do servidor que precisam ser modificados.
 
 2. Adicione o método a seguir na parte inferior do arquivo. Esse método servirá à página inicial do suplemento. O manifesto do suplemento especifica a URL da página inicial.
 
-    ```javascript
+    ```typescript
     app.get('/index.html', handler(async (req, res) => {
         return res.sendfile('index.html');
     })); 
     ```
 
 3. Adicione o método a seguir na parte inferior do arquivo. Este método lidará com todas as solicitações para a API `onedriveitems`.
-    ```javascript
+    ```typescript
     app.get('/api/onedriveitems', handler(async (req, res) => {
         // TODO7: Initialize the AuthModule object and validate the access token 
         //        that the client-side received from the Office host.
@@ -534,7 +536,7 @@ Há dois arquivos do lado do servidor que precisam ser modificados.
 
 4. Substitua `TODO7` pelo seguinte código que valida o token de acesso recebido do aplicativo host do Office. O método `verifyJWT` é definido no arquivo src\auth.ts. Ele sempre valida a audiência e o emissor. Usamos o parâmetro opcional para especificar que também desejamos que ele verifique se o escopo no token de acesso é `access_as_user`. Esta é a única permissão ao suplemento que o usuário e o host do Office precisam para obter um token de acesso para o Microsoft Graph por meio do fluxo "on behalf of". 
 
-    ```javascript
+    ```typescript
     await auth.initialize();
     const { jwt } = auth.verifyJWT(req, { scp: 'access_as_user' }); 
     ```
@@ -547,7 +549,7 @@ Há dois arquivos do lado do servidor que precisam ser modificados.
     * A chamada para `acquireTokenOnBehalfOf` não inclui um parâmetro de recurso porque construímos o objeto `AuthModule` (`auth`) com o ponto de extremidade V2.0 do AAD que não oferece suporte à propriedade de recurso.
     * O segundo parâmetro da chamada especifica as permissões que o suplemento precisará para obter uma lista dos arquivos e das pastas do usuário no OneDrive. (A permissão `profile` não é solicitada, porque só é necessária quando o host do Office obtém o token de acesso ao seu suplemento, e não quando você está negociando nesse token para um token de acesso para o Microsoft Graph.)
 
-    ```javascript
+    ```typescript
     const graphToken = await auth.acquireTokenOnBehalfOf(jwt, ['Files.Read.All']);
     ```
 
@@ -556,11 +558,13 @@ Há dois arquivos do lado do servidor que precisam ser modificados.
     * A classe MSGraphHelper é definida no src\msgraph-helper.ts. 
     * Podemos minimizar os dados que devem ser retornados especificando que só queremos a propriedade de nome e somente os três primeiros itens.
 
-    `const graphData = await MSGraphHelper.getGraphData(graphToken, "/me/drive/root/children", "?$select=name&$top=3");`
+    ```typescript
+    const graphData = await MSGraphHelper.getGraphData(graphToken, "/me/drive/root/children", "?$select=name&$top=3");
+    ```
 
 7. Substitua `TODO10` pelo código a seguir. Observe que esse código processa erros "401 Não Autorizado" do Microsoft Graph que indicariam um token expirado ou inválido. É muito improvável que isso aconteça, pois a lógica persistente do token impede essa situação. (Confira a seção **Criar um método para obter acesso ao recurso usando o fluxo "on behalf of"** acima.) Se isso acontecer, o código transmitirá o erro para o cliente com "Erro do Microsoft Graph" no nome do erro. (Confira o método `handleClientSideErrors` que você criou no arquivo program.js em uma etapa anterior.) O código adicionado ao arquivo ODataHelper.js em uma etapa posterior ajuda a processar erros do Microsoft Graph.
 
-    ```javascript
+    ```typescript
     if (graphData.code) {
         if (graphData.code === 401) {
             throw new UnauthorizedError('Microsoft Graph error', graphData);
@@ -571,7 +575,7 @@ Há dois arquivos do lado do servidor que precisam ser modificados.
 
 1. Substitua `TODO11` pelo código a seguir. Observe que o Microsoft Graph retorna alguns metadados OData e uma propriedade **eTag** para cada item, mesmo se `name` é a única propriedade solicitada. O código envia somente os nomes de item para o cliente.
 
-    ```javascript
+    ```typescript
     const itemNames: string[] = [];
     const oneDriveItems: string[] = graphData['value'];
     for (let item of oneDriveItems){
@@ -588,7 +592,7 @@ Há dois arquivos do lado do servidor que precisam ser modificados.
 
     * A resposta do ponto de extremidade OData pode ser um erro, por exemplo, 401, se o ponto de extremidade exigir um token de acesso e ele for inválido ou estiver expirado. Uma mensagem de erro é ainda um *mensagem*, não um erro, nas chamadas de `https.get`, portanto, a linha `on('error', reject)` no final do `https.get` não é acionada. Portanto, o código distingue mensagens de sucesso (200) de mensagens de erro e envia um objeto JSON para o chamador com o OData solicitado ou informações de erro.
 
-    ```javascript
+    ```typescript
     var error;
     if (response.statusCode === 200) {
         // TODO1: Return the data to the caller and resolve the Promise.
@@ -599,7 +603,7 @@ Há dois arquivos do lado do servidor que precisam ser modificados.
 
 1.  Substitua `TODO1` pelo código a seguir. Observe que o código pressupõe que os dados retornados são JSON.
 
-    ```javascript
+    ```typescript
     let parsedBody = JSON.parse(body);
     resolve(parsedBody);
     ```
@@ -609,7 +613,7 @@ Há dois arquivos do lado do servidor que precisam ser modificados.
     * Uma resposta de erro de uma fonte de OData sempre terá um statusCode e, normalmente, um statusMessage. Algumas fontes de OData também adicionam uma propriedade de erro ao corpo da mensagem com mais informações, como uma solicitação interna ou, mais especificamente, um código e uma mensagem.
     * O objeto Promise é resolvido, não rejeitado. O `https.get` é executado quando um serviço Web chama um ponto de extremidade OData de servidor para servidor. No entanto, essa chamada chega no contexto de uma chamada de um cliente para uma Web API do serviço Web. A solicitação "externa" do cliente para o serviço Web nunca é concluída se essa solicitação "interna" for rejeitada. Além disso, a solicitação com o objeto `Error` personalizado é necessária se o chamador de `http.get` precisar transmitir erros do ponto de extremidade OData para o cliente.
 
-    ```javascript
+    ```typescript
     error = new Error();
     error.code = response.statusCode;
     error.message = response.statusMessage;
@@ -666,9 +670,9 @@ Há duas maneiras de criar e executar o projeto dependendo se você estiver ou n
 
 1. Reinicie o PowerPoint, abra ou crie uma apresentação.
 
-1. Se a guia **Desenvolvedor** não estiver visível na faixa de opções, habilite-a com as seguintes etapas:
+1. Se a guia **Desenvolvedor** não estiver visível na faixa de opções, habilite-a através das seguintes etapas:
  1. Navegue até **Arquivo** | **Opções** | **Personalizar faixa de opções**.
- 2. Clique na caixa de seleção para habilitar **Desenvolvedor** na árvore de nomes de controle à direita da página **Personalizar faixa de opções**.
+ 2. Clique na caixa de seleção para habilitar o **Desenvolvedor** na árvore de nomes de controle do lado direito da página **Personalizar faixa de opções**.
  3. Pressione **OK**.
 
 2. Na guia **Desenvolvedor** no PowerPoint, escolha **Meus Suplementos**.
@@ -689,7 +693,7 @@ Há duas maneiras de criar e executar o projeto dependendo se você estiver ou n
 
 2. Se você estiver conectado ao Office, será exibida uma lista de seus arquivos e suas pastas no OneDrive, abaixo do botão. Isso poderá demorar mais de 15 segundos na primeira vez.
 
-3. Se você não tiver entrado no Office, um pop-up será aberto e pedirá que você entre. Depois de concluir a entrada, a lista de arquivos e pastas aparecerá após alguns segundos. *Não pressione o botão uma segunda vez.*
+3. Se você não tiver entrado no Office, um pop-up será aberto e pedirá que você entre. Depois de concluir a entrada, a lista de arquivos e pastas aparecerá após alguns segundos. *Você não deve pressionar o botão uma segunda vez.*
 
 > [!NOTE]
 > Se você entrou no Office com uma ID diferente e se alguns aplicativos do Office que estavam abertos no momento continuam abertos, o Office pode não alterar de forma confiável sua ID, mesmo que pareça ter feito isso no PowerPoint. Se isso acontecer, a chamada para o Microsoft Graph pode falhar ou os dados da ID anterior podem ser retornados. Para evitar isso, certifique-se de *fechar todos os outros aplicativos do Office* antes de pressionar **Obter meus arquivos do OneDrive**.

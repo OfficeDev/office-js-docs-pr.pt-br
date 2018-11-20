@@ -1,23 +1,23 @@
 ---
-ms.date: 10/17/2018
-description: Saiba mais sobre melhores práticas e padrões recomendados para funções personalizadas do Excel.
+ms.date: 10/24/2018
+description: Conheça padrões e práticas recomendadas para funções personalizadas do Excel.
 title: Práticas recomendadas para funções personalizadas
-ms.openlocfilehash: 10ba29966c1e991ca23674ce3e5da88de2772e00
-ms.sourcegitcommit: a6d6348075c1abed76d2146ddfc099b0151fe403
+ms.openlocfilehash: 0408318227e1f89726ed7c0e4dfbb8e6340abef4
+ms.sourcegitcommit: 52d18dd8a60e0cec1938394669d577570700e61e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "25639998"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "25797396"
 ---
 # <a name="custom-functions-best-practices-preview"></a>Práticas recomendadas para funções personalizadas (versão prévia)
 
-Este artigo descreve as práticas recomendadas para o desenvolvimento de funções personalizadas no Excel.
+Este artigo descreve as práticas recomendadas para o desenvolvimento de funções personalizadas para Excel.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-## <a name="error-handling"></a>Manipulação de erro
+## <a name="error-handling"></a>Tratamento de erros
 
-Ao construir um suplemento que define as funções personalizadas, certifique-se de incluir lógica para manipulação de erro para lidar com erros em tempo de execução. Manipulação de erro para funções personalizadas é o mesmo que [manipulação de erros para a API JavaScript do Excel, de maneira geral](excel-add-ins-error-handling.md). No exemplo de código a seguir, `.catch` manipulará quaisquer erros que ocorram anteriormente no código.
+Quando criar um suplemento que define funções personalizadas, não deixe de incluir a lógica de tratamento de erro para lidar com os erros de tempo de execução. O tratamento de erro para funções personalizadas equivale  ao [tratamento de erro para API JavaScript do Excel em](excel-add-ins-error-handling.md). No seguinte exemplo de código, `.catch` tratará os erros que ocorreram anteriormente no código.
 
 ```js
 function getComment(x) {
@@ -35,13 +35,19 @@ function getComment(x) {
 }
 ```
 
+## <a name="troubleshooting"></a>Solução de problemas
+
+Quando testar o suplemento no Office para Windows, habilite o **[log de tempo de execução](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** para solucionar problemas com o arquivo de manifesto XML do suplemento, bem como várias condições de instalação e tempo de execução. O log de tempo de execução grava instruções `console.log` em um arquivo de log para ajudá-lo a descobrir problemas.
+
+Para relatar problemas sobre este método de solução de problemas, envie comentários à equipe de funções personalizadas do Excel. Para fazer isso, selecione **Arquivo | Comentários | Enviar um Rosto Triste**. Enviando um Rosto Triste, você fornece os registros necessários para entendermos o problema que você está enfrentando. 
+
 ## <a name="debugging"></a>Depuração
 
-Atualmente, o melhor método para depuração de funções personalizadas do Excel é primeiro fazer o [sideload](../testing/sideload-office-add-ins-for-testing.md) do seu suplemento no **Excel Online**. Dessa forma você pode depurar as funções personalizadas usando a [ferramenta de depuração F12 nativa do navegador](../testing/debug-add-ins-in-office-online.md) em combinação com as técnicas a seguir:
+Atualmente, o método ideal para depuração de funções personalizadas do Excel consiste primeiro em [sideload](../testing/sideload-office-add-ins-for-testing.md) o suplemento no **Excel Online**. Em seguida, para depurar as funções personalizadas, use a [ferramenta de depuração nativa F12 no navegador](../testing/debug-add-ins-in-office-online.md), associado às seguintes técnicas:
 
-- Use instruções `console.log` no seu código de funções personalizadas para enviar a saída para o console em tempo real.
+- Use as instruções `console.log` no código das funções personalizadas para enviar saída ao console em tempo real.
 
-- Use `debugger;` instruções dentro de seu código de funções personalizadas para especificar os pontos de interrupção onde a execução fará uma pausa quando a janela F12 estiver aberta. Por exemplo, se a função a seguir for executada enquanto a janela F12 estiver aberta, a execução fará uma pausa sobre a instrução `debugger;` , permitindo que você inspecione manualmente os valores de parâmetro antes que a função retorne. A instrução `debugger;` não tem efeito no Excel Online quando a janela F12 não estiver aberta. Atualmente, a instrução `debugger;` não tem efeito no Excel para Windows.
+- Use as instruções `debugger;` no código das funções personalizadas para especificar pontos de interrupção, onde a execução será pausada quando a janela F12 for aberta. Por exemplo, se a função a seguir for executada enquanto a janela F12 estiver aberta, a execução será pausada na instrução `debugger;`, o que permite inspecionar manualmente os valores dos parâmetros antes que a função retorne. A instrução `debugger;` não afeta o Excel Online quando a janela F12 não está aberta. Atualmente, a instrução `debugger;` não afeta o Excel para Windows.
 
     ```js
     function add(first, second){
@@ -50,15 +56,13 @@ Atualmente, o melhor método para depuração de funções personalizadas do Exc
     }
     ```
 
-Se seu suplemento falhar ao registrar, [verifique se os certificados SSL estão configurados corretamente](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) para o servidor Web que está hospedando o seu aplicativo de suplemento.
+Se o suplemento não for devidamente registrado, [ verifique se os certificados SSL estão configurados corretamente ](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) para o servidor Web que hospeda o aplicativo do suplemento.
 
-Se você estiver testando seu suplemento no Office na área de trabalho do Windows, é possível habilitar o [log de tempo de execução](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in) para depurar problemas com o arquivo de manifesto XML do suplemento, bem como várias condições de instalação e tempo de execução.
+## <a name="mapping-function-names-to-json-metadata"></a>Como mapear nomes de função para metadados JSON
 
-## <a name="mapping-function-names-to-json-metadata"></a>Mapeamento de nomes de função para metadados JSON
+Conforme descrito no artigo [Visão geral de funções personalizadas](custom-functions-overview.md), um projeto de funções personalizadas deve incluir um arquivo de metadados JSON com as informações necessárias que o Excel exige para registrar as funções personalizadas e disponibilizá-las aos usuários finais. Além disso, no arquivo JavaScript que define as funções personalizadas, você deve fornecer informações para especificar qual objeto de função no arquivo de metadados JSON corresponde a cada função personalizada no arquivo JavaScript.
 
-Conforme descrito no artigo [Visão geral de funções personalizadas](custom-functions-overview.md) , um projeto de funções personalizadas deve incluir um arquivo de metadados JSON que forneça as informações exigidas pelo Excel para registrar as funções personalizadas e torná-las disponíveis aos usuários finais. Além disso, dentro do arquivo JavaScript que define suas funções personalizadas, você deve fornecer informações para especificar qual objeto de função no arquivo de metadados JSON corresponde a cada função personalizada no arquivo JavaScript.
-
-Por exemplo, o exemplo de código a seguir define a função personalizada `add` e, em seguida, especifica que a função `add` corresponde ao objeto no arquivo de metadados JSON onde o valor da propriedade `id` é **ADD**.
+Por exemplo, o seguinte código de exemplo define a função personalizada `add` e, em seguida, especifica que a função `add` corresponde ao objeto no arquivo de metadados JSON, em que o valor da propriedade `id` seja **ADD**.
 
 ```js
 function add(first, second){
@@ -68,21 +72,21 @@ function add(first, second){
 CustomFunctionMappings.ADD = add;
 ```
 
-Tenha em mente as seguintes práticas recomendadas ao criar funções personalizadas no seu arquivo JavaScript e especificar informações correspondentes no arquivo de metadados JSON.
+Lembre-se das seguintes práticas recomendadas quando criar funções personalizadas no arquivo JavaScript e especificar as informações correspondentes no arquivo de metadados JSON.
 
-* No arquivo JavaScript, especifique nomes de função em camelCase. Por exemplo, o nome da função `addTenToInput` está escrito em camelCase: a primeira palavra no nome começa com uma letra minúscula e cada palavra subsequente no nome começa com uma letra maiúscula.
+* No arquivo JavaScript, especifique os nomes das funções no camelCase. Por exemplo, o nome da função `addTenToInput` é escrito no camelCase: a primeira palavra no nome começa com uma letra minúscula e cada palavra subsequente no nome começa com uma letra maiúscula.
 
-* No arquivo de metadados JSON, especifique o valor de cada propriedade `name` em letras maiusculas. A propriedade `name` define o nome da função que os usuários finais verão no Excel. Usar letras maiúsculas para o nome de cada função personalizada fornece uma experiência consistente para usuários finais no Excel, onde todos os nomes de função interna estão em letras maiúsculas.
+* No arquivo de metadados JSON, especifique o valor de cada propriedade `name` em maiúsculas. A propriedade `name` define o nome da função que os usuários finais verão no Excel. O uso de letras maiúsculas para o nome de cada função personalizada fornece uma experiência consistente aos usuários finais do Excel, onde todos os nomes de funções internos são escritos em maiúsculas.
 
-* No arquivo de metadados JSON, especifique o valor de cada propriedade `id` em letras maiúsculas. Isso torna óbvio qual parte da instrução `CustomFunctionMappings` no seu código JavaScript corresponde à propriedade `id` no arquivo de metadados JSON (desde que o seu nome da função use camelCase, conforme recomendado anteriormente).
+* No arquivo de metadados JSON, especifique o valor de cada propriedade `id` em maiúsculas. Dessa maneira, fica claro qual parte da instrução `CustomFunctionMappings` no código JavaScript corresponde à propriedade `id`, no arquivo de metadados JSON, desde que o nome da função use camelCase, conforme recomendado anteriormente.
 
 * No arquivo de metadados JSON, verifique se o valor de cada propriedade `id` contém apenas caracteres alfanuméricos e pontos. 
 
-* No arquivo de metadados JSON, verifique se o valor de cada propriedade `id` é exclusivo dentro do escopo do arquivo. Ou seja, não deve haver dois objetos function no arquivo de metadados com o mesmo valor de `id` . Além disso, não especifique dois valores `id` no arquivo de metadados que diferem somente por maiúsculas e minúsculas. Por exemplo, não defina um objeto function com um valor de `id` igual a **add** e outro objeto function com um valor de `id` igual a **ADD**.
+* No arquivo de metadados JSON, garanta que o valor de cada propriedade `id` seja exclusivo dentro do escopo do arquivo. Ou seja, nenhum objeto de duas funções no arquivo de metadados deve ter o mesmo valor `id`. Além disso, não especifique dois valores `id` no arquivo de metadados, que tenham como diferença apenas o uso de maiúsculas e minúsculas. Por exemplo, não defina um objeto de função com um valor `id` de **add** e outro objeto de função com um valor `id` de **ADD**.
 
-* Não altere o valor de uma propriedade `id` no arquivo de metadados JSON depois que ela foi mapeada para um nome de função JavaScript correspondente. Você pode alterar o nome da função que os usuários finais veem no Excel, atualizando a propriedade `name` dentro do arquivo de metadados JSON, mas você nunca deve alterar o valor de uma propriedade `id` depois que ela foi estabelecida.
+* Não altere o valor de uma propriedade `id` no arquivo de metadados JSON, depois de mapeá-lo para um nome de função JavaScript correspondente. Para alterar o nome da função que os usuários finais visualizam no Excel, atualize a propriedade `name` no arquivo de metadados JSON. No entanto, nunca altere o valor de uma propriedade `id` depois de estabelecida.
 
-* No arquivo JavaScript, especifique todos os mapeamentos de função personalizada no mesmo local. Por exemplo, o exemplo de código a seguir define duas funções personalizadas e especifica as informações de mapeamento para ambas as funções.
+* No arquivo JavaScript, especifique todos os mapeamentos de funções personalizadas no mesmo local. Por exemplo, o exemplo de código a seguir define duas funções personalizadas e, em seguida, especifica as informações de mapeamento para ambas.
 
     ```js
     function add(first, second){
@@ -106,7 +110,7 @@ Tenha em mente as seguintes práticas recomendadas ao criar funções personaliz
     CustomFunctionMappings.INCREMENT = increment;
     ```
 
-    O exemplo a seguir mostra os metadados JSON que correspondem às funções definidas neste exemplo de código JavaScript.
+    O exemplo a seguir mostra os metadados JSON que correspondem às funções definidas nesse exemplo de código JavaScript.
 
     ```json
     {
@@ -128,11 +132,11 @@ Tenha em mente as seguintes práticas recomendadas ao criar funções personaliz
 
 ## <a name="additional-considerations"></a>Considerações adicionais
 
-Para criar um suplemento que será executado em várias plataformas (um dos locatários principais de suplementos do Office), você não deve acessar o Modelo de Objeto do Documento (DOM) em funções personalizadas ou usar bibliotecas como jQuery que dependam do DOM. No Excel para Windows, onde as funções personalizadas usam o [tempo de execução do JavaScript](custom-functions-runtime.md), funções personalizadas não podem acessar o DOM.
+Para criar um suplemento que será executado em várias plataformas (um dos principais locatários de Suplementos do Office), você não deve acessar o DOM (Modelo de Objeto do Documento) em funções personalizadas nem usar bibliotecas, como a jQuery, que dependem do DOM. No Excel para Windows, onde as funções personalizadas usam o [tempo de execução do JavaScript](custom-functions-runtime.md), as funções personalizadas não podem acessar o DOM.
 
 ## <a name="see-also"></a>Confira também
 
 * [Criar funções personalizadas no Excel](custom-functions-overview.md)
 * [Metadados de funções personalizadas](custom-functions-json.md)
-* [Runtime de funções personalizadas do Excel](custom-functions-runtime.md)
+* [Tempo de execução de funções personalizadas do Excel](custom-functions-runtime.md)
 * [Tutorial de funções personalizadas do Excel](excel-tutorial-custom-functions.md)
