@@ -1,36 +1,36 @@
-# <a name="build-your-first-word-add-in"></a><span data-ttu-id="cb6d7-101">Compilar seu primeiro suplemento do Word</span><span class="sxs-lookup"><span data-stu-id="cb6d7-101">Build your first Word add-in</span></span>
+# <a name="build-your-first-word-add-in"></a><span data-ttu-id="2cc4b-101">Crie o seu primeiro suplemento do Word</span><span class="sxs-lookup"><span data-stu-id="2cc4b-101">Build your first Word add-in</span></span>
 
-<span data-ttu-id="cb6d7-102">_Aplica-se a: Word 2016, Word para iPad, Word para Mac_</span><span class="sxs-lookup"><span data-stu-id="cb6d7-102">_Applies to: Word 2016, Word for iPad, Word for Mac_</span></span>
+<span data-ttu-id="2cc4b-102">_Aplica-se a: Word 2016, Word para iPad, Word para Mac_</span><span class="sxs-lookup"><span data-stu-id="2cc4b-102">_Applies to: Word 2016, Word for iPad, Word for Mac_</span></span>
 
-<span data-ttu-id="cb6d7-103">Neste artigo, você passará pelo processo de criar um suplemento do Word usando o jQuery e a API JavaScript para Word.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-103">In this article, you'll walk through the process of building a Word add-in by using jQuery and the Word JavaScript API.</span></span> 
+<span data-ttu-id="2cc4b-103">Neste artigo, você passará pelo processo de criar um suplemento do Word usando o jQuery e a API JavaScript para Word.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-103">In this article, you'll walk through the process of building a Word add-in by using jQuery and the Word JavaScript API.</span></span> 
 
-## <a name="create-the-add-in"></a><span data-ttu-id="cb6d7-104">Criar o suplemento</span><span class="sxs-lookup"><span data-stu-id="cb6d7-104">Create the add-in</span></span> 
+## <a name="create-the-add-in"></a><span data-ttu-id="2cc4b-104">Criar o suplemento</span><span class="sxs-lookup"><span data-stu-id="2cc4b-104">Create the add-in</span></span> 
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="cb6d7-105">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="cb6d7-105">Visual Studio</span></span>](#tab/visual-studio)
+# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="2cc4b-105">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="2cc4b-105">Visual Studio</span></span>](#tab/visual-studio)
 
-### <a name="prerequisites"></a><span data-ttu-id="cb6d7-106">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="cb6d7-106">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="2cc4b-106">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="2cc4b-106">Prerequisites</span></span>
 
 [!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
-### <a name="create-the-add-in-project"></a><span data-ttu-id="cb6d7-107">Criar o projeto do suplemento</span><span class="sxs-lookup"><span data-stu-id="cb6d7-107">Create the add-in project</span></span>
+### <a name="create-the-add-in-project"></a><span data-ttu-id="2cc4b-107">Criar o projeto do suplemento</span><span class="sxs-lookup"><span data-stu-id="2cc4b-107">Create the add-in project</span></span>
 
-1. <span data-ttu-id="cb6d7-108">Na barra de menus do Visual Studio, selecione **Arquivo**  >  **Novo**  >  **Projeto**.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-108">On the Visual Studio menu bar, choose  **File** > **New** > **Project**.</span></span>
+1. <span data-ttu-id="2cc4b-108">Na barra de menus do Visual Studio, selecione **Arquivo**  >  **Novo**  >  **Projeto**.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-108">On the Visual Studio menu bar, choose  **File** > **New** > **Project**.</span></span>
     
-2. <span data-ttu-id="cb6d7-109">Na lista de tipos de projeto em **Visual C#** ou em **Visual Basic**, expanda a opção **Office/SharePoint**, escolha **Suplementos** e depois **Suplemento da Web do Word** como o tipo de projeto.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-109">In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **Word Web Add-in** as the project type.</span></span> 
+2. <span data-ttu-id="2cc4b-109">Na lista de tipos de projeto em **Visual C#** ou em **Visual Basic**, expanda a opção **Office/SharePoint**, escolha **Suplementos** e depois **Suplemento da Web do Word** como o tipo de projeto.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-109">In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **Word Web Add-in** as the project type.</span></span> 
 
-3. <span data-ttu-id="cb6d7-110">Dê um nome ao projeto e escolha **OK**.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-110">Name the project, and then choose **OK**.</span></span>
+3. <span data-ttu-id="2cc4b-110">Dê um nome ao projeto e escolha **OK**.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-110">Name the project, and then choose **OK**.</span></span>
 
-4. <span data-ttu-id="cb6d7-p101">O Visual Studio cria uma solução, e os dois projetos dela são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-p101">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
+4. <span data-ttu-id="2cc4b-p101">O Visual Studio cria uma solução, e os dois projetos dele são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-p101">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
     
-### <a name="explore-the-visual-studio-solution"></a><span data-ttu-id="cb6d7-113">Explorar a solução do Visual Studio</span><span class="sxs-lookup"><span data-stu-id="cb6d7-113">Explore the Visual Studio solution</span></span>
+### <a name="explore-the-visual-studio-solution"></a><span data-ttu-id="2cc4b-113">Explorar a solução do Visual Studio</span><span class="sxs-lookup"><span data-stu-id="2cc4b-113">Explore the Visual Studio solution</span></span>
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
-### <a name="update-the-code"></a><span data-ttu-id="cb6d7-114">Atualizar o código</span><span class="sxs-lookup"><span data-stu-id="cb6d7-114">Update the code</span></span>
+### <a name="update-the-code"></a><span data-ttu-id="2cc4b-114">Atualizar o código</span><span class="sxs-lookup"><span data-stu-id="2cc4b-114">Update the code</span></span>
 
-1. <span data-ttu-id="cb6d7-p102">**Home.HTML** especifica o HTML que será processado no painel de tarefas do suplemento. Em **Home.html**, substitua o elemento `<body>`  com a seguinte marcação e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-p102">**Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.</span></span>
+1. <span data-ttu-id="2cc4b-115">**Home.html** especifica o HTML que será renderizado no painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-115">**Home.html** specifies the HTML that will be rendered in the add-in's task pane.</span></span> <span data-ttu-id="2cc4b-116">Em **Home.html**, substitua o elemento `<body>` pela marcação a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-116">In **Home.html**, replace the `<body>` element with the following markup and save the file.</span></span>
  
     ```html
     <body>
@@ -56,7 +56,7 @@
     </body>
     ```
 
-2. <span data-ttu-id="cb6d7-p103">Abra o arquivo **Home.js** na raiz do projeto de aplicativo da web. Este arquivo especifica o script para o suplemento. Substitua todo o conteúdo pelo seguinte código e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-p103">Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.</span></span>
+2. <span data-ttu-id="2cc4b-117">Abra o arquivo **Home.js** na raiz do projeto do aplicativo Web.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-117">Open the file **MessageRead.js** in the root of the web application project.</span></span> <span data-ttu-id="2cc4b-118">Este arquivo especifica o script do suplemento.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-118">This file specifies the script for the add-in.</span></span> <span data-ttu-id="2cc4b-119">Substitua todo o conteúdo pelo código a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-119">Replace the entire contents with the following code and save the file.</span></span>
 
     ```js
     'use strict';
@@ -157,7 +157,7 @@
     })();
     ```
 
-3. <span data-ttu-id="cb6d7-p104">Abra o arquivo **Home.css** na raiz do projeto de aplicativo da web. Este arquivo especifica os estilos personalizados para o suplemento. Substitua todo o conteúdo pelo seguinte código e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-p104">Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.</span></span>
+3. <span data-ttu-id="2cc4b-120">Abra o arquivo **Home.css** na raiz do projeto do aplicativo Web.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-120">Open the file **MessageRead.css** in the root of the web application project.</span></span> <span data-ttu-id="2cc4b-121">Este arquivo especifica os estilos personalizados para o suplemento.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-121">This file specifies the custom styles for the add-in.</span></span> <span data-ttu-id="2cc4b-122">Substitua todo o conteúdo pelo código a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-122">Replace the entire contents with the following code and save the file.</span></span>
 
     ```css
     #content-header {
@@ -186,17 +186,17 @@
     }
     ```
 
-### <a name="update-the-manifest"></a><span data-ttu-id="cb6d7-123">Atualizar o manifesto</span><span class="sxs-lookup"><span data-stu-id="cb6d7-123">Update the manifest</span></span>
+### <a name="update-the-manifest"></a><span data-ttu-id="2cc4b-123">Atualizar o manifesto</span><span class="sxs-lookup"><span data-stu-id="2cc4b-123">Update the manifest</span></span>
 
-1. <span data-ttu-id="cb6d7-p105">Abra o arquivo de manifesto XML no projeto de suplemento. Este arquivo define as configurações e recursos do suplemento.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-p105">Open the XML manifest file in the add-in project. This file defines the add-in's settings and capabilities.</span></span>
+1. <span data-ttu-id="2cc4b-124">Abra o arquivo de manifesto XML do projeto do suplemento.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-124">Open the XML manifest file in the Add-in project.</span></span> <span data-ttu-id="2cc4b-125">Este arquivo define as configurações e os recursos do suplemento.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-125">This file defines the add-in's settings and capabilities.</span></span>
 
-2. <span data-ttu-id="cb6d7-p106">O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o pelo seu nome.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-p106">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
+2. <span data-ttu-id="2cc4b-126">O elemento `ProviderName` tem um valor de espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-126">The `ProviderName` element has a placeholder value.</span></span> <span data-ttu-id="2cc4b-127">Substitua-o com seu nome.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-127">Replace it with your name.</span></span>
 
-3. <span data-ttu-id="cb6d7-p107">O atributo `DefaultValue` do elemento `DisplayName` tem um espaço reservado. Substitua-o pelo **Meu suplemento do Office**.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-p107">The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with **My Office Add-in**.</span></span>
+3. <span data-ttu-id="2cc4b-128">O atributo `DefaultValue` do elemento `DisplayName` tem um espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-128">The `DefaultValue` attribute of the `DisplayName` element has a placeholder.</span></span> <span data-ttu-id="2cc4b-129">Substitua-o pelo **suplementos do My Office**.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-129">Replace it with **My Office Add-in**.</span></span>
 
-4. <span data-ttu-id="cb6d7-p108">O atributo `DefaultValue` do elemento `Description` tem um espaço reservado. Substitua-o por **Um suplemento de painel de tarefas para Word**.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-p108">The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Word**.</span></span>
+4. <span data-ttu-id="2cc4b-130">O atributo `DefaultValue` do elemento `Description` tem um espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-130">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="2cc4b-131">Substitua-o com **um suplemento do painel de tarefas do PowerPoint**.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-131">Replace it with **A task pane add-in for Word**.</span></span>
 
-5. <span data-ttu-id="cb6d7-132">Salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-132">Save the file.</span></span>
+5. <span data-ttu-id="2cc4b-132">Salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-132">Save the file.</span></span>
 
     ```xml
     ...
@@ -208,58 +208,58 @@
     ...
     ```
 
-### <a name="try-it-out"></a><span data-ttu-id="cb6d7-133">Experimente</span><span class="sxs-lookup"><span data-stu-id="cb6d7-133">Try it out</span></span>
+### <a name="try-it-out"></a><span data-ttu-id="2cc4b-133">Experimente</span><span class="sxs-lookup"><span data-stu-id="2cc4b-133">Try it out</span></span>
 
-1. <span data-ttu-id="cb6d7-p109">Usando o Visual Studio, teste o suplemento do Word recém-criado pressionando F5 ou escolhendo o botão **Iniciar** para abrir o Word com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-p109">Using Visual Studio, test the newly created Word add-in by pressing F5 or choosing the **Start** button to launch Word with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
+1. <span data-ttu-id="2cc4b-p109">Usando o Visual Studio, teste o suplemento do Word recém-criado pressionando F5 ou escolhendo o botão **Iniciar** para abrir o Word com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-p109">Using Visual Studio, test the newly created Word add-in by pressing F5 or choosing the **Start** button to launch Word with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
 
-2. <span data-ttu-id="cb6d7-p110">No Word, escolha a guia **Página inicial** e, sem seguida, o botão **Mostrar painel de tarefas** na faixa de opções para abrir o painel de tarefas do suplemento. (Se você estiver usando a versão sem assinatura do Office 2016 em vez da versão do Office 365, os botões personalizados não serão suportados. Em vez disso, o painel de tarefas será aberto imediatamente.)</span><span class="sxs-lookup"><span data-stu-id="cb6d7-p110">In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane. (If you are using the non-subscription version of Office 2016, instead of the Office 365 version, then custom buttons are not supported. Instead, the task pane will open immediately.)</span></span>
+2. <span data-ttu-id="2cc4b-136">No Word, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-136">In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span> <span data-ttu-id="2cc4b-137">(Caso esteja usando a versão sem assinatura do Office 2016 ao invés da versão do Office 365, os botões personalizados não são compatíveis.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-137">(If you are using the non-subscription version of Office 2016, instead of the Office 365 version, then custom buttons are not supported.</span></span> <span data-ttu-id="2cc4b-138">Em vez disso, o painel de tarefas abrirá imediatamente.)</span><span class="sxs-lookup"><span data-stu-id="2cc4b-138">Instead, the task pane will open immediately.)</span></span>
 
-    ![Uma captura de tela do aplicativo do Word com o botão Mostrar painel de tarefas destacado](../images/word-quickstart-addin-0.png)
+    ![Uma captura de tela do Word com o botão Mostrar Painel de Tarefas realçado](../images/word-quickstart-addin-0.png)
 
-3. <span data-ttu-id="cb6d7-140">No painel de tarefas, escolha qualquer um dos botões para adicionar o texto clichê ao documento.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-140">In the task pane, choose any of the buttons to add boilerplate text to the document.</span></span>
+3. <span data-ttu-id="2cc4b-140">No painel de tarefas, escolha qualquer um dos botões para adicionar o texto clichê ao documento.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-140">In the task pane, choose any of the buttons to add boilerplate text to the document.</span></span>
 
     ![Captura de tela do aplicativo Word com o suplemento de texto clichê carregado](../images/word-quickstart-addin-1b.png)
 
-# <a name="any-editortabvisual-studio-code"></a>[<span data-ttu-id="cb6d7-142">Qualquer editor</span><span class="sxs-lookup"><span data-stu-id="cb6d7-142">Any editor</span></span>](#tab/visual-studio-code)
+# <a name="any-editortabvisual-studio-code"></a>[<span data-ttu-id="2cc4b-142">Qualquer editor</span><span class="sxs-lookup"><span data-stu-id="2cc4b-142">Any editor</span></span>](#tab/visual-studio-code)
 
-### <a name="prerequisites"></a><span data-ttu-id="cb6d7-143">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="cb6d7-143">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="2cc4b-143">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="2cc4b-143">Prerequisites</span></span>
 
-- [<span data-ttu-id="cb6d7-144">Node.js</span><span class="sxs-lookup"><span data-stu-id="cb6d7-144">Node.js</span></span>](https://nodejs.org)
+- [<span data-ttu-id="2cc4b-144">Node.js</span><span class="sxs-lookup"><span data-stu-id="2cc4b-144">Node.js</span></span>](https://nodejs.org)
 
-- <span data-ttu-id="cb6d7-145">Instale globalmente a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office).</span><span class="sxs-lookup"><span data-stu-id="cb6d7-145">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
+- <span data-ttu-id="2cc4b-145">Instale a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador do Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-145">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
 
     ```bash
     npm install -g yo generator-office
     ```
 
-### <a name="create-the-add-in-project"></a><span data-ttu-id="cb6d7-146">Criar o projeto do suplemento</span><span class="sxs-lookup"><span data-stu-id="cb6d7-146">Create the add-in project</span></span>
+### <a name="create-the-add-in-project"></a><span data-ttu-id="2cc4b-146">Criar o projeto do suplemento</span><span class="sxs-lookup"><span data-stu-id="2cc4b-146">Create the add-in project</span></span>
 
-1. <span data-ttu-id="cb6d7-p111">Use o gerador Yeoman para criar um projeto de suplemento do Word. Execute o seguinte comando e responda às solicitações da seguinte maneira:</span><span class="sxs-lookup"><span data-stu-id="cb6d7-p111">Use the Yeoman generator to create a Word add-in project. Run the following command and then answer the prompts as follows:</span></span>
+1. <span data-ttu-id="2cc4b-147">Use o gerador Yeoman para criar um projeto de suplemento do Word.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-147">Use the Yeoman generator to create a Word add-in project.</span></span> <span data-ttu-id="2cc4b-148">Execute o comando a seguir e responda aos prompts da seguinte forma:</span><span class="sxs-lookup"><span data-stu-id="2cc4b-148">Run the following command and then answer the prompts as follows:</span></span>
 
     ```bash
     yo office
     ```
 
-    - <span data-ttu-id="cb6d7-149">**Escolha um tipo de projeto:** `Office Add-in project using Jquery framework`</span><span class="sxs-lookup"><span data-stu-id="cb6d7-149">**Choose a project type:** `Office Add-in project using Jquery framework`</span></span>
-    - <span data-ttu-id="cb6d7-150">**Escolha um tipo de script:** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="cb6d7-150">**Choose a script type:** `Javascript`</span></span>
-    - <span data-ttu-id="cb6d7-151">**Como deseja nomear seu suplemento?:** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="cb6d7-151">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
-    - <span data-ttu-id="cb6d7-152">**Para qual aplicativo cliente do Office você deseja suporte?** `Word`</span><span class="sxs-lookup"><span data-stu-id="cb6d7-152">**Which Office client application would you like to support?:** `Word`</span></span>
+    - <span data-ttu-id="2cc4b-149">**Escolha o tipo de projeto:** `Office Add-in project using Jquery framework`</span><span class="sxs-lookup"><span data-stu-id="2cc4b-149">**Choose a project type:** `Office Add-in project using Jquery framework`</span></span>
+    - <span data-ttu-id="2cc4b-150">**Escolha o tipo de script:** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="2cc4b-150">**Choose a script type:** `Javascript`</span></span>
+    - <span data-ttu-id="2cc4b-151">**Qual será o nome do suplemento?:** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="2cc4b-151">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
+    - <span data-ttu-id="2cc4b-152">**Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?:** `Word`</span><span class="sxs-lookup"><span data-stu-id="2cc4b-152">**Which Office client application would you like to support?:** `Word`</span></span>
 
     ![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-word-jquery.png)
     
-    <span data-ttu-id="cb6d7-154">Depois de concluir o assistente, o gerador criará o projeto e instalará os componentes do nó de suporte.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-154">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
+    <span data-ttu-id="2cc4b-154">Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-154">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
     
-2. <span data-ttu-id="cb6d7-155">Navegue até a pasta raiz do projeto.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-155">Navigate to the root folder of the web application project.</span></span>
+2. <span data-ttu-id="2cc4b-155">Navegue até a pasta raiz do projeto.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-155">Navigate to the root folder of the project in the Terminal app, and from Terminal run:</span></span>
 
     ```bash
     cd "My Office Add-in"
     ```
 
-### <a name="update-the-code"></a><span data-ttu-id="cb6d7-156">Atualizar o código</span><span class="sxs-lookup"><span data-stu-id="cb6d7-156">Update the code</span></span>
+### <a name="update-the-code"></a><span data-ttu-id="2cc4b-156">Atualizar o código</span><span class="sxs-lookup"><span data-stu-id="2cc4b-156">Update the code</span></span>
 
-1. <span data-ttu-id="cb6d7-p112">No seu editor de código, abra o arquivo **index.html** na raiz do projeto. Esse arquivo contém o HTML que será processado no painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-p112">In your code editor, open **index.html** in the root of the project. This file contains the HTML that will be rendered in the add-in's task pane.</span></span> 
+1. <span data-ttu-id="2cc4b-157">No editor de código, abra **index.html** na raiz do projeto.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-157">In your code editor, open **index.html** in the root of the project.</span></span> <span data-ttu-id="2cc4b-158">Esse arquivo contém o HTML que será renderizado no painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-158">This file contains the HTML that will be rendered in the add-in's task pane.</span></span> 
 
-2. <span data-ttu-id="cb6d7-159">Substitua o elemento `<body>` pela marcação a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-159">Replace the `<body>` element inside the  element with the following markup and save the file.</span></span>
+2. <span data-ttu-id="2cc4b-159">Substitua o elemento `<body>` pela marcação a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-159">Replace the `<body>` element inside the  element with the following markup and save the file.</span></span>
 
     ```html
     <body>
@@ -287,7 +287,7 @@
     </body>
     ```
 
-2. <span data-ttu-id="cb6d7-160">Abra o arquivo **src\index.js** para especificar o script do suplemento.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-160">Open the file **app.js** to specify the script for the add-in.</span></span> <span data-ttu-id="cb6d7-161">Substitua todo o conteúdo pelo código a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-161">Replace the entire contents with the following code and save the file.</span></span> <span data-ttu-id="cb6d7-162">Esse script contém códigos de inicialização, além do código que faz alterações no documento do Word, inserindo texto no documento quando um botão é escolhido.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-162">This script contains initialization code as well as the code that makes changes to the Word document, by inserting text into the document when a button is chosen.</span></span> 
+2. <span data-ttu-id="2cc4b-160">Abra o arquivo **src/index.js** para especificar o script do suplemento.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-160">Open the file **src/index.js** to specify the script for the add-in.</span></span> <span data-ttu-id="2cc4b-161">Substitua todo o conteúdo pelo código a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-161">Replace the entire contents with the following code and save the file.</span></span> <span data-ttu-id="2cc4b-162">Esse script contém códigos de inicialização além do código que faz alterações no documento do Word inserindo texto no documento quando um botão é escolhido.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-162">This script contains initialization code as well as the code that makes changes to the Word document, by inserting text into the document when a button is chosen.</span></span> 
 
     ```js
     'use strict';
@@ -388,7 +388,7 @@
     })();
     ```
 
-3. <span data-ttu-id="cb6d7-p114">Abra o arquivo **app.css** na raiz do projeto para especificar os estilos personalizados do suplemento. Substitua todo o conteúdo pelo seguinte código e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-p114">Open the file **app.css** in the root of the project to specify the custom styles for the add-in. Replace the entire contents with the following and save the file.</span></span>
+3. <span data-ttu-id="2cc4b-163">Abra o arquivo **app.css** na raiz do projeto para especificar os estilos personalizados do suplemento.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-163">Open the file **app.css** in the root of the project to specify the custom styles for the add-in.</span></span> <span data-ttu-id="2cc4b-164">Substitua todo o conteúdo pelo que está a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-164">Replace the entire contents with the following and save the file.</span></span>
 
     ```css
     #content-header {
@@ -417,15 +417,15 @@
     }
     ```
 
-### <a name="update-the-manifest"></a><span data-ttu-id="cb6d7-165">Atualizar o manifesto</span><span class="sxs-lookup"><span data-stu-id="cb6d7-165">Update the manifest</span></span>
+### <a name="update-the-manifest"></a><span data-ttu-id="2cc4b-165">Atualizar o manifesto</span><span class="sxs-lookup"><span data-stu-id="2cc4b-165">Update the manifest</span></span>
 
-1. <span data-ttu-id="cb6d7-166">Abra o arquivo **manifest.xml** para definir as configurações e os recursos do suplemento.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-166">Open the file **my-office-add-in-manifest.xml** to define the add-in's settings and capabilities.</span></span>
+1. <span data-ttu-id="2cc4b-166">Abra o arquivo **manifest.xml** para definir as configurações e os recursos do suplemento.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-166">Open the file **my-office-add-in-manifest.xml** to define the add-in's settings and capabilities.</span></span>
 
-2. <span data-ttu-id="cb6d7-p115">O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o pelo seu nome.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-p115">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
+2. <span data-ttu-id="2cc4b-167">O elemento `ProviderName` tem um valor de espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-167">The `ProviderName` element has a placeholder value.</span></span> <span data-ttu-id="2cc4b-168">Substitua-o com seu nome.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-168">Replace it with your name.</span></span>
 
-3. <span data-ttu-id="cb6d7-p116">O atributo `DefaultValue` do elemento `Description` tem um espaço reservado. Substitua-o por **Um suplemento de painel de tarefas para Word**.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-p116">The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Word**.</span></span>
+3. <span data-ttu-id="2cc4b-169">O atributo `DefaultValue` do elemento `Description` tem um espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-169">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="2cc4b-170">Substitua-o com **um suplemento do painel de tarefas do PowerPoint**.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-170">Replace it with **A task pane add-in for Word**.</span></span>
 
-4. <span data-ttu-id="cb6d7-171">Salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-171">Save the file.</span></span>
+4. <span data-ttu-id="2cc4b-171">Salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-171">Save the file.</span></span>
 
     ```xml
     ...
@@ -437,37 +437,38 @@
     ...
     ```
 
-### <a name="start-the-dev-server"></a><span data-ttu-id="cb6d7-172">Iniciar o servidor de desenvolvimento</span><span class="sxs-lookup"><span data-stu-id="cb6d7-172">Start the dev server</span></span>
+### <a name="start-the-dev-server"></a><span data-ttu-id="2cc4b-172">Iniciar o servidor de desenvolvimento</span><span class="sxs-lookup"><span data-stu-id="2cc4b-172">Start the dev server</span></span>
 
 [!include[Start server section](../includes/quickstart-yo-start-server.md)] 
 
-### <a name="try-it-out"></a><span data-ttu-id="cb6d7-173">Experimente</span><span class="sxs-lookup"><span data-stu-id="cb6d7-173">Try it out</span></span>
+### <a name="try-it-out"></a><span data-ttu-id="2cc4b-173">Experimente</span><span class="sxs-lookup"><span data-stu-id="2cc4b-173">Try it out</span></span>
 
-1. <span data-ttu-id="cb6d7-174">Para fazer o sideload do suplemento no Word, siga as instruções para a plataforma que você usará para executar o suplemento.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-174">To sideload the add-in within Word, follow the instructions for the platform you'll use to run your add-in.</span></span>
+1. <span data-ttu-id="2cc4b-174">Para realizar sideload do suplemento no Word, siga as instruções para a plataforma que você usará para executar o suplemento.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-174">To sideload the add-in within Word, follow the instructions for the platform you'll use to run your add-in.</span></span>
 
-    - <span data-ttu-id="cb6d7-175">Windows: [Fazer sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span><span class="sxs-lookup"><span data-stu-id="cb6d7-175">Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span></span>
-    - <span data-ttu-id="cb6d7-176">Word Online: [Fazer sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)</span><span class="sxs-lookup"><span data-stu-id="cb6d7-176">Word Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)</span></span>
-    - <span data-ttu-id="cb6d7-177">iPad e Mac: [Fazer sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span><span class="sxs-lookup"><span data-stu-id="cb6d7-177">iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span></span>
+    - <span data-ttu-id="2cc4b-175">Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span><span class="sxs-lookup"><span data-stu-id="2cc4b-175">Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span></span>
+    - <span data-ttu-id="2cc4b-176">Word Online: [Realizar sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)</span><span class="sxs-lookup"><span data-stu-id="2cc4b-176">Word Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)</span></span>
+    - <span data-ttu-id="2cc4b-177">iPad e Mac: [Realizar sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span><span class="sxs-lookup"><span data-stu-id="2cc4b-177">iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span></span>
 
-2. <span data-ttu-id="cb6d7-178">No Word, escolha a guia **Página Inicial** e, em seguida, o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-178">In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+2. <span data-ttu-id="2cc4b-178">No Word, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-178">In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
-    ![Uma captura de tela do aplicativo do Word com o botão Mostrar painel de tarefas realçado](../images/word-quickstart-addin-2.png)
+    ![Uma captura de tela do Word com o botão Mostrar painel de tarefas realçado](../images/word-quickstart-addin-2.png)
 
-3. <span data-ttu-id="cb6d7-180">No painel de tarefas, escolha qualquer um dos botões para adicionar o texto clichê ao documento.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-180">In the task pane, choose any of the buttons to add boilerplate text to the document.</span></span>
+3. <span data-ttu-id="2cc4b-180">No painel de tarefas, escolha qualquer um dos botões para adicionar o texto clichê ao documento.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-180">In the task pane, choose any of the buttons to add boilerplate text to the document.</span></span>
 
     ![Captura de tela do aplicativo Word com o suplemento de texto clichê carregado](../images/word-quickstart-addin-1.png)
 
 ---
 
-## <a name="next-steps"></a><span data-ttu-id="cb6d7-182">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="cb6d7-182">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="2cc4b-182">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="2cc4b-182">Next steps</span></span>
 
-<span data-ttu-id="cb6d7-183">Parabéns, você criou com êxito um suplemento do Word usando o jQuery!</span><span class="sxs-lookup"><span data-stu-id="cb6d7-183">Congratulations, you've successfully created a Word add-in using jQuery!</span></span> <span data-ttu-id="cb6d7-184">Em seguida, saiba mais sobre os recursos de um suplemento do Word e crie um suplemento mais complexo seguindo as etapas do tutorial de suplemento do Word.</span><span class="sxs-lookup"><span data-stu-id="cb6d7-184">Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.</span></span>
+<span data-ttu-id="2cc4b-183">Parabéns, você criou com êxito um suplemento do Word usando o jQuery!</span><span class="sxs-lookup"><span data-stu-id="2cc4b-183">Congratulations, you've successfully created a Word add-in using jQuery!</span></span> <span data-ttu-id="2cc4b-184">Em seguida, saiba mais sobre os recursos de um suplemento do Word e crie um suplemento mais complexo seguindo as etapas deste tutorial de suplemento do Word.</span><span class="sxs-lookup"><span data-stu-id="2cc4b-184">Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="cb6d7-185">Tutorial do suplemento do Word</span><span class="sxs-lookup"><span data-stu-id="cb6d7-185">Word add-in tutorial</span></span>](../tutorials/word-tutorial.yml)
+> [<span data-ttu-id="2cc4b-185">Tutorial de suplemento do Word</span><span class="sxs-lookup"><span data-stu-id="2cc4b-185">Word add-in tutorial</span></span>](../tutorials/word-tutorial.yml)
 
-## <a name="see-also"></a><span data-ttu-id="cb6d7-186">Confira também</span><span class="sxs-lookup"><span data-stu-id="cb6d7-186">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2cc4b-186">Confira também</span><span class="sxs-lookup"><span data-stu-id="2cc4b-186">See also</span></span>
 
-* [<span data-ttu-id="cb6d7-187">Visão geral dos suplementos do Word</span><span class="sxs-lookup"><span data-stu-id="cb6d7-187">Word add-ins overview</span></span>](../word/word-add-ins-programming-overview.md)
-* [<span data-ttu-id="cb6d7-188">Exemplos de código de suplemento do Word</span><span class="sxs-lookup"><span data-stu-id="cb6d7-188">Word add-in code samples</span></span>](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
-* [<span data-ttu-id="cb6d7-189">Referência da API JavaScript do Word</span><span class="sxs-lookup"><span data-stu-id="cb6d7-189">Word JavaScript API reference</span></span>](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js)
+* [<span data-ttu-id="2cc4b-187">Visão geral dos suplementos do Word</span><span class="sxs-lookup"><span data-stu-id="2cc4b-187">Word add-ins overview</span></span>](../word/word-add-ins-programming-overview.md)
+* <span data-ttu-id="2cc4b-188">
+  [Exemplos de código do suplemento do Word](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)</span><span class="sxs-lookup"><span data-stu-id="2cc4b-188">[Word add-in code samples](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)</span></span>
+* [<span data-ttu-id="2cc4b-189">Referências da API JavaScript do Word</span><span class="sxs-lookup"><span data-stu-id="2cc4b-189">Word JavaScript API reference</span></span>](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js)
