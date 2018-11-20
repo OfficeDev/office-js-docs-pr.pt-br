@@ -2,7 +2,7 @@
 
 Especifica a largura inicial de um suplemento de conteúdo em pixels, que pode ser entre 32 e 1.000.
 
-**Tipo de suplemento:** Conteúdo, Painel de tarefas, Email
+**Tipo de suplemento:** conteúdo, email
 
 ## <a name="syntax"></a>Sintaxe
 

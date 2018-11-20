@@ -6,13 +6,13 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 
 - [Node.js](https://nodejs.org)
 
-- Instalar a [CLI do Vue](https://github.com/vuejs/vue-cli) globalmente.
+- Instale a [CLI do Vue](https://github.com/vuejs/vue-cli) globalmente.
 
     ```bash
     npm install -g vue-cli
     ```
 
-- Instalar a última versão do [Yeoman](https://github.com/yeoman/yo) e do [Gerador Yeoman para suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.
+- Instale a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador do Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.
 
     ```bash
     npm install -g yo generator-office
@@ -20,15 +20,15 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 
 ## <a name="generate-a-new-vue-app"></a>Gerar um novo aplicativo Vue
 
-Use a CLI do Vue para gerar um novo aplicativo Vue. Do terminal, execute o seguinte comando e, em seguida, responda aos prompts conforme descrito abaixo.
+Use a CLI do Vue para gerar um novo aplicativo Vue. No terminal, execute o comando a seguir e responda aos prompts conforme descrito abaixo.
 
 ```bash
 vue init webpack my-add-in
 ```
 
-Ao responder aos prompts gerados pelo comando anterior, substitua as respostas padrão pelos 3 prompts a seguir. Você pode aceitar as respostas padrão para todos os outros prompts.
+Ao responder aos prompts gerados pelo comando anterior, substitua as respostas padrão das três instruções a seguir. Para os demais prompts, você pode aceitar as respostas padrão.
 
-- **Instalar o vue-router?** `No`
+- **Instalar o roteador vue?** `No`
 - **Configurar testes de unidades:** `No`
 - **Configurar testes e2e com Nightwatch?** `No`
 
@@ -44,25 +44,25 @@ Cada suplemento requer um arquivo de manifesto para definir os recursos e config
     cd my-add-in
     ```
 
-2. Use o gerador Yeoman para gerar o arquivo de manifesto para o seu suplemento. Execute o seguinte comando e responda aos prompts conforme mostrado abaixo.
+2. Use o gerador do Yeoman para gerar o arquivo de manifesto para o seu suplemento. Execute o comando a seguir e responda aos prompts conforme mostrado abaixo.
 
     ```bash
     yo office 
     ```
 
-    - **Escolha um tipo de projeto:** `Office Add-in containing the manifest only`
-    - **Como deseja nomear seu suplemento?:** `My Office Add-in`
-    - **Qual aplicativo cliente do Office você gostaria de suportar?:** `Excel`
+    - **Escolha o tipo de projeto:** `Office Add-in containing the manifest only`
+    - **Qual será o nome do suplemento?:** `My Office Add-in`
+    - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?:** `Excel`
 
     ![Gerador do Yeoman](../images/yo-office.png)
     
-    Após concluir o assistente, o gerador cria o arquivo de manifesto.
+    Depois de concluir o assistente, o gerador criará o arquivo de manifesto.
 
 ## <a name="secure-the-app"></a>Proteger o aplicativo
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-Para ativar o HTTPS para o seu aplicativo, abra o arquivo **package.json** na pasta raiz do projeto Vue, modifique o script `dev` para adicionar o sinalizador `--https` e salve o arquivo.
+Para ativar o HTTPS para o seu aplicativo, abra o arquivo **package.json** na pasta raiz do projeto do Vue, modifique o script `dev` para adicionar o sinalizador `--https` e salve o arquivo.
 
 ```json
 "dev": "webpack-dev-server --https --inline --progress --config build/webpack.dev.conf.js"
@@ -70,11 +70,11 @@ Para ativar o HTTPS para o seu aplicativo, abra o arquivo **package.json** na pa
 
 ## <a name="update-the-app"></a>Atualizar o aplicativo
 
-1. No editor de código, abra a pasta **Meu Suplemento do Office** que o Yo Office criou na raiz do seu projeto Vue. Nessa pasta, você verá o arquivo de manifesto que define as configurações do seu suplemento: **manifest.xml**.
+1. Em seu editor de código, abra a pasta **My Office Add-in** que o Yo Office criou na raiz do seu projeto do Vue. Nessa pasta, você verá o arquivo de manifesto que define as configurações para o suplemento: **manifest.xml**.
 
-2. Abra o arquivo de manifesto, substitua todas as ocorrências de `https://localhost:3000` com `https://localhost:8080` e salve o arquivo.
+2. Abra o arquivo de manifesto, substitua todas as ocorrências de `https://localhost:3000` por `https://localhost:8080` e salve o arquivo.
 
-3. Abra o arquivo **index.html** (localizado na raiz do seu projeto Vue), adicione a seguinte tag `<script>` imediatamente antes da tag `</head>` e salve o arquivo.
+3. Abra o arquivo **index.htm** (localizado na raiz do seu projeto do Vue), adicione a marca `<script>` imediatamente antes da marca `</head>` e salve o arquivo.
 
     ```html
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
@@ -90,7 +90,7 @@ Para ativar o HTTPS para o seu aplicativo, abra o arquivo **package.json** na pa
     })
     ```
     
-    Depois, adicione o código a seguir no mesmo local e salve o arquivo. 
+    Depois adicione o código seguinte no mesmo local e salve o arquivo. 
                                                          
     ```js
     const Office = window.Office
@@ -177,23 +177,23 @@ Para ativar o HTTPS para o seu aplicativo, abra o arquivo **package.json** na pa
     npm start
     ```
 
-2. Em um navegador, acesse `https://localhost:8080`. Se o navegador indicar que o certificado do site não é confiável, configure o computador para confiar no certificado. 
+2. Em um navegador da web, acesse `https://localhost:8080`. Se o navegador indicar que o certificado do site não é confiável, configure o computador para confiar no certificado. 
 
 3. Depois que o navegador carregar a página do suplemento sem erros de certificado, será possível testar o suplemento. 
 
 ## <a name="try-it-out"></a>Experimente
 
-1. Siga as instruções da plataforma que você usará para executar o suplemento e faça o sideload do suplemento no Excel.
+1. Siga as instruções da plataforma que você usará para executar o suplemento e realizar sideload do suplemento no Excel.
 
-    - Windows: [Fazer o sideload de suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online: [Fazer o sideload dos suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad e Mac: [Fazer o sideload dos suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    - Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Excel Online: [Realizar sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
+    - iPad e Mac: [Realizar sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 2. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
     ![Botão do suplemento do Excel](../images/excel-quickstart-addin-2a.png)
 
-3. Selecione qualquer intervalo de células na planilha.
+3. Selecione um intervalo de células na planilha.
 
 4. No painel de tarefas, escolha o botão **Definir cor** para definir a cor do intervalo selecionado como verde.
 
@@ -201,7 +201,7 @@ Para ativar o HTTPS para o seu aplicativo, abra o arquivo **package.json** na pa
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Você criou um suplemento do Excel usando o Vue, parabéns! Agora, saiba mais sobre os recursos dos suplementos do Excel e crie um mais complexo, acompanhando o tutorial de suplementos do Excel.
+Você criou com êxito um suplemento do Excel usando o Vue, parabéns! Agora, saiba mais sobre os recursos dos suplementos do Excel e crie um mais complexo, acompanhando o tutorial de suplemento do Excel.
 
 > [!div class="nextstepaction"]
 > [Tutorial de suplemento do Excel](../tutorials/excel-tutorial.yml)

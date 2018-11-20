@@ -2,12 +2,12 @@
 title: Comandos de suplemento para Excel, Word e PowerPoint
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 3db846e9d28e063d959fd617bf8c50ab5cb5ec86
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.openlocfilehash: 698fd4b77ea90430a141db1c791856f4f57fa29b
+ms.sourcegitcommit: 9b021af6cb23a58486d6c5c7492be425e309bea1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25506263"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "26533662"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Comandos de suplemento para Excel, Word e PowerPoint
 
@@ -35,7 +35,7 @@ Os seguintes recursos de comando são compatíveis no momento.
 **Pontos de extensão**
 
 - Guias da faixa de opções: estender as guias internas ou criar uma nova guia personalizada.
-- Menus de contexto: estender os menus de contexto selecionados. 
+- Menus de contexto: estender os menus de contexto selecionados.
 
 **Tipos de controle**
 
@@ -51,9 +51,9 @@ Os seguintes recursos de comando são compatíveis no momento.
 
 Os comandos de suplemento atualmente têm suporte nas seguintes plataformas:
 
-- Office para Área de Trabalho do Windows 2016 (compilação 16.0.6769+)
-- Office para Mac (compilação 15.33+)
-- Office Online 
+- Outlook 2016 ou posterior para Windows (build 16.0.6769+)
+- Office para Mac (build 15.33+)
+- Office Online
 
 Mais plataformas serão incluídas em breve.
 
@@ -74,7 +74,7 @@ Aplique as seguintes práticas recomendadas ao desenvolver comandos de suplement
      > Os suplementos que ocupam muito espaço podem não passar na [Validação do AppSource](https://docs.microsoft.com/office/dev/store/validation-policies).
 
 - Para todos os ícones, siga as [diretrizes de design de ícones](add-in-icons.md).
-- Forneça uma versão do seu suplemento que também funcione em hosts que não tenham suporte para comandos. Um manifesto de suplemento único poderá funcionar tanto em hosts cientes do comando (com os comandos) quanto em hosts não cientes do comando (como um painel de tarefas).
+- Forneça uma versão do seu suplemento que também funcione em hosts que não tenham suporte para comandos. Um manifesto de suplemento único pode funcionar tanto em hosts cientes do comando (com os comandos) quanto em hosts não cientes do comando (como um painel de tarefas).
 
    *Figura 3. Suplemento de painel de tarefas no Office 2013 e o mesmo suplemento usando comandos de suplementos no Office 2016*
 
@@ -86,7 +86,3 @@ Aplique as seguintes práticas recomendadas ao desenvolver comandos de suplement
 A melhor maneira de começar a usar os comandos de suplemento é conferir os [exemplos de comandos de Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) no GitHub.
 
 Saiba mais sobre como especificar comandos de suplemento no manifesto em [Criar comandos de suplemento no manifesto](../develop/create-addin-commands.md) e no conteúdo de referência [VersionOverrides](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/versionoverrides?view=office-js).
-
-
-
-

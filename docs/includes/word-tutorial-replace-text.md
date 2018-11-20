@@ -1,17 +1,17 @@
-Nesta etapa o tutorial, você adicionará texto dentro e fora dos intervalos de texto selecionados, e substituirá o texto de um intervalo selecionado. 
+Nesta etapa o tutorial, você adicionará texto dentro e fora dos intervalos de texto selecionados, e substituirá o texto de um intervalo selecionado.
 
 > [!NOTE]
 > Esta página descreve uma etapa individual de um tutorial de suplemento do Word. Se você chegou aqui por meio dos resultados de mecanismos de pesquisa ou por outro link direto, acesse a página de introdução do [tutorial de suplemento do Word](../tutorials/word-tutorial.yml) para começar pelo início.
 
 ## <a name="add-text-inside-a-range"></a>Adicionar texto dentro de um intervalo
 
-1. Abra o projeto em seu editor de código. 
+1. Abra o projeto em seu editor de código.
 2. Abra o arquivo index.html.
 3. Abaixo do `div` que contém o botão `change-font`, adicione a marcação a seguir:
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="insert-text-into-range">Insert Abbreviation</button>            
+    <div class="padding">
+        <button class="ms-Button" id="insert-text-into-range">Insert Abbreviation</button>
     </div>
     ```
 
@@ -28,10 +28,10 @@ Nesta etapa o tutorial, você adicionará texto dentro e fora dos intervalos de 
     ```js
     function insertTextIntoRange() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to insert text into a selected range.
 
-            // TODO2: Load the text of the range and sync so that the 
+            // TODO2: Load the text of the range and sync so that the
             //        current range text can be read.
 
             // TODO3: Queue commands to repeat the text of the original
@@ -59,14 +59,14 @@ Nesta etapa o tutorial, você adicionará texto dentro e fora dos intervalos de 
     const doc = context.document;
     const originalRange = doc.getSelection();
     originalRange.insertText(" (C2R)", "End");
-    ``` 
+    ```
 
 8. Vamos deixar `TODO2` de lado até a próxima seção. Substitua `TODO3` pelo código a seguir. Esse código é semelhante ao código que você criou no primeiro estágio do tutorial, exceto que, agora, você está inserindo um novo parágrafo no final do documento, em vez de no início. Este novo parágrafo demonstrará que o novo texto agora faz parte do intervalo original.
- 
+
     ```js
     doc.body.insertParagraph("Original range: " + originalRange.text,
                              "End");
-    ``` 
+    ```
 
 ## <a name="add-code-to-fetch-document-properties-into-the-task-panes-script-objects"></a>Adicione código para buscar propriedades do documento em objetos de script do painel de tarefas
 
@@ -86,16 +86,16 @@ Estas etapas devem ser concluídas sempre que seu código precisar *ler* informa
         .then(function() {
 
                 // TODO4: Move the doc.body.insertParagraph line here.
-    
+
             }
         )
             // TODO5: Move the final call of context.sync here and ensure
-            //        that it does not run until the insertParagraph has 
+            //        that it does not run until the insertParagraph has
             //        been queued.
-    ``` 
+    ```
 
-2. Você não pode ter duas instruções `return` no mesmo caminho de código sem ramificações, portanto, exclua a linha final `return context.sync();` no final de `Word.run`. Você adicionará um novo final `context.sync` posteriormente neste tutorial. 
-3. Recorte a linha `doc.body.insertParagraph` e cole no lugar de `TODO4`. 
+2. Você não pode ter duas instruções `return` no mesmo caminho de código sem ramificações, portanto, exclua a linha final `return context.sync();` no final de `Word.run`. Você adicionará um novo final `context.sync` posteriormente neste tutorial.
+3. Recorte a linha `doc.body.insertParagraph` e cole no lugar de `TODO4`.
 4. Substitua `TODO5` pelo código a seguir. Observação:
    - Passar o método `sync` para uma função `then` garante que ele não seja executado até que a lógica `insertParagraph` tenha sido enfileirada.
    - O método `then` invoca qualquer função que é passada para ele e não é recomendável que `sync` seja chamado duas vezes, portanto, remova os "()" do fim de context.sync.
@@ -106,20 +106,20 @@ Estas etapas devem ser concluídas sempre que seu código precisar *ler* informa
 
 Quando terminar, a função inteira deve se parecer com o seguinte:
 
-  
+
 ```js
 function insertTextIntoRange() {
     Word.run(function (context) {
-        
+
         const doc = context.document;
         const originalRange = doc.getSelection();
         originalRange.insertText(" (C2R)", "End");
 
         originalRange.load("text");
         return context.sync()
-            .then(function() {        
+            .then(function() {
                         doc.body.insertParagraph("Current text of original range: " + originalRange.text,
-                                                "End");            
+                                                "End");
                 }
             )
             .then(context.sync);
@@ -131,7 +131,7 @@ function insertTextIntoRange() {
         }
     });
 }
-``` 
+```
 
 ## <a name="add-text-between-ranges"></a>Adicionar texto entre intervalos
 
@@ -139,8 +139,8 @@ function insertTextIntoRange() {
 2. Abaixo do `div` que contém o botão `insert-text-into-range`, adicione a marcação a seguir:
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="insert-text-outside-range">Add Version Info</button>            
+    <div class="padding">
+        <button class="ms-Button" id="insert-text-outside-range">Add Version Info</button>
     </div>
     ```
 
@@ -157,11 +157,11 @@ function insertTextIntoRange() {
     ```js
     function insertTextBeforeRange() {
         Word.run(function (context) {
-            
-            // TODO1: Queue commands to insert a new range before the 
+
+            // TODO1: Queue commands to insert a new range before the
             //        selected range.
 
-            // TODO2: Load the text of the original range and sync so that the 
+            // TODO2: Load the text of the original range and sync so that the
             //        range text can be read and inserted.
 
         })
@@ -172,7 +172,7 @@ function insertTextIntoRange() {
             }
         });
     }
-    ``` 
+    ```
 
 6. Substitua `TODO1` pelo código a seguir. Observação:
    - O método serve para adicionar um intervalo cujo texto seja "Office 2019", antes do intervalo com o texto "Office 365". Para simplificar, ele faz uma pressuposição de que a cadeia de caracteres está presente, e que o usuário a selecionou.
@@ -183,10 +183,10 @@ function insertTextIntoRange() {
     const doc = context.document;
     const originalRange = doc.getSelection();
     originalRange.insertText("Office 2019, ", "Before");
-    ``` 
+    ```
 
-7. Substitua `TODO2` pelo código a seguir. 
- 
+7. Substitua `TODO2` pelo código a seguir.
+
      ```js
     originalRange.load("text");
     return context.sync()
@@ -194,21 +194,21 @@ function insertTextIntoRange() {
 
                 // TODO3: Queue commands to insert the original range as a
                 //        paragraph at the end of the document.
-    
+
                 }
             )
 
             // TODO4: Make a final call of context.sync here and ensure
-            //        that it does not run until the insertParagraph has 
+            //        that it does not run until the insertParagraph has
             //        been queued.
-    ``` 
+    ```
 
 8. Substitua `TODO3` pelo código a seguir. Este novo parágrafo demonstrará que o novo texto ***não*** faz parte do intervalo original selecionado. O intervalo original ainda contém o texto que tinha quando foi selecionado.
- 
+
     ```js
     doc.body.insertParagraph("Current text of original range: " + originalRange.text,
                              "End");
-    ``` 
+    ```
 
 9. Substitua `TODO4` pelo código a seguir:
 
@@ -223,8 +223,8 @@ function insertTextIntoRange() {
 2. Abaixo do `div` que contém o botão `insert-text-outside-range`, adicione a marcação a seguir:
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="replace-text">Change Quantity Term</button>            
+    <div class="padding">
+        <button class="ms-Button" id="replace-text">Change Quantity Term</button>
     </div>
     ```
 
@@ -241,7 +241,7 @@ function insertTextIntoRange() {
     ```js
     function replaceText() {
         Word.run(function (context) {
-             
+
             // TODO1: Queue commands to replace the text.
 
             return context.sync();
@@ -253,15 +253,15 @@ function insertTextIntoRange() {
             }
         });
     }
-    ``` 
+    ```
 
 6. Substitua `TODO1` pelo código a seguir. O método serve para substituir a cadeia de caracteres "várias" pela cadeia "muitos". Para simplificar, ele faz uma pressuposição de que a cadeia de caracteres está presente, e que o usuário a selecionou.
 
     ```js
     const doc = context.document;
     const originalRange = doc.getSelection();
-    originalRange.insertText("many", "Replace"); 
-    ``` 
+    originalRange.insertText("many", "Replace");
+    ```
 
 ## <a name="test-the-add-in"></a>Testar o suplemento
 
@@ -272,7 +272,7 @@ function insertTextIntoRange() {
 
 2. Execute o comando `npm run build` para transcompilar seu código-fonte ES6 para uma versão anterior do JavaScript com suporte de todos os hosts nos quais os suplementos do Office podem ser executados.
 3. Execute o comando `npm start` para iniciar um servidor Web em um localhost.
-4. Feche o painel de tarefas para recarregá-lo e, no menu **Início**, selecione **Mostrar Painel de Tarefas** para reabrir o suplemento.
+4. Feche o painel de tarefas para recarregá-lo e, no menu **Página Inicial**, selecione **Mostrar Painel de Tarefas** para reabrir o suplemento.
 5. No painel de tarefas, escolha **Inserir Parágrafo** para garantir que haja um parágrafo no início do documento.
 6. Selecione um texto. Selecionar a frase "Clique para Executar" fará mais sentido. *Tenha cuidado para não incluir o espaço anterior ou seguinte na seleção.*
 7. Escolha o botão **Inserir Abreviação**. "(C2R)" é adicionado. Na parte inferior do documento, um novo parágrafo é adicionado com o texto inteiro expandido porque a nova cadeia de caracteres foi adicionada ao intervalo existente.

@@ -5,13 +5,13 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
 
 ## <a name="chart-table-data"></a>Dados de tabela do gráfico
 
-1. Abra o projeto em seu editor de código. 
+1. Abra o projeto em seu editor de código.
 2. Abra o arquivo index.html.
 3. Abaixo do `div` que contém o botão `sort-table`, adicione a marcação a seguir:
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="create-chart">Create Chart</button>            
+    <div class="padding">
+        <button class="ms-Button" id="create-chart">Create Chart</button>
     </div>
     ```
 
@@ -28,7 +28,7 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
     ```js
     function createChart() {
         Excel.run(function (context) {
-            
+
             // TODO1: Queue commands to get the range of data to be charted.
 
             // TODO2: Queue command to create the chart and define its type.
@@ -44,7 +44,7 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
             }
         });
     }
-    ``` 
+    ```
 
 7. Substitua `TODO1` pelo código a seguir. Para excluir a linha de cabeçalho, o código usa o método `Table.getDataBodyRange` para acessar o intervalo de dados que você deseja representar graficamente em vez do método `getRange`.
 
@@ -52,20 +52,20 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
     const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
     const expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
     const dataRange = expensesTable.getDataBodyRange();
-    ``` 
+    ```
 
 8. Substitua `TODO2` pelo código a seguir. Observe os seguintes parâmetros:
-   - O primeiro parâmetro para o método `add` especifica o tipo de gráfico. Há diversos tipos. 
-   - O segundo parâmetro especifica um intervalo de dados a incluir no gráfico. 
+   - O primeiro parâmetro para o método `add` especifica o tipo de gráfico. Há diversos tipos.
+   - O segundo parâmetro especifica um intervalo de dados a incluir no gráfico.
    - O terceiro parâmetro determina se uma série de pontos de dados da tabela deve estar representada por linha ou por coluna. A opção `auto` informa ao Excel para decidir o melhor método.
 
     ```js
     let chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'auto');
-    ``` 
+    ```
 
 9. Substitua `TODO3` pelo código a seguir. A maior parte do código é autoexplicativa. Observação:
    - Os parâmetros do método `setPosition` especificam as células da esquerda superior e da direita inferior da área da planilha que deve conter o gráfico. O Excel ajusta detalhes como a largura da linha para criar uma boa aparência para o gráfico no espaço fornecido.
-   - "Série" é um conjunto de pontos de dados de uma coluna da tabela. Como há apenas uma coluna sem cadeia de caracteres na tabela, o Excel deduz que essa é a única coluna de pontos de dados no gráfico. Ele interpreta outras colunas como rótulos do gráfico. Portanto, haverá apenas uma série no gráfico e será necessário o índice 0. Ele será rotulado como "Valor em €". 
+   - "Série" é um conjunto de pontos de dados de uma coluna da tabela. Como há apenas uma coluna sem cadeia de caracteres na tabela, o Excel deduz que essa é a única coluna de pontos de dados no gráfico. Ele interpreta outras colunas como rótulos do gráfico. Portanto, haverá apenas uma série no gráfico e será necessário o índice 0. Ele será rotulado como "Valor em €".
 
     ```js
     chart.setPosition("A15", "F30");
@@ -75,7 +75,7 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
     chart.dataLabels.format.font.size = 15;
     chart.dataLabels.format.font.color = "black";
     chart.series.getItemAt(0).name = 'Value in €';
-    ``` 
+    ```
 
 ## <a name="test-the-add-in"></a>Testar o suplemento
 
@@ -87,8 +87,8 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
 
 1. Execute o comando `npm run build` para transcompilar seu código-fonte ES6 para uma versão anterior do JavaScript com suporte no Internet Explorer (que é usada em segundo plano pelo Excel para executar os suplementos do Excel).
 2. Execute o comando `npm start` para iniciar um servidor Web em um host local.
-4. Feche o painel de tarefas para recarregá-lo e, no menu **Início**, selecione **Mostrar Painel de Tarefas** para reabrir o suplemento.
-5. Se, por algum motivo, a tabela estiver não na planilha aberta, no painel de tarefas, escolha **Criar tabela** e depois os botões **Filtrar tabela** e **Classificar tabela ** em qualquer ordem.
-6. Clique no botão **Criar gráfico**. Um gráfico é criado e incluirá somente os dados das linhas que foram filtradas. Os rótulos dos pontos de dados na parte inferior estão na ordem de classificação do gráfico, ou seja, nomes de comerciantes em ordem alfabética inversa.
+4. Feche o painel de tarefas para recarregá-lo e, no menu **Página Inicial**, selecione **Mostrar Painel de Tarefas** para reabrir o suplemento.
+5. Se, por algum motivo, a tabela não estiver na planilha aberta, no painel de tarefas, escolha **Criar Tabela** e depois os botões **Filtrar Tabela** e **Classificar Tabela ** em qualquer ordem.
+6. Escolha o botão **Criar gráfico**. Um gráfico é criado e incluirá somente os dados das linhas que foram filtradas. Os rótulos dos pontos de dados na parte inferior estão na ordem de classificação do gráfico, ou seja, nomes de comerciantes em ordem alfabética inversa.
 
-    ![Tutorial do Excel - Criar gráfico](../images/excel-tutorial-create-chart.png)
+    ![Tutorial do Excel - Criar gráfico ](../images/excel-tutorial-create-chart.png)

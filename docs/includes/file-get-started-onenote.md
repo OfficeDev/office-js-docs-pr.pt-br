@@ -1,12 +1,12 @@
-# <a name="build-your-first-onenote-add-in"></a>Crie seu primeiro suplemento do OneNote
+# <a name="build-your-first-onenote-add-in"></a>Criar seu primeiro suplemento do OneNote
 
-Neste artigo, você percorrerá o processo de criação de um suplemento do OneNote usando jQuery e a API JavaScript do Office.
+Neste artigo, você passará pelo processo de criar um suplemento do OneNote usando o jQuery e a API JavaScript para Office.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - [Node.js](https://nodejs.org)
 
-- Instale globalmente a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office).
+- Instale a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador do Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.
 
     ```bash
     npm install -g yo generator-office
@@ -14,20 +14,20 @@ Neste artigo, você percorrerá o processo de criação de um suplemento do OneN
 
 ## <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
-1. Use o gerador Yeoman para criar um projeto do suplemento do OneNote. Execute o seguinte comando e responda às solicitações da seguinte maneira:
+1. Use o gerador Yeoman para criar um projeto de suplemento do OneNote. Execute o comando a seguir e responda aos prompts da seguinte forma:
 
     ```bash
     yo office
     ```
 
-    - **Escolha um tipo de projeto:** `Office Add-in project using Jquery framework`
-    - **Escolha um tipo de script:** `Javascript`
-    - **Como deseja nomear seu suplemento?:** `My Office Add-in`
-    - **Para qual aplicativo cliente do Office você deseja suporte?** `Onenote`
+    - **Escolha o tipo de projeto:** `Office Add-in project using Jquery framework`
+    - **Escolha o tipo de script:** `Javascript`
+    - **Qual será o nome do suplemento?:** `My Office Add-in`
+    - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?:** `Onenote`
 
     ![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-onenote-jquery.png)
     
-    Depois de concluir o assistente, o gerador criará o projeto e instalará os componentes do nó de suporte.
+    Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
     
 2. Navegue até a pasta raiz do projeto.
 
@@ -37,7 +37,7 @@ Neste artigo, você percorrerá o processo de criação de um suplemento do OneN
 
 ## <a name="update-the-code"></a>Atualizar o código
 
-1. No seu editor de código, abra o arquivo **index.html** na raiz do projeto. Esse arquivo contém o HTML que será processado no painel de tarefas do suplemento.
+1. No editor de código, abra **index.html** na raiz do projeto. Esse arquivo contém o HTML que será renderizado no painel de tarefas do suplemento.
 
 2. Substitua o elemento `<body>` pela marcação a seguir e salve o arquivo. 
 
@@ -186,9 +186,9 @@ Neste artigo, você percorrerá o processo de criação de um suplemento do OneN
 
 1. Abra o arquivo **manifest.xml** para definir as configurações e os recursos do suplemento.
 
-2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o pelo seu nome.
+2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o com seu nome.
 
-3. O atributo `DefaultValue` do elemento `Description` tem um espaço reservado. Substitua-o por **Um suplemento de painel de tarefas para OneNote**.
+3. O atributo `DefaultValue` do elemento `Description` tem um espaço reservado. Substitua-o por **um suplemento do painel de tarefas do OneNote**.
 
 4. Salve o arquivo.
 
@@ -212,19 +212,19 @@ Neste artigo, você percorrerá o processo de criação de um suplemento do OneN
 
 2. Escolha **Inserir > Suplementos do Office** para abrir a caixa de diálogo Suplementos do Office.
 
-    - Se estiver conectado com sua conta de consumidor, selecione a guia **MEUS SUPLEMENTOS** e escolha  **Carregar meu suplemento**.
+    - Se você estiver conectado à sua conta de consumidor, selecione a guia **MEUS SUPLEMENTOS** e escolha  **Carregar Meu Suplemento**.
 
-    - Se estiver conectado com sua conta corporativa ou de estudante, selecione a guia **MINHA ORGANIZAÇÃO** e escolha  **Carregar meu suplemento**. 
+    - Se você estiver conectado à sua conta corporativa ou de estudante, selecione a guia **MINHA ORGANIZAÇÃO** e escolha  **Carregar Meu Suplemento**. 
 
-    A imagem a seguir mostra a guia **MEUS SUPLEMENTOS** para blocos de anotações de consumidor.
+    A imagem a seguir mostra a guia **MEUS SUPLEMENTOS** para blocos de anotações do consumidor.
 
     <img alt="The Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
 
-3. Na caixa de diálogo Carregar suplemento, navegue até **manifest.xml** na pasta do projeto e escolha **Carregar**. 
+3. Na caixa de diálogo Carregar Suplemento, navegue até **manifest.xml** na pasta do projeto e escolha **Carregar**. 
 
-4. Na guia **Página inicial** , escolha o botão **Mostrar painel de tarefas** na faixa de opções. O painel de tarefas do suplemento abre em um iFrame ao lado da página do OneNote.
+4. Na guia **Página Inicial**, na faixa de opções, escolha o botão **Mostrar Painel de Tarefas**. O painel de tarefa do suplemento abre em um iFrame ao lado da página do OneNote.
 
-5. Insira o seguinte conteúdo HTML na área de texto e escolha **Adicionar estrutura do código**.  
+5. Insira este conteúdo HTML na área de texto e escolha **Adicionar estrutura de tópicos**.  
 
     ```html
     <ol>
@@ -235,25 +235,25 @@ Neste artigo, você percorrerá o processo de criação de um suplemento do OneN
     </ol>
     ```
 
-    A estrutura de tópicos que você especificou é adicionada à página.
+    A estrutura de tópicos especificada é adicionada à página.
 
     ![O suplemento do OneNote criado a partir deste passo a passo](../images/onenote-first-add-in-3.png)
 
 ## <a name="troubleshooting-and-tips"></a>Dicas e solução de problemas
 
-- O suplemento pode ser depurado usando as ferramentas de desenvolvimento do seu navegador. Quando estiver usando o servidor Web Gulp e depurando no Internet Explore ou no Chrome, poderá salvar as alterações localmente e depois atualizar o iFrame do suplemento.
+- Você pode depurar o suplemento usando as ferramentas de desenvolvedor do seu navegador. Quando você estiver usando o servidor Web Gulp e depurando no Internet Explore ou no Chrome, você pode salvar as alterações localmente e apenas atualize o iFrame do suplemento.
 
-- Quando você inspeciona um objeto do OneNote, as propriedades que estão atualmente disponíveis para uso exibem valores reais. As propriedades que precisam ser carregadas exibem *undefined*. Expanda o nó `_proto_` para ver as propriedades definidas no objeto, mas que ainda não foram carregadas.
+- Quando você inspecionar um objeto do OneNote, as propriedades que estão atualmente disponíveis usam valores reais de exibição. As propriedades que precisam ser carregadas exibem *undefined*. Expanda o nó `_proto_` para ver as propriedades definidas no objeto, mas que ainda não foram carregadas.
 
-   ![Carregar um objeto do OneNote em um depurador](../images/onenote-debug.png)
+   ![Carregar o objeto do OneNote em um depurador](../images/onenote-debug.png)
 
-- É necessário habilitar conteúdo misto no navegador se o suplemento usa algum recurso HTTP. Os suplementos de produção devem usar apenas recursos HTTPS seguros.
+- Você precisa habilitar conteúdo misto no navegador, se o seu suplemento usar todos os recursos HTTP. Os suplementos de produção devem usar apenas recursos HTTPS seguros.
 
-- Os suplementos do painel de tarefas podem ser abertos de qualquer lugar, mas os suplementos de conteúdo só podem ser inseridos dentro do conteúdo normal da página (ou seja, não em títulos, imagens, iFrames, etc.). 
+- É possível abrir os suplementos do Painel de Tarefas em praticamente qualquer lugar, mas os suplementos de conteúdo podem ser inseridos apenas no conteúdo normal da página (ou seja, fora títulos, imagens, iFrames, etc.). 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Parabéns, você criou com êxito um suplemento do OneNote! Em seguida, conheça mais sobre os principais conceitos de criação de suplementos do OneNote.
+Parabéns, você criou com êxito um suplemento do OneNote! Em seguida, saiba mais sobre os principais conceitos de criação de suplementos do OneNote.
 
 > [!div class="nextstepaction"]
 > [Visão geral da programação da API JavaScript do OneNote](../onenote/onenote-add-ins-programming-overview.md)
@@ -263,4 +263,4 @@ Parabéns, você criou com êxito um suplemento do OneNote! Em seguida, conheça
 - [Visão geral da programação da API JavaScript do OneNote](../onenote/onenote-add-ins-programming-overview.md)
 - [Referência da API JavaScript do OneNote](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js)
 - [Amostra de Rubric Grader](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
-- [Visão geral da plataforma de suplementos do Office](../overview/office-add-ins.md)
+- [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)

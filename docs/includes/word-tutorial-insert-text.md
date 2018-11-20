@@ -5,7 +5,7 @@ Nesta etapa do tutorial, você testará programaticamente se o suplemento oferec
 
 ## <a name="code-the-add-in"></a>Codificação do suplemento
 
-1. Abra o projeto em seu editor de código. 
+1. Abra o projeto em seu editor de código.
 2. Abra o arquivo index.html.
 3. Substitua `TODO1` pela marcação a seguir:
 
@@ -19,7 +19,7 @@ Nesta etapa do tutorial, você testará programaticamente se o suplemento oferec
     ```js
     if (!Office.context.requirements.isSetSupported('WordApi', 1.3)) {
         console.log('Sorry. The tutorial add-in uses Word.js APIs that are not available in your version of Office.');
-    } 
+    }
     ```
 
 6. Substitua o `TODO2` pelo código a seguir:
@@ -36,7 +36,7 @@ Nesta etapa do tutorial, você testará programaticamente se o suplemento oferec
     ```js
     function insertParagraph() {
         Word.run(function (context) {
-            
+
             // TODO4: Queue commands to insert a paragraph into the document.
 
             return context.sync();
@@ -48,30 +48,30 @@ Nesta etapa do tutorial, você testará programaticamente se o suplemento oferec
             }
         });
     }
-    ``` 
+    ```
 
 8. Substitua `TODO4` pelo código a seguir. Observação:
    - O primeiro parâmetro para o método `insertParagraph` é o texto para o novo parágrafo.
-   - O segundo parâmetro é o local dentro do corpo onde o parágrafo será inserido. Outras opções para inserir parágrafo, quando o objeto pai é o corpo, são "End" e "Replace". 
+   - O segundo parâmetro é o local dentro do corpo onde o parágrafo será inserido. Outras opções para inserir parágrafo, quando o objeto pai é o corpo, são "End" e "Replace".
 
     ```js
     const docBody = context.document.body;
     docBody.insertParagraph("Office has several versions, including Office 2016, Office 365 Click-to-Run, and Office Online.",
-                            "Start");   
-    ``` 
+                            "Start");
+    ```
 
 ## <a name="test-the-add-in"></a>Testar o suplemento
 
 1. Abra uma janela Git bash ou um prompt de sistema habilitado para Node.JS e navegue para a pasta **Iniciar** do projeto.
 2. Execute o comando `npm run build` para transcompilar seu código-fonte ES6 para uma versão anterior do JavaScript com suporte de todos os hosts nos quais os suplementos do Office podem ser executados.
-3. Execute o comando `npm start` para iniciar um servidor Web em um localhost.   
+3. Execute o comando `npm start` para iniciar um servidor Web em um localhost.
 4. Realize o sideload do suplemento usando um dos métodos a seguir:
     - Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Word Online: [Realizar sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
+    - Word Online: [Realizar sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
     - iPad e Mac: [Realizar sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 5. No menu **Página Inicial** do Word, selecione **Mostrar Painel de Tarefas**.
 6. No painel de tarefas, escolha **Inserir Parágrafo**.
-7. Faça uma alteração no parágrafo. 
+7. Faça uma alteração no parágrafo.
 8. Escolha novamente **Inserir Parágrafo**. O novo parágrafo está acima do anterior porque o método `insertParagraph` está inserido no "início" do corpo do documento.
 
     ![Tutorial do Word: Inserir Parágrafo](../images/word-tutorial-insert-paragraph.png)

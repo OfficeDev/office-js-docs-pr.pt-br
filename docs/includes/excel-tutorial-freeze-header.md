@@ -5,13 +5,13 @@ Quando uma tabela for longa o suficiente para que um usuário precise rolar para
 
 ## <a name="freeze-the-tables-header-row"></a>Congelar a linha de cabeçalho da tabela
 
-1. Abra o projeto em seu editor de código. 
+1. Abra o projeto em seu editor de código.
 2. Abra o arquivo index.html.
 3. Abaixo do `div` que contém o botão `create-chart`, adicione a marcação a seguir:
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="freeze-header">Freeze Header</button>            
+    <div class="padding">
+        <button class="ms-Button" id="freeze-header">Freeze Header</button>
     </div>
     ```
 
@@ -28,7 +28,7 @@ Quando uma tabela for longa o suficiente para que um usuário precise rolar para
     ```js
     function freezeHeader() {
         Excel.run(function (context) {
-            
+
             // TODO1: Queue commands to keep the header visible when the user scrolls.
 
             return context.sync();
@@ -40,7 +40,7 @@ Quando uma tabela for longa o suficiente para que um usuário precise rolar para
             }
         });
     }
-    ``` 
+    ```
 
 7. Substitua `TODO1` pelo código a seguir. Observação:
    - A coleção `Worksheet.freezePanes` é um conjunto de painéis da planilha que fica congelado ou fixado no mesmo lugar quando rolamos a planilha.
@@ -49,7 +49,7 @@ Quando uma tabela for longa o suficiente para que um usuário precise rolar para
     ```js
     const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
     currentWorksheet.freezePanes.freezeRows(1);
-    ``` 
+    ```
 
 ## <a name="test-the-add-in"></a>Testar o suplemento
 
@@ -62,8 +62,8 @@ Quando uma tabela for longa o suficiente para que um usuário precise rolar para
 2. Execute o comando `npm start` para iniciar um servidor Web em um host local.
 4. Feche o painel de tarefas para recarregá-lo e, no menu **Início**, selecione **Mostrar Painel de Tarefas** para reabrir o suplemento.
 6. Se a tabela estiver na planilha, exclua-a.
-7. No painel de tarefas, escolha **Criar tabela**. 
-8. Escolha o botão **Congelar cabeçalho**.
+7. No painel de tarefas, escolha **Criar Tabela**.
+8. Escolha o botão **Congelar Cabeçalho**.
 9. Role a planilha para baixo, o suficiente para ver que o cabeçalho da tabela permanece visível na parte superior mesmo ao rolar até que as primeiras linhas fiquem fora da vista.
 
     ![Tutorial do Excel: congelar cabeçalho](../images/excel-tutorial-freeze-header.png)

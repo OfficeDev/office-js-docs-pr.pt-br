@@ -1,31 +1,31 @@
 # <a name="build-an-excel-add-in-using-react"></a>Criar um suplemento do Excel usando o React
 
-Neste artigo, você percorrerá o processo de criação de um suplemento do Excel usando o React e a API JavaScript do Excel.
+Neste artigo, você passará pelo processo de criar um suplemento do Excel usando o React e a API JavaScript do Excel.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - [Node.js](https://nodejs.org)
 
-- Instale a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador Yeoman para suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.
+- Instale a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador do Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.
     ```bash
     npm install -g yo generator-office
     ```
 
 ## <a name="create-the-web-app"></a>Criar o aplicativo Web
 
-1. Use o gerador Yeoman para criar um projeto do suplemento do Excel. Execute o comando a seguir e responda às mensagens da seguinte forma:
+1. Use o gerador Yeoman para criar um projeto de suplemento do Excel. Execute o comando a seguir e responda aos prompts da seguinte forma:
 
     ```bash
     yo office
     ```
 
-    - **Escolha um tipo de projeto:** `Office Add-in project using React framework`
-    - **Como deseja nomear seu suplemento?:** `My Office Add-in`
-    - **Qual aplicativo cliente do Office você gostaria de suportar?:** `Excel`
+    - **Escolha o tipo de projeto:** `Office Add-in project using React framework`
+    - **Qual será o nome do suplemento?:** `My Office Add-in`
+    - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?:** `Excel`
 
     ![Gerador do Yeoman](../images/yo-office-excel-react.png)
     
-    Depois de concluir o assistente, o gerador criará o projeto e instalará os componentes de suporte do Node.
+    Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
 2. Navegue até a pasta raiz do projeto.
 
@@ -35,7 +35,7 @@ Neste artigo, você percorrerá o processo de criação de um suplemento do Exce
 
 ## <a name="update-the-code"></a>Atualizar o código
 
-1. No seu editor de código, abra o arquivo **src/styles.less**, adicione os seguintes estilos ao final do arquivo e salve o arquivo.
+1. Em seu editor de código, abra o arquivo **src/styles.less**, inclua os seguintes estilos no final do arquivo e salve o arquivo.
 
     ```css
     #content-header {
@@ -76,9 +76,9 @@ Neste artigo, você percorrerá o processo de criação de um suplemento do Exce
     }
     ```
 
-2. O modelo de projeto criado pelo gerador de Yeoman de Suplementos do Office inclui um componente React que não é necessário para esse início rápido. Exclua o arquivo **src/components/HeroList.tsx**.
+2. O modelo de projeto criado pelo gerador Yeoman de Suplementos do Office inclui um componente que não é necessário para este início rápido. Exclua o arquivo **src/components/HeroList.tsx**.
 
-3. Abra o arquivo **src/components/Header.tsx**, substitua todo o conteúdo com o código a seguir e salve o arquivo.
+3. Abra o arquivo **src/components/Header.tsx**, substitua todo o conteúdo pelo código a seguir e salve o arquivo.
 
     ```typescript
     import * as React from 'react';
@@ -104,7 +104,7 @@ Neste artigo, você percorrerá o processo de criação de um suplemento do Exce
     }
     ```
 
-4. Crie um novo componente React denominado **Content.tsx** na pasta **src/componentes** , adicione o código a seguir e salve o arquivo.
+4. Crie um novo componente React chamado **Content.tsx** na pasta **src/components**, adicione o seguinte código e salve o arquivo.
 
     ```typescript
     import * as React from 'react';
@@ -137,7 +137,7 @@ Neste artigo, você percorrerá o processo de criação de um suplemento do Exce
     }
     ```
 
-5. Abra o arquivo **src/components/App.tsx**, substitua todo o conteúdo com o código a seguir e salve o arquivo.
+5. Abra o arquivo **src/components/App.tsx**, substitua todo o conteúdo pelo código a seguir e salve o arquivo.
 
     ```typescript
     import * as React from 'react';
@@ -207,7 +207,7 @@ Neste artigo, você percorrerá o processo de criação de um suplemento do Exce
 
 2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o com seu nome.
 
-3. O atributo `DefaultValue` do elemento `Description` tem um espaço reservado. Substitua-o por **Um suplemento do painel de tarefas para o Excel**.
+3. O atributo `DefaultValue` do elemento `Description` tem um espaço reservado. Substitua-o com **um suplemento do painel de tarefas do Excel**.
 
 4. Salve o arquivo.
 
@@ -227,17 +227,17 @@ Neste artigo, você percorrerá o processo de criação de um suplemento do Exce
 
 ## <a name="try-it-out"></a>Experimente
 
-1. Siga as instruções para a plataforma que você usará para executar o suplemento e fazer o sideload do suplemento no Excel.
+1. Siga as instruções para a plataforma que você usará para executar o suplemento e realizar sideload do suplemento no Excel.
 
-    - Windows: [Fazer o sideload de suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online: [Fazer o sideload dos suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad e Mac: [Fazer o sideload dos suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    - Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Excel Online: [Realizar sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
+    - iPad e Mac: [Realizar sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 2. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
     ![Botão do suplemento do Excel](../images/excel-quickstart-addin-2b.png)
 
-3. Selecione qualquer intervalo de células na planilha.
+3. Selecione um intervalo de células na planilha.
 
 4. No painel de tarefas, escolha o botão **Definir cor** para definir a cor do intervalo selecionado como verde.
 
@@ -245,10 +245,10 @@ Neste artigo, você percorrerá o processo de criação de um suplemento do Exce
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Parabéns, você criou com sucesso um suplemento do Excel usando o React! Em seguida, aprenda mais sobre os recursos de um suplemento do Excel e crie um suplemento mais complexo seguindo o tutorial do suplemento do Excel.
+Você criou com êxito um suplemento do Excel usando o React, parabéns! Agora, saiba mais sobre os recursos dos suplementos do Excel e crie um mais complexo, acompanhando o tutorial de suplemento do Excel.
 
 > [!div class="nextstepaction"]
-> [Tutorial de suplementos do Excel](../tutorials/excel-tutorial.yml)
+> [Tutorial de suplemento do Excel](../tutorials/excel-tutorial.yml)
 
 ## <a name="see-also"></a>Confira também
 

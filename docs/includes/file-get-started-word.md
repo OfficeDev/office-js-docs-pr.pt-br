@@ -1,4 +1,4 @@
-# <a name="build-your-first-word-add-in"></a>Compilar seu primeiro suplemento do Word
+# <a name="build-your-first-word-add-in"></a>Crie o seu primeiro suplemento do Word
 
 _Aplica-se a: Word 2016, Word para iPad, Word para Mac_
 
@@ -22,7 +22,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
 
 3. Dê um nome ao projeto e escolha **OK**.
 
-4. O Visual Studio cria uma solução, e os dois projetos dela são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.
+4. O Visual Studio cria uma solução, e os dois projetos dele são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.
     
 ### <a name="explore-the-visual-studio-solution"></a>Explorar a solução do Visual Studio
 
@@ -30,7 +30,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
 
 ### <a name="update-the-code"></a>Atualizar o código
 
-1. **Home.HTML** especifica o HTML que será processado no painel de tarefas do suplemento. Em **Home.html**, substitua o elemento `<body>`  com a seguinte marcação e salve o arquivo.
+1. **Home.html** especifica o HTML que será renderizado no painel de tarefas do suplemento. Em **Home.html**, substitua o elemento `<body>` pela marcação a seguir e salve o arquivo.
  
     ```html
     <body>
@@ -56,7 +56,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
     </body>
     ```
 
-2. Abra o arquivo **Home.js** na raiz do projeto de aplicativo da web. Este arquivo especifica o script para o suplemento. Substitua todo o conteúdo pelo seguinte código e salve o arquivo.
+2. Abra o arquivo **Home.js** na raiz do projeto do aplicativo Web. Este arquivo especifica o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
 
     ```js
     'use strict';
@@ -157,7 +157,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
     })();
     ```
 
-3. Abra o arquivo **Home.css** na raiz do projeto de aplicativo da web. Este arquivo especifica os estilos personalizados para o suplemento. Substitua todo o conteúdo pelo seguinte código e salve o arquivo.
+3. Abra o arquivo **Home.css** na raiz do projeto do aplicativo Web. Este arquivo especifica os estilos personalizados para o suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
 
     ```css
     #content-header {
@@ -188,13 +188,13 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
 
 ### <a name="update-the-manifest"></a>Atualizar o manifesto
 
-1. Abra o arquivo de manifesto XML no projeto de suplemento. Este arquivo define as configurações e recursos do suplemento.
+1. Abra o arquivo de manifesto XML do projeto do suplemento. Este arquivo define as configurações e os recursos do suplemento.
 
-2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o pelo seu nome.
+2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o com seu nome.
 
-3. O atributo `DefaultValue` do elemento `DisplayName` tem um espaço reservado. Substitua-o pelo **Meu suplemento do Office**.
+3. O atributo `DefaultValue` do elemento `DisplayName` tem um espaço reservado. Substitua-o pelo **suplementos do My Office**.
 
-4. O atributo `DefaultValue` do elemento `Description` tem um espaço reservado. Substitua-o por **Um suplemento de painel de tarefas para Word**.
+4. O atributo `DefaultValue` do elemento `Description` tem um espaço reservado. Substitua-o com **um suplemento do painel de tarefas do PowerPoint**.
 
 5. Salve o arquivo.
 
@@ -212,9 +212,9 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
 
 1. Usando o Visual Studio, teste o suplemento do Word recém-criado pressionando F5 ou escolhendo o botão **Iniciar** para abrir o Word com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
 
-2. No Word, escolha a guia **Página inicial** e, sem seguida, o botão **Mostrar painel de tarefas** na faixa de opções para abrir o painel de tarefas do suplemento. (Se você estiver usando a versão sem assinatura do Office 2016 em vez da versão do Office 365, os botões personalizados não serão suportados. Em vez disso, o painel de tarefas será aberto imediatamente.)
+2. No Word, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento. (Caso esteja usando a versão sem assinatura do Office 2016 ao invés da versão do Office 365, os botões personalizados não são compatíveis. Em vez disso, o painel de tarefas abrirá imediatamente.)
 
-    ![Uma captura de tela do aplicativo do Word com o botão Mostrar painel de tarefas destacado](../images/word-quickstart-addin-0.png)
+    ![Uma captura de tela do Word com o botão Mostrar Painel de Tarefas realçado](../images/word-quickstart-addin-0.png)
 
 3. No painel de tarefas, escolha qualquer um dos botões para adicionar o texto clichê ao documento.
 
@@ -226,7 +226,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
 
 - [Node.js](https://nodejs.org)
 
-- Instale globalmente a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office).
+- Instale a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador do Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.
 
     ```bash
     npm install -g yo generator-office
@@ -234,20 +234,20 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
 
 ### <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
-1. Use o gerador Yeoman para criar um projeto de suplemento do Word. Execute o seguinte comando e responda às solicitações da seguinte maneira:
+1. Use o gerador Yeoman para criar um projeto de suplemento do Word. Execute o comando a seguir e responda aos prompts da seguinte forma:
 
     ```bash
     yo office
     ```
 
-    - **Escolha um tipo de projeto:** `Office Add-in project using Jquery framework`
-    - **Escolha um tipo de script:** `Javascript`
-    - **Como deseja nomear seu suplemento?:** `My Office Add-in`
-    - **Para qual aplicativo cliente do Office você deseja suporte?** `Word`
+    - **Escolha o tipo de projeto:** `Office Add-in project using Jquery framework`
+    - **Escolha o tipo de script:** `Javascript`
+    - **Qual será o nome do suplemento?:** `My Office Add-in`
+    - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?:** `Word`
 
     ![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-word-jquery.png)
     
-    Depois de concluir o assistente, o gerador criará o projeto e instalará os componentes do nó de suporte.
+    Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
     
 2. Navegue até a pasta raiz do projeto.
 
@@ -257,7 +257,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
 
 ### <a name="update-the-code"></a>Atualizar o código
 
-1. No seu editor de código, abra o arquivo **index.html** na raiz do projeto. Esse arquivo contém o HTML que será processado no painel de tarefas do suplemento. 
+1. No editor de código, abra **index.html** na raiz do projeto. Esse arquivo contém o HTML que será renderizado no painel de tarefas do suplemento. 
 
 2. Substitua o elemento `<body>` pela marcação a seguir e salve o arquivo.
 
@@ -287,7 +287,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
     </body>
     ```
 
-2. Abra o arquivo **src\index.js** para especificar o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo. Esse script contém códigos de inicialização, além do código que faz alterações no documento do Word, inserindo texto no documento quando um botão é escolhido. 
+2. Abra o arquivo **src/index.js** para especificar o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo. Esse script contém códigos de inicialização além do código que faz alterações no documento do Word inserindo texto no documento quando um botão é escolhido. 
 
     ```js
     'use strict';
@@ -388,7 +388,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
     })();
     ```
 
-3. Abra o arquivo **app.css** na raiz do projeto para especificar os estilos personalizados do suplemento. Substitua todo o conteúdo pelo seguinte código e salve o arquivo.
+3. Abra o arquivo **app.css** na raiz do projeto para especificar os estilos personalizados do suplemento. Substitua todo o conteúdo pelo que está a seguir e salve o arquivo.
 
     ```css
     #content-header {
@@ -421,9 +421,9 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
 
 1. Abra o arquivo **manifest.xml** para definir as configurações e os recursos do suplemento.
 
-2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o pelo seu nome.
+2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o com seu nome.
 
-3. O atributo `DefaultValue` do elemento `Description` tem um espaço reservado. Substitua-o por **Um suplemento de painel de tarefas para Word**.
+3. O atributo `DefaultValue` do elemento `Description` tem um espaço reservado. Substitua-o com **um suplemento do painel de tarefas do PowerPoint**.
 
 4. Salve o arquivo.
 
@@ -443,15 +443,15 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
 
 ### <a name="try-it-out"></a>Experimente
 
-1. Para fazer o sideload do suplemento no Word, siga as instruções para a plataforma que você usará para executar o suplemento.
+1. Para realizar sideload do suplemento no Word, siga as instruções para a plataforma que você usará para executar o suplemento.
 
-    - Windows: [Fazer sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Word Online: [Fazer sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-on-office-online)
-    - iPad e Mac: [Fazer sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    - Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Word Online: [Realizar sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
+    - iPad e Mac: [Realizar sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-2. No Word, escolha a guia **Página Inicial** e, em seguida, o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
+2. No Word, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Uma captura de tela do aplicativo do Word com o botão Mostrar painel de tarefas realçado](../images/word-quickstart-addin-2.png)
+    ![Uma captura de tela do Word com o botão Mostrar painel de tarefas realçado](../images/word-quickstart-addin-2.png)
 
 3. No painel de tarefas, escolha qualquer um dos botões para adicionar o texto clichê ao documento.
 
@@ -461,13 +461,14 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Parabéns, você criou com êxito um suplemento do Word usando o jQuery! Em seguida, saiba mais sobre os recursos de um suplemento do Word e crie um suplemento mais complexo seguindo as etapas do tutorial de suplemento do Word.
+Parabéns, você criou com êxito um suplemento do Word usando o jQuery! Em seguida, saiba mais sobre os recursos de um suplemento do Word e crie um suplemento mais complexo seguindo as etapas deste tutorial de suplemento do Word.
 
 > [!div class="nextstepaction"]
-> [Tutorial do suplemento do Word](../tutorials/word-tutorial.yml)
+> [Tutorial de suplemento do Word](../tutorials/word-tutorial.yml)
 
 ## <a name="see-also"></a>Confira também
 
 * [Visão geral dos suplementos do Word](../word/word-add-ins-programming-overview.md)
-* [Exemplos de código de suplemento do Word](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
-* [Referência da API JavaScript do Word](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js)
+* 
+  [Exemplos de código do suplemento do Word](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
+* [Referências da API JavaScript do Word](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js)

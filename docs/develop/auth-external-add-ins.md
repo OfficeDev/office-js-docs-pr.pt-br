@@ -2,12 +2,12 @@
 title: Autorizar serviços externos no seu suplemento do Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: ee88019e85ba37f24c81fd7bf3663ee7cf066d45
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 6cdf07886ba883a7dfe935b59c918948c2b45afa
+ms.sourcegitcommit: 86724e980f720ed05359c9525948cb60b6f10128
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945740"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "26237476"
 ---
 # <a name="authorize-external-services-in-your-office-add-in"></a>Autorizar serviços externos no seu suplemento do Office
 
@@ -15,7 +15,7 @@ Serviços online populares, incluindo o Office 365, o Google, o Facebook, o Link
 
 A estrutura padrão do setor para habilitar o acesso de aplicativos Web a um serviço online é **OAuth 2.0**. Na maioria das situações, você não precisa saber os detalhes de como a estrutura funciona para usá-la no seu suplemento. Estão disponíveis muitas bibliotecas que simplificam os detalhes para você.
 
-Uma ideia fundamental do OAuth é que um aplicativo pode ser uma entidade de segurança por si só, assim como um usuário ou um grupo, com sua própria identidade e conjunto de permissões. Nos cenários mais comuns, quando o usuário realiza uma ação no suplemento do Office que requer o serviço online, o suplemento envia ao serviço uma solicitação para um conjunto específico de permissões para a conta do usuário. Em seguida, o serviço solicita que o usuário conceda essas permissões ao suplemento. Após a concessão das permissões, o serviço envia ao suplemento um pequeno *token de acesso* codificado. O suplemento pode usar o serviço, incluindo o token, em todas as suas solicitações para as APIs do serviço. Porém, o suplemento só pode agir dentro das permissões concedidas a ele pelo usuário. O token também expira após um tempo especificado.
+Uma ideia fundamental do OAuth é que um aplicativo pode ser uma entidade de segurança por si só, assim como um usuário ou um grupo, com sua própria identidade e conjunto de permissões. Nos cenários mais comuns, quando o usuário realiza uma ação no Suplemento do Office que requer o serviço online, o suplemento envia ao serviço uma solicitação para um conjunto específico de permissões para a conta do usuário. Em seguida, o serviço solicita que o usuário conceda essas permissões ao suplemento. Após a concessão das permissões, o serviço envia ao suplemento um pequeno *token de acesso* codificado. O suplemento pode usar o serviço, incluindo o token, em todas as suas solicitações para as APIs do serviço. Porém, o suplemento só pode agir dentro das permissões concedidas a ele pelo usuário. O token também expira após um tempo especificado.
 
 Vários padrões OAuth, chamados de *fluxos* ou *tipos de concessão*, foram projetados para diferentes cenários. Os dois padrões a seguir são os mais comumente implementados:
 
@@ -27,11 +27,7 @@ A finalidade dos fluxos do OAuth é proteger a identidade e a autorização do a
 Você deve estar familiarizado com os prós e os contras do fluxo implícito e o fluxo do Código de Autorização. Para obter mais informações sobre esses dois fluxos, consulte [Código de Autorização](https://tools.ietf.org/html/rfc6749#section-1.3.1) e [Implícito](https://tools.ietf.org/html/rfc6749#section-1.3.2).
 
 > [!NOTE]
-> Você também tem a opção de usar um serviço intermediário para executar a autorização e passar o token de acesso ao seu suplemento. Confira detalhes sobre esse cenário na seção **Serviços intermediários** mais adiante neste artigo.
-
-## <a name="authorization-to-microsoft-graph"></a>Autorização para o Microsoft Graph
-
-Se o serviço externo puder ser acessado por meio do Microsoft Graph, como o Office 365 ou o OneDrive, você poderá fornecer a melhor experiência para os usuários e ter a experiência de desenvolvimento mais fácil com o uso do sistema de logon único descrito em [Autorizar o Microsoft Graph no suplemento do Office](authorize-to-microsoft-graph.md) e seus artigos relacionados. As técnicas descritas neste artigo são melhores para usar em serviços externos que não sejam acessíveis com o Microsoft Graph. No entanto, elas *podem* ser usadas para acessar o Microsoft Graph, e você pode preferir as vantagens do logon único. Por exemplo, o sistema de logon único requer código do lado do servidor, portanto, ele não pode ser usado com um aplicativo de página única. Além disso, o sistema de logon único ainda não é compatível com todas as plataformas.
+> Você também tem a opção de usar um serviço intermediário para executar a autorização e passar o token de acesso ao seu suplemento. Para obter detalhes sobre esse cenário, consulte a seção **Serviços intermediários** mais adiante neste artigo.
 
 ## <a name="using-the-implicit-flow-in-office-add-ins"></a>Usando o fluxo Implícito em suplementos do Office
 A melhor maneira de descobrir se um serviço online suporta o fluxo implícito é consultar a documentação do serviço. Para serviços que suportam o fluxo implícito, você pode usar a biblioteca de JavaScript **Office-js-helpers** para fazer todo o trabalho detalhado para você:

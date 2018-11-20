@@ -5,13 +5,13 @@ Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou ante
 
 ## <a name="filter-the-table"></a>Filtrar a tabela
 
-1. Abra o projeto em seu editor de código. 
+1. Abra o projeto em seu editor de código.
 2. Abra o arquivo index.html.
 3. Abaixo do `div`, que contém o botão `create-table`, adicione a marcação a seguir:
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="filter-table">Filter Table</button>            
+    <div class="padding">
+        <button class="ms-Button" id="filter-table">Filter Table</button>
     </div>
     ```
 
@@ -28,8 +28,8 @@ Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou ante
     ```js
     function filterTable() {
         Excel.run(function (context) {
-            
-            // TODO1: Queue commands to filter out all expense categories except 
+
+            // TODO1: Queue commands to filter out all expense categories except
             //        Groceries and Education.
 
             return context.sync();
@@ -41,9 +41,9 @@ Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou ante
             }
         });
     }
-    ``` 
+    ```
 
-7. Substitua `TODO1` pelo código a seguir. Nota:
+7. Substitua `TODO1` pelo código a seguir. Observação:
    - O código primeiro faz referência à coluna que precisa de filtragem ao passar o nome da coluna para o método `getItem`, em vez de passar o índice para o método `getItemAt` como o método `createTable` faz. Como os usuários podem mover as colunas da tabela, a coluna de um determinado índice pode mudar depois da criação da tabela. Portanto, é mais seguro usar o nome da coluna como referência dela. Usamos de forma segura `getItemAt` em um tutorial anterior porque usamos o mesmo método que cria a tabela. Assim não existe a chance de um usuário mover a coluna.
    - O método `applyValuesFilter` é um dos vários métodos de filtragem do objeto `Filter`.
 
@@ -60,8 +60,8 @@ Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou ante
 2. Abaixo do `div` que contém o botão `filter-table`, adicione a marcação a seguir:
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="sort-table">Sort Table</button>            
+    <div class="padding">
+        <button class="ms-Button" id="sort-table">Sort Table</button>
     </div>
     ```
 
@@ -78,7 +78,7 @@ Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou ante
     ```js
     function sortTable() {
         Excel.run(function (context) {
-            
+
             // TODO1: Queue commands to sort the table by Merchant name.
 
             return context.sync();
@@ -90,25 +90,25 @@ Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou ante
             }
         });
     }
-    ``` 
+    ```
 
-7. Substitua `TODO1` pelo código a seguir. Nota:
+7. Substitua `TODO1` pelo código a seguir. Observação:
    - O código cria uma matriz de objetos `SortField` que tem apenas um membro, já que o suplemento só classifica a coluna Comerciante.
    - A propriedade `key` de um objeto `SortField` é o índice com base em zero da coluna a classificar.
-   - O membro `sort` de uma `Table` é um objeto `TableSort`, não um método. Os `SortField`s são passados para o método `TableSort` do objeto `apply`.
+   - O membro `sort` de uma `Table` é um objeto `TableSort`, não um método. Os `SortField`s são passados para o método `apply` do objeto `TableSort`.
 
     ```js
     const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
     const expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
     const sortFields = [
-        { 
+        {
             key: 1,            // Merchant column
             ascending: false,
         }
     ];
 
     expensesTable.sort.apply(sortFields);
-    ``` 
+    ```
 
 ## <a name="test-the-add-in"></a>Testar o suplemento
 
@@ -119,8 +119,8 @@ Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou ante
 
 1. Execute o comando `npm run build` para transcompilar seu código-fonte ES6 para uma versão anterior do JavaScript com suporte no Internet Explorer (que é usada em segundo plano pelo Excel para executar os suplementos do Excel).
 2. Execute o comando `npm start` para iniciar um servidor Web em um host local.
-4. Feche o painel de tarefas para recarregá-lo e, no menu **Início**, selecione **Mostrar Painel de Tarefas** para reabrir o suplemento.
-5. Se, por algum motivo, a tabela não estiver na planilha aberta, no painel de tarefas, escolha **Criar tabela**. 
-6. Escolha os botões **Filtrar tabela** e **Classificar tabela** em qualquer ordem.
+4. Feche o painel de tarefas para recarregá-lo e, no menu **Página Inicial**, selecione **Mostrar Painel de Tarefas** para reabrir o suplemento.
+5. Se por qualquer motivo a tabela não estiver na planilha aberta, no painel de tarefas, escolha **Criar Tabela**.
+6. Escolha os botões **Filtrar Tabela** e **Classificar Tabela** em qualquer ordem.
 
     ![Tutorial do Excel: filtrar e classificar tabela](../images/excel-tutorial-filter-and-sort-table.png)

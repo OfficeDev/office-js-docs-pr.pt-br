@@ -1,55 +1,56 @@
 ---
 title: Validar e solucionar problemas com seu manifesto
-description: Use estes métodos para validar o manifesto de Suplementos do Office.
-ms.date: 12/04/2017
-ms.openlocfilehash: 51d644f7cfb7fbad5c9b66be41dc57015202b9be
-ms.sourcegitcommit: a6d6348075c1abed76d2146ddfc099b0151fe403
+description: Use estes métodos para validar o manifesto de suplementos do Office
+ms.date: 11/02/2018
+ms.openlocfilehash: 710a06108206675a6c4fe523137f12a5d12f1da4
+ms.sourcegitcommit: c6723a31b48945ca4c466ba016a3dfc7b6267f5c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "25639984"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "25942241"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>Validar e solucionar problemas com seu manifesto
 
-Use estes métodos para validar e solucionar problemas no manifesto dos Suplementos do Office. 
+Use esses métodos para validar e solucionar problemas no manifesto de seu suplemento do Office. 
 
 - [Validar o manifesto com o Validador de Suplemento do Office](#validate-your-manifest-with-the-office-add-in-validator)   
-- [Validar o manifesto com base no esquema XML](#validate-your-manifest-against-the-xml-schema)
-- [Usar o log de tempo de execução para depurar o manifesto do suplemento](#use-runtime-logging-to-debug-your-add-in-manifest)
+- [Validar seu manifesto em relação ao esquema XML](#validate-your-manifest-against-the-xml-schema)
+- [Validar o manifesto com o gerador Yeoman para Suplementos do Office](#validate-your-manifest-with-the-yeoman-generator-for-office-add-ins)
+- [Usar o log de tempo de execução para depurar seu manifesto de suplemento](#use-runtime-logging-to-debug-your-add-in-manifest)
 
 
 ## <a name="validate-your-manifest-with-the-office-add-in-validator"></a>Validar o manifesto com o Validador de Suplemento do Office
 
-Para se assegurar de que o arquivo de manifesto que descreve o Suplemento do Office está correto e completo, valide-o com o [Validador de Suplemento do Office](https://github.com/OfficeDev/office-addin-validator).
+Para ajudar a garantir que o arquivo de manifesto que descreve o suplemento do Office está correto e completo, valide-o com base no [Validador de Suplemento do Office](https://github.com/OfficeDev/office-addin-validator).
 
-### <a name="to-use-the-office-add-in-validator-to-validate-your-manifest"></a>Para usar o Validador de Suplemento do Office para validar o manifesto
+### <a name="to-use-the-office-add-in-validator-to-validate-your-manifest"></a>Para usar o Validador de Suplemento do Office para validar o manifesto:
 
 1. Instale o [Node.js](https://nodejs.org/download/). 
 
-2. Abra um prompt de comando/terminal como administrador e instale o Validador de Suplemento do Office e suas dependências globalmente usando o seguinte comando:
+2. Abra um prompt de comando/terminal como administrador e instale o Validador de Suplemento do Office e as respectivas dependências globalmente usando o seguinte comando:
 
     ```bash
     npm install -g office-addin-validator
     ```
     
     > [!NOTE]
-    > se já instalou o Yo Office, atualize-o para a última versão e o validador será instalado como uma dependência.
+    > se já instalou o Office, atualize para a versão mais recente para que o validador seja instalado como uma dependência.
 
-3. Para validar o manifesto, execute o seguinte comando. Substitua MANIFEST.XML pelo caminho para o arquivo XML do manifesto.
+3. Para validar o manifesto, execute o seguinte comando: substitua MANIFEST.XML pelo caminho para o arquivo XML de manifesto.
 
     ```bash
     validate-office-addin MANIFEST.XML
     ```
 
-## <a name="validate-your-manifest-against-the-xml-schema"></a>Validar o manifesto com base no esquema XML
+## <a name="validate-your-manifest-against-the-xml-schema"></a>Validar seu manifesto em relação ao esquema XML
 
-Para ajudar a garantir que o arquivo de manifesto segue o esquema correto, incluindo quaisquer namespaces para os elementos que você está usando. Se você copiou elementos de outros manifestos de amostra, verifique se também **incluem os namespaces apropriados**. Você pode validar um manifesto com base nos arquivos da [Definição de Esquema XML  (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas). Pode usar uma ferramenta de validação de esquema XML para executar essa validação. 
+Para ajudar a garantir que o arquivo de manifesto segue o esquema correto, incluindo todos os namespaces de elementos que você está usando. Se você copiou elementos de outros manifestos da amostra, verifique se também **incluiu os namespaces apropriados**. É possível validar um manifesto em relação aos arquivos de [Definição de esquema XML (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas). É possível usar uma ferramenta de validação de esquema XML para executar essa validação. 
 
 
 
-### <a name="to-use-a-command-line-xml-schema-validation-tool-to-validate-your-manifest"></a>Usar uma ferramenta de validação de esquema XML da linha de comando para validar o manifesto
+### <a name="to-use-a-command-line-xml-schema-validation-tool-to-validate-your-manifest"></a>Para usar uma ferramenta de validação de esquema XML da linha de comando para validar seu manifesto
 
-1.  Instale o [tar](https://www.gnu.org/software/tar/) e o [libxml](http://xmlsoft.org/FAQ.html), caso ainda não tenha instalado.
+1.  Instale o [tar](https://www.gnu.org/software/tar/) e o [libxml](http://xmlsoft.org/FAQ.html), caso ainda não tenha o feito.
 
 2.  Execute o comando a seguir. Substitua `XSD_FILE` pelo caminho para o arquivo XSD do manifesto e `XML_FILE` pelo caminho para o arquivo XML do manifesto.
     
@@ -57,64 +58,82 @@ Para ajudar a garantir que o arquivo de manifesto segue o esquema correto, inclu
     xmllint --noout --schema XSD_FILE XML_FILE
     ```
 
-## <a name="use-runtime-logging-to-debug-your-add-in"></a>Use o log de tempo de execução para depurar o suplemento 
+## <a name="validate-your-manifest-with-the-yeoman-generator-for-office-add-ins"></a>Validar o manifesto com o gerador Yeoman para Suplementos do Office
 
-Você pode usar o log de tempo de execução para depurar o manifesto do suplemento, bem como vários erros de instalação. Esse recurso pode ajudá-lo a identificar e corrigir problemas com o manifesto que não são detectados pela validação do esquema XSD, como uma incompatibilidade entre os IDs do recurso. O log de tempo de execução é particularmente útil para depurar suplementos que implementam comandos de suplementos e funções personalizadas do Excel.   
+Caso tenha criado o Suplemento do Office usando o [Gerador Yeoman para Suplementos do Office](https://www.npmjs.com/package/generator-office), é possível garantir que o arquivo de manifesto segue o esquema correto executando o seguinte comando no diretório raiz do projeto:
+
+```bash
+npm run validate
+```
+
+![Gif animado que mostra o validador Yo Office em execução na linha de comando e gerando os resultados que mostram que a validação foi aprovada](../images/yo-office-validator.gif)
 
 > [!NOTE]
-> O recurso de log de tempo de execução está disponível atualmente para o Office 2016 desktop.
+> Para ter acesso a essa funcionalidade, o projeto de suplemento deve ter sido criado usando o [Gerador Yeoman para Suplementos do Office](https://www.npmjs.com/package/generator-office) versão 1.1.17 ou posterior.
+
+## <a name="use-runtime-logging-to-debug-your-add-in"></a>Usar o log de tempo de execução para depurar seu suplemento 
+
+Você pode usar o log de tempo de execução para depurar o manifesto do seu suplemento, assim como diversos erros de instalação. Esse recurso pode ajudá-lo a identificar e corrigir problemas com seu manifesto que não são detectados pela validação de esquema XSD, como uma incompatibilidade entre as identificações dos recursos. O log de tempo de execução é particularmente útil para depurar suplementos que implementam comandos de suplemento e funções personalizadas do Excel.   
+
+> [!NOTE]
+> O recurso de log de tempo de execução está atualmente disponível para o Office 2016 para área de trabalho.
 
 ### <a name="to-turn-on-runtime-logging"></a>Para ativar o log de tempo de execução
 
 > [!IMPORTANT]
-> O log do tempo de execução afeta o desempenho. Ative-o somente quando precisar depurar problemas com o manifesto do suplemento.
+> O log do tempo de execução afeta o desempenho. Ative-o somente quando precisar depurar problemas com seu manifesto de suplemento.
 
 Para ativar o log de tempo de execução:
 
-1. Verifique se você está executando o Office 2016 desktop, build **16.0.7019** ou posterior. 
+1. Verifique se você está executando o Office 2016 para área de trabalho na compilação **16.0.7019** ou posterior. 
 
-2. Adicione a chave do registro `RuntimeLogging` em  `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\`. 
+2. Adicione a chave do registro `RuntimeLogging` em `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\` 
+
+    > [!NOTE]
+    > Se a chave (pasta) `Developer` ainda não existir em `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\`, conclua as seguintes etapas para criá-la: 
+    > 1. Clique com o botão direito do mouse na chave (pasta) **WEF** e selecione **Novo** > **Chave**.
+    > 2. Nomeie a nova chave como **Developer**.
 
 3. Defina o valor padrão da chave para o caminho completo do arquivo onde você deseja que o log seja gravado. Para obter um exemplo, veja [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip). 
 
     > [!NOTE]
-    > O diretório no qual o arquivo de log será gravado já deve existir e você deve ter permissões de gravação. 
+    > A pasta na qual o arquivo de log será gravado deverá existir e você precisará ter permissões de gravação. 
  
-A imagem a seguir mostra como deve ficar o registro. Para desativar o recurso, remova a chave  `RuntimeLogging` do registro. 
+A imagem a seguir mostra qual deve ser a aparência do registro. Para desativar o recurso, remova a chave do registro `RuntimeLogging`. 
 
-![Captura de tela do editor de registro com uma chave de registro RuntimeLogging](http://i.imgur.com/Sa9TyI6.png)
+![Captura de tela do editor do registro com uma chave de registro RuntimeLogging](http://i.imgur.com/Sa9TyI6.png)
 
 
 ### <a name="to-troubleshoot-issues-with-your-manifest"></a>Para solucionar problemas com o manifesto
 
-Para usar o log de tempo de execução para solucionar problemas ao carregar um suplemento:
+Para usar o log do tempo de execução para solucionar problemas ao carregar um suplemento:
  
-1. [Realize o sideload do suplemento](sideload-office-add-ins-for-testing.md) para testes. 
+1. [Realize o sideload do seu suplemento](sideload-office-add-ins-for-testing.md) para teste. 
 
     > [!NOTE]
-    > Recomendamos realizar o sideload apenas do suplemento que você está testando para diminuir a quantidade de mensagens no arquivo de log.
+    > Recomendamos realizar o sideload apenas do suplemento que você está testando para minimizar a quantidade de mensagens no arquivo de log.
 
-2. Se nada acontece e se você não vê o suplemento (não aparece na caixa de diálogo de suplementos), abra o arquivo de log.
+2. Se nada acontecer e você não vir seu suplemento (e ele não estiver aparecendo na caixa de diálogo de suplementos), abra o arquivo de log.
 
-3. Procure no arquivo de log o ID de seu suplemento que foi definido no seu manifesto. No arquivo de log, esse ID está marcado como `SolutionId`. 
+3. Procure pela ID de seu suplemento no arquivo de log, definida no seu manifesto. No arquivo de log, essa ID está marcada como `SolutionId`. 
 
-No exemplo a seguir, o arquivo de log identifica um controle que aponta para um arquivo de recurso que não existe. Neste exemplo, a correção seria corrigir o erro de digitação no manifesto ou adicionar o recurso ausente.
+No exemplo a seguir, o arquivo de log identifica um controle que aponta para um arquivo de recurso que não existe. Neste exemplo, a correção seria reparar o erro de digitação no manifesto ou adicionar o recurso que está faltando.
 
-![Captura de tela de um arquivo de log com uma entrada que especifica a identificação do recurso que não foi encontrado](http://i.imgur.com/f8bouLA.png) 
+![Captura de tela de um arquivo de log com uma entrada que especifica uma identificação de recurso que não foi encontrado](http://i.imgur.com/f8bouLA.png) 
 
 ### <a name="known-issues-with-runtime-logging"></a>Problemas conhecidos com o log de tempo de execução
 
 Talvez você veja mensagens no arquivo de log que são confusas ou que estão classificadas incorretamente. Por exemplo:
 
-- A mensagem `Medium Current host not in add-in's host list` seguida por `Unexpected Parsed manifest targeting different host` está classificada incorretamente como um erro.
+- A mensagem `Medium Current host not in add-in's host list` seguida por `Unexpected Parsed manifest targeting different host` é incorretamente classificada como um erro.
 
 - Se você vir a mensagem `Unexpected Add-in is missing required manifest fields DisplayName` e ela não contiver uma SolutionId, o erro provavelmente não está relacionado ao suplemento que você está depurando. 
 
-- Todas as mensagens `Monitorable` indicam erros esperados do ponto de vista do sistema. Às vezes, indicam um problema com seu manifesto, como um elemento com erro de ortografia que foi ignorado, mas não causou a falha do manifesto. 
+- Todas as mensagens `Monitorable` indicam erros esperados do ponto de vista do sistema. Às vezes, indicam um problema com o seu manifesto, como um elemento que foi soletrado incorretamente e que foi ignorado, mas que não fez com que o manifesto falhasse. 
 
 ## <a name="clear-the-office-cache"></a>Limpar o cache do Office
 
-Se as alterações feitas no manifesto, como nomes de arquivo dos ícones do botão da faixa de opções ou o texto de comandos do suplemento, não entraram em vigor, tente limpar o cache do Office no computador. 
+Se parecer que as alterações que você fez no manifesto, como nomes de arquivo dos ícones de botão da faixa de opções ou o texto de comandos de suplemento, não entraram em vigor, tente limpar o cache do Office no computador. 
 
 #### <a name="for-windows"></a>No Windows:
 Exclua o conteúdo da pasta `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
@@ -123,10 +142,10 @@ Exclua o conteúdo da pasta `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 Exclua o conteúdo da pasta `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
 
 #### <a name="for-ios"></a>No iOS:
-Chame o `window.location.reload(true)` do JavaScript no suplemento para forçar um recarregamento. Outra alternativa é reinstalar o Office.
+Chame `window.location.reload(true)` usando o JavaScript no suplemento para forçar um recarregamento. Outra alternativa é reinstalar o Office.
 
 ## <a name="see-also"></a>Confira também
 
-- [Manifesto XML dos suplementos do Office](../develop/add-in-manifests.md)
-- [Fazer sideload de Suplementos do Office para testes](sideload-office-add-ins-for-testing.md)
+- [Manifesto XML dos Suplementos do Office](../develop/add-in-manifests.md)
+- [Realizar sideload de suplementos do Office para teste](sideload-office-add-ins-for-testing.md)
 - [Depurar suplementos do Office](debug-add-ins-using-f12-developer-tools-on-windows-10.md)

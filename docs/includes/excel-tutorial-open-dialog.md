@@ -8,7 +8,7 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
 1. Abra o projeto em seu editor de código.
 2. Crie um arquivo chamado popup.html na raiz do projeto (onde se encontra index.html).
 3. Adicione a marcação a seguir em popup.html. Observação:
-   - A página tem um `<input>` onde o usuário insere seu nome e um botão que envia o nome para a página no painel de tarefas onde ele será exibido.
+   - a página tem um `<input>` em que o usuário insere o nome dele e um botão que envia o nome para a página no painel de tarefas onde ele será exibido.
    - A marcação carrega um script chamado popup.js que você criará em uma etapa posterior.
    - Ela também carrega uma biblioteca Office.JS e jQuery porque elas serão usadas em popup.js.
 
@@ -19,27 +19,27 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
             <title>Dialog for My Office Add-in</title>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
             <link rel="stylesheet" href="node_modules/office-ui-fabric-js/dist/css/fabric.min.css" />
             <link rel="stylesheet" href="node_modules/office-ui-fabric-js/dist/css/fabric.components.css" />
-            <link rel="stylesheet" href="app.css">
-    
+            <link rel="stylesheet" href="app.css" />
+
             <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
             <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.1.min.js"></script>
             <script type="text/javascript" src="popup.js"></script>
-    
+
         </head>
-         <body style="display:flex;flex-direction:column;align-items:center;justify-content:center">
-         <div class="padding">
-            <p class="ms-font-xl">ENTER YOUR NAME</p>
-         </div>        
-        <div class="padding">
-            <input id="name-box" type="text"/>
-        <div>
-        <div class="padding">
-            <button id="ok-button" class="ms-Button">OK</button>
-        </div>
-    </body>
+        <body style="display:flex;flex-direction:column;align-items:center;justify-content:center">
+            <div class="padding">
+                <p class="ms-font-xl">ENTER YOUR NAME</p>
+            </div>
+            <div class="padding">
+                <input id="name-box" type="text"/>
+            </div>
+            <div class="padding">
+                <button id="ok-button" class="ms-Button">OK</button>
+            </div>
+        </body>
     </html>
     ```
 
@@ -52,17 +52,17 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
     (function () {
     "use strict";
 
-        Office.initialize = function() {        
+        Office.initialize = function() {
             $(document).ready(function () {  
-    
+
                 // TODO1: Assign handler to the OK button.
-    
+
             });
         }
 
         // TODO2: Create the OK button handler
-    
-    }());    
+
+    }());
     ```
 
 6. Substitua `TODO1` pelo código a seguir. Você criará a função `sendStringToParentPage` na próxima etapa.
@@ -71,7 +71,7 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
     $('#ok-button').click(sendStringToParentPage);
     ```
 
-7. Substitua `TODO2` pelo código a seguir. O método `messageParent` passa seu parâmetro para a página pai, neste caso, a página no painel de tarefas. O parâmetro pode ser um booliano ou uma cadeia de caracteres, que inclui tudo o que pode ser serializado como uma cadeia de caracteres, como XML ou JSON. 
+7. Substitua `TODO2` pelo código a seguir. O método `messageParent` passa seu parâmetro para a página pai, neste caso, a página no painel de tarefas. O parâmetro pode ser um booliano ou uma cadeia de caracteres, que inclui tudo o que pode ser serializado como uma cadeia de caracteres, como XML ou JSON.
 
     ```js
     function sendStringToParentPage() {
@@ -83,7 +83,7 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
 8. Salve o arquivo.
 
    > [!NOTE]
-   > O arquivo popup.html e o arquivo popup.js carregado são executados em um processo do Internet Explorer completamente separado de painel de tarefas do suplemento. Se o popup.js foi transcompilado no mesmo arquivo bundle.js que o arquivo app.js, o suplemento precisará carregar duas cópias do arquivo bundle.js, o que anule o propósito do agrupamento. Além disso, o arquivo popup.js não contém qualquer JavaScript incompatível com o Internet Explorer. Por esses dois motivos, esse suplemento não transcompila o popup.js. 
+   > O arquivo popup.html e o arquivo popup.js carregado são executados em um processo do Internet Explorer completamente separado de painel de tarefas do suplemento. Se o popup.js foi transcompilado no mesmo arquivo bundle.js que o arquivo app.js, o suplemento precisará carregar duas cópias do arquivo bundle.js, o que anule o propósito do agrupamento. Além disso, o arquivo popup.js não contém qualquer JavaScript incompatível com o Internet Explorer. Por esses dois motivos, esse suplemento não transcompila o popup.js.
 
 
 ## <a name="open-the-dialog-from-the-task-pane"></a>Abra a caixa de diálogo do painel de tarefas
@@ -92,16 +92,16 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
 2. Abaixo do `div` que contém o botão `freeze-header`, adicione a marcação a seguir:
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="open-dialog">Open Dialog</button>          
+    <div class="padding">
+        <button class="ms-Button" id="open-dialog">Open Dialog</button>
     </div>
     ```
 
 3. A caixa de diálogo solicitará que o usuário insira um nome e passará o nome de usuário para o painel de tarefas. O painel de tarefas o exibirá em um rótulo. Imediatamente abaixo do `div` que você adicionou, adicione a marcação a seguir:
 
     ```html
-    <div class="padding">            
-        <label id="user-name"></label>            
+    <div class="padding">
+        <label id="user-name"></label>
     </div>
     ```
 
@@ -125,21 +125,21 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
     function openDialog() {
         // TODO1: Call the Office Shared API that opens a dialog
     }
-    ``` 
+    ```
 
 8. Substitua `TODO1` pelo código a seguir. Observação:
    - O método`displayDialogAsync` abre uma caixa de diálogo no centro da tela.
    - O primeiro parâmetro é a URL da página a ser aberta.
-   - O segundo parâmetro passa opções. `height` e `width` são porcentagens do tamanho da janela do aplicativo do Office. 
-   
+   - O segundo parâmetro passa opções. `height` e `width` são porcentagens do tamanho da janela do aplicativo do Office.
+
     ```js
     Office.context.ui.displayDialogAsync(
         'https://localhost:3000/popup.html',
         {height: 45, width: 55},
-        
+
         // TODO2: Add callback parameter.
     );
-    ``` 
+    ```
 
 ## <a name="process-the-message-from-the-dialog-and-close-the-dialog"></a>Processar a mensagem da caixa de diálogo e depois fechá-la
 
@@ -174,10 +174,9 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
 1. Execute o comando `npm run build` para transcompilar seu código-fonte ES6 para uma versão anterior do JavaScript com suporte no Internet Explorer (que é usada em segundo plano pelo Excel para executar os suplementos do Excel).
 2. Execute o comando `npm start` para iniciar um servidor Web em um host local.
 4. Feche o painel de tarefas para recarregá-lo e, no menu **Início**, selecione **Mostrar Painel de Tarefas** para reabrir o suplemento.
-6. Escolha o botão **Abrir Caixa de Diálogo** no painel de tarefas. 
+6. Escolha o botão **Abrir Caixa de Diálogo** no painel de tarefas.
 7. Quando a caixa de diálogo estiver aberta, arraste-a e redimensione-a. Observe que você pode interagir com a planilha e pressionar outros botões no painel de tarefas. No entanto, não é possível iniciar uma segunda caixa de diálogo na mesma página do painel de tarefas.
 8. Na caixa de diálogo, digite um nome e escolha **OK**. O nome aparecerá no painel de tarefas e a caixa de diálogo será fechada.
 9. Opcionalmente, comente a linha `dialog.close();` na função `processMessage`. Em seguida, repita as etapas desta seção. A caixa de diálogo permanece aberta e você pode alterar o nome. É possível fechá-la manualmente pressionando o botão **X** no canto superior direito.
 
     ![Tutorial do Excel - Caixa de diálogo](../images/excel-tutorial-dialog-open.png)
-

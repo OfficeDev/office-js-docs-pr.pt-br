@@ -1,6 +1,6 @@
 # <a name="word-javascript-api-overview"></a>Visão geral da API JavaScript do Word
 
-O Word fornece um conjunto avançado de APIs que você pode usar para criar suplementos que interagem com o conteúdo e os metadados do documento. Use essas APIs para criar experiências convincentes que se integram e estendem o Word. Você pode importar e exportar conteúdo, montar novos documentos a partir de diferentes fontes de dados e integrar-se a fluxos de trabalho de documentos para criar soluções personalizadas de documentos.
+O Word fornece um conjunto sofisticado de APIs que você pode usar para criar suplementos que interajam com metadados e com o conteúdo do documento. Use essas APIs para criar experiências envolventes que integrem e estendam o Word. Você pode importar e exportar conteúdo, montar novos documentos de diferentes fontes de dados e se integrar com fluxos de trabalho do documento para criar soluções de documento personalizadas.
 
 Você pode usar duas APIs JavaScript para interagir com metadados e objetos em um documento do Word:
 
@@ -9,24 +9,24 @@ Você pode usar duas APIs JavaScript para interagir com metadados e objetos em u
 
 ## <a name="word-javascript-api"></a>API JavaScript do Word
 
-A API JavaScript do Word é carregada pelo Office.js. A API JavaScript do Word altera a maneira como você pode interagir com objetos como documentos e parágrafos. Em vez de fornecer APIs assíncronas individuais para recuperar e atualizar cada um desses objetos, a API JavaScript do Word fornece objetos JavaScript “proxy” que correspondem aos objetos reais em execução no Word. Você pode interagir com esses objetos proxy lendo e gravando suas propriedades de maneira síncrona e chamando métodos síncronos para executar operações neles. Essas interações com objetos proxy não são imediatamente realizadas no script em execução. O método **context.sync** sincroniza o estado entre o JavaScript em execução e os objetos reais no Office, executando instruções enfileiradas e recuperando propriedades de objetos Word carregados para uso em seu script.
+A API JavaScript do Word é carregada pelo Office.js. Ela muda a maneira de interagir com objetos, como documentos e parágrafos. Em vez de fornecer APIs assíncronas individuais para recuperar e atualizar cada um desses objetos, essa API fornece objetos JavaScript "proxy" que correspondem aos objetos reais em execução no Word. Você pode interagir com esses objetos proxy quando ler e gravar de forma síncrona as respectivas propriedades e quando chamar, também de forma síncrona, métodos para executar operações neles. Essas interações com objetos proxy não são percebidas imediatamente no script em execução. O método **context.sync** sincroniza o estado entre o JavaScript em execução e os objetos reais do Office, executando instruções na fila e recuperando propriedades de objetos carregados do Word para uso no seu script.
 
-## <a name="javascript-api-for-office"></a>API JavaScript para Office
+## <a name="javascript-api-for-office"></a>JavaScript API for Office
 
-Você pode fazer referência ao Office.js nos seguintes locais:
+Você pode obter referência do Office.js nos seguintes locais:
 
-* https://appsforoffice.microsoft.com/lib/1/hosted/office.js - use este recurso para suplementos de produção.
-* https://appsforoffice.microsoft.com/lib/beta/hosted/office.js - use este recurso quando você estiver tentando os recursos de versão prévia.
+* https://appsforoffice.microsoft.com/lib/1/hosted/office.js: use esse recurso para os suplementos de produção.
+* https://appsforoffice.microsoft.com/lib/beta/hosted/office.js: use esse recurso quando estiver experimentando recursos de visualização.
 
-Se estiver usando o [Visual Studio](https://www.visualstudio.com/products/free-developer-offers-vs), você poderá baixar o [Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx) para obter modelos de projeto que incluam o Office.js.  Você pode usar o [nuget para obter o Office.js](https://www.nuget.org/packages/Microsoft.Office.js/).
+Se estiver usando o [Visual Studio](https://www.visualstudio.com/products/free-developer-offers-vs), você poderá baixar as [Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx) para obter modelos de projeto que incluam o Office.js.  Você pode usar o [nuget para obter o Office.js](https://www.nuget.org/packages/Microsoft.Office.js/).
 
-Se você usar TypeScript e tiver npm, poderá obter as definições de TypeScript ao digitar isto na interface da linha de comando: `typings install office-js --ambient`.
+Se você usar TypeScript e se tiver npm, poderá obter as definições de TypeScript ao digitar isto na interface da linha de comando: `typings install office-js --ambient`.
 
 ## <a name="running-word-add-ins"></a>Execução de suplementos do Word
 
-Para executar o suplemento, use um manipulador de eventos Office.initialize. Confira [Compreenda a API](https://docs.microsoft.com/office/dev/add-ins/develop/understanding-the-javascript-api-for-office) para saber mais sobre a inicialização de suplementos.
+Para executar o suplemento, use um manipulador de eventos Office.initialize. Consulte [Compreender a API](https://docs.microsoft.com/office/dev/add-ins/develop/understanding-the-javascript-api-for-office) para saber mais sobre a inicialização de suplementos.
 
-Os suplementos que segmentam o Word 2016 ou posterior executam passando uma função para o método **Word.run()** . A função passada para o método **run** deve ter um argumento de contexto. Este [objeto de contexto](/javascript/api/word/word.requestcontext) é diferente do objeto de contexto que você obtém do objeto Office, mas também é usado para interagir com o ambiente de tempo de execução do Word. O objeto de contexto fornece acesso ao modelo de objeto da API JavaScript do Word. O exemplo a seguir mostra como inicializar e executar um suplemento do Word usando o método **Word.run()** .
+Os suplementos direcionados ao Word 2016 ou posterior são executados passando uma função para o método **Word.run()**. A função passada para o método **run** deve ter um argumento de contexto. Esse [objeto de contexto](/javascript/api/word/word.requestcontext) é diferente do objeto de contexto obtido do objeto do Office, mas ele é usado para interagir com o ambiente de tempo de execução do Word. O objeto de contexto fornece acesso ao modelo de objeto da API JavaScript do Word. O exemplo a seguir mostra como iniciar e executar um suplemento do Word usando o método **Word.run()**.
 
 ```js
 (function () {
@@ -58,9 +58,9 @@ Os suplementos que segmentam o Word 2016 ou posterior executam passando uma fun�
 })();
 ```
 
-### <a name="synchronizing-word-documents-with-word-javascript-api-proxy-objects"></a>Sincronização de documentos do Word com objetos proxy da API JavaScript do Word
+### <a name="synchronizing-word-documents-with-word-javascript-api-proxy-objects"></a>Sincronizar documentos do Word com objetos proxy da API JavaScript do Word
 
-O modelo de objeto da API JavaScript do Word é fracamente acoplado aos objetos no Word. Os objetos da API JavaScript do Word são proxies de objetos em um documento do Word. Ações realizadas em objetos proxy não são realizadas no Word até que o estado do documento seja sincronizado. Por outro lado, o estado do documento do Word não é realizado nos objetos de proxy até que o estado do documento tenha sido sincronizado. Para sincronizar o estado do documento, você executa o método **context.sync()** . O exemplo a seguir cria um objeto de corpo de proxy e um comando enfileirado para carregar a propriedade de texto no objeto de corpo do proxy e usa o método **context.sync()** para sincronizar o corpo do documento do Word com o objeto proxy do corpo.
+O modelo de objeto da API JavaScript do Word é combinado livremente com os objetos no Word. Os objetos da API JavaScript do Word são proxies de objetos em um documento do Word. As ações executadas em objetos proxy não são percebidas no Word até que o estado do documento seja sincronizado. Por outro lado, o estado do documento do Word não é percebido em objetos proxy, até que o estado do documento seja sincronizado. Para sincronizar o estado do documento, execute o método **context.sync()**. O exemplo a seguir mostra a criação de um objeto proxy do corpo e um comando na fila para carregar a propriedade de texto nesse objeto e usa o método **context.sync()** para sincronizar o corpo do documento do Word com o objeto proxy do corpo.
 
 ```js
 // Run a batch operation against the Word object model.
@@ -83,7 +83,7 @@ Word.run(function (context) {
 
 ### <a name="executing-a-batch-of-commands"></a>Execução de um lote de comandos
 
-Os objetos de proxy do Word possuem métodos para acessar e atualizar o modelo de objeto. Esses métodos são executados sequencialmente na ordem em que foram enfileirados no lote. Todos os comandos que estão enfileirados no lote são executados quando context.sync() é chamado.
+Os objetos proxy do Word dispõem de métodos para acessar e atualizar o modelo de objeto. Esses métodos são executados sequencialmente na ordem em que foram colocados na fila do lote. Todos os comandos na fila do lote são executados quando o método context.sync() é chamado.
 
 O exemplo a seguir mostra como funciona a fila de comandos. Quando o método **context.sync()** é chamado, o comando para carregar o corpo de texto é executado no Word. Em seguida, ocorre o comando para inserir o texto no corpo do Word. Os resultados são retornados ao objeto proxy do corpo. O valor da propriedade **body.text**, na API JavaScript do Word, é o valor do corpo do documento do Word, <u>antes</u> da inserção do texto no documento do Word.
 
@@ -110,16 +110,20 @@ Word.run(function (context) {
 })
 ```
 
-## <a name="word-javascript-api-open-specifications"></a>Especificações abertas da API JavaScript do Word
+## <a name="word-javascript-api-open-specifications"></a>Especificações abertas para a API JavaScript do Word
 
-À medida que projetamos e desenvolvemos novas APIs para suplementos do Word, disponibilizamos-as para seus comentários na nossa página [Especificações abertas da API](../openspec.md). Descubra quais novos recursos estão no pipeline para as APIs JavaScript do Word e forneça sua opinião sobre nossas especificações de design.
+À medida que criamos e desenvolvemos novas APIs para suplementos do Word, disponibilizamo-as em nossa página [Especificações abertas da API](../openspec.md) a fim de obter os seus comentários. Descubra que novos recursos estão no pipeline para as APIs JavaScript do Word e forneça comentários sobre nossas especificações de design.
+
+## <a name="word-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Word
+
+Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office oferece suporte para as APIs necessárias para um suplemento. Para saber mais sobre conjuntos de requisitos da API JavaScript do Word, consulte o artigo [Conjuntos de requisitos da API JavaScript do Word](../requirement-sets/word-api-requirement-sets.md).
 
 ## <a name="word-javascript-api-reference"></a>Referências da API JavaScript do Word
 
-Para obter informações detalhadas sobre a API JavaScript do Word, confira a [Documentação de referência da API JavaScript do Word](/javascript/api/word).
+Para saber mais sobre a API JavaScript do Word, consulte a [Documentação de referência da API JavaScript do Word](/javascript/api/word).
 
 ## <a name="see-also"></a>Confira também
 
 * [Visão geral dos suplementos do Word](https://docs.microsoft.com/office/dev/add-ins/word/word-add-ins-programming-overview)
-* [Visão geral da plataforma de suplementos do Office](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins)
+* [Visão geral da plataforma Suplementos do Office](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins)
 * [Exemplos de suplementos do Word no GitHub](https://github.com/OfficeDev?utf8=%E2%9C%93&q=Word)
