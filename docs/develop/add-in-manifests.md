@@ -2,12 +2,12 @@
 title: Manifesto XML dos Suplementos do Office
 description: ''
 ms.date: 02/09/2018
-ms.openlocfilehash: 8d8363b80b948f30e13ccd8620178268e03f1d57
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+ms.openlocfilehash: e25d465b39cea0a13a890fec95fafdbeafff0ca5
+ms.sourcegitcommit: 9b021af6cb23a58486d6c5c7492be425e309bea1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25505864"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "26533704"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifesto XML dos Suplementos do Office
 
@@ -28,7 +28,7 @@ Um arquivo de manifesto XML com base nesse esquema permite que um Suplemento do 
 * Para os suplementos do Outlook, defina a regra ou as regras que especificam o contexto no qual serão ativados e interagirão com uma mensagem, compromisso ou item de solicitação da reunião.
 
 > [!NOTE]
-> Caso pretenda [publicar](../publish/publish.md) o suplemento na experiência do Office depois de criá-lo, verifique se você está em conformidade com as [Políticas de validação do AppSource](https://docs.microsoft.com/office/dev/store/validation-policies). Por exemplo, para passar na validação, seu suplemento deverá funcionar em todas as plataformas com suporte aos métodos que você definir (para mais informações, confira a [seção 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) e a [Página de hospedagem e disponibilidade de suplementos do Office](../overview/office-add-in-availability.md)).
+> Caso pretenda [publicar](../publish/publish.md) o suplemento na experiência do Office depois de criá-lo, verifique se você está em conformidade com as [Políticas de validação do AppSource](https://docs.microsoft.com/office/dev/store/validation-policies). Por exemplo, para passar na validação, seu suplemento deve funcionar em todas as plataformas com suporte aos métodos que você definir (para mais informações, confira a [seção 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) e a [Página de hospedagem e disponibilidade de suplementos do Office](../overview/office-add-in-availability.md)).
 
 ## <a name="required-elements"></a>Elementos exigidos
 
@@ -39,24 +39,30 @@ A tabela a seguir especifica os elementos exigidos para os três tipos de Suplem
 | Elemento                                                                                      | Conteúdo | Painel de tarefas | Outlook |
 | :------------------------------------------------------------------------------------------- | :-----: | :-------: | :-----: |
 | [OfficeApp][]                                                                                |    X    |     X     |    X    |
-| [Id][]                                                                                       |    X    |     X     |    X    |
-| [Version][]                                                                                  |    X    |     X     |    X    |
+| 
+  [Id][]                                                                                       |    X    |     X     |    X    |
+| 
+  [Versão][]                                                                                  |    X    |     X     |    X    |
 | [ProviderName][]                                                                             |    X    |     X     |    X    |
 | [DefaultLocale][]                                                                            |    X    |     X     |    X    |
 | [DisplayName][]                                                                              |    X    |     X     |    X    |
-| [Description][]                                                                              |    X    |     X     |    X    |
+| [Descrição][]                                                                              |    X    |     X     |    X    |
 | [IconUrl][]                                                                                  |    X    |     X     |    X    |
-| [HighResolutionIconUrl][]                                                                    |    X    |     X     |    X    |
 | [DefaultSettings (ContentApp)][]<br/>[DefaultSettings (TaskPaneApp)][]                       |    X    |     X     |         |
 | [SourceLocation (ContentApp)][]<br/>[SourceLocation (TaskPaneApp)][]                         |    X    |     X     |         |
 | [DesktopSettings][]                                                                          |         |           |    X    |
 | [SourceLocation (MailApp)][]                                                                 |         |           |    X    |
-| [Permissions (ContentApp)][]<br/>[Permissions (TaskPaneApp)][]<br/>[Permissions (MailApp)][] |    X    |     X     |    X    |
-| [Rule (RuleCollection)][]<br/>[Rule (MailApp)][]                                             |         |           |    X    |
-| [Requirements (MailApp)*][]                                                                  |         |           |    X    |
-| [Set*][]<br/>[Sets (MailAppRequirements)*][]                                                 |         |           |    X    |
-| [Form*][]<br/>[FormSettings*][]                                                              |         |           |    X    |
-| [Sets (Requirements)*][]                                                                     |    X    |     X     |         |
+| 
+  [Permissões (ContentApp)][]<br/>
+  [Permissões (TaskPaneApp)][]<br/>
+  [Permissões (MailApp)][] |    X    |     X     |    X    |
+| 
+  [Regra (RuleCollection)][]<br/>
+  [Regra (MailApp)][]                                             |         |           |    X    |
+| [Requisitos (MailApp)*][]                                                                  |         |           |    X    |
+| [Conjunto*][]<br/>[Conjuntos (MailAppRequirements)*][]                                                 |         |           |    X    |
+| [Formulário*][]<br/>[FormSettings*][]                                                              |         |           |    X    |
+| [Conjuntos (Requisitos)*][]                                                                     |    X    |     X     |         |
 | [Hosts*][]                                                                                   |    X    |     X     |         |
 
 _\*Adicionados no esquema de manifesto de suplementos da versão 1.1 do Office._
@@ -71,50 +77,49 @@ _\*Adicionados no esquema de manifesto de suplementos da versão 1.1 do Office._
 [displayname]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/displayname
 [description]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/description
 [iconurl]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/iconurl
-[highresolutioniconurl]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/highresolutioniconurl
 [defaultsettings (contentapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultsettings
 [defaultsettings (taskpaneapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultsettings
 [sourcelocation (contentapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation
 [sourcelocation (taskpaneapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation
 [desktopsettings]: https://msdn.microsoft.com/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c(Office.15).aspx
 [sourcelocation (mailapp)]: http://msdn.microsoft.com/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx
-[permissions (contentapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/permissions
-[permissions (taskpaneapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/permissions
-[permissions (mailapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/permissions
-[rule (rulecollection)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/rule
-[rule (mailapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/rule
-[requirements (mailapp)*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/requirements
-[conjunto*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/set
-[sets (mailapprequirements)*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sets
-[form*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/form
+[permissões (contentapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/permissions
+[permissões (taskpaneapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/permissions
+[permissões (mailapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/permissions
+[regra (rulecollection)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/rule
+[regra (mailapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/rule
+[requisitos (mailapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/requirements
+[set*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/set
+[conjuntos (mailapprequirements)*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sets
+[formulário*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/form
 [formsettings*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/formsettings
-[sets (requirements)*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sets
+[conjuntos (requisitos)*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sets
 [hosts*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/hosts
 
 ## <a name="hosting-requirements"></a>Requisitos de hospedagem
 
-Todos os URIs de imagem, como aqueles usados para [comandos de suplemento][], deve oferecer suporte a cache. O servidor que hospeda a imagem não deve retornar um cabeçalho `Cache-Control` especificando `no-cache`, `no-store`, ou opções similares na resposta HTTP.
+Todas as imagem URIs, como as usadas para os [comandos do suplemento][], devem ser compatíveis com armazenamento em cache. O servidor que hospeda a imagem não deve retornar um cabeçalho `Cache-Control` especificando `no-cache`, `no-store` ou opções semelhantes na resposta HTTP.
 
-Todas as URLs, como os locais dos arquivos de origem especificados no elemento [SourceLocation](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation) , devem estar **protegidos por SSL (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
+Todas as URLs, como os locais dos arquivos de origem especificados no elemento [SourceLocation](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation), devem estar **protegidos por SSL (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
 
 ## <a name="best-practices-for-submitting-to-appsource"></a>Práticas recomendadas de envio ao AppSource
 
 Verifique se a identificação do suplemento é um GUID válido e exclusivo. Diversas ferramentas de gerador de GUID estão disponíveis na Web e podem ser usadas para criar um GUID exclusivo.
 
-Suplementos enviados ao AppSource também deverão incluir o elemento [SupportUrl](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/supporturl) . Para obter mais informações, consulte [Políticas de validação de aplicativos e suplementos enviados ao AppSource](https://docs.microsoft.com/office/dev/store/validation-policies).
+Os suplementos enviados ao AppSource também devem conter o elemento [SupportUrl](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/supporturl). Saiba mais em [Políticas de validação para aplicativos e suplementos enviados ao AppSource](https://docs.microsoft.com/office/dev/store/validation-policies).
 
 Use apenas o elemento [AppDomains](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/appdomains) para especificar domínios diferentes daqueles especificados no elemento [SourceLocation](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation) para cenários de autenticação.
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>Especificar os domínios que você deseja abrir na janela do suplemento
 
-Ao executar no Office Online, o painel de tarefas pode ser direcionado para qualquer URL. No entanto, em plataformas de desktop, se o suplemento tenta ir a uma URL em um domínio diferente do domínio que hospeda a página de início (conforme especificado no elemento [SourceLocation](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation) do arquivo de manifesto), essa URL será aberta em uma nova janela do navegador fora do painel de suplemento do aplicativo host do Office.
+Ao executar no Office Online, seu painel de tarefas pode ser navegado com qualquer URL. No entanto, nas plataformas de desktop, se o suplemento tentar acessar uma URL em um domínio diferente do domínio que hospeda a página inicial (conforme especificado no elemento [SourceLocation](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation) do arquivo de manifesto), essa URL abre em uma nova janela de navegador fora do painel de suplementos do aplicativo host do Office.
 
-Para substituir esse comportamento (do Office para a área de trabalho), especifique cada domínio que você deseja abrir na janela do suplemento na lista de domínios especificados no elemento [AppDomains](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/appdomains) do arquivo de manifesto. Se o suplemento tentar acessar uma URL em um domínio que está na lista, ela abrirá no painel de tarefas na área de trabalho do Office e no Office Online. Se tentar acessar uma URL que não esteja na lista, na área de trabalho do Office, essa URL será aberta em uma nova janela do navegador (fora do painel de suplemento).
+Para substituir esse comportamento (Office para desktop), especifique cada domínio que você deseja abrir na janela do suplemento na lista de domínios especificados no elemento [AppDomains](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/appdomains) do arquivo de manifesto. Se o suplemento tentar ir para uma URL em um domínio que está na lista, ele abre no painel de tarefas do Office para desktop e no Office Online. Se ele tentar acessar uma URL que não está na lista, no Office para desktop, essa URL abre em uma nova janela do navegador (fora do painel de suplementos).
 
 > [!NOTE]
-> Esse comportamento se aplica apenas ao painel de raiz do suplemento. Se houver um iframe incorporado na página do suplemento, o iframe poderá ser direcionado para qualquer URL, independentemente de estar listado em **AppDomains**, mesmo no Office para desktop.
+> Esse comportamento se aplica somente ao painel raiz do suplemento. Se houver um iframe inserido na página do suplemento, o iframe pode ser direcionado para qualquer URL independentemente se ele está listado na **AppDomains**, até mesmo no Office para desktop.
 
-O exemplo de manifesto XML a seguir hospeda sua página de suplemento principal no domínio `https://www.contoso.com`, conforme especificado no elemento **SourceLocation**. Ele também especifica o domínio `https://www.northwindtraders.com` em um elemento [AppDomain](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/appdomain) , dentro da lista de elementos **AppDomains**. Se o suplemento acessar uma página no domínio www.northwindtraders.com, essa página abrirá no painel do suplemento.
+O exemplo de manifesto XML a seguir hospeda sua página de suplemento principal no domínio `https://www.contoso.com`, conforme especificado no elemento **SourceLocation**. Ele também especifica o domínio `https://www.northwindtraders.com` em um elemento [AppDomain](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/appdomain), dentro da lista de elementos **AppDomains** Se o suplemento acessar uma página no domínio www.northwindtraders.com, essa página abre no painel do suplemento, mesmo no Office para desktop.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -136,7 +141,8 @@ O exemplo de manifesto XML a seguir hospeda sua página de suplemento principal 
 ```
 
 ## <a name="manifest-v11-xml-file-examples-and-schemas"></a>Exemplos e esquemas do arquivo XML de manifesto v1.1
-As seções a seguir mostram exemplos de arquivos XML de manifesto v1.1 para suplementos de conteúdo, do painel de tarefas e do Outlook.
+
+As seções a seguir mostram exemplos de arquivos XML de manifesto v1.1 para suplementos de conteúdo, de painel de tarefas e do Outlook.
 
 # <a name="task-panetabtabid-1"></a>[Painel de tarefas](#tab/tabid-1)
 
@@ -146,20 +152,21 @@ As seções a seguir mostram exemplos de arquivos XML de manifesto v1.1 para sup
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
 
-<!-- See https://github.com/OfficeDev/Office-Add-in-Commands-Samples for documentation-->
+  <!-- See https://github.com/OfficeDev/Office-Add-in-Commands-Samples for documentation-->
 
-<!-- BeginBasicSettings: Add-in metadata, used for all versions of Office unless override provided -->
+  <!-- BeginBasicSettings: Add-in metadata, used for all versions of Office unless override provided -->
 
-<!--IMPORTANT! Id must be unique for your add-in. If you clone this manifest ensure that you change this id to your own GUID -->
+  <!--IMPORTANT! Id must be unique for your add-in. If you clone this manifest ensure that you change this id to your own GUID -->
   <Id>e504fb41-a92a-4526-b101-542f357b7acb</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>Contoso</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-   <!-- The display name of your add-in. Used on the store and various placed of the Office UI such as the add-ins dialog -->
+  <!-- The display name of your add-in. Used on the store and various placed of the Office UI such as the add-ins dialog -->
   <DisplayName DefaultValue="Add-in Commands Sample" />
   <Description DefaultValue="Sample that illustrates add-in commands basic control types and actions" />
-   <!--Icon for your add-in. Used on installation screens and the add-ins dialog -->
-  <IconUrl DefaultValue="https://i.imgur.com/oZFS95h.png" />
+  <!--Icon for your add-in. Used on installation screens and the add-ins dialog -->
+  <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
 
   <!--BeginTaskpaneMode integration. Office 2013 and any client that doesn't understand commands will use this section.
     This section will also be used if there are no VersionOverrides -->
@@ -169,7 +176,7 @@ As seções a seguir mostram exemplos de arquivos XML de manifesto v1.1 para sup
   <DefaultSettings>
     <SourceLocation DefaultValue="https://commandsimple.azurewebsites.net/Taskpane.html" />
   </DefaultSettings>
-   <!--EndTaskpaneMode integration -->
+  <!--EndTaskpaneMode integration -->
 
   <Permissions>ReadWriteDocument</Permissions>
 
@@ -180,9 +187,9 @@ As seções a seguir mostram exemplos de arquivos XML de manifesto v1.1 para sup
       <!-- Workbook=Excel Document=Word Presentation=PowerPoint -->
       <!-- Make sure the hosts you override match the hosts declared in the top section of the manifest -->
       <Host xsi:type="Document">
-        <!-- Form factor. Currenly only DesktopFormFactor is supported. We will add TabletFormFactor and PhoneFormFactor in the future-->
+        <!-- Form factor. Currently only DesktopFormFactor is supported. We will add TabletFormFactor and PhoneFormFactor in the future-->
         <DesktopFormFactor>
-            <!--Function file is an html page that includes the javascript where functions for ExecuteAction will be called.
+          <!--Function file is an html page that includes the javascript where functions for ExecuteAction will be called.
             Think of the FunctionFile as the "code behind" ExecuteFunction-->
           <FunctionFile resid="Contoso.FunctionFile.Url" />
 
@@ -191,14 +198,14 @@ As seções a seguir mostram exemplos de arquivos XML de manifesto v1.1 para sup
             <!--Use OfficeTab to extend an existing Tab. Use CustomTab to create a new tab -->
             <!-- Documentation includes all the IDs currently tested to work -->
             <CustomTab id="Contoso.Tab1">
-                <!--Group ID-->
+              <!--Group ID-->
               <Group id="Contoso.Tab1.Group1">
-                 <!--Label for your group. resid must point to a ShortString resource -->
+                <!--Label for your group. resid must point to a ShortString resource -->
                 <Label resid="Contoso.Tab1.GroupLabel" />
                 <Icon>
-                <!-- Sample Todo: Each size needs its own icon resource or it will look distorted when resized -->
-                <!--Icons. Required sizes 16,31,80, optional 20, 24, 40, 48, 64. Strongly recommended to provide all sizes for great UX -->
-                <!--Use PNG icons and remember that all URLs on the resources section must use HTTPS -->
+                  <!-- Sample Todo: Each size needs its own icon resource or it will look distorted when resized -->
+                  <!--Icons. Required sizes 16,31,80, optional 20, 24, 40, 48, 64. Strongly recommended to provide all sizes for great UX -->
+                  <!--Use PNG icons and remember that all URLs on the resources section must use HTTPS -->
                   <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
                   <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
                   <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
@@ -206,12 +213,12 @@ As seções a seguir mostram exemplos de arquivos XML de manifesto v1.1 para sup
 
                 <!--Control. It can be of type "Button" or "Menu" -->
                 <Control xsi:type="Button" id="Contoso.FunctionButton">
-                <!--Label for your button. resid must point to a ShortString resource -->
+                  <!--Label for your button. resid must point to a ShortString resource -->
                   <Label resid="Contoso.FunctionButton.Label" />
                   <Supertip>
-                     <!--ToolTip title. resid must point to a ShortString resource -->
+                    <!--ToolTip title. resid must point to a ShortString resource -->
                     <Title resid="Contoso.FunctionButton.Label" />
-                     <!--ToolTip description. resid must point to a LongString resource -->
+                    <!--ToolTip description. resid must point to a LongString resource -->
                     <Description resid="Contoso.FunctionButton.Tooltip" />
                   </Supertip>
                   <Icon>
@@ -219,10 +226,10 @@ As seções a seguir mostram exemplos de arquivos XML de manifesto v1.1 para sup
                     <bt:Image size="32" resid="Contoso.FunctionButton.Icon" />
                     <bt:Image size="80" resid="Contoso.FunctionButton.Icon" />
                   </Icon>
-                  <!--This is what happens when the command is triggered (E.g. click on the Ribbon). Supported actions are ExecuteFuncion or ShowTaskpane-->
+                  <!--This is what happens when the command is triggered (E.g. click on the Ribbon). Supported actions are ExecuteFunction or ShowTaskpane-->
                   <!--Look at the FunctionFile.html page for reference on how to implement the function -->
-                  - <Action xsi:type="ExecuteFunction">
-                  <!--Name of the function to call. This function needs to exist in the global DOM namespace of the function file-->
+                  <Action xsi:type="ExecuteFunction">
+                    <!--Name of the function to call. This function needs to exist in the global DOM namespace of the function file-->
                     <FunctionName>writeText</FunctionName>
                   </Action>
                 </Control>
@@ -240,59 +247,59 @@ As seções a seguir mostram exemplos de arquivos XML de manifesto v1.1 para sup
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
                     <TaskpaneId>Button2Id1</TaskpaneId>
-                     <!--Provide a url resource id for the location that will be displayed on the task pane -->
+                    <!--Provide a url resource id for the location that will be displayed on the task pane -->
                     <SourceLocation resid="Contoso.Taskpane1.Url" />
                   </Action>
                 </Control>
-            <!-- Menu example -->
-            <Control xsi:type="Menu" id="Contoso.Menu">
-              <Label resid="Contoso.Dropdown.Label" />
-              <Supertip>
-                <Title resid="Contoso.Dropdown.Label" />
-                <Description resid="Contoso.Dropdown.Tooltip" />
-              </Supertip>
-              <Icon>
-                <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
-                <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
-                <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
-              </Icon>
-              <Items>
-                <Item id="Contoso.Menu.Item1">
-                  <Label resid="Contoso.Item1.Label"/>
+                <!-- Menu example -->
+                <Control xsi:type="Menu" id="Contoso.Menu">
+                  <Label resid="Contoso.Dropdown.Label" />
                   <Supertip>
-                    <Title resid="Contoso.Item1.Label" />
-                    <Description resid="Contoso.Item1.Tooltip" />
+                    <Title resid="Contoso.Dropdown.Label" />
+                    <Description resid="Contoso.Dropdown.Tooltip" />
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
                     <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
                     <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
                   </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <TaskpaneId>MyTaskPaneID1</TaskpaneId>
-                    <SourceLocation resid="Contoso.Taskpane1.Url" />
-                  </Action>
-                </Item>
+                  <Items>
+                    <Item id="Contoso.Menu.Item1">
+                      <Label resid="Contoso.Item1.Label"/>
+                      <Supertip>
+                        <Title resid="Contoso.Item1.Label" />
+                        <Description resid="Contoso.Item1.Tooltip" />
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
+                        <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
+                        <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
+                      </Icon>
+                      <Action xsi:type="ShowTaskpane">
+                        <TaskpaneId>MyTaskPaneID1</TaskpaneId>
+                        <SourceLocation resid="Contoso.Taskpane1.Url" />
+                      </Action>
+                    </Item>
 
-                <Item id="Contoso.Menu.Item2">
-                  <Label resid="Contoso.Item2.Label"/>
-                  <Supertip>
-                    <Title resid="Contoso.Item2.Label" />
-                    <Description resid="Contoso.Item2.Tooltip" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
-                    <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
-                    <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <TaskpaneId>MyTaskPaneID2</TaskpaneId>
-                    <SourceLocation resid="Contoso.Taskpane2.Url" />
-                  </Action>
-                </Item>
+                    <Item id="Contoso.Menu.Item2">
+                      <Label resid="Contoso.Item2.Label"/>
+                      <Supertip>
+                        <Title resid="Contoso.Item2.Label" />
+                        <Description resid="Contoso.Item2.Tooltip" />
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
+                        <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />
+                        <bt:Image size="80" resid="Contoso.TaskpaneButton.Icon" />
+                      </Icon>
+                      <Action xsi:type="ShowTaskpane">
+                        <TaskpaneId>MyTaskPaneID2</TaskpaneId>
+                        <SourceLocation resid="Contoso.Taskpane2.Url" />
+                      </Action>
+                    </Item>
 
-              </Items>
-            </Control>
+                  </Items>
+                </Control>
 
               </Group>
 
@@ -352,7 +359,8 @@ As seções a seguir mostram exemplos de arquivos XML de manifesto v1.1 para sup
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Sample content add-in" />
   <Description DefaultValue="Describe the features of this app." />
-  <IconUrl DefaultValue="https://contoso.com/ENUSIcon.png" />
+  <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
   <Hosts>
     <Host Name="Workbook" />
     <Host Name="Database" />
@@ -395,10 +403,10 @@ As seções a seguir mostram exemplos de arquivos XML de manifesto v1.1 para sup
       YouTube références dans vos courriers électronique
       directement depuis Outlook et Outlook Web App."/>
   </Description>
-  <!-- Change the following line to specify    -->
-  <!-- the web serverthat hosts the icon file. -->
-  <IconUrl DefaultValue=
-    "https://webserver/YouTube/YouTubeLogo.png"/>
+  <!-- Change the following lines to specify    -->
+  <!-- the web server that hosts the icon files. -->
+  <IconUrl DefaultValue="https://contoso.com/assets/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://contoso.com/assets/hi-res-icon.png" />
 
   <Hosts>
     <Host Name="Mailbox" />
@@ -471,9 +479,9 @@ Para solucionar problemas com seu manifesto, confira [Validar e solucionar probl
 
 ## <a name="see-also"></a>Confira também
 
-* [Criar comandos de suplementos nos][comandos de suplementos]do seu manifesto
-* [Especificar requisitos de API e hosts do Office](specify-office-hosts-and-api-requirements.md)
-* [Localização para Suplementos do Office](localization.md)
+* [Criar comandos de suplementos em seu manifesto][comandos de suplementos]
+* [Especificar requisitos da API e de hosts do Office](specify-office-hosts-and-api-requirements.md)
+* [Localização para suplementos do Office](localization.md)
 * [Referência de esquema para manifestos de suplementos do Office](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas)
 * [Validar e solucionar problemas com seu manifesto](../testing/troubleshoot-manifest.md)
 
