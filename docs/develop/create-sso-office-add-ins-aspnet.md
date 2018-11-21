@@ -1,13 +1,13 @@
 ---
-title: Criar um Suplemento do Office com ASP.NET que usa logon único
+title: Criar um Suplemento do Office com ASP.NET que use logon único
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: d98fdc6604f0b4bf0c7437e75f27759fc6c5c83f
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 9ccabfcb2f3dc071ab9be181dda1ed5cadadd763
+ms.sourcegitcommit: 979e8d2b0fbc537f9c01527062767c026592aa62
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945719"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "25852942"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>Criar um Suplemento do Office com ASP.NET que use logon único (visualização)
 
@@ -42,20 +42,20 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
    > 1. No menu **Ferramentas**, navegue até **Nuget Package Manager** > **Console do Gerenciador de Pacotes**. 
 
-   > 2. No console, execute o seguinte comando: Pode levar um minuto ou mais para concluir, mesmo com uma conexão de Internet rápida. Quando terminar, você verá **'Microsoft.Identity.Client 1.1.4-preview0002' instalado com sucesso...** perto do final da saída no console.
+   > 2. No console, execute o seguinte comando: Pode levar um minuto ou mais para concluir, mesmo com uma conexão rápida à Internet. Quando terminar, você deve ver **'Microsoft.Identity.Client 1.1.4-preview0002' instalado com sucesso...** perto do final da saída no console.
 
    >    `Install-Package Microsoft.Identity.Client -Version 1.1.4-preview0002`
 
-   > 3. No **Gerenciador de soluções**, clique com o botão direito em **Referências**. Confirme que o **Microsoft.Identity.Client** está listado. Se não estiver, ou se houver um ícone de aviso na entrada dele, exclua a entrada e use o assistente Adicionar Referência do Visual Studio para adicionar uma referência ao conjunto de módulos (assembly) em **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.4-preview0002\lib\net45\Microsoft.Identity.Client.dll**
+   > 3. No **Explorador de soluções**, expanda **Referências** do projeto **Office-Add-in-ASPNET-SSO-WebAPI**. Verifique se **Microsoft.Identity.Client** está na lista. Se não estiver ou se houver um ícone de aviso na entrada, exclua a entrada e use o Assistente Visual Studio Add Reference para adicionar uma referência à montagem em **... \[Begin | Complete]\packages\Microsoft.Identity.Client.1.1.4-preview0002\lib\net45\Microsoft.Identity.Client.dll**
 
 1. Crie o projeto pela segunda vez.
 
 ## <a name="register-the-add-in-with-azure-ad-v20-endpoint"></a>Registre o suplemento com o ponto de extremidade v2.0 do Azure AD
 
-As instruções a seguir foram escritas de modo genérico para que possam ser usadas em diversos lugares. Para este artigo, faça o seguinte:
+As instruções a seguir são escritas de forma geral, elas podem ser usadas em vários locais. Para este artigo faça o seguinte:
 - Substitua o espaço reservado **$ADD-IN-NAME$** por `Office-Add-in-ASPNET-SSO`.
 - Substitua o espaço reservado **$FQDN-WITHOUT-PROTOCOL$** por `localhost:44355`.
-- Quando você especifica permissões no diálogo **Selecionar Permissões**, marque as caixas para as permissões a seguir. Somente a primeira é realmente exigida pelo suplemento propriamente dito, mas a biblioteca MSAL usada pelo código de servidor exige `offline_access` e `openid`. A permissão `profile` é necessária para que o host do Office obtenha um token no aplicativo Web do seu suplemento.
+- Quando você especificar permissões na caixa de diálogo **Selecionar permissões**, marque as caixas das seguintes permissões. Somente a primeira é realmente exigida pelo suplemento propriamente dito, mas a biblioteca MSAL usada pelo código de servidor exige `offline_access` e `openid`. A permissão `profile` é necessária para que o host do Office obtenha um token no aplicativo Web do seu suplemento.
     * Files.Read.All
     * offline_access
     * openid
@@ -64,13 +64,13 @@ As instruções a seguir foram escritas de modo genérico para que possam ser us
 
 [!INCLUDE[](../includes/register-sso-add-in-aad-v2-include.md)]
 
-## <a name="grant-administrator-consent-to-the-add-in"></a>Conceder permissão de administrador ao suplemento
+## <a name="grant-administrator-consent-to-the-add-in"></a>Conceder consentimento do administrador ao suplemento
 
 [!INCLUDE[](../includes/grant-admin-consent-to-an-add-in-include.md)]
 
 ## <a name="configure-the-add-in"></a>Configurar o suplemento
 
-1. Na cadeia de caracteres a seguir, substitua o espaço reservado "{tenant_ID}" pelo ID de locatário do Office 365. Use um dos métodos em [Encontre seu ID de locatário do Office 365](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id) para obtê-lo.
+1. Na cadeia de caracteres a seguir, substitua o espaço reservado "{tenant_ID}" pela ID de locatário do Office 365. Use os métodos em [Encontrar sua ID de locatário do Office 365](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id) para obtê-la.
 
     `https://login.microsoftonline.com/{tenant_ID}/v2.0`
 
@@ -120,19 +120,19 @@ As instruções a seguir foram escritas de modo genérico para que possam ser us
     </WebApplicationInfo>
     ```
 
-1. Substitua o espaço reservado "{application_GUID here}" *nos dois lugares* na marcação pela ID do Aplicativo que você copiou ao registrar seu suplemento. "{}" não faz parte do ID, portanto não inclua. Essa é a mesma ID usada para a ClientID e a Audience no web.config.
+1. Substitua o espaço reservado "{application_GUID here}" *nos dois lugares* na marcação pela ID do Aplicativo que você copiou ao registrar seu suplemento. O símbolo "{}" não faz parte da ID, portanto não o inclua. Essa é a mesma ID usada para a ClientID e a Audience no web.config.
 
     > [!NOTE]
     > * O valor de **Resource** é o **URI da ID do Aplicativo** que você definiu quando adicionou a plataforma API Web no registro do suplemento.
     > * A seção **Scopes** só será usada para gerar uma caixa de diálogo de consentimento se o suplemento for vendido no AppSource.
 
-1. Abra a guia **Avisos** da **Lista de Erros** no Visual Studio. Se houver um aviso informando que `<WebApplicationInfo>` não é um filho válido de `<VersionOverrides>`, sua versão prévia do Visual Studio 2017 não reconhece a marcação SSO. Para solucionar esse problema, faça o seguinte para um suplemento do Word, Excel ou PowerPoint. Se você estiver trabalhando com um suplemento do Outlook, confira a solução abaixo.
+1. Abra a guia **Avisos** da **Lista de Erros** no Visual Studio. Se houver um aviso que `<WebApplicationInfo>` não é um filho válido de `<VersionOverrides>`, sua versão do Visual Studio 2017 Preview não reconhecerá a marcação SSO. Para solucionar esse problema, faça o seguinte para um suplemento do Word, Excel ou PowerPoint. Se você estiver trabalhando com um suplemento do Outlook, confira a solução abaixo.
 
    - **Solução alternativa para Word, Excel e PowerPoint**
 
         1. Comente a seção `<WebApplicationInfo>` do manifesto logo acima do final de `</VersionOverrides>`.
 
-        2. Pressione F5 para iniciar uma sessão de depuração. Isso criará uma cópia do manifesto na seguinte pasta (que pode ser acessada mais facilmente pelo **Gerenciador de Arquivos** do que pelo Visual Studio): `Office-Add-in-ASP.NET-SSO\Complete\Office-Add-in-ASPNET-SSO\bin\Debug\OfficeAppManifests`
+        2. Pressione F5 para iniciar uma sessão de depuração. Isso criará uma cópia do manifesto na seguinte pasta (que pode ser acessada mais facilmente pelo **Gerenciador de Arquivos** do que pelo Visual Studio):`Office-Add-in-ASP.NET-SSO\Complete\Office-Add-in-ASPNET-SSO\bin\Debug\OfficeAppManifests`
 
         3. Na cópia do manifesto, remova a sintaxe do comentário em torno da seção `<WebApplicationInfo>`.
 
@@ -183,7 +183,7 @@ As instruções a seguir foram escritas de modo genérico para que possam ser us
 
 1. Abaixo do método `getOneDriveFiles`, adicione o código a seguir. Observe o seguinte sobre este código:
 
-    * O [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) é a nova API no Office.js que permite que um suplemento solicite ao aplicativo host do Office (Excel, PowerPoint, Word, etc.) um token de acesso para o suplemento (para o usuário conectado ao Office). O aplicativo host do Office, por sua vez, solicita o token ao ponto de extremidade 2.0 do AD do Azure. Uma vez que você previamente autorizou o host do Office para o seu suplemento ao registrá-lo, o AD do Azure enviará o token.
+    * O [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) é a nova API no Office.js que permite que um suplemento solicite ao aplicativo host do Office (Excel, PowerPoint, Word etc.) um token de acesso ao suplemento (para o usuário conectado ao Office). O aplicativo host do Office, por sua vez, solicita o token ao ponto de extremidade 2.0 do Azure AD. Uma vez que você previamente autorizou o host do Office para o seu suplemento ao registrá-lo, o Azure AD enviará o token.
     * Se nenhum usuário estiver conectado ao Office, o host do Office solicitará que o usuário se conecte.
     * O parâmetro de opções configura o `forceConsent` como `false`. Dessa forma, não será solicitado que o usuário consinta o acesso ao host do Office ao seu suplemento sempre que ele o usar. Na primeira vez que o usuário tiver o suplemento, a chamada de `getAccessTokenAsync` falhará, mas lógica de processamento de erros que você adicionará em uma etapa posterior será automaticamente chamada com a opção `forceConsent` definida como `true` e o usuário será solicitado a consentir, mas somente essa primeira vez.
     * Você criará o método `handleClientSideErrors` em uma etapa posterior.
@@ -282,7 +282,7 @@ As instruções a seguir foram escritas de modo genérico para que possam ser us
         break; 
     ```
 
-1. Substitua `TODO4` pelo seguinte código. O Erro 13003 ocorre quando o usuário está conectado com uma conta que não é de trabalho ou escola, nem é uma Conta da Microsoft. Peça ao usuário que saia e entre novamente com um tipo de conta com suporte.
+1. Substitua `TODO4` pelo código a seguir. O erro 13003 ocorre quando o usuário está conectado com uma conta que não é corporativa, de estudante nem da Microsoft. Peça que o usuário saia e entre novamente com um tipo de conta suportado.
 
     ```javascript
     case 13003: 
@@ -378,7 +378,7 @@ As instruções a seguir foram escritas de modo genérico para que possam ser us
     }    
     ```
 
-1. Substitua `TODO12` pelo código a seguir. Você substituirá os três `TODO`s nesse código com um bloco condicional *inner* nas próximas etapas.
+1. Substitua `TODO12` pelo código a seguir. Substitua os três `TODO`s neste código por um bloqueio condicional *interno* nas próximas etapas.
 
     ```javascript
     else if (exceptionMessage) {
@@ -394,7 +394,7 @@ As instruções a seguir foram escritas de modo genérico para que possam ser us
     ```
 
 
-1. Substitua `TODO12A` pelo código a seguir. (Isso cria a primeira parte de um bloco condicional *inner*.) Nota sobre este código:
+1. Substitua `TODO12A` pelo código a seguir. (Isso cria a primeira parte de um bloqueio condicional *interno*.) Observação sobre o código:
 
     * O erro 65001 significa que o consentimento para acessar o Microsoft Graph não foi concedido (ou foi revogado) para uma ou mais permissões. 
     * O suplemento deverá obter um novo token com a opção `forceConsent` definida como `true`.
@@ -433,7 +433,7 @@ As instruções a seguir foram escritas de modo genérico para que possam ser us
     }    
     ```
 
-1. Substitua `TODO13` pelo código a seguir. (Isso é parte do bloco condicional *outer* e deve estar imediatamente após o colchete de fechamento da estrutura que começa com `else if (exceptionMessage) {` e no mesmo nível de recuo.) Nota sobre este código:
+1. Substitua `TODO13` pelo código a seguir. (Isso faz parte do bloqueio condicional *externo* e deve ser colocado imediatamente após o colchete de fechamento da estrutura que começa com `else if (exceptionMessage) {` e com o mesmo nível de recuo.) Observação sobre o código:
 
     * A biblioteca de identidade que você usará no código do lado do servidor (Biblioteca de Autenticação da Microsoft - MSAL) deve garantir que nenhum token inválido ou expirado seja enviado para o Microsoft Graph. Contudo, se isso ocorrer, o erro retornado para serviço Web do suplemento do Microsoft Graph terá o código `InvalidAuthenticationToken`. O código do lado do servidor que você criará em uma etapa futura transmitirá essa mensagem ao cliente do suplemento.
     * Nesse caso, o suplemento deverá iniciar o processo de autenticação completo ao redefinir o contador e as variáveis de sinalizador e, em seguida, chamando novamente o método de identificador de botão.
@@ -559,7 +559,7 @@ As instruções a seguir foram escritas de modo genérico para que possam ser us
 3. Logo acima da linha que declara o `ValuesController`, adicione o atributo `[Authorize]`. Isso garante que seu suplemento executará o processo de autorização configurado no último procedimento sempre que um método controlador for chamado. Apenas os chamadores com um token de acesso válido para o seu suplemento podem invocar os métodos do controlador.
 
     > [!NOTE]
-    > Um serviço da ASP.NET MVC Web API de produção deve ter lógica personalizada para o fluxo on-behalf-of em uma ou mais classes [FilterAttribute](https://docs.microsoft.com/previous-versions/aspnet/web-frameworks/hh834645(v=vs.108)) personalizadas. Este exemplo educacional coloca a lógica no controlador de principal para que o fluxo de autorização e dados busca lógica inteiro possa ser acompanhado facilmente. Isso também faz com que o exemplo fique consistente com os exemplos de padrão de autorização nos [Exemplos do Azure](https://github.com/Azure-Samples/).    
+    > Um serviço da ASP.NET MVC Web API de produção deve ter lógica personalizada para o fluxo on-behalf-of em uma ou mais classes **FilterAttribute** personalizadas. Este exemplo educacional coloca a lógica no controlador de principal para que o fluxo de autorização e dados busca lógica inteiro possa ser acompanhado facilmente. Isso também faz com que o exemplo fique consistente com os exemplos de padrão de autorização nos [Exemplos do Azure](https://github.com/Azure-Samples/).    
 
 4. Adicione o método a seguir ao `ValuesController`. Observe que é o valor de retorno é `Task<HttpResponseMessage>` em vez de `Task<IEnumerable<string>>`, como seria mais comum para um método `GET api/values`. Este é um efeito colateral do fato de que nossa lógica de autorização personalizada estará no controlador: algumas condições de erro nessa lógica exigem que um objeto de resposta HTTP seja enviado para o cliente do suplemento. 
 
@@ -586,7 +586,7 @@ As instruções a seguir foram escritas de modo genérico para que possam ser us
     ```
 
     > [!NOTE]
-    > Observação: Você deve usar apenas o escopo `access_as_user` para autorizar a API que lida com o fluxo Em Nome De para os suplementos do Office. Outras APIs em seu serviço devem ter seus próprios requisitos de escopo. Isso limita o que pode ser acessado com os tokens que o Office adquire.
+    > Você deve usar apenas o escopo `access_as_user` para autorizar a API que lida com o fluxo Em Nome De para os suplementos do Office. Outras APIs em seu serviço devem ter seus próprios requisitos de escopo. Isso limita o que pode ser acessado com os tokens que o Office adquire.
 
 6. Substitua `TODO2` pelo código a seguir. Observação sobre este código:
     * Ele transforma o token de acesso bruto recebido do host do Office em um objeto de `UserAssertion` que será transmitido para outro método.

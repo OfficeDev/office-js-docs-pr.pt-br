@@ -1,17 +1,17 @@
 ---
 title: Realizar sideload de suplementos do Office no Office Online para teste
-description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: 10e236366012bb402b968d0f61ea64326bb9172d
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+description: Testar o suplemento do Office no Office Online através de sideloading
+ms.date: 10/19/2018
+ms.openlocfilehash: 94138cd0a22f053a9471bf905b8d0838dead15cf
+ms.sourcegitcommit: 3a808cf39cbc77056968d53a5957462371ad83a1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925301"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "25911225"
 ---
 # <a name="sideload-office-add-ins-in-office-online-for-testing"></a>Realizar sideload de suplementos do Office no Office Online para teste
 
-Você pode instalar um suplemento do Office para teste usando sideload, sem precisar primeiro colocá-lo em um catálogo de suplementos. O sideload pode ser feito no Office 365 ou no Office Online. O procedimento é ligeiramente diferente nas duas plataformas. 
+Você pode instalar um suplemento do Office para teste usando sideloading, sem precisar primeiro colocá-lo em um catálogo de suplementos. O sideloading pode ser feito no Office 365 ou no Office Online. O procedimento é ligeiramente diferente nas duas plataformas. 
 
 Quando você realiza o sideload de um suplemento, o manifesto do suplemento é armazenado localmente do navegador e, portanto, se você limpar o cache do navegador ou alternar para um navegador diferente, precisará realizar o sideload do suplemento novamente.
 
@@ -24,7 +24,7 @@ O vídeo a seguir oferece orientações para o processo de sideload do seu suple
 
 > [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
 
-## <a name="sideload-an-office-add-in-on-office-365"></a>Realizar sideload de um suplemento do Office no Office 365
+## <a name="sideload-an-office-add-in-in-office-365"></a>Realizar sideload de um suplemento do Office no Office 365
 
 
 1. Entre em sua conta do Office 365.
@@ -44,7 +44,7 @@ O vídeo a seguir oferece orientações para o processo de sideload do seu suple
 6. Verifique se o suplemento está instalado. Por exemplo, se for um comando do suplemento, ele deve aparecer na faixa de opções ou no menu de contexto. Se for um suplemento de painel de tarefas, o painel deve ser exibido.
     
 
-## <a name="sideload-an-office-add-in-on-office-online"></a>Realizar sideload de um suplemento do Office no Office Online
+## <a name="sideload-an-office-add-in-in-office-online"></a>Realizar sideload de um suplemento do Office no Office Online
 
 
 1. Abra o [Microsoft Office Online](https://office.live.com/).
@@ -64,18 +64,22 @@ O vídeo a seguir oferece orientações para o processo de sideload do seu suple
 6. Verifique se o suplemento está instalado. Por exemplo, se for um comando do suplemento, ele deve aparecer na faixa de opções ou no menu de contexto. Se for um suplemento de painel de tarefas, o painel deve ser exibido.
 
 > [!NOTE]
->Para testar o seu suplemento do Office com o Edge, digite “**about: flags**na barra de pesquisa do Edge para exibir as opções de Configurações do Desenvolvedor.  Marque a opção “**Permitir loopback do host local**” e reinicie o Edge.
+>Para testar o suplemento do Office com o Microsoft Edge, digite “**about:flags**” na barra de pesquisa do Edge para exibir as opções de Configurações do Desenvolvedor.  Verifique a opção “**Permitir loopback do localhost**” e reinicie o Edge.
 
->    ![A opção permitir loopback do host local com a caixa marcada.](../images/allow-localhost-loopback.png)
+>    ![A opção “Permitir loopback do localhost” do Edge com a caixa marcada.](../images/allow-localhost-loopback.png)
 
-## <a name="sideload-an-add-in-when-using-visual-studio"></a>Fazer sideload de um suplemento usando o Visual Studio
+## <a name="sideload-an-add-in-when-using-visual-studio"></a>Sideload de um suplemento usando o Visual Studio
 
-Se estiver usando o Visual Studio para desenvolver o suplemento, o processo de sideload é semelhante. A única diferença é que você deve atualizar o valor do elemento **SourceURL** no manifesto para incluir a URL completa em que o suplemento for implantado. 
+Se estiver usando o Visual Studio para desenvolver o suplemento, o processo de sideload é semelhante. A única diferença é que você deve atualizar o valor do elemento **SourceURL** no manifesto para incluir a URL completa em que o suplemento for implantado.
 
-Se estiver desenvolvendo o suplemento, localize o respectivo arquivo manifest.xml e atualize o valor do elemento **SourceLocation** para incluir um URI absoluto. O Visual Studio vai adicionar um token à implantação do localhost.
+> [!NOTE]
+> Embora você possa fazer o sideload de suplementos do Visual Studio para o Office Online, não é possível depurá-los no Visual Studio. Para depurar você precisará usar as ferramentas de depuração do navegador. Para saber mais, confira [Depurar suplementos no Office Online](debug-add-ins-in-office-online.md).
 
-Por exemplo: 
-
-```xml
-<SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />
-```
+1. No Visual Studio, abra a janela **Propriedades** escolhendo **Modo de exibição** -> **Janela de propriedades**.
+2. No **Gerenciador de Soluções**, selecione o projeto Web. Isso exibirá as propriedades para o projeto na janela **Propriedades**.
+3. Na janela Propriedades, copie a **URL de SSL**.
+4. No projeto de suplemento, abra o arquivo XML do manifesto. Certifique-se de que você está editando o XML do código-fonte. Para alguns tipos de projeto o Visual Studio abrirá o modo de exibição de visualização do XML que não funcionará para a próxima etapa.
+5. Pesquisar e substituir todas as instâncias de **~remoteAppUrl/** pela URL de SSL que você copiou. Você verá várias substituições dependendo do tipo de projeto e as novas URLs serão muito similares a `https://localhost:44300/Home.html`.
+6. Salve o arquivo XML.
+7. Clique com botão direito do mouse no projeto Web e escolha **Depurar** -> **Iniciar nova instância**. Isso executará o projeto Web sem iniciar o Office.
+8. No Office Online, faça o sideload do suplemento usando as etapas descritas anteriormente em [Sideload de um suplemento do Office no Office Online](#sideload-an-office-add-in-in-office-online).
