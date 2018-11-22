@@ -25,15 +25,15 @@ O tipo de regra pode ser um dos seguintes:
 
 ## <a name="itemis-rule"></a>Regra ItemIs
 
-Define uma regra que é avaliada como verdadeira se o item selecionado for do tipo especificado.
+Define uma regra que é avaliada como true se o item selecionado for do tipo especificado.
 
 ### <a name="attributes"></a>Atributos
 
 | Atributo | Obrigatório | Descrição |
 |:-----|:-----|:-----|
-| **ItemType** | Sim | Especifica o tipo de item para fazer a correspondência. Pode ser `Message` ou `Appointment`. O tipo de item `Message` inclui email, solicitações de reunião, respostas de reunião e cancelamentos de reunião. |
+| **ItemType** | Sim | Especifica o tipo de item para fazer a correspondência. Pode ser `Message` ou `Appointment`. O tipo de item `Message` inclui email, solicitações de reunião, respostas a reuniões e cancelamentos de reuniões. |
 | **FormType** | Não (dentro de [ExtensionPoint](extensionpoint.md)), Sim (dentro de [OfficeApp](officeapp.md)) | Especifica se o aplicativo deve aparecer no formulário de leitura ou edição do item. Pode ser um dos seguintes: `Read`, `Edit`, `ReadOrEdit`. Se não for especificado em um `Rule` dentro de um `ExtensionPoint`, esse valor DEVERÁ ser `Read`. |
-| **itemClass** | Não | Especifica a classe personalizada de mensagens para fazer a correspondência. Para saber mais, confira o artigo [Ativar um suplemento de email no Outlook para uma classe de mensagens específica](https://docs.microsoft.com/outlook/add-ins/activation-rules). |
+| **ItemClass** | Não | Especifica a classe de mensagens personalizada para fazer a correspondência. Para saber mais, confira [Ativar um suplemento de email no Outlook para uma classe de mensagens específica](https://docs.microsoft.com/outlook/add-ins/activation-rules). |
 | **IncludeSubClasses** | Não | Especifica se a regra deve ser avaliada como true se o item pertencer a uma subclasse da classe de mensagens especificada. O padrão é `false`. |
 
 ### <a name="example"></a>Exemplo
@@ -44,7 +44,7 @@ Define uma regra que é avaliada como verdadeira se o item selecionado for do ti
 
 ## <a name="itemhasattachment-rule"></a>Regra ItemHasAttachment
 
-Define uma regra que é avaliada como verdadeira se o item contiver um anexo.
+Define uma regra que é avaliada como true se o item contiver um anexo.
 
 ### <a name="example"></a>Exemplo
 
@@ -60,11 +60,11 @@ Define uma regra que é avaliada como true se o item contiver texto do tipo de e
 
 | Atributo | Obrigatório | Descrição |
 |:-----|:-----|:-----|
-| **EntityType** | Sim | Especifica o tipo de entidade que deve ser encontrado para a regra para que ela seja avaliada como verdadeira. Pode ser um dos seguintes: `MeetingSuggestion`, `TaskSuggestion`, `Address`, `Url`, `PhoneNumber`, `EmailAddress` ou `Contact`. |
-| **RegExFilter** | Não | Especifica uma expressão regular para ativação desta entidade. |
+| **EntityType** | Sim | Especifica o tipo de entidade que deve ser encontrado para a regra para que ela seja avaliada como true. Pode ser um dos seguintes: `MeetingSuggestion`, `TaskSuggestion`, `Address`, `Url`, `PhoneNumber`, `EmailAddress` ou `Contact`. |
+| **RegExFilter** | Não | Especifica uma expressão regular para executar esta entidade para ativação. |
 | **FilterName** | Não | Especifica o nome do filtro de expressões regulares para que seja possível consultá-lo posteriormente no código do seu suplemento. |
-| **IgnoreCase** | Não | Especifica ignorar maiúsculas e minúsculas ao executar a expressão regular especificada pelo atributo **RegExFilter**. |
-| **Marcação** | Não | **Observação:** isso se aplica somente aos elementos **Rule** dentro dos elementos **ExtensionPoint**. Especifica como o cliente deve destacar entidades correspondentes. Pode ser um dos seguintes: `all` ou `none`. Se não for especificado, o valor padrão será `all`. |
+| **IgnoreCase** | Não | Especifica para ignorar maiúsculas e minúsculas ao executar a expressão regular especificada pelo atributo **RegExFilter**. |
+| **Realce** | Não | **Observação:** isso se aplica somente aos elementos **Rule** dentro dos elementos **ExtensionPoint**. Especifica como o cliente deve realçar entidades correspondentes. Pode ser um dos seguintes: `all` ou `none`. Se não for especificado, o valor padrão será `all`. |
 
 ### <a name="example"></a>Exemplo
 
@@ -74,7 +74,7 @@ Define uma regra que é avaliada como true se o item contiver texto do tipo de e
 
 ## <a name="itemhasregularexpressionmatch-rule"></a>Regra ItemHasRegularExpressionMatch
 
-Define uma regra que é avaliada como verdadeira se uma correspondência para a expressão regular especificada puder ser encontrada na propriedade especificada do item.
+Define uma regra que é avaliada como true se uma correspondência para a expressão regular especificada pode ser encontrada na propriedade especificada do item.
 
 ### <a name="attributes"></a>Atributos
 
@@ -82,14 +82,14 @@ Define uma regra que é avaliada como verdadeira se uma correspondência para a 
 |:-----|:-----|:-----|
 | **RegExName** | Sim | Especifica o nome da expressão regular para que você possa fazer referência à expressão no código de seu suplemento. |
 | **RegExValue** | Sim | Especifica a expressão regular que será avaliada para determinar se o suplemento de email deve ser mostrado. |
-| **PropertyName** | Sim | Especifica o nome da propriedade em relação a qual a expressão regular será avaliada. Pode ser um dos seguintes: `Subject`, `BodyAsPlaintext`, `BodyAsHtml` ou `SenderSTMPAddress`. |
+| **PropertyName** | Sim | Especifica o nome da propriedade em relação a qual expressão regular será avaliada. Pode ser um dos seguintes: `Subject`, `BodyAsPlaintext`, `BodyAsHTML` ou `SenderSTMPAddress`. |
 | **IgnoreCase** | Não | Especifica que as maiúsculas e minúsculas devem ser ignoradas ao executar a expressão regular. |
-| **Destaque** | Não | **Observação:** isso se aplica somente aos elementos **Rule** dentro dos elementos **ExtensionPoint**. Especifica como o cliente deve destacar texto correspondente. Pode ser um dos seguintes: `all` ou `none`. Se não for especificado, o valor padrão será `all`. |
+| **Realce** | Não | **Observação:** isso se aplica somente aos elementos **Rule** dentro dos elementos **ExtensionPoint**. Especifica como o cliente deve realçar texto correspondente. Pode ser um dos seguintes: `all` ou `none`. Se não for especificado, o valor padrão será `all`. |
 
 ### <a name="example"></a>Exemplo
 
 ```XML
-<Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="SupportArticleNumber" RegExValue="(\W|^)kb\d{6}(\W|$)" PropertyName="BodyAsHtml" IgnoreCase="true" />
+<Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="SupportArticleNumber" RegExValue="(\W|^)kb\d{6}(\W|$)" PropertyName="BodyAsHTML" IgnoreCase="true" />
 ```
 
 ## <a name="rulecollection"></a>RuleCollection
@@ -100,7 +100,7 @@ Define uma coleção de regras e o operador lógico a ser usado ao avaliá-las.
 
 | Atributo | Obrigatório | Descrição |
 |:-----|:-----|:-----|
-| **Modo** | Sim | Especifica o operador lógico a usar quando avaliar essa coleção de regras. Pode ser: `And` ou `Or` . |
+| **Mode** | Sim | Especifica o operador lógico a ser usado quando estiver avaliando essa coleção de regras. Pode ser: `And` ou `Or`. |
 
 ### <a name="example"></a>Exemplo
 
@@ -115,5 +115,5 @@ Define uma coleção de regras e o operador lógico a ser usado ao avaliá-las.
 ## <a name="see-also"></a>Confira também
 
 - [Regras de ativação para suplementos do Outlook](https://docs.microsoft.com/outlook/add-ins/activation-rules)
-- [Corresponder sequências de caracteres em um item do Outlook como entidades conhecidas](https://docs.microsoft.com/outlook/add-ins/match-strings-in-an-item-as-well-known-entities)    
+- [Corresponder cadeias de caracteres em um item do Outlook como entidades conhecidas](https://docs.microsoft.com/outlook/add-ins/match-strings-in-an-item-as-well-known-entities)    
 - [Usar regras de ativação de expressões regulares para mostrar um suplemento do Outlook](https://docs.microsoft.com/outlook/add-ins/use-regular-expressions-to-show-an-outlook-add-in)

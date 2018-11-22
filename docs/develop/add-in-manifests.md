@@ -2,12 +2,12 @@
 title: Manifesto XML dos Suplementos do Office
 description: ''
 ms.date: 02/09/2018
-ms.openlocfilehash: e25d465b39cea0a13a890fec95fafdbeafff0ca5
-ms.sourcegitcommit: 9b021af6cb23a58486d6c5c7492be425e309bea1
+ms.openlocfilehash: 85791b40e17095248eb47e6e9eda40dba70e7cdf
+ms.sourcegitcommit: 3e84d616e69f39eeeeea773f2431e7d674c4a9f5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "26533704"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "26644729"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifesto XML dos Suplementos do Office
 
@@ -33,6 +33,10 @@ Um arquivo de manifesto XML com base nesse esquema permite que um Suplemento do 
 ## <a name="required-elements"></a>Elementos exigidos
 
 A tabela a seguir especifica os elementos exigidos para os três tipos de Suplementos do Office.
+
+> [!NOTE]
+> Também há uma ordem obrigatória na qual os elementos devem aparecer dentro de seu elemento-pai. Confira mais informações em [Como encontrar a ordem adequada de elementos de manifesto](manifest-element-ordering.md).
+
 
 ### <a name="required-elements-by-office-add-in-type"></a>Elementos obrigatórios de acordo com o tipo de Suplemento do Office
 

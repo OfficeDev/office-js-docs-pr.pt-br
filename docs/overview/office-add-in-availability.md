@@ -2,12 +2,12 @@
 title: Disponibilidade de host e plataforma para suplementos do Office
 description: Conjuntos de requisitos compatíveis com Excel, Word, Outlook, PowerPoint, OneNote e Project.
 ms.date: 11/07/2018
-ms.openlocfilehash: f8d7d9d393531301829b31dd171a5332a0da536b
-ms.sourcegitcommit: 9b021af6cb23a58486d6c5c7492be425e309bea1
+ms.openlocfilehash: c3da40be21c0e569028dd10e93e33760ba2bd39d
+ms.sourcegitcommit: 3e84d616e69f39eeeeea773f2431e7d674c4a9f5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "26533795"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "26644750"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilidade de host e plataforma para suplementos do Office
 
@@ -133,7 +133,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office para iOS</td>
+    <td>Office para iPad</td>
     <td>- TaskPane<br>
         - Conteúdo</td>
     <td>- <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
@@ -451,7 +451,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
          - TextFile </td>
   </tr>
   <tr>
-    <td>Office para iOS</td>
+    <td>Office para iPad</td>
     <td> - TaskPane</td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
          - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
@@ -612,7 +612,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office para iOS</td>
+    <td>Office para iPad</td>
     <td> - Conteúdo<br>
          - TaskPane</td>
     <td> - <a href="https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
