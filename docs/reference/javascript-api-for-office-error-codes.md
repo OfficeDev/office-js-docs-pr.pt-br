@@ -1,13 +1,13 @@
 ---
 title: Códigos de erro da API JavaScript para Office
 description: ''
-ms.date: 10/31/2018
-ms.openlocfilehash: d32323e18c13fb91c2e54ae7d8b0daa9ab4990be
-ms.sourcegitcommit: 161a0625646a8c2ebaf1773c6369ee7cc96aa07b
+ms.date: 11/27/2018
+ms.openlocfilehash: 1e7d479b9b6f6f8f619f799c34ba18ac83bd3afd
+ms.sourcegitcommit: 3f8eee355579f9234a8e46ae88090342002b4681
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "25891946"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "26734018"
 ---
 # <a name="javascript-api-for-office-error-codes"></a>Códigos de erro da API JavaScript para Office
 
@@ -22,18 +22,18 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 |**Error.code**|**Error.name**|**Error.message**|**Condição**|
 |:-----|:-----|:-----|:-----|
 |1000|Tipo inválido de coerção|O tipo de coerção especificado não tem suporte|Não há suporte para o tipo de coerção no aplicativo host. (Por exemplo, não há suporte para os tipos de coerção OOXML e HTML no Excel.)|
-|1001|Erro de Leitura de Dados|A seleção atual não tem suporte.|Não há suporte para a seleção atual do usuário. (Ou seja, é algo diferente dos tipos coerção com suporte.)|
+|1001|Erro de Leitura de Dados|A seleção atual não tem suporte.|Não há suporte para a seleção atual do usuário (ou seja, é algo diferente dos tipos de coerção com suporte).|
 |1002|Tipo inválido de coerção|O tipo de coerção especificado não é compatível com este tipo de associação.|O desenvolvedor da solução forneceu uma combinação incompatível de tipo de coerção e tipo de associação.|
 |1003|Erro de Leitura de Dados|Os valores rowCount ou columnCount especificados são inválidos.|O usuário fornece contagens inválidas de coluna ou de linha.|
 |1004|Erro de Leitura de Dados|A seleção atual não tem suporte para o tipo de coerção especificado.|A seleção atual não é compatível com o tipo de coerção especificado por este aplicativo.|
 |1005|Erro de Leitura de Dados|Os valores startRow ou startColumn especificados são inválidos.|O usuário fornece valores inválidos de startRow ou startCol.|
-|1006|Erro de Leitura de Dados|Os parâmetros de coordenadas não podem ser usados com o tipo de coerção “Table” quando a tabela contiver células mescladas.|O usuário tentar obter dados parciais de uma tabela não uniforme (ou seja, uma tabela que possui células mescladas). |
+|1006|Erro de Leitura de Dados|Os parâmetros de coordenadas não podem ser usados com o tipo de coerção “Table” quando a tabela contiver células mescladas.|O usuário tenta obter dados parciais de uma tabela não uniforme (ou seja, uma tabela que possui células mescladas). |
 |1007|Erro de Leitura de Dados|O tamanho do documento é muito grande.|O usuário tentar obter um documento maior do que o tamanho compatível no momento.|
 |1008|Erro de Leitura de Dados|O conjunto de dados solicitado é muito grande.|O usuário solicita a leitura de dados além dos limites de dados definidos pelos suplementos host.|
 |1009|Erro de Leitura de Dados|O tipo de arquivo especificado não tem suporte.|O usuário envia um tipo de arquivo inválido.|
 |2000|Erro de Gravação de Dados|Não há suporte para o tipo de objeto de dados fornecido. |Um objeto de dados sem suporte foi fornecido.|
 |2001|Erro de Gravação de Dados|Não é possível gravar na seleção atual.|Não há suporte para a seleção atual do usuário para uma operação de gravação. (Por exemplo, quando o usuário seleciona uma imagem.)|
-|2002|Erro de Gravação de Dados|O objeto de dados fornecido não é compatível com a forma ou com as dimensões da seleção atual.|Várias células estão selecionadas (e a forma de seleção não coincide com a forma dos dados). Várias células estão selecionadas (e as dimensões da seleção não coincidem com as dimensões dos dados).|
+|2002|Erro de Gravação de Dados|O objeto de dados fornecido não é compatível com a forma ou com as dimensões da seleção atual.|Várias células são selecionadas (e a forma de seleção não corresponde à forma dos dados). Várias células são selecionadas (e as dimensões da seleção não correspondem às dimensões dos dados).|
 |2003|Erro de Gravação de Dados|A operação de definição falhou porque o objeto de dados fornecido substituirá os dados.|Uma única célula está selecionada e o objeto de dados fornecido substitui os dados na planilha.|
 |2004|Erro de Gravação de Dados|O objeto de dados fornecido não corresponde ao tamanho da seleção atual.|O usuário fornece um objeto maior do que o tamanho da seleção atual.|
 |2005|Erro de Gravação de Dados|Os valores startRow ou startColumn especificados são inválidos.|O usuário fornece valores inválidos de startRow ou startCol.|
@@ -41,7 +41,7 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 |2007|Objeto de dados inválido|O tipo do objeto de dados especificado não é compatível com a seleção atual.|O desenvolvedor da solução fornece um objeto de dados incompatível com o tipo de coerção especificado.|
 |2008|Erro de Gravação de Dados|TBD|TBD|
 |2009|Erro de Gravação de Dados|O objeto de dados especificado é muito grande.|O usuário tenta definir dados além dos limites de dados definidos pelos suplementos do host.|
-|2010|Erro de Gravação de Dados|Os parâmetros de coordenadas não podem ser usados com o tipo de coerção Table quando a tabela contiver células mescladas.|O usuário tentar definir dados parciais de uma tabela não uniforme (ou seja, uma tabela que possui células mescladas).|
+|2010|Erro de Gravação de Dados|Os parâmetros de coordenadas não podem ser usados com o tipo de coerção Table quando a tabela contiver células mescladas.|O usuário tenta definir dados parciais de uma tabela não uniforme (ou seja, uma tabela que possui células mescladas).|
 |3000|Erro de Criação de Associação|Não é possível associar à seleção atual.|Não há suporte para a associação da seleção do usuário. (Por exemplo, o usuário está selecionando uma imagem ou outro objeto sem suporte.)|
 |3001|Erro de Criação de Associação|TBD|TBD|
 |3002|Erro de Associação Inválida|A ligação especificada não existe.|O desenvolvedor tenta associar a uma associação não existente ou removida.|
@@ -65,9 +65,10 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 |5006|Tempo Limite da Sessão|O tempo limite da sessão do documento esgotou-se. Recarregue o documento. |A sessão expirou.|
 |5007|Chamada de API inválida|Não há suporte à enumeração no contexto atual.|Não há suporte à enumeração no contexto atual.|
 |5009|Permissão negada|Acesso negado|O suplemento não tem permissão para chamar a API específica.|
+|5012|Sessão inválida ou esgotada|Sua sessão do Office Online expirou ou é inválida. Para continuar, atualize a página.|A sessão entre o cliente do Office e o servidor expirou, ou então a data, hora ou fuso horário estão incorretos em seu computador.|
 |6000|Nó inválido|O nó especificado não foi encontrado.|O nó **CustomXmlPart** não foi encontrado.|
-|6100|Erro no XML personalizado|Erro no XML personalizado|Chamada de API inválida|
-|7000|ID inválida|A ID especificada não existe.|ID inválida|
+|6100|Erro no XML personalizado|Erro no XML personalizado|Chamada de API inválida.|
+|7000|ID inválida|A ID especificada não existe.|ID inválida.|
 |7001|Navegação inválida|O objeto está localizado em um local em onde a navegação não é suportada.|O usuário pode encontrar o objeto, mas não é possível navegar até ele. (Por exemplo, no Word, a associação ocorre com o cabeçalho, rodapé ou um comentário.)|
 |7002|Navegação inválida|O objeto está bloqueado ou protegido.|O usuário está tentando navegar até um intervalo bloqueado ou protegido.|
 |7004|Navegação inválida|A operação falhou porque o índice está fora do intervalo.|O usuário está tentando navegar até um índice fora do intervalo.|
