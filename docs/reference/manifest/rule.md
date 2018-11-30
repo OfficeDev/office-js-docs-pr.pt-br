@@ -82,7 +82,7 @@ Define uma regra que é avaliada como true se uma correspondência para a expres
 |:-----|:-----|:-----|
 | **RegExName** | Sim | Especifica o nome da expressão regular para que você possa fazer referência à expressão no código de seu suplemento. |
 | **RegExValue** | Sim | Especifica a expressão regular que será avaliada para determinar se o suplemento de email deve ser mostrado. |
-| **PropertyName** | Sim | Especifica o nome da propriedade em relação a qual expressão regular será avaliada. Pode ser um dos seguintes: `Subject`, `BodyAsPlaintext`, `BodyAsHTML` ou `SenderSTMPAddress`. |
+| **PropertyName** | Sim | Especifica o nome da propriedade em relação a qual expressão regular será avaliada. Pode ser um dos seguintes: `Subject`, `BodyAsPlaintext`, `BodyAsHTML` ou `SenderSMTPAddress`. |
 | **IgnoreCase** | Não | Especifica que as maiúsculas e minúsculas devem ser ignoradas ao executar a expressão regular. |
 | **Realce** | Não | **Observação:** isso se aplica somente aos elementos **Rule** dentro dos elementos **ExtensionPoint**. Especifica como o cliente deve realçar texto correspondente. Pode ser um dos seguintes: `all` ou `none`. Se não for especificado, o valor padrão será `all`. |
 
