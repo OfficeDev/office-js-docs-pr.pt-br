@@ -1,13 +1,13 @@
 ---
 title: Use a API de Caixa de Diálogo em seus Suplementos do Office
 description: ''
-ms.date: 10/31/2018
-ms.openlocfilehash: bf93a6aeb4d0b92015351d924d417be0631daf37
-ms.sourcegitcommit: 86724e980f720ed05359c9525948cb60b6f10128
+ms.date: 11/28/2018
+ms.openlocfilehash: 0b6879f9c91ef6443718b032f9ec53c9a9c3afa0
+ms.sourcegitcommit: 026437bd3819f4e9cd4153ebe60c98ab04e18f4e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "26237525"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "26992230"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Use a API de Caixa de Diálogo em seus Suplementos do Office
 
@@ -80,6 +80,17 @@ O valor padrão é `false`, que é o mesmo que omitir a propriedade inteiramente
 > [!NOTE]
 > Você **não** deverá usar `displayInIframe: true` se a caixa de diálogo redirecionar a qualquer ponto para uma página que não possa ser aberta em um iframe. Por exemplo, as páginas de entrada de muitos serviços Web populares, como Google e Conta da Microsoft, não podem ser abertas em um iframe.
 
+### <a name="handling-pop-up-blockers-with-office-online"></a>Tratamento de bloqueadores de pop-up com o Office Online
+
+Tentar exibida uma caixa de diálogo enquanto usa o Office Online pode fazer com que bloqueadores de pop-up do navegador bloqueiem a caixa de diálogo. O bloqueador de pop-up do navegador pode ser evitado se o usuário de seu suplemento concordar primeiro com um aviso do suplemento. `displayDialogAsync`'s [DialogOptions](/javascript/api/office/office.dialogoptions) tem a `promptBeforeOpen` propriedade para acionar esse tipo de pop-up. `promptBeforeOpen` é um valor booliano que fornece o comportamento a seguir:
+ 
+ - `true` - A estrutura exibe um pop-up para acionar o painel de navegação e evitar bloqueadores de pop-up do navegador. 
+ - `false` - A caixa de diálogo não será exibida e o desenvolvedor deverá lidar com pop-ups (fornecendo um artefato da interface de usuário para acionar a navegação). 
+ 
+O pop-up parece semelhante ao da captura de tela a seguir:
+
+![O aviso que uma caixa de diálogo do suplemento pode gerar para evitar bloqueadores de pop-up no navegador.](../images/dialog-prompt-before-open.png)
+ 
 ### <a name="send-information-from-the-dialog-box-to-the-host-page"></a>Envie informações da caixa de diálogo para a página host
 
 A caixa de diálogo não pode se comunicar com a página host no painel de tarefas, a menos que:
