@@ -35,11 +35,11 @@ O namespace `item` é usado para acessar a mensagem, a solicitação de reunião
 | [normalizedSubject](#normalizedsubject-string) | Membro |
 | [notificationMessages](#notificationmessages-notificationmessagesjavascriptapioutlookofficenotificationmessages) | Membro |
 | [optionalAttendees](#optionalattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipients) | Membro |
-| [organizer](#organizer-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsorganizerjavascriptapioutlookofficeorganizer) | Membro |
-| [recurrence](#nullable-recurrence-recurrencejavascriptapioutlookofficerecurrence) | Membro |
+| [organizer](#organizer-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsorganizerjavascriptapioutlookofficeorganizer) | Member |
+| [recurrence](#nullable-recurrence-recurrencejavascriptapioutlookofficerecurrence) | Member |
 | [requiredAttendees](#requiredattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipients) | Member |
-| [sender](#sender-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetails) | Membro |
-| [seriesId](#nullable-seriesid-string) | Membro |
+| [sender](#sender-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetails) | Member |
+| [seriesId](#nullable-seriesid-string) | Member |
 | [start](#start-datetimejavascriptapioutlookofficetime) | Membro |
 | [subject](#subject-stringsubjectjavascriptapioutlookofficesubject) | Membro |
 | [to](#to-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipients) | Membro |
@@ -93,7 +93,7 @@ Office.initialize = function () {
 Obtém os anexos do item como uma matriz. Somente modo de leitura.
 
 > [!NOTE]
-> Certos tipos de arquivos são bloqueados pelo Outlook devido a possíveis problemas de segurança e, portanto, não retornam. Para saber mais, consulte [Anexos bloqueados no Outlook](https://support.office.com/article/Blocked-attachments-in-Outlook-434752E1-02D3-4E90-9124-8B81E49A8519).
+> Certos tipos de arquivos são bloqueados pelo Outlook devido a possíveis problemas de segurança e, portanto, não retornam. Para saber mais, confira [Anexos bloqueados no Outlook](https://support.office.com/article/Blocked-attachments-in-Outlook-434752E1-02D3-4E90-9124-8B81E49A8519).
 
 ##### <a name="type"></a>Tipo:
 
@@ -308,7 +308,7 @@ Ao usar o método [`Time.setAsync`](/javascript/api/outlook/office.time#setasync
 
 ##### <a name="example"></a>Exemplo
 
-O exemplo a seguir define a hora de término de um compromisso no modo de composição usando o método [`setAsync`](/javascript/api/outlook/office.time#setasync-datetime--options--callback-) do objeto `Time`.
+O exemplo a seguir define a hora de término de um compromisso no modo de redação usando o método [`setAsync`](/javascript/api/outlook/office.time#setasync-datetime--options--callback-) do objeto `Time`.
 
 ```javascript
 var endTime = new Date("3/14/2015");
@@ -643,11 +643,11 @@ var organizerAddress = Office.context.mailbox.item.organizer.emailAddress;
 
 #### <a name="nullable-recurrence-recurrencejavascriptapioutlookofficerecurrence"></a>(nullable) recurrence :[Recurrence](/javascript/api/outlook/office.recurrence)
 
-Obtém ou configura o padrão de recorrência de um compromisso. Obtém o padrão de recorrência de uma solicitação de reunião. Modos de leitura e composição para itens do compromisso. Modo de leitura para os itens de solicitação de reunião.
+Obtém ou configura o padrão de recorrência de um compromisso. Obtém o padrão de recorrência de uma solicitação de reunião. Modos de leitura e redação para itens do compromisso. Modo de leitura para os itens de solicitação de reunião.
 
-A propriedade `recurrence` retorna um objeto [recurrence](/javascript/api/outlook/office.recurrence) para compromissos recorrentes ou solicitações de reuniões se um item for uma série ou uma instância em uma série. `null` retorna para compromissos individuais e solicitações de reunião de compromissos individuais. `undefined` retorna para mensagens não são solicitações de reunião.
+A propriedade `recurrence` retorna um objeto [recurrence](/javascript/api/outlook/office.recurrence) para compromissos recorrentes ou solicitações de reuniões se um item for uma série ou uma instância em uma série. `null` retorna para compromissos individuais e solicitações de reunião de compromissos individuais. `undefined` retorna para mensagens que não são solicitações de reunião.
 
-> Observação: solicitações de reunião tem um valor `itemClass` de IPM.Schedule.Meeting.Request.
+> Observação: solicitações de reunião têm um valor `itemClass` de IPM.Schedule.Meeting.Request.
 
 > Observação: se o objeto de recorrência for `null`, isso indicará que o objeto é um compromisso individual ou uma solicitação de reunião de um compromisso individual e NÃO parte de uma série.
 
@@ -1375,7 +1375,7 @@ O método `getAttachmentContentAsync` remove o obtém anexo com o identificador 
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Visualização|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composição ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Redação ou leitura|
 
 ##### <a name="returns"></a>Retorna:
 
@@ -1490,7 +1490,7 @@ var contacts = Office.context.mailbox.item.getEntities().contacts;
 
 #### <a name="getentitiesbytypeentitytype--nullable-arraystringcontactjavascriptapioutlookofficecontactmeetingsuggestionjavascriptapioutlookofficemeetingsuggestionphonenumberjavascriptapioutlookofficephonenumbertasksuggestionjavascriptapioutlookofficetasksuggestion"></a>getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook/office.contact)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion)|[PhoneNumber](/javascript/api/outlook/office.phonenumber)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion))>}
 
-Obtém uma matriz de todas as entidades do tipo de entidade especificado encontrado no corpo do item selecionado.
+Obtém uma matriz de todas as entidades do tipo de entidade especificado encontradas no corpo do item selecionado.
 
 > [!NOTE]
 > Não há suporte para esse método no Outlook para iOS ou no Outlook para Android.
@@ -2023,10 +2023,10 @@ Quando chamado, este método salva a mensagem atual como um rascunho e retorna a
 Como compromissos não têm um estado de rascunho, se `saveAsync` for chamado em um compromisso no modo Redigir, o item será salvo como um compromisso normal no calendário do usuário. Para novos compromissos que não foram salvos antes, nenhum convite será enviado. Salvar um compromisso existente enviará uma atualização aos participantes adicionados ou removidos.
 
 > [!NOTE]
-> Os clientes a seguir têm diferentes comportamentos para `saveAsync` nos compromissos no modo de composição:
+> Os clientes a seguir têm diferentes comportamentos para `saveAsync` nos compromissos no modo de redação:
 >
 > - O Outlook para Mac não dá suporte ao `saveAsync` em uma reunião no modo composto. Chamar `saveAsync` em uma reunião no Outlook para Mac fará com que um erro seja retornado.
-> - O Outlook na Web sempre envia um convite ou atualização quando `saveAsync` é chamado em um compromisso no modo de composição.
+> - O Outlook na Web sempre envia um convite ou atualização quando `saveAsync` é chamado em um compromisso no modo de redação.
 
 ##### <a name="parameters"></a>Parâmetros:
 
