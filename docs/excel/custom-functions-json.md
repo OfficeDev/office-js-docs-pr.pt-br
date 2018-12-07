@@ -1,13 +1,13 @@
 ---
-ms.date: 10/17/2018
+ms.date: 11/26/2018
 description: Defina os metadados de funções personalizadas no Excel.
 title: Metadados de funções personalizadas no Excel
-ms.openlocfilehash: 0c77474188a2deefd23a73bb64e87569bb1fa52a
-ms.sourcegitcommit: 2ac7d64bb2db75ace516a604866850fce5cb2174
+ms.openlocfilehash: a3d4427af2c6ab46133cb4e2fd9ce384a6a8336c
+ms.sourcegitcommit: e2ba9d7210c921d068f40d9f689314c73ad5ab4a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "26298541"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "27156590"
 ---
 # <a name="custom-functions-metadata-preview"></a>Metadados de funções personalizadas (versão prévia)
 
@@ -127,8 +127,9 @@ O objeto `options` permite que você personalize alguns aspectos de como e quand
 |:-----|:-----|:-----|:-----|
 |  `cancelable`  |  booliano  |  Não<br/><br/>O valor padrão é `false`.  |  Se o valor for `true`, o Excel chamará o manipulador `onCanceled` sempre que o usuário realizar uma ação que tenha o efeito de cancelar a função, por exemplo, manualmente acionar um recálculo ou editar uma célula referenciada pela função. Se você usar essa opção, o Excel chamará a função JavaScript com um parâmetro `caller` adicional. (***Não*** registre este parâmetro na propriedade `parameters`). No corpo da função, um manipulador deve ser atribuído ao membro `caller.onCanceled`. Para saber mais, confira [Cancelar uma função](custom-functions-overview.md#canceling-a-function). |
 |  `stream`  |  booliano  |  Não<br/><br/>O valor padrão é `false`.  |  Se o valor for `true`, a função poderá gerar uma saída para a célula de forma repetida, mesmo quando invocada somente uma vez. Essa opção é útil para fontes de dados que mudam constantemente, como preços de ações. Se você usar essa opção, o Excel chamará a função JavaScript com um parâmetro `caller` adicional. (***Não*** registre este parâmetro na propriedade `parameters`). A função não deve ter instruções `return`. Em vez disso, o valor resultante é passado como o argumento do método de retorno `caller.setResult`. Para saber mais informações, confira [Funções de streaming](custom-functions-overview.md#streaming-functions). |
+|  `volatile`  | booliano | Não <br/><br/>O valor padrão é `false`. | <br /><br /> Se for `true`, a função será recalculada sempre que o Excel recalcular, em vez de apenas quando os valores dependentes da fórmula forem alterados. Uma função não pode ser de streaming e volátil ao mesmo tempo. Se as propriedades `stream` e `volatile` forem definidas como `true`, a opção volátil será ignorada. |
 
-## <a name="parameters"></a>parameters
+## <a name="parameters"></a>parâmetros
 
 A propriedade `parameters` é uma matriz de objetos de parâmetro. A tabela a seguir lista as propriedades de cada objeto.
 
@@ -138,6 +139,10 @@ A propriedade `parameters` é uma matriz de objetos de parâmetro. A tabela a se
 |  `dimensionality`  |  string  |  Não  |  Deve ser **escalar** (um valor não matriz) ou **matriz** (uma matriz de 2 dimensões).  |
 |  `name`  |  string  |  Sim  |  O nome do parâmetro. Esse nome é exibido no IntelliSense do Excel.  |
 |  `type`  |  string  |  Não  |  O tipo de dados do parâmetro. Pode ser **booliano**, **número**, **cadeia de caracteres** ou **qualquer**, que permita usar qualquer um dos três tipos anteriores. Se essa propriedade não for especificada, o tipo de dados padrão será **qualquer**. |
+|  `optional`  | booliano | Não | Se for `true`, o parâmetro será opcional. |
+
+>[!NOTE]
+> Se a propriedade `type` de um parâmetro opcional não for especificada ou definida como `any`, é provável que você tenha problemas, como erros de lint em seu IDE e parâmetros opcionais que não serão exibidos quando a função estiver sendo inserida em uma célula no Excel. A previsão é para ser alterado em dezembro de 2018.
 
 ## <a name="result"></a>result
 

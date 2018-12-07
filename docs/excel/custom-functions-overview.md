@@ -1,13 +1,13 @@
 ---
-ms.date: 10/17/2018
+ms.date: 11/29/2018
 description: Criar funções personalizadas no Excel usando JavaScript.
 title: Criar funções personalizadas no Excel (Versão Prévia)
-ms.openlocfilehash: 8383b5f6d568a1ce2da036fbacfb90404bbe8297
-ms.sourcegitcommit: 2ac7d64bb2db75ace516a604866850fce5cb2174
+ms.openlocfilehash: daa0cea24473290a2bc1b5c931f2f7a00ddc8276
+ms.sourcegitcommit: e2ba9d7210c921d068f40d9f689314c73ad5ab4a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "26298548"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "27156611"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Criar funções personalizadas no Excel (versão prévia)
 
@@ -43,7 +43,7 @@ Se você usar o [gerador Yo Office](https://github.com/OfficeDev/generator-offic
 
 As seções a seguir fornecem mais informações sobre esses arquivos.
 
-### <a name="script-file"></a>Arquivo de script 
+### <a name="script-file"></a>Arquivo de script
 
 O arquivo de script (**./src/customfunctions.js** ou **./src/customfunctions.ts** no projeto gerador que o Yo Office cria) contém o código que define funções personalizadas e mapeia os nomes da funções personalizadas aos objetos em [arquivos de metadados JSON](#json-metadata-file). 
 
@@ -127,7 +127,8 @@ O seguinte código em **customfunctions.json** especifica os metadados para a fu
     ],
     "options": {
         "cancelable": true,
-        "stream": true
+        "stream": true,
+        "volatile": false
       }
     }
   ]
@@ -144,7 +145,7 @@ A tabela a seguir lista as propriedades normalmente presentes no arquivo de meta
 | `description` | Descreve o que faz a função. Esse valor aparece como uma dica de ferramenta quando a função é o item selecionado no menu de preenchimento automático do Excel. |
 | `result`  | Objeto que define o tipo de informação que é retornada pela função do Excel. Para obter informações detalhadas sobre esse objeto, consulte [resultado](custom-functions-json.md#result). |
 | `parameters` | Matriz que define os parâmetros de entrada para a função. Para obter informações detalhadas sobre esse objeto, consulte [parâmetros](custom-functions-json.md#parameters). |
-| `options` | Permite que você personalize alguns aspectos de como e quando o Excel executa a função. Confira mais informações sobre como essa propriedade pode ser usada em [Streaming funções](#streaming-functions) e [Cancelar uma função](#canceling-a-function) mais adiante neste artigo. |
+| `options` | Permite que você personalize alguns aspectos de como e quando o Excel executa a função. Confira mais informações sobre como essa propriedade pode ser usada em [Função de streaming](#streaming-functions), [Como cancelar uma função](#canceling-a-function) e [Como declarar uma função volátil](#declaring-a-volatile-function) mais adiante neste artigo. |
 
 ### <a name="manifest-file"></a>Arquivo de manifesto
 
@@ -270,6 +271,31 @@ Em algumas situações, talvez seja necessário cancelar a execução de uma fun
 - Quando o usuário aciona manualmente um recálculo. Nesse caso, uma nova chamada de função é disparada, seguindo o cancelamento.
 
 Para habilitar o recurso cancelar uma função, implemente um identificador de cancelamento dentro da função JavaScript e especifique a propriedade `"cancelable": true` dentro do `options` objeto nos metadados JSON que descreve a função. Amostras de código na seção anterior neste artigo fornecem um exemplo dessas técnicas.
+
+## <a name="declaring-a-volatile-function"></a>Como declarar uma função volátil
+
+As [funções voláteis](https://docs.microsoft.com/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions) são funções nas quais o valor muda de momento a momento, mesmo que nenhum dos argumentos da função tenha mudado. Essas funções são recalculadas sempre que o Excel recalcular. Por exemplo, imagine uma célula que chame a função `NOW`. Toda vez que `NOW` for chamado, retornará automaticamente a data e a hora atuais.
+
+O Excel contém várias funções voláteis internas, como `RAND` e `TODAY`. Para ver uma lista mais completa de funções voláteis do Excel, confira [Funções voláteis e não voláteis](https://docs.microsoft.com/pt-BR/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).  
+  
+As funções personalizadas permitem que você crie suas próprias funções voláteis, que podem ser úteis ao lidar com datas, horas, números aleatórios e modelagem. Por exemplo, as simulações de Monte Carlo exigem a geração de entradas aleatórias para determinar uma solução ideal.  
+  
+Para declarar uma função volátil, adicione `"volatile": true` no objeto `options` para a função no arquivo JSON de metadados, como mostra o exemplo a seguir. Observe que uma função não pode ser marcada como `"streaming": true` e `"volatile": true`; em casos em que ambas estejam marcadas com `true`, a opção volátil será ignorada.  
+
+```json
+{
+  "name": "TOMORROW",
+  "description":  "Returns tomorrow’s date",
+  "helpUrl": "http://www.contoso.com",
+  "result": {
+      "type": "string",
+      "dimensionality": "scalar"
+  },
+  "options": {
+      "volatile": true
+  }
+}
+```
 
 ## <a name="saving-and-sharing-state"></a>Salvar e compartilhar estado
 

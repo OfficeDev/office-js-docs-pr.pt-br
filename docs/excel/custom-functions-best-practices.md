@@ -1,13 +1,13 @@
 ---
-ms.date: 10/24/2018
-description: Conheça padrões e práticas recomendadas para funções personalizadas do Excel.
+ms.date: 11/29/2018
+description: Saiba mais sobre as práticas recomendadas para o desenvolvimento de funções personalizadas para Excel.
 title: Práticas recomendadas para funções personalizadas
-ms.openlocfilehash: 0408318227e1f89726ed7c0e4dfbb8e6340abef4
-ms.sourcegitcommit: 52d18dd8a60e0cec1938394669d577570700e61e
+ms.openlocfilehash: b1785c7f41af9823cfd135ead29fff4eda4b0b1d
+ms.sourcegitcommit: e2ba9d7210c921d068f40d9f689314c73ad5ab4a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "25797396"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "27156583"
 ---
 # <a name="custom-functions-best-practices-preview"></a>Práticas recomendadas para funções personalizadas (versão prévia)
 
@@ -39,7 +39,7 @@ function getComment(x) {
 
 Quando testar o suplemento no Office para Windows, habilite o **[log de tempo de execução](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** para solucionar problemas com o arquivo de manifesto XML do suplemento, bem como várias condições de instalação e tempo de execução. O log de tempo de execução grava instruções `console.log` em um arquivo de log para ajudá-lo a descobrir problemas.
 
-Para relatar problemas sobre este método de solução de problemas, envie comentários à equipe de funções personalizadas do Excel. Para fazer isso, selecione **Arquivo | Comentários | Enviar um Rosto Triste**. Enviando um Rosto Triste, você fornece os registros necessários para entendermos o problema que você está enfrentando. 
+Para relatar problemas sobre este método de solução de problemas, envie comentários à equipe de funções personalizadas do Excel. Para fazer isso, selecione **Arquivo | Comentários | Enviar um Rosto Triste**. Enviando um Rosto Triste, você fornece os registros necessários para entendermos o problema que você está enfrentando.
 
 ## <a name="debugging"></a>Depuração
 
@@ -129,6 +129,66 @@ Lembre-se das seguintes práticas recomendadas quando criar funções personaliz
       ]
     }
     ```
+
+## <a name="declaring-optional-parameters"></a>Como declarar parâmetros opcionais 
+No Excel para Windows (versão 1812 ou posterior), é possível declarar parâmetros opcionais para suas funções personalizadas. Quando um usuário invoca uma função no Excel, os parâmetros opcionais são exibidos entre colchetes. Por exemplo, uma função `FOO` com um parâmetro obrigatório chamado `parameter1` e parâmetro opcional chamado `parameter2` seria exibida como `=FOO(parameter1, [parameter2])` no Excel.
+
+Para tornar um parâmetro opcional, adicione `"optional": true` ao parâmetro no arquivo JSON de metadados que define a função. O exemplo a seguir mostra o provável aspecto disso para a função `=ADD(first, second, [third])`. Observe que o parâmetro `[third]` opcional segue os dois parâmetros obrigatórios. Os parâmetros obrigatórios aparecerão primeiro na interface do usuário da fórmula do Excel.
+
+```json
+{
+    "id": "add",
+    "name": "ADD",
+    "description": "Add two numbers",
+    "helpUrl": "http://www.contoso.com",
+    "result": {
+        "type": "number",
+        "dimensionality": "scalar"
+        },
+    "parameters": [
+        {
+            "name": "first",
+            "description": "first number to add",
+            "type": "number",
+            "dimensionality": "scalar"
+        },
+        {
+            "name": "second",
+            "description": "second number to add",
+            "type": "number",
+            "dimensionality": "scalar",
+        },
+        {
+            "name": "third",
+            "description": "third optional number to add",
+            "type": "number",
+            "dimensionality": "scalar",
+            "optional": true
+        }
+    ],
+    "options": {
+        "sync": false
+    }
+}
+```
+
+Ao definir uma função que contenha um ou mais parâmetros opcionais, especifique o que acontecerá quando os parâmetros opcionais forem indefinidos. No exemplo a seguir, `zipCode` e `dayOfWeek` são dois parâmetros opcionais da função `getWeatherReport`. Se o parâmetro `zipCode` estiver indefinido, o valor padrão será definido como 98052. Se o parâmetro `dayOfWeek` estiver indefinido, ele será definido como Quarta-feira.
+
+```js
+function getWeatherReport(zipCode, dayOfWeek)
+{
+  if (zipCode === undefined) {
+      zipCode = "98052";
+  }
+
+  if (dayOfWeek === undefined) {
+    dayOfWeek = "Wednesday";
+  }
+
+  // Get weather report for specified zipCode and dayOfWeek
+  // ...
+}
+```
 
 ## <a name="additional-considerations"></a>Considerações adicionais
 
