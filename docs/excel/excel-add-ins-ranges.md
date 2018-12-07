@@ -1,13 +1,13 @@
 ---
 title: Trabalhar com intervalos usando a API JavaScript do Excel
 description: ''
-ms.date: 10/19/2018
-ms.openlocfilehash: 9ac2ce808390dce90572aa27f3f8da2bce9cb572
-ms.sourcegitcommit: 8b079005eb042035328e89b29bf2ec775dd08a96
+ms.date: 12/04/2018
+ms.openlocfilehash: 4a6e0014da82956b15e11e2739f6f58fb82d5030
+ms.sourcegitcommit: e2ba9d7210c921d068f40d9f689314c73ad5ab4a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "25772246"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "27156604"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Trabalhar com intervalos usando a API JavaScript do Excel
 
@@ -538,6 +538,54 @@ Excel.run(function (context) {
 ### <a name="conditional-formatting-of-ranges"></a>Formatação condicional de intervalos
 
 Os intervalos podem ter formatos aplicados a células individuais baseadas em condições. Para saber mais sobre isso, confira [Aplicar a formatação condicional a intervalos do Excel](excel-add-ins-conditional-formatting.md).
+
+## <a name="work-with-dates-using-the-moment-msdate-plug-in"></a>Trabalhar com datas usando o plug-in Moment-MSDate
+
+A [biblioteca Moment do JavaScript](https://momentjs.com/) fornece uma maneira conveniente de usar datas e carimbos de data e hora. O [plug-in Moment-MSDate](https://www.npmjs.com/package/moment-msdate) converte o formato de momentos em um formato mais apropriado para o Excel. Este é o mesmo formato que a [função NOW](https://support.office.com/article/now-function-3337fd29-145a-4347-b2e6-20c904739c46) retorna.
+
+O código a seguir mostra como definir o intervalo em ** B4 ** para o carimbo de data/hora de um momento:
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    
+    var now = Date.now();
+    var nowMoment = moment(now);
+    var nowMS = nowMoment.toOADate();
+    
+    var dateRange = sheet.getRange("B4");
+    dateRange.values = [[nowMS]];
+    
+    dateRange.numberFormat = [["[$-409]m/d/yy h:mm AM/PM;@"]];
+    
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+É uma técnica semelhante para retirar a data da célula e convertê-la em um momento ou outro formato, conforme demonstrado no código a seguir:
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+
+    var dateRange = sheet.getRange("B4");
+    dateRange.load("values");
+        
+    return context.sync().then(function () {
+        var nowMS = dateRange.values[0][0];
+
+        // log the date as a moment
+        var nowMoment = moment.fromOADate(nowMS);
+        console.log(`get (moment): ${JSON.stringify(nowMoment)}`);
+
+        // log the date as a UNIX-style timestamp 
+        var now = nowMoment.unix();
+        console.log(`get (timestamp): ${now}`);
+    });
+}).catch(errorHandlerFunction);
+```
+
+Seu suplemento terá que formatar os intervalos para exibir as datas em um formato mais legível. O exemplo de `"[$-409]m/d/yy h:mm AM/PM;@"` exibe a hora como "3/12/18 15:57". Para obter mais informações sobre formatos de números de data e hora, confira as "Diretrizes para formatos de data e hora" no artigo [Diretrizes de revisão para personalizar um formato de número](https://support.office.com/article/review-guidelines-for-customizing-a-number-format-c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5).
 
 ## <a name="copy-and-paste"></a>Copiar e colar
 
