@@ -2,16 +2,16 @@
 title: Disponibilidade de host e plataforma para suplementos do Office
 description: Conjuntos de requisitos compatíveis com Excel, Word, Outlook, PowerPoint, OneNote e Project.
 ms.date: 11/07/2018
-ms.openlocfilehash: c3da40be21c0e569028dd10e93e33760ba2bd39d
-ms.sourcegitcommit: 3e84d616e69f39eeeeea773f2431e7d674c4a9f5
+ms.openlocfilehash: c601eac5ed3fcad76b63fff5ae6eeadb7662c8b7
+ms.sourcegitcommit: 0adc31ceaba92cb15dc6430c00fe7a96c107c9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "26644750"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "27210102"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilidade de host e plataforma para suplementos do Office
 
-Seu suplemento do Office pode depender de um host específico do Office, um conjunto de requisitos, um membro de API ou uma versão da API para funcionar conforme o esperado. As tabelas a seguir contêm as plataformas disponíveis, os pontos de extensão, os conjuntos de requisitos de API e os conjuntos de requisitos comuns de API que atualmente são compatíveis com cada aplicativo do Office.
+Seu suplemento do Office pode depender de um host específico do Office, um conjunto de requisitos, um membro de API ou uma versão da API para funcionar conforme o esperado. As tabelas a seguir contêm as plataformas disponíveis, os pontos de extensão, os conjuntos de requisitos de API e os conjuntos de requisitos comuns de API que são compatíveis atualmente com cada aplicativo do Office.
 
 > [!NOTE]
 > O número do build do Office 2016 instalado via MSI é 16.0.4266.1001. Esta versão só contém os conjuntos de requisitos ExcelApi 1.1, WordApi 1.1 e os conjuntos de requisitos comuns de API.
