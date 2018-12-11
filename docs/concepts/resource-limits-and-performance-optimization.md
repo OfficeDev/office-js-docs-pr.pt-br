@@ -2,12 +2,12 @@
 title: Limites de recurso e otimização de desempenho para Suplementos do Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 57004d5f3b38bfb1c58cefbccf22a2ea0aa0b16f
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.openlocfilehash: c2695f35214bd418ad06debbdf81ed7f25596840
+ms.sourcegitcommit: 0adc31ceaba92cb15dc6430c00fe7a96c107c9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925385"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "27210074"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites de recurso e otimização de desempenho para Suplementos do Office
 
@@ -46,11 +46,11 @@ Além do núcleo da CPU, da memória e de regras de confiabilidade, os suplement
 
 - **Tempo de resposta de expressões regulares**: um limite padrão de 1.000 milissegundos para que o Outlook avalie todas as expressões regulares no manifesto de um suplemento do Outlook. Exceder o limite faz com que o Outlook repita a avaliação posteriormente.
 
-    Usando uma política de grupo ou uma configuração específica no registro do Windows, os administradores podem ajustar esse valor limite padrão de 1.000 milissegundos na configuração **OutlookActivationAlertThreshold**.
+    Usando uma política de grupo ou uma configuração específica do aplicativo no registro do Windows, os administradores podem ajustar esse valor limite padrão de 1.000 milissegundos na configuração **OutlookActivationAlertThreshold**.
 
 - **Reavaliação de expressões regulares**: um limite padrão de três vezes para que o Outlook reavalie todas as expressões regulares em um manifesto. Se a avaliação falhar todas as três vezes excedendo o limite aplicável (que é o padrão de 1.000 milissegundos ou um valor especificado por **OutlookActivationAlertThreshold**, se essa configuração existir no Registro do Windows), o Outlook desabilitará o suplemento do Outlook. O Centro de Administração do Exchange exibe o status desabilitado, e o suplemento é desabilitado para uso nos clientes avançados do Outlook, no Outlook Web App e no OWA para Dispositivos.
 
-    Usando uma política de grupo ou uma configuração específica para um aplicativo no registro do Windows, os administradores podem ajustar esse número de novas tentativas de avaliação na configuração **OutlookActivationManagerRetryLimit**.
+    Usando uma política de grupo ou uma configuração específica do aplicativo no registro do Windows, os administradores podem ajustar esse número de novas tentativas de avaliação na configuração **OutlookActivationManagerRetryLimit**.
 
 ### <a name="task-pane-and-content-add-ins"></a>Suplementos do painel de tarefas e de conteúdo
     
@@ -82,7 +82,7 @@ A tabela a seguir lista os eventos que o Log de Telemetria acompanha para os Sup
 |10|O suplemento usou CPU em excesso|Crítico|O suplemento do Office usou mais de 90% dos recursos da CPU em um período de tempo finito.|
 |15|Suplemento desabilitado porque esgotou o tempo limite na pesquisa de cadeia de caracteres||Os suplementos do Outlook pesquisam a linha de assunto e a mensagem de um e-mail para determinar se devem ser exibidas usando uma expressão regular. O suplemento do Outlook listado na coluna **Arquivo** foi desabilitado pelo Outlook porque atingiu o tempo limite repetidamente ao tentar fazer a correspondência de uma expressão regular.|
 |18|Suplemento fechado com êxito||O aplicativo host conseguiu fechar o suplemento do Office com êxito.|
-|19|O suplemento encontrou um erro de tempo de execução|Crítico|O suplemento do Office teve um problema que causou sua falha. Para saber mais, examine o log de **Alertas do Microsoft Office** usando o Visualizador de Eventos do Windows no computador que encontrou o erro.|
+|19|O suplemento encontrou um erro de tempo de execução|Crítico|O Suplemento do Office teve um problema que causou sua falha. Veja mais detalhes no log de **Alertas do Microsoft Office** usando o Visualizador de Eventos do Windows no computador que encontrou o erro.|
 |20|Falha ao verificar a licença do suplemento|Crítico|As informações de licenciamento do suplemento do Office não puderam ser verificadas e podem ter expirado. Para saber mais, examine o log de **Alertas do Microsoft Office** usando o Visualizador de Eventos do Windows no computador que encontrou o erro.|
 
 Saiba mais em [Implantar o Painel de Telemetria](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219431(v=office.15)) e [Solução de problemas de arquivos do Office e soluções personalizadas com o log de telemetria](https://docs.microsoft.com/office/client-developer/shared/troubleshooting-office-files-and-custom-solutions-with-the-telemetry-log).
@@ -103,8 +103,9 @@ Embora os limites de recursos para o uso de CPU e memória, a tolerância a falh
 - Teste o suplemento em relação ao maior volume de dados esperado e restrinja o suplemento a processar até esse limite.
     
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 - [Privacidade e segurança para Suplementos do Office](../concepts/privacy-and-security.md)
-- [Limites de ativação e da API do JavaScript API para suplementos do Outlook](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
+- [Limites de ativação e da API do JavaScript para Suplementos do Outlook](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
+- [Otimização de desempenho usando a API do JavaScript para Excel](../excel/performance.md)
     
