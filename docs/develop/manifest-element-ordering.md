@@ -2,12 +2,12 @@
 title: Como encontrar a ordem correta dos elementos do manifesto
 description: Saiba como encontrar a ordem correta na qual colocar elementos filho em um elemento pai.
 ms.date: 11/16/2018
-ms.openlocfilehash: 6627a32b8a29bc8b0aa12550a61f43295713ecdb
-ms.sourcegitcommit: 3e84d616e69f39eeeeea773f2431e7d674c4a9f5
+ms.openlocfilehash: 3efc95926b7562b0e68bbb6f4b13c47cc4ae6824
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "26649872"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270611"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>Como encontrar a ordem correta dos elementos do manifesto
 
@@ -18,7 +18,7 @@ A ordem exigida é especificada nos arquivos XSD, na pasta [Esquemas](https://gi
 Por exemplo, no elemento `<OfficeApp>`, os elementos `<Id>`, `<Version>` e `<ProviderName>` devem aparecer nessa ordem. Se adicionar um elemento `<AlternateId>`, deverá colocá-lo entre os elementos `<Id>` e `<Version>`. Se algum dos elementos estiver na posição incorreta, o manifesto não será válido e o suplemento não será carregado.
 
 > [!NOTE]
-> O [Validador de Suplemento do Office](/office/dev/add-ins/testing/troubleshoot-manifest?branch=manifest-element-ordering#validate-your-manifest-with-the-office-add-in-validator) usa a mesma mensagem de erro quando um elemento está fora de ordem, como ocorre quando um elemento está no pai incorreto. A mensagem de erro informa que o elemento não é um elemento filho válido do elemento pai. Caso receba este erro, mas a documentação de referência do elemento filho indique que ele *está* válido para o pai, talvez o problema seja o filho ter sido colocado na ordem incorreta.
+> O [Validador de Suplemento do Office](/office/dev/add-ins/testing/troubleshoot-manifest#validate-your-manifest-with-the-office-add-in-validator) usa a mesma mensagem de erro quando um elemento está fora de ordem, como ocorre quando um elemento está no pai incorreto. A mensagem de erro informa que o elemento não é um elemento filho válido do elemento pai. Caso receba este erro, mas a documentação de referência do elemento filho indique que ele *está* válido para o pai, talvez o problema seja o filho ter sido colocado na ordem incorreta.
 
 Para encontrar a ordem correta dos elementos filho de um determinado elemento pai, faça os procedimentos a seguir. Este é um processo simplificado porque os arquivos XSD são bastante complexos. A análise completa dos arquivos XSD está fora do escopo deste documento.
 

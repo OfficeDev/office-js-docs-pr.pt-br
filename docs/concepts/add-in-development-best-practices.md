@@ -2,12 +2,12 @@
 title: Práticas recomendadas para o desenvolvimento de suplementos do Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 93af27de1f5e22aada7caf9ded97ab6fb200b332
-ms.sourcegitcommit: 86724e980f720ed05359c9525948cb60b6f10128
+ms.openlocfilehash: 5f412de24f1210259ec4255c1776f5e572f0529e
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "26237511"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270765"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Práticas recomendadas para o desenvolvimento de suplementos do Office
 
@@ -43,7 +43,7 @@ Os suplementos eficazes oferecem uma funcionalidade exclusiva e fascinante que e
 
    ![Uma captura de tela que mostra um suplemento de conteúdo com dados ao lado de um suplemento de conteúdo sem dados](../images/add-in-title.png)
 
-- Ofereça [avaliações gratuitas](https://docs.microsoft.com/office/dev/store/decide-on-a-pricing-model#office-store-pricing-options). Caso o suplemento exija uma assinatura, disponibilize algumas funcionalidades sem a necessidade da assinatura.
+- Ofereça [avaliações gratuitas](https://docs.microsoft.com/office/dev/store/decide-on-a-pricing-model). Caso o suplemento exija uma assinatura, disponibilize algumas funcionalidades sem a necessidade da assinatura.
 
 - Simplifique o processo de inscrição. Preencha automaticamente as informações (email, nome de exibição) e ignore as verificações de email.
 

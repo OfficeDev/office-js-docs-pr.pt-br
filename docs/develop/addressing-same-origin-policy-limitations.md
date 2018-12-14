@@ -2,12 +2,12 @@
 title: Como lidar com limitações de política de mesma origem nos Suplementos do Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 054a01d554c529579917218361bcb8aeebb04c3c
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+ms.openlocfilehash: e5aa329eb3f073f3544d8446683debed3239fd00
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25004879"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270597"
 ---
 # <a name="addressing-same-origin-policy-limitations-in-office-add-ins"></a>Como lidar com limitações de política de mesma origem nos Suplementos do Office
 
@@ -61,7 +61,7 @@ Para obter um exemplo de código do lado do servidor que mostre como usar o obje
 ## <a name="using-cross-origin-resource-sharing-cors"></a>Usar o CORS (compartilhamento de recursos entre origens)
 
 
-Para obter um exemplo de como usar o compartilhamento de recursos entre origens do [XmlHttpRequest2](http://dvcs.w3.org/hg/xhr/raw-file/tip/Overview.html), veja a seção "CORS (Compartilhamento de Recursos entre Origens)" de [Novos Truques no XMLHttpRequest2](http://www.html5rocks.com/en/tutorials/file/xhr2/).
+Para obter um exemplo de como usar o compartilhamento de recursos entre origens do [XmlHttpRequest2](https://dvcs.w3.org/hg/xhr/raw-file/tip/Overview.html), veja a seção "CORS (Compartilhamento de Recursos entre Origens)" de [Novos Truques no XMLHttpRequest2](https://www.html5rocks.com/en/tutorials/file/xhr2/).
 
 
 ## <a name="building-your-own-proxy-using-iframe-and-post-message"></a>Criar seu próprio proxy usando IFRAME e PUBLICAR MENSAGEM

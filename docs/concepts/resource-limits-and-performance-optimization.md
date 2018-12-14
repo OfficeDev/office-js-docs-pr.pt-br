@@ -2,12 +2,12 @@
 title: Limites de recurso e otimização de desempenho para Suplementos do Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: c2695f35214bd418ad06debbdf81ed7f25596840
-ms.sourcegitcommit: 0adc31ceaba92cb15dc6430c00fe7a96c107c9de
+ms.openlocfilehash: 21760f98a1c38d5b3dc13cf0856d339cefd68006
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/09/2018
-ms.locfileid: "27210074"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270898"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites de recurso e otimização de desempenho para Suplementos do Office
 
@@ -94,7 +94,7 @@ Embora os limites de recursos para o uso de CPU e memória, a tolerância a falh
 
 - Em um cenário em que o suplemento precisa ler um grande volume de dados de um conjunto de dados não associado, você pode aplicar a paginação ao ler os dados de uma tabela ou reduzir o tamanho dos dados em cada operação de leitura mais curta, em vez de tentar concluir a leitura em uma única operação. 
     
-   Para obter exemplos de códigos JavaScript e jQuery que mostram a divisão de uma série de operações de entrada e saída em dados não associados (que possivelmente consumiria muitos recursos de CPU e demoraria em demasiado), consulte [Como posso passar o controle de volta (brevemente) ao navegador durante um processamento de JavaScript que consome muitos recursos?](http://stackoverflow.com/questions/210821/how-can-i-give-control-back-briefly-to-the-browser-during-intensive-javascript). Este exemplo usa o método [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) do objeto global para limitar a duração da entrada e da saída. Também manipula os dados em pedaços definidos, ao invés de dados não associados de forma aleatória.
+   Para obter exemplos de códigos JavaScript e jQuery que mostram a divisão de uma série de operações de entrada e saída em dados não associados (que possivelmente consumiria muitos recursos de CPU e demoraria em demasiado), consulte [Como posso passar o controle de volta (brevemente) ao navegador durante um processamento de JavaScript que consome muitos recursos?](https://stackoverflow.com/questions/210821/how-can-i-give-control-back-briefly-to-the-browser-during-intensive-javascript). Este exemplo usa o método [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) do objeto global para limitar a duração da entrada e da saída. Também manipula os dados em pedaços definidos, ao invés de dados não associados de forma aleatória.
     
 - Se o suplemento usa um algoritmo com uso intensivo de CPU para processar um grande volume de dados, você pode usar os web workers para executar a tarefa demorada em segundo plano enquanto executa um script separado em primeiro plano, como exibir o andamento na interface do usuário. Os Web workers não bloqueiam atividades do usuário e permitem que a página HTML continue respondendo. Para obter um exemplo de Web workers, confira [Noções básicas de Web workers](https://www.html5rocks.com/en/tutorials/workers/basics/). Confira [Web workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API) para saber mais sobre a API Web workers do Internet Explorer.
     

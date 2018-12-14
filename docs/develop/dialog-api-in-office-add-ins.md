@@ -2,12 +2,12 @@
 title: Use a API de Caixa de Diálogo em seus Suplementos do Office
 description: ''
 ms.date: 11/28/2018
-ms.openlocfilehash: 0b6879f9c91ef6443718b032f9ec53c9a9c3afa0
-ms.sourcegitcommit: 026437bd3819f4e9cd4153ebe60c98ab04e18f4e
+ms.openlocfilehash: b19d56d3f4fb831eb8c0ca16af53ee309989d223
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "26992230"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270954"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Use a API de Caixa de Diálogo em seus Suplementos do Office
 
@@ -131,7 +131,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 ```
 
 > [!NOTE]
-> - O Office transmite um objeto [AsyncResult]() para o retorno de chamada. Ele representa o resultado de tentativas de abrir a caixa de diálogo, mas não representa o resultado de eventos na caixa diálogo. Para obter mais informações sobre essa distinção, confira a seção [Manipular erros e eventos](#handle-errors-and-events).
+> - O Office transmite um objeto [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js) para o retorno de chamada. Ele representa o resultado de tentativas de abrir a caixa de diálogo, mas não representa o resultado de eventos na caixa diálogo. Para obter mais informações sobre essa distinção, confira a seção [Manipular erros e eventos](#handle-errors-and-events).
 > - A propriedade `value` do `asyncResult` é definida como um objeto [Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog?view=office-js) que existe na página host, não no contexto da execução da caixa de diálogo.
 > - O `processMessage` é a função que manipula o evento. Você pode dar a ele o nome que desejar.
 > - A variável `dialog` é declarada em um escopo mais amplo do que o retorno de chamada porque ela também é referenciada em `processMessage`.

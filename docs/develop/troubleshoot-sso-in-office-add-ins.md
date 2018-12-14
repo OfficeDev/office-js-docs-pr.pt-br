@@ -2,12 +2,12 @@
 title: Solucionar problemas de mensagens de erro no logon único (SSO)
 description: ''
 ms.date: 12/08/2017
-ms.openlocfilehash: 28493809c537cecc392f73f5f047e62741c5f77c
-ms.sourcegitcommit: 86724e980f720ed05359c9525948cb60b6f10128
+ms.openlocfilehash: 42f0bf50e65e10f21df11403f53942cc4753a79b
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "26237490"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270891"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>Solucionar problemas de mensagens de erro no logon único (SSO) (visualização)
 
@@ -22,12 +22,12 @@ Este artigo fornece algumas orientações sobre como solucionar problemas com o 
 
 Recomendamos fortemente que você use uma ferramenta que possa interceptar e exibir as solicitações HTTP a partir de seu serviço Web do suplemento, além de respostas para ele, quando você estiver desenvolvendo. Duas das ferramentas mais populares são:
 
-- [Fiddler](http://www.telerik.com/fiddler): gratuita ([Documentação](http://docs.telerik.com/fiddler/configure-fiddler/tasks/configurefiddler))
+- [Fiddler](https://www.telerik.com/fiddler): gratuita ([Documentação](https://docs.telerik.com/fiddler/configure-fiddler/tasks/configurefiddler))
 - [Charles](https://www.charlesproxy.com/): Gratuita por 30 dias. ([Documentação](https://www.charlesproxy.com/documentation/))
 
 Ao desenvolver sua API de serviço, você também pode tentar:
 
-- [Postman](http://www.getpostman.com/postman): Gratuita ([Documentação](https://www.getpostman.com/docs/))
+- [Postman](https://www.getpostman.com/postman): Gratuita ([Documentação](https://www.getpostman.com/docs/))
 
 ## <a name="causes-and-handling-of-errors-from-getaccesstokenasync"></a>Causas e tratamento dos erros do getAccessTokenAsync
 

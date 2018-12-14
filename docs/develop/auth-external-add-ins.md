@@ -2,12 +2,12 @@
 title: Autorizar serviços externos no seu suplemento do Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 6cdf07886ba883a7dfe935b59c918948c2b45afa
-ms.sourcegitcommit: 86724e980f720ed05359c9525948cb60b6f10128
+ms.openlocfilehash: 65b9325cc838dafca7f7e8e3402fc45762321459
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "26237476"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270744"
 ---
 # <a name="authorize-external-services-in-your-office-add-in"></a>Autorizar serviços externos no seu suplemento do Office
 
@@ -61,7 +61,7 @@ As bibliotecas estão disponíveis para vários idiomas e plataformas, tanto par
 
 **Facebook**: Pesquise "library" ou "sdk" no [Facebook para Desenvolvedores](https://developers.facebook.com).
 
-**OAuth 2.0 Geral**: Uma página de links para bibliotecas de mais de uma dúzia de linguagens é mantida pelo IETF OAuth Working Group, em: [Código OAuth](http://oauth.net/code/). Observe que algumas dessas bibliotecas são para implementar um serviço compatível com o OAuth. As bibliotecas interessantes para você, como desenvolvedor do suplemento, são chamadas de bibliotecas de *cliente* nesta página, pois o servidor Web é um cliente do serviço compatível com o OAuth.
+**OAuth 2.0 Geral**: Uma página de links para bibliotecas de mais de uma dúzia de linguagens é mantida pelo IETF OAuth Working Group, em: [Código OAuth](https://oauth.net/code/). Observe que algumas dessas bibliotecas são para implementar um serviço compatível com o OAuth. As bibliotecas interessantes para você, como desenvolvedor do suplemento, são chamadas de bibliotecas de *cliente* nesta página, pois o servidor Web é um cliente do serviço compatível com o OAuth.
 
 ## <a name="middleman-services"></a>Serviços intermediários
 

@@ -1,13 +1,13 @@
 ---
-ms.date: 10/17/2018
+ms.date: 12/5/2018
 description: Entenda os principais cenários de desenvolvimento de funções personalizadas do Excel que usam o novo tempo de execução do JavaScript.
 title: Tempo de execução de funções personalizadas do Excel
-ms.openlocfilehash: 7261eb214e97a2a05e08571a31ac9b449df14083
-ms.sourcegitcommit: 161a0625646a8c2ebaf1773c6369ee7cc96aa07b
+ms.openlocfilehash: 715690c5cba2466e4a50ba2a33d2324a1abe02f5
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "25891708"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270828"
 ---
 # <a name="runtime-for-excel-custom-functions-preview"></a>Tempo de execução de funções personalizadas do Excel (versão prévia)
 
@@ -17,11 +17,11 @@ Funções personalizadas usam um novo tempo de execução do JavaScript, diferen
 
 ## <a name="requesting-external-data"></a>Como solicitar dados externos
 
-É possível solicitar dados externos em uma função personalizada por meio de uma API, como a API [Fetch](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API), ou por meio de um objeto [XmlHttpRequest (XHR)](https://developer.mozilla.org/pt-BR/docs/Web/API/XMLHttpRequest), uma API Web padrão que envia solicitações HTTP para interagir com os servidores. No tempo de execução do JavaScript, o XHR implementa medidas de segurança adicionais solicitando uma [Política de mesma origem](https://developer.mozilla.org/pt-BR/docs/Web/Security/Same-origin_policy) ou um simples [CORS](https://www.w3.org/TR/cors/).  
+É possível solicitar dados externos em uma função personalizada por meio de uma API, como a API [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), ou por meio de um objeto [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), uma API Web padrão que envia solicitações HTTP para interagir com os servidores. No tempo de execução do JavaScript, o XHR implementa medidas de segurança adicionais solicitando uma [Política de mesma origem](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) ou um simples [CORS](https://www.w3.org/TR/cors/).  
 
 ### <a name="xhr-example"></a>Exemplo de XHR
 
-No código de exemplo a seguir, a função `getTemperature` chama a função `sendWebRequest` para obter a temperatura de uma área específica, de acordo com a ID do termômetro. A função `sendWebRequest` usa XHR para emitir uma solicitação `GET` para um ponto de extremidade que fornece os dados. 
+No código de exemplo a seguir, a função `getTemperature` chama a função `sendWebRequest` para obter a temperatura de uma área específica, de acordo com a ID do termômetro. A função `sendWebRequest` usa XHR para emitir uma solicitação `GET` para um ponto de extremidade que fornece os dados.
 
 > [!NOTE] 
 > Se usar fetch ou XHR, uma nova `Promise` JavaScript será retornada. Antes de setembro de 2018, era necessário especificar `OfficeExtension.Promise` para usar promessas na API JavaScript para Office, mas agora, basta usar um `Promise` JavaScript.
@@ -51,7 +51,7 @@ function sendWebRequest(thermometerID, data) {
 
 ## <a name="receiving-data-via-websockets"></a>Como receber dados por meio de WebSockets
 
-Em uma função personalizada, é possível usar [WebSockets](https://developer.mozilla.org/pt-BR/docs/Web/API/WebSockets_API) para trocar dados por meio de uma conexão persistente com um servidor. Usando WebSockets, a função personalizada pode abrir uma conexão com um servidor e, em seguida, receber mensagens do servidor automaticamente, quando determinados eventos ocorrerem, sem precisar consultar explicitamente os dados do servidor.
+Em uma função personalizada, é possível usar [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) para trocar dados por meio de uma conexão persistente com um servidor. Usando WebSockets, a função personalizada pode abrir uma conexão com um servidor e, em seguida, receber mensagens do servidor automaticamente, quando determinados eventos ocorrerem, sem precisar consultar explicitamente os dados do servidor.
 
 ### <a name="websockets-example"></a>Exemplo de WebSockets
 
@@ -69,7 +69,7 @@ ws.onerror = (error) => {
 
 ## <a name="storing-and-accessing-data"></a>Como armazenar e acessar os dados
 
-Em uma função personalizada (ou em outras partes de um suplemento), você pode armazenar e acessar dados usando o objeto `OfficeRuntime.AsyncStorage`. `AsyncStorage` é um sistema de armazenamento de chave-valor persistente e não criptografado, que fornece uma alternativa para [localStorage](https://developer.mozilla.org/pt-BR/docs/Web/API/Window/localStorage), que não pode ser usado em funções personalizadas. Um suplemento pode armazenar até 10 MB de dados por meio de `AsyncStorage`.
+Em uma função personalizada (ou em outras partes de um suplemento), você pode armazenar e acessar dados usando o objeto `OfficeRuntime.AsyncStorage`. `AsyncStorage` é um sistema de armazenamento de chave-valor persistente e não criptografado, que fornece uma alternativa para [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), que não pode ser usado em funções personalizadas. Um suplemento pode armazenar até 10 MB de dados por meio de `AsyncStorage`.
 
 `AsyncStorage` é uma solução de armazenamento compartilhado, o que significa que várias partes de um suplemento podem acessar os mesmos dados. Por exemplo, tokens para autenticação de usuário podem ser armazenados em `AsyncStorage`, já que ele pode ser acessado tanto por uma função personalizada quanto por elementos da interface do usuário de um suplemento, como um painel de tarefas. Da mesma forma, quando dois suplementos compartilham o mesmo domínio (por exemplo, www.contoso.com/suplemento1, www.contoso.com/suplemento2), eles também podem compartilhar informações por meio de `AsyncStorage`. Observe que os suplementos que têm diferentes subdomínios terão diferentes instâncias de `AsyncStorage`; por exemplo, subdominio.contoso.com/suplemento1, diferentesubdominio.contoso.com/suplemento2. 
 
@@ -107,7 +107,7 @@ _goGetData = async () => {
 
 Em uma função personalizada (ou em outras partes de um suplemento), você pode usa a API `OfficeRuntime.displayWebDialogOptions` para exibir uma caixa de diálogo. Esta API da caixa de diálogo fornece uma alternativa a [API da caixa de diálogo](../develop/dialog-api-in-office-add-ins.md) que está disponível para uso em painéis de tarefas e comandos de suplemento, mas não em funções personalizadas.
 
-### <a name="dialog-api-example"></a>Exemplo de API da caixa de diálogo 
+### <a name="dialog-api-example"></a>Exemplo de API da caixa de diálogo
 
 No exemplo de código a seguir, a função `getTokenViaDialog` usa a função `displayWebDialogOptions` da API da caixa de diálogo para exibir uma caixa de diálogo.
 

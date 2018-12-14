@@ -2,12 +2,12 @@
 title: Manifesto XML dos Suplementos do Office
 description: ''
 ms.date: 12/04/2018
-ms.openlocfilehash: 97e454347d3ab4ee94b4ee43f088962f117e8924
-ms.sourcegitcommit: e2ba9d7210c921d068f40d9f689314c73ad5ab4a
+ms.openlocfilehash: 412b271be406f9c44cc3e93609ddd2836922243a
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "27156597"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270716"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifesto XML dos Suplementos do Office
 
@@ -86,7 +86,7 @@ _\*Adicionados no esquema de manifesto de suplementos da versão 1.1 do Office._
 [sourcelocation (contentapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation
 [sourcelocation (taskpaneapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation
 [desktopsettings]: https://msdn.microsoft.com/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c(Office.15).aspx
-[sourcelocation (mailapp)]: http://msdn.microsoft.com/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx
+[sourcelocation (mailapp)]: https://msdn.microsoft.com/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx
 [permissões (contentapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/permissions
 [permissões (taskpaneapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/permissions
 [permissões (mailapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/permissions

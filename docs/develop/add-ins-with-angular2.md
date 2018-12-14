@@ -2,12 +2,12 @@
 title: Desenvolver suplementos do Office para o Angular
 description: ''
 ms.date: 11/02/2018
-ms.openlocfilehash: 312317e594024125e2dc86d23840750e48d81e40
-ms.sourcegitcommit: c6723a31b48945ca4c466ba016a3dfc7b6267f5c
+ms.openlocfilehash: b8756b9336e0d39c5544b264a110950fdd4d75ce
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "25942248"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270660"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Desenvolver suplementos do Office para o Angular
 
@@ -109,7 +109,7 @@ export class MyComponent {
 
 ## <a name="using-observable"></a>Usando o Observable
 
-O Angular usa o RxJS (Expansões Reativas para JavaScript) e o RxJS introduz os objetos `Observable` e `Observer` para implementar o processamento assíncrono. Esta seção fornece uma breve introdução ao uso de `Observables`; para saber mais informações, consulte a documentação de [RxJS](http://reactivex.io/rxjs/) oficial.
+O Angular usa o RxJS (Expansões Reativas para JavaScript) e o RxJS introduz os objetos `Observable` e `Observer` para implementar o processamento assíncrono. Esta seção fornece uma breve introdução ao uso de `Observables`; para saber mais informações, consulte a documentação de [RxJS](https://rxjs-dev.firebaseapp.com/) oficial.
 
 Um `Observable` é como um objeto `Promise` em certos aspectos. Ele é retornado diretamente de uma chamada assíncrona, mas poderá só ser resolvido algum tempo depois. Contudo, embora `Promise` seja um único valor (que pode ser um objeto de matriz), um `Observable` é uma matriz de objetos (possivelmente com apenas um único membro). Isso permite que o código chame [métodos de matriz](https://www.w3schools.com/jsref/jsref_obj_array.asp), como `concat`, `map` e `filter`, em objetos `Observable`. 
 
