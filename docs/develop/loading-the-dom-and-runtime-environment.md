@@ -2,12 +2,12 @@
 title: Carregar o ambiente de tempo de execução e DOM
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 3ce0da16a134c435147f7106d6bea9c006ce2922
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: ac4d26d964f844f08e1d2975c1be8bbccf40349f
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944045"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27271059"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>Carregar o ambiente de tempo de execução e DOM
 
@@ -70,7 +70,7 @@ Os eventos a seguir ocorrem quando um suplemento Outlook é iniciado:
 ## <a name="checking-the-load-status"></a>Verificar o status de carregamento
 
 
-Uma maneira de verificar se o ambiente de tempo de execução e o DOM concluíram o carregamento é usar a função [.ready()](http://api.jquery.com/ready/) do jQuery: `$(document).ready()`. Por exemplo, a seguinte função do manipulador de eventos **initialize** garante que o DOM seja carregado antes do código específico para inicializar as execuções de suplementos. Subsequentemente, o manipulador de eventos **inicializar** prossegue e usa a propriedade [mailbox.item](https://docs.microsoft.com/javascript/api/outlook/office.mailbox?view=office-js) para obter o item selecionado atual no Outlook, e chama a função principal do suplemento, `initDialer`.
+Uma maneira de verificar se o ambiente de tempo de execução e o DOM concluíram o carregamento é usar a função [.ready()](https://api.jquery.com/ready/) do jQuery: `$(document).ready()`. Por exemplo, a seguinte função do manipulador de eventos **initialize** garante que o DOM seja carregado antes do código específico para inicializar as execuções de suplementos. Subsequentemente, o manipulador de eventos **inicializar** prossegue e usa a propriedade [mailbox.item](https://docs.microsoft.com/javascript/api/outlook/office.mailbox?view=office-js) para obter o item selecionado atual no Outlook, e chama a função principal do suplemento, `initDialer`.
 
 
 ```js
