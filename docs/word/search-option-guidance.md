@@ -1,34 +1,34 @@
 ---
-title: Usar as opções de pesquisa para encontrar texto no seu suplemento do Word
+title: Usar as opções de pesquisa para localizar o texto no suplemento do Word
 description: ''
-ms.date: 7/20/2018
-ms.openlocfilehash: 9dcd5e42de9cc0816797a4a14b40a0e3e376f158
-ms.sourcegitcommit: eea7f2b1679cf9a209d35880b906e311bdf1359c
+ms.date: 07/20/2018
+ms.openlocfilehash: d2c0fa2d542cd64986c2fd82f8a50a813f14610a
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "21254858"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270618"
 ---
-# <a name="use-search-options-to-find-text-in-your-word-add-in"></a>Usar as opções de pesquisa para encontrar texto no seu suplemento do Word 
+# <a name="use-search-options-to-find-text-in-your-word-add-in"></a>Usar as opções de pesquisa para localizar o texto no suplemento do Word 
 
 Os suplementos frequentemente precisam agir com base no texto de um documento.
-Uma função de pesquisa é exposta por todos os controles de conteúdo (isso inclui [Body](https://dev.office.com/reference/add-ins/word/body), [Paragraph](https://dev.office.com/reference/add-ins/word/paragraph), [Range](https://dev.office.com/reference/add-ins/word/range), [Table](https://dev.office.com/reference/add-ins/word/table), [TableRow](https://dev.office.com/reference/add-ins/word/tablerow) e o objeto de base [ContentControl](https://dev.office.com/reference/add-ins/word/contentcontrol)). Essa função recebe uma sequência de caracteres (ou expressão wldcard) representando o texto que você está procurando e um objeto [SearchOptions](https://dev.office.com/reference/add-ins/word/searchoptions). Esta função recebe uma sequência de caracteres  (ou expressão wldcard) representando o texto que você está procurando e um objeto SearchOptions.
+Uma função de pesquisa é exposta por cada controle de conteúdo (isso inclui [Corpo](https://docs.microsoft.com/javascript/api/word/word.body?view=office-js), [Parágrafo](https://docs.microsoft.com/javascript/api/word/word.paragraph?view=office-js), [Intervalo](https://docs.microsoft.com/javascript/api/word/word.range?view=office-js), [Tabela](https://docs.microsoft.com/javascript/api/word/word.table?view=office-js), [ Coluna](https://docs.microsoft.com/javascript/api/word/word.tablerow?view=office-js)e o objeto [ContentControl](https://docs.microsoft.com/javascript/api/word/word.contentcontrol?view=office-js) base). Esta função assume uma cadeia de caracteres (ou expressão curinga) que representa o texto que você está procurando e um objeto [SearchOptions](https://docs.microsoft.com/javascript/api/word/word.searchoptions?view=office-js). Retorna um conjunto de intervalos que correspondem ao texto de pesquisa.
 
 ## <a name="search-options"></a>Opções de pesquisa
-As opções de pesquisa são uma coleção de valores booleanos que definem como o parâmetro de pesquisa deve ser tratado. 
+As opções de pesquisa são uma coleção de valores boolianos que definem como o parâmetro de pesquisa deve ser tratado. 
 
 | Propriedade     | Descrição|
 |:---------------|:----|
-|ignorePunct|Obtém ou define um valor indicando se deve ignorar todos os caracteres de pontuação entre as palavras. Corresponde à caixa de seleção "Ignorar caracteres de pontuação" na caixa de diálogo Localizar e substituir.|
-|ignoreSpace|Obtém ou define um valor indicando se deve ignorar todos os espaços em branco entre as palavras. Corresponde à caixa de seleção "Ignorar caracteres de espaço em branco" na caixa de diálogo Localizar e substituir.|
-|matchCase|Obtém ou define um valor indicando se deseja executar uma pesquisa sensível a maiúsculas e minúsculas. Corresponde à caixa de seleção "Diferenciar maiúsculas de minúsculas" na caixa de diálogo Localizar e substituir.|
-|matchPrefix|Obtém ou define um valor indicando se é necessário combinar palavras que começam com a sequência de caracteres de pesquisa. Corresponde à caixa de seleção "Coincidir prefixo" na caixa de diálogo Localizar e substituir.|
-|matchSuffix|Obtém ou define um valor indicando se é necessário combinar palavras que terminam com a sequência de caracteres de pesquisa. Corresponde à caixa de seleção "Coincidir sufixo" na caixa de diálogo Localizar e substituir.|
-|matchWholeWord|Obtém ou define um valor indicando se a operação deve localizar somente palavras inteiras, não o texto que faz parte de uma palavra maior. Corresponde à caixa de seleção "Encontrar somente palavras inteiras" na caixa de diálogo Localizar e substituir.|
-|matchWildcards|Obtém ou define um valor indicando se a pesquisa será executada usando operadores de pesquisa especiais. Corresponde à caixa de seleção "Usar caracteres curinga" na caixa de diálogo Localizar e substituir.|
+|ignorePunct|Obtém ou define um valor que indica se devem ser ignorados todos os caracteres de pontuação entre as palavras. Corresponde à caixa de seleção "Ignorar caracteres de pontuação" na caixa de diálogo Localizar e Substituir.|
+|ignoreSpace|Obtém ou define um valor que indica se devem ser ignorados todos os espaços em branco entre as palavras. Corresponde à caixa de seleção "Ignorar caracteres de espaço em branco" na caixa de diálogo Localizar e Substituir.|
+|matchCase|Obtém ou define um valor que determina quando realizar uma pesquisa que diferencia maiúsculas de minúsculas. Corresponde à caixa de seleção "Diferenciar maiúsculas de minúsculas", na caixa de diálogo "Localizar e Substituir" (menu Editar).|
+|matchPrefix|Obtém ou define um valor que indica se se deve corresponder palavras que começam com a cadeia de caracteres de pesquisa. Corresponde à caixa de seleção "Corresponder prefixo" na caixa de diálogo "Localizar e Substituir".|
+|matchSuffix|Obtém ou define um valor que indica se se deve corresponder palavras que terminam com a cadeia de caracteres de pesquisa. Corresponde à caixa de seleção "Corresponder sufixo", na caixa de diálogo "Localizar e Substituir".|
+|matchWholeWord|Obtém ou define um valor que indica se a operação de localização localiza apenas palavras inteiras, e não texto que faz parte de uma palavra maior. Corresponde à caixa de seleção "Localizar apenas palavras inteiras" na caixa de diálogo Localizar e Substituir.|
+|matchWildcards|Obtém ou define um valor que indica se a pesquisa será realizada com operadores de pesquisa especiais. Corresponde à caixa de seleção "Usar caracteres curinga" na caixa de diálogo "Localizar e Substituir".|
 
 ## <a name="wildcard-guidance"></a>Diretrizes para caracteres curinga
-A tabela a seguir fornece diretrizes sobre os curingas de pesquisa da API JavaScript do Word.
+A tabela a seguir fornece orientações em torno de caracteres curinga de pesquisa da API JavaScript do Word.
 
 | Para localizar:         | Curinga |  Exemplo |
 |:-----------------|:--------|:----------|
@@ -39,8 +39,8 @@ A tabela a seguir fornece diretrizes sobre os curingas de pesquisa da API JavaSc
 |Um dos caracteres especificados|[ ] |t[eo]m localiza tem e tom.|
 |Qualquer caractere único deste intervalo| [-] |[r-t]olo localiza rolo e solo. Os intervalos devem estar em ordem crescente.|
 |Qualquer caractere único, exceto os caracteres do intervalo entre colchetes|[!x-z] |t[!a-m]que localiza toque e trunque, mas não localiza taque ou tique.|
-|Número de ocorrências exatas do caractere ou expressão anterior|{n} |fe{2}d localiza feed, mas não fed.|
-|Número mínimo de ocorrências do caractere ou expressão anterior|{n,} |fe{1,}d localiza fed e feed.|
+|Número de ocorrências exatas do caractere ou expressão anterior|{n} |ve{2}m localiza veem, mas não vem.|
+|Número mínimo de ocorrências do caractere ou expressão anterior|{n,} |ve{1,}m localiza vem e veem.|
 |Número de ocorrências do caractere ou expressão anterior dentro de um intervalo|{n,m} |10{1,3} localiza 10, 100 e 1000.|
 |Uma ou mais ocorrências do caractere ou expressão anterior|@ |re@r localiza reter e reverter.|
 
@@ -200,4 +200,4 @@ Word.run(function (context) {
 });
 ```
 
-Mais informações podem ser encontradas na [API de referência JavaScript do Word](https://dev.office.com/reference/add-ins/word/word-add-ins-reference-overview).
+Mais informações podem ser encontradas na [Referência de API JavaScript do Word](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js).

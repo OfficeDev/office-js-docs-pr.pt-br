@@ -1,13 +1,13 @@
 ---
 title: Localização para Suplementos do Office
 description: Você pode usar a API JavaScript para Office para determinar uma localidade e exibir cadeias de caracteres com base na localidade do aplicativo host ou para interpretar ou exibir dados com base na localidade dos dados.
-ms.date: 01/23/2018
-ms.openlocfilehash: a727ff87a7a92960a28c0077c1bcbf2cebeb2d0d
-ms.sourcegitcommit: 9b021af6cb23a58486d6c5c7492be425e309bea1
+ms.date: 12/11/2018
+ms.openlocfilehash: 0455c28913dd1a7eb8cb0853cd872a4284f44270
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "26533830"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270996"
 ---
 # <a name="localization-for-office-add-ins"></a>Localização para Suplementos do Office
 
@@ -38,7 +38,7 @@ A API JavaScript para Office fornece duas propriedades que oferecem suporte à e
     }
     ```
 
-- [Context.contentLanguage][contentLanguage] especifica a localidade (ou o idioma) dos dados. Estendendo o último exemplo de código, em vez de verificar a propriedade [displayLanguage], atribua `myLanguage` à propriedade [contentLanguage] e use o restante do mesmo código para exibir uma saudação com base na localidade dos dados:
+- [Context.contentLanguage][contentLanguage] especifica a localidade (ou o idioma) dos dados. Estendendo o último exemplo de código, em vez de verificar a propriedade [displayLanguage], atribua a `myLanguage` o valor da propriedade [contentLanguage] e use o restante do mesmo código para exibir uma saudação com base na localidade dos dados:
 
     ```js
     var myLanguage = Office.context.contentLanguage;
@@ -49,7 +49,7 @@ A API JavaScript para Office fornece duas propriedades que oferecem suporte à e
 
 Cada Suplemento do Office especifica um elemento [DefaultLocale] e uma localidade em seu manifesto. Por padrão, a plataforma do Suplemento do Office e os aplicativos host do Office aplicam os valores dos elementos [Description], [DisplayName], [IconUrl], [HighResolutionIconUrl] e [SourceLocation] a todas as localidades. Como opção, você pode dar suporte a valores específicos para localidades específicas, especificando um elemento-filho [Override]para cada localidade adicional, para qualquer um desses cinco elementos. O valor do elemento [DefaultLocale] e do atributo `Locale` do elemento [Override] é especificado de acordo com o [RFC 3066], "Marcas para a Identificação dos Idiomas". A Tabela 1 descreve o suporte de localização para esses elementos.
 
-**Tabela 1. Suporte de localização**
+*Tabela 1. Suporte de localização*
 
 
 |**Elemento**|**Suporte de localização**|
@@ -161,41 +161,37 @@ Você pode obter a localidade dos dados do aplicativo host usando a propriedade 
 
 Se você usar o Visual Studio para criar Suplementos do Office, o .NET Framework e Ajax fornecem maneiras de globalizar e localizar arquivos de script de cliente.
 
-Você pode globalizar e utilizar as extensões do tipo JavaScript de [Data](http://msdn.microsoft.com/library/caf98d32-2de2-4704-8198-692350343681.aspx) e [Número](http://msdn.microsoft.com/library/c216d3a1-12ae-47d1-bca1-c3666d04572f.aspx) e o objeto [Data](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date) do JavaScript no código do JavaScript para um suplemento do Office para exibir valores com base nas configurações de localização do navegador atual. Para saber mais, confira [Passo a passo: como globalizar uma data usando o script de cliente](http://msdn.microsoft.com/library/69b34e6d-d590-4d03-a763-b7ae54b47d74.aspx).
+Você pode globalizar e utilizar as extensões do tipo JavaScript de [Data](https://msdn.microsoft.com/library/caf98d32-2de2-4704-8198-692350343681.aspx) e [Número](https://msdn.microsoft.com/library/c216d3a1-12ae-47d1-bca1-c3666d04572f.aspx) e o objeto [Data](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date) do JavaScript no código do JavaScript para um suplemento do Office para exibir valores com base nas configurações de localização do navegador atual. Para saber mais, confira [Passo a passo: como globalizar uma data usando o script de cliente](https://msdn.microsoft.com/library/69b34e6d-d590-4d03-a763-b7ae54b47d74.aspx).
 
 Você pode incluir cadeias de caracteres de recurso localizadas diretamente em arquivos de JavaScript autônomos para fornecer arquivos de script de cliente para diferentes locais, que são definidos no navegador ou fornecidos pelo usuário. Crie um arquivo de script separado para cada localidade com suporte. Em cada arquivo de script, inclua um objeto no formato JSON que contenha as cadeias de caracteres de recursos para essa localidade. Os valores localizados serão aplicados quando o script for executado no navegador.
 
 
 ## <a name="example-build-a-localized-office-add-in"></a>Exemplo: Criar um Suplemento do Office localizado
 
-Esta seção fornece exemplos que mostram como localizar uma descrição do Suplemento do Office, o nome de exibição e interface do usuário.
-
-Para executar o código de amostra fornecido, configure o Microsoft Office 2013 em seu computador para usar idiomas adicionais para que você possa testar seu suplemento, alternando o idioma usado para exibição em menus e em comandos para edição e revisão de texto ou ambos.
-
-Além disso, você precisará criar um projeto de Suplemento do Office do Visual Studio 2015.
+Esta seção fornece exemplos que mostram como localizar uma descrição do Suplemento do Office, o nome de exibição e interface do usuário. 
 
 > [!NOTE]
-> Para baixar o Visual Studio 2015, consulte a [Página do Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs). Esta página também contém um link para o Office Developer Tools.
+> Para baixar o Visual Studio 2017, confira a [página IDE do Visual Studio](https://visualstudio.microsoft.com/vs/). Durante a instalação, você precisará selecionar a carga de trabalho de desenvolvimento do Office/SharePoint.
 
-### <a name="configure-office-2013-to-use-additional-languages-for-display-or-editing"></a>Configurar o Office 2013 para usar idiomas adicionais para exibição ou edição
+### <a name="configure-office-to-use-additional-languages-for-display-or-editing"></a>Configurar o Office para usar idiomas adicionais para exibição ou edição
 
-Você pode usar um Pacote de idiomas do Office 2013 para instalar um idioma adicional. Para saber mais sobre os Pacotes de idioma e onde obtê-los, veja [Opções de idioma do Office 2013](http://office.microsoft.com/language-packs/).
+Para executar o código de amostra fornecido, configure o Microsoft Office em seu computador para usar idiomas adicionais para que você possa testar seu suplemento, alternando o idioma usado para exibição em menus e em comandos para edição e revisão de texto ou ambos.
 
-> [!NOTE]
-> Se você for assinante do MSDN, é possível que já tenha os Pacotes de Idiomas do Office 2013. Para determinar se a sua assinatura oferece Pacotes de Idiomas do Office 2013 para download, vá para a [Página Inicial de Assinaturas do MSDN](https://msdn.microsoft.com/subscriptions/manage/), digite Pacote de Idiomas do Office 2013 em **Downloads de Softwares**, escolha **Pesquisar** e selecione **Produtos disponíveis com minha assinatura**. Em **Idioma**, marque a caixa de seleção do Pacote de Idiomas que você deseja baixar e, em seguida, selecione **Ir**.
+Você pode usar um Office Language Pack para instalar um idioma adicional. Para saber mais sobre os Pacotes de Idiomas e onde obtê-los, veja [Language Accessory Pack do Office](https://office.microsoft.com/language-packs/).
 
-Depois de instalar o Pacote de Idiomas, você pode configurar o Office 2013 para usar o idioma instalado para exibir na interface do usuário, para edição de conteúdo do documento, ou ambos. O exemplo neste artigo usa uma instalação do Office 2013 que tenha o Pacote de Idiomas do espanhol aplicado.
+Depois de instalar o Language Accessory Pack, você pode configurar o Office para usar o idioma instalado para exibir na interface do usuário, para edição de conteúdo do documento ou ambos. O exemplo neste artigo usa uma instalação do Office que tenha o Pacote de Idiomas de espanhol aplicado.
 
 ### <a name="create-an-office-add-in-project"></a>Criar um projeto de Suplemento do Office
 
+Você precisará criar um projeto de Suplemento do Office do Visual Studio 2017. 
+
+> [!NOTE]
+> Se ainda não instalou o Visual Studio 2017, confira a [página IDE do Visual Studio](https://visualstudio.microsoft.com/vs/) para obter instruções de download. Durante a instalação, você precisará selecionar a carga de trabalho de desenvolvimento do Office/SharePoint. Se você já instalou o Visual Studio 2017, [use o Instalador do Visual Studio](https://docs.microsoft.com/visualstudio/install/modify-visual-studio/) para garantir que a carga de trabalho de desenvolvimento do Office/SharePoint seja instalada.
+
+
 1. No Visual Studio, escolha **Arquivo**  >  **Novo Projeto**.
-
-2. Na caixa de diálogo **Novo Projeto**, em **Modelos**, expanda **Visual Basic** ou **Visual C#**, expanda **Office/SharePoint** e, em seguida, selecione **Suplementos do Office**.
-
-3. Escolha **Suplemento do Office** e nomeie seu suplemento, por exemplo WorldReadyAddIn. Escolha **OK**.
-
-4. Na caixa de diálogo **Criar Suplemento do Office**, selecione **Painel de tarefas** e selecione **Próximo**. Na próxima página, desmarque e marque as caixas de todos os aplicativos, exceto do Word. Selecione **Concluir** para criar o projeto.
-
+2. Na caixa de diálogo **Novo Projeto**, expanda **Visual Basic**, **Visual C#**, expanda **Office/SharePoint** e escolha **Suplementos**.
+3. Escolha **Suplemento do Word** e nomeie o suplemento **WorldReadyAddIn**. Escolha **OK**.
 
 ### <a name="localize-the-text-used-in-your-add-in"></a>Localizar o texto usado no seu suplemento
 
@@ -229,49 +225,27 @@ Para definir a interface do usuário do suplemento:
 
 1. No Visual Studio, no **Gerenciador de Soluções**, selecione **Home.html**.
 
-2. Substitua o HTML em Home.html pelo seguinte HTML.
+2. Substitua o conteúdo do elemento `<body>` no Home.html com o HTML a seguir e salve o arquivo.
 
     ```html
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <title></title>
-        <script src="../../Scripts/jquery-1.8.2.js" type="text/javascript"></script>
-
-        <link href="../../Content/Office.css" rel="stylesheet" type="text/css" />
-        <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
-
-        <!-- To enable offline debugging using a local reference to Office.js, use:                        -->
-        <!-- <script src="../../Scripts/Office/MicrosoftAjax.js" type="text/javascript"></script>          -->
-        <!--    <script src="../../Scripts/Office/1.0/office.js" type="text/javascript"></script>          -->
-
-        <link href="../App.css" rel="stylesheet" type="text/css" />
-        <script src="../App.js" type="text/javascript"></script>
-
-        <link href="Home.css" rel="stylesheet" type="text/css" />
-        <script src="Home.js" type="text/javascript"></script> <body>
+    <body>
         <!-- Page content -->
-        <div id="content-header">
+        <div id="content-header" class="ms-bgColor-themePrimary ms-font-xl">
             <div class="padding">
-                <h1 id="greeting"></h1>
+                <h1 id="greeting" class="ms-fontColor-white"></h1>
             </div>
         </div>
         <div id="content-main">
             <div class="padding">
-                <div>
+                <div class="ms-font-m">
                     <p id="about"></p>
                 </div>
             </div>
         </div>
-    </head>
-    </html>
+    </body>
     ```
 
-3. No Visual Studio, selecione **Arquivo**,  **Salvar Suplemento\Home\Home.html**.
-
-A figura a seguir mostra o elemento do cabeçalho (h1) e o elemento do parágrafo (p) que exibirá o texto localizado quando seu suplemento de amostra for executado.
+A figura a seguir mostra o elemento do cabeçalho (h1) e o elemento do parágrafo (p) que exibirá o texto localizado quando concluir as etapas restantes e executar o suplemento.
 
 *Figura 1. A interface do usuário do suplemento*
 
@@ -279,17 +253,19 @@ A figura a seguir mostra o elemento do cabeçalho (h1) e o elemento do parágraf
 
 ### <a name="add-the-resource-file-that-contains-the-localized-strings"></a>Adicionar o arquivo de recurso que contém as cadeias de caracteres localizadas
 
-O arquivo de recurso do JavaScript contém as cadeias de caracteres usadas para a interface do usuário do suplemento. A interface do usuário do suplemento de amostra tem um elemento h1 que exibe uma saudação e um elemento p que apresenta o suplemento ao usuário. 
+O arquivo de recurso do JavaScript contém as cadeias de caracteres usadas para a interface do usuário do suplemento. O HTML da interface do usuário do suplemento de amostra tem um elemento `<h1>` que exibe uma saudação e um elemento `<p>` que apresenta o suplemento ao usuário. 
 
 Para habilitar cadeias de caracteres para o cabeçalho e parágrafo, coloque as cadeias de caracteres em um arquivo de recurso separado. O arquivo de recurso cria um objeto do JavaScript que contém um objeto JSON (JavaScript Object Notation) separado para cada conjunto de cadeias de caracteres localizadas. O arquivo de recurso também fornece um método para obter o objeto JSON apropriado de volta para uma determinada localidade.
 
 Para adicionar o arquivo de recurso ao projeto do suplemento:
 
-1. No **Gerenciador de Soluções** no Visual Studio, escolha a pasta **Suplemento** no projeto da Web para o suplemento de amostra e selecione **Adicionar**  >  **Arquivo JavaScript**.
+1. No **Gerenciador de Soluções** no Visual Studio, clique com o botão direito no projeto **WorldReadyAddInWeb** e escolha **Adicionar** > **Novo Item**. 
 
-2. Na caixa de diálogo **Especificar o nome do item**, insira UIStrings.js.
+2. Na caixa de diálogo **Adicionar Novo Item**, escolha **Arquivo JavaScript**.
 
-3. Adicione o código a seguir ao arquivo UIStrings.js.
+3. Insira **UIStrings.js** como nome do arquivo e escolha **Adicionar**.
+
+4. Adicione o código a seguir ao arquivo UIStrings.js e salve-o.
 
     ```js
     /* Store the locale-specific strings */
@@ -376,8 +352,6 @@ Substitua o código no arquivo Home.js pelo código a seguir. O código mostra c
     {
 
         $(document).ready(function () {
-            app.initialize();
-
             // Get the language setting for editing document content.
             // To test this, uncomment the following line and then comment out the
             // line that uses Office.context.displayLanguage.
@@ -394,7 +368,7 @@ Substitua o código no arquivo Home.js pelo código a seguir. O código mostra c
 
             // Set localized text for UI elements.
             $("#greeting").text(UIText.Greeting);
-            $("#about").text(UIText.Instruction);
+            $("#about").text(UIText.Introduction);
         });
     };
 })();
@@ -406,17 +380,21 @@ Para testar seu suplemento localizado, altere o idioma usado para exibir ou edit
 
 Para alterar o idioma usado para exibir ou editar no seu suplemento:
 
-1. No Word 2013, selecione **Arquivo** > , **Opções** > , **Idioma**. A figura a seguir mostra a caixa de diálogo **Opções do Word** aberta na guia Idioma.
+1. No Word, escolha **Arquivo** > **Opções** > **Idioma**. A figura a seguir mostra a caixa de diálogo **Opções do Word** aberta na guia Idioma.
 
-    *Figura 2. Opções de idioma na caixa de diálogo Opções do Word 2013*
+    *Figura 2. Opções de idioma na caixa de diálogo Opções do Word*
 
-    ![Caixa de diálogo Opções do Word 2013.](../images/office15-app-how-to-localize-fig04.png)
+    ![Caixa de diálogo Opções do Word](../images/office15-app-how-to-localize-fig04.png)
 
-2. Em **Escolher idiomas de exibição e da ajuda**, selecione o idioma desejado para exibição, por exemplo, espanhol, e selecione a seta para cima para mover o idioma espanhol para a primeira posição na lista. Ou, para alterar o idioma usado para edição, em **Escolher idiomas de edição**, escolha o idioma que você deseja usar para edição, por exemplo, espanhol, e selecione **Definir como Padrão**.
+2. Em **Escolher Idioma de Exibição**, selecione o idioma desejado para exibição, por exemplo, espanhol, e selecione a seta para cima para mover o idioma espanhol para a primeira posição na lista. Ou, para alterar o idioma usado para edição, em **Escolher Idiomas de Edição**, escolha o idioma que você deseja usar para edição, por exemplo, espanhol, e selecione **Definir como Padrão**.
 
 3. Escolha **OK** para confirmar sua seleção e feche o Word.
 
-Execute o suplemento de exemplo. O suplemento de painel de tarefas carrega no Word 2013 e as cadeias de caracteres na interface do usuário do suplemento são alteradas para corresponder ao idioma usado pelo aplicativo host, como mostrado na figura a seguir.
+4. Pressione F5 no Visual Studio para executar o suplemento de amostra ou escolha **Depurar** > **Iniciar Depuração** na barra de menus.
+
+5. No Word, escolha **Página Inicial** > **Mostrar Painel de Tarefas**.
+
+Após estar em execução, as cadeias de caracteres na interface do usuário do suplemento são alteradas para corresponder ao idioma usado pelo aplicativo host, como mostrado na figura a seguir.
 
 
 *Figura 3. Interface do usuário do suplemento com o texto localizado*
