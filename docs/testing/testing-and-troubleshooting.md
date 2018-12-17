@@ -2,18 +2,18 @@
 title: Solucionar erros de usuários com suplementos do Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: c56485cff0248484b53974c2685827045bbb68eb
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: fb1b15236214056e6e15b4581a3813d42e31dc54
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944059"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270772"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Solucionar erros de usuários com suplementos do Office
 
 Às vezes, seus usuários podem encontrar problemas com suplementos do Office desenvolvidos por você. Por exemplo, um suplemento falha ao carregar ou está inacessível. Use as informações neste artigo para ajudar a resolver problemas comuns que os usuários têm com o seu suplemento do Office. 
 
-Também é possível usar o [Fiddler](http://www.telerik.com/fiddler) para identificar e depurar problemas com os suplementos.
+Também é possível usar o [Fiddler](https://www.telerik.com/fiddler) para identificar e depurar problemas com os suplementos.
 
 Depois de resolver o problema do usuário, é possível [responder diretamente às avaliações dos clientes no AppSource](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings).
 
@@ -105,7 +105,7 @@ Exclua o conteúdo da pasta `/Users/{your_name_on_the_device}/Library/Containers
 #### <a name="for-ios"></a>No iOS:
 Chame `window.location.reload(true)` usando o JavaScript no suplemento para forçar um recarregamento. Outra alternativa é reinstalar o Office.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 - [Depurar suplementos no Office Online](debug-add-ins-in-office-online.md) 
 - [Realizar sideload de um suplemento do Office no iPad e no Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  
