@@ -30,8 +30,8 @@
 - Forneça uma maneira para os usuários ativarem legendas ou descrições de áudio com fontes de áudio.
 - Forneça alternativas para o som como um meio para alertar os usuários, como indicações visuais ou vibrações.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 - [Diretrizes de Acessibilidade para Conteúdo da Web (WCAG) 2.0](https://www.w3.org/TR/wcag2ict/#REF-WCAG20)
 - [Orientações sobre a Aplicação das WCAG 2.0 para Tecnologias de Comunicação e Informação que não Sejam da Web (WCAG2ICT)](https://www.w3.org/TR/wcag2ict/)
-- [Padrão Europeu para requisitos de acessibilidade para Tecnologias de Comunicação e Informação (ICT)](http://www.etsi.org/deliver/etsi_en/301500_301599/301549/01.00.00_20/en_301549v010000c.pdf) 
+- [Padrão Europeu para requisitos de acessibilidade para Tecnologias de Comunicação e Informação (ICT)](https://www.etsi.org/deliver/etsi_en/301500_301599/301549/01.00.00_20/en_301549v010000c.pdf) 

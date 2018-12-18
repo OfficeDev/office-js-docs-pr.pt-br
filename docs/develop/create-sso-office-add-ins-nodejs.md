@@ -1,12 +1,13 @@
 ---
 title: Crie um Suplemento do Office com Node.js que use logon único
-description: 23/01/2018
-ms.openlocfilehash: a6e91b84de69e4b2da5cc10277f0ca3579287b96
-ms.sourcegitcommit: 9b021af6cb23a58486d6c5c7492be425e309bea1
+description: ''
+ms.date: 12/07/2018
+ms.openlocfilehash: 793d68dd3f1794c997a85bd5be682037aecca89f
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "26533760"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270989"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Crie um Suplemento do Office com Node.js que use logon único (prévia)
 
@@ -62,7 +63,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
 [!INCLUDE[](../includes/register-sso-add-in-aad-v2-include.md)]
 
 
-## <a name="grant-administrator-consent-to-the-add-in"></a>Conceder consentimento ao administrador para o suplemento
+## <a name="grant-administrator-consent-to-the-add-in"></a>Conceder consentimento do administrador ao suplemento
 
 [!INCLUDE[](../includes/grant-admin-consent-to-an-add-in-include.md)]
 
@@ -134,7 +135,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
 
 1. Abaixo do método `getOneDriveFiles`, adicione o código a seguir. Observe o seguinte sobre este código:
 
-    * O [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) é a nova API no Office.js que permite que um suplemento solicite ao aplicativo host do Office (Excel, PowerPoint, Word, etc.) um token de acesso para o suplemento (para o usuário conectado ao Office). O aplicativo host do Office, por sua vez, solicita o token ao ponto de extremidade 2.0 do Azure AD. Uma vez que você previamente autorizou o host do Office para o seu suplemento ao registrá-lo, o Azure AD enviará o token.
+    * O [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) é a nova API no Office.js que permite que um suplemento solicite ao aplicativo host do Office (Excel, PowerPoint, Word etc.) um token de acesso ao suplemento (para o usuário conectado ao Office). O aplicativo host do Office, por sua vez, solicita o token ao ponto de extremidade 2.0 do Azure AD. Uma vez que você previamente autorizou o host do Office para o seu suplemento ao registrá-lo, o Azure AD enviará o token.
     * Se nenhum usuário estiver conectado ao Office, o host do Office solicitará que o usuário se conecte.
     * O parâmetro de opções configura o `forceConsent` como `false`. Dessa forma, não será solicitado que o usuário consinta o acesso ao host do Office ao seu suplemento sempre que ele o usar. Na primeira vez que o usuário tiver o suplemento, a chamada de `getAccessTokenAsync` falhará, mas lógica de processamento de erros que você adicionará em uma etapa posterior será automaticamente chamada com a opção `forceConsent` definida como `true` e o usuário será solicitado a consentir, mas somente essa primeira vez.
     * Você criará o método `handleClientSideErrors` em uma etapa posterior.
@@ -196,14 +197,14 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
             // TODO3: Handle the case where the user's sign-in or consent was aborted.
     
             // TODO4: Handle the case where the user is logged in with an account that is neither work or school, 
-            //        nor Micrososoft Account.
+            //        nor Microsoft Account.
     
             // TODO5: Handle an unspecified error from the Office host.
     
             // TODO6: Handle the case where the Office host cannot get an access token to the add-ins 
             //        web service/application.
     
-            // TODO7: Handle the case where the user tiggered an operation that calls `getAccessTokenAsync` 
+            // TODO7: Handle the case where the user triggered an operation that calls `getAccessTokenAsync` 
             //        before a previous call of it completed.
     
             // TODO8: Handle the case where the add-in does not support forcing consent.
@@ -233,7 +234,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
         break; 
     ```
 
-1. Substitua `TODO4` pelo código a seguir. O erro 13003 ocorre quando o usuário está conectado com uma conta que não é corporativa, de estudante nem da Microsoft. Peça que o usuário saia e entre novamente com um tipo de conta suportado.
+1. Substitua `TODO4` pelo código a seguir. O erro 13003 ocorre quando o usuário está conectado com uma conta que não é corporativa, de estudante, nem da Microsoft. Peça que o usuário saia e entre novamente com um tipo de conta suportado.
 
     ```javascript
     case 13003: 
@@ -260,7 +261,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
         break;      
     ```
 
-1. Substitua `TODO7` pelo código a seguir. O Erro 13008 ocorre quando o usuário aciona uma operação que chama `getAccessTokenAsync` antes que uma chamada anterior dele seja concluída.
+1. Substitua `TODO7` pelo código a seguir. O erro 13008 ocorre quando o usuário aciona uma operação que chama o `getAccessTokenAsync` antes que uma chamada anterior dele seja concluída.
 
     ```javascript
     case 13008:
@@ -331,13 +332,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
     else if (result.responseJSON.error.innerError
             && result.responseJSON.error.innerError.error_codes
             && result.responseJSON.error.innerError.error_codes[0] === 65001){
-        showResult(['Please grant consent to this add-in to access your Microsoft Graph data.']);        
-        /*
-            THE FORCE CONSENT OPTION IS NOT AVAILABLE IN DURING PREVIEW. WHEN SSO FOR
-            OFFICE ADD-INS IS RELEASED, REMOVE THE showResult LINE ABOVE AND UNCOMMENT
-            THE FOLLOWING LINE.
-        */
-        // getDataWithToken({ forceConsent: true });
+        getDataWithToken({ forceConsent: true });
     }
     ```
 
@@ -406,7 +401,7 @@ Há dois arquivos do lado do servidor que precisam ser modificados.
 
     * O parâmetro `jwt` é o token de acesso ao aplicativo. No fluxo de "on behalf of" (em nome de), ele é trocado com AAD por um token de acesso ao recurso.
     * O parâmetro scopes (escopos) tem um valor padrão, mas neste exemplo será substituído pelo código de chamada.
-    * O parâmetro de recurso é opcional. Não deve ser usado quando o STS é o ponto de extremidade V 2.0 do AAD. ele infere o recurso dos escopos e retorna um erro se um recurso é enviado na Solicitação HTTP. 
+    * O parâmetro de recurso é opcional. Ele não deverá ser usado quando o [STS (Secure Token Service)](https://docs.microsoft.com/previous-versions/windows-identity-foundation/ee748490(v=msdn.10)) for o ponto de extremidade do AAD V 2.0. O ponto de extremidade V 2.0 infere o recurso dos escopos e retorna um erro se um recurso é enviado na Solicitação HTTP. 
     * Gerar uma exceção no bloco `catch` *não* causará o envio imediato do "500 Erro Interno do Servidor" para o cliente. Chamar o código no arquivo server.js acionará essa exceção e a transformará em uma mensagem de erro que será enviada para o cliente.
 
         ```typescript
@@ -521,9 +516,9 @@ Há dois arquivos do lado do servidor que precisam ser modificados.
     })); 
     ```
 
-3. Adicione o método a seguir na parte inferior do arquivo. Este método lidará com todas as solicitações para a API `onedriveitems`.
+3. Adicione o método a seguir na parte inferior do arquivo. Este método lidará com todas as solicitações para a API `values`.
     ```typescript
-    app.get('/api/onedriveitems', handler(async (req, res) => {
+    app.get('/api/values', handler(async (req, res) => {
         // TODO7: Initialize the AuthModule object and validate the access token 
         //        that the client-side received from the Office host.
         // TODO8: Get a token to Microsoft Graph from either persistent storage 
