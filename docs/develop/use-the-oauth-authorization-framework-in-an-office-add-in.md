@@ -2,18 +2,18 @@
 title: Usar a estrutura de autorização OAuth em um Suplemento do Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: cd9f15b66b7509f5fd9b1e8d9c7e1e2978968116
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 3fac2dd0ca6231684b0b91db80f969787822cf5f
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944742"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270695"
 ---
 # <a name="use-the-oauth-authorization-framework-in-an-office-add-in"></a>Usar a estrutura de autorização OAuth em um Suplemento do Office
 
 OAuth é o padrão aberto para autorização que provedores de serviço online como Office 365, Facebook, Google, SalesForce, LinkedIn e outros usam para executar a autenticação do usuário. A estrutura de autorização OAuth é o protocolo de autorização padrão usado no Azure e no Office 365. A estrutura de autorização OAuth é usada em cenários empresariais (corporativos) e de consumidor.
 
-Provedores de serviço online podem oferecer APIs públicas expostas via REST. Os desenvolvedores podem usar essas APIs públicas em seus suplementos do Office para ler ou gravar dados para o provedor de serviços online. Integração de dados de provedores de serviços online em um suplemento aumenta seu valor, o que leva a uma maior adoção por parte dos usuários. Ao usar essas APIs em seu suplemento, os usuários serão solicitados a se autenticar usando a estrutura de autorização OAuth.
+Os provedores de serviços online podem fornecer APIs públicas expostas via REST. Os desenvolvedores podem usar essas APIs públicas nos próprios Suplementos do Office para ler ou gravar dados para o provedor de serviços online. A integração de dados de provedores de serviços online em um suplemento aumenta o valor desse, o que leva a uma maior adoção pelos usuários. Ao usar essas APIs em seu suplemento, os usuários deverão fazer a autenticação usando a estrutura de autorização OAuth.
 
 Este tópico descreve como implementar um fluxo de autenticação no suplemento para executar a autenticação do usuário. Os segmentos de código incluídos neste tópico são obtidos do exemplo de código [Office-Add-in-NodeJS-ServerAuth](https://github.com/OfficeDev/Office-Add-in-NodeJS-ServerAuth).
 
@@ -41,7 +41,7 @@ O diagrama mostra como os seguintes componentes necessários são usados:
 
 ## <a name="step-1---start-socket-and-open-a-pop-up-window"></a>Etapa 1: iniciar o soquete e abrir uma janela pop-up
 
-Quando você executa este código de exemplo, um suplemento de painel de tarefas é exibido no Office. Quando o usuário escolhe um provedor OAuth no qual fazer logon, primeiro o suplemento cria um soquete. Este exemplo usa um soquete para fornecer uma boa experiência do usuário no suplemento. O suplemento usa o soquete para comunicar o sucesso ou a falha da autenticação ao usuário. Com o uso de um soquete, a página principal do suplemento é facilmente atualizada com o status de autenticação e não requer interação com o usuário nem sondagem. O segmento de código a seguir, obtido de routes/connect.js, mostra como iniciar o soquete. O soquete é nomeado usando **decodedNodeCookie**, que é a ID de sessão do suplemento Este exemplo de código cria o soquete usando [socket.io](http://socket.io/).
+Quando você executa este código de exemplo, um suplemento de painel de tarefas é exibido no Office. Quando o usuário escolhe um provedor OAuth no qual fazer logon, primeiro o suplemento cria um soquete. Este exemplo usa um soquete para fornecer uma boa experiência do usuário no suplemento. O suplemento usa o soquete para comunicar o sucesso ou a falha da autenticação ao usuário. Com o uso de um soquete, a página principal do suplemento é facilmente atualizada com o status de autenticação e não requer interação com o usuário nem sondagem. O segmento de código a seguir, obtido de routes/connect.js, mostra como iniciar o soquete. O soquete é nomeado usando **decodedNodeCookie**, que é a ID de sessão do suplemento Este exemplo de código cria o soquete usando [socket.io](https://socket.io/).
 
 
 ```js
@@ -126,7 +126,7 @@ O segmento de código a seguir, obtido de connect.js, atualiza interface do usu�
 ```
 
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 - [Exemplo de Autenticação do Servidor de Suplemento do Office para Node.js](https://github.com/OfficeDev/Office-Add-in-Nodejs-ServerAuth/blob/master/README.md)
     

@@ -2,12 +2,12 @@
 title: Teste de usabilidade de Suplementos do Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 0c90cc4e573d24f9c7c4e5c4f6a77853ec9fc93e
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.openlocfilehash: 38f0416d56f3fc43c6d5f68df9b5c84586b03c8c
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945600"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270926"
 ---
 # <a name="usability-testing-for-office-add-ins"></a>Teste de usabilidade de Suplementos do Office
 
@@ -28,7 +28,7 @@ Você precisa de apenas cinco participantes para descobrir a maioria dos problem
 
 ## <a name="1---sign-up-for-a-testing-service"></a>1.   Inscreva-se em um serviço de teste
 
-Saiba mais em [Seleção de uma ferramenta online para o teste de usuário remoto não moderado.](https://www.nngroup.com/articles/unmoderated-user-testing-tools/)
+Saiba mais em [Seleção de uma ferramenta online para o teste de usuário remoto não moderado](https://www.nngroup.com/articles/unmoderated-user-testing-tools/).
 
 ## <a name="2-develop-your-research-questions"></a>2. Desenvolva as perguntas da sua pesquisa
  
@@ -55,9 +55,9 @@ A seguir, alguns exemplos de perguntas de pesquisa:
  - Comandos da faixa de opções
  - Interface do Usuário do Suplemento
  - Como o suplemento interage com o espaço do documento do aplicativo do Office
- - Qual o nível de controle que o usuário tem nos fluxos de inserção de conteúdo
+ - O nível de controle que o usuário tem nos fluxos de inserção de conteúdo
 
-Para saber mais, veja [Escrever perguntas eficazes.](http://help.usertesting.com/customer/en/portal/articles/2077663-writing-effective-questions)
+Saiba mais em [Coleta de respostas concretas versus dados subjetivos](https://help.usertesting.com/hc/pt-BR/articles/115003378572-Writing-effective-questions).
  
 ## <a name="3-identify-participants-to-target"></a>3. Identifique os participantes que serão o alvo
  
@@ -78,16 +78,16 @@ Por exemplo, se deseja encontrar participantes que estão familiarizados com o G
 
 Se estiver planejando testar uma compilação em funcionamento do suplemento, as perguntas a seguir podem verificar os usuários que conseguirão fazer isso. 
 
-**Esse teste requer que você tenha a última versão do Microsoft PowerPoint. Você tem a última versão do PowerPoint?**  
+**Este teste requer a versão mais recente do Microsoft PowerPoint. Você tem a versão mais recente do PowerPoint?**  
  a. Sim [*Deve selecionar*]  
  b. Não [*Rejeitar*]  
  c. Não sei [*Rejeitar*]  
 
-**Este teste requer que você instale um suplemento gratuito para PowerPoint e crie uma conta gratuita para usá-lo. Você está disposto a instalar um suplemento e criar uma conta gratuita?**  
+**Este teste requer a instalação de um suplemento gratuito para o PowerPoint e a criação de uma conta gratuita para usá-lo. Deseja instalar um suplemento e criar uma conta gratuita?**  
  a. Sim [*Deve selecionar*]  
  b. Não [*Rejeitar*]  
 
-Para saber mais, veja [Práticas recomendadas do verificador de perguntas.](http://help.usertesting.com/customer/en/portal/articles/2077835-screener-question-best-practices)
+Saiba mais em [Práticas recomendadas do verificador de perguntas](https://help.usertesting.com/hc/pt-BR/articles/115003370731-Screener-question-best-practices).
  
 ## <a name="5-create-tasks-and-questions-for-participants"></a>5. Crie tarefas e perguntas para os participantes
  
@@ -99,11 +99,11 @@ O principal desafio no teste não moderado é garantir que seus participantes en
 
 Não pense que o usuário estará na tela que deve estar em um determinado momento durante o teste. Considere informar a tela em que eles precisam estar para iniciar a próxima tarefa. 
 
-Saiba mais em [Como escrever tarefas excelentes.](http://help.usertesting.com/customer/en/portal/articles/2077824-writing-great-tasks)
+Saiba mais em [Como escrever tarefas excelentes](https://help.usertesting.com/hc/pt-BR/articles/115003371651-Writing-great-tasks).
 
 ## <a name="6-create-a-prototype-to-match-the-tasks-and-questions"></a>6. Crie um protótipo para corresponder às tarefas e perguntas
  
-Você também pode testar o suplemento em funcionamento ou um protótipo. Tenha em mente que, se você deseja testar o suplemento em funcionamento, é necessário buscar participantes que tenham a última versão do Office, estejam dispostos a instalar o suplemento e criar uma conta (a menos que você tenha as credenciais de logon para fornecer). Você precisará certificar-se de que o suplemento será instalado com êxito. 
+Você pode testar o suplemento em funcionamento ou testar um protótipo. Observe que se você desejar testar o suplemento em funcionamento, será necessário buscar participantes que tenham a versão mais recente do Office, que estejam dispostos a instalar o suplemento e a criar uma conta (a menos que você tenha as credenciais de logon para fornecer). Depois será preciso garantir que o suplemento foi instalado com êxito. 
 
 Em média, são necessários cerca de cinco minutos para orientar os usuários sobre como instalar um suplemento. A seguir, um exemplo de etapas de instalação claras e concisas. Ajuste as etapas com base nas condições específicas do teste.
 
@@ -137,8 +137,8 @@ Um único participante com um problema de usabilidade não é suficiente para ge
 Em geral, tome cuidado com como você usa seus dados para tirar conclusões. Não caia na armadilha de tentar fazer com que os dados se ajustem a uma determinada narrativa. Seja honesto sobre o que os dados realmente comprovam, refutam ou apenas falham em oferecer informações. Mantenha a mente aberta. O comportamento do usuário com frequência desafia as expectativas do designer.
  
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
  
- - [Como conduzir testes de usabilidade](http://whatpixel.com/howto-conduct-usability-testing/)  
- - [Práticas recomendadas](http://help.usertesting.com/customer/en/portal/articles/1680726-best-practices)  
- - [Minimizar desvio](http://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)  
+ - [Como conduzir testes de usabilidade](https://whatpixel.com/howto-conduct-usability-testing/)  
+ - [Práticas recomendadas para UserTesting](https://help.usertesting.com/hc/pt-BR/articles/115003370231-Best-practices-for-UserTesting)  
+ - [Minimizar desvio](https://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)  

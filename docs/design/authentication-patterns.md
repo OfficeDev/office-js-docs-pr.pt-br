@@ -17,18 +17,18 @@ Os suplementos podem exigir que os usuários entrem ou se inscrevam para acessar
 Até o logon único estar fora da versão prévia, os suplementos de produção devem conceder aos usuários uma opção para entrar diretamente com o serviço ou um provedor de identidade como a Microsoft.
 
 1. Marcador de primeira execução: coloque o botão de entrada como uma chamada para ação clara na primeira experiência de execução do seu suplemento.
-![](../images/add-in-fre-value-placemat.png)
+![Captura de tela de um painel de tarefas do suplemento em um aplicativo do Office](../images/add-in-fre-value-placemat.png)
 
-2. Caixa de diálogo de opções do provedor de identidade: exibe uma lista clara de provedores de identidade incluindo um formulário de nome de usuário e senha, se aplicável. A interface de usuário de um suplemento poderá ser bloqueada quando a caixa de diálogo de autenticação estiver aberta.
-![](../images/add-in-auth-choices-dialog.png)
+2. Caixa de diálogo de opções do provedor de identidade: exiba uma lista clara de provedores de identidade, incluindo um formulário de nome de usuário e senha, se aplicável. A interface de usuário do seu suplemento poderá ser bloqueada enquanto a caixa de diálogo de autenticação estiver aberta.
+![Captura de tela da caixa de diálogo Opções do Provedor de Identidade em um aplicativo do Office](../images/add-in-auth-choices-dialog.png)
 
 
 
-3. Entrada de um provedor de identidade: os provedores de identidade têm suas próprias interfaces de usuário. O Microsoft Azure Active Directory permite a personalização das páginas de entrada e de painel de acesso para uma aparência consistente com o serviço.  [Saiba mais](https://docs.microsoft.com/azure/active-directory/fundamentals/customize-branding).
-![](../images/add-in-auth-identity-sign-in.png)
+3. Entrada de um provedor de identidade: os provedores de identidade têm as próprias interfaces de usuário. O Microsoft Azure Active Directory permite a personalização das páginas de entrada e do painel de acesso para uma aparência consistente com o serviço. [Saiba mais](https://docs.microsoft.com/azure/active-directory/fundamentals/customize-branding).
+![Captura de tela da caixa de diálogo Entrar no provedor de identidade em um aplicativo do Office](../images/add-in-auth-identity-sign-in.png)
 
-4. Progresso: indica o progresso enquanto as configurações e a interface do usuário são carregadas.
-![](../images/add-in-auth-modal-interstitial.png)
+4. Progresso: indique o progresso enquanto as configurações e a interface do usuário são carregadas.
+![Captura de tela de uma caixa de diálogo que mostra um indicador de progresso em um aplicativo do Office](../images/add-in-auth-modal-interstitial.png)
 
 > [!NOTE] 
 > Ao usar o serviço de identidade da Microsoft, você terá a oportunidade de usar um botão de entrada com marca que poderá ser personalizado com temas claros e escuros.Saiba mais.
@@ -40,12 +40,12 @@ Até o logon único estar fora da versão prévia, os suplementos de produção 
 
 Depois que o recurso de logon único for disponibilizado para suplementos de produção, use-o em uma experiência de usuário final mais estável. A identidade do usuário no Office (identidade da conta Microsoft ou do Office 365) é usada para entrar no suplemento. Como resultado, os usuários somente entram uma vez. Isso remove conflitos na experiência e faz com que os clientes comecem a usar o suplemento sem dificuldades.
 
-1. Conforme um suplemento está sendo instalado, um usuário verá uma janela de consentimento semelhante ao exemplo abaixo: ![](../images/add-in-auth-SSO-consent-dialog.png)
+1. Conforme o suplemento é instalado, um usuário vê uma janela de consentimento semelhante à exibida abaixo: ![Captura de tela da janela de consentimento em um aplicativo do Office enquanto um suplemento é instalado](../images/add-in-auth-SSO-consent-dialog.png)
 > [!NOTE]
-> O fornecedor do suplemento terá controle sobre o logotipo, sobre as cadeias de caracteres e escopos de permissão incluídos na janela de consentimento. A interface do usuário é pré-configurada pela Microsoft.
+> O publicador do suplemento terá controle sobre o logotipo, sobre as cadeias de caracteres e escopos de permissão incluídos na janela de consentimento. A interface do usuário é pré-configurada pela Microsoft.
 
-2. O suplemento será carregado após o consentimento do usuário. Ele pode extrair e exibir quaisquer informações de usuário personalizadas necessárias.
-![](../images/add-in-ribbon.png)
+2. O suplemento será carregado após o consentimento do usuário. Ele pode extrair e exibir todas as informações personalizadas necessárias do usuário.
+![Captura de tela de um aplicativo do Office com os botões de suplemento exibidos na faixa de opções](../images/add-in-ribbon.png)
 
 ## <a name="see-also"></a>Confira também
 - Saiba mais sobre como [desenvolver suplementos de SSO (versão prévia)](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins)
