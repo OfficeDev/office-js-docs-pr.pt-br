@@ -1,13 +1,13 @@
 ---
 title: Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 description: ''
-ms.date: 11/27/2018
-ms.openlocfilehash: 1cfde9bfdf306e35f47595f936679d9fa6e1814e
-ms.sourcegitcommit: 026437bd3819f4e9cd4153ebe60c98ab04e18f4e
+ms.date: 12/13/2018
+ms.openlocfilehash: 388e061f72055b557a9da822391a9c0cd64a2c24
+ms.sourcegitcommit: 09f124fac7b2e711e1a8be562a99624627c0699e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "27002334"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "27283120"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 
@@ -92,7 +92,7 @@ O método `protect` aceita um parâmetro opcional de cadeia de caracteres. Esta 
 
 A proteção também ser definida no nível da planilha para prevenir a edição de dados indesejada. Para saber mais, confira a seção **Proteção de dados**do artigo [Trabalhar com planilhas usando a API JavaScript do Excel](excel-add-ins-worksheets.md#data-protection).
 
-> [!NOTE] 
+> [!NOTE]
 > Para saber mais sobre a proteção de pastas de trabalho no Excel, confira o artigo [Proteger uma pasta de trabalho](https://support.office.com/article/Protect-a-workbook-7E365A4D-3E89-4616-84CA-1931257C1517).
 
 ## <a name="access-document-properties"></a>Acessar propriedades do documentos
@@ -147,6 +147,53 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
+## <a name="add-custom-xml-data-to-the-workbook"></a>Adicionar dados XML personalizados à pasta de trabalho
+
+O formato de arquivo Open XML **.xlsx** do Excel permite ao seu suplemento inserir dados XML personalizados na pasta de trabalho. Esses dados persistem na pasta de trabalho, independentemente do suplemento.
+
+Uma pasta de trabalho contém um [CustomXmlPartCollection](/javascript/api/excel/excel.customxmlpartcollection), que é uma lista de [CustomXmlParts](/javascript/api/excel/excel.customxmlpart). Eles oferecem acesso a cadeias de caracteres XML e a uma ID exclusiva correspondente. Armazenando essas IDs como configurações, seu suplemento pode manter as teclas para suas partes XML entre sessões.
+
+Os exemplos a seguir mostram como usar partes XML personalizadas. O primeiro bloco de códigos demonstra como inserir dados XML no documento. Ele armazena uma lista de revisores e usa as configurações da pasta de trabalho para salvar a `id` do XML para recuperação futura. O segundo bloco mostra como acessar esse XML mais tarde. A configuração "ContosoReviewXmlPartId" é carregada e transmitida para `customXmlParts` da pasta de trabalho. Os dados XML são então impressos no console.
+
+```js
+Excel.run(async (context) => {
+    // Add reviewer data to the document as XML
+    var originalXml = "<Reviewers xmlns='http://schemas.contoso.com/review/1.0'><Reviewer>Juan</Reviewer><Reviewer>Hong</Reviewer><Reviewer>Sally</Reviewer></Reviewers>";
+    var customXmlPart = context.workbook.customXmlParts.add(originalXml);
+    customXmlPart.load("id");
+
+    return context.sync().then(function() {
+        // Store the XML part's ID in a setting
+        var settings = context.workbook.settings;
+        settings.add("ContosoReviewXmlPartId", customXmlPart.id);
+    });
+}).catch(errorHandlerFunction);
+```
+
+```js
+Excel.run(async (context) => {
+    // Retrieve the XML part's id from the setting
+    var settings = context.workbook.settings;
+    var xmlPartIDSetting = settings.getItemOrNullObject("ContosoReviewXmlPartId").load("value");
+
+    return context.sync().then(function () {
+        if (xmlPartIDSetting.value) {
+            var customXmlPart = context.workbook.customXmlParts.getItem(xmlPartIDSetting.value);
+            var xmlBlob = customXmlPart.getXml();
+
+            return context.sync().then(function () {
+                // Add spaces to make more human readable in the console
+                var readableXML = xmlBlob.value.replace(/></g, "> <");
+                console.log(readableXML);
+            });
+        }
+    });
+}).catch(errorHandlerFunction);
+```
+
+> [!NOTE]
+> `CustomXMLPart.namespaceUri` só será preenchido se o elemento XML personalizado de nível superior contiver o atributo `xmlns`.
+
 ## <a name="control-calculation-behavior"></a>Controlar o comportamento do cálculo
 
 ### <a name="set-calculation-mode"></a>Configurar o modo de cálculo
@@ -156,7 +203,7 @@ Por padrão, o Excel recalcula os resultados das fórmulas sempre que uma célul
  - `automatic`: O comportamento de recálculo padrão em que o Excel calcula novos resultados das fórmulas sempre que o dado relevante é alterado.
  - `automaticExceptTables`: Igual a `automatic`, exceto que as alterações feitas nos valores em tabelas serão ignoradas.
  - `manual`: Os cálculos ocorrem somente quando o usuário ou suplemento os solicita.
- 
+
 ### <a name="set-calculation-type"></a>Configurar o tipo de cálculo
 
 O objeto [Application](/javascript/api/excel/excel.application) fornece um método para forçar um recálculo imediato. `Application.calculate(calculationType)` inicia o recálculo manual baseado no `calculationType` especificado. Os seguintes valores podem ser especificados:
@@ -165,7 +212,7 @@ O objeto [Application](/javascript/api/excel/excel.application) fornece um méto
  - `fullRebuild`: Verifique as fórmulas dependentes e depois recalcule todas as fórmulas em todas as pastas de trabalho abertas, independentemente de elas terem sido alteradas desde o último recálculo.
  - `recalculate`: Recalcule as fórmulas que foram alteradas (ou marcadas por programação para recálculo) desde o último cálculo, e as fórmulas dependentes nelas, em todas as pastas de trabalho ativas.
  
-> [!NOTE] 
+> [!NOTE]
 > Para saber mais sobre o recálculo, confira o artigo [Alterar o recálculo, a iteração ou a precisão de fórmulas](https://support.office.com/article/change-formula-recalculation-iteration-or-precision-73fc7dac-91cf-4d36-86e8-67124f6bcce4).
 
 ### <a name="temporarily-suspend-calculations"></a>Suspender os cálculos temporariamente

@@ -19,7 +19,7 @@ Neste tutorial, você vai:
 
 * [Git Bash](https://git-scm.com/downloads) (ou outro cliente Git)
 
-* A versão mais recente da [Yeoman](http://yeoman.io/) e do [gerador Yo Office](https://www.npmjs.com/package/generator-office). Para instalar essas ferramentas globalmente, execute o seguinte comando para instalar o SDK:
+* A versão mais recente da [Yeoman](https://yeoman.io/) e do [gerador Yo Office](https://www.npmjs.com/package/generator-office). Para instalar essas ferramentas globalmente, execute o seguinte comando para instalar o SDK:
 
     ```bash
     npm install -g yo generator-office
@@ -58,7 +58,7 @@ Você vai começar este tutorial usando o gerador Yo Office para criar os arquiv
     * Se estiver usando o Excel para Windows para testar suas funções personalizadas, execute o seguinte comando para inciar o servidor local da web, inicie o Excel e carregue o suplemento:
 
         ```bash
-        npm start
+        npm run start-desktop
         ```
 
     * Se estiver usando o Excel Online para testar suas funções personalizadas, execute o seguinte comando para inciar o servidor local da web: 
@@ -69,7 +69,7 @@ Você vai começar este tutorial usando o gerador Yo Office para criar os arquiv
 
 ## <a name="try-out-a-prebuilt-custom-function"></a>Experimente uma função personalizada predefinida
 
-O projeto de funções personalizadas criado usando o gerador Yo Office contém algumas funções personalizadas predefinidas definidas no arquivo **src/customfunction.js**. O arquivo **manifest. XML** na pasta raiz do projeto especifica que todas as funções personalizadas pertencem ao `CONTOSO` namespace.
+O projeto de funções personalizadas criado usando o gerador Yo Office contém algumas funções personalizadas predefinidas definidas no arquivo **src/functions/functions.js**. O arquivo **manifest. XML** na pasta raiz do projeto especifica que todas as funções personalizadas pertencem ao `CONTOSO` namespace.
 
 Antes de usar as funções personalizadas predefinidas, você deverá registrar o suplemento de funções personalizadas no Excel. Para fazer isso, conclua as etapas para a plataforma que usará neste tutorial.
 
@@ -94,11 +94,7 @@ Neste ponto, as funções personalizadas predefinidas do projeto são carregadas
 
 1. Em uma célula, digite **= CONTOSO**. Observe que o menu de preenchimento automático mostra a lista de todas as funções na `CONTOSO` namespace.
 
-2. Executar a `CONTOSO.ADD` função, com números `10` e `200` como parâmetros de entrada, especificando o seguinte valor na célula e pressionando enter:
-
-    ```
-    =CONTOSO.ADD(10,200)
-    ```
+2. Executar a `CONTOSO.ADD` função, com números `10` e `200` como parâmetros de entrada, especificando o valor `=CONTOSO.ADD(10,200)` na célula e pressionando enter.
 
 O `ADD` função personalizada calcula a soma de dois números que você especificar como os parâmetros de entrada. Digitando `=CONTOSO.ADD(10,200)` deve obter o resultado **210** na célula, depois pressionar enter.
 
@@ -108,7 +104,7 @@ E se você precisasse de uma função que pode solicitar uma API de preço de um
 
 Conclua as seguintes etapas para criar uma função personalizada chamada `stockPrice` que aceita cotação da bolsa (por exemplo, **MSFT**) e retorna o preço dessa ação. Esta função personalizada usa IEX Trading API, que é gratuito e não requer autenticação.
 
-1. No projeto**cotações** que o gerador do Office Yo criou, localize o arquivo **src/customfunctions.js** e abra-o no seu editor de código.
+1. No projeto**cotações** que o gerador do Office Yo criou, localize o arquivo **src/functions/functions.js** e abra-o no seu editor de código.
 
 2. Adicione o código a seguir a **customfunctions.js** e salve o arquivo.
 
@@ -130,7 +126,7 @@ Conclua as seguintes etapas para criar uma função personalizada chamada `stock
     CustomFunctionMappings.STOCKPRICE = stockPrice;
     ```
 
-3. Antes que o Excel possa fazer esta nova função nova disponível para usuários finais, você deve especificar os metadados que descreve essa função. No projeto**cotações** que o gerador do Office Yo criou, localize o arquivo **config/customfunctions.json** e abra-o no seu editor de código. Adicionar o objeto de seguir ao arquivo `functions` matriz na **config/customfunctions.json** e salve o arquivo.
+3. Antes que o Excel possa fazer esta nova função nova disponível para usuários finais, você deve especificar os metadados que descreve essa função. No projeto**cotações** que o gerador do Office Yo criou, localize o arquivo **src/functions/functions.json** e abra-o no seu editor de código. Adicione o seguinte objeto à matriz `functions` no arquivo **src/functions/functions.json** e salve o arquivo.
 
     Este JSON descreve a `stockPrice` função.
 
@@ -184,7 +180,7 @@ A `stockPrice` função que você acabou de criar retorna o preço de uma ação
 
 Conclua as seguintes etapas para criar uma função personalizada chamada `stockPriceStream` que solicita o preço da ação a cada 1000 milissegundos (desde que a solicitação anterior esteja concluída). Enquanto a solicitação inicial está em andamento, você poderá ver o valor de espaço reservado **# OBTENDO_DADOS** na célula em que a função está sendo exibida. Quando um valor é retornado pela função, **# OBTENDO_DADOS**será substituído por esse valor na célula.
 
-1. No projeto**cotações** que o gerador do Office Yo criou, adicione o código a seguir **src/customfunctions.js** e salve o arquivo.
+1. No projeto **cotações** que o gerador do Office Yo criou, adicione o código a seguir a **src/functions/functions.js** e salve o arquivo.
 
     ```js
     function stockPriceStream(ticker, handler) {
@@ -223,7 +219,7 @@ Conclua as seguintes etapas para criar uma função personalizada chamada `stock
     CustomFunctionMappings.STOCKPRICESTREAM = stockPriceStream;
     ```
 
-2. Antes que o Excel possa fazer esta nova função nova disponível para usuários finais, você deve especificar os metadados que descreve essa função. No projeto**cotações** que o gerador do Office Yo criou, adicione o objeto a seguir na `functions`matriz em **config/customfunctions.json** e salve o arquivo.
+2. Antes que o Excel possa fazer esta nova função nova disponível para usuários finais, você deve especificar os metadados que descreve essa função. No projeto **cotações** que o gerador do Office Yo criou, adicione o objeto a seguir à matriz `functions` no arquivo **src/functions/functions.json** e salve o arquivo.
 
     Este JSON descreve a `stockPriceStream` função. Para qualquer função streaming a propriedade `stream` e a propriedade `cancelable` devem ser definidas como `true` dentro do `options` objeto, como mostra este exemplo código.
 

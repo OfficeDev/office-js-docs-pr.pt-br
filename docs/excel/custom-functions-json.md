@@ -2,12 +2,12 @@
 ms.date: 11/26/2018
 description: Defina os metadados de funções personalizadas no Excel.
 title: Metadados de funções personalizadas no Excel
-ms.openlocfilehash: a3d4427af2c6ab46133cb4e2fd9ce384a6a8336c
-ms.sourcegitcommit: e2ba9d7210c921d068f40d9f689314c73ad5ab4a
+ms.openlocfilehash: 60b22283d533cec6546d4ba8e7217868ef2be97c
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "27156590"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270639"
 ---
 # <a name="custom-functions-metadata-preview"></a>Metadados de funções personalizadas (versão prévia)
 
@@ -115,9 +115,9 @@ A propriedade `functions` é um conjunto de objetos de funções personalizadas.
 |  `helpUrl`  |  string  |   Não  |  A URL que fornece informações sobre a função. (Ela é exibida em um painel de tarefas). Por exemplo, **http://contoso.com/help/convertcelsiustofahrenheit.html**. |
 | `id`     | string | Sim | Identificação exclusiva para a função. Essa ID pode conter apenas caracteres alfanuméricos e pontos e não deve ser alterada depois de configurada. |
 |  `name`  |  string  |  Sim  |  O nome da função que é exibida aos usuários finais no Excel. No Excel, o nome da função será prefixado pelo namespace de funções personalizadas que é especificado no arquivo de manifesto XML. |
-|  `options`  |  object  |  Não  |  Permite que você personalize alguns aspectos de como e quando o Excel executa a função. Confira o [objeto options](#options-object) para obter detalhes. |
-|  `parameters`  |  array  |  Sim  |  Matriz que define os parâmetros de entrada para a função. Confira a [matriz de parâmetros](#parameters-array) para obter detalhes. |
-|  `result`  |  object  |  Sim  |  Objeto que define o tipo de informação que é retornada pela função do Excel. Confira o [objeto result](#result-object) para obter detalhes. |
+|  `options`  |  object  |  Não  |  Permite que você personalize alguns aspectos de como e quando o Excel executa a função. Confira [opções](#options) para obter detalhes. |
+|  `parameters`  |  array  |  Sim  |  Matriz que define os parâmetros de entrada para a função. Confira os [parâmetros](#parameters) para obter detalhes. |
+|  `result`  |  object  |  Sim  |  Objeto que define o tipo de informação que é retornada pela função do Excel. Confira [resultado](#result) para obter detalhes. |
 
 ## <a name="options"></a>options
 

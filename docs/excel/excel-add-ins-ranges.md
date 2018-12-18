@@ -1,17 +1,20 @@
 ---
-title: Trabalhar com intervalos usando a API JavaScript do Excel
+title: Trabalhar com intervalos usando a API JavaScript do Excel (fundamental)
 description: ''
-ms.date: 12/04/2018
-ms.openlocfilehash: 4a6e0014da82956b15e11e2739f6f58fb82d5030
-ms.sourcegitcommit: e2ba9d7210c921d068f40d9f689314c73ad5ab4a
+ms.date: 12/14/2018
+ms.openlocfilehash: 4c64abec1f79bd1194a106e46b8a6fe6c4b71d07
+ms.sourcegitcommit: 09f124fac7b2e711e1a8be562a99624627c0699e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "27156604"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "27283099"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Trabalhar com intervalos usando a API JavaScript do Excel
 
 Este artigo fornece exemplos de código que mostram como executar tarefas comuns com intervalos usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos que o objeto **Range** suporta, confira [Objeto Range (API JavaScript para Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range).
+
+> [!NOTE]
+> Confira exemplos de código que mostram como executar tarefas avançadas com intervalos em [Trabalhar com intervalos usando a API JavaScript do Excel (avançado)](excel-add-ins-ranges-advanced.md).
 
 ## <a name="get-a-range"></a>Obter um intervalo
 
@@ -537,118 +540,9 @@ Excel.run(function (context) {
 
 ### <a name="conditional-formatting-of-ranges"></a>Formatação condicional de intervalos
 
-Os intervalos podem ter formatos aplicados a células individuais baseadas em condições. Para saber mais sobre isso, confira [Aplicar a formatação condicional a intervalos do Excel](excel-add-ins-conditional-formatting.md).
-
-## <a name="work-with-dates-using-the-moment-msdate-plug-in"></a>Trabalhar com datas usando o plug-in Moment-MSDate
-
-A [biblioteca Moment do JavaScript](https://momentjs.com/) fornece uma maneira conveniente de usar datas e carimbos de data e hora. O [plug-in Moment-MSDate](https://www.npmjs.com/package/moment-msdate) converte o formato de momentos em um formato mais apropriado para o Excel. Este é o mesmo formato que a [função NOW](https://support.office.com/article/now-function-3337fd29-145a-4347-b2e6-20c904739c46) retorna.
-
-O código a seguir mostra como definir o intervalo em ** B4 ** para o carimbo de data/hora de um momento:
-
-```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    
-    var now = Date.now();
-    var nowMoment = moment(now);
-    var nowMS = nowMoment.toOADate();
-    
-    var dateRange = sheet.getRange("B4");
-    dateRange.values = [[nowMS]];
-    
-    dateRange.numberFormat = [["[$-409]m/d/yy h:mm AM/PM;@"]];
-    
-    return context.sync();
-}).catch(errorHandlerFunction);
-```
-
-É uma técnica semelhante para retirar a data da célula e convertê-la em um momento ou outro formato, conforme demonstrado no código a seguir:
-
-```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-
-    var dateRange = sheet.getRange("B4");
-    dateRange.load("values");
-        
-    return context.sync().then(function () {
-        var nowMS = dateRange.values[0][0];
-
-        // log the date as a moment
-        var nowMoment = moment.fromOADate(nowMS);
-        console.log(`get (moment): ${JSON.stringify(nowMoment)}`);
-
-        // log the date as a UNIX-style timestamp 
-        var now = nowMoment.unix();
-        console.log(`get (timestamp): ${now}`);
-    });
-}).catch(errorHandlerFunction);
-```
-
-Seu suplemento terá que formatar os intervalos para exibir as datas em um formato mais legível. O exemplo de `"[$-409]m/d/yy h:mm AM/PM;@"` exibe a hora como "3/12/18 15:57". Para obter mais informações sobre formatos de números de data e hora, confira as "Diretrizes para formatos de data e hora" no artigo [Diretrizes de revisão para personalizar um formato de número](https://support.office.com/article/review-guidelines-for-customizing-a-number-format-c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5).
-
-## <a name="copy-and-paste"></a>Copiar e colar
-
-> [!NOTE]
-> A função copyFrom no momento só está disponível na versão prévia pública (beta). Para usar esse recurso, você deve usar a biblioteca beta do CDN do Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-> Se você estiver usando o TypeScript ou se seu editor de código usar arquivos de definição de tipo do TypeScript do IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
-
-A função de copyFrom do intervalo replica o comportamento de copiar e colar da IU do Excel. O objeto de intervalo para o qual a função copyFrom é chamada é o destino. A fonte a ser copiada é passada como um intervalo ou um endereço de cadeia de caracteres que representa um intervalo. O exemplo a seguir copia dados de **A1:E1** para o intervalo que começa em **G1** (que acaba sendo colado em **G1:K1**).
-
-```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    // copy a range starting at a single cell destination
-    sheet.getRange("G1").copyFrom("A1:E1");
-    return context.sync();
-}).catch(errorHandlerFunction);
-```
-
-Range.copyFrom tem três parâmetros opcionais.
-
-```ts
-copyFrom(sourceRange: Range | string, copyType?: "All" | "Formulas" | "Values" | "Formats", skipBlanks?: boolean, transpose?: boolean): void;
-``` 
-
-`copyType` especifica quais dados são copiados da origem para o destino. 
-`“Formulas”` transfere as fórmulas nas células de origem e preserva o posicionamento relativo dos intervalos dessas fórmulas. As entradas que não sejam uma fórmula são copiadas no seu estado original. 
-`“Values”` copia os valores dos dados e, no caso de fórmulas, o resultado da fórmula. 
-`“Formats”` copia a formatação do intervalo incluindo a fonte, cor e outras configurações de formato, mas nenhum valor. 
-`”All”` (a opção padrão) copia ambos os dados e formatação, preservando as fórmulas das células, caso elas sejam encontradas.
-
-`skipBlanks` define se as células em branco são copiadas para o destino. Quando for verdadeiro, `copyFrom` ignora células em branco no intervalo de origem. As células ignoradas não substituem os dados existentes de suas células correspondentes no intervalo de destino. O padrão é false.
-
-O exemplo de código e as imagens a seguir demonstram esse comportamento em um cenário simples. 
-
-```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    // copy a range, omitting the blank cells so existing data is not overwritten in those cells
-    sheet.getRange("D1").copyFrom("A1:C1",
-        Excel.RangeCopyType.all,
-        true, // skipBlanks
-        false); // transpose
-    // copy a range, including the blank cells which will overwrite existing data in the target cells
-    sheet.getRange("D2").copyFrom("A2:C2",
-        Excel.RangeCopyType.all,
-        false, // skipBlanks
-        false); // transpose
-    return context.sync();
-}).catch(errorHandlerFunction);
-```
-
-*Antes da função precedente ter sido executada.*
-
-![Os dados no Excel antes do método de copiar do intervalo foram executados.](../images/excel-range-copyfrom-skipblanks-before.png)
-
-*Após a função precedente ter sido executada.*
-
-![Os dados no Excel após o método de copiar do intervalo foram executados.](../images/excel-range-copyfrom-skipblanks-after.png)
-
-`transpose` determina se os dados são transpostos, ou seja, suas linhas e colunas são alternadas para o local de origem. Um intervalo transposto invertido na diagonal principal, portanto as linhas **1**, **2** e **3** se tornarão as colunas **A**, **B** e **C**. 
-
+Os intervalos podem ter formatos aplicados a células individuais baseadas em condições. Confira mais informações sobre isso em [Aplicar a formatação condicional a intervalos do Excel](excel-add-ins-conditional-formatting.md).
 
 ## <a name="see-also"></a>Confira também
 
+- [Trabalhar com intervalos usando a API JavaScript do Excel (avançado)](excel-add-ins-ranges-advanced.md)
 - [Conceitos fundamentais de programação com a API JavaScript do Excel](excel-add-ins-core-concepts.md)
-
