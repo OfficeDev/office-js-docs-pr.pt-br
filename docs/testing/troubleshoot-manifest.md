@@ -2,12 +2,12 @@
 title: Validar e solucionar problemas com seu manifesto
 description: Use estes métodos para validar o manifesto de suplementos do Office
 ms.date: 11/02/2018
-ms.openlocfilehash: 710a06108206675a6c4fe523137f12a5d12f1da4
-ms.sourcegitcommit: c6723a31b48945ca4c466ba016a3dfc7b6267f5c
+ms.openlocfilehash: c166220f0ddd5002efcb2805b5e50ee20a48b4fe
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "25942241"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270786"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>Validar e solucionar problemas com seu manifesto
 
@@ -16,7 +16,7 @@ Use esses métodos para validar e solucionar problemas no manifesto de seu suple
 - [Validar o manifesto com o Validador de Suplemento do Office](#validate-your-manifest-with-the-office-add-in-validator)   
 - [Validar seu manifesto em relação ao esquema XML](#validate-your-manifest-against-the-xml-schema)
 - [Validar o manifesto com o gerador Yeoman para Suplementos do Office](#validate-your-manifest-with-the-yeoman-generator-for-office-add-ins)
-- [Usar o log de tempo de execução para depurar seu manifesto de suplemento](#use-runtime-logging-to-debug-your-add-in-manifest)
+- [Usar o log de tempo de execução para depurar seu suplemento](#use-runtime-logging-to-debug-your-add-in)
 
 
 ## <a name="validate-your-manifest-with-the-office-add-in-validator"></a>Validar o manifesto com o Validador de Suplemento do Office
