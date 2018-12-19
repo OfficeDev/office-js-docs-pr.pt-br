@@ -2,12 +2,12 @@
 title: Criar um suplemento de Project que usa REST com um serviço OData local do Project Server
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 7a632b708ebcf714ce1fa6ca2f5feb095fcd9f9d
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+ms.openlocfilehash: 0bd11e15d2742db12ecbe88d60e02f4e1fa87867
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25005033"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27271024"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>Criar um suplemento de Project que usa REST com um serviço OData local do Project Server
 
@@ -41,7 +41,7 @@ A seguir temos os pré-requisitos para a criação de um suplemento de painel de
 
 1. Para permitir que seu navegador mostre os dados XML de consultas REST diretamente, desative o modo de exibição de leitura de feed. Para saber mais sobre como fazer isso no Internet Explorer, confira o Procedimento 1, etapa 4 em [Consultar feeds OData para dados de relatório do Project](https://docs.microsoft.com/previous-versions/office/project-odata/jj163048(v=office.15)).
     
-2. Consulte o serviço  **ProjectData** usando seu navegador com a seguinte URL: **http://ServerName /ProjectServerName /_api/ProjectData**. Por exemplo, se a instância de aplicativo Web do Project for `http://MyServer/pwa`, o navegador mostrará os seguintes resultados:
+2. Confira o serviço **ProjectData** usando seu navegador com a seguinte URL: **http://ServerName /ProjectServerName/_api/ProjectData**. Por exemplo, se a instância do Project Web App for `http://MyServer/pwa`, o navegador mostrará os seguintes resultados:
     
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -103,7 +103,7 @@ O Office Developer Tools para Visual Studio inclui um modelo de suplemento de pa
     
     O Visual Studio cria o projeto **HelloProjectOdata** e o projeto **HelloProjectODataWeb**.
     
-A pasta **AddIn** (consulte a próxima captura de tela) contém o arquivo de App.css para estilos CSS personalizados. Na subpasta **Home**, o arquivo Home.html contém referências para os arquivos CSS e os arquivos JavaScript que o suplemento usa, além do conteúdo do HTML5 para o suplemento. Além disso, o arquivo Home.js é para o código JavaScript personalizado. A pasta **Scripts** inclui os arquivos da biblioteca jQuery. A subpasta **Office** inclui as bibliotecas de JavaScript, como office. js e project-15.js, além de bibliotecas de idioma para sequências de caracteres padrão nos suplementos do Office. Na pasta **Content**, o arquivo Office.css contém os estilos padrão para todos os suplementos do Office.
+A pasta **AddIn** (veja a captura de tela a seguir) contém o arquivo App.css para estilos CSS personalizados. Na subpasta **Home**, o arquivo Home.html contém referências para arquivos CSS e JavaScript que o suplemento usa, e o conteúdo HTML5 para o suplemento. Além disso, o arquivo Home.js é para o seu código JavaScript personalizado. A pasta **Scripts** inclui os arquivos da biblioteca jQuery. A subpasta **Office** inclui as bibliotecas JavaScript, como office.js e project-15.js, além das bibliotecas de linguagem para cadeias de caracteres padrão nos suplementos do Office. Na pasta **Content**, o arquivo Office.css contém os estilos padrão de todos os Suplementos do Office.
 
 *Figura 4. Exibição de arquivos de projeto Web padrão no Gerenciador de Soluções*
 
@@ -111,7 +111,7 @@ A pasta **AddIn** (consulte a próxima captura de tela) contém o arquivo de App
 
 O manifesto para o projeto **HelloProjectOData** é o arquivo HelloProjectOData.xml. Opcionalmente, você pode modificar o manifesto para adicionar uma descrição do suplemento, uma referência a um ícone, informações de linguagem adicionais e outras configurações. O Procedimento 3 simplesmente modifica o nome de exibição e a descrição do suplemento e adiciona um ícone.
 
-Para saber mais sobre o manifesto, confira [Manifesto XML de suplementos do Office](../develop/add-in-manifests.md) e [Referência de esquema para manifestos de suplementos do Office (versão 1.1)](../develop/add-in-manifests.md#see-also).
+Para saber mais sobre o manifesto, confira [Manifesto XML de Suplementos do Office](../develop/add-in-manifests.md) e [Referência de esquema para manifestos de Suplementos do Office (versão 1.1)](../develop/add-in-manifests.md#see-also).
 
 ### <a name="procedure-3-to-modify-the-add-in-manifest"></a>Procedimento 3. Para modificar o manifesto do suplemento
 
@@ -132,7 +132,7 @@ As etapas a seguir mostram como adicionar um arquivo de ícone à solução do V
     
     Como alternativa, use seu próprio ícone de 32 x 32 ou copie a imagem a seguir para um arquivo chamado NewIcon.png e, em seguida, adicione esse arquivo à pasta `HelloProjectODataWeb\Images`:
     
-    ![Ícone do aplicativo HelloProjectOData](../images/pj15-hello-project-data-new-icon.jpg)
+    ![Ícone do aplicativo HelloProjectOData ](../images/pj15-hello-project-data-new-icon.jpg)
 
 3. No manifesto HelloProjectOData.xml, adicione um elemento **IconUrl** abaixo do elemento **Description**, em que o valor da URL do ícone é o caminho relativo para o arquivo do ícone de 32 x 32 pixels. Por exemplo, adicione a seguinte linha: **<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />**. O arquivo de manifesto HelloProjectOData.xml agora contém o seguinte (seu valor **Id** será diferente):
 
@@ -1132,7 +1132,7 @@ Se você modificar o suplemento **HelloProjectOData** para uso em produção, si
 
   `~/ProjectData/Projects()?skip= [numSkipped]&amp;$top=100&amp;$filter=[filter]&amp;$select=[field1,field2, ???????]`
     
-  Para mais informaçãos, veja [Opções de consulta do sistema OData usando o ponto de extremidade REST](https://docs.microsoft.com/previous-versions/dynamicscrm-2015/developers-guide/gg309461(v=crm.7)). Você também pode usar o comando [Set-SPProjectOdataConfiguration](http://technet.microsoft.com/library/jj219516%28v=office.15%29.aspx) no Windows PowerShell para substituir o tamanho de página padrão para uma consulta do conjunto de entidades **Projetos** (ou de qualquer um dos 33 conjuntos de entidades). Veja [ProjectData - Referência do serviço OData do projeto](https://docs.microsoft.com/previous-versions/office/project-odata/jj163015(v=office.15)).
+  For more information, see [OData System Query Options Using the REST Endpoint](https://docs.microsoft.com/previous-versions/dynamicscrm-2015/developers-guide/gg309461(v=crm.7)). You can also use the [Set-SPProjectOdataConfiguration](https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/Set-SPProjectOdataConfiguration?view=sharepoint-ps) command in Windows PowerShell to override the default page size for a query of the **Projects** entity set (or any of the 33 entity sets). See [ProjectData - Project OData service reference](https://docs.microsoft.com/previous-versions/office/project-odata/jj163015(v=office.15)).
     
 - Para implantar o suplemento, confira [Publicar seu suplemento do Office](../publish/publish.md).
     

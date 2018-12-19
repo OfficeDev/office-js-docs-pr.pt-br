@@ -2,12 +2,12 @@
 title: Privacidade e segurança para suplementos do Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: c8fb61d6366d36ab14a072af80702226fe5efa9c
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+ms.openlocfilehash: 339726df186860ba23a51e842d55231d2e8797f0
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25005047"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270870"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 
@@ -49,7 +49,7 @@ Como mostrado na figura a seguir, em um computador de mesa Mac OS X, a página d
 
 *Figura 2. Ambiente de execução dos Suplementos do Office nos clientes Mac OS X*
 
-![Aplicativos para o ambiente de execução do Office no Mac OS X](../images/dk2-agave-overview-mac-02.png)
+![Apps for Office runtime environment on OS X Mac](../images/dk2-agave-overview-mac-02.png)
 
 O tempo de execução de Suplementos do Office gerencia a comunicação entre processos, a conversão de eventos e chamadas à API JavaScript em itens nativos, bem como o suporte de comunicação remota da interface do usuário para habilitar o suplemento a ser processado dentro do documento, em um painel de tarefas ou de forma adjacente a uma mensagem de e-mail, solicitação de reunião ou compromisso.
 
@@ -102,7 +102,7 @@ Os suplementos do Outlook fornecem recursos adicionais de segurança e desempenh
 
 ### <a name="developer-guidelines-to-handle-pii"></a>Diretrizes de desenvolvedor para lidar com PII
 
-A seguir, são listadas algumas diretrizes de proteção de PII específicas para você como um desenvolvedor de Suplementos do Office:
+A seguir são listadas algumas diretrizes de proteção específicas de PII para desenvolvedores de Suplementos do Office:
 
 - O objeto [Settings](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js) destina-se a persistir configurações e dados de estado de suplementos entre sessões para um suplemento de conteúdo ou de painel de tarefas, mas não armazena senhas e outros itens de PII confidenciais no objeto **Settings**. Os dados no objeto **Settings** não ficam visíveis para os usuários finais, mas são armazenados como parte do formato de arquivo do documento, que está prontamente acessível. Você deve limitar o uso de PII pelo suplemento e armazenar quaisquer itens de PII necessários ao suplemento no servidor que hospeda o suplemento como um recurso protegido pelo usuário.
 
@@ -118,7 +118,7 @@ Siga estas diretrizes gerais para dar suporte ao modelo de segurança de Supleme
 
 ### <a name="permissions-choices"></a>Opções de permissões
 
-A plataforma de suplemento fornece um modelo de permissões que o seu suplemento usa para declarar o nível de acesso aos dados de um usuário que ele exige para seus recursos. Cada nível de permissão corresponde ao subconjunto da API JavaScript para Office que seu suplemento pode usar em seus recursos. Por exemplo, a permissão **WriteDocument** para os suplementos do conteúdo e do painel de tarefas permite acesso ao método [Document.setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js), que permite que um suplemento grave no documento do usuário, mas não permite acesso a qualquer um dos métodos para ler dados do documento. Esse nível de permissão faz sentido para suplementos que precisam apenas gravar em um documento, como um suplemento no qual o usuário pode consultar dados para inserir em seus documentos.
+A plataforma de suplementos fornece um modelo de permissões que o suplemento usa para declarar o nível de acesso aos dados de um usuário de que necessita para seus recursos. Cada nível de permissão corresponde ao subconjunto da API JavaScript para Office que o suplemento tem permissão para usar para seus recursos. Por exemplo, a permissão **WriteDocument** para suplementos de conteúdo e de painel de tarefas permite acessar o método [Document.setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js), que permite que um suplemento grave no documento do usuário, mas não permite o acesso a nenhum dos métodos para ler dados do documento. Esse nível de permissão faz sentido para suplementos que só precisam gravar em um documento, como um suplemento em que o usuário pode consultar dados para inserir em seu documento.
 
 Como prática recomendada, você deve solicitar permissões com base no princípio de _menor privilégio_. Ou seja, você deve solicitar permissão para acessar apenas o subconjunto mínimo da API que o suplemento requer para funcionar corretamente. Por exemplo, se o suplemento precisa apenas ler dados no documento de um usuário para seus recursos, você não deve solicitar mais do que a permissão **ReadDocument**. (Porém, lembre-se de que a solicitação de permissões insuficientes fará com que a plataforma de suplementos bloqueie o uso de algumas APIs pelo suplemento e gerará erros em tempo de execução.)
 
@@ -169,11 +169,11 @@ function loadVideoDetails(videoIndex) {
 }
 ```
 
-O Exchange e o SharePoint fornecem proxies do lado do cliente para habilitar o acesso de domínio cruzado. Em geral, a política de mesma origem em uma intranet não é tão estrita como na Internet. Para saber mais, confira [Política de mesma origem, parte 1: sem exibição](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx) e [Como lidar com limitações de política de mesma origem nos Suplementos do Office](../develop/addressing-same-origin-policy-limitations.md).
+O Exchange e o SharePoint fornecem proxies do lado do cliente para habilitar o acesso de domínio cruzado. Em geral, a política de mesma origem em uma intranet não é tão estrita como na Internet. Para saber mais, confira [Política de mesma origem, parte 1: sem exibição](https://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx) e [Como lidar com limitações de política de mesma origem nos Suplementos do Office](../develop/addressing-same-origin-policy-limitations.md).
 
 ### <a name="tips-to-prevent-malicious-cross-site-scripting"></a>Dicas para evitar scripts mal-intencionados entre sites
 
-Um usuário mal-intencionado pode atacar a origem de um suplemento inserindo um script mal-intencionado no documento ou nos campos do suplemento. Um desenvolvedor deve processar a entrada do usuário para evitar a execução do JavaScript de um usuário mal-intencionado em seu domínio. A seguir estão algumas boas práticas a serem seguidas para manipular a entrada do usuário a partir de um documento ou mensagem de e-mail, ou por meio de campos em um suplemento:
+Um usuário mal-intencionado pode atacar a origem de um suplemento inserindo um script mal-intencionado por meio do documento ou de campos no suplemento. Um desenvolvedor deve processar a entrada do usuário para evitar a execução de JavaScript de um usuário mal-intencionado em seu domínio. Estas são algumas práticas recomendadas a seguir para manipular a entrada do usuário em um documento ou uma mensagem de e-mail ou por meio de campos em um suplemento:
 
 
 - Em vez da propriedade DOM [innerHTML](https://developer.mozilla.org/docs/Web/API/Element/innerHTML), use as propriedades [innerText](https://developer.mozilla.org/docs/Web/API/Node/innerText) e [textContent](https://developer.mozilla.org/docs/DOM/Node.textContent) quando apropriado. Faça o seguinte para o suporte entre navegadores do Internet Explorer e do Firefox:
@@ -182,13 +182,13 @@ Um usuário mal-intencionado pode atacar a origem de um suplemento inserindo um 
      var text = x.innerText || x.textContent
     ```
 
-    Para saber mais sobre as diferenças entre **innerText** e **textContent**, confira [Node.textContent](https://developer.mozilla.org/docs/DOM/Node.textContent). Para saber mais sobre a compatibilidade de DOM entre navegadores comuns, consulte [Compatibilidade de DOM W3C ‒ HTML](http://www.quirksmode.org/dom/w3c_html.html#t07).
+    Para saber mais sobre as diferenças entre **innerText** e **textContent**, confira [Node.textContent](https://developer.mozilla.org/docs/DOM/Node.textContent). Para saber mais sobre a compatibilidade de DOM entre navegadores comuns, consulte [Compatibilidade de DOM W3C ‒ HTML](https://www.quirksmode.org/dom/w3c_html.html#t07).
 
 - Se precisar usar **innerHTML**, verifique se a entrada do usuário não tem conteúdo mal-intencionado antes de passá-la para **innerHTML**. Para saber mais e obter um exemplo de como usar **innerHTML** com segurança, confira a propriedade [innerHTML](https://developer.mozilla.org/docs/Web/API/Element/innerHTML).
 
-- Se estiver usando jQuery, use o método [.text()](http://api.jquery.com/text/) em vez do método [.html()](http://api.jquery.com/html/).
+- Se estiver usando jQuery, use o método [.text()](https://api.jquery.com/text/) em vez do método [.html()](https://api.jquery.com/html/).
 
-- Use o método [toStaticHTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) para remover atributos e elementos HTML dinâmicos da entrada dos usuários antes de passá-la para **innerHTML**.
+- Use o método [toStaticHTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Reference) para remover atributos e elementos HTML dinâmicos da entrada dos usuários antes de passá-la para **innerHTML**.
 
 - Use a função [encodeURIComponent](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuricomponent) ou [encodeURI](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuri) para codificar texto que se destina a ser uma URL que vem da entrada do usuário ou a contém.
 
@@ -196,7 +196,7 @@ Um usuário mal-intencionado pode atacar a origem de um suplemento inserindo um 
 
 ### <a name="tips-to-prevent-clickjacking"></a>Dicas para impedir "clickjacking"
 
-Como os suplementos do Office são processados em um iframe durante a execução em um navegador com aplicativos de host do Office Online, use as dicas a seguir para reduzir o risco de [clickjacking](http://en.wikipedia.org/wiki/Clickjacking), uma técnica explorada por hackers para induzir os usuários a revelarem informações confidenciais.
+Como os suplementos do Office são processados em um iframe durante a execução em um navegador com aplicativos de host do Office Online, use as dicas a seguir para reduzir o risco de [clickjacking](https://en.wikipedia.org/wiki/Clickjacking), uma técnica explorada por hackers para induzir os usuários a revelarem informações confidenciais.
 
 Em primeiro lugar, identifique ações confidenciais que o suplemento pode executar. Elas incluem ações que um usuário não autorizado pode usar de forma mal-intencionada, como iniciar uma transação financeira ou publicar dados confidenciais. Por exemplo, o suplemento pode permitir que o usuário envie um pagamento a um destinatário definido pelo usuário.
 
@@ -255,6 +255,6 @@ Em uma configuração corporativa, os administradores de TI têm autoridade fina
 - [Limites de ativação e da API do JavaScript API para suplementos do Outlook](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
 - [Como lidar com limitações de política de mesma origem nos suplementos do Office](https://docs.microsoft.com/office/dev/add-ins/develop/addressing-same-origin-policy-limitations)
 - [Política de Mesma Origem](https://www.w3.org/Security/wiki/Same_Origin_Policy)
-- [Política de Mesma Origem Parte 1: Sem Inspecionar](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)
+- [Política de Mesma Origem Parte 1: Sem Inspecionar](https://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)
 - [Política de mesma origem para JavaScript](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)
 - [Modo Protegido do IE](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)
