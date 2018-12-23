@@ -15,82 +15,79 @@ Neste tutorial, você vai:
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* [Node e npm](https://nodejs.org/en/)
+* [Node](https://nodejs.org/en/) (versão 8.0.0 ou posterior)
 
 * [Git Bash](https://git-scm.com/downloads) (ou outro cliente Git)
 
-* A versão mais recente da [Yeoman](https://yeoman.io/) e do [gerador Yo Office](https://www.npmjs.com/package/generator-office). Para instalar essas ferramentas globalmente, execute o seguinte comando para instalar o SDK:
+* A versão mais recente do [Yeoman](https://yeoman.io/) e do [Yeoman gerador de suplementos do Office](https://www.npmjs.com/package/generator-office). Para instalar essas ferramentas globalmente, execute o seguinte comando por meio do prompt de comando:
 
-    ```bash
+    ```
     npm install -g yo generator-office
     ```
 
-* Excel para Windows (versão 1810 ou posterior) ou o Excel Online
+    > [!NOTE]
+    > Mesmo se você já instalou o gerador Yeoman, recomendamos atualizar seu pacote para a versão mais recente do npm.
+
+* Excel para Windows (versão 1810 64 bits ou posterior) ou o Excel Online
 
 * Ingressar o [programa Office Insider](https://products.office.com/office-insider) (nível**Insider**, anteriormente chamado de "Insider – modo rápido")
 
 ## <a name="create-a-custom-functions-project"></a>Criar um projeto com funções personalizadas
 
-Você vai começar este tutorial usando o gerador Yo Office para criar os arquivos necessários para seu projeto de funções personalizadas.
+ Para começar, você usará o gerador Yeoman para criar projeto com funções personalizadas. Isso configurará seu projeto com a estrutura de pastas, arquivos de origem e dependências corretos para começar a codificar suas funções personalizadas.
 
 1. Execute o comando a seguir e responda aos prompts da seguinte forma.
 
-    ```bash
+    ```
     yo office
     ```
 
     * Escolha o tipo de projeto:`Excel Custom Functions Add-in project (...)`
+
     * Escolha um tipo de script: `JavaScript`
+
     * Qual será o nome do suplemento? `stock-ticker`
 
-    ![Yo bash Office solicita funções personalizadas](../images/yo-office-cfs-stock-ticker-3.png)
+    ![O gerador Yeoman para suplementos do Office solicita funções personalizadas](../images/12-10-fork-cf-pic.jpg)
 
-    Depois que você concluir o assistente, o gerador criará os arquivos do projeto e instalará os componentes Node de suporte. Os arquivos do project são provenientes de [Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) GitHub repository.
+    O gerador Yeoman criará os arquivos do projeto e instalará os componentes Node de suporte. Os arquivos do project são provenientes de [Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) repositório GitHub.
 
-2. Navegue até a pasta do projeto.
+2. Vá até a pasta do projeto.
 
-    ```bash
+    ```
     cd stock-ticker
     ```
 
-3. Inicie o servidor Web local.
+3. Confie no certificado autoassinado necessário para executar este projeto. Para obter instruções detalhadas para Windows ou Mac, confira [Adicionando Certificados Autoassinados como Certificado Raiz Confiável](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).  
+
+4. Crie um projeto.
+
+    ```
+    npm run build
+    ```
+
+5. Inicie o servidor local da web, que é executado no Node.
 
     * Se estiver usando o Excel para Windows para testar suas funções personalizadas, execute o seguinte comando para inciar o servidor local da web, inicie o Excel e carregue o suplemento:
 
-        ```bash
-        npm run start-desktop
         ```
+         npm run start
+        ```
+        Depois de executar esse comando, seu prompt de comando mostrará detalhes sobre o que foi feito, outra janela do npm será aberta mostrando os detalhes da compilação, e o Excel iniciará com o seu suplemento carregado. Se o suplemento não carregar, verifique se você concluiu a etapa 3 corretamente.
 
-    * Se estiver usando o Excel Online para testar suas funções personalizadas, execute o seguinte comando para inciar o servidor local da web: 
+    * Se estiver usando o Excel Online para testar suas funções personalizadas, execute o seguinte comando para inciar o servidor local da web:
 
-        ```bash
+        ```
         npm run start-web
         ```
 
+         Depois de executar esse comando, outra janela será aberta mostrando os detalhes da compilação. Para usar suas funções, abra uma nova pasta de trabalho no Office Online.
+
 ## <a name="try-out-a-prebuilt-custom-function"></a>Experimente uma função personalizada predefinida
 
-O projeto de funções personalizadas criado usando o gerador Yo Office contém algumas funções personalizadas predefinidas definidas no arquivo **src/functions/functions.js**. O arquivo **manifest. XML** na pasta raiz do projeto especifica que todas as funções personalizadas pertencem ao `CONTOSO` namespace.
+O projeto de funções personalizadas criado usando o gerador Yeoman contém algumas funções personalizadas predefinidas definidas no arquivo **src/customfunction.js**. O arquivo **manifest. XML** na pasta raiz do projeto especifica que todas as funções personalizadas pertencem ao `CONTOSO` namespace.
 
-Antes de usar as funções personalizadas predefinidas, você deverá registrar o suplemento de funções personalizadas no Excel. Para fazer isso, conclua as etapas para a plataforma que usará neste tutorial.
-
-* Se estiver usando o Excel para Windows para testar suas funções personalizadas:
-
-    1. No Excel, escolha a guia**Inserir** e, em seguida, escolha a seta para baixo localizada à direita de **Meus Suplementos**.  ![ Inserir faixa de opções no Excel para Windows com a seta Meus complementos realçada](../images/excel-cf-register-add-in-1b.png)
-
-    2. Na lista de suplementos disponíveis, localize a seção**suplementos do desenvolvedor** e selecione o suplemento**funções do Excel personalizado** para registrá-lo.
-        ![Inserir faixa de opções no Excel para Windows com o suplemento Funções Personalizadas do Excel realçado na minha lista de suplementos](../images/excel-cf-register-add-in-2.png)
-
-* Se estiver usando o Excel Online para testar suas funções personalizadas: 
-
-    1. No Excel Online, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.  ![Inserir faixa de opções no Excel Online com o ícone Meus Suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
-
-    2. Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**. 
-
-    3. Escolha **Procurar... ** e navegue até o diretório raiz do projeto criado pelo gerador Office Yo. 
-
-    4. Selecione o arquivo **manifest. XML** e escolha **aberto**, escolha **Carregar**.
-
-Neste ponto, as funções personalizadas predefinidas do projeto são carregadas e estão disponíveis no Excel. Experimentar a `ADD` função personalizada preenchendo os seguintes etapas no Excel:
+Em sua pasta de trabalho do Excel experimente a função personalizada`ADD` preenchendo as seguintes etapas no Excel:
 
 1. Em uma célula, digite **= CONTOSO**. Observe que o menu de preenchimento automático mostra a lista de todas as funções na `CONTOSO` namespace.
 
@@ -102,11 +99,11 @@ O `ADD` função personalizada calcula a soma de dois números que você especif
 
 E se você precisasse de uma função que pode solicitar uma API de preço de uma ação e exibir o resultado na célula de uma planilha? Funções personalizadas são projetadas para que você possa facilmente solicitar os dados da web de forma assíncrona.
 
-Conclua as seguintes etapas para criar uma função personalizada chamada `stockPrice` que aceita cotação da bolsa (por exemplo, **MSFT**) e retorna o preço dessa ação. Esta função personalizada usa IEX Trading API, que é gratuito e não requer autenticação.
+Conclua as seguintes etapas para criar uma função personalizada chamada `stockPrice` que aceita um símbolo de cotação da bolsa (por exemplo, **MSFT**) e retorna o preço dessa ação. Esta função personalizada usa IEX Trading API, que é gratuito e não requer autenticação.
 
-1. No projeto**cotações** que o gerador do Office Yo criou, localize o arquivo **src/functions/functions.js** e abra-o no seu editor de código.
+1. No projeto**cotações** que o gerador Yeoman criou, localize o arquivo **src/customfunctions.js** e abra-o no seu editor de código.
 
-2. Adicione o código a seguir a **customfunctions.js** e salve o arquivo.
+2. Em **customfunctions.js**, localize a função `increment` e adicione o seguinte código imediatamente após essa função.
 
     ```js
     function stockPrice(ticker) {
@@ -123,14 +120,17 @@ Conclua as seguintes etapas para criar uma função personalizada chamada `stock
         //    will be bubbled up to Excel to indicate an error.
     }
 
+3. In **customfunctions.js**, locate the line`CustomFunctionMappings.INCREMENT = increment;`, add the following line of code immediately after that line, and save the file.
+
+    ```js
     CustomFunctionMappings.STOCKPRICE = stockPrice;
     ```
 
-3. Antes que o Excel possa fazer esta nova função nova disponível para usuários finais, você deve especificar os metadados que descreve essa função. No projeto**cotações** que o gerador do Office Yo criou, localize o arquivo **src/functions/functions.json** e abra-o no seu editor de código. Adicione o seguinte objeto à matriz `functions` no arquivo **src/functions/functions.json** e salve o arquivo.
+4. Antes que o Excel possa disponibilizar essa nova função, você deve especificar metadados para descrever a função para o Excel. Abrir o arquivo **config/customfunctions.json**. Adicione o seguinte objeto JSON à matriz 'funções' e salve o arquivo.
 
     Este JSON descreve a `stockPrice` função.
 
-    ```json
+    ```JSON
     {
         "id": "STOCKPRICE",
         "name": "STOCKPRICE",
@@ -151,7 +151,7 @@ Conclua as seguintes etapas para criar uma função personalizada chamada `stock
     }
     ```
 
-4. Você deverá registrar novamente o suplemento no Excel para que a nova função esteja disponível para os usuários finais. Conclua as etapas para a plataforma que você está usando neste tutorial.
+5. Você deverá registrar novamente o suplemento no Excel para que a nova função esteja disponível para os usuários finais. Conclua as etapas para a plataforma que você está usando neste tutorial.
 
     * Se você estiver usando o Excel para Windows:
 
@@ -159,20 +159,20 @@ Conclua as seguintes etapas para criar uma função personalizada chamada `stock
 
         2. No Excel, escolha a guia**Inserir** e, em seguida, escolha a seta para baixo localizada à direita de **Meus Suplementos**.  ![ Inserir faixa de opções no Excel para Windows com a seta Meus complementos realçada](../images/excel-cf-register-add-in-1b.png)
 
-        1. Na lista de suplementos disponíveis, localize a seção**suplementos do desenvolvedor** e selecione o suplemento**funções do Excel personalizado** para registrá-lo.
+        3. Na lista de suplementos disponíveis, localize a seção**Suplementos do desenvolvedor** e selecione o suplemento **cotações** para registrá-lo.
             ![Inserir faixa de opções no Excel para Windows com o suplemento Funções Personalizadas do Excel realçado na minha lista de suplementos](../images/excel-cf-register-add-in-2.png)
 
-    * Se você estiver usando o Excel Online: 
+    * Se você estiver usando o Excel Online:
 
         1. No Excel Online, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.  ![Inserir faixa de opções no Excel Online com o ícone Meus Suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
 
         2. Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**. 
 
-        3. Escolha **Procurar... ** e navegue até o diretório raiz do projeto criado pelo gerador Office Yo. 
+        3. Escolha **Procurar... ** e navegue até o diretório raiz do projeto criado pelo gerador Yeoman. 
 
         4. Selecione o arquivo **manifest. XML** e escolha **aberto**, escolha **Carregar**.
 
-5. Agora, vamos experimentar a nova função. Na célula **B1**, digite o texto `=CONTOSO.STOCKPRICE("MSFT")` e pressione enter. Você verá que o resultado na célula **B1** é o preço atual das ações para uma ação da Microsoft.
+6. Agora, vamos experimentar a nova função. Na célula **B1**, digite o texto `=CONTOSO.STOCKPRICE("MSFT")` e pressione enter. Você verá que o resultado na célula **B1** é o preço atual das ações para uma ação da Microsoft.
 
 ## <a name="create-a-streaming-asynchronous-custom-function"></a>Criar uma função personalizada assíncrona de streaming
 
@@ -180,7 +180,7 @@ A `stockPrice` função que você acabou de criar retorna o preço de uma ação
 
 Conclua as seguintes etapas para criar uma função personalizada chamada `stockPriceStream` que solicita o preço da ação a cada 1000 milissegundos (desde que a solicitação anterior esteja concluída). Enquanto a solicitação inicial está em andamento, você poderá ver o valor de espaço reservado **# OBTENDO_DADOS** na célula em que a função está sendo exibida. Quando um valor é retornado pela função, **# OBTENDO_DADOS**será substituído por esse valor na célula.
 
-1. No projeto **cotações** que o gerador do Office Yo criou, adicione o código a seguir a **src/functions/functions.js** e salve o arquivo.
+1. No projeto**cotações** que o gerador Yeoman criou, adicione o código a seguir **src/customfunctions.js** e salve o arquivo.
 
     ```js
     function stockPriceStream(ticker, handler) {
@@ -219,7 +219,7 @@ Conclua as seguintes etapas para criar uma função personalizada chamada `stock
     CustomFunctionMappings.STOCKPRICESTREAM = stockPriceStream;
     ```
 
-2. Antes que o Excel possa fazer esta nova função nova disponível para usuários finais, você deve especificar os metadados que descreve essa função. No projeto **cotações** que o gerador do Office Yo criou, adicione o objeto a seguir à matriz `functions` no arquivo **src/functions/functions.json** e salve o arquivo.
+2. Antes que o Excel possa fazer esta nova função nova disponível para usuários, especifique os metadados que descreve essa função. No projeto**cotações** que o gerador Yeoman criou, adicione o objeto a seguir na `functions`matriz em **config/customfunctions.json** e salve o arquivo.
 
     Este JSON descreve a `stockPriceStream` função. Para qualquer função streaming a propriedade `stream` e a propriedade `cancelable` devem ser definidas como `true` dentro do `options` objeto, como mostra este exemplo código.
 
@@ -256,16 +256,16 @@ Conclua as seguintes etapas para criar uma função personalizada chamada `stock
         
         2. No Excel, escolha a guia**Inserir** e, em seguida, escolha a seta para baixo localizada à direita de **Meus Suplementos**.  ![ Inserir faixa de opções no Excel para Windows com a seta Meus complementos realçada](../images/excel-cf-register-add-in-1b.png)
 
-        3. Na lista de suplementos disponíveis, localize a seção**suplementos do desenvolvedor** e selecione o suplemento**funções do Excel personalizado** para registrá-lo.
+        3. Na lista de suplementos disponíveis, localize a seção**Suplementos do desenvolvedor** e selecione o suplemento **cotações** para registrá-lo.
             ![Inserir faixa de opções no Excel para Windows com o suplemento Funções Personalizadas do Excel realçado na minha lista de suplementos](../images/excel-cf-register-add-in-2.png)
 
-    * Se você estiver usando o Excel Online: 
+    * Se você estiver usando o Excel Online:
 
         1. No Excel Online, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.  ![Inserir faixa de opções no Excel Online com o ícone Meus Suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
 
-        2. Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**. 
+        2. Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**.
 
-        3. Escolha **Procurar... ** e navegue até o diretório raiz do projeto criado pelo gerador Office Yo. 
+        3. Escolha **Procurar... ** e navegue até o diretório raiz do projeto criado pelo gerador Yeoman.
 
         4. Selecione o arquivo **manifest. XML** e escolha **aberto**, escolha **Carregar**.
 
@@ -273,7 +273,7 @@ Conclua as seguintes etapas para criar uma função personalizada chamada `stock
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Neste tutorial, você criou um novo projeto de funções personalizadas, experimentou uma função predefinida, criou uma função personalizada que solicita dados da web e criou uma função personalizada que transmite dados em tempo real da Web. Para saber mais sobre funções personalizadas no Excel, prossiga para o seguinte artigo: 
+Neste tutorial, você criou um novo projeto de funções personalizadas, experimentou uma função predefinida, criou uma função personalizada que solicita dados da web e criou uma função personalizada que transmite dados em tempo real da Web. Para saber mais sobre funções personalizadas no Excel, prossiga para o seguinte artigo:
 
 > [!div class="nextstepaction"]
 > [Criar funções personalizadas no Excel](../excel/custom-functions-overview.md)
