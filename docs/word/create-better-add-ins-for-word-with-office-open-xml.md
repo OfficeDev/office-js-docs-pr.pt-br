@@ -1,13 +1,13 @@
 ---
 title: Criar suplementos melhores para o Word com o Office Open XML
 description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: f178a9ee05661e69cc5e08857bbdf8f5081553e0
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.date: 12/17/2018
+ms.openlocfilehash: 79531c7073d2f96620c6cbf1e3bbbbe6e12154e3
+ms.sourcegitcommit: 6870f0d96ed3da2da5a08652006c077a72d811b6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27271045"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "27383285"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Criar suplementos melhores para o Word com o Office Open XML
 
@@ -50,7 +50,7 @@ Você pode usar o mesmo método para inserir qualquer formato de imagem compatí
 *Figura 4. Uma imagem formatada usando efeitos e estilos de imagem*
 
 
-![Imagem formatada no Word 2013.](../images/office15-app-create-wd-app-using-ooxml-fig04.png)
+![Imagem formatada no Word.](../images/office15-app-create-wd-app-using-ooxml-fig04.png)
 
 
 A adição de efeitos e formatação de alta qualidade às imagens requer muito menos marcação do que você poderia esperar.
@@ -72,37 +72,37 @@ Os efeitos de texto estão disponíveis no Word para o texto dentro de uma caixa
 *Figura 7. Uma forma*
 
 
-![Uma forma de desenho do Office 2013 no Word 2013.](../images/office15-app-create-wd-app-using-ooxml-fig07.png)
+![Uma forma de desenho do Microsoft Office no Word.](../images/office15-app-create-wd-app-using-ooxml-fig07.png)
 
 Você pode inserir formas de desenho internas ou personalizadas, com ou sem texto e efeitos de formatação.
 
 *Figura 8. Uma tabela com formatação direta*
 
 
-![Uma tabela formatada no Word 2013.](../images/office15-app-create-wd-app-using-ooxml-fig08.png)
+![Uma tabela formatada no Word.](../images/office15-app-create-wd-app-using-ooxml-fig08.png)
 
 Você pode incluir formatação de texto, bordas, sombreamento, dimensionamento de células ou qualquer formatação de tabela que seja necessária.
 
 *Figura 9. Uma tabela formatada usando um estilo de tabela*
 
 
-![Uma tabela formatada no Word 2013.](../images/office15-app-create-wd-app-using-ooxml-fig09.png)
+![Uma tabela formatada no Word.](../images/office15-app-create-wd-app-using-ooxml-fig09.png)
 
 Você pode usar estilos de tabela internos ou personalizados com a mesma facilidade com que usa um estilo de parágrafo para o texto.
 
 *Figura 10. Um diagrama do SmartArt*
 
 
-![Um diagrama SmartArt dinâmico no Word 2013.](../images/office15-app-create-wd-app-using-ooxml-fig10.png)
+![Um diagrama SmartArt dinâmico no Word.](../images/office15-app-create-wd-app-using-ooxml-fig10.png)
 
-O Office 2013 oferece uma ampla variedade de layouts de diagrama do SmartArt (e você pode usar o Office Open XML para criar os seus próprios).
+O Microsoft Office oferece uma ampla variedade de layouts de diagrama do SmartArt (e você pode usar o Office Open XML para criar os seus próprios).
 
 *Figura 11. Um gráfico*
 
 
-![Um gráfico no Word 2013.](../images/office15-app-create-wd-app-using-ooxml-fig11.png)
+![Um gráfico no Word.](../images/office15-app-create-wd-app-using-ooxml-fig11.png)
 
-Você pode inserir gráficos do Excel como gráficos dinâmicos em documentos do Word, o que também significa que você pode usá-los no seu suplemento do Word. Como você pode ver pelos exemplos anteriores, é possível usar a coerção do Office Open XML para inserir praticamente qualquer tipo de conteúdo que um usuário pode inserir em seu próprio documento. Há duas maneiras simples de obter a marcação do Office Open XML necessária. Adicionar conteúdo avançado a um documento do Word 2013 em branco e salvar o arquivo no formato de Documento XML do Word ou usar um suplemento de teste com o método [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) para obter a marcação. As duas abordagens fornecem basicamente o mesmo resultado.
+Você pode inserir gráficos do Excel como gráficos dinâmicos em documentos do Word, o que também significa que você pode usá-los no seu suplemento do Word. Como você pode ver pelos exemplos anteriores, é possível usar a coerção do Office Open XML para inserir praticamente qualquer tipo de conteúdo que um usuário pode inserir em seu próprio documento. Há duas maneiras simples de obter a marcação do Office Open XML necessária. Adicionar conteúdo avançado a um documento do Word em branco e salvar o arquivo no formato de Documento XML do Word ou usar um suplemento de teste com o método [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) para obter a marcação. As duas abordagens fornecem basicamente o mesmo resultado.
 
 
 > [!NOTE]
@@ -121,10 +121,10 @@ Por exemplo, digamos que você queira inserir apenas um parágrafo de texto com 
 
 
 > [!TIP]
-> Você pode editar a marcação do Office Open XML em um editor de texto como o Bloco de Notas. Se abri-lo no Visual Studio 2015, pode usar **Editar > Avançado > Formatar Documento** (Ctrl+K, Ctrl+D) para formatar o pacote, facilitando a edição. Em seguida, você pode recolher ou expandir partes de um documento ou seções delas, conforme mostrado na Figura 12, para examinar e editar mais facilmente o conteúdo do pacote do Office Open XML. Cada parte do documento começa com uma marca **pkg:part**.
+> Você pode editar a marcação do Office Open XML em um editor de texto como o Bloco de Notas. Se abri-lo no Visual Studio, pode usar **Editar > Avançado > Formatar Documento** (Ctrl+K, Ctrl+D) para formatar o pacote, facilitando a edição. Em seguida, você pode recolher ou expandir partes de um documento ou seções delas, conforme mostrado na Figura 12, para examinar e editar mais facilmente o conteúdo do pacote do Office Open XML. Cada parte do documento começa com uma marca **pkg:part**.
 
 
-*Figura 12. Recolher e expandir partes do pacote para facilitar a edição no Visual Studio 2015*
+*Figura 12. Recolher e expandir partes do pacote para facilitar a edição no Visual Studio*
 
 ![Trecho de código do Office Open XML de uma parte de pacote.](../images/office15-app-create-wd-app-using-ooxml-fig12.png)
 
@@ -207,7 +207,7 @@ Editamos o exemplo do Office Open XML mostrado aqui, conforme descrito na seçã
 
 
 > [!NOTE]
-> Se você adicionar a marcação mostrada aqui a um arquivo XML com as marcas de declaração de XML para versão e mso-application na parte superior do arquivo (mostrado na Figura 13), você poderá abri-lo no Word como um documento do Word. Ou, sem essas marcas, ainda poderá abri-lo usando **Arquivo > Abrir** no Word. Você verá **Modo de Compatibilidade** na barra de título no Word 2013, pois removeu as configurações que avisam ao Word que se trata de um documento da versão 2013. Como você está adicionando a marcação a um documento existente do Word 2013, isso não afetará o conteúdo de forma alguma.
+> Se você adicionar a marcação mostrada aqui a um arquivo XML com as marcas de declaração de XML para versão e mso-application na parte superior do arquivo (mostrado na Figura 13), você poderá abri-lo no Word como um documento do Word. Ou, sem essas marcas, ainda poderá abri-lo usando **Arquivo > Abrir** no Word. Você verá **Modo de Compatibilidade** na barra de título no Word, pois removeu as configurações que avisam ao Word que se trata de um documento. Como você está adicionando a marcação a um documento existente do Word, isso não afetará o conteúdo de forma alguma.
 
 
 ### <a name="javascript-for-using-setselecteddataasync"></a>JavaScript para usar setSelectedDataAsync
@@ -317,7 +317,7 @@ Como document.xml é a parte do documento principal em que você coloca o conte�
 
 
 > [!TIP]
-> Se você estiver editando a marcação no Visual Studio de 2015, após excluir namespaces em qualquer parte, examine todas as marcas dessa parte. Se tiver removido um namespace necessário para a marcação, você verá um pequeno sublinhado ondulado vermelho no prefixo relevante das marcas afetadas. Se remover o namespace **xmlns:mc**, você também deverá remover o atributo **mc:Ignorable** que precede as listagens de namespace.
+> Se você estiver editando a marcação no Visual Studio, após excluir namespaces em qualquer parte, examine todas as marcas dessa parte. Se tiver removido um namespace necessário para a marcação, você verá um pequeno sublinhado ondulado vermelho no prefixo relevante das marcas afetadas. Se remover o namespace **xmlns:mc**, você também deverá remover o atributo **mc:Ignorable** que precede as listagens de namespace.
 
 
 - Dentro da marca de abertura do corpo, você verá uma marca de parágrafo (**w:p**), que inclui o conteúdo para este exemplo.
@@ -333,7 +333,7 @@ Como document.xml é a parte do documento principal em que você coloca o conte�
 
     Como a formatação incluída neste exemplo é a formatação da fonte (ou seja, a formatação que pode ser aplicada a apenas um caractere), ela também aparece nas propriedades para a execução individual.
 
-- Observe também as marcas para o indicador oculto "_GoBack" (**w:bookmarkStart** e **w:bookmarkEnd**), que aparecem nos documentos do Word 2013 por padrão. Você sempre pode excluir as marcas de início e de término do indicador GoBack da marcação.
+- Observe também as marcas para o indicador oculto "_GoBack" (**w:bookmarkStart** e **w:bookmarkEnd**), que aparecem nos documentos do Word por padrão. Você sempre pode excluir as marcas de início e de término do indicador GoBack da marcação.
 
 - A última parte do corpo do documento é a marca **w:sectPr**, ou propriedades de seção. Essa marca inclui configurações como margens e orientação da página. O conteúdo que você inserir usando **setSelectedDataAsync** adotará as propriedades da seção ativa no documento de destino por padrão. Portanto, a menos que o conteúdo inclua uma quebra de seção (nesse caso, haverá mais de uma marca **w:sectPr**), você pode excluir essa marca.
 
@@ -349,7 +349,7 @@ Lembre-se de que se você usar os recursos de coautoria no Word (como a capacida
 
 Para desativar atributos RSID no Word para documentos que você criar no futuro, faça o seguinte: 
 
-1. No Word 2013, escolha a guia **Arquivo** e escolha **Opções**.
+1. No Word, escolha a guia **Arquivo** e escolha **Opções**.
 2. Na caixa de diálogo Opções do Word, escolha **Central de Confiabilidade** e escolha **Configurações da Central de Confiabilidade**.
 3. Na caixa de diálogo Central de Confiabilidade, escolha **Opções de privacidade** e desative a configuração **Armazenar número aleatório para melhorar a precisão da combinação**.
 
@@ -378,7 +378,7 @@ Se a marcação da forma ou da caixa de texto parece muito mais complexa do que 
 
 Portanto, para dar suporte a formas e caixas de texto em documentos do Word no Formato do Office Open XML quando abertos no Word 2007, as formas (incluindo caixas de texto) exigem marcação VML de fallback.
 
-Normalmente, como você pode ver nos exemplos de forma e caixa de texto incluídos no exemplo de código [Word-Add-in-Load-and-write-Open-XML](https://github.com/OfficeDev/Word-Add-in-Load-and-write-Open-XML), a marcação de fallback pode ser removida. O Word 2013 adiciona automaticamente a marcação de fallback ausente às formas quando um documento é salvo. No entanto, se você prefere manter a marcação de fallback para garantir o suporte a todos os cenários de usuário, não há problema em mantê-la.
+Normalmente, como você pode ver nos exemplos de forma e caixa de texto incluídos no exemplo de código [Word-Add-in-Load-and-write-Open-XML](https://github.com/OfficeDev/Word-Add-in-Load-and-write-Open-XML), a marcação da reparação pode ser removida. O Word adiciona automaticamente a marcação de reparação ausente às formas quando um documento é salvo. No entanto, se você prefere manter a marcação de reparação para garantir o suporte a todos os cenários de usuário, não há problema em mantê-la.
 
 Se houver objetos de desenho agrupados incluídos no conteúdo, você verá marcação adicional (e aparentemente repetitiva), mas isso deve ser mantido. Partes da marcação para formas de desenho são duplicadas quando o objeto é incluído em um grupo.
 
@@ -396,14 +396,14 @@ A forma nesses exemplos de código é posicionada em relação às margens direi
 
 ### <a name="working-with-content-controls"></a>Trabalho com controles de conteúdo
 
-Os controles de conteúdo são um recurso importante no Word 2013 que pode aprimorar consideravelmente a capacidade do suplemento para o Word de várias maneiras, incluindo permitindo-lhe inserir o conteúdo em locais designados no documento, em vez de apenas na seleção.
+Os controles de conteúdo são um recurso importante no Word que pode aprimorar consideravelmente a capacidade do suplemento para o Word de várias maneiras, incluindo permitindo-lhe inserir o conteúdo em locais designados no documento, em vez de apenas na seleção.
 
 No Word, localize os controles de conteúdo na guia Desenvolvedor da faixa de opções, conforme mostrado aqui na Figura 15.
 
 
 *Figura 15. O grupo Controles na guia Desenvolvedor no Word*
 
-![Grupo de Controles de conteúdo na faixa de opções do Word 2013.](../images/office15-app-create-wd-app-using-ooxml-fig15.png)
+![Grupo de Controles de conteúdo na faixa de opções do Word.](../images/office15-app-create-wd-app-using-ooxml-fig15.png)
 
 Os tipos de controles de conteúdo no Word incluem RTF, texto sem formatação, imagem, galeria de blocos de construção, caixa de seleção, lista suspensa, caixa de combinação, seletor de data e seção de repetição.
 
@@ -480,7 +480,7 @@ A marca **w:sdt** que você vê no corpo de document.xml representa o controle d
 
 - A **id** exclusiva é uma propriedade necessária. Se você associar ao controle de dentro do suplemento, a ID será a propriedade que a vinculação usa no documento para identificar o controle de conteúdo nomeado aplicável.
 
-- O atributo **appearance** é usado para ocultar o contêiner de controle, para gerar uma aparência mais limpa. Esse é um novo recurso no Word 2013, como você pode ver pelo uso do namespace w15. Como essa propriedade é usada, o namespace w15 é mantido no início da parte document.xml.
+- O atributo **aparência** é usado para ocultar o contêiner de controle, para gerar uma aparência mais limpa. Esse é um novo recurso no Word 2013, como você pode ver pelo uso do namespace w15. Como essa propriedade é usada, o namespace w15 é mantida no início da parte document.xml.
 
 - O atributo **showingPlcHdr** é uma configuração opcional que define o conteúdo padrão que você inclui no controle (texto, neste exemplo) como conteúdo de espaço reservado. Portanto, se o usuário clica ou toca na área de controle, todo o conteúdo é selecionado, em vez de se comportar como conteúdo editável no qual o usuário pode fazer alterações.
 
@@ -672,7 +672,7 @@ Portanto, por exemplo, o único conteúdo que é preciso manter da parte styles.
 
 
 > [!NOTE]
-> Uma definição completa do Word 2013 para o estilo Título 1 foi mantida neste exemplo.
+> Uma definição completa do Word para o estilo Título 1 foi mantida neste exemplo.
 
 
 
@@ -797,7 +797,7 @@ De forma semelhante aos diagramas SmartArt, os gráficos contêm várias partes 
 
     Há três arquivos referenciados em chart1.xml.rels, mas apenas um é obrigatório. Eles são os dados binários da pasta de trabalho do Excel (obrigatório) e as cores e partes do estilo (colors1.xml e styles1.xml), que você pode remover.
 
-Os gráficos que você pode criar e editar de forma nativa no Word 2013 são gráficos do Excel 2013, e seus dados são mantidos em uma planilha do Excel que é inserida como dados binários no pacote do Office Open XML. Assim como as partes de dados binários para imagens, esses dados binários do Excel são necessários, mas não há nada para editar nessa parte. Portanto, você pode simplesmente recolher a parte no editor para evitar ter que rolar manualmente por ela para examinar o restante do pacote do Office Open XML.
+Os gráficos que você pode criar e editar de forma nativa no Word são gráficos do Excel, e seus dados são mantidos em uma planilha do Excel que é inserida como dados binários no pacote do Office Open XML. Assim como as partes de dados binários para imagens, esses dados binários do Excel são necessários, mas não há nada para editar nessa parte. Portanto, você pode simplesmente recolher a parte no editor para evitar ter que rolar manualmente por ela para examinar o restante do pacote do Office Open XML.
 
 No entanto, de forma semelhante ao SmartArt, você pode excluir as partes de cores e estilos. Se você tiver usado os estilos de gráfico e de cor disponíveis para formatar o gráfico, o gráfico adotará a formatação aplicável automaticamente quando for inserido no documento de destino.
 
@@ -814,7 +814,7 @@ Você já viu como identificar e editar o conteúdo na marcação. Se a tarefa a
 > Lembre-se de que você pode usar todas as partes .rels no pacote como um mapa para verificar rapidamente se há partes do documento que pode remover.
 
 
-1. Abra o arquivo XML compactado no Visual Studio 2015 e pressione Ctrl+K, Ctrl+D para formatar o arquivo. Em seguida, use os botões de recolher/expandir à esquerda para recolher as partes que você sabe que precisa remover. Também convém recolher partes longas de que você precisa, mas que sabe que não precisará editar (como os dados binários em base 64 para um arquivo de imagem), tornando a verificação visual da marcação mais rápida e fácil.
+1. Abra o arquivo XML compactado no Visual Studio e pressione Ctrl+K, Ctrl+D para formatar o arquivo. Em seguida, use os botões de recolher/expandir à esquerda para recolher as partes que você sabe que precisa remover. Também convém recolher partes longas de que você precisa, mas que sabe que não precisará editar (como os dados binários em base64 para um arquivo de imagem), tornando a verificação visual da marcação mais rápida e fácil.
 
 2. Há várias partes do pacote de documento que você quase sempre pode remover ao preparar a marcação do Office Open XML para uso no suplemento. Convém começar removendo-as (bem como suas definições de relação associadas), o que reduzirá bastante o pacote de imediato. Elas incluem theme1, fontTable, settings, webSettings, thumbnail, os arquivos de propriedades principal e do suplemento e quaisquer partes de `taskpane` ou de `webExtension`.
 
@@ -834,7 +834,7 @@ Independentemente de você parar por aqui ou optar por se aprofundar ainda mais 
 
 
 > [!TIP]
-> Se você atualizar um trecho do Office Open XML em uma solução existente durante o desenvolvimento, limpe arquivos de Internet temporários antes de executar a solução novamente para atualizar o Office Open XML usado pelo código. A marcação incluída na solução em arquivos XML é armazenada em cache no computador. Claro, você pode limpar os arquivos de Internet temporários do navegador da Web padrão. Para acessar as opções da Internet e excluir essas configurações de dentro do Visual Studio 2015, no menu **Depurar**, escolha **Opções e Configurações**. Em seguida, em **Ambiente**, escolha **Navegador da Web** e **Opções do Internet Explorer**.
+> Se você atualizar um trecho do Office Open XML em uma solução existente durante o desenvolvimento, limpe arquivos de Internet temporários antes de executar a solução novamente para atualizar o Office Open XML usado pelo código. A marcação incluída na solução em arquivos XML é armazenada no cache no computador. Claro, você pode limpar os arquivos de Internet temporários do navegador da Web padrão. Para acessar as opções da Internet e excluir essas configurações de dentro do Visual Studio 2017, no menu **Depurar**, escolha **Opções**. Em seguida, em **Ambiente**, escolha **Navegador da Web** e **Opções do Internet Explorer**.
 
 
 ## <a name="creating-an-add-in-for-both-template-and-stand-alone-use"></a>Criação de um suplemento para o modelo e para uso autônomo

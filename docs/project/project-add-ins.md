@@ -1,17 +1,17 @@
 ---
 title: Suplementos do painel de tarefas para Project
 description: ''
-ms.date: 01/23/2018
-ms.openlocfilehash: 024b7d1c7e05e8b7a7a71871eec4b088d45afdc1
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.date: 12/17/2018
+ms.openlocfilehash: 80f8e41a2409873283a38e30506fa954771ecb1e
+ms.sourcegitcommit: 6870f0d96ed3da2da5a08652006c077a72d811b6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270779"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "27383278"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Suplementos do painel de tarefas para Project
 
-O Project Standard 2013 e o Project Professional 2013 (versão 15.1 ou posterior) incluem suporte para suplementos do painel de tarefas. Você pode executar suplementos do painel de tarefas gerais desenvolvidos para o Word 2013 ou para o Excel 2013. Você também pode desenvolver suplementos personalizados que manipulam eventos de seleção no Project e integram tarefas, recursos, exibições e outros dados de nível de célula em um projeto com listas do SharePoint, Suplementos do SharePoint, Web Parts, serviços Web e aplicativos corporativos.
+O Project Standard 2013 e o Project Professional 2013 (versão 15.1 ou posterior) incluem suporte para suplementos do painel de tarefas. Você pode executar suplementos do painel de tarefas gerais desenvolvidos para o Word ou Excel. Você também pode desenvolver suplementos personalizados que manipulam eventos de seleção no Project e integram tarefas, recursos, exibições e outros dados de nível de célula em um projeto com listas do SharePoint, Suplementos do SharePoint, Web Parts, serviços Web e aplicativos corporativos.
 
 > [!NOTE]
 > O [download do SDK do Project 2013](https://www.microsoft.com/download/details.aspx?id=30435%20) inclui suplementos de exemplo que mostram como usar o modelo de objeto do suplemento no Project e como usar o serviço OData para relatar os dados no Project Server 2013. Ao extrair e instalar o SDK, confira o subdiretório `\Samples\Apps\`.
@@ -50,8 +50,6 @@ Cenários de suplementos do Project incluem o seguinte:
 A biblioteca JavaScript para suplementos do Project inclui extensões do alias de namespace do **Office** que permitem que os desenvolvedores acessem propriedades de aplicativo do Project e tarefas, recursos e modos de exibição em um projeto. As extensões de biblioteca JavaScript no arquivo Project-15.js são usadas em um suplemento do Project criado com o Visual Studio 2015. Office.js, Office.debug.js, Project-15.js, Project-15.debug.js e arquivos relacionados também são fornecidos no download do SDK do Project 2013.
 
 Para criar um suplemento, você pode usar um editor de texto simples para criar uma página da Web HTML e arquivos JavaScript relacionados, arquivos CSS e consultas REST. Além de uma página HTML ou um aplicativo Web, um suplemento requer um arquivo de manifesto XML de configuração. O Project pode usar um arquivo de manifesto que inclui um atributo **type** especificado como **TaskPaneExtension**. O arquivo de manifesto pode ser usado por vários aplicativos clientes do Office 2013, ou você pode criar um arquivo de manifesto que seja específico para o Project 2013. Para saber mais, confira a seção _Noções básicas sobre desenvolvimento_ em [Visão geral da plataforma de suplementos do Office](../overview/office-add-ins.md).
-
-Para aplicativos personalizados complexos e depuração mais fácil, recomendamos que você use o Visual Studio 2015 no desenvolvimento de sites para suplementos. O Visual Studio 2015 inclui modelos para projetos de suplementos em que você pode escolher o tipo de suplemento (painel de tarefas, conteúdo ou email) e o aplicativo host (Project, Word, Excel ou Outlook).
 
 Quando você instala o download do SDK do Project 2013, o subdiretório `\Samples\Apps\` inclui os seguintes suplementos de exemplo:
 
