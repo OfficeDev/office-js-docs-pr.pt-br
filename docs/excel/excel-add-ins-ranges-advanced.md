@@ -1,13 +1,13 @@
 ---
 title: Trabalhar com intervalos usando a API JavaScript do Excel (avançado)
 description: ''
-ms.date: 12/14/2018
-ms.openlocfilehash: 42b1127580c46120d337553fdb86a19a78b37567
-ms.sourcegitcommit: 09f124fac7b2e711e1a8be562a99624627c0699e
+ms.date: 12/18/2018
+ms.openlocfilehash: 6d3da1e7eff4e61ae1b88213d0b432581d8f6a8a
+ms.sourcegitcommit: 6870f0d96ed3da2da5a08652006c077a72d811b6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "27283790"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "27383236"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Trabalhar com intervalos usando a API JavaScript do Excel (avançado)
 
@@ -61,10 +61,18 @@ Excel.run(function (context) {
 
 Seu suplemento terá que formatar os intervalos para exibir as datas em um formato mais legível. O exemplo de `"[$-409]m/d/yy h:mm AM/PM;@"` exibe a hora como "3/12/18 15:57". Para obter mais informações sobre formatos de números de data e hora, confira as "Diretrizes para formatos de data e hora" no artigo [Diretrizes de revisão para personalizar um formato de número](https://support.office.com/article/review-guidelines-for-customizing-a-number-format-c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5).
 
-## <a name="copy-and-paste"></a>Copiar e colar
+## <a name="work-with-multiple-ranges-simultaneously-preview"></a>Trabalhar simultaneamente com vários intervalos (Visualização)
 
 > [!NOTE]
-> A função`Range.copyFrom` no momento só está disponível na versão prévia pública (beta). Para usar esse recurso, você deve usar a biblioteca beta do CDN do Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> O`RangeAreas` objeto só está disponível na visualização pública (beta). Para usar esse recurso, você deve usar a biblioteca beta do CDN do Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> Se você estiver usando o TypeScript ou se seu editor de código usar arquivos de definição de tipo do TypeScript do IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+
+O `RangeAreas` objeto permite ao suplemento executar operações em vários intervalos de uma só vez. Esses intervalos poderão ser contíguos, mas não precisam ser. `RangeAreas` são descritas ainda mais no artigo [Trabalhar com vários intervalos simultaneamente em suplementos do Excel](excel-add-ins-multiple-ranges.md).
+
+## <a name="copy-and-paste-preview"></a>Copiar e colar (visualização)
+
+> [!NOTE]
+> A `Range.copyFrom` função só está disponível atualmente na versão visualização pública (beta). Para usar esse recurso, você deve usar a biblioteca beta do CDN do Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 > Se você estiver usando o TypeScript ou se seu editor de código usar arquivos de definição de tipo do TypeScript do IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
 
 A função de `copyFrom` do intervalo replica o comportamento de copiar e colar da IU do Excel. O objeto de intervalo para o qual a função`copyFrom` é chamada é o destino.
@@ -125,10 +133,10 @@ Excel.run(function (context) {
 
 ![Os dados no Excel após o método de copiar do intervalo foram executados](../images/excel-range-copyfrom-skipblanks-after.png)
 
-## <a name="remove-duplicates"></a>Remover duplicatas
+## <a name="remove-duplicates-preview"></a>Remover duplicatas (visualização)
 
 > [!NOTE]
-> A função `removeDuplicates` no momento só está disponível na versão prévia pública (beta). Para usar esse recurso, você deve usar a biblioteca beta do CDN do Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> A função `removeDuplicates` do objeto do intervalo só está disponível atualmente na versão visualização pública (beta). Para usar esse recurso, você deve usar a biblioteca beta do CDN do Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 > Se você estiver usando o TypeScript ou se seu editor de código usar arquivos de definição de tipo do TypeScript do IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
 
 A função do objeto intervalo `removeDuplicates` remove linhas com entradas duplicadas em determinadas colunas. A função passa por cada linha no intervalo do índice de menor valor até o índice de maior valor no intervalo (de cima para baixo). Uma linha é excluída se um valor em sua coluna ou colunas especificadas aparecer mais cedo no intervalo. Linhas no intervalo abaixo da linha excluída são deslocadas para cima. `removeDuplicates` não afeta a posição de células fora do intervalo.

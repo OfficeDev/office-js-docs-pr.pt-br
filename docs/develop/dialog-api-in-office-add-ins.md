@@ -1,13 +1,13 @@
 ---
 title: Use a API de Caixa de Diálogo em seus Suplementos do Office
 description: ''
-ms.date: 11/28/2018
-ms.openlocfilehash: b19d56d3f4fb831eb8c0ca16af53ee309989d223
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.date: 12/20/2018
+ms.openlocfilehash: 0c45a17935cb264db4b8488ec8eaae2535848770
+ms.sourcegitcommit: 6870f0d96ed3da2da5a08652006c077a72d811b6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270954"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "27383243"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Use a API de Caixa de Diálogo em seus Suplementos do Office
 
@@ -218,6 +218,9 @@ function processMessage(arg) {
     }
 }
 ```
+
+> [!NOTE]
+> A `showNotification` implementação não é exibida no código de exemplo fornecido neste artigo. Um exemplo de como você pode implementar essa função dentro do suplemento, confira [Exemplo do suplemento do Office exemplo do diálogo API](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).
 
 ### <a name="closing-the-dialog-box"></a>Feche a caixa de diálogo
 
