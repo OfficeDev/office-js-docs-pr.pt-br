@@ -1,13 +1,13 @@
 ---
 title: Usar temas de documentos em seus suplementos do PowerPoint
 description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: d3cc52d965765c80a692075fe3c6aad4ec64a8ae
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.date: 12/17/2018
+ms.openlocfilehash: 5caa274ae8774e8a30c416085ab4a431d6907944
+ms.sourcegitcommit: 6870f0d96ed3da2da5a08652006c077a72d811b6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925441"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "27383250"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>Usar temas de documentos em seus suplementos do PowerPoint
 
@@ -25,7 +25,7 @@ Todo tema de documento do Office define 12 cores. Dez dessas cores ficam dispon�
 
 ![Paleta de cores](../images/office15-app-color-palette.png)
 
-Para exibir ou personalizar o conjunto completo de 12 cores de temas no PowerPoint, no grupo **Variantes** da guia **Design**, clique no menu suspenso **Mais**, aponte para **Cor** e clique em **Personalizar Cores** para exibir a caixa de diálogo **Criar Novas Cores de Tema**.
+Para exibir ou personalizar o conjunto completo de 12 cores de temas no PowerPoint, no grupo  **Variantes** da guia **Design**, clique no menu suspenso **Mais** em seguida, selecione **Cores** > **Personalizar Cores** para exibir a caixa de diálogo**Criar Novas Cores de Tema**.
 
 ![Criar caixas de diálogo de novas cores de tema](../images/office15-app-create-new-theme-colors.png)
 
@@ -37,7 +37,7 @@ Cada tema de documento do Office também define duas fontes: uma para títulos e
 
 ![O seletor de fonte](../images/office15-app-font-picker.png)
 
-Para exibir ou personalizar as fontes de tema no PowerPoint, no grupo **Variantes** da guia **Design**, clique no menu suspenso **Mais**, aponte para **Fontes** e clique em **Personalizar Fontes** para exibir a caixa de diálogo **Criar Novas Fontes de Tema**:
+Para exibir ou personalizar as fontes de tema no PowerPoint, no grupo**Variantes** da guia **Design** clique no menu suspenso**Mais** em seguida, selecione **Fontes** > **Personalizar Fontes** para exibir a caixa de diálogo**Criar Novas Fontes de Tema**.
 
 ![Criar caixas de diálogo de novas fontes de tema](../images/office15-app-create-new-theme-fonts.png)
 
@@ -58,6 +58,9 @@ Com o arquivo OfficeThemes.css com seus suplementos de conteúdo para PowerPoint
 Use as etapas a seguir para adicionar o arquivo OfficeThemes.css ao seu projeto de suplemento e fazer referência a ele.
 
 #### <a name="to-add-officethemescss-to-your-visual-studio-project"></a>Para adicionar o OfficeThemes.css ao seu projeto do Visual Studio
+
+> [!NOTE]
+> As etapas deste procedimento se aplicam apenas para Visual Studio 2015. Se você estiver usando o Visual Studio 2017, o arquivo OfficeThemes.css é criado automaticamente para os novos projetos do suplemento do PowerPoint que você criar.
 
 1. No **Gerenciador de Soluções**, clique com o botão direito do mouse na pasta **Conteúdo** no projeto _**nome_projeto**_**Web**, aponte para **Adicionar** e selecione a **Folha de Estilos**.
     
@@ -139,7 +142,7 @@ Para fazer isso no Visual Studio, execute estas etapas.
 
 #### <a name="to-reference-officethemescss-in-your-add-in-for-powerpoint"></a>Para fazer referência ao OfficeThemes.css em seu suplemento para PowerPoint
 
-1. No Visual Studio 2015, abra ou crie um novo projeto de **Suplemento do Office**.
+1. No Visual Studio 2017, abra ou crie um novo projeto de **Suplemento do Office**.
     
 2. Nas páginas HTML que implementam a interface de usuário de seu suplemento, como Home.html no modelo padrão, adicione a seguinte marca `<link>`dentro da marca `<head>` que faz referência ao arquivo OfficeThemes.css:
     
@@ -287,6 +290,6 @@ O arquivo OfficeThemes.css fornece classes que correspondem às quatro cores atr
 | `office-officeTheme-secondary-fontColor`|Cor da fonte secundária. Padrão #262626|
 | `office-officeTheme-secondary-bgColor`|Cor secundária do plano de fundo. Padrão #FFFFFF|
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 - [Criar suplementos de painel de tarefas e de conteúdo para o PowerPoint](../powerpoint/powerpoint-add-ins.md)
