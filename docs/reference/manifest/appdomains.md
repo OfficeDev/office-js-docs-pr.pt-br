@@ -1,3 +1,14 @@
+---
+title: Elemento AppDomains no arquivo de manifesto
+description: ''
+ms.date: 12/13/2018
+ms.openlocfilehash: cc2f5ade0bdda214c85490f8e474b42f921edbe8
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433674"
+---
 # <a name="appdomains-element"></a>Elemento AppDomains
 
 Lista qualquer domínio além do domínio especificado no elemento SourceLocation que seu Suplemento do Office utilizará para carregar páginas. Para cada domínio adicional, especifique um elemento AppDomain.

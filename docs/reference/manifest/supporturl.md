@@ -1,6 +1,17 @@
+---
+title: Elemento SupportUrl no arquivo de manifesto
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 00234ef9fe8960b9956e6a2595e2e2e71bfb97c6
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432666"
+---
 # <a name="supporturl-element"></a>Elemento SupportUrl
 
-Especifica a URL de uma página que fornece informações de suporte para seu suplemento.
+Especifica a URL de uma página que fornece informações de suporte para o suplemento.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -29,10 +40,10 @@ Especifica a URL de uma página que fornece informações de suporte para seu su
 
 |  Elemento | Obrigatório | Descrição  |
 |:-----|:-----|:-----|
-|  [Substituição](override.md)   | Não | Especifica a configuração de URLs de localidades adicionais |
+|  [Override](override.md)   | Não | Especifica a configuração de URLs de localidades adicionais |
 
 ## <a name="attributes"></a>Atributos
 
 |**Atributo**|**Tipo**|**Obrigatório**|**Descrição**|
 |:-----|:-----|:-----|:-----|
-|defaultValue|URL|obrigatório|Especifica o valor padrão para essa configuração, expresso para a localidade especificada no elemento [DefaultLocale](defaultlocale.md).|
+|DefaultValue|URL|obrigatório|Especifica o valor padrão para essa configuração, expresso para a localidade especificada no elemento [DefaultLocale](defaultlocale.md).|

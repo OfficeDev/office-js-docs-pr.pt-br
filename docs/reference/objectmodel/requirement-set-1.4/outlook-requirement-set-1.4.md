@@ -1,3 +1,14 @@
+---
+title: Conjunto de requisitos de API para suplementos do Outlook versão 1.4
+description: ''
+ms.date: 10/11/2018
+ms.openlocfilehash: be700af413a041502cddd491f304a693c259da28
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432365"
+---
 # <a name="outlook-add-in-api-requirement-set-14"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.4
 
 O subconjunto de APIs de suplemento do Outlook para as APIs JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um suplemento do Office.

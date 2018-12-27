@@ -1,8 +1,19 @@
+---
+title: Conjuntos de requisitos da API JavaScript do OneNote
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: c0cec9375dc0d3db4a09e44a9b73935af0691bde
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433821"
+---
 # <a name="onenote-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do OneNote
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Suplementos do Office usam conjuntos de requisitos especificados no manifesto ou uma verificação de tempo de execução para determinar se um host do Office oferece suporte às APIs necessárias para um suplemento. Para obter mais informações, consulte [Versões do Office e conjuntos de requisitos](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
-A tabela a seguir lista os conjuntos de requisitos do OneNote, os aplicativos host do Office que oferecem suporte a esse conjunto de requisitos, e as versões build ou datas de disponibilidade.
+A tabela a seguir lista os conjuntos de requisitos do OneNote, ou seja, os aplicativos de host do Office que oferecem suporte a esse conjunto de requisitos, e os números de versão ou datas de disponibilidade.
 
 |  Conjunto de requisitos  |  Office Online | 
 |:-----|:-----|
@@ -12,9 +23,9 @@ A tabela a seguir lista os conjuntos de requisitos do OneNote, os aplicativos ho
 
 Para saber mais sobre conjuntos de requisitos comuns da API, confira [Conjuntos de requisitos comuns da API do Office](office-add-in-requirement-sets.md).
 
-## <a name="onenote-javascript-api-11"></a>API JavaScript do OneNote 1.1 
+## <a name="onenote-javascript-api-11"></a>OneNote JavaScript API 1.1 
 
-A API JavaScript do OneNote 1.1 é a primeira versão da API. Para obter detalhes sobre a API, consulte [Visão geral de programação da API JavaScript do OneNote](https://docs.microsoft.com/office/dev/add-ins/onenote/onenote-add-ins-programming-overview).
+A OneNote JavaScript API 1.1 é a primeira versão da API. Para obter mais detalhes sobre a API, confira o artigo [Visão geral da programação da API JavaScript do OneNote](https://docs.microsoft.com/office/dev/add-ins/onenote/onenote-add-ins-programming-overview).
 
 ## <a name="runtime-requirement-support-check"></a>Verificação do suporte a requisitos de tempo de execução
 
