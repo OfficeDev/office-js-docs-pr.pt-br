@@ -1,84 +1,93 @@
- 
+---
+title: Namespace do Office – conjunto de requisitos 1.1
+description: ''
+ms.date: 11/08/2018
+ms.openlocfilehash: 1670e8a1f2956979d31a7ce172bbfe81280addbb
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433842"
+---
+# <a name="office"></a><span data-ttu-id="1cbe1-102">Office</span><span class="sxs-lookup"><span data-stu-id="1cbe1-102">Office</span></span>
 
-# <a name="office"></a><span data-ttu-id="3e098-101">Office</span><span class="sxs-lookup"><span data-stu-id="3e098-101">Office</span></span>
+<span data-ttu-id="1cbe1-p101">O namespace do Office fornece interfaces compartilhadas que são usadas pelos suplementos em todos os aplicativos do Office. Esta listagem documenta somente as interfaces que são usadas pelos suplementos do Outlook. Para obter uma lista completa de namespaces do Office, confira [API compartilhada](/javascript/api/office).</span><span class="sxs-lookup"><span data-stu-id="1cbe1-p101">The Office namespace provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office namespace, see the [Shared API](/javascript/api/office).</span></span>
 
-<span data-ttu-id="3e098-p101">O namespace Office fornece interfaces compartilhadas que são usadas por suplementos em todos os aplicativos do Office. Esta listagem documenta somente as interfaces que são usadas pelos suplementos do Outlook. Para obter uma listagem completa do namespace Office, confira [API compartilhada](/javascript/api/office).</span><span class="sxs-lookup"><span data-stu-id="3e098-p101">The Office namespace provides shared interfaces that are used by add-ins in all of the Office apps. This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office namespace, see the [Shared API](/javascript/api/office).</span></span>
+##### <a name="requirements"></a><span data-ttu-id="1cbe1-105">Requisitos</span><span class="sxs-lookup"><span data-stu-id="1cbe1-105">Requirements</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="3e098-104">Requisitos</span><span class="sxs-lookup"><span data-stu-id="3e098-104">Requirements</span></span>
-
-|<span data-ttu-id="3e098-105">Requisito</span><span class="sxs-lookup"><span data-stu-id="3e098-105">Requirement</span></span>| <span data-ttu-id="3e098-106">Valor</span><span class="sxs-lookup"><span data-stu-id="3e098-106">Value</span></span>|
+|<span data-ttu-id="1cbe1-106">Requisito</span><span class="sxs-lookup"><span data-stu-id="1cbe1-106">Requirement</span></span>| <span data-ttu-id="1cbe1-107">Valor</span><span class="sxs-lookup"><span data-stu-id="1cbe1-107">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3e098-107">Versão mínima do conjunto de requisitos de caixa de correio</span><span class="sxs-lookup"><span data-stu-id="3e098-107">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="3e098-108">1.0</span><span class="sxs-lookup"><span data-stu-id="3e098-108">1.0</span></span>|
-|[<span data-ttu-id="3e098-109">Modo aplicável do Outlook</span><span class="sxs-lookup"><span data-stu-id="3e098-109">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="3e098-110">Redigir ou ler</span><span class="sxs-lookup"><span data-stu-id="3e098-110">Compose or read</span></span>|
+|[<span data-ttu-id="1cbe1-108">Versão do conjunto de requisitos mínimos da caixa de correio</span><span class="sxs-lookup"><span data-stu-id="1cbe1-108">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="1cbe1-109">1.0</span><span class="sxs-lookup"><span data-stu-id="1cbe1-109">1.0</span></span>|
+|[<span data-ttu-id="1cbe1-110">Modo do Outlook aplicável</span><span class="sxs-lookup"><span data-stu-id="1cbe1-110">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="1cbe1-111">Composição ou leitura</span><span class="sxs-lookup"><span data-stu-id="1cbe1-111">Compose or read</span></span>|
 
-### <a name="namespaces"></a><span data-ttu-id="3e098-111">Namespaces</span><span class="sxs-lookup"><span data-stu-id="3e098-111">Namespaces</span></span>
+### <a name="namespaces"></a><span data-ttu-id="1cbe1-112">Namespaces</span><span class="sxs-lookup"><span data-stu-id="1cbe1-112">Namespaces</span></span>
 
-<span data-ttu-id="3e098-112">[context](office.context.md): fornece interfaces compartilhadas do namespace do contexto da API de suplementos do Office para uso na API de suplemento do Outlook.</span><span class="sxs-lookup"><span data-stu-id="3e098-112">[context](office.context.md): Provides shared interfaces from the Office add-ins API's context namespace for use in the Outlook add-in API.</span></span>
+<span data-ttu-id="1cbe1-113">[context](office.context.md): fornece interfaces compartilhadas do namespace de contexto da API de Suplementos do Office para uso na API de suplemento do Outlook.</span><span class="sxs-lookup"><span data-stu-id="1cbe1-113">[context](office.context.md): Provides shared interfaces from the Office Add-ins API's context namespace for use in the Outlook add-in API.</span></span>
 
-<span data-ttu-id="3e098-113">[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmenttype): Inclui as enumerações ItemType, EntityType, AttachmentType, RecipientType, ResponseType e ItemNotificationMessageType.</span><span class="sxs-lookup"><span data-stu-id="3e098-113">[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmenttype): Includes the ItemType, EntityType, AttachmentType, RecipientType, ResponseType, and ItemNotificationMessageType enumerations.</span></span>
+<span data-ttu-id="1cbe1-114">[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmenttype): inclui as enumerações ItemType, EntityType, AttachmentType, RecipientType, ResponseType e ItemNotificationMessageType.</span><span class="sxs-lookup"><span data-stu-id="1cbe1-114">[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmenttype): Includes the ItemType, EntityType, AttachmentType, RecipientType, ResponseType, and ItemNotificationMessageType enumerations.</span></span>
 
-### <a name="members"></a><span data-ttu-id="3e098-114">Membros</span><span class="sxs-lookup"><span data-stu-id="3e098-114">Members</span></span>
+### <a name="members"></a><span data-ttu-id="1cbe1-115">Membros</span><span class="sxs-lookup"><span data-stu-id="1cbe1-115">Members</span></span>
 
-####  <a name="asyncresultstatus-string"></a><span data-ttu-id="3e098-115">AsyncResultStatus :String</span><span class="sxs-lookup"><span data-stu-id="3e098-115">AsyncResultStatus :String</span></span>
+####  <a name="asyncresultstatus-string"></a><span data-ttu-id="1cbe1-116">AsyncResultStatus :String</span><span class="sxs-lookup"><span data-stu-id="1cbe1-116">AsyncResultStatus :String</span></span>
 
-<span data-ttu-id="3e098-116">Especifica o resultado de uma chamada assíncrona.</span><span class="sxs-lookup"><span data-stu-id="3e098-116">Specifies the result of an asynchronous call.</span></span>
+<span data-ttu-id="1cbe1-117">Especifica o resultado de uma chamada assíncrona.</span><span class="sxs-lookup"><span data-stu-id="1cbe1-117">Specifies the result of an asynchronous call.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="3e098-117">Tipo:</span><span class="sxs-lookup"><span data-stu-id="3e098-117">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="1cbe1-118">Tipo:</span><span class="sxs-lookup"><span data-stu-id="1cbe1-118">Type:</span></span>
 
-*   <span data-ttu-id="3e098-118">String</span><span class="sxs-lookup"><span data-stu-id="3e098-118">String</span></span>
+*   <span data-ttu-id="1cbe1-119">Cadeia de caracteres</span><span class="sxs-lookup"><span data-stu-id="1cbe1-119">String</span></span>
 
-##### <a name="properties"></a><span data-ttu-id="3e098-119">Propriedades:</span><span class="sxs-lookup"><span data-stu-id="3e098-119">Properties:</span></span>
+##### <a name="properties"></a><span data-ttu-id="1cbe1-120">Propriedades:</span><span class="sxs-lookup"><span data-stu-id="1cbe1-120">Properties:</span></span>
 
-|<span data-ttu-id="3e098-120">Nome</span><span class="sxs-lookup"><span data-stu-id="3e098-120">Name</span></span>| <span data-ttu-id="3e098-121">Tipo</span><span class="sxs-lookup"><span data-stu-id="3e098-121">Type</span></span>| <span data-ttu-id="3e098-122">Descrição</span><span class="sxs-lookup"><span data-stu-id="3e098-122">Description</span></span>|
+|<span data-ttu-id="1cbe1-121">Nome</span><span class="sxs-lookup"><span data-stu-id="1cbe1-121">Name</span></span>| <span data-ttu-id="1cbe1-122">Tipo</span><span class="sxs-lookup"><span data-stu-id="1cbe1-122">Type</span></span>| <span data-ttu-id="1cbe1-123">Descrição</span><span class="sxs-lookup"><span data-stu-id="1cbe1-123">Description</span></span>|
 |---|---|---|
-|`Succeeded`| <span data-ttu-id="3e098-123">String</span><span class="sxs-lookup"><span data-stu-id="3e098-123">String</span></span>|<span data-ttu-id="3e098-124">A chamada foi bem-sucedida.</span><span class="sxs-lookup"><span data-stu-id="3e098-124">The call succeeded.</span></span>|
-|`Failed`| <span data-ttu-id="3e098-125">String</span><span class="sxs-lookup"><span data-stu-id="3e098-125">String</span></span>|<span data-ttu-id="3e098-126">A chamada falhou.</span><span class="sxs-lookup"><span data-stu-id="3e098-126">The call failed.</span></span>|
+|`Succeeded`| <span data-ttu-id="1cbe1-124">String</span><span class="sxs-lookup"><span data-stu-id="1cbe1-124">String</span></span>|<span data-ttu-id="1cbe1-125">A chamada foi bem-sucedida.</span><span class="sxs-lookup"><span data-stu-id="1cbe1-125">The call succeeded.</span></span>|
+|`Failed`| <span data-ttu-id="1cbe1-126">String</span><span class="sxs-lookup"><span data-stu-id="1cbe1-126">String</span></span>|<span data-ttu-id="1cbe1-127">Falha na chamada.</span><span class="sxs-lookup"><span data-stu-id="1cbe1-127">The call failed.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="3e098-127">Requisitos</span><span class="sxs-lookup"><span data-stu-id="3e098-127">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="1cbe1-128">Requisitos</span><span class="sxs-lookup"><span data-stu-id="1cbe1-128">Requirements</span></span>
 
-|<span data-ttu-id="3e098-128">Requisito</span><span class="sxs-lookup"><span data-stu-id="3e098-128">Requirement</span></span>| <span data-ttu-id="3e098-129">Valor</span><span class="sxs-lookup"><span data-stu-id="3e098-129">Value</span></span>|
+|<span data-ttu-id="1cbe1-129">Requisito</span><span class="sxs-lookup"><span data-stu-id="1cbe1-129">Requirement</span></span>| <span data-ttu-id="1cbe1-130">Valor</span><span class="sxs-lookup"><span data-stu-id="1cbe1-130">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3e098-130">Versão mínima do conjunto de requisitos de caixa de correio</span><span class="sxs-lookup"><span data-stu-id="3e098-130">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="3e098-131">1.0</span><span class="sxs-lookup"><span data-stu-id="3e098-131">1.0</span></span>|
-|[<span data-ttu-id="3e098-132">Modo aplicável do Outlook</span><span class="sxs-lookup"><span data-stu-id="3e098-132">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="3e098-133">Redigir ou ler</span><span class="sxs-lookup"><span data-stu-id="3e098-133">Compose or read</span></span>|
-####  <a name="coerciontype-string"></a><span data-ttu-id="3e098-134">CoercionType :String</span><span class="sxs-lookup"><span data-stu-id="3e098-134">CoercionType :String</span></span>
+|[<span data-ttu-id="1cbe1-131">Versão do conjunto de requisitos mínimos da caixa de correio</span><span class="sxs-lookup"><span data-stu-id="1cbe1-131">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="1cbe1-132">1.0</span><span class="sxs-lookup"><span data-stu-id="1cbe1-132">1.0</span></span>|
+|[<span data-ttu-id="1cbe1-133">Modo do Outlook aplicável</span><span class="sxs-lookup"><span data-stu-id="1cbe1-133">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="1cbe1-134">Redação ou leitura</span><span class="sxs-lookup"><span data-stu-id="1cbe1-134">Compose or read</span></span>|
+####  <a name="coerciontype-string"></a><span data-ttu-id="1cbe1-135">CoercionType :String</span><span class="sxs-lookup"><span data-stu-id="1cbe1-135">CoercionType :String</span></span>
 
-<span data-ttu-id="3e098-135">Especifica como forçar os dados retornados ou definidos de acordo com o método invocado.</span><span class="sxs-lookup"><span data-stu-id="3e098-135">Specifies how to coerce data returned or set by the invoked method.</span></span>
+<span data-ttu-id="1cbe1-136">Especifica como forçar os dados retornados ou definir de acordo com o método chamado.</span><span class="sxs-lookup"><span data-stu-id="1cbe1-136">Specifies how to coerce data returned or set by the invoked method.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="3e098-136">Tipo:</span><span class="sxs-lookup"><span data-stu-id="3e098-136">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="1cbe1-137">Tipo:</span><span class="sxs-lookup"><span data-stu-id="1cbe1-137">Type:</span></span>
 
-*   <span data-ttu-id="3e098-137">String</span><span class="sxs-lookup"><span data-stu-id="3e098-137">String</span></span>
+*   <span data-ttu-id="1cbe1-138">Cadeia de caracteres</span><span class="sxs-lookup"><span data-stu-id="1cbe1-138">String</span></span>
 
-##### <a name="properties"></a><span data-ttu-id="3e098-138">Propriedades:</span><span class="sxs-lookup"><span data-stu-id="3e098-138">Properties:</span></span>
+##### <a name="properties"></a><span data-ttu-id="1cbe1-139">Propriedades:</span><span class="sxs-lookup"><span data-stu-id="1cbe1-139">Properties:</span></span>
 
-|<span data-ttu-id="3e098-139">Nome</span><span class="sxs-lookup"><span data-stu-id="3e098-139">Name</span></span>| <span data-ttu-id="3e098-140">Tipo</span><span class="sxs-lookup"><span data-stu-id="3e098-140">Type</span></span>| <span data-ttu-id="3e098-141">Descrição</span><span class="sxs-lookup"><span data-stu-id="3e098-141">Description</span></span>|
+|<span data-ttu-id="1cbe1-140">Nome</span><span class="sxs-lookup"><span data-stu-id="1cbe1-140">Name</span></span>| <span data-ttu-id="1cbe1-141">Tipo</span><span class="sxs-lookup"><span data-stu-id="1cbe1-141">Type</span></span>| <span data-ttu-id="1cbe1-142">Descrição</span><span class="sxs-lookup"><span data-stu-id="1cbe1-142">Description</span></span>|
 |---|---|---|
-|`Html`| <span data-ttu-id="3e098-142">String</span><span class="sxs-lookup"><span data-stu-id="3e098-142">String</span></span>|<span data-ttu-id="3e098-143">Solicita que os dados sejam retornados no formato HTML.</span><span class="sxs-lookup"><span data-stu-id="3e098-143">Requests the data be returned in HTML format.</span></span>|
-|`Text`| <span data-ttu-id="3e098-144">String</span><span class="sxs-lookup"><span data-stu-id="3e098-144">String</span></span>|<span data-ttu-id="3e098-145">Solicita que os dados sejam retornados no formato de texto.</span><span class="sxs-lookup"><span data-stu-id="3e098-145">Requests the data be returned in text format.</span></span>|
+|`Html`| <span data-ttu-id="1cbe1-143">String</span><span class="sxs-lookup"><span data-stu-id="1cbe1-143">String</span></span>|<span data-ttu-id="1cbe1-144">Solicita que os dados sejam retornados no formato HTML.</span><span class="sxs-lookup"><span data-stu-id="1cbe1-144">Requests the data be returned in HTML format.</span></span>|
+|`Text`| <span data-ttu-id="1cbe1-145">String</span><span class="sxs-lookup"><span data-stu-id="1cbe1-145">String</span></span>|<span data-ttu-id="1cbe1-146">Solicita que os dados sejam retornados no formato de texto.</span><span class="sxs-lookup"><span data-stu-id="1cbe1-146">Requests the data be returned in text format.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="3e098-146">Requisitos</span><span class="sxs-lookup"><span data-stu-id="3e098-146">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="1cbe1-147">Requisitos</span><span class="sxs-lookup"><span data-stu-id="1cbe1-147">Requirements</span></span>
 
-|<span data-ttu-id="3e098-147">Requisito</span><span class="sxs-lookup"><span data-stu-id="3e098-147">Requirement</span></span>| <span data-ttu-id="3e098-148">Valor</span><span class="sxs-lookup"><span data-stu-id="3e098-148">Value</span></span>|
+|<span data-ttu-id="1cbe1-148">Requisito</span><span class="sxs-lookup"><span data-stu-id="1cbe1-148">Requirement</span></span>| <span data-ttu-id="1cbe1-149">Valor</span><span class="sxs-lookup"><span data-stu-id="1cbe1-149">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3e098-149">Versão mínima do conjunto de requisitos de caixa de correio</span><span class="sxs-lookup"><span data-stu-id="3e098-149">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="3e098-150">1.0</span><span class="sxs-lookup"><span data-stu-id="3e098-150">1.0</span></span>|
-|[<span data-ttu-id="3e098-151">Modo aplicável do Outlook</span><span class="sxs-lookup"><span data-stu-id="3e098-151">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="3e098-152">Redigir ou ler</span><span class="sxs-lookup"><span data-stu-id="3e098-152">Compose or read</span></span>|
-####  <a name="sourceproperty-string"></a><span data-ttu-id="3e098-153">SourceProperty :String</span><span class="sxs-lookup"><span data-stu-id="3e098-153">SourceProperty :String</span></span>
+|[<span data-ttu-id="1cbe1-150">Versão do conjunto de requisitos mínimos da caixa de correio</span><span class="sxs-lookup"><span data-stu-id="1cbe1-150">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="1cbe1-151">1.0</span><span class="sxs-lookup"><span data-stu-id="1cbe1-151">1.0</span></span>|
+|[<span data-ttu-id="1cbe1-152">Modo do Outlook aplicável</span><span class="sxs-lookup"><span data-stu-id="1cbe1-152">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="1cbe1-153">Redação ou leitura</span><span class="sxs-lookup"><span data-stu-id="1cbe1-153">Compose or read</span></span>|
+####  <a name="sourceproperty-string"></a><span data-ttu-id="1cbe1-154">SourceProperty :String</span><span class="sxs-lookup"><span data-stu-id="1cbe1-154">SourceProperty :String</span></span>
 
-<span data-ttu-id="3e098-154">Especifica a origem dos dados retornados pelo método invocado.</span><span class="sxs-lookup"><span data-stu-id="3e098-154">Specifies the source of the data returned by the invoked method.</span></span>
+<span data-ttu-id="1cbe1-155">Especifica a origem dos dados retornados pelo método chamado.</span><span class="sxs-lookup"><span data-stu-id="1cbe1-155">Specifies the source of the data returned by the invoked method.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="3e098-155">Tipo:</span><span class="sxs-lookup"><span data-stu-id="3e098-155">Type:</span></span>
+##### <a name="type"></a><span data-ttu-id="1cbe1-156">Tipo:</span><span class="sxs-lookup"><span data-stu-id="1cbe1-156">Type:</span></span>
 
-*   <span data-ttu-id="3e098-156">String</span><span class="sxs-lookup"><span data-stu-id="3e098-156">String</span></span>
+*   <span data-ttu-id="1cbe1-157">Cadeia de caracteres</span><span class="sxs-lookup"><span data-stu-id="1cbe1-157">String</span></span>
 
-##### <a name="properties"></a><span data-ttu-id="3e098-157">Propriedades:</span><span class="sxs-lookup"><span data-stu-id="3e098-157">Properties:</span></span>
+##### <a name="properties"></a><span data-ttu-id="1cbe1-158">Propriedades:</span><span class="sxs-lookup"><span data-stu-id="1cbe1-158">Properties:</span></span>
 
-|<span data-ttu-id="3e098-158">Nome</span><span class="sxs-lookup"><span data-stu-id="3e098-158">Name</span></span>| <span data-ttu-id="3e098-159">Tipo</span><span class="sxs-lookup"><span data-stu-id="3e098-159">Type</span></span>| <span data-ttu-id="3e098-160">Descrição</span><span class="sxs-lookup"><span data-stu-id="3e098-160">Description</span></span>|
+|<span data-ttu-id="1cbe1-159">Nome</span><span class="sxs-lookup"><span data-stu-id="1cbe1-159">Name</span></span>| <span data-ttu-id="1cbe1-160">Tipo</span><span class="sxs-lookup"><span data-stu-id="1cbe1-160">Type</span></span>| <span data-ttu-id="1cbe1-161">Descrição</span><span class="sxs-lookup"><span data-stu-id="1cbe1-161">Description</span></span>|
 |---|---|---|
-|`Body`| <span data-ttu-id="3e098-161">String</span><span class="sxs-lookup"><span data-stu-id="3e098-161">String</span></span>|<span data-ttu-id="3e098-162">A origem dos dados é do corpo de uma mensagem.</span><span class="sxs-lookup"><span data-stu-id="3e098-162">The source of the data is from the body of a message.</span></span>|
-|`Subject`| <span data-ttu-id="3e098-163">String</span><span class="sxs-lookup"><span data-stu-id="3e098-163">String</span></span>|<span data-ttu-id="3e098-164">A origem dos dados é do assunto de uma mensagem.</span><span class="sxs-lookup"><span data-stu-id="3e098-164">The source of the data is from the subject of a message.</span></span>|
+|`Body`| <span data-ttu-id="1cbe1-162">String</span><span class="sxs-lookup"><span data-stu-id="1cbe1-162">String</span></span>|<span data-ttu-id="1cbe1-163">A origem dos dados é o corpo de uma mensagem.</span><span class="sxs-lookup"><span data-stu-id="1cbe1-163">The source of the data is from the body of a message.</span></span>|
+|`Subject`| <span data-ttu-id="1cbe1-164">String</span><span class="sxs-lookup"><span data-stu-id="1cbe1-164">String</span></span>|<span data-ttu-id="1cbe1-165">A origem dos dados é o assunto de uma mensagem.</span><span class="sxs-lookup"><span data-stu-id="1cbe1-165">The source of the data is from the subject of a message.</span></span>|
 
-##### <a name="requirements"></a><span data-ttu-id="3e098-165">Requisitos</span><span class="sxs-lookup"><span data-stu-id="3e098-165">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="1cbe1-166">Requisitos</span><span class="sxs-lookup"><span data-stu-id="1cbe1-166">Requirements</span></span>
 
-|<span data-ttu-id="3e098-166">Requisito</span><span class="sxs-lookup"><span data-stu-id="3e098-166">Requirement</span></span>| <span data-ttu-id="3e098-167">Valor</span><span class="sxs-lookup"><span data-stu-id="3e098-167">Value</span></span>|
+|<span data-ttu-id="1cbe1-167">Requisito</span><span class="sxs-lookup"><span data-stu-id="1cbe1-167">Requirement</span></span>| <span data-ttu-id="1cbe1-168">Valor</span><span class="sxs-lookup"><span data-stu-id="1cbe1-168">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="3e098-168">Versão mínima do conjunto de requisitos de caixa de correio</span><span class="sxs-lookup"><span data-stu-id="3e098-168">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="3e098-169">1.0</span><span class="sxs-lookup"><span data-stu-id="3e098-169">1.0</span></span>|
-|[<span data-ttu-id="3e098-170">Modo aplicável do Outlook</span><span class="sxs-lookup"><span data-stu-id="3e098-170">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="3e098-171">Redigir ou ler</span><span class="sxs-lookup"><span data-stu-id="3e098-171">Compose or read</span></span>|
+|[<span data-ttu-id="1cbe1-169">Versão do conjunto de requisitos mínimos da caixa de correio</span><span class="sxs-lookup"><span data-stu-id="1cbe1-169">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="1cbe1-170">1.0</span><span class="sxs-lookup"><span data-stu-id="1cbe1-170">1.0</span></span>|
+|[<span data-ttu-id="1cbe1-171">Modo do Outlook aplicável</span><span class="sxs-lookup"><span data-stu-id="1cbe1-171">Applicable Outlook mode</span></span>](https://docs.microsoft.com/outlook/add-ins/#extension-points)| <span data-ttu-id="1cbe1-172">Redação ou leitura</span><span class="sxs-lookup"><span data-stu-id="1cbe1-172">Compose or read</span></span>|
