@@ -1,8 +1,19 @@
-# <a name="supporturl-element"></a><span data-ttu-id="caea3-101">Elemento SupportUrl</span><span class="sxs-lookup"><span data-stu-id="caea3-101">SupportUrl element</span></span>
+---
+title: Elemento SupportUrl no arquivo de manifesto
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 00234ef9fe8960b9956e6a2595e2e2e71bfb97c6
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432666"
+---
+# <a name="supporturl-element"></a><span data-ttu-id="56fa3-102">Elemento SupportUrl</span><span class="sxs-lookup"><span data-stu-id="56fa3-102">SupportUrl element</span></span>
 
-<span data-ttu-id="caea3-102">Especifica a URL de uma página que fornece informações de suporte para seu suplemento.</span><span class="sxs-lookup"><span data-stu-id="caea3-102">Specifies the URL of a page that provides support information for your add-in.</span></span>
+<span data-ttu-id="56fa3-103">Especifica a URL de uma página que fornece informações de suporte para o suplemento.</span><span class="sxs-lookup"><span data-stu-id="56fa3-103">Specifies the URL of a page that provides support information for your add-in.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="caea3-103">Sintaxe</span><span class="sxs-lookup"><span data-stu-id="caea3-103">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="56fa3-104">Sintaxe</span><span class="sxs-lookup"><span data-stu-id="56fa3-104">Syntax</span></span>
 
 ```XML
 <OfficeApp>
@@ -21,18 +32,18 @@
 </OfficeApp>
 ```
 
-## <a name="contained-in"></a><span data-ttu-id="caea3-104">Contido em</span><span class="sxs-lookup"><span data-stu-id="caea3-104">Contained in:</span></span>
+## <a name="contained-in"></a><span data-ttu-id="56fa3-105">Contido em</span><span class="sxs-lookup"><span data-stu-id="56fa3-105">Contained in</span></span>
 
-[<span data-ttu-id="caea3-105">OfficeApp</span><span class="sxs-lookup"><span data-stu-id="caea3-105">OfficeApp</span></span>](officeapp.md)
+[<span data-ttu-id="56fa3-106">OfficeApp</span><span class="sxs-lookup"><span data-stu-id="56fa3-106">OfficeApp</span></span>](officeapp.md)
 
-## <a name="can-contain"></a><span data-ttu-id="caea3-106">Pode conter</span><span class="sxs-lookup"><span data-stu-id="caea3-106">Can contain:</span></span>
+## <a name="can-contain"></a><span data-ttu-id="56fa3-107">Pode conter</span><span class="sxs-lookup"><span data-stu-id="56fa3-107">Can contain</span></span>
 
-|  <span data-ttu-id="caea3-107">Elemento</span><span class="sxs-lookup"><span data-stu-id="caea3-107">Element</span></span> | <span data-ttu-id="caea3-108">Obrigatório</span><span class="sxs-lookup"><span data-stu-id="caea3-108">Required</span></span> | <span data-ttu-id="caea3-109">Descrição</span><span class="sxs-lookup"><span data-stu-id="caea3-109">Description</span></span>  |
+|  <span data-ttu-id="56fa3-108">Elemento</span><span class="sxs-lookup"><span data-stu-id="56fa3-108">Element</span></span> | <span data-ttu-id="56fa3-109">Obrigatório</span><span class="sxs-lookup"><span data-stu-id="56fa3-109">Required</span></span> | <span data-ttu-id="56fa3-110">Descrição</span><span class="sxs-lookup"><span data-stu-id="56fa3-110">Description</span></span>  |
 |:-----|:-----|:-----|
-|  [<span data-ttu-id="caea3-110">Substituição</span><span class="sxs-lookup"><span data-stu-id="caea3-110">Override</span></span>](override.md)   | <span data-ttu-id="caea3-111">Não</span><span class="sxs-lookup"><span data-stu-id="caea3-111">No</span></span> | <span data-ttu-id="caea3-112">Especifica a configuração de URLs de localidades adicionais</span><span class="sxs-lookup"><span data-stu-id="caea3-112">Specifies the setting for additional locale urls</span></span> |
+|  [<span data-ttu-id="56fa3-111">Override</span><span class="sxs-lookup"><span data-stu-id="56fa3-111">Override</span></span>](override.md)   | <span data-ttu-id="56fa3-112">Não</span><span class="sxs-lookup"><span data-stu-id="56fa3-112">No</span></span> | <span data-ttu-id="56fa3-113">Especifica a configuração de URLs de localidades adicionais</span><span class="sxs-lookup"><span data-stu-id="56fa3-113">Specifies the setting for additional locale urls</span></span> |
 
-## <a name="attributes"></a><span data-ttu-id="caea3-113">Atributos</span><span class="sxs-lookup"><span data-stu-id="caea3-113">Attributes</span></span>
+## <a name="attributes"></a><span data-ttu-id="56fa3-114">Atributos</span><span class="sxs-lookup"><span data-stu-id="56fa3-114">Attributes</span></span>
 
-|<span data-ttu-id="caea3-114">**Atributo**</span><span class="sxs-lookup"><span data-stu-id="caea3-114">**Attribute**</span></span>|<span data-ttu-id="caea3-115">**Tipo**</span><span class="sxs-lookup"><span data-stu-id="caea3-115">**Type**</span></span>|<span data-ttu-id="caea3-116">**Obrigatório**</span><span class="sxs-lookup"><span data-stu-id="caea3-116">**Required**</span></span>|<span data-ttu-id="caea3-117">**Descrição**</span><span class="sxs-lookup"><span data-stu-id="caea3-117">**Description**</span></span>|
+|<span data-ttu-id="56fa3-115">**Atributo**</span><span class="sxs-lookup"><span data-stu-id="56fa3-115">**Attribute**</span></span>|<span data-ttu-id="56fa3-116">**Tipo**</span><span class="sxs-lookup"><span data-stu-id="56fa3-116">**Type**</span></span>|<span data-ttu-id="56fa3-117">**Obrigatório**</span><span class="sxs-lookup"><span data-stu-id="56fa3-117">**Required**</span></span>|<span data-ttu-id="56fa3-118">**Descrição**</span><span class="sxs-lookup"><span data-stu-id="56fa3-118">**Description**</span></span>|
 |:-----|:-----|:-----|:-----|
-|<span data-ttu-id="caea3-118">defaultValue</span><span class="sxs-lookup"><span data-stu-id="caea3-118">DefaultValue</span></span>|<span data-ttu-id="caea3-119">URL</span><span class="sxs-lookup"><span data-stu-id="caea3-119">URL</span></span>|<span data-ttu-id="caea3-120">obrigatório</span><span class="sxs-lookup"><span data-stu-id="caea3-120">required</span></span>|<span data-ttu-id="caea3-121">Especifica o valor padrão para essa configuração, expresso para a localidade especificada no elemento [DefaultLocale](defaultlocale.md).</span><span class="sxs-lookup"><span data-stu-id="caea3-121">Specifies the default value for this setting, expressed for the locale specified in the [DefaultLocale](defaultlocale.md) element.</span></span>|
+|<span data-ttu-id="56fa3-119">DefaultValue</span><span class="sxs-lookup"><span data-stu-id="56fa3-119">DefaultValue</span></span>|<span data-ttu-id="56fa3-120">URL</span><span class="sxs-lookup"><span data-stu-id="56fa3-120">URL</span></span>|<span data-ttu-id="56fa3-121">obrigatório</span><span class="sxs-lookup"><span data-stu-id="56fa3-121">required</span></span>|<span data-ttu-id="56fa3-122">Especifica o valor padrão para essa configuração, expresso para a localidade especificada no elemento [DefaultLocale](defaultlocale.md).</span><span class="sxs-lookup"><span data-stu-id="56fa3-122">Specifies the default value for this setting, expressed for the locale specified in the [DefaultLocale](defaultlocale.md) element.</span></span>|
