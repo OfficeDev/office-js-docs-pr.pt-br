@@ -1,3 +1,14 @@
+---
+title: Visão geral da API JavaScript do Word
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: fb45b4197b464f1bf9799a557be0dd3c2881c63d
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433849"
+---
 # <a name="word-javascript-api-overview"></a>Visão geral da API JavaScript do Word
 
 O Word fornece um conjunto sofisticado de APIs que você pode usar para criar suplementos que interajam com metadados e com o conteúdo do documento. Use essas APIs para criar experiências envolventes que integrem e estendam o Word. Você pode importar e exportar conteúdo, montar novos documentos de diferentes fontes de dados e se integrar com fluxos de trabalho do documento para criar soluções de documento personalizadas.

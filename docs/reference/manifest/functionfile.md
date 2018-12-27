@@ -1,6 +1,17 @@
+---
+title: Elemento FunctionFile no arquivo de manifesto
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 634d383498698b55990dc73e66ec11616396f968
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432694"
+---
 # <a name="functionfile-element"></a>Elemento FunctionFile
 
-Especifica o arquivo de código-fonte para operações que um suplemento expõe por meio de comandos de suplemento que executam uma função JavaScript em vez de exibir a interface do usuário. O elemento **FunctionFile** é um elemento filho de [DesktopFormFactor](desktopformfactor.md) ou [MobileFormFactor](mobileformfactor.md). O atributo **resid** do elemento **FunctionFile** está definido como o valor do atributo **id** de um elemento **Url** no elemento **Resources**, que contém a URL para um arquivo HTML que contém ou carrega todas as funções JavaScript usadas pelos botões de comando do suplemento sem interface do usuário , conforme definido pelo [elemento Control](control.md).
+Especifica o arquivo de código-fonte para operações expostas por um suplemento através de comandos de suplemento que executam uma função JavaScript, em vez de exibir a interface do usuário. O elemento **FunctionFile** é um elemento filho de [DesktopFormFactor](desktopformfactor.md) ou [MobileFormFactor](mobileformfactor.md). O atributo **resid** do elemento **FunctionFile** está definido como o valor do atributo **id** de um elemento **Url** no elemento **Resources**, que contém a URL para um arquivo HTML que armazena ou carrega todas as funções JavaScript usadas por botões de comando de suplemento sem interface de usuário, conforme definido pelo [Control element](control.md).
 
 Veja a seguir um exemplo do elemento **FunctionFile**.
 
@@ -16,7 +27,7 @@ Veja a seguir um exemplo do elemento **FunctionFile**.
 </DesktopFormFactor>
 ```
 
-O JavaScript no arquivo HTML indicado pelo elemento **FunctionFile** deve chamar `Office.initialize` e definir funções nomeadas que utilizem um único parâmetro: `event`. As funções devem usar a API `item.notificationMessages`  para indicar o progresso, êxito ou falha ao usuário. Ele também deve chamar `event.completed` quando concluir a execução. O nome das funções são usados no elemento **FunctionName** para botões sem interface do usuário.
+O JavaScript no arquivo HTML indicado pelo elemento **FunctionFile** deve chamar `Office.initialize` e definir funções nomeadas que usam um único parâmetro: `event`. As funções devem usar a API `item.notificationMessages` para indicar o progresso, sucesso ou falha ao usuário. Também deverá chamar `event.completed` quando terminar a execução. Os nomes das funções são usados no elemento **FunctionName** para botões sem interface do usuário.
 
 Veja a seguir um exemplo de um arquivo HTML que define uma função **trackMessage**.
 
@@ -64,4 +75,4 @@ function writeText(event) {
 ```
 
 > [!IMPORTANT]
-> A chamada para **event.completed** indica que você tratou o evento com sucesso. Quando uma função é chamada várias vezes, por exemplo, com vários cliques no mesmo comando de suplemento, todos os eventos são enfileirados automaticamente. O primeiro evento é executado automaticamente, enquanto os outros permanecem na fila. Quando sua função chama **event.completed**, a próxima chamada em fila para essa função é executada. Você deve implementar **event.completed**; caso contrário, sua função não será executada.
+> A chamada a **event.completed** sinaliza que o evento foi manipulado com êxito. Quando uma função é chamada várias vezes, por exemplo, com vários cliques no mesmo comando de suplemento, todos os eventos são enfileirados automaticamente. O primeiro evento é executado automaticamente, enquanto os outros permanecem na fila. Quando sua função chama **event.completed**, a próxima chamada em fila para essa função é executada. Você deve chamar **event.completed**, caso contrário sua função não será executada.

@@ -1,8 +1,19 @@
+---
+title: Elemento Requirements no arquivo de manifesto
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 2544e9b01b2d4d3ddc0a0c6238b4a5b0e6c4f832
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432701"
+---
 # <a name="requirements-element"></a>Elemento Requirements
 
 Especifica o conjunto mínimo de requisitos da API JavaScript para Office ([conjuntos de requisitos](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets#specify-office-hosts-and-requirement-sets) e/ou métodos) que o Suplemento do Office precisa ativar.
 
-**Tipo de suplemento:** Conteúdo, Painel de tarefas, E-mail
+**Tipo de suplemento:** Conteúdo, Painel de tarefas, Email
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -18,12 +29,12 @@ Especifica o conjunto mínimo de requisitos da API JavaScript para Office ([conj
 
 ## <a name="can-contain"></a>Pode conter
 
-|**Elemento**|**Content**|**Mail**|**TaskPane**|
+|**Element**|**Conteúdo**|**Email**|**TaskPane**|
 |:-----|:-----|:-----|:-----|
-|[Conjuntos](sets.md)|x|x|x|
+|[Sets](sets.md)|x|x|x|
 |[Métodos](methods.md)|x||x|
 
 ## <a name="remarks"></a>Comentários
 
-Para obter mais informações sobre os conjuntos de requisitos, consulte [Versões do Office e conjuntos de requisitos](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+Para saber mais sobre os conjuntos de requisitos, confira [Versões do Office e conjuntos de requisitos](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 

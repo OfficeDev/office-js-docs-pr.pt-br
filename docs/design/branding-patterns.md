@@ -1,29 +1,40 @@
+---
+title: Diretrizes de design de padrões de identidade visual para suplementos do Office
+description: ''
+ms.date: 06/26/2018
+ms.openlocfilehash: a94e723b222dfe1b004d8b558da59804faf51e69
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433692"
+---
 # <a name="branding-patterns"></a>Padrões de identidade visual
 
-Esses padrões proporcionam visibilidade da marca e contexto para seus usuários de suplemento. 
+Esses padrões proporcionam visibilidade à marca e contexto aos seus usuários. 
 
-## <a name="best-practices"></a>Melhores práticas
+## <a name="best-practices"></a>Práticas recomendadas
 
 |Fazer |Não fazer|
 |:---- |:----|
-| Use componentes de interface do usuário familiares com toques de identidade visual, como tipografia e cor. | Não invente novos componentes de interface do usuário conflitantes com a interface do usuário do Office já estabelecida. | 
-| Coloque a identidade visual do seu suplemento em um rodapé em barra da marca na parte inferior da sua interface do usuário. | Não repita o nome do painel de tarefas em uma barra da marca imediatamente adjacente na parte superior da sua interface do usuário. |
-| Use elementos da marca com moderação. Encaixe sua solução no Office de forma complementar. | Não insira elementos com identidade visual muito marcada na interface do Office, pois isso distrai e confunde os clientes. |
-| Torne sua solução reconhecível e conecte suas telas com elementos visuais consistentes. | Não esconda sua solução com elementos visuais irreconhecíveis e inconsistentes. |
-| Crie conexões com um serviço ou negócio pai para garantir que os clientes conheçam a sua solução e confiem nela. | Não faça os clientes aprenderem um novo conceito de marca se houver uma relação útil e compreensível que possa ser aproveitada para criar confiança e valor. |
+| Use os componentes familiares de interface do usuário com a aplicação de destaques de identidade visual, tais como tipografia e cor. | Não crie novos componentes para a interface do usuário que contradigam a interface de usuário estabelecida do Office. | 
+| Aplique a identidade visual de suplemento no rodapé da barra da marca na parte inferior da sua interface do usuário. | Não repita o nome do painel de tarefas na barra de marca imediatamente adjacente à parte superior da sua interface do usuário. |
+| Use os elementos de marca com moderação. Ajuste sua solução para o Office de forma complementar. | Não insira elementos da marca de forma excessiva na interface do usuário do Office porque podem distrair e confundir os clientes. |
+| Verifique se a sua solução é reconhecível e conecta as telas com elementos visuais consistentes. | Não oculte sua solução com elementos visuais aplicados de modo inconsistente e irreconhecíveis. |
+| Crie a conexão com um serviço ou negócio relacionado para garantir que os clientes reconheçam e confiem na sua solução. | Não force os clientes a aprender um novo conceito de marca se já houver um relacionamento útil e compreensível que possa ser aproveitado para criar confiança e valor. |
 
 
-Aplique os padrões e componentes a seguir, conforme aplicável, para permitir que os usuários adotem todas as funções do seu suplemento.
+Aplique os padrões e componentes a seguir, quando possível, para permitir que os usuários adotem a utilização total do seu suplemento.
 
 
 ## <a name="brand-bar"></a>Barra da marca
 
-A barra da marca é um espaço no rodapé onde o nome e o logotipo da sua marca podem ser incluídos. Ela também serve como um link para o site da sua marca e um local de acesso opcional.
+A barra da marca é um espaço no rodapé para incluir o nome e o logotipo da marca. Também funciona como um link para o site da marca e um local de acesso opcional.
 
-![Barra da marca - Especificações para o painel de tarefas da área de trabalho](../images/add-in-brand-bar.png)
+![Barra de marca – especificações do painel de tarefas da área de trabalho](../images/add-in-brand-bar.png)
 
 ## <a name="splash-screen"></a>Tela inicial
 
-Use esta tela para exibir sua identidade visual enquanto o suplemento está carregando ou alternando estados da interface do usuário.
+Use esta tela para exibir a sua identidade visual enquanto o suplemento estiver carregando ou na transição entre estados de interface do usuário.
 
-![Tela inicial da marca - Especificações para o painel de tarefas da área de trabalho](../images/add-in-splash-screen.png)
+![Tela inicial da marca – especificações do painel de tarefas da área de trabalho](../images/add-in-splash-screen.png)
