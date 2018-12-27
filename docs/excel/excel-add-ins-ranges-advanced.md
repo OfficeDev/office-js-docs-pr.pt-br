@@ -1,13 +1,13 @@
 ---
 title: Trabalhar com intervalos usando a API JavaScript do Excel (avançado)
 description: ''
-ms.date: 12/18/2018
-ms.openlocfilehash: 6d3da1e7eff4e61ae1b88213d0b432581d8f6a8a
-ms.sourcegitcommit: 6870f0d96ed3da2da5a08652006c077a72d811b6
+ms.date: 12/26/2018
+ms.openlocfilehash: 43c32bb8f579a231eae289df4e026b45afac6dcb
+ms.sourcegitcommit: 8d248cd890dae1e9e8ef1bd47e09db4c1cf69593
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "27383236"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "27447236"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Trabalhar com intervalos usando a API JavaScript do Excel (avançado)
 
@@ -69,6 +69,116 @@ Seu suplemento terá que formatar os intervalos para exibir as datas em um forma
 
 O `RangeAreas` objeto permite ao suplemento executar operações em vários intervalos de uma só vez. Esses intervalos poderão ser contíguos, mas não precisam ser. `RangeAreas` são descritas ainda mais no artigo [Trabalhar com vários intervalos simultaneamente em suplementos do Excel](excel-add-ins-multiple-ranges.md).
 
+## <a name="find-special-cells-within-a-range-preview"></a>Localizar células especiais em um intervalo (visualização)
+
+> [!NOTE]
+> A `getSpecialCells` e `getSpecialCellsOrNullObject` métodos só estão disponíveis atualmente na versão visualização pública (beta). Para usar esse recurso, você deve usar a biblioteca beta do CDN do Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> Se você estiver usando o TypeScript ou se seu editor de código usar arquivos de definição de tipo do TypeScript do IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+
+As `Range.getSpecialCells()` e `Range.getSpecialCellsOrNullObject()` métodos localizar intervalos com base nas características de suas células e os tipos de valores de suas células. Os dois métodos retornam `RangeAreas` objetos. Aqui estão as assinaturas dos métodos do arquivo de tipos de dados TypeScript:
+
+```typescript
+getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
+```
+
+```typescript
+getSpecialCellsOrNullObject(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
+```
+
+O exemplo a seguir usa o `getSpecialCells` método para localizar células com fórmulas. Sobre este código, observe:
+
+- Ele limita a parte da planilha que precisa ser pesquisada chamando primeiro `Worksheet.getUsedRange` e chamando `getSpecialCells` para apenas esse intervalo.
+- O método `getSpecialCells` retorna um objeto `RangeAreas`, então todas as células com fórmulas serão coloridas de rosa, mesmo que não sejam todas contíguas.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var usedRange = sheet.getUsedRange();
+    var formulaRanges = usedRange.getSpecialCells(Excel.SpecialCellType.formulas);
+    formulaRanges.format.fill.color = "pink";
+
+    return context.sync();
+})
+```
+
+Se nenhuma célula com característica destino existe no intervalo, `getSpecialCells` exibe um erro **ItemNotFound**. Isso desvia o fluxo de controle para um `catch` bloco, se houver um. Se não houver um `catch` bloco, o erro interrompe a função.
+
+Se você espera que células com característica direcionada sempre deveriam existir, provavelmente desejará o código para gerar um erro se as células não estiverem lá. Se for um cenário válido que não há uma ou mais células correspondentes, o código deve verificar se há essa possibilidade e tratar normalmente sem enviar um erro. Você pode obter esse comportamento com o `getSpecialCellsOrNullObject` método e sua propriedade retornada `isNullObject`. O exemplo a seguir usa esse padrão. Sobre este código, observe:
+
+- O método `getSpecialCellsOrNullObject` sempre retorna um objeto de proxy, portanto, `null` nunca está no sentido comum do JavaScript. Mas se nenhuma célula de correspondência for encontrada, as propriedades do objeto`isNullObject` serão definida como `true`.
+- Ele chama `context.sync` *antes* de testar a propriedade`isNullObject`. Esse é um requisito com todos os métodos e propriedades `*OrNullObject`, pois sempre terá que carregar e sincronizar as propriedades na ordem para lê-la. No entanto, não é necessário carregar *explicitamente* a propriedade`isNullObject`. Será carregado automaticamente pelo `context.sync` mesmo se `load` não for chamado no objeto. Para saber mais, confira [ \*OrNullObject](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods).
+- Você pode testar esse código selecionando primeiro um intervalo sem células de fórmula e executando-o. Selecione um intervalo que tem pelo menos uma célula com uma fórmula e execute novamente.
+
+```js
+Excel.run(function (context) {
+    var range = context.workbook.getSelectedRange();
+    var formulaRanges = range.getSpecialCellsOrNullObject(Excel.SpecialCellType.formulas);
+    return context.sync()
+        .then(function() {
+            if (formulaRanges.isNullObject) {
+                console.log("No cells have formulas");
+            }
+            else {
+                formulaRanges.format.fill.color = "pink";
+            }
+        })
+        .then(context.sync);
+})
+```
+
+Para manter a simplicidade, todos os outros exemplos deste artigo usam o método `getSpecialCells` em vez de `getSpecialCellsOrNullObject`.
+
+### <a name="narrow-the-target-cells-with-cell-value-types"></a>Restrinja as células de destino com tipos de valor de célula
+
+As `Range.getSpecialCells()` e `Range.getSpecialCellsOrNullObject()` métodos aceitam um segundo parâmetro opcional usado para restringir ainda mais as células de destino. Este segundo parâmetro é uma `Excel.SpecialCellValueType` você usar para especificar que você quer apenas células que contêm determinados tipos de valores.
+
+> [!NOTE]
+> O `Excel.SpecialCellValueType` parâmetro só pode ser usado se a `Excel.SpecialCellType` está `Excel.SpecialCellType.formulas` ou `Excel.SpecialCellType.constants`.
+
+#### <a name="test-for-a-single-cell-value-type"></a>Teste para um tipo de valor da célula única
+
+O `Excel.SpecialCellValueType` enumeração com esses quatro tipos básicos (além dos outros valores combinados descritos nesta seção posterior):
+
+- `Excel.SpecialCellValueType.errors`
+- `Excel.SpecialCellValueType.logical` (ou seja, booliano)
+- `Excel.SpecialCellValueType.numbers`
+- `Excel.SpecialCellValueType.text`
+
+O exemplo a seguir localiza as células especiais que são constantes numéricos e colore essas células em rosa. Sobre este código, observe:
+
+- Ele apenas irá realçar células que contêm um valor numérico literal. Ele não destacará as células que têm uma fórmula (mesmo se o resultado for um número) ou células de estado booliano, de texto ou de erro.
+- Para testar o código, certifique-se de que a planilha tenha algumas células com valores numéricos literais, algumas com outros tipos de valores literais e algumas com fórmulas.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var usedRange = sheet.getUsedRange();
+    var constantNumberRanges = usedRange.getSpecialCells(
+        Excel.SpecialCellType.constants,
+        Excel.SpecialCellValueType.numbers);
+    constantNumberRanges.format.fill.color = "pink";
+
+    return context.sync();
+})
+```
+
+#### <a name="test-for-multiple-cell-value-types"></a>Teste para vários tipos de valores de célula
+
+Às vezes, você precisa operar com mais de um tipo de valor de célula, como todas as células com valor de texto e com valor booliano ("Lógico"). (`Excel.SpecialCellValueType.logical`). O `Excel.SpecialCellValueType` enumeração tem valores com tipos combinado. Por exemplo, `Excel.SpecialCellValueType.logicalText` segmentará todas as células boolianas e todos os valores de texto. `Excel.SpecialCellValueType.all` é o valor padrão, que não limita os tipos de valor da célula retornados. O exemplo a seguir destaca todas as células com fórmulas que produzem valores ou números boolianos.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var usedRange = sheet.getUsedRange();
+    var formulaLogicalNumberRanges = usedRange.getSpecialCells(
+        Excel.SpecialCellType.formulas,
+        Excel.SpecialCellValueType.logicalNumbers);
+    formulaLogicalNumberRanges.format.fill.color = "pink";
+
+    return context.sync();
+})
+```
+
 ## <a name="copy-and-paste-preview"></a>Copiar e colar (visualização)
 
 > [!NOTE]
@@ -76,7 +186,8 @@ O `RangeAreas` objeto permite ao suplemento executar operações em vários inte
 > Se você estiver usando o TypeScript ou se seu editor de código usar arquivos de definição de tipo do TypeScript do IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
 
 A função de `copyFrom` do intervalo replica o comportamento de copiar e colar da IU do Excel. O objeto de intervalo para o qual a função`copyFrom` é chamada é o destino.
-A fonte a ser copiada é passada como um intervalo ou um endereço de cadeia de caracteres que representa um intervalo. O exemplo a seguir copia dados de **A1:E1** para o intervalo que começa em **G1** (que acaba sendo colado em **G1:K1**).
+A fonte a ser copiada é passada como um intervalo ou um endereço de cadeia de caracteres que representa um intervalo.
+O exemplo a seguir copia dados de **A1:E1** para o intervalo que começa em **G1** (que acaba sendo colado em **G1:K1**).
 
 ```js
 Excel.run(function (context) {
@@ -90,15 +201,15 @@ Excel.run(function (context) {
 `Range.copyFrom` tem três parâmetros opcionais.
 
 ```TypeScript
-copyFrom(sourceRange: Range | string, copyType?: "All" | "Formulas" | "Values" | "Formats", skipBlanks?: boolean, transpose?: boolean): void;
+copyFrom(sourceRange: Range | RangeAreas | string, copyType?: Excel.RangeCopyType, skipBlanks?: boolean, transpose?: boolean): void;
 ```
 
 `copyType` especifica quais dados são copiados da origem para o destino.
 
-- `"Formulas"` transfere as fórmulas nas células de origem e preserva o posicionamento relativo dos intervalos dessas fórmulas. As entradas que não sejam uma fórmula são copiadas no seu estado original.
-- `"Values"` copia os valores dos dados e, no caso de fórmulas, o resultado da fórmula.
-- `"Formats"` copia a formatação do intervalo incluindo a fonte, cor e outras configurações de formato, mas nenhum valor.
-- `"All"` (a opção padrão) copia ambos os dados e formatação, preservando as fórmulas das células, caso elas sejam encontradas.
+- `Excel.RangeCopyType.formulas` transfere as fórmulas nas células de origem e preserva o posicionamento relativo dos intervalos dessas fórmulas. As entradas que não sejam uma fórmula são copiadas no seu estado original.
+- `Excel.RangeCopyType.values` copia os valores dos dados e, no caso de fórmulas, o resultado da fórmula.
+- `Excel.RangeCopyType.formats` copia a formatação do intervalo incluindo a fonte, cor e outras configurações de formato, mas nenhum valor.
+- `Excel.RangeCopyType.all` (a opção padrão) copia ambos os dados e formatação, preservando as fórmulas das células, caso elas sejam encontradas.
 
 `skipBlanks` define se as células em branco são copiadas para o destino. Quando for verdadeiro, `copyFrom` ignora células em branco no intervalo de origem.
 As células ignoradas não substituem os dados existentes de suas células correspondentes no intervalo de destino. O padrão é false.
@@ -177,3 +288,4 @@ Excel.run(async (context) => {
 
 - [Trabalhar com intervalos usando a API JavaScript do Excel](excel-add-ins-ranges.md)
 - [Conceitos fundamentais de programação com a API JavaScript do Excel](excel-add-ins-core-concepts.md)
+- [Trabalhar simultaneamente com vários intervalos em suplementos do Excel](excel-add-ins-multiple-ranges.md)
