@@ -2,12 +2,12 @@
 title: Desenvolver suplementos do Office para o Angular
 description: ''
 ms.date: 11/02/2018
-ms.openlocfilehash: b8756b9336e0d39c5544b264a110950fdd4d75ce
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: 0ae27efb3a89244e76860048d6c8ef4d78b613d1
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270660"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457856"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Desenvolver suplementos do Office para o Angular
 
@@ -84,7 +84,7 @@ Recomendamos usar o uso do estilo [Office UI Fabric](https://developer.microsoft
 
 A API de caixa de diálogo do Suplemento do Office permite que seu suplemento abra uma página em uma caixa de diálogo semimodal que pode trocar informações com a página principal, que, em geral, está no painel de tarefas. 
 
-O método [displayDialogAsync](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) usa um parâmetro que especifica a URL da página que deve ser aberta na caixa de diálogo. Seu suplemento pode ter uma página HTML distinta (diferente da página de base) para transmitir esse parâmetro ou você pode transmitir a URL de uma rota em um aplicativo do Angular. 
+O método [displayDialogAsync](https://docs.microsoft.com/javascript/api/office/office.ui) usa um parâmetro que especifica a URL da página que deve ser aberta na caixa de diálogo. Seu suplemento pode ter uma página HTML distinta (diferente da página de base) para transmitir esse parâmetro ou você pode transmitir a URL de uma rota em um aplicativo do Angular. 
 
 É importante lembrar, se você transmitir uma rota, que a caixa de diálogo cria uma nova janela com seu próprio contexto de execução. Sua página de base e todos os códigos de inicialização são executados novamente nesse novo contexto e todas as variáveis são definidas para seus valores iniciais na caixa de diálogo. Então essa técnica lança uma segunda instância do seu aplicativo com uma única página na caixa de diálogo. O código que altera as variáveis na caixa de diálogo não altera a versão do painel tarefas das mesmas variáveis. Da mesma forma, a caixa de diálogo tem seu próprio armazenamento de sessão, que não pode ser acessado a partir do código no painel de tarefas.  
 

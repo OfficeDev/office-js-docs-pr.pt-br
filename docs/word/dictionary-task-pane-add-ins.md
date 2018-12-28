@@ -2,12 +2,12 @@
 title: Criar um suplemento de painel de tarefas de dicionário
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 1032ad2312faabf4c1956078d2db4028521b5eb6
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+ms.openlocfilehash: 814dcc94f08a81ab01f96e5af487b4f7708c1aa5
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25004991"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457849"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>Criar um suplemento de painel de tarefas de dicionário
 
@@ -41,7 +41,7 @@ Você determina se clicar no link **Ver Mais** na interface do usuário HTML do 
 
 *Figura 5. Definições no Modo de Leitura*
 
-![Definições em modo de leitura](../images/dictionary-agave-05.jpg)
+![Definitions in Reading Mode](../images/dictionary-agave-05.jpg)
 
 Para criar um suplemento de painel de tarefas que forneça uma pesquisa de dicionário, crie dois componentes principais: 
 
@@ -526,13 +526,13 @@ O exemplo a seguir mostra a implementação de JavaScript no arquivo Dictionary.
 Os membros primários da API JavaScript para Office (Office.js) que são chamados por essa implementação são os seguintes:
 
 
-- O evento [initialize](https://docs.microsoft.com/javascript/api/office?view=office-js) do objeto **Office**, que é gerado quando o contexto do suplemento é inicializado e fornece acesso a uma instância de objeto [Document](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js) que representa o documento com o qual o suplemento está interagindo.
+- O evento [initialize](https://docs.microsoft.com/javascript/api/office) do objeto **Office**, que é gerado quando o contexto do suplemento é inicializado e fornece acesso a uma instância de objeto [Document](https://docs.microsoft.com/javascript/api/office/office.document) que representa o documento com o qual o suplemento está interagindo.
     
-- O método [addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#addhandlerasync-eventtype--handler--options--callback-) do objeto **Document**, que é chamado na função **initialize** para adicionar um manipulador de eventos ao evento [SelectionChanged](https://docs.microsoft.com/javascript/api/office/office.documentselectionchangedeventargs?view=office-js) do documento para escutar alterações de seleção de usuário.
+- O método [addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) do objeto **Document**, que é chamado na função **initialize** para adicionar um manipulador de eventos ao evento [SelectionChanged](https://docs.microsoft.com/javascript/api/office/office.documentselectionchangedeventargs) do documento para escutar alterações de seleção de usuário.
     
-- O método [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) do objeto **Document**, que é chamado na função `tryUpdatingSelectedWord()` quando o manipulador de eventos **SelectionChanged** é gerado para obter a palavra ou frase que o usuário selecionou, fazer a coerção dela para texto sem formatação e executar a função `selectedTextCallback` de retorno de chamada assíncrono.
+- O método [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) do objeto **Document**, que é chamado na função `tryUpdatingSelectedWord()` quando o manipulador de eventos **SelectionChanged** é gerado para obter a palavra ou frase que o usuário selecionou, fazer a coerção dela para texto sem formatação e executar a função `selectedTextCallback` de retorno de chamada assíncrono.
     
-- Quando a função de retorno de chamada assíncrono `selectTextCallback` que é passada como o argumento _callback_ do método **getSelectedDataAsync** é executada, obtém o valor do texto selecionado quando o retorno de chamada retorna. Ela obtém o valor do argumento _selectedText_ do retorno de chamada (que é do tipo [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js)) usando a propriedade [value](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js#status) do objeto **AsyncResult** retornado.
+- Quando a função de retorno de chamada assíncrono `selectTextCallback` que é passada como o argumento _callback_ do método **getSelectedDataAsync** é executada, obtém o valor do texto selecionado quando o retorno de chamada retorna. Ela obtém o valor do argumento _selectedText_ do retorno de chamada (que é do tipo [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult)) usando a propriedade [value](https://docs.microsoft.com/javascript/api/office/office.asyncresult#status) do objeto **AsyncResult** retornado.
     
 - O restante do código na função `selectedTextCallback` consulta o serviço Web XML para obter definições. Também chama as APIs do Microsoft Translator para fornecer a URL de um arquivo .wav que tem a pronúncia da palavra selecionada.
     

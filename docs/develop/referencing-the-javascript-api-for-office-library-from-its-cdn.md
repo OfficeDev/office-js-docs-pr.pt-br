@@ -2,12 +2,12 @@
 title: Fazer referência à biblioteca da API JavaScript para Office de sua CDN (rede de distribuição de conteúdo)
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: fec75531997a6b496b442b72d8139a9c98f37cd5
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: 9943af86419652e5f5e89b1741b32b4e0da15e77
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270835"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457618"
 ---
 # <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-cdn"></a>Fazer referência à biblioteca da API JavaScript para Office de sua CDN (rede de distribuição de conteúdo)
 
@@ -18,7 +18,7 @@ ms.locfileid: "27270835"
 > npm install --save-dev @types/office-js
 > ```
 
-A biblioteca da [API JavaScript para Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js) consiste no arquivo Office.js e nos arquivos .js específicos do aplicativo de host associado, como Excel-15.js e Outlook-15.js. 
+A biblioteca da [API JavaScript para Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office) consiste no arquivo Office.js e nos arquivos .js específicos do aplicativo de host associado, como Excel-15.js e Outlook-15.js. 
 
 
 A maneira mais simples de fazer referência à API é usar nossa CDN adicionando o seguinte `<script>` à marca `<head>` da sua página:  
@@ -37,5 +37,5 @@ Caso planeje publicar seu Suplemento do Office no AppSource, você deve usar est
 ## <a name="see-also"></a>Confira também
 
 - [Noções básicas da API JavaScript para Office](understanding-the-javascript-api-for-office.md)    
-- [API JavaScript para Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js)
+- [API JavaScript para Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office)
     

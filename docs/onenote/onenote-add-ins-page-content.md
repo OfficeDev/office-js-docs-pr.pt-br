@@ -2,12 +2,12 @@
 title: Trabalhar com conteúdo da página do OneNote
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: f44c58ac9cb3502889e280c63538603901b63a88
-ms.sourcegitcommit: 86724e980f720ed05359c9525948cb60b6f10128
+ms.openlocfilehash: aef9d80ebb37dacd2c3b5f2ec9d33cb0164d8452
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "26237406"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457611"
 ---
 # <a name="work-with-onenote-page-content"></a>Trabalhar com conteúdo da página do OneNote 
 
@@ -22,14 +22,14 @@ Na API JavaScript de suplementos do OneNote, o conteúdo da página é represent
 
 Para criar uma página em branco do OneNote, use um dos seguintes métodos:
 
-- [Section.addPage](https://docs.microsoft.com/javascript/api/onenote/onenote.section?view=office-js#addpage-title-)
-- [Page.insertPageAsSibling](https://docs.microsoft.com/javascript/api/onenote/onenote.section?view=office-js#insertsectionassibling-location--title-)
+- [Section.addPage](https://docs.microsoft.com/javascript/api/onenote/onenote.section#addpage-title-)
+- [Page.insertPageAsSibling](https://docs.microsoft.com/javascript/api/onenote/onenote.section#insertsectionassibling-location--title-)
 
 Em seguida, use métodos nos seguintes objetos para trabalhar com o conteúdo da página, como Page.addOutline e Outline.appendHtml. 
 
-- [Página](https://docs.microsoft.com/javascript/api/onenote/onenote.page?view=office-js)
-- [Estrutura de tópicos](https://docs.microsoft.com/javascript/api/onenote/onenote.outline?view=office-js)
-- [Parágrafo](https://docs.microsoft.com/javascript/api/onenote/onenote.paragraph?view=office-js)
+- [Página](https://docs.microsoft.com/javascript/api/onenote/onenote.page)
+- [Estrutura de tópicos](https://docs.microsoft.com/javascript/api/onenote/onenote.outline)
+- [Parágrafo](https://docs.microsoft.com/javascript/api/onenote/onenote.paragraph)
 
 O conteúdo e a estrutura da página do OneNote são representados por HTML. Apenas um subconjunto de HTML é compatível com a criação e a atualização do conteúdo da página, conforme descrito abaixo.
 
@@ -58,6 +58,6 @@ Metadados, como títulos, ainda podem ser consultados para qualquer página.
 ## <a name="see-also"></a>Confira também
 
 - [Visão geral da programação da API JavaScript do OneNote](onenote-add-ins-programming-overview.md)
-- [Referência da API JavaScript do OneNote](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js)
+- [Referência da API JavaScript do OneNote](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Amostra de Rubric Grader](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)

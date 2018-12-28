@@ -2,12 +2,12 @@
 title: Abrir automaticamente um painel de tarefas com um documento
 description: ''
 ms.date: 05/02/2018
-ms.openlocfilehash: 7022381eb24d5b0566936b068f2940703f0eef9f
-ms.sourcegitcommit: 9b021af6cb23a58486d6c5c7492be425e309bea1
+ms.openlocfilehash: 84e64c74b1c14da39a1f375fe54b1e6dcc887d16
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "26533746"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457919"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Abrir automaticamente um painel de tarefas com um documento
 
@@ -59,7 +59,7 @@ Para implementar o recurso autoopen:
 
 ### <a name="step-1-specify-the-task-pane-to-open"></a>Etapa 1: especificar o painel de tarefas que será aberto
 
-Para especificar o painel de tarefas que será aberto automaticamente, defina o valor [TaskpaneId](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/action?view=office-js#taskpaneid) para **Office.AutoShowTaskpaneWithDocument**. Você só pode definir esse valor em um painel de tarefas. Se você definir esse valor em vários painéis de tarefas, a primeira ocorrência do valor será reconhecida e as outras serão ignoradas.
+Para especificar o painel de tarefas que será aberto automaticamente, defina o valor [TaskpaneId](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/action#taskpaneid) para **Office.AutoShowTaskpaneWithDocument**. Você só pode definir esse valor em um painel de tarefas. Se você definir esse valor em vários painéis de tarefas, a primeira ocorrência do valor será reconhecida e as outras serão ignoradas.
 
 O exemplo a seguir mostra o valor TaskPaneId configurado para Office.AutoShowTaskpaneWithDocument.
 
@@ -77,7 +77,7 @@ Você pode marcar o documento para acionar o recurso autoopen de duas maneiras. 
 
 #### <a name="tag-the-document-on-the-client-side"></a>Marcar o documento no lado do cliente
 
-Use o método [settings.set](https://docs.microsoft.com/javascript/api/office/office.settings?view=office-js) do Office.js para configurar o **Office.AutoShowTaskpaneWithDocument** para **true**, conforme mostrado no exemplo a seguir.
+Use o método [settings.set](https://docs.microsoft.com/javascript/api/office/office.settings) do Office.js para configurar o **Office.AutoShowTaskpaneWithDocument** para **true**, conforme mostrado no exemplo a seguir.
 
 ```js
 Office.context.document.settings.set("Office.AutoShowTaskpaneWithDocument", true);

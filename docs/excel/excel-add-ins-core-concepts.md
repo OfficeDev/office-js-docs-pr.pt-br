@@ -2,16 +2,16 @@
 title: Conceitos fundamentais de programação com a API JavaScript do Excel
 description: Use a API JavaScript do Excel para criar suplementos para o Excel.
 ms.date: 11/29/2018
-ms.openlocfilehash: c92006fe8b1b51daa7cac420c63c5926a2414b61
-ms.sourcegitcommit: 026437bd3819f4e9cd4153ebe60c98ab04e18f4e
+ms.openlocfilehash: b32efc539b983a0fc0d1e8696869cedbb0a14095
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "26992216"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457898"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Conceitos fundamentais de programação com a API JavaScript do Excel
  
-Este artigo descreve como usar a [API JavaScript do Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js) para desenvolver suplementos para o Excel 2016 ou versões posteriores. Ele apresenta os conceitos básicos que são fundamentais para usar a API e fornece orientações para executar tarefas específicas, como leitura ou gravação em um intervalo grande, atualização de todas as células do intervalo e muito mais.
+Este artigo descreve como usar a [API JavaScript do Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) para desenvolver suplementos para o Excel 2016 ou versões posteriores. Ele apresenta os conceitos básicos que são fundamentais para usar a API e fornece orientações para executar tarefas específicas, como leitura ou gravação em um intervalo grande, atualização de todas as células do intervalo e muito mais.
 
 ## <a name="asynchronous-nature-of-excel-apis"></a>Natureza assíncrona das APIs do Excel
 
@@ -248,4 +248,4 @@ Quando ocorrer um erro de API, a API retornará um objeto **error** que contém 
 * [Exemplos de código de suplementos do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
 * [Conceitos fundamentais de programação com a API JavaScript do Excel](excel-add-ins-advanced-concepts.md)
 * [Otimização de desempenho do da API JavaScript do Excel](https://docs.microsoft.com/office/dev/add-ins/excel/performance)
-* [Referência da API JavaScript do Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview?view=office-js)
+* [Referência da API JavaScript do Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

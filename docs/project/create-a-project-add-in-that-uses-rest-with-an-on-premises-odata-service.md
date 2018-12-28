@@ -2,12 +2,12 @@
 title: Criar um suplemento de Project que usa REST com um serviço OData local do Project Server
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 0bd11e15d2742db12ecbe88d60e02f4e1fa87867
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: 9fc6e526587a6256e5ee51effe3bdb5cfe27af47
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27271024"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27458031"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>Criar um suplemento de Project que usa REST com um serviço OData local do Project Server
 
@@ -316,7 +316,7 @@ O restante do arquivo HelloProjectOData.js inclui duas funções: a função **r
     }
     ```
 
-2. Adicione **setOdataUrl** e as funções relacionadas. A função **setOdataUrl** chama **getProjectGuid** e **getDocumentUrl** para iniciar as variáveis globais. No [método getProjectFieldAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js), a função anônima para o parâmetro _callback_ habilita o botão **Comparar Todos os Projetos** usando o método **removeAttr** na biblioteca jQuery e exibe a URL do serviço **ProjectData**. Se o Project não estiver conectado ao Project Web App, a função gera um erro e exibe uma mensagem de erro pop-up. O arquivo SurfaceErrors.js inclui o método **throwError**.
+2. Adicione **setOdataUrl** e as funções relacionadas. A função **setOdataUrl** chama **getProjectGuid** e **getDocumentUrl** para iniciar as variáveis globais. No [método getProjectFieldAsync](https://docs.microsoft.com/javascript/api/office/office.document), a função anônima para o parâmetro _callback_ habilita o botão **Comparar Todos os Projetos** usando o método **removeAttr** na biblioteca jQuery e exibe a URL do serviço **ProjectData**. Se o Project não estiver conectado ao Project Web App, a função gera um erro e exibe uma mensagem de erro pop-up. O arquivo SurfaceErrors.js inclui o método **throwError**.
     
    > [!NOTE]
    > Se você executar o Visual Studio no computador do Project Server, use a depuração **F5**, sem comentar o código após a linha que inicializa a variável global **_pwa**. Para ativar usando o método jQuery **ajax** ao depurar no computador do Project Server, defina o valor **localhost** para a URL PWA. Se você executar o Visual Studio em um computador remoto, a URL do **localhost** não será necessária. Antes de implantar o suplemento, comente o código.

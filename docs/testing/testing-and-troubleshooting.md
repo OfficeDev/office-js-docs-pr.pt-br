@@ -2,12 +2,12 @@
 title: Solucionar erros de usuários com suplementos do Office
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: fb1b15236214056e6e15b4581a3813d42e31dc54
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: 6106b138eabb0360b11671eeb2a467e93311321e
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270772"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457912"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Solucionar erros de usuários com suplementos do Office
 
@@ -86,7 +86,7 @@ Para adicionar uma URL à lista de sites confiáveis:
 3. Insira a URL exibida na mensagem de erro e escolha **Adicionar**.
 4. Tente usar o suplemento novamente. Se o problema persistir, verifique as configurações de outras zonas de segurança e confira se o domínio do suplemento está na mesma zona que a URL exibida na barra de endereços do aplicativo do Office.
 
-Esse problema ocorre quando a API da caixa de diálogo é usada no modo pop-up. Para evitar esse problema, use o sinalizador [displayInFrame](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js). Isso requer que a página tenha suporte para exibição dentro de um iframe. O exemplo a seguir mostra como usar o sinalizador.
+Esse problema ocorre quando a API da caixa de diálogo é usada no modo pop-up. Para evitar esse problema, use o sinalizador [displayInFrame](https://docs.microsoft.com/javascript/api/office/office.ui). Isso requer que a página tenha suporte para exibição dentro de um iframe. O exemplo a seguir mostra como usar o sinalizador.
 
 ```js
 

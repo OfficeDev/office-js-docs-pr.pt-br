@@ -2,17 +2,17 @@
 title: Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint
 description: Use VersionOverrides no manifesto para definir comandos de suplemento para Excel, Word e PowerPoint. Use comandos de suplemento para criar elementos da interface do usuário, adicionar listas ou botões e executar ações.
 ms.date: 12/04/2017
-ms.openlocfilehash: 3c3148a6a6cf3a6b0389b738253acc360f428eb2
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+ms.openlocfilehash: 1c18155f0666477ef039c5a33dcd823d15e3050e
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270982"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27458122"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-word-and-powerpoint"></a>Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint
 
 
-Use **[VersionOverrides](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/versionoverrides?view=office-js)** no manifesto para definir comandos de suplemento para Excel, Word e PowerPoint. Os comandos de suplemento fornecem uma maneira fácil de personalizar a interface do usuário padrão do Office com elementos de interface do usuário especificados que executam ações. Você pode usar comandos de suplemento para:
+Use **[VersionOverrides](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/versionoverrides)** no manifesto para definir comandos de suplemento para Excel, Word e PowerPoint. Os comandos de suplemento fornecem uma maneira fácil de personalizar a interface do usuário padrão do Office com elementos de interface do usuário especificados que executam ações. Você pode usar comandos de suplemento para:
 - Criar elementos de interface do usuário ou pontos de entrada que facilitam o uso da funcionalidade dos suplementos.  
   
 - Adicionar botões ou uma lista suspensa de botões à faixa de opções.    
@@ -143,7 +143,7 @@ Veja a seguir um exemplo dos elementos **Hosts**, **Host** e **DesktopFormFactor
 
 ## <a name="step-5-add-the-functionfile-element"></a>Etapa 5: adicionar o elemento FunctionFile
 
-O elemento **FunctionFile** especifica um arquivo que contém o código JavaScript a ser executado quando um comando de suplemento usa a ação **ExecuteFunction** (confira [Controles de botão](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/control?view=office-js#Button-control) para obter uma descrição). O atributo **resid** do elemento **FunctionFile** é definido como um arquivo HTML que inclui todos os arquivos JavaScript exigidos por seus comandos de suplemento. Você não pode criar um vínculo diretamente com um arquivo JavaScript, mas somente com um arquivo HTML. O nome do arquivo é especificado como um elemento **Url** no elemento **Resources**.
+O elemento **FunctionFile** especifica um arquivo que contém o código JavaScript a ser executado quando um comando de suplemento usa a ação **ExecuteFunction** (confira [Controles de botão](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/control#Button-control) para obter uma descrição). O atributo **resid** do elemento **FunctionFile** é definido como um arquivo HTML que inclui todos os arquivos JavaScript exigidos por seus comandos de suplemento. Você não pode criar um vínculo diretamente com um arquivo JavaScript, mas somente com um arquivo HTML. O nome do arquivo é especificado como um elemento **Url** no elemento **Resources**.
         
 Veja a seguir um exemplo do elemento **FunctionFile**.
   
@@ -161,7 +161,7 @@ Veja a seguir um exemplo do elemento **FunctionFile**.
 > [!IMPORTANT]
 > Verifique se seu código JavaScript chama `Office.initialize`. 
    
-O JavaScript no arquivo HTML referenciado pelo elemento **FunctionFile** deve chamar `Office.initialize`. O elemento **FunctionName** (confira [Controles de botão](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/control?view=office-js#Button-control) para obter uma descrição) usa as funções em **FunctionFile**.
+O JavaScript no arquivo HTML referenciado pelo elemento **FunctionFile** deve chamar `Office.initialize`. O elemento **FunctionName** (confira [Controles de botão](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/control#Button-control) para obter uma descrição) usa as funções em **FunctionFile**.
      
 O código a seguir mostra como implementar a função usada por **FunctionName**.
 
@@ -247,13 +247,13 @@ Os exemplos a seguir mostram como usar o elemento **ExtensionPoint** com os valo
 |**Elemento**|**Descrição**|
 |:-----|:-----|
 |**CustomTab** <br/> |Obrigatório se você quiser adicionar uma guia personalizada à faixa de opções (usando **PrimaryCommandSurface**). Se você usar o elemento **CustomTab**, o elemento **OfficeTab** não poderá ser usado. O atributo **id** é obrigatório. <br/> |
-|**OfficeTab** <br/> |Obrigatório se você quiser estender uma guia de faixa de opções padrão do Office (usando **PrimaryCommandSurface**). Se você usar o elemento **OfficeTab**, o elemento **CustomTab** não poderá ser usado. <br/> Para obter mais valores de guia a serem usados com o atributo **id**, confira [Valores de guia para guias de faixa de opções padrão do Office](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/officetab?view=office-js).  <br/> |
+|**OfficeTab** <br/> |Obrigatório se você quiser estender uma guia de faixa de opções padrão do Office (usando **PrimaryCommandSurface**). Se você usar o elemento **OfficeTab**, o elemento **CustomTab** não poderá ser usado. <br/> Para obter mais valores de guia a serem usados com o atributo **id**, confira [Valores de guia para guias de faixa de opções padrão do Office](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/officetab).  <br/> |
 |**OfficeMenu** <br/> | Obrigatório se você estiver adicionando comandos de suplemento a um menu de contexto padrão (usando **ContextMenu**). O atributo **id** deve ser definido como: <br/> **ContextMenuText** para Excel ou Word. Exibe o item no menu de contexto quando o texto é selecionado e o usuário clica com o botão direito do mouse no texto selecionado. <br/> **ContextMenuCell** para Excel. Exibe o item no menu de contexto quando o usuário clica com o botão direito do mouse em uma célula na planilha. <br/> |
 |**Group** <br/> |Um grupo de pontos de extensão de interface do usuário em uma guia. Um grupo pode ter até seis controles. O atributo **id** é obrigatório. É uma cadeia de caracteres com, no máximo, 125 caracteres. <br/> |
 |**Label** <br/> |Obrigatório. O rótulo do grupo. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **ShortStrings**, que é elemento filho do elemento **Resources**. <br/> |
 |**Icon** <br/> |Obrigatório. Especifica o ícone do grupo a ser usado em dispositivos de fator forma pequeno ou quando muitos botões são exibidos. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **Image**. O elemento **Image** é um elemento filho do elemento **Images**, que é um elemento filho do elemento **Resources**. O atributo **size** fornece o tamanho da imagem em pixels. Três tamanhos de imagem são obrigatórios: 16, 32 e 80 pixels. Também há suporte para cinco tamanhos opcionais: 20, 24, 40, 48 e 64 pixels. <br/> |
 |**Tooltip** <br/> |Opcional. A dica de ferramenta do grupo. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **LongStrings**, que é um elemento filho do elemento **Resources**. <br/> |
-|**Control** <br/> |Cada grupo exige pelo menos um controle. Um elemento **Control** pode ser um **Button** ou um **Menu**. Use **Menu** para especificar uma lista suspensa de controles de botão. Atualmente, há suporte apenas para botões e menus. Confira as seguintes seções [Controles de botão](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/control?view=office-js#Button-control) e [Controles de menu](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/control?view=office-js#menu-dropdown-button-controls) para saber mais.<br/>**Observação:** para facilitar a solução de problemas, recomendamos adicionar um elemento **Control** e os elementos filho **Resources** relacionados, um de cada vez.          |
+|**Control** <br/> |Cada grupo exige pelo menos um controle. Um elemento **Control** pode ser um **Button** ou um **Menu**. Use **Menu** para especificar uma lista suspensa de controles de botão. Atualmente, há suporte apenas para botões e menus. Confira as seguintes seções [Controles de botão](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/control#Button-control) e [Controles de menu](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/control#menu-dropdown-button-controls) para saber mais.<br/>**Observação:** para facilitar a solução de problemas, recomendamos adicionar um elemento **Control** e os elementos filho **Resources** relacionados, um de cada vez.          |
    
 
 ### <a name="button-controls"></a>Controles de botão
@@ -381,7 +381,7 @@ O exemplo a seguir mostra como definir um item de menu com dois itens de submenu
 |**Tooltip** <br/> |Opcional. A dica de ferramenta do menu. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **LongStrings**, que é um elemento filho do elemento **Resources**. <br/> |
 |**SuperTip** <br/> | Obrigatório. A superdica para o menu, que é definida pelos seguintes itens: <br/> **Título** <br/>  Obrigatório. O texto da superdica. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **ShortStrings**, que é elemento filho do elemento **Resources**. <br/> **Descrição** <br/>  Obrigatório. A descrição da superdica. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **LongStrings**, que é um elemento filho do elemento **Resources**. <br/> |
 |**Icon** <br/> | Obrigatório. Contém os elementos **Image** para o menu. Arquivos de imagem devem estar no formato .png. <br/> **Image** <br/>  Uma imagem para o menu. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **Image**. O elemento **Image** é um elemento filho do elemento **Images**, que é um elemento filho do elemento **Resources**. O atributo **size** indica o tamanho em pixels da imagem. Três tamanhos de imagem, em pixels, são obrigatórios: 16, 32 e 80 pixels. Cinco tamanhos opcionais, em pixels, também têm suporte: 20, 24, 40, 48 e 64 pixels. <br/> |
-|**Items** <br/> |Obrigatório. Contém os elementos **Item** para cada item do submenu. Cada elemento **Item** contém os mesmos elementos filho que [Controles de botão](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/control?view=office-js#Button-control).  <br/> |
+|**Items** <br/> |Obrigatório. Contém os elementos **Item** para cada item do submenu. Cada elemento **Item** contém os mesmos elementos filho que [Controles de botão](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/control#Button-control).  <br/> |
    
 ## <a name="step-7-add-the-resources-element"></a>Etapa 7: adicionar o elemento Resources
 

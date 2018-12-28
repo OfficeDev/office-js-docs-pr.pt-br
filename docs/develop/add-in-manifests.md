@@ -2,12 +2,12 @@
 title: Manifesto XML dos Suplementos do Office
 description: ''
 ms.date: 12/26/2018
-ms.openlocfilehash: d4b83e0d450f98877169be16ea1cd391f2a6e9d6
-ms.sourcegitcommit: 89e090a2a9ed85fe1b829820fb3b4dc6fb1fa6e9
+ms.openlocfilehash: e0602c3baf028a4982feb6983ce05e8fee3d8501
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "27447002"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457863"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifesto XML dos Suplementos do Office
 
@@ -73,7 +73,7 @@ _\*Adicionados no esquema de manifesto de suplementos da versão 1.1 do Office._
 
 <!-- Links for above table -->
 
-[officeapp]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/officeapp?view=office-js
+[officeapp]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/officeapp
 [id]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/id
 [version]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/version
 [providername]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/providername
