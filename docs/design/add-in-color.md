@@ -2,12 +2,12 @@
 title: Diretrizes de cor para Suplementos do Office
 description: ''
 ms.date: 06/27/2018
-ms.openlocfilehash: 612b6e2a232ab79f6ff44bc3f0e873b75fe7b0ef
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: 34e067e4f5361ca54b8e50d6b86ff42d31154f19
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433317"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27458087"
 ---
 # <a name="color"></a>Cor
 A cor é geralmente usada para enfatizar a marca e reforçar a hierarquia visual. Ela ajuda a identificar uma interface, além de orientar os clientes em uma experiência. No Office, a cor é usada para os mesmos objetivos, mas é aplicada intencionalmente e de forma mínima. Ela nunca sobrecarrega o conteúdo do cliente. Mesmo quando cada aplicativo do Office é identificado com sua própria cor dominante, ela é usada com moderação.
@@ -17,7 +17,7 @@ O Office UI Fabric inclui um conjunto padrão de cores de tema. Quando o Fabric 
 Os aplicativos do Office permitem que os clientes personalizem as interfaces aplicando um tema de interface do usuário do Office. Os clientes podem escolher entre quatro temas de interface do usuário para variar o estilo de telas de fundo e botões no Word, no PowerPoint, no Excel e em outros aplicativos do Office. Para que os suplementos pareçam uma parte natural do Office e reajam à personalização, use nossas APIs de Temas. Por exemplo, as cores de tela de fundo do painel de tarefas alternam para um cinza escuro em alguns temas. Nossas APIs de temas permitem que faça o mesmo e ajuste o texto de primeiro plano para garantir a [acessibilidade](../design/accessibility-guidelines.md).
 
 > [!NOTE]
-> - Para suplementos do painel de tarefas e email, use a propriedade [Context.officeTheme](https://docs.microsoft.com/javascript/api/office/office.context?view=office-js) para combinar o tema dos aplicativos do Office. Atualmente, essa API só está disponível no Office 2016.
+> - Para suplementos do painel de tarefas e email, use a propriedade [Context.officeTheme](https://docs.microsoft.com/javascript/api/office/office.context) para combinar o tema dos aplicativos do Office. Atualmente, essa API só está disponível no Office 2016.
 > - Para suplementos de conteúdo do PowerPoint, confira [Usar os temas do Office em seus suplementos do PowerPoint](../powerpoint/use-document-themes-in-your-powerpoint-add-ins.md).
 
 Aplique as seguintes diretrizes gerais para as cores:
