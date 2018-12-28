@@ -1,3 +1,14 @@
+---
+title: Diretrizes de tipografia para suplementos do Office
+description: ''
+ms.date: 06/27/2018
+ms.openlocfilehash: b9c5a957411a7c2df078be54df514237280cd150
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432953"
+---
 # <a name="typography"></a>Tipografia
 
 Segoe é o tipo de fonte padrão para o Office. Use-a no suplemento para alinhar objetos de conteúdo, caixas de diálogo e painéis de tarefas do Office. O Office UI Fabric lhe dá acesso à fonte Segoe. Ele fornece um conjunto completo da fonte Segoe com muitas variações (incluindo espessura e tamanho da fonte) em classes CSS convenientes. Nem todos os tamanhos e espessuras do Office UI Fabric terão boa aparência em um suplemento do Office. Para obter um ajuste harmonioso ou evitar conflitos, considere o uso de um subconjunto do conjunto de fontes do Fabric. Aqui está uma lista de classes base do Fabric que recomendamos para uso em suplementos do Office.
@@ -12,4 +23,4 @@ Segoe é o tipo de fonte padrão para o Office. Use-a no suplemento para alinhar
 |![Imagem de texto Hero](../images/add-in-typeramp-annotation.png)|.ms-font-mi |10 px |Segoe Semibold |<ul><li>A menor etapa no painel de tipos deve ser usada raramente. Está disponível para situações em que a legibilidade não é necessária.</li><ul>|
 
 > [!NOTE]
-> A cor do texto não está incluída nessas classes base. Use a opção "Neutro principal" do Fabric para a maioria dos textos em fundos brancos.
+> A cor do texto não está incluída nessas classes base. Use a opção “Neutro principal” do Fabric para a maioria dos textos em fundos brancos.

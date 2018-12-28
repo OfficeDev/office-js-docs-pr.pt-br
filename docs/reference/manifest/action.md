@@ -1,3 +1,14 @@
+---
+title: Elemento Action no arquivo de manifesto
+description: ''
+ms.date: 11/14/2018
+ms.openlocfilehash: 04c081a02768446fcf587b8b6a7c4e1dcd66012f
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433268"
+---
 # <a name="action-element"></a>Elemento Action
 
 Especifica a ação a ser executada quando o usuário seleciona controles de [Button](control.md#button-control) ou [Menu](control.md#menu-dropdown-button-controls).

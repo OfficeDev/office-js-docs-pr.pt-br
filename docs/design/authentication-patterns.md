@@ -1,3 +1,14 @@
+---
+title: Diretrizes de design de autenticação para suplementos do Office
+description: ''
+ms.date: 11/02/2018
+ms.openlocfilehash: a812a1fe6feaa1c6744205db6bfd4ed81793fefe
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432974"
+---
 # <a name="authentication-patterns"></a>Padrões de autenticação
 
 Os suplementos podem exigir que os usuários entrem ou se inscrevam para acessar os recursos e funcionalidades. As caixas de entrada de nome de usuário e senha ou botões que iniciam fluxos de credenciais de terceiros são controles comuns da interface em experiências de autenticação. Uma experiência de autenticação simples e eficiente é uma primeira etapa importante para iniciar os usuários no uso de seu suplemento.

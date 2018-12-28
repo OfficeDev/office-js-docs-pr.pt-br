@@ -1,7 +1,17 @@
+---
+title: Office.context.mailbox – conjunto de requisitos 1.1
+description: ''
+ms.date: 10/31/2018
+ms.openlocfilehash: 352132fcc4645463b922cd3bab200fb8efb167b4
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433324"
+---
+# <a name="mailbox"></a>mailbox
 
-# <a name="mailbox"></a>caixa de correio
-
-### [Office](Office.md)[.context](Office.context.md). mailbox
+### <a name="officeofficemdcontextofficecontextmdmailbox"></a>[Office](Office.md)[.context](Office.context.md).mailbox
 
 Fornece acesso ao modelo de objeto de suplemento do Outlook para o Microsoft Outlook e o Microsoft Outlook na Web.
 
@@ -25,7 +35,7 @@ Fornece acesso ao modelo de objeto de suplemento do Outlook para o Microsoft Out
 
 #### <a name="ewsurl-string"></a>ewsUrl :String
 
-Obtém a URL do ponto de extremidade dos Serviços Web do Exchange (EWS) para esta conta de email. Somente modo de leitura.
+Obtém a URL do ponto de extremidade dos EWS (Serviços Web do Exchange) para esta conta de email. Somente modo de Leitura.
 
 > [!NOTE]
 > Não há suporte para esse membro no Outlook para iOS ou no Outlook para Android.
@@ -131,7 +141,7 @@ Se o identificador do item especificado não identificar um compromisso existent
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
@@ -166,7 +176,7 @@ Não use o método `displayMessageForm` com um `itemId` que representa um compro
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
@@ -176,7 +186,7 @@ Office.context.mailbox.displayMessageForm(messageId);
 
 #### <a name="displaynewappointmentformparameters"></a>displayNewAppointmentForm(parameters)
 
-Exibe um formulário para criar um novo compromisso no calendário.
+Exibe um formulário para criar um compromisso no calendário.
 
 > [!NOTE]
 > Não há suporte para esse método no Outlook para iOS ou no Outlook para Android.
@@ -209,7 +219,7 @@ Se qualquer dos parâmetros exceder os limites de tamanho especificados, ou se u
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Read|
 
 ##### <a name="example"></a>Exemplo
 
@@ -254,7 +264,7 @@ Seu aplicativo deve ter a permissão **ReadItem** especificada em seu manifesto 
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Read|
 
 ##### <a name="example"></a>Exemplo
 
@@ -287,7 +297,7 @@ O método `getUserIdentityTokenAsync` retorna um token que pode ser utilizado pa
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
@@ -303,7 +313,7 @@ function cb(asyncResult) {
 
 ####  <a name="makeewsrequestasyncdata-callback-usercontext"></a>makeEwsRequestAsync(data, callback, [userContext])
 
-Faz uma solicitação assíncrona em um serviço dos Serviços Web do Exchange (EWS) no servidor Exchange que hospeda a caixa de correio do usuário.
+Faz uma solicitação assíncrona em um serviço dos EWS (Serviços Web do Exchange) no servidor Exchange que hospeda a caixa de correio do usuário.
 
 > [!NOTE]
 > Esse método não tem suporte nas seguintes situações.
@@ -342,7 +352,7 @@ Não é necessário definir o valor de codificação quando o aplicativo de emai
 |Nome| Tipo| Atributos| Descrição|
 |---|---|---|---|
 |`data`| String||A solicitação do EWS.|
-|`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O resultado XML da chamada do EWS é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`. Se o resultado exceder 1 MB de tamanho, é exibida uma mensagem de erro.|
+|`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O resultado XML da chamada do EWS é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`. Se o resultado exceder 1 MB de tamanho, será exibida uma mensagem de erro.|
 |`userContext`| Objeto| &lt;opcional&gt;|Quaisquer dados de estado que são passados ao método assíncrono.|
 
 ##### <a name="requirements"></a>Requisitos
@@ -351,7 +361,7 @@ Não é necessário definir o valor de codificação quando o aplicativo de emai
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadWriteMailbox|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|
 
 ##### <a name="example"></a>Exemplo
 

@@ -1,6 +1,17 @@
+---
+title: Elemento Resources no arquivo de manifesto
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 0707df137d075a9922836e5d960216d089c56675
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433898"
+---
 # <a name="resources-element"></a>Elemento Resources
 
-Contém ícones, sequências de caracteres e URLs para o nó [VersionOverrides](versionoverrides.md). Um elemento de manifesto especifica um recurso usando a **id** do recurso. Isso ajuda a manter o tamanho do manifesto gerenciável, especialmente quando os recursos tiverem versões para localidades diferentes. Uma **id** deve ser exclusiva no manifesto e pode ter no máximo 32 caracteres.
+Contém ícones, cadeias de caracteres e URLs para o nó [VersionOverrides](versionoverrides.md). Um elemento de manifesto especifica um recurso usando a **id** do recurso. Isso ajuda a manter o tamanho do manifesto manejável, especialmente quando os recursos tiverem versões para localidades diferentes. Uma **id** deve ser exclusiva no manifesto e pode ter no máximo 32 caracteres.
 
 Cada recurso pode ter um ou mais elementos filhos **Override** para definir um recurso diferente para uma localidade específica.
 
@@ -9,17 +20,17 @@ Cada recurso pode ter um ou mais elementos filhos **Override** para definir um r
 |  Elemento |  Tipo  |  Descrição  |
 |:-----|:-----|:-----|
 |  [Images](#images)            |  image   |  Fornece a URL HTTPS de uma imagem para um ícone. |
-|  **Urls**                |  url     |  Fornece um local para a URL HTTPS. A URL pode ter 2.048 caracteres no máximo. |
-|  **ShortStrings** |  string  |  O texto para os elementos **Label** e **Title**. Cada **String** contém no máximo 125 caracteres.|
-|  **LongStrings**  |  string  | O texto para atributos **Description** . Cada **String** contém no máximo 250 caracteres.|
+|  **URLs**                |  url     |  Fornece um local para a URL HTTPS. A URL pode ter 2.048 caracteres no máximo. |
+|  **ShortStrings** |  cadeia de caracteres  |  O texto para os elementos **Label** e **Title**. Cada **String** contém no máximo 125 caracteres.|
+|  **LongStrings**  |  cadeia de caracteres  | O texto para atributos **Description**. Cada **String** contém no máximo 250 caracteres.|
 
 > [!NOTE]
 > Use o protocolo SSL (Secure Sockets Layer) para todas as URLs nos elementos **Image** e **Url**.
 
-### <a name="images"></a>Images
+### <a name="images"></a>Imagens
 Cada ícone deve ter três elementos **Images**, um para cada um dos três tamanhos obrigatórios:
 
-- 16x16
+- 16 x 16
 - 32x32
 - 80x80
 

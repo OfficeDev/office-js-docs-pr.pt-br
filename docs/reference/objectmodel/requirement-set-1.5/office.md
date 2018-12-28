@@ -1,3 +1,14 @@
+---
+title: Namespace do Office – conjunto de requisitos versão 1.5
+description: ''
+ms.date: 11/08/2018
+ms.openlocfilehash: 46b21df77456d2392fbc543e45513246a4ad9a10
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433646"
+---
 # <a name="office"></a>Office
 
 O namespace do Office fornece interfaces compartilhadas que são usadas pelos suplementos em todos os aplicativos do Office. Esta listagem documenta somente as interfaces que são usadas pelos suplementos do Outlook. Para obter uma lista completa de namespaces do Office, confira [API compartilhada](/javascript/api/office).
@@ -7,7 +18,7 @@ O namespace do Office fornece interfaces compartilhadas que são usadas pelos su
 |Requisito| Valor|
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|
 
 ##### <a name="members-and-methods"></a>Membros e métodos
 

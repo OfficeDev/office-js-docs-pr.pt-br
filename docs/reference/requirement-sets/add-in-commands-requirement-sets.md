@@ -1,10 +1,21 @@
+---
+title: Conjuntos de requisitos dos comandos de suplemento
+description: ''
+ms.date: 11/21/2018
+ms.openlocfilehash: d0da9d9584a899658ab73e1373589a6d824f0c3e
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432778"
+---
 # <a name="add-in-commands-requirement-sets"></a>Conjuntos de requisitos dos comandos de suplemento
 
 Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
 Comandos de suplemento são elementos de interface do usuário que estendem a interface do usuário do Office e iniciam ações no suplemento. Você pode usar comandos de suplemento para adicionar um botão à faixa de opções ou um item a um menu de contexto. Para saber mais, confira [Comandos de suplemento para Excel, Word e PowerPoint](https://docs.microsoft.com/office/dev/add-ins/design/add-in-commands) e [Comandos de suplemento para Outlook](https://docs.microsoft.com/outlook/add-ins/add-in-commands-for-outlook).
 
-A versão inicial dos comandos do suplemento não tem um conjunto de requisitos correspondente (ou seja, não há um conjunto de requisitos AddInCommands 1.0). A tabela a seguir lista os aplicativos de host do Office que oferecem suporte à versão de lançamento inicial e os números de versão ou de build dos aplicativos.  
+A versão inicial dos comandos do suplemento não tem um conjunto de requisitos correspondente (ou seja, não há um conjunto de requisitos 1.0 de AddInCommands). A tabela a seguir lista os aplicativos de host do Office que oferecem suporte à versão de lançamento inicial e os números de versão ou de build dos aplicativos.  
 
 | Lançar   |  Office 2013 para Windows | Office 2016 para Windows (sem assinatura) | Office 365 para Windows   |  Office 365 para iPad  |  Office 365 para Mac  | Office Online  |  
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
@@ -12,7 +23,7 @@ A versão inicial dos comandos do suplemento não tem um conjunto de requisitos 
 
 O conjunto de requisitos 1.1 dos comandos do suplemento introduz a capacidade de [abrir automaticamente um painel de tarefas com documentos](https://docs.microsoft.com/office/dev/add-ins/develop/automatically-open-a-task-pane-with-a-document).
 
-A tabela a seguir lista os conjuntos de requisitos 1.1 dos comandos do suplemento, ou seja, os aplicativos de host do Office que oferecem suporte a esse conjunto de requisitos e os números de versão ou de build dos aplicativos do Office. 
+A tabela a seguir lista o conjunto de requisitos 1.1 dos comandos do suplemento, ou seja, os aplicativos de host do Office que oferecem suporte a esse conjunto de requisitos e os números de versão ou de build dos aplicativos do Office. 
 
 |  Conjunto de requisitos  |  Office 2013 para Windows | Office 2016 para Windows (sem assinatura) | Office 365 para Windows   |  Office 365 para iPad  |  Office 365 para Mac  | Office Online  |  
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|

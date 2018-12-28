@@ -1,7 +1,17 @@
+---
+title: Office.context.mailbox – conjunto de requisitos 1.4
+description: ''
+ms.date: 10/31/2018
+ms.openlocfilehash: 543ba9c41c766bee3b27e5ca885e54c7b518459c
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433303"
+---
+# <a name="mailbox"></a>mailbox
 
-# <a name="mailbox"></a>caixa de correio
-
-### [Office](Office.md)[.context](Office.context.md). mailbox
+### <a name="officeofficemdcontextofficecontextmdmailbox"></a>[Office](Office.md)[.context](Office.context.md).mailbox
 
 Fornece acesso ao modelo de objeto de suplemento do Outlook para o Microsoft Outlook e o Microsoft Outlook na Web.
 
@@ -46,7 +56,7 @@ No modo de composição, é preciso chamar o método [`saveAsync`](Office.contex
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ### <a name="methods"></a>Métodos
 
@@ -72,7 +82,7 @@ IDs de itens recuperadas por meio de uma API REST (como a [API do Email do Outlo
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restrito|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="returns"></a>Retorna:
 
@@ -101,7 +111,7 @@ Se o aplicativo de email estiver sendo executado no Outlook, o método `convertT
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`timeValue`| Data|Um objeto Date|
+|`timeValue`| Date|Um objeto Date|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -109,7 +119,7 @@ Se o aplicativo de email estiver sendo executado no Outlook, o método `convertT
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="returns"></a>Retorna:
 
@@ -137,7 +147,7 @@ IDs de itens recuperadas por EWS ou pela propriedade `itemId` usam um formato di
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restrito|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="returns"></a>Retorna:
 
@@ -172,7 +182,7 @@ O método `convertToUtcClientTime` converte um dicionário que contém uma data 
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="returns"></a>Retorna:
 

@@ -1,3 +1,14 @@
+---
+title: Elemento IconUrl no arquivo de manifesto
+description: ''
+ms.date: 12/04/2018
+ms.openlocfilehash: 471a168b5aa0091292132a1e078fa2b3f5efb448
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433121"
+---
 # <a name="iconurl-element"></a>Elemento IconUrl
 
 Especifica a URL da imagem que é usada para representar o seu Suplemento do Office na experiência de usuário de inserção e na Office Store.

@@ -1,3 +1,14 @@
+---
+title: Diretrizes de acessibilidade para suplementos do Office
+description: ''
+ms.date: 09/24/2018
+ms.openlocfilehash: d23041e874792a5718708c2171b1fdbe0675cddf
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433387"
+---
 # <a name="accessibility-guidelines"></a>Diretrizes de acessibilidade
 
 À medida que você projeta e desenvolve seus suplementos do Office, convém verificar se todos os usuários e clientes potenciais são capazes de usar seu suplemento com êxito. Aplique as seguintes diretrizes para garantir que sua solução seja acessível a todos os públicos.

@@ -1,3 +1,14 @@
+---
+title: Visão geral da API JavaScript do Excel
+description: ''
+ms.date: 11/01/2018
+ms.openlocfilehash: 202e6eb4993e43191f4f8c867ff0907af61a2ed6
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433800"
+---
 # <a name="excel-javascript-api-overview"></a>Visão geral da API JavaScript do Excel
 
 Você pode usar a API JavaScript do Excel para criar suplementos para o Excel 2016 ou posterior. A lista a seguir mostra os objetos de alto nível do Excel que estão disponíveis na API. Os links de página dos objetos contêm uma descrição dos respectivos eventos, propriedades e métodos que estão disponíveis no objeto. Acesse os links no menu para saber mais.

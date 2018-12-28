@@ -1,4 +1,15 @@
-# <a name="apply-conditional-formatting-to-excel-ranges"></a>Aplicar formatação condicional de intervalos do Excel
+---
+title: Aplicar formatação condicional a intervalos com a API JavaScript do Excel
+description: ''
+ms.date: 10/22/2018
+ms.openlocfilehash: f4baaea04ef487c26721ecfb2a90b8609ee96777
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433177"
+---
+# <a name="apply-conditional-formatting-to-excel-ranges"></a>Aplicar formatação condicional a intervalos do Excel
 
 A Biblioteca de JavaScript do Excel fornece APIs para aplicar a formatação condicional aos intervalos de dados nas suas planilhas. Esse recurso simplifica a visualização da análise de grandes conjuntos de dados. A formatação também atualiza dinamicamente com base nas alterações no intervalo. 
 

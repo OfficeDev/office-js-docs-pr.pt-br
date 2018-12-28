@@ -1,3 +1,14 @@
+---
+title: Elemento Rule no arquivo de manifesto
+description: ''
+ms.date: 11/30/2018
+ms.openlocfilehash: ce7763ecb4ef81587ccacbd4090a6f412baf99b2
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433108"
+---
 # <a name="rule-element"></a>Elemento Rule
 
 Especifica a(s) regra(s) de ativação que deve(m) ser avaliada(s) para este suplemento contextual de email.

@@ -1,22 +1,33 @@
+---
+title: Elemento Icon no arquivo de manifesto
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 476e5720e4959c3c766a7ae6206f2bf12731bfd2
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27432267"
+---
 # <a name="icon-element"></a>Elemento Icon
 
-Define elementos **Image** para controles de [Botão](control.md#button-control) ou de [Menu](control.md#menu-dropdown-button-controls).
+Define elementos de **Imagem** para controles de [Botão](control.md#button-control) ou de [Menu](control.md#menu-dropdown-button-controls).
 
 ## <a name="attributes"></a>Atributos
 
 |  Atributo  |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **xsi:type**  |  Não  | O tipo de ícone que está sendo definido. Só é aplicável a ícones em fatores forma móveis. Os elementos **Icon** contidos em um elemento [MobileFormFactor](mobileformfactor.md) devem ter esse atributo definido como `bt:MobileIconList`. |
+|  **xsi:type**  |  Não  | O tipo de ícone que está sendo definido. Isso só é aplicável a ícones em fatores forma móveis. Os elementos **Icon** contidos em um elemento [MobileFormFactor](mobileformfactor.md) devem ter esse atributo definido como `bt:MobileIconList`. |
 
 ## <a name="child-elements"></a>Elementos filho
 
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  [Image](#image)        | Sim |   resid de uma imagem a ser usada         |
+|  [Image](#image)        | Sim |   resid de uma imagem a usar         |
 
 ### <a name="image"></a>Image
 
-Uma imagem para o botão. O atributo **resid** deve ser definido para o valor do atributo **id** de um elemento **Image** no elemento **Images** no elemento [Resources](resources.md). O atributo **size** indica o tamanho em pixels da imagem. Três tamanhos de imagem são obrigatórios (16, 32 e 80 pixels) e outros cinco tamanhos  têm suporte (20, 24, 40, 48 e 64 pixels).|
+Uma imagem para o botão. O atributo **resid** deve ser definido para o valor do atributo **id** de um elemento **Image** no elemento **Images** no elemento [Resources](resources.md). O atributo **tamanho** indica o tamanho em pixels da imagem. São obrigatórios três tamanhos de imagem (16, 32 e 80 pixels) e há suporte para outros cinco tamanhos (20, 24, 40, 48 e 64 pixels).|
 
 ```xml
 <Icon>
@@ -28,7 +39,7 @@ Uma imagem para o botão. O atributo **resid** deve ser definido para o valor do
 
 ## <a name="additional-requirements-for-mobile-form-factors"></a>Requisitos adicionais para fatores forma móveis
 
-Quando o elemento **Icon** pai é descendente de um elemento [MobileFormFactor](mobileformfactor.md), os tamanhos mínimos necessários são ligeiramente diferentes. O manifesto deve fornecer, no mínimo, os tamanhos de 25, 32 e 48 pixels. Cada tamanho fornecido deve aparecer três vezes, com um atributo `scale` definido como `1`, `2` ou `3`.
+Quando o elemento **Icon** pai é descendente de um elemento [MobileFormFactor](mobileformfactor.md), os tamanhos mínimos necessários são ligeiramente diferentes. O manifesto deve fornecer no mínimo tamanhos de pixel 25, 32 e 48. Cada tamanho fornecido deve aparecer três vezes, com um atributo `scale` definido como `1`, `2` ou `3`.
 
 ```xml
 <Icon xsi:type="bt:MobileIconList">

@@ -1,13 +1,13 @@
 ---
-ms.date: 12/14/2018
+ms.date: 12/21/2018
 description: Criar funções personalizadas no Excel usando JavaScript.
 title: Criar funções personalizadas no Excel (Versão Prévia)
-ms.openlocfilehash: be90f1f16b2e32b1b835781df95a1872516e4cfb
-ms.sourcegitcommit: 1b90ec48be51629625d21ca04e3b8880399c0116
+ms.openlocfilehash: 8f30ee32168147b8beeb6e60372cd631237ce993
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "27378082"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433037"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Criar funções personalizadas no Excel (versão prévia)
 
@@ -419,6 +419,7 @@ function getComment(x) {
 - Funções personalizadas no Excel Online podem deixar de funcionar durante uma sessão após um período de inatividade. Atualize a página do navegador (F5) e insira novamente uma função personalizada para restaurar o recurso.
 - Você pode ver o resultado temporário **# OBTENDO_DADOS** nas células de uma planilha, se você tiver vários suplementos em execução no Excel para Windows. Feche todas as janelas do Excel e reinicie o Excel.
 - Ferramentas de depuração especificas para funções personalizadas podem estar disponíveis no futuro. Enquanto isso, você pode depurar no Excel Online usando ferramentas de desenvolvedor F12. Ver mais detalhes em [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
+- Na versão de 32 bits do Office 365 para Insiders 1901 de *dezembro* (compilação 11128.20000), as funções personalizadas podem não funcionar corretamente. Em alguns casos, você pode solucionar esse erro baixando o arquivo em https://github.com/OfficeDev/Excel-Custom-Functions/blob/december-insiders-workaround/excel-udf-host.win32.bundle. Em seguida, copie a pasta “C:\ Arquivos de Programas (x86)\Microsoft Office\root\Office16”.
 
 ## <a name="changelog"></a>Log de mudanças
 

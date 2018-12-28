@@ -1,4 +1,15 @@
-# <a name="excel-javascript-api-requirement-sets"></a>Conjuntos de requisitos de API JavaScript do Excel
+---
+title: Conjuntos de requisitos de API JavaScript do Excel
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: 825b0862e7cab1c146fc14e0095506b7f26f849b
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27434031"
+---
+# <a name="excel-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Excel
 
 Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
@@ -22,7 +33,7 @@ Os suplementos do Excel são executados em várias versões do Office, incluindo
 | ExcelApi1.1  | Versão 1509 (build 4266.1001) ou posterior | 1.19 ou posterior | 15.20 ou posterior| janeiro de 2016 ||
 
 > [!NOTE]
-> O número do build do Office 2016 instalado via MSI é 16.0.4266.1001. Esta versão só contém o conjunto de requisitos ExcelApi 1.1.
+> O número do build do Office 2016 instalado via MSI é 16.0.4266.1001. Esta versão só contém o conjunto de requisitos 1.1 de ExcelApi.
 
 Para saber mais sobre as versões, números de build e sobre o Servidor do Office Online, confira:
 
@@ -34,7 +45,7 @@ Para saber mais sobre as versões, números de build e sobre o Servidor do Offic
 
 ## <a name="whats-new-in-excel-javascript-api-18"></a>Quais são as novidades na API JavaScript do Excel 1.8
 
-Os recursos de conjunto de 1,8 API do JavaScript Excel requisito incluem APIs para tabelas dinâmicas, validação de dados, gráficos, eventos de gráficos, opções de desempenho e criação de pasta de trabalho.
+O conjunto de requisitos 1.8 da API JavaScript do Excel inclui APIs para tabelas dinâmicas, validação de dados, gráficos, eventos de gráficos, opções de desempenho e criação de pasta de trabalho.
 
 ### <a name="pivottable"></a>Tabela Dinâmica
 
@@ -296,7 +307,7 @@ Mais [eventos](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins
 
 ## <a name="whats-new-in-excel-javascript-api-17"></a>Quais são as novidades na API JavaScript do Excel 1.7
 
-Os recursos do conjunto 1.7 de recursos da API JavaScript do Excel incluem APIs para gráficos, eventos, planilhas, intervalos, propriedades do documento, itens nomeados, opções de proteção e estilos.
+O conjunto de requisitos 1.7 da API JavaScript do Excel incluei APIs para gráficos, eventos, planilhas, intervalos, propriedades do documento, itens nomeados, opções de proteção e estilos.
 
 ### <a name="customize-charts"></a>Personalize gráficos
 

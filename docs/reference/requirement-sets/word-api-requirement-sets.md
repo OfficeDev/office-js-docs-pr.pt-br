@@ -1,6 +1,17 @@
-# <a name="word-javascript-api-requirement-sets"></a>Conjuntos de requisitos de API JavaScript do Word
+---
+title: Conjuntos de requisitos da API JavaScript do Word
+description: ''
+ms.date: 11/14/2018
+ms.openlocfilehash: 061d9d9ddd7ad6ba9009e6f0f468050c369f5571
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27434010"
+---
+# <a name="word-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Word
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [versões do Office e conjuntos de requisitos](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
 Os suplementos do Word são executados em várias versões do Office, incluindo Office 2016 ou posterior para Windows, Office para iPad, Office para Mac e Office Online. A tabela a seguir lista os conjuntos de requisitos do Word, ou seja, os aplicativos de host do Office que oferecem suporte a esse conjunto de requisitos, e os números de versão ou de build desses aplicativos.
 
@@ -16,7 +27,7 @@ Os suplementos do Word são executados em várias versões do Office, incluindo 
 | WordApi 1.1  | Versão 1509 (build 4266.1001) ou posterior| Janeiro de 2016, 1.18 ou posterior | Janeiro de 2016, 15.19 ou posterior| Setembro de 2016 | |
 
 > [!NOTE]
-> O número do build do Office 2016 instalado via MSI é 16.0.4266.1001. Esta versão só contém o conjunto de requisitos WordApi 1.1.
+> O número do build do Office 2016 instalado via MSI é 16.0.4266.1001. Esta versão só contém o conjunto de requisitos 1.1 de WordApi.
 
 Para saber mais sobre versões, números de build e sobre o Servidor do Office Online, confira:
 

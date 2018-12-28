@@ -1,3 +1,14 @@
+---
+title: Conjuntos de requisitos de API JavaScript do Outlook
+description: ''
+ms.date: 12/04/2018
+ms.openlocfilehash: 3d2b17de4e1bc8510b06901b4cfd1949d9490564
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433023"
+---
 # <a name="outlook-javascript-api-requirement-sets"></a>Conjuntos de requisitos de API JavaScript do Outlook
 
 Os suplementos do Outlook declaram quais versões de API exigem usando o elemento [Requisitos](/office/dev/add-ins/reference/manifest/requirements) em seu [manifesto](https://docs.microsoft.com/office/dev/add-ins/develop/add-in-manifests). Os suplementos do Outlook sempre incluem um elemento [Set](/office/dev/add-ins/reference/manifest/set) com um atributo `Name` definido como `Mailbox` e um atributo `MinVersion` definido como o conjunto de requisitos mínimo de API que dê suporte aos cenários do suplemento.

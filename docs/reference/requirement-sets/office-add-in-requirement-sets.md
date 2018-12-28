@@ -1,8 +1,19 @@
-# <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos comuns da API do Office
+---
+title: Conjuntos de requisitos comuns da API do Office
+description: ''
+ms.date: 11/20/2018
+ms.openlocfilehash: 4ce96babd7f819e4cfe1581db1a51d0ae67390fd
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433100"
+---
+# <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API comum do Office
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [versões do Office e conjuntos de requisitos](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
-Precisa de informações sobre onde os complementos são suportados pelo host do Office? Consulte [Disponibilidade de host e plataforma para suplementos do Office](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-in-availability).
+Precisa de informações sobre onde os suplementos têm suporte do host do Office? Consulte [Disponibilidade de host e plataforma para suplementos do Office](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-in-availability).
 
 Procurando pelos conjuntos de requisitos de API *específicos do host*? Confira os seguintes conjuntos de requisitos de API:
  

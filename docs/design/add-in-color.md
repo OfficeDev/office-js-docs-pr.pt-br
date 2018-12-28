@@ -1,5 +1,16 @@
+---
+title: Diretrizes de cor para Suplementos do Office
+description: ''
+ms.date: 06/27/2018
+ms.openlocfilehash: 612b6e2a232ab79f6ff44bc3f0e873b75fe7b0ef
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433317"
+---
 # <a name="color"></a>Cor
-A cor é frequentemente usada para enfatizar a marca e reforçar a hierarquia visual. Ajuda a identificar uma interface, além de orientar os clientes por meio de uma experiência. Dentro do Office, a cor é usada para os mesmos objetivos, mas é aplicada de forma proposital e mínima. Em nenhum momento sobrecarrega o conteúdo do cliente. Mesmo quando cada aplicativo do Office é marcado com sua própria cor dominante, é usado com moderação.
+A cor é geralmente usada para enfatizar a marca e reforçar a hierarquia visual. Ela ajuda a identificar uma interface, além de orientar os clientes em uma experiência. No Office, a cor é usada para os mesmos objetivos, mas é aplicada intencionalmente e de forma mínima. Ela nunca sobrecarrega o conteúdo do cliente. Mesmo quando cada aplicativo do Office é identificado com sua própria cor dominante, ela é usada com moderação.
 
 O Office UI Fabric inclui um conjunto padrão de cores de tema. Quando o Fabric é aplicado a um suplemento do Office, como componentes ou em layouts, os mesmos objetivos são aplicados. A cor deve comunicar a hierarquia, levando intencionalmente os clientes à ação, sem interferir no conteúdo. As cores de tema do Fabric podem introduzir uma nova cor de ênfase para a interface geral. Esse novo elemento pode entrar em conflito com a identidade visual do aplicativo do Office e interferir na hierarquia. Em outras palavras, o Fabric pode introduzir uma nova cor de ênfase para a interface geral quando usado em um suplemento. Essa nova cor de ênfase pode desviar a atenção e interferir em toda a hierarquia. Considere maneiras de evitar conflitos e interferência. Use ênfase neutra ou substitua cores de tema do Fabric para corresponder à identidade visual do aplicativo do Office ou às cores de sua própria marca.
 
@@ -17,4 +28,4 @@ Aplique as seguintes diretrizes gerais para as cores:
 * Use as cores de sua própria marca para criar a associação com seu serviço ou empresa.
 * Verifique se todo o texto é acessível. Verifique se há uma razão de contraste de 4.5:1 entre o texto de primeiro plano e a tela de fundo.
 * Lembre-se do daltonismo, use mais do que apenas cores para indicar interatividade e hierarquia.
-* Consulte as [diretrizes de ícone](../design/add-in-icons.md) para saber mais sobre a criação de ícones de comando do suplemento com a paleta de cores de ícone do Office.
+* Consulte as [diretrizes de ícone](../design/add-in-icons.md) para saber mais sobre a criação de ícones de comando do suplemento com a paleta de cores de ícones do Office.
