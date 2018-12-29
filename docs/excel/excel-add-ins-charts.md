@@ -2,20 +2,20 @@
 title: Trabalhar com gráficos usando a API JavaScript do Excel
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 80b537ec66caf6e173dfe4453a257c5963156e6f
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.openlocfilehash: b804e2130e30626a9caf21bca1f3955c57a3f94c
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459298"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457548"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Trabalhar com gráficos usando a API JavaScript do Excel
 
-Este artigo fornece exemplos de código que mostram como realizar tarefas comuns com gráficos usando a API JavaScript do Excel. Para obter uma lista completa de propriedades e métodos que os objetos **Chart** e **ChartCollection** suportam, consulte [Objeto de gráfico (API JavaScript do Excel)](https://docs.microsoft.com/javascript/api/excel/excel.chart?view=office-js) e [Objeto da coleção de gráfico (API JavaScript do Excel)](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection?view=office-js).
+Este artigo fornece exemplos de código que mostram como executar tarefas comuns com gráficos usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos aos quais os objetos **Chart** e **ChartCollection** dão suporte, confira [Objeto Chart (API JavaScript para Excel)](https://docs.microsoft.com/javascript/api/excel/excel.chart) e [Objeto Chart Collection (API JavaScript para Excel)](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection).
 
 ## <a name="create-a-chart"></a>Criar um gráfico
 
-O exemplo de código a seguir cria um gráfico na planilha chamada **Amostra**. O gráfico é um gráfico de **linhas** que se baseia em dados no intervalo **A1:B13**.
+O exemplo de código a seguir cria um gráfico na planilha chamada **Amostra**. O gráfico é de **Linha** e se baseia em dados do intervalo **A1:B13**.
 
 ```js
 Excel.run(function (context) {
@@ -40,7 +40,7 @@ Excel.run(function (context) {
 
 ## <a name="add-a-data-series-to-a-chart"></a>Adicionar uma série de dados a um gráfico
 
-O exemplo de código a seguir adiciona uma série de dados ao primeiro gráfico na planilha. A nova série de dados corresponde à coluna denominada **2016** e baseia-se em dados no intervalo **D2:D5**.
+O exemplo de código a seguir adiciona uma série de dados ao primeiro gráfico na planilha. A nova série de dados corresponde à coluna chamada **2016** e baseia-se em dados do intervalo **D2:D5**.
 
 ```js
 Excel.run(function (context) {
@@ -84,11 +84,11 @@ Excel.run(function (context) {
 
 ## <a name="set-properties-of-an-axis-in-a-chart"></a>Definir propriedades de um eixo em um gráfico
 
-Os gráficos que usam o [Sistema de coordenadas cartesiano](https://en.wikipedia.org/wiki/Cartesian_coordinate_system), como gráficos de colunas, gráficos de barras e gráficos de dispersão contêm um eixo de categorias e um eixo de valores. Estes exemplos mostram como definir o título e exibem a unidade de um eixo em um gráfico.
+Os gráficos que usam o [Sistema de coordenadas cartesiano](https://en.wikipedia.org/wiki/Cartesian_coordinate_system), como gráficos de colunas, gráfico de barras e gráficos de dispersão contêm um eixo de categorias e um eixo de valores. Estes exemplos mostram como definir o título e exibem a unidade de um eixo em um gráfico.
 
 ### <a name="set-axis-title"></a>Definir título do eixo
 
-O exemplo de código a seguir define o título do eixo da categoria para o primeiro gráfico na planilha como **Product**.
+O exemplo de código a seguir define o título do eixo das categorias para o primeiro gráfico na planilha como **Product**.
 
 ```js
 Excel.run(function (context) {
@@ -101,13 +101,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Gráfico após definição do título do eixo da categoria**
+**Gráfico após definição do título do eixo das categorias**
 
 ![Gráfico com título do eixo no Excel](../images/excel-charts-axis-title-set.png)
 
 ### <a name="set-axis-display-unit"></a>Definir unidade de exibição do eixo
 
-O exemplo de código a seguir define a unidade de exibição do eixo dos valores para o primeiro gráfico na planilha como **Hundreds**.
+O exemplo de código a seguir define a unidade de exibição do eixo de valor para o primeiro gráfico na planilha para **centenas**.
 
 ```js
 Excel.run(function (context) {
@@ -120,13 +120,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Gráfico após a definição da unidade de exibição do eixo dos valores**
+**Gráfico após a definição da unidade de exibição do eixo de valor**
 
 ![Gráfico com unidade de exibição do eixo no Excel](../images/excel-charts-axis-display-unit-set.png)
 
 ## <a name="set-visibility-of-gridlines-in-a-chart"></a>Definir visibilidade de linhas de grade em um gráfico
 
-O exemplo de código a seguir oculta as principais linhas de grade para o eixo de valores do primeiro gráfico na planilha. Você pode mostrar as principais linhas de grade do eixo de valores do gráfico, definindo `chart.axes.valueAxis.majorGridlines.visible` como **true**.
+O exemplo de código a seguir oculta as principais linhas de grade para o eixo dos valores do primeiro gráfico na planilha. Você pode mostrar as principais linhas de grade do eixo dos valores do gráfico, definindo `chart.axes.valueAxis.majorGridlines.visible` como **true**.
 
 ```js
 Excel.run(function (context) {
@@ -188,4 +188,4 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>Confira também
 
-- [Conceitos de programação fundamentais com a API JavaScript do Excel](excel-add-ins-core-concepts.md)
+- [Conceitos fundamentais de programação com a API JavaScript do Excel](excel-add-ins-core-concepts.md)

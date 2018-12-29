@@ -2,12 +2,12 @@
 title: Conjuntos de requisitos da API de Identidade
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 43a220cfada5883f292edd13cc753dc6c70e3504
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: 4ed3fde5b3cef6dd6633d9eafbd098b24cc27308
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433919"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457658"
 ---
 # <a name="identity-api-requirement-sets"></a>Conjuntos de requisitos da API de Identidade
 
@@ -31,9 +31,9 @@ Para saber mais sobre as versões, números de build e sobre o Servidor do Offic
 - 
   [Visão geral sobre o Servidor do Office Online](https://docs.microsoft.com/officeonlineserver/office-online-server-overview)
 
-## <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos de API comum
+## <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API comum do Office
 
-Para saber mais sobre conjuntos de requisitos de API comum, confira [Conjuntos de requisitos de API comum do Office](office-add-in-requirement-sets.md).
+Para saber mais sobre conjuntos de requisitos comuns da API, confira [Conjuntos de requisitos comuns da API do Office](office-add-in-requirement-sets.md).
 
 ## <a name="identityapi-11"></a>IdentityAPI 1.1 
 

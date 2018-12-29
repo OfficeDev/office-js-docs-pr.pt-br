@@ -1,9 +1,9 @@
-# <a name="powerpoint-and-project-in-the-javascript-api"></a>PowerPoint e Project na API do JavaScript
+# <a name="powerpoint-and-project-in-the-javascript-api"></a>PowerPoint e do Project no API do JavaScript
 
-O PowerPoint e o Project oferecem suporte para suplementos feitos com a API do JavaScript. No entanto, no momento eles não têm APIs específicas de host. Você interage com os hosts por meio da API Compartilhada. 
+O PowerPoint e o Project são compatíveis com suplementos feitos com a API JavaScript. No entanto, eles atualmente não possuem APIs específicas do host. Você interage com esses hosts por meio da API compartilhada. 
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Confira também
 
-- [JavaScript API para Office](/office/dev/add-ins/reference/javascript-api-for-office)
+- [API JavaScript para Office](/office/dev/add-ins/reference/javascript-api-for-office)
 - [Disponibilidade de host e plataforma para suplementos do Office](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-in-availability)
-- [Referência de API compartilhada](/javascript/api/overview/office)
+- [Referência da API comum](/javascript/api/overview/office)

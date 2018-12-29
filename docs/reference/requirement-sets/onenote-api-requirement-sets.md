@@ -2,12 +2,12 @@
 title: Conjuntos de requisitos da API JavaScript do OneNote
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: c0cec9375dc0d3db4a09e44a9b73935af0691bde
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: 2402d9100228e079066f4abd4f8909aa384dd1c9
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433821"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457597"
 ---
 # <a name="onenote-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do OneNote
 
@@ -19,7 +19,7 @@ A tabela a seguir lista os conjuntos de requisitos do OneNote, ou seja, os aplic
 |:-----|:-----|
 | OneNoteApi 1.1  | Setembro de 2016 |  
 
-## <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos comuns da API do Office
+## <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API comum do Office
 
 Para saber mais sobre conjuntos de requisitos comuns da API, confira [Conjuntos de requisitos comuns da API do Office](office-add-in-requirement-sets.md).
 

@@ -2,12 +2,12 @@
 title: Conjuntos de requisitos da Dialog API
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: ad0d472ebdcbdb9d61e78f6bdc9bfe7c08311cd7
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: be8d8fd8d3f459e236d1acc0e4fb5a2f0bdcfd22
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432652"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457975"
 ---
 # <a name="dialog-api-requirement-sets"></a>Conjuntos de requisitos da Dialog API
 
@@ -29,9 +29,9 @@ Para saber mais sobre versões, números de build e sobre o Servidor do Office O
 - 
   [Visão geral sobre o Servidor do Office Online](https://docs.microsoft.com/officeonlineserver/office-online-server-overview)
 
-## <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos de API comum
+## <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API comum do Office
 
-Para saber mais sobre conjuntos de requisitos comuns da API, confira [Conjuntos de requisitos comuns do Office](office-add-in-requirement-sets.md).
+Para saber mais sobre conjuntos de requisitos comuns da API, confira [Conjuntos de requisitos comuns da API do Office](office-add-in-requirement-sets.md).
 
 ## <a name="dialog-api-11"></a>Dialog API 1.1 
 
