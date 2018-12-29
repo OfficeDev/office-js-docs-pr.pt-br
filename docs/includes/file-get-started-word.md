@@ -471,4 +471,4 @@ Parabéns, você criou com êxito um suplemento do Word usando o jQuery! Em segu
 * [Visão geral dos suplementos do Word](../word/word-add-ins-programming-overview.md)
 * 
   [Exemplos de código do suplemento do Word](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
-* [Referências da API JavaScript do Word](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js)
+* [Referências da API JavaScript do Word](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)

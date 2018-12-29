@@ -123,7 +123,7 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
 
     ```js
     function openDialog() {
-        // TODO1: Call the Office Shared API that opens a dialog
+        // TODO1: Call the Office Common API that opens a dialog
     }
     ```
 

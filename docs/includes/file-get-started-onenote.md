@@ -261,6 +261,6 @@ Parabéns, você criou com êxito um suplemento do OneNote! Em seguida, saiba ma
 ## <a name="see-also"></a>Confira também
 
 - [Visão geral da programação da API JavaScript do OneNote](../onenote/onenote-add-ins-programming-overview.md)
-- [Referência da API JavaScript do OneNote](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference?view=office-js)
+- [Referência da API JavaScript do OneNote](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Amostra de Rubric Grader](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
