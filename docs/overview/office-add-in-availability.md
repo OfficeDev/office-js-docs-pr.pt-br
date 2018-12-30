@@ -2,12 +2,12 @@
 title: Disponibilidade de host e plataforma para suplementos do Office
 description: Conjuntos de requisitos compatíveis com Excel, Word, Outlook, PowerPoint, OneNote e Project.
 ms.date: 11/07/2018
-ms.openlocfilehash: c601eac5ed3fcad76b63fff5ae6eeadb7662c8b7
-ms.sourcegitcommit: 0adc31ceaba92cb15dc6430c00fe7a96c107c9de
+ms.openlocfilehash: 9490fca9663737e2397de159169b545e3900289f
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/09/2018
-ms.locfileid: "27210102"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27458038"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilidade de host e plataforma para suplementos do Office
 
