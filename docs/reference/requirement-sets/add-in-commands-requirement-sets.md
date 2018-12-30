@@ -2,12 +2,12 @@
 title: Conjuntos de requisitos dos comandos de suplemento
 description: ''
 ms.date: 11/21/2018
-ms.openlocfilehash: d0da9d9584a899658ab73e1373589a6d824f0c3e
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: c308112a923483ac9ac82cd08b42d7744d93c8e3
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432778"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457604"
 ---
 # <a name="add-in-commands-requirement-sets"></a>Conjuntos de requisitos dos comandos de suplemento
 
@@ -29,7 +29,7 @@ A tabela a seguir lista o conjunto de requisitos 1.1 dos comandos do suplemento,
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | AddInCommands 1.1  | N/D | 16.0.4678.1000 *suportado somente no Outlook*  | Versão 1705 (Build 8121.1000) ou posterior | N/D | 15.34 ou posterior\*| Maio de 2017 |
 
->\*O método [Office.context.requirements.isSetSupported](https://docs.microsoft.com/javascript/api/office/office.requirementsetsupport?view=office-js#issetsupported-name--minversion-) retornará `false` erroneamente para as versões 16.9 &ndash; 16.14 (incluindo), mas o conjunto de requisitos * é *suportado nessas versões.
+>\*O método [Office.context.requirements.isSetSupported](https://docs.microsoft.com/javascript/api/office/office.requirementsetsupport#issetsupported-name--minversion-) retornará `false` erroneamente para as versões 16.9 &ndash; 16.14 (incluindo), mas o conjunto de requisitos * é *suportado nessas versões.
 
 Para saber mais sobre versões, números de build e sobre o Servidor do Office Online, confira:
 
@@ -38,12 +38,11 @@ Para saber mais sobre versões, números de build e sobre o Servidor do Office O
 - [Qual versão do Office estou usando?](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
 - 
   [Onde você pode encontrar o número de versão e de build de um aplicativo cliente do Office 365](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
-- 
-  [Visão geral sobre o Servidor do Office Online](https://docs.microsoft.com/officeonlineserver/office-online-server-overview)
+- [Visão geral sobre o Servidor do Office Online](https://docs.microsoft.com/officeonlineserver/office-online-server-overview)
 
-## <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos de API comum
+## <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API comum do Office
 
-Para saber mais sobre conjuntos de requisitos de API comum, confira [Conjuntos de requisitos de API comuns do Office](office-add-in-requirement-sets.md).
+Para saber mais sobre conjuntos de requisitos comuns da API, confira [Conjuntos de requisitos comuns da API do Office](office-add-in-requirement-sets.md).
 
 ## <a name="see-also"></a>Confira também
 

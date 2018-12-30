@@ -2,12 +2,12 @@
 title: Conjuntos de requisitos de API JavaScript do Excel
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 825b0862e7cab1c146fc14e0095506b7f26f849b
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: 4456ac3cb2411f9a22cb131b7a53884a760a2f22
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27434031"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27458143"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Excel
 
@@ -803,9 +803,9 @@ Novos métodos:
 * `add(name: string, reference: Range or string, comment: string)`Adiciona um novo nome à coleção do escopo fornecido.
 * `addFormulaLocal(name: string, formula: string, comment: string)` Adiciona um novo nome à coleção do escopo fornecido usando a localidade do usuário para a fórmula.
 
-### <a name="settings-api-in-in-excel-namespace"></a>Configurações de API no namespace do Excel
+### <a name="settings-api-in-the-excel-namespace"></a>Configurações de API no namespace do Excel
 
-O objeto [Setting](/javascript/api/excel/excel.setting) representa um par chave-valor de uma configuração persistentes ao documento. Agora, adicionamos APIs relacionadas a configurações no namespace do Excel. Isso não oferece nova funcionalidade de rede. No entanto, assim é mais fácil manter a sintaxe de API com base em lote para reduzir a dependência em tarefas comuns relacionadas à API do Excel.
+O objeto [Configuração](/javascript/api/excel/excel.setting) representa um par chave-valor de uma configuração persistente ao documento. O recurso `Excel.Setting` é equivalente a `Office.Settings`, mas usa a sintaxe da API em lote, em vez de modelo de retorno de chamada de API comuns.
 
 As APIs incluem `getItem()` para acessar configuração de entrada por meio da chave, `add()` para adicionar o par de configuração de chave:valor especificado na pasta de trabalho.
 

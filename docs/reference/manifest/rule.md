@@ -2,12 +2,12 @@
 title: Elemento Rule no arquivo de manifesto
 description: ''
 ms.date: 11/30/2018
-ms.openlocfilehash: ce7763ecb4ef81587ccacbd4090a6f412baf99b2
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: 2c5ae07e5d0a3c9c8979abcada3d758c415e2e59
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433108"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457450"
 ---
 # <a name="rule-element"></a>Elemento Rule
 
@@ -74,7 +74,7 @@ Define uma regra que é avaliada como true se o item contiver texto do tipo de e
 | **EntityType** | Sim | Especifica o tipo de entidade que deve ser encontrado para a regra para que ela seja avaliada como true. Pode ser um dos seguintes: `MeetingSuggestion`, `TaskSuggestion`, `Address`, `Url`, `PhoneNumber`, `EmailAddress` ou `Contact`. |
 | **RegExFilter** | Não | Especifica uma expressão regular para executar esta entidade para ativação. |
 | **FilterName** | Não | Especifica o nome do filtro de expressões regulares para que seja possível consultá-lo posteriormente no código do seu suplemento. |
-| **IgnoreCase** | Não | Especifica para ignorar maiúsculas e minúsculas ao executar a expressão regular especificada pelo atributo **RegExFilter**. |
+| **IgnoreCase** | Não | Especifica se deve ignorar maiúsculas e minúsculas ao fazer a correspondência da expressão regular especificada por **RegExFilter**. |
 | **Realce** | Não | **Observação:** isso se aplica somente aos elementos **Rule** dentro dos elementos **ExtensionPoint**. Especifica como o cliente deve realçar entidades correspondentes. Pode ser um dos seguintes: `all` ou `none`. Se não for especificado, o valor padrão será `all`. |
 
 ### <a name="example"></a>Exemplo
@@ -93,9 +93,10 @@ Define uma regra que é avaliada como true se uma correspondência para a expres
 |:-----|:-----|:-----|
 | **RegExName** | Sim | Especifica o nome da expressão regular para que você possa fazer referência à expressão no código de seu suplemento. |
 | **RegExValue** | Sim | Especifica a expressão regular que será avaliada para determinar se o suplemento de email deve ser mostrado. |
-| **PropertyName** | Sim | Especifica o nome da propriedade em relação a qual expressão regular será avaliada. Pode ser um dos seguintes: `Subject`, `BodyAsPlaintext`, `BodyAsHTML` ou `SenderSMTPAddress`. |
-| **IgnoreCase** | Não | Especifica que as maiúsculas e minúsculas devem ser ignoradas ao executar a expressão regular. |
-| **Realce** | Não | **Observação:** isso se aplica somente aos elementos **Rule** dentro dos elementos **ExtensionPoint**. Especifica como o cliente deve realçar texto correspondente. Pode ser um dos seguintes: `all` ou `none`. Se não for especificado, o valor padrão será `all`. |
+| **PropertyName** | Sim | Especifica o nome da propriedade em relação a qual expressão regular será avaliada. Pode ser um dos seguintes: `Subject`, `BodyAsPlaintext`, `BodyAsHTML` ou `SenderSMTPAddress`.<br/><br/>Se você especificar `BodyAsHTML`, o Outlook só aplicará a expressão regular se o corpo do item for HTML. Caso contrário, o Outlook não retornará nenhuma correspondência para essa expressão regular.<br/><br/>Se você especificar `BodyAsPlaintext`, o Outlook sempre aplicará a expressão regular no corpo do item.<br/><br/>**Observação:** você deve configurar o atributo **PropertyName** para `BodyAsPlaintext` se você especificar o atributo **realçar** para o elemento **regra**.|
+| **IgnoreCase** | Não | Especifica se deve ignorar maiúsculas e minúsculas ao fazer a correspondência da expressão regular especificada pelo atributo **RegExName**. |
+| **Realce** | Não | Especifica como o cliente deve realçar texto correspondente. Esse atributo pode ser aplicado apenas à elementos **regra** dentro dos elementos **ExtensionPoint**. Pode ser um dos seguintes: `all` ou `none`. Se não for especificado, o valor padrão será `all`.<br/><br/>**Observação:** você deve configurar o atributo **PropertyName** para `BodyAsPlaintext` se você especificar o atributo **realçar** para o elemento **regra**.
+|
 
 ### <a name="example"></a>Exemplo
 

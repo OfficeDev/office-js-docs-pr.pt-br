@@ -2,12 +2,12 @@
 title: Namespace do Office – conjunto de requisitos de pré-visualização
 description: ''
 ms.date: 11/08/2018
-ms.openlocfilehash: a276af19ebd1816ad6bd59af5a75c39f13aa0b3c
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: f4a4f0d7a4ce0de433d4e70b6a4675b5f63f26f0
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432891"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457926"
 ---
 # <a name="office"></a>Office
 
