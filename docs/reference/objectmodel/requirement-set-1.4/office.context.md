@@ -2,18 +2,18 @@
 title: 'Office.context: conjunto de requisitos da versão 1.4'
 description: ''
 ms.date: 10/11/2018
-ms.openlocfilehash: 9c868e26193b6b81284700af3df99bf165cd9d9e
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: e07ab0ea83147082aaf89271f222264f1a74b0d8
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433583"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457695"
 ---
 # <a name="context"></a>context
 
 ### <a name="officeofficemdcontext"></a>[Office](Office.md).context
 
-O namespace Office.context fornece interfaces compartilhadas que são usadas pelos suplementos em todos os aplicativos do Office. Esta listagem documenta somente as interfaces que são usadas pelos suplementos do Outlook. Para obter uma lista completa do namespace Office.context, confira a [Referência sobre o Office.context na API compartilhada](/javascript/api/office/office.context).
+O namespace Office.context fornece interfaces compartilhadas que são usadas pelos suplementos em todos os aplicativos do Office. Esta listagem documenta apenas as interfaces usados pelos suplementos do Outlook. Para uma listagem completa do namespace Office.context, veja a referência [Office.context no API Comum](/javascript/api/office/office.context).
 
 ##### <a name="requirements"></a>Requisitos
 

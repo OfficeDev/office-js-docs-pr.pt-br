@@ -1,15 +1,15 @@
 ---
-title: Conjuntos de requisitos comuns da API do Office
+title: Conjuntos de requisitos da API Comum do Office
 description: ''
 ms.date: 11/20/2018
-ms.openlocfilehash: 4ce96babd7f819e4cfe1581db1a51d0ae67390fd
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: 189753fc76bb207ebfcb19577471572aeb543659
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433100"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27457905"
 ---
-# <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API comum do Office
+# <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API Comum do Office
 
 Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
@@ -25,9 +25,9 @@ Procurando pelos conjuntos de requisitos de API *específicos do host*? Confira 
 > [!IMPORTANT]
 > Não recomendamos mais criar e usar aplicativos Web do Access e bancos de dados no SharePoint. Como alternativa, use o [Microsoft PowerApps](https://powerapps.microsoft.com/) para criar soluções de negócios sem código para dispositivos móveis e Web.
 
-## <a name="common-api-requirement-sets"></a>Conjuntos de requisitos comuns da API
+## <a name="common-api-requirement-sets"></a>Conjuntos de requisitos da API Comum
 
-A tabela a seguir lista os conjuntos de requisitos comuns da API, os métodos em cada conjunto e os aplicativos host do Office que dão suporte a esse conjunto de requisitos. Todos esses conjuntos de requisitos da API são da versão 1.1.
+A tabela a seguir lista os conjuntos de requisitos da API Comum, os métodos em cada conjunto e os aplicativos host do Office que dão suporte a esse conjunto de requisitos. Todos esses conjuntos de requisitos da API são versão 1.1.
 
 |**Conjunto de requisitos**|**Host do Office**|**Métodos no conjunto**|
 |:-----|:-----|:-----|

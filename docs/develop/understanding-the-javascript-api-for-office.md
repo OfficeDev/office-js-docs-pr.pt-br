@@ -2,23 +2,23 @@
 title: Noções básicas da API JavaScript para Office
 description: ''
 ms.date: 10/17/2018
-ms.openlocfilehash: 266014305af67d53046dac9a5492e08dbbb8dc29
-ms.sourcegitcommit: 2ac7d64bb2db75ace516a604866850fce5cb2174
+ms.openlocfilehash: 14de5d8bab791d0954179c21163ba0a08824b834
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "26298555"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27458101"
 ---
 # <a name="understanding-the-javascript-api-for-office"></a>Noções básicas da API JavaScript para Office
 
-Este artigo fornece informações sobre a API JavaScript para Office e como usá-la. Para referenciar as informações, consulte [API JavaScript para Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js). Para obter informações sobre como atualizar os arquivos de projeto do Visual Studio para a versão mais recente da API JavaScript para Office, consulte [Atualizar a versão da API JavaScript para Office e arquivos de esquema do manifesto](update-your-javascript-api-for-office-and-manifest-schema-version.md).
+Este artigo fornece informações sobre a API JavaScript para Office e como usá-la. Para referenciar as informações, consulte [API JavaScript para Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office). Para obter informações sobre como atualizar os arquivos de projeto do Visual Studio para a versão mais recente da API JavaScript para Office, consulte [Atualizar a versão da API JavaScript para Office e arquivos de esquema do manifesto](update-your-javascript-api-for-office-and-manifest-schema-version.md).
 
 > [!NOTE]
 > Caso pretenda [publicar](../publish/publish.md) o suplemento na experiência do Office depois de criá-lo, verifique se você está em conformidade com as [Políticas de validação do AppSource](https://docs.microsoft.com/office/dev/store/validation-policies). Por exemplo, para passar na validação, seu suplemento deve funcionar em todas as plataformas com suporte aos métodos que você definir (para mais informações, confira a [seção 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) e a [Página de hospedagem e disponibilidade de suplementos do Office](../overview/office-add-in-availability.md)). 
 
 ## <a name="referencing-the-javascript-api-for-office-library-in-your-add-in"></a>Fazer referência à biblioteca da API JavaScript para Office no suplemento
 
-A biblioteca da [API JavaScript para Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js) consiste no arquivo Office.js e nos arquivos .js específicos do aplicativo de host associado, como Excel-15.js e Outlook-15.js. O método mais simples de fazer referência à API é usando nossa CDN e adicionando o seguinte `<script>` à marca `<head>` da sua página:  
+A biblioteca da [API JavaScript para Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office) consiste no arquivo Office.js e nos arquivos .js específicos do aplicativo de host associado, como Excel-15.js e Outlook-15.js. O método mais simples de fazer referência à API é usando nossa CDN e adicionando o seguinte `<script>` à marca `<head>` da sua página:  
 
 ```html
 <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
@@ -141,7 +141,7 @@ Office.initialize = function (reason) {
  };
 ```
 
-Para saber mais, confira [Evento Office.initialize](https://docs.microsoft.com/javascript/api/office?view=office-js) e [Enumeração InitializationReason](https://docs.microsoft.com/javascript/api/office/office.initializationreason?view=office-js).
+Para saber mais, confira [Evento Office.initialize](https://docs.microsoft.com/javascript/api/office) e [Enumeração InitializationReason](https://docs.microsoft.com/javascript/api/office/office.initializationreason).
 
 > [!NOTE]
 > Atualmente, é necessário definir `Office.Initialize`, independentemente de se `Office.onReady()` também for chamada. Caso não tenha utilização para `Office.Initialize`, é possível defini-la como uma função vazia, conforme mostrado no exemplo abaixo.
@@ -165,7 +165,7 @@ Para saber mais, confira [Evento Office.initialize](https://docs.microsoft.com/j
 
 ## <a name="office-javascript-api-object-model"></a>Modelo de objeto de API JavaScript para Office
 
-Depois de inicializado, o suplemento pode interagir com o host (por exemplo, o Excel ou o Outlook). A página [Modelo de objeto de API JavaScript para Office](office-javascript-api-object-model.md) tem mais detalhes sobre padrões de uso específicos. Há também documentação de referência detalhada para [APIs compartilhadas](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office?view=office-js) e hosts específicos.
+Depois de inicializado, o suplemento pode interagir com o host (por exemplo, o Excel ou o Outlook). A página [Modelo de objeto de API JavaScript para Office](office-javascript-api-object-model.md) tem mais detalhes sobre padrões de uso específicos. Há também documentação de referência detalhada para [APIs Comuns](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office) e hosts específicos.
 
 ## <a name="api-support-matrix"></a>Matriz de suporte da API
 

@@ -2,12 +2,12 @@
 title: Namespace do Office – conjunto de requisitos versão 1.5
 description: ''
 ms.date: 11/08/2018
-ms.openlocfilehash: 46b21df77456d2392fbc543e45513246a4ad9a10
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: 11b9ea439e659f0aefdcd15ae9a73ac128aee98b
+ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433646"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "27458003"
 ---
 # <a name="office"></a>Office
 
