@@ -1,3 +1,14 @@
+---
+title: Elemento Control no arquivo de manifesto
+description: ''
+ms.date: 10/09/2018
+ms.openlocfilehash: e5d8574e322c21e768fb9f66fe9bbb0c12a34ed4
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433933"
+---
 # <a name="control-element"></a>Elemento Control
 
 Define a função JavaScript que executa e aciona ou inicia um painel de tarefas. Um elemento **Control** pode ser um botão ou um menu. Pelo menos um **Control** deve ser incluído em um elemento [Group](group.md).
@@ -10,7 +21,7 @@ Define a função JavaScript que executa e aciona ou inicia um painel de tarefas
 |**id**|Não|A ID do elemento Control. Pode ter no máximo 125 caracteres.|
 
 > [!NOTE]
-> O `MobileButton` valor para **tipo xsi** é definido no esquema de VersionOverrides 1.1. Ele se aplica somente aos elementos **Control** contidos em um elemento [MobileFormFactor](mobileformfactor.md) .
+> O valor `MobileButton` de **xsi:type** é definido no esquema VersionOverrides 1.1. Ele só se aplica aos elementos **Control** contidos em um elemento [MobileFormFactor](mobileformfactor.md).
 
 ## <a name="button-control"></a>Controle de botão
 
@@ -19,11 +30,11 @@ Um botão executa uma única ação quando o usuário o seleciona. Pode ser a ex
 ### <a name="child-elements"></a>Elementos filho
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **Label**     | Sim |  O texto do botão. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String** no elemento **ShortStrings** do elemento [Resources](resources.md).        |
-|  **ToolTip**  |Não|A dica de ferramenta do botão. O atributo **resid** deve ser atribuído com o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **LongStrings**, que é filho do elemento [Resources](resources.md).|        
-|  [Superdica](supertip.md)  | Sim |  A dica detalhada do botão.    |
+|  **Rótulo**     | Sim |  O texto do botão. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String** no elemento **ShortStrings** do elemento [Resources](resources.md).        |
+|  **ToolTip**  |Não|A dica de ferramenta do botão. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **LongStrings**, que é filho do elemento [Resources](resources.md).|        
+|  [Supertip](supertip.md)  | Sim |  A dica detalhada do botão.    |
 |  [Icon](icon.md)      | Sim |  Uma imagem para o botão.         |
-|  [Ação](action.md)    | Sim |  Especifica a ação a realizar.  |
+|  [Action](action.md)    | Sim |  Especifica a ação a realizar.  |
 
 ### <a name="executefunction-button-example"></a>Exemplo do botão ExecuteFunction
 
@@ -69,7 +80,7 @@ Um botão executa uma única ação quando o usuário o seleciona. Pode ser a ex
 
 Um menu define uma lista estática de opções. Cada item de menu executa uma função ou mostra um painel de tarefas. Não há suporte para submenus. 
 
-Quando usado com um **ponto de extensão** **PrimaryCommandSurface** ou [ContextMenu](extensionpoint.md) , o controle de menu define:
+Quando usado com um [ponto de extensão](extensionpoint.md)**PrimaryCommandSurface** ou **ContextMenu**, o controle de menu define:
 
 - Um item de menu no nível raiz.
 
@@ -133,11 +144,11 @@ O exemplo a seguir mostra como definir um item de menu com dois itens de submenu
 
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **Label**     | Sim |  O texto do botão. O atributo **resid** deve ser atribuído com o valor do atributo **id** de um elemento **String** no elemento **ShortStrings** no elemento [Resources](resources.md).      |
-|  **Dica de ferramenta**  |Não|A dica de ferramenta do botão. O atributo **resid** deve ser atribuído com o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **LongStrings**, que é filho do elemento [Resources](resources.md).|        
-|  [Superdica](supertip.md)  | Sim |  A dica detalhada do botão.    |
-|  [Ícone](icon.md)      | Sim |  Uma imagem para o botão.         |
-|  **Items**     | Sim |  Um conjunto de botões a exibir dentro do menu. Contém os elementos **Item** para cada item do submenu. Cada elemento **Item** contém os elementos filhos do [Button control](#button-control).|
+|  **Rótulo**     | Sim |  O texto do botão. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String** no elemento **ShortStrings** no elemento [Resources](resources.md).      |
+|  **ToolTip**  |Não|A dica de ferramenta do botão. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **LongStrings**, que é filho do elemento [Resources](resources.md).|        
+|  [Supertip](supertip.md)  | Sim |  A dica detalhada do botão.    |
+|  [Icon](icon.md)      | Sim |  Uma imagem para o botão.         |
+|  **Itens**     | Sim |  Um conjunto de botões a exibir dentro do menu. Contém os elementos **Item** para cada item do submenu. Cada elemento **Item** contém os mesmos elementos filhos do [Controle de botão](#button-control).|
 
 ### <a name="menu-control-examples"></a>Exemplo de controle de menu
 
@@ -227,13 +238,13 @@ O exemplo a seguir mostra como definir um item de menu com dois itens de submenu
 
 Um botão móvel executa uma única ação quando o usuário o seleciona. Pode ser a execução de uma função ou a exibição de um painel de tarefas. Cada controle de botão móvel deve ter um único `id` para o manifesto.
 
-O valor `MobileButton` para **xsi:type** é definido no esquema VersionOverrides 1.1. O elemento [VersionOverrides](versionoverrides.md) incluído deve ter um  `xsi:type` valor do atributo  de `VersionOverridesV1_1` .
+O valor `MobileButton` de **xsi:type** é definido no esquema VersionOverrides 1.1. O elemento [VersionOverrides](versionoverrides.md) incluído deve ter um valor de atributo `xsi:type` de `VersionOverridesV1_1`.
 
 ### <a name="child-elements"></a>Elementos filho
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **Label**     | Sim |  O texto do botão. O atributo **resid** deve ser atribuído com o valor do atributo **id** de um elemento **String** no elemento **ShortStrings** do elemento [Resources](resources.md).        |
-|  [Ícone](icon.md)      | Sim |  Uma imagem para o botão.         |
+|  **Rótulo**     | Sim |  O texto do botão. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String** no elemento **ShortStrings** do elemento [Resources](resources.md).        |
+|  [Icon](icon.md)      | Sim |  Uma imagem para o botão.         |
 |  [Action](action.md)    | Sim |  Especifica a ação a realizar.  |
 
 ### <a name="executefunction-mobile-button-example"></a>Exemplo de botão móvel ExecuteFunction

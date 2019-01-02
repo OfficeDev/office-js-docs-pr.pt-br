@@ -1,3 +1,14 @@
+---
+title: Diretrizes de voz para Suplementos do Office
+description: ''
+ms.date: 06/27/2018
+ms.openlocfilehash: afd8d63095661634052c51ea528502368023140d
+ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "27433282"
+---
 # <a name="voice-guidelines"></a>Diretrizes de voz
 
 Ao desenvolver seus Suplementos do Office, considere o tom que você utiliza nos elementos e no texto da interface do usuário. Procure manter o tom da interface de usuário do Office, que é coloquial, envolvente e acessível aos usuários. 
@@ -11,9 +22,9 @@ Para alinhar seu texto aos princípios do tom do Office:
 - **Seja prestativo e empático.** Torne seu texto positivo, gentil, solidário e estimulante. Enfatize o que os usuários podem conseguir, não o que eles não podem.
 - **Conheça seus clientes.** Leve em consideração as questões culturais e a globalização ao usar expressões idiomáticas e coloquialismos.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 - Diretrizes para [gravar para todas as habilidades](https://docs.microsoft.com/style-guide/accessibility/writing-all-abilities)
-- [As 10 principais dicas para estilo e voz da Microsoft](https://docs.microsoft.com/style-guide/top-10-tips-style-voice)
-- Diretrizes sobre [escolha de palavras](https://docs.microsoft.com/style-guide/word-choice/)
--  Suplemento do Office [políticas de validação](https://docs.microsoft.com/office/dev/store/validation-policies)
+- [As 10 principais dicas de estilo e voz da Microsoft](https://docs.microsoft.com/style-guide/top-10-tips-style-voice)
+- Diretrizes para [escolher as palavras](https://docs.microsoft.com/style-guide/word-choice/)
+-  [Políticas de validação](https://docs.microsoft.com/office/dev/store/validation-policies) do Suplemento do Office
