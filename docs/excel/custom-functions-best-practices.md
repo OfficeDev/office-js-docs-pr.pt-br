@@ -2,12 +2,12 @@
 ms.date: 11/29/2018
 description: Saiba mais sobre as práticas recomendadas para o desenvolvimento de funções personalizadas para Excel.
 title: Práticas recomendadas para funções personalizadas
-ms.openlocfilehash: b1785c7f41af9823cfd135ead29fff4eda4b0b1d
-ms.sourcegitcommit: e2ba9d7210c921d068f40d9f689314c73ad5ab4a
+ms.openlocfilehash: c1be1d01a88d50bb0f3aee8af1aea7c47658bc10
+ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "27156583"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "27724883"
 ---
 # <a name="custom-functions-best-practices-preview"></a>Práticas recomendadas para funções personalizadas (versão prévia)
 
@@ -199,4 +199,4 @@ Para criar um suplemento que será executado em várias plataformas (um dos prin
 * [Criar funções personalizadas no Excel](custom-functions-overview.md)
 * [Metadados de funções personalizadas](custom-functions-json.md)
 * [Tempo de execução de funções personalizadas do Excel](custom-functions-runtime.md)
-* [Tutorial de funções personalizadas do Excel](excel-tutorial-custom-functions.md)
+* [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)

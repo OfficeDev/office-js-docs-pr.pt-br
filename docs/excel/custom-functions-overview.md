@@ -2,12 +2,12 @@
 ms.date: 12/21/2018
 description: Criar funções personalizadas no Excel usando JavaScript.
 title: Criar funções personalizadas no Excel (Versão Prévia)
-ms.openlocfilehash: 8f30ee32168147b8beeb6e60372cd631237ce993
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: bee981d11f8c05948795867f2d759936bfe16d82
+ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433037"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "27724869"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Criar funções personalizadas no Excel (versão prévia)
 
@@ -428,7 +428,7 @@ function getComment(x) {
 - **28 de novembro de 2017**: enviado o suporte para cancelamento em funções assíncronas (requer a alteração de funções de streaming)
 - **7 de maio de 2018**: Suporte enviado para Mac, Excel Online e funções síncronas em execução no processo
 - **20 de setembro de 2018**: Suporte enviado para funções personalizadas de tempo de execução do JavaScript. Para saber mais, confira [Tempo de execução de funções personalizadas do Excel](custom-functions-runtime.md).
-- **20 de outubro de 2018**: Com o [build do Insider de outubro](https://support.office.com/pt-BR/article/what-s-new-for-office-insiders-c152d1e2-96ff-4ce9-8c14-e74e13847a24), funções personalizadas agora exigem o parâmetro "id" na suas [funções personalizadas metadados](custom-functions-json.md) para área de trabalho do Windows e Online. No Mac, esse parâmetro deve ser ignorado.
+- **20 de outubro de 2018**: Com o [build do Insider de outubro](https://support.office.com/en-us/article/what-s-new-for-office-insiders-c152d1e2-96ff-4ce9-8c14-e74e13847a24), funções personalizadas agora exigem o parâmetro "id" na suas [funções personalizadas metadados](custom-functions-json.md) para área de trabalho do Windows e Online. No Mac, esse parâmetro deve ser ignorado.
 
 
 Em \* canal[Office Insider](https://products.office.com/office-insider), (anteriormente chamado de "Insider – modo rápido")
@@ -438,4 +438,4 @@ Em \* canal[Office Insider](https://products.office.com/office-insider), (anteri
 * [Metadados de funções personalizadas](custom-functions-json.md)
 * [Tempo de execução de funções personalizadas do Excel](custom-functions-runtime.md)
 * [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
-* [Tutorial de funções personalizadas do Excel](excel-tutorial-custom-functions.md)
+* [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)
