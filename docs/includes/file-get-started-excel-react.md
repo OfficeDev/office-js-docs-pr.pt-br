@@ -248,7 +248,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 Você criou com êxito um suplemento do Excel usando o React, parabéns! Agora, saiba mais sobre os recursos dos suplementos do Excel e crie um mais complexo, acompanhando o tutorial de suplemento do Excel.
 
 > [!div class="nextstepaction"]
-> [Tutorial de suplemento do Excel](../tutorials/excel-tutorial.yml)
+> [Tutorial de suplemento do Excel](../tutorials/excel-tutorial.md)
 
 ## <a name="see-also"></a>Confira também
 

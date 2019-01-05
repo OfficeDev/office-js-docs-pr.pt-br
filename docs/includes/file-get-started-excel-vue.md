@@ -204,7 +204,7 @@ Para ativar o HTTPS para o seu aplicativo, abra o arquivo **package.json** na pa
 Você criou com êxito um suplemento do Excel usando o Vue, parabéns! Agora, saiba mais sobre os recursos dos suplementos do Excel e crie um mais complexo, acompanhando o tutorial de suplemento do Excel.
 
 > [!div class="nextstepaction"]
-> [Tutorial de suplemento do Excel](../tutorials/excel-tutorial.yml)
+> [Tutorial de suplemento do Excel](../tutorials/excel-tutorial.md)
 
 ## <a name="see-also"></a>Confira também
 
