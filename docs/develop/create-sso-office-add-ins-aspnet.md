@@ -2,12 +2,12 @@
 title: Criar um Suplemento do Office com ASP.NET que use logon único
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 9ccabfcb2f3dc071ab9be181dda1ed5cadadd763
-ms.sourcegitcommit: 979e8d2b0fbc537f9c01527062767c026592aa62
+ms.openlocfilehash: 295d586e363345c819584c3e04dd59c2c98f90b8
+ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "25852942"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "27724897"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>Criar um Suplemento do Office com ASP.NET que use logon único (visualização)
 
@@ -132,7 +132,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
 
         1. Comente a seção `<WebApplicationInfo>` do manifesto logo acima do final de `</VersionOverrides>`.
 
-        2. Pressione F5 para iniciar uma sessão de depuração. Isso criará uma cópia do manifesto na seguinte pasta (que pode ser acessada mais facilmente pelo **Gerenciador de Arquivos** do que pelo Visual Studio):`Office-Add-in-ASP.NET-SSO\Complete\Office-Add-in-ASPNET-SSO\bin\Debug\OfficeAppManifests`
+        2. Pressione **F5** para iniciar uma sessão de depuração. Isso criará uma cópia do manifesto na seguinte pasta (que pode ser acessada mais facilmente pelo **Gerenciador de Arquivos** do que pelo Visual Studio): `Office-Add-in-ASP.NET-SSO\Complete\Office-Add-in-ASPNET-SSO\bin\Debug\OfficeAppManifests`
 
         3. Na cópia do manifesto, remova a sintaxe do comentário em torno da seção `<WebApplicationInfo>`.
 

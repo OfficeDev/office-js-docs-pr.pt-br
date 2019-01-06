@@ -2,12 +2,12 @@
 title: Crie um Suplemento do Office com Node.js que use logon único
 description: ''
 ms.date: 12/07/2018
-ms.openlocfilehash: 6579549fbad4a44d73edfacefe53875e2a6e0918
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+ms.openlocfilehash: b05ef90000da7fda3a72d2ba873c169a469731a6
+ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433331"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "27724904"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Crie um Suplemento do Office com Node.js que use logon único (prévia)
 
@@ -658,7 +658,7 @@ Há duas maneiras de criar e executar o projeto dependendo se você estiver ou n
 2. Se estiver usando o VS Code:
  1. Abra o projeto no VS Code.
  2. Pressione Ctrl+Shift+B para compilar o projeto.
- 3. Pressione F5 para executar o projeto em uma sessão de depuração.
+ 3. Pressione **F5** para executar o projeto em uma sessão de depuração.
 
 
 ## <a name="add-the-add-in-to-an-office-document"></a>Adicionar o suplemento em um documento do Office

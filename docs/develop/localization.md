@@ -2,12 +2,12 @@
 title: Localização para Suplementos do Office
 description: Você pode usar a API JavaScript para Office para determinar uma localidade e exibir cadeias de caracteres com base na localidade do aplicativo host ou para interpretar ou exibir dados com base na localidade dos dados.
 ms.date: 12/11/2018
-ms.openlocfilehash: e86421ac0b201e6092a3d112c04de57a6b6cc1dd
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+ms.openlocfilehash: 050880d8b2d5091cc0e5ab3e3dc14e632e0014f1
+ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457996"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "27724890"
 ---
 # <a name="localization-for-office-add-ins"></a>Localização para Suplementos do Office
 
@@ -390,7 +390,7 @@ Para alterar o idioma usado para exibir ou editar no seu suplemento:
 
 3. Escolha **OK** para confirmar sua seleção e feche o Word.
 
-4. Pressione F5 no Visual Studio para executar o suplemento de amostra ou escolha **Depurar** > **Iniciar Depuração** na barra de menus.
+4. Pressione **F5** no Visual Studio para executar o suplemento de amostra ou escolha **Depurar** > **Iniciar Depuração** na barra de menus.
 
 5. No Word, escolha **Página Inicial** > **Mostrar Painel de Tarefas**.
 

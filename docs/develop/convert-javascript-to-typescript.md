@@ -2,12 +2,12 @@
 title: Converter um projeto de Suplemento do Office no Visual Studio para TypeScript
 description: ''
 ms.date: 10/30/2018
-ms.openlocfilehash: d2a092cb48864cb9a4c9e791e3485963d0329ed2
-ms.sourcegitcommit: 161a0625646a8c2ebaf1773c6369ee7cc96aa07b
+ms.openlocfilehash: 9ea1cf421ce94d7756595950604ab3279e049c95
+ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "25891799"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "27724848"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Converter um projeto de Suplemento do Office no Visual Studio para TypeScript
 
@@ -106,7 +106,7 @@ Você pode usar o modelo de Suplemento do Office no Visual Studio para criar um 
 
 ## <a name="run-the-converted-add-in-project"></a>Executar o projeto do suplemento convertido
 
-1. No Visual Studio, pressione F5 ou clique no botão **Iniciar** para iniciar o Excel com o botão do suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
+1. No Visual Studio, pressione **F5** ou clique no botão **Iniciar** para iniciar o Excel com o botão do suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento estará hospedado localmente no IIS.
 
 2. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
