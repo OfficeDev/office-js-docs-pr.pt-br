@@ -150,7 +150,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
 
 ### <a name="try-it-out"></a>Experimente
 
-1. Usando o Visual Studio, teste o suplemento do PowerPoint recém-criado pressionando F5 ou escolhendo o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
+1. Usando o Visual Studio, teste o suplemento do PowerPoint recém-criado, pressionando **F5** ou escolhendo o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar Painel de Tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
 
 2. No PowerPoint, insira um novo slide em branco, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
@@ -352,4 +352,4 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
 Parabéns, você criou com êxito um suplemento do PowerPoint! Em seguida, saiba mais sobre os recursos de um suplemento do PowerPoint e crie um suplemento mais complexo seguindo as etapas deste tutorial de suplemento do PowerPoint.
 
 > [!div class="nextstepaction"]
-> [Tutorial de suplemento do PowerPoint](../tutorials/powerpoint-tutorial.yml)
+> [Tutorial de suplemento do PowerPoint](../tutorials/powerpoint-tutorial.md)
