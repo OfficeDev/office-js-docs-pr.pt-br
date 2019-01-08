@@ -131,7 +131,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 
 ### <a name="try-it-out"></a>Experimente
 
-1. Usando o Visual Studio, teste o suplemento do Excel recém-criado pressionando F5 ou escolhendo o botão **Iniciar** para abrir o Excel com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
+1. Usando o Visual Studio, teste o suplemento do Excel recém-criado, pressionando **F5** ou escolhendo o botão **Iniciar** para abrir o Excel com o botão de suplemento **Mostrar Painel de Tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
 
 2. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
@@ -309,11 +309,12 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 Você criou com êxito um suplemento do Excel usando jQuery!, parabéns! Agora, saiba mais sobre os recursos dos suplementos do Excel e crie um mais complexo, acompanhando o tutorial de suplemento do Excel.
 
 > [!div class="nextstepaction"]
-> [Tutorial de suplemento do Excel](../tutorials/excel-tutorial.yml)
+> [Tutorial de suplemento do Excel](../tutorials/excel-tutorial.md)
 
 ## <a name="see-also"></a>Confira também
 
 * [Tutorial de suplemento do Excel](../tutorials/excel-tutorial-create-table.md)
 * [Conceitos fundamentais de programação com a API JavaScript do Excel](../excel/excel-add-ins-core-concepts.md)
-* [Exemplos de código do suplemento do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* 
+  [Exemplos de código do suplemento do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Referência da API JavaScript do Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

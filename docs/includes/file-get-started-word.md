@@ -210,7 +210,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
 
 ### <a name="try-it-out"></a>Experimente
 
-1. Usando o Visual Studio, teste o suplemento do Word recém-criado pressionando F5 ou escolhendo o botão **Iniciar** para abrir o Word com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
+1. Usando o Visual Studio, teste o suplemento do Word recém-criado, pressionando **F5** ou escolhendo o botão **Iniciar** para abrir o Word com o botão de suplemento **Mostrar Painel de Tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
 
 2. No Word, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento. (Caso esteja usando a versão sem assinatura do Office 2016 ao invés da versão do Office 365, os botões personalizados não são compatíveis. Em vez disso, o painel de tarefas abrirá imediatamente.)
 
@@ -464,7 +464,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
 Parabéns, você criou com êxito um suplemento do Word usando o jQuery! Em seguida, saiba mais sobre os recursos de um suplemento do Word e crie um suplemento mais complexo seguindo as etapas deste tutorial de suplemento do Word.
 
 > [!div class="nextstepaction"]
-> [Tutorial de suplemento do Word](../tutorials/word-tutorial.yml)
+> [Tutorial de suplemento do Word](../tutorials/word-tutorial.md)
 
 ## <a name="see-also"></a>Confira também
 
