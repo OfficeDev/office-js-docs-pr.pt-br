@@ -1,13 +1,13 @@
 ---
 title: Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 description: ''
-ms.date: 12/13/2018
-ms.openlocfilehash: 388e061f72055b557a9da822391a9c0cd64a2c24
-ms.sourcegitcommit: 09f124fac7b2e711e1a8be562a99624627c0699e
+ms.date: 1/7/2019
+ms.openlocfilehash: db32cf0c847d578fb909d9ad97a3a75ef3f97eee
+ms.sourcegitcommit: 9afcb1bb295ec0c8940ed3a8364dbac08ef6b382
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "27283120"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "27770585"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 
@@ -50,7 +50,7 @@ Excel.createWorkbook();
 
 O método `createWorkbook` também cria uma cópia de uma pasta de trabalho existente. O método aceita uma representação de cadeia de caracteres codificada em Base64 de um arquivo .xlsx como parâmetro opcional. A pasta de trabalho resultante será uma cópia desse arquivo, supondo que o argumento da cadeia de caracteres seja um arquivo. xlsx válido.
 
-Você pode obter a pasta de trabalho atual do suplemento como uma cadeia de caracteres codificada com Base64 usando a [divisão de arquivos](/javascript/api/office/office.document#getfileasync-filetype--options--callback-). A classe [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) pode ser usada para converter um arquivo em uma cadeia de caracteres codificada com Base64, como demonstrado no seguinte exemplo. 
+Você pode obter a pasta de trabalho atual do suplemento como uma cadeia de caracteres codificada com Base64 usando a [divisão de arquivos](/javascript/api/office/office.document#getfileasync-filetype--options--callback-). A classe [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) pode ser usada para converter um arquivo em uma cadeia de caracteres codificada com Base64, como demonstrado no seguinte exemplo.
 
 ```js
 var myFile = document.getElementById("file");
@@ -60,9 +60,9 @@ reader.onload = (function (event) {
     Excel.run(function (context) {
         // strip off the metadata before the base64-encoded string
         var startIndex = event.target.result.indexOf("base64,");
-        var mybase64 = event.target.result.substr(startIndex + 7);
+        var workbookContents = event.target.result.substr(startIndex + 7);
 
-        Excel.createWorkbook(mybase64);
+        Excel.createWorkbook(workbookContents);
         return context.sync();
     }).catch(errorHandlerFunction);
 });
@@ -71,9 +71,48 @@ reader.onload = (function (event) {
 reader.readAsDataURL(myFile.files[0]);
 ```
 
-## <a name="protect-the-workbooks-structure"></a>Proteger a estrutura da pasta de trabalho
+### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one"></a>Inserir uma cópia de uma pasta de trabalho para a seção atual
 
-O suplemento pode controlar a capacidade de um usuário de editar dados em uma pasta de trabalho. A propriedade `protection` do objeto Workbook é um objeto [WorkbookProtection](/javascript/api/excel/excel.workbookprotection) com um método `protect()`. O exemplo a seguir mostra um cenário básico ativando/desativando a proteção da pasta de trabalho. 
+> [!NOTE]
+> A função `WorksheetCollection.addFromBase64` só está disponível atualmente na versão visualização pública (beta). Para usar esse recurso, você deve usar a biblioteca beta do CDN do Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+> Se você estiver usando o TypeScript ou se seu editor de código usar arquivos de definição de tipo do TypeScript do IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+
+O exemplo anterior mostra uma nova pasta de trabalho criada a partir de uma pasta de trabalho. Você também pode copiar algumas ou todas de uma pasta de trabalho para a atualmente associada com o suplemento. Uma pasta de trabalho [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) tem o método `addFromBase64` para inserir cópias de planilhas da pasta de trabalho de destino nela mesma. O outro arquivo da pasta de trabalho é passado como em cadeia de caracteres codificado em base 64, como a chamada `Excel.createWorkbook`.
+
+```TypeScript
+addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet | string): OfficeExtension.ClientResult<string[]>;
+```
+
+O exemplo a seguir mostra planilhas da pasta de trabalho que estão sendo inseridas em uma pasta de trabalho atual, logo após a planilha ativa. Observe que `null` é passado para o parâmetro `sheetNamesToInsert?: string[]`. Isso significa que todas as planilhas são inseridas.
+
+```js
+var myFile = <HTMLInputElement>document.getElementById("file");
+var reader = new FileReader();
+
+reader.onload = (event) => {
+    Excel.run((context) => {
+        // strip off the metadata before the base64-encoded string
+        var startIndex = (<string>(<FileReader>event.target).result).indexOf("base64,");
+        var workbookContents = (<string>(<FileReader>event.target).result).substr(startIndex + 7);
+
+        var sheets = context.workbook.worksheets;
+        sheets.addFromBase64(
+            workbookContents,
+            null, // get all the worksheets
+            Excel.WorksheetPositionType.after, // insert them after the worksheet specified by the next parameter
+            sheets.getActiveWorksheet() // insert them after the active worksheet
+        );
+        return context.sync();
+    });
+};
+
+// read in the file as a data URL so we can parse the base64-encoded string
+reader.readAsDataURL(myFile.files[0]);
+```
+
+## <a name="protect-the-workbooks-structure"></a>Protege a estrutura da pasta de trabalho
+
+O suplemento pode controlar a capacidade de um usuário de editar dados em uma pasta de trabalho. A propriedade `protection` do objeto Workbook é um objeto [WorkbookProtection](/javascript/api/excel/excel.workbookprotection) com um método `protect()`. O exemplo a seguir mostra um cenário básico ativando/desativando a proteção da pasta de trabalho.
 
 ```js
 Excel.run(function (context) {
@@ -200,18 +239,18 @@ Excel.run(async (context) => {
 
 Por padrão, o Excel recalcula os resultados das fórmulas sempre que uma célula referenciada é alterada. O desempenho de seu suplemento pode se beneficiar do ajuste desse comportamento de cálculo. O objeto Application tem uma propriedade `calculationMode` do tipo `CalculationMode`. Esta propriedade pode ser configurada com os seguintes valores:
 
- - `automatic`: O comportamento de recálculo padrão em que o Excel calcula novos resultados das fórmulas sempre que o dado relevante é alterado.
- - `automaticExceptTables`: Igual a `automatic`, exceto que as alterações feitas nos valores em tabelas serão ignoradas.
- - `manual`: Os cálculos ocorrem somente quando o usuário ou suplemento os solicita.
+- `automatic`: O comportamento de recálculo padrão em que o Excel calcula novos resultados das fórmulas sempre que o dado relevante é alterado.
+- `automaticExceptTables`: Igual a `automatic`, exceto que as alterações feitas nos valores em tabelas serão ignoradas.
+- `manual`: Os cálculos ocorrem somente quando o usuário ou suplemento os solicita.
 
 ### <a name="set-calculation-type"></a>Configurar o tipo de cálculo
 
 O objeto [Application](/javascript/api/excel/excel.application) fornece um método para forçar um recálculo imediato. `Application.calculate(calculationType)` inicia o recálculo manual baseado no `calculationType` especificado. Os seguintes valores podem ser especificados:
 
- - `full`: Recalcule todas as fórmulas em todas as pastas de trabalho abertas, independentemente de elas terem sido alteradas desde o último recálculo.
- - `fullRebuild`: Verifique as fórmulas dependentes e depois recalcule todas as fórmulas em todas as pastas de trabalho abertas, independentemente de elas terem sido alteradas desde o último recálculo.
- - `recalculate`: Recalcule as fórmulas que foram alteradas (ou marcadas por programação para recálculo) desde o último cálculo, e as fórmulas dependentes nelas, em todas as pastas de trabalho ativas.
- 
+- `full`: Recalcule todas as fórmulas em todas as pastas de trabalho abertas, independentemente de elas terem sido alteradas desde o último recálculo.
+- `fullRebuild`: Verifique as fórmulas dependentes e depois recalcule todas as fórmulas em todas as pastas de trabalho abertas, independentemente de elas terem sido alteradas desde o último recálculo.
+- `recalculate`: Recalcule as fórmulas que foram alteradas (ou marcadas por programação para recálculo) desde o último cálculo, e as fórmulas dependentes nelas, em todas as pastas de trabalho ativas.
+
 > [!NOTE]
 > Para saber mais sobre o recálculo, confira o artigo [Alterar o recálculo, a iteração ou a precisão de fórmulas](https://support.office.com/article/change-formula-recalculation-iteration-or-precision-73fc7dac-91cf-4d36-86e8-67124f6bcce4).
 

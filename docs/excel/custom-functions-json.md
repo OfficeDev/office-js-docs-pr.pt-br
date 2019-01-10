@@ -1,13 +1,13 @@
 ---
-ms.date: 11/26/2018
+ms.date: 01/08/2019
 description: Defina os metadados de funções personalizadas no Excel.
-title: Metadados de funções personalizadas no Excel
-ms.openlocfilehash: 4bdf27173c5e912aa3eba3c8661ba45dd8b453cb
-ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
+title: Metadados de funções personalizadas no Excel (visualização)
+ms.openlocfilehash: 79fb5ac0ebcbe91b154c48cb10aad65451b6e5ee
+ms.sourcegitcommit: 9afcb1bb295ec0c8940ed3a8364dbac08ef6b382
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "27724855"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "27770627"
 ---
 # <a name="custom-functions-metadata-preview"></a>Metadados de funções personalizadas (versão prévia)
 
@@ -158,4 +158,5 @@ O objeto `result` que define o tipo de informação que é retornado pela funç�
 * [Criar funções personalizadas no Excel](custom-functions-overview.md)
 * [Tempo de execução de funções personalizadas do Excel](custom-functions-runtime.md)
 * [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
+* [Log de alteração de funções personalizadas](custom-functions-changelog.md)
 * [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)

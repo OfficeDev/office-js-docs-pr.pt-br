@@ -1,13 +1,13 @@
 ---
-ms.date: 12/21/2018
+ms.date: 01/08/2019
 description: Criar funções personalizadas no Excel usando JavaScript.
-title: Criar funções personalizadas no Excel (Versão Prévia)
-ms.openlocfilehash: bee981d11f8c05948795867f2d759936bfe16d82
-ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
+title: Criar funções personalizadas no Excel (versão prévia)
+ms.openlocfilehash: 0bc1b9face240f6218b501dd195bde39e8781205
+ms.sourcegitcommit: 9afcb1bb295ec0c8940ed3a8364dbac08ef6b382
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "27724869"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "27770634"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Criar funções personalizadas no Excel (versão prévia)
 
@@ -36,18 +36,18 @@ Se você usar o [gerador Yo Office](https://github.com/OfficeDev/generator-offic
 
 | File | Formato de arquivo | Descrição |
 |------|-------------|-------------|
-| **./src/functions/functions.js**<br/>ou<br/>**./src/functions/functions.ts** | JavaScript<br/>ou<br/>TypeScript | Contém o código que define funções personalizadas. |
-| **./src/functions/functions.json** | JSON | Contém metadados que descrevem funções personalizadas e permitem que o Excel registre funções personalizadas e as disponibilize para os usuários finais. |
-| **./src/functions/functions.html** | HTML | Fornece uma referência&lt;script&gt;ao arquivo JavaScript que define funções personalizadas. |
+| **./src/customfunctions.js**<br/>ou<br/>**./src/customfunctions.ts** | JavaScript<br/>ou<br/>TypeScript | Contém o código que define funções personalizadas. |
+| **./config/customfunctions.json** | JSON | Contém metadados que descrevem funções personalizadas e permitem que o Excel registre funções personalizadas e as disponibilize para os usuários finais. |
+| **./index.html** | HTML | Fornece uma referência&lt;script&gt;ao arquivo JavaScript que define funções personalizadas. |
 | **./manifest.xml** | XML | Especifica o namespace para todas as funções personalizadas no suplemento e o local dos arquivos HTML, JavaScript e JSON listados anteriormente nesta tabela. |
 
 As seções a seguir fornecem mais informações sobre esses arquivos.
 
 ### <a name="script-file"></a>Arquivo de script
 
-O arquivo de script (**./src/functions/functions.js** ou **./src/functions/functions.ts** no projeto gerador que o Yo Office cria) contém o código que define funções personalizadas e mapeia os nomes da funções personalizadas aos objetos em [arquivos de metadados JSON](#json-metadata-file). 
+O arquivo de script (**./src/customfunctions.js** ou **./src/customfunctions.ts** no projeto gerador que o Yo Office cria) contém o código que define funções personalizadas e mapeia os nomes da funções personalizadas aos objetos em [arquivos de metadados JSON](#json-metadata-file). 
 
-Por exemplo, o código a seguir define funções personalizadas `add` e `increment` e especifica as informações de mapeamento para as duas funções. A `add` função mapeada para o objeto no arquivo nos metadados JSON onde o valor da `id` propriedade **Adicionar**e a `increment` função é mapeada para o objeto no arquivo metadados onde o valor da propriedade`id`é **INCREMENTO**. Ver [Práticas recomendadas de funções personalizados](custom-functions-best-practices.md#mapping-function-names-to-json-metadata) para saber mais sobre mapeamento de nomes de função no arquivo de script para objetos no arquivo de metadados JSON.
+Por exemplo, o código a seguir define funções personalizadas `add` e `increment` e especifica as informações de mapeamento para as duas funções. A `add` função está associada com o objeto no arquivo nos metadados JSON onde o valor da propriedade `id` é **Adicionar**e a `increment` função é associada com o objeto no arquivo metadados onde o valor da propriedade`id`é **INCREMENTO**. Ver [Práticas recomendadas de funções personalizados](custom-functions-best-practices.md#associating-function-names-with-json-metadata) para saber mais como associar os nomes de função no arquivo de script para objetos no arquivo de metadados JSON.
 
 ```js
 function add(first, second){
@@ -66,19 +66,19 @@ function increment(incrementBy, callback) {
   };
 }
 
-// map `id` values in the JSON metadata file to the JavaScript function names
-CustomFunctionMappings.ADD = add;
-CustomFunctionMappings.INCREMENT = increment;
+// associate `id` values in the JSON metadata file to the JavaScript function names
+ CustomFunctions.associate("ADD", add);
+ CustomFunctions.associate("INCREMENT", increment);
 ```
 
-### <a name="json-metadata-file"></a>Arquivo de metadados JSON 
+### <a name="json-metadata-file"></a>Arquivo de metadados JSON
 
-O arquivo de metadados de funções personalizadas (**./src/functions/functions.json** no projeto que o gerador do Yo Office cria) fornece informações exigidas pelo Excel para registrar funções personalizadas e disponibilizá-las aos usuários finais. Funções personalizadas são registradas quando um usuário usar um suplemento pela primeira vez. Depois disso, eles estão disponíveis para esse mesmo usuário em todas as pastas de trabalho (ou seja, não apenas na pasta de trabalho onde o suplemento foi inicialmente executado.)
+O arquivo de metadados de funções personalizadas (**./config/customfunctions.json** no projeto gerador que o Yo Office cria) fornece informações exigidas pelo Excel para registrar funções personalizadas e disponibilizá-las aos usuários finais. Funções personalizadas são registradas quando um usuário usar um suplemento pela primeira vez. Depois disso, eles estão disponíveis para esse mesmo usuário em todas as pastas de trabalho (ou seja, não apenas na pasta de trabalho onde o suplemento foi inicialmente executado.)
 
 > [!TIP]
 > Configurações do servidor no servidor que hospeda o arquivo JSON deve ter o [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) habilitado para funções personalizadas funcionarem corretamente no Excel Online.
 
-O seguinte código em **functions.json** especifica os metadados para a função `add` e a função `increment` descritas anteriormente. A tabela que segue o código fornece informações detalhadas sobre as propriedades individuais nesse objeto JSON. Ver [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md#mapping-function-names-to-json-metadata) para saber mais sobre como especificar o valor das propriedades`id` e `name` no arquivo de metadados JSON.
+O seguinte código em **customfunctions.json** especifica os metadados para a função `add` e a função `increment` descritas anteriormente. A tabela que segue o código fornece informações detalhadas sobre as propriedades individuais nesse objeto JSON. Ver [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md#associating-function-names-with-json-metadata) para saber mais sobre como especificar o valor das propriedades`id` e `name` no arquivo de metadados JSON.
 
 ```json
 {
@@ -151,42 +151,52 @@ A tabela a seguir lista as propriedades normalmente presentes no arquivo de meta
 O arquivo de manifesto XML para um suplemento que define funções personalizadas (**./manifest.xml** no projeto gerador que Yo Office cria) especifica o namespace para todas as funções personalizadas no suplemento e o local dos arquivos HTML, JavaScript e JSON. A marcação XML a seguir mostra um exemplo dos elementos `<ExtensionPoint>` e `<Resources>` que você deve incluir no manifesto de um suplemento para habilitar funções personalizadas.  
 
 ```xml
-<VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
-        <Hosts>
-            <Host xsi:type="Workbook">
-                <AllFormFactors>
-                    <ExtensionPoint xsi:type="CustomFunctions">
-                        <Script>
-                            <SourceLocation resid="Contoso.Functions.Script.Url" />
-                        </Script>
-                        <Page>
-                            <SourceLocation resid="Contoso.Functions.Page.Url"/>
-                        </Page>
-                        <Metadata>
-                            <SourceLocation resid="Contoso.Functions.Metadata.Url" />
-                        </Metadata>
-                        <Namespace resid="Contoso.Functions.Namespace" />
-                    </ExtensionPoint>
-                </AllFormFactors>
-            </Host>
-        </Hosts>
-        <Resources>
-            <bt:Images>
-                <bt:Image id="Contoso.tpicon_16x16" DefaultValue="https://localhost:3000/assets/icon-16.png" />
-                <bt:Image id="Contoso.tpicon_32x32" DefaultValue="https://localhost:3000/assets/icon-32.png" />
-                <bt:Image id="Contoso.tpicon_80x80" DefaultValue="https://localhost:3000/assets/icon-80.png" />
-            </bt:Images>
-            <bt:Urls>
-                <bt:Url id="Contoso.Functions.Script.Url" DefaultValue="https://localhost:3000/dist/functions.js" />
-                <bt:Url id="Contoso.Functions.Metadata.Url" DefaultValue="https://localhost:3000/dist/functions.json" />
-                <bt:Url id="Contoso.Functions.Page.Url" DefaultValue="https://localhost:3000/dist/functions.html" />
-                <bt:Url id="Contoso.Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
-            </bt:Urls>
-            <bt:ShortStrings>
-                <bt:String id="Contoso.Functions.Namespace" DefaultValue="CONTOSO" />
-            </bt:ShortStrings>
-        </Resources>
-    </VersionOverrides>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+  <Id>6f4e46e8-07a8-4644-b126-547d5b539ece</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Contoso</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="helloworld"/>
+  <Description DefaultValue="Samples to test custom functions"/>
+  <Hosts>
+    <Host Name="Workbook"/>
+  </Hosts>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://localhost:8081/index.html"/>
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Workbook">
+        <AllFormFactors>
+          <ExtensionPoint xsi:type="CustomFunctions">
+            <Script>
+              <SourceLocation resid="JS-URL"/>
+            </Script>
+            <Page>
+              <SourceLocation resid="HTML-URL"/>
+            </Page>
+            <Metadata>
+              <SourceLocation resid="JSON-URL"/>
+            </Metadata>
+            <Namespace resid="namespace"/>
+          </ExtensionPoint>
+        </AllFormFactors>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Urls>
+        <bt:Url id="JSON-URL" DefaultValue="https://localhost:8081/config/customfunctions.json"/>
+        <bt:Url id="JS-URL" DefaultValue="https://localhost:8081/dist/win32/ship/index.win32.bundle"/>
+        <bt:Url id="HTML-URL" DefaultValue="https://localhost:8081/index.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="namespace" DefaultValue="CONTOSO"/>
+      </bt:ShortStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
 ```
 
 > [!NOTE]
@@ -345,13 +355,13 @@ function secondHighest(values){
 }
 ```
 
-## <a name="discovering-cells-that-invoke-custom-functions"></a>Como descobrir células que invocam funções personalizadas
+## <a name="determine-which-cell-invoked-your-custom-function"></a>Determinar quais células chamadas de sua função personalizada
 
-As funções personalizadas também permitem formatar intervalos, exibir valores armazenados em cache e reconciliar valores usando `caller.address`, o que torna possível descobrir a célula que invocou uma função personalizada. Você pode usar `caller.address` em alguns dos cenários a seguir:
+Em alguns casos, você precisará obter o endereço da célula invocada na sua função personalizada. Isso pode ser útil para os seguintes tipos de cenários:
 
-- Formatação de intervalos: use `caller.address` como a chave da célula para armazenar informações em [AsyncStorage](https://docs.microsoft.com/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Em seguida, use [onCalculated](https://docs.microsoft.com/javascript/api/excel/excel.worksheet#oncalculated) no Excel para carregar a chave de `AsyncStorage`.
+- Formatação de intervalos: Use o endereço da célula como a chave para armazenar informações em [AsyncStorage](https://docs.microsoft.com/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Em seguida, use [onCalculated](https://docs.microsoft.com/javascript/api/excel/excel.worksheet#oncalculated) no Excel para carregar a chave de `AsyncStorage`.
 - Exibição de valores armazenados em cache: se sua função for usada offline, exiba valores armazenados em cache de `AsyncStorage` usando `onCalculated`.
-- Reconciliação: use `caller.address` para descobrir uma célula de origem para ajudá-lo a reconciliar onde o processamento está ocorrendo.
+- Reconciliação: Use o endereço da célula para descobrir uma célula de origem para ajudá-lo a reconciliar onde o processamento está ocorrendo.
 
 As informações sobre o endereço de uma célula serão expostas somente se `requiresAddress` estiver marcado como `true` no arquivo de metadados JSON da função. A seguir, um exemplo disso:
 
@@ -421,21 +431,11 @@ function getComment(x) {
 - Ferramentas de depuração especificas para funções personalizadas podem estar disponíveis no futuro. Enquanto isso, você pode depurar no Excel Online usando ferramentas de desenvolvedor F12. Ver mais detalhes em [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
 - Na versão de 32 bits do Office 365 para Insiders 1901 de *dezembro* (compilação 11128.20000), as funções personalizadas podem não funcionar corretamente. Em alguns casos, você pode solucionar esse erro baixando o arquivo em https://github.com/OfficeDev/Excel-Custom-Functions/blob/december-insiders-workaround/excel-udf-host.win32.bundle. Em seguida, copie a pasta “C:\ Arquivos de Programas (x86)\Microsoft Office\root\Office16”.
 
-## <a name="changelog"></a>Log de mudanças
-
-- **7 de novembro de 2017**: enviados exemplos e visualizações de funções personalizadas
-- **20 de Nov de 2017**: correção de bug de compatibilidade para quem usa as versões 8801 e posteriores
-- **28 de novembro de 2017**: enviado o suporte para cancelamento em funções assíncronas (requer a alteração de funções de streaming)
-- **7 de maio de 2018**: Suporte enviado para Mac, Excel Online e funções síncronas em execução no processo
-- **20 de setembro de 2018**: Suporte enviado para funções personalizadas de tempo de execução do JavaScript. Para saber mais, confira [Tempo de execução de funções personalizadas do Excel](custom-functions-runtime.md).
-- **20 de outubro de 2018**: Com o [build do Insider de outubro](https://support.office.com/en-us/article/what-s-new-for-office-insiders-c152d1e2-96ff-4ce9-8c14-e74e13847a24), funções personalizadas agora exigem o parâmetro "id" na suas [funções personalizadas metadados](custom-functions-json.md) para área de trabalho do Windows e Online. No Mac, esse parâmetro deve ser ignorado.
-
-
-Em \* canal[Office Insider](https://products.office.com/office-insider), (anteriormente chamado de "Insider – modo rápido")
-
 ## <a name="see-also"></a>Confira também
 
 * [Metadados de funções personalizadas](custom-functions-json.md)
 * [Tempo de execução de funções personalizadas do Excel](custom-functions-runtime.md)
 * [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
+* [Log de alteração de funções personalizadas](custom-functions-changelog.md)
 * [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)
+
