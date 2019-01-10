@@ -1,13 +1,13 @@
 ---
-ms.date: 12/5/2018
+ms.date: 01/08/2019
 description: Entenda os principais cenários de desenvolvimento de funções personalizadas do Excel que usam o novo tempo de execução do JavaScript.
-title: Tempo de execução de funções personalizadas do Excel
-ms.openlocfilehash: a2e59c24addecbf0159b816b15c3bf6faf623475
-ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
+title: Tempo de execução de funções personalizadas do Excel (versão prévia)
+ms.openlocfilehash: 2610be95ea255d14c577d8b9215f32a79ab04463
+ms.sourcegitcommit: 9afcb1bb295ec0c8940ed3a8364dbac08ef6b382
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "27724841"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "27770578"
 ---
 # <a name="runtime-for-excel-custom-functions-preview"></a>Tempo de execução de funções personalizadas do Excel (versão prévia)
 
@@ -17,7 +17,7 @@ Funções personalizadas usam um novo tempo de execução do JavaScript, diferen
 
 ## <a name="requesting-external-data"></a>Como solicitar dados externos
 
-É possível solicitar dados externos em uma função personalizada por meio de uma API, como a API [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), ou por meio de um objeto [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), uma API Web padrão que envia solicitações HTTP para interagir com os servidores. No tempo de execução do JavaScript, o XHR implementa medidas de segurança adicionais solicitando uma [Política de mesma origem](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) ou um simples [CORS](https://www.w3.org/TR/cors/).  
+É possível solicitar dados externos em uma função personalizada por meio de uma API, como a API [Fetch](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API), ou por meio de um objeto [XmlHttpRequest (XHR)](https://developer.mozilla.org/pt-BR/docs/Web/API/XMLHttpRequest), uma API Web padrão que envia solicitações HTTP para interagir com os servidores. No tempo de execução do JavaScript, o XHR implementa medidas de segurança adicionais solicitando uma [Política de mesma origem](https://developer.mozilla.org/pt-BR/docs/Web/Security/Same-origin_policy) ou um simples [CORS](https://www.w3.org/TR/cors/).  
 
 ### <a name="xhr-example"></a>Exemplo de XHR
 
@@ -51,7 +51,7 @@ function sendWebRequest(thermometerID, data) {
 
 ## <a name="receiving-data-via-websockets"></a>Como receber dados por meio de WebSockets
 
-Em uma função personalizada, é possível usar [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) para trocar dados por meio de uma conexão persistente com um servidor. Usando WebSockets, a função personalizada pode abrir uma conexão com um servidor e, em seguida, receber mensagens do servidor automaticamente, quando determinados eventos ocorrerem, sem precisar consultar explicitamente os dados do servidor.
+Em uma função personalizada, é possível usar [WebSockets](https://developer.mozilla.org/pt-BR/docs/Web/API/WebSockets_API) para trocar dados por meio de uma conexão persistente com um servidor. Usando WebSockets, a função personalizada pode abrir uma conexão com um servidor e, em seguida, receber mensagens do servidor automaticamente, quando determinados eventos ocorrerem, sem precisar consultar explicitamente os dados do servidor.
 
 ### <a name="websockets-example"></a>Exemplo de WebSockets
 
@@ -69,7 +69,7 @@ ws.onerror = (error) => {
 
 ## <a name="storing-and-accessing-data"></a>Como armazenar e acessar os dados
 
-Em uma função personalizada (ou em outras partes de um suplemento), você pode armazenar e acessar dados usando o objeto `OfficeRuntime.AsyncStorage`. `AsyncStorage` é um sistema de armazenamento de chave-valor persistente e não criptografado, que fornece uma alternativa para [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), que não pode ser usado em funções personalizadas. Um suplemento pode armazenar até 10 MB de dados por meio de `AsyncStorage`.
+Em uma função personalizada (ou em outras partes de um suplemento), você pode armazenar e acessar dados usando o objeto `OfficeRuntime.AsyncStorage`. `AsyncStorage` é um sistema de armazenamento de chave-valor persistente e não criptografado, que fornece uma alternativa para [localStorage](https://developer.mozilla.org/pt-BR/docs/Web/API/Window/localStorage), que não pode ser usado em funções personalizadas. Um suplemento pode armazenar até 10 MB de dados por meio de `AsyncStorage`.
 
 `AsyncStorage` é uma solução de armazenamento compartilhado, o que significa que várias partes de um suplemento podem acessar os mesmos dados. Por exemplo, tokens para autenticação de usuário podem ser armazenados em `AsyncStorage`, já que ele pode ser acessado tanto por uma função personalizada quanto por elementos da interface do usuário de um suplemento, como um painel de tarefas. Da mesma forma, quando dois suplementos compartilham o mesmo domínio (por exemplo, www.contoso.com/suplemento1, www.contoso.com/suplemento2), eles também podem compartilhar informações por meio de `AsyncStorage`. Observe que os suplementos que têm diferentes subdomínios terão diferentes instâncias de `AsyncStorage`; por exemplo, subdominio.contoso.com/suplemento1, diferentesubdominio.contoso.com/suplemento2. 
 
@@ -199,4 +199,5 @@ Para criar um suplemento que será executado em várias plataformas (um dos prin
 * [Criar funções personalizadas no Excel](custom-functions-overview.md)
 * [Metadados de funções personalizadas](custom-functions-json.md)
 * [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
+* [Log de alteração de funções personalizadas](custom-functions-changelog.md)
 * [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)
