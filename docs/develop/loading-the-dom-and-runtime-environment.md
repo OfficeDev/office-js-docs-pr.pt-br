@@ -1,13 +1,13 @@
 ---
 title: Carregar o ambiente de tempo de execução e DOM
 description: ''
-ms.date: 01/23/2018
-ms.openlocfilehash: 0de9acf842d28002ec134998c36224f98574cf8f
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+ms.date: 01/09/2019
+ms.openlocfilehash: 2e829fbdb73b8ea450486fe2fef3e839213c970b
+ms.sourcegitcommit: 384e217fd51d73d13ccfa013bfc6e049b66bd98c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457688"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "27896340"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>Carregar o ambiente de tempo de execução e DOM
 
@@ -35,7 +35,7 @@ Os eventos a seguir ocorrem quando um suplemento de conteúdo ou de painel de ta
     
 4. O controle do navegador carrega o corpo do HTML e DOM e chama o manipulador de eventos para o evento **window.onload**.
     
-5. O aplicativo host do Office carrega o ambiente de tempo de execução, que baixa e armazena em cache a API do JavaScript para arquivos da biblioteca a partir do servidor da rede de distribuição de conteúdo (CDN) e chama manipulador de eventos do suplemento para o evento [initialize](https://docs.microsoft.com/javascript/api/office) do objeto [Office](https://docs.microsoft.com/javascript/api/office).
+5. O aplicativo host do Office carrega o ambiente de tempo de execução, que baixa e armazena em cache a API do JavaScript para arquivos da biblioteca a partir do servidor da rede de distribuição de conteúdo (CDN) e chama manipulador de eventos do suplemento para o evento [initialize](/javascript/api/office#initialize-reason-) do objeto [Office](/javascript/api/office), se um identificador for atribuído a ele. Neste momento, ele também verifica se algum retorno de chamada (ou `then()` funções encadeadas) foi autenticado (ou encadeado) para o `Office.onReady` identificador. Para saber mais sobre a distinção entre `Office.initialize` e `Office.onReady`, confira [Inicializar o suplemento](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in).
     
 6. Quando o corpo de HTML e DOM terminar de carregar e o suplemento finalizar a inicialização, a função principal do suplemento poderá prosseguir.
     
@@ -62,16 +62,29 @@ Os eventos a seguir ocorrem quando um suplemento Outlook é iniciado:
     
 5. O controle do navegador carrega o corpo do HTML e DOM e chama o manipulador de eventos para o evento **onload**.
     
-6. O Outlook chama o manipulador de eventos para o evento [initialize](https://docs.microsoft.com/javascript/api/office) do objeto [Office](https://docs.microsoft.com/javascript/api/office) do suplemento.
+6. O Outlook carrega o ambiente de tempo de execução, que baixa e armazena em cache a API do JavaScript para arquivos da biblioteca a partir do servidor da rede de distribuição de conteúdo (CDN) e chama manipulador de eventos para o evento [initialize](/javascript/api/office#initialize-reason-) do objeto do suplemento do [Office](/javascript/api/office). Neste momento, ele também verifica se algum retorno de chamada (ou `then()` funções encadeadas) foi autenticado (ou encadeado) para o `Office.onReady` identificador. Para saber mais sobre a distinção entre `Office.initialize` e `Office.onReady`, confira [Inicializar o suplemento](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in).
     
 7. Quando o corpo de HTML e DOM terminar de carregar e o suplemento finalizar a inicialização, a função principal do suplemento poderá prosseguir.
     
 
 ## <a name="checking-the-load-status"></a>Verificar o status de carregamento
 
+Uma maneira de verificar se o ambiente de tempo de execução e o DOM concluíram o carregamento é usar a função [.ready()](http://api.jquery.com/ready/) do jQuery: `$(document).ready()`. Por exemplo, o manipulador de eventos **onReady** garante que o DOM seja carregado antes do código específico para inicializar as execuções de suplementos. Subsequentemente, o manipulador de eventos **onReady** prossegue e usa a propriedade [mailbox.item](https://docs.microsoft.com/javascript/api/outlook/office.mailbox?view=office-js) para obter o item selecionado atual no Outlook, e chama a função principal do suplemento, `initDialer`.
 
-Uma maneira de verificar se o ambiente de tempo de execução e o DOM concluíram o carregamento é usar a função [.ready()](https://api.jquery.com/ready/) do jQuery: `$(document).ready()`. Por exemplo, a seguinte função do manipulador de eventos **initialize** garante que o DOM seja carregado antes do código específico para inicializar as execuções de suplementos. Subsequentemente, o manipulador de eventos **inicializar** prossegue e usa a propriedade [mailbox.item](https://docs.microsoft.com/javascript/api/outlook/office.mailbox) para obter o item selecionado atual no Outlook, e chama a função principal do suplemento, `initDialer`.
+```js
+Office.onReady()
+    .then(
+        // Checks for the DOM to load.
+        $(document).ready(function () {
+            // After the DOM is loaded, add-in-specific code can run.
+            var mailbox = Office.context.mailbox;
+            _Item = mailbox.item;
+            initDialer();
+        });
+);
+```
 
+Como alternativa, você pode usar o mesmo código em um manipulador de eventos **initialize** manipulador de eventos, conforme mostrado no exemplo a seguir.
 
 ```js
 Office.initialize = function () {
@@ -85,24 +98,26 @@ Office.initialize = function () {
 }
 ```
 
-Essa mesma técnica pode ser usada no manipulador **initialize** de qualquer Suplemento do Office.
+Essa mesma técnica pode ser usada nos manipuladores **onReady** ou **initialize** de qualquer Suplemento do Office.
 
 O suplemento do Outlook de amostra de discagem telefônica mostra uma abordagem ligeiramente diferente usando somente o JavaScript para verificar essas mesmas condições. 
 
 > [!IMPORTANT]
-> Mesmo que o suplemento não tenha tarefas de inicialização para executar, você deve incluir pelo menos uma função mínima do manipulador de eventos **Office.initialize**, como mostra o exemplo a seguir.
+> Mesmo que o suplemento não tenha tarefas de inicialização para executar, você deve incluir pelo menos uma chamada do manipulador de eventos **Office.onReady** ou atribuir a função mínima do manipulador de eventos **Office.initialize**, como mostra o exemplo a seguir.
+>
+>```js
+>Office.onReady();
+>```
+>
+>```js
+>Office.initialize = function () {};
+>```
+>
+> Se você não chamar **Office.onReady** ou atribuir um manipulador de eventos**Office.initialize**, o suplemento pode gerar um erro quando inicia. Além disso, se um usuário tentar usar o suplemento com um cliente Web do Office Online, como o Excel Online, o PowerPoint Online ou o Outlook Web App, ele não funcionará.
+>
+> Se o suplemento incluir mais de uma página, essa página deverá chamar o manipulador de eventos **Office.onReady** atribuir um manipulador de eventos **Office.initialize** sempre que uma nova página for carregada.
 
-```js
-Office.initialize = function () {
-};
-```
-
-Se você não incluir um manipulador de eventos **Office.initialize**, o suplemento poderá gerar um erro ao ser iniciado. Além disso, se um usuário tentar usar o suplemento com um cliente virtual do Office Online, como o Excel Online, PowerPoint Online ou Outlook Web App, ele não funcionará.
-
-Se o suplemento incluir mais de uma página, essa página deverá incluir ou chamar um manipulador de eventos **Office.initialize** sempre que uma nova página for carregada.
-
-
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 - [Noções básicas da API JavaScript para Office](understanding-the-javascript-api-for-office.md)
     
