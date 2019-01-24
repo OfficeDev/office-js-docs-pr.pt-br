@@ -1,13 +1,14 @@
 ---
 title: Elemento VersionOverrides no arquivo de manifesto
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: a8bdc18b289d8d83336b0ce270f36d71170aecbf
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 01/15/2019
+localization_priority: Normal
+ms.openlocfilehash: 197a636169b7f00edd44019cee21686065845800
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433877"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29387797"
 ---
 # <a name="versionoverrides-element"></a>Elemento VersionOverrides
 
@@ -34,9 +35,10 @@ O elemento raiz que contém informações para os comandos de suplemento impleme
 |  **VersionOverrides**    |  Não  | Define comandos de suplemento em uma versão mais recente do esquema. Para saber mais, confira o tópico [Implementar várias versões](#implementing-multiple-versions). |
 |  **WebApplicationInfo**    |  Não  | Especifica detalhes sobre o aplicativo Web associado do suplemento. |
 
-
-
 ### <a name="versionoverrides-example"></a>Exemplo de VersionOverrides
+
+A seguir está um exemplo de uma típica `<VersionOverrides>` elemento, incluindo alguns elementos filhos que não são necessários, mas geralmente são usados.
+
 ```xml
 <OfficeApp>
 ...
@@ -97,6 +99,7 @@ Para implementar o esquema do VersionOverrides v1.0 e do v1.1, o manifesto seria
         <!-- add information on resources -->
       </Resources>
     </VersionOverrides>  
+  </VersionOverrides>
 ...
 </OfficeApp>
 ```

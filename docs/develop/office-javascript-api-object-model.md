@@ -2,12 +2,13 @@
 title: Modelo de objeto de API JavaScript para Office
 description: ''
 ms.date: 07/27/2018
-ms.openlocfilehash: 2947ae2bf0da4f1a0e5151ae8d6d8a723cf6d4b9
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: 5530b77fb25a9decc5f4ae02008808811e7e6513
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27458017"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388525"
 ---
 # <a name="office-javascript-api-object-model"></a>Modelo de objeto de API JavaScript para Office
 Suplementos de JavaScript do Office oferecem acesso às funcionalidades subjacentes do host. A maioria desse acesso percorre alguns objetos importantes. O objeto [contexto](#context-object) oferece acesso ao tempo de execução ambiente depois de inicialização. O objeto[documento](#document-object) oferece o controle do usuário a um documento do Excel, PowerPoint ou Word. O objeto [caixa de correio](#mailbox-object) oferece um acesso ao suplemento do Outlook para mensagens e perfis de usuário. Noções básicas sobre as relações entre esses objetos gerais é a base de um suplemento JavaScript.

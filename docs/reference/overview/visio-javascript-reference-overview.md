@@ -2,12 +2,13 @@
 title: Visão geral da API JavaScript do Visio
 description: ''
 ms.date: 10/11/2018
-ms.openlocfilehash: f530e1541146fb2f38209845791132b789577640
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+localization_priority: Priority
+ms.openlocfilehash: 0a3a141ec624a2e509ae34290691bff6e8e529a5
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432932"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29389435"
 ---
 # <a name="visio-javascript-api-overview"></a>Visão geral da API JavaScript do Visio
 
@@ -65,7 +66,7 @@ function hideToolbars() {
 
 Os objetos JavaScript do Visio declarados e usados em um suplemento são objetos proxy dos objetos reais de um documento do Visio. Todas as ações executadas em objetos proxy não são percebidas no Visio, e o estado do documento do Visio não é percebido em objetos proxy, até que o estado do documento tenha sido sincronizado. O estado do documento é sincronizado quando `context.sync()` é executado.
 
-Por exemplo, o objeto JavaScript local getActivePage é declarado para fazer referência à página selecionada. Você pode usá-lo para colocar a configuração das respectivas propriedades em fila e para invocar métodos. As ações são realizadas sobre esses objetos apenas quando o método **sync()** é executado.
+Por exemplo, o objeto JavaScript local getActivePage é declarado para fazer referência à página selecionada. Você pode usá-lo para colocar a configuração das respectivas propriedades em fila e para invocar métodos. As ações são realizadas sobre esses objetos apenas quando o método sync() é executado.
 
 ```js
 var activePage = context.document.getActivePage();

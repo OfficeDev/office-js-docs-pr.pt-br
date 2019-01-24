@@ -2,12 +2,13 @@
 title: Persistir o estado e as configurações do suplemento
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: ce2b9ffce97e6338d62cdf07d722ffa384283d28
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: 7739dd46499c3ab5ccda13d362950ec86d761660
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27458066"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388238"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>Persistir o estado e as configurações do suplemento
 
@@ -37,7 +38,7 @@ A API JavaScript para Office fornece os objetos [Settings](https://docs.microsof
 > [!NOTE]
 > As duas seções a seguir discutem configurações no contexto da API comum de JavaScript do Office. A API JavaScript do Excel com host específico também fornece acesso às configurações personalizadas. As APIs do Excel e os padrões de programação são um pouco diferentes. Para saber mais, confira [SettingCollection do Excel](https://docs.microsoft.com/javascript/api/excel/excel.settingcollection).
 
-Internamente, os dados no conjunto de propriedades acessados com os objetos **Configurações**, **CustomProperties** ou **RoamingSettings** são armazenados como um objeto JSON (JavaScript Object Notation) serializado que contém pares de nome/valor. O nome (chave) de cada valor deve ser uma **cadeia**, e o valor armazenado pode ser uma **cadeia**, **um número**, **uma data**, ou **objeto** JavaScript, mas não uma **função**.
+Internamente, os dados no conjunto de propriedades acessado com os objetos **Settings**, **CustomProperties** ou **RoamingSettings** são armazenados como um objeto JSON (JavaScript Object Notation) serializado que contém pares de nome/valor. O nome (chave) de cada valor deve ser uma **cadeia de caracteres**, e o valor armazenado pode ser uma **cadeia de caracteres**, um **número**, uma **data** ou um **objeto** JavaScript, mas não uma **função**.
 
 Este exemplo da estrutura do conjunto de propriedades contém três valores de **cadeia de caracteres** definidos nomeados como `firstName`, `location` e `defaultView`.
 
@@ -49,11 +50,11 @@ Este exemplo da estrutura do conjunto de propriedades contém três valores de *
 }
 ```
 
-Depois que o conjunto de propriedades de configurações é salvo durante a sessão anterior do suplemento, ele pode ser carregado quando o suplemento é inicializado ou a qualquer momento depois disso durante a sessão atual do suplemento. Durante a sessão, as configurações são gerenciadas inteiramente na memória usando os métodos **obter**, **configurar** e **remover** do objeto que corresponde às configurações de tipo que você está criando (**Definições**, **CustomProperties** ou **RoamingSettings**). 
+Depois que o conjunto de propriedades de configurações é salvo durante a sessão anterior do suplemento, ele pode ser carregado quando o suplemento é inicializado ou a qualquer momento depois disso durante a sessão atual do suplemento. Durante a sessão, as configurações são gerenciadas inteiramente na memória usando os métodos **get**, **set** e **remove** do objeto que corresponde às configurações de tipo que você está criando (**Settings**, **CustomProperties** ou **RoamingSettings**). 
 
 
 > [!IMPORTANT]
-> Para persistir as adições, atualizações ou exclusões feitas durante a sessão atual do suplemento para o local de armazenamento, você deve chamar o método **saveAsync** do objeto correspondente usado para trabalhar com esse tipo de configurações. Os métodos **obter**, **definir**, e**remover** operam somente na cópia na memória do conjunto de propriedades de configurações. Se o suplemento for fechado sem chamar **saveAsync**, as alterações feitas nas configurações durante a sessão serão perdidas. 
+> Para persistir as adições, atualizações ou exclusões feitas durante a sessão atual do suplemento para o local de armazenamento, você deve chamar o método **saveAsync** do objeto correspondente usado para trabalhar com esse tipo de configurações. Os métodos **get**, **set** e **remove** operam somente na cópia na memória do conjunto de propriedades de configurações. Se o suplemento for fechado sem chamar **saveAsync**, as alterações feitas nas configurações durante a sessão serão perdidas. 
 
 
 ## <a name="how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins"></a>Como salvar o estado e as configurações do suplemento por documento para suplementos de conteúdo e de painel de tarefas

@@ -2,12 +2,13 @@
 title: Crie um Suplemento do Office com Node.js que use logon único
 description: ''
 ms.date: 12/07/2018
-ms.openlocfilehash: b05ef90000da7fda3a72d2ba873c169a469731a6
-ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
+localization_priority: Priority
+ms.openlocfilehash: 0e47b8a577e337a40542f38509b6da325df299ba
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "27724904"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29387335"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Crie um Suplemento do Office com Node.js que use logon único (prévia)
 

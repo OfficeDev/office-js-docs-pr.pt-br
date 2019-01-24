@@ -2,12 +2,13 @@
 title: Visão geral da plataforma Suplementos do Office | Microsoft Docs
 description: Use tecnologias da Web conhecidas, como HTML, CSS e JavaScript, para estender e interagir com os aplicativos Word, Excel, PowerPoint, OneNote, Project e Outlook.
 ms.date: 01/23/2018
-ms.openlocfilehash: ec5af788d80c229fe4c7525362ce7908dd028090
-ms.sourcegitcommit: 86724e980f720ed05359c9525948cb60b6f10128
+localization_priority: Priority
+ms.openlocfilehash: aa969815cedfe0832151d2e94adc47ac6a097760
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "26237532"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388581"
 ---
 # <a name="office-add-ins-platform-overview"></a>Visão geral da plataforma de Suplementos do Office
 

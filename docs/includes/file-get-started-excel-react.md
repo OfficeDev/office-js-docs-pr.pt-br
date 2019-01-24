@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: f090023acbeae8bab9e25a36b64669c7d033daea
+ms.sourcegitcommit: 319780e4fb77b97d16d5657950e4eb84415eb7eb
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "28725528"
+---
 # <a name="build-an-excel-add-in-using-react"></a>Criar um suplemento do Excel usando o React
 
 Neste artigo, você passará pelo processo de criar um suplemento do Excel usando o React e a API JavaScript do Excel.
@@ -140,6 +148,8 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 5. Abra o arquivo **src/components/App.tsx**, substitua todo o conteúdo pelo código a seguir e salve o arquivo.
 
     ```typescript
+    /* global Office, Excel */
+
     import * as React from 'react';
     import { Header } from './Header';
     import { Content } from './Content';

@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 606acfa8479cb892c20dcbdb34db934b671549dc
+ms.sourcegitcommit: 984c425e2ad58577af8f494079923cab165ad36c
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "28726972"
+---
 # <a name="build-your-first-word-add-in"></a>Crie o seu primeiro suplemento do Word
 
 _Aplica-se a: Word 2016, Word para iPad, Word para Mac_
@@ -63,10 +71,10 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
     
     (function () {
 
-        // The initialize function is run each time the page is loaded.
-        Office.initialize = function (reason) {
+        Office.onReady(function() {
+            // Office is ready
             $(document).ready(function () {
-
+                // The document is ready
                 // Use this to check whether the API is supported in the Word client.
                 if (Office.context.requirements.isSetSupported('WordApi', 1.1)) {
                     // Do something that is only available via the new APIs
@@ -80,7 +88,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
                     $('#supportedVersion').html('This code requires Word 2016 or later.');
                 }
             });
-        };
+        });
 
         function insertEmersonQuoteAtSelection() {
             Word.run(function (context) {
@@ -294,10 +302,10 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
     
     (function () {
 
-        // The initialize function is run each time the page is loaded.
-        Office.initialize = function (reason) {
+        Office.onReady(function() {
+            // Office is ready
             $(document).ready(function () {
-
+                // The document is ready
                 // Use this to check whether the API is supported in the Word client.
                 if (Office.context.requirements.isSetSupported('WordApi', 1.1)) {
                     // Do something that is only available via the new APIs
@@ -311,7 +319,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Word usando
                     $('#supportedVersion').html('This code requires Word 2016 or later.');
                 }
             });
-        };
+        });
 
         function insertEmersonQuoteAtSelection() {
             Word.run(function (context) {

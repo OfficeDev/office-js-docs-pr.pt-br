@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 838db9c0e4a65a8b3ee95deeff5dc04fb0907355
+ms.sourcegitcommit: 984c425e2ad58577af8f494079923cab165ad36c
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "28726979"
+---
 # <a name="build-your-first-project-add-in"></a>Criar o primeiro suplemento do Project
 
 Neste artigo, você passará pelo processo de criar um suplemento do Project usando o jQuery e a API JavaScript para Office.
@@ -74,13 +82,14 @@ Neste artigo, você passará pelo processo de criar um suplemento do Project usa
 
         var taskGuid;
 
-        // The initialize function must be run each time a new page is loaded
-        Office.initialize = function (reason) {
+        Office.onReady(function() {
+            // Office is ready
             $(document).ready(function () {
+                // The document is ready
                 $('#get-task-guid').click(getTaskGUID);
                 $('#get-task').click(getTask);
             });
-        };
+        });
 
         function getTaskGUID() {
             Office.context.document.getSelectedTaskAsync(function (asyncResult) {

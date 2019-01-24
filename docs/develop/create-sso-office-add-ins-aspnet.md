@@ -2,12 +2,13 @@
 title: Criar um Suplemento do Office com ASP.NET que use logon único
 description: ''
 ms.date: 01/23/2018
-ms.openlocfilehash: 295d586e363345c819584c3e04dd59c2c98f90b8
-ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
+localization_priority: Priority
+ms.openlocfilehash: 94976e47d2bce15e224d837a11cab6b08bd80cda
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "27724897"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388301"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>Criar um Suplemento do Office com ASP.NET que use logon único (visualização)
 

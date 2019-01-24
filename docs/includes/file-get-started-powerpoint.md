@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 2305faa6cc1560628cfc58d8bcf5c62b4fb0fb18
+ms.sourcegitcommit: 984c425e2ad58577af8f494079923cab165ad36c
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "28726993"
+---
 # <a name="build-your-first-powerpoint-add-in"></a>Crie o seu primeiro suplemento do PowerPoint
 
 Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint usando o jQuery e a API JavaScript para Office.
@@ -59,14 +67,15 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
 
     (function () {
 
-        // The initialize function must be run each time a new page is loaded
-        Office.initialize = function (reason) {
+        Office.onReady(function() {
+            // Office is ready
             $(document).ready(function () {
+                // The document is ready
                 $('#insert-image').click(insertImage);
                 $('#insert-text').click(insertText);
             });
-        };
-    
+        });
+
         function insertImage() {
             Office.context.document.setSelectedDataAsync(getImageAsBase64String(), {
                 coercionType: Office.CoercionType.Image,
@@ -234,13 +243,14 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
 
     (function () {
 
-        // The initialize function must be run each time a new page is loaded
-        Office.initialize = function (reason) {
+        Office.onReady(function() {
+            // Office is ready
             $(document).ready(function () {
+                // The document is ready
                 $('#insert-image').click(insertImage);
                 $('#insert-text').click(insertText);
             });
-        };
+        });
     
         function insertImage() {
             Office.context.document.setSelectedDataAsync(getImageAsBase64String(), {

@@ -2,12 +2,13 @@
 title: Usar a estrutura de autorização OAuth em um Suplemento do Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 3fac2dd0ca6231684b0b91db80f969787822cf5f
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
+localization_priority: Priority
+ms.openlocfilehash: 9689c92bb5b118f9d45c1805a094b4243b4e6049
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270695"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29389274"
 ---
 # <a name="use-the-oauth-authorization-framework-in-an-office-add-in"></a>Usar a estrutura de autorização OAuth em um Suplemento do Office
 

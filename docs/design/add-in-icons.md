@@ -2,12 +2,13 @@
 title: Diretrizes de ícone para suplementos do Office
 description: ''
 ms.date: 06/27/2018
-ms.openlocfilehash: 853f47d5ce8d9ce7efd5e7e048f4f3151448887e
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
+localization_priority: Priority
+ms.openlocfilehash: d6e98014227250420c34c63afa85e06a351ba4a1
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433940"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388091"
 ---
 # <a name="icons"></a>Ícones
 Ícones são a representação visual de um comportamento ou conceito. Eles são usados frequentemente para adicionar significado a controles e comandos. Os elementos visuais, realistas ou simbólicos, permitem ao usuário navegar pela interface do usuário da mesma maneira que os avisos os ajudam a navegar pelo ambiente. Eles devem ser simples, claros e conter apenas os detalhes necessários para permitir que os clientes analisem rapidamente a ação que ocorrerá ao escolherem um controle.

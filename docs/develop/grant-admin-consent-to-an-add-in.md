@@ -1,14 +1,15 @@
 ---
-title: Conceder consentimento do administrador ao suplemento
+title: Conceder consentimento ao administrador para o suplemento
 description: ''
 ms.date: 04/10/2018
-ms.openlocfilehash: 53e4cda3bbfe74c26068afc76c48e59d6d1f4afd
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 5ded46f966060a666d7846672fcc1517ea9b3992
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437336"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388154"
 ---
-# <a name="grant-administrator-consent-to-the-add-in"></a>Conceder consentimento do administrador ao suplemento
+# <a name="grant-administrator-consent-to-the-add-in"></a>Conceder consentimento ao administrador para o suplemento
 
 [!INCLUDE[](../includes/grant-admin-consent-to-an-add-in-include.md)]

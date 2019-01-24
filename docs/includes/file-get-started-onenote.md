@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 5d5640a2c7c04817ab5ad87fc1b01e6866917830
+ms.sourcegitcommit: 984c425e2ad58577af8f494079923cab165ad36c
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "28726965"
+---
 # <a name="build-your-first-onenote-add-in"></a>Criar seu primeiro suplemento do OneNote
 
 Neste artigo, você passará pelo processo de criar um suplemento do OneNote usando o jQuery e a API JavaScript para Office.
@@ -66,11 +74,13 @@ Neste artigo, você passará pelo processo de criar um suplemento do OneNote usa
     ```js
     import * as OfficeHelpers from "@microsoft/office-js-helpers";
 
-    Office.initialize = (reason) => {
+    Office.onReady(() => {
+        // Office is ready
         $(document).ready(() => {
+            // The document is ready
             $('#addOutline').click(addOutlineToPage);
         });
-    };
+    });
     
     async function addOutlineToPage() {
         try {
