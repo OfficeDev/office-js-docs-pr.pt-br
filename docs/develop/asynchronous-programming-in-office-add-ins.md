@@ -2,12 +2,13 @@
 title: Programação assíncrona em Suplementos do Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: badaf14123c3a70d28394d0286377d7e0920d453
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
+localization_priority: Priority
+ms.openlocfilehash: 811ea251641720f6e4c945a0b7182335b399bb65
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25505927"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29387147"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Programação assíncrona em Suplementos do Office
 
@@ -19,7 +20,7 @@ O diagrama a seguir mostra o fluxo de execução de uma chamada para um método 
 
 *Figura 1. Fluxo de execução da programação assíncrono*
 
-![Fluxo de execução do encadeamento da programação assíncrono](../images/office15-app-async-prog-fig01.png)
+![Asynchronous programming thread execution flow](../images/office15-app-async-prog-fig01.png)
 
 O suporte a esse design assíncrono em clientes Web e avançados faz parte das metas de design "gravar plataforma cruzada já executada" do modelo de desenvolvimento de Suplementos do Office. Por exemplo, você pode um suplemento do painel de tarefas ou conteúdo com uma única base de código que será executada no Excel 2013 e Excel Online.
 
@@ -268,7 +269,7 @@ function addBindingDataChangedEventHandler() {
 
 A sintaxe comum para todos os métodos "Async" segue este padrão:
 
- _AsyncMethod_ `(`_RequiredParameters_`, [`_OptionalParameters_`],`_CallbackFunction_ `);`
+ _AsyncMethod_ `(`_RequiredParameters_`, [`_OptionalParameters_`],`_CallbackFunction_`);`
 
 Todos os métodos assíncronos dão suporte parâmetros opcionais, que são passados como um objeto JSON (JavaScript Object Notation) contendo um ou mais parâmetros opcionais. O objeto JSON que contém os parâmetros opcionais é uma coleção desordenada de pares de valores e chaves com o caractere ":" separando os valores e as chaves. Cada par do objeto é separado por vírgula e o conjunto completo de pares é incluído entre chaves. A chave é o nome do parâmetro e o valor é o valor a ser transmitido para esse parâmetro.
 
@@ -395,7 +396,7 @@ function write(message){
 Em ambos os exemplos de parâmetros opcionais, o parâmetro _callback_ é especificado como o último parâmetro (acompanhando os parâmetros opcionais embutido ou seguindo o objeto do argumento _options_). Como alternativa, você pode especificar o parâmetro _callback_ dentro o objeto JSON embutido ou no objeto `options`. No entanto, você pode transmitir o parâmetro _callback_ em um só local: no objeto _options_ (embutido ou criado externamente) ou como o último parâmetro, mas não ambos.
 
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 - [Noções básicas da API JavaScript para Office](understanding-the-javascript-api-for-office.md) 
 - [API JavaScript para Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office)

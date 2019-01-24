@@ -2,12 +2,13 @@
 title: Testar e depurar suplementos do Office
 description: ''
 ms.date: 11/24/2017
-ms.openlocfilehash: f645482fa92faad2e28484fa4b878bd35c0a27b6
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+localization_priority: Priority
+ms.openlocfilehash: 7ffa281807ca1541f8ebcc5f722c1043db115509
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925259"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388833"
 ---
 # <a name="test-and-debug-office-add-ins"></a>Testar e depurar suplementos do Office
 
