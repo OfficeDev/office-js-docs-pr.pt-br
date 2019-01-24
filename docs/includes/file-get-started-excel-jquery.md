@@ -1,36 +1,44 @@
-# <a name="build-an-excel-add-in-using-jquery"></a><span data-ttu-id="938bc-101">Criar um suplemento do Excel usando o jQuery</span><span class="sxs-lookup"><span data-stu-id="938bc-101">Build an Excel add-in using jQuery</span></span>
+---
+ms.openlocfilehash: cc6c19614ae1cc7e2eb0ff8ef49d0f9f62da634f
+ms.sourcegitcommit: 984c425e2ad58577af8f494079923cab165ad36c
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "28726986"
+---
+# <a name="build-an-excel-add-in-using-jquery"></a><span data-ttu-id="d354a-101">Criar um suplemento do Excel usando o jQuery</span><span class="sxs-lookup"><span data-stu-id="d354a-101">Build an Excel add-in using jQuery</span></span>
 
-<span data-ttu-id="938bc-102">Neste artigo, você passará pelo processo de criar um suplemento do Excel usando o jQuery e a API JavaScript do Excel.</span><span class="sxs-lookup"><span data-stu-id="938bc-102">In this article, you'll walk through the process of building an Excel add-in by using jQuery and the Excel JavaScript API.</span></span> 
+<span data-ttu-id="d354a-102">Neste artigo, você passará pelo processo de criar um suplemento do Excel usando o jQuery e a API JavaScript do Excel.</span><span class="sxs-lookup"><span data-stu-id="d354a-102">In this article, you'll walk through the process of building an Excel add-in by using jQuery and the Excel JavaScript API.</span></span> 
 
-## <a name="create-the-add-in"></a><span data-ttu-id="938bc-103">Criar o suplemento</span><span class="sxs-lookup"><span data-stu-id="938bc-103">Create the add-in</span></span> 
+## <a name="create-the-add-in"></a><span data-ttu-id="d354a-103">Criar o suplemento</span><span class="sxs-lookup"><span data-stu-id="d354a-103">Create the add-in</span></span> 
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="938bc-104">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="938bc-104">Visual Studio</span></span>](#tab/visual-studio)
+# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="d354a-104">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="d354a-104">Visual Studio</span></span>](#tab/visual-studio)
 
-### <a name="prerequisites"></a><span data-ttu-id="938bc-105">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="938bc-105">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="d354a-105">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="d354a-105">Prerequisites</span></span>
 
 [!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
-### <a name="create-the-add-in-project"></a><span data-ttu-id="938bc-106">Criar o projeto do suplemento</span><span class="sxs-lookup"><span data-stu-id="938bc-106">Create the add-in project</span></span>
+### <a name="create-the-add-in-project"></a><span data-ttu-id="d354a-106">Criar o projeto do suplemento</span><span class="sxs-lookup"><span data-stu-id="d354a-106">Create the add-in project</span></span>
 
-1. <span data-ttu-id="938bc-107">Na barra de menus do Visual Studio, selecione **Arquivo**  >  **Novo**  >  **Projeto**.</span><span class="sxs-lookup"><span data-stu-id="938bc-107">On the Visual Studio menu bar, choose  **File** > **New** > **Project**.</span></span>
+1. <span data-ttu-id="d354a-107">Na barra de menus do Visual Studio, selecione **Arquivo**  >  **Novo**  >  **Projeto**.</span><span class="sxs-lookup"><span data-stu-id="d354a-107">On the Visual Studio menu bar, choose  **File** > **New** > **Project**.</span></span>
     
-2. <span data-ttu-id="938bc-108">Na lista de tipos de projeto em **Visual C#** ou em **Visual Basic**, expanda a opção **Office/SharePoint**, escolha **Suplementos** e depois **Suplemento da Web do Outlook** como o tipo de projeto.</span><span class="sxs-lookup"><span data-stu-id="938bc-108">In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **Excel Web Add-in** as the project type.</span></span> 
+2. <span data-ttu-id="d354a-108">Na lista de tipos de projeto em **Visual C#** ou em **Visual Basic**, expanda a opção **Office/SharePoint**, escolha **Suplementos** e depois **Suplemento da Web do Outlook** como o tipo de projeto.</span><span class="sxs-lookup"><span data-stu-id="d354a-108">In the list of project types under **Visual C#** or **Visual Basic**, expand  **Office/SharePoint**, choose **Add-ins**, and then choose **Excel Web Add-in** as the project type.</span></span> 
 
-3. <span data-ttu-id="938bc-109">Dê um nome ao projeto e escolha **OK**.</span><span class="sxs-lookup"><span data-stu-id="938bc-109">Name the project, and then choose **OK**.</span></span>
+3. <span data-ttu-id="d354a-109">Dê um nome ao projeto e escolha **OK**.</span><span class="sxs-lookup"><span data-stu-id="d354a-109">Name the project, and then choose **OK**.</span></span>
 
-4. <span data-ttu-id="938bc-110">Na janela **Criar Suplemento do Office**, escolha **Adicionar novas funcionalidades para o Excel**e clique em **Concluir** para criar o projeto.</span><span class="sxs-lookup"><span data-stu-id="938bc-110">In the **Create Office Add-in** dialog window, choose **Add new functionalities to Excel**, and then choose **Finish** to create the project.</span></span>
+4. <span data-ttu-id="d354a-110">Na janela **Criar Suplemento do Office**, escolha **Adicionar novas funcionalidades para o Excel**e clique em **Concluir** para criar o projeto.</span><span class="sxs-lookup"><span data-stu-id="d354a-110">In the **Create Office Add-in** dialog window, choose **Add new functionalities to Excel**, and then choose **Finish** to create the project.</span></span>
 
-5. <span data-ttu-id="938bc-p101">O Visual Studio cria uma solução, e os dois projetos dele são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="938bc-p101">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
+5. <span data-ttu-id="d354a-p101">O Visual Studio cria uma solução, e os dois projetos dele são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="d354a-p101">Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.</span></span>
     
-### <a name="explore-the-visual-studio-solution"></a><span data-ttu-id="938bc-113">Explorar a solução do Visual Studio</span><span class="sxs-lookup"><span data-stu-id="938bc-113">Explore the Visual Studio solution</span></span>
+### <a name="explore-the-visual-studio-solution"></a><span data-ttu-id="d354a-113">Explorar a solução do Visual Studio</span><span class="sxs-lookup"><span data-stu-id="d354a-113">Explore the Visual Studio solution</span></span>
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
-### <a name="update-the-code"></a><span data-ttu-id="938bc-114">Atualizar o código</span><span class="sxs-lookup"><span data-stu-id="938bc-114">Update the code</span></span>
+### <a name="update-the-code"></a><span data-ttu-id="d354a-114">Atualizar o código</span><span class="sxs-lookup"><span data-stu-id="d354a-114">Update the code</span></span>
 
-1. <span data-ttu-id="938bc-115">**Home.html** especifica o HTML que será renderizado no painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="938bc-115">**Home.html** specifies the HTML that will be rendered in the add-in's task pane.</span></span> <span data-ttu-id="938bc-116">Em **Home.html**, substitua o elemento `<body>` pela marcação a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="938bc-116">In **Home.html**, replace the `<body>` element with the following markup and save the file.</span></span>
+1. <span data-ttu-id="d354a-115">**Home.html** especifica o HTML que será renderizado no painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="d354a-115">**Home.html** specifies the HTML that will be rendered in the add-in's task pane.</span></span> <span data-ttu-id="d354a-116">Em **Home.html**, substitua o elemento `<body>` pela marcação a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="d354a-116">In **Home.html**, replace the `<body>` element with the following markup and save the file.</span></span>
  
     ```html
     <body class="ms-font-m ms-welcome">
@@ -50,17 +58,20 @@
     </body>
     ```
 
-2. <span data-ttu-id="938bc-117">Abra o arquivo **Home.js** na raiz do projeto do aplicativo Web.</span><span class="sxs-lookup"><span data-stu-id="938bc-117">Open the file **Home.js** in the root of the web application project.</span></span> <span data-ttu-id="938bc-118">Este arquivo especifica o script do suplemento.</span><span class="sxs-lookup"><span data-stu-id="938bc-118">This file specifies the script for the add-in.</span></span> <span data-ttu-id="938bc-119">Substitua todo o conteúdo pelo código a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="938bc-119">Replace the entire contents with the following code and save the file.</span></span> 
+2. <span data-ttu-id="d354a-117">Abra o arquivo **Home.js** na raiz do projeto do aplicativo Web.</span><span class="sxs-lookup"><span data-stu-id="d354a-117">Open the file **Home.js** in the root of the web application project.</span></span> <span data-ttu-id="d354a-118">Este arquivo especifica o script do suplemento.</span><span class="sxs-lookup"><span data-stu-id="d354a-118">This file specifies the script for the add-in.</span></span> <span data-ttu-id="d354a-119">Substitua todo o conteúdo pelo código a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="d354a-119">Replace the entire contents with the following code and save the file.</span></span> 
 
     ```js
     'use strict';
 
     (function () {
-        Office.initialize = function (reason) {
+
+        Office.onReady(function() {
+            // Office is ready
             $(document).ready(function () {
+                // The document is ready
                 $('#set-color').click(setColor);
             });
-        };
+        });
 
         function setColor() {
             Excel.run(function (context) {
@@ -78,7 +89,7 @@
     })();
     ```
 
-3. <span data-ttu-id="938bc-120">Abra o arquivo **Home.css** na raiz do projeto do aplicativo Web.</span><span class="sxs-lookup"><span data-stu-id="938bc-120">Open the file **Home.css** in the root of the web application project.</span></span> <span data-ttu-id="938bc-121">Este arquivo especifica os estilos personalizados para o suplemento.</span><span class="sxs-lookup"><span data-stu-id="938bc-121">This file specifies the custom styles for the add-in.</span></span> <span data-ttu-id="938bc-122">Substitua todo o conteúdo pelo código a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="938bc-122">Replace the entire contents with the following code and save the file.</span></span> 
+3. <span data-ttu-id="d354a-120">Abra o arquivo **Home.css** na raiz do projeto do aplicativo Web.</span><span class="sxs-lookup"><span data-stu-id="d354a-120">Open the file **Home.css** in the root of the web application project.</span></span> <span data-ttu-id="d354a-121">Este arquivo especifica os estilos personalizados para o suplemento.</span><span class="sxs-lookup"><span data-stu-id="d354a-121">This file specifies the custom styles for the add-in.</span></span> <span data-ttu-id="d354a-122">Substitua todo o conteúdo pelo código a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="d354a-122">Replace the entire contents with the following code and save the file.</span></span> 
 
     ```css
     #content-header {
@@ -107,17 +118,17 @@
     }
     ```
 
-### <a name="update-the-manifest"></a><span data-ttu-id="938bc-123">Atualizar o manifesto</span><span class="sxs-lookup"><span data-stu-id="938bc-123">Update the manifest</span></span>
+### <a name="update-the-manifest"></a><span data-ttu-id="d354a-123">Atualizar o manifesto</span><span class="sxs-lookup"><span data-stu-id="d354a-123">Update the manifest</span></span>
 
-1. <span data-ttu-id="938bc-124">Abra o arquivo de manifesto XML do projeto do suplemento.</span><span class="sxs-lookup"><span data-stu-id="938bc-124">Open the XML manifest file in the add-in project.</span></span> <span data-ttu-id="938bc-125">Este arquivo define as configurações e os recursos do suplemento.</span><span class="sxs-lookup"><span data-stu-id="938bc-125">This file defines the add-in's settings and capabilities.</span></span>
+1. <span data-ttu-id="d354a-124">Abra o arquivo de manifesto XML do projeto do suplemento.</span><span class="sxs-lookup"><span data-stu-id="d354a-124">Open the XML manifest file in the add-in project.</span></span> <span data-ttu-id="d354a-125">Este arquivo define as configurações e os recursos do suplemento.</span><span class="sxs-lookup"><span data-stu-id="d354a-125">This file defines the add-in's settings and capabilities.</span></span>
 
-2. <span data-ttu-id="938bc-126">O elemento `ProviderName` tem um valor de espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="938bc-126">The `ProviderName` element has a placeholder value.</span></span> <span data-ttu-id="938bc-127">Substitua-o com seu nome.</span><span class="sxs-lookup"><span data-stu-id="938bc-127">Replace it with your name.</span></span>
+2. <span data-ttu-id="d354a-126">O elemento `ProviderName` tem um valor de espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="d354a-126">The `ProviderName` element has a placeholder value.</span></span> <span data-ttu-id="d354a-127">Substitua-o com seu nome.</span><span class="sxs-lookup"><span data-stu-id="d354a-127">Replace it with your name.</span></span>
 
-3. <span data-ttu-id="938bc-128">O atributo `DefaultValue` do elemento `DisplayName` tem um espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="938bc-128">The `DefaultValue` attribute of the `DisplayName` element has a placeholder.</span></span> <span data-ttu-id="938bc-129">Substitua-o pelo **suplementos do My Office**.</span><span class="sxs-lookup"><span data-stu-id="938bc-129">Replace it with **My Office Add-in**.</span></span>
+3. <span data-ttu-id="d354a-128">O atributo `DefaultValue` do elemento `DisplayName` tem um espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="d354a-128">The `DefaultValue` attribute of the `DisplayName` element has a placeholder.</span></span> <span data-ttu-id="d354a-129">Substitua-o pelo **suplementos do My Office**.</span><span class="sxs-lookup"><span data-stu-id="d354a-129">Replace it with **My Office Add-in**.</span></span>
 
-4. <span data-ttu-id="938bc-130">O atributo `DefaultValue` do elemento `Description` tem um espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="938bc-130">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="938bc-131">Substitua-o com **um suplemento do painel de tarefas do Excel**.</span><span class="sxs-lookup"><span data-stu-id="938bc-131">Replace it with **A task pane add-in for Excel**.</span></span>
+4. <span data-ttu-id="d354a-130">O atributo `DefaultValue` do elemento `Description` tem um espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="d354a-130">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="d354a-131">Substitua-o com **um suplemento do painel de tarefas do Excel**.</span><span class="sxs-lookup"><span data-stu-id="d354a-131">Replace it with **A task pane add-in for Excel**.</span></span>
 
-5. <span data-ttu-id="938bc-132">Salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="938bc-132">Save the file.</span></span>
+5. <span data-ttu-id="d354a-132">Salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="d354a-132">Save the file.</span></span>
 
     ```xml
     ...
@@ -129,59 +140,59 @@
     ...
     ```
 
-### <a name="try-it-out"></a><span data-ttu-id="938bc-133">Experimente</span><span class="sxs-lookup"><span data-stu-id="938bc-133">Try it out</span></span>
+### <a name="try-it-out"></a><span data-ttu-id="d354a-133">Experimente</span><span class="sxs-lookup"><span data-stu-id="d354a-133">Try it out</span></span>
 
-1. <span data-ttu-id="938bc-p109">Usando o Visual Studio, teste o suplemento do Excel recém-criado, pressionando **F5** ou escolhendo o botão **Iniciar** para abrir o Excel com o botão de suplemento **Mostrar Painel de Tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.</span><span class="sxs-lookup"><span data-stu-id="938bc-p109">Using Visual Studio, test the newly created Excel add-in by pressing F5 or choosing the **Start** button to launch Excel with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
+1. <span data-ttu-id="d354a-p109">Usando o Visual Studio, teste o suplemento do Excel recém-criado, pressionando **F5** ou escolhendo o botão **Iniciar** para abrir o Excel com o botão de suplemento **Mostrar Painel de Tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.</span><span class="sxs-lookup"><span data-stu-id="d354a-p109">Using Visual Studio, test the newly created Excel add-in by pressing **F5** or choosing the **Start** button to launch Excel with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.</span></span>
 
-2. <span data-ttu-id="938bc-136">No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="938bc-136">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+2. <span data-ttu-id="d354a-136">No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="d354a-136">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![Botão do suplemento do Excel](../images/excel-quickstart-addin-2a.png)
 
-3. <span data-ttu-id="938bc-138">Selecione um intervalo de células na planilha.</span><span class="sxs-lookup"><span data-stu-id="938bc-138">Select any range of cells in the worksheet.</span></span>
+3. <span data-ttu-id="d354a-138">Selecione um intervalo de células na planilha.</span><span class="sxs-lookup"><span data-stu-id="d354a-138">Select any range of cells in the worksheet.</span></span>
 
-4. <span data-ttu-id="938bc-139">No painel de tarefas, escolha o botão **Definir cor** para definir a cor do intervalo selecionado como verde.</span><span class="sxs-lookup"><span data-stu-id="938bc-139">In the task pane, choose the **Set color** button to set the color of the selected range to green.</span></span>
+4. <span data-ttu-id="d354a-139">No painel de tarefas, escolha o botão **Definir cor** para definir a cor do intervalo selecionado como verde.</span><span class="sxs-lookup"><span data-stu-id="d354a-139">In the task pane, choose the **Set color** button to set the color of the selected range to green.</span></span>
 
     ![Suplemento do Excel](../images/excel-quickstart-addin-2c.png)
 
-# <a name="any-editortabvisual-studio-code"></a>[<span data-ttu-id="938bc-141">Qualquer editor</span><span class="sxs-lookup"><span data-stu-id="938bc-141">Any editor</span></span>](#tab/visual-studio-code)
+# <a name="any-editortabvisual-studio-code"></a>[<span data-ttu-id="d354a-141">Qualquer editor</span><span class="sxs-lookup"><span data-stu-id="d354a-141">Any editor</span></span>](#tab/visual-studio-code)
 
-### <a name="prerequisites"></a><span data-ttu-id="938bc-142">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="938bc-142">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="d354a-142">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="d354a-142">Prerequisites</span></span>
 
-- [<span data-ttu-id="938bc-143">Node.js</span><span class="sxs-lookup"><span data-stu-id="938bc-143">Node.js</span></span>](https://nodejs.org)
+- [<span data-ttu-id="d354a-143">Node.js</span><span class="sxs-lookup"><span data-stu-id="d354a-143">Node.js</span></span>](https://nodejs.org)
 
-- <span data-ttu-id="938bc-144">Instale a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador do Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.</span><span class="sxs-lookup"><span data-stu-id="938bc-144">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
+- <span data-ttu-id="d354a-144">Instale a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador do Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.</span><span class="sxs-lookup"><span data-stu-id="d354a-144">Install the latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) globally.</span></span>
     ```bash
     npm install -g yo generator-office
     ```
 
-### <a name="create-the-web-app"></a><span data-ttu-id="938bc-145">Criar o aplicativo Web</span><span class="sxs-lookup"><span data-stu-id="938bc-145">Create the web app</span></span>
+### <a name="create-the-web-app"></a><span data-ttu-id="d354a-145">Criar o aplicativo Web</span><span class="sxs-lookup"><span data-stu-id="d354a-145">Create the web app</span></span>
 
-1. <span data-ttu-id="938bc-146">Use o gerador Yeoman para criar um projeto de suplemento do Excel.</span><span class="sxs-lookup"><span data-stu-id="938bc-146">Use the Yeoman generator to create an Excel add-in project.</span></span> <span data-ttu-id="938bc-147">Execute o comando a seguir e responda aos prompts da seguinte forma:</span><span class="sxs-lookup"><span data-stu-id="938bc-147">Run the following command and then answer the prompts as follows:</span></span>
+1. <span data-ttu-id="d354a-146">Use o gerador Yeoman para criar um projeto de suplemento do Excel.</span><span class="sxs-lookup"><span data-stu-id="d354a-146">Use the Yeoman generator to create an Excel add-in project.</span></span> <span data-ttu-id="d354a-147">Execute o comando a seguir e responda aos prompts da seguinte forma:</span><span class="sxs-lookup"><span data-stu-id="d354a-147">Run the following command and then answer the prompts as follows:</span></span>
 
     ```bash
     yo office
     ```
 
-    - <span data-ttu-id="938bc-148">**Escolha o tipo de projeto:** `Office Add-in project using Jquery framework`</span><span class="sxs-lookup"><span data-stu-id="938bc-148">**Choose a project type:** `Office Add-in project using Jquery framework`</span></span>
-    - <span data-ttu-id="938bc-149">**Escolha o tipo de script:** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="938bc-149">**Choose a script type:** `Javascript`</span></span>
-    - <span data-ttu-id="938bc-150">**Qual será o nome do suplemento?:** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="938bc-150">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
-    - <span data-ttu-id="938bc-151">**Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?:** `Excel`</span><span class="sxs-lookup"><span data-stu-id="938bc-151">**Which Office client application would you like to support?:** `Excel`</span></span>
+    - <span data-ttu-id="d354a-148">**Escolha o tipo de projeto:** `Office Add-in project using Jquery framework`</span><span class="sxs-lookup"><span data-stu-id="d354a-148">**Choose a project type:** `Office Add-in project using Jquery framework`</span></span>
+    - <span data-ttu-id="d354a-149">**Escolha o tipo de script:** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="d354a-149">**Choose a script type:** `Javascript`</span></span>
+    - <span data-ttu-id="d354a-150">**Qual será o nome do suplemento?:** `My Office Add-in`</span><span class="sxs-lookup"><span data-stu-id="d354a-150">**What do you want to name your add-in?:** `My Office Add-in`</span></span>
+    - <span data-ttu-id="d354a-151">**Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?:** `Excel`</span><span class="sxs-lookup"><span data-stu-id="d354a-151">**Which Office client application would you like to support?:** `Excel`</span></span>
 
     ![Gerador do Yeoman](../images/yo-office-jquery.png)
     
-    <span data-ttu-id="938bc-153">Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.</span><span class="sxs-lookup"><span data-stu-id="938bc-153">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
+    <span data-ttu-id="d354a-153">Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.</span><span class="sxs-lookup"><span data-stu-id="d354a-153">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
 
-2. <span data-ttu-id="938bc-154">Navegue até a pasta raiz do projeto.</span><span class="sxs-lookup"><span data-stu-id="938bc-154">Navigate to the root folder of the project.</span></span>
+2. <span data-ttu-id="d354a-154">Navegue até a pasta raiz do projeto.</span><span class="sxs-lookup"><span data-stu-id="d354a-154">Navigate to the root folder of the project.</span></span>
 
     ```bash
     cd "My Office Add-in"
     ```
 
-### <a name="update-the-code"></a><span data-ttu-id="938bc-155">Atualizar o código</span><span class="sxs-lookup"><span data-stu-id="938bc-155">Update the code</span></span> 
+### <a name="update-the-code"></a><span data-ttu-id="d354a-155">Atualizar o código</span><span class="sxs-lookup"><span data-stu-id="d354a-155">Update the code</span></span> 
 
-1. <span data-ttu-id="938bc-156">No editor de código, abra **index.html** na raiz do projeto.</span><span class="sxs-lookup"><span data-stu-id="938bc-156">In your code editor, open **index.html** in the root of the project.</span></span> <span data-ttu-id="938bc-157">Esse arquivo especifica o HTML que será processado no painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="938bc-157">This file specifies the HTML that will be rendered in the add-in's task pane.</span></span> 
+1. <span data-ttu-id="d354a-156">No editor de código, abra **index.html** na raiz do projeto.</span><span class="sxs-lookup"><span data-stu-id="d354a-156">In your code editor, open **index.html** in the root of the project.</span></span> <span data-ttu-id="d354a-157">Esse arquivo especifica o HTML que será processado no painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="d354a-157">This file specifies the HTML that will be rendered in the add-in's task pane.</span></span> 
  
-2. <span data-ttu-id="938bc-158">Dentro de **index.html**, substitua a marca `body` pela marcação a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="938bc-158">Within **index.html**, replace the `body` tag with the following markup and save the file.</span></span>
+2. <span data-ttu-id="d354a-158">Dentro de **index.html**, substitua a marca `body` pela marcação a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="d354a-158">Within **index.html**, replace the `body` tag with the following markup and save the file.</span></span>
  
     ```html
     <body class="ms-font-m ms-welcome">
@@ -203,17 +214,19 @@
     </body>    
     ```
 
-3. <span data-ttu-id="938bc-159">Abra o arquivo **src\index.js** para especificar o script do suplemento.</span><span class="sxs-lookup"><span data-stu-id="938bc-159">Open the file **src\index.js** to specify the script for the add-in.</span></span> <span data-ttu-id="938bc-160">Substitua todo o conteúdo pelo código a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="938bc-160">Replace the entire contents with the following code and save the file.</span></span>
+3. <span data-ttu-id="d354a-159">Abra o arquivo **src\index.js** para especificar o script do suplemento.</span><span class="sxs-lookup"><span data-stu-id="d354a-159">Open the file **src\index.js** to specify the script for the add-in.</span></span> <span data-ttu-id="d354a-160">Substitua todo o conteúdo pelo código a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="d354a-160">Replace the entire contents with the following code and save the file.</span></span>
 
     ```js
     'use strict';
     
     (function () {
-        Office.initialize = function (reason) {
+        Office.onReady(function() {
+            // Office is ready
             $(document).ready(function () {
+                // The document is ready
                 $('#set-color').click(setColor);
             });
-        };
+        });
 
         function setColor() {
             Excel.run(function (context) {
@@ -231,7 +244,7 @@
     })();
     ```
 
-4. <span data-ttu-id="938bc-161">Abra o arquivo **app.css** para especificar os estilos personalizados do suplemento.</span><span class="sxs-lookup"><span data-stu-id="938bc-161">Open the file **app.css** to specify the custom styles for the add-in.</span></span> <span data-ttu-id="938bc-162">Substitua todo o conteúdo pelo código a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="938bc-162">Replace the entire contents with the following code and save the file.</span></span>
+4. <span data-ttu-id="d354a-161">Abra o arquivo **app.css** para especificar os estilos personalizados do suplemento.</span><span class="sxs-lookup"><span data-stu-id="d354a-161">Open the file **app.css** to specify the custom styles for the add-in.</span></span> <span data-ttu-id="d354a-162">Substitua todo o conteúdo pelo código a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="d354a-162">Replace the entire contents with the following code and save the file.</span></span>
 
     ```css
     #content-header {
@@ -260,15 +273,15 @@
     }
     ```
 
-### <a name="update-the-manifest"></a><span data-ttu-id="938bc-163">Atualizar o manifesto</span><span class="sxs-lookup"><span data-stu-id="938bc-163">Update the manifest</span></span>
+### <a name="update-the-manifest"></a><span data-ttu-id="d354a-163">Atualizar o manifesto</span><span class="sxs-lookup"><span data-stu-id="d354a-163">Update the manifest</span></span>
 
-1. <span data-ttu-id="938bc-164">Abra o arquivo **manifest.xml** para definir as configurações e os recursos do suplemento.</span><span class="sxs-lookup"><span data-stu-id="938bc-164">Open the file **manifest.xml** to define the add-in's settings and capabilities.</span></span> 
+1. <span data-ttu-id="d354a-164">Abra o arquivo **manifest.xml** para definir as configurações e os recursos do suplemento.</span><span class="sxs-lookup"><span data-stu-id="d354a-164">Open the file **manifest.xml** to define the add-in's settings and capabilities.</span></span> 
 
-2. <span data-ttu-id="938bc-165">O elemento `ProviderName` tem um valor de espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="938bc-165">The `ProviderName` element has a placeholder value.</span></span> <span data-ttu-id="938bc-166">Substitua-o com seu nome.</span><span class="sxs-lookup"><span data-stu-id="938bc-166">Replace it with your name.</span></span>
+2. <span data-ttu-id="d354a-165">O elemento `ProviderName` tem um valor de espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="d354a-165">The `ProviderName` element has a placeholder value.</span></span> <span data-ttu-id="d354a-166">Substitua-o com seu nome.</span><span class="sxs-lookup"><span data-stu-id="d354a-166">Replace it with your name.</span></span>
 
-3. <span data-ttu-id="938bc-167">O atributo `DefaultValue` do elemento `Description` tem um espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="938bc-167">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="938bc-168">Substitua-o com **um suplemento do painel de tarefas do Excel**.</span><span class="sxs-lookup"><span data-stu-id="938bc-168">Replace it with **A task pane add-in for Excel**.</span></span>
+3. <span data-ttu-id="d354a-167">O atributo `DefaultValue` do elemento `Description` tem um espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="d354a-167">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="d354a-168">Substitua-o com **um suplemento do painel de tarefas do Excel**.</span><span class="sxs-lookup"><span data-stu-id="d354a-168">Replace it with **A task pane add-in for Excel**.</span></span>
 
-4. <span data-ttu-id="938bc-169">Salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="938bc-169">Save the file.</span></span>
+4. <span data-ttu-id="d354a-169">Salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="d354a-169">Save the file.</span></span>
 
     ```xml
     ...
@@ -280,41 +293,41 @@
     ...
     ```
 
-### <a name="start-the-dev-server"></a><span data-ttu-id="938bc-170">Iniciar o servidor de desenvolvimento</span><span class="sxs-lookup"><span data-stu-id="938bc-170">Start the dev server</span></span>
+### <a name="start-the-dev-server"></a><span data-ttu-id="d354a-170">Iniciar o servidor de desenvolvimento</span><span class="sxs-lookup"><span data-stu-id="d354a-170">Start the dev server</span></span>
 
 [!include[Start server section](../includes/quickstart-yo-start-server.md)] 
 
-### <a name="try-it-out"></a><span data-ttu-id="938bc-171">Experimente</span><span class="sxs-lookup"><span data-stu-id="938bc-171">Try it out</span></span>
+### <a name="try-it-out"></a><span data-ttu-id="d354a-171">Experimente</span><span class="sxs-lookup"><span data-stu-id="d354a-171">Try it out</span></span>
 
-1. <span data-ttu-id="938bc-172">Siga as instruções para a plataforma que você usará para executar o suplemento e realizar sideload do suplemento no Excel.</span><span class="sxs-lookup"><span data-stu-id="938bc-172">Follow the instructions for the platform you'll use to run your add-in to sideload the add-in within Excel.</span></span>
+1. <span data-ttu-id="d354a-172">Siga as instruções para a plataforma que você usará para executar o suplemento e realizar sideload do suplemento no Excel.</span><span class="sxs-lookup"><span data-stu-id="d354a-172">Follow the instructions for the platform you'll use to run your add-in to sideload the add-in within Excel.</span></span>
 
-    - <span data-ttu-id="938bc-173">Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span><span class="sxs-lookup"><span data-stu-id="938bc-173">Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span></span>
-    - <span data-ttu-id="938bc-174">Excel Online: [Realizar sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)</span><span class="sxs-lookup"><span data-stu-id="938bc-174">Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)</span></span>
-    - <span data-ttu-id="938bc-175">iPad e Mac: [Realizar sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span><span class="sxs-lookup"><span data-stu-id="938bc-175">iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span></span>
+    - <span data-ttu-id="d354a-173">Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span><span class="sxs-lookup"><span data-stu-id="d354a-173">Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span></span>
+    - <span data-ttu-id="d354a-174">Excel Online: [Realizar sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)</span><span class="sxs-lookup"><span data-stu-id="d354a-174">Excel Online: [Sideload Office Add-ins in Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)</span></span>
+    - <span data-ttu-id="d354a-175">iPad e Mac: [Realizar sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span><span class="sxs-lookup"><span data-stu-id="d354a-175">iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span></span>
 
-2. <span data-ttu-id="938bc-176">No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="938bc-176">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+2. <span data-ttu-id="d354a-176">No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="d354a-176">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![Botão do suplemento do Excel](../images/excel-quickstart-addin-2b.png)
 
-3. <span data-ttu-id="938bc-178">Selecione um intervalo de células na planilha.</span><span class="sxs-lookup"><span data-stu-id="938bc-178">Select any range of cells in the worksheet.</span></span>
+3. <span data-ttu-id="d354a-178">Selecione um intervalo de células na planilha.</span><span class="sxs-lookup"><span data-stu-id="d354a-178">Select any range of cells in the worksheet.</span></span>
 
-4. <span data-ttu-id="938bc-179">No painel de tarefas, escolha o botão **Definir cor** para definir a cor do intervalo selecionado como verde.</span><span class="sxs-lookup"><span data-stu-id="938bc-179">In the task pane, choose the **Set color** button to set the color of the selected range to green.</span></span>
+4. <span data-ttu-id="d354a-179">No painel de tarefas, escolha o botão **Definir cor** para definir a cor do intervalo selecionado como verde.</span><span class="sxs-lookup"><span data-stu-id="d354a-179">In the task pane, choose the **Set color** button to set the color of the selected range to green.</span></span>
 
     ![Suplemento do Excel](../images/excel-quickstart-addin-2c.png)
 
 ---
 
-## <a name="next-steps"></a><span data-ttu-id="938bc-181">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="938bc-181">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="d354a-181">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="d354a-181">Next steps</span></span>
 
-<span data-ttu-id="938bc-p116">Você criou com êxito um suplemento do Excel usando jQuery!, parabéns! Agora, saiba mais sobre os recursos dos suplementos do Excel e crie um mais complexo, acompanhando o tutorial de suplemento do Excel.</span><span class="sxs-lookup"><span data-stu-id="938bc-p116">Congratulations, you've successfully created an Excel add-in using jQuery! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.</span></span>
+<span data-ttu-id="d354a-p116">Você criou com êxito um suplemento do Excel usando jQuery!, parabéns! Agora, saiba mais sobre os recursos dos suplementos do Excel e crie um mais complexo, acompanhando o tutorial de suplemento do Excel.</span><span class="sxs-lookup"><span data-stu-id="d354a-p116">Congratulations, you've successfully created an Excel add-in using jQuery! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="938bc-184">Tutorial de suplemento do Excel</span><span class="sxs-lookup"><span data-stu-id="938bc-184">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial.md)
+> [<span data-ttu-id="d354a-184">Tutorial de suplemento do Excel</span><span class="sxs-lookup"><span data-stu-id="d354a-184">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial.md)
 
-## <a name="see-also"></a><span data-ttu-id="938bc-185">Confira também</span><span class="sxs-lookup"><span data-stu-id="938bc-185">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d354a-185">Confira também</span><span class="sxs-lookup"><span data-stu-id="d354a-185">See also</span></span>
 
-* [<span data-ttu-id="938bc-186">Tutorial de suplemento do Excel</span><span class="sxs-lookup"><span data-stu-id="938bc-186">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial-create-table.md)
-* [<span data-ttu-id="938bc-187">Conceitos fundamentais de programação com a API JavaScript do Excel</span><span class="sxs-lookup"><span data-stu-id="938bc-187">Fundamental programming concepts with the Excel JavaScript API</span></span>](../excel/excel-add-ins-core-concepts.md)
-* <span data-ttu-id="938bc-188">
-  [Exemplos de código do suplemento do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)</span><span class="sxs-lookup"><span data-stu-id="938bc-188">[Excel add-in code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)</span></span>
-* [<span data-ttu-id="938bc-189">Referência da API JavaScript do Excel</span><span class="sxs-lookup"><span data-stu-id="938bc-189">Excel JavaScript API reference</span></span>](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [<span data-ttu-id="d354a-186">Tutorial de suplemento do Excel</span><span class="sxs-lookup"><span data-stu-id="d354a-186">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial-create-table.md)
+* [<span data-ttu-id="d354a-187">Conceitos fundamentais de programação com a API JavaScript do Excel</span><span class="sxs-lookup"><span data-stu-id="d354a-187">Fundamental programming concepts with the Excel JavaScript API</span></span>](../excel/excel-add-ins-core-concepts.md)
+* <span data-ttu-id="d354a-188">
+  [Exemplos de código do suplemento do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)</span><span class="sxs-lookup"><span data-stu-id="d354a-188">[Excel add-in code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)</span></span>
+* [<span data-ttu-id="d354a-189">Referência da API JavaScript do Excel</span><span class="sxs-lookup"><span data-stu-id="d354a-189">Excel JavaScript API reference</span></span>](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
