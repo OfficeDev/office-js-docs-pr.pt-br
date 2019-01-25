@@ -2,17 +2,18 @@
 title: Depurar suplementos no Office Online
 description: Como usar o Office Online para testar e depurar seus suplementos.
 ms.date: 03/14/2018
-ms.openlocfilehash: ee458352c78a3bb7828e66df9fcde12958f3df93
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+localization_priority: Priority
+ms.openlocfilehash: 6252a713444f7ec8bf955c3283a650f72cbcbed1
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945761"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29386551"
 ---
 # <a name="debug-add-ins-in-office-online"></a>Depurar suplementos no Office Online
 
 
-Você pode compilar e depurar suplementos em um computador que não esteja executando o Windows ou o cliente de desktop do Office&mdash;por exemplo, se você estiver desenvolvendo em um Mac. Este artigo descreve como usar o Office Online para testar e depurar seus suplementos. 
+Você pode criar e depurar suplementos em um computador que não esteja executando o Windows ou os clientes de área de trabalho do Office 2013 ou do Office 2016, por exemplo, se você estiver desenvolvendo no Mac. Este artigo descreve como usar o Office Online para testar e depurar seus suplementos. Este artigo descreve como usar o Office Online para testar e depurar seus suplementos. 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -21,7 +22,7 @@ Para começar:
 - Obtenha uma conta de desenvolvedor do Office 365, se já não tiver uma, ou o acesso a um site do SharePoint.
     
   > [!NOTE]
-  > Para se inscrever para uma assinatura gratuita de desenvolvedor do Office 365, ingresse no [Programa de Desenvolvedor do Office 365](https://developer.microsoft.com/office/dev-program). Confira o passo a passo de como participar do Programa para Desenvolvedores do Office 365, entre e configure sua assinatura na [documentação do Programa para Desenvolvedores do Office 365](https://docs.microsoft.com/office/developer-program/office-365-developer-program).
+  > Para se inscrever para uma assinatura gratuita de desenvolvedor do Office 365, ingresse no [Programa de Desenvolvedor do Office 365](https://developer.microsoft.com/office/dev-program). Confira as instruções passo a passo sobre como participar do Programa para Desenvolvedores do Office 365, entrar e configurar sua assinatura na [documentação do Programa para Desenvolvedores do Office 365](https://docs.microsoft.com/office/developer-program/office-365-developer-program).
      
 - Configure um catálogo de suplementos no Office 365 (SharePoint Online). Um catálogo de suplementos é um conjunto de sites dedicado no SharePoint Online que hospeda bibliotecas de documentos para suplementos do Office. Se você tiver seu próprio site do SharePoint, pode configurar uma biblioteca de documentos do catálogo de suplementos. Para saber mais, confira [Publicar suplementos de conteúdo e de painel de tarefas em um catálogo de suplementos no SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
     
@@ -59,7 +60,7 @@ A seguir apresentamos alguns problemas que você pode encontrar ao depurar:
       
 - Se você definir pontos de interrupção no seu código, o Office Online pode lançar uma mensagem de erro indicando que não é possível salvar.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 - [Práticas recomendadas para o desenvolvimento de suplementos do Office](../concepts/add-in-development-best-practices.md)
 - [Políticas de validação do AppSource](https://docs.microsoft.com/office/dev/store/validation-policies)  

@@ -2,12 +2,13 @@
 title: Crie o design dos seus suplementos do Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: a864dc0fc6d30ecfcd7a71d1b2677d408519af0e
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+localization_priority: Priority
+ms.openlocfilehash: 70faca768f5af70baf389c16fe8259427a85e8d9
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944195"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388714"
 ---
 # <a name="design-your-office-add-ins"></a>Crie o design dos seus suplementos do Office
 
@@ -27,11 +28,11 @@ Siga os princípios de design do Office para criar experiências positivas com o
 
 - **Favoreça mais o conteúdo do que a aparência**. Permita que a página, o slide ou a planilha dos clientes permaneça como o foco da experiência. Um suplemento é uma interface auxiliar. Nenhum elemento supérfluo de interface do usuário deve interferir no conteúdo e nas funcionalidades do suplemento. Crie uma identidade visual para sua experiência de maneira sensata. Sabemos que é importante fornecer aos usuários uma experiência reconhecível e exclusiva, mas evite distrações. Tente manter o foco no conteúdo e na conclusão de tarefas, não na marca.
 
-- **Torne isso agradável e mantenha os usuários no controle.** As pessoas gostam de usar produtos funcionais e visualmente atraentes. Crie sua experiência com cuidado. Acerte bem os pormenores, considerando cada interação e os detalhes visuais. Permita que os usuários controlem suas experiências. As etapas necessárias para concluir uma tarefa devem ser claras e relevantes. Decisões importantes devem ser fáceis de entender. As ações devem ser facilmente reversíveis. Um suplemento não é um destino, é um aprimoramento da funcionalidade do Office.
+- **Torne-o interessante e mantenha os usuários no controle.** As pessoas gostam de usar produtos funcionais e visualmente atraentes. Crie sua experiência com atenção. Leve em conta cada interação e detalhe visual para acertar em todos os elementos. Permita que os usuários controlem a experiência. As etapas necessárias para concluir uma tarefa devem ser claras e relevantes. Decisões importantes devem ser fáceis de entender. As ações devem ser revertidas com facilidade. Um suplemento não é um destino, mas sim uma melhoria à funcionalidade do Office.
 
 - **Design para todas as plataformas e métodos de entrada**. Os suplementos são projetados para funcionar em todas as plataformas com suporte do Office, portanto, a Experiência de Usuário do suplemento deve ser otimizada para funcionar em plataformas e fatores forma. Dê suporte a mouse/teclado e dispositivos de entrada por toque e verifique se a interface do usuário HTML personalizada responde na adaptação aos diversos fatores forma. Para saber mais, confira o tópico [Otimizar para toque](../concepts/add-in-development-best-practices.md#optimize-for-touch). 
 
-## <a name="see-also"></a>Veja também
-- [Office UI Fabric](https://developer.microsoft.com/en-us/fabric) 
+## <a name="see-also"></a>Confira também
+- [Office UI Fabric](https://developer.microsoft.com/pt-BR/fabric) 
 - [Práticas recomendadas de desenvolvimento de suplementos](../concepts/add-in-development-best-practices.md)
 
