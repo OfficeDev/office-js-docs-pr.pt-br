@@ -2,12 +2,13 @@
 title: Realizar sideload de suplementos do Office no Office Online para teste
 description: Testar o suplemento do Office no Office Online através de sideloading
 ms.date: 10/19/2018
-ms.openlocfilehash: 94138cd0a22f053a9471bf905b8d0838dead15cf
-ms.sourcegitcommit: 3a808cf39cbc77056968d53a5957462371ad83a1
+localization_priority: Priority
+ms.openlocfilehash: f656b83a7d9841cc362276ccc7c5729927cbc392
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "25911225"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29389400"
 ---
 # <a name="sideload-office-add-ins-in-office-online-for-testing"></a>Realizar sideload de suplementos do Office no Office Online para teste
 
@@ -64,7 +65,11 @@ O vídeo a seguir oferece orientações para o processo de sideload do seu suple
 6. Verifique se o suplemento está instalado. Por exemplo, se for um comando do suplemento, ele deve aparecer na faixa de opções ou no menu de contexto. Se for um suplemento de painel de tarefas, o painel deve ser exibido.
 
 > [!NOTE]
->Para testar o suplemento do Office com o Microsoft Edge, digite “**about:flags**” na barra de pesquisa do Edge para exibir as opções de Configurações do Desenvolvedor.  Verifique a opção “**Permitir loopback do localhost**” e reinicie o Edge.
+>Para testar o suplemento do Office com o Microsoft Edge, são necessárias duas etapas de configuração: 
+>
+> - Em um prompt de comando do Windows, execute a seguinte linha: `CheckNetIsolation LoopbackExempt -a -n="Microsoft.MicrosoftEdge_8wekyb3d8bbwe"`
+>
+> - Digite “**sobre:sinalizadores**” na barra de pesquisa do Edge para exibir as opções de Configurações do Desenvolvedor.  Verifique a opção “**Permitir loopback do localhost**” e reinicie o Edge.
 
 >    ![A opção “Permitir loopback do localhost” do Edge com a caixa marcada.](../images/allow-localhost-loopback.png)
 

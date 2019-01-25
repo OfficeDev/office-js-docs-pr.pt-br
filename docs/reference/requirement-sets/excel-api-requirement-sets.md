@@ -2,12 +2,13 @@
 title: Conjuntos de requisitos de API JavaScript do Excel
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 4456ac3cb2411f9a22cb131b7a53884a760a2f22
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
+localization_priority: Priority
+ms.openlocfilehash: fdcbee0374851f0f88130ae8afe28eec3a0fe77c
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27458143"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388721"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Excel
 
@@ -148,7 +149,7 @@ Mais [eventos](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins
 |[chartSeries](/javascript/api/excel/excel.chartseries)|_Propriedade_ > overlap|Especifica como barras e colunas são posicionadas. Pode ser um valor entre -100 e 100. Se aplicam apenas às barras 2D e gráficos de colunas 2D. ReadWrite.|1,8|
 |[chartSeries](/javascript/api/excel/excel.chartseries)|_Propriedade_ > secondPlotSize|Retorna ou define o tamanho da seção secundária de uma pizza do gráfico de pizza ou de uma barra de gráfico de pizza, como uma porcentagem do tamanho da pizza primária. Pode ser um valor de 5 de 200. ReadWrite.|1,8|
 |[chartSeries](/javascript/api/excel/excel.chartseries)|_Propriedade_ > varyByCategories|Verdadeiro se o Microsoft Excel atribuir uma cor ou padrão diferente a cada marcador de dados. O gráfico deve conter apenas uma série. ReadWrite.|1,8|
-|[chartSeries](/javascript/api/excel/excel.chartseries)|_Relação_ > axisGroup|Retorna ou define o grupo para a série especificada. ReadWrite|1,8|
+|[chartSeries](/javascript/api/excel/excel.chartseries)|_Relação_ > axisGroup|Retorna ou define o grupo para a série especificada.|1,8|
 |[chartSeries](/javascript/api/excel/excel.chartseries)|_Relação_ > dataLabels|Representa uma coleção de todos os dataLabels da série. Somente leitura.|1,8|
 |[chartSeries](/javascript/api/excel/excel.chartseries)|_Relação_ > splitType|Retorna ou define a maneira como as duas seções de uma pizza do gráfico de pizza ou de uma barra do gráfico de pizza são divididas. ReadWrite.|1,8|
 |[chartTrendline](/javascript/api/excel/excel.charttrendline)|_Propriedade_ > backwardPeriod|Representa o número de períodos que a linha de tendência se estende para trás.|1,8|
@@ -1006,7 +1007,7 @@ A seguir estão as novas adições às APIs JavaScript do Excel no conjunto de r
 
 ## <a name="excel-javascript-api-11"></a>API JavaScript do Excel 1.1
 
-A API JavaScript do Excel 1.1 é a primeira versão da API. Para saber mais sobre a API, confira a [API JavaScript do Excel](/javascript/api/excel) nos tópicos de referência.
+A API JavaScript do Excel 1.1 é a primeira versão da API. Para saber mais sobre a API, confira [a API JavaScript do Excel](/javascript/api/excel) nos tópicos de referência.
 
 ## <a name="see-also"></a>Confira também
 
