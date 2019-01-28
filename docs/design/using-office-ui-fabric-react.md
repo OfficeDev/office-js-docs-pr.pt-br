@@ -2,12 +2,13 @@
 title: Usar o Office UI Fabric React em Suplementos do Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 4baeea20457892bcc7b94b381f5c0a577274408a
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+localization_priority: Priority
+ms.openlocfilehash: 6013275a9a7a4d5d01f37bbbd268a9258cc82f17
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944272"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29389281"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>Usar o Office UI Fabric React em Suplementos do Office
 
@@ -20,7 +21,7 @@ Para começar a usar componentes do Fabric React no suplemento, execute as etapa
 
 ## <a name="step-1---create-your-project-with-the-yeoman-generator-for-office"></a>Etapa 1: criar o projeto com o gerador Yeoman para o Office
 
-Para criar um suplemento que usa o Fabric React, recomendamos que você use o gerador Yeoman para Office. O gerador Yeoman para Office fornece o scaffolding de projeto e o gerenciamento de criação necessários para desenvolver um suplemento do Office.
+Para criar um suplemento que usa o Fabric React, recomendamos que você use o gerador Yeoman para o Office. O gerador Yeoman para o Office fornece o scaffolding de projeto e o gerenciamento de criação necessários para desenvolver um suplemento do Office.
 
 Para criar o projeto, execute as seguintes etapas usando o **Windows PowerShell** (não o prompt de comando):
 
@@ -115,5 +116,5 @@ Salve suas alterações. Todas as instâncias abertas do navegador, inclusive o 
 - [Office UI Fabric React](https://developer.microsoft.com/fabric)
 - [Introdução ao exemplo de código do Fabric React](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)
 - [Padrões de design da experiência de usuário (usa o Fabric 2.6.1)](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
-- [Exemplo de suplemento do Office com Fabric UI (usa o Fabric 1.0)](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample)
-- [Gerador Yeoman para Office](https://github.com/OfficeDev/generator-office)
+- [Amostra de Fabric UI do suplemento do Office (usa o Fabric 1.0)](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample)
+- [Gerador Yeoman para o Office](https://github.com/OfficeDev/generator-office)

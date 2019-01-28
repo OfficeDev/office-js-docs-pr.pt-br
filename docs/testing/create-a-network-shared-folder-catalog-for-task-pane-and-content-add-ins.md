@@ -1,29 +1,30 @@
 ---
-title: Fazer sideload de suplementos do Office para teste
+title: Realizar sideload de suplementos do Office para teste
 description: ''
 ms.date: 10/17/2018
-ms.openlocfilehash: 6ee8e4e9a2413b34cb8991b09d61e16888a0e6a6
-ms.sourcegitcommit: a6d6348075c1abed76d2146ddfc099b0151fe403
+localization_priority: Priority
+ms.openlocfilehash: 7d7aa136e7268183c5a064f16315d433ee53a38b
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "25640019"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29388840"
 ---
-# <a name="sideload-office-add-ins-for-testing"></a>Fazer sideload de suplementos do Office para teste
+# <a name="sideload-office-add-ins-for-testing"></a>Realizar sideload de suplementos do Office para teste
 
-Você pode instalar um suplemento do Office para teste em um cliente do Office no Windows publicando o manifesto em um compartilhamento de arquivos na rede (instruções abaixo).
+Você pode instalar um suplemento do Office para testá-lo em um cliente do Office em execução no Windows usando um catálogo de pasta compartilhada para publicar o manifesto em um compartilhamento de arquivos de rede.
 
 > [!NOTE]
-> Se seu projeto de suplemento foi criado com a [ferramenta **yo office**](https://github.com/OfficeDev/generator-office), há uma maneira alternativa de fazer sideload que pode servir para você. Para obter mais detalhes, consulte [Fazer sideload de suplementos do Office usando o comando de sideload](sideload-office-addin-using-sideload-command.md).
+> Se o seu projeto de suplemento tiver sido criado com a ferramenta [ **yo office**](https://github.com/OfficeDev/generator-office), há uma maneira alternativa de realizar o sideloading que pode funcionar para você. Para mais detalhes, veja [Realizar Sideload de Suplementos do Office](sideload-office-addin-using-sideload-command.md).
 
-Este artigo se aplica somente para testar suplementos do Word, PowerPoint ou Excel no Windows. Se você deseja testar em outra plataforma ou deseja testar um suplemento do Outlook, consulte um dos seguintes tópicos para fazer sideload de seu suplemento:
+Este artigo se aplica somente para testes em suplementos Word, Excel ou PowerPoint no Windows. Se você deseja testar em outra plataforma ou um suplemento do Outlook, veja os tópicos seguintes para realizar o sideload do suplemento:
 
-- [Fazer sideload de suplementos do Office para teste no Office Online](sideload-office-add-ins-for-testing.md)
-- [Sideload dos suplementos do Office para teste em um iPad ou Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
-- [Fazer sideload de suplementos do Outlook para teste](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)
+- [Realizar sideload de suplementos do Office para teste no Office Online](sideload-office-add-ins-for-testing.md)
+- [Sideload suplementos do Office para teste em um iPad ou Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
+- [Realizar sideload de suplementos do Outlook para teste](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing)
 
 
-O vídeo a seguir oferece orientações para o processo de sideload do seu suplemento na área de trabalho do Office ou no Office Online usando um catálogo de pasta compartilhada.  
+O vídeo a seguir oferece orientações para a realização do processo de sideload no suplemento do Office para área de trabalho ou Office Online.  
 
 
 > [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
@@ -31,51 +32,51 @@ O vídeo a seguir oferece orientações para o processo de sideload do seu suple
 
 ## <a name="share-a-folder"></a>Compartilhar uma pasta
 
-1. No Explorador de Arquivos no computador do Windows em que você deseja hospedar seu suplemento, acesse a pasta pai ou letra da unidade da pasta que você deseja usar como seu catálogo de pasta compartilhada.
+1. No computador do Windows, onde você deseja hospedar seu suplemento, acesse a pasta pai ou letra da unidade da pasta que você deseja usar como seu catálogo de pasta compartilhada.
 
-2. Abra o menu de contexto para a pasta que você deseja usar como seu catálogo de pasta compartilhada (clique com o botão direito do mouse na pasta) e escolha **Propriedades**.
+2. Abra o menu de contexto na pasta que você deseja usar como catálogo de pasta compartilhada (clique com o botão direito) e escolha **Propriedades**.
 
-3. Dentro da janela de diálogo **Propriedades** , abra a guia **Compartilhamento** e escolha o botão **Compartilhar** .
+3. Dentro da janela de diálogo **Propriedades** abra a guia **Compartilhamento**e escolha o botão **Compartilhar**.
 
-    ![caixa de diálogo Propriedades da pasta com a guia Compartilhamento e o botão Compartilhar realçados](../images/sideload-windows-properties-dialog.png)
+    ![caixa de diálogo de Propriedades de pastas com o guia de compartilhamento e o botão Compartilhamento realçado](../images/sideload-windows-properties-dialog.png)
 
-4. Dentro da janela de diálogo **Acesso à rede**, adicione a si mesmo e quaisquer outros usuários e/ou grupos com quem você deseja compartilhar seu suplemento. Você precisará, no mínimo, de permissão de **Leitura/Gravação** para a pasta. Depois de concluir a seleção de pessoas com as quais fazer o compartilhamento, escolha o botão **Compartilhar**.
+4. Dentro a janela de diálogo **Acesso à rede** adicione você mesmo e quaisquer outros usuários e/ou grupos com quem você deseja compartilhar o suplemento. Você precisará de pelo menos da permissão **Leitura/Gravação** para a pasta. Quando terminar de escolher as pessoas para compartilhar, escolha o botão **Compartilhar**.
 
-5. Quando você vir a confirmação de que **Sua pasta está compartilhada**, anote o caminho completo de rede que é exibido imediatamente após o nome da pasta. (Você precisará digitar esse valor como a **Url do Catálogo** quando você [especificar a pasta compartilhada como um catálogo confiável](#specify-the-shared-folder-as-a-trusted-catalog), conforme descrito na próxima seção deste artigo.) Escolha o botão **Concluído** para fechar a janela de diálogo de **Acesso à rede**.
+5. Quando você vir a confirmação **Sua pasta foi compartilhada**, anote o caminho de rede completo que é exibido imediatamente após o nome da pasta. (Você precisará inserir esse valor como o **Url Catálogo** quando você [especificar a pasta compartilhada como um catálogo confiável](#specify-the-shared-folder-as-a-trusted-catalog), conforme descrito na próxima seção deste artigo.) Escolha o botão **Concluído** para fechar a janela de diálogo **Acesso à rede**.
 
-   ![Caixa de diálogo de acesso à rede com o caminho de compartilhamento realçado](../images/sideload-windows-network-access-dialog.png)
+   ![Caixa de diálogo de acesso de rede com o caminho do compartilhamento realçado](../images/sideload-windows-network-access-dialog.png)
 
-6. Escolha o botão **Fechar** para fechar a janela de diálogo **Propriedades** .
+6. Escolha o botão **Fechar** para fechar a caixa de diálogo **Propriedades**.
 
-## <a name="specify-the-shared-folder-as-a-trusted-catalog"></a>Especificar a pasta compartilhada como um catálogo confiável
+## <a name="specify-the-shared-folder-as-a-trusted-catalog"></a>Especifique a pasta compartilhada como um catálogo confiável
       
 1. Abra um novo documento no Excel, no Word ou no PowerPoint.
     
-2. Escolha a guia **Arquivo** e escolha **Opções**.
+2. Escolha a guia **Arquivo** e, então, **Opções**.
     
 3. Escolha **Central de Confiabilidade**, e escolha o botão **Configurações da Central de Confiabilidade**.
     
 4. Escolha **Catálogos de Suplemento Confiáveis**.
     
-5. Na caixa **Url do Catálogo** , insira o caminho completo de rede para a pasta que você [compartilhou](#share-a-folder) anteriormente. Se você não conseguiu anotar o caminho de rede completo quando você compartilhou a pasta, você pode obtê-lo da janela de diálogo **Propriedades** da pasta, conforme mostrado na seguinte captura de tela. 
+5. Na caixa**Url catálogo**, digite o caminho completo da rede para a pasta que você [compartilhou](#share-a-folder) anteriormente. Se você não conseguiu anotar todo o caminho de rede da pasta ao compartilhar a pasta, você pode obtê-lo na janela de diálogo **Propriedades**, conforme mostrado na captura de tela a seguir. 
 
-    ![diálogo Propriedades da pasta com a guia Compartilhamento e o caminho de rede realçados](../images/sideload-windows-properties-dialog-2.png)
+    ![caixa de diálogo de Propriedades de pastas com o guia de compartilhamento e o caminho de rede realçado](../images/sideload-windows-properties-dialog-2.png)
     
-6. Depois de inserir o caminho de rede completo da pasta na caixa **Url do Catálogo**, escolha o botão **Adicionar catálogo**.
+6. Depois de inserir o caminho de de rede completo da pasta na caixa **Url catálogo**, escolha o botão **Adicionar Catálogo**.
 
-7. Selecione a caixa de seleção **Mostrar no Menu** referente ao item recém-adicionado e escolha o botão **OK** para fechar a janela de diálogo **Central de Confiabilidade**. 
+7. Selecione a caixa de seleção **Mostrar no Menu** no novo item adicionado e, em seguida, escolha o botão **Ok** para fechar a janela de diálogo **Central de Confiabilidade**. 
 
-    ![Diálogo Central de Confiabilidade com o catálogo selecionado](../images/sideload-windows-trust-center-dialog.png)
+    ![Caixa de diálogo Central de confiabilidade com catálogo selecionado](../images/sideload-windows-trust-center-dialog.png)
 
 8. Escolha o botão **OK** para fechar a janela de diálogo **Opções do Word**.
 
-9. Feche e reabra o aplicativo do Office para que as alterações tenham efeito.
+9. Feche e abra novamente o aplicativo do Office para que as alterações tenham efeito.
     
 
-## <a name="sideload-your-add-in"></a>Fazer o sideload do seu suplemento
+## <a name="sideload-your-add-in"></a>Realizar o sideload do seu suplemento
 
 
-1. Coloque o arquivo XML de manifesto de qualquer suplemento que você está testando no catálogo de pasta compartilhada. Observe que você implanta o próprio aplicativo Web em um servidor Web. Certifique-se de especificar a URL no elemento **SourceLocation** do arquivo de manifesto.
+1. Coloque o arquivo de manifesto XML de qualquer suplemento que você esteja testando no catálogo de pasta compartilhada. Observe que você implanta o próprio aplicativo Web em um servidor Web. Não deixe de especificar a URL no elemento **SourceLocation** do arquivo de manifesto.
 
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)]

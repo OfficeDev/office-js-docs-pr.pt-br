@@ -1,13 +1,14 @@
 ---
-title: Hospedar um Suplemento do Office no Microsoft Azure
-description: Aprenda a implantar o aplicativo web de um suplemento no Azure e a realizar sideload do suplemento para teste em um aplicativo cliente do Office.
+title: Hospedar um suplemento do Office no Microsoft Azure | Microsoft Docs
+description: Saiba como implantar o aplicativo Web de um suplemento no Azure e realizar sideload do suplemento para testar em um aplicativo cliente do Office.
 ms.date: 01/25/2018
-ms.openlocfilehash: 32560fdd0655fbba937140152f16cc91c2185411
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+localization_priority: Priority
+ms.openlocfilehash: ce1cea8078c1842f4ce8cc57b8702c30393d8be8
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25004998"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29386831"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>Hospedar um Suplemento do Office no Microsoft Azure
 
@@ -22,7 +23,7 @@ Este artigo descreve como implantar o aplicativo Web de um suplemento no Azure e
     > [!NOTE]
     > Se você tiver instalado o Visual Studio 2017 anteriormente, [use o Instalador do Visual Studio](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) para garantir que a carga de trabalho de **desenvolvimento do Azure** esteja instalada. 
 
-2. Instale o Office. 
+2. Instalar o Office. 
     
     > [!NOTE]
     > Se você ainda não tem o Office, [registre-se para fazer uma avaliação gratuita de um mês](https://products.office.com/en-US/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735).
@@ -30,9 +31,9 @@ Este artigo descreve como implantar o aplicativo Web de um suplemento no Azure e
 3.  Obtenha uma assinatura do Azure.
     
     > [!NOTE]
-    > Se ainda não tem uma assinatura do Azure, você pode [obter uma como parte da sua assinatura do Visual Studio](https://azure.microsoft.com/en-us/pricing/member-offers/visual-studio-subscriptions/) ou [registrar-se para uma avaliação gratuita](https://azure.microsoft.com/pricing/free-trial). 
+    > Se você ainda não tem uma assinatura do Azure, pode [obter uma como parte da sua assinatura do Visual Studio](https://azure.microsoft.com/pt-BR/pricing/member-offers/visual-studio-subscriptions/) ou [registrar-se para uma avaliação gratuita](https://azure.microsoft.com/pricing/free-trial). 
 
-## <a name="step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file"></a>Etapa 1: Criar uma pasta compartilhada para hospedar seu arquivo de manifesto XML do suplemento
+## <a name="step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file"></a>Etapa 1: criar uma pasta compartilhada para hospedar o arquivo de manifesto XML do suplemento
 
 1. Abra o Explorador de Arquivos em seu computador de desenvolvimento.
     
@@ -47,14 +48,14 @@ Este artigo descreve como implantar o aplicativo Web de um suplemento no Azure e
 > [!NOTE]
 > Nesta explicação passo a passo, você está usando um compartilhamento de arquivos local como um catálogo confiável onde armazenará o arquivo de manifesto XML do suplemento. Em um cenário real, em vez disso, é possível optar por [implantar o arquivo de manifesto XML a um catálogo do SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) ou [publicar o suplemento no AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store).
 
-## <a name="step-2-add-the-file-share-to-the-trusted-add-ins-catalog"></a>Etapa 2:adicionar o compartilhamento de arquivos ao catálogo de suplementos confiáveis
+## <a name="step-2-add-the-file-share-to-the-trusted-add-ins-catalog"></a>Etapa 2:Adicionar o compartilhamento de arquivos ao catálogo de Suplementos Confiáveis
 
 1.  Inicie o Word e crie um documento.
 
     > [!NOTE]
-    > Embora este exemplo use o Word, é possível usar qualquer aplicativo do Office que ofereça suporte a Suplementos do Office, como Excel, Outlook, PowerPoint ou Project.
+    > Embora este exemplo use o Word, é possível usar qualquer aplicativo do Office que dê suporte a Suplementos do Office, como Excel, Outlook, PowerPoint ou Project.
     
-2.  Escolha **Arquivo**  >  **Opções**.
+2.  Escolha **Arquivo** > **Opções**.
     
 3.  Na caixa de diálogo **Opções do Word**, escolha **Central de Confiabilidade**, depois **Configurações da Central de Confiabilidade**. 
     
@@ -67,7 +68,7 @@ Este artigo descreve como implantar o aplicativo Web de um suplemento no Azure e
 
 6. Feche o Word.
 
-## <a name="step-3-create-a-web-app-in-azure"></a>Etapa 3: criar um aplicativo Web no Azure
+## <a name="step-3-create-a-web-app-in-azure"></a>Etapa 3: Criar um aplicativo Web no Azure
 
 Crie um aplicativo Web vazio no Azure usando [Visual Studio 2017](../publish/host-an-office-add-in-on-microsoft-azure.md#using-visual-studio-2017) ou o [portal do Azure](../publish/host-an-office-add-in-on-microsoft-azure.md#using-the-azure-portal).
 
@@ -100,7 +101,7 @@ Para criar o aplicativo Web usando o Visual Studio 2017, realize as etapas a seg
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)] Os sites do Azure fornecem automaticamente um ponto de extremidade HTTPS.
     
-### <a name="using-the-azure-portal"></a>Como usar o portal do Azure
+### <a name="using-the-azure-portal"></a>Usar o portal do Azure
 
 Para criar o aplicativo Web usando o portal do Azure, realize as etapas a seguir.
 
@@ -164,17 +165,17 @@ O Visual Studio cria um suplemento básico do Word que você pode publicar como 
 
     O Visual Studio publica o projeto da Web de seu Suplemento do Office no seu aplicativo Web do Azure. Quando o Visual Studio terminar de publicar o projeto da Web, o navegador abrirá e mostrará uma página da Web com o texto "Seu aplicativo de Serviço de Aplicativo foi criado." Esta é a página padrão atual do aplicativo Web.
 
-7. Para ver a página da Web do seu suplemento, altere o URL para que ele use HTTPS e especifique o caminho da página HTML do seu suplemento (por exemplo: https://YourDomain.azurewebsites.net/Home.html). Isso confirma que o aplicativo web do seu suplemento está hospedado no Azure. Copie a URL raiz (por exemplo: https://YourDomain.azurewebsites.net); você precisará dela ao editar o arquivo de manifesto do suplemento mais adiante neste artigo.
+7. Para ver a página da Web do seu suplemento, altere a URL para que ela use HTTPS e especifique o caminho da página HTML do seu suplemento (por exemplo: https://YourDomain.azurewebsites.net/Home.html). Isso confirma que o aplicativo Web do suplemento já está hospedado no Azure. Copie a URL raiz (por exemplo:https://YourDomain.azurewebsites.net); você precisará dela ao editar o arquivo de manifesto do suplemento, mais tarde neste artigo.
     
 ## <a name="step-6-edit-and-deploy-the-add-in-xml-manifest-file"></a>Etapa 6: Editar e implantar o arquivo de manifesto XML do suplemento
 
 1. No Visual Studio, com o suplemento do Office de exemplo aberto no **Gerenciador de Soluções**, expanda a solução para que ambos os projetos sejam exibidos.
     
-2. Expanda o projeto do Suplemento do Office (por exemplo, WordWebAddIn), clique com o botão direito do mouse na pasta do manifesto e escolha **Abrir**. O arquivo de manifesto XML do suplemento é aberto.
+2. Expanda o projeto do Suplemento do Office (por exemplo, WordWebAddIn), clique com o botão direito do mouse na pasta do manifesto e escolha **Abrir**. O arquivo do manifesto XML do suplemento é aberto.
     
-3. No arquivo de manifesto XML, localize e substitua todas as instâncias de "~ remoteAppUrl" pela URL raiz do aplicativo web do suplemento no Azure. Esse é o URL que você copiou anteriormente depois de publicar o aplicativo Web do suplemento no Azure (por exemplo: https://YourDomain.azurewebsites.net). 
+3. No arquivo do manifesto XML, localize e substitua todas as instâncias de "~remoteAppUrl" pela URL raiz do aplicativo web do suplemento no Azure. Esta é a URL que você copiou anteriormente depois que publicou o aplicativo web do suplemento no Azure (por exemplo: https://YourDomain.azurewebsites.net) 
     
-4. Escolha **Arquivo** e **Salvar tudo**. Feche o arquivo de manifesto XML do suplemento.
+4. Escolha **Arquivo** e, em seguida, **Salvar Tudo**. Feche o arquivo do manifesto XML do suplemento.
     
 5. No **Gerenciador de Soluções**, clique com o botão direito do mouse na pasta do manifesto e escolha **Abrir Pasta no Gerenciador de Arquivos**.
     
@@ -182,7 +183,7 @@ O Visual Studio cria um suplemento básico do Word que você pode publicar como 
     
 7. Navegue até o compartilhamento de arquivos de rede que você criou na [Etapa 1: criar uma pasta compartilhada](../publish/host-an-office-add-in-on-microsoft-azure.md#step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file) e cole o arquivo de manifesto na pasta.
 
-## <a name="step-7-insert-and-run-the-add-in-in-the-office-client-application"></a>Etapa 7: inserir e executar o suplemento no aplicativo cliente do Office
+## <a name="step-7-insert-and-run-the-add-in-in-the-office-client-application"></a>Etapa 7: Inserir e executar o suplemento no aplicativo cliente do Office
 
 1. Inicie o Word e crie um documento.
     
@@ -196,7 +197,7 @@ O Visual Studio cria um suplemento básico do Word que você pode publicar como 
     
 6. Para verificar se o suplemento funciona, selecione algum texto no documento e escolha o botão **Realçar!** no painel de tarefas. 
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 - [Publicar seu Suplemento do Office](../publish/publish.md)
 - [Empacotar seu suplemento usando o Visual Studio para preparar a publicação](../publish/package-your-add-in-using-visual-studio.md)

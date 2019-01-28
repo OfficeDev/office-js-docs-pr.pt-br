@@ -2,12 +2,13 @@
 title: Requisitos para a execução de Suplementos do Office
 description: ''
 ms.date: 02/09/2018
-ms.openlocfilehash: 0602bd05927eebabec64f771025be5e064a2a355
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+localization_priority: Priority
+ms.openlocfilehash: 3d3e9c16a9227f46d00f85ccfc74f6a5d8c5568c
+ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925420"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "29386642"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Requisitos para a execução de Suplementos do Office
 
@@ -16,7 +17,7 @@ Este artigo descreve os requisitos de software e de dispositivo para execução 
 > [!NOTE]
 > Caso pretenda [publicar](../publish/publish.md) o suplemento na experiência do Office depois de criá-lo, verifique se você está em conformidade com as [Políticas de validação do AppSource](https://docs.microsoft.com/office/dev/store/validation-policies). Por exemplo, para passar na validação, seu suplemento deve funcionar em todas as plataformas com suporte aos métodos que você definir (para mais informações, confira a [seção 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) e a [Página de hospedagem e disponibilidade de suplementos do Office](../overview/office-add-in-availability.md)). 
 
-Confira uma visão avançada da compatibilidade atual dos suplementos do Office no momento na página [Disponibilidade de hosts e plataformas de suplementos do Office](../overview/office-add-in-availability.md).
+Para uma visão avançada da compatibilidade atual dos suplementos do Office, veja [Disponibilidade de hosts e plataformas de suplementos do Office](../overview/office-add-in-availability.md).
 
 ## <a name="server-requirements"></a>Requisitos de servidor
 
@@ -46,13 +47,13 @@ O software a seguir é necessário para o desenvolvimento de um Suplemento do Of
     - Excel 2013, Outlook 2013, PowerPoint 2013, Project Professional 2013, Project 2013 SP1, Word 2013 ou uma versão posterior do cliente do Office, se você estiver testando ou executando um Suplemento do Office especificamente para um desses clientes de área de trabalho do Office. É possível instalar clientes de área de trabalho do Office localmente ou por meio do recurso Clique para Executar no computador cliente.
     
   Se você tem uma assinatura válida do Office 365 e não tem acesso ao Office 2013, você pode baixá-lo por meio de um dos links CDN:       
-    - [Office 2013 para Empresas (.exe)](https://c2rsetup.officeapps.live.com/c2r/download.aspx?productReleaseID=O365BusinessRetail&platform=X86&language=en-us&version=O15GA&source=O15OLSO365) 
-    - [Office 2013 para Casa (.exe)](https://c2rsetup.officeapps.live.com/c2r/download.aspx?productReleaseID=O365HomePremRetail&platform=X86&language=en-us&version=O15GA&source=O15OLSO365) 
+    - [Office 2013 for Business (.exe)](https://c2rsetup.officeapps.live.com/c2r/download.aspx?productReleaseID=O365BusinessRetail&platform=X86&language=en-us&version=O15GA&source=O15OLSO365) 
+    - [Office 2013 for Home (.exe)](https://c2rsetup.officeapps.live.com/c2r/download.aspx?productReleaseID=O365HomePremRetail&platform=X86&language=en-us&version=O15GA&source=O15OLSO365) 
 
 - Internet Explorer 11 ou posterior, que deve estar instalado, mas não precisa ser o navegador padrão. Para oferecer suporte aos Suplementos do Office, o cliente do Office que atua como host usa os componentes do navegador que fazem parte do Internet Explorer 11 ou posterior.
 
   > [!NOTE]
-  > A Configuração de Segurança Aprimorada (ESC) do Internet Explorer deve estar desativada para que os suplementos do Office Web funcionem. Se você estiver usando um computador com Windows Server como cliente para desenvolver suplementos, saiba que a ESC é ativada por padrão nele.
+  > A Configuração de Segurança Aprimorada da (ESC) do Internet Explorer deve ser desativada para os suplementos Web do Office funcionarem. Se estiver usando um computador Windows Server como cliente, ao desenvolver suplementos observe se a ESC está ativada por padrão no Windows Server.
 
 - Um dos navegadores seguintes como o padrão: Internet Explorer 11 ou posterior, ou a versão mais recente do Microsoft Edge, Chrome, Firefox ou Safari (Mac OS).
 - Um editor de HTML e JavaScript, como o Bloco de Notas, o [Visual Studio e Ferramentas de Desenvolvimento da Microsoft](https://www.visualstudio.com/features/office-tools-vs), ou uma ferramenta de desenvolvimento para Web de terceiros.
@@ -79,13 +80,13 @@ Especificamente para o OWA para Dispositivos e o Outlook Web App em execução e
 
 | Aplicativo host | Dispositivo | Sistema operacional | Conta do Exchange | Navegador móvel |
 |:-----|:-----|:-----|:-----|:-----|
-|OWA para Android|Smartphones Android. Tecnicamente, os dispositivos considerados "pequenos" ou "normais" pelo [SO Android](https://developer.android.com/guide/practices/screens_support.html).|Android 4.4 KitKat ou posterior|Atualização mais recente do Office 365 para empresas ou do Exchange Online|Suplemento nativo para Android, navegador não aplicável|
-|OWA para iPad|iPad 2 ou posterior|iOS 6 ou posterior|Atualização mais recente do Office 365 para empresas ou do Exchange Online|Suplemento nativo para iOS, navegador não aplicável|
-|OWA para iPhone|iPhone 4S ou posterior|iOS 6 ou posterior|Atualização mais recente do Office 365 para empresas ou do Exchange Online|Suplemento nativo para iOS, navegador não aplicável|
+|OWA for Android|Smartphones Android. Tecnicamente, os dispositivos considerados "pequenos" ou "normais" pelo [SO Android](https://developer.android.com/guide/practices/screens_support.html).|Android 4.4 KitKat ou posterior|Atualização mais recente do Office 365 para empresas ou do Exchange Online|Suplemento nativo para Android, navegador não aplicável|
+|OWA for iPad|iPad 2 ou posterior|iOS 6 ou posterior|Atualização mais recente do Office 365 para empresas ou do Exchange Online|Suplemento nativo para iOS, navegador não aplicável|
+|OWA for iPhone|iPhone 4S ou posterior|iOS 6 ou posterior|Atualização mais recente do Office 365 para empresas ou do Exchange Online|Suplemento nativo para iOS, navegador não aplicável|
 |Outlook Web App|iPhone 4 ou posterior, iPad 2 ou posterior, iPod Touch 4 ou posterior|iOS 5 ou posterior|Office 365, Exchange Online ou Exchange Server 2013 local ou posteriores|Safari|
 
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 - [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
 - [Disponibilidade de host e plataforma para suplementos do Office](../overview/office-add-in-availability.md)
