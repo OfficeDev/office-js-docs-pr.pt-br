@@ -1,14 +1,14 @@
 ---
 title: Suplementos do PowerPoint
 description: ''
-ms.date: 10/16/2018
+ms.date: 01/24/2019
 localization_priority: Priority
-ms.openlocfilehash: 022bed349dde061b61a8db0711a94a0a4d77f2e1
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: da60c87993bc67057aeec6a4e754f57ae376ddd4
+ms.sourcegitcommit: b3812245ee1426c299e6484fdd2096a9212ce823
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388630"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "29539860"
 ---
 # <a name="powerpoint-add-ins"></a>Suplementos do PowerPoint
 
@@ -30,7 +30,7 @@ Os exemplos de código no artigo mostram algumas tarefas básicas para desenvolv
 
 ## <a name="detect-the-presentations-active-view-and-handle-the-activeviewchanged-event"></a>Detecte a exibição ativa da apresentação e manipule o evento ActiveViewChanged
 
-Se você estiver criando um suplemento de conteúdo, será necessário obter o modo de exibição ativo da apresentação e manipular o `ActiveViewChanged` evento, como parte do seu `Office.Initialize` manipulador. 
+Se você estiver criando um suplemento de conteúdo, será necessário obter o modo de exibição ativo da apresentação e manipular o `ActiveViewChanged` evento, como parte do seu `Office.Initialize` manipulador.
 
 > [!NOTE]
 > No PowerPoint Online, o evento [Document.ActiveViewChanged](https://docs.microsoft.com/javascript/api/office/office.document) nunca será acionado porque o modo de Apresentação de Slides é tratado como uma nova sessão. Nesse caso, o suplemento deve obter o modo de exibição ativo ao carregar, conforme observado abaixo.
@@ -39,7 +39,7 @@ No seguinte exemplo de código:
 
 - A função `getActiveFileView` chama o método [Document.getActiveViewAsync](https://docs.microsoft.com/javascript/api/office/office.document#getactiveviewasync-options--callback-) para retornar se o modo de exibição atual da apresentação for "edição" (qualquer um dos modos de exibição em que é possível editar slides, como **Normal** ou **Modo de Exibição de Estrutura de Tópicos**) ou "leitura" ( **Apresentação de Slides** ou **Modo de Exibição de Leitura**).
 
-- A função `registerActiveViewChanged` chama o método [addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) para registrar um manipulador para o evento [Document.ActiveViewChanged](https://docs.microsoft.com/javascript/api/office/office.document). 
+- A função `registerActiveViewChanged` chama o método [addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) para registrar um manipulador para o evento [Document.ActiveViewChanged](https://docs.microsoft.com/javascript/api/office/office.document).
 
 
 ```js
@@ -74,7 +74,7 @@ function registerActiveViewChanged() {
         app.showNotification(JSON.stringify(args));
     }
 
-    Office.context.document.addHandlerAsync(Office.EventType.ActiveViewChanged, Globals.activeViewHandler, 
+    Office.context.document.addHandlerAsync(Office.EventType.ActiveViewChanged, Globals.activeViewHandler,
         function (asyncResult) {
             if (asyncResult.status == "failed") {
                 app.showNotification("Action failed with error: " + asyncResult.error.message);
@@ -163,13 +163,37 @@ function getFileUrl() {
 }
 ```
 
+## <a name="create-a-presentation"></a>Criar uma apresentação
 
+O suplemento pode criar uma nova apresentação separada da instância do PowerPoint, na qual o suplemento está sendo executado atualmente. O namespace do PowerPoint tem o método `createPresentation` para essa finalidade. Quando esse método é chamado, a nova apresentação é aberta imediatamente e exibida em uma nova instância do PowerPoint. O suplemento permanece aberto e em execução com a apresentação anterior.
+
+```js
+PowerPoint.createPresentation();
+```
+
+O método `createPresentation` também cria uma cópia de uma apresentação existente. O método aceita uma representação de cadeia de caracteres codificada em Base64 de um arquivo .pptx como parâmetro opcional. A apresentação resultante será uma cópia desse arquivo, supondo que o argumento da cadeia de caracteres seja um arquivo .pptx válido. A classe [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) pode ser usada para converter um arquivo em uma cadeia de caracteres codificada com Base64, como demonstrado no exemplo a seguir.
+
+```js
+var myFile = document.getElementById("file");
+var reader = new FileReader();
+
+reader.onload = function (event) {
+    // strip off the metadata before the base64-encoded string
+    var startIndex = event.target.result.indexOf("base64,");
+    var copyBase64 = event.target.result.substr(startIndex + 7);
+
+    PowerPoint.createPresentation(copyBase64);
+};
+
+// read in the file as a data URL so we can parse the base64-encoded string
+reader.readAsDataURL(myFile.files[0]);
+```
 
 ## <a name="see-also"></a>Confira também
+
 - 
   [Exemplos de Código do PowerPoint](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,PowerPoint)
 - [Como salvar o estado e as configurações do suplemento por documento para suplementos de conteúdo e de painel de tarefas](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 - [Ler e gravar dados na seleção ativa em um documento ou planilha](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
 - [Obter todo o documento por meio de um suplemento para PowerPoint ou Word](../powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md)
 - [Usar temas de documentos em seus suplementos do PowerPoint](use-document-themes-in-your-powerpoint-add-ins.md)
-    
