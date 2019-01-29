@@ -2,20 +2,19 @@
 title: Autorização para o Microsoft Graph no Suplemento do Office
 description: ''
 ms.date: 04/10/2018
-localization_priority: Priority
-ms.openlocfilehash: ce1e54168d32a362777e08d573fe99c0d6a9cd33
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 7631be6900020e4be78a8590b3b1c237088eea02
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386257"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270667"
 ---
 # <a name="authorize-to-microsoft-graph-in-your-office-add-in-preview"></a>Autorização para o Microsoft Graph no seu suplemento do Office (visualização)
 
 Os usuários entram no Office (online, em dispositivos móveis e plataformas desktop) usando tanto a conta pessoal deles da Microsoft, como a conta corporativa ou de estudante (Office 365). A melhor maneira de um Suplemento do Office receber acesso autorizado ao [Microsoft Graph](https://developer.microsoft.com/graph/docs) é usar as credenciais de logon do Office do usuário. Isso permite a eles acessar seus dados do Microsoft Graph sem precisar entrar novamente. 
 
 > [!NOTE]
-> Atualmente, a API de logon único tem suporte para Word, Excel, Outlook e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets).
+> Atualmente, a API de logon único tem suporte para Word, Excel, Outlook e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets?view=office-js).
 > Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Office 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 ## <a name="add-in-architecture-for-sso-and-microsoft-graph"></a>Arquitetura de suplemento para SSO e Microsoft Graph

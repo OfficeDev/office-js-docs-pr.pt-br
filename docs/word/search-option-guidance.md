@@ -2,18 +2,17 @@
 title: Usar as opções de pesquisa para localizar o texto no suplemento do Word
 description: ''
 ms.date: 07/20/2018
-localization_priority: Priority
-ms.openlocfilehash: 3e97a9ff41ac2969eddafe8c5b4e762bcc70289b
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: d2c0fa2d542cd64986c2fd82f8a50a813f14610a
+ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386761"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "27270618"
 ---
 # <a name="use-search-options-to-find-text-in-your-word-add-in"></a>Usar as opções de pesquisa para localizar o texto no suplemento do Word 
 
 Os suplementos frequentemente precisam agir com base no texto de um documento.
-Uma função de pesquisa é exposta por cada controle de conteúdo (isso inclui [Corpo](https://docs.microsoft.com/javascript/api/word/word.body), [Parágrafo](https://docs.microsoft.com/javascript/api/word/word.paragraph), [Intervalo](https://docs.microsoft.com/javascript/api/word/word.range), [Tabela](https://docs.microsoft.com/javascript/api/word/word.table), [ Coluna](https://docs.microsoft.com/javascript/api/word/word.tablerow)e o objeto [ContentControl](https://docs.microsoft.com/javascript/api/word/word.contentcontrol) base). Esta função assume uma cadeia de caracteres (ou expressão curinga) que representa o texto que você está procurando e um objeto [SearchOptions](https://docs.microsoft.com/javascript/api/word/word.searchoptions). Retorna um conjunto de intervalos que correspondem ao texto de pesquisa.
+Uma função de pesquisa é exposta por cada controle de conteúdo (isso inclui [Corpo](https://docs.microsoft.com/javascript/api/word/word.body?view=office-js), [Parágrafo](https://docs.microsoft.com/javascript/api/word/word.paragraph?view=office-js), [Intervalo](https://docs.microsoft.com/javascript/api/word/word.range?view=office-js), [Tabela](https://docs.microsoft.com/javascript/api/word/word.table?view=office-js), [ Coluna](https://docs.microsoft.com/javascript/api/word/word.tablerow?view=office-js)e o objeto [ContentControl](https://docs.microsoft.com/javascript/api/word/word.contentcontrol?view=office-js) base). Esta função assume uma cadeia de caracteres (ou expressão curinga) que representa o texto que você está procurando e um objeto [SearchOptions](https://docs.microsoft.com/javascript/api/word/word.searchoptions?view=office-js). Retorna um conjunto de intervalos que correspondem ao texto de pesquisa.
 
 ## <a name="search-options"></a>Opções de pesquisa
 As opções de pesquisa são uma coleção de valores boolianos que definem como o parâmetro de pesquisa deve ser tratado. 
@@ -201,4 +200,4 @@ Word.run(function (context) {
 });
 ```
 
-Mais informações podem ser encontradas na [Referência de API JavaScript do Word](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview).
+Mais informações podem ser encontradas na [Referência de API JavaScript do Word](https://docs.microsoft.com/office/dev/add-ins/reference/overview/word-add-ins-reference-overview?view=office-js).
