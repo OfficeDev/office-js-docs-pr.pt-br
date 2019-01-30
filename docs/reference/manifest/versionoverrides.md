@@ -1,14 +1,14 @@
 ---
 title: Elemento VersionOverrides no arquivo de manifesto
 description: ''
-ms.date: 01/15/2019
+ms.date: 01/29/2019
 localization_priority: Normal
-ms.openlocfilehash: 197a636169b7f00edd44019cee21686065845800
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 897c2203ef6ae84911b7f269ee8a2c88aec36bd0
+ms.sourcegitcommit: 2e4b97f0252ff3dd908a3aa7a9720f0cb50b855d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29387797"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "29635906"
 ---
 # <a name="versionoverrides-element"></a>Elemento VersionOverrides
 
@@ -22,7 +22,7 @@ O elemento raiz que contém informações para os comandos de suplemento impleme
 |  **xsi:type**  |  Sim  | A versão do esquema. Nesse momento, os únicos valores válidos são `VersionOverridesV1_0` e `VersionOverridesV1_1`. |
 
 > [!NOTE]
-> Atualmente, apenas o Outlook 2016 é compatível com o esquema do VersionOverrides v1.1 e com o tipo `VersionOverridesV1_1`.
+> No momento, somente o Outlook 2016 ou posterior suporta o esquema do VersionOverrides v 1.1 e o `VersionOverridesV1_1` tipo.
 
 ## <a name="child-elements"></a>Elementos filho
 

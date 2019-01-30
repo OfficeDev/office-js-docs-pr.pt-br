@@ -1,14 +1,15 @@
 ---
 title: Tutorial de suplemento do Excel
 description: Neste tutorial, você criará um suplemento do Excel que cria, preenche, filtra e classifica uma tabela, cria um gráfico, congela um cabeçalho de tabela, protege uma planilha e abre uma caixa de diálogo
-ms.date: 01/09/2019
+ms.date: 01/28/2019
 ms.topic: tutorial
-ms.openlocfilehash: de5a08be53d7a6c2f4df4d9419e3713266800f7e
-ms.sourcegitcommit: 384e217fd51d73d13ccfa013bfc6e049b66bd98c
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 6fe72a9170862dbb0c422db7d8efd3f187bf45ae
+ms.sourcegitcommit: 2e4b97f0252ff3dd908a3aa7a9720f0cb50b855d
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "27896354"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "29635962"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Tutorial: criar um suplemento do painel de tarefas no Excel
 
@@ -31,6 +32,8 @@ Para usar este tutorial, você precisa instalar o seguinte.
 - [Nó](https://nodejs.org/en/) 
 
 - [Git Bash](https://git-scm.com/downloads) (ou outro cliente Git)
+
+- Você precisa ter uma conexão de Internet para testar o suplemento neste tutorial.
 
 ## <a name="create-your-add-in-project"></a>Criar seu projeto do suplemento
 
@@ -604,7 +607,7 @@ Nesta etapa do tutorial, você adicionará outro botão à faixa de opções que
 
 1. Abra o arquivo \function-file\function-file.js.
 
-2. O arquivo já tem uma Expressão de Função Invocada Imediatamente (IFFE). Não é necessário ter uma lógica de inicialização personalizada, portanto, deixe a função atribuída a `Office.initialize` com um corpo vazio. (Mas não a exclua. A propriedade `Office.initialize` não pode ser nula ou indefinida.) *Fora da IIFE*, adicione o seguinte código. Observe que é possível especificar um parâmetro `args` para o método e a última linha do método chamará `args.completed`. Esse é um requisito para todos os comandos de suplemento do tipo **ExecuteFunction**. Ele sinaliza para o aplicativo host do Office que a função terminou e que a interface do usuário podem ficar responsiva novamente.
+2. O arquivo já tem uma Expressão de Função Invocada Imediatamente (IFFE). *Fora do IIFE*, adicione o código a seguir. Observe que é possível especificar um parâmetro `args` para o método e a última linha do método chamará `args.completed`. Esse é um requisito para todos os comandos de suplemento do tipo **ExecuteFunction**. Ele sinaliza para o aplicativo host do Office que a função terminou e que a interface do usuário podem ficar responsiva novamente.
 
     ```js
     function toggleProtection(args) {
