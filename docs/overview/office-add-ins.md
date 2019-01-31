@@ -1,14 +1,14 @@
 ---
 title: Visão geral da plataforma Suplementos do Office | Microsoft Docs
 description: Use tecnologias da Web conhecidas, como HTML, CSS e JavaScript, para estender e interagir com os aplicativos Word, Excel, PowerPoint, OneNote, Project e Outlook.
-ms.date: 01/23/2018
+ms.date: 01/29/2019
 localization_priority: Priority
-ms.openlocfilehash: aa969815cedfe0832151d2e94adc47ac6a097760
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: febd7a49568d8e924558b11ad17b357e17c65867
+ms.sourcegitcommit: 2e4b97f0252ff3dd908a3aa7a9720f0cb50b855d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388581"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "29635934"
 ---
 # <a name="office-add-ins-platform-overview"></a>Visão geral da plataforma de Suplementos do Office
 
@@ -20,7 +20,7 @@ Os suplementos do Office podem fazer quase tudo que uma página da Web pode faze
     
 -  **Crie novos objetos avançados e interativos que podem ser integrados em documentos do Office** ‒ Mapas, gráficos e visualizações interativas integrados que os usuários podem adicionar a suas próprias planilhas do Excel e apresentações do PowerPoint. 
     
-## <a name="how-are-office-add-ins-different-than-com-and-vsto-add-ins"></a>Quais são as diferenças entre os suplementos do Office e os suplementos de COM e VSTO? 
+## <a name="how-are-office-add-ins-different-from-com-and-vsto-add-ins"></a>Quais são as diferenças entre os suplementos do Office e os suplementos de COM e VSTO? 
 
 Os suplementos de COM ou VSTO são soluções de integração anteriores do Office que são executadas apenas no Office para Windows. Ao contrário de suplementos de COM, os suplementos do Office não envolvem código executado no dispositivo do usuário ou no cliente do Office. Para um suplemento Office, o aplicativo do host, por exemplo, o Excel, lê o manifesto do suplemento e conecta os comandos do menu e os botões da faixa de opções personalizada do suplemento à interface de usuário. Quando necessário, ele carrega o código de HTML e o JavaScript, que são executados no contexto de um navegador em uma área restrita. 
 
