@@ -1,14 +1,14 @@
 ---
 title: Office.Context.Mailbox.item - conjunto de requisições de visualização
 description: ''
-ms.date: 01/16/2019
+ms.date: 01/30/2019
 localization_priority: Normal
-ms.openlocfilehash: b4b2ec9c735270d9b1bfca3d1c24ef6b0f1ca1cb
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 73495cfaceceec5da9c737f31f6ee96a7452dc3c
+ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389596"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "29701915"
 ---
 # <a name="item"></a>item
 
@@ -22,7 +22,7 @@ O namespace `item` é usado para acessar a mensagem, a solicitação de reunião
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|Restrito|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Redação ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composição ou leitura|
 
 ##### <a name="members-and-methods"></a>Membros e métodos
 
@@ -36,6 +36,7 @@ O namespace `item` é usado para acessar a mensagem, a solicitação de reunião
 | [dateTimeCreated](#datetimecreated-date) | Membro |
 | [dateTimeModified](#datetimemodified-date) | Membro |
 | [end](#end-datetimejavascriptapioutlookofficetime) | Membro |
+| [enhancedLocation](#enhancedlocation-enhancedlocationjavascriptapioutlookofficeenhancedlocation) | Membro |
 | [from](#from-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsfromjavascriptapioutlookofficefrom) | Membro |
 | [internetHeaders](#internetheaders-internetheadersjavascriptapioutlookofficeinternetheaders) | Membro |
 | [internetMessageId](#internetmessageid-string) | Membro |
@@ -45,12 +46,12 @@ O namespace `item` é usado para acessar a mensagem, a solicitação de reunião
 | [location](#location-stringlocationjavascriptapioutlookofficelocation) | Membro |
 | [normalizedSubject](#normalizedsubject-string) | Membro |
 | [notificationMessages](#notificationmessages-notificationmessagesjavascriptapioutlookofficenotificationmessages) | Membro |
-| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipients) | Membro |
+| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipients) | Member |
 | [organizer](#organizer-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsorganizerjavascriptapioutlookofficeorganizer) | Membro |
 | [recurrence](#nullable-recurrence-recurrencejavascriptapioutlookofficerecurrence) | Membro |
 | [requiredAttendees](#requiredattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipients) | Membro |
 | [sender](#sender-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetails) | Membro |
-| [seriesId](#nullable-seriesid-string) | Membro |
+| [seriesId](#nullable-seriesid-string) | Member |
 | [start](#start-datetimejavascriptapioutlookofficetime) | Membro |
 | [subject](#subject-stringsubjectjavascriptapioutlookofficesubject) | Membro |
 | [to](#to-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipients) | Membro |
@@ -184,7 +185,7 @@ Obtém um objeto que fornece métodos para manipular o corpo de um item.
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.1|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Redação ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composição ou leitura|
 
 ####  <a name="cc-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipients"></a>cc :Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook/office.recipients)
 
@@ -208,7 +209,7 @@ A propriedade `cc` retorna um objeto `Recipients` que fornece métodos para obte
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Redação ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composição ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
@@ -315,11 +316,11 @@ Ao usar o método [`Time.setAsync`](/javascript/api/outlook/office.time#setasync
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Redação ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composição ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
-O exemplo a seguir define a hora de término de um compromisso no modo de redação usando o método [`setAsync`](/javascript/api/outlook/office.time#setasync-datetime--options--callback-) do objeto `Time`.
+O exemplo a seguir define a hora de término de um compromisso no modo de composição usando o método [`setAsync`](/javascript/api/outlook/office.time#setasync-datetime--options--callback-) do objeto `Time`.
 
 ```javascript
 var endTime = new Date("3/14/2015");
@@ -336,6 +337,55 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
     console.debug("End Time " + result.asyncContext.verb);
   }
 });
+```
+
+#### <a name="enhancedlocation-enhancedlocationjavascriptapioutlookofficeenhancedlocation"></a>enhancedLocation:[EnhancedLocation](/javascript/api/outlook/office.enhancedlocation)
+
+Obtém ou define os locais de um compromisso.
+
+##### <a name="read-mode"></a>Modo de leitura
+
+O `enhancedLocation` propriedade retorna um objeto [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) que permite que você obtenha o conjunto de locais (cada um representado por um objeto [LocationDetails](/javascript/api/outlook/office.locationdetails) ) associado ao compromisso.
+
+##### <a name="compose-mode"></a>Modo de redação
+
+O `enhancedLocation` propriedade retorna um objeto [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) que fornece os métodos para obter, remover ou adicionar locais em um compromisso.
+
+##### <a name="type"></a>Tipo:
+
+*   [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation)
+
+##### <a name="requirements"></a>Requisitos
+
+|Requisito|Valor|
+|---|---|
+|[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Visualização|
+|[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composição ou leitura|
+
+##### <a name="example"></a>Exemplo
+
+O exemplo a seguir obtém os locais atuais associados ao compromisso.
+
+```javascript
+Office.context.mailbox.item.enhancedLocation.getAsync(callbackFunction);
+
+function callbackFunction(asyncResult) {
+  asyncResult.value.forEach(function (place) {
+    console.log("Display name: " + place.displayName);
+    console.log("Type: " + place.locationIdentifier.type);
+    if (place.locationIdentifier.type == Office.MailboxEnums.LocationType.Room) {
+      console.log("Email address: " + place.emailAddress);
+    }
+  });
+}
+
+// Sample output:
+// Display name: Conf Room 14
+// Type: room
+// Email address: cr14@contoso.com
+// Display name: Paris
+// Type: custom
 ```
 
 #### <a name="from-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsfromjavascriptapioutlookofficefrom"></a>from :[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)|[From](/javascript/api/outlook/office.from)
@@ -409,7 +459,7 @@ Obtém o identificador de mensagem de Internet para uma mensagem de email. Somen
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Read|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Leitura|
 
 ##### <a name="example"></a>Exemplo
 
@@ -425,7 +475,7 @@ A propriedade `itemClass` especifica a classe da mensagem do item selecionado. A
 
 |Tipo|Descrição|classe de item|
 |---|---|---|
-|Itens de compromisso|Esses são itens de calendário da classe de item `IPM.Appointment` ou `IPM.Appointment.Occurence`.|`IPM.Appointment`<br />`IPM.Appointment.Occurence`|
+|Itens de compromisso|Esses são itens de calendário da classe de item `IPM.Appointment` ou `IPM.Appointment.Occurrence`.|`IPM.Appointment`<br />`IPM.Appointment.Occurrence`|
 |Itens de mensagem|Incluem mensagens de email que têm a classe de mensagem padrão `IPM.Note` e solicitações de reunião, respostas e cancelamentos, que utilizam `IPM.Schedule.Meeting` como a classe de mensagem básica.|`IPM.Note`<br />`IPM.Schedule.Meeting.Request`<br />`IPM.Schedule.Meeting.Neg`<br />`IPM.Schedule.Meeting.Pos`<br />`IPM.Schedule.Meeting.Tent`<br />`IPM.Schedule.Meeting.Canceled`|
 
 Você pode criar classes de mensagem personalizadas que estendem uma classe de mensagem padrão, por exemplo, uma classe de mensagem de compromisso `IPM.Appointment.Contoso` personalizada.
@@ -440,7 +490,7 @@ Você pode criar classes de mensagem personalizadas que estendem uma classe de m
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Read|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Leitura|
 
 ##### <a name="example"></a>Exemplo
 
@@ -467,7 +517,7 @@ A propriedade `itemId` não está disponível no modo de redação. Se for obrig
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Read|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Leitura|
 
 ##### <a name="example"></a>Exemplo
 
@@ -498,7 +548,7 @@ A propriedade `itemType` retorna um dos valores de enumeração `ItemType`, indi
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Redação ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composição ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
@@ -531,7 +581,7 @@ A propriedade `location` retorna um objeto `Location` que fornece métodos usado
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Redação ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composição ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
@@ -561,7 +611,7 @@ A propriedade normalizedSubject obtém o assunto do item, com quaisquer prefixos
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Read|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Leitura|
 
 ##### <a name="example"></a>Exemplo
 
@@ -573,7 +623,7 @@ var normalizedSubject = Office.context.mailbox.item.normalizedSubject;
 
 Obtém as mensagens de notificação de um item.
 
-##### <a name="type"></a>Tipo:
+##### <a name="type"></a>Type:
 
 *   [NotificationMessages](/javascript/api/outlook/office.notificationmessages)
 
@@ -583,7 +633,7 @@ Obtém as mensagens de notificação de um item.
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.3|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Redação ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composição ou leitura|
 
 ####  <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipients"></a>optionalAttendees :Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook/office.recipients)
 
@@ -607,7 +657,7 @@ A propriedade `optionalAttendees` retorna um objeto `Recipients` que fornece mé
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Redação ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composição ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
@@ -694,7 +744,7 @@ A propriedade `requiredAttendees` retorna um objeto `Recipients` que fornece mé
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Redação ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composição ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
@@ -757,7 +807,7 @@ A propriedade `seriesId` retorna `null` para itens que não têm itens pai como 
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.7|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Redação ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composição ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
@@ -792,7 +842,7 @@ Ao usar o método [`Time.setAsync`](/javascript/api/outlook/office.time#setasync
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Redação ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composição ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
@@ -851,7 +901,7 @@ function callback(asyncResult) {
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Redação ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composição ou leitura|
 
 ####  <a name="to-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipients"></a>to :Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook/office.recipients)
 
@@ -875,7 +925,7 @@ A propriedade `to` retorna um objeto `Recipients` que fornece métodos para obte
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Redação ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composição ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
@@ -902,9 +952,9 @@ Posteriormente, você poderá usar o identificador com o método [`removeAttachm
 ##### <a name="parameters"></a>Parâmetros:
 |Nome|Tipo|Atributos|Descrição|
 |---|---|---|---|
-|`uri`|String||O URI que fornece o local do arquivo anexado à mensagem ou compromisso. O comprimento máximo é de 2048 caracteres.|
+|`uri`|Cadeia de caracteres||O URI que fornece o local do arquivo anexado à mensagem ou compromisso. O comprimento máximo é de 2048 caracteres.|
 |`attachmentName`|String||O nome do anexo que é mostrado enquanto o anexo está sendo carregado. O tamanho máximo é de 255 caracteres.|
-|`options`|Objeto|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
+|`options`|Object|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
 |`options.asyncContext`|Objeto|&lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
 |`options.isInline`|Booliano|&lt;opcional&gt;|Se for `true`, indicará que o anexo será mostrado embutido no corpo da mensagem e não deverá ser exibido na lista de anexos.|
 |`callback`|function|&lt;opcional&gt;|Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult). <br/>Em caso de êxito, o identificador do anexo será fornecido na propriedade `asyncResult.value`.<br/>Se houver falha ao carregar o anexo, o objeto `asyncResult` conterá um objeto `Error` que fornece uma descrição do erro.|
@@ -982,7 +1032,7 @@ Posteriormente, você poderá usar o identificador com o método [`removeAttachm
 |---|---|---|---|
 |`base64File`|String||O conteúdo codificado em Base 64 de uma imagem ou arquivo a ser adicionado a um email ou evento.|
 |`attachmentName`|String||O nome do anexo que é mostrado enquanto o anexo está sendo carregado. O tamanho máximo é de 255 caracteres.|
-|`options`|Objeto|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
+|`options`|Object|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
 |`options.asyncContext`|Objeto|&lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
 |`options.isInline`|Booliano|&lt;opcional&gt;|Se for `true`, indicará que o anexo será mostrado embutido no corpo da mensagem e não deverá ser exibido na lista de anexos.|
 |`callback`|function|&lt;opcional&gt;|Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult). <br/>Em caso de êxito, o identificador do anexo será fornecido na propriedade `asyncResult.value`.<br/>Se houver falha ao carregar o anexo, o objeto `asyncResult` conterá um objeto `Error` que fornece uma descrição do erro.|
@@ -1001,7 +1051,7 @@ Posteriormente, você poderá usar o identificador com o método [`removeAttachm
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Visualização|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadWriteItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Escrever|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Redação|
 
 ##### <a name="examples"></a>Exemplos
 
@@ -1063,9 +1113,9 @@ Se o Suplemento do Office estiver em execução no Outlook Web App, o método `a
 
 |Nome|Tipo|Atributos|Descrição|
 |---|---|---|---|
-|`itemId`|String||O identificador do Exchange do item a anexar. O comprimento máximo é de 100 caracteres.|
+|`itemId`|Cadeia de caracteres||O identificador do Exchange do item a anexar. O comprimento máximo é de 100 caracteres.|
 |`attachmentName`|String||O assunto do item a anexar. O tamanho máximo é de 255 caracteres.|
-|`options`|Objeto|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
+|`options`|Object|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
 |`options.asyncContext`|Objeto|&lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
 |`callback`|function|&lt;opcional&gt;|Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult). <br/>Em caso de êxito, o identificador do anexo será fornecido na propriedade `asyncResult.value`.<br/>Se houver falha ao adicionar o anexo, o objeto `asyncResult` conterá um objeto `Error` que fornece uma descrição do erro.|
 
@@ -1151,7 +1201,7 @@ Quando os anexos são especificados no parâmetro `formData.attachments`, o Outl
 |`formData.attachments.name`|String||Uma cadeia de caracteres que contém o nome do anexo, até 255 caracteres de comprimento.|
 |`formData.attachments.url`|String||Usado somente se `type` estiver definido como `file`. O URI do local para o arquivo.|
 |`formData.attachments.isInline`|Booliano||Usado somente se `type` estiver definido como `file`. Se for `true`, indicará que o anexo será mostrado embutido no corpo da mensagem e não deverá ser exibido na lista de anexos.|
-|`formData.attachments.itemId`|String||Usado somente se `type` estiver definido como `item`. A ID do item do EWS do anexo. Isso é uma cadeia de até 100 caracteres.|
+|`formData.attachments.itemId`|Cadeia de caracteres||Usado somente se `type` estiver definido como `item`. A ID do item do EWS do anexo. Isso é uma cadeia de até 100 caracteres.|
 |`callback`|function|&lt;opcional&gt;|Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [AsyncResult](/javascript/api/office/office.asyncresult).|
 
 ##### <a name="requirements"></a>Requisitos
@@ -1270,7 +1320,7 @@ Quando os anexos são especificados no parâmetro `formData.attachments`, o Outl
 |`formData.attachments.name`|String||Uma cadeia de caracteres que contém o nome do anexo, até 255 caracteres de comprimento.|
 |`formData.attachments.url`|String||Usado somente se `type` estiver definido como `file`. O URI do local para o arquivo.|
 |`formData.attachments.isInline`|Booliano||Usado somente se `type` estiver definido como `file`. Se for `true`, indicará que o anexo será mostrado embutido no corpo da mensagem e não deverá ser exibido na lista de anexos.|
-|`formData.attachments.itemId`|String||Usado somente se `type` estiver definido como `item`. A ID do item do EWS do anexo. Isso é uma cadeia de até 100 caracteres.|
+|`formData.attachments.itemId`|Cadeia de caracteres||Usado somente se `type` estiver definido como `item`. A ID do item do EWS do anexo. Isso é uma cadeia de até 100 caracteres.|
 |`callback`|function|&lt;opcional&gt;|Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [AsyncResult](/javascript/api/office/office.asyncresult).|
 
 ##### <a name="requirements"></a>Requisitos
@@ -1386,7 +1436,7 @@ O método `getAttachmentContentAsync` remove o obtém anexo com o identificador 
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Visualização|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Redação ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composição ou leitura|
 
 ##### <a name="returns"></a>Retorna:
 
@@ -1432,7 +1482,7 @@ Obtém os anexos do item como uma matriz. Somente modo de redação.
 
 |Nome|Tipo|Atributos|Descrição|
 |---|---|---|---|
-|`options`|Objeto|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
+|`options`|Object|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
 |`options.asyncContext`|Objeto|&lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
 |`callback`|function|&lt;opcional&gt;|Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [AsyncResult](/javascript/api/office/office.asyncresult).|
 
@@ -1605,7 +1655,7 @@ Obtém dados de inicialização que são transmitidos quando o suplemento é [at
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Visualização|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Read|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Leitura|
 
 ##### <a name="example"></a>Exemplo
 
@@ -1884,7 +1934,7 @@ Obtém as propriedades do compromisso ou mensagem selecionada em uma pasta compa
 
 |Nome|Tipo|Atributos|Descrição|
 |---|---|---|---|
-|`options`|Objeto|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
+|`options`|Object|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
 |`options.asyncContext`|Objeto|&lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
 |`callback`|function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>As propriedades compartilhadas são fornecidas como um objeto [`SharedProperties`](/javascript/api/outlook/office.sharedproperties) na propriedade `asyncResult.value`. Esse objeto pode ser usado para obter as propriedades compartilhadas do item.|
 
@@ -1894,7 +1944,7 @@ Obtém as propriedades do compromisso ou mensagem selecionada em uma pasta compa
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Visualização|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Redação ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composição ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
@@ -1925,7 +1975,7 @@ Propriedades personalizadas são armazenadas como pares chave/valor de acordo co
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Redação ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Composição ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
@@ -1967,7 +2017,7 @@ O método `removeAttachmentAsync` remove o anexo com o identificador especificad
 |`attachmentId`|String||O identificador do anexo a remover.|
 |`options`|Objeto|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
 |`options.asyncContext`|Objeto|&lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
-|`callback`|function|&lt;opcional&gt;|Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult). <br/>Se a remoção do anexo falhar, a propriedade `asyncResult.error` conterá um código de erro com o motivo da falha.|
+|`callback`|function|&lt;opcional&gt;|Quando o método for concluído, a função transmitida ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult). <br/>Se a remoção do anexo falhar, a propriedade `asyncResult.error` conterá um código de erro com o motivo da falha.|
 
 ##### <a name="errors"></a>Erros
 
@@ -2011,7 +2061,7 @@ Atualmente, os tipos de evento compatíveis são `Office.EventType.AttachmentsCh
 | `eventType` | [Office.EventType](office.md#eventtype-string) || O evento que deve revogar o manipulador. |
 | `options` | Objeto | &lt;opcional&gt; | Um objeto literal que contém uma ou mais das propriedades a seguir. |
 | `options.asyncContext` | Objeto | &lt;opcional&gt; | Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada. |
-| `callback` | function| &lt;opcional&gt;|Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).|
+| `callback` | function| &lt;opcional&gt;|Quando o método for concluído, a função transmitida ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -2042,7 +2092,7 @@ Como compromissos não têm um estado de rascunho, se `saveAsync` for chamado em
 
 |Nome|Tipo|Atributos|Descrição|
 |---|---|---|---|
-|`options`|Objeto|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
+|`options`|Object|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
 |`options.asyncContext`|Objeto|&lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
 |`callback`|function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Em caso de sucesso, o identificador do item é fornecido na propriedade `asyncResult.value`.|
 

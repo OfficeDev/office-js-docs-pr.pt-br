@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox.item - conjunto de requisitos 1.5
 description: ''
-ms.date: 12/18/2018
+ms.date: 01/30/2019
 localization_priority: Priority
-ms.openlocfilehash: 48bc1291e7aa6d8e335c07d16ddd74e6e9455f0d
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: cca0bb4baa15d72a58909ca1417eb52a9bf70a8f
+ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389568"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "29701838"
 ---
 # <a name="item"></a>item
 
@@ -377,7 +377,7 @@ A propriedade `itemClass` especifica a classe da mensagem do item selecionado. A
 
 | Tipo | Descrição | classe de item |
 | --- | --- | --- |
-| Itens de compromisso | Esses são itens de calendário da classe de item `IPM.Appointment` ou `IPM.Appointment.Occurence`. | `IPM.Appointment`<br />`IPM.Appointment.Occurence` |
+| Itens de compromisso | Esses são itens de calendário da classe de item `IPM.Appointment` ou `IPM.Appointment.Occurrence`. | `IPM.Appointment`<br />`IPM.Appointment.Occurrence` |
 | Itens de mensagem | Incluem mensagens de email que têm a classe de mensagem padrão `IPM.Note` e solicitações de reunião, respostas e cancelamentos, que utilizam `IPM.Schedule.Meeting` como a classe de mensagem básica. | `IPM.Note`<br />`IPM.Schedule.Meeting.Request`<br />`IPM.Schedule.Meeting.Neg`<br />`IPM.Schedule.Meeting.Pos`<br />`IPM.Schedule.Meeting.Tent`<br />`IPM.Schedule.Meeting.Canceled` |
 
 Você pode criar classes de mensagem personalizadas que estendem uma classe de mensagem padrão, por exemplo, uma classe de mensagem de compromisso `IPM.Appointment.Contoso` personalizada.
