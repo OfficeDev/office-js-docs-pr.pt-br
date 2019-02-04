@@ -3,12 +3,12 @@ title: Criar um Suplemento do Office com ASP.NET que use logon único
 description: ''
 ms.date: 01/23/2018
 localization_priority: Priority
-ms.openlocfilehash: 94976e47d2bce15e224d837a11cab6b08bd80cda
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: d79dde68b8222a8aafa01a01dc21a4f932f101a9
+ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388301"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "29701817"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>Criar um Suplemento do Office com ASP.NET que use logon único (visualização)
 
@@ -21,9 +21,9 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* A versão mais recente disponível do Visual Studio 2017 Preview.
+* A versão mais recente disponível do Visual Studio 2017.
 
-* Office 2016, versão 1708, build 8424.nnnn ou posterior (a versão de assinatura do Office 365, às vezes chamada de "Clique para Executar"). Você talvez precise ser um participante do programa Office Insider para obter essa versão. Para obter mais informações, confira a página [Seja um Office Insider](https://products.office.com/office-insider?tab=tab-1).
+* Office 365 (versão de assinatura, também chamada "Clique para Executar"). Build e versão mensal mais recentes do canal de Participante do programa Office Insider. É necessário ingressar no programa Office Insider para obter essa versão. Para saber mais, confira a página [Seja um Office Insider](https://products.office.com/office-insider?tab=tab-1). Observe que, quando um build é promovido ao Canal Semestral de produção, o suporte para recursos de visualização, como o SSO, é desativado para esse build.
 
 ## <a name="set-up-the-starter-project"></a>Configure o projeto inicial
 
@@ -39,7 +39,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     > [!NOTE]
     > Você receberá um erro sobre o namespace Identity. Este é um efeito colateral de um problema de configuração que você corrigirá no próximo passo. O importante é que os pacotes estejam instalados.
 
-1. Atualmente, a versão da biblioteca MSAL (Microsoft.Identity.Client) necessária para SSO (versão `1.1.4-preview0002`) não faz parte do catálogo padrão de nuget, portanto, não está listada no package.config e deve ser instalada separadamente. 
+1. Atualmente, a versão da biblioteca MSAL (Microsoft.Identity.Client) necessária para SSO (versão `1.1.4-preview0002`) não faz parte do catálogo padrão de nuget, portanto, não está listada no package.config e deve ser instalada separadamente.
 
    > 1. No menu **Ferramentas**, navegue até **Nuget Package Manager** > **Console do Gerenciador de Pacotes**. 
 

@@ -3,12 +3,12 @@ title: Habilitar o logon único para Suplementos do Office
 description: ''
 ms.date: 09/26/2018
 localization_priority: Priority
-ms.openlocfilehash: 96370072e29262c70f421ced9a90ca9422a12243
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: f76a1394bb55a260af9bbde2d18cd330bbf2688b
+ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388105"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "29701789"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Habilitar o logon único para Suplementos do Office (visualização)
 
@@ -20,7 +20,9 @@ Os usuários entram no Office (online, em dispositivos móveis e plataformas des
 
 A API de logon único tem suporte somente na visualização. Está disponível para os desenvolvedores para experimentação; mas não deve ser usado em um suplemento de produção. Além disso, os suplementos que usam o SSO não são aceitos no [AppSource](https://appsource.microsoft.com).
 
-Nem todos os aplicativos do Office oferecem suporte a visualização SSO. Está disponível no Word, Excel, Outlook e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets).
+O SSO requer o Office 365 (versão de assinatura do Office, também chamada "Clique para Executar"). Você deve usar o build e a versão mensal mais recentes do canal de Participante do programa Office Insider. É necessário ingressar no programa Office Insider para obter essa versão. Para saber mais, confira a página [Seja um Office Insider](https://products.office.com/office-insider?tab=tab-1). Observe que, quando um build é promovido ao Canal Semestral de produção, o suporte para recursos de visualização, como o SSO, é desativado para esse build.
+
+Nem todos os aplicativos do Office oferecem suporte a visualização de SSO. Está disponível no Word, Excel, Outlook e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets).
 
 ### <a name="requirements-and-best-practices"></a>Requisitos e as práticas recomendadas
 
@@ -28,7 +30,7 @@ Para usar o SSO, você deve carregar a versão beta da biblioteca de JavaScript 
 
 Se você estiver trabalhando com um suplemento do **Outlook**, certifique-se de habilitar a Autenticação Moderna para o locatário do Office 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
-Você *não* deve confiar no SSO como único método do suplemento de autenticação. Devem implementar um sistema de autenticação alternativo que o suplemento possa se enquadrar em determinadas situações de erro. Você pode usar um sistema de autenticação e tabelas de usuário ou utilizar um dos provedores de logon de redes sociais. Para saber mais sobre como fazer isso com um suplemento do Office, confira [Autorizar serviços externos nos suplementos do Office](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/auth-external-add-ins). Para *Outlook*, há um sistema de retorno recomendado. Para mais informações, confira [Cenário: implementar o logon único no serviço em um Suplemento do Outlook](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in).
+Você *não* deve confiar no SSO como único método do suplemento de autenticação. Devem implementar um sistema de autenticação alternativo que o suplemento possa se enquadrar em determinadas situações de erro. Você pode usar um sistema de autenticação e tabelas de usuário ou utilizar um dos provedores de logon de redes sociais. Para saber mais sobre como fazer isso com um suplemento do Office, confira [Autorizar serviços externos nos suplementos do Office](https://docs.microsoft.com/pt-BR/office/dev/add-ins/develop/auth-external-add-ins). Para *Outlook*, há um sistema de retorno recomendado. Para mais informações, confira [Cenário: implementar o logon único no serviço em um Suplemento do Outlook](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in).
 
 ### <a name="how-sso-works-at-runtime"></a>Como o SSO funciona em tempo de execução
 
@@ -43,7 +45,7 @@ O diagrama a seguir mostra como funciona o processo de SSO.
 5. O Azure AD envia o token do suplemento ao aplicativo host do Office.
 6. O aplicativo host do Office envia o **token do suplemento** ao suplemento como parte do objeto de resultado que retornou pela chamada de `getAccessTokenAsync`.
 7. O JavaScript no suplemento pode analisar o token e extrair informações necessárias, como endereço de email do usuário. 
-8. Opcionalmente, o suplemento pode enviar solicitação HTTP para o servidor para obter mais dados sobre o usuário; como as preferências do usuário. Como alternativa, o próprio token de acesso pode ser enviado para o servidor para análise e validação. 
+8. Opcionalmente, o suplemento pode enviar solicitação HTTP para o servidor para obter mais dados sobre o usuário; como as preferências do usuário. Como alternativa, o próprio token de acesso pode ser enviado para o servidor para análise e validação.
 
 ## <a name="develop-an-sso-add-in"></a>Desenvolver um suplemento com SSO
 
