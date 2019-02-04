@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 description: ''
-ms.date: 10/31/2018
+ms.date: 01/30/2019
 localization_priority: Priority
-ms.openlocfilehash: bb920224f9ceb39b334b5f489442da695004f22c
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 47db6824fa328a61e47d577a85375f43e73f16df
+ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386397"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "29701782"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 
@@ -24,10 +24,14 @@ O modo de visualização do conjunto de requisitos inclui todos os recursos do [
 Os seguintes recursos estão no modo de visualização.
 
 - [AttachmentContent](/javascript/api/outlook/office.attachmentcontent): adicionado um novo objeto que representa o conteúdo de um anexo.
-- [InternetHeaders](/javascript/api/outlook/office.internetheaders): adicionado um novo objeto que representa os cabeçalhos de Internet de um item de mensagem.
+- [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) - Adicionar um novo objeto que representa o conjunto de locais em um compromisso.
+- [InternetHeaders](/javascript/api/outlook/office.internetheaders): Adicionado um novo objeto que representa os cabeçalhos de Internet de um item de mensagem.
+- [LocationDetails](/javascript/api/outlook/office.locationdetails) - Adicionar um novo objeto que representa um local. Somente leitura.
+- [LocationIdentifier](/javascript/api/outlook/office.locationidentifier) - Adicionar um novo objeto que representa a id de um local.
 - [SharedProperties](/javascript/api/outlook/office.sharedproperties): adicionado um novo objeto que representa as propriedades de um item de compromisso ou de mensagem em uma pasta compartilhada, calendário ou caixa de correio.
 - [Event.completed](/javascript/api/office/office.addincommands.event#completed-options-): um novo parâmetro opcional `options`, que é um dicionário com um valor válido `allowEvent`. Esse valor é usado para cancelar a execução de um evento.
 - [Office.context.mailbox.item.addFileAttachmentFromBase64Async](office.context.mailbox.item.md#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback): adicionado um novo método que permite anexar um arquivo representado como uma cadeia de caracteres codificada na Base64 para uma mensagem ou um compromisso.
+- [Office.context.mailbox.item.enhancedLocation](office.context.mailbox.item.md#enhancedlocation-enhancedlocationjavascriptapioutlookofficeenhancedlocation) – adicionar uma nova propriedade que representa o conjunto de locais em um compromisso.
 - [Office.context.mailbox.item.getAttachmentContentAsync](office.context.mailbox.item.md#getattachmentcontentasyncattachmentid-options-callback--attachmentcontentjavascriptapioutlookofficeattachmentcontent) – Adicionado um novo método para acessar o conteúdo de um anexo específico.
 - [Office.context.mailbox.item.getAttachmentsAsync](office.context.mailbox.item.md#getattachmentsasyncoptions-callback--arrayattachmentdetailsjavascriptapioutlookofficeattachmentdetails) – Adicionado um novo método que obtém os anexos de um item no modo de redação.
 - [Office.context.mailbox.item.getInitializationContextAsync](office.context.mailbox.item.md#getinitializationcontextasyncoptions-callback) – Adicionada uma nova função que retorna os dados de inicialização que são transmitidos quando o suplemento é [ativado por uma mensagem acionável](https://docs.microsoft.com/outlook/actionable-messages/invoke-add-in-from-actionable-message).
@@ -37,6 +41,7 @@ Os seguintes recursos estão no modo de visualização.
 - [Office.MailboxEnums.AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat): adicionada uma nova enumeração que especifica a formatação que se aplica ao conteúdo de um anexo.
 - [Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus): adicionada uma nova enumeração que especifica se um anexo foi adicionado ou removido de um item.
 - [Office.MailboxEnums.DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions): adicionada uma novo enumeração de sinalizador bits que especifica as permissões de representante.
+- [Office.MailboxEnums.LocationType](/javascript/api/outlook/office.mailboxenums.locationtype) - Adicionar uma nova enumeração que especifica o tipo de local do compromisso.
 - [Office.EventType](/javascript/api/office/office.eventtype): modificado para dar suporte aos eventos AttachmentsChanged e OfficeThemeChanged por meio da adição das entradas `AttachmentsChanged` e `OfficeThemeChanged`, respectivamente.
 - [Elemento do manifesto SupportsSharedFolders](../../manifest/supportssharedfolders.md): adicionado um elemento filho ao elemento do manifesto [DesktopFormFactor](../../manifest/desktopformfactor.md). Define se o suplemento está disponível nos cenários de representante.
 
