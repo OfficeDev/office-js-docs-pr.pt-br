@@ -3,12 +3,12 @@ title: Introdução aos suplementos do Excel
 description: ''
 ms.date: 01/23/2018
 localization_priority: Priority
-ms.openlocfilehash: b75a25f986d4dd141a3858a357592c5ba9c28bd8
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: ad0c948be710f6274d50c341854e43fc42639ee8
+ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388966"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "29742258"
 ---
 # <a name="get-started-with-excel-add-ins"></a>Introdução aos suplementos do Excel
 
@@ -16,7 +16,7 @@ Você pode criar um suplemento do Excel usando tecnologias da Web conhecidas, co
 
 ## <a name="create-your-first-excel-add-in"></a>Criar seu primeiro suplemento do Excel
 
-Para começar, conclua um dos passo a passos desta seção para criar um suplemento do Excel usando [React](excel-add-ins-get-started-react.md), [Angular](excel-add-ins-get-started-angular.md) ou [jQuery](excel-add-ins-get-started-jquery.md). Cada passo a passo fornece orientações detalhadas para criação de um suplemento simples de painel de tarefas que usa a API JavaScript do Excel para interagir com uma planilha. 
+Para começar, conclua um dos passo a passos desta seção para criar um suplemento do Excel usando [React](../quickstarts/excel-quickstart-react.md), [Angular](../quickstarts/excel-quickstart-angular.md), [jQuery](../quickstarts/excel-quickstart-jquery.md) ou [Vue](../quickstarts/excel-quickstart-vue.md). Cada passo a passo fornece orientações detalhadas para criação de um suplemento simples de painel de tarefas que usa a API JavaScript do Excel para interagir com uma planilha. 
 
 ## <a name="explore-snippets-with-script-lab"></a>Explorar trechos com o Script Lab
 

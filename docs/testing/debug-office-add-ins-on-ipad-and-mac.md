@@ -1,47 +1,20 @@
 ---
 title: Depurar suplementos do Office no iPad e no Mac
 description: ''
-ms.date: 03/21/2018
+ms.date: 02/01/2019
 localization_priority: Priority
-ms.openlocfilehash: 058f3cb4a4acc77a5c4fcd4559970187842c2c4b
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: b283cf14563345834e7076cdd4de4f15a26692b6
+ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388028"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "29742328"
 ---
 # <a name="debug-office-add-ins-on-ipad-and-mac"></a>Depurar suplementos do Office no iPad e no Mac
 
-Você pode usar o Visual Studio para desenvolver e depurar suplementos no Windows, mas não pode usá-lo para depurar suplementos no iPad ou no Mac. Como os suplementos são desenvolvidos usando HTML e Javascript, são projetados para funcionar em várias plataformas, mas pode haver diferenças sutis em como cada navegador processa o HTML. Este artigo descreve como depurar suplementos em execução em um iPad ou em um Mac. 
+Você pode usar o Visual Studio para desenvolver e depurar suplementos no Windows, mas não pode usá-lo para depurar suplementos no iPad ou no Mac. Como os suplementos são desenvolvidos usando HTML e Javascript, são projetados para funcionar em várias plataformas, mas pode haver diferenças sutis em como cada navegador processa o HTML. Este artigo descreve como depurar suplementos em execução em um iPad ou em um Mac.
 
-## <a name="debugging-with-safari-web-inspector-on-a-mac"></a>Depuração com Safari Web Inspetor em um Mac
-
-Se você tiver um suplemento que mostre a interface do usuário em um painel de tarefas ou em um suplemento de conteúdo, o Safari Web Inspector poderá ser usado para depurar um Suplemento do Office.
-
-Para poder depurar Suplementos do Office no Mac, você deverá ter o Mac OS High Sierra E o Mac Office Versão: 16.9.1 (build 18012504) ou posterior. Se você não tiver um build do Office Mac, poderá obter um, ingressando no [Programa para desenvolvedores do Office 365](https://aka.ms/o365devprogram).
-
-Para iniciar, abra um terminal e defina a propriedade `OfficeWebAddinDeveloperExtras` do aplicativo relevante do Office da seguinte maneira:
-
-- `defaults write com.microsoft.Word OfficeWebAddinDeveloperExtras -bool true`
-
-- `defaults write com.microsoft.Excel OfficeWebAddinDeveloperExtras -bool true`
-
-- `defaults write com.microsoft.Powerpoint OfficeWebAddinDeveloperExtras -bool true`
-
-- `defaults write com.microsoft.Outlook OfficeWebAddinDeveloperExtras -bool true`
-
-Em seguida, abra o aplicativo do Office e insira seu suplemento. Clique com o botão direito do mouse no suplemento e você verá a opção **Inspecionar Elemento** no menu de contexto.  Marque essa opção e ela exibirá o inspetor, onde você poderá definir os pontos de interrupção e depurar o suplemento.
-
-> [!NOTE]
-> Observe que esse é um recurso experimental e não há garantias de que preservaremos essa funcionalidade em versões futuras de aplicativos do Office.
->
-> Se você estiver tentando usar o inspetor e a caixa de diálogo piscar, experimente a seguinte solução alternativa:
-> 1. Reduza o tamanho da caixa de diálogo.
-> 2. Escolha **Inspecionar Elemento**, que será aberto em uma nova janela.
-> 3. Redimensione a caixa de diálogo para seu tamanho original.
-> 4. Use o inspetor, conforme necessário.
-
-## <a name="debugging-with-vorlonjs-on-a-ipad-or-mac"></a>Depuração com Vorlon.JS em um iPad ou Mac
+## <a name="debugging-with-vorlonjs-on-ipad-or-mac"></a>Depuração com Vorlon.JS em um iPad ou Mac
 
 Para depurar um suplemento no iPad ou no Mac, use o Vorlon.JS, um depurador de páginas da Web semelhante às ferramentas do F12. Ele é projetado para funcionar remotamente e permite depurar páginas da Web em dispositivos diferentes. Para saber mais, confira o [site do Vorlon](http://www.vorlonjs.com).  
 
@@ -134,6 +107,34 @@ Um plug-in do **Suplemento do Office** adiciona recursos extras ao Office.js, co
 
 > [!NOTE]
 > Não é possível definir pontos de interrupção no Vorlon.JS.
+
+## <a name="debugging-with-safari-web-inspector-on-a-mac"></a>Depuração com Safari Web Inspetor em um Mac
+
+> [!IMPORTANT]
+> Observe que o suplemento **Inspecionar Elemento** é um recurso experimental e não há garantias de que preservaremos essa funcionalidade em versões futuras de aplicativos do Office.
+
+Se você tiver um suplemento que mostre a interface do usuário em um painel de tarefas ou em um suplemento de conteúdo, o Safari Web Inspector poderá ser usado para depurar um Suplemento do Office.
+
+Para poder depurar Suplementos do Office no Mac, você deverá ter o Mac OS High Sierra ou posterior E o Mac Office versão: 16.9.1 (Build 18012504) ou posterior. Se você não tiver um build do Office para Mac, poderá obter um, ingressando no [Programa para desenvolvedores do Office 365](https://aka.ms/o365devprogram).
+
+Para iniciar, abra um terminal e defina a propriedade `OfficeWebAddinDeveloperExtras` do aplicativo relevante do Office da seguinte maneira:
+
+- `defaults write com.microsoft.Word OfficeWebAddinDeveloperExtras -bool true`
+
+- `defaults write com.microsoft.Excel OfficeWebAddinDeveloperExtras -bool true`
+
+- `defaults write com.microsoft.Powerpoint OfficeWebAddinDeveloperExtras -bool true`
+
+- `defaults write com.microsoft.Outlook OfficeWebAddinDeveloperExtras -bool true`
+
+Em seguida, abra o aplicativo do Office e [realize o sideload do seu suplemento](sideload-an-office-add-in-on-ipad-and-mac.md). Clique com o botão direito do mouse no suplemento e você verá a opção **Inspecionar Elemento** no menu de contexto.  Marque essa opção e ela exibirá o inspetor, onde você poderá definir os pontos de interrupção e depurar o suplemento.
+
+> [!NOTE]
+> Se você estiver tentando usar o inspetor e a caixa de diálogo piscar, experimente a seguinte solução alternativa:
+> 1. Reduza o tamanho da caixa de diálogo.
+> 2. Escolha **Inspecionar Elemento**, que será aberto em uma nova janela.
+> 3. Redimensione a caixa de diálogo para seu tamanho original.
+> 4. Use o inspetor, conforme necessário.
 
 
 ## <a name="clearing-the-office-applications-cache-on-a-mac-or-ipad"></a>Limpar cache do aplicativo do Office em um Mac ou iPad
