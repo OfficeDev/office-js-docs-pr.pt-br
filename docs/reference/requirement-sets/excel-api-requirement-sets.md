@@ -2,13 +2,14 @@
 title: Conjuntos de requisitos de API JavaScript do Excel
 description: ''
 ms.date: 10/09/2018
+ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: fdcbee0374851f0f88130ae8afe28eec3a0fe77c
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 0cb01bffb2947c4269e377c39ff3c329c48591d9
+ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388721"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "29742468"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Excel
 

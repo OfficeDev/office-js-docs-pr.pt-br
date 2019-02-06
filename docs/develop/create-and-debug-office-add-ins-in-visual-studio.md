@@ -3,12 +3,12 @@ title: Criar e depurar suplementos do Office no Visual Studio
 description: Use o Visual Studio para criar e depurar suplementos do Office na área de trabalho do cliente Office para Windows
 ms.date: 11/02/2018
 localization_priority: Priority
-ms.openlocfilehash: 377c65d089ef43814bbc419435d2b817e80b3fcc
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: eb7a64d9ad5096af7eb900a6d29b682e950c1bed
+ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389449"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "29742377"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Criar e depurar suplementos do Office no Visual Studio
 
@@ -16,9 +16,9 @@ Este artigo descreve como usar o Visual Studio 2017 para criar um suplemento do 
 
 > [!NOTE]
 > O Visual Studio não suporta a criação de suplementos do Office para o OneNote ou o Project, mas você pode usar o [Yeoman gerador de suplementos do Office](https://github.com/OfficeDev/generator-office) para criar esses tipos de suplementos.
-> - Para começar a usar um suplemento do OneNote, confira o artigo [Crie seu primeiro suplemento do OneNote](../onenote/onenote-add-ins-getting-started.md).
+> - Para começar a usar um suplemento do OneNote, confira o artigo [Crie seu primeiro suplemento do OneNote](../quickstarts/onenote-quickstart.md).
 > 
-> - Para começar a usar um suplemento do Project, confira o artigo [Crie seu primeiro suplemento do Project](../project/project-add-ins-get-started.md).
+> - Para começar a usar um suplemento do Project, confira o artigo [Crie seu primeiro suplemento do Project](../quickstarts/project-quickstart.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 

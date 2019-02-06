@@ -2,13 +2,15 @@
 title: Tutorial de suplemento do Word
 description: Neste tutorial, voc? criar? um suplemento do Word que insere (e substitui) intervalos de texto, par?grafos, imagens, HTML, tabelas e controles de conte?do. Você também aprenderá como formatar texto e como inserir (e substituir) conteúdo nos controles de conteúdo.
 ms.date: 12/31/2018
+ms.prod: word
 ms.topic: tutorial
-ms.openlocfilehash: d1d278d1acd9e8a1377773b90ae9d528af69b93c
-ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 019329db156e63148a047466b9b3770128cb7fbf
+ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "27724935"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "29742398"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Tutorial: Criar Suplemento do Painel de Tarefas no Word
 

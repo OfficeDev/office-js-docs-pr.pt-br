@@ -2,13 +2,15 @@
 title: Tutorial de suplemento do PowerPoint
 description: Neste tutorial, você vai criar um suplemento do PowerPoint que insere imagem, texto, obtém metadados do slide e navega entre slides.
 ms.date: 12/31/2018
+ms.prod: powerpoint
 ms.topic: tutorial
-ms.openlocfilehash: b0b571dde171cd0693067e699a8554b9da676ccc
-ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 9f5e30929c0881c0216b7ca77fbfa4b989fabc6e
+ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "27724933"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "29742412"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>Tutorial: Criar um Suplemento do Painel de Tarefas
 
@@ -219,7 +221,7 @@ Conclua as seguintes etapas para adicionar o código que recupera a foto do dia 
 
 ### <a name="test-the-add-in"></a>Testar o suplemento
 
-1. Usando o Visual Studio, teste o suplemento do PowerPoint recém-criado ao pressionar **F5** ou escolha o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
+1. Usando o Visual Studio, teste o suplemento do PowerPoint recém-criado, pressionando **F5** ou escolhendo o botão **Iniciar** para abrir o PowerPoint com o botão de suplemento **Mostrar Painel de Tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
 
     ![Captura de tela do Visual Studio com o botão Iniciar realçado](../images/powerpoint-tutorial-start.png)
 
