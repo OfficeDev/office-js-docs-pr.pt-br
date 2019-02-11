@@ -3,12 +3,12 @@ title: Crie um Suplemento do Office com Node.js que use logon único
 description: ''
 ms.date: 12/07/2018
 localization_priority: Priority
-ms.openlocfilehash: 0e47b8a577e337a40542f38509b6da325df299ba
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: cf249e47709a325f22fc1fda49ee76b7a3357b4f
+ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29387335"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "29701929"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Crie um Suplemento do Office com Node.js que use logon único (prévia)
 
@@ -27,9 +27,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 * TypeScript, versão 2.2.2 ou posterior
 
-* Office 2016, versão 1708, build 8424.nnnn ou posterior (a versão de assinatura do Office 365, às vezes chamada de "Clique para Executar")
-
-  Talvez seja necessário ser um Office Insider para obter essa versão. Para saber mais, confira [Seja um Office Insider](https://products.office.com/office-insider?tab=tab-1).
+* Office 365 (versão de assinatura, também chamada "Clique para Executar"). Build e versão mensal mais recentes do canal de Participante do programa Office Insider. É necessário ingressar no programa Office Insider para obter essa versão. Para saber mais, confira a página [Seja um Office Insider](https://products.office.com/office-insider?tab=tab-1). Observe que, quando um build é promovido ao Canal Semestral de produção, o suporte para recursos de visualização, como o SSO, é desativado para esse build.
 
 ## <a name="set-up-the-starter-project"></a>Configure o projeto inicial
 
