@@ -3,12 +3,12 @@ title: Office.Context.Mailbox.item - requisito definir 1.7
 description: ''
 ms.date: 01/30/2019
 localization_priority: Normal
-ms.openlocfilehash: 6ac795d426cf80071d7b83d5e10714f4d3a6036b
-ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
+ms.openlocfilehash: e4bfbd9629913f775edff66f4592c220c4e5d580
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "29701887"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "29982052"
 ---
 # <a name="item"></a>item
 
@@ -51,7 +51,7 @@ O namespace `item` é usado para acessar a mensagem, a solicitação de reunião
 | [sender](#sender-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetails) | Membro |
 | [seriesId](#nullable-seriesid-string) | Membro |
 | [start](#start-datetimejavascriptapioutlook17officetime) | Membro |
-| [subject](#subject-stringsubjectjavascriptapioutlook17officesubject) | Membro |
+| [subject](#subject-stringsubjectjavascriptapioutlook17officesubject) | Member |
 | [to](#to-arrayemailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsrecipientsjavascriptapioutlook17officerecipients) | Membro |
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | Método |
 | [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | Método |
@@ -346,7 +346,7 @@ As propriedades `from` e [`sender`](#sender-emailaddressdetailsjavascriptapioutl
 A propriedade `from` retorna um objeto `EmailAddressDetails`.
 
 ```js
-var subject = Office.context.mailbox.item.from;
+var from = Office.context.mailbox.item.from;
 ```
 
 ##### <a name="compose-mode"></a>Modo de redação
@@ -1065,7 +1065,7 @@ No cliente do Outlook para área de trabalho, se a mensagem for uma resposta emb
 |Requisito|Valor|
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.3|
-|[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|Restrito|
+|[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|Restricted|
 |[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Escrever|
 
 #### <a name="displayreplyallformformdata"></a>displayReplyAllForm(formData)
@@ -1351,7 +1351,7 @@ Obtém uma matriz de todas as entidades do tipo de entidade especificado encontr
 |Requisito|Valor|
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
-|[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|Restrito|
+|[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|Restricted|
 |[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Read|
 
 ##### <a name="returns"></a>Retorna:

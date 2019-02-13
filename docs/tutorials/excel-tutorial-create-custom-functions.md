@@ -5,12 +5,12 @@ ms.date: 01/08/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 5ec99be6aec35ab659f5ddb6bdd270aa892a45eb
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 4ac735e6fc19f13859d07df6cb3d2443e6dfe2fd
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742426"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "29982017"
 ---
 # <a name="tutorial-create-custom-functions-in-excel-preview"></a>Tutorial: Criar funções personalizadas no Excel (visualização)
 
@@ -89,7 +89,7 @@ npm run start
 Esse comando inicia o servidor web e sideloads seu suplemento da função personalizada no Excel para Windows.
 
 > [!NOTE]
-> Se o suplemento não carregar, verifique se você concluiu a etapa 3 corretamente.
+> Se o suplemento não carregar, verifique se você concluiu a etapa 3 corretamente. Também é possível habilitar o **[log de tempo de execução](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** solucionar problemas com arquivo de manifesto XML do add-in, bem como qualquer problema de instalação ou tempo de execução. Gravações de log de tempo de execução `console.log` declarações para um arquivo de log para ajudá-lo a descobrir e corrigir problemas.
 
 # <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
@@ -316,6 +316,7 @@ A `stockPrice` função que você acabou de criar retorna o preço de uma ação
 <ol start="4">
 <li>Agora, vamos experimentar a nova função. Na célula <strong>C1</strong>, digite o texto <strong>= da CONTOSO. STOCKPRICESTREAM("msft")</strong> e pressione enter. Desde que o mercado de ações esteja aberto, você verá que o resultado na célula <strong>C1</strong> é constantemente atualizado para refletir o preço em tempo uma ação das ações da Microsoft.</li>
 </ol>
+
 
 ## <a name="next-steps"></a>Próximas etapas
 

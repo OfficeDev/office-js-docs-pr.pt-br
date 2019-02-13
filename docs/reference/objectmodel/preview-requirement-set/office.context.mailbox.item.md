@@ -3,12 +3,12 @@ title: Office.Context.Mailbox.item - conjunto de requisições de visualização
 description: ''
 ms.date: 01/30/2019
 localization_priority: Normal
-ms.openlocfilehash: 73495cfaceceec5da9c737f31f6ee96a7452dc3c
-ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
+ms.openlocfilehash: a660f8bafdd2587f97d704e42c47abbe6c7d533d
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "29701915"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "29982045"
 ---
 # <a name="item"></a>item
 
@@ -52,8 +52,8 @@ O namespace `item` é usado para acessar a mensagem, a solicitação de reunião
 | [requiredAttendees](#requiredattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipients) | Membro |
 | [sender](#sender-emailaddressdetailsjavascriptapioutlookofficeemailaddressdetails) | Membro |
 | [seriesId](#nullable-seriesid-string) | Member |
-| [start](#start-datetimejavascriptapioutlookofficetime) | Membro |
-| [subject](#subject-stringsubjectjavascriptapioutlookofficesubject) | Membro |
+| [start](#start-datetimejavascriptapioutlookofficetime) | Member |
+| [subject](#subject-stringsubjectjavascriptapioutlookofficesubject) | Member |
 | [to](#to-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipients) | Membro |
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | Método |
 | [addFileAttachmentFromBase64Async](#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback) | Método |
@@ -402,7 +402,7 @@ As propriedades `from` e [`sender`](#sender-emailaddressdetailsjavascriptapioutl
 A propriedade `from` retorna um objeto `EmailAddressDetails`.
 
 ```javascript
-var subject = Office.context.mailbox.item.from;
+var from = Office.context.mailbox.item.from;
 ```
 
 ##### <a name="compose-mode"></a>Modo de redação
@@ -1174,7 +1174,7 @@ No cliente do Outlook para área de trabalho, se a mensagem for uma resposta emb
 |Requisito|Valor|
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.3|
-|[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|Restrito|
+|[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|Restricted|
 |[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Escrever|
 
 #### <a name="displayreplyallformformdata"></a>displayReplyAllForm(formData)
@@ -1567,7 +1567,7 @@ Obtém uma matriz de todas as entidades do tipo de entidade especificado encontr
 |Requisito|Valor|
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
-|[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|Restrito|
+|[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|Restricted|
 |[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)|Read|
 
 ##### <a name="returns"></a>Retorna:
