@@ -3,12 +3,12 @@ ms.date: 01/30/2019
 description: Criar funções personalizadas no Excel usando JavaScript.
 title: Criar funções personalizadas no Excel (versão prévia)
 localization_priority: Priority
-ms.openlocfilehash: 7df07d7abda182c5b9413047f74a5cc31f7d4057
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 3359962f3419f35692829444ab835d3f5cdc915a
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742356"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "29982024"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Criar funções personalizadas no Excel (versão prévia)
 
@@ -423,14 +423,7 @@ function getComment(x) {
 
 ## <a name="known-issues"></a>Problemas conhecidos
 
-- As descrições de URLs e parâmetros de Ajuda ainda não são usadas pelo Excel.
-- Funções personalizadas não estão atualmente disponíveis no Excel para clientes móveis.
-- Funções voláteis (aquelas que recalculam automaticamente sempre que dados não relacionados são alterados na planilha) ainda não serão aceitas.
-- Implantação por meio do Portal de administração do Office 365 e AppSource ainda não estão habilitados.
-- Funções personalizadas no Excel Online podem deixar de funcionar durante uma sessão após um período de inatividade. Atualize a página do navegador (F5) e insira novamente uma função personalizada para restaurar o recurso.
-- Você pode ver o resultado temporário **# OBTENDO_DADOS** nas células de uma planilha, se você tiver vários suplementos em execução no Excel para Windows. Feche todas as janelas do Excel e reinicie o Excel.
-- Ferramentas de depuração especificas para funções personalizadas podem estar disponíveis no futuro. Enquanto isso, você pode depurar no Excel Online usando ferramentas de desenvolvedor F12. Ver mais detalhes em [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
-- Na versão de 32 bits do Office 365 para Insiders 1901 de *dezembro* (compilação 11128.20000), as funções personalizadas podem não funcionar corretamente. Em alguns casos, você pode solucionar esse erro baixando o arquivo em https://github.com/OfficeDev/Excel-Custom-Functions/blob/december-insiders-workaround/excel-udf-host.win32.bundle. Em seguida, copie a pasta “C:\ Arquivos de Programas (x86)\Microsoft Office\root\Office16”.
+Veja os problemas conhecidos no nosso [GitHub de funções do Excel personalizado repo](https://github.com/OfficeDev/Excel-Custom-Functions/issues). 
 
 ## <a name="see-also"></a>Confira também
 

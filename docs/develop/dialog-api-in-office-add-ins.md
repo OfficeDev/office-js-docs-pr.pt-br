@@ -1,14 +1,14 @@
 ---
 title: Use a API de Caixa de Diálogo em seus Suplementos do Office
 description: ''
-ms.date: 12/20/2018
+ms.date: 02/12/2019
 localization_priority: Priority
-ms.openlocfilehash: fa6524e36319d2031ab005c8dec2fc8b5c50d7cd
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: d53fa5ddbafae5afb0e925762f9d738b9b78c9b0
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386964"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "29982031"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Use a API de Caixa de Diálogo em seus Suplementos do Office
 
@@ -200,10 +200,6 @@ if (loginSuccess) {
 > - A implementação das funções `getProfile` e `getError` não é exibida. Cada uma delas obtém dados de um parâmetro de consulta ou do corpo da resposta HTTP.
 > - São enviados objetos anônimos de diferentes tipos se a entrada for bem-sucedida ou não. Ambos têm uma propriedade `messageType`, mas um tem uma propriedade `profile` e o outro tem uma propriedade `error`.
 
-Para ver exemplos que usam mensagens condicionais, confira
-- [Suplemento do Office que usa o serviço Auth0 para facilitar o login social](https://github.com/OfficeDev/Office-Add-in-Auth0)
-- [Suplemento do Office que usa o Serviço do OAuth.io para Simplificar o Acesso a Serviços Populares Online](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
-
 O código do manipulador na página host usa o valor da propriedade `messageType` para ramificar como no exemplo a seguir. A função `showUserName` é a mesma do exemplo anterior e a função `showNotification` exibe o erro na interface do usuário da página host.
 
 ```js
@@ -352,11 +348,6 @@ var clientID = localStorage.getItem("clientID");
 // var clientID = localStorage.clientID;
 ```
 
-Para ver exemplos de suplementos que usam o armazenamento local dessa forma, confira:
-
-- [Suplemento do Office que usa o serviço Auth0 para facilitar o login social](https://github.com/OfficeDev/Office-Add-in-Auth0)
-- [Suplemento do Office que usa o Serviço do OAuth.io para Simplificar o Acesso a Serviços Populares Online](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
-
 ### <a name="use-query-parameters"></a>Usar parâmetros de consulta
 
 O exemplo a seguir mostra como transmitir dados com um parâmetro de consulta:
@@ -417,8 +408,6 @@ Para ver suplementos de exemplo que usam esse padrão, consulte:
 
 Se seu suplemento oferece ao usuário uma variedade de opções de provedores, como a Conta da Microsoft, o Google ou o Facebook, você precisa de uma primeira página local (confira a seção anterior) que forneça uma interface de usuário para a escolha de um provedor. A escolha do provedor acionará a construção da URL de entrada e seu redirecionamento.
 
-Para ver um exemplo que usa esse padrão, confira [Suplemento do Office que usa o Serviço Auth0 para Facilitar o Login Social](https://github.com/OfficeDev/Office-Add-in-Auth0).
-
 #### <a name="authorization-of-the-add-in-to-an-external-resource"></a>Autorização do suplemento para um recurso externo
 
 Na Web moderna, os aplicativos Web são entidades de segurança, como os usuários, e o aplicativo tem sua própria identidade e permissões para recursos online, como o Office 365, Google Plus, Facebook ou LinkedIn. O aplicativo é registrado no provedor de recursos antes da implantação. O registro inclui:
@@ -435,7 +424,6 @@ Você pode usar as APIs de Caixa de Diálogo para gerenciar esse processo usando
 
 Os exemplos a seguir usam as APIs de caixa de diálogo para essa finalidade:
 - [Inserir gráficos do Excel usando o Microsoft Graph em um Suplemento do PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart): armazena o token de acesso em um banco de dados.
-- [Suplemento do Office que usa o serviço OAuth.io para simplificar o acesso a serviços online populares](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 Para mais informações sobre a autenticação e autorização em suplementos, consulte:
 - [Autorizar serviços externos no seu Suplemento do Office](auth-external-add-ins.md)

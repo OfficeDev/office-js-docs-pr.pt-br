@@ -1,14 +1,14 @@
 ---
 title: Autorizar serviços externos no seu suplemento do Office
 description: ''
-ms.date: 12/04/2017
+ms.date: 02/12/2019
 localization_priority: Priority
-ms.openlocfilehash: 4c045c28d62993db630c27553e8f52b8da5a0ee1
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 6420107f29fd285e52839cd737f19472194b835f
+ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388784"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "29981996"
 ---
 # <a name="authorize-external-services-in-your-office-add-in"></a>Autorizar serviços externos no seu suplemento do Office
 
@@ -16,7 +16,7 @@ Serviços online populares, incluindo o Office 365, o Google, o Facebook, o Link
 
 A estrutura padrão do setor para habilitar o acesso de aplicativos Web a um serviço online é **OAuth 2.0**. Na maioria das situações, você não precisa saber os detalhes de como a estrutura funciona para usá-la no seu suplemento. Estão disponíveis muitas bibliotecas que simplificam os detalhes para você.
 
-Uma ideia fundamental do OAuth é que um aplicativo pode ser uma entidade de segurança por si só, assim como um usuário ou um grupo, com sua própria identidade e conjunto de permissões. Nos cenários mais comuns, quando o usuário realiza uma ação no suplemento do Office que requer o serviço online, o suplemento envia ao serviço uma solicitação para um conjunto específico de permissões para a conta do usuário. Em seguida, o serviço solicita que o usuário conceda essas permissões ao suplemento. Após a concessão das permissões, o serviço envia ao suplemento um pequeno *token de acesso* codificado. O suplemento pode usar o serviço, incluindo o token, em todas as suas solicitações para as APIs do serviço. Porém, o suplemento só pode agir dentro das permissões concedidas a ele pelo usuário. O token também expira após um tempo especificado.
+Uma ideia fundamental do OAuth é que um aplicativo pode ser uma entidade de segurança por si só, assim como um usuário ou um grupo, com sua própria identidade e conjunto de permissões. Nos cenários mais comuns, quando o usuário realiza uma ação no Suplemento do Office que requer o serviço online, o suplemento envia ao serviço uma solicitação para um conjunto específico de permissões para a conta do usuário. Em seguida, o serviço solicita que o usuário conceda essas permissões ao suplemento. Após a concessão das permissões, o serviço envia ao suplemento um pequeno *token de acesso* codificado. O suplemento pode usar o serviço, incluindo o token, em todas as suas solicitações para as APIs do serviço. Porém, o suplemento só pode agir dentro das permissões concedidas a ele pelo usuário. O token também expira após um tempo especificado.
 
 Vários padrões OAuth, chamados de *fluxos* ou *tipos de concessão*, foram projetados para diferentes cenários. Os dois padrões a seguir são os mais comumente implementados:
 
@@ -66,13 +66,9 @@ As bibliotecas estão disponíveis para vários idiomas e plataformas, tanto par
 
 ## <a name="middleman-services"></a>Serviços intermediários
 
-Seu suplemento pode usar um serviço intermediário, como o OAuth.io ou o Auth0, para executar a autorização. O serviço intermediário fornece tokens de acesso para serviços online populares ou simplifica o processo de habilitar o logon social para esse suplemento. Com muito pouco código, o suplemento pode usar qualquer script no lado do cliente ou código no lado do servidor para se conectar ao serviço intermediário e enviar ao suplemento qualquer token necessário para o serviço online. Todo o código de implementação de autorização está no serviço intermediário.
+Seu suplemento pode usar um serviço intermediário, como o [OAuth.io](https://oauth.io) ou [Auth0](https://auth0.com), para executar a autorização. Um serviço intermediário fornece tokens de acesso para serviços online populares ou simplifica o processo de habilitar o logon social para esse suplemento. Com muito pouco código, o suplemento pode usar qualquer script no lado do cliente ou código no lado do servidor para se conectar ao serviço intermediário e enviar ao suplemento qualquer token necessário para o serviço online. Todo o código de implementação de autorização está no serviço intermediário. 
 
-Para obter exemplos de suplementos que usam um serviço intermediário para autorização, consulte as seguintes amostras:
-
-- [Office-Add-in-Auth0](https://github.com/OfficeDev/Office-Add-in-Auth0) usa o Auth0 para habilitar o login social com o Facebook, Google e contas da Microsoft.
-
-- [Office-Add-in-OAuth.io](https://github.com/OfficeDev/Office-Add-in-OAuth.io) usa o OAuth.io para obter tokens de acesso a partir do Facebook e Google.
+É recomendável que a interface do usuário de autenticação/autorização no suplemento usar nossos APIs de caixa de diálogo para abrir uma página de logon. Ver [usar as APIs REST de caixa de diálogo em um fluxo de autenticação](dialog-api-in-office-add-ins.md#use-the-dialog-apis-in-an-authentication-flow) para saber mais. Quando você abre uma caixa de diálogo do Office dessa forma, a caixa de diálogo tem uma instância totalmente nova e separada do navegador e mecanismo JavaScript da instância na página pai (por exemplo, painel de tarefas do suplemento ou FunctionFile). Um token e outras informações que podem ser convertidas em uma cadeia de caracteres é passado para o pai usando uma chamada de API `messageParent`. Página pai, em seguida, pode usar o token para fazer chamadas autorizadas ao recurso. Devido à arquitetura, tenha cuidado como usar as APIs REST fornecidas pelo serviço de intermediário. Muitas vezes o serviço fornecerá uma configuração API no qual o código cria algum tipo de objeto contexto que é um token e o utiliza para fazer chamadas subsequentes ao recurso. Muitas vezes o serviço fornece um método de API único que faz a chamada inicial *e* cria objeto contexto. Um objeto assim não pode ser stringificado completamente, para que não possam ser passado de caixa de diálogo Office para a página de pai. Normalmente, o serviço intermediário fornece um segundo conjunto de API um nível inferior de abstração, como uma API REST. Este segundo conjunto tem um API que recebe um token do serviço e outras APIs que passam o token para o serviço ao usa-lo para obter acesso autorizado ao recurso. Precisa trabalhar com uma API neste nível inferior de abstração para que você possa obter o token na caixa de diálogo do Office e, em seguida, usar `messageParent` para passar para a página de pai. 
 
 ## <a name="what-is-cors"></a>O que é CORS?
 
