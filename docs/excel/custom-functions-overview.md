@@ -3,12 +3,12 @@ ms.date: 01/30/2019
 description: Criar funções personalizadas no Excel usando JavaScript.
 title: Criar funções personalizadas no Excel (versão prévia)
 localization_priority: Priority
-ms.openlocfilehash: 3359962f3419f35692829444ab835d3f5cdc915a
-ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
+ms.openlocfilehash: 312a590052f1f78c8ff5477c8cfb85eb94f03aad
+ms.sourcegitcommit: 70ef38a290c18a1d1a380fd02b263470207a5dc6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "29982024"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "30052760"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Criar funções personalizadas no Excel (versão prévia)
 
@@ -145,7 +145,7 @@ A tabela a seguir lista as propriedades normalmente presentes no arquivo de meta
 | `description` | Descreve o que faz a função. Esse valor aparece como uma dica de ferramenta quando a função é o item selecionado no menu de preenchimento automático do Excel. |
 | `result`  | Objeto que define o tipo de informação que é retornada pela função do Excel. Para obter informações detalhadas sobre esse objeto, consulte [resultado](custom-functions-json.md#result). |
 | `parameters` | Matriz que define os parâmetros de entrada para a função. Para obter informações detalhadas sobre esse objeto, consulte [parâmetros](custom-functions-json.md#parameters). |
-| `options` | Permite que você personalize alguns aspectos de como e quando o Excel executa a função. Confira mais informações sobre como essa propriedade pode ser usada em [funções Streaming](#streaming-functions) e [Cancelar uma função](#canceling-a-function). |
+| `options` | Permite que você personalize alguns aspectos de como e quando o Excel executa a função. Confira mais informações sobre como essa propriedade pode ser usada em [funções de Streaming](#streaming-functions) e [cancelar uma função](#canceling-a-function). |
 
 ### <a name="manifest-file"></a>Arquivo de manifesto
 
@@ -288,6 +288,32 @@ Em algumas situações, talvez seja necessário cancelar a execução de uma fun
 
 Para habilitar o recurso cancelar uma função, implemente um identificador de cancelamento dentro da função JavaScript e especifique a propriedade `"cancelable": true` dentro do `options` objeto nos metadados JSON que descreve a função. Amostras de código na seção anterior neste artigo fornecem um exemplo dessas técnicas.
 
+## <a name="declaring-a-volatile-function"></a>Como declarar uma função volátil
+
+As [funções voláteis](https://docs.microsoft.com/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions) são funções nas quais o valor muda de momento a momento, mesmo que nenhum dos argumentos da função tenha mudado. Essas funções são recalculadas sempre que o Excel recalcular. Por exemplo, imagine uma célula que chame a função `NOW`. Toda vez que `NOW` for chamado, retornará automaticamente a data e a hora atuais.
+
+O Excel contém várias funções voláteis internas, como `RAND` e `TODAY`. Para ver uma lista mais completa de funções voláteis do Excel, confira [Funções voláteis e não voláteis](https://docs.microsoft.com/pt-BR/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).
+
+As funções personalizadas permitem que você crie suas próprias funções voláteis, que podem ser úteis ao lidar com datas, horas, números aleatórios e modelagem. Por exemplo, as simulações de Monte Carlo exigem a geração de entradas aleatórias para determinar uma solução ideal.
+
+Para declarar uma função volátil, adicione `"volatile": true` no objeto `options` para a função no arquivo JSON de metadados, como mostra o exemplo a seguir. Observe que uma função não pode ser marcada como `"streaming": true` e `"volatile": true`; em casos em que ambas estejam marcadas com `true`, a opção volátil será ignorada.
+
+```json
+{
+ "id": "TOMORROW",
+  "name": "TOMORROW",
+  "description":  "Returns tomorrow’s date",
+  "helpUrl": "http://www.contoso.com",
+  "result": {
+      "type": "string",
+      "dimensionality": "scalar"
+  },
+  "options": {
+      "volatile": true
+  }
+}
+```
+
 ## <a name="saving-and-sharing-state"></a>Salvar e compartilhar estado
 
 Funções personalizadas podem salvar os dados em variáveis, que podem ser usadas em chamadas subsequentes. O estado salvo é útil quando os usuários solicitam a mesma função personalizada usando mais de uma célula, porque todas as ocorrências da função podem acessar o estado. Por exemplo, você pode salvar os dados retornados de uma chamada para um recurso da Web para evitar fazer chamadas adicionais para o mesmo recurso da Web.
@@ -331,6 +357,11 @@ function refreshTemperature(thermometerID){
   }, 1000); // Wait 1 second before reading the thermometer again, and then update the saved temperature of thermometerID.
 }
 ```
+
+## <a name="co-authoring"></a>Coautoria
+Excel Online e o Excel para Windows com uma assinatura do Office 365 permitem coautoria em documentos e esse recurso funciona com funções personalizadas. Se sua pasta de trabalho usa uma função personalizada, seu colega será solicitado a carregar o suplemento da função personalizada. Quando vocês carregaram o suplemento, a função personalizada compartilhará resultados por meio de coautoria.
+
+Confira mais informações sobre a coautoria, consulte [sobre a coautoria no Excel](https://docs.microsoft.com/pt-BR/office/vba/excel/concepts/about-coauthoring-in-excel).
 
 ## <a name="working-with-ranges-of-data"></a>Trabalhar com intervalos de dados
 

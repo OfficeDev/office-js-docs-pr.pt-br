@@ -1,14 +1,14 @@
 ---
 title: Use a API de Caixa de Diálogo em seus Suplementos do Office
 description: ''
-ms.date: 02/12/2019
+ms.date: 02/13/2019
 localization_priority: Priority
-ms.openlocfilehash: d53fa5ddbafae5afb0e925762f9d738b9b78c9b0
-ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
+ms.openlocfilehash: 81154f039a87973e222188d894d5e4289d0bf647
+ms.sourcegitcommit: 70ef38a290c18a1d1a380fd02b263470207a5dc6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "29982031"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "30052767"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Use a API de Caixa de Diálogo em seus Suplementos do Office
 
@@ -399,10 +399,9 @@ O que vem a seguir é um fluxo de autenticação simples e típico:
 3. Quando a página redirectPage.html é aberta, ela chama `messageParent` para relatar o êxito ou falha na página host e opcionalmente também informar dados do usuário ou dados de erro.
 4. O evento `DialogMessageReceived` é acionado na página host e seu manipulador fecha a janela de diálogo e, opcionalmente, faz outro processamento da mensagem.
 
-Para ver suplementos de exemplo que usam esse padrão, consulte:
+Para exemplo de suplemento que usa esse padrão, confira:
 
 - [Inserir gráficos do Excel usando o Microsoft Graph em um suplemento do PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart): o recurso que abre inicialmente na janela de diálogo é um método do controlador que não tem seu próprio modo de exibição. Ele redireciona para a página de entrada do Office 365.
-- [Autenticação de Cliente do Office 365 de Suplementos do Office para AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth): o recurso que abre inicialmente na janela da caixa de diálogo é uma página.
 
 #### <a name="support-multiple-identity-providers"></a>Prestar suporte a vários provedores de identidade
 
