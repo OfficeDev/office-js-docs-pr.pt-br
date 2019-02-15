@@ -3,12 +3,12 @@ title: Carregar o ambiente de tempo de execução e DOM
 description: ''
 ms.date: 01/09/2019
 localization_priority: Priority
-ms.openlocfilehash: ce56518759740e20f2643bb675274602b3d968a4
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: c569825ae73d32259fc1554aa8233461bbbe9813
+ms.sourcegitcommit: 70ef38a290c18a1d1a380fd02b263470207a5dc6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389225"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "30052746"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>Carregar o ambiente de tempo de execução e DOM
 
@@ -70,7 +70,7 @@ Os eventos a seguir ocorrem quando um suplemento Outlook é iniciado:
 
 ## <a name="checking-the-load-status"></a>Verificar o status de carregamento
 
-Uma maneira de verificar se o ambiente de tempo de execução e o DOM concluíram o carregamento é usar a função [.ready()](http://api.jquery.com/ready/) do jQuery: `$(document).ready()`. Por exemplo, o manipulador de eventos **onReady** garante que o DOM seja carregado antes do código específico para inicializar as execuções de suplementos. Subsequentemente, o manipulador de eventos **onReady** prossegue e usa a propriedade [mailbox.item](https://docs.microsoft.com/javascript/api/outlook/office.mailbox?view=office-js) para obter o item selecionado atual no Outlook, e chama a função principal do suplemento, `initDialer`.
+Uma maneira de verificar se o ambiente de tempo de execução e o DOM concluíram o carregamento é usar a função [.ready()](https://api.jquery.com/ready/) do jQuery: `$(document).ready()`. Por exemplo, o manipulador de eventos **onReady** garante que o DOM seja carregado antes do código específico para inicializar as execuções de suplementos. Subsequentemente, o manipulador de eventos **onReady** prossegue e usa a propriedade [mailbox.item](https://docs.microsoft.com/javascript/api/outlook/office.mailbox) para obter o item selecionado atual no Outlook, e chama a função principal do suplemento, `initDialer`.
 
 ```js
 Office.onReady()
