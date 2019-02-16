@@ -1,13 +1,14 @@
 ---
 title: 'Namespace do Office: conjunto de requisitos da versão 1.4'
 description: ''
-ms.date: 11/08/2018
-ms.openlocfilehash: f447c3c46db553c0a6d4ba8bf2d4e108848c3f4d
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+ms.date: 02/15/2019
+localization_priority: Normal
+ms.openlocfilehash: af5e05e2243c0132018bc4eba7006f9a5aad4099
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457681"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30067948"
 ---
 # <a name="office"></a>Office
 
@@ -18,13 +19,13 @@ O namespace do Office fornece interfaces compartilhadas que são usadas pelos su
 |Requisito| Valor|
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ### <a name="namespaces"></a>Namespaces
 
 [context](Office.context.md): fornece interfaces compartilhadas do namespace de contexto da API de Suplementos do Office para uso na API de suplemento do Outlook.
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmenttype): inclui as enumerações ItemType, EntityType, AttachmentType, RecipientType, ResponseType e ItemNotificationMessageType.
+[MailboxEnums](/javascript/api/outlook_1_4/office.mailboxenums.attachmenttype): inclui as enumerações ItemType, EntityType, AttachmentType, RecipientType, ResponseType e ItemNotificationMessageType.
 
 ### <a name="members"></a>Membros
 
@@ -32,7 +33,7 @@ O namespace do Office fornece interfaces compartilhadas que são usadas pelos su
 
 Especifica o resultado de uma chamada assíncrona.
 
-##### <a name="type"></a>Tipo:
+##### <a name="type"></a>Tipo
 
 *   Cadeia de caracteres
 
@@ -49,11 +50,12 @@ Especifica o resultado de uma chamada assíncrona.
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
+
 ####  <a name="coerciontype-string"></a>CoercionType :String
 
 Especifica como forçar os dados retornados ou definir de acordo com o método chamado.
 
-##### <a name="type"></a>Tipo:
+##### <a name="type"></a>Tipo
 
 *   Cadeia de caracteres
 
@@ -70,11 +72,12 @@ Especifica como forçar os dados retornados ou definir de acordo com o método c
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
+
 ####  <a name="sourceproperty-string"></a>SourceProperty :String
 
 Especifica a origem dos dados retornados pelo método chamado.
 
-##### <a name="type"></a>Tipo:
+##### <a name="type"></a>Tipo
 
 *   Cadeia de caracteres
 

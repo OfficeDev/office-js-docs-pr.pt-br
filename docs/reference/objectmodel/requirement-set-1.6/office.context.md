@@ -1,13 +1,14 @@
 ---
 title: Office.context – conjunto de requisitos 1.6
 description: ''
-ms.date: 10/11/2018
-ms.openlocfilehash: 7e883111d7466fd0627915719d209fe3d549963a
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+ms.date: 02/15/2019
+localization_priority: Normal
+ms.openlocfilehash: 2fc488508a39cd7420aa661801424ed964ba0d3c
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457807"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30068032"
 ---
 # <a name="context"></a>context
 
@@ -20,7 +21,7 @@ O namespace Office.context fornece interfaces compartilhadas que são usadas pel
 |Requisito| Valor|
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="members-and-methods"></a>Membros e métodos
 
@@ -42,7 +43,7 @@ Obtém a localidade (idioma) no formato de marca de idioma RFC 1766 especificado
 
 O valor `displayLanguage` reflete a configuração atual de **Display Language** especificada com **Arquivo > Opções > Idioma** no aplicativo host do Office.
 
-##### <a name="type"></a>Tipo:
+##### <a name="type"></a>Tipo
 
 *   Cadeia de caracteres
 
@@ -51,11 +52,11 @@ O valor `displayLanguage` reflete a configuração atual de **Display Language**
 |Requisito| Valor|
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
-```js
+```javascript
 function sayHelloWithDisplayLanguage() {
   var myDisplayLanguage = Office.context.displayLanguage;
   switch (myDisplayLanguage) {
@@ -67,6 +68,7 @@ function sayHelloWithDisplayLanguage() {
       break;
   }
 }
+
 // Function that writes to a div with id='message' on the page.
 function write(message){
   document.getElementById('message').innerText += message;
@@ -82,7 +84,7 @@ Fornece acesso às propriedades de cores de temas do Office.
 
 Usar as cores de tema do Office possibilita coordenar o esquema de cores de seu suplemento com o tema do Office atualmente selecionado pelo usuário em **Arquivo > Conta do Office > Tema da interface de usuário do Office **, que é aplicado a todos os aplicativos host do Office. Usar cores de temas do Office é apropriado suplementos de email e painéis de tarefas.
 
-##### <a name="type"></a>Tipo:
+##### <a name="type"></a>Tipo
 
 *   Objeto
 
@@ -100,11 +102,11 @@ Usar as cores de tema do Office possibilita coordenar o esquema de cores de seu 
 |Requisito| Valor|
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
-```js
+```javascript
 function applyOfficeTheme(){
   // Get office theme colors.
   var bodyBackgroundColor = Office.context.officeTheme.bodyBackgroundColor;
@@ -123,7 +125,7 @@ Obtém um objeto que representa as configurações personalizadas ou o estado de
 
 O objeto `RoamingSettings` permite armazenar e acessar os dados de um suplemento de email que está armazenado na caixa de correio do usuário, para que fiquem disponíveis para esse suplemento quando ele for executado em qualquer aplicativo host de cliente usado para acessar essa caixa de correio.
 
-##### <a name="type"></a>Tipo:
+##### <a name="type"></a>Tipo
 
 *   [RoamingSettings](/javascript/api/outlook_1_6/office.RoamingSettings)
 

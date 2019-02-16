@@ -1,13 +1,14 @@
 ---
 title: 'Office.context.mailbox: conjunto de requisitos da versão 1.3'
 description: ''
-ms.date: 10/31/2018
-ms.openlocfilehash: eb4a69b6119644f288f90a80b161911ab4311339
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 02/15/2019
+localization_priority: Normal
+ms.openlocfilehash: edf9bcaa842660007bea85b497308aa7949f8085
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433352"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30068221"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -21,7 +22,7 @@ Fornece acesso ao modelo de objeto de suplemento do Outlook para o Microsoft Out
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restrito|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ### <a name="namespaces"></a>Namespaces
 
@@ -46,7 +47,7 @@ Seu aplicativo deve ter a permissão **ReadItem** especificada em seu manifesto 
 
 No modo de composição, é preciso chamar o método [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) antes de poder usar o membro `ewsUrl`. Seu aplicativo deve ter permissões **ReadWriteItem** para chamar o método `saveAsync`.
 
-##### <a name="type"></a>Tipo:
+##### <a name="type"></a>Tipo
 
 *   Cadeia de caracteres
 
@@ -69,7 +70,7 @@ Converte uma ID de item formatada para REST no formato EWS.
 
 IDs de itens recuperadas por meio de uma API REST (como a [API do Email do Outlook](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) ou o [Microsoft Graph](https://graph.microsoft.io/)) usam um formato diferente daquele usado pelos Serviços Web do Exchange (EWS). O método `convertToEwsId` converte uma ID formatada como REST para o formato adequado para EWS.
 
-##### <a name="parameters"></a>Parâmetros:
+##### <a name="parameters"></a>Parâmetros
 
 |Nome| Tipo| Descrição|
 |---|---|---|
@@ -90,12 +91,11 @@ Tipo: String
 
 ##### <a name="example"></a>Exemplo
 
-```js
-// Get an item's ID from a REST API
+```javascript
+// Get an item's ID from a REST API.
 var restId = 'AAMkAGVlOTZjNTM3LW...';
 
-// Treat restId as coming from the v2.0 version of the
-// Outlook Mail API
+// Treat restId as coming from the v2.0 version of the Outlook Mail API.
 var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
@@ -107,11 +107,11 @@ As datas e horas usadas por um aplicativo de email para o Outlook ou o Outlook W
 
 Se o aplicativo de email estiver sendo executado no Outlook, o método `convertToLocalClientTime` retornará um objeto de dicionário com os valores definidos para o fuso horário do computador do cliente. Se o aplicativo de email estiver sendo executado no Outlook Web App, o método `convertToLocalClientTime` retornará um objeto de dicionário com os valores definidos para o fuso horário especificado no EAC.
 
-##### <a name="parameters"></a>Parâmetros:
+##### <a name="parameters"></a>Parâmetros
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`timeValue`| Date|Um objeto Date|
+|`timeValue`| Data|Um objeto Date|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -134,7 +134,7 @@ Converte uma ID de item formatada para EWS no formato REST.
 
 IDs de itens recuperadas por EWS ou pela propriedade `itemId` usam um formato diferente daquele usado por APIs REST (como a [API do Email do Outlook](https://docs.microsoft.com/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations) ou o [Microsoft Graph](https://graph.microsoft.io/)). O método `convertToRestId` converte uma ID formatada como EWS para o formato adequado para REST.
 
-##### <a name="parameters"></a>Parâmetros:
+##### <a name="parameters"></a>Parâmetros
 
 |Nome| Tipo| Descrição|
 |---|---|---|
@@ -155,12 +155,11 @@ Tipo: String
 
 ##### <a name="example"></a>Exemplo
 
-```js
-// Get the currently selected item's ID
+```javascript
+// Get the currently selected item's ID.
 var ewsId = Office.context.mailbox.item.itemId;
 
-// Convert to a REST ID for the v2.0 version of the
-// Outlook Mail API
+// Convert to a REST ID for the v2.0 version of the Outlook Mail API.
 var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
@@ -170,7 +169,7 @@ Obtém um objeto Date de um dicionário contendo as informações de hora.
 
 O método `convertToUtcClientTime` converte um dicionário que contém uma data e hora locais para um objeto Date com os valores corretos para a data e hora locais.
 
-##### <a name="parameters"></a>Parâmetros:
+##### <a name="parameters"></a>Parâmetros
 
 |Nome| Tipo| Descrição|
 |---|---|---|
@@ -211,11 +210,11 @@ No Outlook Web App, este método abre o formulário especificado somente se o co
 
 Se o identificador do item especificado não identificar um compromisso existente, um painel em branco abre no dispositivo ou no computador cliente e nenhuma mensagem de erro será exibida.
 
-##### <a name="parameters"></a>Parâmetros:
+##### <a name="parameters"></a>Parâmetros
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`itemId`| String|O identificador dos Serviços Web do Exchange (EWS) para um compromisso de calendário existente.|
+|`itemId`| Cadeia de caracteres|O identificador dos Serviços Web do Exchange (EWS) para um compromisso de calendário existente.|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -223,11 +222,11 @@ Se o identificador do item especificado não identificar um compromisso existent
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
-```js
+```javascript
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
 
@@ -246,11 +245,11 @@ Se o identificador do item especificado não identificar uma mensagem existente,
 
 Não use o método `displayMessageForm` com um `itemId` que representa um compromisso. Use o método `displayAppointmentForm` para exibir um compromisso existente e `displayNewAppointmentForm` para exibir um formulário e criar um novo compromisso.
 
-##### <a name="parameters"></a>Parâmetros:
+##### <a name="parameters"></a>Parâmetros
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`itemId`| String|O identificador dos Serviços Web do Exchange (EWS) para uma mensagem existente.|
+|`itemId`| Cadeia de caracteres|O identificador dos Serviços Web do Exchange (EWS) para uma mensagem existente.|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -258,11 +257,11 @@ Não use o método `displayMessageForm` com um `itemId` que representa um compro
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
-```js
+```javascript
 Office.context.mailbox.displayMessageForm(messageId);
 ```
 
@@ -281,11 +280,11 @@ No cliente avançado do Outlook e no Outlook RT, se você especificar quaisquer 
 
 Se qualquer dos parâmetros exceder os limites de tamanho especificados, ou se um nome de parâmetro desconhecido for especificado, ocorre uma exceção.
 
-##### <a name="parameters"></a>Parâmetros:
+##### <a name="parameters"></a>Parâmetros
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-| `parameters` | Object | Um dicionário de parâmetros que descreve o novo compromisso. |
+| `parameters` | Objeto | Um dicionário de parâmetros que descreve o novo compromisso. |
 | `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_3/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email ou uma matriz contendo um objeto `EmailAddressDetails` para cada um dos participantes obrigatórios do compromisso. A matriz está limitada a um máximo de 100 entradas. |
 | `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_3/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email ou uma matriz contendo um objeto `EmailAddressDetails` para cada um dos participantes opcionais do compromisso. A matriz está limitada a um máximo de 100 entradas. |
 | `parameters.start` | Data | Um objeto `Date` que especifica a data e a hora de início do compromisso. |
@@ -305,7 +304,7 @@ Se qualquer dos parâmetros exceder os limites de tamanho especificados, ou se u
 
 ##### <a name="example"></a>Exemplo
 
-```js
+```javascript
 var start = new Date();
 var end = new Date();
 end.setHours(start.getHours() + 1);
@@ -335,7 +334,7 @@ Seu aplicativo deve ter a permissão **ReadItem** especificada em seu manifesto 
 
 No modo de composição, você deve chamar o método [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) para obter um identificador de item para passar ao método `getCallbackTokenAsync`. Seu aplicativo deve ter permissões **ReadWriteItem** para chamar o método `saveAsync`.
 
-##### <a name="parameters"></a>Parâmetros:
+##### <a name="parameters"></a>Parâmetros
 
 |Nome| Tipo| Atributos| Descrição|
 |---|---|---|---|
@@ -352,7 +351,7 @@ No modo de composição, você deve chamar o método [`saveAsync`](Office.contex
 
 ##### <a name="example"></a>Exemplo
 
-```js
+```javascript
 function getCallbackToken() {
   Office.context.mailbox.getCallbackTokenAsync(cb);
 }
@@ -368,7 +367,7 @@ Obtém um símbolo que identifica o usuário e o suplemento do Office.
 
 O método `getUserIdentityTokenAsync` retorna um token que pode ser utilizado para identificar e [autenticar o suplemento e o usuário com um sistema de terceiros](https://docs.microsoft.com/outlook/add-ins/authentication).
 
-##### <a name="parameters"></a>Parâmetros:
+##### <a name="parameters"></a>Parâmetros
 
 |Nome| Tipo| Atributos| Descrição|
 |---|---|---|---|
@@ -381,11 +380,11 @@ O método `getUserIdentityTokenAsync` retorna um token que pode ser utilizado pa
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
-```js
+```javascript
 function getIdentityToken() {
   Office.context.mailbox.getUserIdentityTokenAsync(cb);
 }
@@ -431,7 +430,7 @@ Ao usar o método `makeEwsRequestAsync` nos aplicativos de email em execução e
 
 Não é necessário definir o valor de codificação quando o aplicativo de email estiver em execução no Outlook na Web. Você pode determinar se o aplicativo de email está em execução no Outlook ou no Outlook na Web usando a propriedade mailbox.diagnostics.hostName. Você pode determinar que versão do Outlook está em execução usando a propriedade mailbox.diagnostics.hostVersion.
 
-##### <a name="parameters"></a>Parâmetros:
+##### <a name="parameters"></a>Parâmetros
 
 |Nome| Tipo| Atributos| Descrição|
 |---|---|---|---|
@@ -445,16 +444,16 @@ Não é necessário definir o valor de codificação quando o aplicativo de emai
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadWriteMailbox|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
 O exemplo a seguir chama `makeEwsRequestAsync` para usar a operação `GetItem` para obter o assunto de um item.
 
-```js
+```javascript
 function getSubjectRequest(id) {
-   // Return a GetItem operation request for the subject of the specified item.
-   var request =
+  // Return a GetItem operation request for the subject of the specified item.
+  var request =
     '<?xml version="1.0" encoding="utf-8"?>' +
     '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"' +
     '               xmlns:xsd="http://www.w3.org/2001/XMLSchema"' +
@@ -476,19 +475,19 @@ function getSubjectRequest(id) {
     '  </soap:Body>' +
     '</soap:Envelope>';
 
-   return request;
+  return request;
 }
 
 function sendRequest() {
-   // Create a local variable that contains the mailbox.
-   Office.context.mailbox.makeEwsRequestAsync(
+  // Create a local variable that contains the mailbox.
+  Office.context.mailbox.makeEwsRequestAsync(
     getSubjectRequest(mailbox.item.itemId), callback);
 }
 
 function callback(asyncResult)  {
-   var result = asyncResult.value;
-   var context = asyncResult.asyncContext;
+  var result = asyncResult.value;
+  var context = asyncResult.asyncContext;
 
-   // Process the returned response here.
+  // Process the returned response here.
 }
 ```

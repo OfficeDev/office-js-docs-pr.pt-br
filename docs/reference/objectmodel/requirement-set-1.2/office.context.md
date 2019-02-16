@@ -1,13 +1,14 @@
 ---
 title: Office.context – conjunto de requisitos 1.2
 description: ''
-ms.date: 10/11/2018
-ms.openlocfilehash: 0797c0fed68709de006c03d817437493f35023d3
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+ms.date: 02/15/2019
+localization_priority: Normal
+ms.openlocfilehash: 8e8d83500e1cb9de730f6a7bac75c3bcc0012b4e
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457513"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30068130"
 ---
 # <a name="context"></a>context
 
@@ -21,7 +22,7 @@ O namespace Office.context fornece interfaces compartilhadas que são usadas pel
 |Requisito| Valor|
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ### <a name="namespaces"></a>Namespaces
 
@@ -35,7 +36,7 @@ Obtém a localidade (idioma) no formato de marca de idioma RFC 1766 especificado
 
 O valor `displayLanguage` reflete a configuração atual de **Display Language** especificada com **Arquivo > Opções > Idioma** no aplicativo host do Office.
 
-##### <a name="type"></a>Tipo:
+##### <a name="type"></a>Tipo
 
 *   Cadeia de caracteres
 
@@ -44,11 +45,11 @@ O valor `displayLanguage` reflete a configuração atual de **Display Language**
 |Requisito| Valor|
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
-```js
+```javascript
 function sayHelloWithDisplayLanguage() {
   var myDisplayLanguage = Office.context.displayLanguage;
   switch (myDisplayLanguage) {
@@ -60,6 +61,7 @@ function sayHelloWithDisplayLanguage() {
       break;
   }
 }
+
 // Function that writes to a div with id='message' on the page.
 function write(message){
   document.getElementById('message').innerText += message;
@@ -72,7 +74,7 @@ Obtém um objeto que representa as configurações personalizadas ou o estado de
 
 O objeto `RoamingSettings` permite armazenar e acessar os dados de um suplemento de email que está armazenado na caixa de correio do usuário, para que fiquem disponíveis para esse suplemento quando ele for executado em qualquer aplicativo host de cliente usado para acessar essa caixa de correio.
 
-##### <a name="type"></a>Tipo:
+##### <a name="type"></a>Tipo
 
 *   [RoamingSettings](/javascript/api/outlook_1_2/office.RoamingSettings)
 

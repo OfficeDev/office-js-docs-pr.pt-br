@@ -1,13 +1,14 @@
 ---
 title: 'Namespace do Office: conjunto de requisitos da versão 1.7'
 description: ''
-ms.date: 11/08/2018
-ms.openlocfilehash: 6afaca31dd941b9c6a4b23fa08018de51278cbbd
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+ms.date: 02/15/2019
+localization_priority: Normal
+ms.openlocfilehash: d6422e470864d5a02db37e1fef295e8cbb82a213
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457737"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30067892"
 ---
 # <a name="office"></a>Office
 
@@ -18,7 +19,7 @@ O namespace do Office fornece interfaces compartilhadas que são usadas pelos su
 |Requisito| Valor|
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="members-and-methods"></a>Membros e métodos
 
@@ -41,9 +42,9 @@ O namespace do Office fornece interfaces compartilhadas que são usadas pelos su
 
 Especifica o resultado de uma chamada assíncrona.
 
-##### <a name="type"></a>Tipo:
+##### <a name="type"></a>Tipo
 
-*   Cadeia de caracteres
+*   String
 
 ##### <a name="properties"></a>Propriedades:
 
@@ -65,9 +66,9 @@ Especifica o resultado de uma chamada assíncrona.
 
 Especifica como forçar os dados retornados ou definir de acordo com o método chamado.
 
-##### <a name="type"></a>Tipo:
+##### <a name="type"></a>Tipo
 
-*   Cadeia de caracteres
+*   String
 
 ##### <a name="properties"></a>Propriedades:
 
@@ -89,16 +90,16 @@ Especifica como forçar os dados retornados ou definir de acordo com o método c
 
 Especifica o evento associado a um manipulador de eventos.
 
-##### <a name="type"></a>Tipo:
+##### <a name="type"></a>Tipo
 
-*   Cadeia de caracteres
+*   String
 
 ##### <a name="properties"></a>Propriedades:
 
 | Nome | Tipo | Descrição | Conjunto de requisitos mínimos |
 |---|---|---|---|
-|`AppointmentTimeChanged`| Cadeia de caracteres | A data ou hora da série ou do compromisso selecionado foi alterada. | 1.7 |
-|`ItemChanged`| Cadeia de caracteres | Um item diferente do Outlook está marcado para exibição enquanto o painel de tarefas está fixado. | 1.5 |
+|`AppointmentTimeChanged`| String | A data ou hora da série ou do compromisso selecionado foi alterada. | 1.7 |
+|`ItemChanged`| String | Um item diferente do Outlook está marcado para exibição enquanto o painel de tarefas está fixado. | 1,5 |
 |`RecipientsChanged`| Cadeia de caracteres | A lista de destinatários do item selecionado ou o local do compromisso foi alterado. | 1.7 |
 |`RecurrenceChanged`| Cadeia de caracteres | O padrão de recorrência da série selecionada foi alterado. | 1.7 |
 
@@ -115,9 +116,9 @@ Especifica o evento associado a um manipulador de eventos.
 
 Especifica a origem dos dados retornados pelo método chamado.
 
-##### <a name="type"></a>Tipo:
+##### <a name="type"></a>Tipo
 
-*   Cadeia de caracteres
+*   String
 
 ##### <a name="properties"></a>Propriedades:
 

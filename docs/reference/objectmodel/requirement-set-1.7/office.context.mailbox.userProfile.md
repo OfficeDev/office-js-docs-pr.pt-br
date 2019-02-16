@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox.userProfile – conjunto de requisitos 1.7
 description: ''
-ms.date: 10/31/2018
+ms.date: 02/15/2019
 localization_priority: Normal
-ms.openlocfilehash: b07ff5bee3adc18cc1006bb574e373182b29f5fe
-ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
+ms.openlocfilehash: fb55d11fd46a9957dab124514ef3bfe5a7c138eb
+ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "29635899"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "30067864"
 ---
 # <a name="userprofile"></a>userProfile
 
@@ -27,7 +27,7 @@ ms.locfileid: "29635899"
 | Membro | Type |
 |--------|------|
 | [accountType](#accounttype-string) | Member |
-| [displayName](#displayname-string) | Member |
+| [displayName](#displayname-string) | Membro |
 | [emailAddress](#emailaddress-string) | Membro |
 | [timeZone](#timezone-string) | Membro |
 
@@ -36,7 +36,7 @@ ms.locfileid: "29635899"
 ####  <a name="accounttype-string"></a>accountType :String
 
 > [!NOTE]
-> Este membro é atualmente com suporte apenas 2016 do Outlook para Mac (build 16.9.1212 ou posterior).
+> Atualmente, esse membro só tem suporte no Outlook 2016 para Mac (Build 16.9.1212 ou posterior).
 
 Obtém o tipo de conta do usuário associado à caixa de correio. Os valores possíveis são listados na tabela a seguir.
 
@@ -47,7 +47,7 @@ Obtém o tipo de conta do usuário associado à caixa de correio. Os valores pos
 | `office365` | A caixa de correio está associada a uma conta corporativa ou de estudante do Office 365. |
 | `outlookCom` | A caixa de correio está associada a uma conta pessoal do Outlook.com. |
 
-##### <a name="type"></a>Tipo:
+##### <a name="type"></a>Tipo
 
 *   Cadeia de caracteres
 
@@ -57,11 +57,11 @@ Obtém o tipo de conta do usuário associado à caixa de correio. Os valores pos
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.6 |
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
-```js
+```javascript
 console.log(Office.context.mailbox.userProfile.accountType);
 ```
 
@@ -69,7 +69,7 @@ console.log(Office.context.mailbox.userProfile.accountType);
 
 Obtém o nome de exibição do usuário.
 
-##### <a name="type"></a>Tipo:
+##### <a name="type"></a>Tipo
 
 *   Cadeia de caracteres
 
@@ -79,11 +79,11 @@ Obtém o nome de exibição do usuário.
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
-```js
+```javascript
 // Example: Allie Bellew
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
@@ -92,7 +92,7 @@ console.log(Office.context.mailbox.userProfile.displayName);
 
 Obtém o endereço de email SMTP do usuário.
 
-##### <a name="type"></a>Tipo:
+##### <a name="type"></a>Tipo
 
 *   Cadeia de caracteres
 
@@ -102,11 +102,11 @@ Obtém o endereço de email SMTP do usuário.
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
-```js
+```javascript
 // Example: allieb@contoso.com
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
@@ -115,7 +115,7 @@ console.log(Office.context.mailbox.userProfile.emailAddress);
 
 Obtém o fuso horário padrão do usuário.
 
-##### <a name="type"></a>Tipo:
+##### <a name="type"></a>Tipo
 
 *   Cadeia de caracteres
 
@@ -125,11 +125,11 @@ Obtém o fuso horário padrão do usuário.
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Composição ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
 
 ##### <a name="example"></a>Exemplo
 
-```js
+```javascript
 // Example: Pacific Standard Time
 console.log(Office.context.mailbox.userProfile.timeZone);
 ```
