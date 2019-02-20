@@ -1,14 +1,14 @@
 ---
 title: Trabalhe com planilhas usando a API JavaScript do Excel
 description: ''
-ms.date: 12/28/2018
+ms.date: 02/15/2018
 localization_priority: Priority
-ms.openlocfilehash: 62f64beaefcc938f91ee581594922b2c965f2655
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 6d34807b1511573c507d43dad678811c5c1592ec
+ms.sourcegitcommit: 03773fef3d2a380028ba0804739d2241d4b320e5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389526"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "30091243"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Trabalhe com planilhas usando a API JavaScript do Excel
 
@@ -188,6 +188,9 @@ Excel.run(function (context) {
         });
 }).catch(errorHandlerFunction);
 ```
+
+> [!NOTE]
+> Uma planilha com visibilidade de "[Muito oculta](/javascript/api/excel/excel.sheetvisibility)" não pode ser excluída com o método `delete`. Se você quiser excluir a planilha de qualquer forma, deverá primeiro alterar a visibilidade.
 
 ## <a name="rename-a-worksheet"></a>Renomear uma planilha
 
