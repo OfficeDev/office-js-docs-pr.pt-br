@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos da API de Identidade
 description: ''
-ms.date: 10/09/2018
+ms.date: 02/18/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 8db095c54322f04781b7dfa7bfadd857800678e3
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: e0a04f084deb0b366600b4f2597658d1f54ab7f5
+ms.sourcegitcommit: 03773fef3d2a380028ba0804739d2241d4b320e5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742195"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "30091236"
 ---
 # <a name="identity-api-requirement-sets"></a>Conjuntos de requisitos da API de Identidade
 
@@ -17,21 +17,20 @@ Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplemento
 
 Os suplementos do Office executam várias versões do Office. A tabela a seguir lista os conjuntos de requisitos da API de Identidade, ou seja, os aplicativos de host do Office que oferecem suporte a esse conjunto de requisitos, e os números de versão ou de build dos aplicativos do Office.
 
-|  Conjunto de requisitos  | Office 2013 para Windows | Office 365 para Windows   |  Office 365 para iPad  |  Office 365 para Mac  | Office Online  | SharePoint Online | OneDrive.com |Outlook.com e Exchange Online|
+|  Conjunto de requisitos  | Office 2013/2016/2019 para Windows | Office 365 para Windows   |  Office 365 para iPad  |  Office 365 para Mac  | Office Online  | SharePoint Online | OneDrive.com |Outlook.com e Exchange Online|
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| IdentityAPI 1.1  | N/D | Versão prévia **&#42;** | Em breve | Versão prévia **&#42;**| Versão prévia | Versão prévia| Em breve | Em breve |
+| IdentityAPI 1.1  | N/A **& # 42;** | Versão prévia **&#42;** | Em breve | Versão prévia **&#42;**| Versão prévia | Versão prévia| Em breve | Em breve |
 
-> **&#42;** Durante a fase de versão prévia, a API de Identidade é compatível com o Mac e Windows 2016 somente para usuários do programa Office Insider usando o Modo rápido. Para participar do programa Office Insider, confira [Faça parte do Office Insider](https://products.office.com/office-insider?tab=tab-1). Para alternar para o FastTrack, confira [Insider – Modo rápido](https://answers.microsoft.com/en-us/msoffice/forum/msoffice_officeinsider-mso_win10-msoinsider_reg/its-here-office-insider-fast-for-office-2016-on/dbe8e7bb-9523-44a4-948b-9436fedfd961).
+> **& # 42;** Durante a fase de visualização, a API de identidade requer o Office 365 (a versão de assinatura do Office, também chamada de "clique para executar"). Você deve usar o build e a versão mensal mais recentes do canal de Participante do programa Office Insider. É necessário ingressar no programa Office Insider para obter essa versão. Para saber mais, confira a página [Seja um Office Insider](https://products.office.com/office-insider?tab=tab-1). Observe que, quando um build é promovido ao Canal Semestral de produção, o suporte para recursos de visualização, como o SSO, é desativado para esse build.
 
-Para saber mais sobre as versões, números de build e sobre o Servidor do Office Online, confira:
+Para saber mais sobre versões, números de build e sobre o Servidor do Office Online, confira:
 
 - 
   [Números de versão e de build de lançamentos de canais de atualização para clientes do Office 365](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [Qual versão do Office estou usando?](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
 - 
   [Onde você pode encontrar o número de versão e de build de um aplicativo cliente do Office 365](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
-- 
-  [Visão geral sobre o Servidor do Office Online](https://docs.microsoft.com/officeonlineserver/office-online-server-overview)
+- [Visão geral sobre o Servidor do Office Online](https://docs.microsoft.com/officeonlineserver/office-online-server-overview)
 
 ## <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API comum do Office
 
