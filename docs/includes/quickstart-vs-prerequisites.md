@@ -6,4 +6,4 @@
 - Office 2016 ou posterior
     
     > [!NOTE]
-    > Se você não tiver o Office, basta [ingressar no Programa de Desenvolvedores do Office](https://developer.microsoft.com/pt-BR/office/dev-program) para obter uma licença para o desenvolvimento e experimente com suplementos.
+    > Se você não tiver o Office, basta [ingressar no Programa de Desenvolvedores do Office](https://developer.microsoft.com/office/dev-program) para obter uma licença para o desenvolvimento e experimente com suplementos.
