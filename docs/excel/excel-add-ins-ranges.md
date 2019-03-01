@@ -1,18 +1,18 @@
 ---
 title: Trabalhar com intervalos usando a API JavaScript do Excel (fundamental)
 description: ''
-ms.date: 12/28/2018
+ms.date: 02/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 505c22d2a3230aeafaf4d0c62a371a2ab93b3a9a
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: c911bf6e908d06298e768bdaf047262d78808321
+ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386782"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "30199582"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Trabalhar com intervalos usando a API JavaScript do Excel
 
-Este artigo fornece exemplos de código que mostram como executar tarefas comuns com intervalos usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos que o objeto **Range** suporta, confira [Objeto Range (API JavaScript para Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range).
+Este artigo fornece exemplos de código que mostram como executar tarefas comuns com intervalos usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos que o objeto **Range** suporta, confira [Objeto Range (API JavaScript para Excel)](/javascript/api/excel/excel.range).
 
 > [!NOTE]
 > Confira exemplos de código que mostram como executar tarefas avançadas com intervalos em [Trabalhar com intervalos usando a API JavaScript do Excel (avançado)](excel-add-ins-ranges-advanced.md).
@@ -546,8 +546,7 @@ Os intervalos podem ter formatos aplicados a células individuais baseadas em co
 ## <a name="find-a-cell-using-string-matching-preview"></a>Localizar uma célula usando a cadeia de correspondência (versão prévia)
 
 > [!NOTE]
-> A função `find` do objeto do intervalo só está disponível atualmente na versão prévia pública (beta). Para usar esse recurso, você deve usar a biblioteca beta do CDN do Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-> Se você estiver usando o TypeScript ou se seu editor de código usar arquivos de definição de tipo do TypeScript do IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+> A função `find` do objeto do intervalo só está disponível atualmente na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 O objeto `Range` tem um método `find` para pesquisar uma cadeia especificada dentro do intervalo. Ele retorna o intervalo da primeira célula com o texto correspondente. O exemplo de código a seguir localiza a primeira célula com um valor igual à cadeia de caracteres **Alimentos** e registra o seu endereço no console. Observe que `find` exibe um erro `ItemNotFound` se a cadeia de caracteres especificada não existir no intervalo. Se você acha que a cadeia de caracteres especificada pode não estar no intervalo, use o método [findOrNullObject](excel-add-ins-advanced-concepts.md#42ornullobject-methods) para que seu código manipule normalmente esse cenário.
 

@@ -1,14 +1,14 @@
 ---
 title: Otimização de desempenho do da API JavaScript do Excel
 description: Otimizar o desempenho usando as API JavaScript do Excel
-ms.date: 12/06/2018
+ms.date: 02/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 0c288f3e29d2a956238d9597730312ae0608a7ec
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: d15a4b3ad4ae44399572282889855b1cdc32bc39
+ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389120"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "30199575"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Otimização de desempenho usando a API JavaScript do Excel
 
@@ -106,7 +106,7 @@ Excel.run(async function(ctx) {
     // Range value should be [1, 2, 3] now
     console.log(rangeToGet.values);
 
-    // Suspending recalc
+    // Suspending recalculation
     app.suspendApiCalculationUntilNextSync();
     rangeToSet = sheet.getRange("A1:B1");
     rangeToSet.values = [[10, 20]];
@@ -116,7 +116,7 @@ Excel.run(async function(ctx) {
     await ctx.sync();
     // Range value should be [10, 20, 3] when we load the property, because calculation is suspended at that point
     console.log(rangeToGet.values);
-    // Calculation mode should still be "Automatic" even with supend recalc
+    // Calculation mode should still be "Automatic" even with suspend recalculation
     console.log(app.calculationMode);
 
     rangeToGet.load("values");
@@ -129,7 +129,7 @@ Excel.run(async function(ctx) {
 ### <a name="suspend-screen-updating"></a>Suspender a atualização da tela
 
 > [!NOTE]
-> O método `suspendScreenUpdatingUntilNextSync()` descritos neste artigo requer a versão beta da biblioteca de JavaScript do Office [Office.js CDN](https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). O [arquivo de definição de tipos] (https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) é encontrado também no CDN. Para saber mais sobre os futuros APIs, acesse [abrir especificação](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec) no GitHub.
+> O método `suspendScreenUpdatingUntilNextSync` descrito neste artigo só está disponível atualmente na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 O Excel exibe as alterações que seu suplemento faz aproximadamente conforme elas acontecem no código. Para conjuntos de dados grandes e interativos, talvez não seja necessário não esse andamento na tela em tempo real. `Application.suspendScreenUpdatingUntilNextSync()` pausa atualizações visuais no Excel até as chamadas do suplemento `context.sync()`, ou até o`Excel.run` terminar (chamadas implícitas `context.sync`). Lembre-se, o Excel não mostrará os sinais de atividade até a próxima sincronização. Seu suplemento deve fornecer orientação aos usuários para prepará-los para esse atraso ou fornecer uma barra de status para demonstrar atividade.
 
@@ -137,7 +137,7 @@ O Excel exibe as alterações que seu suplemento faz aproximadamente conforme el
 
 O desempenho de um suplemento pode ser melhorado desabilitando eventos. Um exemplo de código mostrando como habilitar e desabilitar os eventos está no artigo [trabalhar com eventos](excel-add-ins-events.md#enable-and-disable-events).
 
-## <a name="update-all-cells-in-a-range"></a>Atualizar todas as células em um intervalo 
+## <a name="update-all-cells-in-a-range"></a>Atualizar todas as células em um intervalo
 
 Quando você precisa atualizar todas as células em um intervalo com o mesmo valor ou propriedade, pode ser lento fazer isso por meio de uma matriz bidimensional que especifica repetidamente o mesmo valor, já que essa abordagem requer que o Excel faça uma iteração em todas as células do intervalo para definir cada uma delas separadamente. O Excel tem uma forma mais eficiente para atualizar todas as células em um intervalo com o mesmo valor ou propriedade.
 
@@ -182,7 +182,7 @@ Excel.run(async (ctx) => {
 
 A camada JavaScript cria objetos de proxy para o seu suplemento interagir com a pasta de trabalho do Excel e os intervalos subjacentes. Esses objetos são mantidos na memória até `context.sync()` ser acionado. Grandes operações em lote podem gerar muitos objetos de proxy que são necessários apenas uma vez pelo suplemento e podem ser liberados da memória antes da execução do lote.
 
-O método [Range.untrack()](/javascript/api/excel/excel.range#untrack--) libera um Objeto Range do Excel da memória. Chamar esse método depois que o suplemento for feito com o intervalo deve render um benefício de desempenho perceptível ao usar um grande número de objetos Range. 
+O método [Range.untrack()](/javascript/api/excel/excel.range#untrack--) libera um Objeto Range do Excel da memória. Chamar esse método depois que o suplemento for feito com o intervalo deve render um benefício de desempenho perceptível ao usar um grande número de objetos Range.
 
 > [!NOTE]
 > `Range.untrack()` é um atalho para [ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#remove-object-). Qualquer objeto de proxy pode ser não-rastreado, removendo-o da lista de objetos rastreados no contexto. Normalmente, os objetos Range são os únicos objetos do Excel usados ​​em quantidade suficiente para justificar o não-rastreamento.
