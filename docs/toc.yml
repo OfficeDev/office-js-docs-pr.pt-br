@@ -207,16 +207,16 @@ items:
       items:
       - name: Use o Angular
         displayName: Excel
-        href: excel/excel-add-ins-get-started-angular.md
+        href: quickstarts/excel-quickstart-angular.md
       - name: Use o jQuery
         displayName: Excel
-        href: excel/excel-add-ins-get-started-jquery.md
+        href: quickstarts/excel-quickstart-jquery.md
       - name: Use o React
         displayName: Excel
-        href: excel/excel-add-ins-get-started-react.md
+        href: quickstarts/excel-quickstart-react.md
       - name: Use o Vue
         displayName: Excel
-        href: excel/excel-add-ins-get-started-vue.md
+        href: quickstarts/excel-quickstart-vue.md
     - name: Tutorial de suplemento do Excel
       displayName: Excel
       href: tutorials/excel-tutorial.md
@@ -258,9 +258,18 @@ items:
         - name: Práticas recomendadas para funções personalizadas
           displayName: Excel
           href: excel/custom-functions-best-practices.md
+        - name: Autenticação de funções personalizadas
+          displayName: Excel
+          href: excel/custom-functions-authentication.md
         - name: Log de alteração de funções personalizadas
           displayName: Excel
           href: excel/custom-functions-changelog.md
+        - name: Requisitos de funções personalizadas
+          displayName: Excel
+          href: excel/custom-functions-requirements.md
+        - name: Diretrizes de nomenclatura de funções personalizadas
+          displayName: Excel
+          href: excel/custom-functions-naming.md
       - name: Validação de dados
         displayName: Excel
         href: excel/excel-add-ins-data-validation.md
@@ -306,7 +315,7 @@ items:
     items:
     - name: Criar o seu primeiro suplemento do Word
       displayName: Word
-      href: word/word-add-ins.md
+      href: quickstarts/word-quickstart.md
     - name: Tutorial de suplemento do Word
       displayName: Word
       href: tutorials/word-tutorial.md
@@ -343,7 +352,7 @@ items:
     items:
     - name: Criar o seu primeiro suplemento do PowerPoint
       displayName: PowerPoint
-      href: powerpoint/powerpoint-add-ins-get-started.md
+      href: quickstarts/powerpoint-quickstart.md
     - name: Tutorial de suplemento do PowerPoint
       displayName: PowerPoint
       href: tutorials/powerpoint-tutorial.md
@@ -359,7 +368,7 @@ items:
     items:
     - name: Criar o seu primeiro suplemento do OneNote
       displayName: OneNote
-      href: onenote/onenote-add-ins-getting-started.md
+      href: quickstarts/onenote-quickstart.md
     - name: Trabalhar com conteúdo da página do OneNote
       displayName: OneNote
       href: onenote/onenote-add-ins-page-content.md
@@ -375,7 +384,7 @@ items:
     items:
     - name: Criar o seu primeiro suplemento do Project
       displayName: Project
-      href: project/project-add-ins-get-started.md
+      href: quickstarts/project-quickstart.md
     - name: Criar um suplemento do Project que usa REST com um serviço OData local
       displayName: Project
       href: project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md
@@ -759,9 +768,9 @@ items:
         href: reference/manifest/webapplicationinfo.md
 - name: Recursos
   href: resources/resources-links-help.md
-ms.openlocfilehash: 7ad59f66ad87a5bbdbcb52d0af4e98af2a69a6da
-ms.sourcegitcommit: 9afcb1bb295ec0c8940ed3a8364dbac08ef6b382
-ms.translationtype: HT
+ms.openlocfilehash: e2dde2b09439c3de60363cb29609df8dbb39365a
+ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "27770620"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "30199764"
