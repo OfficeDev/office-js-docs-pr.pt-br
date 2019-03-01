@@ -1,17 +1,18 @@
 ---
 title: Trabalhar com intervalos usando a API JavaScript do Excel (avançado)
 description: ''
-ms.date: 12/26/2018
-ms.openlocfilehash: 43c32bb8f579a231eae289df4e026b45afac6dcb
-ms.sourcegitcommit: 8d248cd890dae1e9e8ef1bd47e09db4c1cf69593
-ms.translationtype: HT
+ms.date: 02/20/2019
+localization_priority: Normal
+ms.openlocfilehash: ce4440798fdd23106ef0357df47cf850a5a5be71
+ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "27447236"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "30199596"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Trabalhar com intervalos usando a API JavaScript do Excel (avançado)
 
-Este artigo baseia-se em informações em [Trabalhar com intervalos usando a API JavaScript do Excel (fundamental)](excel-add-ins-ranges.md) fornecendo exemplos de código que mostram como executar tarefas mais avançadas com intervalos usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos que o objeto **Range** suporta, confira [Objeto Range (API JavaScript para Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range).
+Este artigo baseia-se em informações em [Trabalhar com intervalos usando a API JavaScript do Excel (fundamental)](excel-add-ins-ranges.md) fornecendo exemplos de código que mostram como executar tarefas mais avançadas com intervalos usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos que o objeto **Range** suporta, confira [Objeto Range (API JavaScript para Excel)](/javascript/api/excel/excel.range).
 
 ## <a name="work-with-dates-using-the-moment-msdate-plug-in"></a>Trabalhar com datas usando o plug-in Moment-MSDate
 
@@ -64,16 +65,14 @@ Seu suplemento terá que formatar os intervalos para exibir as datas em um forma
 ## <a name="work-with-multiple-ranges-simultaneously-preview"></a>Trabalhar simultaneamente com vários intervalos (Visualização)
 
 > [!NOTE]
-> O`RangeAreas` objeto só está disponível na visualização pública (beta). Para usar esse recurso, você deve usar a biblioteca beta do CDN do Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-> Se você estiver usando o TypeScript ou se seu editor de código usar arquivos de definição de tipo do TypeScript do IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+> O `RangeAreas` objeto está disponível atualmente apenas na visualização pública. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 O `RangeAreas` objeto permite ao suplemento executar operações em vários intervalos de uma só vez. Esses intervalos poderão ser contíguos, mas não precisam ser. `RangeAreas` são descritas ainda mais no artigo [Trabalhar com vários intervalos simultaneamente em suplementos do Excel](excel-add-ins-multiple-ranges.md).
 
 ## <a name="find-special-cells-within-a-range-preview"></a>Localizar células especiais em um intervalo (visualização)
 
 > [!NOTE]
-> A `getSpecialCells` e `getSpecialCellsOrNullObject` métodos só estão disponíveis atualmente na versão visualização pública (beta). Para usar esse recurso, você deve usar a biblioteca beta do CDN do Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-> Se você estiver usando o TypeScript ou se seu editor de código usar arquivos de definição de tipo do TypeScript do IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+> Os `getSpecialCells` métodos `getSpecialCellsOrNullObject` e estão atualmente disponíveis somente na visualização pública. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 As `Range.getSpecialCells()` e `Range.getSpecialCellsOrNullObject()` métodos localizar intervalos com base nas características de suas células e os tipos de valores de suas células. Os dois métodos retornam `RangeAreas` objetos. Aqui estão as assinaturas dos métodos do arquivo de tipos de dados TypeScript:
 
@@ -182,8 +181,7 @@ Excel.run(function (context) {
 ## <a name="copy-and-paste-preview"></a>Copiar e colar (visualização)
 
 > [!NOTE]
-> A `Range.copyFrom` função só está disponível atualmente na versão visualização pública (beta). Para usar esse recurso, você deve usar a biblioteca beta do CDN do Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-> Se você estiver usando o TypeScript ou se seu editor de código usar arquivos de definição de tipo do TypeScript do IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+> Atualmente `Range.copyFrom` , a função está disponível somente na visualização pública. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 A função de `copyFrom` do intervalo replica o comportamento de copiar e colar da IU do Excel. O objeto de intervalo para o qual a função`copyFrom` é chamada é o destino.
 A fonte a ser copiada é passada como um intervalo ou um endereço de cadeia de caracteres que representa um intervalo.
@@ -247,8 +245,7 @@ Excel.run(function (context) {
 ## <a name="remove-duplicates-preview"></a>Remover duplicatas (visualização)
 
 > [!NOTE]
-> A função `removeDuplicates` do objeto do intervalo só está disponível atualmente na versão visualização pública (beta). Para usar esse recurso, você deve usar a biblioteca beta do CDN do Office.js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-> Se você estiver usando o TypeScript ou se seu editor de código usar arquivos de definição de tipo do TypeScript do IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+> Atualmente, a função `removeDuplicates` do objeto Range está disponível apenas na visualização pública. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 A função do objeto intervalo `removeDuplicates` remove linhas com entradas duplicadas em determinadas colunas. A função passa por cada linha no intervalo do índice de menor valor até o índice de maior valor no intervalo (de cima para baixo). Uma linha é excluída se um valor em sua coluna ou colunas especificadas aparecer mais cedo no intervalo. Linhas no intervalo abaixo da linha excluída são deslocadas para cima. `removeDuplicates` não afeta a posição de células fora do intervalo.
 

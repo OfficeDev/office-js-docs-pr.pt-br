@@ -4,12 +4,12 @@ description: ''
 ms.date: 02/18/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: e0a04f084deb0b366600b4f2597658d1f54ab7f5
-ms.sourcegitcommit: 03773fef3d2a380028ba0804739d2241d4b320e5
+ms.openlocfilehash: e627576d328dabafe6301c142519cb80befb9f77
+ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "30091236"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "30199554"
 ---
 # <a name="identity-api-requirement-sets"></a>Conjuntos de requisitos da API de Identidade
 
@@ -17,7 +17,7 @@ Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplemento
 
 Os suplementos do Office executam várias versões do Office. A tabela a seguir lista os conjuntos de requisitos da API de Identidade, ou seja, os aplicativos de host do Office que oferecem suporte a esse conjunto de requisitos, e os números de versão ou de build dos aplicativos do Office.
 
-|  Conjunto de requisitos  | Office 2013/2016/2019 para Windows | Office 365 para Windows   |  Office 365 para iPad  |  Office 365 para Mac  | Office Online  | SharePoint Online | OneDrive.com |Outlook.com e Exchange Online|
+|  Conjunto de requisitos  | Office 2013 ou posterior para Windows | Office 365 para Windows   |  Office 365 para iPad  |  Office 365 para Mac  | Office Online  | SharePoint Online | OneDrive.com |Outlook.com e Exchange Online|
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | IdentityAPI 1.1  | N/A **& # 42;** | Versão prévia **&#42;** | Em breve | Versão prévia **&#42;**| Versão prévia | Versão prévia| Em breve | Em breve |
 

@@ -4,10 +4,10 @@ description: ''
 ms.date: 12/17/2018
 localization_priority: Normal
 ms.openlocfilehash: fb218dff1bed6b7723597a628db6217a5f149771
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/19/2019
+ms.lasthandoff: 02/28/2019
 ms.locfileid: "29389477"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>Crie o seu primeiro suplemento de painel de tarefas para o Microsoft Project usando um editor de texto
