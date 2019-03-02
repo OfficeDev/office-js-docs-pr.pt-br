@@ -1,14 +1,14 @@
 ---
 title: Namespace do Office – conjunto de requisitos de pré-visualização
 description: ''
-ms.date: 02/15/2019
+ms.date: 02/26/2019
 localization_priority: Normal
-ms.openlocfilehash: bbec602680da7914666daf33ed36c45751ae69c6
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: 7b27963a85f1dcdaa6f269fce242c45bf1bdd146
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30068319"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359230"
 ---
 # <a name="office"></a>Office
 
@@ -19,7 +19,7 @@ O namespace do Office fornece interfaces compartilhadas que são usadas pelos su
 |Requisito| Valor|
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
 ##### <a name="members-and-methods"></a>Membros e métodos
 
@@ -58,7 +58,7 @@ Especifica o resultado de uma chamada assíncrona.
 |Requisito| Valor|
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
 ---
 
@@ -75,14 +75,14 @@ Especifica como forçar os dados retornados ou definir de acordo com o método c
 |Nome| Tipo| Descrição|
 |---|---|---|
 |`Html`| String|Solicita que os dados sejam retornados no formato HTML.|
-|`Text`| String|Solicita que os dados sejam retornados no formato de texto.|
+|`Text`| Cadeia de caracteres|Solicita que os dados sejam retornados no formato de texto.|
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
 ---
 
@@ -100,6 +100,7 @@ Especifica o evento associado a um manipulador de eventos.
 |---|---|---|---|
 |`AppointmentTimeChanged`| String | A data ou hora da série ou do compromisso selecionado foi alterada. | 1.7 |
 |`AttachmentsChanged`| String | Um anexo foi adicionado a ou removido do item. | Visualização |
+|`EnhancedLocationsChanged`| Cadeia de caracteres | O local do compromisso selecionado foi alterado. | Visualização |
 |`ItemChanged`| Cadeia de caracteres | Um item diferente do Outlook está marcado para exibição enquanto o painel de tarefas está fixado. | 1,5 |
 |`OfficeThemeChanged`| Cadeia de caracteres | O tema do Office na caixa de correio foi alterado. | Visualização |
 |`RecipientsChanged`| Cadeia de caracteres | A lista de destinatários do item selecionado ou o local do compromisso foi alterado. | 1.7 |
@@ -110,7 +111,7 @@ Especifica o evento associado a um manipulador de eventos.
 |Requisito| Valor|
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.5 |
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura |
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Escrever ou Ler |
 
 ---
 
@@ -126,7 +127,7 @@ Especifica a origem dos dados retornados pelo método chamado.
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`Body`| String|A origem dos dados é o corpo de uma mensagem.|
+|`Body`| Cadeia de caracteres|A origem dos dados é o corpo de uma mensagem.|
 |`Subject`| String|A origem dos dados é o assunto de uma mensagem.|
 
 ##### <a name="requirements"></a>Requisitos
@@ -134,4 +135,4 @@ Especifica a origem dos dados retornados pelo método chamado.
 |Requisito| Valor|
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Escrever ou Ler|

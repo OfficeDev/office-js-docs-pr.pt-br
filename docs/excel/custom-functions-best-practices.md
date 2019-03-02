@@ -2,12 +2,13 @@
 ms.date: 01/08/2019
 description: Saiba mais sobre as práticas recomendadas para o desenvolvimento de funções personalizadas para Excel.
 title: Práticas recomendadas para funções personalizadas (versão prévia)
-ms.openlocfilehash: 45618a61d0d1fdd0398ecec3aa0db21e493787fd
-ms.sourcegitcommit: 9afcb1bb295ec0c8940ed3a8364dbac08ef6b382
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 24c73ec643df073ac97dc399343a7feb0b0b4168
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "27770648"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359258"
 ---
 # <a name="custom-functions-best-practices-preview"></a>Práticas recomendadas para funções personalizadas (versão prévia)
 
@@ -37,9 +38,12 @@ function getComment(x) {
 
 ## <a name="troubleshooting"></a>Solução de problemas
 
-Quando testar o suplemento no Office para Windows, habilite o **[log de tempo de execução](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** para solucionar problemas com o arquivo de manifesto XML do suplemento, bem como várias condições de instalação e tempo de execução. O log de tempo de execução grava instruções `console.log` em um arquivo de log para ajudá-lo a descobrir problemas.
+1. Quando testar o suplemento no Office para Windows, habilite o **[log de tempo de execução](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** para solucionar problemas com o arquivo de manifesto XML do suplemento, bem como várias condições de instalação e tempo de execução. O log de tempo de execução grava instruções `console.log` em um arquivo de log para ajudá-lo a descobrir problemas.
 
-Para relatar problemas sobre este método de solução de problemas, envie comentários à equipe de funções personalizadas do Excel. Para fazer isso, selecione **Arquivo | Comentários | Enviar um Rosto Triste**. Enviando um Rosto Triste, você fornece os registros necessários para entendermos o problema que você está enfrentando.
+2. O suplemento não será carregado se uma ou mais funções personalizadas entrarem em conflito com as funções personalizadas de um suplemento registrado anteriormente. Nesse caso, você pode remover o suplemento existente ou se encontrar esse erro ao desenvolver um suplemento, você pode especificar um nome de namespace diferente em seu manifesto.
+
+3. Para relatar problemas sobre este método de solução de problemas, envie comentários à equipe de funções personalizadas do Excel. Para fazer isso, selecione **Arquivo | Comentários | Enviar um Rosto Triste**. Enviando um Rosto Triste, você fornece os registros necessários para entendermos o problema que você está enfrentando.
+
 
 ## <a name="debugging"></a>Depuração
 

@@ -1,14 +1,14 @@
 ---
 title: Realizar o sideload de suplementos do Office em um iPad ou Mac para teste
 description: ''
-ms.date: 12/04/2017
+ms.date: 02/25/2019
 localization_priority: Priority
-ms.openlocfilehash: cf27b72fe744358f902d36ebd2b89a432aa305f5
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: dc0fad24d7f4f062fb0115edcc58a37d8d9052da
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388189"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359251"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>Realizar o sideload de suplementos do Office em um iPad ou Mac para teste
 
@@ -41,16 +41,10 @@ Para ver como seu suplemento será executado no Office para iOS, você pode real
 1. Use um cabo de sincronização para conectar seu iPad ao computador. Se estiver conectando o iPad ao computador pela primeira vez, será solicitado a responder **Confiar Neste Computador?** Escolha **Confiar** para continuar.
 
 2. No iTunes, escolha o ícone do **iPad** abaixo da barra de menus.
-    
-    ![O ícone do iPad no iTunes](../images/ipad.png)
 
 3. Em **Ajustes** no lado esquerdo do iTunes, escolha **Aplicativos**.
-    
-    ![Configurações de aplicativos do iTunes](../images/file-settings-apps.png)
 
 4. No lado direito do iTunes, role para baixo até **Compartilhamento de Arquivos**, e escolha **Excel** ou **Word** na coluna **Aplicativos**.
-    
-    ![Compartilhamento de arquivos do iTunes](../images/file-sharing.png)
 
 5. Na parte inferior da coluna Documentos do **Excel** ou do **Word**, escolha **Adicionar Arquivo** e selecione o arquivo de manifesto .xml do suplemento para o qual você deseja realizar sideload. 
     
@@ -97,4 +91,3 @@ Para ver como seu suplemento será executado no Office para iOS, você pode real
 ## <a name="see-also"></a>Confira também
 
 - [Depurar suplementos do Office no iPad e no Mac](debug-office-add-ins-on-ipad-and-mac.md)
-    
