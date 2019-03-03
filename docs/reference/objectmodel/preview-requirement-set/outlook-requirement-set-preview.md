@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 description: ''
-ms.date: 01/30/2019
+ms.date: 02/26/2019
 localization_priority: Priority
-ms.openlocfilehash: 47db6824fa328a61e47d577a85375f43e73f16df
-ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
+ms.openlocfilehash: 233bc6770faefaa0e101fd01c353e7ce0df972a1
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "29701782"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359244"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 
@@ -42,7 +42,7 @@ Os seguintes recursos estão no modo de visualização.
 - [Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus): adicionada uma nova enumeração que especifica se um anexo foi adicionado ou removido de um item.
 - [Office.MailboxEnums.DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions): adicionada uma novo enumeração de sinalizador bits que especifica as permissões de representante.
 - [Office.MailboxEnums.LocationType](/javascript/api/outlook/office.mailboxenums.locationtype) - Adicionar uma nova enumeração que especifica o tipo de local do compromisso.
-- [Office.EventType](/javascript/api/office/office.eventtype): modificado para dar suporte aos eventos AttachmentsChanged e OfficeThemeChanged por meio da adição das entradas `AttachmentsChanged` e `OfficeThemeChanged`, respectivamente.
+- [Office.EventType](/javascript/api/office/office.eventtype) — Modificado para dar suporte aos eventos AttachmentsChanged, EnhancedLocationsChanged e OfficeThemeChanged por meio da adição das entradas `AttachmentsChanged`, `EnhancedLocationsChanged` e `OfficeThemeChanged` respectivamente.
 - [Elemento do manifesto SupportsSharedFolders](../../manifest/supportssharedfolders.md): adicionado um elemento filho ao elemento do manifesto [DesktopFormFactor](../../manifest/desktopformfactor.md). Define se o suplemento está disponível nos cenários de representante.
 
 ## <a name="see-also"></a>Confira também

@@ -1,14 +1,14 @@
 ---
 title: Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 description: ''
-ms.date: 02/20/2019
+ms.date: 02/28/2019
 localization_priority: Priority
-ms.openlocfilehash: 3d0cbc21d7e6b5c987df5a29d1aa83790c5685bc
-ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.openlocfilehash: eb647fe7f82dc669f071de53f6bac705e303c652
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "30199589"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359265"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 
@@ -86,14 +86,14 @@ addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: 
 O exemplo a seguir mostra planilhas da pasta de trabalho que estão sendo inseridas em uma pasta de trabalho atual, logo após a planilha ativa. Observe que `null` é passado para o parâmetro `sheetNamesToInsert?: string[]`. Isso significa que todas as planilhas são inseridas.
 
 ```js
-var myFile = <HTMLInputElement>document.getElementById("file");
+var myFile = document.getElementById("file");
 var reader = new FileReader();
 
 reader.onload = (event) => {
     Excel.run((context) => {
         // strip off the metadata before the base64-encoded string
-        var startIndex = (<string>(<FileReader>event.target).result).indexOf("base64,");
-        var workbookContents = (<string>(<FileReader>event.target).result).substr(startIndex + 7);
+        var startIndex = event.target.result.indexOf("base64,");
+        var workbookContents = event.target.result.substr(startIndex + 7);
 
         var sheets = context.workbook.worksheets;
         sheets.addFromBase64(
@@ -260,6 +260,37 @@ A API do Excel também permite que os suplementos desativem os cálculos até qu
 
 ```js
 context.application.suspendApiCalculationUntilNextSync();
+```
+
+## <a name="save-the-workbook"></a>Salvar a pasta de trabalho
+
+> [!NOTE]
+> A função `Workbook.save(saveBehavior)` só está disponível atualmente na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+
+`Workbook.save(saveBehavior)` salva a pasta de trabalho para armazenamento persistente. O método `save` usa um parâmetro simples e opcional que pode ter um dos seguintes valores:
+
+- `Excel.SaveBehavior.save` (padrão): o arquivo será salvo sem solicitar que o usuário especifique o nome do arquivo e local de salvamento. Se o arquivo não tiver sido salvo anteriormente, ele será salvo no local padrão. Se o arquivo tiver sido salvo anteriormente, ele será salvo no mesmo local.
+- `Excel.SaveBehavior.prompt`: se o arquivo ainda não foi salvo anteriormente, o usuário será solicitado a especificar o nome do arquivo e o local de salvamento. Se o arquivo tiver sido salvo anteriormente, ele será salvo no mesmo local sem que o usuário seja solicitado.
+
+> [!CAUTION]
+> Se o usuário for solicitado a salvar e, em vez disso, cancelar a operação, `save` gera uma exceção.
+
+```js
+context.workbook.save(Excel.SaveBehavior.prompt);
+```
+
+## <a name="close-the-workbook"></a>Fechar a pasta de trabalho
+
+> [!NOTE]
+> A função `Workbook.close(closeBehavior)` só está disponível atualmente na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+
+`Workbook.close(closeBehavior)` fecha a pasta de trabalho, além de suplementos que estão associados com a pasta de trabalho (o aplicativo Excel permanece aberto). O método `close` usa um parâmetro simples e opcional que pode ter um dos seguintes valores:
+
+- `Excel.CloseBehavior.save` (padrão): o arquivo será salvo antes de fechar. Se o arquivo não tiver sido salvo anteriormente, o usuário será solicitado a especificar o nome do arquivo e o local para salvá-lo.
+- `Excel.CloseBehavior.skipSave`: o arquivo é fechado imediatamente, sem ser salvo. Quaisquer alterações não salvas serão perdidas.
+
+```js
+context.workbook.close(Excel.CloseBehavior.save);
 ```
 
 ## <a name="see-also"></a>Confira também
