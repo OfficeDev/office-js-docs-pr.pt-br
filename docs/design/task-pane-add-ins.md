@@ -1,14 +1,14 @@
 ---
 title: Painéis de tarefas nos Suplementos do Office
 description: Os painéis de tarefa concedem aos usuários acesso a controles de interface que executam códigos para modificar documentos ou emails ou exibir dados de uma fonte de dados.
-ms.date: 12/04/2017
+ms.date: 2/28/2019
 localization_priority: Priority
-ms.openlocfilehash: f9cbbf3a696eb4b3b6a8622f275c2b1808aff643
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 93210a4725e9878a214f1113f68644756f539fbc
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389316"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359223"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Painéis de tarefas nos Suplementos do Office
  
@@ -76,6 +76,5 @@ Para ver uma amostra que implementa um painel de tarefas, confira [Suplemento do
 ## <a name="see-also"></a>Confira também
 
 - [Office UI Fabric em Suplementos do Office](office-ui-fabric.md) 
-- [Padrões de design da experiência do usuário para suplementos do Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
-
+- [Padrões de design da experiência do usuário para suplementos do Office](../design/ux-design-pattern-templates.md)
 
