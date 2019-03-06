@@ -1,14 +1,14 @@
 ---
 title: Use a API de Caixa de Diálogo em seus Suplementos do Office
 description: ''
-ms.date: 02/13/2019
+ms.date: 02/28/2019
 localization_priority: Priority
-ms.openlocfilehash: 81154f039a87973e222188d894d5e4289d0bf647
-ms.sourcegitcommit: 70ef38a290c18a1d1a380fd02b263470207a5dc6
+ms.openlocfilehash: c474e0f3bf27b70565174b797d726a1651a55952
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "30052767"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359286"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Use a API de Caixa de Diálogo em seus Suplementos do Office
 
@@ -243,8 +243,6 @@ function processMessage(arg) {
 }
 ```
 
-Para ver um exemplo que usa essa técnica, confira o [padrão de design da navegação do diálogo](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/navigation) no repositório [padrões de design da experiência do usuário para Suplementos do Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
-
 Mesmo quando você não tem sua própria interface de usuário de diálogo de fechar, um usuário final pode fechar a caixa de diálogo escolhendo a opção **X** no canto superior direito. Essa ação aciona o evento `DialogEventReceived`. Se seu painel do host precisar saber quando isso acontece, ele deverá declarar um manipulador para esse evento. Confira a seção [Erros e eventos na janela de diálogo](#errors-and-events-in-the-dialog-window) para ver os detalhes.
 
 ## <a name="handle-errors-and-events"></a>Manipular erros e eventos
@@ -380,9 +378,9 @@ Para mostrar um vídeo em uma caixa de diálogo:
 3.  Use uma chamada de `displayDialogAsync` na página host para abrir video.dialogbox.html.
 4.  Se o suplemento precisar saber quando o usuário fecha a caixa de diálogo, registre um manipulador para o evento `DialogEventReceived` e manipule o evento 12006. Para mais detalhes, confira a seção [Erros e eventos na janela de diálogo](#errors-and-events-in-the-dialog-window).
 
-Para ver um exemplo que usa um vídeo na caixa de diálogo, confira o [padrão de design do video placemat](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/video-placemat) no repositório [padrões de design da experiência do usuário para Suplementos do Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
+Para ver um exemplo que mostre um vídeo na caixa de diálogo, confira a [padrão de design de roteiro de vídeo](https://docs.microsoft.com/office/dev/add-ins/design/first-run-experience-patterns#video-placemat).
 
-![Captura de tela de um vídeo mostrando uma caixa de diálogo de suplemento](../images/video-placemats-dialog-open.png)
+![Captura de tela de um vídeo mostrando uma caixa de diálogo de um suplemento](../images/video-placemats-dialog-open.png)
 
 ## <a name="use-the-dialog-apis-in-an-authentication-flow"></a>Use as APIs de Caixa de Diálogo em um fluxo de autenticação
 
