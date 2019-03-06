@@ -1,13 +1,14 @@
 ---
 title: Elemento DesktopFormFactor no arquivo de manifesto
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: dea632f7f8afa5d9b69f257798022e9e520e9394
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/01/2019
+localization_priority: Normal
+ms.openlocfilehash: cddf76af01ec9f3016b28a3f7692aa6dfeb9bd60
+ms.sourcegitcommit: 7ebd383f16ae5809bb6980a5f213b695d410e62c
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433737"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "30413619"
 ---
 # <a name="desktopformfactor-element"></a>Elemento DesktopFormFactor
 
@@ -22,7 +23,7 @@ Cada definição de DesktopFormFactor contém o elemento **FunctionFile** e um o
 | [ExtensionPoint](extensionpoint.md)   | Sim      | Define onde um suplemento expõe a funcionalidade. |
 | [FunctionFile](functionfile.md)       | Sim      | Uma URL para um arquivo que contém funções JavaScript.|
 | [GetStarted](getstarted.md)           | Não       | Define o texto explicativo que aparece ao instalar o suplemento em hosts do Word, Excel ou PowerPoint. |
-| [SupportsSharedFolders](supportssharedfolders.md) | Não | Define se o suplemento do Outlook está disponível em cenários de representante e é definido como *false* por padrão.<br><br>**Importante**: esse elemento só está disponível no conjunto de requisitos de visualização de suplementos do Outlook em comparação com o Exchange Online. Os suplementos que usam esse elemento não podem ser publicados no AppSource ou implantados por meio da implantação centralizada. |
+| [SupportsSharedFolders](supportssharedfolders.md) | Não | Define se o suplemento do Outlook está disponível em cenários de representante e é definido como *false* por padrão.<br><br>**Importante**: como o acesso de representante para suplementos do Outlook está atualmente em versão prévia, os suplementos que usam `SupportSharedFolders` o elemento não podem ser publicados no AppSource ou implantados por meio da implantação centralizada. |
 
 ## <a name="desktopformfactor-example"></a>Exemplo de DesktopFormFactor
 
