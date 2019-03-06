@@ -1,14 +1,14 @@
 ---
 title: Diretrizes de ícone para suplementos do Office
 description: ''
-ms.date: 06/27/2018
+ms.date: 03/02/2019
 localization_priority: Priority
-ms.openlocfilehash: d6e98014227250420c34c63afa85e06a351ba4a1
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 8e741f70327584ddd1b6f51f19b276e072862229
+ms.sourcegitcommit: 7ebd383f16ae5809bb6980a5f213b695d410e62c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388091"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "30413633"
 ---
 # <a name="icons"></a>Ícones
 Ícones são a representação visual de um comportamento ou conceito. Eles são usados frequentemente para adicionar significado a controles e comandos. Os elementos visuais, realistas ou simbólicos, permitem ao usuário navegar pela interface do usuário da mesma maneira que os avisos os ajudam a navegar pelo ambiente. Eles devem ser simples, claros e conter apenas os detalhes necessários para permitir que os clientes analisem rapidamente a ação que ocorrerá ao escolherem um controle.
@@ -131,6 +131,9 @@ Todos os modificadores devem ter um recorte transparente de 1 px entre cada elem
 
 
 ## <a name="icon-colors"></a>Cores do ícone
+
+> [!NOTE]
+> Estas diretrizes de cor são destinadas a ícones da faixa de opções usados em [Comandos do suplemento](add-in-commands.md). Esses ícones não são processados com o Microsoft UI Fabric e a paleta de cores é diferente da paleta descrita em [Microsoft UI Fabric| Cores | Compartilhado](https://fluentfabric.azurewebsites.net/#/color/shared).
 
 Os ícones do Office têm uma paleta de cores limitada. Use as cores listadas na tabela a seguir para garantir uma integração perfeita com a interface de usuário do Office. Aplique as seguintes diretrizes para o uso de cor: 
 
