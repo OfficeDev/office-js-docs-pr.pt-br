@@ -1,14 +1,14 @@
 ---
 title: Práticas recomendadas para o desenvolvimento de suplementos do Office
 description: ''
-ms.date: 01/23/2018
+ms.date: 02/28/2019
 localization_priority: Priority
-ms.openlocfilehash: 774dacc2fa48a75a95b88740d65eca88ad7dcfdd
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 0227b73223d5d2284d697f98ff598dc4cf5dce81
+ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388975"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "30359279"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Práticas recomendadas para o desenvolvimento de suplementos do Office
 
@@ -50,7 +50,7 @@ Os suplementos eficazes oferecem uma funcionalidade exclusiva e fascinante que e
 
 - Evite os pop-ups. Se você tiver de usá-los, oriente o usuário sobre como habilitar o seu pop-up.
 
-Para modelos que ilustram padrões que podem ser aplicados ao desenvolver sua experiência de primeira execução, consulte [Padrões de design UX para Suplementos do Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
+Para padrões que podem ser aplicados ao desenvolver sua experiência de primeira execução, consulte [Padrões de design da experiência do usuário para suplementos do Office](https://docs.microsoft.com/office/dev/add-ins/design/first-run-experience-patterns).
 
 ## <a name="use-add-in-commands"></a>Usar comandos de suplemento
 
@@ -75,8 +75,6 @@ Para modelos que ilustram padrões que podem ser aplicados ao desenvolver sua ex
 - Preocupe-se com a acessibilidade: facilite a interação dos usuários com o seu suplemento e inclua tecnologias adaptativas, como leitores de tela.
 
 - Desenvolva para todas as plataformas e métodos de entrada, incluindo teclado/mouse e [toque](#optimize-for-touch). Certifique-se de que sua interface do usuário responda a diferentes fatores forma.
-
-Para modelos que aplicam os princípios de design que você pode usar e personalizar durante o desenvolvimento do suplemento, consulte [padrões de design UX para Suplementos do Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
 
 ### <a name="optimize-for-touch"></a>Otimizar para toque
 
