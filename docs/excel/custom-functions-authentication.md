@@ -1,13 +1,13 @@
 ---
-ms.date: 01/29/2019
+ms.date: 03/06/2019
 description: Autenticar usuários usando funções personalizadas no Excel.
 title: Autenticação para funções personalizadas
-ms.openlocfilehash: 260f15c39758b82a2145474f543c3c9ff5edd132
-ms.sourcegitcommit: 70ef38a290c18a1d1a380fd02b263470207a5dc6
+ms.openlocfilehash: 4358d9f570ef8b31db98b1886c01ff4a89a6b1be
+ms.sourcegitcommit: 8e7b7b0cfb68b91a3a95585d094cf5f5ffd00178
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "30052732"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "30512850"
 ---
 # <a name="authentication"></a>Autenticação
 
@@ -15,26 +15,26 @@ Em alguns cenários, a função personalizada precisará autenticar o usuário p
   
 ## <a name="asyncstorage-object"></a>Objeto AsyncStorage
 
-O tempo de execução de funções personalizadas `localStorage` não tem um objeto disponível na janela global, onde você normalmente pode armazenar dados. Em vez disso, você deve compartilhar dados entre funções personalizadas e painéis de tarefas, usando o [OfficeRuntime. AsyncStorage](https://docs.microsoft.com/javascript/api/office-runtime/officeruntime.asyncstorage) para definir e obter dados. 
+O tempo de execução de funções personalizadas `localStorage` não tem um objeto disponível na janela global, onde você normalmente pode armazenar dados. Em vez disso, você deve compartilhar dados entre funções personalizadas e painéis de tarefas usando o [OfficeRuntime. AsyncStorage](https://docs.microsoft.com/javascript/api/office-runtime/officeruntime.asyncstorage) para definir e obter dados.
 
-Além disso, há um benefício em usar `AsyncStorage`o; Ele usa um ambiente de área restrita seguro para que seus dados não possam ser acessados por outros suplementos.  
+Além disso, há um benefício em usar `AsyncStorage`o; Ele usa um ambiente de área restrita seguro para que seus dados não possam ser acessados por outros suplementos.
 
 ### <a name="suggested-usage"></a>Uso sugerido
 
-Quando você precisar autenticar a partir do painel de tarefas ou de uma função personalizada, verifique AsyncStorage para ver se o token de acesso já foi adquirido. Caso contrário, use a API de caixa de diálogo para autenticar o usuário, recuperar o token de acesso e armazenar o token no AsyncStorage para uso futuro.
+Quando você precisar autenticar do painel de tarefas ou de uma função personalizada, verifique `AsyncStorage` se o token de acesso já foi adquirido. Caso contrário, use a API de caixa de diálogo para autenticar o usuário, recuperar o token de acesso e armazená-lo `AsyncStorage` para uso futuro.
 
 ## <a name="dialog-api"></a>API da caixa de diálogo
 
 Se não houver um token, você deverá usar a API da caixa de diálogo para solicitar que o usuário entre. Após um usuário inserir suas credenciais, o token de acesso resultante poderá ser armazenado `AsyncStorage`no.
 
 > [!NOTE]
-> O tempo de execução de funções personalizadas usa um objeto Dialog que é ligeiramente diferente do objeto Dialog no tempo de execução usado por painéis de tarefas. Eles são conhecidos como "API da caixa de diálogo", mas usam `Officeruntime.Dialog` para autenticar usuários no tempo de execução de funções personalizadas.
+> O tempo de execução de funções personalizadas usa um objeto Dialog que é ligeiramente diferente do objeto Dialog no tempo de execução do mecanismo de navegador usado por painéis de tarefas. Eles são conhecidos como "API da caixa de diálogo", mas usam `Officeruntime.Dialog` para autenticar usuários no tempo de execução de funções personalizadas.
 
 Para obter informações sobre como usar o `OfficeRuntime.Dialog`, consulte [Custom Functions Runtime](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/custom-functions-runtime?view=office-js#displaying-a-dialog-box).
 
-Ao planejar todo o processo de autenticação como um todo, talvez seja útil pensar no painel de tarefas e nos elementos de interface do usuário do seu suplemento e nas partes de funções personalizadas do seu suplemento como entidades separadas que podem se comunicar entre si `AsyncStorage`.
+Ao planejar todo o processo de autenticação como um todo, talvez seja útil pensar no painel de tarefas e nos elementos de interface do usuário do suplemento e das funções personalizadas, que fazem parte do suplemento como entidades separadas que podem se comunicar entre si `AsyncStorage`.
 
-O diagrama a seguir descreve esse processo básico. Observe que a linha pontilhada indica que, enquanto elas executam ações separadas, as funções personalizadas e o painel de tarefas do seu suplemento são partes do seu suplemento como um todo.
+O diagrama a seguir descreve esse processo básico. Observe que a linha pontilhada indica que, enquanto elas executam ações separadas, as funções personalizadas e o painel de tarefas do seu suplemento fazem parte do seu suplemento como um todo.
 
 1. Você emite uma chamada de função personalizada a partir de uma célula em uma pasta de trabalho do Excel.
 2. A função personalizada usa `Officeruntime.Dialog` o para passar suas credenciais de usuário para um site.
@@ -43,6 +43,37 @@ O diagrama a seguir descreve esse processo básico. Observe que a linha pontilha
 5. O painel de tarefas do suplemento acessa o token de `AsyncStorage`.
 
 ![Diagrama de funções personalizadas, OfficeRuntime e painéis de tarefas que trabalham juntos.] (../images/Authdiagram.png "Diagrama de autenticação.")
+
+## <a name="storing-the-token"></a>Armazenar o token
+
+Os exemplos a seguir são do [usando AsyncStorage no exemplo de código de funções personalizadas](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage) . Consulte este exemplo de código para obter um exemplo completo de compartilhamento de dados entre funções personalizadas e o painel de tarefas.
+
+Se a função personalizada autenticar, ela receberá o token de acesso e deverá armazená-lo `AsyncStorage`no. O exemplo de código a seguir mostra como chamar `AsyncStorage.setItem` o método para armazenar um valor. A `StoreValue` função é uma função personalizada que, por exemplo, armazena um valor do usuário. Você pode modificá-lo para armazenar qualquer valor de token necessário.
+
+```javascript
+function StoreValue(key, value) {
+  return OfficeRuntime.AsyncStorage.setItem(key, value).then(function (result) {
+      return "Success: Item with key '" + key + "' saved to AsyncStorage.";
+  }, function (error) {
+      return "Error: Unable to save item with key '" + key + "' to AsyncStorage. " + error;
+  });
+}
+```
+
+Quando o painel de tarefas precisa do token de acesso, ele pode recuperar o `AsyncStorage`token de. O exemplo de código a seguir mostra como usar `AsyncStorage.getItem` o método para recuperar o token.
+
+```javascript
+function ReceiveTokenFromCustomFunction() {
+   var key = "token";
+   var tokenSendStatus = document.getElementById('tokenSendStatus');
+   OfficeRuntime.AsyncStorage.getItem(key).then(function (result) {
+      tokenSendStatus.value = "Success: Item with key '" + key + "' read from AsyncStorage.";
+      document.getElementById('tokenTextBox2').value = result;
+   }, function (error) {
+      tokenSendStatus.value = "Error: Unable to read item with key '" + key + "' from AsyncStorage. " + error;
+   });
+}
+```
 
 ## <a name="general-guidance"></a>Orientação geral
 

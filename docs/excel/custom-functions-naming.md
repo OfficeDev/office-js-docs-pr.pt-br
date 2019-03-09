@@ -3,12 +3,12 @@ ms.date: 02/08/2019
 description: Saiba mais sobre os nomes de funções personalizadas do Excel e evite armadilhas comuns de nomeação.
 title: Diretrizes de nomenclatura para funções personalizadas no Excel (visualização)
 localization_priority: Normal
-ms.openlocfilehash: bdf31879fb6e750fb9dea51f66c55dbc83a2dc90
-ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.openlocfilehash: 954753c35d2df59093661e3b8e92adfa1302e595
+ms.sourcegitcommit: 8e7b7b0cfb68b91a3a95585d094cf5f5ffd00178
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "30203842"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "30512836"
 ---
 # <a name="naming-guidelines"></a>Diretrizes de nomenclatura
 
@@ -16,7 +16,9 @@ Uma função personalizada é identificada por uma propriedade **ID** e **nome**
 
 Os nomes de função e as IDs de função compartilham alguns requisitos comuns:
 
-- Eles devem usar apenas caracteres alfanuméricos (incluindo Unicode), os números de zero a nove, sublinhados e pontos.
+- As IDs de função só podem usar caracteres de A a Z, números de zero a nove, sublinhados e pontos.
+
+- Os nomes de função podem usar caracteres alfabéticos Unicode, sublinhados e pontos.
 
 - Eles devem começar com uma letra e ter um limite mínimo de três caracteres.
 
