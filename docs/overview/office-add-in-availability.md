@@ -1,14 +1,14 @@
 ---
 title: Disponibilidade de host e plataforma para suplementos do Office
 description: Conjuntos de requisitos compatíveis com Excel, Word, Outlook, PowerPoint, OneNote e Project.
-ms.date: 02/20/2019
+ms.date: 03/07/2019
 localization_priority: Priority
-ms.openlocfilehash: a3e9c508a5bae0e7eb660458835b9242d0602818
-ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.openlocfilehash: 636c6290d8c67901beb195990593727485467460
+ms.sourcegitcommit: 8e7b7b0cfb68b91a3a95585d094cf5f5ffd00178
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "30199610"
+ms.lasthandoff: 03/09/2019
+ms.locfileid: "30512878"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilidade de host e plataforma para suplementos do Office
 
@@ -203,6 +203,8 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
         - TextCoercion</td>
   </tr>
 </table>
+
+*&ast; – Adicionado com atualizações pós-lançamento.*
 
 <br/>
 
@@ -511,6 +513,8 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
   </tr>
 </table>
 
+*&ast; – Adicionado com atualizações pós-lançamento.*
+
 <br/>
 
 ## <a name="powerpoint"></a>PowerPoint
@@ -632,6 +636,8 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
   </tr>
 </table>
 
+*&ast; – Adicionado com atualizações pós-lançamento.*
+
 <br/>
 
 ## <a name="onenote"></a>OneNote
@@ -657,11 +663,10 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
          - TextCoercion</td>
   </tr>
 </table>
-*&ast; – Adicionado com atualizações pós-lançamento.*
 
 <br/>
 
-## <a name="project"></a>Projeto
+## <a name="project"></a>Project
 
 <table style="width:80%">
   <tr>
