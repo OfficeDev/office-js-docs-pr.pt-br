@@ -3,18 +3,18 @@ title: Office.context.mailbox.item - conjunto de requisitos 1.5
 description: ''
 ms.date: 02/15/2019
 localization_priority: Priority
-ms.openlocfilehash: b95985f7ed76b9952e5698e9190ff4c1fa00a7cb
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: 999a9b732a7efd3f4a9c289e5ff0b97e87278e60
+ms.sourcegitcommit: 8fb60c3a31faedaea8b51b46238eb80c590a2491
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30068235"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "30600274"
 ---
 # <a name="item"></a>item
 
 ### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmditem"></a>[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).item
 
-O namespace `item` é usado para acessar a mensagem, a solicitação de reunião ou o compromisso selecionado no momento. Você pode determinar o tipo de `item` usando a propriedade [itemType](#itemtype-officemailboxenumsitemtypejavascriptapioutlook15officemailboxenumsitemtype).
+O namespace `item` é usado para acessar a mensagem, a solicitação de reunião ou o compromisso selecionado no momento. Você pode determinar o tipo de `item` usando a propriedade [itemType](#itemtype-officemailboxenumsitemtype).
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -28,37 +28,37 @@ O namespace `item` é usado para acessar a mensagem, a solicitação de reunião
 
 | Membro | Tipo |
 |--------|------|
-| [attachments](#attachments-arrayattachmentdetailsjavascriptapioutlook15officeattachmentdetails) | Membro |
-| [bcc](#bcc-recipientsjavascriptapioutlook15officerecipients) | Membro |
-| [body](#body-bodyjavascriptapioutlook15officebody) | Membro |
-| [cc](#cc-arrayemailaddressdetailsjavascriptapioutlook15officeemailaddressdetailsrecipientsjavascriptapioutlook15officerecipients) | Membro |
+| [attachments](#attachments-arrayattachmentdetails) | Membro |
+| [bcc](#bcc-recipients) | Membro |
+| [body](#body-body) | Membro |
+| [cc](#cc-arrayemailaddressdetails) | Membro |
 | [conversationId](#nullable-conversationid-string) | Membro |
 | [dateTimeCreated](#datetimecreated-date) | Membro |
 | [dateTimeModified](#datetimemodified-date) | Membro |
-| [end](#end-datetimejavascriptapioutlook15officetime) | Membro |
-| [from](#from-emailaddressdetailsjavascriptapioutlook15officeemailaddressdetails) | Membro |
+| [end](#end-datetime) | Membro |
+| [from](#from-emailaddressdetails) | Membro |
 | [internetMessageId](#internetmessageid-string) | Membro |
 | [itemClass](#itemclass-string) | Membro |
 | [itemId](#nullable-itemid-string) | Membro |
-| [itemType](#itemtype-officemailboxenumsitemtypejavascriptapioutlook15officemailboxenumsitemtype) | Membro |
-| [location](#location-stringlocationjavascriptapioutlook15officelocation) | Membro |
+| [itemType](#itemtype-officemailboxenumsitemtype) | Membro |
+| [location](#location-stringlocation) | Membro |
 | [normalizedSubject](#normalizedsubject-string) | Membro |
-| [notificationMessages](#notificationmessages-notificationmessagesjavascriptapioutlook15officenotificationmessages) | Membro |
-| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsjavascriptapioutlook15officeemailaddressdetailsrecipientsjavascriptapioutlook15officerecipients) | Membro |
-| [organizer](#organizer-emailaddressdetailsjavascriptapioutlook15officeemailaddressdetails) | Membro |
-| [requiredAttendees](#requiredattendees-arrayemailaddressdetailsjavascriptapioutlook15officeemailaddressdetailsrecipientsjavascriptapioutlook15officerecipients) | Member |
-| [sender](#sender-emailaddressdetailsjavascriptapioutlook15officeemailaddressdetails) | Membro |
-| [start](#start-datetimejavascriptapioutlook15officetime) | Membro |
-| [subject](#subject-stringsubjectjavascriptapioutlook15officesubject) | Membro |
-| [to](#to-arrayemailaddressdetailsjavascriptapioutlook15officeemailaddressdetailsrecipientsjavascriptapioutlook15officerecipients) | Membro |
+| [notificationMessages](#notificationmessages-notificationmessages) | Membro |
+| [optionalAttendees](#optionalattendees-arrayemailaddressdetails) | Membro |
+| [organizer](#organizer-emailaddressdetails) | Membro |
+| [requiredAttendees](#requiredattendees-arrayemailaddressdetails) | Member |
+| [sender](#sender-emailaddressdetails) | Membro |
+| [start](#start-datetime) | Membro |
+| [subject](#subject-stringsubject) | Membro |
+| [to](#to-arrayemailaddressdetails) | Membro |
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | Método |
 | [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | Método |
 | [close](#close) | Método |
 | [displayReplyAllForm](#displayreplyallformformdata-callback) | Método |
 | [displayReplyForm](#displayreplyformformdata-callback) | Método |
-| [getEntities](#getentities--entitiesjavascriptapioutlook15officeentities) | Método |
-| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactjavascriptapioutlook15officecontactmeetingsuggestionjavascriptapioutlook15officemeetingsuggestionphonenumberjavascriptapioutlook15officephonenumbertasksuggestionjavascriptapioutlook15officetasksuggestion) | Método |
-| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactjavascriptapioutlook15officecontactmeetingsuggestionjavascriptapioutlook15officemeetingsuggestionphonenumberjavascriptapioutlook15officephonenumbertasksuggestionjavascriptapioutlook15officetasksuggestion) | Método |
+| [getEntities](#getentities--entities) | Método |
+| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontact) | Método |
+| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontact) | Método |
 | [getRegExMatches](#getregexmatches--object) | Método |
 | [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | Método |
 | [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | Método |
@@ -172,7 +172,7 @@ Obtém um objeto que fornece métodos para manipular o corpo de um item.
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.1|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Escrever ou Ler|
+|[Modo Aplicável do Outlook](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
 ##### <a name="example"></a>Exemplo
 
@@ -316,7 +316,7 @@ console.log("Date and time modified: " + dateTimeModified);
 
 Obtém ou define a data e a hora em que o compromisso deve terminar.
 
-A propriedade `end` é expressa como um valor de data e hora no Tempo Universal Coordenado (UTC). Você pode usar o método [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook15officelocalclienttime) para converter o valor da propriedade end para a data e a hora local do cliente.
+A propriedade `end` é expressa como um valor de data e hora no Tempo Universal Coordenado (UTC). Você pode usar o método [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttime) para converter o valor da propriedade end para a data e a hora local do cliente.
 
 ##### <a name="read-mode"></a>Modo de leitura
 
@@ -367,7 +367,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 
 Obtém o endereço de email do remetente de uma mensagem. Somente modo de leitura.
 
-As propriedades `from` e [`sender`](#sender-emailaddressdetailsjavascriptapioutlook15officeemailaddressdetails) representam a mesma pessoa, a menos que a mensagem seja enviada por um representante. Nesse caso, a propriedade `from` representa o delegante, e a propriedade sender, o representante.
+As propriedades `from` e [`sender`](#sender-emailaddressdetails) representam a mesma pessoa, a menos que a mensagem seja enviada por um representante. Nesse caso, a propriedade `from` representa o delegante, e a propriedade sender, o representante.
 
 > [!NOTE]
 > A propriedade `recipientType` do objeto `EmailAddressDetails` na propriedade `from` é `undefined`.
@@ -550,7 +550,7 @@ function callback(asyncResult) {
 
 Obtém o assunto de um item, com todos os prefixos removidos (incluindo `RE:` e `FWD:`). Somente modo de leitura.
 
-A propriedade normalizedSubject obtém o assunto do item, com quaisquer prefixos padrão (como `RE:` e `FW:`), que são adicionados por programas de email. Para obter o assunto do item com os prefixos intactos, use a propriedade [`subject`](#subject-stringsubjectjavascriptapioutlook15officesubject).
+A propriedade normalizedSubject obtém o assunto do item, com quaisquer prefixos padrão (como `RE:` e `FW:`), que são adicionados por programas de email. Para obter o assunto do item com os prefixos intactos, use a propriedade [`subject`](#subject-stringsubject).
 
 ##### <a name="type"></a>Tipo
 
@@ -705,7 +705,7 @@ function callback(asyncResult) {
 
 Obtém o endereço de email do remetente de uma mensagem de email. Somente modo de leitura.
 
-As propriedades [`from`](#from-emailaddressdetailsjavascriptapioutlook15officeemailaddressdetails) e `sender` representam a mesma pessoa, a menos que a mensagem seja enviada por um representante. Nesse caso, a propriedade `from` representa o delegante, e a propriedade sender, o representante.
+As propriedades [`from`](#from-emailaddressdetails) e `sender` representam a mesma pessoa, a menos que a mensagem seja enviada por um representante. Nesse caso, a propriedade `from` representa o delegante, e a propriedade sender, o representante.
 
 > [!NOTE]
 > A propriedade `recipientType` do objeto `EmailAddressDetails` na propriedade `sender` é `undefined`.
@@ -734,7 +734,7 @@ console.log("Sender: " + senderName + " (" + senderAddress + ")");
 
 Obtém ou define a data e a hora em que o compromisso deve começar.
 
-A propriedade `start` é expressa como um valor de data e hora no Tempo Universal Coordenado (UTC). Você pode usar o método [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook15officelocalclienttime) para converter o valor para a data e a hora local do cliente.
+A propriedade `start` é expressa como um valor de data e hora no Tempo Universal Coordenado (UTC). Você pode usar o método [`convertToLocalClientTime`](office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttime) para converter o valor para a data e a hora local do cliente.
 
 ##### <a name="read-mode"></a>Modo de leitura
 
@@ -819,7 +819,7 @@ function callback(asyncResult) {
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Escrever ou Ler|
+|[Modo Aplicável do Outlook](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
 ####  <a name="to-arrayemailaddressdetailsjavascriptapioutlook15officeemailaddressdetailsrecipientsjavascriptapioutlook15officerecipients"></a>to :Array.<[EmailAddressDetails](/javascript/api/outlook_1_5/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook_1_5/office.recipients)
 
@@ -857,7 +857,7 @@ function callback(asyncResult) {
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Escrever ou Ler|
+|[Modo Aplicável do Outlook](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
 ### <a name="methods"></a>Métodos
 
