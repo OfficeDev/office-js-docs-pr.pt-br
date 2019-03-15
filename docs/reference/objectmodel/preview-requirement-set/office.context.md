@@ -1,14 +1,14 @@
 ---
-title: Office.context – conjunto de requisitos de versão prévia
+title: Office. Context – conjunto de requisitos de visualização
 description: ''
 ms.date: 02/15/2019
 localization_priority: Normal
-ms.openlocfilehash: afc74aba3ebacd2d8f54cdc94e02b9f9ba19dcbf
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: 0d47ab4f136cfc51808ca509de8177bb331e3cb7
+ms.sourcegitcommit: 8fb60c3a31faedaea8b51b46238eb80c590a2491
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30068284"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "30600267"
 ---
 # <a name="context"></a>context
 
@@ -21,15 +21,15 @@ O namespace Office.context fornece interfaces compartilhadas que são usadas pel
 |Requisito| Valor|
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
 ##### <a name="members-and-methods"></a>Membros e métodos
 
-| Membro | Tipo |
+| Membro	 | Tipo |
 |--------|------|
 | [displayLanguage](#displaylanguage-string) | Membro |
 | [officeTheme](#officetheme-object) | Membro |
-| [roamingSettings](#roamingsettings-roamingsettingsjavascriptapioutlookofficeroamingsettings) | Membro |
+| [roamingSettings](#roamingsettings-roamingsettings) | Membro |
 
 ### <a name="namespaces"></a>Namespaces
 
@@ -45,14 +45,14 @@ O valor `displayLanguage` reflete a configuração atual de **Display Language**
 
 ##### <a name="type"></a>Tipo
 
-*   Cadeia de caracteres
+*   String
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
 ##### <a name="example"></a>Exemplo
 
@@ -90,19 +90,19 @@ Usar as cores de tema do Office possibilita coordenar o esquema de cores de seu 
 
 ##### <a name="properties"></a>Propriedades:
 
-|Nome| Tipo| Descrição|
+|Name| Tipo| Descrição|
 |---|---|---|
 |`bodyBackgroundColor`| String|Obtém a cor de plano de fundo do corpo de tema do Office como um tripleto hexadecimal de cores.|
 |`bodyForegroundColor`| String|Obtém a cor de primeiro plano do corpo de tema do Office como um tripleto hexadecimal de cores.|
 |`controlBackgroundColor`| String|Obtém a cor de plano de fundo do controle do tema do Office como um tripleto hexadecimal de cores.|
-|`controlForegroundColor`| String|Obtém a cor de controle do corpo de tema do Office como um tripleto hexadecimal de cores.|
+|`controlForegroundColor`| Cadeia de caracteres|Obtém a cor de controle do corpo de tema do Office como um tripleto hexadecimal de cores.|
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
 ##### <a name="example"></a>Exemplo
 
@@ -135,4 +135,4 @@ O objeto `RoamingSettings` permite armazenar e acessar os dados de um suplemento
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restrito|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
+|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Escrever ou Ler|
