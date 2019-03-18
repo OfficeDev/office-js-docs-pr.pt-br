@@ -1,14 +1,14 @@
 ---
 title: Trabalhar com gráficos usando a API JavaScript do Excel
 description: ''
-ms.date: 12/04/2017
+ms.date: 03/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 72724c4efd6f87bad90b64b4ac363c796de952bd
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: f058110c7c150a75c847a07df83aa2795c891025
+ms.sourcegitcommit: 8fb60c3a31faedaea8b51b46238eb80c590a2491
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29387874"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "30600260"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Trabalhar com gráficos usando a API JavaScript do Excel
 
@@ -66,7 +66,7 @@ Excel.run(function (context) {
 
 ## <a name="set-chart-title"></a>Definir título do gráfico
 
-O exemplo de código a seguir define o título do primeiro gráfico na planilha para **Sales Data by Year**. 
+O exemplo de código a seguir define o título do primeiro gráfico na planilha para **Sales Data by Year**.
 
 ```js
 Excel.run(function (context) {
@@ -186,6 +186,33 @@ Excel.run(function (context) {
 **Gráfico com linha de tendência linear**
 
 ![Gráfico com linha de tendência linear no Excel](../images/excel-charts-trendline-linear.png)
+
+## <a name="export-a-chart-as-an-image"></a>Exportar um gráfico como uma imagem
+
+Os gráficos podem ser processados como imagens fora do Excel. `Chart.getImage` retorna o gráfico como uma cadeia de caracteres codificada na base 64 representando o gráfico como uma imagem JPEG. O código a seguir mostra como obter a cadeia de caracteres de imagem e registrá-la no console.
+
+```js
+Excel.run(function (ctx) {
+    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
+    var imageAsString = chart.getImage();
+    return context.sync().then(function () {
+        console.log(imageAsString.value);
+        // Instead of logging, your add-in may use the base64-encoded string to save the image as a file or insert it in HTML.
+    });
+}).catch(errorHandlerFunction);
+```
+
+`Chart.getImage` usa três parâmetros opcionais: largura, altura e o modo de ajuste.
+
+```typescript
+getImage(width?: number, height?: number, fittingMode?: Excel.ImageFittingMode): OfficeExtension.ClientResult<string>;
+```
+
+Esses parâmetros determinam o tamanho da imagem. As imagens são sempre dimensionadas proporcionalmente. Os parâmetros de largura e altura definem limites superiores ou inferiores na imagem dimensionada. `ImageFittingMode` tem três valores com os seguintes comportamentos:
+
+- `Fill`: a altura ou largura mínima da imagem é a altura ou largura especificada (o que for atingido primeiro quando a imagem for dimensionada). Esse é o comportamento padrão quando nenhum modo de ajuste é especificado.
+- `Fit`: a altura ou largura máxima da imagem é a altura ou largura especificada (o que for atingido primeiro quando a imagem for dimensionada).
+- `FitAndCenter`: a altura ou largura máxima da imagem é a altura ou largura especificada (o que for atingido primeiro quando a imagem for dimensionada). A imagem resultante é centralizada proporcionalmente à outra dimensão.
 
 ## <a name="see-also"></a>Confira também
 
