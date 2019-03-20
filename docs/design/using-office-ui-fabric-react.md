@@ -1,14 +1,14 @@
 ---
 title: Usar o Office UI Fabric React em Suplementos do Office
 description: ''
-ms.date: 2/28/2019
+ms.date: 02/28/2019
 localization_priority: Priority
-ms.openlocfilehash: 7d3e280298ee6761be9e7ced96d3490defeef7f0
-ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
+ms.openlocfilehash: 11bb9daf99d85f1c4551363e9f04056870631378
+ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "30359237"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "30691143"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>Usar o Office UI Fabric React em Suplementos do Office
 
@@ -29,7 +29,7 @@ Para criar o projeto, execute as seguintes etapas usando o **Windows PowerShell*
 2. Execute o `yo office` para criar os arquivos de projeto para o suplemento.
 3. Quando solicitado a selecionar um aplicativo cliente do Office, escolha o **Word**.
 4. Você precisa estar no diretório com os arquivos de projeto e executar o `npm start`. Uma janela do navegador que mostra um controle giratório abrirá automaticamente.
-5. [Execute sideload do manifesto](..\testing\test-debug-office-add-ins.md) para exibir a interface do usuário completa do suplemento.
+5. [Execute sideload do manifesto](../testing/test-debug-office-add-ins.md) para exibir a interface do usuário completa do suplemento.
 
 ## <a name="step-2---add-a-fabric-react-component"></a>Etapa 2: adicionar um componente do Fabric React
 
