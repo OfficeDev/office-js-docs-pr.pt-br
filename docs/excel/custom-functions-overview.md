@@ -1,14 +1,14 @@
 ---
-ms.date: 01/30/2019
+ms.date: 03/19/2019
 description: Criar funções personalizadas no Excel usando JavaScript.
 title: Criar funções personalizadas no Excel (versão prévia)
 localization_priority: Priority
-ms.openlocfilehash: 312a590052f1f78c8ff5477c8cfb85eb94f03aad
-ms.sourcegitcommit: 70ef38a290c18a1d1a380fd02b263470207a5dc6
+ms.openlocfilehash: 4a9e240646b41b737652b6e64eb83e03d0824178
+ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "30052760"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "30691199"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Criar funções personalizadas no Excel (versão prévia)
 
@@ -290,9 +290,9 @@ Para habilitar o recurso cancelar uma função, implemente um identificador de c
 
 ## <a name="declaring-a-volatile-function"></a>Como declarar uma função volátil
 
-As [funções voláteis](https://docs.microsoft.com/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions) são funções nas quais o valor muda de momento a momento, mesmo que nenhum dos argumentos da função tenha mudado. Essas funções são recalculadas sempre que o Excel recalcular. Por exemplo, imagine uma célula que chame a função `NOW`. Toda vez que `NOW` for chamado, retornará automaticamente a data e a hora atuais.
+As [funções voláteis](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions) são funções nas quais o valor muda de momento a momento, mesmo que nenhum dos argumentos da função tenha mudado. Essas funções são recalculadas sempre que o Excel recalcular. Por exemplo, imagine uma célula que chame a função `NOW`. Toda vez que `NOW` for chamado, retornará automaticamente a data e a hora atuais.
 
-O Excel contém várias funções voláteis internas, como `RAND` e `TODAY`. Para ver uma lista mais completa de funções voláteis do Excel, confira [Funções voláteis e não voláteis](https://docs.microsoft.com/pt-BR/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).
+O Excel contém várias funções voláteis internas, como `RAND` e `TODAY`. Para ver uma lista mais completa de funções voláteis do Excel, confira [Funções voláteis e não voláteis](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).
 
 As funções personalizadas permitem que você crie suas próprias funções voláteis, que podem ser úteis ao lidar com datas, horas, números aleatórios e modelagem. Por exemplo, as simulações de Monte Carlo exigem a geração de entradas aleatórias para determinar uma solução ideal.
 
@@ -358,10 +358,10 @@ function refreshTemperature(thermometerID){
 }
 ```
 
-## <a name="co-authoring"></a>Coautoria
-Excel Online e o Excel para Windows com uma assinatura do Office 365 permitem coautoria em documentos e esse recurso funciona com funções personalizadas. Se sua pasta de trabalho usa uma função personalizada, seu colega será solicitado a carregar o suplemento da função personalizada. Quando vocês carregaram o suplemento, a função personalizada compartilhará resultados por meio de coautoria.
+## <a name="coauthoring"></a>Coautoria
+O Excel Online e o Excel para Windows com uma assinatura do Office 365 permitem editar documentos em coautoria, e esse recurso funciona com funções personalizadas. Se a pasta de trabalho usa uma função personalizada, seu colega será solicitado a carregar o suplemento da função personalizada. Depois de carregarem o suplemento, a função personalizada compartilhará resultados por meio de coautoria.
 
-Confira mais informações sobre a coautoria, consulte [sobre a coautoria no Excel](https://docs.microsoft.com/pt-BR/office/vba/excel/concepts/about-coauthoring-in-excel).
+Para saber mais sobre coautoria, confira o tópico [Sobre o recurso de coautoria no Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).
 
 ## <a name="working-with-ranges-of-data"></a>Trabalhar com intervalos de dados
 
@@ -391,7 +391,7 @@ function secondHighest(values){
 
 Em alguns casos, você precisará obter o endereço da célula invocada na sua função personalizada. Isso pode ser útil para os seguintes tipos de cenários:
 
-- Formatação de intervalos: Use o endereço da célula como a chave para armazenar informações em [AsyncStorage](https://docs.microsoft.com/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Em seguida, use [onCalculated](https://docs.microsoft.com/javascript/api/excel/excel.worksheet#oncalculated) no Excel para carregar a chave de `AsyncStorage`.
+- Formatação de intervalos: Use o endereço da célula como a chave para armazenar informações em [AsyncStorage](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Em seguida, use [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) no Excel para carregar a chave de `AsyncStorage`.
 - Exibição de valores armazenados em cache: se sua função for usada offline, exiba valores armazenados em cache de `AsyncStorage` usando `onCalculated`.
 - Reconciliação: Use o endereço da célula para descobrir uma célula de origem para ajudá-lo a reconciliar onde o processamento está ocorrendo.
 
@@ -431,27 +431,6 @@ function getAddress(parameter1, invocationContext) {
 
 Por padrão, os valores retornados de uma função `getAddress` seguem o formato abaixo: `SheetName!CellNumber`. Por exemplo, se uma função foi chamada de uma planilha nomeada Despesas na célula B2, o valor retornado seria `Expenses!B2`.
 
-## <a name="handling-errors"></a>Tratamento de erros
-
-Quando você cria um suplemento que define funções personalizadas certifique-se de incluir a lógica de tratamento de erro para lidar com os erros de tempo de execução. O tratamento de erro para funções personalizadas equivale  ao [tratamento de erro para API JavaScript do Excel em](excel-add-ins-error-handling.md). No seguinte exemplo de código `.catch` tratará os erros que ocorreram anteriormente no código.
-
-```js
-function getComment(x) {
-  let url = "https://www.contoso.com/comments/" + x;
-
-  return fetch(url)
-    .then(function (data) {
-      return data.json();
-    })
-    .then((json) => {
-      return json.body;
-    })
-    .catch(function (error) {
-      throw error;
-    })
-}
-```
-
 ## <a name="known-issues"></a>Problemas conhecidos
 
 Veja os problemas conhecidos no nosso [GitHub de funções do Excel personalizado repo](https://github.com/OfficeDev/Excel-Custom-Functions/issues). 
@@ -463,4 +442,3 @@ Veja os problemas conhecidos no nosso [GitHub de funções do Excel personalizad
 * [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
 * [Log de alteração de funções personalizadas](custom-functions-changelog.md)
 * [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)
-

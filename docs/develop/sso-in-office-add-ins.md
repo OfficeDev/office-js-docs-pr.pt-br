@@ -1,14 +1,14 @@
 ---
 title: Habilitar o logon único para Suplementos do Office
 description: ''
-ms.date: 09/26/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: f76a1394bb55a260af9bbde2d18cd330bbf2688b
-ms.sourcegitcommit: bf5c56d9b8c573e42bf2268e10ca3fd4d2bb4ff9
+ms.openlocfilehash: dc9050d574e0a5e74ae8cae2c63817aa4f952eb9
+ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "29701789"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "30691192"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Habilitar o logon único para Suplementos do Office (visualização)
 
@@ -20,9 +20,9 @@ Os usuários entram no Office (online, em dispositivos móveis e plataformas des
 
 A API de logon único tem suporte somente na visualização. Está disponível para os desenvolvedores para experimentação; mas não deve ser usado em um suplemento de produção. Além disso, os suplementos que usam o SSO não são aceitos no [AppSource](https://appsource.microsoft.com).
 
-O SSO requer o Office 365 (versão de assinatura do Office, também chamada "Clique para Executar"). Você deve usar o build e a versão mensal mais recentes do canal de Participante do programa Office Insider. É necessário ingressar no programa Office Insider para obter essa versão. Para saber mais, confira a página [Seja um Office Insider](https://products.office.com/office-insider?tab=tab-1). Observe que, quando um build é promovido ao Canal Semestral de produção, o suporte para recursos de visualização, como o SSO, é desativado para esse build.
+O SSO exige o Office 365 (a versão de assinatura do Office). Você deve usar o build e a versão mensal mais recente do canal Insiders. É necessário ingressar no programa Office Insider para obter essa versão. Para saber mais, confira a página [Seja um Office Insider](https://products.office.com/office-insider?tab=tab-1). Observe que, quando um build é promovido ao Canal Semestral de produção, o suporte para recursos de visualização, como o SSO, é desativado para esse build.
 
-Nem todos os aplicativos do Office oferecem suporte a visualização de SSO. Está disponível no Word, Excel, Outlook e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets).
+Nem todos os aplicativos do Office oferecem suporte a visualização de SSO. Está disponível no Word, Excel, Outlook e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets).
 
 ### <a name="requirements-and-best-practices"></a>Requisitos e as práticas recomendadas
 
@@ -30,7 +30,7 @@ Para usar o SSO, você deve carregar a versão beta da biblioteca de JavaScript 
 
 Se você estiver trabalhando com um suplemento do **Outlook**, certifique-se de habilitar a Autenticação Moderna para o locatário do Office 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
-Você *não* deve confiar no SSO como único método do suplemento de autenticação. Devem implementar um sistema de autenticação alternativo que o suplemento possa se enquadrar em determinadas situações de erro. Você pode usar um sistema de autenticação e tabelas de usuário ou utilizar um dos provedores de logon de redes sociais. Para saber mais sobre como fazer isso com um suplemento do Office, confira [Autorizar serviços externos nos suplementos do Office](https://docs.microsoft.com/pt-BR/office/dev/add-ins/develop/auth-external-add-ins). Para *Outlook*, há um sistema de retorno recomendado. Para mais informações, confira [Cenário: implementar o logon único no serviço em um Suplemento do Outlook](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in).
+Você *não* deve confiar no SSO como único método do suplemento de autenticação. Devem implementar um sistema de autenticação alternativo que o suplemento possa se enquadrar em determinadas situações de erro. Você pode usar um sistema de autenticação e tabelas de usuário ou utilizar um dos provedores de logon de redes sociais. Para saber mais sobre como fazer isso com um suplemento do Office, confira [Autorizar serviços externos nos suplementos do Office](/office/dev/add-ins/develop/auth-external-add-ins). Para *Outlook*, há um sistema de retorno recomendado. Para mais informações, confira [Cenário: implementar o logon único no serviço em um Suplemento do Outlook](/outlook/add-ins/implement-sso-in-outlook-add-in).
 
 ### <a name="how-sso-works-at-runtime"></a>Como o SSO funciona em tempo de execução
 
@@ -56,7 +56,7 @@ Esta seção descreve as tarefas envolvidas na criação de um suplemento do Off
 
 ### <a name="create-the-service-application"></a>Criar o aplicativo de serviço
 
-Registre o suplemento no portal de registro para o ponto de extremidade v 2.0 do Azure:https://apps.dev.microsoft.com Esse é um processo que leva entre 5 e 10 minutos e inclui as seguintes tarefas:
+Registre o suplemento no portal de registro para o ponto de extremidade v 2.0 do Azure: https://apps.dev.microsoft.com. Esse é um processo que leva entre 5 e 10 minutos e inclui as seguintes tarefas:
 
 * Obter um ID de cliente e o segredo para o suplemento.
 * Especificar as permissões que seu suplemento precisa de AAD v. ponto de extremidade 2.0 (e, opcionalmente, para o Microsoft Graph). A permissão "perfil" sempre é necessária.
@@ -95,11 +95,11 @@ Veja a seguir um exemplo da marcação:
 
 Adicione o JavaScript ao suplemento para:
 
-* Ligue [getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference).
+* Ligue [getAccessTokenAsync](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference).
 
-* Analisar o token de acesso ou encaminhá-lo ao código de servidor do suplemento. 
+* Analisar o token de acesso ou encaminhá-lo ao código de servidor do suplemento.
 
-Aqui está um exemplo simples de uma chamada para `getAccessTokenAsync`. 
+Aqui está um exemplo simples de uma chamada para `getAccessTokenAsync`.
 
 > [!NOTE]
 > Este exemplo lida explicitamente com apenas um tipo de erro. Exemplos de tratamento de erro mais elaborados, confira [Home.js Office – adicionar-em-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/Home.js) e [program.js Office – adicionar-em-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/public/program.js). E veja [solucionar problemas de mensagens de erro no logon único (SSO)](troubleshoot-sso-in-office-add-ins.md).
@@ -191,34 +191,34 @@ Por exemplo, o serviço poderia formatar os valores em conjunto como `{oid-value
 
 ### <a name="example-access-token"></a>Token de acesso de exemplo
 
-A seguir está uma carga decodificada típica do token de acesso. Para saber mais sobre as propriedades, confira [Referência de tokens de versão do Azure Active Directory 2.0](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-tokens).
+A seguir está uma carga decodificada típica do token de acesso. Para saber mais sobre as propriedades, confira [Referência de tokens de versão do Azure Active Directory 2.0](/azure/active-directory/develop/active-directory-v2-tokens).
 
 
 ```js
 {
-    aud: "2c3caa80-93f9-425e-8b85-0745f50c0d24",         
-    iss: "https://login.microsoftonline.com/fec4f964-8bc9-4fac-b972-1c1da35adbcd/v2.0",         
-    iat: 1521143967,         
-    nbf: 1521143967,         
-    exp: 1521147867,         
-    aio: "ATQAy/8GAAAA0agfnU4DTJUlEqGLisMtBk5q6z+6DB+sgiRjB/Ni73q83y0B86yBHU/WFJnlMQJ8",         
-    azp: "e4590ed6-62b3-5102-beff-bad2292ab01c",         
-    azpacr: "0",         
-    e_exp: 262800,         
-    name: "Mila Nikolova",         
-    oid: "6467882c-fdfd-4354-a1ed-4e13f064be25",         
-    preferred_username: "milan@contoso.com",         
-    scp: "access_as_user",         
-    sub: "XkjgWjdmaZ-_xDmhgN1BMP2vL2YOfeVxfPT_o8GRWaw",         
-    tid: "fec4f964-8bc9-4fac-b972-1c1da35adbcd",         
-    uti: "MICAQyhrH02ov54bCtIDAA",         
+    aud: "2c3caa80-93f9-425e-8b85-0745f50c0d24",
+    iss: "https://login.microsoftonline.com/fec4f964-8bc9-4fac-b972-1c1da35adbcd/v2.0",
+    iat: 1521143967,
+    nbf: 1521143967,
+    exp: 1521147867,
+    aio: "ATQAy/8GAAAA0agfnU4DTJUlEqGLisMtBk5q6z+6DB+sgiRjB/Ni73q83y0B86yBHU/WFJnlMQJ8",
+    azp: "e4590ed6-62b3-5102-beff-bad2292ab01c",
+    azpacr: "0",
+    e_exp: 262800,
+    name: "Mila Nikolova",
+    oid: "6467882c-fdfd-4354-a1ed-4e13f064be25",
+    preferred_username: "milan@contoso.com",
+    scp: "access_as_user",
+    sub: "XkjgWjdmaZ-_xDmhgN1BMP2vL2YOfeVxfPT_o8GRWaw",
+    tid: "fec4f964-8bc9-4fac-b972-1c1da35adbcd",
+    uti: "MICAQyhrH02ov54bCtIDAA",
     ver: "2.0"
 }
 ```
 
 ## <a name="using-sso-with-an-outlook-add-in"></a>Usando o SSO com um suplemento do Outlook
 
-Há algumas diferenças pequenas, mas importantes entre usar o SSO em um suplemento do Outlook e em um suplemento do Excel, PowerPoint ou Word. Não deixe de ler [Autenticar o usuário com um token de logon único em um suplemento do Outlook](https://docs.microsoft.com/outlook/add-ins/authenticate-a-user-with-an-sso-token) e [Cenário: implementar o logon único ao serviço em um suplemento do Outlook](https://docs.microsoft.com/outlook/add-ins/implement-sso-in-outlook-add-in).
+Há algumas diferenças pequenas, mas importantes entre usar o SSO em um suplemento do Outlook e em um suplemento do Excel, PowerPoint ou Word. Não deixe de ler [Autenticar o usuário com um token de logon único em um suplemento do Outlook](/outlook/add-ins/authenticate-a-user-with-an-sso-token) e [Cenário: implementar o logon único ao serviço em um suplemento do Outlook](/outlook/add-ins/implement-sso-in-outlook-add-in).
 
 ## <a name="sso-api-reference"></a>Referência da API do SSO
 
@@ -230,27 +230,27 @@ O namespace de autenticação do Office `Office.context.auth`, fornece um métod
 getAccessTokenAsync(options?: AuthOptions, callback?: (result: AsyncResult<string>) => void): void;
 ```
 
-O método chama o ponto de extremidade do Azure Active Directory V 2.0 para obter um token de acesso para o aplicativo Web do seu suplemento. Isso permite que os suplementos identifiquem usuários. O código do lado do servidor pode usar esse token para acessar o Microsoft Graph do aplicativo Web do suplemento usando o [fluxo OAuth "em nome de"](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of).
+O método chama o ponto de extremidade do Azure Active Directory V 2.0 para obter um token de acesso para o aplicativo Web do seu suplemento. Isso permite que os suplementos identifiquem usuários. O código do lado do servidor pode usar esse token para acessar o Microsoft Graph do aplicativo Web do suplemento usando o [fluxo OAuth "em nome de"](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of).
 
 > [!NOTE]
 > No Outlook, não há suporte para esse API se o suplemento for carregado em uma caixa de correio do Gmail ou do Outlook.com.
 
-<table><tr><td>Hosts</td><td>Excel, OneNote, Outlook, PowerPoint, Word</td></tr>
-
- <tr><td>[Conjuntos de requisitos](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)</td><td>[IdentityAPI](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)</td></tr></table>
+|Hosts|Excel, OneNote, Outlook, PowerPoint, Word|
+|---|---|
+|[Conjuntos de requisitos](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)|[IdentityAPI](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets)|
 
 #### <a name="parameters"></a>Parâmetros
 
 `options` – Opcional. Aceitar um objeto `AuthOptions` (veja abaixo) para definir comportamentos logon.
 
-`callback` – Opcional. Aceita um método de retorno que possa analisar o token de ID de usuário ou usar o token fluxo "em nome de" para obter acesso ao Microsoft Graph. Se [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult) `.status` é "bem-sucedido", em seguida, `AsyncResult.value` é o v AAD bruto. token de acesso 2.0 formatado.
+`callback` – Opcional. Aceita um método de retorno que possa analisar o token de ID de usuário ou usar o token fluxo "em nome de" para obter acesso ao Microsoft Graph. Se [AsyncResult](/javascript/api/office/office.asyncresult) `.status` é "bem-sucedido", em seguida, `AsyncResult.value` é o v AAD bruto. token de acesso 2.0 formatado.
 
 A interface `AuthOptions`fornece opções para a experiência do usuário quando o Office obtém um token de acesso para o suplemento do AAD v. 2.0 com o método`getAccessTokenAsync`.
 
 ```typescript
 interface AuthOptions {
     /**
-        * Causes Office to display the add-in consent experience. Useful if the add-in's Azure permissions have changed or if the user's consent has 
+        * Causes Office to display the add-in consent experience. Useful if the add-in's Azure permissions have changed or if the user's consent has
         * been revoked.
         */
     forceConsent?: boolean,
@@ -259,10 +259,10 @@ interface AuthOptions {
         */
     forceAddAccount?: boolean,
     /**
-        * Causes Office to prompt the user to provide the additional factor when the tenancy being targeted by Microsoft Graph requires multifactor 
-        * authentication. The string value identifies the type of additional factor that is required. In most cases, you won't know at development 
-        * time whether the user's tenant requires an additional factor or what the string should be. So this option would be used in a "second try" 
-        * call of getAccessTokenAsync after Microsoft Graph has sent an error requesting the additional factor and containing the string that should 
+        * Causes Office to prompt the user to provide the additional factor when the tenancy being targeted by Microsoft Graph requires multifactor
+        * authentication. The string value identifies the type of additional factor that is required. In most cases, you won't know at development
+        * time whether the user's tenant requires an additional factor or what the string should be. So this option would be used in a "second try"
+        * call of getAccessTokenAsync after Microsoft Graph has sent an error requesting the additional factor and containing the string that should
         * be used with the authChallenge option.
         */
     authChallenge?: string
@@ -272,6 +272,3 @@ interface AuthOptions {
     asyncContext?: any
 }
 ```
-
-
-
