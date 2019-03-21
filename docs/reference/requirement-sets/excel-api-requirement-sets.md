@@ -1,19 +1,19 @@
 ---
 title: Conjuntos de requisitos de API JavaScript do Excel
 description: ''
-ms.date: 02/15/2019
+ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 90cf68faaaa7e49d1aa8e77c644ac0ca134420b9
-ms.sourcegitcommit: 8fb60c3a31faedaea8b51b46238eb80c590a2491
+ms.openlocfilehash: e7d9eac6d06fdce8936e92a001ff213b04a50bc1
+ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "30600309"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "30691227"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Excel
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
 Os suplementos do Excel são executados em várias versões do Office, incluindo Office 2016 ou posterior para Windows, Office para iPad, Office para Mac e Office Online. A tabela a seguir lista conjuntos de requisitos do Excel, ou seja, os aplicativos de host do Office que oferecem suporte a esse conjunto de requisitos, e as versões ou números de build desses aplicativos.
 
@@ -43,7 +43,7 @@ Para saber mais sobre as versões, números de build e sobre o Servidor do Offic
 - [Qual versão do Office estou usando?](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
 - 
   [Onde você pode encontrar o número de versão e de build de um aplicativo cliente do Office 365](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
-- [Visão geral sobre o Servidor do Office Online](https://docs.microsoft.com/officeonlineserver/office-online-server-overview)
+- [Visão geral sobre o Servidor do Office Online](/officeonlineserver/office-online-server-overview)
 
 ## <a name="excel-javascript-preview-apis"></a>APIs de visualização do JavaScript para Excel
 
@@ -452,10 +452,7 @@ Veja a seguir uma lista completa das APIs na visualização.
 ||[hiperlink](/javascript/api/excel/excel.settablecellproperties#hyperlink)||
 ||[style](/javascript/api/excel/excel.settablecellproperties#style)||
 |[SettableColumnProperties](/javascript/api/excel/excel.settablecolumnproperties)|[columnHidden](/javascript/api/excel/excel.settablecolumnproperties#columnhidden)||
-||[columnWidth](/javascript/api/excel/excel.settablecolumnproperties#columnwidth)||
-|[SettableRowProperties](/javascript/api/excel/excel.settablerowproperties)|[rowHeight](/javascript/api/excel/excel.settablerowproperties#rowheight)||
-||[rowHidden](/javascript/api/excel/excel.settablerowproperties#rowhidden)||
-|[Configuração](/javascript/api/excel/excel.setting)|[](/javascript/api/excel/excel.setting#replacestringdatewithdate)||
+|[SettableRowProperties](/javascript/api/excel/excel.settablerowproperties)|[rowHidden](/javascript/api/excel/excel.settablerowproperties#rowhidden)||
 |[Shape](/javascript/api/excel/excel.shape)|[altTextDescription](/javascript/api/excel/excel.shape#alttextdescription)|Retorna ou define o texto da descrição alternativa de um objeto de forma.|
 ||[altTextTitle](/javascript/api/excel/excel.shape#alttexttitle)|Retorna ou define o texto do título alternativo de um objeto de forma.|
 ||[delete()](/javascript/api/excel/excel.shape#delete--)|Remove a forma da planilha.|
@@ -712,11 +709,11 @@ O conjunto de requisitos 1.8 da API JavaScript do Excel inclui APIs para tabelas
 
 ### <a name="pivottable"></a>Tabela Dinâmica
 
-Onda 2 das APIs de Tabela Dinâmica permite que os suplementos definam as hierarquias de uma Tabela Dinâmica. Agora você pode controlar os dados e como eles são agregados. Nosso [Artigo de Tabela Dinâmica](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-pivottables) tem mais informações sobre a nova funcionalidade de tabela dinâmica.
+Onda 2 das APIs de Tabela Dinâmica permite que os suplementos definam as hierarquias de uma Tabela Dinâmica. Agora você pode controlar os dados e como eles são agregados. Nosso [Artigo de Tabela Dinâmica](/office/dev/add-ins/excel/excel-add-ins-pivottables) tem mais informações sobre a nova funcionalidade de tabela dinâmica.
 
 ### <a name="data-validation"></a>Validação de Dados
 
-A validação de dados permite controlar o que um usuário digita em uma planilha. Você pode limitar as células a conjuntos de respostas predefinidos ou fornecer avisos pop-up sobre entradas indesejadas. Saiba mais sobre [adicionar a validação de dados para intervalos](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-data-validation) hoje.
+A validação de dados permite controlar o que um usuário digita em uma planilha. Você pode limitar as células a conjuntos de respostas predefinidos ou fornecer avisos pop-up sobre entradas indesejadas. Saiba mais sobre [adicionar a validação de dados para intervalos](/office/dev/add-ins/excel/excel-add-ins-data-validation) hoje.
 
 ### <a name="charts"></a>Gráficos
 
@@ -724,7 +721,7 @@ Outra rodada de APIs de gráficos traz um controle programático ainda maior sob
 
 ### <a name="events"></a>Eventos
 
-Mais [eventos](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-events) foram adicionados para os gráficos. Faça o seu suplemento reagir aos usuários interagindo com o gráfico. Você também pode [alternar eventos](https://docs.microsoft.com/office/dev/add-ins/excel/performance#enable-and-disable-events) disparados em toda a pasta de trabalho.
+Mais [eventos](/office/dev/add-ins/excel/excel-add-ins-events) foram adicionados para os gráficos. Faça o seu suplemento reagir aos usuários interagindo com o gráfico. Você também pode [alternar eventos](/office/dev/add-ins/excel/performance#enable-and-disable-events) disparados em toda a pasta de trabalho.
 
 |Objeto| Novidades| Descrição|Conjunto de requisitos|
 |:----|:----|:----|:----|
@@ -985,7 +982,7 @@ Com as novas APIs de gráficos, você pode criar tipos degráficos adicionais, a
 
 ### <a name="events"></a>Eventos
 
-As APIs de eventos JavaScript do Excel fornecem diversos,  manipuladores de eventos que permitem que o suplemento execute automaticamente uma função designada quando ocorre um evento específico. Você pode criar essa função para executar as ações que seu cenário exige. Para obter uma lista de eventos que estão disponíveis, confira [trabalhar com eventos usando as API JavaScript do Excel](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-events).
+As APIs de eventos JavaScript do Excel fornecem diversos,  manipuladores de eventos que permitem que o suplemento execute automaticamente uma função designada quando ocorre um evento específico. Você pode criar essa função para executar as ações que seu cenário exige. Para obter uma lista de eventos que estão disponíveis, confira [trabalhar com eventos usando as API JavaScript do Excel](/office/dev/add-ins/excel/excel-add-ins-events).
 
 ### <a name="customize-the-appearance-of-worksheets-and-ranges"></a>Personalizar a aparência de planilhas e intervalos
 
@@ -1672,6 +1669,6 @@ A API JavaScript do Excel 1.1 é a primeira versão da API. Para saber mais sobr
 
 ## <a name="see-also"></a>Confira também
 
-- [Versões do Office e conjuntos de requisitos](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [Especificar requisitos da API e de hosts do Office](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Manifesto XML dos Suplementos do Office](https://docs.microsoft.com/office/dev/add-ins/develop/add-in-manifests)
+- [Versões do Office e conjuntos de requisitos](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
+- [Especificar requisitos da API e de hosts do Office](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
+- [Manifesto XML dos Suplementos do Office](/office/dev/add-ins/develop/add-in-manifests)
