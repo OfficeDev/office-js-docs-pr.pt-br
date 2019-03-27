@@ -1,14 +1,14 @@
 ---
 title: Solucionar erros de usuários com suplementos do Office
 description: ''
-ms.date: 01/23/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 8996cab27fc2ad9368d959086cd9ca53902e9be1
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 84f18543c7bafac905805095c89f8e19a855ea76
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388945"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871070"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Solucionar erros de usuários com suplementos do Office
 
@@ -16,7 +16,7 @@ ms.locfileid: "29388945"
 
 Também é possível usar o [Fiddler](https://www.telerik.com/fiddler) para identificar e depurar problemas com os suplementos.
 
-Depois de resolver o problema do usuário, é possível [responder diretamente às avaliações dos clientes no AppSource](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings).
+Depois de resolver o problema do usuário, é possível [responder diretamente às avaliações dos clientes no AppSource](/office/dev/store/create-effective-office-store-listings).
 
 ## <a name="common-errors-and-troubleshooting-steps"></a>Erros comuns e etapas de solução de problemas
 
@@ -87,7 +87,7 @@ Para adicionar uma URL à lista de sites confiáveis:
 3. Insira a URL exibida na mensagem de erro e escolha **Adicionar**.
 4. Tente usar o suplemento novamente. Se o problema persistir, verifique as configurações de outras zonas de segurança e confira se o domínio do suplemento está na mesma zona que a URL exibida na barra de endereços do aplicativo do Office.
 
-Esse problema ocorre quando a API da caixa de diálogo é usada no modo pop-up. Para evitar esse problema, use o sinalizador [displayInFrame](https://docs.microsoft.com/javascript/api/office/office.ui). Isso requer que a página tenha suporte para exibição dentro de um iframe. O exemplo a seguir mostra como usar o sinalizador.
+Esse problema ocorre quando a API da caixa de diálogo é usada no modo pop-up. Para evitar esse problema, use o sinalizador [displayInFrame](/javascript/api/office/office.ui). Isso requer que a página tenha suporte para exibição dentro de um iframe. O exemplo a seguir mostra como usar o sinalizador.
 
 ```js
 

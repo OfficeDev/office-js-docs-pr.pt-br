@@ -1,15 +1,15 @@
 ---
 title: Criar o seu primeiro suplemento do OneNote
 description: ''
-ms.date: 01/17/2019
+ms.date: 03/19/2019
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: a0b2820f33e3a7cd31c12aec017ca552575a3f9b
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 378d691d1994a2d22166afc5338007400f7a48af
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742335"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871917"
 ---
 # <a name="build-your-first-onenote-add-in"></a>Criar o seu primeiro suplemento do OneNote
 
@@ -276,7 +276,7 @@ Parabéns, você criou com êxito um suplemento do OneNote! Em seguida, saiba ma
 ## <a name="see-also"></a>Confira também
 
 - [Visão geral da programação da API JavaScript do OneNote](../onenote/onenote-add-ins-programming-overview.md)
-- [Referência da API JavaScript do OneNote](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
+- [Referência da API JavaScript do OneNote](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Amostra de Rubric Grader](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
 

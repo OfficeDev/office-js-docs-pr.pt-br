@@ -1,15 +1,15 @@
 ---
 title: Criar um suplemento do Excel usando o Angular
 description: ''
-ms.date: 10/19/2018
+ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: da3e0ce9c6cb075ff828344956cfe25fb579a8fa
-ms.sourcegitcommit: 03773fef3d2a380028ba0804739d2241d4b320e5
+ms.openlocfilehash: e814fb2a1dd24a272a24ca9debead2d836aed5c8
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "30091250"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870986"
 ---
 # <a name="build-an-excel-add-in-using-angular"></a>Criar um suplemento do Excel usando o Angular
 
@@ -39,7 +39,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
     - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?:** `Excel`
 
     ![Gerador do Yeoman](../images/yo-office-excel-angular.png)
-    
+
     Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
 2. Navegue até a pasta raiz do projeto.
@@ -60,7 +60,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
         top: 0;
         left: 0;
         width: 100%;
-        height: 80px; 
+        height: 80px;
         overflow: hidden;
         font-family: Arial;
         padding-top: 25px;
@@ -73,7 +73,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
         left: 0;
         right: 0;
         bottom: 0;
-        overflow: auto; 
+        overflow: auto;
         font-family: Arial;
     }
 
@@ -178,7 +178,6 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
     - Excel Online: [Realizar sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
     - iPad e Mac: [Realizar sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-   
 2. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
     ![Botão do suplemento do Excel](../images/excel-quickstart-addin-2b.png)
@@ -201,5 +200,4 @@ Você criou com êxito um suplemento do Excel usando o Angular!, parabéns! Agor
 * [Tutorial de suplemento do Excel](../tutorials/excel-tutorial-create-table.md)
 * [Conceitos fundamentais de programação com a API JavaScript do Excel](../excel/excel-add-ins-core-concepts.md)
 * [Exemplos de código do suplemento do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Referência da API JavaScript do Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
-
+* [Referência da API JavaScript do Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

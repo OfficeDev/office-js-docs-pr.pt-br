@@ -1,14 +1,14 @@
 ---
 title: Desenvolver suplementos do Office para o Angular
 description: ''
-ms.date: 11/02/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: a385fb1abc0e43423471d02f2a05bfb1824f8aeb
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 20e66fe1a7a6cce17428424290d4e4c99995efb2
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388868"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872225"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Desenvolver suplementos do Office para o Angular
 
@@ -20,7 +20,8 @@ Este artigo fornece orientações sobre como usar o Angular 2+ para criar um Sup
 Para ver um exemplo de Suplementos do Office criado utilizando a estrutura do Angular, confira o [Suplemento de Verificação de Estilo do Word Criado no Angular](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker).
 
 ## <a name="install-the-typescript-type-definitions"></a>Instalar as definições de tipo TypeScript
-Abra uma janela de nodejs e insira o seguinte na linha de comando: 
+
+Abra uma janela de nodejs e insira o seguinte na linha de comando:
 
 ```bash
 npm install --save-dev @types/office-js
@@ -73,7 +74,7 @@ const routes: Routes = // route definitions go here
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-```   
+```
 
 
 ## <a name="consider-wrapping-fabric-components-with-angular-components"></a>Considere a possibilidade de dispor componentes do Fabric com componentes do Angular
@@ -83,9 +84,9 @@ Recomendamos usar o uso do estilo [Office UI Fabric](https://developer.microsoft
 
 ## <a name="using-the-office-dialog-api-with-angular"></a>Usar a API de caixa diálogo do Office com o Angular
 
-A API de caixa de diálogo do Suplemento do Office permite que seu suplemento abra uma página em uma caixa de diálogo semimodal que pode trocar informações com a página principal, que, em geral, está no painel de tarefas. 
+A API de caixa de diálogo do Suplemento do Office permite que seu suplemento abra uma página em uma caixa de diálogo semimodal que pode trocar informações com a página principal, que, em geral, está no painel de tarefas.
 
-O método [displayDialogAsync](https://docs.microsoft.com/javascript/api/office/office.ui) usa um parâmetro que especifica a URL da página que deve ser aberta na caixa de diálogo. Seu suplemento pode ter uma página HTML distinta (diferente da página de base) para transmitir esse parâmetro ou você pode transmitir a URL de uma rota em um aplicativo do Angular. 
+O método [displayDialogAsync](/javascript/api/office/office.ui) usa um parâmetro que especifica a URL da página que deve ser aberta na caixa de diálogo. Seu suplemento pode ter uma página HTML distinta (diferente da página de base) para transmitir esse parâmetro ou você pode transmitir a URL de uma rota em um aplicativo do Angular. 
 
 É importante lembrar, se você transmitir uma rota, que a caixa de diálogo cria uma nova janela com seu próprio contexto de execução. Sua página de base e todos os códigos de inicialização são executados novamente nesse novo contexto e todas as variáveis são definidas para seus valores iniciais na caixa de diálogo. Então essa técnica lança uma segunda instância do seu aplicativo com uma única página na caixa de diálogo. O código que altera as variáveis na caixa de diálogo não altera a versão do painel tarefas das mesmas variáveis. Da mesma forma, a caixa de diálogo tem seu próprio armazenamento de sessão, que não pode ser acessado a partir do código no painel de tarefas.  
 
@@ -106,7 +107,7 @@ export class MyComponent {
     });
   }
 }
-``` 
+```
 
 ## <a name="using-observable"></a>Usando o Observable
 

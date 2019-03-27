@@ -1,15 +1,15 @@
 ---
 title: Visão geral da API JavaScript do Word
 description: ''
-ms.date: 10/09/2018
+ms.date: 03/19/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 9a884e0e092779cc5959aa9b32ae6a5c4f3c0893
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 19e3b7732fb5372228ea1458c57df5e79b08078a
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742300"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870573"
 ---
 # <a name="word-javascript-api-overview"></a>Visão geral da API JavaScript do Word
 
@@ -37,7 +37,7 @@ Se você usar TypeScript e se tiver npm, poderá obter as definições de TypeSc
 
 ## <a name="running-word-add-ins"></a>Execução de suplementos do Word
 
-Para executar o suplemento, use um manipulador de eventos Office.initialize. Consulte [Compreender a API](https://docs.microsoft.com/office/dev/add-ins/develop/understanding-the-javascript-api-for-office) para saber mais sobre a inicialização de suplementos.
+Para executar o suplemento, use um manipulador de eventos Office.initialize. Consulte [Compreender a API](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office) para saber mais sobre a inicialização de suplementos.
 
 Os suplementos direcionados ao Word 2016 ou posterior são executados passando uma função para o método **Word.run()**. A função passada para o método **run** deve ter um argumento de contexto. Esse [objeto de contexto](/javascript/api/word/word.requestcontext) é diferente do objeto de contexto obtido do objeto do Office, mas ele é usado para interagir com o ambiente de tempo de execução do Word. O objeto de contexto fornece acesso ao modelo de objeto da API JavaScript do Word. O exemplo a seguir mostra como iniciar e executar um suplemento do Word usando o método **Word.run()**.
 
@@ -137,6 +137,6 @@ Para saber mais sobre a API JavaScript do Word, consulte a [Documentação de re
 
 ## <a name="see-also"></a>Confira também
 
-* [Visão geral dos suplementos do Word](https://docs.microsoft.com/office/dev/add-ins/word/word-add-ins-programming-overview)
-* [Visão geral da plataforma Suplementos do Office](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-ins)
+* [Visão geral dos suplementos do Word](/office/dev/add-ins/word/word-add-ins-programming-overview)
+* [Visão geral da plataforma Suplementos do Office](/office/dev/add-ins/overview/office-add-ins)
 * [Exemplos de suplementos do Word no GitHub](https://github.com/OfficeDev?utf8=%E2%9C%93&q=Word)

@@ -1,21 +1,21 @@
 ---
 title: Crie o seu primeiro suplemento do Excel usando JQuery
 description: ''
-ms.date: 01/17/2019
+ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 7931e06899a94a0dcda2a5ab442d37ce21c119c0
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 09c3819efde35b9f35847c8ca3bca558b391d98a
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742440"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872120"
 ---
 # <a name="build-an-excel-add-in-using-jquery"></a>Criar um suplemento do Excel usando o jQuery
 
 Neste artigo, você passará pelo processo de criar um suplemento do Excel usando o jQuery e a API JavaScript do Excel. 
 
-## <a name="create-the-add-in"></a>Criar o suplemento 
+## <a name="create-the-add-in"></a>Criar o suplemento
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
@@ -28,7 +28,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 ### <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
 1. Na barra de menus do Visual Studio, selecione **Arquivo**  >  **Novo**  >  **Projeto**.
-    
+
 2. Na lista de tipos de projeto em **Visual C#** ou em **Visual Basic**, expanda a opção **Office/SharePoint**, escolha **Suplementos** e depois **Suplemento da Web do Outlook** como o tipo de projeto. 
 
 3. Dê um nome ao projeto e escolha **OK**.
@@ -36,7 +36,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 4. Na janela **Criar Suplemento do Office**, escolha **Adicionar novas funcionalidades para o Excel**e clique em **Concluir** para criar o projeto.
 
 5. O Visual Studio cria uma solução, e os dois projetos dele são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.
-    
+
 ### <a name="explore-the-visual-studio-solution"></a>Explorar a solução do Visual Studio
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
@@ -44,7 +44,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 ### <a name="update-the-code"></a>Atualizar o código
 
 1. **Home.html** especifica o HTML que será renderizado no painel de tarefas do suplemento. Em **Home.html**, substitua o elemento `<body>` pela marcação a seguir e salve o arquivo.
- 
+
     ```html
     <body class="ms-font-m ms-welcome">
         <div id="content-header">
@@ -184,7 +184,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
     - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?:** `Excel`
 
     ![Gerador do Yeoman](../images/yo-office-jquery.png)
-    
+
     Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
 2. Navegue até a pasta raiz do projeto.
@@ -195,10 +195,10 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 
 ### <a name="update-the-code"></a>Atualizar o código 
 
-1. No editor de código, abra **index.html** na raiz do projeto. Esse arquivo especifica o HTML que será processado no painel de tarefas do suplemento. 
- 
+1. No editor de código, abra **index.html** na raiz do projeto. Esse arquivo especifica o HTML que será renderizado no painel de tarefas do suplemento. 
+
 2. Dentro de **index.html**, substitua a marca `body` pela marcação a seguir e salve o arquivo.
- 
+
     ```html
     <body class="ms-font-m ms-welcome">
         <div id="content-header">
@@ -216,14 +216,14 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
         </div>
         <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
         <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
-    </body>    
+    </body>
     ```
 
 3. Abra o arquivo **src\index.js** para especificar o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
 
     ```js
     'use strict';
-    
+
     (function () {
         Office.onReady(function() {
             // Office is ready
@@ -259,7 +259,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
         top: 0;
         left: 0;
         width: 100%;
-        height: 80px; 
+        height: 80px;
         overflow: hidden;
     }
 
@@ -270,7 +270,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
         left: 0;
         right: 0;
         bottom: 0;
-        overflow: auto; 
+        overflow: auto;
     }
 
     .padding {
@@ -280,7 +280,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 
 ### <a name="update-the-manifest"></a>Atualizar o manifesto
 
-1. Abra o arquivo **manifest.xml** para definir as configurações e os recursos do suplemento. 
+1. Abra o arquivo **manifest.xml** para definir as configurações e os recursos do suplemento.
 
 2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o com seu nome.
 
@@ -334,5 +334,4 @@ Você criou com êxito um suplemento do Excel usando jQuery!, parabéns! Agora, 
 * [Tutorial de suplemento do Excel](../tutorials/excel-tutorial-create-table.md)
 * [Conceitos fundamentais de programação com a API JavaScript do Excel](../excel/excel-add-ins-core-concepts.md)
 * [Exemplos de código do suplemento do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Referência da API JavaScript do Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
-
+* [Referência da API JavaScript do Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

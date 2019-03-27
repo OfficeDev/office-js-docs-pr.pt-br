@@ -1,14 +1,14 @@
 ---
 title: Associar a regiões em um documento ou em uma planilha
 description: ''
-ms.date: 12/04/2017
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: f475da024428999ca4192fb6a395cee2bb7b0e30
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: be633fc99d4a80257a9c8f68b5e9569727ac30a5
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388553"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870433"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>Associar a regiões em um documento ou em uma planilha
 
@@ -16,11 +16,11 @@ O acesso a dados baseado em associação permite que os suplementos de conteúdo
 
 
 - Permite o acesso a estruturas comuns de dados em aplicativos compatíveis do Office, como: tabelas, intervalos ou texto (uma execução contígua de caracteres).
-    
+
 - Habilita operações de leitura/gravação sem exigir que o usuário realize uma seleção.
-    
+
 - Estabelece uma relação entre o suplemento e os dados presentes no documento. As associações estão presentes no documento e podem ser acessadas em um momento posterior.
-    
+
 A criação de uma associação também permite que você se inscreva em eventos de alteração de seleção e de dados que apresentem um escopo definido para essa região específica do documento ou da planilha. Isso significa que o suplemento só é notificado sobre alterações que ocorrem dentro da região associada, e não sobre alterações gerais que ocorrem em todo o documento ou planilha.
 
 O objeto [Bindings] expõe um método [getAllAsync], que dá acesso ao conjunto de todas as associações estabelecidas no documento ou na planilha. Uma associação individual pode ser acessada por sua ID, usando o método Bindings.[getByIdAsync] ou [Office.select]. Você pode estabelecer novas associações e remover as existentes usando um dos seguintes métodos do objeto [Bindings]: [addFromSelectionAsync], [addFromPromptAsync], [addFromNamedItemAsync] ou [releaseByIdAsync].
@@ -38,7 +38,7 @@ Há [três tipos diferentes de associações][Office.BindingType] que podem ser 
 
     No Excel, qualquer seleção contígua de células pode ser usada para estabelecer uma associação de matriz. No Word, apenas as tabelas dão suporte à associação de matriz.
 
-3. **[Table Binding][TableBinding]**: associa uma região de um documento que contém uma tabela com cabeçalhos. Os dados em uma associação de tabela são gravados ou lidos como um objeto [TableData](https://docs.microsoft.com/javascript/api/office/office.tabledata). O objeto `TableData` expõe os dados por meio das propriedades `headers` e `rows`.
+3. **[Table Binding][TableBinding]**: associa uma região de um documento que contém uma tabela com cabeçalhos. Os dados em uma associação de tabela são gravados ou lidos como um objeto [TableData](/javascript/api/office/office.tabledata). O objeto `TableData` expõe os dados por meio das propriedades `headers` e `rows`.
 
     Qualquer tabela do Excel ou Word pode ser a base para uma associação de tabela. Após estabelecer uma associação de tabelas, as linhas ou colunas novas que um usuário adicionar à tabela são automaticamente incluídas na associação. 
 
@@ -91,7 +91,7 @@ function bindFromPrompt() {
 
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 
@@ -341,7 +341,7 @@ A função anônima que é transmitida para a função é um retorno de chamada 
 ## <a name="detect-changes-to-data-or-the-selection-in-a-binding"></a>Detectar alterações nos dados ou a seleção em uma associação
 
 
-O exemplo a seguir mostra como anexar um manipulador de eventos ao evento [DataChanged](https://docs.microsoft.com/javascript/api/office/office.binding) de uma associação com uma id "MyBinding".
+O exemplo a seguir mostra como anexar um manipulador de eventos ao evento [DataChanged](/javascript/api/office/office.binding) de uma associação com uma id "MyBinding".
 
 
 ```js
@@ -354,7 +354,7 @@ function dataChanged(eventArgs) {
 }
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 
@@ -392,7 +392,7 @@ function removeEventHandlerFromBinding() {
 - [Noções básicas da API JavaScript para Office](understanding-the-javascript-api-for-office.md) 
 - [Programação assíncrona nos Suplementos do Office](asynchronous-programming-in-office-add-ins.md)
 - [Leia e grave dados na seleção ativa, em um documento ou em uma planilha](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
-    
+
 [Associação]:               https://docs.microsoft.com/javascript/api/office/office.binding
 [MatrixBinding]:         https://docs.microsoft.com/javascript/api/office/office.matrixbinding
 [TableBinding]:          https://docs.microsoft.com/javascript/api/office/office.tablebinding

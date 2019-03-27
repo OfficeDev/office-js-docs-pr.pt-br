@@ -1,14 +1,14 @@
 ---
 title: Limites de recurso e otimização de desempenho para Suplementos do Office
 description: ''
-ms.date: 01/23/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 4ad6b45c9f7797b5f47ef52ce604710b3d6b4853
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: ead376bb12701f7ee810cfc4e536ae4866d2f1b5
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388889"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872176"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites de recurso e otimização de desempenho para Suplementos do Office
 
@@ -21,23 +21,23 @@ Também é possível otimizar o desempenho dos suplementos em dispositivos móve
 Os limites de uso de recursos de tempo de execução aplicam-se a todos os tipos de Suplementos do Office. Esses limites ajudam a garantir o desempenho para os usuários e a reduzir ataques de negação de serviço. Teste o Suplemento do Office no aplicativo de host de destino usando o intervalo de dados possíveis e meça o desempenho em relação aos seguintes limites de uso de tempo de execução:
 
 - **Uso de núcleo de CPU**: um limite de uso de núcleo de CPU único de 90%, observado três vezes em intervalos padrão de cinco segundos.
-    
+
    O intervalo padrão para um cliente avançado de host verificar o uso do núcleo da CPU é a cada 5 segundos. Se o cliente host detectar que o uso do núcleo da CPU de um suplemento está acima do valor limite, ele exibe uma mensagem perguntando se o usuário deseja continuar a executar o suplemento. Se o usuário optar por continuar, o cliente host não pergunta novamente durante aquela sessão de edição. Os administradores podem querer usar a chave de registro **AlertInterval** para elevar o limite caso os usuários executem suplementos que consomem muita CPU, a fim de reduzir a exibição desta mensagem de aviso.
-    
+
 - **Uso de memória**: um limite de uso de memória padrão que é determinado dinamicamente com base na memória física disponível do dispositivo.
-    
+
    Por padrão, quando um cliente avançado de host detecta que o uso da memória física em um dispositivo excedeu 80% da memória disponível, o cliente começa a monitorar o uso de memória do suplemento, no âmbito de um documento para suplementos de conteúdo e de painel de tarefas e no âmbito de caixa de correio para suplementos do Outlook. Com um intervalo padrão de 5 segundos, o cliente avisa o usuário se o uso da memória física exceder os 50% em um conjunto de suplementos de documento ou de caixa de correio. Esse limite de uso da memória utiliza a memória física, e não a virtual, para garantir o desempenho em dispositivos com RAM limitada, como tablets. Os administradores podem sobrepor esta configuração dinâmica com um limite explícito usando a chave de registro do Windows **MemoryAlertThreshold** como configuração global, ou ajustando o intervalo de alerta usando a chave **AlertInterval** como configuração global.
-    
+
 - **Tolerância a falhas**: um limite padrão de quatro falhas para um suplemento.
-    
+
    Os administradores podem ajustar o limite para casos de falha usando a chave de registro **RestartManagerRetryLimit**.
-    
+
 - **Bloqueio de aplicativo**: um limite prolongado de falta de resposta de cinco segundos para um suplemento.
-    
+
    Isso afeta a experiência do usuário no suplemento e no aplicativo host. Quado isso ocorre, o aplicativo host automaticamente reinicia todos os suplementos ativos de um documento ou caixa de correio (quando for aplicável) e avisa o usuário sobre qual suplemento parou de responder. Os suplementos podem atingir este limite quando não produzirem regularmente velocidade de processamento ao realizar tarefas com longa execução. Há técnicas para garantir que o bloqueio não ocorra. Os administradores não podem sobrepor esse limite.
-    
+
 ### <a name="outlook-add-ins"></a>Suplementos do Outlook
-    
+
 Se qualquer suplemento do Outlook exceder os limites anteriores para núcleo da CPU, uso de memória ou limite de tolerância a falhas, o Outlook desativa o suplemento. O Centro de Administração do Exchange exibe o status de desativação do aplicativo.
 
 > [!NOTE]
@@ -54,7 +54,7 @@ Além do núcleo da CPU, da memória e de regras de confiabilidade, os suplement
     Usando uma política de grupo ou uma configuração específica do aplicativo no registro do Windows, os administradores podem ajustar esse número de novas tentativas de avaliação na configuração **OutlookActivationManagerRetryLimit**.
 
 ### <a name="task-pane-and-content-add-ins"></a>Suplementos do painel de tarefas e de conteúdo
-    
+
 Se qualquer suplemento de painel de tarefas ou de conteúdo exceder os limites anteriores no uso de núcleo da CPU, de memória ou no limite de tolerância a falhas, o aplicativo host correspondente exibe um aviso ao usuário. Neste momento, o usuário pode tomar uma das seguintes ações:
 
 - Reiniciar o suplemento.
@@ -83,10 +83,10 @@ A tabela a seguir lista os eventos que o Log de Telemetria acompanha para os Sup
 |10|O suplemento usou CPU em excesso|Crítico|O suplemento do Office usou mais de 90% dos recursos da CPU em um período de tempo finito.|
 |15|Suplemento desabilitado porque esgotou o tempo limite na pesquisa de cadeia de caracteres||Os suplementos do Outlook pesquisam a linha de assunto e a mensagem de um e-mail para determinar se devem ser exibidas usando uma expressão regular. O suplemento do Outlook listado na coluna **Arquivo** foi desabilitado pelo Outlook porque atingiu o tempo limite repetidamente ao tentar fazer a correspondência de uma expressão regular.|
 |18|Suplemento fechado com êxito||O aplicativo host conseguiu fechar o suplemento do Office com êxito.|
-|19|O suplemento encontrou um erro de tempo de execução|Crítico|O Suplemento do Office teve um problema que causou sua falha. Veja mais detalhes no log de **Alertas do Microsoft Office** usando o Visualizador de Eventos do Windows no computador que encontrou o erro.|
+|19|O suplemento encontrou um erro de tempo de execução|Crítico|O suplemento do Office teve um problema que causou sua falha. Para saber mais, examine o log de **Alertas do Microsoft Office** usando o Visualizador de Eventos do Windows no computador que encontrou o erro.|
 |20|Falha ao verificar a licença do suplemento|Crítico|As informações de licenciamento do suplemento do Office não puderam ser verificadas e podem ter expirado. Para saber mais, examine o log de **Alertas do Microsoft Office** usando o Visualizador de Eventos do Windows no computador que encontrou o erro.|
 
-Saiba mais em [Implantar o Painel de Telemetria](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219431(v=office.15)) e [Solução de problemas de arquivos do Office e soluções personalizadas com o log de telemetria](https://docs.microsoft.com/office/client-developer/shared/troubleshooting-office-files-and-custom-solutions-with-the-telemetry-log).
+Saiba mais em [Implantar o Painel de Telemetria](/previous-versions/office/office-2013-resource-kit/jj219431(v=office.15)) e [Solução de problemas de arquivos do Office e soluções personalizadas com o log de telemetria](/office/client-developer/shared/troubleshooting-office-files-and-custom-solutions-with-the-telemetry-log).
 
 
 ## <a name="design-and-implementation-techniques"></a>Técnicas de design e implementação
@@ -94,19 +94,18 @@ Saiba mais em [Implantar o Painel de Telemetria](https://docs.microsoft.com/prev
 Embora os limites de recursos para o uso de CPU e memória, a tolerância a falhas e a capacidade de resposta da interface do usuário se apliquem a suplementos do Office executados somente em clientes avançados, otimizar o uso desses recursos e da bateria deve ter prioridade se você quer que o suplemento tenha desempenho satisfatório em todos os dispositivos e clientes compatíveis. A otimização é particularmente importante se o suplemento efetua operações de longa duração ou lida com grandes conjuntos de dados. A lista a seguir sugere algumas técnicas para dividir operações com uso intensivo da CPU ou com muitos dados em partes menores, para que o suplemento possa evitar o consumo excessivo de recursos e o aplicativo host possa continuar a responder:
 
 - Em um cenário em que o suplemento precisa ler um grande volume de dados de um conjunto de dados não associado, você pode aplicar a paginação ao ler os dados de uma tabela ou reduzir o tamanho dos dados em cada operação de leitura mais curta, em vez de tentar concluir a leitura em uma única operação. 
-    
+
    Para obter exemplos de códigos JavaScript e jQuery que mostram a divisão de uma série de operações de entrada e saída em dados não associados (que possivelmente consumiria muitos recursos de CPU e demoraria em demasiado), consulte [Como posso passar o controle de volta (brevemente) ao navegador durante um processamento de JavaScript que consome muitos recursos?](https://stackoverflow.com/questions/210821/how-can-i-give-control-back-briefly-to-the-browser-during-intensive-javascript). Este exemplo usa o método [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) do objeto global para limitar a duração da entrada e da saída. Também manipula os dados em pedaços definidos, ao invés de dados não associados de forma aleatória.
-    
+
 - Se o suplemento usa um algoritmo com uso intensivo de CPU para processar um grande volume de dados, você pode usar os web workers para executar a tarefa demorada em segundo plano enquanto executa um script separado em primeiro plano, como exibir o andamento na interface do usuário. Os Web workers não bloqueiam atividades do usuário e permitem que a página HTML continue respondendo. Para obter um exemplo de Web workers, confira [Noções básicas de Web workers](https://www.html5rocks.com/en/tutorials/workers/basics/). Confira [Web workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API) para saber mais sobre a API Web workers do Internet Explorer.
-    
+
 - Se o suplemento usa um algoritmo com uso intensivo de CPU, mas é possível dividir a entrada ou a saída de dados em conjuntos menores, considere criar um serviço Web passando os dados para o serviço Web para aliviar a carga da CPU e aguarde um retorno de chamada assíncrono.
-    
+
 - Teste o suplemento em relação ao maior volume de dados esperado e restrinja o suplemento a processar até esse limite.
-    
+
 
 ## <a name="see-also"></a>Confira também
 
 - [Privacidade e segurança para Suplementos do Office](../concepts/privacy-and-security.md)
-- [Limites de ativação e da API do JavaScript para Suplementos do Outlook](https://docs.microsoft.com/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
+- [Limites de ativação e da API do JavaScript para Suplementos do Outlook](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
 - [Otimização de desempenho usando a API do JavaScript para Excel](../excel/performance.md)
-    

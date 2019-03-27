@@ -1,14 +1,14 @@
 ---
 title: Realizar o sideload de suplementos do Office em um iPad ou Mac para teste
 description: ''
-ms.date: 02/25/2019
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: dc0fad24d7f4f062fb0115edcc58a37d8d9052da
-ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
+ms.openlocfilehash: e2f9ee912395e0f54130f0e78109cab4479b6567
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "30359251"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871973"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>Realizar o sideload de suplementos do Office em um iPad ou Mac para teste
 
@@ -60,7 +60,7 @@ Para ver como seu suplemento será executado no Office para iOS, você pode real
 ## <a name="sideload-an-add-in-on-office-for-mac"></a>Realizar sideload de um suplemento no Office para Mac
 
 > [!NOTE]
-> Para realizar o sideload de um suplemento do Outlook para Mac, confira [Realizar sideload de suplementos do Outlook para teste](https://docs.microsoft.com/outlook/add-ins/sideload-outlook-add-ins-for-testing).
+> Para realizar o sideload de um suplemento do Outlook para Mac, confira [Realizar sideload de suplementos do Outlook para teste](/outlook/add-ins/sideload-outlook-add-ins-for-testing).
 
 1. Abra o **Terminal** e navegue até uma das pastas a seguir, onde você salvará o arquivo de manifesto do suplemento. Se a pasta `wef` não existir em seu computador, crie-a.
     

@@ -1,14 +1,14 @@
 ---
 title: Manifesto XML dos Suplementos do Office
 description: ''
-ms.date: 12/26/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 0b5672b14950d275ab34973aa3dc534455e43cd6
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: de7b2c991b149f1eb40080e3423044d24dfbf0b9
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386803"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871693"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifesto XML dos Suplementos do Office
 
@@ -29,7 +29,7 @@ Um arquivo de manifesto XML com base nesse esquema permite que um Suplemento do 
 * Para os suplementos do Outlook, defina a regra ou as regras que especificam o contexto no qual serão ativados e interagirão com uma mensagem, compromisso ou item de solicitação da reunião.
 
 > [!NOTE]
-> Caso pretenda [publicar](../publish/publish.md) o suplemento na experiência do Office depois de criá-lo, verifique se você está em conformidade com as [Políticas de validação do AppSource](https://docs.microsoft.com/office/dev/store/validation-policies). Por exemplo, para passar na validação, seu suplemento deve funcionar em todas as plataformas com suporte aos métodos que você definir (para mais informações, confira a [seção 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) e a [Página de hospedagem e disponibilidade de suplementos do Office](../overview/office-add-in-availability.md)).
+> Caso pretenda [publicar](../publish/publish.md) o suplemento na experiência do Office depois de criá-lo, verifique se você está em conformidade com as [Políticas de validação do AppSource](/office/dev/store/validation-policies). Por exemplo, para passar na validação, seu suplemento deve funcionar em todas as plataformas com suporte aos métodos que você definir (para mais informações, confira a [seção 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) e a [Página de hospedagem e disponibilidade de suplementos do Office](../overview/office-add-in-availability.md)).
 
 ## <a name="required-elements"></a>Elementos exigidos
 
@@ -105,26 +105,26 @@ _\*Adicionados no esquema de manifesto de suplementos da versão 1.1 do Office._
 
 Todas as imagem URIs, como as usadas para os [comandos do suplemento][], devem ser compatíveis com armazenamento em cache. O servidor que hospeda a imagem não deve retornar um cabeçalho `Cache-Control` especificando `no-cache`, `no-store` ou opções semelhantes na resposta HTTP.
 
-Todas as URLs, como os locais dos arquivos de origem especificados no elemento [SourceLocation](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation), devem estar **protegidos por SSL (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
+Todas as URLs, como os locais dos arquivos de origem especificados no elemento [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation), devem estar **protegidos por SSL (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
 
 ## <a name="best-practices-for-submitting-to-appsource"></a>Práticas recomendadas de envio ao AppSource
 
 Verifique se a identificação do suplemento é um GUID válido e exclusivo. Diversas ferramentas de gerador de GUID estão disponíveis na Web e podem ser usadas para criar um GUID exclusivo.
 
-Os suplementos enviados ao AppSource também devem conter o elemento [SupportUrl](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/supporturl). Saiba mais em [Políticas de validação para aplicativos e suplementos enviados ao AppSource](https://docs.microsoft.com/office/dev/store/validation-policies).
+Os suplementos enviados ao AppSource também devem conter o elemento [SupportUrl](/office/dev/add-ins/reference/manifest/supporturl). Saiba mais em [Políticas de validação para aplicativos e suplementos enviados ao AppSource](/office/dev/store/validation-policies).
 
-Use apenas o elemento [AppDomains](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/appdomains) para especificar domínios diferentes daqueles especificados no elemento [SourceLocation](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation) para cenários de autenticação.
+Use apenas o elemento [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) para especificar domínios diferentes daqueles especificados no elemento [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) para cenários de autenticação.
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>Especificar os domínios que você deseja abrir na janela do suplemento
 
-Ao executar no Office Online, seu painel de tarefas pode ser navegado com qualquer URL. No entanto, nas plataformas de desktop, se o suplemento tentar acessar uma URL em um domínio diferente do domínio que hospeda a página inicial (conforme especificado no elemento [SourceLocation](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation) do arquivo de manifesto), essa URL abre em uma nova janela de navegador fora do painel de suplementos do aplicativo host do Office.
+Ao executar no Office Online, seu painel de tarefas pode ser navegado com qualquer URL. No entanto, nas plataformas de desktop, se o suplemento tentar acessar uma URL em um domínio diferente do domínio que hospeda a página inicial (conforme especificado no elemento [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) do arquivo de manifesto), essa URL abre em uma nova janela de navegador fora do painel de suplementos do aplicativo host do Office.
 
-Para substituir esse comportamento (Office para desktop), especifique cada domínio que você deseja abrir na janela do suplemento na lista de domínios especificados no elemento [AppDomains](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/appdomains) do arquivo de manifesto. Se o suplemento tentar ir para uma URL em um domínio que está na lista, ele abre no painel de tarefas do Office para desktop e no Office Online. Se ele tentar acessar uma URL que não está na lista, no Office para desktop, essa URL abre em uma nova janela do navegador (fora do painel de suplementos).
+Para substituir esse comportamento (Office para desktop), especifique cada domínio que você deseja abrir na janela do suplemento na lista de domínios especificados no elemento [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) do arquivo de manifesto. Se o suplemento tentar ir para uma URL em um domínio que está na lista, ele abre no painel de tarefas do Office para desktop e no Office Online. Se ele tentar acessar uma URL que não está na lista, no Office para desktop, essa URL abre em uma nova janela do navegador (fora do painel de suplementos).
 
 > [!NOTE]
 > Esse comportamento se aplica somente ao painel raiz do suplemento. Se houver um iframe inserido na página do suplemento, o iframe pode ser direcionado para qualquer URL independentemente se ele está listado na **AppDomains**, até mesmo no Office para desktop.
 
-O exemplo de manifesto XML a seguir hospeda sua página de suplemento principal no domínio `https://www.contoso.com`, conforme especificado no elemento **SourceLocation**. Ele também especifica o domínio `https://www.northwindtraders.com` em um elemento [AppDomain](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/appdomain), dentro da lista de elementos **AppDomains** Se o suplemento acessar uma página no domínio www.northwindtraders.com, essa página abre no painel do suplemento, mesmo no Office para desktop.
+O exemplo de manifesto XML a seguir hospeda sua página de suplemento principal no domínio `https://www.contoso.com`, conforme especificado no elemento **SourceLocation**. Ele também especifica o domínio `https://www.northwindtraders.com` em um elemento [AppDomain](/office/dev/add-ins/reference/manifest/appdomain), dentro da lista de elementos **AppDomains** Se o suplemento acessar uma página no domínio www.northwindtraders.com, essa página abre no painel do suplemento, mesmo no Office para desktop.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -211,7 +211,7 @@ As seções a seguir mostram exemplos de arquivos XML de manifesto v1.1 para sup
                 <Label resid="Contoso.Tab1.GroupLabel" />
                 <Icon>
                   <!-- Sample Todo: Each size needs its own icon resource or it will look distorted when resized -->
-                  <!--Icons. Required sizes 16,31,80, optional 20, 24, 40, 48, 64. Strongly recommended to provide all sizes for great UX -->
+                  <!--Icons. Required sizes: 16, 32, 80; optional: 20, 24, 40, 48, 64. You should provide as many sizes as possible for a great user experience. -->
                   <!--Use PNG icons and remember that all URLs on the resources section must use HTTPS -->
                   <bt:Image size="16" resid="Contoso.TaskpaneButton.Icon" />
                   <bt:Image size="32" resid="Contoso.TaskpaneButton.Icon" />

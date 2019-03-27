@@ -1,23 +1,23 @@
 ---
 title: Visão geral dos suplementos do Excel
 description: ''
-ms.date: 01/23/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 747b9b28f8e15de71a7af7e72bced61f8063139e
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 3a6e00ebb5c91af135d709c1ae9f86fc5d2e2924
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386733"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872211"
 ---
 # <a name="excel-add-ins-overview"></a>Visão geral dos suplementos do Excel
 
 Um suplemento do Excel permite estender a funcionalidade do aplicativo Excel em várias plataformas, incluindo Office para Windows, Office Online, Office para Mac e Office para iPad. Use suplementos do Excel em uma pasta de trabalho para:
 
-- Interagir com objetos do Excel, ler e gravar dados do Excel. 
-- Estender a funcionalidade usando o painel de tarefas ou o painel conteúdo baseado na Web 
+- Interagir com objetos do Excel, ler e gravar dados do Excel.
+- Estender a funcionalidade usando o painel de tarefas ou o painel conteúdo baseado na Web
 - Adicionar botões personalizados da faixa de opções ou itens de menu contextuais
-- Fornecer interação mais rica usando janela de caixa de diálogo 
+- Fornecer interação mais rica usando janela de caixa de diálogo
 
 A plataforma Suplementos do Office fornece a estrutura e as APIs JavaScript Office.js que permitem criar e executar suplementos do Excel. Usando a plataforma Suplementos do Office para criar o suplemento do Excel, você receberá os seguintes benefícios:
 
@@ -29,11 +29,11 @@ A plataforma Suplementos do Office fornece a estrutura e as APIs JavaScript Offi
 > [!NOTE]
 > Os suplementos são diferentes dos suplementos de COM e VSTO, que são anteriores às soluções de integração do Office que são executadas apenas no Office para Windows. Diferentemente dos suplementos de COM, os suplementos do Excel não exigem a instalação de código no dispositivo de um usuário, nem no Excel. 
 
-## <a name="components-of-an-excel-add-in"></a>Componentes de um suplemento do Excel 
+## <a name="components-of-an-excel-add-in"></a>Componentes de um suplemento do Excel
 
 Um suplemento do Excel inclui dois componentes básicos: um aplicativo Web e um arquivo de configuração, chamado de arquivo de manifesto. 
 
-O aplicativo Web usa a [API JavaScript para Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office) para interagir com objetos no Excel e também pode facilitar a interação com recursos online. Por exemplo, um suplemento pode executar alguma das seguintes tarefas:
+O aplicativo Web usa a [API JavaScript para Office](/office/dev/add-ins/reference/javascript-api-for-office) para interagir com objetos no Excel e também pode facilitar a interação com recursos online. Por exemplo, um suplemento pode executar alguma das seguintes tarefas:
 
 * Criar, ler, atualizar e excluir dados na pasta de trabalho (planilhas, intervalos, tabelas, gráficos, itens nomeados e muito mais).
 * Executar autorização de usuário em um serviço online usando o fluxo padrão OAuth 2.0.
@@ -41,7 +41,7 @@ O aplicativo Web usa a [API JavaScript para Office](https://docs.microsoft.com/o
 
 O aplicativo Web pode ser hospedado em qualquer servidor Web, além de poder ser criado usando estruturas do lado do cliente (como Angular, React, jQuery) ou tecnologias do lado do servidor (como ASP.NET, Node.js, PHP).
 
-O [manifesto](../develop/add-in-manifests.md) é um arquivo de configuração XML que define como o suplemento integra-se aos clientes do Office, especificando configurações e recursos, como: 
+O [manifesto](../develop/add-in-manifests.md) é um arquivo de configuração XML que define como o suplemento integra-se aos clientes do Office, especificando configurações e recursos, como:
 
 * A URL do aplicativo Web do suplemento.
 * O nome de exibição, a descrição, a ID, a versão e a localidade padrão do suplemento.
@@ -76,7 +76,7 @@ Para saber mais sobre os painéis de tarefas, confira [Painéis de tarefas nos S
 
 ### <a name="dialog-boxes"></a>Caixas de diálogo
 
-As caixas de diálogo são superfícies que flutuam acima da janela do aplicativo do Excel ativo. Você pode usar caixas de diálogo para tarefas como exibir páginas de entrada que não podem ser abertas diretamente em um painel de tarefas, solicitar que o usuário confirme uma ação ou hospedar vídeos que possam ser muito pequenos se confinados a um painel de tarefas. Para abrir caixas de diálogo no suplemento do Excel, use a [API da Caixa de Diálogo](https://docs.microsoft.com/javascript/api/office/office.ui).
+As caixas de diálogo são superfícies que flutuam acima da janela do aplicativo do Excel ativo. Você pode usar caixas de diálogo para tarefas como exibir páginas de entrada que não podem ser abertas diretamente em um painel de tarefas, solicitar que o usuário confirme uma ação ou hospedar vídeos que possam ser muito pequenos se confinados a um painel de tarefas. Para abrir caixas de diálogo no suplemento do Excel, use a [API da Caixa de Diálogo](/javascript/api/office/office.ui).
 
 **Caixa de diálogo**
 
@@ -96,9 +96,9 @@ Para saber mais sobre suplementos conteúdos, confira [Suplementos do Office de 
 
 ## <a name="javascript-apis-to-interact-with-workbook-content"></a>APIs JavaScript para interagir com o conteúdo da pasta de trabalho
 
-Um suplemento do Excel interage com objetos no Excel usando a [API JavaScript para Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office), que inclui dois modelos de objeto JavaScript:
+Um suplemento do Excel interage com objetos no Excel usando a [API JavaScript para Office](/office/dev/add-ins/reference/javascript-api-for-office), que inclui dois modelos de objeto JavaScript:
 
-* **API JavaScript do Excel**: Introduzida com o Office 2016, a [API JavaScript do Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) fornece objetos do Excel fortemente tipados que você pode usar para acessar planilhas, intervalos, tabelas, gráficos e muito mais. 
+* **API JavaScript do Excel**: Introduzida com o Office 2016, a [API JavaScript do Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) fornece objetos do Excel fortemente tipados que você pode usar para acessar planilhas, intervalos, tabelas, gráficos e muito mais. 
 
 * **API compartilhada**: Introduzida com o Office 2013, a API compartilhada permite acessar recursos como interface de usuário, caixas de diálogo e configurações de cliente, que são comuns entre vários tipos de aplicativos host, como Word, Excel e PowerPoint. Como a API compartilhada fornece funcionalidade limitada para interação do Excel, você poderá usá-la se seu suplemento precisa ser executado no Excel 2013.
 
@@ -112,4 +112,4 @@ Introdução à [criação de seu primeiro suplemento do Excel](excel-add-ins-ge
 - [Práticas recomendadas para o desenvolvimento de Suplementos do Office](../concepts/add-in-development-best-practices.md)
 - [Diretrizes de design para Suplementos do Office](../design/add-in-design.md)
 - [Conceitos fundamentais de programação com a API JavaScript do Excel](excel-add-ins-core-concepts.md)
-- [Referência da API JavaScript do Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+- [Referência da API JavaScript do Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

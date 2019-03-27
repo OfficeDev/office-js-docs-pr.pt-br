@@ -1,14 +1,14 @@
 ---
 title: Depurar suplementos usando as ferramentas de desenvolvedor F12 no Windows 10
 description: ''
-ms.date: 10/16/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: e2378a0449ea33551051b9c3788b84b23a51feb8
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 750411bea187a0ade9b3723e3198d82f7c482c9f
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386901"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871231"
 ---
 # <a name="debug-add-ins-using-f12-developer-tools-on-windows-10"></a>Depurar suplementos usando as ferramentas de desenvolvedor F12 no Windows 10
 
@@ -58,7 +58,7 @@ Este exemplo usa o Word e um suplemento gratuito do AppSource.
     
 5. Defina o ponto de interrupção.
     
-   Para definir o ponto de interrupção no **Home.js**, escolha a linha 144, que está na função  `textChanged`. Você verá um ponto vermelho à esquerda da linha e uma linha correspondente no painel Pilha de Chamadas e Pontos de Interrupção (canto inferior direito). Para ver outras maneiras de definir um ponto de interrupção, confira [Inspecionar executando JavaScript com o Depurador](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85)). 
+   Para definir o ponto de interrupção no **Home.js**, escolha a linha 144, que está na função  `textChanged`. Você verá um ponto vermelho à esquerda da linha e uma linha correspondente no painel Pilha de Chamadas e Pontos de Interrupção (canto inferior direito). Para ver outras maneiras de definir um ponto de interrupção, confira [Inspecionar executando JavaScript com o Depurador](/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85)). 
     
    ![Depurador com ponto de interrupção no arquivo home.js](../images/debugger-home-js-02.png)
 
@@ -71,5 +71,5 @@ Este exemplo usa o Word e um suplemento gratuito do AppSource.
 
 ## <a name="see-also"></a>Confira também
 
-- [Inspecionar executando JavaScript com o Depurador](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85))
-- [Usando as ferramentas de desenvolvedor F12](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85))
+- [Inspecionar executando JavaScript com o Depurador](/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85))
+- [Usando as ferramentas de desenvolvedor F12](/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85))

@@ -1,14 +1,14 @@
 ---
 title: Anexar um depurador do painel de tarefas
 description: ''
-ms.date: 10/17/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 1c2be843fcd911c1bfd87408d603bb750d6e738a
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 941a67695f573cbf0955038916cb1e7ada9cc08f
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386474"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870426"
 ---
 # <a name="attach-a-debugger-from-the-task-pane"></a>Anexar um depurador do painel de tarefas
 
@@ -37,8 +37,8 @@ No Visual Studio, você verá os arquivos de código no **Gerenciador de Soluç�
 Veja mais informações sobre depuração no Visual Studio, em:
 
 -   Para iniciar e usar o Explorador do DOM no Visual Studio, confira a Dica 4 na seção [Dicas e Truques](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates/#tips_tricks) da publicação [Building great-looking apps for Office using the new project templates](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates) (Criar aplicativos atraentes para o Office usando os novos modelos de projeto) do blog.
--   Para definir pontos de interrupção, confira [Usar Pontos de Interrupção](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints?view=vs-2015).
--   Para usar o F12, confira o artigo [Usando as ferramentas de desenvolvedor F12](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85)).
+-   Para definir pontos de interrupção, confira [Usar Pontos de Interrupção](/visualstudio/debugger/using-breakpoints?view=vs-2015).
+-   Para usar o F12, confira o artigo [Usando as ferramentas de desenvolvedor F12](/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85)).
 
 ## <a name="see-also"></a>Confira também
 

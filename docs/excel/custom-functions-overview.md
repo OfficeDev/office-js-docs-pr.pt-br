@@ -3,12 +3,12 @@ ms.date: 03/19/2019
 description: Criar funções personalizadas no Excel usando JavaScript.
 title: Criar funções personalizadas no Excel (versão prévia)
 localization_priority: Priority
-ms.openlocfilehash: 4a9e240646b41b737652b6e64eb83e03d0824178
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.openlocfilehash: ac3410267da415c4d567092da2e653fcffd10b72
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691199"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870447"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Criar funções personalizadas no Excel (versão prévia)
 
@@ -203,91 +203,6 @@ O arquivo de manifesto XML para um suplemento que define funções personalizada
 > [!NOTE]
 > Funções do Excel são anexadas ao namespace especificado no seu arquivo de manifesto XML. O namespace da função vem antes do nome da função e são separados por um ponto. Por exemplo, para acionar a função`ADD42` na célula de uma planilha do Excel, você digitaria `=CONTOSO.ADD42`, porque `CONTOSO` é o namespace e `ADD42` é o nome da função especificada no arquivo JSON. O namespace deve ser usado como identificador para o as sua empresa ou suplemento. Um namespace pode conter apenas caracteres alfanuméricos e períodos.
 
-## <a name="functions-that-return-data-from-external-sources"></a>Funções que retornam os dados de fontes externas
-
-Se uma função personalizada recupera dados de uma fonte externa como na web, ela deve:
-
-1. Retornar uma Promise do JavaScript para o Excel.
-
-2. Resolva a promessa com o uso da função retorno de chamada de valor final.
-
-Exibição de funções personalizados mostra um `#GETTING_DATA` resultado temporário na célula enquanto o Excel espera do resultado final. Os usuários podem interagir normalmente com o restante da planilha aguardando o resultado.
-
-No exemplo de código a seguir, a função personalizada `getTemperature()` recupera a temperatura atual de um termômetro. Observe que `sendWebRequest` é uma função hipotética (não especificada aqui) que usa [XHR](custom-functions-runtime.md#xhr-example) para chamar um serviço web de temperatura.
-
-```js
-function getTemperature(thermometerID){
-    return new Promise(function(setResult){
-        sendWebRequest(thermometerID, function(data){
-            setResult(data.temperature);
-        });
-    });
-}
-```
-
-## <a name="streaming-functions"></a>Funções Streaming
-
-Funções personalizadas de streaming permitem a saída de dados das células repetidamente ao longo do tempo, sem a necessidade de um usuário explicitamente solicitar a atualização de dados. O exemplo a seguir é uma função personalizada que adiciona um número ao resultado a cada segundo. Observe o seguinte sobre este código:
-
-- Cada novo valor usando o Excel automaticamente exibirá o `setResult` retorno de chamada.
-
-- O segundo parâmetro de entrada, `handler`, não é exibido para os usuários finais no Excel quando eles selecionam a função no menu de preenchimento automático.
-
-- O `onCanceled` retorno de chamada define a função que é executada quando a função é cancelada. Implemente um identificador de cancelamento assim para qualquer função de streaming. Para saber mais, confira [Cancelar uma função](#canceling-a-function).
-
-```js
-function incrementValue(increment, handler){
-  var result = 0;
-  setInterval(function(){
-    result += increment;
-    handler.setResult(result);
-  }, 1000);
-
-  handler.onCanceled = function(){
-    clearInterval(timer);
-  }
-}
-```
-
-Quando você especifica os metadados para uma função streaming no arquivo de metadados JSON, você deve definir as propriedades `"cancelable": true` e `"stream": true` no `options` objeto, conforme mostrado no exemplo a seguir.
-
-```json
-{
-  "id": "INCREMENT",
-  "name": "INCREMENT",
-  "description": "Periodically increment a value",
-  "helpUrl": "http://www.contoso.com",
-  "result": {
-    "type": "number",
-    "dimensionality": "scalar"
-  },
-  "parameters": [
-    {
-      "name": "increment",
-      "description": "Amount to increment",
-      "type": "number",
-      "dimensionality": "scalar"
-    }
-  ],
-  "options": {
-    "cancelable": true,
-    "stream": true
-  }
-}
-```
-
-## <a name="canceling-a-function"></a>Cancelar uma função
-
-Em algumas situações, talvez seja necessário cancelar a execução de uma função personalizada de streaming para reduzir o consumo de banda larga, memória de trabalho e carregamento de CPU. O Excel cancela a execução de uma função nas seguintes situações:
-
-- Quando o usuário edita ou exclui uma célula que faz referência à função.
-
-- Quando é alterado um dos argumentos (entradas) para a função. Nesse caso, uma nova chamada de função é disparada, seguindo o cancelamento.
-
-- Quando o usuário aciona manualmente um recálculo. Nesse caso, uma nova chamada de função é disparada, seguindo o cancelamento.
-
-Para habilitar o recurso cancelar uma função, implemente um identificador de cancelamento dentro da função JavaScript e especifique a propriedade `"cancelable": true` dentro do `options` objeto nos metadados JSON que descreve a função. Amostras de código na seção anterior neste artigo fornecem um exemplo dessas técnicas.
-
 ## <a name="declaring-a-volatile-function"></a>Como declarar uma função volátil
 
 As [funções voláteis](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions) são funções nas quais o valor muda de momento a momento, mesmo que nenhum dos argumentos da função tenha mudado. Essas funções são recalculadas sempre que o Excel recalcular. Por exemplo, imagine uma célula que chame a função `NOW`. Toda vez que `NOW` for chamado, retornará automaticamente a data e a hora atuais.
@@ -359,6 +274,7 @@ function refreshTemperature(thermometerID){
 ```
 
 ## <a name="coauthoring"></a>Coautoria
+
 O Excel Online e o Excel para Windows com uma assinatura do Office 365 permitem editar documentos em coautoria, e esse recurso funciona com funções personalizadas. Se a pasta de trabalho usa uma função personalizada, seu colega será solicitado a carregar o suplemento da função personalizada. Depois de carregarem o suplemento, a função personalizada compartilhará resultados por meio de coautoria.
 
 Para saber mais sobre coautoria, confira o tópico [Sobre o recurso de coautoria no Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).
@@ -433,7 +349,7 @@ Por padrão, os valores retornados de uma função `getAddress` seguem o formato
 
 ## <a name="known-issues"></a>Problemas conhecidos
 
-Veja os problemas conhecidos no nosso [GitHub de funções do Excel personalizado repo](https://github.com/OfficeDev/Excel-Custom-Functions/issues). 
+Veja os problemas conhecidos no nosso [GitHub de funções do Excel personalizado repo](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
 
 ## <a name="see-also"></a>Confira também
 

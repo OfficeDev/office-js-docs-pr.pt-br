@@ -3,12 +3,12 @@ ms.date: 02/08/2019
 description: Lide com erros nas funções personalizadas do Excel.
 title: Tratamento de erros para funções personalizadas no Excel (versão prévia)
 localization_priority: Priority
-ms.openlocfilehash: 170da03331663d6779bed7bf0bf5a9b75b908b3f
-ms.sourcegitcommit: 8fb60c3a31faedaea8b51b46238eb80c590a2491
+ms.openlocfilehash: 6c1c7f780aea125977510e4eb0e320933cd6ed9c
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "30632692"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870006"
 ---
 # <a name="error-handling-within-custom-functions"></a>Tratamento de erros nas funções personalizadas
 
@@ -26,7 +26,7 @@ function getComment(commentID) {
     .then(function (data) {
       return data.json();
     })
-    .then((json) => {
+    .then(function (json) {
       return json.body;
     })
     .catch(function (error) {

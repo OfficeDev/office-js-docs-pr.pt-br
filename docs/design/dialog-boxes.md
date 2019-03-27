@@ -1,14 +1,14 @@
 ---
 title: Caixas de diálogo em Suplementos do Office
 description: ''
-ms.date: 02/28/2019
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 3638006c30515a1fcae93ccfdbd43e0e92005c37
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.openlocfilehash: 396fdc6d25dd898d6ace957bef755481fa5b8f13
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691101"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871637"
 ---
 # <a name="dialog-boxes-in-office-add-ins"></a>Caixas de diálogo em Suplementos do Office
  
@@ -31,7 +31,5 @@ Confira um exemplo que implementa uma caixa de diálogo em [Exemplo de API de ca
 
 ## <a name="see-also"></a>Confira também
 
-- [Objeto Dialog](https://docs.microsoft.com/javascript/api/office/office.dialog)
+- [Objeto Dialog](/javascript/api/office/office.dialog)
 - [Padrões de design da experiência do usuário para suplementos do Office](../design/ux-design-pattern-templates.md)
-
-

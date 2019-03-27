@@ -1,14 +1,14 @@
 ---
 title: Suplementos de conteúdo do Office
 description: Suplementos de conteúdo são superfícies que podem ser incorporadas diretamente em documentos do Excel ou do PowerPoint que concedem aos usuários acesso a controles de interface que executam códigos para modificar documentos ou exibir dados de uma fonte de dados.
-ms.date: 12/13/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 8114fe1d95739ba14fe54c379e44148f451010b2
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 46268f963545c3f5b7f45b9b590dc772ba37292f
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389393"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870538"
 ---
 # <a name="content-office-add-ins"></a>Suplementos de conteúdo do Office
 
@@ -49,12 +49,14 @@ No Mac, o menu de personalidade mede 26 x 26 pixels, mas flutua 8 pixels a parti
 Para ver um exemplo que implementa um suplemento de conteúdo, confira [Suplemento de conteúdo do Excel Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance) no GitHub.
 
 ## <a name="support-considerations"></a>Considerações sobre o suporte
-- Verifique se os suplementos do Office funcionarão em uma [plataforma de host do Office específica](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-in-availability). 
-- Alguns suplementos de conteúdo podem obrigar o usuário a "confiar" nele para ler e gravar no Excel ou PowerPoint. Você pode declarar no manifesto do suplemento quais [níveis de permissão](https://docs.microsoft.com/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins) deseja que o usuário tenha.  
+
+- Verifique se os suplementos do Office funcionarão em uma [plataforma de host do Office específica](/office/dev/add-ins/overview/office-add-in-availability). 
+- Alguns suplementos de conteúdo podem obrigar o usuário a "confiar" nele para ler e gravar no Excel ou PowerPoint. Você pode declarar no manifesto do suplemento quais [níveis de permissão](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins) deseja que o usuário tenha.  
 - Os suplementos de conteúdo são compatíveis com o Excel e PowerPoint nas versões do Office 2013 e posteriores. Se você abrir um suplemento em uma versão do Office não compatível com os suplementos web do Office, eles aparecerão como imagem.
 
 ## <a name="see-also"></a>Confira também
-- [Disponibilidade de host e plataforma para suplementos do Office](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-in-availability)
-- [Office UI Fabric em Suplementos do Office](https://docs.microsoft.com/office/dev/add-ins/design/office-ui-fabric) 
-- [Padrões de design da experiência do usuário para suplementos do Office](https://docs.microsoft.com/office/dev/add-ins/design/ux-design-pattern-templates)
-- [Solicitar permissões para uso da API em suplementos do painel de tarefas e conteúdo](https://docs.microsoft.com/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
+
+- [Disponibilidade de host e plataforma para suplementos do Office](/office/dev/add-ins/overview/office-add-in-availability)
+- [Office UI Fabric em Suplementos do Office](/office/dev/add-ins/design/office-ui-fabric)
+- [Padrões de design da experiência do usuário para suplementos do Office](/office/dev/add-ins/design/ux-design-pattern-templates)
+- [Solicitar permissões para uso da API em suplementos do painel de tarefas e conteúdo](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)

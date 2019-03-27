@@ -1,14 +1,14 @@
 ---
 title: Comandos de suplemento para Excel, Word e PowerPoint
 description: ''
-ms.date: 01/23/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: f375a7f59a6918e812fb03b46c55bf964e62419d
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: e255e6e517f6292b7e7cb7df7b59476b21306911
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388406"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872246"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Comandos de suplemento para Excel, Word e PowerPoint
 
@@ -17,7 +17,7 @@ Comandos de suplemento são elementos de interface do usuário que estendem a in
 Para uma visão geral do recurso, confira o vídeo [Comandos de Suplemento na Faixa de Opções do Office](https://channel9.msdn.com/events/Build/2016/P551).
 
 > [!NOTE]
-> Os catálogos do SharePoint não são compatíveis com os comandos de suplemento. É possível implantar comandos de suplemento pela [Implantação centralizada](../publish/centralized-deployment.md) ou pelo [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store) ou usar [sideload](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) para implantar seu comando de suplemento para testes. 
+> Os catálogos do SharePoint não são compatíveis com os comandos de suplemento. É possível implantar comandos de suplemento pela [Implantação centralizada](../publish/centralized-deployment.md) ou pelo [AppSource](/office/dev/store/submit-to-the-office-store) ou usar [sideload](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) para implantar seu comando de suplemento para testes. 
 
 *Figura 1. Suplemento com comandos em execução na Área de Trabalho do Excel*
 
@@ -28,6 +28,7 @@ Para uma visão geral do recurso, confira o vídeo [Comandos de Suplemento na Fa
 ![Captura de tela de um comando de suplemento no Excel Online](../images/add-in-commands-2.png)
 
 ## <a name="command-capabilities"></a>Recursos de comandos
+
 Os seguintes recursos de comando são compatíveis no momento.
 
 > [!NOTE]
@@ -46,7 +47,7 @@ Os seguintes recursos de comando são compatíveis no momento.
 **Ações**
 
 - ShowTaskpane: exibe um ou vários painéis que carregam páginas HTML personalizadas dentro deles.
-- ExecuteFunction: carrega uma página HTML invisível e executa uma função JavaScript dentro dela. Para mostrar a interface do usuário dentro de sua função (como erros, progresso ou entrada adicional), você pode usar a API [displayDialog](https://docs.microsoft.com/javascript/api/office/office.ui).  
+- ExecuteFunction: carrega uma página HTML invisível e executa uma função JavaScript dentro dela. Para mostrar a interface do usuário dentro de sua função (como erros, progresso ou entrada adicional), você pode usar a API [displayDialog](/javascript/api/office/office.ui).  
 
 ## <a name="supported-platforms"></a>Plataformas com suporte
 
@@ -67,12 +68,12 @@ Aplique as seguintes práticas recomendadas ao desenvolver comandos de suplement
 - Para o posicionamento dos comandos na faixa de opções do Office:
     - Insira os comandos em uma guia existente (Inserir, Revisar e assim por diante) se a funcionalidade fornecida se encaixar ali. Por exemplo, se seu suplemento permitir que os usuários insiram mídia, adicione um grupo à guia Inserir. Observe que nem todas as guias estão disponíveis em todas as versões do Office. Para saber mais, confira o [Manifesto XML dos Suplementos do Office](../develop/add-in-manifests.md). 
     - Insira comandos na guia Página Inicial se a funcionalidade não se encaixar em outra guia e você menos de seis comandos de nível superior. Você também pode adicionar comandos à guia Página Inicial se seu suplemento precisar funcionar em diferentes versões do Office (como o Office para área de trabalho e o Office Online) e uma guia não estiver disponível em todas as versões (por exemplo, a guia Design não existe no Office Online).  
-    - Coloque os comandos em uma guia personalizada se você tiver mais de seis comandos de nível superior. 
+    - Coloque os comandos em uma guia personalizada se você tiver mais de seis comandos de nível superior.
     - Nomeie seu grupo de acordo com o nome do seu suplemento. Se você tiver vários grupos, nomeie cada grupo com base na funcionalidade que os comandos nesse grupo fornecem.
     - Não adicione botões supérfluos para aumentar o estado real do seu suplemento.
 
      > [!NOTE]
-     > Os suplementos que ocupam muito espaço podem não passar na [Validação do AppSource](https://docs.microsoft.com/office/dev/store/validation-policies).
+     > Os suplementos que ocupam muito espaço podem não passar na [Validação do AppSource](/office/dev/store/validation-policies).
 
 - Para todos os ícones, siga as [diretrizes de design de ícones](add-in-icons.md).
 - Forneça uma versão do seu suplemento que também funcione em hosts que não tenham suporte para comandos. Um manifesto de suplemento único pode funcionar tanto em hosts cientes do comando (com os comandos) quanto em hosts não cientes do comando (como um painel de tarefas).
@@ -86,4 +87,4 @@ Aplique as seguintes práticas recomendadas ao desenvolver comandos de suplement
 
 A melhor maneira de começar a usar os comandos de suplemento é conferir os [exemplos de comandos de Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) no GitHub.
 
-Saiba mais sobre como especificar comandos de suplemento no manifesto em [Criar comandos de suplemento no manifesto](../develop/create-addin-commands.md) e no conteúdo de referência [VersionOverrides](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/versionoverrides).
+Saiba mais sobre como especificar comandos de suplemento no manifesto em [Criar comandos de suplemento no manifesto](../develop/create-addin-commands.md) e no conteúdo de referência [VersionOverrides](/office/dev/add-ins/reference/manifest/versionoverrides).

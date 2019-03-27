@@ -3,12 +3,12 @@ title: Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 description: ''
 ms.date: 02/28/2019
 localization_priority: Priority
-ms.openlocfilehash: eb647fe7f82dc669f071de53f6bac705e303c652
-ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
+ms.openlocfilehash: 4ced2fe36e4429b3dc0836f18ef0bdc7a823b3bf
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "30359265"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870307"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 
@@ -75,7 +75,7 @@ reader.readAsDataURL(myFile.files[0]);
 ### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one"></a>Inserir uma cópia de uma pasta de trabalho para a seção atual
 
 > [!NOTE]
-> A função `WorksheetCollection.addFromBase64` só está disponível atualmente na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> A função `WorksheetCollection.addFromBase64` só está disponível atualmente na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 O exemplo anterior mostra uma nova pasta de trabalho criada a partir de uma pasta de trabalho. Você também pode copiar algumas ou todas de uma pasta de trabalho para a atualmente associada com o suplemento. Uma pasta de trabalho [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) tem o método `addFromBase64` para inserir cópias de planilhas da pasta de trabalho de destino nela mesma. O outro arquivo da pasta de trabalho é passado como em cadeia de caracteres codificado em base 64, como a chamada `Excel.createWorkbook`.
 
@@ -265,7 +265,7 @@ context.application.suspendApiCalculationUntilNextSync();
 ## <a name="save-the-workbook"></a>Salvar a pasta de trabalho
 
 > [!NOTE]
-> A função `Workbook.save(saveBehavior)` só está disponível atualmente na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> A função `Workbook.save(saveBehavior)` só está disponível atualmente na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 `Workbook.save(saveBehavior)` salva a pasta de trabalho para armazenamento persistente. O método `save` usa um parâmetro simples e opcional que pode ter um dos seguintes valores:
 
@@ -282,7 +282,7 @@ context.workbook.save(Excel.SaveBehavior.prompt);
 ## <a name="close-the-workbook"></a>Fechar a pasta de trabalho
 
 > [!NOTE]
-> A função `Workbook.close(closeBehavior)` só está disponível atualmente na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> A função `Workbook.close(closeBehavior)` só está disponível atualmente na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 `Workbook.close(closeBehavior)` fecha a pasta de trabalho, além de suplementos que estão associados com a pasta de trabalho (o aplicativo Excel permanece aberto). O método `close` usa um parâmetro simples e opcional que pode ter um dos seguintes valores:
 

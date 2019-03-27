@@ -1,14 +1,14 @@
 ---
 title: Otimização de desempenho do da API JavaScript do Excel
 description: Otimizar o desempenho usando as API JavaScript do Excel
-ms.date: 02/20/2019
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: d15a4b3ad4ae44399572282889855b1cdc32bc39
-ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.openlocfilehash: f48b62b47c4000b128043fe2e01f949af7179e73
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "30199575"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872134"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Otimização de desempenho usando a API JavaScript do Excel
 
@@ -53,15 +53,15 @@ worksheet.getRange("A1").set({
 Na API JavaScript do Excel, você precisa explicitamente carregar as propriedades de um objeto de proxy. Embora você seja capaz de carregar todas as propriedades de uma vez com uma ```load()``` chamada vazia, essa abordagem pode ter uma sobrecarga de desempenho significativa. Em vez disso, é recomendável apenas carregar as propriedades necessárias, especialmente para os objetos que têm um grande número de propriedades.
 
 Por exemplo, se sua intenção é apenas ler a propriedade **address** de um objeto do intervalo, especifique somente essa propriedade quando chamar o método **load()**:
- 
+
 ```js
 range.load('address');
 ```
- 
+
 Você pode chamar o método **load()** de duas maneiras:
- 
+
 _Sintaxe:_
- 
+
 ```js
 object.load(string: properties);
 // or
@@ -69,11 +69,11 @@ object.load(array: properties);
 // or
 object.load({ loadOption });
 ```
- 
+
 _Onde:_
- 
-* `properties` é a lista de propriedades para carregar, especificadas como cadeias de caracteres delimitadas por vírgula ou como uma matriz de nomes. Para saber mais, veja os métodos **load()** definidos para objetos na [referência da API JavaScript do Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview).
-* `loadOption` especifica um objeto que descreve as opções de seleção, expansão, topo e ignorar. Confira as [opções](https://docs.microsoft.com/javascript/api/office/officeextension.loadoption) de carregamento do objeto para saber mais.
+
+* `properties` é a lista de propriedades para carregar, especificadas como cadeias de caracteres delimitadas por vírgula ou como uma matriz de nomes. Para saber mais, veja os métodos **load()** definidos para objetos na [referência da API JavaScript do Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview).
+* `loadOption` especifica um objeto que descreve as opções de seleção, expansão, topo e ignorar. Confira as [opções](/javascript/api/office/officeextension.loadoption) de carregamento do objeto para saber mais.
 
 Por favor, esteja ciente de que algumas das "propriedades" sob um objeto podem ter o mesmo nome que outro objeto. Por exemplo, `format` é uma propriedade dentro do objeto de intervalo, mas `format` também é um objeto. Portanto, se você fizer uma chamada, como `range.load("format")`, isso equivale a`range.format.load()`, que é uma chamada load vazia () que pode causar problemas de desempenho, conforme descrito anteriormente. Para evitar isso, o código deve carregar apenas "nós folha" na árvore de objetos. 
 
@@ -85,7 +85,7 @@ O Excel tem várias tarefas em segundo plano reagindo à entrada de usuários e 
 
 Se você estiver tentando executar uma operação em um grande número de células (por exemplo, definindo o valor do objeto de um grande intervalo) e não se importar em suspender o cálculo no Excel temporariamente enquanto a operação for concluída, é recomendável que você suspenda o cálculo até o próximo `context.sync()` ser chamado.
 
-Ver a documentação de referência [objeto de aplicativo](https://docs.microsoft.com/javascript/api/excel/excel.application) para saber mais sobre como usar a API`suspendApiCalculationUntilNextSync()`para suspender e reativar cálculos de maneira muito fácil. O código a seguir demonstra como suspender temporariamente um cálculo:
+Ver a documentação de referência [objeto de aplicativo](/javascript/api/excel/excel.application) para saber mais sobre como usar a API`suspendApiCalculationUntilNextSync()`para suspender e reativar cálculos de maneira muito fácil. O código a seguir demonstra como suspender temporariamente um cálculo:
 
 ```js
 Excel.run(async function(ctx) {
@@ -97,7 +97,7 @@ Excel.run(async function(ctx) {
     await ctx.sync();
     // Calculation mode should be "Automatic" by default
     console.log(app.calculationMode);
-    
+
     rangeToSet = sheet.getRange("A1:C1");
     rangeToSet.values = [[1, 2, "=SUM(A1:B1)"]];
     rangeToGet = sheet.getRange("A1:C1");
@@ -129,7 +129,7 @@ Excel.run(async function(ctx) {
 ### <a name="suspend-screen-updating"></a>Suspender a atualização da tela
 
 > [!NOTE]
-> O método `suspendScreenUpdatingUntilNextSync` descrito neste artigo só está disponível atualmente na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> O método `suspendScreenUpdatingUntilNextSync` descrito neste artigo só está disponível atualmente na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 O Excel exibe as alterações que seu suplemento faz aproximadamente conforme elas acontecem no código. Para conjuntos de dados grandes e interativos, talvez não seja necessário não esse andamento na tela em tempo real. `Application.suspendScreenUpdatingUntilNextSync()` pausa atualizações visuais no Excel até as chamadas do suplemento `context.sync()`, ou até o`Excel.run` terminar (chamadas implícitas `context.sync`). Lembre-se, o Excel não mostrará os sinais de atividade até a próxima sincronização. Seu suplemento deve fornecer orientação aos usuários para prepará-los para esse atraso ou fornecer uma barra de status para demonstrar atividade.
 
@@ -150,7 +150,7 @@ Um cenário comum em que você pode aplicar essa abordagem é ao configurar form
 
 ## <a name="importing-data-into-tables"></a>Importar dados em tabelas
 
-Ao tentar importar um grande volume de dados diretamente em um objeto[tabela](https://docs.microsoft.com/javascript/api/excel/excel.table) diretamente (por exemplo, usando `TableRowCollection.add()`), você poderá observar um desempenho lento. Se você estiver tentando adicionar uma nova tabela, você deve preencher os dados primeiro definindo `range.values`e em seguida, ligue `worksheet.tables.add()` para criar uma tabela de intervalo. Se você está tentando gravar dados em uma tabela existente, grave os dados em um intervalo de objeto via`table.getDataBodyRange()`, e a tabela será expandida automaticamente. 
+Ao tentar importar um grande volume de dados diretamente em um objeto[tabela](/javascript/api/excel/excel.table) diretamente (por exemplo, usando `TableRowCollection.add()`), você poderá observar um desempenho lento. Se você estiver tentando adicionar uma nova tabela, você deve preencher os dados primeiro definindo `range.values`e em seguida, ligue `worksheet.tables.add()` para criar uma tabela de intervalo. Se você está tentando gravar dados em uma tabela existente, grave os dados em um intervalo de objeto via`table.getDataBodyRange()`, e a tabela será expandida automaticamente. 
 
 Aqui está um exemplo dessa abordagem:
 
@@ -215,4 +215,4 @@ Excel.run(async (context) => {
 - [Conceitos avançados de programação com a API JavaScript do Excel](excel-add-ins-advanced-concepts.md)
 - [Limites de recurso e otimização de desempenho para Suplementos do Office](../concepts/resource-limits-and-performance-optimization.md)
 - [Especificação abrir API JavaScript do Excel](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)
-- [Objeto de funções de planilha (API JavaScript para Excel)](https://docs.microsoft.com/javascript/api/excel/excel.functions)
+- [Objeto de funções de planilha (API JavaScript para Excel)](/javascript/api/excel/excel.functions)

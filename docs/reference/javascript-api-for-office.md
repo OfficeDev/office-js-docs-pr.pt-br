@@ -1,18 +1,18 @@
 ---
 title: API JavaScript para Office
 description: ''
-ms.date: 10/09/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 51ae2a2391a63ab20a33e8ae590834f33311230a
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: c8b33bbf9d0107786c0272410c59b1a3fe998cba
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29387839"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870615"
 ---
 # <a name="javascript-api-for-office"></a>API JavaScript para Office
 
-A API JavaScript do Office permite que você crie aplicativos Web que interagem com os modelos de objeto em aplicativos host do Office. Seu aplicativo fará referência à biblioteca office.js, que é um carregador de script. A biblioteca office.js carrega os modelos de objeto que são aplicáveis ao aplicativo do Office em execução no suplemento. Você pode usar esses modelos de objeto JavaScript:
+A API JavaScript para Office permite que você crie aplicativos Web que interajam com os modelos de objeto em aplicativos host do Office. Seu aplicativo fará referência à biblioteca office.js, que é um carregador de script. A biblioteca office.js carrega os modelos de objeto que são aplicáveis ao aplicativo do Office em execução no suplemento. Você pode usar os seguintes modelos de objeto JavaScript:
 
 - **APIs comuns**: APIs introduzidas com o **Office 2013**. Elas são carregadas em **todos os aplicativos host do Office** e conectam seu aplicativo de suplemento com o aplicativo cliente do Office. O modelo de objeto contém APIs específicas aos clientes do Office e APIs aplicáveis a vários aplicativos host de clientes do Office. Todo esse conteúdo está na **API Comum**. Este modelo de objeto usa retornos de chamada. 
 
@@ -40,4 +40,4 @@ Saiba mais sobre [hosts suportados e outros requisitos](../concepts/requirements
 
 ## <a name="see-also"></a>Confira também
 
-- [Referência da API JavaScript do Office](https://docs.microsoft.com/javascript/api/overview/office)
+- [Referência da API JavaScript do Office](/javascript/api/overview/office)

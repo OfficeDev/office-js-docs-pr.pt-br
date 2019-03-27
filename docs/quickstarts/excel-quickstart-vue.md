@@ -1,15 +1,15 @@
 ---
 title: Criar um suplemento do Excel usando o Vue
 description: ''
-ms.date: 10/18/2018
+ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: d68c30cbff61de9374dff483aa259864a1d86baf
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 1925c9fcde0bb2f07cce4c0bcb0be99cc1c6061c
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742202"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870993"
 ---
 # <a name="build-an-excel-add-in-using-vue"></a>Criar um suplemento do Excel usando o Vue
 
@@ -60,7 +60,7 @@ Cada suplemento requer um arquivo de manifesto para definir os recursos e config
 2. Use o gerador do Yeoman para gerar o arquivo de manifesto para o seu suplemento. Execute o comando a seguir e responda aos prompts conforme mostrado abaixo.
 
     ```bash
-    yo office 
+    yo office
     ```
 
     - **Escolha o tipo de projeto:** `Office Add-in containing the manifest only`
@@ -68,7 +68,7 @@ Cada suplemento requer um arquivo de manifesto para definir os recursos e config
     - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?:** `Excel`
 
     ![Gerador do Yeoman](../images/yo-office.png)
-    
+
     Depois de concluir o assistente, o gerador criará o arquivo de manifesto.
 
 ## <a name="secure-the-app"></a>Proteger o aplicativo
@@ -224,5 +224,5 @@ Você criou com êxito um suplemento do Excel usando o Vue, parabéns! Agora, sa
 * [Tutorial de suplemento do Excel](../tutorials/excel-tutorial-create-table.md)
 * [Conceitos fundamentais de programação com a API JavaScript do Excel](../excel/excel-add-ins-core-concepts.md)
 * [Exemplos de código do suplemento do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Referência da API JavaScript do Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [Referência da API JavaScript do Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
 

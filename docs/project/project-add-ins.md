@@ -1,14 +1,14 @@
 ---
 title: Suplementos do painel de tarefas para Project
 description: ''
-ms.date: 12/17/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: d262437b256c6b14d8dcae01437c866b8eecf6ff
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 668e7130d6ef478752f74468130139ca02b1d1e1
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29389470"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870090"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Suplementos do painel de tarefas para Project
 
@@ -28,24 +28,24 @@ Os gerentes de projeto podem usar suplementos de painel de tarefas do Project pa
 
 Cenários de suplementos do Project incluem o seguinte:
 
--  **Plano de projeto** Exibir dados de projetos relacionados que podem afetar o agendamento. Um suplemento de painel de tarefas pode integrar dados relevantes de outros projetos no Project Server 2013. Por exemplo, você pode exibir a coleção de departamento de projetos e datas de marco ou exibir dados específicos de outros projetos que são baseados em um campo personalizado selecionado.
-    
--  **Gerenciamento de recursos** Exiba o pool de recursos completo no Project Server 2013 ou um subconjunto baseado em qualificações especificadas, incluindo a disponibilidade de dados de custo e recursos, para ajudar a selecionar recursos apropriados.
-    
--  **Status e aprovações** Use um aplicativo Web em um suplemento de painel de tarefas para atualizar ou exibir dados de um aplicativo de ERP (planejamento de recursos corporativos) externo, de um sistema de quadro de horários ou de um aplicativo de contabilidade. Ou crie uma Web Part de aprovação de status personalizada que pode ser usada no Project Web App e no Project Professional 2013.
-    
--  **Comunicação da equipe** Comunique-se com os membros da equipe e os recursos diretamente de um suplemento de painel de tarefas, dentro do contexto de um projeto. Ou mantenha um conjunto de anotações contextuais para si mesmo facilmente enquanto trabalha em um projeto.
-    
--  **Pacotes de trabalho** Pesquise tipos específicos de modelos de projeto nas bibliotecas do SharePoint e em coleções de modelos online. Por exemplo, encontre modelos para projetos de construção e adicione-os à sua coleção de modelos do Project.
-    
--  **Itens relacionados** Exiba metadados, documentos e mensagens relacionadas a tarefas específicas em um plano de projeto. Por exemplo, você pode usar o Project Professional 2013 para gerenciar um projeto que foi importado de uma lista de tarefas do SharePoint e ainda sincronizar a lista de tarefas com as alterações no projeto. Um suplemento de painel de tarefas pode mostrar campos adicionais ou metadados que o Project não importou para tarefas na lista do SharePoint.
-    
--  **Usar modelos de objeto do Project Server** Use o GUID de uma tarefa selecionada com métodos na PSI (Project Server Interface) ou no CSOM (modelo de objeto do lado do cliente) do Project Server. Por exemplo, o aplicativo Web para um suplemento pode ler e atualizar os dados de status de uma tarefa e recurso selecionados ou integrar com um aplicativo de quadro de horários externo.
-    
--  **Obter dados de relatório** Use consultas LINQ, REST (Representational State Transfer) ou JavaScript para localizar informações relacionadas a uma tarefa ou recurso selecionado no serviço OData para tabelas de relatório no Project Web App. Consultas que usam o serviço OData podem ser feitas com instalação online ou local do Project Server 2013.
-    
+- **Plano de projeto** Exibir dados de projetos relacionados que podem afetar o agendamento. Um suplemento de painel de tarefas pode integrar dados relevantes de outros projetos no Project Server 2013. Por exemplo, você pode exibir a coleção de departamento de projetos e datas de marco ou exibir dados específicos de outros projetos que são baseados em um campo personalizado selecionado.
+
+- **Gerenciamento de recursos** Exiba o pool de recursos completo no Project Server 2013 ou um subconjunto baseado em qualificações especificadas, incluindo a disponibilidade de dados de custo e recursos, para ajudar a selecionar recursos apropriados.
+
+- **Status e aprovações** Use um aplicativo Web em um suplemento de painel de tarefas para atualizar ou exibir dados de um aplicativo de ERP (planejamento de recursos corporativos) externo, de um sistema de quadro de horários ou de um aplicativo de contabilidade. Ou crie uma Web Part de aprovação de status personalizada que pode ser usada no Project Web App e no Project Professional 2013.
+
+- **Comunicação da equipe** Comunique-se com os membros da equipe e os recursos diretamente de um suplemento de painel de tarefas, dentro do contexto de um projeto. Ou mantenha um conjunto de anotações contextuais para si mesmo facilmente enquanto trabalha em um projeto.
+
+- **Pacotes de trabalho** Pesquise tipos específicos de modelos de projeto nas bibliotecas do SharePoint e em coleções de modelos online. Por exemplo, encontre modelos para projetos de construção e adicione-os à sua coleção de modelos do Project.
+
+- **Itens relacionados** Exiba metadados, documentos e mensagens relacionadas a tarefas específicas em um plano de projeto. Por exemplo, você pode usar o Project Professional 2013 para gerenciar um projeto que foi importado de uma lista de tarefas do SharePoint e ainda sincronizar a lista de tarefas com as alterações no projeto. Um suplemento de painel de tarefas pode mostrar campos adicionais ou metadados que o Project não importou para tarefas na lista do SharePoint.
+
+- **Usar modelos de objeto do Project Server** Use o GUID de uma tarefa selecionada com métodos na PSI (Project Server Interface) ou no CSOM (modelo de objeto do lado do cliente) do Project Server. Por exemplo, o aplicativo Web para um suplemento pode ler e atualizar os dados de status de uma tarefa e recurso selecionados ou integrar com um aplicativo de quadro de horários externo.
+
+- **Obter dados de relatório** Use consultas LINQ, REST (Representational State Transfer) ou JavaScript para localizar informações relacionadas a uma tarefa ou recurso selecionado no serviço OData para tabelas de relatório no Project Web App. Consultas que usam o serviço OData podem ser feitas com instalação online ou local do Project Server 2013.
+
     Por exemplo, confira [Criar um suplemento do Project que usa REST com um serviço OData local do Project Server](../project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md).
-    
+
 ## <a name="developing-project-add-ins"></a>Desenvolver suplementos do Project
 
 A biblioteca JavaScript para suplementos do Project inclui extensões do alias de namespace do **Office** que permitem que os desenvolvedores acessem propriedades de aplicativo do Project e tarefas, recursos e modos de exibição em um projeto. As extensões de biblioteca JavaScript no arquivo Project-15.js são usadas em um suplemento do Project criado com o Visual Studio 2015. Office.js, Office.debug.js, Project-15.js, Project-15.debug.js e arquivos relacionados também são fornecidos no download do SDK do Project 2013.
@@ -54,29 +54,24 @@ Para criar um suplemento, você pode usar um editor de texto simples para criar 
 
 Quando você instala o download do SDK do Project 2013, o subdiretório `\Samples\Apps\` inclui os seguintes suplementos de exemplo:
 
+- **Pesquisa do Bing:** O arquivo de manifesto BingSearch.xml aponta para a página de pesquisa do Bing para dispositivos móveis. Como o aplicativo Web Bing já existe na Internet, o suplemento Pesquisa do Bing não usa outros arquivos de código-fonte ou o modelo de objeto de suplemento para o Project.
 
--  **Pesquisa do Bing:** O arquivo de manifesto BingSearch.xml aponta para a página de pesquisa do Bing para dispositivos móveis. Como o aplicativo Web Bing já existe na Internet, o suplemento Pesquisa do Bing não usa outros arquivos de código-fonte ou o modelo de objeto de suplemento para o Project.
-    
--  **Teste de modelo de objeto do Project:** O arquivo de manifesto JSOM_SimpleOMCalls.xml e o arquivo JSOM_Call.html são, juntos, um exemplo que testa o modelo de objeto e a funcionalidade do suplemento no Project 2013. O arquivo HTML faz referência ao arquivo JSOM_Sample.js, que tem funções JavaScript que usam o arquivo Office.js e o arquivo Project-15.js na funcionalidade principal. O download do SDK inclui todos os arquivos de código-fonte necessários e o arquivo XML do manifesto para o suplemento Teste de modelo de objeto do Project. O desenvolvimento e a instalação do exemplo Teste de modelo de objeto do Project está descrito em [Criar seu primeiro suplemento de painel de tarefas para o Project 2013 usando um editor de texto](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md).
-    
--  **HelloProject_OData:** Essa é uma solução do Visual Studio para o Project Professional 2013 que resume os dados do projeto ativo, como custo, trabalho e porcentagem concluída, e os compara com a média de todos os projetos publicados na instância do Project Web App onde o projeto ativo está armazenado. O desenvolvimento, a instalação e o teste do exemplo, que usa o protocolo REST com o serviço **ProjectData** no Project Web App, estão descritos em [Criar um suplemento do Project que usa REST com um serviço OData local do Project Server](../project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md).
-    
+- **Teste de modelo de objeto do Project:** O arquivo de manifesto JSOM_SimpleOMCalls.xml e o arquivo JSOM_Call.html são, juntos, um exemplo que testa o modelo de objeto e a funcionalidade do suplemento no Project 2013. O arquivo HTML faz referência ao arquivo JSOM_Sample.js, que tem funções JavaScript que usam o arquivo Office.js e o arquivo Project-15.js na funcionalidade principal. O download do SDK inclui todos os arquivos de código-fonte necessários e o arquivo XML do manifesto para o suplemento Teste de modelo de objeto do Project. O desenvolvimento e a instalação do exemplo Teste de modelo de objeto do Project está descrito em [Criar seu primeiro suplemento de painel de tarefas para o Project 2013 usando um editor de texto](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md).
+
+- **HelloProject_OData:** Essa é uma solução do Visual Studio para o Project Professional 2013 que resume os dados do projeto ativo, como custo, trabalho e porcentagem concluída, e os compara com a média de todos os projetos publicados na instância do Project Web App onde o projeto ativo está armazenado. O desenvolvimento, a instalação e o teste do exemplo, que usa o protocolo REST com o serviço **ProjectData** no Project Web App, estão descritos em [Criar um suplemento do Project que usa REST com um serviço OData local do Project Server](../project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md).
 
 ### <a name="creating-an-add-in-manifest-file"></a>Criar um arquivo de manifesto do suplemento
 
-
 O arquivo de manifesto especifica a URL do suplemento, a página da Web ou aplicativo Web, o tipo de suplemento (painel de tarefas do Project), URLs opcionais de conteúdo para outros idiomas e localidades, e outras propriedades.
-
 
 ### <a name="procedure-1-to-create-the-add-in-manifest-file-for-bing-search"></a>Procedimento 1. Para criar o arquivo de manifesto do suplemento para Pesquisa do Bing
 
-
 - Crie um arquivo XML em um diretório local. O arquivo XML inclui o elemento **OfficeApp** e elementos filhos, que estão descritos em [Manifesto XML dos suplementos do Office](../develop/add-in-manifests.md). Por exemplo, crie um arquivo denominado BingSearch.xml que contém o XML a seguir.
-    
+
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
-    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" 
-                xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
+    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0"
+                xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
               xsi:type="TaskPaneApp">
       <Id>1234-5678</Id>
       <Version>15.0</Version>
@@ -108,13 +103,13 @@ O arquivo de manifesto especifica a URL do suplemento, a página da Web ou aplic
   - O elemento **Recursos** contém um ou mais elementos filhos **Capability** que especificam o aplicativo host.
   - O elemento **DefaultSettings** inclui o elemento **SourceLocation**, que especifica o caminho de um arquivo HTML em um compartilhamento de arquivo ou a URL de uma página da Web que o suplemento usa. Um suplemento de painel de tarefas ignora os elementos **RequestedHeight** e **RequestedWidth**.
   - O elemento **IconUrl** é opcional. Ele pode ser um ícone em um compartilhamento de arquivo ou a URL de um ícone em um aplicativo Web.
-    
+
 - (Opcional) Adicione elementos **Override** que têm valores de outras localidades. Por exemplo, o manifesto a seguir fornece elementos **Override** para valores em francês de **DisplayName**, **Description**, **IconUrl** e **SourceLocation**.
-    
+
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
-    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" 
-                xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
+    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0"
+                xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
               xsi:type="TaskPaneApp">
       <Id>1234-5678</Id>
       <Version>15.0</Version>
@@ -141,36 +136,31 @@ O arquivo de manifesto especifica a URL do suplemento, a página da Web ou aplic
     </OfficeApp>
     ```
 
-
 ## <a name="installing-project-add-ins"></a>Instalar suplementos do Project
-
 
 No Project 2013, é possível instalar suplementos como soluções autônomas em um compartilhamento de arquivos ou em um catálogo de suplementos particular. Também é possível avaliar e comprar suplementos no AppSource.
 
 Pode haver vários arquivos XML do manifesto do suplemento e subdiretórios em um compartilhamento de arquivos. Você pode adicionar ou remover locais e catálogos do diretório do manifesto usando a guia **Catálogos de Suplementos Confiáveis** na caixa de diálogo **Central de Confiabilidade** no Project 2013. Para mostrar um suplemento no Project, o elemento **SourceLocation** em um manifesto deve apontar para um site ou arquivo de origem HTML existente.
-
 
 > [!NOTE]
 > O Internet Explorer 9 ou posterior precisa estar instalado, mas não precisa ser o navegador padrão. Os Suplementos do Office exigem componentes no Internet Explorer 9. O navegador padrão pode ser o Internet Explorer 9, o Safari 5.0.6, o Firefox 5, o Chrome 13 ou uma versão mais recente de um desses navegadores.
 
 No procedimento 2, o suplemento Pesquisa do Bing é instalado no computador local onde o Project 2013 está instalado. No entanto, como a infraestrutura do suplemento não usa caminhos de arquivo local diretamente, como `C:\Project\AppManifests`, você pode criar um compartilhamento de rede no computador local. Se preferir, você pode criar um compartilhamento de arquivos em um computador remoto.
 
-
 ### <a name="procedure-2-to-install-the-bing-search-add-in"></a>Procedimento 2. Para instalar o suplemento Pesquisa do Bing
 
-
 1. Crie um diretório local para manifestos de suplemento. Por exemplo, crie o diretório `C:\Project\AppManifests`.
-    
+
 2. Compartilhe diretório `C:\Project\AppManifests` asAppManifests, para que o caminho de rede até o compartilhamento de arquivo se torne `\\ServerName\AppManifests`.
-    
+
 3. Copie o arquivo de manifesto BingSearch.xml para o diretório `C:\Project\AppManifests`.
-    
+
 4. No Project 2013, abra caixa de diálogo **Opções do Project**, escolha **Central de Confiabilidade** e escolha **Configurações da Central de Confiabilidade**.
-    
+
 5. Na caixa de diálogo **Central de Confiabilidade**, no painel esquerdo, escolha **Catálogos de Suplementos Confiáveis**.
-    
+
 6. No painel **Catálogos de Suplementos Confiáveis** (confira a Figura 1), adicione o caminho `\\ServerName\AppManifests` à caixa de texto **URL do Catálogo**, escolha **Adicionar Catálogo** e escolha **OK**.
-    
+
     > [!NOTE]
     > A Figura 1 mostra dois compartilhamentos de arquivo e uma URL hipotética para um catálogo particular na lista **Endereços do Catálogo Confiável**. Apenas um compartilhamento de arquivo pode ser o compartilhamento de arquivos padrão, e apenas uma URL de catálogo pode ser o catálogo padrão. Por exemplo, se você definir `\\Server2\AppManifests` como o padrão, o Project limpará a caixa de seleção **Padrão** para `\\ServerName\AppManifests`. Se você alterar a seleção padrão, escolha **Limpar** para remover suplementos instalados e reinicie o Project. Se você adicionar um suplemento ao compartilhamento de arquivo padrão ou catálogo do SharePoint enquanto o Project estiver aberto, reinicie o Project.
 
@@ -179,32 +169,28 @@ No procedimento 2, o suplemento Pesquisa do Bing é instalado no computador loca
     ![Using the Trust Center to add app manifests](../images/pj15-agave-overview-trust-centers.png)
 
 7. Na faixa de opções **Project**, escolha o menu suspenso **Suplementos do Office** e escolha **Ver Tudo**. Na caixa de diálogo **Inserir Suplemento**, escolha **PASTA COMPARTILHADA** (confira a Figura 2).
-    
+
     *Figura 2. Iniciando um suplemento que está em um compartilhamento de arquivos*
 
     ![Starting an Office app that is on a file share](../images/pj15-agave-overview-start-agave-apps.png)
 
 8. Selecione o suplemento Pesquisa do Bing e escolha **Inserir**.
-    
+
     O suplemento Pesquisa do Bing é exibido em um painel de tarefas, como na Figura 3. Você pode redimensionar o painel de tarefas manualmente e usar o suplemento Pesquisa do Bing.
 
     *Figura 3. Usando o suplemento Pesquisa do Bing*
 
     ![Using the Bing Search app](../images/pj15-agave-overview-bing-search.png)
 
-
 ## <a name="distributing-project-add-ins"></a>Distribuir suplementos do Project
 
-
 É possível distribuir suplementos usando um compartilhamento de arquivos, um catálogo de suplementos em uma biblioteca do SharePoint ou o AppSource. Saiba mais em [Publicar seu suplemento do Office](../publish/publish.md).
-
 
 ## <a name="see-also"></a>Confira também
 
 - [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
 - [Manifesto XML dos Suplementos do Office](../develop/add-in-manifests.md)
-- [JavaScript API para Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office)
+- [JavaScript API para Office](/office/dev/add-ins/reference/javascript-api-for-office)
 - [Criar seu primeiro suplemento de painel de tarefas para o Project 2013 usando um editor de texto](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [Criar um suplemento de Project que usa REST com um serviço local do Project Server OData](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
 - [Download do SDK do Project 2013](https://www.microsoft.com/download/details.aspx?id=30435%20)
-    

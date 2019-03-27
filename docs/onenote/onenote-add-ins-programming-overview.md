@@ -1,28 +1,28 @@
 ---
 title: Visão geral da programação da API JavaScript do OneNote
 description: ''
-ms.date: 01/23/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 86c59e8453dc94129a9c96606c1fe06247421e66
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: b83c79a4165aed1ec06c63a9a52db9fe919a3866
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742286"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871812"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>Visão geral da programação da API JavaScript do OneNote
 
 O OneNote introduz uma API JavaScript para os suplementos do OneNote Online. Você pode criar suplementos de painel de tarefas e de conteúdo e comandos de suplemento que interagem com objetos do OneNote e conectam-se a serviços Web ou a outros recursos baseados na Web.
 
 > [!NOTE]
-> Caso pretenda [publicar](../publish/publish.md) o suplemento na experiência do Office depois de criá-lo, verifique se você está em conformidade com as [Políticas de validação do AppSource](https://docs.microsoft.com/office/dev/store/validation-policies). Por exemplo, para passar na validação, seu suplemento deve funcionar em todas as plataformas com suporte aos métodos que você definir (para mais informações, confira a [seção 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) e a [Página de hospedagem e disponibilidade de suplementos do Office](../overview/office-add-in-availability.md)).
+> Caso pretenda [publicar](../publish/publish.md) o suplemento na experiência do Office depois de criá-lo, verifique se você está em conformidade com as [Políticas de validação do AppSource](/office/dev/store/validation-policies). Por exemplo, para passar na validação, seu suplemento deve funcionar em todas as plataformas com suporte aos métodos que você definir (para mais informações, confira a [seção 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) e a [Página de hospedagem e disponibilidade de suplementos do Office](../overview/office-add-in-availability.md)).
 
 ## <a name="components-of-an-office-add-in"></a>Componentes de um suplemento do Office
 
 Os suplementos consistem de dois componentes básicos:
 
 - Um **aplicativo Web** consiste em uma página da Web e em JavaScript, CSS ou outros arquivos necessários. Estes arquivos podem ser hospedados em qualquer servidor Web ou serviço de hospedagem na Web, como o Microsoft Azure. No OneNote Online, o aplicativo Web exibe um controle de navegação ou iframe.
-    
+
 - Um **manifesto XML** que especifica a URL da página da Web do suplemento e os requisitos de acesso, as configurações e os recursos para o suplemento. Este arquivo é armazenado no cliente. Os suplementos do OneNote usam o mesmo formato de [manifesto](../develop/add-in-manifests.md) como outros suplementos do Office.
 
 **Suplemento do Office = manifesto + página da Web**
@@ -42,7 +42,7 @@ Use o objeto **Aplicativo** para acessar os objetos do OneNote, como **Bloco de 
 
 1. Obtenha a instância do aplicativo do contexto.
 
-2. Crie um proxy que representa o objeto do OneNote com o qual você deseja trabalhar. Você interage com sincronia com os objetos proxy lendo e gravar suas propriedades e chamando seus métodos. 
+2. Crie um proxy que representa o objeto do OneNote com o qual você deseja trabalhar. Você interage com sincronia com os objetos proxy lendo e gravar suas propriedades e chamando seus métodos.
 
 3. Chame **load** no proxy para preenchê-lo com valores de propriedade especificados no parâmetro. Essa chamada é adicionada à fila de comandos.
 
@@ -51,27 +51,27 @@ Use o objeto **Aplicativo** para acessar os objetos do OneNote, como **Bloco de 
 
 4. Chame **context.sync** para executar todos os comandos na fila na ordem em que eles estão. Isso sincroniza o estado entre o momento em que os scripts e os objetos reais estão sendo executados, além de recuperar as propriedades dos objetos do OneNote carregados para uso no seu script. Você pode usar o objeto promessa retornado para o encadeamento ações adicionais.
 
-Por exemplo: 
+Por exemplo:
 
 ```js
 function getPagesInSection() {
     OneNote.run(function (context) {
-        
+
         // Get the pages in the current section.
         var pages = context.application.getActiveSection().pages;
-        
-        // Queue a command to load the id and title for each page.            
+
+        // Queue a command to load the id and title for each page.
         pages.load('id,title');
-        
+
         // Run the queued commands, and return a promise to indicate task completion.
         return context.sync()
             .then(function () {
-                
-                // Read the id and title of each page. 
+
+                // Read the id and title of each page.
                 $.each(pages.items, function(index, page) {
                     var pageId = page.id;
                     var pageTitle = page.title;
-                    console.log(pageTitle + ': ' + pageId); 
+                    console.log(pageTitle + ': ' + pageId);
                 });
             })
             .catch(function (error) {
@@ -85,11 +85,11 @@ function getPagesInSection() {
 }
 ```
 
-Você pode encontrar objetos do OneNote e operações compatíveis na [Referência API](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference).
+Você pode encontrar objetos do OneNote e operações compatíveis na [Referência API](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference).
 
 ### <a name="accessing-the-common-api-through-the-document-object"></a>Acessar a API comum por meio do objeto *Documento*
 
-Use o objeto **Documento** para acessar a API comum, como os métodos [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) e [setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#setselecteddataasync-data--options--callback-). 
+Use o objeto **Documento** para acessar a API comum, como os métodos [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) e [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-). 
 
 
 Por exemplo:  
@@ -108,15 +108,16 @@ function getSelectionFromPage() {
         });
 }
 ```
+
 Os suplementos do OneNote são compatíveis apenas com as seguintes APIs comuns:
 
 | API | Observações |
 |:------|:------|
-| [Office.context.document.getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) | Apenas **Office.CoercionType.Text** e **Office.CoercionType.Matrix** |
-| [Office.context.document.setSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) | Apenas **Office.CoercionType.Text**, **Office.CoercionType.Image** e **Office.CoercionType.Html** | 
-| [var mySetting = Office.context.document.settings.get(nome);](https://docs.microsoft.com/javascript/api/office/office.settings#get-name-) | As configurações são compatíveis apenas com os suplementos de conteúdo | 
-| [Office.context.document.settings.set(nome, valor);](https://docs.microsoft.com/javascript/api/office/office.settings#set-name--value-) | As configurações são compatíveis apenas com os suplementos de conteúdo | 
-| [Office.EventType.DocumentSelectionChanged](https://docs.microsoft.com/javascript/api/office/office.documentselectionchangedeventargs) ||
+| [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) | Apenas **Office.CoercionType.Text** e **Office.CoercionType.Matrix** |
+| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) | Apenas **Office.CoercionType.Text**, **Office.CoercionType.Image** e **Office.CoercionType.Html** | 
+| [var mySetting = Office.context.document.settings.get(nome);](/javascript/api/office/office.settings#get-name-) | As configurações são compatíveis apenas com os suplementos de conteúdo | 
+| [Office.context.document.settings.set(nome, valor);](/javascript/api/office/office.settings#set-name--value-) | As configurações são compatíveis apenas com os suplementos de conteúdo | 
+| [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) ||
 
 Em geral, você só pode usar a API comum para fazer algo que não seja compatível com a API avançada. Para saber mais sobre como usar a API comum, confira a [documentação](../overview/office-add-ins.md) e a [referência](../reference/javascript-api-for-office.md) dos suplementos do Office.
 
@@ -131,6 +132,6 @@ O diagrama a seguir representa o que está disponível atualmente na API JavaScr
 ## <a name="see-also"></a>Confira também
 
 - [Criar seu primeiro suplemento do OneNote](../quickstarts/onenote-quickstart.md)
-- [Referência da API JavaScript do OneNote](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
+- [Referência da API JavaScript do OneNote](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Amostra de Rubric Grader](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)

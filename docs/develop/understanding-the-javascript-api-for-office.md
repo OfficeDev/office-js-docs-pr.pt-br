@@ -1,25 +1,25 @@
 ---
 title: Noções básicas da API JavaScript para Office
 description: ''
-ms.date: 01/17/2019
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: e685985783b08b51725165b03863ff3b0fffeeaf
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: c1666745e9ffeb6c0e9ecf763b2a30c97c609b4f
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388819"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871882"
 ---
 # <a name="understanding-the-javascript-api-for-office"></a>Noções básicas da API JavaScript para Office
 
-Este artigo fornece informações sobre a API JavaScript para Office e como usá-la. Para referenciar as informações, consulte [API JavaScript para Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office). Para obter informações sobre como atualizar os arquivos de projeto do Visual Studio para a versão mais recente da API JavaScript para Office, consulte [Atualizar a versão da API JavaScript para Office e arquivos de esquema do manifesto](update-your-javascript-api-for-office-and-manifest-schema-version.md).
+Este artigo fornece informações sobre a API JavaScript para Office e como usá-la. Para referenciar as informações, consulte [API JavaScript para Office](/office/dev/add-ins/reference/javascript-api-for-office). Para obter informações sobre como atualizar os arquivos de projeto do Visual Studio para a versão mais recente da API JavaScript para Office, consulte [Atualizar a versão da API JavaScript para Office e arquivos de esquema do manifesto](update-your-javascript-api-for-office-and-manifest-schema-version.md).
 
 > [!NOTE]
-> Caso pretenda [publicar](../publish/publish.md) o suplemento na experiência do Office depois de criá-lo, verifique se você está em conformidade com as [Políticas de validação do AppSource](https://docs.microsoft.com/office/dev/store/validation-policies). Por exemplo, para passar na validação, seu suplemento deve funcionar em todas as plataformas com suporte aos métodos que você definir (para mais informações, confira a [seção 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) e a [Página de hospedagem e disponibilidade de suplementos do Office](../overview/office-add-in-availability.md)). 
+> Caso pretenda [publicar](../publish/publish.md) o suplemento na experiência do Office depois de criá-lo, verifique se você está em conformidade com as [Políticas de validação do AppSource](/office/dev/store/validation-policies). Por exemplo, para passar na validação, seu suplemento deve funcionar em todas as plataformas com suporte aos métodos que você definir (para mais informações, confira a [seção 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) e a [Página de hospedagem e disponibilidade de suplementos do Office](../overview/office-add-in-availability.md)). 
 
 ## <a name="referencing-the-javascript-api-for-office-library-in-your-add-in"></a>Fazer referência à biblioteca da API JavaScript para Office no suplemento
 
-A biblioteca da [API JavaScript para Office](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office) consiste no arquivo Office.js e nos arquivos .js específicos do aplicativo de host associado, como Excel-15.js e Outlook-15.js. O método mais simples de fazer referência à API é usando nossa CDN e adicionando o seguinte `<script>` à marca `<head>` da sua página:  
+A biblioteca da [API JavaScript para Office](/office/dev/add-ins/reference/javascript-api-for-office) consiste no arquivo Office.js e nos arquivos .js específicos do aplicativo de host associado, como Excel-15.js e Outlook-15.js. O método mais simples de fazer referência à API é usando nossa CDN e adicionando o seguinte `<script>` à marca `<head>` da sua página:  
 
 ```html
 <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
@@ -147,7 +147,7 @@ Office.initialize = function (reason) {
  };
 ```
 
-Para saber mais, veja [Evento Office.initialize](https://docs.microsoft.com/javascript/api/office) e [Enumeração da InitializationReason](https://docs.microsoft.com/javascript/api/office/office.initializationreason).
+Para saber mais, veja [Evento Office.initialize](/javascript/api/office) e [Enumeração da InitializationReason](/javascript/api/office/office.initializationreason).
 
 ### <a name="major-differences-between-officeinitialize-and-officeonready"></a>Principais diferenças entre Office.initialize e Office.onReady
 
@@ -159,17 +159,17 @@ Para saber mais, veja [Evento Office.initialize](https://docs.microsoft.com/java
 > Mesmo que não tenha uma lógica de inicialização, você deve atribuir ou chamar `Office.onReady()` uma função vazia para `Office.initialize` quando o JavaScript do suplemento for carregado. Algumas combinações de host e da plataforma do Office não carregam o painel de tarefas até uma das delas aconteça. Os exemplos a seguir mostram essas duas abordagens.
 >
 >```js  
->Office.onReady();  
->```    
+>Office.onReady();
+>```
 >
-> 
+>
 >```js
 >Office.initialize = function () {};
 >```
 
 ## <a name="office-javascript-api-object-model"></a>Modelo de objeto de API JavaScript para Office
 
-Depois de inicializado, o suplemento pode interagir com o host (por exemplo, o Excel ou o Outlook). A página [Modelo de objeto de API JavaScript para Office](office-javascript-api-object-model.md) tem mais detalhes sobre padrões de uso específicos. Há também documentação de referência detalhada para [APIs Comuns](https://docs.microsoft.com/office/dev/add-ins/reference/javascript-api-for-office) e hosts específicos.
+Depois de inicializado, o suplemento pode interagir com o host (por exemplo, o Excel ou o Outlook). A página [Modelo de objeto de API JavaScript para Office](office-javascript-api-object-model.md) tem mais detalhes sobre padrões de uso específicos. Há também documentação de referência detalhada para [APIs Comuns](/office/dev/add-ins/reference/javascript-api-for-office) e hosts específicos.
 
 ## <a name="api-support-matrix"></a>Matriz de suporte da API
 

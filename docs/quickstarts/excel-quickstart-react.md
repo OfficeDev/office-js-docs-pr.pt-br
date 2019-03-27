@@ -1,15 +1,15 @@
 ---
 title: Criar um suplemento do Excel usando o React
 description: ''
-ms.date: 10/19/2018
+ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 02fd62dca59136fe85ff9b29a6b44576f1ceb8e9
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: 6b56054337d14b8836e9b9994cbdfda8feee5b33
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742363"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871952"
 ---
 # <a name="build-an-excel-add-in-using-react"></a>Criar um suplemento do Excel usando o React
 
@@ -37,7 +37,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
     - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?:** `Excel`
 
     ![Gerador do Yeoman](../images/yo-office-excel-react.png)
-    
+
     Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
 2. Navegue até a pasta raiz do projeto.
@@ -58,7 +58,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
         top: 0;
         left: 0;
         width: 100%;
-        height: 80px; 
+        height: 80px;
         overflow: hidden;
         font-family: Arial;
         padding-top: 25px;
@@ -71,7 +71,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
         left: 0;
         right: 0;
         bottom: 0;
-        overflow: auto; 
+        overflow: auto;
         font-family: Arial;
     }
 
@@ -201,7 +201,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
                     <Progress
                         title={title}
                         logo='assets/logo-filled.png'
-                        message='Please sideload your addin to see app body.'
+                        message='Please sideload your add-in to see app body.'
                     />
                 );
             }
@@ -238,7 +238,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 
 ## <a name="start-the-dev-server"></a>Iniciar o servidor de desenvolvimento
 
-[!include[Start server section](../includes/quickstart-yo-start-server.md)] 
+[!include[Start server section](../includes/quickstart-yo-start-server.md)]
 
 ## <a name="try-it-out"></a>Experimente
 
@@ -270,4 +270,4 @@ Você criou com êxito um suplemento do Excel usando o React, parabéns! Agora, 
 * [Tutorial de suplemento do Excel](../tutorials/excel-tutorial-create-table.md)
 * [Conceitos fundamentais de programação com a API JavaScript do Excel](../excel/excel-add-ins-core-concepts.md)
 * [Exemplos de código do suplemento do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Referência da API JavaScript do Excel](https://docs.microsoft.com/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [Referência da API JavaScript do Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
