@@ -1,16 +1,16 @@
 ---
 title: Trabalhar com eventos usando a API JavaScript do Excel
 description: ''
-ms.date: 10/17/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 58bb6c01babc19840444a4bee9daef03ad9a7df5
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 08653a84c051709d16371d89672d3f7ebe2030b7
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386523"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872015"
 ---
-# <a name="work-with-events-using-the-excel-javascript-api"></a>Trabalhar com eventos usando a API JavaScript do Excel 
+# <a name="work-with-events-using-the-excel-javascript-api"></a>Trabalhar com eventos usando a API JavaScript do Excel
 
 Este artigo descreve conceitos importantes relacionados ao trabalho com eventos no Excel e fornece exemplos de código que mostram como registrar manipuladores de eventos, lidar com eventos e remover manipuladores de eventos usando as APIs JavaScript do Excel. 
 
@@ -20,15 +20,15 @@ Sempre que ocorrerem certos tipos de alterações em uma pasta de trabalho do Ex
 
 | Evento | Descrição | Objetos com suporte |
 |:---------------|:-------------|:-----------|
-| `onAdded` | Evento que ocorre quando um objeto é adicionado. | [**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection), [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
-| `onDeleted` | Evento que ocorre quando um objeto é excluído. | [**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection), [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection) |
-| `onActivated` | Evento que ocorre quando um objeto é ativado. | [**Gráfico**](https://docs.microsoft.com/javascript/api/excel/excel.chart), [**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection), [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection), [**Planilha**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
-| `onDeactivated` | Evento que ocorre quando um objeto é desativado. | [**Gráfico**](https://docs.microsoft.com/javascript/api/excel/excel.chart), [**ChartCollection**](https://docs.microsoft.com/javascript/api/excel/excel.chartcollection), [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection), [**Planilha**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
-| `onCalculated` | Evento ocorre quando uma planilha terminou cálculo (ou todas as planilhas do conjunto terminaram). | [**WorksheetCollection**](https://docs.microsoft.com/javascript/api/excel/excel.worksheetcollection), [**Planilha**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet) |
-| `onChanged` | Evento que ocorre quando os dados das células são alterados. | [**Planilha**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet), [**Tabela**](https://docs.microsoft.com/javascript/api/excel/excel.table), [**TableCollection**](https://docs.microsoft.com/javascript/api/excel/excel.tablecollection) |
-| `onDataChanged` | Ocorre quando os dados ou a formatação dentro da associação são alterados. | [**Associação**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
-| `onSelectionChanged` | Evento que ocorre quando uma célula ativa ou um intervalo selecionado são alterados. | [**Planilha**](https://docs.microsoft.com/javascript/api/excel/excel.worksheet), [ **Tabela**](https://docs.microsoft.com/javascript/api/excel/excel.table), [ **Associação**](https://docs.microsoft.com/javascript/api/excel/excel.binding) |
-| `onSettingsChanged` | O evento ocorre quando as Configurações no documento são alteradas. | [**SettingCollection**](https://docs.microsoft.com/javascript/api/excel/excel.settingcollection) |
+| `onAdded` | Evento que ocorre quando um objeto é adicionado. | [**ChartCollection**](/javascript/api/excel/excel.chartcollection), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
+| `onDeleted` | Evento que ocorre quando um objeto é excluído. | [**ChartCollection**](/javascript/api/excel/excel.chartcollection), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
+| `onActivated` | Evento que ocorre quando um objeto é ativado. | [**Gráfico**](/javascript/api/excel/excel.chart), [**ChartCollection**](/javascript/api/excel/excel.chartcollection), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection), [**Planilha**](/javascript/api/excel/excel.worksheet) |
+| `onDeactivated` | Evento que ocorre quando um objeto é desativado. | [**Gráfico**](/javascript/api/excel/excel.chart), [**ChartCollection**](/javascript/api/excel/excel.chartcollection), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection), [**Planilha**](/javascript/api/excel/excel.worksheet) |
+| `onCalculated` | Evento ocorre quando uma planilha terminou cálculo (ou todas as planilhas do conjunto terminaram). | [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection), [**Planilha**](/javascript/api/excel/excel.worksheet) |
+| `onChanged` | Evento que ocorre quando os dados das células são alterados. | [**Planilha**](/javascript/api/excel/excel.worksheet), [**Tabela**](/javascript/api/excel/excel.table), [**TableCollection**](/javascript/api/excel/excel.tablecollection) |
+| `onDataChanged` | Ocorre quando os dados ou a formatação dentro da associação são alterados. | [**Associação**](/javascript/api/excel/excel.binding) |
+| `onSelectionChanged` | Evento que ocorre quando uma célula ativa ou um intervalo selecionado são alterados. | [**Planilha**](/javascript/api/excel/excel.worksheet), [ **Tabela**](/javascript/api/excel/excel.table), [ **Associação**](/javascript/api/excel/excel.binding) |
+| `onSettingsChanged` | O evento ocorre quando as Configurações no documento são alteradas. | [**SettingCollection**](/javascript/api/excel/excel.settingcollection) |
 
 ### <a name="event-triggers"></a>Gatilhos de eventos
 
@@ -73,7 +73,7 @@ Como mostrado no exemplo anterior, quando você registrar um manipulador de even
 
 ```js
 function handleChange(event)
-{ 
+{
     return Excel.run(function(context){
         return context.sync()
             .then(function() {
@@ -103,7 +103,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 
 function handleSelectionChange(event)
-{ 
+{
     return Excel.run(function(context){
         return context.sync()
             .then(function() {
@@ -115,7 +115,7 @@ function handleSelectionChange(event)
 function remove() {
     return Excel.run(eventResult.context, function (context) {
         eventResult.remove();
-        
+
         return context.sync()
             .then(function() {
                 eventResult = null;
@@ -127,9 +127,10 @@ function remove() {
 
 ## <a name="enable-and-disable-events"></a>Habilitar e desabilitar eventos
 
-O desempenho de um suplemento pode ser melhorado desabilitando eventos. Por exemplo, seu aplicativo pode não precisar receber eventos ou ele pode ignorar eventos durante a edições de lotes de várias entidades. 
+O desempenho de um suplemento pode ser melhorado desabilitando eventos. Por exemplo, seu aplicativo pode não precisar receber eventos ou ele pode ignorar eventos durante a edições de lotes de várias entidades.
 
-Os eventos são habilitados ou desabilitados no nível [runtime](https://docs.microsoft.com/javascript/api/excel/excel.runtime). A `enableEvents` propriedade determina se os eventos são disparados e se seus manipuladores são ativados. 
+Os eventos são habilitados ou desabilitados no nível [runtime](/javascript/api/excel/excel.runtime).
+A `enableEvents` propriedade determina se os eventos são disparados e se seus manipuladores são ativados.
 
 O código a seguir mostra como ativar ou desativar os eventos.
 
