@@ -1,14 +1,14 @@
 ---
 title: Padrões de design da experiência do usuário para suplementos do Office
 description: ''
-ms.date: 06/27/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 65875bced876bb20243e3f2f0a353aa10c158a79
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 40b36fb138169bdf848e5f58569e6fc3dee8c09b
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29387818"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871539"
 ---
 # <a name="ux-design-patterns-for-office-add-ins"></a>Padrões de design da experiência do usuário para suplementos do Office
 
@@ -28,7 +28,6 @@ Use os modelos padrão de experiência do usuário para:
 * Criar suplementos que se integram visualmente à interface do usuário padrão do Office.
 * Idealizar e visualizar a experiência do usuário.
 
-
 ## <a name="getting-started"></a>Introdução
 
 Os padrões são organizados por ações principais ou experiências comuns em um suplemento. Os principais grupos são:
@@ -40,15 +39,12 @@ Os padrões são organizados por ações principais ou experiências comuns em u
 
 Navegar por cada agrupamento para ter uma ideia de como você pode projetar o suplemento usando as práticas recomendadas.
 
-
-
->Observação: As telas de exemplo mostradas durante esta documentação estão projetadas e exibidas na resolução de **1366 x 768**
-
-
-
+> [!NOTE]
+> As telas de exemplo mostradas ao longo desta documentação, estão projetadas e exibidas na resolução de **1366x768**.
 
 ## <a name="see-also"></a>Confira também
+
 * [Kits de ferramentas de design](design-toolkits.md)
 * [Office UI Fabric](https://developer.microsoft.com/fabric)
-* [Práticas recomendadas para o desenvolvimento de Suplementos do Office](https://docs.microsoft.com/office/dev/add-ins/concepts/add-in-development-best-practices)
-* [Introdução ao uso do Fabric React](https://docs.microsoft.com/office/dev/add-ins/design/using-office-ui-fabric-react)
+* [Práticas recomendadas para o desenvolvimento de Suplementos do Office](/office/dev/add-ins/concepts/add-in-development-best-practices)
+* [Introdução ao uso do Fabric React](/office/dev/add-ins/design/using-office-ui-fabric-react)

@@ -1,14 +1,14 @@
 ---
 title: Abrir automaticamente um painel de tarefas com um documento
 description: ''
-ms.date: 05/02/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: dd0fb8befdfe41ec96f1f418b3e4eb43f6ba98da
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: a231255200d6edd1fc923a82711c8c24819bf914
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29386754"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870237"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Abrir automaticamente um painel de tarefas com um documento
 
@@ -25,7 +25,7 @@ Com o recurso autoopen, você pode explicitamente definir, ou permitir que o usu
 
 ## <a name="support-and-availability"></a>Suporte e disponibilidade
 
-O recurso autoopen atualmente tem suporte do <!-- in **developer preview** and it is only --> nos seguintes produtos e plataformas.
+O recurso autoopen é atualmente <!-- in **developer preview** and it is only --> suportado pelos seguintes produtos e plataformas.
 
 |**Produtos**|**Plataformas**|
 |:-----------|:------------|
@@ -60,7 +60,7 @@ Para implementar o recurso autoopen:
 
 ### <a name="step-1-specify-the-task-pane-to-open"></a>Etapa 1: especificar o painel de tarefas que será aberto
 
-Para especificar o painel de tarefas que será aberto automaticamente, defina o valor [TaskpaneId](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/action#taskpaneid) para **Office.AutoShowTaskpaneWithDocument**. Você só pode definir esse valor em um painel de tarefas. Se você definir esse valor em vários painéis de tarefas, a primeira ocorrência do valor será reconhecida e as outras serão ignoradas.
+Para especificar o painel de tarefas que será aberto automaticamente, defina o valor [TaskpaneId](/office/dev/add-ins/reference/manifest/action#taskpaneid) para **Office.AutoShowTaskpaneWithDocument**. Você só pode definir esse valor em um painel de tarefas. Se você definir esse valor em vários painéis de tarefas, a primeira ocorrência do valor será reconhecida e as outras serão ignoradas.
 
 O exemplo a seguir mostra o valor TaskPaneId configurado para Office.AutoShowTaskpaneWithDocument.
 
@@ -78,7 +78,7 @@ Você pode marcar o documento para acionar o recurso autoopen de duas maneiras. 
 
 #### <a name="tag-the-document-on-the-client-side"></a>Marcar o documento no lado do cliente
 
-Use o método [settings.set](https://docs.microsoft.com/javascript/api/office/office.settings) do Office.js para configurar o **Office.AutoShowTaskpaneWithDocument** para **true**, conforme mostrado no exemplo a seguir.
+Use o método [settings.set](/javascript/api/office/office.settings) do Office.js para configurar o **Office.AutoShowTaskpaneWithDocument** para **true**, conforme mostrado no exemplo a seguir.
 
 ```js
 Office.context.document.settings.set("Office.AutoShowTaskpaneWithDocument", true);
@@ -159,10 +159,10 @@ Você pode implantar uma versão de teste do suplemento que abre automaticamente
 </we:webextension>
 ```
 
-Para testar o exemplo anterior, considere participar do [Programa para Desenvolvedores do Office 365](https://docs.microsoft.com/office/developer-program/office-365-developer-program) e inscreva-se para uma [conta de desenvolvedor do Office 365](https://developer.microsoft.com/office/dev-program), caso ainda não tenha uma assinatura do Office 365. Você pode realmente testar a Implantação Centralizada e verificar se o suplemento funciona como esperado.
+Para testar o exemplo anterior, considere participar do [Programa para Desenvolvedores do Office 365](/office/developer-program/office-365-developer-program) e inscreva-se para uma [conta de desenvolvedor do Office 365](https://developer.microsoft.com/office/dev-program), caso ainda não tenha uma assinatura do Office 365. Você pode realmente testar a Implantação Centralizada e verificar se o suplemento funciona como esperado.
 
 
 ## <a name="see-also"></a>Confira também
 
 Para ver um exemplo que mostra como usar o recurso autoopen, consulte os [exemplos de comandos do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane).
-[Ingressar no Programa para Desenvolvedores do Office 365](https://docs.microsoft.com/office/developer-program/office-365-developer-program).
+[Ingressar no Programa para Desenvolvedores do Office 365](/office/developer-program/office-365-developer-program).

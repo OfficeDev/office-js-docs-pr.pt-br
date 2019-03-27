@@ -1,14 +1,14 @@
 ---
 title: Criar e depurar suplementos do Office no Visual Studio
 description: Use o Visual Studio para criar e depurar suplementos do Office na área de trabalho do cliente Office para Windows
-ms.date: 11/02/2018
+ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: eb7a64d9ad5096af7eb900a6d29b682e950c1bed
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.openlocfilehash: f9a52719ed7990063ed3f2dbb7d6bd5866e73760
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742377"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870713"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Criar e depurar suplementos do Office no Visual Studio
 
@@ -17,7 +17,7 @@ Este artigo descreve como usar o Visual Studio 2017 para criar um suplemento do 
 > [!NOTE]
 > O Visual Studio não suporta a criação de suplementos do Office para o OneNote ou o Project, mas você pode usar o [Yeoman gerador de suplementos do Office](https://github.com/OfficeDev/generator-office) para criar esses tipos de suplementos.
 > - Para começar a usar um suplemento do OneNote, confira o artigo [Crie seu primeiro suplemento do OneNote](../quickstarts/onenote-quickstart.md).
-> 
+>
 > - Para começar a usar um suplemento do Project, confira o artigo [Crie seu primeiro suplemento do Project](../quickstarts/project-quickstart.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
@@ -25,7 +25,7 @@ Este artigo descreve como usar o Visual Studio 2017 para criar um suplemento do 
 - [Visual Studio 2017](https://www.visualstudio.com/vs/) com a carga de trabalho de **desenvolvimento do Office/SharePoint** instalada
 
     > [!TIP]
-    > Se você já instalou o Visual Studio 2017, [use o Instalador do Visual Studio](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) para garantir que a carga de trabalho de **desenvolvimento do Office/SharePoint** seja instalada. Se essa carga de trabalho ainda não estiver instalada, use o instalador Visual Studio para [instalá-la](https://docs.microsoft.com/en-us/visualstudio/install/modify-visual-studio?view=vs-2017#modify-workloads).
+    > Se você já instalou o Visual Studio 2017, [use o Instalador do Visual Studio](/visualstudio/install/modify-visual-studio) para garantir que a carga de trabalho de **desenvolvimento do Office/SharePoint** seja instalada. Se essa carga de trabalho ainda não estiver instalada, use o instalador Visual Studio para [instalá-la](/visualstudio/install/modify-visual-studio?view=vs-2017#modify-workloads).
 
 - Office 2013 ou posterior
 
@@ -126,7 +126,7 @@ A tabela a seguir descreve as propriedades do projeto.
 |**Email Address**<br/>(Apenas suplementos do Outlook)|Especifica o endereço de email da conta de usuário no Exchange Server ou no Exchange Online que você quer usar para testar o suplemento do Outlook.|
 |**EWS Url**<br/>(Apenas suplementos do Outlook)|URL do serviço Web do Exchange (por exemplo: `https://www.contoso.com/ews/exchange.aspx`). |
 |**OWA Url**<br/>(Apenas suplementos do Outlook)|URL do Outlook Web App (Por exemplo: `https://www.contoso.com/owa`).|
-|**Usar autenticação multifator**<br/>(Apenas suplementos do Outlook)|O valor Booliano que indica se a autenticação multifator deve ser usada.|
+|**Usar autenticação multifator**<br/>(Apenas suplementos do Outlook)|Valor Booleano que indica se a autenticação multifator deve ser utilizada.|
 |**Nome de Usuário**<br/>(Apenas suplementos do Outlook)|Especifica o nome da conta de usuário no Exchange Server ou no Exchange Online com a qual você deseja testar o suplemento do Outlook.|
 |**Arquivo do projeto**|Especifica o nome do arquivo que contém informações de compilação, configuração e outras informações sobre o projeto.|
 |**Pasta do projeto**|O local do arquivo do projeto.|
@@ -157,13 +157,13 @@ A tabela a seguir descreve as propriedades do projeto de aplicativo web que são
 Se você tiver um documento que contém os dados de teste deseja usar ao depurar seu suplemento o Excel, PowerPoint ou Word, o Visual Studio pode ser configurado para abrir esse documento quando você iniciar o projeto. Para especificar um documento existente a ser usado durante a depuração do complemento, execute as etapas a seguir.
 
 1. No **Explorador de soluções** Escolha o projeto do suplemento (*não* o projeto do aplicativo Web).
-    
+
 2. Na barra de menus, escolha **Projeto** > **Adicionar Item Existente**.
-    
+
 3. Na caixa de diálogo **Adicionar Item Existente**, localize e selecione o documento que você deseja adicionar.
-    
+
 4. Escolha o botão **Adicionar** para adicionar o documento ao projeto.
-    
+
 5. No **Explorador de soluções** Escolha o projeto do suplemento (*não* o projeto do aplicativo Web).
 
 6. Na barra de menus, escolha **Exibir**,  > **Janela Propriedades**.
@@ -180,21 +180,21 @@ Iniciar o projeto escolhendo **Depurar** > **Iniciar Depuração** na barra do m
 Quando o Visual Studio compila o projeto ele executa as seguintes tarefas:
 
 1. Cria uma cópia do arquivo de manifesto XML e a adiciona ao diretório `_ProjectName_\bin\Debug\OfficeAppManifests`. O aplicativo host consome esta cópia quando você inicia o Visual Studio e depura o suplemento.
-    
+
 2. Cria um conjunto de entradas de registro no computador que habilitam o suplemento a aparecer no aplicativo host.
-    
-3. Compila o projeto de aplicativo Web e o implanta no servidor Web IIS local(https://localhost). 
-    
+
+3. Compila o projeto de aplicativo Web e o implanta no servidor Web IIS local(https://localhost).
+
 Depois, o Visual Studio faz o seguinte:
 
-1. Modifica o elemento [SourceLocation](https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation) do arquivo de manifesto XML, substituindo o token `~remoteAppUrl` pelo endereço totalmente qualificado da página inicial (por exemplo,`https://localhost:44302/Home.html` ).
-    
+1. Modifica o elemento [SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) do arquivo de manifesto XML, substituindo o token `~remoteAppUrl` pelo endereço totalmente qualificado da página inicial (por exemplo,`https://localhost:44302/Home.html` ).
+
 2. Inicia o projeto de aplicativo Web no IIS Express.
-    
-3. Abre o aplicativo host. 
-    
-O Visual Studio não mostra erros de validação na janela **OUTPUT** ao compilar o projeto. O Visual Studio relata erros e avisos na janela **ERRORLIST** à medida que eles ocorrem. O Visual Studio também relata erros de validação mostrando sublinhados ondulados (conhecidos como rabiscos) de cores diferentes no editor de código e texto. Essas marcas o notificam de problemas que o Visual Studio detectou no código. Para saber mais, confira [Editor de código e texto](https://msdn.microsoft.com/library/se2f663y(v=vs.140).aspx). Para saber mais sobre como habilitar ou desabilitar a validação, confira: [Opções, Editor de texto, JavaScript, IntelliSense](https://docs.microsoft.com/en-us/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2017).
-    
+
+3. Abre o aplicativo host.
+
+O Visual Studio não mostra erros de validação na janela **OUTPUT** ao compilar o projeto. O Visual Studio relata erros e avisos na janela **ERRORLIST** à medida que eles ocorrem. O Visual Studio também relata erros de validação mostrando sublinhados ondulados (conhecidos como rabiscos) de cores diferentes no editor de código e texto. Essas marcas o notificam de problemas que o Visual Studio detectou no código. Para saber mais, confira [Editor de código e texto](https://msdn.microsoft.com/library/se2f663y(v=vs.140).aspx). Para saber mais sobre como habilitar ou desabilitar a validação, confira: [Opções, Editor de texto, JavaScript, IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2017).
+
 Para examinar as regras de validação do arquivo de manifesto XML no projeto, confira [Manifesto XML de suplementos do Office](../develop/add-in-manifests.md).
 
 ### <a name="debug-the-code-for-an-excel-powerpoint-or-word-add-in"></a>Depurar o código de um suplemento Excel, PowerPoint ou Word
@@ -234,4 +234,3 @@ Você pode alterar o código e examinar os efeitos das alterações no suplement
 ## <a name="next-steps"></a>Próximas etapas
 
 Depois do suplemento funcionar conforme desejado, veja [Implantar e publicar o suplemento Office](../publish/publish.md) para saber mais como você pode distribuir o suplemento para os usuários.
-    
