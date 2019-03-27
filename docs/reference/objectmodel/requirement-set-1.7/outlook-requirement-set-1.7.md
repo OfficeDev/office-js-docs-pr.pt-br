@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos de API para suplementos do Outlook versão 1.7
 description: ''
-ms.date: 01/16/2019
+ms.date: 03/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 9023997e06a659252abeecca4681b2ec250fd63c
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 8daf10239a704206d53a544185e030afa6b6a27a
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29387965"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871939"
 ---
 # <a name="outlook-add-in-api-requirement-set-17"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.7
 
@@ -30,9 +30,9 @@ O conjunto de requisitos versão 1.7 inclui todos os recursos do [Conjunto de re
 - Adicionado o [RecurrenceTimeZone](/javascript/api/outlook_1_7/office.recurrencetimezone): adiciona um novo objeto que representa a configuração de fuso horário do padrão de recorrência.
 - Adicionado o [SeriesTime](/javascript/api/outlook_1_7/office.seriestime): adiciona um novo objeto que fornece métodos para obter e definir as datas e horas de compromissos em uma série recorrente e obter as datas e horas de solicitações de reunião em uma série recorrente.
 - Adicionado o [Office.context.mailbox.item.addHandlerAsync](office.context.mailbox.item.md#addhandlerasynceventtype-handler-options-callback): adiciona um novo método que adiciona um manipulador de eventos para um evento com suporte.
-- Modificado o [Office.context.mailbox.item.from](office.context.mailbox.item.md#from-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsfromjavascriptapioutlook17officefrom): modifica para obter o valor from no modo Redação.
-- Modificado o [Office.context.mailbox.item.organizer](office.context.mailbox.item.md#organizer-emailaddressdetailsjavascriptapioutlook17officeemailaddressdetailsorganizerjavascriptapioutlook17officeorganizer): modifica para obter o valor organizer no modo Redação.
-- Adicionado o [Office.context.mailbox.item.recurrence](office.context.mailbox.item.md#nullable-recurrence-recurrencejavascriptapioutlook17officerecurrence): adiciona uma nova propriedade que obtém ou define um objeto que fornece métodos de gerenciamento do padrão de recorrência de um item de compromisso. Essa propriedade também pode ser usada para obter o padrão de recorrência de um item de solicitação de reunião.
+- Modificado [Office.context.mailbox.item.from](office.context.mailbox.item.md#from-emailaddressdetailsfrom): Adiciona a capacidade de adquirir o valor from no modo de Redação.
+- Modificado [Office.context.mailbox.item.organizer](office.context.mailbox.item.md#organizer-emailaddressdetailsorganizer): Adiciona a capacidade de adquirir o valor organizer no modo de Redação.
+- Adicionado o [Office.context.mailbox.item.recurrence](office.context.mailbox.item.md#nullable-recurrence-recurrence): adiciona uma nova propriedade que obtém ou define um objeto que fornece métodos de gerenciamento do padrão de recorrência de um item de compromisso. Essa propriedade também pode ser usada para obter o padrão de recorrência de um item de solicitação de reunião.
 - Adicionado o [Office.context.mailbox.item.removeHandlerAsync](office.context.mailbox.item.md#removehandlerasynceventtype-options-callback): adiciona um novo método que remove um manipulador de eventos.
 - Adicionado o [Office.context.mailbox.item.seriesId](office.context.mailbox.item.md#nullable-seriesid-string): adiciona uma nova propriedade que obtém a ID da série à qual uma ocorrência pertence.
 - Adicionado o [Office.MailboxEnums.Days](/javascript/api/outlook_1_7/office.mailboxenums.days): adiciona uma nova enumeração que especifica o dia da semana ou o tipo de dia.
@@ -40,10 +40,10 @@ O conjunto de requisitos versão 1.7 inclui todos os recursos do [Conjunto de re
 - Adicionado o [Office.MailboxEnums.RecurrenceTimeZone](/javascript/api/outlook_1_7/office.mailboxenums.recurrencetimezone): adiciona uma nova enumeração que especifica o fuso horário aplicado à recorrência.
 - Adicionado o [Office.MailboxEnums.RecurrenceType](/javascript/api/outlook_1_7/office.mailboxenums.recurrencetype): adiciona uma nova enumeração que especifica o tipo de recorrência.
 - Adicionado o [Office.MailboxEnums.WeekNumber](/javascript/api/outlook_1_7/office.mailboxenums.weeknumber): adiciona uma nova enumeração que especifica a semana do mês.
-- Modificado o [Office.EventType](/javascript/api/office/office.eventtype): modifica para dar suporte a eventos RecurrenceChanged, RecipientsChanged e AppointmentTimeChanged por meio da adição de entradas `RecurrenceChanged`, `RecipientsChanged` e `AppointmentTimeChanged`, respectivamente.
+- Modificado [Office.EventType](/javascript/api/office/office.eventtype): Adiciona suporte para eventos `RecurrenceChanged`, `RecipientsChanged`, e `AppointmentTimeChanged`.
 
 ## <a name="see-also"></a>Confira também
 
-- [Suplementos do Outlook](https://docs.microsoft.com/outlook/add-ins/)
+- [Suplementos do Outlook](/outlook/add-ins/)
 - [Exemplos de código de suplementos do Outlook](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [Introdução](https://docs.microsoft.com/outlook/add-ins/quick-start)
+- [Introdução](/outlook/add-ins/quick-start)

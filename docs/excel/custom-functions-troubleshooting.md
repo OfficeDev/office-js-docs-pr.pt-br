@@ -1,14 +1,14 @@
 ---
-ms.date: 03/06/2019
+ms.date: 03/19/2019
 description: Solução de problemas comuns em funções personalizadas do Excel.
 title: Solução de problemas de funções personalizadas (versão prévia)
 localization_priority: Priority
-ms.openlocfilehash: ada60fb4184095f194ff425823b04456a7bf0e76
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.openlocfilehash: 19c3dcccce7618289dc49c3f61ce781744c24369
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30693753"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871336"
 ---
 # <a name="troubleshoot-custom-functions"></a>Solução de problemas de funções personalizadas
 
@@ -18,11 +18,11 @@ Para resolver problemas, você pode [habilitar o log de tempo de execução para
 
 ## <a name="enable-runtime-logging"></a>Habilitar o log de tempo de execução
 
-Se estiver testando o suplemento do Office no Windows, você deverá [habilitar o log de tempo de execução](https://docs.microsoft.com/pt-BR/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in). O log de tempo de execução entrega instruções `console.log` a um arquivo de log separado criado para ajudar você a descobrir problemas. As instruções abrangem vários erros, incluindo os relacionados ao arquivo de manifesto XML do suplemento, condições do tempo de execução ou a instalação de funções personalizadas.  Saiba mais sobre o log de tempo de execução em [Usar o log de tempo de execução para depurar seu suplemento](https://docs.microsoft.com/pt-BR/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in).  
+Se estiver testando o suplemento do Office no Windows, você deverá [habilitar o log de tempo de execução](/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in). O log de tempo de execução entrega instruções `console.log` a um arquivo de log separado criado para ajudar você a descobrir problemas. As instruções abrangem vários erros, incluindo os relacionados ao arquivo de manifesto XML do suplemento, condições do tempo de execução ou a instalação de funções personalizadas.  Saiba mais sobre o log de tempo de execução em [Usar o log de tempo de execução para depurar seu suplemento](/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in).  
 
 ### <a name="check-for-excel-error-messages"></a>Verificar se há mensagens de erro do Excel
 
-O Excel tem diversas mensagens de erro internas que serão retornadas para uma célula se houver um erro de cálculo. As funções personalizadas usam apenas as seguintes mensagens de erro: `#NULL!`, `#DIV/0!`, `#VALUE!`, `#REF!`, `#NAME?`, `#NUM!`, `#N/A` e `#GETTING_DATA`.
+O Excel tem diversas mensagens de erro internas que serão retornadas para uma célula se houver um erro de cálculo. As funções personalizadas usam apenas as seguintes mensagens de erro: `#NULL!`, `#DIV/0!`, `#VALUE!`, `#REF!`, `#NAME?`, `#NUM!`, `#N/A` e `#BUSY!`.
 
 ## <a name="common-issues"></a>Problemas comuns
 
@@ -44,11 +44,11 @@ function add(first, second){
 CustomFunctions.associate("ADD", add);
 ```
 
-Saiba mais sobre esse processo em [Associar os nomes de função com metadados JSON](https://docs.microsoft.com/pt-BR/office/dev/add-ins/excel/custom-functions-best-practices#associating-function-names-with-json-metadata).
+Saiba mais sobre esse processo em [Associar os nomes de função com metadados JSON](/office/dev/add-ins/excel/custom-functions-best-practices#associating-function-names-with-json-metadata).
 
 ### <a name="ensure-promises-return"></a>Garantir que as promessas retornem resultados
 
-Quando o Excel está aguardando a conclusão de uma função personalizada, ele exibe #GETTING_DATA na célula. Se o código da função personalizada retornar uma promessa, mas a promessa não retornar um resultado, o Excel continuará exibindo #GETTING_DATA. Verifique suas funções para garantir que as promessas estejam retornando corretamente um resultado para uma célula.
+Quando o Excel está aguardando a conclusão de uma função personalizada, ele exibe #BUSY! na célula. Se o código da função personalizada retornar uma promessa, mas a promessa não retornar um resultado, o Excel continuará exibindo #BUSY!. Verifique suas funções para garantir que as promessas estejam retornando corretamente um resultado para uma célula.
 
 ## <a name="reporting-feedback"></a>Fornecer comentários
 

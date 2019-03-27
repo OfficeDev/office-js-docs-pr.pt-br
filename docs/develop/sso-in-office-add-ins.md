@@ -1,14 +1,14 @@
 ---
 title: Habilitar o logon único para Suplementos do Office
 description: ''
-ms.date: 03/19/2019
+ms.date: 03/22/2019
 localization_priority: Priority
-ms.openlocfilehash: dc9050d574e0a5e74ae8cae2c63817aa4f952eb9
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.openlocfilehash: ef2e2c275a3b7d157029d873e34cc17339dcee66
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691192"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870034"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Habilitar o logon único para Suplementos do Office (visualização)
 
@@ -26,7 +26,8 @@ Nem todos os aplicativos do Office oferecem suporte a visualização de SSO. Est
 
 ### <a name="requirements-and-best-practices"></a>Requisitos e as práticas recomendadas
 
-Para usar o SSO, você deve carregar a versão beta da biblioteca de JavaScript do Office de `https://appsforoffice.microsoft.com/lib/beta/hosted/office.js` na página de inicialização HTML do suplemento.
+> [!NOTE]
+> [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 Se você estiver trabalhando com um suplemento do **Outlook**, certifique-se de habilitar a Autenticação Moderna para o locatário do Office 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
@@ -224,7 +225,7 @@ Há algumas diferenças pequenas, mas importantes entre usar o SSO em um supleme
 
 ### <a name="getaccesstokenasync"></a>getAccessTokenAsync
 
-O namespace de autenticação do Office `Office.context.auth`, fornece um método `getAccessTokenAsync` que permite que o host do Office obtenha um token de acesso para aplicativo web do suplemento. Indiretamente, isso também habilita o suplemento para acessar os dados do Microsoft Graph do usuário sem exigir que o usuário se conecte uma segunda vez.
+O namespace [Auth](/javascript/api/office/office.auth) do Office, `Office.context.auth`, fornece um método, `getAccessTokenAsync` que permite com que o host do Office obtenha um token de acesso para o aplicativo web do suplemento. Indiretamente, isso também habilita o suplemento para acessar os dados do Microsoft Graph do usuário sem exigir que o usuário se conecte uma segunda vez.
 
 ```typescript
 getAccessTokenAsync(options?: AuthOptions, callback?: (result: AsyncResult<string>) => void): void;
@@ -241,34 +242,8 @@ O método chama o ponto de extremidade do Azure Active Directory V 2.0 para obte
 
 #### <a name="parameters"></a>Parâmetros
 
-`options` – Opcional. Aceitar um objeto `AuthOptions` (veja abaixo) para definir comportamentos logon.
+`options` – Opcional. Aceite um objeto [AuthOptions](/javascript/api/office/office.authoptions) (veja abaixo) para definir comportamentos de logon.
 
 `callback` – Opcional. Aceita um método de retorno que possa analisar o token de ID de usuário ou usar o token fluxo "em nome de" para obter acesso ao Microsoft Graph. Se [AsyncResult](/javascript/api/office/office.asyncresult) `.status` é "bem-sucedido", em seguida, `AsyncResult.value` é o v AAD bruto. token de acesso 2.0 formatado.
 
-A interface `AuthOptions`fornece opções para a experiência do usuário quando o Office obtém um token de acesso para o suplemento do AAD v. 2.0 com o método`getAccessTokenAsync`.
-
-```typescript
-interface AuthOptions {
-    /**
-        * Causes Office to display the add-in consent experience. Useful if the add-in's Azure permissions have changed or if the user's consent has
-        * been revoked.
-        */
-    forceConsent?: boolean,
-    /**
-        * Prompts the user to add their Office account (or to switch to it, if it is already added).
-        */
-    forceAddAccount?: boolean,
-    /**
-        * Causes Office to prompt the user to provide the additional factor when the tenancy being targeted by Microsoft Graph requires multifactor
-        * authentication. The string value identifies the type of additional factor that is required. In most cases, you won't know at development
-        * time whether the user's tenant requires an additional factor or what the string should be. So this option would be used in a "second try"
-        * call of getAccessTokenAsync after Microsoft Graph has sent an error requesting the additional factor and containing the string that should
-        * be used with the authChallenge option.
-        */
-    authChallenge?: string
-    /**
-        * A user-defined item of any type that is returned, unchanged, in the asyncContext property of the AsyncResult object that is passed to a callback.
-        */
-    asyncContext?: any
-}
-```
+A interface [AuthOptions](/javascript/api/office/office.authoptions) fornece opções para a experiência do usuário quando o Office obtém um token de acesso para o suplemento do AAD v. 2.0 com o método`getAccessTokenAsync`.
