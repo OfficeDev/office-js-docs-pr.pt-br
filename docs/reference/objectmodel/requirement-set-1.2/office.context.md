@@ -1,14 +1,14 @@
 ---
-title: Office.context – conjunto de requisitos 1.2
+title: Office. Context – conjunto de requisitos 1,2
 description: ''
-ms.date: 02/15/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 8e8d83500e1cb9de730f6a7bac75c3bcc0012b4e
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: 8c0c84d4c763e125992b06abfb33985085a56210
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30068130"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870300"
 ---
 # <a name="context"></a>context
 
@@ -22,11 +22,11 @@ O namespace Office.context fornece interfaces compartilhadas que são usadas pel
 |Requisito| Valor|
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
 ### <a name="namespaces"></a>Namespaces
 
-[mailbox](office.context.mailbox.md): fornece acesso ao modelo de objeto de Suplemento do Outlook para o Microsoft Outlook e o Microsoft Outlook na Web.
+[Mailbox](office.context.mailbox.md) : fornece acesso ao modelo de objeto do suplemento do Outlook para o Microsoft Outlook e o Microsoft Outlook na Web.
 
 ### <a name="members"></a>Membros
 
@@ -38,14 +38,14 @@ O valor `displayLanguage` reflete a configuração atual de **Display Language**
 
 ##### <a name="type"></a>Tipo
 
-*   Cadeia de caracteres
+*   String
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
 ##### <a name="example"></a>Exemplo
 
@@ -83,5 +83,5 @@ O objeto `RoamingSettings` permite armazenar e acessar os dados de um suplemento
 |Requisito| Valor|
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| Restrito|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
+|[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| Restrito|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|

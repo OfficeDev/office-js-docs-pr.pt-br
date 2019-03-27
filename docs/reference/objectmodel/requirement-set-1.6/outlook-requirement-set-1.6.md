@@ -1,13 +1,14 @@
 ---
 title: Conjunto de requisitos de API para suplementos do Outlook versão 1.6
 description: ''
-ms.date: 10/11/2018
-ms.openlocfilehash: e780cff1a4cfe0751fccc9192784d143ab9c483f
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 0e1f920c259ca1ef8a137bab07132b015d9c75d2
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433675"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871323"
 ---
 # <a name="outlook-add-in-api-requirement-set-16"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.6
 
@@ -26,13 +27,13 @@ O conjunto de requisitos 1.6 inclui todos os recursos do [Conjunto de requisitos
 
 ### <a name="change-log"></a>Log de alterações
 
-- Adicionado [Office.context.mailbox.item.getSelectedEntities](office.context.mailbox.item.md#getselectedentities--entitiesjavascriptapioutlook16officeentities): adiciona uma nova função que obtém as entidades encontradas em uma correspondência realçada selecionada por um usuário. As correspondências realçadas aplicam-se aos suplementos contextuais.
+- Adicionado [Office.context.mailbox.item.getSelectedEntities](office.context.mailbox.item.md#getselectedentities--entities): adiciona uma nova função que obtém as entidades encontradas em uma correspondência realçada selecionada por um usuário. As correspondências realçadas aplicam-se aos suplementos contextuais.
 - Adicionado [Office.context.mailbox.item.getSelectedRegExMatches](office.context.mailbox.item.md#getselectedregexmatches--object): adiciona uma nova função que retorna valores de cadeia de caracteres em uma correspondência realçada que corresponde às expressões regulares definidas no arquivo de manifesto XML. As correspondências realçadas aplicam-se aos suplementos contextuais.
 - Adicionado [Office.context.mailbox.displayNewMessageForm](office.context.mailbox.md#displaynewmessageformparameters): adiciona uma nova função que abre um novo formulário de mensagem.
 - Adicionado [Office.context.mailbox.userProfile.accountType](office.context.mailbox.userprofile.md#accounttype-string): adiciona um novo membro ao perfil de usuário, que indica o tipo de conta do usuário.
 
 ## <a name="see-also"></a>Confira também
 
-- [Suplementos do Outlook](https://docs.microsoft.com/outlook/add-ins/)
+- [Suplementos do Outlook](/outlook/add-ins/)
 - [Exemplos de código de suplementos do Outlook](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [Introdução](https://docs.microsoft.com/outlook/add-ins/quick-start)
+- [Introdução](/outlook/add-ins/quick-start)

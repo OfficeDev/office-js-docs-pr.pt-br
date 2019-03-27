@@ -1,14 +1,14 @@
 ---
 title: Elemento Rule no arquivo de manifesto
 description: ''
-ms.date: 12/27/2018
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 38e724e6962c48efd0902be315c49ebb4cf6c798
-ms.sourcegitcommit: d1aa7201820176ed986b9f00bb9c88e055906c77
+ms.openlocfilehash: 07037c43c111f735a7354a048066e4c4a88f7637
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "29388497"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871511"
 ---
 # <a name="rule-element"></a>Elemento Rule
 
@@ -43,9 +43,9 @@ Define uma regra que é avaliada como true se o item selecionado for do tipo esp
 
 | Atributo | Obrigatório | Descrição |
 |:-----|:-----|:-----|
-| **ItemType** | Sim | Especifica o tipo de item para fazer a correspondência. Pode ser `Message` ou `Appointment`. O tipo de item `Message` inclui email, solicitações de reunião, respostas a reuniões e cancelamentos de reuniões. |
+| **ItemType** | Sim | Especifica o tipo de item para fazer a correspondência. Pode ser `Message` ou `Appointment`. O tipo de item `Message` inclui email, solicitações de reunião, respostas de reunião e cancelamentos de reunião. |
 | **FormType** | Não (dentro de [ExtensionPoint](extensionpoint.md)), Sim (dentro de [OfficeApp](officeapp.md)) | Especifica se o aplicativo deve aparecer no formulário de leitura ou edição do item. Pode ser um dos seguintes: `Read`, `Edit`, `ReadOrEdit`. Se não for especificado em um `Rule` dentro de um `ExtensionPoint`, esse valor DEVERÁ ser `Read`. |
-| **ItemClass** | Não | Especifica a classe de mensagens personalizada para fazer a correspondência. Para saber mais, confira [Ativar um suplemento de email no Outlook para uma classe de mensagens específica](https://docs.microsoft.com/outlook/add-ins/activation-rules). |
+| **ItemClass** | Não | Especifica a classe de mensagens personalizada para fazer a correspondência. Para saber mais, confira o artigo [Ativar um suplemento de email no Outlook para uma classe de mensagens específica](/outlook/add-ins/activation-rules). |
 | **IncludeSubClasses** | Não | Especifica se a regra deve ser avaliada como true se o item pertencer a uma subclasse da classe de mensagens especificada. O padrão é `false`. |
 
 ### <a name="example"></a>Exemplo
@@ -72,7 +72,7 @@ Define uma regra que é avaliada como true se o item contiver texto do tipo de e
 
 | Atributo | Obrigatório | Descrição |
 |:-----|:-----|:-----|
-| **EntityType** | Sim | Especifica o tipo de entidade que deve ser encontrado para a regra para que ela seja avaliada como true. Pode ser um dos seguintes: `MeetingSuggestion`, `TaskSuggestion`, `Address`, `Url`, `PhoneNumber`, `EmailAddress` ou `Contact`. |
+| **EntityType** | Sim | Especifica o tipo de entidade que deve ser encontrado para que a regra para que ela seja avaliada como true. Pode ser um dos seguintes: `MeetingSuggestion`, `TaskSuggestion`, `Address`, `Url`, `PhoneNumber`, `EmailAddress`, ou `Contact`. |
 | **RegExFilter** | Não | Especifica uma expressão regular para executar esta entidade para ativação. |
 | **FilterName** | Não | Especifica o nome do filtro de expressões regulares para que seja possível consultá-lo posteriormente no código do seu suplemento. |
 | **IgnoreCase** | Não | Especifica se deve ignorar maiúsculas e minúsculas ao fazer a correspondência da expressão regular especificada por **RegExFilter**. |
@@ -127,6 +127,6 @@ Define uma coleção de regras e o operador lógico a ser usado ao avaliá-las.
 
 ## <a name="see-also"></a>Confira também
 
-- [Regras de ativação para suplementos do Outlook](https://docs.microsoft.com/outlook/add-ins/activation-rules)
-- [Corresponder cadeias de caracteres em um item do Outlook como entidades conhecidas](https://docs.microsoft.com/outlook/add-ins/match-strings-in-an-item-as-well-known-entities)    
-- [Usar regras de ativação de expressões regulares para mostrar um suplemento do Outlook](https://docs.microsoft.com/outlook/add-ins/use-regular-expressions-to-show-an-outlook-add-in)
+- [Regras de ativação para suplementos do Outlook](/outlook/add-ins/activation-rules)
+- [Corresponder cadeias de caracteres em um item do Outlook como entidades conhecidas](/outlook/add-ins/match-strings-in-an-item-as-well-known-entities)    
+- [Usar regras de ativação de expressões regulares para mostrar um suplemento do Outlook](/outlook/add-ins/use-regular-expressions-to-show-an-outlook-add-in)

@@ -1,13 +1,14 @@
 ---
 title: Usar movimento em suplementos do Office
 description: ''
-ms.date: 03/23/2018
-ms.openlocfilehash: 0003f7c52da190852dbd13ad58be26fa6e86911d
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: d3be2454b36fe1003c0697f0bca3c29d743e5330
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432960"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871532"
 ---
 # <a name="using-motion-in-office-add-ins"></a>Usar movimento em suplementos do Office
 
@@ -22,8 +23,6 @@ O movimento deveria ter uma finalidade que transmita mais valor ao usuário. Con
 
 Os elementos padrão usados em um suplemento podem incorporar movimentos a fim de ajudar o usuário a focar, mostrar como os elementos se relacionam e validar as ações do usuário. Coreografe os elementos para reforçar a hierarquia e os modelos mentais.
 
-
-
 ### <a name="best-practices"></a>Práticas recomendadas
 
 |Fazer|Não fazer|
@@ -33,20 +32,18 @@ Os elementos padrão usados em um suplemento podem incorporar movimentos a fim d
 
 ![GIF que mostra um painel abrindo com o mínimo de elementos em movimento ao lado de um gif que mostra um painel abrindo com vários elementos em movimento](../images/add-in-motion-purpose.gif)
 
-
-
 ## <a name="use-expected-motions"></a>Usar movimentos esperados
+
 Recomendamos usar o [Office UI Fabric](https://developer.microsoft.com/fabric) para criar uma conexão visual com a plataforma do Office, e também incentivamos o uso de [Animações do Fabric](https://developer.microsoft.com/fabric#/styles/animations) para criar movimentos alinhados à linguagem de movimento do Fabric. 
 
 Use para ajustar perfeitamente no Office. Ele ajudará a criar experiências que são mais sentidas do que observadas. As classes CSS de animação fornecem direção, entrada/saída e especificações de duração que reforçam modelos mentais do Office e fornecem oportunidades para que os clientes saibam como interagir com o suplemento.
 
 ### <a name="best-practices"></a>Práticas recomendadas
 
-
 |Fazer|Não fazer|
 |:-----|:-----|
-|Use movimento que se adéque aos comportamentos no Fabric.| Não crie movimentos que interfiram ou entrem em conflito com padrões de movimento comuns no Office. 
-|Verifique se há uma aplicação consistente de movimento entre os elementos.| Não use movimentos diferentes para animar o mesmo componente ou objeto.|
+|Use movimento que se adéque aos comportamentos no Fabric.| Não crie movimentos que interfiram ou entrem em conflito com padrões de movimento comuns no Office.
+|Certifique-se de que haja uma aplicação consistente de movimentos entre elementos semelhantes.| Não use movimentos diferentes para animar o mesmo componente ou objeto.|
 |Crie consistência com o uso de direção na animação. Por exemplo, um painel que abre a partir da direita deve fechar para a direita.|Não anime um elemento usando várias direções.
 
 ![GIF que mostra uma abertura modal de uma maneira esperada ao lado de um gif que mostra um abertura modal de forma inesperada](../images/add-in-motion-expected.gif)
@@ -59,13 +56,12 @@ Considere o tamanho da tela HTML (painel de tarefas, caixa de diálogo ou suplem
 
 |Fazer|Não fazer|
 |:-----|:-----|
-| Use [durações de movimento recomendadas](https://developer.microsoft.com/fabric#/styles/animations). | Não use animações exageradas. Evite criar experiências que, embora sejam belas, desviem a atenção dos clientes.
-| Siga as [curvas de atenuação recomendadas](https://docs.microsoft.com/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion).  |Não mova os elementos de maneira irregular ou desconexa. Evite antecipações, saltos, pulos ou outros efeitos que emulem as características físicas do mundo natural.|
+| Use [durações de movimento recomendadas](https://developer.microsoft.com/fabric#/styles/animations). | Não use animações exageradas. Evite criar experiências belas, mas que desviam a atenção dos clientes.
+| Siga as [curvas de atenuação recomendadas](/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion).  |Não mova os elementos de uma maneira irregular ou desconexa. Evite antecipações, saltos, pulos ou outros efeitos que emulem as características físicas do mundo natural.|
 
 ![GIF que mostra blocos carregando usando um esmaecimento sutil ao lado de um gif que mostra blocos carregando com um salto](../images/add-in-motion-character.gif)
 
 ## <a name="see-also"></a>Confira também
 
 * [Diretrizes de animação do Fabric](https://developer.microsoft.com/fabric#/styles/animations)
-* [Movimento para aplicativos da Plataforma Universal do Windows](https://docs.microsoft.com/windows/uwp/design/motion)
-
+* [Movimento para aplicativos da Plataforma Universal do Windows](/windows/uwp/design/motion)

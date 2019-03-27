@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos de API para suplementos do Outlook versão 1.5
 description: ''
-ms.date: 02/15/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: edc34bd088c1e8a2e88732518dcb335d38b8ba21
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: d0489e4efa763b3963fcdc78ec894db46fa06362
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30067920"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870860"
 ---
 # <a name="outlook-add-in-api-requirement-set-15"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.5
 
@@ -21,8 +21,8 @@ O subconjunto de APIs de suplemento do Outlook para as APIs JavaScript do Office
 
 O conjunto de requisitos 1.5 inclui todos os recursos do [Conjunto de requisitos 1.4](../requirement-set-1.4/outlook-requirement-set-1.4.md) e contém os seguintes recursos adicionais.
 
-- Adicionado suporte para [painéis de tarefas fixáveis](https://docs.microsoft.com/outlook/add-ins/pinnable-taskpane).
-- Adicionado suporte para chamar [APIs REST](https://docs.microsoft.com/outlook/add-ins/use-rest-api).
+- Adicionado suporte para [painéis de tarefas fixáveis](/outlook/add-ins/pinnable-taskpane).
+- Adicionado suporte para chamar [APIs REST](/outlook/add-ins/use-rest-api).
 - Adicionada a capacidade de marcar um anexo como embutido.
 - Adicionada a capacidade de fechar um painel de tarefas ou uma caixa de diálogo.
 
@@ -35,11 +35,11 @@ O conjunto de requisitos 1.5 inclui todos os recursos do [Conjunto de requisitos
 - Modificado o [Office.context.mailbox.getCallbackTokenAsync](office.context.mailbox.md#getcallbacktokenasyncoptions-callback): Uma nova versão deste método com uma nova assinatura (`getCallbackTokenAsync([options], callback)`) foi adicionada. A versão original ainda está disponível e não é alterada.
 - Adicionado [Office.context.ui.closeContainer](/javascript/api/office/office.ui#closecontainer--).
 - Modificado o [Office.context.mailbox.item.addFileAttachmentAsync](office.context.mailbox.item.md#addfileattachmentasyncuri-attachmentname-options-callback): um novo valor no dicionário `options` chamado `isInline`, usado para especificar que uma imagem foi usada embutida no corpo da mensagem.
-- Modificado o [Office.context.mailbox.item.displayReplyAllForm](office.context.mailbox.item.md#displayreplyallformformdata-callback): Um novo valor no dicionário do `formData.attachments` chamado `isInline`, usado para especificar que uma imagem foi usada embutida no corpo da mensagem.
+- Foi modificado o [Office.context.mailbox.item.displayReplyAllForm](office.context.mailbox.item.md#displayreplyallformformdata-callback): Um novo valor no dicionário do `formData.attachments` chamado `isInline`, usado para especificar que uma imagem foi usada embutida no corpo da mensagem.
 - Modificado o [Office.context.mailbox.item.displayReplyForm](office.context.mailbox.item.md#displayreplyformformdata-callback): um novo valor no dicionário `formData.attachments` chamado `isInline`, usado para especificar que uma imagem foi usada embutida no corpo da mensagem.
 
 ## <a name="see-also"></a>Confira também
 
-- [Suplementos do Outlook](https://docs.microsoft.com/outlook/add-ins/)
+- [Suplementos do Outlook](/outlook/add-ins/)
 - [Exemplos de código de suplementos do Outlook](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [Introdução](https://docs.microsoft.com/outlook/add-ins/quick-start)
+- [Introdução](/outlook/add-ins/quick-start)

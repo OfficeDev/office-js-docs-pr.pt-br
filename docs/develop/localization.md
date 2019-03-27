@@ -1,13 +1,14 @@
 ---
 title: Localização para Suplementos do Office
 description: Você pode usar a API JavaScript para Office para determinar uma localidade e exibir cadeias de caracteres com base na localidade do aplicativo host ou para interpretar ou exibir dados com base na localidade dos dados.
-ms.date: 12/11/2018
-ms.openlocfilehash: 050880d8b2d5091cc0e5ab3e3dc14e632e0014f1
-ms.sourcegitcommit: 3007bf57515b0811ff98a7e1518ecc6fc9462276
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: b01535b76485847783104ce840256949ce17ca26
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "27724890"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871707"
 ---
 # <a name="localization-for-office-add-ins"></a>Localização para Suplementos do Office
 
@@ -63,7 +64,7 @@ Cada Suplemento do Office especifica um elemento [DefaultLocale] e uma localidad
 
 
 > [!NOTE]
-> Você só pode localizar o nome de exibição e a descrição das localidades para as quais o Office oferece suporte. Consulte [Identificadores de idioma e valores de OptionState Id no Office 2013](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15)) para obter uma lista de idiomas e localidades da versão atual do Office.
+> Você só pode localizar o nome de exibição e a descrição das localidades para as quais o Office oferece suporte. Consulte [Identificadores de idioma e valores de OptionState Id no Office 2013](/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15)) para obter uma lista de idiomas e localidades da versão atual do Office.
 
 
 ### <a name="examples"></a>Exemplos
@@ -183,10 +184,10 @@ Depois de instalar o Language Accessory Pack, você pode configurar o Office par
 
 ### <a name="create-an-office-add-in-project"></a>Criar um projeto de Suplemento do Office
 
-Você precisará criar um projeto de Suplemento do Office do Visual Studio 2017. 
+Você precisará criar um projeto de Suplemento do Office do Visual Studio 2017.
 
 > [!NOTE]
-> Se ainda não instalou o Visual Studio 2017, confira a [página IDE do Visual Studio](https://visualstudio.microsoft.com/vs/) para obter instruções de download. Durante a instalação, você precisará selecionar a carga de trabalho de desenvolvimento do Office/SharePoint. Se você já instalou o Visual Studio 2017, [use o Instalador do Visual Studio](https://docs.microsoft.com/visualstudio/install/modify-visual-studio/) para garantir que a carga de trabalho de desenvolvimento do Office/SharePoint seja instalada.
+> Se ainda não instalou o Visual Studio 2017, confira a [página IDE do Visual Studio](https://visualstudio.microsoft.com/vs/) para obter instruções de download. Durante a instalação, você precisará selecionar a carga de trabalho de desenvolvimento do Office/SharePoint. Se você já instalou o Visual Studio 2017, [use o Instalador do Visual Studio](/visualstudio/install/modify-visual-studio/) para garantir que a carga de trabalho de desenvolvimento do Office/SharePoint seja instalada.
 
 
 1. No Visual Studio, escolha **Arquivo**  >  **Novo Projeto**.
@@ -404,10 +405,10 @@ Após estar em execução, as cadeias de caracteres na interface do usuário do 
 ## <a name="see-also"></a>Confira também
 
 - [Diretrizes de design para suplementos do Office](../design/add-in-design.md)
-- [Identificadores de idioma e valores da ID de OptionState no Office 2013](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
+- [Identificadores de idioma e valores da ID de OptionState no Office 2013](/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
 
 [DefaultLocale]:        https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultlocale
-[Description]:          https://docs.microsoft.com/office/dev/add-ins/reference/manifest/description
+[Descrição]:          https://docs.microsoft.com/office/dev/add-ins/reference/manifest/description
 [DisplayName]:          https://docs.microsoft.com/office/dev/add-ins/reference/manifest/displayname
 [IconUrl]:              https://docs.microsoft.com/office/dev/add-ins/reference/manifest/iconurl
 [HighResolutionIconUrl]:https://docs.microsoft.com/office/dev/add-ins/reference/manifest/highresolutioniconurl

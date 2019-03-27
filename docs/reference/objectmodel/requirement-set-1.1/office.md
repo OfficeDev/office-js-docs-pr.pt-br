@@ -1,14 +1,14 @@
 ---
-title: Namespace do Office – conjunto de requisitos 1.1
+title: Namespace do Office – conjunto de requisitos 1,1
 description: ''
-ms.date: 02/15/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: b98f8fa01e2cfdf17d6105beab67199a2cec4317
-ms.sourcegitcommit: f26778b596b6b022814c39601485ff676ed4e2fa
+ms.openlocfilehash: eda5e1fb5f2c11ae91e4a1479892c36ec23e1897
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "30068018"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871994"
 ---
 # <a name="office"></a>Office
 
@@ -19,7 +19,7 @@ O namespace do Office fornece interfaces compartilhadas que são usadas pelos su
 |Requisito| Valor|
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
 ### <a name="namespaces"></a>Namespaces
 
@@ -35,7 +35,7 @@ Especifica o resultado de uma chamada assíncrona.
 
 ##### <a name="type"></a>Tipo
 
-*   Cadeia de caracteres
+*   String
 
 ##### <a name="properties"></a>Propriedades:
 
@@ -49,7 +49,7 @@ Especifica o resultado de uma chamada assíncrona.
 |Requisito| Valor|
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
 ####  <a name="coerciontype-string"></a>CoercionType :String
 
@@ -57,7 +57,7 @@ Especifica como forçar os dados retornados ou definir de acordo com o método c
 
 ##### <a name="type"></a>Tipo
 
-*   Cadeia de caracteres
+*   String
 
 ##### <a name="properties"></a>Propriedades:
 
@@ -71,7 +71,7 @@ Especifica como forçar os dados retornados ou definir de acordo com o método c
 |Requisito| Valor|
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
 ####  <a name="sourceproperty-string"></a>SourceProperty :String
 
@@ -79,18 +79,18 @@ Especifica a origem dos dados retornados pelo método chamado.
 
 ##### <a name="type"></a>Tipo
 
-*   Cadeia de caracteres
+*   String
 
 ##### <a name="properties"></a>Propriedades:
 
 |Nome| Tipo| Descrição|
 |---|---|---|
 |`Body`| String|A origem dos dados é o corpo de uma mensagem.|
-|`Subject`| String|A origem dos dados é o assunto de uma mensagem.|
+|`Subject`| Cadeia de caracteres|A origem dos dados é o assunto de uma mensagem.|
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|

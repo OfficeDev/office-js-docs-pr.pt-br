@@ -3,19 +3,19 @@ title: Trabalhar simultaneamente com vários intervalos em suplementos do Excel
 description: ''
 ms.date: 02/20/2019
 localization_priority: Normal
-ms.openlocfilehash: c6bbbaee6f6cbfda5d495f533caf3dbe1325401b
-ms.sourcegitcommit: 8e20e7663be2aaa0f7a5436a965324d171bc667d
+ms.openlocfilehash: d284f3cb12153b1c05cff0b7f7a66bbf98961443
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "30199603"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870818"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins-preview"></a>Trabalhar simultaneamente com vários intervalos em suplementos do Excel (Visualização)
 
 A biblioteca de JavaScript do Excel permite que o suplemento realize operações e defina propriedades, em vários intervalos simultaneamente. Os intervalos não precisam ser contíguos. Além de tornar seu código mais simples, essa maneira de definir uma propriedade é executada muito mais rapidamente do que definir a mesma propriedade individualmente para cada um dos intervalos.
 
 > [!NOTE]
-> As APIs descritas neste artigo requerem a ** versão 1809 Build 10820.20000 clique para executar do Office 2016** ou posterior. (Talvez seja necessário participar do [programa Office](https://products.office.com/office-insider) Insider para obter uma compilação apropriada.)[!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+> As APIs descritas neste artigo requerem a ** versão 1809 Build 10820.20000 clique para executar do Office 2016** ou posterior. (Talvez seja necessário participar do [programa Office](https://products.office.com/office-insider) Insider para obter uma compilação apropriada.)[!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 ## <a name="rangeareas"></a>RangeAreas
 

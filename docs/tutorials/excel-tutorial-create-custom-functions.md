@@ -1,16 +1,16 @@
 ---
 title: Tutorial de funções personalizadas do Excel (visualização)
 description: Neste tutorial, você criará um suplemento do Excel que contém uma função personalizada que pode executar cálculos e solicitar ou transmitir dados da web.
-ms.date: 01/08/2019
+ms.date: 03/19/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 4ac735e6fc19f13859d07df6cb3d2443e6dfe2fd
-ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
+ms.openlocfilehash: 328d4da7a4dfcc2098f7c5425f84b851bd9dd9d6
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "29982017"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870671"
 ---
 # <a name="tutorial-create-custom-functions-in-excel-preview"></a>Tutorial: Criar funções personalizadas no Excel (visualização)
 
@@ -89,7 +89,7 @@ npm run start
 Esse comando inicia o servidor web e sideloads seu suplemento da função personalizada no Excel para Windows.
 
 > [!NOTE]
-> Se o suplemento não carregar, verifique se você concluiu a etapa 3 corretamente. Também é possível habilitar o **[log de tempo de execução](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** solucionar problemas com arquivo de manifesto XML do add-in, bem como qualquer problema de instalação ou tempo de execução. Gravações de log de tempo de execução `console.log` declarações para um arquivo de log para ajudá-lo a descobrir e corrigir problemas.
+> Se o suplemento não carregar, verifique se você concluiu a etapa 3 corretamente. Você também pode habilitar o **[log de tempo de execução](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** para solucionar problemas com o arquivo de manifesto XML do seu suplemento, bem como qualquer problema de instalação ou de tempo de execução. O log de `console.log` tempo de execução grava instruções em um arquivo de log para ajudá-lo a encontrar e corrigir problemas.
 
 # <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
@@ -106,7 +106,7 @@ Esse comando inicia o servidor web. Faça o seguinte para sideload o seu supleme
    <img src="../images/excel-cf-online-register-add-in-1.png" alt="Insert ribbon in Excel Online with the My Add-ins icon highlighted"></li>
    <li>Escolha <strong>Gerenciar Meus suplementos</strong> e selecione <strong>Carregar o Suplemento</strong>.</li> 
    <li>Escolha <strong>Procurar... </strong> e navegue até o diretório raiz do projeto criado pelo gerador Yeoman.</li> 
-   <li>Selecione o arquivo <strong>manifest. XML</strong> e escolha <strong>abrir</strong>, escolha <strong>Carregar</strong>.</li>
+   <li>Selecione o arquivo <strong>manifest. XML</strong> e escolha <strong>aberto</strong>, escolha <strong>Carregar</strong>.</li>
 </ol>
 
 > [!NOTE]
@@ -151,7 +151,7 @@ Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio d
 
 > [!NOTE]
 > In the January Insiders 1901 Build, there is a bug preventing fetch calls from executing which will result in #VALUE!.
-> To workaround this please use the [XMLHTTPRequest API](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/custom-functions-runtime#requesting-external-data) to make the web request.
+> To workaround this please use the [XMLHTTPRequest API](/office/dev/add-ins/excel/custom-functions-runtime#requesting-external-data) to make the web request.
 
 3. In **customfunctions.js**, locate the line `CustomFunctions.associate("INCREMENT", increment);`. Add the following line of code immediately after that line, and save the file.
 

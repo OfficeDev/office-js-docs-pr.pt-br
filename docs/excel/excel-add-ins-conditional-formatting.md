@@ -1,26 +1,27 @@
 ---
 title: Aplicar formatação condicional a intervalos com a API JavaScript do Excel
 description: ''
-ms.date: 10/22/2018
-ms.openlocfilehash: f4baaea04ef487c26721ecfb2a90b8609ee96777
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 1c601782ca048fe1488f4ce578a7ee4d896b6b26
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433177"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870377"
 ---
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>Aplicar formatação condicional a intervalos do Excel
 
 A Biblioteca de JavaScript do Excel fornece APIs para aplicar a formatação condicional aos intervalos de dados nas suas planilhas. Esse recurso simplifica a visualização da análise de grandes conjuntos de dados. A formatação também atualiza dinamicamente com base nas alterações no intervalo. 
 
-> [!NOTE] 
+> [!NOTE]
 > Este artigo aborda a formatação condicional no contexto dos suplementos do JavaScript do Excel. Os artigos a seguir fornecem informações detalhadas sobre os recursos completos de formatação condicionais do Excel.
--   [Adicionar, alterar ou limpar formatações condicionais](https://support.office.com/article/add-change-or-clear-conditional-formats-8a1cc355-b113-41b7-a483-58460332a1af)
--   [Use fórmulas com o acesso condicional](https://support.office.com/article/Use-formulas-with-conditional-formatting-FED60DFA-1D3F-4E13-9ECB-F1951FF89D7F)
+> -  [Adicionar, alterar ou limpar formatações condicionais](https://support.office.com/article/add-change-or-clear-conditional-formats-8a1cc355-b113-41b7-a483-58460332a1af)
+> -  [Use fórmulas com o acesso condicional](https://support.office.com/article/Use-formulas-with-conditional-formatting-FED60DFA-1D3F-4E13-9ECB-F1951FF89D7F)
 
 ## <a name="programmatic-control-of-conditional-formatting"></a>Controle de programação de formatação condicional
 
-A `Range.conditionalFormats` propriedade é uma coleção de objetos [ConditionalFormat](https://docs.microsoft.com/javascript/api/excel/excel.conditionalformat) que se aplicam ao intervalo.  O `ConditionalFormat` objeto contém várias propriedades que definem o formato a ser aplicado com o [ConditionalFormatType](https://docs.microsoft.com/javascript/api/excel/excel.conditionalformattype). 
+A `Range.conditionalFormats` propriedade é uma coleção de objetos [ConditionalFormat](/javascript/api/excel/excel.conditionalformat) que se aplicam ao intervalo.  O `ConditionalFormat` objeto contém várias propriedades que definem o formato a ser aplicado com o [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype). 
 
 -   `cellValue`
 -   `colorScale`
@@ -32,17 +33,17 @@ A `Range.conditionalFormats` propriedade é uma coleção de objetos [Conditiona
 -   `topBottom`
 
 > [!NOTE]
-> Cada uma das seguintes propriedades de formatação tem uma variante `*OrNullObject` correspondente. Saiba mais sobre esse padrão na seção [* OrNullObject métodos](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods).
+> Cada uma das seguintes propriedades de formatação tem uma variante `*OrNullObject` correspondente. Saiba mais sobre esse padrão na seção [* OrNullObject métodos](/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods).
 
-Somente um tipo de formato pode ser definido para o objeto ConditionalFormat. Isso é determinado pela `type` propriedade, que é uma enumeração de valor[ConditionalFormatType](https://docs.microsoft.com/javascript/api/excel/excel.conditionalformattype). `type` é definido quando um formato condicional para um intervalo é adicionado. 
+Somente um tipo de formato pode ser definido para o objeto ConditionalFormat. Isso é determinado pela `type` propriedade, que é uma enumeração de valor[ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype). `type` é definido quando um formato condicional para um intervalo é adicionado. 
 
 ## <a name="creating-conditional-formatting-rules"></a>Criando regras de formatação condicional
 
 Formatos condicionais são adicionados a um intervalo usando `conditionalFormats.add`. Após a adição, propriedades específicas podem ser definidas  para o formato condicional. Os exemplos a seguir mostram a criação de diferentes tipos de formatação.
 
-### <a name="cell-valuehttpsdocsmicrosoftcomjavascriptapiexcelexcelcellvalueconditionalformat"></a>[Valor da célula](https://docs.microsoft.com/javascript/api/excel/excel.cellvalueconditionalformat)
+### <a name="cell-valuejavascriptapiexcelexcelcellvalueconditionalformat"></a>[Valor da célula](/javascript/api/excel/excel.cellvalueconditionalformat)
 
-A formatação condicional de valor de célula aplica um formato definidas pelo usuário com base em uma ou duas fórmulas em [ConditionalCellValueRule]( https://docs.microsoft.com/javascript/api/excel/excel.conditionalcellvaluerule). A `operator` propriedade é um[ConditionalCellValueOperator]( https://docs.microsoft.com/javascript/api/excel/excel.conditionalcellvalueoperator) que define como expressões resultantes se relacionam com a formatação. 
+A formatação condicional de valor de célula aplica um formato definidas pelo usuário com base em uma ou duas fórmulas em [ConditionalCellValueRule](/javascript/api/excel/excel.conditionalcellvaluerule). A `operator` propriedade é um[ConditionalCellValueOperator](/javascript/api/excel/excel.conditionalcellvalueoperator) que define como expressões resultantes se relacionam com a formatação.
 
 O exemplo a seguir mostra a cor de fonte vermelha aplicada a qualquer valor no intervalo menor que zero.
 
@@ -62,9 +63,9 @@ conditionalFormat.cellValue.rule = { formula1: "=0", operator: "LessThan" };
 await context.sync();
 ```
 
-### <a name="color-scalehttpsdocsmicrosoftcomjavascriptapiexcelexcelcolorscaleconditionalformat"></a>[Escala de cores](https://docs.microsoft.com/javascript/api/excel/excel.colorscaleconditionalformat)
+### <a name="color-scalejavascriptapiexcelexcelcolorscaleconditionalformat"></a>[Escala de cores](/javascript/api/excel/excel.colorscaleconditionalformat)
 
-Formatação condicional de escala de cores aplica um gradiente de cor para o intervalo de dados. A `criteria` propriedade na `ColorScaleConditionalFormat` define três [ConditionalColorScaleCriterion](https://docs.microsoft.com/javascript/api/excel/excel.conditionalcolorscalecriterion): `minimum`, `maximum`e, opcionalmente, `midpoint`. Cada um dos pontos de escala critério têm três propriedades:
+Formatação condicional de escala de cores aplica um gradiente de cor para o intervalo de dados. A `criteria` propriedade na `ColorScaleConditionalFormat` define três [ConditionalColorScaleCriterion](/javascript/api/excel/excel.conditionalcolorscalecriterion): `minimum`, `maximum`e, opcionalmente, `midpoint`. Cada um dos pontos de escala critério têm três propriedades:
 
 -   `color` – O código de cor HTML para o ponto de extremidade.
 -   `formula` – Um número ou uma fórmula que representa o ponto de extremidade. Isso será `null` caso `type` está `lowestValue` ou `highestValue`.
@@ -104,11 +105,11 @@ conditionalFormat.colorScale.criteria = criteria;
 await context.sync();
 ```
 
-### <a name="customhttpsdocsmicrosoftcomjavascriptapiexcelexcelcustomconditionalformat"></a>[Personalizados](https://docs.microsoft.com/javascript/api/excel/excel.customconditionalformat) 
+### <a name="customjavascriptapiexcelexcelcustomconditionalformat"></a>[Personalizados](/javascript/api/excel/excel.customconditionalformat)
 
-A formatação condicional personalizada aplica um formato definido pelo usuário para as células com base em uma fórmula de complexidade arbitrária. O objeto [ConditionalFormatRule](https://docs.microsoft.com/javascript/api/excel/excel.conditionalformatrule) permite que você defina a fórmula em notações diferentes:
+A formatação condicional personalizada aplica um formato definido pelo usuário para as células com base em uma fórmula de complexidade arbitrária. O objeto [ConditionalFormatRule](/javascript/api/excel/excel.conditionalformatrule) permite que você defina a fórmula em notações diferentes:
 
--   `formula` -Anotação padrão. 
+-   `formula` -Anotação padrão.
 -   `formulaLocal` – Localizados com base no idioma do usuário.
 -   `formulaR1C1` -Notação estilo R1C1.
 
@@ -130,7 +131,7 @@ conditionalFormat.custom.format.font.color = "green";
 await context.sync();
 
 ```
-### <a name="data-barhttpsdocsmicrosoftcomjavascriptapiexcelexceldatabarconditionalformat"></a>[Barra de dados](https://docs.microsoft.com/javascript/api/excel/excel.databarconditionalformat)
+### <a name="data-barjavascriptapiexcelexceldatabarconditionalformat"></a>[Barra de dados](/javascript/api/excel/excel.databarconditionalformat)
 
 A barra de formatação condicional de dados adiciona barras de dados nas células. Por padrão, os valores mínimos e máximos no intervalo formam limites e tamanhos proporcionais às barras de dados. O `DataBarConditionalFormat` objeto tem várias propriedades de controle da aparência da barra. 
 
@@ -150,13 +151,13 @@ conditionalFormat.dataBar.barDirection = Excel.ConditionalDataBarDirection.leftT
 await context.sync();
 ```
 
-### <a name="icon-sethttpsdocsmicrosoftcomjavascriptapiexcelexceliconsetconditionalformat"></a>[Conjunto de ícones](https://docs.microsoft.com/javascript/api/excel/excel.iconsetconditionalformat)
+### <a name="icon-setjavascriptapiexcelexceliconsetconditionalformat"></a>[Conjunto de ícones](/javascript/api/excel/excel.iconsetconditionalformat)
 
-A formatação condicional do conjunto de ícones usa os [ícones]( https://docs.microsoft.com/javascript/api/excel/excel.icon) do Excel para realçar células. A `criteria` propriedade é uma matriz [ConditionalIconCriterion](https://docs.microsoft.com/javascript/api/excel/excel.ConditionalIconCriterion), que define o símbolo a ser inserido e a condição em que ele é inserido. Essa matriz é automaticamente pré-preenchida com critério de elementos com propriedades padrão. Propriedades individuais não podem ser substituídas. Em vez disso, todo o objeto de critérios deve ser substituído. 
+A formatação condicional do conjunto de ícones usa os [ícones](/javascript/api/excel/excel.icon) do Excel para realçar células. A `criteria` propriedade é uma matriz [ConditionalIconCriterion](/javascript/api/excel/excel.ConditionalIconCriterion), que define o símbolo a ser inserido e a condição em que ele é inserido. Essa matriz é automaticamente pré-preenchida com critério de elementos com propriedades padrão. Propriedades individuais não podem ser substituídas. Em vez disso, todo o objeto de critérios deve ser substituído. 
 
 O exemplo a seguir mostra um conjunto de ícones de três triângulos aplicado ao intervalo.
 
-![Um intervalo com triângulos verdes para cima para valores acima de 1000 linhas amarelas para values entre 1000 e 700 e triângulos vermelhos para baixo para valores mais baixos.](../images/excel-conditional-format-iconset.png)
+![Um intervalo com triângulos verdes para cima para valores acima de 1000, linhas amarelas para valores entre 700 e 1000 e triângulos vermelhos para baixo para valores mais baixos.](../images/excel-conditional-format-iconset.png)
 
 ```typescript
 const sheet = context.workbook.worksheets.getItem("Sample");
@@ -193,9 +194,9 @@ iconSetCF.criteria = [
 await context.sync();
 ```
 
-### <a name="preset-criteriahttpsdocsmicrosoftcomjavascriptapiexcelexcelpresetcriteriaconditionalformat"></a>[Critérios predefinidos](https://docs.microsoft.com/javascript/api/excel/excel.presetcriteriaconditionalformat)
+### <a name="preset-criteriajavascriptapiexcelexcelpresetcriteriaconditionalformat"></a>[Critérios predefinidos](/javascript/api/excel/excel.presetcriteriaconditionalformat)
 
-A formatação condicional predefinida aplica um formato definido pelo usuário ao intervalo com base em uma regra padrão selecionada. Essas regras são definidas pelo[ConditionalFormatPresetCriterion](https://docs.microsoft.com/javascript/api/excel/excel.ConditionalFormatPresetCriterion) no [ConditionalPresetCriteriaRule](https://docs.microsoft.com/javascript/api/excel/excel.conditionalpresetcriteriarule). 
+A formatação condicional predefinida aplica um formato definido pelo usuário ao intervalo com base em uma regra padrão selecionada. Essas regras são definidas pelo[ConditionalFormatPresetCriterion](/javascript/api/excel/excel.ConditionalFormatPresetCriterion) no [ConditionalPresetCriteriaRule](/javascript/api/excel/excel.conditionalpresetcriteriarule). 
 
 O exemplo a seguir cor da fonte é branca onde o valor da célula tem pelo menos um desvio padrão da acima do intervalo.
 
@@ -217,9 +218,9 @@ conditionalFormat.preset.rule = {
 await context.sync();
 ```
 
-### <a name="text-comparisonhttpsdocsmicrosoftcomjavascriptapiexcelexceltextconditionalformat"></a>[Comparação de texto](https://docs.microsoft.com/javascript/api/excel/excel.textconditionalformat)
+### <a name="text-comparisonjavascriptapiexcelexceltextconditionalformat"></a>[Comparação de texto](/javascript/api/excel/excel.textconditionalformat)
 
-A formatação condicional de texto comparação usa comparações de cadeias como condição. As`rule` propriedade é [ConditionalTextComparisonRule](https://docs.microsoft.com/javascript/api/excel/excel.conditionaltextcomparisonrule) definindo uma cadeia de caracteres a ser comparada com a célula e um operador para especificar o tipo de comparação. 
+A formatação condicional de texto comparação usa comparações de cadeias como condição. As`rule` propriedade é [ConditionalTextComparisonRule](/javascript/api/excel/excel.conditionaltextcomparisonrule) definindo uma cadeia de caracteres a ser comparada com a célula e um operador para especificar o tipo de comparação. 
 
 O exemplo a seguir mostra a cor da fonte vermelha quando o texto de uma célula contém "Atrasada".
 
@@ -242,9 +243,9 @@ conditionalFormat.textComparison.rule = {
 await context.sync();
 ```
 
-### <a name="topbottomhttpsdocsmicrosoftcomjavascriptapiexcelexceltopbottomconditionalformat"></a>[Superiores/inferiores](https://docs.microsoft.com/javascript/api/excel/excel.TopBottomconditionalformat)
+### <a name="topbottomjavascriptapiexcelexceltopbottomconditionalformat"></a>[Superiores/inferiores](/javascript/api/excel/excel.TopBottomconditionalformat)
 
-A formatação condicional superiores/inferiores aplica um formato para maiores ou menores valores em um intervalo. As `rule` propriedade é do tipo [ConditionalTopBottomRule](https://docs.microsoft.com/javascript/api/excel/excel.conditionaltopbottomrule), define a condição se baseia no maior ou menor, e se a avaliação é ordenada ou na baseada na porcentagem. 
+A formatação condicional superiores/inferiores aplica um formato para maiores ou menores valores em um intervalo. As `rule` propriedade é do tipo [ConditionalTopBottomRule](/javascript/api/excel/excel.conditionaltopbottomrule), define a condição se baseia no maior ou menor, e se a avaliação é ordenada ou na baseada na porcentagem. 
 
 O exemplo a seguir aplica um destaque em verde na maior célula valor do intervalo.
 
@@ -334,8 +335,9 @@ await context.sync();
 ```
 
 ## <a name="see-also"></a>Confira também
--   [Conceitos fundamentais de programação com a API JavaScript do Excel]( https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-core-concepts)
--   [Trabalhar com intervalos usando a API JavaScript do Excel](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-ranges)
--   [Objeto ConditionalFormat (API JavaScript para Excel)]( https://docs.microsoft.com/javascript/api/excel/excel.conditionalformat)
--   [Adicionar, alterar ou limpar formatações condicionais](https://support.office.com/article/add-change-or-clear-conditional-formats-8a1cc355-b113-41b7-a483-58460332a1af)
--   [Use fórmulas com o acesso condicional](https://support.office.com/article/Use-formulas-with-conditional-formatting-FED60DFA-1D3F-4E13-9ECB-F1951FF89D7F)
+
+- [Conceitos fundamentais de programação com a API JavaScript do Excel](/office/dev/add-ins/excel/excel-add-ins-core-concepts)
+- [Trabalhar com intervalos usando a API JavaScript do Excel](/office/dev/add-ins/excel/excel-add-ins-ranges)
+- [Objeto ConditionalFormat (API JavaScript para Excel)](/javascript/api/excel/excel.conditionalformat)
+- [Adicionar, alterar ou limpar formatações condicionais](https://support.office.com/article/add-change-or-clear-conditional-formats-8a1cc355-b113-41b7-a483-58460332a1af)
+- [Use fórmulas com o acesso condicional](https://support.office.com/article/Use-formulas-with-conditional-formatting-FED60DFA-1D3F-4E13-9ECB-F1951FF89D7F)

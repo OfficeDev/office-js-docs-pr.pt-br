@@ -1,13 +1,14 @@
 ---
 title: Elemento Method no arquivo de manifesto
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: fded84344182bb45597b00a794f18defaa44d3b3
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 19234b35e1faf8a8cc52a9e893fcc720793cadae
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432820"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870419"
 ---
 # <a name="method-element"></a>Elemento Method
 
@@ -33,8 +34,8 @@ Especifica um método individual a partir da API do JavaScript para Office que o
 
 ## <a name="remarks"></a>Comentários
 
-Os elementos **Method** e **Methods** não têm suporte nos suplementos de email. Para saber mais sobre conjuntos de requisitos, consulte [Versões do Office e conjuntos de requisitos](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+Os elementos **Method** e **Methods** não têm suporte nos suplementos de email. Para saber mais sobre conjuntos de requisitos, consulte [Versões do Office e conjuntos de requisitos](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
 > [!IMPORTANT] 
-> Como não há forma de especificar o requisito de versão mínimo de métodos individuais, para verificar se um método está disponível no tempo de execução, você também deve usar uma instrução **if** ao chamar esse método no script do suplemento. Para saber mais sobre como fazer isso, consulte [Noções básicas da API JavaScript para Office](https://docs.microsoft.com/office/dev/add-ins/develop/understanding-the-javascript-api-for-office).
+> Como não há forma de especificar o requisito de versão mínimo de métodos individuais, para verificar se um método está disponível no tempo de execução, você também deve usar uma instrução **if** ao chamar esse método no script do suplemento. Para saber mais sobre como fazer isso, consulte [Noções básicas da API JavaScript para Office](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office).
 

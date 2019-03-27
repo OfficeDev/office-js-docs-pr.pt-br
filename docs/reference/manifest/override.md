@@ -1,13 +1,14 @@
 ---
 title: Elemento Override no arquivo de manifesto
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: d1d2400312f12116b1ac5f4010135541e783dcc7
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 020ae490dacbb9b8c493dc022c23d0ebf311a1b9
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432862"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870055"
 ---
 # <a name="override-element"></a>Elemento Override
 
@@ -26,7 +27,7 @@ Fornece uma maneira de especificar o valor de uma configuração para uma locali
 |**Elemento**|
 |:-----|
 |[CitationText](citationtext.md)|
-|[Description](description.md)|
+|[Descrição](description.md)|
 |[DictionaryName](dictionaryname.md)|
 |[DictionaryHomePage](dictionaryhomepage.md)|
 |[DisplayName](displayname.md)|
@@ -45,5 +46,5 @@ Fornece uma maneira de especificar o valor de uma configuração para uma locali
 
 ## <a name="see-also"></a>Confira também
 
-- [Localização para suplementos do Office](https://docs.microsoft.com/office/dev/add-ins/develop/localization)
+- [Localização para suplementos do Office](/office/dev/add-ins/develop/localization)
     

@@ -1,13 +1,14 @@
 ---
 title: Diretrizes de voz para Suplementos do Office
 description: ''
-ms.date: 06/27/2018
-ms.openlocfilehash: afd8d63095661634052c51ea528502368023140d
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 2982c8a09ba1f2f1265681dfb5850c3a324d704c
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433282"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871763"
 ---
 # <a name="voice-guidelines"></a>Diretrizes de voz
 
@@ -16,7 +17,7 @@ Ao desenvolver seus Suplementos do Office, considere o tom que você utiliza nos
 Para alinhar seu texto aos princípios do tom do Office:
 
 - **Use um estilo natural.** Escreva da maneira como você fala. Evite jargões e frases ou palavras muito técnicas. Use termos que sejam familiares aos usuários.
-- **Use uma linguagem simples e direta.** Use palavras e frases curtas, e a voz ativa no seu texto. 
+- **Use uma linguagem simples e direta.** Use palavras e frases curtas, e a voz ativa no seu texto.
 - **Seja consistente.** Use sempre as mesmas palavras para os mesmos conceitos.
 - **Envolva os usuários.** Use o pronome "você" para falar com os usuários. Evite usar a terceira pessoa. Use imperativos para as tarefas do usuário.
 - **Seja prestativo e empático.** Torne seu texto positivo, gentil, solidário e estimulante. Enfatize o que os usuários podem conseguir, não o que eles não podem.
@@ -24,7 +25,7 @@ Para alinhar seu texto aos princípios do tom do Office:
 
 ## <a name="see-also"></a>Confira também
 
-- Diretrizes para [gravar para todas as habilidades](https://docs.microsoft.com/style-guide/accessibility/writing-all-abilities)
-- [As 10 principais dicas de estilo e voz da Microsoft](https://docs.microsoft.com/style-guide/top-10-tips-style-voice)
-- Diretrizes para [escolher as palavras](https://docs.microsoft.com/style-guide/word-choice/)
--  [Políticas de validação](https://docs.microsoft.com/office/dev/store/validation-policies) do Suplemento do Office
+- Diretrizes para [gravar para todas as habilidades](/style-guide/accessibility/writing-all-abilities)
+- [As 10 principais dicas de estilo e voz da Microsoft](/style-guide/top-10-tips-style-voice)
+- Diretrizes para [escolher as palavras](/style-guide/word-choice/)
+- [Políticas de validação](/office/dev/store/validation-policies) do Suplemento do Office

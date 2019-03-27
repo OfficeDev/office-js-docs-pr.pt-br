@@ -1,14 +1,14 @@
 ---
 title: Elemento Action no arquivo de manifesto
 description: ''
-ms.date: 11/14/2018
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 589a4af94c7abbcf61cd7a5210d5df29ba8a3a4e
-ms.sourcegitcommit: 2e4b97f0252ff3dd908a3aa7a9720f0cb50b855d
+ms.openlocfilehash: 59df6cce6af1277f365a1dd3cd0b3ef11230804e
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "29635892"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870825"
 ---
 # <a name="action-element"></a>Elemento Action
 
@@ -60,7 +60,7 @@ Elemento obrigatório quando **xsi:type** for "ShowTaskpane". Especifica o local
 
 ## <a name="taskpaneid"></a>TaskpaneId
 
-Elemento opcional quando  **xsi:type** for "ShowTaskpane". Especifica a ID do contêiner do painel de tarefas. Quando você tem várias ações "ShowTaskpane", use uma **TaskpaneId** diferente, se prefere ter um painel independente para cada uma. Use a mesma **TaskpaneId** para diferentes ações que compartilham o mesmo painel. Quando os usuários escolhem comandos que compartilham a mesma **TaskpaneId**, o contêiner do painel permanece aberto, mas o conteúdo do painel é substituído pela ação "SourceLocation" correspondente.
+Elemento opcional quando  **xsi:type** for "ShowTaskpane". Especifica a ID do contêiner do painel de tarefas. Quando você tiver várias ações "ShowTaskpane", use uma **TaskpaneId** diferente se desejar ter um painel independente para cada uma. Use a mesma **TaskpaneId** para diferentes ações que compartilhem o mesmo painel. Quando os usuários escolhem comandos que compartilham a mesma **TaskpaneId**, o contêiner do painel permanece aberto, mas o conteúdo do painel é substituído pela ação "SourceLocation" correspondente.
 
 > [!NOTE]
 > Esse elemento não tem suporte no Outlook.
@@ -137,10 +137,10 @@ Os exemplos a seguir mostram duas ações distintas que usam o elemento **Title*
 
 ## <a name="supportspinning"></a>SupportsPinning
 
-Elemento opcional quando **xsi:type** for "ShowTaskpane". Os elementos [VersionOverrides](versionoverrides.md) incluídos devem ter um valor `VersionOverridesV1_1` para o atributo `xsi:type`. Inclua esse elemento com um valor `true` a fim de fornecer suporte para fixação do painel de tarefas. O usuário pode "fixar" o painel de tarefas, fazendo com que ele permaneça aberto quando alterar a seleção. Para saber mais, consulte [Implementar um painel de tarefas fixável no Outlook](https://docs.microsoft.com/outlook/add-ins/pinnable-taskpane).
+Elemento opcional quando **xsi:type** for "ShowTaskpane". Os elementos [VersionOverrides](versionoverrides.md) incluídos devem ter um valor `VersionOverridesV1_1` para o atributo `xsi:type`. Inclua esse elemento com um valor `true` a fim de fornecer suporte para fixação do painel de tarefas. O usuário pode "fixar" o painel de tarefas, fazendo com que ele permaneça aberto quando alterar a seleção. Para saber mais, consulte [Implementar um painel de tarefas fixável no Outlook](/outlook/add-ins/pinnable-taskpane).
 
 > [!NOTE]
-> SupportsPinning está atualmente só suportados pelo Outlook 2016 para Windows (compilação 7628.1000 ou posterior) e 2016 do Outlook para Mac (build 16.13.503 ou posterior).
+> No momento, o SupportsPinning só tem suporte no Outlook 2016 para Windows (Build 7628,1000 ou posterior) e Outlook 2016 para Mac (Build 16.13.503 ou posterior).
 
 ```xml
 <Action xsi:type="ShowTaskpane">

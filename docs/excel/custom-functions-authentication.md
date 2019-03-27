@@ -1,13 +1,13 @@
 ---
-ms.date: 03/06/2019
+ms.date: 03/19/2019
 description: Autenticar usuários usando funções personalizadas no Excel.
 title: Autenticação para funções personalizadas
-ms.openlocfilehash: 4358d9f570ef8b31db98b1886c01ff4a89a6b1be
-ms.sourcegitcommit: 8e7b7b0cfb68b91a3a95585d094cf5f5ffd00178
+ms.openlocfilehash: 7db46e40758ea0282a2fd7c4d40739304a874e76
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "30512850"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871490"
 ---
 # <a name="authentication"></a>Autenticação
 
@@ -15,7 +15,7 @@ Em alguns cenários, a função personalizada precisará autenticar o usuário p
   
 ## <a name="asyncstorage-object"></a>Objeto AsyncStorage
 
-O tempo de execução de funções personalizadas `localStorage` não tem um objeto disponível na janela global, onde você normalmente pode armazenar dados. Em vez disso, você deve compartilhar dados entre funções personalizadas e painéis de tarefas usando o [OfficeRuntime. AsyncStorage](https://docs.microsoft.com/javascript/api/office-runtime/officeruntime.asyncstorage) para definir e obter dados.
+O tempo de execução de funções personalizadas `localStorage` não tem um objeto disponível na janela global, onde você normalmente pode armazenar dados. Em vez disso, você deve compartilhar dados entre funções personalizadas e painéis de tarefas usando o [OfficeRuntime. AsyncStorage](/javascript/api/office-runtime/officeruntime.asyncstorage) para definir e obter dados.
 
 Além disso, há um benefício em usar `AsyncStorage`o; Ele usa um ambiente de área restrita seguro para que seus dados não possam ser acessados por outros suplementos.
 
@@ -30,7 +30,7 @@ Se não houver um token, você deverá usar a API da caixa de diálogo para soli
 > [!NOTE]
 > O tempo de execução de funções personalizadas usa um objeto Dialog que é ligeiramente diferente do objeto Dialog no tempo de execução do mecanismo de navegador usado por painéis de tarefas. Eles são conhecidos como "API da caixa de diálogo", mas usam `Officeruntime.Dialog` para autenticar usuários no tempo de execução de funções personalizadas.
 
-Para obter informações sobre como usar o `OfficeRuntime.Dialog`, consulte [Custom Functions Runtime](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/custom-functions-runtime?view=office-js#displaying-a-dialog-box).
+Para obter informações sobre como usar o `OfficeRuntime.Dialog`, consulte [Custom Functions Runtime](/office/dev/add-ins/excel/custom-functions-runtime?view=office-js#displaying-a-dialog-box).
 
 Ao planejar todo o processo de autenticação como um todo, talvez seja útil pensar no painel de tarefas e nos elementos de interface do usuário do suplemento e das funções personalizadas, que fazem parte do suplemento como entidades separadas que podem se comunicar entre si `AsyncStorage`.
 
@@ -42,7 +42,7 @@ O diagrama a seguir descreve esse processo básico. Observe que a linha pontilha
 4. Sua função personalizada então define esse token de acesso para `AsyncStorage`o.
 5. O painel de tarefas do suplemento acessa o token de `AsyncStorage`.
 
-![Diagrama de funções personalizadas, OfficeRuntime e painéis de tarefas que trabalham juntos.] (../images/Authdiagram.png "Diagrama de autenticação.")
+![Diagrama da função personalizada usando a API da caixa de diálogo para obter o token de acesso e compartilhar o token com o painel de tarefas por meio da API AsyncStorage.] (../images/authentication-diagram.png "Diagrama de autenticação.")
 
 ## <a name="storing-the-token"></a>Armazenar o token
 
@@ -77,7 +77,7 @@ function ReceiveTokenFromCustomFunction() {
 
 ## <a name="general-guidance"></a>Orientação geral
 
-Os suplementos do Office são baseados na Web e você pode usar qualquer técnica de autenticação da Web. Não há um padrão ou método específico que você deve seguir para implementar sua própria autenticação com funções personalizadas. Você pode querer consultar a documentação sobre vários padrões de autenticação, começando com [Este artigo sobre como autorizar por meio de serviços externos](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/auth-external-add-ins?view=office-js).  
+Os suplementos do Office são baseados na Web e você pode usar qualquer técnica de autenticação da Web. Não há um padrão ou método específico que você deve seguir para implementar sua própria autenticação com funções personalizadas. Você pode querer consultar a documentação sobre vários padrões de autenticação, começando com [Este artigo sobre como autorizar por meio de serviços externos](/office/dev/add-ins/develop/auth-external-add-ins?view=office-js).  
 
 Evite usar os seguintes locais para armazenar dados ao desenvolver funções personalizadas:  
 

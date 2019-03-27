@@ -1,13 +1,14 @@
 ---
 title: Elemento AppDomain no arquivo de manifesto
 description: ''
-ms.date: 12/13/2018
-ms.openlocfilehash: 2b55f2c1ea7a2a3dc7dec42c913d74006c0f2e3b
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/21/2019
+localization_priority: Normal
+ms.openlocfilehash: 8216603c87a7dcafde84d25a82f068c9aa86ed96
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433065"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870405"
 ---
 # <a name="appdomain-element"></a>Elemento AppDomain
 
@@ -22,7 +23,8 @@ Especifica um domínio adicional que será usado para carregar páginas na janel
 ```
 
 > [!IMPORTANT]
-> O valor do elemento **AppDomain** deve incluir o protocolo (ex., `<AppDomain>https://myappdomain<AppDomain>`).
+> 1. O valor do elemento **AppDomain** deve incluir o protocolo (ex., `<AppDomain>https://myappdomain</AppDomain>`).
+> 2. *Não* Coloque uma barra de fechamento, "/", no valor.
 
 ## <a name="contained-in"></a>Contido em
 

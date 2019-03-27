@@ -1,13 +1,14 @@
 ---
 title: Elemento DictionaryName no arquivo de manifesto
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: e5a6829101448c9142fea60f4bd8929af7ae3df6
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 5655ab61e0eb148d240d7feabdc0fc84e0ddb1b0
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433240"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871119"
 ---
 # <a name="dictionaryname-element"></a>Elemento DictionaryName
 
@@ -27,5 +28,5 @@ Especifica o nome deste dicionário.
 
 ## <a name="see-also"></a>Confira também
 
-- [Criar um suplemento de painel de tarefas de dicionário](https://docs.microsoft.com/office/dev/add-ins/word/dictionary-task-pane-add-ins)
+- [Criar um suplemento de painel de tarefas de dicionário](/office/dev/add-ins/word/dictionary-task-pane-add-ins)
     

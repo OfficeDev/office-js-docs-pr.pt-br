@@ -1,14 +1,14 @@
 ---
 title: Trabalhar com conteúdo da página do OneNote
 description: ''
-ms.date: 01/10/2019
+ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: b92f83ee85943ca4e819b04e2b6fa90e6d4fe4b3
-ms.sourcegitcommit: 70ef38a290c18a1d1a380fd02b263470207a5dc6
+ms.openlocfilehash: f60cdee7eb549acc0f2c84a1aa9acea7fe77274a
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "30052718"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30872183"
 ---
 # <a name="work-with-onenote-page-content"></a>Trabalhar com conteúdo da página do OneNote
 
@@ -23,14 +23,14 @@ Na API JavaScript de suplementos do OneNote, o conteúdo da página é represent
 
 Para criar uma página em branco do OneNote, use um dos seguintes métodos:
 
-- [Section.addPage](https://docs.microsoft.com/javascript/api/onenote/onenote.section#addpage-title-)
-- [Page.insertPageAsSibling](https://docs.microsoft.com/javascript/api/onenote/onenote.section#insertsectionassibling-location--title-)
+- [Section.addPage](/javascript/api/onenote/onenote.section#addpage-title-)
+- [Page.insertPageAsSibling](/javascript/api/onenote/onenote.section#insertsectionassibling-location--title-)
 
 Em seguida, use métodos nos seguintes objetos para trabalhar com o conteúdo da página, como `Page.addOutline` e `Outline.appendHtml`.
 
-- [Page](https://docs.microsoft.com/javascript/api/onenote/onenote.page)
-- [Estrutura de tópicos](https://docs.microsoft.com/javascript/api/onenote/onenote.outline)
-- [Parágrafo](https://docs.microsoft.com/javascript/api/onenote/onenote.paragraph)
+- [Page](/javascript/api/onenote/onenote.page)
+- [Outline](/javascript/api/onenote/onenote.outline)
+- [Paragraph](/javascript/api/onenote/onenote.paragraph)
 
 O conteúdo e a estrutura da página do OneNote são representados por HTML. Apenas um subconjunto de HTML é compatível com a criação e a atualização do conteúdo da página, conforme descrito abaixo.
 
@@ -50,17 +50,17 @@ A API JavaScript do suplemento do OneNote dá suporte ao HTML a seguir para a cr
 > [!NOTE]
 > Importar o HTML para o OneNote consolida o espaço em branco. O conteúdo resultante é colado em uma estrutura de tópicos.
 
-O OneNote faz o máximo para converter o HTML em conteúdo de página e garantir a segurança dos usuários. Os padrões HTML e CSS não correspondem exatamente ao modelo de conteúdo do OneNote; portanto, haverá diferenças nas aparências, especialmente no estilo CSS. É recomendável usar os objetos do JavaScript se uma formatação específica for necessária.
+O OneNote faz o melhor para traduzir o HTML no conteúdo da página enquanto garante a segurança para os usuários. Os padrões HTML e CSS não correspondem exatamente ao modelo de conteúdo do OneNote, portanto, haverá diferenças em aparências, particularmente com estilos de CSS. Recomendamos usar os objetos JavaScript se for necessário formatar uma formatação específica.
 
 ## <a name="accessing-page-contents"></a>Acessar o conteúdo da página
 
-Só é possível acessar o *Conteúdo da Página* via `Page#load` para a página ativa no momento. Para alterar a página ativa, invoque `navigateToPage($page)`.
+Só é possível acessar o *Conteúdo da Página* via `Page#load` para a página ativa no momento. Para alterar a página ativa, chame `navigateToPage($page)`.
 
-Metadados, como títulos, ainda podem ser consultados para qualquer página.
+Metadados, como título, ainda podem ser consultados para qualquer página.
 
 ## <a name="see-also"></a>Confira também
 
 - [Visão geral da programação da API JavaScript do OneNote](onenote-add-ins-programming-overview.md)
-- [Referência da API JavaScript do OneNote](https://docs.microsoft.com/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
+- [Referência da API JavaScript do OneNote](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
 - [Amostra de Rubric Grader](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)

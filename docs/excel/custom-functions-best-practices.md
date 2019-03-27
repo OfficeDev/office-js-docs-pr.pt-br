@@ -3,38 +3,18 @@ ms.date: 01/08/2019
 description: Saiba mais sobre as práticas recomendadas para o desenvolvimento de funções personalizadas para Excel.
 title: Práticas recomendadas para funções personalizadas (versão prévia)
 localization_priority: Normal
-ms.openlocfilehash: 24c73ec643df073ac97dc399343a7feb0b0b4168
-ms.sourcegitcommit: f7f3d38ae4430e2218bf0abe7bb2976108de3579
+ms.openlocfilehash: ae04169044336f7e42d341c1e904090e55d568af
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "30359258"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871343"
 ---
 # <a name="custom-functions-best-practices-preview"></a>Práticas recomendadas para funções personalizadas (versão prévia)
 
 Este artigo descreve as práticas recomendadas para o desenvolvimento de funções personalizadas para Excel.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
-
-## <a name="error-handling"></a>Tratamento de erros
-
-Quando criar um suplemento que define funções personalizadas, não deixe de incluir a lógica de tratamento de erro para lidar com os erros de tempo de execução. O tratamento de erro para funções personalizadas equivale  ao [tratamento de erro para API JavaScript do Excel em](excel-add-ins-error-handling.md). No seguinte exemplo de código, `.catch` tratará os erros que ocorreram anteriormente no código.
-
-```js
-function getComment(x) {
-  let url = "https://www.contoso.com/comments/" + x;
-  return fetch(url)
-    .then(function (data) {
-      return data.json();
-    })
-    .then((json) => {
-      return json.body;
-    })
-    .catch(function (error) {
-      throw error;
-    })
-}
-```
 
 ## <a name="troubleshooting"></a>Solução de problemas
 
@@ -43,7 +23,6 @@ function getComment(x) {
 2. O suplemento não será carregado se uma ou mais funções personalizadas entrarem em conflito com as funções personalizadas de um suplemento registrado anteriormente. Nesse caso, você pode remover o suplemento existente ou se encontrar esse erro ao desenvolver um suplemento, você pode especificar um nome de namespace diferente em seu manifesto.
 
 3. Para relatar problemas sobre este método de solução de problemas, envie comentários à equipe de funções personalizadas do Excel. Para fazer isso, selecione **Arquivo | Comentários | Enviar um Rosto Triste**. Enviando um Rosto Triste, você fornece os registros necessários para entendermos o problema que você está enfrentando.
-
 
 ## <a name="debugging"></a>Depuração
 
@@ -73,7 +52,7 @@ function add(first, second){
   return first + second;
 }
 
-CustomFunctions.associate("ADD", add); 
+CustomFunctions.associate("ADD", add);
 ```
 
 Lembre-se das seguintes práticas recomendadas quando criar funções personalizadas no arquivo JavaScript e especificar as informações correspondentes no arquivo de metadados JSON.
@@ -133,6 +112,7 @@ Lembre-se das seguintes práticas recomendadas quando criar funções personaliz
     ```
 
 ## <a name="declaring-optional-parameters"></a>Como declarar parâmetros opcionais 
+
 No Excel para Windows (versão 1812 ou posterior), é possível declarar parâmetros opcionais para suas funções personalizadas. Quando um usuário invoca uma função no Excel, os parâmetros opcionais são exibidos entre colchetes. Por exemplo, uma função `FOO` com um parâmetro obrigatório chamado `parameter1` e parâmetro opcional chamado `parameter2` seria exibida como `=FOO(parameter1, [parameter2])` no Excel.
 
 Para tornar um parâmetro opcional, adicione `"optional": true` ao parâmetro no arquivo JSON de metadados que define a função. O exemplo a seguir mostra o provável aspecto disso para a função `=ADD(first, second, [third])`. Observe que o parâmetro `[third]` opcional segue os dois parâmetros obrigatórios. Os parâmetros obrigatórios aparecerão primeiro na interface do usuário da fórmula do Excel.

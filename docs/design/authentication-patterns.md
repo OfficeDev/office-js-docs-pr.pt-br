@@ -1,13 +1,14 @@
 ---
 title: Diretrizes de design de autenticação para suplementos do Office
 description: ''
-ms.date: 11/02/2018
-ms.openlocfilehash: ab34c7b0ecfbdfeab4947bd5463b94801b1b1a29
-ms.sourcegitcommit: 60fd8a3ac4a6d66cb9e075ce7e0cde3c888a5fe9
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: c8d61d42eabca0a57e1a09dda95ee8c0572d5ecb
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "27457821"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870216"
 ---
 # <a name="authentication-patterns"></a>Padrões de autenticação
 
@@ -25,6 +26,7 @@ Os suplementos podem exigir que os usuários entrem ou se inscrevam para acessar
 |Ofereça uma maneira para os usuários saírem e autenticarem-se novamente.    |Force os usuários a fazer a desinstalação para alternar identidades.|
 
 ## <a name="authentication-flow"></a>Fluxo de autenticação
+
 Até o logon único estar fora da versão prévia, os suplementos de produção devem conceder aos usuários uma opção para entrar diretamente com o serviço ou um provedor de identidade como a Microsoft.
 
 1. Marcador de primeira execução: coloque o botão de entrada como uma chamada para ação clara na primeira experiência de execução do seu suplemento.
@@ -35,7 +37,7 @@ Até o logon único estar fora da versão prévia, os suplementos de produção 
 
 
 
-3. Entrada de um provedor de identidade: os provedores de identidade têm as próprias interfaces de usuário. O Microsoft Azure Active Directory permite a personalização das páginas de entrada e do painel de acesso para uma aparência consistente com o serviço. [Saiba mais](https://docs.microsoft.com/azure/active-directory/fundamentals/customize-branding).
+3. Entrada de um provedor de identidade: os provedores de identidade têm as próprias interfaces de usuário. O Microsoft Azure Active Directory permite a personalização das páginas de entrada e do painel de acesso para uma aparência consistente com o serviço. [Saiba mais](/azure/active-directory/fundamentals/customize-branding).
 ![Captura de tela da caixa de diálogo Entrar no provedor de identidade em um aplicativo do Office](../images/add-in-auth-identity-sign-in.png)
 
 4. Progresso: indique o progresso enquanto as configurações e a interface do usuário são carregadas.
@@ -47,7 +49,7 @@ Até o logon único estar fora da versão prévia, os suplementos de produção 
 ## <a name="single-sign-on-authentication-flow-preview"></a>Fluxo de autenticação de logon único (versão prévia)
 
 > [!NOTE]
-> Atualmente a API de logon único tem suporte na visualização para Word, Excel, Outlook e PowerPoint. Para saber mais informações sobre o suporte a logon único, confira  [Conjuntos de requisitos da IdentityAPI](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets). Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Office 365. Para saber mais informações sobre como fazer isso, confira  [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> Atualmente a API de logon único tem suporte na visualização para Word, Excel, Outlook e PowerPoint. Para saber mais informações sobre o suporte a logon único, confira  [Conjuntos de requisitos da IdentityAPI](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets). Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Office 365. Para saber mais informações sobre como fazer isso, confira  [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 Depois que o recurso de logon único for disponibilizado para suplementos de produção, use-o em uma experiência de usuário final mais estável. A identidade do usuário no Office (identidade da conta Microsoft ou do Office 365) é usada para entrar no suplemento. Como resultado, os usuários somente entram uma vez. Isso remove conflitos na experiência e faz com que os clientes comecem a usar o suplemento sem dificuldades.
 
@@ -59,4 +61,5 @@ Depois que o recurso de logon único for disponibilizado para suplementos de pro
 ![Captura de tela de um aplicativo do Office com os botões de suplemento exibidos na faixa de opções](../images/add-in-ribbon.png)
 
 ## <a name="see-also"></a>Confira também
-- Saiba mais sobre como [desenvolver suplementos de SSO (versão prévia)](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins)
+
+- Saiba mais sobre como [desenvolver suplementos de SSO (versão prévia)](/office/dev/add-ins/develop/sso-in-office-add-ins)

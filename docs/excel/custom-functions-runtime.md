@@ -3,12 +3,12 @@ ms.date: 02/06/2019
 description: Entenda os principais cenários de desenvolvimento de funções personalizadas do Excel que usam o novo tempo de execução do JavaScript.
 title: Tempo de execução de funções personalizadas do Excel (versão prévia)
 localization_priority: Normal
-ms.openlocfilehash: d891a41dc9e142ef3cfaa00c8b54d8d27913c57d
-ms.sourcegitcommit: a59f4e322238efa187f388a75b7709462c71e668
+ms.openlocfilehash: 85024b6c3559e2a5f32bae9297787f8052bba38d
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "29982038"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871777"
 ---
 # <a name="runtime-for-excel-custom-functions-preview"></a>Tempo de execução de funções personalizadas do Excel (versão prévia)
 
@@ -20,9 +20,9 @@ Funções personalizadas usam um novo tempo de execução do JavaScript, diferen
 
 É possível solicitar dados externos em uma função personalizada por meio de uma API, como a API [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), ou por meio de um objeto [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), uma API Web padrão que envia solicitações HTTP para interagir com os servidores.
 
-Dentro do tempo de execução de JavaScript usado pelas funções personalizadas, XHR implementa medidas de segurança adicionais, exigindo a [Diretiva de mesma origem](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) e simples [CORS](https://www.w3.org/TR/cors/).
+Dentro do tempo de execução do JavaScript usado por funções personalizadas, o XHR implementa medidas de segurança adicionais exigindo a [mesma política de origem](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) e o [CORS](https://www.w3.org/TR/cors/)simples.
 
-Observe que uma implementação CORS simples não é possível usar cookies e só oferece suporte a métodos simples (GET, cabeça, POST). CORS simples aceita cabeçalhos simples com nomes de campo `Accept`, `Accept-Language`, `Content-Language`. Você também pode usar um `Content-Type` cabeçalho em CORS simples, fornecido o tipo de conteúdo é `application/x-www-form-urlencoded`, `text/plain`, ou `multipart/form-data`.
+Observe que uma implementação CORS simples não pode usar cookies e só oferece suporte a métodos simples (GET, HEAD, POST). O CORS simples aceita cabeçalhos simples com nomes `Accept`de `Accept-Language`campos `Content-Language`,,. Você também pode usar um `Content-Type` cabeçalho no CORS simples, desde que o tipo de conteúdo `application/x-www-form-urlencoded`seja `text/plain`, ou `multipart/form-data`.
 
 ### <a name="xhr-example"></a>Exemplo de XHR
 
@@ -67,10 +67,10 @@ O código de exemplo a seguir estabelece uma conexão `WebSocket` e registra cad
 
 ```typescript
 const ws = new WebSocket('wss://bundles.office.com');
-ws.onmessage = (message) => {
+ws.onmessage = function (message) {
     console.log(`Received: ${message}`);
-};
-ws.onerror = (error) => {
+}
+ws.onerror = function (error) {
     console.err(`Failed: ${error}`);
 }
 ```
@@ -96,105 +96,16 @@ Os métodos a seguir estão disponíveis no objeto `AsyncStorage`:
 
 ### <a name="asyncstorage-example"></a>Exemplo de AsyncStorage 
 
-O exemplo de código a seguir chama a função `AsyncStorage.getItem` para recuperar um valor de armazenamento.
+O exemplo de código a seguir `AsyncStorage.setItem` chama a função para definir uma chave e `AsyncStorage`um valor para.
 
-```typescript
-_goGetData = async () => {
-    try {
-        const value = await AsyncStorage.getItem('toDoItem');
-        if (value !== null) {
-            //data exists and you can do something with it here
-        }
-    } catch (error) {
-        //handle errors here
-    }
-}
-```
+```JavaScript
+function StoreValue(key, value) {
 
-## <a name="displaying-a-dialog-box"></a>Exibindo uma caixa de diálogo
-
-Em uma função personalizada (ou em outras partes de um suplemento), você pode usa a API `OfficeRuntime.displayWebDialog` para exibir uma caixa de diálogo. Esta API da caixa de diálogo fornece uma alternativa a [API da caixa de diálogo](../develop/dialog-api-in-office-add-ins.md) que está disponível para uso em painéis de tarefas e comandos de suplemento, mas não em funções personalizadas.
-
-### <a name="dialog-api-example"></a>Exemplo de API da caixa de diálogo
-
-No exemplo de código a seguir, a função `getTokenViaDialog` usa a função `displayWebDialog` da API da caixa de diálogo para exibir uma caixa de diálogo.
-
-```js
-// Get auth token before calling my service, a hypothetical API that will deliver a stock price based on stock ticker string, such as "MSFT"
-
-function getStock (ticker) {
-  return new Promise(function (resolve, reject) {
-    // Get a token
-    getToken("https://www.contoso.com/auth")
-    .then(function (token) {
-
-      // Use token to get stock price
-      fetch("https://www.contoso.com/?token=token&ticker= + ticker")
-      .then(function (result) {
-
-        // Return stock price to cell
-        resolve(result);
-      });
-    })
-    .catch(function (error) {
-      reject(error);
-    });
+  return OfficeRuntime.AsyncStorage.setItem(key, value).then(function (result) {
+      return "Success: Item with key '" + key + "' saved to AsyncStorage.";
+  }, function (error) {
+      return "Error: Unable to save item with key '" + key + "' to AsyncStorage. " + error;
   });
-  
-  //Helper
-  function getToken(url) {
-    return new Promise(function (resolve,reject) {
-      if(_cachedToken) {
-        resolve(_cachedToken);
-      } else {
-        getTokenViaDialog(url)
-        .then(function (result) {
-          resolve(result);
-        })
-        .catch(function (result) {
-          reject(result);
-        });
-      }
-    });
-  }
-
-  function getTokenViaDialog(url) {
-    return new Promise (function (resolve, reject) {
-      if (_dialogOpen) {
-        // Can only have one dialog open at once, wait for previous dialog's token
-        let timeout = 5;
-        let count = 0;
-        var intervalId = setInterval(function () {
-          count++;
-          if(_cachedToken) {
-            resolve(_cachedToken);
-            clearInterval(intervalId);
-          }
-          if(count >= timeout) {
-            reject("Timeout while waiting for token");
-            clearInterval(intervalId);
-          }
-        }, 1000);
-      } else {
-        _dialogOpen = true;
-        OfficeRuntime.displayWebDialog(url, {
-          height: '50%',
-          width: '50%',
-          onMessage: function (message, dialog) {
-            _cachedToken = message;
-            resolve(message);
-            dialog.close();
-            return;
-          },
-          onRuntimeError: function(error, dialog) {
-            reject(error);
-          },
-        }).catch(function (e) {
-          reject(e);
-        });
-      }
-    });
-  }
 }
 ```
 

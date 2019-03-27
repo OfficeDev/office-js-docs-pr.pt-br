@@ -1,13 +1,14 @@
 ---
 title: Elemento Methods no arquivo de manifesto
 description: ''
-ms.date: 10/09/2018
-ms.openlocfilehash: 6e280cb49eadef587cd3a91e0664ece3c3d59f50
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 0d295c2657ef03451c26a324410a684490a180fb
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432750"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871658"
 ---
 # <a name="methods-element"></a>Elemento Methods
 
@@ -25,7 +26,7 @@ Especifica a lista de métodos da API JavaScript para Office que o Suplemento do
 
 ## <a name="contained-in"></a>Contido em
 
-[Requirements](requirements.md)
+[Requisitos](requirements.md)
 
 ## <a name="can-contain"></a>Pode conter
 
@@ -33,5 +34,5 @@ Especifica a lista de métodos da API JavaScript para Office que o Suplemento do
 
 ## <a name="remarks"></a>Comentários
 
-Os elementos **Method** e **Methods** não têm suporte nos suplementos de email. Para saber mais sobre conjuntos de requisitos, confira [Versões do Office e conjuntos de requisitos](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+Os elementos **Method** e **Methods** não têm suporte nos suplementos de email. Para saber mais sobre conjuntos de requisitos, confira [Versões do Office e conjuntos de requisitos](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 

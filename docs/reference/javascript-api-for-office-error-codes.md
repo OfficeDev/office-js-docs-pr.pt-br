@@ -1,13 +1,14 @@
 ---
-title: Códigos de erro da API JavaScript para Office
+title: Códigos de erro da API JavaScript do Office
 description: ''
-ms.date: 11/27/2018
-ms.openlocfilehash: 1e7d479b9b6f6f8f619f799c34ba18ac83bd3afd
-ms.sourcegitcommit: 3f8eee355579f9234a8e46ae88090342002b4681
-ms.translationtype: HT
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 5e18a82c2536d5f5284588227b1cf767ebd2749e
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "26734018"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30871938"
 ---
 # <a name="javascript-api-for-office-error-codes"></a>Códigos de erro da API JavaScript para Office
 
@@ -39,7 +40,7 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 |2005|Erro de Gravação de Dados|Os valores startRow ou startColumn especificados são inválidos.|O usuário fornece valores inválidos de startRow ou startCol.|
 |2006|Erro de formato inválido|O formato do objeto de dados especificado não é válido.|O desenvolvedor de solução fornece uma cadeia de caracteres HTML ou OOXML inválida, uma cadeia de caracteres HTML mal formada ou uma cadeia de caracteres OOXML inválida.|
 |2007|Objeto de dados inválido|O tipo do objeto de dados especificado não é compatível com a seleção atual.|O desenvolvedor da solução fornece um objeto de dados incompatível com o tipo de coerção especificado.|
-|2008|Erro de Gravação de Dados|TBD|TBD|
+|2008|Erro de Gravação de Dados|A definir|A definir|
 |2009|Erro de Gravação de Dados|O objeto de dados especificado é muito grande.|O usuário tenta definir dados além dos limites de dados definidos pelos suplementos do host.|
 |2010|Erro de Gravação de Dados|Os parâmetros de coordenadas não podem ser usados com o tipo de coerção Table quando a tabela contiver células mescladas.|O usuário tenta definir dados parciais de uma tabela não uniforme (ou seja, uma tabela que possui células mescladas).|
 |3000|Erro de Criação de Associação|Não é possível associar à seleção atual.|Não há suporte para a associação da seleção do usuário. (Por exemplo, o usuário está selecionando uma imagem ou outro objeto sem suporte.)|
@@ -87,7 +88,7 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 |12006|||A caixa de diálogo foi fechada, geralmente pelo usuário ter escolhido o botão **X**. Lançado dentro da caixa de diálogo e dispara um evento `DialogEventReceived` na página de host.|
 |12007|||Uma caixa de diálogo já está aberta na janela do host. Uma janela do host, como um painel de tarefas, só pode ter uma caixa de diálogo aberta por vez. Lançada por chamada de `displayDialogAsync`.|
 |12009|||O usuário opta por ignorar a caixa de diálogo. Este erro pode ocorrer em versões online do Office, em que os usuários podem optar por não permitir que um suplemento apresente uma caixa de diálogo. Lançada por chamada de `displayDialogAsync`.|
-|13000 – 13010|||Veja [Causas e tratamento dos erros do getAccessTokenAsync](https://docs.microsoft.com/office/dev/add-ins/develop/troubleshoot-sso-in-office-add-ins#causes-and-handling-of-errors-from-getaccesstokenasync).|
+|13000 – 13010|||Veja [Causas e tratamento dos erros do getAccessTokenAsync](/office/dev/add-ins/develop/troubleshoot-sso-in-office-add-ins#causes-and-handling-of-errors-from-getaccesstokenasync).|
 
 ## <a name="binding-creation-error-conditions"></a>Condições do erro de criação de associação
 
@@ -134,5 +135,5 @@ A tabela a seguir resume o comportamento de associação no Word.
 
 ## <a name="see-also"></a>Confira também
    
-- [Ciclo de vida de desenvolvimento de suplementos do Office](https://docs.microsoft.com/office/dev/add-ins/concepts/add-in-development-lifecycle)
+- [Ciclo de vida de desenvolvimento de suplementos do Office](/office/dev/add-ins/concepts/add-in-development-lifecycle)
     
