@@ -1,50 +1,51 @@
 ---
-title: Trabalhar com tabelas dinâmicas usando a API do JavaScript Excel
-description: Use a API do JavaScript Excel para criar tabelas dinâmicas e interagir com seus componentes.
-ms.date: 09/21/2018
-ms.openlocfilehash: a3ff624f8e4e6652834f0a424b482b372c6f2401
-ms.sourcegitcommit: c53f05bbd4abdfe1ee2e42fdd4f82b318b363ad7
-ms.translationtype: HT
+title: Trabalhar com tabelas dinâmicas usando a API JavaScript do Excel
+description: Use a API JavaScript do Excel para criar tabelas dinâmicas e interagir com seus componentes.
+ms.date: 03/21/2019
+localization_priority: Normal
+ms.openlocfilehash: b53d734e676417a6438f1008bac720a38a244d1f
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "25505906"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30870321"
 ---
-# <a name="work-with-pivottables-using-the-excel-javascript-api"></a><span data-ttu-id="07f25-103">Trabalhar com tabelas dinâmicas usando a API JavaScript do Excel</span><span class="sxs-lookup"><span data-stu-id="07f25-103">Work with ranges using the Excel JavaScript API</span></span>
+# <a name="work-with-pivottables-using-the-excel-javascript-api"></a><span data-ttu-id="0b166-103">Trabalhar com tabelas dinâmicas usando a API JavaScript do Excel</span><span class="sxs-lookup"><span data-stu-id="0b166-103">Work with PivotTables using the Excel JavaScript API</span></span>
 
-<span data-ttu-id="07f25-p101">As tabelas dinâmicas simplificam os conjuntos de dados maiores. Permitem a manipulação rápida de dados agrupados. A API JavaScript do Excel possibilita que os suplementos criem tabelas dinâmicas e interajam com seus componentes.</span><span class="sxs-lookup"><span data-stu-id="07f25-p101">PivotTables streamline larger data sets. They allow the quick manipulation of grouped data. The Excel JavaScript API lets your add-in create PivotTables and interact with their components.</span></span> 
+<span data-ttu-id="0b166-104">As tabelas dinâmicas simplificam conjuntos de dados maiores.</span><span class="sxs-lookup"><span data-stu-id="0b166-104">PivotTables streamline larger data sets.</span></span> <span data-ttu-id="0b166-105">Eles permitem a manipulação rápida dos dados agrupados.</span><span class="sxs-lookup"><span data-stu-id="0b166-105">They allow the quick manipulation of grouped data.</span></span> <span data-ttu-id="0b166-106">A API JavaScript do Excel permite que o suplemento crie tabelas dinâmicas e interaja com seus componentes.</span><span class="sxs-lookup"><span data-stu-id="0b166-106">The Excel JavaScript API lets your add-in create PivotTables and interact with their components.</span></span>
 
-<span data-ttu-id="07f25-p102">Se não está familiarizado com a funcionalidade das tabelas dinâmicas, considere explorá-las como usuário final. Consulte [Criar uma tabela dinâmica para analisar dados de planilhas](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) para obter uma boa orientação sobre essas ferramentas.</span><span class="sxs-lookup"><span data-stu-id="07f25-p102">If you are unfamiliar with the functionality of PivotTables, consider exploring them as an end user. See [Create a PivotTable to analyze worksheet data](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) for a good primer on these tools.</span></span> 
+<span data-ttu-id="0b166-107">Se você não estiver familiarizado com a funcionalidade das tabelas dinâmicas, considere explorá-las como um usuário final.</span><span class="sxs-lookup"><span data-stu-id="0b166-107">If you are unfamiliar with the functionality of PivotTables, consider exploring them as an end user.</span></span> <span data-ttu-id="0b166-108">ConFira [criar uma tabela dinâmica para analisar os dados da planilha](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) para obter uma boa opção mais interessante nessas ferramentas.</span><span class="sxs-lookup"><span data-stu-id="0b166-108">See [Create a PivotTable to analyze worksheet data](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) for a good primer on these tools.</span></span> 
 
-<span data-ttu-id="07f25-p103">Este artigo fornece exemplos de código para cenários comuns. Para enriquecer a compreensão da API de tabela dinâmica, consulte [**PivotTable**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable) e [**PivotTableCollection**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable).</span><span class="sxs-lookup"><span data-stu-id="07f25-p103">This article provides code samples for common scenarios. To further your understanding of the PivotTable API, see [**PivotTable**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable) and [**PivotTableCollection**](https://docs.microsoft.com/javascript/api/excel/excel.pivottable).</span></span>
+<span data-ttu-id="0b166-109">Este artigo fornece exemplos de código para cenários comuns.</span><span class="sxs-lookup"><span data-stu-id="0b166-109">This article provides code samples for common scenarios.</span></span> <span data-ttu-id="0b166-110">Para saber mais sobre a API de tabela dinâmica, confira [**tabela dinâmica**](/javascript/api/excel/excel.pivottable) e [**tabela dinâmica**](/javascript/api/excel/excel.pivottable).</span><span class="sxs-lookup"><span data-stu-id="0b166-110">To further your understanding of the PivotTable API, see [**PivotTable**](/javascript/api/excel/excel.pivottable) and [**PivotTableCollection**](/javascript/api/excel/excel.pivottable).</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="07f25-111">As tabelas dinâmicas criadas com OLAP não são suportadas no momento.</span><span class="sxs-lookup"><span data-stu-id="07f25-111">PivotTables created with OLAP are not currently supported.</span></span>
+> <span data-ttu-id="0b166-111">As tabelas dinâmicas criadas com OLAP não têm suporte no momento.</span><span class="sxs-lookup"><span data-stu-id="0b166-111">PivotTables created with OLAP are not currently supported.</span></span> <span data-ttu-id="0b166-112">Também não há suporte para o Power pivot.</span><span class="sxs-lookup"><span data-stu-id="0b166-112">There is also no support for Power Pivot.</span></span>
 
-## <a name="hierarchies"></a><span data-ttu-id="07f25-112">Hierarquias</span><span class="sxs-lookup"><span data-stu-id="07f25-112">Hierarchies</span></span>
+## <a name="hierarchies"></a><span data-ttu-id="0b166-113">Hierarquias</span><span class="sxs-lookup"><span data-stu-id="0b166-113">Hierarchies</span></span>
 
-<span data-ttu-id="07f25-p104">As tabelas dinâmicas são organizadas com base em quatro categorias de hierarquia: linha, coluna, dados e filtro. Os dados a seguir, que descrevem as vendas de frutas de várias fazendas, serão utilizados ao longo deste artigo.</span><span class="sxs-lookup"><span data-stu-id="07f25-p104">PivotTables are organized based on four hierarchy categories: row, column, data, and filter. The following data describing fruit sales from various farms will be used throughout this article.</span></span>
+<span data-ttu-id="0b166-114">As tabelas dinâmicas são organizadas com base em quatro categorias de hierarquia: linha, coluna, dados e filtro.</span><span class="sxs-lookup"><span data-stu-id="0b166-114">PivotTables are organized based on four hierarchy categories: row, column, data, and filter.</span></span> <span data-ttu-id="0b166-115">Os dados a seguir que descrevem as vendas de frutas de vários farms serão usados neste artigo.</span><span class="sxs-lookup"><span data-stu-id="0b166-115">The following data describing fruit sales from various farms will be used throughout this article.</span></span>
 
-![Conjunto das vendas de fruta de diferentes tipos provenientes de várias fazendas.](../images/excel-pivots-raw-data.png)
+![Uma coleção de vendas de frutas de diferentes tipos de farms diferentes.](../images/excel-pivots-raw-data.png)
 
-<span data-ttu-id="07f25-p105">Esses dados têm cinco hierarquias: **Fazendas**, **Tipo**, **Classificação**, **Caixas vendidas na fazenda**, e **Caixas vendidas por atacado**. Cada hierarquia só pode existir em uma das quatro categorias. Se **Tipo** for adicionado as hierarquias de coluna e depois adicionado as hierarquias de linha, ele permanecerá apenas no último.</span><span class="sxs-lookup"><span data-stu-id="07f25-p105">This data has five hierarchies: **Farms**, **Type**, **Classification**, **Crates Sold at Farm**, and **Crates Sold Wholesale**. Each hierarchy can only exist in one of the four categories. If **Type** is added to column hierarchies and then added to row hierarchies, it only remains in the latter.</span></span>
+<span data-ttu-id="0b166-117">Esses dados têm cinco hierarquias: **farms**, **tipo**, **classificação**, enquando são **vendidas no farm**e as vendidas no **atacado**.</span><span class="sxs-lookup"><span data-stu-id="0b166-117">This data has five hierarchies: **Farms**, **Type**, **Classification**, **Crates Sold at Farm**, and **Crates Sold Wholesale**.</span></span> <span data-ttu-id="0b166-118">Cada hierarquia só pode existir em uma das quatro categorias.</span><span class="sxs-lookup"><span data-stu-id="0b166-118">Each hierarchy can only exist in one of the four categories.</span></span> <span data-ttu-id="0b166-119">Se **Type** for adicionado a hierarquias de coluna e, em seguida, adicionado às hierarquias de linha, ele permanecerá somente no último.</span><span class="sxs-lookup"><span data-stu-id="0b166-119">If **Type** is added to column hierarchies and then added to row hierarchies, it only remains in the latter.</span></span>
 
-<span data-ttu-id="07f25-p106">As hierarquias de linha e coluna definem como os dados serão agrupados. Por exemplo, uma hierarquia de linha de **Fazendas** agrupará todos os conjuntos de dados da mesma fazenda. A escolha entre hierarquia de linha e coluna define a orientação da tabela dinâmica.</span><span class="sxs-lookup"><span data-stu-id="07f25-p106">Row and column hierarchies define how data will be grouped. For example, a row hierarchy of **Farms** will group together all the data sets from the same farm. The choice between row and column hierarchy defines the orientation of the PivotTable.</span></span>
+<span data-ttu-id="0b166-120">Hierarquias de linha e coluna definem como os dados serão agrupados.</span><span class="sxs-lookup"><span data-stu-id="0b166-120">Row and column hierarchies define how data will be grouped.</span></span> <span data-ttu-id="0b166-121">Por exemplo, uma hierarquia de linha \*\*\*\* de farms agrupará todos os conjuntos de dados do mesmo farm.</span><span class="sxs-lookup"><span data-stu-id="0b166-121">For example, a row hierarchy of **Farms** will group together all the data sets from the same farm.</span></span> <span data-ttu-id="0b166-122">A escolha entre hierarquia de linha e coluna define a orientação da tabela dinâmica.</span><span class="sxs-lookup"><span data-stu-id="0b166-122">The choice between row and column hierarchy defines the orientation of the PivotTable.</span></span>
 
-<span data-ttu-id="07f25-p107">As hierarquias de dados são os valores a serem agregados com base nas hierarquias de linhas e colunas. Uma tabela dinâmica com a hierarquia de linhas **Fazendas** e a hierarquia de dados  **Caixas vendidas por atacado** mostra a soma total (por padrão) de todas as frutas diferentes para cada fazenda.</span><span class="sxs-lookup"><span data-stu-id="07f25-p107">Data hierarchies are the values to be aggregated based on the row and column hierarchies. A PivotTable with a row hierarchy of **Farms** and a data hierarchy of **Crates Sold Wholesale** shows the sum total (by default) of all the different fruits for each farm.</span></span>
+<span data-ttu-id="0b166-123">Hierarquias de dados são os valores a serem agregados com base nas hierarquias de linha e coluna.</span><span class="sxs-lookup"><span data-stu-id="0b166-123">Data hierarchies are the values to be aggregated based on the row and column hierarchies.</span></span> <span data-ttu-id="0b166-124">Uma tabela dinâmica com uma hierarquia de \*\*\*\* linha de farms e uma hierarquia de dados de **envenda vendida** mostra a soma total (por padrão) de todos os diferentes frutas para cada farm.</span><span class="sxs-lookup"><span data-stu-id="0b166-124">A PivotTable with a row hierarchy of **Farms** and a data hierarchy of **Crates Sold Wholesale** shows the sum total (by default) of all the different fruits for each farm.</span></span>
 
-<span data-ttu-id="07f25-p108">As hierarquias de filtro incluem ou excluem dados do pivô com base nos valores desse tipo filtrado. Uma hierarquia de filtro de **Classificação** com o tipo **Orgânico** selecionado mostra apenas os dados para fruta orgânica.</span><span class="sxs-lookup"><span data-stu-id="07f25-p108">Filter hierarchies include or exclude data from the pivot based on values within that filtered type. A filter hierarchy of **Classification** with the type **Organic** selected only shows data for organic fruit.</span></span>
+<span data-ttu-id="0b166-125">As hierarquias de filtro incluem ou excluem dados da tabela dinâmica com base nos valores desse tipo filtrado.</span><span class="sxs-lookup"><span data-stu-id="0b166-125">Filter hierarchies include or exclude data from the pivot based on values within that filtered type.</span></span> <span data-ttu-id="0b166-126">Uma hierarquia de filtro de **classificação** com o tipo **orgânica** selecionado mostra apenas dados para frutas orgânicas.</span><span class="sxs-lookup"><span data-stu-id="0b166-126">A filter hierarchy of **Classification** with the type **Organic** selected only shows data for organic fruit.</span></span>
 
-<span data-ttu-id="07f25-p109">Aqui estão os dados da fazenda novamente, junto com uma tabela dinâmica. A tabela dinâmica está usando **Fazenda** e **Tipo** como as hierarquias de linha, **Caixas vendidas na fazenda** e **Caixas vendidas por atacado** como as hierarquias de dados (com a função de agregação de soma padrão) e **Classificação** como uma hierarquia de filtro (com **Orgânico** selecionado).</span><span class="sxs-lookup"><span data-stu-id="07f25-p109">Here is the farm data again, alongside a PivotTable. The PivotTable is using **Farm** and **Type** as the row hierarchies, **Crates Sold at Farm** and **Crates Sold Wholesale** as the data hierarchies (with the default aggregation function of sum), and **Classification** as a filter hierarchy (with **Organic** selected).</span></span> 
+<span data-ttu-id="0b166-127">Estes são os dados do farm novamente, juntamente com uma tabela dinâmica.</span><span class="sxs-lookup"><span data-stu-id="0b166-127">Here is the farm data again, alongside a PivotTable.</span></span> <span data-ttu-id="0b166-128">A tabela dinâmica está usando o **farm** e o **tipo** como hierarquias de linha, as televendedas **no farm** e as doutilizações **vendidas** como as hierarquias de dados (com a função de agregação padrão de Sum) e a **classificação** como um filtro hierarquia (com a **orgânica** selecionada).</span><span class="sxs-lookup"><span data-stu-id="0b166-128">The PivotTable is using **Farm** and **Type** as the row hierarchies, **Crates Sold at Farm** and **Crates Sold Wholesale** as the data hierarchies (with the default aggregation function of sum), and **Classification** as a filter hierarchy (with **Organic** selected).</span></span> 
 
-![Uma seleção de dados de vendas de frutas ao lado de uma tabela dinâmica com hierarquias de linhas, dados e filtros.](../images/excel-pivot-table-and-data.png)
+![Uma seleção de dados de vendas de frutas ao lado de uma tabela dinâmica com hierarquias de linha, dados e filtros.](../images/excel-pivot-table-and-data.png)
 
-<span data-ttu-id="07f25-p110">Esta tabela dinâmica pode ser gerada por meio da API do JavaScript ou da interface gráfica do Excel. Ambas as opções permitem mais manipulação através de suplementos.</span><span class="sxs-lookup"><span data-stu-id="07f25-p110">This PivotTable could be generated through the JavaScript API or through the Excel UI. Both options allow for further manipulation through add-ins.</span></span>
+<span data-ttu-id="0b166-130">Esta tabela dinâmica pode ser gerada por meio da API JavaScript ou através da interface do usuário do Excel.</span><span class="sxs-lookup"><span data-stu-id="0b166-130">This PivotTable could be generated through the JavaScript API or through the Excel UI.</span></span> <span data-ttu-id="0b166-131">Ambas as opções permitem mais manipulação por meio de suplementos.</span><span class="sxs-lookup"><span data-stu-id="0b166-131">Both options allow for further manipulation through add-ins.</span></span>
 
-## <a name="create-a-pivottable"></a><span data-ttu-id="07f25-131">Criar uma tabela dinâmica</span><span class="sxs-lookup"><span data-stu-id="07f25-131">Create a PivotTable with Range objects</span></span>
+## <a name="create-a-pivottable"></a><span data-ttu-id="0b166-132">Criar uma tabela dinâmica</span><span class="sxs-lookup"><span data-stu-id="0b166-132">Create a PivotTable</span></span>
 
-<span data-ttu-id="07f25-p111">Tabelas dinâmicas precisam de um nome, origem e destino. A origem pode ser um endereço de intervalo ou um nome de tabela  (transmitido como um tipo `Range`, `string` ou `Table` ). O destino é um endereço de intervalo (fornecido como `Range` ou `string`). Os exemplos a seguir mostram várias técnicas de criação de tabelas dinâmicas.</span><span class="sxs-lookup"><span data-stu-id="07f25-p111">PivotTables need a name, source, and destination. The source can be a range address or table name (passed as a `Range`, `string`, or `Table` type). The destination is a range address (given as either a `Range` or `string`). The following samples show various PivotTable creation techniques.</span></span>
+<span data-ttu-id="0b166-133">As tabelas dinâmicas precisam de um nome, origem e destino.</span><span class="sxs-lookup"><span data-stu-id="0b166-133">PivotTables need a name, source, and destination.</span></span> <span data-ttu-id="0b166-134">A origem pode ser um endereço de intervalo ou nome de tabela (passado `Range`como `string`um, `Table` ou tipo).</span><span class="sxs-lookup"><span data-stu-id="0b166-134">The source can be a range address or table name (passed as a `Range`, `string`, or `Table` type).</span></span> <span data-ttu-id="0b166-135">O destino é um endereço de intervalo (fornecido como ou `Range` um `string`ou).</span><span class="sxs-lookup"><span data-stu-id="0b166-135">The destination is a range address (given as either a `Range` or `string`).</span></span> <span data-ttu-id="0b166-136">Os exemplos a seguir mostram várias técnicas de criação de tabela dinâmica.</span><span class="sxs-lookup"><span data-stu-id="0b166-136">The following samples show various PivotTable creation techniques.</span></span>
 
-### <a name="create-a-pivottable-with-range-addresses"></a><span data-ttu-id="07f25-136">Criar uma tabela dinâmica com endereços de intervalo</span><span class="sxs-lookup"><span data-stu-id="07f25-136">Create a PivotTable with range addresses</span></span>
+### <a name="create-a-pivottable-with-range-addresses"></a><span data-ttu-id="0b166-137">Criar uma tabela dinâmica com endereços de intervalo</span><span class="sxs-lookup"><span data-stu-id="0b166-137">Create a PivotTable with range addresses</span></span>
 
 ```typescript
 await Excel.run(async (context) => {
@@ -55,22 +56,22 @@ await Excel.run(async (context) => {
 });
 ```
 
-### <a name="create-a-pivottable-with-range-objects"></a><span data-ttu-id="07f25-137">Criar uma tabela dinâmica com objetos de intervalo</span><span class="sxs-lookup"><span data-stu-id="07f25-137">Create a PivotTable with Range objects</span></span>
+### <a name="create-a-pivottable-with-range-objects"></a><span data-ttu-id="0b166-138">Criar uma tabela dinâmica com objetos Range</span><span class="sxs-lookup"><span data-stu-id="0b166-138">Create a PivotTable with Range objects</span></span>
 
 ```typescript
-await Excel.run(async (context) => {    
+await Excel.run(async (context) => {
     // creating a PivotTable named "Farm Sales" on a worksheet called "PivotWorksheet" at cell A2
     // the data comes from the worksheet "DataWorksheet" across the range A1:E21
     const rangeToAnalyze = context.workbook.worksheets.getItem("DataWorksheet").getRange("A1:E21");
     const rangeToPlacePivot = context.workbook.worksheets.getItem("PivotWorksheet").getRange("A2");
     context.workbook.worksheets.getItem("PivotWorksheet").pivotTables.add(
         "Farm Sales", rangeToAnalyze, rangeToPlacePivot);
-    
+
     await context.sync();
 });
 ```
 
-### <a name="create-a-pivottable-at-the-workbook-level"></a><span data-ttu-id="07f25-138">Criar uma tabela dinâmica no nível da pasta de trabalho</span><span class="sxs-lookup"><span data-stu-id="07f25-138">Create a PivotTable at the workbook level</span></span>
+### <a name="create-a-pivottable-at-the-workbook-level"></a><span data-ttu-id="0b166-139">Criar uma tabela dinâmica no nível da pasta de trabalho</span><span class="sxs-lookup"><span data-stu-id="0b166-139">Create a PivotTable at the workbook level</span></span>
 
 ```typescript
 await Excel.run(async (context) => {
@@ -82,11 +83,11 @@ await Excel.run(async (context) => {
 });
 ```
 
-## <a name="use-an-existing-pivottable"></a><span data-ttu-id="07f25-139">Usar uma tabela dinâmica existente</span><span class="sxs-lookup"><span data-stu-id="07f25-139">Use an existing PivotTable</span></span>
+## <a name="use-an-existing-pivottable"></a><span data-ttu-id="0b166-140">Usar uma tabela dinâmica existente</span><span class="sxs-lookup"><span data-stu-id="0b166-140">Use an existing PivotTable</span></span>
 
-<span data-ttu-id="07f25-140">As tabelas dinâmicas criadas manualmente também são acessíveis através da coleção de tabela dinâmica da pasta de trabalho ou de planilhas individuais.</span><span class="sxs-lookup"><span data-stu-id="07f25-140">Manually created PivotTables are also accessible through the PivotTable collection of the workbook or of individual worksheets.</span></span> 
+<span data-ttu-id="0b166-141">As tabelas dinâmicas criadas manualmente também podem ser acessadas por meio da coleção PivotTable da pasta de trabalho ou de planilhas individuais.</span><span class="sxs-lookup"><span data-stu-id="0b166-141">Manually created PivotTables are also accessible through the PivotTable collection of the workbook or of individual worksheets.</span></span> 
 
-<span data-ttu-id="07f25-p112">O código a seguir obtém a primeira tabela dinâmica na pasta de trabalho. Em seguida, fornece um nome para a tabela para facilitar a referência futura.</span><span class="sxs-lookup"><span data-stu-id="07f25-p112">The following code gets the first PivotTable in the workbook. It then gives the table a name for easy future reference.</span></span>
+<span data-ttu-id="0b166-142">O código a seguir obtém a primeira tabela dinâmica na pasta de trabalho.</span><span class="sxs-lookup"><span data-stu-id="0b166-142">The following code gets the first PivotTable in the workbook.</span></span> <span data-ttu-id="0b166-143">Em seguida, ele fornece ao nome da tabela uma referência fácil no futuro.</span><span class="sxs-lookup"><span data-stu-id="0b166-143">It then gives the table a name for easy future reference.</span></span>
 
 ```typescript
 await Excel.run(async (context) => {
@@ -95,13 +96,13 @@ await Excel.run(async (context) => {
 });
 ```
 
-## <a name="add-rows-and-columns-to-a-pivottable"></a><span data-ttu-id="07f25-143">Adicionar linhas e colunas à tabela dinâmica</span><span class="sxs-lookup"><span data-stu-id="07f25-143">Add rows and columns to a PivotTable</span></span>
+## <a name="add-rows-and-columns-to-a-pivottable"></a><span data-ttu-id="0b166-144">Adicionar linhas e colunas a uma tabela dinâmica</span><span class="sxs-lookup"><span data-stu-id="0b166-144">Add rows and columns to a PivotTable</span></span>
 
-<span data-ttu-id="07f25-144">As linhas e colunas articulam os dados em torno dos valores desses campos.</span><span class="sxs-lookup"><span data-stu-id="07f25-144">Rows and columns pivot the data around those fields’ values.</span></span>
+<span data-ttu-id="0b166-145">Linhas e colunas dinamizam os dados em torno dos valores dos campos.</span><span class="sxs-lookup"><span data-stu-id="0b166-145">Rows and columns pivot the data around those fields’ values.</span></span>
 
-<span data-ttu-id="07f25-p113">Adicionar a coluna **Fazenda** articula todas as vendas ao redor de cada fazenda. Adicionar as linhas **Tipo** e **Classificação** divide ainda mais os dados com base no tipo de fruta vendida e se a mesma era orgânica ou não.</span><span class="sxs-lookup"><span data-stu-id="07f25-p113">Adding the **Farm** column pivots all the sales around each farm. Adding the **Type** and **Classification** rows further breaks down the data based on what fruit was sold and whether it was organic or not.</span></span>
+<span data-ttu-id="0b166-146">A adição da coluna do **farm** dinamiza todas as vendas em torno de cada farm.</span><span class="sxs-lookup"><span data-stu-id="0b166-146">Adding the **Farm** column pivots all the sales around each farm.</span></span> <span data-ttu-id="0b166-147">Adicionar as linhas de **tipo** e **classificação** divide ainda mais os dados com base no que frutas foi vendido e se foi orgânica ou não.</span><span class="sxs-lookup"><span data-stu-id="0b166-147">Adding the **Type** and **Classification** rows further breaks down the data based on what fruit was sold and whether it was organic or not.</span></span>
 
-![Uma tabela dinâmica com a coluna Fazenda e as linhas Tipo e Classificação.](../images/excel-pivots-table-rows-and-columns.png)
+![Uma tabela dinâmica com uma coluna do farm e linhas de tipo e classificação.](../images/excel-pivots-table-rows-and-columns.png)
 
 ```typescript
 await Excel.run(async (context) => {
@@ -109,14 +110,14 @@ await Excel.run(async (context) => {
 
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Type"));
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Classification"));
-    
+
     pivotTable.columnHierarchies.add(pivotTable.hierarchies.getItem("Farm"));
 
     await context.sync();
 });
 ```
 
-<span data-ttu-id="07f25-148">Você também pode ter uma tabela dinâmica apenas com linhas ou colunas.</span><span class="sxs-lookup"><span data-stu-id="07f25-148">You can also have a PivotTable with only rows or columns.</span></span>
+<span data-ttu-id="0b166-149">Você também pode ter uma tabela dinâmica com apenas linhas ou colunas.</span><span class="sxs-lookup"><span data-stu-id="0b166-149">You can also have a PivotTable with only rows or columns.</span></span>
 
 ```typescript
 await Excel.run(async (context) => {
@@ -124,18 +125,18 @@ await Excel.run(async (context) => {
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Farm"));
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Type"));
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Classification"));
-    
+
     await context.sync();
 });
 ```
 
-## <a name="add-data-hierarchies-to-the-pivottable"></a><span data-ttu-id="07f25-149">Adicionar hierarquias de dados à tabela dinâmica</span><span class="sxs-lookup"><span data-stu-id="07f25-149">Add data hierarchies to the PivotTable</span></span>
+## <a name="add-data-hierarchies-to-the-pivottable"></a><span data-ttu-id="0b166-150">Adicionar hierarquias de dados à tabela dinâmica</span><span class="sxs-lookup"><span data-stu-id="0b166-150">Add data hierarchies to the PivotTable</span></span>
 
-<span data-ttu-id="07f25-p114">As hierarquias de dados preenchem a tabela dinâmica com informações para combinar com base nas linhas e colunas. Adicionar as hierarquias de dados de **Caixas vendidas na fazenda** e **Caixas vendidas por atacado** fornece a soma desses números para cada linha e coluna.</span><span class="sxs-lookup"><span data-stu-id="07f25-p114">Data hierarchies fill the PivotTable with information to combine based on the rows and columns. Adding the data hierarchies of **Crates Sold at Farm** and **Crates Sold Wholesale** gives sums of those figures for each row and column.</span></span> 
+<span data-ttu-id="0b166-151">As hierarquias de dados preenchem a tabela dinâmica com informações para combinar com base nas linhas e colunas.</span><span class="sxs-lookup"><span data-stu-id="0b166-151">Data hierarchies fill the PivotTable with information to combine based on the rows and columns.</span></span> <span data-ttu-id="0b166-152">Adicionar as hierarquias de dados das pessoas **vendidas no farm** e as pessoas vendidas no **atacado** fornece somas desses números para cada linha e coluna.</span><span class="sxs-lookup"><span data-stu-id="0b166-152">Adding the data hierarchies of **Crates Sold at Farm** and **Crates Sold Wholesale** gives sums of those figures for each row and column.</span></span> 
 
-<span data-ttu-id="07f25-152">No exemplo, **Fazenda** e **Tipo** são linhas com os dados das vendas de caixas.</span><span class="sxs-lookup"><span data-stu-id="07f25-152">In the example, both **Farm** and **Type** are rows, with the crate sales as the data.</span></span> 
+<span data-ttu-id="0b166-153">No exemplo, **farm** e **tipo** são linhas, com as vendas de compra como os dados.</span><span class="sxs-lookup"><span data-stu-id="0b166-153">In the example, both **Farm** and **Type** are rows, with the crate sales as the data.</span></span> 
 
-![Uma tabela dinâmica que mostra as vendas totais das diferentes frutas com base na fazenda de onde elas vieram.](../images/excel-pivots-data-hierarchy.png)
+![Uma tabela dinâmica mostrando as vendas totais de diferentes frutas com base no farm de onde elas vieram.](../images/excel-pivots-data-hierarchy.png)
 
 ```typescript
 await Excel.run(async (context) => {
@@ -154,13 +155,13 @@ await Excel.run(async (context) => {
 });
 ```
 
-## <a name="change-aggregation-function"></a><span data-ttu-id="07f25-154">Alterar a função de agregação</span><span class="sxs-lookup"><span data-stu-id="07f25-154">Change aggregation function</span></span>
+## <a name="change-aggregation-function"></a><span data-ttu-id="0b166-155">Função de agregação de alteração</span><span class="sxs-lookup"><span data-stu-id="0b166-155">Change aggregation function</span></span>
 
-<span data-ttu-id="07f25-p115">As hierarquias de dados têm seus valores agregados. Para conjuntos de dados de números, por padrão, isso corresponde a uma soma. A propriedade `summarizeBy` define esse comportamento baseando-se em um tipo [AggregrationFunction](https://docs.microsoft.com/javascript/api/excel/excel.aggregationfunction).</span><span class="sxs-lookup"><span data-stu-id="07f25-p115">Data hierarchies have their values aggregated. For datasets of numbers, this is a sum by default. The `summarizeBy` property defines this behavior based on an [](https://docs.microsoft.com/javascript/api/excel/excel.aggregationfunction) type.</span></span> 
+<span data-ttu-id="0b166-156">As hierarquias de dados têm seus valores agregados.</span><span class="sxs-lookup"><span data-stu-id="0b166-156">Data hierarchies have their values aggregated.</span></span> <span data-ttu-id="0b166-157">Para conjuntos de números de valores, esta é uma soma por padrão.</span><span class="sxs-lookup"><span data-stu-id="0b166-157">For datasets of numbers, this is a sum by default.</span></span> <span data-ttu-id="0b166-158">A `summarizeBy` propriedade define esse comportamento com base em um tipo [AggregationFunction](/javascript/api/excel/excel.aggregationfunction) .</span><span class="sxs-lookup"><span data-stu-id="0b166-158">The `summarizeBy` property defines this behavior based on an [AggregationFunction](/javascript/api/excel/excel.aggregationfunction) type.</span></span>
 
-<span data-ttu-id="07f25-158">Os tipos de função agregada suportados atualmente são `Sum`, `Count`, `Average`, `Max`, `Min`, `Product`, `CountNumbers`, `StandardDeviation`, `StandardDeviationP`, `Variance`, `VarianceP` e `Automatic` (padrão).</span><span class="sxs-lookup"><span data-stu-id="07f25-158">The currently supported aggregation function types are `Sum`, `Count`, `Average`, `Max`, `Min`, `Product`, `CountNumbers`, `StandardDeviation`, `StandardDeviationP`, `Variance`, `VarianceP`, and `Automatic` (the default).</span></span>
+<span data-ttu-id="0b166-159">Os tipos de função de agregação `Sum`suportados `Count`atualmente `Average`são `Max`, `Min` `Product`,, `CountNumbers`, `StandardDeviation`, `StandardDeviationP`, `Variance`, `VarianceP`,, `Automatic` e (o padrão).</span><span class="sxs-lookup"><span data-stu-id="0b166-159">The currently supported aggregation function types are `Sum`, `Count`, `Average`, `Max`, `Min`, `Product`, `CountNumbers`, `StandardDeviation`, `StandardDeviationP`, `Variance`, `VarianceP`, and `Automatic` (the default).</span></span>
 
-<span data-ttu-id="07f25-159">O exemplo de código a seguir altera a agregação para as médias dos dados.</span><span class="sxs-lookup"><span data-stu-id="07f25-159">The following code samples changes the aggregation to be averages of the data.</span></span>
+<span data-ttu-id="0b166-160">O exemplo de código a seguir altera a agregação para ser a média dos dados.</span><span class="sxs-lookup"><span data-stu-id="0b166-160">The following code samples changes the aggregation to be averages of the data.</span></span>
 
 ```typescript
 await Excel.run(async (context) => {
@@ -175,18 +176,19 @@ await Excel.run(async (context) => {
 });
 ```
 
-## <a name="change-calculations-with-a-showasrule"></a><span data-ttu-id="07f25-160">Altere os cálculos com ShowAsRule</span><span class="sxs-lookup"><span data-stu-id="07f25-160">Change calculations with a ShowAsRule</span></span>
+## <a name="change-calculations-with-a-showasrule"></a><span data-ttu-id="0b166-161">Alterar cálculos com um ShowAsRule</span><span class="sxs-lookup"><span data-stu-id="0b166-161">Change calculations with a ShowAsRule</span></span>
 
-<span data-ttu-id="07f25-p116">As Tabelas Dinâmicas, por padrão, agregam os dados de suas hierarquias de linha e coluna de forma independente. O [ShowAsRule](https://docs.microsoft.com/javascript/api/excel/excel.showasrule) altera a hierarquia dos dados para valores de saída com base em outros itens na tabela dinâmica.</span><span class="sxs-lookup"><span data-stu-id="07f25-p116">PivotTables, by default, aggregate the data of their row and column hierarchies independently. A [](https://docs.microsoft.com/javascript/api/excel/excel.showasrule) changes the data hierarchy to output values based on other items in the PivotTable.</span></span>
+<span data-ttu-id="0b166-162">As tabelas dinâmicas, por padrão, agregam os dados de suas hierarquias de linha e coluna de forma independente.</span><span class="sxs-lookup"><span data-stu-id="0b166-162">PivotTables, by default, aggregate the data of their row and column hierarchies independently.</span></span> <span data-ttu-id="0b166-163">Um [ShowAsRule](/javascript/api/excel/excel.showasrule) altera a hierarquia de dados para valores de saída com base em outros itens na tabela dinâmica.</span><span class="sxs-lookup"><span data-stu-id="0b166-163">A [ShowAsRule](/javascript/api/excel/excel.showasrule) changes the data hierarchy to output values based on other items in the PivotTable.</span></span>
 
-<span data-ttu-id="07f25-163">O objeto `ShowAsRule` tem três propriedades:</span><span class="sxs-lookup"><span data-stu-id="07f25-163">The `ShowAsRule` object has three properties:</span></span>
--   <span data-ttu-id="07f25-164">`calculation`: o tipo de cálculo relativo a ser aplicado à hierarquia de dados (o padrão é `none`).</span><span class="sxs-lookup"><span data-stu-id="07f25-164">`calculation`: The type of relative calculation to apply to the data hierarchy (the default is `none`).</span></span>
--   <span data-ttu-id="07f25-p117">`baseField`: o campo dentro da hierarquia que contém os dados de base antes que o cálculo seja aplicado. O [PivotField](https://docs.microsoft.com/javascript/api/excel/excel.pivotfield)  geralmente tem o mesmo nome que sua hierarquia pai.</span><span class="sxs-lookup"><span data-stu-id="07f25-p117">`baseField`: The field within the hierarchy containing the base data before the calculation is applied. The [](https://docs.microsoft.com/javascript/api/excel/excel.pivotfield) usually has the same name as its parent hierarchy.</span></span>
--   <span data-ttu-id="07f25-p118">`baseItem`: O item individual [PivotItem](https://docs.microsoft.com/javascript/api/excel/excel.pivotitem) comparado com os valores dos campos de base de acordo com o tipo de cálculo. Nem todos os cálculos exigem esse campo.</span><span class="sxs-lookup"><span data-stu-id="07f25-p118">: The individual item compared against the values of the base fields based on the calculation type. Not all calculations require this field.</span></span>
+<span data-ttu-id="0b166-164">O `ShowAsRule` objeto tem três propriedades:</span><span class="sxs-lookup"><span data-stu-id="0b166-164">The `ShowAsRule` object has three properties:</span></span>
 
-<span data-ttu-id="07f25-p119">O exemplo a seguir define o cálculo na hierarquia de dados **Soma das caixas vendidas na Fazenda** para uma porcentagem do total da coluna. Ainda queremos que a granularidade se estenda ao nível do tipo de fruta, então usaremos a hierarquia de linha **Tipo** e o campo subjacente. O exemplo também tem **Fazenda** como a primeira hierarquia de linha, de modo que a entrada total da fazenda exibe também a porcentagem que cada fazenda é responsável por produzir.</span><span class="sxs-lookup"><span data-stu-id="07f25-p119">The following example sets the calculation on the **Sum of Crates Sold at Farm** data hierarchy to be a percentage of the column total. We still want the granularity to extend to the fruit type level, so we’ll use the **Type** row hierarchy and its underlying field. The example also has **Farm** as the first row hierarchy, so the farm total entries display the percentage each farm is responsible for producing as well.</span></span>
+-   <span data-ttu-id="0b166-165">`calculation`: O tipo de cálculo relativo a ser aplicado à hierarquia de dados (o padrão `none`é).</span><span class="sxs-lookup"><span data-stu-id="0b166-165">`calculation`: The type of relative calculation to apply to the data hierarchy (the default is `none`).</span></span>
+-   <span data-ttu-id="0b166-166">`baseField`: O campo dentro da hierarquia que contém os dados básicos antes do cálculo ser aplicado.</span><span class="sxs-lookup"><span data-stu-id="0b166-166">`baseField`: The field within the hierarchy containing the base data before the calculation is applied.</span></span> <span data-ttu-id="0b166-167">Normalmente [](/javascript/api/excel/excel.pivotfield) , o PivotField tem o mesmo nome de sua hierarquia pai.</span><span class="sxs-lookup"><span data-stu-id="0b166-167">The [PivotField](/javascript/api/excel/excel.pivotfield) usually has the same name as its parent hierarchy.</span></span>
+-   <span data-ttu-id="0b166-168">`baseItem`: O [PivotItem](/javascript/api/excel/excel.pivotitem) individual comparado com os valores dos campos base com base no tipo de cálculo.</span><span class="sxs-lookup"><span data-stu-id="0b166-168">`baseItem`: The individual [PivotItem](/javascript/api/excel/excel.pivotitem) compared against the values of the base fields based on the calculation type.</span></span> <span data-ttu-id="0b166-169">Nem todos os cálculos exigem esse campo.</span><span class="sxs-lookup"><span data-stu-id="0b166-169">Not all calculations require this field.</span></span>
 
-![Uma tabela dinâmica que mostra as porcentagens de venda de frutas em relação ao total geral, tanto por fazenda quanto por tipo de fruta dentro de cada fazenda.](../images/excel-pivots-showas-percentage.png)
+<span data-ttu-id="0b166-170">O exemplo a seguir define o cálculo **da soma das** Enações vendidas na hierarquia de dados do farm como uma porcentagem do total da coluna.</span><span class="sxs-lookup"><span data-stu-id="0b166-170">The following example sets the calculation on the **Sum of Crates Sold at Farm** data hierarchy to be a percentage of the column total.</span></span> <span data-ttu-id="0b166-171">Ainda queremos que a granularidade seja estendida para o nível de tipo de frutas, portanto, usaremos a hierarquia de linha de **tipo** e seu campo base.</span><span class="sxs-lookup"><span data-stu-id="0b166-171">We still want the granularity to extend to the fruit type level, so we’ll use the **Type** row hierarchy and its underlying field.</span></span> <span data-ttu-id="0b166-172">O exemplo também tem o **farm** como a primeira hierarquia de linha, portanto, o total de entradas do farm exibe a porcentagem de produção de cada farm também.</span><span class="sxs-lookup"><span data-stu-id="0b166-172">The example also has **Farm** as the first row hierarchy, so the farm total entries display the percentage each farm is responsible for producing as well.</span></span>
+
+![Uma tabela dinâmica mostrando as porcentagens das vendas de frutas em relação ao total geral de farms individuais e tipos de frutas individuais em cada farm.](../images/excel-pivots-showas-percentage.png)
 
 ``` TypeScript
 await Excel.run(async (context) => {
@@ -207,11 +209,12 @@ await Excel.run(async (context) => {
 });
 ```
 
-<span data-ttu-id="07f25-p120">O exemplo anterior definiu o cálculo para a coluna, relativo a uma hierarquia de linha individual. Quando o cálculo está relacionado a um item individual, use a propriedade `baseItem` .</span><span class="sxs-lookup"><span data-stu-id="07f25-p120">The previous example set the calculation to the column, relative to an individual row hierarchy. When the calculation relates to an individual item, use the `baseItem` property.</span></span> 
+<span data-ttu-id="0b166-174">O exemplo anterior definiu o cálculo para a coluna, em relação a uma hierarquia de linha individual.</span><span class="sxs-lookup"><span data-stu-id="0b166-174">The previous example set the calculation to the column, relative to an individual row hierarchy.</span></span> <span data-ttu-id="0b166-175">Quando o cálculo está relacionado a um item individual, use a `baseItem` propriedade.</span><span class="sxs-lookup"><span data-stu-id="0b166-175">When the calculation relates to an individual item, use the `baseItem` property.</span></span>
 
-<span data-ttu-id="07f25-p121">O exemplo a seguir mostra o cálculo `differenceFrom` . Exibe a diferença das entradas da hierarquia de dados de vendas de caixas na fazenda em relação  àquelas das "Fazendas A". O `baseField` é **Fazenda**, portanto, vemos as diferenças entre as outras fazendas, bem como as divisões para cada tipo de fruta (**Tipo** também é uma hierarquia de linha neste exemplo).</span><span class="sxs-lookup"><span data-stu-id="07f25-p121">The following example shows the `differenceFrom` calculation. It displays the difference of the farm crate sales data hierarchy entries relative to those of “A Farms”. The `baseField` is **Farm**, so we see the differences between the other farms, as well as breakdowns for each type of like fruit (**Type** is also a row hierarchy in this example).</span></span>
+<span data-ttu-id="0b166-176">O exemplo a seguir mostra `differenceFrom` o cálculo.</span><span class="sxs-lookup"><span data-stu-id="0b166-176">The following example shows the `differenceFrom` calculation.</span></span> <span data-ttu-id="0b166-177">Ele exibe a diferença entre as entradas de hierarquia de dados de vendas do farm em relação às de "farms".</span><span class="sxs-lookup"><span data-stu-id="0b166-177">It displays the difference of the farm crate sales data hierarchy entries relative to those of “A Farms”.</span></span>
+<span data-ttu-id="0b166-178">O `baseField` **farm**de is, portanto, vemos as diferenças entre os outros farms, bem como as divisões de cada tipo de fruta (**Type** também é uma hierarquia de linha neste exemplo).</span><span class="sxs-lookup"><span data-stu-id="0b166-178">The `baseField` is **Farm**, so we see the differences between the other farms, as well as breakdowns for each type of like fruit (**Type** is also a row hierarchy in this example).</span></span>
 
-![Uma tabela dinâmica mostrando as diferenças de vendas de frutas entre “Fazendas A” e as outras. Isso mostra a diferença no total de vendas de frutas das fazendas e as vendas de tipos de frutas. Se “Fazendas A” não vendeu um tipo específico de fruta,  é exibida a mensagem “#N/A”.](../images/excel-pivots-showas-differencefrom.png)
+![Uma tabela dinâmica mostrando as diferenças das vendas de frutas entre "um farm" e outros.](../images/excel-pivots-showas-differencefrom.png)
 
 ``` TypeScript
 await Excel.run(async (context) => {
@@ -233,15 +236,15 @@ await Excel.run(async (context) => {
 });
 ```
 
-## <a name="pivottable-layouts"></a><span data-ttu-id="07f25-181">Layouts de tabela dinâmica</span><span class="sxs-lookup"><span data-stu-id="07f25-181">PivotTable layouts</span></span>
+## <a name="pivottable-layouts"></a><span data-ttu-id="0b166-182">Layouts de tabela dinâmica</span><span class="sxs-lookup"><span data-stu-id="0b166-182">PivotTable layouts</span></span>
 
-<span data-ttu-id="07f25-p123">Um [PivotLayout](https://docs.microsoft.com/javascript/api/excel/excel.pivotlayout)  define o posicionamento de hierarquias e seus dados. Você acessa o layout para determinar os intervalos em que os dados são armazenados.</span><span class="sxs-lookup"><span data-stu-id="07f25-p123">A PivotTable layout defines the placement of hierarchies and their data. You access the layout to determine the ranges where data is stored.</span></span> 
+<span data-ttu-id="0b166-183">Um [PivotLayout](/javascript/api/excel/excel.pivotlayout) define o posicionamento de hierarquias e seus dados.</span><span class="sxs-lookup"><span data-stu-id="0b166-183">A [PivotLayout](/javascript/api/excel/excel.pivotlayout) defines the placement of hierarchies and their data.</span></span> <span data-ttu-id="0b166-184">Você acessa o layout para determinar os intervalos onde os dados são armazenados.</span><span class="sxs-lookup"><span data-stu-id="0b166-184">You access the layout to determine the ranges where data is stored.</span></span>
 
-<span data-ttu-id="07f25-184">O diagrama a seguir mostra as chamadas de funções de layout que correspondem a cada intervalo da tabela dinâmica.</span><span class="sxs-lookup"><span data-stu-id="07f25-184">The following diagram shows which layout function calls correspond to which ranges of the PivotTable.</span></span>
+<span data-ttu-id="0b166-185">O diagrama a seguir mostra quais chamadas de função de layout correspondem aos intervalos da tabela dinâmica.</span><span class="sxs-lookup"><span data-stu-id="0b166-185">The following diagram shows which layout function calls correspond to which ranges of the PivotTable.</span></span>
 
-![Um diagrama que mostra quais seções de uma tabela dinâmica são retornadas pelas funções de intervalo do layout.](../images/excel-pivots-layout-breakdown.png)
+![Um diagrama mostrando quais seções de uma tabela dinâmica são retornadas pelas funções obter intervalo do layout.](../images/excel-pivots-layout-breakdown.png)
 
-<span data-ttu-id="07f25-p124">O código a seguir demonstra como obter a última linha dos dados de tabela dinâmica percorrendo o layout. Esses valores são então somados para obter um total geral.</span><span class="sxs-lookup"><span data-stu-id="07f25-p124">The following code demonstrates how to get the last row of the PivotTable data by going through the layout. Those values are then summed together for a grand total.</span></span>
+<span data-ttu-id="0b166-187">O código a seguir demonstra como obter a última linha dos dados da tabela dinâmica percorrendo o layout.</span><span class="sxs-lookup"><span data-stu-id="0b166-187">The following code demonstrates how to get the last row of the PivotTable data by going through the layout.</span></span> <span data-ttu-id="0b166-188">Esses valores são somados em um total geral.</span><span class="sxs-lookup"><span data-stu-id="0b166-188">Those values are then summed together for a grand total.</span></span>
 
 ```typescript
 await Excel.run(async (context) => {
@@ -260,21 +263,21 @@ await Excel.run(async (context) => {
 });
 ```
 
-<span data-ttu-id="07f25-p125">As tabelas dinâmicas tês três estilos de layout: Compacto, Estrutura do Código e Tabular. Nos exemplos anteriores foi usado o estilo compacto.</span><span class="sxs-lookup"><span data-stu-id="07f25-p125">PivotTables have three layout styles: Compact, Outline, and Tabular. We’ve seen the compact style in the previous examples.</span></span> 
+<span data-ttu-id="0b166-189">As tabelas dinâmicas têm três estilos de layout: compactar, estrutura de tópicos e tabular.</span><span class="sxs-lookup"><span data-stu-id="0b166-189">PivotTables have three layout styles: Compact, Outline, and Tabular.</span></span> <span data-ttu-id="0b166-190">Vimos o estilo compacto nos exemplos anteriores.</span><span class="sxs-lookup"><span data-stu-id="0b166-190">We’ve seen the compact style in the previous examples.</span></span> 
 
-<span data-ttu-id="07f25-p126">Os exemplos a seguir usam os estilos de estrutura de código e tabular, respectivamente. O exemplo de código mostra como alternar entre os diferentes layouts.</span><span class="sxs-lookup"><span data-stu-id="07f25-p126">The following examples use the outline and tabular styles, respectively. The code sample shows how to cycle between the different layouts.</span></span>
+<span data-ttu-id="0b166-191">Os exemplos a seguir usam os estilos de estrutura de tópicos e tabular, respectivamente.</span><span class="sxs-lookup"><span data-stu-id="0b166-191">The following examples use the outline and tabular styles, respectively.</span></span> <span data-ttu-id="0b166-192">O exemplo de código mostra como fazer o ciclo entre os diferentes layouts.</span><span class="sxs-lookup"><span data-stu-id="0b166-192">The code sample shows how to cycle between the different layouts.</span></span>
 
-### <a name="outline-layout"></a><span data-ttu-id="07f25-192">Layout de estrutura do código</span><span class="sxs-lookup"><span data-stu-id="07f25-192">Outline layout</span></span>
+### <a name="outline-layout"></a><span data-ttu-id="0b166-193">Layout de estrutura de tópicos</span><span class="sxs-lookup"><span data-stu-id="0b166-193">Outline layout</span></span>
 
 ![Uma tabela dinâmica usando o layout de estrutura de tópicos.](../images/excel-pivots-outline-layout.png)
 
-### <a name="tabular-layout"></a><span data-ttu-id="07f25-194">Layout tabular</span><span class="sxs-lookup"><span data-stu-id="07f25-194">Tabular layout</span></span>
+### <a name="tabular-layout"></a><span data-ttu-id="0b166-195">Layout tabular</span><span class="sxs-lookup"><span data-stu-id="0b166-195">Tabular layout</span></span>
 
 ![Uma tabela dinâmica usando o layout tabular.](../images/excel-pivots-tabular-layout.png)
 
-## <a name="change-hierarchy-names"></a><span data-ttu-id="07f25-196">Alterar os nomes de hierarquia</span><span class="sxs-lookup"><span data-stu-id="07f25-196">Change hierarchy names</span></span>
+## <a name="change-hierarchy-names"></a><span data-ttu-id="0b166-197">Alterar nomes de hierarquia</span><span class="sxs-lookup"><span data-stu-id="0b166-197">Change hierarchy names</span></span>
 
-<span data-ttu-id="07f25-p127">Os campos de hierarquia são editáveis. O código a seguir demonstra como alterar os nomes exibidos de duas hierarquias de dados.</span><span class="sxs-lookup"><span data-stu-id="07f25-p127">Hierarchy fields are editable. The following code demonstrates how to change the displayed names of two data hierarchies.</span></span>
+<span data-ttu-id="0b166-198">Os campos de hierarquia são editáveis.</span><span class="sxs-lookup"><span data-stu-id="0b166-198">Hierarchy fields are editable.</span></span> <span data-ttu-id="0b166-199">O código a seguir demonstra como alterar os nomes exibidos de duas hierarquias de dados.</span><span class="sxs-lookup"><span data-stu-id="0b166-199">The following code demonstrates how to change the displayed names of two data hierarchies.</span></span>
 
 ```typescript
 await Excel.run(async (context) => {
@@ -282,7 +285,7 @@ await Excel.run(async (context) => {
         .pivotTables.getItem("Farm Sales").dataHierarchies;
     dataHierarchies.load("no-properties-needed");
     await context.sync();
-    
+
     // changing the displayed names of these entries
     dataHierarchies.items[0].name = "Farm Sales";
     dataHierarchies.items[1].name = "Wholesale";
@@ -290,9 +293,9 @@ await Excel.run(async (context) => {
 });
 ```
 
-## <a name="delete-a-pivottable"></a><span data-ttu-id="07f25-199">Excluir uma tabela dinâmica</span><span class="sxs-lookup"><span data-stu-id="07f25-199">Delete a PivotTable</span></span>
+## <a name="delete-a-pivottable"></a><span data-ttu-id="0b166-200">Excluir uma tabela dinâmica</span><span class="sxs-lookup"><span data-stu-id="0b166-200">Delete a PivotTable</span></span>
 
-<span data-ttu-id="07f25-200">As tabelas dinâmicas são excluídas pelo uso de seu nome.</span><span class="sxs-lookup"><span data-stu-id="07f25-200">PivotTables are deleted by using their name.</span></span>
+<span data-ttu-id="0b166-201">As tabelas dinâmicas são excluídas usando seus nomes.</span><span class="sxs-lookup"><span data-stu-id="0b166-201">PivotTables are deleted by using their name.</span></span>
 
 ```typescript
 await Excel.run(async (context) => {
@@ -302,7 +305,7 @@ await Excel.run(async (context) => {
 });
 ```
 
-## <a name="see-also"></a><span data-ttu-id="07f25-201">Confira também</span><span class="sxs-lookup"><span data-stu-id="07f25-201">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0b166-202">Confira também</span><span class="sxs-lookup"><span data-stu-id="0b166-202">See also</span></span>
 
-- [<span data-ttu-id="07f25-202">Conceitos básicos de programação com a API JavaScript do Excel</span><span class="sxs-lookup"><span data-stu-id="07f25-202">Fundamental programming concepts with the Excel JavaScript API</span></span>](excel-add-ins-core-concepts.md)
-- [<span data-ttu-id="07f25-203">Referência da API JavaScript do Excel</span><span class="sxs-lookup"><span data-stu-id="07f25-203">Excel JavaScript API reference</span></span>](https://docs.microsoft.com/javascript/api/excel)
+- [<span data-ttu-id="0b166-203">Conceitos fundamentais de programação com a API JavaScript do Excel</span><span class="sxs-lookup"><span data-stu-id="0b166-203">Fundamental programming concepts with the Excel JavaScript API</span></span>](excel-add-ins-core-concepts.md)
+- [<span data-ttu-id="0b166-204">Referência da API JavaScript do Excel</span><span class="sxs-lookup"><span data-stu-id="0b166-204">Excel JavaScript API Reference</span></span>](/javascript/api/excel)
