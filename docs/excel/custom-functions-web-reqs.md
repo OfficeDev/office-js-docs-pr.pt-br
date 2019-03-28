@@ -1,0 +1,194 @@
+---
+ms.date: 03/21/2019
+description: Solicite, transmita e cancele o fluxo de dados externos para sua pasta de trabalho com funções personalizadas no Excel
+title: Solicitações da Web e outros dados de tratamento com funções personalizadas (prévia)
+localization_priority: Priority
+ms.openlocfilehash: 9256e2aa87ec6d7b314314a1e4bc2b3793f1df5c
+ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "30926636"
+---
+# <a name="receiving-and-handling-data-with-custom-functions"></a><span data-ttu-id="baa89-103">Recebimento e gerenciamento de dados com funções personalizadas</span><span class="sxs-lookup"><span data-stu-id="baa89-103">Receiving and handling data with custom functions</span></span>
+
+<span data-ttu-id="baa89-104">Uma das maneiras pelas quais as funções personalizadas aprimoram o poder do Excel é receber dados de locais diferentes na pasta de trabalho, como a web ou um servidor (por meio de WebSockets).</span><span class="sxs-lookup"><span data-stu-id="baa89-104">One of the ways that custom functions enhance Excel's power is by receiving data from locations other than the workbook, such as the web or a server (through WebSockets).</span></span> <span data-ttu-id="baa89-105">As funções personalizadas podem solicitar dados por meio de XHR e buscar solicitações, bem como transmitir esses dados em tempo real.</span><span class="sxs-lookup"><span data-stu-id="baa89-105">Custom functions can request data through XHR and fetch requests as well as stream this data in real time.</span></span>
+
+<span data-ttu-id="baa89-106">A documentação a seguir ilustra alguns exemplos de solicitações da web, mas para criar uma função de transmissão para você, experimente o [Tutorial de funções personalizadas](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows).</span><span class="sxs-lookup"><span data-stu-id="baa89-106">The documentation below illustrates some samples of web requests, but to build a streaming function for yourself, try the [Custom functions tutorial](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows).</span></span>
+
+## <a name="functions-that-return-data-from-external-sources"></a><span data-ttu-id="baa89-107">Funções que retornam os dados de fontes externas</span><span class="sxs-lookup"><span data-stu-id="baa89-107">Functions that return data from external sources</span></span>
+
+<span data-ttu-id="baa89-108">Se uma função personalizada recupera dados de uma fonte externa como na web, ela deve:</span><span class="sxs-lookup"><span data-stu-id="baa89-108">If a custom function retrieves data from an external source such as the web, it must:</span></span>
+
+1. <span data-ttu-id="baa89-109">Retornar uma Promise do JavaScript para o Excel.</span><span class="sxs-lookup"><span data-stu-id="baa89-109">Return a JavaScript Promise to Excel.</span></span>
+2. <span data-ttu-id="baa89-110">Resolva a promessa com o uso da função retorno de chamada de valor final.</span><span class="sxs-lookup"><span data-stu-id="baa89-110">Resolve the Promise with the final value using the callback function.</span></span>
+
+<span data-ttu-id="baa89-111">É possível solicitar dados externos através de uma API como [ `Fetch` ](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API) ou usando `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/pt-BR/docs/Web/API/XMLHttpRequest), uma API Web padrão que envia solicitações HTTP para interagir com os servidores.</span><span class="sxs-lookup"><span data-stu-id="baa89-111">Within a custom function, you can request external data by using an API like Fetch or by using XmlHttpRequest (XHR), a standard web API that issues HTTP requests to interact with servers.</span></span>
+
+<span data-ttu-id="baa89-112">No tempo de execução das funções personalizadas, o XHR implementa medidas de segurança adicionais solicitando uma [Política de mesma origem](https://developer.mozilla.org/pt-BR/docs/Web/Security/Same-origin_policy) ou um simples [CORS](https://www.w3.org/TR/cors/).</span><span class="sxs-lookup"><span data-stu-id="baa89-112">Within the JavaScript runtime, XHR implements additional security measures by requiring [Same Origin Policy](https://developer.mozilla.org/pt-BR/docs/Web/Security/Same-origin_policy) and simple [CORS](https://www.w3.org/TR/cors/).</span></span>
+
+<span data-ttu-id="baa89-113">Observe que uma implementação CORS simples não pode usar cookies e é compatível apenas com métodos simples (GET, HEAD, POST).</span><span class="sxs-lookup"><span data-stu-id="baa89-113">Note that a simple CORS implementation cannot use cookies and only supports simple methods (GET, HEAD, POST).</span></span> <span data-ttu-id="baa89-114">A CORS simples aceita cabeçalhos simples com nomes de campos `Accept`, `Accept-Language`, `Content-Language`.</span><span class="sxs-lookup"><span data-stu-id="baa89-114">Simple CORS accepts simple headers with field names `Accept`, `Accept-Language`, `Content-Language`.</span></span> <span data-ttu-id="baa89-115">Você também pode usar um cabeçalho de tipo de conteúdo no CORS simples, desde que o tipo de conteúdo seja `application/x-www-form-urlencoded`, `text/plain`, ou `multipart/form-data`.</span><span class="sxs-lookup"><span data-stu-id="baa89-115">You can also use a Content-Type header in simple CORS, provided that the content type is `application/x-www-form-urlencoded`, `text/plain`, or `multipart/form-data`.</span></span>
+
+### <a name="xhr-example"></a><span data-ttu-id="baa89-116">Exemplo de XHR</span><span class="sxs-lookup"><span data-stu-id="baa89-116">XHR example</span></span>
+
+<span data-ttu-id="baa89-117">No código de exemplo a seguir, a função **getTemperature** chama a função sendWebRequest  para obter a temperatura de uma área específica, de acordo com a ID do termômetro.</span><span class="sxs-lookup"><span data-stu-id="baa89-117">In the following code sample, the  function calls the  function to get the temperature of a particular area based on thermometer ID.</span></span> <span data-ttu-id="baa89-118">A função sendWebRequest usa XHR para emitir uma solicitação GET para um ponto de extremidade que fornece os dados.</span><span class="sxs-lookup"><span data-stu-id="baa89-118">The  function uses XHR to issue a  request to an endpoint that can provide the data.</span></span>
+
+```JavaScript
+function getTemperature(thermometerID) {
+  return new Promise(function(setResult) {
+      sendWebRequest(thermometerID, function(data){ 
+          storeLastTemperature(thermometerID, data.temperature);
+          setResult(data.temperature);
+      });
+  });
+}
+
+// Helper method that uses Office's implementation of XMLHttpRequest in the JavaScript runtime for custom functions  
+function sendWebRequest(thermometerID, data) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+           data.temperature = JSON.parse(xhttp.responseText).temperature
+        };
+
+        //set Content-Type to application/text. Application/json is not currently supported with Simple CORS
+        xhttp.setRequestHeader("Content-Type", "application/text");
+        xhttp.open("GET", "https://contoso.com/temperature/" + thermometerID), true)
+        xhttp.send();  
+    }
+}
+
+CustomFunctions.associate("GETTEMPERATURE", getTemperature);
+```
+
+<span data-ttu-id="baa89-119">Para outro exemplo de solicitação XHR com mais contexto, confira a função`getFile` dentro [deste arquivo](https://github.com/OfficeDev/Office-Add-in-JavaScript-FileDownload/blob/master/FileDownloadSampleWeb/Home.js) no repositório Github [Office-Add-in-JavaScript-FileDownload](https://github.com/OfficeDev/Office-Add-in-JavaScript-FileDownload).</span><span class="sxs-lookup"><span data-stu-id="baa89-119">For another sample of an XHR request with more context, see the `getFile` function within [this file](https://github.com/OfficeDev/Office-Add-in-JavaScript-FileDownload/blob/master/FileDownloadSampleWeb/Home.js) in the [Office-Add-in-JavaScript-FileDownload](https://github.com/OfficeDev/Office-Add-in-JavaScript-FileDownload) Github repository.</span></span>
+
+### <a name="fetch-example"></a><span data-ttu-id="baa89-120">Exemplo de busca</span><span class="sxs-lookup"><span data-stu-id="baa89-120">Fetch example</span></span>
+
+<span data-ttu-id="baa89-121">No seguinte exemplo de código, a função stockPriceStream usa um símbolo de cotação da bolsa para acessar o preço de uma ação a cada 1000 milissegundos.</span><span class="sxs-lookup"><span data-stu-id="baa89-121">In the following code sample, the stockPriceStream function uses a stock ticker symbol to get the price of a stock every 1000 milliseconds.</span></span> <span data-ttu-id="baa89-122">Para saber mais sobre este exemplo e obter as JSON acompanhante, confira a [tutorial de funções personalizados](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows#create-a-streaming-asynchronous-custom-function).</span><span class="sxs-lookup"><span data-stu-id="baa89-122">For more details about this sample and to get the accompanying JSON, see the [Custom functions tutorial](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows#create-a-streaming-asynchronous-custom-function).</span></span> 
+
+```JavaScript
+function stockPriceStream(ticker, handler) {
+    var updateFrequency = 1000 /* milliseconds*/;
+    var isPending = false;
+
+    var timer = setInterval(function() {
+        // If there is already a pending request, skip this iteration:
+        if (isPending) {
+            return;
+        }
+
+        var url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
+        isPending = true;
+
+        fetch(url)
+            .then(function(response) {
+                return response.text();
+            })
+            .then(function(text) {
+                handler.setResult(parseFloat(text));
+            })
+            .catch(function(error) {
+                handler.setResult(error);
+            })
+            .then(function() {
+                isPending = false;
+            });
+    }, updateFrequency);
+
+    handler.onCanceled = () => {
+        clearInterval(timer);
+    };
+}
+
+CustomFunctions.associate("STOCKPRICESTREAM", stockPriceStream);
+```
+
+## <a name="receiving-data-via-websockets"></a><span data-ttu-id="baa89-123">Como receber dados por meio de WebSockets</span><span class="sxs-lookup"><span data-stu-id="baa89-123">Receiving data via WebSockets</span></span>
+
+<span data-ttu-id="baa89-124">Em uma função personalizada, é possível usar WebSockets para trocar dados por meio de uma conexão persistente com um servidor.</span><span class="sxs-lookup"><span data-stu-id="baa89-124">Within a custom function, you can use WebSockets to exchange data over a persistent connection with a server.</span></span> <span data-ttu-id="baa89-125">Usando WebSockets, a função personalizada pode abrir uma conexão com um servidor e, em seguida, receber mensagens do servidor automaticamente, quando determinados eventos ocorrerem, sem precisar consultar explicitamente os dados do servidor.</span><span class="sxs-lookup"><span data-stu-id="baa89-125">By using WebSockets, your custom function can open a connection with a server and then automatically receive messages from the server when certain events occur, without having to explicitly poll the server for data.</span></span>
+
+### <a name="websockets-example"></a><span data-ttu-id="baa89-126">Exemplo de WebSockets</span><span class="sxs-lookup"><span data-stu-id="baa89-126">WebSockets example</span></span>
+
+<span data-ttu-id="baa89-127">O código de exemplo a seguir estabelece uma conexão WebSocket e registra cada mensagem de entrada do servidor.</span><span class="sxs-lookup"><span data-stu-id="baa89-127">The following code sample establishes a  connection and then logs each incoming message from the server.</span></span>
+
+```JavaScript
+var ws = new WebSocket('wss://bundles.office.com');
+
+ws.onmessage(message) {
+    console.log(`Recieved: ${message}`);
+}
+
+ws.onerror(error){
+    console.err(`Failed: ${error}`);
+}
+```
+
+## <a name="streaming-functions"></a><span data-ttu-id="baa89-128">Funções Streaming</span><span class="sxs-lookup"><span data-stu-id="baa89-128">Streaming functions</span></span>
+
+<span data-ttu-id="baa89-129">Funções personalizadas de streaming permitem a saída de dados das células repetidamente ao longo do tempo, sem a necessidade de um usuário explicitamente solicitar a atualização de dados.</span><span class="sxs-lookup"><span data-stu-id="baa89-129">Streaming custom functions enable you to output data to cells repeatedly over time, without requiring a user to explicitly request data refresh.</span></span> <span data-ttu-id="baa89-130">O exemplo a seguir é uma função personalizada que adiciona um número ao resultado a cada segundo.</span><span class="sxs-lookup"><span data-stu-id="baa89-130">The following code sample is a custom function that adds a number to the result every second.</span></span> <span data-ttu-id="baa89-131">Observe o seguinte sobre este código:</span><span class="sxs-lookup"><span data-stu-id="baa89-131">Note the following about this code:</span></span>
+
+- <span data-ttu-id="baa89-132">Cada novo valor usando o Excel automaticamente exibirá o retorno de chamada setResult.</span><span class="sxs-lookup"><span data-stu-id="baa89-132">Excel displays each new value automatically using the  callback.</span></span>
+- <span data-ttu-id="baa89-133">O segundo parâmetro de entrada, identificador, não é exibido para os usuários finais no Excel quando eles selecionam a função no menu de preenchimento automático.</span><span class="sxs-lookup"><span data-stu-id="baa89-133">The second input parameter, , is not displayed to end users in Excel when they select the function from the autocomplete menu.</span></span>
+- <span data-ttu-id="baa89-134">O retorno de chamada onCanceled define a função que é executada quando a função é cancelada.</span><span class="sxs-lookup"><span data-stu-id="baa89-134">The  callback defines the function that executes when the function is canceled.</span></span> <span data-ttu-id="baa89-135">Implemente um identificador de cancelamento assim para qualquer função de streaming.</span><span class="sxs-lookup"><span data-stu-id="baa89-135">You must implement a cancellation handler like this for any streaming function.</span></span> <span data-ttu-id="baa89-136">Para saber mais, confira [Cancelar uma função](#canceling-a-function).</span><span class="sxs-lookup"><span data-stu-id="baa89-136">For more information, see [Canceling a function](#canceling-a-function).</span></span>
+
+```JavaScript
+function incrementValue(increment, handler){
+  var result = 0;
+  setInterval(function(){
+    result += increment;
+    handler.setResult(result);
+  }, 1000);
+
+  handler.onCanceled = function(){
+    clearInterval(timer);
+  }
+}
+
+CustomFunctions.associate("INCREMENTVALUE", incrementValue);
+```
+
+<span data-ttu-id="baa89-137">Quando você especifica os metadados para uma função streaming no arquivo de metadados JSON, você deve definir as propriedades “cancelable”. verdadeiro e “stream”. verdadeiro dentro do objeto opções, conforme mostrado no exemplo a seguir. </span><span class="sxs-lookup"><span data-stu-id="baa89-137">When you specify metadata for a streaming function in the JSON metadata file, you must set the properties  and  within the  object, as shown in the following example.</span></span>
+
+```JSON
+{
+  "id": "INCREMENT",
+  "name": "INCREMENT",
+  "description": "Periodically increment a value",
+  "helpUrl": "http://www.contoso.com",
+  "result": {
+    "type": "number",
+    "dimensionality": "scalar"
+  },
+  "parameters": [
+    {
+      "name": "increment",
+      "description": "Amount to increment",
+      "type": "number",
+      "dimensionality": "scalar"
+    }
+  ],
+  "options": {
+    "cancelable": true,
+    "stream": true
+  }
+}
+```
+
+## <a name="canceling-a-function"></a><span data-ttu-id="baa89-138">Cancelar uma função</span><span class="sxs-lookup"><span data-stu-id="baa89-138">Canceling a function</span></span>
+
+<span data-ttu-id="baa89-139">Em algumas situações, talvez seja necessário cancelar a execução de uma função personalizada de streaming para reduzir o consumo de banda larga, memória de trabalho e carregamento de CPU.</span><span class="sxs-lookup"><span data-stu-id="baa89-139">In some situations, you may need to cancel the execution of a streaming custom function to reduce its bandwidth consumption, working memory, and CPU load.</span></span> <span data-ttu-id="baa89-140">O Excel cancela a execução de uma função nas seguintes situações:</span><span class="sxs-lookup"><span data-stu-id="baa89-140">Excel cancels the execution of a function in the following situations:</span></span>
+
+- <span data-ttu-id="baa89-141">Quando o usuário edita ou exclui uma célula que faz referência à função.</span><span class="sxs-lookup"><span data-stu-id="baa89-141">When the user edits or deletes a cell that references the function.</span></span>
+- <span data-ttu-id="baa89-142">Quando é alterado um dos argumentos (entradas) para a função.</span><span class="sxs-lookup"><span data-stu-id="baa89-142">When one of the arguments (inputs) for the function changes.</span></span> <span data-ttu-id="baa89-143">Nesse caso, uma nova chamada de função é disparada, seguindo o cancelamento.</span><span class="sxs-lookup"><span data-stu-id="baa89-143">In this case, a new function call is triggered following the cancellation.</span></span>
+- <span data-ttu-id="baa89-144">Quando o usuário aciona manualmente um recálculo.</span><span class="sxs-lookup"><span data-stu-id="baa89-144">When the user triggers recalculation manually.</span></span> <span data-ttu-id="baa89-145">Nesse caso, uma nova chamada de função é disparada, seguindo o cancelamento.</span><span class="sxs-lookup"><span data-stu-id="baa89-145">In this case, a new function call is triggered following the cancellation.</span></span>
+
+<span data-ttu-id="baa89-146">Para tornar uma função possível de ser cancelada, implemente um identificador de código de função para informar o que fazer quando ela for cancelada.</span><span class="sxs-lookup"><span data-stu-id="baa89-146">To make a function cancelable, implement a handler in your function's code to tell it what to do when it is canceled.</span></span> <span data-ttu-id="baa89-147">Além disso, especifique a propriedade `"cancelable": true` contida no objeto opções nos metadados JSON que descreve a função.</span><span class="sxs-lookup"><span data-stu-id="baa89-147">Additionally, specify specify the property `"cancelable": true` within the options object in the JSON metadata that describes the function.</span></span> <span data-ttu-id="baa89-148">Amostras de código na seção anterior neste artigo fornecem um exemplo dessas técnicas.</span><span class="sxs-lookup"><span data-stu-id="baa89-148">The code samples in the previous section of this article provide an example of these techniques.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="baa89-149">Confira também</span><span class="sxs-lookup"><span data-stu-id="baa89-149">See also</span></span>
+
+* [<span data-ttu-id="baa89-150">Tutorial de funções personalizadas do Excel</span><span class="sxs-lookup"><span data-stu-id="baa89-150">Excel custom functions tutorial</span></span>](../tutorials/excel-tutorial-create-custom-functions.md)
+* [<span data-ttu-id="baa89-151">Metadados de funções personalizadas</span><span class="sxs-lookup"><span data-stu-id="baa89-151">Custom functions metadata</span></span>](custom-functions-json.md)
+* [<span data-ttu-id="baa89-152">Tempo de execução de funções personalizadas do Excel</span><span class="sxs-lookup"><span data-stu-id="baa89-152">Runtime for Excel custom functions</span></span>](custom-functions-runtime.md)
+* <span data-ttu-id="baa89-153">[Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).</span><span class="sxs-lookup"><span data-stu-id="baa89-153">[Custom functions best practices](custom-functions-best-practices.md)</span></span>
+* [<span data-ttu-id="baa89-154">Log de alteração de funções personalizadas</span><span class="sxs-lookup"><span data-stu-id="baa89-154">Custom functions changelog</span></span>](custom-functions-changelog.md)
