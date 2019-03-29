@@ -2,13 +2,13 @@
 
 1. Navegue até [https://apps.dev.microsoft.com/](https://apps.dev.microsoft.com).
 
-1. Entre com as credenciais de ***administrador*** no locatário do Office 365. Por exemplo, MyName@contoso.onmicrosoft.com
+1. Entre com as credenciais de ***administrador*** em sua locação do Office 365. Por exemplo, MeuNome@contoso.onmicrosoft.com
 
 1. Clique em **Adicionar um aplicativo**.
 
-1. Quando solicitado, insira **$ADD-IN-NAME$** como o nome do aplicativo e pressione **Criar aplicativo**.
+1. Quando solicitado, insira **$ADD-IN-NAME$** como nome do aplicativo e, em seguida, pressione **Criar aplicativo**.
 
-1. Quando a página de configuração do aplicativo abrir, copie o **Id do Aplicativo** e salve-o. Você o usará em um procedimento posterior.
+1. Quando a página de configuração do aplicativo abrir, copie a **ID do aplicativo** e salve-a. Você a usará em um procedimento posterior.
 
     > [!NOTE]
     > Essa ID é o valor "audience" (público) quando outros aplicativos, como o aplicativo host do Office (por exemplo, PowerPoint, Word, Excel), buscam o acesso autorizado ao aplicativo. Também é a "ID do cliente" do aplicativo quando ela, por sua vez, busca o acesso autorizado ao Microsoft Graph.
@@ -17,15 +17,15 @@
 
 1. Na seção **Plataformas**, clique em **Adicionar plataforma**.
 
-1. Na caixa de diálogo exibida, selecione **Web API**.
+1. Na caixa de diálogo que abrir, selecione **API Web**.
 
-1. A **URI da ID do aplicativo** foi gerada do formulário “api: // $ App ID GUID $”. Insira o **$FQDN-WITHOUT-PROTOCOL$** (com uma barra "/" anexada ao final) entre as barras duplas e o GUID. A ID inteira deve ter o formulário `api://$FQDN-WITHOUT-PROTOCOL$/$App ID GUID$`; por exemplo `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
-
-    > [!NOTE]
-    > Se você receber um erro informando que o domínio já tem um dono, mas você é o proprietário, siga o procedimento em [Início rápido: adicionar um nome de domínio personalizado ao Active Directory do Azure](https://docs.microsoft.com/azure/active-directory/add-custom-domain) para registrá-lo e repita este passo. (Esse erro também pode ocorrer se você não estiver conectado com as credenciais de um administrador no locatário do Office 365. Veja a etapa 2. Deve sair e entrar novamente com credenciais de administrador e repetir o processo da etapa 3.)
+1. Uma **URI da ID do aplicativo** foi gerado na forma “api://$App ID GUID$”. Inserir o **$FQDN-WITHOUT-PROTOCOL$** (com uma barra "/" acrescentada ao final) entre as duas barras e o GUID. A ID inteira deve ter o formulário `api://$FQDN-WITHOUT-PROTOCOL$/$App ID GUID$`; por exemplo `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
 
     > [!NOTE]
-    > A parte do domínio do nome do **Escopo** logo abaixo do **URI da ID do aplicativo** mudará automaticamente, com `/access_as_user` anexado ao final; por exemplo, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`.
+    > Se você receber um erro dizendo que o domínio já pertence a alguém, mas você é o proprietário, siga o procedimento em [Início Rápido: Adicionar um nome de domínio personalizado ao Azure Active Directory](/azure/active-directory/add-custom-domain) para registrá-lo e, em seguida, repita esta etapa. (Esse erro também poderá ocorrer se você não estiver conectado com as credenciais de administrador no locatário do Office 365. (Confira a etapa 2.) Saia e entre novamente com credenciais de administrador e repita o processo da etapa 3.)
+
+    > [!NOTE]
+    > A parte do domínio do nome do **Escopo** logo abaixo da **URI da ID do Aplicativo** será automaticamente alterada para que haja correspondência, com `/access_as_user` o acrescentado ao final, por exemplo, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`.
 
 1. Na seção **Aplicativos pré-autorizados**, você identifica os aplicativos que deseja autorizar para o aplicativo da Web do seu suplemento. Cada uma das seguintes IDs precisa ser pré-autorizada. Cada vez que você inserir uma, uma nova caixa de texto vazia aparece. (Insira apenas o GUID.)
     * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
@@ -38,9 +38,9 @@
 
 1. Na nova seção **Web** em **Plataformas**, insira o seguinte como um **URL de redirecionamento**: `https://$FQDN-WITHOUT-PROTOCOL$`.
 
-1. Role para baixo até a seção **Permissões do Microsoft Graph**, subseção **Permissões Delegadas**. Use o botão **Adicionar** para abrir a caixa de diálogo **Selecionar Permissões**.
+1. Role para baixo até a seção **Permissões do Microsoft Graph**, na subseção **Permissões Delegadas**. Use o botão **Adicionar** para abrir a caixa de diálogo **Selecionar Permissões**.
 
-1. Na caixa de diálogo, marque as caixas para `profile` e quaisquer outras permissões do AAD e do Microsoft Graph que seu suplemento precise. Veja alguns exemplos:
+1. Na caixa de diálogo, marque as caixas `profile` e as outras AAD e as permissões do Microsoft Graph que o suplemento precisa. Estes são alguns exemplos:
 
     * Files.Read.All
     * offline_access
@@ -48,8 +48,8 @@
     * perfil
 
     > [!NOTE]
-    > A permissão `User.Read` já pode estar listada por padrão. É uma boa prática não solicitar permissões que não sejam necessárias, portanto, recomendamos que você desmarque a caixa para essa permissão se o seu suplemento realmente não precisar dela.
+    > A permissão `User.Read` pode já estar listada por padrão. É uma boa prática não pedir permissões desnecessárias, por isso recomendamos desmarcar a caixa para essa permissão se o suplemento não precisar dela.
 
-1. Na parte inferior do diálogo, clique em **OK**.
+1. Na parte inferior da caixa de diálogo, clique em **OK**.
 
-1. Na parte inferior da página de registro, clique em **Salvar**.
+1. Clique em **Salvar** na parte inferior da página de registro.
