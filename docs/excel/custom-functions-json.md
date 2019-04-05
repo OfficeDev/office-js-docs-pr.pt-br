@@ -1,22 +1,31 @@
 ---
-ms.date: 01/08/2019
+ms.date: 03/29/2019
 description: Defina os metadados de funções personalizadas no Excel.
 title: Metadados de funções personalizadas no Excel (visualização)
 localization_priority: Normal
-ms.openlocfilehash: 43ec436d15d118346bb04dcd4d16f5eb180ecbd3
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 28a9a0207f7439af164eb9ca7c4b9ed9e966b3ed
+ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30872085"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "31477548"
 ---
 # <a name="custom-functions-metadata-preview"></a>Metadados de funções personalizadas (versão prévia)
 
-Quando você define [funções personalizadas](custom-functions-overview.md) dentro do suplemento do Excel, seu projeto de suplemento deve incluir um arquivo de metadados JSON que fornece as informações exigidas pelo Excel para registrar funções personalizadas e disponibilizá-las para os usuários finais. Este artigo descreve o formato do arquivo de metadados JSON.
+Quando você define [funções personalizadas](custom-functions-overview.md) dentro de seu suplemento do Excel, o projeto do suplemento inclui um arquivo de metadados JSON que fornece as informações que o Excel requer para registrar as funções personalizadas e torná-las disponíveis para os usuários finais. Este arquivo é gerado:
+
+- por você, em um arquivo JSON manuscrito
+- nos comentários do JSDoc inseridos no início da função
+
+As funções personalizadas são registradas quando o usuário executa o suplemento pela primeira vez e depois que eles estão disponíveis para o mesmo usuário em todas as pastas de trabalho.
+
+Este artigo descreve o formato do arquivo de metadados JSON, supondo que você o esteja escrevendo à mão. Para obter informações sobre a geração de arquivo JSON de comentário JSDoc, consulte [GENERATE JSON Metadata for Custom Functions](custom-functions-json-autogeneration.md).
 
 Para saber mais sobre outros arquivos que você deve incluir em seu projeto de suplemento para habilitar funções personalizadas, confira [Criar funções personalizadas no Excel](custom-functions-overview.md).
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
+> Configurações do servidor no servidor que hospeda o arquivo JSON deve ter o [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) habilitado para funções personalizadas funcionarem corretamente no Excel Online.
 
 ## <a name="example-metadata"></a>Exemplo de metadados
 
@@ -104,7 +113,7 @@ O exemplo a seguir mostra o conteúdo de um arquivo de metadados JSON para um su
 ```
 
 > [!NOTE]
-> Um exemplo de arquivo JSON completo está disponível no repositório GitHub [OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/config/customfunctions.json).
+> Um exemplo de arquivo JSON completo está disponível no repositório GitHub [OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/src/functions/functions.json).
 
 ## <a name="functions"></a>functions 
 
@@ -158,6 +167,6 @@ O objeto `result` que define o tipo de informação que é retornado pela funç�
 
 * [Criar funções personalizadas no Excel](custom-functions-overview.md)
 * [Tempo de execução de funções personalizadas do Excel](custom-functions-runtime.md)
-* [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
+* [Práticas recomendadas de funções personalizadas.](custom-functions-best-practices.md)
 * [Log de alteração de funções personalizadas](custom-functions-changelog.md)
 * [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)

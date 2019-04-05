@@ -5,12 +5,12 @@ ms.date: 03/19/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 328d4da7a4dfcc2098f7c5425f84b851bd9dd9d6
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 76f4d88b9da39a4d71927982836ee061b329a9b3
+ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870671"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "31477569"
 ---
 # <a name="tutorial-create-custom-functions-in-excel-preview"></a>Tutorial: Criar funções personalizadas no Excel (visualização)
 
@@ -54,8 +54,8 @@ Neste tutorial, você vai:
     yo office
     ```
     
-    * Escolha o tipo de projeto:`Excel Custom Functions Add-in project (...)`
-    * Escolha um tipo de script: `JavaScript`
+    * Escolha o tipo de projeto: `Excel Custom Functions Add-in project (...)`
+    * Escolha o tipo de script: `JavaScript`
     * Qual será o nome do suplemento? `stock-ticker`
     
     ![O gerador Yeoman para suplementos do Office solicita funções personalizadas](../images/12-10-fork-cf-pic.jpg)
@@ -78,12 +78,12 @@ Neste tutorial, você vai:
 
 5. Inicie o servidor local da web, que é executado no Node.js. Você pode experimentar o suplemento função personalizada no Excel para Windows ou o Excel Online.
 
-# <a name="excel-for-windowstabexcel-windows"></a>[Excel para Windows](#tab/excel-windows)
+# [<a name="excel-for-windows"></a>Excel para Windows](#tab/excel-windows)
 
 Execute o seguinte comando.
 
 ```
-npm run start
+npm start desktop
 ```
 
 Esse comando inicia o servidor web e sideloads seu suplemento da função personalizada no Excel para Windows.
@@ -91,12 +91,12 @@ Esse comando inicia o servidor web e sideloads seu suplemento da função person
 > [!NOTE]
 > Se o suplemento não carregar, verifique se você concluiu a etapa 3 corretamente. Você também pode habilitar o **[log de tempo de execução](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** para solucionar problemas com o arquivo de manifesto XML do seu suplemento, bem como qualquer problema de instalação ou de tempo de execução. O log de `console.log` tempo de execução grava instruções em um arquivo de log para ajudá-lo a encontrar e corrigir problemas.
 
-# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
+# [<a name="excel-online"></a>Excel Online](#tab/excel-online)
 
 Execute o seguinte comando.
 
 ```
-npm run start-web
+npm start web
 ```
 
 Esse comando inicia o servidor web. Faça o seguinte para sideload o seu suplemento.
@@ -116,7 +116,7 @@ Esse comando inicia o servidor web. Faça o seguinte para sideload o seu supleme
     
 ## <a name="try-out-a-prebuilt-custom-function"></a>Experimente uma função personalizada predefinida
 
-O projeto de funções personalizados criados alrady tem duas funções personalizadas predefinidas chamadas INCREMENTO e ADICIONAR. O código para essas funções predefinidas está no arquivo **src/customfunctions.js**. O arquivo **./manifest.xml** especifica que todas as funções personalizadas pertencem a `CONTOSO` namespace. Você usará o namespace CONTOSO para acessar as funções personalizadas no Excel.
+O projeto de funções personalizados criados alrady tem duas funções personalizadas predefinidas chamadas INCREMENTO e ADICIONAR. O código dessas funções predefinidas está no arquivo **src/Functions/functions. js** . O arquivo **./manifest.xml** especifica que todas as funções personalizadas pertencem a `CONTOSO` namespace. Você usará o namespace CONTOSO para acessar as funções personalizadas no Excel.
 
 Em seguida você vai experimentar a função personalizada `ADD` preenchendo as seguintes etapas:
 
@@ -130,9 +130,9 @@ As `ADD` função personalizada calcula a soma dos dois números que você forne
 
 Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio de funções personalizadas. Em seguida, você criará uma função personalizada chamada `stockPrice` que recebe uma citação ações de uma Web API e retorna o resultado para a célula de uma planilha. Esta função personalizada usa IEX Trading API, que é gratuito e não requer autenticação.
 
-1. No projeto**cotações** localize o arquivo **src/customfunctions.js** e abra-o no seu editor de código.
+1. No projeto de **Cotações de ações** , localize o arquivo **src/Functions/functions. js** e abra-o no editor de código.
 
-2. Em **customfunctions.js**, localize a função `increment` e adicione o seguinte código imediatamente após essa função.
+2. Em **funções. js**, localize a `increment` função e adicione o seguinte código imediatamente após essa função.
 
     ```js
     function stockPrice(ticker) {
@@ -153,7 +153,7 @@ Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio d
 > In the January Insiders 1901 Build, there is a bug preventing fetch calls from executing which will result in #VALUE!.
 > To workaround this please use the [XMLHTTPRequest API](/office/dev/add-ins/excel/custom-functions-runtime#requesting-external-data) to make the web request.
 
-3. In **customfunctions.js**, locate the line `CustomFunctions.associate("INCREMENT", increment);`. Add the following line of code immediately after that line, and save the file.
+3. In **functions.js**, locate the line `CustomFunctions.associate("INCREMENT", increment);`. Add the following line of code immediately after that line, and save the file.
 
     ```js
     CustomFunctions.associate("STOCKPRICE", stockprice);
@@ -164,7 +164,7 @@ Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio d
     Antes que o Excel possa usar a função personalizada, você precisa descrever usando metadados. Você precisa definir a `id` usada no método `associate` anteriormente, além de outros metadados.
 
 
-4. Abra o arquivo **config/customfunctions.json**. Adicione o seguinte objeto JSON à matriz 'funções' e salve o arquivo.
+4. Abra o arquivo **src/Functions/functions. JSON** . Adicione o seguinte objeto JSON à matriz 'funções' e salve o arquivo.
 
     ```JSON
     {
@@ -191,18 +191,18 @@ Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio d
 
 5. Registre novamente o suplemento no Excel para que a nova função esteja disponível. 
 
-# <a name="excel-for-windowstabexcel-windows"></a>[Excel para Windows](#tab/excel-windows)
+# [<a name="excel-for-windows"></a>Excel para Windows](#tab/excel-windows)
 
 1. Feche o Excel e abra novamente o Excel.
 
 2. No Excel, escolha a guia**Inserir** e, em seguida, escolha a seta para baixo localizada à direita de **Meus Suplementos**.  ![ Inserir faixa de opções no Excel para Windows com a seta Meus complementos realçada](../images/excel-cf-register-add-in-1b.png)
 
 3. Na lista de suplementos disponíveis, localize a seção**Suplementos do desenvolvedor** e selecione o suplemento **cotações** para registrá-lo.
-    ![Insira a faixa de opções no Excel para Windows com o suplemento Funções Personalizadas do Excel realçado na minha lista de suplementos](../images/excel-cf-register-add-in-2.png)
+    ![Inserir faixa de opções no Excel para Windows com o suplemento Funções Personalizadas do Excel realçado na minha lista de suplementos](../images/excel-cf-register-add-in-2.png)
 
-# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
+# [<a name="excel-online"></a>Excel Online](#tab/excel-online)
 
-1. No Excel Online, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.  ![Insira a faixa de opções no Excel Online com o ícone Meus Suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
+1. No Excel Online, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.  ![Inserir faixa de opções no Excel Online com o ícone Meus Suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
 
 2. Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**. 
 
@@ -220,7 +220,7 @@ Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio d
 
 A `stockPrice` função que você acabou de criar retorna o preço de uma ação em um momento específico, mas os preços das ações estão sempre mudando. Em seguida, você criará uma função personalizada chamada `stockPriceStream` esse é o preço de uma ação a cada 1000 milissegundos.
 
-1. No projeto**cotações**, adicione o código a seguir **src/customfunctions.js** e salve o arquivo.
+1. No projeto de **Cotações de ações** , adicione o seguinte código para **src/Functions/functions. js** e salve o arquivo.
 
     ```js
     function stockPriceStream(ticker, handler) {
@@ -261,7 +261,7 @@ A `stockPrice` função que você acabou de criar retorna o preço de uma ação
     
     Antes que o Excel possa usar a função personalizada, você precisa descrever usando metadados.
     
-2. No projeto **cotações** adicione o seguinte objeto a `functions` matriz dentro do arquivo **config/customfunctions.json** e salve o arquivo.
+2. No projeto de **Cotações de ações,** adicione o seguinte objeto à `functions` matriz no arquivo **src/Functions/functions. JSON** e salve o arquivo.
     
     ```json
     { 
@@ -288,22 +288,22 @@ A `stockPrice` função que você acabou de criar retorna o preço de uma ação
     }
     ```
 
-    Este JSON descreve a função `stockPriceStream`. Para qualquer função streaming, a propriedade `stream` e a propriedade `cancelable` devem ser definidas como `true` dentro do objeto `options`, como mostra este exemplo código.
+    Este JSON descreve a `stockPriceStream` função. Para qualquer função streaming, a propriedade `stream` e a propriedade `cancelable` devem ser definidas como `true` dentro do objeto `options`, como mostra este exemplo código.
 
 3. Registre novamente o suplemento no Excel para que a nova função esteja disponível.
 
-# <a name="excel-for-windowstabexcel-windows"></a>[Excel para Windows](#tab/excel-windows)
+# [<a name="excel-for-windows"></a>Excel para Windows](#tab/excel-windows)
 
 1. Feche o Excel e abra novamente o Excel.
 
 2. No Excel, escolha a guia**Inserir** e, em seguida, escolha a seta para baixo localizada à direita de **Meus Suplementos**.  ![ Inserir faixa de opções no Excel para Windows com a seta Meus complementos realçada](../images/excel-cf-register-add-in-1b.png)
 
 3. Na lista de suplementos disponíveis, localize a seção**Suplementos do desenvolvedor** e selecione o suplemento **cotações** para registrá-lo.
-    ![Insira a faixa de opções no Excel para Windows com o suplemento Funções Personalizadas do Excel realçado na minha lista de suplementos](../images/excel-cf-register-add-in-2.png)
+    ![Inserir faixa de opções no Excel para Windows com o suplemento Funções Personalizadas do Excel realçado na minha lista de suplementos](../images/excel-cf-register-add-in-2.png)
 
-# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
+# [<a name="excel-online"></a>Excel Online](#tab/excel-online)
 
-1. No Excel Online, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.  ![Insira a faixa de opções no Excel Online com o ícone Meus Suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
+1. No Excel Online, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.  ![Inserir faixa de opções no Excel Online com o ícone Meus Suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
 
 2. Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**.
 
@@ -317,10 +317,9 @@ A `stockPrice` função que você acabou de criar retorna o preço de uma ação
 <li>Agora, vamos experimentar a nova função. Na célula <strong>C1</strong>, digite o texto <strong>= da CONTOSO. STOCKPRICESTREAM("msft")</strong> e pressione enter. Desde que o mercado de ações esteja aberto, você verá que o resultado na célula <strong>C1</strong> é constantemente atualizado para refletir o preço em tempo uma ação das ações da Microsoft.</li>
 </ol>
 
-
 ## <a name="next-steps"></a>Próximas etapas
 
-Parabéns! Neste tutorial, você criou um novo projeto de funções personalizadas, experimentou uma função predefinida, criou uma função personalizada que solicita dados da Web e criou uma função personalizada que transmite dados em tempo real da Web. Para saber mais sobre funções personalizadas no Excel, prossiga para o seguinte artigo:
+Parabéns! Neste tutorial, você criou um novo projeto de funções personalizadas, experimentou uma função predefinida, criou uma função personalizada que solicita dados da Web e criou uma função personalizada que transmite dados em tempo real da Web. Você também pode experimentar a depuração dessa função usando [as instruções de depuração da função personalizada](../excel/custom-functions-debugging.md). Para saber mais sobre funções personalizadas no Excel, prossiga para o seguinte artigo:
 
 > [!div class="nextstepaction"]
 > [Criar funções personalizadas no Excel](../excel/custom-functions-overview.md)

@@ -3,12 +3,12 @@ ms.date: 01/08/2019
 description: Saiba mais sobre as práticas recomendadas para o desenvolvimento de funções personalizadas para Excel.
 title: Práticas recomendadas para funções personalizadas (versão prévia)
 localization_priority: Normal
-ms.openlocfilehash: ae04169044336f7e42d341c1e904090e55d568af
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 4efcd0ba5efb0dc7450192694e8f0750de43b8a8
+ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871343"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "31477541"
 ---
 # <a name="custom-functions-best-practices-preview"></a>Práticas recomendadas para funções personalizadas (versão prévia)
 
@@ -24,26 +24,9 @@ Este artigo descreve as práticas recomendadas para o desenvolvimento de funçõ
 
 3. Para relatar problemas sobre este método de solução de problemas, envie comentários à equipe de funções personalizadas do Excel. Para fazer isso, selecione **Arquivo | Comentários | Enviar um Rosto Triste**. Enviando um Rosto Triste, você fornece os registros necessários para entendermos o problema que você está enfrentando.
 
-## <a name="debugging"></a>Depuração
-
-Atualmente, o método ideal para depuração de funções personalizadas do Excel consiste primeiro em [sideload](../testing/sideload-office-add-ins-for-testing.md) o suplemento no **Excel Online**. Em seguida, para depurar as funções personalizadas, use a [ferramenta de depuração nativa F12 no navegador](../testing/debug-add-ins-in-office-online.md), associado às seguintes técnicas:
-
-- Use as instruções `console.log` no código das funções personalizadas para enviar saída ao console em tempo real.
-
-- Use as instruções `debugger;` no código das funções personalizadas para especificar pontos de interrupção, onde a execução será pausada quando a janela F12 for aberta. Por exemplo, se a função a seguir for executada enquanto a janela F12 estiver aberta, a execução será pausada na instrução `debugger;`, o que permite inspecionar manualmente os valores dos parâmetros antes que a função retorne. A instrução `debugger;` não afeta o Excel Online quando a janela F12 não está aberta. Atualmente, a instrução `debugger;` não afeta o Excel para Windows.
-
-    ```js
-    function add(first, second){
-      debugger;
-      return first + second;
-    }
-    ```
-
-Se o suplemento não for devidamente registrado, [ verifique se os certificados SSL estão configurados corretamente ](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) para o servidor Web que hospeda o aplicativo do suplemento.
-
 ## <a name="associating-function-names-with-json-metadata"></a>Associar os nomes de função com metadados JSON
 
-Conforme descrito no artigo [visão geral de funções personalizados](custom-functions-overview.md), um projeto de funções personalizados deve incluir um arquivo JSON de metadados e um arquivo de script (JavaScript ou TypeScript) para formar uma função completa. Para a função funcionar corretamente, será preciso associar o nome de função no arquivo de script à id listada no arquivo JSON. Esse processo é chamado de associação. Anote para incluir associações no final dos seus arquivos de código JavaScript; Caso contrário, as funções não funcionarão.
+Conforme descrito no artigo [visão geral de funções personalizados](custom-functions-overview.md), um projeto de funções personalizados deve incluir um arquivo JSON de metadados e um arquivo de script (JavaScript ou TypeScript) para formar uma função completa. Para que uma função funcione corretamente, você precisa associar a ID à implementação do JavaScript. Verifique se há uma associação, caso contrário, a função não será chamada.
 
 O exemplo a seguir mostra como fazer essa associação. A amostra define a função personalizada `add` e associa com o objeto no arquivo de metadados JSON onde o valor da `id` propriedade é **adicionar**.
 
@@ -58,8 +41,6 @@ CustomFunctions.associate("ADD", add);
 Lembre-se das seguintes práticas recomendadas quando criar funções personalizadas no arquivo JavaScript e especificar as informações correspondentes no arquivo de metadados JSON.
 
 * Use somente letras maiúsculas de uma função `name` e `id` no arquivo de metadados JSON. Não use uma combinação de casos ou somente letras minúsculas. Nesse caso, você pode acabar com dois valores que apenas variam por caso, o que causará a substituição não intencional de suas funções. Por exemplo, um objeto de função com uma `id` valor **adicionar** pode ser substituído pela declaração mais tarde no arquivo de objeto de função com uma `id` valor de **adicionar**. Além disso, a propriedade `name` define o nome da função que os usuários finais verão no Excel. O uso de letras maiúsculas para o nome de cada função personalizada fornece uma experiência consistente aos usuários finais do Excel, onde todos os nomes de funções internos são escritos em maiúsculas.
-
-* No entanto, não é necessário colocar em maiúscula a função `name` quando associar. Por exemplo, `CustomFunctions.associate("add", add)` é equivalente a `CustomFunctions.associate("ADD", add)`.
 
 * No arquivo de metadados JSON, verifique se o valor de cada propriedade `id` contém apenas caracteres alfanuméricos e pontos.
 
