@@ -212,7 +212,7 @@ Depois de converter os dados para Base64, você pode transmiti-los para um servi
 Adicione o seguinte código para enviar uma fatia para um serviço Web.
 
 > [!NOTE]
-> Este código envia um arquivo do PowerPoint ou do Word para o servidor Web em várias fatias. O serviço ou servidor Web deve compilar cada fatia individual em um único arquivo .pptx antes de executar qualquer manipulações nele.
+> Este código envia um arquivo do PowerPoint ou Word para o servidor Web em várias fatias. O servidor Web ou serviço deve acrescentar cada fatia individual em um único arquivo e, em seguida, salvá-lo como um arquivo. pptx ou. docx, antes de poder executar qualquer manipulação nele.
 
 ```js
 function sendSlice(slice, state) {
