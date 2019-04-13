@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox.item - conjunto de requisitos 1.5
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/12/2019
 localization_priority: Priority
-ms.openlocfilehash: c31deaf3fad0fbfbf4075d85c422a05a418707de
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 2f9394751180296d876d8c577d68adc1b5abb692
+ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871784"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "31838575"
 ---
 # <a name="item"></a>item
 
@@ -31,7 +31,7 @@ O namespace `item` é usado para acessar a mensagem, a solicitação de reunião
 | [attachments](#attachments-arrayattachmentdetails) | Membro |
 | [bcc](#bcc-recipients) | Membro |
 | [body](#body-body) | Membro |
-| [cc](#cc-arrayemailaddressdetails) | Membro |
+| [cc](#cc-arrayemailaddressdetailsrecipients) | Membro |
 | [conversationId](#nullable-conversationid-string) | Membro |
 | [dateTimeCreated](#datetimecreated-date) | Membro |
 | [dateTimeModified](#datetimemodified-date) | Membro |
@@ -44,21 +44,21 @@ O namespace `item` é usado para acessar a mensagem, a solicitação de reunião
 | [location](#location-stringlocation) | Membro |
 | [normalizedSubject](#normalizedsubject-string) | Membro |
 | [notificationMessages](#notificationmessages-notificationmessages) | Membro |
-| [optionalAttendees](#optionalattendees-arrayemailaddressdetails) | Membro |
+| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | Membro |
 | [organizer](#organizer-emailaddressdetails) | Membro |
-| [requiredAttendees](#requiredattendees-arrayemailaddressdetails) | Member |
+| [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | Member |
 | [sender](#sender-emailaddressdetails) | Membro |
 | [start](#start-datetime) | Membro |
 | [subject](#subject-stringsubject) | Membro |
-| [to](#to-arrayemailaddressdetails) | Membro |
+| [to](#to-arrayemailaddressdetailsrecipients) | Membro |
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | Método |
 | [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | Método |
 | [close](#close) | Método |
 | [displayReplyAllForm](#displayreplyallformformdata-callback) | Método |
 | [displayReplyForm](#displayreplyformformdata-callback) | Método |
 | [getEntities](#getentities--entities) | Método |
-| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontact) | Método |
-| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontact) | Método |
+| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Método |
+| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Método |
 | [getRegExMatches](#getregexmatches--object) | Método |
 | [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | Método |
 | [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | Método |
