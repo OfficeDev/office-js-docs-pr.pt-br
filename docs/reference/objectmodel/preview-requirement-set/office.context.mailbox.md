@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox-visualização do conjunto de requisitos
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 308342e041721493973015f0dad712fa4929878d
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: d19cb7c664cda42469cf7cde31d69f87101278c8
+ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30872092"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "31838533"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -28,7 +28,7 @@ Fornece acesso ao modelo de objeto de suplemento do Outlook para o Microsoft Out
 
 | Membro | Tipo |
 |--------|------|
-| [ewsUrl](#ewsurl-string) | Member |
+| [ewsUrl](#ewsurl-string) | Membro |
 | [restUrl](#resturl-string) | Membro |
 | [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | Método |
 | [convertToEwsId](#converttoewsiditemid-restversion--string) | Método |
@@ -79,6 +79,9 @@ No modo de composição, é preciso chamar o método [`saveAsync`](Office.contex
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
+
+---
+---
 
 #### <a name="resturl-string"></a>restUrl :String
 
@@ -147,6 +150,9 @@ function loadNewItem(eventArgs) {
 }
 ```
 
+---
+---
+
 ####  <a name="converttoewsiditemid-restversion--string"></a>convertToEwsId(itemId, restVersion) → {String}
 
 Converte uma ID de item formatada para REST no formato EWS.
@@ -185,6 +191,9 @@ var restId = 'AAMkAGVlOTZjNTM3LW...';
 var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
+---
+---
+
 ####  <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlookofficelocalclienttime"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook/office.LocalClientTime)}
 
 Obtém um dicionário contendo informações de hora em tempo local do cliente.
@@ -197,7 +206,7 @@ Se o aplicativo de email estiver sendo executado no Outlook, o método `convertT
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`timeValue`| Data|Um objeto Date|
+|`timeValue`| Date|Um objeto Date|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -210,6 +219,9 @@ Se o aplicativo de email estiver sendo executado no Outlook, o método `convertT
 ##### <a name="returns"></a>Retorna:
 
 Tipo: [LocalClientTime](/javascript/api/outlook/office.LocalClientTime)
+
+---
+---
 
 ####  <a name="converttorestiditemid-restversion--string"></a>convertToRestId(itemId, restVersion) → {String}
 
@@ -224,7 +236,7 @@ IDs de itens recuperadas por EWS ou pela propriedade `itemId` usam um formato di
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`itemId`| String|Uma ID de item formatada para os Serviços Web do Exchange (EWS)|
+|`itemId`| Cadeia de caracteres|Uma ID de item formatada para os Serviços Web do Exchange (EWS)|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion)|Um valor que indica a versão da API REST do Outlook com a qual a ID convertida será usada.|
 
 ##### <a name="requirements"></a>Requisitos
@@ -248,6 +260,9 @@ var ewsId = Office.context.mailbox.item.itemId;
 // Convert to a REST ID for the v2.0 version of the Outlook Mail API.
 var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.RestVersion.v2_0);
 ```
+
+---
+---
 
 ####  <a name="converttoutcclienttimeinput--date"></a>convertToUtcClientTime(input) → {Date}
 
@@ -281,6 +296,9 @@ Um objeto Date com a hora expressa em UTC.
 
 </dl>
 
+---
+---
+
 ####  <a name="displayappointmentformitemid"></a>displayAppointmentForm(itemId)
 
 Exibe um compromisso de calendário existente.
@@ -300,7 +318,7 @@ Se o identificador do item especificado não identificar um compromisso existent
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`itemId`| String|O identificador dos Serviços Web do Exchange (EWS) para um compromisso de calendário existente.|
+|`itemId`| Cadeia de caracteres|O identificador dos Serviços Web do Exchange (EWS) para um compromisso de calendário existente.|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -308,13 +326,16 @@ Se o identificador do item especificado não identificar um compromisso existent
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)| Escrever ou Ler|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
 ##### <a name="example"></a>Exemplo
 
 ```javascript
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
+
+---
+---
 
 ####  <a name="displaymessageformitemid"></a>displayMessageForm(itemId)
 
@@ -351,6 +372,9 @@ Não use o método `displayMessageForm` com um `itemId` que representa um compro
 Office.context.mailbox.displayMessageForm(messageId);
 ```
 
+---
+---
+
 #### <a name="displaynewappointmentformparameters"></a>displayNewAppointmentForm(parameters)
 
 Exibe um formulário para criar um compromisso no calendário.
@@ -373,14 +397,14 @@ Se qualquer dos parâmetros exceder os limites de tamanho especificados, ou se u
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-| `parameters` | Objeto | Um dicionário de parâmetros que descreve o novo compromisso. |
+| `parameters` | Object | Um dicionário de parâmetros que descreve o novo compromisso. |
 | `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email ou uma matriz contendo um objeto `EmailAddressDetails` para cada um dos participantes obrigatórios do compromisso. A matriz está limitada a um máximo de 100 entradas. |
 | `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email ou uma matriz contendo um objeto `EmailAddressDetails` para cada um dos participantes opcionais do compromisso. A matriz está limitada a um máximo de 100 entradas. |
-| `parameters.start` | Date | Um objeto `Date` que especifica a data e a hora de início do compromisso. |
+| `parameters.start` | Data | Um objeto `Date` que especifica a data e a hora de início do compromisso. |
 | `parameters.end` | Data | Um objeto `Date` que especifica a data e a hora de término do compromisso. |
-| `parameters.location` | String | Uma cadeia de caracteres que contém o local do compromisso. A cadeia de caracteres está limitada a um máximo de 255 caracteres. |
+| `parameters.location` | Cadeia de caracteres | Uma cadeia de caracteres que contém o local do compromisso. A cadeia de caracteres está limitada a um máximo de 255 caracteres. |
 | `parameters.resources` | Array.&lt;String&gt; | Uma matriz de cadeias de caracteres que contém os recursos necessários para o compromisso. A matriz está limitada a um máximo de 100 entradas. |
-| `parameters.subject` | String | Uma cadeia de caracteres que contém o assunto do compromisso. A cadeia de caracteres está limitada a um máximo de 255 caracteres. |
+| `parameters.subject` | Cadeia de caracteres | Uma cadeia de caracteres que contém o assunto do compromisso. A cadeia de caracteres está limitada a um máximo de 255 caracteres. |
 | `parameters.body` | String | O corpo do compromisso. O conteúdo do corpo está limitado a um tamanho máximo de 32 KB. |
 
 ##### <a name="requirements"></a>Requisitos
@@ -411,6 +435,9 @@ Office.context.mailbox.displayNewAppointmentForm(
   });
 ```
 
+---
+---
+
 #### <a name="displaynewmessageformparameters"></a>displayNewMessageForm (parâmetros)
 
 Exibe um formulário para criar uma nova mensagem.
@@ -426,18 +453,18 @@ Se qualquer dos parâmetros exceder os limites de tamanho especificados, ou se u
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-| `parameters` | Objeto | Um dicionário de parâmetros que descreve a nova mensagem. |
+| `parameters` | Object | Um dicionário de parâmetros que descreve a nova mensagem. |
 | `parameters.toRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email `EmailAddressDetails` ou uma matriz que contém um objeto para cada um dos destinatários na linha para. A matriz está limitada a um máximo de 100 entradas. |
 | `parameters.ccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email `EmailAddressDetails` ou uma matriz que contém um objeto para cada um dos destinatários na linha CC. A matriz está limitada a um máximo de 100 entradas. |
 | `parameters.bccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email `EmailAddressDetails` ou uma matriz que contém um objeto para cada um dos destinatários na linha Cco. A matriz está limitada a um máximo de 100 entradas. |
-| `parameters.subject` | String | Uma cadeia de caracteres que contém o assunto da mensagem. A cadeia de caracteres está limitada a um máximo de 255 caracteres. |
-| `parameters.htmlBody` | String | O corpo HTML da mensagem. O conteúdo do corpo está limitado a um tamanho máximo de 32 KB. |
+| `parameters.subject` | Cadeia de caracteres | Uma cadeia de caracteres que contém o assunto da mensagem. A cadeia de caracteres está limitada a um máximo de 255 caracteres. |
+| `parameters.htmlBody` | Cadeia de caracteres | O corpo HTML da mensagem. O conteúdo do corpo está limitado a um tamanho máximo de 32 KB. |
 | `parameters.attachments` | Array.&lt;Object&gt; | Uma matriz de objetos JSON que são anexos de arquivo ou item. |
-| `parameters.attachments.type` | String | Indica o tipo de anexo. Deve ser `file` para um anexo de arquivo ou `item` para um anexo de item. |
+| `parameters.attachments.type` | Cadeia de caracteres | Indica o tipo de anexo. Deve ser `file` para um anexo de arquivo ou `item` para um anexo de item. |
 | `parameters.attachments.name` | Cadeia de caracteres | Uma cadeia de caracteres que contém o nome do anexo, até 255 caracteres de comprimento.|
-| `parameters.attachments.url` | String | Usado somente se `type` estiver definido como `file`. O URI do local para o arquivo. |
+| `parameters.attachments.url` | Cadeia de caracteres | Usado somente se `type` estiver definido como `file`. O URI do local para o arquivo. |
 | `parameters.attachments.isInline` | Booliano | Usado somente se `type` estiver definido como `file`. Se for `true`, indicará que o anexo será mostrado embutido no corpo da mensagem e não deverá ser exibido na lista de anexos. |
-| `parameters.attachments.itemId` | String | Usado somente se `type` estiver definido como `item`. A ID do item do EWS do email existente que você deseja anexar à nova mensagem. Isso é uma cadeia de até 100 caracteres. |
+| `parameters.attachments.itemId` | Cadeia de caracteres | Usado somente se `type` estiver definido como `item`. A ID do item do EWS do email existente que você deseja anexar à nova mensagem. Isso é uma cadeia de até 100 caracteres. |
 
 
 ##### <a name="requirements"></a>Requisitos
@@ -468,6 +495,9 @@ Office.context.mailbox.displayNewMessageForm(
     ]
   });
 ```
+
+---
+---
 
 #### <a name="getcallbacktokenasyncoptions-callback"></a>getCallbackTokenAsync([options], callback)
 
@@ -524,6 +554,9 @@ function cb(asyncResult) {
 }
 ```
 
+---
+---
+
 #### <a name="getcallbacktokenasynccallback-usercontext"></a>getCallbackTokenAsync(callback, [userContext])
 
 Obtém uma cadeia de caracteres que contém um token usado para obter um anexo ou um item de um Exchange Server.
@@ -563,6 +596,9 @@ function cb(asyncResult) {
 }
 ```
 
+---
+---
+
 ####  <a name="getuseridentitytokenasynccallback-usercontext"></a>getUserIdentityTokenAsync(callback, [userContext])
 
 Obtém um símbolo que identifica o usuário e o suplemento do Office.
@@ -574,7 +610,7 @@ O método `getUserIdentityTokenAsync` retorna um token que pode ser utilizado pa
 |Nome| Tipo| Atributos| Descrição|
 |---|---|---|---|
 |`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O token é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`.|
-|`userContext`| Objeto| &lt;opcional&gt;|Quaisquer dados de estado que são passados ao método assíncrono.|
+|`userContext`| Object| &lt;opcional&gt;|Quaisquer dados de estado que são passados ao método assíncrono.|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -595,6 +631,9 @@ function cb(asyncResult) {
   var token = asyncResult.value;
 }
 ```
+
+---
+---
 
 ####  <a name="makeewsrequestasyncdata-callback-usercontext"></a>makeEwsRequestAsync(data, callback, [userContext])
 
@@ -693,6 +732,9 @@ function callback(asyncResult)  {
   // Process the returned response here.
 }
 ```
+
+---
+---
 
 ####  <a name="removehandlerasynceventtype-options-callback"></a>removeHandlerAsync(eventType, handler, [options], [callback])
 

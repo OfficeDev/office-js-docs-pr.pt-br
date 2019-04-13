@@ -1,14 +1,14 @@
 ---
 title: Office. Context – conjunto de requisitos 1,7
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 6a6c7e01df7a063759d3658283f6d724a2b16ca7
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: dddf0035f52daadc926ca5a707383730a97c1002
+ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871350"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "31838470"
 ---
 # <a name="context"></a>context
 
@@ -27,8 +27,8 @@ O namespace Office.context fornece interfaces compartilhadas que são usadas pel
 
 | Membro | Tipo |
 |--------|------|
-| [displayLanguage](#displaylanguage-string) | Member |
-| [officeTheme](#officetheme-object) | Member |
+| [displayLanguage](#displaylanguage-string) | Membro |
+| [officeTheme](#officetheme-object) | Membro |
 | [roamingSettings](#roamingsettings-roamingsettings) | Membro |
 
 ### <a name="namespaces"></a>Namespaces
@@ -75,6 +75,9 @@ function write(message){
 }
 ```
 
+---
+---
+
 ####  <a name="officetheme-object"></a>officeTheme :Object
 
 Fornece acesso às propriedades de cores de temas do Office.
@@ -92,9 +95,9 @@ Usar as cores de tema do Office possibilita coordenar o esquema de cores de seu 
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`bodyBackgroundColor`| String|Obtém a cor de plano de fundo do corpo de tema do Office como um tripleto hexadecimal de cores.|
-|`bodyForegroundColor`| String|Obtém a cor de primeiro plano do corpo de tema do Office como um tripleto hexadecimal de cores.|
-|`controlBackgroundColor`| String|Obtém a cor de plano de fundo do controle do tema do Office como um tripleto hexadecimal de cores.|
+|`bodyBackgroundColor`| Cadeia de caracteres|Obtém a cor de plano de fundo do corpo de tema do Office como um tripleto hexadecimal de cores.|
+|`bodyForegroundColor`| Cadeia de caracteres|Obtém a cor de primeiro plano do corpo de tema do Office como um tripleto hexadecimal de cores.|
+|`controlBackgroundColor`| Cadeia de caracteres|Obtém a cor de plano de fundo do controle do tema do Office como um tripleto hexadecimal de cores.|
 |`controlForegroundColor`| String|Obtém a cor de controle do corpo de tema do Office como um tripleto hexadecimal de cores.|
 
 ##### <a name="requirements"></a>Requisitos
@@ -118,6 +121,9 @@ function applyOfficeTheme(){
   $('.body').css('background-color', bodyBackgroundColor);
 }
 ```
+
+---
+---
 
 ####  <a name="roamingsettings-roamingsettingsjavascriptapioutlook17officeroamingsettings"></a>roamingSettings :[RoamingSettings](/javascript/api/outlook_1_7/office.RoamingSettings)
 

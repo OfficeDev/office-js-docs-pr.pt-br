@@ -1,14 +1,14 @@
 ---
 title: Namespace do Office – conjunto de requisitos 1,7
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 533e997fc7f8be6eb6d3aefefaf023e8c7666af2
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 523df189b28fc568ac32e8d17d4a226b52cbd23c
+ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870524"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "31838449"
 ---
 # <a name="office"></a>Office
 
@@ -25,9 +25,9 @@ O namespace do Office fornece interfaces compartilhadas que são usadas pelos su
 
 | Membro | Tipo |
 |--------|------|
-| [AsyncResultStatus](#asyncresultstatus-string) | Member |
-| [CoercionType](#coerciontype-string) | Member |
-| [EventType](#eventtype-string) | Member |
+| [AsyncResultStatus](#asyncresultstatus-string) | Membro |
+| [CoercionType](#coerciontype-string) | Membro |
+| [EventType](#eventtype-string) | Membro |
 | [SourceProperty](#sourceproperty-string) | Membro |
 
 ### <a name="namespaces"></a>Namespaces
@@ -50,8 +50,8 @@ Especifica o resultado de uma chamada assíncrona.
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`Succeeded`| String|A chamada foi bem-sucedida.|
-|`Failed`| String|Falha na chamada.|
+|`Succeeded`| Cadeia de caracteres|A chamada foi bem-sucedida.|
+|`Failed`| Cadeia de caracteres|Falha na chamada.|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -60,6 +60,7 @@ Especifica o resultado de uma chamada assíncrona.
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
+---
 ---
 
 ####  <a name="coerciontype-string"></a>CoercionType :String
@@ -74,8 +75,8 @@ Especifica como forçar os dados retornados ou definir de acordo com o método c
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`Html`| String|Solicita que os dados sejam retornados no formato HTML.|
-|`Text`| String|Solicita que os dados sejam retornados no formato de texto.|
+|`Html`| Cadeia de caracteres|Solicita que os dados sejam retornados no formato HTML.|
+|`Text`| Cadeia de caracteres|Solicita que os dados sejam retornados no formato de texto.|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -84,6 +85,7 @@ Especifica como forçar os dados retornados ou definir de acordo com o método c
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
+---
 ---
 
 ####  <a name="eventtype-string"></a>EventType :String
@@ -98,10 +100,10 @@ Especifica o evento associado a um manipulador de eventos.
 
 | Nome | Tipo | Descrição | Conjunto de requisitos mínimo |
 |---|---|---|---|
-|`AppointmentTimeChanged`| String | A data ou hora do compromisso ou série selecionado foi alterada. | 1.7 |
-|`ItemChanged`| String | Um item diferente do Outlook é selecionado para exibição enquanto o painel de tarefas está fixado. | 1,5 |
-|`RecipientsChanged`| String | A lista de destinatários do item selecionado ou local do compromisso foi alterada. | 1.7 |
-|`RecurrenceChanged`| String | O padrão de recorrência da série selecionada foi alterado. | 1.7 |
+|`AppointmentTimeChanged`| Cadeia de caracteres | A data ou hora do compromisso ou série selecionado foi alterada. | 1.7 |
+|`ItemChanged`| Cadeia de caracteres | Um item diferente do Outlook é selecionado para exibição enquanto o painel de tarefas está fixado. | 1,5 |
+|`RecipientsChanged`| Cadeia de caracteres | A lista de destinatários do item selecionado ou local do compromisso foi alterada. | 1.7 |
+|`RecurrenceChanged`| Cadeia de caracteres | O padrão de recorrência da série selecionada foi alterado. | 1.7 |
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -110,6 +112,7 @@ Especifica o evento associado a um manipulador de eventos.
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1,5 |
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler |
 
+---
 ---
 
 ####  <a name="sourceproperty-string"></a>SourceProperty :String
@@ -124,7 +127,7 @@ Especifica a origem dos dados retornados pelo método chamado.
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`Body`| String|A origem dos dados é o corpo de uma mensagem.|
+|`Body`| Cadeia de caracteres|A origem dos dados é o corpo de uma mensagem.|
 |`Subject`| Cadeia de caracteres|A origem dos dados é o assunto de uma mensagem.|
 
 ##### <a name="requirements"></a>Requisitos

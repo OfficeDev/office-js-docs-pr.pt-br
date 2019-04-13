@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. userProfile – conjunto de requisitos de visualização
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 204097497c958c26a6e67fc01d6dbd5142d8dced
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 29111314f16bb9c6518b350254a3036ffa125796
+ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871868"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "31838435"
 ---
 # <a name="userprofile"></a>userProfile
 
@@ -26,9 +26,9 @@ ms.locfileid: "30871868"
 
 | Membro | Tipo |
 |--------|------|
-| [accountType](#accounttype-string) | Member |
-| [displayName](#displayname-string) | Member |
-| [emailAddress](#emailaddress-string) | Member |
+| [accountType](#accounttype-string) | Membro |
+| [displayName](#displayname-string) | Membro |
+| [emailAddress](#emailaddress-string) | Membro |
 | [timeZone](#timezone-string) | Membro |
 
 ### <a name="members"></a>Membros
@@ -65,6 +65,9 @@ Obtém o tipo de conta do usuário associado à caixa de correio. Os valores pos
 console.log(Office.context.mailbox.userProfile.accountType);
 ```
 
+---
+---
+
 ####  <a name="displayname-string"></a>displayName :String
 
 Obtém o nome de exibição do usuário.
@@ -88,6 +91,9 @@ Obtém o nome de exibição do usuário.
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
 
+---
+---
+
 ####  <a name="emailaddress-string"></a>emailAddress :String
 
 Obtém o endereço de email SMTP do usuário.
@@ -110,6 +116,9 @@ Obtém o endereço de email SMTP do usuário.
 // Example: allieb@contoso.com
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
+
+---
+---
 
 ####  <a name="timezone-string"></a>timeZone :String
 

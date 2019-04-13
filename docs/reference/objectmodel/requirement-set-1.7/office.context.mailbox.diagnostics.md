@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Diagnostics – conjunto de requisitos 1,7
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 552278d25482f07e4e16a84cf5ba760a9cc8ff2f
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 967834ff254f1b10d7518a012410beb2f327be68
+ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30872239"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "31838463"
 ---
 # <a name="diagnostics"></a>diagnostics
 
@@ -28,8 +28,8 @@ Fornece informações de diagnóstico para um suplemento do Outlook.
 
 | Membro | Tipo |
 |--------|------|
-| [hostName](#hostname-string) | Member |
-| [hostVersion](#hostversion-string) | Member |
+| [hostName](#hostname-string) | Membro |
+| [hostVersion](#hostversion-string) | Membro |
 | [OWAView](#owaview-string) | Membro |
 
 ### <a name="members"></a>Membros
@@ -52,6 +52,9 @@ Uma cadeia de caracteres que pode ser um dos valores a seguir: `Outlook`, `Mac O
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
+---
+---
+
 ####  <a name="hostversion-string"></a>hostVersion :String
 
 Obtém uma cadeia de caracteres que representa a versão do aplicativo host ou do Exchange Server.
@@ -69,6 +72,9 @@ Se o suplemento de email estiver em execução no cliente do Outlook para área 
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
+
+---
+---
 
 ####  <a name="owaview-string"></a>OWAView :String
 
