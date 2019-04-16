@@ -3,12 +3,12 @@ title: Criar e depurar suplementos do Office no Visual Studio
 description: Use o Visual Studio para criar e depurar suplementos do Office na área de trabalho do cliente Office para Windows
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: f9a52719ed7990063ed3f2dbb7d6bd5866e73760
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 74a1430482b507d04f1be60683242fd9ae4a4393
+ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870713"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "31838505"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Criar e depurar suplementos do Office no Visual Studio
 
@@ -175,7 +175,7 @@ Se você tiver um documento que contém os dados de teste deseja usar ao depurar
 Iniciar o projeto escolhendo **Depurar** > **Iniciar Depuração** na barra do menu. O Visual Studio compilará automaticamente a inicie o Office para hospedar o suplemento.
 
 > [!NOTE]
-> Quando você inicia um projeto de um suplemento do Outlook, você será solicitado a inserir as credenciais de logon. Se for solicitado que você faça login repetidamente, a Autenticação básica poderá ser desabilitada para contas no locatário do Office 365. Nesse caso, tente usar uma conta da Microsoft.
+> Quando você inicia um projeto de um suplemento do Outlook, você será solicitado a inserir as credenciais de logon. Se você for solicitado a fazer logon repetidamente ou se receber um erro informando que você não está autorizado, a Autenticação Básica pode estar desabilitada para contas em seu locatário do Office 365. Nesse caso, tente usar uma conta da Microsoft. Você também pode precisar definir a propriedade "Usar autenticação multifator" como Verdadeiro na caixa de diálogo de propriedades do projeto de suplemento do Outlook na Web.
 
 Quando o Visual Studio compila o projeto ele executa as seguintes tarefas:
 
@@ -184,6 +184,13 @@ Quando o Visual Studio compila o projeto ele executa as seguintes tarefas:
 2. Cria um conjunto de entradas de registro no computador que habilitam o suplemento a aparecer no aplicativo host.
 
 3. Compila o projeto de aplicativo Web e o implanta no servidor Web IIS local(https://localhost).
+
+4. Se este for o primeiro projeto de suplemento implantado no servidor Web do IIS local, talvez seja solicitado que você instale um Certificado Autoassinado no repositório de Certificado Raiz Confiável do usuário atual. Isso é necessário para que o IIS Express exiba o conteúdo do seu suplemento corretamente.
+
+
+> [!NOTE]
+> A versão mais recente do Office pode usar um controle da Web mais recente para exibir o conteúdo do suplemento ao ser executado no Windows 10. Se este for o caso, o Visual Studio pode solicitar que você adicione uma isenção de loopback de rede local. Isso é necessário para que o controle da Web, no aplicativo host do Office, possa acessar o site implantado no servidor Web do IIS local. Você também pode alterar essa configuração a qualquer momento no Visual Studio, em **Ferramentas** > **Opções** > **Ferramentas do Office (Web)** > **Depuração do Suplemento da Web**.
+
 
 Depois, o Visual Studio faz o seguinte:
 

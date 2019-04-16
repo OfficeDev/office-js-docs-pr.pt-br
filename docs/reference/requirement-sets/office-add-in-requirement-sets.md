@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos da API Comum do Office
 description: ''
-ms.date: 04/09/2019
+ms.date: 04/10/2019
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: 05b1c4a3dde09f223a3383b49bf2f48e15f1e3e7
-ms.sourcegitcommit: fbe2a799fda71aab73ff1c5546c936edbac14e47
+ms.openlocfilehash: f3aa63b65768ab27015d59687ec9929a82bc99ab
+ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/10/2019
-ms.locfileid: "31764401"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "31838596"
 ---
 # <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API Comum do Office
 
@@ -129,7 +129,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 |**Hosts do Office**|**Métodos no conjunto**|
 |:-----|:-----|
-| Excel<br>Excel Online<br>Excel para iPad<br>Excel para Mac<br>Word<br>Word Online<br>Word para iPad<br>Word para Mac|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsyncMatrix<br>Binding.getDataAsyncMatrix<br>Binding.setDataAsync|
+| Excel<br>Excel Online<br>Excel para iPad<br>Excel para Mac<br>Word<br>Word Online<br>Word para iPad<br>Word para Mac|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
 
 ---
 
@@ -185,7 +185,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 |**Hosts do Office**|**Métodos no conjunto**|
 |:-----|:-----|
-| Aplicativos Web do Access<br>Excel<br>Excel Online<br>Excel para iPad<br>Excel para Mac<br>Word 2013 e posterior<br>Word 2016 para Mac e posterior<br>Word Online<br>Word para iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsyncTable<br>Binding.addColumnsAsyncTable<br>Binding.addRowsAsyncTable<br>Binding.deleteAllDataValuesAsyncTable<br>Binding.getDataAsyncTable<br>Binding.setDataAsync|
+| Aplicativos Web do Access<br>Excel<br>Excel Online<br>Excel para iPad<br>Excel para Mac<br>Word 2013 e posterior<br>Word 2016 para Mac e posterior<br>Word Online<br>Word para iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.addColumnsAsync<br>Binding.addRowsAsync<br>Binding.deleteAllDataValuesAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
 
 ---
 
@@ -201,7 +201,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 |**Hosts do Office**|**Métodos no conjunto**|
 |:-----|:-----|
-| Excel<br>Excel Online<br>Excel para iPad<br>Excel para Mac<br>Word 2013 e posterior<br>Word 2016 para Mac e posterior<br>Word Online<br>Word para iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsyncText<br>Binding.getDataAsyncText<br>Binding.setDataAsync|
+| Excel<br>Excel Online<br>Excel para iPad<br>Excel para Mac<br>Word 2013 e posterior<br>Word 2016 para Mac e posterior<br>Word Online<br>Word para iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
 
 ---
 
@@ -247,5 +247,5 @@ Os seguintes métodos da API JavaScript para Office não fazem parte de um conju
 ## <a name="see-also"></a>Confira também
 
 - [Versões do Office e conjuntos de requisitos](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [Especificar hosts do Office e requisitos de API](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
+- [Especificar requisitos da API e de hosts do Office](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
 - [Manifesto XML dos Suplementos do Office](/office/dev/add-ins/develop/add-in-manifests)
