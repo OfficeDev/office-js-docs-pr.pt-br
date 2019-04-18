@@ -1,14 +1,14 @@
 ---
 title: Crie um Suplemento do Office com Node.js que use logon único
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/15/2019
 localization_priority: Priority
-ms.openlocfilehash: e304813422dea5917202ed8933c9e53df18ba9de
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.openlocfilehash: 2050f20139389ed1459cea7aba5e5e92858d00bc
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691213"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914323"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Crie um Suplemento do Office com Node.js que use logon único (prévia)
 
@@ -77,7 +77,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
 
 1. Na propriedade `audience`, substitua o espaço reservado `{audience GUID}` pela ID do aplicativo que você salvou ao registrar o suplemento. (Exatamente o mesmo valor que você atribuiu à propriedade `client_id`.)
   
-1. Na cadeia de caracteres atribuída à propriedade `issuer`, você verá o espaço reservado *{O365 tenant GUID}*. Substitua pela ID de locatário do Office 365. Use os métodos em [Encontrar sua ID de locatário do Office 365](/onedrive/find-your-office-365-tenant-id) para obtê-la. Quando terminar, o valor da propriedade `issuer` deve ser algo parecido com isto:
+1. Na cadeia de caracteres atribuída à propriedade `issuer`, você verá o espaço reservado *{O365 tenant GUID}*. Substitua pela ID de locatário do Office 365. Se você não copiou a ID de locatário quando você registrou o suplemento com AAD, use um dos métodos em [Encontrar sua ID de locatário do Office 365](/onedrive/find-your-office-365-tenant-id) para obtê-la. Quando terminar, o valor da propriedade `issuer` deve ser algo parecido com isto:
 
     `https://login.microsoftonline.com/12345678-1234-1234-1234-123456789012/v2.0`
 
@@ -321,7 +321,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
     }
     ```
 
-1. Substitua `TODO11` pelo código a seguir. Observação sobre o código:
+1. Substitua `TODO11` pelo código a seguir. Observação sobre este código:
 
     * Existem configurações do Azure Active Directory nas quais o usuário precisa fornecer fator(es) de autenticação adicional(ais) para acessar alguns objetivos do Microsoft Graph (por exemplo, o OneDrive), mesmo que o usuário possa fazer login no Office apenas com uma senha. Nesse caso, o AAD enviará uma resposta com o erro 50076, que tem uma propriedade `Claims`.
     * O host do Office deve obter um novo token com o valor **Claims** como a opção `authChallenge`. Isso instrui o AAD a solicitar ao usuário todas as formas de autenticação requeridas.

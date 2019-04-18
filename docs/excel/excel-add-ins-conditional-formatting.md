@@ -1,14 +1,14 @@
 ---
 title: Aplicar formatação condicional a intervalos com a API JavaScript do Excel
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: 1c601782ca048fe1488f4ce578a7ee4d896b6b26
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 7c6b5b5433e2dc59259eb937ef553ff265443f75
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870377"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914379"
 ---
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>Aplicar formatação condicional a intervalos do Excel
 
@@ -33,7 +33,7 @@ A `Range.conditionalFormats` propriedade é uma coleção de objetos [Conditiona
 -   `topBottom`
 
 > [!NOTE]
-> Cada uma das seguintes propriedades de formatação tem uma variante `*OrNullObject` correspondente. Saiba mais sobre esse padrão na seção [* OrNullObject métodos](/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#42ornullobject-methods).
+> Cada uma das seguintes propriedades de formatação tem uma variante `*OrNullObject` correspondente. Saiba mais sobre esse padrão na seção [* OrNullObject métodos](/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#ornullobject-methods).
 
 Somente um tipo de formato pode ser definido para o objeto ConditionalFormat. Isso é determinado pela `type` propriedade, que é uma enumeração de valor[ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype). `type` é definido quando um formato condicional para um intervalo é adicionado. 
 

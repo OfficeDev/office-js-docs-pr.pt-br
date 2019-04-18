@@ -1,18 +1,16 @@
 
 > [!NOTE]
-> Este procedimento só é necessário durante a criação do suplemento. Quando o suplemento de produção for implantado no AppSource ou em um catálogo de suplementos, os usuários confiarão individualmente nele ou um administrador concordará pela organização na instalação.
+> Este procedimento só é necessário durante a criação do suplemento. Quando seu suplemento de produção é implantado no AppSource ou em um catálogo de suplementos, os usuários confiarão individualmente nele ou um administrador se consentirá na organização na instalação.
 
-Execute este procedimento *depois* [de registrar o suplemento](../develop/register-sso-add-in-aad-v2.md).
+Execute este procedimento *depois* [de registrar o suplemento](../develop/register-sso-add-in-aad-v2.md). (Se você acabou de concluir esse procedimento e a guia **permissões de API** da página **$Add-in-name $** estiver aberta no navegador, você pode escolher o botão **conceder consentimento de administrador para [nome do locatário]** e selecionar **Sim** para a confirmação que aparece. Pule o restante deste procedimento.)
 
-1. Na cadeia de caracteres a seguir, substitua o espaço reservado "{application_ID}" pela ID do Aplicativo que você copiou quando registrou seu suplemento:  `https://login.microsoftonline.com/common/adminconsent?client_id={application_ID}&state=12345`
+1. Navegue até a página [Azure portal-app registrations](https://go.microsoft.com/fwlink/?linkid=2083908) para exibir o registro do aplicativo.
 
-1. Cole a URL resultante na barra de endereços do navegador e acesse-a.
+1. Entre com as credenciais de ***administrador*** em sua locação do Office 365. Por exemplo, MyName@contoso.onmicrosoft.com.
 
-1. Quando for solicitado, entre com as credenciais de administrador em sua locação do Office 365.
+1. Selecione o aplicativo com o nome para exibição **$Add-in-name $**.
 
-1. Em seguida, será solicitado que você conceda permissão para seu suplemento acessar os dados do Microsoft Graph. Clique em **Aceitar**.
+1. Na página **$Add-in-name $** , selecione **permissões de API** e, na seção **conceder consentimento** , escolha o botão **conceder consentimento de administrador para [nome do locatário]** . Selecione **Sim** para a confirmação exibida.
 
-1. A janela/guia do navegador é redirecionada para a **URL** de redirecionamento que você especificou ao registrar o suplemento. Se o aplicativo Web do suplemento estiver em execução, a página inicial do suplemento será aberta no navegador; caso contrário, você receberá um erro 404. Mas o fato de o navegador tentar abrir a Home Page significa que o consentimento foi concedido com êxito.
-
->[!NOTE]
->Recomendamos esse procedimento como prática recomendada se você estiver usando um locatário do O365 do desenvolvedor. No enTanto, se preferir, é possível Sideload um suplemento SSO em desenvolvimento e solicitar ao usuário um formulário de consentimento. Para obter mais informações, consulte [Sideload no Windows](/office/dev/add-ins/testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins) e [Sideload no Office Online](/office/dev/add-ins/testing/sideload-office-add-ins-for-testing).
+> [!NOTE]
+> Recomendamos esse procedimento como prática recomendada se você estiver usando um locatário do O365 do desenvolvedor. No enTanto, se preferir, é possível Sideload um suplemento SSO em desenvolvimento e solicitar ao usuário um formulário de consentimento. Para obter mais informações, consulte [Sideload no Windows](/office/dev/add-ins/testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins) e [Sideload no Office Online](/office/dev/add-ins/testing/sideload-office-add-ins-for-testing).

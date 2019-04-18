@@ -1,14 +1,14 @@
 ---
 title: Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint
 description: Use VersionOverrides no manifesto para definir comandos de suplemento para Excel, Word e PowerPoint. Use comandos de suplemento para criar elementos da interface do usuário, adicionar listas ou botões e executar ações.
-ms.date: 03/19/2019
+ms.date: 04/15/2019
 localization_priority: Priority
-ms.openlocfilehash: ec7f97ef05f57aa456f1ba25dcec28862a18df59
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: a85d6a693995c8d0327c1b511e85e2159e51a042
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871357"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914309"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-word-and-powerpoint"></a>Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint
 
@@ -144,7 +144,7 @@ Veja a seguir um exemplo dos elementos **Hosts**, **Host** e **DesktopFormFactor
 
 ## <a name="step-5-add-the-functionfile-element"></a>Etapa 5: adicionar o elemento FunctionFile
 
-O elemento **FunctionFile** especifica um arquivo que contém o código JavaScript a ser executado quando um comando de suplemento usa a ação **ExecuteFunction** (confira [Controles de botão](/office/dev/add-ins/reference/manifest/control#Button-control) para obter uma descrição). O atributo **resid** do elemento **FunctionFile** é definido como um arquivo HTML que inclui todos os arquivos JavaScript exigidos por seus comandos de suplemento. Você não pode criar um vínculo diretamente com um arquivo JavaScript, mas somente com um arquivo HTML. O nome do arquivo é especificado como um elemento **Url** no elemento **Resources**.
+O elemento **FunctionFile** especifica um arquivo que contém o código JavaScript a ser executado quando um comando de suplemento usa a ação **ExecuteFunction** (confira [Controles de botão](/office/dev/add-ins/reference/manifest/control#button-control) para obter uma descrição). O atributo **resid** do elemento **FunctionFile** é definido como um arquivo HTML que inclui todos os arquivos JavaScript exigidos por seus comandos de suplemento. Você não pode criar um vínculo diretamente com um arquivo JavaScript, mas somente com um arquivo HTML. O nome do arquivo é especificado como um elemento **Url** no elemento **Resources**.
 
 Veja a seguir um exemplo do elemento **FunctionFile**.
   
@@ -162,7 +162,7 @@ Veja a seguir um exemplo do elemento **FunctionFile**.
 > [!IMPORTANT]
 > Verifique se seu código JavaScript chama `Office.initialize`.
 
-O JavaScript no arquivo HTML referenciado pelo elemento **FunctionFile** deve chamar `Office.initialize`. O elemento **FunctionName** (confira [Controles de botão](/office/dev/add-ins/reference/manifest/control#Button-control) para obter uma descrição) usa as funções em **FunctionFile**.
+O JavaScript no arquivo HTML referenciado pelo elemento **FunctionFile** deve chamar `Office.initialize`. O elemento **FunctionName** (confira [Controles de botão](/office/dev/add-ins/reference/manifest/control#button-control) para obter uma descrição) usa as funções em **FunctionFile**.
 
 O código a seguir mostra como implementar a função usada por **FunctionName**.
 
@@ -254,11 +254,12 @@ Os exemplos a seguir mostram como usar o elemento **ExtensionPoint** com os valo
 |**Label** <br/> |Obrigatório. O rótulo do grupo. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **ShortStrings**, que é elemento filho do elemento **Resources**. <br/> |
 |**Icon** <br/> |Obrigatório. Especifica o ícone do grupo a ser usado em dispositivos de fator forma pequeno ou quando muitos botões são exibidos. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **Image**. O elemento **Image** é um elemento filho do elemento **Images**, que é um elemento filho do elemento **Resources**. O atributo **size** fornece o tamanho da imagem em pixels. Três tamanhos de imagem são obrigatórios: 16, 32 e 80 pixels. Também há suporte para cinco tamanhos opcionais: 20, 24, 40, 48 e 64 pixels. <br/> |
 |**Tooltip** <br/> |Opcional. A dica de ferramenta do grupo. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **LongStrings**, que é um elemento filho do elemento **Resources**. <br/> |
-|**Control** <br/> |Cada grupo exige pelo menos um controle. Um elemento **Control** pode ser um **Button** ou um **Menu**. Use **Menu** para especificar uma lista suspensa de controles de botão. Atualmente, há suporte apenas para botões e menus. Confira as seguintes seções [Controles de botão](/office/dev/add-ins/reference/manifest/control#Button-control) e [Controles de menu](/office/dev/add-ins/reference/manifest/control#menu-dropdown-button-controls) para saber mais.<br/>**Observação:** para facilitar a solução de problemas, recomendamos adicionar um elemento **Control** e os elementos filho **Resources** relacionados, um de cada vez.          |
+|**Control** <br/> |Cada grupo exige pelo menos um controle. Um elemento **Control** pode ser um **Button** ou um **Menu**. Use **Menu** para especificar uma lista suspensa de controles de botão. Atualmente, há suporte apenas para botões e menus. Confira as seguintes seções [Controles de botão](/office/dev/add-ins/reference/manifest/control#button-control) e [Controles de menu](/office/dev/add-ins/reference/manifest/control#menu-dropdown-button-controls) para saber mais.<br/>**Observação:** para facilitar a solução de problemas, recomendamos adicionar um elemento **Control** e os elementos filho **Resources** relacionados, um de cada vez.          |
 
 
 ### <a name="button-controls"></a>Controles de botão
-Um botão executa uma única ação quando o usuário o seleciona. Pode ser a execução de uma função JavaScript ou a exibição de um painel de tarefas. O exemplo a seguir mostra como definir dois botões. O primeiro botão executa uma função JavaScript sem mostrar uma interface do usuário e o segundo botão mostra um painel de tarefas. No elemento **Control**:        
+
+Um botão executa uma única ação quando o usuário o seleciona. Pode ser a execução de uma função JavaScript ou a exibição de um painel de tarefas. O exemplo a seguir mostra como definir dois botões. O primeiro botão executa uma função JavaScript sem mostrar uma interface do usuário e o segundo botão mostra um painel de tarefas. No elemento **Control**:
 
 - O atributo **type** é obrigatório e deve ser definido como **Button**.
 
@@ -382,7 +383,7 @@ O exemplo a seguir mostra como definir um item de menu com dois itens de submenu
 |**Tooltip** <br/> |Opcional. A dica de ferramenta do menu. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **LongStrings**, que é um elemento filho do elemento **Resources**. <br/> |
 |**SuperTip** <br/> | Obrigatório. A superdica para o menu, que é definida pelos seguintes itens: <br/> **Título** <br/>  Obrigatório. O texto da superdica. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **ShortStrings**, que é elemento filho do elemento **Resources**. <br/> **Descrição** <br/>  Obrigatório. A descrição da superdica. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **LongStrings**, que é um elemento filho do elemento **Resources**. <br/> |
 |**Icon** <br/> | Obrigatório. Contém os elementos **Image** para o menu. Arquivos de imagem devem estar no formato .png. <br/> **Image** <br/>  Uma imagem para o menu. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **Image**. O elemento **Image** é um elemento filho do elemento **Images**, que é um elemento filho do elemento **Resources**. O atributo **size** indica o tamanho em pixels da imagem. Três tamanhos de imagem, em pixels, são obrigatórios: 16, 32 e 80 pixels. Cinco tamanhos opcionais, em pixels, também têm suporte: 20, 24, 40, 48 e 64 pixels. <br/> |
-|**Items** <br/> |Obrigatório. Contém os elementos **Item** para cada item do submenu. Cada elemento **Item** contém os mesmos elementos filho que [Controles de botão](/office/dev/add-ins/reference/manifest/control#Button-control).  <br/> |
+|**Items** <br/> |Obrigatório. Contém os elementos **Item** para cada item do submenu. Cada elemento **Item** contém os mesmos elementos filho que [Controles de botão](/office/dev/add-ins/reference/manifest/control#button-control).  <br/> |
    
 ## <a name="step-7-add-the-resources-element"></a>Etapa 7: adicionar o elemento Resources
 

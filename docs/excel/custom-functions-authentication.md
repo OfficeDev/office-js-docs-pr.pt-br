@@ -1,13 +1,13 @@
 ---
-ms.date: 03/19/2019
+ms.date: 04/15/2019
 description: Autenticar usuários usando funções personalizadas no Excel.
 title: Autenticação para funções personalizadas
-ms.openlocfilehash: 7db46e40758ea0282a2fd7c4d40739304a874e76
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 75ffb82c0dc9350c35b22b1d1676990598ea0c44
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871490"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914183"
 ---
 # <a name="authentication"></a>Autenticação
 
@@ -30,7 +30,7 @@ Se não houver um token, você deverá usar a API da caixa de diálogo para soli
 > [!NOTE]
 > O tempo de execução de funções personalizadas usa um objeto Dialog que é ligeiramente diferente do objeto Dialog no tempo de execução do mecanismo de navegador usado por painéis de tarefas. Eles são conhecidos como "API da caixa de diálogo", mas usam `Officeruntime.Dialog` para autenticar usuários no tempo de execução de funções personalizadas.
 
-Para obter informações sobre como usar o `OfficeRuntime.Dialog`, consulte [Custom Functions Runtime](/office/dev/add-ins/excel/custom-functions-runtime?view=office-js#displaying-a-dialog-box).
+Para obter informações sobre como usar a `OfficeRuntime.Dialog`caixa de [diálogo, consulte funções personalizadas](/office/dev/add-ins/excel/custom-functions-dialog).
 
 Ao planejar todo o processo de autenticação como um todo, talvez seja útil pensar no painel de tarefas e nos elementos de interface do usuário do suplemento e das funções personalizadas, que fazem parte do suplemento como entidades separadas que podem se comunicar entre si `AsyncStorage`.
 

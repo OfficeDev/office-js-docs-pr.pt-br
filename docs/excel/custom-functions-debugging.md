@@ -3,12 +3,12 @@ ms.date: 03/13/2019
 description: Depurar suas funções personalizadas no Excel.
 title: Depuração de funções personalizadas (visualização)
 localization_priority: Normal
-ms.openlocfilehash: 66b55855fdbdc3b3cfc7a316cb8fd7e06f073213
-ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
+ms.openlocfilehash: 08563ef630ebc457219c4c622328b84d13e6acab
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "31478948"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914386"
 ---
 # <a name="custom-functions-debugging-preview"></a>Depuração de funções personalizadas (visualização)
 
@@ -27,18 +27,18 @@ No Mac:
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 > [!NOTE]
-> Para simplificar, este artigo mostra a depuração no contexto de uso do Visual Studio Code para editar, executar tarefas e, em alguns casos, usar o modo de exibição de depuração. Se você estiver usando um editor ou uma ferramenta de linha de comando diferente, consulte as [instruções de linha de comando](#Use-the-command-line-tools-to-debug) no final deste artigo.
+> Para simplificar, este artigo mostra a depuração no contexto de uso do Visual Studio Code para editar, executar tarefas e, em alguns casos, usar o modo de exibição de depuração. Se você estiver usando um editor ou uma ferramenta de linha de comando diferente, consulte as [instruções de linha de comando](#use-the-command-line-tools-to-debug) no final deste artigo.
 
 ## <a name="requirements"></a>Requisitos
 
-Antes de começar a depurar, você deve criar um projeto de suplemento de funções personalizadas usando o gerador de Yo Office e garantiu que você tenha certificados autoassinados confiáveis para o seu projeto. Para obter instruções sobre como criar um projeto, consulte o [tutorial funções personalizadas](https://review.docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions). Para obter instruções sobre como confiar em certificados, consulte [adicionando certificados autoassinados como certificados raiz confiáveis](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
+Antes de começar a depurar, você deve criar um projeto de suplemento de funções personalizadas usando o gerador de Yo Office e garantiu que você tenha certificados autoassinados confiáveis para o seu projeto. Para obter instruções sobre como criar um projeto, consulte o [tutorial funções personalizadas](../tutorials/excel-tutorial-create-custom-functions.md). Para obter instruções sobre como confiar em certificados, consulte [adicionando certificados autoassinados como certificados raiz confiáveis](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
 
 ## <a name="use-the-vs-code-debugger-for-excel-desktop"></a>Usar o depurador de código VS para a área de trabalho do Excel
 
 Você pode usar o VS Code para depurar funções personalizadas no Office Excel na área de trabalho.
 
 > [!NOTE]
-> A depuração de área de trabalho do Mac não está disponível, mas pode ser obtida [usando as ferramentas de navegador para depurar o Excel online](#debug-in-excel-online-by-using-the-browser-developer-tools).
+> A depuração de área de trabalho do Mac não está disponível, mas pode ser obtida [usando as ferramentas de navegador para depurar o Excel online](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-online).
 
 ### <a name="run-your-add-in-from-vs-code"></a>Executar seu suplemento de VS Code
 
@@ -145,7 +145,7 @@ Se você não estiver usando o VS, poderá usar a linha de comando (como bash ou
     
     `npm run start web`
     
-    Para o Excel online, você também precisa Sideload seu suplemento. Siga as etapas em [Sideload seu suplemento](#Sideload-your-add-in) para Sideload o suplemento. Em seguida, prossiga para a próxima seção para iniciar a depuração.
+    Para o Excel online, você também precisa Sideload seu suplemento. Siga as etapas em [Sideload seu suplemento](#sideload-your-add-in) para Sideload o suplemento. Em seguida, prossiga para a próxima seção para iniciar a depuração.
     
 4. Abra as ferramentas de desenvolvedor no navegador. Para o Chrome e a maioria dos navegadores, o F12 abrirá as ferramentas de desenvolvedor.
 5. Em ferramentas de desenvolvedor, abra o arquivo de script do código-fonte (funções. js ou funções. TS). O código de suas funções personalizadas pode estar localizado próximo ao final do arquivo.
@@ -170,6 +170,6 @@ Você pode usar as seguintes tarefas para iniciar a depuração no desktop ou on
 
 * [Metadados de funções personalizadas](custom-functions-json.md)
 * [Tempo de execução de funções personalizadas do Excel](custom-functions-runtime.md)
-* [Práticas recomendadas de funções personalizadas.](custom-functions-best-practices.md)
+* [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
 * [Log de alteração de funções personalizadas](custom-functions-changelog.md)
 * [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)

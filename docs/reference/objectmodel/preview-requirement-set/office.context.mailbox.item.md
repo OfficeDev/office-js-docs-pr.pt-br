@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Item-visualização do conjunto de requisitos
 description: ''
-ms.date: 04/12/2019
+ms.date: 04/17/2019
 localization_priority: Normal
-ms.openlocfilehash: b74b3aa3c455d33d17767163c960adef7cf783fa
-ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
+ms.openlocfilehash: cb9c298302bf0df9d7842fde4706d9d0c9710ae4
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "31838582"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914344"
 ---
 # <a name="item"></a>item
 
@@ -31,6 +31,7 @@ O namespace `item` é usado para acessar a mensagem, a solicitação de reunião
 | [attachments](#attachments-arrayattachmentdetails) | Membro |
 | [bcc](#bcc-recipients) | Membro |
 | [body](#body-body) | Membro |
+| [Categorias](#categories-categories) | Membro |
 | [cc](#cc-arrayemailaddressdetailsrecipients) | Membro |
 | [conversationId](#nullable-conversationid-string) | Membro |
 | [dateTimeCreated](#datetimecreated-date) | Membro |
@@ -45,8 +46,8 @@ O namespace `item` é usado para acessar a mensagem, a solicitação de reunião
 | [itemType](#itemtype-officemailboxenumsitemtype) | Membro |
 | [location](#location-stringlocation) | Membro |
 | [normalizedSubject](#normalizedsubject-string) | Membro |
-| [notificationMessages](#notificationmessages-notificationmessages) | Membro |
-| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | Member |
+| [notificationMessages](#notificationmessages-notificationmessages) | Member |
+| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | Membro |
 | [organizer](#organizer-emailaddressdetailsorganizer) | Membro |
 | [recorrência](#nullable-recurrence-recurrence) | Membro |
 | [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | Membro |
@@ -215,6 +216,42 @@ A seguir apresentamos um exemplo do resultado do parâmetro passado à função 
   "status": "succeeded",
   "asyncContext": "This is passed to the callback"
 }
+```
+
+---
+---
+
+####  <a name="categories-categoriesjavascriptapioutlookofficecategories"></a>Categorias:[categorias](/javascript/api/outlook/office.categories)
+
+Obtém um objeto que fornece métodos para gerenciar as categorias do item.
+
+> [!NOTE]
+> Não há suporte para esse membro no Outlook para iOS ou no Outlook para Android.
+
+##### <a name="type"></a>Tipo
+
+*   [Categories](/javascript/api/outlook/office.categories)
+
+##### <a name="requirements"></a>Requisitos
+
+|Requisito|Valor|
+|---|---|
+|[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Visualização|
+|[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)|Escrever ou Ler|
+
+##### <a name="example"></a>Exemplo
+
+Este exemplo obtém as categorias do item.
+
+```javascript
+Office.context.mailbox.item.categories.getAsync(function (asyncResult) {
+  if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+    console.log("Action failed with error: " + asyncResult.error.message);
+  } else {
+    console.log("Categories: " + JSON.stringify(asyncResult.value));
+  }
+});
 ```
 
 ---
@@ -1156,7 +1193,7 @@ Posteriormente, você poderá usar o identificador com o método [`removeAttachm
 ##### <a name="parameters"></a>Parâmetros
 |Nome|Tipo|Atributos|Descrição|
 |---|---|---|---|
-|`uri`|Cadeia de caracteres||O URI que fornece o local do arquivo anexado à mensagem ou compromisso. O comprimento máximo é de 2048 caracteres.|
+|`uri`|String||O URI que fornece o local do arquivo anexado à mensagem ou compromisso. O comprimento máximo é de 2048 caracteres.|
 |`attachmentName`|String||O nome do anexo que é mostrado enquanto o anexo está sendo carregado. O tamanho máximo é de 255 caracteres.|
 |`options`|Objeto|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
 |`options.asyncContext`|Objeto|&lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
@@ -1235,7 +1272,7 @@ Posteriormente, você poderá usar o identificador com o método [`removeAttachm
 
 |Nome|Tipo|Atributos|Descrição|
 |---|---|---|---|
-|`base64File`|Cadeia de caracteres||O conteúdo codificado em Base64 de uma imagem ou arquivo a ser adicionado a um email ou evento.|
+|`base64File`|String||O conteúdo codificado em Base64 de uma imagem ou arquivo a ser adicionado a um email ou evento.|
 |`attachmentName`|String||O nome do anexo que é mostrado enquanto o anexo está sendo carregado. O tamanho máximo é de 255 caracteres.|
 |`options`|Objeto|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
 |`options.asyncContext`|Objeto|&lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
@@ -1424,9 +1461,9 @@ Quando os anexos são especificados no parâmetro `formData.attachments`, o Outl
 |Nome|Tipo|Atributos|Descrição|
 |---|---|---|---|
 |`formData`|String &#124; Object||Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.<br/>**OU**<br/>Um objeto que contém os dados do corpo ou do anexo e uma função de retorno de chamada. O objeto é definido da maneira a seguir.|
-|`formData.htmlBody`|Cadeia de caracteres|&lt;opcional&gt;|Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.
+|`formData.htmlBody`|String|&lt;opcional&gt;|Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.
 |`formData.attachments`|Array.&lt;Object&gt;|&lt;opcional&gt;|Uma matriz de objetos JSON que são anexos de arquivo ou item.|
-|`formData.attachments.type`|Cadeia de caracteres||Indica o tipo de anexo. Deve ser `file` para um anexo de arquivo ou `item` para um anexo de item.|
+|`formData.attachments.type`|String||Indica o tipo de anexo. Deve ser `file` para um anexo de arquivo ou `item` para um anexo de item.|
 |`formData.attachments.name`|Cadeia de caracteres||Uma cadeia de caracteres que contém o nome do anexo, até 255 caracteres de comprimento.|
 |`formData.attachments.url`|Cadeia de caracteres||Usado somente se `type` estiver definido como `file`. O URI do local para o arquivo.|
 |`formData.attachments.isInline`|Booliano||Usado somente se `type` estiver definido como `file`. Se for `true`, indicará que o anexo será mostrado embutido no corpo da mensagem e não deverá ser exibido na lista de anexos.|
@@ -1546,9 +1583,9 @@ Quando os anexos são especificados no parâmetro `formData.attachments`, o Outl
 |Nome|Tipo|Atributos|Descrição|
 |---|---|---|---|
 |`formData`|String &#124; Object||Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.<br/>**OU**<br/>Um objeto que contém os dados do corpo ou do anexo e uma função de retorno de chamada. O objeto é definido da maneira a seguir.|
-|`formData.htmlBody`|Cadeia de caracteres|&lt;opcional&gt;|Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.
+|`formData.htmlBody`|String|&lt;opcional&gt;|Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.
 |`formData.attachments`|Array.&lt;Object&gt;|&lt;opcional&gt;|Uma matriz de objetos JSON que são anexos de arquivo ou item.|
-|`formData.attachments.type`|Cadeia de caracteres||Indica o tipo de anexo. Deve ser `file` para um anexo de arquivo ou `item` para um anexo de item.|
+|`formData.attachments.type`|String||Indica o tipo de anexo. Deve ser `file` para um anexo de arquivo ou `item` para um anexo de item.|
 |`formData.attachments.name`|Cadeia de caracteres||Uma cadeia de caracteres que contém o nome do anexo, até 255 caracteres de comprimento.|
 |`formData.attachments.url`|Cadeia de caracteres||Usado somente se `type` estiver definido como `file`. O URI do local para o arquivo.|
 |`formData.attachments.isInline`|Booliano||Usado somente se `type` estiver definido como `file`. Se for `true`, indicará que o anexo será mostrado embutido no corpo da mensagem e não deverá ser exibido na lista de anexos.|
@@ -1660,7 +1697,7 @@ O `getAttachmentContentAsync` método obtém o anexo com o identificador especif
 
 |Nome|Tipo|Atributos|Descrição|
 |---|---|---|---|
-|`attachmentId`|Cadeia de caracteres||O identificador do anexo que você deseja obter.|
+|`attachmentId`|String||O identificador do anexo que você deseja obter.|
 |`options`|Objeto|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
 |`options.asyncContext`|Objeto|&lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
 |`callback`|function|&lt;opcional&gt;|Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [AsyncResult](/javascript/api/office/office.asyncresult).|
@@ -2026,7 +2063,7 @@ Se você especificar uma regra `ItemHasRegularExpressionMatch` na propriedade do
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)|Read|
+|[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)|Read|
 
 ##### <a name="returns"></a>Retorna:
 
@@ -2061,7 +2098,7 @@ Se não houver seleção, mas o cursor estiver no corpo ou no assunto, o método
 |Nome|Tipo|Atributos|Descrição|
 |---|---|---|---|
 |`coercionType`|[Office.CoercionType](office.md#coerciontype-string)||Solicita um formato para os dados. Se Text, o método retorna o texto sem formatação como uma cadeia de caracteres, removendo quaisquer marcas HTML presentes. Se HTML, o método retorna o texto selecionado, seja ele texto sem formatação ou HTML.|
-|`options`|Object|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
+|`options`|Objeto|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
 |`options.asyncContext`|Objeto|&lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
 |`callback`|function||Quando o método for concluído, a função passada ao parâmetro `callback` será chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Para acessar os dados selecionados do método de retorno de chamada, chame `asyncResult.value.data`. Para acessar a propriedade de origem de que a seleção é proveniente, chame `asyncResult.value.sourceProperty`, que será `body` ou `subject`.|
 
