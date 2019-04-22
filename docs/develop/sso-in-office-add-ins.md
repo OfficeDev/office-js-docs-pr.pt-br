@@ -1,14 +1,14 @@
 ---
 title: Habilitar o logon único para Suplementos do Office
 description: ''
-ms.date: 03/22/2019
+ms.date: 04/10/2019
 localization_priority: Priority
-ms.openlocfilehash: ef2e2c275a3b7d157029d873e34cc17339dcee66
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 27a5d8e1dba55f1479fbdc4c23706e4322181c62
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870034"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914316"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Habilitar o logon único para Suplementos do Office (visualização)
 
@@ -45,7 +45,7 @@ O diagrama a seguir mostra como funciona o processo de SSO.
 4. O aplicativo host do Office solicita o **token do suplemento** do ponto de extremidade v 2.0 do Azure AD para o usuário atual. 
 5. O Azure AD envia o token do suplemento ao aplicativo host do Office.
 6. O aplicativo host do Office envia o **token do suplemento** ao suplemento como parte do objeto de resultado que retornou pela chamada de `getAccessTokenAsync`.
-7. O JavaScript no suplemento pode analisar o token e extrair informações necessárias, como endereço de email do usuário. 
+7. O JavaScript no suplemento pode analisar o token e extrair informações necessárias, como endereço de email do usuário.
 8. Opcionalmente, o suplemento pode enviar solicitação HTTP para o servidor para obter mais dados sobre o usuário; como as preferências do usuário. Como alternativa, o próprio token de acesso pode ser enviado para o servidor para análise e validação.
 
 ## <a name="develop-an-sso-add-in"></a>Desenvolver um suplemento com SSO
@@ -57,7 +57,7 @@ Esta seção descreve as tarefas envolvidas na criação de um suplemento do Off
 
 ### <a name="create-the-service-application"></a>Criar o aplicativo de serviço
 
-Registre o suplemento no portal de registro para o ponto de extremidade v 2.0 do Azure: https://apps.dev.microsoft.com. Esse é um processo que leva entre 5 e 10 minutos e inclui as seguintes tarefas:
+Registre o suplemento no portal de registro para o ponto de extremidade do Azure v 2.0. Esse é um processo que leva entre 5 e 10 minutos e inclui as seguintes tarefas:
 
 * Obter um ID de cliente e o segredo para o suplemento.
 * Especificar as permissões que seu suplemento precisa de AAD v. ponto de extremidade 2.0 (e, opcionalmente, para o Microsoft Graph). A permissão "perfil" sempre é necessária.

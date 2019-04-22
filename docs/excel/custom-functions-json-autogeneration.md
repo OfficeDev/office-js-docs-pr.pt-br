@@ -3,12 +3,12 @@ ms.date: 04/03/2019
 description: Use marcações JSDOC para criar dinamicamente seus metadados JSON de funções personalizadas.
 title: Criar metadados JSON para funções personalizadas (visualização)
 localization_priority: Priority
-ms.openlocfilehash: c6d89684da2d0773ccfb1763e5e3e426e647523b
-ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
+ms.openlocfilehash: 2efe2a9a5a83ba60ef327273d5bd599f82916d48
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "31478947"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914281"
 ---
 # <a name="create-json-metadata-for-custom-functions-preview"></a>Criar metadados JSON para funções personalizadas (visualização)
 
@@ -16,14 +16,14 @@ Quando uma função personalizada do Excel é gravada em JavaScript ou em TypeSc
 
 Adicione a marcação `@customfunction` nos comentários de código de uma função JavaScript ou TypeScript para marcá-la como uma função personalizada.
 
-Os tipos de parâmetro de função podem ser fornecidos usando a marcação [@param](#param) no JavaScript, ou o [Tipo de função](http://www.typescriptlang.org/docs/handbook/functions.html) no TypeScript. Para mais informações, consulte a marcação [@param](#param) e a seção [Tipos](#Types).
+Os tipos de parâmetros da função podem ser fornecidos usando a marcação [@param](#param) em JavaScript ou do [Tipo de função](https://www.typescriptlang.org/docs/handbook/functions.html) em TypeScript. Para mais informações, confira a marcação [@param](#param) e a seção [Tipos](#types).
 
 ## <a name="jsdoc-tags"></a>Marcações JSDoc
 As seguintes marcações JSDoc possuem suporte em funções personalizadas do Excel:
 * [@cancelable](#cancelable)
-* [@customfunction](#customfunction) nome id
+* [@customfunction](#customfunction) nome de identificação
 * [@helpurl](#helpurl) url
-* [@param](#param) _{type}_ descrição do nome
+* [@param](#param) _{type}_ nome e descrição
 * [@requiresAddress](#requiresAddress)
 * [@returns](#returns) _{type}_
 * [@streaming](#streaming)
@@ -86,19 +86,19 @@ A _url_ fornecida é exibida no Excel.
 
 Sintaxe de JavaScript: @param {type} nome _descrição_
 
-* `{type}` deve especificar as informações de tipo entre chaves. Confira [Tipos](##types) para mais informações sobre os tipos que podem ser usados. Opcional: se não especificado, o tipo `any` será usado.
-* `name` especifica para qual parâmetro a etiqueta @param se aplica. Obrigatório.
-* `description` fornece a descrição que aparece no Excel para o parâmetro da função. Opcional.
+* `{type}` deve especificar a informação de tipo entre chaves. Confira [Tipos](##types) para mais informações sobre os tipos que podem ser usados. Opcional: se não especificado, o tipo `any` será usado.
+* `name` especifica a qual parâmetro a marcação @param se aplica. Obrigatório.
+* `description` fornece a descrição que aparece no Excel para o parâmetro de função. Opcional.
 
 Para denotar um parâmetro de função personalizado como opcional:
 * Coloque colchetes ao redor do nome do parâmetro. Por exemplo: `@param {string} [text] Optional text`.
 
 #### <a name="typescript"></a>TypeScript
 
-Sintaxe do TypeScript: @param nome _descrição_
+Sintaxe de TypeScript: @param nome _descrição_
 
-* `name` especifica para qual parâmetro a etiqueta @param se aplica. Obrigatório.
-* `description` fornece a descrição que aparece no Excel para o parâmetro da função. Opcional.
+* `name` especifica a qual parâmetro a marcação @param se aplica. Obrigatório.
+* `description` fornece a descrição que aparece no Excel para o parâmetro de função. Opcional.
 
 Confira [Tipos](##types) para mais informações sobre os tipos de parâmetros de função que podem ser usados.
 
@@ -106,7 +106,7 @@ Para denotar um parâmetro de função personalizado como opcional, siga um dest
 * Use um parâmetro opcional. Por exemplo: `function f(text?: string)`
 * Dê ao parâmetro um valor padrão. Por exemplo: `function f(text: string = "abc")`
 
-Para uma descrição detalhada do @param, confira: [JSDoc](http://usejsdoc.org/tags-param.html)
+Para uma descrição detalhada do @param confira: [JSDoc](http://usejsdoc.org/tags-param.html)
 
 ---
 ### <a name="requiresaddress"></a>@requiresAddress
@@ -120,7 +120,7 @@ O último parâmetro da função deve ser do tipo `CustomFunctions.Invocation` o
 ### <a name="returns"></a>@returns
 <a id="returns"/>
 
-Sintaxe: @returns {_tipo_}
+Sintaxe: @returns {_type_}
 
 Fornece o tipo para o valor de retorno.
 
@@ -139,7 +139,7 @@ As funções de streaming não retornam valores diretamente, mas em vez disso de
 
 Exceções lançadas por uma função de streaming são ignoradas. `setResult()` pode ser chamado com Erro para indicar um resultado de erro.
 
-As funções de streaming não podem ser marcadas como [@volatile](#volatile).
+Funções de transmissão não podem ser marcadas como [@volatile](#volatile).
 
 ---
 ### <a name="volatile"></a>@volatile
@@ -181,7 +181,7 @@ Qualquer outro tipo será tratado como um erro.
 
 * [Metadados de funções personalizadas](custom-functions-json.md)
 * [Tempo de execução de funções personalizadas do Excel](custom-functions-runtime.md)
-* [Práticas recomendadas para funções personalizadas](custom-functions-best-practices.md)
+* [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
 * [Log de alteração de funções personalizadas](custom-functions-changelog.md)
 * [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)
 * [Depuração de funções personalizadas](custom-functions-debugging.md)

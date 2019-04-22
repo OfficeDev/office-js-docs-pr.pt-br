@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/17/2019
 localization_priority: Priority
-ms.openlocfilehash: d24c4647116b4af56d85a434f3ece5ccf4662a39
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.openlocfilehash: 9a3d09a78a7644b3b26c345ba2588a1fae59c1eb
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691164"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914267"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 
@@ -30,6 +30,8 @@ Os seguintes recursos estão no modo de visualização.
 Adicionado um novo parâmetro opcional `options`, que é um dicionário com um valor válido `allowEvent`. Esse valor é usado para cancelar a execução de um evento.
 
 **Disponível em**: Outlook na web (clássico)
+
+---
 
 ### <a name="attachments"></a>Attachments
 
@@ -75,6 +77,53 @@ Adicionado `AttachmentsChanged` evento `Item`.
 
 **Disponível em**: Outlook para Windows (Office 365)
 
+---
+
+### <a name="categories"></a>Categorias
+
+No Outlook, um usuário pode agrupar mensagens e compromissos usando uma categoria para codificá-los por cor. O usuário define as categorias em uma lista mestra em sua caixa de correio. Ele pode, em seguida, aplicar uma ou mais categorias a um item.
+
+> [!NOTE]
+> Não há suporte para esse recurso no Outlook para iOS ou Outlook para Android.
+
+#### <a name="categoriesjavascriptapioutlookofficecategories"></a>[Categories](/javascript/api/outlook/office.categories)
+
+Adicionou um novo objeto que representa a categoria de um item.
+
+**Disponível em**: Outlook para Windows (Office 365)
+
+#### <a name="categorydetailsjavascriptapioutlookofficecategorydetails"></a>[CategoryDetails](/javascript/api/outlook/office.categorydetails)
+
+Adicionou um novo objeto que representa os detalhes de uma categoria (seu nome e cor associada).
+
+**Disponível em**: Outlook para Windows (Office 365)
+
+#### <a name="mastercategoriesjavascriptapioutlookofficemastercategories"></a>[MasterCategories](/javascript/api/outlook/office.mastercategories)
+
+Adicionou um novo objeto que representa a lista mestra de categorias em uma caixa de correio.
+
+**Disponível em**: Outlook para Windows (Office 365)
+
+#### <a name="officecontextmailboxmastercategoriesjavascriptapioutlookofficemailboxmastercategories"></a>[Office.context.mailbox.masterCategories](/javascript/api/outlook/office.mailbox#mastercategories)
+
+Adicionou uma nova propriedade que representa a lista mestra de categorias em uma caixa de correio.
+
+**Disponível em**: Outlook para Windows (Office 365)
+
+#### <a name="officecontextmailboxitemcategoriesjavascriptapioutlookofficeitemcategories"></a>[Office.context.mailbox.item.categories](/javascript/api/outlook/office.item#categories)
+
+Adicionou uma nova propriedade que representa o conjunto de categorias em um item.
+
+**Disponível em**: Outlook para Windows (Office 365)
+
+#### <a name="officemailboxenumscategorycolorjavascriptapioutlookofficemailboxenumscategorycolor"></a>[Office.MailboxEnums.CategoryColor](/javascript/api/outlook/office.mailboxenums.categorycolor)
+
+Adicionou uma nova enumeração que especifica as cores disponíveis a serem associadas a categorias. 
+
+**Disponível em**: Outlook para Windows (Office 365)
+
+---
+
 ### <a name="delegate-access"></a>Acesso de representante
 
 #### <a name="sharedpropertiesjavascriptapioutlookofficesharedproperties"></a>[SharedProperties](/javascript/api/outlook/office.sharedproperties)
@@ -100,6 +149,8 @@ Adicionada uma novo enumeração de sinalizador bits que especifica as permissõ
 Adicionado um elemento filho ao elemento do manifesto [DesktopFormFactor](../../manifest/desktopformfactor.md). Define se o suplemento está disponível nos cenários de representante.
 
 **Disponível em**: Outlook para Windows (Office 365)
+
+---
 
 ### <a name="enhanced-location"></a>Local aprimorado
 
@@ -139,6 +190,8 @@ Adicionado `EnhancedLocationsChanged` evento `Item`.
 
 **Disponível em**: Outlook para Windows (Office 365)
 
+---
+
 ### <a name="integration-with-actionable-messages"></a>Integração à mensagens acionáveis
 
 #### <a name="officecontextmailboxitemgetinitializationcontextasyncofficecontextmailboxitemmdgetinitializationcontextasyncoptions-callback"></a>[Office.context.mailbox.item.getInitializationContextAsync](office.context.mailbox.item.md#getinitializationcontextasyncoptions-callback)
@@ -146,6 +199,8 @@ Adicionado `EnhancedLocationsChanged` evento `Item`.
 Adicionada uma nova função que retorna os dados inicialização que são transmitidos quando o suplemento é [ativado por uma mensagem acionável](/outlook/actionable-messages/invoke-add-in-from-actionable-message).
 
 **Disponível em**: Outlook para Windows (Office 365), Outlook na Web (clássico)
+
+---
 
 ### <a name="internet-headers"></a>Cabeçalhos de Internet
 
@@ -161,6 +216,8 @@ Adicionada uma nova propriedade que representa os cabeçalhos de Internet de um 
 
 **Disponível em**: Outlook para Windows (Office 365)
 
+---
+
 ### <a name="office-theme"></a>Tema do Office
 
 #### <a name="officecontextmailboxofficethemejavascriptapiofficeofficeofficetheme"></a>[Office.context.mailbox.officeTheme](/javascript/api/office/office.officetheme)
@@ -174,6 +231,8 @@ Capacidade adicional para obter o tema do Office.
 Adicionado `OfficeThemeChanged` evento `Mailbox`.
 
 **Disponível em**: Outlook para Windows (Office 365)
+
+---
 
 ### <a name="sso"></a>SSO
 

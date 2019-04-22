@@ -1,14 +1,14 @@
 ---
 title: Criar um Suplemento do Office com ASP.NET que use logon único
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/15/2019
 localization_priority: Priority
-ms.openlocfilehash: 3dd78866c53863a5847fe6f6cf1083d804b2ca2f
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.openlocfilehash: ebcf5cd72f841f5d97093e3b5f43833e97fa9947
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691108"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914302"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>Criar um Suplemento do Office com ASP.NET que use logon único (visualização)
 
@@ -69,7 +69,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
 
 ## <a name="configure-the-add-in"></a>Configurar o suplemento
 
-1. Na cadeia de caracteres a seguir, substitua o espaço reservado "{tenant_ID}" pela ID de locatário do Office 365. Use os métodos em [Encontrar sua ID de locatário do Office 365](/onedrive/find-your-office-365-tenant-id) para obtê-la.
+1. No seguinte cadeia, substitua o espaço reservado "{tenant_ID}" pela sua ID de locatário do Office 365. Se você não copiou a ID de locatário quando você registrou o suplemento com AAD, use um dos métodos em [Encontrar sua ID de locatário do Office 365](/onedrive/find-your-office-365-tenant-id) para obtê-la.
 
     `https://login.microsoftonline.com/{tenant_ID}/v2.0`
 
@@ -592,7 +592,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
     > [!NOTE]
     > Você deve usar apenas o escopo `access_as_user` para autorizar a API que lida com o fluxo Em Nome De para os suplementos do Office. Outras APIs em seu serviço devem ter seus próprios requisitos de escopo. Isso limita o que pode ser acessado com os tokens que o Office adquire.
 
-1. Substitua `TODO2` pelo código a seguir. Observação sobre o código:
+1. Substitua `TODO2` pelo código a seguir. Observação sobre este código:
     * Ele transforma o token de acesso bruto recebido do host do Office em um objeto de `UserAssertion` que será transmitido para outro método.
     * Seu suplemento não está mais desempenhando o papel de um recurso (ou público) para o qual o host do Office e o usuário precisam de acesso. Agora, ele mesmo é um cliente que precisa de acesso ao Microsoft Graph. `ConfidentialClientApplication` é o objeto "client context" da MSAL.
     * O terceiro parâmetro para o construtor `ConfidentialClientApplication` é uma URL de redirecionamento que não é realmente usada no fluxo "on behalf of", mas usar a URL correta é uma boa prática. O quarto e o quinto parâmetros podem ser usados para definir um armazenamento persistente que permitiria a reutilização de tokens não expirados em diferentes sessões com o suplemento. Este exemplo não implementa nenhum armazenamento persistente.
@@ -670,7 +670,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
     }  
     ```
 
-1. Substitua `TODO4` pelo seguinte. Observação sobre o código:
+1. Substitua `TODO4` pelo seguinte. Observação sobre este código:
 
     * As classes `GraphApiHelper` e `ODataHelper` são definidas nos arquivos da pasta **Helpers**. A classe `OneDriveItem` é definida em um arquivo da pasta **Models**. A discussão detalhada dessas classes não é relevante para a autorização ou o SSO, portanto, está fora do escopo deste artigo.
     * O desempenho é aprimorado ao se solicitar ao Microsoft Graph apenas os dados que são realmente necessários. Desse modo, o código usa um parâmetro de consulta `$select` para especificar que desejamos somente a propriedade de nome, e usa um parâmetro `$top` para especificar que desejamos somente os três primeiros nomes de pasta ou de arquivo.

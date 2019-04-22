@@ -1,20 +1,20 @@
 ---
-ms.date: 03/19/2019
+ms.date: 04/15/2019
 description: Solução de problemas comuns em funções personalizadas do Excel.
 title: Solução de problemas de funções personalizadas (versão prévia)
 localization_priority: Priority
-ms.openlocfilehash: 19c3dcccce7618289dc49c3f61ce781744c24369
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.openlocfilehash: 6a11b733c528028a2ea9fc48b08e9308a2cf6e97
+ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871336"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "31914218"
 ---
 # <a name="troubleshoot-custom-functions"></a>Solução de problemas de funções personalizadas
 
 Ao desenvolver funções personalizadas, você poderá encontrar erros no produto durante a criação e testes das funções.
 
-Para resolver problemas, você pode [habilitar o log de tempo de execução para capturar erros](#enable-runtime-logging) e consultar as [mensagens de erro nativas do Excel](#check-for-excel-error-messages). Além disso, verifique se há erros comuns, como não [verificar certificados ssl](#verify-ssl-certificates) de forma adequada, [deixar promessas não resolvidas](#ensure-promises-return) e esquecer de [associar as funções](#associate-your-functions).
+Para resolver problemas, você pode [habilitar o log de tempo de execução para capturar erros](#enable-runtime-logging) e consultar as [mensagens de erro nativas do Excel](#check-for-excel-error-messages). Além disso, verifique se há erros comuns, como não [verificar certificados ssl](#my-add-in-wont-load-verify-certificates) de forma adequada, [deixar promessas não resolvidas](#ensure-promises-return) e esquecer de [associar as funções](#my-functions-wont-load-associate-functions).
 
 ## <a name="enable-runtime-logging"></a>Habilitar o log de tempo de execução
 
@@ -26,7 +26,7 @@ O Excel tem diversas mensagens de erro internas que serão retornadas para uma c
 
 ## <a name="common-issues"></a>Problemas comuns
 
-### <a name="my-add-in-wont-load-verify-certifications"></a>Meu suplemento não carrega: verificar certificações
+### <a name="my-add-in-wont-load-verify-certificates"></a>Meu suplemento não carrega: verificar certificados
 
 Se o suplemento não for devidamente instalado, verifique se os certificados SSL estão configurados corretamente para o servidor Web que hospeda seu suplemento. Normalmente, se houver um problema com os certificados SSL, você verá uma mensagem de erro no Excel avisando que não foi possível instalar seu suplemento corretamente. Saiba mais em [Adicionar certificados autoassinados como certificado raiz de confiança](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
 
