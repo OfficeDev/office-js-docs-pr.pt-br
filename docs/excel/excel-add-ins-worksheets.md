@@ -1,14 +1,14 @@
 ---
 title: Trabalhe com planilhas usando a API JavaScript do Excel
 description: ''
-ms.date: 04/04/2019
+ms.date: 04/18/2019
 localization_priority: Priority
-ms.openlocfilehash: 0c66022112e6a6742753feb9945300a5d214e9bb
-ms.sourcegitcommit: 63219bcc1bb5e3bed7eb6c6b0adb73a4829c7e8f
+ms.openlocfilehash: 5df0bbdd1b6cf1cf3ef7a6aa14b7e00dee7ad9b2
+ms.sourcegitcommit: 44c61926d35809152cbd48f7b97feb694c7fa3de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "31479722"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "31959115"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Trabalhe com planilhas usando a API JavaScript do Excel
 
@@ -286,7 +286,7 @@ O suplemento precisará reagir aos usuários alterando os dados em uma planilha.
 O `WorksheetChangedEventArgs` objeto fornece informações sobre as alterações e a fonte. Como `onChanged` o acionamento ocorre quando o formato ou o valor dos dados mudam, pode ser útil checar com o suplemento se os valores realmente foram alterados. A `details` propriedade encapsula estas informações como um [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail). O exemplo a seguir mostra como exibir o antes e depois dos valores e tipos de uma célula que foi alterada.
 
 > [!NOTE]
-> `WorksheetChangedEventArgs.details` só está disponível atualmente na visualização pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> `WorksheetChangedEventArgs.details` só está disponível atualmente na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 ```js
 // This function would be used as an event handler for the Worksheet.onChanged event.
@@ -306,7 +306,7 @@ function onWorksheetChanged(eventArgs) {
 ## <a name="find-all-cells-with-matching-text-preview"></a>Encontrar todas as células com texto correspondente (versão prévia)
 
 > [!NOTE]
-> A função `findAll` do objeto da planilha só está disponível atualmente na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> A função `findAll` do objeto da Planilha só está disponível atualmente na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 O objeto `Worksheet` tem o método `find` para pesquisar uma cadeia especificada dentro da planilha. Ele retorna um objeto `RangeAreas`, que é um conjunto de objetos `Range` que podem ser editados ao mesmo tempo. O exemplo de código a seguir localiza todas as células com valores iguais à cadeia de caracteres **Concluída** e os marca de verde. Observe que `findAll` exibirá um erro `ItemNotFound` se a cadeia especificada não existir na planilha. Se você acha que a cadeia especificada pode não estar na planilha, use o método [findAllOrNullObject](excel-add-ins-advanced-concepts.md#ornullobject-methods) para que seu código manipule normalmente esse cenário.
 
@@ -331,6 +331,52 @@ Excel.run(function (context) {
 > - Para obter exemplos que mostram como obter intervalos de um objeto `Table`, confira [Trabalhar com tabelas usando a API JavaScript do Excel](excel-add-ins-tables.md).
 > - Para obter exemplos que mostram como pesquisar um grande intervalo para vários subgrupos com base nas características da célula, confira [Trabalhar simultaneamente com vários intervalos em suplementos do Excel](excel-add-ins-multiple-ranges.md).
 
+## <a name="filter-data"></a>Filtrar dados
+
+> [!NOTE]
+> `AutoFilter` só está disponível atualmente na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+Um [AutoFiltro](/javascript/api/excel/excel.autofilter) aplica filtros de data em um intervalo dentro da planilha. Isso é criado com `Worksheet.autoFilter.apply`, que possui os seguintes parâmetros:
+
+- `range`: O intervalo para o qual o filtro é aplicado, especificado como um `Range` objeto ou uma cadeia de caracteres.
+- `columnIndex`: O índice da coluna com base em zero contra os quais o critério de filtro é avaliado.
+- `criteria`: Um [FilterCriteria](/javascript/api/excel/excel.filtercriteria) objeto determinando quais linhas devem ser filtradas com base na célula da coluna.
+
+O exemplo do primeiro código mostra como adicionar um filtro de intervalo usado na planilha. Esse filtro ocultará as entradas que não estiverem superior a 25%, com base nos valores na coluna **3**.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var farmData = sheet.getUsedRange();
+
+    // This filter will only show the rows with the top 25% of values in column 3.
+    sheet.autoFilter.apply(farmData, 3, { criterion1: "25", filterOn: Excel.FilterOn.topPercent });
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+O exemplo do código seguinte mostra como atualizar o filtro automático usando o método `reapply`. Isso deve ser feito quando os dados no intervalo forem alterados.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    sheet.autoFilter.reapply();
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+O exemplo de código final de filtro automático mostra como remover o filtro automático de planilha com o método `remove`.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    sheet.autoFilter.remove();
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+Um `AutoFilter` também pode ser aplicado em tabelas individuais. Consulte [Trabalhar com tabelas usando o API JavaScript do Excel](excel-add-ins-tables.md#autofilter) para mais informações.
+
 ## <a name="data-protection"></a>Proteção de dados
 
 O suplemento pode controlar a capacidade de um usuário de editar dados em uma planilha. A propriedade `protection` da planilha é um objeto [WorksheetProtection](/javascript/api/excel/excel.worksheetprotection) com um método `protect()`. O exemplo a seguir mostra um cenário básico ativando/desativando a proteção completa da planilha ativa.
@@ -350,7 +396,7 @@ Excel.run(function (context) {
 
 O método `protect` tem dois parâmetros opcionais:
 
-- `options`: Um objeto [WorksheetProtectionOptions](/javascript/api/excel/excel.worksheetprotectionoptions) definindo restrições de edição específicas.
+- `options`: Um objeto [WorksheetProtectionOptions](/javascript/api/excel/excel.worksheetprotectionoptions) definindo restrições de edição de específicas.
 - `password`: Uma cadeia de caracteres que representa a senha necessária para um usuário ignorar a proteção e editar a planilha.
 
 O artigo [Proteger uma planilha](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6) tem mais informações sobre a proteção de planilhas e sobre como alterar na interface do usuário do Excel.

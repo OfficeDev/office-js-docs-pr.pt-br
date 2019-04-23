@@ -1,14 +1,14 @@
 ---
-ms.date: 04/15/2019
+ms.date: 04/18/2019
 description: Solução de problemas comuns em funções personalizadas do Excel.
 title: Solução de problemas de funções personalizadas (versão prévia)
 localization_priority: Priority
-ms.openlocfilehash: 6a11b733c528028a2ea9fc48b08e9308a2cf6e97
-ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
+ms.openlocfilehash: cf54aa3b719b7893799df5d1c5206c6fb904be69
+ms.sourcegitcommit: 44c61926d35809152cbd48f7b97feb694c7fa3de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "31914218"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "31959101"
 ---
 # <a name="troubleshoot-custom-functions"></a>Solução de problemas de funções personalizadas
 
@@ -45,6 +45,10 @@ CustomFunctions.associate("ADD", add);
 ```
 
 Saiba mais sobre esse processo em [Associar os nomes de função com metadados JSON](/office/dev/add-ins/excel/custom-functions-best-practices#associating-function-names-with-json-metadata).
+
+### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exception"></a>Não é possível abrir um suplemento de um localhost: utilize uma exceção de loopback local
+
+Se você vir o erro "Não é possível abrir este suplemento de um localhost", será necessário habilitar uma exceção de loopback local. Para obter detalhes sobre como fazer isso, confira [este artigo de suporte da Microsoft](https://support.microsoft.com/pt-BR/help/4490419/local-loopback-exemption-does-not-work).
 
 ### <a name="ensure-promises-return"></a>Garantir que as promessas retornem resultados
 

@@ -1,14 +1,14 @@
 ---
 title: Trabalhar com tabelas usando a API JavaScript do Excel
 description: ''
-ms.date: 04/04/2019
+ms.date: 04/18/2019
 localization_priority: Priority
-ms.openlocfilehash: 1b409e27c12d4741f59a027dd4962fdee65b96bf
-ms.sourcegitcommit: 63219bcc1bb5e3bed7eb6c6b0adb73a4829c7e8f
+ms.openlocfilehash: ba48fce1bee28bf4cad8b5d0ab91d9c1fb12fea8
+ms.sourcegitcommit: 44c61926d35809152cbd48f7b97feb694c7fa3de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "31479715"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "31959129"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Trabalhar com tabelas usando a API JavaScript do Excel
 
@@ -241,10 +241,10 @@ Excel.run(function (context) {
 
 O suplemento precisará reagir aos usuários alterando os dados em uma tabela. Para detectar essas alterações, basta [Registrar um manipulador de eventos.](excel-add-ins-events.md#register-an-event-handler) para o `onChanged` evento da tabela. Manipuladores de eventos para o `onChanged` evento recebem um objeto [TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs) quando o evento é acionado.
 
-O `TableChangedEventArgs` objeto fornece informações sobre as alterações e a fonte. Como `onChanged` o acionamento ocorre quando o formato ou o valor dos dados mudam, pode ser útil checar com o suplemento se os valores realmente foram alterados. As `details` propriedade encapsula estas informações como um [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail). O exemplo a seguir mostra como exibir o antes e depois dos valores e tipos de uma célula que foi alterada.
+O `TableChangedEventArgs` objeto fornece informações sobre as alterações e a fonte. Como `onChanged` o acionamento ocorre quando o formato ou o valor dos dados mudam, pode ser útil checar com o suplemento se os valores realmente foram alterados. A `details` propriedade encapsula estas informações como um [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail). O exemplo a seguir mostra como exibir o antes e depois dos valores e tipos de uma célula que foi alterada.
 
 > [!NOTE]
-> `TableChangedEventArgs.details` só está disponível atualmente na visualização pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> `TableChangedEventArgs.details` só está atualmente disponível na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 ```js
 // This function would be used as an event handler for the Table.onChanged event.
@@ -316,7 +316,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Dados de tabela com filtros aplicados por Categoria e Valor**
+**Dados de tabela com filtros aplicados para Categoria e Valor**
 
 ![Dados de tabela filtrados no Excel](../images/excel-tables-filters-apply.png)
 
@@ -357,6 +357,35 @@ Excel.run(function (context) {
         });
 }).catch(errorHandlerFunction);
 ```
+
+## <a name="autofilter"></a>Filtro Automático
+
+> [!NOTE]
+> `Table.autoFilter`só está atualmente disponível na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+Um suplemento pode usar o objeto [AutoFilter](/javascript/api/excel/excel.autofilter) da tabela para filtrar dados. Um `AutoFilter` objeto é toda a estrutura de filtro de uma tabela ou intervalo. Todas as operações de filtros abordadas anteriormente neste artigo são compatíveis com o filtro automático. O ponto de acesso único facilita o acesso e o gerenciamento de múltiplos filtros.
+
+O exemplo de código a seguir mostra a mesma [filtragem de dados como o exemplo de código anterior](#apply-filters-to-a-table), mas concluído totalmente pelo filtro automático.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    var expensesTable = sheet.tables.getItem("ExpensesTable");
+
+    expensesTable.autoFilter.apply(expensesTable.getRange(), 2, {
+        filterOn: Excel.FilterOn.values,
+        values: ["Restaurant", "Groceries"]
+    });
+    expensesTable.autoFilter.apply(expensesTable.getRange(), 3, {
+        filterOn: Excel.FilterOn.dynamic,
+        dynamicCriteria: Excel.DynamicFilterCriteria.belowAverage
+    });
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+Um `AutoFilter` também pode ser aplicado a um intervalo no nível da planilha. Consulte [Trabalhar com tabelas usando o API JavaScript do Excel](excel-add-ins-worksheets.md#filter-data) para mais informações.
 
 ## <a name="format-a-table"></a>Formatar uma tabela
 
