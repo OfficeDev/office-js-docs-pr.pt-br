@@ -4,12 +4,12 @@ description: ''
 ms.date: 04/10/2019
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: f3aa63b65768ab27015d59687ec9929a82bc99ab
-ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
+ms.openlocfilehash: 16f77e81d149aa2323760013f64fbf36f4ce7d8f
+ms.sourcegitcommit: 44c61926d35809152cbd48f7b97feb694c7fa3de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "31838596"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "31959122"
 ---
 # <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API Comum do Office
 
@@ -57,7 +57,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 |**Hosts do Office**|**Métodos no conjunto**|
 |:-----|:-----|
-| Excel<br>Excel Online<br>Excel para iPad<br>Excel para Mac<br>PowerPoint<br>PowerPoint Online<br>PowerPoint para iPad<br>PowerPoint para Mac<br>Word 2013 e posterior<br>Word 2016 para Mac e posterior<br>Word Online<br>Word para iPad|Dá suporte à saída para o formato OOXML (Office Open XML) como uma matriz de bytes<br>(Office.FileType.Compressed) ao usar o método Document.getFileAsync.|
+| Excel<br>Excel Online<br>Excel para Mac<br>PowerPoint<br>PowerPoint Online<br>PowerPoint para iPad<br>PowerPoint para Mac<br>Word 2013 e posterior<br>Word 2016 para Mac e posterior<br>Word Online<br>Word para iPad|Dá suporte à saída para o formato OOXML (Office Open XML) como uma matriz de bytes<br>(Office.FileType.Compressed) ao usar o método Document.getFileAsync.|
 
 ---
 
