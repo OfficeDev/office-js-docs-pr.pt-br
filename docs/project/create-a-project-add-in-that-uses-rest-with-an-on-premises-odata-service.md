@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
 ms.openlocfilehash: d2a3b490a0f82d57444dad4b5281f2f7e3bf2959
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871959"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451338"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>Criar um suplemento de Project que usa REST com um serviço OData local do Project Server
 

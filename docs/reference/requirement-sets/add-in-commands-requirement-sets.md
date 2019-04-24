@@ -5,11 +5,11 @@ ms.date: 03/19/2019
 ms.prod: non-product-specific
 localization_priority: Priority
 ms.openlocfilehash: a40107b968603311d3dea35cdd0d055adb14bf5a
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691136"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451742"
 ---
 # <a name="add-in-commands-requirement-sets"></a>Conjuntos de requisitos dos comandos de suplemento
 
