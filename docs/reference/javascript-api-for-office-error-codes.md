@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: 5e18a82c2536d5f5284588227b1cf767ebd2749e
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871938"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450727"
 ---
 # <a name="javascript-api-for-office-error-codes"></a>Códigos de erro da API JavaScript para Office
 

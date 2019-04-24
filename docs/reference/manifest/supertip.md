@@ -2,12 +2,13 @@
 title: Elemento Supertip no arquivo de manifesto
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: bae997eda8e1055c5be76382456ba83acca7b91c
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: cdbba342fa591ddff3faf94ecd63a4740fb904da
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433667"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450538"
 ---
 # <a name="supertip"></a>Supertip
 
@@ -17,7 +18,7 @@ Define uma dica de ferramenta avançada (título e descrição). É usada pelos 
 
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  [Título](#title)        | Sim |   O texto da superdica.         |
+|  [Title](#title)        | Sim |   O texto da superdica.         |
 |  [Descrição](#description)  | Sim |  A descrição da superdica.    |
 
 ### <a name="title"></a>Title

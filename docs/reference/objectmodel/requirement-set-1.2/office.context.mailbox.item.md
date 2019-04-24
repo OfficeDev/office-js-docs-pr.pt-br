@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: 8e411ac1ce58dd59ad3bfc6590a310289bbe686d
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870510"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450265"
 ---
 # <a name="item"></a>item
 
@@ -51,7 +51,7 @@ Obtém uma matriz de anexos para o item. Somente modo de leitura.
 > [!NOTE]
 > Certos tipos de arquivos são bloqueados pelo Outlook devido a possíveis problemas de segurança e, portanto, não retornam. Para saber mais, confira [Anexos bloqueados no Outlook](https://support.office.com/article/Blocked-attachments-in-Outlook-434752E1-02D3-4E90-9124-8B81E49A8519).
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   Array.<[AttachmentDetails](/javascript/api/outlook_1_2/office.attachmentdetails)>
 
@@ -91,7 +91,7 @@ console.log(outputString);
 
 Obtém um objeto que fornece métodos para acessar ou atualizar os destinatários na linha Cco (com cópia oculta) de uma mensagem. Somente modo de redação.
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   [Destinatários](/javascript/api/outlook_1_2/office.recipients)
 
@@ -119,7 +119,7 @@ function callback(asyncResult) {
 
 Obtém um objeto que fornece métodos para manipular o corpo de um item.
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   [Body](/javascript/api/outlook_1_2/office.body)
 
@@ -201,7 +201,7 @@ Você pode obter um número inteiro para esta propriedade se o aplicativo de ema
 
 Você obtém nulo para esta propriedade para um novo item em um formulário de composição. Se o usuário definir um assunto e salvar o item, a propriedade `conversationId` retornará um valor.
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   String
 
@@ -250,7 +250,7 @@ Obtém a data e a hora em que um item foi alterado pela última vez. Somente mod
 > [!NOTE]
 > Não há suporte para esse membro no Outlook para iOS ou no Outlook para Android.
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   Data
 
@@ -308,7 +308,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 });
 ```
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   Data | [Hora](/javascript/api/outlook_1_2/office.time)
 
@@ -409,7 +409,7 @@ Obtém o identificador do item dos Serviços Web do Exchange para o item atual. 
 > [!NOTE]
 > O identificador retornado pela propriedade `itemId` é o mesmo que o identificador do item dos Serviços Web do Exchange. A propriedade `itemId` não é idêntica à ID de Entrada do Outlook ou a ID usada pela API REST do Outlook. Antes de fazer chamadas da API REST usando esse valor, ele deve ser `Office.context.mailbox.convertToRestId`convertido usando o, que está disponível a partir do conjunto de requisitos 1,3. Para obter detalhes, confira [Usar APIs REST do Outlook de um suplemento do Outlook](/outlook/add-ins/use-rest-api#get-the-item-id).
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   String
 
@@ -507,7 +507,7 @@ Obtém o assunto de um item, com todos os prefixos removidos (incluindo `RE:` e 
 
 A propriedade normalizedSubject obtém o assunto do item, com quaisquer prefixos padrão (como `RE:` e `FW:`), que são adicionados por programas de email. Para obter o assunto do item com os prefixos intactos, use a propriedade [`subject`](#subject-stringsubject).
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   String
 
@@ -569,7 +569,7 @@ function callback(asyncResult) {
 
 Obtém o endereço de email do organizador da reunião de uma reunião especificada. Modo somente leitura.
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   [EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)
 
@@ -638,7 +638,7 @@ As propriedades [`from`](#from-emailaddressdetails) e `sender` representam a mes
 > [!NOTE]
 > A propriedade `recipientType` do objeto `EmailAddressDetails` na propriedade `sender` é `undefined`.
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   [EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)
 
@@ -696,7 +696,7 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 });
 ```
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   Data | [Hora](/javascript/api/outlook_1_2/office.time)
 
@@ -736,7 +736,7 @@ function callback(asyncResult) {
 }
 ```
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   String | [Subject](/javascript/api/outlook_1_2/office.subject)
 

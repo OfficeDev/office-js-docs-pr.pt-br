@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/12/2019
 localization_priority: Normal
 ms.openlocfilehash: 967834ff254f1b10d7518a012410beb2f327be68
-ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "31838463"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450356"
 ---
 # <a name="diagnostics"></a>diagnostics
 
@@ -28,8 +28,8 @@ Fornece informações de diagnóstico para um suplemento do Outlook.
 
 | Membro | Tipo |
 |--------|------|
-| [hostName](#hostname-string) | Membro |
-| [hostVersion](#hostversion-string) | Membro |
+| [hostName](#hostname-string) | Member |
+| [hostVersion](#hostversion-string) | Member |
 | [OWAView](#owaview-string) | Membro |
 
 ### <a name="members"></a>Membros

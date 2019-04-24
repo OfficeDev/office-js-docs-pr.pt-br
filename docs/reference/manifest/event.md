@@ -2,19 +2,20 @@
 title: Elemento Event no arquivo de manifesto
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: eda895b01e106d67eef70f199be64086e9372bef
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 51bbcd5a3d5abe60b850e88e4063e6bbc2da37bc
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432736"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450587"
 ---
 # <a name="event-element"></a>Elemento Event
 
 Define um manipulador de eventos em um suplemento.
 
 > [!NOTE] 
-> O elemento `Event` no momento só tem suporte pelo Outlook na Web no Office 365.
+> No `Event` momento, o elemento só tem suporte pelo Outlook na Web no Office 365.
 
 ## <a name="attributes"></a>Atributos
 

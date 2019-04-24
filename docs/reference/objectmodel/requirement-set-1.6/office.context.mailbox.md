@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: 9b91a61d301434886723a55eca9608f004f598eb
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871931"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451777"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -28,7 +28,7 @@ Fornece acesso ao modelo de objeto de suplemento do Outlook para o Microsoft Out
 
 | Membro | Tipo |
 |--------|------|
-| [ewsUrl](#ewsurl-string) | Member |
+| [ewsUrl](#ewsurl-string) | Membro |
 | [restUrl](#resturl-string) | Membro |
 | [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | Método |
 | [convertToEwsId](#converttoewsiditemid-restversion--string) | Método |
@@ -197,7 +197,7 @@ Se o aplicativo de email estiver sendo executado no Outlook, o método `convertT
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`timeValue`| Data|Um objeto Date|
+|`timeValue`| Date|Um objeto Date|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -308,7 +308,7 @@ Se o identificador do item especificado não identificar um compromisso existent
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)| Escrever ou Ler|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
 ##### <a name="example"></a>Exemplo
 
@@ -371,12 +371,12 @@ Se qualquer dos parâmetros exceder os limites de tamanho especificados, ou se u
 > [!NOTE]
 > Todos os parâmetros são opcionais.
 
-|Nome| Tipo| Descrição|
+|Name| Tipo| Descrição|
 |---|---|---|
-| `parameters` | Objeto | Um dicionário de parâmetros que descreve o novo compromisso. |
+| `parameters` | Object | Um dicionário de parâmetros que descreve o novo compromisso. |
 | `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_6/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email ou uma matriz contendo um objeto `EmailAddressDetails` para cada um dos participantes obrigatórios do compromisso. A matriz está limitada a um máximo de 100 entradas. |
 | `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_6/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email ou uma matriz contendo um objeto `EmailAddressDetails` para cada um dos participantes opcionais do compromisso. A matriz está limitada a um máximo de 100 entradas. |
-| `parameters.start` | Date | Um objeto `Date` que especifica a data e a hora de início do compromisso. |
+| `parameters.start` | Data | Um objeto `Date` que especifica a data e a hora de início do compromisso. |
 | `parameters.end` | Data | Um objeto `Date` que especifica a data e a hora de término do compromisso. |
 | `parameters.location` | String | Uma cadeia de caracteres que contém o local do compromisso. A cadeia de caracteres está limitada a um máximo de 255 caracteres. |
 | `parameters.resources` | Array.&lt;String&gt; | Uma matriz de cadeias de caracteres que contém os recursos necessários para o compromisso. A matriz está limitada a um máximo de 100 entradas. |
@@ -424,9 +424,9 @@ Se qualquer dos parâmetros exceder os limites de tamanho especificados, ou se u
 > [!NOTE]
 > Todos os parâmetros são opcionais.
 
-|Nome| Tipo| Descrição|
+|Name| Tipo| Descrição|
 |---|---|---|
-| `parameters` | Objeto | Um dicionário de parâmetros que descreve a nova mensagem. |
+| `parameters` | Object | Um dicionário de parâmetros que descreve a nova mensagem. |
 | `parameters.toRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_6/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email `EmailAddressDetails` ou uma matriz que contém um objeto para cada um dos destinatários na linha para. A matriz está limitada a um máximo de 100 entradas. |
 | `parameters.ccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_6/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email `EmailAddressDetails` ou uma matriz que contém um objeto para cada um dos destinatários na linha CC. A matriz está limitada a um máximo de 100 entradas. |
 | `parameters.bccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_6/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email `EmailAddressDetails` ou uma matriz que contém um objeto para cada um dos destinatários na linha Cco. A matriz está limitada a um máximo de 100 entradas. |
@@ -434,10 +434,10 @@ Se qualquer dos parâmetros exceder os limites de tamanho especificados, ou se u
 | `parameters.htmlBody` | String | O corpo HTML da mensagem. O conteúdo do corpo está limitado a um tamanho máximo de 32 KB. |
 | `parameters.attachments` | Array.&lt;Object&gt; | Uma matriz de objetos JSON que são anexos de arquivo ou item. |
 | `parameters.attachments.type` | String | Indica o tipo de anexo. Deve ser `file` para um anexo de arquivo ou `item` para um anexo de item. |
-| `parameters.attachments.name` | Cadeia de caracteres | Uma cadeia de caracteres que contém o nome do anexo, até 255 caracteres de comprimento.|
+| `parameters.attachments.name` | String | Uma cadeia de caracteres que contém o nome do anexo, até 255 caracteres de comprimento.|
 | `parameters.attachments.url` | String | Usado somente se `type` estiver definido como `file`. O URI do local para o arquivo. |
 | `parameters.attachments.isInline` | Booliano | Usado somente se `type` estiver definido como `file`. Se for `true`, indicará que o anexo será mostrado embutido no corpo da mensagem e não deverá ser exibido na lista de anexos. |
-| `parameters.attachments.itemId` | String | Usado somente se `type` estiver definido como `item`. A ID do item do EWS do email existente que você deseja anexar à nova mensagem. Isso é uma cadeia de até 100 caracteres. |
+| `parameters.attachments.itemId` | Cadeia de caracteres | Usado somente se `type` estiver definido como `item`. A ID do item do EWS do email existente que você deseja anexar à nova mensagem. Isso é uma cadeia de até 100 caracteres. |
 
 
 ##### <a name="requirements"></a>Requisitos
@@ -573,7 +573,7 @@ O método `getUserIdentityTokenAsync` retorna um token que pode ser utilizado pa
 |Nome| Tipo| Atributos| Descrição|
 |---|---|---|---|
 |`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O token é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`.|
-|`userContext`| Objeto| &lt;opcional&gt;|Quaisquer dados de estado que são passados ao método assíncrono.|
+|`userContext`| Object| &lt;opcional&gt;|Quaisquer dados de estado que são passados ao método assíncrono.|
 
 ##### <a name="requirements"></a>Requisitos
 

@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/02/2019
 localization_priority: Normal
 ms.openlocfilehash: 976f8ba00f6ac9ac32def56933af1077527b7e9c
-ms.sourcegitcommit: cb763661c927a1c7ec03feeda92a343537ad7fba
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "31396902"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32452036"
 ---
 # <a name="supportssharedfolders-element"></a>Elemento SupportsSharedFolders
 

@@ -2,12 +2,13 @@
 title: Elemento FunctionFile no arquivo de manifesto
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 634d383498698b55990dc73e66ec11616396f968
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 5f87d10428b58adfb89f1119ba5741599079afba
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432694"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450580"
 ---
 # <a name="functionfile-element"></a>Elemento FunctionFile
 
@@ -75,4 +76,4 @@ function writeText(event) {
 ```
 
 > [!IMPORTANT]
-> A chamada a **event.completed** sinaliza que o evento foi manipulado com êxito. Quando uma função é chamada várias vezes, por exemplo, com vários cliques no mesmo comando de suplemento, todos os eventos são enfileirados automaticamente. O primeiro evento é executado automaticamente, enquanto os outros permanecem na fila. Quando sua função chama **event.completed**, a próxima chamada em fila para essa função é executada. Você deve chamar **event.completed**, caso contrário sua função não será executada.
+> A chamada a **event.completed** sinaliza que o evento foi manipulado com êxito. Quando uma função é chamada várias vezes, por exemplo, com vários cliques no mesmo comando de suplemento, todos os eventos são enfileirados automaticamente. O primeiro evento é executado automaticamente, enquanto os outros eventos permanecem na fila. Quando sua função chama **event.completed**, a próxima chamada em fila para essa função é executada. Você deve chamar **event.completed**, caso contrário sua função não será executada.

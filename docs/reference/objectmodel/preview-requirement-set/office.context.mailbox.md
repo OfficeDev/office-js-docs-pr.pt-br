@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/17/2019
 localization_priority: Normal
 ms.openlocfilehash: 557dedf3943be12fbb9e384873d0b9079b251c2f
-ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "31914330"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450517"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -29,7 +29,7 @@ Fornece acesso ao modelo de objeto de suplemento do Outlook para o Microsoft Out
 | Membro | Tipo |
 |--------|------|
 | [ewsUrl](#ewsurl-string) | Membro |
-| [masterCategories](#mastercategories-mastercategories) | Membro |
+| [Nova mastercategories](#mastercategories-mastercategories) | Membro |
 | [restUrl](#resturl-string) | Membro |
 | [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | Método |
 | [convertToEwsId](#converttoewsiditemid-restversion--string) | Método |
@@ -93,7 +93,7 @@ Obtém um objeto que fornece métodos para gerenciar a lista mestra de categoria
 
 ##### <a name="type"></a>Tipo
 
-*   [Nova mastercategories](/javascript/api/outlook/office.mastercategories)
+*   [MasterCategories](/javascript/api/outlook/office.mastercategories)
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -432,7 +432,7 @@ Se qualquer dos parâmetros exceder os limites de tamanho especificados, ou se u
 > [!NOTE]
 > Todos os parâmetros são opcionais.
 
-|Nome| Tipo| Descrição|
+|Name| Tipo| Descrição|
 |---|---|---|
 | `parameters` | Object | Um dicionário de parâmetros que descreve o novo compromisso. |
 | `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email ou uma matriz contendo um objeto `EmailAddressDetails` para cada um dos participantes obrigatórios do compromisso. A matriz está limitada a um máximo de 100 entradas. |
@@ -488,7 +488,7 @@ Se qualquer dos parâmetros exceder os limites de tamanho especificados, ou se u
 > [!NOTE]
 > Todos os parâmetros são opcionais.
 
-|Nome| Tipo| Descrição|
+|Name| Tipo| Descrição|
 |---|---|---|
 | `parameters` | Objeto | Um dicionário de parâmetros que descreve a nova mensagem. |
 | `parameters.toRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email `EmailAddressDetails` ou uma matriz que contém um objeto para cada um dos destinatários na linha para. A matriz está limitada a um máximo de 100 entradas. |

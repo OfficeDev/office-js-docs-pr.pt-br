@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: 4c923010aee7ae62eaef28b64b72140328a1e510
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871266"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451861"
 ---
 # <a name="context"></a>context
 
@@ -84,13 +84,13 @@ Fornece acesso às propriedades de cores de temas do Office.
 
 Usar as cores de tema do Office possibilita coordenar o esquema de cores de seu suplemento com o tema do Office atualmente selecionado pelo usuário em **Arquivo > Conta do Office > Tema da interface de usuário do Office **, que é aplicado a todos os aplicativos host do Office. Usar cores de temas do Office é apropriado suplementos de email e painéis de tarefas.
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   Objeto
 
 ##### <a name="properties"></a>Propriedades:
 
-|Nome| Tipo| Descrição|
+|Name| Tipo| Descrição|
 |---|---|---|
 |`bodyBackgroundColor`| String|Obtém a cor de plano de fundo do corpo de tema do Office como um tripleto hexadecimal de cores.|
 |`bodyForegroundColor`| String|Obtém a cor de primeiro plano do corpo de tema do Office como um tripleto hexadecimal de cores.|
@@ -125,7 +125,7 @@ Obtém um objeto que representa as configurações personalizadas ou o estado de
 
 O objeto `RoamingSettings` permite armazenar e acessar os dados de um suplemento de email que está armazenado na caixa de correio do usuário, para que fiquem disponíveis para esse suplemento quando ele for executado em qualquer aplicativo host de cliente usado para acessar essa caixa de correio.
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   [RoamingSettings](/javascript/api/outlook_1_5/office.RoamingSettings)
 

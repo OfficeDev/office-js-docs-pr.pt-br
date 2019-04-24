@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/12/2019
 localization_priority: Normal
 ms.openlocfilehash: 7effc930d196aa009c3c779b702e082ae388fada
-ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "31838512"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451952"
 ---
 # <a name="office"></a>Office
 
@@ -25,9 +25,9 @@ O namespace do Office fornece interfaces compartilhadas que são usadas pelos su
 
 | Membro | Tipo |
 |--------|------|
-| [AsyncResultStatus](#asyncresultstatus-string) | Membro |
-| [CoercionType](#coerciontype-string) | Membro |
-| [EventType](#eventtype-string) | Membro |
+| [AsyncResultStatus](#asyncresultstatus-string) | Member |
+| [CoercionType](#coerciontype-string) | Member |
+| [EventType](#eventtype-string) | Member |
 | [SourceProperty](#sourceproperty-string) | Membro |
 
 ### <a name="namespaces"></a>Namespaces
@@ -48,10 +48,10 @@ Especifica o resultado de uma chamada assíncrona.
 
 ##### <a name="properties"></a>Propriedades:
 
-|Nome| Tipo| Descrição|
+|Name| Tipo| Descrição|
 |---|---|---|
-|`Succeeded`| Cadeia de caracteres|A chamada foi bem-sucedida.|
-|`Failed`| Cadeia de caracteres|Falha na chamada.|
+|`Succeeded`| String|A chamada foi bem-sucedida.|
+|`Failed`| String|Falha na chamada.|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -73,10 +73,10 @@ Especifica como forçar os dados retornados ou definir de acordo com o método c
 
 ##### <a name="properties"></a>Propriedades:
 
-|Nome| Tipo| Descrição|
+|Name| Tipo| Descrição|
 |---|---|---|
-|`Html`| Cadeia de caracteres|Solicita que os dados sejam retornados no formato HTML.|
-|`Text`| Cadeia de caracteres|Solicita que os dados sejam retornados no formato de texto.|
+|`Html`| String|Solicita que os dados sejam retornados no formato HTML.|
+|`Text`| String|Solicita que os dados sejam retornados no formato de texto.|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -98,15 +98,15 @@ Especifica o evento associado a um manipulador de eventos.
 
 ##### <a name="properties"></a>Propriedades:
 
-| Nome | Tipo | Descrição | Conjunto de requisitos mínimo |
+| Name | Tipo | Descrição | Conjunto de requisitos mínimo |
 |---|---|---|---|
-|`AppointmentTimeChanged`| Cadeia de caracteres | A data ou hora do compromisso ou série selecionado foi alterada. | 1.7 |
-|`AttachmentsChanged`| Cadeia de caracteres | Um anexo foi adicionado ou removido do item. | Visualização |
-|`EnhancedLocationsChanged`| Cadeia de caracteres | O local do compromisso selecionado foi alterado. | Visualização |
-|`ItemChanged`| Cadeia de caracteres | Um item diferente do Outlook é selecionado para exibição enquanto o painel de tarefas está fixado. | 1,5 |
-|`OfficeThemeChanged`| Cadeia de caracteres | O tema do Office na caixa de correio foi alterado. | Visualização |
-|`RecipientsChanged`| Cadeia de caracteres | A lista de destinatários do item selecionado ou local do compromisso foi alterada. | 1.7 |
-|`RecurrenceChanged`| Cadeia de caracteres | O padrão de recorrência da série selecionada foi alterado. | 1.7 |
+|`AppointmentTimeChanged`| String | A data ou hora do compromisso ou série selecionado foi alterada. | 1.7 |
+|`AttachmentsChanged`| String | Um anexo foi adicionado ou removido do item. | Visualização |
+|`EnhancedLocationsChanged`| String | O local do compromisso selecionado foi alterado. | Visualização |
+|`ItemChanged`| String | Um item diferente do Outlook é selecionado para exibição enquanto o painel de tarefas está fixado. | 1,5 |
+|`OfficeThemeChanged`| String | O tema do Office na caixa de correio foi alterado. | Visualização |
+|`RecipientsChanged`| String | A lista de destinatários do item selecionado ou local do compromisso foi alterada. | 1.7 |
+|`RecurrenceChanged`| String | O padrão de recorrência da série selecionada foi alterado. | 1.7 |
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -128,9 +128,9 @@ Especifica a origem dos dados retornados pelo método chamado.
 
 ##### <a name="properties"></a>Propriedades:
 
-|Nome| Tipo| Descrição|
+|Name| Tipo| Descrição|
 |---|---|---|
-|`Body`| Cadeia de caracteres|A origem dos dados é o corpo de uma mensagem.|
+|`Body`| String|A origem dos dados é o corpo de uma mensagem.|
 |`Subject`| Cadeia de caracteres|A origem dos dados é o assunto de uma mensagem.|
 
 ##### <a name="requirements"></a>Requisitos

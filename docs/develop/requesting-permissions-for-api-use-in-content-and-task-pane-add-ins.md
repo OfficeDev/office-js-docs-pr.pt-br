@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: 56eef177c69b8cdbd62dd630b5e1b5133b0eed86
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870076"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449223"
 ---
 # <a name="requesting-permissions-for-api-use-in-content-and-task-pane-add-ins"></a>Solicitar permissões para uso da API em suplementos do painel de tarefas e conteúdo
 

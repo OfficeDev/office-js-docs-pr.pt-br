@@ -6,11 +6,11 @@ ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
 ms.openlocfilehash: 76f4d88b9da39a4d71927982836ee061b329a9b3
-ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "31477569"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451401"
 ---
 # <a name="tutorial-create-custom-functions-in-excel-preview"></a>Tutorial: Criar funções personalizadas no Excel (visualização)
 
@@ -54,8 +54,8 @@ Neste tutorial, você vai:
     yo office
     ```
     
-    * Escolha o tipo de projeto: `Excel Custom Functions Add-in project (...)`
-    * Escolha o tipo de script: `JavaScript`
+    * Escolha o tipo de projeto:`Excel Custom Functions Add-in project (...)`
+    * Escolha um tipo de script: `JavaScript`
     * Qual será o nome do suplemento? `stock-ticker`
     
     ![O gerador Yeoman para suplementos do Office solicita funções personalizadas](../images/12-10-fork-cf-pic.jpg)
@@ -78,7 +78,7 @@ Neste tutorial, você vai:
 
 5. Inicie o servidor local da web, que é executado no Node.js. Você pode experimentar o suplemento função personalizada no Excel para Windows ou o Excel Online.
 
-# [<a name="excel-for-windows"></a>Excel para Windows](#tab/excel-windows)
+# <a name="excel-for-windowstabexcel-windows"></a>[Excel para Windows](#tab/excel-windows)
 
 Execute o seguinte comando.
 
@@ -91,7 +91,7 @@ Esse comando inicia o servidor web e sideloads seu suplemento da função person
 > [!NOTE]
 > Se o suplemento não carregar, verifique se você concluiu a etapa 3 corretamente. Você também pode habilitar o **[log de tempo de execução](../testing/troubleshoot-manifest.md#use-runtime-logging-to-debug-your-add-in)** para solucionar problemas com o arquivo de manifesto XML do seu suplemento, bem como qualquer problema de instalação ou de tempo de execução. O log de `console.log` tempo de execução grava instruções em um arquivo de log para ajudá-lo a encontrar e corrigir problemas.
 
-# [<a name="excel-online"></a>Excel Online](#tab/excel-online)
+# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
 Execute o seguinte comando.
 
@@ -191,18 +191,18 @@ Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio d
 
 5. Registre novamente o suplemento no Excel para que a nova função esteja disponível. 
 
-# [<a name="excel-for-windows"></a>Excel para Windows](#tab/excel-windows)
+# <a name="excel-for-windowstabexcel-windows"></a>[Excel para Windows](#tab/excel-windows)
 
 1. Feche o Excel e abra novamente o Excel.
 
 2. No Excel, escolha a guia**Inserir** e, em seguida, escolha a seta para baixo localizada à direita de **Meus Suplementos**.  ![ Inserir faixa de opções no Excel para Windows com a seta Meus complementos realçada](../images/excel-cf-register-add-in-1b.png)
 
 3. Na lista de suplementos disponíveis, localize a seção**Suplementos do desenvolvedor** e selecione o suplemento **cotações** para registrá-lo.
-    ![Inserir faixa de opções no Excel para Windows com o suplemento Funções Personalizadas do Excel realçado na minha lista de suplementos](../images/excel-cf-register-add-in-2.png)
+    ![Insira a faixa de opções no Excel para Windows com o suplemento Funções Personalizadas do Excel realçado na minha lista de suplementos](../images/excel-cf-register-add-in-2.png)
 
-# [<a name="excel-online"></a>Excel Online](#tab/excel-online)
+# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
-1. No Excel Online, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.  ![Inserir faixa de opções no Excel Online com o ícone Meus Suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
+1. No Excel Online, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.  ![Insira a faixa de opções no Excel Online com o ícone Meus Suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
 
 2. Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**. 
 
@@ -292,18 +292,18 @@ A `stockPrice` função que você acabou de criar retorna o preço de uma ação
 
 3. Registre novamente o suplemento no Excel para que a nova função esteja disponível.
 
-# [<a name="excel-for-windows"></a>Excel para Windows](#tab/excel-windows)
+# <a name="excel-for-windowstabexcel-windows"></a>[Excel para Windows](#tab/excel-windows)
 
 1. Feche o Excel e abra novamente o Excel.
 
 2. No Excel, escolha a guia**Inserir** e, em seguida, escolha a seta para baixo localizada à direita de **Meus Suplementos**.  ![ Inserir faixa de opções no Excel para Windows com a seta Meus complementos realçada](../images/excel-cf-register-add-in-1b.png)
 
 3. Na lista de suplementos disponíveis, localize a seção**Suplementos do desenvolvedor** e selecione o suplemento **cotações** para registrá-lo.
-    ![Inserir faixa de opções no Excel para Windows com o suplemento Funções Personalizadas do Excel realçado na minha lista de suplementos](../images/excel-cf-register-add-in-2.png)
+    ![Insira a faixa de opções no Excel para Windows com o suplemento Funções Personalizadas do Excel realçado na minha lista de suplementos](../images/excel-cf-register-add-in-2.png)
 
-# [<a name="excel-online"></a>Excel Online](#tab/excel-online)
+# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
-1. No Excel Online, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.  ![Inserir faixa de opções no Excel Online com o ícone Meus Suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
+1. No Excel Online, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.  ![Insira a faixa de opções no Excel Online com o ícone Meus Suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
 
 2. Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**.
 

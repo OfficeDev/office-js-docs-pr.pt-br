@@ -2,16 +2,17 @@
 title: Elemento Resources no arquivo de manifesto
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 0707df137d075a9922836e5d960216d089c56675
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: e29e7e36585be8fd728eb46128d7ead538ea8069
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433898"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32452050"
 ---
 # <a name="resources-element"></a>Elemento Resources
 
-Contém ícones, cadeias de caracteres e URLs para o nó [VersionOverrides](versionoverrides.md). Um elemento de manifesto especifica um recurso usando a **id** do recurso. Isso ajuda a manter o tamanho do manifesto manejável, especialmente quando os recursos tiverem versões para localidades diferentes. Uma **id** deve ser exclusiva no manifesto e pode ter no máximo 32 caracteres.
+Contém ícones, cadeias de caracteres e URLs para o nó [VersionOverrides](versionoverrides.md). Um elemento de manifesto especifica um recurso usando a **d** do recurso. Isso ajuda a manter o tamanho do manifesto manejável, especialmente quando os recursos tiverem versões para localidades diferentes. Uma **id** deve ser exclusiva dentro do manifesto e pode ter no máximo 32 caracteres.
 
 Cada recurso pode ter um ou mais elementos filhos **Override** para definir um recurso diferente para uma localidade específica.
 
@@ -19,7 +20,7 @@ Cada recurso pode ter um ou mais elementos filhos **Override** para definir um r
 
 |  Elemento |  Tipo  |  Descrição  |
 |:-----|:-----|:-----|
-|  [Images](#images)            |  image   |  Fornece a URL HTTPS de uma imagem para um ícone. |
+|  [Imagens](#images)            |  image   |  Fornece a URL HTTPS de uma imagem para um ícone. |
 |  **URLs**                |  url     |  Fornece um local para a URL HTTPS. A URL pode ter 2.048 caracteres no máximo. |
 |  **ShortStrings** |  cadeia de caracteres  |  O texto para os elementos **Label** e **Title**. Cada **String** contém no máximo 125 caracteres.|
 |  **LongStrings**  |  cadeia de caracteres  | O texto para atributos **Description**. Cada **String** contém no máximo 250 caracteres.|

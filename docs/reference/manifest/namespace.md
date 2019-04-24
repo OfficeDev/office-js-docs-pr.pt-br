@@ -2,12 +2,13 @@
 title: Elemento Namespace no arquivo de manifesto
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 8000ea5774b38dd038888c686a33127a2d5bc482
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: faf77fe8b6bddc734f1b47eb544ffe7e1e7c4aaa
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432323"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32452099"
 ---
 # <a name="namespace-element"></a>Elemento Namespace
 

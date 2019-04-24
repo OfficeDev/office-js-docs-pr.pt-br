@@ -2,12 +2,13 @@
 title: Elemento OfficeTab no arquivo de manifesto
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 721064687c3c892b565a94e418815726cc0817f5
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: b61c245c000f8bf13eb71c991ec57a125993c2fc
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432869"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450461"
 ---
 # <a name="officetab-element"></a>Elemento OfficeTab
 
@@ -17,7 +18,7 @@ Define a guia da faixa de opções no qual seu comando de suplemento é exibido.
 
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  Grupo      | Sim |  Define um grupo de comandos. Você pode adicionar apenas um grupo por suplemento à guia padrão.  |
+|  Group      | Sim |  Define um grupo de comandos. Você pode adicionar apenas um grupo por suplemento à guia padrão.  |
 
 A seguir estão os valores válidos de `id` por host. Os valores em **negrito** têm suporte na área de trabalho e online (por exemplo, Word 2016 ou posterior para Windows e Word Online).
 

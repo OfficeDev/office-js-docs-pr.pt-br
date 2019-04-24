@@ -5,11 +5,11 @@ ms.date: 03/19/2019
 ms.prod: non-product-specific
 localization_priority: Normal
 ms.openlocfilehash: ebbd10e65894a7d038e54ffbaac20c973adf4a9f
-ms.sourcegitcommit: c5daedf017c6dd5ab0c13607589208c3f3627354
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "30691129"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450083"
 ---
 # <a name="dialog-api-requirement-sets"></a>Conjuntos de requisitos da Dialog API
 
@@ -17,13 +17,14 @@ Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplemento
 
 Os suplementos do Office executam várias versões do Office. A tabela a seguir lista os conjuntos de requisitos da Dialog API, ou seja, os aplicativos de host do Office que oferecem suporte a esse conjunto de requisitos, e os números de versão ou de build dos aplicativos do Office.
 
-|  Conjunto de requisitos  | Office 2013 para Windows | Office 2016 ou posterior para Windows   | Office 365 para Windows |  Office 365 para iPad  |  Office 365 para Mac  | Office Online  |  Servidor do Office Online  |
+|  Conjunto de requisitos  | Office 2013 para Windows | Outlook 2016 ou posterior para Windows   | Office 365 para Windows |  Office 365 para iPad  |  Office 365 para Mac  | Office Online  |  Servidor do Office Online  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | DialogApi 1.1  | Build 15.0.4855.1000 ou posterior | Build 16.0.4390.1000 ou posterior | Versão 1602 (build 6741.0000) ou posterior | 1.22 ou posterior | 15.20 ou posterior| Janeiro de 2017 | Versão 1608 (build 7601.6800) ou posterior|
 
 Para saber mais sobre versões, números de build e sobre o Servidor do Office Online, confira:
 
-- [Números de versão e de build de lançamentos de canais de atualização para clientes do Office 365](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
+- 
+  [Números de versão e de build de lançamentos de canais de atualização para clientes do Office 365](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [Qual versão do Office estou usando?](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
 - 
   [Onde você pode encontrar o número de versão e de build de um aplicativo cliente do Office 365](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)

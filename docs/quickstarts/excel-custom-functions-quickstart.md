@@ -5,11 +5,11 @@ title: Início rápido de funções personalizadas (visualização)
 ms.prod: excel
 localization_priority: Normal
 ms.openlocfilehash: 80c500e1e30e8751a7d969d33cd7e13b7943b1b5
-ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "31914295"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450833"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Introdução ao desenvolvimento de funções personalizadas do Excel
 

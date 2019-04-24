@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: cd8e71e39940fcf0de50982ef1cdb6825abb7221
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870503"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450363"
 ---
 # <a name="item"></a>item
 
@@ -51,7 +51,7 @@ Obtém uma matriz de anexos para o item. Somente modo de leitura.
 > [!NOTE]
 > Certos tipos de arquivos são bloqueados pelo Outlook devido a possíveis problemas de segurança e, portanto, não retornam. Para saber mais, confira [Anexos bloqueados no Outlook](https://support.office.com/article/Blocked-attachments-in-Outlook-434752E1-02D3-4E90-9124-8B81E49A8519).
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   Array.<[AttachmentDetails](/javascript/api/outlook_1_4/office.attachmentdetails)>
 
@@ -91,7 +91,7 @@ console.log(outputString);
 
 Obtém um objeto que fornece métodos para obter ou atualizar a linha Cco (com cópia oculta) de uma mensagem. Somente modo de redação.
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   [Destinatários](/javascript/api/outlook_1_4/office.recipients)
 
@@ -119,7 +119,7 @@ function callback(asyncResult) {
 
 Obtém um objeto que fornece métodos para manipular o corpo de um item.
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   [Body](/javascript/api/outlook_1_4/office.body)
 
@@ -201,7 +201,7 @@ Você pode obter um número inteiro para esta propriedade se o aplicativo de ema
 
 Você obtém nulo para esta propriedade para um novo item em um formulário de composição. Se o usuário definir um assunto e salvar o item, a propriedade `conversationId` retornará um valor.
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   String
 
@@ -308,7 +308,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 });
 ```
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   Data | [Hora](/javascript/api/outlook_1_4/office.time)
 
@@ -383,7 +383,7 @@ A propriedade `itemClass` especifica a classe da mensagem do item selecionado. A
 
 Você pode criar classes de mensagem personalizadas que estendem uma classe de mensagem padrão, por exemplo, uma classe de mensagem de compromisso `IPM.Appointment.Contoso` personalizada.
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   String
 
@@ -411,7 +411,7 @@ Obtém o identificador do item dos Serviços Web do Exchange para o item atual. 
 
 A propriedade `itemId` não está disponível no modo de redação. Se for obrigatório o identificador de um item, pode ser usado o método [`saveAsync`](#saveasyncoptions-callback) para salvar o item no servidor, o que retornará o identificador do item no parâmetro [`AsyncResult.value`](/javascript/api/office/office.asyncresult) na função de retorno de chamada.
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   String
 
@@ -491,7 +491,7 @@ function callback(asyncResult) {
 }
 ```
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   Cadeia de caracteres | [Localização](/javascript/api/outlook_1_4/office.location)
 
@@ -509,7 +509,7 @@ Obtém o assunto de um item, com todos os prefixos removidos (incluindo `RE:` e 
 
 A propriedade normalizedSubject obtém o assunto do item, com quaisquer prefixos padrão (como `RE:` e `FW:`), que são adicionados por programas de email. Para obter o assunto do item com os prefixos intactos, use a propriedade [`subject`](#subject-stringsubject).
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   String
 
@@ -726,7 +726,7 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 });
 ```
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   Data | [Hora](/javascript/api/outlook_1_4/office.time)
 
@@ -766,7 +766,7 @@ function callback(asyncResult) {
 }
 ```
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   String | [Subject](/javascript/api/outlook_1_4/office.subject)
 
@@ -1572,7 +1572,7 @@ Como compromissos não têm um estado de rascunho, se `saveAsync` for chamado em
 
 |Nome| Tipo| Atributos| Descrição|
 |---|---|---|---|
-|`options`| Objeto| &lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
+|`options`| Object| &lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
 |`options.asyncContext`| Objeto| &lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.||
 |`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Em caso de sucesso, o identificador do item é fornecido na propriedade `asyncResult.value`.|
 

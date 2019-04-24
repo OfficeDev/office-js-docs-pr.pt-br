@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/12/2019
 localization_priority: Normal
 ms.openlocfilehash: 29111314f16bb9c6518b350254a3036ffa125796
-ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "31838435"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451958"
 ---
 # <a name="userprofile"></a>userProfile
 
@@ -26,9 +26,9 @@ ms.locfileid: "31838435"
 
 | Membro | Tipo |
 |--------|------|
-| [accountType](#accounttype-string) | Membro |
-| [displayName](#displayname-string) | Membro |
-| [emailAddress](#emailaddress-string) | Membro |
+| [accountType](#accounttype-string) | Member |
+| [displayName](#displayname-string) | Member |
+| [emailAddress](#emailaddress-string) | Member |
 | [timeZone](#timezone-string) | Membro |
 
 ### <a name="members"></a>Membros

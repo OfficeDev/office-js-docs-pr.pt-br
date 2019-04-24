@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/17/2019
 localization_priority: Normal
 ms.openlocfilehash: cb9c298302bf0df9d7842fde4706d9d0c9710ae4
-ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "31914344"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450391"
 ---
 # <a name="item"></a>item
 
@@ -51,9 +51,9 @@ O namespace `item` é usado para acessar a mensagem, a solicitação de reunião
 | [organizer](#organizer-emailaddressdetailsorganizer) | Membro |
 | [recorrência](#nullable-recurrence-recurrence) | Membro |
 | [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | Membro |
-| [sender](#sender-emailaddressdetails) | Membro |
-| [seriesid](#nullable-seriesid-string) | Membro |
-| [start](#start-datetime) | Membro |
+| [sender](#sender-emailaddressdetails) | Member |
+| [seriesid](#nullable-seriesid-string) | Member |
+| [start](#start-datetime) | Member |
 | [subject](#subject-stringsubject) | Membro |
 | [to](#to-arrayemailaddressdetailsrecipients) | Membro |
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | Método |
@@ -66,19 +66,19 @@ O namespace `item` é usado para acessar a mensagem, a solicitação de reunião
 | [getAttachmentContentAsync](#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent) | Método |
 | [getAttachmentsAsync](#getattachmentsasyncoptions-callback--arrayattachmentdetails) | Método |
 | [getEntities](#getentities--entities) | Método |
-| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Método |
-| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Método |
-| [getInitializationContextAsync](#getinitializationcontextasyncoptions-callback) | Método |
-| [getRegExMatches](#getregexmatches--object) | Método |
-| [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | Método |
-| [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | Método |
-| [getSelectedEntities](#getselectedentities--entities) | Método |
-| [getSelectedRegExMatches](#getselectedregexmatches--object) | Método |
-| [getSharedPropertiesAsync](#getsharedpropertiesasyncoptions-callback) | Método |
-| [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | Método |
+| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Método		 |
+| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Método		 |
+| [getInitializationContextAsync](#getinitializationcontextasyncoptions-callback) | Método		 |
+| [getRegExMatches](#getregexmatches--object) | Método		 |
+| [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | Método		 |
+| [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | Método		 |
+| [getSelectedEntities](#getselectedentities--entities) | Método		 |
+| [getSelectedRegExMatches](#getselectedregexmatches--object) | Método		 |
+| [getSharedPropertiesAsync](#getsharedpropertiesasyncoptions-callback) | Método		 |
+| [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | Método		 |
 | [removeAttachmentAsync](#removeattachmentasyncattachmentid-options-callback) | Método |
 | [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | Método |
-| [saveAsync](#saveasyncoptions-callback) | Método |
+| [saveAsync](#saveasyncoptions-callback) | Método		 |
 | [setSelectedDataAsync](#setselecteddataasyncdata-options-callback) | Método |
 
 ### <a name="example"></a>Exemplo
@@ -108,7 +108,7 @@ Obtém os anexos do item como uma matriz. Somente modo de leitura.
 > [!NOTE]
 > Certos tipos de arquivos são bloqueados pelo Outlook devido a possíveis problemas de segurança e, portanto, não retornam. Para saber mais, confira [Anexos bloqueados no Outlook](https://support.office.com/article/Blocked-attachments-in-Outlook-434752E1-02D3-4E90-9124-8B81E49A8519).
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)>
 
@@ -182,7 +182,7 @@ function callback(asyncResult) {
 
 Obtém um objeto que fornece métodos para manipular o corpo de um item.
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   [Body](/javascript/api/outlook/office.body)
 
@@ -306,7 +306,7 @@ Você pode obter um número inteiro para esta propriedade se o aplicativo de ema
 
 Você obtém nulo para esta propriedade para um novo item em um formulário de composição. Se o usuário definir um assunto e salvar o item, a propriedade `conversationId` retornará um valor.
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   String
 
@@ -449,7 +449,7 @@ A `enhancedLocation` propriedade retorna um objeto [EnhancedLocation](/javascrip
 
 A `enhancedLocation` propriedade retorna um objeto [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) que fornece métodos para obter, remover ou adicionar locais em um compromisso.
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation)
 
@@ -512,7 +512,7 @@ function callback(asyncResult) {
 }
 ```
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | [de](/javascript/api/outlook/office.from)
 
@@ -531,7 +531,7 @@ function callback(asyncResult) {
 
 Obtém ou define os cabeçalhos de Internet de uma mensagem.
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   [InternetHeaders](/javascript/api/outlook/office.internetheaders)
 
@@ -627,7 +627,7 @@ Obtém o identificador do item dos Serviços Web do Exchange para o item atual. 
 
 A propriedade `itemId` não está disponível no modo de redação. Se for obrigatório o identificador de um item, pode ser usado o método [`saveAsync`](#saveasyncoptions-callback) para salvar o item no servidor, o que retornará o identificador do item no parâmetro [`AsyncResult.value`](/javascript/api/office/office.asyncresult) na função de retorno de chamada.
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   String
 
@@ -713,7 +713,7 @@ function callback(asyncResult) {
 }
 ```
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   Cadeia de caracteres | [Localização](/javascript/api/outlook/office.location)
 
@@ -734,7 +734,7 @@ Obtém o assunto de um item, com todos os prefixos removidos (incluindo `RE:` e 
 
 A propriedade normalizedSubject obtém o assunto do item, com quaisquer prefixos padrão (como `RE:` e `FW:`), que são adicionados por programas de email. Para obter o assunto do item com os prefixos intactos, use a propriedade [`subject`](#subject-stringsubject).
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   String
 
@@ -854,7 +854,7 @@ Office.context.mailbox.item.organizer.getAsync(
 );
 ```
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   [](/javascript/api/outlook/office.emailaddressdetails) | [Organizador](/javascript/api/outlook/office.organizer) EmailAddressDetails
 
@@ -917,7 +917,7 @@ Recurrence = {
 }
 ```
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 * [Recorrência](/javascript/api/outlook/office.recurrence)
 
@@ -1016,7 +1016,7 @@ No OWA e no Outlook, `seriesId` o retorna a ID dos serviços Web do Exchange (EW
 
 A `seriesId` propriedade retorna `null` para itens que não têm itens pai, como compromissos únicos, itens de série ou solicitações de reunião e retornam `undefined` para outros itens que não são solicitações de reunião.
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 * String
 

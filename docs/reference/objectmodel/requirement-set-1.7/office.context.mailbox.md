@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/12/2019
 localization_priority: Normal
 ms.openlocfilehash: 0f84e657644b198fbca722a0628a5bafcce84377
-ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "31838547"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450223"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -236,7 +236,7 @@ IDs de itens recuperadas por EWS ou pela propriedade `itemId` usam um formato di
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`itemId`| Cadeia de caracteres|Uma ID de item formatada para os Serviços Web do Exchange (EWS)|
+|`itemId`| String|Uma ID de item formatada para os Serviços Web do Exchange (EWS)|
 |`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_7/office.mailboxenums.restversion)|Um valor que indica a versão da API REST do Outlook com a qual a ID convertida será usada.|
 
 ##### <a name="requirements"></a>Requisitos
@@ -318,7 +318,7 @@ Se o identificador do item especificado não identificar um compromisso existent
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`itemId`| Cadeia de caracteres|O identificador dos Serviços Web do Exchange (EWS) para um compromisso de calendário existente.|
+|`itemId`| String|O identificador dos Serviços Web do Exchange (EWS) para um compromisso de calendário existente.|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -395,16 +395,16 @@ Se qualquer dos parâmetros exceder os limites de tamanho especificados, ou se u
 > [!NOTE]
 > Todos os parâmetros são opcionais.
 
-|Nome| Tipo| Descrição|
+|Name| Tipo| Descrição|
 |---|---|---|
 | `parameters` | Object | Um dicionário de parâmetros que descreve o novo compromisso. |
 | `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email ou uma matriz contendo um objeto `EmailAddressDetails` para cada um dos participantes obrigatórios do compromisso. A matriz está limitada a um máximo de 100 entradas. |
 | `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email ou uma matriz contendo um objeto `EmailAddressDetails` para cada um dos participantes opcionais do compromisso. A matriz está limitada a um máximo de 100 entradas. |
 | `parameters.start` | Data | Um objeto `Date` que especifica a data e a hora de início do compromisso. |
 | `parameters.end` | Data | Um objeto `Date` que especifica a data e a hora de término do compromisso. |
-| `parameters.location` | Cadeia de caracteres | Uma cadeia de caracteres que contém o local do compromisso. A cadeia de caracteres está limitada a um máximo de 255 caracteres. |
+| `parameters.location` | String | Uma cadeia de caracteres que contém o local do compromisso. A cadeia de caracteres está limitada a um máximo de 255 caracteres. |
 | `parameters.resources` | Array.&lt;String&gt; | Uma matriz de cadeias de caracteres que contém os recursos necessários para o compromisso. A matriz está limitada a um máximo de 100 entradas. |
-| `parameters.subject` | Cadeia de caracteres | Uma cadeia de caracteres que contém o assunto do compromisso. A cadeia de caracteres está limitada a um máximo de 255 caracteres. |
+| `parameters.subject` | String | Uma cadeia de caracteres que contém o assunto do compromisso. A cadeia de caracteres está limitada a um máximo de 255 caracteres. |
 | `parameters.body` | String | O corpo do compromisso. O conteúdo do corpo está limitado a um tamanho máximo de 32 KB. |
 
 ##### <a name="requirements"></a>Requisitos
@@ -451,18 +451,18 @@ Se qualquer dos parâmetros exceder os limites de tamanho especificados, ou se u
 > [!NOTE]
 > Todos os parâmetros são opcionais.
 
-|Nome| Tipo| Descrição|
+|Name| Tipo| Descrição|
 |---|---|---|
 | `parameters` | Object | Um dicionário de parâmetros que descreve a nova mensagem. |
 | `parameters.toRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email `EmailAddressDetails` ou uma matriz que contém um objeto para cada um dos destinatários na linha para. A matriz está limitada a um máximo de 100 entradas. |
 | `parameters.ccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email `EmailAddressDetails` ou uma matriz que contém um objeto para cada um dos destinatários na linha CC. A matriz está limitada a um máximo de 100 entradas. |
 | `parameters.bccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_7/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email `EmailAddressDetails` ou uma matriz que contém um objeto para cada um dos destinatários na linha Cco. A matriz está limitada a um máximo de 100 entradas. |
-| `parameters.subject` | Cadeia de caracteres | Uma cadeia de caracteres que contém o assunto da mensagem. A cadeia de caracteres está limitada a um máximo de 255 caracteres. |
-| `parameters.htmlBody` | Cadeia de caracteres | O corpo HTML da mensagem. O conteúdo do corpo está limitado a um tamanho máximo de 32 KB. |
+| `parameters.subject` | String | Uma cadeia de caracteres que contém o assunto da mensagem. A cadeia de caracteres está limitada a um máximo de 255 caracteres. |
+| `parameters.htmlBody` | String | O corpo HTML da mensagem. O conteúdo do corpo está limitado a um tamanho máximo de 32 KB. |
 | `parameters.attachments` | Array.&lt;Object&gt; | Uma matriz de objetos JSON que são anexos de arquivo ou item. |
-| `parameters.attachments.type` | Cadeia de caracteres | Indica o tipo de anexo. Deve ser `file` para um anexo de arquivo ou `item` para um anexo de item. |
-| `parameters.attachments.name` | Cadeia de caracteres | Uma cadeia de caracteres que contém o nome do anexo, até 255 caracteres de comprimento.|
-| `parameters.attachments.url` | Cadeia de caracteres | Usado somente se `type` estiver definido como `file`. O URI do local para o arquivo. |
+| `parameters.attachments.type` | String | Indica o tipo de anexo. Deve ser `file` para um anexo de arquivo ou `item` para um anexo de item. |
+| `parameters.attachments.name` | String | Uma cadeia de caracteres que contém o nome do anexo, até 255 caracteres de comprimento.|
+| `parameters.attachments.url` | String | Usado somente se `type` estiver definido como `file`. O URI do local para o arquivo. |
 | `parameters.attachments.isInline` | Booliano | Usado somente se `type` estiver definido como `file`. Se for `true`, indicará que o anexo será mostrado embutido no corpo da mensagem e não deverá ser exibido na lista de anexos. |
 | `parameters.attachments.itemId` | Cadeia de caracteres | Usado somente se `type` estiver definido como `item`. A ID do item do EWS do email existente que você deseja anexar à nova mensagem. Isso é uma cadeia de até 100 caracteres. |
 

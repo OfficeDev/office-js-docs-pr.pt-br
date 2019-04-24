@@ -6,11 +6,11 @@ ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
 ms.openlocfilehash: 410b2391d207f7c83f9accb349448dbc0c92a0e2
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742447"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451279"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Tutorial: criar um suplemento do painel de tarefas no Excel
 
@@ -34,7 +34,7 @@ Para usar este tutorial, você precisa instalar o seguinte.
 
 - [Git Bash](https://git-scm.com/downloads) (ou outro cliente Git)
 
-- Você precisa ter uma conexão de Internet para testar o suplemento neste tutorial.
+- Você precisa ter uma conexão com a Internet para testar o suplemento neste tutorial.
 
 ## <a name="create-your-add-in-project"></a>Criar seu projeto do suplemento
 
@@ -421,7 +421,7 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
 
 5. Se, por algum motivo, a tabela não estiver na planilha aberta, no painel de tarefas, escolha **Criar Tabela** e depois os botões **Filtrar Tabela** e **Classificar Tabela ** em qualquer ordem.
 
-6. Escolha o botão **Criar gráfico**. Um gráfico é criado e incluirá somente os dados das linhas que foram filtradas. Os rótulos dos pontos de dados na parte inferior estão na ordem de classificação do gráfico, ou seja, nomes de comerciantes em ordem alfabética inversa.
+6. Clique no botão **Criar gráfico**. Um gráfico é criado e incluirá somente os dados das linhas que foram filtradas. Os rótulos dos pontos de dados na parte inferior estão na ordem de classificação do gráfico, ou seja, nomes de comerciantes em ordem alfabética inversa.
 
     ![Tutorial do Excel - Criar gráfico ](../images/excel-tutorial-create-chart.png)
 
@@ -803,7 +803,7 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
     </html>
     ```
 
-4. Crie um arquivo na raiz do projeto chamado o popup.js.
+4. Crie um arquivo chamado popup.js na raiz do projeto.
 
 5. Adicione o código a seguir a popup.js. Observe o seguinte a respeito deste código:
 

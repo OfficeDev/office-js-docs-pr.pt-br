@@ -2,12 +2,13 @@
 title: Elemento OfficeApp no arquivo de manifesto
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 42b6fe2e1c33322b90016d5e7ceec7b1bfe5b72d
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 86f38ab77e98bb01370e40c8ada38bae171e0c2d
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27433162"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450454"
 ---
 # <a name="officeapp-element"></a>Elemento OfficeApp
 
@@ -32,10 +33,10 @@ O elemento raiz no manifesto de um Suplemento do Office.
 
 ## <a name="must-contain"></a>Deve conter
 
-|**Element**|**Conteúdo**|**Email**|**TaskPane**|
+|**Element**|**Content**|**Email**|**TaskPane**|
 |:-----|:-----|:-----|:-----|
-|[ID](id.md)|x|x|x|
-|[Versão](version.md)|x|x|x|
+|[Id](id.md)|x|x|x|
+|[Version](version.md)|x|x|x|
 |[ProviderName](providername.md)|x|x|x|
 |[DefaultLocale](defaultlocale.md)|x|x|x|
 |[DefaultSettings](defaultsettings.md)|x||x|
@@ -47,7 +48,7 @@ O elemento raiz no manifesto de um Suplemento do Office.
 
 ## <a name="can-contain"></a>Pode conter
 
-|**Element**|**Conteúdo**|**Email**|**TaskPane**|
+|**Elemento**|**Content**|**Email**|**TaskPane**|
 |:-----|:-----|:-----|:-----|
 |[AlternateId](alternateid.md)|x|x|x|
 |[IconUrl](iconurl.md)|x|x|x|
@@ -55,7 +56,7 @@ O elemento raiz no manifesto de um Suplemento do Office.
 |[SupportUrl](supporturl.md)|x|x|x|
 |[AppDomains](appdomains.md)|x|x|x|
 |[Hosts](hosts.md)|x|x|x|
-|[Requirements](requirements.md)|x|x|x|
+|[Requisitos](requirements.md)|x|x|x|
 |[AllowSnapshot](allowsnapshot.md)|x|||
 |[Permissões](permissions.md)||x||
 |[DisableEntityHighlighting](disableentityhighlighting.md)||x||

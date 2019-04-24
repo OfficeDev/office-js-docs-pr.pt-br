@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/12/2019
 localization_priority: Normal
 ms.openlocfilehash: a1e01142a4c0b84a4afcba89f76766d28595ba95
-ms.sourcegitcommit: 95ed6dfbfa680dbb40ff9757020fa7e5be4760b6
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "31838456"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450342"
 ---
 # <a name="context"></a>context
 
@@ -27,8 +27,8 @@ O namespace Office.context fornece interfaces compartilhadas que são usadas pel
 
 | Membro | Tipo |
 |--------|------|
-| [displayLanguage](#displaylanguage-string) | Membro |
-| [officeTheme](#officetheme-object) | Membro |
+| [displayLanguage](#displaylanguage-string) | Member |
+| [officeTheme](#officetheme-object) | Member |
 | [roamingSettings](#roamingsettings-roamingsettings) | Membro |
 
 ### <a name="namespaces"></a>Namespaces
@@ -87,17 +87,17 @@ Fornece acesso às propriedades de cores de temas do Office.
 
 Usar as cores de tema do Office possibilita coordenar o esquema de cores de seu suplemento com o tema do Office atualmente selecionado pelo usuário em **Arquivo > Conta do Office > Tema da interface de usuário do Office **, que é aplicado a todos os aplicativos host do Office. Usar cores de temas do Office é apropriado suplementos de email e painéis de tarefas.
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   Objeto
 
 ##### <a name="properties"></a>Propriedades:
 
-|Nome| Tipo| Descrição|
+|Name| Tipo| Descrição|
 |---|---|---|
-|`bodyBackgroundColor`| Cadeia de caracteres|Obtém a cor de plano de fundo do corpo de tema do Office como um tripleto hexadecimal de cores.|
-|`bodyForegroundColor`| Cadeia de caracteres|Obtém a cor de primeiro plano do corpo de tema do Office como um tripleto hexadecimal de cores.|
-|`controlBackgroundColor`| Cadeia de caracteres|Obtém a cor de plano de fundo do controle do tema do Office como um tripleto hexadecimal de cores.|
+|`bodyBackgroundColor`| String|Obtém a cor de plano de fundo do corpo de tema do Office como um tripleto hexadecimal de cores.|
+|`bodyForegroundColor`| String|Obtém a cor de primeiro plano do corpo de tema do Office como um tripleto hexadecimal de cores.|
+|`controlBackgroundColor`| String|Obtém a cor de plano de fundo do controle do tema do Office como um tripleto hexadecimal de cores.|
 |`controlForegroundColor`| String|Obtém a cor de controle do corpo de tema do Office como um tripleto hexadecimal de cores.|
 
 ##### <a name="requirements"></a>Requisitos
@@ -131,7 +131,7 @@ Obtém um objeto que representa as configurações personalizadas ou o estado de
 
 O objeto `RoamingSettings` permite armazenar e acessar os dados de um suplemento de email que está armazenado na caixa de correio do usuário, para que fiquem disponíveis para esse suplemento quando ele for executado em qualquer aplicativo host de cliente usado para acessar essa caixa de correio.
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   [RoamingSettings](/javascript/api/outlook/office.RoamingSettings)
 

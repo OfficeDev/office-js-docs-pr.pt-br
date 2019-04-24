@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: 6fca7948c97f0a12f46742846ed9faca4179f362
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870440"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449803"
 ---
 # <a name="develop-office-add-ins-for-the-ipad"></a>Desenvolver suplementos do Office para iPad
 

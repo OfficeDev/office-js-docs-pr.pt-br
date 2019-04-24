@@ -2,12 +2,13 @@
 title: Elemento Icon no arquivo de manifesto
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: 476e5720e4959c3c766a7ae6206f2bf12731bfd2
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 45f3dcda8e74430cf70aa765efc6b3aae0e2b448
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432267"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450615"
 ---
 # <a name="icon-element"></a>Elemento Icon
 
@@ -23,7 +24,7 @@ Define elementos de **Imagem** para controles de [Botão](control.md#button-cont
 
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  [Image](#image)        | Sim |   resid de uma imagem a usar         |
+|  [Imagem](#image)        | Sim |   resid de uma imagem a usar         |
 
 ### <a name="image"></a>Image
 

@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: c7d43b152d3c3c960ed2189e526df3db291d4972
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870489"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451980"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -22,7 +22,7 @@ Fornece acesso ao modelo de objeto de suplemento do Outlook para o Microsoft Out
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| Restrito|
-|[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)| Escrever ou Ler|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
 ### <a name="namespaces"></a>Namespaces
 
@@ -69,7 +69,7 @@ Se o aplicativo de email estiver sendo executado no Outlook, o método `convertT
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`timeValue`| Data|Um objeto Date|
+|`timeValue`| Date|Um objeto Date|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -207,7 +207,7 @@ Se qualquer dos parâmetros exceder os limites de tamanho especificados, ou se u
 | `parameters` | Objeto | Um dicionário de parâmetros que descreve o novo compromisso. |
 | `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email ou uma matriz contendo um objeto `EmailAddressDetails` para cada um dos participantes obrigatórios do compromisso. A matriz está limitada a um máximo de 100 entradas. |
 | `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_2/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email ou uma matriz contendo um objeto `EmailAddressDetails` para cada um dos participantes opcionais do compromisso. A matriz está limitada a um máximo de 100 entradas. |
-| `parameters.start` | Date | Um objeto `Date` que especifica a data e a hora de início do compromisso. |
+| `parameters.start` | Data | Um objeto `Date` que especifica a data e a hora de início do compromisso. |
 | `parameters.end` | Data | Um objeto `Date` que especifica a data e a hora de término do compromisso. |
 | `parameters.location` | String | Uma cadeia de caracteres que contém o local do compromisso. A cadeia de caracteres está limitada a um máximo de 255 caracteres. |
 | `parameters.resources` | Array.&lt;String&gt; | Uma matriz de cadeias de caracteres que contém os recursos necessários para o compromisso. A matriz está limitada a um máximo de 100 entradas. |

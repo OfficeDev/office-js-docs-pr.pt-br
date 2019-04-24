@@ -4,11 +4,11 @@ description: Você pode usar a API JavaScript para Office para determinar uma lo
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: b01535b76485847783104ce840256949ce17ca26
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871707"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449771"
 ---
 # <a name="localization-for-office-add-ins"></a>Localização para Suplementos do Office
 

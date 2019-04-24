@@ -4,11 +4,11 @@ description: ''
 ms.date: 02/20/2019
 localization_priority: Normal
 ms.openlocfilehash: d284f3cb12153b1c05cff0b7f7a66bbf98961443
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870818"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449236"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins-preview"></a>Trabalhar simultaneamente com vários intervalos em suplementos do Excel (Visualização)
 

@@ -2,12 +2,13 @@
 title: Usar temas de documentos em seus suplementos do PowerPoint
 description: ''
 ms.date: 12/17/2018
-ms.openlocfilehash: 5caa274ae8774e8a30c416085ab4a431d6907944
-ms.sourcegitcommit: 6870f0d96ed3da2da5a08652006c077a72d811b6
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: f98fe4b7d99bef2ab4c684a09490ed73f0ed3bb1
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "27383250"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451451"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>Usar temas de documentos em seus suplementos do PowerPoint
 
@@ -43,7 +44,7 @@ Para exibir ou personalizar as fontes de tema no PowerPoint, no grupo**Variantes
 
 ### <a name="office-ui-theme-fonts-and-colors"></a>Cores e fontes de tema da interface de usuário do Office
 
-O Office também permite escolher entre vários temas predefinidos que especificam algumas das cores e fontes usadas na interface de usuário de todos os aplicativos do Office. Para fazer isso, use o menu suspenso **Arquivo**  >  **Conta**  >  **Tema do Office** (de qualquer aplicativo do Office).
+O Office também permite escolher entre vários temas predefinidos que especificam algumas das cores e fontes usadas na interface de usuário de todos os aplicativos do Office. Para fazer isso, use o menu suspenso **Arquivo** > **Conta** > **Tema do Office** (de qualquer aplicativo do Office).
 
 ![Menu suspenso de tema do Office](../images/office15-app-office-theme-picker.png)
 

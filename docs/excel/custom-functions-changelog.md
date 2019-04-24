@@ -4,11 +4,11 @@ description: Descubra as atualizações mais recentes para as funções personal
 title: Log de alteração de funções personalizadas (visualização)
 localization_priority: Normal
 ms.openlocfilehash: 03e4dd922ac3895e11a508f97e7ac3fa3e7b1cb0
-ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "31477534"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449271"
 ---
 # <a name="custom-functions-changelog-preview"></a>Log de alteração de funções personalizadas (visualização)
 
@@ -32,6 +32,6 @@ Para obter uma lista de problemas conhecidos com o produto, confira [problemas c
 * [Visão geral de funções personalizadas](custom-functions-overview.md)
 * [Metadados de funções personalizadas](custom-functions-json.md)
 * [Tempo de execução de funções personalizadas do Excel](custom-functions-runtime.md)
-* [Práticas recomendadas de funções personalizadas.](custom-functions-best-practices.md)
+* [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
 * [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)
 * [Depuração de funções personalizadas](custom-functions-debugging.md)

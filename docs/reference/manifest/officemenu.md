@@ -2,12 +2,13 @@
 title: Elemento OfficeMenu no arquivo de manifesto
 description: ''
 ms.date: 10/09/2018
-ms.openlocfilehash: d243612c9b78c362bed9d90dcb539b0dbacfa6f3
-ms.sourcegitcommit: 6f53df6f3ee91e084cd5160bb48afbbd49743b7e
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 20d020b8ab826049ef0271cbdb8d51201ee88ab4
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "27432484"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32452015"
 ---
 # <a name="officemenu-element"></a>Elemento OfficeMenu
 

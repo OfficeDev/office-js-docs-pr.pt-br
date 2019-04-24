@@ -5,11 +5,11 @@ ms.date: 04/09/2019
 ms.prod: non-product-specific
 localization_priority: Normal
 ms.openlocfilehash: 9229483bcf2916d35bd1fc8961c2c2a73cf9caed
-ms.sourcegitcommit: fbe2a799fda71aab73ff1c5546c936edbac14e47
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/10/2019
-ms.locfileid: "31764387"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451581"
 ---
 # <a name="identity-api-requirement-sets"></a>Conjuntos de requisitos da API de Identidade
 
@@ -25,10 +25,12 @@ Os suplementos do Office executam várias versões do Office. A tabela a seguir 
 
 Para saber mais sobre versões, números de build e sobre o Servidor do Office Online, confira:
 
-- [Números de versão e compilação de versões de canal de atualização para clientes do Office 365](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
+- 
+  [Números de versão e de build de lançamentos de canais de atualização para clientes do Office 365](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [Qual versão do Office estou usando?](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
-- [Onde você pode encontrar o número de versão e de build de um aplicativo cliente do Office 365](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
-- [Visão geral do Servidor do Office Online](/officeonlineserver/office-online-server-overview)
+- 
+  [Onde você pode encontrar o número de versão e de build de um aplicativo cliente do Office 365](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
+- [Visão geral sobre o Servidor do Office Online](/officeonlineserver/office-online-server-overview)
 
 ## <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API comum do Office
 
@@ -41,5 +43,5 @@ A IdentityAPI 1.1 de Logon Único é a primeira versão da API. Para saber mais 
 ## <a name="see-also"></a>Confira também
 
 - [Versões do Office e conjuntos de requisitos](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [Especificar hosts do Office e requisitos de API](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
+- [Especificar requisitos da API e de hosts do Office](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
 - [Manifesto XML dos Suplementos do Office](/office/dev/add-ins/develop/add-in-manifests)

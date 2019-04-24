@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/01/2019
 localization_priority: Normal
 ms.openlocfilehash: cddf76af01ec9f3016b28a3f7692aa6dfeb9bd60
-ms.sourcegitcommit: 7ebd383f16ae5809bb6980a5f213b695d410e62c
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "30413619"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450552"
 ---
 # <a name="desktopformfactor-element"></a>Elemento DesktopFormFactor
 

@@ -4,11 +4,11 @@ description: ''
 ms.date: 01/29/2019
 localization_priority: Normal
 ms.openlocfilehash: 897c2203ef6ae84911b7f269ee8a2c88aec36bd0
-ms.sourcegitcommit: 2e4b97f0252ff3dd908a3aa7a9720f0cb50b855d
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "29635906"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32452064"
 ---
 # <a name="versionoverrides-element"></a>Elemento VersionOverrides
 
@@ -22,7 +22,7 @@ O elemento raiz que contém informações para os comandos de suplemento impleme
 |  **xsi:type**  |  Sim  | A versão do esquema. Nesse momento, os únicos valores válidos são `VersionOverridesV1_0` e `VersionOverridesV1_1`. |
 
 > [!NOTE]
-> No momento, somente o Outlook 2016 ou posterior suporta o esquema do VersionOverrides v 1.1 e o `VersionOverridesV1_1` tipo.
+> Atualmente, somente o Outlook 2016 ou posterior oferece suporte ao esquema do VersionOverrides `VersionOverridesV1_1` v 1.1 e ao tipo.
 
 ## <a name="child-elements"></a>Elementos filho
 
@@ -31,13 +31,13 @@ O elemento raiz que contém informações para os comandos de suplemento impleme
 |  **Descrição**    |  Não   |  Descreve o suplemento. Isso substitui o elemento `Description` em qualquer parte pai do manifesto. O texto da descrição está contido em um elemento filho do elemento **LongString**, contido no elemento [Resources](./resources.md). O atributo `resid` do elemento **Description** está definido como o valor do atributo `id` do elemento `String` que contém o texto.|
 |  **Requisitos**  |  Não   |  Especifica o conjunto de requisitos mínimos e a versão do Office.js exigida pelo suplemento. Isso substitui o elemento `Requirements` na parte pai do manifesto.|
 |  [Hosts](./hosts.md)                |  Sim  |  Especifica um conjunto de hosts do Office. O elemento filho Hosts substitui o elemento Hosts na parte pai do manifesto.  |
-|  [Recursos](./resources.md)    |  Sim  | Define um conjunto de recursos (cadeias de caracteres, URLs e imagens) consultado por outros elementos do manifesto.|
+|  [Resources](./resources.md)    |  Sim  | Define um conjunto de recursos (cadeias de caracteres, URLs e imagens) consultado por outros elementos do manifesto.|
 |  **VersionOverrides**    |  Não  | Define comandos de suplemento em uma versão mais recente do esquema. Para saber mais, confira o tópico [Implementar várias versões](#implementing-multiple-versions). |
 |  **WebApplicationInfo**    |  Não  | Especifica detalhes sobre o aplicativo Web associado do suplemento. |
 
 ### <a name="versionoverrides-example"></a>Exemplo de VersionOverrides
 
-A seguir está um exemplo de uma típica `<VersionOverrides>` elemento, incluindo alguns elementos filhos que não são necessários, mas geralmente são usados.
+Veja a seguir um exemplo de um elemento `<VersionOverrides>` típico, incluindo alguns elementos filhos que não são necessários, mas que são normalmente usados.
 
 ```xml
 <OfficeApp>

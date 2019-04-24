@@ -6,11 +6,11 @@ ms.prod: word
 ms.topic: tutorial
 localization_priority: Normal
 ms.openlocfilehash: 019329db156e63148a047466b9b3770128cb7fbf
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29742398"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451166"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Tutorial: Criar Suplemento do Painel de Tarefas no Word
 

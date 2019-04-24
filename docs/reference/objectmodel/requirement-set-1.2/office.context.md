@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: 8c0c84d4c763e125992b06abfb33985085a56210
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870300"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32451854"
 ---
 # <a name="context"></a>context
 
@@ -74,7 +74,7 @@ Obtém um objeto que representa as configurações personalizadas ou o estado de
 
 O objeto `RoamingSettings` permite armazenar e acessar os dados de um suplemento de email que está armazenado na caixa de correio do usuário, para que fiquem disponíveis para esse suplemento quando ele for executado em qualquer aplicativo host de cliente usado para acessar essa caixa de correio.
 
-##### <a name="type"></a>Tipo
+##### <a name="type"></a>Type
 
 *   [RoamingSettings](/javascript/api/outlook_1_2/office.RoamingSettings)
 

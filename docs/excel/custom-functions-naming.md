@@ -4,11 +4,11 @@ description: Saiba mais sobre os nomes de funções personalizadas do Excel e ev
 title: Diretrizes de nomenclatura para funções personalizadas no Excel (visualização)
 localization_priority: Normal
 ms.openlocfilehash: 954753c35d2df59093661e3b8e92adfa1302e595
-ms.sourcegitcommit: 8e7b7b0cfb68b91a3a95585d094cf5f5ffd00178
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "30512836"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449273"
 ---
 # <a name="naming-guidelines"></a>Diretrizes de nomenclatura
 
