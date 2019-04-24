@@ -4,11 +4,11 @@ description: Como usar funções em diferentes plataformas.
 title: Requisitos de funções personalizadas (visualização)
 localization_priority: Priority
 ms.openlocfilehash: 0226c5e129794e8105966e753e791ec20766e10c
-ms.sourcegitcommit: 33dcf099c6b3d249811580d67ee9b790c0fdccfb
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "29745397"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449243"
 ---
 # <a name="custom-functions-requirements"></a>Requisitos de funções personalizadas
 

@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/02/2019
 localization_priority: Priority
 ms.openlocfilehash: 8e741f70327584ddd1b6f51f19b276e072862229
-ms.sourcegitcommit: 7ebd383f16ae5809bb6980a5f213b695d410e62c
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "30413633"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448839"
 ---
 # <a name="icons"></a>Ícones
 Ícones são a representação visual de um comportamento ou conceito. Eles são usados frequentemente para adicionar significado a controles e comandos. Os elementos visuais, realistas ou simbólicos, permitem ao usuário navegar pela interface do usuário da mesma maneira que os avisos os ajudam a navegar pelo ambiente. Eles devem ser simples, claros e conter apenas os detalhes necessários para permitir que os clientes analisem rapidamente a ação que ocorrerá ao escolherem um controle.

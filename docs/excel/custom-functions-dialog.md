@@ -4,11 +4,11 @@ description: Crie caixas de diálogo por meio de funções personalizadas no Exc
 title: Caixas de diálogo de funções personalizados (prévia)
 localization_priority: Priority
 ms.openlocfilehash: 0f596825a7a32525a68ef45656f1390196146706
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30926640"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449257"
 ---
 # <a name="display-a-dialog-box-in-custom-functions"></a>Exibir uma caixa de diálogo em funções personalizadas
 

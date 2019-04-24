@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/15/2019
 localization_priority: Priority
 ms.openlocfilehash: ebcf5cd72f841f5d97093e3b5f43833e97fa9947
-ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "31914302"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450160"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>Criar um Suplemento do Office com ASP.NET que use logon único (visualização)
 
@@ -426,7 +426,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
     }
     ```
 
-1. Substitua `TODO13C` pelo código a seguir. Observação sobre o código:
+1. Substitua `TODO13C` pelo código a seguir. Observação sobre este código:
 
     * Código de servidor criado em uma etapa posterior enviará a mensagem `Missing access_as_user` se o escopo `access_as_user` (permissão) não for o token de acesso que o cliente do suplemento enviar para o ADD para ser usado no fluxo on-behalf-of.
     * O suplemento deverá relatar o erro.

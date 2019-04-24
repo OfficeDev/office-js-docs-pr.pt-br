@@ -4,11 +4,11 @@ description: Para disponibilizar os Suplementos do Office para os usuários na o
 ms.date: 03/19/2019
 localization_priority: Priority
 ms.openlocfilehash: ed4f9778e4cd7dccba00d2e8c019bd4441b70eeb
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870958"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450797"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-catalog"></a>Publicar suplementos de conteúdo e de painel de tarefas em um catálogo do SharePoint
 
