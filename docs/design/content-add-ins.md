@@ -4,11 +4,11 @@ description: Suplementos de conteúdo são superfícies que podem ser incorporad
 ms.date: 03/19/2019
 localization_priority: Priority
 ms.openlocfilehash: 46268f963545c3f5b7f45b9b590dc772ba37292f
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30870538"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32447103"
 ---
 # <a name="content-office-add-ins"></a>Suplementos de conteúdo do Office
 
