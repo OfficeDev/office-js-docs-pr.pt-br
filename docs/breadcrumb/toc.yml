@@ -1,26 +1,19 @@
-items:
 - name: Office
   tocHref: /office/
   topicHref: /office/index
   items:
-  - name: Suplementos
-    tocHref: /office/dev/add-ins/
-    topicHref: /office/dev/add-ins
-    items:
-    - name: Tutoriais
+    - name: Suplementos
+      tocHref: /office/dev/add-ins/
+      topicHref: /office/dev/add-ins
       items:
-      - name: Tutorial de suplemento do Excel
-        tocHref: /office/dev/add-ins/tutorials/excel-tutorial
-        topicHref: /office/dev/add-ins/tutorials/excel-tutorial
-      - name: Tutorial de suplemento do PowerPoint
-        tocHref: /office/dev/add-ins/tutorials/powerpoint-tutorial
-        topicHref: /office/dev/add-ins/tutorials/powerpoint-tutorial
-      - name: Tutorial do suplemento do Word
-        tocHref: /office/dev/add-ins/tutorials/word-tutorial
-        topicHref: /office/dev/add-ins/tutorials/word-tutorial
-ms.openlocfilehash: 511598e67445df99eafbf04e9aaa0b6e52081492
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
-ms.translationtype: HT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437343"
+        - name: Tutoriais
+          items:
+            - name: Tutorial de suplemento do Excel
+              tocHref: /office/dev/add-ins/tutorials/excel-tutorial
+              topicHref: /office/dev/add-ins/tutorials/excel-tutorial
+            - name: Tutorial de suplemento do PowerPoint
+              tocHref: /office/dev/add-ins/tutorials/powerpoint-tutorial
+              topicHref: /office/dev/add-ins/tutorials/powerpoint-tutorial
+            - name: Tutorial de suplemento do Word
+              tocHref: /office/dev/add-ins/tutorials/word-tutorial
+              topicHref: /office/dev/add-ins/tutorials/word-tutorial

@@ -4,11 +4,11 @@ description: Entenda os principais cenários de desenvolvimento de funções per
 title: Tempo de execução de funções personalizadas do Excel (versão prévia)
 localization_priority: Normal
 ms.openlocfilehash: 85024b6c3559e2a5f32bae9297787f8052bba38d
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30871777"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448214"
 ---
 # <a name="runtime-for-excel-custom-functions-preview"></a>Tempo de execução de funções personalizadas do Excel (versão prévia)
 
@@ -22,7 +22,7 @@ Funções personalizadas usam um novo tempo de execução do JavaScript, diferen
 
 Dentro do tempo de execução do JavaScript usado por funções personalizadas, o XHR implementa medidas de segurança adicionais exigindo a [mesma política de origem](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) e o [CORS](https://www.w3.org/TR/cors/)simples.
 
-Observe que uma implementação CORS simples não pode usar cookies e só oferece suporte a métodos simples (GET, HEAD, POST). O CORS simples aceita cabeçalhos simples com nomes `Accept`de `Accept-Language`campos `Content-Language`,,. Você também pode usar um `Content-Type` cabeçalho no CORS simples, desde que o tipo de conteúdo `application/x-www-form-urlencoded`seja `text/plain`, ou `multipart/form-data`.
+Observe que uma implementação CORS simples não pode usar cookies e é compatível apenas com métodos simples (GET, HEAD, POST). A CORS simples aceita cabeçalhos simples com nomes de campos `Accept`, `Accept-Language`, `Content-Language`. Você também pode usar um `Content-Type` cabeçalho no CORS simples, desde que o tipo de conteúdo `application/x-www-form-urlencoded`seja `text/plain`, ou `multipart/form-data`.
 
 ### <a name="xhr-example"></a>Exemplo de XHR
 

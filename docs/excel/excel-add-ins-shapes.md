@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/21/2019
 localization_priority: Normal
 ms.openlocfilehash: e4d01c387fff01d68cb26369240a1e06e723a54c
-ms.sourcegitcommit: a2950492a2337de3180b713f5693fe82dbdd6a17
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "30926639"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448259"
 ---
 # <a name="work-with-shapes-using-the-excel-javascript-api-preview"></a>Trabalhar com formas usando a API JavaScript do Excel (visualização)
 
@@ -23,11 +23,11 @@ As formas são criadas e armazenadas na coleção Shape de uma planilha (`Worksh
 
 Os seguintes tipos de formas são adicionados usando o método associado:
 
-| Shape | Add Method | Assinatura |
+| Forma | Add Method | Assinatura |
 |-------|------------|-----------|
 | Forma geoMétrica | [addGeometricShape](/javascript/api/excel/excel.shapecollection#addgeometricshape-geometricshapetype-) | `addGeometricShape(geometricShapeType: Excel.GeometricShapeType): Excel.Shape` |
 | Imagem (JPEG ou PNG) | [addImage](/javascript/api/excel/excel.shapecollection#addimage-base64imagestring-) | `addImage(base64ImageString: string): Excel.Shape` |
-| Line | [addLine](/javascript/api/excel/excel.shapecollection#addline-startleft--starttop--endleft--endtop--connectortype-) | `addLine(startLeft: number, startTop: number, endLeft: number, endTop: number, connectorType?: Excel.ConnectorType): Excel.Shape` |
+| Linha | [addLine](/javascript/api/excel/excel.shapecollection#addline-startleft--starttop--endleft--endtop--connectortype-) | `addLine(startLeft: number, startTop: number, endLeft: number, endTop: number, connectorType?: Excel.ConnectorType): Excel.Shape` |
 | SVG | [addSvg](/javascript/api/excel/excel.shapecollection#addsvg-xml-) | `addSvg(xml: string): Excel.Shape` |
 | Caixa de Texto | [addTextBox](/javascript/api/excel/excel.shapecollection#addtextbox-text-) | `addTextBox(text?: string): Excel.Shape` |
 
@@ -52,7 +52,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-### <a name="images"></a>Images
+### <a name="images"></a>Imagens
 
 Imagens JPEG, PNG e SVG podem ser inseridas em uma planilha como formas. O `ShapeCollection.addImage` método usa uma cadeia de caracteres codificada em base64 como um argumento. É uma imagem JPEG ou PNG no formato de cadeia de caracteres. `ShapeCollection.addSvg`o também usa uma cadeia de caracteres, embora esse argumento seja XML que define o gráfico.
 

@@ -2,12 +2,13 @@
 title: Diretrizes de estilo de visualização de dados para Suplementos do Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 686ae69c4bfdbd5f8623a80c9e1b61548a3f2bda
-ms.sourcegitcommit: 3d8454055ba4d7aae12f335def97357dea5beb30
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 77e7724725e87ccef60406d00a97d0957059cdd5
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "27270688"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32447285"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Diretrizes de estilo de visualização de dados para Suplementos do Office
 
@@ -34,7 +35,7 @@ Siga estas diretrizes para títulos de gráfico:
 
 - Deixe seus títulos de gráfico bem legíveis. Posicione-os para criar uma hierarquia visual em relação ao restante do gráfico.
 - Em geral, use maiúsculas nas frases (a primeira letra da primeira palavra em letra maiúscula). Para criar o contraste ou reforçar hierarquias, você poderá usar todas em maiúsculas, mas use isso com moderação.
-- Incorpore a [typeramp do Office UI Fabric](https://developer.microsoft.com/fabric#/styles/typography) para deixar seus gráficos consistentes com a interface de usuário do Office, que usa o Segoe. Você também pode usar outra fonte para diferenciar o conteúdo do gráfico da interface do usuário.
+- Incorpore a [rampa de tipos do Office UI Fabric](https://developer.microsoft.com/fabric#/styles/typography) para deixar seus gráficos consistentes com a IU do Office, que usa o Segoe. Você também pode usar outra fonte para diferenciar o conteúdo do gráfico da interface do usuário.
 - Use tipos sem serifa com contadores grandes.
 
 Os exemplos a seguir mostram tipos com serifa e sem serifa usados em títulos de gráfico. Observe como o contraste de escala e o uso eficaz do espaço em branco criam uma hierarquia visual forte.

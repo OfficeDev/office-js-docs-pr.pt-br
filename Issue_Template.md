@@ -19,4 +19,3 @@ If your issue is not related to the Office Add-ins documentation, please post it
 
 ## <a name="issue"></a>Problema
 <!-- Provide a thorough description of the documentation issue -->
- 

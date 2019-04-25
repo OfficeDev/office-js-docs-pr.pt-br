@@ -4,11 +4,11 @@ description: Saiba mais sobre as práticas recomendadas para o desenvolvimento d
 title: Práticas recomendadas para funções personalizadas (versão prévia)
 localization_priority: Normal
 ms.openlocfilehash: 4efcd0ba5efb0dc7450192694e8f0750de43b8a8
-ms.sourcegitcommit: 14ceac067e0e130869b861d289edb438b5e3eff9
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "31477541"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448606"
 ---
 # <a name="custom-functions-best-practices-preview"></a>Práticas recomendadas para funções personalizadas (versão prévia)
 

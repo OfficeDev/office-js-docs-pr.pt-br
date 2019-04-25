@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/15/2019
 localization_priority: Normal
 ms.openlocfilehash: aacbe930e2cf3da4d10b61bfe8f34efe1094c113
-ms.sourcegitcommit: 6d375518c119d09c8d3fb5f0cc4583ba5b20ac03
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "31914235"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448400"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Trabalhar com intervalos usando a API JavaScript do Excel (avançado)
 

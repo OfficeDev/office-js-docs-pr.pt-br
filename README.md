@@ -1,31 +1,31 @@
-# <a name="office-add-ins-documentation"></a>Documentação de Suplementos do Office
+# <a name="office-add-ins-documentation"></a>Documentação de suplementos do Office
 
-Bem-vindo ao repositório de documentação dos Suplementos do Office. Neste repositório, você encontrará os arquivos de origem da documentação dos conceitos, guias de início rápido, tutoriais e guias explicativos da API JavaScript do Office. Para ter a melhor experiência, recomendamos que você veja esse conteúdo em [docs.microsoft.com](https://docs.microsoft.com/office/dev/add-ins).
+Bem-vindo ao repositório de documentação dos suplementos do Office. Neste repositório, você pode encontrar os arquivos de origem da documentação dos conceitos da API JavaScript do Office, inícios rápidos, tutoriais e guias de instruções. Para obter a melhor experiência, recomendamos que você veja esse conteúdo no [docs.Microsoft.com](https://docs.microsoft.com/office/dev/add-ins).
 
-> **Observação**: é possível encontrar os arquivos de origem da documentação de referência da API JavaScript do Office no repositório [office-js-docs-reference](https://github.com/OfficeDev/office-js-docs-reference).
+> **Observação**: você pode encontrar os arquivos de origem da documentação de referência da API JavaScript do Office no repositório [Office-js-docs-Reference](https://github.com/OfficeDev/office-js-docs-reference) .
 
-## <a name="give-us-your-feedback"></a>Envie-nos os seus comentários
+## <a name="give-us-your-feedback"></a>Envie seus comentários
 
-O objetivo do repositório é instruir o desenvolvedor sobre o comportamento da plataforma. Dessa forma, os problemas devem pertencer a esse conteúdo educacional. [Envie um problema](https://github.com/OfficeDev/office-js-docs-pr/issues) para os seguintes cenários:
+O objetivo do repositório é fornecer treinamento de desenvolvedor no comportamento da plataforma. Assim, os problemas devem pertencer a esse conteúdo educacional. [Envie um problema](https://github.com/OfficeDev/office-js-docs-pr/issues) para os seguintes cenários:
 
- - As informações necessárias para ter sucesso no desenvolvimento de Suplementos do Office estão ausentes ou incompletas.
+ - As informações necessárias para o desenvolvimento de suplementos do Office estão ausentes ou incompletas.
  - As informações são imprecisas ou obsoletas.
- - Você encontra erros de digitação, erros gramaticais ou outros problemas com os artigos.
- - Os artigos estão organizados de maneira confusa ou não intuitiva.
+ - Você encontra erros ortográficos, gramaticais ou outros problemas com os artigos.
+ - Os artigos são organizados de uma maneira confusa ou não intuitiva.
  
-Se você estiver vendo um comportamento do produto que difere da documentação, forneça a seguir o máximo de informações possíveis e relevantes:
+Se você estiver vendo o comportamento do produto que difere da documentação, forneça a maior parte das informações possíveis e relevantes:
 
- - A versão e o número da compilação do cliente que você está usando.
- - As etapas para reproduzir o problema.
- - As mensagens de erro e saída do console.
+ - O número de versão e compilação do cliente que você está usando.
+ - Etapas para reproduzir o problema.
+ - Saída do console e mensagens de erro.
  
 Recomendamos que você faça a bifurcação, a correção e uma solicitação de recebimento das suas alterações propostas. Para mais detalhes, confira [Contribuir para este artigo](Contributing.md). 
 
-Se seu problema não estiver relacionado à documentação dos Suplementos do Office, publique-o em um dos seguintes canais:
+Se seu problema não estiver relacionado à documentação de suplementos do Office, poste-o em um dos seguintes canais:
 
- - Para fazer uma pergunta sobre o uso da API do Office.js, poste sua pergunta no Stack Overflow e marque-a com "office-js" (http://stackoverflow.com/questions/tagged/office-js).
- - Para relatar um problema com a API ou a plataforma do Office.js, crie o problema no repositório OfficeDev/office-js (https://github.com/OfficeDev/office-js), que os membros da equipe de produto monitoram para localizar problemas relatados pelos clientes.
- - Para enviar uma solicitação de recurso para a API ou plataforma do Office.js, poste sua ideia em nossa página da Voz do Usuário (https://officespdev.uservoice.com/) ou, se a solicitação de recurso já existir, adicione seu voto a ela.
+ - Para fazer uma pergunta sobre como usar a API do Office. js, poste sua pergunta para emPilhar o estouro e marcá-la com a marcahttp://stackoverflow.com/questions/tagged/office-js)"Office-js" (.
+ - Para relatar um problema com a API ou a plataforma do Office. js, crie o problema no repositório OfficeDev/Office-jshttps://github.com/OfficeDev/office-js)(, que os membros da equipe de produto monitoram os problemas relatados pelo cliente.
+ - Para enviar uma solicitação de recurso para a API ou a plataforma do Office. js, poste sua ideia em nossa páginahttps://officespdev.uservoice.com/)de voz do usuário (, ou se a solicitação de recurso já existir, adicione seu voto para ela.
 
 ## <a name="copyright"></a>Direitos autorais
 
