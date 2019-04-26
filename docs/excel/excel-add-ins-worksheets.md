@@ -3,12 +3,12 @@ title: Trabalhe com planilhas usando a API JavaScript do Excel
 description: ''
 ms.date: 04/18/2019
 localization_priority: Priority
-ms.openlocfilehash: 5df0bbdd1b6cf1cf3ef7a6aa14b7e00dee7ad9b2
-ms.sourcegitcommit: 44c61926d35809152cbd48f7b97feb694c7fa3de
+ms.openlocfilehash: 002c5763ebcfbbecbcfc5cb416d200b357c45bf2
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "31959115"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448459"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Trabalhe com planilhas usando a API JavaScript do Excel
 
@@ -400,6 +400,45 @@ O método `protect` tem dois parâmetros opcionais:
 - `password`: Uma cadeia de caracteres que representa a senha necessária para um usuário ignorar a proteção e editar a planilha.
 
 O artigo [Proteger uma planilha](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6) tem mais informações sobre a proteção de planilhas e sobre como alterar na interface do usuário do Excel.
+
+## <a name="page-layout-and-print-settings"></a>Configurações de impressão e layout da página
+
+> [!NOTE]
+> As APIs nesta seção associada ao layout de página estão disponíveis apenas em visualização pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+Os suplementos tem acesso às configurações de layout de página em um nível de planilha. Estes controlam como a planilha é impressa. Um `Worksheet` objeto tem três propriedades de layout relacionadas: `horizontalPageBreaks`, `verticalPageBreaks`, `pageLayout`.
+
+`Worksheet.horizontalPageBreaks` e `Worksheet.verticalPageBreaks` são [PageBreakCollections](/javascript/api/excel/excel.pagebreakcollection). Estes são conjuntos [Quebras de página](/javascript/api/excel/excel.pagebreak), que especificam os intervalos em que as quebras de página manuais são inseridas. O exemplo de código a seguir adiciona uma quebra de página horizontal acima da linha **21**.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    sheet.horizontalPageBreaks.add("A21:E21"); // The page break is added above this range.
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+`Worksheet.pageLayout` é um objeto [PageLayout](/javascript/api/excel/excel.pagelayout). Esse objeto contém as configurações de layout e impressão que não são dependentes da implementação de qualquer impressora específica. Essas configurações incluem margens, orientação, numeração de página, linhas de título e a área de impressão.
+
+O exemplo de código a seguir centraliza a página (tanto verticalmente quanto horizontalmente), define uma linha de título que será impressa na parte superior de cada página e define a área impressa para a subseção da planilha.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+
+    // Center the page in both directions.
+    sheet.pageLayout.centerHorizontally = true;
+    sheet.pageLayout.centerVertically = true;
+
+    // Set the first row as the title row for every page.
+    sheet.pageLayout.setPrintTitleRows("$1:$1");
+
+    // Limit the area to be printed to the range "A1:D100".
+    sheet.pageLayout.setPrintArea("A1:D100");
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
 
 ## <a name="see-also"></a>Confira também
 
