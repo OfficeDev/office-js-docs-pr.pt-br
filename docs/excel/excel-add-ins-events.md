@@ -4,11 +4,11 @@ description: ''
 ms.date: 04/03/2019
 localization_priority: Priority
 ms.openlocfilehash: 7f05263f5220c2d60d0cebcfc686e1fed3f07900
-ms.sourcegitcommit: 63219bcc1bb5e3bed7eb6c6b0adb73a4829c7e8f
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "31479708"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449264"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Trabalhar com eventos usando a API JavaScript do Excel
 
@@ -37,11 +37,11 @@ Sempre que ocorrerem certos tipos de alterações em uma pasta de trabalho do Ex
 
 | Evento | Descrição | Objetos com suporte |
 |:---------------|:-------------|:-----------|
-| `onActivated` | Ocorre quando a forma é ativada. | [**Forma**](/javascript/api/excel/excel.shape)|
+| `onActivated` | Ocorre quando a forma é ativada. | [**Shape**](/javascript/api/excel/excel.shape)|
 | `onAdded` | Ocorre quando uma nova tabela é adicionada na pasta de trabalho. | [**TableCollection**](/javascript/api/excel/excel.tablecollection)|
-| `onAutoSaveSettingChanged` | Ocorre quando a `autoSave` configuração é alterada na pasta de trabalho. | [**Pasta de Trabalho**](/javascript/api/excel/excel.workbook) |
+| `onAutoSaveSettingChanged` | Ocorre quando a `autoSave` configuração é alterada na pasta de trabalho. | [**Workbook**](/javascript/api/excel/excel.workbook) |
 | `onChanged` | Ocorre quando uma planilha da pasta de trabalho é alterada. | [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection)|
-| `onDeactivated` | Ocorre quando a forma é desativada. | [**Forma**](/javascript/api/excel/excel.shape)|
+| `onDeactivated` | Ocorre quando a forma é desativada. | [**Shape**](/javascript/api/excel/excel.shape)|
 | `onDeleted` | Ocorre quando a tabela especificada é excluída em uma pasta de trabalho. | [**TableCollection**](/javascript/api/excel/excel.tablecollection)|
 | `onFiltered` | Ocorre quando o filtro é aplicado a um objeto. | [**Tabela**](/javascript/api/excel/excel.table), [**TableCollection**](/javascript/api/excel/excel.tablecollection), [**Planilha**](/javascript/api/excel/excel.worksheet), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
 | `onFormatChanged` | Ocorre quando o formato é alterado em uma planilha. | [**WorksheetCollection**](/javascript/api/excel/excel.worksheet), [**Planilha**](/javascript/api/excel/excel.worksheetcollection) |
