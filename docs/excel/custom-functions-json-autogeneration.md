@@ -1,14 +1,14 @@
 ---
-ms.date: 04/03/2019
+ms.date: 04/25/2019
 description: Use marcações JSDOC para criar dinamicamente seus metadados JSON de funções personalizadas.
 title: Criar metadados JSON para funções personalizadas (visualização)
 localization_priority: Priority
-ms.openlocfilehash: 2efe2a9a5a83ba60ef327273d5bd599f82916d48
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: f13c9b2ff0adfd1bda493433761dc74cb9ea37dc
+ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449250"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "33353269"
 ---
 # <a name="create-json-metadata-for-custom-functions-preview"></a>Criar metadados JSON para funções personalizadas (visualização)
 
@@ -53,7 +53,7 @@ Essa marcação é necessária para criar metadados para a função personalizad
 
 Também deve haver uma chamada para `CustomFunctions.associate("id", functionName);`
 
-#### <a name="id"></a>id 
+#### <a name="id"></a>id
 
 O id é usado como o identificador invariável da função personalizada armazenada no documento. Ele não deve mudar.
 
@@ -63,7 +63,7 @@ O id é usado como o identificador invariável da função personalizada armazen
 
 #### <a name="name"></a>nome
 
-Fornece o nome de exibição para a função personalizada. 
+Fornece o nome de exibição para a função personalizada.
 
 * Se nome não for fornecido, o id também será usado como nome.
 * Caracteres permitidos: Letras de [caractere Alfabético Unicode](https://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic), números, ponto (.) e sublinhado (\_).
@@ -93,6 +93,9 @@ Sintaxe de JavaScript: @param {type} nome _descrição_
 Para denotar um parâmetro de função personalizado como opcional:
 * Coloque colchetes ao redor do nome do parâmetro. Por exemplo: `@param {string} [text] Optional text`.
 
+> [!NOTE]
+> O valor padrão para parâmetros opcionais é `null`.
+
 #### <a name="typescript"></a>TypeScript
 
 Sintaxe de TypeScript: @param nome _descrição_
@@ -107,6 +110,9 @@ Para denotar um parâmetro de função personalizado como opcional, siga um dest
 * Dê ao parâmetro um valor padrão. Por exemplo: `function f(text: string = "abc")`
 
 Para uma descrição detalhada do @param confira: [JSDoc](http://usejsdoc.org/tags-param.html)
+
+> [!NOTE]
+> O valor padrão para parâmetros opcionais é `null`.
 
 ---
 ### <a name="requiresaddress"></a>@requiresAddress

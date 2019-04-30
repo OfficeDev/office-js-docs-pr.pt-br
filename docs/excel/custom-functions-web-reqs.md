@@ -1,14 +1,14 @@
 ---
-ms.date: 03/21/2019
+ms.date: 04/20/2019
 description: Solicite, transmita e cancele o fluxo de dados externos para sua pasta de trabalho com funções personalizadas no Excel
 title: Solicitações da Web e outros dados de tratamento com funções personalizadas (prévia)
 localization_priority: Priority
-ms.openlocfilehash: 9256e2aa87ec6d7b314314a1e4bc2b3793f1df5c
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 2942ec56e46d6eb586b516eedab17c1eeb98d9c8
+ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449705"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "33353262"
 ---
 # <a name="receiving-and-handling-data-with-custom-functions"></a>Recebimento e gerenciamento de dados com funções personalizadas
 
@@ -148,32 +148,7 @@ function incrementValue(increment, handler){
 CustomFunctions.associate("INCREMENTVALUE", incrementValue);
 ```
 
-Quando você especifica os metadados para uma função streaming no arquivo de metadados JSON, você deve definir as propriedades “cancelable”. verdadeiro e “stream”. verdadeiro dentro do objeto opções, conforme mostrado no exemplo a seguir. 
-
-```JSON
-{
-  "id": "INCREMENT",
-  "name": "INCREMENT",
-  "description": "Periodically increment a value",
-  "helpUrl": "http://www.contoso.com",
-  "result": {
-    "type": "number",
-    "dimensionality": "scalar"
-  },
-  "parameters": [
-    {
-      "name": "increment",
-      "description": "Amount to increment",
-      "type": "number",
-      "dimensionality": "scalar"
-    }
-  ],
-  "options": {
-    "cancelable": true,
-    "stream": true
-  }
-}
-```
+Quando você especifica metadados para uma função de streaming no arquivo de metadados JSON, é possível gerar isso automaticamente usando uma tag `@streaming` de comentário JSDOC no arquivo de script da sua função. Para mais detalhes, consulte [Criar metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md).
 
 ## <a name="canceling-a-function"></a>Cancelar uma função
 
@@ -183,12 +158,13 @@ Em algumas situações, talvez seja necessário cancelar a execução de uma fun
 - Quando é alterado um dos argumentos (entradas) para a função. Nesse caso, uma nova chamada de função é disparada, seguindo o cancelamento.
 - Quando o usuário aciona manualmente um recálculo. Nesse caso, uma nova chamada de função é disparada, seguindo o cancelamento.
 
-Para tornar uma função possível de ser cancelada, implemente um identificador de código de função para informar o que fazer quando ela for cancelada. Além disso, especifique a propriedade `"cancelable": true` contida no objeto opções nos metadados JSON que descreve a função. Amostras de código na seção anterior neste artigo fornecem um exemplo dessas técnicas.
+Para tornar uma função possível de ser cancelada, implemente um identificador de código de função para informar o que fazer quando ela for cancelada. Além disso, use a tag `@cancelable` de comentário JSDOC no arquivo de script da sua função. Para mais detalhes, consulte [Criar metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md).
 
 ## <a name="see-also"></a>Confira também
 
 * [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)
 * [Metadados de funções personalizadas](custom-functions-json.md)
+* [Criar metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md)
 * [Tempo de execução de funções personalizadas do Excel](custom-functions-runtime.md)
 * [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
 * [Log de alteração de funções personalizadas](custom-functions-changelog.md)

@@ -1,14 +1,14 @@
 ---
 title: Conceitos fundamentais de programação com a API JavaScript do Excel
 description: Use a API JavaScript do Excel para criar suplementos para o Excel.
-ms.date: 03/19/2019
+ms.date: 04/25/2019
 localization_priority: Priority
-ms.openlocfilehash: c6552ff5df3a8cf9c6c329dcfbbbe001a6a2ed6b
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 26822d9caa91f4a65a9dbb82f82db989b4409214
+ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448186"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "33353255"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Conceitos fundamentais de programação com a API JavaScript do Excel
 
@@ -26,14 +26,14 @@ O exemplo a seguir mostra como usar a **Excel.run**. A instrução catch captura
 
 ```js
 Excel.run(function (context) {
-  // You can use the Excel JavaScript API here in the batch function
-  // to execute actions on the Excel object model.
-  console.log('Your code goes here.');
+    // You can use the Excel JavaScript API here in the batch function
+    // to execute actions on the Excel object model.
+    console.log('Your code goes here.');
 }).catch(function (error) {
-  console.log('error: ' + error);
-  if (error instanceof OfficeExtension.Error) {
-    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-  }
+    console.log('error: ' + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
 });
 ```
 
@@ -41,7 +41,7 @@ Excel.run(function (context) {
 
 **Excel.Run** tem uma sobrecarga que utiliza um objeto [RunOptions](/javascript/api/excel/excel.runoptions). Este contém um conjunto de propriedades que afetam o comportamento de plataforma quando a função é executada. A propriedade a seguir tem suporte no momento:
 
- - `delayForCellEdit`: Determina se o Excel atrasa solicitação em lote até que o usuário sai do modo de edição de célula. Quando **verdadeira**, a solicitação em lote é atrasada e executada quando o usuário sai do modo de edição de célula. Quando **falsa**, a solicitação em lote falha automaticamente se o usuário está no modo de edição de célula (causando um erro para alcançar o usuário). O comportamento padrão sem nenhuma propriedade `delayForCellEdit` especificada é equivalente a quando é **falsa**.
+- `delayForCellEdit`: Determina se o Excel atrasa solicitação em lote até que o usuário sai do modo de edição de célula. Quando **verdadeira**, a solicitação em lote é atrasada e executada quando o usuário sai do modo de edição de célula. Quando **falsa**, a solicitação em lote falha automaticamente se o usuário está no modo de edição de célula (causando um erro para alcançar o usuário). O comportamento padrão sem nenhuma propriedade `delayForCellEdit` especificada é equivalente a quando é **falsa**.
 
 ```js
 Excel.run({ delayForCellEdit: true }, function (context) { ... })
@@ -58,7 +58,7 @@ Os objetos JavaScript do Excel que você declara e usa em um suplemento são obj
 Por exemplo, o trecho de código a seguir declara o objeto JavaScript local **selectedRange** para fazer referência a um intervalo selecionado no documento do Excel e, em seguida, define algumas propriedades nesse objeto. O objeto **selectedRange** é um objeto proxy, de modo que as propriedades que são definidas e o método que é invocado nesse objeto não serão refletidos no documento do Excel até que o suplemento chame **context.sync()**.
 
 ```js
-const selectedRange = context.workbook.getSelectedRange();
+var selectedRange = context.workbook.getSelectedRange();
 selectedRange.format.fill.color = "#4472C4";
 selectedRange.format.font.color = "white";
 selectedRange.format.autofitColumns();
@@ -72,17 +72,17 @@ O exemplo a seguir mostra uma função de lote que define um objeto proxy JavaSc
 
 ```js
 Excel.run(function (context) {
-  const selectedRange = context.workbook.getSelectedRange();
-  selectedRange.load('address');
-  return context.sync()
-    .then(function () {
-      console.log('The selected range is: ' + selectedRange.address);
-  });
+    var selectedRange = context.workbook.getSelectedRange();
+    selectedRange.load('address');
+    return context.sync()
+      .then(function () {
+        console.log('The selected range is: ' + selectedRange.address);
+    });
 }).catch(function (error) {
-  console.log('error: ' + error);
-  if (error instanceof OfficeExtension.Error) {
-    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-  }
+    console.log('error: ' + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
 });
 ```
 
@@ -103,26 +103,26 @@ No exemplo a seguir, somente propriedades específicas do intervalo são carrega
 
 ```js
 Excel.run(function (context) {
-  const sheetName = 'Sheet1';
-  const rangeAddress = 'A1:B2';
-  const myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+    var sheetName = 'Sheet1';
+    var rangeAddress = 'A1:B2';
+    var myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 
-  myRange.load(['address', 'format/*', 'format/fill', 'entireRow' ]);
+    myRange.load(['address', 'format/*', 'format/fill', 'entireRow' ]);
 
-  return context.sync()
-    .then(function () {
-      console.log (myRange.address);              // ok
-      console.log (myRange.format.wrapText);      // ok
-      console.log (myRange.format.fill.color);    // ok
-      //console.log (myRange.format.font.color);  // not ok as it was not loaded
-  });
-}).then(function () {
-  console.log('done');
+    return context.sync()
+      .then(function () {
+        console.log (myRange.address);              // ok
+        console.log (myRange.format.wrapText);      // ok
+        console.log (myRange.format.fill.color);    // ok
+        //console.log (myRange.format.font.color);  // not ok as it was not loaded
+        });
+    }).then(function () {
+        console.log('done');
 }).catch(function (error) {
-  console.log('Error: ' + error);
-  if (error instanceof OfficeExtension.Error) {
-    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-  }
+    console.log('Error: ' + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
 });
 ```
 
@@ -161,18 +161,18 @@ range.format.fill.color =  null;
 
 A formatação de propriedades como `size` e `color` conterá valores `null` na resposta quando valores diferentes existirem no intervalo especificado. Por exemplo, se você recuperar um intervalo e carregar sua propriedade `format.font.color`:
 
-* Se todas as células no intervalo tiverem a mesma cor de fonte, `range.format.font.color` especificará essa cor.
-* Se houver várias cores de fonte dentro do intervalo, `range.format.font.color` será `null`.
+- Se todas as células no intervalo tiverem a mesma cor de fonte, `range.format.font.color` especificará essa cor.
+- Se houver várias cores de fonte dentro do intervalo, `range.format.font.color` será `null`.
 
 ### <a name="blank-input-for-a-property"></a>Entrada em branco para uma propriedade
 
 Quando você especificar um valor em branco para uma propriedade (isto é, duas aspas sem espaço entre elas `''`), ele será interpretado como uma instrução para limpar ou redefinir a propriedade. Por exemplo:
 
-* Se você especificar um valor em branco para a propriedade `values` de um intervalo, o conteúdo do intervalo será apagado.
+- Se você especificar um valor em branco para a propriedade `values` de um intervalo, o conteúdo do intervalo será apagado.
 
-* Se você especificar um valor em branco para a propriedade `numberFormat`, o formato de número será redefinido para `General`.
+- Se você especificar um valor em branco para a propriedade `numberFormat`, o formato de número será redefinido para `General`.
 
-* Se você especificar um valor em branco para a propriedade `formula` e a propriedade `formulaLocale`, os valores de fórmula serão apagados.
+- Se você especificar um valor em branco para a propriedade `formula` e a propriedade `formulaLocale`, os valores de fórmula serão apagados.
 
 ### <a name="blank-property-values-in-the-response"></a>Valores da propriedade em branco na resposta
 
@@ -191,9 +191,9 @@ range.formula = [['', '', '=Rand()']];
 ### <a name="read-an-unbounded-range"></a>Ler um intervalo não limitado
 
 Um endereço de intervalo não limitado é um endereço de intervalo que especifica colunas ou linhas inteiras. Por exemplo:
- 
-* Endereços de intervalo composto por colunas inteiras:<ul><li>`C:C`</li><li>`A:F`</li></ul>
-* Endereços de intervalo composto por linhas inteiras:<ul><li>`2:2`</li><li>`1:4`</li></ul>
+
+- Endereços de intervalo composto por colunas inteiras:<ul><li>`C:C`</li><li>`A:F`</li></ul>
+- Endereços de intervalo composto por linhas inteiras:<ul><li>`2:2`</li><li>`1:4`</li></ul>
 
 Quando uma API faz uma solicitação para recuperar um intervalo não limitado (por exemplo, `getRange('C:C')`), a resposta conterá valores `null` para as propriedades no nível de célula, como `values`, `text`, `numberFormat` e `formula`. Outras propriedades do intervalo, como `address` e `cellCount`, conterão valores válidos para o intervalo não limitado.
 
@@ -202,13 +202,16 @@ Quando uma API faz uma solicitação para recuperar um intervalo não limitado (
 Não é possível definir propriedades no nível de célula, como `values`, `numberFormat` e `formula`, no intervalo não limitado, pois a solicitação de entrada é muito grande. Por exemplo, o trecho de código a seguir não é válida porque ele tenta especificar `values` para um intervalo não limitado. A API retornará um erro se você tentar definir as propriedades no nível de célula para um intervalo não limitado.
 
 ```js
-const range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
+var range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
 range.values = 'Due Date';
 ```
 
 ## <a name="read-or-write-to-a-large-range"></a>Ler ou gravar em um intervalo grande
 
 Se um intervalo contiver um grande número de células, valores, formatos de número e/ou fórmulas, talvez não seja possível executar operações de API nesse intervalo. A API sempre fará a melhor tentativa de executar a operação solicitada em um intervalo (isto é, para recuperar ou gravar os dados especificados), mas tentar executar operações de leitura ou gravação para um intervalo grande pode resultar em um erro de API devido à utilização excessiva de recursos. Para evitar tais erros, é recomendável executar operações de leitura ou gravação separadas para subconjuntos menores de um intervalo grande, em vez de tentar executar uma única operação de leitura ou gravação em um intervalo grande.
+
+> [!IMPORTANT]
+> O Excel Online tem um limite de tamanho de conteúdo para solicitações e respostas de **5 MB**. `RichAPI.Error` será lançado se esse limite for excedido.
 
 ## <a name="update-all-cells-in-a-range"></a>Atualizar todas as células em um intervalo
 
@@ -218,24 +221,24 @@ O exemplo a seguir obtém um intervalo que contém 20 células e, em seguida, de
 
 ```js
 Excel.run(function (context) {
-  const sheetName = 'Sheet1';
-  const rangeAddress = 'A1:A20';
-  const worksheet = context.workbook.worksheets.getItem(sheetName);
+    var sheetName = 'Sheet1';
+    var rangeAddress = 'A1:A20';
+    var worksheet = context.workbook.worksheets.getItem(sheetName);
 
-  const range = worksheet.getRange(rangeAddress);
-  range.numberFormat = 'm/d/yyyy';
-  range.values = '3/11/2015';
-  range.load('text');
+    var range = worksheet.getRange(rangeAddress);
+    range.numberFormat = 'm/d/yyyy';
+    range.values = '3/11/2015';
+    range.load('text');
 
-  return context.sync()
-    .then(function () {
-      console.log(range.text);
-  });
+    return context.sync()
+      .then(function () {
+        console.log(range.text);
+    });
 }).catch(function (error) {
-  console.log('Error: ' + error);
-  if (error instanceof OfficeExtension.Error) {
-    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-  }
+    console.log('Error: ' + error);
+    if (error instanceof OfficeExtension.Error) {
+      console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
 });
 ```
 
@@ -245,8 +248,8 @@ Quando ocorrer um erro de API, a API retornará um objeto **error** que contém 
 
 ## <a name="see-also"></a>Confira também
 
-* [Introdução aos suplementos do Excel](excel-add-ins-get-started-overview.md)
-* [Exemplos de código de suplementos do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
-* [Conceitos fundamentais de programação com a API JavaScript do Excel](excel-add-ins-advanced-concepts.md)
-* [Otimização de desempenho do da API JavaScript do Excel](/office/dev/add-ins/excel/performance)
-* [Referência da API JavaScript do Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+- [Introdução aos suplementos do Excel](excel-add-ins-get-started-overview.md)
+- [Exemplos de código de suplementos do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
+- [Conceitos fundamentais de programação com a API JavaScript do Excel](excel-add-ins-advanced-concepts.md)
+- [Otimização de desempenho do da API JavaScript do Excel](/office/dev/add-ins/excel/performance)
+- [Referência da API JavaScript do Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

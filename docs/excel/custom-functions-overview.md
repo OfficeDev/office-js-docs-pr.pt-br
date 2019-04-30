@@ -1,14 +1,14 @@
 ---
-ms.date: 03/29/2019
+ms.date: 04/20/2019
 description: Criar funções personalizadas no Excel usando JavaScript.
 title: Criar funções personalizadas no Excel (versão prévia)
 localization_priority: Priority
-ms.openlocfilehash: 7a461728061ace532a11a8473d27ec4340eebb97
-ms.sourcegitcommit: fbe2a799fda71aab73ff1c5546c936edbac14e47
+ms.openlocfilehash: 634b76ed90a30c7aa8252da346ba3f95684967a4
+ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/10/2019
-ms.locfileid: "31764408"
+ms.lasthandoff: 04/26/2019
+ms.locfileid: "33353248"
 ---
 # <a name="create-custom-functions-in-excel-preview"></a>Criar funções personalizadas no Excel (versão prévia)
 
@@ -47,7 +47,7 @@ O arquivo de script (**./src/functions/functions.js** ou **./src/functions/funct
 
 Por exemplo, o código a seguir define funções personalizadas `add` e especifica as informações de mapeamento para as duas funções. Para saber mais, confira [práticas recomendadas de funções personalizados](custom-functions-best-practices.md#associating-function-names-with-json-metadata).
 
-O código a seguir também fornece os comentários de código que definem a função. O necessário `@customfunction` comentário é declarado primeiro, para indicar que se trata de uma função personalizada. Além disso, observe que dois parâmetros foram declarados, `first` e `second`, que é seguido por suas `description` propriedades. Por fim, uma `returns` descrição é fornecida. Confira mais informações sobre quais comentários são necessários para sua função personalizada [gerar JSON metadados para funções personalizadas](custom-functions-json-autogeneration.md).
+O código a seguir também fornece os comentários de código que definem a função. O necessário `@customfunction` comentário é declarado primeiro, para indicar que se trata de uma função personalizada. Além disso, observe que dois parâmetros foram declarados, `first` e `second`, que é seguido por suas `description` propriedades. Por fim, uma `returns` descrição é fornecida. Para obter mais informações sobre quais comentários são necessários para sua função personalizada, confira [Criar metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md).
 
 ```js
 /**
@@ -235,7 +235,7 @@ Em alguns casos, você precisará obter o endereço da célula invocada na sua f
 - Exibição de valores armazenados em cache: se sua função for usada offline, exiba valores armazenados em cache de `AsyncStorage` usando `onCalculated`.
 - Reconciliação: Use o endereço da célula para descobrir uma célula de origem para ajudá-lo a reconciliar onde o processamento está ocorrendo.
 
-As informações sobre o endereço de uma célula serão expostas somente se `requiresAddress` estiver marcado como `true` no arquivo de metadados JSON da função. A seguir, um exemplo disso:
+As informações sobre o endereço de uma célula serão expostas somente se `requiresAddress` estiver marcado como `true` no arquivo de metadados JSON da função. A seguir, um exemplo disso para se você fosse gravar esse arquivo JSON manualmente. Você também pode usar a tag `@requiresAddress` se gerar automaticamente seu arquivo JSON. Para mais detalhes, confira [Geração automática do JSON](custom-functions-json-autogeneration.md).
 
 ```JSON
 {
@@ -279,7 +279,7 @@ Veja os problemas conhecidos no nosso [GitHub de funções do Excel personalizad
 
 * [Metadados de funções personalizadas](custom-functions-json.md)
 * [Tempo de execução de funções personalizadas do Excel](custom-functions-runtime.md)
-* [Práticas recomendadas para funções personalizadas](custom-functions-best-practices.md)
+* [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
 * [Log de alteração de funções personalizadas](custom-functions-changelog.md)
 * [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)
 * [Depuração de funções personalizadas](custom-functions-debugging.md)
