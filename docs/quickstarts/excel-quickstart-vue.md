@@ -4,12 +4,12 @@ description: ''
 ms.date: 03/19/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 1925c9fcde0bb2f07cce4c0bcb0be99cc1c6061c
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: b3c65d2594e2d260f3e332fd20cdee2e56b02fcf
+ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450849"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "33517048"
 ---
 # <a name="build-an-excel-add-in-using-vue"></a>Criar um suplemento do Excel usando o Vue
 
@@ -21,13 +21,13 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 
 - Instale a [CLI do Vue](https://github.com/vuejs/vue-cli) globalmente.
 
-    ```bash
+    ```command&nbsp;line
     npm install -g vue-cli
     ```
 
 - Instale a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador do Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.
 
-    ```bash
+    ```command&nbsp;line
     npm install -g yo generator-office
     ```
 
@@ -35,7 +35,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do Excel usand
 
 Use a CLI do Vue para gerar um novo aplicativo Vue. No terminal, execute o comando a seguir e responda aos prompts conforme descrito abaixo.
 
-```bash
+```command&nbsp;line
 vue init webpack my-add-in
 ```
 
@@ -53,13 +53,13 @@ Cada suplemento requer um arquivo de manifesto para definir os recursos e config
 
 1. Navegue até a pasta do seu aplicativo.
 
-    ```bash
+    ```command&nbsp;line
     cd my-add-in
     ```
 
 2. Use o gerador do Yeoman para gerar o arquivo de manifesto para o seu suplemento. Execute o comando a seguir e responda aos prompts conforme mostrado abaixo.
 
-    ```bash
+    ```command&nbsp;line
     yo office
     ```
 
@@ -186,7 +186,7 @@ Para ativar o HTTPS para o seu aplicativo, abra o arquivo **package.json** na pa
 
 1. No terminal, execute o comando a seguir para iniciar o servidor de desenvolvimento.
 
-    ```bash
+    ```command&nbsp;line
     npm start
     ```
 

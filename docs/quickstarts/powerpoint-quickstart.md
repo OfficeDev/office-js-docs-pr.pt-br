@@ -4,12 +4,12 @@ description: ''
 ms.date: 01/17/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 21641e1eaf424b77af118fc5f7fb394102f77402
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 85e0e3ce4899951c3fb2718eb38b834e4c5bbe35
+ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451217"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "33517056"
 ---
 # <a name="build-your-first-powerpoint-add-in"></a>Crie o seu primeiro suplemento do PowerPoint
 
@@ -186,7 +186,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
 
 - Instale a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador do Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.
 
-    ```bash
+    ```command&nbsp;line
     npm install -g yo generator-office
     ```
 
@@ -194,7 +194,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
 
 1. Use o gerador Yeoman para criar um projeto do suplemento do PowerPoint. Execute o comando a seguir e responda aos prompts da seguinte forma:
 
-    ```bash
+    ```command&nbsp;line
     yo office
     ```
 
@@ -209,7 +209,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do PowerPoint 
     
 2. Navegue até a pasta raiz do projeto.
 
-    ```bash
+    ```command&nbsp;line
     cd "My Office Add-in"
     ```
 
