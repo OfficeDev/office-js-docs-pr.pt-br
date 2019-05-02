@@ -4,12 +4,12 @@ description: Desenvolvimento de funções personalizadas no guia de início ráp
 title: Início rápido de funções personalizadas (visualização)
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 80c500e1e30e8751a7d969d33cd7e13b7943b1b5
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 3ea7ec4c2089aaa4e9f193a45e7c4a31c691f213
+ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450833"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "33517069"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Introdução ao desenvolvimento de funções personalizadas do Excel
 
@@ -27,7 +27,7 @@ Você precisará das seguintes ferramentas e recursos relacionados para começar
 
 - A versão mais recente do [Yeoman](https://yeoman.io/) e do [Yeoman gerador de suplementos do Office](https://www.npmjs.com/package/generator-office). Para instalar essas ferramentas globalmente, execute o seguinte comando por meio do prompt de comando:
 
-    ```
+    ```command&nbsp;line
     npm install -g yo generator-office
     ```
 
@@ -40,7 +40,7 @@ Para começar, você usará o gerador Yeoman para criar projeto com funções pe
 
 1. Execute o comando a seguir e responda aos prompts da seguinte forma.
 
-    ```
+    ```command&nbsp;line
     yo office
     ```
 
@@ -56,7 +56,7 @@ Para começar, você usará o gerador Yeoman para criar projeto com funções pe
 
 2. Navegue até a pasta do projeto que você acabou de criar.
 
-    ```
+    ```command&nbsp;line
     cd stock-ticker
     ```
 
@@ -64,7 +64,7 @@ Para começar, você usará o gerador Yeoman para criar projeto com funções pe
 
 4. Crie um projeto.
 
-    ```
+    ```command&nbsp;line
     npm run build
     ```
 
@@ -72,14 +72,14 @@ Para começar, você usará o gerador Yeoman para criar projeto com funções pe
 
     - Se você usar o Excel para Windows para testar suas funções personalizadas, execute o seguinte comando para iniciar o servidor Web local, inicie o Excel e Sideload o suplemento:
 
-        ```
+        ```command&nbsp;line
          npm run start
         ```
         Depois de executar esse comando, o prompt de comando mostrará detalhes sobre como iniciar o servidor Web. O Excel começará com seu suplemento carregado. Se o suplemento não carregar, verifique se você concluiu a etapa 3 corretamente.
 
     - Se você usar o Excel online para testar suas funções personalizadas, execute o seguinte comando para iniciar o servidor Web local:
 
-        ```
+        ```command&nbsp;line
         npm run start-web
         ```
 
