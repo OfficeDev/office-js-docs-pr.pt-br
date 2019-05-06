@@ -1,14 +1,14 @@
 ---
 title: Realizar sideload de suplementos do Office no Office Online para teste
 description: Testar o suplemento do Office no Office Online através de sideloading
-ms.date: 03/19/2019
+ms.date: 04/29/2019
 localization_priority: Priority
-ms.openlocfilehash: 8870e955ca30c4a3b35f2b51e0e16a3ee634960d
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 2bcab7b41fa7f5b9590aacc19645253ee822eeb8
+ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451422"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "33517083"
 ---
 # <a name="sideload-office-add-ins-in-office-online-for-testing"></a>Realizar sideload de suplementos do Office no Office Online para teste
 
@@ -25,28 +25,7 @@ O vídeo a seguir oferece orientações para o processo de sideload do seu suple
 
 > [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
 
-## <a name="sideload-an-office-add-in-in-office-365"></a>Realizar sideload de um suplemento do Office no Office 365
-
-
-1. Entre em sua conta do Office 365.
-    
-2. Abra o inicializador de aplicativos à esquerda da barra de ferramentas, selecione  **Excel**, **Word** ou **PowerPoint** e crie um novo documento.
-    
-3. Abra a guia **Inserir** na faixa de opções e, na seção **Suplementos**, escolha **Suplementos do Office**.
-    
-4. Na caixa de diálogo **Suplementos do Office**, selecione a guia **MINHA ORGANIZAÇÃO** e **Carregar Meu Suplemento**.
-    
-    ![A caixa de diálogo Suplemento do Office tem o link  "Carregar Meu Suplemento" perto do canto superior esquerdo.](../images/office-add-ins.png)
-
-5.  **Navegue** até o arquivo de manifesto do suplemento e selecione **Carregar**.
-    
-    ![A caixa de diálogo Carregar suplemento com botões para pesquisar, carregar e cancelar.](../images/upload-add-in.png)
-
-6. Verifique se o suplemento está instalado. Por exemplo, se for um comando do suplemento, ele deve aparecer na faixa de opções ou no menu de contexto. Se for um suplemento de painel de tarefas, o painel deve ser exibido.
-    
-
 ## <a name="sideload-an-office-add-in-in-office-online"></a>Realizar sideload de um suplemento do Office no Office Online
-
 
 1. Abra o [Microsoft Office Online](https://office.live.com/).
     
@@ -72,6 +51,16 @@ O vídeo a seguir oferece orientações para o processo de sideload do seu suple
 > - Digite “**sobre:sinalizadores**” na barra de pesquisa do Edge para exibir as opções de Configurações do Desenvolvedor.  Verifique a opção “**Permitir loopback do localhost**” e reinicie o Edge.
 
 >    ![A opção “Permitir loopback do localhost” do Edge com a caixa marcada.](../images/allow-localhost-loopback.png)
+
+
+## <a name="sideload-an-office-add-in-in-office-365"></a>Realizar sideload de um suplemento do Office no Office 365
+
+1. Entre em sua conta do Office 365.
+    
+2. Abra o inicializador de aplicativos à esquerda da barra de ferramentas, selecione  **Excel**, **Word** ou **PowerPoint** e crie um novo documento.
+    
+3. As etapas 3 a 6 são as mesmas da seção anterior **Efetue sideload para um suplemento do Office no Office Online**.
+
 
 ## <a name="sideload-an-add-in-when-using-visual-studio"></a>Sideload de um suplemento usando o Visual Studio
 
