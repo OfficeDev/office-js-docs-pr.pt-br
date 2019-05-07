@@ -16,19 +16,19 @@
   items:
     - name: Criar um suplemento do Excel
       items:
-        - name: Usar angular
-          href: quickstarts/excel-quickstart-angular.md
-          displayName: Excel
-        - name: Usar jQuery
+        - name: Painel de tarefas
           href: quickstarts/excel-quickstart-jquery.md
           displayName: Excel
-        - name: Usar reagir
+        - name: Painel de tarefas (angular)
+          href: quickstarts/excel-quickstart-angular.md
+          displayName: Excel
+        - name: Painel de tarefas (reagir)
           href: quickstarts/excel-quickstart-react.md
           displayName: Excel
-        - name: Usar Vue
+        - name: Painel de tarefas (Vue)
           href: quickstarts/excel-quickstart-vue.md
           displayName: Excel
-        - name: Criar uma função personalizada
+        - name: Funções personalizadas
           href: quickstarts/excel-custom-functions-quickstart.md
           displayName: Excel
     - name: Criar suplemento do Word
@@ -64,6 +64,8 @@
   items:
     - name: Requisitos para execução de suplementos
       href: concepts/requirements-for-running-office-add-ins.md
+    - name: Visualizadores da Web usados por suplementos do Office
+      href: concepts/web-viewers-used-by-office-web-add-ins.md
     - name: Práticas recomendadas de desenvolvimento de suplementos
       href: concepts/add-in-development-best-practices.md
     - name: Ciclo de vida de desenvolvimento de suplementos
@@ -78,7 +80,7 @@
       items:
         - name: Visão geral
           href: design/add-in-design.md
-        - name: Orientação
+        - name: Diretrizes
           items:
             - name: Acessibilidade
               href: design/accessibility-guidelines.md
@@ -88,7 +90,7 @@
               href: design/data-visualization-guidelines.md
         - name: Linguagem de design
           items:
-            - name: Visão Geral
+            - name: Visão geral
               href: design/add-in-design-language.md
             - name: Tipografia
               href: design/add-in-typography.md
@@ -103,7 +105,7 @@
               displayName: Motion
         - name: Elementos de interface
           items:
-            - name: Visão Geral
+            - name: Visão geral
               href: design/interface-elements.md
             - name: Comandos de suplemento
               href: design/add-in-commands.md
@@ -214,7 +216,7 @@
     - name: Suplementos do Excel
       displayName: Excel
       items:
-        - name: Visão Geral
+        - name: Visão geral
           href: excel/excel-add-ins-overview.md
           displayName: Excel
         - name: Crie o seu primeiro suplemento do Excel
@@ -223,17 +225,20 @@
             - name: Introdução aos suplementos do Excel
               href: excel/excel-add-ins-get-started-overview.md
               displayName: Excel
-            - name: Usar angular
-              href: quickstarts/excel-quickstart-angular.md
-              displayName: Excel
-            - name: Usar jQuery
+            - name: Painel de tarefas
               href: quickstarts/excel-quickstart-jquery.md
               displayName: Excel
-            - name: Usar reagir
+            - name: Painel de tarefas (angular)
+              href: quickstarts/excel-quickstart-angular.md
+              displayName: Excel
+            - name: Painel de tarefas (reagir)
               href: quickstarts/excel-quickstart-react.md
               displayName: Excel
-            - name: Usar Vue
+            - name: Painel de tarefas (Vue)
               href: quickstarts/excel-quickstart-vue.md
+              displayName: Excel
+            - name: Funções personalizadas
+              href: quickstarts/excel-custom-functions-quickstart.md
               displayName: Excel
         - name: Tutorial de suplemento do Excel
           href: tutorials/excel-tutorial.md
@@ -264,32 +269,20 @@
                 - name: Visão geral
                   href: excel/custom-functions-overview.md
                   displayName: Excel
-                - name: Arquitetura
-                  href: excel/custom-functions-architecture.md
-                  displayName: Excel
                 - name: Início rápido
                   href: quickstarts/excel-custom-functions-quickstart.md
                   displayName: Excel
                 - name: Tutorial
                   href: tutorials/excel-tutorial-create-custom-functions.md
                   displayName: Excel
-                - name: Solicitações da Web
-                  href: excel/custom-functions-web-reqs.md
+                - name: Arquitetura
+                  href: excel/custom-functions-architecture.md
                   displayName: Excel
-                - name: Tempo
-                  href: excel/custom-functions-runtime.md
+                - name: Autenticação
+                  href: excel/custom-functions-authentication.md
                   displayName: Excel
-                - name: Funções voláteis
-                  href: excel/custom-functions-volatile.md
-                  displayName: Excel
-                - name: Opções de parâmetros de funções personalizadas
-                  href: excel/custom-functions-parameter-options.md
-                  displayName: Excel
-                - name: Metadados
-                  href: excel/custom-functions-json.md
-                  displayName: Excel
-                - name: Geração de metadados
-                  href: excel/custom-functions-json-autogeneration.md
+                - name: Envio em lote
+                  href: excel/custom-functions-batching.md
                   displayName: Excel
                 - name: Práticas recomendadas
                   href: excel/custom-functions-best-practices.md
@@ -297,35 +290,47 @@
                 - name: Depuração
                   href: excel/custom-functions-debugging.md
                   displayName: Excel
-                - name: Autenticação
-                  href: excel/custom-functions-authentication.md
-                  displayName: Excel
                 - name: Dialog
                   href: excel/custom-functions-dialog.md
-                  displayName: Excel
-                - name: Log de mudanças
-                  href: excel/custom-functions-changelog.md
                   displayName: Excel
                 - name: Tratamento de erros
                   href: excel/custom-functions-errors.md
                   displayName: Excel
-                - name: Requisitos
-                  href: excel/custom-functions-requirements.md
-                  displayName: Excel
-                - name: Diretrizes de nomenclatura
-                  href: excel/custom-functions-naming.md
+                - name: Identificar um XLL equivalente
+                  href: excel/make-custom-functions-compatible-with-xll-udf.md
                   displayName: Excel
                 - name: Localização
                   href: excel/custom-functions-localize.md
                   displayName: Excel
-                - name: Identificar um XLL equivalente
-                  href: excel/make-custom-functions-compatible-with-xll-udf.md
+                - name: Metadados
+                  href: excel/custom-functions-json.md
                   displayName: Excel
-                - name: Envio em lote
-                  href: excel/custom-functions-batching.md
+                - name: Geração de metadados
+                  href: excel/custom-functions-json-autogeneration.md
+                  displayName: Excel
+                - name: Diretrizes de nomenclatura
+                  href: excel/custom-functions-naming.md
+                  displayName: Excel
+                - name: Opções de parâmetro
+                  href: excel/custom-functions-parameter-options.md
+                  displayName: Excel
+                - name: Requisitos
+                  href: excel/custom-functions-requirements.md
+                  displayName: Excel
+                - name: Tempo
+                  href: excel/custom-functions-runtime.md
+                  displayName: Excel
+                - name: Salvar e compartilhar Estado
+                  href: excel/custom-functions-save-state.md
                   displayName: Excel
                 - name: Solução de problemas
                   href: excel/custom-functions-troubleshooting.md
+                  displayName: Excel
+                - name: Funções voláteis
+                  href: excel/custom-functions-volatile.md
+                  displayName: Excel
+                - name: Solicitações da Web
+                  href: excel/custom-functions-web-reqs.md
                   displayName: Excel
             - name: Validação de dados
               href: excel/excel-add-ins-data-validation.md
@@ -803,7 +808,7 @@
           href: reference/manifest/targetdialects.md
         - name: Tipo
           href: reference/manifest/type.md
-        - name: Versão
+        - name: Version
           href: reference/manifest/version.md
         - name: VersionOverrides
           items:
@@ -827,7 +832,7 @@
               href: reference/manifest/functionfile.md
             - name: GetStarted
               href: reference/manifest/getstarted.md
-            - name: Group
+            - name: Grupo
               href: reference/manifest/group.md
             - name: Hosts
               href: reference/manifest/hosts.md
