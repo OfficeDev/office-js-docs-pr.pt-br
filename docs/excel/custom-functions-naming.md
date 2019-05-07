@@ -1,30 +1,37 @@
 ---
-ms.date: 02/08/2019
+ms.date: 05/03/2019
 description: Saiba mais sobre os nomes de funções personalizadas do Excel e evite armadilhas comuns de nomeação.
-title: Diretrizes de nomenclatura para funções personalizadas no Excel (visualização)
+title: Diretrizes de nomenclatura para funções personalizadas no Excel
 localization_priority: Normal
-ms.openlocfilehash: 954753c35d2df59093661e3b8e92adfa1302e595
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 3abe04eebfa703666b70ecbde1c68ab0c942003c
+ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449273"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33628043"
 ---
 # <a name="naming-guidelines"></a>Diretrizes de nomenclatura
 
-Uma função personalizada é identificada por uma propriedade **ID** e **nome** no arquivo de metadados JSON. A ID da função é usada para identificar exclusivamente as funções personalizadas no seu código JavaScript. O nome da função é usado como o nome de exibição que aparece para um usuário no Excel. Um nome de função pode ser diferente da ID da função, como para fins de localização. Mas em geral, ela deve permanecer igual à ID se não houver uma razão convincente para elas diferirem.
+Uma função personalizada é identificada por uma propriedade **ID** e **nome** no arquivo de metadados JSON.
 
-Os nomes de função e as IDs de função compartilham alguns requisitos comuns:
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-- As IDs de função só podem usar caracteres de A a Z, números de zero a nove, sublinhados e pontos.
+- A função `id` é usada para identificar exclusivamente as funções personalizadas no seu código JavaScript. 
+- A função `name` é usada como o nome de exibição que aparece para um usuário no Excel. 
 
-- Os nomes de função podem usar caracteres alfabéticos Unicode, sublinhados e pontos.
+Uma função `name` pode ser diferente da função `id`, como para fins de localização. Em geral, uma função `name` deve permanecer igual a `id` se não houver um motivo convincente para elas diferirem.
 
-- Eles devem começar com uma letra e ter um limite mínimo de três caracteres.
+Uma função `name` e `id` compartilhar alguns requisitos comuns:
 
-O `SUM`Excel usa letras maiúsculas para nomes de função internos (como). Portanto, considere o uso de letras maiúsculas para seus nomes de função personalizada e IDs de função como uma prática recomendada.
+- Uma função `id` pode usar apenas caracteres de A a Z, números de zero a nove, sublinhados e pontos.
 
-Os nomes de função não devem ser nomeados da mesma forma:
+- Uma função `name` pode usar caracteres alfabéticos Unicode, sublinhados e pontos.
+
+- Ambas funcionam `name` e `id` devem começar com uma letra e ter um limite mínimo de três caracteres.
+
+O `SUM`Excel usa letras maiúsculas para nomes de função internos (como). Portanto, considere o uso de letras maiúsculas para a `name` função `id` personalizada e como uma prática recomendada.
+
+Uma função não `name` deve ser nomeada da mesma forma:
 
 - Qualquer célula entre a1 e XFD1048576 ou qualquer célula entre L1C1 e R1048576C16384.
 
@@ -32,15 +39,29 @@ Os nomes de função não devem ser nomeados da mesma forma:
 
 ## <a name="naming-conflicts"></a>Conflitos de nomenclatura
 
-Se o nome da função for igual ao nome de uma função em um suplemento que já existe, o **#REF!** o erro aparecerá na sua pasta de trabalho.
+Se sua função `name` for igual a uma função `name` em um suplemento que já existe, o **#REF!** o erro aparecerá na sua pasta de trabalho.
 
-Para corrigir um conflito de nomes, altere o nome no suplemento e repita a função. Você também pode desinstalar o suplemento com o nome conflitante. Ou, se você estiver testando seu suplemento em diferentes ambientes, tente usar um namespace diferente para diferenciar sua função (como NAMESPACE_NAMEOFFUNCTION).
+Para corrigir um conflito de nomenclatura, altere `name` o em seu suplemento e repita a função. Você também pode desinstalar o suplemento com o nome conflitante. Ou, se você estiver testando seu suplemento em diferentes ambientes, tente usar um namespace diferente para diferenciar sua função (como `NAMESPACE_NAMEOFFUNCTION`).
 
-Considere também como você gostaria que as pessoas usem as funções dentro do seu suplemento. Em muitos casos, faz sentido adicionar vários argumentos a uma função, em vez de criar várias funções com nomes iguais ou semelhantes.
+## <a name="best-practices"></a>Práticas recomendadas
+
+- Considere adicionar vários argumentos a uma função em vez de criar várias funções com nomes iguais ou semelhantes.
+- Os nomes de função devem indicar a ação da função, como `=GETZIPCODE` em vez `ZIPCODE`de.
+- Evite abreviações ambíguas em nomes de funções. A clareza é mais importante do que a brevidade. Escolha um nome como `=INCREASETIME` em vez `=INC`de.
+- Use consistentemente os mesmos verbos para funções que executam ações semelhantes. Por exemplo, use `=DELETEZIPCODE` e `=DELETEADDRESS`, em vez `=DELETEZIPCODE` de `=REMOVEADDRESS`e.
+
+## <a name="localizing-function-names"></a>Localizando nomes de função
+
+Você pode localizar seus nomes de função para idiomas diferentes usando arquivos JSON separados e substituir valores no arquivo de manifesto do seu suplemento. Como prática recomendada, evite dar às funções uma `id` ou `name` que é uma função interna do Excel em outro idioma, pois isso pode causar conflito com funções localizadas.
+
+Para obter informações completas sobre a localização, consulte [localizar funções personalizadas](custom-functions-localize.md)
+
+## <a name="next-steps"></a>Próximas etapas
+Saiba mais sobre [as práticas recomendadas de tratamento de erros](custom-functions-errors.md).
 
 ## <a name="see-also"></a>Confira também
 
 * [Metadados de funções personalizadas](custom-functions-json.md)
-* [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
+* [Práticas recomendadas para as funções personalizadas](custom-functions-best-practices.md).
 * [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)
 * [Tempo de execução de funções personalizadas do Excel](custom-functions-runtime.md)

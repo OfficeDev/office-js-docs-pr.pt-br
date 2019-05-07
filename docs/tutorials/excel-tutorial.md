@@ -5,12 +5,12 @@ ms.date: 01/28/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 410b2391d207f7c83f9accb349448dbc0c92a0e2
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: d32b5b03b29ddfa2213b0dd91d9f02e72b173fbf
+ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451279"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33619067"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Tutorial: criar um suplemento do painel de tarefas no Excel
 
@@ -46,7 +46,7 @@ Conclua as etapas a seguir para criar o projeto de suplemento do Excel que você
 
 3. Execute o comando `npm install` para instalar as ferramentas e bibliotecas listadas no arquivo package.json. 
 
-4. Execute as etapas em [Adicionar certificados autoassinados como certificado raiz confiáveis](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) para confiar no certificado do sistema operacional do seu computador de desenvolvimento.
+4. Execute as etapas de [instalação do certificado autoassinado](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) para confiar no certificado para o sistema operacional do seu computador de desenvolvimento.
 
 ## <a name="create-a-table"></a>Criar uma tabela
 

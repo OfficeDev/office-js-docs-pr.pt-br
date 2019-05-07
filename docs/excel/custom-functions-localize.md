@@ -1,22 +1,27 @@
 ---
-ms.date: 04/30/2019
+ms.date: 05/03/2019
 description: Localize suas funções personalizadas do Excel.
-title: Localizar funções personalizadas (visualização)
+title: Localizar funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: 1c7fba297996c8cf050eb23b34823debf87b4e88
-ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
+ms.openlocfilehash: 5dbe2f78f1d24c3d8c8214f4e604e66f097adba3
+ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "33527296"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33628029"
 ---
 # <a name="localize-custom-functions"></a>Localizar funções personalizadas
 
-Para que suas funções personalizadas funcionem em todo o mundo, localize-as em diferentes idiomas. Para localizar funções personalizadas, você precisa fornecer nomes de função localizados no arquivo JSON funções e fornecer informações de localidade no arquivo de manifesto XML. Os metadados gerados automaticamente não funcionam para localização, portanto, você precisa atualizar o arquivo JSON manualmente.
+Você pode localizar o suplemento e seus nomes de funções personalizadas. Você precisa fornecer nomes de função localizados no arquivo JSON funções e fornecer informações de localidade no arquivo de manifesto XML.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
+>[!IMPORTANT]
+> Os metadados gerados automaticamente não funcionam para localização, portanto, você precisa atualizar o arquivo JSON manualmente.
 
 ## <a name="localize-function-names"></a>Localizar nomes de função
 
-Para localizar suas funções personalizadas, crie um novo arquivo de metadados JSON para cada idioma. Em cada arquivo JSON de idioma, `name` crie `description` e propriedades no idioma de destino. O arquivo padrão para inglês é chamado de **funções. JSON**. É recomendável usar a localidade no nome do arquivo para cada arquivo JSON adicional, como **funções-de. JSON** para ajudá-lo a identificá-los. 
+Para localizar suas funções personalizadas, crie um novo arquivo de metadados JSON para cada idioma. Em cada arquivo JSON de idioma, `name` crie `description` e propriedades no idioma de destino. O arquivo padrão para inglês é chamado de **funções. JSON**. É recomendável usar a localidade no nome do arquivo para cada arquivo JSON adicional, como **funções-de. JSON** para ajudá-lo a identificá-los.
 
 Os `name` e `description` aparecem no Excel e são localizados. No entanto `id` , o de cada função não é localizado. A `id` propriedade é como o Excel identifica sua função como exclusiva e não deve ser alterada depois de ser definida.
 
@@ -91,13 +96,14 @@ Após criar um arquivo JSON para cada idioma, você precisa atualizar seu arquiv
 </Resources>
 ```
 
-
 Para obter mais informações sobre o processo de localização de um suplemento, confira [localização para suplementos do Office](../develop/localization.md#control-localization-from-the-manifest).
+
+## <a name="next-steps"></a>Próximas etapas
+Saiba mais sobre [convenções de nomenclatura para funções personalizadas ou para](custom-functions-naming.md) descobrir [as práticas recomendadas de tratamento de erros](custom-functions-errors.md).
 
 ## <a name="see-also"></a>Confira também
 
-* [Criar funções personalizadas no Excel](custom-functions-overview.md)
 * [Metadados de funções personalizadas](custom-functions-json.md)
+* [Gerar automaticamente metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md)
 * [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
-* [Log de alteração de funções personalizadas](custom-functions-changelog.md)
-* [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)
+* [Criar funções personalizadas no Excel](custom-functions-overview.md)

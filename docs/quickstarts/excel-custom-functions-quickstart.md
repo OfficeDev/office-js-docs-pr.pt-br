@@ -1,15 +1,15 @@
 ---
-ms.date: 03/06/2019
+ms.date: 05/02/2019
 description: Desenvolvimento de funções personalizadas no guia de início rápido do Excel.
-title: Início rápido de funções personalizadas (visualização)
+title: Início rápido de funções personalizadas
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 3ea7ec4c2089aaa4e9f193a45e7c4a31c691f213
-ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
+ms.openlocfilehash: 8eb2630526ce939273024eebd533bd99fa5e94a1
+ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "33517069"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33619889"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Introdução ao desenvolvimento de funções personalizadas do Excel
 
@@ -17,79 +17,83 @@ Com funções personalizadas, os desenvolvedores agora podem adicionar novas fun
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-Você precisará das seguintes ferramentas e recursos relacionados para começar a criar funções personalizadas.
+* Excel para Windows (versão 1810 64 bits ou posterior) ou o Excel Online
 
-- [Node](https://nodejs.org/en/) (versão 8.0.0 ou posterior)
-
-- [Git Bash](https://git-scm.com/downloads) (ou outro cliente Git)
-
-- A versão mais recente do [Yeoman](https://yeoman.io/) e do [Yeoman gerador de suplementos do Office](https://www.npmjs.com/package/generator-office). Para instalar essas ferramentas globalmente, execute o seguinte comando por meio do prompt de comando:
-
-    ```command&nbsp;line
-    npm install -g yo generator-office
-    ```
-
-    > [!NOTE]
-    > Mesmo que você já tenha instalado o gerador Yeoman, recomendamos atualizar seu pacote para a versão mais recente do NPM.
+* Ingressar o [programa Office Insider](https://products.office.com/office-insider) (nível**Insider**, anteriormente chamado de "Insider – modo rápido")
 
 ## <a name="build-your-first-custom-functions-project"></a>Criar seu primeiro projeto de funções personalizadas
 
 Para começar, você usará o gerador Yeoman para criar projeto com funções personalizadas. Isso configurará seu projeto com a estrutura de pastas, arquivos de origem e dependências corretos para começar a codificar suas funções personalizadas.
 
-1. Execute o comando a seguir e responda aos prompts da seguinte forma.
+1. Em uma pasta de sua preferência, execute o comando a seguir e responda aos prompts da seguinte maneira.
 
     ```command&nbsp;line
     yo office
     ```
 
-    - Escolha o tipo de projeto:`Excel Custom Functions Add-in project (...)`
+    - **Escolha o tipo de projeto:** `Excel Custom Functions Add-in project (...)`
+    - **Escolha o tipo de script:** `JavaScript`
+    - **Qual será o nome do suplemento?** `stock-ticker`
 
-    - Escolha um tipo de script: `JavaScript`
-
-    - Qual será o nome do suplemento? `stock-ticker`
-
-    ![O gerador Yeoman para suplementos do Office solicita funções personalizadas](../images/12-10-fork-cf-pic.jpg)
+    ![O gerador Yeoman para suplementos do Office solicita funções personalizadas](../images/yo-office-excel-cf.png)
 
     O gerador Yeoman criará os arquivos do projeto e instalará os componentes Node de suporte.
 
-2. Navegue até a pasta do projeto que você acabou de criar.
+2. O gerador Yeoman fornecerá algumas instruções na linha de comando sobre o que fazer com o projeto, mas ignorará e continuarão seguindo as instruções. Navegue até a pasta raiz do projeto.
 
     ```command&nbsp;line
     cd stock-ticker
     ```
 
-3. Confie no certificado autoassinado necessário para executar este projeto. Para obter instruções detalhadas para Windows ou Mac, confira [Adicionando Certificados Autoassinados como Certificado Raiz Confiável](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).  
-
-4. Crie um projeto.
+3. Compile o projeto. Isso também instalará os certificados de que seu projeto precisa para que funcionem corretamente. 
 
     ```command&nbsp;line
     npm run build
     ```
 
-5. Inicie o servidor local da web, que é executado no Node.
+4. Inicie o servidor local da web, que é executado no Node. Você pode experimentar o suplemento função personalizada no Excel para Windows ou no Excel online. Você pode ser solicitado a abrir o painel de tarefas do suplemento, embora isso seja opcional. Você ainda pode executar suas funções personalizadas sem abrir o painel de tarefas do suplemento.
 
-    - Se você usar o Excel para Windows para testar suas funções personalizadas, execute o seguinte comando para iniciar o servidor Web local, inicie o Excel e Sideload o suplemento:
+> [!NOTE]
+> Os suplementos do Office devem usar HTTPS, não HTTP, mesmo quando você está desenvolvendo. Se você for solicitado a instalar um certificado depois de executar `npm run start:desktop`o, aceite o prompt para instalar o certificado que o gerador Yeoman fornece.
 
-        ```command&nbsp;line
-         npm run start
-        ```
-        Depois de executar esse comando, o prompt de comando mostrará detalhes sobre como iniciar o servidor Web. O Excel começará com seu suplemento carregado. Se o suplemento não carregar, verifique se você concluiu a etapa 3 corretamente.
+# <a name="excel-for-windowstabexcel-windows"></a>[Excel para Windows](#tab/excel-windows)
 
-    - Se você usar o Excel online para testar suas funções personalizadas, execute o seguinte comando para iniciar o servidor Web local:
+Para testar seu suplemento no Excel para Windows, execute o seguinte comando. Quando você executar este comando, o servidor Web local será iniciado e o Excel será aberto com o seu suplemento carregado.
 
-        ```command&nbsp;line
-        npm run start-web
-        ```
+```command&nbsp;line
+npm run start:desktop
+```
 
-         Depois de executar esse comando, o prompt de comando mostrará detalhes sobre como iniciar o servidor Web. Para usar suas funções, abra uma nova pasta de trabalho no Excel online. Nesta pasta de trabalho, você precisará carregar o suplemento. 
+# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
 
-        Para fazer isso, selecione a guia **Inserir** na faixa de opções e selecione **obter suplementos**. Na nova janela resultante, verifique se você está na guia **meus suplementos** . Em seguida, selecione **gerenciar meus suplementos _GT_ carregar meu suplemento**. Procure o arquivo de manifesto e carregue-o. Se o suplemento não for carregado, verifique se você concluiu a etapa 3 corretamente.
+Para testar seu suplemento no Excel online, execute o seguinte comando. Quando você executar este comando, o servidor Web local será iniciado.
 
-## <a name="try-out-the-prebuilt-custom-functions"></a>Experimentar as funções personalizadas predefinidas
+```command&nbsp;line
+npm run start:web
+```
 
-O projeto de funções personalizadas criado usando o gerador Yeoman contém algumas funções personalizadas predefinidas definidas no arquivo **src/customfunction.js**. O arquivo **manifest. XML** na pasta raiz do projeto especifica que todas as funções personalizadas pertencem ao `CONTOSO` namespace.
+> [!NOTE]
+> Os suplementos do Office devem usar HTTPS, não HTTP, mesmo quando você está desenvolvendo. Se você for solicitado a instalar um certificado depois de executar `npm run start:web`o, aceite o prompt para instalar o certificado que o gerador Yeoman fornece.
+
+Para usar seu suplemento de funções personalizadas, abra uma nova pasta de trabalho no Excel online. Nesta pasta de trabalho, conclua as seguintes etapas para Sideload seu suplemento.
+
+1. No Excel Online, escolha a guia **inserir** pressione e, em seguida, escolha **suplementos**.
+
+   ![Inserir faixa de opções no Excel online com o ícone meus suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
+   
+2. Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**.
+
+3. Escolha **Procurar... ** e navegue até o diretório raiz do projeto criado pelo gerador Yeoman.
+
+4. Selecione o arquivo **manifest. XML** e escolha **aberto**, escolha **Carregar**.
+
+---
+
+## <a name="try-out-a-prebuilt-custom-function"></a>Experimente uma função personalizada predefinida
+
+O projeto de funções personalizadas criado usando o gerador Yeoman contém algumas funções personalizadas predefinidas, definidas no arquivo **./src/Functions/functions.js** . O arquivo **./manifest.xml** no diretório raiz do projeto especifica que todas as funções personalizadas pertencem ao `CONTOSO` namespace.
 
 Na sua pasta de trabalho do Excel, `ADD` Experimente a função personalizada realizando as seguintes etapas:
 
