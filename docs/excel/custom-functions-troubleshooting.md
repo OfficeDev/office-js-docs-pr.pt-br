@@ -1,20 +1,22 @@
 ---
-ms.date: 04/18/2019
+ms.date: 05/03/2019
 description: Solução de problemas comuns em funções personalizadas do Excel.
-title: Solução de problemas de funções personalizadas (versão prévia)
+title: Solução de problemas das funções personalizadas
 localization_priority: Priority
-ms.openlocfilehash: cf54aa3b719b7893799df5d1c5206c6fb904be69
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 04da6d58c2610130961a1b89d2b9a1101b54bcb2
+ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449215"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33628008"
 ---
 # <a name="troubleshoot-custom-functions"></a>Solução de problemas de funções personalizadas
 
 Ao desenvolver funções personalizadas, você poderá encontrar erros no produto durante a criação e testes das funções.
 
-Para resolver problemas, você pode [habilitar o log de tempo de execução para capturar erros](#enable-runtime-logging) e consultar as [mensagens de erro nativas do Excel](#check-for-excel-error-messages). Além disso, verifique se há erros comuns, como não [verificar certificados ssl](#my-add-in-wont-load-verify-certificates) de forma adequada, [deixar promessas não resolvidas](#ensure-promises-return) e esquecer de [associar as funções](#my-functions-wont-load-associate-functions).
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
+Para resolver problemas, você pode [habilitar o log de tempo de execução para capturar erros](#enable-runtime-logging) e consultar as [mensagens de erro nativas do Excel](#check-for-excel-error-messages). Além disso, verifique se há erros comuns, como [deixar promessas não resolvidas](#ensure-promises-return) e esquecer de [associar as funções](#my-functions-wont-load-associate-functions).
 
 ## <a name="enable-runtime-logging"></a>Habilitar o log de tempo de execução
 
@@ -24,11 +26,18 @@ Se estiver testando o suplemento do Office no Windows, você deverá [habilitar 
 
 O Excel tem diversas mensagens de erro internas que serão retornadas para uma célula se houver um erro de cálculo. As funções personalizadas usam apenas as seguintes mensagens de erro: `#NULL!`, `#DIV/0!`, `#VALUE!`, `#REF!`, `#NAME?`, `#NUM!`, `#N/A` e `#BUSY!`.
 
+Geralmente, estes erros correspondem aos erros que você já deve estar familiarizado no Excel. Existem apenas algumas exceções específicas para as funções personalizadas, listadas aqui:
+
+- Um erro `#NAME` geralmente significa que houve um problema ao registrar as suas funções.
+- Um erro `#VALUE` normalmente indica um erro no arquivo de script das funções.
+- Um erro `#N/A` também pode ser um sinal de que esta função, embora registrada, não pode ser executada. Isto é normalmente devido à um comando `CustomFunctions.associate` em falta.
+- Um erro `#REF!` pode indicar que o nome da sua função é o mesmo nome de uma função em um suplemento já existente.
+
+## <a name="clear-the-office-cache"></a>Limpar o cache do Office
+
+Informações sobre funções personalizadas são armazenadas em cache pelo Office. Às vezes, ao desenvolver e recarregar repetidamente um suplemento com funções personalizadas, as suas alterações podem não aparecer. Isso pode ser corrigido limpando o cache do Office. Para mais informações, consulte a seção «Limpar o Cache do Office» no artigo [Validar e solucionar problemas com seu manifesto](https://docs.microsoft.com/office/dev/add-ins/testing/troubleshoot-manifest?branch=master#clear-the-office-cache)
+
 ## <a name="common-issues"></a>Problemas comuns
-
-### <a name="my-add-in-wont-load-verify-certificates"></a>Meu suplemento não carrega: verificar certificados
-
-Se o suplemento não for devidamente instalado, verifique se os certificados SSL estão configurados corretamente para o servidor Web que hospeda seu suplemento. Normalmente, se houver um problema com os certificados SSL, você verá uma mensagem de erro no Excel avisando que não foi possível instalar seu suplemento corretamente. Saiba mais em [Adicionar certificados autoassinados como certificado raiz de confiança](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
 
 ### <a name="my-functions-wont-load-associate-functions"></a>Minhas funções não carregam: associar funções
 
@@ -37,7 +46,14 @@ No arquivo de script das funções personalizadas, você precisa associar cada f
 O exemplo a seguir mostra uma função add, seguida pelo nome `add` da função que está sendo associada a `ADD` da id JSON correspondente.
 
 ```js
-function add(first, second){
+/**
+ * Add two numbers.
+ * @customfunction
+ * @param {number} first First number.
+ * @param {number} second Second number.
+ * @returns {number} The sum of the two numbers.
+ */
+function add(first, second) {
   return first + second;
 }
 
@@ -54,6 +70,10 @@ Se você vir o erro "Não é possível abrir este suplemento de um localhost", s
 
 Quando o Excel está aguardando a conclusão de uma função personalizada, ele exibe #BUSY! na célula. Se o código da função personalizada retornar uma promessa, mas a promessa não retornar um resultado, o Excel continuará exibindo #BUSY!. Verifique suas funções para garantir que as promessas estejam retornando corretamente um resultado para uma célula.
 
+### <a name="error-the-dev-server-is-already-running-on-port-3000"></a>Erro: O servidor de desenvolvimento já está em execução na porta 3000
+
+Às vezes, ao executar `npm start` você poderá ver um erro que o servidor de desenvolvimento já está executando na porta 3000 (ou qualquer outra porta que o seu suplemento use). Você pode parar o servidor de desenvolvimento executando `npm stop` ou fechando a janela Node.js. Mas em alguns casos, poderá levar alguns minutos para que o servidor de desenvolvimento realmente pare de executar.
+
 ## <a name="reporting-feedback"></a>Fornecer comentários
 
 Se você tiver problemas que não estão descritos aqui, fale conosco. Há duas maneiras de relatar problemas.
@@ -66,10 +86,13 @@ Se estiver usando o Excel para Windows ou Mac, envie comentários à equipe de e
 
 Sinta-se à vontade para enviar problemas encontrados através do recurso "Comentários do conteúdo" na parte inferior de todas as páginas de documentação ou [informe um novo problema diretamente no repositório de funções personalizadas](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
 
+## <a name="next-steps"></a>Próximas etapas
+Saiba como [depurar as suas funções personalizadas](custom-functions-debugging.md).
+
 ## <a name="see-also"></a>Confira também
 
-* [Metadados de funções personalizadas](custom-functions-json.md)
+* [Geração automática de metadados das funções personalizadas](custom-functions-json-autogeneration.md)
 * [Tempo de execução de funções personalizadas do Excel](custom-functions-runtime.md)
 * [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
-* [Log de alteração de funções personalizadas](custom-functions-changelog.md)
-* [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)
+* [Torne as suas funções personalizadas compatíveis com as funções XLL definidas pelo usuário](make-custom-functions-compatible-with-xll-udf.md)
+* [Criar funções personalizadas no Excel](custom-functions-overview.md)

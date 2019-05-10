@@ -1,18 +1,20 @@
 ---
-ms.date: 04/25/2019
+ms.date: 05/03/2019
 description: Use marcações JSDOC para criar dinamicamente seus metadados JSON de funções personalizadas.
-title: Criar metadados JSON para funções personalizadas (visualização)
+title: Gerar metadados JSON automaticamente para funções personalizadas
 localization_priority: Priority
-ms.openlocfilehash: f13c9b2ff0adfd1bda493433761dc74cb9ea37dc
-ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
+ms.openlocfilehash: df1c0114597e2aa98a15db48c515469fb9db6cd9
+ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "33353269"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33628085"
 ---
-# <a name="create-json-metadata-for-custom-functions-preview"></a>Criar metadados JSON para funções personalizadas (visualização)
+# <a name="autogenerate-json-metadata-for-custom-functions"></a>Gerar metadados JSON automaticamente para funções personalizadas
 
 Quando uma função personalizada do Excel é gravada em JavaScript ou em TypeScript, as marcações JSDoc são usadas para fornecer informações adicionais sobre a função personalizada. As marcações JSDoc são usadas no momento da criação para criar o [arquivo de metadados JSON](custom-functions-json.md). O uso de marcações JSDoc poupa você do esforço de editar manualmente o arquivo de metadados JSON.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 Adicione a marcação `@customfunction` nos comentários de código de uma função JavaScript ou TypeScript para marcá-la como uma função personalizada.
 
@@ -109,7 +111,7 @@ Para denotar um parâmetro de função personalizado como opcional, siga um dest
 * Use um parâmetro opcional. Por exemplo: `function f(text?: string)`
 * Dê ao parâmetro um valor padrão. Por exemplo: `function f(text: string = "abc")`
 
-Para uma descrição detalhada do @param confira: [JSDoc](http://usejsdoc.org/tags-param.html)
+Para uma descrição detalhada do @param confira: [JSDoc](https://usejsdoc.org/tags-param.html)
 
 > [!NOTE]
 > O valor padrão para parâmetros opcionais é `null`.
@@ -183,11 +185,11 @@ Uma função pode retornar uma Promessa, que fornecerá o valor quando a promess
 
 Qualquer outro tipo será tratado como um erro.
 
+## <a name="next-steps"></a>Próximas etapas
+Saiba mais sobre [convenções de nomenclatura para funções personalizadas](custom-functions-naming.md). Como alternativa, saiba como [localizar as funções](custom-functions-localize.md) que requerem a [gravação do arquivo JSON à mão](custom-functions-json.md).
+
 ## <a name="see-also"></a>Confira também
 
 * [Metadados de funções personalizadas](custom-functions-json.md)
-* [Tempo de execução de funções personalizadas do Excel](custom-functions-runtime.md)
 * [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
-* [Log de alteração de funções personalizadas](custom-functions-changelog.md)
-* [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)
-* [Depuração de funções personalizadas](custom-functions-debugging.md)
+* [Criar funções personalizadas no Excel](custom-functions-overview.md)

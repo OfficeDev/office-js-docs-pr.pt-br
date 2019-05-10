@@ -1,22 +1,26 @@
 ---
-ms.date: 04/22/2019
+ms.date: 05/03/2019
 description: Reúna as funções personalizadas em lotes para reduzir as chamadas de rede para um serviço remoto.
 title: Enviando em lote chamadas de função personalizada para um serviço remoto
 localization_priority: Priority
-ms.openlocfilehash: 2e31d6aa212e27967448f07fdcb2bd024a7511f9
-ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
+ms.openlocfilehash: da9f3ee3243b52df5d49f32c8ab6cbada97e17ca
+ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "33356834"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33628127"
 ---
 # <a name="batching-custom-function-calls-for-a-remote-service"></a>Enviando em lote chamadas de função personalizada para um serviço remoto
 
-Se as suas funções personalizadas chamarem um serviço remoto, você poderá usar um padrão de envio em lotes para reduzir o número de chamadas de rede para o serviço remoto. Para reduzir a idas e voltas na rede, você reúne todas as chamadas em uma única chamada para o serviço da Web. Isso é ideal quando a planilha é recalculada. Por exemplo, se alguém usou sua função personalizada em 100 células em uma planilha e depois recalculou a planilha, sua função personalizada seria executada 100 vezes e faria 100 chamadas de rede. Usando um padrão de envio em lotes, as chamadas podem ser combinadas para fazer todos os 100 cálculos em uma única chamada de rede.
+Se as suas funções personalizadas chamarem um serviço remoto, você poderá usar um padrão de envio em lotes para reduzir o número de chamadas de rede para o serviço remoto. Para reduzir a idas e voltas na rede, você reúne todas as chamadas em uma única chamada para o serviço da Web. Isso é ideal quando a planilha é recalculada.
+
+Por exemplo, se alguém usou sua função personalizada em 100 células em uma planilha e depois recalculou a planilha, sua função personalizada seria executada 100 vezes e faria 100 chamadas de rede. Usando um padrão de envio em lotes, as chamadas podem ser combinadas para fazer todos os 100 cálculos em uma única chamada de rede.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="view-the-completed-sample"></a>Ver o exemplo concluído
 
-Você pode seguir este artigo e colar os exemplos de código em seu próprio projeto. Por exemplo, você pode usar o Yo Office para criar um novo projeto de função personalizada para TypeScript e, em seguida, adicionar todo o código deste artigo ao projeto. você pode então executar o código e experimentá-lo.
+Você pode seguir este artigo e colar os exemplos de código em seu próprio projeto. Por exemplo, você pode usar o [gerador do Yo Office](https://github.com/OfficeDev/generator-office) para criar um novo projeto de função personalizada para TypeScript e, em seguida, adicionar todo o código deste artigo ao projeto. Você pode então executar o código e experimentá-lo.
 
 Além disso, você pode fazer o download ou visualizar o projeto de exemplo completo no [Padrão de envio em lotes de funções personalizadas](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/Batching). Se você quiser ver o código inteiro antes de ler mais, dê uma olhada no [arquivo de script](https://github.com/OfficeDev/PnP-OfficeAddins/blob/master/Excel-custom-functions/Batching/src/functions/functions.ts).
 
@@ -28,7 +32,7 @@ Para configurar o envio em lotes para suas funções personalizadas, você preci
 2. Uma função para fazer o pedido remoto quando o lote estiver pronto.
 3. Código do servidor para responder à solicitação em lote, calcular todos os resultados da operação e retornar os valores.
 
-Nas seções a seguir, você verá como construir o código com um exemplo de cada vez. Você adicionará cada exemplo de código ao seu arquivo functions.ts. É recomendável que você crie um novo projeto de funções personalizadas usando o yo office. Para criar um novo projeto, confira [Começar a desenvolver funções personalizadas do Excel](../quickstarts/excel-custom-functions-quickstart.md) e use TypeScript em vez de JavaScript.
+Nas seções a seguir, você verá como construir o código com um exemplo de cada vez. Você adicionará cada exemplo de código ao seu arquivo **functions.ts**. É recomendável que você crie um novo projeto de funções personalizadas usando o gerador do Yo Office. Para criar um novo projeto, confira [Começar a desenvolver funções personalizadas do Excel](../quickstarts/excel-custom-functions-quickstart.md) e use TypeScript em vez de JavaScript.
 
 ## <a name="batch-each-call-to-your-custom-function"></a>Agrupe cada chamada à sua função personalizada
 
@@ -67,7 +71,7 @@ interface IBatchEntry {
 }
 ```
 
-Em seguida, crie a matriz de lotes que usa a interface anterior. Para controlar se um lote está programado ou não, crie uma variável `_isBatchedRequestSchedule.  Isso será importante mais tarde para o cronograma de chamadas em lote para o serviço remoto.
+Em seguida, crie a matriz de lotes que usa a interface anterior. Para controlar se um lote está programado ou não, crie uma variável `_isBatchedRequestSchedule`. Isso será importante mais tarde para o cronograma de chamadas em lote para o serviço remoto.
 
 ```typescript
 const _batch: IBatchEntry[] = [];
@@ -114,7 +118,7 @@ function _pushOperation(op: string, args: any[]) {
 
 ## <a name="make-the-remote-request"></a>Faça o pedido remoto
 
-O objetivo da função `_makeRemoteRequest` é passar o lote de operações para o serviço remoto e, em seguida, retornar os resultados para cada função personalizada. Primeiro, ela cria uma cópia da matriz de lotes. Isso permite que chamadas de função personalizadas simultâneas do Excel iniciem imediatamente o envio em lote em uma nova matriz. A cópia é então transformada em uma matriz mais simples que não contém as informações de promessa. Não faria sentido passar as promessas para um serviço remoto, uma vez que não funcionariam. O `_makeRemoteRequest irá rejeitar ou resolver cada promessa com base no que o serviço remoto retorna.
+O objetivo da função `_makeRemoteRequest` é passar o lote de operações para o serviço remoto e, em seguida, retornar os resultados para cada função personalizada. Primeiro, ela cria uma cópia da matriz de lotes. Isso permite que chamadas de função personalizadas simultâneas do Excel iniciem imediatamente o envio em lote em uma nova matriz. A cópia é então transformada em uma matriz mais simples que não contém as informações de promessa. Não faria sentido passar as promessas para um serviço remoto, uma vez que não funcionariam. `_makeRemoteRequest` irá rejeitar ou resolver cada promessa com base no que o serviço remoto retornar.
 
 ### <a name="add-the-following-makeremoterequest-method-to-functionsts"></a>Adicione o seguinte método `_makeRemoteRequest` ao functions.ts
 
@@ -153,11 +157,11 @@ function _makeRemoteRequest() {
 A função `_makeRemoteRequest` chama `_fetchFromRemoteService`, que, como você verá mais adiante, é apenas uma simulação representando o serviço remoto. Isso facilita estudar e executar o código neste artigo. Mas quando você quiser usar esse código para um serviço remoto real, faça as seguintes alterações:
 
 - Decida como serializar as operações em lote pela rede. Por exemplo, você pode querer colocar a matriz em um corpo JSON.
-- Em vez de chamar `_fetchFromRemoteService`, você precisará fazer a chamada de rede real para o serviço remoto passando o lote de operações.
+- Em vez de chamar `_fetchFromRemoteService`, você precisa fazer a chamada de rede real para o serviço remoto passando o lote de operações.
 
 ## <a name="process-the-batch-call-on-the-remote-service"></a>Processar a chamada em lote no serviço remoto
 
-A última etapa é manipular a chamada em lote no serviço remoto. O exemplo de código a seguir mostra a função `_fetchFromRemoteService`. Essa função descompacta cada operação, executa a operação especificada e retorna os resultados. Para fins de aprendizado neste artigo, a função `_fetchFromRemoteService` foi projetada para ser executada em seu suplemento da Web e simular um serviço remoto. Você pode adicionar esse código ao seu arquivo functions.ts para poder estudar e executar todo o código deste artigo sem precisar configurar um serviço remoto real.
+A última etapa é manipular a chamada em lote no serviço remoto. O exemplo de código a seguir mostra a função `_fetchFromRemoteService`. Essa função descompacta cada operação, executa a operação especificada e retorna os resultados. Para fins de aprendizado neste artigo, a função `_fetchFromRemoteService` foi projetada para ser executada em seu suplemento da Web e simular um serviço remoto. Você pode adicionar este código ao seu arquivo **functions.ts** para poder estudar e executar todo o código deste artigo sem precisar configurar um serviço remoto real.
 
 ### <a name="add-the-following-fetchfromremoteservice-function-to-functionsts"></a>Adicione a seguinte função `_fetchFromRemoteService` ao functions.ts
 
@@ -213,9 +217,12 @@ Para modificar a função `_fetchFromRemoteService` para que esta possa ser exec
 - Aplique um mecanismo de autenticação apropriado. Certifique-se de que apenas os autores de chamada corretos possam acessar a função.
 - Coloque o código no serviço remoto.
 
+## <a name="next-steps"></a>Próximas etapas
+Saiba mais sobre [os vários parâmetros](custom-functions-parameter-options.md) que você pode usar nas suas funções personalizadas. Ou, reveja as noções básicas sobre como fazer [uma chamada na Web através de um função personalizada](custom-functions-web-reqs.md).
+
 ## <a name="see-also"></a>Confira também
 
-* [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
-* [Metadados de funções personalizadas](custom-functions-json.md)
-* [Log de alteração de funções personalizadas](custom-functions-changelog.md)
+* [Valores voláteis nas funções](custom-functions-volatile.md)
+* [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md)
+* [Criar funções personalizadas no Excel](custom-functions-overview.md)
 * [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)

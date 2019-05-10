@@ -1,108 +1,77 @@
 ---
-ms.date: 03/21/2019
-description: Crie caixas de diálogo por meio de funções personalizadas no Excel usando JavaScript.
-title: Caixas de diálogo de funções personalizados (prévia)
+ms.date: 05/06/2019
+description: Crie uma caixa de diálogo por meio de funções personalizadas no Excel usando JavaScript.
+title: Exibir uma caixa de diálogo a partir de um função personalizada
 localization_priority: Priority
-ms.openlocfilehash: 0f596825a7a32525a68ef45656f1390196146706
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 3d7a657402c319b2394c7331b69314b2e5591890
+ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449257"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33628138"
 ---
-# <a name="display-a-dialog-box-in-custom-functions"></a>Exibir uma caixa de diálogo em funções personalizadas
+# <a name="display-a-dialog-box-from-a-custom-function"></a>Exibir uma caixa de diálogo a partir de um função personalizada
 
-Se precisar que sua função personalizada interaja com o usuário, você pode criar uma caixa de diálogo usando o objeto `OfficeRuntime.Dialog`. Um cenário comum para usar a caixa de diálogo é autenticar um usuário para que a função personalizada possa acessar um serviço web. Para saber mais sobre autenticação de funções personalizadas, confira [Autenticação de funções personalizados](./custom-functions-authentication.md).
+Se precisar que sua função personalizada interaja com o usuário, você pode criar uma caixa de diálogo usando o [`Office.Dialog`objeto](/javascript/api/office-runtime/officeruntime.dialog?view=office-js). Um cenário comum para usar a caixa de diálogo é autenticar um usuário para que a função personalizada possa acessar um serviço web. Para saber mais sobre autenticação de funções personalizadas, confira [Autenticação de funções personalizados](./custom-functions-authentication.md).
 
-Observação: O objeto `OfficeRuntime.Dialog` faz parte do tempo de execução de funções personalizadas. Ele não pode ser usado a partir do contexto do painel de tarefas. Para criar uma caixa de diálogo de um painel de tarefas, confira [Diálogo API](/office/dev/add-ins/develop/dialog-api-in-office-add-ins).
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-## <a name="dialog-api-example"></a>Exemplo de API da caixa de diálogo
+>[!NOTE]
+> O objeto `Office.Dialog` faz parte do tempo de execução de funções personalizadas. Painéis de tarefas não usam o objeto `Dialog`. Para criar uma caixa de diálogo a partir de um painel de tarefas, confira [API de Caixa de Diálogo](/office/dev/add-ins/develop/dialog-api-in-office-add-ins).
 
-No exemplo de código a seguir, a função `getTokenViaDialog` usa a função `displayWebDialog` da API da caixa de diálogo para exibir uma caixa de diálogo.
+## <a name="dialog-box-api-example"></a>exemplo de API da caixa de diálogo
+
+Na amostra de código a seguir, a função `getTokenViaDialog` usa a função da `Dialog`API`displayWebDialogOptions` para exibir uma caixa de diálogo.
 
 ```js
-// Get auth token before calling my service, a hypothetical API that will deliver a stock price based on stock ticker string, such as "MSFT"
-
-function getStock (ticker) {
-  return new Promise(function (resolve, reject) {
-    // Get a token
-    getToken("https://www.contoso.com/auth")
-    .then(function (token) {
-
-      // Use token to get stock price
-      fetch("https://www.contoso.com/?token=token&ticker= + ticker")
-      .then(function (result) {
-
-        // Return stock price to cell
-        resolve(result);
+/**
+ * Function retrieves a cached token or opens a dialog box if there is no saved token. Note that this is not a sufficient example of authentication but is intended to show the capabilities of the Dialog object.
+ * @param {string} url URL for a stored token.
+ */
+function getTokenViaDialog(url) {
+  return new Promise (function (resolve, reject) {
+    if (_dialogOpen) {
+      // Can only have one dialog box open at once, wait for previous dialog box's token
+      let timeout = 5;
+      let count = 0;
+      var intervalId = setInterval(function () {
+        count++;
+        if(_cachedToken) {
+          resolve(_cachedToken);
+          clearInterval(intervalId);
+        }
+        if(count >= timeout) {
+          reject("Timeout while waiting for token");
+          clearInterval(intervalId);
+        }
+      }, 1000);
+    } else {
+      _dialogOpen = true;
+      Office.displayWebDialogOptions(url, {
+        height: '50%',
+        width: '50%',
+        onMessage: function (message, dialog) {
+          _cachedToken = message;
+          resolve(message);
+          dialog.close();
+          return;
+        },
+        onRuntimeError: function(error, dialog) {
+          reject(error);
+        },
+      }).catch(function (e) {
+        reject(e);
       });
-    })
-    .catch(function (error) {
-      reject(error);
-    });
+    }
   });
-  
-  //Helper
-  function getToken(url) {
-    return new Promise(function (resolve,reject) {
-      if(_cachedToken) {
-        resolve(_cachedToken);
-      } else {
-        getTokenViaDialog(url)
-        .then(function (result) {
-          resolve(result);
-        })
-        .catch(function (result) {
-          reject(result);
-        });
-      }
-    });
-  }
-
-  function getTokenViaDialog(url) {
-    return new Promise (function (resolve, reject) {
-      if (_dialogOpen) {
-        // Can only have one dialog open at once, wait for previous dialog's token
-        let timeout = 5;
-        let count = 0;
-        var intervalId = setInterval(function () {
-          count++;
-          if(_cachedToken) {
-            resolve(_cachedToken);
-            clearInterval(intervalId);
-          }
-          if(count >= timeout) {
-            reject("Timeout while waiting for token");
-            clearInterval(intervalId);
-          }
-        }, 1000);
-      } else {
-        _dialogOpen = true;
-        OfficeRuntime.displayWebDialog(url, {
-          height: '50%',
-          width: '50%',
-          onMessage: function (message, dialog) {
-            _cachedToken = message;
-            resolve(message);
-            dialog.close();
-            return;
-          },
-          onRuntimeError: function(error, dialog) {
-            reject(error);
-          },
-        }).catch(function (e) {
-          reject(e);
-        });
-      }
-    });
-  }
 }
 ```
 
+## <a name="next-steps"></a>Próximas etapas
+Saiba como [tornar as suas funções personalizadas compatíveis com as funções definidas pelo usuário de XLL](make-custom-functions-compatible-with-xll-udf.md).
+
 ## <a name="see-also"></a>Confira também
 
-* [Metadados de funções personalizadas](custom-functions-json.md)
-* [Tempo de execução de funções personalizadas do Excel](custom-functions-runtime.md)
-* [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
-* [Log de alteração de funções personalizadas](custom-functions-changelog.md)
-* [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)
+* [Autenticação de funções personalizadas](custom-functions-authentication.md)
+* [Receber e tratar dados com funções personalizadas](custom-functions-web-reqs.md)
+* [Criar funções personalizadas no Excel](custom-functions-overview.md)

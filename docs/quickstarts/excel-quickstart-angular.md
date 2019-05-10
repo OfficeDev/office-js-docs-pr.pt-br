@@ -1,196 +1,72 @@
 ---
-title: Criar um suplemento do Excel usando o Angular
+title: Criar um suplemento do painel de tarefas do Excel usando o Angular
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/02/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: e814fb2a1dd24a272a24ca9debead2d836aed5c8
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 66c85ba9914b783295e9ed2143dc9ce107f64c4c
+ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450945"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33619903"
 ---
-# <a name="build-an-excel-add-in-using-angular"></a>Criar um suplemento do Excel usando o Angular
+# <a name="build-an-excel-task-pane-add-in-using-angular"></a>Criar um suplemento do painel de tarefas do Excel usando o Angular
 
-Neste artigo, você passará pelo processo de criar um suplemento do Excel usando o Angular e a API JavaScript do Excel.
+Neste artigo, você passará pelo processo de criação de um suplemento do painel de tarefas do Excel usando o Angular e a API JavaScript do Excel.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- [Node.js](https://nodejs.org)
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- Instale a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador do Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.
-
-    ```bash
-    npm install -g yo generator-office
-    ```
-
-## <a name="create-the-web-app"></a>Criar o aplicativo Web
+## <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
 1. Use o gerador Yeoman para criar um projeto de suplemento do Excel. Execute o comando a seguir e responda aos prompts da seguinte forma:
 
-    ```bash
+    ```command&nbsp;line
     yo office
     ```
 
-    - **Escolha o tipo de projeto:** `Office Add-in project using Angular framework`
-    - **Escolha o tipo de script:** `Typescript`
-    - **Qual será o nome do suplemento?:** `My Office Add-in`
-    - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?:** `Excel`
+    - **Escolha o tipo de projeto:** `Office Add-in Task Pane project using Angular framework`
+    - **Escolha o tipo de script:** `TypeScript`
+    - **Qual será o nome do suplemento?** `My Office Add-in`
+    - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Excel`
 
-    ![Gerador do Yeoman](../images/yo-office-excel-angular.png)
+    ![Gerador do Yeoman](../images/yo-office-excel-angular-2.png)
 
     Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
 2. Navegue até a pasta raiz do projeto.
 
-    ```bash
+    ```command&nbsp;line
     cd "My Office Add-in"
     ```
+## <a name="explore-the-project"></a>Explore o projeto
 
-## <a name="update-the-code"></a>Atualizar o código
+O projeto de suplemento que você criou com o gerador do Yeoman contém um exemplo de código para um suplemento de painel de tarefas bem básico. Se você quiser examinar os principais componentes do seu projeto de suplemento, abra o projeto no seu editor de código e revise os arquivos listados abaixo. Quando estiver pronto para experimentar o suplemento, prossiga para a próxima seção.
 
-1. Em seu editor de código, abra o arquivo **app.css**, inclua os seguintes estilos no final do arquivo e salve o arquivo.
-
-    ```css
-    #content-header {
-        background: #2a8dd4;
-        color: #fff;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 80px;
-        overflow: hidden;
-        font-family: Arial;
-        padding-top: 25px;
-    }
-
-    #content-main {
-        background: #fff;
-        position: fixed;
-        top: 80px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        overflow: auto;
-        font-family: Arial;
-    }
-
-    .padding {
-        padding: 15px;
-    }
-
-    .padding-sm {
-        padding: 4px;
-    }
-
-    .normal-button {
-        width: 80px;
-        padding: 2px;
-    }
-    ```
-
-2. Abra o arquivo **src/app/app.component.html**, substitua todo o conteúdo pelo código a seguir e salve o arquivo.
-
-    ```html
-    <div id="content-header">
-        <div class="padding">
-            <h1>{{welcomeMessage}}</h1>
-        </div>
-    </div>
-    <div id="content-main">
-        <div class="padding">
-            <p>Choose the button below to set the color of the selected range to green.</p>
-            <br />
-            <h3>Try it out</h3>
-            <br />
-            <div role="button" class="ms-Button" (click)="setColor()">
-                <span class="ms-Button-label">Set color</span>
-                <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--ChevronRight"></i></span>
-            </div>
-        </div>
-    </div>
-    ```
-
-3. Abra o arquivo **src/app/app.component.ts**, substitua todo o conteúdo pelo código a seguir e salve o arquivo.
-
-    ```typescript
-    import { Component } from '@angular/core';
-    import * as OfficeHelpers from '@microsoft/office-js-helpers';
-
-    const template = require('./app.component.html');
-
-    @Component({
-        selector: 'app-home',
-        template
-    })
-    export default class AppComponent {
-        welcomeMessage = 'Welcome';
-
-        async setColor() {
-            try {
-                await Excel.run(async context => {
-                    const range = context.workbook.getSelectedRange();
-                    range.load('address');
-                    range.format.fill.color = 'green';
-                    await context.sync();
-                    console.log(`The range address was ${range.address}.`);
-                });
-            } catch (error) {
-                OfficeHelpers.UI.notify(error);
-                OfficeHelpers.Utilities.log(error);
-            }
-        }
-
-    }
-    ```
-
-## <a name="update-the-manifest"></a>Atualizar o manifesto
-
-1. Abra o arquivo **manifest.xml** para definir as configurações e os recursos do suplemento. 
-
-2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o com seu nome.
-
-3. O atributo `DefaultValue` do elemento `Description` tem um espaço reservado. Substitua-o com **um suplemento do painel de tarefas do Excel**.
-
-4. Salve o arquivo.
-
-    ```xml
-    ...
-    <ProviderName>John Doe</ProviderName>
-    <DefaultLocale>en-US</DefaultLocale>
-    <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
-    <DisplayName DefaultValue="My Office Add-in" />
-    <Description DefaultValue="A task pane add-in for Excel"/>
-    ...
-    ```
-
-## <a name="start-the-dev-server"></a>Iniciar o servidor de desenvolvimento
-
-[!include[Start server section](../includes/quickstart-yo-start-server.md)] 
+- O arquivo **manifest.xml** no diretório raiz do projeto define as configurações e os recursos do suplemento.
+- O arquivo **./src/taskpane/app/app.component.html** contém a marcação HTML do painel de tarefas.
+- O arquivo **./src/taskpane/taskpane.css** contém o CSS que é aplicado ao conteúdo no painel de tarefas.
+- O arquivo **./src/taskpane/app/app.component.ts** contém o código da API JavaScript do Office que facilita a interação entre o painel de tarefas e o Excel.
 
 ## <a name="try-it-out"></a>Experimente
 
-1. Siga as instruções da plataforma que você usará para executar o suplemento e realizar sideload do suplemento no Excel.
-
-    - Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online: [Realizar sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
-    - iPad e Mac: [Realizar sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+1. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
 
 2. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Botão do suplemento do Excel](../images/excel-quickstart-addin-2b.png)
+    ![Botão do suplemento do Excel](../images/excel-quickstart-addin-3b.png)
 
 3. Selecione um intervalo de células na planilha.
 
-4. No painel de tarefas, escolha o botão **Definir cor** para definir a cor do intervalo selecionado como verde.
+4. Na parte inferior do painel de tarefas, escolha o link **Executar** para definir a cor do intervalo selecionado como amarelo.
 
-    ![Suplemento do Excel](../images/excel-quickstart-addin-2c.png)
+    ![Suplemento do Excel](../images/excel-quickstart-addin-3c.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Você criou com êxito um suplemento do Excel usando o Angular!, parabéns! Agora, saiba mais sobre os recursos dos suplementos do Excel e crie um mais complexo, acompanhando o tutorial de suplemento do Excel.
+Parabéns, você criou com êxito um suplemento do painel de tarefas do Excel usando o Angular! Em seguida, saiba mais sobre os recursos de um suplemento do Excel e crie um suplemento mais complexo seguindo as etapas deste tutorial de suplemento do Excel.
 
 > [!div class="nextstepaction"]
 > [Tutorial de suplemento do Excel](../tutorials/excel-tutorial.md)

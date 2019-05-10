@@ -1,34 +1,28 @@
 ---
-title: Criar um suplemento do Excel usando o Vue
+title: Criar um suplemento do painel de tarefas do Excel usando o Vue
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/02/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: b3c65d2594e2d260f3e332fd20cdee2e56b02fcf
-ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
+ms.openlocfilehash: 228301b9711f4ac33fb5435e66cfcd0254041e19
+ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "33517048"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33619576"
 ---
-# <a name="build-an-excel-add-in-using-vue"></a>Criar um suplemento do Excel usando o Vue
+# <a name="build-an-excel-task-pane-add-in-using-vue"></a>Criar um suplemento do painel de tarefas do Excel usando o Vue
 
-Neste artigo, você passará pelo processo de criar um suplemento do Excel usando o Vue e a API JavaScript do Excel.
+Neste artigo, você passará pelo processo de criar um suplemento do painel de tarefas do Excel usando o Vue e a API JavaScript do Excel.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- [Node.js](https://nodejs.org)
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 - Instale a [CLI do Vue](https://github.com/vuejs/vue-cli) globalmente.
 
     ```command&nbsp;line
     npm install -g vue-cli
-    ```
-
-- Instale a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador do Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.
-
-    ```command&nbsp;line
-    npm install -g yo generator-office
     ```
 
 ## <a name="generate-a-new-vue-app"></a>Gerar um novo aplicativo Vue
@@ -63,11 +57,11 @@ Cada suplemento requer um arquivo de manifesto para definir os recursos e config
     yo office
     ```
 
-    - **Escolha o tipo de projeto:** `Office Add-in containing the manifest only`
-    - **Qual será o nome do suplemento?:** `My Office Add-in`
-    - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?:** `Excel`
+    - **Escolha o tipo de projeto:** `Office Add-in project containing the manifest only`
+    - **Qual será o nome do suplemento?** `My Office Add-in`
+    - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Excel`
 
-    ![Gerador do Yeoman](../images/yo-office.png)
+    ![Gerador do Yeoman](../images/yo-office-manifest-only-vue.png)
 
     Depois de concluir o assistente, o gerador criará o arquivo de manifesto.
 
@@ -214,7 +208,7 @@ Para ativar o HTTPS para o seu aplicativo, abra o arquivo **package.json** na pa
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Você criou com êxito um suplemento do Excel usando o Vue, parabéns! Agora, saiba mais sobre os recursos dos suplementos do Excel e crie um mais complexo, acompanhando o tutorial de suplemento do Excel.
+Parabéns, você criou com êxito um suplemento do painel de tarefas do Excel usando o Vue. Em seguida, saiba mais sobre os recursos de um suplemento do Excel e crie um suplemento mais complexo seguindo as etapas deste tutorial de suplemento do Excel.
 
 > [!div class="nextstepaction"]
 > [Tutorial de suplemento do Excel](../tutorials/excel-tutorial.md)

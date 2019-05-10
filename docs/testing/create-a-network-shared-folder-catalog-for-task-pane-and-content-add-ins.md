@@ -3,32 +3,29 @@ title: Realizar sideload de suplementos do Office para teste
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 79d1bfc9332208e59e750e94a14abd6f1192ebe6
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 24c7719969ddc59d8bb6e525af804515331a51ad
+ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450185"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33619041"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>Realizar sideload de suplementos do Office para teste
 
 Você pode instalar um suplemento do Office para testá-lo em um cliente do Office em execução no Windows usando um catálogo de pasta compartilhada para publicar o manifesto em um compartilhamento de arquivos de rede.
 
 > [!NOTE]
-> Se o seu projeto de suplemento tiver sido criado com a ferramenta [ **yo office**](https://github.com/OfficeDev/generator-office), há uma maneira alternativa de realizar o sideloading que pode funcionar para você. Para mais detalhes, veja [Realizar Sideload de Suplementos do Office](sideload-office-addin-using-sideload-command.md).
+> Se o seu projeto de suplemento foi criado com o [gerador do Yeoman para suplementos do Office](https://github.com/OfficeDev/generator-office), há uma maneira alternativa de realizar o sideload que pode funcionar para você. Para mais detalhes, veja [Realizar Sideload de Suplementos do Office](sideload-office-addin-using-sideload-command.md).
 
-Este artigo se aplica somente para testes em suplementos Word, Excel ou PowerPoint no Windows. Se você deseja testar em outra plataforma ou um suplemento do Outlook, veja os tópicos seguintes para realizar o sideload do suplemento:
+Este artigo se aplica somente para testes de suplementos do Word, Excel, PowerPoint e Project no Windows. Se você deseja testar em outra plataforma ou um suplemento do Outlook, veja os tópicos seguintes para realizar o sideload do suplemento:
 
 - [Realizar sideload de suplementos do Office para teste no Office Online](sideload-office-add-ins-for-testing.md)
 - [Sideload suplementos do Office para teste em um iPad ou Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
 - [Realizar sideload de suplementos do Outlook para teste](/outlook/add-ins/sideload-outlook-add-ins-for-testing)
 
-
 O vídeo a seguir oferece orientações para a realização do processo de sideload no suplemento do Office para área de trabalho ou Office Online.  
 
-
 > [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
-
 
 ## <a name="share-a-folder"></a>Compartilhar uma pasta
 
@@ -50,7 +47,7 @@ O vídeo a seguir oferece orientações para a realização do processo de sidel
 
 ## <a name="specify-the-shared-folder-as-a-trusted-catalog"></a>Especifique a pasta compartilhada como um catálogo confiável
       
-1. Abra um novo documento no Excel, no Word ou no PowerPoint.
+1. Abra um novo documento no Excel, no Word, no PowerPoint ou no Project.
     
 2. Escolha a guia **Arquivo** e, então, **Opções**.
     
@@ -81,12 +78,11 @@ O vídeo a seguir oferece orientações para a realização do processo de sidel
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-2. No Excel, Word ou PowerPoint, selecione **Meus Suplementos** na guia **Inserir** da faixa de opções.
+2. No Excel, Word ou PowerPoint, selecione **Meus Suplementos** na guia **Inserir** da faixa de opções. No Project, selecione **Meus Suplementos** na guia **Projeto** da faixa de opções. 
 
 3. Escolha **PASTA COMPARTILHADA** na parte superior da caixa de diálogo **Suplementos do Office**.
 
 4. Selecione o nome do suplemento e escolha **OK** para inseri-lo.
-
 
 ## <a name="see-also"></a>Confira também
 
