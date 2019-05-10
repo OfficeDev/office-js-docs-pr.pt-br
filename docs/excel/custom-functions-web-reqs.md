@@ -1,18 +1,20 @@
 ---
-ms.date: 04/20/2019
+ms.date: 05/07/2019
 description: Solicite, transmita e cancele o fluxo de dados externos para sua pasta de trabalho com funções personalizadas no Excel
-title: Solicitações da Web e outros dados de tratamento com funções personalizadas (prévia)
+title: Receber e tratar dados com funções personalizadas
 localization_priority: Priority
-ms.openlocfilehash: 2942ec56e46d6eb586b516eedab17c1eeb98d9c8
-ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
+ms.openlocfilehash: 61f4d0fdaea4277faedddbe075a587fb23842c08
+ms.sourcegitcommit: 5b9c2b39dfe76cabd98bf28d5287d9718788e520
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "33353262"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "33659632"
 ---
-# <a name="receiving-and-handling-data-with-custom-functions"></a>Recebimento e gerenciamento de dados com funções personalizadas
+# <a name="receive-and-handle-data-with-custom-functions"></a>Receber e tratar dados com funções personalizadas
 
-Uma das maneiras pelas quais as funções personalizadas aprimoram o poder do Excel é receber dados de locais diferentes na pasta de trabalho, como a web ou um servidor (por meio de WebSockets). As funções personalizadas podem solicitar dados por meio de XHR e buscar solicitações, bem como transmitir esses dados em tempo real.
+Uma das maneiras pelas quais as funções personalizadas aprimoram o poder do Excel é através do recebimento de dados de outros locais diferente da pasta de trabalho, como a Web ou um servidor (por meio de WebSockets). As funções personalizadas podem solicitar dados por meio de XHR e solicitações `fetch`, bem como transmitir esses dados em tempo real.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 A documentação a seguir ilustra alguns exemplos de solicitações da web, mas para criar uma função de transmissão para você, experimente o [Tutorial de funções personalizadas](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows).
 
@@ -33,17 +35,22 @@ Observe que uma implementação CORS simples não pode usar cookies e é compat�
 
 No código de exemplo a seguir, a função **getTemperature** chama a função sendWebRequest  para obter a temperatura de uma área específica, de acordo com a ID do termômetro. A função sendWebRequest usa XHR para emitir uma solicitação GET para um ponto de extremidade que fornece os dados.
 
-```JavaScript
+```js
+/**
+ * Receives a temperature from an online source.
+ * @customfunction
+ * @param {number} thermometerID Identification number of the thermometer.
+ */
 function getTemperature(thermometerID) {
   return new Promise(function(setResult) {
-      sendWebRequest(thermometerID, function(data){ 
+      sendWebRequest(thermometerID, function(data){
           storeLastTemperature(thermometerID, data.temperature);
           setResult(data.temperature);
       });
   });
 }
 
-// Helper method that uses Office's implementation of XMLHttpRequest in the JavaScript runtime for custom functions  
+// Helper method that uses Office's implementation of XMLHttpRequest in the JavaScript runtime for custom functions.  
 function sendWebRequest(thermometerID, data) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -65,10 +72,16 @@ Para outro exemplo de solicitação XHR com mais contexto, confira a função`ge
 
 ### <a name="fetch-example"></a>Exemplo de busca
 
-No seguinte exemplo de código, a função stockPriceStream usa um símbolo de cotação da bolsa para acessar o preço de uma ação a cada 1000 milissegundos. Para saber mais sobre este exemplo e obter as JSON acompanhante, confira a [tutorial de funções personalizados](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows#create-a-streaming-asynchronous-custom-function). 
+No seguinte exemplo de código, a função `stockPriceStream` usa um símbolo de cotação da bolsa para acessar o preço de uma ação a cada 1000 milissegundos. Para saber mais sobre este exemplo, confira o [Tutorial de funções personalizadas](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows#create-a-streaming-asynchronous-custom-function).
 
-```JavaScript
-function stockPriceStream(ticker, handler) {
+```js
+/**
+ * Streams a stock price.
+ * @customfunction 
+ * @param {string} ticker Stock ticker.
+ * @param {CustomFunctions.StreamingInvocation<number>} invocation Invocation parameter necessary for streaming functions.
+ */
+function stockPriceStream(ticker, invocation) {
     var updateFrequency = 1000 /* milliseconds*/;
     var isPending = false;
 
@@ -86,17 +99,17 @@ function stockPriceStream(ticker, handler) {
                 return response.text();
             })
             .then(function(text) {
-                handler.setResult(parseFloat(text));
+                invocation.setResult(parseFloat(text));
             })
             .catch(function(error) {
-                handler.setResult(error);
+                invocation.setResult(error);
             })
             .then(function() {
                 isPending = false;
             });
     }, updateFrequency);
 
-    handler.onCanceled = () => {
+    invocation.onCanceled = () => {
         clearInterval(timer);
     };
 }
@@ -104,7 +117,7 @@ function stockPriceStream(ticker, handler) {
 CustomFunctions.associate("STOCKPRICESTREAM", stockPriceStream);
 ```
 
-## <a name="receiving-data-via-websockets"></a>Como receber dados por meio de WebSockets
+## <a name="receive-data-via-websockets"></a>Receber dados por meio de WebSockets
 
 Em uma função personalizada, é possível usar WebSockets para trocar dados por meio de uma conexão persistente com um servidor. Usando WebSockets, a função personalizada pode abrir uma conexão com um servidor e, em seguida, receber mensagens do servidor automaticamente, quando determinados eventos ocorrerem, sem precisar consultar explicitamente os dados do servidor.
 
@@ -112,11 +125,11 @@ Em uma função personalizada, é possível usar WebSockets para trocar dados po
 
 O código de exemplo a seguir estabelece uma conexão WebSocket e registra cada mensagem de entrada do servidor.
 
-```JavaScript
-var ws = new WebSocket('wss://bundles.office.com');
+```js
+let ws = new WebSocket('wss://bundles.office.com');
 
 ws.onmessage(message) {
-    console.log(`Recieved: ${message}`);
+    console.log(`Received: ${message}`);
 }
 
 ws.onerror(error){
@@ -124,47 +137,66 @@ ws.onerror(error){
 }
 ```
 
-## <a name="streaming-functions"></a>Funções Streaming
+## <a name="stream-and-cancel-functions"></a>Funções stream e cancel
 
-Funções personalizadas de streaming permitem a saída de dados das células repetidamente ao longo do tempo, sem a necessidade de um usuário explicitamente solicitar a atualização de dados. O exemplo a seguir é uma função personalizada que adiciona um número ao resultado a cada segundo. Observe o seguinte sobre este código:
+Funções personalizadas de streaming permitem a saída de dados para células que atualizam repetidamente, sem a necessidade de um usuário explicitamente atualizar coisa alguma.
 
-- Cada novo valor usando o Excel automaticamente exibirá o retorno de chamada setResult.
-- O segundo parâmetro de entrada, identificador, não é exibido para os usuários finais no Excel quando eles selecionam a função no menu de preenchimento automático.
-- O retorno de chamada onCanceled define a função que é executada quando a função é cancelada. Implemente um identificador de cancelamento assim para qualquer função de streaming. Para saber mais, confira [Cancelar uma função](#canceling-a-function).
+Funções personalizadas cancelable permitem com que você cancele a execução de uma função personalizada de streaming para reduzir o consumo de banda larga, memória de trabalho e carregamento de CPU.
 
-```JavaScript
-function incrementValue(increment, handler){
-  var result = 0;
-  setInterval(function(){
-    result += increment;
-    handler.setResult(result);
+Para declarar uma função como streaming ou cancelable, use as marcas de comentário JSDOC `@stream` ou `@cancelable`. 
+
+### <a name="using-an-invocation-parameter"></a>Usando um parâmetro de invocação
+
+O parâmetro `invocation` é o último parâmetro de qualquer função personalizada por padrão. O parâmetro `invocation` fornece um contexto sobre a célula (como o seu endereço) e também permite com que você use os métodos `setResult` e `onCanceled`. Esses métodos definem o que uma função faz quando a função transmite (`setResult`) ou é cancelada (`onCanceled`).
+
+Se você estiver usando o TypeScript, o manipulador de invocações deve ser do tipo `CustomFunctions.StreamingInvocation` ou `CustomFunctions.CancelableInvocation`.
+
+### <a name="streaming-and-cancelable-function-example"></a>Exemplo das funções streaming e cancelable
+O exemplo a seguir é uma função personalizada que adiciona um número ao resultado a cada segundo. Observe o seguinte sobre este código:
+
+- O Excel exibe cada valor novo automaticamente usando o método `setResult`.
+- O segundo parâmetro de entrada, invocação, não é exibido para os usuários finais no Excel quando eles selecionam a função no menu de preenchimento automático.
+- O retorno de chamada `onCanceled` define a função que é executada quando a função é cancelada.
+
+```js
+/**
+ * Increments a value once a second.
+ * @customfunction
+ * @param {number} incrementBy Amount to increment.
+ * @param {CustomFunctions.StreamingInvocation<number>} invocation Invocation parameter necessary for streaming functions.
+ */
+function increment(incrementBy, invocation) {
+  let result = 0;
+  const timer = setInterval(() => {
+    result += incrementBy;
+    invocation.setResult(result);
   }, 1000);
 
-  handler.onCanceled = function(){
+  invocation.onCanceled = function(){
     clearInterval(timer);
-  }
+    }
 }
-
-CustomFunctions.associate("INCREMENTVALUE", incrementValue);
+CustomFunctions.associate("INCREMENT", increment);
 ```
 
-Quando você especifica metadados para uma função de streaming no arquivo de metadados JSON, é possível gerar isso automaticamente usando uma tag `@streaming` de comentário JSDOC no arquivo de script da sua função. Para mais detalhes, consulte [Criar metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md).
+>[!NOTE]
+> O Excel cancela a execução de uma função nas seguintes situações:
+>
+> - Quando o usuário edita ou exclui uma célula que faz referência à função.
+> - Quando é alterado um dos argumentos (entradas) para a função. Nesse caso, uma nova chamada de função é disparada, seguindo o cancelamento.
+> - Quando o usuário aciona manualmente um recálculo. Nesse caso, uma nova chamada de função é disparada, seguindo o cancelamento.
 
-## <a name="canceling-a-function"></a>Cancelar uma função
+## <a name="next-steps"></a>Próximas etapas
 
-Em algumas situações, talvez seja necessário cancelar a execução de uma função personalizada de streaming para reduzir o consumo de banda larga, memória de trabalho e carregamento de CPU. O Excel cancela a execução de uma função nas seguintes situações:
-
-- Quando o usuário edita ou exclui uma célula que faz referência à função.
-- Quando é alterado um dos argumentos (entradas) para a função. Nesse caso, uma nova chamada de função é disparada, seguindo o cancelamento.
-- Quando o usuário aciona manualmente um recálculo. Nesse caso, uma nova chamada de função é disparada, seguindo o cancelamento.
-
-Para tornar uma função possível de ser cancelada, implemente um identificador de código de função para informar o que fazer quando ela for cancelada. Além disso, use a tag `@cancelable` de comentário JSDOC no arquivo de script da sua função. Para mais detalhes, consulte [Criar metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md).
+* Saiba mais sobre [diferentes tipos de parâmetros que as suas funções podem usar](custom-functions-parameter-options.md).
+* Descubra como [agrupar várias chamadas de API](custom-functions-batching.md).
 
 ## <a name="see-also"></a>Confira também
 
-* [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)
-* [Metadados de funções personalizadas](custom-functions-json.md)
+* [Valores voláteis nas funções](custom-functions-volatile.md)
 * [Criar metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md)
+* [Metadados de funções personalizadas](custom-functions-json.md)
 * [Tempo de execução de funções personalizadas do Excel](custom-functions-runtime.md)
 * [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
-* [Log de alteração de funções personalizadas](custom-functions-changelog.md)
+* [Criar funções personalizadas no Excel](custom-functions-overview.md)
+* [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)
