@@ -1,14 +1,14 @@
 ---
-ms.date: 05/06/2019
+ms.date: 05/08/2019
 description: Saiba mais sobre as práticas recomendadas para o desenvolvimento de funções personalizadas para Excel.
 title: Práticas recomendadas para funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: 7369faa463966dd309258bf431eae8719407be38
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: d825f5a9f14e240ca5af3c3325cb646248d99ca9
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628132"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952100"
 ---
 # <a name="custom-functions-best-practices"></a>Práticas recomendadas para funções personalizadas
 
@@ -99,13 +99,13 @@ O exemplo a seguir mostra os metadados JSON que correspondem às funções defin
 
 ## <a name="additional-considerations"></a>Considerações adicionais
 
-Evite acessar o modelo de objeto de documento (DOM) direta ou indiretamente (por exemplo, usando jQuery) de sua função personalizada. No Excel para Windows, onde as funções personalizadas usam o [tempo de execução do JavaScript](custom-functions-runtime.md), as funções personalizadas não podem acessar o DOM.
+Evite acessar o modelo de objeto de documento (DOM) direta ou indiretamente (por exemplo, usando jQuery) de sua função personalizada. No Excel no Windows, onde as funções personalizadas usam o [tempo de execução do JavaScript](custom-functions-runtime.md), as funções personalizadas não podem acessar o dom.
 
 ## <a name="next-steps"></a>Próximas etapas
 Saiba como [realizar solicitações da Web com funções personalizadas](custom-functions-web-reqs.md).
 
 ## <a name="see-also"></a>Confira também
 
-* [Gerar automaticamente metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md)
+* [Gerar metadados JSON automaticamente para funções personalizadas](custom-functions-json-autogeneration.md)
 * [Metadados de funções personalizadas](custom-functions-json.md)
 * [Criar funções personalizadas no Excel](custom-functions-overview.md)

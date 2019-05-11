@@ -1,14 +1,14 @@
 ---
 title: Desenvolver suplementos do Office para iPad
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 6fca7948c97f0a12f46742846ed9faca4179f362
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 3ac8f651ccb87b32679a28684f0d08fad53aa773
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449803"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952086"
 ---
 # <a name="develop-office-add-ins-for-the-ipad"></a>Desenvolver suplementos do Office para iPad
 
@@ -38,7 +38,7 @@ Aplique as seguintes práticas recomendadas para desenvolver suplementos para ex
 
 -  **Use o Visual Studio para desenvolver seu suplemento.**
 
-    Se você desenvolver seu suplemento com o Visual Studio, poderá [definir os pontos de interrupção e depurar seu código](../develop/create-and-debug-office-add-ins-in-visual-studio.md) em um aplicativo de host do Office em execução no Windows, antes de fazer sideload do suplemento no iPad ou no Mac. Como um suplemento executado no Office para iOS ou no Office para Mac tem suporte para as mesmas APIs de um suplemento em execução no Office para Windows, o código do suplemento deve ser executado da mesma maneira nas duas plataformas.
+    Se você desenvolver seu suplemento com o Visual Studio, poderá [definir os pontos de interrupção e depurar seu código](../develop/create-and-debug-office-add-ins-in-visual-studio.md) em um aplicativo de host do Office em execução no Windows, antes de fazer sideload do suplemento no iPad ou no Mac. Como um suplemento executado no Office para iOS ou no Office para Mac oferece suporte às mesmas APIs que um suplemento executado no Office no Windows, o código do seu suplemento deve ser executado da mesma maneira em ambas as plataformas.
 
 -  **Especifique os requisitos da API no manifesto do seu suplemento ou com verificações da execução.**
 

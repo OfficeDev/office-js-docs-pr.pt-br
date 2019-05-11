@@ -1,14 +1,14 @@
 ---
 title: Coautoria em suplementos do Excel
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 774eee0c81f9fb99424070be0ee42860e44e46f5
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 281f981bd7248b68c60563f02746ba68d88617b8
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449285"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952044"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>Coautoria em suplementos do Excel  
 
@@ -21,9 +21,9 @@ A coautoria está disponível nas seguintes plataformas:
 
 - Excel Online
 - Excel for Android
-- Excel for iOS
-- Excel Mobile para Windows 10
-- Excel para Windows Desktop para clientes do Office 365 (compilação 16.0.8326.2076 ou posterior do Windows Desktop, que está disponível para clientes do canal atual em vigor desde agosto de 2017)
+- Excel para iPad
+- Excel Mobile no Windows 10
+- Excel na área de trabalho do Windows para clientes do Office 365 (Windows Desktop Build 16.0.8326.2076 ou posterior, que está disponível para os clientes do canal atual com eficiência de agosto de 2017)
 
 ## <a name="coauthoring-overview"></a>Visão geral da coautoria
 

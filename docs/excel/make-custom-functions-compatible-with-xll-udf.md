@@ -1,18 +1,18 @@
 ---
 title: Estender funções personalizadas com funções definidas pelo usuário XLL
 description: Habilitar a compatibilidade com as funções definidas pelo usuário do Excel XLL que possuem funcionalidade equivalente às suas funções personalizadas (visualização)
-ms.date: 05/06/2019
+ms.date: 05/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 93e1b52606fca7ea6fbbb9ae3545e4edd7f78742
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: 3e1782c5df227d3e173f4291ba88f2057200b1c5
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628100"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33951883"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions-preview"></a>Estender funções personalizadas com funções definidas pelo usuário XLL (visualização)
 
-Se você tiver os XLLs do Excel existentes, poderá criar funções personalizadas equivalentes em um suplemento do Excel para estender seus recursos de solução para outras plataformas, como online ou macOS. No entanto, os suplementos do Excel não possuem todas as funcionalidades disponíveis em XLLs. Dependendo da funcionalidade que sua solução usa, o XLL pode fornecer uma experiência melhor do que as funções personalizadas do suplemento do Excel no Excel para Windows.
+Se você tiver os XLLs do Excel existentes, poderá criar funções personalizadas equivalentes em um suplemento do Excel para estender seus recursos de solução para outras plataformas, como online ou macOS. No entanto, os suplementos do Excel não possuem todas as funcionalidades disponíveis em XLLs. Dependendo da funcionalidade que sua solução usa, o XLL pode fornecer uma experiência melhor do que as funções personalizadas do suplemento do Excel no Excel no Windows.
 
 [!include[COM add-in and XLL UDF compatibility note](../includes/xll-compatibility-note.md)]
 
@@ -70,5 +70,5 @@ A tabela a seguir compara os recursos nas funções de XLL definidas pelo usuár
 ## <a name="see-also"></a>Confira também
 
 - [Tornar seu suplemento do Excel compatível com um suplemento de COM existente](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)
-- [Práticas recomendadas para as funções personalizadas](custom-functions-best-practices.md).
+- [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
 - [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)

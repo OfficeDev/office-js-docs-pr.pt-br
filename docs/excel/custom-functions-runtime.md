@@ -1,20 +1,22 @@
 ---
-ms.date: 02/06/2019
+ms.date: 05/08/2019
 description: Entenda os principais cenários de desenvolvimento de funções personalizadas do Excel que usam o novo tempo de execução do JavaScript.
-title: Tempo de execução de funções personalizadas do Excel (versão prévia)
+title: Tempo de execução de funções personalizadas do Excel
 localization_priority: Normal
-ms.openlocfilehash: 85024b6c3559e2a5f32bae9297787f8052bba38d
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: bc8635e370a7b48af07bc169c2d2334ef0fba8ef
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448214"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33951974"
 ---
-# <a name="runtime-for-excel-custom-functions-preview"></a>Tempo de execução de funções personalizadas do Excel (versão prévia)
+# <a name="runtime-for-excel-custom-functions"></a>Tempo de execução de funções personalizadas do Excel
 
-Funções personalizadas usam um novo tempo de execução do JavaScript, diferente do tempo de execução usado por outras partes de um suplemento, como o painel de tarefas ou outros elementos da interface do usuário. Esse tempo de execução do JavaScript foi projetado para otimizar o desempenho de cálculos em funções personalizadas, e expõe as novas APIs disponíveis para executar ações comuns baseadas na Web, dentro de funções personalizadas, como solicitação de dados externos ou troca de dados por meio de uma conexão persistente com um servidor. O tempo de execução do JavaScript também fornece acesso às novas APIs no namespace `OfficeRuntime` que pode ser usado em funções personalizadas ou por outras partes de um suplemento para armazenar dados ou exibir uma caixa de diálogo. Este artigo mostra como usar essas APIs em funções personalizadas e descreve considerações adicionais para o desenvolvimento de funções personalizadas.
+Funções personalizadas usam um novo tempo de execução do JavaScript, diferente do tempo de execução usado por outras partes de um suplemento, como o painel de tarefas ou outros elementos da interface do usuário. Esse tempo de execução do JavaScript foi projetado para otimizar o desempenho de cálculos em funções personalizadas, e expõe as novas APIs disponíveis para executar ações comuns baseadas na Web, dentro de funções personalizadas, como solicitação de dados externos ou troca de dados por meio de uma conexão persistente com um servidor.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
+O tempo de execução do JavaScript também fornece acesso às novas APIs no namespace `OfficeRuntime` que pode ser usado em funções personalizadas ou por outras partes de um suplemento para armazenar dados ou exibir uma caixa de diálogo. Este artigo mostra como usar essas APIs em funções personalizadas e descreve considerações adicionais para o desenvolvimento de funções personalizadas.
 
 ## <a name="requesting-external-data"></a>Como solicitar dados externos
 
@@ -63,9 +65,9 @@ Em uma função personalizada, é possível usar [WebSockets](https://developer.
 
 ### <a name="websockets-example"></a>Exemplo de WebSockets
 
-O código de exemplo a seguir estabelece uma conexão `WebSocket` e registra cada mensagem de entrada do servidor. 
+O código de exemplo a seguir estabelece uma conexão `WebSocket` e registra cada mensagem de entrada do servidor.
 
-```typescript
+```JavaScript
 const ws = new WebSocket('wss://bundles.office.com');
 ws.onmessage = function (message) {
     console.log(`Received: ${message}`);
@@ -77,46 +79,50 @@ ws.onerror = function (error) {
 
 ## <a name="storing-and-accessing-data"></a>Como armazenar e acessar os dados
 
-Em uma função personalizada (ou em outras partes de um suplemento), você pode armazenar e acessar dados usando o objeto `OfficeRuntime.AsyncStorage`. `AsyncStorage` é um sistema de armazenamento de chave-valor persistente e não criptografado, que fornece uma alternativa para [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), que não pode ser usado em funções personalizadas. Um suplemento pode armazenar até 10 MB de dados por meio de `AsyncStorage`.
+Em uma função personalizada (ou em outras partes de um suplemento), você pode armazenar e acessar dados usando o objeto `OfficeRuntime.storage`. `Storage` é um sistema de armazenamento de chave-valor persistente e não criptografado, que fornece uma alternativa para [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), que não pode ser usado em funções personalizadas. `Storage`o oferece 10 MB de dados por domínio. Os domínios podem ser compartilhados por mais de um suplemento.
 
-`AsyncStorage` é uma solução de armazenamento compartilhado, o que significa que várias partes de um suplemento podem acessar os mesmos dados. Por exemplo, tokens para autenticação de usuário podem ser armazenados em `AsyncStorage`, já que ele pode ser acessado tanto por uma função personalizada quanto por elementos da interface do usuário de um suplemento, como um painel de tarefas. Da mesma forma, quando dois suplementos compartilham o mesmo domínio (por exemplo, www.contoso.com/suplemento1, www.contoso.com/suplemento2), eles também podem compartilhar informações por meio de `AsyncStorage`. Observe que os suplementos que têm diferentes subdomínios terão diferentes instâncias de `AsyncStorage`; por exemplo, subdominio.contoso.com/suplemento1, diferentesubdominio.contoso.com/suplemento2. 
+`Storage` é uma solução de armazenamento compartilhado, o que significa que várias partes de um suplemento podem acessar os mesmos dados. Por exemplo, tokens para autenticação de usuário podem ser armazenados em `storage`, já que ele pode ser acessado tanto por uma função personalizada quanto por elementos da interface do usuário de um suplemento, como um painel de tarefas. Da mesma forma, quando dois suplementos compartilham o mesmo domínio (por exemplo, www.contoso.com/suplemento1, www.contoso.com/suplemento2), eles também podem compartilhar informações por meio de `storage`. Observe que os suplementos que têm diferentes subdomínios terão diferentes instâncias de `storage`; por exemplo, subdominio.contoso.com/suplemento1, diferentesubdominio.contoso.com/suplemento2.
 
-Como `AsyncStorage` pode ser um local compartilhado, é importante notar que é possível substituir os pares chave-valor.
+Como `storage` pode ser um local compartilhado, é importante notar que é possível substituir os pares chave-valor.
 
-Os métodos a seguir estão disponíveis no objeto `AsyncStorage`:
- 
+Os métodos a seguir estão disponíveis no objeto `storage`:
+
  - `getItem`
+ - `getItems`
  - `setItem`
+ - `setItems`
  - `removeItem`
- - `getAllKeys`
- - `flushGetRequests`
- - `multiGet`
- - `multiSet`
- - `multiRemove`: você notará que não há implementação de um método para limpar todas as informações (como `clear`). Em vez disso, use `multiRemove` para remover várias entradas de uma só vez.
+ - `removeItems`
+ - `getKeys`
 
-### <a name="asyncstorage-example"></a>Exemplo de AsyncStorage 
+.[!NOTE]
+> Não há nenhum método para limpar todas as informações (como `clear`). Em vez disso, use `removeItems` para remover várias entradas de uma só vez.
 
-O exemplo de código a seguir `AsyncStorage.setItem` chama a função para definir uma chave e `AsyncStorage`um valor para.
+### <a name="officeruntimestorage-example"></a>Exemplo de OfficeRuntime. Storage
+
+O exemplo de código a seguir `OfficeRuntime.storage.setItem` chama a função para definir uma chave e `storage`um valor para.
 
 ```JavaScript
 function StoreValue(key, value) {
 
-  return OfficeRuntime.AsyncStorage.setItem(key, value).then(function (result) {
-      return "Success: Item with key '" + key + "' saved to AsyncStorage.";
+  return OfficeRuntime.storage.setItem(key, value).then(function (result) {
+      return "Success: Item with key '" + key + "' saved to storage.";
   }, function (error) {
-      return "Error: Unable to save item with key '" + key + "' to AsyncStorage. " + error;
+      return "Error: Unable to save item with key '" + key + "' to storage. " + error;
   });
 }
 ```
 
 ## <a name="additional-considerations"></a>Considerações adicionais
 
-Para criar um suplemento que será executado em várias plataformas (um dos principais locatários de Suplementos do Office), você não deve acessar o DOM (Modelo de Objeto do Documento) em funções personalizadas nem usar bibliotecas, como a jQuery, que dependem do DOM. No Excel para Windows, onde as funções personalizadas usam o tempo de execução do JavaScript, as funções personalizadas não podem acessar o DOM.
+Para criar um suplemento que será executado em várias plataformas (um dos principais locatários de Suplementos do Office), você não deve acessar o DOM (Modelo de Objeto do Documento) em funções personalizadas nem usar bibliotecas, como a jQuery, que dependem do DOM. No Excel no Windows, onde as funções personalizadas usam o tempo de execução do JavaScript, as funções personalizadas não podem acessar o DOM.
+
+## <a name="next-steps"></a>Próximas etapas
+Saiba algumas [práticas recomendadas essenciais para funções personalizadas](custom-functions-best-practices.md).
 
 ## <a name="see-also"></a>Confira também
 
 * [Criar funções personalizadas no Excel](custom-functions-overview.md)
-* [Metadados de funções personalizadas](custom-functions-json.md)
-* [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
-* [Log de alteração de funções personalizadas](custom-functions-changelog.md)
-* [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)
+* [Arquitetura de funções personalizadas](custom-functions-architecture.md)
+* [Exibir uma caixa de diálogo em funções personalizadas](custom-functions-dialog.md)
+* [Tutorial de funções personalizadas](../tutorials/excel-tutorial-create-custom-functions.md)

@@ -2,14 +2,14 @@
 title: Explorar a API JavaScript do Office usando o script Lab
 description: Use o script Lab para explorar a API do Office JS e a funcionalidade de protótipo.
 ms.topic: article
-ms.date: 04/23/2019
+ms.date: 05/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 76888716cec8bd1754b7baa22dfcfbe5af984ea5
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 968f1c748558ee0d14898a3ad0dbe44bdc7a532a
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32640277"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952220"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>Explorar a API JavaScript do Office usando o script Lab
 
@@ -30,10 +30,10 @@ Parece bom até agora? Dê uma olhada neste vídeo de um minuto para ver o scrip
 
 O script Lab é compatível com Excel, Word e PowerPoint nos seguintes clientes.
 
-- Office 365 para Windows
-- Office 365 para Mac
+- Office no Windows (conectado ao Office 365)
+- Office para Mac (conectado ao Office 365)
 - Office Online
-- Office 2013 ou posterior para Windows
+- Office 2013 ou posterior no Windows
 - Office 2016 ou posterior para Mac
 
 ## <a name="next-steps"></a>Próximas etapas
@@ -44,4 +44,4 @@ Quando estiver pronto para criar seu suplemento do Office, confira o [início r�
 
 - [Obter o laboratório de scripts](https://store.office.com/app.aspx?assetid=WA104380862)
 - [Saiba mais sobre o script Lab](https://github.com/OfficeDev/script-lab#script-lab-a-microsoft-garage-project)
-- [InScreva-se no programa dev](https://developer.microsoft.com/office/dev-program)
+- [Inscreva-se no programa dev](https://developer.microsoft.com/office/dev-program)

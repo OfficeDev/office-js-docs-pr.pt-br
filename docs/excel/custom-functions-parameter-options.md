@@ -1,21 +1,23 @@
 ---
-ms.date: 04/30/2019
+ms.date: 05/09/2019
 description: Saiba como usar parâmetros diferentes em suas funções personalizadas, como intervalos do Excel, parâmetros opcionais, contexto de invocação e muito mais.
-title: Opções para funções personalizadas do Excel (visualização)
+title: Opções para funções personalizadas do Excel
 localization_priority: Normal
-ms.openlocfilehash: b5dba59431f4c6ec4ee08c563e7cb3affeb06608
-ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
+ms.openlocfilehash: ba437f3a49ec3129b72f3396e85fcbd46af82cb7
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "33527294"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952072"
 ---
 # <a name="custom-functions-parameter-options"></a>Opções de parâmetros de funções personalizadas
 
-As funções personalizadas são configuráveis com muitas opções diferentes para parâmetros: 
+As funções personalizadas são configuráveis com muitas opções diferentes para parâmetros:
 - [Parâmetros opcionais](#custom-functions-optional-parameters)
 - [Parâmetros de intervalo](#range-parameters)
 - [Parâmetro de contexto de invocação](#invocation-parameter)
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="custom-functions-optional-parameters"></a>Parâmetros opcionais de funções personalizadas
 
@@ -74,7 +76,7 @@ Por exemplo, suponha que sua função retorne o segundo maior valor de um interv
 /**
  * Returns the second highest value in a matrixed range of values.
  * @customfunction
- * @param {[][]} values Multiple ranges of values.  
+ * @param {number[][]} values Multiple ranges of values.  
  */
 function secondHighest(values){
   let highest = values[0][0], secondHighest = values[0][0];
@@ -118,10 +120,10 @@ O parâmetro permite que você obtenha o contexto da célula de invocação, que
 
 ### <a name="addressing-cells-context-parameter"></a>Parâmetro de contexto da célula de endereçamento
 
-Em alguns casos, você precisa obter o endereço da célula que chamou sua função personalizada. Isso é útil nos seguintes tipos de cenários:
+Em alguns casos, você precisa obter o endereço da célula que chamou sua função personalizada. Isso é útil nos seguintes cenários:
 
-- Intervalos de formatação: Use o endereço da célula como a chave para armazenar informações no [Office. armazenamento](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Em seguida, use [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) no Excel para carregar a chave de `Office.storage`.
-- Exibição de valores armazenados em cache: se sua função for usada offline, exiba valores armazenados em cache de `Office.storage` usando `onCalculated`.
+- Intervalos de formatação: Use o endereço da célula como a chave para armazenar informações no [OfficeRuntime. armazenamento](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Em seguida, use [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) no Excel para carregar a chave de `OfficeRuntime.storage`.
+- Exibição de valores armazenados em cache: se sua função for usada offline, exiba valores armazenados em cache de `OfficeRuntime.storage` usando `onCalculated`.
 - Reconciliação: Use o endereço da célula para descobrir uma célula de origem para ajudá-lo a reconciliar onde o processamento está ocorrendo.
 
 Para solicitar um contexto de uma célula de endereçamento em uma função, você precisa usar uma função para localizar o endereço da célula, como a do exemplo a seguir. As informações sobre o endereço de uma célula são expostas apenas se `@requiresAddress` o estiver marcado nos comentários da função.
@@ -143,10 +145,14 @@ CustomFunctions.associate("GETADDRESS", getAddress);
 
 Por padrão, os valores retornados de uma função `getAddress` seguem o formato abaixo: `SheetName!CellNumber`. Por exemplo, se uma função foi chamada de uma planilha nomeada Despesas na célula B2, o valor retornado seria `Expenses!B2`.
 
+## <a name="next-steps"></a>Próximas etapas
+Saiba como [salvar o estado em suas funções personalizadas](custom-functions-save-state.md) ou usar [valores voláteis em suas funções personalizadas](custom-functions-volatile.md).
+
 ## <a name="see-also"></a>Confira também
 
-* [Criar funções personalizadas no Excel](custom-functions-overview.md)
-* [Metadados de funções personalizadas](custom-functions-json.md)
+* [Receber e tratar dados com funções personalizadas](custom-functions-web-reqs.md)
 * [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
-* [Log de alteração de funções personalizadas](custom-functions-changelog.md)
+* [Metadados de funções personalizadas](custom-functions-json.md)
+* [Gerar metadados JSON automaticamente para funções personalizadas](custom-functions-json-autogeneration.md)
+* [Criar funções personalizadas no Excel](custom-functions-overview.md)
 * [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)
