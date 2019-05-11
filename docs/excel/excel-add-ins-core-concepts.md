@@ -1,14 +1,14 @@
 ---
 title: Conceitos fundamentais de programação com a API JavaScript do Excel
 description: Use a API JavaScript do Excel para criar suplementos para o Excel.
-ms.date: 04/25/2019
+ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: 26822d9caa91f4a65a9dbb82f82db989b4409214
-ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
+ms.openlocfilehash: 3cd1abcb71eadbf9a5ec2ab8a27b1e427b24e83d
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "33353255"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33951925"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Conceitos fundamentais de programação com a API JavaScript do Excel
 
@@ -16,7 +16,7 @@ Este artigo descreve como usar a [API JavaScript do Excel](/office/dev/add-ins/r
 
 ## <a name="asynchronous-nature-of-excel-apis"></a>Natureza assíncrona das APIs do Excel
 
-Os suplementos do Excel baseados na Web são executados dentro de um contêiner de navegador que é inserido no aplicativo do Office em plataformas baseadas em desktop, como Office para Windows, e executado dentro de um iFrame HTML no Office Online. Não é possível habilitar a API Office.js para interagir de modo síncrono com o host do Excel em todas as plataformas suportadas devido às considerações de desempenho. Desse modo, a chamada à API **sync()** na Office.js retorna uma [promessa](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) que é resolvida quando o aplicativo Excel conclui as ações solicitadas de leitura ou gravação. Além disso, você pode enfileirar várias ações, como configurar propriedades ou invocar métodos, e executá-las como um lote de comandos com uma única chamada a **sync()**, em vez de enviar uma solicitação separada para cada ação. As seções a seguir descrevem como fazer isso usando as APIs **Excel.run()** e **sync()**.
+Os suplementos do Excel baseados na Web são executados dentro de um contêiner de navegador que é inserido no aplicativo do Office em plataformas baseadas em desktop, como Office no Windows e executado dentro de um iFrame HTML no Office Online. Não é possível habilitar a API Office.js para interagir de modo síncrono com o host do Excel em todas as plataformas suportadas devido às considerações de desempenho. Desse modo, a chamada à API **sync()** na Office.js retorna uma [promessa](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) que é resolvida quando o aplicativo Excel conclui as ações solicitadas de leitura ou gravação. Além disso, você pode enfileirar várias ações, como configurar propriedades ou invocar métodos, e executá-las como um lote de comandos com uma única chamada a **sync()**, em vez de enviar uma solicitação separada para cada ação. As seções a seguir descrevem como fazer isso usando as APIs **Excel.run()** e **sync()**.
 
 ## <a name="excelrun"></a>Excel.run
 

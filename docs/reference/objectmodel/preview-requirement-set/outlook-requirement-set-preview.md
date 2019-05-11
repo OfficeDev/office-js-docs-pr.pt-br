@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 description: ''
-ms.date: 04/17/2019
+ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: 9a3d09a78a7644b3b26c345ba2588a1fae59c1eb
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: e4627699edad801ab4a3a5a65e6307d40d1b4ac9
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450475"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952352"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 
@@ -39,43 +39,43 @@ Adicionado um novo parâmetro opcional `options`, que é um dicionário com um v
 
 Adicionado um novo objeto que representa o conteúdo de um anexo.
 
-**Disponível em**: Outlook para Windows (Office 365)
+**Disponível em**: Outlook no Windows (conectado ao Office 365)
 
 #### <a name="officecontextmailboxitemaddfileattachmentfrombase64asyncofficecontextmailboxitemmdaddfileattachmentfrombase64asyncbase64file-attachmentname-options-callback"></a>[Office.context.mailbox.item.addFileAttachmentFromBase64Async](office.context.mailbox.item.md#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback)
 
 Adicionado um novo método que permite anexar um arquivo representado como uma cadeia de caracteres codificada na Base64 para uma mensagem ou um compromisso.
 
-**Disponível em**: Outlook para Windows (Office 365)
+**Disponível em**: Outlook no Windows (conectado ao Office 365)
 
 #### <a name="officecontextmailboxitemgetattachmentcontentasyncofficecontextmailboxitemmdgetattachmentcontentasyncattachmentid-options-callback--attachmentcontent"></a>[Office.context.mailbox.item.getAttachmentContentAsync](office.context.mailbox.item.md#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent)
 
 Adicionar um novo método para acessar o conteúdo de um anexo específico.
 
-**Disponível em**: Outlook para Windows (Office 365)
+**Disponível em**: Outlook no Windows (conectado ao Office 365)
 
 #### <a name="officecontextmailboxitemgetattachmentsasyncofficecontextmailboxitemmdgetattachmentsasyncoptions-callback--arrayattachmentdetails"></a>[Office.context.mailbox.item.getAttachmentsAsync](office.context.mailbox.item.md#getattachmentsasyncoptions-callback--arrayattachmentdetails)
 
 Adicionado um novo método que obtém um item anexo no modo de redação.
 
-**Disponível em**: Outlook para Windows (Office 365)
+**Disponível em**: Outlook no Windows (conectado ao Office 365)
 
 #### <a name="officemailboxenumsattachmentcontentformatjavascriptapioutlookofficemailboxenumsattachmentcontentformat"></a>[Office.MailboxEnums.AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat)
 
 Adicionada uma nova enumeração que especifica a formatação que se aplica ao conteúdo de um anexo.
 
-**Disponível em**: Outlook para Windows (Office 365)
+**Disponível em**: Outlook no Windows (conectado ao Office 365)
 
 #### <a name="officemailboxenumsattachmentstatusjavascriptapioutlookofficemailboxenumsattachmentstatus"></a>[Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus)
 
 Adicionada uma nova enumeração que especifica se um anexo foi adicionado ou removido de um item.
 
-**Disponível em**: Outlook para Windows (Office 365)
+**Disponível em**: Outlook no Windows (conectado ao Office 365)
 
 #### <a name="officeeventtypeattachmentschangedjavascriptapiofficeofficeeventtype"></a>[Office.EventType.AttachmentsChanged](/javascript/api/office/office.eventtype)
 
 Adicionado `AttachmentsChanged` evento `Item`.
 
-**Disponível em**: Outlook para Windows (Office 365)
+**Disponível em**: Outlook no Windows (conectado ao Office 365)
 
 ---
 
@@ -90,37 +90,37 @@ No Outlook, um usuário pode agrupar mensagens e compromissos usando uma categor
 
 Adicionou um novo objeto que representa a categoria de um item.
 
-**Disponível em**: Outlook para Windows (Office 365)
+**Disponível em**: Outlook no Windows (conectado ao Office 365)
 
 #### <a name="categorydetailsjavascriptapioutlookofficecategorydetails"></a>[CategoryDetails](/javascript/api/outlook/office.categorydetails)
 
 Adicionou um novo objeto que representa os detalhes de uma categoria (seu nome e cor associada).
 
-**Disponível em**: Outlook para Windows (Office 365)
+**Disponível em**: Outlook no Windows (conectado ao Office 365)
 
 #### <a name="mastercategoriesjavascriptapioutlookofficemastercategories"></a>[MasterCategories](/javascript/api/outlook/office.mastercategories)
 
 Adicionou um novo objeto que representa a lista mestra de categorias em uma caixa de correio.
 
-**Disponível em**: Outlook para Windows (Office 365)
+**Disponível em**: Outlook no Windows (conectado ao Office 365)
 
 #### <a name="officecontextmailboxmastercategoriesjavascriptapioutlookofficemailboxmastercategories"></a>[Office.context.mailbox.masterCategories](/javascript/api/outlook/office.mailbox#mastercategories)
 
 Adicionou uma nova propriedade que representa a lista mestra de categorias em uma caixa de correio.
 
-**Disponível em**: Outlook para Windows (Office 365)
+**Disponível em**: Outlook no Windows (conectado ao Office 365)
 
 #### <a name="officecontextmailboxitemcategoriesjavascriptapioutlookofficeitemcategories"></a>[Office.context.mailbox.item.categories](/javascript/api/outlook/office.item#categories)
 
 Adicionou uma nova propriedade que representa o conjunto de categorias em um item.
 
-**Disponível em**: Outlook para Windows (Office 365)
+**Disponível em**: Outlook no Windows (conectado ao Office 365)
 
 #### <a name="officemailboxenumscategorycolorjavascriptapioutlookofficemailboxenumscategorycolor"></a>[Office.MailboxEnums.CategoryColor](/javascript/api/outlook/office.mailboxenums.categorycolor)
 
 Adicionou uma nova enumeração que especifica as cores disponíveis a serem associadas a categorias. 
 
-**Disponível em**: Outlook para Windows (Office 365)
+**Disponível em**: Outlook no Windows (conectado ao Office 365)
 
 ---
 
@@ -130,25 +130,25 @@ Adicionou uma nova enumeração que especifica as cores disponíveis a serem ass
 
 Adicionado um novo objeto que representa as propriedades de um item de compromisso ou de mensagem em uma pasta compartilhada, calendário ou caixa de correio.
 
-**Disponível em**: Outlook para Windows (Office 365)
+**Disponível em**: Outlook no Windows (conectado ao Office 365)
 
 #### <a name="officecontextmailboxitemgetsharedpropertiesasyncofficecontextmailboxitemmdgetsharedpropertiesasyncoptions-callback"></a>[Office.context.mailbox.item.getSharedPropertiesAsync](office.context.mailbox.item.md#getsharedpropertiesasyncoptions-callback)
 
 Adicionado um novo método que é um objeto que representa sharedProperties de um compromisso ou item de mensagem.
 
-**Disponível em**: Outlook para Windows (Office 365)
+**Disponível em**: Outlook no Windows (conectado ao Office 365)
 
 #### <a name="officemailboxenumsdelegatepermissionsjavascriptapioutlookofficemailboxenumsdelegatepermissions"></a>[Office.MailboxEnums.DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions)
 
 Adicionada uma novo enumeração de sinalizador bits que especifica as permissões de representante.
 
-**Disponível em**: Outlook para Windows (Office 365)
+**Disponível em**: Outlook no Windows (conectado ao Office 365)
 
 #### <a name="supportssharedfolders-manifest-elementmanifestsupportssharedfoldersmd"></a>[Elemento manifesto SupportsSharedFolders](../../manifest/supportssharedfolders.md)
 
 Adicionado um elemento filho ao elemento do manifesto [DesktopFormFactor](../../manifest/desktopformfactor.md). Define se o suplemento está disponível nos cenários de representante.
 
-**Disponível em**: Outlook para Windows (Office 365)
+**Disponível em**: Outlook no Windows (conectado ao Office 365)
 
 ---
 
@@ -158,37 +158,37 @@ Adicionado um elemento filho ao elemento do manifesto [DesktopFormFactor](../../
 
 Adicionado um novo objeto que representa o conjunto de locais em um compromisso.
 
-**Disponível em**: Outlook para Windows (Office 365)
+**Disponível em**: Outlook no Windows (conectado ao Office 365)
 
 #### <a name="locationdetailsjavascriptapioutlookofficelocationdetails"></a>[LocationDetails](/javascript/api/outlook/office.locationdetails)
 
 Adicionado um novo objeto que representa um local. Somente leitura.
 
-**Disponível em**: Outlook para Windows (Office 365)
+**Disponível em**: Outlook no Windows (conectado ao Office 365)
 
 #### <a name="locationidentifierjavascriptapioutlookofficelocationidentifier"></a>[LocationIdentifier](/javascript/api/outlook/office.locationidentifier)
 
 Adicionado um novo objeto que representa a id de um local.
 
-**Disponível em**: Outlook para Windows (Office 365)
+**Disponível em**: Outlook no Windows (conectado ao Office 365)
 
 #### <a name="officecontextmailboxitemenhancedlocationofficecontextmailboxitemmdenhancedlocation-enhancedlocation"></a>[Office.context.mailbox.item.enhancedLocation](office.context.mailbox.item.md#enhancedlocation-enhancedlocation)
 
 Adicionada uma nova propriedade que representa o conjunto de locais em um compromisso.
 
-**Disponível em**: Outlook para Windows (Office 365)
+**Disponível em**: Outlook no Windows (conectado ao Office 365)
 
 #### <a name="officemailboxenumslocationtypejavascriptapioutlookofficemailboxenumslocationtype"></a>[Office.MailboxEnums.LocationType](/javascript/api/outlook/office.mailboxenums.locationtype)
 
 Adicionada uma nova enumeração que especifica o tipo de local do compromisso.
 
-**Disponível em**: Outlook para Windows (Office 365)
+**Disponível em**: Outlook no Windows (conectado ao Office 365)
 
 #### <a name="officeeventtypeenhancedlocationschangedjavascriptapiofficeofficeeventtype"></a>[Office.EventType.EnhancedLocationsChanged](/javascript/api/office/office.eventtype)
 
 Adicionado `EnhancedLocationsChanged` evento `Item`.
 
-**Disponível em**: Outlook para Windows (Office 365)
+**Disponível em**: Outlook no Windows (conectado ao Office 365)
 
 ---
 
@@ -198,7 +198,7 @@ Adicionado `EnhancedLocationsChanged` evento `Item`.
 
 Adicionada uma nova função que retorna os dados inicialização que são transmitidos quando o suplemento é [ativado por uma mensagem acionável](/outlook/actionable-messages/invoke-add-in-from-actionable-message).
 
-**Disponível em**: Outlook para Windows (Office 365), Outlook na Web (clássico)
+**Disponível em**: Outlook no Windows (conectado ao Office 365), Outlook na Web (clássico)
 
 ---
 
@@ -208,13 +208,13 @@ Adicionada uma nova função que retorna os dados inicialização que são trans
 
 Adicionado um novo objeto que representa os cabeçalhos de Internet de um item de mensagem.
 
-**Disponível em**: Outlook para Windows (Office 365)
+**Disponível em**: Outlook no Windows (conectado ao Office 365)
 
 #### <a name="officecontextmailboxiteminternetheadersofficecontextmailboxitemmdinternetheaders-internetheaders"></a>[Office.context.mailbox.item.internetHeaders](office.context.mailbox.item.md#internetheaders-internetheaders)
 
 Adicionada uma nova propriedade que representa os cabeçalhos de Internet de um item de mensagem.
 
-**Disponível em**: Outlook para Windows (Office 365)
+**Disponível em**: Outlook no Windows (conectado ao Office 365)
 
 ---
 
@@ -224,13 +224,13 @@ Adicionada uma nova propriedade que representa os cabeçalhos de Internet de um 
 
 Capacidade adicional para obter o tema do Office.
 
-**Disponível em**: Outlook para Windows (Office 365)
+**Disponível em**: Outlook no Windows (conectado ao Office 365)
 
 #### <a name="officeeventtypeofficethemechangedjavascriptapiofficeofficeeventtype"></a>[Office.EventType.OfficeThemeChanged](/javascript/api/office/office.eventtype)
 
 Adicionado `OfficeThemeChanged` evento `Mailbox`.
 
-**Disponível em**: Outlook para Windows (Office 365)
+**Disponível em**: Outlook no Windows (conectado ao Office 365)
 
 ---
 
@@ -240,7 +240,7 @@ Adicionado `OfficeThemeChanged` evento `Mailbox`.
 
 Foi adicionado acesso ao `getAccessTokenAsync`, que permite que os suplementos [obtenham um token de acesso](/outlook/add-ins/authenticate-a-user-with-an-sso-token) da API do Microsoft Graph.
 
-**Disponível em**: Outlook para Windows (Office 365), Outlook para Mac (Office 365), Outlook na Web (Office 365 e Outlook.com), Outlook na Web (clássico)
+**Disponível em**: Outlook no Windows (conectado ao Office 365), Outlook para Mac (conectado ao Office 365), Outlook na Web (Outlook.com e conectado ao Office 365), Outlook na Web (clássico)
 
 ## <a name="see-also"></a>Confira também
 

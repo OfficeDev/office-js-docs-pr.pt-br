@@ -1,28 +1,28 @@
 ---
 title: Conjuntos de requisitos da API JavaScript do Word
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/08/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 21bd99dda479c0c2181f546303e79e50f33ded00
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 0f9d17669a8000f5d8d9f0b2d1da04eb0175315c
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451518"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952231"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Word
 
 Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
-Os suplementos do Word são executados em várias versões do Office, incluindo Office 2016 ou posterior para Windows, Office para iPad, Office para Mac e Office Online. A tabela a seguir lista os conjuntos de requisitos do Word, ou seja, os aplicativos de host do Office que oferecem suporte a esse conjunto de requisitos, e os números de versão ou de build desses aplicativos.
+Os suplementos do Word são executados em várias versões do Office, incluindo Office 2016 ou posterior no Windows, Office para iPad, Office para Mac e Office Online. A tabela a seguir lista os conjuntos de requisitos do Word, ou seja, os aplicativos de host do Office que oferecem suporte a esse conjunto de requisitos, e os números de versão ou de build desses aplicativos.
 
 > [!NOTE]
 > Para os conjuntos de requisitos marcados como Beta, use a versão especificada (ou posterior) do software do Office e a biblioteca Beta da CDN:https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 > 
 > Entradas não listadas como Beta estão geralmente disponíveis, e você pode continuar a usar a biblioteca Produção da CDN:https://appsforoffice.microsoft.com/lib/1/hosted/office.js
 
-|  Conjunto de requisitos  |   Office 365 para Windows\*  |  Office 365 para iPad  |  Office 365 para Mac  | Office Online  | Servidor do Office Online  |
+|  Conjunto de requisitos  |   Office no Windows\*<br>(conectado ao Office 365)  |  Office para iPad<br>(conectado ao Office 365)  |  Office para Mac<br>(conectado ao Office 365)  | Office Online  | Servidor do Office Online  |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | WordApi 1.3 | Versão 1612 (Compilação 7668.1000) ou posterior| Março de 2017, 2.22 ou posterior | Março de 2017, 15.32 ou posterior| Março de 2017 ||
 | WordApi 1.2  | Atualização de dezembro de 2015, versão 1601 (build 6568.1000) ou posterior | Janeiro de 2016, 1.18 ou posterior | Janeiro de 2016, 15.19 ou posterior| Setembro de 2016 | |

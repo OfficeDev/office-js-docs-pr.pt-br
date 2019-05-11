@@ -1,28 +1,28 @@
 ---
 title: Conjuntos de requisitos de API JavaScript do Excel
 description: ''
-ms.date: 05/06/2019
+ms.date: 05/08/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 1735c01a8c17c31e632432d914770a800846508e
-ms.sourcegitcommit: 5b9c2b39dfe76cabd98bf28d5287d9718788e520
+ms.openlocfilehash: aebb85250743255cbc9c139d59e7e2fa5ef4e442
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "33659639"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952359"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Excel
 
 Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
-Os suplementos do Excel são executados em várias versões do Office, incluindo Office 2016 ou posterior para Windows, Office para iPad, Office para Mac e Office Online. A tabela a seguir lista conjuntos de requisitos do Excel, ou seja, os aplicativos de host do Office que oferecem suporte a esse conjunto de requisitos, e as versões ou números de build desses aplicativos.
+Os suplementos de Excel são executados em várias versões do Office, incluindo Office 2016 ou posterior no Windows, Office para iPad, Office para Mac e Office Online. A tabela a seguir lista conjuntos de requisitos do Excel, ou seja, os aplicativos de host do Office que oferecem suporte a esse conjunto de requisitos, e as versões ou número de build desses aplicativos.
 
 > [!NOTE]
 > Para usar APIs em qualquer um dos conjuntos de requisitos numerados, faça referência à biblioteca **production** no CDN: https://appsforoffice.microsoft.com/lib/1/hosted/office.js.
 >
 > Para obter informações sobre o uso de APIs de visualização, confira a seção [APIs de visualização do JavaScript para Excel](#excel-javascript-preview-apis) neste artigo.
 
-|  Conjunto de requisitos  |  Office 365 para Windows  |  Office 365 para iPad  |  Office 365 para Mac  | Office Online  |  Servidor do Office Online  |
+|  Conjunto de requisitos  |  Office no Windows<br>(conectado ao Office 365)  |  Office para iPad<br>(conectado ao Office 365)  |  Office para Mac<br>(conectado ao Office 365)  | Office Online  |  Servidor do Office Online  |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [Visualização](/javascript/api/excel)  | Use a versão mais recente do Office para testar as APIs de visualização (talvez seja exigido ser membro do [programa Office Insider](https://products.office.com/office-insider)) |
 | ExcelApi 1.9  | Versão 1903 (Build 11425.20204) ou posterior | 2.24 ou posterior | 16.24 ou posterior | Maio de 2019       | Em breve |
@@ -42,7 +42,7 @@ Os suplementos do Excel são executados em várias versões do Office, incluindo
 
 As [Funções Personalizadas](../../excel/custom-functions-overview.md) usam conjuntos de requisitos separados das principais APIs JavaScript do Excel. A tabela a seguir lista os conjuntos de requisitos de Funções Personalizadas, os aplicativos de host do Office compatíveis e as versões ou números de compilação desses aplicativos.
 
-|  Conjunto de requisitos  |  Office 365 para Windows  |  Office 365 para iPad  |  Office 365 para Mac  | Office Online | Servidor do Office Online |
+|  Conjunto de requisitos  |  Office no Windows<br>(conectado ao Office 365)  |  Office para iPad<br>(conectado ao Office 365)  |  Office para Mac<br>(conectado ao Office 365)  | Office Online | Servidor do Office Online |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | CustomFunctionsRuntime 1.1 | Versão 1904 (Build 11601.20144) ou posterior | Sem suporte | 16.24 ou posterior | Abril de 2019 | Em breve |
 

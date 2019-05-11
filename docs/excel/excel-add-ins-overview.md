@@ -1,18 +1,18 @@
 ---
 title: Visão geral dos suplementos do Excel
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: 3a6e00ebb5c91af135d709c1ae9f86fc5d2e2924
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: cbeb1fa6ae0d88724b7da3fbcb45f8216b6010a6
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448330"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33951918"
 ---
 # <a name="excel-add-ins-overview"></a>Visão geral dos suplementos do Excel
 
-Um suplemento do Excel permite estender a funcionalidade do aplicativo Excel em várias plataformas, incluindo Office para Windows, Office Online, Office para Mac e Office para iPad. Use suplementos do Excel em uma pasta de trabalho para:
+Um suplemento do Excel permite estender a funcionalidade do aplicativo Excel em várias plataformas, incluindo Office no Windows, Office Online, Office para Mac e Office para iPad. Use suplementos do Excel em uma pasta de trabalho para:
 
 - Interagir com objetos do Excel, ler e gravar dados do Excel.
 - Estender a funcionalidade usando o painel de tarefas ou o painel conteúdo baseado na Web
@@ -21,13 +21,13 @@ Um suplemento do Excel permite estender a funcionalidade do aplicativo Excel em 
 
 A plataforma Suplementos do Office fornece a estrutura e as APIs JavaScript Office.js que permitem criar e executar suplementos do Excel. Usando a plataforma Suplementos do Office para criar o suplemento do Excel, você receberá os seguintes benefícios:
 
-* **Suporte à plataforma cruzada**: Os suplementos do Excel são executados no Office para Windows, Mac, iOS e Office Online.
+* **Suporte à plataforma cruzada**: Os suplementos do Excel são executados no Office no Windows, Mac, iOS e Office Online.
 * **Implantação centralizada**: os administradores podem implantar rápida e facilmente suplementos do Excel para usuários em toda uma organização.
 * **Uso da tecnologia da Web padrão**: Crie um suplemento do Excel usando tecnologias da Web conhecidas, como HTML, CSS e JavaScript.
 * **Distribuição pelo AppSource**: Compartilhe o suplemento do Excel com uma ampla audiência publicando-o na [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office&page=1&src=office&corrid=53245fad-fcbe-41f8-9f97-b0840264f97c&omexanonuid=4a0102fb-b31a-4b9f-9bb0-39d4cc6b789d).
 
 > [!NOTE]
-> Os suplementos são diferentes dos suplementos de COM e VSTO, que são anteriores às soluções de integração do Office que são executadas apenas no Office para Windows. Diferentemente dos suplementos de COM, os suplementos do Excel não exigem a instalação de código no dispositivo de um usuário, nem no Excel. 
+> Os suplementos do Excel são diferentes dos suplementos de COM e VSTO, que são anteriores às soluções de integração do Office que são executadas apenas no Office no Windows. Diferentemente dos suplementos de COM, os suplementos do Excel não exigem a instalação de código no dispositivo de um usuário, nem no Excel.
 
 ## <a name="components-of-an-excel-add-in"></a>Componentes de um suplemento do Excel
 

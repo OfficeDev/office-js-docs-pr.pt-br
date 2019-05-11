@@ -1,14 +1,14 @@
 ---
 title: Criar e depurar suplementos do Office no Visual Studio
-description: Use o Visual Studio para criar e depurar suplementos do Office na área de trabalho do cliente Office para Windows
-ms.date: 03/19/2019
+description: Use o Visual Studio para criar e depurar suplementos do Office na área de trabalho do cliente Office no Windows
+ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: 74a1430482b507d04f1be60683242fd9ae4a4393
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: c60599ed63c327d10b157e642e109542c3cefc47
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449903"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952093"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Criar e depurar suplementos do Office no Visual Studio
 
@@ -210,7 +210,7 @@ Se o suplemento não está visível no documento que é exibido no aplicativo ho
 
 1. No Excel, PowerPoint ou Word, escolha o **Inserir** pressione tab e, em seguida, escolha a seta para baixo à direita de **Meus suplementos**.
 
-    ![Inserir faixa de opções no Excel para Windows com a seta Meus suplementos realçada](../images/excel-cf-register-add-in-1b.png)
+    ![Inserir faixa de opções no Excel no Windows com a seta Meus suplementos realçada](../images/excel-cf-register-add-in-1b.png)
 
 2. Na lista de suplementos disponíveis, localize a seção**suplementos do desenvolvedor** e selecione o seu suplemento para registrar.
 

@@ -1,14 +1,14 @@
 ---
 title: Privacidade e segurança para suplementos do Office
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: 95188063ac133d6683478b1aed4d48b825cee87f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 91d1a549ec2fd06addc7fcb92b791353ad5513f9
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448371"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952163"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 
@@ -37,7 +37,7 @@ As seções a seguir descrevem brevemente como a arquitetura de tempo de execuç
 > [!NOTE]
 > Para saber mais sobre como usar o WIP e Intune com os Suplementos do Office, confira [Usar WIP e Intune para proteger dados corporativos em documentos executando os Suplementos do Office](/microsoft-365/enterprise/office-add-ins-wip).
 
-### <a name="clients-for-windows-and-os-x-devices"></a>Clientes para dispositivos Windows e OS X
+### <a name="clients-on-windows-and-os-x-devices"></a>Clientes para dispositivos Windows e OS X
 
 Em clientes com suporte para dispositivos de área de trabalho e de tablet, como Excel, Outlook e Outlook para Mac, há suporte a suplementos do Office por meio da integração de um componente no processo, o tempo de execução de Suplementos do Office, que gerencia o ciclo de vida do suplemento e habilita a interoperabilidade entre o suplemento e o aplicativo cliente. A página da Web do suplemento em si é hospedada fora do processo. Como mostrado na Figura 1, em um dispositivo Windows para área de trabalho ou tablet, a página da Web do suplemento é hospedada em um controle do Internet Explorer que, por sua vez, é hospedado em um processo de tempo de execução de suplemento que fornece segurança e isolamento de desempenho.
 
@@ -92,7 +92,7 @@ A plataforma de suplementos lida com as preocupações com privacidade dos usuá
 
 - Ao compartilhar um documento, os usuários também compartilham suplementos que foram inseridos no documento ou associados a ele. Se um usuário abrir um documento que contenha um suplemento que o usuário não usou antes, o aplicativo host solicitará que o usuário conceda permissão para que o suplemento seja executado no documento. Em um ambiente empresarial, o aplicativo host do Office também consultará o usuário se o documento for proveniente de uma fonte externa.
 
-- Os usuários podem habilitar ou desabilitar o acesso ao AppSource. Para os suplementos do conteúdo e do painel de tarefas, os usuários gerenciam o acesso aos suplementos e catálogos confiáveis na **Central de Confiabilidade** no cliente host do Office (aberto com **Arquivo** > **Opções** > **Central de Confiabilidade** > **Configurações da Central de Confiabilidade** > **Catálogos de Suplementos Confiáveis**). Para os suplementos do Outlook, os usuários podem gerenciar os suplementos escolhendo o botão **Gerenciar Suplementos**: no Outlook para Windows, escolha **Arquivo** > **Gerenciar Suplementos**. No Outlook para Mac, escolha o botão **Gerenciar Suplementos** na barra de suplementos. No Outlook Web App, escolha o menu **Configurações** (ícone de engrenagem) > **Gerenciar suplementos**. Os administradores também podem gerenciar esse acesso [usando a política de grupo](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
+- Os usuários podem habilitar ou desabilitar o acesso ao AppSource. Para os suplementos do conteúdo e do painel de tarefas, os usuários gerenciam o acesso aos suplementos e catálogos confiáveis na **Central de Confiabilidade** no cliente host do Office (aberto com **Arquivo** > **Opções** > **Central de Confiabilidade** > **Configurações da Central de Confiabilidade** > **Catálogos de Suplementos Confiáveis**). Para suplementos do Outlook, os usuários podem gerenciar os suplementos escolhendo o botão **Gerenciar Suplementos**: no Outlook no Windows, escolha **Arquivo** > **Gerenciar Suplementos**. No Outlook para Mac, escolha o botão **Gerenciar Suplementos** na barra de suplementos. No Outlook Web App, escolha o menu **Configurações** (ícone de engrenagem) > **Gerenciar suplementos**. Os administradores também podem gerenciar este acesso [usando a política de grupo](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
 
 - O design da plataforma do suplemento fornece segurança e desempenho aos usuários finais das seguintes maneiras:
 

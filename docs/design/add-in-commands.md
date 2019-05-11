@@ -1,14 +1,14 @@
 ---
 title: Comandos de suplemento para Excel, Word e PowerPoint
 description: ''
-ms.date: 04/05/2019
+ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: 0a2a28e09061248851e8ee1037d0219c7fcda1a5
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 7b85d3016b195b353b1e7f314aceb761cf4e31b3
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448721"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952177"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Comandos de suplemento para Excel, Word e PowerPoint
 
@@ -53,8 +53,11 @@ Os seguintes recursos de comando são compatíveis no momento.
 
 Os comandos de suplemento atualmente têm suporte nas seguintes plataformas:
 
-- Outlook 2016 ou posterior para Windows (build 16.0.6769+)
-- Office para Mac (build 15.33+)
+- Outlook 2016 no Windows (build 16.0.4678.1000+)
+- Office no Windows conectado ao Office 365 (build 16.0.6769+)
+- Office 2019 no Windows
+- Office para Mac conectado ao Office 365 (build 15.33+)
+- Office 2019 para Mac
 - Office Online
 
 Mais plataformas serão incluídas em breve.
@@ -70,7 +73,7 @@ Aplique as seguintes práticas recomendadas ao desenvolver comandos de suplement
 - Use os comandos para representar uma ação específica com um resultado claro e específico para os usuários. Não combine várias ações em um único botão.
 - Forneça ações granulares que tornam a realização de tarefas comuns no seu suplemento mais eficiente. Minimize o número de etapas necessárias para concluir uma tarefa.
 - Para o posicionamento dos comandos na faixa de opções do Office:
-    - Insira os comandos em uma guia existente (Inserir, Revisar e assim por diante) se a funcionalidade fornecida se encaixar ali. Por exemplo, se seu suplemento permitir que os usuários insiram mídia, adicione um grupo à guia Inserir. Observe que nem todas as guias estão disponíveis em todas as versões do Office. Para saber mais, confira o [Manifesto XML dos Suplementos do Office](../develop/add-in-manifests.md). 
+    - Insira os comandos em uma guia existente (Inserir, Revisar e assim por diante) se a funcionalidade fornecida se encaixar ali. Por exemplo, se seu suplemento permitir que os usuários insiram mídia, adicione um grupo à guia Inserir. Observe que nem todas as guias estão disponíveis em todas as versões do Office. Para saber mais, confira o [Manifesto XML dos Suplementos do Office](../develop/add-in-manifests.md).
     - Insira comandos na guia Página Inicial se a funcionalidade não se encaixar em outra guia e você menos de seis comandos de nível superior. Você também pode adicionar comandos à guia Página Inicial se seu suplemento precisar funcionar em diferentes versões do Office (como o Office para área de trabalho e o Office Online) e uma guia não estiver disponível em todas as versões (por exemplo, a guia Design não existe no Office Online).  
     - Coloque os comandos em uma guia personalizada se você tiver mais de seis comandos de nível superior.
     - Nomeie seu grupo de acordo com o nome do seu suplemento. Se você tiver vários grupos, nomeie cada grupo com base na funcionalidade que os comandos nesse grupo fornecem.

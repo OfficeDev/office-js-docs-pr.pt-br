@@ -1,14 +1,14 @@
 ---
-ms.date: 05/03/2019
+ms.date: 05/08/2019
 description: Criar funções personalizadas no Excel usando JavaScript.
 title: Criar funções personalizadas no Excel
 localization_priority: Priority
-ms.openlocfilehash: 5a31cc8ddfe98b880ab09803c7c0b7b615ba85db
-ms.sourcegitcommit: 5b9c2b39dfe76cabd98bf28d5287d9718788e520
+ms.openlocfilehash: d939d91e2c3fad239436621ae2704309f4f0f868
+ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "33659646"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "33952128"
 ---
 # <a name="create-custom-functions-in-excel"></a>Criar funções personalizadas no Excel 
 
@@ -141,7 +141,7 @@ A marcação XML a seguir mostra um exemplo dos elementos `<ExtensionPoint>` e `
 
 ## <a name="coauthoring"></a>Coautoria
 
-O Excel Online e o Excel para Windows com uma assinatura do Office 365 permitem editar documentos em coautoria, e esse recurso funciona com funções personalizadas. Se a pasta de trabalho usa uma função personalizada, seu colega será solicitado a carregar o suplemento da função personalizada. Depois de carregarem o suplemento, a função personalizada compartilhará resultados por meio de coautoria.
+O Excel Online e o Excel no Windows com uma assinatura do Office 365 permitem editar documentos em coautoria, e esse recurso funciona com funções personalizadas. Se a pasta de trabalho usa uma função personalizada, seu colega será solicitado a carregar o suplemento da função personalizada. Depois de carregarem o suplemento, a função personalizada compartilhará resultados por meio de coautoria.
 
 Para saber mais sobre coautoria, confira o tópico [Sobre o recurso de coautoria no Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).
 
