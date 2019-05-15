@@ -64,7 +64,7 @@
   items:
     - name: Requisitos para execução de suplementos
       href: concepts/requirements-for-running-office-add-ins.md
-    - name: Visualizadores da Web usados por suplementos do Office
+    - name: Visualizadores Web usados por Suplementos do Office
       href: concepts/web-viewers-used-by-office-web-add-ins.md
     - name: Práticas recomendadas de desenvolvimento de suplementos
       href: concepts/add-in-development-best-practices.md
@@ -711,7 +711,9 @@
         - name: Referência da API do Word
           href: /javascript/api/word
     - name: Especificações abertas da API
-      href: reference/openspec.md
+      items:
+        - name: Visão geral
+          href: reference/openspec/openspec.md
     - name: Códigos de erro
       href: reference/javascript-api-for-office-error-codes.md
     - name: Referência do manifesto do suplemento do Office
@@ -808,7 +810,7 @@
           href: reference/manifest/targetdialects.md
         - name: Tipo
           href: reference/manifest/type.md
-        - name: Version
+        - name: Versão
           href: reference/manifest/version.md
         - name: VersionOverrides
           items:
@@ -832,7 +834,7 @@
               href: reference/manifest/functionfile.md
             - name: GetStarted
               href: reference/manifest/getstarted.md
-            - name: Grupo
+            - name: Group
               href: reference/manifest/group.md
             - name: Hosts
               href: reference/manifest/hosts.md
