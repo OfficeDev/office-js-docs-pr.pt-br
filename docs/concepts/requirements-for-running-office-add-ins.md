@@ -1,14 +1,14 @@
 ---
 title: Requisitos para a execução de Suplementos do Office
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/14/2019
 localization_priority: Priority
-ms.openlocfilehash: c57534a8d00904336af518d9d32606373b2edab6
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 2dcdfb2562233550016cd2d04571239318ffffa3
+ms.sourcegitcommit: 944cbb5c6ce055f6db1833182b24d490d1dce01d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448222"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "33992179"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Requisitos para a execução de Suplementos do Office
 
@@ -28,7 +28,7 @@ Para todos os tipos de suplementos (suplementos de conteúdo, do Outlook e de pa
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
 > [!TIP]
-> Ao desenvolver e depurar um suplemento no Visual Studio, este implanta e executa os arquivos de página da Web do suplemento localmente com o IIS Express, e não exige um servidor Web adicional. 
+> Ao desenvolver e depurar um suplemento no Visual Studio, este implanta e executa os arquivos de página da Web do suplemento localmente com o IIS Express, e não exige um servidor Web adicional.
 
 Para suplementos de conteúdo e de painel de tarefas, nos aplicativos host do Office compatíveis (aplicativos Web do Access, Word, Excel, PowerPoint ou Project) você também precisa de um [catálogo de suplementos](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) no SharePoint para carregar os arquivo de manifesto XML do suplemento.
 
@@ -48,12 +48,12 @@ O software a seguir é necessário para o desenvolvimento de um Suplemento do Of
 
   Se você tiver uma assinatura válida do Office 365 e não tem acesso ao cliente do Office, basta [baixar e instalar a versão mais recente do Office](https://support.office.com/article/download-and-install-or-reinstall-office-365-or-office-2019-on-a-pc-or-mac-4414eaaf-0478-48be-9c42-23adc4716658).
 
-- Internet Explorer 11 ou posterior, que deve estar instalado, mas não precisa ser o navegador padrão. Para oferecer suporte aos Suplementos do Office, o cliente do Office que atua como host usa os componentes do navegador que fazem parte do Internet Explorer 11 ou posterior.
+- O Internet Explorer 11 ou o Microsoft Edge (dependendo das versões do Windows e do Office) devem estar instalados, mas não precisam ser o navegador padrão. Para oferecer suporte aos Suplementos do Office, o cliente do Office que atua como host usa componentes do navegador que fazem parte do Internet Explorer 11 ou do Microsoft Edge. Consulte [Visualizadores da Web usados pelos Suplementos do Office](web-viewers-used-by-office-web-add-ins.md) para obter mais detalhes.
 
   > [!NOTE]
   > A Configuração de Segurança Aprimorada da (ESC) do Internet Explorer deve ser desativada para os suplementos Web do Office funcionarem. Se estiver usando um computador Windows Server como cliente, ao desenvolver suplementos observe se a ESC está ativada por padrão no Windows Server.
 
-- Um dos navegadores seguintes como o padrão: Internet Explorer 11 ou posterior, ou a versão mais recente do Microsoft Edge, Chrome, Firefox ou Safari (Mac OS).
+- Um dos seguintes itens como o navegador padrão: Internet Explorer 11, Microsoft Edge em sua versão mais recente, Chrome, Firefox ou Safari (Mac OS).
 - Um editor de HTML e JavaScript, como o Bloco de Notas, o [Visual Studio e Ferramentas de Desenvolvimento da Microsoft](https://www.visualstudio.com/features/office-tools-vs), ou uma ferramenta de desenvolvimento para Web de terceiros.
 
 ## <a name="client-requirements-os-x-desktop"></a>Requisitos de cliente: Computador com OS X
@@ -68,7 +68,7 @@ Estas são as versões mínimas do cliente do Office para Mac que oferecem supor
 
 ## <a name="client-requirements-browser-support-for-office-online-web-clients-and-sharepoint"></a>Requisitos de cliente: Suporte do navegador para clientes da Web do Office Online e SharePoint
 
-Qualquer navegador compatível com ECMAScript 5.1, HTML5 e CSS3, como o Internet Explorer 11 ou posterior, ou a versão mais recente do Microsoft Edge, do Chrome, do Firefox ou do Safari (Mac OS).
+Qualquer navegador compatível com ECMAScript 5.1, HTML5 e CSS3, como o Internet Explorer 11, Microsoft Edge em sua versão mais recente, Chrome, Firefox ou Safari (Mac OS).
 
 
 ## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>Requisitos do cliente: smartphones e tablets sem Windows
@@ -90,3 +90,4 @@ Especificamente para o Outlook Web App em execução em um navegador em smartpho
 
 - [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
 - [Disponibilidade de host e plataforma para suplementos do Office](../overview/office-add-in-availability.md)
+- [Visualizadores da Web usados pelos suplementos do Office](web-viewers-used-by-office-web-add-ins.md)

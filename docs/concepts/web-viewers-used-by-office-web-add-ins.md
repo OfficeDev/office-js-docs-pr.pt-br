@@ -3,12 +3,12 @@ title: Visualizadores Web usados por Suplementos do Office
 description: ''
 ms.date: 05/03/2019
 localization_priority: Priority
-ms.openlocfilehash: 632f62cbc02917d9e28ab260f3710498156194db
-ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
+ms.openlocfilehash: 6cb0d6e97dd559727b6a1e140d8417e1146e479a
+ms.sourcegitcommit: 944cbb5c6ce055f6db1833182b24d490d1dce01d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33630402"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "33992123"
 ---
 # <a name="web-viewers-used-by-office-add-ins"></a>Visualizadores Web usados por Suplementos do Office
 
@@ -30,12 +30,12 @@ A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sis
 |Windows / Office 2013 sem assinatura ou posterior.|Internet Explorer 11|
 |Versão do Windows 10 < 1903 / Office 365|Internet Explorer 11|
 |Versão do Windows 10 >= 1903 / versão do Office 365 < 16.0.11629|Internet Explorer 11|
-|Versão do Windows 10 >= 1903 / versão do Office 365 >= 16.0.11629|Edge\*|
+|Versão do Windows 10 >= 1903 / versão do Office 365 >= 16.0.11629|Microsoft Edge\*|
 
-\*Quando o Edge está sendo usado, o Narrador do Windows 10 (também conhecido como «leitor de tela») lê a marca `<title>` na página que abre no painel de tarefas. Quando o Internet Explorer 11 está sendo usado, o Narrador lê a barra de título do painel de tarefas, que vem do valor `<DisplayName>` no manifesto de suplemento.
+\*Quando o Microsoft Edge está sendo usado, o Windows 10 Narrator (às vezes chamado de "leitor de tela") lê a marcação `<title>` na página que é aberta no painel de tarefas. Quando o Internet Explorer 11 está sendo usado, o Narrador lê a barra de título do painel de tarefas, que vem do valor `<DisplayName>` no manifesto de suplemento.
 
 > [!IMPORTANT]
-> O Internet Explorer 11 não oferece suporte às versões do JavaScript posteriores a ES5. Se qualquer um dos usuários de suplemento tiverem plataformas com Internet Explorer 11, para que seja possível usar a sintaxe e os recursos do ECMAScript 2015 ou posterior, você precisará fazer o transpile do seu JavaScript para o ES5 ou usar um polyfill. Além disso, o Internet Explorer 11 não oferece suporte para alguns recursos de HTML 5, como mídia, gravação e localização.
+> O Internet Explorer 11 não oferece suporte às versões do JavaScript posteriores a ES5. Se qualquer um dos usuários de suplemento tiverem plataformas com Internet Explorer 11, para que seja possível usar a sintaxe e os recursos do ECMAScript 2015 ou posterior, você precisará fazer o transpile do seu JavaScript para o ES5 ou usar um polyfill. Além disso, o Internet Explorer 11 não oferece suporte a alguns recursos do HTML5, como mídia, gravação e localização.
 
 > [!NOTE]
 > Até que eles estejam disponíveis, você precisará ser um Windows Insider para obter a versão 1903 do Windows ou superior, e ser um Office Insider para obter a versão 16.0.11629 do Office ou superior.
