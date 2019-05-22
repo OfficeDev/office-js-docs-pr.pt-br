@@ -1,2 +1,3 @@
 > [!IMPORTANT]
-> O recurso de funções personalizadas está atualmente em versão prévia e está sujeito a alterações. Atualmente não há suporte para uso em ambientes de produção. Confira mais informações em [requisitos de funções personalizadas](../excel/custom-functions-requirements.md).
+> O recurso de funções personalizadas está sendo liberado para produção! Descubra as atualizações mais recentes para as funções personalizadas [nesta postagem de blog](https://developer.microsoft.com/en-us/office/blogs/office-extensibility-build-2019/).
+

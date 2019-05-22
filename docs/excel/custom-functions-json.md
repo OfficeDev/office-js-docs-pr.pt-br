@@ -3,12 +3,12 @@ ms.date: 05/03/2019
 description: Defina os metadados de funções personalizadas no Excel.
 title: Metadados para funções personalizadas no Excel
 localization_priority: Normal
-ms.openlocfilehash: 92e2b1aaae46d376cc8033b304192d7ce8489fd8
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: d6cfd61eabc5b27105414082675b35d3ff0ceb41
+ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628071"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "34337164"
 ---
 # <a name="custom-functions-metadata"></a>Metadados de funções personalizadas
 
@@ -122,7 +122,7 @@ A propriedade `functions` é um conjunto de objetos de funções personalizadas.
 |  Propriedade  |  Tipo de dados  |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|:-----|
 |  `description`  |  string  |  Não  |  Descrição da função que é exibida aos usuários finais no Excel. Por exemplo, **Converte um valor em Celsius para Fahrenheit**. |
-|  `helpUrl`  |  cadeia de caracteres  |   Não  |  A URL que fornece informações sobre a função. (Ela é exibida em um painel de tarefas). Por exemplo, **http://contoso.com/help/convertcelsiustofahrenheit.html**. |
+|  `helpUrl`  |  string  |   Não  |  A URL que fornece informações sobre a função. (Ela é exibida em um painel de tarefas). Por exemplo, `http://contoso.com/help/convertcelsiustofahrenheit.html`. |
 | `id`     | string | Sim | Identificação exclusiva para a função. Essa ID pode conter apenas caracteres alfanuméricos e pontos e não deve ser alterada depois de configurada. |
 |  `name`  |  string  |  Sim  |  O nome da função que é exibida aos usuários finais no Excel. No Excel, o nome da função será prefixado pelo namespace de funções personalizadas que é especificado no arquivo de manifesto XML. |
 |  `options`  |  objeto  |  Não  |  Permite que você personalize alguns aspectos de como e quando o Excel executa a função. Confira [opções](#options) para obter detalhes. |
@@ -147,7 +147,7 @@ A propriedade `parameters` é uma matriz de objetos de parâmetro. A tabela a se
 |  Propriedade  |  Tipo de dados  |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|:-----|
 |  `description`  |  string  |  Não |  Uma descrição do parâmetro. Isso é exibido no IntelliSense do Excel.  |
-|  `dimensionality`  |  cadeia de caracteres  |  Não  |  Deve ser **escalar** (um valor não matriz) ou **matriz** (uma matriz de 2 dimensões).  |
+|  `dimensionality`  |  string  |  Não  |  Deve ser **escalar** (um valor não matriz) ou **matriz** (uma matriz de 2 dimensões).  |
 |  `name`  |  string  |  Sim  |  O nome do parâmetro. Esse nome é exibido no IntelliSense do Excel.  |
 |  `type`  |  string  |  Não  |  O tipo de dados do parâmetro. Pode ser **booliano**, **número**, **cadeia de caracteres** ou **qualquer**, que permita usar qualquer um dos três tipos anteriores. Se essa propriedade não for especificada, o tipo de dados padrão será **qualquer**. |
 |  `optional`  | booliano | Não | Se for `true`, o parâmetro será opcional. |
@@ -165,7 +165,7 @@ Conheça as [práticas recomendadas para nomear sua função](custom-functions-n
 
 ## <a name="see-also"></a>Confira também
 
-* [Gerar automaticamente metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md)
+* [Gerar metadados JSON automaticamente para funções personalizadas](custom-functions-json-autogeneration.md)
 * [Opções de parâmetros de funções personalizadas](custom-functions-parameter-options.md)
 * [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
 * [Criar funções personalizadas no Excel](custom-functions-overview.md)
