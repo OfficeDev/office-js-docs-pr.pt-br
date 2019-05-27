@@ -1,14 +1,14 @@
 ---
 title: Realizar o sideload de suplementos do Office em um iPad ou Mac para teste
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/21/2019
 localization_priority: Priority
-ms.openlocfilehash: e2f9ee912395e0f54130f0e78109cab4479b6567
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: f666ffee2c7c139ea18859d995384281a31238dd
+ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449919"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "34432219"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>Realizar o sideload de suplementos do Office em um iPad ou Mac para teste
 
@@ -85,8 +85,13 @@ Para ver como seu suplemento será executado no Office para iOS, você pode real
     
     ![Suplemento do Office exibido no Office para Mac](../images/lorem-ipsum-wikipedia.png)
     
-    > [!NOTE]
-    > Os Suplementos muitas vezes são armazenados em cache no Office para Mac por questão de desempenho. Se você precisar forçar um recarregamento do seu suplemento durante o seu desenvolvimento, limpe a pasta `Users/<usr>/Library/Containers/com.Microsoft.OsfWebHost/Data/`. Se a pasta não existir, desmarque os arquivos da pasta `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`.
+### <a name="clearing-the-office-applications-cache-on-a-mac"></a>Limpar cache do aplicativo do Office em um Mac
+
+Os Suplementos muitas vezes são armazenados em cache no Office para Mac por questão de desempenho. Normalmente, o cache será limpo quando o suplemento for recarregado. Se houver mais de um suplemento no mesmo documento, é provável que o processo de limpeza automática do cache ao recarregar não seja confiável.
+
+No Mac, o cache pode ser limpo manualmente ao excluir tudo na pasta `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
+
+[!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
 ## <a name="see-also"></a>Confira também
 
