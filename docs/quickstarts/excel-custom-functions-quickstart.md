@@ -1,15 +1,15 @@
 ---
-ms.date: 05/08/2019
+ms.date: 05/15/2019
 description: Desenvolvimento de funções personalizadas no guia de início rápido do Excel.
 title: Início rápido de funções personalizadas
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 233e1b608eda4a696b14d833fe4e071b2fcffd67
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 372e493d85add0a942a8f18ad67f65d08c92f6f2
+ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952380"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "34432247"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Introdução ao desenvolvimento de funções personalizadas do Excel
 
@@ -21,8 +21,6 @@ Com funções personalizadas, os desenvolvedores agora podem adicionar novas fun
 
 * Excel no Windows (versão de 64 bits 1810 ou posterior) ou Excel online
 
-* Ingressar o [programa Office Insider](https://products.office.com/office-insider) (nível**Insider**, anteriormente chamado de "Insider – modo rápido")
-
 ## <a name="build-your-first-custom-functions-project"></a>Criar seu primeiro projeto de funções personalizadas
 
 Para começar, você usará o gerador Yeoman para criar projeto com funções personalizadas. Isso configurará seu projeto com a estrutura de pastas, arquivos de origem e dependências corretos para começar a codificar suas funções personalizadas.
@@ -33,11 +31,11 @@ Para começar, você usará o gerador Yeoman para criar projeto com funções pe
     yo office
     ```
 
-    - **Escolha o tipo de projeto:** `Excel Custom Functions Add-in project (...)`
+    - **Escolha o tipo de projeto:** `Excel Custom Functions Add-in project`
     - **Escolha o tipo de script:** `JavaScript`
     - **Qual será o nome do suplemento?** `stock-ticker`
 
-    ![O gerador Yeoman para suplementos do Office solicita funções personalizadas](../images/yo-office-excel-cf.png)
+    ![O gerador Yeoman para suplementos do Office solicita funções personalizadas](../images/UpdatedYoOfficePrompt.png)
 
     O gerador Yeoman criará os arquivos do projeto e instalará os componentes Node de suporte.
 

@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 description: ''
-ms.date: 05/08/2019
+ms.date: 05/17/2019
 localization_priority: Priority
-ms.openlocfilehash: e4627699edad801ab4a3a5a65e6307d40d1b4ac9
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: d97efe8bbdfdadb252190458960b4356e0c8a564
+ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952352"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "34337171"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 
@@ -23,17 +23,7 @@ O modo de visualização do conjunto de requisitos inclui todos os recursos do [
 
 Os seguintes recursos estão no modo de visualização.
 
-### <a name="add-in-commands"></a>Comandos de suplemento
-
-#### <a name="eventcompletedjavascriptapiofficeofficeaddincommandseventcompleted-options-"></a>[Event.completed](/javascript/api/office/office.addincommands.event#completed-options-)
-
-Adicionado um novo parâmetro opcional `options`, que é um dicionário com um valor válido `allowEvent`. Esse valor é usado para cancelar a execução de um evento.
-
-**Disponível em**: Outlook na web (clássico)
-
----
-
-### <a name="attachments"></a>Attachments
+### <a name="attachments"></a>Anexos
 
 #### <a name="attachmentcontentjavascriptapioutlookofficeattachmentcontent"></a>[AttachmentContent](/javascript/api/outlook/office.attachmentcontent)
 
@@ -76,6 +66,16 @@ Adicionada uma nova enumeração que especifica se um anexo foi adicionado ou re
 Adicionado `AttachmentsChanged` evento `Item`.
 
 **Disponível em**: Outlook no Windows (conectado ao Office 365)
+
+---
+
+### <a name="block-on-send"></a>Bloquear ao enviar
+
+#### <a name="eventcompletedjavascriptapiofficeofficeaddincommandseventcompleted-options-"></a>[Event.completed](/javascript/api/office/office.addincommands.event#completed-options-)
+
+Adicionado um novo parâmetro opcional `options`, que é um dicionário com um valor válido `allowEvent`. Esse valor é usado para cancelar a execução de um evento.
+
+**Disponível em**: Outlook na web (clássico)
 
 ---
 

@@ -1,16 +1,16 @@
 ---
 title: Tutorial de suplemento do Excel
 description: Neste tutorial, você criará um suplemento do Excel que cria, preenche, filtra e classifica uma tabela, cria um gráfico, congela um cabeçalho de tabela, protege uma planilha e abre uma caixa de diálogo
-ms.date: 01/28/2019
+ms.date: 05/23/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: d32b5b03b29ddfa2213b0dd91d9f02e72b173fbf
-ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
+ms.openlocfilehash: 863c5720c9e23738ba907b722a50a974044cab11
+ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33619067"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "34432212"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Tutorial: criar um suplemento do painel de tarefas no Excel
 
@@ -165,9 +165,9 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
 
 1. Abra uma janela Git bash ou um prompt de sistema habilitado para Node.JS e navegue para a pasta **Iniciar** do projeto.
 
-2. Execute o comando `npm run build` para transcompilar seu código-fonte ES6 para uma versão anterior do JavaScript com suporte no Internet Explorer (que é usada em segundo plano pelo Excel para executar os suplementos do Excel).
+2. Execute o comando `npm run build` para transcompilar seu código-fonte do ES6 para uma versão anterior do JavaScript que é suportada pelo Internet Explorer (que é usada por algumas versões do Excel para executar suplementos do Excel).
 
-3. Execute o comando `npm start` para iniciar um servidor Web em um host local.
+3. Execute o comando `npm start` para iniciar um servidor Web em um localhost.
 
 4. Realize o sideload do suplemento usando um dos métodos a seguir:
 
@@ -309,9 +309,9 @@ Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou ante
      > [!NOTE]
      > Embora o servidor de sincronização do navegador recarregue o suplemento no painel de tarefas sempre que você fizer uma alteração em algum arquivo, incluindo o arquivo app.js, ele não transcompila o JavaScript, portanto, é necessário repetir o comando de compilação para que as alterações em app.js as entrem em vigor. Para fazer isso, interrompa o processo do servidor para obter uma solicitação para inserir o comando de compilação. Após a compilação, reinicie o servidor. As próximas etapas executam esse processo.
 
-2. Execute o comando `npm run build` para transcompilar seu código-fonte ES6 para uma versão anterior do JavaScript com suporte no Internet Explorer (que é usada em segundo plano pelo Excel para executar os suplementos do Excel).
+2. Execute o comando `npm run build` para transcompilar seu código-fonte do ES6 para uma versão anterior do JavaScript que é suportada pelo Internet Explorer (que é usada por algumas versões do Excel para executar suplementos do Excel).
 
-3. Execute o comando `npm start` para iniciar um servidor Web em um host local.
+3. Execute o comando `npm start` para iniciar um servidor Web em um localhost.
 
 4. Feche o painel de tarefas para recarregá-lo e, no menu **Página Inicial**, selecione **Mostrar Painel de Tarefas** para reabrir o suplemento.
 
@@ -413,9 +413,9 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
      > [!NOTE]
      > Embora o servidor de sincronização do navegador recarregue o suplemento no painel de tarefas sempre que você fizer uma alteração em algum arquivo, incluindo o arquivo app.js, ele não transcompila o JavaScript, portanto, é necessário repetir o comando de compilação para que as alterações em app.js as entrem em vigor. Para fazer isso, interrompa o processo do servidor para obter uma solicitação para inserir o comando de compilação. Após a compilação, reinicie o servidor. As próximas etapas executam esse processo.
 
-2. Execute o comando `npm run build` para transcompilar seu código-fonte ES6 para uma versão anterior do JavaScript com suporte no Internet Explorer (que é usada em segundo plano pelo Excel para executar os suplementos do Excel).
+2. Execute o comando `npm run build` para transcompilar seu código-fonte do ES6 para uma versão anterior do JavaScript que é suportada pelo Internet Explorer (que é usada por algumas versões do Excel para executar suplementos do Excel).
 
-3. Execute o comando `npm start` para iniciar um servidor Web em um host local.
+3. Execute o comando `npm start` para iniciar um servidor Web em um localhost.
 
 4. Feche o painel de tarefas para recarregá-lo e, no menu **Página Inicial**, selecione **Mostrar Painel de Tarefas** para reabrir o suplemento.
 
@@ -488,9 +488,9 @@ Quando uma tabela for longa o suficiente para que um usuário precise rolar para
      > [!NOTE]
      > Embora o servidor de sincronização do navegador recarregue o suplemento no painel de tarefas sempre que você fizer uma alteração em algum arquivo, incluindo o arquivo app.js, ele não transcompila o JavaScript, portanto, é necessário repetir o comando de compilação para que as alterações em app.js as entrem em vigor. Para fazer isso, interrompa o processo do servidor para obter uma solicitação para inserir o comando de compilação. Após a compilação, reinicie o servidor. As próximas etapas executam esse processo.
 
-2. Execute o comando `npm run build` para transcompilar seu código-fonte ES6 para uma versão anterior do JavaScript com suporte no Internet Explorer (que é usada em segundo plano pelo Excel para executar os suplementos do Excel).
+2. Execute o comando `npm run build` para transcompilar seu código-fonte do ES6 para uma versão anterior do JavaScript que é suportada pelo Internet Explorer (que é usada por algumas versões do Excel para executar suplementos do Excel).
 
-3. Execute o comando `npm start` para iniciar um servidor Web em um host local.
+3. Execute o comando `npm start` para iniciar um servidor Web em um localhost.
 
 4. Feche o painel de tarefas para recarregá-lo e, no menu **Início**, selecione **Mostrar Painel de Tarefas** para reabrir o suplemento.
 
@@ -732,7 +732,9 @@ Abra o arquivo /function-file/function-file.html. Esse é um arquivo HTML sem IU
 
     - No Windows: `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
-    - No Mac: `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
+    - No Mac: `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
+    
+        [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
 3. Se, por algum motivo, o servidor não estiver executando, em uma janela do Git Bash ou em um prompt do sistema habilitado para Node.JS, acesse a pasta **Iniciar** do projeto e execute o comando `npm start`. Não é necessário recriar o projeto, pois o único arquivo JavaScript que você alterou não faz parte do bundle.js interno.
 
@@ -846,7 +848,7 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
 8. Salve o arquivo.
 
    > [!NOTE]
-   > O arquivo popup.html e o arquivo popup.js carregado são executados em um processo do Internet Explorer completamente separado de painel de tarefas do suplemento. Se o popup.js foi transcompilado no mesmo arquivo bundle.js que o arquivo app.js, o suplemento precisará carregar duas cópias do arquivo bundle.js, o que anule o propósito do agrupamento. Além disso, o arquivo popup.js não contém qualquer JavaScript incompatível com o Internet Explorer. Por esses dois motivos, esse suplemento não transcompila o popup.js.
+   > O arquivo Popup. html e o arquivo Popup. js que ele carrega, são executados em um processo de borda totalmente separado ou Internet Explorer 11 do painel de tarefas do suplemento. Se o popup.js foi transcompilado no mesmo arquivo bundle.js que o arquivo app.js, o suplemento precisará carregar duas cópias do arquivo bundle.js, o que anule o propósito do agrupamento. Além disso, o arquivo Popup. js não contém qualquer JavaScript que não tenha suporte do Internet Explorer 11. Por esses dois motivos, esse suplemento não transcompila o popup.js.
 
 ### <a name="open-the-dialog-from-the-task-pane"></a>Abra a caixa de diálogo do painel de tarefas
 
@@ -940,9 +942,9 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
      > [!NOTE]
      > Embora o servidor de sincronização do navegador recarregue o suplemento no painel de tarefas sempre que você fizer uma alteração em algum arquivo, incluindo o arquivo app.js, ele não transcompila o JavaScript, portanto, é necessário repetir o comando de compilação para que as alterações em app.js as entrem em vigor. Para fazer isso, interrompa o processo do servidor para obter uma solicitação para inserir o comando de compilação. Após a compilação, reinicie o servidor. As próximas etapas executam esse processo.
 
-2. Execute o comando `npm run build` para transcompilar seu código-fonte ES6 para uma versão anterior do JavaScript com suporte no Internet Explorer (que é usada em segundo plano pelo Excel para executar os suplementos do Excel).
+2. Execute o comando `npm run build` para transcompilar seu código-fonte do ES6 para uma versão anterior do JavaScript que é suportada pelo Internet Explorer (que é usada por algumas versões do Excel para executar suplementos do Excel).
 
-3. Execute o comando `npm start` para iniciar um servidor Web em um host local.
+3. Execute o comando `npm start` para iniciar um servidor Web em um localhost.
 
 4. Feche o painel de tarefas para recarregá-lo e, no menu **Início**, selecione **Mostrar Painel de Tarefas** para reabrir o suplemento.
 

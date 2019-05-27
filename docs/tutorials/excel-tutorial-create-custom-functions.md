@@ -1,16 +1,16 @@
 ---
 title: Tutorial de funções personalizadas do Excel
 description: Neste tutorial, você criará um suplemento do Excel que contém uma função personalizada que pode executar cálculos e solicitar ou transmitir dados da web.
-ms.date: 05/08/2019
+ms.date: 05/16/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: ed9f16bdb330aa3f092e7d437ccfad6e056e07d4
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 63b5728057559e3c7190d1fb9645032a1b7cdc71
+ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952191"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "34432268"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Tutorial: Criar funções personalizadas no Excel
 
@@ -29,8 +29,6 @@ Neste tutorial, você vai:
 
 * Excel no Windows (versão de 64 bits 1810 ou posterior) ou Excel online
 
-* Ingressar o [programa Office Insider](https://products.office.com/office-insider) (nível**Insider**, anteriormente chamado de "Insider – modo rápido")
-
 ## <a name="create-a-custom-functions-project"></a>Criar um projeto com funções personalizadas
 
  Para começar, você criará o projeto de código para criar o suplemento função personalizada. O [gerador Yeoman para suplementos do Office](https://www.npmjs.com/package/generator-office) configurará seu projeto com algumas funções personalizadas predefinidas que você pode experimentar. Se você já tiver executado o início rápido de funções personalizadas e gerado um projeto, continue a usar esse projeto e pule para [esta etapa](#create-a-custom-function-that-requests-data-from-the-web) .
@@ -41,11 +39,11 @@ Neste tutorial, você vai:
     yo office
     ```
     
-    * **Escolha o tipo de projeto:** `Excel Custom Functions Add-in project (...)`
+    * **Escolha o tipo de projeto:** `Excel Custom Functions Add-in project`
     * **Escolha o tipo de script:** `JavaScript`
     * **Qual será o nome do suplemento?** `stock-ticker`
 
-    ![O gerador Yeoman para suplementos do Office solicita funções personalizadas](../images/yo-office-excel-cf.png)
+    ![O gerador Yeoman para suplementos do Office solicita funções personalizadas](../images/UpdatedYoOfficePrompt.png)
     
     O gerador Yeoman criará os arquivos do projeto e instalará os componentes Node de suporte.
 

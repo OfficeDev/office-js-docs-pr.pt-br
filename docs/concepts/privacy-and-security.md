@@ -3,12 +3,12 @@ title: Privacidade e segurança para suplementos do Office
 description: ''
 ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: 91d1a549ec2fd06addc7fcb92b791353ad5513f9
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 071cea42c90df30dce7cc2666136de616373bf06
+ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952163"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "34337206"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 
@@ -41,7 +41,7 @@ As seções a seguir descrevem brevemente como a arquitetura de tempo de execuç
 
 Em clientes com suporte para dispositivos de área de trabalho e de tablet, como Excel, Outlook e Outlook para Mac, há suporte a suplementos do Office por meio da integração de um componente no processo, o tempo de execução de Suplementos do Office, que gerencia o ciclo de vida do suplemento e habilita a interoperabilidade entre o suplemento e o aplicativo cliente. A página da Web do suplemento em si é hospedada fora do processo. Como mostrado na Figura 1, em um dispositivo Windows para área de trabalho ou tablet, a página da Web do suplemento é hospedada em um controle do Internet Explorer que, por sua vez, é hospedado em um processo de tempo de execução de suplemento que fornece segurança e isolamento de desempenho.
 
-No Windows Desktop, o Modo Protegido no Internet Explorer deve ser ativado para a Zona de Site Restrito. Ele geralmente está habilitado por padrão. Se estiver desabilitado, um [erro ocorrerá](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer) quando você tentar iniciar um suplemento.
+Nos computadores com o Windows, o Modo Protegido no Internet Explorer deve estar habilitado para a Zona de Site Restrito. Isso é normalmente ativado por padrão. Se estiver desabilitado, [ocorrerá um erro](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer) quando você tentar iniciar um suplemento.
 
 *Figura 1. Ambiente de execução dos Suplementos do Office nos clientes Windows para área de trabalho e tablet*
 
@@ -190,7 +190,7 @@ Um usuário mal-intencionado pode atacar a origem de um suplemento inserindo um 
 
 - Se estiver usando jQuery, use o método [.text()](https://api.jquery.com/text/) em vez do método [.html()](https://api.jquery.com/html/).
 
-- Use o método [toStaticHTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Reference) para remover atributos e elementos HTML dinâmicos da entrada dos usuários antes de passá-la para **innerHTML**.
+- Use o método [toStaticHTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) para remover atributos e elementos HTML dinâmicos da entrada dos usuários antes de passá-la para **innerHTML**.
 
 - Use a função [encodeURIComponent](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuricomponent) ou [encodeURI](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuri) para codificar texto que se destina a ser uma URL que vem da entrada do usuário ou a contém.
 

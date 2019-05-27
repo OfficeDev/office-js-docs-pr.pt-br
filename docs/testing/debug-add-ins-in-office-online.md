@@ -1,14 +1,14 @@
 ---
 title: Depurar suplementos no Office Online
 description: Como usar o Office Online para testar e depurar seus suplementos.
-ms.date: 03/19/2019
+ms.date: 05/16/2019
 localization_priority: Priority
-ms.openlocfilehash: ff77f3d8b3e332288d4ccb3e2d2305d1b1c4a825
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 6d6ab8a6ca85a9f462bfe4e5ae283eb3dccd9425
+ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451525"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "34337178"
 ---
 # <a name="debug-add-ins-in-office-online"></a>Depurar suplementos no Office Online
 
@@ -56,7 +56,7 @@ A seguir apresentamos alguns problemas que você pode encontrar ao depurar:
     
 - Alguns erros de JavaScript que você vê podem vir do Office Online.
       
-- O navegador pode mostrar um erro de certificado inválido que você deve ignorar.
+- O navegador pode mostrar um erro de certificado inválido que você deve ignorar. O processo para fazer isso varia com o navegador e as interfaces de usuário dos vários navegadores para fazer essa alteração periodicamente. Você deve pesquisar na ajuda do navegador ou pesquisar online para obter instruções. (Por exemplo, procure por "Aviso de certificado inválido do Microsoft Edge".) A maioria dos navegadores terá um link na página de aviso que permite que você clique na página do suplemento. Por exemplo, o Microsoft Edge possui um link "Ir para a página da Web (não recomendado)". Mas você geralmente terá que passar por este link toda vez que o suplemento for recarregado. Para um bypass mais duradouro, consulte a ajuda, como sugerido.
       
 - Se você definir pontos de interrupção no seu código, o Office Online pode lançar uma mensagem de erro indicando que não é possível salvar.
 
