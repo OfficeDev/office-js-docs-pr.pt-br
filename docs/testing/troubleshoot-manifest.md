@@ -1,14 +1,14 @@
 ---
 title: Validar e solucionar problemas com seu manifesto
 description: Use estes métodos para validar o manifesto de suplementos do Office
-ms.date: 11/02/2018
+ms.date: 05/21/2019
 localization_priority: Priority
-ms.openlocfilehash: 921adf6f1f398887d96031790facc1fb1425af2b
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 5b9bd22ad724bac68587a41ad56f4290f3a6edbd
+ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451148"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "34432261"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>Validar e solucionar problemas com seu manifesto
 
@@ -30,7 +30,7 @@ Para ajudar a garantir que o arquivo de manifesto que descreve o suplemento do O
 
 2. Abra um prompt de comando/terminal como administrador e instale o Validador de Suplemento do Office e as respectivas dependências globalmente usando o seguinte comando:
 
-    ```bash
+    ```command&nbsp;line
     npm install -g office-addin-validator
     ```
     
@@ -39,7 +39,7 @@ Para ajudar a garantir que o arquivo de manifesto que descreve o suplemento do O
 
 3. Para validar o manifesto, execute o seguinte comando: substitua MANIFEST.XML pelo caminho para o arquivo XML de manifesto.
 
-    ```bash
+    ```command&nbsp;line
     validate-office-addin MANIFEST.XML
     ```
 
@@ -55,7 +55,7 @@ Para ajudar a garantir que o arquivo de manifesto segue o esquema correto, inclu
 
 2.  Execute o comando a seguir. Substitua `XSD_FILE` pelo caminho para o arquivo XSD do manifesto e `XML_FILE` pelo caminho para o arquivo XML do manifesto.
     
-    ```bash
+    ```command&nbsp;line
     xmllint --noout --schema XSD_FILE XML_FILE
     ```
 
@@ -63,7 +63,7 @@ Para ajudar a garantir que o arquivo de manifesto segue o esquema correto, inclu
 
 Caso tenha criado o Suplemento do Office usando o [Gerador Yeoman para Suplementos do Office](https://www.npmjs.com/package/generator-office), é possível garantir que o arquivo de manifesto segue o esquema correto executando o seguinte comando no diretório raiz do projeto:
 
-```bash
+```command&nbsp;line
 npm run validate
 ```
 
@@ -134,13 +134,15 @@ Talvez você veja mensagens no arquivo de log que são confusas ou que estão cl
 
 ## <a name="clear-the-office-cache"></a>Limpar o cache do Office
 
-Se parecer que as alterações que você fez no manifesto, como nomes de arquivo dos ícones de botão da faixa de opções ou o texto de comandos de suplemento, não entraram em vigor, tente limpar o cache do Office no computador. 
+Se alterações feitas no manifesto, como nomes de arquivo de ícones de botão da faixa de opções ou texto de comandos de suplemento, não parecerem entrar em vigor, experimente limpar o cache do Office no computador. 
 
 #### <a name="for-windows"></a>No Windows:
-Exclua o conteúdo da pasta `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
+Exclua os conteúdos da pasta `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
 #### <a name="for-mac"></a>No Mac:
-Exclua o conteúdo da pasta `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
+Exclua os conteúdos da pasta `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
+
+[!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
 #### <a name="for-ios"></a>No iOS:
 Chame `window.location.reload(true)` usando o JavaScript no suplemento para forçar um recarregamento. Outra alternativa é reinstalar o Office.

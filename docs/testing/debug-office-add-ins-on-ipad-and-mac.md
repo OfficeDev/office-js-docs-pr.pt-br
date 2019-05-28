@@ -1,14 +1,14 @@
 ---
 title: Depurar suplementos do Office em um Mac
 description: ''
-ms.date: 04/24/2019
+ms.date: 05/21/2019
 localization_priority: Priority
-ms.openlocfilehash: 6d77dd0d90e68c2147ffea67d12026fc194fa642
-ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
+ms.openlocfilehash: 0505dcc49ea98040f1c4891621c8e30a8cbeaff4
+ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "33517090"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "34432275"
 ---
 # <a name="debug-office-add-ins-on-a-mac"></a>Depurar suplementos do Office em um Mac
 
@@ -30,7 +30,7 @@ Para iniciar, abra um terminal e defina a propriedade `OfficeWebAddinDeveloperEx
 
 - `defaults write com.microsoft.Outlook OfficeWebAddinDeveloperExtras -bool true`
 
-Em seguida, abra o aplicativo do Office e [realize o sideload do seu suplemento](sideload-an-office-add-in-on-ipad-and-mac.md). Clique com o botão direito do mouse no suplemento e você verá a opção **Inspecionar Elemento** no menu de contexto.  Marque essa opção e ela exibirá o inspetor, onde você poderá definir os pontos de interrupção e depurar o suplemento.
+Em seguida, abra o aplicativo do Office e [realize o sideload do seu suplemento](sideload-an-office-add-in-on-ipad-and-mac.md). Clique com o botão direito do mouse no suplemento e você verá a opção **Inspecionar Elemento** no menu de contexto. Marque essa opção e ela exibirá o inspetor, onde você poderá definir os pontos de interrupção e depurar o suplemento.
 
 > [!NOTE]
 > Se você estiver tentando usar o inspetor e a caixa de diálogo piscar, atualize o Office para a versão mais recente. Se isso não resolver a oscilação, tente a seguinte solução alternativa:
@@ -39,10 +39,10 @@ Em seguida, abra o aplicativo do Office e [realize o sideload do seu suplemento]
 > 3. Redimensione a caixa de diálogo para seu tamanho original.
 > 4. Use o inspetor, conforme necessário.
 
-## <a name="clearing-the-office-applications-cache-on-a-mac-or-ipad"></a>Limpar cache do aplicativo do Office em um Mac ou iPad
+## <a name="clearing-the-office-applications-cache-on-a-mac"></a>Limpar cache do aplicativo do Office em um Mac
 
 Os Suplementos muitas vezes são armazenados em cache no Office para Mac por questão de desempenho. Normalmente, o cache será limpo quando o suplemento for recarregado. Se houver mais de um suplemento no mesmo documento, é provável que o processo de limpeza automática do cache ao recarregar não seja confiável.
 
-No Mac, o cache pode ser limpo manualmente ao excluir tudo na pasta `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
+No Mac, o cache pode ser limpo manualmente ao excluir tudo na pasta `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
 
-No iPad, você pode chamar `window.location.reload(true)` a partir do JavaScript no suplemento para forçar uma recarrega. Uma outra alternativa é reinstalar o Office.
+[!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
