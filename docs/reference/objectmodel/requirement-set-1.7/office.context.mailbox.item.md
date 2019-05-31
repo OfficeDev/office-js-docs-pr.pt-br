@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Item-conjunto de requisitos 1,7
 description: ''
-ms.date: 04/24/2019
+ms.date: 05/30/2019
 localization_priority: Normal
-ms.openlocfilehash: dec949e635532a281f2e2c1aee1ecc1ea9d7da3a
-ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
+ms.openlocfilehash: 8895a27938bc6c72d929cf9423a377eaa2cc02a9
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "33353605"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589185"
 ---
 # <a name="item"></a>item
 
@@ -463,7 +463,7 @@ var internetMessageId = Office.context.mailbox.item.internetMessageId;
 ---
 ---
 
-#### <a name="itemclass-string"></a>doClass: String
+#### <a name="itemclass-string"></a>doclass: String
 
 Obtém a classe do item dos Serviços Web do Exchange do item selecionado. Somente modo de leitura.
 
@@ -889,7 +889,7 @@ console.log("Sender: " + senderName + " (" + senderAddress + ")");
 
 Obtém a ID da série à qual uma instância pertence.
 
-No OWA e no Outlook, `seriesId` o retorna a ID dos serviços Web do Exchange (EWS) do item pai (série) ao qual este item pertence. No enTanto, no iOS e no `seriesId` Android, o retorna a ID do REST do item pai.
+No OWA e no Outlook, `seriesId` o retorna a ID dos serviços Web do Exchange (EWS) do item pai (série) ao qual este item pertence. No entanto, no iOS e no `seriesId` Android, o retorna a ID do REST do item pai.
 
 > [!NOTE]
 > O identificador retornado pela propriedade `seriesId` é o mesmo que o identificador do item dos Serviços Web do Exchange. A `seriesId` propriedade não é idêntica às IDs do Outlook usadas pela API REST do Outlook. Antes de fazer chamadas API REST usando esse valor, ela deverá ser convertida usando [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string). Para obter detalhes, confira [Usar APIs REST do Outlook de um suplemento do Outlook](/outlook/add-ins/use-rest-api).
@@ -2040,7 +2040,7 @@ Como compromissos não têm um estado de rascunho, se `saveAsync` for chamado em
 > [!NOTE]
 > Os clientes a seguir têm diferentes comportamentos para `saveAsync` nos compromissos no modo de redação:
 >
-> - O Outlook para Mac não dá suporte ao `saveAsync` em uma reunião no modo composto. Chamar `saveAsync` em uma reunião no Outlook para Mac fará com que um erro seja retornado.
+> - O Outlook para Mac não dá `saveAsync` suporte a uma reunião no modo de composição. Assim, a chamada `saveAsync` nesse cenário retorna um erro. Consulte [não é possível salvar uma reunião como rascunho no Outlook para Mac usando a API do Office js](https://support.microsoft.com/help/4505745) para obter uma solução alternativa.
 > - O Outlook na Web sempre envia um convite ou atualização quando `saveAsync` é chamado em um compromisso no modo de redação.
 
 ##### <a name="parameters"></a>Parâmetros
