@@ -3,12 +3,12 @@ ms.date: 05/03/2019
 description: Use marcações JSDOC para criar dinamicamente seus metadados JSON de funções personalizadas.
 title: Gerar metadados JSON automaticamente para funções personalizadas
 localization_priority: Priority
-ms.openlocfilehash: df1c0114597e2aa98a15db48c515469fb9db6cd9
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: 67026e7c19580c3420638b4f37e333e50fce1b44
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628085"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589129"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Gerar metadados JSON automaticamente para funções personalizadas
 
@@ -61,7 +61,7 @@ O id é usado como o identificador invariável da função personalizada armazen
 
 * Se o ID não for fornecido, o nome da função JavaScript/TypeScript será convertido em maiúsculas e os caracteres não permitidos serão removidos.
 * O id deve ser exclusivo, para todas as funções personalizadas.
-* Os caracteres permitidos são limitados a: A-Z, a-z, 0-9 e ponto (.).
+* Os caracteres permitidos estão limitados a: A-Z, a-z, 0-9, sublinhados (\_) e ponto (.).
 
 #### <a name="name"></a>nome
 

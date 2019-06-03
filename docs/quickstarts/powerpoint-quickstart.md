@@ -4,12 +4,12 @@ description: ''
 ms.date: 05/02/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 01e2c961ad7bc9a50a6934732fa4cc57220f033c
-ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
+ms.openlocfilehash: 75b59e576ea0ed1a6012a08ab75e806cc68390f9
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33619730"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589227"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>Crie o seu primeiro suplemento do painel de tarefas do PowerPoint
 
@@ -213,18 +213,25 @@ Neste artigo, você passará pelo processo de criação de um suplemento do pain
 
 ### <a name="try-it-out"></a>Experimente
 
-1. Inicie o servidor Web local e realize o sideload no seu suplemento.
+1. Conclua as etapas a seguir para iniciar o servidor da web local e fazer o sideload do seu suplemento.
 
     > [!NOTE]
-    > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer. 
+    > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
 
-    - Para testar o seu suplemento no PowerPoint, execute o seguinte comando. Quando você executa este comando, o servidor Web local iniciará e o PowerPoint abrirá com o seu suplemento carregado.
+    > [!TIP]
+    > Se você estiver testando seu suplemento no Mac, execute o seguinte comando antes de continuar. Quando você executar este comando, o servidor Web local será iniciado.
+    >
+    > ```command&nbsp;line
+    > npm run dev-server
+    > ```
+
+    - Para testar seu suplemento no PowerPoint, execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor Web local será iniciado (se ainda não estiver em execução) e o PowerPoint será aberto com o suplemento carregado.
 
         ```command&nbsp;line
         npm start
         ```
 
-    - Para testar o seu suplemento no PowerPoint Online, execute o seguinte comando. Quando você executa este comando, o servidor Web local iniciará.
+    - Para testar seu suplemento no PowerPoint Online, execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor Web local será iniciado (se ainda não estiver em execução).
 
         ```command&nbsp;line
         npm run start:web

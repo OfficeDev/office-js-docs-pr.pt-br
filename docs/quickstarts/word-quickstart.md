@@ -4,12 +4,12 @@ description: ''
 ms.date: 05/08/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: f0fda0c7dcdebdc1fd1b6daf4e35c1794a56e950
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 5164d6cb49ea5c4aed0aeffb5b3f7a0ed96f07c9
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952261"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589220"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do Word
 
@@ -268,18 +268,25 @@ Neste artigo, você aprenderá sobre o processo de criação de um suplemento do
 
 ### <a name="try-it-out"></a>Experimente
 
-1. Inicie o servidor Web local e realize o sideload no seu suplemento.
+1. Conclua as etapas a seguir para iniciar o servidor da web local e fazer o sideload do seu suplemento.
 
     > [!NOTE]
-    > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer. 
+    > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
 
-    - Para testar o seu suplemento no Word, execute o seguinte comando. Quando você executa este comando, o servidor Web local iniciará e o Word abrirá com o seu suplemento carregado.
+    > [!TIP]
+    > Se você estiver testando seu suplemento no Mac, execute o seguinte comando antes de continuar. Quando você executar este comando, o servidor Web local será iniciado.
+    >
+    > ```command&nbsp;line
+    > npm run dev-server
+    > ```
+
+    - Para testar seu suplemento no Word, execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor Web local será iniciado (se ainda não estiver em execução) e o Word será aberto com o suplemento carregado.
 
         ```command&nbsp;line
         npm start
         ```
 
-    - Para testar o seu suplemento no Word Online, execute o seguinte comando. Quando você executa este comando, o servidor Web local iniciará.
+    - Para testar seu suplemento no Word Online, execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor Web local será iniciado (se ainda não estiver em execução).
 
         ```command&nbsp;line
         npm run start:web
@@ -308,5 +315,5 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em
 
 * [Visão geral dos suplementos do Word](../word/word-add-ins-programming-overview.md)
 * 
-  [Exemplos de código do suplemento do Word](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
+  [Exemplos de código do suplemento do Word](https://developer.microsoft.com/pt-BR/office/gallery/?filterBy=Samples,Word)
 * [Referências da API JavaScript do Word](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)

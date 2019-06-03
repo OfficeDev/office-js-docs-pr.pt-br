@@ -4,12 +4,12 @@ description: ''
 ms.date: 05/08/2019
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: d61f8d83b88dbe69ff0ba9cd4b0afef77a4f03d6
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 7a7c907eeeb85b2a686c49ebba0558f4ec20568d
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952241"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589206"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>Crie o seu primeiro suplemento do painel de tarefas do Project
 
@@ -97,14 +97,14 @@ Office.context.document.getSelectedTaskAsync(
 
 ## <a name="try-it-out"></a>Experimente
 
-1. Inicie o servidor Web local executando o seguinte comando:
+> [!NOTE]
+> Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se for solicitado a instalação de um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
+
+1. Execute o seguinte comando no diretório raiz do seu projeto. O servidor Web local é iniciado quando este comando é executado.
 
     ```command&nbsp;line
     npm start
     ```
-
-    > [!NOTE]
-    > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar `npm start`, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer. 
 
 2. Em Project, crie um plano de projeto simples.
 
