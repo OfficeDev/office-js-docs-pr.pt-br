@@ -3,12 +3,12 @@ title: Requisitos para a execução de Suplementos do Office
 description: ''
 ms.date: 05/14/2019
 localization_priority: Priority
-ms.openlocfilehash: 2dcdfb2562233550016cd2d04571239318ffffa3
-ms.sourcegitcommit: 944cbb5c6ce055f6db1833182b24d490d1dce01d
+ms.openlocfilehash: 650f5555eb120cbb541370c2ea5e2b2078c98ad9
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "33992179"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589101"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Requisitos para a execução de Suplementos do Office
 
@@ -48,7 +48,7 @@ O software a seguir é necessário para o desenvolvimento de um Suplemento do Of
 
   Se você tiver uma assinatura válida do Office 365 e não tem acesso ao cliente do Office, basta [baixar e instalar a versão mais recente do Office](https://support.office.com/article/download-and-install-or-reinstall-office-365-or-office-2019-on-a-pc-or-mac-4414eaaf-0478-48be-9c42-23adc4716658).
 
-- O Internet Explorer 11 ou o Microsoft Edge (dependendo das versões do Windows e do Office) devem estar instalados, mas não precisam ser o navegador padrão. Para oferecer suporte aos Suplementos do Office, o cliente do Office que atua como host usa componentes do navegador que fazem parte do Internet Explorer 11 ou do Microsoft Edge. Consulte [Visualizadores da Web usados pelos Suplementos do Office](web-viewers-used-by-office-web-add-ins.md) para obter mais detalhes.
+- O Internet Explorer 11 ou o Microsoft Edge (dependendo das versões do Windows e do Office) devem estar instalados, mas não precisam ser o navegador padrão. Para oferecer suporte aos Suplementos do Office, o cliente do Office que atua como host usa componentes do navegador que fazem parte do Internet Explorer 11 ou do Microsoft Edge. Consulte [Navegadores usados pelos Suplementos do Office](browsers-used-by-office-web-add-ins.md) para obter mais detalhes.
 
   > [!NOTE]
   > A Configuração de Segurança Aprimorada da (ESC) do Internet Explorer deve ser desativada para os suplementos Web do Office funcionarem. Se estiver usando um computador Windows Server como cliente, ao desenvolver suplementos observe se a ESC está ativada por padrão no Windows Server.
@@ -90,4 +90,4 @@ Especificamente para o Outlook Web App em execução em um navegador em smartpho
 
 - [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
 - [Disponibilidade de host e plataforma para suplementos do Office](../overview/office-add-in-availability.md)
-- [Visualizadores da Web usados pelos suplementos do Office](web-viewers-used-by-office-web-add-ins.md)
+- [Navegadores usados pelos Suplementos do Office](browsers-used-by-office-web-add-ins.md)
