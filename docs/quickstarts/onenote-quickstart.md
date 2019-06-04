@@ -1,231 +1,103 @@
 ---
-title: Criar o seu primeiro suplemento do OneNote
+title: Crie seu primeiro suplemento do painel de tarefas do OneNote
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/02/2019
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 378d691d1994a2d22166afc5338007400f7a48af
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 48cd9395b269a83630608c52d972508828c5c007
+ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450878"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "34589213"
 ---
-# <a name="build-your-first-onenote-add-in"></a>Criar o seu primeiro suplemento do OneNote
+# <a name="build-your-first-onenote-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do OneNote
 
-Neste artigo, você passará pelo processo de criar um suplemento do OneNote usando o jQuery e a API JavaScript para Office.
+Neste artigo, você verá o processo de criação de um suplemento do painel de tarefas do OneNote.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- [Node.js](https://nodejs.org)
-
-- Instale a última versão do [Yeoman](https://github.com/yeoman/yo) e o [gerador do Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office) globalmente.
-
-    ```bash
-    npm install -g yo generator-office
-    ```
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 ## <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
 1. Use o gerador Yeoman para criar um projeto de suplemento do OneNote. Execute o comando a seguir e responda aos prompts da seguinte forma:
 
-    ```bash
+    ```command&nbsp;line
     yo office
     ```
 
-    - **Escolha o tipo de projeto:** `Office Add-in project using Jquery framework`
+    - **Escolha o tipo de projeto:** `Office Add-in Task Pane project`
     - **Escolha o tipo de script:** `Javascript`
-    - **Qual será o nome do suplemento?:** `My Office Add-in`
-    - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?:** `Onenote`
+    - **Qual será o nome do suplemento?** `My Office Add-in`
+    - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `OneNote`
 
-    ![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-onenote-jquery.png)
+    ![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-onenote.png)
     
     Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
     
 2. Navegue até a pasta raiz do projeto.
 
-    ```bash
+    ```command&nbsp;line
     cd "My Office Add-in"
     ```
 
+## <a name="explore-the-project"></a>Explore o projeto
+
+O projeto de suplemento que você criou com o gerador do Yeoman contém um exemplo de código para um suplemento de painel de tarefas bem básico. 
+
+- O arquivo **./manifest.xml** no diretório raiz do projeto define as configurações e os recursos do suplemento.
+- O arquivo **./src/taskpane/taskpane.html** contém a marcação HTML do painel de tarefas.
+- O arquivo **./src/taskpane/taskpane.css** contém o CSS que é aplicado ao conteúdo no painel de tarefas.
+- O arquivo **./src/taskpane/taskpane.js** contém o código da API JavaScript do Office que facilita a interação entre o painel de tarefas e o aplicativo host do Office.
+
 ## <a name="update-the-code"></a>Atualizar o código
 
-1. No editor de código, abra **index.html** na raiz do projeto. Esse arquivo contém o HTML que será renderizado no painel de tarefas do suplemento.
+No seu editor de código, abra o arquivo **./src/taskpane/taskpane.js** e adicione o seguinte código dentro da função **executar**. Este código usa a API JavaScript do OneNote para definir o título da página e adicionar um contorno ao corpo da página.
 
-2. Substitua o elemento `<body>` pela marcação a seguir e salve o arquivo. 
+```js
+try {
+    await OneNote.run(async context => {
 
-    ```html
-    <body class="ms-font-m ms-welcome">
-        <header class="ms-welcome__header ms-bgColor-themeDark ms-u-fadeIn500">
-            <h2 class="ms-fontSize-xxl ms-fontWeight-regular ms-fontColor-white">OneNote Add-in</h1>
-        </header>
-        <main id="app-body" class="ms-welcome__main">
-            <br />
-            <p class="ms-font-m">Enter HTML content here:</p>
-            <div class="ms-TextField ms-TextField--placeholder">
-                <textarea id="textBox" rows="8" cols="30"></textarea>
-            </div>
-            <button id="addOutline" class="ms-Button ms-Button--primary">
-                <span class="ms-Button-label">Add outline</span>
-            </button>
-        </main>
-        <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
-        <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
-    </body>
-    ```
+        // Get the current page.
+        var page = context.application.getActivePage();
 
-3. Abra o arquivo **src\index.js** para especificar o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
+        // Queue a command to set the page title.
+        page.title = "Hello World";
 
-    ```js
-    import * as OfficeHelpers from "@microsoft/office-js-helpers";
+        // Queue a command to add an outline to the page.
+        var html = "<p><ol><li>Item #1</li><li>Item #2</li></ol></p>";
+        page.addOutline(40, 90, html);
 
-    Office.onReady(() => {
-        // Office is ready
-        $(document).ready(() => {
-            // The document is ready
-            $('#addOutline').click(addOutlineToPage);
-        });
+        // Run the queued commands, and return a promise to indicate task completion.
+        return context.sync();
     });
-    
-    async function addOutlineToPage() {
-        try {
-            await OneNote.run(async context => {
-                var html = "<p>" + $("#textBox").val() + "</p>";
-
-                // Get the current page.
-                var page = context.application.getActivePage();
-
-                // Queue a command to load the page with the title property.
-                page.load("title");
-
-                // Add text to the page by using the specified HTML.
-                var outline = page.addOutline(40, 90, html);
-
-                // Run the queued commands, and return a promise to indicate task completion.
-                return context.sync()
-                    .then(function() {
-                        console.log("Added outline to page " + page.title);
-                    })
-                    .catch(function(error) {
-                        app.showNotification("Error: " + error);
-                        console.log("Error: " + error);
-                        if (error instanceof OfficeExtension.Error) {
-                            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-                        }
-                    });
-                });
-        } catch (error) {
-            OfficeHelpers.UI.notify(error);
-            OfficeHelpers.Utilities.log(error);
-        }
-    }
-    ```
-
-4. Abra o arquivo **app.css** para especificar os estilos personalizados do suplemento. Substitua todo o conteúdo pelo que está a seguir e salve o arquivo.
-
-    ```css
-    html, body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
-
-    ul, p, h1, h2, h3, h4, h5, h6 {
-        margin: 0;
-        padding: 0;
-    }
-
-    .ms-welcome {
-        position: relative;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: column;
-        flex-direction: column;
-        -webkit-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-        min-height: 500px;
-        min-width: 320px;
-        overflow: auto;
-        overflow-x: hidden;
-    }
-
-    .ms-welcome__header {
-        min-height: 30px;
-        padding: 0px;
-        padding-bottom: 5px;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: column;
-        flex-direction: column;
-        -webkit-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-        -webkit-align-items: center;
-        align-items: center;
-        -webkit-justify-content: flex-end;
-        justify-content: flex-end;
-    }
-
-    .ms-welcome__header > h1 {
-        margin-top: 5px;
-        text-align: center;
-    }
-
-    .ms-welcome__main {
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: column;
-        flex-direction: column;
-        -webkit-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-        -webkit-align-items: center;
-        align-items: left;
-        -webkit-flex: 1 0 0;
-        flex: 1 0 0;
-        padding: 30px 20px;
-    }
-
-    .ms-welcome__main > h2 {
-        width: 100%;
-        text-align: left;
-    }
-
-    @media (min-width: 0) and (max-width: 350px) {
-        .ms-welcome__features {
-            width: 100%;
-        }
-    }
-    ```
-
-## <a name="update-the-manifest"></a>Atualizar o manifesto
-
-1. Abra o arquivo **manifest.xml** para definir as configurações e os recursos do suplemento.
-
-2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o com seu nome.
-
-3. O atributo `DefaultValue` do elemento `Description` tem um espaço reservado. Substitua-o por **um suplemento do painel de tarefas do OneNote**.
-
-4. Salve o arquivo.
-
-    ```xml
-    ...
-    <ProviderName>John Doe</ProviderName>
-    <DefaultLocale>en-US</DefaultLocale>
-    <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
-    <DisplayName DefaultValue="My Office Add-in" />
-    <Description DefaultValue="A task pane add-in for OneNote"/>
-    ...
-    ```
-
-## <a name="start-the-dev-server"></a>Iniciar o servidor de desenvolvimento
-
-[!include[Start server section](../includes/quickstart-yo-start-server.md)]
+} catch (error) {
+    console.log("Error: " + error);
+}
+```
 
 ## <a name="try-it-out"></a>Experimente
 
-1. No [OneNote Online](https://www.onenote.com/notebooks), abra um bloco de anotações.
+> [!NOTE]
+> Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
 
-2. Escolha **Inserir > Suplementos do Office** para abrir a caixa de diálogo Suplementos do Office.
+> [!TIP]
+> Se você estiver testando seu suplemento no Mac, execute o seguinte comando antes de continuar. Quando você executar este comando, o servidor Web local será iniciado.
+>
+> ```command&nbsp;line
+> npm run dev-server
+> ```
+
+1. Execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor Web local será iniciado (se ainda não estiver em execução).
+
+    ```command&nbsp;line
+    npm run start:web
+    ```
+
+2. No [OneNote Online](https://www.onenote.com/notebooks), abra um bloco de anotações e crie uma nova página.
+
+3. Escolha **Inserir > Suplementos do Office** para abrir a caixa de diálogo Suplementos do Office.
 
     - Se você estiver conectado à sua conta de consumidor, selecione a guia **MEUS SUPLEMENTOS** e escolha  **Carregar Meu Suplemento**.
 
@@ -239,36 +111,13 @@ Neste artigo, você passará pelo processo de criar um suplemento do OneNote usa
 
 4. Na guia **Página Inicial**, na faixa de opções, escolha o botão **Mostrar Painel de Tarefas**. O painel de tarefa do suplemento abre em um iFrame ao lado da página do OneNote.
 
-5. Insira este conteúdo HTML na área de texto e escolha **Adicionar estrutura de tópicos**.  
+5. Na parte inferior do painel de tarefas, escolha o link **Executar** para definir o título da página e adicionar um contorno ao corpo da página.
 
-    ```html
-    <ol>
-    <li>Item #1</li>
-    <li>Item #2</li>
-    <li>Item #3</li>
-    <li>Item #4</li>
-    </ol>
-    ```
-
-    A estrutura de tópicos especificada é adicionada à página.
-
-    ![O suplemento do OneNote criado a partir deste passo a passo](../images/onenote-first-add-in-3.png)
-
-## <a name="troubleshooting-and-tips"></a>Dicas e solução de problemas
-
-- Você pode depurar o suplemento usando as ferramentas de desenvolvedor do seu navegador. Quando você estiver usando o servidor Web Gulp e depurando no Internet Explore ou no Chrome, você pode salvar as alterações localmente e apenas atualize o iFrame do suplemento.
-
-- Quando você inspecionar um objeto do OneNote, as propriedades que estão atualmente disponíveis usam valores reais de exibição. As propriedades que precisam ser carregadas exibem *undefined*. Expanda o nó `_proto_` para ver as propriedades definidas no objeto, mas que ainda não foram carregadas.
-
-   ![Carregar o objeto do OneNote em um depurador](../images/onenote-debug.png)
-
-- Você precisa habilitar conteúdo misto no navegador, se o seu suplemento usar todos os recursos HTTP. Os suplementos de produção devem usar apenas recursos HTTPS seguros.
-
-- É possível abrir os suplementos do Painel de Tarefas em praticamente qualquer lugar, mas os suplementos de conteúdo podem ser inseridos apenas no conteúdo normal da página (ou seja, fora títulos, imagens, iFrames, etc.). 
+    ![O suplemento do OneNote criado a partir deste passo a passo](../images/onenote-first-add-in-4.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Parabéns, você criou com êxito um suplemento do OneNote! Em seguida, saiba mais sobre os principais conceitos de criação de suplementos do OneNote.
+Parabéns, você criou com êxito um suplemento do painel de tarefas do OneNote! Em seguida, saiba mais sobre os principais conceitos de criação de suplementos do OneNote.
 
 > [!div class="nextstepaction"]
 > [Visão geral da programação da API JavaScript do OneNote](../onenote/onenote-add-ins-programming-overview.md)
