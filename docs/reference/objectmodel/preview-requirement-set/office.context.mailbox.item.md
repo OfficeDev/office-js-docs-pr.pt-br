@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Item-visualização do conjunto de requisitos
 description: ''
-ms.date: 05/30/2019
+ms.date: 06/03/2019
 localization_priority: Normal
-ms.openlocfilehash: 12ec5d5558b558c87587e34472c33116478d14b3
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: 3dad9133fb23f6190e58eab94dc1724c18ac9d40
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589199"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706355"
 ---
 # <a name="item"></a>item
 
@@ -69,6 +69,7 @@ O namespace `item` é usado para acessar a mensagem, a solicitação de reunião
 | [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Método |
 | [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Método |
 | [getInitializationContextAsync](#getinitializationcontextasyncoptions-callback) | Método |
+| [getItemIdAsync](#getitemidasyncoptions-callback) | Método |
 | [getRegExMatches](#getregexmatches--object) | Método |
 | [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | Método |
 | [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | Método |
@@ -786,7 +787,7 @@ Office.context.mailbox.item.notificationMessages.getAllAsync(
 ---
 ---
 
-#### <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipients"></a>optionalAttendees: <[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)>|[](/javascript/api/outlook/office.recipients) de matriz
+#### <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipients"></a>optionalAttendees: [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)>|[](/javascript/api/outlook/office.recipients) de matriz. <
 
 Fornece acesso aos participantes opcionais de um evento. O tipo de objeto e o nível de acesso dependem do modo do item atual.
 
@@ -930,7 +931,7 @@ Recurrence = {
 ---
 ---
 
-#### <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipients"></a>requiredAttendees: <[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)>|[](/javascript/api/outlook/office.recipients) de matriz
+#### <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipients"></a>requiredAttendees: [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)>|[](/javascript/api/outlook/office.recipients) de matriz. <
 
 Fornece acesso aos participantes obrigatórios de um evento. O tipo de objeto e o nível de acesso dependem do modo do item atual.
 
@@ -1142,7 +1143,7 @@ function callback(asyncResult) {
 ---
 ---
 
-#### <a name="to-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipients"></a>para: Array. <[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)>|[Recipients](/javascript/api/outlook/office.recipients)
+#### <a name="to-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipients"></a>para: Array. <[](/javascript/api/outlook/office.emailaddressdetails)>|[destinatários](/javascript/api/outlook/office.recipients) EmailAddressDetails
 
 Fornece acesso aos destinatários na linha **Para** de uma mensagem. O tipo de objeto e o nível de acesso dependem do modo do item atual.
 
@@ -1476,7 +1477,7 @@ Quando os anexos são especificados no parâmetro `formData.attachments`, o Outl
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)|Read|
+|[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)|Read|
 
 ##### <a name="examples"></a>Exemplos
 
@@ -1598,7 +1599,7 @@ Quando os anexos são especificados no parâmetro `formData.attachments`, o Outl
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)|Read|
+|[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)|Read|
 
 ##### <a name="examples"></a>Exemplos
 
@@ -1749,7 +1750,7 @@ function handleAttachmentsCallback(result) {
 ---
 ---
 
-#### <a name="getattachmentsasyncoptions-callback--arrayattachmentdetailsjavascriptapioutlookofficeattachmentdetails"></a>getAttachmentsAsync ([opções], [callback]) → array. <[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)>
+#### <a name="getattachmentsasyncoptions-callback--arrayattachmentdetailsjavascriptapioutlookofficeattachmentdetails"></a>getAttachmentsAsync ([Options], [callback]) → array. <[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)>
 
 Obtém os anexos do item como uma matriz. Somente modo de redação.
 
@@ -1934,8 +1935,8 @@ Obtém dados de inicialização passados quando o suplemento é [ativado por uma
 
 |Nome|Tipo|Atributos|Descrição|
 |---|---|---|---|
-|`options`|Object|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
-|`options.asyncContext`|Object|&lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
+|`options`|Objeto|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
+|`options.asyncContext`|Objeto|&lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
 |`callback`|function|&lt;opcional&gt;|Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult). <br/>Com êxito, os dados de inicialização são fornecidos na `asyncResult.value` Propriedade como uma cadeia de caracteres.<br/>Se não houver nenhum contexto de inicialização, `asyncResult` o objeto conterá `Error` um objeto com `code` sua propriedade definida `9020` como e `name` sua propriedade definida `GenericResponseError`como.|
 
 ##### <a name="requirements"></a>Requisitos
@@ -1970,6 +1971,58 @@ Office.context.mailbox.item.getInitializationContextAsync(
     }
   }
 );
+```
+
+---
+---
+
+#### <a name="getitemidasyncoptions-callback"></a>getItemIdAsync ([opções], retorno de chamada)
+
+Obtém de forma assíncrona a ID de um item salvo. Somente modo de redação.
+
+Quando invocado, este método retorna a ID do item por meio do método de retorno de chamada.
+
+> [!NOTE]
+> Se seu suplemento chamar `getItemIdAsync` um item no modo de redação (por exemplo, para `itemId` usar com o EWS ou a API REST), lembre-se de que, quando o Outlook estiver no modo cache, pode levar algum tempo para que o item seja sincronizado com o servidor. Até que o item seja sincronizado, `itemId` o não é reconhecido e usado retorna um erro.
+
+##### <a name="parameters"></a>Parâmetros
+
+|Nome|Tipo|Atributos|Descrição|
+|---|---|---|---|
+|`options`|Objeto|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
+|`options.asyncContext`|Objeto|&lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
+|`callback`|function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Em caso de sucesso, o identificador do item é fornecido na propriedade `asyncResult.value`.|
+
+##### <a name="errors"></a>Erros
+
+|Código de erro|Descrição|
+|------------|-------------|
+|`ItemNotSaved`|A ID não pode ser recuperada até que o item seja salvo.|
+
+##### <a name="requirements"></a>Requisitos
+
+|Requisito|Valor|
+|---|---|
+|[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|Visualização|
+|[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)|Escrever|
+
+##### <a name="examples"></a>Exemplos
+
+```javascript
+Office.context.mailbox.item.getItemIdAsync(
+  function callback(result) {
+    // Process the result.
+  });
+```
+
+O exemplo a seguir mostra a estrutura do `result` parâmetro que é passado para a função de retorno de chamada. A `value` propriedade contém a ID do item.
+
+```json
+{
+  "value":"AAMkADI5...AAA=",
+  "status":"succeeded"
+}
 ```
 
 ---
@@ -2013,7 +2066,7 @@ Se você especificar uma regra `ItemHasRegularExpressionMatch` na propriedade do
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)|Read|
+|[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)|Read|
 
 ##### <a name="returns"></a>Retorna:
 
@@ -2099,7 +2152,7 @@ Se não houver seleção, mas o cursor estiver no corpo ou no assunto, o método
 |---|---|---|---|
 |`coercionType`|[Office.CoercionType](office.md#coerciontype-string)||Solicita um formato para os dados. Se Text, o método retorna o texto sem formatação como uma cadeia de caracteres, removendo quaisquer marcas HTML presentes. Se HTML, o método retorna o texto selecionado, seja ele texto sem formatação ou HTML.|
 |`options`|Objeto|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
-|`options.asyncContext`|Objeto|&lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
+|`options.asyncContext`|Object|&lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
 |`callback`|function||Quando o método for concluído, a função passada ao parâmetro `callback` será chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Para acessar os dados selecionados do método de retorno de chamada, chame `asyncResult.value.data`. Para acessar a propriedade de origem de que a seleção é proveniente, chame `asyncResult.value.sourceProperty`, que será `body` ou `subject`.|
 
 ##### <a name="requirements"></a>Requisitos
@@ -2213,7 +2266,7 @@ Se você especificar uma regra `ItemHasRegularExpressionMatch` na propriedade do
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.6|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)|Read|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)|Read|
 
 ##### <a name="returns"></a>Retorna:
 
@@ -2404,7 +2457,7 @@ Como compromissos não têm um estado de rascunho, se `saveAsync` for chamado em
 > [!NOTE]
 > Os clientes a seguir têm diferentes comportamentos para `saveAsync` nos compromissos no modo de redação:
 >
-> - O Outlook para Mac não dá `saveAsync` suporte a uma reunião no modo de composição. Assim, a chamada `saveAsync` nesse cenário retorna um erro. Consulte [não é possível salvar uma reunião como rascunho no Outlook para Mac usando a API do Office js](https://support.microsoft.com/help/4505745) para obter uma solução alternativa.
+> - O Outlook para Mac não dá suporte à gravação de uma reunião. O `saveAsync` método falha quando chamado de uma reunião no modo de composição. Consulte [não é possível salvar uma reunião como rascunho no Outlook para Mac usando a API do Office js](https://support.microsoft.com/help/4505745) para obter uma solução alternativa.
 > - O Outlook na Web sempre envia um convite ou atualização quando `saveAsync` é chamado em um compromisso no modo de redação.
 
 ##### <a name="parameters"></a>Parâmetros

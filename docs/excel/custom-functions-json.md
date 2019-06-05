@@ -1,14 +1,14 @@
 ---
-ms.date: 05/03/2019
+ms.date: 05/30/2019
 description: Defina os metadados de funções personalizadas no Excel.
 title: Metadados para funções personalizadas no Excel
 localization_priority: Normal
-ms.openlocfilehash: d6cfd61eabc5b27105414082675b35d3ff0ceb41
-ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
+ms.openlocfilehash: e51e4e8ee89eb1f345ee0c564e9b2ff8119806b2
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "34337164"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706120"
 ---
 # <a name="custom-functions-metadata"></a>Metadados de funções personalizadas
 
@@ -135,9 +135,9 @@ O objeto `options` permite que você personalize alguns aspectos de como e quand
 
 |  Propriedade  |  Tipo de dados  |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|:-----|
-|  `cancelable`  |  booliano  |  Não<br/><br/>O valor padrão é `false`.  |  Se o valor for `true`, o Excel chamará o manipulador `onCanceled` sempre que o usuário realizar uma ação que tenha o efeito de cancelar a função, por exemplo, manualmente acionar um recálculo ou editar uma célula referenciada pela função. Se você usar essa opção, o Excel chamará a função JavaScript com um parâmetro `caller` adicional. (***Não*** registre este parâmetro na propriedade `parameters`). No corpo da função, um manipulador deve ser atribuído ao membro `caller.onCanceled`. Para saber mais, confira [Cancelar uma função](custom-functions-web-reqs.md#stream-and-cancel-functions). |
-|  `requiresAddress`  | booliano | Não <br/><br/>O valor padrão é `false`. | <br /><br /> Se true, sua função personalizada pode acessar o endereço da célula que invocou sua função personalizada. Para obter o endereço da célula que chamou sua função personalizada, use Context. Address em sua função personalizada. Para saber mais, confira [determinar quais célula chamada sua função personalizada](/office/dev/add-ins/excel/custom-functions-overview#determine-which-cell-invoked-your-custom-function). As funções personalizadas não podem ser definidas como streaming e requiresAddress. Ao usar essa opção, o parâmetro "invocationContext" deve ser o último parâmetro passado em opções. |
-|  `stream`  |  booliano  |  Não<br/><br/>O valor padrão é `false`.  |  Se o valor for `true`, a função poderá gerar uma saída para a célula de forma repetida, mesmo quando invocada somente uma vez. Essa opção é útil para fontes de dados que mudam constantemente, como preços de ações. Se você usar essa opção, o Excel chamará a função JavaScript com um parâmetro `caller` adicional. (***Não*** registre este parâmetro na propriedade `parameters`). A função não deve ter instruções `return`. Em vez disso, o valor resultante é passado como o argumento do método de retorno `caller.setResult`. Para saber mais informações, confira [Funções de streaming](custom-functions-web-reqs.md#stream-and-cancel-functions). |
+|  `cancelable`  |  booliano  |  Não<br/><br/>O valor padrão é `false`.  |  Se o valor for `true`, o Excel chamará o manipulador `CancelableInvocation` sempre que o usuário realizar uma ação que tenha o efeito de cancelar a função, por exemplo, manualmente acionar um recálculo ou editar uma célula referenciada pela função. As funções de cancelamento normalmente são usadas apenas para funções assíncronas que retornam um único resultado e precisam lidar com o cancelamento de uma solicitação de dados. Uma função não pode ser streaming e cancelamento. Para obter mais informações, consulte a observação próxima ao final de [fazer uma função de streaming](custom-functions-web-reqs.md#make-a-streaming-function). |
+|  `requiresAddress`  | booliano | Não <br/><br/>O valor padrão é `false`. | <br /><br /> Se true, sua função personalizada pode acessar o endereço da célula que invocou sua função personalizada. Para obter o endereço da célula que chamou sua função personalizada, use Context. Address em sua função personalizada. Para saber mais, confira [determinar quais célula chamada sua função personalizada](/office/dev/add-ins/excel/custom-functions-overview#determine-which-cell-invoked-your-custom-function). As funções personalizadas não podem ser definidas como streaming e requiresAddress. Ao usar essa opção, o parâmetro "invocar" deve ser o último parâmetro passado em opções. |
+|  `stream`  |  booliano  |  Não<br/><br/>O valor padrão é `false`.  |  Se o valor for `true`, a função poderá gerar uma saída para a célula de forma repetida, mesmo quando invocada somente uma vez. Essa opção é útil para fontes de dados que mudam constantemente, como preços de ações. A função não deve ter instruções `return`. Em vez disso, o valor resultante é passado como o argumento do método de retorno `StreamingInvocation.setResult`. Para saber mais informações, confira [Funções de streaming](custom-functions-web-reqs.md#make-a-streaming-function). |
 |  `volatile`  | booliano | Não <br/><br/>O valor padrão é `false`. | <br /><br /> Se for `true`, a função será recalculada sempre que o Excel recalcular, em vez de apenas quando os valores dependentes da fórmula forem alterados. Uma função não pode ser de streaming e volátil ao mesmo tempo. Se as propriedades `stream` e `volatile` forem definidas como `true`, a opção volátil será ignorada. |
 
 ## <a name="parameters"></a>parâmetros

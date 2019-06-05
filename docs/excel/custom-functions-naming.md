@@ -3,12 +3,12 @@ ms.date: 05/03/2019
 description: Saiba mais sobre os nomes de funções personalizadas do Excel e evite armadilhas comuns de nomeação.
 title: Diretrizes de nomenclatura para funções personalizadas no Excel
 localization_priority: Normal
-ms.openlocfilehash: 3abe04eebfa703666b70ecbde1c68ab0c942003c
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: 64420171a90b29732745891cb691b8cd4309c53d
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628043"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706075"
 ---
 # <a name="naming-guidelines"></a>Diretrizes de nomenclatura
 
@@ -23,7 +23,7 @@ Uma função `name` pode ser diferente da função `id`, como para fins de local
 
 Uma função `name` e `id` compartilhar alguns requisitos comuns:
 
-- Uma função `id` pode usar apenas caracteres de A a Z, números de zero a nove, sublinhados e pontos.
+- Uma função `id` pode usar apenas caracteres de a a Z, números de zero a nove, sublinhados e pontos.
 
 - Uma função `name` pode usar caracteres alfabéticos Unicode, sublinhados e pontos.
 
@@ -49,6 +49,7 @@ Para corrigir um conflito de nomenclatura, altere `name` o em seu suplemento e r
 - Os nomes de função devem indicar a ação da função, como `=GETZIPCODE` em vez `ZIPCODE`de.
 - Evite abreviações ambíguas em nomes de funções. A clareza é mais importante do que a brevidade. Escolha um nome como `=INCREASETIME` em vez `=INC`de.
 - Use consistentemente os mesmos verbos para funções que executam ações semelhantes. Por exemplo, use `=DELETEZIPCODE` e `=DELETEADDRESS`, em vez `=DELETEZIPCODE` de `=REMOVEADDRESS`e.
+- Ao nomear uma função de streaming, considere adicionar uma nota a esse efeito na descrição da função ou adicionar `STREAM` ao final do nome da função.
 
 ## <a name="localizing-function-names"></a>Localizando nomes de função
 
@@ -62,6 +63,6 @@ Saiba mais sobre [as práticas recomendadas de tratamento de erros](custom-funct
 ## <a name="see-also"></a>Confira também
 
 * [Metadados de funções personalizadas](custom-functions-json.md)
-* [Práticas recomendadas para as funções personalizadas](custom-functions-best-practices.md).
+* [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
 * [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)
 * [Tempo de execução de funções personalizadas do Excel](custom-functions-runtime.md)
