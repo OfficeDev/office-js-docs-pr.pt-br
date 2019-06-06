@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 description: ''
-ms.date: 05/17/2019
+ms.date: 06/03/2019
 localization_priority: Priority
-ms.openlocfilehash: d97efe8bbdfdadb252190458960b4356e0c8a564
-ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
+ms.openlocfilehash: 6d7dceba80929c2abace9daec859302c43913f98
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "34337171"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706348"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 
@@ -129,6 +129,12 @@ Adicionou uma nova enumeração que especifica as cores disponíveis a serem ass
 #### <a name="sharedpropertiesjavascriptapioutlookofficesharedproperties"></a>[SharedProperties](/javascript/api/outlook/office.sharedproperties)
 
 Adicionado um novo objeto que representa as propriedades de um item de compromisso ou de mensagem em uma pasta compartilhada, calendário ou caixa de correio.
+
+**Disponível em**: Outlook no Windows (conectado ao Office 365)
+
+#### <a name="officecontextmailboxitemgetitemidasyncofficecontextmailboxitemmdgetitemidasyncoptions-callback"></a>[Office.context.mailbox.item.getItemIdAsync](office.context.mailbox.item.md#getitemidasyncoptions-callback)
+
+Adicionado um novo método que obtém o ID de um compromisso ou item de mensagem salvo.
 
 **Disponível em**: Outlook no Windows (conectado ao Office 365)
 

@@ -3,12 +3,12 @@ title: Office.context.mailbox.item - conjunto de requisitos 1.5
 description: ''
 ms.date: 05/30/2019
 localization_priority: Priority
-ms.openlocfilehash: 59e21676e670d8ba4da95319567364948f374790
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: aba1590d570a55ed512f1eb223b7d927c953dbaf
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589178"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706334"
 ---
 # <a name="item"></a>item
 
@@ -1632,7 +1632,7 @@ Como compromissos não têm um estado de rascunho, se `saveAsync` for chamado em
 > [!NOTE]
 > Os clientes a seguir têm diferentes comportamentos para `saveAsync` nos compromissos no modo de redação:
 >
-> - O Outlook para Mac não dá suporte ao `saveAsync` em uma reunião no modo composto. Da mesma forma, ligar `saveAsync` nesse cenário retorna um erro. Consulte [Não é possível salvar uma reunião como um rascunho no Outlook para Mac usando a API do Office JS](https://support.microsoft.com/help/4505745) para obter uma solução alternativa.
+> - O Outlook para Mac não dá suporte ao salvamento de reuniões. O método `saveAsync` falha quando chamado a partir de uma reunião no modo de composição. Consulte [Não é possível salvar uma reunião como um rascunho no Outlook para Mac usando a API do Office JS](https://support.microsoft.com/help/4505745) para obter uma solução alternativa.
 > - O Outlook na Web sempre envia um convite ou atualização quando `saveAsync` é chamado em um compromisso no modo de redação.
 
 ##### <a name="parameters"></a>Parâmetros

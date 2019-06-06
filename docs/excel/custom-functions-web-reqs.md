@@ -1,14 +1,14 @@
 ---
-ms.date: 05/07/2019
+ms.date: 05/30/2019
 description: Solicite, transmita e cancele o fluxo de dados externos para sua pasta de trabalho com funções personalizadas no Excel
 title: Receber e tratar dados com funções personalizadas
 localization_priority: Priority
-ms.openlocfilehash: 61f4d0fdaea4277faedddbe075a587fb23842c08
-ms.sourcegitcommit: 5b9c2b39dfe76cabd98bf28d5287d9718788e520
+ms.openlocfilehash: add6a3bc91b28ff7dbd0f0b298ed8f38ed5dd1bc
+ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "33659632"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "34706141"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>Receber e tratar dados com funções personalizadas
 
@@ -25,9 +25,9 @@ Se uma função personalizada recupera dados de uma fonte externa como na web, e
 1. Retornar uma Promise do JavaScript para o Excel.
 2. Resolva a promessa com o uso da função retorno de chamada de valor final.
 
-É possível solicitar dados externos através de uma API como [ `Fetch` ](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API) ou usando `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/pt-BR/docs/Web/API/XMLHttpRequest), uma API Web padrão que envia solicitações HTTP para interagir com os servidores.
+É possível solicitar dados externos através de uma API como [ `Fetch` ](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) ou usando `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), uma API Web padrão que envia solicitações HTTP para interagir com os servidores.
 
-No tempo de execução das funções personalizadas, o XHR implementa medidas de segurança adicionais solicitando uma [Política de mesma origem](https://developer.mozilla.org/pt-BR/docs/Web/Security/Same-origin_policy) ou um simples [CORS](https://www.w3.org/TR/cors/).
+No tempo de execução das funções personalizadas, o XHR implementa medidas de segurança adicionais solicitando uma [Política de mesma origem](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) ou um simples [CORS](https://www.w3.org/TR/cors/).
 
 Observe que uma implementação CORS simples não pode usar cookies e é compatível apenas com métodos simples (GET, HEAD, POST). A CORS simples aceita cabeçalhos simples com nomes de campos `Accept`, `Accept-Language`, `Content-Language`. Você também pode usar um cabeçalho de tipo de conteúdo no CORS simples, desde que o tipo de conteúdo seja `application/x-www-form-urlencoded`, `text/plain`, ou `multipart/form-data`.
 
@@ -137,13 +137,37 @@ ws.onerror(error){
 }
 ```
 
-## <a name="stream-and-cancel-functions"></a>Funções stream e cancel
+## <a name="make-a-streaming-function"></a>Faça uma função de streaming
 
-Funções personalizadas de streaming permitem a saída de dados para células que atualizam repetidamente, sem a necessidade de um usuário explicitamente atualizar coisa alguma.
+Funções personalizadas de streaming permitem a saída de dados para células que atualizam repetidamente, sem a necessidade de um usuário explicitamente atualizar coisa alguma. Isso pode ser útil para verificar dados ativos de um serviço online, como a função no [tutorial de funções personalizadas](/tutorials/excel-tutorial-create-custom-functions).
 
-Funções personalizadas cancelable permitem com que você cancele a execução de uma função personalizada de streaming para reduzir o consumo de banda larga, memória de trabalho e carregamento de CPU.
+Para declarar uma função de streaming, use a tag `@stream` de comentário JSDoc. Para alertar os usuários para o fato de que sua função pode ser reavaliada com base em novas informações, considere colocar fluxo ou outro texto para indicar isso no nome ou na descrição de sua função.
 
-Para declarar uma função como streaming ou cancelable, use as marcas de comentário JSDOC `@stream` ou `@cancelable`. 
+O exemplo a seguir mostra uma função de streaming que aumenta um determinado número a cada segundo em um valor especificado por você.
+
+```JS
+/**
+ * Increments a value once a second.
+ * @customfunction INC increment
+ * @param {number} incrementBy Amount to increment
+ * @param {CustomFunctions.StreamingInvocation<number>} invocation
+ */
+function increment(incrementBy, invocation) {
+  let result = 0;
+  const timer = setInterval(() => {
+    result += incrementBy;
+    invocation.setResult(result);
+  }, 1000);
+
+  invocation.onCanceled = () => {
+    clearInterval(timer);
+  };
+}
+CustomFunctions.associate("INC", increment);
+```
+
+>[!NOTE]
+> Observe que há também uma categoria de funções chamada de funções canceláveis, que *não* estão relacionadas a funções de streaming. Versões anteriores de funções personalizadas exigiam que você declarasse `"cancelable": true` e `"streaming": true` em JSON escrito à mão. Desde a introdução de metadados autogerados, somente as funções personalizadas assíncronas que retornam um único valor são canceláveis. Funções canceláveis permitem que uma solicitação da Web seja encerrada no meio de uma solicitação, usando um [`CancelableInvocation`](https://docs.microsoft.com/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation?view=office-js) para decidir o que fazer após o cancelamento. Declare uma função cancelável usando a tag `@cancelable`.
 
 ### <a name="using-an-invocation-parameter"></a>Usando um parâmetro de invocação
 
