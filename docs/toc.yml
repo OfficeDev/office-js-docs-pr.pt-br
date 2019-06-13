@@ -64,8 +64,8 @@
   items:
     - name: Requisitos para execução de suplementos
       href: concepts/requirements-for-running-office-add-ins.md
-    - name: Visualizadores Web usados por Suplementos do Office
-      href: concepts/web-viewers-used-by-office-web-add-ins.md
+    - name: Navegadores usados por suplementos do Office
+      href: concepts/browsers-used-by-office-web-add-ins.md
     - name: Práticas recomendadas de desenvolvimento de suplementos
       href: concepts/add-in-development-best-practices.md
     - name: Ciclo de vida de desenvolvimento de suplementos
@@ -506,7 +506,7 @@
           href: publish/package-your-add-in-using-visual-studio.md
         - name: Publicar suplementos por meio da implantação centralizada
           href: publish/centralized-deployment.md
-        - name: Publicar suplementos em um catálogo do SharePoint
+        - name: Publicar suplementos em um catálogo de aplicativos do SharePoint
           href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
         - name: Publicar suplementos no AppSource
           href: /office/dev/store/submit-to-the-office-store
@@ -816,7 +816,7 @@
           items:
             - name: VersionOverrides
               href: reference/manifest/versionoverrides.md
-            - name: Action
+            - name: Ação
               href: reference/manifest/action.md
             - name: AllFormFactors
               href: reference/manifest/allformfactors.md
