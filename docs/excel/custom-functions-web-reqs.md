@@ -3,12 +3,12 @@ ms.date: 05/30/2019
 description: Solicite, transmita e cancele o fluxo de dados externos para sua pasta de trabalho com funções personalizadas no Excel
 title: Receber e tratar dados com funções personalizadas
 localization_priority: Priority
-ms.openlocfilehash: add6a3bc91b28ff7dbd0f0b298ed8f38ed5dd1bc
-ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
+ms.openlocfilehash: 22f79c8b4e7e39569d3b955477e9397a053e1a8f
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "34706141"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910333"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>Receber e tratar dados com funções personalizadas
 
@@ -16,7 +16,7 @@ Uma das maneiras pelas quais as funções personalizadas aprimoram o poder do Ex
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-A documentação a seguir ilustra alguns exemplos de solicitações da web, mas para criar uma função de transmissão para você, experimente o [Tutorial de funções personalizadas](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows).
+A documentação a seguir ilustra alguns exemplos de solicitações da web, mas para criar uma função de transmissão para você, experimente o [Tutorial de funções personalizadas](../tutorials/excel-tutorial-create-custom-functions.md).
 
 ## <a name="functions-that-return-data-from-external-sources"></a>Funções que retornam os dados de fontes externas
 
@@ -72,7 +72,7 @@ Para outro exemplo de solicitação XHR com mais contexto, confira a função`ge
 
 ### <a name="fetch-example"></a>Exemplo de busca
 
-No seguinte exemplo de código, a função `stockPriceStream` usa um símbolo de cotação da bolsa para acessar o preço de uma ação a cada 1000 milissegundos. Para saber mais sobre este exemplo, confira o [Tutorial de funções personalizadas](https://docs.microsoft.com/office/dev/add-ins/tutorials/excel-tutorial-create-custom-functions?tabs=excel-windows#create-a-streaming-asynchronous-custom-function).
+No seguinte exemplo de código, a função `stockPriceStream` usa um símbolo de cotação da bolsa para acessar o preço de uma ação a cada 1000 milissegundos. Para saber mais sobre este exemplo, confira o [Tutorial de funções personalizadas](../tutorials/excel-tutorial-create-custom-functions.md#create-a-streaming-asynchronous-custom-function).
 
 ```js
 /**
@@ -139,7 +139,7 @@ ws.onerror(error){
 
 ## <a name="make-a-streaming-function"></a>Faça uma função de streaming
 
-Funções personalizadas de streaming permitem a saída de dados para células que atualizam repetidamente, sem a necessidade de um usuário explicitamente atualizar coisa alguma. Isso pode ser útil para verificar dados ativos de um serviço online, como a função no [tutorial de funções personalizadas](/tutorials/excel-tutorial-create-custom-functions).
+Funções personalizadas de streaming permitem a saída de dados para células que atualizam repetidamente, sem a necessidade de um usuário explicitamente atualizar coisa alguma. Isso pode ser útil para verificar dados ativos de um serviço online, como a função no [tutorial de funções personalizadas](../tutorials/excel-tutorial-create-custom-functions.md).
 
 Para declarar uma função de streaming, use a tag `@stream` de comentário JSDoc. Para alertar os usuários para o fato de que sua função pode ser reavaliada com base em novas informações, considere colocar fluxo ou outro texto para indicar isso no nome ou na descrição de sua função.
 
@@ -167,7 +167,7 @@ CustomFunctions.associate("INC", increment);
 ```
 
 >[!NOTE]
-> Observe que há também uma categoria de funções chamada de funções canceláveis, que *não* estão relacionadas a funções de streaming. Versões anteriores de funções personalizadas exigiam que você declarasse `"cancelable": true` e `"streaming": true` em JSON escrito à mão. Desde a introdução de metadados autogerados, somente as funções personalizadas assíncronas que retornam um único valor são canceláveis. Funções canceláveis permitem que uma solicitação da Web seja encerrada no meio de uma solicitação, usando um [`CancelableInvocation`](https://docs.microsoft.com/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation?view=office-js) para decidir o que fazer após o cancelamento. Declare uma função cancelável usando a tag `@cancelable`.
+> Observe que há também uma categoria de funções chamada de funções canceláveis, que *não* estão relacionadas a funções de streaming. Versões anteriores de funções personalizadas exigiam que você declarasse `"cancelable": true` e `"streaming": true` em JSON escrito à mão. Desde a introdução de metadados autogerados, somente as funções personalizadas assíncronas que retornam um único valor são canceláveis. Funções canceláveis permitem que uma solicitação da Web seja encerrada no meio de uma solicitação, usando um [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) para decidir o que fazer após o cancelamento. Declare uma função cancelável usando a tag `@cancelable`.
 
 ### <a name="using-an-invocation-parameter"></a>Usando um parâmetro de invocação
 

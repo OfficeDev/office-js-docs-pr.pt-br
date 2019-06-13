@@ -3,12 +3,12 @@ title: Visão geral dos suplementos do Word
 description: ''
 ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: 143f5b431aff2133c084b6d0f9c390562116dd4e
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 4b20b6007dba879b16ae8f6a586cf933f2f4fef0
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952170"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910277"
 ---
 # <a name="word-add-ins-overview"></a>Visão geral dos suplementos do Word
 
@@ -82,7 +82,7 @@ Depois de desenvolver seu suplemento, é possível [publicá-lo](../publish/publ
 
 ## <a name="whats-coming-up-for-word-add-ins"></a>O que está surgindo para os suplementos do Word?
 
-À medida que criamos e desenvolvemos novas APIs para suplementos do Word, elas ficam disponíveis na nossa página [Especificações abertas da API](/office/dev/add-ins/reference/openspec) para você deixar seus comentários. Descubra que novos recursos estão no pipeline para as APIs JavaScript do Word e forneça comentários sobre nossas especificações de design.
+À medida que criamos e desenvolvemos novas APIs para suplementos do Word, elas ficam disponíveis na nossa página [Especificações abertas da API](/office/dev/add-ins/reference/openspec/openspec) para você deixar seus comentários. Descubra que novos recursos estão no pipeline para as APIs JavaScript do Word e forneça comentários sobre nossas especificações de design.
 
 ## <a name="see-also"></a>Confira também
 
