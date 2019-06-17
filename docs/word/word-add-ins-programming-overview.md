@@ -1,14 +1,14 @@
 ---
 title: Visão geral dos suplementos do Word
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/12/2019
 localization_priority: Priority
-ms.openlocfilehash: 4b20b6007dba879b16ae8f6a586cf933f2f4fef0
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: bf0b481ef9c982f06ea04aaecb70a76a790846d2
+ms.sourcegitcommit: ee5b4935b5ee1db567a13627b2f87471ee8b8165
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910277"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "34933769"
 ---
 # <a name="word-add-ins-overview"></a>Visão geral dos suplementos do Word
 
@@ -74,15 +74,11 @@ Use a API JavaScript para Office compartilhada quando precisar:
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Pronto para criar seu primeiro suplemento do Word? Confira [Compilar seu primeiro suplemento do Word](word-add-ins.md). Também é possível tentar nossa [Experiência de introdução](/office/dev/add-ins/?product=Word) interativa. Use um [manifesto do suplemento](../develop/add-in-manifests.md) para descrever onde seu suplemento está hospedado e como ele é exibido, além de definir permissões e outras informações.
+Pronto para criar seu primeiro suplemento do Word? Confira [Criar seu primeiro suplemento do Word](word-add-ins.md). Use o [manifesto de suplemento](../develop/add-in-manifests.md) para descrever onde seu suplemento está hospedado e como ele é exibido, bem como para definir permissões e outras informações.
 
 Para saber mais sobre como projetar um suplemento do Word de classe internacional que cria uma ótima experiência para seus usuários, consulte [Diretrizes de design](../design/add-in-design.md) e [Práticas recomendadas](../concepts/add-in-development-best-practices.md).
 
 Depois de desenvolver seu suplemento, é possível [publicá-lo](../publish/publish.md) em um compartilhamento de rede, um catálogo de aplicativos ou no AppSource.
-
-## <a name="whats-coming-up-for-word-add-ins"></a>O que está surgindo para os suplementos do Word?
-
-À medida que criamos e desenvolvemos novas APIs para suplementos do Word, elas ficam disponíveis na nossa página [Especificações abertas da API](/office/dev/add-ins/reference/openspec/openspec) para você deixar seus comentários. Descubra que novos recursos estão no pipeline para as APIs JavaScript do Word e forneça comentários sobre nossas especificações de design.
 
 ## <a name="see-also"></a>Confira também
 
