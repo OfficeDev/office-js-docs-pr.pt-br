@@ -3,12 +3,12 @@ title: Suplementos do painel de tarefas para Project
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 668e7130d6ef478752f74468130139ca02b1d1e1
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 6f08f45e81fa40a869d07acea066b43c2720876a
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450961"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910326"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Suplementos do painel de tarefas para Project
 
@@ -184,7 +184,7 @@ No procedimento 2, o suplemento Pesquisa do Bing é instalado no computador loca
 
 ## <a name="distributing-project-add-ins"></a>Distribuir suplementos do Project
 
-É possível distribuir suplementos usando um compartilhamento de arquivos, um catálogo de suplementos em uma biblioteca do SharePoint ou o AppSource. Saiba mais em [Publicar seu suplemento do Office](../publish/publish.md).
+Você pode distribuir suplementos por meio de um compartilhamento de arquivos, por um catálogo de aplicativos em uma biblioteca do SharePoint ou pelo AppSource. Para mais informações, consulte [Publicar o Suplemento do Office](../publish/publish.md).
 
 ## <a name="see-also"></a>Confira também
 

@@ -3,12 +3,12 @@ title: Criar um suplemento de Project que usa REST com um serviço OData local d
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: d2a3b490a0f82d57444dad4b5281f2f7e3bf2959
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 1e50d90b844e78620866e94e44377c903b169783
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451338"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910354"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>Criar um suplemento de Project que usa REST com um serviço OData local do Project Server
 
@@ -1096,7 +1096,7 @@ Você pode copiar o código para o arquivo SurfaceErrors.js da seção _Programa
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Se **HelloProjectOData** fosse um suplemento de produção a ser vendido no AppSource ou distribuído em um catálogo de suplementos do SharePoint, ele deveria ser projetado de forma diferente. Por exemplo, não haveria nenhuma saída de depuração em uma caixa de texto e provavelmente nenhum botão para obter o ponto de extremidade do **ProjectData**. Você também precisaria reescrever a função **retireveOData** para lidar com instâncias do Project Web App que tenham mais de 100 projetos.
+Se o **HelloProjectOData** fosse um suplemento de produção para ser vendido no AppSource ou distribuído em um catálogo de aplicativos do SharePoint, ele seria projetado de forma diferente. Por exemplo, não haveria nenhuma saída de depuração em uma caixa de texto e, provavelmente, nenhum botão para obter o ponto de extremidade **ProjectData**. Você também teria que reescrever a função **retireveOData** para lidar com instâncias do Project Web App contendo mais de 100 projetos.
 
 O suplemento deveria conter mais verificações de erro, além de lógica para capturar e explicar ou mostrar casos extremos. Por exemplo, se uma instância do Project Web App tiver mil projetos com uma duração média de cinco dias e custo médio de US$ 2.400, e o projeto ativo for o único que tem uma duração de mais de 20 dias, a comparação de custo e trabalho poderá ficar desequilibrada. Isso poderia ser exibido com um gráfico de frequência. Você poderia adicionar opções para exibir a duração, comparar projetos de tamanhos semelhantes ou comparar projetos de um mesmo departamento ou de departamentos diferentes. Ou poderia adicionar uma forma de o usuário selecionar os campos a exibir em uma lista.
 

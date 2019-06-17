@@ -3,12 +3,12 @@ title: Carregar o ambiente de tempo de execução e DOM
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: b1f63d9fe012ed8c8a5cf4a0f7de862ddabcd4d3
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: e975db391276129e453d5001fe0bac8ad36f6080
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449833"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910214"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>Carregar o ambiente de tempo de execução e DOM
 
@@ -24,7 +24,7 @@ Os eventos a seguir ocorrem quando um suplemento de conteúdo ou de painel de ta
 
 1. O usuário abre um documento que já contém um suplemento ou insere um suplemento no documento.
 
-2. O aplicativo host do Office lê o manifesto XML do suplemento a partir do AppSource, catálogo de suplementos no SharePoint ou catálogo de pastas compartilhada do qual ele se originou.
+2. O aplicativo host do Office lê o manifesto XML do suplemento do AppSource, de um catálogo de aplicativos no SharePoint ou do catálogo de pastas compartilhadas de onde ele se origina.
 
 3. O aplicativo host do Office abre a página de HTML do suplemento em um controle de navegador.
 

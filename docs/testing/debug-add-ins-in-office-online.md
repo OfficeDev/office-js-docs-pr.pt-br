@@ -3,12 +3,12 @@ title: Depurar suplementos no Office Online
 description: Como usar o Office Online para testar e depurar seus suplementos.
 ms.date: 05/16/2019
 localization_priority: Priority
-ms.openlocfilehash: 6d6ab8a6ca85a9f462bfe4e5ae283eb3dccd9425
-ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
+ms.openlocfilehash: f6cdb1f0b92a8519315bcff272cd1bc235c57653
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "34337178"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910158"
 ---
 # <a name="debug-add-ins-in-office-online"></a>Depurar suplementos no Office Online
 
@@ -24,7 +24,7 @@ Para começar:
   > [!NOTE]
   > Para se inscrever para uma assinatura gratuita de desenvolvedor do Office 365, ingresse no [Programa de Desenvolvedor do Office 365](https://developer.microsoft.com/office/dev-program). Confira as instruções passo a passo sobre como participar do Programa para Desenvolvedores do Office 365, entrar e configurar sua assinatura na [documentação do Programa para Desenvolvedores do Office 365](/office/developer-program/office-365-developer-program).
      
-- Configure um catálogo de suplementos no Office 365 (SharePoint Online). Um catálogo de suplementos é um conjunto de sites dedicado no SharePoint Online que hospeda bibliotecas de documentos para suplementos do Office. Se você tiver seu próprio site do SharePoint, pode configurar uma biblioteca de documentos do catálogo de suplementos. Para saber mais, confira [Publicar suplementos de conteúdo e de painel de tarefas em um catálogo de suplementos no SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
+- Configure um catálogo de aplicativos no Office 365 (SharePoint Online). Um catálogo de aplicativos é um conjunto de sites dedicado no SharePoint Online, o qual hospeda bibliotecas de documentos para suplementos do Office. Se você tiver seu próprio site do SharePoint, poderá configurar uma biblioteca de documentos do catálogo de aplicativos. Para obter mais informações, consulte [Publicar suplementos de painel de tarefas e de conteúdo em um catálogo de aplicativos no SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
     
 
 ## <a name="debug-your-add-in-from-excel-online-or-word-online"></a>Depurar seu suplemento do Excel Online ou do Word Online
@@ -42,7 +42,7 @@ Para depurar seu suplemento usando o Office Online:
     <SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />
     ```
     
-3. Carregue o manifesto na biblioteca de Suplementos do Office no catálogo de suplementos no SharePoint.
+3. Carregue o manifesto para a biblioteca de suplementos do Office no catálogo de aplicativos no SharePoint.
     
 4. Inicie o Excel Online ou o Word Online do inicializador de aplicativos no Office 365 e abra um novo documento.
     

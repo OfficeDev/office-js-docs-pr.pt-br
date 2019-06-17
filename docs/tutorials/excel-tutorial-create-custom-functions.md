@@ -1,16 +1,16 @@
 ---
 title: Tutorial de funções personalizadas do Excel
 description: Neste tutorial, você criará um suplemento do Excel que contém uma função personalizada que pode executar cálculos e solicitar ou transmitir dados da web.
-ms.date: 05/30/2019
+ms.date: 06/15/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: f167125fcc24e47f0805d6c46e5338455d94b277
-ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
+ms.openlocfilehash: c2eedee19cf4a612c83b7a45f7c5c5dc3b3f6937
+ms.sourcegitcommit: e112a9b29376b1f574ee13b01c818131b2c7889d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "34706369"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "34997383"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Tutorial: Criar funções personalizadas no Excel
 
@@ -108,7 +108,10 @@ As `ADD` função personalizada calcula a soma dos dois números que você forne
 
 ## <a name="create-a-custom-function-that-requests-data-from-the-web"></a>Criar uma função personalizada que solicita dados da web
 
-Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio de funções personalizadas. Em seguida, você criará uma função personalizada chamada `stockPrice` que recebe uma citação ações de uma Web API e retorna o resultado para a célula de uma planilha. Esta função personalizada usa IEX Trading API, que é gratuito e não requer autenticação.
+Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio de funções personalizadas. Em seguida, você criará uma função personalizada chamada `stockPrice` que recebe uma citação ações de uma Web API e retorna o resultado para a célula de uma planilha. 
+
+> [!NOTE]
+> O código a seguir solicita uma cotação de ações usando a API de negociação do IEX. Antes de poder executar o código, você precisará [criar uma conta gratuita com a nuvem do IEX](https://iexcloud.io/) para que possa obter o token de API necessário na solicitação de API.  
 
 1. No projeto de **Cotações de ações** , localize o arquivo **./src/Functions/functions.js** e abra-o no editor de código.
 
@@ -122,7 +125,8 @@ Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio d
     * @returns {number} The current stock price.
     */
     function stockPrice(ticker) {
-        var url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
+        //Note: In the following line, replace <YOUR_TOKEN_HERE> with the API token that you've obtained through your IEX Cloud account.
+        var url = "https://cloud.iexapis.com/stable/stock/" + ticker + "/quote/latestPrice?token=<YOUR_TOKEN_HERE>"
         return fetch(url)
             .then(function(response) {
                 return response.text();
@@ -195,7 +199,8 @@ A `stockPrice` função que você acabou de criar retorna o preço de uma ação
                 return;
             }
 
-            var url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
+            //Note: In the following line, replace <YOUR_TOKEN_HERE> with the API token that you've obtained through your IEX Cloud account.
+            var url = "https://cloud.iexapis.com/stable/stock/" + ticker + "/quote/latestPrice?token=<YOUR_TOKEN_HERE>"
             isPending = true;
 
             fetch(url)

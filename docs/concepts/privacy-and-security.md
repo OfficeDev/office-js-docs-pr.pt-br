@@ -3,12 +3,12 @@ title: Privacidade e segurança para suplementos do Office
 description: ''
 ms.date: 05/08/2019
 localization_priority: Priority
-ms.openlocfilehash: 071cea42c90df30dce7cc2666136de616373bf06
-ms.sourcegitcommit: b0e71ae0ae09c57b843d4de277081845c108a645
+ms.openlocfilehash: e62720cdfc4fbc92615c869f71b250d5957ea0ce
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "34337206"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910207"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 
@@ -82,7 +82,7 @@ Esta seção descreve a proteção oferecida pela plataforma de Suplementos do O
 
 ### <a name="end-users-perspective"></a>Perspectiva dos usuários finais
 
-Os Suplementos do Office são criados usando tecnologias da Web que são executadas em um controle de navegador ou em um **iframe**. Por isso, o uso de suplementos é semelhante à navegação em sites na Internet ou na intranet. Os suplementos podem ser externos à organização (se você adquire o suplemento do AppSource) ou internos (se você adquire o suplemento de um catálogo de suplementos do Exchange Server, de um catálogo de suplementos do SharePoint ou de um compartilhamento de arquivos na rede da organização). Os suplementos têm acesso limitado à rede, e a maioria dos suplementos pode ler ou gravar no documento ou item de email ativo. A plataforma de suplementos aplica certas restrições antes que um usuário ou administrador instale ou inicie um suplemento. Porém, como ocorre com qualquer modelo de extensibilidade, os usuários devem ser cuidadosos antes de iniciar um suplemento desconhecido.
+Os Suplementos do Office são criados usando tecnologias da Web que são executadas em um controle de navegador ou **iframe**. Por causa disso, o uso de suplementos é semelhante à navegação em sites da Web na Internet ou intranet. Os suplementos podem ser externos a uma organização (se você adquirir o suplemento do AppSource) ou internos (se você adquirir o suplemento de um catálogo de suplementos do Exchange Server, catálogo de aplicativos do SharePoint ou compartilhamento de arquivos na rede de uma organização). Os suplementos têm acesso limitado à rede, e a maioria dos suplementos pode ler ou gravar no documento ativo ou no item de email. A plataforma de suplemento aplica certas restrições antes de um usuário ou administrador instalar ou iniciar um suplemento. Mas, como acontece com qualquer modelo de extensibilidade, os usuários devem ser cautelosos antes de iniciar um complemento desconhecido.
 
 A plataforma de suplementos lida com as preocupações com privacidade dos usuários finais das seguintes maneiras:
 

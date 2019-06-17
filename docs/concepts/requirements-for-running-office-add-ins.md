@@ -3,12 +3,12 @@ title: Requisitos para a execução de Suplementos do Office
 description: ''
 ms.date: 05/14/2019
 localization_priority: Priority
-ms.openlocfilehash: 650f5555eb120cbb541370c2ea5e2b2078c98ad9
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: ed502900916fb2e780725af6f3840c7c2287c1a3
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589101"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910095"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Requisitos para a execução de Suplementos do Office
 
@@ -30,7 +30,7 @@ Para todos os tipos de suplementos (suplementos de conteúdo, do Outlook e de pa
 > [!TIP]
 > Ao desenvolver e depurar um suplemento no Visual Studio, este implanta e executa os arquivos de página da Web do suplemento localmente com o IIS Express, e não exige um servidor Web adicional.
 
-Para suplementos de conteúdo e de painel de tarefas, nos aplicativos host do Office compatíveis (aplicativos Web do Access, Word, Excel, PowerPoint ou Project) você também precisa de um [catálogo de suplementos](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) no SharePoint para carregar os arquivo de manifesto XML do suplemento.
+Para suplementos de painel de tarefas e de conteúdo, nos aplicativos host do Office com suporte - aplicativos Web do Access, Word, Excel, PowerPoint ou Project - você também precisa de um [catálogo de aplicativos](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) no SharePoint para carregar o arquivo de manifesto XML do suplemento.
 
 Para testar e executar um suplemento do Outlook, a conta de email do Outlook do usuário deve residir no Exchange 2013 ou posterior, que está disponível pelo Office 365, Exchange Online ou por meio de uma instalação local. O usuário ou administrador instala os arquivos de manifesto para suplementos do Outlook nesse servidor.
 

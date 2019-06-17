@@ -1,14 +1,14 @@
 ---
-ms.date: 05/03/2019
-description: Use marcações JSDOC para criar dinamicamente seus metadados JSON de funções personalizadas.
+ms.date: 06/10/2019
+description: Use tags JSDoc para criar dinamicamente seus metadados JSON de funções personalizadas.
 title: Gerar metadados JSON automaticamente para funções personalizadas
 localization_priority: Priority
-ms.openlocfilehash: 67026e7c19580c3420638b4f37e333e50fce1b44
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: 960e1eca1e01aec21967733d802a5fdd48122cbc
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589129"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910298"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Gerar metadados JSON automaticamente para funções personalizadas
 
@@ -19,6 +19,23 @@ Quando uma função personalizada do Excel é gravada em JavaScript ou em TypeSc
 Adicione a marcação `@customfunction` nos comentários de código de uma função JavaScript ou TypeScript para marcá-la como uma função personalizada.
 
 Os tipos de parâmetros da função podem ser fornecidos usando a marcação [@param](#param) em JavaScript ou do [Tipo de função](https://www.typescriptlang.org/docs/handbook/functions.html) em TypeScript. Para mais informações, confira a marcação [@param](#param) e a seção [Tipos](#types).
+
+### <a name="adding-a-description-to-a-function"></a>Adicionando uma descrição a uma função
+
+A descrição é exibida para o usuário como texto de ajuda quando eles precisam de ajuda para entender o que a função personalizada executa. A descrição não requer nenhuma tag específica. Basta digitar uma breve descrição de texto no comentário JSDoc. Em geral, a descrição é colocada no início da seção de comentários do JSDoc, mas funcionará independentemente de onde seja colocada.
+
+Para ver exemplos das descrições de funções internas, abra o Excel, vá para a guia **Fórmulas** e escolha **Inserir função**. Você pode navegar por todas as descrições de funções e também ver suas próprias funções personalizadas listadas.
+
+No exemplo a seguir, a frase "Calcula o volume de uma esfera." é a descrição da função personalizada.
+
+```JS
+/**
+/* Calculates the volume of a sphere
+/* @customfunction VOLUME
+...
+ */
+```
+
 
 ## <a name="jsdoc-tags"></a>Marcações JSDoc
 As seguintes marcações JSDoc possuem suporte em funções personalizadas do Excel:
@@ -39,9 +56,9 @@ Indica que uma função personalizada deseja executar uma ação quando a funç�
 
 O último parâmetro da função deve ser do tipo `CustomFunctions.CancelableInvocation`. A função pode atribuir uma função à propriedade `oncanceled` para denotar a ação a ser executada quando a função é cancelada.
 
-Se o último parâmetro da função for do tipo `CustomFunctions.CancelableInvocation`, será considerado `@cancelable` mesmo se a marcação não estiver presente.
+Se o último parâmetro da função for do tipo `CustomFunctions.CancelableInvocation`, ela será considerada `@cancelable`, mesmo se a tag não estiver presente.
 
-Uma função não pode ter ao mesmo tempo as marcações `@cancelable` e `@streaming`.
+Uma função não pode ter as tags `@cancelable` e `@streaming` ao mesmo tempo.
 
 ---
 ### <a name="customfunction"></a>@customfunction
@@ -57,20 +74,32 @@ Também deve haver uma chamada para `CustomFunctions.associate("id", functionNam
 
 #### <a name="id"></a>id
 
-O id é usado como o identificador invariável da função personalizada armazenada no documento. Ele não deve mudar.
+O `id` é um identificador invariável para a função customizada.
 
-* Se o ID não for fornecido, o nome da função JavaScript/TypeScript será convertido em maiúsculas e os caracteres não permitidos serão removidos.
-* O id deve ser exclusivo, para todas as funções personalizadas.
+* Se `id` não for fornecido, o nome da função JavaScript/TypeScript será convertido em maiúsculas e os caracteres não permitidos serão removidos.
+* O `id` deve ser exclusivo para todas as funções personalizadas.
 * Os caracteres permitidos estão limitados a: A-Z, a-z, 0-9, sublinhados (\_) e ponto (.).
 
 #### <a name="name"></a>nome
 
-Fornece o nome de exibição para a função personalizada.
+Fornece a exibição `name` da função personalizada.
 
-* Se nome não for fornecido, o id também será usado como nome.
+* Se o nome não for fornecido, o id também será usado como nome.
 * Caracteres permitidos: Letras de [caractere Alfabético Unicode](https://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic), números, ponto (.) e sublinhado (\_).
 * Deve começar com uma letra.
 * O comprimento máximo é de 128 caracteres.
+
+### <a name="description"></a>description
+
+Uma descrição não exige nenhuma tag específica. Adicione uma descrição a uma função personalizada acrescentando uma frase para descrever o que a função realiza dentro do comentário JSDoc. Por padrão, qualquer texto sem tags na seção de comentários JSDoc será a descrição da função. A descrição aparece para os usuários no Excel quando eles entram na função. No exemplo a seguir, a frase "Uma função que soma dois números" é a descrição da função personalizada com a propriedade id de `SUM`.
+
+```JS
+/**
+/* @customfunction SUM
+/* A function that sums two numbers
+...
+ */
+```
 
 ---
 ### <a name="helpurl"></a>@helpurl
@@ -143,17 +172,17 @@ Usado para indicar que uma função personalizada é uma função de streaming.
 O último parâmetro deve ser do tipo `CustomFunctions.StreamingInvocation<ResultType>`.
 A função deve retornar `void`.
 
-As funções de streaming não retornam valores diretamente, mas em vez disso devem chamar `setResult(result: ResultType)` usando o último parâmetro.
+As funções de streaming não retornam valores diretamente, mas devem chamar `setResult(result: ResultType)` usando o último parâmetro.
 
 Exceções lançadas por uma função de streaming são ignoradas. `setResult()` pode ser chamado com Erro para indicar um resultado de erro.
 
-Funções de transmissão não podem ser marcadas como [@volatile](#volatile).
+As funções de streaming não podem ser marcadas como [@volatile](#volatile).
 
 ---
 ### <a name="volatile"></a>@volatile
 <a id="volatile"/>
 
-Uma função volátil é aquela cujo resultado não pode ser assumido como sendo o mesmo de um momento para o outro, mesmo que não receba argumentos ou que os argumentos não sejam alterados. O Excel reavalia células que contenham funções voláteis, juntamente com todos os dependentes, sempre que um cálculo é feito. Por esse motivo, confiar demais em funções voláteis pode retardar o tempo de recálculo; portanto, use-as com moderação.
+Uma função volátil é aquela cujo resultado não é o mesmo de um momento para o outro, mesmo que não receba argumentos ou os argumentos não mudem. O Excel reavalia células que contenham funções voláteis, juntamente com todos os dependentes, sempre que um cálculo é feito. Por esse motivo, confiar demais em funções voláteis pode retardar o tempo de recálculo; portanto, use-as com moderação.
 
 Funções de streaming não podem ser voláteis.
 
@@ -175,7 +204,7 @@ Use um tipo de matriz bidimensional para que o parâmetro ou valor de retorno se
 
 Uma função que não seja de streaming pode indicar um erro retornando um tipo de Erro.
 
-Uma função de streaming pode indicar um erro chamando setResult () com um tipo de Erro.
+Uma função de streaming pode indicar um erro chamando `setResult()` com um tipo de erro.
 
 ### <a name="promise"></a>Promessa
 

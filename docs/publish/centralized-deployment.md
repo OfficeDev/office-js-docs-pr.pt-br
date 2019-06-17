@@ -3,12 +3,12 @@ title: Publicar Suplementos do Office usando a Implantação Centralizada por me
 description: ''
 ms.date: 04/16/2019
 localization_priority: Priority
-ms.openlocfilehash: ab308620c71cfb6fb08243973997fbd189b0625f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 5cecd9306bf3357d2f9b99cf01f8863ae3d3fe1f
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451029"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910179"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-office-365-admin-center"></a>Publicar Suplementos do Office usando a Implantação Centralizada por meio do Centro de administração do Office 365
 
@@ -28,7 +28,7 @@ Atualmente, o Centro de administração do Office 365 tem suporte para os seguin
 A Implantação Centralizada é a maneira recomendada para o administrador do Office 365 implantar Suplementos do Office em uma organização, desde que a organização atenda a todos os requisitos para usar a Implantação Centralizada. Confira informações sobre como determinar se sua organização pode usar a Implantação Centralizada em [Determinar se a Implantação Centralizada de suplementos funciona para sua organização do Office 365](/office365/admin/manage/centralized-deployment-of-add-ins).
 
 > [!NOTE]
-> Em um ambiente local sem conexão com o Office 365, ou para implantar Suplementos do SharePoint ou Office que visam o Office 2013, use um [Catálogo de suplementos do SharePoint](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md). Para implantar suplementos COM ou VSTO, use o Windows Installer ou o recurso ClickOnce, como descrito em [Implantando uma solução do Office](/visualstudio/vsto/deploying-an-office-solution).
+> Em um ambiente local sem conexão com o Office 365, ou para implantar suplementos do SharePoint ou do Office destinados ao Office 2013, use um [catálogo de aplicativos do SharePoint](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md). Para implantar suplementos COM/VSTO, use o ClickOnce ou o Windows Installer, conforme descrito em [Implantando uma solução do Office](/visualstudio/vsto/deploying-an-office-solution).
 
 ## <a name="recommended-approach-for-deploying-office-add-ins"></a>Abordagem recomendada para implantar Suplementos do Office
 

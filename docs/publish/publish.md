@@ -3,12 +3,12 @@ title: Implantar e publicar seu suplemento do Office | Microsoft Docs
 description: Você pode usar um dos vários métodos para implantar o suplemento do Office para testar ou distribuir aos usuários.
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: eeaf4b61948952ff7e536f3e1a6b38dc46adb93e
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: ba32e0bbe594b8da8fad0d230b818faf59e64ce6
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32452057"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910151"
 ---
 # <a name="deploy-and-publish-your-office-add-in"></a>Implantar e publicar seu Suplemento do Office
 
@@ -59,9 +59,9 @@ No Centro de administração do Office 365, é mais fácil para o administrador 
 
 Confira mais informações em [Publicar Suplementos do Office usando a Implantação Centralizada por meio do Centro de Administração do Office 365](centralized-deployment.md).
 
-### <a name="sharepoint-catalog-deployment"></a>Implantação de catálogo do SharePoint
+### <a name="sharepoint-app-catalog-deployment"></a>Implantação do catálogo de aplicativos do SharePoint
 
-O catálogo de suplementos do SharePoint é uma coleção de sites especial que você pode criar para hospedar suplementos dos aplicativos Word, Excel e PowerPoint. Como os catálogos do SharePoint não oferecem suporte para os novos recursos de suplemento implementados no nó `VersionOverrides` do manifesto, inclusive comandos do suplemento, recomendamos usar a implantação centralizada por meio do centro de administração, se possível. Por padrão, os comandos do suplemento implantados por meio do catálogo do SharePoint abrem em um painel de tarefas.
+Um catálogo de aplicativos do SharePoint é um conjunto de sites especial que você pode criar para hospedar suplementos do Word, Excel e PowerPoint. Como os catálogos do SharePoint não oferecem suporte a novos recursos de suplementos implementados no nó `VersionOverrides` do manifesto, incluindo comandos de suplementos, recomendamos que você use a Implantação Centralizada por meio do centro de administração, se possível. Comandos de suplemento implantados por meio de um catálogo do SharePoint são abertos em um painel de tarefas por padrão.
 
 Se você está implantando suplementos em um ambiente local, use um catálogo do SharePoint. Para saber mais, confira, [Publicar suplementos de conteúdo e de painel de tarefas em um catálogo do SharePoint](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 

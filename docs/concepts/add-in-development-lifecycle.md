@@ -3,12 +3,12 @@ title: Ciclo de vida de desenvolvimento de suplementos do Office
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 86c384128640d64c47185a290bc224ffe7b59274
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: ec38bb3cfba98153d644431f5e6f23c1d37b0a06
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448361"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910159"
 ---
 # <a name="office-add-ins-development-lifecycle"></a>Ciclo de vida de desenvolvimento de suplementos do Office
 
@@ -80,7 +80,7 @@ Para suplementos do Outlook, instale-os em uma caixa de correio do Exchange e es
 
 ## <a name="7-publish-the-add-in"></a>7. Publique o suplemento.
 
-Você pode enviar o suplemento no AppSource, de onde os clientes podem instalá-lo. Além disso, publique os suplementos de painel de tarefas e de conteúdo em um catálogo de suplementos em uma pasta privada no SharePoint ou em uma pasta compartilhada na rede. Assim é possível implantar um suplemento do Outlook diretamente em um servidor do Exchange de sua organização. Para obter mais detalhes, veja [Publicar seu Suplemento do Office](../publish/publish.md).
+Você pode enviar o suplemento para o AppSource, a partir do qual os clientes podem instalar o suplemento. Além disso, você pode publicar os suplementos de painel de tarefas e de conteúdo em um catálogo de aplicativos no SharePoint ou em uma pasta de rede compartilhada e pode implantar um suplemento do Outlook diretamente em um Exchange Server para a sua organização. Para detalhes, consulte [Publicar seu Suplemento do Office](../publish/publish.md).
 
 
 ## <a name="8-maintain-the-add-in"></a>8. Faça a manutenção do suplemento

@@ -1,15 +1,15 @@
 ---
 title: Visão geral da API JavaScript do Word
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/10/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 19e3b7732fb5372228ea1458c57df5e79b08078a
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 92b66b98776c1ad6b2d824af8bf13b01f2807384
+ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450090"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "34910200"
 ---
 # <a name="word-javascript-api-overview"></a>Visão geral da API JavaScript do Word
 
@@ -28,8 +28,8 @@ A API JavaScript do Word é carregada pelo Office.js. Ela muda a maneira de inte
 
 Você pode obter referência do Office.js nos seguintes locais:
 
-* https://appsforoffice.microsoft.com/lib/1/hosted/office.js: use esse recurso para os suplementos de produção.
-* https://appsforoffice.microsoft.com/lib/beta/hosted/office.js: use esse recurso quando estiver experimentando recursos de visualização.
+- https://appsforoffice.microsoft.com/lib/1/hosted/office.js: use esse recurso para os suplementos de produção.
+- https://appsforoffice.microsoft.com/lib/beta/hosted/office.js: use esse recurso quando estiver experimentando recursos de visualização.
 
 Se estiver usando o [Visual Studio](https://www.visualstudio.com/products/free-developer-offers-vs), você poderá baixar as [Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx) para obter modelos de projeto que incluam o Office.js.  Você pode usar o [nuget para obter o Office.js](https://www.nuget.org/packages/Microsoft.Office.js/).
 
@@ -100,7 +100,6 @@ Os objetos proxy do Word dispõem de métodos para acessar e atualizar o modelo 
 
 O exemplo a seguir mostra como funciona a fila de comandos. Quando o método **context.sync()** é chamado, o comando para carregar o corpo de texto é executado no Word. Em seguida, ocorre o comando para inserir o texto no corpo do Word. Os resultados são retornados ao objeto proxy do corpo. O valor da propriedade **body.text**, na API JavaScript do Word, é o valor do corpo do documento do Word, <u>antes</u> da inserção do texto no documento do Word.
 
-
 ```js
 // Run a batch operation against the Word JavaScript API.
 Word.run(function (context) {
@@ -123,10 +122,6 @@ Word.run(function (context) {
 })
 ```
 
-## <a name="word-javascript-api-open-specifications"></a>Especificações abertas para a API JavaScript do Word
-
-À medida que criamos e desenvolvemos novas APIs para suplementos do Word, disponibilizamo-as em nossa página [Especificações abertas da API](../openspec.md) a fim de obter os seus comentários. Descubra que novos recursos estão no pipeline para as APIs JavaScript do Word e forneça comentários sobre nossas especificações de design.
-
 ## <a name="word-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Word
 
 Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office oferece suporte para as APIs necessárias para um suplemento. Para saber mais sobre conjuntos de requisitos da API JavaScript do Word, consulte o artigo [Conjuntos de requisitos da API JavaScript do Word](../requirement-sets/word-api-requirement-sets.md).
@@ -137,6 +132,7 @@ Para saber mais sobre a API JavaScript do Word, consulte a [Documentação de re
 
 ## <a name="see-also"></a>Confira também
 
-* [Visão geral dos suplementos do Word](/office/dev/add-ins/word/word-add-ins-programming-overview)
-* [Visão geral da plataforma Suplementos do Office](/office/dev/add-ins/overview/office-add-ins)
-* [Exemplos de suplementos do Word no GitHub](https://github.com/OfficeDev?utf8=%E2%9C%93&q=Word)
+- [Visão geral dos suplementos do Word](/office/dev/add-ins/word/word-add-ins-programming-overview)
+- [Visão geral da plataforma Suplementos do Office](/office/dev/add-ins/overview/office-add-ins)
+- [Exemplos de suplementos do Word no GitHub](https://github.com/OfficeDev?utf8=%E2%9C%93&q=Word)
+- [Especificações abertas da API](../openspec/openspec.md)
