@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos da API JavaScript do Word
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/11/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 0f9d17669a8000f5d8d9f0b2d1da04eb0175315c
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: be2c9834fbf3ceabcbbca6f2378b4356095ab387
+ms.sourcegitcommit: e112a9b29376b1f574ee13b01c818131b2c7889d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952231"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "34997390"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Word
 
@@ -19,11 +19,12 @@ Os suplementos do Word são executados em várias versões do Office, incluindo 
 
 > [!NOTE]
 > Para os conjuntos de requisitos marcados como Beta, use a versão especificada (ou posterior) do software do Office e a biblioteca Beta da CDN:https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-> 
+>
 > Entradas não listadas como Beta estão geralmente disponíveis, e você pode continuar a usar a biblioteca Produção da CDN:https://appsforoffice.microsoft.com/lib/1/hosted/office.js
 
 |  Conjunto de requisitos  |   Office no Windows\*<br>(conectado ao Office 365)  |  Office para iPad<br>(conectado ao Office 365)  |  Office para Mac<br>(conectado ao Office 365)  | Office Online  | Servidor do Office Online  |
 |:-----|-----|:-----|:-----|:-----|:-----|
+| [Visualização](/javascript/api/word)  | Use a versão mais recente do Office para testar as APIs de visualização (talvez seja exigido ser membro do [programa Office Insider](https://products.office.com/office-insider)) |
 | WordApi 1.3 | Versão 1612 (Compilação 7668.1000) ou posterior| Março de 2017, 2.22 ou posterior | Março de 2017, 15.32 ou posterior| Março de 2017 ||
 | WordApi 1.2  | Atualização de dezembro de 2015, versão 1601 (build 6568.1000) ou posterior | Janeiro de 2016, 1.18 ou posterior | Janeiro de 2016, 15.19 ou posterior| Setembro de 2016 | |
 | WordApi 1.1  | Versão 1509 (build 4266.1001) ou posterior| Janeiro de 2016, 1.18 ou posterior | Janeiro de 2016, 15.19 ou posterior| Setembro de 2016 | |
@@ -40,16 +41,86 @@ Para saber mais sobre versões, números de build e sobre o Servidor do Office O
   [Onde você pode encontrar o número de versão e de build de um aplicativo cliente do Office 365](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [Visão geral sobre o Servidor do Office Online](/officeonlineserver/office-online-server-overview)
 
-## <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API comum do Office
+## <a name="word-javascript-preview-apis"></a>APIs JavaScript de visualização do Word
 
-Para saber mais sobre conjuntos de requisitos comuns da API, confira [Conjuntos de requisitos comuns da API do Office](office-add-in-requirement-sets.md).
+As APIs JavaScript do novo Word são primeiramente introduzidas em "visualização" e, posteriormente, tornam-se parte de um conjunto específico de requisitos numerados, depois de realizados testes suficientes e ter sido adquirido feedback do usuário.
 
-## <a name="whats-new-in-word-javascript-api-13"></a>Quais são as novidades na API JavaScript do Word 1.3 
+> [!NOTE]
+> As APIs de visualização estão sujeitas a alterações e não se destinam ao uso em um ambiente de produção. Recomendamos que você experimente apenas em ambiente de teste e desenvolvimento. Não use APIs de visualização em um ambiente de produção ou em documentos essenciais aos negócios.
+>
+> Para usar as APIs de visualização, você deve referenciar a biblioteca **beta** no CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) e também pode ser necessário ingressar no programa Office Insider para obter uma compilação recente do Office.
 
-A seguir estão as novas adições às APIs JavaScript do Word no conjunto de requisitos 1.3. 
+A seguir, uma lista completa de APIs atualmente em visualização.
 
-|Objeto| Novidades| Descrição|Conjunto de requisitos| 
-|:-----|-----|:----|:----| 
+| Classe | Campos | Descrição |
+|:---|:---|:---|
+|[ContentControl](/javascript/api/word/word.contentcontrol)|[onDataChanged](/javascript/api/word/word.contentcontrol#ondatachanged)|Ocorre quando os dados dentro do controle de conteúdo são alterados. Para obter o novo texto, carregue esse controle de conteúdo no manipulador. Para obter o texto antigo, não o carregue.|
+||[onDeleted](/javascript/api/word/word.contentcontrol#ondeleted)|Ocorre quando o controle de conteúdo é excluído. Não carregue este controle de conteúdo no manipulador, caso contrário, você não poderá obter suas propriedades originais.|
+||[onSelectionChanged](/javascript/api/word/word.contentcontrol#onselectionchanged)|Ocorre quando a seleção dentro do controle de conteúdo é alterada.|
+|[ContentControlEventArgs](/javascript/api/word/word.contentcontroleventargs)|[contentControl](/javascript/api/word/word.contentcontroleventargs#contentcontrol)|O objeto que levantou o evento. Carregue este objeto para obter suas propriedades.|
+||[eventType](/javascript/api/word/word.contentcontroleventargs#eventtype)|O tipo de evento. Confira Word.EventType para obter detalhes.|
+|[CustomXmlPart](/javascript/api/word/word.customxmlpart)|[delete()](/javascript/api/word/word.customxmlpart#delete--)|Exclui a parte XML personalizada.|
+||[deleteAttribute(xpath: string, namespaceMappings: any, name: string)](/javascript/api/word/word.customxmlpart#deleteattribute-xpath--namespacemappings--name-)|Exclui um atributo com o nome fornecido do elemento identificado por xpath.|
+||[deleteElement(xpath: string, namespaceMappings: any)](/javascript/api/word/word.customxmlpart#deleteelement-xpath--namespacemappings-)|Exclui o elemento identificado por xpath.|
+||[getXml()](/javascript/api/word/word.customxmlpart#getxml--)|Obtém o conteúdo XML completo da parte XML customizada.|
+||[insertAttribute(xpath: string, namespaceMappings: any, name: string, value: string)](/javascript/api/word/word.customxmlpart#insertattribute-xpath--namespacemappings--name--value-)|Insere um atributo com o nome e o valor fornecidos para o elemento identificado por xpath.|
+||[insertElement(xpath: string, xml: string, namespaceMappings: any, index?: number)](/javascript/api/word/word.customxmlpart#insertelement-xpath--xml--namespacemappings--index-)|Insere o XML fornecido no elemento pai identificado por xpath no índice de posição filho.|
+||[query(xpath: string, namespaceMappings: any)](/javascript/api/word/word.customxmlpart#query-xpath--namespacemappings-)|Consulta o conteúdo XML da parte XML customizada.|
+||[id](/javascript/api/word/word.customxmlpart#id)|Obtém o ID da parte XML personalizada. Somente leitura.|
+||[namespaceUri](/javascript/api/word/word.customxmlpart#namespaceuri)|Obtém o URI do namespace da parte XML personalizada. Somente leitura.|
+||[setXml(xml: string)](/javascript/api/word/word.customxmlpart#setxml-xml-)|Define o conteúdo XML completo da parte XML personalizada.|
+||[updateAttribute(xpath: string, namespaceMappings: any, name: string, value: string)](/javascript/api/word/word.customxmlpart#updateattribute-xpath--namespacemappings--name--value-)|Atualiza o valor de um atributo com o nome fornecido do elemento identificado por xpath.|
+||[updateElement(xpath: string, xml: string, namespaceMappings: any)](/javascript/api/word/word.customxmlpart#updateelement-xpath--xml--namespacemappings-)|Atualiza o XML do elemento identificado pelo xpath.|
+|[CustomXmlPartCollection](/javascript/api/word/word.customxmlpartcollection)|[add(xml: string)](/javascript/api/word/word.customxmlpartcollection#add-xml-)|Adiciona uma nova parte XML personalizada ao documento.|
+||[getByNamespace(namespaceUri: string)](/javascript/api/word/word.customxmlpartcollection#getbynamespace-namespaceuri-)|Obtém uma nova coleção com escopo de partes XML personalizadas cujos namespaces correspondem ao namespace especificado.|
+||[getCount()](/javascript/api/word/word.customxmlpartcollection#getcount--)|Obtém o número de itens na coleção.|
+||[getItem(id: string)](/javascript/api/word/word.customxmlpartcollection#getitem-id-)|Obtém uma parte XML personalizada com base em sua ID. Somente leitura.|
+||[getItemOrNullObject(id: string)](/javascript/api/word/word.customxmlpartcollection#getitemornullobject-id-)|Obtém uma parte XML personalizada com base em sua ID. Retorna um objeto nulo se o CustomXmlPart não existir.|
+||[items](/javascript/api/word/word.customxmlpartcollection#items)|Obtém os itens filhos carregados nesta coleção.|
+|[CustomXmlPartScopedCollection](/javascript/api/word/word.customxmlpartscopedcollection)|[getCount()](/javascript/api/word/word.customxmlpartscopedcollection#getcount--)|Obtém o número de itens na coleção.|
+||[getItem(id: string)](/javascript/api/word/word.customxmlpartscopedcollection#getitem-id-)|Obtém uma parte XML personalizada com base em sua ID. Somente leitura.|
+||[getItemOrNullObject(id: string)](/javascript/api/word/word.customxmlpartscopedcollection#getitemornullobject-id-)|Obtém uma parte XML personalizada com base em sua ID. Retorna um objeto nulo se o CustomXmlPart não existir na coleção.|
+||[getOnlyItem()](/javascript/api/word/word.customxmlpartscopedcollection#getonlyitem--)|Se o conjunto contiver exatamente um item, esse método o retornará. Caso contrário, esse método produz um erro.|
+||[getOnlyItemOrNullObject()](/javascript/api/word/word.customxmlpartscopedcollection#getonlyitemornullobject--)|Se o conjunto contiver exatamente um item, esse método o retornará. Caso contrário, esse método retornará um objeto nulo.|
+||[items](/javascript/api/word/word.customxmlpartscopedcollection#items)|Obtém os itens filhos carregados nesta coleção.|
+|[Document](/javascript/api/word/word.document)|[deleteBookmark(name: string)](/javascript/api/word/word.document#deletebookmark-name-)|Exclui um indicador, se existir, do documento.|
+||[getBookmarkRange(name: string)](/javascript/api/word/word.document#getbookmarkrange-name-)|Obtém o intervalo de um indicador. Gera se o indicador não existe.|
+||[getBookmarkRangeOrNullObject(name: string)](/javascript/api/word/word.document#getbookmarkrangeornullobject-name-)|Obtém o intervalo de um indicador. Retorna um objeto nulo se o indicador não existir.|
+||[customXmlParts](/javascript/api/word/word.document#customxmlparts)|Obtém as partes XML personalizadas no documento. Somente leitura.|
+||[onContentControlAdded](/javascript/api/word/word.document#oncontentcontroladded)|Ocorre quando um controle de conteúdo é adicionado. Execute o context.sync () no manipulador para obter as propriedades do novo controle de conteúdo.|
+||[configurações](/javascript/api/word/word.document#settings)|Obtém as configurações dos suplementos no documento. Somente leitura.|
+|[DocumentCreated](/javascript/api/word/word.documentcreated)|[deleteBookmark(name: string)](/javascript/api/word/word.documentcreated#deletebookmark-name-)|Exclui um indicador, se existir, do documento.|
+||[getBookmarkRange(name: string)](/javascript/api/word/word.documentcreated#getbookmarkrange-name-)|Obtém o intervalo de um indicador. Gera se o indicador não existe.|
+||[getBookmarkRangeOrNullObject(name: string)](/javascript/api/word/word.documentcreated#getbookmarkrangeornullobject-name-)|Obtém o intervalo de um indicador. Retorna um objeto nulo se o indicador não existir.|
+||[customXmlParts](/javascript/api/word/word.documentcreated#customxmlparts)|Obtém as partes XML personalizadas no documento. Somente leitura.|
+||[configurações](/javascript/api/word/word.documentcreated#settings)|Obtém as configurações dos suplementos no documento. Somente leitura.|
+|[InlinePicture](/javascript/api/word/word.inlinepicture)|[imageFormat](/javascript/api/word/word.inlinepicture#imageformat)|Obtém o formato da imagem embutida. Somente leitura.|
+|[List](/javascript/api/word/word.list)|[getLevelFont(level: number)](/javascript/api/word/word.list#getlevelfont-level-)|Obtém a fonte do marcador, número ou imagem no nível especificado na lista.|
+||[getLevelPicture(level: number)](/javascript/api/word/word.list#getlevelpicture-level-)|Obtém a representação de sequência codificada na base64 da figura no nível especificado na lista.|
+||[resetLevelFont(level: number, resetFontName?: boolean)](/javascript/api/word/word.list#resetlevelfont-level--resetfontname-)|Redefine a fonte do marcador, número ou imagem no nível especificado na lista.|
+||[setLevelPicture(level: number, base64EncodedImage?: string)](/javascript/api/word/word.list#setlevelpicture-level--base64encodedimage-)|Define a imagem no nível especificado na lista.|
+|[Intervalo](/javascript/api/word/word.range)|[getBookmarks(includeHidden?: boolean, includeAdjacent?: boolean)](/javascript/api/word/word.range#getbookmarks-includehidden--includeadjacent-)|Obtém os nomes de todos os indicadores no intervalo ou sobrepondo o intervalo. Um indicador é oculto se o nome começar com o caractere de sublinhado.|
+||[insertBookmark(name: string)](/javascript/api/word/word.range#insertbookmark-name-)|Insere um indicador no intervalo. Se um indicador com o mesmo nome existir em algum lugar, ele será excluído primeiro.|
+|[Configuração](/javascript/api/word/word.setting)|[delete()](/javascript/api/word/word.setting#delete--)|Exclui a configuração.|
+||[key](/javascript/api/word/word.setting#key)|Obtém a chave da configuração. Somente leitura.|
+||[value](/javascript/api/word/word.setting#value)|Obtém ou define o valor da configuração.|
+|[SettingCollection](/javascript/api/word/word.settingcollection)|[add(key: string, value: any)](/javascript/api/word/word.settingcollection#add-key--value-)|Cria uma nova configuração ou define uma configuração existente.|
+||[deleteAll()](/javascript/api/word/word.settingcollection#deleteall--)|Exclui todas as configurações neste suplemento.|
+||[getCount()](/javascript/api/word/word.settingcollection#getcount--)|Obtém a contagem de configurações.|
+||[getItem(key: string)](/javascript/api/word/word.settingcollection#getitem-key-)|Obtém um objeto de configuração por sua chave, que diferencia maiúsculas de minúsculas. Gera se a configuração não existe.|
+||[getItemOrNullObject(key: string)](/javascript/api/word/word.settingcollection#getitemornullobject-key-)|Obtém um objeto de configuração por sua chave, que diferencia maiúsculas de minúsculas. Retorna um objeto nulo se a configuração não existe.|
+||[items](/javascript/api/word/word.settingcollection#items)|Obtém os itens filhos carregados nesta coleção.|
+|[Table](/javascript/api/word/word.table)|[mergeCells(topRow: number, firstCell: number, bottomRow: number, lastCell: number)](/javascript/api/word/word.table#mergecells-toprow--firstcell--bottomrow--lastcell-)|Mescla as células delimitadas inclusivamente por uma primeira e última célula.|
+|[TableCell](/javascript/api/word/word.tablecell)|[split(rowCount: number, columnCount: number)](/javascript/api/word/word.tablecell#split-rowcount--columncount-)|Divide a célula no número especificado de linhas e colunas.|
+|[TableRow](/javascript/api/word/word.tablerow)|[insertContentControl()](/javascript/api/word/word.tablerow#insertcontentcontrol--)|Insere um controle de conteúdo na linha.|
+||[merge()](/javascript/api/word/word.tablerow#merge--)|Mescla a linha em uma única célula.|
+
+## <a name="whats-new-in-word-javascript-api-13"></a>Quais são as novidades na API JavaScript do Word 1.3
+
+A seguir estão as novas adições às APIs JavaScript do Word no conjunto de requisitos 1.3.
+
+|Objeto| Novidades| Descrição|Conjunto de requisitos|
+|:-----|-----|:----|:----|
 |[application](/javascript/api/word/word.application)|_Método_ > createDocument(base64File: string) | Cria um novo documento usando um arquivo .docx codificado em base64. Somente leitura.|1.3|
 |[body](/javascript/api/word/word.body)|_Relação_ > lists|Obtém a coleção de listas de objetos no corpo. Somente leitura.|1.3|
 |[body](/javascript/api/word/word.body)|_Relação_ > parentBody|Obtém o corpo pai do corpo. Por exemplo, o corpo pai do corpo de uma célula de tabela poderia ser um cabeçalho. Somente leitura.|1.3|

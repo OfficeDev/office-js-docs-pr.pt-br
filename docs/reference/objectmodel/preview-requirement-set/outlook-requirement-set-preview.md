@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 description: ''
-ms.date: 06/03/2019
+ms.date: 06/14/2019
 localization_priority: Priority
-ms.openlocfilehash: 6d7dceba80929c2abace9daec859302c43913f98
-ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
+ms.openlocfilehash: 346750557e68508f2a5707433dea122052bc2016
+ms.sourcegitcommit: e112a9b29376b1f574ee13b01c818131b2c7889d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "34706348"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "34997369"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 
@@ -75,7 +75,7 @@ Adicionado `AttachmentsChanged` evento `Item`.
 
 Adicionado um novo parâmetro opcional `options`, que é um dicionário com um valor válido `allowEvent`. Esse valor é usado para cancelar a execução de um evento.
 
-**Disponível em**: Outlook na web (clássico)
+**Disponível em**: Outlook na Web (classic)
 
 ---
 
@@ -204,7 +204,7 @@ Adicionado `EnhancedLocationsChanged` evento `Item`.
 
 Adicionada uma nova função que retorna os dados inicialização que são transmitidos quando o suplemento é [ativado por uma mensagem acionável](/outlook/actionable-messages/invoke-add-in-from-actionable-message).
 
-**Disponível em**: Outlook no Windows (conectado ao Office 365), Outlook na Web (clássico)
+**Disponível em:** Outlook no Windows (conectado ao Office 365), Outlook na Web (clássico)
 
 ---
 
@@ -246,7 +246,7 @@ Adicionado `OfficeThemeChanged` evento `Mailbox`.
 
 Foi adicionado acesso ao `getAccessTokenAsync`, que permite que os suplementos [obtenham um token de acesso](/outlook/add-ins/authenticate-a-user-with-an-sso-token) da API do Microsoft Graph.
 
-**Disponível em**: Outlook no Windows (conectado ao Office 365), Outlook para Mac (conectado ao Office 365), Outlook na Web (Outlook.com e conectado ao Office 365), Outlook na Web (clássico)
+**Disponível em:** Outlook no Windows (conectado ao Office 365), Outlook para Mac (conectado ao Office 365), Outlook na Web (novo), Outlook na Web (clássico)
 
 ## <a name="see-also"></a>Confira também
 

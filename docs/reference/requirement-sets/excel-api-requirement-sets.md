@@ -4,12 +4,12 @@ description: ''
 ms.date: 05/08/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: aebb85250743255cbc9c139d59e7e2fa5ef4e442
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 9123714dff894d01475563b4d960c1fad682789a
+ms.sourcegitcommit: e112a9b29376b1f574ee13b01c818131b2c7889d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952359"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "34997411"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Excel
 
@@ -78,30 +78,28 @@ A seguir, uma lista completa de APIs atualmente em visualização.
 |:---|:---|:---|
 |[Comment](/javascript/api/excel/excel.comment)|[content](/javascript/api/excel/excel.comment#content)|Obtém ou define o conteúdo do comentário.|
 ||[delete()](/javascript/api/excel/excel.comment#delete--)|Exclui o thread de comentários. |
-||[getLocation()](/javascript/api/excel/excel.comment#getlocation--)|Obtem o local do comentário.|
+||[getLocation()](/javascript/api/excel/excel.comment#getlocation--)|Obtém a célula onde esse comentário está localizado.|
 ||[authorEmail](/javascript/api/excel/excel.comment#authoremail)|Obtém o email do autor do comentário.|
 ||[authorName](/javascript/api/excel/excel.comment#authorname)|Obtém o nome do autor do comentário.|
 ||[creationDate](/javascript/api/excel/excel.comment#creationdate)|Obtém o horário de criação do comentário. Retorna null se o comentário foi convertido de uma nota, pois o comentário não possui uma data de criação.|
 ||[id](/javascript/api/excel/excel.comment#id)|Representa o identificador de comentário. Somente leitura.|
 ||[replies](/javascript/api/excel/excel.comment#replies)|Representa uma coleção de objetos de resposta associados ao comentário. Somente leitura.|
-|[CommentCollection](/javascript/api/excel/excel.commentcollection)|[add(content: string, cellAddress: Range \| string, contentType?: "Plain")](/javascript/api/excel/excel.commentcollection#add-content--celladdress--contenttype-)|Cria um novo comentário com o conteúdo fornecido na célula especificada. Um erro de argumento inválido é lançado se o intervalo fornecido for maior que uma célula.|
-||[add(content: string, cellAddress: Range \| string, contentType?: Excel.ContentType)](/javascript/api/excel/excel.commentcollection#add-content--celladdress--contenttype-)|Cria um novo comentário com o conteúdo fornecido na célula especificada. Um erro de argumento inválido é lançado se o intervalo fornecido for maior que uma célula.|
+|[CommentCollection](/javascript/api/excel/excel.commentcollection)|[add(content: string, cellAddress: Range \| string, contentType?: Excel.ContentType)](/javascript/api/excel/excel.commentcollection#add-content--celladdress--contenttype-)|Cria um novo comentário com o conteúdo fornecido na célula especificada. Um erro `InvalidArgument` será lançado se o intervalo fornecido for maior que uma célula.|
 ||[getCount()](/javascript/api/excel/excel.commentcollection#getcount--)|Obtém o número de comentários na coleção.|
 ||[getItem(commentId: string)](/javascript/api/excel/excel.commentcollection#getitem-commentid-)|Obtém um comentário da coleção com base em seu ID. Somente leitura.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.commentcollection#getitemat-index-)|Obtém um comentário da coleção com base em sua posição.|
 ||[getItemByCell(cellAddress: Range \| string)](/javascript/api/excel/excel.commentcollection#getitembycell-celladdress-)|Obtém o comentário da célula especificada.|
 ||[getItemByReplyId(replyId: string)](/javascript/api/excel/excel.commentcollection#getitembyreplyid-replyid-)|Obtém um comentário da coleção com o ID de resposta correspondente.|
 ||[items](/javascript/api/excel/excel.commentcollection#items)|Obtém os itens filhos carregados nesta coleção.|
-|[CommentReply](/javascript/api/excel/excel.commentreply)|[content](/javascript/api/excel/excel.commentreply#content)|Obtém ou define o conteúdo da resposta do comentário.|
+|[CommentReply](/javascript/api/excel/excel.commentreply)|[content](/javascript/api/excel/excel.commentreply#content)|Obtém ou define o conteúdo do comentário.|
 ||[delete()](/javascript/api/excel/excel.commentreply#delete--)|Exclui a resposta do comentário. |
-||[getLocation()](/javascript/api/excel/excel.commentreply#getlocation--)|Obtém o local da resposta do comentário.|
+||[getLocation()](/javascript/api/excel/excel.commentreply#getlocation--)|Obtém a célula onde essa resposta de comentário está localizada.|
 ||[getParentComment()](/javascript/api/excel/excel.commentreply#getparentcomment--)|Obtém o comentário pai dessa resposta.|
 ||[authorEmail](/javascript/api/excel/excel.commentreply#authoremail)|Obtém o email do autor da resposta do comentário.|
 ||[authorName](/javascript/api/excel/excel.commentreply#authorname)|Obtém o nome do autor da resposta do comentário.|
 ||[creationDate](/javascript/api/excel/excel.commentreply#creationdate)|Obtém o horário de criação da resposta do comentário.|
 ||[id](/javascript/api/excel/excel.commentreply#id)|Representa o identificador de resposta do comentário. Somente leitura.|
-|[CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection)|[add(content: string, contentType?: "Plain")](/javascript/api/excel/excel.commentreplycollection#add-content--contenttype-)|Cria uma resposta de comentário para o comentário.|
-||[add(content: string, contentType?: Excel.ContentType)](/javascript/api/excel/excel.commentreplycollection#add-content--contenttype-)|Cria uma resposta de comentário para o comentário.|
+|[CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection)|[add(content: string, contentType?: Excel.ContentType)](/javascript/api/excel/excel.commentreplycollection#add-content--contenttype-)|Cria uma resposta de comentário para o comentário.|
 ||[getCount()](/javascript/api/excel/excel.commentreplycollection#getcount--)|Obtém o número de respostas de comentários na coleção.|
 ||[getItem(commentReplyId: string)](/javascript/api/excel/excel.commentreplycollection#getitem-commentreplyid-)|Retorna uma resposta de comentário identificada pela respectiva ID. Somente leitura.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.commentreplycollection#getitemat-index-)|Obtém uma resposta de comentário com base em sua posição na coleção.|
@@ -204,8 +202,7 @@ A seguir, uma lista completa de APIs atualmente em visualização.
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.timelinestylecollection#getitemornullobject-name-)|Obtém uma TimelineStyle por nome. Se o TimelineStyle não existir, retornará um objeto null.|
 ||[items](/javascript/api/excel/excel.timelinestylecollection#items)|Obtém os itens filhos carregados nesta coleção.|
 ||[setDefault(newDefaultStyle: TimelineStyle \| string)](/javascript/api/excel/excel.timelinestylecollection#setdefault-newdefaultstyle-)|Define o padrão TimelineStyle para uso no escopo do objeto pai.|
-|[Workbook](/javascript/api/excel/excel.workbook)|[close(closeBehavior?: "Save" \| "SkipSave")](/javascript/api/excel/excel.workbook#close-closebehavior-)|Fechar a pasta de trabalho atual.|
-||[close(closeBehavior?: Excel.CloseBehavior)](/javascript/api/excel/excel.workbook#close-closebehavior-)|Fechar a pasta de trabalho atual.|
+|[Workbook](/javascript/api/excel/excel.workbook)|[close(closeBehavior?: Excel.CloseBehavior)](/javascript/api/excel/excel.workbook#close-closebehavior-)|Fechar a pasta de trabalho atual.|
 ||[getActiveSlicer()](/javascript/api/excel/excel.workbook#getactiveslicer--)|Obtém a segmentação de dados ativa no momento na pasta de trabalho. Se não houver segmentação de dados ativa, uma exceção será lançada.|
 ||[getActiveSlicerOrNullObject()](/javascript/api/excel/excel.workbook#getactiveslicerornullobject--)|Obtém a segmentação de dados ativa no momento na pasta de trabalho. Se não houver segmentação de dados ativa, um objeto nulo será retornado.|
 ||[comments](/javascript/api/excel/excel.workbook#comments)|Representa uma coleção de comentários associados à pasta de trabalho. Somente leitura.|
@@ -214,7 +211,6 @@ A seguir, uma lista completa de APIs atualmente em visualização.
 ||[slicers](/javascript/api/excel/excel.workbook#slicers)|Representa uma coleção de segmentações de dados associados à pasta de trabalho. Somente leitura.|
 ||[tableStyles](/javascript/api/excel/excel.workbook#tablestyles)|Representa uma coleção de TableStyles associadas à pasta de trabalho. Somente leitura.|
 ||[timelineStyles](/javascript/api/excel/excel.workbook#timelinestyles)|Representa uma coleção de TimelineStyles associados à pasta de trabalho. Somente leitura.|
-||[save(saveBehavior?: "Save" \| "Prompt")](/javascript/api/excel/excel.workbook#save-savebehavior-)|Salvar a pasta de trabalho atual.|
 ||[save(saveBehavior?: Excel.SaveBehavior)](/javascript/api/excel/excel.workbook#save-savebehavior-)|Salvar a pasta de trabalho atual.|
 ||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904datesystem)|True se a pasta de trabalho usar o sistema de dados 1904.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[comments](/javascript/api/excel/excel.worksheet#comments)|Retorna um conjunto de todos os objetos Comments na planilha. Somente leitura.|
@@ -223,8 +219,7 @@ A seguir, uma lista completa de APIs atualmente em visualização.
 ||[onRowSorted](/javascript/api/excel/excel.worksheet#onrowsorted)|Ocorre durante a classificação de linhas.|
 ||[onSingleClicked](/javascript/api/excel/excel.worksheet#onsingleclicked)|Ocorre quando a operação clicada/pressionada à esquerda ocorre na planilha.|
 ||[slicers](/javascript/api/excel/excel.worksheet#slicers)|Retorna uma coleção de segmentações de dados que fazem parte da planilha. Somente leitura.|
-|[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: "None" \| "Before" \| "After" \| "Beginning" \| "End", relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addfrombase64-base64file--sheetnamestoinsert--positiontype--relativeto-)|Insere as planilhas especificadas de uma pasta de trabalho na pasta de trabalho atual.|
-||[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addfrombase64-base64file--sheetnamestoinsert--positiontype--relativeto-)|Insere as planilhas especificadas de uma pasta de trabalho na pasta de trabalho atual.|
+|[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addfrombase64-base64file--sheetnamestoinsert--positiontype--relativeto-)|Insere as planilhas especificadas de uma pasta de trabalho na pasta de trabalho atual.|
 ||[onColumnSorted](/javascript/api/excel/excel.worksheetcollection#oncolumnsorted)|Ocorre durante a classificação de colunas.|
 ||[onFiltered](/javascript/api/excel/excel.worksheetcollection#onfiltered)|Ocorre quando filtro de uma planilha é aplicado na pasta de trabalho.|
 ||[onRowSorted](/javascript/api/excel/excel.worksheetcollection#onrowsorted)|Ocorre durante a classificação de linhas.|
