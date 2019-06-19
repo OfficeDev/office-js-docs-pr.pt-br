@@ -1,15 +1,15 @@
 ---
-ms.date: 05/30/2019
+ms.date: 06/17/2019
 description: Desenvolvimento de funções personalizadas no guia de início rápido do Excel.
 title: Início rápido de funções personalizadas
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 4bf0d6a5bf020ee4196ce89d763fa994b3fd489c
-ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
+ms.openlocfilehash: f172139f3aafb374eec3c1350b127ed3194d00e0
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "34706039"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059927"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Introdução ao desenvolvimento de funções personalizadas do Excel
 
@@ -19,7 +19,11 @@ Com funções personalizadas, os desenvolvedores agora podem adicionar novas fun
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel no Windows (versão 1810 ou posterior) ou Excel online
+* Excel no Windows (versão 1904 ou posterior, conectada à assinatura do Office 365) ou Excel na Web
+* As funções personalizadas do Excel têm suporte no Office no Mac (conectado à assinatura do Office 365) e uma atualização para este tutorial está em breve.
+
+>[!NOTE]
+>As funções personalizadas do Excel não são suportadas no Office 2019 (compra única).
 
 ## <a name="build-your-first-custom-functions-project"></a>Criar seu primeiro projeto de funções personalizadas
 

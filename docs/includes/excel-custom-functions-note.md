@@ -1,3 +1,2 @@
 > [!IMPORTANT]
-> O recurso de funções personalizadas está sendo liberado para produção! Descubra as atualizações mais recentes para as funções personalizadas [nesta postagem de blog](https://developer.microsoft.com/en-us/office/blogs/office-extensibility-build-2019/).
-
+> Observe que as funções personalizadas do Excel estão disponíveis no Office no Windows (versão 1904 ou posterior, conectadas à assinatura do Office 365), Office no Mac (versão 16,24 ou posterior, conectada à assinatura do Office 365) e Office na Web. As funções personalizadas do Excel não são suportadas no Office 2019 (compra única).

@@ -1,14 +1,14 @@
 ---
 title: Torne o seu suplemento do Office compatível com um suplemento COM existente
 description: Habilitar a compatibilidade entre o suplemento do Office e o suplemento COM equivalente
-ms.date: 06/13/2019
+ms.date: 06/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 1dd6de5e07d835cc017f95cd1a992a5f5d188ef1
-ms.sourcegitcommit: ee5b4935b5ee1db567a13627b2f87471ee8b8165
+ms.openlocfilehash: a18adb9841a9580d77c5110a0346f365e38e3746
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "34933755"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059717"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in-preview"></a>Tornar o suplemento do Office compatível com um suplemento de COM existente (visualização)
 
@@ -23,18 +23,17 @@ Você pode configurar seu suplemento do Office para que, quando o suplemento COM
 
 Para habilitar a compatibilidade entre o suplemento do Office e o suplemento de COM, identifique o suplemento COM equivalente no [manifesto](add-in-manifests.md) do suplemento do Office. O Office no Windows usará o suplemento COM em vez do suplemento do Office, se eles estiverem instalados.
 
-O exemplo a seguir mostra a parte do manifesto que especifica um suplemento de COM como um suplemento equivalente. O valor do `ProgID` elemento identifica o suplemento de com.
+O exemplo a seguir mostra a parte do manifesto que especifica um suplemento de COM como um suplemento equivalente. O valor do `ProgId` elemento identifica o suplemento de com e o `EquivalentAddins` elemento deve ser posicionado imediatamente antes da marca de `VersionOverrides` fechamento.
 
 ```xml
 <VersionOverrides>
   ...
   <EquivalentAddins>
     <EquivalentAddin>
-      <ProgID>ContosoCOMAddin</ProgID>
+      <ProgId>ContosoCOMAddin</ProgId>
       <Type>COM</Type>
     </EquivalentAddin>
   <EquivalentAddins>
-  ...
 </VersionOverrides>
 ```
 

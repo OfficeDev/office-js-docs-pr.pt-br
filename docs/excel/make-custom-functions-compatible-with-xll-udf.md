@@ -1,14 +1,14 @@
 ---
 title: Estender funções personalizadas com funções definidas pelo usuário XLL
 description: Habilitar a compatibilidade com as funções definidas pelo usuário do Excel XLL que possuem funcionalidade equivalente às suas funções personalizadas (visualização)
-ms.date: 05/08/2019
+ms.date: 06/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 3e1782c5df227d3e173f4291ba88f2057200b1c5
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 8d476ecf777561b79b8bf9c5cf1e4712d7869d0e
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33951883"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059689"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions-preview"></a>Estender funções personalizadas com funções definidas pelo usuário XLL (visualização)
 
@@ -22,23 +22,22 @@ Para habilitar a compatibilidade com um XLL existente, identifique o XLL equival
 
 Para definir o XLL equivalente para suas funções personalizadas, especifique o `FileName` do XLL. Quando o usuário abre uma pasta de trabalho com funções do XLL, o Excel converte as funções em funções compatíveis. Em seguida, a pasta de trabalho usa o XLL quando aberto no Excel no Windows, e ele usará as funções personalizadas do seu suplemento do Excel quando ele for aberto online ou no macOS.
 
-O exemplo a seguir mostra como especificar um suplemento de COM e um XLL como equivalente. Em geral, você especifica tanto tanto quanto à integridade este exemplo mostra tanto no contexto. Eles são identificados por seus `ProgID` e `FileName` , respectivamente. Para obter mais informações sobre a compatibilidade do suplemento COM, consulte [tornar o suplemento do Excel compatível com um suplemento de com existente](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
+O exemplo a seguir mostra como especificar um suplemento de COM e um XLL como equivalente. Em geral, você especifica tanto tanto quanto à integridade este exemplo mostra tanto no contexto. Eles são identificados por seus `ProgId` e `FileName` , respectivamente. O `EquivalentAddins` elemento deve ser posicionado imediatamente antes da `VersionOverrides` marca de fechamento. Para obter mais informações sobre a compatibilidade do suplemento COM, consulte [tornar o suplemento do Excel compatível com um suplemento de com existente](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
 
 ```xml
 <VersionOverrides>
-...
-<EquivalentAddins>
-  <EquivalentAddin>
-    <ProgID>ContosoCOMAddin</ProgID>
-    <Type>COM</Type>
-  </EquivalentAddin>
+  ...
+  <EquivalentAddins>
+    <EquivalentAddin>
+      <ProgId>ContosoCOMAddin</ProgId>
+      <Type>COM</Type>
+    </EquivalentAddin>
 
-  <EquivalentAddin>
-    <FileName>contosofunctions.xll</FileName>
-    <Type>XLL</Type>
-  </EquivalentAddin>
-<EquivalentAddins>
-...
+    <EquivalentAddin>
+      <FileName>contosofunctions.xll</FileName>
+      <Type>XLL</Type>
+    </EquivalentAddin>
+  <EquivalentAddins>
 </VersionOverrides>
 ```
 

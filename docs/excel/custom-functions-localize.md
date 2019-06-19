@@ -1,20 +1,18 @@
 ---
-ms.date: 05/03/2019
+ms.date: 06/17/2019
 description: Localize suas funções personalizadas do Excel.
 title: Localizar funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: 5dbe2f78f1d24c3d8c8214f4e604e66f097adba3
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: 7c289f65a7d75f1c1c07770d43e09f92568ca73b
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628029"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059710"
 ---
 # <a name="localize-custom-functions"></a>Localizar funções personalizadas
 
 Você pode localizar o suplemento e seus nomes de funções personalizadas. Você precisa fornecer nomes de função localizados no arquivo JSON funções e fornecer informações de localidade no arquivo de manifesto XML.
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 >[!IMPORTANT]
 > Os metadados gerados automaticamente não funcionam para localização, portanto, você precisa atualizar o arquivo JSON manualmente.
@@ -104,6 +102,6 @@ Saiba mais sobre [convenções de nomenclatura para funções personalizadas ou 
 ## <a name="see-also"></a>Confira também
 
 * [Metadados de funções personalizadas](custom-functions-json.md)
-* [Gerar automaticamente metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md)
+* [Gerar metadados JSON automaticamente para funções personalizadas](custom-functions-json-autogeneration.md)
 * [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
 * [Criar funções personalizadas no Excel](custom-functions-overview.md)

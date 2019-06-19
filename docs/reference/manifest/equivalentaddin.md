@@ -1,14 +1,14 @@
 ---
 title: Elemento EquivalentAddin no arquivo de manifesto
 description: ''
-ms.date: 04/22/2019
+ms.date: 06/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 9cb1bb6d7a9cc3df3f4e39f8180b38d47d0a6882
-ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
+ms.openlocfilehash: 33cfb8b73e050fad7e392e0234962d346e903713
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "33356832"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059920"
 ---
 # <a name="equivalentaddin-element"></a>Elemento EquivalentAddin
 
@@ -30,7 +30,7 @@ Especifica a compatibilidade COM versões anteriores para um suplemento COM equi
 
 ## <a name="must-contain"></a>Deve conter
 
-[Type](type.md)
+[Tipo](type.md)
 
 ## <a name="can-contain"></a>Pode conter
 
@@ -39,9 +39,9 @@ Especifica a compatibilidade COM versões anteriores para um suplemento COM equi
 
 ## <a name="remarks"></a>Comentários
 
-Para especificar um suplemento de COM como o suplemento equivalente, forneça os `ProgID` elementos e. `Type` Para especificar um XLL como o suplemento equivalente, forneça os `FileName` elementos e. `Type`
+Para especificar um suplemento de COM como o suplemento equivalente, forneça os `ProgId` elementos e. `Type` Para especificar um XLL como o suplemento equivalente, forneça os `FileName` elementos e. `Type`
 
 ## <a name="see-also"></a>Confira também
 
-- [Tornar suas funções personalizadas compatíveis com as funções definidas pelo usuário XLL](../../excel/make-custom-functions-compatible-with-xll-udf.md)
-- [Tornar o suplemento do Office compatível com um suplemento de COM existente](../../develop/make-office-add-in-compatible-with-existing-com-add-in.md)
+- [Torne as suas funções personalizadas compatíveis com as funções XLL definidas pelo usuário](../../excel/make-custom-functions-compatible-with-xll-udf.md)
+- [Tornar seu suplemento do Excel compatível com um suplemento de COM existente](../../develop/make-office-add-in-compatible-with-existing-com-add-in.md)

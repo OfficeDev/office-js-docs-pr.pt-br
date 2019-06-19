@@ -1,20 +1,18 @@
 ---
-ms.date: 05/03/2019
+ms.date: 06/17/2019
 description: Saiba mais sobre os nomes de funções personalizadas do Excel e evite armadilhas comuns de nomeação.
 title: Diretrizes de nomenclatura para funções personalizadas no Excel
 localization_priority: Normal
-ms.openlocfilehash: 64420171a90b29732745891cb691b8cd4309c53d
-ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
+ms.openlocfilehash: 2c5b78b2ecd1ccdbdc3fcb5bf6601c06193a1ef1
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "34706075"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059822"
 ---
 # <a name="naming-guidelines"></a>Diretrizes de nomenclatura
 
 Uma função personalizada é identificada por uma propriedade **ID** e **nome** no arquivo de metadados JSON.
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 - A função `id` é usada para identificar exclusivamente as funções personalizadas no seu código JavaScript. 
 - A função `name` é usada como o nome de exibição que aparece para um usuário no Excel. 
@@ -35,7 +33,7 @@ Uma função não `name` deve ser nomeada da mesma forma:
 
 - Qualquer célula entre a1 e XFD1048576 ou qualquer célula entre L1C1 e R1048576C16384.
 
-- Qualquer função de macro do Excel 4,0 ( `RUN`como `ECHO`,).  Para obter uma lista completa dessas funções, consulte [Este artigo](https://www.microsoft.com/en-us/download/details.aspx?id=1465).
+- Qualquer função de macro do Excel 4,0 ( `RUN`como `ECHO`,).  Para obter uma lista completa dessas funções, consulte [este documento de referência de funções de macro do Excel](https://d13ot9o61jdzpp.cloudfront.net/files/Excel%204.0%20Macro%20Functions%20Reference.pdf).
 
 ## <a name="naming-conflicts"></a>Conflitos de nomenclatura
 
