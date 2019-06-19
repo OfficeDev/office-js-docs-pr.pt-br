@@ -1,21 +1,21 @@
 ---
-ms.date: 05/08/2019
+ms.date: 06/17/2019
 description: Saiba quais são os requisitos para usar os recursos do suplemento COM e de compatibilidade XLL UDF.
 title: Requisitos do suplemento COM e XLL UDF
 localization_priority: Priority
-ms.openlocfilehash: a707f5413f05e4f3d65ca039e1ffbc88aecbe252
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: 133c9f20c2b82051ee3d42488596707e99a364bc
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432233"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059682"
 ---
 # <a name="com-add-in-and-xll-udf-compatibility-requirements-preview"></a>Requisitos (visualização) do suplemento COM e de compatibilidade XLL UDF
 
-O suplemento COM e a compatibilidade XLL UDF estão disponíveis atualmente nas seguintes plataformas:
+O suplemento COM e a compatibilidade do XLL UDF, que exigem uma assinatura do Office 365, estão disponíveis no momento nas seguintes plataformas:
 
 - Excel Online
-- Excel no Windows (versão de 64 bits 1810 ou posterior)
+- Excel para Windows (versão 1904 ou posterior)
 - Excel para Mac (versão 13.329 ou posterior)
 
 ## <a name="excel-online"></a>Excel Online
