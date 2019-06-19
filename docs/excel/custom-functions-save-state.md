@@ -1,20 +1,18 @@
 ---
-ms.date: 05/08/2019
+ms.date: 06/17/2019
 description: Use `OfficeRuntime.storage` para salvar o estado com funções personalizadas.
 title: Salvar e compartilhar o estado em funções personalizadas
 localization_priority: Priority
-ms.openlocfilehash: fb73c349a9f1048ccc4e01a0958c8efd41cb2b78
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: c0825b67bfb97cea75e09704969e915d9560e39e
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910347"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059885"
 ---
 # <a name="save-and-share-state-in-custom-functions"></a>Salvar e compartilhar o estado em funções personalizadas
 
 Use o objeto `OfficeRuntime.storage` para salvar o estado relacionado às funções personalizadas ou o painel de tarefas no seu suplemento. O armazenamento é limitado a 10 MB por domínio (que pode ser compartilhado entre vários suplementos). No Excel no Windows, o objeto `storage` é uma localização separada dentro do tempo de execução das funções personalizadas, mas no Excel Online e no Excel para Mac, o objeto `storage` é o mesmo que o `localStorage` do navegador.
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 Existem várias maneiras de usar `storage` para o gerenciamento de estado:
 

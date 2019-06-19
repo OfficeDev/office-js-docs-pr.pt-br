@@ -1,20 +1,18 @@
 ---
-ms.date: 05/03/2019
+ms.date: 06/17/2019
 description: Lide com erros nas funções personalizadas do Excel.
 title: Tratamento de erros para funções personalizadas no Excel
 localization_priority: Priority
-ms.openlocfilehash: 188ece6c77bc2cafad6f22448fb698e0c0370ef8
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: 5b94d3fc2570eaa310027ebc156aa78c359a56fa
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628155"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059850"
 ---
 # <a name="error-handling-within-custom-functions"></a>Tratamento de erros nas funções personalizadas
 
 Quando você cria um suplemento que define funções personalizadas certifique-se de incluir a lógica de tratamento de erro para lidar com os erros de tempo de execução. O tratamento de erro para funções personalizadas equivale  ao [tratamento de erro para API JavaScript do Excel em](excel-add-ins-error-handling.md).
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 No seguinte exemplo de código `.catch` tratará os erros que ocorreram anteriormente no código.
 

@@ -1,20 +1,18 @@
 ---
-ms.date: 06/10/2019
+ms.date: 06/17/2019
 description: Use tags JSDoc para criar dinamicamente seus metadados JSON de funções personalizadas.
 title: Gerar metadados JSON automaticamente para funções personalizadas
 localization_priority: Priority
-ms.openlocfilehash: 960e1eca1e01aec21967733d802a5fdd48122cbc
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 246cd53c4ff151dce7422e67cf49e0b5508b672c
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910298"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059825"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Gerar metadados JSON automaticamente para funções personalizadas
 
 Quando uma função personalizada do Excel é gravada em JavaScript ou em TypeScript, as marcações JSDoc são usadas para fornecer informações adicionais sobre a função personalizada. As marcações JSDoc são usadas no momento da criação para criar o [arquivo de metadados JSON](custom-functions-json.md). O uso de marcações JSDoc poupa você do esforço de editar manualmente o arquivo de metadados JSON.
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 Adicione a marcação `@customfunction` nos comentários de código de uma função JavaScript ou TypeScript para marcá-la como uma função personalizada.
 
@@ -140,7 +138,7 @@ Para denotar um parâmetro de função personalizado como opcional, siga um dest
 * Use um parâmetro opcional. Por exemplo: `function f(text?: string)`
 * Dê ao parâmetro um valor padrão. Por exemplo: `function f(text: string = "abc")`
 
-Para uma descrição detalhada do @param confira: [JSDoc](https://usejsdoc.org/tags-param.html)
+Para uma descrição detalhada do @param confira: [JSDoc](https://jsdoc.app/tags-param.html)
 
 > [!NOTE]
 > O valor padrão para parâmetros opcionais é `null`.

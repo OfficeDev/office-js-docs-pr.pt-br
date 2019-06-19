@@ -1,20 +1,18 @@
 ---
-ms.date: 05/06/2019
+ms.date: 06/17/2019
 description: Crie uma caixa de diálogo por meio de funções personalizadas no Excel usando JavaScript.
 title: Exibir uma caixa de diálogo a partir de um função personalizada
 localization_priority: Priority
-ms.openlocfilehash: 3d7a657402c319b2394c7331b69314b2e5591890
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: cdbd199e8d8484f317d78a91833088c69db18685
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628138"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059871"
 ---
 # <a name="display-a-dialog-box-from-a-custom-function"></a>Exibir uma caixa de diálogo a partir de um função personalizada
 
 Se precisar que sua função personalizada interaja com o usuário, você pode criar uma caixa de diálogo usando o [`Office.Dialog`objeto](/javascript/api/office-runtime/officeruntime.dialog?view=office-js). Um cenário comum para usar a caixa de diálogo é autenticar um usuário para que a função personalizada possa acessar um serviço web. Para saber mais sobre autenticação de funções personalizadas, confira [Autenticação de funções personalizados](./custom-functions-authentication.md).
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 >[!NOTE]
 > O objeto `Office.Dialog` faz parte do tempo de execução de funções personalizadas. Painéis de tarefas não usam o objeto `Dialog`. Para criar uma caixa de diálogo a partir de um painel de tarefas, confira [API de Caixa de Diálogo](/office/dev/add-ins/develop/dialog-api-in-office-add-ins).
