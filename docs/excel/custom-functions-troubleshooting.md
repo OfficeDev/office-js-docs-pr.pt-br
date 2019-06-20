@@ -1,14 +1,14 @@
 ---
-ms.date: 05/08/2019
+ms.date: 06/17/2019
 description: Solução de problemas comuns em funções personalizadas do Excel.
 title: Solução de problemas das funções personalizadas
 localization_priority: Priority
-ms.openlocfilehash: 999b1fb9b89050ab5c6bcf87e1aac9d2fce13702
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: f407e103d8f628710c5f58a9787b3a802dcd39c8
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952051"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059899"
 ---
 # <a name="troubleshoot-custom-functions"></a>Solução de problemas de funções personalizadas
 
@@ -65,6 +65,10 @@ Saiba mais sobre esse processo em [Associar os nomes de função com metadados J
 ### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exception"></a>Não é possível abrir um suplemento de um localhost: utilize uma exceção de loopback local
 
 Se você vir o erro "Não é possível abrir este suplemento de um localhost", será necessário habilitar uma exceção de loopback local. Para obter detalhes sobre como fazer isso, confira [este artigo de suporte da Microsoft](https://support.microsoft.com/pt-BR/help/4490419/local-loopback-exemption-does-not-work).
+
+### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-for-windows"></a>Relatórios de log de tempo de execução "TypeError: Falha na solicitação de rede" no Excel para Windows
+
+Se você ver o erro "TypeError: Falha na solicitação de rede" em seu [log de tempo de execução](custom-functions-troubleshooting.md#enable-runtime-logging) enquanto faz chamadas para seu servidor localhost, você precisará habilitar uma exceção do loopback local. Para obter detalhes sobre como fazer isso, confira [este artigo de suporte da Microsoft](https://support.microsoft.com/pt-BR/help/4490419/local-loopback-exemption-does-not-work).
 
 ### <a name="ensure-promises-return"></a>Garantir que as promessas retornem resultados
 

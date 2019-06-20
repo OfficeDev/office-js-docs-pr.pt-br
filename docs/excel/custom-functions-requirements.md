@@ -1,22 +1,25 @@
 ---
-ms.date: 05/15/2019
+ms.date: 06/17/2019
 description: Como usar funções em diferentes plataformas.
 title: Requisitos de funções personalizadas
 localization_priority: Priority
-ms.openlocfilehash: 3ae110bf32b260be1d480a9bce27fffbddee86f5
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: 0f1d18410f32620a168622ae7d9824cb2e785933
+ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432198"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "35059892"
 ---
 # <a name="custom-functions-requirements"></a>Requisitos de funções personalizadas
 
 As funções personalizadas estão atualmente disponíveis nas seguintes plataformas:
 
 - Excel Online
-- Excel no Windows (versão de 64 bits 1810 ou posterior)
-- Excel para Mac (versão 13.329 ou posterior)
+- Excel no Windows (versão 1904 ou posterior, conectado a assinatura do Office 365)
+- Excel no Mac (versão 16.24 ou posterior, conectado a assinatura do Office 365)
+
+>[!NOTE]
+>As funções personalizadas do Excel não são compatíveis com o Office 2019 (compra única).
 
 ## <a name="excel-online"></a>Excel Online
 Para usar as funções personalizadas no Excel Online, faça logon usando sua assinatura do Office 365 ou uma [conta Microsoft](https://account.microsoft.com/account).
