@@ -481,11 +481,11 @@
               href: testing/attach-debugger-from-task-pane.md
             - name: Depurar usando ferramentas de desenvolvedor F12
               href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
-        - name: Office Online
+        - name: Navegador
           items:
-            - name: Fazer sideload de Suplementos do Office no Office Online
+            - name: Sideload de suplementos no Office na Web
               href: testing/sideload-office-add-ins-for-testing.md
-            - name: Depurar no Office Online
+            - name: Depurar o Office na Web
               href: testing/debug-add-ins-in-office-online.md
         - name: iPad e Mac
           items:
