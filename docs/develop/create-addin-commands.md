@@ -1,14 +1,14 @@
 ---
 title: Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint
 description: Use VersionOverrides no manifesto para definir comandos de suplemento para Excel, Word e PowerPoint. Use comandos de suplemento para criar elementos da interface do usuário, adicionar listas ou botões e executar ações.
-ms.date: 04/15/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: a85d6a693995c8d0327c1b511e85e2159e51a042
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 9917eaa7b28ea843703a1de566b41277517b20fa
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448698"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128175"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-word-and-powerpoint"></a>Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint
 
@@ -118,7 +118,7 @@ O exemplo a seguir mostra como usar o elemento **VersionOverrides** e seus eleme
 
 O elemento **Hosts** contém um ou mais elementos **Host**. Um elemento **Host** especifica um determinado host do Office. O elemento **Host** contém elementos filho que especificam os comandos de suplemento que serão exibidos após a instalação do suplemento nesse host do Office. Para mostrar os mesmos comandos de suplemento em dois ou mais hosts do Office diferentes, você deve duplicar os elementos filho em cada **Host**.
 
-O elemento **DesktopFormFactor** especifica as configurações para um suplemento que é executado no Office, na área de trabalho do Windows, e no Office Online (no navegador).
+O elemento **DesktopFormFactor** especifica as configurações para um suplemento que é executado no Office Online (em um navegador) e no Windows.
 
 Veja a seguir um exemplo dos elementos **Hosts**, **Host** e **DesktopFormFactor**.
 

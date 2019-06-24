@@ -1,18 +1,18 @@
 ---
 title: Limites de recurso e otimização de desempenho para Suplementos do Office
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: ead376bb12701f7ee810cfc4e536ae4866d2f1b5
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 7feaef4d3b76cbef71a367099382f3f26ea50314
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448137"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127685"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites de recurso e otimização de desempenho para Suplementos do Office
 
-Para criar a melhor experiência para os usuários, verifique se o desempenho do Suplemento do Office está dentro dos limites específicos para uso de memória e núcleo de CPU, confiabilidade e, para suplementos do Outlook, tempo de resposta para avaliar expressões regulares. Esses limites de uso de recursos de tempo de execução aplicam-se aos suplementos em execução em clientes do Office para Windows e OS X, mas não Office Online, Outlook Web App ou OWA para Dispositivos. 
+Para criar a melhor experiência para os usuários, verifique se o desempenho do Suplemento do Office está dentro dos limites específicos para uso de memória e núcleo de CPU, confiabilidade e, para suplementos do Outlook, tempo de resposta para avaliar expressões regulares. Esses limites de uso de recursos de tempo de execução aplicam-se aos suplementos em execução em clientes do Office para Windows e OS X, mas não a aplicativos móveis ou a um navegador.
 
 Também é possível otimizar o desempenho dos suplementos em dispositivos móveis e para área de trabalho aprimorando o uso de recursos no design e na implementação de suplementos.
 
@@ -41,7 +41,7 @@ Os limites de uso de recursos de tempo de execução aplicam-se a todos os tipos
 Se qualquer suplemento do Outlook exceder os limites anteriores para núcleo da CPU, uso de memória ou limite de tolerância a falhas, o Outlook desativa o suplemento. O Centro de Administração do Exchange exibe o status de desativação do aplicativo.
 
 > [!NOTE]
-> Mesmo que apenas clientes avançados do Outlook, e não o Outlook Web App ou o OWA para dispositivos, monitorarem o uso de recursos, se um cliente avançado desativar um suplemento do Outlook, o suplemento também é desativado para uso no Outlook Web App e no OWA para dispositivos.
+> Mesmo que apenas clientes avançados do Outlook, e não o Outlook Online ou dispositivos móveis, monitorarem o uso de recursos, se um cliente avançado desativar um suplemento do Outlook, o suplemento também é desativado para uso no Outlook Online e dispositivos móveis.
 
 Além do núcleo da CPU, da memória e de regras de confiabilidade, os suplementos do Outlook devem estar de acordo com as seguintes regras durante a ativação:
 
@@ -49,7 +49,7 @@ Além do núcleo da CPU, da memória e de regras de confiabilidade, os suplement
 
     Usando uma política de grupo ou uma configuração específica do aplicativo no registro do Windows, os administradores podem ajustar esse valor limite padrão de 1.000 milissegundos na configuração **OutlookActivationAlertThreshold**.
 
-- **Reavaliação de expressões regulares**: um limite padrão de três vezes para que o Outlook reavalie todas as expressões regulares em um manifesto. Se a avaliação falhar todas as três vezes excedendo o limite aplicável (que é o padrão de 1.000 milissegundos ou um valor especificado por **OutlookActivationAlertThreshold**, se essa configuração existir no Registro do Windows), o Outlook desabilitará o suplemento do Outlook. O Centro de Administração do Exchange exibe o status desabilitado, e o suplemento é desabilitado para uso nos clientes avançados do Outlook, no Outlook Web App e no OWA para Dispositivos.
+- **Reavaliação de expressões regulares**: um limite padrão de três vezes para que o Outlook reavalie todas as expressões regulares em um manifesto. Se a avaliação falhar todas as três vezes excedendo o limite aplicável (que é o padrão de 1.000 milissegundos ou um valor especificado por **OutlookActivationAlertThreshold**, se essa configuração existir no Registro do Windows), o Outlook desabilitará o suplemento do Outlook. O Centro de Administração do Exchange exibe o status desabilitado e o suplemento é desabilitado para uso nos clientes avançados do Outlook, no Outlook Online e para dispositivos móveis.
 
     Usando uma política de grupo ou uma configuração específica do aplicativo no registro do Windows, os administradores podem ajustar esse número de novas tentativas de avaliação na configuração **OutlookActivationManagerRetryLimit**.
 

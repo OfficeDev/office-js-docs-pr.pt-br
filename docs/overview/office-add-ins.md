@@ -1,18 +1,18 @@
 ---
 title: Visão geral da plataforma Suplementos do Office | Microsoft Docs
 description: Use tecnologias da Web conhecidas, como HTML, CSS e JavaScript, para estender e interagir com os aplicativos Word, Excel, PowerPoint, OneNote, Project e Outlook.
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: dc0a7755027e1d6a741e97928f3f2bc25f62f6c3
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 600a1655dd9a3cfc40f56f46f0a8956f54883ffa
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952345"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128612"
 ---
 # <a name="office-add-ins-platform-overview"></a>Visão geral da plataforma de Suplementos do Office
 
-Você pode usar a plataforma de suplementos do Office para criar soluções que estendem os aplicativos do Office e interagem com conteúdo nos documentos do Office. Com os suplementos do Office, você pode usar tecnologias de web conhecidas, como HTML, CSS e JavaScript, para estender e interagir com o Word, Excel, PowerPoint, OneNote, Project e Outlook. Sua solução pode ser executada no Office através de várias plataformas, incluindo Office no Windows, Office Online, Office para Mac e Office para iPad.
+Você pode usar a plataforma de suplementos do Office para criar soluções que estendem os aplicativos do Office e interagem com conteúdo nos documentos do Office. Com os suplementos do Office, você pode usar tecnologias de web conhecidas, como HTML, CSS e JavaScript, para estender e interagir com o Word, Excel, PowerPoint, OneNote, Project e Outlook. Sua solução pode ser executada no Office através de várias plataformas, incluindo Windows, Mac, iPad e em um navegador.
 
 Os suplementos do Office podem fazer quase tudo que uma página da Web pode fazer dentro do navegador. Use a plataforma de suplementos do Office para:
 
@@ -26,7 +26,7 @@ Os suplementos de COM ou VSTO são soluções de integração anteriores do Offi
 
 Os suplementos do Office fornecem as seguintes vantagens em relação aos suplementos criados usando o VBA, COM ou VSTO:
 
-- Suporte à plataforma cruzada. Os suplementos do Office podem ser executados no Office no Windows, Mac, iOS e Office Online.
+- Suporte à plataforma cruzada. Os suplementos do Office podem ser executados no Office na Web, Windows, Mac e iPad.
 
 - Implantação e distribuição centralizadas. Os administradores podem implantar suplementos do Office centralmente em uma organização.
 
@@ -88,7 +88,7 @@ Você pode adicionar itens de menu e botões da faixa de opções personalizados
 
 #### <a name="task-panes"></a>Painéis de tarefas  
 
-Você pode usar painéis de tarefas, além dos comandos de suplemento, para permitir que os usuários interajam com sua solução. Os clientes que não dão suporte aos comandos de suplemento (Office 2013 e Office para iPad) executarão seu suplemento como um painel de tarefas. Os usuários iniciam os suplementos do painel de tarefas através do botão **Meus suplementos** na guia **Inserir**. 
+Você pode usar painéis de tarefas, além dos comandos de suplemento, para permitir que os usuários interajam com sua solução. Os clientes que não dão suporte aos comandos de suplemento (Office 2013 e Office para iPad) executarão seu suplemento como um painel de tarefas. Os usuários iniciam os suplementos do painel de tarefas através do botão **Meus suplementos** na guia **Inserir**.
 
 *Figura 4. Painel de tarefas*
 
@@ -98,7 +98,7 @@ Você pode usar painéis de tarefas, além dos comandos de suplemento, para perm
 
 Os suplementos do Outlook podem estender a faixa de opções do Office e também ser exibidos contextualmente ao lado de um item do Outlook quando você o exibe ou redige. Eles podem trabalhar com uma mensagem de email, uma solicitação de reunião, uma resposta de reunião, um cancelamento de reunião ou um compromisso quando um usuário está visualizando um item recebido, ou respondendo ou criando um novo item. 
 
-Os suplementos do Outlook podem acessar informação contextual do item, como o endereço ou a ID de rastreamento, e, em seguida, usar estes dados para acessarem informações adicionais sobre o servidor e de serviços da Web para criar experiências do usuário envolventes. Na maioria dos casos, um suplemento do Outlook é executado sem modificação nos vários aplicativos host com suporte, incluindo Outlook, Outlook para Mac, Outlook Web App e Outlook Web App para Dispositivos para fornecer uma experiência perfeita na área de trabalho, na Web e em tablets e dispositivos móveis. 
+Os suplementos do Outlook podem acessar informações contextuais do item, como o endereço ou a ID de rastreamento, e usar esses dados para acessar informações adicionais no servidor e de serviços Web para criar experiências de usuário envolventes. Na maioria dos casos, um suplemento do Outlook é executado sem modificação no aplicativo host do Outlook para fornecer uma experiência perfeita na área de trabalho, na Web e em dispositivos móveis e tablet.
 
 Confira a visão geral dos suplementos do Outlook em [Visão geral dos suplementos do Outlook](/outlook/add-ins/).
 
@@ -118,7 +118,7 @@ As APIs JavaScript para Office contêm objetos e membros para a criação de sup
 
 Para saber mais sobre como começar a criar seu suplemento do Office, teste nossos [Guias de Início Rápido de cinco minutos](/office/dev/add-ins/). Você pode começar a criar suplementos imediatamente usando o Visual Studio ou outro editor. 
 
-Para começar a planejar soluções que criem experiências de usuário eficazes e atraentes, familiarize-se com as [diretrizes de design](../design/add-in-design.md) e as [práticas recomendadas](../concepts/add-in-development-best-practices.md) para Suplementos do Office.    
+Para começar a planejar soluções que criem experiências de usuário eficazes e atraentes, familiarize-se com as [diretrizes de design](../design/add-in-design.md) e as [práticas recomendadas](../concepts/add-in-development-best-practices.md) para Suplementos do Office.
 
 ## <a name="see-also"></a>Confira também
 

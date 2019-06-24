@@ -1,14 +1,14 @@
 ---
 title: Códigos de erro da API JavaScript do Office
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 5e18a82c2536d5f5284588227b1cf767ebd2749e
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: b259d592d465dfae6569ecc2a442f249104916af
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450727"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128528"
 ---
 # <a name="javascript-api-for-office-error-codes"></a>Códigos de erro da API JavaScript para Office
 
@@ -66,7 +66,7 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 |5006|Tempo Limite da Sessão|O tempo limite da sessão do documento esgotou-se. Recarregue o documento. |A sessão expirou.|
 |5007|Chamada de API inválida|Não há suporte à enumeração no contexto atual.|Não há suporte à enumeração no contexto atual.|
 |5009|Permissão negada|Acesso negado|O suplemento não tem permissão para chamar a API específica.|
-|5012|Sessão inválida ou esgotada|Sua sessão do Office Online expirou ou é inválida. Para continuar, atualize a página.|A sessão entre o cliente do Office e o servidor expirou, ou então a data, hora ou fuso horário estão incorretos em seu computador.|
+|5012|Sessão inválida ou esgotada|Sua sessão do navegador do Office expirou ou é inválida. Para continuar, atualize a página.|A sessão entre o cliente do Office e o servidor expirou, ou então a data, hora ou fuso horário estão incorretos em seu computador.|
 |6000|Nó inválido|O nó especificado não foi encontrado.|O nó **CustomXmlPart** não foi encontrado.|
 |6100|Erro no XML personalizado|Erro no XML personalizado|Chamada de API inválida.|
 |7000|ID inválida|A ID especificada não existe.|ID inválida.|

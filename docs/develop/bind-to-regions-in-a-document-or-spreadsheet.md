@@ -1,14 +1,14 @@
 ---
 title: Associar a regiões em um documento ou em uma planilha
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: be633fc99d4a80257a9c8f68b5e9569727ac30a5
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 9f2a201178826e1f049e9e9bd067260741028c84
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448789"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127615"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>Associar a regiões em um documento ou em uma planilha
 
@@ -335,7 +335,7 @@ No exemplo, o primeiro parâmetro é o valor a definir em `myBinding`. Como esta
 A função anônima que é transmitida para a função é um retorno de chamada executado quando a operação é concluída. A função é chamada com um único parâmetro, `asyncResult`, que contém o status do resultado.
 
 > [!NOTE]
-> A partir da versão do Excel 2013 SP1 e da compilação correspondente do Excel Online, agora é possível [definir a formatação ao escrever e atualizar dados em tabelas de vinculação](../excel/excel-add-ins-tables.md).
+> A partir da versão do Excel 2013 SP1 e da compilação correspondente do Excel Online, agora é possível [definir a formatação ao escrever e atualizar dados em tabelas associadas](../excel/excel-add-ins-tables.md).
 
 
 ## <a name="detect-changes-to-data-or-the-selection-in-a-binding"></a>Detectar alterações nos dados ou a seleção em uma associação

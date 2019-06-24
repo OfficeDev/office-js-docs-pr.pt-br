@@ -1,14 +1,14 @@
 ---
 title: Visão geral dos suplementos do Word
 description: ''
-ms.date: 06/12/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: bf0b481ef9c982f06ea04aaecb70a76a790846d2
-ms.sourcegitcommit: ee5b4935b5ee1db567a13627b2f87471ee8b8165
+ms.openlocfilehash: 5516e4dc847d4872a12f769530d0a5cb7d779c7c
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "34933769"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35126803"
 ---
 # <a name="word-add-ins-overview"></a>Visão geral dos suplementos do Word
 
@@ -45,8 +45,8 @@ As APIs JavaScript do Word proporcionam ao seu aplicativo o acesso aos objetos e
 
 * Word 2013 ou posterior no Windows
 * Word Online
-* Word 2016 ou posterior para Mac
-* Word para iPad
+* Word 2016 ou posterior no Windows
+* Word no iPad
 
 Redija seu suplemento uma vez e ele será executado em todas as versões do Word em várias plataformas. Para obter detalhes, consulte [Disponibilidade de Suplementos do Office em hosts e plataformas](../overview/office-add-in-availability.md).
 

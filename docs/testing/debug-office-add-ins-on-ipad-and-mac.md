@@ -1,14 +1,14 @@
 ---
 title: Depurar suplementos do Office em um Mac
 description: ''
-ms.date: 05/21/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 0505dcc49ea98040f1c4891621c8e30a8cbeaff4
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: 88f7cbf6c944a0f6510306cfe2d07db59e40bdeb
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432275"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35126929"
 ---
 # <a name="debug-office-add-ins-on-a-mac"></a>Depurar suplementos do Office em um Mac
 
@@ -41,8 +41,8 @@ Em seguida, abra o aplicativo do Office e [realize o sideload do seu suplemento]
 
 ## <a name="clearing-the-office-applications-cache-on-a-mac"></a>Limpar cache do aplicativo do Office em um Mac
 
-Os Suplementos muitas vezes são armazenados em cache no Office para Mac por questão de desempenho. Normalmente, o cache será limpo quando o suplemento for recarregado. Se houver mais de um suplemento no mesmo documento, é provável que o processo de limpeza automática do cache ao recarregar não seja confiável.
+Os suplementos muitas vezes são armazenados em cache no Office no Mac por questão de desempenho. Normalmente, o cache será limpo quando o suplemento for recarregado. Se houver mais de um suplemento no mesmo documento, é provável que o processo de limpeza automática do cache ao recarregar não seja confiável.
 
-No Mac, o cache pode ser limpo manualmente ao excluir tudo na pasta `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
+No Mac, o cache pode ser limpo manualmente ao excluir o conteúdo na pasta `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
 
 [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]

@@ -1,14 +1,14 @@
 ---
 title: Conceitos avançados de programação com a API JavaScript do Excel
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 43d1f79b629b238afd227978e9c6dc90b9a6d992
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: da85bf8ec00134b86fcf6ae561366f9536f21303
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952156"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127793"
 ---
 # <a name="advanced-programming-concepts-with-the-excel-javascript-api"></a>Conceitos avançados de programação com a API JavaScript do Excel
 
@@ -60,7 +60,7 @@ O exemplo de código a seguir mostra o elemento **Requirements** em um manifesto
 ```
 
 > [!NOTE]
-> Para disponibilizar seu suplemento em todas as plataformas de um host do Office, como Excel no Windows, Excel Online e Excel para iPad, é recomendável verificar o suporte a requisitos no tempo de execução, em vez de definir o suporte ao conjunto de requisitos no manifesto.
+> Para disponibilizar seu suplemento em todas as plataformas de um host do Office, como Excel Online, Windows e iPad, é recomendável verificar o suporte a requisitos no tempo de execução, em vez de definir o suporte ao conjunto de requisitos no manifesto.
 
 ### <a name="requirement-sets-for-the-officejs-common-api"></a>Conjuntos de requisitos para a API comum Office.js
 

@@ -1,14 +1,14 @@
 ---
 title: Elemento Host no arquivo de manifesto
 description: ''
-ms.date: 10/09/2018
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: f496e3e0c16f24d20e1d1db76208e61267235131
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: debb4d59f75ce974ffb21d853c6b65a579c4e685
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450503"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127566"
 ---
 # <a name="host-element"></a>Elemento Host
 
@@ -19,7 +19,7 @@ Especifica um tipo de aplicativo individual do Office em que o suplemento deve s
 
 ## <a name="basic-manifest"></a>Manifesto básico
 
-Quando definido no manifesto básico (em [OfficeApp](officeapp.md)), o tipo de host é determinado pelo atributo `Name`.   
+Quando definido no manifesto básico (em [OfficeApp](officeapp.md)), o tipo de host é determinado pelo atributo `Name`.
 
 ### <a name="attributes"></a>Atributos
 
@@ -60,7 +60,7 @@ Quando definido em [VersionOverrides](versionoverrides.md), o tipo de host é de
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
 |  [DesktopFormFactor](desktopformfactor.md)    |  Sim   |  Define as configurações do fator forma da área de trabalho. |
-|  [MobileFormFactor](mobileformfactor.md)    |  Não   |  Define as configurações do fator forma móvel. **Observação:** esse elemento só tem suporte no Outlook para iOS. |
+|  [MobileFormFactor](mobileformfactor.md)    |  Não   |  Define as configurações do fator forma móvel. **Observação:** Esse elemento só é suportado no Outlook no iOS. |
 |  [AllFormFactors](allformfactors.md)    |  Não   |  Define as configurações de todos os fatores forma. Usado somente pelas funções personalizadas no Excel. |
 
 ### <a name="xsitype"></a>xsi:type
@@ -68,7 +68,7 @@ Quando definido em [VersionOverrides](versionoverrides.md), o tipo de host é de
 Controla a qual host do Office (Word, Excel, PowerPoint, Outlook, OneNote) as configurações contidas se aplicam. O valor deve ser uma das seguintes opções:
 
 - `Document` (Word)
-- `MailHost` (Outlook)    
+- `MailHost` (Outlook)
 - `Notebook` (OneNote)
 - `Presentation` (PowerPoint)
 - `Workbook` (Excel)

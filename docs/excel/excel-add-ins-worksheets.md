@@ -1,14 +1,14 @@
 ---
 title: Trabalhe com planilhas usando a API JavaScript do Excel
 description: ''
-ms.date: 04/18/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 002c5763ebcfbbecbcfc5cb416d200b357c45bf2
-ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
+ms.openlocfilehash: 6267c9f0ef46bda0beeed1612acce5d620f1e74f
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "33440028"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128343"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Trabalhe com planilhas usando a API JavaScript do Excel
 
@@ -285,9 +285,6 @@ O suplemento precisará reagir aos usuários alterando os dados em uma planilha.
 
 O `WorksheetChangedEventArgs` objeto fornece informações sobre as alterações e a fonte. Como `onChanged` o acionamento ocorre quando o formato ou o valor dos dados mudam, pode ser útil checar com o suplemento se os valores realmente foram alterados. A `details` propriedade encapsula estas informações como um [ChangedEventDetail](/javascript/api/excel/excel.changedeventdetail). O exemplo a seguir mostra como exibir o antes e depois dos valores e tipos de uma célula que foi alterada.
 
-> [!NOTE]
-> `WorksheetChangedEventArgs.details` só está disponível atualmente na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-
 ```js
 // This function would be used as an event handler for the Worksheet.onChanged event.
 function onWorksheetChanged(eventArgs) {
@@ -303,10 +300,7 @@ function onWorksheetChanged(eventArgs) {
 }
 ```
 
-## <a name="find-all-cells-with-matching-text-preview"></a>Encontrar todas as células com texto correspondente (versão prévia)
-
-> [!NOTE]
-> A função `findAll` do objeto da Planilha só está disponível atualmente na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="find-all-cells-with-matching-text"></a>Localizar todas as células com texto correspondente
 
 O objeto `Worksheet` tem o método `find` para pesquisar uma cadeia especificada dentro da planilha. Ele retorna um objeto `RangeAreas`, que é um conjunto de objetos `Range` que podem ser editados ao mesmo tempo. O exemplo de código a seguir localiza todas as células com valores iguais à cadeia de caracteres **Concluída** e os marca de verde. Observe que `findAll` exibirá um erro `ItemNotFound` se a cadeia especificada não existir na planilha. Se você acha que a cadeia especificada pode não estar na planilha, use o método [findAllOrNullObject](excel-add-ins-advanced-concepts.md#ornullobject-methods) para que seu código manipule normalmente esse cenário.
 
@@ -332,9 +326,6 @@ Excel.run(function (context) {
 > - Para obter exemplos que mostram como pesquisar um grande intervalo para vários subgrupos com base nas características da célula, confira [Trabalhar simultaneamente com vários intervalos em suplementos do Excel](excel-add-ins-multiple-ranges.md).
 
 ## <a name="filter-data"></a>Filtrar dados
-
-> [!NOTE]
-> `AutoFilter` só está disponível atualmente na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 Um [AutoFiltro](/javascript/api/excel/excel.autofilter) aplica filtros de data em um intervalo dentro da planilha. Isso é criado com `Worksheet.autoFilter.apply`, que possui os seguintes parâmetros:
 
@@ -402,9 +393,6 @@ O método `protect` tem dois parâmetros opcionais:
 O artigo [Proteger uma planilha](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6) tem mais informações sobre a proteção de planilhas e sobre como alterar na interface do usuário do Excel.
 
 ## <a name="page-layout-and-print-settings"></a>Configurações de impressão e layout da página
-
-> [!NOTE]
-> As APIs nesta seção associada ao layout de página estão disponíveis apenas em visualização pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 Os suplementos tem acesso às configurações de layout de página em um nível de planilha. Estes controlam como a planilha é impressa. Um `Worksheet` objeto tem três propriedades de layout relacionadas: `horizontalPageBreaks`, `verticalPageBreaks`, `pageLayout`.
 

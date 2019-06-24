@@ -1,14 +1,14 @@
 ---
 title: Solucionar erros de usuários com suplementos do Office
 description: ''
-ms.date: 05/21/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 2e03e841253914a8ee1dd23aef201a38b4bea6d1
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: a82dc05789b4c35a954337a64197d3ac1a190b96
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432178"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35126901"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Solucionar erros de usuários com suplementos do Office
 
@@ -73,7 +73,7 @@ Quando o usuário usa um suplemento do Office, ele é solicitado a permitir a ex
 
 |**Navegadores afetados**|**Plataformas afetadas**|
 |:--------------------|:---------------------|
-|Internet Explorer, Microsoft Edge|Office Online|
+|Internet Explorer, Microsoft Edge|Office na Web|
 
 Para resolver o problema, os administradores ou usuários finais podem adicionar o domínio do suplemento à lista de sites confiáveis no Internet Explorer. Use o mesmo procedimento se estiver trabalhando com o navegador Internet Explorer ou Microsoft Edge.
 
@@ -110,7 +110,7 @@ Chame `window.location.reload(true)` usando o JavaScript no suplemento para for�
 
 ## <a name="see-also"></a>Confira também
 
-- [Depurar suplementos no Office Online](debug-add-ins-in-office-online.md) 
+- [Depurar suplementos no Office na Web](debug-add-ins-in-office-online.md) 
 - [Realizar sideload de um suplemento do Office no iPad e no Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  
 - [Depurar suplementos do Office no iPad e no Mac](debug-office-add-ins-on-ipad-and-mac.md)  
 - [Validar e solucionar problemas com seu manifesto](troubleshoot-manifest.md)

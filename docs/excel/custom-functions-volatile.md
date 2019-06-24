@@ -3,16 +3,18 @@ ms.date: 06/17/2019
 description: Saiba como implementar funções personalizadas de streaming volátil e offline.
 title: Valores voláteis nas funções
 localization_priority: Normal
-ms.openlocfilehash: 0edf4071ce366c40300663233f1de318a544169b
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: bcaef092ec386a7d80760c1e2a567b9de1fdad21
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059843"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127812"
 ---
 # <a name="volatile-values-in-functions"></a>Valores voláteis nas funções
 
 Funções voláteis são funções nas quais o valor muda sempre que a célula é calculada. O valor pode ser alterado mesmo se nenhum argumento da função for alterado. Essas funções são recalculadas sempre que o Excel recalcular. Por exemplo, imagine uma célula que chame a função `NOW`. Toda vez que `NOW` for chamado, retornará automaticamente a data e a hora atuais.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 O Excel contém várias funções voláteis internas, como `RAND` e `TODAY`. Para ver uma lista mais completa de funções voláteis do Excel, confira [Funções voláteis e não voláteis](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).
 

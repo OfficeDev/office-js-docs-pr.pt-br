@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Diagnostics – conjunto de requisitos 1,4
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 0e6fcad43628c88d68fccbbfaf1321201bb8394e
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: edbaa100ba82b0dd1077e518c1090c07890a3d41
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451903"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127405"
 ---
 # <a name="diagnostics"></a>diagnostics
 
@@ -24,9 +24,9 @@ Fornece informações de diagnóstico para um suplemento do Outlook.
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
-### <a name="members"></a>Membros
+### <a name="members"></a>Members
 
-####  <a name="hostname-string"></a>hostName :String
+#### <a name="hostname-string"></a>Nome do host: cadeia de caracteres
 
 Obtém uma cadeia de caracteres que representa o nome do aplicativo host.
 
@@ -44,11 +44,11 @@ Uma cadeia de caracteres que pode ser um dos seguintes valores `Outlook`: `Outlo
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
-####  <a name="hostversion-string"></a>hostVersion :String
+#### <a name="hostversion-string"></a>hostVersion: cadeia de caracteres
 
 Obtém uma cadeia de caracteres que representa a versão do aplicativo host ou do Exchange Server.
 
-Se o suplemento de email estiver em execução no cliente do Outlook para área de trabalho ou Outlook para iOS, a propriedade `hostVersion` retornará a versão do aplicativo host, o Outlook. No Outlook Web App, a propriedade retorna a versão do Exchange Server. Um exemplo é a cadeia de caracteres `15.0.468.0`.
+Se o suplemento de email estiver em execução no cliente da área de trabalho do Outlook ou `hostVersion` Ios, a propriedade retornará a versão do aplicativo host, Outlook. No Outlook na Web, a propriedade retorna a versão do servidor Exchange. Um exemplo é a cadeia de caracteres `15.0.468.0`.
 
 ##### <a name="type"></a>Tipo
 
@@ -62,19 +62,19 @@ Se o suplemento de email estiver em execução no cliente do Outlook para área 
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
-####  <a name="owaview-string"></a>OWAView :String
+#### <a name="owaview-string"></a>OWAView: cadeia de caracteres
 
-Obtém uma cadeia de caracteres que representa o modo de exibição atual do Outlook Web App.
+Obtém uma cadeia de caracteres que representa o modo de exibição atual do Outlook na Web.
 
 A cadeia de caracteres retornada pode ser um dos valores a seguir: `OneColumn`, `TwoColumns` ou `ThreeColumns`.
 
-Se o aplicativo host não for Outlook Web App, acessar essa propriedade resultará em `undefined`.
+Se o aplicativo host não for o Outlook na Web, então acessar essa propriedade resultará `undefined`em.
 
-O Outlook Web App tem três modos de exibição que correspondem à largura da tela e da janela, e à quantidade de colunas que pode ser exibida:
+O Outlook na Web tem três exibições que correspondem à largura da tela e à janela e ao número de colunas que podem ser exibidas:
 
-*   `OneColumn`, que é exibido quando a tela é estreita. O Outlook Web App usa esse layout de coluna única em toda a tela de um smartphone.
-*   `TwoColumns`, que é exibido quando a tela é mais larga. O Outlook Web App usa esse modo de exibição na maioria dos tablets.
-*   `ThreeColumns`, que é exibido quando a tela é ainda mais larga. Por exemplo, o Outlook Web App usa esse modo de exibição em um modo de tela cheia em um computador de mesa.
+*   `OneColumn`, que é exibido quando a tela é estreita. O Outlook na Web usa esse layout de coluna única em toda a tela de um smartphone.
+*   `TwoColumns`, que é exibido quando a tela é mais larga. O Outlook na Web usa esse modo de exibição na maioria dos Tablets.
+*   `ThreeColumns`, que é exibido quando a tela é ainda mais larga. Por exemplo, o Outlook na Web usa esse modo de exibição em uma janela de tela inteira em um computador desktop.
 
 ##### <a name="type"></a>Tipo
 

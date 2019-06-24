@@ -1,21 +1,21 @@
 ---
 title: Versões do Office e conjuntos de requisitos
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 6d0952c32c08c9a4a3e9b07ee8bbcf209084c3d0
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 3f63d9f6d6ce62b39fa97efc62ceb964f2b55394
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952114"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128315"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Versões do Office e conjuntos de requisitos
 
 Há várias versões do Office em várias plataformas, e nem todas dão suporte a cada API na API JavaScript para Office (Office.js). Nem sempre você terá controle sobre a versão do Office que os usuários instalaram.  Para lidar com essa situação, fornecemos um sistema chamado de conjuntos de requisitos para ajudar você a determinar se um host do Office dá suporte para com os recursos necessários em seu Suplemento do Office. 
 
 > [!NOTE]
-> - O Office é executado em várias plataformas, incluindo o Office no Windows, o Office Online, o Office para Mac e o Office para iPad.
+> - O Office pode ser executado em várias plataformas, incluindo o Windows, navegadores, Mac e iPad.
 > - Entre os exemplos de hosts do Office estão os produtos do Office: Excel, Word, PowerPoint, Outlook, OneNote e assim por diante.  
 > - Um conjunto de requisito é um grupo nomeado de membros da API, por exemplo, `ExcelApi 1.5`, `WordApi 1.3` etc.  
 

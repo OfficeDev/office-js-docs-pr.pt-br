@@ -1,20 +1,20 @@
 ---
 title: Office. Context. Mailbox – conjunto de requisitos 1,1
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 629d0e5cde637ef209736dd9359ea59d0f6e0e47
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 256bd2b992531fa52953098893025e4a006caf08
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450349"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127489"
 ---
 # <a name="mailbox"></a>mailbox
 
 ### <a name="officeofficemdcontextofficecontextmdmailbox"></a>[Office](Office.md)[.context](Office.context.md).mailbox
 
-Fornece acesso ao modelo de objeto de suplemento do Outlook para o Microsoft Outlook e o Microsoft Outlook na Web.
+Fornece acesso ao modelo de objeto do suplemento do Outlook para o Microsoft Outlook.
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -34,12 +34,12 @@ Fornece acesso ao modelo de objeto de suplemento do Outlook para o Microsoft Out
 
 ### <a name="members"></a>Membros
 
-#### <a name="ewsurl-string"></a>ewsUrl :String
+#### <a name="ewsurl-string"></a>ewsUrl: cadeia de caracteres
 
-Obtém a URL do ponto de extremidade dos EWS (Serviços Web do Exchange) para esta conta de email. Somente modo de Leitura.
+Obtém a URL do ponto de extremidade dos Serviços Web do Exchange (EWS) para esta conta de email. Somente modo de leitura.
 
 > [!NOTE]
-> Não há suporte para esse membro no Outlook para iOS ou no Outlook para Android.
+> Não há suporte para esse membro no Outlook no iOS ou no Android.
 
 O valor `ewsUrl` pode ser usado por um serviço remoto para fazer chamadas do EWS à caixa de correio do usuário. Por exemplo, você pode criar um serviço remoto para [obter anexos do item selecionado](/outlook/add-ins/get-attachments-of-an-outlook-item).
 
@@ -57,13 +57,13 @@ O valor `ewsUrl` pode ser usado por um serviço remoto para fazer chamadas do EW
 
 ### <a name="methods"></a>Métodos
 
-####  <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook11officelocalclienttime"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook_1_1/office.LocalClientTime)}
+#### <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook11officelocalclienttime"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook_1_1/office.LocalClientTime)}
 
 Obtém um dicionário contendo informações de hora em tempo local do cliente.
 
-As datas e horas usadas por um aplicativo de email para o Outlook ou o Outlook Web App podem usar fusos horários diferentes. O Outlook usa o fuso horário do computador cliente; o Outlook Web App usa o fuso horário definido na Centro de administração do Exchange (EAC). Você deve lidar com valores de data e hora para que os valores exibidos na interface do usuário sejam sempre consistentes com o fuso horário que o usuário espera.
+Um aplicativo de email para o Outlook em uma área de trabalho ou na Web pode usar fusos horários diferentes para datas e horas. O Outlook em uma área de trabalho usa o fuso horário do computador cliente; O Outlook na Web usa o fuso horário definido no centro de administração do Exchange (Eat). Você deve lidar com valores de data e hora para que os valores exibidos na interface do usuário sejam sempre consistentes com o fuso horário que o usuário espera.
 
-Se o aplicativo de email estiver sendo executado no Outlook, o método `convertToLocalClientTime` retornará um objeto de dicionário com os valores definidos para o fuso horário do computador do cliente. Se o aplicativo de email estiver sendo executado no Outlook Web App, o método `convertToLocalClientTime` retornará um objeto de dicionário com os valores definidos para o fuso horário especificado no EAC.
+Se o aplicativo de email estiver em execução no Outlook em um cliente desktop `convertToLocalClientTime` , o método retornará um objeto Dictionary com os valores definidos para o fuso horário do computador cliente. Se o aplicativo de email estiver em execução no Outlook na Web, `convertToLocalClientTime` o método retornará um objeto Dictionary com os valores definidos para o fuso horário especificado no Eat.
 
 ##### <a name="parameters"></a>Parâmetros
 
@@ -83,7 +83,7 @@ Se o aplicativo de email estiver sendo executado no Outlook, o método `convertT
 
 Tipo: [LocalClientTime](/javascript/api/outlook_1_1/office.LocalClientTime)
 
-####  <a name="converttoutcclienttimeinput--date"></a>convertToUtcClientTime(input) → {Date}
+#### <a name="converttoutcclienttimeinput--date"></a>convertToUtcClientTime(input) → {Date}
 
 Obtém um objeto Date de um dicionário contendo as informações de hora.
 
@@ -115,18 +115,18 @@ Um objeto Date com a hora expressa em UTC.
 
 </dl>
 
-####  <a name="displayappointmentformitemid"></a>displayAppointmentForm(itemId)
+#### <a name="displayappointmentformitemid"></a>displayAppointmentForm(itemId)
 
 Exibe um compromisso de calendário existente.
 
 > [!NOTE]
-> Não há suporte para esse método no Outlook para iOS ou no Outlook para Android.
+> Não há suporte para esse método no Outlook no iOS ou no Android.
 
 O método `displayAppointmentForm` abre um compromisso de calendário existente em uma nova janela na área de trabalho ou em uma caixa de diálogo em dispositivos móveis.
 
-No Outlook para Mac, você pode usar esse método para exibir um único compromisso que não faz parte de uma série recorrente, ou o compromisso mestre de uma série recorrente, mas não pode exibir uma instância da série. Isso ocorre porque no Outlook para Mac você não pode acessar as propriedades (incluindo a ID do item) das instâncias de uma série recorrente.
+No Outlook no Mac, você pode usar esse método para exibir um único compromisso que não faz parte de uma série recorrente ou o compromisso mestre de uma série recorrente, mas não é possível exibir uma instância da série. Isso ocorre porque, no Outlook no Mac, você não pode acessar as propriedades (incluindo a ID do item) de instâncias de uma série recorrente.
 
-No Outlook Web App, este método abre o formulário especificado somente se o corpo do formulário for menor que ou igual ao número de caracteres de 32 KB.
+No Outlook na Web, este método abre o formulário especificado somente se o corpo do formulário for menor ou igual ao número de caracteres 32 KB.
 
 Se o identificador do item especificado não identificar um compromisso existente, um painel em branco abre no dispositivo ou no computador cliente e nenhuma mensagem de erro será exibida.
 
@@ -150,16 +150,16 @@ Se o identificador do item especificado não identificar um compromisso existent
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
 
-####  <a name="displaymessageformitemid"></a>displayMessageForm(itemId)
+#### <a name="displaymessageformitemid"></a>displayMessageForm(itemId)
 
 Exibe uma mensagem existente.
 
 > [!NOTE]
-> Não há suporte para esse método no Outlook para iOS ou no Outlook para Android.
+> Não há suporte para esse método no Outlook no iOS ou no Android.
 
 O método `displayMessageForm` abre uma mensagem existente em uma nova janela na área de trabalho ou em uma caixa de diálogo em dispositivos móveis.
 
-No Outlook Web App, este método abre o formulário especificado somente se o corpo do formulário for menor que ou igual ao número de caracteres de 32 KB.
+No Outlook na Web, este método abre o formulário especificado somente se o corpo do formulário for menor ou igual ao número de caracteres de 32 KB.
 
 Se o identificador do item especificado não identificar uma mensagem existente, não será exibida mensagem no computador cliente e nenhuma mensagem de erro será retornada.
 
@@ -190,11 +190,11 @@ Office.context.mailbox.displayMessageForm(messageId);
 Exibe um formulário para criar um compromisso no calendário.
 
 > [!NOTE]
-> Não há suporte para esse método no Outlook para iOS ou no Outlook para Android.
+> Não há suporte para esse método no Outlook no iOS ou no Android.
 
 O método `displayNewAppointmentForm` abre um formulário que permite ao usuário criar um novo compromisso ou reunião. Se os parâmetros forem especificados, os campos de formulário do compromisso serão preenchidos automaticamente com o conteúdo dos parâmetros.
 
-No Outlook Web App e no OWA para Dispositivos, este método sempre exibe um formulário com um campo de participantes. Se você não especificar quaisquer participantes como argumentos de entrada, o método exibe um formulário com um botão **Salvar**. Se você especificar participantes, o formulário inclui os participantes e um botão **Enviar**.
+No Outlook na Web e dispositivos móveis, este método sempre exibe um formulário com um campo participantes. Se você não especificar quaisquer participantes como argumentos de entrada, o método exibe um formulário com um botão **Salvar**. Se você especificar participantes, o formulário inclui os participantes e um botão **Enviar**.
 
 No cliente avançado do Outlook e no Outlook RT, se você especificar quaisquer participantes ou recursos nos parâmetros `requiredAttendees`, `optionalAttendees`ou `resources`, este método exibirá um formulário de reunião com um botão **Enviar**. Se você não especificar destinatários, este método exibirá um formulário de compromisso com um botão **Salvar e Fechar**.
 
@@ -279,7 +279,7 @@ function cb(asyncResult) {
 }
 ```
 
-####  <a name="getuseridentitytokenasynccallback-usercontext"></a>getUserIdentityTokenAsync(callback, [userContext])
+#### <a name="getuseridentitytokenasynccallback-usercontext"></a>getUserIdentityTokenAsync(callback, [userContext])
 
 Obtém um símbolo que identifica o usuário e o suplemento do Office.
 
@@ -312,13 +312,13 @@ function cb(asyncResult) {
 }
 ```
 
-####  <a name="makeewsrequestasyncdata-callback-usercontext"></a>makeEwsRequestAsync(data, callback, [userContext])
+#### <a name="makeewsrequestasyncdata-callback-usercontext"></a>makeEwsRequestAsync(data, callback, [userContext])
 
 Faz uma solicitação assíncrona em um serviço dos EWS (Serviços Web do Exchange) no servidor Exchange que hospeda a caixa de correio do usuário.
 
 > [!NOTE]
 > Esse método não tem suporte nas seguintes situações.
-> - No Outlook para iOS ou no Outlook para Android
+> - No Outlook no iOS ou no Android
 > - Quando o suplemento é carregado em uma caixa de correio do Gmail
 > 
 > Nesses casos, os suplementos devem [usar as APIs REST](/outlook/add-ins/use-rest-api) para acessar a caixa de correio do usuário.

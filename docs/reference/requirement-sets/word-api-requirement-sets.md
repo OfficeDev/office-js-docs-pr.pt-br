@@ -1,33 +1,33 @@
 ---
 title: Conjuntos de requisitos da API JavaScript do Word
 description: ''
-ms.date: 06/11/2019
+ms.date: 06/20/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: be2c9834fbf3ceabcbbca6f2378b4356095ab387
-ms.sourcegitcommit: e112a9b29376b1f574ee13b01c818131b2c7889d
+ms.openlocfilehash: 927dce7bc196c1871fd44d4b91e67ba04a3fbb16
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "34997390"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35126999"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Word
 
 Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
-Os suplementos do Word são executados em várias versões do Office, incluindo Office 2016 ou posterior no Windows, Office para iPad, Office para Mac e Office Online. A tabela a seguir lista os conjuntos de requisitos do Word, ou seja, os aplicativos de host do Office que oferecem suporte a esse conjunto de requisitos, e os números de versão ou de build desses aplicativos.
+Os suplementos do Word são executados em várias versões do Office, incluindo o Office 2016 ou posterior no Windows, Office na Web, iPad e Mac. A tabela a seguir lista os conjuntos de requisitos do Word, ou seja, os aplicativos de host do Office que oferecem suporte a esse conjunto de requisitos, e os números de versão ou de build desses aplicativos.
 
 > [!NOTE]
 > Para os conjuntos de requisitos marcados como Beta, use a versão especificada (ou posterior) do software do Office e a biblioteca Beta da CDN:https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
 >
 > Entradas não listadas como Beta estão geralmente disponíveis, e você pode continuar a usar a biblioteca Produção da CDN:https://appsforoffice.microsoft.com/lib/1/hosted/office.js
 
-|  Conjunto de requisitos  |   Office no Windows\*<br>(conectado ao Office 365)  |  Office para iPad<br>(conectado ao Office 365)  |  Office para Mac<br>(conectado ao Office 365)  | Office Online  | Servidor do Office Online  |
+|  Conjunto de requisitos  |   Office no Windows\*<br>(conectado à assinatura do Office 365)  |  Office no iPad<br>(conectado à assinatura do Office 365)  |  Office no Mac<br>(conectado à assinatura do Office 365)  | Office na Web  | Servidor do Office Online  |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [Visualização](/javascript/api/word)  | Use a versão mais recente do Office para testar as APIs de visualização (talvez seja exigido ser membro do [programa Office Insider](https://products.office.com/office-insider)) |
-| WordApi 1.3 | Versão 1612 (Compilação 7668.1000) ou posterior| Março de 2017, 2.22 ou posterior | Março de 2017, 15.32 ou posterior| Março de 2017 ||
-| WordApi 1.2  | Atualização de dezembro de 2015, versão 1601 (build 6568.1000) ou posterior | Janeiro de 2016, 1.18 ou posterior | Janeiro de 2016, 15.19 ou posterior| Setembro de 2016 | |
-| WordApi 1.1  | Versão 1509 (build 4266.1001) ou posterior| Janeiro de 2016, 1.18 ou posterior | Janeiro de 2016, 15.19 ou posterior| Setembro de 2016 | |
+| WordApi 1.3 | Versão 1612 (Compilação 7668.1000) ou posterior| Março de 2017, 2.22 ou posterior | Março de 2017, 15.32 ou posterior| Março de 2017 | N/D |
+| WordApi 1.2  | Atualização de dezembro de 2015, versão 1601 (build 6568.1000) ou posterior | Janeiro de 2016, 1.18 ou posterior | Janeiro de 2016, 15.19 ou posterior| Setembro de 2016 | N/D |
+| WordApi 1.1  | Versão 1509 (build 4266.1001) ou posterior| Janeiro de 2016, 1.18 ou posterior | Janeiro de 2016, 15.19 ou posterior| Setembro de 2016 | N/D |
 
 > [!NOTE]
 > O número do build do Office 2016 instalado via MSI é 16.0.4266.1001. Esta versão só contém o conjunto de requisitos 1.1 de WordApi.

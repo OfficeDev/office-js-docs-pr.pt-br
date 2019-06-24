@@ -1,14 +1,14 @@
 ---
 title: Testar e depurar suplementos do Office
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: c51823684dab4e85e2cf9e621365ea6230f21b8a
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 3c841608d36f5004a876bec2c899d0e5659d47a7
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451098"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35126915"
 ---
 # <a name="test-and-debug-office-add-ins"></a>Testar e depurar suplementos do Office
 
@@ -20,7 +20,7 @@ Esta seção contém orientações sobre testes, depuração de bugs e solução
 
 - [Fazer sideload de Suplementos do Office no Windows](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 
-- [Fazer sideload de Suplementos do Office no Office Online](sideload-office-add-ins-for-testing.md)
+- [Realizar sideload de suplementos do Office no Office na Web](sideload-office-add-ins-for-testing.md)
 
 - [Fazer sideload de Suplementos do Office no iPad e no Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
 
@@ -34,7 +34,7 @@ O procedimento para depurar um suplemento do Office também varia de acordo com 
 
 - [Depurar suplementos usando as ferramentas de desenvolvedor F12 no Windows 10](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
 
-- [Depurar suplementos no Office Online](debug-add-ins-in-office-online.md)
+- [Depurar suplementos no Office na Web](debug-add-ins-in-office-online.md)
 
 - [Depurar suplementos do Office no iPad e no Mac](debug-office-add-ins-on-ipad-and-mac.md)
 

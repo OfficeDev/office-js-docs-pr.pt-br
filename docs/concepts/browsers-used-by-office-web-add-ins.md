@@ -1,29 +1,29 @@
 ---
 title: Navegadores usados pelos Suplementos do Office
 description: Especifica como o sistema operacional e a versão do Office determinam o navegador que é usado pelos suplementos do Office.
-ms.date: 05/28/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 92218bb012ae9031ebfc429606885a0ec0ea85b3
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: 56b74c0e43c8e9709ecd03a8c60a89d3869e44f8
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34592126"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128105"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navegadores usados pelos Suplementos do Office
 
-Os suplementos do Office são aplicativos Web exibidos usando iFrames durante a execução do Office Online e no uso de controles de navegador incorporados no Office para clientes de desktops e móveis. Os suplementos também precisam de um mecanismo JavaScript para executar o JavaScript. O navegador incorporado e o mecanismo são fornecidos por um navegador instalado no computador do usuário.
+Os suplementos do Office são aplicativos Web exibidos usando iFrames durante a execução do Office na Web e no uso de controles de navegador incorporados no Office para clientes desktops e móveis. Os suplementos também precisam de um mecanismo JavaScript para executar o JavaScript. O navegador incorporado e o mecanismo são fornecidos por um navegador instalado no computador do usuário.
 
 Qual navegador é usado depende do:
 
 - Sistema operacional do computador.
-- Se o suplemento está em execução no Office Online, no Office 365 ou no Office 2013 sem assinatura ou posterior.
+- Se o suplemento está em execução no Office na Web, no Office 365 ou no Office 2013 sem assinatura ou posterior.
 
 A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sistemas operacionais.
 
 |**SO / Plataforma**|**Navegador**|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|Office Online|O navegador no qual o Office Online está aberto.|
+|Office na Web|O navegador no qual o Office está aberto.|
 |Mac|Safari|
 |iOS|Safari|
 |Android|Chrome|

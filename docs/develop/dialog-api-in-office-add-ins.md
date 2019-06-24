@@ -1,14 +1,14 @@
 ---
 title: Use a API de Caixa de Diálogo em seus Suplementos do Office
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 64740d6965209bf6e8b824cae7b149e3ee4f02e6
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 12e741650b7441557ac9b28306b6eba0f1894922
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448672"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128203"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Use a API de Caixa de Diálogo em seus Suplementos do Office
 
@@ -68,22 +68,22 @@ Defina os dois valores como 100% para ter uma verdadeira experiência de tela in
 > [!NOTE]
 > Apenas uma caixa de diálogo pode ser aberta em uma janela do host. Tentar abrir outra caixa de diálogo gera um erro. Portanto, por exemplo, se um usuário abrir uma caixa de diálogo no painel de tarefas, ele não poderá abrir uma segunda caixa de diálogo em uma página diferente no painel de tarefas. No entanto, quando uma caixa de diálogo é aberta em um [comando de suplemento](../design/add-in-commands.md), o comando abre um arquivo HTML novo (mas não visto) sempre que ele é selecionado. Isso cria uma nova janela do host (não vista) para que cada janela possa iniciar sua própria caixa de diálogo. Para obter mais informações, confira [Erros de displayDialogAsync](#errors-from-displaydialogasync).
 
-### <a name="take-advantage-of-a-performance-option-in-office-online"></a>Aproveite uma opção de desempenho no Office Online
+### <a name="take-advantage-of-a-performance-option-in-office-on-the-web"></a>Aproveite uma opção de desempenho no Office na Web
 
-A propriedade `displayInIframe` é uma propriedade adicional no objeto de configuração que você pode passar para `displayDialogAsync`. Quando essa propriedade for definida como `true` e o suplemento estiver em execução em um documento aberto no Office Online, a caixa de diálogo será aberta como um iframe flutuante, em vez de uma janela independente, o que faz com que ela seja aberta mais rapidamente. Apresentamos um exemplo a seguir:
+A propriedade `displayInIframe` é uma propriedade adicional no objeto de configuração que você pode passar para `displayDialogAsync`. Quando essa propriedade for definida como `true` e o suplemento estiver em execução em um documento aberto no Office na Web, a caixa de diálogo será aberta como um iframe flutuante, em vez de uma janela independente, o que faz com que ela seja aberta mais rapidamente. Apresentamos um exemplo a seguir:
 
 ```js
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe: true});
 ```
 
-O valor padrão é `false`, que é o mesmo que omitir a propriedade inteiramente. Se o suplemento não estiver sendo executado no Office Online, `displayInIframe` será ignorado.
+O valor padrão é `false`, que é o mesmo que omitir a propriedade inteiramente. Se o suplemento não estiver sendo executado no Office na Web, `displayInIframe` será ignorado.
 
 > [!NOTE]
 > Você **não** deverá usar `displayInIframe: true` se a caixa de diálogo redirecionar a qualquer ponto para uma página que não possa ser aberta em um iframe. Por exemplo, as páginas de entrada de muitos serviços Web populares, como Google e Conta da Microsoft, não podem ser abertas em um iframe.
 
-### <a name="handling-pop-up-blockers-with-office-online"></a>Tratamento de bloqueadores de pop-up com o Office Online
+### <a name="handling-pop-up-blockers-with-office-on-the-web"></a>Tratamento de bloqueadores de pop-up com o Office na Web
 
-Tentar exibida uma caixa de diálogo enquanto usa o Office Online pode fazer com que bloqueadores de pop-up do navegador bloqueiem a caixa de diálogo. O bloqueador de pop-up do navegador pode ser evitado se o usuário de seu suplemento concordar primeiro com um aviso do suplemento. `displayDialogAsync`'s [DialogOptions](/javascript/api/office/office.dialogoptions) tem a `promptBeforeOpen` propriedade para acionar esse tipo de pop-up. `promptBeforeOpen` é um valor booliano que fornece o comportamento a seguir:
+Tentar exibir uma caixa de diálogo enquanto usa o Office na Web pode fazer com que bloqueadores de pop-up do navegador bloqueiem a caixa de diálogo. O bloqueador de pop-up do navegador pode ser evitado se o usuário de seu suplemento concordar primeiro com um aviso do suplemento. `displayDialogAsync`'s [DialogOptions](/javascript/api/office/office.dialogoptions) tem a `promptBeforeOpen` propriedade para acionar esse tipo de pop-up. `promptBeforeOpen` é um valor booliano que fornece o comportamento a seguir:
 
  - `true` - A estrutura exibe um pop-up para acionar o painel de navegação e evitar bloqueadores de pop-up do navegador. 
  - `false` - A caixa de diálogo não será exibida e o desenvolvedor deverá lidar com pop-ups (fornecendo um artefato da interface de usuário para acionar a navegação). 
@@ -388,7 +388,7 @@ Para ver um exemplo que mostre um vídeo na caixa de diálogo, confira a [padrã
 O principal cenário das APIs de Caixa de diálogo é habilitar a autenticação com um provedor de identidade ou recurso que não permite que a página de entrada abra em um Iframe, como uma Conta da Microsoft, o Office 365, o Google e o Facebook.
 
 > [!NOTE]
-> Ao usar as APIs de Diálogo para esse cenário, *não* use a opção `displayInIframe: true` na chamada para `displayDialogAsync`. Confira [Tirar proveito de uma opção de desempenho no Office Online](#take-advantage-of-a-performance-option-in-office-online) para obter detalhes sobre essa opção anteriormente neste artigo.
+> Ao usar as APIs de Diálogo para esse cenário, *não* use a opção `displayInIframe: true` na chamada para `displayDialogAsync`. Confira [Aproveite uma opção de desempenho no Office na Web](#take-advantage-of-a-performance-option-in-office-on-the-web) para obter detalhes sobre essa opção anteriormente neste artigo.
 
 O que vem a seguir é um fluxo de autenticação simples e típico:
 

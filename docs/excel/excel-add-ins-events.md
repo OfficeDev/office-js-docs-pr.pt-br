@@ -1,18 +1,18 @@
 ---
 title: Trabalhar com eventos usando a API JavaScript do Excel
 description: ''
-ms.date: 04/03/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 7f05263f5220c2d60d0cebcfc686e1fed3f07900
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 3757b4e094bae29bc02f2b360144513fbc7ad1ab
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449264"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127783"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Trabalhar com eventos usando a API JavaScript do Excel
 
-Este artigo descreve conceitos importantes relacionados ao trabalho com eventos no Excel e fornece exemplos de código que mostram como registrar manipuladores de eventos, lidar com eventos e remover manipuladores de eventos usando as APIs JavaScript do Excel. 
+Este artigo descreve conceitos importantes relacionados ao trabalho com eventos no Excel e fornece exemplos de código que mostram como registrar manipuladores de eventos, lidar com eventos e remover manipuladores de eventos usando as APIs JavaScript do Excel.
 
 ## <a name="events-in-excel"></a>Eventos no Excel
 
@@ -20,14 +20,16 @@ Sempre que ocorrerem certos tipos de alterações em uma pasta de trabalho do Ex
 
 | Evento | Descrição | Objetos com suporte |
 |:---------------|:-------------|:-----------|
-| `onActivated` | Ocorre quando um objeto está ativado. | [**Gráfico**](/javascript/api/excel/excel.chart), [**ChartCollection**](/javascript/api/excel/excel.chartcollection), [**Planilha**](/javascript/api/excel/excel.worksheet), [ **WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
-| `onAdded` | Ocorre quando um objeto é adicionado. | [**ChartCollection**](/javascript/api/excel/excel.chartcollection), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
+| `onActivated` | Ocorre quando um objeto está ativado. | [**Gráfico**](/javascript/api/excel/excel.chart), [**ChartCollection**](/javascript/api/excel/excel.chartcollection), [**Shape**](/javascript/api/excel/excel.shape), [**Planilha**](/javascript/api/excel/excel.worksheet), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
+| `onAdded` | Ocorre quando um objeto é adicionado à coleção. | [**ChartCollection**](/javascript/api/excel/excel.chartcollection), [**TableCollection**](/javascript/api/excel/excel.tablecollection), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
+| `onAutoSaveSettingChanged` | Ocorre quando a `autoSave` configuração é alterada na pasta de trabalho. | [**Workbook**](/javascript/api/excel/excel.workbook) |
 | `onCalculated` | Ocorre quando uma planilha terminou um cálculo (ou todas as planilhas do conjunto terminaram). | [**WorksheetCollection**](/javascript/api/excel/excel.worksheet), [**Planilha**](/javascript/api/excel/excel.worksheetcollection) |
-| `onChanged` | Ocorre quando os dados das células são alterados. | [**Tabela**](/javascript/api/excel/excel.table), [**TableCollection**](/javascript/api/excel/excel.tablecollection), [**planilha**](/javascript/api/excel/excel.worksheet) |
+| `onChanged` | Ocorre quando os dados das células são alterados. | [**Tabela**](/javascript/api/excel/excel.table), [**TableCollection**](/javascript/api/excel/excel.tablecollection), [**Planilha**](/javascript/api/excel/excel.worksheet), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
 | `onDataChanged` | Ocorre quando os dados ou a formatação dentro da associação são alterados. | [**Associação**](/javascript/api/excel/excel.binding) |
-| `onDeactivated` | Ocorre quando um objeto é desativado. | [**Gráfico**](/javascript/api/excel/excel.chart), [**ChartCollection**](/javascript/api/excel/excel.chartcollection), [**Planilha**](/javascript/api/excel/excel.worksheet), [ **WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
-| `onDeleted` | Ocorre quando um objeto é excluído. | [**ChartCollection**](/javascript/api/excel/excel.chartcollection), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
-| `onSelectionChanged` | Ocorre quando uma célula ativa ou um intervalo selecionado são alterados. | [**Associação**](/javascript/api/excel/excel.binding), [**Tabela**](/javascript/api/excel/excel.table), [**Planilha**](/javascript/api/excel/excel.worksheet) |
+| `onDeactivated` | Ocorre quando um objeto é desativado. | [**Gráfico**](/javascript/api/excel/excel.chart), [**ChartCollection**](/javascript/api/excel/excel.chartcollection), [**Shape**](/javascript/api/excel/excel.shape), [**Planilha**](/javascript/api/excel/excel.worksheet), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
+| `onDeleted` | Ocorre quando um objeto é excluído da coleção. | [**ChartCollection**](/javascript/api/excel/excel.chartcollection), [**TableCollection**](/javascript/api/excel/excel.tablecollection), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
+| `onFormatChanged` | Ocorre quando o formato é alterado em uma planilha. | [**WorksheetCollection**](/javascript/api/excel/excel.worksheet), [**Planilha**](/javascript/api/excel/excel.worksheetcollection) |
+| `onSelectionChanged` | Ocorre quando uma célula ativa ou um intervalo selecionado são alterados. | [**Associação**](/javascript/api/excel/excel.binding), [**Tabela**](/javascript/api/excel/excel.table),  [**Worksheet**](/javascript/api/excel/excel.worksheet), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
 | `onSettingsChanged` | Ocorre quando as Configurações no documento são alteradas. | [**SettingCollection**](/javascript/api/excel/excel.settingcollection) |
 
 ### <a name="events-in-preview"></a>Eventos no modo de visualização
@@ -37,15 +39,7 @@ Sempre que ocorrerem certos tipos de alterações em uma pasta de trabalho do Ex
 
 | Evento | Descrição | Objetos com suporte |
 |:---------------|:-------------|:-----------|
-| `onActivated` | Ocorre quando a forma é ativada. | [**Shape**](/javascript/api/excel/excel.shape)|
-| `onAdded` | Ocorre quando uma nova tabela é adicionada na pasta de trabalho. | [**TableCollection**](/javascript/api/excel/excel.tablecollection)|
-| `onAutoSaveSettingChanged` | Ocorre quando a `autoSave` configuração é alterada na pasta de trabalho. | [**Workbook**](/javascript/api/excel/excel.workbook) |
-| `onChanged` | Ocorre quando uma planilha da pasta de trabalho é alterada. | [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection)|
-| `onDeactivated` | Ocorre quando a forma é desativada. | [**Shape**](/javascript/api/excel/excel.shape)|
-| `onDeleted` | Ocorre quando a tabela especificada é excluída em uma pasta de trabalho. | [**TableCollection**](/javascript/api/excel/excel.tablecollection)|
-| `onFiltered` | Ocorre quando o filtro é aplicado a um objeto. | [**Tabela**](/javascript/api/excel/excel.table), [**TableCollection**](/javascript/api/excel/excel.tablecollection), [**Planilha**](/javascript/api/excel/excel.worksheet), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
-| `onFormatChanged` | Ocorre quando o formato é alterado em uma planilha. | [**WorksheetCollection**](/javascript/api/excel/excel.worksheet), [**Planilha**](/javascript/api/excel/excel.worksheetcollection) |
-| `onSelectionChanged` | Ocorre quando a seleção é alterada em uma planilha. | [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
+| `onFiltered` | Ocorre quando um filtro é aplicado a um objeto. | [**Tabela**](/javascript/api/excel/excel.table), [**TableCollection**](/javascript/api/excel/excel.tablecollection), [**Planilha**](/javascript/api/excel/excel.worksheet), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
 
 ### <a name="event-triggers"></a>Gatilhos de eventos
 

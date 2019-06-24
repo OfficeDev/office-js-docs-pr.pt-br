@@ -1,14 +1,14 @@
 ---
-ms.date: 05/15/2019
+ms.date: 06/20/2019
 description: Criar funções personalizadas no Excel usando JavaScript.
 title: Criar funções personalizadas no Excel
 localization_priority: Priority
-ms.openlocfilehash: 3eeedd482a432166a7fa26eff6da4b075847a292
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: e8f53919ebd5e44fe04e45dfd05192c77324f3aa
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432164"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127888"
 ---
 # <a name="create-custom-functions-in-excel"></a>Criar funções personalizadas no Excel 
 
@@ -82,7 +82,7 @@ Note que o arquivo **functions.html**, que governa o carregamento do tempo de ex
 
 O arquivo de manifesto XML para um suplemento que define funções personalizadas (**./manifest.xml** no projeto gerador que Yo Office cria) especifica o namespace para todas as funções personalizadas no suplemento e o local dos arquivos HTML, JavaScript e JSON. 
 
-A marcação XML a seguir mostra um exemplo dos elementos `<ExtensionPoint>` e `<Resources>` que você deve incluir no manifesto de um suplemento para habilitar funções personalizadas. Se estiver usando o gerador Yo Office, seus arquivos de funções personalizadas gerados conterão um arquivo de manifesto mais complexo, que você pode comparar neste [repositório do Github](https://github.com/OfficeDev/Excel-Custom-Functions/blob/generate-metadata/manifest.xml).
+A marcação XML a seguir mostra um exemplo dos elementos `<ExtensionPoint>` e `<Resources>` que você deve incluir no manifesto de um suplemento para habilitar funções personalizadas. Se estiver usando o gerador Yo Office, seus arquivos de funções personalizadas gerados conterão um arquivo de manifesto mais complexo, que você pode comparar neste [repositório do Github](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/manifest.xml).
 
 > [!NOTE] 
 > As URLs especificadas no arquivo de manifesto para as funções personalizadas JavaScript e JSON e arquivos HTML devem estar publicamente acessíveis e ter o mesmo subdomínio.
@@ -141,7 +141,7 @@ A marcação XML a seguir mostra um exemplo dos elementos `<ExtensionPoint>` e `
 
 ## <a name="coauthoring"></a>Coautoria
 
-O Excel Online e o Excel no Windows com uma assinatura do Office 365 permitem editar documentos em coautoria, e esse recurso funciona com funções personalizadas. Se a pasta de trabalho usa uma função personalizada, seu colega será solicitado a carregar o suplemento da função personalizada. Depois de carregarem o suplemento, a função personalizada compartilhará resultados por meio de coautoria.
+O Excel Online e no Windows conectado a uma assinatura do Office 365 permitem editar documentos em coautoria, e esse recurso funciona com funções personalizadas. Se a pasta de trabalho usa uma função personalizada, seu colega será solicitado a carregar o suplemento da função personalizada. Depois de carregarem o suplemento, a função personalizada compartilhará resultados por meio de coautoria.
 
 Para saber mais sobre coautoria, confira o tópico [Sobre o recurso de coautoria no Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).
 

@@ -1,14 +1,14 @@
 ---
 title: Implantar e publicar seu suplemento do Office | Microsoft Docs
 description: Você pode usar um dos vários métodos para implantar o suplemento do Office para testar ou distribuir aos usuários.
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: ba32e0bbe594b8da8fad0d230b818faf59e64ce6
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 9fefdece308647dda79a769acc9e8493cbca06f8
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910151"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128549"
 ---
 # <a name="deploy-and-publish-your-office-add-in"></a>Implantar e publicar seu Suplemento do Office
 
@@ -16,7 +16,7 @@ Você pode usar um dos vários métodos para implantar o suplemento do Office pa
 
 |**Method**|**Use...**|
 |:---------|:------------|
-|[Sideload](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|Usado como parte do processo de desenvolvimento para testar o suplemento em execução no Windows, Office Online, iPad ou Mac.|
+|[Sideload](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|Usado como parte do processo de desenvolvimento para testar o suplemento em execução no Windows, no iPad, no Mac ou em um navegador.|
 |[Implantação Centralizada](centralized-deployment.md)|Em uma implantação híbrida ou de nuvem para distribuir seu suplemento aos usuários na sua organização usando o centro de administração do Office 365.|
 |[Catálogo do SharePoint](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|Usado para distribuir o suplemento aos usuários da organização em um ambiente local.|
 |[AppSource](/office/dev/store/submit-to-the-office-store)|Usado para distribuir o suplemento publicamente aos usuários.|
@@ -66,7 +66,7 @@ Um catálogo de aplicativos do SharePoint é um conjunto de sites especial que v
 Se você está implantando suplementos em um ambiente local, use um catálogo do SharePoint. Para saber mais, confira, [Publicar suplementos de conteúdo e de painel de tarefas em um catálogo do SharePoint](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
 > [!NOTE]
-> Os catálogos do SharePoint não são compatíveis com o Office para Mac. Implantar Suplementos do Office em clientes Mac, envie-os para a [AppSource](/office/dev/store/submit-to-the-office-store).
+> Os catálogos do SharePoint não são compatíveis com o Office para Mac. Para implantar Suplementos do Office em clientes do Mac, envie-os para a [AppSource](/office/dev/store/submit-to-the-office-store).
 
 ### <a name="outlook-add-in-deployment"></a>Implantação de suplemento do Outlook
 

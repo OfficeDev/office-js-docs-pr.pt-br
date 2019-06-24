@@ -1,18 +1,20 @@
 ---
-ms.date: 06/17/2019
+ms.date: 06/20/2019
 description: Defina os metadados de funções personalizadas no Excel.
 title: Metadados para funções personalizadas no Excel
 localization_priority: Normal
-ms.openlocfilehash: a7715bcdd125d44ec887f8b779ac0673b4a12af0
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: f97a339972a8ac134bd30c87b86c4701cb4b5fc4
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059857"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127867"
 ---
 # <a name="custom-functions-metadata"></a>Metadados de funções personalizadas
 
 Quando você define [funções personalizadas](custom-functions-overview.md) dentro de seu suplemento do Excel, o projeto do suplemento inclui um arquivo de metadados JSON que fornece as informações que o Excel requer para registrar as funções personalizadas e torná-las disponíveis para os usuários finais.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 Este arquivo é gerado:
 
@@ -25,7 +27,7 @@ Este artigo descreve o formato do arquivo de metadados JSON, supondo que você o
 
 Para saber mais sobre outros arquivos que você deve incluir em seu projeto de suplemento para habilitar funções personalizadas, confira [Criar funções personalizadas no Excel](custom-functions-overview.md).
 
-Configurações do servidor no servidor que hospeda o arquivo JSON deve ter o [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) habilitado para funções personalizadas funcionarem corretamente no Excel Online.
+As configurações de servidor no servidor que hospeda o arquivo JSON devem ter o [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) habilitado para que as funções personalizadas funcionem corretamente no Excel na Web.
 
 ## <a name="example-metadata"></a>Exemplo de metadados
 

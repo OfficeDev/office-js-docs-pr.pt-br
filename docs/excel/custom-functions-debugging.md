@@ -1,27 +1,29 @@
 ---
-ms.date: 06/17/2019
+ms.date: 06/20/2019
 description: Depurar suas funções personalizadas no Excel.
 title: Depuração de funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: 414944e66a6c55228ea009291be42218038fc6fa
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: d7c7f44ffcb22f66e8dccc58c12e957eefe07524
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059864"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128388"
 ---
 # <a name="custom-functions-debugging"></a>Depuração de funções personalizadas
 
 A depuração de funções personalizadas pode ser realizada por vários meios, dependendo de qual plataforma você está usando.
 
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
 No Windows:
 - [Depurador de área de trabalho do Excel e Visual Studio (VS Code)](#use-the-vs-code-debugger-for-excel-desktop)
-- [O Excel online e o depurador de código VS](#use-the-vs-code-debugger-for-excel-online-in-microsoft-edge)
-- [Excel online e ferramentas de navegador](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-online)
+- [Web Excel e depurador de código VS](#use-the-vs-code-debugger-for-excel-in-microsoft-edge)
+- [Excel na Web e ferramentas de navegador](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web)
 - [Linha de comando](#use-the-command-line-tools-to-debug)
 
 No Mac:
-- [Excel online e ferramentas de navegador](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-online)
+- [Excel na Web e ferramentas de navegador](#use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web)
 - [Linha de comando](#use-the-command-line-tools-to-debug)
 
 > [!NOTE]
@@ -36,7 +38,7 @@ Antes de começar a depurar, você deve usar o [gerador Yeoman para suplementos 
 Você pode usar o VS Code para depurar funções personalizadas no Office Excel na área de trabalho.
 
 > [!NOTE]
-> A depuração de área de trabalho do Mac não está disponível, mas pode ser obtida [usando as ferramentas de navegador e a linha de comando para depurar o Excel online](#use-the-command-line-tools-to-debug) ).
+> A depuração de área de trabalho do Mac não está disponível, mas pode ser obtida [usando as ferramentas de navegador e a linha de comando para depurar o Excel na Web](#use-the-command-line-tools-to-debug)).
 
 ### <a name="run-your-add-in-from-vs-code"></a>Executar seu suplemento de VS Code
 
@@ -58,26 +60,26 @@ Você pode usar o VS Code para depurar funções personalizadas no Office Excel 
 
 Nesse ponto, a execução será interrompida na linha de código em que você definir o ponto de interrupção. Agora você pode percorrer seu código, definir inspeções e usar quaisquer recursos de depuração de código VS necessários.
 
-## <a name="use-the-vs-code-debugger-for-excel-online-in-microsoft-edge"></a>Usar o depurador de código VS para o Excel online no Microsoft Edge
+## <a name="use-the-vs-code-debugger-for-excel-in-microsoft-edge"></a>Usar o depurador de código VS para Excel no Microsoft Edge
 
-Você pode usar o VS Code para depurar funções personalizadas no Excel online no navegador Microsoft Edge. Para usar o VS Code com o Microsoft Edge, você deve instalar o depurador para a extensão do [Microsoft Edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge) .
+Você pode usar o VS Code para depurar funções personalizadas no Excel no navegador Microsoft Edge. Para usar o VS Code com o Microsoft Edge, você deve instalar o depurador para a extensão do [Microsoft Edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge) .
 
 ### <a name="run-your-add-in-from-vs-code"></a>Executar seu suplemento de VS Code
 
 1. Abra a pasta do projeto raiz de funções personalizadas no [vs Code](https://code.visualstudio.com/).
 2. Escolha **Terminal > executar tarefa** e digite ou selecione **Watch**. Isso irá monitorar e recriar qualquer alteração de arquivo.
-3. Escolha **Terminal > executar tarefa** e digite ou selecione **servidor de desenvolvimento**. 
+3. Escolha **Terminal > executar tarefa** e digite ou selecione **servidor de desenvolvimento**.
 
 ### <a name="start-the-vs-code-debugger"></a>Iniciar o depurador do VS Code
 
 4. Escolha **exibir > depurar** ou digite **Ctrl + Shift + D** para alternar para o modo de depuração.
 5. Nas opções de depuração, escolha **Office Online (Microsoft Edge)**.
-6. Abra o Excel online usando o navegador do Microsoft Edge, abra o Excel online e crie uma nova pasta de trabalho.
+6. Abra o Excel no navegador Microsoft Edge e crie uma nova pasta de trabalho.
 7. Escolha **compartilhar** na faixa de opções e copie o link para a URL dessa nova pasta de trabalho.
 8. Selecione **F5** (ou escolha **debug > iniciar a depuração** no menu) para iniciar a depuração. Um prompt será exibido, solicitando a URL do seu documento.
 9. Cole na URL da sua pasta de trabalho e pressione Enter.
 
-### <a name="sideload-your-add-in"></a>Realizar o sideload do seu suplemento   
+### <a name="sideload-your-add-in"></a>Realizar o sideload do seu suplemento
 
 1. Selecione a guia **Inserir** na faixa de opções e, na seção **suplementos** , escolha **suplementos do Office**.
 2. Na caixa de diálogo **Suplementos do Office**, selecione a guia **MEUS SUPLEMENTOS**, escolha **Gerenciar Meus Suplementos** e **Carregar Meu Suplemento**.
@@ -94,19 +96,19 @@ Você pode usar o VS Code para depurar funções personalizadas no Excel online 
 2. [Defina um ponto de interrupção](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints) no código-fonte da função personalizada.
 3. Na pasta de trabalho do Excel, insira uma fórmula que usa sua função personalizada.
 
-## <a name="use-the-browser-developer-tools-to-debug-custom-functions-in-excel-online"></a>Usar as ferramentas de desenvolvedor do navegador para depurar as funções personalizadas no Excel online
+## <a name="use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web"></a>Usar as ferramentas de desenvolvedor do navegador para depurar funções personalizadas no Excel na Web
 
-Você pode usar as ferramentas de desenvolvedor do navegador para depurar as funções personalizadas no Excel online. As etapas a seguir funcionam para o Windows e o macOS.
+Você pode usar as ferramentas de desenvolvedor do navegador para depurar funções personalizadas no Excel na Web. As etapas a seguir funcionam para o Windows e o macOS.
 
 ### <a name="run-your-add-in-from-visual-studio-code"></a>Executar seu suplemento do Visual Studio Code
 
 1. Abra a pasta do projeto raiz de suas funções personalizadas no [Visual Studio Code (vs Code)](https://code.visualstudio.com/).
 2. Escolha **Terminal > executar tarefa** e digite ou selecione **Watch**. Isso irá monitorar e recriar qualquer alteração de arquivo.
-3. Escolha **Terminal > executar tarefa** e digite ou selecione **servidor de desenvolvimento**. 
+3. Escolha **Terminal > executar tarefa** e digite ou selecione **servidor de desenvolvimento**.
 
-### <a name="sideload-your-add-in"></a>Realizar o sideload do seu suplemento   
+### <a name="sideload-your-add-in"></a>Realizar o sideload do seu suplemento
 
-1. Abra o [Microsoft Office Online](https://office.live.com/).
+1. Abra [o Microsoft Office na Web](https://office.live.com/).
 2. Abra uma nova pasta de trabalho do Excel.
 3. Abra a guia **Inserir** na faixa de opções e, na seção **Suplementos**, escolha **Suplementos do Office**.
 4. Na caixa de diálogo **Suplementos do Office**, selecione a guia **MEUS SUPLEMENTOS**, escolha **Gerenciar Meus Suplementos** e **Carregar Meu Suplemento**.
@@ -130,7 +132,7 @@ Se você precisar alterar o código, poderá fazer edições no VS Code e salvar
 
 ## <a name="use-the-command-line-tools-to-debug"></a>Usar as ferramentas de linha de comando para depurar
 
-Se você não estiver usando o VS, poderá usar a linha de comando (como bash ou PowerShell) para executar o suplemento. Você precisará usar as ferramentas de desenvolvedor do navegador para depurar seu código no Excel online. Não é possível depurar a versão da área de trabalho do Excel usando a linha de comando.
+Se você não estiver usando o VS, poderá usar a linha de comando (como bash ou PowerShell) para executar o suplemento. Você precisará usar as ferramentas de desenvolvedor do navegador para depurar seu código no Excel na Web. Não é possível depurar a versão da área de trabalho do Excel usando a linha de comando.
 
 1. A partir da linha de `npm run watch` comando, execute para observar e recriar quando ocorrerem alterações de código.
 2. Abra uma segunda janela de linha de comando (a primeira será bloqueada durante a execução da inspeção).
@@ -139,11 +141,11 @@ Se você não estiver usando o VS, poderá usar a linha de comando (como bash ou
     
     `npm run start:desktop`
     
-    Ou se preferir iniciar seu suplemento no Excel online, execute o seguinte comando
+    Ou se preferir iniciar seu suplemento no Excel na Web, execute o seguinte comando
     
     `npm run start:web`
     
-    Para o Excel online, você também precisa Sideload seu suplemento. Siga as etapas em [Sideload seu suplemento](#sideload-your-add-in) para Sideload o suplemento. Em seguida, prossiga para a próxima seção para iniciar a depuração.
+    Para o Excel na Web, você também precisa Sideload seu suplemento. Siga as etapas em [Sideload seu suplemento](#sideload-your-add-in) para Sideload o suplemento. Em seguida, prossiga para a próxima seção para iniciar a depuração.
     
 4. Abra as ferramentas de desenvolvedor no navegador. Para o Chrome e a maioria dos navegadores, o F12 abrirá as ferramentas de desenvolvedor.
 5. Em ferramentas de desenvolvedor, abra o arquivo de script do código-fonte (**funções. js** ou **funções. TS**). O código de suas funções personalizadas pode estar localizado próximo ao final do arquivo.
@@ -161,7 +163,7 @@ Há várias tarefas de compilação disponíveis:
 
 Você pode usar as seguintes tarefas para iniciar a depuração no desktop ou online.
 - `npm run start:desktop`: Inicia o Excel na área de trabalho e sideloads seu suplemento.
-- `npm run start:web`: Inicia o Excel online e o sideloads do suplemento.
+- `npm run start:web`: Inicia o Excel na Web e sideloads seu suplemento.
 - `npm run stop`: Interrompe o Excel e a depuração.
 
 ## <a name="next-steps"></a>Próximas etapas

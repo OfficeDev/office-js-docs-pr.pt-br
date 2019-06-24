@@ -1,14 +1,14 @@
 ---
 title: Office. Context – conjunto de requisitos de visualização
 description: ''
-ms.date: 04/12/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: a1e01142a4c0b84a4afcba89f76766d28595ba95
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 7e5d25c4788ec9f35a97f3bd3da6cca6a7314fb4
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450342"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127482"
 ---
 # <a name="context"></a>context
 
@@ -27,17 +27,17 @@ O namespace Office.context fornece interfaces compartilhadas que são usadas pel
 
 | Membro | Tipo |
 |--------|------|
-| [displayLanguage](#displaylanguage-string) | Member |
-| [officeTheme](#officetheme-object) | Member |
+| [displayLanguage](#displaylanguage-string) | Membro |
+| [officeTheme](#officetheme-object) | Membro |
 | [roamingSettings](#roamingsettings-roamingsettings) | Membro |
 
 ### <a name="namespaces"></a>Namespaces
 
-[mailbox](office.context.mailbox.md): fornece acesso ao modelo de objeto de suplemento do Outlook para o Microsoft Outlook e o Microsoft Outlook na Web.
+[Mailbox](office.context.mailbox.md): fornece acesso ao modelo de objeto do suplemento do Outlook para o Microsoft Outlook.
 
-### <a name="members"></a>Membros
+### <a name="members"></a>Members
 
-####  <a name="displaylanguage-string"></a>displayLanguage :String
+#### <a name="displaylanguage-string"></a>displayLanguage: cadeia de caracteres
 
 Obtém a localidade (idioma) no formato de marca de idioma RFC 1766 especificado pelo usuário para a interface do usuário do aplicativo host do Office.
 
@@ -78,22 +78,22 @@ function write(message){
 ---
 ---
 
-####  <a name="officetheme-object"></a>officeTheme :Object
+#### <a name="officetheme-object"></a>officeTheme: objeto
 
 Fornece acesso às propriedades de cores de temas do Office.
 
 > [!NOTE]
-> Não há suporte para esse membro no Outlook para iOS ou no Outlook para Android.
+> Não há suporte para esse membro no Outlook no iOS ou no Android.
 
 Usar as cores de tema do Office possibilita coordenar o esquema de cores de seu suplemento com o tema do Office atualmente selecionado pelo usuário em **Arquivo > Conta do Office > Tema da interface de usuário do Office **, que é aplicado a todos os aplicativos host do Office. Usar cores de temas do Office é apropriado suplementos de email e painéis de tarefas.
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>Tipo
 
 *   Objeto
 
 ##### <a name="properties"></a>Propriedades:
 
-|Name| Tipo| Descrição|
+|Nome| Tipo| Descrição|
 |---|---|---|
 |`bodyBackgroundColor`| String|Obtém a cor de plano de fundo do corpo de tema do Office como um tripleto hexadecimal de cores.|
 |`bodyForegroundColor`| String|Obtém a cor de primeiro plano do corpo de tema do Office como um tripleto hexadecimal de cores.|
@@ -125,13 +125,13 @@ function applyOfficeTheme(){
 ---
 ---
 
-####  <a name="roamingsettings-roamingsettingsjavascriptapioutlookofficeroamingsettings"></a>roamingSettings :[RoamingSettings](/javascript/api/outlook/office.RoamingSettings)
+#### <a name="roamingsettings-roamingsettingsjavascriptapioutlookofficeroamingsettings"></a>roamingSettings: [roamingSettings](/javascript/api/outlook/office.RoamingSettings)
 
 Obtém um objeto que representa as configurações personalizadas ou o estado de um suplemento de email do Outlook salvos na caixa de correio do usuário.
 
 O objeto `RoamingSettings` permite armazenar e acessar os dados de um suplemento de email que está armazenado na caixa de correio do usuário, para que fiquem disponíveis para esse suplemento quando ele for executado em qualquer aplicativo host de cliente usado para acessar essa caixa de correio.
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>Tipo
 
 *   [RoamingSettings](/javascript/api/outlook/office.RoamingSettings)
 

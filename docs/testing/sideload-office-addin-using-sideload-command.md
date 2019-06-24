@@ -1,14 +1,14 @@
 ---
 title: Realizar sideload de Suplementos do Office usando o comando sideload
 description: ''
-ms.date: 03/19/201907/24/2018
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 69d39c2736312653b5a362aefccd41629e6e3555
-ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
+ms.openlocfilehash: 38aa74963ca750d65e4be7bb17745a59eeed0c83
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33619074"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35126887"
 ---
 # <a name="sideload-office-add-ins-for-testing-using-the-sideload-command"></a>Realizar sideload de Suplementos do Office usando o comando sideload
  
@@ -37,7 +37,7 @@ Se o seu projeto de suplemento foi criado com o Visual Studio ou não possui o s
 
 Se você não estiver testando um suplemento do Word, do Excel ou do PowerPoint no Windows, confira um dos tópicos a seguir para obter informações sobre como realizar o sideload no seu suplemento:
  
-- [Sideload de suplementos do Office para teste no Office Online](sideload-office-add-ins-for-testing.md)
+- [Realizar sideload de suplementos do Office no Office Online para teste](sideload-office-add-ins-for-testing.md)
 - [Sideload suplementos do Office para teste em um iPad ou Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
 - [Realizar sideload de suplementos do Outlook para teste](/outlook/add-ins/sideload-outlook-add-ins-for-testing)
 

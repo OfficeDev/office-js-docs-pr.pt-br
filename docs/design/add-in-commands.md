@@ -1,14 +1,14 @@
 ---
 title: Comandos de suplemento para Excel, Word e PowerPoint
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 7b85d3016b195b353b1e7f314aceb761cf4e31b3
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: cbdc01a439bf34b089806faf20fffa12c916fea1
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952177"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127734"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Comandos de suplemento para Excel, Word e PowerPoint
 
@@ -23,9 +23,9 @@ Para uma visão geral do recurso, confira o vídeo [Comandos de Suplemento na Fa
 
 ![Captura de tela de um comando de suplemento no Excel](../images/add-in-commands-1.png)
 
-*Figura 2. Suplemento com comandos em execução no Excel Online*
+*Figura 2. Suplemento com comandos em execução no Excel na Web*
 
-![Captura de tela de um comando de suplemento no Excel Online](../images/add-in-commands-2.png)
+![Captura de tela de um comando de suplemento no Excel na Web](../images/add-in-commands-2.png)
 
 ## <a name="command-capabilities"></a>Recursos de comandos
 
@@ -49,22 +49,22 @@ Os seguintes recursos de comando são compatíveis no momento.
 - ShowTaskpane: exibe um ou vários painéis que carregam páginas HTML personalizadas dentro deles.
 - ExecuteFunction: carrega uma página HTML invisível e executa uma função JavaScript dentro dela. Para mostrar a interface do usuário dentro de sua função (como erros, progresso ou entrada adicional), você pode usar a API [displayDialog](/javascript/api/office/office.ui).  
 
-## <a name="supported-platforms"></a>Plataformas com suporte
+## <a name="supported-platforms"></a>Plataformas compatíveis
 
-Os comandos de suplemento atualmente têm suporte nas seguintes plataformas:
+Os comandos de suplemento atualmente têm suporte nas seguintes plataformas.
 
 - Outlook 2016 no Windows (build 16.0.4678.1000+)
-- Office no Windows conectado ao Office 365 (build 16.0.6769+)
+- Outlook no Windows (build 16.0.6769+, conectado à assinatura do Office 365)
 - Office 2019 no Windows
-- Office para Mac conectado ao Office 365 (build 15.33+)
-- Office 2019 para Mac
-- Office Online
+- Office no Mac (build 15.33+, conectado à assinatura do Office 365)
+- Office 2019 no Mac
+- Office na Web
 
 Mais plataformas serão incluídas em breve.
 
 ## <a name="debugging"></a>Depuração
 
-Para depurar um comando de Suplemento, você deve executá-lo no Office Online. Para obter detalhes, consulte [Depurar suplementos no Office Online](../testing/debug-add-ins-in-office-online.md).
+Para depurar um comando de Suplemento, você deve executá-lo no Office na Web. Para obter detalhes, confira [Depurar suplementos no Office na Web](../testing/debug-add-ins-in-office-online.md).
 
 ## <a name="best-practices"></a>Práticas recomendadas
 
@@ -74,7 +74,7 @@ Aplique as seguintes práticas recomendadas ao desenvolver comandos de suplement
 - Forneça ações granulares que tornam a realização de tarefas comuns no seu suplemento mais eficiente. Minimize o número de etapas necessárias para concluir uma tarefa.
 - Para o posicionamento dos comandos na faixa de opções do Office:
     - Insira os comandos em uma guia existente (Inserir, Revisar e assim por diante) se a funcionalidade fornecida se encaixar ali. Por exemplo, se seu suplemento permitir que os usuários insiram mídia, adicione um grupo à guia Inserir. Observe que nem todas as guias estão disponíveis em todas as versões do Office. Para saber mais, confira o [Manifesto XML dos Suplementos do Office](../develop/add-in-manifests.md).
-    - Insira comandos na guia Página Inicial se a funcionalidade não se encaixar em outra guia e você menos de seis comandos de nível superior. Você também pode adicionar comandos à guia Página Inicial se seu suplemento precisar funcionar em diferentes versões do Office (como o Office para área de trabalho e o Office Online) e uma guia não estiver disponível em todas as versões (por exemplo, a guia Design não existe no Office Online).  
+    - Insira comandos na guia Página Inicial se a funcionalidade não se encaixar em outra guia e você menos de seis comandos de nível superior. Você também pode adicionar comandos à guia Página Inicial se seu suplemento precisar funcionar em diferentes versões do Office (como o Office para área de trabalho e o Office na Web) e uma guia não está disponível em todas as versões (por exemplo, a guia Design não existe no Office na Web).  
     - Coloque os comandos em uma guia personalizada se você tiver mais de seis comandos de nível superior.
     - Nomeie seu grupo de acordo com o nome do seu suplemento. Se você tiver vários grupos, nomeie cada grupo com base na funcionalidade que os comandos nesse grupo fornecem.
     - Não adicione botões supérfluos para aumentar o estado real do seu suplemento.

@@ -1,15 +1,15 @@
 ---
-ms.date: 06/17/2019
+ms.date: 06/20/2019
 description: Desenvolvimento de funções personalizadas no guia de início rápido do Excel.
 title: Início rápido de funções personalizadas
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f172139f3aafb374eec3c1350b127ed3194d00e0
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: 8e7fbf247df04a12c38ad24d9ba6335a7f7bdaf8
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059927"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128577"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Introdução ao desenvolvimento de funções personalizadas do Excel
 
@@ -58,7 +58,7 @@ Para começar, você usará o gerador Yeoman para criar projeto com funções pe
     > [!NOTE]
     > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar `npm run build`, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
 
-4. Inicie o servidor local da web, que é executado no Node. Você pode experimentar o suplemento função personalizada no Excel no Windows ou no Excel online. Você pode ser solicitado a abrir o painel de tarefas do suplemento, embora isso seja opcional. Você ainda pode executar suas funções personalizadas sem abrir o painel de tarefas do suplemento.
+4. Inicie o servidor local da web, que é executado no Node. Você pode experimentar o suplemento função personalizada no Excel na Web ou no Windows. Você pode ser solicitado a abrir o painel de tarefas do suplemento, embora isso seja opcional. Você ainda pode executar suas funções personalizadas sem abrir o painel de tarefas do suplemento.
 
 # <a name="excel-on-windowstabexcel-windows"></a>[Excel no Windows](#tab/excel-windows)
 
@@ -68,19 +68,19 @@ Para testar seu suplemento no Excel no Windows, execute o seguinte comando. Quan
 npm run start:desktop
 ```
 
-# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[Excel na Web](#tab/excel-online)
 
-Para testar seu suplemento no Excel online, execute o seguinte comando. Quando você executa este comando, o servidor Web local iniciará.
+Para testar seu suplemento no Excel na Web, execute o seguinte comando. Quando você executa este comando, o servidor Web local iniciará.
 
 ```command&nbsp;line
 npm run start:web
 ```
 
-Para usar seu suplemento de funções personalizadas, abra uma nova pasta de trabalho no Excel online. Nesta pasta de trabalho, conclua as seguintes etapas para Sideload seu suplemento.
+Para usar seu suplemento de funções personalizadas, abra uma nova pasta de trabalho no Excel em um navegador. Nesta pasta de trabalho, conclua as seguintes etapas para Sideload seu suplemento.
 
-1. No Excel Online, escolha a guia **inserir** pressione e, em seguida, escolha **suplementos**.
+1. No Excel, escolha a guia **Inserir** e, em seguida, escolha **suplementos**.
 
-   ![Inserir faixa de opções no Excel online com o ícone meus suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
+   ![Inserir faixa de opções no Excel na Web com o ícone meus suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
    
 2. Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**.
 

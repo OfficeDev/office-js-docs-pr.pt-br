@@ -1,14 +1,14 @@
 ---
-ms.date: 06/17/2019
+ms.date: 06/21/2019
 description: Solução de problemas comuns em funções personalizadas do Excel.
 title: Solução de problemas das funções personalizadas
 localization_priority: Priority
-ms.openlocfilehash: f407e103d8f628710c5f58a9787b3a802dcd39c8
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: f42e9e6ac3e2d868f90ab4f5129684308750b8e2
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059899"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128280"
 ---
 # <a name="troubleshoot-custom-functions"></a>Solução de problemas de funções personalizadas
 
@@ -66,9 +66,9 @@ Saiba mais sobre esse processo em [Associar os nomes de função com metadados J
 
 Se você vir o erro "Não é possível abrir este suplemento de um localhost", será necessário habilitar uma exceção de loopback local. Para obter detalhes sobre como fazer isso, confira [este artigo de suporte da Microsoft](https://support.microsoft.com/pt-BR/help/4490419/local-loopback-exemption-does-not-work).
 
-### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-for-windows"></a>Relatórios de log de tempo de execução "TypeError: Falha na solicitação de rede" no Excel para Windows
+### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-on-windows"></a>Relatórios de log de tempo de execução "TypeError: Falha na solicitação de rede" no Excel para Windows
 
-Se você ver o erro "TypeError: Falha na solicitação de rede" em seu [log de tempo de execução](custom-functions-troubleshooting.md#enable-runtime-logging) enquanto faz chamadas para seu servidor localhost, você precisará habilitar uma exceção do loopback local. Para obter detalhes sobre como fazer isso, confira [este artigo de suporte da Microsoft](https://support.microsoft.com/pt-BR/help/4490419/local-loopback-exemption-does-not-work).
+Se você ver o erro "TypeError: Falha na solicitação de rede" em seu [log de tempo de execução](custom-functions-troubleshooting.md#enable-runtime-logging) enquanto faz chamadas para seu servidor localhost, você precisará habilitar uma exceção de loopback local. Para mais detalhes sobre como fazer isso, confira *Opção #2* neste [artigo de suporte da Microsoft ](https://support.microsoft.com/pt-BR/help/4490419/local-loopback-exemption-does-not-work).
 
 ### <a name="ensure-promises-return"></a>Garantir que as promessas retornem resultados
 

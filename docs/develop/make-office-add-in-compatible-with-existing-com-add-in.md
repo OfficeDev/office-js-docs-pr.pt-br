@@ -1,14 +1,14 @@
 ---
 title: Torne o seu suplemento do Office compatível com um suplemento COM existente
 description: Habilitar a compatibilidade entre o suplemento do Office e o suplemento COM equivalente
-ms.date: 06/19/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: a18adb9841a9580d77c5110a0346f365e38e3746
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: 3577b8fe4b4a26ac5d0af85cc5c2f96a7a8dc010
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059717"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128049"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in-preview"></a>Tornar o suplemento do Office compatível com um suplemento de COM existente (visualização)
 
@@ -48,7 +48,7 @@ Quando um suplemento COM equivalente é especificado no manifesto do suplemento 
 - Como uma entrada no Gerenciador de faixa de opções
 
 > [!NOTE]
-> A especificação de um suplemento COM equivalente no manifesto não tem efeito sobre outras plataformas como o Office na Web ou o Office para Mac.
+> A especificação de um suplemento COM equivalente no manifesto não tem efeito sobre outras plataformas como o Office na Web ou Mac.
 
 Os cenários a seguir descrevem o que acontece dependendo de como o usuário adquire o suplemento do Office.
 

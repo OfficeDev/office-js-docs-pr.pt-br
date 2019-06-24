@@ -1,14 +1,14 @@
 ---
 title: Office. Context – conjunto de requisitos 1,2
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 8c0c84d4c763e125992b06abfb33985085a56210
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: cdf6b76ca090eb78d31fc1a6f328ce83c606e1f5
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451854"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128423"
 ---
 # <a name="context"></a>context
 
@@ -26,11 +26,11 @@ O namespace Office.context fornece interfaces compartilhadas que são usadas pel
 
 ### <a name="namespaces"></a>Namespaces
 
-[Mailbox](office.context.mailbox.md) : fornece acesso ao modelo de objeto do suplemento do Outlook para o Microsoft Outlook e o Microsoft Outlook na Web.
+[Mailbox](office.context.mailbox.md) : fornece acesso ao modelo de objeto do suplemento do Outlook para o Microsoft Outlook.
 
-### <a name="members"></a>Membros
+### <a name="members"></a>Members
 
-####  <a name="displaylanguage-string"></a>displayLanguage :String
+#### <a name="displaylanguage-string"></a>displayLanguage: cadeia de caracteres
 
 Obtém a localidade (idioma) no formato de marca de idioma RFC 1766 especificado pelo usuário para a interface do usuário do aplicativo host do Office.
 
@@ -68,13 +68,13 @@ function write(message){
 }
 ```
 
-####  <a name="roamingsettings-roamingsettingsjavascriptapioutlook12officeroamingsettings"></a>roamingSettings :[RoamingSettings](/javascript/api/outlook_1_2/office.RoamingSettings)
+#### <a name="roamingsettings-roamingsettingsjavascriptapioutlook12officeroamingsettings"></a>roamingSettings: [roamingSettings](/javascript/api/outlook_1_2/office.RoamingSettings)
 
 Obtém um objeto que representa as configurações personalizadas ou o estado de um suplemento de email do Outlook salvos na caixa de correio do usuário.
 
 O objeto `RoamingSettings` permite armazenar e acessar os dados de um suplemento de email que está armazenado na caixa de correio do usuário, para que fiquem disponíveis para esse suplemento quando ele for executado em qualquer aplicativo host de cliente usado para acessar essa caixa de correio.
 
-##### <a name="type"></a>Type
+##### <a name="type"></a>Tipo
 
 *   [RoamingSettings](/javascript/api/outlook_1_2/office.RoamingSettings)
 

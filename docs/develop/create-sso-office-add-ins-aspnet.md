@@ -3,12 +3,12 @@ title: Criar um Suplemento do Office com ASP.NET que use logon único
 description: ''
 ms.date: 04/15/2019
 localization_priority: Priority
-ms.openlocfilehash: ebcf5cd72f841f5d97093e3b5f43833e97fa9947
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: a28178fb309450f59435d678c013a7a73bb60978
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450160"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128149"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>Criar um Suplemento do Office com ASP.NET que use logon único (visualização)
 
@@ -153,7 +153,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
 
         2. Renomeie o arquivo existente para `MailAppVersionOverridesV1_1.old`.
 
-        3. Copie essa versão modificada do arquivo para a pasta: [Esquema MailAppVersionOverrides modificado](https://github.com/OfficeDev/outlook-add-in-attachments-demo/blob/sso-conversion/manifest-schema-fix/MailAppVersionOverridesV1_1.xsd)
+        3. Copie essa versão modificada do arquivo para a pasta: [Esquema MailAppVersionOverrides modificado](https://github.com/OfficeDev/outlook-add-in-attachments-demo/blob/master/manifest-schema-fix/MailAppVersionOverridesV1_1.xsd)
 
 1. Salve e feche o arquivo de manifesto principal no Visual Studio.
 
@@ -415,7 +415,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
     }
     ```
 
-1. Substitua `TODO13B` pelo código a seguir. Observação sobre o código:
+1. Substitua `TODO13B` pelo código a seguir. Observação sobre este código:
 
     * O Erro 70011 tem muitos significados. O que importa para este suplemento é quando ele significa que um escopo inválido (permissão) foi solicitado, então o código verifica a descrição completa do erro, não apenas o número.
     * O suplemento deverá relatar o erro.

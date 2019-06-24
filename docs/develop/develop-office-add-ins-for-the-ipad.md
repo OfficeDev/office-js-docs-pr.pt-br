@@ -1,19 +1,19 @@
 ---
 title: Desenvolver suplementos do Office para iPad
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 3ac8f651ccb87b32679a28684f0d08fad53aa773
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: cdc35b83c2cb32984d0dc73d85af250bddfa8c0a
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952086"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128168"
 ---
 # <a name="develop-office-add-ins-for-the-ipad"></a>Desenvolver suplementos do Office para iPad
 
 
-A tabela a seguir lista as tarefas a realizar para desenvolver um Suplemento do Office que será executado no Office para iPad.
+A tabela a seguir lista as tarefas a serem realizadas para desenvolver um suplemento do Office para ser executado no Office no iPad.
 
 
 |**Tarefa**|**Descrição**|**Recursos**|
@@ -38,7 +38,7 @@ Aplique as seguintes práticas recomendadas para desenvolver suplementos para ex
 
 -  **Use o Visual Studio para desenvolver seu suplemento.**
 
-    Se você desenvolver seu suplemento com o Visual Studio, poderá [definir os pontos de interrupção e depurar seu código](../develop/create-and-debug-office-add-ins-in-visual-studio.md) em um aplicativo de host do Office em execução no Windows, antes de fazer sideload do suplemento no iPad ou no Mac. Como um suplemento executado no Office para iOS ou no Office para Mac oferece suporte às mesmas APIs que um suplemento executado no Office no Windows, o código do seu suplemento deve ser executado da mesma maneira em ambas as plataformas.
+    Se você desenvolver seu suplemento com o Visual Studio, poderá [definir os pontos de interrupção e depurar seu código](../develop/create-and-debug-office-add-ins-in-visual-studio.md) em um aplicativo de host do Office em execução no Windows, antes de fazer sideload do suplemento no iPad ou no Mac. Como um suplemento executado no Office no iOS ou Mac oferece suporte às mesmas APIs que um suplemento executado no Office no Windows, o código do seu suplemento deve ser executado da mesma maneira em ambas as plataformas.
 
 -  **Especifique os requisitos da API no manifesto do seu suplemento ou com verificações da execução.**
 

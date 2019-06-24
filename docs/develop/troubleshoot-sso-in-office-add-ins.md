@@ -1,14 +1,14 @@
 ---
 title: Solucionar problemas de mensagens de erro no logon único (SSO)
 description: ''
-ms.date: 03/22/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 1b885834304ebedd62eea206f02dae4bacefba5c
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: f9c69eb937b8931dde3e702cf1f287e0e8c5fdbc
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449957"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128028"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>Solucionar problemas de mensagens de erro no logon único (SSO) (visualização)
 
@@ -52,7 +52,7 @@ O suplemento deverá responder a esse erro recorrendo a um sistema de autentica�
 
 O usuário não iniciou sessão no Office. Seu código deve chamar novamente o método `getAccessTokenAsync` e passar a opção `forceAddAccount: true` no parâmetro [options](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference). Mas não faça isso mais de uma vez. O usuário pode ter decidido não entrar.
 
-Este erro nunca é visto no Office Online. Se os cookies do usuário expirarem, o Office Online retornará o erro 13006.
+Este erro nunca é visto no Office Online. Se os cookies do usuário expirarem, o Office retornará o erro 13006.
 
 ### <a name="13002"></a>13002
 
@@ -75,7 +75,7 @@ Concessão inválida. Isso geralmente significa que o Office não foi pré-autor
 
 ### <a name="13006"></a>13006
 
-Erro do cliente. Seu código deve sugerir que o usuário saia e reinicie o Office ou reinicie a sessão do Office Online.
+Erro do Cliente. Seu código deve sugerir que o usuário saia e reinicie o Office ou reinicie a sessão do Office no navegador.
 
 ### <a name="13007"></a>13007
 
@@ -101,7 +101,7 @@ O suplemento chama o método `getAccessTokenAsync` com a opção `forceConsent: 
 
 ### <a name="13010"></a>13010
 
-O usuário está executando o suplemento no Office Online e usando o Edge ou o Internet Explorer. O domínio do Office 365 do usuário e o domínio login.microsoftonline.com estão em zonas de segurança diferentes nas configurações do navegador. Se esse erro for retornado, o usuário já terá visto uma mensagem explicando o erro e vinculando a uma página sobre como alterar a configuração da zona. Se o seu suplemento fornece funções que não exigem que o usuário esteja conectado, o código deve capturar esse erro e permitir que o suplemento permaneça em execução.
+O usuário está executando o suplemento no Microsoft Edge ou Internet Explorer. O domínio do Office 365 do usuário e o domínio login.microsoftonline.com estão em zonas de segurança diferentes nas configurações do navegador. Se esse erro for retornado, o usuário já terá visto uma mensagem explicando o erro e vinculando a uma página sobre como alterar a configuração da zona. Se o seu suplemento fornece funções que não exigem que o usuário esteja conectado, o código deve capturar esse erro e permitir que o suplemento permaneça em execução.
 
 ### <a name="13012"></a>13012
 

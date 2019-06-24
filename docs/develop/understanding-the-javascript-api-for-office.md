@@ -1,14 +1,14 @@
 ---
 title: Noções básicas da API JavaScript para Office
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: c1666745e9ffeb6c0e9ecf763b2a30c97c609b4f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 45cccadaa3d82f3435579650ae5161b20d7a425a
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449299"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127986"
 ---
 # <a name="understanding-the-javascript-api-for-office"></a>Noções básicas da API JavaScript para Office
 
@@ -179,7 +179,7 @@ Esta tabela resume a API e os recursos compatíveis com os tipos de suplemento (
 |||||||||
 |:-----|:-----|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
 ||**Nome do host**|Banco de dados|Pasta de trabalho|Caixa de correio|Apresentação|Documento|Project|
-||**Aplicativos host** **compatíveis**|Aplicativos Web do Access|Excel,<br/>Excel Online|Outlook,<br/>Outlook Web App,<br/>OWA para dispositivos|PowerPoint,<br/>PowerPoint Online|Word|Project|
+||**Aplicativos host** **compatíveis**|Aplicativos Web do Access|Excel no Windows,<br/>Excel Online|Outlook no Windows,<br/>Outlook Online,<br/>Outlook no Android,<br>Outlook no iOS,|PowerPoint no Windows,<br/>PowerPoint Online|Word no Windows|Project no Windows|
 |**Tipos de suplemento com suporte**|Conteúdo|S|S||S|||
 ||Painel de tarefas||S||S|S|S|
 ||Outlook|||S||||

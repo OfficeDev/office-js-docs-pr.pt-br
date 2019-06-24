@@ -1,14 +1,14 @@
 ---
 title: Realizar sideload de suplementos do Office para teste
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 24c7719969ddc59d8bb6e525af804515331a51ad
-ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
+ms.openlocfilehash: acd16bb8a8d08aa6dd05f0f56921e285ee1e2e1f
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33619041"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127013"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>Realizar sideload de suplementos do Office para teste
 
@@ -19,11 +19,11 @@ Você pode instalar um suplemento do Office para testá-lo em um cliente do Offi
 
 Este artigo se aplica somente para testes de suplementos do Word, Excel, PowerPoint e Project no Windows. Se você deseja testar em outra plataforma ou um suplemento do Outlook, veja os tópicos seguintes para realizar o sideload do suplemento:
 
-- [Realizar sideload de suplementos do Office para teste no Office Online](sideload-office-add-ins-for-testing.md)
+- [Realizar sideload de suplementos do Office no Office na Web para teste](sideload-office-add-ins-for-testing.md)
 - [Sideload suplementos do Office para teste em um iPad ou Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
 - [Realizar sideload de suplementos do Outlook para teste](/outlook/add-ins/sideload-outlook-add-ins-for-testing)
 
-O vídeo a seguir oferece orientações para a realização do processo de sideload no suplemento do Office para área de trabalho ou Office Online.  
+O vídeo a seguir oferece orientações para a realização do processo de sideload no suplemento do Office na Web ou para área de trabalho usando um catálogo de pasta compartilhada.  
 
 > [!VIDEO https://www.youtube.com/embed/XXsAw2UUiQo]
 

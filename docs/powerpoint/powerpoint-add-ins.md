@@ -1,18 +1,18 @@
 ---
 title: Suplementos do PowerPoint
 description: ''
-ms.date: 04/15/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 6e518d0bfd37291e39ee17e96ded8debb183c19f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 78430c06757433ee2cce5155565ae57cc078d6eb
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450909"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128591"
 ---
 # <a name="powerpoint-add-ins"></a>Suplementos do PowerPoint
 
-Você pode usar suplementos do PowerPoint na criação de soluções envolventes para as apresentações de seus usuários em todas as plataformas, incluindo Windows, iOS, Office Online e Mac. Você pode criar dois tipos de comandos de suplementos do PowerPoint:
+Você pode usar suplementos do PowerPoint na criação de soluções envolventes para as apresentações de seus usuários em todas as plataformas, incluindo Windows, iOS, Mac e em um navegador. Você pode criar dois tipos de comandos de suplementos do PowerPoint:
 
 - Use **suplementos de conteúdo** para adicionar conteúdo dinâmico do HTML5 às suas apresentações. Por exemplo, confira o suplemento [LucidChart Diagrams for PowerPoint](https://appsource.microsoft.com/product/office/WA104380117) que pode ser usado para inserir um diagrama interativo do LucidChart para seu conjunto.
 
@@ -33,7 +33,7 @@ Os exemplos de código no artigo mostram algumas tarefas básicas para desenvolv
 Se você estiver criando um suplemento de conteúdo, será necessário obter o modo de exibição ativo da apresentação e manipular o `ActiveViewChanged` evento, como parte do seu `Office.Initialize` manipulador.
 
 > [!NOTE]
-> No PowerPoint Online, o evento [Document.ActiveViewChanged](/javascript/api/office/office.document) nunca será acionado porque o modo de Apresentação de Slides é tratado como uma nova sessão. Nesse caso, o suplemento deve obter o modo de exibição ativo ao carregar, conforme observado abaixo.
+> No PowerPoint Online na Web, o evento [Document.ActiveViewChanged](/javascript/api/office/office.document) nunca será acionado porque o modo de Apresentação de Slides é tratado como uma nova sessão. Nesse caso, o suplemento deve obter o modo de exibição ativo ao carregar, conforme observado abaixo.
 
 No seguinte exemplo de código:
 

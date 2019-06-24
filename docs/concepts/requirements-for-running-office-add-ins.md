@@ -1,14 +1,14 @@
 ---
 title: Requisitos para a execução de Suplementos do Office
 description: ''
-ms.date: 05/14/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: ed502900916fb2e780725af6f3840c7c2287c1a3
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 3a167777068b398c191f41adfa8dfa590d18edc2
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910095"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127699"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Requisitos para a execução de Suplementos do Office
 
@@ -58,29 +58,29 @@ O software a seguir é necessário para o desenvolvimento de um Suplemento do Of
 
 ## <a name="client-requirements-os-x-desktop"></a>Requisitos de cliente: Computador com OS X
 
-Outlook para Mac, que é distribuído como parte do Office 365 e oferece suporte a suplementos do Outlook. A execução de suplementos do Outlook no Outlook para Mac tem os mesmos requisitos que o próprio Outlook para Mac: o sistema operacional deve ser pelo menos o OS X v10.10 "Yosemite". Como o Outlook para Mac usa WebKit como um mecanismo de layout para processar as páginas do suplemento, não há qualquer dependência adicional de navegador.
+O Outlook para Mac, que é distribuído como parte do Office 365, suporta suplementos do Outlook. A execução de suplementos do Outlook no Outlook para Mac possui os mesmos requisitos que o próprio Outlook para Mac: o sistema operacional deve ser pelo menos o OS X v10.10 "Yosemite". Como o Outlook para Mac usa WebKit como um mecanismo de layout para processar as páginas do suplemento, não há qualquer dependência adicional de navegador.
 
-Estas são as versões mínimas do cliente do Office para Mac que oferecem suporte a suplementos do Office:
+Estas são as versões mínimas do cliente do Office para Mac que suporta suplementos do Office.
 
-- Word para Mac versão 15.18 (160109)
-- Excel para Mac versão 15.19 (160206)
-- PowerPoint para Mac versão 15.24 (160614)
+- Versão do Word 15.18 (160109)
+- Versão do Excel 15.19 (160206)
+- Versão do PowerPoint 15.24 (160614)
 
-## <a name="client-requirements-browser-support-for-office-online-web-clients-and-sharepoint"></a>Requisitos de cliente: Suporte do navegador para clientes da Web do Office Online e SharePoint
+## <a name="client-requirements-browser-support-for-office-web-clients-and-sharepoint"></a>Requisitos de cliente: Suporte do navegador para clientes da Web do Office Online e SharePoint
 
 Qualquer navegador compatível com ECMAScript 5.1, HTML5 e CSS3, como o Internet Explorer 11, Microsoft Edge em sua versão mais recente, Chrome, Firefox ou Safari (Mac OS).
 
 
 ## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>Requisitos do cliente: smartphones e tablets sem Windows
 
-Especificamente para o Outlook Web App em execução em um navegador em smartphones e tablets sem Windows, os softwares a seguir são necessários para testar e executar suplementos do Outlook.
+Especificamente para o Outlook em execução em um navegador em smartphones e tablets sem Windows, os softwares a seguir são necessários para testar e executar suplementos do Outlook.
 
 
 | Aplicativo host | Dispositivo | Sistema operacional | Conta do Exchange | Navegador móvel |
 |:-----|:-----|:-----|:-----|:-----|
-|Outlook para Android|Tablets e smartphones com Android|Android 4.4 Kitkat ou posterior|Atualização mais recente do Office 365 para empresas ou do Exchange Online|Aplicativo nativo para Android, navegador não aplicável|
-|Outlook para iOS|tablets iPad, smartphones iPhone|iOS 11 ou posterior|Atualização mais recente do Office 365 para empresas ou do Exchange Online|Aplicativo nativo para iOS, navegador não aplicável|
-|Outlook Web App|iPhone 4 ou posterior, iPad 2 ou posterior, iPod Touch 4 ou posterior|iOS 5 ou posterior|Office 365, Exchange Online ou Exchange Server 2013 local ou posterior|Safari|
+|Outlook no Android|Tablets e smartphones com Android|Android 4.4 Kitkat ou posterior|Atualização mais recente do Office 365 para empresas ou do Exchange Online|Aplicativo nativo para Android, navegador não aplicável|
+|Outlook no iOS|tablets iPad, smartphones iPhone|iOS 11 ou posterior|Atualização mais recente do Office 365 para empresas ou do Exchange Online|Aplicativo nativo para iOS, navegador não aplicável|
+|Outlook na Web|iPhone 4 ou posterior, iPad 2 ou posterior, iPod Touch 4 ou posterior|iOS 5 ou posterior|Office 365, Exchange Online ou Exchange Server 2013 local ou posterior|Safari|
 
 > [!NOTE]
 > Os aplicativos nativos OWA para Android, OWA para iPad e OWA para iPhone foram [preteridos](https://support.office.com/article/Microsoft-OWA-mobile-apps-are-being-retired-076ec122-4576-4900-bc26-937f84d25a4b) e não são mais necessários ou estão disponíveis para testar os suplementos do Outlook.

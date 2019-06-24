@@ -1,15 +1,15 @@
 ---
 title: Crie seu primeiro suplemento do painel de tarefas do OneNote
 description: ''
-ms.date: 05/02/2019
+ms.date: 06/20/2019
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 48cd9395b269a83630608c52d972508828c5c007
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: ccbfa5ca976da507574821f53e1ea3d0422298c7
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589213"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128535"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do OneNote
 
@@ -83,13 +83,13 @@ try {
 > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
 
 > [!TIP]
-> Se você estiver testando seu suplemento no Mac, execute o seguinte comando antes de continuar. Quando você executar este comando, o servidor Web local será iniciado.
+> Se você estiver testando o seu suplemento no Mac, execute o seguinte comando antes de continuar. Quando você executa este comando, o servidor Web local iniciará.
 >
 > ```command&nbsp;line
 > npm run dev-server
 > ```
 
-1. Execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor Web local será iniciado (se ainda não estiver em execução).
+1. Execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).
 
     ```command&nbsp;line
     npm run start:web

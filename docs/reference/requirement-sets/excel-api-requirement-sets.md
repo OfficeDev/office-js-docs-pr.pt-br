@@ -1,39 +1,39 @@
 ---
 title: Conjuntos de requisitos de API JavaScript do Excel
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 9123714dff894d01475563b4d960c1fad682789a
-ms.sourcegitcommit: e112a9b29376b1f574ee13b01c818131b2c7889d
+ms.openlocfilehash: a1710fcc89eeafa1e6314e06ded99b3527972244
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "34997411"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128444"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Excel
 
 Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
-Os suplementos de Excel são executados em várias versões do Office, incluindo Office 2016 ou posterior no Windows, Office para iPad, Office para Mac e Office Online. A tabela a seguir lista conjuntos de requisitos do Excel, ou seja, os aplicativos de host do Office que oferecem suporte a esse conjunto de requisitos, e as versões ou número de build desses aplicativos.
+Os suplementos do Excel são executados em várias versões do Office, incluindo Office 2016 ou posterior no Windows, Office para iPad, Office para Mac e Office na Web. A tabela a seguir lista conjuntos de requisitos do Excel, ou seja, os aplicativos de host do Office que oferecem suporte a esse conjunto de requisitos, e as versões de build ou número desses aplicativos.
 
 > [!NOTE]
 > Para usar APIs em qualquer um dos conjuntos de requisitos numerados, faça referência à biblioteca **production** no CDN: https://appsforoffice.microsoft.com/lib/1/hosted/office.js.
 >
 > Para obter informações sobre o uso de APIs de visualização, confira a seção [APIs de visualização do JavaScript para Excel](#excel-javascript-preview-apis) neste artigo.
 
-|  Conjunto de requisitos  |  Office no Windows<br>(conectado ao Office 365)  |  Office para iPad<br>(conectado ao Office 365)  |  Office para Mac<br>(conectado ao Office 365)  | Office Online  |  Servidor do Office Online  |
+|  Conjunto de requisitos  |  Office no Windows<br>(conectado à assinatura do Office 365)  |  Office no iPad<br>(conectado à assinatura do Office 365)  |  Office no Mac<br>(conectado à assinatura do Office 365)  | Office na Web  |  Servidor do Office Online  |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [Visualização](/javascript/api/excel)  | Use a versão mais recente do Office para testar as APIs de visualização (talvez seja exigido ser membro do [programa Office Insider](https://products.office.com/office-insider)) |
-| ExcelApi 1.9  | Versão 1903 (Build 11425.20204) ou posterior | 2.24 ou posterior | 16.24 ou posterior | Maio de 2019       | Em breve |
-| ExcelApi 1.8  | Versão 1808 (Build 10730.20102) ou posterior | 2.17 ou posterior | 16.17 ou posterior | Setembro de 2018 | Em breve |
-| ExcelApi 1.7  | Versão 1801 (Build 9001.2171) ou posterior   | 2.9 ou posterior  | 16.9 ou posterior  | Abril de 2018     | Em breve |
-| ExcelApi 1.6  | Versão 1704 (Compilação 8201.2001) ou posterior   | 2.2 ou posterior  | 15.36 ou posterior | Abril de 2017     | Em breve |
-| ExcelApi 1.5  | Versão 1703 (Compilação 8067.2070) ou posterior   | 2.2 ou posterior  | 15.36 ou posterior | Março de 2017     | Em breve |
-| ExcelApi 1.4  | Versão 1701 (build 7870.2024) ou posterior   | 2.2 ou posterior  | 15.36 ou posterior | Janeiro de 2017   | Em breve |
+| ExcelApi 1.9  | Versão 1903 (Build 11425.20204) ou posterior | 2.24 ou posterior | 16.24 ou posterior | Maio de 2019       | N/D |
+| ExcelApi 1.8  | Versão 1808 (Build 10730.20102) ou posterior | 2.17 ou posterior | 16.17 ou posterior | Setembro de 2018 | N/D |
+| ExcelApi 1.7  | Versão 1801 (Build 9001.2171) ou posterior   | 2.9 ou posterior  | 16.9 ou posterior  | Abril de 2018     | N/D |
+| ExcelApi 1.6  | Versão 1704 (Compilação 8201.2001) ou posterior   | 2.2 ou posterior  | 15.36 ou posterior | Abril de 2017     | N/D |
+| ExcelApi 1.5  | Versão 1703 (Compilação 8067.2070) ou posterior   | 2.2 ou posterior  | 15.36 ou posterior | Março de 2017     | N/D |
+| ExcelApi 1.4  | Versão 1701 (build 7870.2024) ou posterior   | 2.2 ou posterior  | 15.36 ou posterior | Janeiro de 2017   | N/D |
 | ExcelApi 1.3  | Versão 1608 (build 7369.2055) ou posterior   | 1.27 ou posterior | 15.27 ou posterior | Setembro de 2016 | Versão 1608 (build 7601.6800) ou posterior|
-| ExcelApi 1.2  | Versão 1601 (build 6741.2088) ou posterior   | 1.21 ou posterior | 15.22 ou posterior | Janeiro de 2016   ||
-| ExcelApi 1.1  | Versão 1509 (build 4266.1001) ou posterior   | 1.19 ou posterior | 15.20 ou posterior | janeiro de 2016   ||
+| ExcelApi 1.2  | Versão 1601 (build 6741.2088) ou posterior   | 1.21 ou posterior | 15.22 ou posterior | janeiro de 2016   | N/D |
+| ExcelApi 1.1  | Versão 1509 (build 4266.1001) ou posterior   | 1.19 ou posterior | 15.20 ou posterior | janeiro de 2016   | N/D|
 
 > [!NOTE]
 > O número do build do Office 2016 instalado via MSI é 16.0.4266.1001. Esta versão só contém o conjunto de requisitos 1.1 de ExcelApi.
@@ -42,9 +42,9 @@ Os suplementos de Excel são executados em várias versões do Office, incluindo
 
 As [Funções Personalizadas](../../excel/custom-functions-overview.md) usam conjuntos de requisitos separados das principais APIs JavaScript do Excel. A tabela a seguir lista os conjuntos de requisitos de Funções Personalizadas, os aplicativos de host do Office compatíveis e as versões ou números de compilação desses aplicativos.
 
-|  Conjunto de requisitos  |  Office no Windows<br>(conectado ao Office 365)  |  Office para iPad<br>(conectado ao Office 365)  |  Office para Mac<br>(conectado ao Office 365)  | Office Online | Servidor do Office Online |
+|  Conjunto de requisitos  |  Office no Windows<br>(conectado à assinatura do Office 365)  |  Office no iPad<br>(conectado à assinatura do Office 365)  |  Office no Mac<br>(conectado à assinatura do Office 365)  | Office na Web | Servidor do Office Online |
 |:-----|-----|:-----|:-----|:-----|:-----|
-| CustomFunctionsRuntime 1.1 | Versão 1904 (Build 11601.20144) ou posterior | Sem suporte | 16.24 ou posterior | Abril de 2019 | Em breve |
+| CustomFunctionsRuntime 1.1 | Versão 1904 (Build 11601.20144) ou posterior | Sem suporte | 16.24 ou posterior | Abril de 2019 | N/D |
 
 Para saber mais sobre as versões, números de build e sobre o Servidor do Office Online, confira:
 

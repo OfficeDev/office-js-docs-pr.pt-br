@@ -1,16 +1,16 @@
 ---
 title: Tutorial de suplemento do Excel
 description: Neste tutorial, você criará um suplemento do Excel que cria, preenche, filtra e classifica uma tabela, cria um gráfico, congela um cabeçalho de tabela, protege uma planilha e abre uma caixa de diálogo
-ms.date: 05/23/2019
+ms.date: 06/20/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 863c5720c9e23738ba907b722a50a974044cab11
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: afd5d06e08a899d4441da51fc619d86de45e52d3
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432212"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35126985"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Tutorial: criar um suplemento do painel de tarefas no Excel
 
@@ -173,7 +173,7 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
 
     - Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 
-    - Excel Online: [Realizar sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
+    - Navegador da Web: [Sideload suplementos do Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
 
     - iPad e Mac: [Realizar sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
@@ -742,7 +742,7 @@ Abra o arquivo /function-file/function-file.html. Esse é um arquivo HTML sem IU
 
     - Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 
-    - Excel Online: [Realizar sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
+    - Navegador da Web: [Sideload suplementos do Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
 
     - iPad e Mac: [Realizar sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 

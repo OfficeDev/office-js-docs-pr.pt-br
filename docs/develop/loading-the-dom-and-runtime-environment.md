@@ -1,14 +1,14 @@
 ---
 title: Carregar o ambiente de tempo de execução e DOM
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: e975db391276129e453d5001fe0bac8ad36f6080
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 78ddd10e9106e6668e2bb8cd40f58cbdb7b862d9
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910214"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128098"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>Carregar o ambiente de tempo de execução e DOM
 
@@ -106,7 +106,7 @@ O suplemento do Outlook de amostra de discagem telefônica mostra uma abordagem 
 >Office.initialize = function () {};
 >```
 >
-> Se você não chamar **Office.onReady** ou atribuir um manipulador de eventos**Office.initialize**, o suplemento pode gerar um erro quando inicia. Além disso, se um usuário tentar usar o suplemento com um cliente Web do Office Online, como o Excel Online, o PowerPoint Online ou o Outlook Web App, ele não funcionará.
+> Se você não chamar **Office.onReady** ou atribuir um manipulador de eventos**Office.initialize**, o suplemento pode gerar um erro quando inicia. Além disso, se um usuário tentar usar o suplemento com um cliente virtual do Office Online, como Excel, PowerPoint ou Outlook, ele não funcionará.
 >
 > Se o suplemento incluir mais de uma página, essa página deverá chamar o manipulador de eventos **Office.onReady** atribuir um manipulador de eventos **Office.initialize** sempre que uma nova página for carregada.
 

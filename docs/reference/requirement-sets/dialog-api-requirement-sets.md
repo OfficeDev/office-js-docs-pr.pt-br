@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos da Dialog API
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: f6f0b0184736bfd0f6b417198ade4c621d8d8b6b
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 3135c65120248194603b91510450519f106e0ad1
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952198"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127118"
 ---
 # <a name="dialog-api-requirement-sets"></a>Conjuntos de requisitos da Dialog API
 
@@ -17,7 +17,7 @@ Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplemento
 
 Os suplementos do Office executam várias versões do Office. A tabela a seguir lista os conjuntos de requisitos da Dialog API, ou seja, os aplicativos de host do Office que oferecem suporte a esse conjunto de requisitos, e os números de versão ou de build dos aplicativos do Office.
 
-|  Conjunto de requisitos  | Office 2013 no Windows<br>(compra única) | Office 2016 ou posterior no Windows<br>(compra única)   | Office no Windows<br>(conectado ao Office 365) |  Office para iPad<br>(conectado ao Office 365)  |  Office para Mac<br>(conectado ao Office 365)  | Office Online  |  Servidor do Office Online  |
+|  Conjunto de requisitos  | Office 2013 no Windows<br>(compra avulsa) | Office 2016 ou posterior no Windows<br>(compra avulsa)   | Office no Windows<br>(conectado à assinatura do Office 365) |  Office no iPad<br>(conectado à assinatura do Office 365)  |  Office no Mac<br>(conectado à assinatura do Office 365)  | Office na Web  |  Servidor do Office Online  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | DialogApi 1.1  | Build 15.0.4855.1000 ou posterior | Build 16.0.4390.1000 ou posterior | Versão 1602 (build 6741.0000) ou posterior | 1.22 ou posterior | 15.20 ou posterior| Janeiro de 2017 | Versão 1608 (build 7601.6800) ou posterior|
 

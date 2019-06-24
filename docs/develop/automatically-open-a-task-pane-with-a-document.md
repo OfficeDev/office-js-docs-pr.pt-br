@@ -1,14 +1,14 @@
 ---
 title: Abrir automaticamente um painel de tarefas com um documento
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 6e7dbde7c6efbaacb5ba046678cc0df24446d31c
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: de848238979b68192bb8646e0ee6cb8d7c3879be
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952149"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127608"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Abrir automaticamente um painel de tarefas com um documento
 
@@ -29,7 +29,7 @@ O recurso autoopen é atualmente <!-- in **developer preview** and it is only --
 
 |**Produtos**|**Plataformas**|
 |:-----------|:------------|
-|<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|Plataformas compatíveis com todos os produtos:<ul><li>Office no Windows Desktop. Versão 16.0.8121.1000+</li><li>Office para Mac. Versão 15.34.17051500+</li><li>Office Online</li></ul>|
+|<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|Plataformas compatíveis com todos os produtos:<ul><li>Office no Windows Desktop. Versão 16.0.8121.1000+</li><li>Office no Mac. Build 15.34.17051500+</li><li>Office na Web</li></ul>|
 
 
 ## <a name="best-practices"></a>Práticas recomendadas

@@ -1,14 +1,14 @@
 ---
 title: Privacidade e segurança para suplementos do Office
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: e62720cdfc4fbc92615c869f71b250d5957ea0ce
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 26b9184eb1e52422122288659f068719bd43075b
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910207"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127755"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 
@@ -30,16 +30,16 @@ Além disso, a estrutura de tempo de execução fornece os seguintes benefícios
 
 - Facilita a instalação e a desinstalação do suplemento.
 
-E o uso de memória, CPU e recursos de rede por suplementos do Office é governável para garantir que o bom desempenho e a confiabilidade sejam mantidos. 
+E o uso de memória, CPU e recursos de rede por suplementos do Office é governável para garantir que o bom desempenho e a confiabilidade sejam mantidos.
 
-As seções a seguir descrevem brevemente como a arquitetura de tempo de execução dá suporte a suplementos em execução em clientes do Office em dispositivos Windows, em dispositivos Mac OS X e em clientes do Office Online na Web.
+As seções a seguir descrevem brevemente como a arquitetura de tempo de execução dá suporte a suplementos em execução em clientes do Office em dispositivos Windows, em dispositivos Mac OS X e navegadores da web.
 
 > [!NOTE]
 > Para saber mais sobre como usar o WIP e Intune com os Suplementos do Office, confira [Usar WIP e Intune para proteger dados corporativos em documentos executando os Suplementos do Office](/microsoft-365/enterprise/office-add-ins-wip).
 
 ### <a name="clients-on-windows-and-os-x-devices"></a>Clientes para dispositivos Windows e OS X
 
-Em clientes com suporte para dispositivos de área de trabalho e de tablet, como Excel, Outlook e Outlook para Mac, há suporte a suplementos do Office por meio da integração de um componente no processo, o tempo de execução de Suplementos do Office, que gerencia o ciclo de vida do suplemento e habilita a interoperabilidade entre o suplemento e o aplicativo cliente. A página da Web do suplemento em si é hospedada fora do processo. Como mostrado na Figura 1, em um dispositivo Windows para área de trabalho ou tablet, a página da Web do suplemento é hospedada em um controle do Internet Explorer que, por sua vez, é hospedado em um processo de tempo de execução de suplemento que fornece segurança e isolamento de desempenho.
+Em clientes com suporte para dispositivos de área de trabalho e de tablet, como Excel no Windows e Outlook no Windows e Mac, há suporte a suplementos do Office por meio da integração de um componente no processo, o tempo de execução de suplementos do Office, que gerencia o ciclo de vida do suplemento e habilita a interoperabilidade entre o suplemento e o aplicativo cliente. A página da web do suplemento em si é hospedada fora do processo. Como mostrado na figura 1, em um dispositivo Windows para área de trabalho ou tablet, a página da Web do suplemento é hospedada em um controle do Internet Explorer que, por sua vez, é hospedado em um processo de tempo de execução de suplemento que fornece segurança e isolamento de desempenho. 
 
 Nos computadores com o Windows, o Modo Protegido no Internet Explorer deve estar habilitado para a Zona de Site Restrito. Isso é normalmente ativado por padrão. Se estiver desabilitado, [ocorrerá um erro](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer) quando você tentar iniciar um suplemento.
 
@@ -57,7 +57,7 @@ O tempo de execução de Suplementos do Office gerencia a comunicação entre pr
 
 ### <a name="web-clients"></a>Clientes Web
 
-Em clientes Web com suporte, como o Excel Online e o Outlook Web App, os Suplementos do Office são hospedados em um **iframe** que é executado usando o atributo **sandbox** do HTML5. Não são permitidos componentes ActiveX nem a navegação na página principal do cliente Web. O suporte a Suplementos do Office é habilitado em clientes Web por meio da integração da API JavaScript para Office. De maneira semelhante aos aplicativos cliente de área de trabalho, a API JavaScript gerencia o ciclo de vida do suplemento e a interoperabilidade entre o suplemento e o cliente Web. Essa interoperabilidade é implementada por meio de uma infraestrutura especial de comunicação de mensagens de publicação entre quadros. A mesma biblioteca JavaScript (Office.js) que é usada em clientes de área de trabalho, está disponível para interagir com o cliente Web. A figura a seguir ilustra a infraestrutura que dá suporte aos Suplementos do Office no Office Online (em execução no navegador) e os componentes relevantes (o cliente Web, o **iframe**, o tempo de execução de Suplementos do Office e a API JavaScript para o Office) que são necessários para dar suporte a eles.
+Em clientes Web com suporte, os suplementos do Office são hospedados em um **iframe** que é executado usando o atributo **sandbox** do HTML5. Não são permitidos componentes ActiveX nem a navegação na página principal do cliente Web. O suporte a Suplementos do Office é habilitado em clientes Web por meio de integração da API JavaScript para Office. De maneira semelhante aos aplicativos cliente de área de trabalho, a API de JavaScript gerencia o ciclo de vida do suplemento e a interoperabilidade entre o suplemento e o cliente Web. Essa interoperabilidade é implementada por meio de uma infraestrutura especial de comunicação de mensagens de publicação entre quadros. A mesma biblioteca JavaScript (Office.js) que é usada em clientes de área de trabalho, está disponível para interagir com o cliente Web. A figura a seguir ilustra a infraestrutura que dá suporte a suplementos no Office em execução no navegador e os componentes relevantes (o cliente Web, o **iframe**, o tempo de execução de Suplementos do Office e a API JavaScript para o Office) que são necessários para dar suporte a eles.
 
 *Figura 3. Infraestrutura que dá suporte aos Suplementos do Office nos clientes Web do Office*
 
@@ -92,7 +92,7 @@ A plataforma de suplementos lida com as preocupações com privacidade dos usuá
 
 - Ao compartilhar um documento, os usuários também compartilham suplementos que foram inseridos no documento ou associados a ele. Se um usuário abrir um documento que contenha um suplemento que o usuário não usou antes, o aplicativo host solicitará que o usuário conceda permissão para que o suplemento seja executado no documento. Em um ambiente empresarial, o aplicativo host do Office também consultará o usuário se o documento for proveniente de uma fonte externa.
 
-- Os usuários podem habilitar ou desabilitar o acesso ao AppSource. Para os suplementos do conteúdo e do painel de tarefas, os usuários gerenciam o acesso aos suplementos e catálogos confiáveis na **Central de Confiabilidade** no cliente host do Office (aberto com **Arquivo** > **Opções** > **Central de Confiabilidade** > **Configurações da Central de Confiabilidade** > **Catálogos de Suplementos Confiáveis**). Para suplementos do Outlook, os usuários podem gerenciar os suplementos escolhendo o botão **Gerenciar Suplementos**: no Outlook no Windows, escolha **Arquivo** > **Gerenciar Suplementos**. No Outlook para Mac, escolha o botão **Gerenciar Suplementos** na barra de suplementos. No Outlook Web App, escolha o menu **Configurações** (ícone de engrenagem) > **Gerenciar suplementos**. Os administradores também podem gerenciar este acesso [usando a política de grupo](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
+- Os usuários podem habilitar ou desabilitar o acesso ao AppSource. Para os suplementos do conteúdo e do painel de tarefas, os usuários gerenciam o acesso aos suplementos e catálogos confiáveis na **Central de Confiabilidade** no cliente host do Office (aberto com **Arquivo** > **Opções** > **Central de Confiabilidade** > **Configurações da Central de Confiabilidade** > **Catálogos de Suplementos Confiáveis**). Para suplementos do Outlook, os usuários podem gerenciar os suplementos escolhendo o botão **Gerenciar Suplementos**: no Outlook no Windows, escolha **Arquivo** > **Gerenciar Suplementos**. No Outlook no Mac, escolha o botão **Gerenciar Suplementos** na barra de suplementos. No Outlook na Web, escolha o menu **Configurações** (ícone de engrenagem) > **Gerenciar suplementos**. Os administradores também podem gerenciar este acesso [usando a política de grupo](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
 
 - O design da plataforma do suplemento fornece segurança e desempenho aos usuários finais das seguintes maneiras:
 
@@ -198,7 +198,7 @@ Um usuário mal-intencionado pode atacar a origem de um suplemento inserindo um 
 
 ### <a name="tips-to-prevent-clickjacking"></a>Dicas para impedir "clickjacking"
 
-Como os suplementos do Office são processados em um iframe durante a execução em um navegador com aplicativos de host do Office Online, use as dicas a seguir para reduzir o risco de [clickjacking](https://en.wikipedia.org/wiki/Clickjacking), uma técnica explorada por hackers para induzir os usuários a revelarem informações confidenciais.
+Como os suplementos do Office são processados em um iframe durante a execução em um navegador com aplicativos de host do Office, use as dicas a seguir para reduzir o risco de [clickjacking](https://en.wikipedia.org/wiki/Clickjacking), uma técnica explorada por hackers para induzir os usuários a revelarem informações confidenciais.
 
 Em primeiro lugar, identifique ações confidenciais que o suplemento pode executar. Elas incluem ações que um usuário não autorizado pode usar de forma mal-intencionada, como iniciar uma transação financeira ou publicar dados confidenciais. Por exemplo, o suplemento pode permitir que o usuário envie um pagamento a um destinatário definido pelo usuário.
 

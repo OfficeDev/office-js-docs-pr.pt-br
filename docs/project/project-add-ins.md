@@ -1,14 +1,14 @@
 ---
 title: Suplementos do painel de tarefas para Project
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 6f08f45e81fa40a869d07acea066b43c2720876a
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: c04b2d3d2da3f258751585e0d30a9c726af373e6
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910326"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128598"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Suplementos do painel de tarefas para Project
 
@@ -24,7 +24,7 @@ Para ver uma introdução sobre os suplementos do Office, confira [Visão geral 
 Os gerentes de projeto podem usar suplementos de painel de tarefas do Project para ajudá-los nas atividades de gerenciamento de projeto. Em vez de sair do Project e abrir outro aplicativo para procurar informações usadas com frequência, os gerentes de projeto podem acessar as informações diretamente no projeto. O conteúdo de um suplemento de painel de tarefas pode ser contextual, baseado na tarefa selecionada, no recurso, no modo de exibição ou em outros dados em uma célula de um gráfico de Gantt, no modo de exibição de uso da tarefa ou no modo de exibição de uso dos recursos.
 
 > [!NOTE]
-> Com o Project Professional 2013, é possível desenvolver suplementos de painel de tarefas que acessam instalações locais do Project Server 2013, do Project Online e instalações locais ou online do SharePoint 2013. O Project Standard 2013 não dá suporte à integração direta com dados do Project Server ou listas de tarefas do SharePoint que são sincronizadas com o Project Server.
+> Com o Project Professional 2013, você pode desenvolver suplementos do painel de tarefas que acessam o Project na Web, tanto nas instalações locais do Project Server 2013 quanto do SharePoint 2013, local ou online. O Project Standard 2013 não dá suporte a integração direta com os dados do Project Server ou com as listas de tarefas do SharePoint que estão sincronizadas com o Project Server.
 
 Cenários de suplementos do Project incluem o seguinte:
 
@@ -184,7 +184,7 @@ No procedimento 2, o suplemento Pesquisa do Bing é instalado no computador loca
 
 ## <a name="distributing-project-add-ins"></a>Distribuir suplementos do Project
 
-Você pode distribuir suplementos por meio de um compartilhamento de arquivos, por um catálogo de aplicativos em uma biblioteca do SharePoint ou pelo AppSource. Para mais informações, consulte [Publicar o Suplemento do Office](../publish/publish.md).
+É possível distribuir suplementos usando um compartilhamento de arquivos, um catálogo de suplementos em uma biblioteca do SharePoint ou o AppSource. Para saber mais, confira [Publicar seu suplemento do Office](../publish/publish.md).
 
 ## <a name="see-also"></a>Confira também
 

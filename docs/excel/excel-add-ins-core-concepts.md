@@ -1,14 +1,14 @@
 ---
 title: Conceitos fundamentais de programação com a API JavaScript do Excel
 description: Use a API JavaScript do Excel para criar suplementos para o Excel.
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 3cd1abcb71eadbf9a5ec2ab8a27b1e427b24e83d
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 08d4c22190e1493331397e390dc72b4dae6cf979
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33951925"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128210"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Conceitos fundamentais de programação com a API JavaScript do Excel
 
@@ -16,7 +16,7 @@ Este artigo descreve como usar a [API JavaScript do Excel](/office/dev/add-ins/r
 
 ## <a name="asynchronous-nature-of-excel-apis"></a>Natureza assíncrona das APIs do Excel
 
-Os suplementos do Excel baseados na Web são executados dentro de um contêiner de navegador que é inserido no aplicativo do Office em plataformas baseadas em desktop, como Office no Windows e executado dentro de um iFrame HTML no Office Online. Não é possível habilitar a API Office.js para interagir de modo síncrono com o host do Excel em todas as plataformas suportadas devido às considerações de desempenho. Desse modo, a chamada à API **sync()** na Office.js retorna uma [promessa](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) que é resolvida quando o aplicativo Excel conclui as ações solicitadas de leitura ou gravação. Além disso, você pode enfileirar várias ações, como configurar propriedades ou invocar métodos, e executá-las como um lote de comandos com uma única chamada a **sync()**, em vez de enviar uma solicitação separada para cada ação. As seções a seguir descrevem como fazer isso usando as APIs **Excel.run()** e **sync()**.
+Os suplementos do Excel baseados na Web são executados dentro de um contêiner de navegador que é inserido no aplicativo do Office em plataformas baseadas em desktop, como Office no Windows e executado dentro de um iFrame HTML no Office na Web. Não é possível habilitar a API Office.js para interagir de modo síncrono com o host do Excel em todas as plataformas com suporte devido às considerações de desempenho. Desse modo, a chamada à API **sync()** no Office.js retorna uma [promessa](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) que é resolvida quando o aplicativo Excel conclui as ações solicitadas de leitura ou gravação. Além disso, você pode enfileirar várias ações, como configurar propriedades ou invocar métodos, e executá-las como um lote de comandos com uma única chamada a **sync()**, em vez de enviar uma solicitação separada para cada ação. As seções a seguir descrevem como fazer isso usando as APIs **Excel.run()** e **sync()**.
 
 ## <a name="excelrun"></a>Excel.run
 
@@ -211,7 +211,7 @@ range.values = 'Due Date';
 Se um intervalo contiver um grande número de células, valores, formatos de número e/ou fórmulas, talvez não seja possível executar operações de API nesse intervalo. A API sempre fará a melhor tentativa de executar a operação solicitada em um intervalo (isto é, para recuperar ou gravar os dados especificados), mas tentar executar operações de leitura ou gravação para um intervalo grande pode resultar em um erro de API devido à utilização excessiva de recursos. Para evitar tais erros, é recomendável executar operações de leitura ou gravação separadas para subconjuntos menores de um intervalo grande, em vez de tentar executar uma única operação de leitura ou gravação em um intervalo grande.
 
 > [!IMPORTANT]
-> O Excel Online tem um limite de tamanho de conteúdo para solicitações e respostas de **5 MB**. `RichAPI.Error` será lançado se esse limite for excedido.
+> O Excel na Web tem um limite de tamanho de conteúdo para solicitações e respostas de **5 MB**. `RichAPI.Error` será lançado se esse limite for excedido.
 
 ## <a name="update-all-cells-in-a-range"></a>Atualizar todas as células em um intervalo
 

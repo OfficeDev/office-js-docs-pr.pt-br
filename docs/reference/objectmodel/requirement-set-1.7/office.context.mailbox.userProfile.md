@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. userProfile – conjunto de requisitos 1,7
 description: ''
-ms.date: 04/24/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 036f18e4cb98cfe510a19d85a5a79f393ca8bd17
-ms.sourcegitcommit: 7462409209264dc7f8f89f3808a7a6249fcd739e
+ms.openlocfilehash: 45533fb3a879e4e34e91adfb04dd8ce55f815749
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "33353290"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127139"
 ---
 # <a name="userprofile"></a>userProfile
 
@@ -26,9 +26,9 @@ ms.locfileid: "33353290"
 
 | Membro | Tipo |
 |--------|------|
-| [accountType](#accounttype-string) | Member |
-| [displayName](#displayname-string) | Member |
-| [emailAddress](#emailaddress-string) | Member |
+| [accountType](#accounttype-string) | Membro |
+| [displayName](#displayname-string) | Membro |
+| [emailAddress](#emailaddress-string) | Membro |
 | [timeZone](#timezone-string) | Membro |
 
 ### <a name="members"></a>Membros
@@ -36,7 +36,7 @@ ms.locfileid: "33353290"
 #### <a name="accounttype-string"></a>AccountType: cadeia de caracteres
 
 > [!NOTE]
-> Atualmente, esse membro só tem suporte no Outlook 2016 para Mac (Build 16.9.1212 ou posterior).
+> Atualmente, esse membro só tem suporte no Outlook 2016 ou posterior no Mac (Build 16.9.1212 ou posterior).
 
 Obtém o tipo de conta do usuário associado à caixa de correio. Os valores possíveis estão listados na tabela a seguir.
 

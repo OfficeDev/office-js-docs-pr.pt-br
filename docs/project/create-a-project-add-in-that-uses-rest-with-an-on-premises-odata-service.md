@@ -1,14 +1,14 @@
 ---
 title: Criar um suplemento de Project que usa REST com um serviço OData local do Project Server
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 1e50d90b844e78620866e94e44377c903b169783
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 454ef57095102458be1a2bcaa74342add86c7f16
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910354"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128605"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>Criar um suplemento de Project que usa REST com um serviço OData local do Project Server
 
@@ -29,7 +29,7 @@ A seguir temos os pré-requisitos para a criação de um suplemento de painel de
 
 - O Visual Studio 2015 com Office Developer Tools para Visual Studio inclui modelos para criar suplementos do Office e do SharePoint. Verifique se você instalou a versão mais recente do Office Developer Tools. Confira a seção _Ferramentas_ de [Download de suplementos do Office e do SharePoint](https://developer.microsoft.com/office/docs).
 
-- Os procedimentos e exemplos de código neste artigo acessam o serviço **ProjectData** do Project Server 2013 em um domínio local. Os métodos jQuery neste artigo não funcionam com o Project Online.
+- Os procedimentos e exemplos de código neste artigo acessam o serviço **ProjectData** do Project Server 2013 em um domínio local. Os métodos jQuery neste artigo não funcionam com o Project na Web.
 
     Verifique se o serviço **ProjectData** está acessível do seu computador de desenvolvimento.
 
@@ -369,7 +369,7 @@ O restante do arquivo HelloProjectOData.js inclui duas funções: a função **r
 3. Adicione a função **retrieveOData** que relaciona valores da consulta REST e chama a função **ajax** no jQuery para obter os dados solicitados do serviço **ProjectData**. A variável **support.cors** habilita o CORS (compartilhamento de recursos entre origens) com a função **ajax**. Se a instrução **support.cors** estiver ausente ou definida como **false**, a função **ajax** retorna um erro **Sem transporte**.
 
    > [!NOTE]
-   > O seguinte código funciona com uma instalação no local do Project Server 2013. Para o Project Online, use o OAuth para autenticação baseada em token. Para saber mais, confira [Como lidar com limitações de política de mesma origem nos Suplementos do Office](../develop/addressing-same-origin-policy-limitations.md).
+   > O seguinte código funciona com uma instalação no local do Project Server 2013. Para o Project na Web, use o OAuth para autenticação baseada em token. Para saber mais, confira [Como lidar com limitações de política de mesma origem nos Suplementos do Office](../develop/addressing-same-origin-policy-limitations.md).
 
    Na chamada **ajax**, use o parâmetro _headers_ ou o parâmetro _beforeSend_. O parâmetro _complete_ é uma função anônima, por isso está no mesmo escopo das variáveis no **retrieveOData**. A função para o parâmetro _complete_ exibe os resultados no controle **odataText** e também chama o método **parseODataResult** para analisar e exibir a resposta JSON. O parâmetro _error_ especifica a função **getProjectDataErrorHandler** nomeada, que grava uma mensagem de erro para o controle **odataText** e também usa o método **throwError** para exibir uma mensagem pop-up.
 
@@ -386,7 +386,7 @@ O restante do arquivo HelloProjectOData.js inclui duas funções: a função **r
         accept.toLocaleLowerCase();
 
         // Enable cross-origin scripting (required by jQuery 1.5 and later).
-        // This does not work with Project Online.
+        // This does not work with Project on the web.
         $.support.cors = true;
 
         $.ajax({
@@ -842,7 +842,7 @@ function retrieveOData() {
     accept.toLocaleLowerCase();
 
     // Enable cross-origin scripting (required by jQuery 1.5 and later).
-    // This does not work with Project Online.
+    // This does not work with Project on the web.
     $.support.cors = true;
 
     $.ajax({

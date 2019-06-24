@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Item-conjunto de requisitos 1,7
 description: ''
-ms.date: 05/30/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: fd618b766a519c522f323e0a9d43105b3258c421
-ms.sourcegitcommit: 567aa05d6ee6b3639f65c50188df2331b7685857
+ms.openlocfilehash: ea1c838d622904d76140932bb34e28e79b295c70
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "34706310"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127230"
 ---
 # <a name="item"></a>item
 
@@ -315,7 +315,7 @@ console.log("Date and time created: " + dateTimeCreated);
 Obtém a data e a hora em que um item foi alterado pela última vez. Somente modo de leitura.
 
 > [!NOTE]
-> Não há suporte para esse membro no Outlook para iOS ou no Outlook para Android.
+> Não há suporte para esse membro no Outlook no iOS ou no Android.
 
 ##### <a name="type"></a>Tipo
 
@@ -889,7 +889,7 @@ console.log("Sender: " + senderName + " (" + senderAddress + ")");
 
 Obtém a ID da série à qual uma instância pertence.
 
-No OWA e no Outlook, `seriesId` o retorna a ID dos serviços Web do Exchange (EWS) do item pai (série) ao qual este item pertence. No entanto, no iOS e no `seriesId` Android, o retorna a ID do REST do item pai.
+No Outlook na Web e clientes de desktop, o `seriesId` retorna a ID dos serviços Web do Exchange (EWS) do item pai (série) ao qual este item pertence. No entanto, no iOS e no `seriesId` Android, o retorna a ID do REST do item pai.
 
 > [!NOTE]
 > O identificador retornado pela propriedade `seriesId` é o mesmo que o identificador do item dos Serviços Web do Exchange. A `seriesId` propriedade não é idêntica às IDs do Outlook usadas pela API REST do Outlook. Antes de fazer chamadas API REST usando esse valor, ela deverá ser convertida usando [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string). Para obter detalhes, confira [Usar APIs REST do Outlook de um suplemento do Outlook](/outlook/add-ins/use-rest-api).
@@ -1190,7 +1190,7 @@ O método `addItemAttachmentAsync` anexa o item com o identificador do Exchange 
 
 Posteriormente, você poderá usar o identificador com o método [`removeAttachmentAsync`](#removeattachmentasyncattachmentid-options-callback) para remover o anexo na mesma sessão.
 
-Se o Suplemento do Office estiver em execução no Outlook Web App, o método `addItemAttachmentAsync` pode anexar itens a itens que não sejam aquele que você está editando; no entanto, isso não tem suporte e não é recomendado.
+Se o suplemento do Office estiver em execução no Outlook na Web, o `addItemAttachmentAsync` método poderá anexar itens a itens diferentes do item que você está editando; no entanto, isso não é suportado e não é recomendado.
 
 ##### <a name="parameters"></a>Parâmetros
 
@@ -1270,13 +1270,13 @@ No cliente do Outlook para área de trabalho, se a mensagem for uma resposta emb
 Exibe um formulário de resposta que inclui o remetente e todos os destinatários da mensagem selecionada ou o organizador e todos os participantes do compromisso selecionado.
 
 > [!NOTE]
-> Não há suporte para esse método no Outlook para iOS ou no Outlook para Android.
+> Não há suporte para esse método no Outlook no iOS ou no Android.
 
-No Outlook Web App, o formulário de resposta é exibido como um formulário pop-out no modo de exibição de três colunas e um formulário pop-up no modo de exibição de uma ou duas colunas.
+No Outlook na Web, o formulário de resposta é exibido como um formulário pop-out no modo de exibição de 3 colunas e um formulário pop-up no modo de exibição de 2 ou 1 colunas.
 
 Se qualquer dos parâmetros da cadeia de caracteres exceder seu limite, `displayReplyAllForm` gera uma exceção.
 
-Quando os anexos são especificados no parâmetro `formData.attachments`, o Outlook e o Outlook Web App tentam baixar todos os anexos e anexá-los ao formulário de resposta. Se a adição de anexos falhar, será exibido um erro na interface de usuário do formulário. Se isso não for possível, nenhuma mensagem de erro será apresentada.
+Quando os `formData.attachments` anexos são especificados no parâmetro, o Outlook na Web e clientes da área de trabalho tentam baixar todos os anexos e anexá-los ao formulário de resposta. Se a adição de anexos falhar, será exibido um erro na interface de usuário do formulário. Se isso não for possível, nenhuma mensagem de erro será apresentada.
 
 ##### <a name="parameters"></a>Parâmetros
 
@@ -1392,13 +1392,13 @@ Office.context.mailbox.item.displayReplyAllForm(
 Exibe um formulário de resposta que inclui o remetente da mensagem selecionada ou o organizador do compromisso selecionado.
 
 > [!NOTE]
-> Não há suporte para esse método no Outlook para iOS ou no Outlook para Android.
+> Não há suporte para esse método no Outlook no iOS ou no Android.
 
-No Outlook Web App, o formulário de resposta é exibido como um formulário pop-out no modo de exibição de três colunas e um formulário pop-up no modo de exibição de uma ou duas colunas.
+No Outlook na Web, o formulário de resposta é exibido como um formulário pop-out no modo de exibição de 3 colunas e um formulário pop-up no modo de exibição de 2 ou 1 colunas.
 
 Se qualquer dos parâmetros da cadeia de caracteres exceder seu limite, `displayReplyForm` gera uma exceção.
 
-Quando os anexos são especificados no parâmetro `formData.attachments`, o Outlook e o Outlook Web App tentam baixar todos os anexos e anexá-los ao formulário de resposta. Se a adição de anexos falhar, será exibido um erro na interface de usuário do formulário. Se isso não for possível, nenhuma mensagem de erro será apresentada.
+Quando os `formData.attachments` anexos são especificados no parâmetro, o Outlook na Web e clientes da área de trabalho tentam baixar todos os anexos e anexá-los ao formulário de resposta. Se a adição de anexos falhar, será exibido um erro na interface de usuário do formulário. Se isso não for possível, nenhuma mensagem de erro será apresentada.
 
 ##### <a name="parameters"></a>Parâmetros
 
@@ -1514,7 +1514,7 @@ Office.context.mailbox.item.displayReplyForm(
 Obtém as entidades encontradas no corpo do item selecionado.
 
 > [!NOTE]
-> Não há suporte para esse método no Outlook para iOS ou no Outlook para Android.
+> Não há suporte para esse método no Outlook no iOS ou no Android.
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -1544,7 +1544,7 @@ var contacts = Office.context.mailbox.item.getEntities().contacts;
 Obtém uma matriz de todas as entidades do tipo de entidade especificado encontradas no corpo do item selecionado.
 
 > [!NOTE]
-> Não há suporte para esse método no Outlook para iOS ou no Outlook para Android.
+> Não há suporte para esse método no Outlook no iOS ou no Android.
 
 ##### <a name="parameters"></a>Parâmetros
 
@@ -1604,7 +1604,7 @@ Office.initialize = function () {
 Retorna entidades bem conhecidas no item selecionado que passam o filtro nomeado definido no arquivo de manifesto XML.
 
 > [!NOTE]
-> Não há suporte para esse método no Outlook para iOS ou no Outlook para Android.
+> Não há suporte para esse método no Outlook no iOS ou no Android.
 
 O método `getFilteredEntitiesByName` retorna as entidades que correspondem à expressão regular definida no elemento de regra [ItemHasKnownEntity](/office/dev/add-ins/reference/manifest/rule#itemhasknownentity-rule) no arquivo de manifesto XML com o valor do elemento `FilterName` especificado.
 
@@ -1636,7 +1636,7 @@ Tipo: Array.<(String|[Contact](/javascript/api/outlook_1_7/office.contact)|[Meet
 Retorna valores de cadeia de caracteres ao item selecionado que correspondem às expressões regulares definidas no arquivo de manifesto XML.
 
 > [!NOTE]
-> Não há suporte para esse método no Outlook para iOS ou no Outlook para Android.
+> Não há suporte para esse método no Outlook no iOS ou no Android.
 
 O método `getRegExMatches` retorna as cadeias de caracteres que correspondem à expressão regular definida em cada elemento de regra `ItemHasRegularExpressionMatch` ou `ItemHasKnownEntity` no arquivo de manifesto XML. Para uma regra `ItemHasRegularExpressionMatch`, uma cadeia de caracteres correspondente deve ocorrer na propriedade do item especificada por essa regra. O tipo simples `PropertyName` define as propriedades compatíveis.
 
@@ -1701,7 +1701,7 @@ var veggies = allMatches.veggies;
 Retorna valores de cadeia de caracteres no item selecionado que correspondem à expressão regular nomeada definida no arquivo de manifesto XML.
 
 > [!NOTE]
-> Não há suporte para esse método no Outlook para iOS ou no Outlook para Android.
+> Não há suporte para esse método no Outlook no iOS ou no Android.
 
 O método `getRegExMatchesByName` retorna as cadeias de caracteres que correspondem à expressão regular definida no elemento de regra `ItemHasRegularExpressionMatch` no arquivo de manifesto XML com o valor de elemento `RegExName` especificado.
 
@@ -1806,7 +1806,7 @@ function setCallback(asyncResult) {
 Obtém as entidades encontradas em uma correspondência realçada que um usuário selecionou. As correspondências realçadas aplicam-se a [suplementos contextuais](/outlook/add-ins/contextual-outlook-add-ins).
 
 > [!NOTE]
-> Não há suporte para esse método no Outlook para iOS ou no Outlook para Android.
+> Não há suporte para esse método no Outlook no iOS ou no Android.
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -1836,7 +1836,7 @@ var contacts = Office.context.mailbox.item.getSelectedEntities().addresses;
 Retorna valores de cadeia de caracteres em uma correspondência realçada que corresponde às expressões regulares definidas no arquivo de manifesto XML. As correspondências realçadas aplicam-se a [suplementos contextuais](/outlook/add-ins/contextual-outlook-add-ins).
 
 > [!NOTE]
-> Não há suporte para esse método no Outlook para iOS ou no Outlook para Android.
+> Não há suporte para esse método no Outlook no iOS ou no Android.
 
 O método `getSelectedRegExMatches` retorna as cadeias de caracteres que correspondem à expressão regular definida em cada elemento de regra `ItemHasRegularExpressionMatch` ou `ItemHasKnownEntity` no arquivo de manifesto XML. Para uma regra `ItemHasRegularExpressionMatch`, uma cadeia de caracteres correspondente deve ocorrer na propriedade do item especificada por essa regra. O tipo simples `PropertyName` define as propriedades compatíveis.
 
@@ -1943,7 +1943,7 @@ function saveCallback(asyncResult) {
 
 Remove um anexo de uma mensagem ou de um compromisso.
 
-O método `removeAttachmentAsync` remove o anexo com o identificador especificado do item. Como prática recomendada, deve-se usar o identificador do anexo para remover um anexo somente se o mesmo aplicativo de email tiver adicionado esse anexo na mesma sessão. No Outlook Web App e no OWA para Dispositivos, o identificador do anexo é válido apenas dentro da mesma sessão. Uma sessão é finalizada quando o usuário fecha o aplicativo ou se o usuário começa a compor em um formulário embutido e, subsequentemente, sai do formulário embutido para continuar em uma janela separada.
+O método `removeAttachmentAsync` remove o anexo com o identificador especificado do item. Como prática recomendada, deve-se usar o identificador do anexo para remover um anexo somente se o mesmo aplicativo de email tiver adicionado esse anexo na mesma sessão. No Outlook na Web e dispositivos móveis, o identificador de anexo é válido somente dentro da mesma sessão. Uma sessão é finalizada quando o usuário fecha o aplicativo ou se o usuário começa a compor em um formulário embutido e, subsequentemente, sai do formulário embutido para continuar em uma janela separada.
 
 ##### <a name="parameters"></a>Parâmetros
 
@@ -2030,7 +2030,7 @@ Office.initialize = function (reason) {
 
 Salva um item de forma assíncrona.
 
-Quando chamado, este método salva a mensagem atual como um rascunho e retorna a identificação do item por meio do método de retorno de chamada. No Outlook Web App ou no Outlook no modo online, o item é salvo no servidor. No Outlook no modo cache, o item é salvo no cache local.
+Quando chamado, este método salva a mensagem atual como um rascunho e retorna a identificação do item por meio do método de retorno de chamada. No Outlook na Web ou no Outlook no modo online, o item é salvo no servidor. No Outlook no modo cache, o item é salvo no cache local.
 
 > [!NOTE]
 > Se seu suplemento chamar o `saveAsync` em um item no modo de redação a fim de obter um `itemId` para usar com a API EWS ou REST, esteja ciente de que quando o Outlook está no modo de cache, pode levar alguns instantes até que o item esteja realmente sincronizado com o servidor. Até que o item esteja sincronizado, usar o `itemId` retornará um erro.
@@ -2040,14 +2040,14 @@ Como compromissos não têm um estado de rascunho, se `saveAsync` for chamado em
 > [!NOTE]
 > Os clientes a seguir têm diferentes comportamentos para `saveAsync` nos compromissos no modo de redação:
 >
-> - O Outlook para Mac não dá suporte à gravação de uma reunião. O `saveAsync` método falha quando chamado de uma reunião no modo de composição. Consulte [não é possível salvar uma reunião como rascunho no Outlook para Mac usando a API do Office js](https://support.microsoft.com/help/4505745) para obter uma solução alternativa.
+> - O Outlook no Mac não dá suporte à gravação de uma reunião. O `saveAsync` método falha quando chamado de uma reunião no modo de composição. Consulte [não é possível salvar uma reunião como rascunho no Outlook para Mac usando a API do Office js](https://support.microsoft.com/help/4505745) para obter uma solução alternativa.
 > - O Outlook na Web sempre envia um convite ou atualização quando `saveAsync` é chamado em um compromisso no modo de redação.
 
 ##### <a name="parameters"></a>Parâmetros
 
 |Nome|Tipo|Atributos|Descrição|
 |---|---|---|---|
-|`options`|Object|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
+|`options`|Objeto|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
 |`options.asyncContext`|Objeto|&lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
 |`callback`|function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Em caso de sucesso, o identificador do item é fornecido na propriedade `asyncResult.value`.|
 
@@ -2093,7 +2093,7 @@ O método `setSelectedDataAsync` insere a cadeia de caracteres especificada no l
 |`data`|String||Os dados a serem inseridos. Os dados não devem exceder 1.000.000 de caracteres. Se forem passados mais de 1.000.000 de caracteres, ocorrerá uma exceção `ArgumentOutOfRange`.|
 |`options`|Objeto|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
 |`options.asyncContext`|Objeto|&lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
-|`options.coercionType`|[Office.CoercionType](office.md#coerciontype-string)|&lt;opcional&gt;|Se `text`, o estilo atual é aplicado no Outlook Web App e no Outlook. Se o campo for um editor de HTML, apenas os dados de texto são inseridos, mesmo se os dados forem HTML.<br/><br/>Se `html` e o campo forem compatíveis com HTML (e o assunto não), o estilo atual é aplicado no Outlook Web App e o estilo padrão será aplicado no Outlook. Se o campo for um campo de texto, retorna um erro `InvalidDataFormat`.<br/><br/>Se `coercionType` não estiver definido, o resultado depende do campo: se o campo for HTML, HTML será usado; se o campo for texto, texto sem formatação será usado.|
+|`options.coercionType`|[Office.CoercionType](office.md#coerciontype-string)|&lt;opcional&gt;|Se `text`, o estilo atual é aplicado no Outlook na Web e clientes da área de trabalho. Se o campo for um editor de HTML, apenas os dados de texto são inseridos, mesmo se os dados forem HTML.<br/><br/>Se `html` e o campo oferecer suporte a HTML (o assunto não), o estilo atual será aplicado no Outlook na Web e o estilo padrão será aplicado nos clientes da área de trabalho do Outlook. Se o campo for um campo de texto, retorna um erro `InvalidDataFormat`.<br/><br/>Se `coercionType` não estiver definido, o resultado depende do campo: se o campo for HTML, HTML será usado; se o campo for texto, texto sem formatação será usado.|
 |`callback`|function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).|
 
 ##### <a name="requirements"></a>Requisitos

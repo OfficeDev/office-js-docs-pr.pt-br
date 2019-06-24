@@ -1,15 +1,15 @@
 ---
 title: Criar um suplemento do painel de tarefas do Excel usando o Vue
 description: ''
-ms.date: 05/02/2019
+ms.date: 06/20/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 228301b9711f4ac33fb5435e66cfcd0254041e19
-ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
+ms.openlocfilehash: 8935a22a631699ac0314aac89936fbd8c2552212
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33619576"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128563"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>Criar um suplemento do painel de tarefas do Excel usando o Vue
 
@@ -186,14 +186,14 @@ Para ativar o HTTPS para o seu aplicativo, abra o arquivo **package.json** na pa
 
 2. Em um navegador da web, acesse `https://localhost:8080`. Se o navegador indicar que o certificado do site não é confiável, configure o computador para confiar no certificado. 
 
-3. Depois que o navegador carregar a página do suplemento sem erros de certificado, será possível testar o suplemento. 
+3. Depois que o navegador carregar a página do suplemento sem erros de certificado, será possível testar o suplemento.
 
 ## <a name="try-it-out"></a>Experimente
 
 1. Siga as instruções da plataforma que você usará para executar o suplemento e realizar sideload do suplemento no Excel.
 
     - Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-    - Excel Online: [Realizar sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
+    - Navegador Web:[Realizar Sideload de Suplementos do Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
     - iPad e Mac: [Realizar sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 2. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.

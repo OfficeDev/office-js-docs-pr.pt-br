@@ -1,18 +1,18 @@
 ---
 title: Elemento DesktopFormFactor no arquivo de manifesto
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: b46536886d59692d03976083412a8b8d2e6ae859
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: d1f09203518a38f1568b13e6c1a9c70752697152
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952387"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128514"
 ---
 # <a name="desktopformfactor-element"></a>Elemento DesktopFormFactor
 
-Especifica as configurações de um suplemento para o fator forma da área de trabalho. O fator de forma da área de trabalho inclui o Office no Windows, o Office para Mac e o Office Online. Ele contém todas as informações do suplemento para o fator forma da área de trabalho, exceto para o nó **Resources**.
+Especifica as configurações de um suplemento para o fator forma da área de trabalho. O fator de forma da área de trabalho inclui o Office na Web, Windows e Mac. Ele contém todas as informações do suplemento para o fator forma da área de trabalho, exceto para o nó **Resources**.
 
 Cada definição de DesktopFormFactor contém o elemento **FunctionFile** e um ou mais elementos **ExtensionPoint**. Para saber mais, confira [Elemento FunctionFile](functionfile.md) e [Elemento ExtensionPoint](extensionpoint.md).
 

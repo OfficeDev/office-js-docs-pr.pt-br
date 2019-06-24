@@ -1,16 +1,16 @@
 ---
 title: Tutorial de funções personalizadas do Excel
 description: Neste tutorial, você criará um suplemento do Excel que contém uma função personalizada que pode executar cálculos e solicitar ou transmitir dados da web.
-ms.date: 06/17/2019
+ms.date: 06/20/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 70c1d68f585bd4db43c8d66a6fafd142556bd03b
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: 3ae7896c082e7a1a45fb153dc69772f206a433de
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059801"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35126978"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Tutorial: Criar funções personalizadas no Excel
 
@@ -27,7 +27,7 @@ Neste tutorial, você vai:
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel no Windows (versão 1904 ou posterior, conectada à assinatura do Office 365) ou Excel na Web
+* Excel no Windows (versão 1904 ou posterior, conectada à assinatura do Office 365) ou na Web
 
 ## <a name="create-a-custom-functions-project"></a>Criar um projeto com funções personalizadas
 
@@ -62,7 +62,7 @@ Neste tutorial, você vai:
     > [!NOTE]
     > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar `npm run build`, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
 
-4. Inicie o servidor local da web, que é executado no Node. Você pode experimentar o suplemento função personalizada no Excel no Windows ou no Excel online.
+4. Inicie o servidor local da web, que é executado no Node. Você pode experimentar o suplemento função personalizada no Excel na Web ou no Windows.
 
 # <a name="excel-on-windowstabexcel-windows"></a>[Excel no Windows](#tab/excel-windows)
 
@@ -72,19 +72,19 @@ Para testar seu suplemento no Excel no Windows, execute o seguinte comando. Quan
 npm run start:desktop
 ```
 
-# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[Excel na Web](#tab/excel-online)
 
-Para testar seu suplemento no Excel online, execute o seguinte comando. Quando você executa este comando, o servidor Web local iniciará.
+Para testar seu suplemento no Excel em um navegador, execute o seguinte comando. Quando você executa este comando, o servidor Web local iniciará.
 
 ```command&nbsp;line
 npm run start:web
 ```
 
-Para usar seu suplemento de funções personalizadas, abra uma nova pasta de trabalho no Excel online. Nesta pasta de trabalho, conclua as seguintes etapas para Sideload seu suplemento.
+Para usar seu suplemento de funções personalizadas, abra uma nova pasta de trabalho no Excel na Web. Nesta pasta de trabalho, conclua as seguintes etapas para Sideload seu suplemento.
 
-1. No Excel Online, escolha a guia **inserir** pressione e, em seguida, escolha **suplementos**.
+1. No Excel, escolha a guia **Inserir** e, em seguida, escolha **suplementos**.
 
-   ![Inserir faixa de opções no Excel online com o ícone meus suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
+   ![Inserir faixa de opções no Excel na Web com o ícone meus suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
    
 2. Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**.
 
@@ -149,7 +149,7 @@ Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio d
     npm run build
     ```
 
-4. Complete as etapas a seguir (para o Excel no Windows ou o Excel online) para registrar novamente o suplemento no Excel. Você deve concluir estas etapas para que a nova função esteja disponível. 
+4. Complete as etapas a seguir (para o Excel na Web ou Windows) para registrar novamente o suplemento no Excel. Você deve concluir estas etapas para que a nova função esteja disponível.
 
 # <a name="excel-on-windowstabexcel-windows"></a>[Excel no Windows](#tab/excel-windows)
 
@@ -160,13 +160,13 @@ Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio d
 3. Na lista de suplementos disponíveis, localize a seção**Suplementos do desenvolvedor** e selecione o suplemento **cotações** para registrá-lo.
     ![Inserir faixa de opções no Excel no Windows com o suplemento funções personalizadas do Excel realçado na lista meus suplementos](../images/list-stock-ticker-red.png)
 
-# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[Excel na Web](#tab/excel-online)
 
-1. No Excel Online, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.  ![Insira a faixa de opções no Excel Online com o ícone Meus Suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
+1. No Excel, escolha a guia **Inserir** e, em seguida, escolha **suplementos**.  ![Inserir faixa de opções no Excel na Web com o ícone meus suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
 
-2. Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**. 
+2. Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**.
 
-3. Escolha **Procurar... ** e navegue até o diretório raiz do projeto criado pelo gerador Yeoman. 
+3. Escolha **Procurar... ** e navegue até o diretório raiz do projeto criado pelo gerador Yeoman.
 
 4. Selecione o arquivo **manifest. XML** e escolha **abrir**, escolha **Carregar**.
 
@@ -233,7 +233,7 @@ A `stockPrice` função que você acabou de criar retorna o preço de uma ação
     npm run build
     ```
 
-3. Complete as etapas a seguir (para o Excel no Windows ou o Excel online) para registrar novamente o suplemento no Excel. Você deve concluir estas etapas para que a nova função esteja disponível. 
+3. Complete as etapas a seguir (para o Excel na Web ou Windows) para registrar novamente o suplemento no Excel. Você deve concluir estas etapas para que a nova função esteja disponível. 
 
 # <a name="excel-on-windowstabexcel-windows"></a>[Excel no Windows](#tab/excel-windows)
 
@@ -244,9 +244,9 @@ A `stockPrice` função que você acabou de criar retorna o preço de uma ação
 3. Na lista de suplementos disponíveis, localize a seção**Suplementos do desenvolvedor** e selecione o suplemento **cotações** para registrá-lo.
     ![Inserir faixa de opções no Excel no Windows com o suplemento funções personalizadas do Excel realçado na lista meus suplementos](../images/list-stock-ticker-red.png)
 
-# <a name="excel-onlinetabexcel-online"></a>[Excel Online](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[Excel na Web](#tab/excel-online)
 
-1. No Excel Online, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.  ![Insira a faixa de opções no Excel Online com o ícone Meus Suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
+1. No Excel, escolha a guia **Inserir** e, em seguida, escolha **suplementos**.  ![Inserir faixa de opções no Excel na Web com o ícone meus suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
 
 2. Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**.
 

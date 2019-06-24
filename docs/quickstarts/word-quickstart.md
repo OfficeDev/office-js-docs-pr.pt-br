@@ -1,19 +1,19 @@
 ---
 title: Crie seu primeiro suplemento do painel de tarefas do Word
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 5164d6cb49ea5c4aed0aeffb5b3f7a0ed96f07c9
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: 24b6dd035ae25f97f08e3b8e68154a1f4a1a1769
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589220"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128570"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do Word
 
-_Aplica-se a: Word 2016 ou posterior no Windows, Word para iPad, Word para Mac_
+_Aplica-se a: Word 2016 ou posterior no Windows, Word para iPad e Mac_
 
 Neste artigo, você aprenderá sobre o processo de criação de um suplemento do painel de tarefas do Word.
 
@@ -274,7 +274,7 @@ Neste artigo, você aprenderá sobre o processo de criação de um suplemento do
     > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
 
     > [!TIP]
-    > Se você estiver testando seu suplemento no Mac, execute o seguinte comando antes de continuar. Quando você executar este comando, o servidor Web local será iniciado.
+    > Se você estiver testando o seu suplemento no Mac, execute o seguinte comando antes de continuar. Quando você executar este comando, o servidor Web local será iniciado.
     >
     > ```command&nbsp;line
     > npm run dev-server
@@ -286,13 +286,13 @@ Neste artigo, você aprenderá sobre o processo de criação de um suplemento do
         npm start
         ```
 
-    - Para testar seu suplemento no Word Online, execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor Web local será iniciado (se ainda não estiver em execução).
+    - Para testar seu suplemento no Word em um navegador, execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor Web local será iniciado (se ainda não estiver em execução).
 
         ```command&nbsp;line
         npm run start:web
         ```
 
-        Para usar o seu suplemento, abra um novo documento no Word Online e, em seguida, realize o sideload no suplemento de acordo com as instruções em [Realizar Sideload nos Suplementos do Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online).
+        Para usar o seu suplemento, abra um novo documento no Word na Web e em seguida realize o sideload no suplemento de acordo com as instruções em [Realizar Sideload nos Suplementos do Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
 2. No Word, abra um novo documento, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 

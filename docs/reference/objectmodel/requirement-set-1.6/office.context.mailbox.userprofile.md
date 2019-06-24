@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. userProfile – conjunto de requisitos 1,6
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 9bb4335690236bdbbf2004f04f9af924747366d4
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 3ca06925dcd37d8e68f086daf4705b10fb936623
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450216"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127202"
 ---
 # <a name="userprofile"></a>userProfile
 
@@ -26,17 +26,17 @@ ms.locfileid: "32450216"
 
 | Membro | Tipo |
 |--------|------|
-| [accountType](#accounttype-string) | Member |
-| [displayName](#displayname-string) | Member |
-| [emailAddress](#emailaddress-string) | Member |
+| [accountType](#accounttype-string) | Membro |
+| [displayName](#displayname-string) | Membro |
+| [emailAddress](#emailaddress-string) | Membro |
 | [timeZone](#timezone-string) | Membro |
 
 ### <a name="members"></a>Membros
 
-####  <a name="accounttype-string"></a>AccountType: cadeia de caracteres
+#### <a name="accounttype-string"></a>AccountType: cadeia de caracteres
 
 > [!NOTE]
-> Atualmente, esse membro só tem suporte no Outlook 2016 ou posterior para Mac (Build 16.9.1212 ou posterior).
+> Atualmente, esse membro só tem suporte no Outlook 2016 ou posterior no Mac (Build 16.9.1212 ou posterior).
 
 Obtém o tipo de conta do usuário associado à caixa de correio. Os valores possíveis estão listados na tabela a seguir.
 
@@ -65,7 +65,7 @@ Obtém o tipo de conta do usuário associado à caixa de correio. Os valores pos
 console.log(Office.context.mailbox.userProfile.accountType);
 ```
 
-####  <a name="displayname-string"></a>displayName :String
+#### <a name="displayname-string"></a>displayName: cadeia de caracteres
 
 Obtém o nome de exibição do usuário.
 
@@ -88,7 +88,7 @@ Obtém o nome de exibição do usuário.
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
 
-####  <a name="emailaddress-string"></a>emailAddress :String
+#### <a name="emailaddress-string"></a>emailAddress: cadeia de caracteres
 
 Obtém o endereço de email SMTP do usuário.
 
@@ -111,7 +111,7 @@ Obtém o endereço de email SMTP do usuário.
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
 
-####  <a name="timezone-string"></a>timeZone :String
+#### <a name="timezone-string"></a>timeZone: cadeia de caracteres
 
 Obtém o fuso horário padrão do usuário.
 

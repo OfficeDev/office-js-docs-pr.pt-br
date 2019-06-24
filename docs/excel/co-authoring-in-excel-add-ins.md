@@ -1,14 +1,14 @@
 ---
 title: Coautoria em suplementos do Excel
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 281f981bd7248b68c60563f02746ba68d88617b8
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 65401f30448db2edbefb42b3d64d580a79250404
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952044"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128000"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>Coautoria em suplementos do Excel  
 
@@ -17,14 +17,6 @@ Com a [coautoria](https://support.office.com/article/Collaborate-on-Excel-workbo
 > [!IMPORTANT]
 > No Excel para Office 365, você verá o Salvamento Automático no canto superior esquerdo. Quando o Salvamento Automático estiver ativado, os coautores verão as respectivas alterações em tempo real. Considere o impacto desse comportamento no design do seu suplemento do Excel. Os usuários podem desativar o Salvamento Automático pelo botão no canto superior esquerdo da janela do Excel.
 
-A coautoria está disponível nas seguintes plataformas:
-
-- Excel Online
-- Excel for Android
-- Excel para iPad
-- Excel Mobile no Windows 10
-- Excel na área de trabalho do Windows para clientes do Office 365 (Windows Desktop Build 16.0.8326.2076 ou posterior, que está disponível para os clientes do canal atual com eficiência de agosto de 2017)
-
 ## <a name="coauthoring-overview"></a>Visão geral da coautoria
 
 Quando você altera o conteúdo de uma pasta de trabalho, o Excel sincroniza automaticamente essas alterações entre todos os coautores. Os coautores podem alterar o conteúdo de uma pasta de trabalho, assim como o código em execução em um suplemento do Excel. Por exemplo, quando o seguinte código JavaScript é executado em um suplemento do Office, o valor de um intervalo é definido como Contoso:
@@ -32,7 +24,7 @@ Quando você altera o conteúdo de uma pasta de trabalho, o Excel sincroniza aut
 ```js
 range.values = [['Contoso']];
 ```
-Depois que "Contoso" é sincronizado entre todos os coautores, qualquer usuário ou suplemento em execução na mesma pasta de trabalho verá o novo valor do intervalo. 
+Depois que "Contoso" é sincronizado entre todos os coautores, qualquer usuário ou suplemento em execução na mesma pasta de trabalho verá o novo valor do intervalo.
 
 A coautoria sincroniza apenas o conteúdo dentro da pasta de trabalho compartilhada. Os valores copiados da pasta de trabalho em variáveis de JavaScript em um suplemento do Excel não são sincronizados. Por exemplo, se seu suplemento armazenar o valor de uma célula (como "Contoso") em uma variável de JavaScript e um coautor alterar o valor da célula para "Exemplo", após a sincronização todos os coautores verão "Exemplo" na célula. No entanto, o valor da variável de JavaScript continuará definido como "Contoso". Além disso, quando vários autores usarem o mesmo suplemento, cada coautor terá sua própria cópia da variável, que não é sincronizada. Quando você usar variáveis que usam o conteúdo da pasta de trabalho, não se esqueça de verificar se há valores atualizados na pasta de trabalho antes de usar a variável.
 

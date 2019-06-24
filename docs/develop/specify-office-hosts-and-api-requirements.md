@@ -1,14 +1,14 @@
 ---
 title: Especificar hosts do Office e requisitos de API
 description: ''
-ms.date: 05/29/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: ccff7ba1896c9d1683f9fc9d67cdd79fe52da623
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: b08ef0a304190540ffc82acc4d5d08fc6783014e
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589143"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128035"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>Especificar hosts do Office e requisitos de API
 
@@ -29,8 +29,8 @@ A tabela a seguir lista os principais conceitos discutidos neste artigo.
 
 |**Conceito**|**Descrição**|
 |:-----|:-----|
-|Aplicativo do Office, aplicativo host do Office, host do Office ou host|O aplicativo do Office usado para executar seu suplemento. Por exemplo, Word, Word Online, Excel etc.|
-|Plataforma|Onde o host do Office é executado, por exemplo, no Office Online ou no Office para iPad.|
+|Aplicativo do Office, aplicativo host do Office, host do Office ou host|O aplicativo do Office usado para executar seu suplemento. Por exemplo, Word e assim por diante.|
+|Plataforma|Onde o host do Office é executado, como em um navegador ou em um iPad.|
 |Conjunto de requisitos|Um grupo nomeado de membros relacionados da API. Os suplementos usam conjuntos de requisitos para determinar se o host do Office oferece suporte a membros da API usados por seu suplemento. É mais fácil testar se há suporte para um conjunto de requisitos do que o suporte para membros individuais da API. O suporte a um conjunto de requisitos varia de acordo com o host do Office e a versão do host do Office. <br >Conjuntos de requisitos são especificados no arquivo de manifesto. Ao especificar conjuntos de requisitos no manifesto, você estabelece o nível mínimo de suporte à API que o host do Office deve fornecer a fim de executar seu suplemento. Os hosts do Office que não suportam conjuntos de requisitos especificados no manifesto não podem executar o suplemento e o mesmo não será exibido em <span class="ui">Meus suplementos</span>. Isso restringirá onde o suplemento está disponível. No código usando verificações de tempo de execução. Para obter uma lista completa de conjuntos de requisitos, confira [Conjuntos de requisitos de Suplemento do Office](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).|
 |Verificação no tempo de execução|Um teste é executado no tempo de execução para determinar se o host do Office que está executando seu suplemento oferece suporte aos conjuntos de requisitos ou métodos usados por seu suplemento. Para executar uma verificação no tempo de execução, use uma instrução **if** com o método **isSetSupported**, os conjuntos de requisito ou os nomes de método que não fazem parte de um conjunto de requisitos. Use as verificações no tempo de execução para garantir que seu suplemento alcance o maior número de clientes. Ao contrário dos conjuntos de requisitos, as verificações no tempo de execução não especificam o nível mínimo de suporte à API exigido do host do Office para que seu suplemento possa ser executado. Em vez disso, use a instrução **if** para determinar se há suporte para um membro da API. Se houver, você poderá proporcionar mais funcionalidade em seu suplemento. Seu suplemento sempre aparecerá em **Meus Suplementos** ao usar verificações no tempo de execução.|
 
@@ -70,7 +70,7 @@ Ao especificar os hosts do Office ou os requisitos de API, há vários fatores a
 
 Para fazer seu suplemento ser executado em um aplicativo host do Office, use os elementos  **Hosts** e **Host** no manifesto. Se você não especificar o elemento **Hosts**, o suplemento será executado em todos os hosts.
 
-Por exemplo, a declaração de **Hosts** e **Host** a seguir especifica que o suplemento funcionará com qualquer versão do Excel, o que inclui o Excel no Windows, o Excel Online e o Excel no iPad.
+Por exemplo, a declaração de **Hosts** e **Host** a seguir especifica que o suplemento funcionará com qualquer versão do Excel, o que inclui o Excel na Web, no Windows e no iPad.
 
 ```xml
 <Hosts>
@@ -80,17 +80,17 @@ Por exemplo, a declaração de **Hosts** e **Host** a seguir especifica que o su
 
 O elemento **Hosts** pode conter um ou mais elementos **Host**. O elemento **Host** especifica o host do Office exigido por seu suplemento. O atributo **Name** é obrigatório e pode ser definido com um dos valores a seguir.
 
-| Nome          | Aplicativos host do Office                                                              |
-|:--------------|:--------------------------------------------------------------------------------------|
-| Banco de dados      | Aplicativos Web do Access                                                                       |
-| Documento      | Word no Windows, Word para Mac, Word para iPad e Word Online                         |
-| Caixa de correio       | Outlook no Windows, Outlook para Mac, Outlook na Web e Outlook.com              |
-| Apresentação  | PowerPoint no Windows, PowerPoint para Mac, PowerPoint para iPad e PowerPoint Online |
-| Project       | Project no Windows                                                                    |
-| Pasta de Trabalho      | Excel no Windows, Excel para Mac, Excel para iPad e Excel Online                     |
+| Nome          | Aplicativos host do Office                                                                  |
+|:--------------|:------------------------------------------------------------------------------------------|
+| Banco de dados      | Aplicativos Web do Access                                                                           |
+| Documento      | Word no Windows, Word para Mac, Word para iPad e Word na Web                           |
+| Caixa de correio       | Outlook no Windows, Outlook para Mac, Outlook na Web, Outlook no Android, Outlook no iOS|
+| Apresentação  | PowerPoint no Windows, PowerPoint para Mac, PowerPoint para iPad e PowerPoint na Web   |
+| Project       | Project no Windows                                                                        |
+| Pasta de Trabalho      | Excel no Windows, Excel para Mac, Excel no iPad e Excel na Web                       |
 
 > [!NOTE]
-> O atributo `Name` especifica o aplicativo host do Office que pode executar seu suplemento. Há suporte para hosts do Office em várias plataformas, que são executados em computadores, navegadores da Web, tablets e dispositivos móveis. Você não pode especificar qual plataforma pode ser usada para executar seu suplemento. Por exemplo, se você especificar `Mailbox`, o Outlook e o Outlook Web App podem ser usados para executar o suplemento.
+> o atributo `Name` especifica o aplicativo host do Office que pode executar seu suplemento. Há suporte para hosts do Office em várias plataformas, que são executados em computadores, navegadores da Web, tablets e dispositivos móveis. Você não pode especificar qual plataforma pode ser usada para executar seu suplemento. Por exemplo, se você especificar `Mailbox`, o Outlook no Windows e na Web, eles podem ser usados para executar o suplemento.
 
 
 ## <a name="set-the-requirements-element-in-the-manifest"></a>Definir o elemento Requirements no manifesto
@@ -98,7 +98,7 @@ O elemento **Hosts** pode conter um ou mais elementos **Host**. O elemento **Hos
 O elemento **Requirements** especifica os conjuntos de requisitos mínimos ou os membros da API que devem receber suporte de um host do Office para que seu suplemento seja executado. O elemento **Requirements** pode especificar conjuntos de requisitos e métodos individuais usados em seu suplemento. Na versão 1.1 do esquema de manifesto de suplemento, o elemento **Requirements** é opcional para todos os suplementos, exceto para os suplementos do Outlook.
 
 > [!WARNING]
-> Use o elemento **Requirements** apenas para especiar conjuntos de requisitos ou membros de API cruciais ao seu suplemento. Se o host do Office ou a plataforma não der suporte ao conjunto de requisitos ou membros da API especificados no elemento **Requirements**, o suplemento não será executado no host ou na plataforma e não será exibido em **Meus Suplementos**. Em vez disso, recomendamos que você disponibilize seu suplemento em todas as plataformas de um host do Office, como o Excel no Windows, o Excel Online e o Excel para iPad. Para disponibilizar seu suplemento em _todos_ os hosts e plataformas do Office, use verificações no tempo de execução em vez do elemento **Requirements**.
+> Use o elemento **Requirements** apenas para especificar conjuntos de requisitos ou membros de API cruciais ao seu suplemento. Se o host ou a plataforma do Office não oferecer suporte aos conjuntos de requisitos ou membros de API especificados no elemento **Requirements**, o suplemento não será executado nesse host ou plataforma e não aparecerá em **Meus Suplementos**. Em vista disso, recomendamos que você disponibilize seu suplemento em todas as plataformas de um host do Office, por exemplo, no Excel na Web, no Windows e para iPad. Para disponibilizar seu suplemento em _todos_ os hosts e plataformas do Office, use verificações no tempo de execução ao invés do elemento **Requirements**.
 
 O exemplo de código a seguir mostra um suplemento que carrega em todos os aplicativos host do Office que oferecem suporte ao seguinte:
 

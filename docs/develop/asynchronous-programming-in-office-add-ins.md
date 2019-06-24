@@ -1,14 +1,14 @@
 ---
 title: Programação assíncrona em Suplementos do Office
 description: ''
-ms.date: 04/15/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 6fad9030ecfbb89d515e6cd3b7bb3eeae0e17379
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 98247c401fa5214dc3c0e39ec9e1b4c409cfdc25
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448992"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127636"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Programação assíncrona em Suplementos do Office
 
@@ -16,13 +16,13 @@ Por que a API de Suplementos do Office usa a programação assíncrona? Como o J
 
 Os nomes de todos os métodos assíncronos na API terminam com "Async", como os métodos [Document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-), [Binding.getDataAsync](/javascript/api/office/office.binding#getdataasync-options--callback-) ou [Item.loadCustomPropertiesAsync](/javascript/api/outlook/office.item#loadcustompropertiesasync-callback--usercontext-). Quando um método "Async" é chamado, ele é executado imediatamente e qualquer execução subsequente do script poderá continuar. A função de retorno de chamada opcional que você passar para um método de "Async" é executada assim que os dados ou a operação solicitada está pronta. Isso geralmente ocorre imediatamente, mas pode haver um pequeno atraso antes de retornar.
 
-O diagrama a seguir mostra o fluxo de execução de uma chamada para um método de "Async" que lê os dados selecionados pelo usuário em um documento aberto no Word Online ou Excel Online baseados no servidor. No ponto em que a chamada "Async" é feita, o thread de execução do JavaScript fica livre para executar qualquer processamento adicional do lado do cliente. (Embora nenhum seja mostrado no diagrama.) Quando o método "Async" retorna, o retorno de chamada retoma a execução no thread e o suplemento pode acessar os dados, fazer algo com eles e exibir os resultados. O mesmo padrão de execução assíncrona ocorre ao trabalhar com aplicativos host de clientes avançados do Office, como Word 2013 ou Excel 2013.
+O diagrama a seguir mostra o fluxo de execução de uma chamada para um método de "Async" que lê os dados selecionados pelo usuário em um documento aberto no Word ou Excel baseados no servidor. No ponto em que a chamada "Async" é feita, o thread de execução do JavaScript fica livre para executar qualquer processamento adicional do lado do cliente (embora nada seja mostrado no diagrama). Quando o método "Async" retorna, o retorno de chamada retoma a execução no thread e o suplemento pode acessar os dados, fazer algo com eles e exibir os resultados. O mesmo padrão de execução assíncrona ocorre ao trabalhar com aplicativos host de clientes avançados do Office, como Word 2013 ou Excel 2013.
 
-*Figura 1. Fluxo de execução da programação assíncrono*
+*Figura 1. Fluxo de execução da programação assíncrona*
 
 ![Asynchronous programming thread execution flow](../images/office15-app-async-prog-fig01.png)
 
-O suporte a esse design assíncrono em clientes Web e avançados faz parte das metas de design "gravar plataforma cruzada já executada" do modelo de desenvolvimento de Suplementos do Office. Por exemplo, você pode um suplemento do painel de tarefas ou conteúdo com uma única base de código que será executada no Excel 2013 e Excel Online.
+O suporte a este design assíncrono em clientes Web e avançados faz parte das metas de design "gravar plataforma cruzada já executada" do modelo de desenvolvimento de Suplementos do Office. Por exemplo, você pode criar um suplemento do painel de tarefas ou conteúdo com uma única base de código que será executada no Excel 2013 e Excel Online.
 
 ## <a name="writing-the-callback-function-for-an-async-method"></a>Gravar a função de retorno de chamada para um método "Async"
 

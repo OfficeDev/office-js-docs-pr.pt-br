@@ -1,14 +1,14 @@
 ---
 title: Criar e depurar suplementos do Office no Visual Studio
 description: Use o Visual Studio para criar e depurar suplementos do Office na área de trabalho do cliente Office no Windows
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: c60599ed63c327d10b157e642e109542c3cefc47
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 9cc4d50d9b61daa4b1f55f7dd4c1e1156f8d959c
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952093"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128182"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Criar e depurar suplementos do Office no Visual Studio
 
@@ -30,7 +30,7 @@ Este artigo descreve como usar o Visual Studio 2017 para criar um suplemento do 
 - Office 2013 ou posterior
 
     > [!TIP]
-    > Se você não tiver o Office, você pode participar do[programa de desenvolvedor do Office 365](https://developer.microsoft.com/office/dev-program) para obter uma assinatura do Office 365 ou [Inscreva-se para uma avaliação gratuita de 1 mês](https://products.office.com/en-US/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735).
+    > Se você não tiver o Office, você pode participar do[programa de desenvolvedor do Office 365](https://developer.microsoft.com/office/dev-program) para obter uma assinatura do Office 365 ou [Inscreva-se para uma avaliação gratuita de 1 mês](https://products.office.com/pt-BR/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735).
 
 ## <a name="create-the-add-in-project-in-visual-studio"></a>Criar um projeto de suplemento no Visual Studio
 
@@ -102,7 +102,7 @@ Você pode usar o Visual Studio para depurar seu suplemento no cliente da área 
 - [Depurar o código de um suplemento do Outlook](#debug-the-code-for-an-outlook-add-in)
 
 > [!NOTE]
-> É possível usar o Visual Studio para depurar suplementos do Office no Office Online ou Office para Mac. Confira informações sobre a depuração nessas plataformas [Depurar Suplementos do Office no Office Online](../testing/debug-add-ins-in-office-online.md) ou [Depurar Suplementos do Office no iPad e no Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)
+> Você não pode usar o Visual Studio para depurar suplementos do Office na Web ou Mac. Para obter informações sobre a depuração nestas plataformas, confira[Depurar suplementos do Office no Office na Web](../testing/debug-add-ins-in-office-online.md) ou [Depurar suplementos do Office no iPad e no Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)
 
 ### <a name="review-the-build-and-debug-properties"></a>Examinar as propriedades de compilação e depuração
 
@@ -125,7 +125,7 @@ A tabela a seguir descreve as propriedades do projeto.
 |**Projeto da Web**|Especifica o nome do projeto Web associado ao suplemento.|
 |**Email Address**<br/>(Apenas suplementos do Outlook)|Especifica o endereço de email da conta de usuário no Exchange Server ou no Exchange Online que você quer usar para testar o suplemento do Outlook.|
 |**EWS Url**<br/>(Apenas suplementos do Outlook)|URL do serviço Web do Exchange (por exemplo: `https://www.contoso.com/ews/exchange.aspx`). |
-|**OWA Url**<br/>(Apenas suplementos do Outlook)|URL do Outlook Web App (Por exemplo: `https://www.contoso.com/owa`).|
+|**OWA Url**<br/>(Apenas suplementos do Outlook)|Outlook na URL da Web (por exemplo: `https://www.contoso.com/owa`).|
 |**Usar autenticação multifator**<br/>(Apenas suplementos do Outlook)|Valor Booleano que indica se a autenticação multifator deve ser utilizada.|
 |**Nome de Usuário**<br/>(Apenas suplementos do Outlook)|Especifica o nome da conta de usuário no Exchange Server ou no Exchange Online com a qual você deseja testar o suplemento do Outlook.|
 |**Arquivo do projeto**|Especifica o nome do arquivo que contém informações de compilação, configuração e outras informações sobre o projeto.|

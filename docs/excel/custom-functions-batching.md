@@ -3,18 +3,20 @@ ms.date: 06/17/2019
 description: Reúna as funções personalizadas em lotes para reduzir as chamadas de rede para um serviço remoto.
 title: Enviando em lote chamadas de função personalizada para um serviço remoto
 localization_priority: Priority
-ms.openlocfilehash: 2e01c981dd71a4b6eebf0e191302ba2f8f71ef2a
-ms.sourcegitcommit: 4bf5159a3821f4277c07d89e88808c4c3a25ff81
+ms.openlocfilehash: aa1b9c956c0f54a4d59e49ca157dd67c8349b143
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "35059836"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127937"
 ---
 # <a name="batching-custom-function-calls-for-a-remote-service"></a>Enviando em lote chamadas de função personalizada para um serviço remoto
 
 Se as suas funções personalizadas chamarem um serviço remoto, você poderá usar um padrão de envio em lotes para reduzir o número de chamadas de rede para o serviço remoto. Para reduzir a idas e voltas na rede, você reúne todas as chamadas em uma única chamada para o serviço da Web. Isso é ideal quando a planilha é recalculada.
 
 Por exemplo, se alguém usou sua função personalizada em 100 células em uma planilha e depois recalculou a planilha, sua função personalizada seria executada 100 vezes e faria 100 chamadas de rede. Usando um padrão de envio em lotes, as chamadas podem ser combinadas para fazer todos os 100 cálculos em uma única chamada de rede.
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## <a name="view-the-completed-sample"></a>Ver o exemplo concluído
 

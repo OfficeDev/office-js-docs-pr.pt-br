@@ -1,16 +1,16 @@
 ---
 title: Tutorial de suplemento do Word
 description: Neste tutorial, voc? criar? um suplemento do Word que insere (e substitui) intervalos de texto, par?grafos, imagens, HTML, tabelas e controles de conte?do. Você também aprenderá como formatar texto e como inserir (e substituir) conteúdo nos controles de conteúdo.
-ms.date: 12/31/2018
+ms.date: 06/20/2019
 ms.prod: word
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 019329db156e63148a047466b9b3770128cb7fbf
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: a9383128569a2cbe9b300ff9fee78d1dcb20e632
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451166"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35126908"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Tutorial: Criar Suplemento do Painel de Tarefas no Word
 
@@ -25,7 +25,7 @@ Neste tutorial: você criará um suplemento do painel de tarefas no Word:
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Para usar este tutorial, você precisa instalar o seguinte. 
+Para usar este tutorial, você precisa instalar o seguinte.
 
 - Word 2016, versão 1711 (build 8730.1000 do Clique para Executar) ou posterior. Talvez você precise ser um participante do programa Office Insider para ter essa versão. Para saber mais, confira a página [Seja um Office Insider](https://products.office.com/office-insider?tab=tab-1).
 
@@ -43,7 +43,7 @@ Conclua as etapas a seguir para criar o projeto de suplemento do Word que você 
 
 3. Execute o comando `npm install` para instalar as ferramentas e bibliotecas listadas no arquivo package.json. 
 
-4. Execute as etapas em [Adicionar certificados autoassinados como certificado raiz confiáveis](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) para confiar no certificado do sistema operacional do seu computador de desenvolvimento.
+4. Execute as etapas de [instalação do certificado autoassinado](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) para confiar no certificado para o sistema operacional do seu computador de desenvolvimento.
 
 ## <a name="insert-a-range-of-text"></a>Inserir um intervalo de texto
 
@@ -110,7 +110,7 @@ Nesta etapa do tutorial, você testará programaticamente se o suplemento oferec
 
     ```js
     var docBody = context.document.body;
-    docBody.insertParagraph("Office has several versions, including Office 2016, Office 365 Click-to-Run, and Office Online.",
+    docBody.insertParagraph("Office has several versions, including Office 2016, Office 365 Click-to-Run, and Office on the web.",
                             "Start");
     ```
 
@@ -126,7 +126,7 @@ Nesta etapa do tutorial, você testará programaticamente se o suplemento oferec
 
     - Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 
-    - Word Online: [Realizar sideload dos Suplementos do Office no Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online)
+    - Navegador da Web: [Sideload suplementos do Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
 
     - iPad e Mac: [Realizar sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 

@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos dos comandos de suplemento
 description: ''
-ms.date: 05/08/2019
+ms.date: 06/20/2019
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: 60ef114159490cd34a837f12f2e691a6b02b6e41
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: 53f2e1424be27dbcc80b1b708b66e4baa5b14cc8
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33952373"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127104"
 ---
 # <a name="add-in-commands-requirement-sets"></a>Conjuntos de requisitos dos comandos de suplemento
 
@@ -19,7 +19,7 @@ Comandos de suplemento são elementos de interface do usuário que estendem a in
 
 A versão inicial dos comandos do suplemento não tem um conjunto de requisitos correspondente (ou seja, não há um conjunto de requisitos 1.0 de AddInCommands). A tabela a seguir lista os aplicativos de host do Office que oferecem suporte à versão de lançamento inicial e os números de versão ou de build dos aplicativos.  
 
-| Lançar   |  Office 2013 no Windows<br>(compra avulsa) | Office 2016 no Windows<br>(compra avulsa) | Office 2019 no Windows<br>(compra avulsa) | Office no Windows<br>(conectado ao Office 365)   |  Office para iPad<br>(conectado ao Office 365)  |  Office para Mac<br>(conectado ao Office 365)  | Office Online  |
+| Lançar   |  Office 2013 no Windows<br>(compra avulsa) | Office 2016 no Windows<br>(compra avulsa) | Office 2019 no Windows<br>(compra avulsa) | Office no Windows<br>(conectado à assinatura do Office 365)   |  Office no iPad<br>(conectado à assinatura do Office 365)  |  Office no Mac<br>(conectado à assinatura do Office 365)  | Office na Web  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | Comandos de suplemento (versão inicial, nenhum conjunto de requisitos) | N/D | 16.0.4678.1000 *suportado somente no Outlook* | Versão 1809 (Build 10827.20150) ou posterior |Versão 1603 (Build 6769.0000) ou posterior | N/D | 15.33 ou posterior| Janeiro de 2016 |
 
@@ -27,7 +27,7 @@ O conjunto de requisitos 1.1 dos comandos do suplemento introduz a capacidade de
 
 A tabela a seguir lista o conjunto de requisitos 1.1 dos comandos do suplemento, ou seja, os aplicativos de host do Office que oferecem suporte a esse conjunto de requisitos e os números de versão ou de build dos aplicativos do Office.
 
-|  Conjunto de requisitos  |  Office 2013 no Windows<br>(compra avulsa) | Office 2016 no Windows<br>(compra avulsa) | Office 2019 no Windows<br>(compra avulsa) | Office no Windows<br>(conectado ao Office 365)   |  Office para iPad<br>(conectado ao Office 365)  |  Office para Mac<br>(conectado ao Office 365)  | Office Online  |  
+|  Conjunto de requisitos  |  Office 2013 no Windows<br>(compra avulsa) | Office 2016 no Windows<br>(compra avulsa) | Office 2019 no Windows<br>(compra avulsa) | Office no Windows<br>(conectado à assinatura do Office 365)   |  Office no iPad<br>(conectado à assinatura do Office 365)  |  Office no Mac<br>(conectado à assinatura do Office 365)  | Office na Web  |  
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | AddInCommands 1.1  | N/D | 16.0.4678.1000 *suportado somente no Outlook*  | Versão 1809 (Build 10827.20150) ou posterior | Versão 1705 (Build 8121.1000) ou posterior | N/D | 15.34 ou posterior\*| Maio de 2017 |
 
