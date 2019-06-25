@@ -1,14 +1,14 @@
 ---
-ms.date: 05/30/2019
+ms.date: 06/21/2019
 description: Solicite, transmita e cancele o fluxo de dados externos para sua pasta de trabalho com funções personalizadas no Excel
 title: Receber e tratar dados com funções personalizadas
 localization_priority: Priority
-ms.openlocfilehash: 22f79c8b4e7e39569d3b955477e9397a053e1a8f
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 39be2f0913e2eee4b1e5e7d5f704a47dee279cf5
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910333"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128252"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>Receber e tratar dados com funções personalizadas
 
@@ -74,6 +74,9 @@ Para outro exemplo de solicitação XHR com mais contexto, confira a função`ge
 
 No seguinte exemplo de código, a função `stockPriceStream` usa um símbolo de cotação da bolsa para acessar o preço de uma ação a cada 1000 milissegundos. Para saber mais sobre este exemplo, confira o [Tutorial de funções personalizadas](../tutorials/excel-tutorial-create-custom-functions.md#create-a-streaming-asynchronous-custom-function).
 
+> [!NOTE]
+> O código a seguir solicita uma cotação de ações usando a API de Negociação IEX. Antes de executar o código, você precisará [criar uma conta gratuita com o IEX Cloud](https://iexcloud.io/) para poder obter o token da API necessário na solicitação de API.
+
 ```js
 /**
  * Streams a stock price.
@@ -91,7 +94,8 @@ function stockPriceStream(ticker, invocation) {
             return;
         }
 
-        var url = "https://api.iextrading.com/1.0/stock/" + ticker + "/price";
+        //Note: In the following line, replace <YOUR_TOKEN_HERE> with the API token that you've obtained through your IEX Cloud account.
+        var url = "https://cloud.iexapis.com/stable/stock/" + ticker + "/quote/latestPrice?token=<YOUR_TOKEN_HERE>"
         isPending = true;
 
         fetch(url)

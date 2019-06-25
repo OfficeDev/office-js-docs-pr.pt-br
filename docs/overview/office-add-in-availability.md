@@ -1,14 +1,14 @@
 ---
 title: Disponibilidade de host e plataforma para suplementos do Office
-description: Conjuntos de requisitos compatíveis com Excel, Word, Outlook, PowerPoint, OneNote e Project.
-ms.date: 05/23/2019
+description: Conjuntos de requisitos com suporte para o Excel, OneNote, Outlook, PowerPoint, Project e Word.
+ms.date: 06/13/2019
 localization_priority: Priority
-ms.openlocfilehash: 6fb1f0db839910e91d7a5215f8e21f5b33ff2165
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: 82c276c802cab66ae4f5443d0d556bc42ee57841
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432191"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128619"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilidade de host e plataforma para suplementos do Office
 
@@ -27,7 +27,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
     <th style="width:40%"><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>APIs comuns</b></a></th>
   </tr>
   <tr>
-    <td>Office Online</td>
+    <td>Office na Web</td>
     <td> - TaskPane<br>
         - Conteúdo<br>
         - Funções personalizadas<br>
@@ -59,7 +59,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office no Windows<br>(conectado ao Office 365)</td>
+    <td>Office no Windows<br>(conectado à assinatura do Office 365)</td>
     <td> - TaskPane<br>
         - Conteúdo<br>
         - Funções personalizadas<br>
@@ -160,7 +160,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office para iPad<br>(conectado ao Office 365)</td>
+    <td>Office no iPad<br>(conectado à assinatura do Office 365)</td>
     <td>- TaskPane<br>
         - Conteúdo<br>
         - Funções personalizadas</td>
@@ -188,7 +188,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office para Mac<br>(conectado ao Office 365)</td>
+    <td>Office no Mac<br>(conectado à assinatura do Office 365)</td>
     <td>- TaskPane<br>
         - Conteúdo<br>
         - Funções personalizadas<br>
@@ -219,7 +219,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2019 para Mac<br>(compra avulsa)</td>
+    <td>Office 2019 no Mac<br>(compra avulsa)</td>
     <td>- TaskPane<br>
         - Conteúdo<br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
@@ -248,7 +248,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
         - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2016 para Mac<br>(compra avulsa)</td>
+    <td>Office 2016 no Mac<br>(compra avulsa)</td>
     <td>- TaskPane<br>
         - Conteúdo</td>
     <td>- <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">ExcelApi 1.1</a><br>
@@ -282,7 +282,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
     <th style="width:40%"><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>APIs comuns</b></a></th>
   </tr>
   <tr>
-    <td>Office Online</td>
+    <td>Office na Web</td>
     <td>
         - Funções personalizadas</td>
     <td>
@@ -291,16 +291,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
     </td>
   </tr>
   <tr>
-    <td>Office no Windows<br>(conectado ao Office 365)</td>
-    <td>
-        - Funções personalizadas</td>
-    <td>
-        - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
-    <td>
-    </td>
-  </tr>
-  <tr>
-    <td>Office para iPad<br>(conectado ao Office 365)</td>
+    <td>Office no Windows<br>(conectado à assinatura do Office 365)</td>
     <td>
         - Funções personalizadas</td>
     <td>
@@ -329,7 +320,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
     <th><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>APIs comuns</b></a></th>
   </tr>
   <tr>
-    <td>Office Online</td>
+    <td>Office na Web<br>(novo)</td>
     <td> - Leitura de email<br>
       - Composição de email<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
@@ -343,7 +334,20 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
     <td>Não disponível</td>
   </tr>
   <tr>
-    <td>Office no Windows<br>(conectado ao Office 365)</td>
+    <td>Office na Web<br>(clássico)</td>
+    <td> - Leitura de email<br>
+      - Composição de email<br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
+    <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1"> Caixa de correio 1.1</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Caixa de correio 1.2</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3"> Caixa de correio 1.3</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4"> Caixa de correio 1.4</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5"> Caixa de correio 1.5</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Caixa de correio 1.6</a></td>
+    <td>Não disponível</td>
+  </tr>
+  <tr>
+    <td>Office no Windows<br>(conectado à assinatura do Office 365)</td>
     <td> - Leitura de email<br>
       - Composição de email<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a><br>
@@ -395,7 +399,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
     <td>Não disponível</td>
   </tr>
   <tr>
-    <td>Office para iOS<br>(conectado ao Office 365)</td>
+    <td>Office no iOS<br>(conectado à assinatura do Office 365)</td>
     <td> - Leitura de email<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1"> Caixa de correio 1.1</a><br>
@@ -406,7 +410,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
     <td>Não disponível</td>
   </tr>
   <tr>
-    <td>Office para Mac<br>(conectado ao Office 365)</td>
+    <td>Office no Mac<br>(conectado à assinatura do Office 365)</td>
     <td> - Leitura de email<br>
       - Composição de email<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
@@ -420,7 +424,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
     <td>Não disponível</td>
   </tr>
   <tr>
-    <td>Office 2019 para Mac<br>(compra avulsa)</td>
+    <td>Office 2019 no Mac<br>(compra avulsa)</td>
     <td> - Leitura de email<br>
       - Composição de email<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
@@ -433,7 +437,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
     <td>Não disponível</td>
   </tr>
   <tr>
-    <td>Office 2016 para Mac<br>(compra avulsa)</td>
+    <td>Office 2016 no Mac<br>(compra avulsa)</td>
     <td> - Leitura de email<br>
       - Composição de email<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
@@ -446,7 +450,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
     <td>Não disponível</td>
   </tr>
   <tr>
-    <td>Office para Android<br>(conectado ao Office 365)</td>
+    <td>Outlook no Android<br>(conectado à assinatura do Office 365)</td>
     <td> - Leitura de email<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1"> Caixa de correio 1.1</a><br>
@@ -472,7 +476,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
     <th><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>APIs comuns</b></a></th>
   </tr>
   <tr>
-    <td>Office Online</td>
+    <td>Office na Web</td>
     <td> - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
@@ -498,7 +502,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
          - TextFile</td>
   </tr>
   <tr>
-    <td>Office no Windows<br>(conectado ao Office 365)</td>
+    <td>Office no Windows<br>(conectado à assinatura do Office 365)</td>
     <td> - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
@@ -599,7 +603,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
          - TextFile</td>
   </tr>
   <tr>
-    <td>Office para iPad<br>(conectado ao Office 365)</td>
+    <td>Office no iPad<br>(conectado à assinatura do Office 365)</td>
     <td> - TaskPane</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.2</a><br>
@@ -626,7 +630,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
          - TextFile </td>
   </tr>
   <tr>
-    <td>Office para Mac<br>(conectado ao Office 365)</td>
+    <td>Office no Mac<br>(conectado à assinatura do Office 365)</td>
     <td> - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
@@ -654,7 +658,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
          - TextFile </td>
   </tr>
   <tr>
-    <td>Office 2019 para Mac<br>(compra avulsa)</td>
+    <td>Office 2019 no Mac<br>(compra avulsa)</td>
     <td> - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
@@ -682,7 +686,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
          - TextFile </td>
   </tr>
   <tr>
-    <td>Office 2016 para Mac<br>(compra avulsa)</td>
+    <td>Office 2016 no Mac<br>(compra avulsa)</td>
     <td> - TaskPane</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets">WordApi 1.1</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
@@ -721,7 +725,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
     <th><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>APIs comuns</b></a></th>
   </tr>
   <tr>
-    <td>Office Online</td>
+    <td>Office na Web</td>
     <td> - Conteúdo<br>
          - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
@@ -737,7 +741,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office no Windows<br>(conectado ao Office 365)</td>
+    <td>Office no Windows<br>(conectado à assinatura do Office 365)</td>
     <td> - Conteúdo<br>
          - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
@@ -800,7 +804,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office para iPad<br>(conectado ao Office 365)</td>
+    <td>Office no iPad<br>(conectado à assinatura do Office 365)</td>
     <td> - Conteúdo<br>
          - TaskPane</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
@@ -815,7 +819,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
          - ImageCoercion</td>
   </tr>
   <tr>
-    <td>Office para Mac<br>(conectado ao Office 365)</td>
+    <td>Office no Mac<br>(conectado à assinatura do Office 365)</td>
     <td> - Conteúdo<br>
          - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
@@ -831,7 +835,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2019 para Mac<br>(compra avulsa)</td>
+    <td>Office 2019 no Mac<br>(compra avulsa)</td>
     <td> - Conteúdo<br>
          - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
@@ -847,7 +851,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
          - TextCoercion</td>
   </tr>
   <tr>
-    <td>Office 2016 para Mac<br>(compra avulsa)</td>
+    <td>Office 2016 no Mac<br>(compra avulsa)</td>
     <td> - Conteúdo<br>
          - TaskPane</td>
     <td> - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*</td>
@@ -877,7 +881,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
     <th><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>APIs comuns</b></a></th>
   </tr>
   <tr>
-    <td>Office Online</td>
+    <td>Office na Web</td>
     <td> - Conteúdo<br>
          - TaskPane<br>
          - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>

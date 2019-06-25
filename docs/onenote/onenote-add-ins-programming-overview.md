@@ -1,18 +1,18 @@
 ---
 title: Visão geral da programação da API JavaScript do OneNote
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: b83c79a4165aed1ec06c63a9a52db9fe919a3866
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 852c68bc9edf370d0eef687fb4869b23d4f59fe4
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448300"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35128633"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>Visão geral da programação da API JavaScript do OneNote
 
-O OneNote introduz uma API JavaScript para os suplementos do OneNote Online. Você pode criar suplementos de painel de tarefas e de conteúdo e comandos de suplemento que interagem com objetos do OneNote e conectam-se a serviços Web ou a outros recursos baseados na Web.
+O OneNote introduz uma API do JavaScript para suplementos do OneNote na Web. Você pode criar suplementos de painel de tarefas e de conteúdo e comandos de suplemento que interagem com objetos do OneNote e conectam-se a serviços Web ou a outros recursos baseados na Web.
 
 > [!NOTE]
 > Caso pretenda [publicar](../publish/publish.md) o suplemento na experiência do Office depois de criá-lo, verifique se você está em conformidade com as [Políticas de validação do AppSource](/office/dev/store/validation-policies). Por exemplo, para passar na validação, seu suplemento deve funcionar em todas as plataformas com suporte aos métodos que você definir (para mais informações, confira a [seção 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) e a [Página de hospedagem e disponibilidade de suplementos do Office](../overview/office-add-in-availability.md)).
@@ -21,7 +21,7 @@ O OneNote introduz uma API JavaScript para os suplementos do OneNote Online. Voc
 
 Os suplementos consistem de dois componentes básicos:
 
-- Um **aplicativo Web** consiste em uma página da Web e em JavaScript, CSS ou outros arquivos necessários. Estes arquivos podem ser hospedados em qualquer servidor Web ou serviço de hospedagem na Web, como o Microsoft Azure. No OneNote Online, o aplicativo Web exibe um controle de navegação ou iframe.
+- Um **aplicativo Web** consiste em uma página da Web e em JavaScript, CSS ou outros arquivos necessários. Estes arquivos podem ser hospedados em qualquer servidor Web ou serviço de hospedagem na Web, como o Microsoft Azure. No OneNote online, o aplicativo Web exibe um controle de navegação ou iframe.
 
 - Um **manifesto XML** que especifica a URL da página da Web do suplemento e os requisitos de acesso, as configurações e os recursos para o suplemento. Este arquivo é armazenado no cliente. Os suplementos do OneNote usam o mesmo formato de [manifesto](../develop/add-in-manifests.md) como outros suplementos do Office.
 

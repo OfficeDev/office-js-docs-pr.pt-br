@@ -17,11 +17,11 @@ Conclua as etapas a seguir para iniciar o servidor da web local e fazer o sidelo
     npm start
     ```
 
-- Para testar o seu suplemento no Excel Online, execute o seguinte comando no diretório raiz do projeto. Quando você executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).
+- Para testar seu suplemento no Excel em um navegador, execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).
 
     ```command&nbsp;line
     npm run start:web
     ```
 
-    Para usar o seu suplemento, abra um novo documento no Excel Online e, em seguida, realize o sideload no suplemento de acordo com as instruções em [Realizar Sideload nos Suplementos do Office Online](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-online).
+    Para usar seu suplemento, abra uma nova pasta de trabalho no Excel na Web e, em seguida, realize sideload de seu suplemento seguindo as instruções em [Sideload suplementos do Office no Office Online.](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
 
