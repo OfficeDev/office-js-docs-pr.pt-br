@@ -1,14 +1,14 @@
 ---
-ms.date: 06/18/2019
+ms.date: 06/21/2019
 description: Use tags JSDoc para criar dinamicamente seus metadados JSON de funções personalizadas.
 title: Gerar metadados JSON automaticamente para funções personalizadas
 localization_priority: Priority
-ms.openlocfilehash: a02ca5fd67f29e1997579385e04d045f01e63bdb
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: cc28eca4e1ab1a03186983c81380a00bcf5eb85a
+ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127902"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "35226759"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Gerar metadados JSON automaticamente para funções personalizadas
 
@@ -28,9 +28,9 @@ Para ver exemplos das descrições de funções internas, abra o Excel, vá para
 
 No exemplo a seguir, a frase "Calcula o volume de uma esfera." é a descrição da função personalizada.
 
-```JS
+```js
 /**
-/* Calculates the volume of a sphere
+/* Calculates the volume of a sphere.
 /* @customfunction VOLUME
 ...
  */
@@ -66,11 +66,21 @@ Uma função não pode ter as tags `@cancelable` e `@streaming` ao mesmo tempo.
 
 Sintaxe: @customfunction _id_ _nome_
 
-Especifique esta marcação para tratar a função JavaScript/TypeScript como uma função personalizada do Excel.
+Especifique esta marcação para tratar a função JavaScript/TypeScript como uma função personalizada do Excel. 
 
 Essa marcação é necessária para criar metadados para a função personalizada.
 
 Também deve haver uma chamada para `CustomFunctions.associate("id", functionName);`
+
+O exemplo a seguir mostra a maneira mais simples de declarar uma função personalizada.
+
+```js
+/**
+ * Increments a value once a second.
+ * @customfunction
+ * ...
+ */
+```
 
 #### <a name="id"></a>id
 
@@ -79,6 +89,16 @@ O `id` é um identificador invariável para a função customizada.
 * Se `id` não for fornecido, o nome da função JavaScript/TypeScript será convertido em maiúsculas e os caracteres não permitidos serão removidos.
 * O `id` deve ser exclusivo para todas as funções personalizadas.
 * Os caracteres permitidos estão limitados a: A-Z, a-z, 0-9, sublinhados (\_) e ponto (.).
+
+No exemplo a seguir, incremento é o `id` e o `name` da função.
+
+```js
+/**
+ * Increments a value once a second.
+ * @customfunction INCREMENT
+ * ...
+ */
+```
 
 #### <a name="name"></a>nome
 
@@ -89,15 +109,27 @@ Fornece a exibição `name` da função personalizada.
 * Deve começar com uma letra.
 * O comprimento máximo é de 128 caracteres.
 
-### <a name="description"></a>description
+No exemplo a seguir, Inc é a `id`da função e `increment` é o `name`.
 
-Uma descrição não exige nenhuma tag específica. Adicione uma descrição a uma função personalizada acrescentando uma frase para descrever o que a função realiza dentro do comentário JSDoc. Por padrão, qualquer texto sem tags na seção de comentários JSDoc será a descrição da função. A descrição aparece para os usuários no Excel quando eles entram na função. No exemplo a seguir, a frase "Uma função que soma dois números" é a descrição da função personalizada com a propriedade id de `SUM`.
-
-```JS
+```js
 /**
-/* @customfunction SUM
-/* A function that sums two numbers
-...
+ * Increments a value once a second.
+ * @customfunction INC INCREMENT
+ * ...
+ */
+```
+
+### <a name="description"></a>descrição
+
+Uma descrição não exige nenhuma tag específica. Adicione uma descrição a uma função personalizada acrescentando uma frase para descrever o que a função realiza dentro do comentário JSDoc. Por padrão, qualquer texto sem tags na seção de comentários JSDoc será a descrição da função. A descrição aparece para os usuários no Excel quando eles entram na função. No exemplo a seguir, a frase "Uma função que soma dois números" é a descrição da função personalizada com a propriedade id de `ADD`.
+
+No exemplo a seguir, adicionar é o `id` e `name` da função e uma descrição é fornecida.
+
+```js
+/**
+ * A function that adds two numbers.
+ * @customfunction ADD
+ * ...
  */
 ```
 
@@ -108,6 +140,17 @@ Uma descrição não exige nenhuma tag específica. Adicione uma descrição a u
 Sintaxe: @helpurl _url_
 
 A _url_ fornecida é exibida no Excel.
+
+No exemplo a seguir, o `helpurl` é www.contoso.com/weatherhelp.
+
+```js
+/**
+ * A function which streams the temperature in a town you specify.
+ * @customfunction getTemperature
+ * @helpurl www.contoso.com/weatherhelp
+ * ...
+ */
+```
 
 ---
 ### <a name="param"></a>@param
@@ -127,6 +170,19 @@ Para denotar um parâmetro de função personalizado como opcional:
 > [!NOTE]
 > O valor padrão para parâmetros opcionais é `null`.
 
+O exemplo a seguir mostra uma função adicionar que adiciona dois ou três números, com o terceiro número como um parâmetro opcional.
+
+```js
+/**
+ * A function which sums two, or optionally three, numbers.
+ * @customfunction ADDNUMBERS
+ * @param firstNumber {number} First number to add.
+ * @param secondNumber {number} Second number to add.
+ * @param [thirdNumber] {number} Optional third number you wish to add.
+ * ...
+ */
+```
+
 #### <a name="typescript"></a>TypeScript
 
 Sintaxe de TypeScript: @param nome _descrição_
@@ -145,13 +201,28 @@ Para uma descrição detalhada do @param confira: [JSDoc](https://jsdoc.app/tags
 > [!NOTE]
 > O valor padrão para parâmetros opcionais é `null`.
 
+O exemplo a seguir mostra `add` a função que adiciona dois números.
+
+```ts
+/**
+ * Adds two numbers.
+ * @customfunction 
+ * @param first First number
+ * @param second Second number
+ * @returns The sum of the two numbers.
+ */
+function add(first: number, second: number): number {
+  return first + second;
+}
+```
+
 ---
 ### <a name="requiresaddress"></a>@requiresAddress
 <a id="requiresAddress"/>
 
-Indica que o endereço da célula onde a função está sendo avaliada deve ser fornecido. 
+Indica que o endereço da célula onde a função está sendo avaliada deve ser fornecido.
 
-O último parâmetro da função deve ser do tipo `CustomFunctions.Invocation` ou de um tipo derivado. Quando a função é chamada, a propriedade `address` conterá o endereço.
+O último parâmetro da função deve ser do tipo `CustomFunctions.Invocation` ou de um tipo derivado. Quando a função é chamada, a propriedade `address` conterá o endereço. Para obter um exemplo de uma função que usa `@requiresAddress` a marca, [Confira o parâmetro contexto](./custom-functions-parameter-options.md#addressing-cells-context-parameter)da célula de endereçamento.
 
 ---
 ### <a name="returns"></a>@returns
@@ -162,6 +233,21 @@ Sintaxe: @returns {_type_}
 Fornece o tipo para o valor de retorno.
 
 Se `{type}` for omitido, as informações do tipo TypeScript serão usadas. Se não houver informações de tipo, o tipo será `any`.
+
+O exemplo a seguir mostra a `add` função que usa `@returns` marca.
+
+```ts
+/**
+ * Adds two numbers.
+ * @customfunction 
+ * @param first First number
+ * @param second Second number
+ * @returns The sum of the two numbers.
+ */
+function add(first: number, second: number): number {
+  return first + second;
+}
+```
 
 ---
 ### <a name="streaming"></a>@streaming
@@ -174,7 +260,7 @@ A função deve retornar `void`.
 
 As funções de streaming não retornam valores diretamente, mas devem chamar `setResult(result: ResultType)` usando o último parâmetro.
 
-Exceções lançadas por uma função de streaming são ignoradas. `setResult()` pode ser chamado com Erro para indicar um resultado de erro.
+Exceções lançadas por uma função de streaming são ignoradas. `setResult()` pode ser chamado com Erro para indicar um resultado de erro. Para obter um exemplo de uma função de streaming e mais informações, confira [, criar uma função de streaming](./custom-functions-web-reqs.md#make-a-streaming-function).
 
 As funções de streaming não podem ser marcadas como [@volatile](#volatile).
 
@@ -185,6 +271,19 @@ As funções de streaming não podem ser marcadas como [@volatile](#volatile).
 Uma função volátil é aquela cujo resultado não é o mesmo de um momento para o outro, mesmo que não receba argumentos ou os argumentos não mudem. O Excel reavalia células que contenham funções voláteis, juntamente com todos os dependentes, sempre que um cálculo é feito. Por esse motivo, confiar demais em funções voláteis pode retardar o tempo de recálculo; portanto, use-as com moderação.
 
 Funções de streaming não podem ser voláteis.
+
+A função a seguir é volátil e usa `@volatile` a marca.
+
+```js
+/**
+ * Simulates rolling a 6-sided dice.
+ * @customfunction
+ * @volatile
+ */
+function roll6sided(): number {
+  return Math.floor(Math.random() * 6) + 1;
+}
+```
 
 ---
 
