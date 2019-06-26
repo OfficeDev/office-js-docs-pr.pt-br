@@ -1,14 +1,14 @@
 ---
 title: Noções básicas da API JavaScript para Office
 description: ''
-ms.date: 06/20/2019
+ms.date: 06/21/2019
 localization_priority: Priority
-ms.openlocfilehash: 45cccadaa3d82f3435579650ae5161b20d7a425a
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: afbb24cd056d3a11c8d19f9a4316caeaafc7f066
+ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127986"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "35226738"
 ---
 # <a name="understanding-the-javascript-api-for-office"></a>Noções básicas da API JavaScript para Office
 
@@ -170,36 +170,3 @@ Para saber mais, veja [Evento Office.initialize](/javascript/api/office) e [Enum
 ## <a name="office-javascript-api-object-model"></a>Modelo de objeto de API JavaScript para Office
 
 Depois de inicializado, o suplemento pode interagir com o host (por exemplo, o Excel ou o Outlook). A página [Modelo de objeto de API JavaScript para Office](office-javascript-api-object-model.md) tem mais detalhes sobre padrões de uso específicos. Há também documentação de referência detalhada para [APIs Comuns](/office/dev/add-ins/reference/javascript-api-for-office) e hosts específicos.
-
-## <a name="api-support-matrix"></a>Matriz de suporte da API
-
-Esta tabela resume a API e os recursos compatíveis com os tipos de suplemento (conteúdo, painel de tarefas e Outlook) e os aplicativos do Office que podem hospedá-los quando o usuário especifica os aplicativos hospedados pelo Office compatíveis com o suplemento usando o [esquema 1.1 do manifesto de suplementos e recursos compatíveis com a v1.1 da API JavaScript para Office](update-your-javascript-api-for-office-and-manifest-schema-version.md).
-
-
-|||||||||
-|:-----|:-----|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-||**Nome do host**|Banco de dados|Pasta de trabalho|Caixa de correio|Apresentação|Documento|Project|
-||**Aplicativos host** **compatíveis**|Aplicativos Web do Access|Excel no Windows,<br/>Excel Online|Outlook no Windows,<br/>Outlook Online,<br/>Outlook no Android,<br>Outlook no iOS,|PowerPoint no Windows,<br/>PowerPoint Online|Word no Windows|Project no Windows|
-|**Tipos de suplemento com suporte**|Conteúdo|S|S||S|||
-||Painel de tarefas||S||S|S|S|
-||Outlook|||S||||
-|**Recursos da API compatíveis**|Ler/gravar texto||S||S|S|S<br/>(Somente leitura)|
-||Ler/gravar matriz||S|||S||
-||Ler/gravar tabela||S|||S||
-||Ler/gravar HTML|||||S||
-||Leitura/gravação<br/>Office Open XML|||||S||
-||Ler propriedades de tarefa, recurso, modo de exibição e campo||||||S|
-||Eventos alterados pela seleção||S|||S||
-||Obter documento inteiro||||S|S||
-||Associações e eventos de associação|S<br/>(Somente vinculações de tabela totais e parciais)|S|||S||
-||Ler/gravar partes XML personalizadas|||||S||
-||Persistir dados de estado de suplemento (configurações)|S<br/>(Por suplemento do host)|S<br/>(Por documento)|S<br/>(Por caixa de correio)|S<br/>(Por documento)|S<br/>(Por documento)||
-||Eventos alterados pelas configurações|S|S||S|S||
-||Obter o modo de exibição ativo<br/>e visualizar eventos alterados||||S|||
-||Navegar para locais<br/>no documento||S||S|S||
-||Ativar contextualmente<br/>usando regras e RegEx|||S||||
-||Ler propriedades do item|||S||||
-||Ler perfil de usuário|||S||||
-||Obter anexos|||S||||
-||Obter o token de identidade do usuário|||S||||
-||Chamar os serviços Web do Exchange|||S||||

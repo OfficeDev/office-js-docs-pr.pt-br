@@ -3,20 +3,18 @@ title: Solucionar erros de usuários com suplementos do Office
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: a82dc05789b4c35a954337a64197d3ac1a190b96
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 3222e8b7bc46608996c73284e2ee9b7c26c7afbe
+ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35126901"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "35226780"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Solucionar erros de usuários com suplementos do Office
 
 Às vezes, seus usuários podem encontrar problemas com suplementos do Office desenvolvidos por você. Por exemplo, um suplemento falha ao carregar ou está inacessível. Use as informações neste artigo para ajudar a resolver problemas comuns que os usuários têm com o seu suplemento do Office. 
 
 Também é possível usar o [Fiddler](https://www.telerik.com/fiddler) para identificar e depurar problemas com os suplementos.
-
-Depois de resolver o problema do usuário, é possível [responder diretamente às avaliações dos clientes no AppSource](/office/dev/store/create-effective-office-store-listings).
 
 ## <a name="common-errors-and-troubleshooting-steps"></a>Erros comuns e etapas de solução de problemas
 
