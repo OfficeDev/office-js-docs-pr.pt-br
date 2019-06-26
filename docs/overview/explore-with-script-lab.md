@@ -4,12 +4,12 @@ description: Use o script Lab para explorar a API do Office JS e a funcionalidad
 ms.topic: article
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 9ef81443fade450a7bea519a99cb607c320dd4f6
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: b74a7787507aed1970ddcb06d3cb3eb79653615a
+ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128640"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "35226773"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>Explorar a API JavaScript do Office usando o script Lab
 
@@ -42,7 +42,7 @@ Além do código JavaScript ou TypeScript que chama a API do Office JS, cada tre
 
 ### <a name="save-and-share-snippets"></a>Salvar e compartilhar trechos de código
 
-Por padrão, os trechos de código abertos no laboratório de script serão salvos no cache do navegador. Para salvar um trecho permanentemente, você pode exportá-lo para um [GitHub](https://gist.github.com). Crie uma propriedade secreta para salvar um trecho de código exclusivamente para uso próprio ou criar uma propriedade compartilhada se você planeja compartilhá-la com outras pessoas.
+Por padrão, os trechos de código abertos no laboratório de script serão salvos no cache do navegador. Para salvar um trecho permanentemente, você pode exportá-lo para um [GitHub](https://gist.github.com). Crie uma propriedade secreta para salvar um trecho de código exclusivamente para uso próprio ou crie uma pessoa pública se você planeja compartilhá-la com outras pessoas.
 
 ![Opções de compartilhamento](../images/script-lab-share.jpg)
 

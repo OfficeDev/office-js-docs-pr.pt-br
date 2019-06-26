@@ -3,12 +3,12 @@ title: Desenvolver suplementos do Office para iPad
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: cdc35b83c2cb32984d0dc73d85af250bddfa8c0a
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 1b6d17fd264249dbc8000fe1b1f63605e68fd904
+ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128168"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "35226745"
 ---
 # <a name="develop-office-add-ins-for-the-ipad"></a>Desenvolver suplementos do Office para iPad
 
@@ -18,7 +18,7 @@ A tabela a seguir lista as tarefas a serem realizadas para desenvolver um suplem
 
 |**Tarefa**|**Descrição**|**Recursos**|
 |:-----|:-----|:-----|
-|Atualize seu suplemento para dar suporte ao Office.js versão 1.1.|Atualize os arquivos de JavaScript (Office.js e arquivos .js específicos do aplicativo) e o arquivo de validação de manifesto de suplemento usados no projeto do seu Suplemento do Office para a versão 1.1.|[O que mudou na API JavaScript para Office](/office/dev/add-ins/reference/what's-changed-in-the-javascript-api-for-office)|
+|Atualize seu suplemento para dar suporte ao Office.js versão 1.1.|Atualize os arquivos de JavaScript (Office.js e arquivos .js específicos do aplicativo) e o arquivo de validação de manifesto de suplemento usados no projeto do seu Suplemento do Office para a versão 1.1.|[Atualizar a versão da API e do manifesto](update-your-javascript-api-for-office-and-manifest-schema-version.md)|
 |Aplique as práticas recomendadas de design de interface do usuário.|Integre perfeitamente a interface do usuário do seu suplemento à experiência para iOS.|[Projetar para o iOS](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/)|
 |Aplique as práticas recomendadas de design de suplemento.|Verifique se o suplemento fornece um valor claro, é dedicado e tem um desempenho consistente.|[Práticas recomendadas para o desenvolvimento de suplementos do Office](../concepts/add-in-development-best-practices.md)|
 |Otimize seu suplemento para toque.|Torne sua interface do usuário responsiva a entradas de toque, além de mouse e teclado.|[Aplicar os princípios de design da UX](../concepts/add-in-development-best-practices.md#apply-ux-design-principles)|

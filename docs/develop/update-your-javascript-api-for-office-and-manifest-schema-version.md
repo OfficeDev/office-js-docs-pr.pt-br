@@ -3,12 +3,12 @@ title: Atualize para a API de JavaScript mais recente da biblioteca do Office e 
 description: Atualize seus arquivos de JavaScript (Office.js e arquivos .js específicos do aplicativo) e o arquivo de validação de manifesto de suplemento usados no seu projeto de Suplemento do Office para a versão 1.1.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 7cbda821897b33a19e4bc9eeac27a096e01bc217
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: dc3d1983d653a1b914331c9aeac1d6dae9fcc772
+ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448711"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "35226766"
 ---
 # <a name="update-to-the-latest-javascript-api-for-office-library-and-version-11-add-in-manifest-schema"></a>Atualize para a API de JavaScript mais recente da biblioteca do Office e o esquema de manifesto do suplemento da versão 1.1
 
@@ -19,7 +19,7 @@ Este artigo descreve como atualizar os arquivos do JavaScript (Office.js e arqui
 
 ## <a name="use-the-most-up-to-date-project-files"></a>Usar os arquivos de projeto mais atualizados
 
-Se estiver usando o Visual Studio para desenvolver o suplemento, para usar os [membros mais recentes](/office/dev/add-ins/reference/what's-changed-in-the-javascript-api-for-office) da API JavaScript para Office e os [recursos da v1.1 do manifesto do suplemento](../develop/add-in-manifests.md) (que é validado em relação a offappmanifest 1.1.xsd), é preciso baixar o Visual Studio 2017. Para baixar o Visual Studio 2017, confira a [página IDE do Visual Studio](https://visualstudio.microsoft.com/vs/). Durante a instalação, você precisará selecionar a carga de trabalho de desenvolvimento do Office/SharePoint.
+Se estiver usando o Visual Studio para desenvolver o suplemento, para usar os membros mais recentes da API JavaScript para Office e os [recursos da v1.1 do manifesto do suplemento](../develop/add-in-manifests.md) (que é validado em relação a offappmanifest 1.1.xsd), é preciso baixar o Visual Studio 2017. Para baixar o Visual Studio 2017, confira a [página IDE do Visual Studio](https://visualstudio.microsoft.com/vs/). Durante a instalação, você precisará selecionar a carga de trabalho de desenvolvimento do Office/SharePoint.
 
 Se estiver usando um editor de texto ou IDE que não o Visual Studio para desenvolver o suplemento, é precisa atualizar as referências à CDN para o Office.js e a versão do esquema consultada pelo manifesto do suplemento.
 
