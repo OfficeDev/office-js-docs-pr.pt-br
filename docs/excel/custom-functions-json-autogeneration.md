@@ -1,14 +1,14 @@
 ---
-ms.date: 06/21/2019
+ms.date: 06/27/2019
 description: Use tags JSDoc para criar dinamicamente seus metadados JSON de funções personalizadas.
 title: Gerar metadados JSON automaticamente para funções personalizadas
 localization_priority: Priority
-ms.openlocfilehash: cc28eca4e1ab1a03186983c81380a00bcf5eb85a
-ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
+ms.openlocfilehash: 1230e1bfdeead306531a218373c2756b29fa4abe
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "35226759"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454654"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Gerar metadados JSON automaticamente para funções personalizadas
 
@@ -18,7 +18,7 @@ Quando uma função personalizada do Excel é gravada em JavaScript ou em TypeSc
 
 Adicione a marcação `@customfunction` nos comentários de código de uma função JavaScript ou TypeScript para marcá-la como uma função personalizada.
 
-Os tipos de parâmetros da função podem ser fornecidos usando a marcação [@param](#param) em JavaScript ou do [Tipo de função](https://www.typescriptlang.org/docs/handbook/functions.html) em TypeScript. Para mais informações, confira a marcação [@param](#param) e a seção [Tipos](#types).
+Os tipos de parâmetros da função podem ser fornecidos usando a marcação [@param](#param) em JavaScript ou do [Tipo de função](https://www.typescriptlang.org/docs/handbook/functions.html) em TypeScript. Para saber mais, confira a marcação [@param](#param) e as seções [Tipos](#types).
 
 ### <a name="adding-a-description-to-a-function"></a>Adicionando uma descrição a uma função
 
@@ -160,7 +160,7 @@ No exemplo a seguir, o `helpurl` é www.contoso.com/weatherhelp.
 
 Sintaxe de JavaScript: @param {type} nome _descrição_
 
-* `{type}` deve especificar a informação de tipo entre chaves. Confira [Tipos](##types) para mais informações sobre os tipos que podem ser usados. Opcional: se não especificado, o tipo `any` será usado.
+* `{type}` deve especificar a informação de tipo entre chaves. Confira a seção [Tipos](#types) para mais informações sobre os tipos que podem ser usados. Opcional: se não especificado, o tipo `any` será usado.
 * `name` especifica a qual parâmetro a marcação @param se aplica. Obrigatório.
 * `description` fornece a descrição que aparece no Excel para o parâmetro de função. Opcional.
 
@@ -190,7 +190,7 @@ Sintaxe de TypeScript: @param nome _descrição_
 * `name` especifica a qual parâmetro a marcação @param se aplica. Obrigatório.
 * `description` fornece a descrição que aparece no Excel para o parâmetro de função. Opcional.
 
-Confira [Tipos](##types) para mais informações sobre os tipos de parâmetros de função que podem ser usados.
+Confira a seção [Tipos](#types) para mais informações sobre os tipos de parâmetros de função que podem ser usados.
 
 Para denotar um parâmetro de função personalizado como opcional, siga um destes procedimentos:
 * Use um parâmetro opcional. Por exemplo: `function f(text?: string)`

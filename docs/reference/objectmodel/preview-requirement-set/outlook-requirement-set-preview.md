@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 description: ''
-ms.date: 06/20/2019
+ms.date: 06/25/2019
 localization_priority: Priority
-ms.openlocfilehash: b46fada2fa69f3526c929a0289341f7dab5b58b8
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: b59b4523bf0cc45a69a5c86e1670a0b224ad029c
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128472"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454850"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 
@@ -212,21 +212,21 @@ Adicionada uma nova função que retorna os dados inicialização que são trans
 
 #### <a name="internetheadersjavascriptapioutlookofficeinternetheaders"></a>[InternetHeaders](/javascript/api/outlook/office.internetheaders)
 
-Adicionado um novo objeto que representa os cabeçalhos de Internet de um item de mensagem.
+Adicionado um novo objeto que representa os cabeçalhos de internet personalizados de um item de mensagem.
 
-**Disponível em**: Outlook no Windows (conectado a assinatura do Office 365)
+**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
 
 #### <a name="officecontextmailboxiteminternetheadersofficecontextmailboxitemmdinternetheaders-internetheaders"></a>[Office.context.mailbox.item.internetHeaders](office.context.mailbox.item.md#internetheaders-internetheaders)
 
-Adicionada uma nova propriedade que representa os cabeçalhos de Internet de um item de mensagem.
+Adicionada uma nova propriedade que representa os cabeçalhos de internet personalizados de um item de mensagem.
 
-**Disponível em**: Outlook no Windows (conectado a assinatura do Office 365)
+**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
 
 ---
 
 ### <a name="office-theme"></a>Tema do Office
 
-#### <a name="officecontextmailboxofficethemejavascriptapiofficeofficeofficetheme"></a>[Office.context.mailbox.officeTheme](/javascript/api/office/office.officetheme)
+#### <a name="officecontextofficethemejavascriptapiofficeofficecontextofficetheme"></a>[Office.context.officeTheme](/javascript/api/office/office.context#officetheme)
 
 Capacidade adicional para obter o tema do Office.
 

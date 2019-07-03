@@ -1,14 +1,14 @@
 ---
 title: Ciclo de vida de desenvolvimento de suplementos do Office
 description: ''
-ms.date: 03/19/2019
+ms.date: 07/01/2019
 localization_priority: Priority
-ms.openlocfilehash: ec38bb3cfba98153d644431f5e6f23c1d37b0a06
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: 44e2792f030662bd89b272998ad47fd0a645d785
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910159"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454570"
 ---
 # <a name="office-add-ins-development-lifecycle"></a>Ciclo de vida de desenvolvimento de suplementos do Office
 
@@ -33,7 +33,7 @@ Decida os recursos e cenários mais importantes e concentre seu design nisso.
 
 ## <a name="2-identify-the-data-and-data-source-for-the-add-in"></a>2. Identifique os dados e a fonte de dados do suplemento
 
-- Os dados em um documento, pasta de trabalho, apresentação, projeto ou um banco de dados do Access são baseados em navegador?
+- Os dados estão em um documento, uma pasta de trabalho, uma apresentação ou um projeto?
 
 - Os dados sobre um item ou itens estão no Exchange Server ou em uma caixa de correio do Exchange Online?
 
@@ -44,11 +44,11 @@ Decida os recursos e cenários mais importantes e concentre seu design nisso.
 
 Considere o seguinte para identificar os cenários:
 
-- Os clientes usarão o suplemento para enriquecer o conteúdo de um documento ou um banco de dados baseado em navegador do Access? Em caso afirmativo, convém considerar a criação de um **suplemento de conteúdo**.
+- Os clientes usarão o suplemento para enriquecer o conteúdo de um documento? Em caso afirmativo, convém considerar a criação de um **suplemento de conteúdo**.
 
 - Os clientes utilizarão o suplemento ao exibir ou ao escrever uma mensagem de email ou um compromisso? É importante poder expor o suplemento de acordo com o contexto atual? É uma prioridade disponibilizar o suplemento não apenas em computadores de mesa, mas também em tablets e telefones?
 
-    Se a resposta for Sim para qualquer uma dessas perguntas, considere a criação de um **suplemento do Outlook**. Identifique o contexto que acionará seu suplemento (por exemplo, o usuário está usando um formulário de composição, tipos de mensagem específicos, a presença de um anexo, um endereço, uma sugestão de tarefa ou de reunião, ou certos padrões de cadeia de caracteres no conteúdo de um compromisso ou um email). 
+    Se a resposta for Sim para qualquer uma dessas perguntas, considere a criação de um **suplemento do Outlook**. Identifique o contexto que acionará seu suplemento (por exemplo, o usuário está usando um formulário de composição, tipos de mensagem específicos, a presença de um anexo, um endereço, uma sugestão de tarefa ou de reunião, ou certos padrões de cadeia de caracteres no conteúdo de um compromisso ou um email).
 
     Para descobrir como é possível ativar o suplemento Outlook contextualmente, confira as [Regras de ativação para suplementos do Outlook](/outlook/add-ins/activation-rules).
 
