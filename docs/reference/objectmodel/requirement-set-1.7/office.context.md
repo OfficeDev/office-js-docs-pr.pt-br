@@ -1,14 +1,14 @@
 ---
 title: Office. Context – conjunto de requisitos 1,7
 description: ''
-ms.date: 06/20/2019
+ms.date: 06/25/2019
 localization_priority: Normal
-ms.openlocfilehash: ff816b3bb51ebb5dc8ef124af8488405fdc3fd39
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 8f21389d40181db0f62a8e13a882aaf4cb9b5072
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127132"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454857"
 ---
 # <a name="context"></a>context
 
@@ -28,7 +28,6 @@ O namespace Office.context fornece interfaces compartilhadas que são usadas pel
 | Membro | Tipo |
 |--------|------|
 | [displayLanguage](#displaylanguage-string) | Membro |
-| [officeTheme](#officetheme-object) | Membro |
 | [roamingSettings](#roamingsettings-roamingsettings) | Membro |
 
 ### <a name="namespaces"></a>Namespaces
@@ -72,53 +71,6 @@ function sayHelloWithDisplayLanguage() {
 // Function that writes to a div with id='message' on the page.
 function write(message){
   document.getElementById('message').innerText += message;
-}
-```
-
----
----
-
-#### <a name="officetheme-object"></a>officeTheme: objeto
-
-Fornece acesso às propriedades de cores de temas do Office.
-
-> [!NOTE]
-> Não há suporte para esse membro no Outlook no iOS ou no Android.
-
-Usar as cores de tema do Office possibilita coordenar o esquema de cores de seu suplemento com o tema do Office atualmente selecionado pelo usuário em **Arquivo > Conta do Office > Tema da interface de usuário do Office **, que é aplicado a todos os aplicativos host do Office. Usar cores de temas do Office é apropriado suplementos de email e painéis de tarefas.
-
-##### <a name="type"></a>Tipo
-
-*   Objeto
-
-##### <a name="properties"></a>Propriedades:
-
-|Nome| Tipo| Descrição|
-|---|---|---|
-|`bodyBackgroundColor`| String|Obtém a cor de plano de fundo do corpo de tema do Office como um tripleto hexadecimal de cores.|
-|`bodyForegroundColor`| String|Obtém a cor de primeiro plano do corpo de tema do Office como um tripleto hexadecimal de cores.|
-|`controlBackgroundColor`| String|Obtém a cor de plano de fundo do controle do tema do Office como um tripleto hexadecimal de cores.|
-|`controlForegroundColor`| String|Obtém a cor de controle do corpo de tema do Office como um tripleto hexadecimal de cores.|
-
-##### <a name="requirements"></a>Requisitos
-
-|Requisito| Valor|
-|---|---|
-|[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
-|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
-
-##### <a name="example"></a>Exemplo
-
-```javascript
-function applyOfficeTheme(){
-  // Get office theme colors.
-  var bodyBackgroundColor = Office.context.officeTheme.bodyBackgroundColor;
-  var bodyForegroundColor = Office.context.officeTheme.bodyForegroundColor;
-  var controlBackgroundColor = Office.context.officeTheme.controlBackgroundColor
-  var controlForegroundColor = Office.context.officeTheme.controlForegroundColor;
-
-  // Apply body background color to a CSS class.
-  $('.body').css('background-color', bodyBackgroundColor);
 }
 ```
 

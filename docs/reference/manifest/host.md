@@ -1,14 +1,14 @@
 ---
 title: Elemento Host no arquivo de manifesto
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/01/2019
 localization_priority: Normal
-ms.openlocfilehash: debb4d59f75ce974ffb21d853c6b65a579c4e685
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: e7b557034f70b03ed57598b7ffb9f43878db7392
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127566"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454892"
 ---
 # <a name="host-element"></a>Elemento Host
 
@@ -28,7 +28,8 @@ Quando definido no manifesto básico (em [OfficeApp](officeapp.md)), o tipo de h
 | [Nome](#name) | cadeia de caracteres | obrigatório | O nome do tipo de aplicativo host do Office. |
 
 ### <a name="name"></a>Name
-Especifica o tipo de Host destinado por esse suplemento. O valor deve ser uma das seguintes opções:
+
+Especifica o tipo de Host destinado por esse suplemento. O valor deve ser um dos seguintes.
 
 - `Document` (Word)
 - `Database` (Access)
@@ -38,7 +39,11 @@ Especifica o tipo de Host destinado por esse suplemento. O valor deve ser uma da
 - `Project` (Project)
 - `Workbook` (Excel)
 
+> [!IMPORTANT]
+> Não recomendamos mais criar e usar aplicativos Web do Access e bancos de dados no SharePoint. Como alternativa, use o [Microsoft PowerApps](https://powerapps.microsoft.com/) para criar soluções de negócios sem código para dispositivos móveis e Web.
+
 ### <a name="example"></a>Exemplo
+
 ```xml
 <Hosts>
     <Host Name="Mailbox">
@@ -47,6 +52,7 @@ Especifica o tipo de Host destinado por esse suplemento. O valor deve ser uma da
 ```
 
 ## <a name="versionoverrides-node"></a>Nó VersionOverrides
+
 Quando definido em [VersionOverrides](versionoverrides.md), o tipo de host é determinado pelo atributo `xsi:type`. 
 
 ### <a name="attributes"></a>Atributos
@@ -74,6 +80,7 @@ Controla a qual host do Office (Word, Excel, PowerPoint, Outlook, OneNote) as co
 - `Workbook` (Excel)
 
 ## <a name="host-example"></a>Exemplo de host 
+
 ```xml
 <Hosts>
     <Host xsi:type="MailHost">

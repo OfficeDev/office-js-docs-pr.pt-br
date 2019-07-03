@@ -1,14 +1,14 @@
 ---
 title: Office. Context – conjunto de requisitos de visualização
 description: ''
-ms.date: 06/20/2019
+ms.date: 06/25/2019
 localization_priority: Normal
-ms.openlocfilehash: 7e5d25c4788ec9f35a97f3bd3da6cca6a7314fb4
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 998e752cf2292eec4e05901325a0192e158c0b7f
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127482"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454829"
 ---
 # <a name="context"></a>context
 
@@ -83,9 +83,9 @@ function write(message){
 Fornece acesso às propriedades de cores de temas do Office.
 
 > [!NOTE]
-> Não há suporte para esse membro no Outlook no iOS ou no Android.
+> Só há suporte para esse membro no Outlook no Windows.
 
-Usar as cores de tema do Office possibilita coordenar o esquema de cores de seu suplemento com o tema do Office atualmente selecionado pelo usuário em **Arquivo > Conta do Office > Tema da interface de usuário do Office **, que é aplicado a todos os aplicativos host do Office. Usar cores de temas do Office é apropriado suplementos de email e painéis de tarefas.
+O uso de cores de temas do Office permite coordenar o esquema de cores do seu suplemento com o tema atual do Office selecionado pelo usuário com a **conta de arquivo > office > Office Theme UI**, que é aplicada em todos os aplicativos host do Office. Usar cores de temas do Office é apropriado suplementos de email e painéis de tarefas.
 
 ##### <a name="type"></a>Tipo
 
@@ -104,7 +104,7 @@ Usar as cores de tema do Office possibilita coordenar o esquema de cores de seu 
 
 |Requisito| Valor|
 |---|---|
-|[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
+|[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| Visualização|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
 ##### <a name="example"></a>Exemplo

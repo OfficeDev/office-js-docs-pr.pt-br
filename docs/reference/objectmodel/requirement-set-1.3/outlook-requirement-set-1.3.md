@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos de API para suplementos do Outlook versão 1.3
 description: ''
-ms.date: 03/19/2019
+ms.date: 06/25/2019
 localization_priority: Normal
-ms.openlocfilehash: 276096870b128896e987bcb303b4cccdb77e0e50
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 6e1c8fade7a95cdac4fbcf5b571f4b9be9092e95
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450398"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454885"
 ---
 # <a name="outlook-add-in-api-requirement-set-13"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.3
 
@@ -31,7 +31,6 @@ O conjunto de requisitos 1.3 inclui todos os recursos do [Conjunto de requisitos
 
 - Foi adicionado o [Body.getAsync](/javascript/api/outlook_1_3/office.body#getasync-coerciontype--options--callback-): Retorna o corpo atual em um formato especificado.
 - Foi adicionado o [Body.setAsync](/javascript/api/outlook_1_3/office.body#setasync-data--options--callback-): Substitui todo o corpo com o texto especificado.
-- Foi adicionado o [Office.context.officeTheme](office.context.md#officetheme-object): Fornece acesso às cores de temas do Office.
 - Foi adicionado o objeto [Event](/javascript/api/office/office.addincommands.event): Passado como um parâmetro para funções de comando sem interface de usuário em um suplemento do Outlook. Usado para sinalizar a conclusão do processamento.
 - Foi adicionado o [Office.context.mailbox.item.close](office.context.mailbox.item.md#close): Fecha o item atual que está sendo composto.
 - Foi adicionado o [Office.context.mailbox.item.saveAsync](office.context.mailbox.item.md#saveasyncoptions-callback): Salva um item de forma assíncrona.

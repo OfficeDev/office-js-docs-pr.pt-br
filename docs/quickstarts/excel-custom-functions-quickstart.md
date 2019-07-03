@@ -4,12 +4,12 @@ description: Desenvolvimento de funções personalizadas no guia de início ráp
 title: Início rápido de funções personalizadas
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 8e7fbf247df04a12c38ad24d9ba6335a7f7bdaf8
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: b0f32f2239ff25ef22a9b72908d30734f25741d6
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128577"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454906"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Introdução ao desenvolvimento de funções personalizadas do Excel
 
@@ -37,16 +37,16 @@ Para começar, você usará o gerador Yeoman para criar projeto com funções pe
 
     - **Escolha o tipo de projeto:** `Excel Custom Functions Add-in project`
     - **Escolha o tipo de script:** `JavaScript`
-    - **Qual será o nome do suplemento?** `stock-ticker`
+    - **Qual será o nome do suplemento?** `starcount`
 
-    ![O gerador Yeoman para suplementos do Office solicita funções personalizadas](../images/UpdatedYoOfficePrompt.png)
+    ![O gerador Yeoman para suplementos do Office solicita funções personalizadas](../images/starcountPrompt.png)
 
     O gerador Yeoman criará os arquivos do projeto e instalará os componentes Node de suporte.
 
 2. O gerador Yeoman fornecerá algumas instruções na linha de comando sobre o que fazer com o projeto, mas ignorará e continuarão seguindo as instruções. Navegue até a pasta raiz do projeto.
 
     ```command&nbsp;line
-    cd stock-ticker
+    cd starcount
     ```
 
 3. Compile o projeto. 
