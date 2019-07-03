@@ -479,7 +479,7 @@
               href: testing/sideload-office-addin-using-sideload-command.md
             - name: Anexar um depurador do painel de tarefas
               href: testing/attach-debugger-from-task-pane.md
-            - name: Depurar usando ferramentas de desenvolvedor F12
+            - name: Depurar usando ferramentas de desenvolvedor
               href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
         - name: Navegador
           items:

@@ -1,272 +1,257 @@
 ---
 title: Tutorial de funções personalizadas do Excel
 description: Neste tutorial, você criará um suplemento do Excel que contém uma função personalizada que pode executar cálculos e solicitar ou transmitir dados da web.
-ms.date: 06/20/2019
+ms.date: 06/27/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 3ae7896c082e7a1a45fb153dc69772f206a433de
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 1aa05581d1b0dfb1f5affa019e51b84126c8d199
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35126978"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454719"
 ---
-# <a name="tutorial-create-custom-functions-in-excel"></a><span data-ttu-id="595cd-103">Tutorial: Criar funções personalizadas no Excel</span><span class="sxs-lookup"><span data-stu-id="595cd-103">Tutorial: Create custom functions in Excel</span></span>
+# <a name="tutorial-create-custom-functions-in-excel"></a><span data-ttu-id="01bd2-103">Tutorial: Criar funções personalizadas no Excel</span><span class="sxs-lookup"><span data-stu-id="01bd2-103">Tutorial: Create custom functions in Excel</span></span>
 
-<span data-ttu-id="595cd-104">Funções personalizadas permitem que você adicione novas funções do Excel definindo essas funções em JavaScript como parte de um suplemento.</span><span class="sxs-lookup"><span data-stu-id="595cd-104">Custom functions enable you to add new functions to Excel by defining those functions in JavaScript as part of an add-in.</span></span> <span data-ttu-id="595cd-105">Os usuários do Excel podem acessar funções personalizadas como fariam com qualquer função nativa no Excel, como `SUM()`.</span><span class="sxs-lookup"><span data-stu-id="595cd-105">Users within Excel can access custom functions as they would any native function in Excel, such as `SUM()`.</span></span> <span data-ttu-id="595cd-106">Você pode criar funções personalizadas que realizam tarefas simples como cálculos ou tarefas mais complexas, como streaming de dados da web em tempo real em uma planilha.</span><span class="sxs-lookup"><span data-stu-id="595cd-106">You can create custom functions that perform simple tasks like calculations or more complex tasks such as streaming real-time data from the web into a worksheet.</span></span>
+<span data-ttu-id="01bd2-104">Funções personalizadas permitem que você adicione novas funções do Excel definindo essas funções em JavaScript como parte de um suplemento.</span><span class="sxs-lookup"><span data-stu-id="01bd2-104">Custom functions enable you to add new functions to Excel by defining those functions in JavaScript as part of an add-in.</span></span> <span data-ttu-id="01bd2-105">Os usuários do Excel podem acessar funções personalizadas como fariam com qualquer função nativa no Excel, como `SUM()`.</span><span class="sxs-lookup"><span data-stu-id="01bd2-105">Users within Excel can access custom functions as they would any native function in Excel, such as `SUM()`.</span></span> <span data-ttu-id="01bd2-106">Você pode criar funções personalizadas que realizam tarefas simples como cálculos ou tarefas mais complexas, como streaming de dados da web em tempo real em uma planilha.</span><span class="sxs-lookup"><span data-stu-id="01bd2-106">You can create custom functions that perform simple tasks like calculations or more complex tasks such as streaming real-time data from the web into a worksheet.</span></span>
 
-<span data-ttu-id="595cd-107">Neste tutorial, você vai:</span><span class="sxs-lookup"><span data-stu-id="595cd-107">In this tutorial, you will:</span></span>
+<span data-ttu-id="01bd2-107">Neste tutorial, você vai:</span><span class="sxs-lookup"><span data-stu-id="01bd2-107">In this tutorial, you will:</span></span>
 > [!div class="checklist"]
-> * <span data-ttu-id="595cd-108">Crie um suplemento de função personalizada usando o [gerador Yeoman de suplementos do Office](https://www.npmjs.com/package/generator-office).</span><span class="sxs-lookup"><span data-stu-id="595cd-108">Create a custom function add-in using the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office).</span></span> 
-> * <span data-ttu-id="595cd-109">Usar uma função personalizada predefinida para realizar um cálculo simples.</span><span class="sxs-lookup"><span data-stu-id="595cd-109">Use a prebuilt custom function to perform a simple calculation.</span></span>
-> * <span data-ttu-id="595cd-110">Criar uma função personalizada que solicita dados da web.</span><span class="sxs-lookup"><span data-stu-id="595cd-110">Create a custom function that gets data from the web.</span></span>
-> * <span data-ttu-id="595cd-111">Criar uma função personalizada que transmite os dados da web em tempo real.</span><span class="sxs-lookup"><span data-stu-id="595cd-111">Create a custom function that streams real-time data from the web.</span></span>
+> * <span data-ttu-id="01bd2-108">Crie um suplemento de função personalizada usando o [gerador Yeoman de suplementos do Office](https://www.npmjs.com/package/generator-office).</span><span class="sxs-lookup"><span data-stu-id="01bd2-108">Create a custom function add-in using the [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office).</span></span> 
+> * <span data-ttu-id="01bd2-109">Usar uma função personalizada predefinida para realizar um cálculo simples.</span><span class="sxs-lookup"><span data-stu-id="01bd2-109">Use a prebuilt custom function to perform a simple calculation.</span></span>
+> * <span data-ttu-id="01bd2-110">Criar uma função personalizada que solicita dados da web.</span><span class="sxs-lookup"><span data-stu-id="01bd2-110">Create a custom function that gets data from the web.</span></span>
+> * <span data-ttu-id="01bd2-111">Criar uma função personalizada que transmite os dados da web em tempo real.</span><span class="sxs-lookup"><span data-stu-id="01bd2-111">Create a custom function that streams real-time data from the web.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="595cd-112">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="595cd-112">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="01bd2-112">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="01bd2-112">Prerequisites</span></span>
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* <span data-ttu-id="595cd-113">Excel no Windows (versão 1904 ou posterior, conectada à assinatura do Office 365) ou na Web</span><span class="sxs-lookup"><span data-stu-id="595cd-113">Excel on Windows (version 1904 or later, connected to Office 365 subscription) or on the web</span></span>
+* <span data-ttu-id="01bd2-113">Excel no Windows (versão 1904 ou posterior, conectada à assinatura do Office 365) ou na Web</span><span class="sxs-lookup"><span data-stu-id="01bd2-113">Excel on Windows (version 1904 or later, connected to Office 365 subscription) or on the web</span></span>
 
-## <a name="create-a-custom-functions-project"></a><span data-ttu-id="595cd-114">Criar um projeto com funções personalizadas</span><span class="sxs-lookup"><span data-stu-id="595cd-114">Create a custom functions project</span></span>
+## <a name="create-a-custom-functions-project"></a><span data-ttu-id="01bd2-114">Criar um projeto com funções personalizadas</span><span class="sxs-lookup"><span data-stu-id="01bd2-114">Create a custom functions project</span></span>
 
- <span data-ttu-id="595cd-115">Para começar, você criará o projeto de código para criar o suplemento função personalizada.</span><span class="sxs-lookup"><span data-stu-id="595cd-115">To start, you'll create the code project to build your custom function add-in.</span></span> <span data-ttu-id="595cd-116">O [gerador Yeoman para suplementos do Office](https://www.npmjs.com/package/generator-office) configurará seu projeto com algumas funções personalizadas predefinidas que você pode experimentar. Se você já tiver executado o início rápido de funções personalizadas e gerado um projeto, continue a usar esse projeto e pule para [esta etapa](#create-a-custom-function-that-requests-data-from-the-web) .</span><span class="sxs-lookup"><span data-stu-id="595cd-116">The [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) will set up your project with some prebuilt custom functions that you can try out. If you have already run the custom functions quick start and generated a project, continue to use that project and skip to [this step](#create-a-custom-function-that-requests-data-from-the-web) instead.</span></span>
+ <span data-ttu-id="01bd2-115">Para começar, você criará o projeto de código para criar o suplemento função personalizada.</span><span class="sxs-lookup"><span data-stu-id="01bd2-115">To start, you'll create the code project to build your custom function add-in.</span></span> <span data-ttu-id="01bd2-116">O [gerador Yeoman para suplementos do Office](https://www.npmjs.com/package/generator-office) configurará seu projeto com algumas funções personalizadas predefinidas que você pode experimentar. Se você já tiver executado o início rápido de funções personalizadas e gerado um projeto, continue a usar esse projeto e pule para [esta etapa](#create-a-custom-function-that-requests-data-from-the-web) .</span><span class="sxs-lookup"><span data-stu-id="01bd2-116">The [Yeoman generator for Office Add-ins](https://www.npmjs.com/package/generator-office) will set up your project with some prebuilt custom functions that you can try out. If you have already run the custom functions quick start and generated a project, continue to use that project and skip to [this step](#create-a-custom-function-that-requests-data-from-the-web) instead.</span></span>
 
-1. <span data-ttu-id="595cd-117">Execute o comando a seguir e responda aos prompts da seguinte forma.</span><span class="sxs-lookup"><span data-stu-id="595cd-117">Run the following command and then answer the prompts as follows.</span></span>
+1. <span data-ttu-id="01bd2-117">Execute o comando a seguir e responda aos prompts da seguinte forma.</span><span class="sxs-lookup"><span data-stu-id="01bd2-117">Run the following command and then answer the prompts as follows.</span></span>
     
     ```command&nbsp;line
     yo office
     ```
     
-    * <span data-ttu-id="595cd-118">**Escolha o tipo de projeto:** `Excel Custom Functions Add-in project`</span><span class="sxs-lookup"><span data-stu-id="595cd-118">**Choose a project type:** `Excel Custom Functions Add-in project`</span></span>
-    * <span data-ttu-id="595cd-119">**Escolha o tipo de script:** `JavaScript`</span><span class="sxs-lookup"><span data-stu-id="595cd-119">**Choose a script type:** `JavaScript`</span></span>
-    * <span data-ttu-id="595cd-120">**Qual será o nome do suplemento?**</span><span class="sxs-lookup"><span data-stu-id="595cd-120">**What do you want to name your add-in?**</span></span> `stock-ticker`
+    * <span data-ttu-id="01bd2-118">**Escolha o tipo de projeto:** `Excel Custom Functions Add-in project`</span><span class="sxs-lookup"><span data-stu-id="01bd2-118">**Choose a project type:** `Excel Custom Functions Add-in project`</span></span>
+    * <span data-ttu-id="01bd2-119">**Escolha o tipo de script:** `JavaScript`</span><span class="sxs-lookup"><span data-stu-id="01bd2-119">**Choose a script type:** `JavaScript`</span></span>
+    * <span data-ttu-id="01bd2-120">**Qual será o nome do suplemento?**</span><span class="sxs-lookup"><span data-stu-id="01bd2-120">**What do you want to name your add-in?**</span></span> `starcount`
 
-    ![O gerador Yeoman para suplementos do Office solicita funções personalizadas](../images/UpdatedYoOfficePrompt.png)
+    ![O gerador Yeoman para suplementos do Office solicita funções personalizadas](../images/starcountPrompt.png)
     
-    <span data-ttu-id="595cd-122">O gerador Yeoman criará os arquivos do projeto e instalará os componentes Node de suporte.</span><span class="sxs-lookup"><span data-stu-id="595cd-122">The Yeoman generator will create the project files and install supporting Node components.</span></span>
+    <span data-ttu-id="01bd2-122">O gerador Yeoman criará os arquivos do projeto e instalará os componentes Node de suporte.</span><span class="sxs-lookup"><span data-stu-id="01bd2-122">The Yeoman generator will create the project files and install supporting Node components.</span></span>
 
-2. <span data-ttu-id="595cd-123">Navegue até a pasta raiz do projeto.</span><span class="sxs-lookup"><span data-stu-id="595cd-123">Navigate to the root folder of the project.</span></span>
+2. <span data-ttu-id="01bd2-123">Navegue até a pasta raiz do projeto.</span><span class="sxs-lookup"><span data-stu-id="01bd2-123">Navigate to the root folder of the project.</span></span>
     
     ```command&nbsp;line
-    cd stock-ticker
+    cd starcount
     ```
 
-3. <span data-ttu-id="595cd-124">Compile o projeto.</span><span class="sxs-lookup"><span data-stu-id="595cd-124">Build the project.</span></span>
+3. <span data-ttu-id="01bd2-124">Compile o projeto.</span><span class="sxs-lookup"><span data-stu-id="01bd2-124">Build the project.</span></span>
     
     ```command&nbsp;line
     npm run build
     ```
 
     > [!NOTE]
-    > <span data-ttu-id="595cd-125">Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento.</span><span class="sxs-lookup"><span data-stu-id="595cd-125">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="595cd-126">Se você for solicitado a instalar um certificado após executar `npm run build`, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.</span><span class="sxs-lookup"><span data-stu-id="595cd-126">If you are prompted to install a certificate after you run `npm run build`, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
+    > <span data-ttu-id="01bd2-125">Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento.</span><span class="sxs-lookup"><span data-stu-id="01bd2-125">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="01bd2-126">Se você for solicitado a instalar um certificado após executar `npm run build`, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.</span><span class="sxs-lookup"><span data-stu-id="01bd2-126">If you are prompted to install a certificate after you run `npm run build`, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
 
-4. <span data-ttu-id="595cd-127">Inicie o servidor local da web, que é executado no Node.</span><span class="sxs-lookup"><span data-stu-id="595cd-127">Start the local web server, which runs in Node.js.</span></span> <span data-ttu-id="595cd-128">Você pode experimentar o suplemento função personalizada no Excel na Web ou no Windows.</span><span class="sxs-lookup"><span data-stu-id="595cd-128">You can try out the custom function add-in in Excel on the web or Windows.</span></span>
+4. <span data-ttu-id="01bd2-127">Inicie o servidor local da web, que é executado no Node.</span><span class="sxs-lookup"><span data-stu-id="01bd2-127">Start the local web server, which runs in Node.js.</span></span> <span data-ttu-id="01bd2-128">Você pode experimentar o suplemento função personalizada no Excel na Web ou no Windows.</span><span class="sxs-lookup"><span data-stu-id="01bd2-128">You can try out the custom function add-in in Excel on the web or Windows.</span></span>
 
-# <a name="excel-on-windowstabexcel-windows"></a>[<span data-ttu-id="595cd-129">Excel no Windows</span><span class="sxs-lookup"><span data-stu-id="595cd-129">Excel on Windows</span></span>](#tab/excel-windows)
+# <a name="excel-on-windowstabexcel-windows"></a>[<span data-ttu-id="01bd2-129">Excel no Windows</span><span class="sxs-lookup"><span data-stu-id="01bd2-129">Excel on Windows</span></span>](#tab/excel-windows)
 
-<span data-ttu-id="595cd-130">Para testar seu suplemento no Excel no Windows, execute o seguinte comando.</span><span class="sxs-lookup"><span data-stu-id="595cd-130">To test your add-in in Excel on Windows, run the following command.</span></span> <span data-ttu-id="595cd-131">Quando você executar este comando, o servidor Web local será iniciado e o Excel será aberto com o seu suplemento carregado.</span><span class="sxs-lookup"><span data-stu-id="595cd-131">When you run this command, the local web server will start and Excel will open with your add-in loaded.</span></span>
+<span data-ttu-id="01bd2-130">Para testar seu suplemento no Excel no Windows, execute o seguinte comando.</span><span class="sxs-lookup"><span data-stu-id="01bd2-130">To test your add-in in Excel on Windows, run the following command.</span></span> <span data-ttu-id="01bd2-131">Quando você executar este comando, o servidor Web local será iniciado e o Excel será aberto com o seu suplemento carregado.</span><span class="sxs-lookup"><span data-stu-id="01bd2-131">When you run this command, the local web server will start and Excel will open with your add-in loaded.</span></span>
 
 ```command&nbsp;line
 npm run start:desktop
 ```
 
-# <a name="excel-on-the-webtabexcel-online"></a>[<span data-ttu-id="595cd-132">Excel na Web</span><span class="sxs-lookup"><span data-stu-id="595cd-132">Excel on the web</span></span>](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[<span data-ttu-id="01bd2-132">Excel na Web</span><span class="sxs-lookup"><span data-stu-id="01bd2-132">Excel on the web</span></span>](#tab/excel-online)
 
-<span data-ttu-id="595cd-133">Para testar seu suplemento no Excel em um navegador, execute o seguinte comando.</span><span class="sxs-lookup"><span data-stu-id="595cd-133">To test your add-in in Excel on a browser, run the following command.</span></span> <span data-ttu-id="595cd-134">Quando você executa este comando, o servidor Web local iniciará.</span><span class="sxs-lookup"><span data-stu-id="595cd-134">When you run this command, the local web server will start.</span></span>
+<span data-ttu-id="01bd2-133">Para testar seu suplemento no Excel em um navegador, execute o seguinte comando.</span><span class="sxs-lookup"><span data-stu-id="01bd2-133">To test your add-in in Excel on a browser, run the following command.</span></span> <span data-ttu-id="01bd2-134">Quando você executa este comando, o servidor Web local iniciará.</span><span class="sxs-lookup"><span data-stu-id="01bd2-134">When you run this command, the local web server will start.</span></span>
 
 ```command&nbsp;line
 npm run start:web
 ```
 
-<span data-ttu-id="595cd-135">Para usar seu suplemento de funções personalizadas, abra uma nova pasta de trabalho no Excel na Web.</span><span class="sxs-lookup"><span data-stu-id="595cd-135">To use your custom functions add-in, open a new workbook in Excel on the web.</span></span> <span data-ttu-id="595cd-136">Nesta pasta de trabalho, conclua as seguintes etapas para Sideload seu suplemento.</span><span class="sxs-lookup"><span data-stu-id="595cd-136">In this workbook, complete the following steps to sideload your add-in.</span></span>
+<span data-ttu-id="01bd2-135">Para usar seu suplemento de funções personalizadas, abra uma nova pasta de trabalho no Excel na Web.</span><span class="sxs-lookup"><span data-stu-id="01bd2-135">To use your custom functions add-in, open a new workbook in Excel on the web.</span></span> <span data-ttu-id="01bd2-136">Nesta pasta de trabalho, conclua as seguintes etapas para Sideload seu suplemento.</span><span class="sxs-lookup"><span data-stu-id="01bd2-136">In this workbook, complete the following steps to sideload your add-in.</span></span>
 
-1. <span data-ttu-id="595cd-137">No Excel, escolha a guia **Inserir** e, em seguida, escolha **suplementos**.</span><span class="sxs-lookup"><span data-stu-id="595cd-137">In Excel, choose the **Insert** tab and then choose **Add-ins**.</span></span>
+1. <span data-ttu-id="01bd2-137">No Excel, escolha a guia **Inserir** e, em seguida, escolha **suplementos**.</span><span class="sxs-lookup"><span data-stu-id="01bd2-137">In Excel, choose the **Insert** tab and then choose **Add-ins**.</span></span>
 
    ![Inserir faixa de opções no Excel na Web com o ícone meus suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
    
-2. <span data-ttu-id="595cd-139">Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**.</span><span class="sxs-lookup"><span data-stu-id="595cd-139">Choose **Manage My Add-ins** and select **Upload My Add-in**.</span></span>
+2. <span data-ttu-id="01bd2-139">Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**.</span><span class="sxs-lookup"><span data-stu-id="01bd2-139">Choose **Manage My Add-ins** and select **Upload My Add-in**.</span></span>
 
-3. <span data-ttu-id="595cd-140">Escolha \*\*Procurar... \*\* e navegue até o diretório raiz do projeto criado pelo gerador Yeoman.</span><span class="sxs-lookup"><span data-stu-id="595cd-140">Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.</span></span>
+3. <span data-ttu-id="01bd2-140">Escolha \*\*Procurar... \*\* e navegue até o diretório raiz do projeto criado pelo gerador Yeoman.</span><span class="sxs-lookup"><span data-stu-id="01bd2-140">Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.</span></span>
 
-4. <span data-ttu-id="595cd-141">Selecione o arquivo **manifest. XML** e escolha **aberto**, escolha **Carregar**.</span><span class="sxs-lookup"><span data-stu-id="595cd-141">Select the file **manifest.xml** and choose **Open**, then choose **Upload**.</span></span>
+4. <span data-ttu-id="01bd2-141">Selecione o arquivo **manifest. XML** e escolha **aberto**, escolha **Carregar**.</span><span class="sxs-lookup"><span data-stu-id="01bd2-141">Select the file **manifest.xml** and choose **Open**, then choose **Upload**.</span></span>
 
 --- 
     
-## <a name="try-out-a-prebuilt-custom-function"></a><span data-ttu-id="595cd-142">Experimente uma função personalizada predefinida</span><span class="sxs-lookup"><span data-stu-id="595cd-142">Try out a prebuilt custom function</span></span>
+## <a name="try-out-a-prebuilt-custom-function"></a><span data-ttu-id="01bd2-142">Experimente uma função personalizada predefinida</span><span class="sxs-lookup"><span data-stu-id="01bd2-142">Try out a prebuilt custom function</span></span>
 
-<span data-ttu-id="595cd-143">O projeto de funções personalizadas que você criou contém algumas funções personalizadas predefinidas, definidas no arquivo **./src/Functions/functions.js** .</span><span class="sxs-lookup"><span data-stu-id="595cd-143">The custom functions project that you created contains some prebuilt custom functions, defined within the **./src/functions/functions.js** file.</span></span> <span data-ttu-id="595cd-144">O arquivo **./manifest.xml** especifica que todas as funções personalizadas pertencem a `CONTOSO` namespace.</span><span class="sxs-lookup"><span data-stu-id="595cd-144">The **./manifest.xml** file specifies that all custom functions belong to the `CONTOSO` namespace.</span></span> <span data-ttu-id="595cd-145">Você usará o namespace CONTOSO para acessar as funções personalizadas no Excel.</span><span class="sxs-lookup"><span data-stu-id="595cd-145">You'll use the CONTOSO namespace to access the custom functions in Excel.</span></span>
+<span data-ttu-id="01bd2-143">O projeto de funções personalizadas que você criou contém algumas funções personalizadas predefinidas, definidas no arquivo **./src/Functions/functions.js** .</span><span class="sxs-lookup"><span data-stu-id="01bd2-143">The custom functions project that you created contains some prebuilt custom functions, defined within the **./src/functions/functions.js** file.</span></span> <span data-ttu-id="01bd2-144">O arquivo **./manifest.xml** especifica que todas as funções personalizadas pertencem a `CONTOSO` namespace.</span><span class="sxs-lookup"><span data-stu-id="01bd2-144">The **./manifest.xml** file specifies that all custom functions belong to the `CONTOSO` namespace.</span></span> <span data-ttu-id="01bd2-145">Você usará o namespace CONTOSO para acessar as funções personalizadas no Excel.</span><span class="sxs-lookup"><span data-stu-id="01bd2-145">You'll use the CONTOSO namespace to access the custom functions in Excel.</span></span>
 
-<span data-ttu-id="595cd-146">Em seguida você vai experimentar a função personalizada `ADD` preenchendo as seguintes etapas:</span><span class="sxs-lookup"><span data-stu-id="595cd-146">Next you'll try out the `ADD` custom function by completing the following steps:</span></span>
+<span data-ttu-id="01bd2-146">Em seguida você vai experimentar a função personalizada `ADD` preenchendo as seguintes etapas:</span><span class="sxs-lookup"><span data-stu-id="01bd2-146">Next you'll try out the `ADD` custom function by completing the following steps:</span></span>
 
-1. <span data-ttu-id="595cd-147">No Excel, vá para qualquer célula e digite `=CONTOSO`.</span><span class="sxs-lookup"><span data-stu-id="595cd-147">In Excel, go to any cell and enter `=CONTOSO`.</span></span> <span data-ttu-id="595cd-148">Observe que o menu de preenchimento automático mostra a lista de todas as funções na `CONTOSO` namespace.</span><span class="sxs-lookup"><span data-stu-id="595cd-148">Notice that the autocomplete menu shows the list of all functions in the `CONTOSO` namespace.</span></span>
+1. <span data-ttu-id="01bd2-147">No Excel, vá para qualquer célula e digite `=CONTOSO`.</span><span class="sxs-lookup"><span data-stu-id="01bd2-147">In Excel, go to any cell and enter `=CONTOSO`.</span></span> <span data-ttu-id="01bd2-148">Observe que o menu de preenchimento automático mostra a lista de todas as funções na `CONTOSO` namespace.</span><span class="sxs-lookup"><span data-stu-id="01bd2-148">Notice that the autocomplete menu shows the list of all functions in the `CONTOSO` namespace.</span></span>
 
-2. <span data-ttu-id="595cd-149">Executar a `CONTOSO.ADD` função, com números `10` e `200` como parâmetros de entrada, especificando o valor `=CONTOSO.ADD(10,200)` na célula e pressionando enter.</span><span class="sxs-lookup"><span data-stu-id="595cd-149">Run the `CONTOSO.ADD` function, with numbers `10` and `200` as input parameters, by typing the value `=CONTOSO.ADD(10,200)` in the cell and pressing enter.</span></span>
+2. <span data-ttu-id="01bd2-149">Executar a `CONTOSO.ADD` função, com números `10` e `200` como parâmetros de entrada, especificando o valor `=CONTOSO.ADD(10,200)` na célula e pressionando enter.</span><span class="sxs-lookup"><span data-stu-id="01bd2-149">Run the `CONTOSO.ADD` function, with numbers `10` and `200` as input parameters, by typing the value `=CONTOSO.ADD(10,200)` in the cell and pressing enter.</span></span>
 
-<span data-ttu-id="595cd-150">As `ADD` função personalizada calcula a soma dos dois números que você forneceu e retorna o resultado da **210**.</span><span class="sxs-lookup"><span data-stu-id="595cd-150">The `ADD` custom function computes the sum of the two numbers that you provided and returns the result of **210**.</span></span>
+<span data-ttu-id="01bd2-150">As `ADD` função personalizada calcula a soma dos dois números que você forneceu e retorna o resultado da **210**.</span><span class="sxs-lookup"><span data-stu-id="01bd2-150">The `ADD` custom function computes the sum of the two numbers that you provided and returns the result of **210**.</span></span>
 
-## <a name="create-a-custom-function-that-requests-data-from-the-web"></a><span data-ttu-id="595cd-151">Criar uma função personalizada que solicita dados da web</span><span class="sxs-lookup"><span data-stu-id="595cd-151">Create a custom function that requests data from the web</span></span>
+## <a name="create-a-custom-function-that-requests-data-from-the-web"></a><span data-ttu-id="01bd2-151">Criar uma função personalizada que solicita dados da web</span><span class="sxs-lookup"><span data-stu-id="01bd2-151">Create a custom function that requests data from the web</span></span>
 
-<span data-ttu-id="595cd-152">Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio de funções personalizadas.</span><span class="sxs-lookup"><span data-stu-id="595cd-152">Integrating data from the Web is a great way to extend Excel through custom functions.</span></span> <span data-ttu-id="595cd-153">Em seguida, você criará uma função personalizada chamada `stockPrice` que recebe uma citação ações de uma Web API e retorna o resultado para a célula de uma planilha.</span><span class="sxs-lookup"><span data-stu-id="595cd-153">Next you’ll create a custom function named `stockPrice` that gets a stock quote from a Web API and returns the result to the cell of a worksheet.</span></span> 
+<span data-ttu-id="01bd2-152">Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio de funções personalizadas.</span><span class="sxs-lookup"><span data-stu-id="01bd2-152">Integrating data from the Web is a great way to extend Excel through custom functions.</span></span> <span data-ttu-id="01bd2-153">Em seguida, você criará uma função `getStarCount` personalizada chamada que mostra quantas estrelas um determinado repositório do GitHub possui.</span><span class="sxs-lookup"><span data-stu-id="01bd2-153">Next you’ll create a custom function named `getStarCount` that shows how many stars a given Github repository possesses.</span></span>
 
-> [!NOTE]
-> <span data-ttu-id="595cd-154">O código a seguir solicita uma cotação de ações usando a API de negociação do IEX.</span><span class="sxs-lookup"><span data-stu-id="595cd-154">The following code requests a stock quote using the IEX Trading API.</span></span> <span data-ttu-id="595cd-155">Antes de poder executar o código, você precisará [criar uma conta gratuita com a nuvem do IEX](https://iexcloud.io/) para que possa obter o token de API necessário na solicitação de API.</span><span class="sxs-lookup"><span data-stu-id="595cd-155">Before you can run the code, you'll need to [create a free account with IEX Cloud](https://iexcloud.io/) so that you can get the API token that's required in the API request.</span></span>  
+1. <span data-ttu-id="01bd2-154">No projeto **starcount** , localize o arquivo **./src/Functions/functions.js** e abra-o no editor de código.</span><span class="sxs-lookup"><span data-stu-id="01bd2-154">In the **starcount** project, find the file **./src/functions/functions.js** and open it in your code editor.</span></span> 
 
-1. <span data-ttu-id="595cd-156">No projeto de **Cotações de ações** , localize o arquivo **./src/Functions/functions.js** e abra-o no editor de código.</span><span class="sxs-lookup"><span data-stu-id="595cd-156">In the **stock-ticker** project, find the file **./src/functions/functions.js** and open it in your code editor.</span></span>
+2. <span data-ttu-id="01bd2-155">Em **Function. js**, adicione o seguinte código:</span><span class="sxs-lookup"><span data-stu-id="01bd2-155">In **function.js**, add the following code:</span></span> 
 
-2. <span data-ttu-id="595cd-157">Em **funções. js**, localize a `increment` função e adicione o código a seguir após essa função.</span><span class="sxs-lookup"><span data-stu-id="595cd-157">In **functions.js**, locate the `increment` function and add the following code after that function.</span></span>
+```JS
+ /**
+   * Gets the star count for a given Github repository.
+   * @customfunction 
+   * @param {string} userName string name of Github user or organization.
+   * @param {string} repoName string name of the Github repository.
+   * @return {number} number of stars given to a Github repository.
+   */
+    async function getStarCount(userName, repoName) {
+      try {
+        //You can change this URL to any web request you want to work with.
+        const url = "https://api.github.com/repos/" + userName + "/" + repoName;
+        const response = await fetch(url);
+        //Expect that status code is in 200-299 range
+        if (!response.ok) {
+          throw new Error(response.statusText)
+        }
+          const jsonResponse = await response.json();
+          return jsonResponse.watchers_count;
+      }
+      catch (error) {
+        return error;
+      }
+      }
+    CustomFunctions.associate("GETSTARCOUNT", getStarCount);
+```
 
-    ```js
-    /**
-    * Fetches current stock price
-    * @customfunction 
-    * @param {string} ticker Stock symbol
-    * @returns {number} The current stock price.
-    */
-    function stockPrice(ticker) {
-        //Note: In the following line, replace <YOUR_TOKEN_HERE> with the API token that you've obtained through your IEX Cloud account.
-        var url = "https://cloud.iexapis.com/stable/stock/" + ticker + "/quote/latestPrice?token=<YOUR_TOKEN_HERE>"
-        return fetch(url)
-            .then(function(response) {
-                return response.text();
-            })
-            .then(function(text) {
-                return parseFloat(text);
-            });
+<span data-ttu-id="01bd2-156">O `CustomFunctions.associate` código associa a `id` da função com o endereço de função da `getStarCount` em JavaScript para que o Excel possa ligar para a função.</span><span class="sxs-lookup"><span data-stu-id="01bd2-156">The `CustomFunctions.associate` code associates the `id` of the function with the function address of `getStarCount` in JavaScript so that Excel can call your function.</span></span>
 
-        // Note: in case of an error, the returned rejected Promise
-        //    will be bubbled up to Excel to indicate an error.
-    }
-    CustomFunctions.associate("STOCKPRICE", stockPrice);
-    ```
-
-    <span data-ttu-id="595cd-158">O `CustomFunctions.associate` código associa a `id` da função com o endereço de função da `stockPrice` em JavaScript para que o Excel possa ligar para a função.</span><span class="sxs-lookup"><span data-stu-id="595cd-158">The `CustomFunctions.associate` code associates the `id` of the function with the function address of `stockPrice` in JavaScript so that Excel can call your function.</span></span>
-
-3. <span data-ttu-id="595cd-159">Execute o seguinte comando para recriar o projeto.</span><span class="sxs-lookup"><span data-stu-id="595cd-159">Run the following command to rebuild the project.</span></span>
+3. <span data-ttu-id="01bd2-157">Execute o seguinte comando para recriar o projeto.</span><span class="sxs-lookup"><span data-stu-id="01bd2-157">Run the following command to rebuild the project.</span></span>
 
     ```command&nbsp;line
     npm run build
     ```
 
-4. <span data-ttu-id="595cd-160">Complete as etapas a seguir (para o Excel na Web ou Windows) para registrar novamente o suplemento no Excel.</span><span class="sxs-lookup"><span data-stu-id="595cd-160">Complete the following steps (for either Excel on the web or Windows) to re-register the add-in in Excel.</span></span> <span data-ttu-id="595cd-161">Você deve concluir estas etapas para que a nova função esteja disponível.</span><span class="sxs-lookup"><span data-stu-id="595cd-161">You must complete these steps before the new function will be available.</span></span>
+4. <span data-ttu-id="01bd2-158">Complete as etapas a seguir (para o Excel na Web ou Windows) para registrar novamente o suplemento no Excel.</span><span class="sxs-lookup"><span data-stu-id="01bd2-158">Complete the following steps (for either Excel on the web or Windows) to re-register the add-in in Excel.</span></span> <span data-ttu-id="01bd2-159">Você deve concluir estas etapas para que a nova função esteja disponível.</span><span class="sxs-lookup"><span data-stu-id="01bd2-159">You must complete these steps before the new function will be available.</span></span>
 
-# <a name="excel-on-windowstabexcel-windows"></a>[<span data-ttu-id="595cd-162">Excel no Windows</span><span class="sxs-lookup"><span data-stu-id="595cd-162">Excel on Windows</span></span>](#tab/excel-windows)
+### <a name="excel-on-windowstabexcel-windows"></a>[<span data-ttu-id="01bd2-160">Excel no Windows</span><span class="sxs-lookup"><span data-stu-id="01bd2-160">Excel on Windows</span></span>](#tab/excel-windows)
 
-1. <span data-ttu-id="595cd-163">Feche o Excel e abra novamente o Excel.</span><span class="sxs-lookup"><span data-stu-id="595cd-163">Close Excel and then reopen Excel.</span></span>
+1. <span data-ttu-id="01bd2-161">Feche o Excel e abra novamente o Excel.</span><span class="sxs-lookup"><span data-stu-id="01bd2-161">Close Excel and then reopen Excel.</span></span>
 
-2. <span data-ttu-id="595cd-164">No Excel, escolha a guia **Inserir** e, em seguida, escolha a seta para baixo localizada à direita de **meus**suplementos.  ![Inserir faixa de opções no Excel no Windows com a seta meus suplementos realçada](../images/select-insert.png)</span><span class="sxs-lookup"><span data-stu-id="595cd-164">In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.  ![Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted](../images/select-insert.png)</span></span>
+2. <span data-ttu-id="01bd2-162">No Excel, escolha a guia **Inserir** e, em seguida, escolha a seta para baixo localizada à direita de **meus**suplementos.  ![Inserir faixa de opções no Excel no Windows com a seta meus suplementos realçada](../images/select-insert.png)</span><span class="sxs-lookup"><span data-stu-id="01bd2-162">In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.  ![Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted](../images/select-insert.png)</span></span>
 
-3. <span data-ttu-id="595cd-165">Na lista de suplementos disponíveis, localize a seção**Suplementos do desenvolvedor** e selecione o suplemento **cotações** para registrá-lo.</span><span class="sxs-lookup"><span data-stu-id="595cd-165">In the list of available add-ins, find the **Developer Add-ins** section and select the **stock-ticker** add-in to register it.</span></span>
-    <span data-ttu-id="595cd-166">![Inserir faixa de opções no Excel no Windows com o suplemento funções personalizadas do Excel realçado na lista meus suplementos](../images/list-stock-ticker-red.png)</span><span class="sxs-lookup"><span data-stu-id="595cd-166">![Insert ribbon in Excel on Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-stock-ticker-red.png)</span></span>
+3. <span data-ttu-id="01bd2-163">Na lista de suplementos disponíveis, encontre a seção suplementos do **desenvolvedor** e selecione o suplemento do **starcount** para registrá-lo.</span><span class="sxs-lookup"><span data-stu-id="01bd2-163">In the list of available add-ins, find the **Developer Add-ins** section and select the **starcount** add-in to register it.</span></span>
+    <span data-ttu-id="01bd2-164">![Inserir faixa de opções no Excel no Windows com o suplemento funções personalizadas do Excel realçado na lista meus suplementos](../images/list-starcount.png)</span><span class="sxs-lookup"><span data-stu-id="01bd2-164">![Insert ribbon in Excel on Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-starcount.png)</span></span>
 
-# <a name="excel-on-the-webtabexcel-online"></a>[<span data-ttu-id="595cd-167">Excel na Web</span><span class="sxs-lookup"><span data-stu-id="595cd-167">Excel on the web</span></span>](#tab/excel-online)
 
-1. <span data-ttu-id="595cd-168">No Excel, escolha a guia **Inserir** e, em seguida, escolha **suplementos**.  ![Inserir faixa de opções no Excel na Web com o ícone meus suplementos realçado](../images/excel-cf-online-register-add-in-1.png)</span><span class="sxs-lookup"><span data-stu-id="595cd-168">In Excel, choose the **Insert** tab and then choose **Add-ins**.  ![Insert ribbon in Excel on the web with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)</span></span>
+# <a name="excel-on-the-webtabexcel-online"></a>[<span data-ttu-id="01bd2-165">Excel na Web</span><span class="sxs-lookup"><span data-stu-id="01bd2-165">Excel on the web</span></span>](#tab/excel-online)
 
-2. <span data-ttu-id="595cd-169">Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**.</span><span class="sxs-lookup"><span data-stu-id="595cd-169">Choose **Manage My Add-ins** and select **Upload My Add-in**.</span></span>
+1. <span data-ttu-id="01bd2-166">No Excel, escolha a guia **Inserir** e, em seguida, escolha **suplementos**.  ![Inserir faixa de opções no Excel na Web com o ícone meus suplementos realçado](../images/excel-cf-online-register-add-in-1.png)</span><span class="sxs-lookup"><span data-stu-id="01bd2-166">In Excel, choose the **Insert** tab and then choose **Add-ins**.  ![Insert ribbon in Excel on the web with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)</span></span>
 
-3. <span data-ttu-id="595cd-170">Escolha \*\*Procurar... \*\* e navegue até o diretório raiz do projeto criado pelo gerador Yeoman.</span><span class="sxs-lookup"><span data-stu-id="595cd-170">Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.</span></span>
+2. <span data-ttu-id="01bd2-167">Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**.</span><span class="sxs-lookup"><span data-stu-id="01bd2-167">Choose **Manage My Add-ins** and select **Upload My Add-in**.</span></span>
 
-4. <span data-ttu-id="595cd-171">Selecione o arquivo **manifest. XML** e escolha **abrir**, escolha **Carregar**.</span><span class="sxs-lookup"><span data-stu-id="595cd-171">Select the file **manifest.xml** and choose **Open**, then choose **Upload**.</span></span>
+3. <span data-ttu-id="01bd2-168">Escolha \*\*Procurar... \*\* e navegue até o diretório raiz do projeto criado pelo gerador Yeoman.</span><span class="sxs-lookup"><span data-stu-id="01bd2-168">Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.</span></span>
+
+4. <span data-ttu-id="01bd2-169">Selecione o arquivo **manifest. XML** e escolha **abrir**, escolha **Carregar**.</span><span class="sxs-lookup"><span data-stu-id="01bd2-169">Select the file **manifest.xml** and choose **Open**, then choose **Upload**.</span></span>
 
 ---
 
 <ol start="5">
-<li> <span data-ttu-id="595cd-172">Agora, vamos experimentar a nova função.</span><span class="sxs-lookup"><span data-stu-id="595cd-172">Try out the new function.</span></span> <span data-ttu-id="595cd-173">Na célula <strong>B1</strong>, digite o texto <strong>= da CONTOSO. STOCKPRICE("msft")</strong> e pressione enter.</span><span class="sxs-lookup"><span data-stu-id="595cd-173">In cell <strong>B1</strong>, type the text <strong>=CONTOSO.STOCKPRICE("MSFT")</strong> and press enter.</span></span> <span data-ttu-id="595cd-174">Você verá que o resultado na célula <strong>B1</strong> é o preço atual das ações para uma ação da Microsoft.</span><span class="sxs-lookup"><span data-stu-id="595cd-174">You should see that the result in cell <strong>B1</strong> is the current stock price for one share of Microsoft stock.</span></span></li>
+<li> <span data-ttu-id="01bd2-170">Agora, vamos experimentar a nova função.</span><span class="sxs-lookup"><span data-stu-id="01bd2-170">Try out the new function.</span></span> <span data-ttu-id="01bd2-171">Na célula <strong>B1</strong>, digite o texto <strong>= contoso. GETSTARCOUNT ("OfficeDev", "Excel-Custom-Functions")</strong> e pressione Enter.</span><span class="sxs-lookup"><span data-stu-id="01bd2-171">In cell <strong>B1</strong>, type the text <strong>=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")</strong> and press enter.</span></span> <span data-ttu-id="01bd2-172">Você verá que o resultado na célula <strong>B1</strong> é o número atual de estrelas fornecido para o [repositório GitHub do Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions).</span><span class="sxs-lookup"><span data-stu-id="01bd2-172">You should see that the result in cell <strong>B1</strong> is the current number of stars given to the [Excel-Custom-Functions Github repository](https://github.com/OfficeDev/Excel-Custom-Functions).</span></span></li>
 </ol>
 
-## <a name="create-a-streaming-asynchronous-custom-function"></a><span data-ttu-id="595cd-175">Criar uma função personalizada assíncrona de streaming</span><span class="sxs-lookup"><span data-stu-id="595cd-175">Create a streaming asynchronous custom function</span></span>
+## <a name="create-a-streaming-asynchronous-custom-function"></a><span data-ttu-id="01bd2-173">Criar uma função personalizada assíncrona de streaming</span><span class="sxs-lookup"><span data-stu-id="01bd2-173">Create a streaming asynchronous custom function</span></span>
 
-<span data-ttu-id="595cd-176">A `stockPrice` função que você acabou de criar retorna o preço de uma ação em um momento específico, mas os preços das ações estão sempre mudando.</span><span class="sxs-lookup"><span data-stu-id="595cd-176">The `stockPrice` function returns the price of a stock at a specific moment in time, but stock prices are always changing.</span></span> <span data-ttu-id="595cd-177">Em seguida, você criará uma função personalizada chamada `stockPriceStream` esse é o preço de uma ação a cada 1000 milissegundos.</span><span class="sxs-lookup"><span data-stu-id="595cd-177">Next you’ll create a custom function named `stockPriceStream` that gets the price of a stock every 1000 milliseconds.</span></span>
+<span data-ttu-id="01bd2-174">A `getStarCount` função retorna o número de estrelas que um repositório tem em um momento específico no tempo.</span><span class="sxs-lookup"><span data-stu-id="01bd2-174">The `getStarCount` function returns the number of stars a repository has at a specific moment in time.</span></span> <span data-ttu-id="01bd2-175">As funções personalizadas também podem retornar dados que estão sempre mudando.</span><span class="sxs-lookup"><span data-stu-id="01bd2-175">Custom functions can also return data that is continuously changing.</span></span> <span data-ttu-id="01bd2-176">Essas funções são chamadas de fluxo de funções.</span><span class="sxs-lookup"><span data-stu-id="01bd2-176">These functions are called streaming functions.</span></span> <span data-ttu-id="01bd2-177">Eles devem incluir um `invocation` parâmetro que se refira à célula de onde a função foi chamada.</span><span class="sxs-lookup"><span data-stu-id="01bd2-177">They must include an `invocation` parameter which refers to the cell where the function was called from.</span></span> <span data-ttu-id="01bd2-178">O `invocation` parâmetro é usado para atualizar o conteúdo da célula a qualquer momento.</span><span class="sxs-lookup"><span data-stu-id="01bd2-178">The `invocation` parameter is used to update the contents of the cell at any time.</span></span>  
 
-1. <span data-ttu-id="595cd-178">No projeto de **Cotações de ações** , adicione o seguinte código ao **/src/Functions/functions.js** e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="595cd-178">In the **stock-ticker** project, add the following code to **./src/functions/functions.js** and save the file.</span></span>
+<span data-ttu-id="01bd2-179">No exemplo de código a seguir, você verá que há duas funções `currentTime` e. `clock`</span><span class="sxs-lookup"><span data-stu-id="01bd2-179">In the following code sample, you'll notice that there are two functions, `currentTime` and `clock`.</span></span> <span data-ttu-id="01bd2-180">A `currentTime` função é uma função estática que não usa streaming.</span><span class="sxs-lookup"><span data-stu-id="01bd2-180">The `currentTime` function is a static function that does not use streaming.</span></span> <span data-ttu-id="01bd2-181">Ele retorna a data como uma cadeia de caracteres.</span><span class="sxs-lookup"><span data-stu-id="01bd2-181">It returns the date as a string.</span></span> <span data-ttu-id="01bd2-182">A `clock` função usa a `currentTime` função para fornecer a nova hora a cada segundo para uma célula no Excel.</span><span class="sxs-lookup"><span data-stu-id="01bd2-182">The `clock` function uses the `currentTime` function to provide the new time every second to a cell in Excel.</span></span> <span data-ttu-id="01bd2-183">Ele usa `invocation.setResult` para entregar o tempo para a célula Excel e `invocation.onCanceled` para manipular o que ocorre quando a função é cancelada.</span><span class="sxs-lookup"><span data-stu-id="01bd2-183">It uses `invocation.setResult` to deliver the time to the Excel cell and `invocation.onCanceled` to handle what occurs when the function is canceled.</span></span>
 
-    ```js
-    /**
-    * Streams real time stock price
-    * @customfunction 
-    * @param {string} ticker Stock symbol
-    * @param {CustomFunctions.StreamingInvocation<number>} invocation
-    */
-    function stockPriceStream(ticker, invocation) {
-        var updateFrequency = 1000 /* milliseconds*/;
-        var isPending = false;
+1. <span data-ttu-id="01bd2-184">No projeto **starcount** , adicione o código a seguir a **./src/Functions/functions.js** e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="01bd2-184">In the **starcount** project, add the following code to **./src/functions/functions.js** and save the file.</span></span>
 
-        var timer = setInterval(function() {
-            // If there is already a pending request, skip this iteration:
-            if (isPending) {
-                return;
-            }
+```JS
+/**
+ * Returns the current time
+ * @returns {string} String with the current time formatted for the current locale.
+ */
+function currentTime() {
+  return new Date().toLocaleTimeString();
+}
 
-            //Note: In the following line, replace <YOUR_TOKEN_HERE> with the API token that you've obtained through your IEX Cloud account.
-            var url = "https://cloud.iexapis.com/stable/stock/" + ticker + "/quote/latestPrice?token=<YOUR_TOKEN_HERE>"
-            isPending = true;
+CustomFunctions.associate("CURRENTTIME", currentTime); 
 
-            fetch(url)
-                .then(function(response) {
-                    return response.text();
-                })
-                .then(function(text) {
-                    invocation.setResult(parseFloat(text));
-                })
-                .catch(function(error) {
-                    invocation.setResult(error);
-                })
-                .then(function() {
-                    isPending = false;
-                });
-        }, updateFrequency);
+ /**
+ * Displays the current time once a second
+ * @customfunction
+ * @param {CustomFunctions.StreamingInvocation<string>} invocation Custom function invocation
+ */
+function clock(invocation) {
+  const timer = setInterval(() => {
+    const time = currentTime();
+    invocation.setResult(time);
+  }, 1000);
 
-        invocation.onCanceled = () => {
-            clearInterval(timer);
-        };
-    }
-    CustomFunctions.associate("STOCKPRICESTREAM", stockPriceStream);
-    ```
-    
-    <span data-ttu-id="595cd-179">O `CustomFunctions.associate` código associa a `id` da função com o endereço de função da `stockPriceStream` em JavaScript para que o Excel possa ligar para a função.</span><span class="sxs-lookup"><span data-stu-id="595cd-179">The `CustomFunctions.associate` code associates the `id` of the function with the function address of `stockPriceStream` in JavaScript so that Excel can call your function.</span></span>
-    
-2. <span data-ttu-id="595cd-180">Execute o seguinte comando para recriar o projeto.</span><span class="sxs-lookup"><span data-stu-id="595cd-180">Run the following command to rebuild the project.</span></span>
+  invocation.onCanceled = () => {
+    clearInterval(timer);
+  };
+}
+CustomFunctions.associate("CLOCK", clock);
+```
+
+<span data-ttu-id="01bd2-185">O `CustomFunctions.associate` código associa a `id` da função com o endereço de função da `CLOCK` em JavaScript para que o Excel possa ligar para a função.</span><span class="sxs-lookup"><span data-stu-id="01bd2-185">The `CustomFunctions.associate` code associates the `id` of the function with the function address of `CLOCK` in JavaScript so that Excel can call your function.</span></span>
+
+2. <span data-ttu-id="01bd2-186">Execute o seguinte comando para recriar o projeto.</span><span class="sxs-lookup"><span data-stu-id="01bd2-186">Run the following command to rebuild the project.</span></span>
 
     ```command&nbsp;line
     npm run build
     ```
 
-3. <span data-ttu-id="595cd-181">Complete as etapas a seguir (para o Excel na Web ou Windows) para registrar novamente o suplemento no Excel.</span><span class="sxs-lookup"><span data-stu-id="595cd-181">Complete the following steps (for either Excel on the web or Windows) to re-register the add-in in Excel.</span></span> <span data-ttu-id="595cd-182">Você deve concluir estas etapas para que a nova função esteja disponível.</span><span class="sxs-lookup"><span data-stu-id="595cd-182">You must complete these steps before the new function will be available.</span></span> 
+3. <span data-ttu-id="01bd2-187">Complete as etapas a seguir (para o Excel na Web ou Windows) para registrar novamente o suplemento no Excel.</span><span class="sxs-lookup"><span data-stu-id="01bd2-187">Complete the following steps (for either Excel on the web or Windows) to re-register the add-in in Excel.</span></span> <span data-ttu-id="01bd2-188">Você deve concluir estas etapas para que a nova função esteja disponível.</span><span class="sxs-lookup"><span data-stu-id="01bd2-188">You must complete these steps before the new function will be available.</span></span> 
 
-# <a name="excel-on-windowstabexcel-windows"></a>[<span data-ttu-id="595cd-183">Excel no Windows</span><span class="sxs-lookup"><span data-stu-id="595cd-183">Excel on Windows</span></span>](#tab/excel-windows)
+# <a name="excel-on-windowstabexcel-windows"></a>[<span data-ttu-id="01bd2-189">Excel no Windows</span><span class="sxs-lookup"><span data-stu-id="01bd2-189">Excel on Windows</span></span>](#tab/excel-windows)
 
-1. <span data-ttu-id="595cd-184">Feche o Excel e abra novamente o Excel.</span><span class="sxs-lookup"><span data-stu-id="595cd-184">Close Excel and then reopen Excel.</span></span>
+1. <span data-ttu-id="01bd2-190">Feche o Excel e abra novamente o Excel.</span><span class="sxs-lookup"><span data-stu-id="01bd2-190">Close Excel and then reopen Excel.</span></span>
 
-2. <span data-ttu-id="595cd-185">No Excel, escolha a guia **Inserir** e, em seguida, escolha a seta para baixo localizada à direita de **meus**suplementos.  ![Inserir faixa de opções no Excel no Windows com a seta meus suplementos realçada](../images/select-insert.png)</span><span class="sxs-lookup"><span data-stu-id="595cd-185">In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.  ![Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted](../images/select-insert.png)</span></span>
+2. <span data-ttu-id="01bd2-191">No Excel, escolha a guia **Inserir** e, em seguida, escolha a seta para baixo localizada à direita de **meus**suplementos.  ![Inserir faixa de opções no Excel no Windows com a seta meus suplementos realçada](../images/select-insert.png)</span><span class="sxs-lookup"><span data-stu-id="01bd2-191">In Excel, choose the **Insert** tab and then choose the down-arrow located to the right of **My Add-ins**.  ![Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted](../images/select-insert.png)</span></span>
 
-3. <span data-ttu-id="595cd-186">Na lista de suplementos disponíveis, localize a seção**Suplementos do desenvolvedor** e selecione o suplemento **cotações** para registrá-lo.</span><span class="sxs-lookup"><span data-stu-id="595cd-186">In the list of available add-ins, find the **Developer Add-ins** section and select the **stock-ticker** add-in to register it.</span></span>
-    <span data-ttu-id="595cd-187">![Inserir faixa de opções no Excel no Windows com o suplemento funções personalizadas do Excel realçado na lista meus suplementos](../images/list-stock-ticker-red.png)</span><span class="sxs-lookup"><span data-stu-id="595cd-187">![Insert ribbon in Excel on Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-stock-ticker-red.png)</span></span>
+3. <span data-ttu-id="01bd2-192">Na lista de suplementos disponíveis, encontre a seção suplementos do **desenvolvedor** e selecione o suplemento do **starcount** para registrá-lo.</span><span class="sxs-lookup"><span data-stu-id="01bd2-192">In the list of available add-ins, find the **Developer Add-ins** section and select the **starcount** add-in to register it.</span></span>
+    <span data-ttu-id="01bd2-193">![Inserir faixa de opções no Excel no Windows com o suplemento funções personalizadas do Excel realçado na lista meus suplementos](../images/list-starcount.png)</span><span class="sxs-lookup"><span data-stu-id="01bd2-193">![Insert ribbon in Excel on Windows with the Excel Custom Functions add-in highlighted in the My Add-ins list](../images/list-starcount.png)</span></span>
 
-# <a name="excel-on-the-webtabexcel-online"></a>[<span data-ttu-id="595cd-188">Excel na Web</span><span class="sxs-lookup"><span data-stu-id="595cd-188">Excel on the web</span></span>](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[<span data-ttu-id="01bd2-194">Excel na Web</span><span class="sxs-lookup"><span data-stu-id="01bd2-194">Excel on the web</span></span>](#tab/excel-online)
 
-1. <span data-ttu-id="595cd-189">No Excel, escolha a guia **Inserir** e, em seguida, escolha **suplementos**.  ![Inserir faixa de opções no Excel na Web com o ícone meus suplementos realçado](../images/excel-cf-online-register-add-in-1.png)</span><span class="sxs-lookup"><span data-stu-id="595cd-189">In Excel, choose the **Insert** tab and then choose **Add-ins**.  ![Insert ribbon in Excel on the web with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)</span></span>
+1. <span data-ttu-id="01bd2-195">No Excel, escolha a guia **Inserir** e, em seguida, escolha **suplementos**.  ![Inserir faixa de opções no Excel na Web com o ícone meus suplementos realçado](../images/excel-cf-online-register-add-in-1.png)</span><span class="sxs-lookup"><span data-stu-id="01bd2-195">In Excel, choose the **Insert** tab and then choose **Add-ins**.  ![Insert ribbon in Excel on the web with the My Add-ins icon highlighted](../images/excel-cf-online-register-add-in-1.png)</span></span>
 
-2. <span data-ttu-id="595cd-190">Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**.</span><span class="sxs-lookup"><span data-stu-id="595cd-190">Choose **Manage My Add-ins** and select **Upload My Add-in**.</span></span>
+2. <span data-ttu-id="01bd2-196">Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**.</span><span class="sxs-lookup"><span data-stu-id="01bd2-196">Choose **Manage My Add-ins** and select **Upload My Add-in**.</span></span>
 
-3. <span data-ttu-id="595cd-191">Escolha \*\*Procurar... \*\* e navegue até o diretório raiz do projeto criado pelo gerador Yeoman.</span><span class="sxs-lookup"><span data-stu-id="595cd-191">Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.</span></span>
+3. <span data-ttu-id="01bd2-197">Escolha \*\*Procurar... \*\* e navegue até o diretório raiz do projeto criado pelo gerador Yeoman.</span><span class="sxs-lookup"><span data-stu-id="01bd2-197">Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.</span></span>
 
-4. <span data-ttu-id="595cd-192">Selecione o arquivo **manifest. XML** e escolha **abrir**, escolha **Carregar**.</span><span class="sxs-lookup"><span data-stu-id="595cd-192">Select the file **manifest.xml** and choose **Open**, then choose **Upload**.</span></span>
+4. <span data-ttu-id="01bd2-198">Selecione o arquivo **manifest. XML** e escolha **abrir**, escolha **Carregar**.</span><span class="sxs-lookup"><span data-stu-id="01bd2-198">Select the file **manifest.xml** and choose **Open**, then choose **Upload**.</span></span>
 
 --- 
 
 <ol start="4">
-<li><span data-ttu-id="595cd-193">Agora, vamos experimentar a nova função.</span><span class="sxs-lookup"><span data-stu-id="595cd-193">Try out the new function.</span></span> <span data-ttu-id="595cd-194">Na célula <strong>C1</strong>, digite o texto <strong>= da CONTOSO. STOCKPRICESTREAM("msft")</strong> e pressione enter.</span><span class="sxs-lookup"><span data-stu-id="595cd-194">In cell <strong>C1</strong>, type the text <strong>=CONTOSO.STOCKPRICESTREAM("MSFT")</strong> and press enter.</span></span> <span data-ttu-id="595cd-195">Desde que o mercado de ações esteja aberto, você verá que o resultado na célula <strong>C1</strong> é constantemente atualizado para refletir o preço em tempo uma ação das ações da Microsoft.</span><span class="sxs-lookup"><span data-stu-id="595cd-195">Provided that the stock market is open, you should see that the result in cell <strong>C1</strong> is constantly updated to reflect the real-time price for one share of Microsoft stock.</span></span></li>
+<li><span data-ttu-id="01bd2-199">Agora, vamos experimentar a nova função.</span><span class="sxs-lookup"><span data-stu-id="01bd2-199">Try out the new function.</span></span> <span data-ttu-id="01bd2-200">Na célula <strong>C1</strong>, digite o texto <strong>= contoso. RELÓGIO ())</strong> e pressione Enter.</span><span class="sxs-lookup"><span data-stu-id="01bd2-200">In cell <strong>C1</strong>, type the text <strong>=CONTOSO.CLOCK())</strong> and press enter.</span></span> <span data-ttu-id="01bd2-201">Você deve ver a data atual, que transmite uma atualização a cada segundo.</span><span class="sxs-lookup"><span data-stu-id="01bd2-201">You should see the current date, which streams an update every second.</span></span> <span data-ttu-id="01bd2-202">Embora esse relógio seja apenas um cronômetro em um loop, você pode usar a mesma ideia de definir um timer em funções mais complexas que fazem solicitações da Web para dados em tempo real.</span><span class="sxs-lookup"><span data-stu-id="01bd2-202">While this clock is just a timer on a loop, you can use the same idea of setting a timer on more complex functions that make web requests for real-time data.</span></span></li>
 </ol>
 
-## <a name="next-steps"></a><span data-ttu-id="595cd-196">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="595cd-196">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="01bd2-203">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="01bd2-203">Next steps</span></span>
 
-<span data-ttu-id="595cd-197">Parabéns!</span><span class="sxs-lookup"><span data-stu-id="595cd-197">Congratulations!</span></span> <span data-ttu-id="595cd-198">Neste tutorial, você criou um novo projeto de funções personalizadas, experimentou uma função predefinida, criou uma função personalizada que solicita dados da Web e criou uma função personalizada que transmite dados em tempo real da Web.</span><span class="sxs-lookup"><span data-stu-id="595cd-198">You've created a new custom functions project, tried out a prebuilt function, created a custom function that requests data from the web, and created a custom function that streams real-time data from the web.</span></span> <span data-ttu-id="595cd-199">Você também pode experimentar a depuração dessa função usando [as instruções de depuração da função personalizada](../excel/custom-functions-debugging.md).</span><span class="sxs-lookup"><span data-stu-id="595cd-199">You can also try out debugging this function using [the custom function debugging instructions](../excel/custom-functions-debugging.md).</span></span> <span data-ttu-id="595cd-200">Para saber mais sobre funções personalizadas no Excel, prossiga para o seguinte artigo:</span><span class="sxs-lookup"><span data-stu-id="595cd-200">To learn more about custom functions in Excel, continue to the following article:</span></span>
+<span data-ttu-id="01bd2-204">Parabéns!</span><span class="sxs-lookup"><span data-stu-id="01bd2-204">Congratulations!</span></span> <span data-ttu-id="01bd2-205">Você criou um novo projeto de funções personalizadas, tentou uma função predefinida, criou uma função personalizada que solicita dados da Web e criou uma função personalizada que transmite dados.</span><span class="sxs-lookup"><span data-stu-id="01bd2-205">You've created a new custom functions project, tried out a prebuilt function, created a custom function that requests data from the web, and created a custom function that streams data.</span></span> <span data-ttu-id="01bd2-206">Você também pode experimentar a depuração dessa função usando [as instruções de depuração da função personalizada](../excel/custom-functions-debugging.md).</span><span class="sxs-lookup"><span data-stu-id="01bd2-206">You can also try out debugging this function using [the custom function debugging instructions](../excel/custom-functions-debugging.md).</span></span> <span data-ttu-id="01bd2-207">Para saber mais sobre funções personalizadas no Excel, prossiga para o seguinte artigo:</span><span class="sxs-lookup"><span data-stu-id="01bd2-207">To learn more about custom functions in Excel, continue to the following article:</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="595cd-201">Criar funções personalizadas no Excel</span><span class="sxs-lookup"><span data-stu-id="595cd-201">Create custom functions in Excel</span></span>](../excel/custom-functions-overview.md)
-
-### <a name="legal-information"></a><span data-ttu-id="595cd-202">Informações legais</span><span class="sxs-lookup"><span data-stu-id="595cd-202">Legal information</span></span>
-
-<span data-ttu-id="595cd-203">Dados gratuito fornecidos pela [IEX](https://iextrading.com/developer/).</span><span class="sxs-lookup"><span data-stu-id="595cd-203">Data provided free by [IEX](https://iextrading.com/developer/).</span></span> <span data-ttu-id="595cd-204">Modo de exibição [termos de uso IEX](https://iextrading.com/api-exhibit-a/).</span><span class="sxs-lookup"><span data-stu-id="595cd-204">View [IEX's Terms of Use](https://iextrading.com/api-exhibit-a/).</span></span> <span data-ttu-id="595cd-205">O uso da Microsoft dA API IEX neste tutorial é apenas para fins educacionais.</span><span class="sxs-lookup"><span data-stu-id="595cd-205">Microsoft's use of the IEX API in this tutorial is for educational purposes only.</span></span>
+> [<span data-ttu-id="01bd2-208">Criar funções personalizadas no Excel</span><span class="sxs-lookup"><span data-stu-id="01bd2-208">Create custom functions in Excel</span></span>](../excel/custom-functions-overview.md)
