@@ -1,35 +1,48 @@
 ---
-title: Depurar suplementos usando as ferramentas de desenvolvedor F12 no Windows 10
+title: Depurar suplementos usando as ferramentas de desenvolvedor no Windows 10
 description: ''
-ms.date: 03/19/2019
+ms.date: 07/01/2019
 localization_priority: Priority
-ms.openlocfilehash: 750411bea187a0ade9b3723e3198d82f7c482c9f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: a2090eca41f59f0e7fab1a172aff96cbbca28ed7
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450135"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454878"
 ---
-# <a name="debug-add-ins-using-f12-developer-tools-on-windows-10"></a>Depurar suplementos usando as ferramentas de desenvolvedor F12 no Windows 10
+# <a name="debug-add-ins-using-developer-tools-on-windows-10"></a>Depurar suplementos usando as ferramentas de desenvolvedor no Windows 10
 
-As ferramentas de desenvolvedor F12 incluídas no Windows 10 o ajudam a depurar, testar e acelerar suas páginas da Web. Você também pode usá-las para desenvolver e a depurar seu suplemento do Office se não estiver usando um IDE como o Visual Studio ou se precisar investigar um problema durante a execução do suplemento fora do IDE. Este artigo mostra como é possível usar a ferramenta Depurador das ferramentas de desenvolvedor F12 no Windows 10 para testar seu suplemento do Office.
+Há ferramentas de desenvolvedor fora dos IDEs disponíveis para ajudá-lo a depurar seus suplementos no Windows 10. Elas são úteis quando você precisa investigar um problema enquanto executa seu suplemento fora do IDE.
+
+A ferramenta que você usa depende se o suplemento está sendo executado no Microsoft Edge ou no Internet Explorer. Isso é determinado pela versão do Windows 10 e a versão do Office que estão instaladas no computador. Para determinar qual navegador está sendo usado em seu computador de desenvolvimento, confira [Navegadores usados pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md). 
+
 
 > [!NOTE]
 > As instruções neste artigo não podem ser utilizadas para depurar um suplemento do Outlook que usa Funções Executar. Para depurar um suplemento do Outlook que usa Funções Executar, é recomendável que você anexe ao Visual Studio no modo de script ou outro depurador de scripts.
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="when-the-add-in-is-running-in-edge"></a>Quando o suplemento estiver sendo executado no Edge
 
-Você precisa dos seguintes softwares:
+Quando o suplemento estiver sendo executado, você pode usar o [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab). 
 
-- As ferramentas do desenvolvedor F12, que estão incluídas no Windows 10. 
-    
-- O aplicativo cliente do Office que hospeda seu suplemento. 
-    
-- Seu suplemento. 
+1. Execute o suplemento. 
 
-## <a name="using-the-debugger"></a>Utilização do depurador
+2. Execute o Microsoft Edge DevTools.
 
-Este artigo mostra como é possível usar a ferramenta Depurador das ferramentas de desenvolvedor F12 no Windows 10 para testar seu suplemento do Office. É possível testar os suplementos do AppSource ou os suplementos que você adicionou de outros locais. As ferramentas F12 são exibidas em uma janela separada e não usam o Visual Studio. Você pode iniciar as ferramentas de desenvolvedor F12 depois que o suplemento estiver em execução. As ferramentas F12 são exibidas em uma janela separada e não usam o Visual Studio.
+3. Nas ferramentas, abra a guia **Local**. Seu suplemento será listado por nome.
+
+4. Clique no nome do suplemento para abri-lo nas ferramentas.
+
+5. Abra a guia **Depurador**. 
+
+6. Escolha o ícone de pasta acima do painel **script** (à esquerda). Na lista de arquivos disponíveis exibidos na lista suspensa, selecione o arquivo JavaScript que você deseja depurar.
+
+7. Para definir um ponto de interrupção, selecione a linha. Você verá um ponto vermelho à esquerda da linha e uma linha correspondente no painel **Pilha de Chamadas** (canto inferior direito).
+
+8. Execute funções no suplemento conforme necessário para disparar o ponto de interrupção.
+
+## <a name="when-the-add-in-is-running-in-internet-explorer"></a>Quando o suplemento estiver sendo executado no Internet Explorer
+
+Quando o suplemento estiver sendo executado no Internet Explorer, você poderá usar o depurador das ferramentas de desenvolvedor F12 no Windows 10 para testar seu suplemento. Você pode iniciar as ferramentas de desenvolvedor F12 depois que o suplemento estiver em execução. As ferramentas F12 são exibidas em uma janela separada e não usam o Visual Studio.
 
 > [!NOTE]
 > O Depurador faz parte das ferramentas de desenvolvedor F12 no Windows 10 e no Internet Explorer. As versões anteriores do Windows não incluem o Depurador. 
