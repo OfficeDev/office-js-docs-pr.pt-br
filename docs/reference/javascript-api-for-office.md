@@ -1,14 +1,14 @@
 ---
 title: API JavaScript para Office
 description: ''
-ms.date: 03/19/2019
+ms.date: 05/13/2019
 localization_priority: Priority
-ms.openlocfilehash: c8b33bbf9d0107786c0272410c59b1a3fe998cba
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 8d834aee4c21448210d9619fedd42d5ebb79e09d
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450713"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575321"
 ---
 # <a name="javascript-api-for-office"></a>API JavaScript para Office
 
@@ -18,25 +18,27 @@ A API JavaScript para Office permite que você crie aplicativos Web que interaja
 
   O **Outlook** também usa a sintaxe da API Comum. Todo o conteúdo sob o alias Office contém objetos que você pode usar para gravar scripts que interagem com o conteúdo em documentos, planilhas, apresentações, itens de email e projetos do Office a partir de seus suplementos do Office. Você deve usar essas APIs Comuns se o seu suplemento servir para o Office 2013 e versões posteriores. Este modelo de objeto usa retornos de chamada.
 
-- **APIs específicas de host**: APIs introduzidas com o **Office 2016**. Este modelo de objeto fornece objetos fortemente tipados e específicos do host que correspondem aos objetos familiares exibidos quando você usa os clientes do Office, e representa o futuro das APIs JavaScript para Office. No momento, as APIs específicas do host incluem a API JavaScript do Word e a API JavaScript do Excel.
+- **APIs específicas de host**: APIs introduzidas com o **Office 2016**. Este modelo de objeto fornece objetos fortemente tipados e específicos do host que correspondem aos objetos familiares exibidos quando você usa os clientes do Office, e representa o futuro das APIs JavaScript para Office. As APIs JavaScript específicas do host estão atualmente disponíveis para Excel, OneNote, PowerPoint e Word.
 
 ## <a name="supported-host-applications"></a>Aplicativos host compatíveis
 
 - [Excel](overview/excel-add-ins-reference-overview.md)
 - [OneNote](overview/onenote-add-ins-javascript-reference.md)
 - [Outlook](requirement-sets/outlook-api-requirement-sets.md)
+- [PowerPoint](overview/powerpoint-add-ins-reference-overview.md)
+- [Project](overview/project-add-ins-reference-overview.md)
 - [Visio](overview/visio-javascript-reference-overview.md)
 - [Word](overview/word-add-ins-reference-overview.md)
 - [API Comum](requirement-sets/office-add-in-requirement-sets.md)
 
 > [!NOTE] 
-> O [PowerPoint e o Project](requirement-sets/powerpoint-and-project-note.md) são compatíveis com suplementos feitos com a API JavaScript. No entanto, eles atualmente não possuem APIs específicas do host. Você pode interagir com esses hosts por meio da API Comum.
+> O [Project](overview/project-add-ins-reference-overview.md) oferece suporte a suplementos feitos com a API JavaScript, mas não há nenhuma API JavaScript projetada especificamente para interagir com o Project. Você pode usar a API comum para criar suplementos do Project.
 
 Saiba mais sobre [hosts suportados e outros requisitos](../concepts/requirements-for-running-office-add-ins.md).
 
 ## <a name="open-api-specifications"></a>Especificações abertas da API
 
-À medida que criamos e desenvolvemos novas APIs para suplementos do Office, nós as disponibilizamos em nossa página [Especificações abertas da API](openspec.md) a fim de obter os seus comentários. Descubra quais novos recursos estão no pipeline e forneça comentários sobre nossas especificações de design.
+À medida que criamos e desenvolvemos novas APIs para suplementos do Office, nós as disponibilizamos em nossa página [Especificações abertas da API](openspec/openspec.md) a fim de obter os seus comentários. Descubra quais novos recursos estão no pipeline e forneça comentários sobre nossas especificações de design.
 
 ## <a name="see-also"></a>Confira também
 

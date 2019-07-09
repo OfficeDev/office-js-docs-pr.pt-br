@@ -1,14 +1,14 @@
 ---
 title: Suplementos do painel de tarefas para Project
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: c04b2d3d2da3f258751585e0d30a9c726af373e6
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 45f04b2404755d67f1c18c2ae9edcddd02ded7c5
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128598"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575377"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Suplementos do painel de tarefas para Project
 
@@ -188,6 +188,7 @@ No procedimento 2, o suplemento Pesquisa do Bing é instalado no computador loca
 
 ## <a name="see-also"></a>Confira também
 
+- [Documentação de suplementos do Project](index.md)
 - [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
 - [Manifesto XML dos Suplementos do Office](../develop/add-in-manifests.md)
 - [JavaScript API para Office](/office/dev/add-ins/reference/javascript-api-for-office)

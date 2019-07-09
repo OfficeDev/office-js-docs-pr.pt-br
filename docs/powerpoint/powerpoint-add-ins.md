@@ -1,14 +1,14 @@
 ---
 title: Suplementos do PowerPoint
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 78430c06757433ee2cce5155565ae57cc078d6eb
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 29b8a54584446cce77c22684d4d105f9391cfc5e
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128591"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575356"
 ---
 # <a name="powerpoint-add-ins"></a>Suplementos do PowerPoint
 
@@ -191,6 +191,7 @@ reader.readAsDataURL(myFile.files[0]);
 
 ## <a name="see-also"></a>Confira também
 
+- [Documentação de suplementos do PowerPoint](index.md)
 - [Exemplos de Código do PowerPoint](https://developer.microsoft.com/office/gallery/?filterBy=Samples,PowerPoint)
 - [Como salvar o estado e as configurações do suplemento por documento para suplementos de conteúdo e de painel de tarefas](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 - [Ler e gravar dados na seleção ativa em um documento ou planilha](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
