@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos da Dialog API
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 3135c65120248194603b91510450519f106e0ad1
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: a524edf6734618a56e050d2c25eedbd23ca13973
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127118"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617014"
 ---
 # <a name="dialog-api-requirement-sets"></a>Conjuntos de requisitos da Dialog API
 
@@ -17,9 +17,11 @@ Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplemento
 
 Os suplementos do Office executam várias versões do Office. A tabela a seguir lista os conjuntos de requisitos da Dialog API, ou seja, os aplicativos de host do Office que oferecem suporte a esse conjunto de requisitos, e os números de versão ou de build dos aplicativos do Office.
 
-|  Conjunto de requisitos  | Office 2013 no Windows<br>(compra avulsa) | Office 2016 ou posterior no Windows<br>(compra avulsa)   | Office no Windows<br>(conectado à assinatura do Office 365) |  Office no iPad<br>(conectado à assinatura do Office 365)  |  Office no Mac<br>(conectado à assinatura do Office 365)  | Office na Web  |  Servidor do Office Online  |
+|  Conjunto de requisitos  | Office 2013 no Windows\*<br>(compra avulsa) | Office 2016 ou posterior no Windows\*<br>(compra avulsa)   | Office no Windows<br>(conectado à assinatura do Office 365) |  Office no iPad<br>(conectado à assinatura do Office 365)  |  Office no Mac<br>(conectado à assinatura do Office 365)  | Office na Web  |  Servidor do Office Online  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | DialogApi 1.1  | Build 15.0.4855.1000 ou posterior | Build 16.0.4390.1000 ou posterior | Versão 1602 (build 6741.0000) ou posterior | 1.22 ou posterior | 15.20 ou posterior| Janeiro de 2017 | Versão 1608 (build 7601.6800) ou posterior|
+
+>\*Os usuários do Office de compra única podem não ter aceitado todos os patches e atualizações. Em caso afirmativo, a DLL que o Office usa para relatar sua versão na interface do usuário pode ser maior do que as versões listadas aqui, mesmo se as DLLs atualizadas necessárias para dar suporte ao DialogApi não estiverem instaladas no computador do usuário. Para garantir que o patch necessário está instalado, o usuário deve ir para a lista atualização do Office ([lista](/officeupdates/msp-files-office-2013) do Office 2013 ou [lista do Office 2016](/officeupdates/msp-files-office-2016)), procurar **osfclient-x-None**e instalar o patch listado. 
 
 Para saber mais sobre versões, números de build e sobre o Servidor do Office Online, confira:
 

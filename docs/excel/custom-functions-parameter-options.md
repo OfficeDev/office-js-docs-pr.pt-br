@@ -1,31 +1,30 @@
 ---
-ms.date: 06/18/2019
+ms.date: 07/01/2019
 description: Saiba como usar parâmetros diferentes em suas funções personalizadas, como intervalos do Excel, parâmetros opcionais, contexto de invocação e muito mais.
 title: Opções para funções personalizadas do Excel
 localization_priority: Normal
-ms.openlocfilehash: dca85df87f0153c03b2ddd027748e16d3ec79924
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 9416653d697bdf36ca698271e00d9742ff0e75a9
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128336"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617041"
 ---
 # <a name="custom-functions-parameter-options"></a>Opções de parâmetros de funções personalizadas
 
-As funções personalizadas são configuráveis com muitas opções diferentes para parâmetros:
-- [Parâmetros opcionais](#custom-functions-optional-parameters)
-- [Parâmetros de intervalo](#range-parameters)
-- [Parâmetro de contexto de invocação](#invocation-parameter)
+Funções personalizadas são configuráveis com muitas opções diferentes para parâmetros.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-## <a name="custom-functions-optional-parameters"></a>Parâmetros opcionais de funções personalizadas
+## <a name="optional-parameters"></a>Parâmetros opcionais
 
 Enquanto parâmetros regulares são necessários, os parâmetros opcionais não. Quando um usuário invoca uma função no Excel, os parâmetros opcionais são exibidos entre colchetes. No exemplo a seguir, a função Add pode opcionalmente adicionar um terceiro número. Essa função aparece como `=CONTOSO.ADD(first, second, [third])` no Excel.
 
+#### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
 ```js
 /**
- * Add two numbers
+ * Calculates the sum of the specified numbers
  * @customfunction 
  * @param {number} first First number.
  * @param {number} second Second number.
@@ -33,31 +32,58 @@ Enquanto parâmetros regulares são necessários, os parâmetros opcionais não.
  * @returns {number} The sum of the numbers.
  */
 function add(first, second, third) {
-  if (third !== undefined) {
-    return first + second + third;
+  if (third === null) {
+    third = 0;
   }
-  return first + second;
+  return first + second + third;
 }
 CustomFunctions.associate("ADD", add);
 ```
 
-Ao definir uma função que contenha um ou mais parâmetros opcionais, especifique o que acontecerá quando os parâmetros opcionais forem indefinidos. No exemplo a seguir, `zipCode` e `dayOfWeek` são dois parâmetros opcionais da função `getWeatherReport`. Se o `zipCode` parâmetro estiver indefinido, o valor padrão será definido como `98052`. Se o parâmetro `dayOfWeek` estiver indefinido, ele será definido como Quarta-feira.
+#### <a name="typescripttabtypescript"></a>[TypeScript](#tab/typescript)
+
+```typescript
+/**
+ * Calculates the sum of the specified numbers
+ * @customfunction 
+ * @param first First number.
+ * @param second Second number.
+ * @param [third] Third number to add. If omitted, third = 0.
+ * @returns The sum of the numbers.
+ */
+function add(first: number, second: number, third?: number): number {
+  if (third === null) {
+    third = 0;
+  }
+  return first + second + third;
+}
+CustomFunctions.associate("ADD", add);
+```
+
+---
+
+> [!NOTE]
+> Quando nenhum valor é especificado para um parâmetro opcional, o Excel atribui a ele o valor `null`. Isso significa que os parâmetros inicializados por padrão no TypeScript não funcionarão conforme o esperado. Portanto, não use a sintaxe `function add(first:number, second:number, third=0):number` porque ela não será inicializada `third` como 0. Em vez disso, use a sintaxe do TypeScript, conforme mostrado no exemplo anterior.
+
+Ao definir uma função que contenha um ou mais parâmetros opcionais, você deve especificar o que acontece quando os parâmetros opcionais são nulos. No exemplo a seguir, `zipCode` e `dayOfWeek` são dois parâmetros opcionais da função `getWeatherReport`. Se o `zipCode` parâmetro for NULL, o valor padrão será definido como `98052`. Se o `dayOfWeek` parâmetro for NULL, ele será definido como quarta-feira.
+
+#### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```js
 /**
  * Gets a weather report for a specified zipCode and dayOfWeek
  * @customfunction
- * @param {number} zipCode Zip code. If omitted, zipCode = 98052.
- * @param {string} dayOfWeek Day of the week. If omitted, dayOfWeek = Wednesday.
+ * @param {number} [zipCode] Zip code. If omitted, zipCode = 98052.
+ * @param {string} [dayOfWeek] Day of the week. If omitted, dayOfWeek = Wednesday.
  * @returns {string} Weather report for the day of the week in that zip code.
  */
 function getWeatherReport(zipCode, dayOfWeek)
 {
-  if (zipCode === undefined) {
-      zipCode = "98052";
+  if (zipCode === null) {
+    zipCode = 98052;
   }
 
-  if (dayOfWeek === undefined) {
+  if (dayOfWeek === null) {
     dayOfWeek = "Wednesday";
   }
 
@@ -65,6 +91,33 @@ function getWeatherReport(zipCode, dayOfWeek)
   // ...
 }
 ```
+
+#### <a name="typescripttabtypescript"></a>[TypeScript](#tab/typescript)
+
+```typescript
+/**
+ * Gets a weather report for a specified zipCode and dayOfWeek
+ * @customfunction
+ * @param zipCode Zip code. If omitted, zipCode = 98052.
+ * @param [dayOfWeek] Day of the week. If omitted, dayOfWeek = Wednesday.
+ * @returns Weather report for the day of the week in that zip code.
+ */
+function getWeatherReport(zipCode?: number, dayOfWeek?: string): string
+{
+  if (zipCode === null) {
+    zipCode = 98052;
+  }
+
+  if (dayOfWeek === null) {
+    dayOfWeek = "Wednesday";
+  }
+
+  // Get weather report for specified zipCode and dayOfWeek.
+  // ...
+}
+```
+
+---
 
 ## <a name="range-parameters"></a>Parâmetros de intervalo
 
