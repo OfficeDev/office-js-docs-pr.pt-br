@@ -1,21 +1,21 @@
 ---
 title: Converter um projeto de Suplemento do Office no Visual Studio para TypeScript
 description: ''
-ms.date: 03/19/2019
+ms.date: 07/10/2019
 localization_priority: Priority
-ms.openlocfilehash: 9b3916dc61fadb3b6d9bf61e43cb22bdc7ff68c8
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 3163052dde98122dceb0d8a1d550e3d8acf788db
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448767"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617006"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Converter um projeto de Suplemento do Office no Visual Studio para TypeScript
 
 Você pode usar o modelo de Suplemento do Office no Visual Studio para criar um suplemento que usa JavaScript e depois converter esse projeto de suplemento para o TypeScript. Este artigo descreve o processo de conversão de um suplemento do Excel. Você pode usar o mesmo processo para converter outros tipos de projetos de suplementos do Office de JavaScript para TypeScript no Visual Studio.
 
 > [!NOTE]
-> Para criar um projeto de suplementos TypeScript do Office sem usar o Visual Studio, siga as instruções na seção "Qualquer editor" de um [início rápido em 5 minutos](../index.yml) e escolha `TypeScript` quando for solicitado pelo [Gerador de suplementos do Office do Yeoman](https://github.com/officedev/generator-office).
+> Para criar um projeto de suplementos TypeScript do Office sem usar o Visual Studio, siga as instruções na seção "Qualquer editor" de um [início rápido em 5 minutos](../index.md) e escolha `TypeScript` quando for solicitado pelo [Gerador de suplementos do Office do Yeoman](https://github.com/OfficeDev/generator-office).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -72,7 +72,8 @@ Você pode usar o modelo de Suplemento do Office no Visual Studio para criar um 
     {
         "compilerOptions": {
             "skipLibCheck": true,
-            "lib": [ "es5", "dom", "es2015.promise" ]
+            "lib": [ "es5", "dom", "es2015.promise" ],
+            "sourceMap": true
         }
     }
     ```
@@ -83,13 +84,22 @@ Você pode usar o modelo de Suplemento do Office no Visual Studio para criar um 
     declare var fabric: any;
     ```
 
-12. No arquivo **Home.ts**, altere **'1.1'** para **1.1** (ou seja, remova as aspas) na seguinte linha:
+12. No arquivo **Home.ts** localize a linha `Office.initialize = function (reason) {` e adicione uma linha imediatamente após ela para metaabastecimento global `window.Promise`, conforme mostrado aqui:
+
+    ```typescript
+    Office.initialize = function (reason) {
+        // add the following line
+        (window as any).Promise = OfficeExtension.Promise;
+        ...
+    ```
+
+13. No arquivo **Home.ts**, altere **'1.1'** para **1.1** (ou seja, remova as aspas) na seguinte linha:
 
     ```typescript
     if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
     ```
 
-13. No arquivo **Home.ts**, localize a função `displaySelectedCells`, substitua toda a função pelo código a seguir e salve o arquivo:
+14. No arquivo **Home.ts**, localize a função `displaySelectedCells`, substitua toda a função pelo código a seguir e salve o arquivo:
 
     ```typescript
     function displaySelectedCells() {
@@ -130,6 +140,8 @@ declare var fabric: any;
 
     // The initialize function must be run each time a new page is loaded.
     Office.initialize = function (reason) {
+        (window as any).Promise = OfficeExtension.Promise;
+
         $(document).ready(function () {
             // Initialize the FabricUI notification mechanism and hide it
             var element = document.querySelector('.ms-MessageBanner');

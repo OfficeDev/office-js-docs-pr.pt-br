@@ -3,12 +3,12 @@ title: Publicar suplementos de painel de tarefas e de conteúdo em um catálogo 
 description: Para tornar os suplementos do Office acessíveis aos usuários em sua organização, os administradores podem carregar arquivos de manifesto dos suplementos do Office no catálogo de aplicativos da organização.
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: af1f96615c74065d9a194f4372e69853caa2c6e3
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: 106dfd2b1610be92f1b53dc1644ff3f8c60c0543
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575300"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617027"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>Publicar suplementos de painel de tarefas e de conteúdo em um catálogo de aplicativos do SharePoint
 
@@ -112,4 +112,4 @@ Para aplicativos do Office na área de trabalho, você pode encontrar suplemento
 4. Na caixa de diálogo Suplementos do Office, escolha a guia **MINHA ORGANIZAÇÃO**. Os Suplementos do Office estão listados.
 5. Escolha um suplemento do Office e, em seguida, escolha **Adicionar**.
 
-Como alternativa, um administrador pode especificar um catálogo de aplicativos no SharePoint usando a política de grupo. Para saber mais, veja a seção [Usar uma Política de Grupo para gerenciar como os usuários podem instalar e usar os Suplementos do Office](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
+Como alternativa, um administrador pode especificar um catálogo de aplicativos no SharePoint usando a política de grupo. As configurações de política relevantes estão disponíveis nos [arquivos de modelo administrativo (ADMX/ADML) para Office 365 ProPlus, Office 2019 e Office 2016](https://www.microsoft.com/download/details.aspx?id=49030) e ser encontradas **em configuração do usuário\Políticas\Modelos Administrativos\Microsoft Office 2016\Configurações de Segurança\Trust Center\Catalagos Trusted**.

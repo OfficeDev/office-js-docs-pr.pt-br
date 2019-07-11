@@ -3,12 +3,12 @@ title: Conceitos fundamentais de programação com a API JavaScript do Excel
 description: Use a API JavaScript do Excel para criar suplementos para o Excel.
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 08d4c22190e1493331397e390dc72b4dae6cf979
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: dad6aadf64b87ec799a17fb8efd0198be5af08b5
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128210"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617034"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Conceitos fundamentais de programação com a API JavaScript do Excel
 
@@ -248,8 +248,8 @@ Quando ocorrer um erro de API, a API retornará um objeto **error** que contém 
 
 ## <a name="see-also"></a>Confira também
 
-- [Introdução aos suplementos do Excel](excel-add-ins-get-started-overview.md)
-- [Exemplos de código de suplementos do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
+- [Crie seu primeiro suplemento do Excel](../quickstarts/excel-quickstart-jquery.md)
+- [Exemplos de código de suplementos do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 - [Conceitos fundamentais de programação com a API JavaScript do Excel](excel-add-ins-advanced-concepts.md)
 - [Otimização de desempenho do da API JavaScript do Excel](/office/dev/add-ins/excel/performance)
 - [Referência da API JavaScript do Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
