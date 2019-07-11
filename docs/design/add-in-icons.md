@@ -3,12 +3,12 @@ title: Diretrizes de ícone para suplementos do Office
 description: ''
 ms.date: 03/02/2019
 localization_priority: Priority
-ms.openlocfilehash: 8e741f70327584ddd1b6f51f19b276e072862229
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 189139aaff3807ec5758462dd2bd1ad8916f65ae
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448839"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617069"
 ---
 # <a name="icons"></a>Ícones
 Ícones são a representação visual de um comportamento ou conceito. Eles são usados frequentemente para adicionar significado a controles e comandos. Os elementos visuais, realistas ou simbólicos, permitem ao usuário navegar pela interface do usuário da mesma maneira que os avisos os ajudam a navegar pelo ambiente. Eles devem ser simples, claros e conter apenas os detalhes necessários para permitir que os clientes analisem rapidamente a ação que ocorrerá ao escolherem um controle.
@@ -111,10 +111,10 @@ A imagem a seguir mostra o layout de elementos básicos e modificadores em um í
 - Coloque modificadores conceituais no canto inferior direito.
 - Limite o número de elementos em seus ícones. Com 32 px, limite o número de modificadores a no máximo dois. Com 16 px, limite o número de modificadores a um.
 
-###<a name="base-element-padding"></a>Preenchimento do elemento básico
+### <a name="base-element-padding"></a>Preenchimento do elemento básico
 Coloque elementos básicos com tamanhos consistentes. Se os elementos básicos não puderem ser centralizados no quadro, alinhe-os no canto superior esquerdo, deixando os pixels extras na parte inferior direita. Para melhores resultados, aplique as diretrizes de preenchimento listadas na tabela a seguir.
 
-###<a name="modifiers"></a>Modificadores
+### <a name="modifiers"></a>Modificadores
 Todos os modificadores devem ter um recorte transparente de 1 px entre cada elemento, incluindo a tela de fundo. Os elementos não devem se sobrepor diretamente. Crie um espaço em branco entre as regras e as bordas. Os modificadores podem variar um pouco de tamanho, mas use essas dimensões como ponto de partida.
 
 
