@@ -1,14 +1,14 @@
 ---
 title: Visão geral da plataforma Suplementos do Office | Microsoft Docs
 description: Use tecnologias da Web conhecidas, como HTML, CSS e JavaScript, para estender e interagir com os aplicativos Word, Excel, PowerPoint, OneNote, Project e Outlook.
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 600a1655dd9a3cfc40f56f46f0a8956f54883ffa
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: afe9b819cc7834729e0653463c4bd22a36157460
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128612"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617062"
 ---
 # <a name="office-add-ins-platform-overview"></a>Visão geral da plataforma de Suplementos do Office
 
@@ -116,12 +116,12 @@ As APIs JavaScript para Office contêm objetos e membros para a criação de sup
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Para saber mais sobre como começar a criar seu suplemento do Office, teste nossos [Guias de Início Rápido de cinco minutos](/office/dev/add-ins/). Você pode começar a criar suplementos imediatamente usando o Visual Studio ou outro editor. 
+Para criar [seu primeiro suplemento do Office em menos de cinco minutos, experimente o início rápido do Excel](../quickstarts/excel-quickstart-jquery.md), [do Outlook](/outlook/add-ins/quick-start?context=office/dev/add-ins/context), [do Word](../quickstarts/word-quickstart.md), [do](../quickstarts/onenote-quickstart.md)OneNote, [ PowerPoint](../quickstarts/powerpoint-quickstart.md)ou [Project.](../quickstarts/project-quickstart.md) Você pode começar a criar suplementos imediatamente usando o Visual Studio ou outro editor. 
 
 Para começar a planejar soluções que criem experiências de usuário eficazes e atraentes, familiarize-se com as [diretrizes de design](../design/add-in-design.md) e as [práticas recomendadas](../concepts/add-in-development-best-practices.md) para Suplementos do Office.
 
 ## <a name="see-also"></a>Confira também
 
-- [Exemplos de suplementos do Office](https://developer.microsoft.com/office/gallery/?filterBy=Samples)
+- [Exemplos de suplementos do Office](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel,Outlook,PowerPoint,Word)
 - [Noções básicas da API JavaScript para Office](../develop/understanding-the-javascript-api-for-office.md)
 - [Disponibilidade de host e plataforma para suplementos do Office](../overview/office-add-in-availability.md)
