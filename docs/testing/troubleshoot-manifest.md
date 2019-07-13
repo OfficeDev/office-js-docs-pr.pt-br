@@ -1,67 +1,22 @@
 ---
 title: Validar e solucionar problemas com seu manifesto
 description: Use estes métodos para validar o manifesto de suplementos do Office
-ms.date: 05/21/2019
+ms.date: 07/01/2019
 localization_priority: Priority
-ms.openlocfilehash: 5b9bd22ad724bac68587a41ad56f4290f3a6edbd
-ms.sourcegitcommit: adaee1329ae9bb69e49bde7f54a4c0444c9ba642
+ms.openlocfilehash: b6d95f6c5658e33c2f52cc46d7bba686bea5cc44
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "34432261"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617055"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>Validar e solucionar problemas com seu manifesto
 
-Use esses métodos para validar e solucionar problemas no manifesto de seu suplemento do Office. 
-
-- [Validar o manifesto com o Validador de Suplemento do Office](#validate-your-manifest-with-the-office-add-in-validator)   
-- [Validar seu manifesto em relação ao esquema XML](#validate-your-manifest-against-the-xml-schema)
-- [Validar o manifesto com o gerador Yeoman para Suplementos do Office](#validate-your-manifest-with-the-yeoman-generator-for-office-add-ins)
-- [Usar o log de tempo de execução para depurar seu suplemento](#use-runtime-logging-to-debug-your-add-in)
-
-
-## <a name="validate-your-manifest-with-the-office-add-in-validator"></a>Validar o manifesto com o Validador de Suplemento do Office
-
-Para ajudar a garantir que o arquivo de manifesto que descreve o suplemento do Office está correto e completo, valide-o com base no [Validador de Suplemento do Office](https://github.com/OfficeDev/office-addin-validator).
-
-### <a name="to-use-the-office-add-in-validator-to-validate-your-manifest"></a>Para usar o Validador de Suplemento do Office para validar o manifesto:
-
-1. Instale o [Node.js](https://nodejs.org/download/). 
-
-2. Abra um prompt de comando/terminal como administrador e instale o Validador de Suplemento do Office e as respectivas dependências globalmente usando o seguinte comando:
-
-    ```command&nbsp;line
-    npm install -g office-addin-validator
-    ```
-    
-    > [!NOTE]
-    > se já instalou o Office, atualize para a versão mais recente para que o validador seja instalado como uma dependência.
-
-3. Para validar o manifesto, execute o seguinte comando: substitua MANIFEST.XML pelo caminho para o arquivo XML de manifesto.
-
-    ```command&nbsp;line
-    validate-office-addin MANIFEST.XML
-    ```
-
-## <a name="validate-your-manifest-against-the-xml-schema"></a>Validar seu manifesto em relação ao esquema XML
-
-Para ajudar a garantir que o arquivo de manifesto segue o esquema correto, incluindo todos os namespaces de elementos que você está usando. Se você copiou elementos de outros manifestos da amostra, verifique se também **incluiu os namespaces apropriados**. É possível validar um manifesto em relação aos arquivos de [Definição de esquema XML (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas). É possível usar uma ferramenta de validação de esquema XML para executar essa validação. 
-
-
-
-### <a name="to-use-a-command-line-xml-schema-validation-tool-to-validate-your-manifest"></a>Para usar uma ferramenta de validação de esquema XML da linha de comando para validar seu manifesto
-
-1.  Instale o [tar](https://www.gnu.org/software/tar/) e o [libxml](http://xmlsoft.org/FAQ.html), caso ainda não tenha o feito.
-
-2.  Execute o comando a seguir. Substitua `XSD_FILE` pelo caminho para o arquivo XSD do manifesto e `XML_FILE` pelo caminho para o arquivo XML do manifesto.
-    
-    ```command&nbsp;line
-    xmllint --noout --schema XSD_FILE XML_FILE
-    ```
+Talvez você queira validar o arquivo de manifesto do seu suplemento para garantir que ele está correto e completo. A validação também pode identificar problemas que estejam causando o erro "seu manifesto de suplemento não é válido" quando você tenta realizar o sideload do seu suplemento. Este artigo descreve várias maneiras de validar o arquivo de manifesto e solucionar problemas com o suplemento.
 
 ## <a name="validate-your-manifest-with-the-yeoman-generator-for-office-add-ins"></a>Validar o manifesto com o gerador Yeoman para Suplementos do Office
 
-Caso tenha criado o Suplemento do Office usando o [Gerador Yeoman para Suplementos do Office](https://www.npmjs.com/package/generator-office), é possível garantir que o arquivo de manifesto segue o esquema correto executando o seguinte comando no diretório raiz do projeto:
+Se você usou o [gerador de Yeoman para suplementos](https://www.npmjs.com/package/generator-office) do Office para criar seu suplemento, você também pode usá-lo para validar o arquivo de manifesto do seu projeto. Execute o seguinte comando no diretório raiz do seu projeto:
 
 ```command&nbsp;line
 npm run validate
@@ -72,7 +27,33 @@ npm run validate
 > [!NOTE]
 > Para ter acesso a essa funcionalidade, o projeto de suplemento deve ter sido criado usando o [Gerador Yeoman para Suplementos do Office](https://www.npmjs.com/package/generator-office) versão 1.1.17 ou posterior.
 
-## <a name="use-runtime-logging-to-debug-your-add-in"></a>Usar o log de tempo de execução para depurar seu suplemento 
+## <a name="validate-your-manifest-with-office-toolbox"></a>Valide seu manifesto usando a caixa de ferramentas do Office.
+
+Se você não tiver usado o [gerador Yeoman for Office Add-ins](https://www.npmjs.com/package/generator-office) para criar seu suplemento, você também pode usá-lo para validar o arquivo de manifesto usando [a caixa de ferramentas do office](https://www.npmjs.com/package/office-toolbox).
+
+1. Instale o [Node.js](https://nodejs.org/download/).
+
+2. Execute o seguinte comando no diretório raiz do seu projeto. Substituir `MANIFEST_FILE` pelo nome do arquivo de manifesto.
+
+    ```command&nbsp;line
+    npx office-toolbox validate -m MANIFEST_FILE
+    ```
+
+## <a name="validate-your-manifest-against-the-xml-schema"></a>Validar seu manifesto em relação ao esquema XML
+
+É possível validar um manifesto em relação aos arquivos de [Definição de esquema XML (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas). Para ajudar a garantir que o arquivo de manifesto segue o esquema correto, incluindo todos os namespaces para os elementos que você está usando. Se você copiou elementos de outros manifestos da amostra, verifique se também **incluiu os namespaces apropriados**. É possível usar uma ferramenta de validação de esquema XML para executar essa validação.
+
+### <a name="to-use-a-command-line-xml-schema-validation-tool-to-validate-your-manifest"></a>Para usar uma ferramenta de validação de esquema XML da linha de comando para validar seu manifesto
+
+1. Instale o [tar](https://www.gnu.org/software/tar/) e o [libxml](http://xmlsoft.org/FAQ.html), caso ainda não tenha o feito.
+
+2. Execute o comando a seguir. Substitua `XSD_FILE` pelo caminho para o arquivo XSD do manifesto e `XML_FILE` pelo caminho para o arquivo XML do manifesto.
+    
+    ```command&nbsp;line
+    xmllint --noout --schema XSD_FILE XML_FILE
+    ```
+
+## <a name="use-runtime-logging-to-debug-your-add-in"></a>Usar o log de tempo de execução para depurar seu suplemento
 
 Você pode usar o log de tempo de execução para depurar o manifesto do seu suplemento, assim como diversos erros de instalação. Esse recurso pode ajudá-lo a identificar e corrigir problemas com seu manifesto que não são detectados pela validação de esquema XSD, como uma incompatibilidade entre as identificações dos recursos. O log de tempo de execução é particularmente útil para depurar suplementos que implementam comandos de suplemento e funções personalizadas do Excel.   
 
@@ -103,7 +84,6 @@ Para ativar o log de tempo de execução:
 A imagem a seguir mostra qual deve ser a aparência do registro. Para desativar o recurso, remova a chave do registro `RuntimeLogging`. 
 
 ![Captura de tela do editor do registro com uma chave de registro RuntimeLogging](http://i.imgur.com/Sa9TyI6.png)
-
 
 ### <a name="to-troubleshoot-issues-with-your-manifest"></a>Para solucionar problemas com o manifesto
 
@@ -139,7 +119,7 @@ Se alterações feitas no manifesto, como nomes de arquivo de ícones de botão 
 #### <a name="for-windows"></a>No Windows:
 Exclua os conteúdos da pasta `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
-#### <a name="for-mac"></a>No Mac:
+#### <a name="for-mac"></a>Para Mac:
 Exclua os conteúdos da pasta `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
 
 [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
