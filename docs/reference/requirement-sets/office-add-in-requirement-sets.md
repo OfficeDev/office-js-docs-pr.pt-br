@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos da API Comum do Office
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/11/2019
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: 71c59331e59ab508cf6a681bc9c594d5b30af9fe
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: e08659908b4634b0d6fef58548fb1557e149759f
+ms.sourcegitcommit: 61f8f02193ce05da957418d938f0d94cb12c468d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127027"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "35630519"
 ---
 # <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API Comum do Office
 
@@ -29,7 +29,7 @@ Procurando pelos conjuntos de requisitos de API *específicos do host*? Confira 
 
 ## <a name="common-api-requirement-sets"></a>Conjuntos de requisitos da API Comum
 
-As seções a seguir listam os conjuntos de requisitos da API Comum, os métodos em cada conjunto e os aplicativos host do Office compatíveis com esse conjunto de requisitos. Todos esses conjuntos de requisitos da API são versão 1.1.
+As seções a seguir listam os conjuntos de requisitos da API Comum, os métodos em cada conjunto e os aplicativos host do Office compatíveis com esse conjunto de requisitos. Todos esses conjuntos de requisitos da API são versão 1.1, a menos que especificado de outra forma.
 
 ### <a name="activeview"></a>ActiveView
 
@@ -97,7 +97,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 |**Hosts do Office**|**Métodos no conjunto**|
 |:-----|:-----|
-| OneNote Online<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Dá suporte à coerção para HTML (Office.CoercionType.Html) ao ler e gravar dados usando os métodos Document.getSelectedDataAsync<br>Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
+| OneNote Online<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Dá suporte à coerção para HTML (Office.CoercionType.Html) ao ler e gravar dados usando os métodos Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
 
 ---
 
@@ -113,7 +113,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 |**Hosts do Office**|**Métodos no conjunto**|
 |:-----|:-----|
-| Excel no Windows<br>Excel no iPad<br>Excel no Mac<br>OneNote Online<br>PowerPoint no Windows<br>PowerPoint Online<br>PowerPoint no iPad<br>PowerPoint no Mac<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Dá suporte à conversão para uma imagem (Office.CoercionType.Image) ao gravar dados usando o método Document.setSelectedDataAsync.|
+| Confira [conjuntos de requisitos de Coerção de Imagens](image-coercion-requirement-sets.md). | Método Document.setSelectedDataAsync|
 
 ---
 
