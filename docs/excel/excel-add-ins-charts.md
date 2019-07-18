@@ -1,22 +1,22 @@
 ---
 title: Trabalhar com gráficos usando a API JavaScript do Excel
 description: ''
-ms.date: 03/19/2019
+ms.date: 07/17/2019
 localization_priority: Priority
-ms.openlocfilehash: adaae105050a01968525e38deb6db570b962ddde
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 1cd1644a98ac11b68b6faba7d005d7deecd62d79
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448489"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771657"
 ---
-# <a name="work-with-charts-using-the-excel-javascript-api"></a><span data-ttu-id="f46c0-102">Trabalhar com gráficos usando a API JavaScript do Excel</span><span class="sxs-lookup"><span data-stu-id="f46c0-102">Work with Charts using the Excel JavaScript API</span></span>
+# <a name="work-with-charts-using-the-excel-javascript-api"></a><span data-ttu-id="1ff46-102">Trabalhar com gráficos usando a API JavaScript do Excel</span><span class="sxs-lookup"><span data-stu-id="1ff46-102">Work with Charts using the Excel JavaScript API</span></span>
 
-<span data-ttu-id="f46c0-p101">Este artigo fornece exemplos de código que mostram como executar tarefas comuns com gráficos usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos aos quais os objetos **Chart** e **ChartCollection** dão suporte, confira [Objeto Chart (API JavaScript para Excel)](/javascript/api/excel/excel.chart) e [Objeto Chart Collection (API JavaScript para Excel)](/javascript/api/excel/excel.chartcollection).</span><span class="sxs-lookup"><span data-stu-id="f46c0-p101">This article provides code samples that show how to perform common tasks with charts using the Excel JavaScript API. For the complete list of properties and methods that the **Chart** and **ChartCollection** objects support, see [Chart Object (JavaScript API for Excel)](/javascript/api/excel/excel.chart) and [Chart Collection Object (JavaScript API for Excel)](/javascript/api/excel/excel.chartcollection).</span></span>
+<span data-ttu-id="1ff46-p101">Este artigo fornece exemplos de código que mostram como executar tarefas comuns com gráficos usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos aos quais os objetos **Chart** e **ChartCollection** dão suporte, confira [Objeto Chart (API JavaScript para Excel)](/javascript/api/excel/excel.chart) e [Objeto Chart Collection (API JavaScript para Excel)](/javascript/api/excel/excel.chartcollection).</span><span class="sxs-lookup"><span data-stu-id="1ff46-p101">This article provides code samples that show how to perform common tasks with charts using the Excel JavaScript API. For the complete list of properties and methods that the **Chart** and **ChartCollection** objects support, see [Chart Object (JavaScript API for Excel)](/javascript/api/excel/excel.chart) and [Chart Collection Object (JavaScript API for Excel)](/javascript/api/excel/excel.chartcollection).</span></span>
 
-## <a name="create-a-chart"></a><span data-ttu-id="f46c0-105">Criar um gráfico</span><span class="sxs-lookup"><span data-stu-id="f46c0-105">Create a chart</span></span>
+## <a name="create-a-chart"></a><span data-ttu-id="1ff46-105">Criar um gráfico</span><span class="sxs-lookup"><span data-stu-id="1ff46-105">Create a chart</span></span>
 
-<span data-ttu-id="f46c0-p102">O exemplo de código a seguir cria um gráfico na planilha chamada **Amostra**. O gráfico é de **Linha** e se baseia em dados do intervalo **A1:B13**.</span><span class="sxs-lookup"><span data-stu-id="f46c0-p102">The following code sample creates a chart in the worksheet named **Sample**. The chart is a **Line** chart that is based upon data in the range **A1:B13**.</span></span>
+<span data-ttu-id="1ff46-p102">O exemplo de código a seguir cria um gráfico na planilha chamada **Amostra**. O gráfico é de **Linha** e se baseia em dados do intervalo **A1:B13**.</span><span class="sxs-lookup"><span data-stu-id="1ff46-p102">The following code sample creates a chart in the worksheet named **Sample**. The chart is a **Line** chart that is based upon data in the range **A1:B13**.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -34,14 +34,14 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="f46c0-108">**Novo gráfico de linhas**</span><span class="sxs-lookup"><span data-stu-id="f46c0-108">**New line chart**</span></span>
+<span data-ttu-id="1ff46-108">**Novo gráfico de linhas**</span><span class="sxs-lookup"><span data-stu-id="1ff46-108">**New line chart**</span></span>
 
 ![Novo gráfico de linhas no Excel](../images/excel-charts-create-line.png)
 
 
-## <a name="add-a-data-series-to-a-chart"></a><span data-ttu-id="f46c0-110">Adicionar uma série de dados a um gráfico</span><span class="sxs-lookup"><span data-stu-id="f46c0-110">Add a data series to a chart</span></span>
+## <a name="add-a-data-series-to-a-chart"></a><span data-ttu-id="1ff46-110">Adicionar uma série de dados a um gráfico</span><span class="sxs-lookup"><span data-stu-id="1ff46-110">Add a data series to a chart</span></span>
 
-<span data-ttu-id="f46c0-p103">O exemplo de código a seguir adiciona uma série de dados ao primeiro gráfico na planilha. A nova série de dados corresponde à coluna chamada **2016** e baseia-se em dados do intervalo **D2:D5**.</span><span class="sxs-lookup"><span data-stu-id="f46c0-p103">The following code sample adds a data series to the first chart in the worksheet. The new data series corresponds to the column named **2016** and is based upon data in the range **D2:D5**.</span></span>
+<span data-ttu-id="1ff46-p103">O exemplo de código a seguir adiciona uma série de dados ao primeiro gráfico na planilha. A nova série de dados corresponde à coluna chamada **2016** e baseia-se em dados do intervalo **D2:D5**.</span><span class="sxs-lookup"><span data-stu-id="1ff46-p103">The following code sample adds a data series to the first chart in the worksheet. The new data series corresponds to the column named **2016** and is based upon data in the range **D2:D5**.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -56,17 +56,17 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="f46c0-113">**Gráfico antes da adição da série de dados de 2016**</span><span class="sxs-lookup"><span data-stu-id="f46c0-113">**Chart before the 2016 data series is added**</span></span>
+<span data-ttu-id="1ff46-113">**Gráfico antes da adição da série de dados de 2016**</span><span class="sxs-lookup"><span data-stu-id="1ff46-113">**Chart before the 2016 data series is added**</span></span>
 
 ![Gráfico no Excel antes da adição da série de dados de 2016](../images/excel-charts-data-series-before.png)
 
-<span data-ttu-id="f46c0-115">**Gráfico após a adição da série de dados de 2016**</span><span class="sxs-lookup"><span data-stu-id="f46c0-115">**Chart after the 2016 data series is added**</span></span>
+<span data-ttu-id="1ff46-115">**Gráfico após a adição da série de dados de 2016**</span><span class="sxs-lookup"><span data-stu-id="1ff46-115">**Chart after the 2016 data series is added**</span></span>
 
 ![Gráfico no Excel após a adição da série de dados de 2016](../images/excel-charts-data-series-after.png)
 
-## <a name="set-chart-title"></a><span data-ttu-id="f46c0-117">Definir título do gráfico</span><span class="sxs-lookup"><span data-stu-id="f46c0-117">Set chart title</span></span>
+## <a name="set-chart-title"></a><span data-ttu-id="1ff46-117">Definir título do gráfico</span><span class="sxs-lookup"><span data-stu-id="1ff46-117">Set chart title</span></span>
 
-<span data-ttu-id="f46c0-118">O exemplo de código a seguir define o título do primeiro gráfico na planilha para **Sales Data by Year**.</span><span class="sxs-lookup"><span data-stu-id="f46c0-118">The following code sample sets the title of the first chart in the worksheet to **Sales Data by Year**.</span></span>
+<span data-ttu-id="1ff46-118">O exemplo de código a seguir define o título do primeiro gráfico na planilha para **Sales Data by Year**.</span><span class="sxs-lookup"><span data-stu-id="1ff46-118">The following code sample sets the title of the first chart in the worksheet to **Sales Data by Year**.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -79,17 +79,17 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="f46c0-119">**Gráfico após definição do título**</span><span class="sxs-lookup"><span data-stu-id="f46c0-119">**Chart after title is set**</span></span>
+<span data-ttu-id="1ff46-119">**Gráfico após definição do título**</span><span class="sxs-lookup"><span data-stu-id="1ff46-119">**Chart after title is set**</span></span>
 
 ![Gráfico com título no Excel](../images/excel-charts-title-set.png)
 
-## <a name="set-properties-of-an-axis-in-a-chart"></a><span data-ttu-id="f46c0-121">Definir propriedades de um eixo em um gráfico</span><span class="sxs-lookup"><span data-stu-id="f46c0-121">Set properties of an axis in a chart</span></span>
+## <a name="set-properties-of-an-axis-in-a-chart"></a><span data-ttu-id="1ff46-121">Definir propriedades de um eixo em um gráfico</span><span class="sxs-lookup"><span data-stu-id="1ff46-121">Set properties of an axis in a chart</span></span>
 
-<span data-ttu-id="f46c0-p104">Os gráficos que usam o [Sistema de coordenadas cartesiano](https://en.wikipedia.org/wiki/Cartesian_coordinate_system), como gráficos de colunas, gráfico de barras e gráficos de dispersão contêm um eixo de categorias e um eixo de valores. Estes exemplos mostram como definir o título e exibem a unidade de um eixo em um gráfico.</span><span class="sxs-lookup"><span data-stu-id="f46c0-p104">Charts that use the [Cartesian coordinate system](https://en.wikipedia.org/wiki/Cartesian_coordinate_system) such as column charts, bar charts, and scatter charts contain a category axis and a value axis. These examples show how to set the title and display unit of an axis in a chart.</span></span>
+<span data-ttu-id="1ff46-p104">Os gráficos que usam o [Sistema de coordenadas cartesiano](https://en.wikipedia.org/wiki/Cartesian_coordinate_system), como gráficos de colunas, gráfico de barras e gráficos de dispersão contêm um eixo de categorias e um eixo de valores. Estes exemplos mostram como definir o título e exibem a unidade de um eixo em um gráfico.</span><span class="sxs-lookup"><span data-stu-id="1ff46-p104">Charts that use the [Cartesian coordinate system](https://en.wikipedia.org/wiki/Cartesian_coordinate_system) such as column charts, bar charts, and scatter charts contain a category axis and a value axis. These examples show how to set the title and display unit of an axis in a chart.</span></span>
 
-### <a name="set-axis-title"></a><span data-ttu-id="f46c0-124">Definir título do eixo</span><span class="sxs-lookup"><span data-stu-id="f46c0-124">Set axis title</span></span>
+### <a name="set-axis-title"></a><span data-ttu-id="1ff46-124">Definir título do eixo</span><span class="sxs-lookup"><span data-stu-id="1ff46-124">Set axis title</span></span>
 
-<span data-ttu-id="f46c0-125">O exemplo de código a seguir define o título do eixo das categorias para o primeiro gráfico na planilha como **Product**.</span><span class="sxs-lookup"><span data-stu-id="f46c0-125">The following code sample sets the title of the category axis for the first chart in the worksheet to **Product**.</span></span>
+<span data-ttu-id="1ff46-125">O exemplo de código a seguir define o título do eixo das categorias para o primeiro gráfico na planilha como **Product**.</span><span class="sxs-lookup"><span data-stu-id="1ff46-125">The following code sample sets the title of the category axis for the first chart in the worksheet to **Product**.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -102,13 +102,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="f46c0-126">**Gráfico após definição do título do eixo das categorias**</span><span class="sxs-lookup"><span data-stu-id="f46c0-126">**Chart after title of category axis is set**</span></span>
+<span data-ttu-id="1ff46-126">**Gráfico após definição do título do eixo das categorias**</span><span class="sxs-lookup"><span data-stu-id="1ff46-126">**Chart after title of category axis is set**</span></span>
 
 ![Gráfico com título do eixo no Excel](../images/excel-charts-axis-title-set.png)
 
-### <a name="set-axis-display-unit"></a><span data-ttu-id="f46c0-128">Definir unidade de exibição do eixo</span><span class="sxs-lookup"><span data-stu-id="f46c0-128">Set axis display unit</span></span>
+### <a name="set-axis-display-unit"></a><span data-ttu-id="1ff46-128">Definir unidade de exibição do eixo</span><span class="sxs-lookup"><span data-stu-id="1ff46-128">Set axis display unit</span></span>
 
-<span data-ttu-id="f46c0-129">O exemplo de código a seguir define a unidade de exibição do eixo de valor para o primeiro gráfico na planilha para **centenas**.</span><span class="sxs-lookup"><span data-stu-id="f46c0-129">The following code sample sets the display unit of the value axis for the first chart in the worksheet to **Hundreds**.</span></span>
+<span data-ttu-id="1ff46-129">O exemplo de código a seguir define a unidade de exibição do eixo de valor para o primeiro gráfico na planilha para **centenas**.</span><span class="sxs-lookup"><span data-stu-id="1ff46-129">The following code sample sets the display unit of the value axis for the first chart in the worksheet to **Hundreds**.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -121,13 +121,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="f46c0-130">**Gráfico após a definição da unidade de exibição do eixo de valor**</span><span class="sxs-lookup"><span data-stu-id="f46c0-130">**Chart after display unit of value axis is set**</span></span>
+<span data-ttu-id="1ff46-130">**Gráfico após a definição da unidade de exibição do eixo de valor**</span><span class="sxs-lookup"><span data-stu-id="1ff46-130">**Chart after display unit of value axis is set**</span></span>
 
 ![Gráfico com unidade de exibição do eixo no Excel](../images/excel-charts-axis-display-unit-set.png)
 
-## <a name="set-visibility-of-gridlines-in-a-chart"></a><span data-ttu-id="f46c0-132">Definir visibilidade de linhas de grade em um gráfico</span><span class="sxs-lookup"><span data-stu-id="f46c0-132">Set visibility of gridlines in a chart</span></span>
+## <a name="set-visibility-of-gridlines-in-a-chart"></a><span data-ttu-id="1ff46-132">Definir visibilidade de linhas de grade em um gráfico</span><span class="sxs-lookup"><span data-stu-id="1ff46-132">Set visibility of gridlines in a chart</span></span>
 
-<span data-ttu-id="f46c0-p105">O exemplo de código a seguir oculta as principais linhas de grade para o eixo dos valores do primeiro gráfico na planilha. Você pode mostrar as principais linhas de grade do eixo dos valores do gráfico, definindo `chart.axes.valueAxis.majorGridlines.visible` como **true**.</span><span class="sxs-lookup"><span data-stu-id="f46c0-p105">The following code sample hides the major gridlines for the value axis of the first chart in the worksheet. You can show the major gridlines for the value axis of the chart, by setting `chart.axes.valueAxis.majorGridlines.visible` to **true**.</span></span>
+<span data-ttu-id="1ff46-p105">O exemplo de código a seguir oculta as principais linhas de grade para o eixo dos valores do primeiro gráfico na planilha. Você pode mostrar as principais linhas de grade do eixo dos valores do gráfico, definindo `chart.axes.valueAxis.majorGridlines.visible` como **true**.</span><span class="sxs-lookup"><span data-stu-id="1ff46-p105">The following code sample hides the major gridlines for the value axis of the first chart in the worksheet. You can show the major gridlines for the value axis of the chart, by setting `chart.axes.valueAxis.majorGridlines.visible` to **true**.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -140,15 +140,15 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="f46c0-135">**Gráfico com linhas de grade ocultas**</span><span class="sxs-lookup"><span data-stu-id="f46c0-135">**Chart with gridlines hidden**</span></span>
+<span data-ttu-id="1ff46-135">**Gráfico com linhas de grade ocultas**</span><span class="sxs-lookup"><span data-stu-id="1ff46-135">**Chart with gridlines hidden**</span></span>
 
 ![Gráfico com linhas de grade ocultas no Excel](../images/excel-charts-gridlines-removed.png)
 
-## <a name="chart-trendlines"></a><span data-ttu-id="f46c0-137">Linhas de tendência do gráfico</span><span class="sxs-lookup"><span data-stu-id="f46c0-137">Chart trendlines</span></span>
+## <a name="chart-trendlines"></a><span data-ttu-id="1ff46-137">Linhas de tendência do gráfico</span><span class="sxs-lookup"><span data-stu-id="1ff46-137">Chart trendlines</span></span>
 
-### <a name="add-a-trendline"></a><span data-ttu-id="f46c0-138">Adicionar uma linha de tendência</span><span class="sxs-lookup"><span data-stu-id="f46c0-138">Add a trendline</span></span>
+### <a name="add-a-trendline"></a><span data-ttu-id="1ff46-138">Adicionar uma linha de tendência</span><span class="sxs-lookup"><span data-stu-id="1ff46-138">Add a trendline</span></span>
 
-<span data-ttu-id="f46c0-p106">O exemplo de código a seguir adiciona uma linha de tendência de média móvel à primeira série no primeiro gráfico da planilha chamada **Amostra**. A linha de tendência mostra uma média móvel de cinco períodos.</span><span class="sxs-lookup"><span data-stu-id="f46c0-p106">The following code sample adds a moving average trendline to the first series in the first chart in the worksheet named **Sample**. The trendline shows a moving average over 5 periods.</span></span>
+<span data-ttu-id="1ff46-p106">O exemplo de código a seguir adiciona uma linha de tendência de média móvel à primeira série no primeiro gráfico da planilha chamada **Amostra**. A linha de tendência mostra uma média móvel de cinco períodos.</span><span class="sxs-lookup"><span data-stu-id="1ff46-p106">The following code sample adds a moving average trendline to the first series in the first chart in the worksheet named **Sample**. The trendline shows a moving average over 5 periods.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -162,13 +162,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="f46c0-141">**Gráfico com linha de tendência de média móvel**</span><span class="sxs-lookup"><span data-stu-id="f46c0-141">**Chart with moving average trendline**</span></span>
+<span data-ttu-id="1ff46-141">**Gráfico com linha de tendência de média móvel**</span><span class="sxs-lookup"><span data-stu-id="1ff46-141">**Chart with moving average trendline**</span></span>
 
 ![Gráfico com linha de tendência de média móvel no Excel](../images/excel-charts-create-trendline.png)
 
-### <a name="update-a-trendline"></a><span data-ttu-id="f46c0-143">Atualizar uma linha de tendência</span><span class="sxs-lookup"><span data-stu-id="f46c0-143">Update a trendline</span></span>
+### <a name="update-a-trendline"></a><span data-ttu-id="1ff46-143">Atualizar uma linha de tendência</span><span class="sxs-lookup"><span data-stu-id="1ff46-143">Update a trendline</span></span>
 
-<span data-ttu-id="f46c0-144">O exemplo de código a seguir define a linha de tendência para o tipo **Linear** para a primeira série no primeiro gráfico da planilha chamada **Amostra**.</span><span class="sxs-lookup"><span data-stu-id="f46c0-144">The following code sample sets the trendline to type **Linear** for the first series in the first chart in the worksheet named **Sample**.</span></span>
+<span data-ttu-id="1ff46-144">O exemplo de código a seguir define a linha de tendência para o tipo **Linear** para a primeira série no primeiro gráfico da planilha chamada **Amostra**.</span><span class="sxs-lookup"><span data-stu-id="1ff46-144">The following code sample sets the trendline to type **Linear** for the first series in the first chart in the worksheet named **Sample**.</span></span>
 
 ```js
 Excel.run(function (context) {
@@ -183,13 +183,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="f46c0-145">**Gráfico com linha de tendência linear**</span><span class="sxs-lookup"><span data-stu-id="f46c0-145">**Chart with linear trendline**</span></span>
+<span data-ttu-id="1ff46-145">**Gráfico com linha de tendência linear**</span><span class="sxs-lookup"><span data-stu-id="1ff46-145">**Chart with linear trendline**</span></span>
 
 ![Gráfico com linha de tendência linear no Excel](../images/excel-charts-trendline-linear.png)
 
-## <a name="export-a-chart-as-an-image"></a><span data-ttu-id="f46c0-147">Exportar um gráfico como uma imagem</span><span class="sxs-lookup"><span data-stu-id="f46c0-147">Export a chart as an image</span></span>
+## <a name="export-a-chart-as-an-image"></a><span data-ttu-id="1ff46-147">Exportar um gráfico como uma imagem</span><span class="sxs-lookup"><span data-stu-id="1ff46-147">Export a chart as an image</span></span>
 
-<span data-ttu-id="f46c0-148">Os gráficos podem ser processados como imagens fora do Excel.</span><span class="sxs-lookup"><span data-stu-id="f46c0-148">Charts can be rendered as images outside of Excel.</span></span> <span data-ttu-id="f46c0-149">`Chart.getImage` retorna o gráfico como uma cadeia de caracteres codificada na base 64 representando o gráfico como uma imagem JPEG.</span><span class="sxs-lookup"><span data-stu-id="f46c0-149">`Chart.getImage` returns the chart as a base64-encoded string representing the chart as a JPEG image.</span></span> <span data-ttu-id="f46c0-150">O código a seguir mostra como obter a cadeia de caracteres de imagem e registrá-la no console.</span><span class="sxs-lookup"><span data-stu-id="f46c0-150">The following code shows how to get the image string and log it to the console.</span></span>
+<span data-ttu-id="1ff46-148">Os gráficos podem ser processados como imagens fora do Excel.</span><span class="sxs-lookup"><span data-stu-id="1ff46-148">Charts can be rendered as images outside of Excel.</span></span> <span data-ttu-id="1ff46-149">`Chart.getImage` retorna o gráfico como uma cadeia de caracteres codificada na base 64 representando o gráfico como uma imagem JPEG.</span><span class="sxs-lookup"><span data-stu-id="1ff46-149">`Chart.getImage` returns the chart as a base64-encoded string representing the chart as a JPEG image.</span></span> <span data-ttu-id="1ff46-150">O código a seguir mostra como obter a cadeia de caracteres de imagem e registrá-la no console.</span><span class="sxs-lookup"><span data-stu-id="1ff46-150">The following code shows how to get the image string and log it to the console.</span></span>
 
 ```js
 Excel.run(function (ctx) {
@@ -202,18 +202,18 @@ Excel.run(function (ctx) {
 }).catch(errorHandlerFunction);
 ```
 
-<span data-ttu-id="f46c0-151">`Chart.getImage` usa três parâmetros opcionais: largura, altura e o modo de ajuste.</span><span class="sxs-lookup"><span data-stu-id="f46c0-151">`Chart.getImage` takes three optional parameters: width, height, and the fitting mode.</span></span>
+<span data-ttu-id="1ff46-151">`Chart.getImage` usa três parâmetros opcionais: largura, altura e o modo de ajuste.</span><span class="sxs-lookup"><span data-stu-id="1ff46-151">`Chart.getImage` takes three optional parameters: width, height, and the fitting mode.</span></span>
 
 ```typescript
 getImage(width?: number, height?: number, fittingMode?: Excel.ImageFittingMode): OfficeExtension.ClientResult<string>;
 ```
 
-<span data-ttu-id="f46c0-152">Esses parâmetros determinam o tamanho da imagem.</span><span class="sxs-lookup"><span data-stu-id="f46c0-152">These parameters determine the size of the image.</span></span> <span data-ttu-id="f46c0-153">As imagens são sempre dimensionadas proporcionalmente.</span><span class="sxs-lookup"><span data-stu-id="f46c0-153">Images are always proportionally scaled.</span></span> <span data-ttu-id="f46c0-154">Os parâmetros de largura e altura definem limites superiores ou inferiores na imagem dimensionada.</span><span class="sxs-lookup"><span data-stu-id="f46c0-154">The width and height parameters put upper or lower bounds on the scaled image.</span></span> <span data-ttu-id="f46c0-155">`ImageFittingMode` tem três valores com os seguintes comportamentos:</span><span class="sxs-lookup"><span data-stu-id="f46c0-155">`ImageFittingMode` has three values with the following behaviors:</span></span>
+<span data-ttu-id="1ff46-152">Esses parâmetros determinam o tamanho da imagem.</span><span class="sxs-lookup"><span data-stu-id="1ff46-152">These parameters determine the size of the image.</span></span> <span data-ttu-id="1ff46-153">As imagens são sempre dimensionadas proporcionalmente.</span><span class="sxs-lookup"><span data-stu-id="1ff46-153">Images are always proportionally scaled.</span></span> <span data-ttu-id="1ff46-154">Os parâmetros de largura e altura definem limites superiores ou inferiores na imagem dimensionada.</span><span class="sxs-lookup"><span data-stu-id="1ff46-154">The width and height parameters put upper or lower bounds on the scaled image.</span></span> <span data-ttu-id="1ff46-155">`ImageFittingMode` tem três valores com os seguintes comportamentos:</span><span class="sxs-lookup"><span data-stu-id="1ff46-155">`ImageFittingMode` has three values with the following behaviors:</span></span>
 
-- <span data-ttu-id="f46c0-156">`Fill`: a altura ou largura mínima da imagem é a altura ou largura especificada (o que for atingido primeiro quando a imagem for dimensionada).</span><span class="sxs-lookup"><span data-stu-id="f46c0-156">`Fill`: The image’s minimum height or width is the specified height or width (whichever is reached first when scaling the image).</span></span> <span data-ttu-id="f46c0-157">Esse é o comportamento padrão quando nenhum modo de ajuste é especificado.</span><span class="sxs-lookup"><span data-stu-id="f46c0-157">This is the default behavior when no fitting mode is specified.</span></span>
-- <span data-ttu-id="f46c0-158">`Fit`: a altura ou largura máxima da imagem é a altura ou largura especificada (o que for atingido primeiro quando a imagem for dimensionada).</span><span class="sxs-lookup"><span data-stu-id="f46c0-158">`Fit`: The image’s maximum height or width is the specified height or width (whichever is reached first when scaling the image).</span></span>
-- <span data-ttu-id="f46c0-159">`FitAndCenter`: a altura ou largura máxima da imagem é a altura ou largura especificada (o que for atingido primeiro quando a imagem for dimensionada).</span><span class="sxs-lookup"><span data-stu-id="f46c0-159">`FitAndCenter`: The image’s maximum height or width is the specified height or width (whichever is reached first when scaling the image).</span></span> <span data-ttu-id="f46c0-160">A imagem resultante é centralizada proporcionalmente à outra dimensão.</span><span class="sxs-lookup"><span data-stu-id="f46c0-160">The resulting image is centered relative to the other dimension.</span></span>
+- <span data-ttu-id="1ff46-156">`Fill`: a altura ou largura mínima da imagem é a altura ou largura especificada (o que for atingido primeiro quando a imagem for dimensionada).</span><span class="sxs-lookup"><span data-stu-id="1ff46-156">`Fill`: The image’s minimum height or width is the specified height or width (whichever is reached first when scaling the image).</span></span> <span data-ttu-id="1ff46-157">Esse é o comportamento padrão quando nenhum modo de ajuste é especificado.</span><span class="sxs-lookup"><span data-stu-id="1ff46-157">This is the default behavior when no fitting mode is specified.</span></span>
+- <span data-ttu-id="1ff46-158">`Fit`: a altura ou largura máxima da imagem é a altura ou largura especificada (o que for atingido primeiro quando a imagem for dimensionada).</span><span class="sxs-lookup"><span data-stu-id="1ff46-158">`Fit`: The image’s maximum height or width is the specified height or width (whichever is reached first when scaling the image).</span></span>
+- <span data-ttu-id="1ff46-159">`FitAndCenter`: a altura ou largura máxima da imagem é a altura ou largura especificada (o que for atingido primeiro quando a imagem for dimensionada).</span><span class="sxs-lookup"><span data-stu-id="1ff46-159">`FitAndCenter`: The image’s maximum height or width is the specified height or width (whichever is reached first when scaling the image).</span></span> <span data-ttu-id="1ff46-160">A imagem resultante é centralizada proporcionalmente à outra dimensão.</span><span class="sxs-lookup"><span data-stu-id="1ff46-160">The resulting image is centered relative to the other dimension.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="f46c0-161">Confira também</span><span class="sxs-lookup"><span data-stu-id="f46c0-161">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1ff46-161">Confira também</span><span class="sxs-lookup"><span data-stu-id="1ff46-161">See also</span></span>
 
-- [<span data-ttu-id="f46c0-162">Conceitos fundamentais de programação com a API JavaScript do Excel</span><span class="sxs-lookup"><span data-stu-id="f46c0-162">Fundamental programming concepts with the Excel JavaScript API</span></span>](excel-add-ins-core-concepts.md)
+- [<span data-ttu-id="1ff46-162">Conceitos fundamentais de programação com a API JavaScript do Excel</span><span class="sxs-lookup"><span data-stu-id="1ff46-162">Fundamental programming concepts with the Excel JavaScript API</span></span>](excel-add-ins-core-concepts.md)
