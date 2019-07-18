@@ -4,12 +4,12 @@ description: ''
 ms.date: 06/20/2019
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: ccbfa5ca976da507574821f53e1ea3d0422298c7
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 65bcbbbece1e56b5c49abb0d8e31221c0b513340
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128535"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771769"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do OneNote
 
@@ -21,27 +21,21 @@ Neste artigo, você verá o processo de criação de um suplemento do painel de 
 
 ## <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
-1. Use o gerador Yeoman para criar um projeto de suplemento do OneNote. Execute o comando a seguir e responda aos prompts da seguinte forma:
+Use o gerador Yeoman para criar um projeto de suplemento do OneNote. Execute o comando a seguir e responda aos prompts da seguinte forma:
 
-    ```command&nbsp;line
-    yo office
-    ```
+```command&nbsp;line
+yo office
+```
 
-    - **Escolha o tipo de projeto:** `Office Add-in Task Pane project`
-    - **Escolha o tipo de script:** `Javascript`
-    - **Qual será o nome do suplemento?** `My Office Add-in`
-    - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `OneNote`
+- **Escolha o tipo de projeto:** `Office Add-in Task Pane project`
+- **Escolha o tipo de script:** `Javascript`
+- **Qual será o nome do suplemento?** `My Office Add-in`
+- **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `OneNote`
 
-    ![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-onenote.png)
+![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-onenote.png)
+
+Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
     
-    Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
-    
-2. Navegue até a pasta raiz do projeto.
-
-    ```command&nbsp;line
-    cd "My Office Add-in"
-    ```
-
 ## <a name="explore-the-project"></a>Explore o projeto
 
 O projeto de suplemento que você criou com o gerador do Yeoman contém um exemplo de código para um suplemento de painel de tarefas bem básico. 
@@ -79,25 +73,33 @@ try {
 
 ## <a name="try-it-out"></a>Experimente
 
-> [!NOTE]
-> Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
+1. Navegue até a pasta raiz do projeto.
 
-> [!TIP]
-> Se você estiver testando o seu suplemento no Mac, execute o seguinte comando antes de continuar. Quando você executa este comando, o servidor Web local iniciará.
->
-> ```command&nbsp;line
-> npm run dev-server
-> ```
+    ```command&nbsp;line
+    cd "My Office Add-in"
+    ```
 
-1. Execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).
+2. Inicie o servidor Web local e realize o sideload no seu suplemento.
+
+    > [!NOTE]
+    > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
+
+    > [!TIP]
+    > Se você estiver testando o seu suplemento no Mac, execute o seguinte comando antes de continuar. O servidor Web local é iniciado quando este comando é executado.
+    >
+    > ```command&nbsp;line
+    > npm run dev-server
+    > ```
+
+    Execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).
 
     ```command&nbsp;line
     npm run start:web
     ```
 
-2. No [OneNote Online](https://www.onenote.com/notebooks), abra um bloco de anotações e crie uma nova página.
+3. No [OneNote Online](https://www.onenote.com/notebooks), abra um bloco de anotações e crie uma nova página.
 
-3. Escolha **Inserir > Suplementos do Office** para abrir a caixa de diálogo Suplementos do Office.
+4. Escolha **Inserir > Suplementos do Office** para abrir a caixa de diálogo Suplementos do Office.
 
     - Se você estiver conectado à sua conta de consumidor, selecione a guia **MEUS SUPLEMENTOS** e escolha  **Carregar Meu Suplemento**.
 
@@ -107,11 +109,11 @@ try {
 
     <img alt="The Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
 
-3. Na caixa de diálogo Carregar Suplemento, navegue até **manifest.xml** na pasta do projeto e escolha **Carregar**. 
+5. Na caixa de diálogo Carregar Suplemento, navegue até **manifest.xml** na pasta do projeto e escolha **Carregar**. 
 
-4. Na guia **Página Inicial**, na faixa de opções, escolha o botão **Mostrar Painel de Tarefas**. O painel de tarefa do suplemento abre em um iFrame ao lado da página do OneNote.
+6. Na guia **Página Inicial**, na faixa de opções, escolha o botão **Mostrar Painel de Tarefas**. O painel de tarefa do suplemento abre em um iFrame ao lado da página do OneNote.
 
-5. Na parte inferior do painel de tarefas, escolha o link **Executar** para definir o título da página e adicionar um contorno ao corpo da página.
+7. Na parte inferior do painel de tarefas, escolha o link **Executar** para definir o título da página e adicionar um contorno ao corpo da página.
 
     ![O suplemento do OneNote criado a partir deste passo a passo](../images/onenote-first-add-in-4.png)
 

@@ -4,12 +4,12 @@ description: ''
 ms.date: 05/02/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 66c85ba9914b783295e9ed2143dc9ce107f64c4c
-ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
+ms.openlocfilehash: 6c7baf237c4ca0be0e11428dcb2661b7b86ed39e
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33619903"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771839"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-angular"></a>Criar um suplemento do painel de tarefas do Excel usando o Angular
 
@@ -21,26 +21,21 @@ Neste artigo, você passará pelo processo de criação de um suplemento do pain
 
 ## <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
-1. Use o gerador Yeoman para criar um projeto de suplemento do Excel. Execute o comando a seguir e responda aos prompts da seguinte forma:
+Use o gerador Yeoman para criar um projeto de suplemento do Excel. Execute o comando a seguir e responda aos prompts da seguinte forma:
 
-    ```command&nbsp;line
-    yo office
-    ```
+```command&nbsp;line
+yo office
+```
 
-    - **Escolha o tipo de projeto:** `Office Add-in Task Pane project using Angular framework`
-    - **Escolha o tipo de script:** `TypeScript`
-    - **Qual será o nome do suplemento?** `My Office Add-in`
-    - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Excel`
+- **Escolha o tipo de projeto:** `Office Add-in Task Pane project using Angular framework`
+- **Escolha o tipo de script:** `TypeScript`
+- **Qual será o nome do suplemento?** `My Office Add-in`
+- **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Excel`
 
-    ![Gerador do Yeoman](../images/yo-office-excel-angular-2.png)
+![Gerador do Yeoman](../images/yo-office-excel-angular-2.png)
 
-    Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
+Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
-2. Navegue até a pasta raiz do projeto.
-
-    ```command&nbsp;line
-    cd "My Office Add-in"
-    ```
 ## <a name="explore-the-project"></a>Explore o projeto
 
 O projeto de suplemento que você criou com o gerador do Yeoman contém um exemplo de código para um suplemento de painel de tarefas bem básico. Se você quiser examinar os principais componentes do seu projeto de suplemento, abra o projeto no seu editor de código e revise os arquivos listados abaixo. Quando estiver pronto para experimentar o suplemento, prossiga para a próxima seção.
@@ -52,15 +47,21 @@ O projeto de suplemento que você criou com o gerador do Yeoman contém um exemp
 
 ## <a name="try-it-out"></a>Experimente
 
-1. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
+1. Navegue até a pasta raiz do projeto.
 
-2. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
+    ```command&nbsp;line
+    cd "My Office Add-in"
+    ```
+
+2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
+
+3. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
     ![Botão do suplemento do Excel](../images/excel-quickstart-addin-3b.png)
 
-3. Selecione um intervalo de células na planilha.
+4. Selecione um intervalo de células na planilha.
 
-4. Na parte inferior do painel de tarefas, escolha o link **Executar** para definir a cor do intervalo selecionado como amarelo.
+5. Na parte inferior do painel de tarefas, escolha o link **Executar** para definir a cor do intervalo selecionado como amarelo.
 
     ![Suplemento do Excel](../images/excel-quickstart-addin-3c.png)
 

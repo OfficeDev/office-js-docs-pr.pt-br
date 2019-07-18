@@ -1,18 +1,18 @@
 ---
-ms.date: 06/27/2019
+ms.date: 07/15/2019
 description: Use tags JSDoc para criar dinamicamente seus metadados JSON de funções personalizadas.
 title: Gerar metadados JSON automaticamente para funções personalizadas
 localization_priority: Priority
-ms.openlocfilehash: 1230e1bfdeead306531a218373c2756b29fa4abe
-ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
+ms.openlocfilehash: afcfb6ff869acf1d508ebda7fc242dd9724bf165
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "35454654"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771311"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Gerar metadados JSON automaticamente para funções personalizadas
 
-Quando uma função personalizada do Excel é gravada em JavaScript ou em TypeScript, as marcações JSDoc são usadas para fornecer informações adicionais sobre a função personalizada. As marcações JSDoc são usadas no momento da criação para criar o [arquivo de metadados JSON](custom-functions-json.md). O uso de marcações JSDoc poupa você do esforço de editar manualmente o arquivo de metadados JSON.
+Quando uma função personalizada do Excel é gravada em JavaScript ou em TypeScript, as [marcações JSDoc](https://jsdoc.app/) são usadas para fornecer informações adicionais sobre a função personalizada. As marcações JSDoc são usadas no momento da criação para criar o [arquivo de metadados JSON](custom-functions-json.md). O uso de marcações JSDoc poupa você do esforço de editar manualmente o arquivo de metadados JSON.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -66,11 +66,9 @@ Uma função não pode ter as tags `@cancelable` e `@streaming` ao mesmo tempo.
 
 Sintaxe: @customfunction _id_ _nome_
 
-Especifique esta marcação para tratar a função JavaScript/TypeScript como uma função personalizada do Excel. 
+Especifique esta marcação para tratar a função JavaScript/TypeScript como uma função personalizada do Excel.
 
 Essa marcação é necessária para criar metadados para a função personalizada.
-
-Também deve haver uma chamada para `CustomFunctions.associate("id", functionName);`
 
 O exemplo a seguir mostra a maneira mais simples de declarar uma função personalizada.
 
@@ -222,7 +220,7 @@ function add(first: number, second: number): number {
 
 Indica que o endereço da célula onde a função está sendo avaliada deve ser fornecido.
 
-O último parâmetro da função deve ser do tipo `CustomFunctions.Invocation` ou de um tipo derivado. Quando a função é chamada, a propriedade `address` conterá o endereço. Para obter um exemplo de uma função que usa `@requiresAddress` a marca, [Confira o parâmetro contexto](./custom-functions-parameter-options.md#addressing-cells-context-parameter)da célula de endereçamento.
+O último parâmetro da função deve ser do tipo `CustomFunctions.Invocation` ou de um tipo derivado. Quando a função é chamada, a propriedade `address` conterá o endereço. Para obter um exemplo de uma função que usa `@requiresAddress` a marca, [Confira o parâmetro contexto](custom-functions-parameter-options.md#addressing-cells-context-parameter)da célula de endereçamento.
 
 ---
 ### <a name="returns"></a>@returns
@@ -297,7 +295,7 @@ Um valor pode ser representado usando um dos seguintes tipos: `boolean``number``
 
 ### <a name="matrix-type"></a>Tipo de matriz
 
-Use um tipo de matriz bidimensional para que o parâmetro ou valor de retorno seja uma matriz de valores. Por exemplo, o tipo `number[][]` indica uma matriz de números. `string[][]` indica uma matriz de cadeias de caracteres. 
+Use um tipo de matriz bidimensional para que o parâmetro ou valor de retorno seja uma matriz de valores. Por exemplo, o tipo `number[][]` indica uma matriz de números. `string[][]` indica uma matriz de cadeias de caracteres.
 
 ### <a name="error-type"></a>Tipo de erro
 
@@ -319,5 +317,4 @@ Saiba mais sobre [convenções de nomenclatura para funções personalizadas](cu
 ## <a name="see-also"></a>Confira também
 
 * [Metadados de funções personalizadas](custom-functions-json.md)
-* [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
 * [Criar funções personalizadas no Excel](custom-functions-overview.md)

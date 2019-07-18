@@ -5,19 +5,19 @@ Conclua as etapas a seguir para iniciar o servidor da web local e fazer o sidelo
 > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
 
 > [!TIP]
-> Se você estiver testando o seu suplemento no Mac, execute o seguinte comando antes de continuar. Quando você executa este comando, o servidor Web local iniciará.
+> Se você estiver testando o seu suplemento no Mac, execute o seguinte comando antes de continuar. O servidor Web local é iniciado quando este comando é executado.
 >
 > ```command&nbsp;line
 > npm run dev-server
 > ```
 
-- Para testar o seu suplemento no Excel, execute o seguinte comando no diretório raiz do projeto. Quando você executar este comando, o servidor Web local será iniciado (se ainda não estiver em execução) e o Excel será aberto com o seu suplemento carregado.
+- Para testar o seu suplemento no Excel, execute o seguinte comando no diretório raiz do projeto. Isso inicia o servidor Web local (caso ainda não esteja em execução) e abre o Excel com o suplemento carregado.
 
     ```command&nbsp;line
     npm start
     ```
 
-- Para testar seu suplemento no Excel em um navegador, execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).
+- Para testar o seu suplemento no Excel em um navegador, execute o seguinte comando no diretório raiz do projeto. Quando você executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).
 
     ```command&nbsp;line
     npm run start:web

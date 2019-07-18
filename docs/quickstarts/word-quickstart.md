@@ -1,15 +1,15 @@
 ---
 title: Crie seu primeiro suplemento do painel de tarefas do Word
-description: ''
-ms.date: 06/20/2019
+description: Saiba como criar um suplemento do painel de tarefas do Word simples usando a API JS do Office.
+ms.date: 07/17/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 24b6dd035ae25f97f08e3b8e68154a1f4a1a1769
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 9f3c345257bb222e2fdf1aab0b558442d830e89a
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128570"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771812"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do Word
 
@@ -21,7 +21,76 @@ Neste artigo, você aprenderá sobre o processo de criação de um suplemento do
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+# <a name="yeoman-generatortabyeomangenerator"></a>[Gerador do Yeoman](#tab/yeomangenerator)
+
+### <a name="prerequisites"></a>Pré-requisitos
+
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
+
+### <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
+
+Use o gerador Yeoman para criar um projeto de suplemento do Word. Execute o comando a seguir e responda aos prompts da seguinte forma:
+
+```command&nbsp;line
+yo office
+```
+
+- **Escolha o tipo de projeto:** `Office Add-in Task Pane project`
+- **Escolha o tipo de script:** `Javascript`
+- **Qual será o nome do suplemento?** `My Office Add-in`
+- **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Word`
+
+![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-word.png)
+
+Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
+
+### <a name="explore-the-project"></a>Explore o projeto
+
+[!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-js.md)]
+
+### <a name="try-it-out"></a>Experimente
+
+1. Navegue até a pasta raiz do projeto.
+
+    ```command&nbsp;line
+    cd "My Office Add-in"
+    ```
+
+2. Conclua as etapas a seguir para iniciar o servidor da Web local e fazer o sideload do seu suplemento.
+
+    > [!NOTE]
+    > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
+
+    > [!TIP]
+    > Se você estiver testando o seu suplemento no Mac, execute o seguinte comando antes de continuar. O servidor Web local é iniciado quando este comando é executado.
+    >
+    > ```command&nbsp;line
+    > npm run dev-server
+    > ```
+
+    - Para testar seu suplemento no Word, execute o seguinte comando no diretório raiz do seu projeto. Isso inicia o servidor Web local (caso ainda não esteja em execução) e abre o Word com o suplemento carregado.
+
+        ```command&nbsp;line
+        npm start
+        ```
+
+    - Para testar seu suplemento no Word em um navegador, execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor Web local será iniciado (se ainda não estiver em execução).
+
+        ```command&nbsp;line
+        npm run start:web
+        ```
+
+        Para usar o seu suplemento, abra um novo documento no Word na Web e em seguida realize o sideload no suplemento de acordo com as instruções em [Realizar Sideload nos Suplementos do Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
+
+3. No Word, abra um novo documento, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
+
+    ![Uma captura de tela do aplicativo Word com o botão Mostrar Painel de Tarefas realçado](../images/word-quickstart-addin-2b.png)
+
+4. Na parte inferior do painel de tarefas, escolha o link **Executar** para inserir o texto «Olá, Mundo» no documento com a fonte azul.
+
+    ![Captura de tela do aplicativo Word com o suplemento do painel de tarefas carregado](../images/word-quickstart-addin-1c.png)
+
+# <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)
 
 ### <a name="prerequisites"></a>Pré-requisitos
 
@@ -81,7 +150,7 @@ Neste artigo, você aprenderá sobre o processo de criação de um suplemento do
             $(document).ready(function () {
                 // The document is ready
                 // Use this to check whether the API is supported in the Word client.
-                if (Office.context.requirements.isSetSupported('WordApi', 1.1)) {
+                if (Office.context.requirements.isSetSupported('WordApi', '1.1')) {
                     // Do something that is only available via the new APIs
                     $('#emerson').click(insertEmersonQuoteAtSelection);
                     $('#checkhov').click(insertChekhovQuoteAtTheBeginning);
@@ -232,75 +301,6 @@ Neste artigo, você aprenderá sobre o processo de criação de um suplemento do
 3. No painel de tarefas, escolha qualquer um dos botões para adicionar o texto clichê ao documento.
 
     ![Captura de tela do aplicativo Word com o suplemento de texto clichê carregado](../images/word-quickstart-addin-1b.png)
-
-# <a name="any-editortabvisual-studio-code"></a>[Qualquer editor](#tab/visual-studio-code)
-
-### <a name="prerequisites"></a>Pré-requisitos
-
-[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
-
-### <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
-
-1. Use o gerador Yeoman para criar um projeto de suplemento do Word. Execute o comando a seguir e responda aos prompts da seguinte forma:
-
-    ```command&nbsp;line
-    yo office
-    ```
-
-    - **Escolha o tipo de projeto:** `Office Add-in Task Pane project`
-    - **Escolha o tipo de script:** `Javascript`
-    - **Qual será o nome do suplemento?** `My Office Add-in`
-    - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Word`
-
-    ![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-word.png)
-
-    Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
-
-2. Navegue até a pasta raiz do projeto.
-
-    ```command&nbsp;line
-    cd "My Office Add-in"
-    ```
-
-### <a name="explore-the-project"></a>Explore o projeto
-
-[!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-js.md)]
-
-### <a name="try-it-out"></a>Experimente
-
-1. Conclua as etapas a seguir para iniciar o servidor da web local e fazer o sideload do seu suplemento.
-
-    > [!NOTE]
-    > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
-
-    > [!TIP]
-    > Se você estiver testando o seu suplemento no Mac, execute o seguinte comando antes de continuar. Quando você executar este comando, o servidor Web local será iniciado.
-    >
-    > ```command&nbsp;line
-    > npm run dev-server
-    > ```
-
-    - Para testar seu suplemento no Word, execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor Web local será iniciado (se ainda não estiver em execução) e o Word será aberto com o suplemento carregado.
-
-        ```command&nbsp;line
-        npm start
-        ```
-
-    - Para testar seu suplemento no Word em um navegador, execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor Web local será iniciado (se ainda não estiver em execução).
-
-        ```command&nbsp;line
-        npm run start:web
-        ```
-
-        Para usar o seu suplemento, abra um novo documento no Word na Web e em seguida realize o sideload no suplemento de acordo com as instruções em [Realizar Sideload nos Suplementos do Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
-
-2. No Word, abra um novo documento, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
-
-    ![Uma captura de tela do aplicativo Word com o botão Mostrar Painel de Tarefas realçado](../images/word-quickstart-addin-2b.png)
-
-3. Na parte inferior do painel de tarefas, escolha o link **Executar** para inserir o texto «Olá, Mundo» no documento com a fonte azul.
-
-    ![Captura de tela do aplicativo Word com o suplemento do painel de tarefas carregado](../images/word-quickstart-addin-1c.png)
 
 ---
 

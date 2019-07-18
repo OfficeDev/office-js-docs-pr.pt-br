@@ -4,12 +4,12 @@ description: ''
 ms.date: 05/08/2019
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 7a7c907eeeb85b2a686c49ebba0558f4ec20568d
-ms.sourcegitcommit: b299b8a5dfffb6102cb14b431bdde4861abfb47f
+ms.openlocfilehash: ccc243b17b25dbdf4142e4a11086df78ef4a2670
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "34589206"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771734"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>Crie o seu primeiro suplemento do painel de tarefas do Project
 
@@ -23,26 +23,20 @@ Neste artigo, você passará pelo processo de criação de um suplemento do pain
 
 ## <a name="create-the-add-in"></a>Criar o suplemento
 
-1. Use o gerador Yeoman para criar um projeto de suplemento do Project. Execute o comando a seguir e responda aos prompts da seguinte forma:
+Use o gerador Yeoman para criar um projeto de suplemento do Project. Execute o comando a seguir e responda aos prompts da seguinte forma:
 
-    ```command&nbsp;line
-    yo office
-    ```
+```command&nbsp;line
+yo office
+```
 
-    - **Escolha o tipo de projeto:** `Office Add-in Task Pane project`
-    - **Escolha o tipo de script:** `Javascript`
-    - **Qual será o nome do suplemento?** `My Office Add-in`
-    - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Project`
+- **Escolha o tipo de projeto:** `Office Add-in Task Pane project`
+- **Escolha o tipo de script:** `Javascript`
+- **Qual será o nome do suplemento?** `My Office Add-in`
+- **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Project`
 
-    ![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-project.png)
-    
-    Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
-    
-2. Navegue até a pasta raiz do projeto.
+![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-project.png)
 
-    ```command&nbsp;line
-    cd "My Office Add-in"
-    ```
+Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
 ## <a name="explore-the-project"></a>Explore o projeto
 
@@ -97,22 +91,30 @@ Office.context.document.getSelectedTaskAsync(
 
 ## <a name="try-it-out"></a>Experimente
 
-> [!NOTE]
-> Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se for solicitado a instalação de um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
+1. Navegue até a pasta raiz do projeto.
 
-1. Execute o seguinte comando no diretório raiz do seu projeto. O servidor Web local é iniciado quando este comando é executado.
+    ```command&nbsp;line
+    cd "My Office Add-in"
+    ```
+
+2. Inicie o servidor Web local.
+
+    > [!NOTE]
+    > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se for solicitado a instalação de um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
+
+    Execute o seguinte comando no diretório raiz do seu projeto. O servidor Web local é iniciado quando este comando é executado.
 
     ```command&nbsp;line
     npm start
     ```
 
-2. Em Project, crie um plano de projeto simples.
+3. Em Project, crie um plano de projeto simples.
 
-3. Carregue seu suplemento no Project seguindo as instruções em [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
+4. Carregue seu suplemento no Project seguindo as instruções em [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
 
-4. Selecione uma única tarefa dentro do projeto.
+5. Selecione uma única tarefa dentro do projeto.
 
-5. Na parte inferior do painel de tarefas, escolha o link **Executar** para renomear a tarefa selecionada e adicionar anotações à tarefa selecionada.
+6. Na parte inferior do painel de tarefas, escolha o link **Executar** para renomear a tarefa selecionada e adicionar anotações à tarefa selecionada.
 
     ![Captura de tela do aplicativo Project com o suplemento do painel de tarefas carregado](../images/project-quickstart-addin-1.png)
 
