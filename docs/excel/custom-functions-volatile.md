@@ -1,28 +1,28 @@
 ---
-ms.date: 06/17/2019
+ms.date: 07/15/2019
 description: Saiba como implementar funções personalizadas de streaming volátil e offline.
 title: Valores voláteis nas funções
 localization_priority: Normal
-ms.openlocfilehash: bcaef092ec386a7d80760c1e2a567b9de1fdad21
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 92d61aff4c3f4b4cbc79a3981db12ed1ce0ffb9d
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127812"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771643"
 ---
-# <a name="volatile-values-in-functions"></a><span data-ttu-id="86c40-103">Valores voláteis nas funções</span><span class="sxs-lookup"><span data-stu-id="86c40-103">Volatile values in functions</span></span>
+# <a name="volatile-values-in-functions"></a><span data-ttu-id="e4217-103">Valores voláteis nas funções</span><span class="sxs-lookup"><span data-stu-id="e4217-103">Volatile values in functions</span></span>
 
-<span data-ttu-id="86c40-104">Funções voláteis são funções nas quais o valor muda sempre que a célula é calculada.</span><span class="sxs-lookup"><span data-stu-id="86c40-104">Volatile functions are functions in which the value changes each time the cell is calculated.</span></span> <span data-ttu-id="86c40-105">O valor pode ser alterado mesmo se nenhum argumento da função for alterado.</span><span class="sxs-lookup"><span data-stu-id="86c40-105">The value can change even if none of the function's arguments change.</span></span> <span data-ttu-id="86c40-106">Essas funções são recalculadas sempre que o Excel recalcular.</span><span class="sxs-lookup"><span data-stu-id="86c40-106">These functions recalculate every time Excel recalculates.</span></span> <span data-ttu-id="86c40-107">Por exemplo, imagine uma célula que chame a função `NOW`.</span><span class="sxs-lookup"><span data-stu-id="86c40-107">For example, imagine a cell that calls the function `NOW`.</span></span> <span data-ttu-id="86c40-108">Toda vez que `NOW` for chamado, retornará automaticamente a data e a hora atuais.</span><span class="sxs-lookup"><span data-stu-id="86c40-108">Every time `NOW` is called, it will automatically return the current date and time.</span></span>
+<span data-ttu-id="e4217-104">Funções voláteis são funções nas quais o valor muda sempre que a célula é calculada.</span><span class="sxs-lookup"><span data-stu-id="e4217-104">Volatile functions are functions in which the value changes each time the cell is calculated.</span></span> <span data-ttu-id="e4217-105">O valor pode ser alterado mesmo se nenhum argumento da função for alterado.</span><span class="sxs-lookup"><span data-stu-id="e4217-105">The value can change even if none of the function's arguments change.</span></span> <span data-ttu-id="e4217-106">Essas funções são recalculadas sempre que o Excel recalcular.</span><span class="sxs-lookup"><span data-stu-id="e4217-106">These functions recalculate every time Excel recalculates.</span></span> <span data-ttu-id="e4217-107">Por exemplo, imagine uma célula que chame a função `NOW`.</span><span class="sxs-lookup"><span data-stu-id="e4217-107">For example, imagine a cell that calls the function `NOW`.</span></span> <span data-ttu-id="e4217-108">Toda vez que `NOW` for chamado, retornará automaticamente a data e a hora atuais.</span><span class="sxs-lookup"><span data-stu-id="e4217-108">Every time `NOW` is called, it will automatically return the current date and time.</span></span>
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-<span data-ttu-id="86c40-109">O Excel contém várias funções voláteis internas, como `RAND` e `TODAY`.</span><span class="sxs-lookup"><span data-stu-id="86c40-109">Excel contains several built-in volatile functions, such as `RAND` and `TODAY`.</span></span> <span data-ttu-id="86c40-110">Para ver uma lista mais completa de funções voláteis do Excel, confira [Funções voláteis e não voláteis](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).</span><span class="sxs-lookup"><span data-stu-id="86c40-110">For a comprehensive list of Excel’s volatile functions, see [Volatile and Non-Volatile Functions](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).</span></span>
+<span data-ttu-id="e4217-109">O Excel contém várias funções voláteis internas, como `RAND` e `TODAY`.</span><span class="sxs-lookup"><span data-stu-id="e4217-109">Excel contains several built-in volatile functions, such as `RAND` and `TODAY`.</span></span> <span data-ttu-id="e4217-110">Para ver uma lista mais completa de funções voláteis do Excel, confira [Funções voláteis e não voláteis](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).</span><span class="sxs-lookup"><span data-stu-id="e4217-110">For a comprehensive list of Excel’s volatile functions, see [Volatile and Non-Volatile Functions](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).</span></span>
 
-<span data-ttu-id="86c40-111">As funções personalizadas permitem que você crie suas próprias funções voláteis, o que pode ser útil ao lidar com datas, horas, números aleatórios e modelagem.</span><span class="sxs-lookup"><span data-stu-id="86c40-111">Custom functions allow you to create your own volatile functions, which may be useful when handling dates, times, random numbers, and modeling.</span></span> <span data-ttu-id="86c40-112">Por exemplo, as simulações do [Monte Carlo](https://en.wikipedia.org/wiki/Monte_Carlo_method) exigem a geração de entradas aleatórias para determinar uma solução ideal.</span><span class="sxs-lookup"><span data-stu-id="86c40-112">For example, [Monte Carlo simulations](https://en.wikipedia.org/wiki/Monte_Carlo_method) require the generation of random inputs to determine an optimal solution.</span></span>
+<span data-ttu-id="e4217-111">As funções personalizadas permitem que você crie suas próprias funções voláteis, o que pode ser útil ao lidar com datas, horas, números aleatórios e modelagem.</span><span class="sxs-lookup"><span data-stu-id="e4217-111">Custom functions allow you to create your own volatile functions, which may be useful when handling dates, times, random numbers, and modeling.</span></span> <span data-ttu-id="e4217-112">Por exemplo, as simulações do [Monte Carlo](https://en.wikipedia.org/wiki/Monte_Carlo_method) exigem a geração de entradas aleatórias para determinar uma solução ideal.</span><span class="sxs-lookup"><span data-stu-id="e4217-112">For example, [Monte Carlo simulations](https://en.wikipedia.org/wiki/Monte_Carlo_method) require the generation of random inputs to determine an optimal solution.</span></span>
 
-<span data-ttu-id="86c40-113">Se escolher gerar automaticamente o arquivo JSON, declare uma função volátil com a marca `@volatile`de comentário JSDOC.</span><span class="sxs-lookup"><span data-stu-id="86c40-113">If choosing to autogenerate your JSON file, declare a volatile function with the JSDOC comment tag `@volatile`.</span></span> <span data-ttu-id="86c40-114">Para obter mais informações sobre a autogeração, consulte [criar metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md).</span><span class="sxs-lookup"><span data-stu-id="86c40-114">From more information on autogeneration, see [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md).</span></span>
+<span data-ttu-id="e4217-113">Se escolher gerar automaticamente o arquivo JSON, declare uma função volátil com a marca `@volatile`de comentário JSDoc.</span><span class="sxs-lookup"><span data-stu-id="e4217-113">If choosing to autogenerate your JSON file, declare a volatile function with the JSDoc comment tag `@volatile`.</span></span> <span data-ttu-id="e4217-114">Para obter mais informações sobre a autogeração, consulte [criar metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md).</span><span class="sxs-lookup"><span data-stu-id="e4217-114">From more information on autogeneration, see [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md).</span></span>
 
-<span data-ttu-id="86c40-115">Um exemplo de uma função personalizada volátil segue, que simula a transferência de um ou mais de seis lados.</span><span class="sxs-lookup"><span data-stu-id="86c40-115">An example of a volatile custom function follows, which simulates rolling a six-sided dice.</span></span>
+<span data-ttu-id="e4217-115">Um exemplo de uma função personalizada volátil segue, que simula a transferência de um ou mais de seis lados.</span><span class="sxs-lookup"><span data-stu-id="e4217-115">An example of a volatile custom function follows, which simulates rolling a six-sided dice.</span></span>
 
 ```JS
 /**
@@ -35,11 +35,11 @@ function roll6sided(): number {
 }
 ```
 
-## <a name="next-steps"></a><span data-ttu-id="86c40-116">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="86c40-116">Next steps</span></span>
-<span data-ttu-id="86c40-117">Saiba como [salvar o estado em suas funções personalizadas](custom-functions-save-state.md).</span><span class="sxs-lookup"><span data-stu-id="86c40-117">Learn how to [save state in your custom functions](custom-functions-save-state.md).</span></span>
+## <a name="next-steps"></a><span data-ttu-id="e4217-116">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="e4217-116">Next steps</span></span>
+<span data-ttu-id="e4217-117">Saiba como [salvar o estado em suas funções personalizadas](custom-functions-save-state.md).</span><span class="sxs-lookup"><span data-stu-id="e4217-117">Learn how to [save state in your custom functions](custom-functions-save-state.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="86c40-118">Confira também</span><span class="sxs-lookup"><span data-stu-id="86c40-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e4217-118">Confira também</span><span class="sxs-lookup"><span data-stu-id="e4217-118">See also</span></span>
 
-* [<span data-ttu-id="86c40-119">Opções de parâmetros de funções personalizadas</span><span class="sxs-lookup"><span data-stu-id="86c40-119">Custom functions parameter options</span></span>](custom-functions-parameter-options.md)
-* [<span data-ttu-id="86c40-120">Metadados de funções personalizadas</span><span class="sxs-lookup"><span data-stu-id="86c40-120">Custom functions metadata</span></span>](custom-functions-json.md)
-* [<span data-ttu-id="86c40-121">Criar funções personalizadas no Excel</span><span class="sxs-lookup"><span data-stu-id="86c40-121">Create custom functions in Excel</span></span>](custom-functions-overview.md)
+* [<span data-ttu-id="e4217-119">Opções de parâmetros de funções personalizadas</span><span class="sxs-lookup"><span data-stu-id="e4217-119">Custom functions parameter options</span></span>](custom-functions-parameter-options.md)
+* [<span data-ttu-id="e4217-120">Metadados de funções personalizadas</span><span class="sxs-lookup"><span data-stu-id="e4217-120">Custom functions metadata</span></span>](custom-functions-json.md)
+* [<span data-ttu-id="e4217-121">Criar funções personalizadas no Excel</span><span class="sxs-lookup"><span data-stu-id="e4217-121">Create custom functions in Excel</span></span>](custom-functions-overview.md)
