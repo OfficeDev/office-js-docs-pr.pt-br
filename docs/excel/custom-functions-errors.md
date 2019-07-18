@@ -3,12 +3,12 @@ ms.date: 06/18/2019
 description: Lide com erros nas funções personalizadas do Excel.
 title: Tratamento de erros para funções personalizadas no Excel
 localization_priority: Priority
-ms.openlocfilehash: 3818d33121ed26bb7d65c56bf6c504f2fb049c72
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 30c83ea930b16e717b48b9c02ffa0e278eb78b36
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127916"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771572"
 ---
 # <a name="error-handling-within-custom-functions"></a>Tratamento de erros nas funções personalizadas
 
@@ -46,5 +46,5 @@ Saiba como [solucionar problemas com as suas funções personalizadas](custom-fu
 ## <a name="see-also"></a>Confira também
 
 * [Depuração de funções personalizadas](custom-functions-debugging.md)
-* [Requisitos de funções personalizadas](custom-functions-requirements.md)
+* [Requisitos de funções personalizadas](custom-functions-requirement-sets.md)
 * [Criar funções personalizadas no Excel](custom-functions-overview.md)

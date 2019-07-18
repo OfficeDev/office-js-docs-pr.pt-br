@@ -1,14 +1,14 @@
 ---
-ms.date: 06/27/2019
+ms.date: 07/10/2019
 description: Solicite, transmita e cancele o fluxo de dados externos para sua pasta de trabalho com funções personalizadas no Excel
 title: Receber e tratar dados com funções personalizadas
 localization_priority: Priority
-ms.openlocfilehash: 42281b8a98b1172ba32b1525176fd8cadd0f094c
-ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
+ms.openlocfilehash: 1e73898b068ba4ae2d49db7e8de17d5cd8883b24
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "35617048"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771509"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>Receber e tratar dados com funções personalizadas
 
@@ -47,8 +47,6 @@ function webRequest() {
       })
   })
 }
-
-CustomFunctions.associate("WEBREQUEST", webRequest);
 ```
 
 >[!NOTE]
@@ -130,7 +128,6 @@ function increment(incrementBy, invocation) {
     clearInterval(timer);
   };
 }
-CustomFunctions.associate("INC", increment);
 ```
 
 Além de conhecer o `onCanceled` retorno de chamada, você também deve saber se o Excel cancela a execução de uma função nas seguintes situações:
@@ -181,6 +178,5 @@ ws.onerror(error){
 - [Criar metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md)
 - [Metadados de funções personalizadas](custom-functions-json.md)
 - [Tempo de execução de funções personalizadas do Excel](custom-functions-runtime.md)
-- [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
 - [Criar funções personalizadas no Excel](custom-functions-overview.md)
 - [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)

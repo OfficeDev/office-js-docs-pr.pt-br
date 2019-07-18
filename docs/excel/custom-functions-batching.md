@@ -1,14 +1,14 @@
 ---
-ms.date: 06/17/2019
+ms.date: 07/10/2019
 description: Reúna as funções personalizadas em lotes para reduzir as chamadas de rede para um serviço remoto.
 title: Enviando em lote chamadas de função personalizada para um serviço remoto
 localization_priority: Priority
-ms.openlocfilehash: aa1b9c956c0f54a4d59e49ca157dd67c8349b143
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 185e6434f963a6dbcc4eefbcb8bbee4d922662e6
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127937"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771394"
 ---
 # <a name="batching-custom-function-calls-for-a-remote-service"></a>Enviando em lote chamadas de função personalizada para um serviço remoto
 
@@ -56,8 +56,6 @@ function div2(dividend: number, divisor: number) {
     [dividend, divisor]
   );
 }
-
-CustomFunctions.associate("DIV2", div2);
 ```
 
 Em seguida, você definirá a matriz de lotes que armazenará todas as operações a serem passadas em uma chamada de rede. O código a seguir mostra como definir uma interface descrevendo cada entrada de lote na matriz. A interface define uma operação, que é um nome de cadeia de caracteres da operação a ser executada. Por exemplo, se você tivesse duas funções personalizadas nomeadas `multiply` e `divide`, você poderia reutilizá-las como nomes de operações em suas entradas de lote. `args` manterá os argumentos que foram passados para sua função personalizada do Excel. E, finalmente, `resolve` ou `reject` armazenarão uma promessa contendo as informações que o serviço remoto retorna.
@@ -223,6 +221,5 @@ Saiba mais sobre [os vários parâmetros](custom-functions-parameter-options.md)
 ## <a name="see-also"></a>Confira também
 
 * [Valores voláteis nas funções](custom-functions-volatile.md)
-* [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md)
 * [Criar funções personalizadas no Excel](custom-functions-overview.md)
 * [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)

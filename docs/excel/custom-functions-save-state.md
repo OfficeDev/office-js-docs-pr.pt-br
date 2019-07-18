@@ -1,14 +1,14 @@
 ---
-ms.date: 06/20/2019
+ms.date: 07/10/2019
 description: Use `OfficeRuntime.storage` para salvar o estado com funções personalizadas.
 title: Salvar e compartilhar o estado em funções personalizadas
 localization_priority: Priority
-ms.openlocfilehash: c6689393e5d118c779b7b261b0de04ead56aff83
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: a1b70433ef0c00d507175b32fc12603ff3de1e3f
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127832"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771586"
 ---
 # <a name="save-and-share-state-in-custom-functions"></a>Salvar e compartilhar o estado em funções personalizadas
 
@@ -37,9 +37,6 @@ function storeValue(key, value) {
 function GetValue(key) {
   return OfficeRuntime.storage.getItem(key);
 }
-
-CustomFunctions.associate("STOREVALUE", StoreValue);
-CustomFunctions.associate("GETVALUE", GetValue);
 ```
 
 [Um exemplo de código mais detalhado no GitHub](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage) fornece um exemplo de passagem destas informações para o painel de tarefas.
@@ -54,6 +51,5 @@ Saiba como [gerar automaticamente os metadados JSON para as suas funções perso
 
 * [Metadados de funções personalizadas](custom-functions-json.md)
 * [Tempo de execução de funções personalizadas do Excel](custom-functions-runtime.md)
-* [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
 * [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)
 * [Depuração de funções personalizadas](custom-functions-debugging.md)
