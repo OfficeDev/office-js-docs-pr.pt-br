@@ -1,14 +1,14 @@
 ---
-ms.date: 06/18/2019
+ms.date: 07/10/2019
 description: Saiba mais sobre os nomes de funções personalizadas do Excel e evite armadilhas comuns de nomeação.
 title: Diretrizes de nomenclatura para funções personalizadas no Excel
 localization_priority: Normal
-ms.openlocfilehash: 18858c45224b833c099c021920ff3d568ad2b3c3
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 79d0bfb069fe5abefeb6d0e88428d0728f3869e3
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128308"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771530"
 ---
 # <a name="naming-guidelines"></a>Diretrizes de nomenclatura
 
@@ -63,6 +63,5 @@ Saiba mais sobre [as práticas recomendadas de tratamento de erros](custom-funct
 ## <a name="see-also"></a>Confira também
 
 * [Metadados de funções personalizadas](custom-functions-json.md)
-* [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
 * [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)
 * [Tempo de execução de funções personalizadas do Excel](custom-functions-runtime.md)

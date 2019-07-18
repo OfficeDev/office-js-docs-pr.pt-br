@@ -3,12 +3,12 @@ ms.date: 05/08/2019
 description: Entenda os principais cenários de desenvolvimento de funções personalizadas do Excel que usam o novo tempo de execução do JavaScript.
 title: Tempo de execução de funções personalizadas do Excel
 localization_priority: Normal
-ms.openlocfilehash: bc8635e370a7b48af07bc169c2d2334ef0fba8ef
-ms.sourcegitcommit: a99be9c4771c45f3e07e781646e0e649aa47213f
+ms.openlocfilehash: e0246170bc80ec63705031cb32a36b5033d42f3a
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "33951974"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771387"
 ---
 # <a name="runtime-for-excel-custom-functions"></a>Tempo de execução de funções personalizadas do Excel
 
@@ -118,7 +118,7 @@ function StoreValue(key, value) {
 Para criar um suplemento que será executado em várias plataformas (um dos principais locatários de Suplementos do Office), você não deve acessar o DOM (Modelo de Objeto do Documento) em funções personalizadas nem usar bibliotecas, como a jQuery, que dependem do DOM. No Excel no Windows, onde as funções personalizadas usam o tempo de execução do JavaScript, as funções personalizadas não podem acessar o DOM.
 
 ## <a name="next-steps"></a>Próximas etapas
-Saiba algumas [práticas recomendadas essenciais para funções personalizadas](custom-functions-best-practices.md).
+Saiba como [realizar solicitações da Web com funções personalizadas](custom-functions-web-reqs.md).
 
 ## <a name="see-also"></a>Confira também
 

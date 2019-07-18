@@ -3,12 +3,12 @@ title: Elemento IconUrl no arquivo de manifesto
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: d4451409a457fa5522e27ab5efd203b9c37a2052
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 44992a3c5f9ceba55b09f4b14e36b5b2935ee669
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127552"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771797"
 ---
 # <a name="iconurl-element"></a>Elemento IconUrl
 
@@ -34,7 +34,7 @@ Especifica a URL da imagem que é usada para representar o seu Suplemento do Off
 
 ## <a name="remarks"></a>Comentários
 
-Para **** > um suplemento de email, o ícone é exibido na interface do usuário**gerenciar suplementos** (Outlook) ou **configurações** > **gerenciar suplemento** (Outlook na Web). Para um suplemento de conteúdo ou de painel de tarefas, o ícone é exibido na interface de usuário **Inserir** > **Suplementos**. Se você publicar o seu suplemento na Office Store, o ícone também será usado no site da Office Store para todos os tipos de suplementos.
+Para **** > um suplemento de email, o ícone é exibido na interface do usuário**gerenciar suplementos** (Outlook) ou **configurações** > **gerenciar suplemento** (Outlook na Web). Para um suplemento de conteúdo ou de painel de tarefas, o ícone é exibido na interface de usuário **Inserir** > **Suplementos**. Para todos os tipos de suplemento, o ícone também é usado no [AppSource](https://appsource.microsoft.com), se você publicar o suplemento no AppSource.
 
 A imagem deve estar em um dos seguintes formatos: GIF, JPG, PNG, EXIF, BMP ou TIFF. Para aplicativos de conteúdo e de painel de tarefas, a imagem especificada deve ter 32 x 32 pixels. Para aplicativos de email, a resolução de imagem recomendada é 64 x 64 pixels. Você também deve especificar um ícone para ser usado com aplicativos host do Office executados em telas de DPI alto que utilizam o elemento [HighResolutionIconUrl](highresolutioniconurl.md). Para saber mais, confira a seção _Criar uma identidade visual consistente para seu aplicativo_ em [Criar listagens eficazes no AppSource e no Office](/office/dev/store/create-effective-office-store-listings#create-a-consistent-visual-identity).
 

@@ -1,14 +1,14 @@
 ---
-ms.date: 06/17/2019
+ms.date: 07/15/2019
 description: Saiba como implementar funções personalizadas de streaming volátil e offline.
 title: Valores voláteis nas funções
 localization_priority: Normal
-ms.openlocfilehash: bcaef092ec386a7d80760c1e2a567b9de1fdad21
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 92d61aff4c3f4b4cbc79a3981db12ed1ce0ffb9d
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127812"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771643"
 ---
 # <a name="volatile-values-in-functions"></a>Valores voláteis nas funções
 
@@ -20,7 +20,7 @@ O Excel contém várias funções voláteis internas, como `RAND` e `TODAY`. Par
 
 As funções personalizadas permitem que você crie suas próprias funções voláteis, o que pode ser útil ao lidar com datas, horas, números aleatórios e modelagem. Por exemplo, as simulações do [Monte Carlo](https://en.wikipedia.org/wiki/Monte_Carlo_method) exigem a geração de entradas aleatórias para determinar uma solução ideal.
 
-Se escolher gerar automaticamente o arquivo JSON, declare uma função volátil com a marca `@volatile`de comentário JSDOC. Para obter mais informações sobre a autogeração, consulte [criar metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md).
+Se escolher gerar automaticamente o arquivo JSON, declare uma função volátil com a marca `@volatile`de comentário JSDoc. Para obter mais informações sobre a autogeração, consulte [criar metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md).
 
 Um exemplo de uma função personalizada volátil segue, que simula a transferência de um ou mais de seis lados.
 

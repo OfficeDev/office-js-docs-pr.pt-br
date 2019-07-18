@@ -16,7 +16,7 @@ Este artigo pressupõe que você esteja usando um editor de texto para criar o s
 
 - Um arquivo de manifesto XML (GetDoc_App.xml) para o suplemento, disponível em uma pasta de rede compartilhada ou catálogo de suplementos. O arquivo de manifesto deve apontar para o local do arquivo HTML mencionado anteriormente.
 
-Também é possível criar um suplemento para o PowerPoint usando o [Visual Studio](../quickstarts/powerpoint-quickstart.md?tabs=visual-studio) ou [qualquer editor](../quickstarts/powerpoint-quickstart.md?tabs=visual-studio-code) ou para o Word usando o [Visual Studio](../quickstarts/word-quickstart.md?tabs=visual-studio) ou [qualquer editor](../quickstarts/word-quickstart.md?tabs=visual-studio-code). 
+Você também pode criar um suplemento para o PowerPoint usando o [Visual Studio](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio) ou o [gerador Yeoman para suplementos do Office](../quickstarts/powerpoint-quickstart.md?tabs=yeomangenerator) ou para o Word usando o [Visual Studio](../quickstarts/word-quickstart.md?tabs=visualstudio) ou o [gerador do Yeoman para suplementos do Office](../quickstarts/word-quickstart.md?tabs=yeomangenerator).
 
 ### <a name="core-concepts-to-know-for-creating-a-task-pane-add-in"></a>Conceitos fundamentais para a criação de um suplemento de painel de tarefas
 

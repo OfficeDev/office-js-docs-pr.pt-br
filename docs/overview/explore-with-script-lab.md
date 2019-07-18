@@ -2,18 +2,18 @@
 title: Explorar a API JavaScript do Office usando o script Lab
 description: Use o script Lab para explorar a API do Office JS e a funcionalidade de protótipo.
 ms.topic: article
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 localization_priority: Normal
-ms.openlocfilehash: b74a7787507aed1970ddcb06d3cb3eb79653615a
-ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
+ms.openlocfilehash: f9f4a644c2d7b188c70142f4dcd2fd85dac035a7
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "35226773"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771853"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>Explorar a API JavaScript do Office usando o script Lab
 
-O [suplemento de laboratório de script](https://store.office.com/app.aspx?assetid=WA104380862), que está disponível gratuitamente na Office Store, permite explorar a API JavaScript do Office enquanto você estiver trabalhando em um programa do Office, como Excel ou Word. O script Lab é uma ferramenta conveniente para adicionar ao seu kit de ferramentas de desenvolvimento conforme você protótipo e verificar a funcionalidade desejada no seu suplemento.
+O [suplemento de laboratório de script](https://appsource.microsoft.com/product/office/WA104380862), que está disponível gratuitamente no AppSource, permite explorar a API JavaScript do Office enquanto você está trabalhando em um programa do Office, como o Excel ou Word. O script Lab é uma ferramenta conveniente para adicionar ao seu kit de ferramentas de desenvolvimento conforme você protótipo e verificar a funcionalidade desejada no seu suplemento.
 
 ## <a name="what-is-script-lab"></a>O que é o script Lab?
 
@@ -29,7 +29,7 @@ O script Lab oferece vários recursos para ajudá-lo a explorar a API JavaScript
 
 ### <a name="explore-samples"></a>Explorar exemplos
 
-Comece rapidamente com uma coleção de trechos de código internos que mostram como concluir determinadas tarefas com a API. Você pode executar os exemplos para ver instantaneamente o resultado no painel de tarefas ou no documento, examinar os exemplos para saber como a API funciona e até mesmo usar trechos de exemplo como base para a funcionalidade de protótipo do seu próprio suplemento.
+Comece rapidamente com uma coleção de trechos de código internos que mostram como concluir tarefas com a API. Você pode executar os exemplos para ver instantaneamente o resultado no painel de tarefas ou no documento, examinar os exemplos para saber como a API funciona, e até mesmo usar exemplos para executar um protótipo do seu próprio suplemento.
 
 ![Exemplos](../images/script-lab-samples.jpg)
 
@@ -62,12 +62,14 @@ O script Lab é compatível com Excel, Word e PowerPoint nos seguintes clientes.
 
 ## <a name="next-steps"></a>Próximas etapas
 
+Para usar o script Lab no Excel, Word ou PowerPoint, instale o [suplemento de laboratório de script](https://appsource.microsoft.com/product/office/WA104380862) do AppSource. 
+
 Você é bem-vindo à expansão da biblioteca de exemplo no laboratório de scripts, contribuindo novos trechos de código para o repositório do GitHub [Office-js-Snippets](https://github.com/OfficeDev/office-js-snippets#office-js-snippets) .
 
-Quando estiver pronto para criar seu suplemento do Office, confira o [início rápido de 5 minutos](/office/dev/add-ins/#5-minute-quick-starts) para seu aplicativo preferido do Office.
+Quando estiver pronto para criar seu primeiro suplemento do Office, experimente o início rápido para [Excel](../quickstarts/excel-quickstart-jquery.md), [Outlook](/outlook/add-ins/quick-start?context=office/dev/add-ins/context), [Word](../quickstarts/word-quickstart.md), [OneNote](../quickstarts/onenote-quickstart.md), [PowerPoint](../quickstarts/powerpoint-quickstart.md)ou [Project](../quickstarts/project-quickstart.md).
 
 ## <a name="see-also"></a>Confira também
 
-- [Obter o laboratório de scripts](https://store.office.com/app.aspx?assetid=WA104380862)
+- [Obter o laboratório de scripts](https://appsource.microsoft.com/product/office/WA104380862)
 - [Saiba mais sobre o script Lab](https://github.com/OfficeDev/script-lab#script-lab-a-microsoft-garage-project)
 - [Inscreva-se no programa dev](https://developer.microsoft.com/office/dev-program)

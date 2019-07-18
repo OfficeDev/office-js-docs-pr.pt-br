@@ -1,14 +1,14 @@
 ---
-ms.date: 07/01/2019
+ms.date: 07/15/2019
 description: Saiba como usar parâmetros diferentes em suas funções personalizadas, como intervalos do Excel, parâmetros opcionais, contexto de invocação e muito mais.
 title: Opções para funções personalizadas do Excel
 localization_priority: Normal
-ms.openlocfilehash: 9416653d697bdf36ca698271e00d9742ff0e75a9
-ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
+ms.openlocfilehash: e5b75b098d64d5998b0393d5995896f0289337fc
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "35617041"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771416"
 ---
 # <a name="custom-functions-parameter-options"></a>Opções de parâmetros de funções personalizadas
 
@@ -25,7 +25,7 @@ Enquanto parâmetros regulares são necessários, os parâmetros opcionais não.
 ```js
 /**
  * Calculates the sum of the specified numbers
- * @customfunction 
+ * @customfunction
  * @param {number} first First number.
  * @param {number} second Second number.
  * @param {number} [third] Third number to add. If omitted, third = 0.
@@ -37,7 +37,6 @@ function add(first, second, third) {
   }
   return first + second + third;
 }
-CustomFunctions.associate("ADD", add);
 ```
 
 #### <a name="typescripttabtypescript"></a>[TypeScript](#tab/typescript)
@@ -45,7 +44,7 @@ CustomFunctions.associate("ADD", add);
 ```typescript
 /**
  * Calculates the sum of the specified numbers
- * @customfunction 
+ * @customfunction
  * @param first First number.
  * @param second Second number.
  * @param [third] Third number to add. If omitted, third = 0.
@@ -57,7 +56,6 @@ function add(first: number, second: number, third?: number): number {
   }
   return first + second + third;
 }
-CustomFunctions.associate("ADD", add);
 ```
 
 ---
@@ -77,8 +75,7 @@ Ao definir uma função que contenha um ou mais parâmetros opcionais, você dev
  * @param {string} [dayOfWeek] Day of the week. If omitted, dayOfWeek = Wednesday.
  * @returns {string} Weather report for the day of the week in that zip code.
  */
-function getWeatherReport(zipCode, dayOfWeek)
-{
+function getWeatherReport(zipCode, dayOfWeek) {
   if (zipCode === null) {
     zipCode = 98052;
   }
@@ -102,8 +99,7 @@ function getWeatherReport(zipCode, dayOfWeek)
  * @param [dayOfWeek] Day of the week. If omitted, dayOfWeek = Wednesday.
  * @returns Weather report for the day of the week in that zip code.
  */
-function getWeatherReport(zipCode?: number, dayOfWeek?: string): string
-{
+function getWeatherReport(zipCode?: number, dayOfWeek?: string): string {
   if (zipCode === null) {
     zipCode = 98052;
   }
@@ -129,25 +125,110 @@ Por exemplo, suponha que sua função retorne o segundo maior valor de um interv
 /**
  * Returns the second highest value in a matrixed range of values.
  * @customfunction
- * @param {number[][]} values Multiple ranges of values.  
+ * @param {number[][]} values Multiple ranges of values.
  */
-function secondHighest(values){
-  let highest = values[0][0], secondHighest = values[0][0];
-  for(var i = 0; i < values.length; i++){
-    for(var j = 0; j < values[i].length; j++){
-      if(values[i][j] >= highest){
+function secondHighest(values) {
+  let highest = values[0][0],
+    secondHighest = values[0][0];
+  for (var i = 0; i < values.length; i++) {
+    for (var j = 0; j < values[i].length; j++) {
+      if (values[i][j] >= highest) {
         secondHighest = highest;
         highest = values[i][j];
-      }
-      else if(values[i][j] >= secondHighest){
+      } else if (values[i][j] >= secondHighest) {
         secondHighest = values[i][j];
       }
     }
   }
   return secondHighest;
 }
-CustomFunctions.associate("SECONDHIGHEST", secondHighest);
 ```
+
+## <a name="repeating-parameters"></a>Parâmetros de repetição
+
+Um parâmetro Repeating permite que o usuário insira uma série de argumentos opcionais para uma função. Quando a função é chamada, os valores são fornecidos em uma matriz para o parâmetro. Se o nome do parâmetro terminar com um número, cada argumento aumentará o número, como `ADD(number1, [number2], [number3],…)`. Isso corresponde à Convenção usada para funções internas do Excel.
+
+A função a seguir soma o total de números, endereços de célula, bem como intervalos, se inserido.
+
+```TS
+/**
+* The sum of all of the numbers.
+* @customfunction
+* @param operands A number (such as 1 or 3.1415), a cell address (such as A1 or $E$11), or a range of cell addresses (such as B3:F12)
+*/
+
+function ADD(operands: number[][][]): number {
+  let total: number = 0;
+
+  operands.forEach(range => {
+    range.forEach(row => {
+      row.forEach(num => {
+        total += num;
+      });
+    });
+  });
+
+  return total;
+}
+```
+
+Essa função é `=CONTOSO.ADD([operands], [operands]...)` mostrada na pasta de trabalho do Excel.
+
+<img alt="The ADD custom function being entered into cell of an Excel worksheet" src="../images/operands.png" />
+
+### <a name="repeating-single-value-parameter"></a>Parâmetro de valor único repetido
+
+Um parâmetro de valor único repetido permite que vários valores únicos sejam passados. Por exemplo, o usuário pode inserir ADD (1, B2, 3). O exemplo a seguir mostra como declarar um parâmetro de valor único.
+
+```JS
+/**
+ * @customfunction
+ * @param {number[]} singleValue An array of numbers that are repeating parameters.
+ */
+function addSingleValue(singleValue) {
+  let total = 0;
+  singleValue.forEach(value => {
+    total += value;
+  })
+
+  return total;
+}
+```
+
+### <a name="single-range-parameter"></a>Parâmetro de intervalo único
+
+Um único parâmetro de intervalo não é tecnicamente um parâmetro de repetição, mas é incluído aqui porque a declaração é muito parecida com os parâmetros de repetição. Ele apareceria para o usuário como ADD (a2: B3), em que um único intervalo é passado do Excel. O exemplo a seguir mostra como declarar um único parâmetro de intervalo.
+
+```JS
+/**
+ * @customfunction
+ * @param {number[][]} singleRange
+ */
+function addSingleRange(singleRange) {
+  let total = 0;
+  singleRange.forEach(setOfSingleValues => {
+    setOfSingleValues.forEach(value => {
+      total += value;
+    })
+  })
+  return total;
+}
+```
+
+### <a name="repeating-range-parameter"></a>Parâmetro de intervalo de repetição
+
+Um parâmetro de intervalo de repetição permite que vários intervalos ou números sejam passados. Por exemplo, o usuário pode inserir ADD (5, B2, C3, 8, E5: E8). Os intervalos de repetição normalmente são especificados com `number[][][]` o tipo, já que são matrizes tridimensionais. Para obter um exemplo, consulte o exemplo principal listado para parâmetros repetidos (#repeating-Parameters).
+
+
+### <a name="declaring-repeating-parameters"></a>Declarando parâmetros de repetição
+No typescript, indique que o parâmetro é multidimensional. Por exemplo, `ADD(values: number[])` indicaria uma matriz unidimensional, `ADD(values:number[][])` indicaria uma matriz bidimensional e assim por diante.
+
+Em JavaScript, use `@param values {number[]}` para matrizes unidimensionais `@param <name> {number[][]}` , para matrizes bidimensionais e assim por diante para mais dimensões.
+
+Para o JSON com autoria, certifique-se de que seu `"repeating": true` parâmetro é especificado como em seu arquivo JSON, bem como Verifique se os parâmetros `"dimensionality”: matrix`estão marcados como.
+
+>[!NOTE]
+>Funções contendo parâmetros repetidos contêm automaticamente um parâmetro de chamada como o último parâmetro. Para obter mais informações sobre parâmetros de chamada, consulte a seção a seguir.
 
 ## <a name="invocation-parameter"></a>Parâmetro de invocação
 
@@ -158,7 +239,7 @@ No exemplo de código a seguir, `invocation` o contexto é explicitamente declar
 ```js
 /**
  * Add two numbers.
- * @customfunction 
+ * @customfunction
  * @param {number} first First number.
  * @param {number} second Second number.
  * @returns {number} The sum of the two (or optionally three) numbers.
@@ -166,7 +247,6 @@ No exemplo de código a seguir, `invocation` o contexto é explicitamente declar
 function add(first, second, invocation) {
   return first + second;
 }
-CustomFunctions.associate("ADD", add);
 ```
 
 O parâmetro permite que você obtenha o contexto da célula de invocação, que pode ser útil em alguns cenários, incluindo [a descoberta do endereço de uma célula que invoque uma função personalizada](#addressing-cells-context-parameter).
@@ -193,18 +273,17 @@ Para solicitar um contexto de uma célula de endereçamento em uma função, voc
 function getAddress(invocation) {
   return invocation.address;
 }
-CustomFunctions.associate("GETADDRESS", getAddress);
 ```
 
 Por padrão, os valores retornados de uma função `getAddress` seguem o formato abaixo: `SheetName!CellNumber`. Por exemplo, se uma função foi chamada de uma planilha nomeada Despesas na célula B2, o valor retornado seria `Expenses!B2`.
 
 ## <a name="next-steps"></a>Próximas etapas
+
 Saiba como [salvar o estado em suas funções personalizadas](custom-functions-save-state.md) ou usar [valores voláteis em suas funções personalizadas](custom-functions-volatile.md).
 
 ## <a name="see-also"></a>Confira também
 
 * [Receber e tratar dados com funções personalizadas](custom-functions-web-reqs.md)
-* [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
 * [Metadados de funções personalizadas](custom-functions-json.md)
 * [Gerar metadados JSON automaticamente para funções personalizadas](custom-functions-json-autogeneration.md)
 * [Criar funções personalizadas no Excel](custom-functions-overview.md)

@@ -5,12 +5,12 @@ ms.date: 06/20/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: afd5d06e08a899d4441da51fc619d86de45e52d3
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 9efbd1380587244fae60551fe104f859d22b4aa2
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35126985"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771881"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Tutorial: criar um suplemento do painel de tarefas no Excel
 
@@ -69,7 +69,7 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
 5. Substitua o `TODO1` pelo código a seguir. O código determina se a versão do Excel do usuário proporciona suporte a uma versão do Excel.js que inclua as APIs com esta série de tutoriais. Em um suplemento de produção, use o corpo do bloco condicional para ocultar ou desabilitar a interface do usuário que chame a APIs sem suporte. Dessa forma, permitirá que o usuário ainda use as partes do suplemento às quais a versão do Excel dá suporte.
 
     ```js
-    if (!Office.context.requirements.isSetSupported('ExcelApi', 1.7)) {
+    if (!Office.context.requirements.isSetSupported('ExcelApi', '1.7')) {
         console.log('Sorry. The tutorial add-in uses Excel.js APIs that are not available in your version of Office.');
     }
     ```
@@ -848,7 +848,7 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
 8. Salve o arquivo.
 
    > [!NOTE]
-   > O arquivo Popup. html e o arquivo Popup. js que ele carrega, são executados em um processo de borda totalmente separado ou Internet Explorer 11 do painel de tarefas do suplemento. Se o popup.js foi transcompilado no mesmo arquivo bundle.js que o arquivo app.js, o suplemento precisará carregar duas cópias do arquivo bundle.js, o que anule o propósito do agrupamento. Além disso, o arquivo Popup. js não contém qualquer JavaScript que não tenha suporte do Internet Explorer 11. Por esses dois motivos, esse suplemento não transcompila o popup.js.
+   > O arquivo Popup. html e o arquivo Popup. js que ele carrega, são executados em um processo do Microsoft Edge ou Internet Explorer 11 totalmente separado do painel de tarefas do suplemento. Se o popup.js foi transcompilado no mesmo arquivo bundle.js que o arquivo app.js, o suplemento precisará carregar duas cópias do arquivo bundle.js, o que anule o propósito do agrupamento. Além disso, o arquivo Popup. js não contém qualquer JavaScript que não tenha suporte do Internet Explorer 11. Por esses dois motivos, esse suplemento não transcompila o popup.js.
 
 ### <a name="open-the-dialog-from-the-task-pane"></a>Abra a caixa de diálogo do painel de tarefas
 

@@ -1,16 +1,16 @@
 ---
 title: Tutorial de funções personalizadas do Excel
 description: Neste tutorial, você criará um suplemento do Excel que contém uma função personalizada que pode executar cálculos e solicitar ou transmitir dados da web.
-ms.date: 06/27/2019
+ms.date: 07/09/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 1aa05581d1b0dfb1f5affa019e51b84126c8d199
-ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
+ms.openlocfilehash: 9e1dc93079a3930fc5ebd88ef4d91ef2b899e51c
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "35454719"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771804"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Tutorial: Criar funções personalizadas no Excel
 
@@ -115,33 +115,30 @@ Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio d
 2. Em **Function. js**, adicione o seguinte código: 
 
 ```JS
- /**
-   * Gets the star count for a given Github repository.
-   * @customfunction 
-   * @param {string} userName string name of Github user or organization.
-   * @param {string} repoName string name of the Github repository.
-   * @return {number} number of stars given to a Github repository.
-   */
-    async function getStarCount(userName, repoName) {
-      try {
-        //You can change this URL to any web request you want to work with.
-        const url = "https://api.github.com/repos/" + userName + "/" + repoName;
-        const response = await fetch(url);
-        //Expect that status code is in 200-299 range
-        if (!response.ok) {
-          throw new Error(response.statusText)
-        }
-          const jsonResponse = await response.json();
-          return jsonResponse.watchers_count;
+/**
+  * Gets the star count for a given Github repository.
+  * @customfunction 
+  * @param {string} userName string name of Github user or organization.
+  * @param {string} repoName string name of the Github repository.
+  * @return {number} number of stars given to a Github repository.
+  */
+  async function getStarCount(userName, repoName) {
+    try {
+      //You can change this URL to any web request you want to work with.
+      const url = "https://api.github.com/repos/" + userName + "/" + repoName;
+      const response = await fetch(url);
+      //Expect that status code is in 200-299 range
+      if (!response.ok) {
+        throw new Error(response.statusText)
       }
-      catch (error) {
-        return error;
-      }
-      }
-    CustomFunctions.associate("GETSTARCOUNT", getStarCount);
+        const jsonResponse = await response.json();
+        return jsonResponse.watchers_count;
+    }
+    catch (error) {
+      return error;
+    }
+  }
 ```
-
-O `CustomFunctions.associate` código associa a `id` da função com o endereço de função da `getStarCount` em JavaScript para que o Excel possa ligar para a função.
 
 3. Execute o seguinte comando para recriar o projeto.
 
@@ -194,8 +191,6 @@ function currentTime() {
   return new Date().toLocaleTimeString();
 }
 
-CustomFunctions.associate("CURRENTTIME", currentTime); 
-
  /**
  * Displays the current time once a second
  * @customfunction
@@ -211,10 +206,7 @@ function clock(invocation) {
     clearInterval(timer);
   };
 }
-CustomFunctions.associate("CLOCK", clock);
 ```
-
-O `CustomFunctions.associate` código associa a `id` da função com o endereço de função da `CLOCK` em JavaScript para que o Excel possa ligar para a função.
 
 2. Execute o seguinte comando para recriar o projeto.
 

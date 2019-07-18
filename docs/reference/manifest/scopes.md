@@ -3,16 +3,16 @@ title: Elemento Scopes no arquivo de manifesto
 description: ''
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 903f7ff68313549234c07926cc63dc7e783ae400
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: cdc9ebeb6fe4167a5ed5e9407f6ecc82d5b8d507
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451938"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771783"
 ---
 # <a name="scopes-element"></a>Elemento Scopes
 
-Contém permissões para o Microsoft Graph de que o suplemento precisa. Este elemento é usado pela Loja do Office para criar uma caixa de diálogo de consentimento. Quando os usuários instalam o suplemento da Office Store, eles são solicitados a conceder ao suplemento permissões especificas para os dados do Microsoft Graph do usuário.
+Contém permissões para o Microsoft Graph de que o suplemento precisa. AppSource usa o elemento escopos para criar uma caixa de diálogo de consentimento. Quando os usuários instalam o suplemento da Office Store, eles são solicitados a conceder ao suplemento permissões especificas para os dados do Microsoft Graph do usuário.
 
 ## <a name="child-elements"></a>Elementos filho
 

@@ -1,21 +1,18 @@
 ---
 title: Trabalhar com formas usando a API JavaScript do Excel
 description: ''
-ms.date: 03/21/2019
+ms.date: 07/19/2019
 localization_priority: Normal
-ms.openlocfilehash: e4d01c387fff01d68cb26369240a1e06e723a54c
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: fb3aa7495efb54332b2ae0bb4dee8b11249afd3a
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448259"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771678"
 ---
-# <a name="work-with-shapes-using-the-excel-javascript-api-preview"></a>Trabalhar com formas usando a API JavaScript do Excel (visualização)
+# <a name="work-with-shapes-using-the-excel-javascript-api"></a>Trabalhar com formas usando a API JavaScript do Excel
 
-> [!NOTE]
-> As APIs abordadas neste artigo atualmente estão disponíveis somente na visualização pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-
-O Excel define formas como qualquer objeto que esteja na camada de desenho do Excel. Isso significa que algo fora de uma célula é uma forma. Este artigo descreve como usar formas geométricas, linhas e imagens em conjunto com as APIs [Shape]/JavaScript/API/Excel/Excel.Shape) [](/javascript/api/excel/excel.shapecollection) e ShapeCollection. Os [gráficos](/javascript/api/excel/excel.chart) são abordados em seus próprios artigos, [trabalhar com gráficos usando a API JavaScript do Excel] (Excel-Add-ins-Charts.MD)).
+O Excel define formas como qualquer objeto que esteja na camada de desenho do Excel. Isso significa que algo fora de uma célula é uma forma. Este artigo descreve como usar formas geométricas, linhas e imagens em conjunto com as APIs [Shape](/javascript/api/excel/excel.shape) e [ShapeCollection](/javascript/api/excel/excel.shapecollection) . Os [gráficos](/javascript/api/excel/excel.chart) são abordados em seu próprio artigo, [trabalhar com gráficos usando a API JavaScript do Excel](excel-add-ins-charts.md).
 
 ## <a name="create-shapes"></a>Criar formas
 
@@ -25,13 +22,13 @@ Os seguintes tipos de formas são adicionados usando o método associado:
 
 | Forma | Add Method | Assinatura |
 |-------|------------|-----------|
-| Forma geoMétrica | [addGeometricShape](/javascript/api/excel/excel.shapecollection#addgeometricshape-geometricshapetype-) | `addGeometricShape(geometricShapeType: Excel.GeometricShapeType): Excel.Shape` |
-| Imagem (JPEG ou PNG) | [addImage](/javascript/api/excel/excel.shapecollection#addimage-base64imagestring-) | `addImage(base64ImageString: string): Excel.Shape` |
+| Forma geométrica | [addGeometricShape](/javascript/api/excel/excel.shapecollection#addgeometricshape-geometricshapetype-) | `addGeometricShape(geometricShapeType: Excel.GeometricShapeType): Excel.Shape` |
+| Imagem (JPEG ou PNG) | [AddImage](/javascript/api/excel/excel.shapecollection#addimage-base64imagestring-) | `addImage(base64ImageString: string): Excel.Shape` |
 | Linha | [addLine](/javascript/api/excel/excel.shapecollection#addline-startleft--starttop--endleft--endtop--connectortype-) | `addLine(startLeft: number, startTop: number, endLeft: number, endTop: number, connectorType?: Excel.ConnectorType): Excel.Shape` |
 | SVG | [addSvg](/javascript/api/excel/excel.shapecollection#addsvg-xml-) | `addSvg(xml: string): Excel.Shape` |
 | Caixa de Texto | [addTextBox](/javascript/api/excel/excel.shapecollection#addtextbox-text-) | `addTextBox(text?: string): Excel.Shape` |
 
-### <a name="geometric-shapes"></a>Formas geoMétricas
+### <a name="geometric-shapes"></a>Formas geométricas
 
 Uma forma geométrica é criada `ShapeCollection.addGeometricShape`com o. Esse método utiliza uma enumeração [GeometricShapeType](/javascript/api/excel/excel.geometricshapetype) como um argumento.
 
@@ -138,7 +135,7 @@ Excel.run(function (context) {
 
 ## <a name="text-in-shapes"></a>Texto em formas
 
-Formas geoMétricas podem conter texto. As formas têm `textFrame` uma propriedade do tipo TextFrame. [](/javascript/api/excel/excel.textframe) O `TextFrame` objeto gerencia as opções de exibição de texto (como margens e estouro de texto). `TextFrame.textRange`é um objeto [TextRange](/javascript/api/excel/excel.textrange) com o conteúdo de texto e as configurações de fonte.
+Formas geométricas podem conter texto. As formas têm `textFrame` uma propriedade do tipo TextFrame. [](/javascript/api/excel/excel.textframe) O `TextFrame` objeto gerencia as opções de exibição de texto (como margens e estouro de texto). `TextFrame.textRange`é um objeto [TextRange](/javascript/api/excel/excel.textrange) com o conteúdo de texto e as configurações de fonte.
 
 O exemplo de código a seguir cria uma forma geométrica chamada "Wave" com o texto "Shape Text". Também ajusta a forma e as cores do texto, bem como define o alinhamento horizontal do texto para o centro.
 

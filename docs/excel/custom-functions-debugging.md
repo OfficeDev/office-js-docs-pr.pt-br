@@ -1,14 +1,14 @@
 ---
-ms.date: 06/20/2019
+ms.date: 07/10/2019
 description: Depurar suas funções personalizadas no Excel.
 title: Depuração de funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: d7c7f44ffcb22f66e8dccc58c12e957eefe07524
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 987df4fc638b94b7a5002c99aee6e36642f4e4a4
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128388"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771453"
 ---
 # <a name="custom-functions-debugging"></a>Depuração de funções personalizadas
 
@@ -172,6 +172,5 @@ Saiba mais sobre as [práticas de autenticação em funções personalizadas](cu
 ## <a name="see-also"></a>Confira também
 
 * [Solução de problemas de funções personalizadas](custom-functions-troubleshooting.md)
-* [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
 * [Torne as suas funções personalizadas compatíveis com as funções XLL definidas pelo usuário](make-custom-functions-compatible-with-xll-udf.md)
 * [Criar funções personalizadas no Excel](custom-functions-overview.md)
