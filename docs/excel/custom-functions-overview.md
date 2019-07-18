@@ -1,14 +1,14 @@
 ---
-ms.date: 06/20/2019
+ms.date: 07/10/2019
 description: Criar funções personalizadas no Excel usando JavaScript.
 title: Criar funções personalizadas no Excel
 localization_priority: Priority
-ms.openlocfilehash: e8f53919ebd5e44fe04e45dfd05192c77324f3aa
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: c5b31b494d7b22112e36e245603f58748559bed5
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127888"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771401"
 ---
 # <a name="create-custom-functions-in-excel"></a>Criar funções personalizadas no Excel 
 
@@ -31,7 +31,6 @@ O código a seguir define a função personalizada `=MYFUNCTION.SPHEREVOLUME`.
 function sphereVolume(radius) {
   return Math.pow(radius, 3) * 4 * Math.PI / 3;
 }
-CustomFunctions.associate("SPHEREVOLUME", sphereVolume)
 ```
 
 > [!NOTE]
@@ -49,11 +48,9 @@ Se você usar o [gerador Yo Office](https://github.com/OfficeDev/generator-offic
 
 ### <a name="script-file"></a>Arquivo de script
 
-O arquivo de script (**./src/functions/functions.js** ou **./src/functions/functions.ts**) contém o código que define funções personalizadas, comentários que definem a função e associa os nomes das funções personalizadas a objetos no arquivo de metadados JSON.
+O arquivo de script (**./src/functions/functions.js** ou **./src/functions/functions.ts**) contém o código que define funções e comentários que definem a função.
 
 O código a seguir define a função personalizada `add`. Os comentários do código são usados para gerar um arquivo de metadados JSON que descreve a função personalizada ao Excel. O necessário `@customfunction` comentário é declarado primeiro, para indicar que se trata de uma função personalizada. Além disso, observe que dois parâmetros foram declarados, `first` e `second`, que é seguido por suas `description` propriedades. Por fim, uma `returns` descrição é fornecida. Para obter mais informações sobre quais comentários são necessários para sua função personalizada, confira [Criar metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md).
-
-O seguinte código também solicita `CustomFunctions.associate("ADD", add)` para associar a função `add()` com o seu ID no arquivo de metadados JSON `ADD`. Para mais informações sobre a associação de funções, confira as [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md#associating-function-names-with-json-metadata).
 
 ```js
 /**
@@ -67,9 +64,6 @@ O seguinte código também solicita `CustomFunctions.associate("ADD", add)` para
 function add(first, second){
   return first + second;
 }
-
-// associate `id` values in the JSON metadata file to the JavaScript function names
- CustomFunctions.associate("ADD", add);
 ```
 
 Note que o arquivo **functions.html**, que governa o carregamento do tempo de execução das funções personalizadas, deve vincular-se à CDN atual para as funções personalizadas. Projetos preparados com a versão atual do gerador Yo Office referenciam a CDN correta. Se você estiver readaptando um projeto anterior de função personalizada de março de 2019 ou anteriormente, você precisará copiar no código abaixo para a página **functions.html**.
@@ -80,7 +74,7 @@ Note que o arquivo **functions.html**, que governa o carregamento do tempo de ex
 
 ### <a name="manifest-file"></a>Arquivo de manifesto
 
-O arquivo de manifesto XML para um suplemento que define funções personalizadas (**./manifest.xml** no projeto gerador que Yo Office cria) especifica o namespace para todas as funções personalizadas no suplemento e o local dos arquivos HTML, JavaScript e JSON. 
+O arquivo de manifesto XML para um suplemento que define funções personalizadas (**./manifest.xml** no projeto gerador que Yo Office cria) especifica o namespace para todas as funções personalizadas no suplemento e o local dos arquivos HTML, JavaScript e JSON.
 
 A marcação XML a seguir mostra um exemplo dos elementos `<ExtensionPoint>` e `<Resources>` que você deve incluir no manifesto de um suplemento para habilitar funções personalizadas. Se estiver usando o gerador Yo Office, seus arquivos de funções personalizadas gerados conterão um arquivo de manifesto mais complexo, que você pode comparar neste [repositório do Github](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/manifest.xml).
 
@@ -151,14 +145,13 @@ Veja os problemas conhecidos no nosso [GitHub de funções do Excel personalizad
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Quer experimentar funções personalizadas? Confira o simples [início rápido das funções personalizadas](../quickstarts/excel-custom-functions-quickstart.md) ou o mais detalhado [tutorial de funções personalizadas](../tutorials/excel-tutorial-create-custom-functions.md), caso ainda não tenha. 
+Quer experimentar funções personalizadas? Confira o simples [início rápido das funções personalizadas](../quickstarts/excel-custom-functions-quickstart.md) ou o mais detalhado [tutorial de funções personalizadas](../tutorials/excel-tutorial-create-custom-functions.md), caso ainda não tenha.
 
 Outra maneira fácil de experimentar as funções personalizadas é usar o [Script Lab](https://appsource.microsoft.com/product/office/WA104380862?src=office&corrid=1ada79ac-6392-438d-bb16-fce6994a2a7e&omexanonuid=f7b03101-ec22-4270-a274-bcf16c762039&referralurl=https%3a%2f%2fgithub.com%2fofficedev%2fscript-lab), que é um suplemento que permite com que você experimente as funções personalizadas diretamente no Excel. Você pode experimentar criar a sua própria função personalizada ou usar os exemplos disponíveis.
 
 Pronto para ler mais sobre os recursos de funções personalizadas? Saiba mais sobre a visão geral da [arquitetura de funções personalizadas](custom-functions-architecture.md).
 
 ## <a name="see-also"></a>Confira também 
-* [Requisitos de funções personalizadas](custom-functions-requirements.md)
+* [Requisitos de funções personalizadas](custom-functions-requirement-sets.md)
 * [Diretrizes de nomenclatura](custom-functions-naming.md)
-* [Práticas recomendadas](custom-functions-best-practices.md)
 * [Torne as suas funções personalizadas compatíveis com as funções XLL definidas pelo usuário](make-custom-functions-compatible-with-xll-udf.md)

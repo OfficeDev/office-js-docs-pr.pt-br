@@ -3,12 +3,12 @@ title: Conceitos avançados de programação com a API JavaScript do Excel
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: da85bf8ec00134b86fcf6ae561366f9536f21303
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 4439ecf494a5d619e0d57604170c771e07b2e2b6
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127793"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771495"
 ---
 # <a name="advanced-programming-concepts-with-the-excel-javascript-api"></a>Conceitos avançados de programação com a API JavaScript do Excel
 
@@ -20,7 +20,7 @@ Um suplemento do Excel interage com objetos no Excel usando a API JavaScript par
 
 * **API JavaScript do Excel**: introduzida com o Office 2016, a [API JavaScript do Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) fornece objetos fortemente tipados que você pode usar para acessar planilhas, intervalos, tabelas, gráficos e muito mais. 
 
-* **as APIs comuns**: Introduzida com o Office 2013, a [API comum](../reference/javascript-api-for-office.md) pode ser usadas para acessar recursos como interface de usuário, caixas de diálogo e configurações de cliente, que são comuns entre vários tipos de aplicativos host, como Word, Excel ou PowerPoint.
+* **APIs Comuns**: Introduzida com o Office 2013, a [API Comum](/javascript/api/office) pode ser usada para acessar recursos como interface de usuário, caixas de diálogo e configurações de cliente, que são comuns entre vários tipos de aplicativos do Office.
 
 Enquanto você provavelmente use a API JavaScript do Excel para desenvolver a maioria das funcionalidades em suplementos que visam o Excel 2016, você também usará objetos na API comum. Por exemplo:
 
@@ -37,7 +37,7 @@ Os conjuntos de requisitos são grupos nomeados de membros da API. Um Suplemento
 O exemplo de código a seguir mostra como determinar se o aplicativo host, onde o suplemento está em execução, dá suporte ao conjunto de requisitos da API especificado.
 
 ```js
-if (Office.context.requirements.isSetSupported('ExcelApi', 1.3) === true) {
+if (Office.context.requirements.isSetSupported('ExcelApi', '1.3') === true) {
   /// perform actions
 }
 else {

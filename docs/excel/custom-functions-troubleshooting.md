@@ -1,14 +1,14 @@
 ---
-ms.date: 06/21/2019
+ms.date: 07/15/2019
 description: Solução de problemas comuns em funções personalizadas do Excel.
 title: Solução de problemas das funções personalizadas
 localization_priority: Priority
-ms.openlocfilehash: f42e9e6ac3e2d868f90ab4f5129684308750b8e2
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 10d54cc19700cb7d1dbb72f17f57b8149500d186
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128280"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771380"
 ---
 # <a name="troubleshoot-custom-functions"></a>Solução de problemas de funções personalizadas
 
@@ -16,7 +16,7 @@ Ao desenvolver funções personalizadas, você poderá encontrar erros no produt
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-Para resolver problemas, você pode [habilitar o log de tempo de execução para capturar erros](#enable-runtime-logging) e consultar as [mensagens de erro nativas do Excel](#check-for-excel-error-messages). Além disso, verifique se há erros comuns, como [deixar promessas não resolvidas](#ensure-promises-return) e esquecer de [associar as funções](#my-functions-wont-load-associate-functions).
+Para resolver problemas, você pode [habilitar o log de tempo de execução para capturar erros](#enable-runtime-logging) e consultar as [mensagens de erro nativas do Excel](#check-for-excel-error-messages). Alem disso, verifique se há erros comuns, como [deixar promessas não resolvidas](#ensure-promises-return).
 
 ## <a name="enable-runtime-logging"></a>Habilitar o log de tempo de execução
 
@@ -29,19 +29,35 @@ O Excel tem diversas mensagens de erro internas que serão retornadas para uma c
 Geralmente, estes erros correspondem aos erros que você já deve estar familiarizado no Excel. Existem apenas algumas exceções específicas para as funções personalizadas, listadas aqui:
 
 - Um erro `#NAME` geralmente significa que houve um problema ao registrar as suas funções.
-- Um erro `#VALUE` normalmente indica um erro no arquivo de script das funções.
 - Um erro `#N/A` também pode ser um sinal de que esta função, embora registrada, não pode ser executada. Isto é normalmente devido à um comando `CustomFunctions.associate` em falta.
+- Um `#VALUE` erro normalmente indica um erro no arquivo de script das funções.
 - Um erro `#REF!` pode indicar que o nome da sua função é o mesmo nome de uma função em um suplemento já existente.
 
 ## <a name="clear-the-office-cache"></a>Limpar o cache do Office
 
-Informações sobre funções personalizadas são armazenadas em cache pelo Office. Às vezes, ao desenvolver e recarregar repetidamente um suplemento com funções personalizadas, as suas alterações podem não aparecer. Isso pode ser corrigido limpando o cache do Office. Para mais informações, consulte a seção «Limpar o Cache do Office» no artigo [Validar e solucionar problemas com seu manifesto](https://docs.microsoft.com/office/dev/add-ins/testing/troubleshoot-manifest?branch=master#clear-the-office-cache)
+Informações sobre funções personalizadas são armazenadas em cache pelo Office. Às vezes, ao desenvolver e recarregar repetidamente um suplemento com funções personalizadas, as suas alterações podem não aparecer. Isso pode ser corrigido limpando o cache do Office. Para mais informações, consulte a seção “Limpar o cache do Office” no artigo [Validar e solucionar problemas com seu manifesto](../testing/troubleshoot-manifest.md#clear-the-office-cache).
 
 ## <a name="common-issues"></a>Problemas comuns
 
+### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exception"></a>Não é possível abrir um suplemento de um localhost: utilize uma exceção de loopback local
+
+Se você vir o erro "Não é possível abrir este suplemento de um localhost", será necessário habilitar uma exceção de loopback local. Para obter detalhes sobre como fazer isso, confira [este artigo de suporte da Microsoft](https://support.microsoft.com/pt-BR/help/4490419/local-loopback-exemption-does-not-work).
+
+### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-on-windows"></a>Relatórios de log de tempo de execução "TypeError: Falha na solicitação de rede" no Excel para Windows
+
+Se você ver o erro "TypeError: Falha na solicitação de rede" em seu [log de tempo de execução](custom-functions-troubleshooting.md#enable-runtime-logging) enquanto faz chamadas para seu servidor localhost, você precisará habilitar uma exceção de loopback local. Para mais detalhes sobre como fazer isso, confira *Opção #2* neste [artigo de suporte da Microsoft ](https://support.microsoft.com/pt-BR/help/4490419/local-loopback-exemption-does-not-work).
+
+### <a name="ensure-promises-return"></a>Garantir que as promessas retornem resultados
+
+Quando o Excel está aguardando a conclusão de uma função personalizada, ele exibe #BUSY! na célula. Se o código da função personalizada retornar uma promessa, mas a promessa não retornar um resultado, o Excel continuará exibindo `#BUSY!`. Verifique suas funções para garantir que as promessas estejam retornando corretamente um resultado para uma célula.
+
+### <a name="error-the-dev-server-is-already-running-on-port-3000"></a>Erro: O servidor de desenvolvimento já está em execução na porta 3000
+
+Às vezes, ao executar `npm start` você poderá ver um erro que o servidor de desenvolvimento já está executando na porta 3000 (ou qualquer outra porta que o seu suplemento use). Você pode parar o servidor de desenvolvimento executando `npm stop` ou fechando a janela Node.js. Mas em alguns casos, poderá levar alguns minutos para que o servidor de desenvolvimento realmente pare de executar.
+
 ### <a name="my-functions-wont-load-associate-functions"></a>Minhas funções não carregam: associar funções
 
-No arquivo de script das funções personalizadas, você precisa associar cada função personalizada à respectiva ID especificada no [arquivo de metadados JSON](custom-functions-json.md). Isso é feito usando o método `CustomFunctions.associate()`. Normalmente, essa chamada de método é feita após cada função ou no final do arquivo de script. Se uma função personalizada não estiver associada, ele não funcionará.
+Nos casos em que seu JSON não tiver sido registrado e você tiver criado os seus próprios metadados JSON, talvez receba um `#VALUE!`erro ou receba uma notificação de que o seu suplemento não pode ser carregado. Geralmente, isso significa que você precisa associar cada função personalizada a `id`propriedade especificada no [arquivo de metadados JSON](custom-functions-json.md). Isso é feito usando o método `CustomFunctions.associate()`. Normalmente, essa chamada de método é feita após cada função ou no final do arquivo de script. Se uma função personalizada não estiver associada, ele não funcionará.
 
 O exemplo a seguir mostra uma função add, seguida pelo nome `add` da função que está sendo associada a `ADD` da id JSON correspondente.
 
@@ -60,23 +76,7 @@ function add(first, second) {
 CustomFunctions.associate("ADD", add);
 ```
 
-Saiba mais sobre esse processo em [Associar os nomes de função com metadados JSON](/office/dev/add-ins/excel/custom-functions-best-practices#associating-function-names-with-json-metadata).
-
-### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exception"></a>Não é possível abrir um suplemento de um localhost: utilize uma exceção de loopback local
-
-Se você vir o erro "Não é possível abrir este suplemento de um localhost", será necessário habilitar uma exceção de loopback local. Para obter detalhes sobre como fazer isso, confira [este artigo de suporte da Microsoft](https://support.microsoft.com/pt-BR/help/4490419/local-loopback-exemption-does-not-work).
-
-### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-on-windows"></a>Relatórios de log de tempo de execução "TypeError: Falha na solicitação de rede" no Excel para Windows
-
-Se você ver o erro "TypeError: Falha na solicitação de rede" em seu [log de tempo de execução](custom-functions-troubleshooting.md#enable-runtime-logging) enquanto faz chamadas para seu servidor localhost, você precisará habilitar uma exceção de loopback local. Para mais detalhes sobre como fazer isso, confira *Opção #2* neste [artigo de suporte da Microsoft ](https://support.microsoft.com/pt-BR/help/4490419/local-loopback-exemption-does-not-work).
-
-### <a name="ensure-promises-return"></a>Garantir que as promessas retornem resultados
-
-Quando o Excel está aguardando a conclusão de uma função personalizada, ele exibe #BUSY! na célula. Se o código da função personalizada retornar uma promessa, mas a promessa não retornar um resultado, o Excel continuará exibindo #BUSY!. Verifique suas funções para garantir que as promessas estejam retornando corretamente um resultado para uma célula.
-
-### <a name="error-the-dev-server-is-already-running-on-port-3000"></a>Erro: O servidor de desenvolvimento já está em execução na porta 3000
-
-Às vezes, ao executar `npm start` você poderá ver um erro que o servidor de desenvolvimento já está executando na porta 3000 (ou qualquer outra porta que o seu suplemento use). Você pode parar o servidor de desenvolvimento executando `npm stop` ou fechando a janela Node.js. Mas em alguns casos, poderá levar alguns minutos para que o servidor de desenvolvimento realmente pare de executar.
+Saiba mais sobre esse processo em [Associar os nomes de função com metadados JSON](/office/dev/add-ins/excel/custom-functions-json#associating-function-names-with-json-metadata).
 
 ## <a name="reporting-feedback"></a>Fornecer comentários
 
@@ -97,6 +97,5 @@ Saiba como [depurar as suas funções personalizadas](custom-functions-debugging
 
 * [Geração automática de metadados das funções personalizadas](custom-functions-json-autogeneration.md)
 * [Tempo de execução de funções personalizadas do Excel](custom-functions-runtime.md)
-* [Práticas recomendadas de funções personalizadas](custom-functions-best-practices.md).
 * [Torne as suas funções personalizadas compatíveis com as funções XLL definidas pelo usuário](make-custom-functions-compatible-with-xll-udf.md)
 * [Criar funções personalizadas no Excel](custom-functions-overview.md)
