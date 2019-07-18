@@ -4,12 +4,12 @@ description: ''
 ms.date: 07/11/2019
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: e08659908b4634b0d6fef58548fb1557e149759f
-ms.sourcegitcommit: 61f8f02193ce05da957418d938f0d94cb12c468d
+ms.openlocfilehash: bd03113b7a91a4cc713cd00336a9582d2e47db5f
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "35630519"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771895"
 ---
 # <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API Comum do Office
 
@@ -19,7 +19,7 @@ Precisa de informações sobre onde os suplementos têm suporte do host do Offic
 
 Procurando pelos conjuntos de requisitos de API *específicos do host*? Confira os seguintes conjuntos de requisitos de API:
 
-- [Conjuntos de requisitos de API JavaScript para Excel](excel-api-requirement-sets.md) (ExcelApi)
+- [Conjuntos de requisitos de API JavaScript para Excel](./excel-api-requirement-sets.md) (ExcelApi)
 - [Conjuntos de requisitos de API JavaScript para Word](word-api-requirement-sets.md) (WordApi)
 - [Conjuntos de requisitos de API JavaScript para OneNote](onenote-api-requirement-sets.md) (OneNoteApi)
 - [Noções básicas sobre os conjuntos de requisitos da API do Outlook](outlook-api-requirement-sets.md) (Caixa de Correio)
