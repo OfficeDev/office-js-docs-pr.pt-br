@@ -1,14 +1,14 @@
 ---
 title: Especificações abertas da API para a API JavaScript do Office
 description: ''
-ms.date: 06/10/2019
+ms.date: 07/17/2019
 localization_priority: Normal
-ms.openlocfilehash: c7681ad307f290819a3f65185855dfb9c234ce38
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: ee4b8ce52eefe0419dbbc04124b865d5c20fea4c
+ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771776"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "35804994"
 ---
 # <a name="api-open-specifications"></a>Especificações abertas da API
 
@@ -28,4 +28,4 @@ No momento, não temos APIs na fase de especificação pública aberta. Atualiza
 - [Referência da API de visualização do Outlook](/javascript/api/outlook)
 - [Conjunto de requisitos de visualização da API JavaScript do Outlook](..//objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)
 - [Referência da API de visualização do Word](/javascript/api/word)
-- [Conjunto de requisitos de visualização da API JavaScript do Word](../requirement-sets/word-api-requirement-sets.md#word-javascript-preview-apis)
+- [Conjunto de requisitos de visualização da API JavaScript do Word](../requirement-sets/word-preview-apis.md)

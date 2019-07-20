@@ -1,20 +1,20 @@
 ---
 title: Usar movimento em suplementos do Office
 description: ''
-ms.date: 03/19/2019
+ms.date: 07/19/2019
 localization_priority: Normal
-ms.openlocfilehash: d3be2454b36fe1003c0697f0bca3c29d743e5330
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: d347cbf9d5879d121b226974f70044cf8a4febb7
+ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449043"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "35804587"
 ---
 # <a name="using-motion-in-office-add-ins"></a>Usar movimento em suplementos do Office
 
-Ao criar um Suplemento do Office, é possível usar movimento para aprimorar a experiência do usuário. Os componentes, os controles e os elementos da interface do usuário geralmente têm comportamentos interativos que exigem transições, movimento ou animação. Características comuns de movimento entre elementos da interface do usuário definem os aspectos de animação de uma linguagem de design. 
+Ao criar um Suplemento do Office, é possível usar movimento para aprimorar a experiência do usuário. Os componentes, os controles e os elementos da interface do usuário geralmente têm comportamentos interativos que exigem transições, movimento ou animação. Características comuns de movimento entre elementos da interface do usuário definem os aspectos de animação de uma linguagem de design.
 
-Como o Office é voltado para a produtividade, a linguagem de animação do Office dá suporte ao objetivo de ajudar os clientes a realizar tarefas. Ela permite o equilíbrio entre a resposta de alto desempenho, a coreografia confiável e a satisfação detalhada. Os suplementos inseridos no Office aproveitam essa linguagem de animação existente. Com base nesse contexto, é importante considerar estas diretrizes ao aplicar animação. 
+Como o Office é voltado para a produtividade, a linguagem de animação do Office dá suporte ao objetivo de ajudar os clientes a realizar tarefas. Ela permite o equilíbrio entre a resposta de alto desempenho, a coreografia confiável e a satisfação detalhada. Os suplementos inseridos no Office aproveitam essa linguagem de animação existente. Com base nesse contexto, é importante considerar estas diretrizes ao aplicar animação.
 
 
 ## <a name="create-motion-with-a-purpose"></a>Criar movimento com uma finalidade
@@ -34,7 +34,7 @@ Os elementos padrão usados em um suplemento podem incorporar movimentos a fim d
 
 ## <a name="use-expected-motions"></a>Usar movimentos esperados
 
-Recomendamos usar o [Office UI Fabric](https://developer.microsoft.com/fabric) para criar uma conexão visual com a plataforma do Office, e também incentivamos o uso de [Animações do Fabric](https://developer.microsoft.com/fabric#/styles/animations) para criar movimentos alinhados à linguagem de movimento do Fabric. 
+Recomendamos usar o [Office UI Fabric](https://developer.microsoft.com/fabric) para criar uma conexão visual com a plataforma do Office, e também incentivamos o uso de [Animações do Fabric](https://developer.microsoft.com/fabric#/styles/web/motion) para criar movimentos alinhados à linguagem de movimento do Fabric.
 
 Use para ajustar perfeitamente no Office. Ele ajudará a criar experiências que são mais sentidas do que observadas. As classes CSS de animação fornecem direção, entrada/saída e especificações de duração que reforçam modelos mentais do Office e fornecem oportunidades para que os clientes saibam como interagir com o suplemento.
 
@@ -56,12 +56,12 @@ Considere o tamanho da tela HTML (painel de tarefas, caixa de diálogo ou suplem
 
 |Fazer|Não fazer|
 |:-----|:-----|
-| Use [durações de movimento recomendadas](https://developer.microsoft.com/fabric#/styles/animations). | Não use animações exageradas. Evite criar experiências belas, mas que desviam a atenção dos clientes.
+| Use [durações de movimento recomendadas](https://developer.microsoft.com/fabric#/styles/web/motion). | Não use animações exageradas. Evite criar experiências belas, mas que desviam a atenção dos clientes.
 | Siga as [curvas de atenuação recomendadas](/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion).  |Não mova os elementos de uma maneira irregular ou desconexa. Evite antecipações, saltos, pulos ou outros efeitos que emulem as características físicas do mundo natural.|
 
 ![GIF que mostra blocos carregando usando um esmaecimento sutil ao lado de um gif que mostra blocos carregando com um salto](../images/add-in-motion-character.gif)
 
 ## <a name="see-also"></a>Confira também
 
-* [Diretrizes de animação do Fabric](https://developer.microsoft.com/fabric#/styles/animations)
+* [Diretrizes de animação do Fabric](https://developer.microsoft.com/fabric#/styles/web/motion)
 * [Movimento para aplicativos da Plataforma Universal do Windows](/windows/uwp/design/motion)
