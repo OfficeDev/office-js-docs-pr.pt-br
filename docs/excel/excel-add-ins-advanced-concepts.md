@@ -1,14 +1,14 @@
 ---
 title: Conceitos avançados de programação com a API JavaScript do Excel
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/17/2019
 localization_priority: Priority
-ms.openlocfilehash: 4439ecf494a5d619e0d57604170c771e07b2e2b6
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 0336362906f2f3c96c1ac5ff2e06d6409637e9b6
+ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771495"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "35804608"
 ---
 # <a name="advanced-programming-concepts-with-the-excel-javascript-api"></a>Conceitos avançados de programação com a API JavaScript do Excel
 
