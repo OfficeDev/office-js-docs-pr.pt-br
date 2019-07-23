@@ -1,14 +1,14 @@
 ---
 title: Especificar hosts do Office e requisitos de API
 description: ''
-ms.date: 07/01/2019
+ms.date: 07/18/2019
 localization_priority: Priority
-ms.openlocfilehash: 4355f86b6173e84c80bbd0791f571e034c8ae12d
-ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
+ms.openlocfilehash: 9699379d39e4c1a9f4e1380cf6360eaf027f05f0
+ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "35454619"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "35804615"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>Especificar hosts do Office e requisitos de API
 
@@ -105,9 +105,9 @@ O elemento **Requirements** especifica os conjuntos de requisitos mínimos ou os
 
 O exemplo de código a seguir mostra um suplemento que carrega em todos os aplicativos host do Office que oferecem suporte ao seguinte:
 
--  O conjunto de requisitos **TableBindings**, que tem uma versão mínima de 1.1.
+-  O conjunto de requisitos **TableBindings**, que tem uma versão mínima de "1.1".
 
--  O conjunto de requisitos **OOXML**, que tem uma versão mínima de 1.1.
+-  O conjunto de requisitos **OOXML**, que tem uma versão mínima de "1.1".
 
 -  O método **Document.getSelectedDataAsync**.
 
@@ -166,7 +166,7 @@ O método **isSetSupported** e os conjuntos de requisitos para esses hosts estã
 O exemplo de código a seguir mostra como um suplemento pode fornecer outras funcionalidades para hosts do Office diferentes que podem dar suporte a conjuntos de requisitos ou membros de API diferentes.
 
 ```js
-if (Office.context.requirements.isSetSupported('WordApi', 1.1))
+if (Office.context.requirements.isSetSupported('WordApi', '1.1'))
 {
     // Run code that provides additional functionality using the Word JavaScript API when the add-in runs in Word 2016 or later.
 }
