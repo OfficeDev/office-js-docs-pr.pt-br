@@ -3,12 +3,12 @@ title: Conceitos avançados de programação com a API JavaScript do Excel
 description: ''
 ms.date: 07/17/2019
 localization_priority: Priority
-ms.openlocfilehash: 0336362906f2f3c96c1ac5ff2e06d6409637e9b6
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: 0270ca30e0add99dadc9fcfaf4a71cdb3fb68f46
+ms.sourcegitcommit: 5e90a90175909e0f4f392f5c98bd1273f444fe49
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35804608"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "35851585"
 ---
 # <a name="advanced-programming-concepts-with-the-excel-javascript-api"></a>Conceitos avançados de programação com a API JavaScript do Excel
 
@@ -18,15 +18,15 @@ Este artigo se baseia nas informações contidas em [conceitos fundamentais de p
 
 Um suplemento do Excel interage com objetos no Excel usando a API JavaScript para Office, que inclui dois modelos de objeto JavaScript:
 
-* **API JavaScript do Excel**: introduzida com o Office 2016, a [API JavaScript do Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) fornece objetos fortemente tipados que você pode usar para acessar planilhas, intervalos, tabelas, gráficos e muito mais. 
+* **API JavaScript do Excel**: introduzida com o Office 2016, a [API JavaScript do Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) fornece objetos fortemente tipados que você pode usar para acessar planilhas, intervalos, tabelas, gráficos e muito mais.
 
 * **APIs Comuns**: Introduzida com o Office 2013, a [API Comum](/javascript/api/office) pode ser usada para acessar recursos como interface de usuário, caixas de diálogo e configurações de cliente, que são comuns entre vários tipos de aplicativos do Office.
 
 Enquanto você provavelmente use a API JavaScript do Excel para desenvolver a maioria das funcionalidades em suplementos que visam o Excel 2016, você também usará objetos na API comum. Por exemplo:
 
-- [Contexto](/javascript/api/office/office.context): o objeto **Context** representa o ambiente de tempo de execução do suplemento e oferece acesso aos principais objetos da API. Ele consiste em detalhes da configuração da pasta de trabalho, como `contentLanguage` e `officeTheme`, além de fornecer informações sobre o ambiente de tempo de execução do suplemento, como `host` e `platform`. Além disso, ele fornece o método `requirements.isSetSupported()`, que você pode usar para verificar se o conjunto de requisitos especificado é suportado pelo aplicativo Excel onde o suplemento está sendo executado. 
+- [Contexto](/javascript/api/office/office.context): o objeto **Context** representa o ambiente de tempo de execução do suplemento e oferece acesso aos principais objetos da API. Ele consiste em detalhes da configuração da pasta de trabalho, como `contentLanguage` e `officeTheme`, além de fornecer informações sobre o ambiente de tempo de execução do suplemento, como `host` e `platform`. Além disso, ele fornece o método `requirements.isSetSupported()`, que você pode usar para verificar se o conjunto de requisitos especificado é suportado pelo aplicativo Excel onde o suplemento está sendo executado.
 
-- [Document](/javascript/api/office/office.document): O objeto **Document** fornece o método `getFileAsync()`, que você pode usar para baixar o arquivo Excel onde o suplemento está em execução. 
+- [Document](/javascript/api/office/office.document): O objeto **Document** fornece o método `getFileAsync()`, que você pode usar para baixar o arquivo Excel onde o suplemento está em execução.
 
 ## <a name="requirement-sets"></a>Conjuntos de requisitos
 
@@ -47,7 +47,7 @@ else {
 
 ### <a name="defining-requirement-set-support-in-the-manifest"></a>Definindo o suporte ao conjunto de requisitos no manifesto
 
-Você pode usar o [elemento Requirements](/office/dev/add-ins/reference/manifest/requirements) no manifesto do suplemento para especificar os conjuntos de requisitos mínimos e/ou os métodos de API exigidos pelo suplemento para ser ativado. Se a plataforma ou o host do Office não der suporte aos conjuntos de requisitos ou aos métodos de API que são especificados no elemento **Requirements** do manifesto, o suplemento não será executado nesse host ou plataforma e não será exibido na lista de suplementos que são mostrados em **Meus Suplementos**. 
+Você pode usar o [elemento Requirements](/office/dev/add-ins/reference/manifest/requirements) no manifesto do suplemento para especificar os conjuntos de requisitos mínimos e/ou os métodos de API exigidos pelo suplemento para ser ativado. Se a plataforma ou o host do Office não der suporte aos conjuntos de requisitos ou aos métodos de API que são especificados no elemento **Requirements** do manifesto, o suplemento não será executado nesse host ou plataforma e não será exibido na lista de suplementos que são mostrados em **Meus Suplementos**.
 
 O exemplo de código a seguir mostra o elemento **Requirements** em um manifesto de suplemento que especifica se o suplemento deve ser carregado em todos os aplicativos host do Office que dão suporte ao conjunto de requisitos ExcelApi, versão 1.3 ou superior.
 
@@ -68,7 +68,7 @@ Para saber mais sobre conjuntos de requisitos comuns da API, confira [Conjuntos 
 
 ## <a name="loading-the-properties-of-an-object"></a>Carregando as propriedades de um objeto
 
-Chamar o método `load()` em um objeto JavaScript do Excel orienta a API a carregar o objeto na memória do JavaScript quando o método `sync()` é executado. O método `load()` aceita uma cadeia de caracteres que contém nomes de propriedades delimitados por vírgulas a serem carregados ou um objeto que especifica propriedades a serem carregadas, opções de paginação, etc. 
+Chamar o método `load()` em um objeto JavaScript do Excel orienta a API a carregar o objeto na memória do JavaScript quando o método `sync()` é executado. O método `load()` aceita uma cadeia de caracteres que contém nomes de propriedades delimitados por vírgulas a serem carregados ou um objeto que especifica propriedades a serem carregadas, opções de paginação, etc.
 
 > [!NOTE]
 > Se você chamar o método `load()` em um objeto (ou uma coleção) sem especificar qualquer parâmetro, todas as propriedades escalares do objeto (ou todas as propriedades escalares de todos os objetos na coleção) serão carregadas. Para reduzir a quantidade de transferência de dados entre o aplicativo host e o suplemento do Excel, você deve evitar chamar o método `load()` sem especificar explicitamente quais propriedades carregar.
@@ -89,7 +89,7 @@ object.load(param);
 
 |**Parâmetro**|**Tipo**|**Descrição**|
 |:------------|:-------|:----------|
-|`param`|objeto|Opcional. Aceita nomes de parâmetro e de relação como uma matriz ou cadeia de caracteres delimitada por vírgulas. Um objeto também pode ser passado para definir as propriedades de navegação e seleção (conforme mostrado no exemplo abaixo).|
+|`param`|objeto|Opcional. Aceita nomes de propriedade como cadeia de caracteres delimitada por vírgula ou uma matriz. Também é possível passar um objeto para definir as propriedades da seleção e de navegação (conforme mostrado no exemplo abaixo).|
 
 #### <a name="returns"></a>Retorna
 
@@ -123,18 +123,18 @@ Excel.run(function (ctx) {
 
 ### <a name="load-option-properties"></a>Carregar propriedades de opção
 
-Como uma alternativa para passar uma cadeia de caracteres delimitada por vírgulas ou uma matriz ao chamar o método `load()`, você pode passar um objeto que contém as propriedades a seguir. 
+Como uma alternativa para passar uma cadeia de caracteres delimitada por vírgulas ou uma matriz ao chamar o método `load()`, você pode passar um objeto que contém as propriedades a seguir.
 
 |**Propriedade**|**Tipo**|**Descrição**|
 |:-----------|:-------|:----------|
-|`select`|objeto|Inclui uma lista delimitada por vírgula ou uma matriz de nomes de parâmetro/relação. Opcional.|
-|`expand`|objeto|Inclui uma lista delimitada por vírgula ou uma matriz de nomes de relação. Opcional.|
+|`select`|objeto|Inclui uma lista delimitada por vírgula ou uma matriz de nomes de propriedade. Opcional.|
+|`expand`|objeto|Inclui uma lista delimitada por vírgula ou uma matriz de nomes de propriedade de navegação. Opcional.|
 |`top`|int| Especifica o número máximo de itens da coleção que podem ser incluídos no resultado. Opcional. Você só pode usar essa opção quando usar a opção de notação de objeto.|
 |`skip`|int|Determina o número de itens da coleção que devem ser ignorados e não incluídos no resultado. Quando a propriedade `top` for especificada, o conjunto de resultados será iniciado depois de ignorar o número de itens especificado. Opcional. Você só pode usar esta opção ao usar a opção de notação de objeto.|
 
 O exemplo de código a seguir carrega uma coleção de planilhas selecionando a `name`propriedade e o `address`do intervalo usado para cada planilha na coleção. Ele também especifica que apenas as cinco planilhas principais na coleção devem ser carregadas. Você poderia processar o próximo conjunto de cinco planilhas especificando `top: 10` e `skip: 5` como valores de atributo.
 
-```js 
+```js
 myWorksheets.load({
     select: 'name, userRange/address',
     expand: 'tables',
@@ -145,7 +145,7 @@ myWorksheets.load({
 
 ## <a name="scalar-and-navigation-properties"></a>Propriedades escalares e de navegação
 
-Na documentação de referência da API JavaScript do Excel, você pode notar que os membros do objeto são agrupados em duas categorias: **propriedades** e **relações**. Uma propriedade de um objeto é um membro escalar como uma cadeia de caracteres, um número inteiro ou um valor booliano, enquanto uma relação de um objeto (também conhecida como uma propriedade de navegação) é um membro que é ou um objeto ou uma coleção de objetos. Por exemplo, os membros `name` e `position` no objeto [Worksheet](/javascript/api/excel/excel.worksheet) são propriedades escalares, enquanto `protection` e `tables` são relações (propriedades de navegação). 
+Há duas categorias de propriedades: **escalar** e de **navegação**. As propriedades escalares são tipos atribuíveis, como cadeias de caracteres, inteiros e estruturas JSON. As propriedades de navegação são objetos Somente Leitura e coleções de objetos que têm seus campos atribuídos, em vez de atribuir diretamente a propriedade. Por exemplo, os membros `name` e `position` no objeto [Planilha](/javascript/api/excel/excel.worksheet) são propriedades escalares, enquanto `protection` e `tables` são propriedades de navegação. `prompt` no objeto [DataValidation] é um exemplo de uma propriedade escalar que deve ser definida usando um objeto JSON (`dv.prompt = { title: "MyPrompt"}`), em vez de definir as subpropriedades (`dv.prompt.title = "MyPrompt" // will not set the title`).
 
 ### <a name="scalar-properties-and-navigation-properties-with-objectload"></a>Propriedades escalares e propriedades de navegação com `object.load()`
 
