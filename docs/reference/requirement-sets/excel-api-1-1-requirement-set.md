@@ -1,15 +1,15 @@
 ---
 title: Conjunto de requisitos de API JavaScript do Excel 1,1
 description: Detalhes sobre o conjunto de requisitos ExcelApi 1,1
-ms.date: 07/11/2019
+ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 921a67b4242150d767fdac057d21c6fc510d98b3
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 90d7ee7cef2e8c48e458b2e14893ba9c13c68a30
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35772048"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940784"
 ---
 # <a name="excel-javascript-api-requirement-set-11"></a>Conjunto de requisitos de API JavaScript do Excel 1,1
 
@@ -19,15 +19,8 @@ A API JavaScript do Excel 1.1 é a primeira versão da API. É o único conjunto
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
-|[Aplicativo](/javascript/api/excel/excel.application)|[Calculate (calculatype: "recalcular" \| "completo \| " "FullRebuild")](/javascript/api/excel/excel.application#calculate-calculationtype-)|Recalcula todas as pastas de trabalho abertas no Excel no momento.|
-||[Calculate (calculatype: Excel. Calculatype)](/javascript/api/excel/excel.application#calculate-calculationtype-)|Recalcula todas as pastas de trabalho abertas no Excel no momento.|
+|[Aplicativo](/javascript/api/excel/excel.application)|[Calculate (calculatype: Excel. Calculatype)](/javascript/api/excel/excel.application#calculate-calculationtype-)|Recalcula todas as pastas de trabalho abertas no Excel no momento.|
 ||[cálculomode](/javascript/api/excel/excel.application#calculationmode)|Retorna o modo de cálculo usado na pasta de trabalho, conforme definido pelas constantes no Excel. Calculation. Os valores possíveis são `Automatic`:, onde o Excel controla o recálculo; `AutomaticExceptTables`, onde o Excel controla o recálculo, mas ignora as alterações nas tabelas; `Manual`, onde o cálculo é feito quando o usuário solicita.|
-||[Set (Propriedades: Excel. Application)](/javascript/api/excel/excel.application#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. ApplicationUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.application#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
-|[ApplicationData](/javascript/api/excel/excel.applicationdata)|[cálculomode](/javascript/api/excel/excel.applicationdata#calculationmode)|Retorna o modo de cálculo usado na pasta de trabalho, conforme definido pelas constantes no Excel. Calculation. Os valores possíveis são `Automatic`:, onde o Excel controla o recálculo; `AutomaticExceptTables`, onde o Excel controla o recálculo, mas ignora as alterações nas tabelas; `Manual`, onde o cálculo é feito quando o usuário solicita.|
-|[ApplicationLoadOptions](/javascript/api/excel/excel.applicationloadoptions)|[$all](/javascript/api/excel/excel.applicationloadoptions#$all)||
-||[cálculomode](/javascript/api/excel/excel.applicationloadoptions#calculationmode)|Retorna o modo de cálculo usado na pasta de trabalho, conforme definido pelas constantes no Excel. Calculation. Os valores possíveis são `Automatic`:, onde o Excel controla o recálculo; `AutomaticExceptTables`, onde o Excel controla o recálculo, mas ignora as alterações nas tabelas; `Manual`, onde o cálculo é feito quando o usuário solicita.|
-|[ApplicationUpdateData](/javascript/api/excel/excel.applicationupdatedata)|[cálculomode](/javascript/api/excel/excel.applicationupdatedata#calculationmode)|Retorna o modo de cálculo usado na pasta de trabalho, conforme definido pelas constantes no Excel. Calculation. Os valores possíveis são `Automatic`:, onde o Excel controla o recálculo; `AutomaticExceptTables`, onde o Excel controla o recálculo, mas ignora as alterações nas tabelas; `Manual`, onde o cálculo é feito quando o usuário solicita.|
 |[Associação](/javascript/api/excel/excel.binding)|[getRange()](/javascript/api/excel/excel.binding#getrange--)|Retorna o intervalo representado pela associação. Gera um erro quando a associação não é do tipo correto.|
 ||[getTable()](/javascript/api/excel/excel.binding#gettable--)|Retorna a tabela representada pela associação. Gera um erro quando a associação não é do tipo correto.|
 ||[getText()](/javascript/api/excel/excel.binding#gettext--)|Retorna o texto representado pela associação. Gera um erro quando a associação não é do tipo correto.|
@@ -37,14 +30,6 @@ A API JavaScript do Excel 1.1 é a primeira versão da API. É o único conjunto
 ||[getItemAt(index: number)](/javascript/api/excel/excel.bindingcollection#getitemat-index-)|Obtém um objeto de associação com base em sua posição na matriz dos itens.|
 ||[Count](/javascript/api/excel/excel.bindingcollection#count)|Retorna o número de associações da coleção. Somente leitura.|
 ||[items](/javascript/api/excel/excel.bindingcollection#items)|Obtém os itens filhos carregados nesta coleção.|
-|[BindingCollectionLoadOptions](/javascript/api/excel/excel.bindingcollectionloadoptions)|[$all](/javascript/api/excel/excel.bindingcollectionloadoptions#$all)||
-||[id](/javascript/api/excel/excel.bindingcollectionloadoptions#id)|Para cada ITEM na coleção: representa o identificador de associação. Somente leitura.|
-||[tipo](/javascript/api/excel/excel.bindingcollectionloadoptions#type)|Para cada ITEM na coleção: retorna o tipo da associação. Consulte Excel. BindingType para obter detalhes. Somente leitura.|
-|[BindingData](/javascript/api/excel/excel.bindingdata)|[id](/javascript/api/excel/excel.bindingdata#id)|Representa um identificador de associação. Somente leitura.|
-||[tipo](/javascript/api/excel/excel.bindingdata#type)|Retorna o tipo da associação. Consulte Excel. BindingType para obter detalhes. Somente leitura.|
-|[BindingLoadOptions](/javascript/api/excel/excel.bindingloadoptions)|[$all](/javascript/api/excel/excel.bindingloadoptions#$all)||
-||[id](/javascript/api/excel/excel.bindingloadoptions#id)|Representa um identificador de associação. Somente leitura.|
-||[tipo](/javascript/api/excel/excel.bindingloadoptions#type)|Retorna o tipo da associação. Consulte Excel. BindingType para obter detalhes. Somente leitura.|
 |[Chart](/javascript/api/excel/excel.chart)|[delete()](/javascript/api/excel/excel.chart#delete--)|Exclui o objeto de gráfico.|
 ||[height](/javascript/api/excel/excel.chart#height)|Representa a altura, em pontos, do objeto Chart.|
 ||[left](/javascript/api/excel/excel.chart#left)|A distância, em pontos, da esquerda do gráfico à origem da planilha.|
@@ -55,36 +40,15 @@ A API JavaScript do Excel 1.1 é a primeira versão da API. É o único conjunto
 ||[Legenda](/javascript/api/excel/excel.chart#legend)|Representa a legenda do gráfico. Somente leitura.|
 ||[series](/javascript/api/excel/excel.chart#series)|Representa uma única série ou uma coleção de séries no gráfico. Somente leitura.|
 ||[title](/javascript/api/excel/excel.chart#title)|Representa o título do gráfico especificado, incluindo o respectivo texto, a visibilidade, a posição e a formatação. Somente leitura.|
-||[Set (Propriedades: Excel. Chart)](/javascript/api/excel/excel.chart#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. ChartUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.chart#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
-||[setData (sourceData: Range, Seriesby como?: "auto" \| "Columns" \| Rows ")](/javascript/api/excel/excel.chart#setdata-sourcedata--seriesby-)|Redefine os dados de origem do gráfico.|
 ||[setData (sourceData: Range, Seriesby como?: Excel. ChartSeriesBy)](/javascript/api/excel/excel.chart#setdata-sourcedata--seriesby-)|Redefine os dados de origem do gráfico.|
 ||[SETPOSITION (startCell: String \| de intervalo, endcell?: \| cadeia de caracteres de intervalo)](/javascript/api/excel/excel.chart#setposition-startcell--endcell-)|Posiciona o gráfico em relação às células na planilha.|
 ||[top](/javascript/api/excel/excel.chart#top)|Representa a distância, em pontos, da borda superior do objeto à parte superior da primeira linha de uma planilha ou da área de um gráfico.|
 ||[width](/javascript/api/excel/excel.chart#width)|Representa a largura, em pontos, do objeto de gráfico.|
 |[ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)|[fill](/javascript/api/excel/excel.chartareaformat#fill)|Representa o formato de preenchimento de um objeto, que inclui informações sobre a formatação da tela de fundo. Somente leitura.|
 ||[font](/javascript/api/excel/excel.chartareaformat#font)|Representa os atributos de fonte do objeto atual, como nome, tamanho, cor, dentre outros. Somente leitura.|
-||[Set (Propriedades: Excel. ChartAreaFormat)](/javascript/api/excel/excel.chartareaformat#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. ChartAreaFormatUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.chartareaformat#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
-|[ChartAreaFormatData](/javascript/api/excel/excel.chartareaformatdata)|[font](/javascript/api/excel/excel.chartareaformatdata#font)|Representa os atributos de fonte do objeto atual, como nome, tamanho, cor, dentre outros. Somente leitura.|
-|[ChartAreaFormatLoadOptions](/javascript/api/excel/excel.chartareaformatloadoptions)|[$all](/javascript/api/excel/excel.chartareaformatloadoptions#$all)||
-||[font](/javascript/api/excel/excel.chartareaformatloadoptions#font)|Representa os atributos de fonte do objeto atual, como nome, tamanho, cor, dentre outros.|
-|[ChartAreaFormatUpdateData](/javascript/api/excel/excel.chartareaformatupdatedata)|[font](/javascript/api/excel/excel.chartareaformatupdatedata#font)|Representa os atributos de fonte do objeto atual, como nome, tamanho, cor, dentre outros.|
 |[ChartAxes](/javascript/api/excel/excel.chartaxes)|[categoryAxis](/javascript/api/excel/excel.chartaxes#categoryaxis)|Representa o eixo de categoria em um gráfico. Somente leitura.|
 ||[seriesAxis](/javascript/api/excel/excel.chartaxes#seriesaxis)|Representa o eixo das séries de um gráfico 3D. Somente leitura.|
 ||[valueAxis](/javascript/api/excel/excel.chartaxes#valueaxis)|Representa o eixo dos valores em um eixo. Somente leitura.|
-||[Set (Propriedades: Excel. ChartAxes)](/javascript/api/excel/excel.chartaxes#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. ChartAxesUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.chartaxes#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
-|[ChartAxesData](/javascript/api/excel/excel.chartaxesdata)|[categoryAxis](/javascript/api/excel/excel.chartaxesdata#categoryaxis)|Representa o eixo de categoria em um gráfico. Somente leitura.|
-||[seriesAxis](/javascript/api/excel/excel.chartaxesdata#seriesaxis)|Representa o eixo das séries de um gráfico 3D. Somente leitura.|
-||[valueAxis](/javascript/api/excel/excel.chartaxesdata#valueaxis)|Representa o eixo dos valores em um eixo. Somente leitura.|
-|[ChartAxesLoadOptions](/javascript/api/excel/excel.chartaxesloadoptions)|[$all](/javascript/api/excel/excel.chartaxesloadoptions#$all)||
-||[categoryAxis](/javascript/api/excel/excel.chartaxesloadoptions#categoryaxis)|Representa o eixo de categoria em um gráfico.|
-||[seriesAxis](/javascript/api/excel/excel.chartaxesloadoptions#seriesaxis)|Representa o eixo das séries de um gráfico 3D.|
-||[valueAxis](/javascript/api/excel/excel.chartaxesloadoptions#valueaxis)|Representa o eixo dos valores em um eixo.|
-|[ChartAxesUpdateData](/javascript/api/excel/excel.chartaxesupdatedata)|[categoryAxis](/javascript/api/excel/excel.chartaxesupdatedata#categoryaxis)|Representa o eixo de categoria em um gráfico.|
-||[seriesAxis](/javascript/api/excel/excel.chartaxesupdatedata#seriesaxis)|Representa o eixo das séries de um gráfico 3D.|
-||[valueAxis](/javascript/api/excel/excel.chartaxesupdatedata#valueaxis)|Representa o eixo dos valores em um eixo.|
 |[ChartAxis](/javascript/api/excel/excel.chartaxis)|[majorUnit](/javascript/api/excel/excel.chartaxis#majorunit)|Representa o intervalo entre as duas principais marcas de escala. Pode ser definido como um valor numérico ou uma cadeia de caracteres vazia.  O valor retornado sempre é um número.|
 ||[maximum](/javascript/api/excel/excel.chartaxis#maximum)|Representa o valor máximo no eixo dos valores.  Pode ser definido como um valor numérico ou uma cadeia de caracteres vazia (para valores automáticos de eixo).  O valor retornado sempre é um número.|
 ||[minimum](/javascript/api/excel/excel.chartaxis#minimum)|Representa o valor mínimo no eixo dos valores. Pode ser definido como um valor numérico ou uma cadeia de caracteres vazia (para valores automáticos de eixo).  O valor retornado sempre é um número.|
@@ -93,349 +57,75 @@ A API JavaScript do Excel 1.1 é a primeira versão da API. É o único conjunto
 ||[majorGridlines](/javascript/api/excel/excel.chartaxis#majorgridlines)|Retorna um objeto Gridlines que representa as principais linhas de grade do eixo especificado. Somente leitura.|
 ||[minorGridlines](/javascript/api/excel/excel.chartaxis#minorgridlines)|Retorna um objeto Gridlines que representa as linhas de grade secundárias do eixo especificado. Somente leitura.|
 ||[title](/javascript/api/excel/excel.chartaxis#title)|Representa o título do eixo. Somente leitura.|
-||[Set (Propriedades: Excel. ChartAxis)](/javascript/api/excel/excel.chartaxis#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. ChartAxisUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.chartaxis#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
-|[ChartAxisData](/javascript/api/excel/excel.chartaxisdata)|[format](/javascript/api/excel/excel.chartaxisdata#format)|Representa a formatação de um objeto Chart, que inclui formatação de linha e de fonte. Somente leitura.|
-||[majorGridlines](/javascript/api/excel/excel.chartaxisdata#majorgridlines)|Retorna um objeto Gridlines que representa as principais linhas de grade do eixo especificado. Somente leitura.|
-||[majorUnit](/javascript/api/excel/excel.chartaxisdata#majorunit)|Representa o intervalo entre as duas principais marcas de escala. Pode ser definido como um valor numérico ou uma cadeia de caracteres vazia.  O valor retornado sempre é um número.|
-||[maximum](/javascript/api/excel/excel.chartaxisdata#maximum)|Representa o valor máximo no eixo dos valores.  Pode ser definido como um valor numérico ou uma cadeia de caracteres vazia (para valores automáticos de eixo).  O valor retornado sempre é um número.|
-||[minimum](/javascript/api/excel/excel.chartaxisdata#minimum)|Representa o valor mínimo no eixo dos valores. Pode ser definido como um valor numérico ou uma cadeia de caracteres vazia (para valores automáticos de eixo).  O valor retornado sempre é um número.|
-||[minorGridlines](/javascript/api/excel/excel.chartaxisdata#minorgridlines)|Retorna um objeto Gridlines que representa as linhas de grade secundárias do eixo especificado. Somente leitura.|
-||[minorUnit](/javascript/api/excel/excel.chartaxisdata#minorunit)|Representa o intervalo entre as duas marcas de escala secundárias. Pode ser definido como um valor numérico ou uma cadeia de caracteres vazia (para valores automáticos de eixo). O valor retornado sempre é um número.|
-||[title](/javascript/api/excel/excel.chartaxisdata#title)|Representa o título do eixo. Somente leitura.|
 |[ChartAxisFormat](/javascript/api/excel/excel.chartaxisformat)|[font](/javascript/api/excel/excel.chartaxisformat#font)|Representa os atributos de fonte de um elemento do eixo do gráfico, como nome, tamanho, cor, etc. Somente leitura.|
 ||[line](/javascript/api/excel/excel.chartaxisformat#line)|Representa a formatação de linha do gráfico. Somente leitura.|
-||[Set (Propriedades: Excel. ChartAxisFormat)](/javascript/api/excel/excel.chartaxisformat#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. ChartAxisFormatUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.chartaxisformat#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
-|[ChartAxisFormatData](/javascript/api/excel/excel.chartaxisformatdata)|[font](/javascript/api/excel/excel.chartaxisformatdata#font)|Representa os atributos de fonte de um elemento do eixo do gráfico, como nome, tamanho, cor, etc. Somente leitura.|
-||[line](/javascript/api/excel/excel.chartaxisformatdata#line)|Representa a formatação de linha do gráfico. Somente leitura.|
-|[ChartAxisFormatLoadOptions](/javascript/api/excel/excel.chartaxisformatloadoptions)|[$all](/javascript/api/excel/excel.chartaxisformatloadoptions#$all)||
-||[font](/javascript/api/excel/excel.chartaxisformatloadoptions#font)|Representa os atributos de fonte de um elemento do eixo do gráfico, como nome, tamanho, cor, etc.|
-||[line](/javascript/api/excel/excel.chartaxisformatloadoptions#line)|Representa a formatação de linha do gráfico.|
-|[ChartAxisFormatUpdateData](/javascript/api/excel/excel.chartaxisformatupdatedata)|[font](/javascript/api/excel/excel.chartaxisformatupdatedata#font)|Representa os atributos de fonte de um elemento do eixo do gráfico, como nome, tamanho, cor, etc.|
-||[line](/javascript/api/excel/excel.chartaxisformatupdatedata#line)|Representa a formatação de linha do gráfico.|
-|[ChartAxisLoadOptions](/javascript/api/excel/excel.chartaxisloadoptions)|[$all](/javascript/api/excel/excel.chartaxisloadoptions#$all)||
-||[format](/javascript/api/excel/excel.chartaxisloadoptions#format)|Representa a formatação de um objeto Chart, que inclui formatação de linha e de fonte.|
-||[majorGridlines](/javascript/api/excel/excel.chartaxisloadoptions#majorgridlines)|Retorna um objeto Gridlines que representa as principais linhas de grade do eixo especificado.|
-||[majorUnit](/javascript/api/excel/excel.chartaxisloadoptions#majorunit)|Representa o intervalo entre as duas principais marcas de escala. Pode ser definido como um valor numérico ou uma cadeia de caracteres vazia.  O valor retornado sempre é um número.|
-||[maximum](/javascript/api/excel/excel.chartaxisloadoptions#maximum)|Representa o valor máximo no eixo dos valores.  Pode ser definido como um valor numérico ou uma cadeia de caracteres vazia (para valores automáticos de eixo).  O valor retornado sempre é um número.|
-||[minimum](/javascript/api/excel/excel.chartaxisloadoptions#minimum)|Representa o valor mínimo no eixo dos valores. Pode ser definido como um valor numérico ou uma cadeia de caracteres vazia (para valores automáticos de eixo).  O valor retornado sempre é um número.|
-||[minorGridlines](/javascript/api/excel/excel.chartaxisloadoptions#minorgridlines)|Retorna um objeto Gridlines que representa as linhas de grade secundárias do eixo especificado.|
-||[minorUnit](/javascript/api/excel/excel.chartaxisloadoptions#minorunit)|Representa o intervalo entre as duas marcas de escala secundárias. Pode ser definido como um valor numérico ou uma cadeia de caracteres vazia (para valores automáticos de eixo). O valor retornado sempre é um número.|
-||[title](/javascript/api/excel/excel.chartaxisloadoptions#title)|Representa o título do eixo.|
 |[ChartAxisTitle](/javascript/api/excel/excel.chartaxistitle)|[format](/javascript/api/excel/excel.chartaxistitle#format)|Representa a formatação do título do eixo do gráfico. Somente leitura.|
-||[Set (Propriedades: Excel. ChartAxisTitle)](/javascript/api/excel/excel.chartaxistitle#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. ChartAxisTitleUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.chartaxistitle#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
 ||[text](/javascript/api/excel/excel.chartaxistitle#text)|Representa o título do eixo.|
 ||[visible](/javascript/api/excel/excel.chartaxistitle#visible)|Um booliano que especifica a visibilidade de um título do eixo.|
-|[ChartAxisTitleData](/javascript/api/excel/excel.chartaxistitledata)|[format](/javascript/api/excel/excel.chartaxistitledata#format)|Representa a formatação do título do eixo do gráfico. Somente leitura.|
-||[text](/javascript/api/excel/excel.chartaxistitledata#text)|Representa o título do eixo.|
-||[visible](/javascript/api/excel/excel.chartaxistitledata#visible)|Um booliano que especifica a visibilidade de um título do eixo.|
 |[ChartAxisTitleFormat](/javascript/api/excel/excel.chartaxistitleformat)|[font](/javascript/api/excel/excel.chartaxistitleformat#font)|Representa os atributos de fonte, como nome, tamanho, cor, etc., do objeto do eixo do gráfico. Somente leitura.|
-||[Set (Propriedades: Excel. ChartAxisTitleFormat)](/javascript/api/excel/excel.chartaxistitleformat#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. ChartAxisTitleFormatUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.chartaxistitleformat#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
-|[ChartAxisTitleFormatData](/javascript/api/excel/excel.chartaxistitleformatdata)|[font](/javascript/api/excel/excel.chartaxistitleformatdata#font)|Representa os atributos de fonte, como nome, tamanho, cor, etc., do objeto do eixo do gráfico. Somente leitura.|
-|[ChartAxisTitleFormatLoadOptions](/javascript/api/excel/excel.chartaxistitleformatloadoptions)|[$all](/javascript/api/excel/excel.chartaxistitleformatloadoptions#$all)||
-||[font](/javascript/api/excel/excel.chartaxistitleformatloadoptions#font)|Representa os atributos de fonte, como nome, tamanho, cor, etc., do objeto do eixo do gráfico.|
-|[ChartAxisTitleFormatUpdateData](/javascript/api/excel/excel.chartaxistitleformatupdatedata)|[font](/javascript/api/excel/excel.chartaxistitleformatupdatedata#font)|Representa os atributos de fonte, como nome, tamanho, cor, etc., do objeto do eixo do gráfico.|
-|[ChartAxisTitleLoadOptions](/javascript/api/excel/excel.chartaxistitleloadoptions)|[$all](/javascript/api/excel/excel.chartaxistitleloadoptions#$all)||
-||[format](/javascript/api/excel/excel.chartaxistitleloadoptions#format)|Representa a formatação do título do eixo do gráfico.|
-||[text](/javascript/api/excel/excel.chartaxistitleloadoptions#text)|Representa o título do eixo.|
-||[visible](/javascript/api/excel/excel.chartaxistitleloadoptions#visible)|Um booliano que especifica a visibilidade de um título do eixo.|
-|[ChartAxisTitleUpdateData](/javascript/api/excel/excel.chartaxistitleupdatedata)|[format](/javascript/api/excel/excel.chartaxistitleupdatedata#format)|Representa a formatação do título do eixo do gráfico.|
-||[text](/javascript/api/excel/excel.chartaxistitleupdatedata#text)|Representa o título do eixo.|
-||[visible](/javascript/api/excel/excel.chartaxistitleupdatedata#visible)|Um booliano que especifica a visibilidade de um título do eixo.|
-|[ChartAxisUpdateData](/javascript/api/excel/excel.chartaxisupdatedata)|[format](/javascript/api/excel/excel.chartaxisupdatedata#format)|Representa a formatação de um objeto Chart, que inclui formatação de linha e de fonte.|
-||[majorGridlines](/javascript/api/excel/excel.chartaxisupdatedata#majorgridlines)|Retorna um objeto Gridlines que representa as principais linhas de grade do eixo especificado.|
-||[majorUnit](/javascript/api/excel/excel.chartaxisupdatedata#majorunit)|Representa o intervalo entre as duas principais marcas de escala. Pode ser definido como um valor numérico ou uma cadeia de caracteres vazia.  O valor retornado sempre é um número.|
-||[maximum](/javascript/api/excel/excel.chartaxisupdatedata#maximum)|Representa o valor máximo no eixo dos valores.  Pode ser definido como um valor numérico ou uma cadeia de caracteres vazia (para valores automáticos de eixo).  O valor retornado sempre é um número.|
-||[minimum](/javascript/api/excel/excel.chartaxisupdatedata#minimum)|Representa o valor mínimo no eixo dos valores. Pode ser definido como um valor numérico ou uma cadeia de caracteres vazia (para valores automáticos de eixo).  O valor retornado sempre é um número.|
-||[minorGridlines](/javascript/api/excel/excel.chartaxisupdatedata#minorgridlines)|Retorna um objeto Gridlines que representa as linhas de grade secundárias do eixo especificado.|
-||[minorUnit](/javascript/api/excel/excel.chartaxisupdatedata#minorunit)|Representa o intervalo entre as duas marcas de escala secundárias. Pode ser definido como um valor numérico ou uma cadeia de caracteres vazia (para valores automáticos de eixo). O valor retornado sempre é um número.|
-||[title](/javascript/api/excel/excel.chartaxisupdatedata#title)|Representa o título do eixo.|
-|[ChartCollection](/javascript/api/excel/excel.chartcollection)|[Add (tipo: "Invalid" \| "ColumnClustered" \| "ColumnStacked" \| "ColumnStacked100" \| "3DColumnClustered" \| " \| \| 3DColumnStacked" "3DColumnStacked100" "BarClustered" \| "BarStacked" \| "BarStacked100" \| "3DBarClustered" \| "3DBarStacked" \| "3DBarStacked100" \| "LineStacked" \| "LineStacked100" \| " \| \| LineMarkers" "LineMarkersStacked" " \| LineMarkersStacked100 "" PieOfPie " \| " PieExploded " \| " 3DPieExploded " \| " BarOfPie " \| " XYScatterSmooth " \| " \| \| XYScatterSmoothNoMarkers "" XYScatterLines "" \| XYScatterLinesNoMarkers "" AreaStacked " \| " AreaStacked100 " \| " 3DAreaStacked " \| " 3DAreaStacked100 " \| " DoughnutExploded " \| " \| \| RadarMarkers "" RadarFilled "" Surface " \| " SurfaceWireframe " \| " SurfaceTopView " \| " SurfaceTopViewWireframe " \| " Bubble " \| " Bubble3DEffect " \| " StockHLC " \| " StockOHLC " \| " StockVHLC " \| " \| StockVOHLC "" CylinderColClustered " \| " CylinderColStacked " \| " CylinderColStacked100 " \| " CylinderBarClustered " \| " CylinderBarStacked " \| " CylinderBarStacked100 " \| " \| CylinderCol "" ConeColClustered " \| " ConeColStacked " \| " ConeColStacked100 " \| " ConeBarClustered " \| " ConeBarStacked " \| " \| \| ConeBarStacked100 "" ConeCol "" \| PyramidColClustered "" PyramidColStacked " \| " PyramidColStacked100 " \| " PyramidBarClustered " \| " PyramidBarStacked " \| " \| \| PyramidBarStacked100 "" PyramidCol "" 3DColumn " \| "Linha" \| "3DLine" \| "3DPie" \| "pizza" \| "XYScatter" \| "3DArea" \| " \| área" \| "rosca" "radar \| " "histograma \| " "Boxwhisker" \| " Pareto " \| " RegionMap " \| " mapa de \| linhas "" \| cascata "" \| "água" "explosão" "funil", SourceData: intervalo, \| seriesby como?: \| "auto" "Columns" Rows ")](/javascript/api/excel/excel.chartcollection#add-type--sourcedata--seriesby-)|Cria um novo gráfico.|
-||[Add (tipo: Excel. ChartType, sourceData: Range, Seriesby como?: Excel. ChartSeriesBy)](/javascript/api/excel/excel.chartcollection#add-type--sourcedata--seriesby-)|Cria um novo gráfico.|
+|[ChartCollection](/javascript/api/excel/excel.chartcollection)|[Add (tipo: Excel. ChartType, sourceData: Range, Seriesby como?: Excel. ChartSeriesBy)](/javascript/api/excel/excel.chartcollection#add-type--sourcedata--seriesby-)|Cria um novo gráfico.|
 ||[getItem(name: string)](/javascript/api/excel/excel.chartcollection#getitem-name-)|Obtém um gráfico usando o respectivo nome. Quando houver vários gráficos com o mesmo nome, o sistema retornará o primeiro deles.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.chartcollection#getitemat-index-)|Obtém um gráfico com base em sua posição no conjunto.|
 ||[Count](/javascript/api/excel/excel.chartcollection#count)|Retorna o número de gráficos da planilha. Somente leitura.|
 ||[items](/javascript/api/excel/excel.chartcollection#items)|Obtém os itens filhos carregados nesta coleção.|
-|[ChartCollectionLoadOptions](/javascript/api/excel/excel.chartcollectionloadoptions)|[$all](/javascript/api/excel/excel.chartcollectionloadoptions#$all)||
-||[Axes](/javascript/api/excel/excel.chartcollectionloadoptions#axes)|Para cada ITEM na coleção: representa os eixos do gráfico.|
-||[dataLabels](/javascript/api/excel/excel.chartcollectionloadoptions#datalabels)|Para cada ITEM na coleção: representa os DataLabels no gráfico.|
-||[format](/javascript/api/excel/excel.chartcollectionloadoptions#format)|Para cada ITEM na coleção: encapsula as propriedades de formato da área do gráfico.|
-||[height](/javascript/api/excel/excel.chartcollectionloadoptions#height)|Para cada ITEM na coleção: representa a altura, em pontos, do objeto de gráfico.|
-||[left](/javascript/api/excel/excel.chartcollectionloadoptions#left)|Para cada ITEM na coleção: a distância, em pontos, do lado esquerdo do gráfico até a origem da planilha.|
-||[Legenda](/javascript/api/excel/excel.chartcollectionloadoptions#legend)|Para cada ITEM na coleção: representa a legenda do gráfico.|
-||[name](/javascript/api/excel/excel.chartcollectionloadoptions#name)|Para cada ITEM na coleção: representa o nome de um objeto de gráfico.|
-||[série](/javascript/api/excel/excel.chartcollectionloadoptions#series)|Para cada ITEM na coleção: representa uma única série ou coleção de séries no gráfico.|
-||[title](/javascript/api/excel/excel.chartcollectionloadoptions#title)|Para cada ITEM na coleção: representa o título do gráfico especificado, incluindo o texto, a visibilidade, a posição e a formatação do título.|
-||[top](/javascript/api/excel/excel.chartcollectionloadoptions#top)|Para cada ITEM na coleção: representa a distância, em pontos, da borda superior do objeto até a parte superior da linha 1 (em uma planilha) ou a parte superior da área do gráfico (em um gráfico).|
-||[width](/javascript/api/excel/excel.chartcollectionloadoptions#width)|Para cada ITEM na coleção: representa a largura, em pontos, do objeto de gráfico.|
-|[ChartData](/javascript/api/excel/excel.chartdata)|[Axes](/javascript/api/excel/excel.chartdata#axes)|Representa os eixos de um gráfico. Somente leitura.|
-||[dataLabels](/javascript/api/excel/excel.chartdata#datalabels)|Representa os rótulos de dados no gráfico. Somente leitura.|
-||[format](/javascript/api/excel/excel.chartdata#format)|Encapsula as propriedades de formato da área do gráfico. Somente leitura.|
-||[height](/javascript/api/excel/excel.chartdata#height)|Representa a altura, em pontos, do objeto Chart.|
-||[left](/javascript/api/excel/excel.chartdata#left)|A distância, em pontos, da esquerda do gráfico à origem da planilha.|
-||[Legenda](/javascript/api/excel/excel.chartdata#legend)|Representa a legenda do gráfico. Somente leitura.|
-||[name](/javascript/api/excel/excel.chartdata#name)|Representa o nome de um objeto Chart.|
-||[série](/javascript/api/excel/excel.chartdata#series)|Representa uma única série ou uma coleção de séries no gráfico. Somente leitura.|
-||[title](/javascript/api/excel/excel.chartdata#title)|Representa o título do gráfico especificado, incluindo o respectivo texto, a visibilidade, a posição e a formatação. Somente leitura.|
-||[top](/javascript/api/excel/excel.chartdata#top)|Representa a distância, em pontos, da borda superior do objeto à parte superior da primeira linha de uma planilha ou da área de um gráfico.|
-||[width](/javascript/api/excel/excel.chartdata#width)|Representa a largura, em pontos, do objeto de gráfico.|
 |[ChartDataLabelFormat](/javascript/api/excel/excel.chartdatalabelformat)|[fill](/javascript/api/excel/excel.chartdatalabelformat#fill)|Representa o formato de preenchimento do rótulo de dados atual do gráfico. Somente leitura.|
 ||[font](/javascript/api/excel/excel.chartdatalabelformat#font)|Representa os atributos de fonte do rótulo de dados do gráfico, como nome, tamanho, cor, dentre outros. Somente leitura.|
-||[Set (Propriedades: Excel. ChartDataLabelFormat)](/javascript/api/excel/excel.chartdatalabelformat#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. ChartDataLabelFormatUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.chartdatalabelformat#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
-|[ChartDataLabelFormatData](/javascript/api/excel/excel.chartdatalabelformatdata)|[font](/javascript/api/excel/excel.chartdatalabelformatdata#font)|Representa os atributos de fonte do rótulo de dados do gráfico, como nome, tamanho, cor, dentre outros. Somente leitura.|
-|[ChartDataLabelFormatLoadOptions](/javascript/api/excel/excel.chartdatalabelformatloadoptions)|[$all](/javascript/api/excel/excel.chartdatalabelformatloadoptions#$all)||
-||[font](/javascript/api/excel/excel.chartdatalabelformatloadoptions#font)|Representa os atributos de fonte do rótulo de dados do gráfico, como nome, tamanho, cor, dentre outros.|
-|[ChartDataLabelFormatUpdateData](/javascript/api/excel/excel.chartdatalabelformatupdatedata)|[font](/javascript/api/excel/excel.chartdatalabelformatupdatedata#font)|Representa os atributos de fonte do rótulo de dados do gráfico, como nome, tamanho, cor, dentre outros.|
 |[ChartDataLabels](/javascript/api/excel/excel.chartdatalabels)|[position](/javascript/api/excel/excel.chartdatalabels#position)|Valor de DataLabelPosition que representa a posição do rótulo de dados. Consulte Excel. ChartDataLabelPosition para obter detalhes.|
 ||[format](/javascript/api/excel/excel.chartdatalabels#format)|Representa o formato dos rótulos de dados do gráfico, que inclui a formatação de fonte e de preenchimento. Somente leitura.|
 ||[divisória](/javascript/api/excel/excel.chartdatalabels#separator)|Cadeia de caracteres que representa o separador usado para os rótulos de dados em um gráfico.|
-||[Set (Propriedades: Excel. ChartDataLabels)](/javascript/api/excel/excel.chartdatalabels#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. ChartDataLabelsUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.chartdatalabels#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
 ||[showBubbleSize](/javascript/api/excel/excel.chartdatalabels#showbubblesize)|Valor booliano que determina se o tamanho da bolha do rótulo de dados fica visível ou não.|
 ||[showCategoryName](/javascript/api/excel/excel.chartdatalabels#showcategoryname)|Valor booliano que determina se o nome da categoria do rótulo de dados fica visível ou não.|
 ||[showLegendKey](/javascript/api/excel/excel.chartdatalabels#showlegendkey)|Valor booliano que determina se o código de legenda do rótulo de dados fica visível ou não.|
 ||[showPercentage](/javascript/api/excel/excel.chartdatalabels#showpercentage)|Valor booliano que determina se o percentual do rótulo de dados fica visível ou não.|
 ||[showSeriesName](/javascript/api/excel/excel.chartdatalabels#showseriesname)|Valor booliano que determina se o nome da série do rótulo de dados fica visível ou não.|
 ||[showValue](/javascript/api/excel/excel.chartdatalabels#showvalue)|Valor booliano que determina se o valor do rótulo de dados fica visível ou não.|
-|[ChartDataLabelsData](/javascript/api/excel/excel.chartdatalabelsdata)|[format](/javascript/api/excel/excel.chartdatalabelsdata#format)|Representa o formato dos rótulos de dados do gráfico, que inclui a formatação de fonte e de preenchimento. Somente leitura.|
-||[position](/javascript/api/excel/excel.chartdatalabelsdata#position)|Valor de DataLabelPosition que representa a posição do rótulo de dados. Consulte Excel. ChartDataLabelPosition para obter detalhes.|
-||[divisória](/javascript/api/excel/excel.chartdatalabelsdata#separator)|Cadeia de caracteres que representa o separador usado para os rótulos de dados em um gráfico.|
-||[showBubbleSize](/javascript/api/excel/excel.chartdatalabelsdata#showbubblesize)|Valor booliano que determina se o tamanho da bolha do rótulo de dados fica visível ou não.|
-||[showCategoryName](/javascript/api/excel/excel.chartdatalabelsdata#showcategoryname)|Valor booliano que determina se o nome da categoria do rótulo de dados fica visível ou não.|
-||[showLegendKey](/javascript/api/excel/excel.chartdatalabelsdata#showlegendkey)|Valor booliano que determina se o código de legenda do rótulo de dados fica visível ou não.|
-||[showPercentage](/javascript/api/excel/excel.chartdatalabelsdata#showpercentage)|Valor booliano que determina se o percentual do rótulo de dados fica visível ou não.|
-||[showSeriesName](/javascript/api/excel/excel.chartdatalabelsdata#showseriesname)|Valor booliano que determina se o nome da série do rótulo de dados fica visível ou não.|
-||[showValue](/javascript/api/excel/excel.chartdatalabelsdata#showvalue)|Valor booliano que determina se o valor do rótulo de dados fica visível ou não.|
-|[ChartDataLabelsLoadOptions](/javascript/api/excel/excel.chartdatalabelsloadoptions)|[$all](/javascript/api/excel/excel.chartdatalabelsloadoptions#$all)||
-||[format](/javascript/api/excel/excel.chartdatalabelsloadoptions#format)|Representa o formato dos rótulos de dados do gráfico, que inclui a formatação de fonte e de preenchimento.|
-||[position](/javascript/api/excel/excel.chartdatalabelsloadoptions#position)|Valor de DataLabelPosition que representa a posição do rótulo de dados. Consulte Excel. ChartDataLabelPosition para obter detalhes.|
-||[divisória](/javascript/api/excel/excel.chartdatalabelsloadoptions#separator)|Cadeia de caracteres que representa o separador usado para os rótulos de dados em um gráfico.|
-||[showBubbleSize](/javascript/api/excel/excel.chartdatalabelsloadoptions#showbubblesize)|Valor booliano que determina se o tamanho da bolha do rótulo de dados fica visível ou não.|
-||[showCategoryName](/javascript/api/excel/excel.chartdatalabelsloadoptions#showcategoryname)|Valor booliano que determina se o nome da categoria do rótulo de dados fica visível ou não.|
-||[showLegendKey](/javascript/api/excel/excel.chartdatalabelsloadoptions#showlegendkey)|Valor booliano que determina se o código de legenda do rótulo de dados fica visível ou não.|
-||[showPercentage](/javascript/api/excel/excel.chartdatalabelsloadoptions#showpercentage)|Valor booliano que determina se o percentual do rótulo de dados fica visível ou não.|
-||[showSeriesName](/javascript/api/excel/excel.chartdatalabelsloadoptions#showseriesname)|Valor booliano que determina se o nome da série do rótulo de dados fica visível ou não.|
-||[showValue](/javascript/api/excel/excel.chartdatalabelsloadoptions#showvalue)|Valor booliano que determina se o valor do rótulo de dados fica visível ou não.|
-|[ChartDataLabelsUpdateData](/javascript/api/excel/excel.chartdatalabelsupdatedata)|[format](/javascript/api/excel/excel.chartdatalabelsupdatedata#format)|Representa o formato dos rótulos de dados do gráfico, que inclui a formatação de fonte e de preenchimento.|
-||[position](/javascript/api/excel/excel.chartdatalabelsupdatedata#position)|Valor de DataLabelPosition que representa a posição do rótulo de dados. Consulte Excel. ChartDataLabelPosition para obter detalhes.|
-||[divisória](/javascript/api/excel/excel.chartdatalabelsupdatedata#separator)|Cadeia de caracteres que representa o separador usado para os rótulos de dados em um gráfico.|
-||[showBubbleSize](/javascript/api/excel/excel.chartdatalabelsupdatedata#showbubblesize)|Valor booliano que determina se o tamanho da bolha do rótulo de dados fica visível ou não.|
-||[showCategoryName](/javascript/api/excel/excel.chartdatalabelsupdatedata#showcategoryname)|Valor booliano que determina se o nome da categoria do rótulo de dados fica visível ou não.|
-||[showLegendKey](/javascript/api/excel/excel.chartdatalabelsupdatedata#showlegendkey)|Valor booliano que determina se o código de legenda do rótulo de dados fica visível ou não.|
-||[showPercentage](/javascript/api/excel/excel.chartdatalabelsupdatedata#showpercentage)|Valor booliano que determina se o percentual do rótulo de dados fica visível ou não.|
-||[showSeriesName](/javascript/api/excel/excel.chartdatalabelsupdatedata#showseriesname)|Valor booliano que determina se o nome da série do rótulo de dados fica visível ou não.|
-||[showValue](/javascript/api/excel/excel.chartdatalabelsupdatedata#showvalue)|Valor booliano que determina se o valor do rótulo de dados fica visível ou não.|
 |[ChartFill](/javascript/api/excel/excel.chartfill)|[clear()](/javascript/api/excel/excel.chartfill#clear--)|Limpa a cor de preenchimento de um elemento do gráfico.|
 ||[setSolidColor(color: string)](/javascript/api/excel/excel.chartfill#setsolidcolor-color-)|Define a formatação de preenchimento de um elemento do gráfico com uma cor uniforme.|
 |[ChartFont](/javascript/api/excel/excel.chartfont)|[bold](/javascript/api/excel/excel.chartfont#bold)|Representa o status da fonte em negrito.|
 ||[color](/javascript/api/excel/excel.chartfont#color)|Representação de código de cor HTML para a cor do texto. Por exemplo #FF0000 representa vermelho.|
 ||[italic](/javascript/api/excel/excel.chartfont#italic)|Representa o status da fonte em itálico.|
 ||[name](/javascript/api/excel/excel.chartfont#name)|Nome da fonte (por exemplo, "Calibri")|
-||[Set (Propriedades: Excel. ChartFont)](/javascript/api/excel/excel.chartfont#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. ChartFontUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.chartfont#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
 ||[size](/javascript/api/excel/excel.chartfont#size)|Tamanho da fonte, por exemplo, 11.|
 ||[underline](/javascript/api/excel/excel.chartfont#underline)|Tipo de sublinhado aplicado à fonte. Consulte Excel. ChartUnderlineStyle para obter detalhes.|
-|[ChartFontData](/javascript/api/excel/excel.chartfontdata)|[bold](/javascript/api/excel/excel.chartfontdata#bold)|Representa o status da fonte em negrito.|
-||[color](/javascript/api/excel/excel.chartfontdata#color)|Representação de código de cor HTML para a cor do texto. Por exemplo #FF0000 representa vermelho.|
-||[italic](/javascript/api/excel/excel.chartfontdata#italic)|Representa o status da fonte em itálico.|
-||[name](/javascript/api/excel/excel.chartfontdata#name)|Nome da fonte (por exemplo, "Calibri")|
-||[size](/javascript/api/excel/excel.chartfontdata#size)|Tamanho da fonte, por exemplo, 11.|
-||[underline](/javascript/api/excel/excel.chartfontdata#underline)|Tipo de sublinhado aplicado à fonte. Consulte Excel. ChartUnderlineStyle para obter detalhes.|
-|[ChartFontLoadOptions](/javascript/api/excel/excel.chartfontloadoptions)|[$all](/javascript/api/excel/excel.chartfontloadoptions#$all)||
-||[bold](/javascript/api/excel/excel.chartfontloadoptions#bold)|Representa o status da fonte em negrito.|
-||[color](/javascript/api/excel/excel.chartfontloadoptions#color)|Representação de código de cor HTML para a cor do texto. Por exemplo #FF0000 representa vermelho.|
-||[italic](/javascript/api/excel/excel.chartfontloadoptions#italic)|Representa o status da fonte em itálico.|
-||[name](/javascript/api/excel/excel.chartfontloadoptions#name)|Nome da fonte (por exemplo, "Calibri")|
-||[size](/javascript/api/excel/excel.chartfontloadoptions#size)|Tamanho da fonte, por exemplo, 11.|
-||[underline](/javascript/api/excel/excel.chartfontloadoptions#underline)|Tipo de sublinhado aplicado à fonte. Consulte Excel. ChartUnderlineStyle para obter detalhes.|
-|[ChartFontUpdateData](/javascript/api/excel/excel.chartfontupdatedata)|[bold](/javascript/api/excel/excel.chartfontupdatedata#bold)|Representa o status da fonte em negrito.|
-||[color](/javascript/api/excel/excel.chartfontupdatedata#color)|Representação de código de cor HTML para a cor do texto. Por exemplo #FF0000 representa vermelho.|
-||[italic](/javascript/api/excel/excel.chartfontupdatedata#italic)|Representa o status da fonte em itálico.|
-||[name](/javascript/api/excel/excel.chartfontupdatedata#name)|Nome da fonte (por exemplo, "Calibri")|
-||[size](/javascript/api/excel/excel.chartfontupdatedata#size)|Tamanho da fonte, por exemplo, 11.|
-||[underline](/javascript/api/excel/excel.chartfontupdatedata#underline)|Tipo de sublinhado aplicado à fonte. Consulte Excel. ChartUnderlineStyle para obter detalhes.|
 |[ChartGridlines](/javascript/api/excel/excel.chartgridlines)|[format](/javascript/api/excel/excel.chartgridlines#format)|Representa a formatação de linhas de grade do gráfico. Somente leitura.|
-||[Set (Propriedades: Excel. ChartGridlines)](/javascript/api/excel/excel.chartgridlines#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. ChartGridlinesUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.chartgridlines#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
 ||[visible](/javascript/api/excel/excel.chartgridlines#visible)|Valor booleano que determina quando as linhas de grade do eixo ficam visível ou não.|
-|[ChartGridlinesData](/javascript/api/excel/excel.chartgridlinesdata)|[format](/javascript/api/excel/excel.chartgridlinesdata#format)|Representa a formatação de linhas de grade do gráfico. Somente leitura.|
-||[visible](/javascript/api/excel/excel.chartgridlinesdata#visible)|Valor booleano que determina quando as linhas de grade do eixo ficam visível ou não.|
 |[ChartGridlinesFormat](/javascript/api/excel/excel.chartgridlinesformat)|[line](/javascript/api/excel/excel.chartgridlinesformat#line)|Representa a formatação de linha do gráfico. Somente leitura.|
-||[Set (Propriedades: Excel. ChartGridlinesFormat)](/javascript/api/excel/excel.chartgridlinesformat#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. ChartGridlinesFormatUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.chartgridlinesformat#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
-|[ChartGridlinesFormatData](/javascript/api/excel/excel.chartgridlinesformatdata)|[line](/javascript/api/excel/excel.chartgridlinesformatdata#line)|Representa a formatação de linha do gráfico. Somente leitura.|
-|[ChartGridlinesFormatLoadOptions](/javascript/api/excel/excel.chartgridlinesformatloadoptions)|[$all](/javascript/api/excel/excel.chartgridlinesformatloadoptions#$all)||
-||[line](/javascript/api/excel/excel.chartgridlinesformatloadoptions#line)|Representa a formatação de linha do gráfico.|
-|[ChartGridlinesFormatUpdateData](/javascript/api/excel/excel.chartgridlinesformatupdatedata)|[line](/javascript/api/excel/excel.chartgridlinesformatupdatedata#line)|Representa a formatação de linha do gráfico.|
-|[ChartGridlinesLoadOptions](/javascript/api/excel/excel.chartgridlinesloadoptions)|[$all](/javascript/api/excel/excel.chartgridlinesloadoptions#$all)||
-||[format](/javascript/api/excel/excel.chartgridlinesloadoptions#format)|Representa a formatação de linhas de grade do gráfico.|
-||[visible](/javascript/api/excel/excel.chartgridlinesloadoptions#visible)|Valor booleano que determina quando as linhas de grade do eixo ficam visível ou não.|
-|[ChartGridlinesUpdateData](/javascript/api/excel/excel.chartgridlinesupdatedata)|[format](/javascript/api/excel/excel.chartgridlinesupdatedata#format)|Representa a formatação de linhas de grade do gráfico.|
-||[visible](/javascript/api/excel/excel.chartgridlinesupdatedata#visible)|Valor booleano que determina quando as linhas de grade do eixo ficam visível ou não.|
 |[ChartLegend](/javascript/api/excel/excel.chartlegend)|[overlay](/javascript/api/excel/excel.chartlegend#overlay)|Valor booleano para determinar quando a legenda do gráfico deve se sobrepor ao corpo principal do gráfico.|
 ||[position](/javascript/api/excel/excel.chartlegend#position)|Representa a posição da legenda no gráfico. Consulte Excel. ChartLegendPosition para obter detalhes.|
 ||[format](/javascript/api/excel/excel.chartlegend#format)|Representa a formatação de uma legenda de gráfico, que inclui a formatação de fonte e de preenchimento. Somente leitura.|
-||[Set (Propriedades: Excel. ChartLegend)](/javascript/api/excel/excel.chartlegend#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. ChartLegendUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.chartlegend#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
 ||[visible](/javascript/api/excel/excel.chartlegend#visible)|Um valor booliano que representa a visibilidade de um objeto ChartLegend.|
-|[ChartLegendData](/javascript/api/excel/excel.chartlegenddata)|[format](/javascript/api/excel/excel.chartlegenddata#format)|Representa a formatação de uma legenda de gráfico, que inclui a formatação de fonte e de preenchimento. Somente leitura.|
-||[overlay](/javascript/api/excel/excel.chartlegenddata#overlay)|Valor booleano para determinar quando a legenda do gráfico deve se sobrepor ao corpo principal do gráfico.|
-||[position](/javascript/api/excel/excel.chartlegenddata#position)|Representa a posição da legenda no gráfico. Consulte Excel. ChartLegendPosition para obter detalhes.|
-||[visible](/javascript/api/excel/excel.chartlegenddata#visible)|Um valor booliano que representa a visibilidade de um objeto ChartLegend.|
 |[ChartLegendFormat](/javascript/api/excel/excel.chartlegendformat)|[fill](/javascript/api/excel/excel.chartlegendformat#fill)|Representa o formato de preenchimento de um objeto, que inclui informações sobre a formatação da tela de fundo. Somente leitura.|
 ||[font](/javascript/api/excel/excel.chartlegendformat#font)|Representa os atributos de fonte, como nome da fonte, tamanho da fonte, cor, etc. de uma legenda do gráfico. Somente leitura.|
-||[Set (Propriedades: Excel. ChartLegendFormat)](/javascript/api/excel/excel.chartlegendformat#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. ChartLegendFormatUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.chartlegendformat#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
-|[ChartLegendFormatData](/javascript/api/excel/excel.chartlegendformatdata)|[font](/javascript/api/excel/excel.chartlegendformatdata#font)|Representa os atributos de fonte, como nome da fonte, tamanho da fonte, cor, etc. de uma legenda do gráfico. Somente leitura.|
-|[ChartLegendFormatLoadOptions](/javascript/api/excel/excel.chartlegendformatloadoptions)|[$all](/javascript/api/excel/excel.chartlegendformatloadoptions#$all)||
-||[font](/javascript/api/excel/excel.chartlegendformatloadoptions#font)|Representa os atributos de fonte, como nome da fonte, tamanho da fonte, cor, etc. de uma legenda do gráfico.|
-|[ChartLegendFormatUpdateData](/javascript/api/excel/excel.chartlegendformatupdatedata)|[font](/javascript/api/excel/excel.chartlegendformatupdatedata#font)|Representa os atributos de fonte, como nome da fonte, tamanho da fonte, cor, etc. de uma legenda do gráfico.|
-|[ChartLegendLoadOptions](/javascript/api/excel/excel.chartlegendloadoptions)|[$all](/javascript/api/excel/excel.chartlegendloadoptions#$all)||
-||[format](/javascript/api/excel/excel.chartlegendloadoptions#format)|Representa a formatação de uma legenda de gráfico, que inclui a formatação de fonte e de preenchimento.|
-||[overlay](/javascript/api/excel/excel.chartlegendloadoptions#overlay)|Valor booleano para determinar quando a legenda do gráfico deve se sobrepor ao corpo principal do gráfico.|
-||[position](/javascript/api/excel/excel.chartlegendloadoptions#position)|Representa a posição da legenda no gráfico. Consulte Excel. ChartLegendPosition para obter detalhes.|
-||[visible](/javascript/api/excel/excel.chartlegendloadoptions#visible)|Um valor booliano que representa a visibilidade de um objeto ChartLegend.|
-|[ChartLegendUpdateData](/javascript/api/excel/excel.chartlegendupdatedata)|[format](/javascript/api/excel/excel.chartlegendupdatedata#format)|Representa a formatação de uma legenda de gráfico, que inclui a formatação de fonte e de preenchimento.|
-||[overlay](/javascript/api/excel/excel.chartlegendupdatedata#overlay)|Valor booleano para determinar quando a legenda do gráfico deve se sobrepor ao corpo principal do gráfico.|
-||[position](/javascript/api/excel/excel.chartlegendupdatedata#position)|Representa a posição da legenda no gráfico. Consulte Excel. ChartLegendPosition para obter detalhes.|
-||[visible](/javascript/api/excel/excel.chartlegendupdatedata#visible)|Um valor booliano que representa a visibilidade de um objeto ChartLegend.|
 |[ChartLineFormat](/javascript/api/excel/excel.chartlineformat)|[clear()](/javascript/api/excel/excel.chartlineformat#clear--)|Limpar o formato da linha de um elemento do gráfico.|
 ||[color](/javascript/api/excel/excel.chartlineformat#color)|Código de cores HTML que representa a cor das linhas no gráfico.|
-||[Set (Propriedades: Excel. ChartLineFormat)](/javascript/api/excel/excel.chartlineformat#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. ChartLineFormatUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.chartlineformat#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
-|[ChartLineFormatData](/javascript/api/excel/excel.chartlineformatdata)|[color](/javascript/api/excel/excel.chartlineformatdata#color)|Código de cores HTML que representa a cor das linhas no gráfico.|
-|[ChartLineFormatLoadOptions](/javascript/api/excel/excel.chartlineformatloadoptions)|[$all](/javascript/api/excel/excel.chartlineformatloadoptions#$all)||
-||[color](/javascript/api/excel/excel.chartlineformatloadoptions#color)|Código de cores HTML que representa a cor das linhas no gráfico.|
-|[ChartLineFormatUpdateData](/javascript/api/excel/excel.chartlineformatupdatedata)|[color](/javascript/api/excel/excel.chartlineformatupdatedata#color)|Código de cores HTML que representa a cor das linhas no gráfico.|
-|[ChartLoadOptions](/javascript/api/excel/excel.chartloadoptions)|[$all](/javascript/api/excel/excel.chartloadoptions#$all)||
-||[Axes](/javascript/api/excel/excel.chartloadoptions#axes)|Representa os eixos de um gráfico.|
-||[dataLabels](/javascript/api/excel/excel.chartloadoptions#datalabels)|Representa os rótulos de dados no gráfico.|
-||[format](/javascript/api/excel/excel.chartloadoptions#format)|Encapsula as propriedades de formato da área do gráfico.|
-||[height](/javascript/api/excel/excel.chartloadoptions#height)|Representa a altura, em pontos, do objeto Chart.|
-||[left](/javascript/api/excel/excel.chartloadoptions#left)|A distância, em pontos, da esquerda do gráfico à origem da planilha.|
-||[Legenda](/javascript/api/excel/excel.chartloadoptions#legend)|Representa a legenda do gráfico.|
-||[name](/javascript/api/excel/excel.chartloadoptions#name)|Representa o nome de um objeto Chart.|
-||[série](/javascript/api/excel/excel.chartloadoptions#series)|Representa uma única série ou uma coleção de séries no gráfico.|
-||[title](/javascript/api/excel/excel.chartloadoptions#title)|Representa o título do gráfico especificado, incluindo o respectivo texto, a visibilidade, a posição e a formatação.|
-||[top](/javascript/api/excel/excel.chartloadoptions#top)|Representa a distância, em pontos, da borda superior do objeto à parte superior da primeira linha de uma planilha ou da área de um gráfico.|
-||[width](/javascript/api/excel/excel.chartloadoptions#width)|Representa a largura, em pontos, do objeto de gráfico.|
 |[ChartPoint](/javascript/api/excel/excel.chartpoint)|[format](/javascript/api/excel/excel.chartpoint#format)|Encapsula as propriedades de formato de um ponto do gráfico. Somente leitura.|
 ||[value](/javascript/api/excel/excel.chartpoint#value)|Retorna o valor de um ponto do gráfico. Somente leitura.|
-||[Set (Propriedades: Excel. ChartPoint)](/javascript/api/excel/excel.chartpoint#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. ChartPointUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.chartpoint#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
-|[ChartPointData](/javascript/api/excel/excel.chartpointdata)|[format](/javascript/api/excel/excel.chartpointdata#format)|Encapsula as propriedades de formato de um ponto do gráfico. Somente leitura.|
-||[value](/javascript/api/excel/excel.chartpointdata#value)|Retorna o valor de um ponto do gráfico. Somente leitura.|
 |[ChartPointFormat](/javascript/api/excel/excel.chartpointformat)|[fill](/javascript/api/excel/excel.chartpointformat#fill)|Representa o formato de preenchimento de um gráfico, que inclui informações de formatação de plano de fundo. Somente leitura.|
-||[Set (Propriedades: Excel. ChartPointFormat)](/javascript/api/excel/excel.chartpointformat#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. ChartPointFormatUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.chartpointformat#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
-|[ChartPointFormatLoadOptions](/javascript/api/excel/excel.chartpointformatloadoptions)|[$all](/javascript/api/excel/excel.chartpointformatloadoptions#$all)||
-|[ChartPointLoadOptions](/javascript/api/excel/excel.chartpointloadoptions)|[$all](/javascript/api/excel/excel.chartpointloadoptions#$all)||
-||[format](/javascript/api/excel/excel.chartpointloadoptions#format)|Encapsula as propriedades de formato de um ponto do gráfico.|
-||[value](/javascript/api/excel/excel.chartpointloadoptions#value)|Retorna o valor de um ponto do gráfico. Somente leitura.|
-|[ChartPointUpdateData](/javascript/api/excel/excel.chartpointupdatedata)|[format](/javascript/api/excel/excel.chartpointupdatedata#format)|Encapsula as propriedades de formato de um ponto do gráfico.|
 |[ChartPointsCollection](/javascript/api/excel/excel.chartpointscollection)|[getItemAt(index: number)](/javascript/api/excel/excel.chartpointscollection#getitemat-index-)|Recupera um ponto com base na respectiva posição dentro da série.|
 ||[Count](/javascript/api/excel/excel.chartpointscollection#count)|Retorna o número de pontos do gráfico da série. Somente leitura.|
 ||[items](/javascript/api/excel/excel.chartpointscollection#items)|Obtém os itens filhos carregados nesta coleção.|
-|[ChartPointsCollectionLoadOptions](/javascript/api/excel/excel.chartpointscollectionloadoptions)|[$all](/javascript/api/excel/excel.chartpointscollectionloadoptions#$all)||
-||[format](/javascript/api/excel/excel.chartpointscollectionloadoptions#format)|Para cada ITEM na coleção: encapsula o ponto de gráfico de propriedades de formato.|
-||[value](/javascript/api/excel/excel.chartpointscollectionloadoptions#value)|Para cada ITEM na coleção: retorna o valor de um ponto de gráfico. Somente leitura.|
 |[ChartSeries](/javascript/api/excel/excel.chartseries)|[name](/javascript/api/excel/excel.chartseries#name)|Representa o nome de uma série do gráfico.|
 ||[format](/javascript/api/excel/excel.chartseries#format)|Representa a formatação de uma série do gráfico, que inclui a formatação de linha e de preenchimento. Somente leitura.|
 ||[pontos](/javascript/api/excel/excel.chartseries#points)|Representa uma coleção de todos os pontos da série. Somente leitura.|
-||[Set (Propriedades: Excel. ChartSeries)](/javascript/api/excel/excel.chartseries#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. ChartSeriesUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.chartseries#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
 |[ChartSeriesCollection](/javascript/api/excel/excel.chartseriescollection)|[getItemAt(index: number)](/javascript/api/excel/excel.chartseriescollection#getitemat-index-)|Recupera uma série com base na respectiva posição na coleção.|
 ||[Count](/javascript/api/excel/excel.chartseriescollection#count)|Retorna o número de série da coleção. Somente leitura.|
 ||[items](/javascript/api/excel/excel.chartseriescollection#items)|Obtém os itens filhos carregados nesta coleção.|
-|[ChartSeriesCollectionLoadOptions](/javascript/api/excel/excel.chartseriescollectionloadoptions)|[$all](/javascript/api/excel/excel.chartseriescollectionloadoptions#$all)||
-||[format](/javascript/api/excel/excel.chartseriescollectionloadoptions#format)|Para cada ITEM na coleção: representa a formatação de uma série de gráficos, que inclui a formatação de linha e preenchimento.|
-||[name](/javascript/api/excel/excel.chartseriescollectionloadoptions#name)|Para cada ITEM na coleção: representa o nome de uma série em um gráfico.|
-||[pontos](/javascript/api/excel/excel.chartseriescollectionloadoptions#points)|Para cada ITEM na coleção: representa uma coleção de todos os pontos da série.|
-|[ChartSeriesData](/javascript/api/excel/excel.chartseriesdata)|[format](/javascript/api/excel/excel.chartseriesdata#format)|Representa a formatação de uma série do gráfico, que inclui a formatação de linha e de preenchimento. Somente leitura.|
-||[name](/javascript/api/excel/excel.chartseriesdata#name)|Representa o nome de uma série do gráfico.|
-||[pontos](/javascript/api/excel/excel.chartseriesdata#points)|Representa uma coleção de todos os pontos da série. Somente leitura.|
 |[ChartSeriesFormat](/javascript/api/excel/excel.chartseriesformat)|[fill](/javascript/api/excel/excel.chartseriesformat#fill)|Representa o formato de preenchimento de uma série do gráfico, que inclui informações sobre a formatação da tela de fundo. Somente leitura.|
 ||[line](/javascript/api/excel/excel.chartseriesformat#line)|Representa a formatação de linha. Somente leitura.|
-||[Set (Propriedades: Excel. ChartSeriesFormat)](/javascript/api/excel/excel.chartseriesformat#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. ChartSeriesFormatUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.chartseriesformat#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
-|[ChartSeriesFormatData](/javascript/api/excel/excel.chartseriesformatdata)|[line](/javascript/api/excel/excel.chartseriesformatdata#line)|Representa a formatação de linha. Somente leitura.|
-|[ChartSeriesFormatLoadOptions](/javascript/api/excel/excel.chartseriesformatloadoptions)|[$all](/javascript/api/excel/excel.chartseriesformatloadoptions#$all)||
-||[line](/javascript/api/excel/excel.chartseriesformatloadoptions#line)|Representa a formatação de linha.|
-|[ChartSeriesFormatUpdateData](/javascript/api/excel/excel.chartseriesformatupdatedata)|[line](/javascript/api/excel/excel.chartseriesformatupdatedata#line)|Representa a formatação de linha.|
-|[ChartSeriesLoadOptions](/javascript/api/excel/excel.chartseriesloadoptions)|[$all](/javascript/api/excel/excel.chartseriesloadoptions#$all)||
-||[format](/javascript/api/excel/excel.chartseriesloadoptions#format)|Representa a formatação de uma série do gráfico, que inclui a formatação de linha e de preenchimento.|
-||[name](/javascript/api/excel/excel.chartseriesloadoptions#name)|Representa o nome de uma série do gráfico.|
-||[pontos](/javascript/api/excel/excel.chartseriesloadoptions#points)|Representa uma coleção de todos os pontos da série.|
-|[ChartSeriesUpdateData](/javascript/api/excel/excel.chartseriesupdatedata)|[format](/javascript/api/excel/excel.chartseriesupdatedata#format)|Representa a formatação de uma série do gráfico, que inclui a formatação de linha e de preenchimento.|
-||[name](/javascript/api/excel/excel.chartseriesupdatedata#name)|Representa o nome de uma série do gráfico.|
 |[ChartTitle](/javascript/api/excel/excel.charttitle)|[overlay](/javascript/api/excel/excel.charttitle#overlay)|Valor booleano que determina quando o título do gráfico deve se sobrepor ao gráfico ou não.|
 ||[format](/javascript/api/excel/excel.charttitle#format)|Representa a formatação de um título do gráfico, que inclui a formatação de fonte e de preenchimento. Somente leitura.|
-||[Set (Propriedades: Excel. ChartTitle)](/javascript/api/excel/excel.charttitle#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. ChartTitleUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.charttitle#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
 ||[text](/javascript/api/excel/excel.charttitle#text)|Representa o texto do título de um gráfico.|
 ||[visible](/javascript/api/excel/excel.charttitle#visible)|Um valor booliano que representa a visibilidade de um objeto de título de gráfico.|
-|[ChartTitleData](/javascript/api/excel/excel.charttitledata)|[format](/javascript/api/excel/excel.charttitledata#format)|Representa a formatação de um título do gráfico, que inclui a formatação de fonte e de preenchimento. Somente leitura.|
-||[overlay](/javascript/api/excel/excel.charttitledata#overlay)|Valor booleano que determina quando o título do gráfico deve se sobrepor ao gráfico ou não.|
-||[text](/javascript/api/excel/excel.charttitledata#text)|Representa o texto do título de um gráfico.|
-||[visible](/javascript/api/excel/excel.charttitledata#visible)|Um valor booliano que representa a visibilidade de um objeto de título de gráfico.|
 |[ChartTitleFormat](/javascript/api/excel/excel.charttitleformat)|[fill](/javascript/api/excel/excel.charttitleformat#fill)|Representa o formato de preenchimento de um objeto, que inclui informações sobre a formatação da tela de fundo. Somente leitura.|
 ||[font](/javascript/api/excel/excel.charttitleformat#font)|Representa os atributos de fonte de um objeto, como nome, tamanho, cor, dentre outros. Somente leitura.|
-||[Set (Propriedades: Excel. ChartTitleFormat)](/javascript/api/excel/excel.charttitleformat#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. ChartTitleFormatUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.charttitleformat#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
-|[ChartTitleFormatData](/javascript/api/excel/excel.charttitleformatdata)|[font](/javascript/api/excel/excel.charttitleformatdata#font)|Representa os atributos de fonte de um objeto, como nome, tamanho, cor, dentre outros. Somente leitura.|
-|[ChartTitleFormatLoadOptions](/javascript/api/excel/excel.charttitleformatloadoptions)|[$all](/javascript/api/excel/excel.charttitleformatloadoptions#$all)||
-||[font](/javascript/api/excel/excel.charttitleformatloadoptions#font)|Representa os atributos de fonte de um objeto, como nome, tamanho, cor, dentre outros.|
-|[ChartTitleFormatUpdateData](/javascript/api/excel/excel.charttitleformatupdatedata)|[font](/javascript/api/excel/excel.charttitleformatupdatedata#font)|Representa os atributos de fonte de um objeto, como nome, tamanho, cor, dentre outros.|
-|[ChartTitleLoadOptions](/javascript/api/excel/excel.charttitleloadoptions)|[$all](/javascript/api/excel/excel.charttitleloadoptions#$all)||
-||[format](/javascript/api/excel/excel.charttitleloadoptions#format)|Representa a formatação de um título do gráfico, que inclui a formatação de fonte e de preenchimento.|
-||[overlay](/javascript/api/excel/excel.charttitleloadoptions#overlay)|Valor booleano que determina quando o título do gráfico deve se sobrepor ao gráfico ou não.|
-||[text](/javascript/api/excel/excel.charttitleloadoptions#text)|Representa o texto do título de um gráfico.|
-||[visible](/javascript/api/excel/excel.charttitleloadoptions#visible)|Um valor booliano que representa a visibilidade de um objeto de título de gráfico.|
-|[ChartTitleUpdateData](/javascript/api/excel/excel.charttitleupdatedata)|[format](/javascript/api/excel/excel.charttitleupdatedata#format)|Representa a formatação de um título do gráfico, que inclui a formatação de fonte e de preenchimento.|
-||[overlay](/javascript/api/excel/excel.charttitleupdatedata#overlay)|Valor booleano que determina quando o título do gráfico deve se sobrepor ao gráfico ou não.|
-||[text](/javascript/api/excel/excel.charttitleupdatedata#text)|Representa o texto do título de um gráfico.|
-||[visible](/javascript/api/excel/excel.charttitleupdatedata#visible)|Um valor booliano que representa a visibilidade de um objeto de título de gráfico.|
-|[ChartUpdateData](/javascript/api/excel/excel.chartupdatedata)|[Axes](/javascript/api/excel/excel.chartupdatedata#axes)|Representa os eixos de um gráfico.|
-||[dataLabels](/javascript/api/excel/excel.chartupdatedata#datalabels)|Representa os rótulos de dados no gráfico.|
-||[format](/javascript/api/excel/excel.chartupdatedata#format)|Encapsula as propriedades de formato da área do gráfico.|
-||[height](/javascript/api/excel/excel.chartupdatedata#height)|Representa a altura, em pontos, do objeto Chart.|
-||[left](/javascript/api/excel/excel.chartupdatedata#left)|A distância, em pontos, da esquerda do gráfico à origem da planilha.|
-||[Legenda](/javascript/api/excel/excel.chartupdatedata#legend)|Representa a legenda do gráfico.|
-||[name](/javascript/api/excel/excel.chartupdatedata#name)|Representa o nome de um objeto Chart.|
-||[title](/javascript/api/excel/excel.chartupdatedata#title)|Representa o título do gráfico especificado, incluindo o respectivo texto, a visibilidade, a posição e a formatação.|
-||[top](/javascript/api/excel/excel.chartupdatedata#top)|Representa a distância, em pontos, da borda superior do objeto à parte superior da primeira linha de uma planilha ou da área de um gráfico.|
-||[width](/javascript/api/excel/excel.chartupdatedata#width)|Representa a largura, em pontos, do objeto de gráfico.|
 |[NamedItem](/javascript/api/excel/excel.nameditem)|[getRange()](/javascript/api/excel/excel.nameditem#getrange--)|Retorna o objeto Range associado ao nome. Gerará um erro se o tipo do item nomeado não for um intervalo.|
 ||[name](/javascript/api/excel/excel.nameditem#name)|O nome do objeto. Somente leitura.|
 ||[tipo](/javascript/api/excel/excel.nameditem#type)|Indica o tipo do valor retornado pela fórmula do nome. Consulte Excel. NamedItemType para obter detalhes. Somente leitura.|
 ||[value](/javascript/api/excel/excel.nameditem#value)|Representa o valor calculado pela fórmula do nome. Para um intervalo nomeado, retornará o endereço do intervalo. Somente leitura.|
-||[Set (Propriedades: Excel. NamedItem)](/javascript/api/excel/excel.nameditem#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. NamedItemUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.nameditem#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
 ||[visible](/javascript/api/excel/excel.nameditem#visible)|Determina se o objeto estará visível ou não.|
 |[NamedItemCollection](/javascript/api/excel/excel.nameditemcollection)|[getItem(name: string)](/javascript/api/excel/excel.nameditemcollection#getitem-name-)|Obtém um objeto NamedItem usando seu nome.|
 ||[items](/javascript/api/excel/excel.nameditemcollection#items)|Obtém os itens filhos carregados nesta coleção.|
-|[NamedItemCollectionLoadOptions](/javascript/api/excel/excel.nameditemcollectionloadoptions)|[$all](/javascript/api/excel/excel.nameditemcollectionloadoptions#$all)||
-||[name](/javascript/api/excel/excel.nameditemcollectionloadoptions#name)|Para cada ITEM na coleção: o nome do objeto. Somente leitura.|
-||[tipo](/javascript/api/excel/excel.nameditemcollectionloadoptions#type)|Para cada ITEM na coleção: indica o tipo de valor retornado pela fórmula do nome. Consulte Excel. NamedItemType para obter detalhes. Somente leitura.|
-||[value](/javascript/api/excel/excel.nameditemcollectionloadoptions#value)|Para cada ITEM na coleção: representa o valor calculado pela fórmula do nome. Para um intervalo nomeado, retornará o endereço do intervalo. Somente leitura.|
-||[visible](/javascript/api/excel/excel.nameditemcollectionloadoptions#visible)|Para cada ITEM na coleção: especifica se o objeto está visível ou não.|
-|[NamedItemData](/javascript/api/excel/excel.nameditemdata)|[name](/javascript/api/excel/excel.nameditemdata#name)|O nome do objeto. Somente leitura.|
-||[tipo](/javascript/api/excel/excel.nameditemdata#type)|Indica o tipo do valor retornado pela fórmula do nome. Consulte Excel. NamedItemType para obter detalhes. Somente leitura.|
-||[value](/javascript/api/excel/excel.nameditemdata#value)|Representa o valor calculado pela fórmula do nome. Para um intervalo nomeado, retornará o endereço do intervalo. Somente leitura.|
-||[visible](/javascript/api/excel/excel.nameditemdata#visible)|Determina se o objeto estará visível ou não.|
-|[NamedItemLoadOptions](/javascript/api/excel/excel.nameditemloadoptions)|[$all](/javascript/api/excel/excel.nameditemloadoptions#$all)||
-||[name](/javascript/api/excel/excel.nameditemloadoptions#name)|O nome do objeto. Somente leitura.|
-||[tipo](/javascript/api/excel/excel.nameditemloadoptions#type)|Indica o tipo do valor retornado pela fórmula do nome. Consulte Excel. NamedItemType para obter detalhes. Somente leitura.|
-||[value](/javascript/api/excel/excel.nameditemloadoptions#value)|Representa o valor calculado pela fórmula do nome. Para um intervalo nomeado, retornará o endereço do intervalo. Somente leitura.|
-||[visible](/javascript/api/excel/excel.nameditemloadoptions#visible)|Determina se o objeto estará visível ou não.|
-|[NamedItemUpdateData](/javascript/api/excel/excel.nameditemupdatedata)|[visible](/javascript/api/excel/excel.nameditemupdatedata#visible)|Determina se o objeto estará visível ou não.|
-|[Range](/javascript/api/excel/excel.range)|[clear(applyTo?: "All" \| "Formats" \| "Contents" \| "Hyperlinks" \| "RemoveHyperlinks")](/javascript/api/excel/excel.range#clear-applyto-)|Limpe valores de intervalo, formatação, preenchimento, bordas, etc.|
-||[clear(applyTo?: Excel.ClearApplyTo)](/javascript/api/excel/excel.range#clear-applyto-)|Limpe valores de intervalo, formatação, preenchimento, bordas, etc.|
-||[Delete (Shift: "para cima \| " "à esquerda")](/javascript/api/excel/excel.range#delete-shift-)|Exclui as células associadas ao intervalo.|
+|[Range](/javascript/api/excel/excel.range)|[clear(applyTo?: Excel.ClearApplyTo)](/javascript/api/excel/excel.range#clear-applyto-)|Limpe valores de intervalo, formatação, preenchimento, bordas, etc.|
 ||[excluir (Shift: Excel. DeleteShiftDirection)](/javascript/api/excel/excel.range#delete-shift-)|Exclui as células associadas ao intervalo.|
 ||[fórmulas](/javascript/api/excel/excel.range#formulas)|Representa a fórmula em notação A1.|
 ||[formulasLocal](/javascript/api/excel/excel.range#formulaslocal)|Representa a fórmula em notação A1, na formatação de número da localidade e no idioma do usuário.  Por exemplo, a fórmula "=SUM(A1, 1.5)" em inglês seria "=SOMA(A1; 1,5)" em português.|
@@ -450,7 +140,6 @@ A API JavaScript do Excel 1.1 é a primeira versão da API. É o único conjunto
 ||[getLastRow()](/javascript/api/excel/excel.range#getlastrow--)|Obtém a última linha do intervalo. Por exemplo, a última linha de "B2:D5" é "B5:D5".|
 ||[getOffsetRange(rowOffset: number, columnOffset: number)](/javascript/api/excel/excel.range#getoffsetrange-rowoffset--columnoffset-)|Obtém um objeto que representa um intervalo deslocado do intervalo especificado. A dimensão do intervalo retornado corresponde a esse intervalo. Se o intervalo resultante for imposto para fora dos limites da grade da planilha, o sistema gerará um erro.|
 ||[getRow(row: number)](/javascript/api/excel/excel.range#getrow-row-)|Obtém uma linha contida no intervalo.|
-||[Inserir (Shift: "para baixo \| " "direito")](/javascript/api/excel/excel.range#insert-shift-)|Insere uma célula ou um intervalo de células na planilha, no lugar desse intervalo, e desloca as outras células para liberar espaço. Retorna um novo objeto Range no espaço em branco atual.|
 ||[Inserir (Shift: Excel. InsertShiftDirection)](/javascript/api/excel/excel.range#insert-shift-)|Insere uma célula ou um intervalo de células na planilha, no lugar desse intervalo, e desloca as outras células para liberar espaço. Retorna um novo objeto Range no espaço em branco atual.|
 ||[numberFormat](/javascript/api/excel/excel.range#numberformat)|Representa o código de formato de número do Excel para o intervalo especificado.|
 ||[address](/javascript/api/excel/excel.range#address)|Representa a referência do intervalo no estilo A1. O valor de endereço conterá a referência de planilha (por exemplo, "Planilha1! A1: B4 "). Somente leitura.|
@@ -465,136 +154,29 @@ A API JavaScript do Excel 1.1 é a primeira versão da API. É o único conjunto
 ||[valueTypes](/javascript/api/excel/excel.range#valuetypes)|Representa o tipo de dados de cada célula. Somente leitura.|
 ||[worksheet](/javascript/api/excel/excel.range#worksheet)|A planilha que contém o intervalo atual. Somente leitura.|
 ||[Seleciona.](/javascript/api/excel/excel.range#select--)|Seleciona o intervalo especificado na interface do usuário do Excel.|
-||[Set (Propriedades: Excel. Range)](/javascript/api/excel/excel.range#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. RangeUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.range#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
-||[track()](/javascript/api/excel/excel.range#track--)|Acompanha o objeto para ajuste automático com base nas alterações adjacentes no documento. Essa chamada é uma abreviação de context.trackedObjects.add(thisObject). Se você estiver usando esse objeto em chamadas ".sync" e fora da execução sequencial de um lote ".run" e receber um erro "InvalidObjectPath" ao definir uma propriedade ou invocar um método no objeto, era necessário ter adicionado o objeto à coleção de objetos rastreados quando o objeto foi criado pela primeira vez.|
-||[untrack()](/javascript/api/excel/excel.range#untrack--)|Libere a memória associada a este objeto, se ele já tiver sido rastreado anteriormente. Essa chamada é uma abreviação de context.trackedObjects.remove(thisObject). Ter muitos objetos rastreados desacelera o aplicativo host, por isso, lembre-se de liberar todos os objetos adicionados após usá-los. Você precisa chamar "context.sync()" antes da liberação da memória entrar em vigor.|
 ||[values](/javascript/api/excel/excel.range#values)|Representa os valores brutos do intervalo especificado. Os dados retornados podem ser dos tipos: cadeia de caracteres, número ou booliano. Células que contêm um erro retornarão a cadeia de caracteres de erro.|
 |[RangeBorder](/javascript/api/excel/excel.rangeborder)|[color](/javascript/api/excel/excel.rangeborder#color)|Código de cor HTML que representa a cor #RRGGBB da linha de borda do formulário (por exemplo, "FFA500") ou uma cor HTML nomeada (por exemplo, "laranja").|
 ||[sideIndex](/javascript/api/excel/excel.rangeborder#sideindex)|Valor constante que indica o lado específico da borda. Consulte Excel. BorderIndex para obter detalhes. Somente leitura.|
-||[Set (Propriedades: Excel. RangeBorder)](/javascript/api/excel/excel.rangeborder#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. RangeBorderUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.rangeborder#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
 ||[style](/javascript/api/excel/excel.rangeborder#style)|Uma das constantes de estilo de linha especificando o estilo de linha da borda. Consulte Excel. BorderLineStyle para obter detalhes.|
 ||[weight](/javascript/api/excel/excel.rangeborder#weight)|Especifica o peso da borda em torno de um intervalo. Consulte Excel. BorderWeight para obter detalhes.|
-|[RangeBorderCollection](/javascript/api/excel/excel.rangebordercollection)|[getItem (index: "EdgeTop" \| "EdgeBottom" \| "EdgeLeft" \| "EdgeRight" \| \| \| "InsideVertical" "InsideHorizontal" "DiagonalDown" \| "DiagonalUp")](/javascript/api/excel/excel.rangebordercollection#getitem-index-)|Obtém um objeto Border usando o respectivo nome.|
-||[getItem (index: Excel. BorderIndex)](/javascript/api/excel/excel.rangebordercollection#getitem-index-)|Obtém um objeto Border usando o respectivo nome.|
+|[RangeBorderCollection](/javascript/api/excel/excel.rangebordercollection)|[getItem (index: Excel. BorderIndex)](/javascript/api/excel/excel.rangebordercollection#getitem-index-)|Obtém um objeto Border usando o respectivo nome.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.rangebordercollection#getitemat-index-)|Obtém um objeto Border usando o respectivo índice.|
 ||[Count](/javascript/api/excel/excel.rangebordercollection#count)|Número de objetos de borda da coleção. Somente leitura.|
 ||[items](/javascript/api/excel/excel.rangebordercollection#items)|Obtém os itens filhos carregados nesta coleção.|
-|[RangeBorderCollectionLoadOptions](/javascript/api/excel/excel.rangebordercollectionloadoptions)|[$all](/javascript/api/excel/excel.rangebordercollectionloadoptions#$all)||
-||[color](/javascript/api/excel/excel.rangebordercollectionloadoptions#color)|Para cada ITEM na coleção: código de cor HTML que representa a cor da linha de borda, do formulário #RRGGBB (por exemplo, "FFA500") ou como uma cor HTML nomeada (por exemplo, "laranja").|
-||[sideIndex](/javascript/api/excel/excel.rangebordercollectionloadoptions#sideindex)|Para cada ITEM da coleção: valor constante que indica o lado específico da borda. Consulte Excel. BorderIndex para obter detalhes. Somente leitura.|
-||[style](/javascript/api/excel/excel.rangebordercollectionloadoptions#style)|Para cada ITEM na coleção: uma das constantes de estilo de linha que especifica o estilo de linha da borda. Consulte Excel. BorderLineStyle para obter detalhes.|
-||[weight](/javascript/api/excel/excel.rangebordercollectionloadoptions#weight)|Para cada ITEM na coleção: especifica o peso da borda em torno de um intervalo. Consulte Excel. BorderWeight para obter detalhes.|
-|[RangeBorderData](/javascript/api/excel/excel.rangeborderdata)|[color](/javascript/api/excel/excel.rangeborderdata#color)|Código de cor HTML que representa a cor #RRGGBB da linha de borda do formulário (por exemplo, "FFA500") ou uma cor HTML nomeada (por exemplo, "laranja").|
-||[sideIndex](/javascript/api/excel/excel.rangeborderdata#sideindex)|Valor constante que indica o lado específico da borda. Consulte Excel. BorderIndex para obter detalhes. Somente leitura.|
-||[style](/javascript/api/excel/excel.rangeborderdata#style)|Uma das constantes de estilo de linha especificando o estilo de linha da borda. Consulte Excel. BorderLineStyle para obter detalhes.|
-||[weight](/javascript/api/excel/excel.rangeborderdata#weight)|Especifica o peso da borda em torno de um intervalo. Consulte Excel. BorderWeight para obter detalhes.|
-|[RangeBorderLoadOptions](/javascript/api/excel/excel.rangeborderloadoptions)|[$all](/javascript/api/excel/excel.rangeborderloadoptions#$all)||
-||[color](/javascript/api/excel/excel.rangeborderloadoptions#color)|Código de cor HTML que representa a cor #RRGGBB da linha de borda do formulário (por exemplo, "FFA500") ou uma cor HTML nomeada (por exemplo, "laranja").|
-||[sideIndex](/javascript/api/excel/excel.rangeborderloadoptions#sideindex)|Valor constante que indica o lado específico da borda. Consulte Excel. BorderIndex para obter detalhes. Somente leitura.|
-||[style](/javascript/api/excel/excel.rangeborderloadoptions#style)|Uma das constantes de estilo de linha especificando o estilo de linha da borda. Consulte Excel. BorderLineStyle para obter detalhes.|
-||[weight](/javascript/api/excel/excel.rangeborderloadoptions#weight)|Especifica o peso da borda em torno de um intervalo. Consulte Excel. BorderWeight para obter detalhes.|
-|[RangeBorderUpdateData](/javascript/api/excel/excel.rangeborderupdatedata)|[color](/javascript/api/excel/excel.rangeborderupdatedata#color)|Código de cor HTML que representa a cor #RRGGBB da linha de borda do formulário (por exemplo, "FFA500") ou uma cor HTML nomeada (por exemplo, "laranja").|
-||[style](/javascript/api/excel/excel.rangeborderupdatedata#style)|Uma das constantes de estilo de linha especificando o estilo de linha da borda. Consulte Excel. BorderLineStyle para obter detalhes.|
-||[weight](/javascript/api/excel/excel.rangeborderupdatedata#weight)|Especifica o peso da borda em torno de um intervalo. Consulte Excel. BorderWeight para obter detalhes.|
-|[RangeData](/javascript/api/excel/excel.rangedata)|[address](/javascript/api/excel/excel.rangedata#address)|Representa a referência do intervalo no estilo A1. O valor de endereço conterá a referência de planilha (por exemplo, "Planilha1! A1: B4 "). Somente leitura.|
-||[addressLocal](/javascript/api/excel/excel.rangedata#addresslocal)|Representa a referência de intervalo para o intervalo especificado no idioma do usuário. Somente leitura.|
-||[cellCount](/javascript/api/excel/excel.rangedata#cellcount)|Número de células no intervalo. Essa API retornará -1 se a contagem de células exceder 2^31-1 (2.147.483.647). Somente leitura.|
-||[columnCount](/javascript/api/excel/excel.rangedata#columncount)|Representa o número total de colunas no intervalo. Somente leitura.|
-||[columnIndex](/javascript/api/excel/excel.rangedata#columnindex)|Representa o número de colunas da primeira célula no intervalo. Indexados com zero. Somente leitura.|
-||[format](/javascript/api/excel/excel.rangedata#format)|Retorna um objeto de formato que encapsula a fonte, o preenchimento, as bordas, o alinhamento e outras propriedades do intervalo. Somente leitura.|
-||[fórmulas](/javascript/api/excel/excel.rangedata#formulas)|Representa a fórmula em notação A1.|
-||[formulasLocal](/javascript/api/excel/excel.rangedata#formulaslocal)|Representa a fórmula em notação A1, na formatação de número da localidade e no idioma do usuário.  Por exemplo, a fórmula "=SUM(A1, 1.5)" em inglês seria "=SOMA(A1; 1,5)" em português.|
-||[numberFormat](/javascript/api/excel/excel.rangedata#numberformat)|Representa o código de formato de número do Excel para o intervalo especificado.|
-||[Validação](/javascript/api/excel/excel.rangedata#rowcount)|Retorna o número total de linhas no intervalo. Somente leitura.|
-||[rowIndex](/javascript/api/excel/excel.rangedata#rowindex)|Representa o número de linhas da primeira célula no intervalo. Indexados com zero. Somente leitura.|
-||[text](/javascript/api/excel/excel.rangedata#text)|Valores de texto do intervalo especificado. O valor de texto não depende da largura da célula. A substituição pelo sinal #, que ocorre na interface de usuário do Excel, não afeta o valor de texto retornado pela API. Somente leitura.|
-||[valueTypes](/javascript/api/excel/excel.rangedata#valuetypes)|Representa o tipo de dados de cada célula. Somente leitura.|
-||[values](/javascript/api/excel/excel.rangedata#values)|Representa os valores brutos do intervalo especificado. Os dados retornados podem ser dos tipos: cadeia de caracteres, número ou booliano. Células que contêm um erro retornarão a cadeia de caracteres de erro.|
 |[RangeFill](/javascript/api/excel/excel.rangefill)|[clear()](/javascript/api/excel/excel.rangefill#clear--)|Redefine a tela de fundo do intervalo.|
 ||[color](/javascript/api/excel/excel.rangefill#color)|Código de cor HTML que representa a cor #RRGGBB da linha de borda do formulário (por exemplo, "FFA500") ou uma cor HTML nomeada (por exemplo, "laranja").|
-||[Set (Propriedades: Excel. RangeFill)](/javascript/api/excel/excel.rangefill#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. RangeFillUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.rangefill#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
-|[RangeFillData](/javascript/api/excel/excel.rangefilldata)|[color](/javascript/api/excel/excel.rangefilldata#color)|Código de cor HTML que representa a cor #RRGGBB da linha de borda do formulário (por exemplo, "FFA500") ou uma cor HTML nomeada (por exemplo, "laranja").|
-|[RangeFillLoadOptions](/javascript/api/excel/excel.rangefillloadoptions)|[$all](/javascript/api/excel/excel.rangefillloadoptions#$all)||
-||[color](/javascript/api/excel/excel.rangefillloadoptions#color)|Código de cor HTML que representa a cor #RRGGBB da linha de borda do formulário (por exemplo, "FFA500") ou uma cor HTML nomeada (por exemplo, "laranja").|
-|[RangeFillUpdateData](/javascript/api/excel/excel.rangefillupdatedata)|[color](/javascript/api/excel/excel.rangefillupdatedata#color)|Código de cor HTML que representa a cor #RRGGBB da linha de borda do formulário (por exemplo, "FFA500") ou uma cor HTML nomeada (por exemplo, "laranja").|
 |[RangeFont](/javascript/api/excel/excel.rangefont)|[bold](/javascript/api/excel/excel.rangefont#bold)|Representa o status da fonte em negrito.|
 ||[color](/javascript/api/excel/excel.rangefont#color)|Representação de código de cor HTML para a cor do texto. Por exemplo #FF0000 representa vermelho.|
 ||[italic](/javascript/api/excel/excel.rangefont#italic)|Representa o status da fonte em itálico.|
 ||[name](/javascript/api/excel/excel.rangefont#name)|Nome da fonte (por exemplo, "Calibri")|
-||[Set (Propriedades: Excel. RangeFont)](/javascript/api/excel/excel.rangefont#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. RangeFontUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.rangefont#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
 ||[size](/javascript/api/excel/excel.rangefont#size)|Font Size|
 ||[underline](/javascript/api/excel/excel.rangefont#underline)|Tipo de sublinhado aplicado à fonte. Consulte Excel. RangeUnderlineStyle para obter detalhes.|
-|[RangeFontData](/javascript/api/excel/excel.rangefontdata)|[bold](/javascript/api/excel/excel.rangefontdata#bold)|Representa o status da fonte em negrito.|
-||[color](/javascript/api/excel/excel.rangefontdata#color)|Representação de código de cor HTML para a cor do texto. Por exemplo #FF0000 representa vermelho.|
-||[italic](/javascript/api/excel/excel.rangefontdata#italic)|Representa o status da fonte em itálico.|
-||[name](/javascript/api/excel/excel.rangefontdata#name)|Nome da fonte (por exemplo, "Calibri")|
-||[size](/javascript/api/excel/excel.rangefontdata#size)|Font Size|
-||[underline](/javascript/api/excel/excel.rangefontdata#underline)|Tipo de sublinhado aplicado à fonte. Consulte Excel. RangeUnderlineStyle para obter detalhes.|
-|[RangeFontLoadOptions](/javascript/api/excel/excel.rangefontloadoptions)|[$all](/javascript/api/excel/excel.rangefontloadoptions#$all)||
-||[bold](/javascript/api/excel/excel.rangefontloadoptions#bold)|Representa o status da fonte em negrito.|
-||[color](/javascript/api/excel/excel.rangefontloadoptions#color)|Representação de código de cor HTML para a cor do texto. Por exemplo #FF0000 representa vermelho.|
-||[italic](/javascript/api/excel/excel.rangefontloadoptions#italic)|Representa o status da fonte em itálico.|
-||[name](/javascript/api/excel/excel.rangefontloadoptions#name)|Nome da fonte (por exemplo, "Calibri")|
-||[size](/javascript/api/excel/excel.rangefontloadoptions#size)|Font Size|
-||[underline](/javascript/api/excel/excel.rangefontloadoptions#underline)|Tipo de sublinhado aplicado à fonte. Consulte Excel. RangeUnderlineStyle para obter detalhes.|
-|[RangeFontUpdateData](/javascript/api/excel/excel.rangefontupdatedata)|[bold](/javascript/api/excel/excel.rangefontupdatedata#bold)|Representa o status da fonte em negrito.|
-||[color](/javascript/api/excel/excel.rangefontupdatedata#color)|Representação de código de cor HTML para a cor do texto. Por exemplo #FF0000 representa vermelho.|
-||[italic](/javascript/api/excel/excel.rangefontupdatedata#italic)|Representa o status da fonte em itálico.|
-||[name](/javascript/api/excel/excel.rangefontupdatedata#name)|Nome da fonte (por exemplo, "Calibri")|
-||[size](/javascript/api/excel/excel.rangefontupdatedata#size)|Font Size|
-||[underline](/javascript/api/excel/excel.rangefontupdatedata#underline)|Tipo de sublinhado aplicado à fonte. Consulte Excel. RangeUnderlineStyle para obter detalhes.|
 |[RangeFormat](/javascript/api/excel/excel.rangeformat)|[horizontalAlignment](/javascript/api/excel/excel.rangeformat#horizontalalignment)|Representa o alinhamento horizontal do objeto especificado. Consulte Excel. HorizontalAlignment para obter detalhes.|
 ||[Borders](/javascript/api/excel/excel.rangeformat#borders)|Coleção de objetos border que se aplicam a todo o intervalo. Somente leitura.|
 ||[fill](/javascript/api/excel/excel.rangeformat#fill)|Retorna o objeto de preenchimento definido em todo o intervalo. Somente leitura.|
 ||[font](/javascript/api/excel/excel.rangeformat#font)|Retorna o objeto font definido em todo o intervalo. Somente leitura.|
-||[Set (Propriedades: Excel. RangeFormat)](/javascript/api/excel/excel.rangeformat#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. RangeFormatUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.rangeformat#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
 ||[verticalAlignment](/javascript/api/excel/excel.rangeformat#verticalalignment)|Representa o alinhamento vertical do objeto especificado. Consulte Excel. VerticalAlignment para obter detalhes.|
 ||[wrapText](/javascript/api/excel/excel.rangeformat#wraptext)|Indica se o Excel quebra automaticamente a linha de texto no objeto. Um valor nulo indica que o intervalo inteiro não tem configuração de quebra de linha automática uniforme.|
-|[RangeFormatData](/javascript/api/excel/excel.rangeformatdata)|[Borders](/javascript/api/excel/excel.rangeformatdata#borders)|Coleção de objetos border que se aplicam a todo o intervalo. Somente leitura.|
-||[fill](/javascript/api/excel/excel.rangeformatdata#fill)|Retorna o objeto de preenchimento definido em todo o intervalo. Somente leitura.|
-||[font](/javascript/api/excel/excel.rangeformatdata#font)|Retorna o objeto font definido em todo o intervalo. Somente leitura.|
-||[horizontalAlignment](/javascript/api/excel/excel.rangeformatdata#horizontalalignment)|Representa o alinhamento horizontal do objeto especificado. Consulte Excel. HorizontalAlignment para obter detalhes.|
-||[verticalAlignment](/javascript/api/excel/excel.rangeformatdata#verticalalignment)|Representa o alinhamento vertical do objeto especificado. Consulte Excel. VerticalAlignment para obter detalhes.|
-||[wrapText](/javascript/api/excel/excel.rangeformatdata#wraptext)|Indica se o Excel quebra automaticamente a linha de texto no objeto. Um valor nulo indica que o intervalo inteiro não tem configuração de quebra de linha automática uniforme.|
-|[RangeFormatLoadOptions](/javascript/api/excel/excel.rangeformatloadoptions)|[$all](/javascript/api/excel/excel.rangeformatloadoptions#$all)||
-||[Borders](/javascript/api/excel/excel.rangeformatloadoptions#borders)|Coleção de objetos border que se aplicam a todo o intervalo.|
-||[fill](/javascript/api/excel/excel.rangeformatloadoptions#fill)|Retorna o objeto de preenchimento definido em todo o intervalo.|
-||[font](/javascript/api/excel/excel.rangeformatloadoptions#font)|Retorna o objeto font definido em todo o intervalo.|
-||[horizontalAlignment](/javascript/api/excel/excel.rangeformatloadoptions#horizontalalignment)|Representa o alinhamento horizontal do objeto especificado. Consulte Excel. HorizontalAlignment para obter detalhes.|
-||[verticalAlignment](/javascript/api/excel/excel.rangeformatloadoptions#verticalalignment)|Representa o alinhamento vertical do objeto especificado. Consulte Excel. VerticalAlignment para obter detalhes.|
-||[wrapText](/javascript/api/excel/excel.rangeformatloadoptions#wraptext)|Indica se o Excel quebra automaticamente a linha de texto no objeto. Um valor nulo indica que o intervalo inteiro não tem configuração de quebra de linha automática uniforme.|
-|[RangeFormatUpdateData](/javascript/api/excel/excel.rangeformatupdatedata)|[Borders](/javascript/api/excel/excel.rangeformatupdatedata#borders)|Coleção de objetos border que se aplicam a todo o intervalo.|
-||[fill](/javascript/api/excel/excel.rangeformatupdatedata#fill)|Retorna o objeto de preenchimento definido em todo o intervalo.|
-||[font](/javascript/api/excel/excel.rangeformatupdatedata#font)|Retorna o objeto font definido em todo o intervalo.|
-||[horizontalAlignment](/javascript/api/excel/excel.rangeformatupdatedata#horizontalalignment)|Representa o alinhamento horizontal do objeto especificado. Consulte Excel. HorizontalAlignment para obter detalhes.|
-||[verticalAlignment](/javascript/api/excel/excel.rangeformatupdatedata#verticalalignment)|Representa o alinhamento vertical do objeto especificado. Consulte Excel. VerticalAlignment para obter detalhes.|
-||[wrapText](/javascript/api/excel/excel.rangeformatupdatedata#wraptext)|Indica se o Excel quebra automaticamente a linha de texto no objeto. Um valor nulo indica que o intervalo inteiro não tem configuração de quebra de linha automática uniforme.|
-|[RangeLoadOptions](/javascript/api/excel/excel.rangeloadoptions)|[$all](/javascript/api/excel/excel.rangeloadoptions#$all)||
-||[address](/javascript/api/excel/excel.rangeloadoptions#address)|Representa a referência do intervalo no estilo A1. O valor de endereço conterá a referência de planilha (por exemplo, "Planilha1! A1: B4 "). Somente leitura.|
-||[addressLocal](/javascript/api/excel/excel.rangeloadoptions#addresslocal)|Representa a referência de intervalo para o intervalo especificado no idioma do usuário. Somente leitura.|
-||[cellCount](/javascript/api/excel/excel.rangeloadoptions#cellcount)|Número de células no intervalo. Essa API retornará -1 se a contagem de células exceder 2^31-1 (2.147.483.647). Somente leitura.|
-||[columnCount](/javascript/api/excel/excel.rangeloadoptions#columncount)|Representa o número total de colunas no intervalo. Somente leitura.|
-||[columnIndex](/javascript/api/excel/excel.rangeloadoptions#columnindex)|Representa o número de colunas da primeira célula no intervalo. Indexados com zero. Somente leitura.|
-||[format](/javascript/api/excel/excel.rangeloadoptions#format)|Retorna um objeto de formato que encapsula a fonte, o preenchimento, as bordas, o alinhamento e outras propriedades do intervalo.|
-||[fórmulas](/javascript/api/excel/excel.rangeloadoptions#formulas)|Representa a fórmula em notação A1.|
-||[formulasLocal](/javascript/api/excel/excel.rangeloadoptions#formulaslocal)|Representa a fórmula em notação A1, na formatação de número da localidade e no idioma do usuário.  Por exemplo, a fórmula "=SUM(A1, 1.5)" em inglês seria "=SOMA(A1; 1,5)" em português.|
-||[numberFormat](/javascript/api/excel/excel.rangeloadoptions#numberformat)|Representa o código de formato de número do Excel para o intervalo especificado.|
-||[Validação](/javascript/api/excel/excel.rangeloadoptions#rowcount)|Retorna o número total de linhas no intervalo. Somente leitura.|
-||[rowIndex](/javascript/api/excel/excel.rangeloadoptions#rowindex)|Representa o número de linhas da primeira célula no intervalo. Indexados com zero. Somente leitura.|
-||[text](/javascript/api/excel/excel.rangeloadoptions#text)|Valores de texto do intervalo especificado. O valor de texto não depende da largura da célula. A substituição pelo sinal #, que ocorre na interface de usuário do Excel, não afeta o valor de texto retornado pela API. Somente leitura.|
-||[valueTypes](/javascript/api/excel/excel.rangeloadoptions#valuetypes)|Representa o tipo de dados de cada célula. Somente leitura.|
-||[values](/javascript/api/excel/excel.rangeloadoptions#values)|Representa os valores brutos do intervalo especificado. Os dados retornados podem ser dos tipos: cadeia de caracteres, número ou booliano. Células que contêm um erro retornarão a cadeia de caracteres de erro.|
-||[worksheet](/javascript/api/excel/excel.rangeloadoptions#worksheet)|A planilha que contém o intervalo atual.|
-|[RangeUpdateData](/javascript/api/excel/excel.rangeupdatedata)|[format](/javascript/api/excel/excel.rangeupdatedata#format)|Retorna um objeto de formato que encapsula a fonte, o preenchimento, as bordas, o alinhamento e outras propriedades do intervalo.|
-||[fórmulas](/javascript/api/excel/excel.rangeupdatedata#formulas)|Representa a fórmula em notação A1.|
-||[formulasLocal](/javascript/api/excel/excel.rangeupdatedata#formulaslocal)|Representa a fórmula em notação A1, na formatação de número da localidade e no idioma do usuário.  Por exemplo, a fórmula "=SUM(A1, 1.5)" em inglês seria "=SOMA(A1; 1,5)" em português.|
-||[numberFormat](/javascript/api/excel/excel.rangeupdatedata#numberformat)|Representa o código de formato de número do Excel para o intervalo especificado.|
-||[values](/javascript/api/excel/excel.rangeupdatedata#values)|Representa os valores brutos do intervalo especificado. Os dados retornados podem ser dos tipos: cadeia de caracteres, número ou booliano. Células que contêm um erro retornarão a cadeia de caracteres de erro.|
 |[Table](/javascript/api/excel/excel.table)|[delete()](/javascript/api/excel/excel.table#delete--)|Exclui a tabela.|
 ||[getDataBodyRange()](/javascript/api/excel/excel.table#getdatabodyrange--)|Obtém o objeto de intervalo associado ao corpo de dados da tabela.|
 ||[getHeaderRowRange()](/javascript/api/excel/excel.table#getheaderrowrange--)|Obtém o objeto de intervalo associado à linha de cabeçalho da tabela.|
@@ -604,8 +186,6 @@ A API JavaScript do Excel 1.1 é a primeira versão da API. É o único conjunto
 ||[colunas](/javascript/api/excel/excel.table#columns)|Representa uma coleção de todas as colunas na tabela. Somente leitura.|
 ||[id](/javascript/api/excel/excel.table#id)|Retorna um valor que identifica de forma exclusiva a tabela em uma determinada pasta de trabalho. O valor do identificador permanece o mesmo, ainda que a tabela seja renomeada. Somente leitura.|
 ||[rows](/javascript/api/excel/excel.table#rows)|Representa uma coleção de todas as linhas na tabela. Somente leitura.|
-||[Set (Propriedades: Excel. Table)](/javascript/api/excel/excel.table#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. TableUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.table#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
 ||[showHeaders](/javascript/api/excel/excel.table#showheaders)|Indica se a linha do cabeçalho está visível ou não. Esse valor pode ser definido para mostrar ou remover a linha do cabeçalho.|
 ||[showTotals](/javascript/api/excel/excel.table#showtotals)|Indica se a linha do total está visível ou não. Esse valor pode ser definido para mostrar ou remover a linha do total.|
 ||[style](/javascript/api/excel/excel.table#style)|Valor da constante que representa o estilo de Tabela. Os valores possíveis são: TableStyleLight1 a TableStyleLight21, TableStyleMedium1 a TableStyleMedium28, TableStyleStyleDark1 a TableStyleStyleDark11. Também é possível usar um estilo definido pelo usuário que esteja presente na planilha.|
@@ -614,14 +194,6 @@ A API JavaScript do Excel 1.1 é a primeira versão da API. É o único conjunto
 ||[getItemAt(index: number)](/javascript/api/excel/excel.tablecollection#getitemat-index-)|Obtém uma tabela com base em sua posição na coleção.|
 ||[Count](/javascript/api/excel/excel.tablecollection#count)|Retorna o número de tabelas na pasta de trabalho. Somente leitura.|
 ||[items](/javascript/api/excel/excel.tablecollection#items)|Obtém os itens filhos carregados nesta coleção.|
-|[TableCollectionLoadOptions](/javascript/api/excel/excel.tablecollectionloadoptions)|[$all](/javascript/api/excel/excel.tablecollectionloadoptions#$all)||
-||[colunas](/javascript/api/excel/excel.tablecollectionloadoptions#columns)|Para cada ITEM na coleção: representa uma coleção de todas as colunas da tabela.|
-||[id](/javascript/api/excel/excel.tablecollectionloadoptions#id)|Para cada ITEM na coleção: retorna um valor que identifica exclusivamente a tabela em uma determinada pasta de trabalho. O valor do identificador permanece o mesmo, ainda que a tabela seja renomeada. Somente leitura.|
-||[name](/javascript/api/excel/excel.tablecollectionloadoptions#name)|Para cada ITEM na coleção: o nome da tabela.|
-||[rows](/javascript/api/excel/excel.tablecollectionloadoptions#rows)|Para cada ITEM na coleção: representa uma coleção de todas as linhas da tabela.|
-||[showHeaders](/javascript/api/excel/excel.tablecollectionloadoptions#showheaders)|Para cada ITEM na coleção: indica se a linha de cabeçalho está visível ou não. Esse valor pode ser definido para mostrar ou remover a linha do cabeçalho.|
-||[showTotals](/javascript/api/excel/excel.tablecollectionloadoptions#showtotals)|Para cada ITEM na coleção: indica se a linha de total está visível ou não. Esse valor pode ser definido para mostrar ou remover a linha do total.|
-||[style](/javascript/api/excel/excel.tablecollectionloadoptions#style)|Para cada ITEM da coleção: valor constante que representa o estilo de tabela. Os valores possíveis são: TableStyleLight1 a TableStyleLight21, TableStyleMedium1 a TableStyleMedium28, TableStyleStyleDark1 a TableStyleStyleDark11. Também é possível usar um estilo definido pelo usuário que esteja presente na planilha.|
 |[TableColumn](/javascript/api/excel/excel.tablecolumn)|[delete()](/javascript/api/excel/excel.tablecolumn#delete--)|Exclui a coluna da tabela.|
 ||[getDataBodyRange()](/javascript/api/excel/excel.tablecolumn#getdatabodyrange--)|Obtém o objeto de intervalo associado ao corpo de dados da coluna.|
 ||[getHeaderRowRange()](/javascript/api/excel/excel.tablecolumn#getheaderrowrange--)|Obtém o objeto de intervalo associado à linha de cabeçalho da coluna.|
@@ -630,84 +202,26 @@ A API JavaScript do Excel 1.1 é a primeira versão da API. É o único conjunto
 ||[name](/javascript/api/excel/excel.tablecolumn#name)|Representa o nome da coluna da tabela.|
 ||[id](/javascript/api/excel/excel.tablecolumn#id)|Retorna uma chave exclusiva que identifica a coluna na tabela. Somente leitura.|
 ||[index](/javascript/api/excel/excel.tablecolumn#index)|Retorna o número de índice da coluna na coleção de colunas da tabela. Indexado com zero. Somente leitura.|
-||[Set (Propriedades: Excel. TableColumn)](/javascript/api/excel/excel.tablecolumn#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. TableColumnUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.tablecolumn#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
 ||[values](/javascript/api/excel/excel.tablecolumn#values)|Representa os valores brutos do intervalo especificado. Os dados retornados podem ser dos tipos: cadeia de caracteres, número ou booliano. Células que contêm um erro retornarão a cadeia de caracteres de erro.|
 |[TableColumnCollection](/javascript/api/excel/excel.tablecolumncollection)|[Add (index?: Number, Values?: matriz<matriz<\| número \| da cadeia \| de \| caracteres \| Boolean>> número da cadeia de caracteres booleana, Name?: String)](/javascript/api/excel/excel.tablecolumncollection#add-index--values--name-)|Adiciona uma nova coluna à tabela.|
 ||[getItem (Key: String \| de número)](/javascript/api/excel/excel.tablecolumncollection#getitem-key-)|Obtém um objeto de coluna por nome ou ID.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.tablecolumncollection#getitemat-index-)|Obtém uma coluna com base em sua posição na coleção.|
 ||[Count](/javascript/api/excel/excel.tablecolumncollection#count)|Retorna o número de colunas na tabela. Somente leitura.|
 ||[items](/javascript/api/excel/excel.tablecolumncollection#items)|Obtém os itens filhos carregados nesta coleção.|
-|[TableColumnCollectionLoadOptions](/javascript/api/excel/excel.tablecolumncollectionloadoptions)|[$all](/javascript/api/excel/excel.tablecolumncollectionloadoptions#$all)||
-||[id](/javascript/api/excel/excel.tablecolumncollectionloadoptions#id)|Para cada ITEM na coleção: retorna uma chave exclusiva que identifica a coluna dentro da tabela. Somente leitura.|
-||[index](/javascript/api/excel/excel.tablecolumncollectionloadoptions#index)|Para cada ITEM na coleção: retorna o número de índice da coluna dentro da coleção Columns da tabela. Indexados com zero. Somente leitura.|
-||[name](/javascript/api/excel/excel.tablecolumncollectionloadoptions#name)|Para cada ITEM na coleção: representa o nome da coluna da tabela.|
-||[values](/javascript/api/excel/excel.tablecolumncollectionloadoptions#values)|Para cada ITEM na coleção: representa os valores brutos do intervalo especificado. Os dados retornados podem ser dos tipos: cadeia de caracteres, número ou booliano. Células que contêm um erro retornarão a cadeia de caracteres de erro.|
-|[TableColumnData](/javascript/api/excel/excel.tablecolumndata)|[id](/javascript/api/excel/excel.tablecolumndata#id)|Retorna uma chave exclusiva que identifica a coluna na tabela. Somente leitura.|
-||[index](/javascript/api/excel/excel.tablecolumndata#index)|Retorna o número de índice da coluna na coleção de colunas da tabela. Indexado com zero. Somente leitura.|
-||[name](/javascript/api/excel/excel.tablecolumndata#name)|Representa o nome da coluna da tabela.|
-||[values](/javascript/api/excel/excel.tablecolumndata#values)|Representa os valores brutos do intervalo especificado. Os dados retornados podem ser dos tipos: cadeia de caracteres, número ou booliano. Células que contêm um erro retornarão a cadeia de caracteres de erro.|
-|[TableColumnLoadOptions](/javascript/api/excel/excel.tablecolumnloadoptions)|[$all](/javascript/api/excel/excel.tablecolumnloadoptions#$all)||
-||[id](/javascript/api/excel/excel.tablecolumnloadoptions#id)|Retorna uma chave exclusiva que identifica a coluna na tabela. Somente leitura.|
-||[index](/javascript/api/excel/excel.tablecolumnloadoptions#index)|Retorna o número de índice da coluna na coleção de colunas da tabela. Indexado com zero. Somente leitura.|
-||[name](/javascript/api/excel/excel.tablecolumnloadoptions#name)|Representa o nome da coluna da tabela.|
-||[values](/javascript/api/excel/excel.tablecolumnloadoptions#values)|Representa os valores brutos do intervalo especificado. Os dados retornados podem ser dos tipos: cadeia de caracteres, número ou booliano. Células que contêm um erro retornarão a cadeia de caracteres de erro.|
-|[TableColumnUpdateData](/javascript/api/excel/excel.tablecolumnupdatedata)|[name](/javascript/api/excel/excel.tablecolumnupdatedata#name)|Representa o nome da coluna da tabela.|
-||[values](/javascript/api/excel/excel.tablecolumnupdatedata#values)|Representa os valores brutos do intervalo especificado. Os dados retornados podem ser dos tipos: cadeia de caracteres, número ou booliano. Células que contêm um erro retornarão a cadeia de caracteres de erro.|
-|[TableData](/javascript/api/excel/excel.tabledata)|[colunas](/javascript/api/excel/excel.tabledata#columns)|Representa uma coleção de todas as colunas na tabela. Somente leitura.|
-||[id](/javascript/api/excel/excel.tabledata#id)|Retorna um valor que identifica de forma exclusiva a tabela em uma determinada pasta de trabalho. O valor do identificador permanece o mesmo, ainda que a tabela seja renomeada. Somente leitura.|
-||[name](/javascript/api/excel/excel.tabledata#name)|Nome da tabela.|
-||[rows](/javascript/api/excel/excel.tabledata#rows)|Representa uma coleção de todas as linhas na tabela. Somente leitura.|
-||[showHeaders](/javascript/api/excel/excel.tabledata#showheaders)|Indica se a linha do cabeçalho está visível ou não. Esse valor pode ser definido para mostrar ou remover a linha do cabeçalho.|
-||[showTotals](/javascript/api/excel/excel.tabledata#showtotals)|Indica se a linha do total está visível ou não. Esse valor pode ser definido para mostrar ou remover a linha do total.|
-||[style](/javascript/api/excel/excel.tabledata#style)|Valor da constante que representa o estilo de Tabela. Os valores possíveis são: TableStyleLight1 a TableStyleLight21, TableStyleMedium1 a TableStyleMedium28, TableStyleStyleDark1 a TableStyleStyleDark11. Também é possível usar um estilo definido pelo usuário que esteja presente na planilha.|
-|[TableLoadOptions](/javascript/api/excel/excel.tableloadoptions)|[$all](/javascript/api/excel/excel.tableloadoptions#$all)||
-||[colunas](/javascript/api/excel/excel.tableloadoptions#columns)|Representa uma coleção de todas as colunas na tabela.|
-||[id](/javascript/api/excel/excel.tableloadoptions#id)|Retorna um valor que identifica de forma exclusiva a tabela em uma determinada pasta de trabalho. O valor do identificador permanece o mesmo, ainda que a tabela seja renomeada. Somente leitura.|
-||[name](/javascript/api/excel/excel.tableloadoptions#name)|Nome da tabela.|
-||[rows](/javascript/api/excel/excel.tableloadoptions#rows)|Representa uma coleção de todas as linhas na tabela.|
-||[showHeaders](/javascript/api/excel/excel.tableloadoptions#showheaders)|Indica se a linha do cabeçalho está visível ou não. Esse valor pode ser definido para mostrar ou remover a linha do cabeçalho.|
-||[showTotals](/javascript/api/excel/excel.tableloadoptions#showtotals)|Indica se a linha do total está visível ou não. Esse valor pode ser definido para mostrar ou remover a linha do total.|
-||[style](/javascript/api/excel/excel.tableloadoptions#style)|Valor da constante que representa o estilo de Tabela. Os valores possíveis são: TableStyleLight1 a TableStyleLight21, TableStyleMedium1 a TableStyleMedium28, TableStyleStyleDark1 a TableStyleStyleDark11. Também é possível usar um estilo definido pelo usuário que esteja presente na planilha.|
 |[TableRow](/javascript/api/excel/excel.tablerow)|[delete()](/javascript/api/excel/excel.tablerow#delete--)|Exclui a linha da tabela.|
 ||[getRange()](/javascript/api/excel/excel.tablerow#getrange--)|Retorna o objeto de intervalo associado a toda a linha.|
 ||[index](/javascript/api/excel/excel.tablerow#index)|Retorna o número de índice da linha na coleção de linhas da tabela. Indexados com zero. Somente leitura.|
-||[Set (Propriedades: Excel. TableRow)](/javascript/api/excel/excel.tablerow#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. TableRowUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.tablerow#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
 ||[values](/javascript/api/excel/excel.tablerow#values)|Representa os valores brutos do intervalo especificado. Os dados retornados podem ser dos tipos: cadeia de caracteres, número ou booliano. Células que contêm um erro retornarão a cadeia de caracteres de erro.|
 |[TableRowCollection](/javascript/api/excel/excel.tablerowcollection)|[Add (index?: Number, Values?: matriz<matriz<\| número \| da cadeia \| de \| caracteres \| Boolean>> número da cadeia de caracteres booleana)](/javascript/api/excel/excel.tablerowcollection#add-index--values-)|Adiciona uma ou mais linhas à tabela. O objeto de retorno será a parte superior das linhas adicionadas recentemente.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.tablerowcollection#getitemat-index-)|Obtém uma linha com base em sua posição na coleção.|
 ||[Count](/javascript/api/excel/excel.tablerowcollection#count)|Retorna o número de linhas na tabela. Somente leitura.|
 ||[items](/javascript/api/excel/excel.tablerowcollection#items)|Obtém os itens filhos carregados nesta coleção.|
-|[TableRowCollectionLoadOptions](/javascript/api/excel/excel.tablerowcollectionloadoptions)|[$all](/javascript/api/excel/excel.tablerowcollectionloadoptions#$all)||
-||[index](/javascript/api/excel/excel.tablerowcollectionloadoptions#index)|Para cada ITEM na coleção: retorna o número de índice da linha dentro da coleção Rows da tabela. Indexados com zero. Somente leitura.|
-||[values](/javascript/api/excel/excel.tablerowcollectionloadoptions#values)|Para cada ITEM na coleção: representa os valores brutos do intervalo especificado. Os dados retornados podem ser dos tipos: cadeia de caracteres, número ou booliano. Células que contêm um erro retornarão a cadeia de caracteres de erro.|
-|[TableRowData](/javascript/api/excel/excel.tablerowdata)|[index](/javascript/api/excel/excel.tablerowdata#index)|Retorna o número de índice da linha na coleção de linhas da tabela. Indexados com zero. Somente leitura.|
-||[values](/javascript/api/excel/excel.tablerowdata#values)|Representa os valores brutos do intervalo especificado. Os dados retornados podem ser dos tipos: cadeia de caracteres, número ou booliano. Células que contêm um erro retornarão a cadeia de caracteres de erro.|
-|[TableRowLoadOptions](/javascript/api/excel/excel.tablerowloadoptions)|[$all](/javascript/api/excel/excel.tablerowloadoptions#$all)||
-||[index](/javascript/api/excel/excel.tablerowloadoptions#index)|Retorna o número de índice da linha na coleção de linhas da tabela. Indexados com zero. Somente leitura.|
-||[values](/javascript/api/excel/excel.tablerowloadoptions#values)|Representa os valores brutos do intervalo especificado. Os dados retornados podem ser dos tipos: cadeia de caracteres, número ou booliano. Células que contêm um erro retornarão a cadeia de caracteres de erro.|
-|[TableRowUpdateData](/javascript/api/excel/excel.tablerowupdatedata)|[values](/javascript/api/excel/excel.tablerowupdatedata#values)|Representa os valores brutos do intervalo especificado. Os dados retornados podem ser dos tipos: cadeia de caracteres, número ou booliano. Células que contêm um erro retornarão a cadeia de caracteres de erro.|
-|[TableUpdateData](/javascript/api/excel/excel.tableupdatedata)|[name](/javascript/api/excel/excel.tableupdatedata#name)|Nome da tabela.|
-||[showHeaders](/javascript/api/excel/excel.tableupdatedata#showheaders)|Indica se a linha do cabeçalho está visível ou não. Esse valor pode ser definido para mostrar ou remover a linha do cabeçalho.|
-||[showTotals](/javascript/api/excel/excel.tableupdatedata#showtotals)|Indica se a linha do total está visível ou não. Esse valor pode ser definido para mostrar ou remover a linha do total.|
-||[style](/javascript/api/excel/excel.tableupdatedata#style)|Valor da constante que representa o estilo de Tabela. Os valores possíveis são: TableStyleLight1 a TableStyleLight21, TableStyleMedium1 a TableStyleMedium28, TableStyleStyleDark1 a TableStyleStyleDark11. Também é possível usar um estilo definido pelo usuário que esteja presente na planilha.|
 |[Workbook](/javascript/api/excel/excel.workbook)|[getSelectedRange()](/javascript/api/excel/excel.workbook#getselectedrange--)|Obtém o intervalo único selecionado atualmente da pasta de trabalho. Se houver vários intervalos selecionados, este método gerará um erro.|
 ||[application](/javascript/api/excel/excel.workbook#application)|Representa a instância do aplicativo Excel que contém esta pasta de trabalho. Somente leitura.|
 ||[bindings](/javascript/api/excel/excel.workbook#bindings)|Representa uma coleção de ligações que fazem parte da pasta de trabalho. Somente leitura.|
 ||[names](/javascript/api/excel/excel.workbook#names)|Representa uma coleção de itens denominados de escopo da pasta de trabalho (chamados intervalos e constantes). Somente leitura.|
 ||[tables](/javascript/api/excel/excel.workbook#tables)|Representa uma coleção de tabelas associadas à pasta de trabalho. Somente leitura.|
 ||[planilhas](/javascript/api/excel/excel.workbook#worksheets)|Representa uma coleção de planilhas associadas à pasta de trabalho. Somente leitura.|
-||[Set (Propriedades: Excel. Workbook)](/javascript/api/excel/excel.workbook#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. WorkbookUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.workbook#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
-|[WorkbookData](/javascript/api/excel/excel.workbookdata)|[bindings](/javascript/api/excel/excel.workbookdata#bindings)|Representa uma coleção de ligações que fazem parte da pasta de trabalho. Somente leitura.|
-||[names](/javascript/api/excel/excel.workbookdata#names)|Representa uma coleção de itens denominados de escopo da pasta de trabalho (chamados intervalos e constantes). Somente leitura.|
-||[tables](/javascript/api/excel/excel.workbookdata#tables)|Representa uma coleção de tabelas associadas à pasta de trabalho. Somente leitura.|
-||[planilhas](/javascript/api/excel/excel.workbookdata#worksheets)|Representa uma coleção de planilhas associadas à pasta de trabalho. Somente leitura.|
-|[WorkbookLoadOptions](/javascript/api/excel/excel.workbookloadoptions)|[$all](/javascript/api/excel/excel.workbookloadoptions#$all)||
-||[application](/javascript/api/excel/excel.workbookloadoptions#application)|Representa a instância do aplicativo Excel que contém esta pasta de trabalho.|
-||[bindings](/javascript/api/excel/excel.workbookloadoptions#bindings)|Representa uma coleção de ligações que fazem parte da pasta de trabalho.|
-||[tables](/javascript/api/excel/excel.workbookloadoptions#tables)|Representa uma coleção de tabelas associadas à pasta de trabalho.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[activate()](/javascript/api/excel/excel.worksheet#activate--)|Ative a planilha na interface do usuário do Excel.|
 ||[delete()](/javascript/api/excel/excel.worksheet#delete--)|Exclui a planilha da pasta de trabalho. Observe que, se a visibilidade da planilha estiver definida como "VeryHidden", a operação de exclusão falhará com uma Generalexception.|
 ||[getCell(row: number, column: number)](/javascript/api/excel/excel.worksheet#getcell-row--column-)|Obtém o objeto de intervalo que contém a célula única com base nos números de linha e de coluna. A célula pode estar fora dos limites de seu intervalo pai, desde que ela permaneça dentro da grade da planilha.|
@@ -717,36 +231,11 @@ A API JavaScript do Excel 1.1 é a primeira versão da API. É o único conjunto
 ||[charts](/javascript/api/excel/excel.worksheet#charts)|Retorna uma coleção de gráficos que fazem parte da planilha. Somente leitura.|
 ||[id](/javascript/api/excel/excel.worksheet#id)|Retorna um valor que identifica de forma exclusiva a planilha em uma determinada pasta de trabalho. O valor do identificador permanece o mesmo, ainda que a planilha seja renomeada ou movida. Somente leitura.|
 ||[tables](/javascript/api/excel/excel.worksheet#tables)|Coleção de tabelas que fazem parte da planilha. Somente leitura.|
-||[Set (Propriedades: Excel. Worksheet)](/javascript/api/excel/excel.worksheet#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. WorksheetUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.worksheet#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
 ||[visibilidade](/javascript/api/excel/excel.worksheet#visibility)|A visibilidade da planilha.|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[Add (Name?: String)](/javascript/api/excel/excel.worksheetcollection#add-name-)|Adiciona uma nova planilha à pasta de trabalho. A planilha será adicionada ao final das planilhas existentes. Se você quiser ativar a planilha recém-adicionada, chame “.activate()” nela.|
 ||[getActiveWorksheet()](/javascript/api/excel/excel.worksheetcollection#getactiveworksheet--)|Obtém a planilha ativa no momento na pasta de trabalho.|
 ||[getItem(key: string)](/javascript/api/excel/excel.worksheetcollection#getitem-key-)|Obtém um objeto worksheet usando o Nome ou ID dele.|
 ||[items](/javascript/api/excel/excel.worksheetcollection#items)|Obtém os itens filhos carregados nesta coleção.|
-|[WorksheetCollectionLoadOptions](/javascript/api/excel/excel.worksheetcollectionloadoptions)|[$all](/javascript/api/excel/excel.worksheetcollectionloadoptions#$all)||
-||[charts](/javascript/api/excel/excel.worksheetcollectionloadoptions#charts)|Para cada ITEM na coleção: retorna uma coleção de gráficos que fazem parte da planilha.|
-||[id](/javascript/api/excel/excel.worksheetcollectionloadoptions#id)|Para cada ITEM na coleção: retorna um valor que identifica exclusivamente a planilha em uma determinada pasta de trabalho. O valor do identificador permanece o mesmo, ainda que a planilha seja renomeada ou movida. Somente leitura.|
-||[name](/javascript/api/excel/excel.worksheetcollectionloadoptions#name)|Para cada ITEM na coleção: o nome de exibição da planilha.|
-||[position](/javascript/api/excel/excel.worksheetcollectionloadoptions#position)|Para cada ITEM na coleção: a posição com base em zero da planilha na pasta de trabalho.|
-||[tables](/javascript/api/excel/excel.worksheetcollectionloadoptions#tables)|Para cada ITEM da coleção: coleção de tabelas que fazem parte da planilha.|
-||[visibilidade](/javascript/api/excel/excel.worksheetcollectionloadoptions#visibility)|Para cada ITEM na coleção: a visibilidade da planilha.|
-|[WorksheetData](/javascript/api/excel/excel.worksheetdata)|[charts](/javascript/api/excel/excel.worksheetdata#charts)|Retorna uma coleção de gráficos que fazem parte da planilha. Somente leitura.|
-||[id](/javascript/api/excel/excel.worksheetdata#id)|Retorna um valor que identifica de forma exclusiva a planilha em uma determinada pasta de trabalho. O valor do identificador permanece o mesmo, ainda que a planilha seja renomeada ou movida. Somente leitura.|
-||[name](/javascript/api/excel/excel.worksheetdata#name)|O nome de exibição da planilha.|
-||[position](/javascript/api/excel/excel.worksheetdata#position)|A posição baseada em zero da planilha na pasta de trabalho.|
-||[tables](/javascript/api/excel/excel.worksheetdata#tables)|Coleção de tabelas que fazem parte da planilha. Somente leitura.|
-||[visibilidade](/javascript/api/excel/excel.worksheetdata#visibility)|A visibilidade da planilha.|
-|[WorksheetLoadOptions](/javascript/api/excel/excel.worksheetloadoptions)|[$all](/javascript/api/excel/excel.worksheetloadoptions#$all)||
-||[charts](/javascript/api/excel/excel.worksheetloadoptions#charts)|Retorna uma coleção de gráficos que fazem parte da planilha.|
-||[id](/javascript/api/excel/excel.worksheetloadoptions#id)|Retorna um valor que identifica de forma exclusiva a planilha em uma determinada pasta de trabalho. O valor do identificador permanece o mesmo, ainda que a planilha seja renomeada ou movida. Somente leitura.|
-||[name](/javascript/api/excel/excel.worksheetloadoptions#name)|O nome de exibição da planilha.|
-||[position](/javascript/api/excel/excel.worksheetloadoptions#position)|A posição baseada em zero da planilha na pasta de trabalho.|
-||[tables](/javascript/api/excel/excel.worksheetloadoptions#tables)|Coleção de tabelas que fazem parte da planilha.|
-||[visibilidade](/javascript/api/excel/excel.worksheetloadoptions#visibility)|A visibilidade da planilha.|
-|[WorksheetUpdateData](/javascript/api/excel/excel.worksheetupdatedata)|[name](/javascript/api/excel/excel.worksheetupdatedata#name)|O nome de exibição da planilha.|
-||[position](/javascript/api/excel/excel.worksheetupdatedata#position)|A posição baseada em zero da planilha na pasta de trabalho.|
-||[visibilidade](/javascript/api/excel/excel.worksheetupdatedata#visibility)|A visibilidade da planilha.|
 
 ## <a name="see-also"></a>Confira também
 

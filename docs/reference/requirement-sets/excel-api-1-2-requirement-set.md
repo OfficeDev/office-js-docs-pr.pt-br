@@ -1,15 +1,15 @@
 ---
 title: Conjunto de requisitos de API JavaScript do Excel 1,2
 description: Detalhes sobre o conjunto de requisitos ExcelApi 1,2
-ms.date: 07/11/2019
+ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 887c0430feab71b3ff1c644074d35811e544861c
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: b3d4e7a7596ad47a728ffe6c7b6fd6272e8893ad
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35772055"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940777"
 ---
 # <a name="whats-new-in-excel-javascript-api-12"></a>Quais são as novidades na API JavaScript do Excel 1.2
 
@@ -17,7 +17,7 @@ ExcelApi 1,2 adicionado suporte para filtragem de tabela e acesso a funções in
 
 ## <a name="api-list"></a>Lista de APIs
 
-| Classe | Campos | Descrição |
+|| Classe | Campos | Descrição |
 |:---|:---|:---|
 |[Associação](/javascript/api/excel/excel.binding)|[onDataChanged](/javascript/api/excel/excel.binding#ondatachanged)|Ocorre quando os dados ou a formatação dentro da associação são alterados.|
 ||[onSelectionChanged](/javascript/api/excel/excel.binding#onselectionchanged)|Ocorre quando o conteúdo selecionado na associação é alterado.|
@@ -27,18 +27,13 @@ ExcelApi 1,2 adicionado suporte para filtragem de tabela e acesso a funções in
 ||[Validação](/javascript/api/excel/excel.bindingselectionchangedeventargs#rowcount)|Obtém o número de linhas selecionadas.|
 ||[startColumn](/javascript/api/excel/excel.bindingselectionchangedeventargs#startcolumn)|Obtém o índice da primeira coluna da seleção (com base em zero).|
 ||[startRow](/javascript/api/excel/excel.bindingselectionchangedeventargs#startrow)|Obtém o índice da primeira linha da seleção (com base em zero).|
-|[Chart](/javascript/api/excel/excel.chart)|[GetImage (largura?: número, altura?: número, ajustemode?: "ajustar" \| "FitAndCenter" \| "preenchimento")](/javascript/api/excel/excel.chart#getimage-width--height--fittingmode-)|Processa o gráfico como uma imagem codificada em base64, dimensionando o gráfico para se ajustar às dimensões especificadas.|
-||[GetImage (largura?: número, altura?: número, ajustemode?: Excel. ImageFittingMode)](/javascript/api/excel/excel.chart#getimage-width--height--fittingmode-)|Processa o gráfico como uma imagem codificada em base64, dimensionando o gráfico para se ajustar às dimensões especificadas.|
+|[Chart](/javascript/api/excel/excel.chart)|[GetImage (largura?: número, altura?: número, ajustemode?: Excel. ImageFittingMode)](/javascript/api/excel/excel.chart#getimage-width--height--fittingmode-)|Processa o gráfico como uma imagem codificada em base64, dimensionando o gráfico para se ajustar às dimensões especificadas.|
 ||[worksheet](/javascript/api/excel/excel.chart#worksheet)|A planilha que contém o gráfico atual. Somente leitura.|
-|[ChartCollectionLoadOptions](/javascript/api/excel/excel.chartcollectionloadoptions)|[worksheet](/javascript/api/excel/excel.chartcollectionloadoptions#worksheet)|Para cada ITEM na coleção: a planilha que contém o gráfico atual.|
-|[ChartLoadOptions](/javascript/api/excel/excel.chartloadoptions)|[worksheet](/javascript/api/excel/excel.chartloadoptions#worksheet)|A planilha que contém o gráfico atual.|
 |[Filter](/javascript/api/excel/excel.filter)|[Apply (critérios: Excel. FilterCriteria)](/javascript/api/excel/excel.filter#apply-criteria-)|Aplica os critérios de filtro determinados à coluna fornecida.|
 ||[applyBottomItemsFilter(count: number)](/javascript/api/excel/excel.filter#applybottomitemsfilter-count-)|Aplica um filtro "Item Inferior" à coluna para obter o número de elementos fornecido.|
 ||[applyBottomPercentFilter(percent: number)](/javascript/api/excel/excel.filter#applybottompercentfilter-percent-)|Aplica um filtro "Percentual Inferior" à coluna para obter a porcentagem de elementos fornecida.|
 ||[applyCellColorFilter(color: string)](/javascript/api/excel/excel.filter#applycellcolorfilter-color-)|Aplica um filtro "Cor da Célula" à coluna para obter a cor fornecida.|
-||[applyCustomFilter (Criteria1: String, Criteria2?: String, Oper?: "e" \| "ou")](/javascript/api/excel/excel.filter#applycustomfilter-criteria1--criteria2--oper-)|Aplica um filtro "Icon" à coluna para obter as cadeias de caracteres de critérios fornecidas.|
 ||[applyCustomFilter (Criteria1: String, Criteria2?: String, Oper?: Excel. FilterOperator)](/javascript/api/excel/excel.filter#applycustomfilter-criteria1--criteria2--oper-)|Aplica um filtro "Icon" à coluna para obter as cadeias de caracteres de critérios fornecidas.|
-||[applyDynamicFilter (Criteria: "Unknown" \| "AboveAverage" \| "AllDatesInPeriodApril" \| "AllDatesInPeriodAugust" \| "AllDatesInPeriodDecember" \| "AllDatesInPeriodFebruray" \| " \| AllDatesInPeriodJanuary "" AllDatesInPeriodJuly " \| " AllDatesInPeriodJune " \| " AllDatesInPeriodMarch " \| " AllDatesInPeriodMay " \| " \| AllDatesInPeriodNovember "" AllDatesInPeriodOctober " \| "AllDatesInPeriodQuarter1" \| "AllDatesInPeriodQuarter2" \| "AllDatesInPeriodQuarter3" \| "AllDatesInPeriodQuarter4" \| "AllDatesInPeriodSeptember" \| "BelowAverage" \| " LastMonth " \| " LastQuarter " \| " LastWeek " \| " LastYear " \| " NextMonth " \| " \| \| \| NextQuarter "" NextWeek "" NextYear "" ThisMonth " \| " ThisQuarter " \| " ThisWeek " \| " ThisYear " \| " hoje " \| " amanhã " \| " YearToDate " \| " ontem ")](/javascript/api/excel/excel.filter#applydynamicfilter-criteria-)|Aplica um filtro "Dinâmico" à coluna.|
 ||[applyDynamicFilter (critérios: Excel. DynamicFilterCriteria)](/javascript/api/excel/excel.filter#applydynamicfilter-criteria-)|Aplica um filtro "Dinâmico" à coluna.|
 ||[applyFontColorFilter(color: string)](/javascript/api/excel/excel.filter#applyfontcolorfilter-color-)|Aplica um filtro "Cor da Fonte" à coluna para obter a cor fornecida.|
 ||[applyIconFilter (ícone: Excel. Icon)](/javascript/api/excel/excel.filter#applyiconfilter-icon-)|Aplicar um filtro "ícone" à coluna para o ícone dado.|
@@ -55,29 +50,12 @@ ExcelApi 1,2 adicionado suporte para filtragem de tabela e acesso a funções in
 ||[icon](/javascript/api/excel/excel.filtercriteria#icon)|O ícone usado para filtrar células. Usado com a filtragem "icon".|
 ||[operador](/javascript/api/excel/excel.filtercriteria#operator)|O operador usado para combinar o critério 1 e 2 ao usar a filtragem "custom".|
 ||[values](/javascript/api/excel/excel.filtercriteria#values)|O conjunto de valores a serem usados como parte da filtragem "values".|
-|[FilterData](/javascript/api/excel/excel.filterdata)|[criteria](/javascript/api/excel/excel.filterdata#criteria)|O filtro aplicado no momento à coluna fornecida. Somente leitura.|
 |[FilterDatetime](/javascript/api/excel/excel.filterdatetime)|[data](/javascript/api/excel/excel.filterdatetime#date)|A data no formato ISO8601 usada para filtrar os dados.|
 ||[especificidade](/javascript/api/excel/excel.filterdatetime#specificity)|Como a data específica deve ser usada para manter os dados. Por exemplo, se a data for 2005-04-02 e a especificidade estiver definida como "mês", a operação de filtragem manterá todas as linhas com uma data do mês de abril de 2009.|
-|[FilterLoadOptions](/javascript/api/excel/excel.filterloadoptions)|[$all](/javascript/api/excel/excel.filterloadoptions#$all)||
-||[criteria](/javascript/api/excel/excel.filterloadoptions#criteria)|O filtro aplicado no momento à coluna fornecida. Somente leitura.|
 |[FormatProtection](/javascript/api/excel/excel.formatprotection)|[formulaHidden](/javascript/api/excel/excel.formatprotection#formulahidden)|Indica se o Excel ocultará a fórmula para as células no intervalo. Um valor nulo indica que o intervalo inteiro não tem configuração uniforme de fórmula oculta.|
 ||[bloqueado](/javascript/api/excel/excel.formatprotection#locked)|Indica se o Excel bloqueia as células no objeto. Um valor nulo indica que o intervalo inteiro não tem configuração de bloqueio uniforme.|
-||[Set (Propriedades: Excel. FormatProtection)](/javascript/api/excel/excel.formatprotection#set-properties-)|Define várias propriedades no objeto ao mesmo tempo, com base em um objeto carregado existente.|
-||[Set (Propriedades: interfaces. FormatProtectionUpdateData, opções?: OfficeExtension. UpdateOptions)](/javascript/api/excel/excel.formatprotection#set-properties--options-)|Define várias propriedades de um objeto ao mesmo tempo. Você pode passar um objeto simples com as propriedades apropriadas ou outro objeto API do mesmo tipo.|
-|[FormatProtectionData](/javascript/api/excel/excel.formatprotectiondata)|[formulaHidden](/javascript/api/excel/excel.formatprotectiondata#formulahidden)|Indica se o Excel ocultará a fórmula para as células no intervalo. Um valor nulo indica que o intervalo inteiro não tem configuração uniforme de fórmula oculta.|
-||[bloqueado](/javascript/api/excel/excel.formatprotectiondata#locked)|Indica se o Excel bloqueia as células no objeto. Um valor nulo indica que o intervalo inteiro não tem configuração de bloqueio uniforme.|
-|[FormatProtectionLoadOptions](/javascript/api/excel/excel.formatprotectionloadoptions)|[$all](/javascript/api/excel/excel.formatprotectionloadoptions#$all)||
-||[formulaHidden](/javascript/api/excel/excel.formatprotectionloadoptions#formulahidden)|Indica se o Excel ocultará a fórmula para as células no intervalo. Um valor nulo indica que o intervalo inteiro não tem configuração uniforme de fórmula oculta.|
-||[bloqueado](/javascript/api/excel/excel.formatprotectionloadoptions#locked)|Indica se o Excel bloqueia as células no objeto. Um valor nulo indica que o intervalo inteiro não tem configuração de bloqueio uniforme.|
-|[FormatProtectionUpdateData](/javascript/api/excel/excel.formatprotectionupdatedata)|[formulaHidden](/javascript/api/excel/excel.formatprotectionupdatedata#formulahidden)|Indica se o Excel ocultará a fórmula para as células no intervalo. Um valor nulo indica que o intervalo inteiro não tem configuração uniforme de fórmula oculta.|
-||[bloqueado](/javascript/api/excel/excel.formatprotectionupdatedata#locked)|Indica se o Excel bloqueia as células no objeto. Um valor nulo indica que o intervalo inteiro não tem configuração de bloqueio uniforme.|
 |[FunctionResult](/javascript/api/excel/excel.functionresult)|[error](/javascript/api/excel/excel.functionresult#error)|O valor de erro (como "#DIV/0") que representa o erro. Se a cadeia de caracteres de erro não for definida, a função foi bem-sucedida e seu resultado será gravado no campo de valor. O erro está sempre no local inglês.|
 ||[value](/javascript/api/excel/excel.functionresult#value)|O valor da função Evaluation. O campo Value será preenchido somente se nenhum erro tiver ocorrido (ou seja, a Propriedade Error não está definida).|
-|[FunctionResultData](/javascript/api/excel/excel.functionresultdata)|[error](/javascript/api/excel/excel.functionresultdata#error)|O valor de erro (como "#DIV/0") que representa o erro. Se a cadeia de caracteres de erro não for definida, a função foi bem-sucedida e seu resultado será gravado no campo de valor. O erro está sempre no local inglês.|
-||[value](/javascript/api/excel/excel.functionresultdata#value)|O valor da função Evaluation. O campo Value será preenchido somente se nenhum erro tiver ocorrido (ou seja, a Propriedade Error não está definida).|
-|[FunctionResultLoadOptions](/javascript/api/excel/excel.functionresultloadoptions)|[$all](/javascript/api/excel/excel.functionresultloadoptions#$all)||
-||[error](/javascript/api/excel/excel.functionresultloadoptions#error)|O valor de erro (como "#DIV/0") que representa o erro. Se a cadeia de caracteres de erro não for definida, a função foi bem-sucedida e seu resultado será gravado no campo de valor. O erro está sempre no local inglês.|
-||[value](/javascript/api/excel/excel.functionresultloadoptions#value)|O valor da função Evaluation. O campo Value será preenchido somente se nenhum erro tiver ocorrido (ou seja, a Propriedade Error não está definida).|
 |[Functions](/javascript/api/excel/excel.functions)|[ABS (número: número \| de Excel. \| Range Excel. \| ReferênciaIntervalo Excel.<any>FunctionResult)](/javascript/api/excel/excel.functions#abs-number-)|Retorna o valor absoluto de um número, um número sem o sinal.|
 ||[JUROSACUM (problema: número \| de \| cadeia \| de caracteres Boolean \| Excel. Range \| Excel. ReferênciaIntervalo<any>Excel. FunctionResult, \| firstInterest \| : \| número de cadeia \| Boolean Excel. Range Excel. ReferênciaIntervalo \| Excel. FunctionResult<any>, liquidação: \| número \| de \| cadeia Boolean Excel \| . Range Excel \| . ReferênciaIntervalo Excel<any>. FunctionResult, taxa: número \| String \| Boolean \| Excel. Range \| \| Excel.<any>FunctionResult, par: cadeia de caracteres \| \| de número booliano \| Excel. \| Range Excel. ReferênciaIntervalo \| Excel. FunctionResult<any>, frequência: número \| de \| cadeia \| Boolean Excel. \| Range Excel. \| ReferênciaIntervalo Excel.<any>FunctionResult, base?: número \| cadeia \| de \| caracteres Boolean Excel \| . Range Excel \| . ReferênciaIntervalo Excel<any>. FunctionResult, calcMethod? \| : \| número \| de cadeia Boolean \| Excel. Range Excel. ReferênciaIntervalo \| Excel. FunctionResult<any>)](/javascript/api/excel/excel.functions#accrint-issue--firstinterest--settlement--rate--par--frequency--basis--calcmethod-)|Retorna juros acumulados de um título que paga juros periódicos.|
 ||[JUROSACUMV (problema: número \| de \| cadeia \| de caracteres Boolean \| Excel. Range \| Excel. ReferênciaIntervalo<any>Excel. FunctionResult, \| liquidação \| : número de \| cadeia de caracteres \| Boolean Excel. Range Excel. ReferênciaIntervalo \| Excel. FunctionResult<any>, taxa: número \| da \| cadeia \| de caracteres Boolean \| Excel. Range \| Excel. ReferênciaIntervalo<any>Excel. FunctionResult, par: número \|String \| Boolean \| Excel. Range \| Excel \| <any>. FunctionResult, base?: número \| da cadeia de caracteres \| Boolean \| Excel. Range \| Excel. ReferênciaIntervalo \| Excel. FunctionResult<any>)](/javascript/api/excel/excel.functions#accrintm-issue--settlement--rate--par--basis-)|Retorna juros acumulados de um título que paga juros no vencimento.|
@@ -445,7 +423,6 @@ ExcelApi 1,2 adicionado suporte para filtragem de tabela e acesso a funções in
 ||[LUCROVENC (liquidação: \| número \| de \| cadeia de caracteres \| Boolean Excel. \| Range Excel.<any>ReferênciaIntervalo Excel. FunctionResult \| , \| vencimento \| : cadeia de \| caracteres de número Boolean Excel. Range Excel. ReferênciaIntervalo \| Excel. FunctionResult<any>, problema: número \| de \| cadeia \| Boolean Excel. \| Range Excel. \| ReferênciaIntervalo Excel.<any>FunctionResult, taxa: número \|cadeia \| de \| caracteres Boolean Excel \| . Range \| Excel. FunctionResult<any>, PR: String \| \| de número Boolean \| Excel. Range \| Excel. ReferênciaIntervalo \| Excel. FunctionResult<any>, base?: número \| da \| cadeia \| de caracteres Boolean \| Excel. Range \| Excel. ReferênciaIntervalo<any>Excel. FunctionResult)](/javascript/api/excel/excel.functions#yieldmat-settlement--maturity--issue--rate--pr--basis-)|Retorna o rendimento anual de um título que paga juros no vencimento.|
 ||[z_Test (matriz: número \| Excel. Range \| Excel. ReferênciaIntervalo \| Excel. FunctionResult<any>, x: número \| Excel. Range \| Excel. ReferênciaIntervalo \| Excel. FunctionResult<any>, Sigma?: número \| Excel. Range \| Excel. ReferênciaIntervalo \| Excel. FunctionResult<any>)](/javascript/api/excel/excel.functions#z_test-array--x--sigma-)|Retorna o valor P unicaudal de um teste z.|
 |[Icon](/javascript/api/excel/excel.icon)|[index](/javascript/api/excel/excel.icon#index)|Representa o índice do ícone no conjunto fornecido.|
-||[set](/javascript/api/excel/excel.icon#set)|Representa o conjunto do qual ícone faz parte.|
 |[Range](/javascript/api/excel/excel.range)|[columnHidden](/javascript/api/excel/excel.range#columnhidden)|Representa se todas as colunas do intervalo atual estão ocultas.|
 ||[formulasR1C1](/javascript/api/excel/excel.range#formulasr1c1)|Representa a fórmula em notação no estilo L1C1.|
 ||[getColumnsAfter (contagem?: número)](/javascript/api/excel/excel.range#getcolumnsafter-count-)|Obtém um determinado número de colunas à direita do objeto Range atual.|
@@ -459,34 +436,13 @@ ExcelApi 1,2 adicionado suporte para filtragem de tabela e acesso a funções in
 ||[sort](/javascript/api/excel/excel.range#sort)|Representa a classificação de intervalo do intervalo atual. Somente leitura.|
 ||[rowHidden](/javascript/api/excel/excel.range#rowhidden)|Representa se todas as linhas do intervalo atual estão ocultas.|
 ||[unmerge()](/javascript/api/excel/excel.range#unmerge--)|Desfaz a mesclagem das células do intervalo em células separadas.|
-|[RangeData](/javascript/api/excel/excel.rangedata)|[columnHidden](/javascript/api/excel/excel.rangedata#columnhidden)|Representa se todas as colunas do intervalo atual estão ocultas.|
-||[formulasR1C1](/javascript/api/excel/excel.rangedata#formulasr1c1)|Representa a fórmula em notação no estilo L1C1.|
-||[hidden](/javascript/api/excel/excel.rangedata#hidden)|Representa se todas as células do intervalo atual estão ocultas. Somente leitura.|
-||[rowHidden](/javascript/api/excel/excel.rangedata#rowhidden)|Representa se todas as linhas do intervalo atual estão ocultas.|
 |[RangeFormat](/javascript/api/excel/excel.rangeformat)|[autofitColumns()](/javascript/api/excel/excel.rangeformat#autofitcolumns--)|Altera a largura das colunas do intervalo atual para obter o melhor ajuste, com base nos dados atuais nas colunas.|
 ||[autofitRows()](/javascript/api/excel/excel.rangeformat#autofitrows--)|Altera a altura das linhas do intervalo atual para obter o melhor ajuste, com base nos dados atuais nas colunas.|
 ||[columnWidth](/javascript/api/excel/excel.rangeformat#columnwidth)|Obtém ou define a largura de todas as colunas dentro do intervalo. Se as larguras das colunas não forem uniformes, será retornado null.|
 ||[protection](/javascript/api/excel/excel.rangeformat#protection)|Retorna o objeto de proteção de formato para um intervalo. Somente leitura.|
 ||[rowHeight](/javascript/api/excel/excel.rangeformat#rowheight)|Obtém ou define a altura de todas as linhas do intervalo. Se as alturas de linha não forem uniformes, NULL será retornado.|
-|[RangeFormatData](/javascript/api/excel/excel.rangeformatdata)|[columnWidth](/javascript/api/excel/excel.rangeformatdata#columnwidth)|Obtém ou define a largura de todas as colunas dentro do intervalo. Se as larguras das colunas não forem uniformes, será retornado null.|
-||[protection](/javascript/api/excel/excel.rangeformatdata#protection)|Retorna o objeto de proteção de formato para um intervalo. Somente leitura.|
-||[rowHeight](/javascript/api/excel/excel.rangeformatdata#rowheight)|Obtém ou define a altura de todas as linhas do intervalo. Se as alturas de linha não forem uniformes, NULL será retornado.|
-|[RangeFormatLoadOptions](/javascript/api/excel/excel.rangeformatloadoptions)|[columnWidth](/javascript/api/excel/excel.rangeformatloadoptions#columnwidth)|Obtém ou define a largura de todas as colunas dentro do intervalo. Se as larguras das colunas não forem uniformes, será retornado null.|
-||[protection](/javascript/api/excel/excel.rangeformatloadoptions#protection)|Retorna o objeto de proteção de formato para um intervalo.|
-||[rowHeight](/javascript/api/excel/excel.rangeformatloadoptions#rowheight)|Obtém ou define a altura de todas as linhas do intervalo. Se as alturas de linha não forem uniformes, NULL será retornado.|
-|[RangeFormatUpdateData](/javascript/api/excel/excel.rangeformatupdatedata)|[columnWidth](/javascript/api/excel/excel.rangeformatupdatedata#columnwidth)|Obtém ou define a largura de todas as colunas dentro do intervalo. Se as larguras das colunas não forem uniformes, será retornado null.|
-||[protection](/javascript/api/excel/excel.rangeformatupdatedata#protection)|Retorna o objeto de proteção de formato para um intervalo.|
-||[rowHeight](/javascript/api/excel/excel.rangeformatupdatedata#rowheight)|Obtém ou define a altura de todas as linhas do intervalo. Se as alturas de linha não forem uniformes, NULL será retornado.|
-|[RangeLoadOptions](/javascript/api/excel/excel.rangeloadoptions)|[columnHidden](/javascript/api/excel/excel.rangeloadoptions#columnhidden)|Representa se todas as colunas do intervalo atual estão ocultas.|
-||[formulasR1C1](/javascript/api/excel/excel.rangeloadoptions#formulasr1c1)|Representa a fórmula em notação no estilo L1C1.|
-||[hidden](/javascript/api/excel/excel.rangeloadoptions#hidden)|Representa se todas as células do intervalo atual estão ocultas. Somente leitura.|
-||[rowHidden](/javascript/api/excel/excel.rangeloadoptions#rowhidden)|Representa se todas as linhas do intervalo atual estão ocultas.|
 |[RangeReference](/javascript/api/excel/excel.rangereference)|[address](/javascript/api/excel/excel.rangereference#address)|Obtém ou define o endereço do intervalo; por exemplo, ' sheetName! A1: B5 '.|
-|[RangeSort](/javascript/api/excel/excel.rangesort)|[Apply (Fields: Excel. SortField [], matchCase?: Boolean, hasHeaders?: Boolean, Orientation?: "Rows \| " "Columns", Method?: "pinyin \| " "StrokeCount")](/javascript/api/excel/excel.rangesort#apply-fields--matchcase--hasheaders--orientation--method-)|Executa uma operação de classificação.|
-||[Apply (Fields: Excel. SortField [], matchCase?: Boolean, hasHeaders?: Boolean, Orientation?: Excel. SortOrientation, Method?: Excel. SortMethod)](/javascript/api/excel/excel.rangesort#apply-fields--matchcase--hasheaders--orientation--method-)|Executa uma operação de classificação.|
-|[RangeUpdateData](/javascript/api/excel/excel.rangeupdatedata)|[columnHidden](/javascript/api/excel/excel.rangeupdatedata#columnhidden)|Representa se todas as colunas do intervalo atual estão ocultas.|
-||[formulasR1C1](/javascript/api/excel/excel.rangeupdatedata#formulasr1c1)|Representa a fórmula em notação no estilo L1C1.|
-||[rowHidden](/javascript/api/excel/excel.rangeupdatedata#rowhidden)|Representa se todas as linhas do intervalo atual estão ocultas.|
+|[RangeSort](/javascript/api/excel/excel.rangesort)|[Apply (Fields: Excel. SortField [], matchCase?: Boolean, hasHeaders?: Boolean, Orientation?: Excel. SortOrientation, Method?: Excel. SortMethod)](/javascript/api/excel/excel.rangesort#apply-fields--matchcase--hasheaders--orientation--method-)|Executa uma operação de classificação.|
 |[SelectionChangedEventArgs](/javascript/api/excel/excel.selectionchangedeventargs)|[pasta de trabalho](/javascript/api/excel/excel.selectionchangedeventargs#workbook)|Obtém o objeto workbook que disparou o evento SelectionChanged.|
 |[SortField](/javascript/api/excel/excel.sortfield)|[ascending](/javascript/api/excel/excel.sortfield#ascending)|Indica se a classificação é feita de forma crescente.|
 ||[color](/javascript/api/excel/excel.sortfield#color)|Representa a cor que é o destino da condição se a classificação estiver na cor da fonte ou da célula.|
@@ -499,44 +455,20 @@ ExcelApi 1,2 adicionado suporte para filtragem de tabela e acesso a funções in
 ||[sort](/javascript/api/excel/excel.table#sort)|Representa a classificação da tabela. Somente leitura.|
 ||[worksheet](/javascript/api/excel/excel.table#worksheet)|A planilha que contém a tabela atual. Somente leitura.|
 ||[reapplyFilters()](/javascript/api/excel/excel.table#reapplyfilters--)|Aplica novamente todos os filtros à tabela.|
-|[TableCollectionLoadOptions](/javascript/api/excel/excel.tablecollectionloadoptions)|[sort](/javascript/api/excel/excel.tablecollectionloadoptions#sort)|Para cada ITEM na coleção: representa a classificação para a tabela.|
-||[worksheet](/javascript/api/excel/excel.tablecollectionloadoptions#worksheet)|Para cada ITEM na coleção: a planilha que contém a tabela atual.|
 |[TableColumn](/javascript/api/excel/excel.tablecolumn)|[filter](/javascript/api/excel/excel.tablecolumn#filter)|Recupera o filtro aplicado à coluna. Somente leitura.|
-|[TableColumnCollectionLoadOptions](/javascript/api/excel/excel.tablecolumncollectionloadoptions)|[filter](/javascript/api/excel/excel.tablecolumncollectionloadoptions#filter)|Para cada ITEM na coleção: recupere o filtro aplicado à coluna.|
-|[TableColumnData](/javascript/api/excel/excel.tablecolumndata)|[filter](/javascript/api/excel/excel.tablecolumndata#filter)|Recupera o filtro aplicado à coluna. Somente leitura.|
-|[TableColumnLoadOptions](/javascript/api/excel/excel.tablecolumnloadoptions)|[filter](/javascript/api/excel/excel.tablecolumnloadoptions#filter)|Recupera o filtro aplicado à coluna.|
-|[TableData](/javascript/api/excel/excel.tabledata)|[sort](/javascript/api/excel/excel.tabledata#sort)|Representa a classificação da tabela. Somente leitura.|
-|[TableLoadOptions](/javascript/api/excel/excel.tableloadoptions)|[sort](/javascript/api/excel/excel.tableloadoptions#sort)|Representa a classificação da tabela.|
-||[worksheet](/javascript/api/excel/excel.tableloadoptions#worksheet)|A planilha que contém a tabela atual.|
-|[TableSort](/javascript/api/excel/excel.tablesort)|[Apply (Fields: Excel. SortField [], matchCase?: Boolean, Method?: "PinYin \| " "StrokeCount")](/javascript/api/excel/excel.tablesort#apply-fields--matchcase--method-)|Executa uma operação de classificação.|
-||[Apply (Fields: Excel. SortField [], matchCase?: Boolean, Method?: Excel. SortMethod)](/javascript/api/excel/excel.tablesort#apply-fields--matchcase--method-)|Executam uma operação de classificação.|
+|[TableSort](/javascript/api/excel/excel.tablesort)|[Apply (Fields: Excel. SortField [], matchCase?: Boolean, Method?: Excel. SortMethod)](/javascript/api/excel/excel.tablesort#apply-fields--matchcase--method-)|Executam uma operação de classificação.|
 ||[clear()](/javascript/api/excel/excel.tablesort#clear--)|Limpa a classificação que está na tabela. Essa ação não modifica a ordenação da tabela, mas limpa o estado dos botões do cabeçalho.|
 ||[fields](/javascript/api/excel/excel.tablesort#fields)|Representa as condições atuais usadas para a última classificação da tabela. Somente leitura.|
 ||[matchCase](/javascript/api/excel/excel.tablesort#matchcase)|Indica se o uso de maiúsculas ou minúsculas afetou a última classificação da tabela. Somente leitura.|
 ||[IME](/javascript/api/excel/excel.tablesort#method)|Indica o último método de ordenação de caracteres chineses usado para classificar a tabela. Somente leitura.|
 ||[reapply()](/javascript/api/excel/excel.tablesort#reapply--)|Reaplica os parâmetros de classificação atuais à tabela.|
-|[TableSortData](/javascript/api/excel/excel.tablesortdata)|[fields](/javascript/api/excel/excel.tablesortdata#fields)|Representa as condições atuais usadas para a última classificação da tabela. Somente leitura.|
-||[matchCase](/javascript/api/excel/excel.tablesortdata#matchcase)|Indica se o uso de maiúsculas ou minúsculas afetou a última classificação da tabela. Somente leitura.|
-||[IME](/javascript/api/excel/excel.tablesortdata#method)|Indica o último método de ordenação de caracteres chineses usado para classificar a tabela. Somente leitura.|
-|[TableSortLoadOptions](/javascript/api/excel/excel.tablesortloadoptions)|[$all](/javascript/api/excel/excel.tablesortloadoptions#$all)||
-||[fields](/javascript/api/excel/excel.tablesortloadoptions#fields)|Representa as condições atuais usadas para a última classificação da tabela. Somente leitura.|
-||[matchCase](/javascript/api/excel/excel.tablesortloadoptions#matchcase)|Indica se o uso de maiúsculas ou minúsculas afetou a última classificação da tabela. Somente leitura.|
-||[IME](/javascript/api/excel/excel.tablesortloadoptions#method)|Indica o último método de ordenação de caracteres chineses usado para classificar a tabela. Somente leitura.|
 |[Workbook](/javascript/api/excel/excel.workbook)|[funções](/javascript/api/excel/excel.workbook#functions)|Representa uma coleção de funções de planilha que podem ser usadas para cálculo. Somente leitura.|
 ||[onSelectionChanged](/javascript/api/excel/excel.workbook#onselectionchanged)|Ocorre quando a seleção no documento é alterada.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[getUsedRange (valuesOnly?: Boolean)](/javascript/api/excel/excel.worksheet#getusedrange-valuesonly-)|O intervalo usado é o menor intervalo que abrange todas as células que têm um valor ou uma formatação atribuída a elas. Se a planilha inteira estiver em branco, essa função retornará a célula superior esquerda (ou seja, *não* gerará um erro).|
 ||[protection](/javascript/api/excel/excel.worksheet#protection)|Retorna o objeto de proteção da planilha para uma planilha. Somente leitura.|
-|[WorksheetCollectionLoadOptions](/javascript/api/excel/excel.worksheetcollectionloadoptions)|[protection](/javascript/api/excel/excel.worksheetcollectionloadoptions#protection)|Para cada ITEM na coleção: retorna o objeto de proteção de planilha para uma planilha.|
-|[WorksheetData](/javascript/api/excel/excel.worksheetdata)|[protection](/javascript/api/excel/excel.worksheetdata#protection)|Retorna o objeto de proteção da planilha para uma planilha. Somente leitura.|
-|[WorksheetLoadOptions](/javascript/api/excel/excel.worksheetloadoptions)|[protection](/javascript/api/excel/excel.worksheetloadoptions#protection)|Retorna o objeto de proteção da planilha para uma planilha.|
 |[WorksheetProtection](/javascript/api/excel/excel.worksheetprotection)|[proteger (opções?: Excel. WorksheetProtectionOptions, senha?: cadeia de caracteres)](/javascript/api/excel/excel.worksheetprotection#protect-options--password-)|Protege uma planilha. Falhará se a planilha já tiver sido protegida.|
 ||[options](/javascript/api/excel/excel.worksheetprotection#options)|Opções de proteção da planilha. Somente leitura.|
 ||[protegido](/javascript/api/excel/excel.worksheetprotection#protected)|Indica se a planilha está protegida. Somente leitura.|
-|[WorksheetProtectionData](/javascript/api/excel/excel.worksheetprotectiondata)|[options](/javascript/api/excel/excel.worksheetprotectiondata#options)|Opções de proteção da planilha. Somente leitura.|
-||[protegido](/javascript/api/excel/excel.worksheetprotectiondata#protected)|Indica se a planilha está protegida. Somente leitura.|
-|[WorksheetProtectionLoadOptions](/javascript/api/excel/excel.worksheetprotectionloadoptions)|[$all](/javascript/api/excel/excel.worksheetprotectionloadoptions#$all)||
-||[options](/javascript/api/excel/excel.worksheetprotectionloadoptions#options)|Opções de proteção da planilha. Somente leitura.|
-||[protegido](/javascript/api/excel/excel.worksheetprotectionloadoptions#protected)|Indica se a planilha está protegida. Somente leitura.|
 |[WorksheetProtectionOptions](/javascript/api/excel/excel.worksheetprotectionoptions)|[allowAutoFilter](/javascript/api/excel/excel.worksheetprotectionoptions#allowautofilter)|Indica a opção de proteção de planilha para permitir a utilização do recurso de filtro automático.|
 ||[allowDeleteColumns](/javascript/api/excel/excel.worksheetprotectionoptions#allowdeletecolumns)|Indica a opção de proteção de planilha para permitir a exclusão de colunas.|
 ||[allowDeleteRows](/javascript/api/excel/excel.worksheetprotectionoptions#allowdeleterows)|Indica a opção de proteção de planilha para permitir a exclusão de linhas.|

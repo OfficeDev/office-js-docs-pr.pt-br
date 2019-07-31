@@ -4,18 +4,18 @@ description: ''
 ms.date: 07/05/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: ffb6372500c6f6a8a292d0af93c737b39720c83c
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: 045b5ff2af3523930e696f5faa296be7c777fe8b
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35576730"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940812"
 ---
 # <a name="javascript-api-for-powerpoint"></a>API JavaScript para PowerPoint
 
 Um suplemento do PowerPoint interage com objetos no PowerPoint usando a API JavaScript para Office, que inclui dois modelos de objeto JavaScript:
 
-* **API JavaScript do PowerPoint**: A [API JavaScript do PowerPoint](/javascript/api/powerpoint) fornece objetos fortemente tipados que você pode usar para acessar objetos no PowerPoint. 
+* **API JavaScript do PowerPoint**: A [API JavaScript do PowerPoint](/javascript/api/powerpoint) fornece objetos fortemente tipados que você pode usar para acessar objetos no PowerPoint.
 
 * **APIs Comuns**: Introduzida com o Office 2013, a [API Comum](/javascript/api/office) pode ser usada para acessar recursos como interface de usuário, caixas de diálogo e configurações de cliente, que são comuns entre vários tipos de aplicativos do Office.
 
@@ -25,9 +25,9 @@ Confira [visão geral dos suplementos do PowerPoint](../../powerpoint/powerpoint
 
 ## <a name="learn-about-api-capabilities"></a>Saiba mais sobre recursos da API
 
-Para ter experiência prática com o uso da API Comum para interagir com o conteúdo no PowerPoint, conclua o [tutorial do suplemento do PowerPoint](../../tutorials/powerpoint-tutorial.md). 
+Para ter experiência prática com o uso da API Comum para interagir com o conteúdo no PowerPoint, conclua o [tutorial do suplemento do PowerPoint](../../tutorials/powerpoint-tutorial.md).
 
-Para saber mais sobre o modelo de objeto da API JavaScript do PowerPoint, consulte a [documentação de referência da API JavaScript do PowerPoint](/javascript/api/powerpoint). 
+Para saber mais sobre o modelo de objeto da API JavaScript do PowerPoint, consulte a [documentação de referência da API JavaScript do PowerPoint](/javascript/api/powerpoint).
 
 ## <a name="try-out-code-samples-in-script-lab"></a>Experimente amostras de código no Script Lab
 
