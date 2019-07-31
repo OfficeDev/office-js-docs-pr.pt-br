@@ -1,2 +1,0 @@
-> [!IMPORTANT]
-> O suplemento de COM e a compatibilidade do XLL UDF estão atualmente em versão prévia e estão sujeitos a alterações. Atualmente não há suporte para uso em ambientes de produção. Para obter mais informações [, consulte suplemento de com e requisitos de compatibilidade do XLL UDF](../excel/xll-compatibility-requirements.md).
