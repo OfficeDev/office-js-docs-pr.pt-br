@@ -1,23 +1,26 @@
 ---
 title: Torne o seu suplemento do Office compatível com um suplemento COM existente
 description: Habilitar a compatibilidade entre o suplemento do Office e o suplemento COM equivalente
-ms.date: 06/20/2019
+ms.date: 07/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 3577b8fe4b4a26ac5d0af85cc5c2f96a7a8dc010
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 8d826dec35bbbca91a1606d902d563f1a794e688
+ms.sourcegitcommit: d49643c4218ed8ad57575d58170dfcdbaf312d14
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128049"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "36048278"
 ---
-# <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in-preview"></a>Tornar o suplemento do Office compatível com um suplemento de COM existente (visualização)
+# <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>Torne o seu suplemento do Office compatível com um suplemento COM existente
 
 Se você tiver um suplemento COM existente, poderá criar uma funcionalidade equivalente no suplemento do Office, permitindo assim que sua solução seja executada em outras plataformas, como o Office na Web ou o Office no Mac. Em alguns casos, o suplemento do Office pode não ser capaz de fornecer toda a funcionalidade que está disponível no suplemento COM correspondente. Nessas situações, o suplemento COM pode fornecer uma experiência de usuário melhor no Windows do que o suplemento do Office correspondente pode fornecer.
 
 Você pode configurar seu suplemento do Office para que, quando o suplemento COM equivalente já estiver instalado no computador de um usuário, o Office no Windows execute o suplemento COM em vez do suplemento do Office. O suplemento de COM é chamado de "equivalente" porque o Office faz uma transição transparente entre o suplemento de COM e o suplemento do Office de acordo com o qual está instalado o computador de um usuário.
 
 > [!NOTE]
-> Este recurso está atualmente em versão prévia e não tem suporte para uso em ambientes de produção. Ele está disponível no Excel, Word e PowerPoint versão 16.0.11629.20214 ou posterior. Para acessar essa compilação, você deve ter uma assinatura do Office 365 e participar do programa [Office](https://products.office.com/office-insider) Insider no nível do insider. ****
+> Este recurso é suportado pelas seguintes plataformas, quando conectado a uma assinatura do Office 365:
+> - Excel, Word e PowerPoint na Web
+> - Excel, Word e PowerPoint no Windows (versão 1904 ou posterior)
+> - Excel, Word e PowerPoint no Mac (versão 13,329 ou posterior)
 
 ## <a name="specify-an-equivalent-com-add-in-in-the-manifest"></a>Especificar um suplemento COM equivalente no manifesto
 

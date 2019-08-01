@@ -1,20 +1,26 @@
 ---
 title: Estender funções personalizadas com funções definidas pelo usuário XLL
-description: Habilitar a compatibilidade com as funções definidas pelo usuário do Excel XLL que possuem funcionalidade equivalente às suas funções personalizadas (visualização)
-ms.date: 06/19/2019
+description: Habilitar a compatibilidade com as funções definidas pelo usuário do Excel XLL que possuem funcionalidade equivalente às suas funções personalizadas
+ms.date: 07/31/2019
 localization_priority: Normal
-ms.openlocfilehash: fa80597d48859a29bcdbb5b900c251382dc87caa
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 955a286956987615f904e8041a16b3c29cc80461
+ms.sourcegitcommit: d49643c4218ed8ad57575d58170dfcdbaf312d14
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771650"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "36048285"
 ---
-# <a name="extend-custom-functions-with-xll-user-defined-functions-preview"></a>Estender funções personalizadas com funções definidas pelo usuário XLL (visualização)
+# <a name="extend-custom-functions-with-xll-user-defined-functions"></a>Estender funções personalizadas com funções definidas pelo usuário XLL
 
 Se você tiver os XLLs do Excel existentes, poderá criar funções personalizadas equivalentes em um suplemento do Excel para estender seus recursos de solução para outras plataformas, como online ou macOS. No entanto, os suplementos do Excel não possuem todas as funcionalidades disponíveis em XLLs. Dependendo da funcionalidade que sua solução usa, o XLL pode fornecer uma experiência melhor do que as funções personalizadas do suplemento do Excel no Excel no Windows.
 
-[!include[COM add-in and XLL UDF compatibility note](../includes/xll-compatibility-note.md)]
+> [!NOTE]
+> O suplemento de COM e a compatibilidade do XLL UDF são compatíveis com as seguintes plataformas, quando conectados a uma assinatura do Office 365:
+> - Excel na Web
+> - Excel no Windows (versão 1904 ou posterior)
+> - Excel no Mac (versão 13,329 ou posterior)
+> 
+> Para usar o suplemento de COM e a compatibilidade do XLL UDF no Excel na Web, faça logon usando sua assinatura do Office 365 ou uma [conta da Microsoft](https://account.microsoft.com/account). Caso ainda não tenha uma assinatura do Office 365, obtenha uma ingressando no [Programa para Desenvolvedores do Office 365](https://developer.microsoft.com/office/dev-program).
 
 ## <a name="specify-equivalent-xll-in-the-manifest"></a>Especificar o XLL equivalente no manifesto
 
