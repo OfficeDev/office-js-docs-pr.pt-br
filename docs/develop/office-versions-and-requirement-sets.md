@@ -1,14 +1,14 @@
 ---
 title: Versões do Office e conjuntos de requisitos
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/17/2019
 localization_priority: Priority
-ms.openlocfilehash: 3f63d9f6d6ce62b39fa97efc62ceb964f2b55394
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: cfa72f63fc3e74809b743584b131ee5b1fb57676
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128315"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940637"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Versões do Office e conjuntos de requisitos
 
@@ -18,7 +18,6 @@ Há várias versões do Office em várias plataformas, e nem todas dão suporte 
 > - O Office pode ser executado em várias plataformas, incluindo o Windows, navegadores, Mac e iPad.
 > - Entre os exemplos de hosts do Office estão os produtos do Office: Excel, Word, PowerPoint, Outlook, OneNote e assim por diante.  
 > - Um conjunto de requisito é um grupo nomeado de membros da API, por exemplo, `ExcelApi 1.5`, `WordApi 1.3` etc.  
-
 
 ## <a name="how-to-check-your-office-version"></a>Como verificar sua versão do Office
 
@@ -39,6 +38,7 @@ Um suplemento só pode usar APIs em conjuntos de requisitos compatíveis com a v
 - [Conjuntos de requisitos de API JavaScript para Excel](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) (ExcelApi, [CustomFunctionsRuntime](../excel/custom-functions-architecture.md))
 - [Conjuntos de requisitos de API JavaScript para Word](/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets) (WordApi)
 - [Conjuntos de requisitos de API JavaScript para OneNote](/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets) (OneNoteApi)
+- [Conjuntos de requisitos da API JavaScript do PowerPoint](/office/dev/add-ins/reference/requirement-sets/powerpoint-api-requirement-sets) (PowerPointApi)
 - [Noções básicas sobre os conjuntos de requisitos da API do Outlook](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) (Caixa de Correio)
 
 Alguns conjuntos de requisito contêm APIs que podem ser usadas por qualquer host do Office. Para saber mais sobre esses conjuntos de requisitos, confira estes artigos:
@@ -55,7 +55,6 @@ A biblioteca da API JavaScript para Office (Office.js) inclui todos os conjuntos
 ## <a name="specify-office-hosts-and-requirement-sets"></a>Especificar hosts do Office e conjuntos de requisitos
 
 Há várias maneiras de especificar quais hosts do Office e conjuntos de requisitos são exigidos por um suplemento.  Para saber mais detalhes, confira [Especificar requisitos de API e hosts do Office](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements).
-
 
 ## <a name="see-also"></a>Confira também
 
