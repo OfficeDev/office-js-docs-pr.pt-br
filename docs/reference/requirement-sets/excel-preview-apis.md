@@ -1,15 +1,15 @@
 ---
 title: APIs de visualização do JavaScript para Excel
 description: Detalhes sobre as futuras APIs JavaScript do Excel
-ms.date: 07/11/2019
+ms.date: 07/25/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 2199b7c115a1edd66bb7b1fef86eb3bc7bba473e
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 200b187b059c1b03ae3713b5afa11b2152aba0da
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771950"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064848"
 ---
 # <a name="excel-javascript-preview-apis"></a>APIs de visualização do JavaScript para Excel
 
@@ -30,6 +30,8 @@ A primeira tabela fornece um resumo conciso das APIs e, a tabela subsequente, fo
 | [Inserir pasta de trabalho](../../excel/excel-add-ins-workbooks.md#insert-a-copy-of-an-existing-workbook-into-the-current-one-preview) | Insira uma pasta de trabalho em outra.  | [Workbook](/javascript/api/excel/excel.worksheetcollection) |
 
 ## <a name="api-list"></a>Lista de APIs
+
+A tabela a seguir lista as APIs JavaScript do Excel atualmente em versão prévia. Para ver uma lista completa de todas as APIs JavaScript do Excel (incluindo APIs de visualização e APIs previamente lançadas), consulte [todas as APIs JavaScript do Excel](/javascript/api/excel?view=excel-js-preview).
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
@@ -416,5 +418,5 @@ A primeira tabela fornece um resumo conciso das APIs e, a tabela subsequente, fo
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação de referência da API JavaScript do Excel](/javascript/api/excel)
+- [Documentação de referência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-preview)
 - [Conjuntos de requisitos da API JavaScript do Excel](./excel-api-requirement-sets.md)

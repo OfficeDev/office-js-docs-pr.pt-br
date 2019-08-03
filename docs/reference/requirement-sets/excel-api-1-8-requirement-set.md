@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos ExcelApi 1,8
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 297e84a5e86eae42696e5a1c067f81e137d4779a
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 6849ccb3dc83275509d26c63054a518d41cb060e
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940651"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064890"
 ---
 # <a name="whats-new-in-excel-javascript-api-18"></a>O que há de novo na API JavaScript do Excel 1,8
 
@@ -32,6 +32,8 @@ Outra rodada de APIs de gráficos traz um controle programático ainda maior sob
 Mais [eventos](/office/dev/add-ins/excel/excel-add-ins-events) foram adicionados para os gráficos. Faça o seu suplemento reagir aos usuários interagindo com o gráfico. Você também pode [alternar eventos](/office/dev/add-ins/excel/performance#enable-and-disable-events) disparados em toda a pasta de trabalho.
 
 ## <a name="api-list"></a>Lista de APIs
+
+A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do Excel 1,8. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Excel 1,8 ou anterior, confira [APIs do Excel no conjunto de requisitos 1,8 ou anterior](/javascript/api/excel?view=excel-js-1.8).
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
@@ -285,5 +287,5 @@ Mais [eventos](/office/dev/add-ins/excel/excel-add-ins-events) foram adicionados
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação de referência da API JavaScript do Excel](/javascript/api/excel)
+- [Documentação de referência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.8)
 - [Conjuntos de requisitos da API JavaScript do Excel](./excel-api-requirement-sets.md)

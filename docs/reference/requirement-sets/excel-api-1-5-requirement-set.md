@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos ExcelApi 1,5
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f59708133504c8e470cfa978611f254fdabf3991
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 4860ef7153abea059d04cda5e8709c7bdbd88855
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940707"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064757"
 ---
 # <a name="whats-new-in-excel-javascript-api-15"></a>Quais são as novidades na API JavaScript do Excel 1.5
 
@@ -29,6 +29,8 @@ ExcelApi 1,5 adiciona partes XML personalizadas. Eles podem ser acessados por me
 * Inserir, atualizar e excluir atributos.
 
 ## <a name="api-list"></a>Lista de APIs
+
+A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do Excel 1,5. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Excel 1,5 ou anterior, confira [APIs do Excel no conjunto de requisitos 1,5 ou anterior](/javascript/api/excel?view=excel-js-1.5).
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
@@ -60,5 +62,5 @@ ExcelApi 1,5 adiciona partes XML personalizadas. Eles podem ser acessados por me
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação de referência da API JavaScript do Excel](/javascript/api/excel)
+- [Documentação de referência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.5)
 - [Conjuntos de requisitos da API JavaScript do Excel](./excel-api-requirement-sets.md)

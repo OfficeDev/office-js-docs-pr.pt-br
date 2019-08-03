@@ -1,15 +1,15 @@
 ---
 title: Conjunto de requisitos de API JavaScript do Word 1,3
 description: Detalhes sobre o conjunto de requisitos WordApi 1,3
-ms.date: 07/17/2019
+ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: ca18822a60a384f15149531a59245a7b57ea39c3
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: 24a960b5ddab1ba96b0b45d155e1f70cb0f1a35c
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35805295"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064876"
 ---
 # <a name="whats-new-in-word-javascript-api-13"></a>Quais são as novidades na API JavaScript do Word 1.3
 
@@ -17,7 +17,7 @@ WordApi 1,3 adicionou mais suporte para controles de conteúdo, XML personalizad
 
 ## <a name="api-list"></a>Lista de APIs
 
-A tabela a seguir lista as APIs adicionadas como parte do conjunto de requisitos do WordApi 1,3.
+A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do Word, 1,3. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Word 1,3 ou anterior, confira [APIs do Word no conjunto de requisitos 1,3 ou anterior](/javascript/api/word?view=word-js-1.3).
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|

@@ -1,15 +1,15 @@
 ---
 title: Conjunto de requisitos de API JavaScript do Word 1,1
 description: Detalhes sobre o conjunto de requisitos WordApi 1,1
-ms.date: 07/17/2019
+ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 7c9ecbb8edaf1134b9f8801a6ade77b1b30e332f
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: a2839a2553d42701956fd2e75a86564c133d9a93
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35805288"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064911"
 ---
 # <a name="whats-new-in-word-javascript-api-11"></a>O que há de novo no Word JavaScript API 1,1
 
@@ -17,7 +17,7 @@ WordApi 1,1 é o primeiro conjunto de requisitos da API JavaScript do Word. É o
 
 ## <a name="api-list"></a>Lista de APIs
 
-A tabela a seguir lista as APIs adicionadas como parte do conjunto de requisitos do WordApi 1,1.
+A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do Word, 1,1. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Word 1,1, confira [APIs do Word no conjunto de requisitos 1,1](/javascript/api/word?view=word-js-1.1).
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|

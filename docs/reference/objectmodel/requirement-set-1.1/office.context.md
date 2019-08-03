@@ -3,12 +3,12 @@ title: Office. Context – conjunto de requisitos 1,1
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 5806245f91d5c47efbeec936ecc06ee9c3b44391
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 9958f8e7634958806109c73289e8fc4b32b62d94
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127447"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064428"
 ---
 # <a name="context"></a>context
 
@@ -68,7 +68,7 @@ function write(message){
 }
 ```
 
-#### <a name="roamingsettings-roamingsettingsjavascriptapioutlook11officeroamingsettings"></a>roamingSettings: [roamingSettings](/javascript/api/outlook_1_1/office.RoamingSettings)
+#### <a name="roamingsettings-roamingsettingsjavascriptapioutlookofficeroamingsettingsviewoutlook-js-11"></a>roamingSettings: [roamingSettings](/javascript/api/outlook/office.RoamingSettings?view=outlook-js-1.1)
 
 Obtém um objeto que representa as configurações personalizadas ou o estado de um suplemento de email do Outlook salvos na caixa de correio do usuário.
 
@@ -76,7 +76,7 @@ O objeto `RoamingSettings` permite armazenar e acessar os dados de um suplemento
 
 ##### <a name="type"></a>Tipo
 
-*   [RoamingSettings](/javascript/api/outlook_1_1/office.RoamingSettings)
+*   [RoamingSettings](/javascript/api/outlook/office.RoamingSettings?view=outlook-js-1.1)
 
 ##### <a name="requirements"></a>Requisitos
 

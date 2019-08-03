@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos ExcelApi 1,2
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: b3d4e7a7596ad47a728ffe6c7b6fd6272e8893ad
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 88943ce69154b3ea303bbbafabf144a51ae6e674
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940777"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064477"
 ---
 # <a name="whats-new-in-excel-javascript-api-12"></a>Quais são as novidades na API JavaScript do Excel 1.2
 
@@ -17,11 +17,10 @@ ExcelApi 1,2 adicionado suporte para filtragem de tabela e acesso a funções in
 
 ## <a name="api-list"></a>Lista de APIs
 
-|| Classe | Campos | Descrição |
+A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do Excel 1,2. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Excel 1,2 ou anterior, confira [APIs do Excel no conjunto de requisitos 1,2 ou anterior](/javascript/api/excel?view=excel-js-1.2).
+
+| Classe | Campos | Descrição |
 |:---|:---|:---|
-|[Associação](/javascript/api/excel/excel.binding)|[onDataChanged](/javascript/api/excel/excel.binding#ondatachanged)|Ocorre quando os dados ou a formatação dentro da associação são alterados.|
-||[onSelectionChanged](/javascript/api/excel/excel.binding#onselectionchanged)|Ocorre quando o conteúdo selecionado na associação é alterado.|
-|[BindingDataChangedEventArgs](/javascript/api/excel/excel.bindingdatachangedeventargs)|[binding](/javascript/api/excel/excel.bindingdatachangedeventargs#binding)|Obtém o objeto Binding que representa a associação que gerou o evento DataChanged.|
 |[BindingSelectionChangedEventArgs](/javascript/api/excel/excel.bindingselectionchangedeventargs)|[binding](/javascript/api/excel/excel.bindingselectionchangedeventargs#binding)|Obtém o objeto Binding que representa a associação que gerou o evento SelectionChanged.|
 ||[columnCount](/javascript/api/excel/excel.bindingselectionchangedeventargs#columncount)|Obtém o número de colunas selecionadas.|
 ||[Validação](/javascript/api/excel/excel.bindingselectionchangedeventargs#rowcount)|Obtém o número de linhas selecionadas.|
@@ -483,5 +482,5 @@ ExcelApi 1,2 adicionado suporte para filtragem de tabela e acesso a funções in
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação de referência da API JavaScript do Excel](/javascript/api/excel)
+- [Documentação de referência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.2)
 - [Conjuntos de requisitos da API JavaScript do Excel](./excel-api-requirement-sets.md)

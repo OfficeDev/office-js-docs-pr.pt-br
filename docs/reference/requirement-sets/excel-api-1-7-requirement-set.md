@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos ExcelApi 1,7
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 7a4d0dde78a290de61fb6edc1966ea66dc2ba3b0
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 5e923cb096c7335fbe65d18b6af0280d78be1fb2
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940693"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064855"
 ---
 # <a name="whats-new-in-excel-javascript-api-17"></a>Quais são as novidades na API JavaScript do Excel 1.7
 
@@ -64,6 +64,8 @@ Além disso:
 * Obter a célula ativa - usar esta API para acessar a célula ativa da pasta de trabalho.
 
 ## <a name="api-list"></a>Lista de APIs
+
+A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do Excel 1,7. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Excel 1,7 ou anterior, confira [APIs do Excel no conjunto de requisitos 1,7 ou anterior](/javascript/api/excel?view=excel-js-1.7).
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
@@ -334,5 +336,5 @@ Além disso:
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação de referência da API JavaScript do Excel](/javascript/api/excel)
+- [Documentação de referência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.7)
 - [Conjuntos de requisitos da API JavaScript do Excel](./excel-api-requirement-sets.md)

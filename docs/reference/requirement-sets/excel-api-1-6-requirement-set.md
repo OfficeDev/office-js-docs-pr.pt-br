@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos ExcelApi 1,6
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 1c81a2241d7e82e7fd2146189638c43ec1865296
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: c38dd942c3002af05f847846145bc89f1cbbccbe
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940763"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064904"
 ---
 # <a name="whats-new-in-excel-javascript-api-16"></a>Quais são as novidades na API JavaScript do Excel 1.6
 
@@ -31,6 +31,8 @@ Além disso:
 * Limpa todos os formatos condicionais ativos no intervalo atual especificado.
 
 ## <a name="api-list"></a>Lista de APIs
+
+A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do Excel 1,6. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Excel 1,6 ou anterior, confira [APIs do Excel no conjunto de requisitos 1,6 ou anterior](/javascript/api/excel?view=excel-js-1.6).
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
@@ -147,5 +149,5 @@ Além disso:
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação de referência da API JavaScript do Excel](/javascript/api/excel)
+- [Documentação de referência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.6)
 - [Conjuntos de requisitos da API JavaScript do Excel](./excel-api-requirement-sets.md)

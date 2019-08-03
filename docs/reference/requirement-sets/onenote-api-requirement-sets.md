@@ -4,12 +4,12 @@ description: ''
 ms.date: 07/17/2019
 ms.prod: onenote
 localization_priority: Normal
-ms.openlocfilehash: e1012b337b3713f57a5d3df7f7c7ccbcf509b5aa
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 3a1e5133b36af612156fb272651f1775e916a0fe
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940841"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064869"
 ---
 # <a name="onenote-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do OneNote
 
@@ -19,7 +19,11 @@ A tabela a seguir lista os conjuntos de requisitos do OneNote, ou seja, os aplic
 
 |  Conjunto de requisitos  |  Office na Web |
 |:-----|:-----|
-| OneNoteApi 1.1  | Setembro de 2016 |
+| [OneNoteApi 1.1](/javascript/api/onenote?view=onenote-js-1.1)  | Setembro de 2016 |  
+
+## <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API comum do Office
+
+Para saber mais sobre conjuntos de requisitos comuns da API, confira [Conjuntos de requisitos comuns da API do Office](office-add-in-requirement-sets.md).
 
 ## <a name="onenote-javascript-api-11"></a>OneNote JavaScript API 1.1
 
@@ -30,7 +34,7 @@ A OneNote JavaScript API 1.1 é a primeira versão da API. Para obter mais detal
 No tempo de execução, os suplementos podem verificar se um determinado host oferece suporte a um conjunto de requisitos de API, fazendo o seguinte.
 
 ```js
-if (Office.context.requirements.isSetSupported('OneNoteApi', '1.1') === true) {
+if (Office.context.requirements.isSetSupported('OneNoteApi', '1.1')) {
   // Perform actions.
 }
 else {

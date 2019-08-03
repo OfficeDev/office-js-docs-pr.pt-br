@@ -4,18 +4,20 @@ description: Detalhes sobre o conjunto de requisitos ExcelApi 1,1
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 90d7ee7cef2e8c48e458b2e14893ba9c13c68a30
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 4668cebd545cdefeb033f5c397afb1ad796e2d04
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940784"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064484"
 ---
 # <a name="excel-javascript-api-requirement-set-11"></a>Conjunto de requisitos de API JavaScript do Excel 1,1
 
 A API JavaScript do Excel 1.1 é a primeira versão da API. É o único conjunto de requisitos específico do Excel suportado pelo Excel 2016.
 
 ## <a name="api-list"></a>Lista de APIs
+
+A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do Excel 1,1. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Excel 1,1, confira [APIs do Excel no conjunto de requisitos 1,1](/javascript/api/excel?view=excel-js-1.1).
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
@@ -239,5 +241,5 @@ A API JavaScript do Excel 1.1 é a primeira versão da API. É o único conjunto
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação de referência da API JavaScript do Excel](/javascript/api/excel)
+- [Documentação de referência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.1)
 - [Conjuntos de requisitos da API JavaScript do Excel](./excel-api-requirement-sets.md)

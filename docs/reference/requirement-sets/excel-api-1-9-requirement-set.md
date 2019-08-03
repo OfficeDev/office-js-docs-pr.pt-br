@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos ExcelApi 1,9
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 1d7e16a6e0aca202798016c136dfc7e2188c44f0
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: b28406f9792278e554ff055a59ef4833be915aba
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940847"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064862"
 ---
 # <a name="whats-new-in-excel-javascript-api-19"></a>O que há de novo na API JavaScript do Excel 1,9
 
@@ -28,6 +28,8 @@ Mais de 500 novas APIs do Excel foram introduzidas com o conjunto de requisitos 
 | RangeFormat | Novos recursos com formatos de intervalo. | [Range](/javascript/api/excel/excel.rangeformat) |
 
 ## <a name="api-list"></a>Lista de APIs
+
+A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do Excel 1,9. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Excel 1,9 ou anterior, confira [APIs do Excel no conjunto de requisitos 1,9 ou anterior](/javascript/api/excel?view=excel-js-1.9).
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
@@ -486,5 +488,5 @@ Mais de 500 novas APIs do Excel foram introduzidas com o conjunto de requisitos 
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação de referência da API JavaScript do Excel](/javascript/api/excel)
+- [Documentação de referência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.9)
 - [Conjuntos de requisitos da API JavaScript do Excel](./excel-api-requirement-sets.md)

@@ -4,18 +4,20 @@ description: Detalhes sobre o conjunto de requisitos ExcelApi 1,3
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 684b802a32e58591d43d46a37ecc8b53395b652c
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: d0ab1e0a1c41d6da0104c03355f64f5f5abbb3b2
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940756"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064729"
 ---
 # <a name="whats-new-in-excel-javascript-api-13"></a>Quais são as novidades na API JavaScript do Excel 1.3
 
 ExcelApi 1,3 adicionado suporte para associação de dados e acesso básico de tabela dinâmica.
 
 ## <a name="api-list"></a>Lista de APIs
+
+A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do Excel 1,3. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Excel 1,3 ou anterior, confira [APIs do Excel no conjunto de requisitos 1,3 ou anterior](/javascript/api/excel?view=excel-js-1.3).
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
@@ -55,5 +57,5 @@ ExcelApi 1,3 adicionado suporte para associação de dados e acesso básico de t
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação de referência da API JavaScript do Excel](/javascript/api/excel)
+- [Documentação de referência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.3)
 - [Conjuntos de requisitos da API JavaScript do Excel](./excel-api-requirement-sets.md)

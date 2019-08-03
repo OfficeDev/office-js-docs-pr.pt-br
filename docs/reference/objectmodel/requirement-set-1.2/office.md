@@ -1,14 +1,14 @@
 ---
 title: Namespace do Office – conjunto de requisitos 1.2
 description: ''
-ms.date: 03/19/2019
+ms.date: 04/24/2019
 localization_priority: Normal
-ms.openlocfilehash: dc98d4c2da6e8f9ca294a6c686cf081478e1bb24
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 9dd492046df6325c5c2cdb04dbd1c8bc331b3471
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450307"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064393"
 ---
 # <a name="office"></a>Office
 
@@ -25,11 +25,11 @@ O namespace do Office fornece interfaces compartilhadas que são usadas pelos su
 
 [context](office.context.md): fornece interfaces compartilhadas do namespace de contexto da API de Suplementos do Office para uso na API de suplemento do Outlook.
 
-[MailboxEnums](/javascript/api/outlook_1_2/office.mailboxenums.attachmenttype): inclui as enumerações ItemType, EntityType, AttachmentType, RecipientType, ResponseType e ItemNotificationMessageType.
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmenttype?view=outlook-js-1.2): inclui as enumerações ItemType, EntityType, AttachmentType, RecipientType, ResponseType e ItemNotificationMessageType.
 
 ### <a name="members"></a>Membros
 
-####  <a name="asyncresultstatus-string"></a>AsyncResultStatus :String
+#### <a name="asyncresultstatus-string"></a>AsyncResultStatus: cadeia de caracteres
 
 Especifica o resultado de uma chamada assíncrona.
 
@@ -39,7 +39,7 @@ Especifica o resultado de uma chamada assíncrona.
 
 ##### <a name="properties"></a>Propriedades:
 
-|Name| Tipo| Descrição|
+|Nome| Tipo| Descrição|
 |---|---|---|
 |`Succeeded`| String|A chamada foi bem-sucedida.|
 |`Failed`| String|Falha na chamada.|
@@ -51,9 +51,9 @@ Especifica o resultado de uma chamada assíncrona.
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
-####  <a name="coerciontype-string"></a>CoercionType :String
+#### <a name="coerciontype-string"></a>CoercionType: cadeia de caracteres
 
-Especifica como forçar os dados retornados ou definir de acordo com o método chamado.
+Especifica como forçar dados retornados ou definidos pelo método invocado.
 
 ##### <a name="type"></a>Tipo
 
@@ -61,7 +61,7 @@ Especifica como forçar os dados retornados ou definir de acordo com o método c
 
 ##### <a name="properties"></a>Propriedades:
 
-|Name| Tipo| Descrição|
+|Nome| Tipo| Descrição|
 |---|---|---|
 |`Html`| String|Solicita que os dados sejam retornados no formato HTML.|
 |`Text`| String|Solicita que os dados sejam retornados no formato de texto.|
@@ -73,7 +73,7 @@ Especifica como forçar os dados retornados ou definir de acordo com o método c
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
-####  <a name="sourceproperty-string"></a>SourceProperty :String
+#### <a name="sourceproperty-string"></a>SourceProperty: cadeia de caracteres
 
 Especifica a origem dos dados retornados pelo método chamado.
 
@@ -83,7 +83,7 @@ Especifica a origem dos dados retornados pelo método chamado.
 
 ##### <a name="properties"></a>Propriedades:
 
-|Name| Tipo| Descrição|
+|Nome| Tipo| Descrição|
 |---|---|---|
 |`Body`| String|A origem dos dados é o corpo de uma mensagem.|
 |`Subject`| Cadeia de caracteres|A origem dos dados é o assunto de uma mensagem.|

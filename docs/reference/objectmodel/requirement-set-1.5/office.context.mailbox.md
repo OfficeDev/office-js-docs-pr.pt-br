@@ -3,12 +3,12 @@ title: 'Office.context.mailbox: conjunto de requisitos da versão 1.5'
 description: ''
 ms.date: 04/24/2019
 localization_priority: Priority
-ms.openlocfilehash: a0c1a45fd3eaa9cf324a6854120d642eb7520132
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 9ffb0d4d33af80a669fd81bc0130f14f673e9400
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127279"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064750"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -163,7 +163,7 @@ IDs de itens recuperadas por meio de uma API REST (como a [API do Email do Outlo
 |Nome| Tipo| Descrição|
 |---|---|---|
 |`itemId`| String|Uma ID de item formatada para APIs REST do Outlook|
-|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_5/office.mailboxenums.restversion)|Um valor que indica a versão da API REST do Outlook usada para recuperar a ID do item.|
+|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion?view=outlook-js-1.5)|Um valor que indica a versão da API REST do Outlook usada para recuperar a ID do item.|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -187,7 +187,7 @@ var restId = 'AAMkAGVlOTZjNTM3LW...';
 var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
-#### <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlook15officelocalclienttime"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook_1_5/office.LocalClientTime)}
+#### <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlookofficelocalclienttimeviewoutlook-js-15"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.5)}
 
 Obtém um dicionário contendo informações de hora em tempo local do cliente.
 
@@ -211,7 +211,7 @@ Se o aplicativo de email estiver sendo executado no Outlook em um cliente da ár
 
 ##### <a name="returns"></a>Retorna:
 
-Tipo: [LocalClientTime](/javascript/api/outlook_1_5/office.LocalClientTime)
+Tipo: [LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.5)
 
 #### <a name="converttorestiditemid-restversion--string"></a>convertToRestId(itemId, restVersion) → {String}
 
@@ -227,7 +227,7 @@ IDs de itens recuperadas por EWS ou pela propriedade `itemId` usam um formato di
 |Nome| Tipo| Descrição|
 |---|---|---|
 |`itemId`| String|Uma ID de item formatada para os Serviços Web do Exchange (EWS)|
-|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook_1_5/office.mailboxenums.restversion)|Um valor que indica a versão da API REST do Outlook com a qual a ID convertida será usada.|
+|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion?view=outlook-js-1.5)|Um valor que indica a versão da API REST do Outlook com a qual a ID convertida será usada.|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -261,7 +261,7 @@ O método `convertToUtcClientTime` converte um dicionário que contém uma data 
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`input`| [LocalClientTime](/javascript/api/outlook_1_5/office.LocalClientTime)|O valor de hora local a converter.|
+|`input`| [LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.5)|O valor de hora local a converter.|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -373,8 +373,8 @@ Se qualquer dos parâmetros exceder os limites de tamanho especificados, ou se u
 |Nome| Tipo| Descrição|
 |---|---|---|
 | `parameters` | Object | Um dicionário de parâmetros que descreve o novo compromisso. |
-| `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_5/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email ou uma matriz contendo um objeto `EmailAddressDetails` para cada um dos participantes obrigatórios do compromisso. A matriz está limitada a um máximo de 100 entradas. |
-| `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook_1_5/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email ou uma matriz contendo um objeto `EmailAddressDetails` para cada um dos participantes opcionais do compromisso. A matriz está limitada a um máximo de 100 entradas. |
+| `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.5)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email ou uma matriz contendo um objeto `EmailAddressDetails` para cada um dos participantes obrigatórios do compromisso. A matriz está limitada a um máximo de 100 entradas. |
+| `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.5)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email ou uma matriz contendo um objeto `EmailAddressDetails` para cada um dos participantes opcionais do compromisso. A matriz está limitada a um máximo de 100 entradas. |
 | `parameters.start` | Data | Um objeto `Date` que especifica a data e a hora de início do compromisso. |
 | `parameters.end` | Data | Um objeto `Date` que especifica a data e a hora de término do compromisso. |
 | `parameters.location` | String | Uma cadeia de caracteres que contém o local do compromisso. A cadeia de caracteres está limitada a um máximo de 255 caracteres. |
