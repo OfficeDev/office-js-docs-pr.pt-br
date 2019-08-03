@@ -3,12 +3,12 @@ title: Desenvolver suplementos do Office para o Angular
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 20e66fe1a7a6cce17428424290d4e4c99995efb2
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 5e71b9f6db78308c1e1d1d237f3f78600c1a99a4
+ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448984"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "33517363"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Desenvolver suplementos do Office para o Angular
 
@@ -23,7 +23,7 @@ Para ver um exemplo de Suplementos do Office criado utilizando a estrutura do An
 
 Abra uma janela de nodejs e insira o seguinte na linha de comando:
 
-```bash
+```command&nbsp;line
 npm install --save-dev @types/office-js
 ```
 
@@ -152,7 +152,7 @@ O desempenho do aplicativo é um dos aspectos mais importantes da experiência d
 
 Para usar o compilador AOT, adicione `--aot` aos comandos `ng build` ou `ng serve`:
 
-```bash
+```command&nbsp;line
 ng build --aot
 ng serve --aot
 ```
