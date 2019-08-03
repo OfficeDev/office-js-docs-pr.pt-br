@@ -3,51 +3,51 @@ title: Office. Context – conjunto de requisitos 1,2
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: cdf6b76ca090eb78d31fc1a6f328ce83c606e1f5
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 194532acc9262357a54e355fcfa9b15336cd95b0
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128423"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064288"
 ---
-# <a name="context"></a><span data-ttu-id="00e2f-102">context</span><span class="sxs-lookup"><span data-stu-id="00e2f-102">context</span></span>
+# <a name="context"></a><span data-ttu-id="6d2bc-102">context</span><span class="sxs-lookup"><span data-stu-id="6d2bc-102">context</span></span>
 
-### <a name="officeofficemdcontext"></a><span data-ttu-id="00e2f-103">[Office](Office.md).context</span><span class="sxs-lookup"><span data-stu-id="00e2f-103">[Office](Office.md).context</span></span>
+### <a name="officeofficemdcontext"></a><span data-ttu-id="6d2bc-103">[Office](Office.md).context</span><span class="sxs-lookup"><span data-stu-id="6d2bc-103">[Office](Office.md).context</span></span>
 
-<span data-ttu-id="00e2f-104">O namespace Office.context fornece interfaces compartilhadas que são usadas pelos suplementos em todos os aplicativos do Office.</span><span class="sxs-lookup"><span data-stu-id="00e2f-104">The Office.context namespace provides shared interfaces that are used by add-ins in all of the Office apps.</span></span> <span data-ttu-id="00e2f-105">Esta listagem documenta apenas as interfaces usados pelos suplementos do Outlook. Para uma listagem completa do namespace Office.context, veja a referência [Office.context na API Comum](/javascript/api/office/office.context).</span><span class="sxs-lookup"><span data-stu-id="00e2f-105">This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office.context namespace, see the [Office.context reference in the Common API](/javascript/api/office/office.context).</span></span>
+<span data-ttu-id="6d2bc-104">O namespace Office.context fornece interfaces compartilhadas que são usadas pelos suplementos em todos os aplicativos do Office.</span><span class="sxs-lookup"><span data-stu-id="6d2bc-104">The Office.context namespace provides shared interfaces that are used by add-ins in all of the Office apps.</span></span> <span data-ttu-id="6d2bc-105">Esta listagem documenta apenas as interfaces usados pelos suplementos do Outlook. Para uma listagem completa do namespace Office.context, veja a referência [Office.context na API Comum](/javascript/api/office/office.context).</span><span class="sxs-lookup"><span data-stu-id="6d2bc-105">This listing documents only those interfaces that are used by Outlook add-ins. For a full listing of the Office.context namespace, see the [Office.context reference in the Common API](/javascript/api/office/office.context).</span></span>
 
 
-##### <a name="requirements"></a><span data-ttu-id="00e2f-106">Requisitos</span><span class="sxs-lookup"><span data-stu-id="00e2f-106">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="6d2bc-106">Requisitos</span><span class="sxs-lookup"><span data-stu-id="6d2bc-106">Requirements</span></span>
 
-|<span data-ttu-id="00e2f-107">Requisito</span><span class="sxs-lookup"><span data-stu-id="00e2f-107">Requirement</span></span>| <span data-ttu-id="00e2f-108">Valor</span><span class="sxs-lookup"><span data-stu-id="00e2f-108">Value</span></span>|
+|<span data-ttu-id="6d2bc-107">Requisito</span><span class="sxs-lookup"><span data-stu-id="6d2bc-107">Requirement</span></span>| <span data-ttu-id="6d2bc-108">Valor</span><span class="sxs-lookup"><span data-stu-id="6d2bc-108">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="00e2f-109">Versão do conjunto de requisitos mínimos da caixa de correio</span><span class="sxs-lookup"><span data-stu-id="00e2f-109">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="00e2f-110">1.0</span><span class="sxs-lookup"><span data-stu-id="00e2f-110">1.0</span></span>|
-|[<span data-ttu-id="00e2f-111">Modo do Outlook aplicável</span><span class="sxs-lookup"><span data-stu-id="00e2f-111">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="00e2f-112">Escrever ou Ler</span><span class="sxs-lookup"><span data-stu-id="00e2f-112">Compose or Read</span></span>|
+|[<span data-ttu-id="6d2bc-109">Versão do conjunto de requisitos mínimos da caixa de correio</span><span class="sxs-lookup"><span data-stu-id="6d2bc-109">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="6d2bc-110">1.0</span><span class="sxs-lookup"><span data-stu-id="6d2bc-110">1.0</span></span>|
+|[<span data-ttu-id="6d2bc-111">Modo do Outlook aplicável</span><span class="sxs-lookup"><span data-stu-id="6d2bc-111">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="6d2bc-112">Escrever ou Ler</span><span class="sxs-lookup"><span data-stu-id="6d2bc-112">Compose or Read</span></span>|
 
-### <a name="namespaces"></a><span data-ttu-id="00e2f-113">Namespaces</span><span class="sxs-lookup"><span data-stu-id="00e2f-113">Namespaces</span></span>
+### <a name="namespaces"></a><span data-ttu-id="6d2bc-113">Namespaces</span><span class="sxs-lookup"><span data-stu-id="6d2bc-113">Namespaces</span></span>
 
-<span data-ttu-id="00e2f-114">[Mailbox](office.context.mailbox.md) : fornece acesso ao modelo de objeto do suplemento do Outlook para o Microsoft Outlook.</span><span class="sxs-lookup"><span data-stu-id="00e2f-114">[mailbox](office.context.mailbox.md) - Provides access to the Outlook add-in object model for Microsoft Outlook.</span></span>
+<span data-ttu-id="6d2bc-114">[Mailbox](office.context.mailbox.md) : fornece acesso ao modelo de objeto do suplemento do Outlook para o Microsoft Outlook.</span><span class="sxs-lookup"><span data-stu-id="6d2bc-114">[mailbox](office.context.mailbox.md) - Provides access to the Outlook add-in object model for Microsoft Outlook.</span></span>
 
-### <a name="members"></a><span data-ttu-id="00e2f-115">Members</span><span class="sxs-lookup"><span data-stu-id="00e2f-115">Members</span></span>
+### <a name="members"></a><span data-ttu-id="6d2bc-115">Members</span><span class="sxs-lookup"><span data-stu-id="6d2bc-115">Members</span></span>
 
-#### <a name="displaylanguage-string"></a><span data-ttu-id="00e2f-116">displayLanguage: cadeia de caracteres</span><span class="sxs-lookup"><span data-stu-id="00e2f-116">displayLanguage: String</span></span>
+#### <a name="displaylanguage-string"></a><span data-ttu-id="6d2bc-116">displayLanguage: cadeia de caracteres</span><span class="sxs-lookup"><span data-stu-id="6d2bc-116">displayLanguage: String</span></span>
 
-<span data-ttu-id="00e2f-117">Obtém a localidade (idioma) no formato de marca de idioma RFC 1766 especificado pelo usuário para a interface do usuário do aplicativo host do Office.</span><span class="sxs-lookup"><span data-stu-id="00e2f-117">Gets the locale (language) in RFC 1766 Language tag format specified by the user for the UI of the Office host application.</span></span>
+<span data-ttu-id="6d2bc-117">Obtém a localidade (idioma) no formato de marca de idioma RFC 1766 especificado pelo usuário para a interface do usuário do aplicativo host do Office.</span><span class="sxs-lookup"><span data-stu-id="6d2bc-117">Gets the locale (language) in RFC 1766 Language tag format specified by the user for the UI of the Office host application.</span></span>
 
-<span data-ttu-id="00e2f-118">O valor `displayLanguage` reflete a configuração atual de **Display Language** especificada com **Arquivo > Opções > Idioma** no aplicativo host do Office.</span><span class="sxs-lookup"><span data-stu-id="00e2f-118">The `displayLanguage` value reflects the current **Display Language** setting specified with **File > Options > Language** in the Office host application.</span></span>
+<span data-ttu-id="6d2bc-118">O valor `displayLanguage` reflete a configuração atual de **Display Language** especificada com **Arquivo > Opções > Idioma** no aplicativo host do Office.</span><span class="sxs-lookup"><span data-stu-id="6d2bc-118">The `displayLanguage` value reflects the current **Display Language** setting specified with **File > Options > Language** in the Office host application.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="00e2f-119">Tipo</span><span class="sxs-lookup"><span data-stu-id="00e2f-119">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="6d2bc-119">Tipo</span><span class="sxs-lookup"><span data-stu-id="6d2bc-119">Type</span></span>
 
-*   <span data-ttu-id="00e2f-120">String</span><span class="sxs-lookup"><span data-stu-id="00e2f-120">String</span></span>
+*   <span data-ttu-id="6d2bc-120">String</span><span class="sxs-lookup"><span data-stu-id="6d2bc-120">String</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="00e2f-121">Requisitos</span><span class="sxs-lookup"><span data-stu-id="00e2f-121">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="6d2bc-121">Requisitos</span><span class="sxs-lookup"><span data-stu-id="6d2bc-121">Requirements</span></span>
 
-|<span data-ttu-id="00e2f-122">Requisito</span><span class="sxs-lookup"><span data-stu-id="00e2f-122">Requirement</span></span>| <span data-ttu-id="00e2f-123">Valor</span><span class="sxs-lookup"><span data-stu-id="00e2f-123">Value</span></span>|
+|<span data-ttu-id="6d2bc-122">Requisito</span><span class="sxs-lookup"><span data-stu-id="6d2bc-122">Requirement</span></span>| <span data-ttu-id="6d2bc-123">Valor</span><span class="sxs-lookup"><span data-stu-id="6d2bc-123">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="00e2f-124">Versão do conjunto de requisitos mínimos da caixa de correio</span><span class="sxs-lookup"><span data-stu-id="00e2f-124">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="00e2f-125">1.0</span><span class="sxs-lookup"><span data-stu-id="00e2f-125">1.0</span></span>|
-|[<span data-ttu-id="00e2f-126">Modo do Outlook aplicável</span><span class="sxs-lookup"><span data-stu-id="00e2f-126">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="00e2f-127">Escrever ou Ler</span><span class="sxs-lookup"><span data-stu-id="00e2f-127">Compose or Read</span></span>|
+|[<span data-ttu-id="6d2bc-124">Versão do conjunto de requisitos mínimos da caixa de correio</span><span class="sxs-lookup"><span data-stu-id="6d2bc-124">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="6d2bc-125">1.0</span><span class="sxs-lookup"><span data-stu-id="6d2bc-125">1.0</span></span>|
+|[<span data-ttu-id="6d2bc-126">Modo do Outlook aplicável</span><span class="sxs-lookup"><span data-stu-id="6d2bc-126">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="6d2bc-127">Escrever ou Ler</span><span class="sxs-lookup"><span data-stu-id="6d2bc-127">Compose or Read</span></span>|
 
-##### <a name="example"></a><span data-ttu-id="00e2f-128">Exemplo</span><span class="sxs-lookup"><span data-stu-id="00e2f-128">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="6d2bc-128">Exemplo</span><span class="sxs-lookup"><span data-stu-id="6d2bc-128">Example</span></span>
 
 ```javascript
 function sayHelloWithDisplayLanguage() {
@@ -68,20 +68,20 @@ function write(message){
 }
 ```
 
-#### <a name="roamingsettings-roamingsettingsjavascriptapioutlook12officeroamingsettings"></a><span data-ttu-id="00e2f-129">roamingSettings: [roamingSettings](/javascript/api/outlook_1_2/office.RoamingSettings)</span><span class="sxs-lookup"><span data-stu-id="00e2f-129">roamingSettings: [RoamingSettings](/javascript/api/outlook_1_2/office.RoamingSettings)</span></span>
+#### <a name="roamingsettings-roamingsettingsjavascriptapioutlookofficeroamingsettingsviewoutlook-js-12"></a><span data-ttu-id="6d2bc-129">roamingSettings: [roamingSettings](/javascript/api/outlook/office.RoamingSettings?view=outlook-js-1.2)</span><span class="sxs-lookup"><span data-stu-id="6d2bc-129">roamingSettings: [RoamingSettings](/javascript/api/outlook/office.RoamingSettings?view=outlook-js-1.2)</span></span>
 
-<span data-ttu-id="00e2f-130">Obtém um objeto que representa as configurações personalizadas ou o estado de um suplemento de email do Outlook salvos na caixa de correio do usuário.</span><span class="sxs-lookup"><span data-stu-id="00e2f-130">Gets an object that represents the custom settings or state of a mail add-in saved to a user's mailbox.</span></span>
+<span data-ttu-id="6d2bc-130">Obtém um objeto que representa as configurações personalizadas ou o estado de um suplemento de email do Outlook salvos na caixa de correio do usuário.</span><span class="sxs-lookup"><span data-stu-id="6d2bc-130">Gets an object that represents the custom settings or state of a mail add-in saved to a user's mailbox.</span></span>
 
-<span data-ttu-id="00e2f-131">O objeto `RoamingSettings` permite armazenar e acessar os dados de um suplemento de email que está armazenado na caixa de correio do usuário, para que fiquem disponíveis para esse suplemento quando ele for executado em qualquer aplicativo host de cliente usado para acessar essa caixa de correio.</span><span class="sxs-lookup"><span data-stu-id="00e2f-131">The `RoamingSettings` object lets you store and access data for a mail add-in that is stored in a user's mailbox, so that is available to that add-in when it is running from any host client application used to access that mailbox.</span></span>
+<span data-ttu-id="6d2bc-131">O objeto `RoamingSettings` permite armazenar e acessar os dados de um suplemento de email que está armazenado na caixa de correio do usuário, para que fiquem disponíveis para esse suplemento quando ele for executado em qualquer aplicativo host de cliente usado para acessar essa caixa de correio.</span><span class="sxs-lookup"><span data-stu-id="6d2bc-131">The `RoamingSettings` object lets you store and access data for a mail add-in that is stored in a user's mailbox, so that is available to that add-in when it is running from any host client application used to access that mailbox.</span></span>
 
-##### <a name="type"></a><span data-ttu-id="00e2f-132">Tipo</span><span class="sxs-lookup"><span data-stu-id="00e2f-132">Type</span></span>
+##### <a name="type"></a><span data-ttu-id="6d2bc-132">Tipo</span><span class="sxs-lookup"><span data-stu-id="6d2bc-132">Type</span></span>
 
-*   [<span data-ttu-id="00e2f-133">RoamingSettings</span><span class="sxs-lookup"><span data-stu-id="00e2f-133">RoamingSettings</span></span>](/javascript/api/outlook_1_2/office.RoamingSettings)
+*   [<span data-ttu-id="6d2bc-133">RoamingSettings</span><span class="sxs-lookup"><span data-stu-id="6d2bc-133">RoamingSettings</span></span>](/javascript/api/outlook/office.RoamingSettings?view=outlook-js-1.2)
 
-##### <a name="requirements"></a><span data-ttu-id="00e2f-134">Requisitos</span><span class="sxs-lookup"><span data-stu-id="00e2f-134">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="6d2bc-134">Requisitos</span><span class="sxs-lookup"><span data-stu-id="6d2bc-134">Requirements</span></span>
 
-|<span data-ttu-id="00e2f-135">Requisito</span><span class="sxs-lookup"><span data-stu-id="00e2f-135">Requirement</span></span>| <span data-ttu-id="00e2f-136">Valor</span><span class="sxs-lookup"><span data-stu-id="00e2f-136">Value</span></span>|
+|<span data-ttu-id="6d2bc-135">Requisito</span><span class="sxs-lookup"><span data-stu-id="6d2bc-135">Requirement</span></span>| <span data-ttu-id="6d2bc-136">Valor</span><span class="sxs-lookup"><span data-stu-id="6d2bc-136">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="00e2f-137">Versão do conjunto de requisitos mínimos da caixa de correio</span><span class="sxs-lookup"><span data-stu-id="00e2f-137">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="00e2f-138">1.0</span><span class="sxs-lookup"><span data-stu-id="00e2f-138">1.0</span></span>|
-|[<span data-ttu-id="00e2f-139">Nível de permissão mínimo</span><span class="sxs-lookup"><span data-stu-id="00e2f-139">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="00e2f-140">Restrito</span><span class="sxs-lookup"><span data-stu-id="00e2f-140">Restricted</span></span>|
-|[<span data-ttu-id="00e2f-141">Modo do Outlook aplicável</span><span class="sxs-lookup"><span data-stu-id="00e2f-141">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="00e2f-142">Escrever ou Ler</span><span class="sxs-lookup"><span data-stu-id="00e2f-142">Compose or Read</span></span>|
+|[<span data-ttu-id="6d2bc-137">Versão do conjunto de requisitos mínimos da caixa de correio</span><span class="sxs-lookup"><span data-stu-id="6d2bc-137">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="6d2bc-138">1.0</span><span class="sxs-lookup"><span data-stu-id="6d2bc-138">1.0</span></span>|
+|[<span data-ttu-id="6d2bc-139">Nível de permissão mínimo</span><span class="sxs-lookup"><span data-stu-id="6d2bc-139">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="6d2bc-140">Restrito</span><span class="sxs-lookup"><span data-stu-id="6d2bc-140">Restricted</span></span>|
+|[<span data-ttu-id="6d2bc-141">Modo do Outlook aplicável</span><span class="sxs-lookup"><span data-stu-id="6d2bc-141">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="6d2bc-142">Escrever ou Ler</span><span class="sxs-lookup"><span data-stu-id="6d2bc-142">Compose or Read</span></span>|

@@ -240,7 +240,7 @@
             - name: Conjuntos de requisitos da API Comum do Office
               href: reference/requirement-sets/office-add-in-requirement-sets.md
         - name: Referência da API (comum)
-          href: /javascript/api/office
+          href: reference/common-api-reference.md
         - name: Referência do manifesto do suplemento do Office
           items:
             - name: AllowSnapshot
@@ -460,7 +460,7 @@
               href: reference/requirement-sets/excel-api-1-1-requirement-set.md
               displayName: Excel
         - name: Referência da API
-          href: /javascript/api/excel
+          href: reference/excel-api-reference.md
           displayName: Excel
         - name: Conceitos fundamentais de programação
           href: excel/excel-add-ins-core-concepts.md
@@ -601,7 +601,7 @@
           href: reference/requirement-sets/onenote-api-requirement-sets.md
           displayName: OneNote
         - name: Referência da API
-          href: /javascript/api/onenote
+          href: reference/onenote-api-reference.md
           displayName: OneNote
         - name: Trabalhar com conteúdo da página do OneNote
           href: onenote/onenote-add-ins-page-content.md
@@ -632,7 +632,7 @@
           href: reference/requirement-sets/outlook-api-requirement-sets.md
           displayName: Outlook
         - name: Referência da API
-          href: /javascript/api/outlook
+          href: reference/outlook-api-reference-preview.md
           displayName: Outlook
         - name: Modelo de objeto de API
           items:
@@ -653,7 +653,7 @@
                 - name: Office.context.mailbox.userProfile
                   href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.userProfile.md
                 - name: Referência da API de visualização do Outlook
-                  href: /javascript/api/outlook
+                  href: reference/outlook-api-reference-preview.md
             - name: 'Conjunto de requisitos 1,7'
               items:
                 - name: Visão geral
@@ -671,7 +671,7 @@
                 - name: Office.context.mailbox.userProfile
                   href: reference/objectmodel/requirement-set-1.7/Office.context.mailbox.userProfile.md
                 - name: 'Referência da API do Outlook 1,7'
-                  href: /javascript/api/outlook_1_7
+                  href: reference/outlook-api-reference-1-7.md
             - name: 'Conjunto de requisitos 1,6'
               items:
                 - name: Visão geral
@@ -689,7 +689,7 @@
                 - name: Office.context.mailbox.userProfile
                   href: reference/objectmodel/requirement-set-1.6/Office.context.mailbox.userProfile.md
                 - name: 'Referência da API do Outlook 1,6'
-                  href: /javascript/api/outlook_1_6
+                  href: reference/outlook-api-reference-1-6.md
             - name: 'Conjunto de requisitos 1,5'
               items:
                 - name: Visão geral
@@ -707,7 +707,7 @@
                 - name: Office.context.mailbox.userProfile
                   href: reference/objectmodel/requirement-set-1.5/Office.context.mailbox.userProfile.md
                 - name: 'Referência da API do Outlook 1,5'
-                  href: /javascript/api/outlook_1_5
+                  href: reference/outlook-api-reference-1-5.md
             - name: 'Conjunto de requisitos 1,4'
               items:
                 - name: Visão geral
@@ -725,7 +725,7 @@
                 - name: Office.context.mailbox.userProfile
                   href: reference/objectmodel/requirement-set-1.4/Office.context.mailbox.userProfile.md
                 - name: 'Referência da API do Outlook 1,4'
-                  href: /javascript/api/outlook_1_4
+                  href: reference/outlook-api-reference-1-4.md
             - name: 'Conjunto de requisitos 1,3'
               items:
                 - name: Visão geral
@@ -743,7 +743,7 @@
                 - name: Office.context.mailbox.userProfile
                   href: reference/objectmodel/requirement-set-1.3/Office.context.mailbox.userProfile.md
                 - name: 'Referência da API do Outlook 1,3'
-                  href: /javascript/api/outlook_1_3
+                  href: reference/outlook-api-reference-1-3.md
             - name: 'Conjunto de requisitos 1,2'
               items:
                 - name: Visão geral
@@ -761,7 +761,7 @@
                 - name: Office.context.mailbox.userProfile
                   href: reference/objectmodel/requirement-set-1.2/Office.context.mailbox.userProfile.md
                 - name: 'Referência da API do Outlook 1,2'
-                  href: /javascript/api/outlook_1_2
+                  href: reference/outlook-api-reference-1-2.md
             - name: 'Conjunto de requisitos 1,1'
               items:
                 - name: Visão geral
@@ -779,7 +779,7 @@
                 - name: Office.context.mailbox.userProfile
                   href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.userProfile.md
                 - name: 'Referência da API do Outlook 1,1'
-                  href: /javascript/api/outlook_1_1
+                  href: reference/outlook-api-reference-1-1.md
 - name: Suplementos do PowerPoint
   items:
     - name: Documentação de suplementos do PowerPoint
@@ -803,7 +803,7 @@
           href: reference/requirement-sets/powerpoint-api-requirement-sets.md
           displayName: PowerPoint
         - name: Referência da API
-          href: /javascript/api/powerpoint
+          href: reference/powerpoint-api-reference.md
           displayName: PowerPoint
         - name: Obter todo o documento de um suplemento
           href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
@@ -842,7 +842,7 @@
       href: reference/overview/visio-javascript-reference-overview.md
       displayName: Visio
     - name: Referência da API
-      href: /javascript/api/visio
+      href: reference/visio-api-reference.md
       displayName: Visio
 - name: Suplementos do Word
   items:
@@ -881,7 +881,7 @@
               href: reference/requirement-sets/word-api-1-1-requirement-set.md
               displayName: Word
         - name: Referência da API
-          href: /javascript/api/word
+          href: reference/word-api-reference.md
           displayName: Word
         - name: Conceitos fundamentais de programação
           href: word/word-add-ins-core-concepts.md
