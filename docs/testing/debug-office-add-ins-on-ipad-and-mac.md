@@ -1,18 +1,18 @@
 ---
 title: Depurar suplementos do Office em um Mac
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/29/2019
 localization_priority: Priority
-ms.openlocfilehash: 88f7cbf6c944a0f6510306cfe2d07db59e40bdeb
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 10b1181cab23252137df299736341c990978aa1d
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35126929"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940679"
 ---
 # <a name="debug-office-add-ins-on-a-mac"></a>Depurar suplementos do Office em um Mac
 
-Você pode usar o Visual Studio para desenvolver e depurar suplementos no Windows, mas não pode usá-lo para depurar suplementos em um Mac. Como os suplementos são desenvolvidos usando HTML e JavaScript, eles são projetados para funcionar em diferentes plataformas, mas pode haver diferenças sutis na maneira com que os diferentes navegadores processam o HTML. Este artigo descreve como depurar suplementos em execução em um Mac.
+Como os suplementos são desenvolvidos usando HTML e Javascript, são projetados para funcionar em várias plataformas, mas pode haver diferenças sutis em como cada navegador processa o HTML. Este artigo descreve como depurar suplementos em execução em um Mac.
 
 ## <a name="debugging-with-safari-web-inspector-on-a-mac"></a>Depuração com Safari Web Inspetor em um Mac
 
@@ -40,9 +40,5 @@ Em seguida, abra o aplicativo do Office e [realize o sideload do seu suplemento]
 > 4. Use o inspetor, conforme necessário.
 
 ## <a name="clearing-the-office-applications-cache-on-a-mac"></a>Limpar cache do aplicativo do Office em um Mac
-
-Os suplementos muitas vezes são armazenados em cache no Office no Mac por questão de desempenho. Normalmente, o cache será limpo quando o suplemento for recarregado. Se houver mais de um suplemento no mesmo documento, é provável que o processo de limpeza automática do cache ao recarregar não seja confiável.
-
-No Mac, o cache pode ser limpo manualmente ao excluir o conteúdo na pasta `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
 
 [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
