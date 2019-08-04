@@ -1,64 +1,50 @@
 ---
 title: Visão geral da API JavaScript do Excel
 description: ''
-ms.date: 06/10/2019
+ms.date: 07/05/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: aa9574a93252c0011b211c39e37cc013beb64432
-ms.sourcegitcommit: 3f84b2caa73d7fe1eb0d15e32ea4dec459e2ff53
+ms.openlocfilehash: e6064bf7e7dce6931079fc2d3eb262533da7edf3
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "34910144"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575629"
 ---
 # <a name="excel-javascript-api-overview"></a>Visão geral da API JavaScript do Excel
 
-Você pode usar a API JavaScript do Excel para criar suplementos para o Excel 2016 ou posterior. A lista a seguir mostra os objetos de alto nível do Excel que estão disponíveis na API. Os links de página dos objetos contêm uma descrição dos respectivos eventos, propriedades e métodos que estão disponíveis no objeto. Acesse os links no menu para saber mais.
+Um suplemento do Excel interage com objetos no Excel usando a API JavaScript para Office, que inclui dois modelos de objeto JavaScript:
 
-Alguns dos principais objetos do Excel são listados abaixo para conveniência:
+* **API JavaScript do Excel**: introduzida com o Office 2016, a [API JavaScript do Excel](/javascript/api/excel) fornece objetos fortemente tipados que você pode usar para acessar planilhas, intervalos, tabelas, gráficos e muito mais. 
 
-- [Workbook](/javascript/api/excel/excel.workbook): o objeto de nível superior que inclui os objetos da pasta de trabalho relacionada, como planilhas, tabelas, intervalos, etc. Você pode usá-lo também para enumerar as referências relacionadas.
+* **APIs Comuns**: Introduzida com o Office 2013, a [API Comum](/javascript/api/office) pode ser usada para acessar recursos como interface de usuário, caixas de diálogo e configurações de cliente, que são comuns entre vários tipos de aplicativos do Office.
 
-- [Worksheet](/javascript/api/excel/excel.worksheet): representa uma planilha em uma pasta de trabalho.
-  - [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection): uma coleção de objetos **Worksheet** em uma pasta de trabalho.
-  - [WorksheetProtection](/javascript/api/excel/excel.worksheetprotection): representa a proteção de um objeto **Worksheet**.
+Esta seção da documentação concentra-se na API JavaScript do Excel, que você usará para desenvolver a maior parte da funcionalidade em suplementos direcionados para o Excel na Web ou para o Excel 2016 ou posterior. Para saber mais sobre a API comum, confira [API do JavaScript para Office](../javascript-api-for-office.md). 
 
-- [Range](/javascript/api/excel/excel.range): representa uma célula, uma linha, uma coluna ou uma seleção de células contendo um ou mais blocos contíguos de células.
-  - [ConditionalFormat](/javascript/api/excel/excel.conditionalformat): um objeto que define uma regra e um formato aplicado ao intervalo quando a condição da regra for atendida.
-  - [DataValidation](/javascript/api/excel/excel.datavalidation): um objeto que restringe a entrada do usuário a um intervalo baseado em diferentes critérios.
-  - [RangeSort](/javascript/api/excel/excel.rangesort): representa um objeto que gerencia as operações de classificação em um intervalo.
+## <a name="learn-programming-concepts"></a>Aprenda conceitos de programação
 
-- [Table](/javascript/api/excel/excel.table): representa uma coleção de células organizadas, projetada para facilitar o gerenciamento dos dados.
-  - [TableCollection](/javascript/api/excel/excel.tablecollection): uma coleção de tabelas em uma pasta de trabalho ou planilha.
-  - [TableColumnCollection](/javascript/api/excel/excel.tablecolumncollection): uma coleção de todas as colunas em uma tabela.
-  - [TableRowCollection](/javascript/api/excel/excel.tablerowcollection): uma coleção de todas as linhas de uma tabela.
-  - [TableSort](/javascript/api/excel/excel.tablesort): representa um objeto que gerencia as operações de classificação em uma tabela.
+Confira os artigos a seguir para obter informações sobre conceitos de programação importantes:
+ 
+- [Conceitos fundamentais de programação com a API JavaScript do Excel](../../excel/excel-add-ins-core-concepts.md)
 
-- [Chart](/javascript/api/excel/excel.chart): representa um objeto de gráfico em uma planilha, que é uma representação visual dos dados subjacentes.
-  - [ChartCollection](/javascript/api/excel/excel.chartcollection): uma coleção de gráficos em uma planilha.
+- [Conceitos avançados de programação com a API JavaScript do Excel](../../excel/excel-add-ins-advanced-concepts.md)
 
-- [PivotTable](/javascript/api/excel/excel.pivottable): representa uma Tabela Dinâmica do Excel, que é um agrupamento hierárquico e apresentação de dados.
-  - [PivotTableCollection](/javascript/api/excel/excel.pivottablecollection): uma coleção de Tabelas Dinâmicas em uma planilha.
+## <a name="learn-about-api-capabilities"></a>Saiba mais sobre recursos da API
 
-- [Filter](/javascript/api/excel/excel.filter): representa um objeto que gerencia a filtragem da coluna de uma tabela.
+Use outros artigos nesta seção da documentação para saber mais sobre como trabalhar com [eventos](../../excel/excel-add-ins-events.md), [gráficos](../../excel/excel-add-ins-charts.md), [intervalos](../../excel/excel-add-ins-ranges.md), [tabelas](../../excel/excel-add-ins-tables.md) [planilhas](../../excel/excel-add-ins-worksheets.md), e muito mais. Além disso, nesta seção, você encontrará instruções sobre os conceitos da API JavaScript do Excel, como [coautoria em suplementos do Excel](../../excel/co-authoring-in-excel-add-ins.md), [validação de dados](../../excel/excel-add-ins-data-validation.md), [tratamento de erros](../../excel/excel-add-ins-error-handling.md) e [otimização de desempenho](../../excel/performance.md). Confira o Sumário para obter a lista completa de artigos disponíveis.
 
-- [NamedItem](/javascript/api/excel/excel.nameditem): representa um nome definido de um intervalo de células ou de um valor.
-  - [NamedItemCollection](/javascript/api/excel/excel.nameditemcollection): uma coleção dos objetos **NamedItem** em uma pasta de trabalho.
+Para ter a experiência prática com o uso da API JavaScript do Excel para acessar objetos no Excel, conclua o [tutorial do suplemento do Excel](../../tutorials/excel-tutorial.md). 
 
-- [Binding](/javascript/api/excel/excel.binding): Uma classe abstrata que representa uma associação a uma seção da pasta de trabalho.
-  - [BindingCollection](/javascript/api/excel/excel.bindingcollection): uma coleção dos objetos **Binding** em uma pasta de trabalho.
+Para saber mais sobre o modelo de objeto API JavaScript do Excel, consulte a [Documentação de referência da API JavaScript do Excel](/javascript/api/excel).
 
-## <a name="excel-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Excel
+## <a name="try-out-code-samples-in-script-lab"></a>Experimente amostras de código no Script Lab
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office oferece suporte para as APIs necessárias para um suplemento. Para saber mais sobre conjuntos de requisitos da API JavaScript do Excel, consulte o artigo [Conjuntos de requisitos da API JavaScript do Excel](../requirement-sets/excel-api-requirement-sets.md).
-
-## <a name="excel-javascript-api-reference"></a>Referência da API JavaScript do Excel
-
-Para saber mais sobre a API JavaScript do Excel, consulte a [Documentação de referência da API JavaScript do Excel](/javascript/api/excel).
+Use o [Script Lab](../../overview/explore-with-script-lab.md) para começar a trabalhar rapidamente com um conjunto de exemplos internos que mostram como concluir tarefas com a API. Você pode executar as amostras no Script Lab para ver instantaneamente o resultado no painel de tarefas ou planilha, examinar os exemplos para saber como a API funciona e até mesmo usar amostras para criar um protótipo do seu próprio suplemento.
 
 ## <a name="see-also"></a>Confira também
 
-- [Visão geral dos suplementos do Excel](/office/dev/add-ins/excel/excel-add-ins-overview)
-- [Visão geral da plataforma Suplementos do Office](/office/dev/add-ins/overview/office-add-ins)
-- [Exemplos de suplementos do Excel no GitHub](https://github.com/OfficeDev?utf8=%E2%9C%93&q=Excel)
+- [Documentação de Suplementos do Excel](../../excel/index.md)
+- [Visão geral dos suplementos do Excel](../../excel/excel-add-ins-overview.md)
+- [Referência da API JavaScript do Excel](/javascript/api/excel)
+- [Disponibilidade de host e plataforma para suplementos do Office](../../overview/office-add-in-availability.md)
 - [Especificações abertas da API](../openspec/openspec.md)

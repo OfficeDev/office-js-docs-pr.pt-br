@@ -3,12 +3,12 @@ title: Depurar suplementos usando as ferramentas de desenvolvedor no Windows 10
 description: ''
 ms.date: 07/01/2019
 localization_priority: Priority
-ms.openlocfilehash: a2090eca41f59f0e7fab1a172aff96cbbca28ed7
-ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
+ms.openlocfilehash: 2e6f3c10aa7e1e08aa6c4bb1b4a7724cc9e6531d
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "35454878"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575671"
 ---
 # <a name="debug-add-ins-using-developer-tools-on-windows-10"></a>Depurar suplementos usando as ferramentas de desenvolvedor no Windows 10
 
@@ -20,7 +20,7 @@ A ferramenta que você usa depende se o suplemento está sendo executado no Micr
 > [!NOTE]
 > As instruções neste artigo não podem ser utilizadas para depurar um suplemento do Outlook que usa Funções Executar. Para depurar um suplemento do Outlook que usa Funções Executar, é recomendável que você anexe ao Visual Studio no modo de script ou outro depurador de scripts.
 
-## <a name="when-the-add-in-is-running-in-edge"></a>Quando o suplemento estiver sendo executado no Edge
+## <a name="when-the-add-in-is-running-in-microsoft-edge"></a>Quando o suplemento estiver sendo executado no Microsoft Edge
 
 Quando o suplemento estiver sendo executado, você pode usar o [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab). 
 

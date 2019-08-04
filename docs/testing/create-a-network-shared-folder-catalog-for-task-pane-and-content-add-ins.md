@@ -3,12 +3,12 @@ title: Realizar sideload de suplementos do Office para teste
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: acd16bb8a8d08aa6dd05f0f56921e285ee1e2e1f
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 81b931ab7bc88675ae438edf6d0d05ebb040387e
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127013"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575685"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>Realizar sideload de suplementos do Office para teste
 
@@ -82,7 +82,7 @@ O vídeo a seguir oferece orientações para a realização do processo de sidel
 
 3. Escolha **PASTA COMPARTILHADA** na parte superior da caixa de diálogo **Suplementos do Office**.
 
-4. Selecione o nome do suplemento e escolha **OK** para inseri-lo.
+4. Selecione o nome do suplemento e escolha **Adicionar** para inseri-lo.
 
 ## <a name="see-also"></a>Confira também
 

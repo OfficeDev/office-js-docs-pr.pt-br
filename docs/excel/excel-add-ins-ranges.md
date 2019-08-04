@@ -1,14 +1,14 @@
 ---
 title: Trabalhar com intervalos usando a API JavaScript do Excel (fundamental)
 description: ''
-ms.date: 02/20/2019
+ms.date: 04/30/2019
 localization_priority: Priority
-ms.openlocfilehash: bb3971a88b6721206424a62c007ce2bcdbd7d3a0
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: b434042be7328a6598d46716f2b7020e5972823e
+ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449600"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33620395"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Trabalhar com intervalos usando a API JavaScript do Excel
 
@@ -23,7 +23,7 @@ Os exemplos a seguir mostram diferentes maneiras de obter uma referência a um i
 
 ### <a name="get-range-by-address"></a>Obter intervalo por endereço
 
-O exemplo de código a seguir obtém o intervalo com o endereço **B2:B5** da planilha chamada **Amostra**, carrega sua propriedade **address** e grava uma mensagem no console.
+O exemplo de código a seguir obtém o intervalo com o endereço **B2:C5** da planilha chamada **Amostra**, carrega sua propriedade **address** e grava uma mensagem no console.
 
 ```js
 Excel.run(function (context) {
@@ -543,10 +543,7 @@ Excel.run(function (context) {
 
 Os intervalos podem ter formatos aplicados a células individuais baseadas em condições. Confira mais informações sobre isso em [Aplicar a formatação condicional a intervalos do Excel](excel-add-ins-conditional-formatting.md).
 
-## <a name="find-a-cell-using-string-matching-preview"></a>Localizar uma célula usando a cadeia de correspondência (versão prévia)
-
-> [!NOTE]
-> A função `find` do objeto do intervalo só está disponível atualmente na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="find-a-cell-using-string-matching"></a>Localizar uma célula usando a cadeia de correspondência
 
 O objeto `Range` tem um método `find` para pesquisar uma cadeia especificada dentro do intervalo. Ele retorna o intervalo da primeira célula com o texto correspondente. O exemplo de código a seguir localiza a primeira célula com um valor igual à cadeia de caracteres **Alimentos** e registra o seu endereço no console. Observe que `find` exibe um erro `ItemNotFound` se a cadeia de caracteres especificada não existir no intervalo. Se você acha que a cadeia de caracteres especificada pode não estar no intervalo, use o método [findOrNullObject](excel-add-ins-advanced-concepts.md#ornullobject-methods) para que seu código manipule normalmente esse cenário.
 

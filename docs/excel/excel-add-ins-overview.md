@@ -1,14 +1,14 @@
 ---
 title: Visão geral dos suplementos do Excel
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 696e1b3dfcab986125eb3f5f1d9f7547a59282e5
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: fbb0f69e7c32776fdd0bce6e5c10f39c562a5cbe
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128231"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575566"
 ---
 # <a name="excel-add-ins-overview"></a>Visão geral dos suplementos do Excel
 
@@ -17,6 +17,7 @@ Um suplemento do Excel permite que você estenda a funcionalidade do aplicativo 
 - Interagir com objetos do Excel, ler e gravar dados do Excel.
 - Estender a funcionalidade usando o painel de tarefas ou o painel conteúdo baseado na Web
 - Adicionar botões personalizados da faixa de opções ou itens de menu contextuais
+- Adicionar funções personalizadas
 - Fornecer interação mais rica usando janela de caixa de diálogo
 
 A plataforma Suplementos do Office fornece a estrutura e as APIs JavaScript Office.js que permitem criar e executar suplementos do Excel. Usando a plataforma Suplementos do Office para criar o suplemento do Excel, você receberá os seguintes benefícios:
@@ -52,7 +53,7 @@ Para permitir que os usuários finais instalem e usem um suplemento do Excel, vo
 
 ## <a name="capabilities-of-an-excel-add-in"></a>Recursos de um suplemento do Excel
 
-Além de interagir com o conteúdo da pasta de trabalho, os suplementos do Excel podem adicionar botões personalizados da faixa de opções ou comandos de menu, inserir painéis de tarefas, abrir caixas de diálogo e, até mesmo, inserir objetos sofisticados baseados na web, como gráficos ou visualizações interativas, em uma planilha.
+Além de interagir com o conteúdo da pasta de trabalho, os suplementos do Excel podem adicionar botões personalizados da faixa de opções ou comandos de menu, inserir painéis de tarefas, adicionar funções personalizadas, abrir caixas de diálogo e, até mesmo, inserir objetos sofisticados baseados na web, como gráficos ou visualizações interativas, em uma planilha.
 
 ### <a name="add-in-commands"></a>Comandos de suplemento
 
@@ -73,6 +74,16 @@ Os painéis de tarefas são superfícies de interface que normalmente são exibi
 ![Suplemento do painel de tarefas no Excel](../images/excel-add-in-task-pane-insights.png)
 
 Para saber mais sobre os painéis de tarefas, confira [Painéis de tarefas nos Suplementos do Office](../design/task-pane-add-ins.md). Para ver uma amostra que implementa um painel de tarefas no Excel, confira [Suplemento do Excel JS WoodGrove Expense Trends](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends).
+
+### <a name="custom-functions"></a>Funções personalizadas
+
+Funções personalizadas permitem que desenvolvedores adicionem novas funções do Excel definindo essas funções em JavaScript como parte de um suplemento. Os usuários do Excel podem acessar funções personalizadas da mesma forma que fariam com qualquer função nativa no Excel, como `SUM()`. 
+
+**Função personalizada**
+
+<img alt="animated image showing an end user inserting the MYFUNCTION.SPHEREVOLUME custom function into a cell of an Excel worksheet" src="../images/SphereVolumeNew.gif" />
+
+Para obter mais informações sobre funções personalizadas, consulte[Criar funções personalizadas no Excel](custom-functions-overview.md).
 
 ### <a name="dialog-boxes"></a>Caixas de diálogo
 
@@ -100,14 +111,15 @@ Um suplemento do Excel interage com objetos no Excel usando a [API JavaScript pa
 
 * **API JavaScript do Excel**: Introduzida com o Office 2016, a [API JavaScript do Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) fornece objetos do Excel fortemente tipados que você pode usar para acessar planilhas, intervalos, tabelas, gráficos e muito mais. 
 
-* **API compartilhada**: Introduzida com o Office 2013, a API compartilhada permite acessar recursos como interface de usuário, caixas de diálogo e configurações de cliente, que são comuns entre vários tipos de aplicativos host, como Word, Excel e PowerPoint. Como a API compartilhada fornece funcionalidade limitada para interação do Excel, você poderá usá-la se seu suplemento precisa ser executado no Excel 2013.
+* **APIs Comuns**: Introduzida com o Office 2013, a API Comum permite que você acesse recursos como interface de usuário, caixas de diálogo e configurações de cliente, que são comuns entre vários tipos de aplicativos do Office. Como a API compartilhada fornece funcionalidade limitada para interação do Excel, você poderá usá-la se seu suplemento precisa ser executado no Excel 2013.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Introdução à [criação de seu primeiro suplemento do Excel](excel-add-ins-get-started-overview.md). Em seguida, saiba mais sobre os [principais conceitos](excel-add-ins-core-concepts.md) da criação de suplementos do Excel.
+Introdução à [criação de seu primeiro suplemento do Excel](../quickstarts/excel-quickstart-jquery.md). Em seguida, saiba mais sobre os [principais conceitos](excel-add-ins-core-concepts.md) da criação de suplementos do Excel.
 
 ## <a name="see-also"></a>Confira também
 
+- [Documentação de Suplementos do Excel](index.md)
 - [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
 - [Práticas recomendadas para o desenvolvimento de Suplementos do Office](../concepts/add-in-development-best-practices.md)
 - [Diretrizes de design para Suplementos do Office](../design/add-in-design.md)

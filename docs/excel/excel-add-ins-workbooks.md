@@ -1,14 +1,14 @@
 ---
 title: Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 description: ''
-ms.date: 02/28/2019
+ms.date: 05/01/2019
 localization_priority: Priority
-ms.openlocfilehash: 4ced2fe36e4429b3dc0836f18ef0bdc7a823b3bf
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: e7ec76846a9097ea9e1ef6269661d51c42c21f62
+ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449761"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "33620161"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 
@@ -72,10 +72,10 @@ reader.onload = (function (event) {
 reader.readAsDataURL(myFile.files[0]);
 ```
 
-### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one"></a>Inserir uma cópia de uma pasta de trabalho para a seção atual
+### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one-preview"></a>Inserir uma cópia de uma pasta de trabalho para a seção atual (visualização)
 
 > [!NOTE]
-> A função `WorksheetCollection.addFromBase64` só está disponível atualmente na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> O método`WorksheetCollection.addFromBase64` só está atualmente disponível na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 O exemplo anterior mostra uma nova pasta de trabalho criada a partir de uma pasta de trabalho. Você também pode copiar algumas ou todas de uma pasta de trabalho para a atualmente associada com o suplemento. Uma pasta de trabalho [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) tem o método `addFromBase64` para inserir cópias de planilhas da pasta de trabalho de destino nela mesma. O outro arquivo da pasta de trabalho é passado como em cadeia de caracteres codificado em base 64, como a chamada `Excel.createWorkbook`.
 
@@ -262,12 +262,60 @@ A API do Excel também permite que os suplementos desativem os cálculos até qu
 context.application.suspendApiCalculationUntilNextSync();
 ```
 
-## <a name="save-the-workbook"></a>Salvar a pasta de trabalho
+## <a name="comments-preview"></a>Comentários (visualização)
 
 > [!NOTE]
-> A função `Workbook.save(saveBehavior)` só está disponível atualmente na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> As APIs de comentário estão disponíveis atualmente apenas na visualização pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
-`Workbook.save(saveBehavior)` salva a pasta de trabalho para armazenamento persistente. O método `save` usa um parâmetro simples e opcional que pode ter um dos seguintes valores:
+Todos os [comentários](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) em uma pasta de trabalho são acompanhados pela propriedade `Workbook.comments`. Isso inclui comentários criados por usuários e comentários criados por seu suplemento. A propriedade`Workbook.comments` é um objeto [CommentCollection](/javascript/api/excel/excel.commentcollection) que contém um conjunto de objetos [Comentário](/javascript/api/excel/excel.comment).
+
+Para adicionar comentários a uma pasta de trabalho, use o método `CommentCollection.add`, passando o texto do comentário, como uma cadeia de caracteres, e a célula onde o comentário será adicionado, como uma cadeia de caracteres ou um objeto [Range](/javascript/api/excel/excel.range). O exemplo a seguir adiciona um comentário à célula **A2**.
+
+```js
+Excel.run(function (context) {
+    var comments = context.workbook.comments;
+
+    // Note that an InvalidArgument error will be thrown if multiple cells passed to `Comment.add`.
+    comments.add("TODO: add data.", "A2");
+    return context.sync();
+});
+```
+
+Cada comentário contém metadados sobre a criação, como o autor e a data de criação. Os comentários criados por seu suplemento são considerados criados pelo usuário atual. O exemplo a seguir mostra como exibir o email do autor, o nome do autor e a data de criação de um comentário em **A2**.
+
+```js
+Excel.run(function (context) {
+    // Get the comment at cell A2.
+    var comment = context.workbook.comments.getItemByCell("Comments!A2");
+    comment.load(["authorEmail", "authorName", "creationDate"]);
+    return context.sync().then(function () {
+        console.log(`${comment.creationDate.toDateString()}: ${comment.authorName} (${comment.authorEmail})`);
+    });
+});
+```
+
+Cada comentário contém zero ou mais respostas. os objetos `Comment` têm uma propriedade `replies`, que é [CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection) que contém objetos [CommentReply](/javascript/api/excel/excel.commentreply). Para adicionar uma resposta a um comentário, use o método `CommentReplyCollection.add`, passando o texto da resposta. As respostas são exibidas na ordem em que são adicionadas. O exemplo a seguir adiciona uma resposta ao primeiro comentário da pasta de trabalho.
+
+```js
+Excel.run(function (context) {
+    // Get the first comment added to the workbook.
+    var comment = context.workbook.comments.getItemAt(0);
+    comment.replies.add("Thanks for the reminder!");
+    return context.sync();
+});
+```
+
+Para editar um comentário ou uma resposta de comentário, defina uma propriedade`Comment.content` e uma propriedade`CommentReply.content`. Para excluir um comentário ou uma resposta de comentário, use o método `Comment.delete` ou o método`CommentReply.delete`. Excluir um comentário também exclui todas as respostas associadas a esse comentário.
+
+> [!TIP]
+> Os comentários também podem ser gerenciados no nível da [planilha](/javascript/api/excel/excel.worksheet) usando as mesmas técnicas.
+
+## <a name="save-the-workbook-preview"></a>Salvar a pasta de trabalho (visualização)
+
+> [!NOTE]
+> O método`Workbook.save` só está atualmente disponível na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+`Workbook.save` salva a pasta de trabalho para armazenamento persistente. O método `save` usa um parâmetro simples e opcional `saveBehavior` que pode ter um dos seguintes valores:
 
 - `Excel.SaveBehavior.save` (padrão): o arquivo será salvo sem solicitar que o usuário especifique o nome do arquivo e local de salvamento. Se o arquivo não tiver sido salvo anteriormente, ele será salvo no local padrão. Se o arquivo tiver sido salvo anteriormente, ele será salvo no mesmo local.
 - `Excel.SaveBehavior.prompt`: se o arquivo ainda não foi salvo anteriormente, o usuário será solicitado a especificar o nome do arquivo e o local de salvamento. Se o arquivo tiver sido salvo anteriormente, ele será salvo no mesmo local sem que o usuário seja solicitado.
@@ -279,12 +327,12 @@ context.application.suspendApiCalculationUntilNextSync();
 context.workbook.save(Excel.SaveBehavior.prompt);
 ```
 
-## <a name="close-the-workbook"></a>Fechar a pasta de trabalho
+## <a name="close-the-workbook-preview"></a>Feche a pasta de trabalho (visualização)
 
 > [!NOTE]
-> A função `Workbook.close(closeBehavior)` só está disponível atualmente na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> O método`Workbook.close` só está atualmente disponível na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
-`Workbook.close(closeBehavior)` fecha a pasta de trabalho, além de suplementos que estão associados com a pasta de trabalho (o aplicativo Excel permanece aberto). O método `close` usa um parâmetro simples e opcional que pode ter um dos seguintes valores:
+`Workbook.close` fecha a pasta de trabalho, além de suplementos que estão associados com a pasta de trabalho (o aplicativo Excel permanece aberto). O método `close` usa um parâmetro simples e opcional `closeBehavior` que pode ter um dos seguintes valores:
 
 - `Excel.CloseBehavior.save` (padrão): o arquivo será salvo antes de fechar. Se o arquivo não tiver sido salvo anteriormente, o usuário será solicitado a especificar o nome do arquivo e o local para salvá-lo.
 - `Excel.CloseBehavior.skipSave`: o arquivo é fechado imediatamente, sem ser salvo. Quaisquer alterações não salvas serão perdidas.

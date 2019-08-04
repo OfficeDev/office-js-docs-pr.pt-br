@@ -1,14 +1,14 @@
 ---
 title: Manifesto XML dos Suplementos do Office
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/03/2019
 localization_priority: Priority
-ms.openlocfilehash: bf1b62c4ba6e9790cd70a7070dd3c8d682b2dc56
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 0446147f7a2ca44853c3843f11c9375d020f14d0
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127678"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575573"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifesto XML dos Suplementos do Office
 
@@ -74,32 +74,32 @@ _\*Adicionados no esquema de manifesto de suplementos da versão 1.1 do Office._
 
 <!-- Links for above table -->
 
-[officeapp]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/officeapp
-[id]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/id
-[version]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/version
-[providername]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/providername
-[defaultlocale]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultlocale
-[displayname]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/displayname
-[description]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/description
-[iconurl]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/iconurl
-[defaultsettings (contentapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultsettings
-[defaultsettings (taskpaneapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/defaultsettings
-[sourcelocation (contentapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation
-[sourcelocation (taskpaneapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sourcelocation
+[officeapp]: /office/dev/add-ins/reference/manifest/officeapp
+[id]: /office/dev/add-ins/reference/manifest/id
+[version]: /office/dev/add-ins/reference/manifest/version
+[providername]: /office/dev/add-ins/reference/manifest/providername
+[defaultlocale]: /office/dev/add-ins/reference/manifest/defaultlocale
+[displayname]: /office/dev/add-ins/reference/manifest/displayname
+[description]: /office/dev/add-ins/reference/manifest/description
+[iconurl]: /office/dev/add-ins/reference/manifest/iconurl
+[defaultsettings (contentapp)]: /office/dev/add-ins/reference/manifest/defaultsettings
+[defaultsettings (taskpaneapp)]: /office/dev/add-ins/reference/manifest/defaultsettings
+[sourcelocation (contentapp)]: /office/dev/add-ins/reference/manifest/sourcelocation
+[sourcelocation (taskpaneapp)]: /office/dev/add-ins/reference/manifest/sourcelocation
 [desktopsettings]: https://msdn.microsoft.com/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c(Office.15).aspx
 [sourcelocation (mailapp)]: https://msdn.microsoft.com/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx
-[permissões (contentapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/permissions
-[permissões (taskpaneapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/permissions
-[permissões (mailapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/permissions
-[regra (rulecollection)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/rule
-[regra (mailapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/rule
-[requisitos (mailapp)]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/requirements
-[set*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/set
-[conjuntos (mailapprequirements)*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sets
-[formulário*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/form
-[formsettings*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/formsettings
-[conjuntos (requisitos)*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/sets
-[hosts*]: https://docs.microsoft.com/office/dev/add-ins/reference/manifest/hosts
+[permissões (contentapp)]: /office/dev/add-ins/reference/manifest/permissions
+[permissões (taskpaneapp)]: /office/dev/add-ins/reference/manifest/permissions
+[permissões (mailapp)]: /office/dev/add-ins/reference/manifest/permissions
+[regra (rulecollection)]: /office/dev/add-ins/reference/manifest/rule
+[regra (mailapp)]: /office/dev/add-ins/reference/manifest/rule
+[requisitos (mailapp)]: /office/dev/add-ins/reference/manifest/requirements
+[set*]: /office/dev/add-ins/reference/manifest/set
+[conjuntos (mailapprequirements)*]: /office/dev/add-ins/reference/manifest/sets
+[formulário*]: /office/dev/add-ins/reference/manifest/form
+[formsettings*]: /office/dev/add-ins/reference/manifest/formsettings
+[conjuntos (requisitos)*]: /office/dev/add-ins/reference/manifest/sets
+[hosts*]: /office/dev/add-ins/reference/manifest/hosts
 
 ## <a name="hosting-requirements"></a>Requisitos de hospedagem
 
@@ -144,6 +144,10 @@ O exemplo de manifesto XML a seguir hospeda sua página de suplemento principal 
   <Permissions>ReadWriteDocument</Permissions>
 </OfficeApp>
 ```
+
+## <a name="specify-domains-from-which-officejs-api-calls-are-made"></a>Especificar domínios a partir dos quais as chamadas da API do Office.js são feitas
+
+Seu suplemento pode fazer chamadas API do Office.js a partir do domínio referenciado no elemento[SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) do arquivo de manifesto. Se você tiver outros iFrames dentro de seu suplemento que precisem acessar APIs do Office.js, adicione o domínio dessa URL de origem à lista especificada no elemento [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) do arquivo de manifesto. Se um iFrame com uma fonte não incluída na lista `AppDomains` tentar fazer uma chamada de API do Office. js, o suplemento receberá um[ erro de permissão negada](../reference/javascript-api-for-office-error-codes.md). 
 
 ## <a name="manifest-v11-xml-file-examples-and-schemas"></a>Exemplos e esquemas do arquivo XML de manifesto v1.1
 
