@@ -1,14 +1,14 @@
 ---
 title: Visão geral dos suplementos do Word
 description: ''
-ms.date: 06/20/2019
+ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 5516e4dc847d4872a12f769530d0a5cb7d779c7c
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 82983ee372ff24b089b975023e8d851fdaf3e795
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35126803"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575580"
 ---
 # <a name="word-add-ins-overview"></a>Visão geral dos suplementos do Word
 
@@ -52,11 +52,11 @@ Redija seu suplemento uma vez e ele será executado em todas as versões do Word
 
 ## <a name="javascript-apis-for-word"></a>APIs JavaScript para Word
 
-Você pode usar dois conjuntos de APIs JavaScript para interagir com metadados e objetos em um documento do Word. O primeiro é a [API comuns](../reference/javascript-api-for-office.md), que foi introduzido no Office 2013. Muitos dos objetos na API comuns podem ser usados em suplementos hospedados por dois ou mais clientes do Office.  Essa API usa retornos de chamadas de maneira ampla.
+Você pode usar dois conjuntos de APIs JavaScript para interagir com metadados e objetos em um documento do Word. O primeiro é a [API comuns](/javascript/api/office), que foi introduzido no Office 2013. Muitos dos objetos na API comuns podem ser usados em suplementos hospedados por dois ou mais clientes do Office.  Essa API usa retornos de chamadas de maneira ampla.
 
-O segundo é a [API JavaScript do Word](../reference/overview/word-add-ins-reference-overview.md). Este é um modelo de objeto fortemente tipado que você pode usar para criar suplementos do Word que se destinam ao Word 2016 para Mac e Windows. Este modelo de objeto usa promessas e fornece acesso a objetos específicos do Word como [corpo](/javascript/api/word/word.body), [controles de conteúdo](/javascript/api/word/word.contentcontrol), [imagens embutidas](/javascript/api/word/word.inlinepicture) e [parágrafos](/javascript/api/word/word.paragraph). A API JavaScript do Word inclui definições do TypeScript e arquivos vsdoc para que você possa obter dicas de código em seu IDE.
+O segundo é a [API JavaScript do Word](/javascript/api/word). Este é um modelo de objeto fortemente tipado que você pode usar para criar suplementos do Word que se destinam ao Word 2016 para Mac e Windows. Este modelo de objeto usa promessas e fornece acesso a objetos específicos do Word como [corpo](/javascript/api/word/word.body), [controles de conteúdo](/javascript/api/word/word.contentcontrol), [imagens embutidas](/javascript/api/word/word.inlinepicture) e [parágrafos](/javascript/api/word/word.paragraph). A API JavaScript do Word inclui definições do TypeScript e arquivos vsdoc para que você possa obter dicas de código em seu IDE.
 
-Atualmente, todos os clientes do Word oferecem suporte à API JavaScript para Office compartilhada, e a maioria dos clientes oferece suporte à API JavaScript do Word. Para obter detalhes sobre clientes com suporte, consulte a [documentação de referência da API](/office/dev/add-ins/reference/javascript-api-for-office?product=word).
+Atualmente, todos os clientes do Word oferecem suporte à API JavaScript para Office compartilhada, e a maioria dos clientes oferece suporte à API JavaScript do Word. Para obter detalhes sobre clientes com suporte, consulte a [visão geral da API do JavaScript do Office](../reference/javascript-api-for-office.md).
 
 Recomendamos que você comece com a API JavaScript do Word porque o modelo de objeto é mais fácil de usar. Use a API JavaScript do Word se precisar:
 
@@ -82,5 +82,6 @@ Depois de desenvolver seu suplemento, é possível [publicá-lo](../publish/publ
 
 ## <a name="see-also"></a>Confira também
 
+* [Documentação de suplementos do Word](index.md)
 * [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
 * [Referências da API JavaScript do Word](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)

@@ -3,12 +3,12 @@ title: Realizar sideload de suplementos do Office no Office na Web para teste
 description: Testar o suplemento do Office no Office na web através de sideloading
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: e382e4de62df28584da2c827433af3102486e057
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 6a61a8bfb4860ac31803c40d8ecea1b550f79368
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35126943"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575601"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>Realizar sideload de suplementos do Office no Office na Web para teste
 
@@ -50,7 +50,7 @@ O vídeo a seguir oferece orientações para o processo de sideload do seu suple
 >
 > - Digite “**about:flags**” na barra de pesquisa do Microsoft Edge para exibir as opções de Configurações do Desenvolvedor.  Verifique a opção “**Permitir loopback do localhost**” e reinicie o Microsoft Edge.
 
->    ![A opção “Permitir loopback do localhost” do Edge com a caixa marcada.](../images/allow-localhost-loopback.png)
+>    ![A opção “Permitir loopback do localhost” do Microsoft Edge com a caixa marcada.](../images/allow-localhost-loopback.png)
 
 
 ## <a name="sideload-an-office-add-in-in-office-365"></a>Realizar sideload de um suplemento do Office no Office 365
