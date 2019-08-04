@@ -3,12 +3,12 @@ title: Privacidade e segurança para suplementos do Office
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 26b9184eb1e52422122288659f068719bd43075b
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 5a930f9c2d4d2c7fe049517ac812c72a8a239b40
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127755"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575552"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 
@@ -249,7 +249,7 @@ Além das regras de uso de recursos, os desenvolvedores de suplementos do Outloo
 
 Em uma configuração corporativa, os administradores de TI têm autoridade final para habilitar ou desabilitar o acesso ao AppSource e a catálogos particulares.
 
-O gerenciamento e a execução das configurações do Office são feitos com as configurações de política de grupo. Eles são configuráveis através da [Ferramenta de Implantação do Office](https://docs.microsoft.com/deployoffice/overview-of-the-office-2016-deployment-tool), em conjunto com a [Ferramenta de Personalização do Office](https://docs.microsoft.com/DeployOffice/overview-of-the-office-customization-tool-for-click-to-run).
+O gerenciamento e a execução das configurações do Office são feitos com as configurações de política de grupo. Eles são configuráveis através da [Ferramenta de Implantação do Office](/deployoffice/overview-of-the-office-2016-deployment-tool), em conjunto com a [Ferramenta de Personalização do Office](/deployoffice/overview-of-the-office-customization-tool-for-click-to-run).
 
 | Nome da configuração | Descrição |
 |--------------|-------------|
@@ -258,7 +258,7 @@ O gerenciamento e a execução das configurações do Office são feitos com as 
 | Bloquear a Office Store |  Permite com que você impeça usuários de utilizar ou inserir suplementos da Web que vierem da Office Store.  |
 
 > [!IMPORTANT]
-> Se os seus grupos de trabalho estiverem usando diversas edições do Office, os parâmetros da política de grupo devem ser configurados para cada edição. Consulte o [Usando Política de Grupo para gerenciar como os usuários podem instalar e usar aplicativos do Office](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office) do artigo [Visão geral dos aplicativos do Office 2013](https://docs.microsoft.com/previous-versions/office/office-2013-resource-kit/jj219429(v%3doffice.15)) para detalhes sobre as configuração da política de grupo do Office 2013.
+> Se os seus grupos de trabalho estiverem usando diversas edições do Office, os parâmetros da política de grupo devem ser configurados para cada edição. Consulte o [Usando Política de Grupo para gerenciar como os usuários podem instalar e usar aplicativos do Office](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office) do artigo [Visão geral dos aplicativos do Office 2013](/previous-versions/office/office-2013-resource-kit/jj219429(v%3doffice.15)) para detalhes sobre as configuração da política de grupo do Office 2013.
 
 ## <a name="see-also"></a>Confira também
 
