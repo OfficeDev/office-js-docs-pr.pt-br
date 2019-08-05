@@ -3,19 +3,19 @@ title: Fazer referência à biblioteca da API JavaScript para Office de sua CDN 
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 4993a6a36004ced94ad37487f8e63d6b9f3f3f48
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 249d367c7a7032d8ec165661da1d182df4047199
+ms.sourcegitcommit: 68872372d181cca5bee37ade73c2250c4a56bab6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449747"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "33517384"
 ---
 # <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-cdn"></a>Fazer referência à biblioteca da API JavaScript para Office de sua CDN (rede de distribuição de conteúdo)
 
 > [!NOTE]
 > Além das etapas descritas neste artigo, se você quiser usar o TypeScript e obter o Intellisense, precisa executar o seguinte comando em um prompt de sistema com nó habilitado (ou na janela git bash) na raiz da pasta do seu projeto. Você deve ter o [Node.js](https://nodejs.org) instalado (que inclui o npm).
 > 
-> ```bash
+> ```command&nbsp;line
 > npm install --save-dev @types/office-js
 > ```
 
