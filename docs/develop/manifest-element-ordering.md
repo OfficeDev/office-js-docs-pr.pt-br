@@ -3,12 +3,12 @@ title: Como encontrar a ordem correta dos elementos do manifesto
 description: Saiba como encontrar a ordem correta na qual colocar elementos filho em um elemento pai.
 ms.date: 11/16/2018
 localization_priority: Normal
-ms.openlocfilehash: 8eeaedffcc143b0e8d61e9c151f3786b67a0e3fc
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: a7ec2e5b0dee5be651e4670effd86bc4acbac028
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449726"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268118"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>Como encontrar a ordem correta dos elementos do manifesto
 
@@ -19,7 +19,7 @@ A ordem exigida é especificada nos arquivos XSD, na pasta [Esquemas](https://gi
 Por exemplo, no elemento `<OfficeApp>`, os elementos `<Id>`, `<Version>` e `<ProviderName>` devem aparecer nessa ordem. Se adicionar um elemento `<AlternateId>`, deverá colocá-lo entre os elementos `<Id>` e `<Version>`. Se algum dos elementos estiver na posição incorreta, o manifesto não será válido e o suplemento não será carregado.
 
 > [!NOTE]
-> O [Validador de Suplemento do Office](/office/dev/add-ins/testing/troubleshoot-manifest#validate-your-manifest-with-the-office-add-in-validator) usa a mesma mensagem de erro quando um elemento está fora de ordem, como ocorre quando um elemento está no pai incorreto. A mensagem de erro informa que o elemento não é um elemento filho válido do elemento pai. Caso receba este erro, mas a documentação de referência do elemento filho indique que ele *está* válido para o pai, talvez o problema seja o filho ter sido colocado na ordem incorreta.
+> O [validador no Office-Toolbox](../testing/troubleshoot-manifest.md#validate-your-manifest-with-office-toolbox) usa a mesma mensagem de erro quando um elemento está fora de ordem, como ocorre quando um elemento está sob o pai errado. A mensagem de erro informa que o elemento não é um elemento filho válido do elemento pai. Caso receba este erro, mas a documentação de referência do elemento filho indique que ele *está* válido para o pai, talvez o problema seja o filho ter sido colocado na ordem incorreta.
 
 Para encontrar a ordem correta dos elementos filho de um determinado elemento pai, faça os procedimentos a seguir. Este é um processo simplificado porque os arquivos XSD são bastante complexos. A análise completa dos arquivos XSD está fora do escopo deste documento.
 

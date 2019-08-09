@@ -3,12 +3,12 @@ ms.date: 07/09/2019
 description: Autentique usuários usando funções personalizadas no Excel.
 title: Autenticação para funções personalizadas
 localization_priority: Priority
-ms.openlocfilehash: 74e1524eaf9c5328754fee8c225cd5aca83188da
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: f746947122da7ef3d54a0dd3b4f90dd059e5830f
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771467"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268135"
 ---
 # <a name="authentication-for-custom-functions"></a>Autenticação para funções personalizadas
 
@@ -90,7 +90,7 @@ function receiveTokenFromCustomFunction() {
 
 ## <a name="general-guidance"></a>Orientação geral
 
-Os Suplementos do Office são baseados na Web e você pode usar qualquer técnica de autenticação da Web. Não há um padrão ou método específico que você deva seguir para implementar sua própria autenticação com funções personalizadas. Você pode querer consultar a documentação sobre vários padrões de autenticação, começando com [este artigo sobre a autorização por serviços externos](/office/dev/add-ins/develop/auth-external-add-ins?view=office-js).  
+Os Suplementos do Office são baseados na Web e você pode usar qualquer técnica de autenticação da Web. Não há um padrão ou método específico que você deva seguir para implementar sua própria autenticação com funções personalizadas. Você pode querer consultar a documentação sobre vários padrões de autenticação, começando com [este artigo sobre a autorização por serviços externos](/office/dev/add-ins/develop/auth-external-add-ins).  
 
 Evite usar os seguintes locais para armazenar dados ao desenvolver funções personalizadas:  
 

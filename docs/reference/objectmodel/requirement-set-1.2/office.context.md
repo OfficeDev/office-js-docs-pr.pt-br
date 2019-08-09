@@ -1,14 +1,14 @@
 ---
 title: Office. Context – conjunto de requisitos 1,2
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 194532acc9262357a54e355fcfa9b15336cd95b0
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: a7621c3e9e29d229f66ee950119770cbc31d9fe3
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064288"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268492"
 ---
 # <a name="context"></a>context
 
@@ -23,6 +23,13 @@ O namespace Office.context fornece interfaces compartilhadas que são usadas pel
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
+
+##### <a name="members-and-methods"></a>Membros e métodos
+
+| Membro | Tipo |
+|--------|------|
+| [displayLanguage](#displaylanguage-string) | Membro |
+| [roamingSettings](#roamingsettings-roamingsettings) | Membro |
 
 ### <a name="namespaces"></a>Namespaces
 

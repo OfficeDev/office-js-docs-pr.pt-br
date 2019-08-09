@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox – conjunto de requisitos 1,4
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 373ac1f4361ae94f788a61e49c304a1cfdb90232
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 909746f2404f23872304e067800beac9c3c801f1
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064701"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268331"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -23,6 +23,22 @@ Fornece acesso ao modelo de objeto do suplemento do Outlook para o Microsoft Out
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| Restrito|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
+
+##### <a name="members-and-methods"></a>Membros e métodos
+
+| Membro | Tipo |
+|--------|------|
+| [ewsUrl](#ewsurl-string) | Membro |
+| [convertToEwsId](#converttoewsiditemid-restversion--string) | Método |
+| [convertToLocalClientTime](#converttolocalclienttimetimevalue--localclienttime) | Método |
+| [convertToRestId](#converttorestiditemid-restversion--string) | Método |
+| [convertToUtcClientTime](#converttoutcclienttimeinput--date) | Método |
+| [displayAppointmentForm](#displayappointmentformitemid) | Método |
+| [displayMessageForm](#displaymessageformitemid) | Método |
+| [displayNewAppointmentForm](#displaynewappointmentformparameters) | Método |
+| [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | Método |
+| [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | Método |
+| [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | Método |
 
 ### <a name="namespaces"></a>Namespaces
 
@@ -173,7 +189,7 @@ O método `convertToUtcClientTime` converte um dicionário que contém uma data 
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`input`| [LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.6)|O valor de hora local a converter.|
+|`input`| [LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.4)|O valor de hora local a converter.|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -181,7 +197,7 @@ O método `convertToUtcClientTime` converte um dicionário que contém uma data 
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)| Escrever ou Ler|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
 ##### <a name="returns"></a>Retorna:
 
@@ -222,7 +238,7 @@ Se o identificador do item especificado não identificar um compromisso existent
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)| Escrever ou Ler|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
 ##### <a name="example"></a>Exemplo
 
@@ -257,7 +273,7 @@ Não use o método `displayMessageForm` com um `itemId` que representa um compro
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)| Escrever ou Ler|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
 ##### <a name="example"></a>Exemplo
 
@@ -338,14 +354,22 @@ No modo de composição, você deve chamar o método [`saveAsync`](Office.contex
 
 |Nome| Tipo| Atributos| Descrição|
 |---|---|---|---|
-|`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult). O token é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`.|
+|`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O token é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`.<br><br>Se houvesse um erro, as `asyncResult.error` propriedades `asyncResult.diagnostics` e podem fornecer informações adicionais.|
 |`userContext`| Objeto| &lt;opcional&gt;|Quaisquer dados de estado que são passados ao método assíncrono.|
+
+##### <a name="errors"></a>Erros
+
+|Código de erro|Descrição|
+|------------|-------------|
+|`HTTPRequestFailure`|A solicitação falhou. Confira o objeto Diagnostics do código de erro HTTP.|
+|`InternalServerError`|O servidor do Exchange retornou um erro. Confira o objeto Diagnostics para obter mais informações.|
+|`NetworkError`|O usuário não está mais conectado à rede. Verifique sua conexão de rede e tente novamente.|
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
-|[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
+|[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Redação e leitura|
 
@@ -371,8 +395,16 @@ O método `getUserIdentityTokenAsync` retorna um token que pode ser utilizado pa
 
 |Nome| Tipo| Atributos| Descrição|
 |---|---|---|---|
-|`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O token é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`.|
-|`userContext`| Object| &lt;opcional&gt;|Quaisquer dados de estado que são passados ao método assíncrono.|
+|`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O token é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`.<br><br>Se houvesse um erro, as `asyncResult.error` propriedades `asyncResult.diagnostics` e podem fornecer informações adicionais.|
+|`userContext`| Objeto| &lt;opcional&gt;|Quaisquer dados de estado que são passados ao método assíncrono.|
+
+##### <a name="errors"></a>Erros
+
+|Código de erro|Descrição|
+|------------|-------------|
+|`HTTPRequestFailure`|A solicitação falhou. Confira o objeto Diagnostics do código de erro HTTP.|
+|`InternalServerError`|O servidor do Exchange retornou um erro. Confira o objeto Diagnostics para obter mais informações.|
+|`NetworkError`|O usuário não está mais conectado à rede. Verifique sua conexão de rede e tente novamente.|
 
 ##### <a name="requirements"></a>Requisitos
 

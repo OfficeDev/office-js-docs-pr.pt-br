@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos WordApi 1,3
 ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 24a960b5ddab1ba96b0b45d155e1f70cb0f1a35c
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: fe72a3047fdbdd719fd115858e4010fbc2c639e5
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064876"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268555"
 ---
 # <a name="whats-new-in-word-javascript-api-13"></a>Quais são as novidades na API JavaScript do Word 1.3
 
@@ -201,16 +201,9 @@ A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do W
 ||[GetRange (rangeLocation?: Word. RangeLocation)](/javascript/api/word/word.table#getrange-rangelocation-)|Obtém o intervalo que contém esta tabela, ou o intervalo no início ou no final da tabela.|
 ||[headerRowCount](/javascript/api/word/word.table#headerrowcount)|Obtém e define o número de linhas de cabeçalho.|
 ||[horizontalAlignment](/javascript/api/word/word.table#horizontalalignment)|Obtém e define o alinhamento horizontal de cada célula na tabela. O valor pode ser ' left ', ' centered ', ' right ' ou ' justificado '.|
-||[ignorePunct](/javascript/api/word/word.table#ignorepunct)||
-||[ignoreSpace](/javascript/api/word/word.table#ignorespace)||
 ||[insertContentControl()](/javascript/api/word/word.table#insertcontentcontrol--)|Insere um controle de conteúdo na tabela.|
 ||[insertParagraph (paragraphText: String, insertLocation: Word. InsertLocation)](/javascript/api/word/word.table#insertparagraph-paragraphtext--insertlocation-)|Insere um parágrafo no local especificado. O valor de insertLocation pode ser 'Before' ou 'After'.|
 ||[InsertTable (rowCount: Number, columnCount: Number, insertLocation: Word. InsertLocation, Values?: String [] [])](/javascript/api/word/word.table#inserttable-rowcount--columncount--insertlocation--values-)|Insere uma tabela com a quantidade especificada de linhas e colunas. O valor de insertLocation pode ser 'Before' ou 'After'.|
-||[matchCase](/javascript/api/word/word.table#matchcase)||
-||[matchPrefix](/javascript/api/word/word.table#matchprefix)||
-||[matchSuffix](/javascript/api/word/word.table#matchsuffix)||
-||[matchWholeWord](/javascript/api/word/word.table#matchwholeword)||
-||[matchWildcards](/javascript/api/word/word.table#matchwildcards)||
 ||[font](/javascript/api/word/word.table#font)|Obtém a fonte. Use isto para obter e definir o nome, o tamanho e a cor da fonte, além de outras propriedades. Somente leitura.|
 ||[isUniform](/javascript/api/word/word.table#isuniform)|Indica se todas as linhas de tabela são uniformes. Somente leitura.|
 ||[nestingLevel](/javascript/api/word/word.table#nestinglevel)|Obtém o nível de aninhamento da tabela. Tabelas de nível superior têm o nível 1. Somente leitura.|
@@ -224,7 +217,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do W
 ||[Validação](/javascript/api/word/word.table#rowcount)|Obtém a quantidade de linhas na tabela. Somente leitura.|
 ||[rows](/javascript/api/word/word.table#rows)|Obtém todas as linhas da tabela. Somente leitura.|
 ||[tables](/javascript/api/word/word.table#tables)|Obtém as tabelas filho aninhadas em um nível mais profundo. Somente leitura.|
-||[Search (ProcurarTexto: String, searchoptions?: Word. Searchoptions](/javascript/api/word/word.table#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Realiza uma pesquisa com o Searchoptions especificado no escopo do objeto Table. Os resultados da pesquisa são uma coleção de objetos Range.|
+||[Search (ProcurarTexto: String, searchoptions?: Word. Searchoptions](/javascript/api/word/word.table#search-searchtext--searchoptions-)|Realiza uma pesquisa com o Searchoptions especificado no escopo do objeto Table. Os resultados da pesquisa são uma coleção de objetos Range.|
 ||[selecionar (selectionMode?: Word. SelectionMode)](/javascript/api/word/word.table#select-selectionmode-)|Seleciona a tabela, ou então, a posição no início ou no final da tabela e navega na interface do usuário do Word até ela.|
 ||[setCellPadding (cellPaddingLocation: Word. CellPaddingLocation, cellPadding: Number)](/javascript/api/word/word.table#setcellpadding-cellpaddinglocation--cellpadding-)|Define o preenchimento de célula em pontos.|
 ||[shadingColor](/javascript/api/word/word.table#shadingcolor)|Obtém e define a cor de sombreamento. Você pode definir a cor no formato "#RRGGBB" ou usando o nome da cor.|
@@ -274,14 +267,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do W
 ||[getNext ()](/javascript/api/word/word.tablerow#getnext--)|Obtém a próxima linha. Lança se esta linha é a última.|
 ||[getNextOrNullObject()](/javascript/api/word/word.tablerow#getnextornullobject--)|Obtém a próxima linha. Retorna um objeto NULL se esta linha for a última.|
 ||[horizontalAlignment](/javascript/api/word/word.tablerow#horizontalalignment)|Obtém e define o alinhamento horizontal de cada célula na linha. O valor pode ser ' left ', ' centered ', ' right ' ou ' justificado '.|
-||[ignorePunct](/javascript/api/word/word.tablerow#ignorepunct)||
-||[ignoreSpace](/javascript/api/word/word.tablerow#ignorespace)||
 ||[insertRows (insertLocation: Word. InsertLocation, rowCount: Number, Values?: String [] [])](/javascript/api/word/word.tablerow#insertrows-insertlocation--rowcount--values-)|Insere linhas usando esta linha como um modelo. Se os valores forem especificados, insere os valores para as novas linhas.|
-||[matchCase](/javascript/api/word/word.tablerow#matchcase)||
-||[matchPrefix](/javascript/api/word/word.tablerow#matchprefix)||
-||[matchSuffix](/javascript/api/word/word.tablerow#matchsuffix)||
-||[matchWholeWord](/javascript/api/word/word.tablerow#matchwholeword)||
-||[matchWildcards](/javascript/api/word/word.tablerow#matchwildcards)||
 ||[preferredHeight](/javascript/api/word/word.tablerow#preferredheight)|Obtém e define a altura da linha preferencial em pontos.|
 ||[cellCount](/javascript/api/word/word.tablerow#cellcount)|Obtém a quantidade de células na linha. Somente leitura.|
 ||[nas](/javascript/api/word/word.tablerow#cells)|Obtém células. Somente leitura.|
@@ -289,7 +275,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do W
 ||[isHeader](/javascript/api/word/word.tablerow#isheader)|Verifica se a linha é uma linha de cabeçalho. Somente leitura. Para definir o número de linhas de cabeçalho, use HeaderRowCount no objeto de tabela.|
 ||[parentTable](/javascript/api/word/word.tablerow#parenttable)|Obtém uma tabela pai. Somente leitura.|
 ||[rowIndex](/javascript/api/word/word.tablerow#rowindex)|Obtém o índice da linha em sua tabela pai. Somente leitura.|
-||[Search (ProcurarTexto: String, searchoptions?: Word. Searchoptions)](/javascript/api/word/word.tablerow#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Realiza uma pesquisa com o Searchoptions especificado no escopo da linha. Os resultados da pesquisa são uma coleção de objetos Range.|
+||[Search (ProcurarTexto: String, searchoptions?: Word. Searchoptions)](/javascript/api/word/word.tablerow#search-searchtext--searchoptions-)|Realiza uma pesquisa com o Searchoptions especificado no escopo da linha. Os resultados da pesquisa são uma coleção de objetos Range.|
 ||[selecionar (selectionMode?: Word. SelectionMode)](/javascript/api/word/word.tablerow#select-selectionmode-)|Seleciona a linha e navega na interface do usuário do Word até ele.|
 ||[setCellPadding (cellPaddingLocation: Word. CellPaddingLocation, cellPadding: Number)](/javascript/api/word/word.tablerow#setcellpadding-cellpaddinglocation--cellpadding-)|Define o preenchimento de célula em pontos.|
 ||[shadingColor](/javascript/api/word/word.tablerow#shadingcolor)|Obtém e define a cor de sombreamento. Você pode definir a cor no formato "#RRGGBB" ou usando o nome da cor.|

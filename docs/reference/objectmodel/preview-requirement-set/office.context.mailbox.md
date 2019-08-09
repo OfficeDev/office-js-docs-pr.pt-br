@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox-visualização do conjunto de requisitos
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/06/2019
 localization_priority: Normal
-ms.openlocfilehash: f2383ea2d2e097b4e2f786bfb1aa8c06ab9eed0e
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 8f7345532e3c65f9945f424520c37f707634bf3b
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127594"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268716"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -561,10 +561,18 @@ O suplemento deve usar a propriedade `ewsUrl` para determinar a URL correta a se
 
 |Nome| Tipo| Atributos| Descrição|
 |---|---|---|---|
-| `options` | Objeto | &lt;opcional&gt; | Um objeto literal que contém uma ou mais das propriedades a seguir. |
+| `options` | Object | &lt;opcional&gt; | Um objeto literal que contém uma ou mais das propriedades a seguir. |
 | `options.isRest` | Booliano |  &lt;opcional&gt; | Determina se o token fornecido será usado para as APIs REST do Outlook ou Serviços Web do Exchange. O valor padrão é `false`. |
 | `options.asyncContext` | Objeto |  &lt;opcional&gt; | Quaisquer dados de estado que são passados ao método assíncrono. |
-|`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult). O token é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`.|
+|`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O token é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`.<br><br>Se houvesse um erro, as `asyncResult.error` propriedades `asyncResult.diagnostics` e podem fornecer informações adicionais.|
+
+##### <a name="errors"></a>Erros
+
+|Código de erro|Descrição|
+|------------|-------------|
+|`HTTPRequestFailure`|A solicitação falhou. Confira o objeto Diagnostics do código de erro HTTP.|
+|`InternalServerError`|O servidor do Exchange retornou um erro. Confira o objeto Diagnostics para obter mais informações.|
+|`NetworkError`|O usuário não está mais conectado à rede. Verifique sua conexão de rede e tente novamente.|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -610,8 +618,16 @@ No modo de composição, você deve chamar o método [`saveAsync`](Office.contex
 
 |Nome| Tipo| Atributos| Descrição|
 |---|---|---|---|
-|`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult). O token é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`.|
+|`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O token é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`.<br><br>Se houvesse um erro, as `asyncResult.error` propriedades `asyncResult.diagnostics` e podem fornecer informações adicionais.|
 |`userContext`| Objeto| &lt;opcional&gt;|Quaisquer dados de estado que são passados ao método assíncrono.|
+
+##### <a name="errors"></a>Erros
+
+|Código de erro|Descrição|
+|------------|-------------|
+|`HTTPRequestFailure`|A solicitação falhou. Confira o objeto Diagnostics do código de erro HTTP.|
+|`InternalServerError`|O servidor do Exchange retornou um erro. Confira o objeto Diagnostics para obter mais informações.|
+|`NetworkError`|O usuário não está mais conectado à rede. Verifique sua conexão de rede e tente novamente.|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -646,8 +662,16 @@ O método `getUserIdentityTokenAsync` retorna um token que pode ser utilizado pa
 
 |Nome| Tipo| Atributos| Descrição|
 |---|---|---|---|
-|`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O token é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`.|
-|`userContext`| Object| &lt;opcional&gt;|Quaisquer dados de estado que são passados ao método assíncrono.|
+|`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O token é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`.<br><br>Se houvesse um erro, as `asyncResult.error` propriedades `asyncResult.diagnostics` e podem fornecer informações adicionais.|
+|`userContext`| Objeto| &lt;opcional&gt;|Quaisquer dados de estado que são passados ao método assíncrono.|
+
+##### <a name="errors"></a>Erros
+
+|Código de erro|Descrição|
+|------------|-------------|
+|`HTTPRequestFailure`|A solicitação falhou. Confira o objeto Diagnostics do código de erro HTTP.|
+|`InternalServerError`|O servidor do Exchange retornou um erro. Confira o objeto Diagnostics para obter mais informações.|
+|`NetworkError`|O usuário não está mais conectado à rede. Verifique sua conexão de rede e tente novamente.|
 
 ##### <a name="requirements"></a>Requisitos
 

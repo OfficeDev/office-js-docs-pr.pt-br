@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox – conjunto de requisitos 1,7
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/06/2019
 localization_priority: Normal
-ms.openlocfilehash: 2cbe219e051eff63e27995e07a288ee787eeaf99
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 88b99a541653138ea9457d417d767ce8aa516cea
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064512"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268380"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -524,10 +524,18 @@ O suplemento deve usar a propriedade `ewsUrl` para determinar a URL correta a se
 
 |Nome| Tipo| Atributos| Descrição|
 |---|---|---|---|
-| `options` | Objeto | &lt;opcional&gt; | Um objeto literal que contém uma ou mais das propriedades a seguir. |
+| `options` | Object | &lt;opcional&gt; | Um objeto literal que contém uma ou mais das propriedades a seguir. |
 | `options.isRest` | Booliano |  &lt;opcional&gt; | Determina se o token fornecido será usado para as APIs REST do Outlook ou Serviços Web do Exchange. O valor padrão é `false`. |
 | `options.asyncContext` | Objeto |  &lt;opcional&gt; | Quaisquer dados de estado que são passados ao método assíncrono. |
-|`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult). O token é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`.|
+|`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O token é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`.<br><br>Se houvesse um erro, as `asyncResult.error` propriedades `asyncResult.diagnostics` e podem fornecer informações adicionais.|
+
+##### <a name="errors"></a>Erros
+
+|Código de erro|Descrição|
+|------------|-------------|
+|`HTTPRequestFailure`|A solicitação falhou. Confira o objeto Diagnostics do código de erro HTTP.|
+|`InternalServerError`|O servidor do Exchange retornou um erro. Confira o objeto Diagnostics para obter mais informações.|
+|`NetworkError`|O usuário não está mais conectado à rede. Verifique sua conexão de rede e tente novamente.|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -573,14 +581,22 @@ No modo de composição, você deve chamar o método [`saveAsync`](Office.contex
 
 |Nome| Tipo| Atributos| Descrição|
 |---|---|---|---|
-|`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult). O token é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`.|
+|`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O token é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`.<br><br>Se houvesse um erro, as `asyncResult.error` propriedades `asyncResult.diagnostics` e podem fornecer informações adicionais.|
 |`userContext`| Objeto| &lt;opcional&gt;|Quaisquer dados de estado que são passados ao método assíncrono.|
+
+##### <a name="errors"></a>Erros
+
+|Código de erro|Descrição|
+|------------|-------------|
+|`HTTPRequestFailure`|A solicitação falhou. Confira o objeto Diagnostics do código de erro HTTP.|
+|`InternalServerError`|O servidor do Exchange retornou um erro. Confira o objeto Diagnostics para obter mais informações.|
+|`NetworkError`|O usuário não está mais conectado à rede. Verifique sua conexão de rede e tente novamente.|
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
-|[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.3|
+|[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Redação e leitura|
 
@@ -609,8 +625,16 @@ O método `getUserIdentityTokenAsync` retorna um token que pode ser utilizado pa
 
 |Nome| Tipo| Atributos| Descrição|
 |---|---|---|---|
-|`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O token é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`.|
-|`userContext`| Object| &lt;opcional&gt;|Quaisquer dados de estado que são passados ao método assíncrono.|
+|`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O token é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`.<br><br>Se houvesse um erro, as `asyncResult.error` propriedades `asyncResult.diagnostics` e podem fornecer informações adicionais.|
+|`userContext`| Objeto| &lt;opcional&gt;|Quaisquer dados de estado que são passados ao método assíncrono.|
+
+##### <a name="errors"></a>Erros
+
+|Código de erro|Descrição|
+|------------|-------------|
+|`HTTPRequestFailure`|A solicitação falhou. Confira o objeto Diagnostics do código de erro HTTP.|
+|`InternalServerError`|O servidor do Exchange retornou um erro. Confira o objeto Diagnostics para obter mais informações.|
+|`NetworkError`|O usuário não está mais conectado à rede. Verifique sua conexão de rede e tente novamente.|
 
 ##### <a name="requirements"></a>Requisitos
 

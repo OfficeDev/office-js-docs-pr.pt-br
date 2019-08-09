@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Item-conjunto de requisitos 1,4
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 050f6daf3354b4ab7b617de37477ba639ef97129
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 10ee3c6f83488c777ae5e06dbb9484382a9c9588
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064715"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268653"
 ---
 # <a name="item"></a>item
 
@@ -23,6 +23,49 @@ O namespace `item` é usado para acessar a mensagem, a solicitação de reunião
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| Restrito|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
+
+##### <a name="members-and-methods"></a>Membros e métodos
+
+| Membro | Tipo |
+|--------|------|
+| [attachments](#attachments-arrayattachmentdetails) | Membro |
+| [bcc](#bcc-recipients) | Membro |
+| [body](#body-body) | Membro |
+| [cc](#cc-arrayemailaddressdetailsrecipients) | Membro |
+| [conversationId](#nullable-conversationid-string) | Membro |
+| [dateTimeCreated](#datetimecreated-date) | Membro |
+| [dateTimeModified](#datetimemodified-date) | Membro |
+| [end](#end-datetime) | Membro |
+| [from](#from-emailaddressdetails) | Membro |
+| [internetMessageId](#internetmessageid-string) | Membro |
+| [itemClass](#itemclass-string) | Membro |
+| [itemId](#nullable-itemid-string) | Membro |
+| [itemType](#itemtype-officemailboxenumsitemtype) | Membro |
+| [location](#location-stringlocation) | Membro |
+| [normalizedSubject](#normalizedsubject-string) | Membro |
+| [notificationMessages](#notificationmessages-notificationmessages) | Membro |
+| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | Membro |
+| [organizer](#organizer-emailaddressdetails) | Membro |
+| [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | Member |
+| [sender](#sender-emailaddressdetails) | Membro |
+| [start](#start-datetime) | Membro |
+| [subject](#subject-stringsubject) | Membro |
+| [to](#to-arrayemailaddressdetailsrecipients) | Membro |
+| [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | Método |
+| [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | Método |
+| [close](#close) | Método |
+| [displayReplyAllForm](#displayreplyallformformdata-callback) | Método |
+| [displayReplyForm](#displayreplyformformdata-callback) | Método |
+| [getEntities](#getentities--entities) | Método |
+| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Método |
+| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Método |
+| [getRegExMatches](#getregexmatches--object) | Método |
+| [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | Método |
+| [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | Método |
+| [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | Método |
+| [removeAttachmentAsync](#removeattachmentasyncattachmentid-options-callback) | Método |
+| [saveAsync](#saveasyncoptions-callback) | Método |
+| [setSelectedDataAsync](#setselecteddataasyncdata-options-callback) | Método |
 
 ### <a name="example"></a>Exemplo
 
@@ -155,7 +198,7 @@ A seguir apresentamos um exemplo do resultado do parâmetro passado à função 
 }
 ```
 
-#### <a name="cc-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipientsviewoutlook-js-14"></a>[destinatários](/javascript/api/outlook/office.recipients?view=outlook-js-1.4) [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)>|CC: Array. <
+#### <a name="cc-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-14recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-14"></a>[destinatários](/javascript/api/outlook/office.recipients?view=outlook-js-1.4) [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.4)>|CC: Array. <
 
 Fornece acesso aos destinatários na linha Cc (com cópia) de uma mensagem. O tipo de objeto e o nível de acesso dependem do modo do item atual.
 
@@ -183,7 +226,7 @@ function callback(asyncResult) {
 
 ##### <a name="type"></a>Tipo
 
-*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.4)
+*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.4)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.4)
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -555,7 +598,7 @@ Office.context.mailbox.item.notificationMessages.getAllAsync(
 );
 ```
 
-#### <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipientsviewoutlook-js-14"></a>optionalAttendees: [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)>|[](/javascript/api/outlook/office.recipients?view=outlook-js-1.4) de matriz. <
+#### <a name="optionalattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-14recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-14"></a>optionalAttendees: [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.4)>|[](/javascript/api/outlook/office.recipients?view=outlook-js-1.4) de matriz. <
 
 Fornece acesso aos participantes opcionais de um evento. O tipo de objeto e o nível de acesso dependem do modo do item atual.
 
@@ -584,7 +627,7 @@ function callback(asyncResult) {
 
 ##### <a name="type"></a>Tipo
 
-*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.4)
+*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.4)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.4)
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -618,7 +661,7 @@ var organizerAddress = Office.context.mailbox.item.organizer.emailAddress;
 console.log("Organizer: " + organizerName + " (" + organizerAddress + ")");
 ```
 
-#### <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipientsviewoutlook-js-14"></a>requiredAttendees: [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)>|[](/javascript/api/outlook/office.recipients?view=outlook-js-1.4) de matriz. <
+#### <a name="requiredattendees-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-14recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-14"></a>requiredAttendees: [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.4)>|[](/javascript/api/outlook/office.recipients?view=outlook-js-1.4) de matriz. <
 
 Fornece acesso aos participantes obrigatórios de um evento. O tipo de objeto e o nível de acesso dependem do modo do item atual.
 
@@ -648,7 +691,7 @@ function callback(asyncResult) {
 
 ##### <a name="type"></a>Tipo
 
-*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.4)
+*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.4)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.4)
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -778,7 +821,7 @@ function callback(asyncResult) {
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
-#### <a name="to-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsrecipientsjavascriptapioutlookofficerecipientsviewoutlook-js-14"></a>para: Array. <[](/javascript/api/outlook/office.emailaddressdetails)>|[destinatários](/javascript/api/outlook/office.recipients?view=outlook-js-1.4) EmailAddressDetails
+#### <a name="to-arrayemailaddressdetailsjavascriptapioutlookofficeemailaddressdetailsviewoutlook-js-14recipientsjavascriptapioutlookofficerecipientsviewoutlook-js-14"></a>para: Array. <[](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.4)>|[destinatários](/javascript/api/outlook/office.recipients?view=outlook-js-1.4) EmailAddressDetails
 
 Fornece acesso aos destinatários na linha **Para** de uma mensagem. O tipo de objeto e o nível de acesso dependem do modo do item atual.
 
@@ -806,7 +849,7 @@ function callback(asyncResult) {
 
 ##### <a name="type"></a>Tipo
 
-*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.4)
+*   Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.4)> | [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.4)
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -970,7 +1013,7 @@ Quando os `formData.attachments` anexos são especificados no parâmetro, o Outl
 | `formData.htmlBody` | String | &lt;opcional&gt; | Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.
 | `formData.attachments` | Array.&lt;Object&gt; | &lt;opcional&gt; | Uma matriz de objetos JSON que são anexos de arquivo ou item. |
 | `formData.attachments.type` | String | | Indica o tipo de anexo. Deve ser `file` para um anexo de arquivo ou `item` para um anexo de item. |
-| `formData.attachments.name` | String | | Uma cadeia de caracteres que contém o nome do anexo, até 255 caracteres de comprimento.|
+| `formData.attachments.name` | Cadeia de caracteres | | Uma cadeia de caracteres que contém o nome do anexo, até 255 caracteres de comprimento.|
 | `formData.attachments.url` | String | | Usado somente se `type` estiver definido como `file`. O URI do local para o arquivo. |
 | `formData.attachments.itemId` | String | | Usado somente se `type` estiver definido como `item`. A ID do item do EWS do anexo. Isso é uma cadeia de até 100 caracteres. |
 | `callback` | function | &lt;opcional&gt; | Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [AsyncResult](/javascript/api/office/office.asyncresult). |
@@ -981,7 +1024,7 @@ Quando os `formData.attachments` anexos são especificados no parâmetro, o Outl
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)| Read|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Read|
 
 ##### <a name="examples"></a>Exemplos
 
@@ -1088,9 +1131,9 @@ Quando os `formData.attachments` anexos são especificados no parâmetro, o Outl
 | `formData.htmlBody` | String | &lt;opcional&gt; | Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.
 | `formData.attachments` | Array.&lt;Object&gt; | &lt;opcional&gt; | Uma matriz de objetos JSON que são anexos de arquivo ou item. |
 | `formData.attachments.type` | String | | Indica o tipo de anexo. Deve ser `file` para um anexo de arquivo ou `item` para um anexo de item. |
-| `formData.attachments.name` | String | | Uma cadeia de caracteres que contém o nome do anexo, até 255 caracteres de comprimento.|
+| `formData.attachments.name` | Cadeia de caracteres | | Uma cadeia de caracteres que contém o nome do anexo, até 255 caracteres de comprimento.|
 | `formData.attachments.url` | String | | Usado somente se `type` estiver definido como `file`. O URI do local para o arquivo. |
-| `formData.attachments.itemId` | Cadeia de caracteres | | Usado somente se `type` estiver definido como `item`. A ID do item do EWS do anexo. Isso é uma cadeia de até 100 caracteres. |
+| `formData.attachments.itemId` | String | | Usado somente se `type` estiver definido como `item`. A ID do item do EWS do anexo. Isso é uma cadeia de até 100 caracteres. |
 | `callback` | function | &lt;opcional&gt; | Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [AsyncResult](/javascript/api/office/office.asyncresult). |
 
 ##### <a name="requirements"></a>Requisitos
@@ -1212,7 +1255,7 @@ O exemplo a seguir acessa as entidades de contatos no corpo do item atual.
 var contacts = Office.context.mailbox.item.getEntities().contacts;
 ```
 
-#### <a name="getentitiesbytypeentitytype--nullable-arraystringcontactjavascriptapioutlookofficecontactmeetingsuggestionjavascriptapioutlookofficemeetingsuggestionphonenumberjavascriptapioutlookofficephonenumbertasksuggestionjavascriptapioutlookofficetasksuggestionviewoutlook-js-14"></a>getEntitiesByType (entityType) → (Nullable) {array. < (cadeia de caracteres |[ Contact](/javascript/api/outlook/office.contact)|[](/javascript/api/outlook/office.meetingsuggestion)MeetingSuggestion|[](/javascript/api/outlook/office.phonenumber)PhoneNumber|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion)? View = Outlook-js-1,4) >}
+#### <a name="getentitiesbytypeentitytype--nullable-arraystringcontactjavascriptapioutlookofficecontactviewoutlook-js-14meetingsuggestionjavascriptapioutlookofficemeetingsuggestionviewoutlook-js-14phonenumberjavascriptapioutlookofficephonenumberviewoutlook-js-14tasksuggestionjavascriptapioutlookofficetasksuggestionviewoutlook-js-14"></a>getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook/office.contact?view=outlook-js-1.4)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion?view=outlook-js-1.4)|[PhoneNumber](/javascript/api/outlook/office.phonenumber?view=outlook-js-1.4)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion?view=outlook-js-1.4))>}
 
 Obtém uma matriz de todas as entidades do tipo de entidade especificado encontradas no corpo do item selecionado.
 
@@ -1249,7 +1292,7 @@ Enquanto o nível de permissão mínimo a usar esse método é **Restricted**, a
 | `TaskSuggestion` | TaskSuggestion | **ReadItem** |
 | `URL` | String | **Restrito** |
 
-Tipo: Array. < (cadeia de caracteres |[ Contact](/javascript/api/outlook/office.contact)|[](/javascript/api/outlook/office.meetingsuggestion)MeetingSuggestion|[](/javascript/api/outlook/office.phonenumber)PhoneNumber|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion)? View = Outlook-js-1,4) >
+Tipo: Array.<(String|[Contact](/javascript/api/outlook/office.contact?view=outlook-js-1.4)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion?view=outlook-js-1.4)|[PhoneNumber](/javascript/api/outlook/office.phonenumber?view=outlook-js-1.4)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion?view=outlook-js-1.4))>
 
 ##### <a name="example"></a>Exemplo
 
@@ -1269,7 +1312,7 @@ Office.initialize = function () {
 }
 ```
 
-#### <a name="getfilteredentitiesbynamename--nullable-arraystringcontactjavascriptapioutlookofficecontactmeetingsuggestionjavascriptapioutlookofficemeetingsuggestionphonenumberjavascriptapioutlookofficephonenumbertasksuggestionjavascriptapioutlookofficetasksuggestionviewoutlook-js-14"></a>getFilteredEntitiesByName (Name) → (Nullable) {array. < (String |[ Contact](/javascript/api/outlook/office.contact)|[](/javascript/api/outlook/office.meetingsuggestion)MeetingSuggestion|[](/javascript/api/outlook/office.phonenumber)PhoneNumber|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion)? View = Outlook-js-1,4) >}
+#### <a name="getfilteredentitiesbynamename--nullable-arraystringcontactjavascriptapioutlookofficecontactviewoutlook-js-14meetingsuggestionjavascriptapioutlookofficemeetingsuggestionviewoutlook-js-14phonenumberjavascriptapioutlookofficephonenumberviewoutlook-js-14tasksuggestionjavascriptapioutlookofficetasksuggestionviewoutlook-js-14"></a>getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](/javascript/api/outlook/office.contact?view=outlook-js-1.4)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion?view=outlook-js-1.4)|[PhoneNumber](/javascript/api/outlook/office.phonenumber?view=outlook-js-1.4)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion?view=outlook-js-1.4))>}
 
 Retorna entidades bem conhecidas no item selecionado que passam o filtro nomeado definido no arquivo de manifesto XML.
 
@@ -1290,13 +1333,13 @@ O método `getFilteredEntitiesByName` retorna as entidades que correspondem à e
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)| Read|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Read|
 
 ##### <a name="returns"></a>Retorna:
 
 Se não houver nenhum elemento `ItemHasKnownEntity` no manifesto com um valor de elemento `FilterName` que corresponda ao parâmetro `name`, o método retorna `null`. Se o parâmetro `name` corresponder a um elemento `ItemHasKnownEntity` no manifesto, mas não houver entidades no item atual que correspondam, o método retorna uma matriz vazia.
 
-Tipo: Array. < (cadeia de caracteres |[ Contact](/javascript/api/outlook/office.contact)|[](/javascript/api/outlook/office.meetingsuggestion)MeetingSuggestion|[](/javascript/api/outlook/office.phonenumber)PhoneNumber|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion)? View = Outlook-js-1,4) >
+Tipo: Array.<(String|[Contact](/javascript/api/outlook/office.contact?view=outlook-js-1.4)|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion?view=outlook-js-1.4)|[PhoneNumber](/javascript/api/outlook/office.phonenumber?view=outlook-js-1.4)|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion?view=outlook-js-1.4))>
 
 #### <a name="getregexmatches--object"></a>getRegExMatches() → {Object}
 
@@ -1336,7 +1379,7 @@ Se você especificar uma regra `ItemHasRegularExpressionMatch` na propriedade do
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)| Read|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Read|
 
 ##### <a name="returns"></a>Retorna:
 
@@ -1416,7 +1459,7 @@ Se não houver seleção, mas o cursor estiver no corpo ou no assunto, o método
 |---|---|---|---|
 |`coercionType`| [Office.CoercionType](office.md#coerciontype-string)||Solicita um formato para os dados. Se Text, o método retorna o texto sem formatação como uma cadeia de caracteres, removendo quaisquer marcas HTML presentes. Se HTML, o método retorna o texto selecionado, seja ele texto sem formatação ou HTML.|
 |`options`| Objeto| &lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
-|`options.asyncContext`| Object| &lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
+|`options.asyncContext`| Objeto| &lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
 |`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` será chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Para acessar os dados selecionados do método de retorno de chamada, chame `asyncResult.value.data`. Para acessar a propriedade de origem de que a seleção é proveniente, chame `asyncResult.value.sourceProperty`, que será `body` ou `subject`.|
 
 ##### <a name="requirements"></a>Requisitos
@@ -1572,7 +1615,7 @@ Como compromissos não têm um estado de rascunho, se `saveAsync` for chamado em
 
 |Nome| Tipo| Atributos| Descrição|
 |---|---|---|---|
-|`options`| Objeto| &lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
+|`options`| Object| &lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
 |`options.asyncContext`| Objeto| &lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.||
 |`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Em caso de sucesso, o identificador do item é fornecido na propriedade `asyncResult.value`.|
 

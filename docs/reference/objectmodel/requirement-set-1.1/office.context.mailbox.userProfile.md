@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox.userProfile – conjunto de requisitos 1.1
 description: ''
-ms.date: 03/19/2019
+ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 7a10a35887d31a8803d0662eedbe190543d2326a
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: af9a7f790f56124a86af08567690452b7f497408
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451917"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268485"
 ---
 # <a name="userprofile"></a>userProfile
 
@@ -22,9 +22,17 @@ ms.locfileid: "32451917"
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
+##### <a name="members-and-methods"></a>Membros e métodos
+
+| Membro | Tipo |
+|--------|------|
+| [displayName](#displayname-string) | Membro |
+| [emailAddress](#emailaddress-string) | Membro |
+| [timeZone](#timezone-string) | Membro |
+
 ### <a name="members"></a>Membros
 
-####  <a name="displayname-string"></a>displayName :String
+#### <a name="displayname-string"></a>displayName: cadeia de caracteres
 
 Obtém o nome de exibição do usuário.
 
@@ -47,7 +55,7 @@ Obtém o nome de exibição do usuário.
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
 
-####  <a name="emailaddress-string"></a>emailAddress :String
+#### <a name="emailaddress-string"></a>emailAddress: cadeia de caracteres
 
 Obtém o endereço de email SMTP do usuário.
 
@@ -70,7 +78,7 @@ Obtém o endereço de email SMTP do usuário.
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
 
-####  <a name="timezone-string"></a>timeZone :String
+#### <a name="timezone-string"></a>timeZone: cadeia de caracteres
 
 Obtém o fuso horário padrão do usuário.
 

@@ -1,14 +1,14 @@
 ---
 title: Códigos de erro da API JavaScript do Office
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/06/2019
 localization_priority: Normal
-ms.openlocfilehash: b259d592d465dfae6569ecc2a442f249104916af
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: f51d7860c0e7b4de530d30326f56380b28b03736
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128528"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268558"
 ---
 # <a name="javascript-api-for-office-error-codes"></a>Códigos de erro da API JavaScript para Office
 
@@ -81,6 +81,7 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 |8021|Fora do intervalo|O valor de índice de coluna está fora do intervalo permitido. Use um valor positivo (0 ou maior) que seja menor do que o número de colunas.|O índice de coluna é superior ao maior índice de coluna da tabela ou menor do que 0.|
 |8022|Fora do intervalo|O valor está fora do intervalo permitido.|Alguns dos valores no formato estão fora dos intervalos suportados.|
 |9016|Permissão negada|Permissão negada|Acesso negado.|
+|9041|Erro de rede|O usuário não está mais conectado à rede. Verifique sua conexão de rede e tente novamente.|O usuário não tem mais acesso à Internet ou à rede.|
 |12002|||Uma destas opções:<br> - Não existe uma página na URL transmitida para `displayDialogAsync`.<br> - A página transmitida para `displayDialogAsync` foi carregada, mas a caixa de diálogo foi direcionada para uma página que ela não consegue localizar nem carregar ou foi direcionada para uma URL com sintaxe inválida. Lançado dentro da caixa de diálogo e dispara um evento `DialogEventReceived` na página de host.|
 |12003|||A caixa de diálogo foi direcionada para uma URL com o protocolo HTTP. HTTPS é necessário. Lançado dentro da caixa de diálogo e dispara um evento `DialogEventReceived` na página de host.|
 |12004|||O domínio que a URL transmitiu para `displayDialogAsync` não é confiável. O domínio deve ser o mesmo domínio que o da página de host (incluindo o protocolo e o número da porta). Lançada por chamada de `displayDialogAsync`.|

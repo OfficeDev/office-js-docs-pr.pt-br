@@ -5,12 +5,12 @@ ms.date: 07/09/2019
 ms.prod: excel
 ms.topic: tutorial
 localization_priority: Normal
-ms.openlocfilehash: 9e1dc93079a3930fc5ebd88ef4d91ef2b899e51c
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 4b74463eafd5ac1b70e59cef6ef1f9f33cf0ffa2
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771804"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268177"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Tutorial: Criar funções personalizadas no Excel
 
@@ -64,9 +64,9 @@ Neste tutorial, você vai:
 
 4. Inicie o servidor local da web, que é executado no Node. Você pode experimentar o suplemento função personalizada no Excel na Web ou no Windows.
 
-# <a name="excel-on-windowstabexcel-windows"></a>[Excel no Windows](#tab/excel-windows)
+# <a name="excel-on-windows-or-mactabexcel-windows"></a>[Excel no Windows ou Mac](#tab/excel-windows)
 
-Para testar seu suplemento no Excel no Windows, execute o seguinte comando. Quando você executar este comando, o servidor Web local será iniciado e o Excel será aberto com o seu suplemento carregado.
+Para testar seu suplemento no Excel no Windows ou Mac, execute o seguinte comando. Quando você executar este comando, o servidor Web local será iniciado e o Excel será aberto com o seu suplemento carregado.
 
 ```command&nbsp;line
 npm run start:desktop
@@ -146,9 +146,9 @@ Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio d
     npm run build
     ```
 
-4. Complete as etapas a seguir (para o Excel na Web ou Windows) para registrar novamente o suplemento no Excel. Você deve concluir estas etapas para que a nova função esteja disponível.
+4. Complete as etapas a seguir (para Excel na Web, Windows ou Mac) para registrar novamente o suplemento no Excel. Você deve concluir estas etapas para que a nova função esteja disponível.
 
-### <a name="excel-on-windowstabexcel-windows"></a>[Excel no Windows](#tab/excel-windows)
+### <a name="excel-on-windows-or-mactabexcel-windows"></a>[Excel no Windows ou Mac](#tab/excel-windows)
 
 1. Feche o Excel e abra novamente o Excel.
 
@@ -214,9 +214,9 @@ function clock(invocation) {
     npm run build
     ```
 
-3. Complete as etapas a seguir (para o Excel na Web ou Windows) para registrar novamente o suplemento no Excel. Você deve concluir estas etapas para que a nova função esteja disponível. 
+3. Complete as etapas a seguir (para Excel na Web, Windows ou Mac) para registrar novamente o suplemento no Excel. Você deve concluir estas etapas para que a nova função esteja disponível. 
 
-# <a name="excel-on-windowstabexcel-windows"></a>[Excel no Windows](#tab/excel-windows)
+# <a name="excel-on-windows-or-mactabexcel-windows"></a>[Excel no Windows ou Mac](#tab/excel-windows)
 
 1. Feche o Excel e abra novamente o Excel.
 

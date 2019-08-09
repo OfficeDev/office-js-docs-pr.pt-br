@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos ExcelApi 1,9
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: b28406f9792278e554ff055a59ef4833be915aba
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: e27c4e6a93890c94f759eee451eb5168a30b1817
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064862"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268618"
 ---
 # <a name="whats-new-in-excel-javascript-api-19"></a>O que há de novo na API JavaScript do Excel 1,9
 
@@ -336,12 +336,8 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[hiperlink](/javascript/api/excel/excel.settablecellproperties#hyperlink)|Representa a propriedade `hyperlink`.|
 ||[style](/javascript/api/excel/excel.settablecellproperties#style)|Representa a propriedade `style`.|
 |[SettableColumnProperties](/javascript/api/excel/excel.settablecolumnproperties)|[columnHidden](/javascript/api/excel/excel.settablecolumnproperties#columnhidden)|Representa a propriedade `columnHidden`.|
-||[columnWidth](/javascript/api/excel/excel.settablecolumnproperties#columnwidth)||
-||[formato: Excel. CellPropertiesFormat & {
-            columnWidth?] (formato/JavaScript/API/Excel/Excel.settablecolumnproperties #)|Representa a propriedade `format`.|
-|[SettableRowProperties](/javascript/api/excel/excel.settablerowproperties)|[formato: Excel. CellPropertiesFormat & {
-            AlturaDaLinha?] (formato/JavaScript/API/Excel/Excel.settablerowproperties #)|Representa a propriedade `format`.|
-||[rowHeight](/javascript/api/excel/excel.settablerowproperties#rowheight)||
+||[format: Excel.CellPropertiesFormat](/javascript/api/excel/excel.settablecolumnproperties#format)|Representa a propriedade `format`.|
+|[SettableRowProperties](/javascript/api/excel/excel.settablerowproperties)|[format: Excel.CellPropertiesFormat](/javascript/api/excel/excel.settablerowproperties#format)|Representa a propriedade `format`.|
 ||[rowHidden](/javascript/api/excel/excel.settablerowproperties#rowhidden)|Representa a propriedade `rowHidden`.|
 |[Shape](/javascript/api/excel/excel.shape)|[altTextDescription](/javascript/api/excel/excel.shape#alttextdescription)|Retorna ou define o texto da descrição alternativa de um objeto de forma.|
 ||[altTextTitle](/javascript/api/excel/excel.shape#alttexttitle)|Retorna ou define o texto do título alternativo de um objeto de forma.|

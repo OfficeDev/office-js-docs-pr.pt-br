@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox – conjunto de requisitos 1,1
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 6bbb79af22730dd10ca2c5f1e56a96fb102ab137
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: dc7ea23ca68f46df0a3c1762ed7994420ea7d0c0
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064421"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268709"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -23,6 +23,20 @@ Fornece acesso ao modelo de objeto do suplemento do Outlook para o Microsoft Out
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| Restrito|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
+
+##### <a name="members-and-methods"></a>Membros e métodos
+
+| Membro | Tipo |
+|--------|------|
+| [ewsUrl](#ewsurl-string) | Membro |
+| [convertToLocalClientTime](#converttolocalclienttimetimevalue--localclienttime) | Método |
+| [convertToUtcClientTime](#converttoutcclienttimeinput--date) | Método |
+| [displayAppointmentForm](#displayappointmentformitemid) | Método |
+| [displayMessageForm](#displaymessageformitemid) | Método |
+| [displayNewAppointmentForm](#displaynewappointmentformparameters) | Método |
+| [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | Método |
+| [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | Método |
+| [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | Método |
 
 ### <a name="namespaces"></a>Namespaces
 
@@ -204,7 +218,7 @@ Se qualquer dos parâmetros exceder os limites de tamanho especificados, ou se u
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-| `parameters` | Objeto | Um dicionário de parâmetros que descreve o novo compromisso. |
+| `parameters` | Object | Um dicionário de parâmetros que descreve o novo compromisso. |
 | `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.1)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email ou uma matriz contendo um objeto `EmailAddressDetails` para cada um dos participantes obrigatórios do compromisso. A matriz está limitada a um máximo de 100 entradas. |
 | `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.1)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email ou uma matriz contendo um objeto `EmailAddressDetails` para cada um dos participantes opcionais do compromisso. A matriz está limitada a um máximo de 100 entradas. |
 | `parameters.start` | Data | Um objeto `Date` que especifica a data e a hora de início do compromisso. |
@@ -256,8 +270,16 @@ Seu aplicativo deve ter a permissão **ReadItem** especificada em seu manifesto 
 
 |Nome| Tipo| Atributos| Descrição|
 |---|---|---|---|
-|`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O token é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`.|
+|`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O token é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`.<br><br>Se houvesse um erro, as `asyncResult.error` propriedades `asyncResult.diagnostics` e podem fornecer informações adicionais.|
 |`userContext`| Objeto| &lt;opcional&gt;|Quaisquer dados de estado que são passados ao método assíncrono.|
+
+##### <a name="errors"></a>Erros
+
+|Código de erro|Descrição|
+|------------|-------------|
+|`HTTPRequestFailure`|A solicitação falhou. Confira o objeto Diagnostics do código de erro HTTP.|
+|`InternalServerError`|O servidor do Exchange retornou um erro. Confira o objeto Diagnostics para obter mais informações.|
+|`NetworkError`|O usuário não está mais conectado à rede. Verifique sua conexão de rede e tente novamente.|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -289,8 +311,16 @@ O método `getUserIdentityTokenAsync` retorna um token que pode ser utilizado pa
 
 |Nome| Tipo| Atributos| Descrição|
 |---|---|---|---|
-|`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O token é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`.|
+|`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O token é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`.<br><br>Se houvesse um erro, as `asyncResult.error` propriedades `asyncResult.diagnostics` e podem fornecer informações adicionais.|
 |`userContext`| Objeto| &lt;opcional&gt;|Quaisquer dados de estado que são passados ao método assíncrono.|
+
+##### <a name="errors"></a>Erros
+
+|Código de erro|Descrição|
+|------------|-------------|
+|`HTTPRequestFailure`|A solicitação falhou. Confira o objeto Diagnostics do código de erro HTTP.|
+|`InternalServerError`|O servidor do Exchange retornou um erro. Confira o objeto Diagnostics para obter mais informações.|
+|`NetworkError`|O usuário não está mais conectado à rede. Verifique sua conexão de rede e tente novamente.|
 
 ##### <a name="requirements"></a>Requisitos
 

@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos WordApi 1,1
 ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: a2839a2553d42701956fd2e75a86564c133d9a93
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 30a4378a74b0d2848a5a913cbafd4f6eb780f519
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064911"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268569"
 ---
 # <a name="whats-new-in-word-javascript-api-11"></a>O que há de novo no Word JavaScript API 1,1
 
@@ -24,8 +24,6 @@ A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do W
 |[Body](/javascript/api/word/word.body)|[clear()](/javascript/api/word/word.body#clear--)|Limpa o conteúdo do objeto Body. O usuário pode executar a operação de desfazer no conteúdo limpo.|
 ||[getHtml()](/javascript/api/word/word.body#gethtml--)|Obtém uma representação HTML do objeto Body. Quando renderizado em uma página da Web ou em um visualizador de HTML, a formatação será uma correspondência próxima, mas não exata, à formatação do documento. Este método não retorna o mesmo HTML para o mesmo documento em diferentes plataformas (Windows, Mac, etc.). Se você precisar de fidelidade exata ou consistência entre plataformas, use `Body.getOoxml()` e converta o XML RETORNADO em HTML.|
 ||[getOoxml()](/javascript/api/word/word.body#getooxml--)|Obtém a representação OOXML (Office Open XML) do objeto Body.|
-||[ignorePunct](/javascript/api/word/word.body#ignorepunct)||
-||[ignoreSpace](/javascript/api/word/word.body#ignorespace)||
 ||[insertBreak (breaktype: Word. Breaktype, insertLocation: Word. InsertLocation)](/javascript/api/word/word.body#insertbreak-breaktype--insertlocation-)|Insere uma quebra no local especificado no documento principal. O valor de insertLocation pode ser 'Start' ou 'End'.|
 ||[insertContentControl()](/javascript/api/word/word.body#insertcontentcontrol--)|Quebra o objeto Body com um controle de conteúdo de rich text.|
 ||[insertFileFromBase64 (base64file: String, insertLocation: Word. InsertLocation)](/javascript/api/word/word.body#insertfilefrombase64-base64file--insertlocation-)|Insere um documento no corpo, no local especificado. O valor de insertLocation pode ser 'Replace', 'Start' ou 'End'.|
@@ -33,18 +31,13 @@ A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do W
 ||[Métodoinsertooxml (OOXML: String, insertLocation: Word. InsertLocation)](/javascript/api/word/word.body#insertooxml-ooxml--insertlocation-)|Insere um formato OOXML no local especificado.  O valor de insertLocation pode ser 'Replace', 'Start' ou 'End'.|
 ||[insertParagraph (paragraphText: String, insertLocation: Word. InsertLocation)](/javascript/api/word/word.body#insertparagraph-paragraphtext--insertlocation-)|Insere um parágrafo no local especificado. O valor de insertLocation pode ser 'Start' ou 'End'.|
 ||[insertText (Text: String, insertLocation: Word. InsertLocation)](/javascript/api/word/word.body#inserttext-text--insertlocation-)|Insere texto no corpo, no local especificado. O valor de insertLocation pode ser 'Replace', 'Start' ou 'End'.|
-||[matchCase](/javascript/api/word/word.body#matchcase)||
-||[matchPrefix](/javascript/api/word/word.body#matchprefix)||
-||[matchSuffix](/javascript/api/word/word.body#matchsuffix)||
-||[matchWholeWord](/javascript/api/word/word.body#matchwholeword)||
-||[matchWildcards](/javascript/api/word/word.body#matchwildcards)||
 ||[contentControls](/javascript/api/word/word.body#contentcontrols)|Obtém a coleção de objetos de controle de conteúdo de Rich Text no corpo. Somente leitura.|
 ||[font](/javascript/api/word/word.body#font)|Obtém o formato de texto do corpo. Use isso para obter e definir o nome, tamanho, cor e outras propriedades da fonte. Somente leitura.|
 ||[inlinePictures](/javascript/api/word/word.body#inlinepictures)|Obtém a coleção de objetos InlinePicture no corpo. A coleção não inclui imagens flutuantes. Somente leitura.|
 ||[paragraphs](/javascript/api/word/word.body#paragraphs)|Obtém a coleção de objetos Paragraph no corpo. Somente leitura.|
 ||[parentContentControl](/javascript/api/word/word.body#parentcontentcontrol)|Obtém o controle de conteúdo que inclui o corpo. Gera se não há um controle de conteúdo pai. Somente leitura.|
 ||[text](/javascript/api/word/word.body#text)|Obtém o texto do corpo. Usa o método insertText para inserir texto. Somente leitura.|
-||[Search (ProcurarTexto: String, searchoptions?: Word. Searchoptions)](/javascript/api/word/word.body#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Realiza uma pesquisa com o Searchoptions especificado no escopo do objeto Body. Os resultados da pesquisa são uma coleção de objetos Range.|
+||[Search (ProcurarTexto: String, searchoptions?: Word. Searchoptions)](/javascript/api/word/word.body#search-searchtext--searchoptions-)|Realiza uma pesquisa com o Searchoptions especificado no escopo do objeto Body. Os resultados da pesquisa são uma coleção de objetos Range.|
 ||[selecionar (selectionMode?: Word. SelectionMode)](/javascript/api/word/word.body#select-selectionmode-)|Seleciona o corpo e navega na interface do usuário do Word até ele.|
 ||[style](/javascript/api/word/word.body#style)|Obtém ou define o nome do estilo usado para o corpo. Use esta propriedade de estilos personalizados e nomes de estilo localizados. Para usar os estilos internos que são portáteis entre localidades, confira a propriedade "styleBuiltIn".|
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[apresentação](/javascript/api/word/word.contentcontrol#appearance)|Obtém ou define a aparência do controle de conteúdo. O valor pode ser "BoundingBox", "tags" ou "Hidden".|
@@ -55,19 +48,12 @@ A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do W
 ||[excluir (keepContent: Boolean)](/javascript/api/word/word.contentcontrol#delete-keepcontent-)|Exclui o controle de conteúdo e o respectivo conteúdo. Quando keepContent é definido como verdadeiro, o conteúdo não é excluído.|
 ||[getHtml()](/javascript/api/word/word.contentcontrol#gethtml--)|Obtém uma representação HTML do objeto de controle de conteúdo. Quando renderizado em uma página da Web ou em um visualizador de HTML, a formatação será uma correspondência próxima, mas não exata, à formatação do documento. Este método não retorna o mesmo HTML para o mesmo documento em diferentes plataformas (Windows, Mac, etc.). Se você precisar de fidelidade exata ou consistência entre plataformas, use `ContentControl.getOoxml()` e converta o XML RETORNADO em HTML.|
 ||[getOoxml()](/javascript/api/word/word.contentcontrol#getooxml--)|Obtém a representação OOXML (Office Open XML) do objeto do controle de conteúdo.|
-||[ignorePunct](/javascript/api/word/word.contentcontrol#ignorepunct)||
-||[ignoreSpace](/javascript/api/word/word.contentcontrol#ignorespace)||
 ||[insertBreak (breaktype: Word. Breaktype, insertLocation: Word. InsertLocation)](/javascript/api/word/word.contentcontrol#insertbreak-breaktype--insertlocation-)|Insere uma quebra no local especificado no documento principal. O valor insertLocation pode ser ' Start ', ' End ', ' before ' ou ' after '. Este método não pode ser usado com os controles de conteúdo "RichTextTable", "RichTextTableRow" e "RichTextTableCell".|
 ||[insertFileFromBase64 (base64file: String, insertLocation: Word. InsertLocation)](/javascript/api/word/word.contentcontrol#insertfilefrombase64-base64file--insertlocation-)|Insere um documento no controle de conteúdo no local especificado. O valor de insertLocation pode ser 'Replace', 'Start' ou 'End'.|
 ||[Métodoinserthtml (HTML: String, insertLocation: Word. InsertLocation)](/javascript/api/word/word.contentcontrol#inserthtml-html--insertlocation-)|Insere HTML no local especificado dentro do controle de conteúdo. O valor de insertLocation pode ser 'Replace', 'Start' ou 'End'.|
 ||[Métodoinsertooxml (OOXML: String, insertLocation: Word. InsertLocation)](/javascript/api/word/word.contentcontrol#insertooxml-ooxml--insertlocation-)|Insere OOXML no controle de conteúdo no local especificado.  O valor de insertLocation pode ser 'Replace', 'Start' ou 'End'.|
 ||[insertParagraph (paragraphText: String, insertLocation: Word. InsertLocation)](/javascript/api/word/word.contentcontrol#insertparagraph-paragraphtext--insertlocation-)|Insere um parágrafo no local especificado. O valor insertLocation pode ser ' Start ', ' End ', ' before ' ou ' after '.|
 ||[insertText (Text: String, insertLocation: Word. InsertLocation)](/javascript/api/word/word.contentcontrol#inserttext-text--insertlocation-)|Insere texto no local especificado dentro do controle de conteúdo. O valor de insertLocation pode ser 'Replace', 'Start' ou 'End'.|
-||[matchCase](/javascript/api/word/word.contentcontrol#matchcase)||
-||[matchPrefix](/javascript/api/word/word.contentcontrol#matchprefix)||
-||[matchSuffix](/javascript/api/word/word.contentcontrol#matchsuffix)||
-||[matchWholeWord](/javascript/api/word/word.contentcontrol#matchwholeword)||
-||[matchWildcards](/javascript/api/word/word.contentcontrol#matchwildcards)||
 ||[placeholderText](/javascript/api/word/word.contentcontrol#placeholdertext)|Obtém ou define o texto do espaço reservado do controle de conteúdo. Quando o controle de conteúdo está vazio, o sistema exibe o texto esmaecido.|
 ||[contentControls](/javascript/api/word/word.contentcontrol#contentcontrols)|Obtém a coleção de objetos de controle de conteúdo no controle de conteúdo. Somente leitura.|
 ||[font](/javascript/api/word/word.contentcontrol#font)|Obtém o formato de texto do controle de conteúdo. Use isto para obter e definir o nome, o tamanho e a cor da fonte, além de outras propriedades. Somente leitura.|
@@ -78,7 +64,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do W
 ||[text](/javascript/api/word/word.contentcontrol#text)|Obtém o texto do controle de conteúdo. Somente leitura.|
 ||[tipo](/javascript/api/word/word.contentcontrol#type)|Obtém o tipo de controle de conteúdo. Atualmente, temos suporte apenas para controles de conteúdo de rich text. Somente leitura.|
 ||[removeWhenEdited](/javascript/api/word/word.contentcontrol#removewhenedited)|Obtém ou define um valor que determina quando o controle de conteúdo é removido após a edição. Mutuamente exclusivo com a propriedade cannotDelete.|
-||[Search (ProcurarTexto: String, searchoptions?: Word. Searchoptions)](/javascript/api/word/word.contentcontrol#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Realiza uma pesquisa com o Searchoptions especificado no escopo do objeto de controle de conteúdo. Os resultados da pesquisa são uma coleção de objetos Range.|
+||[Search (ProcurarTexto: String, searchoptions?: Word. Searchoptions)](/javascript/api/word/word.contentcontrol#search-searchtext--searchoptions-)|Realiza uma pesquisa com o Searchoptions especificado no escopo do objeto de controle de conteúdo. Os resultados da pesquisa são uma coleção de objetos Range.|
 ||[selecionar (selectionMode?: Word. SelectionMode)](/javascript/api/word/word.contentcontrol#select-selectionmode-)|Seleciona o controle de conteúdo. Isso faz com que o Word role até a seleção.|
 ||[style](/javascript/api/word/word.contentcontrol#style)|Obtém ou define o nome do estilo do controle de conteúdo. Use esta propriedade de estilos personalizados e nomes de estilo localizados. Para usar os estilos internos que são portáteis entre localidades, confira a propriedade "styleBuiltIn".|
 ||[identificador](/javascript/api/word/word.contentcontrol#tag)|Obtém ou define uma marca para identificar um controle de conteúdo.|
@@ -121,8 +107,6 @@ A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do W
 ||[firstLineIndent](/javascript/api/word/word.paragraph#firstlineindent)|Retorna ou define o valor, em pontos, para um recuo deslocado ou da primeira linha. Usa um valor positivo para definir um recuo da primeira linha e um valor negativo para definir um recuo deslocado.|
 ||[getHtml()](/javascript/api/word/word.paragraph#gethtml--)|Obtém uma representação HTML do objeto Paragraph. Quando renderizado em uma página da Web ou em um visualizador de HTML, a formatação será uma correspondência próxima, mas não exata, à formatação do documento. Este método não retorna o mesmo HTML para o mesmo documento em diferentes plataformas (Windows, Mac, etc.). Se você precisar de fidelidade exata ou consistência entre plataformas, use `Paragraph.getOoxml()` e converta o XML RETORNADO em HTML.|
 ||[getOoxml()](/javascript/api/word/word.paragraph#getooxml--)|Obtém a representação OOXML (Office Open XML) do objeto Paragraph.|
-||[ignorePunct](/javascript/api/word/word.paragraph#ignorepunct)||
-||[ignoreSpace](/javascript/api/word/word.paragraph#ignorespace)||
 ||[insertBreak (breaktype: Word. Breaktype, insertLocation: Word. InsertLocation)](/javascript/api/word/word.paragraph#insertbreak-breaktype--insertlocation-)|Insere uma quebra no local especificado no documento principal. O valor de insertLocation pode ser 'Before' ou 'After'.|
 ||[insertContentControl()](/javascript/api/word/word.paragraph#insertcontentcontrol--)|Quebra o objeto Paragraph com um controle de conteúdo de rich text.|
 ||[insertFileFromBase64 (base64file: String, insertLocation: Word. InsertLocation)](/javascript/api/word/word.paragraph#insertfilefrombase64-base64file--insertlocation-)|Insere um documento no parágrafo no local especificado. O valor de insertLocation pode ser 'Replace', 'Start' ou 'End'.|
@@ -135,11 +119,6 @@ A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do W
 ||[lineSpacing](/javascript/api/word/word.paragraph#linespacing)|Obtém ou define o espaçamento entre linhas, em pontos, para o parágrafo especificado. Na interface do usuário do Word, esse valor é dividido por 12.|
 ||[lineUnitAfter](/javascript/api/word/word.paragraph#lineunitafter)|Obtém ou define a quantidade de espaçamento, em linhas de grade, após o parágrafo.|
 ||[lineUnitBefore](/javascript/api/word/word.paragraph#lineunitbefore)|Obtém ou define a quantidade de espaçamento, em linhas de grade, antes do parágrafo.|
-||[matchCase](/javascript/api/word/word.paragraph#matchcase)||
-||[matchPrefix](/javascript/api/word/word.paragraph#matchprefix)||
-||[matchSuffix](/javascript/api/word/word.paragraph#matchsuffix)||
-||[matchWholeWord](/javascript/api/word/word.paragraph#matchwholeword)||
-||[matchWildcards](/javascript/api/word/word.paragraph#matchwildcards)||
 ||[outlineLevel](/javascript/api/word/word.paragraph#outlinelevel)|Obtém ou define o nível de estrutura de tópicos para o parágrafo.|
 ||[contentControls](/javascript/api/word/word.paragraph#contentcontrols)|Obtém a coleção de objetos de controle de conteúdo no parágrafo. Somente leitura.|
 ||[font](/javascript/api/word/word.paragraph#font)|Obtém o formato de texto do parágrafo. Use isto para obter e definir o nome, o tamanho e a cor da fonte, além de outras propriedades. Somente leitura.|
@@ -147,7 +126,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do W
 ||[parentContentControl](/javascript/api/word/word.paragraph#parentcontentcontrol)|Obtém o controle de conteúdo que inclui o parágrafo. Gera se não há um controle de conteúdo pai. Somente leitura.|
 ||[text](/javascript/api/word/word.paragraph#text)|Obtém o texto do parágrafo. Somente leitura.|
 ||[rightIndent](/javascript/api/word/word.paragraph#rightindent)|Obtém ou define o valor de recuo à direita, em pontos, para o parágrafo.|
-||[Search (ProcurarTexto: String, searchoptions?: Word. Searchoptions})](/javascript/api/word/word.paragraph#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Realiza uma pesquisa com o Searchoptions especificado no escopo do objeto Paragraph. Os resultados da pesquisa são uma coleção de objetos Range.|
+||[Search (ProcurarTexto: String, searchoptions?: Word. Searchoptions})](/javascript/api/word/word.paragraph#search-searchtext--searchoptions-)|Realiza uma pesquisa com o Searchoptions especificado no escopo do objeto Paragraph. Os resultados da pesquisa são uma coleção de objetos Range.|
 ||[selecionar (selectionMode?: Word. SelectionMode)](/javascript/api/word/word.paragraph#select-selectionmode-)|Seleciona e navega na interface do usuário do Word até o parágrafo.|
 ||[spaceAfter](/javascript/api/word/word.paragraph#spaceafter)|Obtém ou define o espaçamento, em pontos, após o parágrafo.|
 ||[spaceBefore](/javascript/api/word/word.paragraph#spacebefore)|Obtém ou define o espaçamento, em pontos, antes o parágrafo.|
@@ -157,8 +136,6 @@ A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do W
 ||[delete()](/javascript/api/word/word.range#delete--)|Exclui o intervalo e o respectivo conteúdo do documento.|
 ||[getHtml()](/javascript/api/word/word.range#gethtml--)|Obtém uma representação HTML do objeto Range. Quando renderizado em uma página da Web ou em um visualizador de HTML, a formatação será uma correspondência próxima, mas não exata, à formatação do documento. Este método não retorna o mesmo HTML para o mesmo documento em diferentes plataformas (Windows, Mac, etc.). Se você precisar de fidelidade exata ou consistência entre plataformas, use `Range.getOoxml()` e converta o XML RETORNADO em HTML.|
 ||[getOoxml()](/javascript/api/word/word.range#getooxml--)|Obtém a representação OOXML do objeto Range.|
-||[ignorePunct](/javascript/api/word/word.range#ignorepunct)||
-||[ignoreSpace](/javascript/api/word/word.range#ignorespace)||
 ||[insertBreak (breaktype: Word. Breaktype, insertLocation: Word. InsertLocation)](/javascript/api/word/word.range#insertbreak-breaktype--insertlocation-)|Insere uma quebra no local especificado no documento principal. O valor de insertLocation pode ser 'Before' ou 'After'.|
 ||[insertContentControl()](/javascript/api/word/word.range#insertcontentcontrol--)|Quebra o objeto Range com um controle de conteúdo de rich text.|
 ||[insertFileFromBase64 (base64file: String, insertLocation: Word. InsertLocation)](/javascript/api/word/word.range#insertfilefrombase64-base64file--insertlocation-)|Insere um documento no local especificado. O valor insertLocation pode ser ' replace ', ' Start ', ' End ', ' before ' ou ' after '.|
@@ -166,17 +143,12 @@ A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do W
 ||[Métodoinsertooxml (OOXML: String, insertLocation: Word. InsertLocation)](/javascript/api/word/word.range#insertooxml-ooxml--insertlocation-)|Insere um formato OOXML no local especificado.  O valor insertLocation pode ser ' replace ', ' Start ', ' End ', ' before ' ou ' after '.|
 ||[insertParagraph (paragraphText: String, insertLocation: Word. InsertLocation)](/javascript/api/word/word.range#insertparagraph-paragraphtext--insertlocation-)|Insere um parágrafo no local especificado. O valor de insertLocation pode ser 'Before' ou 'After'.|
 ||[insertText (Text: String, insertLocation: Word. InsertLocation)](/javascript/api/word/word.range#inserttext-text--insertlocation-)|Insere um texto no local especificado. O valor insertLocation pode ser ' replace ', ' Start ', ' End ', ' before ' ou ' after '.|
-||[matchCase](/javascript/api/word/word.range#matchcase)||
-||[matchPrefix](/javascript/api/word/word.range#matchprefix)||
-||[matchSuffix](/javascript/api/word/word.range#matchsuffix)||
-||[matchWholeWord](/javascript/api/word/word.range#matchwholeword)||
-||[matchWildcards](/javascript/api/word/word.range#matchwildcards)||
 ||[contentControls](/javascript/api/word/word.range#contentcontrols)|Obtém a coleção de objetos de controle de conteúdo no intervalo. Somente leitura.|
 ||[font](/javascript/api/word/word.range#font)|Obtém o formato de texto do intervalo. Use isto para obter e definir o nome, o tamanho e a cor da fonte, além de outras propriedades. Somente leitura.|
 ||[paragraphs](/javascript/api/word/word.range#paragraphs)|Obtém a coleção de objetos Paragraph no intervalo. Somente leitura.|
 ||[parentContentControl](/javascript/api/word/word.range#parentcontentcontrol)|Obtém o controle de conteúdo que inclui o intervalo. Gera se não há um controle de conteúdo pai. Somente leitura.|
 ||[text](/javascript/api/word/word.range#text)|Obtém o texto do intervalo. Somente leitura.|
-||[Search (ProcurarTexto: String, searchoptions?: Word. Searchoptions)](/javascript/api/word/word.range#search-searchtext--searchoptions--ignorepunct--ignorespace--matchcase--matchprefix--matchsuffix--matchwholeword--matchwildcards-)|Realiza uma pesquisa com o Searchoptions especificado no escopo do objeto Range. Os resultados da pesquisa são uma coleção de objetos Range.|
+||[Search (ProcurarTexto: String, searchoptions?: Word. Searchoptions)](/javascript/api/word/word.range#search-searchtext--searchoptions-)|Realiza uma pesquisa com o Searchoptions especificado no escopo do objeto Range. Os resultados da pesquisa são uma coleção de objetos Range.|
 ||[selecionar (selectionMode?: Word. SelectionMode)](/javascript/api/word/word.range#select-selectionmode-)|Seleciona e navega na interface do usuário do Word até o intervalo.|
 ||[style](/javascript/api/word/word.range#style)|Obtém ou define o nome do estilo para o intervalo. Use esta propriedade de estilos personalizados e nomes de estilo localizados. Para usar os estilos internos que são portáteis entre localidades, confira a propriedade "styleBuiltIn".|
 |[RangeCollection](/javascript/api/word/word.rangecollection)|[items](/javascript/api/word/word.rangecollection#items)|Obtém os itens filhos carregados nesta coleção.|

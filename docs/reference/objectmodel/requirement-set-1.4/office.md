@@ -1,14 +1,14 @@
 ---
 title: Namespace do Office – conjunto de requisitos 1,4
 description: ''
-ms.date: 04/24/2019
+ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 2617ba3c80f44b1cddab568f94044a95a3061065
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: e6c4614af74a665805c400c407e4a7785efe9f96
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064674"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268646"
 ---
 # <a name="office"></a>Office
 
@@ -20,6 +20,14 @@ O namespace do Office fornece interfaces compartilhadas que são usadas pelos su
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
+
+##### <a name="members-and-methods"></a>Membros e métodos
+
+| Membro | Tipo |
+|--------|------|
+| [AsyncResultStatus](#asyncresultstatus-string) | Membro |
+| [CoercionType](#coerciontype-string) | Membro |
+| [SourceProperty](#sourceproperty-string) | Membro |
 
 ### <a name="namespaces"></a>Namespaces
 

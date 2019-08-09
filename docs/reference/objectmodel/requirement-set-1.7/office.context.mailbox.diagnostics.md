@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Diagnostics – conjunto de requisitos 1,7
 description: ''
-ms.date: 08/05/2019
+ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: e197374267d40056c6cb1dea8808e30f48eef65c
-ms.sourcegitcommit: dc78ee2a89fe3d4cd6f748be1eec9081c1077502
+ms.openlocfilehash: 65fcaf2d7d04f56703ea6138d2d7820a34e5821c
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2019
-ms.locfileid: "36231260"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268317"
 ---
 # <a name="diagnostics"></a>diagnostics
 
@@ -40,6 +40,9 @@ Obtém uma cadeia de caracteres que representa o nome do aplicativo host.
 
 Uma cadeia de caracteres que pode ser um dos valores a seguir: `Outlook`, `OutlookWebApp`, `OutlookIOS` ou `OutlookAndroid`.
 
+> [!NOTE]
+> O `Outlook` valor é retornado para o Outlook em clientes de área de trabalho (ou seja, Windows e Mac).
+
 ##### <a name="type"></a>Tipo
 
 *   String
@@ -57,9 +60,9 @@ Uma cadeia de caracteres que pode ser um dos valores a seguir: `Outlook`, `Outlo
 
 #### <a name="hostversion-string"></a>hostVersion: cadeia de caracteres
 
-Obtém uma cadeia de caracteres que representa a versão do aplicativo host ou do Exchange Server.
+Obtém uma cadeia de caracteres que representa a versão do aplicativo host ou do servidor Exchange (por exemplo, "15.0.468.0").
 
-Se o suplemento de email estiver em execução no cliente da área de trabalho do Outlook ou `hostVersion` Ios, a propriedade retornará a versão do aplicativo host, Outlook. No Outlook na Web, a propriedade retorna a versão do servidor Exchange. Um exemplo é a cadeia de caracteres "15.0.468.0".
+Se o suplemento de email estiver em execução no cliente da área de trabalho do Outlook ou `hostVersion` Ios, a propriedade retornará a versão do aplicativo host, Outlook. No Outlook na Web, a propriedade retorna a versão do servidor Exchange.
 
 ##### <a name="type"></a>Tipo
 
