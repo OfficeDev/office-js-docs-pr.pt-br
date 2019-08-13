@@ -1,16 +1,16 @@
 ---
-title: Autorização para o Microsoft Graph no Suplemento do Office
+title: Autorizar o Microsoft Graph com SSO
 description: ''
-ms.date: 03/19/2019
+ms.date: 08/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 5c34e00a2083f3554480f5900929806e10576350
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 98b1219c0fe5459c497a27b915d31108545f14ae
+ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448803"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "36302557"
 ---
-# <a name="authorize-to-microsoft-graph-in-your-office-add-in-preview"></a>Autorização para o Microsoft Graph no seu suplemento do Office (visualização)
+# <a name="authorize-to-microsoft-graph-with-sso-preview"></a>Autorizar o Microsoft Graph com SSO (visualização)
 
 Os usuários entram no Office (online, em dispositivos móveis e plataformas desktop) usando tanto a conta pessoal deles da Microsoft, como a conta corporativa ou de estudante (Office 365). A melhor maneira de um Suplemento do Office receber acesso autorizado ao [Microsoft Graph](https://developer.microsoft.com/graph/docs) é usar as credenciais de logon do Office do usuário. Isso permite a eles acessar seus dados do Microsoft Graph sem precisar entrar novamente. 
 
