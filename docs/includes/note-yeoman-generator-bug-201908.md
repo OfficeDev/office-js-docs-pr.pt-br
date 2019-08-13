@@ -1,0 +1,2 @@
+> [!IMPORTANT]
+> Os espaços não são permitidos no momento no nome do projeto do suplemento ou em qualquer lugar no caminho da pasta em que você cria o projeto do suplemento. Se o nome do projeto ou caminho da pasta do seu suplemento contiver espaços, o servidor Web local não será iniciado `npm start` quando `npm run start:web`você executar ou. Essa limitação é temporária e será eliminada quando o [problema](https://github.com/OfficeDev/generator-office/issues/476) subjacente for resolvido no gerador Yeoman para suplementos do Office.
