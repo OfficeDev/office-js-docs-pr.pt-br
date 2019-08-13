@@ -1,14 +1,14 @@
 ---
 title: Use a API de Caixa de Diálogo em seus Suplementos do Office
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/07/2019
 localization_priority: Priority
-ms.openlocfilehash: 12e741650b7441557ac9b28306b6eba0f1894922
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 5cafb2396c92576bd5ac6d6d52105e0bb5ee579d
+ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128203"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "36302578"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Use a API de Caixa de Diálogo em seus Suplementos do Office
 
@@ -17,7 +17,7 @@ Você pode usar a [API de Caixa de diálogo](/javascript/api/office/office.ui) p
 > [!NOTE]
 > Para informações sobre os programas para os quais a API de Caixa de Diálogo tem suporte no momento, confira [Conjuntos de requisitos da API de Caixa de Diálogo](/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets). Atualmente, a API de Caixa de Diálogo tem suporte para Word, Excel, PowerPoint e Outlook.
 
-> Um cenário primário para as APIs de Caixa de Diálogo é habilitar a autenticação com um recurso como o Google ou o Facebook.
+Um cenário fundamental para as APIs de Caixa de Diálogo é habilitar a autenticação com um recurso como o Google, o Facebook ou o Microsoft Graph. Para saber mais, confira [ autenticação com APIs de Caixa de Diálogo do Office](auth-with-office-dialog-api.md) *depois* que você se familiarizar com este artigo.
 
 Considere abrir uma caixa de diálogo em um painel de tarefas, suplemento de conteúdo ou [comando de suplemento](../design/add-in-commands.md) para fazer o seguinte:
 
@@ -70,13 +70,13 @@ Defina os dois valores como 100% para ter uma verdadeira experiência de tela in
 
 ### <a name="take-advantage-of-a-performance-option-in-office-on-the-web"></a>Aproveite uma opção de desempenho no Office na Web
 
-A propriedade `displayInIframe` é uma propriedade adicional no objeto de configuração que você pode passar para `displayDialogAsync`. Quando essa propriedade for definida como `true` e o suplemento estiver em execução em um documento aberto no Office na Web, a caixa de diálogo será aberta como um iframe flutuante, em vez de uma janela independente, o que faz com que ela seja aberta mais rapidamente. Apresentamos um exemplo a seguir:
+A propriedade `displayInIframe` é uma propriedade adicional no objeto de configuração que você pode passar para o`displayDialogAsync`. Quando essa propriedade for definida como `true` e o suplemento estiver em execução em um documento aberto no Office Online, a caixa de diálogo será aberta como um iframe flutuante, em vez de uma janela independente, o que faz com que ela seja aberta mais rapidamente. Este é um exemplo:
 
 ```js
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe: true});
 ```
 
-O valor padrão é `false`, que é o mesmo que omitir a propriedade inteiramente. Se o suplemento não estiver sendo executado no Office na Web, `displayInIframe` será ignorado.
+O valor padrão é `false`, que é o mesmo que omitir a propriedade inteiramente. Se o suplemento não estiver sendo executado no Office Online, o `displayInIframe` será ignorado.
 
 > [!NOTE]
 > Você **não** deverá usar `displayInIframe: true` se a caixa de diálogo redirecionar a qualquer ponto para uma página que não possa ser aberta em um iframe. Por exemplo, as páginas de entrada de muitos serviços Web populares, como Google e Conta da Microsoft, não podem ser abertas em um iframe.
@@ -385,52 +385,12 @@ Para ver um exemplo que mostre um vídeo na caixa de diálogo, confira a [padrã
 
 ## <a name="use-the-dialog-apis-in-an-authentication-flow"></a>Use as APIs de Caixa de Diálogo em um fluxo de autenticação
 
-O principal cenário das APIs de Caixa de diálogo é habilitar a autenticação com um provedor de identidade ou recurso que não permite que a página de entrada abra em um Iframe, como uma Conta da Microsoft, o Office 365, o Google e o Facebook.
+Confira[Autenticar com a API da Caixa de Diálogo do Office](auth-with-office-dialog-api.md).
 
-> [!NOTE]
-> Ao usar as APIs de Diálogo para esse cenário, *não* use a opção `displayInIframe: true` na chamada para `displayDialogAsync`. Confira [Aproveite uma opção de desempenho no Office na Web](#take-advantage-of-a-performance-option-in-office-on-the-web) para obter detalhes sobre essa opção anteriormente neste artigo.
+## <a name="using-the-office-dialog-api-with-single-page-applications-and-client-side-routing"></a>Usar a API de Caixa de diálogo do Office com aplicativos de página única e roteamento do lado do cliente
 
-O que vem a seguir é um fluxo de autenticação simples e típico:
+Se seu suplemento usa o roteamento do lado do cliente, como os aplicativos de página única geralmente fazem, você tem a opção de transmitir a URL de uma rota para o método [displayDialogAsync](/javascript/api/office/office.ui)(*o que não recomendamos*), em vez da URL de uma página HTML completa e separada.
 
-1. A primeira página que é aberta na caixa de diálogo é uma página local (ou outro recurso) que está hospedada no domínio do suplemento; ou seja, o domínio da janela do host. Essa página pode ter uma única interface de usuário que informa "Aguarde. Estamos redirecionando você para a página onde poderá entrar no *NOME-DO-PROVEDOR*." O código nessa página constrói a URL da página de entrada do provedor de identidade usando as informações que são transmitidas para a caixa de diálogo, conforme descrito em [Transmitir informações para a caixa de diálogo](#pass-information-to-the-dialog-box).
-2. A janela de diálogo redireciona então para a página de entrada. A URL inclui um parâmetro de consulta que informa o provedor de identidade para redirecionar a janela de diálogo depois que o usuário entrar em uma página específica. Neste artigo, chamaremos essa página de "redirectPage.html". (*Essa página deve estar no mesmo domínio que a janela do host*, já que a única maneira de a janela de diálogo transmitir os resultados da tentativa de entrada é usar uma chamada de `messageParent`, que só pode ser chamada em uma página com o mesmo domínio da janela do host.)
-2. O serviço do provedor de identidade processa a solicitação GET recebida na janela de diálogo. Se o usuário já estiver conectado, ele imediatamente redirecionará a janela para redirectPage.html e incluirá os dados do usuário como um parâmetro de consulta. Se o usuário ainda não tiver entrado, a página de entrada do provedor aparecerá na janela para que o usuário possa entrar. Para a maioria dos provedores, se o usuário não consegue entrar com êxito, o provedor mostra uma página de erro na janela de diálogo e não redireciona para redirectPage.html. O usuário precisa fechar a janela selecionando o **X** no canto. Se o usuário entrar com êxito, a janela de diálogo será redirecionada para redirectPage.html e os dados do usuário serão incluídos como um parâmetro de consulta.
-3. Quando a página redirectPage.html é aberta, ela chama `messageParent` para relatar o êxito ou falha na página host e opcionalmente também informar dados do usuário ou dados de erro.
-4. O evento `DialogMessageReceived` é acionado na página host e seu manipulador fecha a janela de diálogo e, opcionalmente, faz outro processamento da mensagem.
+A caixa de diálogo está em uma nova janela com seu próprio contexto de execução. Se você transmitir uma rota, sua página de base e todos os códigos de inicialização e bootstrapping serão executados novamente nesse novo contexto e todas as variáveis serão definidas com seus valores iniciais na caixa de diálogo. Essa técnica baixa e Inicia uma segunda instância do seu aplicativo na janela da caixa de diálogo, o que é parcialmente contraproducente em se tratando de um SPA (aplicativo de página única). Além disso, o código que altera as variáveis na janela de diálogo não altera a versão do painel de tarefas das mesmas variáveis. De forma semelhante, a janela da caixa de diálogo tem seu próprio armazenamento de sessão, que não pode ser acessado a partir do código no painel de tarefas.
 
-Para exemplo de suplemento que usa esse padrão, confira:
-
-- [Inserir gráficos do Excel usando o Microsoft Graph em um suplemento do PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart): o recurso que abre inicialmente na janela de diálogo é um método do controlador que não tem seu próprio modo de exibição. Ele redireciona para a página de entrada do Office 365.
-
-#### <a name="support-multiple-identity-providers"></a>Prestar suporte a vários provedores de identidade
-
-Se seu suplemento oferece ao usuário uma variedade de opções de provedores, como a Conta da Microsoft, o Google ou o Facebook, você precisa de uma primeira página local (confira a seção anterior) que forneça uma interface de usuário para a escolha de um provedor. A escolha do provedor acionará a construção da URL de entrada e seu redirecionamento.
-
-#### <a name="authorization-of-the-add-in-to-an-external-resource"></a>Autorização do suplemento para um recurso externo
-
-Na Web moderna, os aplicativos Web são entidades de segurança, como os usuários, e o aplicativo tem sua própria identidade e permissões para recursos online, como o Office 365, Google Plus, Facebook ou LinkedIn. O aplicativo é registrado no provedor de recursos antes da implantação. O registro inclui:
-
-- Uma lista das permissões que o aplicativo precisa para usar recursos de um usuário.
-- Uma URL para a qual o serviço do recurso deve retornar um token de acesso quando o aplicativo acessa o serviço.  
-
-Quando um usuário invoca uma função no aplicativo que acessa os dados do usuário no serviço do recurso, ele é solicitado a entrar no serviço e a conceder ao aplicativo as permissões necessárias para os recursos do usuário. Em seguida, o serviço redireciona a janela de entrada para a URL previamente registrada e transmite o token de acesso. O aplicativo usa o token de acesso para acessar os recursos do usuário.
-
-Você pode usar as APIs de Caixa de Diálogo para gerenciar esse processo usando um fluxo semelhante àquele descrito para os usuários entrarem. As únicas diferenças são:
-
-- Se o usuário ainda não tiver concedido ao aplicativo as permissões necessárias, ele será solicitada a fazê-lo na caixa de diálogo após entrar.
-- A janela de diálogo envia o token de acesso à janela do host usando `messageParent` para enviar o token de acesso em formato de cadeia de caracteres ou armazenando o token de acesso em um local onde a janela do host poderá recuperá-lo. O token tem um limite de tempo, mas enquanto durar, a janela do host poder usá-lo para acessar recursos do usuário de forma direta, sem outras solicitações.
-
-Os exemplos a seguir usam as APIs de caixa de diálogo para essa finalidade:
-- [Inserir gráficos do Excel usando o Microsoft Graph em um Suplemento do PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart): armazena o token de acesso em um banco de dados.
-
-Para mais informações sobre a autenticação e autorização em suplementos, consulte:
-- [Autorizar serviços externos no seu Suplemento do Office](auth-external-add-ins.md)
-- [Biblioteca de Auxiliares da API JavaScript para Office](https://github.com/OfficeDev/office-js-helpers)
-
-
-## <a name="use-the-office-dialog-api-with-single-page-applications-and-client-side-routing"></a>Usar a API de Caixa de diálogo para Office com aplicativos de página única e roteamento do lado do cliente
-
-Se seu suplemento usa o roteamento do lado do cliente, como os aplicativos de página única geralmente fazem, você tem a opção de transmitir a URL de um roteamento para o método [displayDialogAsync](/javascript/api/office/office.ui), em vez da URL de uma página HTML completa e separada.
-
-> [!IMPORTANT]
->A caixa de diálogo está em uma nova janela com seu próprio contexto de execução. Se você transmitir uma rota, sua página de base e todos os códigos de inicialização e bootstrapping serão executados novamente nesse novo contexto e todas as variáveis serão definidas com seus valores iniciais na caixa de diálogo. Portanto, essa técnica inicia uma segunda instância do aplicativo na janela de diálogo. O código que altera as variáveis na janela de diálogo não altera a versão do painel tarefas das mesmas variáveis. De forma semelhante, a janela de diálogo tem seu próprio armazenamento de sessão que não pode ser acessado a partir do código no painel de tarefas.
+Portanto, se você passar uma rota para o método`displayDialogAsync`, você não teria somente um SPA; você teria duas instâncias do mesmo SPA. Além disso, a maior parte do código na instância do painel de tarefas nunca seria usada nessa instância assim como grande parte do código na instância de caixa de diálogo também nunca seria usado nessa dada instância. Seria como ter dois SPAs no mesmo grupo. Se o código que você deseja executar na caixa de diálogo for complexo o suficiente, talvez você queira fazer isso explicitamente; ou seja, ter dois SPAs em pastas diferentes do mesmo domínio. Mas na maioria dos cenários, apenas a lógica simples é necessária na caixa de diálogo. Nesses casos, o projeto será bastante simplificado simplesmente hospedando uma página HTML simples, com JavaScript incorporado ou referenciado no domínio do seu SPA. Passe a URL da página para o método`displayDialogAsync`. Isso pode significar que você está de desviando da ideia literal de um aplicativo de página única; no entanto, como observado acima, na verdade não há uma única instância de uma SPA quando você usa a caixa de diálogo.
