@@ -106,10 +106,20 @@
           href: develop/addressing-same-origin-policy-limitations.md
         - name: Autenticação e autorização
           items:
+            - name: Visão geral da autenticação e autorização
+              href: develop/overview-authn-authz.md
+            - name: Autenticar e autorizar com a API de diálogo do Office
+              href: develop/auth-with-office-dialog-api.md
+            - name: Autorizar serviços externos
+              href: develop/auth-external-add-ins.md
+            - name: Autorizar o Microsoft Graph sem SSO
+              href: develop/authorize-to-microsoft-graph-without-sso.md
             - name: Habilitar o SSO em um suplemento
               items:
                 - name: Habilitar o logon único
                   href: develop/sso-in-office-add-ins.md
+                - name: Autorizar o Microsoft Graph com SSO
+                  href: develop/authorize-to-microsoft-graph.md
                 - name: Criar um suplemento SSO usando ASP.NET
                   href: develop/create-sso-office-add-ins-aspnet.md
                 - name: Criar um suplemento SSO usando node. js
@@ -120,10 +130,6 @@
                   href: develop/grant-admin-consent-to-an-add-in.md
                 - name: Solucionar problemas de mensagens de erro no logon único (SSO)
                   href: develop/troubleshoot-sso-in-office-add-ins.md
-            - name: Autorizar serviços externos
-              href: develop/auth-external-add-ins.md
-            - name: Autorizar no Microsoft Graph
-              href: develop/authorize-to-microsoft-graph.md
         - name: Abrir automaticamente um painel de tarefas com um documento
           href: develop/automatically-open-a-task-pane-with-a-document.md
         - name: Desenvolver suplementos para o iPad

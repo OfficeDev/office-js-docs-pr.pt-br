@@ -1,58 +1,490 @@
 ---
 title: Como encontrar a ordem correta dos elementos do manifesto
 description: Saiba como encontrar a ordem correta na qual colocar elementos filho em um elemento pai.
-ms.date: 11/16/2018
+ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: a7ec2e5b0dee5be651e4670effd86bc4acbac028
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: d418f796592a0e4c247e717a5ce75d1c40c18d79
+ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268118"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "36302571"
 ---
-# <a name="how-to-find-the-proper-order-of-manifest-elements"></a><span data-ttu-id="6eb1a-103">Como encontrar a ordem correta dos elementos do manifesto</span><span class="sxs-lookup"><span data-stu-id="6eb1a-103">How to find the proper order of manifest elements</span></span>
+# <a name="how-to-find-the-proper-order-of-manifest-elements"></a><span data-ttu-id="dca24-103">Como encontrar a ordem correta dos elementos do manifesto</span><span class="sxs-lookup"><span data-stu-id="dca24-103">How to find the proper order of manifest elements</span></span>
 
-<span data-ttu-id="6eb1a-104">Os elementos XML do manifesto de um Suplemento do Office devem estar no elemento pai apropriado *e* em uma ordem específica em relação uns aos outros.</span><span class="sxs-lookup"><span data-stu-id="6eb1a-104">The XML elements in the manifest of an Office Add-in must be under the proper parent element *and* in a specific order, relative to each other, under the parent.</span></span>
+<span data-ttu-id="dca24-104">Os elementos XML do manifesto de um Suplemento do Office devem estar no elemento pai apropriado *e* em uma ordem específica em relação uns aos outros.</span><span class="sxs-lookup"><span data-stu-id="dca24-104">The XML elements in the manifest of an Office Add-in must be under the proper parent element *and* in a specific order, relative to each other, under the parent.</span></span>
 
-<span data-ttu-id="6eb1a-105">A ordem exigida é especificada nos arquivos XSD, na pasta [Esquemas](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas).</span><span class="sxs-lookup"><span data-stu-id="6eb1a-105">The required ordering is specified in the XSD files in the [Schemas](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) folder.</span></span> <span data-ttu-id="6eb1a-106">Os arquivos XSD são categorizados em subpastas para suplementos de painel de tarefas, conteúdo e email.</span><span class="sxs-lookup"><span data-stu-id="6eb1a-106">The XSD files are categorized into subfolders for taskpane, content, and mail add-ins.</span></span>
+<span data-ttu-id="dca24-105">A ordem exigida é especificada nos arquivos XSD, na pasta [Esquemas](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas).</span><span class="sxs-lookup"><span data-stu-id="dca24-105">The required ordering is specified in the XSD files in the [Schemas](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) folder.</span></span> <span data-ttu-id="dca24-106">Os arquivos XSD são categorizados em subpastas para suplementos de painel de tarefas, conteúdo e email.</span><span class="sxs-lookup"><span data-stu-id="dca24-106">The XSD files are categorized into subfolders for taskpane, content, and mail add-ins.</span></span>
 
-<span data-ttu-id="6eb1a-107">Por exemplo, no elemento `<OfficeApp>`, os elementos `<Id>`, `<Version>` e `<ProviderName>` devem aparecer nessa ordem.</span><span class="sxs-lookup"><span data-stu-id="6eb1a-107">For example, in the `<OfficeApp>` element, the `<Id>`, `<Version>`, `<ProviderName>` must appear in that order.</span></span> <span data-ttu-id="6eb1a-108">Se adicionar um elemento `<AlternateId>`, deverá colocá-lo entre os elementos `<Id>` e `<Version>`.</span><span class="sxs-lookup"><span data-stu-id="6eb1a-108">If an `<AlternateId>` element is added, it must be between the `<Id>` and `<Version>` element.</span></span> <span data-ttu-id="6eb1a-109">Se algum dos elementos estiver na posição incorreta, o manifesto não será válido e o suplemento não será carregado.</span><span class="sxs-lookup"><span data-stu-id="6eb1a-109">Your manifest will not be valid and your add-in will not load, if any element is in the wrong order.</span></span>
+<span data-ttu-id="dca24-107">Por exemplo, no elemento `<OfficeApp>`, os elementos `<Id>`, `<Version>` e `<ProviderName>` devem aparecer nessa ordem.</span><span class="sxs-lookup"><span data-stu-id="dca24-107">For example, in the `<OfficeApp>` element, the `<Id>`, `<Version>`, `<ProviderName>` must appear in that order.</span></span> <span data-ttu-id="dca24-108">Se adicionar um elemento `<AlternateId>`, deverá colocá-lo entre os elementos `<Id>` e `<Version>`.</span><span class="sxs-lookup"><span data-stu-id="dca24-108">If an `<AlternateId>` element is added, it must be between the `<Id>` and `<Version>` element.</span></span> <span data-ttu-id="dca24-109">Se algum dos elementos estiver na posição incorreta, o manifesto não será válido e o suplemento não será carregado.</span><span class="sxs-lookup"><span data-stu-id="dca24-109">Your manifest will not be valid and your add-in will not load, if any element is in the wrong order.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="6eb1a-110">O [validador no Office-Toolbox](../testing/troubleshoot-manifest.md#validate-your-manifest-with-office-toolbox) usa a mesma mensagem de erro quando um elemento está fora de ordem, como ocorre quando um elemento está sob o pai errado.</span><span class="sxs-lookup"><span data-stu-id="6eb1a-110">The [validator within office-toolbox](../testing/troubleshoot-manifest.md#validate-your-manifest-with-office-toolbox) uses the same error message when an element is out-of-order as it does when an element is under the wrong parent.</span></span> <span data-ttu-id="6eb1a-111">A mensagem de erro informa que o elemento não é um elemento filho válido do elemento pai.</span><span class="sxs-lookup"><span data-stu-id="6eb1a-111">The error says the child element is not a valid child of the parent element.</span></span> <span data-ttu-id="6eb1a-112">Caso receba este erro, mas a documentação de referência do elemento filho indique que ele *está* válido para o pai, talvez o problema seja o filho ter sido colocado na ordem incorreta.</span><span class="sxs-lookup"><span data-stu-id="6eb1a-112">If you get such an error but the reference documentation for the child element indicates that it *is* valid for the parent, then the problem is likely that the child has been placed in the wrong order.</span></span>
+> <span data-ttu-id="dca24-110">O [validador no Office-Toolbox](../testing/troubleshoot-manifest.md#validate-your-manifest-with-office-toolbox) usa a mesma mensagem de erro quando um elemento está fora de ordem, como ocorre quando um elemento está sob o pai errado.</span><span class="sxs-lookup"><span data-stu-id="dca24-110">The [validator within office-toolbox](../testing/troubleshoot-manifest.md#validate-your-manifest-with-office-toolbox) uses the same error message when an element is out-of-order as it does when an element is under the wrong parent.</span></span> <span data-ttu-id="dca24-111">A mensagem de erro informa que o elemento não é um elemento filho válido do elemento pai.</span><span class="sxs-lookup"><span data-stu-id="dca24-111">The error says the child element is not a valid child of the parent element.</span></span> <span data-ttu-id="dca24-112">Caso receba este erro, mas a documentação de referência do elemento filho indique que ele *está* válido para o pai, talvez o problema seja o filho ter sido colocado na ordem incorreta.</span><span class="sxs-lookup"><span data-stu-id="dca24-112">If you get such an error but the reference documentation for the child element indicates that it *is* valid for the parent, then the problem is likely that the child has been placed in the wrong order.</span></span>
 
-<span data-ttu-id="6eb1a-113">Para encontrar a ordem correta dos elementos filho de um determinado elemento pai, faça os procedimentos a seguir.</span><span class="sxs-lookup"><span data-stu-id="6eb1a-113">To find the correct order for the child elements of a given parent element, take the following steps.</span></span> <span data-ttu-id="6eb1a-114">Este é um processo simplificado porque os arquivos XSD são bastante complexos.</span><span class="sxs-lookup"><span data-stu-id="6eb1a-114">(This is a simplified process, as XSD files are quite complex.</span></span> <span data-ttu-id="6eb1a-115">A análise completa dos arquivos XSD está fora do escopo deste documento.</span><span class="sxs-lookup"><span data-stu-id="6eb1a-115">Fully parsing XSD files is out of the scope of this document.)</span></span>
+<span data-ttu-id="dca24-113">As seções a seguir mostram os elementos manifest na ordem em que devem ser exibidos.</span><span class="sxs-lookup"><span data-stu-id="dca24-113">The following sections show the manifest elements in the order in which they must appear.</span></span> <span data-ttu-id="dca24-114">Há `type` pequenas diferenças dependendo se o atributo do `<OfficeApp>` elemento é `TaskPaneApp`, `ContentApp`ou. `MailApp`</span><span class="sxs-lookup"><span data-stu-id="dca24-114">There are slight differences depending on whether the `type` attribute of the `<OfficeApp>` element is `TaskPaneApp`, `ContentApp`, or `MailApp`.</span></span> <span data-ttu-id="dca24-115">Para evitar que essas seções fiquem muito difíceis, o elemento altamente complexo `<VersionOverrides>` é dividido em seções separadas.</span><span class="sxs-lookup"><span data-stu-id="dca24-115">To keep these sections from becoming too unwieldy, the highly complex `<VersionOverrides>` element is broken out into separate sections.</span></span>
 
-1. <span data-ttu-id="6eb1a-116">Abra a subpasta em [Esquemas](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) para o tipo de suplemento que você está criando.</span><span class="sxs-lookup"><span data-stu-id="6eb1a-116">Open the subfolder under [Schemas](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) for the type of add-in that you are creating.</span></span> 
-2. <span data-ttu-id="6eb1a-117">Abra o arquivo XSD no qual o elemento pai é definido como um tipo complexo.</span><span class="sxs-lookup"><span data-stu-id="6eb1a-117">Open the XSD file where the parent element is defined as a complex type.</span></span> <span data-ttu-id="6eb1a-118">Se você não souber qual arquivo tem a definição, talvez seja necessário realizar a etapa 3 em vários arquivos até encontrá-la.</span><span class="sxs-lookup"><span data-stu-id="6eb1a-118">If you don't know which file has the definition, you may have to do step 3 on multiple files until you find it.</span></span>
-3. <span data-ttu-id="6eb1a-119">Procure `<xs:complexType name="PARENT_ELEMENT">`, em que PARENT_ELEMENT é o nome do elemento pai.</span><span class="sxs-lookup"><span data-stu-id="6eb1a-119">Search for `<xs:complexType name="PARENT_ELEMENT">`, where PARENT_ELEMENT is the name of the parent element.</span></span>
-4. <span data-ttu-id="6eb1a-120">Dentro da definição de PARENT_ELEMENT, normalmente há um elemento chamado `<xs:sequence>`.</span><span class="sxs-lookup"><span data-stu-id="6eb1a-120">Inside the definition for the PARENT_ELEMENT, there is (usually) an element called `<xs:sequence>`.</span></span> <span data-ttu-id="6eb1a-121">Veja a seguir a definição de `<SuperTip>` em [TaskPaneAppVersionOverridesV1_0.xsd](https://raw.githubusercontent.com/OfficeDev/office-js-docs-pr/master/docs/overview/schemas/taskpane/TaskPaneAppVersionOverridesV1_0.xsd).</span><span class="sxs-lookup"><span data-stu-id="6eb1a-121">The following is the definition for `<SuperTip>` from [TaskPaneAppVersionOverridesV1_0.xsd](https://raw.githubusercontent.com/OfficeDev/office-js-docs-pr/master/docs/overview/schemas/taskpane/TaskPaneAppVersionOverridesV1_0.xsd).</span></span>
+> [!Note]
+> <span data-ttu-id="dca24-116">Nem todos os elementos mostram que são obrigatórios.</span><span class="sxs-lookup"><span data-stu-id="dca24-116">Not all of the elements show are mandatory.</span></span> <span data-ttu-id="dca24-117">Se o `minOccurs` valor de um elemento for **0** no [esquema](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas), o elemento será opcional.</span><span class="sxs-lookup"><span data-stu-id="dca24-117">If the `minOccurs` value for a element is **0** in the [schema](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas), the element is optional.</span></span>
 
-```xml
-  <xs:complexType name="Supertip">
-    <xs:annotation>
-      <xs:documentation>
-        Specifies the super tip for this control.
-      </xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="Title" type="bt:ShortResourceReference" minOccurs="1" maxOccurs="1" />
-      <xs:element name="Description" type="bt:LongResourceReference" minOccurs="1" maxOccurs="1" />
-    </xs:sequence>
-  </xs:complexType>
+## <a name="basic-task-pane-add-in-element-ordering"></a><span data-ttu-id="dca24-118">Ordenação básica de elemento de suplemento do painel de tarefas</span><span class="sxs-lookup"><span data-stu-id="dca24-118">Basic task pane add-in element ordering</span></span>
+
+```
+<OfficeApp xsi:type="TaskPaneApp">
+    <Id>
+    <AlternateID>
+    <Version>
+    <ProviderName>
+    <DefaultLocale>
+    <DisplayName>
+        <Override>
+    <Description>
+        <Override>
+    <IconUrl>
+        <Override>
+    <HighResolutionIconUrl>
+        <Override>
+    <SupportUrl>
+    <AppDomains>
+        <AppDomain>
+    <Hosts>
+        <Host>
+    <Requirements>
+        <Sets>
+            <Set>
+        <Methods>
+            <Method>
+    <DefaultSettings>
+        <SourceLocation>
+            <Override>
+    <Permissions>
+    <Dictionary>
+        <TargetDialects>
+        <QueryUri>
+        <CitationText>
+        <DictionaryName>
+        <DictionaryHomePage>
+    <VersionOverrides>*
 ```
 
-<span data-ttu-id="6eb1a-122">A `<xs:sequence>` descreve os possíveis elementos filho, *na ordem em que devem aparecer*.</span><span class="sxs-lookup"><span data-stu-id="6eb1a-122">The `<xs:sequence>` lists the possible child elements, *in the order in which they must appear*.</span></span> <span data-ttu-id="6eb1a-123">Isto *não* significa que todos eles sejam obrigatórios.</span><span class="sxs-lookup"><span data-stu-id="6eb1a-123">This does *not* mean all of them are mandatory.</span></span> <span data-ttu-id="6eb1a-124">Se o valor `minOccurs` de um elemento filho for **0**, então esse elemento será opcional.</span><span class="sxs-lookup"><span data-stu-id="6eb1a-124">If the `minOccurs` value for a child element is **0**, then the child element is optional.</span></span> <span data-ttu-id="6eb1a-125">*Mas se ele estiver presente, deverá estar na ordem especificada pelo elemento `<xs:sequence>`*.</span><span class="sxs-lookup"><span data-stu-id="6eb1a-125">*But if it is present, it must be in the order specified by the `<xs:sequence>` element*.</span></span>
+<span data-ttu-id="dca24-119">\*Confira ordenação de [elemento do suplemento do painel de tarefas no VersionOverrides](#task-pane-add-in-element-ordering-within-versionoverrides) para a ordenação dos elementos filhos de VersionOverrides.</span><span class="sxs-lookup"><span data-stu-id="dca24-119">\*See [Task pane add-in element ordering within VersionOverrides](#task-pane-add-in-element-ordering-within-versionoverrides) for the ordering of children elements of VersionOverrides.</span></span>
 
-<span data-ttu-id="6eb1a-126">Se não houver um elemento `<xs:sequence>` ou *se houver*, mas o elemento filho não estiver relacionado, mesmo que a respectiva documentação de referência indique que ele *esteja* válido para o pai, então a definição de tipo complexo do elemento pai terá sido estendida com elementos filho adicionais em outro local no arquivo XSD.</span><span class="sxs-lookup"><span data-stu-id="6eb1a-126">If there is no `<xs:sequence>` element, or there *is* but the child element is not listed (even though the reference documentation for the child element indicates that it *is* valid for the parent), then the parent element's complex type definition has been extended with additional child elements somewhere else in the XSD file.</span></span> <span data-ttu-id="6eb1a-127">Por exemplo, a definição do tipo complexo `OfficeApp` não relaciona `Requirements` como um possível filho.</span><span class="sxs-lookup"><span data-stu-id="6eb1a-127">For example, the definition for the `OfficeApp` complex type does not list `Requirements` as a possible child.</span></span> <span data-ttu-id="6eb1a-128">Mas posteriormente no arquivo, dentro da definição do tipo complexo `TaskPaneApp`, a definição de `OfficeApp` será estendida e `Requirements` será adicionado como um elemento filho adicional válido.</span><span class="sxs-lookup"><span data-stu-id="6eb1a-128">But later in the file (within the definition for the `TaskPaneApp` complex type), the definition of `OfficeApp` is extended and `Requirements` is added as an additional valid child.</span></span>
+## <a name="basic-mail-add-in-element-ordering"></a><span data-ttu-id="dca24-120">Ordenação básica de elementos de suplemento de email</span><span class="sxs-lookup"><span data-stu-id="dca24-120">Basic mail add-in element ordering</span></span>
 
-<span data-ttu-id="6eb1a-129">Para encontrar as definições estendidas, faça o seguinte:</span><span class="sxs-lookup"><span data-stu-id="6eb1a-129">To find the extended definitions follow these steps:</span></span>
+```
+<OfficeApp xsi:type="MailApp">
+    <Id>
+    <AlternateId>
+    <Version>
+    <ProviderName>
+    <DefaultLocale>
+    <DisplayName>
+        <Override>
+    <Description>
+        <Override>
+    <IconUrl>
+        <Override>
+    <HighResolutionIconUrl>
+        <Override>
+    <SupportUrl>
+    <AppDomains>
+        <AppDomain>
+    <Hosts>
+        <Host>
+    <Requirements>
+    <Sets>
+        <Set>
+    <FormSettings>
+        <Form>
+        <DesktopSettings>
+            <SourceLocation>
+            <RequestedHeight>
+        <TabletSettings>
+            <SourceLocation>
+            <RequestedHeight>
+        <PhoneSettings>
+            <SourceLocation>
+    <Permissions>
+    <Rule>
+    <DisableEntityHighlighting>
+    <VersionOverrides>*
+```
 
-1. <span data-ttu-id="6eb1a-130">No início do arquivo, procure `<xs:extension base="PARENT_ELEMENT">`, em que PARENT_ELEMENT é o nome do elemento pai.</span><span class="sxs-lookup"><span data-stu-id="6eb1a-130">Starting at the top of the file, search for `<xs:extension base="PARENT_ELEMENT">`, where PARENT_ELEMENT is the name of the parent element.</span></span> <span data-ttu-id="6eb1a-131">Talvez haja mais de uma extensão.</span><span class="sxs-lookup"><span data-stu-id="6eb1a-131">There may be more than one extension.</span></span>
-2. <span data-ttu-id="6eb1a-132">Procure a extensão que seja relevante para o contexto no qual você está trabalhando.</span><span class="sxs-lookup"><span data-stu-id="6eb1a-132">Find the extension that is relevant to the context in which you are working.</span></span> <span data-ttu-id="6eb1a-133">Por exemplo, o tipo complexo `OfficeApp` está estendido dentro dos tipos complexos `ContentApp` e `MailApp`, bem como dentro do tipo complexo `TaskPaneApp`.</span><span class="sxs-lookup"><span data-stu-id="6eb1a-133">For example, the `OfficeApp` complex type is extended within the `ContentApp` and `MailApp` complex types as well as within the `TaskPaneApp` complex type.</span></span>
+<span data-ttu-id="dca24-121">\*Veja [ordenação de elemento de suplemento de email dentro do VersionOverrides ver. 1,0](#mail-add-in-element-ordering-within-versionoverrides-ver-10) e [email ordenação do elemento de suplemento em VersionOverrides ver. 1,1](#mail-add-in-element-ordering-within-versionoverrides-ver-11) para a ordenação dos elementos filhos de VersionOverrides.</span><span class="sxs-lookup"><span data-stu-id="dca24-121">\*See [Mail add-in element ordering within VersionOverrides Ver. 1.0](#mail-add-in-element-ordering-within-versionoverrides-ver-10) and [Mail add-in element ordering within VersionOverrides Ver. 1.1](#mail-add-in-element-ordering-within-versionoverrides-ver-11) for the ordering of children elements of VersionOverrides.</span></span>
 
-<span data-ttu-id="6eb1a-134">Cada `<xs:extension base="PARENT_ELEMENT">` no arquivo tem o próprio `<xs:sequence>` que relaciona elementos filho adicionais válidos para o pai.</span><span class="sxs-lookup"><span data-stu-id="6eb1a-134">Each `<xs:extension base="PARENT_ELEMENT">` in the file has its own `<xs:sequence>` that lists additional valid child elements for the parent.</span></span> <span data-ttu-id="6eb1a-135">Os elementos filho de uma lista estendida devem ser colocados sempre *após* os elementos filho da lista original, na definição de tipo complexo do pai.</span><span class="sxs-lookup"><span data-stu-id="6eb1a-135">Child elements on an extended list must always be *after* the child elements in the original list in the parent's complex type definition.</span></span>
+## <a name="basic-content-add-in-element-ordering"></a><span data-ttu-id="dca24-122">Ordenação de elemento de suplemento de conteúdo básico</span><span class="sxs-lookup"><span data-stu-id="dca24-122">Basic content add-in element ordering</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="6eb1a-136">Confira também</span><span class="sxs-lookup"><span data-stu-id="6eb1a-136">See also</span></span>
+```
+<OfficeApp xsi:type="ContentApp">
+    <Id>
+    <AlternateId>
+    <Version>
+    <ProviderName>
+    <DefaultLocale>
+    <DisplayName>
+        <Override>
+    <Description>
+        <Override>
+    <IconUrl >
+        <Override>
+    <HighResolutionIconUrl>
+        <Override>
+    <SupportUrl>
+    <AppDomains>
+        <AppDomain>
+    <Hosts>
+        <Host>
+    <Requirements>
+    <Sets>
+        <Set>
+    <Methods>
+        <Method>
+    <DefaultSettings>
+        <SourceLocation>
+            <Override>
+    <RequestedWidth>
+    <RequestedHeight>
+    <Permissions>
+    <AllowSnapshot>
+    <VersionOverrides>
+```
 
-- [<span data-ttu-id="6eb1a-137">Referência de esquema para manifestos de Suplementos do Office (versão 1.1)</span><span class="sxs-lookup"><span data-stu-id="6eb1a-137">Schema reference for Office Add-ins manifests (v1.1)</span></span>](../develop/add-in-manifests.md)
+## <a name="task-pane-add-in-element-ordering-within-versionoverrides"></a><span data-ttu-id="dca24-123">Ordenação do elemento do suplemento do painel de tarefas no VersionOverrides</span><span class="sxs-lookup"><span data-stu-id="dca24-123">Task pane add-in element ordering within VersionOverrides</span></span>
+
+```
+<VersionOverrides>
+    <Description>
+    <Requirements>
+        <Sets>
+            <Set>
+      <Hosts>
+        <Host>
+            <AllFormFactors>
+            <ExtensionPoint>
+                <Script>
+                    <SourceLocation>
+                <Page>
+                    <SourceLocation>
+                <Metadata>
+                    <SourceLocation>
+                <Namespace>
+            <DesktopFormFactor>
+            <GetStarted>
+                <Title>
+                <Description>
+                <LearnMoreUrl>
+            <FunctionFile>
+            <ExtensionPoint>
+                <OfficeTab>
+                    <Group>
+                        <Label>
+                        <Icon>
+                            <Image>
+                        <Control>
+                        <Label>
+                        <Supertip>
+                            <Title>
+                            <Description>
+                        <Icon>
+                            <Image>  
+                        <Action>
+                            <TaskpaneId>
+                            <SourceLocation>
+                            <Title>
+                            <FunctionName>
+                        <Items>
+                            <Item>
+                            <Label>
+                            <Supertip>
+                                <Title>
+                                <Description>
+                            <Action>
+                                <TaskpaneId>
+                                <SourceLocation>
+                                <Title>
+                                <FunctionName>
+                <CustomTab>
+                    <Group>
+                        <Label>
+                        <Icon>
+                            <Image>
+                        <Control>
+                        <Label>
+                        <Supertip>
+                            <Title>
+                            <Description>
+                        <Icon>
+                            <Image>  
+                        <Action>
+                            <TaskpaneId>
+                            <SourceLocation>
+                            <Title>
+                            <FunctionName>
+                        <Items>
+                            <Item>
+                                <Label>
+                                <Supertip>
+                                    <Title>
+                                    <Description>
+                                <Action>
+                                    <TaskpaneId>
+                                    <SourceLocation>
+                                    <Title>
+                                    <FunctionName>
+                    <Label>
+                <OfficeMenu>
+                    <Control>
+                        <Label>
+                        <Supertip>
+                            <Title>
+                            <Description>
+                        <Icon>
+                            <Image>  
+                        <Action>
+                            <TaskpaneId>
+                            <SourceLocation>
+                            <Title>
+                            <FunctionName>
+                        <Items>
+                            <Item>
+                                <Label>
+                                <Supertip>
+                                    <Title>
+                                    <Description>
+                                <Action>
+                                    <TaskpaneId>
+                                    <SourceLocation>
+                                    <Title>
+                                    <FunctionName>
+        <Resources>
+            <Images>
+                <Image>
+                    <Override>
+            <Urls>
+                <Url>
+                    <Override>
+            <ShortStrings>
+                <String>
+                    <Override>
+            <LongStrings>
+                <String>
+                    <Override>
+        <WebApplicationInfo>
+            <Id>
+            <MsaId>
+            <Resource>
+            <Scopes>
+                <Scope>
+            <Authorizations>
+                <Authorization>
+                    <Resource>
+                    <Scopes>
+                        <Scope>
+        <EquivalentAddins>
+            <EquivalentAddin>
+                <ProgId>
+                <DisplayName>
+                <FileName>
+                <Type>
+```
+
+## <a name="mail-add-in-element-ordering-within-versionoverrides-ver-10"></a><span data-ttu-id="dca24-124">Ordenação do elemento de suplemento de email no VersionOverrides ver.</span><span class="sxs-lookup"><span data-stu-id="dca24-124">Mail add-in element ordering within VersionOverrides Ver.</span></span> <span data-ttu-id="dca24-125">1.0</span><span class="sxs-lookup"><span data-stu-id="dca24-125">1.0</span></span>
+
+```
+<VersionOverrides>
+    <Description>
+    <Requirements>
+        <Sets>
+            <Set>
+    <Hosts>
+        <Host>
+            <DesktopFormFactor>
+            <ExtensionPoint>
+                <OfficeTab>
+                    <Group>
+                        <Label>
+                        <Control>
+                            <Label>
+                            <Supertip>
+                                <Title>
+                                <Description>
+                            <Icon>
+                                <Image>
+                            <Action>
+                                <SourceLocation>
+                                <FunctionName>
+                <CustomTab>
+                    <Group>
+                        <Label>
+                        <Icon>
+                            <Image>
+                        <Control>
+                            <Label>
+                            <Supertip>
+                                <Title>
+                                <Description>
+                            <Icon>
+                                <Image>  
+                            <Action>
+                                <TaskpaneId>
+                                <SourceLocation>
+                                <Title>
+                                <FunctionName>
+                            <Items>
+                                <Item>
+                                    <Label>
+                                    <Supertip>
+                                        <Title>
+                                        <Description>
+                                    <Action>
+                                        <TaskpaneId>
+                                        <SourceLocation>
+                                        <Title>
+                                        <FunctionName>
+                    <Label>
+                <OfficeMenu>
+                    <Control>
+                        <Label>
+                        <Supertip>
+                            <Title>
+                            <Description>
+                        <Icon>
+                            <Image>
+                        <Action>
+                            <TaskpaneId>
+                            <SourceLocation>
+                            <Title>
+                            <FunctionName>
+                        <Items>
+                            <Item>
+                                <Label>
+                                <Supertip>
+                                    <Title>
+                                    <Description>
+                                <Action>
+                                    <TaskpaneId>
+                                    <SourceLocation>
+                                    <Title>
+                                    <FunctionName>
+    <Resources>
+        <Images>
+            <Image>
+                <Override>
+        <Urls>
+            <Url>
+                <Override>
+        <ShortStrings>
+            <String>
+                <Override>
+        <LongStrings>
+            <String>
+                <Override>
+    <VersionOverrides>*
+```
+
+<span data-ttu-id="dca24-126">\*Um VersionOverrides com `type` valor `VersionOverridesV1_1`, em vez `VersionOverridesV1_0`de, pode ser aninhado no final da VersionOverrides externa.</span><span class="sxs-lookup"><span data-stu-id="dca24-126">\* A VersionOverrides with `type` value `VersionOverridesV1_1`, instead of `VersionOverridesV1_0`, can be nested at the end of the outer VersionOverrides.</span></span> <span data-ttu-id="dca24-127">Veja [ordenação de elemento de suplemento de email em VersionOverrides ver. 1,1](#mail-add-in-element-ordering-within-versionoverrides-ver-11) para a ordenação `VersionOverridesV1_1`dos elementos no.</span><span class="sxs-lookup"><span data-stu-id="dca24-127">See [Mail add-in element ordering within VersionOverrides Ver. 1.1](#mail-add-in-element-ordering-within-versionoverrides-ver-11) for the ordering of elements in `VersionOverridesV1_1`.</span></span>
+
+## <a name="mail-add-in-element-ordering-within-versionoverrides-ver-11"></a><span data-ttu-id="dca24-128">Ordenação do elemento de suplemento de email no VersionOverrides ver.</span><span class="sxs-lookup"><span data-stu-id="dca24-128">Mail add-in element ordering within VersionOverrides Ver.</span></span> <span data-ttu-id="dca24-129">1.1</span><span class="sxs-lookup"><span data-stu-id="dca24-129">1.1</span></span>
+
+```
+<VersionOverrides>
+    <Description>
+    <Requirements>
+    <Sets>
+        <Set>
+    <Hosts>
+    <Host>
+        <DesktopFormFactor>
+        <ExtensionPoint>
+            <OfficeTab>
+                <Group>
+                    <Label>
+                    <Control>
+                        <Label>
+                        <Supertip>
+                            <Title>
+                            <Description>
+                        <Icon>
+                            <Image>
+                        <Action>
+                            <SourceLocation>
+                            <FunctionName>
+            <CustomTab>
+                <Group>
+                    <Label>
+                    <Icon>
+                        <Image>
+                    <Control>
+                        <Label>
+                        <Supertip>
+                            <Title>
+                            <Description>
+                        <Icon>
+                            <Image>  
+                        <Action>
+                            <TaskpaneId>
+                            <SourceLocation>
+                            <Title>
+                            <FunctionName>
+                        <Items>
+                            <Item>
+                                <Label>
+                                <Supertip>
+                                    <Title>
+                                    <Description>
+                                <Action>
+                                    <TaskpaneId>
+                                    <SourceLocation>
+                                    <Title>
+                                    <FunctionName>
+                <Label>
+            <OfficeMenu>
+                <Control>
+                    <Label>
+                    <Supertip>
+                        <Title>
+                        <Description>
+                    <Icon>
+                        <Image>  
+                    <Action>
+                        <TaskpaneId>
+                        <SourceLocation>
+                        <Title>
+                        <FunctionName>
+                    <Items>
+                        <Item>
+                            <Label>
+                            <Supertip>
+                                <Title>
+                                <Description>
+                            <Action>
+                                <TaskpaneId>
+                                <SourceLocation>
+                                <Title>
+                                <FunctionName>
+                                <SourceLocation>
+            <SourceLocation>
+            <Label>
+            <CommandSurface>
+    <Resources>
+        <Images>
+            <Image>
+                <Override>
+        <Urls>
+            <Url>
+                <Override>
+        <ShortStrings>
+            <String>
+                <Override>
+        <LongStrings>
+            <String>
+                <Override>
+    <WebApplicationInfo>
+        <Id>
+        <Resource>
+        <Scopes>
+            <Scope>
+```
+
+## <a name="see-also"></a><span data-ttu-id="dca24-130">Confira também</span><span class="sxs-lookup"><span data-stu-id="dca24-130">See also</span></span>
+
+- [<span data-ttu-id="dca24-131">Referência de esquema para manifestos de Suplementos do Office (versão 1.1)</span><span class="sxs-lookup"><span data-stu-id="dca24-131">Schema reference for Office Add-ins manifests (v1.1)</span></span>](../develop/add-in-manifests.md)
