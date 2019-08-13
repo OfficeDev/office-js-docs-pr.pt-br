@@ -4,12 +4,12 @@ description: ''
 ms.date: 06/20/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 8935a22a631699ac0314aac89936fbd8c2552212
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: e343e8eec053bb41cc4438ef42ef0a420319be94
+ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128563"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "36302585"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>Criar um suplemento do painel de tarefas do Excel usando o Vue
 
@@ -58,7 +58,7 @@ Cada suplemento requer um arquivo de manifesto para definir os recursos e config
     ```
 
     - **Escolha o tipo de projeto:** `Office Add-in project containing the manifest only`
-    - **Qual será o nome do suplemento?** `My Office Add-in`
+    - **Qual será o nome do suplemento?** `my-office-add-in`
     - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Excel`
 
     ![Gerador do Yeoman](../images/yo-office-manifest-only-vue.png)
@@ -77,7 +77,7 @@ Para ativar o HTTPS para o seu aplicativo, abra o arquivo **package.json** na pa
 
 ## <a name="update-the-app"></a>Atualizar o aplicativo
 
-1. Em seu editor de código, abra a pasta **My Office Add-in** que o Yo Office criou na raiz do seu projeto do Vue. Nessa pasta, você verá o arquivo de manifesto que define as configurações para o suplemento: **manifest.xml**.
+1. Em seu editor de código, abra a pasta **my-office-add-in** que o Yo Office criou na raiz do seu projeto do Vue. Nessa pasta, você verá o arquivo de manifesto que define as configurações para o suplemento: **manifest.xml**.
 
 2. Abra o arquivo de manifesto, substitua todas as ocorrências de `https://localhost:3000` por `https://localhost:8080` e salve o arquivo.
 

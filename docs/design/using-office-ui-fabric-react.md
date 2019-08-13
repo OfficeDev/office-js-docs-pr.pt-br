@@ -3,12 +3,12 @@ title: Usar o Office UI Fabric React em Suplementos do Office
 description: Aprenda a usar o Office UI Fabric React em suplementos do Office.
 ms.date: 07/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 7166e9a13c89a1ef2a52659bf31561574f544420
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: c738521b82d0cb8f234fd28dc8bb24740962b817
+ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771331"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "36302593"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>Usar o Office UI Fabric React em Suplementos do Office
 
@@ -29,6 +29,8 @@ Você usará o gerador Yeoman para Suplementos do Office para criar um projeto d
 
 ### <a name="create-the-project"></a>Criar o projeto
 
+[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
+
 Use o gerador Yeoman para criar um projeto de suplemento do Word. Execute o comando a seguir e responda aos prompts da seguinte forma:
 
 ```command&nbsp;line
@@ -37,19 +39,17 @@ yo office
 
 - **Escolha o tipo de projeto:** `Office Add-in Task Pane project using React framework`
 - **Escolha o tipo de script:** `TypeScript`
-- **Qual será o nome do suplemento?** `My Office Add-in`
+- **Qual será o nome do suplemento?** `my-office-add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Word`
 
-![Gerador do Yeoman](../images/yo-office-word-react.png)
-
-Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Nó de suporte.
+Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
 ### <a name="try-it-out"></a>Experimente
 
 1. Navegue até a pasta raiz do projeto.
 
     ```command&nbsp;line
-    cd "My Office Add-in"
+    cd "my-office-add-in"
     ```
 
 2. Conclua as etapas a seguir para iniciar o servidor Web local e fazer o sideload do seu suplemento.
