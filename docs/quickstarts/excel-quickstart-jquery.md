@@ -4,12 +4,12 @@ description: Saiba como criar um Suplemento do Excel simples usando a API JS do 
 ms.date: 07/17/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 568f27a596fda77f263a53b551eefebc287e68e3
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 781e2c3e7cd563e6ebeeaff3e8bf0624b64aec76
+ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771860"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "36308047"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Criar um suplemento do painel de tarefas do Excel
 
@@ -27,6 +27,8 @@ Neste artigo, você passará pelo processo de criação de um suplemento do pain
 
 ### <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
+[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
+
 Use o gerador Yeoman para criar um projeto de suplemento do Excel. Execute o comando a seguir e responda aos prompts da seguinte forma:
 
 ```command&nbsp;line
@@ -35,10 +37,8 @@ yo office
 
 - **Escolha o tipo de projeto:** `Office Add-in Task Pane project`
 - **Escolha o tipo de script:** `Javascript`
-- **Qual será o nome do suplemento?** `My Office Add-in`
+- **Qual será o nome do suplemento?** `my-office-add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Excel`
-
-![Gerador do Yeoman](../images/yo-office-excel.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -51,7 +51,7 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 1. Navegue até a pasta raiz do projeto.
 
     ```command&nbsp;line
-    cd "My Office Add-in"
+    cd "my-office-add-in"
     ```
 
 2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 

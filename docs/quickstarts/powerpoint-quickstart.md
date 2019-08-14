@@ -4,12 +4,12 @@ description: Saiba como criar um Suplemento do PowerPoint simples usando a API J
 ms.date: 07/17/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 5b946d1c4ae08a5d0fcd2213f249bd2c7e8b9204
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: c2e6d32de346b13e2dc353ca758fa7839c8ace87
+ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771846"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "36308054"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>Crie o seu primeiro suplemento do painel de tarefas do PowerPoint
 
@@ -27,6 +27,8 @@ Neste artigo, você passará pelo processo de criação de um suplemento do pain
 
 ### <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
+[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
+
 Use o gerador Yeoman para criar um projeto do suplemento do PowerPoint. Execute o comando a seguir e responda aos prompts da seguinte forma:
 
 ```command&nbsp;line
@@ -35,10 +37,8 @@ yo office
 
 - **Escolha o tipo de projeto:** `Office Add-in Task Pane project`
 - **Escolha o tipo de script:** `Javascript`
-- **Qual será o nome do suplemento?** `My Office Add-in`
+- **Qual será o nome do suplemento?** `my-office-add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `PowerPoint`
-
-![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-powerpoint.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -51,10 +51,10 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 1. Navegue até a pasta raiz do projeto.
 
     ```command&nbsp;line
-    cd "My Office Add-in"
+    cd "my-office-add-in"
     ```
 
-2. Conclua as etapas a seguir para iniciar o servidor da web local e fazer o sideload do seu suplemento.
+2. Conclua as etapas a seguir para iniciar o servidor Web local e fazer o sideload do seu suplemento.
 
     > [!NOTE]
     > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
