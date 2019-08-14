@@ -4,12 +4,12 @@ description: ''
 ms.date: 05/02/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 6c7baf237c4ca0be0e11428dcb2661b7b86ed39e
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 5d27b7d70fb013ca15115af3ad550a604ce10bb9
+ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771839"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "36308033"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-angular"></a>Criar um suplemento do painel de tarefas do Excel usando o Angular
 
@@ -21,6 +21,8 @@ Neste artigo, você passará pelo processo de criação de um suplemento do pain
 
 ## <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
+[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
+
 Use o gerador Yeoman para criar um projeto de suplemento do Excel. Execute o comando a seguir e responda aos prompts da seguinte forma:
 
 ```command&nbsp;line
@@ -29,10 +31,8 @@ yo office
 
 - **Escolha o tipo de projeto:** `Office Add-in Task Pane project using Angular framework`
 - **Escolha o tipo de script:** `TypeScript`
-- **Qual será o nome do suplemento?** `My Office Add-in`
+- **Qual será o nome do suplemento?** `my-office-add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Excel`
-
-![Gerador do Yeoman](../images/yo-office-excel-angular-2.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -50,7 +50,7 @@ O projeto de suplemento que você criou com o gerador do Yeoman contém um exemp
 1. Navegue até a pasta raiz do projeto.
 
     ```command&nbsp;line
-    cd "My Office Add-in"
+    cd "my-office-add-in"
     ```
 
 2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
