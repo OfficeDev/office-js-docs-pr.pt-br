@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos de API JavaScript do Outlook
 description: ''
-ms.date: 07/18/2019
+ms.date: 08/13/2019
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 71cea37784bd3668d3cb44a136ce12e78256f8ec
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: 010dd0519ff6b82f29e2ee7c3cdebb9a64106ac9
+ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35804629"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "36395656"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Conjuntos de requisitos de API JavaScript do Outlook
 
@@ -29,9 +29,14 @@ Todas as APIs do Outlook pertencem ao [conjunto de requisitos](/office/dev/add-i
 
 A especificação de uma versão mínima de conjunto de requisitos controla em quais clientes do Outlook o suplemento aparecerá. Se um cliente não oferece suporte para o conjunto de requisitos mínimos, ele não carrega o suplemento. Por exemplo, se for especificada a versão 1.3 do conjunto de requisitos, significa que o suplemento não aparecerá nos clientes do Outlook incompatíveis com a versão 1.3.
 
+> [!NOTE]
+> Para usar APIs em qualquer um dos conjuntos de requisitos numerados, faça referência à biblioteca **production** no CDN (https://appsforoffice.microsoft.com/lib/1/hosted/office.js).
+>
+> Para obter informações sobre o uso de APIs de visualização, confira a seção [Usando APIs de visualização ](#using-preview-apis), mais adiante neste artigo.
+
 ## <a name="using-apis-from-later-requirement-sets"></a>Usar APIs de conjuntos de requisitos posteriores
 
-Definir um conjunto de requisitos não limita as APIs disponíveis que o suplemento pode usar. Por exemplo, se o suplemento especificar o conjunto de requisitos 1.1, mas estiver sendo executado em um cliente Outlook que suporte 1.3, o suplemento poderá usar APIs do conjunto de requisitos 1.3.
+Definir um conjunto de requisitos não limita as APIs disponíveis que o suplemento pode usar. Por exemplo, se o suplemento especificar o conjunto de requisitos 1.1, mas estiver sendo executado em um cliente do Outlook que dá suporte à versão 1.3, o suplemento poderá usar APIs do conjunto de requisitos 1.3.
 
 Para usar uma API mais recente, os desenvolvedores podem verificar se um determinado host oferece suporte ao conjunto de requisitos, fazendo o seguinte.
 
