@@ -1,14 +1,14 @@
 ---
 title: Namespace do Office – conjunto de requisitos de visualização
 description: ''
-ms.date: 04/12/2019
+ms.date: 08/13/2019
 localization_priority: Normal
-ms.openlocfilehash: 7effc930d196aa009c3c779b702e082ae388fada
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: df4b47f57d634f6c99ce862ed1c0e96d87be0425
+ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451952"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "36395663"
 ---
 # <a name="office"></a>Office
 
@@ -25,20 +25,20 @@ O namespace do Office fornece interfaces compartilhadas que são usadas pelos su
 
 | Membro | Tipo |
 |--------|------|
-| [AsyncResultStatus](#asyncresultstatus-string) | Member |
-| [CoercionType](#coerciontype-string) | Member |
-| [EventType](#eventtype-string) | Member |
+| [AsyncResultStatus](#asyncresultstatus-string) | Membro |
+| [CoercionType](#coerciontype-string) | Membro |
+| [EventType](#eventtype-string) | Membro |
 | [SourceProperty](#sourceproperty-string) | Membro |
 
 ### <a name="namespaces"></a>Namespaces
 
 [context](office.context.md): fornece interfaces compartilhadas do namespace de contexto da API de Suplementos do Office para uso na API de suplemento do Outlook.
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmenttype): inclui as enumerações ItemType, EntityType, AttachmentType, RecipientType, ResponseType e ItemNotificationMessageType.
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat): inclui um número de enumerações, por exemplo, `ItemType` `EntityType` `AttachmentType` `RecipientType` `ResponseType`,,,,, e `ItemNotificationMessageType`.
 
-### <a name="members"></a>Membros
+### <a name="members"></a>Members
 
-####  <a name="asyncresultstatus-string"></a>AsyncResultStatus :String
+#### <a name="asyncresultstatus-string"></a>AsyncResultStatus: cadeia de caracteres
 
 Especifica o resultado de uma chamada assíncrona.
 
@@ -48,7 +48,7 @@ Especifica o resultado de uma chamada assíncrona.
 
 ##### <a name="properties"></a>Propriedades:
 
-|Name| Tipo| Descrição|
+|Nome| Tipo| Descrição|
 |---|---|---|
 |`Succeeded`| String|A chamada foi bem-sucedida.|
 |`Failed`| String|Falha na chamada.|
@@ -63,9 +63,9 @@ Especifica o resultado de uma chamada assíncrona.
 ---
 ---
 
-####  <a name="coerciontype-string"></a>CoercionType :String
+#### <a name="coerciontype-string"></a>CoercionType: cadeia de caracteres
 
-Especifica como forçar os dados retornados ou definir de acordo com o método chamado.
+Especifica como forçar dados retornados ou definidos pelo método invocado.
 
 ##### <a name="type"></a>Tipo
 
@@ -73,7 +73,7 @@ Especifica como forçar os dados retornados ou definir de acordo com o método c
 
 ##### <a name="properties"></a>Propriedades:
 
-|Name| Tipo| Descrição|
+|Nome| Tipo| Descrição|
 |---|---|---|
 |`Html`| String|Solicita que os dados sejam retornados no formato HTML.|
 |`Text`| String|Solicita que os dados sejam retornados no formato de texto.|
@@ -88,7 +88,7 @@ Especifica como forçar os dados retornados ou definir de acordo com o método c
 ---
 ---
 
-####  <a name="eventtype-string"></a>EventType :String
+#### <a name="eventtype-string"></a>EventType: cadeia de caracteres
 
 Especifica o evento associado a um manipulador de eventos.
 
@@ -98,7 +98,7 @@ Especifica o evento associado a um manipulador de eventos.
 
 ##### <a name="properties"></a>Propriedades:
 
-| Name | Tipo | Descrição | Conjunto de requisitos mínimo |
+| Nome | Tipo | Descrição | Conjunto de requisitos mínimo |
 |---|---|---|---|
 |`AppointmentTimeChanged`| String | A data ou hora do compromisso ou série selecionado foi alterada. | 1.7 |
 |`AttachmentsChanged`| String | Um anexo foi adicionado ou removido do item. | Visualização |
@@ -118,7 +118,7 @@ Especifica o evento associado a um manipulador de eventos.
 ---
 ---
 
-####  <a name="sourceproperty-string"></a>SourceProperty :String
+#### <a name="sourceproperty-string"></a>SourceProperty: cadeia de caracteres
 
 Especifica a origem dos dados retornados pelo método chamado.
 
@@ -128,7 +128,7 @@ Especifica a origem dos dados retornados pelo método chamado.
 
 ##### <a name="properties"></a>Propriedades:
 
-|Name| Tipo| Descrição|
+|Nome| Tipo| Descrição|
 |---|---|---|
 |`Body`| String|A origem dos dados é o corpo de uma mensagem.|
 |`Subject`| Cadeia de caracteres|A origem dos dados é o assunto de uma mensagem.|

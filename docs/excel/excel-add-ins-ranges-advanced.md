@@ -1,14 +1,14 @@
 ---
 title: Trabalhar com intervalos usando a API JavaScript do Excel (avançado)
 description: ''
-ms.date: 04/15/2019
+ms.date: 04/30/2019
 localization_priority: Normal
-ms.openlocfilehash: aacbe930e2cf3da4d10b61bfe8f34efe1094c113
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: c8fbe1dcc75080c932b4c3e2946fe62747d35c6b
+ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448400"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "36395593"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Trabalhar com intervalos usando a API JavaScript do Excel (avançado)
 
@@ -62,17 +62,11 @@ Excel.run(function (context) {
 
 Seu suplemento terá que formatar os intervalos para exibir as datas em um formato mais legível. O exemplo de `"[$-409]m/d/yy h:mm AM/PM;@"` exibe a hora como "3/12/18 15:57". Para obter mais informações sobre formatos de números de data e hora, confira as "Diretrizes para formatos de data e hora" no artigo [Diretrizes de revisão para personalizar um formato de número](https://support.office.com/article/review-guidelines-for-customizing-a-number-format-c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5).
 
-## <a name="work-with-multiple-ranges-simultaneously-preview"></a>Trabalhar simultaneamente com vários intervalos (Visualização)
-
-> [!NOTE]
-> O `RangeAreas` objeto está disponível atualmente apenas na visualização pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="work-with-multiple-ranges-simultaneously"></a>Trabalhar com vários intervalos simultaneamente
 
 O `RangeAreas` objeto permite ao suplemento executar operações em vários intervalos de uma só vez. Esses intervalos poderão ser contíguos, mas não precisam ser. `RangeAreas` são descritas ainda mais no artigo [Trabalhar com vários intervalos simultaneamente em suplementos do Excel](excel-add-ins-multiple-ranges.md).
 
-## <a name="find-special-cells-within-a-range-preview"></a>Localizar células especiais em um intervalo (visualização)
-
-> [!NOTE]
-> Os `getSpecialCells` métodos `getSpecialCellsOrNullObject` e estão atualmente disponíveis somente na visualização pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="find-special-cells-within-a-range"></a>Localizar células especiais em um intervalo
 
 As `Range.getSpecialCells()` e `Range.getSpecialCellsOrNullObject()` métodos localizar intervalos com base nas características de suas células e os tipos de valores de suas células. Os dois métodos retornam `RangeAreas` objetos. Aqui estão as assinaturas dos métodos do arquivo de tipos de dados TypeScript:
 
@@ -178,10 +172,7 @@ Excel.run(function (context) {
 })
 ```
 
-## <a name="copy-and-paste-preview"></a>Copiar e colar (visualização)
-
-> [!NOTE]
-> A função `Range.copyFrom` só está disponível atualmente na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="copy-and-paste"></a>Copy and paste
 
 A função de `copyFrom` do intervalo replica o comportamento de copiar e colar da IU do Excel. O objeto de intervalo para o qual a função`copyFrom` é chamada é o destino.
 A fonte a ser copiada é passada como um intervalo ou um endereço de cadeia de caracteres que representa um intervalo.
@@ -190,7 +181,7 @@ O exemplo a seguir copia dados de **A1:E1** para o intervalo que começa em **G1
 ```js
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
-    // copy a range starting at a single cell destination
+    // copy everything from "A1:E1" into "G1" and the cells afterwards ("G1:K1")
     sheet.getRange("G1").copyFrom("A1:E1");
     return context.sync();
 }).catch(errorHandlerFunction);
@@ -242,10 +233,7 @@ Excel.run(function (context) {
 
 ![Os dados no Excel após o método de copiar do intervalo foram executados](../images/excel-range-copyfrom-skipblanks-after.png)
 
-## <a name="remove-duplicates-preview"></a>Remover duplicatas (visualização)
-
-> [!NOTE]
-> A função `removeDuplicates` do objeto do intervalo só está disponível atualmente na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="remove-duplicates"></a>Remover duplicatas
 
 A função do objeto intervalo `removeDuplicates` remove linhas com entradas duplicadas em determinadas colunas. A função passa por cada linha no intervalo do índice de menor valor até o índice de maior valor no intervalo (de cima para baixo). Uma linha é excluída se um valor em sua coluna ou colunas especificadas aparecer mais cedo no intervalo. Linhas no intervalo abaixo da linha excluída são deslocadas para cima. `removeDuplicates` não afeta a posição de células fora do intervalo.
 
