@@ -1,15 +1,15 @@
 ---
 title: APIs de visualização do JavaScript para Excel
 description: Detalhes sobre as futuras APIs JavaScript do Excel
-ms.date: 08/06/2019
+ms.date: 08/15/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 4362a5e13e0031408236f34c718f0fcb3c4527e2
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: c0b0a5757df2f5766f0e29b599e3e9b36dfd3983
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268730"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477903"
 ---
 # <a name="excel-javascript-preview-apis"></a>APIs de visualização do JavaScript para Excel
 
@@ -17,10 +17,7 @@ As novas APIs do JavaScript para Excel são introduzidas pela primeira vez na "v
 
 A primeira tabela fornece um resumo conciso das APIs e, a tabela subsequente, fornece uma lista detalhada.
 
-> [!NOTE]
-> As APIs de visualização estão sujeitas a alterações e não se destinam ao uso em um ambiente de produção. Recomendamos que você experimente apenas em ambiente de teste e desenvolvimento. Não use APIs de visualização em um ambiente de produção ou em documentos essenciais aos negócios.
->
-> Para usar as APIs de visualização, você deve referenciar a biblioteca **beta** no CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) e também pode ser necessário ingressar no programa Office Insider para obter uma compilação recente do Office.
+[!INCLUDE [Information about using preview APIs](../../includes/using-preview-apis-host.md)]
 
 | Área de recurso | Descrição | Objetos relevantes |
 |:--- |:--- |:--- |

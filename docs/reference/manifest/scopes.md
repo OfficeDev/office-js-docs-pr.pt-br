@@ -1,24 +1,26 @@
 ---
 title: Elemento Scopes no arquivo de manifesto
 description: ''
-ms.date: 10/09/2018
+ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: cdc9ebeb6fe4167a5ed5e9407f6ecc82d5b8d507
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 1e36bdcd0cdcaa8c842e924c2543d56bdc4e26a7
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771783"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477730"
 ---
 # <a name="scopes-element"></a>Elemento Scopes
 
-Contém permissões para o Microsoft Graph de que o suplemento precisa. AppSource usa o elemento escopos para criar uma caixa de diálogo de consentimento. Quando os usuários instalam o suplemento da Office Store, eles são solicitados a conceder ao suplemento permissões especificas para os dados do Microsoft Graph do usuário.
+Contém permissões que o suplemento precisa para um recurso externo, como o Microsoft Graph. Quando o Microsoft Graph é o recurso, AppSource usa o elemento de escopos para criar uma caixa de diálogo de consentimento. Quando os usuários instalam o suplemento da Office Store, eles são solicitados a conceder ao suplemento permissões especificas para os dados do Microsoft Graph do usuário.
+
+**** Escopos é um elemento filho dos elementos [WebApplicationInfo](webapplicationinfo.md) e [Authorization](authorization.md) no manifesto.
 
 ## <a name="child-elements"></a>Elementos filho
 
-|  Elemento |  Tipo  |  Descrição  |
+|  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **Escopo**                |  cadeia de caracteres     |   O nome de uma permissão para o Microsoft Graph; por exemplo, Files.Read.All. |
+|  **Escopo**                |  Sim     |   O nome de uma permissão; por exemplo, files. Read. All ou Profile. |
 
 ## <a name="example"></a>Exemplo
 

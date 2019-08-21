@@ -1,14 +1,14 @@
 ---
 title: Elemento VersionOverrides no arquivo de manifesto
 description: ''
-ms.date: 01/29/2019
+ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 897c2203ef6ae84911b7f269ee8a2c88aec36bd0
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: ce65cdced1b3cf885cee09732c2cda0081a53cfc
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32452064"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477877"
 ---
 # <a name="versionoverrides-element"></a>Elemento VersionOverrides
 
@@ -29,11 +29,13 @@ O elemento raiz que contém informações para os comandos de suplemento impleme
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
 |  **Descrição**    |  Não   |  Descreve o suplemento. Isso substitui o elemento `Description` em qualquer parte pai do manifesto. O texto da descrição está contido em um elemento filho do elemento **LongString**, contido no elemento [Resources](./resources.md). O atributo `resid` do elemento **Description** está definido como o valor do atributo `id` do elemento `String` que contém o texto.|
+| **EquivalentAddins** | Não | Especifica a compatibilidade com versões anteriores com um suplemento COM equivalente, XLL ou ambos. |
 |  **Requisitos**  |  Não   |  Especifica o conjunto de requisitos mínimos e a versão do Office.js exigida pelo suplemento. Isso substitui o elemento `Requirements` na parte pai do manifesto.|
 |  [Hosts](./hosts.md)                |  Sim  |  Especifica um conjunto de hosts do Office. O elemento filho Hosts substitui o elemento Hosts na parte pai do manifesto.  |
 |  [Resources](./resources.md)    |  Sim  | Define um conjunto de recursos (cadeias de caracteres, URLs e imagens) consultado por outros elementos do manifesto.|
+|  [EquivalentAddins](./equivalentaddins.md)    |  Não  | Especifica os suplementos nativos (COM/XLL) equivalentes ao suplemento Web. O suplemento Web não será ativado se um suplemento nativo equivalente estiver instalado.|
 |  **VersionOverrides**    |  Não  | Define comandos de suplemento em uma versão mais recente do esquema. Para saber mais, confira o tópico [Implementar várias versões](#implementing-multiple-versions). |
-|  **WebApplicationInfo**    |  Não  | Especifica detalhes sobre o aplicativo Web associado do suplemento. |
+|  [WebApplicationInfo](./webapplicationinfo.md)    |  Não  | Especifica detalhes sobre o registro do suplemento com emissores de token seguros, como o Azure Active Directory V 2.0. |
 
 ### <a name="versionoverrides-example"></a>Exemplo de VersionOverrides
 

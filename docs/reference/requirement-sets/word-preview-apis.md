@@ -1,24 +1,21 @@
 ---
 title: APIs de visualização JavaScript do Word
 description: Detalhes sobre as APIs JavaScript do Word futuro
-ms.date: 07/25/2019
+ms.date: 08/15/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 584b6ade9e4ae2d28b13eb717027361d85c4aa45
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 1bc6cf2f4b8d8bf876d0b28ead9643f14c81fde1
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064841"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477898"
 ---
 # <a name="word-javascript-preview-apis"></a>APIs de visualização JavaScript do Word
 
 Novas APIs JavaScript do Word são primeiro introduzidas em "Preview" e mais tarde se tornam parte de um conjunto de requisitos específico e numerado após o teste suficiente e o feedback do usuário é adquirido.
 
-> [!NOTE]
-> As APIs de visualização estão sujeitas a alterações e não se destinam ao uso em um ambiente de produção. Recomendamos que você experimente apenas em ambiente de teste e desenvolvimento. Não use APIs de visualização em um ambiente de produção ou em documentos essenciais aos negócios.
->
-> Para usar as APIs de visualização, você deve referenciar a biblioteca **beta** no CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) e também pode ser necessário ingressar no programa Office Insider para obter uma compilação recente do Office.
+[!INCLUDE [Information about using preview APIs](../../includes/using-preview-apis-host.md)]
 
 ## <a name="api-list"></a>Lista de APIs
 

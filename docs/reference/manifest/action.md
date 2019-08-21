@@ -3,12 +3,12 @@ title: Elemento Action no arquivo de manifesto
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 06b0e3aa9c25346135167ea8c34e69344ef9863d
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: db05538fdb3f655a61050e0eeafa0b5ceb0dfd18
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128521"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477933"
 ---
 # <a name="action-element"></a>Elemento Action
 
@@ -104,35 +104,27 @@ O exemplo a seguir mostra duas ações que usam um **TaskpaneId** diferente. Par
 
 Elemento opcional quando  **xsi:type** for "ShowTaskpane". Especifica o título personalizado do painel de tarefas desta ação.
 
-Os exemplos a seguir mostram duas ações distintas que usam o elemento **Title**.
+O exemplo a seguir mostra uma ação que usa o elemento **title** . Observe que você não atribui o **título** a uma cadeia de caracteres diretamente. Em vez disso, atribua um ID de recurso (Resid), que é definido na seção **recursos** do manifesto.
 
 ```xml
 <Action xsi:type="ShowTaskpane">
-<TaskpaneId>Office.AutoShowTaskpaneWithDocument</TaskpaneId>
-<SourceLocation resid="PG.Code.Url" />
-<Title resid="PG.CodeCommand.Title" />
+    <TaskpaneId>Office.AutoShowTaskpaneWithDocument</TaskpaneId>
+    <SourceLocation resid="PG.Code.Url" />
+    <Title resid="PG.CodeCommand.Title" />
 </Action>
-```
 
-```xml
-<Action xsi:type="ShowTaskpane">
-<SourceLocation resid="PG.Run.Url" />
-<Title resid="PG.RunCommand.Title" />
-</Action>
-```
-
-```xml
-<bt:Urls>
-<bt:Url id="PG.Code.Url" DefaultValue="https://localhost:3000?commands=1" />
-<bt:Url id="PG.Run.Url" DefaultValue="https://localhost:3000/run.html" />
-</bt:Urls>
-```
-
-```xml
-<bt:ShortStrings>
-<bt:String id="PG.CodeCommand.Title" DefaultValue="Code" />
-<bt:String id="PG.RunCommand.Title" DefaultValue="Run" />
-</bt:ShortStrings>
+ ... Other markup omitted ...
+<Resources>
+    <bt:Images> ...
+    </bt:Images>
+    <bt:Urls>
+        <bt:Url id="PG.Code.Url" DefaultValue="https://localhost:3000?commands=1" />
+    </bt:Urls>
+    <bt:ShortStrings>
+        <bt:String id="PG.CodeCommand.Title" DefaultValue="Code" />
+    </bt:ShortStrings>
+ ... Other markup omitted ...
+</Resources>
 ```
 
 ## <a name="supportspinning"></a>SupportsPinning
