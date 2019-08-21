@@ -3,12 +3,12 @@ title: Conceitos avançados de programação com a API JavaScript do Excel
 description: ''
 ms.date: 07/17/2019
 localization_priority: Priority
-ms.openlocfilehash: 0270ca30e0add99dadc9fcfaf4a71cdb3fb68f46
-ms.sourcegitcommit: 5e90a90175909e0f4f392f5c98bd1273f444fe49
+ms.openlocfilehash: a4639070ed74f9beb757de7c30d1d7e32a3e63fa
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "35851585"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477751"
 ---
 # <a name="advanced-programming-concepts-with-the-excel-javascript-api"></a>Conceitos avançados de programação com a API JavaScript do Excel
 
@@ -37,7 +37,7 @@ Os conjuntos de requisitos são grupos nomeados de membros da API. Um Suplemento
 O exemplo de código a seguir mostra como determinar se o aplicativo host, onde o suplemento está em execução, dá suporte ao conjunto de requisitos da API especificado.
 
 ```js
-if (Office.context.requirements.isSetSupported('ExcelApi', '1.3') === true) {
+if (Office.context.requirements.isSetSupported('ExcelApi', '1.3')) {
   /// perform actions
 }
 else {

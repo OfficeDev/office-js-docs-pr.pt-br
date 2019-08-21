@@ -1,26 +1,23 @@
 ---
 title: Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 description: ''
-ms.date: 08/13/2019
+ms.date: 08/15/2019
 localization_priority: Priority
-ms.openlocfilehash: b563d6cfc279a18a6a61f39c33a5ab42e1bd6984
-ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
+ms.openlocfilehash: 14f40830bb8f0f0e0232e6ae2305d60e400ca145
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "36395705"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477884"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 
 O subconjunto de APIs de suplemento do Outlook para as APIs JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um suplemento do Office.
 
-> [!NOTE]
-> Esta documentação destina-se a um modo de **visualização** de [conjunto de requisitos](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets). Esse conjunto de requisitos ainda não está totalmente implementado e os clientes não informarão precisamente o suporte para ele. Você não deve especificar a esse conjunto de requisitos em seu manifesto de suplemento. Os métodos e as propriedades que são apresentadas neste conjunto de requisitos devem ser testados individualmente para disponibilidade antes de usá-los.
->
-> Para usar APIs de visualização:
->
-> - Você deve fazer referência à biblioteca **beta** na CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js).
-> - Talvez seja preciso entrar no [programa Office Insider](https://products.office.com/office-insider) para acessar builds mais recentes do Office.
+> [!IMPORTANT]
+> Esta documentação destina-se a um modo de **visualização** de [conjunto de requisitos](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets). Esse conjunto de requisitos ainda não está totalmente implementado e os clientes não informarão precisamente o suporte para ele. Você não deve especificar a esse conjunto de requisitos em seu manifesto de suplemento.
+
+[!INCLUDE [Information about using preview APIs](../../../includes/using-preview-apis-host.md)]
 
 O modo de visualização do conjunto de requisitos inclui todos os recursos do [Conjunto de requisitos 1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md).
 
