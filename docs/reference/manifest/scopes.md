@@ -1,26 +1,28 @@
 ---
 title: Elemento Scopes no arquivo de manifesto
 description: ''
-ms.date: 10/09/2018
+ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: cdc9ebeb6fe4167a5ed5e9407f6ecc82d5b8d507
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 1e36bdcd0cdcaa8c842e924c2543d56bdc4e26a7
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771783"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477730"
 ---
-# <a name="scopes-element"></a><span data-ttu-id="4df7a-102">Elemento Scopes</span><span class="sxs-lookup"><span data-stu-id="4df7a-102">Scopes element</span></span>
+# <a name="scopes-element"></a><span data-ttu-id="24845-102">Elemento Scopes</span><span class="sxs-lookup"><span data-stu-id="24845-102">Scopes element</span></span>
 
-<span data-ttu-id="4df7a-103">Contém permissões para o Microsoft Graph de que o suplemento precisa.</span><span class="sxs-lookup"><span data-stu-id="4df7a-103">Contains permissions to Microsoft Graph that the add-in needs.</span></span> <span data-ttu-id="4df7a-104">AppSource usa o elemento escopos para criar uma caixa de diálogo de consentimento.</span><span class="sxs-lookup"><span data-stu-id="4df7a-104">AppSource uses the Scopes element to create a consent dialog box.</span></span> <span data-ttu-id="4df7a-105">Quando os usuários instalam o suplemento da Office Store, eles são solicitados a conceder ao suplemento permissões especificas para os dados do Microsoft Graph do usuário.</span><span class="sxs-lookup"><span data-stu-id="4df7a-105">When users install the add-in from the Store, they are prompted to grant the add-in the specified permissions to the user's Microsoft Graph data.</span></span>
+<span data-ttu-id="24845-103">Contém permissões que o suplemento precisa para um recurso externo, como o Microsoft Graph.</span><span class="sxs-lookup"><span data-stu-id="24845-103">Contains permissions that the add-in needs to an external resource, such as Microsoft Graph.</span></span> <span data-ttu-id="24845-104">Quando o Microsoft Graph é o recurso, AppSource usa o elemento de escopos para criar uma caixa de diálogo de consentimento.</span><span class="sxs-lookup"><span data-stu-id="24845-104">When Microsoft Graph is the resource, AppSource uses the Scopes element to create a consent dialog box.</span></span> <span data-ttu-id="24845-105">Quando os usuários instalam o suplemento da Office Store, eles são solicitados a conceder ao suplemento permissões especificas para os dados do Microsoft Graph do usuário.</span><span class="sxs-lookup"><span data-stu-id="24845-105">When users install the add-in from the Store, they are prompted to grant the add-in the specified permissions to the user's Microsoft Graph data.</span></span>
 
-## <a name="child-elements"></a><span data-ttu-id="4df7a-106">Elementos filho</span><span class="sxs-lookup"><span data-stu-id="4df7a-106">Child elements</span></span>
+<span data-ttu-id="24845-106">\*\*\*\* Escopos é um elemento filho dos elementos [WebApplicationInfo](webapplicationinfo.md) e [Authorization](authorization.md) no manifesto.</span><span class="sxs-lookup"><span data-stu-id="24845-106">**Scopes** is a child element of the [WebApplicationInfo](webapplicationinfo.md) and [Authorization](authorization.md) elements in the manifest.</span></span>
 
-|  <span data-ttu-id="4df7a-107">Elemento</span><span class="sxs-lookup"><span data-stu-id="4df7a-107">Element</span></span> |  <span data-ttu-id="4df7a-108">Tipo</span><span class="sxs-lookup"><span data-stu-id="4df7a-108">Type</span></span>  |  <span data-ttu-id="4df7a-109">Descrição</span><span class="sxs-lookup"><span data-stu-id="4df7a-109">Description</span></span>  |
+## <a name="child-elements"></a><span data-ttu-id="24845-107">Elementos filho</span><span class="sxs-lookup"><span data-stu-id="24845-107">Child elements</span></span>
+
+|  <span data-ttu-id="24845-108">Elemento</span><span class="sxs-lookup"><span data-stu-id="24845-108">Element</span></span> |  <span data-ttu-id="24845-109">Obrigatório</span><span class="sxs-lookup"><span data-stu-id="24845-109">Required</span></span>  |  <span data-ttu-id="24845-110">Descrição</span><span class="sxs-lookup"><span data-stu-id="24845-110">Description</span></span>  |
 |:-----|:-----|:-----|
-|  <span data-ttu-id="4df7a-110">**Escopo**</span><span class="sxs-lookup"><span data-stu-id="4df7a-110">**Scope**</span></span>                |  <span data-ttu-id="4df7a-111">cadeia de caracteres</span><span class="sxs-lookup"><span data-stu-id="4df7a-111">string</span></span>     |   <span data-ttu-id="4df7a-112">O nome de uma permissão para o Microsoft Graph; por exemplo, Files.Read.All.</span><span class="sxs-lookup"><span data-stu-id="4df7a-112">The name of a permission to Microsoft Graph; for example, Files.Read.All.</span></span> |
+|  <span data-ttu-id="24845-111">**Escopo**</span><span class="sxs-lookup"><span data-stu-id="24845-111">**Scope**</span></span>                |  <span data-ttu-id="24845-112">Sim</span><span class="sxs-lookup"><span data-stu-id="24845-112">Yes</span></span>     |   <span data-ttu-id="24845-113">O nome de uma permissão; por exemplo, files. Read. All ou Profile.</span><span class="sxs-lookup"><span data-stu-id="24845-113">The name of a permission; for example, Files.Read.All or profile.</span></span> |
 
-## <a name="example"></a><span data-ttu-id="4df7a-113">Exemplo</span><span class="sxs-lookup"><span data-stu-id="4df7a-113">Example</span></span>
+## <a name="example"></a><span data-ttu-id="24845-114">Exemplo</span><span class="sxs-lookup"><span data-stu-id="24845-114">Example</span></span>
 
 ```xml
 <OfficeApp>
