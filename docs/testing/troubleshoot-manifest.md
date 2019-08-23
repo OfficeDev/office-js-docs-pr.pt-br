@@ -1,14 +1,14 @@
 ---
 title: Validar e solucionar problemas com seu manifesto
 description: Use estes métodos para validar o manifesto de suplementos do Office
-ms.date: 07/29/2019
+ms.date: 08/15/2019
 localization_priority: Priority
-ms.openlocfilehash: 70ebe8be4b669167d1ba230d9dcbf19cb2289efe
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: bf70aca68135073ed92d2e4d2c176b944836c7ad
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940659"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477919"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>Validar e solucionar problemas com seu manifesto
 
@@ -27,17 +27,22 @@ npm run validate
 > [!NOTE]
 > Para ter acesso a essa funcionalidade, o projeto de suplemento deve ter sido criado usando o [Gerador Yeoman para Suplementos do Office](https://www.npmjs.com/package/generator-office) versão 1.1.17 ou posterior.
 
-## <a name="validate-your-manifest-with-office-toolbox"></a>Valide seu manifesto usando a caixa de ferramentas do Office.
+## <a name="validate-your-manifest-with-office-addin-manifest"></a>Valide seu manifesto com o office-addin-manifest
 
-Se você não tiver usado o [gerador Yeoman for Office Add-ins](https://www.npmjs.com/package/generator-office) para criar seu suplemento, você também pode usá-lo para validar o arquivo de manifesto usando [a caixa de ferramentas do office](https://www.npmjs.com/package/office-toolbox).
+Se você não tiver usado o [gerador Yeoman para Suplementos do Office](https://www.npmjs.com/package/generator-office) para criar seu suplemento, você também pode usá-lo para validar o arquivo de manifesto usando o[office-addin-manifest](https://www.npmjs.com/package/office-addin-manifest).
 
 1. Instale o [Node.js](https://nodejs.org/download/).
 
-2. Execute o seguinte comando no diretório raiz do seu projeto. Substituir `MANIFEST_FILE` pelo nome do arquivo de manifesto.
+2. Execute o seguinte comando no diretório raiz do seu projeto. Substitua o `MANIFEST_FILE` pelo nome do arquivo de manifesto.
 
     ```command&nbsp;line
-    npx office-toolbox validate -m MANIFEST_FILE
+    npx office-addin-manifest validate MANIFEST_FILE
     ```
+
+    > [!NOTE]
+    > Se ao executar esse comando resultar na mensagem de erro "A sintaxe do comando não é válida". (como o comando `validate` não é reconhecido), execute o seguinte comando para validar o manifesto (substitua o `MANIFEST_FILE` pelo nome do arquivo de manifesto): 
+    > 
+    > `npx --ignore-existing office-addin-manifest validate MANIFEST_FILE`
 
 ## <a name="validate-your-manifest-against-the-xml-schema"></a>Validar seu manifesto em relação ao esquema XML
 

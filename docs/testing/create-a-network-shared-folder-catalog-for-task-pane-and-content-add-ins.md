@@ -1,21 +1,21 @@
 ---
 title: Realizar sideload de suplementos do Office para teste
 description: ''
-ms.date: 06/20/2019
+ms.date: 08/15/2019
 localization_priority: Priority
-ms.openlocfilehash: 81b931ab7bc88675ae438edf6d0d05ebb040387e
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: 19cd599ea743fc577a5139d3f278dd3f993ec5b1
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575685"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477926"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>Realizar sideload de suplementos do Office para teste
 
 Você pode instalar um suplemento do Office para testá-lo em um cliente do Office em execução no Windows usando um catálogo de pasta compartilhada para publicar o manifesto em um compartilhamento de arquivos de rede.
 
 > [!NOTE]
-> Se o seu projeto de suplemento foi criado com o [gerador do Yeoman para suplementos do Office](https://github.com/OfficeDev/generator-office), há uma maneira alternativa de realizar o sideload que pode funcionar para você. Para mais detalhes, veja [Realizar Sideload de Suplementos do Office](sideload-office-addin-using-sideload-command.md).
+> Se o projeto de suplemento tiver sido criado com uma versão suficientemente recente do [Gerador Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office), o suplemento realizará sideload automaticamente no cliente de desktop do Office ao executar o `npm start`.
 
 Este artigo se aplica somente para testes de suplementos do Word, Excel, PowerPoint e Project no Windows. Se você deseja testar em outra plataforma ou um suplemento do Outlook, veja os tópicos seguintes para realizar o sideload do suplemento:
 

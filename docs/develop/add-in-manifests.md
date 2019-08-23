@@ -1,14 +1,14 @@
 ---
 title: Manifesto XML dos Suplementos do Office
 description: ''
-ms.date: 07/03/2019
+ms.date: 08/14/2019
 localization_priority: Priority
-ms.openlocfilehash: 0446147f7a2ca44853c3843f11c9375d020f14d0
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: da8e865a78b666d4790df854403604cc03d6a47a
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575573"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477912"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifesto XML dos Suplementos do Office
 
@@ -122,7 +122,10 @@ Ao executar no Office Online, o seu painel de tarefas pode ser navegado para qua
 Para substituir esse comportamento (Office para desktop), especifique cada domínio que você deseja abrir na janela do suplemento na lista de domínios especificados no elemento [AppDomains](/office/dev/add-ins/reference/manifest/appdomains) do arquivo de manifesto. Se o suplemento tentar ir para uma URL em um domínio que está na lista, ela então abre no painel de tarefas do Office para desktop e no Office Online. Se ele tentar acessar uma URL que não está na lista, no Office para desktop, essa URL abre em uma nova janela do navegador (fora do painel de suplementos).
 
 > [!NOTE]
-> Esse comportamento se aplica somente ao painel raiz do suplemento. Se houver um iframe inserido na página do suplemento, o iframe pode ser direcionado para qualquer URL independentemente se ele está listado na **AppDomains**, até mesmo no Office para desktop.
+> Há duas exceções para esse comportamento:
+> 
+> - Isso se aplica somente ao painel raiz do suplemento. Se houver um iframe inserido na página do suplemento, o iframe pode ser direcionado para qualquer URL independentemente se ele está listado na **AppDomains**, até mesmo no Office para desktop.
+> - Quando uma caixa de diálogo é aberta coma API [displayDialogAsync](/javascript/api/office/office.ui?view=common-js#displaydialogasync-startaddress--options--callback-), a URL que é passada para o método deve estar no mesmo domínio do suplemento, mas a caixa de diálogo pode ser direcionada para qualquer URL, independentemente de estar listada no **AppDomains**, mesmo no Office para área de trabalho. 
 
 O exemplo de manifesto XML a seguir hospeda sua página de suplemento principal no domínio `https://www.contoso.com`, conforme especificado no elemento **SourceLocation**. Ele também especifica o domínio `https://www.northwindtraders.com` em um elemento [AppDomain](/office/dev/add-ins/reference/manifest/appdomain), dentro da lista de elementos **AppDomains** Se o suplemento acessar uma página no domínio www.northwindtraders.com, essa página abre no painel do suplemento, mesmo no Office para desktop.
 

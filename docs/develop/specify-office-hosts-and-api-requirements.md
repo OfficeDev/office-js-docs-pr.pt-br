@@ -1,14 +1,14 @@
 ---
 title: Especificar hosts do Office e requisitos de API
 description: ''
-ms.date: 07/18/2019
+ms.date: 08/14/2019
 localization_priority: Priority
-ms.openlocfilehash: 9699379d39e4c1a9f4e1380cf6360eaf027f05f0
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: bd70f33952b4306b906896b6f4c8e00e0d768265
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35804615"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477772"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>Especificar hosts do Office e requisitos de API
 
@@ -133,24 +133,24 @@ O exemplo de código a seguir mostra um suplemento que carrega em todos os aplic
 
 - O elemento **Methods** especifica um método individual que deve receber suporte no host do Office em que o suplemento é executado. O atributo **Name** é obrigatório e especifica o nome do método qualificado com seu objeto pai.
 
-
 ## <a name="use-runtime-checks-in-your-javascript-code"></a>Usar verificações no tempo de execução em seu código JavaScript
-
 
 Se certos conjuntos de requisitos recebem suporte do host do Office, você pode proporcionar outras funcionalidades em seu suplemento. Por exemplo, você pode usar a nova API JavaScript do Word em seu suplemento existente se o suplemento for executado no Word 2016.  Para fazer isso, use o método [isSetSupported](/javascript/api/office/office.requirementsetsupport#issetsupported-name--minversion-) com o nome do conjunto de requisitos. **isSetSupported** determina, no tempo de execução, se o host do Office que está executando o suplemento é compatível com o conjunto de requisitos. Se houver suporte para o conjunto de requisitos, **isSetSupported** retorna **true** e executa o código adicional que usa os membros da API desse conjunto de requisitos. Se o host do Office não der suporte ao conjunto de requisitos, **isSetSupported** retorna **false** e o código adicional não é executado. O código a seguir mostra a sintaxe a ser usada com **isSetSupported**.
 
-
 ```js
-if (Office.context.requirements.isSetSupported(RequirementSetName, VersionNumber))
+if (Office.context.requirements.isSetSupported(RequirementSetName, MinimumVersion))
 {
    // Code that uses API members from RequirementSetName.
 }
 
 ```
 
--  _RequirementSetName_ (obrigatório) é uma cadeia de caracteres que representa o nome do conjunto de requisitos. Para saber mais sobre os conjuntos de requisitos disponíveis, confira [Conjuntos de requisitos de Suplemento do Office](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).
-    
--  _VersionNumber_ (opcional) é a versão do conjunto de requisitos.
+- _RequirementSetName_ (obrigatório) é uma cadeia de caracteres que representa o nome do conjunto de requisitos (por exemplo, "**ExcelApi**", "**Mailbox**", etc.). Para saber mais sobre os conjuntos de requisitos disponíveis, confira [Conjuntos de requisitos de Suplemento do Office](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).
+- _MinimumVersion_ (opcional) é uma cadeia de caracteres que especifica a versão mínima do conjunto de requisitos que o host deve suportar para que o código dentro da instrução `if` seja executado (por exemplo, "**1.9**").
+
+> [!WARNING]
+> Ao chamar o método**isSetSupported**, o valor do parâmetro `MinimumVersion` (se especificado) deve ser uma cadeia de caracteres. Isso ocorre porque o analisador de JavaScript não pode diferenciar valores numéricos, como 1.1 e 1.10, onde é possível para valores de cadeia de caracteres como "1.1" e "1.10".
+> A sobrecarga de `number` está obsoleta.
 
 Use **isSetSupported** com a **RequirementSetName** associada ao host do Office da seguinte maneira.
 
@@ -180,7 +180,6 @@ else
 }
 
 ```
-
 
 ## <a name="runtime-checks-using-methods-not-in-a-requirement-set"></a>Verificações no tempo de execução usando métodos que não fazem parte de um conjunto de requisitos
 
