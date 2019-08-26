@@ -1,14 +1,14 @@
 ---
 title: Crie um Suplemento do Office com Node.js que use logon único
 description: ''
-ms.date: 04/15/2019
+ms.date: 08/21/2019
 localization_priority: Priority
-ms.openlocfilehash: 2050f20139389ed1459cea7aba5e5e92858d00bc
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: a5f607ce582408307165e3bc03eeeaf48d3587e3
+ms.sourcegitcommit: 70c6dcecfa2ff7a0dd89987084dc1c8e36ee85fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448615"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "36564592"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Crie um Suplemento do Office com Node.js que use logon único (prévia)
 
@@ -38,8 +38,9 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     > * A pasta **Before** (antes) traz um projeto inicial. A interface do usuário e outros aspectos do suplemento que não estão diretamente ligados ao SSO ou à autorização já estão prontos. As próximas seções deste artigo apresentam uma orientação passo a passo para concluir o projeto.
     > * A versão **Completed** (concluído) do exemplo apresenta como seria o suplemento quando concluídos os procedimentos apresentados neste artigo, com exceção de que o projeto concluído traz comentários de códigos que seriam redundantes neste artigo. Para usar a versão concluída, apenas siga as instruções apresentadas neste artigo, substituindo "Before" por "Completed" e pulando as seções **Codificar o lado do cliente** e **Codificar o lado do servidor**.
     > * A versão **Multilocatário completa** é um exemplo completo que ofereça suporte para multilocação. Explore este exemplo, se você pretende oferecer suporte para contas da Microsoft de domínios diferentes com SSO.
-    >
-    > _Independentemente de qual versão você usa, será necessário ter um certificado confiável para um localhost. Confira a observação “IMPORTANTE” no Leiame do repositório._
+
+    > [!IMPORTANT]
+    > Independentemente de qual versão você usa, será necessário confiar em um certificado para um host local. Siga [essas instruções para instalar certificados autoassinados](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md), exceto que as pastas `certs` de cada uma das versões neste repositório estão na pasta `/src`, não na pasta raiz.
 
 1. Abra um console Git bash na pasta **Before**.
 
