@@ -1,14 +1,14 @@
 ---
 title: Como encontrar a ordem correta dos elementos do manifesto
 description: Saiba como encontrar a ordem correta na qual colocar elementos filho em um elemento pai.
-ms.date: 08/15/2019
+ms.date: 08/22/2019
 localization_priority: Normal
-ms.openlocfilehash: 68eaa21af9a86c910a9e8701ef2ea6cf95a64000
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: c1b8e981b9348e015e14a29131eadff3a5cb08ea
+ms.sourcegitcommit: 4f039614f42ae26a1290ed025fdabb7f6b62cc8a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477758"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "36642828"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>Como encontrar a ordem correta dos elementos do manifesto
 
@@ -21,10 +21,10 @@ Por exemplo, no elemento `<OfficeApp>`, os elementos `<Id>`, `<Version>` e `<Pro
 > [!NOTE]
 > O [validador no Office-AddIn-manifest](../testing/troubleshoot-manifest.md#validate-your-manifest-with-office-addin-manifest) usa a mesma mensagem de erro quando um elemento está fora de ordem, como ocorre quando um elemento está sob o pai errado. A mensagem de erro informa que o elemento não é um elemento filho válido do elemento pai. Caso receba este erro, mas a documentação de referência do elemento filho indique que ele *está* válido para o pai, talvez o problema seja o filho ter sido colocado na ordem incorreta.
 
-As seções a seguir mostram os elementos manifest na ordem em que devem ser exibidos. Há `type` pequenas diferenças dependendo se o atributo do `<OfficeApp>` elemento é `TaskPaneApp`, `ContentApp`ou. `MailApp` Para evitar que essas seções fiquem muito difíceis, o elemento altamente complexo `<VersionOverrides>` é dividido em seções separadas.
+As seções a seguir mostram os elementos manifest na ordem em que devem ser exibidos. Há `type` diferenças dependendo se o atributo do `<OfficeApp>` elemento é `TaskPaneApp`, `ContentApp`ou. `MailApp` Para evitar que essas seções fiquem muito difíceis, o elemento altamente complexo `<VersionOverrides>` é dividido em seções separadas.
 
 > [!Note]
-> Nem todos os elementos mostram que são obrigatórios. Se o `minOccurs` valor de um elemento for **0** no [esquema](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas), o elemento será opcional.
+> Nem todos os elementos mostrados são obrigatórios. Se o `minOccurs` valor de um elemento for **0** no [esquema](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas), o elemento será opcional.
 
 ## <a name="basic-task-pane-add-in-element-ordering"></a>Ordenação básica de elemento de suplemento do painel de tarefas
 
@@ -145,8 +145,10 @@ As seções a seguir mostram os elementos manifest na ordem em que devem ser exi
     <RequestedHeight>
     <Permissions>
     <AllowSnapshot>
-    <VersionOverrides>
+    <VersionOverrides>*
 ```
+
+\*Veja [ordenação de elemento do suplemento de conteúdo dentro do VersionOverrides](#content-add-in-element-ordering-within-versionoverrides) para a ordenação dos elementos filhos de VersionOverrides.
 
 ## <a name="task-pane-add-in-element-ordering-within-versionoverrides"></a>Ordenação do elemento do suplemento do painel de tarefas no VersionOverrides
 
@@ -478,6 +480,17 @@ As seções a seguir mostram os elementos manifest na ordem em que devem ser exi
         <LongStrings>
             <String>
                 <Override>
+    <WebApplicationInfo>
+        <Id>
+        <Resource>
+        <Scopes>
+            <Scope>
+```
+
+## <a name="content-add-in-element-ordering-within-versionoverrides"></a>Ordenação de elemento de suplemento de conteúdo dentro de VersionOverrides
+
+```
+<VersionOverrides>
     <WebApplicationInfo>
         <Id>
         <Resource>
