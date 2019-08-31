@@ -3,12 +3,12 @@ title: Otimização de desempenho do da API JavaScript do Excel
 description: Otimizar o desempenho usando as API JavaScript do Excel
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: bd3446b5bb33549002c2ad2325a11ea563c6b7d1
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 7ffca45d1d7f6619fa1d942befed1856f77934d9
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128301"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695844"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Otimização de desempenho usando a API JavaScript do Excel
 
@@ -24,7 +24,7 @@ Ver [Principais conceitos - sync()](excel-add-ins-core-concepts.md#sync) para as
 
 Evite criar repetidamente o mesmo objeto proxy. Em vez disso, se você precisar do mesmo objeto proxy para mais de uma operação, crie-o uma vez e o atribua a uma variável, em seguida, use essa variável no seu código.
 
-```javascript
+```js
 // BAD: repeated calls to .getRange() to create the same proxy object
 worksheet.getRange("A1").format.fill.color = "red";
 worksheet.getRange("A1").numberFormat = "0.00%";

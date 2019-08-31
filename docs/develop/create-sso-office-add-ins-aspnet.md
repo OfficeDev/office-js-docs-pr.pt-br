@@ -3,12 +3,12 @@ title: Criar um Suplemento do Office com ASP.NET que use logon único
 description: ''
 ms.date: 04/15/2019
 localization_priority: Priority
-ms.openlocfilehash: a28178fb309450f59435d678c013a7a73bb60978
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: bc8c2427171f06865de6c809a5d7311018fcc278
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128149"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695802"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>Criar um Suplemento do Office com ASP.NET que use logon único (visualização)
 
@@ -169,7 +169,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
     * O processamento de erros no suplemento às vezes tentará novamente obter um token de acesso automaticamente, usando um conjunto diferente de opções. A variável de contador `timesGetOneDriveFilesHasRun` e a variáveis de sinalizador `triedWithoutForceConsent` são usadas para garantir que o usuário não seja trocado repetidas vezes em tentativas falhas de obter um token.
     * Você criará um método `getDataWithToken` na próxima etapa, mas observe que ele define uma opção chamada `forceConsent` como `false`. Trataremos mais disso na etapa seguinte.
 
-    ```javascript
+    ```js
     var timesGetOneDriveFilesHasRun = 0;
     var triedWithoutForceConsent = false;
 
@@ -187,7 +187,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
     * O parâmetro de opções configura o `forceConsent` como `false`. Dessa forma, não será solicitado que o usuário consinta o acesso ao host do Office ao seu suplemento sempre que ele o usar. Na primeira vez que o usuário tiver o suplemento, a chamada de `getAccessTokenAsync` falhará, mas lógica de processamento de erros que você adicionará em uma etapa posterior será automaticamente chamada com a opção `forceConsent` definida como `true` e o usuário será solicitado a consentir, mas somente essa primeira vez.
     * Você criará o método `handleClientSideErrors` em uma etapa posterior.
 
-    ```javascript
+    ```js
     function getDataWithToken(options) {
     Office.context.auth.getAccessTokenAsync(options,
         function (result) {
@@ -203,7 +203,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
 
 1. Substitua TODO1 pelas linhas a seguir. Você criará o método `getData` e a rota "/api/values" do lado do servidor nas etapas posteriores. Uma URL relativa é usada para o ponto de extremidade porque ela deve ser hospedada no mesmo domínio que seu suplemento.
 
-    ```javascript
+    ```js
     accessToken = result.value;
     getData("/api/values", accessToken);
     ```
@@ -213,7 +213,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
     * Este método utilitário chama um ponto de extremidade da API Web especificado e transmite a ela o mesmo token de acesso que aplicativo host do Office usou para obter acesso ao seu suplemento. No lado do servidor, esse token de acesso será usado no fluxo "on behalf of" (em nome de) para obter um token de acesso para o Microsoft Graph.
     * Você criará o método `handleServerSideErrors` em uma etapa posterior.
 
-    ```javascript
+    ```js
     function getData(relativeUrl, accessToken) {
         $.ajax({
             url: relativeUrl,
@@ -233,7 +233,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
 
 1. Abaixo do método `getData`, adicione o método a seguir. Esse método processará os erros no cliente do suplemento quando o host do Office não puder obter um token de acesso para o serviço Web do suplemento. Esses erros são relatados com um código de erro, portanto, o método usa uma instrução `switch` para distingui-los.
 
-    ```javascript
+    ```js
     function handleClientSideErrors(result) {
 
         switch (result.error.code) {
@@ -266,7 +266,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
 
 1. Substitua `TODO2` pelo código a seguir. O erro 13001 ocorre quando o usuário não está conectado ou quando ele cancela, sem responder, uma solicitação para fornecer um segundo fator de autenticação. Em ambos os casos, o código executará novamente o método `getDataWithToken` e definirá uma opção para forçar uma solicitação de entrada.
 
-    ```javascript
+    ```js
     case 13001:
         getDataWithToken({ forceAddAccount: true });
         break;
@@ -274,7 +274,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
 
 1. Substitua `TODO3` pelo código a seguir. O erro 13002 ocorre quando a entrada ou o consentimento do usuário é anulado. Peça que o usuário tente novamente, mas não mais de uma vez.
 
-    ```javascript
+    ```js
     case 13002:
         if (timesGetOneDriveFilesHasRun < 2) {
             showResult(['Your sign-in or consent was aborted before completion. Please try that operation again.']);
@@ -286,7 +286,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
 
 1. Substitua `TODO4` pelo código a seguir. O erro 13003 ocorre quando o usuário está conectado com uma conta que não é corporativa, de estudante nem da Microsoft. Peça que o usuário saia e entre novamente com um tipo de conta suportado.
 
-    ```javascript
+    ```js
     case 13003:
         showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft account. Other kinds of accounts, like corporate domain accounts do not work.']);
         break;
@@ -297,7 +297,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
 
 1. Substitua `TODO5` pelo código a seguir. O erro 13005 ocorre quando o Office não tem autorização para o serviço Web do suplemento ou o usuário não concedeu permissão ao serviço para o respectivo `profile`.
 
-    ```javascript
+    ```js
     case 13005:
         getDataWithToken({ forceConsent: true });
         break;
@@ -305,7 +305,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
 
 1. Substitua `TODO6` pelo seguinte código. O Erro 13006 ocorre quando houve um erro não especificado no host do Office, que pode indicar a instabilidade do host. Peça ao usuário para reiniciar o Office.
 
-    ```javascript
+    ```js
     case 13006:
         showResult(['Please save your work, sign out of Office, close all Office applications, and restart this Office application.']);
         break;
@@ -313,7 +313,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
 
 1. Substitua `TODO7` pelo código a seguir. O erro 13007 ocorre quando algo deu errado com a interação do host do Office com o AAD de forma que o host não pode obter um token de acesso para o serviço Web/aplicativo dos suplementos. É possível que esse seja um problema de rede temporário. Peça que o usuário tente novamente mais tarde.
 
-    ```javascript
+    ```js
     case 13007:
         showResult(['That operation cannot be done at this time. Please try again later.']);
         break;
@@ -321,7 +321,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
 
 1. Substitua `TODO8` pelo código a seguir. O erro 13008 ocorre quando o usuário aciona uma operação que chama o `getAccessTokenAsync` antes que uma chamada anterior dele seja concluída.
 
-    ```javascript
+    ```js
     case 13008:
         showResult(['Please try that operation again after the current operation has finished.']);
         break;
@@ -329,7 +329,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
 
 1. Substitua `TODO9` pelo código a seguir. O erro 13009 ocorre quando o suplemento não permite forçar consentimento, mas `getAccessTokenAsync` foi chamado com a opção `forceConsent` definida como `true`. Normalmente, quando isso acontece, o código deve ser reexecutar `getAccessTokenAsync` automaticamente com a opção de consentimento definida como `false`. No entanto, em alguns casos, chamar o método com `forceConsent` definido como `true` é uma resposta automática para um erro em uma chamada para o método com a opção definida como `false`. Nesse caso, o código não deve tentar novamente, mas, em vez disso, ele deve solicitar que o usuário saia e entre novamente.
 
-    ```javascript
+    ```js
     case 13009:
         if (triedWithoutForceConsent) {
             showResult(['Please sign out of Office and sign in again with a work or school account, or Microsoft account.']);
@@ -341,7 +341,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
 
 1. Substitua `TODO10` pelo código a seguir.
 
-    ```javascript
+    ```js
     default:
         logError(result);
         break;
@@ -350,7 +350,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
 
 1. Abaixo do método `handleClientSideErrors`, adicione o seguinte método. Esse método processará os erros no serviço Web do suplemento quando algo der errado na execução do fluxo on-behalf-of ou ao obter dados do Microsoft Graph.
 
-    ```javascript
+    ```js
     function handleServerSideErrors(result) {
 
         // TODO11: Parse the JSON response.
@@ -368,7 +368,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
 
 1. Substitua `TODO11` pelo código a seguir. Observe que, para a maioria dos erros `4xx` que o serviço Web do suplemento passará para o suplemento do lado do cliente, haverá uma propriedade **ExceptionMessage** em resposta com o número de erro AADSTS (Azure Active Directory Secure Token Service) além de outros dados. No entanto, quando o AAD envia uma mensagem ao serviço Web do suplemento solicitando um fator de autenticação adicional, a mensagem contém uma propriedade **Claims** especial que especifica (com um número de código) qual fator adicional é necessário. As APIs ASP.NET que criam e enviam respostas HTTP para clientes não conhecem a propriedade **Claims**, portanto, elas não a incluem no objeto Response. O código de servidor que será criado em uma etapa posterior lidará com isso adicionando manualmente o valor **Claims** no objeto Response. Esse valor será salvo na propriedade **Message**, portanto, o código também precisará analisar essa propriedade.
 
-    ```javascript
+    ```js
     var exceptionMessage = JSON.parse(result.responseText).ExceptionMessage;
     var message = JSON.parse(result.responseText).Message;
     ```
@@ -378,7 +378,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
     * O erro 50076 ocorre quando o Microsoft Graph requer uma forma adicional de autenticação.
     * O host do Office deve obter um novo token com o valor **Claims** como a opção `authChallenge`. Isso instrui o AAD a solicitar ao usuário todas as formas de autenticação requeridas.
 
-    ```javascript
+    ```js
     if (message) {
         if (message.indexOf("AADSTS50076") !== -1) {
             var claims = JSON.parse(message).Claims;
@@ -390,7 +390,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
 
 1. Substitua `TODO13` pelo código a seguir. Substitua os três `TODO`s neste código por um bloqueio condicional *interno* nas próximas etapas.
 
-    ```javascript
+    ```js
     else if (exceptionMessage) {
 
         // TODO13A: Handle the case where consent has not been granted, or has been revoked.
@@ -409,7 +409,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
     * O erro 65001 significa que o consentimento para acessar o Microsoft Graph não foi concedido (ou foi revogado) para uma ou mais permissões.
     * O suplemento deverá obter um novo token com a opção `forceConsent` definida como `true`.
 
-    ```javascript
+    ```js
     if (exceptionMessage.indexOf('AADSTS65001') !== -1) {
        getDataWithToken({ forceConsent: true });
     }
@@ -420,7 +420,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
     * O Erro 70011 tem muitos significados. O que importa para este suplemento é quando ele significa que um escopo inválido (permissão) foi solicitado, então o código verifica a descrição completa do erro, não apenas o número.
     * O suplemento deverá relatar o erro.
 
-    ```javascript
+    ```js
      else if (exceptionMessage.indexOf("AADSTS70011: The provided value for the input parameter 'scope' is not valid.") !== -1) {
         showResult(['The add-in is asking for a type of permission that is not recognized.']);
     }
@@ -431,7 +431,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
     * Código de servidor criado em uma etapa posterior enviará a mensagem `Missing access_as_user` se o escopo `access_as_user` (permissão) não for o token de acesso que o cliente do suplemento enviar para o ADD para ser usado no fluxo on-behalf-of.
     * O suplemento deverá relatar o erro.
 
-    ```javascript
+    ```js
     else if (exceptionMessage.indexOf('Missing access_as_user.') !== -1) {
         showResult(['Microsoft Office does not have permission to get Microsoft Graph data on behalf of the current user.']);
     }
@@ -442,7 +442,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
     * A biblioteca de identidade que você estiver usando no código do servidor (Biblioteca de Autenticação da Microsoft - MSAL) deve garantir que nenhum token inválido ou expirado seja enviado para o Microsoft Graph, mas, se isso acontecer, o erro retornado para serviço Web do suplemento do Microsoft Graph terá o código `InvalidAuthenticationToken`. O código de servidor criado em uma etapa posterior transmitirá essa mensagem para o cliente do suplemento.
     * Nesse caso, o suplemento deverá iniciar o processo de autenticação completo ao redefinir o contador e as variáveis de sinalizador e, em seguida, chamando novamente o método de identificador de botão.
 
-    ```javascript
+    ```js
     // If the token sent to MS Graph is expired or invalid, start the whole process over.
     else if (result.code === 'InvalidAuthenticationToken') {
         timesGetOneDriveFilesHasRun = 0;
@@ -453,7 +453,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
 
 1. Substitua `TODO15` pelo código a seguir.
 
-    ```javascript
+    ```js
     else {
         logError(result);
     }

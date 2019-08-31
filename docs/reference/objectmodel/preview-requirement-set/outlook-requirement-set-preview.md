@@ -3,12 +3,12 @@ title: Conjunto de requisitos do modo de visualização de API para suplementos 
 description: ''
 ms.date: 08/15/2019
 localization_priority: Priority
-ms.openlocfilehash: 14f40830bb8f0f0e0232e6ae2305d60e400ca145
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: aa3f46c505e8c87508699f6e84194272ee4d13bb
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477884"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696453"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 
@@ -69,6 +69,8 @@ Adicionado evento `AttachmentsChanged` ao `Item`.
 
 **Disponível em:** Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno), Outlook para Mac (conectado à assinatura do Office 365)
 
+<br>
+
 ---
 
 ### <a name="block-on-send"></a>Bloquear ao enviar
@@ -78,6 +80,8 @@ Adicionado evento `AttachmentsChanged` ao `Item`.
 Adicionado um novo parâmetro opcional `options`, que é um dicionário com um valor válido `allowEvent`. Esse valor é usado para cancelar a execução de um evento.
 
 **Disponível em:** Outlook na Web (clássico), Outlook no Windows (conectado à assinatura do Office 365), Outlook para Mac (conectado à assinatura do Office 365)
+
+<br>
 
 ---
 
@@ -124,6 +128,8 @@ Adicionou uma nova enumeração que especifica as cores disponíveis a serem ass
 
 **Disponível no**: Outlook no Windows (conectado à assinatura do Office 365), Outlook para Mac (conectado à assinatura do Office 365)
 
+<br>
+
 ---
 
 ### <a name="delegate-access"></a>Acesso de representante
@@ -157,6 +163,8 @@ Adicionada uma novo enumeração de sinalizador bits que especifica as permissõ
 Adicionado um elemento filho ao elemento do manifesto [DesktopFormFactor](../../manifest/desktopformfactor.md). Define se o suplemento está disponível nos cenários de representante.
 
 **Disponível em:** Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno), Outlook para Mac (conectado à assinatura do Office 365)
+
+<br>
 
 ---
 
@@ -198,6 +206,8 @@ Adicionado evento `EnhancedLocationsChanged` ao `Item`.
 
 **Disponível em:** Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno), Outlook para Mac (conectado à assinatura do Office 365)
 
+<br>
+
 ---
 
 ### <a name="integration-with-actionable-messages"></a>Integração à mensagens acionáveis
@@ -207,6 +217,8 @@ Adicionado evento `EnhancedLocationsChanged` ao `Item`.
 Adicionada uma nova função que retorna os dados inicialização que são transmitidos quando o suplemento é [ativado por uma mensagem acionável](/outlook/actionable-messages/invoke-add-in-from-actionable-message).
 
 **Disponível em:** Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (clássico)
+
+<br>
 
 ---
 
@@ -224,6 +236,8 @@ Adicionada uma nova propriedade que representa os cabeçalhos de internet person
 
 **Disponível no**: Outlook no Windows (conectado à assinatura do Office 365), Outlook para Mac (conectado à assinatura do Office 365)
 
+<br>
+
 ---
 
 ### <a name="office-theme"></a>Tema do Office
@@ -239,6 +253,8 @@ Capacidade adicional para obter o tema do Office.
 Adicionado `OfficeThemeChanged` evento `Mailbox`.
 
 **Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
+
+<br>
 
 ---
 
