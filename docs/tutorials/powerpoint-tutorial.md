@@ -4,12 +4,12 @@ description: Neste tutorial, você vai criar um suplemento do PowerPoint que ins
 ms.date: 12/31/2018
 ms.prod: powerpoint
 localization_priority: Normal
-ms.openlocfilehash: a004a510a4cc874ecaab8260862b7379efaf9cf2
-ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
+ms.openlocfilehash: 0ffd3eedf0cb1d3a118edd0a22b3066cc396d320
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "36672884"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696026"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>Tutorial: Criar um Suplemento do Painel de Tarefas
 
@@ -65,7 +65,7 @@ Edite o código do suplemento como mostrado a seguir para criar a estrutura que 
 
 2. Abra o arquivo **Home.js** na raiz do projeto do aplicativo Web. Este arquivo especifica o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
 
-    ```javascript
+    ```js
     (function () {
         "use strict";
 
@@ -179,13 +179,13 @@ Conclua as seguintes etapas para adicionar o código que recupera a foto do dia 
 
 7. No arquivo **Home.js**, substitua `TODO1` pelo código a seguir para atribuir o manipulador de eventos ao botão **Inserir Imagem**.
 
-    ```javascript
+    ```js
     $('#insert-image').click(insertImage);
     ```
 
 8. No arquivo **Home.js**, substitua `TODO2` pelo código a seguir para definir a função **insertImage**. Esta função busca a imagem do serviço Web Bing e chama a função `insertImageFromBase64String` para inserir a imagem no documento.
 
-    ```javascript
+    ```js
     function insertImage() {
         // Get image from from web service (as a Base64 encoded string).
         $.ajax({
@@ -204,7 +204,7 @@ Conclua as seguintes etapas para adicionar o código que recupera a foto do dia 
 
     - O objeto `asyncResult` encapsula o resultado da solicitação `setSelectedDataAsync`, incluindo informações de status e de erro caso a solicitação tenha falhado.
 
-    ```javascript
+    ```js
     function insertImageFromBase64String(image) {
         // Call Office.js to insert the image into the document.
         Office.context.document.setSelectedDataAsync(image, {
@@ -291,13 +291,13 @@ Conclua as seguintes etapas para adicionar o código que insere texto no slide d
 
 2. No arquivo **Home.js**, substitua `TODO4` pelo código a seguir para atribuir o manipulador de eventos ao botão **Inserir Texto**.
 
-    ```javascript
+    ```js
     $('#insert-text').click(insertText);
     ```
 
 3. No arquivo **Home.js**, substitua `TODO5` pelo código a seguir para definir a função **insertText**. Esta função insere texto no slide atual.
 
-    ```javascript
+    ```js
     function insertText() {
         Office.context.document.setSelectedDataAsync('Hello World!',
             function (asyncResult) {
@@ -348,13 +348,13 @@ Conclua as seguintes etapas para adicionar o código que recupera os metadados p
 
 2. No arquivo **Home.js**, substitua `TODO6` pelo código a seguir para atribuir o manipulador de eventos para o botão **Obter Metadados do Slide**.
 
-    ```javascript
+    ```js
     $('#get-slide-metadata').click(getSlideMetadata);
     ```
 
 3. No arquivo **Home.js**, substitua `TODO7` pelo código a seguir para definir a função **getSlideMetadata**. Esta função recupera metadados dos slides selecionados e os grava em uma janela pop-up da caixa de diálogo no painel de tarefas do suplemento.
 
-    ```javascript
+    ```js
     function getSlideMetadata() {
         Office.context.document.getSelectedDataAsync(Office.CoercionType.SlideRange,
             function (asyncResult) {
@@ -421,7 +421,7 @@ Conclua as seguintes etapas para adicionar o código que navega entre os slides 
 
 2. No arquivo **Home.js**, substitua `TODO8` pelo código a seguir para atribuir o manipulador de eventos aos quatro botões de navegação.
 
-    ```javascript
+    ```js
     $('#go-to-first-slide').click(goToFirstSlide);
     $('#go-to-next-slide').click(goToNextSlide);
     $('#go-to-previous-slide').click(goToPreviousSlide);
@@ -430,7 +430,7 @@ Conclua as seguintes etapas para adicionar o código que navega entre os slides 
 
 3. No arquivo **Home.js**, substitua `TODO9` pelo código a seguir para definir as funções de navegação. Cada uma dessas funções usa a função `goToByIdAsync` para selecionar um slide com base em sua posição no documento (primeiro, último, anterior e próximo).
 
-    ```javascript
+    ```js
     function goToFirstSlide() {
         Office.context.document.goToByIdAsync(Office.Index.First, Office.GoToType.Index,
             function (asyncResult) {

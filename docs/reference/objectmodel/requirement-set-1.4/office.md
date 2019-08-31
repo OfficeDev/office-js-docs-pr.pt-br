@@ -3,12 +3,12 @@ title: Namespace do Office – conjunto de requisitos 1,4
 description: ''
 ms.date: 08/13/2019
 localization_priority: Normal
-ms.openlocfilehash: 33089ad278613dac76a8610aba803c2f9db1d088
-ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
+ms.openlocfilehash: b2dd55377355fc9f1bf7ec074e76297ff5bcf92a
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "36395677"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696138"
 ---
 # <a name="office"></a>Office
 
@@ -59,6 +59,11 @@ Especifica o resultado de uma chamada assíncrona.
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
+<br>
+
+---
+---
+
 #### <a name="coerciontype-string"></a>CoercionType: cadeia de caracteres
 
 Especifica como forçar dados retornados ou definidos pelo método invocado.
@@ -80,6 +85,11 @@ Especifica como forçar dados retornados ou definidos pelo método invocado.
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
+
+<br>
+
+---
+---
 
 #### <a name="sourceproperty-string"></a>SourceProperty: cadeia de caracteres
 

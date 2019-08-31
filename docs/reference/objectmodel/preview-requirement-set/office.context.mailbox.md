@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox-visualização do conjunto de requisitos
 description: ''
-ms.date: 08/06/2019
+ms.date: 08/30/2019
 localization_priority: Normal
-ms.openlocfilehash: 8f7345532e3c65f9945f424520c37f707634bf3b
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: 951bb4ff338507f369f23e7c095debdb6e7a945e
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268716"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696474"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -81,6 +81,8 @@ No modo de composição, é preciso chamar o método [`saveAsync`](Office.contex
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
+<br>
+
 ---
 ---
 
@@ -107,7 +109,7 @@ Obtém um objeto que fornece métodos para gerenciar a lista mestra de categoria
 
 Este exemplo obtém a lista mestra de categorias para esta caixa de correio.
 
-```javascript
+```js
 Office.context.mailbox.masterCategories.getAsync(function (asyncResult) {
   if (asyncResult.status === Office.AsyncResultStatus.Failed) {
     console.log("Action failed with error: " + asyncResult.error.message);
@@ -116,6 +118,8 @@ Office.context.mailbox.masterCategories.getAsync(function (asyncResult) {
   }
 });
 ```
+
+<br>
 
 ---
 ---
@@ -170,7 +174,7 @@ Atualmente, os tipos de eventos com `Office.EventType.ItemChanged` suporte `Offi
 
 ##### <a name="example"></a>Exemplo
 
-```javascript
+```js
 Office.initialize = function (reason) {
   $(document).ready(function () {
     Office.context.mailbox.addHandlerAsync(Office.EventType.ItemChanged, loadNewItem, function (result) {
@@ -186,6 +190,8 @@ function loadNewItem(eventArgs) {
   loadProps(Office.context.mailbox.item);
 }
 ```
+
+<br>
 
 ---
 ---
@@ -220,13 +226,15 @@ Tipo: String
 
 ##### <a name="example"></a>Exemplo
 
-```javascript
+```js
 // Get an item's ID from a REST API.
 var restId = 'AAMkAGVlOTZjNTM3LW...';
 
 // Treat restId as coming from the v2.0 version of the Outlook Mail API.
 var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.RestVersion.v2_0);
 ```
+
+<br>
 
 ---
 ---
@@ -256,6 +264,8 @@ Se o aplicativo de email estiver em execução no Outlook em um cliente desktop 
 ##### <a name="returns"></a>Retorna:
 
 Tipo: [LocalClientTime](/javascript/api/outlook/office.LocalClientTime)
+
+<br>
 
 ---
 ---
@@ -290,13 +300,15 @@ Tipo: String
 
 ##### <a name="example"></a>Exemplo
 
-```javascript
+```js
 // Get the currently selected item's ID.
 var ewsId = Office.context.mailbox.item.itemId;
 
 // Convert to a REST ID for the v2.0 version of the Outlook Mail API.
 var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.RestVersion.v2_0);
 ```
+
+<br>
 
 ---
 ---
@@ -325,13 +337,31 @@ O método `convertToUtcClientTime` converte um dicionário que contém uma data 
 
 Um objeto Date com a hora expressa em UTC.
 
-<dl class="param-type">
+Tipo: data
 
-<dt>Type</dt>
+##### <a name="example"></a>Exemplo
 
-<dd>Date</dd>
+```js
+// Represents 3:37 PM PDT on Monday, August 26, 2019.
+var input = {
+  date: 26,
+  hours: 15,
+  milliseconds: 2,
+  minutes: 37,
+  month: 7,
+  seconds: 2,
+  timezoneOffset: -420,
+  year: 2019
+};
 
-</dl>
+// result should be a Date object.
+var result = Office.context.mailbox.convertToUtcClientTime(input);
+
+// Output should be "2019-08-26T22:37:02.002Z".
+console.log(result.toISOString());
+```
+
+<br>
 
 ---
 ---
@@ -367,9 +397,11 @@ Se o identificador do item especificado não identificar um compromisso existent
 
 ##### <a name="example"></a>Exemplo
 
-```javascript
+```js
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
+
+<br>
 
 ---
 ---
@@ -405,9 +437,11 @@ Não use o método `displayMessageForm` com um `itemId` que representa um compro
 
 ##### <a name="example"></a>Exemplo
 
-```javascript
+```js
 Office.context.mailbox.displayMessageForm(messageId);
 ```
+
+<br>
 
 ---
 ---
@@ -454,7 +488,7 @@ Se qualquer dos parâmetros exceder os limites de tamanho especificados, ou se u
 
 ##### <a name="example"></a>Exemplo
 
-```javascript
+```js
 var start = new Date();
 var end = new Date();
 end.setHours(start.getHours() + 1);
@@ -471,6 +505,8 @@ Office.context.mailbox.displayNewAppointmentForm(
     body: 'Hello World!'
   });
 ```
+
+<br>
 
 ---
 ---
@@ -514,7 +550,7 @@ Se qualquer dos parâmetros exceder os limites de tamanho especificados, ou se u
 
 ##### <a name="example"></a>Exemplo
 
-```javascript
+```js
 Office.context.mailbox.displayNewMessageForm(
   {
     // Copy the To line from current item.
@@ -532,6 +568,8 @@ Office.context.mailbox.displayNewMessageForm(
     ]
   });
 ```
+
+<br>
 
 ---
 ---
@@ -584,7 +622,7 @@ O suplemento deve usar a propriedade `ewsUrl` para determinar a URL correta a se
 
 ##### <a name="example"></a>Exemplo
 
-```javascript
+```js
 function getCallbackToken() {
   var options = {
     isRest: true,
@@ -598,6 +636,8 @@ function cb(asyncResult) {
   var token = asyncResult.value;
 }
 ```
+
+<br>
 
 ---
 ---
@@ -639,7 +679,7 @@ No modo de composição, você deve chamar o método [`saveAsync`](Office.contex
 
 ##### <a name="example"></a>Exemplo
 
-```javascript
+```js
 function getCallbackToken() {
   Office.context.mailbox.getCallbackTokenAsync(cb);
 }
@@ -648,6 +688,8 @@ function cb(asyncResult) {
   var token = asyncResult.value;
 }
 ```
+
+<br>
 
 ---
 ---
@@ -683,7 +725,7 @@ O método `getUserIdentityTokenAsync` retorna um token que pode ser utilizado pa
 
 ##### <a name="example"></a>Exemplo
 
-```javascript
+```js
 function getIdentityToken() {
   Office.context.mailbox.getUserIdentityTokenAsync(cb);
 }
@@ -692,6 +734,8 @@ function cb(asyncResult) {
   var token = asyncResult.value;
 }
 ```
+
+<br>
 
 ---
 ---
@@ -752,7 +796,7 @@ Não é necessário definir o valor de codificação quando o aplicativo de emai
 
 O exemplo a seguir chama `makeEwsRequestAsync` para usar a operação `GetItem` para obter o assunto de um item.
 
-```javascript
+```js
 function getSubjectRequest(id) {
   // Return a GetItem operation request for the subject of the specified item.
   var request =
@@ -793,6 +837,8 @@ function callback(asyncResult)  {
   // Process the returned response here.
 }
 ```
+
+<br>
 
 ---
 ---

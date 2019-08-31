@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos ExcelApi 1,4
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 8dd672dc8ff30a47f7858934d995d809070eb3cf
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: b0f74d4de5ec867e21e4bec1cd9ab1983a87bab1
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064736"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695830"
 ---
 # <a name="whats-new-in-excel-javascript-api-14"></a>Quais são as novidades na API JavaScript do Excel 1.4
 
@@ -42,7 +42,7 @@ As APIs `getItem()` incluem para obter a entrada de configuração através `add
 * `range.getColumnsAfter(count: number)` e `range.getColumnsBefore(count: number)` para obter determinado número de colunas à direita/esquerda do objeto Range atual.
 * A [função de obter item ou objeto nulo](../../excel/excel-add-ins-advanced-concepts.md#ornullobject-methods): essa funcionalidade permite obter o objeto usando uma chave. Se o objeto não existir, a propriedade do `isNullObject` objeto retornado será true. Isso permite que os desenvolvedores verifiquem se um objeto existe ou não sem precisar tratá-lo por meio da manipulação de exceção. O `*OrNullObject` método está disponível na maioria dos objetos Collection.
 
-```javascript
+```js
 worksheet.getItemOrNullObject("itemName")
 ```
 

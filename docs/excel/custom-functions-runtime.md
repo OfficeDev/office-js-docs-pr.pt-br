@@ -3,12 +3,12 @@ ms.date: 05/08/2019
 description: Entenda os principais cenários de desenvolvimento de funções personalizadas do Excel que usam o novo tempo de execução do JavaScript.
 title: Tempo de execução de funções personalizadas do Excel
 localization_priority: Normal
-ms.openlocfilehash: e0246170bc80ec63705031cb32a36b5033d42f3a
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: bb73ab2f20eadbac3f5fc97e272d69fe8bb983cd
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771387"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695858"
 ---
 # <a name="runtime-for-excel-custom-functions"></a>Tempo de execução de funções personalizadas do Excel
 
@@ -67,7 +67,7 @@ Em uma função personalizada, é possível usar [WebSockets](https://developer.
 
 O código de exemplo a seguir estabelece uma conexão `WebSocket` e registra cada mensagem de entrada do servidor.
 
-```JavaScript
+```js
 const ws = new WebSocket('wss://bundles.office.com');
 ws.onmessage = function (message) {
     console.log(`Received: ${message}`);
@@ -102,7 +102,7 @@ Os métodos a seguir estão disponíveis no objeto `storage`:
 
 O exemplo de código a seguir `OfficeRuntime.storage.setItem` chama a função para definir uma chave e `storage`um valor para.
 
-```JavaScript
+```js
 function StoreValue(key, value) {
 
   return OfficeRuntime.storage.setItem(key, value).then(function (result) {

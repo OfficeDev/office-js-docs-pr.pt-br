@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox – conjunto de requisitos 1,1
 description: ''
-ms.date: 08/08/2019
+ms.date: 08/30/2019
 localization_priority: Normal
-ms.openlocfilehash: dc7ea23ca68f46df0a3c1762ed7994420ea7d0c0
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: 2b93a8191c0e73c5b236a3fe547dfd2b12a0cd31
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268709"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696425"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -97,6 +97,11 @@ Se o aplicativo de email estiver em execução no Outlook em um cliente desktop 
 
 Tipo: [LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.1)
 
+<br>
+
+---
+---
+
 #### <a name="converttoutcclienttimeinput--date"></a>convertToUtcClientTime(input) → {Date}
 
 Obtém um objeto Date de um dicionário contendo as informações de hora.
@@ -121,13 +126,34 @@ O método `convertToUtcClientTime` converte um dicionário que contém uma data 
 
 Um objeto Date com a hora expressa em UTC.
 
-<dl class="param-type">
+Tipo: data
 
-<dt>Type</dt>
+##### <a name="example"></a>Exemplo
 
-<dd>Date</dd>
+```js
+// Represents 3:37 PM PDT on Monday, August 26, 2019.
+var input = {
+  date: 26,
+  hours: 15,
+  milliseconds: 2,
+  minutes: 37,
+  month: 7,
+  seconds: 2,
+  timezoneOffset: -420,
+  year: 2019
+};
 
-</dl>
+// result should be a Date object.
+var result = Office.context.mailbox.convertToUtcClientTime(input);
+
+// Output should be "2019-08-26T22:37:02.002Z".
+console.log(result.toISOString());
+```
+
+<br>
+
+---
+---
 
 #### <a name="displayappointmentformitemid"></a>displayAppointmentForm(itemId)
 
@@ -160,9 +186,14 @@ Se o identificador do item especificado não identificar um compromisso existent
 
 ##### <a name="example"></a>Exemplo
 
-```javascript
+```js
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="displaymessageformitemid"></a>displayMessageForm(itemId)
 
@@ -195,9 +226,14 @@ Não use o método `displayMessageForm` com um `itemId` que representa um compro
 
 ##### <a name="example"></a>Exemplo
 
-```javascript
+```js
 Office.context.mailbox.displayMessageForm(messageId);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="displaynewappointmentformparameters"></a>displayNewAppointmentForm(parameters)
 
@@ -238,7 +274,7 @@ Se qualquer dos parâmetros exceder os limites de tamanho especificados, ou se u
 
 ##### <a name="example"></a>Exemplo
 
-```javascript
+```js
 var start = new Date();
 var end = new Date();
 end.setHours(start.getHours() + 1);
@@ -255,6 +291,11 @@ Office.context.mailbox.displayNewAppointmentForm(
     body: 'Hello World!'
   });
 ```
+
+<br>
+
+---
+---
 
 #### <a name="getcallbacktokenasynccallback-usercontext"></a>getCallbackTokenAsync(callback, [userContext])
 
@@ -291,7 +332,7 @@ Seu aplicativo deve ter a permissão **ReadItem** especificada em seu manifesto 
 
 ##### <a name="example"></a>Exemplo
 
-```javascript
+```js
 function getCallbackToken() {
   Office.context.mailbox.getCallbackTokenAsync(cb);
 }
@@ -300,6 +341,11 @@ function cb(asyncResult) {
   var token = asyncResult.value;
 }
 ```
+
+<br>
+
+---
+---
 
 #### <a name="getuseridentitytokenasynccallback-usercontext"></a>getUserIdentityTokenAsync(callback, [userContext])
 
@@ -332,7 +378,7 @@ O método `getUserIdentityTokenAsync` retorna um token que pode ser utilizado pa
 
 ##### <a name="example"></a>Exemplo
 
-```javascript
+```js
 function getIdentityToken() {
   Office.context.mailbox.getUserIdentityTokenAsync(cb);
 }
@@ -341,6 +387,11 @@ function cb(asyncResult) {
   var token = asyncResult.value;
 }
 ```
+
+<br>
+
+---
+---
 
 #### <a name="makeewsrequestasyncdata-callback-usercontext"></a>makeEwsRequestAsync(data, callback, [userContext])
 
@@ -398,7 +449,7 @@ Não é necessário definir o valor de codificação quando o aplicativo de emai
 
 O exemplo a seguir chama `makeEwsRequestAsync` para usar a operação `GetItem` para obter o assunto de um item.
 
-```javascript
+```js
 function getSubjectRequest(id) {
   // Return a GetItem operation request for the subject of the specified item.
   var request =

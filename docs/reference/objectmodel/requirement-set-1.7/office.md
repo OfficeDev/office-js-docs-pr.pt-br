@@ -3,12 +3,12 @@ title: Namespace do Office – conjunto de requisitos 1,7
 description: ''
 ms.date: 08/13/2019
 localization_priority: Normal
-ms.openlocfilehash: be0223e7ed274abf0e742be13f258c14f6dccf91
-ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
+ms.openlocfilehash: 8d22ce8400916dffe12a15bba35f70ceca4db510
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "36395691"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695865"
 ---
 # <a name="office"></a>Office
 
@@ -60,6 +60,8 @@ Especifica o resultado de uma chamada assíncrona.
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
+<br>
+
 ---
 ---
 
@@ -84,6 +86,8 @@ Especifica como forçar dados retornados ou definidos pelo método invocado.
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
+
+<br>
 
 ---
 ---
@@ -111,6 +115,8 @@ Especifica o evento associado a um manipulador de eventos.
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1,5 |
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler |
+
+<br>
 
 ---
 ---

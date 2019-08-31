@@ -3,12 +3,12 @@ title: Office. Context. Mailbox. Diagnostics – conjunto de requisitos 1,1
 description: ''
 ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: a2d54aee0545fb43aea798d799f190519226d185
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: 791b0e7c4400d2a508bf72f34f8afa92779c4f63
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268506"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696446"
 ---
 # <a name="diagnostics"></a>diagnostics
 
@@ -55,6 +55,11 @@ Uma cadeia de caracteres que pode ser um dos seguintes valores `Outlook`: `Outlo
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
+<br>
+
+---
+---
+
 #### <a name="hostversion-string"></a>hostVersion: cadeia de caracteres
 
 Obtém uma cadeia de caracteres que representa a versão do aplicativo host ou do servidor Exchange (por exemplo, "15.0.468.0").
@@ -72,6 +77,11 @@ Se o suplemento de email estiver em execução no cliente da área de trabalho d
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
+
+<br>
+
+---
+---
 
 #### <a name="owaview-string"></a>OWAView: cadeia de caracteres
 

@@ -3,12 +3,12 @@ title: Crie o seu primeiro suplemento de painel de tarefas para o Microsoft Proj
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 84e08c1851312f6ecca6d7c779d0b594666922b4
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 8c6a961881ca80bc61c75c78405d9f80f8a9420b
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450977"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695767"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>Crie o seu primeiro suplemento de painel de tarefas para o Microsoft Project usando um editor de texto
 
@@ -109,7 +109,7 @@ O Procedimento 2 mostra como criar o arquivo HTML que o manifesto JSOM_SimpleOMC
 
    A variável **\_projDoc** é inicializada com um objeto **ProjectDocument**. O código inclui algumas funções de tratamento de erros simples e a função **getContextValues** que obtém o contexto do aplicativo e as propriedades contextuais do documento do Project. Para saber mais sobre o modelo de objeto do JavaScript para o Project, confira [API do JavaScript para Office](/office/dev/add-ins/reference/javascript-api-for-office).
 
-    ```javascript
+    ```js
     /*
     * JavaScript functions for the Project OM Test example app
     * in the Project 2013 SDK.
@@ -193,7 +193,7 @@ O Procedimento 2 mostra como criar o arquivo HTML que o manifesto JSOM_SimpleOMC
 
    Cada uma das funções no código a seguir inclui uma função anônima que é especificada por `function (asyncResult)`, que é um retorno de chamada que obtém o resultado assíncrono. Em vez de funções anônimas, você poderia usar funções nomeadas, que podem ajudar na capacidade de manutenção de suplementos complexos.
 
-    ```javascript
+    ```js
     // Get the data in the selected cells of the grid in the active view.
     function getSelectedDataAsync() {
         _projDoc.getSelectedDataAsync(
@@ -550,7 +550,7 @@ O Procedimento 2 mostra como criar o arquivo HTML que o manifesto JSOM_SimpleOMC
 
    As funções **manageTaskEventHandler**, **manageResourceEventHandler** e **manageViewEventHandler** podem adicionar ou remover um manipulador de eventos, como especificado pelo parâmetro _docMethod_.
 
-    ```javascript
+    ```js
     // Task selection changed event handler.
     function onTaskSelectionChanged(eventArgs) {
         text.value = "In task selection change event handler";
@@ -904,7 +904,7 @@ O suplemento **Teste de modelo de objeto do Project** é um exemplo que mostra o
 
 Para obter um exemplo simples, a saída de erro no código a seguir inclui a variável **actionMessage** que especifica a ação a tomar para evitar erros na função **getSelectedResourceAsync**.
 
-```javascript
+```js
 function logError(errorText) {
     text.value = "Error in " + errorText;
 }
@@ -935,7 +935,7 @@ O exemplo **HelloProject_OData** no download do SDK do Project 2013 inclui o arq
 
 O código a seguir no arquivo SurfaceErrors.js inclui a função **throwError** que cria um objeto **Toast**.
 
-```javascript
+```js
 /*
  * Show error messages in a "toast" notification.
  */
@@ -1072,7 +1072,7 @@ Para usar a função **throwError**, inclua a biblioteca JQuery e o script Surfa
 
 <br/>
 
-```javascript
+```js
 function logMethodError(methodName, errorName, errorMessage, actionMessage) {
     logError(methodName + " method.\nError name: " + errorName
         + "\nMessage: " + errorMessage

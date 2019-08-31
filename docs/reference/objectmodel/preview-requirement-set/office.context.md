@@ -3,12 +3,12 @@ title: Office. Context – conjunto de requisitos de visualização
 description: ''
 ms.date: 06/25/2019
 localization_priority: Normal
-ms.openlocfilehash: 998e752cf2292eec4e05901325a0192e158c0b7f
-ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
+ms.openlocfilehash: f06509e291325c635581d902d1f4f440bd255314
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "35454829"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696460"
 ---
 # <a name="context"></a>context
 
@@ -56,7 +56,7 @@ O valor `displayLanguage` reflete a configuração atual de **Display Language**
 
 ##### <a name="example"></a>Exemplo
 
-```javascript
+```js
 function sayHelloWithDisplayLanguage() {
   var myDisplayLanguage = Office.context.displayLanguage;
   switch (myDisplayLanguage) {
@@ -74,6 +74,8 @@ function write(message){
   document.getElementById('message').innerText += message;
 }
 ```
+
+<br>
 
 ---
 ---
@@ -109,7 +111,7 @@ O uso de cores de temas do Office permite coordenar o esquema de cores do seu su
 
 ##### <a name="example"></a>Exemplo
 
-```javascript
+```js
 function applyOfficeTheme(){
   // Get office theme colors.
   var bodyBackgroundColor = Office.context.officeTheme.bodyBackgroundColor;
@@ -121,6 +123,8 @@ function applyOfficeTheme(){
   $('.body').css('background-color', bodyBackgroundColor);
 }
 ```
+
+<br>
 
 ---
 ---

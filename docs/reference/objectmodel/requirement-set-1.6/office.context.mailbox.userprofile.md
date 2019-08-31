@@ -3,12 +3,12 @@ title: Office. Context. Mailbox. userProfile – conjunto de requisitos 1,6
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 3ca06925dcd37d8e68f086daf4705b10fb936623
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: b05a1560c14a3a08fb5ddf30a0bd326a7898a0f9
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127202"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695984"
 ---
 # <a name="userprofile"></a>userProfile
 
@@ -61,9 +61,14 @@ Obtém o tipo de conta do usuário associado à caixa de correio. Os valores pos
 
 ##### <a name="example"></a>Exemplo
 
-```javascript
+```js
 console.log(Office.context.mailbox.userProfile.accountType);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="displayname-string"></a>displayName: cadeia de caracteres
 
@@ -83,10 +88,15 @@ Obtém o nome de exibição do usuário.
 
 ##### <a name="example"></a>Exemplo
 
-```javascript
+```js
 // Example: Allie Bellew
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="emailaddress-string"></a>emailAddress: cadeia de caracteres
 
@@ -106,10 +116,15 @@ Obtém o endereço de email SMTP do usuário.
 
 ##### <a name="example"></a>Exemplo
 
-```javascript
+```js
 // Example: allieb@contoso.com
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="timezone-string"></a>timeZone: cadeia de caracteres
 
@@ -129,7 +144,7 @@ Obtém o fuso horário padrão do usuário.
 
 ##### <a name="example"></a>Exemplo
 
-```javascript
+```js
 // Example: Pacific Standard Time
 console.log(Office.context.mailbox.userProfile.timeZone);
 ```

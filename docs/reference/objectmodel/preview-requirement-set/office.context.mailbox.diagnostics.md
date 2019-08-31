@@ -3,12 +3,12 @@ title: 'Office.context.mailbox.diagnostics: conjunto de requisitos da visualiza�
 description: ''
 ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 0d0283edc0b9c331afb15a9b485c8f1447d5e8e5
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: 47949fb26629b6619514bbd0d7f760cfa31d5839
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268527"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696488"
 ---
 # <a name="diagnostics"></a>diagnostics
 
@@ -55,6 +55,8 @@ Uma cadeia de caracteres que pode ser um dos valores a seguir: `Outlook`, `Outlo
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
+<br>
+
 ---
 ---
 
@@ -75,6 +77,8 @@ Se o suplemento de email estiver em execução no cliente da área de trabalho d
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
+
+<br>
 
 ---
 ---

@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox – conjunto de requisitos 1,3
 description: ''
-ms.date: 08/08/2019
+ms.date: 08/30/2019
 localization_priority: Normal
-ms.openlocfilehash: acc304e302e3bb4d912ecbafee51cc35c88c091c
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: 05b7d82e036cc29526c18bf97c6a1472778c1959
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268667"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696229"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -93,13 +93,18 @@ Tipo: String
 
 ##### <a name="example"></a>Exemplo
 
-```javascript
+```js
 // Get an item's ID from a REST API.
 var restId = 'AAMkAGVlOTZjNTM3LW...';
 
 // Treat restId as coming from the v2.0 version of the Outlook Mail API.
 var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.RestVersion.v2_0);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlookofficelocalclienttimeviewoutlook-js-13"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.3)}
 
@@ -126,6 +131,11 @@ Se o aplicativo de email estiver em execução no Outlook em um cliente desktop 
 ##### <a name="returns"></a>Retorna:
 
 Tipo: [LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.3)
+
+<br>
+
+---
+---
 
 #### <a name="converttorestiditemid-restversion--string"></a>convertToRestId(itemId, restVersion) → {String}
 
@@ -157,13 +167,18 @@ Tipo: String
 
 ##### <a name="example"></a>Exemplo
 
-```javascript
+```js
 // Get the currently selected item's ID.
 var ewsId = Office.context.mailbox.item.itemId;
 
 // Convert to a REST ID for the v2.0 version of the Outlook Mail API.
 var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.RestVersion.v2_0);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="converttoutcclienttimeinput--date"></a>convertToUtcClientTime(input) → {Date}
 
@@ -189,13 +204,34 @@ O método `convertToUtcClientTime` converte um dicionário que contém uma data 
 
 Um objeto Date com a hora expressa em UTC.
 
-<dl class="param-type">
+Tipo: data
 
-<dt>Type</dt>
+##### <a name="example"></a>Exemplo
 
-<dd>Date</dd>
+```js
+// Represents 3:37 PM PDT on Monday, August 26, 2019.
+var input = {
+  date: 26,
+  hours: 15,
+  milliseconds: 2,
+  minutes: 37,
+  month: 7,
+  seconds: 2,
+  timezoneOffset: -420,
+  year: 2019
+};
 
-</dl>
+// result should be a Date object.
+var result = Office.context.mailbox.convertToUtcClientTime(input);
+
+// Output should be "2019-08-26T22:37:02.002Z".
+console.log(result.toISOString());
+```
+
+<br>
+
+---
+---
 
 #### <a name="displayappointmentformitemid"></a>displayAppointmentForm(itemId)
 
@@ -228,9 +264,14 @@ Se o identificador do item especificado não identificar um compromisso existent
 
 ##### <a name="example"></a>Exemplo
 
-```javascript
+```js
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="displaymessageformitemid"></a>displayMessageForm(itemId)
 
@@ -263,9 +304,14 @@ Não use o método `displayMessageForm` com um `itemId` que representa um compro
 
 ##### <a name="example"></a>Exemplo
 
-```javascript
+```js
 Office.context.mailbox.displayMessageForm(messageId);
 ```
+
+<br>
+
+---
+---
 
 #### <a name="displaynewappointmentformparameters"></a>displayNewAppointmentForm(parameters)
 
@@ -306,7 +352,7 @@ Se qualquer dos parâmetros exceder os limites de tamanho especificados, ou se u
 
 ##### <a name="example"></a>Exemplo
 
-```javascript
+```js
 var start = new Date();
 var end = new Date();
 end.setHours(start.getHours() + 1);
@@ -323,6 +369,11 @@ Office.context.mailbox.displayNewAppointmentForm(
     body: 'Hello World!'
   });
 ```
+
+<br>
+
+---
+---
 
 #### <a name="getcallbacktokenasynccallback-usercontext"></a>getCallbackTokenAsync(callback, [userContext])
 
@@ -361,7 +412,7 @@ No modo de composição, você deve chamar o método [`saveAsync`](Office.contex
 
 ##### <a name="example"></a>Exemplo
 
-```javascript
+```js
 function getCallbackToken() {
   Office.context.mailbox.getCallbackTokenAsync(cb);
 }
@@ -370,6 +421,11 @@ function cb(asyncResult) {
   var token = asyncResult.value;
 }
 ```
+
+<br>
+
+---
+---
 
 #### <a name="getuseridentitytokenasynccallback-usercontext"></a>getUserIdentityTokenAsync(callback, [userContext])
 
@@ -402,7 +458,7 @@ O método `getUserIdentityTokenAsync` retorna um token que pode ser utilizado pa
 
 ##### <a name="example"></a>Exemplo
 
-```javascript
+```js
 function getIdentityToken() {
   Office.context.mailbox.getUserIdentityTokenAsync(cb);
 }
@@ -411,6 +467,11 @@ function cb(asyncResult) {
   var token = asyncResult.value;
 }
 ```
+
+<br>
+
+---
+---
 
 #### <a name="makeewsrequestasyncdata-callback-usercontext"></a>makeEwsRequestAsync(data, callback, [userContext])
 
@@ -468,7 +529,7 @@ Não é necessário definir o valor de codificação quando o aplicativo de emai
 
 O exemplo a seguir chama `makeEwsRequestAsync` para usar a operação `GetItem` para obter o assunto de um item.
 
-```javascript
+```js
 function getSubjectRequest(id) {
   // Return a GetItem operation request for the subject of the specified item.
   var request =
