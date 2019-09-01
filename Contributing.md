@@ -5,71 +5,71 @@ Agradecemos seu interesse em nossa documentação!
 * [Maneiras de contribuir](#ways-to-contribute)
 * [Contribuir usando o GitHub](#contribute-using-github)
 * [Contribuir usando o Git](#contribute-using-git)
-* [Como usar Markdown para formatar seu tópico](#how-to-use-markdown-to-format-your-topic)
+* [Como usar o Markdown para formatar seu tópico](#how-to-use-markdown-to-format-your-topic)
 * [Perguntas frequentes](#faq)
 * [Mais recursos](#more-resources)
 
 ## <a name="ways-to-contribute"></a>Maneiras de contribuir
 
-Veja a seguir algumas maneiras de contribuir para esta documentação:
+Veja algumas maneiras de contribuir com esta documentação:
 
-* Para fazer pequenas alterações em um artigo [contribua usando o GitHub](#contribute-using-github).
-* Para fazer grandes alterações ou alterações que envolvam códigos, [contribua usando o Git](#contribute-using-git).
-* Relatar bugs na documentação por meio da seção Problemas do GitHub
-* Solicite a nova documentação no site [UserVoice da Plataforma do desenvolvedor do Office](http://officespdev.uservoice.com).
+* Para fazer pequenas alterações em um artigo, [contribuir usando o GitHub](#contribute-using-github).
+* Para fazer grandes alterações ou alterações que envolvem código, [contribuir usando o Git](#contribute-using-git).
+* Relatar erros de documentação por meio de problemas do GitHub.
+* Solicitar nova documentação no site [UserVoice da plataforma de desenvolvedor do Office](http://officespdev.uservoice.com) .
 
 ## <a name="contribute-using-github"></a>Contribuir usando o GitHub
 
-Use o GitHub para contribuir para esta documentação sem precisar clonar o repositório em sua área de trabalho. Essa é a maneira mais fácil de criar uma solicitação de pull nesse repositório. Use esse método para fazer pequenas alterações que não envolvam alterações de código. 
+Use o GitHub para contribuir para esta documentação sem precisar clonar o repositório na sua área de trabalho. Essa é a maneira mais fácil de criar uma solicitação pull neste repositório. Use este método para fazer uma alteração menor que não envolve alterações de código. 
 
-**Observação**: Esse método permite apenas a contribuição de um artigo de cada vez.
+**Observação**: o uso desse método permite contribuir com um artigo de cada vez.
 
 ### <a name="to-contribute-using-github"></a>Para contribuir usando o GitHub
 
-1. Localize o artigo para o qual deseja contribuir no GitHub.
-2. Quando estiver no artigo no GitHub, entre no GitHub (obtenha uma conta gratuita na página [Join GitHub](https://github.com/join)).
-3. Escolha o **ícone de lápis** (editar o arquivo em sua bifurcação deste projeto) e faça suas alterações na janela **<> Edit file**. 
-4. Role até a parte inferior e insira a descrição.
-5. Para propor uma a alteração e criar a solicitação de pull escolha **Propose file change**>**Create pull request**.
+1. Encontre o artigo que você deseja contribuir no GitHub.
+2. Quando estiver no artigo no GitHub, entre no GitHub (obtenha uma conta gratuita do [GitHub](https://github.com/join)).
+3. Escolha o **ícone de lápis** (edite o arquivo na bifurcação deste projeto) e faça as alterações na janela **<>Editar arquivo** . 
+4. Role até a parte inferior e insira uma descrição.
+5. Escolha **propor alteração**>de arquivo**criar solicitação pull**.
 
-Você enviou uma solicitação de pull com êxito. Elas são revisadas geralmente em 10 dias úteis. 
+Agora você enviou com êxito uma solicitação pull. Solicitações pull geralmente são analisadas dentro de 10 dias úteis. 
 
 
 ## <a name="contribute-using-git"></a>Contribuir usando o Git
 
-Use o Git para fazer alterações substanciais como:
+Use o Git para contribuir com alterações substantivas, como:
 
-* Contribuir com código.
-* Contribuir com alterações que afetam o significado.
-* Contribuir com grandes alterações de texto.
-* Adicionar novos tópicos.
+* Código contribuinte.
+* Contribuindo alterações que afetam o significado.
+* Contribuindo com grandes alterações em texto.
+* Adição de novos tópicos.
 
 ### <a name="to-contribute-using-git"></a>Para contribuir usando o Git
 
-1. Se você não tiver uma conta, configure uma no [GitHub](https://github.com/join). 
-2. Depois que tiver a conta, instale o Git em seu computador. Siga as etapas no tutorial de configuração do Git em [Configurar o Git].
-3. Para enviar uma solicitação de pull usando o Git, siga as etapas da seção [Usar o GitHub, o Git e este repositório](#use-github-git-and-this-repository).
-4. Você será solicitado a assinar o Contrato de licença de colaborador se você for:
+1. Se você não tiver uma conta do GitHub, configure uma no [GitHub](https://github.com/join). 
+2. Depois de ter uma conta, instale o Git em seu computador. Siga as etapas no tutorial de [configuração do git] .
+3. Para enviar uma solicitação pull usando o Git, siga as etapas em [usar o GitHub, o git e este repositório](#use-github-git-and-this-repository).
+4. Você será solicitado a assinar o contrato de licença do colaborador se for:
 
-    * Membro do grupo Microsoft Open Technologies.
-    * Um colaborador que não trabalha na Microsoft.
+    * Um membro do grupo Microsoft Open Technologies.
+    * Um colaborador que não funciona para a Microsoft.
 
-Como membro da comunidade, você deve assinar o Contrato de Licença de Contribuição (CLA) antes de poder fazer contribuições de grade porte para um projeto. Você só precisa completar e enviar a documentação uma vez. Revise cuidadosamente o documento. Talvez seja necessário que seu empregador assine o documento.
+Como membro da Comunidade, você deve assinar o contrato de licença de contribuição (CLA) antes de poder contribuir em grandes envios para um projeto. Você precisa concluir e enviar a documentação apenas uma vez. Reveja cuidadosamente o documento. Talvez seja necessário que seu empregador assine o documento.
 
-A assinatura do Contrato de Licença de Contribuição (CLA) não lhe concede direito a confirmar alterações no repositório principal, mas isso significa que as equipes do Office Developer e do Office Developer Content Publishing poderão revisar e aprovar suas contribuições. Você será creditado por suas contribuições. Você é creditado por suas contribuições.
+A assinatura do CLA não concede direitos para confirmar o repositório principal, mas significa que as equipes de publicação de conteúdo do desenvolvedor do Office e do Office Developer poderão revisar e aprovar suas contribuições. Você é creditado nos seus envios.
 
-As solicitações de pull geralmente são analisadas em 10 dias úteis.
+Solicitações pull geralmente são analisadas dentro de 10 dias úteis.
 
 ## <a name="use-github-git-and-this-repository"></a>Use o GitHub, o Git e este repositório
 
-**Observação:** A maior parte das informações desta seção pode ser encontrada nos artigos de [Ajuda do GitHub].  Se você estiver familiarizado com o Git e o GitHub, pule para a seção **Contribute and edit content** para ver as informações específicas sobre o fluxo de edição de código/conteúdo desse repositório.
+**Observação**: a maior parte das informações desta seção pode ser encontrada nos artigos de [ajuda do GitHub] .  Se você estiver familiarizado com o git e o GitHub, pule para a seção **contribuir e editar conteúdo** para as especificações do fluxo de código/conteúdo desse repositório.
 
 ### <a name="to-set-up-your-fork-of-the-repository"></a>Para configurar sua bifurcação do repositório
 
-1.  Configure uma conta no GitHub para que você pode contribuir para esse projeto. Caso ainda não tenha feito isso, acesse o [GitHub](https://github.com/join) e faça isso agora.
-2.  Instale o Git em seu computador. Siga as etapas no tutorial de configuração do Git em [Configurar o Git].
-3.  Crie o seu próprio fork para este repositório. Para fazer isso, escolha o botão **Fork** localizado na parte superior da página.
-4.  Copie o seu fork para seu computador. Para fazer isso, abra o Git Bash. No prompt de comando, digite:
+1.  Configure uma conta GitHub para que você pode contribuir para esse projeto. Se você ainda não fez isso, vá para o [GitHub](https://github.com/join) e faça isso agora.
+2.  Instale o Git em seu computador. Siga as etapas no tutorial de [configuração do git] .
+3.  Crie sua própria bifurcação para este repositório. Para fazer isso, na parte superior da página, escolha o botão **** de bifurcação.
+4.  Copie sua bifurcação para seu computador. Para fazer isso, abra o Git bash. No prompt de comando, digite:
 
         git clone https://github.com/<your user name>/<repo name>.git
 
@@ -81,88 +81,88 @@ As solicitações de pull geralmente são analisadas em 10 dias úteis.
 
 Parabéns! Agora seu repositório está configurado. Você não precisará repetir essas etapas novamente.
 
-### <a name="contribute-and-edit-content"></a>Contribuir e editar conteúdo
+### <a name="contribute-and-edit-content"></a>Contribuir e editar o conteúdo
 
-Para que o processo de contribuição seja o mais contínuo possível, siga estas etapas.
+Para tornar o processo de contribuição o mais simples possível, siga estas etapas.
 
 #### <a name="to-contribute-and-edit-content"></a>Para contribuir e editar conteúdo
 
 1. Crie uma nova ramificação.
 2. Adicione novo conteúdo ou edite o conteúdo existente.
-3. Envie uma solicitação de pull para o repositório principal.
-4. Exclua o branch.
+3. Envie uma solicitação pull para o repositório principal.
+4. Exclua a ramificação.
 
-**Importante** Limite cada ramificação a um único conceito/artigo para simplificar o fluxo de trabalho e reduzir a chance de conflitos ao mesclar conteúdos. O conteúdo apropriado para uma nova ramificação inclui:
+**Importante** Limite cada filial a um único conceito/artigo para simplificar o fluxo de trabalho e reduzir a chance de conflitos de mesclagem. O conteúdo apropriado para uma nova ramificação inclui:
 
 * Um novo artigo.
-* Edições de ortografia e gramática.
-* Aplicar uma única alteração de formatação em um grande conjunto de artigos (por exemplo, aplicar um novo rodapé de direitos autorais).
+* Edição ortográfica e gramatical.
+* Aplicar uma única alteração de formatação em um grande conjunto de artigos (por exemplo, aplicando um novo rodapé de direitos autorais).
 
 #### <a name="to-create-a-new-branch"></a>Para criar uma nova ramificação
 
-1.  Abra o Git Bash.
-2.  No prompt de comando do Git Bash, digite: `git pull upstream master:<new branch name>`. Isso cria uma nova ramificação local copiada da ramificação mestre mais recente do OfficeDev.
-3.  No prompt de comando do Git Bash, digite: `git push origin <new branch name>`. Isso alertará o GitHub para a nova ramificação. Agora você deverá ver a nova ramificação na sua bifurcação do repositório no GitHub.
-4.  No prompt de comando do Git Bash, digite `git checkout <new branch name>` para alternar para a nova ramificação.
+1.  Abra o Git bash.
+2.  No prompt de comando do git bash, `git pull upstream master:<new branch name>`digite. Isso cria uma nova ramificação localmente que é copiada da ramificação mestra OfficeDev mais recente.
+3.  No prompt de comando do git bash, `git push origin <new branch name>`digite. Isso alerta o GitHub para a nova ramificação. Agora você deverá surgir a nova ramificação na sua bifurcação do repositório no GitHub.
+4.  No prompt de comando do git bash, `git checkout <new branch name>` digite para mudar para a nova ramificação.
 
 #### <a name="add-new-content-or-edit-existing-content"></a>Adicionar novo conteúdo ou editar o conteúdo existente
 
-Navegue até o repositório em seu computador usando o Explorador de Arquivos. Os arquivos do repositório estarão em `C:\Users\<yourusername>\<repo name>`.
+Navegue até o repositório no computador usando o explorador de arquivos. Os arquivos do repositório estão `C:\Users\<yourusername>\<repo name>`em.
 
-Para editar arquivos, abra-os em um editor de sua escolha e modifique-os. Para criar um novo arquivo, use o editor de sua escolha e salve o novo arquivo no local apropriado em sua cópia local do repositório. Enquanto estiver trabalhando, salve seu trabalho com frequência.
+Para editar arquivos, abra-os em um editor de sua escolha e modifique-os. Para criar um novo arquivo, use o editor de sua escolha e salve o novo arquivo no local apropriado na sua cópia local do repositório. Enquanto estiver trabalhando, salve seu trabalho com frequência.
 
-Os arquivos em `C:\Users\<yourusername>\<repo name>` são uma cópia funcional da nova ramificação que você criou em seu repositório local. Quaisquer alterações feitas nessa pasta não afetarão o repositório local até que você confirme a alteração. Para confirmar uma alteração no repositório local, digite os seguintes comandos no GitBash:
+Os arquivos no `C:\Users\<yourusername>\<repo name>` são uma cópia de trabalho da nova ramificação que você criou em seu repositório local. Qualquer que seja a alteração você faça nessa pasta, ela só afetará o repositório local quando você confirmar uma alteração. Para confirmar uma alteração no repositório local, digite os seguintes comandos no GitBash:
 
     git add .
     git commit -v -a -m "<Describe the changes made in this commit>"
 
-O comando `add` adiciona suas alterações para uma área de preparação antes de confirmá-las no repositório. O ponto após o comando `add` especifica que você deseja preparar todos os arquivos adicionados ou modificados, verificando as subpastas recursivamente. (Se você não quiser confirmar todas as alterações, pode adicionar arquivos específicos. Você também pode desfazer uma confirmação. Para ajuda, digite `git add -help` ou `git status`.)
+O comando `add` adiciona suas alterações para uma área de preparo em preparação para confirmá-las no repositório. O período após o `add` comando especifica que você deseja testar todos os arquivos adicionados ou modificados, verificando as subpastas recursivamente. (Caso você não queira confirmar todas as alterações, é possível adicionar arquivos específicos. Você também pode desfazer uma confirmação. Para obter ajuda, digite `git add -help` ou `git status`.)
 
-O comando `commit` aplica as alterações preparadas ao repositório. A opção `-m` significa que você está fornecendo o comentário de confirmação na linha de comando. As opções -v e -a podem ser omitidas. A opção -v corresponde à saída detalhada do comando e a opção -a faz o que você já fez com o comando adicionar.
+O comando `commit` aplica as alterações preparadas ao repositório. A opção `-m` significa que você está fornecendo o comentário de confirmação na linha de comando. As opções-v e-a podem ser omitidas. A opção-v é para a saída detalhada do comando e-a faz o que você já fez com o comando adicionar.
 
-Você pode confirmar várias vezes enquanto estiver fazendo seu trabalho ou apenas uma vez quando terminar.
+Você pode confirmar várias vezes enquanto estiver fazendo seu trabalho ou pode confirmar uma vez quando terminar.
 
-#### <a name="submit-a-pull-request-to-the-main-repository"></a>Enviar uma solicitação de pull para o repositório principal.
+#### <a name="submit-a-pull-request-to-the-main-repository"></a>Enviar uma solicitação pull para o repositório principal.
 
-Quando terminar o trabalho e estiver pronto para mesclá-lo no repositório principal, siga estas etapas.
+Quando você tiver concluído o trabalho e estiver pronto para mesclá-lo no repositório principal, siga estas etapas.
 
 #### <a name="to-submit-a-pull-request-to-the-main-repository"></a>Para enviar uma solicitação pull para o repositório principal
 
-1.  No prompt de comando do Git Bash, digite: `git push origin <new branch name>`. Em seu repositório local, `origin` refere-se ao repositório do GitHub a partir do qual você clonou o repositório local. Esse comando confirma o estado atual do sua nova ramificação, incluindo todas as confirmações feitas nas etapas anteriores, na sua bifurcação do GitHub.
+1.  No prompt de comando do git bash, `git push origin <new branch name>`digite. Em seu repositório local, `origin` refere-se ao repositório do GitHub a partir do qual você clonou o repositório local. Esse comando coloca o estado atual do sua nova ramificação, incluindo todas as confirmações feitas nas etapas anteriores, na ramificação do GitHub.
 2.  No site do GitHub, navegue em sua bifurcação para a nova ramificação.
-3.  Escolha o botão **Pull Request** na parte superior da página.
-4.  Verifique se o Base branch é `OfficeDev/<repo name>@master` e o Head branch é `<your username>/<repo name>@<branch name>`.
-5.  Escolha o botão **Update Commit Range** para atualizar o intervalo de confirmação.
-6.  Adicione um título à sua solicitação de pull e descreva todas as alterações que você estiver fazendo.
+3.  Escolha o botão de **solicitação pull** na parte superior da página.
+4.  Verifique se o Branch base `OfficeDev/<repo name>@master` é e a ramificação `<your username>/<repo name>@<branch name>`principal é.
+5.  Escolha o botão **Atualizar intervalo de confirmação** .
+6.  Adicione um título à sua solicitação pull e descreva todas as alterações que você está fazendo.
 7.  Envie a solicitação pull.
 
-Um dos administradores do site processará sua solicitação de pull. Sua solicitação de pull ficará visível no site OfficeDevOfficeDev/<repo name> em Problemas. Quando a solicitação de pull for aceita, o problema será resolvido.
+Um dos administradores do site processará sua solicitação pull. Sua solicitação pull será a área de OfficeDev/<repo name> site em problemas. Quando a solicitação pull for aceita, o problema será resolvido.
 
 #### <a name="create-a-new-branch-after-merge"></a>Criar uma nova ramificação após a mesclagem
 
-Depois que uma ramificação for mesclada com êxito (ou seja, sua solicitação tiver sido aceita), não continue a trabalhar na ramificação local. Isso poderá gerar conflitos de mesclagem caso você envie outra solicitação de pull. Para fazer uma nova atualização, crie uma nova ramificação local com base na ramificação de upstream que foi mesclada e então exclua a ramificação local inicial.
+Depois que uma ramificação é mesclada com êxito (ou seja, sua solicitação pull é aceita), não continue trabalhando nessa filial local. Isso pode levar a conflitos de mesclagem se você enviar outra solicitação pull. Para fazer outra atualização, crie uma nova ramificação local da ramificação mesclada com êxito e exclua sua ramificação local inicial.
 
-Por exemplo, se sua ramificação local X tiver sido mesclada na ramificação-mestra OfficeDev/microsoft-graph-docs e você quiser fazer atualizações adicionais no conteúdo mesclado, crie uma nova ramificação local, X2,  a partir da ramificação-mestra OfficeDev/microsoft-graph-docs. Para fazer isso, abra o GitBash e execute os seguintes comandos:
+Por exemplo, se a sua filial local X foi mesclada com êxito no Branch mestre OfficeDev/Microsoft-Graph-docs e você deseja fazer atualizações adicionais para o conteúdo que foi mesclado. Crie uma nova ramificação local, X2, da ramificação mestre OfficeDev/Microsoft-Graph-docs. Para fazer isso, abra GitBash e execute os seguintes comandos:
 
     cd microsoft-graph-docs
     git pull upstream master:X2
     git push origin X2
 
-Agora você tem cópias locais (em uma nova ramificação local) do trabalho que enviou na ramificação X. A ramificação X2 também contém todo o trabalho que outros autores mesclaram, portanto, se seu trabalho depender do trabalho de outras pessoas (por exemplo, imagens compartilhadas), ele estará disponível na nova ramificação. Você pode confirmar se o seu trabalho anterior (e o trabalho de outras pessoas) está na ramificação fazendo check-out da nova ramificação...
+Agora você tem cópias locais (em uma nova filial local) do trabalho que você enviou no Branch X. A ramificação X2 também contém todos os outros escritores de trabalho mesclados, portanto, se o trabalho depender de trabalho de outras pessoas (por exemplo, imagens compartilhadas), ele estará disponível na nova ramificação. Você pode verificar se o trabalho anterior (e outras pessoas) está na ramificação fazendo check-out da nova ramificação...
 
     git checkout X2
 
-... e verificando o conteúdo. (O comando `checkout` atualiza os arquivos em `C:\Users\<yourusername>\microsoft-graph-docs` para o estado atual da ramificação X2.) Depois de ter feito check-out da nova ramificação, você poderá atualizar o conteúdo e confirmá-lo como de costume. No entanto, para evitar trabalhar na ramificação mesclada (X) por engano, o melhor a fazer será excluí-la (confira a seção: **Excluir uma ramificação**).
+... e verificando o conteúdo. (O `checkout` comando atualiza os arquivos no `C:\Users\<yourusername>\microsoft-graph-docs` estado atual da ramificação X2.) Depois de fazer o check-out da nova ramificação, você pode fazer atualizações no conteúdo e confirmá-las como de costume. No entanto, para evitar trabalhar na ramificação mesclada (X) por engano, o melhor a fazer será excluí-la (confira a seguinte seção: **Excluir uma ramificação**).
 
 #### <a name="delete-a-branch"></a>Excluir uma ramificação
 
-Depois que as alterações tiverem sido mescladas com êxito no repositório principal, exclua a ramificação utilizada, pois você não precisará mais dela.  Qualquer trabalho adicional deve ser feito em uma nova ramificação.  
+Depois que as alterações forem mescladas com êxito no repositório principal, exclua a ramificação usada porque você não precisa mais dela.  Qualquer trabalho adicional deve ser feito em uma nova ramificação.  
 
 #### <a name="to-delete-a-branch"></a>Para excluir uma ramificação
 
-1.  No prompt de comando do Git Bash, digite: `git checkout master`. Isso garante que você não fique na ramificação a ser excluída (o que não é permitido).
-2.  Em seguida, no prompt de comando, digite `git branch -d <branch name>`. Esse comando exclui a ramificação do seu computador somente se ela tiver sido mesclada com êxito no repositório upstream. (Você pode substituir esse comportamento com o sinalizador `–D`, mas primeiro certifique-se de que você deseja fazer isso.)
-3.  Por fim, digite `git push origin :<branch name>` no prompt de comando (um espaço antes dos dois pontos e nenhum espaço depois deles).   Essa ação excluirá a ramificação de uma bifurcação do GitHub.  
+1.  No prompt de comando do git bash, `git checkout master`digite. Isso garante que você não fique na ramificação a ser excluída (o que não é permitido).
+2.  Em seguida, no prompt de comando, `git branch -d <branch name>`digite. Isso excluirá a ramificação em seu computador somente se ela tiver sido mesclada com êxito no repositório upstream. (Você pode substituir esse comportamento com o sinalizador `–D`, mas primeiro certifique-se de que deseja fazer isso).
+3.  Por fim, digite `git push origin :<branch name>` no comando prompt (um espaço antes dos dois pontos e nenhum espaço depois deles).   Essa ação excluirá a ramificação em uma bifurcação do github.  
 
 Parabéns, você contribuiu com êxito para o projeto!
 
@@ -170,40 +170,40 @@ Parabéns, você contribuiu com êxito para o projeto!
 
 ### <a name="markdown"></a>Markdown
 
-Todos os artigos neste repositório usam Markdown. Uma apresentação completa (e a listagem de toda a sintaxe) pode ser encontrada em [Daring Fireball - Markdown].
+Todos os artigos neste repositório usam Markdown. Uma introdução completa (e a listagem de todas as sintaxes) podem ser encontradas em [Daring Fireball – suredução].
  
 ## <a name="faq"></a>Perguntas frequentes
 
 ### <a name="how-do-i-get-a-github-account"></a>Como obter uma conta do GitHub?
 
-Preencha o formulário em [Join GitHub](https://github.com/join) para abrir uma conta gratuita do GitHub. 
+Preencha o formulário em [Ingressar no GitHub](https://github.com/join) para abrir uma conta gratuita do GitHub. 
 
-### <a name="where-do-i-get-a-contributors-license-agreement"></a>Onde posso obter um Contrato de Licença de Colaborador? 
+### <a name="where-do-i-get-a-contributors-license-agreement"></a>Onde posso obter um Contrato de Licença do Colaborador? 
 
-Um aviso será automaticamente enviado para você informando que é preciso assinar o CLA (Contrato de Licença do Colaborador) se sua solicitação pull exigir um. 
+Um aviso será automaticamente enviado para você informando que é preciso assinar o CLA (Contrato de Licença do Colaborador) se sua solicitação de recebimento exigir um. 
 
-Como membro da comunidade, **você deve assinar o CLA (Contrato de Licença de Colaborador) antes de poder fazer contribuições de grande porte para esse projeto**. Você só precisa concluir e enviar a documentação uma vez. Revise cuidadosamente o documento. Talvez seja necessário que seu empregador assine o documento.
+Como membro da comunidade, **você deve assinar o CLA (Contrato de Licença do Colaborador) antes de poder contribuir com envios volumosos para esse projeto**. Você só precisa concluir e enviar a documentação uma vez. Reveja cuidadosamente o documento. Talvez seja necessário que seu empregador assine o documento.
 
-### <a name="what-happens-with-my-contributions"></a>O que acontece com as minhas contribuições?
+### <a name="what-happens-with-my-contributions"></a>O que acontece com minhas contribuições?
 
-Quando você enviar suas alterações, por meio de uma solicitação de pull, nossa equipe será notificada e a examinará. Você receberá notificações sobre sua solicitação de pull do GitHub. Além disso, você também poderá ser notificado por uma pessoa de nossa equipe se precisarmos de mais informações. Se a sua solicitação de pull for aprovada, atualizaremos a documentação. Reservamo-nos o direito de editar o seu envio por motivos legais, estilísticos, de clareza ou por outros problemas.
+Quando você enviar suas alterações, por meio de uma solicitação pull, nossa equipe será notificada e revisará sua solicitação pull. Você receberá notificações sobre sua solicitação pull do GitHub; Você também pode ser notificado por alguém da nossa equipe se precisar de mais informações. Se sua solicitação pull for aprovada, atualizaremos a documentação. Reservamos o direito de editar seu envio por questões jurídicas, de estilo, de clareza ou de outros problemas.
 
-### <a name="can-i-become-an-approver-for-this-repositorys-github-pull-requests"></a>Posso me tornar um aprovador de solicitações de pull desse repositório do GitHub?
+### <a name="can-i-become-an-approver-for-this-repositorys-github-pull-requests"></a>Posso se tornar um Aprovador para as solicitações pull do GitHub do repositório?
 
-Atualmente, não estamos autorizando que colaboradores externos aprovem solicitações de pull neste repositório.
+No momento, não estamos permitindo que colaboradores externos aprovem solicitações pull neste repositório.
 
-### <a name="how-soon-will-i-get-a-response-about-my-change-request"></a>Em quanto tempo terei uma resposta sobre a minha solicitação de alteração?
+### <a name="how-soon-will-i-get-a-response-about-my-change-request"></a>Em quanto tempo receberei uma resposta sobre minha solicitação de alteração?
 
-As solicitações de pull geralmente são analisadas em 10 dias úteis.
+Solicitações pull geralmente são analisadas dentro de 10 dias úteis.
 
 
 ## <a name="more-resources"></a>Mais recursos
 
-* Para saber mais sobre o Markdown, acesse o site do criador do Git [Daring Fireball].
-* Para saber mais sobre como usar o Git e o GitHub, primeiro confira a [seção de ajuda do GitHub].
+* Para saber mais sobre redução, acesse o site do criador de redução [Daring Fireball].
+* Para saber mais sobre como usar o git e o GitHub, primeiro Confira a [ajuda do GitHub].
 
 [GitHub Home]: http://github.com
 [Ajuda do GitHub]: http://help.github.com/
 [Configurar o Git]: https://help.github.com/articles/set-up-git/
-[Daring Fireball - Markdown]: http://daringfireball.net/projects/markdown/
+[Daring Fireball]: http://daringfireball.net/projects/markdown/
 [Daring Fireball]: http://daringfireball.net/
