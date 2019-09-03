@@ -44,10 +44,8 @@ A tabela a seguir especifica os elementos exigidos para os três tipos de Suplem
 | Elemento                                                                                      | Conteúdo | Painel de tarefas | Outlook |
 | :------------------------------------------------------------------------------------------- | :-----: | :-------: | :-----: |
 | [OfficeApp][]                                                                                |    X    |     X     |    X    |
-| 
-  [Id][]                                                                                       |    X    |     X     |    X    |
-| 
-  [Versão][]                                                                                  |    X    |     X     |    X    |
+| [Id][]                                                                                       |    X    |     X     |    X    |
+| [Versão][]                                                                                  |    X    |     X     |    X    |
 | [ProviderName][]                                                                             |    X    |     X     |    X    |
 | [DefaultLocale][]                                                                            |    X    |     X     |    X    |
 | [DisplayName][]                                                                              |    X    |     X     |    X    |
@@ -57,13 +55,8 @@ A tabela a seguir especifica os elementos exigidos para os três tipos de Suplem
 | [SourceLocation (ContentApp)][]<br/>[SourceLocation (TaskPaneApp)][]                         |    X    |     X     |         |
 | [DesktopSettings][]                                                                          |         |           |    X    |
 | [SourceLocation (MailApp)][]                                                                 |         |           |    X    |
-| 
-  [Permissões (ContentApp)][]<br/>
-  [Permissões (TaskPaneApp)][]<br/>
-  [Permissões (MailApp)][] |    X    |     X     |    X    |
-| 
-  [Regra (RuleCollection)][]<br/>
-  [Regra (MailApp)][]                                             |         |           |    X    |
+| [Permissões (ContentApp)][]<br/>[Permissões (TaskPaneApp)][]<br/>[Permissões (MailApp)][] |    X    |     X     |    X    |
+| [Regra (RuleCollection)][]<br/>[Regra (MailApp)][]                                             |         |           |    X    |
 | [Requisitos (MailApp)*][]                                                                  |         |           |    X    |
 | [Conjunto*][]<br/>[Conjuntos (MailAppRequirements)*][]                                                 |         |           |    X    |
 | [Formulário*][]<br/>[FormSettings*][]                                                              |         |           |    X    |
