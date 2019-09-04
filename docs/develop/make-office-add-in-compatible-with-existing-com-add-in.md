@@ -3,12 +3,12 @@ title: Torne o seu suplemento do Office compatível com um suplemento COM existe
 description: Habilitar a compatibilidade entre o suplemento do Office e o suplemento COM equivalente
 ms.date: 07/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 8d826dec35bbbca91a1606d902d563f1a794e688
-ms.sourcegitcommit: d49643c4218ed8ad57575d58170dfcdbaf312d14
+ms.openlocfilehash: bd419d059abd51f969affe107e8ec54e66bdac7f
+ms.sourcegitcommit: 78998a9f0ebb81c4dd2b77574148b16fe6725cfc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "36048278"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "36715610"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>Torne o seu suplemento do Office compatível com um suplemento COM existente
 
@@ -36,7 +36,7 @@ O exemplo a seguir mostra a parte do manifesto que especifica um suplemento de C
       <ProgId>ContosoCOMAddin</ProgId>
       <Type>COM</Type>
     </EquivalentAddin>
-  <EquivalentAddins>
+  </EquivalentAddins>
 </VersionOverrides>
 ```
 
