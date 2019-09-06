@@ -3,5 +3,5 @@
 >
 > Para usar as APIs de visualização:
 >
-> - Você deve fazer referência à biblioteca **beta** no CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js).
-> - Talvez seja necessário participar do [programa Office](https://products.office.com/office-insider) Insider para obter acesso a versões mais recentes do Office.
+> - Você deve fazer referência à biblioteca **beta** no CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). O [arquivo de definição de tipo](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) para compilação TypeScript e IntelliSense é encontrado em CDN e [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Você pode instalar esses tipos com `npm install --save-dev @types/office-js-preview`o.
+> - Talvez seja necessário participar do [programa Office Insider](https://products.office.com/office-insider) para obter acesso a versões mais recentes do Office.
