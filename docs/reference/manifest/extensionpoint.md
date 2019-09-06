@@ -1,14 +1,14 @@
 ---
 title: Elemento ExtensionPoint no arquivo de manifesto
 description: ''
-ms.date: 08/23/2019
+ms.date: 09/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 4f6a6347ac61e48f5bdefb7759d8bddbca64ea7e
-ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
+ms.openlocfilehash: ed26c5e81a2c8229faad2c8af6b1edaff2f288e5
+ms.sourcegitcommit: d34aa0b282cc76ffff579da2a7945efd12fb7340
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "36672788"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "36769586"
 ---
 # <a name="extensionpoint-element"></a>Elemento ExtensionPoint
 
@@ -251,7 +251,7 @@ Os elementos **Control** contidos neste ponto de extensão precisam ter o atribu
 Este ponto de extensão adiciona um manipulador de eventos para um evento especificado.
 
 > [!NOTE]
-> Este tipo de elemento só tem suporte pelo Outlook na Web no Office 365.
+> Esse tipo de elemento tem suporte no Outlook clássico na Web e na [visualização](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) no Windows, Mac e Outlook moderno na Web. Uma assinatura do Office 365 também é necessária.
 
 | Elemento | Descrição  |
 |:-----|:-----|
@@ -260,9 +260,9 @@ Este ponto de extensão adiciona um manipulador de eventos para um evento especi
 #### <a name="itemsend-event-example"></a>Exemplo do evento ItemSend
 
 ```xml
-<ExtensionPoint xsi:type="Events"> 
-  <Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" /> 
-</ExtensionPoint> 
+<ExtensionPoint xsi:type="Events">
+  <Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" />
+</ExtensionPoint>
 ```
 
 ### <a name="detectedentity"></a>DetectedEntity
@@ -272,7 +272,7 @@ Este ponto extensão adiciona uma ativação do suplemento contextual em um tipo
 O elemento [VersionOverrides](versionoverrides.md) incluído deve ter um valor de atributo `xsi:type` de `VersionOverridesV1_1`.
 
 > [!NOTE]
-> Este tipo de elemento está disponível para [ clientes do Outlook que ofereçam suporte a conjuntos de requisitos 1.6 e posteriores](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets#clients).
+> Este tipo de elemento está disponível para [ clientes do Outlook que ofereçam suporte a conjuntos de requisitos 1.6 e posteriores](../requirement-sets/outlook-api-requirement-sets.md#clients).
 
 |  Elemento |  Descrição  |
 |:-----|:-----|
