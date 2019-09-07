@@ -1,15 +1,15 @@
 ---
 title: Crie o seu primeiro suplemento do painel de tarefas do PowerPoint
 description: Saiba como criar um Suplemento do PowerPoint simples usando a API JS do Office.
-ms.date: 07/17/2019
+ms.date: 09/06/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: c2e6d32de346b13e2dc353ca758fa7839c8ace87
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 93ce98921ea429778505577575eef0f992be93f1
+ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36308054"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "36782244"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>Crie o seu primeiro suplemento do painel de tarefas do PowerPoint
 
@@ -27,8 +27,6 @@ Neste artigo, você passará pelo processo de criação de um suplemento do pain
 
 ### <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
-[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
-
 Use o gerador Yeoman para criar um projeto do suplemento do PowerPoint. Execute o comando a seguir e responda aos prompts da seguinte forma:
 
 ```command&nbsp;line
@@ -37,8 +35,10 @@ yo office
 
 - **Escolha o tipo de projeto:** `Office Add-in Task Pane project`
 - **Escolha o tipo de script:** `Javascript`
-- **Qual será o nome do suplemento?** `my-office-add-in`
+- **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `PowerPoint`
+
+![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-powerpoint.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -51,7 +51,7 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 1. Navegue até a pasta raiz do projeto.
 
     ```command&nbsp;line
-    cd "my-office-add-in"
+    cd "My Office Add-in"
     ```
 
 2. Conclua as etapas a seguir para iniciar o servidor Web local e fazer o sideload do seu suplemento.

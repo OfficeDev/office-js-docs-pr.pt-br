@@ -1,15 +1,15 @@
 ---
 title: Crie seu primeiro suplemento do painel de tarefas do Word
 description: Saiba como criar um suplemento do painel de tarefas do Word simples usando a API JS do Office.
-ms.date: 07/17/2019
+ms.date: 09/06/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 5b65d20a10b98dc3a4ba1e95c4ef52ff91647e97
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 98fbd61296ef56397241e402830eb8baaeebe577
+ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36308040"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "36782237"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do Word
 
@@ -29,8 +29,6 @@ Neste artigo, você aprenderá sobre o processo de criação de um suplemento do
 
 ### <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
-[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
-
 Use o gerador Yeoman para criar um projeto de suplemento do Word. Execute o comando a seguir e responda aos prompts da seguinte forma:
 
 ```command&nbsp;line
@@ -39,8 +37,10 @@ yo office
 
 - **Escolha o tipo de projeto:** `Office Add-in Task Pane project`
 - **Escolha o tipo de script:** `Javascript`
-- **Qual será o nome do suplemento?** `my-office-add-in`
+- **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Word`
+
+![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-word.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -53,7 +53,7 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 1. Navegue até a pasta raiz do projeto.
 
     ```command&nbsp;line
-    cd "my-office-add-in"
+    cd "My Office Add-in"
     ```
 
 2. Conclua as etapas a seguir para iniciar o servidor Web local e fazer o sideload do seu suplemento.

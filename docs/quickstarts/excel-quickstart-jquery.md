@@ -1,15 +1,15 @@
 ---
 title: Crie seu primeiro suplemento do painel de tarefas do Excel
 description: Saiba como criar um Suplemento do Excel simples usando a API JS do Office.
-ms.date: 07/17/2019
+ms.date: 09/06/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 781e2c3e7cd563e6ebeeaff3e8bf0624b64aec76
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 855db6f41b895f0be985a352d4a1cdcb72bf3394
+ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36308047"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "36782286"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Criar um suplemento do painel de tarefas do Excel
 
@@ -27,8 +27,6 @@ Neste artigo, você passará pelo processo de criação de um suplemento do pain
 
 ### <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
-[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
-
 Use o gerador Yeoman para criar um projeto de suplemento do Excel. Execute o comando a seguir e responda aos prompts da seguinte forma:
 
 ```command&nbsp;line
@@ -37,8 +35,10 @@ yo office
 
 - **Escolha o tipo de projeto:** `Office Add-in Task Pane project`
 - **Escolha o tipo de script:** `Javascript`
-- **Qual será o nome do suplemento?** `my-office-add-in`
+- **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Excel`
+
+![Gerador do Yeoman](../images/yo-office-excel.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -51,7 +51,7 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 1. Navegue até a pasta raiz do projeto.
 
     ```command&nbsp;line
-    cd "my-office-add-in"
+    cd "My Office Add-in"
     ```
 
 2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 

@@ -1,15 +1,15 @@
 ---
 title: Criar um suplemento do painel de tarefas do Excel usando o Angular
 description: ''
-ms.date: 05/02/2019
+ms.date: 09/06/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 5d27b7d70fb013ca15115af3ad550a604ce10bb9
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: ed805cf5d19a38d543b7fcbba49508dd3f2d6d97
+ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36308033"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "36782251"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-angular"></a>Criar um suplemento do painel de tarefas do Excel usando o Angular
 
@@ -21,8 +21,6 @@ Neste artigo, você passará pelo processo de criação de um suplemento do pain
 
 ## <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
-[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
-
 Use o gerador Yeoman para criar um projeto de suplemento do Excel. Execute o comando a seguir e responda aos prompts da seguinte forma:
 
 ```command&nbsp;line
@@ -31,8 +29,10 @@ yo office
 
 - **Escolha o tipo de projeto:** `Office Add-in Task Pane project using Angular framework`
 - **Escolha o tipo de script:** `TypeScript`
-- **Qual será o nome do suplemento?** `my-office-add-in`
+- **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Excel`
+
+![Gerador do Yeoman](../images/yo-office-excel-angular-2.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -50,7 +50,7 @@ O projeto de suplemento que você criou com o gerador do Yeoman contém um exemp
 1. Navegue até a pasta raiz do projeto.
 
     ```command&nbsp;line
-    cd "my-office-add-in"
+    cd "My Office Add-in"
     ```
 
 2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 

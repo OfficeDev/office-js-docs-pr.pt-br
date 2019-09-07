@@ -1,15 +1,15 @@
 ---
 title: Crie o seu primeiro suplemento do painel de tarefas do Project
 description: ''
-ms.date: 05/08/2019
+ms.date: 09/06/2019
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 466c8354a047c8e36741711881ad1b0e2993ddaf
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 0a7684f3d1bd4f404ba42a798908bb9d2ba2f8d2
+ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36308005"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "36782279"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>Crie o seu primeiro suplemento do painel de tarefas do Project
 
@@ -23,8 +23,6 @@ Neste artigo, você passará pelo processo de criação de um suplemento do pain
 
 ## <a name="create-the-add-in"></a>Criar o suplemento
 
-[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
-
 Use o gerador Yeoman para criar um projeto de suplemento do Project. Execute o comando a seguir e responda aos prompts da seguinte forma:
 
 ```command&nbsp;line
@@ -33,8 +31,10 @@ yo office
 
 - **Escolha o tipo de projeto:** `Office Add-in Task Pane project`
 - **Escolha o tipo de script:** `Javascript`
-- **Qual será o nome do suplemento?** `my-office-add-in`
+- **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Project`
+
+![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-project.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
@@ -94,7 +94,7 @@ Office.context.document.getSelectedTaskAsync(
 1. Navegue até a pasta raiz do projeto.
 
     ```command&nbsp;line
-    cd "my-office-add-in"
+    cd "My Office Add-in"
     ```
 
 2. Inicie o servidor Web local.

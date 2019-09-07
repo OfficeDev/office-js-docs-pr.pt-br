@@ -1,15 +1,15 @@
 ---
 title: Crie seu primeiro suplemento do painel de tarefas do OneNote
 description: ''
-ms.date: 06/20/2019
+ms.date: 09/06/2019
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 24c8854cb1f9332371f3726409f91f7cdbf53243
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 7e31933b5d38cede00983d6f3f31a284043bb769
+ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36308019"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "36782258"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do OneNote
 
@@ -21,8 +21,6 @@ Neste artigo, você verá o processo de criação de um suplemento do painel de 
 
 ## <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
-[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
-
 Use o gerador Yeoman para criar um projeto de suplemento do OneNote. Execute o comando a seguir e responda aos prompts da seguinte forma:
 
 ```command&nbsp;line
@@ -31,8 +29,10 @@ yo office
 
 - **Escolha o tipo de projeto:** `Office Add-in Task Pane project`
 - **Escolha o tipo de script:** `Javascript`
-- **Qual será o nome do suplemento?** `my-office-add-in`
+- **Qual será o nome do suplemento?** `My Office Add-in`
 - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `OneNote`
+
+![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-onenote.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
     
@@ -76,7 +76,7 @@ try {
 1. Navegue até a pasta raiz do projeto.
 
     ```command&nbsp;line
-    cd "my-office-add-in"
+    cd "My Office Add-in"
     ```
 
 2. Inicie o servidor Web local e realize o sideload no seu suplemento.
