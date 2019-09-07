@@ -1,15 +1,15 @@
 ---
-ms.date: 07/10/2019
+ms.date: 09/06/2019
 description: Desenvolvimento de funções personalizadas no guia de início rápido do Excel.
 title: Início rápido de funções personalizadas
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 59f0b0483befda8646d823c50295d035ab7e64c6
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: b3344b19ec29b24407c83bb043dcbaa613d5e8ec
+ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36308012"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "36782230"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Introdução ao desenvolvimento de funções personalizadas do Excel
 
@@ -28,8 +28,6 @@ Com funções personalizadas, os desenvolvedores agora podem adicionar novas fun
 ## <a name="build-your-first-custom-functions-project"></a>Criar seu primeiro projeto de funções personalizadas
 
 Para começar, você usará o gerador Yeoman para criar projeto com funções personalizadas. Isso configurará seu projeto com a estrutura de pastas, arquivos de origem e dependências corretos para começar a codificar suas funções personalizadas.
-
-[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
 
 1. Em uma pasta de sua preferência, execute o comando a seguir e responda aos prompts da seguinte maneira.
 

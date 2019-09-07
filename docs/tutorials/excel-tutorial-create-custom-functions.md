@@ -1,15 +1,15 @@
 ---
 title: Tutorial de funções personalizadas do Excel
 description: Neste tutorial, você criará um suplemento do Excel que contém uma função personalizada que pode executar cálculos e solicitar ou transmitir dados da web.
-ms.date: 07/09/2019
+ms.date: 09/06/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 2832df467f7e155ed026fe7f04837f18a4d2309d
-ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
+ms.openlocfilehash: d7af566d228c3b4da87be2d3d8bfba049f8b5509
+ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "36672870"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "36782265"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Tutorial: Criar funções personalizadas no Excel
 
@@ -31,8 +31,6 @@ Neste tutorial, você vai:
 ## <a name="create-a-custom-functions-project"></a>Criar um projeto com funções personalizadas
 
  Para começar, você criará o projeto de código para criar o suplemento função personalizada. O [gerador Yeoman para suplementos do Office](https://www.npmjs.com/package/generator-office) configurará seu projeto com algumas funções personalizadas predefinidas que você pode experimentar. Se você já tiver executado o início rápido de funções personalizadas e gerado um projeto, continue a usar esse projeto e pule para [esta etapa](#create-a-custom-function-that-requests-data-from-the-web) .
-
-[!include[note about Yeoman generator bug](../includes/note-yeoman-generator-bug-201908.md)]
 
 1. Execute o comando a seguir e responda aos prompts da seguinte forma.
     
