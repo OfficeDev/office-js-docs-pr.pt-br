@@ -33,7 +33,6 @@ Siga os princípios de design do Office para criar experiências positivas com o
 - **Design para todas as plataformas e métodos de entrada**. Os suplementos são projetados para funcionar em todas as plataformas com suporte do Office, portanto, a Experiência de Usuário do suplemento deve ser otimizada para funcionar em plataformas e fatores forma. Dê suporte a mouse/teclado e dispositivos de entrada por toque e verifique se a interface do usuário HTML personalizada responde na adaptação aos diversos fatores forma. Para saber mais, confira o tópico [Otimizar para toque](../concepts/add-in-development-best-practices.md#optimize-for-touch). 
 
 ## <a name="see-also"></a>Confira também
-- 
-  [Office UI Fabric](https://developer.microsoft.com/pt-BR/fabric) 
+- [Office UI Fabric](https://developer.microsoft.com/pt-BR/fabric) 
 - [Práticas recomendadas de desenvolvimento de suplementos](../concepts/add-in-development-best-practices.md)
 
