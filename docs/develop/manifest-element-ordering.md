@@ -3,12 +3,12 @@ title: Como encontrar a ordem correta dos elementos do manifesto
 description: Saiba como encontrar a ordem correta na qual colocar elementos filho em um elemento pai.
 ms.date: 08/22/2019
 localization_priority: Normal
-ms.openlocfilehash: c1b8e981b9348e015e14a29131eadff3a5cb08ea
-ms.sourcegitcommit: 4f039614f42ae26a1290ed025fdabb7f6b62cc8a
+ms.openlocfilehash: c8ee9f2f32f7124c4914131e68c9742f87567715
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "36642828"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838498"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>Como encontrar a ordem correta dos elementos do manifesto
 
@@ -28,7 +28,7 @@ As seções a seguir mostram os elementos manifest na ordem em que devem ser exi
 
 ## <a name="basic-task-pane-add-in-element-ordering"></a>Ordenação básica de elemento de suplemento do painel de tarefas
 
-```
+```xml
 <OfficeApp xsi:type="TaskPaneApp">
     <Id>
     <AlternateID>
@@ -66,11 +66,11 @@ As seções a seguir mostram os elementos manifest na ordem em que devem ser exi
     <VersionOverrides>*
 ```
 
-\*Confira ordenação de [elemento do suplemento do painel de tarefas no VersionOverrides](#task-pane-add-in-element-ordering-within-versionoverrides) para a ordenação dos elementos filhos de VersionOverrides.
+\*Confira [ordenação de elemento do suplemento do painel de tarefas no VersionOverrides](#task-pane-add-in-element-ordering-within-versionoverrides) para a ordenação dos elementos filhos de VersionOverrides.
 
 ## <a name="basic-mail-add-in-element-ordering"></a>Ordenação básica de elementos de suplemento de email
 
-```
+```xml
 <OfficeApp xsi:type="MailApp">
     <Id>
     <AlternateId>
@@ -113,7 +113,7 @@ As seções a seguir mostram os elementos manifest na ordem em que devem ser exi
 
 ## <a name="basic-content-add-in-element-ordering"></a>Ordenação de elemento de suplemento de conteúdo básico
 
-```
+```xml
 <OfficeApp xsi:type="ContentApp">
     <Id>
     <AlternateId>
@@ -152,7 +152,7 @@ As seções a seguir mostram os elementos manifest na ordem em que devem ser exi
 
 ## <a name="task-pane-add-in-element-ordering-within-versionoverrides"></a>Ordenação do elemento do suplemento do painel de tarefas no VersionOverrides
 
-```
+```xml
 <VersionOverrides>
     <Description>
     <Requirements>
@@ -291,7 +291,7 @@ As seções a seguir mostram os elementos manifest na ordem em que devem ser exi
 
 ## <a name="mail-add-in-element-ordering-within-versionoverrides-ver-10"></a>Ordenação do elemento de suplemento de email no VersionOverrides ver. 1.0
 
-```
+```xml
 <VersionOverrides>
     <Description>
     <Requirements>
@@ -387,7 +387,7 @@ As seções a seguir mostram os elementos manifest na ordem em que devem ser exi
 
 ## <a name="mail-add-in-element-ordering-within-versionoverrides-ver-11"></a>Ordenação do elemento de suplemento de email no VersionOverrides ver. 1.1
 
-```
+```xml
 <VersionOverrides>
     <Description>
     <Requirements>
@@ -489,7 +489,7 @@ As seções a seguir mostram os elementos manifest na ordem em que devem ser exi
 
 ## <a name="content-add-in-element-ordering-within-versionoverrides"></a>Ordenação de elemento de suplemento de conteúdo dentro de VersionOverrides
 
-```
+```xml
 <VersionOverrides>
     <WebApplicationInfo>
         <Id>
