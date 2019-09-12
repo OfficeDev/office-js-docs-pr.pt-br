@@ -1,18 +1,18 @@
 ---
 title: Visão geral da autenticação e autorização nos Suplementos do Office
 description: ''
-ms.date: 08/07/2019
+ms.date: 08/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 2733f8af9f236347e52269c9e73b322b4310e2a9
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: dab5eec14a95aea9c27e1d26151b121ac2ed82ac
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36302925"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838505"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Visão geral da autenticação e autorização nos Suplementos do Office
 
-Os aplicativos da Web e, portanto, os Suplementos do Office permitem acesso anônimo por padrão, mas é possível exigir que os usuários se autentiquem com um logon. Em particular, você pode exigir que os usuários se conectem com uma Conta da Microsoft, uma Conta Corporativa ou de Estudante (Office 365). Essa tarefa é chamada de autenticação do usuário, pois permite que o suplemento saiba quem é o usuário.
+Os aplicativos da Web e, portanto, os Suplementos do Office permitem acesso anônimo por padrão, mas é possível exigir que os usuários autentiquem fazendo logon. Por exemplo, você pode solicitar que os usuários se conectem com uma Conta da Microsoft, uma conta corporativa ou de estudante do Office 365 ou outra conta comum. Essa tarefa é chamada de autenticação do usuário, pois permite que o suplemento saiba quem é o usuário.
 
 Seu suplemento também pode obter consentimento do usuário para acessar seus dados do Microsoft Graph (como seu perfil do Office 365, arquivos do OneDrive e dados do SharePoint) ou para dados de outras fontes externas, como Google, Facebook, LinkedIn, SalesForce e GitHub. Essa tarefa é chamada de autorização de suplemento (ou aplicativo), pois é o *suplemento* que está sendo autorizado, não o usuário.
 

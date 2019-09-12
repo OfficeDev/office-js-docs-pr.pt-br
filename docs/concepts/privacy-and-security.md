@@ -1,14 +1,14 @@
 ---
 title: Privacidade e segurança para suplementos do Office
 description: ''
-ms.date: 06/20/2019
+ms.date: 09/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 5a930f9c2d4d2c7fe049517ac812c72a8a239b40
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: 43caca7b255d11d94c3627ad87d048d1f677cd67
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575552"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838513"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 
@@ -39,9 +39,9 @@ As seções a seguir descrevem brevemente como a arquitetura de tempo de execuç
 
 ### <a name="clients-on-windows-and-os-x-devices"></a>Clientes para dispositivos Windows e OS X
 
-Em clientes com suporte para dispositivos de área de trabalho e de tablet, como Excel no Windows e Outlook no Windows e Mac, há suporte a suplementos do Office por meio da integração de um componente no processo, o tempo de execução de suplementos do Office, que gerencia o ciclo de vida do suplemento e habilita a interoperabilidade entre o suplemento e o aplicativo cliente. A página da web do suplemento em si é hospedada fora do processo. Como mostrado na figura 1, em um dispositivo Windows para área de trabalho ou tablet, a página da Web do suplemento é hospedada em um controle do Internet Explorer que, por sua vez, é hospedado em um processo de tempo de execução de suplemento que fornece segurança e isolamento de desempenho. 
+Em clientes com suporte para dispositivos de área de trabalho e de tablet, como Excel no Windows e Outlook no Windows e no Mac, há suporte aos suplementos do Office por meio da integração de um componente no processo, o tempo de execução de suplementos do Office, que gerencia o ciclo de vida do suplemento e habilita a interoperabilidade entre o suplemento e o aplicativo cliente. A página da web do suplemento em si é hospedada fora do processo. Como mostrado na figura 1, em um dispositivo Windows para área de trabalho ou tablet, [a página da Web do suplemento é hospedada em um controle do Internet Explorer ou Microsoft Edge](browsers-used-by-office-web-add-ins.md) que, por sua vez, é hospedado em um processo de tempo de execução de suplemento que fornece segurança e isolamento de desempenho.
 
-Nos computadores com o Windows, o Modo Protegido no Internet Explorer deve estar habilitado para a Zona de Site Restrito. Isso é normalmente ativado por padrão. Se estiver desabilitado, [ocorrerá um erro](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer) quando você tentar iniciar um suplemento.
+Nos computadores com o Windows, o Modo Protegido no Internet Explorer deve estar habilitado para a Zona de Site Restrito. Isso é normalmente ativado por padrão. Se estiver desabilitado, [ocorrerá um erro](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer) ao tentar iniciar um suplemento.
 
 *Figura 1. Ambiente de execução dos Suplementos do Office nos clientes Windows para área de trabalho e tablet*
 
@@ -190,7 +190,7 @@ Um usuário mal-intencionado pode atacar a origem de um suplemento inserindo um 
 
 - Se estiver usando jQuery, use o método [.text()](https://api.jquery.com/text/) em vez do método [.html()](https://api.jquery.com/html/).
 
-- Use o método [toStaticHTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) para remover atributos e elementos HTML dinâmicos da entrada dos usuários antes de passá-la para **innerHTML**.
+- Use o método [toStaticHTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Reference) para remover atributos e elementos HTML dinâmicos da entrada dos usuários antes de passá-la para **innerHTML**.
 
 - Use a função [encodeURIComponent](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuricomponent) ou [encodeURI](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuri) para codificar texto que se destina a ser uma URL que vem da entrada do usuário ou a contém.
 
@@ -223,11 +223,11 @@ Os desenvolvedores também devem observar as seguintes práticas de segurança:
 
 - Os desenvolvedores não devem usar controles ActiveX em Suplementos do Office, pois os controles ActiveX não dão suporte à natureza de plataforma cruzada da plataforma de suplementos.
 
-- Os suplementos de conteúdo e de painel de tarefas presumem o uso das mesmas configurações de SSL que o Internet Explorer usa por padrão e permitem que a maioria do conteúdo seja fornecida apenas por SSL. Os suplementos do Outlook exigem que todo o conteúdo seja fornecido por SSL. Os desenvolvedores devem especificar no elemento **SourceLocation** do manifesto do suplemento uma URL que use HTTPS, para identificar o local do arquivo HTML do suplemento.
+- Os suplementos de conteúdo e de painel de tarefas assumem o uso das mesmas configurações de SSL que o navegador usa por padrão e permitem que a maioria do conteúdo seja fornecido apenas por SSL. Os suplementos do Outlook exigem que todo o conteúdo seja fornecido por SSL. Os desenvolvedores devem especificar no elemento **SourceLocation** do manifesto do suplemento uma URL que use HTTPS, para identificar o local do arquivo HTML para o suplemento.
 
-    Para garantir que os suplementos não estejam fornecendo conteúdo usando HTTP, ao testá-los os desenvolvedores devem se certificar que as seguintes configurações estão selecionadas no Internet Explorer e que não há avisos de segurança aparecendo em seus cenários de teste:
+    Para garantir que os suplementos não estejam fornecendo conteúdo usando HTTP, ao testá-los, os desenvolvedores devem se certificar que as seguintes configurações estão selecionadas nas **Opções de Internet** no **Painel de Controle** e que não ocorra avisos de segurança em seus cenários de teste:
 
-    - Verifique se a configuração de segurança **Exibir conteúdo misto** da zona **Internet** está definida para **Perguntar**. Você pode fazer isso selecionando o seguinte no Internet Explorer: na guia **Segurança** da caixa de diálogo **Opções da Internet**, selecione a zona **Internet**, escolha **Nível personalizado**, role até **Exibir conteúdo misto** e marque **Perguntar** se essa opção não estiver marcada.
+    - Verifique se a configuração de segurança **Exibir conteúdo misto** da zona **Internet** está definida para **Solicitar**. Você pode fazer isso selecionando o seguinte nas **Opções de Internet**: na guia **Segurança**, clique na zona **Internet**, clique em **Nível personalizado**, role até **Exibir conteúdo misto** e selecione **Solicitar** se essa opção não estiver selecionada.
 
     - Verifique se a opção **Avisar ao alterar o modo de segurança** está marcada na guia **Avançado** da caixa de diálogo **Opções da Internet**.
 

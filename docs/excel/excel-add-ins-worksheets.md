@@ -1,14 +1,14 @@
 ---
 title: Trabalhe com planilhas usando a API JavaScript do Excel
 description: ''
-ms.date: 06/20/2019
+ms.date: 09/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 7fd6821797269b13ad7fb1900b2024035e27d37b
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 3c06e3660c2c8d6bf362b38185b96c8012dc4b90
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940735"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838557"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Trabalhe com planilhas usando a API JavaScript do Excel
 
@@ -298,6 +298,56 @@ function onWorksheetChanged(eventArgs) {
         return context.sync();
     });
 }
+```
+
+## <a name="handle-sorting-events-preview"></a>Manipulação de eventos de classificação (visualização)
+
+> [!NOTE]
+> As APIs para esses eventos relacionados à classificação estão disponíveis atualmente apenas na visualização pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+Os eventos `onColumnSorted` e `onRowSorted` indicam quando quaisquer dados de planilha são classificados. Esses eventos estão conectados a objetos `Worksheet` individuais e à `WorkbookCollection` da pasta de trabalho. Eles são acionados independentemente da classificação ser realizada de forma programática ou manualmente por meio da interface de usuário do Excel.
+
+> [!NOTE]
+> `onColumnSorted` aciona quando as colunas são classificadas como resultado de uma operação de classificação da esquerda para a direita. `onRowSorted` aciona quando as linhas são classificadas como resultado de uma operação de classificação de cima para baixo. Classificar uma tabela usando o menu suspenso em um cabeçalho da coluna resulta em um evento `onRowSorted`. O evento corresponde ao que está movendo, não ao que está sendo considerado como os critérios de classificação.
+
+Os eventos `onColumnSorted` e `onRowSorted` fornecem seus retornos de chamadas com [WorksheetColumnSortedEventArgs](/javascript/api/excel/excel.worksheetcolumnsortedeventargs) ou [WorksheetRowSortedEventArgs](/javascript/api/excel/excel.worksheetrowsortedeventargs), respectivamente. Isso fornece mais detalhes sobre o evento. Em particular, ambos `EventArgs` têm uma propriedade `address` que representa as linhas ou as colunas movidas como resultado da operação de classificação. Qualquer célula com o conteúdo classificado será incluída, mesmo que o valor da célula não seja parte do critério de classificação.
+
+As imagens a seguir mostram os intervalos retornados pela propriedade `address` para eventos de classificação. Primeiro, aqui estão os dados de exemplo antes da classificação:
+
+![Dados da tabela no Excel antes de serem classificados](../images/excel-sort-event-before.png)
+
+Se uma classificação de cima para baixo for realizada no "**Q1**" (os valores em "**B**"), as seguintes linhas realçadas serão retornadas por `WorksheetRowSortedEventArgs.address`:
+
+![Dados da tabela no Excel após uma classificação de cima para baixo. As linhas que foram movidas são realçadas.](../images/excel-sort-event-after-row.png)
+
+Se uma classificação da esquerda para a direita for executada em "**Quinces**" (os valores em "**4**") nos dados originais, as seguintes colunas realçadas serão retornadas por `WorksheetColumnsSortedEventArgs.address`:
+
+![Dados da tabela no Excel após uma classificação da esquerda para a direita. As colunas que foram movidas são realçadas.](../images/excel-sort-event-after-column.png)
+
+O exemplo de código a seguir mostra como registrar um manipulador de eventos para o evento `Worksheet.onRowSorted`. O retorno de chamada do manipulador limpa a cor de preenchimento do intervalo, e depois preenche as células das linhas movidas.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+
+    // This will fire whenever a row has been moved as the result of a sort action.
+    sheet.onRowSorted.add(function (event) {
+        return Excel.run(function (context) {
+            console.log("Row sorted: " + event.address);
+            var sheet = context.workbook.worksheets.getActiveWorksheet();
+
+            // Clear formatting for section, then highlight the sorted area.
+            sheet.getRange("A1:E5").format.fill.clear();
+            if (event.address !== "") {
+                sheet.getRanges(event.address).format.fill.color = "yellow";
+            }
+
+            return context.sync();
+        });
+    });
+
+    return context.sync();
+}).catch(errorHandlerFunction);
 ```
 
 ## <a name="find-all-cells-with-matching-text"></a>Localizar todas as células com texto correspondente

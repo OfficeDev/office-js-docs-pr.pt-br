@@ -3,12 +3,12 @@ title: Autorizar serviços externos no seu suplemento do Office
 description: Obter autorização para outras fontes de dados além da Microsoft como Google, Facebook, LinkedIn, SalesForce e GitHub, usando o OAuth 2.0, o código de autorização e os fluxos implícitos.
 ms.date: 08/07/2019
 localization_priority: Priority
-ms.openlocfilehash: 58a1f5980be740ac88589af2b5b0e5ab028a12d4
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 3b6ba291912f9d6284ca5e71a7bf634261a0bd24
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36302564"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838540"
 ---
 # <a name="authorize-external-services-in-your-office-add-in"></a>Autorizar serviços externos no seu suplemento do Office
 
@@ -19,16 +19,16 @@ Serviços online populares, incluindo o Office 365, o Google, o Facebook, o Link
 
 A estrutura padrão do setor para habilitar o acesso de aplicativos Web a um serviço online é **OAuth 2.0**. Na maioria das situações, você não precisa saber os detalhes de como a estrutura funciona para usá-la no seu suplemento. Estão disponíveis muitas bibliotecas que simplificam os detalhes para você.
 
-Uma ideia fundamental do OAuth é que um aplicativo pode ser uma entidade de segurança por si só, assim como um usuário ou um grupo, com sua própria identidade e conjunto de permissões. Nos cenários mais comuns, quando o usuário realiza uma ação no Suplemento do Office que requer o serviço online, o suplemento envia ao serviço uma solicitação para um conjunto específico de permissões para a conta do usuário. Em seguida, o serviço solicita que o usuário conceda essas permissões ao suplemento. Após a concessão das permissões, o serviço envia ao suplemento um pequeno *token de acesso* codificado. O suplemento pode usar o serviço, incluindo o token, em todas as suas solicitações para as APIs do serviço. Porém, o suplemento só pode agir dentro das permissões concedidas a ele pelo usuário. O token também expira após um tempo especificado.
+Uma ideia fundamental do OAuth é que um aplicativo pode ser uma [entidade de segurança](/windows/security/identity-protection/access-control/security-principals) por si só, assim como um usuário ou um grupo, com sua própria identidade e conjunto de permissões. Nos cenários mais comuns, quando o usuário realiza uma ação no Suplemento do Office que requer o serviço online, o suplemento envia ao serviço uma solicitação para um conjunto específico de permissões para a conta do usuário. Em seguida, o serviço solicita que o usuário conceda essas permissões ao suplemento. Após a concessão das permissões, o serviço envia ao suplemento um pequeno *token de acesso* codificado. O suplemento pode usar o serviço, incluindo o token, em todas as suas solicitações para as APIs do serviço. Porém, o suplemento só pode agir dentro das permissões concedidas a ele pelo usuário. O token também expira após um tempo especificado.
 
 Vários padrões OAuth, chamados de *fluxos* ou *tipos de concessão*, foram projetados para diferentes cenários. Os dois padrões a seguir são os mais comumente implementados:
 
 - **Fluxo Implícito**: a comunicação entre o suplemento e o serviço online é implementada com um JavaScript no lado do cliente. Esse fluxo costuma ser usado em aplicativos página única (SPAs).
 - **Fluxo de Código de Autorização**: A comunicação é *de servidor para servidor* entre o aplicativo Web do seu suplemento e o serviço online. Portanto, a implementação é feita com código no lado do servidor.
 
-A finalidade de um fluxo OAuth é garantir a identidade e autorização do aplicativo. No fluxo de Código de Autorização, você recebe um *segredo do cliente* que precisa permanecer oculto. Um aplicativo que não tem nenhum back-end do lado do cliente, como que é o caso de um SPA, não tem como proteger o segredo; por isso recomendamos que você use o fluxo Implícito em SPAs.
+A finalidade de um fluxo OAuth é garantir a identidade e autorização do aplicativo. No fluxo de Código de Autorização, você recebe um *segredo do cliente* que precisa permanecer oculto. Um aplicativo que não tem nenhum back-end do lado do servidor, como é o caso de um SPA, não tem como proteger o segredo; por isso recomendamos usar o fluxo Implícito em SPAs.
 
-Você deve estar familiarizado com os prós e os contras do fluxo implícito e o fluxo do Código de Autorização. Para obter mais informações sobre esses dois fluxos, consulte [Código de Autorização](https://tools.ietf.org/html/rfc6749#section-1.3.1) e [Implícito](https://tools.ietf.org/html/rfc6749#section-1.3.2).
+Você deve estar familiarizado com os prós e os contras do fluxo implícito e o fluxo do código de autorização. Para obter mais informações sobre esses dois fluxos, consulte [Código de Autorização](https://tools.ietf.org/html/rfc6749#section-1.3.1) e [Implícito](https://tools.ietf.org/html/rfc6749#section-1.3.2).
 
 > [!NOTE]
 > Você também tem a opção de usar um serviço intermediário para executar a autorização e passar o token de acesso ao seu suplemento. Para obter detalhes sobre esse cenário, consulte a seção **Serviços intermediários** mais adiante neste artigo.

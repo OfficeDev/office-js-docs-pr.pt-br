@@ -1,14 +1,14 @@
 ---
 title: Limites de recurso e otimização de desempenho para Suplementos do Office
 description: ''
-ms.date: 06/20/2019
+ms.date: 09/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 7feaef4d3b76cbef71a367099382f3f26ea50314
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 33d97d36128a32f50e0689d8ac58644f83bf604f
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127685"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838582"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites de recurso e otimização de desempenho para Suplementos do Office
 
@@ -97,7 +97,7 @@ Embora os limites de recursos para o uso de CPU e memória, a tolerância a falh
 
    Para obter exemplos de códigos JavaScript e jQuery que mostram a divisão de uma série de operações de entrada e saída em dados não associados (que possivelmente consumiria muitos recursos de CPU e demoraria em demasiado), consulte [Como posso passar o controle de volta (brevemente) ao navegador durante um processamento de JavaScript que consome muitos recursos?](https://stackoverflow.com/questions/210821/how-can-i-give-control-back-briefly-to-the-browser-during-intensive-javascript). Este exemplo usa o método [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) do objeto global para limitar a duração da entrada e da saída. Também manipula os dados em pedaços definidos, ao invés de dados não associados de forma aleatória.
 
-- Se o suplemento usa um algoritmo com uso intensivo de CPU para processar um grande volume de dados, você pode usar os web workers para executar a tarefa demorada em segundo plano enquanto executa um script separado em primeiro plano, como exibir o andamento na interface do usuário. Os Web workers não bloqueiam atividades do usuário e permitem que a página HTML continue respondendo. Para obter um exemplo de Web workers, confira [Noções básicas de Web workers](https://www.html5rocks.com/en/tutorials/workers/basics/). Confira [Web workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API) para saber mais sobre a API Web workers do Internet Explorer.
+- Se o suplemento usa um algoritmo com uso intensivo de CPU para processar um grande volume de dados, você pode usar os web workers para executar a tarefa demorada em segundo plano enquanto executa um script separado em primeiro plano, como exibir o progreso na interface do usuário. Os Web workers não bloqueiam atividades do usuário e permitem que a página HTML continue respondendo. Para obter um exemplo de Web workers, consulte [Noções básicas de Web workers](https://www.html5rocks.com/en/tutorials/workers/basics/). Confira [Web workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API) para saber mais sobre a API Web workers.
 
 - Se o suplemento usa um algoritmo com uso intensivo de CPU, mas é possível dividir a entrada ou a saída de dados em conjuntos menores, considere criar um serviço Web passando os dados para o serviço Web para aliviar a carga da CPU e aguarde um retorno de chamada assíncrono.
 

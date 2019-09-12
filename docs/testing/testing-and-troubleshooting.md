@@ -1,14 +1,14 @@
 ---
 title: Solucionar erros de usuários com suplementos do Office
 description: ''
-ms.date: 07/29/2019
+ms.date: 09/09/2019
 localization_priority: Priority
-ms.openlocfilehash: d6ede08411d9f6c69fa9fb31256ab377682fbca0
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 8c1a39e4574f7e8ea60cdf32ff3139d9b929fe5d
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940861"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838526"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Solucionar erros de usuários com suplementos do Office
 
@@ -40,7 +40,7 @@ Você também pode enviar comentários: se estiver usando o Excel no Windows ou 
 
 ## <a name="outlook-add-in-doesnt-work-correctly"></a>O suplemento do Outlook não funciona corretamente
 
-Se um suplemento do Outlook executado no Windows não está funcionando corretamente, tente ativar a depuração de scripts no Internet Explorer. 
+Se um suplemento do Outlook executado no Windows e [usando o Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md) não está funcionando corretamente, tente ativar a depuração de scripts no Internet Explorer. 
 
 
 - Vá para Ferramentas > **Opções da Internet** > **Avançado**.
@@ -88,7 +88,7 @@ Para resolver o problema, os administradores ou usuários finais podem adicionar
 
 Para adicionar uma URL à lista de sites confiáveis:
 
-1. No Internet Explorer, escolha o botão Ferramentas e vá para **Opções da Internet** > **Segurança**.
+1. No **Painel de Controle**, abra **Opções da Internet** > **Security**.
 2. Escolha a zona de **Sites confiáveis** e escolha **Sites**.
 3. Insira a URL exibida na mensagem de erro e escolha **Adicionar**.
 4. Tente usar o suplemento novamente. Se o problema persistir, verifique as configurações de outras zonas de segurança e confira se o domínio do suplemento está na mesma zona que a URL exibida na barra de endereços do aplicativo do Office.

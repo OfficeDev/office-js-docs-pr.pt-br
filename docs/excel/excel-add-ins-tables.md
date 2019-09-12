@@ -1,14 +1,14 @@
 ---
 title: Trabalhar com tabelas usando a API JavaScript do Excel
 description: ''
-ms.date: 07/18/2019
+ms.date: 09/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 826afb9444fbb83e032f59316de00100cfdb2402
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: 7803690b4a20aa89908a20cf557f8076f5fea70a
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35804636"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838547"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Trabalhar com tabelas usando a API JavaScript do Excel
 
@@ -284,6 +284,8 @@ Excel.run(function (context) {
 **Dados de tabela classificados por Valor (decrescente)**
 
 ![Dados de tabela no Excel](../images/excel-tables-sort.png)
+
+Quando os dados são classificados em uma planilha, uma notificação de evento é acionada. Para saber mais sobre os eventos relacionados à classificação e como seu suplemento pode registrar manipuladores de eventos para responder a esses eventos, consulte [Manipular eventos de classificação (visualização).](excel-add-ins-worksheets.md#handle-sorting-events-preview)
 
 ## <a name="apply-filters-to-a-table"></a>Aplicar filtros a uma tabela
 

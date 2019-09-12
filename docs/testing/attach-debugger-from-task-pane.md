@@ -1,14 +1,14 @@
 ---
 title: Anexar um depurador do painel de tarefas
 description: ''
-ms.date: 08/06/2019
+ms.date: 09/09/2019
 localization_priority: Priority
-ms.openlocfilehash: 4433eccc165d616c7b8ebff428e1426c4b98be49
-ms.sourcegitcommit: dc78ee2a89fe3d4cd6f748be1eec9081c1077502
+ms.openlocfilehash: 39d952cc1162107881f6f6860a36be45c7eb4d30
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2019
-ms.locfileid: "36231302"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838470"
 ---
 # <a name="attach-a-debugger-from-the-task-pane"></a>Anexar um depurador do painel de tarefas
 
@@ -32,13 +32,14 @@ No Visual Studio, você verá os arquivos de código no **Gerenciador de Soluç�
 > Se você não vir o menu Personalidade, é possível depurar o suplemento com o Visual Studio. Certifique-se de que o suplemento do painel tarefas esteja aberto no Office e, em seguida, siga estas etapas:
 >
 > 1. No Visual Studio, escolha **DEPURAR** > **Anexar ao Processo**.
-> 2. Em **Anexar ao Processo**, escolha todos os processos Iexplore.exe disponíveis e, em seguida, selecione o botão **Anexar**.
+> 2. Em **Processos disponíveis**, selecione*qualquer um* dos `Iexplore.exe` processos disponíveis *ou* todos os `MicrosoftEdge*.exe` processos disponíveis, dependendo [ se seu suplemento usa Internet Explorer ou Microsoft Edge](../concepts/browsers-used-by-office-web-add-ins.md), e depois clique no botão **Anexar**.
 
 Veja mais informações sobre depuração no Visual Studio, em:
 
 -   Para iniciar e usar o Explorador do DOM no Visual Studio, confira a Dica 4 na seção [Dicas e Truques](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates/#tips_tricks) da publicação [Building great-looking apps for Office using the new project templates](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates) (Criar aplicativos atraentes para o Office usando os novos modelos de projeto) do blog.
 -   Para definir pontos de interrupção, confira [Usar Pontos de Interrupção](/visualstudio/debugger/using-breakpoints?view=vs-2015).
 -   Para usar o F12, confira o artigo [Usando as ferramentas de desenvolvedor F12](/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85)).
+-   Para usar as ferramentas de desenvolvedor do Microsoft Edge, confira [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab).
 
 ## <a name="see-also"></a>Confira também
 
