@@ -1,94 +1,103 @@
 ---
 title: Tutorial de suplemento do Word
 description: Neste tutorial, voc? criar? um suplemento do Word que insere (e substitui) intervalos de texto, par?grafos, imagens, HTML, tabelas e controles de conte?do. Você também aprenderá como formatar texto e como inserir (e substituir) conteúdo nos controles de conteúdo.
-ms.date: 07/17/2019
+ms.date: 09/18/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: b689dc8993ad61045dac54c1024b3fbd1e1a19ad
-ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
+ms.openlocfilehash: 24b0ab5cecf9cfbc493da4488a71ac34dff61b47
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "36672863"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035341"
 ---
-# <a name="tutorial-create-a-word-task-pane-add-in"></a><span data-ttu-id="2cbe4-104">Tutorial: Criar Suplemento do Painel de Tarefas no Word</span><span class="sxs-lookup"><span data-stu-id="2cbe4-104">Tutorial: Create a Word task pane add-in</span></span>
+# <a name="tutorial-create-a-word-task-pane-add-in"></a><span data-ttu-id="f91ac-104">Tutorial: Criar Suplemento do Painel de Tarefas no Word</span><span class="sxs-lookup"><span data-stu-id="f91ac-104">Tutorial: Create a Word task pane add-in</span></span>
 
-<span data-ttu-id="2cbe4-105">Neste tutorial: você criará um suplemento do painel de tarefas no Word:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-105">In this tutorial, you'll create a Word task pane add-in that:</span></span>
+<span data-ttu-id="f91ac-105">Neste tutorial: você criará um suplemento do painel de tarefas no Word:</span><span class="sxs-lookup"><span data-stu-id="f91ac-105">In this tutorial, you'll create a Word task pane add-in that:</span></span>
 
 > [!div class="checklist"]
-> * <span data-ttu-id="2cbe4-106">Insere um intervalo de texto</span><span class="sxs-lookup"><span data-stu-id="2cbe4-106">Inserts a range of text</span></span>
-> * <span data-ttu-id="2cbe4-107">Formatos de texto</span><span class="sxs-lookup"><span data-stu-id="2cbe4-107">Formats text</span></span>
-> * <span data-ttu-id="2cbe4-108">Substitui e insere texto em vários locais</span><span class="sxs-lookup"><span data-stu-id="2cbe4-108">Replaces text and inserts text in various locations</span></span>
-> * <span data-ttu-id="2cbe4-109">Insere imagens, HTML e tabelas</span><span class="sxs-lookup"><span data-stu-id="2cbe4-109">Inserts images, HTML, and tables</span></span>
-> * <span data-ttu-id="2cbe4-110">Cria e atualiza os controles de conteúdo</span><span class="sxs-lookup"><span data-stu-id="2cbe4-110">Creates and updates content controls</span></span> 
+> * <span data-ttu-id="f91ac-106">Insere um intervalo de texto</span><span class="sxs-lookup"><span data-stu-id="f91ac-106">Inserts a range of text</span></span>
+> * <span data-ttu-id="f91ac-107">Formatos de texto</span><span class="sxs-lookup"><span data-stu-id="f91ac-107">Formats text</span></span>
+> * <span data-ttu-id="f91ac-108">Substitui e insere texto em vários locais</span><span class="sxs-lookup"><span data-stu-id="f91ac-108">Replaces text and inserts text in various locations</span></span>
+> * <span data-ttu-id="f91ac-109">Insere imagens, HTML e tabelas</span><span class="sxs-lookup"><span data-stu-id="f91ac-109">Inserts images, HTML, and tables</span></span>
+> * <span data-ttu-id="f91ac-110">Cria e atualiza os controles de conteúdo</span><span class="sxs-lookup"><span data-stu-id="f91ac-110">Creates and updates content controls</span></span> 
 
-## <a name="prerequisites"></a><span data-ttu-id="2cbe4-111">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="2cbe4-111">Prerequisites</span></span>
+> [!TIP]
+> <span data-ttu-id="f91ac-111">Se você já concluiu o início rápido da [compilação do seu primeiro suplemento do painel de tarefas do Word](../quickstarts/word-quickstart.md) e deseja usar esse projeto como ponto de partida para este tutorial, vá diretamente para a seção [Inserir um intervalo de texto](#insert-a-range-of-text) para iniciar este tutorial.</span><span class="sxs-lookup"><span data-stu-id="f91ac-111">If you've already completed the [Build your first Word task pane add-in](../quickstarts/word-quickstart.md) quick start, and want to use that project as a starting point for this tutorial, go directly to the [Insert a range of text](#insert-a-range-of-text) section to start this tutorial.</span></span>
 
-<span data-ttu-id="2cbe4-112">Para usar este tutorial, você precisa instalar o seguinte.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-112">To use this tutorial, you need to have the following installed.</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="f91ac-112">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="f91ac-112">Prerequisites</span></span>
 
-- <span data-ttu-id="2cbe4-p102">Word 2016, versão 1711 (build 8730.1000 do Clique para Executar) ou posterior. Talvez você precise ser um participante do programa Office Insider para ter essa versão. Para saber mais, confira a página [Seja um Office Insider](https://products.office.com/office-insider?tab=tab-1).</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p102">Word 2016, version 1711 (Build 8730.1000 Click-to-Run) or later. You might need to be an Office Insider to get this version. For more information, see [Be an Office Insider](https://products.office.com/office-insider?tab=tab-1).</span></span>
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- [<span data-ttu-id="2cbe4-116">Nó</span><span class="sxs-lookup"><span data-stu-id="2cbe4-116">Node</span></span>](https://nodejs.org/en/) 
+## <a name="create-your-add-in-project"></a><span data-ttu-id="f91ac-113">Criar seu projeto do suplemento</span><span class="sxs-lookup"><span data-stu-id="f91ac-113">Create your add-in project</span></span>
 
-- <span data-ttu-id="2cbe4-117">[Git Bash](https://git-scm.com/downloads) (ou outro cliente Git)</span><span class="sxs-lookup"><span data-stu-id="2cbe4-117">[Git Bash](https://git-scm.com/downloads) (or another Git client)</span></span>
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-## <a name="create-your-add-in-project"></a><span data-ttu-id="2cbe4-118">Criar seu projeto do suplemento</span><span class="sxs-lookup"><span data-stu-id="2cbe4-118">Create your add-in project</span></span>
+- <span data-ttu-id="f91ac-114">**Escolha o tipo de projeto:** `Office Add-in Task Pane project`</span><span class="sxs-lookup"><span data-stu-id="f91ac-114">**Choose a project type:** `Office Add-in Task Pane project`</span></span>
+- <span data-ttu-id="f91ac-115">**Escolha o tipo de script:** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="f91ac-115">**Choose a script type:** `Javascript`</span></span>
+- <span data-ttu-id="f91ac-116">**Qual será o nome do suplemento?**</span><span class="sxs-lookup"><span data-stu-id="f91ac-116">**What do you want to name your add-in?**</span></span> `My Office Add-in`
+- <span data-ttu-id="f91ac-117">**Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?**</span><span class="sxs-lookup"><span data-stu-id="f91ac-117">**Which Office client application would you like to support?**</span></span> `Word`
 
-<span data-ttu-id="2cbe4-119">Conclua as etapas a seguir para criar o projeto de suplemento do Word que você vai usar como base para este tutorial.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-119">Complete the following steps to create the Word add-in project that you'll use as the basis for this tutorial.</span></span>
+![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-word.png)
 
-1. <span data-ttu-id="2cbe4-120">Clone o repositório do GitHub com o [Tutorial de suplemento do Word](https://github.com/OfficeDev/Word-Add-in-Tutorial).</span><span class="sxs-lookup"><span data-stu-id="2cbe4-120">Clone the GitHub repository [Word add-in tutorial](https://github.com/OfficeDev/Word-Add-in-Tutorial).</span></span>
+<span data-ttu-id="f91ac-119">Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes de suporte do nó.</span><span class="sxs-lookup"><span data-stu-id="f91ac-119">After you complete the wizard, the generator creates the project and installs supporting Node components.</span></span>
 
-2. <span data-ttu-id="2cbe4-121">Abra uma janela Git bash ou um prompt de sistema habilitado para Node.JS e navegue para a pasta **Iniciar** do projeto.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-121">Open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.</span></span>
+[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
-3. <span data-ttu-id="2cbe4-122">Execute o comando `npm install` para instalar as ferramentas e bibliotecas listadas no arquivo package.json.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-122">Run the command `npm install` to install the tools and libraries listed in the package.json file.</span></span> 
+## <a name="insert-a-range-of-text"></a><span data-ttu-id="f91ac-120">Inserir um intervalo de texto</span><span class="sxs-lookup"><span data-stu-id="f91ac-120">Insert a range of text</span></span>
 
-4. <span data-ttu-id="2cbe4-123">Execute as etapas de [instalação do certificado autoassinado](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) para confiar no certificado para o sistema operacional do seu computador de desenvolvimento.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-123">Carry out the steps in [Installing the self-signed certificate](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) to trust the certificate for your development computer's operating system.</span></span>
+<span data-ttu-id="f91ac-121">Nesta etapa do tutorial, você testará programaticamente se o suplemento oferece suporte à versão atual do Word do usuário e inserirá um parágrafo no documento.</span><span class="sxs-lookup"><span data-stu-id="f91ac-121">In this step of the tutorial, you'll programmatically test that your add-in supports the user's current version of Word, and then insert a paragraph into the document.</span></span>
 
-## <a name="insert-a-range-of-text"></a><span data-ttu-id="2cbe4-124">Inserir um intervalo de texto</span><span class="sxs-lookup"><span data-stu-id="2cbe4-124">Insert a range of text</span></span>
+### <a name="code-the-add-in"></a><span data-ttu-id="f91ac-122">Codificação do suplemento</span><span class="sxs-lookup"><span data-stu-id="f91ac-122">Code the add-in</span></span>
 
-<span data-ttu-id="2cbe4-125">Nesta etapa do tutorial, você testará programaticamente se o suplemento oferece suporte à versão atual do Word do usuário e inserirá um parágrafo no documento.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-125">In this step of the tutorial, you'll programmatically test that your add-in supports the user's current version of Word, and then insert a paragraph into the document.</span></span>
+1. <span data-ttu-id="f91ac-123">Abra o projeto em seu editor de código.</span><span class="sxs-lookup"><span data-stu-id="f91ac-123">Open the project in your code editor.</span></span>
 
-### <a name="code-the-add-in"></a><span data-ttu-id="2cbe4-126">Codificação do suplemento</span><span class="sxs-lookup"><span data-stu-id="2cbe4-126">Code the add-in</span></span>
+2. <span data-ttu-id="f91ac-124">Abra o arquivo **./src/TaskPane/TaskPane.html**.</span><span class="sxs-lookup"><span data-stu-id="f91ac-124">Open the file **./src/taskpane/taskpane.html**.</span></span> <span data-ttu-id="f91ac-125">Este arquivo contém a marcação HTML para o painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="f91ac-125">This file contains the HTML markup for the task pane.</span></span>
 
-1. <span data-ttu-id="2cbe4-127">Abra o projeto em seu editor de código.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-127">Open the project in your code editor.</span></span>
+3. <span data-ttu-id="f91ac-126">Localize o `<main>` elemento e exclua todas as linhas que aparecem após `<main>` a marca de abertura e `</main>` antes da marca de fechamento.</span><span class="sxs-lookup"><span data-stu-id="f91ac-126">Locate the `<main>` element and delete all lines that appear after the opening `<main>` tag and before the closing `</main>` tag.</span></span>
 
-2. <span data-ttu-id="2cbe4-128">Abra o arquivo index.html.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-128">Open the file index.html.</span></span>
-
-3. <span data-ttu-id="2cbe4-129">Substitua `TODO1` pela marcação a seguir:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-129">Replace the `TODO1` with the following markup:</span></span>
+4. <span data-ttu-id="f91ac-127">Adicione a seguinte marcação imediatamente após a marca `<main>` de abertura:</span><span class="sxs-lookup"><span data-stu-id="f91ac-127">Add the following markup immediately after the opening `<main>` tag:</span></span>
 
     ```html
-    <button class="ms-Button" id="insert-paragraph">Insert Paragraph</button>
+    <button class="ms-Button" id="insert-paragraph">Insert Paragraph</button><br/><br/>
     ```
 
-4. <span data-ttu-id="2cbe4-130">Abra o arquivo app.js.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-130">Open the app.js file.</span></span>
+5. <span data-ttu-id="f91ac-128">Abra o arquivo **./src/TaskPane/TaskPane.js**.</span><span class="sxs-lookup"><span data-stu-id="f91ac-128">Open the file **./src/taskpane/taskpane.js**.</span></span> <span data-ttu-id="f91ac-129">Este arquivo contém o código da API JavaScript do Office que facilita a interação entre o painel de tarefas e o aplicativo host do Office.</span><span class="sxs-lookup"><span data-stu-id="f91ac-129">This file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office host application.</span></span>
 
-5. <span data-ttu-id="2cbe4-p103">Substitua o `TODO1` pelo código a seguir. O código determina se a versão do Word do usuário suporta uma versão do Word.js que inclui todas as APIs usadas em todos os estágios deste tutorial.dae Em um suplemento de produção, use o corpo do bloco condicional para ocultar ou desabilitar a interface do usuário que chame a APIs sem suporte. Isso permitirá que o usuário ainda use as partes do suplemento às quais a versão do Word dá suporte.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p103">Replace the `TODO1` with the following code. This code determines whether the user's version of Word supports a version of Word.js that includes all the APIs that are used in all the stages of this tutorial. In a production add-in, use the body of the conditional block to hide or disable the UI that would call unsupported APIs. This will enable the user to still use the parts of the add-in that are supported by their version of Word.</span></span>
+6. <span data-ttu-id="f91ac-130">Remova todas as referências para `run` o botão e `run()` a função fazendo o seguinte:</span><span class="sxs-lookup"><span data-stu-id="f91ac-130">Remove all references to the `run` button and the `run()` function by doing the following:</span></span>
+
+    - <span data-ttu-id="f91ac-131">Localize e exclua a `document.getElementById("run").onclick = run;`linha.</span><span class="sxs-lookup"><span data-stu-id="f91ac-131">Locate and delete the line `document.getElementById("run").onclick = run;`.</span></span>
+
+    - <span data-ttu-id="f91ac-132">Localize e exclua a `run()` função inteira.</span><span class="sxs-lookup"><span data-stu-id="f91ac-132">Locate and delete the entire `run()` function.</span></span>
+
+7. <span data-ttu-id="f91ac-133">Dentro da `Office.onReady` chamada do método, localize a `if (info.host === Office.HostType.Word) {` linha e adicione o seguinte código imediatamente após essa linha.</span><span class="sxs-lookup"><span data-stu-id="f91ac-133">Within the `Office.onReady` method call, locate the line `if (info.host === Office.HostType.Word) {` and add the following code immediately after that line.</span></span> <span data-ttu-id="f91ac-134">Observação:</span><span class="sxs-lookup"><span data-stu-id="f91ac-134">Note:</span></span>
+
+    - <span data-ttu-id="f91ac-135">A primeira parte deste código determina se a versão do Word do usuário é compatível com uma versão do Word. js que inclui todas as APIs usadas em todos os estágios deste tutorial.</span><span class="sxs-lookup"><span data-stu-id="f91ac-135">The first part of this code determines whether the user's version of Word supports a version of Word.js that includes all the APIs that are used in all stages of this tutorial.</span></span> <span data-ttu-id="f91ac-136">Em um suplemento de produção, use o corpo do bloco condicional para ocultar ou desabilitar a interface do usuário que chame a APIs sem suporte.</span><span class="sxs-lookup"><span data-stu-id="f91ac-136">In a production add-in, use the body of the conditional block to hide or disable the UI that would call unsupported APIs.</span></span> <span data-ttu-id="f91ac-137">Isso permitirá que o usuário ainda use as partes do suplemento às quais a versão do Word dá suporte.</span><span class="sxs-lookup"><span data-stu-id="f91ac-137">This will enable the user to still use the parts of the add-in that are supported by their version of Word.</span></span>
+    - <span data-ttu-id="f91ac-138">A segunda parte deste código adiciona um manipulador de eventos para o `insert-paragraph` botão.</span><span class="sxs-lookup"><span data-stu-id="f91ac-138">The second part of this code adds an event handler for the `insert-paragraph` button.</span></span>
 
     ```js
+    // Determine if the user's version of Office supports all the Office.js APIs that are used in the tutorial.
     if (!Office.context.requirements.isSetSupported('WordApi', '1.3')) {
         console.log('Sorry. The tutorial add-in uses Word.js APIs that are not available in your version of Office.');
     }
+
+    // Assign event handlers and other initialization logic.
+    document.getElementById("insert-paragraph").onclick = insertParagraph;
     ```
 
-6. <span data-ttu-id="2cbe4-135">Substitua o `TODO2` pelo código a seguir:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-135">Replace the `TODO2` with the following code:</span></span>
+8. <span data-ttu-id="f91ac-139">Adicione a função a seguir ao final do arquivo.</span><span class="sxs-lookup"><span data-stu-id="f91ac-139">Add the following function to the end of the file.</span></span> <span data-ttu-id="f91ac-140">Observação:</span><span class="sxs-lookup"><span data-stu-id="f91ac-140">Note:</span></span>
 
-    ```js
-    $('#insert-paragraph').click(insertParagraph);
-    ```
+   - <span data-ttu-id="f91ac-p107">A lógica de negócios de Word.js será adicionada à função que passar por `Word.run`. Essa lógica não é executada imediatamente. Em vez disso, ela é adicionada à fila de comandos pendentes.</span><span class="sxs-lookup"><span data-stu-id="f91ac-p107">Your Word.js business logic will be added to the function that is passed to `Word.run`. This logic does not execute immediately. Instead, it is added to a queue of pending commands.</span></span>
 
-7. <span data-ttu-id="2cbe4-136">Substitua o `TODO3` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-136">Replace the `TODO3` with the following code.</span></span> <span data-ttu-id="2cbe4-137">Observação:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-137">Note:</span></span>
+   - <span data-ttu-id="f91ac-144">O método `context.sync` envia todos os comandos da fila para execução no Word.</span><span class="sxs-lookup"><span data-stu-id="f91ac-144">The `context.sync` method sends all queued commands to Word for execution.</span></span>
 
-   - <span data-ttu-id="2cbe4-p105">A lógica de negócios de Word.js será adicionada à função que passar por `Word.run`. Essa lógica não é executada imediatamente. Em vez disso, ela é adicionada à fila de comandos pendentes.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p105">Your Word.js business logic will be added to the function that is passed to `Word.run`. This logic does not execute immediately. Instead, it is added to a queue of pending commands.</span></span>
-
-   - <span data-ttu-id="2cbe4-141">O método `context.sync` envia todos os comandos da fila para execução no Word.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-141">The `context.sync` method sends all queued commands to Word for execution.</span></span>
-
-   - <span data-ttu-id="2cbe4-p106">O `Word.run` é seguido por um bloco `catch`. Essa é uma prática recomendada que você sempre deve seguir.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p106">The `Word.run` is followed by a `catch` block. This is a best practice that you should always follow.</span></span> 
+   - <span data-ttu-id="f91ac-p108">O `Word.run` é seguido por um bloco `catch`. Essa é uma prática recomendada que você sempre deve seguir.</span><span class="sxs-lookup"><span data-stu-id="f91ac-p108">The `Word.run` is followed by a `catch` block. This is a best practice that you should always follow.</span></span> 
 
     ```js
     function insertParagraph() {
         Word.run(function (context) {
 
-            // TODO4: Queue commands to insert a paragraph into the document.
+            // TODO1: Queue commands to insert a paragraph into the document.
 
             return context.sync();
         })
@@ -101,11 +110,11 @@ ms.locfileid: "36672863"
     }
     ```
 
-8. <span data-ttu-id="2cbe4-144">Substitua `TODO4` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-144">Replace `TODO4` with the following code.</span></span> <span data-ttu-id="2cbe4-145">Observação:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-145">Note:</span></span>
+9. <span data-ttu-id="f91ac-147">Dentro da `insertParagraph()` função, substitua `TODO1` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="f91ac-147">Within the `insertParagraph()` function, replace `TODO1` with the following code.</span></span> <span data-ttu-id="f91ac-148">Observação:</span><span class="sxs-lookup"><span data-stu-id="f91ac-148">Note:</span></span>
 
-   - <span data-ttu-id="2cbe4-146">O primeiro parâmetro para o método `insertParagraph` é o texto para o novo parágrafo.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-146">The first parameter to the `insertParagraph` method is the text for the new paragraph.</span></span>
+   - <span data-ttu-id="f91ac-149">O primeiro parâmetro para o método `insertParagraph` é o texto para o novo parágrafo.</span><span class="sxs-lookup"><span data-stu-id="f91ac-149">The first parameter to the `insertParagraph` method is the text for the new paragraph.</span></span>
 
-   - <span data-ttu-id="2cbe4-p108">O segundo parâmetro é o local dentro do corpo onde o parágrafo será inserido. Outras opções para inserir parágrafo, quando o objeto pai é o corpo, são "End" e "Replace".</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p108">The second parameter is the location within the body where the paragraph will be inserted. Other options for insert paragraph, when the parent object is the body, are "End" and "Replace".</span></span>
+   - <span data-ttu-id="f91ac-p110">O segundo parâmetro é o local dentro do corpo onde o parágrafo será inserido. Outras opções para inserir parágrafo, quando o objeto pai é o corpo, são "End" e "Replace".</span><span class="sxs-lookup"><span data-stu-id="f91ac-p110">The second parameter is the location within the body where the paragraph will be inserted. Other options for insert paragraph, when the parent object is the body, are "End" and "Replace".</span></span>
 
     ```js
     var docBody = context.document.body;
@@ -113,59 +122,71 @@ ms.locfileid: "36672863"
                             "Start");
     ```
 
-### <a name="test-the-add-in"></a><span data-ttu-id="2cbe4-149">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="2cbe4-149">Test the add-in</span></span>
+10. <span data-ttu-id="f91ac-152">Verifique se você salvou todas as alterações feitas no projeto.</span><span class="sxs-lookup"><span data-stu-id="f91ac-152">Verify that you've saved all of the changes you've made to the project.</span></span>
 
-1. <span data-ttu-id="2cbe4-150">Abra uma janela Git bash ou um prompt de sistema habilitado para Node.JS e navegue para a pasta **Iniciar** do projeto.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-150">Open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.</span></span>
+### <a name="test-the-add-in"></a><span data-ttu-id="f91ac-153">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="f91ac-153">Test the add-in</span></span>
 
-2. <span data-ttu-id="2cbe4-151">Execute o comando `npm run build` para transcompilar seu código-fonte ES6 para uma versão anterior do JavaScript com suporte de todos os hosts nos quais os suplementos do Office podem ser executados.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-151">Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by all the hosts where Office Add-ins can run.</span></span>
+1. <span data-ttu-id="f91ac-154">Conclua as etapas a seguir para iniciar o servidor Web local e Sideload seu suplemento.</span><span class="sxs-lookup"><span data-stu-id="f91ac-154">Complete the following steps to start the local web server and sideload your add-in.</span></span>
 
-3. <span data-ttu-id="2cbe4-152">Execute o comando `npm start` para iniciar um servidor Web em um localhost.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-152">Run the command `npm start` to start a web server running on localhost.</span></span>
+    > [!NOTE]
+    > <span data-ttu-id="f91ac-155">Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento.</span><span class="sxs-lookup"><span data-stu-id="f91ac-155">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="f91ac-156">Se você for solicitado a instalar um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.</span><span class="sxs-lookup"><span data-stu-id="f91ac-156">If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
 
-4. <span data-ttu-id="2cbe4-153">Realize o sideload do suplemento usando um dos métodos a seguir:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-153">Sideload the add-in by using one of the following methods:</span></span>
+    > [!TIP]
+    > <span data-ttu-id="f91ac-157">Se você estiver testando seu suplemento no Mac, execute o seguinte comando no diretório raiz do seu projeto antes de prosseguir.</span><span class="sxs-lookup"><span data-stu-id="f91ac-157">If you're testing your add-in on Mac, run the following command in the root directory of your project before proceeding.</span></span> <span data-ttu-id="f91ac-158">Quando você executa esse comando, o servidor Web local é iniciado.</span><span class="sxs-lookup"><span data-stu-id="f91ac-158">When you run this command, the local web server starts.</span></span>
+    >
+    > ```command&nbsp;line
+    > npm run dev-server
+    > ```
 
-    - <span data-ttu-id="2cbe4-154">Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span><span class="sxs-lookup"><span data-stu-id="2cbe4-154">Windows: [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)</span></span>
+    - <span data-ttu-id="f91ac-159">Para testar seu suplemento no Word, execute o seguinte comando no diretório raiz do seu projeto.</span><span class="sxs-lookup"><span data-stu-id="f91ac-159">To test your add-in in Word, run the following command in the root directory of your project.</span></span> <span data-ttu-id="f91ac-160">Isso inicia o servidor Web local (se ele ainda não estiver sendo executado) e abre o Word com seu suplemento carregado.</span><span class="sxs-lookup"><span data-stu-id="f91ac-160">This starts the local web server (if it's not already running) and opens Word with your add-in loaded.</span></span>
 
-    - <span data-ttu-id="2cbe4-155">Navegador da Web: [Sideload suplementos do Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)</span><span class="sxs-lookup"><span data-stu-id="2cbe4-155">Web browser: [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)</span></span>
+        ```command&nbsp;line
+        npm start
+        ```
 
-    - <span data-ttu-id="2cbe4-156">iPad e Mac: [Realizar sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span><span class="sxs-lookup"><span data-stu-id="2cbe4-156">iPad and Mac: [Sideload Office Add-ins on iPad and Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)</span></span>
+    - <span data-ttu-id="f91ac-161">Para testar seu suplemento no Word na Web, execute o seguinte comando no diretório raiz do seu projeto.</span><span class="sxs-lookup"><span data-stu-id="f91ac-161">To test your add-in in Word on the web, run the following command in the root directory of your project.</span></span> <span data-ttu-id="f91ac-162">Quando você executar este comando, o servidor Web local será iniciado (se ainda não estiver sendo executado).</span><span class="sxs-lookup"><span data-stu-id="f91ac-162">When you run this command, the local web server will start (if it's not already running).</span></span>
 
-5. <span data-ttu-id="2cbe4-157">No menu **Página Inicial** do Word, selecione **Mostrar Painel de Tarefas**.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-157">On the **Home** menu of Word, select **Show Taskpane**.</span></span>
+        ```command&nbsp;line
+        npm run start:web
+        ```
 
-6. <span data-ttu-id="2cbe4-158">No painel de tarefas, escolha **Inserir Parágrafo**.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-158">In the task pane, choose **Insert Paragraph**.</span></span>
+        <span data-ttu-id="f91ac-163">Para usar seu suplemento, abra um novo documento no Word na Web e, em seguida, Sideload seu suplemento seguindo as instruções em [suplementos do Sideload Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).</span><span class="sxs-lookup"><span data-stu-id="f91ac-163">To use your add-in, open a new document in Word on the web and then sideload your add-in by following the instructions in [Sideload Office Add-ins in Office on the web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).</span></span>
 
-7. <span data-ttu-id="2cbe4-159">Faça uma alteração no parágrafo.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-159">Make a change in the paragraph.</span></span>
+2. <span data-ttu-id="f91ac-164">No Word, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na Faixa de Opções para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="f91ac-164">In Word, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
-8. <span data-ttu-id="2cbe4-160">Escolha novamente **Inserir Parágrafo**.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-160">Choose **Insert Paragraph** again.</span></span> <span data-ttu-id="2cbe4-161">O novo parágrafo está acima do anterior porque o método `insertParagraph` está inserido no início do corpo do documento.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-161">Note that the new paragraph is above the previous one because the `insertParagraph` method is inserting at the start of the document's body.</span></span>
+    ![Uma captura de tela do aplicativo Word com o botão Mostrar Painel de Tarefas realçado](../images/word-quickstart-addin-2b.png)
 
-    ![Tutorial do Word: Inserir Parágrafo](../images/word-tutorial-insert-paragraph.png)
+3. <span data-ttu-id="f91ac-166">No painel de tarefas, escolha o botão **Inserir parágrafo** .</span><span class="sxs-lookup"><span data-stu-id="f91ac-166">In the task pane, choose the **Insert Paragraph** button.</span></span>
 
-## <a name="format-text"></a><span data-ttu-id="2cbe4-163">Formatar texto</span><span class="sxs-lookup"><span data-stu-id="2cbe4-163">Format text</span></span>
+4. <span data-ttu-id="f91ac-167">Faça uma alteração no parágrafo.</span><span class="sxs-lookup"><span data-stu-id="f91ac-167">Make a change in the paragraph.</span></span>
 
-<span data-ttu-id="2cbe4-164">Nesta etapa do tutorial, você aplicará um estilo interno ao texto, aplicará um estilo personalizado ao texto e alterará a fonte do texto.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-164">In this step of the tutorial, you'll apply a built-in style to text, apply a custom style to text, and change the font of text.</span></span>
+5. <span data-ttu-id="f91ac-168">Escolha o botão **Inserir parágrafo** novamente.</span><span class="sxs-lookup"><span data-stu-id="f91ac-168">Choose the **Insert Paragraph** button again.</span></span> <span data-ttu-id="f91ac-169">Observe que o novo parágrafo aparece acima do anterior porque o `insertParagraph` método está inserido no início do corpo do documento.</span><span class="sxs-lookup"><span data-stu-id="f91ac-169">Note that the new paragraph appears above the previous one because the `insertParagraph` method is inserting at the start of the document's body.</span></span>
 
-### <a name="apply-a-built-in-style-to-text"></a><span data-ttu-id="2cbe4-165">Aplicar um estilo interno ao texto</span><span class="sxs-lookup"><span data-stu-id="2cbe4-165">Apply a built-in style to text</span></span>
+    ![Tutorial do Word: Inserir Parágrafo](../images/word-tutorial-insert-paragraph-2.png)
 
-1. <span data-ttu-id="2cbe4-166">Abra o projeto em seu editor de código.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-166">Open the project in your code editor.</span></span> 
+## <a name="format-text"></a><span data-ttu-id="f91ac-171">Formatar texto</span><span class="sxs-lookup"><span data-stu-id="f91ac-171">Format text</span></span>
 
-2. <span data-ttu-id="2cbe4-167">Abra o arquivo index.html.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-167">Open the file index.html.</span></span>
+<span data-ttu-id="f91ac-172">Nesta etapa do tutorial, você aplicará um estilo interno ao texto, aplicará um estilo personalizado ao texto e alterará a fonte do texto.</span><span class="sxs-lookup"><span data-stu-id="f91ac-172">In this step of the tutorial, you'll apply a built-in style to text, apply a custom style to text, and change the font of text.</span></span>
 
-3. <span data-ttu-id="2cbe4-168">Abaixo do `div`, que contém o botão `insert-paragraph`, adicione a marcação a seguir:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-168">Just below the `div` that contains the `insert-paragraph` button, add the following markup:</span></span>
+### <a name="apply-a-built-in-style-to-text"></a><span data-ttu-id="f91ac-173">Aplicar um estilo interno ao texto</span><span class="sxs-lookup"><span data-stu-id="f91ac-173">Apply a built-in style to text</span></span>
+
+1. <span data-ttu-id="f91ac-174">Abra o arquivo **./src/TaskPane/TaskPane.html**.</span><span class="sxs-lookup"><span data-stu-id="f91ac-174">Open the file **./src/taskpane/taskpane.html**.</span></span>
+
+2. <span data-ttu-id="f91ac-175">Localize o `<button>` elemento do `insert-paragraph` botão e adicione a seguinte marcação após essa linha:</span><span class="sxs-lookup"><span data-stu-id="f91ac-175">Locate the `<button>` element for the `insert-paragraph` button, and add the following markup after that line:</span></span>
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="apply-style">Apply Style</button>            
-    </div>
+    <button class="ms-Button" id="apply-style">Apply Style</button><br/><br/>
     ```
 
-4. <span data-ttu-id="2cbe4-169">Abra o arquivo app.js.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-169">Open the app.js file.</span></span>
+3. <span data-ttu-id="f91ac-176">Abra o arquivo **./src/TaskPane/TaskPane.js**.</span><span class="sxs-lookup"><span data-stu-id="f91ac-176">Open the file **./src/taskpane/taskpane.js**.</span></span>
 
-5. <span data-ttu-id="2cbe4-170">Logo abaixo da linha que atribui um identificador de clique ao botão `insert-paragraph`, adicione o seguinte código:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-170">Just below the line that assigns a click handler to the `insert-paragraph` button, add the following code:</span></span>
+4. <span data-ttu-id="f91ac-177">Dentro da `Office.onReady` chamada do método, localize a linha que atribui um manipulador de cliques para o `insert-paragraph` botão e adicione o seguinte código após essa linha:</span><span class="sxs-lookup"><span data-stu-id="f91ac-177">Within the `Office.onReady` method call, locate the line that assigns a click handler to the `insert-paragraph` button, and add the following code after that line:</span></span>
 
     ```js
-    $('#apply-style').click(applyStyle);
+    document.getElementById("apply-style").onclick = applyStyle;
     ```
 
-6. <span data-ttu-id="2cbe4-171">Logo abaixo da função `insertParagraph`, adicione a função a seguir:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-171">Just below the `insertParagraph` function, add the following function:</span></span>
+5. <span data-ttu-id="f91ac-178">Adicione a seguinte função ao final do arquivo:</span><span class="sxs-lookup"><span data-stu-id="f91ac-178">Add the following function to the end of the file:</span></span>
 
     ```js
     function applyStyle() {
@@ -184,34 +205,32 @@ ms.locfileid: "36672863"
     }
     ``` 
 
-7. <span data-ttu-id="2cbe4-p110">Substitua `TODO1` pelo código a seguir. O código aplica um estilo a um parágrafo, mas também é possível aplicar estilos em intervalos de texto.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p110">Replace `TODO1` with the following code. Note that the code applies a style to a paragraph, but styles can also be applied to ranges of text.</span></span>
+6. <span data-ttu-id="f91ac-179">Dentro da `applyStyle()` função, substitua `TODO1` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="f91ac-179">Within the `applyStyle()` function, replace `TODO1` with the following code.</span></span> <span data-ttu-id="f91ac-180">O código aplica um estilo a um parágrafo, mas também é possível aplicar estilos em intervalos de texto.</span><span class="sxs-lookup"><span data-stu-id="f91ac-180">Note that the code applies a style to a paragraph, but styles can also be applied to ranges of text.</span></span>
 
     ```js
     var firstParagraph = context.document.body.paragraphs.getFirst();
     firstParagraph.styleBuiltIn = Word.Style.intenseReference;
     ``` 
 
-### <a name="apply-a-custom-style-to-text"></a><span data-ttu-id="2cbe4-174">Aplicar um estilo personalizado ao texto</span><span class="sxs-lookup"><span data-stu-id="2cbe4-174">Apply a custom style to text</span></span>
+### <a name="apply-a-custom-style-to-text"></a><span data-ttu-id="f91ac-181">Aplicar um estilo personalizado ao texto</span><span class="sxs-lookup"><span data-stu-id="f91ac-181">Apply a custom style to text</span></span>
 
-1. <span data-ttu-id="2cbe4-175">Abra o arquivo index.html.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-175">Open the file index.html.</span></span>
+1. <span data-ttu-id="f91ac-182">Abra o arquivo **./src/TaskPane/TaskPane.html**.</span><span class="sxs-lookup"><span data-stu-id="f91ac-182">Open the file **./src/taskpane/taskpane.html**.</span></span>
 
-2. <span data-ttu-id="2cbe4-176">Abaixo do `div` que contém o botão `apply-style`, adicione a marcação a seguir:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-176">Below the `div` that contains the `apply-style` button, add the following markup:</span></span>
+2. <span data-ttu-id="f91ac-183">Localize o `<button>` elemento do `apply-style` botão e adicione a seguinte marcação após essa linha:</span><span class="sxs-lookup"><span data-stu-id="f91ac-183">Locate the `<button>` element for the `apply-style` button, and add the following markup after that line:</span></span> 
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="apply-custom-style">Apply Custom Style</button>            
-    </div>
+    <button class="ms-Button" id="apply-custom-style">Apply Custom Style</button><br/><br/>
     ```
 
-3. <span data-ttu-id="2cbe4-177">Abra o arquivo app.js.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-177">Open the app.js file.</span></span>
+3. <span data-ttu-id="f91ac-184">Abra o arquivo **./src/TaskPane/TaskPane.js**.</span><span class="sxs-lookup"><span data-stu-id="f91ac-184">Open the file **./src/taskpane/taskpane.js**.</span></span>
 
-4. <span data-ttu-id="2cbe4-178">Abaixo da linha que atribui um identificador de clique ao botão `apply-style`, adicione o seguinte código:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-178">Below the line that assigns a click handler to the `apply-style` button, add the following code:</span></span>
+4. <span data-ttu-id="f91ac-185">Dentro da `Office.onReady` chamada do método, localize a linha que atribui um manipulador de cliques para o `apply-style` botão e adicione o seguinte código após essa linha:</span><span class="sxs-lookup"><span data-stu-id="f91ac-185">Within the `Office.onReady` method call, locate the line that assigns a click handler to the `apply-style` button, and add the following code after that line:</span></span>
 
     ```js
-    $('#apply-custom-style').click(applyCustomStyle);
+    document.getElementById("apply-custom-style").onclick = applyCustomStyle;
     ```
 
-5. <span data-ttu-id="2cbe4-179">Abaixo da função `applyStyle`, adicione a função a seguir:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-179">Below the `applyStyle` function, add the following function:</span></span>
+5. <span data-ttu-id="f91ac-186">Adicione a seguinte função ao final do arquivo:</span><span class="sxs-lookup"><span data-stu-id="f91ac-186">Add the following function to the end of the file:</span></span>
 
     ```js
     function applyCustomStyle() {
@@ -230,34 +249,34 @@ ms.locfileid: "36672863"
     }
     ``` 
 
-6. <span data-ttu-id="2cbe4-p111">Substitua `TODO1` pelo código a seguir. O código aplica um estilo personalizado que ainda não existe. Você criará um estilo com o nome **MyCustomStyle** na etapa [Testar o suplemento](#test-the-add-in).</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p111">Replace `TODO1` with the following code. Note that the code applies a custom style that does not exist yet. You'll create a style with the name **MyCustomStyle** in the [Test the add-in](#test-the-add-in) step.</span></span>
+6. <span data-ttu-id="f91ac-187">Dentro da `applyCustomStyle()` função, substitua `TODO1` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="f91ac-187">Within the `applyCustomStyle()` function, replace `TODO1` with the following code.</span></span> <span data-ttu-id="f91ac-188">O código aplica um estilo personalizado que ainda não existe.</span><span class="sxs-lookup"><span data-stu-id="f91ac-188">Note that the code applies a custom style that does not exist yet.</span></span> <span data-ttu-id="f91ac-189">Você criará um estilo com o nome **MyCustomStyle** na etapa [Testar o suplemento](#test-the-add-in-1).</span><span class="sxs-lookup"><span data-stu-id="f91ac-189">You'll create a style with the name **MyCustomStyle** in the [Test the add-in](#test-the-add-in-1) step.</span></span>
 
     ```js
     var lastParagraph = context.document.body.paragraphs.getLast();
     lastParagraph.style = "MyCustomStyle";
     ``` 
 
-### <a name="change-the-font-of-text"></a><span data-ttu-id="2cbe4-183">Alterar a fonte do texto</span><span class="sxs-lookup"><span data-stu-id="2cbe4-183">Change the font of text</span></span>
+7. <span data-ttu-id="f91ac-190">Verifique se você salvou todas as alterações feitas no projeto.</span><span class="sxs-lookup"><span data-stu-id="f91ac-190">Verify that you've saved all of the changes you've made to the project.</span></span>
 
-1. <span data-ttu-id="2cbe4-184">Abra o arquivo index.html.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-184">Open the file index.html.</span></span>
+### <a name="change-the-font-of-text"></a><span data-ttu-id="f91ac-191">Alterar a fonte do texto</span><span class="sxs-lookup"><span data-stu-id="f91ac-191">Change the font of text</span></span>
 
-2. <span data-ttu-id="2cbe4-185">Abaixo do `div` que contém o botão `apply-custom-style`, adicione a marcação a seguir:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-185">Below the `div` that contains the `apply-custom-style` button, add the following markup:</span></span>
+1. <span data-ttu-id="f91ac-192">Abra o arquivo **./src/TaskPane/TaskPane.html**.</span><span class="sxs-lookup"><span data-stu-id="f91ac-192">Open the file **./src/taskpane/taskpane.html**.</span></span>
+
+2. <span data-ttu-id="f91ac-193">Localize o `<button>` elemento do `apply-custom-style` botão e adicione a seguinte marcação após essa linha:</span><span class="sxs-lookup"><span data-stu-id="f91ac-193">Locate the `<button>` element for the `apply-custom-style` button, and add the following markup after that line:</span></span> 
 
     ```html
-    <div class="padding">            
-        <button class="ms-Button" id="change-font">Change Font</button>            
-    </div>
+    <button class="ms-Button" id="change-font">Change Font</button><br/><br/>
     ```
 
-3. <span data-ttu-id="2cbe4-186">Abra o arquivo app.js.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-186">Open the app.js file.</span></span>
+3. <span data-ttu-id="f91ac-194">Abra o arquivo **./src/TaskPane/TaskPane.js**.</span><span class="sxs-lookup"><span data-stu-id="f91ac-194">Open the file **./src/taskpane/taskpane.js**.</span></span>
 
-4. <span data-ttu-id="2cbe4-187">Abaixo da linha que atribui um identificador de clique ao botão `apply-custom-style`, adicione o seguinte código:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-187">Below the line that assigns a click handler to the `apply-custom-style` button, add the following code:</span></span>
+4. <span data-ttu-id="f91ac-195">Dentro da `Office.onReady` chamada do método, localize a linha que atribui um manipulador de cliques para o `apply-custom-style` botão e adicione o seguinte código após essa linha:</span><span class="sxs-lookup"><span data-stu-id="f91ac-195">Within the `Office.onReady` method call, locate the line that assigns a click handler to the `apply-custom-style` button, and add the following code after that line:</span></span>
 
     ```js
-    $('#change-font').click(changeFont);
+    document.getElementById("change-font").onclick = changeFont;
     ```
 
-5. <span data-ttu-id="2cbe4-188">Abaixo da função `applyCustomStyle`, adicione a função a seguir:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-188">Below the `applyCustomStyle` function, add the following function:</span></span>
+5. <span data-ttu-id="f91ac-196">Adicione a seguinte função ao final do arquivo:</span><span class="sxs-lookup"><span data-stu-id="f91ac-196">Add the following function to the end of the file:</span></span>
 
     ```js
     function changeFont() {
@@ -276,7 +295,7 @@ ms.locfileid: "36672863"
     }
     ``` 
 
-6. <span data-ttu-id="2cbe4-p112">Substitua `TODO1` pelo código a seguir. O código recebe uma referência para o segundo parágrafo usando o método `ParagraphCollection.getFirst` encadeado para o método `Paragraph.getNext`.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p112">Replace `TODO1` with the following code. Note that the code gets a reference to the second paragraph by using the `ParagraphCollection.getFirst` method chained to the `Paragraph.getNext` method.</span></span>
+6. <span data-ttu-id="f91ac-197">Dentro da `changeFont()` função, substitua `TODO1` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="f91ac-197">Within the `changeFont()` function, replace `TODO1` with the following code.</span></span> <span data-ttu-id="f91ac-198">O código recebe uma referência para o segundo parágrafo usando o método `ParagraphCollection.getFirst` encadeado para o método `Paragraph.getNext`.</span><span class="sxs-lookup"><span data-stu-id="f91ac-198">Note that the code gets a reference to the second paragraph by using the `ParagraphCollection.getFirst` method chained to the `Paragraph.getNext` method.</span></span>
 
     ```js
     var secondParagraph = context.document.body.paragraphs.getFirst().getNext();
@@ -287,58 +306,48 @@ ms.locfileid: "36672863"
         });
     ``` 
 
-### <a name="test-the-add-in"></a><span data-ttu-id="2cbe4-191">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="2cbe4-191">Test the add-in</span></span>
+7. <span data-ttu-id="f91ac-199">Verifique se você salvou todas as alterações feitas no projeto.</span><span class="sxs-lookup"><span data-stu-id="f91ac-199">Verify that you've saved all of the changes you've made to the project.</span></span>
 
-1. <span data-ttu-id="2cbe4-192">Na janela Git bash ou o prompt de sistema habilitado para Node.JS do tutorial anterior ainda estão abertos, digite Ctrl + C duas vezes para interromper a execução do servidor Web.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-192">In the Git bash window, or Node.JS-enabled system prompt, from the previous stage tutorial is still open, enter Ctrl+C twice to stop the running web server.</span></span> <span data-ttu-id="2cbe4-193">Caso contrário, abra uma janela Git bash ou um prompt de sistema habilitado para Node.JS e navegue até a pasta **Iniciar** do projeto.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-193">Otherwise, open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.</span></span>
+### <a name="test-the-add-in"></a><span data-ttu-id="f91ac-200">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="f91ac-200">Test the add-in</span></span>
 
-     > [!NOTE]
-     > <span data-ttu-id="2cbe4-p114">Embora o servidor de sincronização do navegador recarregue o suplemento no painel de tarefas sempre que você fizer uma alteração em algum arquivo, incluindo o arquivo app.js, ele não transcompila o JavaScript, portanto, é necessário repetir o comando de compilação para que as alterações em app.js as entrem em vigor. Para fazer isso, interrompa o processo do servidor para que o prompt apareça e você possa inserir o comando de compilação. Após a compilação, reinicie o servidor. As próximas etapas executam esse processo.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p114">Although the browser-sync server reloads your add-in in the task pane every time you make a change to any file, including the app.js file, it does not retranspile the JavaScript, so you must repeat the build command in order for your changes to app.js to take effect. In order to do this, you need to kill the server process so that the prompt appears and you can enter the build command. After the build, you restart the server. The next few steps carry out this process.</span></span>
+1. [!include[Start server and sideload add-in instructions](../includes/tutorial-word-start-server.md)]
 
-2. <span data-ttu-id="2cbe4-198">Execute o comando `npm run build` para transcompilar seu código-fonte ES6 para uma versão anterior do JavaScript com suporte de todos os hosts nos quais os suplementos do Office podem ser executados.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-198">Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by all the hosts where Office Add-ins can run.</span></span>
+2. <span data-ttu-id="f91ac-201">Se o painel de tarefas do suplemento ainda não estiver aberto no Word, vá para a guia **página inicial** e escolha o botão **Mostrar painel de tarefas** na faixa de opções para abri-lo.</span><span class="sxs-lookup"><span data-stu-id="f91ac-201">If the add-in task pane isn't already open in Word, go to the **Home** tab and choose the **Show Taskpane** button in the ribbon to open it.</span></span>
 
-3. <span data-ttu-id="2cbe4-199">Execute o comando `npm start` para iniciar um servidor Web em um localhost.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-199">Run the command `npm start` to start a web server running on localhost.</span></span>   
+3. <span data-ttu-id="f91ac-202">Verifique se há pelo menos três parágrafos no documento.</span><span class="sxs-lookup"><span data-stu-id="f91ac-202">Be sure there are at least three paragraphs in the document.</span></span> <span data-ttu-id="f91ac-203">Você pode escolher o botão **Inserir parágrafo** três vezes.</span><span class="sxs-lookup"><span data-stu-id="f91ac-203">You can choose the **Insert Paragraph** button three times.</span></span> <span data-ttu-id="f91ac-204">*Verifique com atenção se não há um parágrafo em branco no final do documento. Se houver, exclua-o.*</span><span class="sxs-lookup"><span data-stu-id="f91ac-204">*Check carefully that there's no blank paragraph at the end of the document. If there is, delete it.*</span></span>
 
-4. <span data-ttu-id="2cbe4-200">Feche o painel de tarefas para recarregá-lo e, no menu **Início**, selecione **Mostrar Painel de Tarefas** para reabrir o suplemento.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-200">Reload the task pane by closing it, and then on the **Home** menu select **Show Taskpane** to reopen the add-in.</span></span>
+4. <span data-ttu-id="f91ac-205">No Word, crie um [estilo personalizado](https://support.office.com/article/Customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563) chamado "mycustomstyle".</span><span class="sxs-lookup"><span data-stu-id="f91ac-205">In Word, create a [custom style](https://support.office.com/article/Customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563) named "MyCustomStyle".</span></span> <span data-ttu-id="f91ac-206">Pode ter a formatação que você quiser.</span><span class="sxs-lookup"><span data-stu-id="f91ac-206">It can have any formatting that you want.</span></span>
 
-5. <span data-ttu-id="2cbe4-p115">Verifique se há pelo menos três parágrafos no documento. É possível escolher **Inserir Parágrafo** três vezes. *Verifique com atenção se não há um parágrafo em branco no final do documento. Se houver, exclua-o.*</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p115">Be sure there are at least three paragraphs in the document. You can choose **Insert Paragraph** three times. *Check carefully that there's no blank paragraph at the end of the document. If there is, delete it.*</span></span>
+5. <span data-ttu-id="f91ac-p121">Escolha o botão **Aplicar Estilo**. O primeiro parágrafo receberá o estilo interno **Referência Intensa**.</span><span class="sxs-lookup"><span data-stu-id="f91ac-p121">Choose the **Apply Style** button. The first paragraph will be styled with the built-in style **Intense Reference**.</span></span>
 
-6. <span data-ttu-id="2cbe4-p116">No Word, crie um estilo personalizado chamado "MyCustomStyle". Pode ter a formatação que você quiser.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p116">In Word, create a custom style named "MyCustomStyle". It can have any formatting that you want.</span></span>
+6. <span data-ttu-id="f91ac-p122">Escolha o botão **Aplicar Estilo Personalizado**. O último parágrafo receberá seu estilo personalizado. (Se parecer que nada acontece, talvez o último parágrafo esteja em branco. Se estiver, adicione um texto a ele).</span><span class="sxs-lookup"><span data-stu-id="f91ac-p122">Choose the **Apply Custom Style** button. The last paragraph will be styled with your custom style. (If nothing seems to happen, the last paragraph might be blank. If so, add some text to it.)</span></span>
 
-7. <span data-ttu-id="2cbe4-p117">Escolha o botão **Aplicar Estilo**. O primeiro parágrafo receberá o estilo interno **Referência Intensa**.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p117">Choose the **Apply Style** button. The first paragraph will be styled with the built-in style **Intense Reference**.</span></span>
+7. <span data-ttu-id="f91ac-p123">Escolha o botão **Alterar Fonte**. A fonte do segundo parágrafo muda para 18 pt, negrito, Courier New.</span><span class="sxs-lookup"><span data-stu-id="f91ac-p123">Choose the **Change Font** button. The font of the second paragraph changes to 18 pt., bold, Courier New.</span></span>
 
-8. <span data-ttu-id="2cbe4-p118">Escolha o botão **Aplicar Estilo Personalizado**. O último parágrafo receberá seu estilo personalizado. (Se parecer que nada acontece, talvez o último parágrafo esteja em branco. Se estiver, adicione um texto a ele).</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p118">Choose the **Apply Custom Style** button. The last paragraph will be styled with your custom style. (If nothing seems to happen, the last paragraph might be blank. If so, add some text to it.)</span></span>
+    ![Tutorial do Word: Aplicar estilos e fonte](../images/word-tutorial-apply-styles-and-font-2.png)
 
-9. <span data-ttu-id="2cbe4-p119">Escolha o botão **Alterar Fonte**. A fonte do segundo parágrafo muda para 18 pt, negrito, Courier New.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p119">Choose the **Change Font** button. The font of the second paragraph changes to 18 pt., bold, Courier New.</span></span>
+## <a name="replace-text-and-insert-text"></a><span data-ttu-id="f91ac-216">Substituir texto e inserir texto</span><span class="sxs-lookup"><span data-stu-id="f91ac-216">Replace text and insert text</span></span>
 
-    ![Tutorial do Word: Aplicar estilos e fonte](../images/word-tutorial-apply-styles-and-font.png)
+<span data-ttu-id="f91ac-217">Nesta etapa o tutorial, você adicionará texto dentro e fora dos intervalos de texto selecionados, e substituirá o texto de um intervalo selecionado.</span><span class="sxs-lookup"><span data-stu-id="f91ac-217">In this step of the tutorial, you'll add text inside and outside of selected ranges of text, and replace the text of a selected range.</span></span>
 
-## <a name="replace-text-and-insert-text"></a><span data-ttu-id="2cbe4-215">Substituir texto e inserir texto</span><span class="sxs-lookup"><span data-stu-id="2cbe4-215">Replace text and insert text</span></span>
+### <a name="add-text-inside-a-range"></a><span data-ttu-id="f91ac-218">Adicionar texto dentro de um intervalo</span><span class="sxs-lookup"><span data-stu-id="f91ac-218">Add text inside a range</span></span>
 
-<span data-ttu-id="2cbe4-216">Nesta etapa o tutorial, você adicionará texto dentro e fora dos intervalos de texto selecionados, e substituirá o texto de um intervalo selecionado.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-216">In this step of the tutorial, you'll add text inside and outside of selected ranges of text, and replace the text of a selected range.</span></span>
+1. <span data-ttu-id="f91ac-219">Abra o arquivo **./src/TaskPane/TaskPane.html**.</span><span class="sxs-lookup"><span data-stu-id="f91ac-219">Open the file **./src/taskpane/taskpane.html**.</span></span>
 
-### <a name="add-text-inside-a-range"></a><span data-ttu-id="2cbe4-217">Adicionar texto dentro de um intervalo</span><span class="sxs-lookup"><span data-stu-id="2cbe4-217">Add text inside a range</span></span>
-
-1. <span data-ttu-id="2cbe4-218">Abra o projeto em seu editor de código.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-218">Open the project in your code editor.</span></span>
-
-2. <span data-ttu-id="2cbe4-219">Abra o arquivo index.html.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-219">Open the file index.html.</span></span>
-
-3. <span data-ttu-id="2cbe4-220">Abaixo do `div` que contém o botão `change-font`, adicione a marcação a seguir:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-220">Below the `div` that contains the `change-font` button, add the following markup:</span></span>
+2. <span data-ttu-id="f91ac-220">Localize o `<button>` elemento do `change-font` botão e adicione a seguinte marcação após essa linha:</span><span class="sxs-lookup"><span data-stu-id="f91ac-220">Locate the `<button>` element for the `change-font` button, and add the following markup after that line:</span></span> 
 
     ```html
-    <div class="padding">
-        <button class="ms-Button" id="insert-text-into-range">Insert Abbreviation</button>
-    </div>
+    <button class="ms-Button" id="insert-text-into-range">Insert Abbreviation</button><br/><br/>
     ```
 
-4. <span data-ttu-id="2cbe4-221">Abra o arquivo app.js.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-221">Open the app.js file.</span></span>
+3. <span data-ttu-id="f91ac-221">Abra o arquivo **./src/TaskPane/TaskPane.js**.</span><span class="sxs-lookup"><span data-stu-id="f91ac-221">Open the file **./src/taskpane/taskpane.js**.</span></span>
 
-5. <span data-ttu-id="2cbe4-222">Abaixo da linha que atribui um identificador de clique ao botão `change-font`, adicione o seguinte código:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-222">Below the line that assigns a click handler to the `change-font` button, add the following code:</span></span>
+4. <span data-ttu-id="f91ac-222">Dentro da `Office.onReady` chamada do método, localize a linha que atribui um manipulador de cliques para o `change-font` botão e adicione o seguinte código após essa linha:</span><span class="sxs-lookup"><span data-stu-id="f91ac-222">Within the `Office.onReady` method call, locate the line that assigns a click handler to the `change-font` button, and add the following code after that line:</span></span>
 
     ```js
-    $('#insert-text-into-range').click(insertTextIntoRange);
+    document.getElementById("insert-text-into-range").onclick = insertTextIntoRange;
     ```
-
-6. <span data-ttu-id="2cbe4-223">Abaixo da função `changeFont`, adicione a função a seguir:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-223">Below the `changeFont` function, add the following function:</span></span>
+5. <span data-ttu-id="f91ac-223">Adicione a seguinte função ao final do arquivo:</span><span class="sxs-lookup"><span data-stu-id="f91ac-223">Add the following function to the end of the file:</span></span>
 
     ```js
     function insertTextIntoRange() {
@@ -363,17 +372,17 @@ ms.locfileid: "36672863"
     }
     ``` 
 
-7. <span data-ttu-id="2cbe4-224">Substitua `TODO1` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-224">Replace `TODO1` with the following code.</span></span> <span data-ttu-id="2cbe4-225">Observação:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-225">Note:</span></span>
+6. <span data-ttu-id="f91ac-224">Dentro da `insertTextIntoRange()` função, substitua `TODO1` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="f91ac-224">Within the `insertTextIntoRange()` function, replace `TODO1` with the following code.</span></span> <span data-ttu-id="f91ac-225">Observação:</span><span class="sxs-lookup"><span data-stu-id="f91ac-225">Note:</span></span>
 
-   - <span data-ttu-id="2cbe4-p121">o método serve para inserir a abreviação ["(C2R)"] no final do Intervalo cujo texto é "Clique para Executar". Para simplificar, ele faz uma pressuposição de que a cadeia de caracteres está presente, e que o usuário a selecionou.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p121">The method is intended to insert the abbreviation ["(C2R)"] into the end of the Range whose text is "Click-to-Run". It makes a simplifying assumption that the string is present and the user has selected it.</span></span>
+   - <span data-ttu-id="f91ac-p125">o método serve para inserir a abreviação ["(C2R)"] no final do Intervalo cujo texto é "Clique para Executar". Para simplificar, ele faz uma pressuposição de que a cadeia de caracteres está presente, e que o usuário a selecionou.</span><span class="sxs-lookup"><span data-stu-id="f91ac-p125">The method is intended to insert the abbreviation ["(C2R)"] into the end of the Range whose text is "Click-to-Run". It makes a simplifying assumption that the string is present and the user has selected it.</span></span>
 
-   - <span data-ttu-id="2cbe4-228">O primeiro parâmetro do método `Range.insertText` é a cadeia de caracteres a ser inserida no objeto `Range`.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-228">The first parameter of the `Range.insertText` method is the string to insert into the `Range` object.</span></span>
+   - <span data-ttu-id="f91ac-228">O primeiro parâmetro do método `Range.insertText` é a cadeia de caracteres a ser inserida no objeto `Range`.</span><span class="sxs-lookup"><span data-stu-id="f91ac-228">The first parameter of the `Range.insertText` method is the string to insert into the `Range` object.</span></span>
 
-   - <span data-ttu-id="2cbe4-p122">O segundo parâmetro especifica onde no intervalo, o texto adicional deve ser inserido. Além de "Fim", as outras opções possíveis são "Início", "Antes", "Depois" e "Substituir".</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p122">The second parameter specifies where in the range the additional text should be inserted. Besides "End", the other possible options are "Start", "Before", "After", and "Replace".</span></span> 
+   - <span data-ttu-id="f91ac-p126">O segundo parâmetro especifica onde no intervalo, o texto adicional deve ser inserido. Além de "Fim", as outras opções possíveis são "Início", "Antes", "Depois" e "Substituir".</span><span class="sxs-lookup"><span data-stu-id="f91ac-p126">The second parameter specifies where in the range the additional text should be inserted. Besides "End", the other possible options are "Start", "Before", "After", and "Replace".</span></span> 
 
-   - <span data-ttu-id="2cbe4-p123">A diferença entre "Fim" e "Depois" é que "Fim" insere o novo texto dentro o final do intervalo existente, mas "Depois" cria um novo intervalo com a cadeia de caracteres e insere o novo intervalo após o intervalo existente. Da mesma forma, "Início" insere o texto dentro do início do intervalo existente, e "Antes" insere um novo intervalo. "Substituir" substitui o texto do intervalo existente pela cadeia de caracteres do primeiro parâmetro.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p123">The difference between "End" and "After" is that "End" inserts the new text inside the end of the existing range, but "After" creates a new range with the string and inserts the new range after the existing range. Similarly, "Start" inserts text inside the beginning of the existing range and "Before" inserts a new range. "Replace" replaces the text of the existing range with the string in the first parameter.</span></span>
+   - <span data-ttu-id="f91ac-p127">A diferença entre "Fim" e "Depois" é que "Fim" insere o novo texto dentro o final do intervalo existente, mas "Depois" cria um novo intervalo com a cadeia de caracteres e insere o novo intervalo após o intervalo existente. Da mesma forma, "Início" insere o texto dentro do início do intervalo existente, e "Antes" insere um novo intervalo. "Substituir" substitui o texto do intervalo existente pela cadeia de caracteres do primeiro parâmetro.</span><span class="sxs-lookup"><span data-stu-id="f91ac-p127">The difference between "End" and "After" is that "End" inserts the new text inside the end of the existing range, but "After" creates a new range with the string and inserts the new range after the existing range. Similarly, "Start" inserts text inside the beginning of the existing range and "Before" inserts a new range. "Replace" replaces the text of the existing range with the string in the first parameter.</span></span>
 
-   - <span data-ttu-id="2cbe4-p124">Você viu em um estágio anterior do tutorial que os métodos insert\* do objeto de corpo não têm as opções "Antes" e "Depois". Isso ocorre porque não é possível colocar o conteúdo fora do corpo do documento.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p124">You saw in an earlier stage of the tutorial that the insert\* methods of the body object do not have the "Before" and "After" options. This is because you can't put content outside of the document's body.</span></span>
+   - <span data-ttu-id="f91ac-p128">Você viu em um estágio anterior do tutorial que os métodos insert\* do objeto de corpo não têm as opções "Antes" e "Depois". Isso ocorre porque não é possível colocar o conteúdo fora do corpo do documento.</span><span class="sxs-lookup"><span data-stu-id="f91ac-p128">You saw in an earlier stage of the tutorial that the insert\* methods of the body object do not have the "Before" and "After" options. This is because you can't put content outside of the document's body.</span></span>
 
     ```js
     var doc = context.document;
@@ -381,55 +390,52 @@ ms.locfileid: "36672863"
     originalRange.insertText(" (C2R)", "End");
     ```
 
-8. <span data-ttu-id="2cbe4-p125">Vamos deixar `TODO2` de lado até a próxima seção. Substitua `TODO3` pelo código a seguir. Esse código é semelhante ao código que você criou no primeiro estágio do tutorial, exceto que, agora, você está inserindo um novo parágrafo no final do documento, em vez de no início. Este novo parágrafo demonstrará que o novo texto agora faz parte do intervalo original.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p125">We'll skip over `TODO2` until the next section. Replace `TODO3` with the following code. This code is similar to the code you created in the first stage of the tutorial, except that now you are inserting a new paragraph at the end of the document instead of at the start. This new paragraph will demonstrate that the new text is now part of the original range.</span></span>
+7. <span data-ttu-id="f91ac-236">Vamos deixar `TODO2` de lado até a próxima seção.</span><span class="sxs-lookup"><span data-stu-id="f91ac-236">We'll skip over `TODO2` until the next section.</span></span> <span data-ttu-id="f91ac-237">Dentro da `insertTextIntoRange()` função, substitua `TODO3` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="f91ac-237">Within the `insertTextIntoRange()` function, replace `TODO3` with the following code.</span></span> <span data-ttu-id="f91ac-238">Esse código é semelhante ao código que você criou no primeiro estágio do tutorial, exceto que, agora, você está inserindo um novo parágrafo no final do documento, em vez de no início.</span><span class="sxs-lookup"><span data-stu-id="f91ac-238">This code is similar to the code you created in the first stage of the tutorial, except that now you are inserting a new paragraph at the end of the document instead of at the start.</span></span> <span data-ttu-id="f91ac-239">Este novo parágrafo demonstrará que o novo texto agora faz parte do intervalo original.</span><span class="sxs-lookup"><span data-stu-id="f91ac-239">This new paragraph will demonstrate that the new text is now part of the original range.</span></span>
 
     ```js
     doc.body.insertParagraph("Original range: " + originalRange.text, "End");
     ```
 
-### <a name="add-code-to-fetch-document-properties-into-the-task-panes-script-objects"></a><span data-ttu-id="2cbe4-240">Adicione código para buscar propriedades do documento em objetos de script do painel de tarefas</span><span class="sxs-lookup"><span data-stu-id="2cbe4-240">Add code to fetch document properties into the task pane's script objects</span></span>
+### <a name="add-code-to-fetch-document-properties-into-the-task-panes-script-objects"></a><span data-ttu-id="f91ac-240">Adicione código para buscar propriedades do documento em objetos de script do painel de tarefas</span><span class="sxs-lookup"><span data-stu-id="f91ac-240">Add code to fetch document properties into the task pane's script objects</span></span>
 
-<span data-ttu-id="2cbe4-p126">Em todas as funções anteriores desta série de tutoriais, você colocou em fila comandos para *gravar* no documento do Office. Cada função terminou com uma chamada para o método `context.sync()`, que envia os comandos em fila para o documento a ser executado. Entretanto, o código adicionado na última etapa chama a propriedade `originalRange.text` e essa é uma grande diferença das funções anteriores que você escreveu, pois o objeto `originalRange` é apenas um objeto de proxy que existe no script do seu painel de tarefas. Ele não sabe qual é o texto real do intervalo no documento, portanto, sua propriedade `text` não pode ter um valor real. Primeiro, é necessário buscar o valor de texto do intervalo no documento e usá-lo para definir o valor de `originalRange.text`. Somente então será possível chamar `originalRange.text` sem causar uma exceção. Esse processo de busca tem três etapas:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p126">In all the previous functions in this series of tutorials, you queued commands to *write* to the Office document. Each function ended with a call to the `context.sync()` method which sends the queued commands to the document to be executed. But the code you added in the last step calls the `originalRange.text` property, and this is a significant difference from the earlier functions you wrote, because the `originalRange` object is only a proxy object that exists in your task pane's script. It doesn't know what the actual text of the range in the document is, so its `text` property can't have a real value. It is necessary to first fetch the text value of the range from the document and use it to set the value of `originalRange.text`. Only then can `originalRange.text` be called without causing an exception to be thrown. This fetching process has three steps:</span></span>
+<span data-ttu-id="f91ac-241">Em todas as funções anteriores desta série de tutoriais, você colocou em fila comandos para *gravar* no documento do Office.</span><span class="sxs-lookup"><span data-stu-id="f91ac-241">In all previous functions in this series of tutorials, you queued commands to *write* to the Office document.</span></span> <span data-ttu-id="f91ac-242">Cada função terminou com uma chamada para o método `context.sync()`, que envia os comandos em fila para o documento a ser executado.</span><span class="sxs-lookup"><span data-stu-id="f91ac-242">Each function ended with a call to the `context.sync()` method which sends the queued commands to the document to be executed.</span></span> <span data-ttu-id="f91ac-243">Entretanto, o código adicionado na última etapa chama a propriedade `originalRange.text` e essa é uma grande diferença das funções anteriores que você escreveu, pois o objeto `originalRange` é apenas um objeto de proxy que existe no script do seu painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="f91ac-243">But the code you added in the last step calls the `originalRange.text` property, and this is a significant difference from the earlier functions you wrote, because the `originalRange` object is only a proxy object that exists in your task pane's script.</span></span> <span data-ttu-id="f91ac-244">Ele não sabe qual é o texto real do intervalo no documento, portanto, sua propriedade `text` não pode ter um valor real.</span><span class="sxs-lookup"><span data-stu-id="f91ac-244">It doesn't know what the actual text of the range in the document is, so its `text` property can't have a real value.</span></span> <span data-ttu-id="f91ac-245">Primeiro, é necessário buscar o valor de texto do intervalo no documento e usá-lo para definir o valor de `originalRange.text`.</span><span class="sxs-lookup"><span data-stu-id="f91ac-245">It is necessary to first fetch the text value of the range from the document and use it to set the value of `originalRange.text`.</span></span> <span data-ttu-id="f91ac-246">Somente então será possível chamar `originalRange.text` sem causar uma exceção.</span><span class="sxs-lookup"><span data-stu-id="f91ac-246">Only then can `originalRange.text` be called without causing an exception to be thrown.</span></span> <span data-ttu-id="f91ac-247">Esse processo de busca tem três etapas:</span><span class="sxs-lookup"><span data-stu-id="f91ac-247">This fetching process has three steps:</span></span>
 
-   1. <span data-ttu-id="2cbe4-248">Coloque em fila um comando para carregar (ou seja, fetch) as propriedades que seu código precisa ler.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-248">Queue a command to load (that is; fetch) the properties that your code needs to read.</span></span>
+   1. <span data-ttu-id="f91ac-248">Coloque em fila um comando para carregar (ou seja, fetch) as propriedades que seu código precisa ler.</span><span class="sxs-lookup"><span data-stu-id="f91ac-248">Queue a command to load (that is; fetch) the properties that your code needs to read.</span></span>
 
-   2. <span data-ttu-id="2cbe4-249">Chame o método `sync` do objeto de contexto para enviar o comando em fila para o documento para execução e retornar as informações solicitadas.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-249">Call the context object's `sync` method to send the queued command to the document for execution and return the requested information.</span></span>
+   2. <span data-ttu-id="f91ac-249">Chame o método `sync` do objeto de contexto para enviar o comando em fila para o documento para execução e retornar as informações solicitadas.</span><span class="sxs-lookup"><span data-stu-id="f91ac-249">Call the context object's `sync` method to send the queued command to the document for execution and return the requested information.</span></span>
 
-   3. <span data-ttu-id="2cbe4-250">Como o método `sync` é assíncrono, certifique-se de que ele tenha sido concluído antes que o código chame as propriedades que foram buscadas.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-250">Because the `sync` method is asynchronous, ensure that it has completed before your code calls the properties that were fetched.</span></span>
+   3. <span data-ttu-id="f91ac-250">Como o método `sync` é assíncrono, certifique-se de que ele tenha sido concluído antes que o código chame as propriedades que foram buscadas.</span><span class="sxs-lookup"><span data-stu-id="f91ac-250">Because the `sync` method is asynchronous, ensure that it has completed before your code calls the properties that were fetched.</span></span>
 
-<span data-ttu-id="2cbe4-251">Estas etapas devem ser concluídas sempre que seu código precisar *ler* informações do documento do Office.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-251">These steps must be completed whenever your code needs to *read* information from the Office document.</span></span>
+<span data-ttu-id="f91ac-251">Estas etapas devem ser concluídas sempre que seu código precisar *ler* informações do documento do Office.</span><span class="sxs-lookup"><span data-stu-id="f91ac-251">These steps must be completed whenever your code needs to *read* information from the Office document.</span></span>
 
-1. <span data-ttu-id="2cbe4-252">Substitua `TODO2` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-252">Replace `TODO2` with the following code.</span></span>
+1. <span data-ttu-id="f91ac-252">Dentro da `insertTextIntoRange()` função, substitua `TODO2` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="f91ac-252">Within the `insertTextIntoRange()` function, replace `TODO2` with the following code.</span></span>
   
     ```js
     originalRange.load("text");
     return context.sync()
         .then(function() {
-
-                // TODO4: Move the doc.body.insertParagraph line here.
-
-            }
-        )
-            // TODO5: Move the final call of context.sync here and ensure
-            //        that it does not run until the insertParagraph has
-            //        been queued.
+            // TODO4: Move the doc.body.insertParagraph line here.
+        })
+        // TODO5: Move the final call of context.sync here and ensure
+        //        that it does not run until the insertParagraph has
+        //        been queued.
     ```
 
-2. <span data-ttu-id="2cbe4-p127">Você não pode ter duas instruções `return` no mesmo caminho de código sem ramificações, portanto, exclua a linha final `return context.sync();` no final de `Word.run`. Você adicionará um novo final `context.sync` posteriormente neste tutorial.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p127">You can't have two `return` statements in the same unbranching code path, so delete the final line `return context.sync();` at the end of the `Word.run`. You'll add a new final `context.sync` later in this tutorial.</span></span>
+2. <span data-ttu-id="f91ac-p131">Você não pode ter duas instruções `return` no mesmo caminho de código sem ramificações, portanto, exclua a linha final `return context.sync();` no final de `Word.run`. Você adicionará um novo final `context.sync` posteriormente neste tutorial.</span><span class="sxs-lookup"><span data-stu-id="f91ac-p131">You can't have two `return` statements in the same unbranching code path, so delete the final line `return context.sync();` at the end of the `Word.run`. You'll add a new final `context.sync` later in this tutorial.</span></span>
 
-3. <span data-ttu-id="2cbe4-255">Recorte a linha `doc.body.insertParagraph` e cole no lugar de `TODO4`.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-255">Cut the `doc.body.insertParagraph` line and paste in place of `TODO4`.</span></span>
+3. <span data-ttu-id="f91ac-255">Recorte a linha `doc.body.insertParagraph` e cole no lugar de `TODO4`.</span><span class="sxs-lookup"><span data-stu-id="f91ac-255">Cut the `doc.body.insertParagraph` line and paste in place of `TODO4`.</span></span>
 
-4. <span data-ttu-id="2cbe4-p128">Substitua `TODO5` pelo código a seguir. Observação:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p128">Replace `TODO5` with the following code. Note:</span></span>
+4. <span data-ttu-id="f91ac-p132">Substitua `TODO5` pelo código a seguir. Observação:</span><span class="sxs-lookup"><span data-stu-id="f91ac-p132">Replace `TODO5` with the following code. Note:</span></span>
 
-   - <span data-ttu-id="2cbe4-258">Passar o método `sync` para uma função `then` garante que ele não seja executado até que a lógica `insertParagraph` tenha sido enfileirada.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-258">Passing the `sync` method to a `then` function ensures that it does not run until the `insertParagraph` logic has been queued.</span></span>
+   - <span data-ttu-id="f91ac-258">Passar o método `sync` para uma função `then` garante que ele não seja executado até que a lógica `insertParagraph` tenha sido enfileirada.</span><span class="sxs-lookup"><span data-stu-id="f91ac-258">Passing the `sync` method to a `then` function ensures that it does not run until the `insertParagraph` logic has been queued.</span></span>
 
-   - <span data-ttu-id="2cbe4-259">O método `then` invoca qualquer função que é passada para ele e não é recomendável que `sync` seja chamado duas vezes, portanto, remova os "()" do fim de context.sync.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-259">The `then` method invokes whatever function is passed to it, and you don't want `sync` to be invoked twice, so leave off the "()" from the end of context.sync.</span></span>
+   - <span data-ttu-id="f91ac-259">O `then` método invoca qualquer função que é passada e você não deseja `sync` invocar duas vezes, portanto, omita o "()" do final do Context. Sync.</span><span class="sxs-lookup"><span data-stu-id="f91ac-259">The `then` method invokes whatever function is passed to it, and you don't want `sync` to be invoked twice, so omit the "()" from the end of context.sync.</span></span>
 
     ```js
     .then(context.sync);
     ```
 
-<span data-ttu-id="2cbe4-260">Quando terminar, a função inteira deve se parecer com o seguinte:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-260">When you're done, the entire function should look like the following:</span></span>
+<span data-ttu-id="f91ac-260">Quando terminar, a função inteira deve se parecer com o seguinte:</span><span class="sxs-lookup"><span data-stu-id="f91ac-260">When you're done, the entire function should look like the following:</span></span>
 
 ```js
 function insertTextIntoRange() {
@@ -442,10 +448,8 @@ function insertTextIntoRange() {
         originalRange.load("text");
         return context.sync()
             .then(function() {
-                        doc.body.insertParagraph("Current text of original range: " + originalRange.text,
-                                                "End");
-                }
-            )
+                doc.body.insertParagraph("Current text of original range: " + originalRange.text, "End");
+            })
             .then(context.sync);
     })
     .catch(function (error) {
@@ -457,27 +461,25 @@ function insertTextIntoRange() {
 }
 ```
 
-### <a name="add-text-between-ranges"></a><span data-ttu-id="2cbe4-261">Adicionar texto entre intervalos</span><span class="sxs-lookup"><span data-stu-id="2cbe4-261">Add text between ranges</span></span>
+### <a name="add-text-between-ranges"></a><span data-ttu-id="f91ac-261">Adicionar texto entre intervalos</span><span class="sxs-lookup"><span data-stu-id="f91ac-261">Add text between ranges</span></span>
 
-1. <span data-ttu-id="2cbe4-262">Abra o arquivo index.html.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-262">Open the file index.html.</span></span>
+1. <span data-ttu-id="f91ac-262">Abra o arquivo **./src/TaskPane/TaskPane.html**.</span><span class="sxs-lookup"><span data-stu-id="f91ac-262">Open the file **./src/taskpane/taskpane.html**.</span></span>
 
-2. <span data-ttu-id="2cbe4-263">Abaixo do `div` que contém o botão `insert-text-into-range`, adicione a marcação a seguir:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-263">Below the `div` that contains the `insert-text-into-range` button, add the following markup:</span></span>
+2. <span data-ttu-id="f91ac-263">Localize o `<button>` elemento do `insert-text-into-range` botão e adicione a seguinte marcação após essa linha:</span><span class="sxs-lookup"><span data-stu-id="f91ac-263">Locate the `<button>` element for the `insert-text-into-range` button, and add the following markup after that line:</span></span> 
 
     ```html
-    <div class="padding">
-        <button class="ms-Button" id="insert-text-outside-range">Add Version Info</button>
-    </div>
+    <button class="ms-Button" id="insert-text-outside-range">Add Version Info</button><br/><br/>
     ```
 
-3. <span data-ttu-id="2cbe4-264">Abra o arquivo app.js.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-264">Open the app.js file.</span></span>
+3. <span data-ttu-id="f91ac-264">Abra o arquivo **./src/TaskPane/TaskPane.js**.</span><span class="sxs-lookup"><span data-stu-id="f91ac-264">Open the file **./src/taskpane/taskpane.js**.</span></span>
 
-4. <span data-ttu-id="2cbe4-265">Abaixo da linha que atribui um identificador de clique ao botão `insert-text-into-range`, adicione o seguinte código:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-265">Below the line that assigns a click handler to the `insert-text-into-range` button, add the following code:</span></span>
+4. <span data-ttu-id="f91ac-265">Dentro da `Office.onReady` chamada do método, localize a linha que atribui um manipulador de cliques para o `insert-text-into-range` botão e adicione o seguinte código após essa linha:</span><span class="sxs-lookup"><span data-stu-id="f91ac-265">Within the `Office.onReady` method call, locate the line that assigns a click handler to the `insert-text-into-range` button, and add the following code after that line:</span></span>
 
     ```js
-    $('#insert-text-outside-range').click(insertTextBeforeRange);
+    document.getElementById("insert-text-outside-range").onclick = insertTextBeforeRange;
     ```
 
-5. <span data-ttu-id="2cbe4-266">Abaixo da função `insertTextIntoRange`, adicione a função a seguir:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-266">Below the `insertTextIntoRange` function, add the following function:</span></span>
+5. <span data-ttu-id="f91ac-266">Adicione a seguinte função ao final do arquivo:</span><span class="sxs-lookup"><span data-stu-id="f91ac-266">Add the following function to the end of the file:</span></span>
 
     ```js
     function insertTextBeforeRange() {
@@ -499,13 +501,13 @@ function insertTextIntoRange() {
     }
     ```
 
-6. <span data-ttu-id="2cbe4-267">Substitua `TODO1` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-267">Replace `TODO1` with the following code.</span></span> <span data-ttu-id="2cbe4-268">Observação:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-268">Note:</span></span>
+6. <span data-ttu-id="f91ac-267">Dentro da `insertTextBeforeRange()` função, substitua `TODO1` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="f91ac-267">Within the `insertTextBeforeRange()` function, replace `TODO1` with the following code.</span></span> <span data-ttu-id="f91ac-268">Observação:</span><span class="sxs-lookup"><span data-stu-id="f91ac-268">Note:</span></span>
 
-   - <span data-ttu-id="2cbe4-p130">O método serve para adicionar um intervalo cujo texto seja "Office 2019", antes do intervalo com o texto "Office 365". Para simplificar, ele faz uma pressuposição de que a cadeia de caracteres está presente, e que o usuário a selecionou.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p130">The method is intended to add a range whose text is "Office 2019, " before the range with text "Office 365". It makes a simplifying assumption that the string is present and the user has selected it.</span></span>
+   - <span data-ttu-id="f91ac-p134">O método serve para adicionar um intervalo cujo texto seja "Office 2019", antes do intervalo com o texto "Office 365". Para simplificar, ele faz uma pressuposição de que a cadeia de caracteres está presente, e que o usuário a selecionou.</span><span class="sxs-lookup"><span data-stu-id="f91ac-p134">The method is intended to add a range whose text is "Office 2019, " before the range with text "Office 365". It makes a simplifying assumption that the string is present and the user has selected it.</span></span>
 
-   - <span data-ttu-id="2cbe4-271">O primeiro parâmetro do método `Range.insertText` é a cadeia de caracteres a ser adicionada.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-271">The first parameter of the `Range.insertText` method is the string to add.</span></span>
+   - <span data-ttu-id="f91ac-271">O primeiro parâmetro do método `Range.insertText` é a cadeia de caracteres a ser adicionada.</span><span class="sxs-lookup"><span data-stu-id="f91ac-271">The first parameter of the `Range.insertText` method is the string to add.</span></span>
 
-   - <span data-ttu-id="2cbe4-p131">O segundo parâmetro especifica onde no intervalo, o texto adicional deve ser inserido. Para ter mais detalhes sobre as opções de local, confira a discussão anterior sobre a função `insertTextIntoRange`.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p131">The second parameter specifies where in the range the additional text should be inserted. For more details about the location options, see the previous discussion of the `insertTextIntoRange` function.</span></span>
+   - <span data-ttu-id="f91ac-p135">O segundo parâmetro especifica onde no intervalo, o texto adicional deve ser inserido. Para ter mais detalhes sobre as opções de local, confira a discussão anterior sobre a função `insertTextIntoRange`.</span><span class="sxs-lookup"><span data-stu-id="f91ac-p135">The second parameter specifies where in the range the additional text should be inserted. For more details about the location options, see the previous discussion of the `insertTextIntoRange` function.</span></span>
 
     ```js
     var doc = context.document;
@@ -513,58 +515,51 @@ function insertTextIntoRange() {
     originalRange.insertText("Office 2019, ", "Before");
     ```
 
-7. <span data-ttu-id="2cbe4-274">Substitua `TODO2` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-274">Replace `TODO2` with the following code.</span></span>
+7. <span data-ttu-id="f91ac-274">Dentro da `insertTextBeforeRange()` função, substitua `TODO2` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="f91ac-274">Within the `insertTextBeforeRange()` function, replace `TODO2` with the following code.</span></span>
 
      ```js
     originalRange.load("text");
     return context.sync()
         .then(function() {
-
-                // TODO3: Queue commands to insert the original range as a
-                //        paragraph at the end of the document.
-
-                }
-            )
-
-            // TODO4: Make a final call of context.sync here and ensure
-            //        that it does not run until the insertParagraph has
-            //        been queued.
+            // TODO3: Queue commands to insert the original range as a
+            //        paragraph at the end of the document.
+        })
+        // TODO4: Make a final call of context.sync here and ensure
+        //        that it does not run until the insertParagraph has
+        //        been queued.
     ```
 
-8. <span data-ttu-id="2cbe4-p132">Substitua `TODO3` pelo código a seguir. Este novo parágrafo demonstrará que o novo texto ***não*** faz parte do intervalo original selecionado. O intervalo original ainda contém o texto que tinha quando foi selecionado.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p132">Replace `TODO3` with the following code. This new paragraph will demonstrate the fact that the new text is ***not*** part of the original selected range. The original range still has only the text it had when it was selected.</span></span>
+8. <span data-ttu-id="f91ac-p136">Substitua `TODO3` pelo código a seguir. Este novo parágrafo demonstrará que o novo texto ***não*** faz parte do intervalo original selecionado. O intervalo original ainda contém o texto que tinha quando foi selecionado.</span><span class="sxs-lookup"><span data-stu-id="f91ac-p136">Replace `TODO3` with the following code. This new paragraph will demonstrate the fact that the new text is ***not*** part of the original selected range. The original range still has only the text it had when it was selected.</span></span>
 
     ```js
-    doc.body.insertParagraph("Current text of original range: " + originalRange.text,
-                             "End");
+    doc.body.insertParagraph("Current text of original range: " + originalRange.text, "End");
     ```
 
-9. <span data-ttu-id="2cbe4-278">Substitua `TODO4` pelo código a seguir:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-278">Replace `TODO4` with the following code:</span></span>
+9. <span data-ttu-id="f91ac-278">Substitua `TODO4` pelo código a seguir:</span><span class="sxs-lookup"><span data-stu-id="f91ac-278">Replace `TODO4` with the following code:</span></span>
 
     ```js
     .then(context.sync);
     ```
 
-### <a name="replace-the-text-of-a-range"></a><span data-ttu-id="2cbe4-279">Substitua o texto de um intervalo.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-279">Replace the text of a range</span></span>
+### <a name="replace-the-text-of-a-range"></a><span data-ttu-id="f91ac-279">Substitua o texto de um intervalo.</span><span class="sxs-lookup"><span data-stu-id="f91ac-279">Replace the text of a range</span></span>
 
-1. <span data-ttu-id="2cbe4-280">Abra o arquivo index.html.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-280">Open the file index.html.</span></span>
+1. <span data-ttu-id="f91ac-280">Abra o arquivo **./src/TaskPane/TaskPane.html**.</span><span class="sxs-lookup"><span data-stu-id="f91ac-280">Open the file **./src/taskpane/taskpane.html**.</span></span>
 
-2. <span data-ttu-id="2cbe4-281">Abaixo do `div` que contém o botão `insert-text-outside-range`, adicione a marcação a seguir:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-281">Below the `div` that contains the `insert-text-outside-range` button, add the following markup:</span></span>
+2. <span data-ttu-id="f91ac-281">Localize o `<button>` elemento do `insert-text-outside-range` botão e adicione a seguinte marcação após essa linha:</span><span class="sxs-lookup"><span data-stu-id="f91ac-281">Locate the `<button>` element for the `insert-text-outside-range` button, and add the following markup after that line:</span></span> 
 
     ```html
-    <div class="padding">
-        <button class="ms-Button" id="replace-text">Change Quantity Term</button>
-    </div>
+    <button class="ms-Button" id="replace-text">Change Quantity Term</button><br/><br/>
     ```
 
-3. <span data-ttu-id="2cbe4-282">Abra o arquivo app.js.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-282">Open the app.js file.</span></span>
+3. <span data-ttu-id="f91ac-282">Abra o arquivo **./src/TaskPane/TaskPane.js**.</span><span class="sxs-lookup"><span data-stu-id="f91ac-282">Open the file **./src/taskpane/taskpane.js**.</span></span>
 
-4. <span data-ttu-id="2cbe4-283">Abaixo da linha que atribui um identificador de clique ao botão `insert-text-outside-range`, adicione o seguinte código:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-283">Below the line that assigns a click handler to the `insert-text-outside-range` button, add the following code:</span></span>
+4. <span data-ttu-id="f91ac-283">Dentro da `Office.onReady` chamada do método, localize a linha que atribui um manipulador de cliques para o `insert-text-outside-range` botão e adicione o seguinte código após essa linha:</span><span class="sxs-lookup"><span data-stu-id="f91ac-283">Within the `Office.onReady` method call, locate the line that assigns a click handler to the `insert-text-outside-range` button, and add the following code after that line:</span></span>
 
     ```js
-    $('#replace-text').click(replaceText);
+    document.getElementById("replace-text").onclick = replaceText;
     ```
 
-5. <span data-ttu-id="2cbe4-284">Abaixo da função `insertTextBeforeRange`, adicione a função a seguir:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-284">Below the `insertTextBeforeRange` function, add the following function:</span></span>
+5. <span data-ttu-id="f91ac-284">Adicione a seguinte função ao final do arquivo:</span><span class="sxs-lookup"><span data-stu-id="f91ac-284">Add the following function to the end of the file:</span></span>
 
     ```js
     function replaceText() {
@@ -583,7 +578,7 @@ function insertTextIntoRange() {
     }
     ```
 
-6. <span data-ttu-id="2cbe4-p133">Substitua `TODO1` pelo código a seguir. O método serve para substituir a cadeia de caracteres "várias" pela cadeia "muitos". Para simplificar, ele faz uma pressuposição de que a cadeia de caracteres está presente, e que o usuário a selecionou.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p133">Replace `TODO1` with the following code. Note that the method is intended to replace the string "several" with the string "many". It makes a simplifying assumption that the string is present and the user has selected it.</span></span>
+6. <span data-ttu-id="f91ac-285">Dentro da `replaceText()` função, substitua `TODO1` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="f91ac-285">Within the `replaceText()` function, replace `TODO1` with the following code.</span></span> <span data-ttu-id="f91ac-286">O método serve para substituir a cadeia de caracteres "várias" pela cadeia "muitos".</span><span class="sxs-lookup"><span data-stu-id="f91ac-286">Note that the method is intended to replace the string "several" with the string "many".</span></span> <span data-ttu-id="f91ac-287">Para simplificar, ele faz uma pressuposição de que a cadeia de caracteres está presente, e que o usuário a selecionou.</span><span class="sxs-lookup"><span data-stu-id="f91ac-287">It makes a simplifying assumption that the string is present and the user has selected it.</span></span>
 
     ```js
     var doc = context.document;
@@ -591,68 +586,72 @@ function insertTextIntoRange() {
     originalRange.insertText("many", "Replace");
     ```
 
-### <a name="test-the-add-in"></a><span data-ttu-id="2cbe4-288">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="2cbe4-288">Test the add-in</span></span>
+7. <span data-ttu-id="f91ac-288">Verifique se você salvou todas as alterações feitas no projeto.</span><span class="sxs-lookup"><span data-stu-id="f91ac-288">Verify that you've saved all of the changes you've made to the project.</span></span>
 
-1. <span data-ttu-id="2cbe4-p134">Se a janela Git bash ou o prompt de sistema habilitado para Node.JS do tutorial anterior ainda estiverem abertos, digite Ctrl + C duas vezes para interromper a execução do servidor Web. Caso contrário, abra uma janela Git bash ou um prompt de sistema habilitado para Node.JS e navegue até a pasta **Iniciar** do projeto.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p134">If the Git bash window, or Node.JS-enabled system prompt, from the previous stage tutorial is still open, enter Ctrl-C twice to stop the running web server. Otherwise, open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.</span></span>
+### <a name="test-the-add-in"></a><span data-ttu-id="f91ac-289">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="f91ac-289">Test the add-in</span></span>
 
-     > [!NOTE]
-     > <span data-ttu-id="2cbe4-p135">Embora o servidor de sincronização do navegador recarregue o suplemento no painel de tarefas sempre que você fizer uma alteração em algum arquivo, incluindo o arquivo app.js, ele não transcompila o JavaScript, portanto, é necessário repetir o comando de compilação para que as alterações em app.js as entrem em vigor. Para fazer isso, interrompa o processo do servidor para que o prompt apareça e você possa inserir o comando de compilação. Após a compilação, reinicie o servidor. As próximas etapas executam esse processo.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p135">Although the browser-sync server reloads your add-in in the task pane every time you make a change to any file, including the app.js file, it does not retranspile the JavaScript, so you must repeat the build command in order for your changes to app.js to take effect. In order to do this, you need to kill the server process so that the prompt appears and you can enter the build command. After the build, restart the server. The next few steps carry out this process.</span></span>
+1. [!include[Start server and sideload add-in instructions](../includes/tutorial-word-start-server.md)]
 
-2. <span data-ttu-id="2cbe4-295">Execute o comando `npm run build` para transcompilar seu código-fonte ES6 para uma versão anterior do JavaScript com suporte de todos os hosts nos quais os suplementos do Office podem ser executados.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-295">Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by all the hosts where Office Add-ins can run.</span></span>
+2. <span data-ttu-id="f91ac-290">Se o painel de tarefas do suplemento ainda não estiver aberto no Word, vá para a guia **página inicial** e escolha o botão **Mostrar painel de tarefas** na faixa de opções para abri-lo.</span><span class="sxs-lookup"><span data-stu-id="f91ac-290">If the add-in task pane isn't already open in Word, go to the **Home** tab and choose the **Show Taskpane** button in the ribbon to open it.</span></span>
 
-3. <span data-ttu-id="2cbe4-296">Execute o comando `npm start` para iniciar um servidor Web em um localhost.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-296">Run the command `npm start` to start a web server running on localhost.</span></span>
+3. <span data-ttu-id="f91ac-291">No painel de tarefas, escolha o botão **Inserir parágrafo** para garantir que haja um parágrafo no início do documento.</span><span class="sxs-lookup"><span data-stu-id="f91ac-291">In the task pane, choose the **Insert Paragraph** button to ensure that there is a paragraph at the start of the document.</span></span>
 
-4. <span data-ttu-id="2cbe4-297">Feche o painel de tarefas para recarregá-lo e, no menu **Página Inicial**, selecione **Mostrar Painel de Tarefas** para reabrir o suplemento.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-297">Reload the task pane by closing it, and then on the **Home** menu, select **Show Taskpane** to reopen the add-in.</span></span>
+4. <span data-ttu-id="f91ac-292">No documento, selecione a frase "clique para executar".</span><span class="sxs-lookup"><span data-stu-id="f91ac-292">Within the document, select the phrase "Click-to-Run".</span></span> <span data-ttu-id="f91ac-293">*Tenha cuidado para não incluir o espaço precedente ou a vírgula seguinte na seleção.*</span><span class="sxs-lookup"><span data-stu-id="f91ac-293">*Be careful not to include the preceding space or following comma in the selection.*</span></span>
 
-5. <span data-ttu-id="2cbe4-298">No painel de tarefas, escolha **Inserir Parágrafo** para garantir que haja um parágrafo no início do documento.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-298">In the task pane, choose **Insert Paragraph** to ensure that there is a paragraph at the start of the document.</span></span>
+5. <span data-ttu-id="f91ac-p139">Escolha o botão **Inserir Abreviação**. "(C2R)" é adicionado. Na parte inferior do documento, um novo parágrafo é adicionado com o texto inteiro expandido porque a nova cadeia de caracteres foi adicionada ao intervalo existente.</span><span class="sxs-lookup"><span data-stu-id="f91ac-p139">Choose the **Insert Abbreviation** button. Note that " (C2R)" is added. Note also that at the bottom of the document a new paragraph is added with the entire expanded text because the new string was added to the existing range.</span></span>
 
-6. <span data-ttu-id="2cbe4-p136">Selecione um texto. Selecionar a frase "Clique para Executar" fará mais sentido. *Tenha cuidado para não incluir o espaço anterior ou seguinte na seleção.*</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p136">Select some text. Selecting the phrase "Click-to-Run" will make the most sense. *Be careful not to include the preceding or following space in the selection.*</span></span>
+6. <span data-ttu-id="f91ac-297">No documento, selecione a frase "Office 365".</span><span class="sxs-lookup"><span data-stu-id="f91ac-297">Within the document, select the phrase "Office 365".</span></span> <span data-ttu-id="f91ac-298">*Tenha cuidado para não incluir o espaço anterior ou seguinte na seleção.*</span><span class="sxs-lookup"><span data-stu-id="f91ac-298">*Be careful not to include the preceding or following space in the selection.*</span></span>
 
-7. <span data-ttu-id="2cbe4-p137">Escolha o botão **Inserir Abreviação**. "(C2R)" é adicionado. Na parte inferior do documento, um novo parágrafo é adicionado com o texto inteiro expandido porque a nova cadeia de caracteres foi adicionada ao intervalo existente.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p137">Choose the **Insert Abbreviation** button. Note that " (C2R)" is added. Note also that at the bottom of the document a new paragraph is added with the entire expanded text because the new string was added to the existing range.</span></span>
+7. <span data-ttu-id="f91ac-p141">Escolha o botão **Adicionar Informações de Versão**. "Office 2019" está inserido entre "Office 2016" e "Office 365". Na parte inferior do documento um novo parágrafo foi adicionado, mas ele contém apenas o texto selecionado originalmente porque a nova cadeia de caracteres tornou-se um intervalo novo, em vez de ser adicionada ao intervalo original.</span><span class="sxs-lookup"><span data-stu-id="f91ac-p141">Choose the **Add Version Info** button. Note that "Office 2019, " is inserted between "Office 2016" and "Office 365". Note also that at the bottom of the document a new paragraph is added but it contains only the originally selected text because the new string became a new range rather than being added to the original range.</span></span>
 
-8. <span data-ttu-id="2cbe4-p138">Selecione um texto. Selecionar a frase "Office 365" fará mais sentido. *Tenha cuidado para não incluir o espaço anterior ou seguinte na seleção.*</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p138">Select some text. Selecting the phrase "Office 365" will make the most sense. *Be careful not to include the preceding or following space in the selection.*</span></span>
+8. <span data-ttu-id="f91ac-302">No documento, selecione a palavra "vários".</span><span class="sxs-lookup"><span data-stu-id="f91ac-302">Within the document, select the word "several".</span></span> <span data-ttu-id="f91ac-303">*Tenha cuidado para não incluir o espaço anterior ou seguinte na seleção.*</span><span class="sxs-lookup"><span data-stu-id="f91ac-303">*Be careful not to include the preceding or following space in the selection.*</span></span>
 
-9. <span data-ttu-id="2cbe4-p139">Escolha o botão **Adicionar Informações de Versão**. "Office 2019" está inserido entre "Office 2016" e "Office 365". Na parte inferior do documento um novo parágrafo foi adicionado, mas ele contém apenas o texto selecionado originalmente porque a nova cadeia de caracteres tornou-se um intervalo novo, em vez de ser adicionada ao intervalo original.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p139">Choose the **Add Version Info** button. Note that "Office 2019, " is inserted between "Office 2016" and "Office 365". Note also that at the bottom of the document a new paragraph is added but it contains only the originally selected text because the new string became a new range rather than being added to the original range.</span></span>
+9. <span data-ttu-id="f91ac-p143">Escolha o botão **Alterar Termo de Quantidade**. "muitos" substitui o texto selecionado.</span><span class="sxs-lookup"><span data-stu-id="f91ac-p143">Choose the **Change Quantity Term** button. Note that "many" replaces the selected text.</span></span>
 
-10. <span data-ttu-id="2cbe4-p140">Selecione um texto. Selecionar a palavra "vários" fará mais sentido. *Tenha cuidado para não incluir o espaço anterior ou seguinte na seleção.*</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p140">Select some text. Selecting the word "several" will make the most sense. *Be careful not to include the preceding or following space in the selection.*</span></span>
+    ![Tutorial do Word: texto adicionado e substituído](../images/word-tutorial-text-replace-2.png)
 
-11. <span data-ttu-id="2cbe4-p141">Escolha o botão **Alterar Termo de Quantidade**. "muitos" substitui o texto selecionado.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p141">Choose the **Change Quantity Term** button. Note that "many" replaces the selected text.</span></span>
+## <a name="insert-images-html-and-tables"></a><span data-ttu-id="f91ac-307">Inserir imagens, HTML e tabelas</span><span class="sxs-lookup"><span data-stu-id="f91ac-307">Insert images, HTML, and tables</span></span>
 
-    ![Tutorial do Word: texto adicionado e substituído](../images/word-tutorial-text-replace.png)
+<span data-ttu-id="f91ac-308">Nesta etapa do tutorial, você aprenderá a inserir imagens, HTML e tabelas no documento.</span><span class="sxs-lookup"><span data-stu-id="f91ac-308">In this step of the tutorial, you'll learn how to insert images, HTML, and tables into the document.</span></span>
 
-## <a name="insert-images-html-and-tables"></a><span data-ttu-id="2cbe4-317">Inserir imagens, HTML e tabelas</span><span class="sxs-lookup"><span data-stu-id="2cbe4-317">Insert images, HTML, and tables</span></span>
+### <a name="define-an-image"></a><span data-ttu-id="f91ac-309">Definir uma imagem</span><span class="sxs-lookup"><span data-stu-id="f91ac-309">Define an image</span></span>
 
-<span data-ttu-id="2cbe4-318">Nesta etapa do tutorial, você aprenderá a inserir imagens, HTML e tabelas no documento.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-318">In this step of the tutorial, you'll learn how to insert images, HTML, and tables into the document.</span></span>
+<span data-ttu-id="f91ac-310">Complete as etapas a seguir para definir a imagem que será inserida no documento na próxima parte deste tutorial.</span><span class="sxs-lookup"><span data-stu-id="f91ac-310">Complete the following steps to define the image that you'll insert into the document in the next part of this tutorial.</span></span> 
 
-### <a name="insert-an-image"></a><span data-ttu-id="2cbe4-319">Inserir uma imagem</span><span class="sxs-lookup"><span data-stu-id="2cbe4-319">Insert an image</span></span>
+1. <span data-ttu-id="f91ac-311">Na raiz do projeto, crie um novo arquivo chamado **base64Image. js**.</span><span class="sxs-lookup"><span data-stu-id="f91ac-311">In the root of the project, create a new file named **base64Image.js**.</span></span>
 
-1. <span data-ttu-id="2cbe4-320">Abra o projeto em seu editor de código.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-320">Open the project in your code editor.</span></span>
+2. <span data-ttu-id="f91ac-312">Abra o arquivo **base64Image. js** e adicione o código a seguir para especificar a cadeia de caracteres codificada em base64 que representa uma imagem.</span><span class="sxs-lookup"><span data-stu-id="f91ac-312">Open the file **base64Image.js** and add the following code to specify the base64-encoded string that represents an image.</span></span>
 
-2. <span data-ttu-id="2cbe4-321">Abra o arquivo index.html.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-321">Open the file index.html.</span></span>
+    ```js
+    export const base64Image =
+        "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";
+    ```
 
-3. <span data-ttu-id="2cbe4-322">Abaixo do `div` que contém o botão `replace-text`, adicione a marcação a seguir:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-322">Below the `div` that contains the `replace-text` button, add the following markup:</span></span>
+### <a name="insert-an-image"></a><span data-ttu-id="f91ac-313">Inserir uma imagem</span><span class="sxs-lookup"><span data-stu-id="f91ac-313">Insert an image</span></span>
+
+1. <span data-ttu-id="f91ac-314">Abra o arquivo **./src/TaskPane/TaskPane.html**.</span><span class="sxs-lookup"><span data-stu-id="f91ac-314">Open the file **./src/taskpane/taskpane.html**.</span></span>
+
+2. <span data-ttu-id="f91ac-315">Localize o `<button>` elemento do `replace-text` botão e adicione a seguinte marcação após essa linha:</span><span class="sxs-lookup"><span data-stu-id="f91ac-315">Locate the `<button>` element for the `replace-text` button, and add the following markup after that line:</span></span> 
 
     ```html
-    <div class="padding">
-        <button class="ms-Button" id="insert-image">Insert Image</button>
-    </div>
+    <button class="ms-Button" id="insert-image">Insert Image</button><br/><br/>
     ```
 
-4. <span data-ttu-id="2cbe4-323">Abra o arquivo app.js.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-323">Open the app.js file.</span></span>
+3. <span data-ttu-id="f91ac-316">Abra o arquivo **./src/TaskPane/TaskPane.js**.</span><span class="sxs-lookup"><span data-stu-id="f91ac-316">Open the file **./src/taskpane/taskpane.js**.</span></span>
 
-5. <span data-ttu-id="2cbe4-p142">Na parte superior do arquivo, logo abaixo da linha use-strict, adicione a seguinte linha. Essa linha importa uma variável de outro arquivo. A variável é uma cadeia de caracteres base 64 que codifica uma imagem. Para ver a cadeia de caracteres codificada, abra o arquivo base64Image.js na raiz do projeto.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p142">Near the top of the file, just below the use-strict line, add the following line. This line imports a variable from another file. The variable is a base 64 string that encodes an image. To see the encoded string, open the base64Image.js file in the root of the project.</span></span>
+4. <span data-ttu-id="f91ac-317">Localize a `Office.onReady` chamada do método próxima à parte superior do arquivo e adicione o código a seguir imediatamente antes dessa linha.</span><span class="sxs-lookup"><span data-stu-id="f91ac-317">Locate the `Office.onReady` method call near the top of the file and add the following code immediately before that line.</span></span> <span data-ttu-id="f91ac-318">Este código importa a variável que você definiu anteriormente no arquivo **./base64Image.js**.</span><span class="sxs-lookup"><span data-stu-id="f91ac-318">This code imports the variable that you defined previously in the file **./base64Image.js**.</span></span>
 
     ```js
-    import { base64Image } from "./base64Image";
+    import { base64Image } from "../../base64Image";
     ```
 
-6. <span data-ttu-id="2cbe4-328">Abaixo da linha que atribui um identificador de clique ao botão `replace-text`, adicione o seguinte código:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-328">Below the line that assigns a click handler to the `replace-text` button, add the following code:</span></span>
+5. <span data-ttu-id="f91ac-319">Dentro da `Office.onReady` chamada do método, localize a linha que atribui um manipulador de cliques para o `replace-text` botão e adicione o seguinte código após essa linha:</span><span class="sxs-lookup"><span data-stu-id="f91ac-319">Within the `Office.onReady` method call, locate the line that assigns a click handler to the `replace-text` button, and add the following code after that line:</span></span>
 
     ```js
-    $('#insert-image').click(insertImage);
+    document.getElementById("insert-image").onclick = insertImage;
     ```
 
-7. <span data-ttu-id="2cbe4-329">Abaixo da função `replaceText`, adicione a função a seguir:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-329">Below the `replaceText` function, add the following function:</span></span>
+6. <span data-ttu-id="f91ac-320">Adicione a seguinte função ao final do arquivo:</span><span class="sxs-lookup"><span data-stu-id="f91ac-320">Add the following function to the end of the file:</span></span>
 
     ```js
     function insertImage() {
@@ -671,33 +670,30 @@ function insertTextIntoRange() {
     }
     ```
 
-8. <span data-ttu-id="2cbe4-p143">Substitua `TODO1` pelo código a seguir. Esta linha insere a imagem codificada em base 64 no final do documento. (O objeto `Paragraph` também tem um método `insertInlinePictureFromBase64` e outros métodos `insert*`. Confira a seção insertHTML a seguir para conferir um exemplo).</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p143">Replace `TODO1` with the following code. Note that this line inserts the base 64 encoded image at the end of the document. (The `Paragraph` object also has an `insertInlinePictureFromBase64` method and other `insert*` methods. See the following insertHTML section for an example.)</span></span>
+7. <span data-ttu-id="f91ac-321">Dentro da `insertImage()` função, substitua `TODO1` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="f91ac-321">Within the `insertImage()` function, replace `TODO1` with the following code.</span></span> <span data-ttu-id="f91ac-322">Esta linha insere a imagem codificada em base 64 no final do documento.</span><span class="sxs-lookup"><span data-stu-id="f91ac-322">Note that this line inserts the base 64 encoded image at the end of the document.</span></span> <span data-ttu-id="f91ac-323">(O objeto `Paragraph` também tem um método `insertInlinePictureFromBase64` e outros métodos `insert*`.</span><span class="sxs-lookup"><span data-stu-id="f91ac-323">(The `Paragraph` object also has an `insertInlinePictureFromBase64` method and other `insert*` methods.</span></span> <span data-ttu-id="f91ac-324">Confira a seção insertHTML a seguir para conferir um exemplo).</span><span class="sxs-lookup"><span data-stu-id="f91ac-324">See the following insertHTML section for an example.)</span></span>
 
     ```js
     context.document.body.insertInlinePictureFromBase64(base64Image, "End");
     ```
 
-### <a name="insert-html"></a><span data-ttu-id="2cbe4-334">Inserir HTML</span><span class="sxs-lookup"><span data-stu-id="2cbe4-334">Insert HTML</span></span>
+### <a name="insert-html"></a><span data-ttu-id="f91ac-325">Inserir HTML</span><span class="sxs-lookup"><span data-stu-id="f91ac-325">Insert HTML</span></span>
 
-1. <span data-ttu-id="2cbe4-335">Abra o arquivo index.html.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-335">Open the file index.html.</span></span>
+1. <span data-ttu-id="f91ac-326">Abra o arquivo **./src/TaskPane/TaskPane.html**.</span><span class="sxs-lookup"><span data-stu-id="f91ac-326">Open the file **./src/taskpane/taskpane.html**.</span></span>
 
-2. <span data-ttu-id="2cbe4-336">Abaixo do `div` que contém o botão `insert-image`, adicione a marcação a seguir:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-336">Below the `div` that contains the `insert-image` button, add the following markup:</span></span>
+2. <span data-ttu-id="f91ac-327">Localize o `<button>` elemento do `insert-image` botão e adicione a seguinte marcação após essa linha:</span><span class="sxs-lookup"><span data-stu-id="f91ac-327">Locate the `<button>` element for the `insert-image` button, and add the following markup after that line:</span></span> 
 
     ```html
-    <div class="padding">
-        <button class="ms-Button" id="insert-html">Insert HTML</button>
-    </div>
+    <button class="ms-Button" id="insert-html">Insert HTML</button><br/><br/>
     ```
 
-3. <span data-ttu-id="2cbe4-337">Abra o arquivo app.js.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-337">Open the app.js file.</span></span>
+3. <span data-ttu-id="f91ac-328">Abra o arquivo **./src/TaskPane/TaskPane.js**.</span><span class="sxs-lookup"><span data-stu-id="f91ac-328">Open the file **./src/taskpane/taskpane.js**.</span></span>
 
-4. <span data-ttu-id="2cbe4-338">Abaixo da linha que atribui um identificador de clique ao botão `insert-image`, adicione o seguinte código:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-338">Below the line that assigns a click handler to the `insert-image` button, add the following code:</span></span>
+4. <span data-ttu-id="f91ac-329">Dentro da `Office.onReady` chamada do método, localize a linha que atribui um manipulador de cliques para o `insert-image` botão e adicione o seguinte código após essa linha:</span><span class="sxs-lookup"><span data-stu-id="f91ac-329">Within the `Office.onReady` method call, locate the line that assigns a click handler to the `insert-image` button, and add the following code after that line:</span></span>
 
     ```js
-    $('#insert-html').click(insertHTML);
+    document.getElementById("insert-html").onclick = insertHTML;
     ```
-
-5. <span data-ttu-id="2cbe4-339">Abaixo da função `insertImage`, adicione a função a seguir:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-339">Below the `insertImage` function, add the following function:</span></span>
+5. <span data-ttu-id="f91ac-330">Adicione a seguinte função ao final do arquivo:</span><span class="sxs-lookup"><span data-stu-id="f91ac-330">Add the following function to the end of the file:</span></span>
 
     ```js
     function insertHTML() {
@@ -716,38 +712,36 @@ function insertTextIntoRange() {
     }
     ```
 
-6. <span data-ttu-id="2cbe4-340">Substitua `TODO1` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-340">Replace `TODO1` with the following code.</span></span> <span data-ttu-id="2cbe4-341">Observação:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-341">Note:</span></span>
+6. <span data-ttu-id="f91ac-331">Dentro da `insertHTML()` função, substitua `TODO1` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="f91ac-331">Within the `insertHTML()` function, replace `TODO1` with the following code.</span></span> <span data-ttu-id="f91ac-332">Observação:</span><span class="sxs-lookup"><span data-stu-id="f91ac-332">Note:</span></span>
 
-   - <span data-ttu-id="2cbe4-342">A primeira linha adiciona um parágrafo em branco ao final do documento.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-342">The first line adds a blank paragraph to the end of the document.</span></span> 
+   - <span data-ttu-id="f91ac-333">A primeira linha adiciona um parágrafo em branco ao final do documento.</span><span class="sxs-lookup"><span data-stu-id="f91ac-333">The first line adds a blank paragraph to the end of the document.</span></span> 
 
-   - <span data-ttu-id="2cbe4-p145">A segunda linha insere uma cadeia de caracteres de HTML no final do parágrafo; especificamente dois parágrafos, um formatado com a fonte Verdana, e o outro com estilo padrão de documento do Word. (Conforme mostrado anteriormente no método `insertImage`, o objeto `context.document.body` também tem os métodos `insert*`).</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p145">The second line inserts a string of HTML at the end of the paragraph; specifically two paragraphs, one formatted with Verdana font, the other with the default styling of the Word document. (As you saw in the `insertImage` method earlier, the `context.document.body` object also has the `insert*` methods.)</span></span>
+   - <span data-ttu-id="f91ac-p147">A segunda linha insere uma cadeia de caracteres de HTML no final do parágrafo; especificamente dois parágrafos, um formatado com a fonte Verdana, e o outro com estilo padrão de documento do Word. (Conforme mostrado anteriormente no método `insertImage`, o objeto `context.document.body` também tem os métodos `insert*`).</span><span class="sxs-lookup"><span data-stu-id="f91ac-p147">The second line inserts a string of HTML at the end of the paragraph; specifically two paragraphs, one formatted with Verdana font, the other with the default styling of the Word document. (As you saw in the `insertImage` method earlier, the `context.document.body` object also has the `insert*` methods.)</span></span>
 
     ```js
     var blankParagraph = context.document.body.paragraphs.getLast().insertParagraph("", "After");
     blankParagraph.insertHtml('<p style="font-family: verdana;">Inserted HTML.</p><p>Another paragraph</p>', "End");
     ```
 
-### <a name="insert-a-table"></a><span data-ttu-id="2cbe4-345">Inserir uma tabela</span><span class="sxs-lookup"><span data-stu-id="2cbe4-345">Insert a table</span></span>
+### <a name="insert-a-table"></a><span data-ttu-id="f91ac-336">Inserir uma tabela</span><span class="sxs-lookup"><span data-stu-id="f91ac-336">Insert a table</span></span>
 
-1. <span data-ttu-id="2cbe4-346">Abra o arquivo index.html.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-346">Open the file index.html.</span></span>
+1. <span data-ttu-id="f91ac-337">Abra o arquivo **./src/TaskPane/TaskPane.html**.</span><span class="sxs-lookup"><span data-stu-id="f91ac-337">Open the file **./src/taskpane/taskpane.html**.</span></span>
 
-2. <span data-ttu-id="2cbe4-347">Abaixo do `div` que contém o botão `insert-html`, adicione a marcação a seguir:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-347">Below the `div` that contains the `insert-html` button, add the following markup:</span></span>
+2. <span data-ttu-id="f91ac-338">Localize o `<button>` elemento do `insert-html` botão e adicione a seguinte marcação após essa linha:</span><span class="sxs-lookup"><span data-stu-id="f91ac-338">Locate the `<button>` element for the `insert-html` button, and add the following markup after that line:</span></span> 
 
     ```html
-    <div class="padding">
-        <button class="ms-Button" id="insert-table">Insert Table</button>
-    </div>
+    <button class="ms-Button" id="insert-table">Insert Table</button><br/><br/>
     ```
 
-3. <span data-ttu-id="2cbe4-348">Abra o arquivo app.js.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-348">Open the app.js file.</span></span>
+3. <span data-ttu-id="f91ac-339">Abra o arquivo **./src/TaskPane/TaskPane.js**.</span><span class="sxs-lookup"><span data-stu-id="f91ac-339">Open the file **./src/taskpane/taskpane.js**.</span></span>
 
-4. <span data-ttu-id="2cbe4-349">Abaixo da linha que atribui um identificador de clique ao botão `insert-html`, adicione o seguinte código:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-349">Below the line that assigns a click handler to the `insert-html` button, add the following code:</span></span>
+4. <span data-ttu-id="f91ac-340">Dentro da `Office.onReady` chamada do método, localize a linha que atribui um manipulador de cliques para o `insert-html` botão e adicione o seguinte código após essa linha:</span><span class="sxs-lookup"><span data-stu-id="f91ac-340">Within the `Office.onReady` method call, locate the line that assigns a click handler to the `insert-html` button, and add the following code after that line:</span></span>
 
     ```js
-    $('#insert-table').click(insertTable);
+    document.getElementById("insert-table").onclick = insertTable;
     ```
 
-5. <span data-ttu-id="2cbe4-350">Abaixo da função `insertHTML`, adicione a função a seguir:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-350">Below the `insertHTML` function, add the following function:</span></span>
+5. <span data-ttu-id="f91ac-341">Adicione a seguinte função ao final do arquivo:</span><span class="sxs-lookup"><span data-stu-id="f91ac-341">Add the following function to the end of the file:</span></span>
 
     ```js
     function insertTable() {
@@ -769,21 +763,21 @@ function insertTextIntoRange() {
     }
     ```
 
-6. <span data-ttu-id="2cbe4-p146">Substitua `TODO1` pelo código a seguir. Essa linha usa o método `ParagraphCollection.getFirst` para obter uma referência do primeiro parágrafo e, depois, usa o método `Paragraph.getNext` para obter uma referência para o segundo parágrafo.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p146">Replace `TODO1` with the following code. Note that this line uses the `ParagraphCollection.getFirst` method to get a reference ot the first paragraph and then uses the `Paragraph.getNext` method to get a reference to the second paragraph.</span></span>
+6. <span data-ttu-id="f91ac-342">Dentro da `insertTable()` função, substitua `TODO1` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="f91ac-342">Within the `insertTable()` function, replace `TODO1` with the following code.</span></span> <span data-ttu-id="f91ac-343">Essa linha usa o método `ParagraphCollection.getFirst` para obter uma referência do primeiro parágrafo e, depois, usa o método `Paragraph.getNext` para obter uma referência para o segundo parágrafo.</span><span class="sxs-lookup"><span data-stu-id="f91ac-343">Note that this line uses the `ParagraphCollection.getFirst` method to get a reference ot the first paragraph and then uses the `Paragraph.getNext` method to get a reference to the second paragraph.</span></span>
 
     ```js
     var secondParagraph = context.document.body.paragraphs.getFirst().getNext();
     ```
 
-7. <span data-ttu-id="2cbe4-353">Substitua `TODO2` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-353">Replace `TODO2` with the following code.</span></span> <span data-ttu-id="2cbe4-354">Observação:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-354">Note:</span></span>
+7. <span data-ttu-id="f91ac-344">Dentro da `insertTable()` função, substitua `TODO2` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="f91ac-344">Within the `insertTable()` function, replace `TODO2` with the following code.</span></span> <span data-ttu-id="f91ac-345">Observação:</span><span class="sxs-lookup"><span data-stu-id="f91ac-345">Note:</span></span>
 
-   - <span data-ttu-id="2cbe4-355">Os dois primeiros parâmetros do método `insertTable` especificam o número de linhas e colunas.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-355">The first two parameters of the `insertTable` method specify the number of rows and columns.</span></span>
+   - <span data-ttu-id="f91ac-346">Os dois primeiros parâmetros do método `insertTable` especificam o número de linhas e colunas.</span><span class="sxs-lookup"><span data-stu-id="f91ac-346">The first two parameters of the `insertTable` method specify the number of rows and columns.</span></span>
 
-   - <span data-ttu-id="2cbe4-356">O terceiro parâmetro especifica onde inserir a tabela, nesse caso, depois do parágrafo.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-356">The third parameter specifies where to insert the table, in this case after the paragraph.</span></span>
+   - <span data-ttu-id="f91ac-347">O terceiro parâmetro especifica onde inserir a tabela, nesse caso, depois do parágrafo.</span><span class="sxs-lookup"><span data-stu-id="f91ac-347">The third parameter specifies where to insert the table, in this case after the paragraph.</span></span>
 
-   - <span data-ttu-id="2cbe4-357">O quarto parâmetro é uma matriz bidimensional que define os valores das células da tabela.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-357">The fourth parameter is a two-dimensional array that sets the values of the table cells.</span></span>
+   - <span data-ttu-id="f91ac-348">O quarto parâmetro é uma matriz bidimensional que define os valores das células da tabela.</span><span class="sxs-lookup"><span data-stu-id="f91ac-348">The fourth parameter is a two-dimensional array that sets the values of the table cells.</span></span>
 
-   - <span data-ttu-id="2cbe4-358">A tabela terá um estilo padrão simples, mas o método `insertTable` retornará um objeto `Table` com muitos membros, e alguns deles são usados para alterar o estilo de tabela.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-358">The table will have plain default styling, but the `insertTable` method returns a `Table` object with many members, some of which are used to style the table.</span></span>
+   - <span data-ttu-id="f91ac-349">A tabela terá um estilo padrão simples, mas o método `insertTable` retornará um objeto `Table` com muitos membros, e alguns deles são usados para alterar o estilo de tabela.</span><span class="sxs-lookup"><span data-stu-id="f91ac-349">The table will have plain default styling, but the `insertTable` method returns a `Table` object with many members, some of which are used to style the table.</span></span>
 
     ```js
     var tableData = [
@@ -794,61 +788,51 @@ function insertTextIntoRange() {
     secondParagraph.insertTable(3, 3, "After", tableData);
     ```
 
-### <a name="test-the-add-in"></a><span data-ttu-id="2cbe4-359">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="2cbe4-359">Test the add-in</span></span>
+8. <span data-ttu-id="f91ac-350">Verifique se você salvou todas as alterações feitas no projeto.</span><span class="sxs-lookup"><span data-stu-id="f91ac-350">Verify that you've saved all of the changes you've made to the project.</span></span>
 
-1. <span data-ttu-id="2cbe4-p148">Se a janela Git bash ou o prompt de sistema habilitado para Node.JS do tutorial anterior ainda estiverem abertos, digite Ctrl+C duas vezes para interromper a execução do servidor Web. Caso contrário, abra uma janela Git bash ou um prompt de sistema habilitado para Node.JS e navegue até a pasta **Iniciar** do projeto.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p148">If the Git bash window, or Node.JS-enabled system prompt, from the previous stage tutorial is still open, enter Ctrl+C twice to stop the running web server. Otherwise, open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.</span></span>
+### <a name="test-the-add-in"></a><span data-ttu-id="f91ac-351">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="f91ac-351">Test the add-in</span></span>
 
-     > [!NOTE]
-     > <span data-ttu-id="2cbe4-p149">Embora o servidor de sincronização do navegador recarregue o suplemento no painel de tarefas sempre que você fizer uma alteração em algum arquivo, incluindo o arquivo app.js, ele não transcompila o JavaScript, portanto, é necessário repetir o comando de compilação para que as alterações em app.js as entrem em vigor. Para fazer isso, interrompa o processo do servidor para que o prompt apareça e você possa inserir o comando de compilação. Após a compilação, reinicie o servidor. As próximas etapas executam esse processo.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p149">Although the browser-sync server reloads your add-in in the task pane every time you make a change to any file, including the app.js file, it does not retranspile the JavaScript, so you must repeat the build command in order for your changes to app.js to take effect. In order to do this, you need to kill the server process so that the prompt appears and you can enter the build command. After the build, restart the server. The next few steps carry out this process.</span></span>
+1. [!include[Start server and sideload add-in instructions](../includes/tutorial-word-start-server.md)]
 
-2. <span data-ttu-id="2cbe4-366">Execute o comando `npm run build` para transcompilar seu código-fonte ES6 para uma versão anterior do JavaScript com suporte de todos os hosts nos quais os suplementos do Office podem ser executados.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-366">Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by all the hosts where Office Add-ins can run.</span></span>
+2. <span data-ttu-id="f91ac-352">Se o painel de tarefas do suplemento ainda não estiver aberto no Word, vá para a guia **página inicial** e escolha o botão **Mostrar painel de tarefas** na faixa de opções para abri-lo.</span><span class="sxs-lookup"><span data-stu-id="f91ac-352">If the add-in task pane isn't already open in Word, go to the **Home** tab and choose the **Show Taskpane** button in the ribbon to open it.</span></span>
 
-3. <span data-ttu-id="2cbe4-367">Execute o comando `npm start` para iniciar um servidor Web em um localhost.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-367">Run the command `npm start` to start a web server running on localhost.</span></span>
+3. <span data-ttu-id="f91ac-353">No painel de tarefas, escolha o botão **Inserir parágrafo** pelo menos três vezes para garantir que haja alguns parágrafos no documento.</span><span class="sxs-lookup"><span data-stu-id="f91ac-353">In the task pane, choose the **Insert Paragraph** button at least three times to ensure that there are a few paragraphs in the document.</span></span>
 
-4. <span data-ttu-id="2cbe4-368">Feche o painel de tarefas para recarregá-lo e, no menu **Página Inicial**, selecione **Mostrar Painel de Tarefas** para reabrir o suplemento.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-368">Reload the task pane by closing it, and then on the **Home** menu, select **Show Taskpane** to reopen the add-in.</span></span>
+4. <span data-ttu-id="f91ac-354">Escolha o botão **Inserir Imagem**. Uma imagem é inserida no final do documento.</span><span class="sxs-lookup"><span data-stu-id="f91ac-354">Choose the **Insert Image** button and note that an image is inserted at the end of the document.</span></span>
 
-5. <span data-ttu-id="2cbe4-369">No painel de tarefas, escolha **Inserir Parágrafo** pelo menos três vezes para garantir que haja alguns parágrafos no documento.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-369">In the task pane, choose **Insert Paragraph** at least three times to ensure that there are a few paragraphs in the document.</span></span>
+5. <span data-ttu-id="f91ac-355">Escolha o botão **Inserir HTML**. Dois parágrafos são inseridos no final do documento, e o primeiro tem a fonte Verdana.</span><span class="sxs-lookup"><span data-stu-id="f91ac-355">Choose the **Insert HTML** button and note that two paragraphs are inserted at the end of the document, and that the first one has Verdana font.</span></span>
 
-6. <span data-ttu-id="2cbe4-370">Escolha o botão **Inserir Imagem**. Uma imagem é inserida no final do documento.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-370">Choose the **Insert Image** button and note that an image is inserted at the end of the document.</span></span>
+6. <span data-ttu-id="f91ac-356">Escolha o botão **Inserir Tabela**. Uma tabela é inserida após o segundo parágrafo.</span><span class="sxs-lookup"><span data-stu-id="f91ac-356">Choose the **Insert Table** button and note that a table is inserted after the second paragraph.</span></span>
 
-7. <span data-ttu-id="2cbe4-371">Escolha o botão **Inserir HTML**. Dois parágrafos são inseridos no final do documento, e o primeiro tem a fonte Verdana.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-371">Choose the **Insert HTML** button and note that two paragraphs are inserted at the end of the document, and that the first one has Verdana font.</span></span>
+    ![Tutorial do Word: Inserir imagem, HTML e tabela](../images/word-tutorial-insert-image-html-table-2.png)
 
-8. <span data-ttu-id="2cbe4-372">Escolha o botão **Inserir Tabela**. Uma tabela é inserida após o segundo parágrafo.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-372">Choose the **Insert Table** button and note that a table is inserted after the second paragraph.</span></span>
+## <a name="create-and-update-content-controls"></a><span data-ttu-id="f91ac-358">Criar e atualizar os controles de conteúdo</span><span class="sxs-lookup"><span data-stu-id="f91ac-358">Create and update content controls</span></span>
 
-    ![Tutorial do Word: Inserir imagem, HTML e tabela](../images/word-tutorial-insert-image-html-table.png)
-
-## <a name="create-and-update-content-controls"></a><span data-ttu-id="2cbe4-374">Criar e atualizar os controles de conteúdo</span><span class="sxs-lookup"><span data-stu-id="2cbe4-374">Create and update content controls</span></span>
-
-<span data-ttu-id="2cbe4-375">Nesta etapa do tutorial, você aprenderá a criar controles de conteúdo de Rich Text no documento e, depois, como inserir e substituir conteúdo nos controles.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-375">In this step of the tutorial, you'll learn how to create Rich Text content controls in the document, and then how to insert and replace content in the controls.</span></span>
+<span data-ttu-id="f91ac-359">Nesta etapa do tutorial, você aprenderá a criar controles de conteúdo de Rich Text no documento e, depois, como inserir e substituir conteúdo nos controles.</span><span class="sxs-lookup"><span data-stu-id="f91ac-359">In this step of the tutorial, you'll learn how to create Rich Text content controls in the document, and then how to insert and replace content in the controls.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="2cbe4-376">Há vários tipos de controles de conteúdo que podem ser adicionados a um documento do Word por meio da interface do usuário. Porém, no momento, só há suporte para controles de conteúdo de Rich Text no Word.js.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-376">There are several types of content controls that can be added to a Word document through the UI; but currently only Rich Text content controls are supported by Word.js.</span></span>
+> <span data-ttu-id="f91ac-360">Há vários tipos de controles de conteúdo que podem ser adicionados a um documento do Word através da interface do usuário, mas atualmente somente os controles de conteúdo Rich Text são suportados pelo Word. js.</span><span class="sxs-lookup"><span data-stu-id="f91ac-360">There are several types of content controls that can be added to a Word document through the UI, but currently only Rich Text content controls are supported by Word.js.</span></span>
 >
-> <span data-ttu-id="2cbe4-p150">Antes de começar esta etapa do tutorial, recomendamos a criação e manipulação dos controles de conteúdo de Rich Text por meio da interface do usuário do Word, para se familiarizar com os controles e suas propriedades. Para saber mais detalhes, confira [Criar formulários para preenchimento ou impressão no Word](https://support.office.com/article/create-forms-that-users-complete-or-print-in-word-040c5cc1-e309-445b-94ac-542f732c8c8b).</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p150">Before you start this step of the tutorial, we recommend that you create and manipulate Rich Text content controls through the Word UI, so you can be familiar with the controls and their properties. For details, see [Create forms that users complete or print in Word](https://support.office.com/article/create-forms-that-users-complete-or-print-in-word-040c5cc1-e309-445b-94ac-542f732c8c8b).</span></span>
+> <span data-ttu-id="f91ac-p150">Antes de começar esta etapa do tutorial, recomendamos a criação e manipulação dos controles de conteúdo de Rich Text por meio da interface do usuário do Word, para se familiarizar com os controles e suas propriedades. Para saber mais detalhes, confira [Criar formulários para preenchimento ou impressão no Word](https://support.office.com/article/create-forms-that-users-complete-or-print-in-word-040c5cc1-e309-445b-94ac-542f732c8c8b).</span><span class="sxs-lookup"><span data-stu-id="f91ac-p150">Before you start this step of the tutorial, we recommend that you create and manipulate Rich Text content controls through the Word UI, so you can be familiar with the controls and their properties. For details, see [Create forms that users complete or print in Word](https://support.office.com/article/create-forms-that-users-complete-or-print-in-word-040c5cc1-e309-445b-94ac-542f732c8c8b).</span></span>
 
-### <a name="create-a-content-control"></a><span data-ttu-id="2cbe4-379">Criar um controle de conteúdo</span><span class="sxs-lookup"><span data-stu-id="2cbe4-379">Create a content control</span></span>
+### <a name="create-a-content-control"></a><span data-ttu-id="f91ac-363">Criar um controle de conteúdo</span><span class="sxs-lookup"><span data-stu-id="f91ac-363">Create a content control</span></span>
 
-1. <span data-ttu-id="2cbe4-380">Abra o projeto em seu editor de código.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-380">Open the project in your code editor.</span></span>
+1. <span data-ttu-id="f91ac-364">Abra o arquivo **./src/TaskPane/TaskPane.html**.</span><span class="sxs-lookup"><span data-stu-id="f91ac-364">Open the file **./src/taskpane/taskpane.html**.</span></span>
 
-2. <span data-ttu-id="2cbe4-381">Abra o arquivo index.html.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-381">Open the file index.html.</span></span>
-
-3. <span data-ttu-id="2cbe4-382">Abaixo do `div` que contém o botão `replace-text`, adicione a marcação a seguir:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-382">Below the `div` that contains the `replace-text` button, add the following markup:</span></span>
+2. <span data-ttu-id="f91ac-365">Localize o `<button>` elemento do `insert-table` botão e adicione a seguinte marcação após essa linha:</span><span class="sxs-lookup"><span data-stu-id="f91ac-365">Locate the `<button>` element for the `insert-table` button, and add the following markup after that line:</span></span> 
 
     ```html
-    <div class="padding">
-        <button class="ms-Button" id="create-content-control">Create Content Control</button>
-    </div>
+    <button class="ms-Button" id="create-content-control">Create Content Control</button><br/><br/>
     ```
 
-4. <span data-ttu-id="2cbe4-383">Abra o arquivo app.js.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-383">Open the app.js file.</span></span>
+3. <span data-ttu-id="f91ac-366">Abra o arquivo **./src/TaskPane/TaskPane.js**.</span><span class="sxs-lookup"><span data-stu-id="f91ac-366">Open the file **./src/taskpane/taskpane.js**.</span></span>
 
-5. <span data-ttu-id="2cbe4-384">Abaixo da linha que atribui um identificador de clique ao botão `insert-table`, adicione o seguinte código:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-384">Below the line that assigns a click handler to the `insert-table` button, add the following code:</span></span>
+4. <span data-ttu-id="f91ac-367">Dentro da `Office.onReady` chamada do método, localize a linha que atribui um manipulador de cliques para o `insert-table` botão e adicione o seguinte código após essa linha:</span><span class="sxs-lookup"><span data-stu-id="f91ac-367">Within the `Office.onReady` method call, locate the line that assigns a click handler to the `insert-table` button, and add the following code after that line:</span></span>
 
     ```js
-    $('#create-content-control').click(createContentControl);
+    document.getElementById("create-content-control").onclick = createContentControl;
     ```
-
-6. <span data-ttu-id="2cbe4-385">Abaixo da função `insertTable`, adicione a função a seguir:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-385">Below the `insertTable` function, add the following function:</span></span>
+5. <span data-ttu-id="f91ac-368">Adicione a seguinte função ao final do arquivo:</span><span class="sxs-lookup"><span data-stu-id="f91ac-368">Add the following function to the end of the file:</span></span>
 
     ```js
     function createContentControl() {
@@ -867,17 +851,17 @@ function insertTextIntoRange() {
     }
     ```
 
-7. <span data-ttu-id="2cbe4-386">Substitua `TODO1` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-386">Replace `TODO1` with the following code.</span></span> <span data-ttu-id="2cbe4-387">Observação:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-387">Note:</span></span>
+6. <span data-ttu-id="f91ac-369">Dentro da `createContentControl()` função, substitua `TODO1` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="f91ac-369">Within the `createContentControl()` function, replace `TODO1` with the following code.</span></span> <span data-ttu-id="f91ac-370">Observação:</span><span class="sxs-lookup"><span data-stu-id="f91ac-370">Note:</span></span>
 
-   - <span data-ttu-id="2cbe4-p152">o código tem como objetivo dispor a frase "Office 365" em um controle de conteúdo. Para simplificar, ele faz uma pressuposição de que a cadeia de caracteres está presente, e que o usuário a selecionou.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p152">This code is intended to wrap the phrase "Office 365" in a content control. It makes a simplifying assumption that the string is present and the user has selected it.</span></span>
+   - <span data-ttu-id="f91ac-p152">o código tem como objetivo dispor a frase "Office 365" em um controle de conteúdo. Para simplificar, ele faz uma pressuposição de que a cadeia de caracteres está presente, e que o usuário a selecionou.</span><span class="sxs-lookup"><span data-stu-id="f91ac-p152">This code is intended to wrap the phrase "Office 365" in a content control. It makes a simplifying assumption that the string is present and the user has selected it.</span></span>
 
-   - <span data-ttu-id="2cbe4-390">A propriedade `ContentControl.title` especifica o título visível do controle de conteúdo.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-390">The `ContentControl.title` property specifies the visible title of the content control.</span></span>
+   - <span data-ttu-id="f91ac-373">A propriedade `ContentControl.title` especifica o título visível do controle de conteúdo.</span><span class="sxs-lookup"><span data-stu-id="f91ac-373">The `ContentControl.title` property specifies the visible title of the content control.</span></span>
 
-   - <span data-ttu-id="2cbe4-391">A propriedade `ContentControl.tag` especifica uma marca que pode ser usada para obter uma referência a um controle de conteúdo usando o método `ContentControlCollection.getByTag`, que você usará em uma função posterior.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-391">The `ContentControl.tag` property specifies an tag that can be used to get a reference to a content control using the `ContentControlCollection.getByTag` method, which you'll use in a later function.</span></span>
+   - <span data-ttu-id="f91ac-374">A propriedade `ContentControl.tag` especifica uma marca que pode ser usada para obter uma referência a um controle de conteúdo usando o método `ContentControlCollection.getByTag`, que você usará em uma função posterior.</span><span class="sxs-lookup"><span data-stu-id="f91ac-374">The `ContentControl.tag` property specifies an tag that can be used to get a reference to a content control using the `ContentControlCollection.getByTag` method, which you'll use in a later function.</span></span>
 
-   - <span data-ttu-id="2cbe4-p153">A propriedade `ContentControl.appearance` especifica a aparência do controle. Usar o valor "Tags" significa que o controle será encapsulado entre marcas de abertura e fechamento, e a marca de abertura terá o título do controle de conteúdo. Outros valores possíveis são "BoundingBox" e "None".</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p153">The `ContentControl.appearance` property specifies the visual look of the control. Using the value "Tags" means that the control will be wrapped in opening and closing tags, and the opening tag will have the content control's title. Other possible values are "BoundingBox" and "None".</span></span>
+   - <span data-ttu-id="f91ac-p153">A propriedade `ContentControl.appearance` especifica a aparência do controle. Usar o valor "Tags" significa que o controle será encapsulado entre marcas de abertura e fechamento, e a marca de abertura terá o título do controle de conteúdo. Outros valores possíveis são "BoundingBox" e "None".</span><span class="sxs-lookup"><span data-stu-id="f91ac-p153">The `ContentControl.appearance` property specifies the visual look of the control. Using the value "Tags" means that the control will be wrapped in opening and closing tags, and the opening tag will have the content control's title. Other possible values are "BoundingBox" and "None".</span></span>
 
-   - <span data-ttu-id="2cbe4-395">A propriedade `ContentControl.color` especifica a cor das marcas ou da borda da caixa delimitadora.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-395">The `ContentControl.color` property specifies the color of the tags or the border of the bounding box.</span></span>
+   - <span data-ttu-id="f91ac-378">A propriedade `ContentControl.color` especifica a cor das marcas ou da borda da caixa delimitadora.</span><span class="sxs-lookup"><span data-stu-id="f91ac-378">The `ContentControl.color` property specifies the color of the tags or the border of the bounding box.</span></span>
 
     ```js
     var serviceNameRange = context.document.getSelection();
@@ -888,27 +872,25 @@ function insertTextIntoRange() {
     serviceNameContentControl.color = "blue";
     ```
 
-### <a name="replace-the-content-of-the-content-control"></a><span data-ttu-id="2cbe4-396">Substituir o conteúdo do controle de conteúdo</span><span class="sxs-lookup"><span data-stu-id="2cbe4-396">Replace the content of the content control</span></span>
+### <a name="replace-the-content-of-the-content-control"></a><span data-ttu-id="f91ac-379">Substituir o conteúdo do controle de conteúdo</span><span class="sxs-lookup"><span data-stu-id="f91ac-379">Replace the content of the content control</span></span>
 
-1. <span data-ttu-id="2cbe4-397">Abra o arquivo index.html.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-397">Open the file index.html.</span></span>
+1. <span data-ttu-id="f91ac-380">Abra o arquivo **./src/TaskPane/TaskPane.html**.</span><span class="sxs-lookup"><span data-stu-id="f91ac-380">Open the file **./src/taskpane/taskpane.html**.</span></span>
 
-2. <span data-ttu-id="2cbe4-398">Abaixo do `div` que contém o botão `create-content-control`, adicione a marcação a seguir:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-398">Below the `div` that contains the `create-content-control` button, add the following markup:</span></span>
+2. <span data-ttu-id="f91ac-381">Localize o `<button>` elemento do `create-content-control` botão e adicione a seguinte marcação após essa linha:</span><span class="sxs-lookup"><span data-stu-id="f91ac-381">Locate the `<button>` element for the `create-content-control` button, and add the following markup after that line:</span></span> 
 
     ```html
-    <div class="padding">
-        <button class="ms-Button" id="replace-content-in-control">Rename Service</button>
-    </div>
+    <button class="ms-Button" id="replace-content-in-control">Rename Service</button><br/><br/>
     ```
 
-3. <span data-ttu-id="2cbe4-399">Abra o arquivo app.js.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-399">Open the app.js file.</span></span>
+3. <span data-ttu-id="f91ac-382">Abra o arquivo **./src/TaskPane/TaskPane.js**.</span><span class="sxs-lookup"><span data-stu-id="f91ac-382">Open the file **./src/taskpane/taskpane.js**.</span></span>
 
-4. <span data-ttu-id="2cbe4-400">Abaixo da linha que atribui um identificador de clique ao botão `create-content-control`, adicione o seguinte código:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-400">Below the line that assigns a click handler to the `create-content-control` button, add the following code:</span></span>
+4. <span data-ttu-id="f91ac-383">Dentro da `Office.onReady` chamada do método, localize a linha que atribui um manipulador de cliques para o `create-content-control` botão e adicione o seguinte código após essa linha:</span><span class="sxs-lookup"><span data-stu-id="f91ac-383">Within the `Office.onReady` method call, locate the line that assigns a click handler to the `create-content-control` button, and add the following code after that line:</span></span>
 
     ```js
-    $('#replace-content-in-control').click(replaceContentInControl);
+    document.getElementById("replace-content-in-control").onclick = replaceContentInControl;
     ```
 
-5. <span data-ttu-id="2cbe4-401">Abaixo da função `createContentControl`, adicione a função a seguir:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-401">Below the `createContentControl` function, add the following function:</span></span>
+5. <span data-ttu-id="f91ac-384">Adicione a seguinte função ao final do arquivo:</span><span class="sxs-lookup"><span data-stu-id="f91ac-384">Add the following function to the end of the file:</span></span>
 
     ```js
     function replaceContentInControl() {
@@ -928,39 +910,34 @@ function insertTextIntoRange() {
     }
     ```
 
-6. <span data-ttu-id="2cbe4-p154">Substitua `TODO1` pelo código a seguir. Observação:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p154">Replace `TODO1` with the following code. Note:</span></span>
+6. <span data-ttu-id="f91ac-385">Dentro da `replaceContentInControl()` função, substitua `TODO1` pelo código a seguir.</span><span class="sxs-lookup"><span data-stu-id="f91ac-385">Within the `replaceContentInControl()` function, replace `TODO1` with the following code.</span></span> <span data-ttu-id="f91ac-386">Observação:</span><span class="sxs-lookup"><span data-stu-id="f91ac-386">Note:</span></span>
 
-    - <span data-ttu-id="2cbe4-404">O método `ContentControlCollection.getByTag` retorna um `ContentControlCollection` de todos os controles de conteúdo da marca especificada.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-404">The `ContentControlCollection.getByTag` method returns a `ContentControlCollection` of all content controls of the specified tag.</span></span> <span data-ttu-id="2cbe4-405">Usamos `getFirst` para obter uma referência do controle desejado.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-405">We use `getFirst` to get a reference to the desired control.</span></span>
+    - <span data-ttu-id="f91ac-387">O método `ContentControlCollection.getByTag` retorna um `ContentControlCollection` de todos os controles de conteúdo da marca especificada.</span><span class="sxs-lookup"><span data-stu-id="f91ac-387">The `ContentControlCollection.getByTag` method returns a `ContentControlCollection` of all content controls of the specified tag.</span></span> <span data-ttu-id="f91ac-388">Usamos `getFirst` para obter uma referência do controle desejado.</span><span class="sxs-lookup"><span data-stu-id="f91ac-388">We use `getFirst` to get a reference to the desired control.</span></span>
 
     ```js
     var serviceNameContentControl = context.document.contentControls.getByTag("serviceName").getFirst();
     serviceNameContentControl.insertText("Fabrikam Online Productivity Suite", "Replace");
     ```
 
-### <a name="test-the-add-in"></a><span data-ttu-id="2cbe4-406">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="2cbe4-406">Test the add-in</span></span>
+7. <span data-ttu-id="f91ac-389">Verifique se você salvou todas as alterações feitas no projeto.</span><span class="sxs-lookup"><span data-stu-id="f91ac-389">Verify that you've saved all of the changes you've made to the project.</span></span>
 
-1. <span data-ttu-id="2cbe4-p156">Se a janela Git bash ou o prompt de sistema habilitado para Node.JS do tutorial anterior ainda estiverem abertos, digite Ctrl+C duas vezes para interromper a execução do servidor Web. Caso contrário, abra uma janela Git bash ou um prompt de sistema habilitado para Node.JS e navegue até a pasta **Iniciar** do projeto.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p156">If the Git bash window, or Node.JS-enabled system prompt, from the previous stage tutorial is still open, enter Ctrl+C twice to stop the running web server. Otherwise, open a Git bash window, or Node.JS-enabled system prompt, and navigate to the **Start** folder of the project.</span></span>
+### <a name="test-the-add-in"></a><span data-ttu-id="f91ac-390">Testar o suplemento</span><span class="sxs-lookup"><span data-stu-id="f91ac-390">Test the add-in</span></span>
 
-     > [!NOTE]
-     > <span data-ttu-id="2cbe4-p157">Embora o servidor de sincronização do navegador recarregue o suplemento no painel de tarefas sempre que você fizer uma alteração em algum arquivo, incluindo o arquivo app.js, ele não transcompila o JavaScript, portanto, é necessário repetir o comando de compilação para que as alterações em app.js as entrem em vigor. Para fazer isso, interrompa o processo do servidor para que o prompt apareça e você possa inserir o comando de compilação. Após a compilação, reinicie o servidor. As próximas etapas executam esse processo.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p157">Although the browser-sync server reloads your add-in in the task pane every time you make a change to any file, including the app.js file, it does not retranspile the JavaScript, so you must repeat the build command in order for your changes to app.js to take effect. In order to do this, you need to kill the server process so that the prompt appears and you can enter the build command. After the build, restart the server. The next few steps carry out this process.</span></span>
+1. [!include[Start server and sideload add-in instructions](../includes/tutorial-word-start-server.md)]
 
-2. <span data-ttu-id="2cbe4-413">Execute o comando `npm run build` para transcompilar seu código-fonte ES6 para uma versão anterior do JavaScript com suporte de todos os hosts nos quais os suplementos do Office podem ser executados.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-413">Run the command `npm run build` to transpile your ES6 source code to an earlier version of JavaScript that is supported by all the hosts where Office Add-ins can run.</span></span>
+2. <span data-ttu-id="f91ac-391">Se o painel de tarefas do suplemento ainda não estiver aberto no Word, vá para a guia **página inicial** e escolha o botão **Mostrar painel de tarefas** na faixa de opções para abri-lo.</span><span class="sxs-lookup"><span data-stu-id="f91ac-391">If the add-in task pane isn't already open in Word, go to the **Home** tab and choose the **Show Taskpane** button in the ribbon to open it.</span></span>
 
-3. <span data-ttu-id="2cbe4-414">Execute o comando `npm start` para iniciar um servidor Web em um localhost.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-414">Run the command `npm start` to start a web server running on localhost.</span></span>
+3. <span data-ttu-id="f91ac-392">No painel de tarefas, escolha o botão **Inserir parágrafo** para garantir que haja um parágrafo com "Office 365" na parte superior do documento.</span><span class="sxs-lookup"><span data-stu-id="f91ac-392">In the task pane, choose the **Insert Paragraph** button to ensure that there is a paragraph with "Office 365" at the top of the document.</span></span>
 
-4. <span data-ttu-id="2cbe4-415">Feche o painel de tarefas para recarregá-lo e, no menu **Página Inicial**, selecione **Mostrar Painel de Tarefas** para reabrir o suplemento.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-415">Reload the task pane by closing it, and then on the **Home** menu, select **Show Taskpane** to reopen the add-in.</span></span>
+4. <span data-ttu-id="f91ac-393">No documento, selecione o texto "Office 365" e, em seguida, escolha o botão **criar controle de conteúdo** .</span><span class="sxs-lookup"><span data-stu-id="f91ac-393">In the document, select the text "Office 365" and then choose the **Create Content Control** button.</span></span> <span data-ttu-id="f91ac-394">A frase está envolvida por marcas chamadas "Nome do Serviço".</span><span class="sxs-lookup"><span data-stu-id="f91ac-394">Note that the phrase is wrapped in tags labelled "Service Name".</span></span>
 
-5. <span data-ttu-id="2cbe4-416">No painel de tarefas, escolha **Inserir Parágrafo** para garantir que haja um parágrafo com "Office 365" no início do documento.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-416">In the task pane, choose **Insert Paragraph** to ensure that there is a paragraph with "Office 365" at the top of the document.</span></span>
+7. <span data-ttu-id="f91ac-395">Escolha o botão **Renomear Serviço**. O texto do controle de conteúdo muda para "Fabrikam Online Productivity Suite".</span><span class="sxs-lookup"><span data-stu-id="f91ac-395">Choose the **Rename Service** button and note that the text of the content control changes to "Fabrikam Online Productivity Suite".</span></span>
 
-6. <span data-ttu-id="2cbe4-p158">Selecione a frase "Office 365" no parágrafo que você adicionou e escolha o botão **Criar Controle de Conteúdo**. A frase está envolvida por marcas chamadas "Nome do Serviço".</span><span class="sxs-lookup"><span data-stu-id="2cbe4-p158">Select the phrase "Office 365" in the paragraph you just added, and then choose the **Create Content Control** button. Note that the phrase is wrapped in tags labelled "Service Name".</span></span>
+    ![Tutorial do Word - Criar o controle de conteúdo e alterar seu texto](../images/word-tutorial-content-control-2.png)
 
-7. <span data-ttu-id="2cbe4-419">Escolha o botão **Renomear Serviço**. O texto do controle de conteúdo muda para "Fabrikam Online Productivity Suite".</span><span class="sxs-lookup"><span data-stu-id="2cbe4-419">Choose the **Rename Service** button and note that the text of the content control changes to "Fabrikam Online Productivity Suite".</span></span>
+## <a name="next-steps"></a><span data-ttu-id="f91ac-397">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="f91ac-397">Next steps</span></span>
 
-    ![Tutorial do Word - Criar o controle de conteúdo e alterar seu texto](../images/word-tutorial-content-control.png)
-
-## <a name="next-steps"></a><span data-ttu-id="2cbe4-421">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="2cbe4-421">Next steps</span></span>
-
-<span data-ttu-id="2cbe4-422">Neste tutorial, você criou um suplemento do painel de tarefas do Word que insere e substitui texto, imagens e outro conteúdo em um documento do Word.</span><span class="sxs-lookup"><span data-stu-id="2cbe4-422">In this tutorial, you've created a Word task pane add-in that inserts and replaces text, images, and other content in a Word document.</span></span> <span data-ttu-id="2cbe4-423">Para saber mais sobre o desenvolvimento de suplementos do Word, continue no seguinte artigo:</span><span class="sxs-lookup"><span data-stu-id="2cbe4-423">To learn more about building Word add-ins, continue to the following article:</span></span>
+<span data-ttu-id="f91ac-398">Neste tutorial, você criou um suplemento do painel de tarefas do Word que insere e substitui texto, imagens e outro conteúdo em um documento do Word.</span><span class="sxs-lookup"><span data-stu-id="f91ac-398">In this tutorial, you've created a Word task pane add-in that inserts and replaces text, images, and other content in a Word document.</span></span> <span data-ttu-id="f91ac-399">Para saber mais sobre o desenvolvimento de suplementos do Word, continue no seguinte artigo:</span><span class="sxs-lookup"><span data-stu-id="f91ac-399">To learn more about building Word add-ins, continue to the following article:</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="2cbe4-424">Visão geral dos suplementos do Word</span><span class="sxs-lookup"><span data-stu-id="2cbe4-424">Word add-ins overview</span></span>](../word/word-add-ins-programming-overview.md)
+> [<span data-ttu-id="f91ac-400">Visão geral dos suplementos do Word</span><span class="sxs-lookup"><span data-stu-id="f91ac-400">Word add-ins overview</span></span>](../word/word-add-ins-programming-overview.md)
