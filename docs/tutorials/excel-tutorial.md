@@ -1,15 +1,15 @@
 ---
 title: Tutorial de suplemento do Excel
 description: Neste tutorial, você criará um suplemento do Excel que cria, preenche, filtra e classifica uma tabela, cria um gráfico, congela um cabeçalho de tabela, protege uma planilha e abre uma caixa de diálogo
-ms.date: 07/17/2019
+ms.date: 09/18/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 43bd629a27f09c8923ca0ca56aece5faf55cd28f
-ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
+ms.openlocfilehash: ef68834085486827bb0c09b86ce60bee9c9b7b3f
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "36672877"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035395"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Tutorial: criar um suplemento do painel de tarefas no Excel
 
@@ -23,29 +23,27 @@ Neste tutorial: você criará um suplemento do painel de tarefas no Excel
 > * Protege uma planilha
 > * Abre uma caixa de diálogo
 
+> [!TIP]
+> Se você já concluiu o início rápido de [criar um suplemento do painel de tarefas do Excel](../quickstarts/excel-quickstart-jquery.md) e deseja usar esse projeto como ponto de partida para este tutorial, vá diretamente para a seção [criar uma tabela](#create-a-table) para iniciar este tutorial.
+
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Para usar este tutorial, você precisa instalar o seguinte. 
-
-- Excel 2016, versão 1711 (build 8730.1000 do Clique para Executar) ou posterior. Talvez você precise ser um participante do programa Office Insider para ter essa versão. Para saber mais, confira a página [Seja um Office Insider](https://products.office.com/office-insider?tab=tab-1).
-
-- [Nó](https://nodejs.org/en/) 
-
-- [Git Bash](https://git-scm.com/downloads) (ou outro cliente Git)
-
-- Você precisa ter uma conexão com a Internet para testar o suplemento neste tutorial.
+[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 ## <a name="create-your-add-in-project"></a>Criar seu projeto do suplemento
 
-Conclua as etapas a seguir para criar o projeto de suplemento do Excel que você vai usar como base para este tutorial.
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-1. Clone o repositório do GitHub com o [Tutorial de suplemento do Excel](https://github.com/OfficeDev/Excel-Add-in-Tutorial).
+- **Escolha o tipo de projeto:** `Office Add-in Task Pane project`
+- **Escolha o tipo de script:** `Javascript`
+- **Qual será o nome do suplemento?** `My Office Add-in`
+- **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Excel`
 
-2. Abra uma janela Git bash ou um prompt de sistema habilitado para Node.JS e navegue para a pasta **Iniciar** do projeto.
+![Gerador do Yeoman](../images/yo-office-excel.png)
 
-3. Execute o comando `npm install` para instalar as ferramentas e bibliotecas listadas no arquivo package.json. 
+Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes de suporte do nó.
 
-4. Execute as etapas de [instalação do certificado autoassinado](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md) para confiar no certificado para o sistema operacional do seu computador de desenvolvimento.
+[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 ## <a name="create-a-table"></a>Criar uma tabela
 
@@ -55,47 +53,57 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
 
 1. Abra o projeto em seu editor de código.
 
-2. Abra o arquivo index.html.
+2. Abra o arquivo **./src/TaskPane/TaskPane.html**.  Este arquivo contém a marcação HTML para o painel de tarefas.
 
-3. Substitua `TODO1` pela marcação a seguir:
+3. Localize o `<main>` elemento e exclua todas as linhas que aparecem após `<main>` a marca de abertura e `</main>` antes da marca de fechamento.
+
+4. Adicione a seguinte marcação imediatamente após a marca `<main>` de abertura:
 
     ```html
-    <button class="ms-Button" id="create-table">Create Table</button>
+    <button class="ms-Button" id="create-table">Create Table</button><br/><br/>
     ```
 
-4. Abra o arquivo app.js.
+5. Abra o arquivo **./src/TaskPane/TaskPane.js**. Este arquivo contém o código da API JavaScript do Office que facilita a interação entre o painel de tarefas e o aplicativo host do Office.
 
-5. Substitua o `TODO1` pelo código a seguir. O código determina se a versão do Excel do usuário proporciona suporte a uma versão do Excel.js que inclua as APIs com esta série de tutoriais. Em um suplemento de produção, use o corpo do bloco condicional para ocultar ou desabilitar a interface do usuário que chame a APIs sem suporte. Dessa forma, permitirá que o usuário ainda use as partes do suplemento às quais a versão do Excel dá suporte.
+6. Remova todas as referências para `run` o botão e `run()` a função fazendo o seguinte:
+
+    - Localize e exclua a `document.getElementById("run").onclick = run;`linha.
+
+    - Localize e exclua a `run()` função inteira.
+
+7. Dentro da `Office.onReady` chamada do método, localize a `if (info.host === Office.HostType.Excel) {` linha e adicione o seguinte código imediatamente após essa linha. Observação:
+
+    - A primeira parte deste código determina se a versão do Excel do usuário é compatível com uma versão do Excel. js que inclua todas as APIs que esta série de tutoriais usará. Em um suplemento de produção, use o corpo do bloco condicional para ocultar ou desabilitar a interface do usuário que chame a APIs sem suporte. Dessa forma, permitirá que o usuário ainda use as partes do suplemento às quais a versão do Excel dá suporte.
+
+    - A segunda parte deste código adiciona um manipulador de eventos para o `create-table` botão.
 
     ```js
+    // Determine if the user's version of Office supports all the Office.js APIs that are used in the tutorial.
     if (!Office.context.requirements.isSetSupported('ExcelApi', '1.7')) {
         console.log('Sorry. The tutorial add-in uses Excel.js APIs that are not available in your version of Office.');
     }
+
+    // Assign event handlers and other initialization logic.
+    document.getElementById("create-table").onclick = createTable;
     ```
 
-6. Substitua o `TODO2` pelo código a seguir:
+8. Adicione a função a seguir ao final do arquivo. Observação:
 
-    ```js
-    $('#create-table').click(createTable);
-    ```
+    - A lógica de negócios de Excel.js será adicionada à função que passar por `Excel.run`. Essa lógica não é executada imediatamente. Em vez disso, ela é adicionada à fila de comandos pendentes.
 
-7. Substitua o `TODO3` pelo código a seguir. Observação:
+    - O método `context.sync` envia todos os comandos da fila para execução no Excel.
 
-   - A lógica de negócios de Excel.js será adicionada à função que passar por `Excel.run`. Essa lógica não é executada imediatamente. Em vez disso, ela é adicionada à fila de comandos pendentes.
-
-   - O método `context.sync` envia todos os comandos da fila para execução no Excel.
-
-   - `Excel.run` é seguido por um bloco `catch`. Essa é uma prática recomendada que você sempre deve seguir. 
+    - `Excel.run` é seguido por um bloco `catch`. Essa é uma prática recomendada que você sempre deve seguir. 
 
     ```js
     function createTable() {
         Excel.run(function (context) {
 
-            // TODO4: Queue table creation logic here.
+            // TODO1: Queue table creation logic here.
 
-            // TODO5: Queue commands to populate the table with data.
+            // TODO2: Queue commands to populate the table with data.
 
-            // TODO6: Queue commands to format the table.
+            // TODO3: Queue commands to format the table.
 
             return context.sync();
         })
@@ -108,13 +116,13 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
     }
     ```
 
-8. Substitua `TODO4` pelo código a seguir. Observação:
+9. Dentro da `createTable()` função, substitua `TODO1` pelo código a seguir. Observação:
 
-   - O código cria uma tabela usando o método `add` de conjunto de tabela da planilha, que sempre existe mesmo que ela esteja vazia. Essa é a maneira padrão de criar objetos no Excel.js. Não há nenhuma API do construtor de classe e você nunca usará um operador `new` para criar um objeto do Excel. Em vez disso, adicione a um objeto de conjunto pai.
+    - O código cria uma tabela usando o método `add` de conjunto de tabela da planilha, que sempre existe mesmo que ela esteja vazia. Essa é a maneira padrão de criar objetos no Excel.js. Não há nenhuma API do construtor de classe e você nunca usará um operador `new` para criar um objeto do Excel. Em vez disso, adicione a um objeto de conjunto pai.
 
-   - O primeiro parâmetro do método `add`é o intervalo apenas da linha superior da tabela, não o intervalo inteiro que a tabela por fim usará. Isso ocorre porque, quando o suplemento preenche as linhas de dados (na próxima etapa), ele adicionará novas linhas à tabela, em vez de gravar os valores nas células das linhas existentes. Esse é um padrão mais comum, porque o número de linhas em uma tabela geralmente não é conhecido quando a tabela é criada.
+    - O primeiro parâmetro do método `add`é o intervalo apenas da linha superior da tabela, não o intervalo inteiro que a tabela por fim usará. Isso ocorre porque, quando o suplemento preenche as linhas de dados (na próxima etapa), ele adicionará novas linhas à tabela, em vez de gravar os valores nas células das linhas existentes. Esse é um padrão mais comum, porque o número de linhas em uma tabela geralmente não é conhecido quando a tabela é criada.
 
-   - Os nomes de tabelas devem ser exclusivos pela pasta de trabalho inteira, não só na planilha.
+    - Os nomes de tabelas devem ser exclusivos pela pasta de trabalho inteira, não só na planilha.
 
     ```js
     var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
@@ -122,11 +130,11 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
     expensesTable.name = "ExpensesTable";
     ```
 
-9. Substitua `TODO5` pelo código a seguir. Observação:
+10. Dentro da `createTable()` função, substitua `TODO2` pelo código a seguir. Observação:
 
-   - Os valores das células de um intervalo são definidos em uma matriz de matrizes.
+    - Os valores das células de um intervalo são definidos em uma matriz de matrizes.
 
-   - Novas linhas são criadas em uma tabela ao chamar o método `add` do conjunto de linhas da tabela. Você pode adicionar várias linhas em uma única chamada de `add` ao incluir várias matrizes de valores de células na matriz pai que é passada como segundo parâmetro.
+    - Novas linhas são criadas em uma tabela ao chamar o método `add` do conjunto de linhas da tabela. Você pode adicionar várias linhas em uma única chamada de `add` ao incluir várias matrizes de valores de células na matriz pai que é passada como segundo parâmetro.
 
     ```js
     expensesTable.getHeaderRowRange().values =
@@ -143,44 +151,60 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
     ]);
     ```
 
-10. Substitua `TODO6` pelo código a seguir. Observação:
+11. Dentro da `createTable()` função, substitua `TODO3` pelo código a seguir. Observação:
 
-   - O código recebe uma referência para a coluna **quantidade** ao passar o índice com base em zero para o método `getItemAt` do conjunto de colunas da tabela.
+    - O código recebe uma referência para a coluna **quantidade** ao passar o índice com base em zero para o método `getItemAt` do conjunto de colunas da tabela.
 
-     > [!NOTE]
-     > Os objetos do conjunto Excel.js, como `TableCollection`, `WorksheetCollection`, e `TableColumnCollection`, têm a propriedade `items` que é como uma matriz dos tipos de objetos filhos, como `Table` ou `Worksheet` ou `TableColumn`; mas um objeto `*Collection` não é uma matriz.
+        > [!NOTE]
+        > Os objetos do conjunto Excel.js, como `TableCollection`, `WorksheetCollection`, e `TableColumnCollection`, têm a propriedade `items` que é como uma matriz dos tipos de objetos filhos, como `Table` ou `Worksheet` ou `TableColumn`; mas um objeto `*Collection` não é uma matriz.
 
-   - O código formata o intervalo da coluna **quantidade** como Euros com um segundo decimal. 
+    - O código formata o intervalo da coluna **quantidade** como Euros com um segundo decimal. 
 
-   - Por fim, isso garante que a largura das colunas e a altura das linhas sejam grandes o suficiente para o maior (ou o mais alto) item de dados. Observe que o código deve receber os objetos `Range` a formatar. Os objetos `TableColumn` e `TableRow` não têm propriedades de formato.
+    - Por fim, isso garante que a largura das colunas e a altura das linhas sejam grandes o suficiente para o maior (ou o mais alto) item de dados. Observe que o código deve receber os objetos `Range` a formatar. Os objetos `TableColumn` e `TableRow` não têm propriedades de formato.
 
-        ```js
-        expensesTable.columns.getItemAt(3).getRange().numberFormat = [['€#,##0.00']];
-        expensesTable.getRange().format.autofitColumns();
-        expensesTable.getRange().format.autofitRows();
-        ```
+    ```js
+    expensesTable.columns.getItemAt(3).getRange().numberFormat = [['€#,##0.00']];
+    expensesTable.getRange().format.autofitColumns();
+    expensesTable.getRange().format.autofitRows();
+    ```
+
+12. Verifique se você salvou todas as alterações feitas no projeto.
 
 ### <a name="test-the-add-in"></a>Testar o suplemento
 
-1. Abra uma janela Git bash ou um prompt de sistema habilitado para Node.JS e navegue para a pasta **Iniciar** do projeto.
+1. Conclua as etapas a seguir para iniciar o servidor Web local e Sideload seu suplemento.
 
-2. Execute o comando `npm run build` para transcompilar seu código-fonte do ES6 para uma versão anterior do JavaScript que é suportada pelo Internet Explorer (que é usada por algumas versões do Excel para executar suplementos do Excel).
+    > [!NOTE]
+    > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
 
-3. Execute o comando `npm start` para iniciar um servidor Web em um localhost.
+    > [!TIP]
+    > Se você estiver testando seu suplemento no Mac, execute o seguinte comando no diretório raiz do seu projeto antes de prosseguir. Quando você executa esse comando, o servidor Web local é iniciado.
+    >
+    > ```command&nbsp;line
+    > npm run dev-server
+    > ```
 
-4. Realize o sideload do suplemento usando um dos métodos a seguir:
+    - Para testar seu suplemento no Excel, execute o seguinte comando no diretório raiz do seu projeto. Isso inicia o servidor Web local (se ele ainda não estiver sendo executado) e abre o Excel com seu suplemento carregado.
 
-    - Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+        ```command&nbsp;line
+        npm start
+        ```
 
-    - Navegador da Web: [Sideload suplementos do Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
+    - Para testar seu suplemento no Excel na Web, execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor Web local será iniciado (se ainda não estiver sendo executado).
 
-    - iPad e Mac: [Realizar sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+        ```command&nbsp;line
+        npm run start:web
+        ```
 
-5. No menu **Página Inicial**, escolha **Mostrar Painel de Tarefas**.
+        Para usar seu suplemento, abra um novo documento no Excel na Web e, em seguida, Sideload seu suplemento seguindo as instruções em [suplementos do Sideload Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-6. No painel de tarefas, escolha **Criar Tabela**.
+2. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Tutorial do Excel: Criar tabela](../images/excel-tutorial-create-table.png)
+    ![Botão do suplemento do Excel](../images/excel-quickstart-addin-3b.png)
+
+3. No painel de tarefas, escolha o botão **criar tabela** .
+
+    ![Tutorial do Excel: Criar tabela](../images/excel-tutorial-create-table-2.png)
 
 ## <a name="filter-and-sort-a-table"></a>Filtrar e classificar uma tabela
 
@@ -188,27 +212,23 @@ Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou ante
 
 ### <a name="filter-the-table"></a>Filtrar a tabela
 
-1. Abra o projeto em seu editor de código.
+1. Abra o arquivo **./src/TaskPane/TaskPane.html**.
 
-2. Abra o arquivo index.html.
-
-3. Abaixo do `div`, que contém o botão `create-table`, adicione a marcação a seguir:
+2. Localize o `<button>` elemento do `create-table` botão e adicione a seguinte marcação após essa linha:
 
     ```html
-    <div class="padding">
-        <button class="ms-Button" id="filter-table">Filter Table</button>
-    </div>
+    <button class="ms-Button" id="filter-table">Filter Table</button><br/><br/>
     ```
 
-4. Abra o arquivo app.js.
+3. Abra o arquivo **./src/TaskPane/TaskPane.js**.
 
-5. Logo abaixo da linha que atribui um identificador de clique ao botão `create-table`, adicione o seguinte código:
+4. Dentro da `Office.onReady` chamada do método, localize a linha que atribui um manipulador de cliques para o `create-table` botão e adicione o seguinte código após essa linha:
 
     ```js
-    $('#filter-table').click(filterTable);
+    document.getElementById("filter-table").onclick = filterTable;
     ```
 
-6. Logo abaixo da função `createTable`, adicione a função a seguir:
+5. Adicione a seguinte função ao final do arquivo:
 
     ```js
     function filterTable() {
@@ -228,7 +248,7 @@ Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou ante
     }
     ```
 
-7. Substitua `TODO1` pelo código a seguir. Observação:
+6. Dentro da `filterTable()` função, substitua `TODO1` pelo código a seguir. Observação:
 
    - O código primeiro faz referência à coluna que precisa de filtragem ao passar o nome da coluna para o método `getItem`, em vez de passar o índice para o método `getItemAt` como o método `createTable` faz. Como os usuários podem mover as colunas da tabela, a coluna de um determinado índice pode mudar depois da criação da tabela. Portanto, é mais seguro usar o nome da coluna como referência dela. Usamos de forma segura `getItemAt` em um tutorial anterior porque usamos o mesmo método que cria a tabela. Assim não existe a chance de um usuário mover a coluna.
 
@@ -238,30 +258,28 @@ Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou ante
     var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
     var expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
     var categoryFilter = expensesTable.columns.getItem('Category').filter;
-    categoryFilter.applyValuesFilter(["Education", "Groceries"]);
+    categoryFilter.applyValuesFilter(['Education', 'Groceries']);
     ``` 
 
 ### <a name="sort-the-table"></a>Classificar a tabela
 
-1. Abra o arquivo index.html.
+1. Abra o arquivo **./src/TaskPane/TaskPane.html**.
 
-2. Abaixo do `div` que contém o botão `filter-table`, adicione a marcação a seguir:
+2. Localize o `<button>` elemento do `filter-table` botão e adicione a seguinte marcação após essa linha: 
 
     ```html
-    <div class="padding">
-        <button class="ms-Button" id="sort-table">Sort Table</button>
-    </div>
+    <button class="ms-Button" id="sort-table">Sort Table</button><br/><br/>
     ```
 
-3. Abra o arquivo app.js.
+3. Abra o arquivo **./src/TaskPane/TaskPane.js**.
 
-4. Abaixo da linha que atribui um identificador de clique ao botão `filter-table`, adicione o seguinte código:
+4. Dentro da `Office.onReady` chamada do método, localize a linha que atribui um manipulador de cliques para o `filter-table` botão e adicione o seguinte código após essa linha:
 
     ```js
-    $('#sort-table').click(sortTable);
+    document.getElementById("sort-table").onclick = sortTable;
     ```
 
-5. Abaixo da função `filterTable`, adicione a função a seguir.
+5. Adicione a seguinte função ao final do arquivo:
 
     ```js
     function sortTable() {
@@ -280,7 +298,7 @@ Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou ante
     }
     ```
 
-6. Substitua `TODO1` pelo código a seguir. Observação:
+6. Dentro da `sortTable()` função, substitua `TODO1` pelo código a seguir. Observação:
 
    - O código cria uma matriz de objetos `SortField` que tem apenas um membro, já que o suplemento só classifica a coluna Comerciante.
 
@@ -301,24 +319,19 @@ Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou ante
     expensesTable.sort.apply(sortFields);
     ```
 
+7. Verifique se você salvou todas as alterações feitas no projeto.
+
 ### <a name="test-the-add-in"></a>Testar o suplemento
 
-1. Se a janela Git bash ou o prompt de sistema habilitado para Node.JS do tutorial anterior ainda estiverem abertos, digite **Ctrl + C** duas vezes para interromper a execução do servidor Web. Caso contrário, abra uma janela Git bash ou um prompt de sistema habilitado para Node.JS e navegue até a pasta **Iniciar** do projeto.
+1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-     > [!NOTE]
-     > Embora o servidor de sincronização do navegador recarregue o suplemento no painel de tarefas sempre que você fizer uma alteração em algum arquivo, incluindo o arquivo app.js, ele não transcompila o JavaScript, portanto, é necessário repetir o comando de compilação para que as alterações em app.js as entrem em vigor. Para fazer isso, interrompa o processo do servidor para obter uma solicitação para inserir o comando de compilação. Após a compilação, reinicie o servidor. As próximas etapas executam esse processo.
+2. Se o painel de tarefas do suplemento ainda não estiver aberto no Excel, vá para a guia **página inicial** e escolha o botão **Mostrar painel de tarefas** na faixa de opções para abri-lo.
 
-2. Execute o comando `npm run build` para transcompilar seu código-fonte do ES6 para uma versão anterior do JavaScript que é suportada pelo Internet Explorer (que é usada por algumas versões do Excel para executar suplementos do Excel).
+3. Se a tabela que você adicionou anteriormente neste tutorial não estiver presente na planilha aberta, escolha o botão **criar tabela** no painel de tarefas.
 
-3. Execute o comando `npm start` para iniciar um servidor Web em um localhost.
+4. Escolha o botão **Filtrar tabela** e o botão **classificar tabela** em qualquer ordem.
 
-4. Feche o painel de tarefas para recarregá-lo e, no menu **Página Inicial**, selecione **Mostrar Painel de Tarefas** para reabrir o suplemento.
-
-5. Se por qualquer motivo a tabela não estiver na planilha aberta, no painel de tarefas, escolha **Criar Tabela**.
-
-6. Escolha os botões **Filtrar Tabela** e **Classificar Tabela** em qualquer ordem.
-
-    ![Tutorial do Excel: filtrar e classificar tabela](../images/excel-tutorial-filter-and-sort-table.png)
+    ![Tutorial do Excel: filtrar e classificar tabela](../images/excel-tutorial-filter-and-sort-table-2.png)
 
 ## <a name="create-a-chart"></a>Criar um gráfico
 
@@ -326,27 +339,23 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
 
 ### <a name="chart-a-chart-using-table-data"></a>Gráfico de um gráfico com dados de tabela
 
-1. Abra o projeto em seu editor de código.
+1. Abra o arquivo **./src/TaskPane/TaskPane.html**.
 
-2. Abra o arquivo index.html.
-
-3. Abaixo do `div` que contém o botão `sort-table`, adicione a marcação a seguir:
+2. Localize o `<button>` elemento do `sort-table` botão e adicione a seguinte marcação após essa linha: 
 
     ```html
-    <div class="padding">
-        <button class="ms-Button" id="create-chart">Create Chart</button>
-    </div>
+    <button class="ms-Button" id="create-chart">Create Chart</button><br/><br/>
     ```
 
-4. Abra o arquivo app.js.
+3. Abra o arquivo **./src/TaskPane/TaskPane.js**.
 
-5. Abaixo da linha que atribui um identificador de clique ao botão `sort-chart`, adicione o seguinte código:
+4. Dentro da `Office.onReady` chamada do método, localize a linha que atribui um manipulador de cliques para o `sort-table` botão e adicione o seguinte código após essa linha:
 
     ```js
-    $('#create-chart').click(createChart);
+    document.getElementById("create-chart").onclick = createChart;
     ```
 
-6. Abaixo da função `sortTable`, adicione a função a seguir.
+5. Adicione a seguinte função ao final do arquivo:
 
     ```js
     function createChart() {
@@ -369,7 +378,7 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
     }
     ```
 
-7. Substitua `TODO1` pelo código a seguir. Para excluir a linha de cabeçalho, o código usa o método `Table.getDataBodyRange` para acessar o intervalo de dados que você deseja representar graficamente em vez do método `getRange`.
+6. Dentro da `createChart()` função, substitua `TODO1` pelo código a seguir. Para excluir a linha de cabeçalho, o código usa o método `Table.getDataBodyRange` para acessar o intervalo de dados que você deseja representar graficamente em vez do método `getRange`.
 
     ```js
     var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
@@ -377,7 +386,7 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
     var dataRange = expensesTable.getDataBodyRange();
     ```
 
-8. Substitua `TODO2` pelo código a seguir. Observe os seguintes parâmetros:
+7. Dentro da `createChart()` função, substitua `TODO2` pelo código a seguir. Observe os seguintes parâmetros:
 
    - O primeiro parâmetro para o método `add` especifica o tipo de gráfico. Há diversos tipos.
 
@@ -389,7 +398,7 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
     var chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'auto');
     ```
 
-9. Substitua `TODO3` pelo código a seguir. A maior parte do código é autoexplicativa. Observação:
+8. Dentro da `createChart()` função, substitua `TODO3` pelo código a seguir. A maior parte do código é autoexplicativa. Observação:
    
    - Os parâmetros do método `setPosition` especificam as células da esquerda superior e da direita inferior da área da planilha que deve conter o gráfico. O Excel ajusta detalhes como a largura da linha para criar uma boa aparência para o gráfico no espaço fornecido.
    
@@ -405,24 +414,19 @@ Nesta etapa do tutorial, você vai criar um gráfico com dados da tabela que voc
     chart.series.getItemAt(0).name = 'Value in €';
     ```
 
+9. Verifique se você salvou todas as alterações feitas no projeto.
+
 ### <a name="test-the-add-in"></a>Testar o suplemento
 
-1. Se a janela Git bash ou o prompt de sistema habilitado para Node.JS do tutorial anterior ainda estiverem abertos, digite **Ctrl + C** duas vezes para interromper a execução do servidor Web. Caso contrário, abra uma janela Git bash ou um prompt de sistema habilitado para Node.JS e navegue até a pasta **Iniciar** do projeto.
+1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-     > [!NOTE]
-     > Embora o servidor de sincronização do navegador recarregue o suplemento no painel de tarefas sempre que você fizer uma alteração em algum arquivo, incluindo o arquivo app.js, ele não transcompila o JavaScript, portanto, é necessário repetir o comando de compilação para que as alterações em app.js as entrem em vigor. Para fazer isso, interrompa o processo do servidor para obter uma solicitação para inserir o comando de compilação. Após a compilação, reinicie o servidor. As próximas etapas executam esse processo.
+2. Se o painel de tarefas do suplemento ainda não estiver aberto no Excel, vá para a guia **página inicial** e escolha o botão **Mostrar painel de tarefas** na faixa de opções para abri-lo.
 
-2. Execute o comando `npm run build` para transcompilar seu código-fonte do ES6 para uma versão anterior do JavaScript que é suportada pelo Internet Explorer (que é usada por algumas versões do Excel para executar suplementos do Excel).
+3. Se a tabela adicionada anteriormente neste tutorial não estiver presente na planilha aberta, escolha o botão **criar tabela** e, em seguida, o botão **Filtrar tabela** e **classificar tabela** , em qualquer ordem.
 
-3. Execute o comando `npm start` para iniciar um servidor Web em um localhost.
+4. Clique no botão **Criar gráfico**. Um gráfico é criado e incluirá somente os dados das linhas que foram filtradas. Os rótulos dos pontos de dados na parte inferior estão na ordem de classificação do gráfico, ou seja, nomes de comerciantes em ordem alfabética inversa.
 
-4. Feche o painel de tarefas para recarregá-lo e, no menu **Página Inicial**, selecione **Mostrar Painel de Tarefas** para reabrir o suplemento.
-
-5. Se, por algum motivo, a tabela não estiver na planilha aberta, no painel de tarefas, escolha **Criar Tabela** e depois os botões **Filtrar Tabela** e **Classificar Tabela ** em qualquer ordem.
-
-6. Clique no botão **Criar gráfico**. Um gráfico é criado e incluirá somente os dados das linhas que foram filtradas. Os rótulos dos pontos de dados na parte inferior estão na ordem de classificação do gráfico, ou seja, nomes de comerciantes em ordem alfabética inversa.
-
-    ![Tutorial do Excel - Criar gráfico ](../images/excel-tutorial-create-chart.png)
+    ![Tutorial do Excel - Criar gráfico ](../images/excel-tutorial-create-chart-2.png)
 
 ## <a name="freeze-a-table-header"></a>Congelar um cabeçalho de tabela
 
@@ -430,27 +434,23 @@ Quando uma tabela for longa o suficiente para que um usuário precise rolar para
 
 ### <a name="freeze-the-tables-header-row"></a>Congelar a linha de cabeçalho da tabela
 
-1. Abra o projeto em seu editor de código.
+1. Abra o arquivo **./src/TaskPane/TaskPane.html**.
 
-2. Abra o arquivo index.html.
-
-3. Abaixo do `div` que contém o botão `create-chart`, adicione a marcação a seguir:
+2. Localize o `<button>` elemento do `create-chart` botão e adicione a seguinte marcação após essa linha: 
 
     ```html
-    <div class="padding">
-        <button class="ms-Button" id="freeze-header">Freeze Header</button>
-    </div>
+    <button class="ms-Button" id="freeze-header">Freeze Header</button><br/><br/>
     ```
 
-4. Abra o arquivo app.js.
+3. Abra o arquivo **./src/TaskPane/TaskPane.js**.
 
-5. Abaixo da linha que atribui um identificador de clique ao botão `create-chart`, adicione o seguinte código:
+4. Dentro da `Office.onReady` chamada do método, localize a linha que atribui um manipulador de cliques para o `create-chart` botão e adicione o seguinte código após essa linha:
 
     ```js
-    $('#freeze-header').click(freezeHeader);
+    document.getElementById("freeze-header").onclick = freezeHeader;
     ```
 
-6. Abaixo da função `createChart`, adicione a função a seguir:
+5. Adicione a seguinte função ao final do arquivo:
 
     ```js
     function freezeHeader() {
@@ -469,7 +469,7 @@ Quando uma tabela for longa o suficiente para que um usuário precise rolar para
     }
     ```
 
-7. Substitua `TODO1` pelo código a seguir. Observação:
+6. Dentro da `freezeHeader()` função, substitua `TODO1` pelo código a seguir. Observação:
 
    - A coleção `Worksheet.freezePanes` é um conjunto de painéis da planilha que fica congelado ou fixado no mesmo lugar quando rolamos a planilha.
 
@@ -480,28 +480,23 @@ Quando uma tabela for longa o suficiente para que um usuário precise rolar para
     currentWorksheet.freezePanes.freezeRows(1);
     ```
 
+7. Verifique se você salvou todas as alterações feitas no projeto.
+
 ### <a name="test-the-add-in"></a>Testar o suplemento
 
-1. Se a janela Git bash ou o prompt de sistema habilitado para Node.JS do tutorial anterior ainda estiverem abertos, digite **Ctrl + C** duas vezes para interromper a execução do servidor Web. Caso contrário, abra uma janela Git bash ou um prompt de sistema habilitado para Node.JS e navegue até a pasta **Iniciar** do projeto.
+1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-     > [!NOTE]
-     > Embora o servidor de sincronização do navegador recarregue o suplemento no painel de tarefas sempre que você fizer uma alteração em algum arquivo, incluindo o arquivo app.js, ele não transcompila o JavaScript, portanto, é necessário repetir o comando de compilação para que as alterações em app.js as entrem em vigor. Para fazer isso, interrompa o processo do servidor para obter uma solicitação para inserir o comando de compilação. Após a compilação, reinicie o servidor. As próximas etapas executam esse processo.
+2. Se o painel de tarefas do suplemento ainda não estiver aberto no Excel, vá para a guia **página inicial** e escolha o botão **Mostrar painel de tarefas** na faixa de opções para abri-lo.
 
-2. Execute o comando `npm run build` para transcompilar seu código-fonte do ES6 para uma versão anterior do JavaScript que é suportada pelo Internet Explorer (que é usada por algumas versões do Excel para executar suplementos do Excel).
+3. Se a tabela que você adicionou anteriormente neste tutorial estiver presente na planilha, exclua-a.
 
-3. Execute o comando `npm start` para iniciar um servidor Web em um localhost.
+4. No painel de tarefas, escolha o botão **criar tabela** .
 
-4. Feche o painel de tarefas para recarregá-lo e, no menu **Início**, selecione **Mostrar Painel de Tarefas** para reabrir o suplemento.
+5. No painel de tarefas, escolha o botão **congelar cabeçalho** .
 
-5. Se a tabela estiver na planilha, exclua-a.
+6. Role para baixo na planilha o suficiente para ver que o cabeçalho da tabela permanece visível na parte superior, mesmo quando as linhas superiores rolarem para fora da visão.
 
-6. No painel de tarefas, escolha **Criar Tabela**.
-
-7. Escolha o botão **Congelar Cabeçalho**.
-
-8. Role a planilha para baixo, o suficiente para ver que o cabeçalho da tabela permanece visível na parte superior mesmo ao rolar até que as primeiras linhas fiquem fora da vista.
-
-    ![Tutorial do Excel: congelar cabeçalho](../images/excel-tutorial-freeze-header.png)
+    ![Tutorial do Excel: congelar cabeçalho](../images/excel-tutorial-freeze-header-2.png)
 
 ## <a name="protect-a-worksheet"></a>Proteger uma planilha
 
@@ -509,9 +504,9 @@ Nesta etapa do tutorial, você adicionará outro botão à faixa de opções que
 
 ### <a name="configure-the-manifest-to-add-a-second-ribbon-button"></a>Configure o manifesto para adicionar um segundo botão à faixa de opções
 
-1. Abra o arquivo de manifesto my-office-add-in-manifest.xml.
+1. Abra o arquivo de manifesto **./manifest.xml**.
 
-2. Encontre o elemento `<Control>`. Esse elemento define o botão **Mostrar Painel de Tarefas** na faixa de opções **Início** que você usa para iniciar o suplemento. Vamos adicionar um segundo botão ao mesmo grupo na faixa de opções **Início**. Entre a marca de Controle final (`</Control>`) e a marca de Grupo final (`</Group>`), adicione a marcação a seguir.
+2. Localize o `<Control>` elemento. Esse elemento define o botão **Mostrar Painel de Tarefas** na faixa de opções **Início** que você usa para iniciar o suplemento. Vamos adicionar um segundo botão ao mesmo grupo na faixa de opções **Início**. Entre a marca de Controle final (`</Control>`) e a marca de Grupo final (`</Group>`), adicione a marcação a seguir.
 
     ```xml
     <Control xsi:type="Button" id="<!--TODO1: Unique (in manifest) name for button -->">
@@ -521,9 +516,9 @@ Nesta etapa do tutorial, você adicionará outro botão à faixa de opções que
             <Description resid="<!-- TODO4: Button tool tip description -->" />
         </Supertip>
         <Icon>
-            <bt:Image size="16" resid="Contoso.tpicon_16x16" />
-            <bt:Image size="32" resid="Contoso.tpicon_32x32" />
-            <bt:Image size="80" resid="Contoso.tpicon_80x80" />
+            <bt:Image size="16" resid="Icon.16x16"/>
+            <bt:Image size="32" resid="Icon.32x32"/>
+            <bt:Image size="80" resid="Icon.80x80"/>
         </Icon>
         <Action xsi:type="<!-- TODO5: Specify the type of action-->">
             <!-- TODO6: Identify the function.-->
@@ -531,19 +526,19 @@ Nesta etapa do tutorial, você adicionará outro botão à faixa de opções que
     </Control>
     ```
 
-3. Substitua `TODO1` por uma cadeia de caracteres que fornece ao botão uma ID exclusiva no arquivo de manifesto. Como nosso botão ativará ou desativará a proteção da planilha, use "ToggleProtection". Quando terminar, a marca de Controle de início inteira deve se parecer com o seguinte:
+3. Dentro do XML que você acabou de adicionar ao arquivo de manifesto `TODO1` , substitua por uma cadeia de caracteres que forneça ao botão uma ID exclusiva nesse arquivo de manifesto. Como nosso botão ativará ou desativará a proteção da planilha, use "ToggleProtection". Quando você terminar, a marca de abertura do `Control` elemento deverá ter a seguinte aparência:
 
     ```xml
     <Control xsi:type="Button" id="ToggleProtection">
     ```
 
-4. Os próximos três `TODO`s definem “resid”, que significa ID de recurso. Um recurso é uma cadeia de caracteres e você criará essas três cadeias de caracteres em uma etapa posterior. Por enquanto, você precisa fornecer IDs aos recursos. O rótulo do botão deve ser "Toggle Protection", mas a *ID* dessa cadeia de caracteres será "ProtectionButtonLabel", de forma que o elemento `Label` completo deve se parecer com o código a seguir:
+4. Os próximos três `TODO`s definem “resid”, que significa ID de recurso. Um recurso é uma cadeia de caracteres e você criará essas três cadeias de caracteres em uma etapa posterior. Por enquanto, você precisa fornecer IDs aos recursos. O rótulo do botão deve ler "alternar proteção", mas a *ID* dessa cadeia de caracteres deve ser "ProtectionButtonLabel", `Label` portanto, o elemento deve ter a seguinte aparência:
 
     ```xml
     <Label resid="ProtectionButtonLabel" />
     ```
 
-5. O elemento `SuperTip` define a dica de ferramenta do botão. O título da dica de ferramenta deve ser o mesmo que o rótulo do botão, por isso, usamos a mesma ID de recurso: "ProtectionButtonLabel". A descrição da dica de ferramenta será "Click to turn protection of the worksheet on and off". Mas o `ID` será "ProtectionButtonToolTip". Portanto, quando terminar, a marcação `SuperTip` inteira deve se parecer com o seguinte código: 
+5. O elemento `SuperTip` define a dica de ferramenta do botão. O título da dica de ferramenta deve ser o mesmo que o rótulo do botão, por isso, usamos a mesma ID de recurso: "ProtectionButtonLabel". A descrição da dica de ferramenta será "Click to turn protection of the worksheet on and off". Mas o `ID` será "ProtectionButtonToolTip". Portanto, quando você terminar, o elemento `SuperTip` deverá ter a seguinte aparência: 
 
     ```xml
     <Supertip>            
@@ -555,7 +550,7 @@ Nesta etapa do tutorial, você adicionará outro botão à faixa de opções que
    > [!NOTE] 
    > Em um suplemento de produção,não é recomendável usar o mesmo ícone para dois botões diferentes; mas, para simplificar este tutorial, faremos isso. Portanto, a marcação `Icon` em nosso novo `Control` é apenas uma cópia do elemento `Icon` do `Control` existente. 
 
-6. O elemento `Action` dentro do elemento `Control` original já está presente no manifesto, tem seu tipo definido como `ShowTaskpane`, mas nosso novo botão não abrirá um painel de tarefas, mas sim executará uma função personalizada criada em uma etapa posterior. Portanto, substitua `TODO5` por `ExecuteFunction`, que é o tipo de ação para botões que acionam funções personalizadas. A marca `Action` de início deve ser similar ao código abaixo:
+6. O elemento `Action` dentro do elemento `Control` original já está presente no manifesto, tem seu tipo definido como `ShowTaskpane`, mas nosso novo botão não abrirá um painel de tarefas, mas sim executará uma função personalizada criada em uma etapa posterior. Portanto, substitua `TODO5` por `ExecuteFunction`, que é o tipo de ação para botões que acionam funções personalizadas. A marca de abertura do `Action` elemento deve ter a seguinte aparência:
  
     ```xml
     <Action xsi:type="ExecuteFunction">
@@ -577,9 +572,9 @@ Nesta etapa do tutorial, você adicionará outro botão à faixa de opções que
             <Description resid="ProtectionButtonToolTip" />
         </Supertip>
         <Icon>
-            <bt:Image size="16" resid="Contoso.tpicon_16x16" />
-            <bt:Image size="32" resid="Contoso.tpicon_32x32" />
-            <bt:Image size="80" resid="Contoso.tpicon_80x80" />
+            <bt:Image size="16" resid="Icon.16x16"/>
+            <bt:Image size="32" resid="Icon.32x32"/>
+            <bt:Image size="80" resid="Icon.80x80"/>
         </Icon>
         <Action xsi:type="ExecuteFunction">
            <FunctionName>toggleProtection</FunctionName>
@@ -605,9 +600,9 @@ Nesta etapa do tutorial, você adicionará outro botão à faixa de opções que
 
 ### <a name="create-the-function-that-protects-the-sheet"></a>Criar a função que protege a planilha
 
-1. Abra o arquivo \function-file\function-file.js.
+1. Abra o arquivo **.\commands\commands.js**.
 
-2. O arquivo já tem uma Expressão de Função Invocada Imediatamente (IFFE). *Fora do IIFE*, adicione o código a seguir. Observe que é possível especificar um parâmetro `args` para o método e a última linha do método chamará `args.completed`. Esse é um requisito para todos os comandos de suplemento do tipo **ExecuteFunction**. Ele sinaliza para o aplicativo host do Office que a função terminou e que a interface do usuário podem ficar responsiva novamente.
+2. Adicione a seguinte função imediatamente após a `action` função. Observe que especificamos um `args` parâmetro para a função e a última linha das chamadas `args.completed`de função. Esse é um requisito para todos os comandos de suplemento do tipo **ExecuteFunction**. Ele sinaliza para o aplicativo host do Office que a função terminou e que a interface do usuário podem ficar responsiva novamente.
 
     ```js
     function toggleProtection(args) {
@@ -627,7 +622,13 @@ Nesta etapa do tutorial, você adicionará outro botão à faixa de opções que
     }
     ```
 
-3. Substitua `TODO1` pelo código a seguir. O código usa propriedade de proteção do objeto de planilha em um padrão de botão de alternância padrão. O `TODO2` será explicado na próxima seção.
+3. Adicione a seguinte linha ao final do arquivo:
+
+    ```js
+    g.toggleProtection = toggleProtection;
+    ```
+
+4. Dentro da `toggleProtection` função, substitua `TODO1` pelo código a seguir. O código usa propriedade de proteção do objeto de planilha em um padrão de botão de alternância padrão. O `TODO2` será explicado na próxima seção.
 
     ```js
     var sheet = context.workbook.worksheets.getActiveWorksheet();
@@ -635,7 +636,7 @@ Nesta etapa do tutorial, você adicionará outro botão à faixa de opções que
     // TODO2: Queue command to load the sheet's "protection.protected" property from
     //        the document and re-synchronize the document and task pane.
 
-     if (sheet.protection.protected) {
+    if (sheet.protection.protected) {
         sheet.protection.unprotect();
     } else {
         sheet.protection.protect();
@@ -644,7 +645,7 @@ Nesta etapa do tutorial, você adicionará outro botão à faixa de opções que
 
 ### <a name="add-code-to-fetch-document-properties-into-the-task-panes-script-objects"></a>Adicione código para buscar propriedades do documento em objetos de script do painel de tarefas
 
-Em todas as funções anteriores desta série de tutoriais, você colocou em fila comandos para *gravar* no documento do Office. Cada função terminou com uma chamada para o método `context.sync()`, que envia os comandos em fila para o documento a ser executado. Entretanto, o código adicionado na última etapa chama a propriedade `sheet.protection.protected` e essa é uma grande diferença das funções anteriores que você escreveu, pois o objeto `sheet` é apenas um objeto de proxy que existe no script do seu painel de tarefas. Ele não sabe qual é o estado real de proteção do documento, portanto, sua propriedade `protection.protected` não pode ter um valor real. É necessário primeiro buscar o status de proteção do documento e definir o valor de `sheet.protection.protected`. Somente então será possível chamar `sheet.protection.protected` sem causar uma exceção. Esse processo de busca tem três etapas:
+Em cada função que você criou neste tutorial até agora, você colocou em fila comandos para *gravar* no documento do Office. Cada função terminou com uma chamada para o método `context.sync()`, que envia os comandos em fila para o documento a ser executado. Entretanto, o código adicionado na última etapa chama a propriedade `sheet.protection.protected` e essa é uma grande diferença das funções anteriores que você escreveu, pois o objeto `sheet` é apenas um objeto de proxy que existe no script do seu painel de tarefas. Ele não sabe qual é o estado real de proteção do documento, portanto, sua propriedade `protection.protected` não pode ter um valor real. É necessário primeiro buscar o status de proteção do documento e definir o valor de `sheet.protection.protected`. Somente então será possível chamar `sheet.protection.protected` sem causar uma exceção. Esse processo de busca tem três etapas:
 
    1. Coloque em fila um comando para carregar (ou seja, fetch) as propriedades que seu código precisa ler.
 
@@ -652,9 +653,9 @@ Em todas as funções anteriores desta série de tutoriais, você colocou em fil
 
    3. Como o método `sync` é assíncrono, certifique-se de que ele tenha sido concluído antes que o código chame as propriedades que foram buscadas.
 
-Essas etapas devem ser concluídas sempre que seu código precisar *ler* informações do documento do Office.
+Estas etapas devem ser concluídas sempre que seu código precisar *ler* informações do documento do Office.
 
-1. Na função `toggleProtection`, substitua `TODO2` pelo seguinte código. Observação:
+1. Dentro da `toggleProtection` função, substitua `TODO2` pelo código a seguir. Observação:
    
    - Todos os objetos do Excel têm um método `load`. Especifique as propriedades do objeto que você deseja ler no parâmetro como uma cadeia de caracteres de nomes delimitados por vírgulas. Nesse caso, a propriedade que você precisa ler é uma subpropriedade de `protection`. Referencie a subpropriedade quase exatamente como você faria em qualquer lugar do seu código, mas usando uma barra (“/”) em vez de um ponto (".").
 
@@ -716,12 +717,7 @@ Essas etapas devem ser concluídas sempre que seu código precisar *ler* informa
     }
     ```
 
-### <a name="configure-the-script-loading-html-file"></a>Configure o arquivo HTML de carregamento de script
-
-Abra o arquivo /function-file/function-file.html. Esse é um arquivo HTML sem IU que é chamado quando o usuário pressiona o botão **Ativar/Desativar Proteção da Planilha**. O objetivo é carregar o método JavaScript que deve ser executado quando botão é pressionado. Esse arquivo não será alterado. Basta observar que a segunda marca `<script>` carrega o functionfile.js.
-
-   > [!NOTE]
-   > O arquivo function-file.html e o arquivo function-file.js carregado são executados em um processo do IE completamente separado de painel de tarefas do suplemento. Se o function-file.js foi transcompilado no mesmo arquivo bundle.js que o arquivo app.js, o suplemento precisará carregar duas cópias do arquivo bundle.js, o que anule o propósito do agrupamento. Além disso, o arquivo function-file.js não contém qualquer JavaScript incompatível com o Internet Explorer. Por esses dois motivos, esse suplemento não transcompila o function-file.js. 
+5. Verifique se você salvou todas as alterações feitas no projeto.
 
 ### <a name="test-the-add-in"></a>Testar o suplemento
 
@@ -733,27 +729,36 @@ Abra o arquivo /function-file/function-file.html. Esse é um arquivo HTML sem IU
 
     - No Mac: `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
     
-        [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
+        > [!NOTE]
+        > Se essa pasta não existir, verifique as seguintes pastas e, se encontrar, exclua o conteúdo da pasta:
+        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/`onde `{host}` é o host do Office (por exemplo `Excel`,)
+        >    - `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
 
-3. Se, por algum motivo, o servidor não estiver executando, em uma janela do Git Bash ou em um prompt do sistema habilitado para Node.JS, acesse a pasta **Iniciar** do projeto e execute o comando `npm start`. Não é necessário recriar o projeto, pois o único arquivo JavaScript que você alterou não faz parte do bundle.js interno.
+3. Se o servidor Web local já estiver em execução, interrompa-o fechando a janela de comando do nó.
 
-4. Usando a nova versão do arquivo de manifesto alterado, repita o processo de sideloading usando um dos seguintes métodos. *Você deve substituir a cópia anterior do arquivo de manifesto.*
+4. Como o arquivo de manifesto foi atualizado, você deve Sideload seu suplemento novamente, usando o arquivo de manifesto atualizado. Inicie o servidor Web local e Sideload seu suplemento: 
 
-    - Windows: [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+    - Para testar seu suplemento no Excel, execute o seguinte comando no diretório raiz do seu projeto. Isso inicia o servidor Web local (se ele ainda não estiver sendo executado) e abre o Excel com seu suplemento carregado.
 
-    - Navegador da Web: [Sideload suplementos do Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
+        ```command&nbsp;line
+        npm start
+        ```
 
-    - iPad e Mac: [Realizar sideload dos Suplementos do Office no iPad e Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    - Para testar seu suplemento no Excel na Web, execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor Web local será iniciado (se ainda não estiver sendo executado).
 
-5. Abra qualquer planilha no Excel.
+        ```command&nbsp;line
+        npm run start:web
+        ```
 
-6. Na Faixa de Opções, em **Página Inicial**, escolha **Ativar Proteger Planilha**. Observe que a maioria dos controles na Faixa de Opções está desabilitada (e visualmente esmaecida) conforme mostrado na captura de tela abaixo. 
+        Para usar seu suplemento, abra um novo documento no Excel na Web e, em seguida, Sideload seu suplemento seguindo as instruções em [suplementos do Sideload Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-7. Escolha uma célula como se quisesse alterar o conteúdo. Você receberá um erro informando que a planilha está protegida.
+5. Na guia **página inicial** do Excel, escolha o botão **alternar proteção da planilha** . Observe que a maioria dos controles na faixa de opções estão desativados (e esmaecidos visualmente) como visto na captura de tela a seguir. 
 
-8. Escolha **Ativar/Desativar Proteção da Planilha** novamente e os controles serão reabilitados e você poderá alterar os valores das células.
+    ![Tutorial do Excel - Faixa de Opções com a Proteção Ativada](../images/excel-tutorial-ribbon-with-protection-on-2.png)
 
-    ![Tutorial do Excel - Faixa de Opções com a Proteção Ativada](../images/excel-tutorial-ribbon-with-protection-on.png)
+6. Escolha uma célula como se quisesse alterar o conteúdo. O Excel exibe uma mensagem de erro indicando que a planilha está protegida.
+
+7. Escolha o botão **Ativar/Desativar proteção da planilha** novamente, e os controles serão habilitados novamente e você poderá alterar os valores da célula novamente.
 
 ## <a name="open-a-dialog"></a>Abrir uma caixa de diálogo
 
@@ -761,17 +766,17 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
 
 ### <a name="create-the-dialog-page"></a>Crie a página da caixa de diálogo
 
-1. Abra o projeto em seu editor de código.
+1. Na pasta **./src** localizada na raiz do projeto, crie uma nova pasta chamada **caixas de diálogo**.
 
-2. Crie um arquivo chamado popup.html na raiz do projeto (onde se encontra index.html).
+2. Na pasta **./src/Dialogs** , crie um novo arquivo chamado **Popup. html**.
 
-3. Adicione a marcação a seguir em popup.html. Observação:
+3. Adicione a seguinte marcação a **Popup. html**. Observação:
 
    - a página tem um `<input>` em que o usuário insere o nome dele e um botão que envia o nome para a página no painel de tarefas onde ele será exibido.
 
-   - A marcação carrega um script chamado popup.js que você criará em uma etapa posterior.
+   - A marcação carrega um script chamado **Popup. js** que você irá criar em uma etapa posterior.
 
-   - Ela também carrega uma biblioteca Office.JS e jQuery porque elas serão usadas em popup.js.
+   - Ele também carrega a biblioteca Office. js porque ela será usada em **Popup. js**.
 
     ```html
     <!DOCTYPE html>
@@ -781,35 +786,26 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
 
-            <link rel="stylesheet" href="node_modules/office-ui-fabric-js/dist/css/fabric.min.css" />
-            <link rel="stylesheet" href="node_modules/office-ui-fabric-js/dist/css/fabric.components.css" />
-            <link rel="stylesheet" href="app.css" />
+            <!-- For more information on Office UI Fabric, visit https://developer.microsoft.com/fabric. -->
+            <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
 
             <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
-            <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.1.min.js"></script>
             <script type="text/javascript" src="popup.js"></script>
 
         </head>
         <body style="display:flex;flex-direction:column;align-items:center;justify-content:center">
-            <div class="padding">
-                <p class="ms-font-xl">ENTER YOUR NAME</p>
-            </div>
-            <div class="padding">
-                <input id="name-box" type="text"/>
-            </div>
-            <div class="padding">
-                <button id="ok-button" class="ms-Button">OK</button>
-            </div>
+            <p class="ms-font-xl">ENTER YOUR NAME</p>
+            <input id="name-box" type="text"/><br/><br/>
+            <button id="ok-button" class="ms-Button">OK</button>
         </body>
     </html>
     ```
 
-4. Crie um arquivo chamado popup.js na raiz do projeto.
+4. Na pasta **./src/Dialogs** , crie um novo arquivo chamado **Popup. js**.
 
-5. Adicione o código a seguir a popup.js. Observe o seguinte a respeito deste código:
+5. Adicione o código a seguir a **Popup. js**. Observe o seguinte sobre este código:
 
-   - *Todas as páginas que chamam APIs na biblioteca Office.JS devem primeiro garantir que a biblioteca tenha sido totalmente inicializada.* A melhor maneira de fazer isso é chamando o método `Office.onReady()`. Se o suplemento possuir as próprias tarefas de inicialização, o código deverá ser colocado em um método `then()` encadeado à chamada de `Office.onReady()`. Para um exemplo, veja o arquivo app.js na raiz do projeto. A chamada de `Office.onReady()` deve ser executada antes de qualquer chamada para Office.JS; por isso, a tarefa se encontra em um arquivo de script que é carregado pela página, como neste caso.
-   - A função `ready` do jQuery é chamada dentro do método `then()`. Na maioria dos casos, o carregamento, a inicialização ou o código de bootstrap de outras bibliotecas JavaScript devem ficar dentro do método `then()` encadeado à chamada de `Office.onReady()`.
+   - *Todas as páginas que chamam APIs na biblioteca Office. js devem primeiro garantir que a biblioteca seja totalmente inicializada.* A melhor maneira de fazer isso é chamando o método `Office.onReady()`. Se o suplemento possuir as próprias tarefas de inicialização, o código deverá ser colocado em um método `then()` encadeado à chamada de `Office.onReady()`. A chamada de `Office.onReady()` deve ser executada antes de qualquer chamada para Office. js; Portanto, a atribuição está em um arquivo de script que é carregado pela página, como nesse caso.
 
     ```js
     (function () {
@@ -817,11 +813,9 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
 
         Office.onReady()
             .then(function() {
-                $(document).ready(function () {  
 
-                    // TODO1: Assign handler to the OK button.
+                // TODO1: Assign handler to the OK button.
 
-                });
             });
 
         // TODO2: Create the OK button handler
@@ -832,58 +826,120 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
 6. Substitua `TODO1` pelo código a seguir. Você criará a função `sendStringToParentPage` na próxima etapa.
 
     ```js
-    $('#ok-button').click(sendStringToParentPage);
+    document.getElementById("ok-button").onclick = sendStringToParentPage;
     ```
 
 7. Substitua `TODO2` pelo código a seguir. O método `messageParent` passa seu parâmetro para a página pai, neste caso, a página no painel de tarefas. O parâmetro pode ser um booliano ou uma cadeia de caracteres, que inclui tudo o que pode ser serializado como uma cadeia de caracteres, como XML ou JSON.
 
     ```js
     function sendStringToParentPage() {
-        var userName = $('#name-box').val();
+        var userName = document.getElementById("name-box").value;
         Office.context.ui.messageParent(userName);
     }
     ```
 
-8. Salve o arquivo.
+> [!NOTE]
+> O arquivo **Popup. html** e o arquivo **Popup. js** que ele carrega, são executados em um processo do Microsoft Edge ou Internet Explorer 11 totalmente separado do painel de tarefas do suplemento. Se o **Popup. js** tiver sido transformado no mesmo arquivo **Bundle. js** como o arquivo **app. js** , o suplemento teria que carregar duas cópias do arquivo **Bundle. js** , o que anula a finalidade do agrupamento. Portanto, esse suplemento não transformará o arquivo **Popup. js** .
 
-   > [!NOTE]
-   > O arquivo Popup. html e o arquivo Popup. js que ele carrega, são executados em um processo do Microsoft Edge ou Internet Explorer 11 totalmente separado do painel de tarefas do suplemento. Se o popup.js foi transcompilado no mesmo arquivo bundle.js que o arquivo app.js, o suplemento precisará carregar duas cópias do arquivo bundle.js, o que anule o propósito do agrupamento. Além disso, o arquivo Popup. js não contém qualquer JavaScript que não tenha suporte do Internet Explorer 11. Por esses dois motivos, esse suplemento não transcompila o popup.js.
+### <a name="update-webpack-config-settings"></a>Atualizar as configurações webpack config
+
+Abra o arquivo **webpack. config. js** no diretório raiz do projeto e complete as etapas a seguir.
+
+1. Localize o objeto `entry` dentro do objeto `config` e adicione uma nova entrada para `popup`.
+
+    ```js
+    popup: "./src/dialogs/popup.js"
+    ```
+
+    Após fazer isso, o novo objeto `entry` ficará assim:
+
+    ```js
+    entry: {
+      polyfill: "@babel/polyfill",
+      taskpane: "./src/taskpane/taskpane.js",
+      commands: "./src/commands/commands.js",
+      popup: "./src/dialogs/popup.js"
+    },
+    ```
+  
+2. Localize a `plugins` matriz dentro do `config` objeto e adicione o seguinte objeto ao final dessa matriz.
+
+    ```js
+    new HtmlWebpackPlugin({
+      filename: "popup.html",
+      template: "./src/dialogs/popup.html",
+      chunks: ["polyfill", "popup"]
+    })
+    ```
+
+    Após fazer isso, a nova matriz `plugins` ficará assim:
+
+    ```js
+    plugins: [
+      new CleanWebpackPlugin(),
+      new HtmlWebpackPlugin({
+        filename: "taskpane.html",
+        template: "./src/taskpane/taskpane.html",
+        chunks: ['polyfill', 'taskpane']
+      }),
+      new CopyWebpackPlugin([
+      {
+        to: "taskpane.css",
+        from: "./src/taskpane/taskpane.css"
+      }
+      ]),
+      new HtmlWebpackPlugin({
+        filename: "commands.html",
+        template: "./src/commands/commands.html",
+        chunks: ["polyfill", "commands"]
+      }),
+      new HtmlWebpackPlugin({
+        filename: "popup.html",
+        template: "./src/dialogs/popup.html",
+        chunks: ["polyfill", "popup"]
+      })
+    ],
+    ```
+
+3. Se o servidor Web local estiver em execução, interrompa-o fechando a janela de comando do nó.
+
+4. Execute o seguinte comando para recriar o projeto.
+
+    ```command&nbsp;line
+    npm run build
+    ```
 
 ### <a name="open-the-dialog-from-the-task-pane"></a>Abra a caixa de diálogo do painel de tarefas
 
-1. Abra o arquivo index.html.
+1. Abra o arquivo **./src/TaskPane/TaskPane.html**.
 
-2. Abaixo do `div` que contém o botão `freeze-header`, adicione a marcação a seguir:
-
-    ```html
-    <div class="padding">
-        <button class="ms-Button" id="open-dialog">Open Dialog</button>
-    </div>
-    ```
-
-3. A caixa de diálogo solicitará que o usuário insira um nome e passará o nome de usuário para o painel de tarefas. O painel de tarefas o exibirá em um rótulo. Imediatamente abaixo do `div` que você adicionou, adicione a marcação a seguir:
+2. Localize o `<button>` elemento do `freeze-header` botão e adicione a seguinte marcação após essa linha:
 
     ```html
-    <div class="padding">
-        <label id="user-name"></label>
-    </div>
+    <button class="ms-Button" id="open-dialog">Open Dialog</button><br/><br/>
     ```
 
-4. Abra o arquivo app.js.
+3. A caixa de diálogo solicitará que o usuário insira um nome e passará o nome de usuário para o painel de tarefas. O painel de tarefas o exibirá em um rótulo. Imediatamente após o `button` que você acabou de adicionar, adicione a marcação a seguir:
 
-5. Abaixo da linha que atribui um identificador de clique ao botão `freeze-header`, adicione o seguinte código. Você criará o método `openDialog` em uma etapa posterior.
+    ```html
+    <label id="user-name"></label><br/><br/>
+    ```
+
+4. Abra o arquivo **./src/TaskPane/TaskPane.js**.
+
+5. Dentro da `Office.onReady` chamada do método, localize a linha que atribui um manipulador de cliques para o `freeze-header` botão e adicione o código a seguir após essa linha. Você criará o método `openDialog` em uma etapa posterior.
 
     ```js
-    $('#open-dialog').click(openDialog);
+    document.getElementById("open-dialog").onclick = openDialog;
     ```
 
-6. Abaixo da função `freezeHeader`, adicione a declaração seguinte. Essa variável é usada para armazenar um objeto no contexto de execução da página pai que atua como um intermediador no contexto de execução da página da caixa de diálogo.
+6. Adicione a seguinte declaração ao final do arquivo. Essa variável é usada para armazenar um objeto no contexto de execução da página pai que atua como um intermediador no contexto de execução da página da caixa de diálogo.
 
     ```js
     var dialog = null;
     ```
 
-7. Abaixo da declaração de `dialog`, adicione a função a seguir. É importante observar o que esse código *não* contém: não há nenhuma chamada de `Excel.run`. Isso ocorre porque a API para abrir uma caixa de diálogo é compartilhada com todos os hosts do Office, portanto, ela faz parte da API de Office JavaScript Common, não da API específica do Excel.
+7. Adicione a função a seguir ao final do arquivo (após a declaração de `dialog`). É importante observar o que esse código *não* contém: não há nenhuma chamada de `Excel.run`. Isso ocorre porque a API para abrir uma caixa de diálogo é compartilhada com todos os hosts do Office, portanto, ela faz parte da API de Office JavaScript Common, não da API específica do Excel.
 
     ```js
     function openDialog() {
@@ -910,7 +966,7 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
 
 ### <a name="process-the-message-from-the-dialog-and-close-the-dialog"></a>Processar a mensagem da caixa de diálogo e depois fechá-la
 
-1. Continue no arquivo app.js e substitua `TODO2` pelo código a seguir. Observação:
+1. Dentro da `openDialog` função no arquivo **./src/TaskPane/TaskPane.js**, substitua `TODO2` pelo código a seguir. Observação:
 
    - O retorno de chamada é executado logo após a caixa de diálogo ser aberta com êxito e antes de o usuário executar qualquer ação nela.
 
@@ -925,37 +981,32 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
     }
     ```
 
-2. Abaixo da função `openDialog`, adicione a função a seguir.
+2. Adicione a seguinte função após a função `openDialog`.
 
     ```js
     function processMessage(arg) {
-        $('#user-name').text(arg.message);
+        document.getElementById("user-name").innerHTML = arg.message;
         dialog.close();
     }
     ```
 
+3. Verifique se você salvou todas as alterações feitas no projeto.
+
 ### <a name="test-the-add-in"></a>Testar o suplemento
 
-1. Se a janela Git bash ou o prompt de sistema habilitado para Node.JS do tutorial anterior ainda estiverem abertos, digite **Ctrl + C** duas vezes para interromper a execução do servidor Web. Caso contrário, abra uma janela Git bash ou um prompt de sistema habilitado para Node.JS e navegue até a pasta **Iniciar** do projeto.
+1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-     > [!NOTE]
-     > Embora o servidor de sincronização do navegador recarregue o suplemento no painel de tarefas sempre que você fizer uma alteração em algum arquivo, incluindo o arquivo app.js, ele não transcompila o JavaScript, portanto, é necessário repetir o comando de compilação para que as alterações em app.js as entrem em vigor. Para fazer isso, interrompa o processo do servidor para obter uma solicitação para inserir o comando de compilação. Após a compilação, reinicie o servidor. As próximas etapas executam esse processo.
+2. Se o painel de tarefas do suplemento ainda não estiver aberto no Excel, vá para a guia **página inicial** e escolha o botão **Mostrar painel de tarefas** na faixa de opções para abri-lo.
 
-2. Execute o comando `npm run build` para transcompilar seu código-fonte do ES6 para uma versão anterior do JavaScript que é suportada pelo Internet Explorer (que é usada por algumas versões do Excel para executar suplementos do Excel).
+3. Escolha o botão **Abrir Caixa de Diálogo** no painel de tarefas.
 
-3. Execute o comando `npm start` para iniciar um servidor Web em um localhost.
+4. Quando a caixa de diálogo estiver aberta, arraste-a e redimensione-a. Observe que você pode interagir com a planilha e pressionar outros botões no painel de tarefas. No entanto, não é possível iniciar uma segunda caixa de diálogo na mesma página do painel de tarefas.
 
-4. Feche o painel de tarefas para recarregá-lo e, no menu **Início**, selecione **Mostrar Painel de Tarefas** para reabrir o suplemento.
+5. Na caixa de diálogo, insira um nome e escolha o botão **OK** . O nome aparecerá no painel de tarefas e a caixa de diálogo será fechada.
 
-5. Escolha o botão **Abrir Caixa de Diálogo** no painel de tarefas.
+6. Opcionalmente, comente a linha `dialog.close();` na função `processMessage`. Em seguida, repita as etapas desta seção. A caixa de diálogo permanece aberta e você pode alterar o nome. É possível fechá-la manualmente pressionando o botão **X** no canto superior direito.
 
-6. Quando a caixa de diálogo estiver aberta, arraste-a e redimensione-a. Observe que você pode interagir com a planilha e pressionar outros botões no painel de tarefas. No entanto, não é possível iniciar uma segunda caixa de diálogo na mesma página do painel de tarefas.
-
-7. Na caixa de diálogo, digite um nome e escolha **OK**. O nome aparecerá no painel de tarefas e a caixa de diálogo será fechada.
-
-8. Opcionalmente, comente a linha `dialog.close();` na função `processMessage`. Em seguida, repita as etapas desta seção. A caixa de diálogo permanece aberta e você pode alterar o nome. É possível fechá-la manualmente pressionando o botão **X** no canto superior direito.
-
-    ![Tutorial do Excel - Caixa de diálogo](../images/excel-tutorial-dialog-open.png)
+    ![Tutorial do Excel - Caixa de diálogo](../images/excel-tutorial-dialog-open-2.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 

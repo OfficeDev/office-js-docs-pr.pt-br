@@ -1,15 +1,15 @@
 ---
 title: Tutorial de funções personalizadas do Excel
 description: Neste tutorial, você criará um suplemento do Excel que contém uma função personalizada que pode executar cálculos e solicitar ou transmitir dados da web.
-ms.date: 09/06/2019
+ms.date: 09/18/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: d7af566d228c3b4da87be2d3d8bfba049f8b5509
-ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
+ms.openlocfilehash: 4481d63cc167c2ce05ec70331ccd7fd472d7846b
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "36782265"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035445"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Tutorial: Criar funções personalizadas no Excel
 
@@ -32,11 +32,7 @@ Neste tutorial, você vai:
 
  Para começar, você criará o projeto de código para criar o suplemento função personalizada. O [gerador Yeoman para suplementos do Office](https://www.npmjs.com/package/generator-office) configurará seu projeto com algumas funções personalizadas predefinidas que você pode experimentar. Se você já tiver executado o início rápido de funções personalizadas e gerado um projeto, continue a usar esse projeto e pule para [esta etapa](#create-a-custom-function-that-requests-data-from-the-web) .
 
-1. Execute o comando a seguir e responda aos prompts da seguinte forma.
-    
-    ```command&nbsp;line
-    yo office
-    ```
+1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
     
     * **Escolha o tipo de projeto:** `Excel Custom Functions Add-in project`
     * **Escolha o tipo de script:** `JavaScript`
@@ -45,6 +41,8 @@ Neste tutorial, você vai:
     ![O gerador Yeoman para suplementos do Office solicita funções personalizadas](../images/starcountPrompt.png)
     
     O gerador Yeoman criará os arquivos do projeto e instalará os componentes Node de suporte.
+
+    [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 2. Navegue até a pasta raiz do projeto.
     
