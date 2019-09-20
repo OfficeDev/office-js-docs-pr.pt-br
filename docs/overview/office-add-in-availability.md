@@ -3,12 +3,12 @@ title: Disponibilidade de host e plataforma para suplementos do Office
 description: Conjuntos de requisitos com suporte para o Excel, OneNote, Outlook, PowerPoint, Project e Word.
 ms.date: 08/13/2019
 localization_priority: Priority
-ms.openlocfilehash: 1e368fe21a1bcdb2a7f44c88ce8e881605fa96f2
-ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
+ms.openlocfilehash: a3c580f32ad7cd384309a9b53e55ea488a470a90
+ms.sourcegitcommit: f781d7cfd980cd866d6d1d00c5b9d16c8a4b7f9b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "36395649"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "37053323"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilidade de host e plataforma para suplementos do Office
 
@@ -164,8 +164,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
   <tr>
     <td>Office no iPad<br>(conectado à assinatura do Office 365)</td>
     <td>- TaskPane<br>
-        - Conteúdo<br>
-        - Funções personalizadas</td>
+        - Conteúdo</td>
     <td>- <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-1-requirement-set">ExcelApi 1.1</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-2-requirement-set">ExcelApi 1.2</a><br>
         - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-3-requirement-set">ExcelApi 1.3</a><br>
