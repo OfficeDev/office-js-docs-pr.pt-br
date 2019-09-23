@@ -1,53 +1,51 @@
 ---
 title: Criar um suplemento do painel de tarefas do Excel usando o Angular
 description: ''
-ms.date: 09/06/2019
+ms.date: 09/18/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: ed805cf5d19a38d543b7fcbba49508dd3f2d6d97
-ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
+ms.openlocfilehash: 4c2cfb061dff9b5eb24642facdcb9996432d873b
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "36782251"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035270"
 ---
-# <a name="build-an-excel-task-pane-add-in-using-angular"></a><span data-ttu-id="a4df0-102">Criar um suplemento do painel de tarefas do Excel usando o Angular</span><span class="sxs-lookup"><span data-stu-id="a4df0-102">Build an Excel task pane add-in using Angular</span></span>
+# <a name="build-an-excel-task-pane-add-in-using-angular"></a><span data-ttu-id="633a4-102">Criar um suplemento do painel de tarefas do Excel usando o Angular</span><span class="sxs-lookup"><span data-stu-id="633a4-102">Build an Excel task pane add-in using Angular</span></span>
 
-<span data-ttu-id="a4df0-103">Neste artigo, você passará pelo processo de criação de um suplemento do painel de tarefas do Excel usando o Angular e a API JavaScript do Excel.</span><span class="sxs-lookup"><span data-stu-id="a4df0-103">In this article, you'll walk through the process of building an Excel task pane add-in using Angular and the Excel JavaScript API.</span></span>
+<span data-ttu-id="633a4-103">Neste artigo, você passará pelo processo de criação de um suplemento do painel de tarefas do Excel usando o Angular e a API JavaScript do Excel.</span><span class="sxs-lookup"><span data-stu-id="633a4-103">In this article, you'll walk through the process of building an Excel task pane add-in using Angular and the Excel JavaScript API.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="a4df0-104">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="a4df0-104">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="633a4-104">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="633a4-104">Prerequisites</span></span>
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-## <a name="create-the-add-in-project"></a><span data-ttu-id="a4df0-105">Criar o projeto do suplemento</span><span class="sxs-lookup"><span data-stu-id="a4df0-105">Create the add-in project</span></span>
+## <a name="create-the-add-in-project"></a><span data-ttu-id="633a4-105">Criar o projeto do suplemento</span><span class="sxs-lookup"><span data-stu-id="633a4-105">Create the add-in project</span></span>
 
-<span data-ttu-id="a4df0-106">Use o gerador Yeoman para criar um projeto de suplemento do Excel.</span><span class="sxs-lookup"><span data-stu-id="a4df0-106">Use the Yeoman generator to create an Excel add-in project.</span></span> <span data-ttu-id="a4df0-107">Execute o comando a seguir e responda aos prompts da seguinte forma:</span><span class="sxs-lookup"><span data-stu-id="a4df0-107">Run the following command and then answer the prompts as follows:</span></span>
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-```command&nbsp;line
-yo office
-```
-
-- <span data-ttu-id="a4df0-108">**Escolha o tipo de projeto:** `Office Add-in Task Pane project using Angular framework`</span><span class="sxs-lookup"><span data-stu-id="a4df0-108">**Choose a project type:** `Office Add-in Task Pane project using Angular framework`</span></span>
-- <span data-ttu-id="a4df0-109">**Escolha o tipo de script:** `TypeScript`</span><span class="sxs-lookup"><span data-stu-id="a4df0-109">**Choose a script type:** `TypeScript`</span></span>
-- <span data-ttu-id="a4df0-110">**Qual será o nome do suplemento?**</span><span class="sxs-lookup"><span data-stu-id="a4df0-110">**What do you want to name your add-in?**</span></span> `My Office Add-in`
-- <span data-ttu-id="a4df0-111">**Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?**</span><span class="sxs-lookup"><span data-stu-id="a4df0-111">**Which Office client application would you like to support?**</span></span> `Excel`
+- <span data-ttu-id="633a4-106">**Escolha o tipo de projeto:** `Office Add-in Task Pane project using Angular framework`</span><span class="sxs-lookup"><span data-stu-id="633a4-106">**Choose a project type:** `Office Add-in Task Pane project using Angular framework`</span></span>
+- <span data-ttu-id="633a4-107">**Escolha o tipo de script:** `TypeScript`</span><span class="sxs-lookup"><span data-stu-id="633a4-107">**Choose a script type:** `TypeScript`</span></span>
+- <span data-ttu-id="633a4-108">**Qual será o nome do suplemento?**</span><span class="sxs-lookup"><span data-stu-id="633a4-108">**What do you want to name your add-in?**</span></span> `My Office Add-in`
+- <span data-ttu-id="633a4-109">**Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?**</span><span class="sxs-lookup"><span data-stu-id="633a4-109">**Which Office client application would you like to support?**</span></span> `Excel`
 
 ![Gerador do Yeoman](../images/yo-office-excel-angular-2.png)
 
-<span data-ttu-id="a4df0-113">Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.</span><span class="sxs-lookup"><span data-stu-id="a4df0-113">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
+<span data-ttu-id="633a4-111">Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.</span><span class="sxs-lookup"><span data-stu-id="633a4-111">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
 
-## <a name="explore-the-project"></a><span data-ttu-id="a4df0-114">Explore o projeto</span><span class="sxs-lookup"><span data-stu-id="a4df0-114">Explore the project</span></span>
+[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
-<span data-ttu-id="a4df0-115">O projeto de suplemento que você criou com o gerador do Yeoman contém um exemplo de código para um suplemento de painel de tarefas bem básico.</span><span class="sxs-lookup"><span data-stu-id="a4df0-115">The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in.</span></span> <span data-ttu-id="a4df0-116">Se você quiser examinar os principais componentes do seu projeto de suplemento, abra o projeto no seu editor de código e revise os arquivos listados abaixo.</span><span class="sxs-lookup"><span data-stu-id="a4df0-116">If you'd like to explore the key components of your add-in project, open the project in your code editor and review the files listed below.</span></span> <span data-ttu-id="a4df0-117">Quando estiver pronto para experimentar o suplemento, prossiga para a próxima seção.</span><span class="sxs-lookup"><span data-stu-id="a4df0-117">When you're ready to try out your add-in, proceed to the next section.</span></span>
+## <a name="explore-the-project"></a><span data-ttu-id="633a4-112">Explore o projeto</span><span class="sxs-lookup"><span data-stu-id="633a4-112">Explore the project</span></span>
 
-- <span data-ttu-id="a4df0-118">O arquivo **manifest.xml** no diretório raiz do projeto define as configurações e os recursos do suplemento.</span><span class="sxs-lookup"><span data-stu-id="a4df0-118">The **manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.</span></span>
-- <span data-ttu-id="a4df0-119">O arquivo **./src/taskpane/app/app.component.html** contém a marcação HTML do painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="a4df0-119">The **./src/taskpane/app/app.component.html** file contains the HTML markup for the task pane.</span></span>
-- <span data-ttu-id="a4df0-120">O arquivo **./src/taskpane/taskpane.css** contém o CSS que é aplicado ao conteúdo no painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="a4df0-120">The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.</span></span>
-- <span data-ttu-id="a4df0-121">O arquivo **./src/taskpane/app/app.component.ts** contém o código da API JavaScript do Office que facilita a interação entre o painel de tarefas e o Excel.</span><span class="sxs-lookup"><span data-stu-id="a4df0-121">The **./src/taskpane/app/app.component.ts** file contains the Office JavaScript API code that facilitates interaction between the task pane and Excel.</span></span>
+<span data-ttu-id="633a4-113">O projeto de suplemento que você criou com o gerador do Yeoman contém um exemplo de código para um suplemento de painel de tarefas bem básico.</span><span class="sxs-lookup"><span data-stu-id="633a4-113">The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in.</span></span> <span data-ttu-id="633a4-114">Se você quiser examinar os principais componentes do seu projeto de suplemento, abra o projeto no seu editor de código e revise os arquivos listados abaixo.</span><span class="sxs-lookup"><span data-stu-id="633a4-114">If you'd like to explore the key components of your add-in project, open the project in your code editor and review the files listed below.</span></span> <span data-ttu-id="633a4-115">Quando estiver pronto para experimentar o suplemento, prossiga para a próxima seção.</span><span class="sxs-lookup"><span data-stu-id="633a4-115">When you're ready to try out your add-in, proceed to the next section.</span></span>
 
-## <a name="try-it-out"></a><span data-ttu-id="a4df0-122">Experimente</span><span class="sxs-lookup"><span data-stu-id="a4df0-122">Try it out</span></span>
+- <span data-ttu-id="633a4-116">O arquivo **manifest.xml** no diretório raiz do projeto define as configurações e os recursos do suplemento.</span><span class="sxs-lookup"><span data-stu-id="633a4-116">The **manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.</span></span>
+- <span data-ttu-id="633a4-117">O arquivo **./src/taskpane/app/app.component.html** contém a marcação HTML do painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="633a4-117">The **./src/taskpane/app/app.component.html** file contains the HTML markup for the task pane.</span></span>
+- <span data-ttu-id="633a4-118">O arquivo **./src/taskpane/taskpane.css** contém o CSS que é aplicado ao conteúdo no painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="633a4-118">The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.</span></span>
+- <span data-ttu-id="633a4-119">O arquivo **./src/taskpane/app/app.component.ts** contém o código da API JavaScript do Office que facilita a interação entre o painel de tarefas e o Excel.</span><span class="sxs-lookup"><span data-stu-id="633a4-119">The **./src/taskpane/app/app.component.ts** file contains the Office JavaScript API code that facilitates interaction between the task pane and Excel.</span></span>
 
-1. <span data-ttu-id="a4df0-123">Navegue até a pasta raiz do projeto.</span><span class="sxs-lookup"><span data-stu-id="a4df0-123">Navigate to the root folder of the project.</span></span>
+## <a name="try-it-out"></a><span data-ttu-id="633a4-120">Experimente</span><span class="sxs-lookup"><span data-stu-id="633a4-120">Try it out</span></span>
+
+1. <span data-ttu-id="633a4-121">Navegue até a pasta raiz do projeto.</span><span class="sxs-lookup"><span data-stu-id="633a4-121">Navigate to the root folder of the project.</span></span>
 
     ```command&nbsp;line
     cd "My Office Add-in"
@@ -55,26 +53,26 @@ yo office
 
 2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
 
-3. <span data-ttu-id="a4df0-124">No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="a4df0-124">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+3. <span data-ttu-id="633a4-122">No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="633a4-122">In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![Botão do suplemento do Excel](../images/excel-quickstart-addin-3b.png)
 
-4. <span data-ttu-id="a4df0-126">Selecione um intervalo de células na planilha.</span><span class="sxs-lookup"><span data-stu-id="a4df0-126">Select any range of cells in the worksheet.</span></span>
+4. <span data-ttu-id="633a4-124">Selecione um intervalo de células na planilha.</span><span class="sxs-lookup"><span data-stu-id="633a4-124">Select any range of cells in the worksheet.</span></span>
 
-5. <span data-ttu-id="a4df0-127">Na parte inferior do painel de tarefas, escolha o link **Executar** para definir a cor do intervalo selecionado como amarelo.</span><span class="sxs-lookup"><span data-stu-id="a4df0-127">At the bottom of the task pane, choose the **Run** link to set the color of the selected range to yellow.</span></span>
+5. <span data-ttu-id="633a4-125">Na parte inferior do painel de tarefas, escolha o link **Executar** para definir a cor do intervalo selecionado como amarelo.</span><span class="sxs-lookup"><span data-stu-id="633a4-125">At the bottom of the task pane, choose the **Run** link to set the color of the selected range to yellow.</span></span>
 
     ![Suplemento do Excel](../images/excel-quickstart-addin-3c.png)
 
-## <a name="next-steps"></a><span data-ttu-id="a4df0-129">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="a4df0-129">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="633a4-127">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="633a4-127">Next steps</span></span>
 
-<span data-ttu-id="a4df0-130">Parabéns, você criou com êxito um suplemento do painel de tarefas do Excel usando o Angular!</span><span class="sxs-lookup"><span data-stu-id="a4df0-130">Congratulations, you've successfully created an Excel task pane add-in using Angular!</span></span> <span data-ttu-id="a4df0-131">Em seguida, saiba mais sobre os recursos de um suplemento do Excel e crie um suplemento mais complexo seguindo as etapas deste tutorial de suplemento do Excel.</span><span class="sxs-lookup"><span data-stu-id="a4df0-131">Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.</span></span>
+<span data-ttu-id="633a4-128">Parabéns, você criou com êxito um suplemento do painel de tarefas do Excel usando o Angular!</span><span class="sxs-lookup"><span data-stu-id="633a4-128">Congratulations, you've successfully created an Excel task pane add-in using Angular!</span></span> <span data-ttu-id="633a4-129">Em seguida, saiba mais sobre os recursos de um suplemento do Excel e crie um suplemento mais complexo seguindo as etapas deste tutorial de suplemento do Excel.</span><span class="sxs-lookup"><span data-stu-id="633a4-129">Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="a4df0-132">Tutorial de suplemento do Excel</span><span class="sxs-lookup"><span data-stu-id="a4df0-132">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial.md)
+> [<span data-ttu-id="633a4-130">Tutorial de suplemento do Excel</span><span class="sxs-lookup"><span data-stu-id="633a4-130">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial.md)
 
-## <a name="see-also"></a><span data-ttu-id="a4df0-133">Confira também</span><span class="sxs-lookup"><span data-stu-id="a4df0-133">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="633a4-131">Confira também</span><span class="sxs-lookup"><span data-stu-id="633a4-131">See also</span></span>
 
-* [<span data-ttu-id="a4df0-134">Tutorial de suplemento do Excel</span><span class="sxs-lookup"><span data-stu-id="a4df0-134">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial-create-table.md)
-* [<span data-ttu-id="a4df0-135">Conceitos fundamentais de programação com a API JavaScript do Excel</span><span class="sxs-lookup"><span data-stu-id="a4df0-135">Fundamental programming concepts with the Excel JavaScript API</span></span>](../excel/excel-add-ins-core-concepts.md)
-* [<span data-ttu-id="a4df0-136">Exemplos de código do suplemento do Excel</span><span class="sxs-lookup"><span data-stu-id="a4df0-136">Excel add-in code samples</span></span>](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [<span data-ttu-id="a4df0-137">Referência da API JavaScript do Excel</span><span class="sxs-lookup"><span data-stu-id="a4df0-137">Excel JavaScript API reference</span></span>](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [<span data-ttu-id="633a4-132">Tutorial de suplemento do Excel</span><span class="sxs-lookup"><span data-stu-id="633a4-132">Excel add-in tutorial</span></span>](../tutorials/excel-tutorial-create-table.md)
+* [<span data-ttu-id="633a4-133">Conceitos fundamentais de programação com a API JavaScript do Excel</span><span class="sxs-lookup"><span data-stu-id="633a4-133">Fundamental programming concepts with the Excel JavaScript API</span></span>](../excel/excel-add-ins-core-concepts.md)
+* [<span data-ttu-id="633a4-134">Exemplos de código do suplemento do Excel</span><span class="sxs-lookup"><span data-stu-id="633a4-134">Excel add-in code samples</span></span>](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [<span data-ttu-id="633a4-135">Referência da API JavaScript do Excel</span><span class="sxs-lookup"><span data-stu-id="633a4-135">Excel JavaScript API reference</span></span>](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
