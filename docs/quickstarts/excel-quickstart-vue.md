@@ -1,15 +1,15 @@
 ---
 title: Criar um suplemento do painel de tarefas do Excel usando o Vue
 description: ''
-ms.date: 09/04/2019
+ms.date: 09/18/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 9947852a586570345ba9f3dfe09340af6d01ace6
-ms.sourcegitcommit: 78998a9f0ebb81c4dd2b77574148b16fe6725cfc
+ms.openlocfilehash: bcd4f84ce6d09db813c643d2cac8fcc5ce5f76c3
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "36715624"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035298"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>Criar um suplemento do painel de tarefas do Excel usando o Vue
 
@@ -41,23 +41,31 @@ Cada suplemento requer um arquivo de manifesto para definir os recursos e config
 
 1. Navegue até a pasta do seu aplicativo.
 
-   ```command&nbsp;line
-   cd my-add-in
-   ```
+    ```command&nbsp;line
+    cd my-add-in
+    ```
 
-2. Use o gerador do Yeoman para gerar o arquivo de manifesto para o seu suplemento. Execute o comando a seguir e responda aos prompts conforme mostrado abaixo.
+2. Use o gerador Yeoman para gerar o arquivo de manifesto para o seu suplemento executando o seguinte comando:
 
-   ```command&nbsp;line
-   yo office
-   ```
+    ```command&nbsp;line
+    yo office
+    ```
 
-   ![Gerador do Yeoman](../images/yo-office-manifest-only-vue.png)
+    > [!NOTE]
+    > Ao executar o comando `yo office`, você receberá informações sobre as políticas de coleta de dados de Yeoman e as ferramentas da CLI do suplemento do Office. Use as informações fornecidas para responder às solicitações como achar melhor. Se você escolher **Sair** em resposta à segunda solicitação, será necessário executar o comando `yo office` novamente quando estiver pronto para criar seu projeto de suplemento.
 
-   - **Escolha o tipo de projeto:** `Office Add-in project containing the manifest only`
-   - **Qual será o nome do suplemento?** `my-office-add-in`
-   - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Excel`
+    Quando solicitado, forneça as seguintes informações para criar seu projeto de suplemento:
 
-Após concluir o assistente, uma pasta `my-office-add-in` será criada, contendo um arquivo `manifest.xml`. Você usará o manifesto para sideload e testar seu suplemento no final do início rápido.
+    - **Escolha o tipo de projeto:** `Office Add-in project containing the manifest only`
+    - **Qual será o nome do suplemento?** `my-office-add-in`
+    - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Excel`
+
+    ![Gerador do Yeoman](../images/yo-office-manifest-only-vue.png)
+
+Após concluir o assistente, uma pasta `my-office-add-in` será criada, contendo um arquivo `manifest.xml`. Você usará o manifesto para sideload e testará seu suplemento no final do início rápido.
+
+> [!TIP]
+> Você pode ignorar as orientações da *próximas etapas* fornecidas pelo gerador Yeoman após a criação do projeto de suplemento. As instruções passo a passo deste artigo fornecem todas as orientações necessárias para concluir este tutorial.
 
 ## <a name="secure-the-app"></a>Proteger o aplicativo
 

@@ -1,14 +1,14 @@
 ---
 title: Validar e solucionar problemas com seu manifesto
 description: Use estes métodos para validar o manifesto de suplementos do Office
-ms.date: 08/15/2019
+ms.date: 09/18/2019
 localization_priority: Priority
-ms.openlocfilehash: bf70aca68135073ed92d2e4d2c176b944836c7ad
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: c320c05b944bba9e24a4d3c0e5ef514ac13cc3c6
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477919"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035333"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>Validar e solucionar problemas com seu manifesto
 
@@ -65,12 +65,10 @@ Você pode usar o log de tempo de execução para depurar o manifesto do seu sup
 > [!NOTE]
 > O recurso de log de tempo de execução está atualmente disponível para o Office 2016 para área de trabalho.
 
-### <a name="to-turn-on-runtime-logging"></a>Para ativar o log de tempo de execução
-
 > [!IMPORTANT]
-> O log do tempo de execução afeta o desempenho. Ative-o somente quando precisar depurar problemas com seu manifesto de suplemento.
+> o log do tempo de execução afeta o desempenho. Ative-o somente quando precisar depurar problemas com o manifesto do suplemento.
 
-Para ativar o log de tempo de execução:
+### <a name="runtime-logging-on-windows"></a>Log de tempo de execução no Windows
 
 1. Verifique se você está executando o Office 2016 para área de trabalho na compilação **16.0.7019** ou posterior. 
 
@@ -89,6 +87,47 @@ Para ativar o log de tempo de execução:
 A imagem a seguir mostra qual deve ser a aparência do registro. Para desativar o recurso, remova a chave do registro `RuntimeLogging`. 
 
 ![Captura de tela do editor do registro com uma chave de registro RuntimeLogging](http://i.imgur.com/Sa9TyI6.png)
+
+### <a name="runtime-logging-on-mac"></a>Log de tempo de execução no Mac
+
+1. Verifique se você está executando o build de área de trabalho do Office 2016 **16.27** (19071500) ou posterior.
+
+2. Abra o **Terminal** e defina uma preferência de log de tempo de execução usando o comando `defaults`:
+    
+    ```command&nbsp;line
+    defaults write <bundle id> CEFRuntimeLoggingFile -string <file_name>
+    ```
+
+    `<bundle id>` identifica quais hosts devem ser habilitados no log de tempo de execução. `<file_name>` é o nome do arquivo de texto no qual o log será gravado.
+
+    Defina `<bundle id>` para um dos seguintes valores para habilitar o log de tempo de execução do host correspondente:
+
+    - `com.microsoft.Word`
+    - `com.microsoft.Excel`
+    - `com.microsoft.Powerpoint`
+    - `com.microsoft.Outlook`
+
+O exemplo a seguir habilita o log de tempo de execução do Word e, em seguida, abre o arquivo de log:
+
+```command&nbsp;line
+defaults write com.microsoft.Word CEFRuntimeLoggingFile -string "runtime_logs.txt"
+open ~/library/Containers/com.microsoft.Word/Data/runtime_logs.txt
+```
+
+> [!NOTE] 
+> Será preciso reiniciar o Office depois de executar o comando `defaults` para habilitar o log de tempo de execução.
+
+Para desativar o log de tempo de execução, use o comando `defaults delete`:
+
+```command&nbsp;line
+defaults delete <bundle id> CEFRuntimeLoggingFile
+```
+
+O exemplo a seguir desabilitará o log de tempo de execução do Word:
+
+```command&nbsp;line
+defaults delete com.microsoft.Word CEFRuntimeLoggingFile
+```
 
 ### <a name="to-troubleshoot-issues-with-your-manifest"></a>Para solucionar problemas com o manifesto
 
