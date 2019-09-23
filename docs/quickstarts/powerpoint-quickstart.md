@@ -1,15 +1,15 @@
 ---
 title: Crie o seu primeiro suplemento do painel de tarefas do PowerPoint
 description: Saiba como criar um Suplemento do PowerPoint simples usando a API JS do Office.
-ms.date: 09/06/2019
+ms.date: 09/18/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 93ce98921ea429778505577575eef0f992be93f1
-ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
+ms.openlocfilehash: 62e11129a35a802b8f4088a93687d631c0af2ff4
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "36782244"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035312"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>Crie o seu primeiro suplemento do painel de tarefas do PowerPoint
 
@@ -27,11 +27,7 @@ Neste artigo, você passará pelo processo de criação de um suplemento do pain
 
 ### <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
-Use o gerador Yeoman para criar um projeto do suplemento do PowerPoint. Execute o comando a seguir e responda aos prompts da seguinte forma:
-
-```command&nbsp;line
-yo office
-```
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **Escolha o tipo de projeto:** `Office Add-in Task Pane project`
 - **Escolha o tipo de script:** `Javascript`
@@ -41,6 +37,8 @@ yo office
 ![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-powerpoint.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
+
+[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 ### <a name="explore-the-project"></a>Explore o projeto
 

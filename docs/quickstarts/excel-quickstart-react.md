@@ -1,15 +1,15 @@
 ---
 title: Criar um suplemento do painel de tarefas do Excel usando o React
 description: ''
-ms.date: 09/06/2019
+ms.date: 09/18/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 40ecd0f29ab37df56a8d4456ced0b13f8fdc837b
-ms.sourcegitcommit: ce7e7087a4550b9c090dc565fee5eac08a2985a2
+ms.openlocfilehash: 1fdc9b9ab3f111414cb114e11f39794c39443918
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "36782272"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035291"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-react"></a>Criar um suplemento do painel de tarefas do Excel usando o React
 
@@ -21,11 +21,7 @@ Neste artigo, você passará pelo processo de criar um suplemento do painel de t
 
 ## <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
-Use o gerador Yeoman para criar um projeto de suplemento do Excel. Execute o comando a seguir e responda aos prompts da seguinte forma:
-
-```command&nbsp;line
-yo office
-```
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **Escolha o tipo de projeto:** `Office Add-in Task Pane project using React framework`
 - **Escolha o tipo de script:** `TypeScript`
@@ -35,6 +31,8 @@ yo office
 ![Gerador do Yeoman](../images/yo-office-excel-react-2.png)
 
 Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
+
+[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 ## <a name="explore-the-project"></a>Explore o projeto
 
