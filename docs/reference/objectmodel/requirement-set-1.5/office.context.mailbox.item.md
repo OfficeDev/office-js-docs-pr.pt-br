@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox.item - conjunto de requisitos 1.5
 description: ''
-ms.date: 08/08/2019
+ms.date: 09/23/2019
 localization_priority: Priority
-ms.openlocfilehash: bd4c8a8e376639da5504ea696bf5ae7f7fed8e99
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: a76440c2353483d0754aa0ba2fed98f051bc1c6f
+ms.sourcegitcommit: 3c84fe6302341668c3f9f6dd64e636a97d03023c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696131"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "37167365"
 ---
 # <a name="item"></a>item
 
@@ -1639,7 +1639,7 @@ Se não houver seleção, mas o cursor estiver no corpo ou no assunto, o método
 |Requisito| Valor|
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.2|
-|[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadWriteItem|
+|[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever|
 
 ##### <a name="returns"></a>Retorna:
