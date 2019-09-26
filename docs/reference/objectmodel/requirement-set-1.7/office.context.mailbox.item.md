@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Item-conjunto de requisitos 1,7
 description: ''
-ms.date: 08/08/2019
+ms.date: 09/23/2019
 localization_priority: Normal
-ms.openlocfilehash: ec990b79ef1f1daaa0bdedc77688a927c1a87e23
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 9667ccfea2a27a543ead6df98b24bfa4ca233af4
+ms.sourcegitcommit: 3c84fe6302341668c3f9f6dd64e636a97d03023c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36695970"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "37167323"
 ---
 # <a name="item"></a>item
 
@@ -758,7 +758,7 @@ console.log("Organizer: " + organizerName + " (" + organizerAddress + ")");
 
 ##### <a name="compose-mode"></a>Modo de redação
 
-A `organizer` propriedade retorna um [](/javascript/api/outlook/office.organizer?view=outlook-js-1.7) objeto organizador que fornece um método para obter o valor do organizador.
+A `organizer` propriedade retorna um objeto [organizador](/javascript/api/outlook/office.organizer?view=outlook-js-1.7) que fornece um método para obter o valor do organizador.
 
 ```js
 Office.context.mailbox.item.organizer.getAsync(
@@ -785,11 +785,11 @@ Office.context.mailbox.item.organizer.getAsync(
 ---
 ---
 
-#### <a name="nullable-recurrence-recurrencejavascriptapioutlookofficerecurrenceviewoutlook-js-17"></a>(anulável) recorrência [](/javascript/api/outlook/office.recurrence?view=outlook-js-1.7) : recorrência
+#### <a name="nullable-recurrence-recurrencejavascriptapioutlookofficerecurrenceviewoutlook-js-17"></a>(anulável) recorrência: [recorrência](/javascript/api/outlook/office.recurrence?view=outlook-js-1.7)
 
 Obtém ou define o padrão de recorrência de um compromisso. Obtém o padrão de recorrência de uma solicitação de reunião. Modos de leitura e redação para itens de compromisso. Modo de leitura para itens de solicitação de reunião.
 
-A `recurrence` propriedade retorna um [](/javascript/api/outlook/office.recurrence?view=outlook-js-1.7) objeto de recorrência para compromissos recorrentes ou solicitações de reuniões se um item for uma série ou uma instância em uma série. `null`é retornado para compromissos únicos e solicitações de reunião de compromissos únicos. `undefined`é retornado para mensagens que não são solicitações de reunião.
+A `recurrence` propriedade retorna um objeto de [recorrência](/javascript/api/outlook/office.recurrence?view=outlook-js-1.7) para compromissos recorrentes ou solicitações de reuniões se um item for uma série ou uma instância em uma série. `null`é retornado para compromissos únicos e solicitações de reunião de compromissos únicos. `undefined`é retornado para mensagens que não são solicitações de reunião.
 
 > Observação: as solicitações de reunião `itemClass` têm um valor IPM. Schedule. Meeting. Request.
 
@@ -1821,7 +1821,7 @@ Se não houver seleção, mas o cursor estiver no corpo ou no assunto, o método
 |Requisito|Valor|
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.2|
-|[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadWriteItem|
+|[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)|Escrever|
 
 ##### <a name="returns"></a>Retorna:
@@ -1868,7 +1868,7 @@ Obtém as entidades encontradas em uma correspondência realçada que um usuári
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.6|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)|Read|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)|Read|
 
 ##### <a name="returns"></a>Retorna:
 
@@ -1925,7 +1925,7 @@ Se você especificar uma regra `ItemHasRegularExpressionMatch` na propriedade do
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.6|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)|Read|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)|Read|
 
 ##### <a name="returns"></a>Retorna:
 
