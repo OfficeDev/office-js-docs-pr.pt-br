@@ -3,12 +3,12 @@ title: Trabalhar com intervalos usando a API JavaScript do Excel (fundamental)
 description: ''
 ms.date: 04/30/2019
 localization_priority: Priority
-ms.openlocfilehash: b434042be7328a6598d46716f2b7020e5972823e
-ms.sourcegitcommit: 47b792755e655043d3db2f1fdb9a1eeb7453c636
+ms.openlocfilehash: c90ce16eeed731bcee025c4c61df1bd818b3dd6f
+ms.sourcegitcommit: c8914ce0f48a0c19bbfc3276a80d090bb7ce68e1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33620395"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "37235334"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Trabalhar com intervalos usando a API JavaScript do Excel
 
@@ -495,7 +495,7 @@ Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
 
     var range = sheet.getRange("B2:E2");
-    range.format.fill.color = "#4472C4";;
+    range.format.fill.color = "#4472C4";
     range.format.font.color = "white";
 
     return context.sync();
