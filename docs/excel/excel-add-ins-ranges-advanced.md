@@ -1,14 +1,14 @@
 ---
 title: Trabalhar com intervalos usando a API JavaScript do Excel (avançado)
 description: ''
-ms.date: 04/30/2019
+ms.date: 09/18/2019
 localization_priority: Normal
-ms.openlocfilehash: c8fbe1dcc75080c932b4c3e2946fe62747d35c6b
-ms.sourcegitcommit: 1c7e555733ee6d5a08e444a3c4c16635d998e032
+ms.openlocfilehash: d260ee6140d0153b426e530304e95025dc235b74
+ms.sourcegitcommit: c8914ce0f48a0c19bbfc3276a80d090bb7ce68e1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "36395593"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "37235327"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Trabalhar com intervalos usando a API JavaScript do Excel (avançado)
 
@@ -64,11 +64,11 @@ Seu suplemento terá que formatar os intervalos para exibir as datas em um forma
 
 ## <a name="work-with-multiple-ranges-simultaneously"></a>Trabalhar com vários intervalos simultaneamente
 
-O `RangeAreas` objeto permite ao suplemento executar operações em vários intervalos de uma só vez. Esses intervalos poderão ser contíguos, mas não precisam ser. `RangeAreas` são descritas ainda mais no artigo [Trabalhar com vários intervalos simultaneamente em suplementos do Excel](excel-add-ins-multiple-ranges.md).
+O objeto [RangeAreas](/javascript/api/excel/excel.rangeareas) permite que o suplemento realize operações em vários intervalos de uma só vez. Esses intervalos poderão ser contíguos, mas não precisam ser. `RangeAreas` são descritas ainda mais no artigo [Trabalhar com vários intervalos simultaneamente em suplementos do Excel](excel-add-ins-multiple-ranges.md).
 
 ## <a name="find-special-cells-within-a-range"></a>Localizar células especiais em um intervalo
 
-As `Range.getSpecialCells()` e `Range.getSpecialCellsOrNullObject()` métodos localizar intervalos com base nas características de suas células e os tipos de valores de suas células. Os dois métodos retornam `RangeAreas` objetos. Aqui estão as assinaturas dos métodos do arquivo de tipos de dados TypeScript:
+Os métodos [Range. getSpecialCells](/javascript/api/excel/excel.range#getspecialcells-celltype--cellvaluetype-) e [Range. getSpecialCellsOrNullObject](/javascript/api/excel/excel.range#getspecialcellsornullobject-celltype--cellvaluetype-) localizam intervalos com base nas características de suas células e nos tipos de valores de suas células. Os dois métodos retornam `RangeAreas` objetos. Aqui estão as assinaturas dos métodos do arquivo de tipos de dados TypeScript:
 
 ```typescript
 getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
@@ -94,7 +94,7 @@ Excel.run(function (context) {
 })
 ```
 
-Se nenhuma célula com característica destino existe no intervalo, `getSpecialCells` exibe um erro **ItemNotFound**. Isso desvia o fluxo de controle para um `catch` bloco, se houver um. Se não houver um `catch` bloco, o erro interrompe a função.
+Se nenhuma célula com característica destino existe no intervalo, `getSpecialCells` exibe um erro **ItemNotFound**. Isso desvia o fluxo de controle para um `catch` bloco, se houver um. Se não houver um `catch` bloco, o erro interromperá o método.
 
 Se você espera que células com característica direcionada sempre deveriam existir, provavelmente desejará o código para gerar um erro se as células não estiverem lá. Se for um cenário válido que não há uma ou mais células correspondentes, o código deve verificar se há essa possibilidade e tratar normalmente sem enviar um erro. Você pode obter esse comportamento com o `getSpecialCellsOrNullObject` método e sua propriedade retornada `isNullObject`. O exemplo a seguir usa esse padrão. Sobre este código, observe:
 
@@ -174,8 +174,8 @@ Excel.run(function (context) {
 
 ## <a name="copy-and-paste"></a>Copy and paste
 
-A função de `copyFrom` do intervalo replica o comportamento de copiar e colar da IU do Excel. O objeto de intervalo para o qual a função`copyFrom` é chamada é o destino.
-A fonte a ser copiada é passada como um intervalo ou um endereço de cadeia de caracteres que representa um intervalo.
+O método [Range. copyFrom](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) Replica o comportamento de copiar e colar da interface do usuário do Excel. O objeto de intervalo para o qual a função`copyFrom` é chamada é o destino. A fonte a ser copiada é passada como um intervalo ou um endereço de cadeia de caracteres que representa um intervalo.
+
 O exemplo a seguir copia dados de **A1:E1** para o intervalo que começa em **G1** (que acaba sendo colado em **G1:K1**).
 
 ```js
@@ -235,11 +235,11 @@ Excel.run(function (context) {
 
 ## <a name="remove-duplicates"></a>Remover duplicatas
 
-A função do objeto intervalo `removeDuplicates` remove linhas com entradas duplicadas em determinadas colunas. A função passa por cada linha no intervalo do índice de menor valor até o índice de maior valor no intervalo (de cima para baixo). Uma linha é excluída se um valor em sua coluna ou colunas especificadas aparecer mais cedo no intervalo. Linhas no intervalo abaixo da linha excluída são deslocadas para cima. `removeDuplicates` não afeta a posição de células fora do intervalo.
+O método [Range. removeDuplicates](/javascript/api/excel/excel.range#removeduplicates-columns--includesheader-) remove linhas com entradas duplicadas nas colunas especificadas. O método passa por todas as linhas no intervalo do índice de valor mais baixo para o índice de valor mais alto no intervalo (de cima para baixo). Uma linha é excluída se um valor em sua coluna ou colunas especificadas aparecer mais cedo no intervalo. Linhas no intervalo abaixo da linha excluída são deslocadas para cima. `removeDuplicates` não afeta a posição de células fora do intervalo.
 
-`removeDuplicates` leva um `number[]` representando os índices da coluna que são verificados para duplicatas. Essa matriz é baseada em zero e relativa ao intervalo, não à planilha. A função também aceita um parâmetro booliano que especifica se a primeira linha é um cabeçalho. Quando **verdadeiro**, a primeira linha será ignorada ao considerar duplicatas. A função `removeDuplicates` retorna um objeto `RemoveDuplicatesResult` que especifica o número de linhas removidas e o número de linhas exclusivas restantes.
+`removeDuplicates` leva um `number[]` representando os índices da coluna que são verificados para duplicatas. Essa matriz é baseada em zero e relativa ao intervalo, não à planilha. O método também utiliza um parâmetro Boolean que especifica se a primeira linha é um cabeçalho. Quando **verdadeiro**, a primeira linha será ignorada ao considerar duplicatas. O `removeDuplicates` método retorna um `RemoveDuplicatesResult` objeto que especifica o número de linhas removidas e o número de linhas exclusivas restantes.
 
-Ao usar um intervalo na função`removeDuplicates`, lembre-se do seguinte:
+Ao usar o método de `removeDuplicates` um intervalo, lembre-se do seguinte:
 
 - `removeDuplicates` considera valores de célula, não resultados de função. Se as duas funções diferentes forem avaliadas como o mesmo resultado, os valores de célula não são considerados duplicatas.
 - Células vazias não serão ignoradas por `removeDuplicates`. O valor de uma célula vazia é tratado como qualquer outro valor. Isso significa que as linhas vazias contidas no intervalo serão incluídas em `RemoveDuplicatesResult`.
@@ -247,7 +247,7 @@ Ao usar um intervalo na função`removeDuplicates`, lembre-se do seguinte:
 O exemplo a seguir mostra a remoção de entradas com valores duplicados na primeira coluna.
 
 ```js
-Excel.run(async (context) => {
+Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
     var range = sheet.getRange("B2:D11");
 
@@ -268,6 +268,48 @@ Excel.run(async (context) => {
 *Após a função precedente ter sido executada.*
 
 ![Dados no Excel depois da execução do método de remoção de duplicatas do intervalo](../images/excel-ranges-remove-duplicates-after.png)
+
+## <a name="group-data-for-an-outline"></a>Agrupar dados para uma estrutura de tópicos
+
+> [!NOTE]
+> As APIs de estrutura de tópicos para agrupar linhas e colunas atualmente estão disponíveis somente na visualização pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+As linhas ou colunas de um intervalo podem ser agrupadas para criar uma [estrutura de tópicos](https://support.office.com/article/Outline-group-data-in-a-worksheet-08CE98C4-0063-4D42-8AC7-8278C49E9AFF). Esses grupos podem ser recolhidos e expandidos para ocultar e mostrar as células correspondentes. Isso facilita a análise rápida dos dados de linha principal. Use [Range. Group](/javascript/api/excel/excel.range#group-groupoption-) para tornar esses grupos de estrutura de tópicos.
+
+Uma estrutura de tópicos pode ter uma hierarquia, onde grupos menores estão aninhados em grupos maiores. Isso permite que a estrutura de tópicos seja exibida em diferentes níveis. Alterar o nível de estrutura de tópicos visível pode ser feito programaticamente por meio do método [Range. showOutlineLevels](/javascript/api/excel/excel.range#showOutlineLevels-rowLevels--columnLevels-) . Observe que o Excel só oferece suporte a oito níveis de grupos de estrutura de tópicos.
+
+O exemplo de código a seguir mostra como criar uma estrutura de tópicos com dois níveis de grupos para ambas as linhas e colunas. A imagem subsequente mostra os agrupamentos dessa estrutura de tópicos. Observe que, no exemplo de código, os intervalos que estão sendo agrupados não incluem a linha ou coluna do controle de estrutura de tópicos (o "total" para este exemplo). Um grupo define o que será recolhido, não a linha ou coluna com o controle.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+
+    // Group the larger, main level. Note that the outline controls
+    // will be on row 10, meaning 4-9 will collapse and expand.
+    sheet.getRange("4:9").group(Excel.GroupOption.byRows);
+
+    // Group the smaller, sublevels. Note that the outline controls
+    // will be on rows 6 and 9, meaning 4-5 and 7-8 will collapse and expand.
+    sheet.getRange("4:5").group(Excel.GroupOption.byRows);
+    sheet.getRange("7:8").group(Excel.GroupOption.byRows);
+
+    // Group the larger, main level. Note that the outline controls
+    // will be on column R, meaning C-Q will collapse and expand.
+    sheet.getRange("C:Q").group(Excel.GroupOption.byColumns);
+
+    // Group the smaller, sublevels. Note that the outline controls
+    // will be on columns G, L, and R, meaning C-F, H-K, and M-P will collapse and expand.
+    sheet.getRange("C:F").group(Excel.GroupOption.byColumns);
+    sheet.getRange("H:K").group(Excel.GroupOption.byColumns);
+    sheet.getRange("M:P").group(Excel.GroupOption.byColumns);
+    return context.sync();
+}).catch(errorHandlerFunction);
+
+```
+
+![Um intervalo com um contorno de duas dimensões de dois níveis](../images/excel-outline.png)
+
+Para desagrupar um grupo de linhas ou colunas, use o método [Range. Upgroup](/javascript/api/excel/excel.range#ungroup-groupoption-) . Isso remove o nível mais externo da estrutura de tópicos. Se vários grupos do mesmo tipo de linha ou coluna estiverem no mesmo nível no intervalo especificado, todos esses grupos serão desagrupados.
 
 ## <a name="see-also"></a>Confira também
 
