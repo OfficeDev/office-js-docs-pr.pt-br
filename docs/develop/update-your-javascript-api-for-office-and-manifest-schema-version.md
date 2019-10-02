@@ -1,14 +1,14 @@
 ---
 title: Atualize para a API de JavaScript mais recente da biblioteca do Office e o esquema de manifesto do suplemento da versão 1.1
 description: Atualize seus arquivos de JavaScript (Office.js e arquivos .js específicos do aplicativo) e o arquivo de validação de manifesto de suplemento usados no seu projeto de Suplemento do Office para a versão 1.1.
-ms.date: 03/19/2019
+ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: dc3d1983d653a1b914331c9aeac1d6dae9fcc772
-ms.sourcegitcommit: 6d1cb188c76c09d320025abfcc99db1b16b7e37b
+ms.openlocfilehash: a685f1a2e482a99af2a7184c2ab44104fa38c6a7
+ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "35226766"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "37353857"
 ---
 # <a name="update-to-the-latest-javascript-api-for-office-library-and-version-11-add-in-manifest-schema"></a>Atualize para a API de JavaScript mais recente da biblioteca do Office e o esquema de manifesto do suplemento da versão 1.1
 
@@ -68,7 +68,7 @@ No arquivo de manifesto do suplemento, atualize o atributo **xmlns** do elemento
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xsi:type="ContentApp"
-    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="http://schemas.microsoft.com/office/appforoffice/1.1">
   
   <!-- manifest contents -->
@@ -111,7 +111,7 @@ No arquivo de manifesto do suplemento, atualize o atributo **xmlns** do elemento
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xsi:type="ContentApp"
-  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://schemas.microsoft.com/office/appforoffice/1.1">
   
   <!-- manifest contents -->

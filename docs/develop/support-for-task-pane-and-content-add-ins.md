@@ -1,14 +1,14 @@
 ---
 title: Suporte da API JavaScript para Office para suplementos de conteúdo e de painel de tarefas no Office 2013
 description: ''
-ms.date: 03/19/2019
+ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: aeb75d2dbdcae5636bbe81820b9387bd840120c7
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 017542766fc6fb03cd7d4038de0cf3091d74857e
+ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449306"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "37353787"
 ---
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>Suporte da API JavaScript para Office para suplementos de conteúdo e de painel de tarefas no Office 2013
 
@@ -151,7 +151,7 @@ O suplemento usa o elemento **Permissions** em seu manifesto para solicitar perm
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0"
- xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
  xsi:type="TaskPaneApp">
 ???<!-- Other manifest elements omitted. -->
   <Permissions>ReadDocument</Permissions>

@@ -1,14 +1,14 @@
 ---
 title: Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint
 description: Use VersionOverrides no manifesto para definir comandos de suplemento para Excel, Word e PowerPoint. Use comandos de suplemento para criar elementos da interface do usuário, adicionar listas ou botões e executar ações.
-ms.date: 06/20/2019
+ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: a614d2786652058c42dbcca726546575e71f12ef
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: cf3329df845d206452b1b29ae46de4a3888a1a49
+ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36695893"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "37353822"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-word-and-powerpoint"></a>Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint
 
@@ -43,7 +43,8 @@ Para começar a usar os comandos de suplemento, primeiramente, é preciso criar 
 O exemplo a seguir mostra o manifesto de um suplemento do Office 2013. Não há comandos de suplemento nesse manifesto porque não há elemento **VersionOverrides**. O Office 2013 não dá suporte a comandos de suplemento, mas com a adição de **VersionOverrides** a esse manifesto, o suplemento será executado no Office 2013 e no Office 2016. No Office 2013, o suplemento não exibirá comandos de suplemento e usa o valor de **SourceLocation** para executar seu suplemento como um único suplemento de painel de tarefas. No Office 2016, se nenhum elemento **VersionOverrides** estiver incluído, **SourceLocation** será usado para executar o suplemento. Entretanto, se você incluir **VersionOverrides**, o suplemento exibirá apenas os comandos de suplemento e não exibirá o suplemento como um único suplemento de painel de tarefas.
   
 ```xml
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+  <!--IMPORTANT! Id must be unique for each add-in. If you copy this manifest ensure that you change this id to your own GUID. -->
   <Id>657a32a9-ab8a-4579-ac9f-df1a11a64e52</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>Contoso</ProviderName>
@@ -51,7 +52,7 @@ O exemplo a seguir mostra o manifesto de um suplemento do Office 2013. Não há 
   <DisplayName DefaultValue="Contoso Add-in Commands" />
   <Description DefaultValue="Contoso Add-in Commands"/>
   <IconUrl DefaultValue="~remoteAppUrl/Images/Icon_32.png" />
- 
+  <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
   <AppDomains>
     <AppDomain>AppDomain1</AppDomain>
     <AppDomain>AppDomain2</AppDomain>

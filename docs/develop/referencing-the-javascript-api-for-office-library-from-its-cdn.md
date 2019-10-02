@@ -3,12 +3,12 @@ title: Fazer referência à biblioteca da API JavaScript para Office de sua CDN 
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 6945cb9e2e93209c1568575d8c393cf00ae47431
-ms.sourcegitcommit: d34aa0b282cc76ffff579da2a7945efd12fb7340
+ms.openlocfilehash: 6b9512d5d0969e185902d7ab9d3227e820c4d0dc
+ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "36769579"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "37353815"
 ---
 # <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-cdn"></a>Fazer referência à biblioteca da API JavaScript para Office de sua CDN (rede de distribuição de conteúdo)
 
@@ -25,7 +25,7 @@ A biblioteca da [API JavaScript para Office](/office/dev/add-ins/reference/javas
 A maneira mais simples de fazer referência à API é usar nossa CDN adicionando o seguinte `<script>` à marca `<head>` da sua página:  
 
 ```html
-<script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
+<script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
 ```
 
 O `/1/` antes de `office.js` da URL da CDN especifica a versão incremental mais recente na versão 1 do Office .js. Como a API JavaScript para Office mantém a compatibilidade com versões anteriores, a última versão continuará a dar suporte a membros da API que foram introduzidos anteriormente na versão 1. Se você precisar atualizar um projeto existente, confira [Atualizar a versão da API JavaScript para Office e os arquivos de esquema de manifesto](update-your-javascript-api-for-office-and-manifest-schema-version.md). 
