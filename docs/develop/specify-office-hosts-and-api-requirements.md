@@ -1,14 +1,14 @@
 ---
 title: Especificar hosts do Office e requisitos de API
 description: ''
-ms.date: 08/14/2019
+ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: bd70f33952b4306b906896b6f4c8e00e0d768265
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: 1d5c922787192263e5290d2a428c352ab32378b0
+ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477772"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "37353836"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>Especificar hosts do Office e requisitos de API
 
@@ -43,7 +43,7 @@ O suplemento deve usar a versão mais recente do esquema de manifesto de supleme
 Seu manifesto de suplemento deve usar a versão 1.1 do esquema de manifesto de suplemento. Defina o elemento **OfficeApp** no manifesto do seu suplemento da seguinte maneira.
 
 ```XML
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
 ```
 
 ### <a name="specify-the-latest-javascript-api-for-office-library"></a>Especificar a biblioteca de API JavaScript para Office mais recente
