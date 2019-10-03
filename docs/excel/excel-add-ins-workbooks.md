@@ -1,14 +1,14 @@
 ---
 title: Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 description: ''
-ms.date: 09/03/2019
+ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: eb2313203e770e173d4db12d2bbc03048a08acaa
-ms.sourcegitcommit: 78998a9f0ebb81c4dd2b77574148b16fe6725cfc
+ms.openlocfilehash: 66e531a382d467326e5132e60f06c98d414dbb16
+ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "36715617"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "37353871"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 
@@ -267,16 +267,16 @@ context.application.suspendApiCalculationUntilNextSync();
 > [!NOTE]
 > As APIs de comentário estão disponíveis atualmente apenas na visualização pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
-Todos os [comentários](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) em uma pasta de trabalho são acompanhados pela propriedade `Workbook.comments`. Isso inclui comentários criados por usuários e comentários criados por seu suplemento. A propriedade`Workbook.comments` é um objeto [CommentCollection](/javascript/api/excel/excel.commentcollection) que contém um conjunto de objetos [Comentário](/javascript/api/excel/excel.comment).
+Todos os [comentários](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) em uma pasta de trabalho são acompanhados pela propriedade `Workbook.comments`. Isso inclui comentários criados por usuários e comentários criados por seu suplemento. A propriedade `Workbook.comments` é um objeto [CommentCollection](/javascript/api/excel/excel.commentcollection) que contém um conjunto de objetos [Comentário](/javascript/api/excel/excel.comment).
 
-Para adicionar comentários a uma pasta de trabalho, use o método `CommentCollection.add`, passando o texto do comentário, como uma cadeia de caracteres, e a célula onde o comentário será adicionado, como uma cadeia de caracteres ou um objeto [Range](/javascript/api/excel/excel.range). O exemplo a seguir adiciona um comentário à célula **A2**.
+Para adicionar comentários a uma pasta de trabalho, use o método `CommentCollection.add`, passando a célula onde o comentário será adicionado, como uma cadeia de caracteres ou um objeto [Range](/javascript/api/excel/excel.range) e o texto do comentário, como uma cadeia de caracteres. O exemplo a seguir adiciona um comentário à célula **A2**.
 
 ```js
 Excel.run(function (context) {
     var comments = context.workbook.comments;
 
     // Note that an InvalidArgument error will be thrown if multiple cells passed to `Comment.add`.
-    comments.add("TODO: add data.", "A2");
+    comments.add("A2", "TODO: add data.");
     return context.sync();
 });
 ```
