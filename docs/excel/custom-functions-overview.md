@@ -5,12 +5,12 @@ title: Criar funções personalizadas no Excel
 ms.topic: overview
 scenarios: getting-started
 localization_priority: Priority
-ms.openlocfilehash: aeff31dfce62aa9983f9a4ff2d766e127314d967
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
+ms.openlocfilehash: 49c388f7b1464ba5688ed1d7855a16c5e1ca848f
+ms.sourcegitcommit: 3159f4ed9fd8fa631300d15501912ba6293740c3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353864"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "37391238"
 ---
 # <a name="create-custom-functions-in-excel"></a>Criar funções personalizadas no Excel 
 
@@ -71,7 +71,7 @@ function add(first, second){
 Note que o arquivo **functions.html**, que governa o carregamento do tempo de execução das funções personalizadas, deve vincular-se à CDN atual para as funções personalizadas. Projetos preparados com a versão atual do gerador Yo Office referenciam a CDN correta. Se você estiver readaptando um projeto anterior de função personalizada de março de 2019 ou anteriormente, você precisará copiar no código abaixo para a página **functions.html**.
 
 ```HTML
-<script src="https://appsforoffice.microsoft.com/lib/beta/hosted/custom-functions-runtime.js" type="text/javascript"></script>
+<script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/custom-functions-runtime.js" type="text/javascript"></script>
 ```
 
 ### <a name="manifest-file"></a>Arquivo de manifesto
