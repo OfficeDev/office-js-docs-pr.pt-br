@@ -2,21 +2,21 @@
   href: index.md
 - name: Diretrizes de suplementos do Office
   items:
-    - name: Sobre os suplementos do Office
+    - name: Sobre os Suplementos do Office
       href: overview/index.md
       displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-    - name: Visão geral
+    - name: Visão Geral
       items:
         - name: Visão geral da plataforma de Suplementos do Office
           href: overview/office-add-ins.md
           displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: Disponibilidade de host e plataforma
+        - name: Disponibilidade da plataforma e do host
           href: overview/office-add-in-availability.md
           displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: Explorar a API do Office JS usando o script Lab
+        - name: Explorar a API do Office JS usando o Script Lab
           href: overview/explore-with-script-lab.md
           displayName: 'Excel, Word, PowerPoint'
-        - name: Requisitos para execução de suplementos
+        - name: Requisitos para executar suplementos
           href: concepts/requirements-for-running-office-add-ins.md
           displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
     - name: Conceitos
@@ -27,7 +27,7 @@
         - name: Ciclo de vida de desenvolvimento de suplementos
           href: concepts/add-in-development-lifecycle.md
           displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: Navegadores usados por suplementos do Office
+        - name: Navegadores usados pelos Suplementos do Office
           href: concepts/browsers-used-by-office-web-add-ins.md
           displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
         - name: Versões do Office e conjuntos de requisitos
@@ -42,9 +42,9 @@
         - name: Privacidade e segurança
           href: concepts/privacy-and-security.md
           displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-    - name: Interface do usuário
+    - name: Interface do Usuário
       items:
-        - name: Visão geral
+        - name: Visão Geral
           href: design/add-in-design.md
         - name: Diretrizes
           items:
@@ -56,7 +56,7 @@
               href: design/voice-guidelines.md
         - name: Linguagem de design
           items:
-            - name: Visão geral
+            - name: Visão Geral
               href: design/add-in-design-language.md
             - name: Cor
               href: design/add-in-color.md
@@ -66,11 +66,11 @@
               href: design/add-in-layout.md
             - name: Tipografia
               href: design/add-in-typography.md
-            - name: Usando o Motion
+            - name: Usar a animação
               href: design/using-motion-office-addins.md
-        - name: Elementos de interface
+        - name: Elementos da interface
           items:
-            - name: Visão geral
+            - name: Visão Geral
               href: design/interface-elements.md
             - name: Comandos de suplemento
               href: design/add-in-commands.md
@@ -80,9 +80,9 @@
               href: design/content-add-ins.md
             - name: Painéis de tarefas
               href: design/task-pane-add-ins.md
-        - name: Modelos de design UX
+        - name: Modelos de design de experiência do usuário
           items:
-            - name: Visão geral
+            - name: Visão Geral
               href: design/ux-design-pattern-templates.md
             - name: Autenticação
               href: design/authentication-patterns.md
@@ -102,13 +102,13 @@
               href: design/office-ui-fabric.md
     - name: Desenvolver
       items:
-        - name: Limitações de política de mesma origem
+        - name: Lidar com limitações de política de mesma origem
           href: develop/addressing-same-origin-policy-limitations.md
         - name: Autenticação e autorização
           items:
             - name: Visão geral da autenticação e autorização
               href: develop/overview-authn-authz.md
-            - name: Autenticar e autorizar com a API de diálogo do Office
+            - name: Autenticar e autorizar com a API da Caixa de Diálogo do Office
               href: develop/auth-with-office-dialog-api.md
             - name: Autorizar serviços externos
               href: develop/auth-external-add-ins.md
@@ -120,13 +120,13 @@
                   href: develop/sso-in-office-add-ins.md
                 - name: Autorizar o Microsoft Graph com SSO
                   href: develop/authorize-to-microsoft-graph.md
-                - name: Criar um suplemento SSO usando ASP.NET
+                - name: Criar um suplemento com SSO usando ASP.NET
                   href: develop/create-sso-office-add-ins-aspnet.md
-                - name: Criar um suplemento SSO usando node. js
+                - name: Criar um suplemento com SSO usando Node.js
                   href: develop/create-sso-office-add-ins-nodejs.md
-                - name: Registrar um suplemento do Office que usa SSO com o Azure AD v 2.0
+                - name: Registrar um Suplemento do Office que usa SSO com o Azure AD v2.0
                   href: develop/register-sso-add-in-aad-v2.md
-                - name: Conceder consentimento do administrador ao suplemento
+                - name: Conceder consentimento ao administrador para o suplemento
                   href: develop/grant-admin-consent-to-an-add-in.md
                 - name: Solucionar problemas de mensagens de erro no logon único (SSO)
                   href: develop/troubleshoot-sso-in-office-add-ins.md
@@ -134,17 +134,17 @@
           href: develop/automatically-open-a-task-pane-with-a-document.md
         - name: Desenvolver suplementos para o iPad
           href: develop/develop-office-add-ins-for-the-ipad.md
-        - name: Desenvolver suplementos com o angular
+        - name: Desenvolver suplementos com o Angular
           href: develop/add-ins-with-angular2.md
         - name: Desenvolver suplementos com o Visual Studio
           items:
             - name: Criar e depurar suplementos do Office no Visual Studio
               href: develop/create-and-debug-office-add-ins-in-visual-studio.md
-            - name: Obter o IntelliSense do JavaScript no Visual Studio
+            - name: Obter o JavaScript IntelliSense no Visual Studio
               href: develop/get-javascript-intellisense-in-visual-studio.md
             - name: Converter JavaScript em TypeScript
               href: develop/convert-javascript-to-typescript.md
-        - name: API da caixa de diálogo
+        - name: API de Caixa de Diálogo
           href: develop/dialog-api-in-office-add-ins.md
         - name: Localização
           href: develop/localization.md
@@ -154,11 +154,11 @@
               href: develop/add-in-manifests.md
             - name: Criar comandos de suplemento
               href: develop/create-addin-commands.md
-            - name: Localizar a ordem correta dos elementos de manifesto
+            - name: Localizar a ordem correta dos elementos do manifesto
               href: develop/manifest-element-ordering.md
             - name: Identificar um suplemento COM equivalente
               href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
-            - name: Solicitar permissões para uso da API em suplementos de painel de tarefas e de conteúdo
+            - name: Solicitar permissões para uso da API em suplementos do painel de tarefas e de conteúdo
               href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
             - name: Especificar hosts do Office
               href: develop/specify-office-hosts-and-api-requirements.md
@@ -168,31 +168,31 @@
           items:
             - name: Noções básicas da API JavaScript para Office
               href: develop/understanding-the-javascript-api-for-office.md
-            - name: Suporte para suplementos de conteúdo e de painel de tarefas
+            - name: Suporte para suplementos de painel de tarefas e conteúdo
               href: develop/support-for-task-pane-and-content-add-ins.md
-            - name: Referência do Office. js
+            - name: Referenciar o Office.js
               href: develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md
-            - name: Carregar o Office. js
+            - name: Carregar o Office.js
               href: develop/loading-the-dom-and-runtime-environment.md
             - name: Modelo de objeto de API JavaScript para Office
               href: develop/office-javascript-api-object-model.md
             - name: Programação assíncrona em Suplementos do Office
               href: develop/asynchronous-programming-in-office-add-ins.md
-            - name: Manter estado e configurações
+            - name: Estado de persistência e as configurações
               href: develop/persisting-add-in-state-and-settings.md
     - name: Testar e depurar
       items:
-        - name: Visão geral
+        - name: Visão Geral
           href: testing/test-debug-office-add-ins.md
         - name: Windows
           items:
-            - name: Fazer sideload de Suplementos do Office no Windows
+            - name: Realizar sideload de Suplementos do Office no Windows
               href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
             - name: Anexar um depurador do painel de tarefas
               href: testing/attach-debugger-from-task-pane.md
-            - name: Depurar usando ferramentas de desenvolvedor
+            - name: Depurar usando as ferramentas de desenvolvedor
               href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
-        - name: Navegador
+        - name: Navegador da Web
           items:
             - name: Sideload de suplementos no Office na Web
               href: testing/sideload-office-add-ins-for-testing.md
@@ -200,29 +200,29 @@
               href: testing/debug-add-ins-in-office-online.md
         - name: iPad e Mac
           items:
-            - name: Fazer sideload de Suplementos do Office no iPad e no Mac
+            - name: Realizar sideload de Suplementos do Office no iPad e no Mac
               href: testing/sideload-an-office-add-in-on-ipad-and-mac.md
             - name: Depurar no Mac
               href: testing/debug-office-add-ins-on-ipad-and-mac.md
         - name: Solucionar problemas de erros de usuário
           href: testing/testing-and-troubleshooting.md
-        - name: Teste de usabilidade
+        - name: Testes de usabilidade
           href: develop/usability-testing.md
-        - name: Validar um manifesto de suplemento e solucionar problemas
+        - name: Validar e solucionar problemas com o manifesto do suplemento
           href: testing/troubleshoot-manifest.md
     - name: Publicar
       items:
-        - name: Visão geral
+        - name: Visão Geral
           href: publish/publish.md
         - name: Hospedar um Suplemento do Office no Microsoft Azure
           href: publish/host-an-office-add-in-on-microsoft-azure.md
-        - name: Empacotar seu suplemento usando o Visual Studio
+        - name: Empacotar o seu suplemento usando o Visual Studio
           href: publish/package-your-add-in-using-visual-studio.md
         - name: Publicar suplementos no AppSource
           href: /office/dev/store/submit-to-the-office-store
         - name: Políticas de validação do AppSource
           href: /office/dev/store/validation-policies
-        - name: Publicar suplementos por meio da implantação centralizada
+        - name: Publicar suplementos via Implantação Centralizada
           href: publish/centralized-deployment.md
         - name: Publicar suplementos em um catálogo de aplicativos do SharePoint
           href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
@@ -231,21 +231,21 @@
         - name: Visão geral da API JavaScript para Office
           href: reference/javascript-api-for-office.md
           displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: Conjuntos de requisitos de API (comum)
+        - name: Conjuntos de requisitos de API (Comum)
           items:
             - name: Conjuntos de requisitos dos comandos de suplemento
               href: reference/requirement-sets/add-in-commands-requirement-sets.md
-            - name: Conjuntos de requisitos da Dialog API
+            - name: Conjuntos de requisitos da API de Caixa de diálogo
               href: reference/requirement-sets/dialog-api-requirement-sets.md
             - name: Conjuntos de requisitos da API de Identidade
               href: reference/requirement-sets/identity-api-requirement-sets.md
-            - name: Conjuntos de requisitos de coerção de imagem
+            - name: Conjuntos de requisitos de Coerção de Imagens
               href: reference/requirement-sets/image-coercion-requirement-sets.md
-            - name: Conjuntos de requisitos da API Comum do Office
+            - name: Conjuntos de requisitos da API comum do Office
               href: reference/requirement-sets/office-add-in-requirement-sets.md
-        - name: Referência da API (comum)
+        - name: Referência da API (Comum)
           href: reference/common-api-reference.md
-        - name: Referência do manifesto do suplemento do Office
+        - name: Referência do manifesto de Suplemento do Office
           items:
             - name: AllowSnapshot
               href: reference/manifest/allowsnapshot.md
@@ -293,11 +293,11 @@
               href: reference/manifest/iconurl.md
             - name: Id
               href: reference/manifest/id.md
-            - name: Metadados
+            - name: Metadata
               href: reference/manifest/metadata.md
-            - name: Método
+            - name: Method
               href: reference/manifest/method.md
-            - name: Métodos
+            - name: Methods
               href: reference/manifest/methods.md
             - name: Namespace
               href: reference/manifest/namespace.md
@@ -305,7 +305,7 @@
               href: reference/manifest/officeapp.md
             - name: Override
               href: reference/manifest/override.md
-            - name: Permissões
+            - name: Permissions
               href: reference/manifest/permissions.md
             - name: PhoneSettings
               href: reference/manifest/phonesettings.md
@@ -319,11 +319,11 @@
               href: reference/manifest/requestedheight.md
             - name: RequestedWidth
               href: reference/manifest/requestedwidth.md
-            - name: Requisitos
+            - name: Requirements
               href: reference/manifest/requirements.md
-            - name: Regra
+            - name: Rule
               href: reference/manifest/rule.md
-            - name: Conjunto
+            - name: Set
               href: reference/manifest/set.md
             - name: Sets
               href: reference/manifest/sets.md
@@ -345,7 +345,7 @@
               items:
                 - name: VersionOverrides
                   href: reference/manifest/versionoverrides.md
-                - name: Ação
+                - name: Action
                   href: reference/manifest/action.md
                 - name: AllFormFactors
                   href: reference/manifest/allformfactors.md
@@ -353,7 +353,7 @@
                   href: reference/manifest/authorization.md
                 - name: Autorizações
                   href: reference/manifest/authorizations.md
-                - name: Control
+                - name: Controle
                   href: reference/manifest/control.md
                 - name: CustomTab
                   href: reference/manifest/customtab.md
@@ -375,7 +375,7 @@
                   href: reference/manifest/group.md
                 - name: Hosts
                   href: reference/manifest/hosts.md
-                - name: Ícone
+                - name: Icon
                   href: reference/manifest/icon.md
                 - name: MobileFormFactor
                   href: reference/manifest/mobileformfactor.md
@@ -383,11 +383,11 @@
                   href: reference/manifest/officemenu.md
                 - name: OfficeTab
                   href: reference/manifest/officetab.md
-                - name: Página
+                - name: Page
                   href: reference/manifest/page.md
                 - name: Recursos
                   href: reference/manifest/resources.md
-                - name: Escopos
+                - name: Scopes
                   href: reference/manifest/scopes.md
                 - name: Script
                   href: reference/manifest/script.md
@@ -408,21 +408,21 @@
       displayName: 'Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook'
 - name: Suplementos do Excel
   items:
-    - name: Documentação dos suplementos do Excel
+    - name: Documentação de suplementos do Excel
       href: excel/index.md
       displayName: Excel
-    - name: Visão geral
+    - name: Visão Geral
       href: excel/excel-add-ins-overview.md
       displayName: Excel
-    - name: Crie o seu primeiro suplemento do Excel
+    - name: Criar o seu primeiro suplemento do Excel
       items:
         - name: Painel de tarefas
           href: quickstarts/excel-quickstart-jquery.md
           displayName: Excel
-        - name: Painel de tarefas (angular)
+        - name: Painel de tarefas (Angular)
           href: quickstarts/excel-quickstart-angular.md
           displayName: Excel
-        - name: Painel de tarefas (reagir)
+        - name: Painel de tarefas (Reagir)
           href: quickstarts/excel-quickstart-react.md
           displayName: Excel
         - name: Painel de tarefas (Vue)
@@ -433,42 +433,42 @@
       displayName: Excel
     - name: API JavaScript do Excel
       items:
-        - name: Visão geral
+        - name: Visão Geral
           href: reference/overview/excel-add-ins-reference-overview.md
           displayName: Excel
         - name: Conjuntos de requisitos da API
           items:
-            - name: Visão geral
+            - name: Visão Geral
               href: reference/requirement-sets/excel-api-requirement-sets.md
               displayName: Excel
             - name: APIs de visualização do Excel
               href: reference/requirement-sets/excel-preview-apis.md
               displayName: Excel
-            - name: 'Conjunto de requisitos ExcelApi 1,9'
+            - name: 'Conjunto de requisitos do ExcelApi 1,9'
               href: reference/requirement-sets/excel-api-1-9-requirement-set.md
               displayName: Excel
-            - name: 'Conjunto de requisitos ExcelApi 1,8'
+            - name: 'Conjunto de requisitos do ExcelApi 1,8'
               href: reference/requirement-sets/excel-api-1-8-requirement-set.md
               displayName: Excel
-            - name: 'Conjunto de requisitos ExcelApi 1,7'
+            - name: 'Conjunto de requisitos do ExcelApi 1,7'
               href: reference/requirement-sets/excel-api-1-7-requirement-set.md
               displayName: Excel
-            - name: 'Conjunto de requisitos ExcelApi 1,6'
+            - name: 'Conjunto de requisitos do ExcelApi 1,6'
               href: reference/requirement-sets/excel-api-1-6-requirement-set.md
               displayName: Excel
-            - name: 'Conjunto de requisitos ExcelApi 1,5'
+            - name: 'Conjunto de requisitos do ExcelApi 1,5'
               href: reference/requirement-sets/excel-api-1-5-requirement-set.md
               displayName: Excel
-            - name: 'Conjunto de requisitos ExcelApi 1,4'
+            - name: 'Conjunto de requisitos do ExcelApi 1,4'
               href: reference/requirement-sets/excel-api-1-4-requirement-set.md
               displayName: Excel
-            - name: 'Conjunto de requisitos ExcelApi 1,3'
+            - name: 'Conjunto de requisitos do ExcelApi 1,3'
               href: reference/requirement-sets/excel-api-1-3-requirement-set.md
               displayName: Excel
-            - name: 'Conjunto de requisitos ExcelApi 1,2'
+            - name: 'Conjunto de requisitos do ExcelApi 1,2'
               href: reference/requirement-sets/excel-api-1-2-requirement-set.md
               displayName: Excel
-            - name: 'Conjunto de requisitos ExcelApi 1,1'
+            - name: 'Conjunto de requisitos do ExcelApi 1,1'
               href: reference/requirement-sets/excel-api-1-1-requirement-set.md
               displayName: Excel
         - name: Referência da API
@@ -477,7 +477,7 @@
         - name: Conceitos fundamentais de programação
           href: excel/excel-add-ins-core-concepts.md
           displayName: Excel
-        - name: Conceitos de programação avançados
+        - name: Conceitos avançados de programação
           href: excel/excel-add-ins-advanced-concepts.md
           displayName: Excel
         - name: Chamar funções internas
@@ -501,19 +501,19 @@
         - name: Eventos
           href: excel/excel-add-ins-events.md
           displayName: Excel
-        - name: Vários intervalos
+        - name: Intervalos múltiplos
           href: excel/excel-add-ins-multiple-ranges.md
           displayName: Excel
         - name: Otimização de desempenho
           href: excel/performance.md
           displayName: Excel
-        - name: PivotTables
+        - name: Tabela Dinâmica
           href: excel/excel-add-ins-pivottables.md
           displayName: Excel
         - name: Intervalos (fundamentais)
           href: excel/excel-add-ins-ranges.md
           displayName: Excel
-        - name: Intervalos (avançado)
+        - name: Intervalos (avançados)
           href: excel/excel-add-ins-ranges-advanced.md
           displayName: Excel
         - name: Formas
@@ -530,7 +530,7 @@
           displayName: Excel
     - name: Funções personalizadas
       items:
-        - name: Visão geral
+        - name: Visão Geral
           href: excel/custom-functions-overview.md
           displayName: 'Excel, Custom Functions'
         - name: Introdução às funções personalizadas do Excel
@@ -551,7 +551,7 @@
         - name: Depuração
           href: excel/custom-functions-debugging.md
           displayName: 'Excel, Custom Functions'
-        - name: Dialog
+        - name: Caixa de Diálogo
           href: excel/custom-functions-dialog.md
           displayName: 'Excel, Custom Functions'
         - name: Tratamento de erros
@@ -563,7 +563,7 @@
         - name: Localização
           href: excel/custom-functions-localize.md
           displayName: 'Excel, Custom Functions'
-        - name: Metadados
+        - name: Metadata
           href: excel/custom-functions-json.md
           displayName: 'Excel, Custom Functions'
         - name: Geração de metadados
@@ -578,10 +578,10 @@
         - name: Conjuntos de requisitos
           href: excel/custom-functions-requirement-sets.md
           displayName: 'Excel, Custom Functions'
-        - name: Tempo
+        - name: Runtime
           href: excel/custom-functions-runtime.md
           displayName: 'Excel, Custom Functions'
-        - name: Salvar e compartilhar Estado
+        - name: Salvar e compartilhar estado
           href: excel/custom-functions-save-state.md
           displayName: 'Excel, Custom Functions'
         - name: Solução de problemas
@@ -598,15 +598,15 @@
     - name: Documentação de suplementos do OneNote
       href: onenote/index.md
       displayName: OneNote
-    - name: Visão geral
+    - name: Visão Geral
       href: onenote/onenote-add-ins-programming-overview.md
       displayName: OneNote
     - name: Criar o seu primeiro suplemento do OneNote
       href: quickstarts/onenote-quickstart.md
       displayName: OneNote
-    - name: OneNote JavaScript API
+    - name: API JavaScript do OneNote
       items:
-        - name: Visão geral
+        - name: Visão Geral
           href: reference/overview/onenote-add-ins-javascript-reference.md
           displayName: OneNote
         - name: Conjuntos de requisitos da API
@@ -620,10 +620,10 @@
           displayName: OneNote
 - name: Suplementos do Outlook
   items:
-    - name: Documentação dos suplementos do Outlook
+    - name: Documentação de suplementos do Outlook
       href: outlook/index.md
       displayName: Outlook
-    - name: Visão geral
+    - name: Visão Geral
       href: /outlook/add-ins/index?context=office/dev/add-ins/context
       displayName: Outlook
     - name: Criar seu primeiro suplemento do Outlook
@@ -632,12 +632,12 @@
     - name: Tutorial de suplemento do Outlook
       href: /outlook/add-ins/addin-tutorial?context=office/dev/add-ins/context
       displayName: Outlook
-    - name: Conceitos de suplementos do Outlook
+    - name: Conceitos de suplemento do Outlook
       href: /outlook/add-ins/outlook-addin-design
     - name: API JavaScript do Outlook
       displayName: Outlook
       items:
-        - name: Visão geral
+        - name: Visão Geral
           href: /outlook/add-ins/apis?context=office/dev/add-ins/context
           displayName: Outlook
         - name: Conjuntos de requisitos da API
@@ -646,15 +646,15 @@
         - name: Referência da API
           href: reference/outlook-api-reference-preview.md
           displayName: Outlook
-        - name: Modelo de objeto de API
+        - name: Modelo de objeto da API
           items:
-            - name: Conjunto de requisitos de visualização
+            - name: Visualização do conjunto de requisitos
               items:
-                - name: Visão geral
+                - name: Visão Geral
                   href: reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md
                 - name: Office
                   href: reference/objectmodel/preview-requirement-set/office.md
-                - name: Office. Context
+                - name: Office.context
                   href: reference/objectmodel/preview-requirement-set/Office.context.md
                 - name: Office.context.mailbox
                   href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.md
@@ -664,15 +664,15 @@
                   href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.item.md
                 - name: Office.context.mailbox.userProfile
                   href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.userProfile.md
-                - name: Referência da API de visualização do Outlook
+                - name: Referência da API de Visualização do Outlook
                   href: reference/outlook-api-reference-preview.md
-            - name: 'Conjunto de requisitos 1,7'
+            - name: Conjunto de requisitos 1.7
               items:
-                - name: Visão geral
+                - name: Visão Geral
                   href: reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7.md
                 - name: Office
                   href: reference/objectmodel/requirement-set-1.7/office.md
-                - name: Office. Context
+                - name: Office.context
                   href: reference/objectmodel/requirement-set-1.7/Office.context.md
                 - name: Office.context.mailbox
                   href: reference/objectmodel/requirement-set-1.7/Office.context.mailbox.md
@@ -682,15 +682,15 @@
                   href: reference/objectmodel/requirement-set-1.7/Office.context.mailbox.item.md
                 - name: Office.context.mailbox.userProfile
                   href: reference/objectmodel/requirement-set-1.7/Office.context.mailbox.userProfile.md
-                - name: 'Referência da API do Outlook 1,7'
+                - name: Referência da API 1.7 do Outlook
                   href: reference/outlook-api-reference-1-7.md
-            - name: 'Conjunto de requisitos 1,6'
+            - name: Conjunto de requisitos 1.6
               items:
-                - name: Visão geral
+                - name: Visão Geral
                   href: reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md
                 - name: Office
                   href: reference/objectmodel/requirement-set-1.6/office.md
-                - name: Office. Context
+                - name: Office.context
                   href: reference/objectmodel/requirement-set-1.6/Office.context.md
                 - name: Office.context.mailbox
                   href: reference/objectmodel/requirement-set-1.6/Office.context.mailbox.md
@@ -700,15 +700,15 @@
                   href: reference/objectmodel/requirement-set-1.6/Office.context.mailbox.item.md
                 - name: Office.context.mailbox.userProfile
                   href: reference/objectmodel/requirement-set-1.6/Office.context.mailbox.userProfile.md
-                - name: 'Referência da API do Outlook 1,6'
+                - name: Referência da API 1.6 do Outlook
                   href: reference/outlook-api-reference-1-6.md
-            - name: 'Conjunto de requisitos 1,5'
+            - name: Conjunto de requisitos 1.5
               items:
-                - name: Visão geral
+                - name: Visão Geral
                   href: reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md
                 - name: Office
                   href: reference/objectmodel/requirement-set-1.5/office.md
-                - name: Office. Context
+                - name: Office.context
                   href: reference/objectmodel/requirement-set-1.5/Office.context.md
                 - name: Office.context.mailbox
                   href: reference/objectmodel/requirement-set-1.5/Office.context.mailbox.md
@@ -718,15 +718,15 @@
                   href: reference/objectmodel/requirement-set-1.5/Office.context.mailbox.item.md
                 - name: Office.context.mailbox.userProfile
                   href: reference/objectmodel/requirement-set-1.5/Office.context.mailbox.userProfile.md
-                - name: 'Referência da API do Outlook 1,5'
+                - name: Referência da API 1.5 do Outlook
                   href: reference/outlook-api-reference-1-5.md
-            - name: 'Conjunto de requisitos 1,4'
+            - name: Conjunto de requisitos 1.4
               items:
-                - name: Visão geral
+                - name: Visão Geral
                   href: reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md
                 - name: Office
                   href: reference/objectmodel/requirement-set-1.4/office.md
-                - name: Office. Context
+                - name: Office.context
                   href: reference/objectmodel/requirement-set-1.4/Office.context.md
                 - name: Office.context.mailbox
                   href: reference/objectmodel/requirement-set-1.4/Office.context.mailbox.md
@@ -736,15 +736,15 @@
                   href: reference/objectmodel/requirement-set-1.4/Office.context.mailbox.item.md
                 - name: Office.context.mailbox.userProfile
                   href: reference/objectmodel/requirement-set-1.4/Office.context.mailbox.userProfile.md
-                - name: 'Referência da API do Outlook 1,4'
+                - name: Referência da API 1.4 do Outlook
                   href: reference/outlook-api-reference-1-4.md
-            - name: 'Conjunto de requisitos 1,3'
+            - name: Conjunto de requisitos 1.3
               items:
-                - name: Visão geral
+                - name: Visão Geral
                   href: reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md
                 - name: Office
                   href: reference/objectmodel/requirement-set-1.3/office.md
-                - name: Office. Context
+                - name: Office.context
                   href: reference/objectmodel/requirement-set-1.3/Office.context.md
                 - name: Office.context.mailbox
                   href: reference/objectmodel/requirement-set-1.3/Office.context.mailbox.md
@@ -754,15 +754,15 @@
                   href: reference/objectmodel/requirement-set-1.3/Office.context.mailbox.item.md
                 - name: Office.context.mailbox.userProfile
                   href: reference/objectmodel/requirement-set-1.3/Office.context.mailbox.userProfile.md
-                - name: 'Referência da API do Outlook 1,3'
+                - name: Referência da API 1.3 do Outlook
                   href: reference/outlook-api-reference-1-3.md
-            - name: 'Conjunto de requisitos 1,2'
+            - name: Conjunto de requisitos 1.2
               items:
-                - name: Visão geral
+                - name: Visão Geral
                   href: reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md
                 - name: Office
                   href: reference/objectmodel/requirement-set-1.2/office.md
-                - name: Office. Context
+                - name: Office.context
                   href: reference/objectmodel/requirement-set-1.2/Office.context.md
                 - name: Office.context.mailbox
                   href: reference/objectmodel/requirement-set-1.2/Office.context.mailbox.md
@@ -772,15 +772,15 @@
                   href: reference/objectmodel/requirement-set-1.2/Office.context.mailbox.item.md
                 - name: Office.context.mailbox.userProfile
                   href: reference/objectmodel/requirement-set-1.2/Office.context.mailbox.userProfile.md
-                - name: 'Referência da API do Outlook 1,2'
+                - name: Referência da API 1.2 do Outlook
                   href: reference/outlook-api-reference-1-2.md
-            - name: 'Conjunto de requisitos 1,1'
+            - name: Conjunto de requisitos 1.1
               items:
-                - name: Visão geral
+                - name: Visão Geral
                   href: reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md
                 - name: Office
                   href: reference/objectmodel/requirement-set-1.1/office.md
-                - name: Office. Context
+                - name: Office.context
                   href: reference/objectmodel/requirement-set-1.1/Office.context.md
                 - name: Office.context.mailbox
                   href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.md
@@ -790,14 +790,14 @@
                   href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.item.md
                 - name: Office.context.mailbox.userProfile
                   href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.userProfile.md
-                - name: 'Referência da API do Outlook 1,1'
+                - name: Referência da API 1.1 do Outlook
                   href: reference/outlook-api-reference-1-1.md
 - name: Suplementos do PowerPoint
   items:
     - name: Documentação de suplementos do PowerPoint
       href: powerpoint/index.md
       displayName: PowerPoint
-    - name: Visão geral
+    - name: Visão Geral
       href: powerpoint/powerpoint-add-ins.md
       displayName: PowerPoint
     - name: Crie o seu primeiro suplemento do PowerPoint
@@ -808,7 +808,7 @@
       displayName: PowerPoint
     - name: API JavaScript para PowerPoint
       items:
-        - name: Visão geral
+        - name: Visão Geral
           href: reference/overview/powerpoint-add-ins-reference-overview.md
           displayName: PowerPoint
         - name: Conjuntos de requisitos da API
@@ -817,7 +817,7 @@
         - name: Referência da API
           href: reference/powerpoint-api-reference.md
           displayName: PowerPoint
-        - name: Obter todo o documento de um suplemento
+        - name: Obter todo o documento por meio de um suplemento
           href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
           displayName: PowerPoint
         - name: Usar temas de documentos em seus suplementos do PowerPoint
@@ -828,29 +828,29 @@
     - name: Documentação de suplementos do Project
       href: project/index.md
       displayName: Project
-    - name: Visão geral
+    - name: Visão Geral
       href: project/project-add-ins.md
       displayName: Project
     - name: Criar o seu primeiro suplemento do Project
       href: quickstarts/project-quickstart.md
       displayName: Project
-    - name: API JavaScript para Project
+    - name: JavaScript API para Project
       items:
-        - name: Visão geral
+        - name: Visão Geral
           href: reference/overview/project-add-ins-reference-overview.md
           displayName: Project
         - name: Criar um suplemento do Project que usa REST com um serviço OData local
           href: project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md
           displayName: Project
-        - name: Criar seu primeiro suplemento de painel de tarefas para o Project usando um editor de texto
+        - name: Criar o seu primeiro suplemento de painel de tarefas para o Project usando um editor de texto
           href: project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md
           displayName: Project
 - name: Suplementos do Visio
   items:
-    - name: Documentação dos suplementos do Visio
+    - name: Documentação de suplementos do Visio
       href: visio/index.md
       displayName: Visio
-    - name: Visão geral
+    - name: Visão Geral
       href: reference/overview/visio-javascript-reference-overview.md
       displayName: Visio
     - name: Referência da API
@@ -861,10 +861,10 @@
     - name: Documentação de suplementos do Word
       href: word/index.md
       displayName: Word
-    - name: Visão geral
+    - name: Visão Geral
       href: word/word-add-ins-programming-overview.md
       displayName: Word
-    - name: Compilar seu primeiro suplemento do Word
+    - name: Criar seu primeiro suplemento do Word
       href: quickstarts/word-quickstart.md
       displayName: Word
     - name: Tutorial de suplemento do Word
@@ -872,24 +872,24 @@
       displayName: Word
     - name: API JavaScript do Word
       items:
-        - name: Visão geral
+        - name: Visão Geral
           href: reference/overview/word-add-ins-reference-overview.md
           displayName: Word
         - name: Conjuntos de requisitos da API
           items:
-            - name: Visão geral
+            - name: Visão Geral
               href: reference/requirement-sets/word-api-requirement-sets.md
               displayName: Word
             - name: APIs de visualização do Word
               href: reference/requirement-sets/word-preview-apis.md
               displayName: Word
-            - name: 'Conjunto de requisitos WordApi 1,3'
+            - name: 'Conjunto de requisitos do WordApi 1,3'
               href: reference/requirement-sets/word-api-1-3-requirement-set.md
               displayName: Word
-            - name: 'Conjunto de requisitos WordApi 1,2'
+            - name: 'Conjunto de requisitos do WordApi 1,2'
               href: reference/requirement-sets/word-api-1-2-requirement-set.md
               displayName: Word
-            - name: 'Conjunto de requisitos WordApi 1,1'
+            - name: 'Conjunto de requisitos do WordApi 1,1'
               href: reference/requirement-sets/word-api-1-1-requirement-set.md
               displayName: Word
         - name: Referência da API
@@ -904,10 +904,10 @@
         - name: Criar suplementos melhores para o Word com o Office Open XML
           href: word/create-better-add-ins-for-word-with-office-open-xml.md
           displayName: Word
-        - name: Suplementos do painel de tarefas de dicionário
+        - name: Suplementos de painel de tarefas de dicionário
           href: word/dictionary-task-pane-add-ins.md
           displayName: Word
-        - name: Obter todo o documento de um suplemento
+        - name: Obter todo o documento por meio de um suplemento
           href: word/get-the-whole-document-from-an-add-in-for-word.md
           displayName: Word
         - name: Ler e gravar dados na seleção ativa
