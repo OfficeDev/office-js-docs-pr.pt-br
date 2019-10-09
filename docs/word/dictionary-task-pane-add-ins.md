@@ -1,13 +1,14 @@
 ---
 title: Criar um suplemento de painel de tarefas de dicionário
 description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: 1032ad2312faabf4c1956078d2db4028521b5eb6
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
-ms.translationtype: HT
+ms.date: 09/26/2019
+localization_priority: Normal
+ms.openlocfilehash: 10eb66c224a7c40346669d630d4316f300d55dcc
+ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25004991"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "37353899"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>Criar um suplemento de painel de tarefas de dicionário
 
@@ -41,7 +42,7 @@ Você determina se clicar no link **Ver Mais** na interface do usuário HTML do 
 
 *Figura 5. Definições no Modo de Leitura*
 
-![Definições em modo de leitura](../images/dictionary-agave-05.jpg)
+![Definitions in Reading Mode](../images/dictionary-agave-05.jpg)
 
 Para criar um suplemento de painel de tarefas que forneça uma pesquisa de dicionário, crie dois componentes principais: 
 
@@ -66,7 +67,7 @@ O código a seguir mostra o XSD para o esquema XML OfficeDefinitions.
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema
-  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:xs="https://www.w3.org/2001/XMLSchema"
   targetNamespace="http://schemas.microsoft.com/NLG/2011/OfficeDefinitions"
   xmlns="http://schemas.microsoft.com/NLG/2011/OfficeDefinitions">
@@ -200,7 +201,7 @@ A seguir há um arquivo de manifesto de exemplo para um suplemento de dicionári
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
   <Id>7164e750-dc86-49c0-b548-1bac57abdc7c</Id>
   <Version>15.0</Version>
   <ProviderName>Microsoft Office Demo Dictionary</ProviderName>
@@ -211,6 +212,7 @@ A seguir há um arquivo de manifesto de exemplo para um suplemento de dicionári
   <Description DefaultValue="The Microsoft Office Demo Dictionary is an example built to demonstrate how a publisher could create a dictionary that integrates with Office. It does not return real definitions." />
   <!--IconUrl is the URI for the icon that will appear in the user's list of applications.-->
   <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg" />
+  <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
   <!--Capabilities specifies the kind of host application your dictionary add-in will support. You shouldn't have to modify this area.-->
   <Capabilities>
     <Capability Name="Workbook"/>
@@ -526,13 +528,13 @@ O exemplo a seguir mostra a implementação de JavaScript no arquivo Dictionary.
 Os membros primários da API JavaScript para Office (Office.js) que são chamados por essa implementação são os seguintes:
 
 
-- O evento [initialize](https://docs.microsoft.com/javascript/api/office?view=office-js) do objeto **Office**, que é gerado quando o contexto do suplemento é inicializado e fornece acesso a uma instância de objeto [Document](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js) que representa o documento com o qual o suplemento está interagindo.
+- O evento [initialize](/javascript/api/office) do objeto **Office**, que é gerado quando o contexto do suplemento é inicializado e fornece acesso a uma instância de objeto [Document](/javascript/api/office/office.document) que representa o documento com o qual o suplemento está interagindo.
     
-- O método [addHandlerAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#addhandlerasync-eventtype--handler--options--callback-) do objeto **Document**, que é chamado na função **initialize** para adicionar um manipulador de eventos ao evento [SelectionChanged](https://docs.microsoft.com/javascript/api/office/office.documentselectionchangedeventargs?view=office-js) do documento para escutar alterações de seleção de usuário.
+- O método [addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) do objeto **Document**, que é chamado na função **initialize** para adicionar um manipulador de eventos ao evento [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) do documento para escutar alterações de seleção de usuário.
     
-- O método [getSelectedDataAsync](https://docs.microsoft.com/javascript/api/office/office.document?view=office-js#getselecteddataasync-coerciontype--options--callback-) do objeto **Document**, que é chamado na função `tryUpdatingSelectedWord()` quando o manipulador de eventos **SelectionChanged** é gerado para obter a palavra ou frase que o usuário selecionou, fazer a coerção dela para texto sem formatação e executar a função `selectedTextCallback` de retorno de chamada assíncrono.
+- O método [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) do objeto **Document**, que é chamado na função `tryUpdatingSelectedWord()` quando o manipulador de eventos **SelectionChanged** é gerado para obter a palavra ou frase que o usuário selecionou, fazer a coerção dela para texto sem formatação e executar a função `selectedTextCallback` de retorno de chamada assíncrono.
     
-- Quando a função de retorno de chamada assíncrono `selectTextCallback` que é passada como o argumento _callback_ do método **getSelectedDataAsync** é executada, obtém o valor do texto selecionado quando o retorno de chamada retorna. Ela obtém o valor do argumento _selectedText_ do retorno de chamada (que é do tipo [AsyncResult](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js)) usando a propriedade [value](https://docs.microsoft.com/javascript/api/office/office.asyncresult?view=office-js#status) do objeto **AsyncResult** retornado.
+- Quando a função de retorno de chamada assíncrono `selectTextCallback` que é passada como o argumento _callback_ do método **getSelectedDataAsync** é executada, obtém o valor do texto selecionado quando o retorno de chamada retorna. Ela obtém o valor do argumento _selectedText_ do retorno de chamada (que é do tipo [AsyncResult](/javascript/api/office/office.asyncresult)) usando a propriedade [value](/javascript/api/office/office.asyncresult#status) do objeto **AsyncResult** retornado.
     
 - O restante do código na função `selectedTextCallback` consulta o serviço Web XML para obter definições. Também chama as APIs do Microsoft Translator para fornecer a URL de um arquivo .wav que tem a pronúncia da palavra selecionada.
     
@@ -541,7 +543,7 @@ Os membros primários da API JavaScript para Office (Office.js) que são chamado
 
 
 
-```javascript
+```js
 // The document the dictionary add-in is interacting with.
 var _doc; 
 // The last looked-up word, which is also the currently displayed word.

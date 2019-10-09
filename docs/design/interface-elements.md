@@ -2,12 +2,13 @@
 title: Elementos da interface do usuário do Office para suplementos do Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 8282caff412a9a258e54092bc77e07571f0d8ac1
-ms.sourcegitcommit: c72c35e8389c47a795afbac1b2bcf98c8e216d82
+localization_priority: Priority
+ms.openlocfilehash: 444aca7b75e35ef502075876a7d1324fcdca0603
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "19437301"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32446228"
 ---
 # <a name="office-ui-elements-for-office-add-ins"></a>Elementos da interface do usuário do Office para suplementos do Office
 
@@ -36,7 +37,7 @@ Use contêineres HTML para inserir código de interface do usuário baseado em H
 |[Suplementos de conteúdo](content-add-ins.md)|Exibir a interface do usuário personalizada inserida em documentos do Office. Use os suplementos de conteúdo para permitir que os usuários interajam com o suplemento diretamente no documento do Office. Por exemplo, talvez você queira mostrar conteúdo externo, como vídeos ou visualizações de dados de outras fontes. |
 |[Caixas de diálogo](dialog-boxes.md)|Exibir uma interface do usuário personalizada em uma caixa de diálogo que se sobrepõe ao documento do Office. Use uma caixa de diálogo para interações que requerem foco e mais espaço, e não exigem uma interação lado a lado com o documento.|
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 - [Comandos de suplemento para Excel, Word e PowerPoint](add-in-commands.md)
 - [Painéis de tarefas](task-pane-add-ins.md)

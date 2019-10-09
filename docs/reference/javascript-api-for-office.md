@@ -1,31 +1,45 @@
+---
+title: API JavaScript para Office
+description: ''
+ms.date: 05/13/2019
+localization_priority: Priority
+ms.openlocfilehash: 8d834aee4c21448210d9619fedd42d5ebb79e09d
+ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "35575321"
+---
 # <a name="javascript-api-for-office"></a>API JavaScript para Office
 
-A API JavaScript para Office permite criar aplicativos da web que interagem com os modelos de objeto nos aplicativos host do Office. Seu aplicativo fará referência à biblioteca office.js, que é um carregador de script. A biblioteca office.js carrega os modelos de objeto aplicáveis ao aplicativo Office que executa o suplemento. Você pode usar os seguintes modelos de objeto JavaScript:
+A API JavaScript para Office permite que você crie aplicativos Web que interajam com os modelos de objeto em aplicativos host do Office. Seu aplicativo fará referência à biblioteca office.js, que é um carregador de script. A biblioteca office.js carrega os modelos de objeto que são aplicáveis ao aplicativo do Office em execução no suplemento. Você pode usar os seguintes modelos de objeto JavaScript:
 
-- **APIs comuns** - APIs que foram introduzidas com o **Office 2013**. É carregado para **todos os aplicativos host do Office** e conecta o seu aplicativo de suplemento com o aplicativo cliente do Office. O modelo de objeto contém APIs específicas para clientes do Office e APIs que se aplicam a vários aplicativos host clientes do Office. Todo esse conteúdo está debaixo da **API Compartilhada**. 
+- **APIs comuns**: APIs introduzidas com o **Office 2013**. Elas são carregadas em **todos os aplicativos host do Office** e conectam seu aplicativo de suplemento com o aplicativo cliente do Office. O modelo de objeto contém APIs específicas aos clientes do Office e APIs aplicáveis a vários aplicativos host de clientes do Office. Todo esse conteúdo está na **API Comum**. Este modelo de objeto usa retornos de chamada. 
 
-  **O Outlook** também usa a sintaxe da API comum. Tudo que está sob o alias Office contém objetos que você pode usar para escrever scripts que interagem com conteúdo de documentos, planilhas, apresentações, itens de email e projetos do Office a partir do seus suplementos do Office. Você deve usar a API comum se o seu suplemento é direcionado ao Office 2013 e versões posteriores. Esse modelo de objeto usa retornos de chamada.
+  O **Outlook** também usa a sintaxe da API Comum. Todo o conteúdo sob o alias Office contém objetos que você pode usar para gravar scripts que interagem com o conteúdo em documentos, planilhas, apresentações, itens de email e projetos do Office a partir de seus suplementos do Office. Você deve usar essas APIs Comuns se o seu suplemento servir para o Office 2013 e versões posteriores. Este modelo de objeto usa retornos de chamada.
 
-- **APIs específicas por host** - APIs introduzidas com o **Office 2016**. Este modelo de objeto fornece objetos fortemente tipados específicos para o host que correspondem aos objetos familiares que você vê ao usar os clientes do Office, e representa o futuro das APIs JavaScript para Office. As APIs de host específico incluem atualmente a API JavaScript para Word e a API JavaScript para Excel.
+- **APIs específicas de host**: APIs introduzidas com o **Office 2016**. Este modelo de objeto fornece objetos fortemente tipados e específicos do host que correspondem aos objetos familiares exibidos quando você usa os clientes do Office, e representa o futuro das APIs JavaScript para Office. As APIs JavaScript específicas do host estão atualmente disponíveis para Excel, OneNote, PowerPoint e Word.
 
-## <a name="supported-host-applications"></a>Aplicativos hosts suportados
+## <a name="supported-host-applications"></a>Aplicativos host compatíveis
 
 - [Excel](overview/excel-add-ins-reference-overview.md)
 - [OneNote](overview/onenote-add-ins-javascript-reference.md)
 - [Outlook](requirement-sets/outlook-api-requirement-sets.md)
+- [PowerPoint](overview/powerpoint-add-ins-reference-overview.md)
+- [Project](overview/project-add-ins-reference-overview.md)
 - [Visio](overview/visio-javascript-reference-overview.md)
 - [Word](overview/word-add-ins-reference-overview.md)
-- [API compartilhada](requirement-sets/office-add-in-requirement-sets.md)
+- [API Comum](requirement-sets/office-add-in-requirement-sets.md)
 
 > [!NOTE] 
-> [PowerPoint e Project](requirement-sets/powerpoint-and-project-note.md) suportam suplementos feitos com a API JavaScript. No entanto, no momento não têm APIs de host específicas. Você interage com esses hosts por meio da API compartilhada.
+> O [Project](overview/project-add-ins-reference-overview.md) oferece suporte a suplementos feitos com a API JavaScript, mas não há nenhuma API JavaScript projetada especificamente para interagir com o Project. Você pode usar a API comum para criar suplementos do Project.
 
-Saiba mais sobre [hosts suportados e outros requisitos](https://docs.microsoft.com/office/dev/add-ins/concepts/requirements-for-running-office-add-ins).
+Saiba mais sobre [hosts suportados e outros requisitos](../concepts/requirements-for-running-office-add-ins.md).
 
 ## <a name="open-api-specifications"></a>Especificações abertas da API
 
-À medida que criamos e desenvolvemos novas APIs para suplementos do Office, nós as disponibilizamos em nossa página [Especificações abertas da API](openspec.md) a fim de obter os seus comentários. Descubra quais recursos estão no pipeline e comente sobre nossas especificações de design.
+À medida que criamos e desenvolvemos novas APIs para suplementos do Office, nós as disponibilizamos em nossa página [Especificações abertas da API](openspec/openspec.md) a fim de obter os seus comentários. Descubra quais novos recursos estão no pipeline e forneça comentários sobre nossas especificações de design.
 
 ## <a name="see-also"></a>Confira também
 
-- [Referência da API JavaScript para Office](https://docs.microsoft.com/javascript/api/overview/office?view=office-js)
+- [Referência da API JavaScript do Office](/javascript/api/overview/office)

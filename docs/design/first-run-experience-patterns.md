@@ -1,65 +1,77 @@
-# <a name="first-run-experience-patterns"></a>Padrões de telas de apresentação
+---
+title: Padrões de tela de apresentação para suplemento dos Office
+description: ''
+ms.date: 06/26/2018
+localization_priority: Normal
+ms.openlocfilehash: 85f8e4f7e0082e00ad5064333470f589e449af45
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32446821"
+---
+# <a name="first-run-experience-patterns"></a>Padrões de tela de apresentação
 
-Uma tela de apresentação (FRE) é a introdução do usuário ao seu suplemento. Uma FRE é apresentada quando um usuário abre um suplemento pela primeira vez. Ela fornece informações sobre as funções, recursos e/ou benefícios do suplemento. Essa experiência ajuda a moldar a impressão do usuário sobre um suplemento e pode aumentar a probabilidade de que ele retorne e continue a usá-lo.
+Uma tela de apresentação (FRE) é a introdução de um usuário para o suplemento. Um FRE é exibida quando um usuário abre um suplemento pela primeira vez e fornece informações sobre as funções, recursos e/ou os benefícios do suplemento. Essa experiência ajuda a moldar a impressão do usuário de um suplemento e pode influenciar fortemente sua probabilidade de voltar e continuar usando o suplemento.
 
-## <a name="best-practices"></a>Melhores práticas
+## <a name="best-practices"></a>Práticas recomendadas
 
 
 Siga estas práticas recomendadas ao criar sua tela de apresentação:
 
-|Faça|Não faça|
+|Fazer|Não fazer|
 |:------|:------|
-|Forneça uma breve introdução para as principais ações no suplemento. | Não inclua informações e textos explicativos que não são relevantes para a introdução.
-|Dê aos usuários a oportunidade de concluir uma ação que impactará positivamente o uso do suplemento. | Não espere que os usuários aprendam tudo de uma vez. Concentre-se na ação que fornece o maior valor.
-|Crie uma experiência envolvente que os usuários queiram concluir. | Não force os usuários a seguir pela tela de apresentação. Dê aos usuários uma opção para ignorar a tela de apresentação. |
+|Forneça uma simples e breve introdução para as principais ações do suplemento. | Não inclua informações e legendas que não sejam relevantes ao guia de introdução.
+|Forneça aos usuários a oportunidade de concluir uma ação que impactará positivamente o uso do add-in. | Não espere que os usuários aprendam tudo ao mesmo tempo. Concentre-se na ação que fornece o maior valor.
+|Crie uma experiência envolvente que os usuários desejem concluir. | Não force os usuários a clicar na experiência da tela de apresentação. Forneça aos usuários uma opção para ignorar a tela de apresentação. |
 
 
 
-Considere se é importante para o seu cenário mostrar a tela de apresentação aos usuários apenas uma vez ou periodicamente. Por exemplo, se o suplemento não for usado com muita frequência, os usuários poderão se beneficiar de um novo contato com a tela de apresentação.
+Considere se mostrar aos usuários a tela de apresentação uma vez ou periodicamente é importante para seu cenário. Por exemplo, se o suplemento for usado apenas periodicamente, os usuários poderão ficar menos familiarizados com seu suplemento e poderão se beneficiar de outra interação com a tela de apresentação.
 
 
 
-Utilize os seguintes padrões, quando aplicáveis, para criar ou aprimorar a tela de apresentação do seu suplemento.
+Aplique os seguintes padrões, conforme aplicável, para criar ou aprimorar a tela de apresentação do seu suplemento.
 
 
 
 ## <a name="carousel"></a>Carrossel
 
 
-O carrossel leva os usuários por uma série de recursos ou páginas informativas antes de começarem a usar o suplemento.
+O carrossel apresenta aos usuários uma série de recursos ou página de informações antes que eles comecem a usar o suplemento.
 
 *Figura 1: Permita que os usuários avancem ou pulem as páginas iniciais do fluxo do carrossel.*
-![Tela de apresentação - Carrossel - Especificações para o painel de tarefas da área de trabalho](../images/add-in-FRE-step-1.png)
+![ Apresentação - carrossel - Especificações para o painel de tarefas da área de trabalho](../images/add-in-FRE-step-1.png)
 
 
 
-*Figura 2: Reduza o número de telas do carrossel apresentadas ao usuário para apenas aquelas essenciais para comunicar efetivamente sua mensagem*
-![Tela de apresentação - Carrossel - Especificações para o painel de tarefas da área de trabalho](../images/add-in-FRE-step-2.png)
+*Figura 2: Minimize o número de telas do carrossel que você apresenta ao usuário somente para as que são necessárias para comunicar efetivamente sua mensagem*
+![ Apresentação - carrossel - Especificações para o painel de tarefas da área de trabalho](../images/add-in-FRE-step-2.png)
 
 
-*Figura 3: Forneça uma clara chamada para ação para sair da tela de apresentação.*
-![Tela de apresentação - Carrossel - Especificações para o painel de tarefas da área de trabalho](../images/add-in-FRE-step-3.png)
-
-
-
-## <a name="value-placemat"></a>Placemat de valor
-
-O placemat de valor apresenta seu suplemento utilizando o logotipo, uma proposta de valor claramente definida, destaques ou resumo dos recursos e uma frase de chamada para ação.
+*Figura 3: Forneça um apelo à ação claro para sair da tela de apresentação.*
+![ Apresentação - carrossel - Especificações para o painel de tarefas da área de trabalho](../images/add-in-FRE-step-3.png)
 
 
 
-![Tela de apresentação - Placemat de valor - Especificações para o painel de tarefas da área de trabalho](../images/add-in-FRE-value.png)
-*Um placemat de valor com logotipo, clara proposta de valor, resumo de recursos e chamada para ação.*
+## <a name="value-placemat"></a>Roteiro de valor
 
-
-### <a name="video-placemat"></a>Placemat de vídeo
-
-O placemat de vídeo mostra aos usuários um vídeo antes que eles comecem a usar o seu suplemento.
-
-
-*Figura 1: Placemat da tela de apresentação. Contém uma imagem estática do vídeo com um botão de reprodução e claro botão de chamada para a ação.*![Placemat de vídeo - Especificações para o painel de tarefas da área de trabalho](../images/add-in-FRE-video.png)
+O posicionamento do valor informa a proposta de valor do seu suplemento com posicionamento do logotipo, uma proposta de valor claramente definida, destaques ou resumo do recurso e uma chamada para ação.
 
 
 
-*Figura 2: Player de vídeo - Um vídeo dentro de uma janela de diálogo é apresentado para os usuários.*
-![Placemat de vídeo - Especificações para o painel de tarefas da área de trabalho](../images/add-in-FRE-video-dialog.png)
+![Apresentação - roteiro de valor - Especificações do painel de tarefas da área de trabalho ](../images/add-in-FRE-value.png)
+* Um roteiro de valor com logotipo, proposição de valor clara, resumo de recurso e chamada para ação.*
+
+
+### <a name="video-placemat"></a>Roteiro de vídeo
+
+O roteiro de vídeo mostra aos usuários um vídeo antes que eles comecem a usar o suplemento.
+
+
+*Figura 1: Apresentação do roteiro - A tela contém uma imagem estática do vídeo com um botão de reprodução e um botão de apelo para ação. *![Roteiro de vídeo - Especificações para o painel de tarefas da área de trabalho](../images/add-in-FRE-video.png)
+
+
+
+*Figura 2: Player de vídeo - os usuários são apresentados a um vídeo em uma janela de diálogo.*
+![ Apresentação de vídeo - Especificações para o painel de tarefas da área de trabalho](../images/add-in-FRE-video-dialog.png)

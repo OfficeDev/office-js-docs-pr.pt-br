@@ -1,21 +1,45 @@
+---
+title: Elemento SupportsSharedFolders no arquivo de manifesto
+description: ''
+ms.date: 04/02/2019
+localization_priority: Normal
+ms.openlocfilehash: 976f8ba00f6ac9ac32def56933af1077527b7e9c
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32452036"
+---
 # <a name="supportssharedfolders-element"></a>Elemento SupportsSharedFolders
 
-Define se o suplemento do Outlook está disponível em cenários de representante. O elemento **SupportsSharedFolders** é um elemento filho de [DesktopFormFactor](desktopformfactor.md). É definido como *false* por padrão.
+Define se o suplemento do Outlook está disponível nos cenários de representante. O **SupportsSharedFolders** é um elemento filho de [DesktopFormFactor](desktopformfactor.md). Ele é definido como *false* por padrão.
 
 > [!IMPORTANT]
-> O elemento SupportsSharedFolders só está disponível no [Conjunto de Requerimentos em versão prévia para suplementos do Outlook](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) para o Exchange Online. Os suplementos que usam esse elemento não podem ser publicados no AppSource ou implantados por meio da implantação centralizada.
+> O acesso de representante para suplementos do Outlook está atualmente [em visualização](/office/dev/add-ins/reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview) e é suportado apenas em clientes que são executados no Exchange Online. Os suplementos que usam esse elemento não podem ser publicados no AppSource nem implantados por meio da implantação centralizada.
 
-A seguir apresentamos um exemplo do elemento **SupportsSharedFolders** .
+Veja a seguir um exemplo do elemento **SupportsSharedFolders**.
 
 ```XML
-<DesktopFormFactor>
-  <FunctionFile resid="residDesktopFuncUrl" />
-  <SupportsSharedFolders>true</SupportsSharedFolders>
-  <ExtensionPoint xsi:type="PrimaryCommandSurface">
-    <!-- information about this extension point -->
-  </ExtensionPoint>
+...
+<VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+    ...
+    <Hosts>
+      <Host xsi:type="MailHost">
+        <DesktopFormFactor>
+          <SupportsSharedFolders>true</SupportsSharedFolders>
+          <FunctionFile resid="residDesktopFuncUrl" />
+          <ExtensionPoint xsi:type="MessageReadCommandSurface">
+            <!-- configure selected extension point -->
+          </ExtensionPoint>
 
-  <!-- You can define more than one ExtensionPoint element as needed -->
+          <!-- You can define more than one ExtensionPoint element as needed -->
 
-</DesktopFormFactor>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    ...
+  </VersionOverrides>
+</VersionOverrides>
+...
 ```

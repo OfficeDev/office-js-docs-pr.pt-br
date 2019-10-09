@@ -1,13 +1,14 @@
 ---
 title: Crie o design dos seus suplementos do Office
 description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: a864dc0fc6d30ecfcd7a71d1b2677d408519af0e
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.date: 06/20/2019
+localization_priority: Priority
+ms.openlocfilehash: 766110b9b1ff9d22a783f592f1e38eb848b8b737
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944195"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127671"
 ---
 # <a name="design-your-office-add-ins"></a>Crie o design dos seus suplementos do Office
 
@@ -21,17 +22,17 @@ Os aplicativos do Office seguem um conjunto geral de diretrizes de interação. 
 
 Siga os princípios de design do Office para criar experiências positivas com os suplementos:
 
-- **Crie designs explicitamente para o Office.** A funcionalidade e aparência de um suplemento deve complementar harmoniosamente a experiência no Office. Os suplementos devem parecer nativos. Eles têm que se encaixar diretamente no Word em um iPad ou no PowerPoint Online. Um suplemento bem projetado será uma combinação adequada da sua experiência, da plataforma e do aplicativo do Office. Considere a possibilidade de usar o Office UI Fabric como sua linguagem de design. Aplique temas ao documento e à interface do usuário quando apropriado.
+- **Crie designs explicitamente para o Office.** A funcionalidade e a aparência de um suplemento deve complementar harmoniosamente a experiência no Office. Os suplementos devem parecer nativos. Eles têm que se encaixar diretamente no Word em um iPad ou no PowerPoint Online. Um suplemento bem projetado será uma combinação adequada da sua experiência, da plataforma e do aplicativo do Office. Considere a possibilidade de usar o Office UI Fabric como sua linguagem de design. Aplique temas ao documento e à interface do usuário quando apropriado.
 
 - **Concentre-se em algumas tarefas importantes e realize-as de forma adequada** Ajude os clientes a concluir um trabalho sem interferir em outros trabalhos. Forneça um valor real aos clientes. Concentre-se em casos de uso comuns e escolha com cuidado aqueles que mais beneficiem os usuários durante a interação com documentos do Office.
 
 - **Favoreça mais o conteúdo do que a aparência**. Permita que a página, o slide ou a planilha dos clientes permaneça como o foco da experiência. Um suplemento é uma interface auxiliar. Nenhum elemento supérfluo de interface do usuário deve interferir no conteúdo e nas funcionalidades do suplemento. Crie uma identidade visual para sua experiência de maneira sensata. Sabemos que é importante fornecer aos usuários uma experiência reconhecível e exclusiva, mas evite distrações. Tente manter o foco no conteúdo e na conclusão de tarefas, não na marca.
 
-- **Torne isso agradável e mantenha os usuários no controle.** As pessoas gostam de usar produtos funcionais e visualmente atraentes. Crie sua experiência com cuidado. Acerte bem os pormenores, considerando cada interação e os detalhes visuais. Permita que os usuários controlem suas experiências. As etapas necessárias para concluir uma tarefa devem ser claras e relevantes. Decisões importantes devem ser fáceis de entender. As ações devem ser facilmente reversíveis. Um suplemento não é um destino, é um aprimoramento da funcionalidade do Office.
+- **Torne-o interessante e mantenha os usuários no controle.** As pessoas gostam de usar produtos funcionais e visualmente atraentes. Crie sua experiência com atenção. Leve em conta cada interação e detalhe visual para acertar em todos os elementos. Permita que os usuários controlem a experiência. As etapas necessárias para concluir uma tarefa devem ser claras e relevantes. Decisões importantes devem ser fáceis de entender. As ações devem ser revertidas com facilidade. Um suplemento não é um destino, mas sim uma melhoria à funcionalidade do Office.
 
 - **Design para todas as plataformas e métodos de entrada**. Os suplementos são projetados para funcionar em todas as plataformas com suporte do Office, portanto, a Experiência de Usuário do suplemento deve ser otimizada para funcionar em plataformas e fatores forma. Dê suporte a mouse/teclado e dispositivos de entrada por toque e verifique se a interface do usuário HTML personalizada responde na adaptação aos diversos fatores forma. Para saber mais, confira o tópico [Otimizar para toque](../concepts/add-in-development-best-practices.md#optimize-for-touch). 
 
-## <a name="see-also"></a>Veja também
-- [Office UI Fabric](https://developer.microsoft.com/en-us/fabric) 
+## <a name="see-also"></a>Confira também
+- [Office UI Fabric](https://developer.microsoft.com/pt-BR/fabric) 
 - [Práticas recomendadas de desenvolvimento de suplementos](../concepts/add-in-development-best-practices.md)
 

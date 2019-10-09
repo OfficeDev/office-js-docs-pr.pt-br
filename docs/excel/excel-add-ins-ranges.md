@@ -1,17 +1,21 @@
 ---
-title: Trabalhar com intervalos usando a API JavaScript do Excel
+title: Trabalhar com intervalos usando a API JavaScript do Excel (fundamental)
 description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: 246b882a921b5a43ca747238262af7c4b23c97ee
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
+ms.date: 04/30/2019
+localization_priority: Priority
+ms.openlocfilehash: c90ce16eeed731bcee025c4c61df1bd818b3dd6f
+ms.sourcegitcommit: c8914ce0f48a0c19bbfc3276a80d090bb7ce68e1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459165"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "37235334"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Trabalhar com intervalos usando a API JavaScript do Excel
 
-Este artigo fornece exemplos de código que mostram como realizar tarefas comuns com intervalos usando a API JavaScript do Excel. Para obter uma lista completa de propriedades e métodos que o objeto **Range**  suporta, confira [Objeto Range (JavaScript API para Excel)](https://docs.microsoft.com/javascript/api/excel/excel.range).
+Este artigo fornece exemplos de código que mostram como executar tarefas comuns com intervalos usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos que o objeto **Range** suporta, confira [Objeto Range (API JavaScript para Excel)](/javascript/api/excel/excel.range).
+
+> [!NOTE]
+> Confira exemplos de código que mostram como executar tarefas avançadas com intervalos em [Trabalhar com intervalos usando a API JavaScript do Excel (avançado)](excel-add-ins-ranges-advanced.md).
 
 ## <a name="get-a-range"></a>Obter um intervalo
 
@@ -19,7 +23,7 @@ Os exemplos a seguir mostram diferentes maneiras de obter uma referência a um i
 
 ### <a name="get-range-by-address"></a>Obter intervalo por endereço
 
-O exemplo de código a seguir obtém o intervalo com o endereço **B2:B5** da planilha chamada **Sample**, carrega sua propriedade **address** e grava uma mensagem no console.
+O exemplo de código a seguir obtém o intervalo com o endereço **B2:C5** da planilha chamada **Amostra**, carrega sua propriedade **address** e grava uma mensagem no console.
 
 ```js
 Excel.run(function (context) {
@@ -36,7 +40,7 @@ Excel.run(function (context) {
 
 ### <a name="get-range-by-name"></a>Obter intervalo por nome
 
-O exemplo de código a seguir obtém o intervalo chamado **MyRange** da planilha chamada **Sample**, carrega sua propriedade **address** e grava uma mensagem no console.
+O exemplo de código a seguir obtém o intervalo chamado **MyRange** da planilha chamada **Amostra**, carrega sua propriedade **address** e grava uma mensagem no console.
 
 ```js
 Excel.run(function (context) {
@@ -53,7 +57,7 @@ Excel.run(function (context) {
 
 ### <a name="get-used-range"></a>Obter intervalo usado
 
-O exemplo de código a seguir obtém o intervalo usado da planilha chamada **Sample**, carrega sua propriedade de **address** e grava uma mensagem no console. O intervalo usado é o menor intervalo que abrange quaisquer células na planilha que tenham um valor ou formatação atribuída a elas. Se a planilha inteira estiver em branco, o método **getUsedRange()** retornará um intervalo que consiste apenas na célula superior esquerda da planilha.
+O exemplo de código a seguir obtém o intervalo usado da planilha chamada **Amostra**, carrega sua propriedade **address** e grava uma mensagem no console. O intervalo usado é o menor intervalo que abrange todas as células na planilha que têm um valor ou uma formatação atribuída a elas. Se a planilha inteira estiver em branco, o método **getUsedRange()** retornará um intervalo que consiste apenas na célula superior esquerda da planilha.
 
 ```js
 Excel.run(function (context) {
@@ -70,7 +74,7 @@ Excel.run(function (context) {
 
 ### <a name="get-entire-range"></a>Obter intervalo inteiro
 
-O exemplo de código a seguir obtém todo o intervalo da planilha chamada **Sample**, carrega sua propriedade **address** e grava uma mensagem no console.
+O exemplo de código a seguir obtém todo o intervalo da planilha chamada **Amostra**, carrega sua propriedade **address** e grava uma mensagem no console.
 
 ```js
 Excel.run(function (context) {
@@ -191,11 +195,11 @@ Excel.run(function (context) {
 
 ## <a name="set-values-or-formulas"></a>Definir valores ou fórmulas
 
-Os exemplos a seguir mostram como atrubuir valores e fórmulas para uma única célula ou um intervalo de células.
+Os exemplos a seguir mostram como definir valores e fórmulas para uma única célula ou um intervalo de células.
 
 ### <a name="set-value-for-a-single-cell"></a>Definir valor para uma única célula
 
-O exemplo de código a seguir atribui o valor da célula **C3** como "5" e, em seguida, define a largura das colunas para melhor ajustar os dados.
+O exemplo de código a seguir define o valor da célula **C3** como "5" e, em seguida, define a largura das colunas para melhor ajustar os dados.
 
 ```js
 Excel.run(function (context) {
@@ -306,7 +310,7 @@ Estes exemplos mostram como obter valores, texto e fórmulas de um intervalo de 
 
 ### <a name="get-values-from-a-range-of-cells"></a>Obter valores de um intervalo de células
 
-O exemplo de código a seguir obtém o intervalo **B2:E6**, carrega sua propriedade **values** e grava os valores no console. A propriedade **values** de um intervalo especifica os valores brutos que as células contêm. Mesmo que algumas células em um intervalo contenham fórmulas, a propriedade **values** do intervalo especifica os valores brutos para essas células, não para nenhuma das fórmulas.
+O exemplo de código a seguir obtém o intervalo **B2:E6**, carrega sua propriedade **values** e grava os valores no console. A propriedade **values** de um intervalo especifica os novos valores brutos que as células contêm. Mesmo que algumas células em um intervalo contenham fórmulas, a propriedade **values** do intervalo especifica os valores brutos para essas células, não alguma das fórmulas.
 
 ```js
 Excel.run(function (context) {
@@ -364,7 +368,7 @@ Excel.run(function (context) {
 
 ### <a name="get-text-from-a-range-of-cells"></a>Obter texto de um intervalo de células
 
-O exemplo de código a seguir obtém o intervalo **B2:E6**, carrega sua propriedade **text** e a grava no console. A propriedade **text** de um intervalo especifica os valores de exibição para células no intervalo. Mesmo que algumas células em um intervalo contenham fórmulas, a propriedade **text** do intervalo especifica os valores de exibição para essas células, não qualquer uma das fórmulas.
+O exemplo de código a seguir obtém o intervalo **B2:E6**, carrega sua propriedade **text** e o grava no console.  A propriedade **text** de um intervalo especifica os valores de exibição para as células no intervalo. Mesmo que algumas células em um intervalo contenham fórmulas, a propriedade **text** do intervalo especifica os valores de exibição para essas células, não alguma das fórmulas.
 
 ```js
 Excel.run(function (context) {
@@ -422,7 +426,7 @@ Excel.run(function (context) {
 
 ### <a name="get-formulas-from-a-range-of-cells"></a>Obter fórmulas de um intervalo de células
 
-O exemplo de código a seguir obtém o intervalo **B2:E6**, carrega sua propriedade **formulas** e a grava no console.  A propriedade **formulas** de um intervalo especifica as fórmulas para células no intervalo que contêm fórmulas e os valores brutos para células no intervalo que não contêm fórmulas.
+O exemplo de código a seguir obtém o intervalo **B2:E6**, carrega sua propriedade **formulas** e o grava no console.  A propriedade **formulas** de um intervalo especifica as fórmulas para células no intervalo que contêm fórmulas e os valores brutos para células no intervalo que não contêm fórmulas.
 
 ```js
 Excel.run(function (context) {
@@ -480,18 +484,18 @@ Excel.run(function (context) {
 
 ## <a name="set-range-format"></a>Definir formato do intervalo
 
-Os exemplos a seguir mostram como definir cor de fonte, cor de preenchimento e formato de número para células em um intervalo.
+Os exemplos a seguir mostram como definir a cor da fonte, a cor de preenchimento e o formato de número para células em um intervalo.
 
 ### <a name="set-font-color-and-fill-color"></a>Definir cor da fonte e cor de preenchimento
 
-O exemplo de código a seguir define a cor da fonte e a cor de preenchimento das células no intervalo **B2:E2**.
+O exemplo de código a seguir define a cor da fonte e a cor de preenchimento para células no intervalo **B2:E2**.
 
 ```js
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
 
     var range = sheet.getRange("B2:E2");
-    range.format.fill.color = "#4472C4";;
+    range.format.fill.color = "#4472C4";
     range.format.font.color = "white";
 
     return context.sync();
@@ -535,63 +539,36 @@ Excel.run(function (context) {
 
 ![Dados no Excel após a definição do formato](../images/excel-ranges-format-numbers.png)
 
-## <a name="copy-and-paste"></a>Copiar e colar
+### <a name="conditional-formatting-of-ranges"></a>Formatação condicional de intervalos
 
-> [!NOTE]
-> A função copyFrom está atualmente disponível somente na visualização pública (beta). Para usar esse recurso, você deve usar a biblioteca de beta do CDN Office. js: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js. Se você estiver usando o TypeScript ou o seu editor de código usar arquivos de definição de tipo TypeScript para o IntelliSense, use https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts.
+Os intervalos podem ter formatos aplicados a células individuais baseadas em condições. Confira mais informações sobre isso em [Aplicar a formatação condicional a intervalos do Excel](excel-add-ins-conditional-formatting.md).
 
-A função copyFrom do intervalo replica o comportamento de copiar e colar da interface do Excel. O objeto de intervalo em que o copyFrom é chamado é o destino. A origem a ser copiada é passada como um intervalo ou um endereço de cadeia representando um intervalo. O exemplo de código a seguir copia os dados de **a1: E1** para o intervalo começando em **G1** (que acaba colando no **G1:K1**).
+## <a name="find-a-cell-using-string-matching"></a>Localizar uma célula usando a cadeia de correspondência
 
-```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    // copy a range starting at a single cell destination
-    sheet.getRange("G1").copyFrom("A1:E1");
-    return context.sync();
-}).catch(errorHandlerFunction);
-```
-
-Range.copyFrom tem três parâmetros opcionais.
-
-```ts
-copyFrom(sourceRange: Range | string, copyType?: "All" | "Formulas" | "Values" | "Formats", skipBlanks?: boolean, transpose?: boolean): void;
-``` 
-
-`copyType` especifica quais dados são copiados da origem para o destino. `“Formulas”` transfere as fórmulas nas células de origem e preserva o posicionamento relativo dos intervalos dessas fórmulas. Quaisquer entradas que não sejam fórmulas são copiadas como estão. `“Values”` copia os valores de dados e, no caso de fórmulas, o resultado da fórmula. `“Formats”` copia a formatação do intervalo, incluindo fonte, cor e outras configurações de formato, mas sem valores. `”All”` (a opção padrão) copia os dados e a formatação, preservando as fórmulas das células, se encontradas.
-
-`skipBlanks` define se as células em branco são copiadas para o destino. Quando verdadeiro, `copyFrom` ignora as células em branco no intervalo de origem. As células ignoradas não sobrescreverão os dados existentes de suas células correspondentes no intervalo de destino. O padrão é falso.
-
-O exemplo de código e as imagens a seguir demonstram esse comportamento em um cenário simples. 
+O objeto `Range` tem um método `find` para pesquisar uma cadeia especificada dentro do intervalo. Ele retorna o intervalo da primeira célula com o texto correspondente. O exemplo de código a seguir localiza a primeira célula com um valor igual à cadeia de caracteres **Alimentos** e registra o seu endereço no console. Observe que `find` exibe um erro `ItemNotFound` se a cadeia de caracteres especificada não existir no intervalo. Se você acha que a cadeia de caracteres especificada pode não estar no intervalo, use o método [findOrNullObject](excel-add-ins-advanced-concepts.md#ornullobject-methods) para que seu código manipule normalmente esse cenário.
 
 ```js
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
-    // copy a range, omitting the blank cells so existing data is not overwritten in those cells
-    sheet.getRange("D1").copyFrom("A1:C1",
-        Excel.RangeCopyType.all,
-        true, // skipBlanks
-        false); // transpose
-    // copy a range, including the blank cells which will overwrite existing data in the target cells
-    sheet.getRange("D2").copyFrom("A2:C2",
-        Excel.RangeCopyType.all,
-        false, // skipBlanks
-        false); // transpose
-    return context.sync();
+    var table = sheet.tables.getItem("ExpensesTable");
+    var searchRange = table.getRange();
+    var foundRange = searchRange.find("Food", {
+        completeMatch: true, // find will match the whole cell value
+        matchCase: false, // find will not match case
+        searchDirection: Excel.SearchDirection.forward // find will start searching at the beginning of the range
+    });
+
+    foundRange.load("address");
+    return context.sync()
+        .then(function() {
+            console.log(foundRange.address);
+    });
 }).catch(errorHandlerFunction);
 ```
 
-*Antes da função anterior ter sido executada.*
-
-![Dados no Excel antes do método de cópia do intervalo ter sido executado.](../images/excel-range-copyfrom-skipblanks-before.png)
-
-*Depois que a função anterior foi executada.*
-
-![Dados no Excel após o método de cópia do intervalo ter sido executado.](../images/excel-range-copyfrom-skipblanks-after.png)
-
-`transpose` determina se os dados são ou não transpostos, ou seja, suas linhas e colunas são comutadas para o local de origem. Um intervalo transposto é invertido ao longo da diagonal principal, portanto, as linhas  **1**, **2**  e **3** se tornarão as colunas  **A**, **B**  e **C**. 
-
+Quando o método `find` é chamado em um intervalo que representa uma única célula, a planilha inteira é pesquisada. A pesquisa começa na célula e segue na direção especificada pelo `SearchCriteria.searchDirection`, envolvendo as extremidades da planilha, se necessário.
 
 ## <a name="see-also"></a>Confira também
 
-- [Conceitos de programação fundamentais com a API JavaScript do Excel](excel-add-ins-core-concepts.md)
-
+- [Trabalhar com intervalos usando a API JavaScript do Excel (avançado)](excel-add-ins-ranges-advanced.md)
+- [Conceitos fundamentais de programação com a API JavaScript do Excel](excel-add-ins-core-concepts.md)

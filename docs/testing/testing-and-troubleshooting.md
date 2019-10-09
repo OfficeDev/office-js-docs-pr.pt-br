@@ -1,21 +1,20 @@
 ---
 title: Solucionar erros de usuários com suplementos do Office
 description: ''
-ms.date: 01/23/2018
-ms.openlocfilehash: c56485cff0248484b53974c2685827045bbb68eb
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.date: 09/09/2019
+localization_priority: Priority
+ms.openlocfilehash: 8c1a39e4574f7e8ea60cdf32ff3139d9b929fe5d
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944059"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838526"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Solucionar erros de usuários com suplementos do Office
 
 Às vezes, seus usuários podem encontrar problemas com suplementos do Office desenvolvidos por você. Por exemplo, um suplemento falha ao carregar ou está inacessível. Use as informações neste artigo para ajudar a resolver problemas comuns que os usuários têm com o seu suplemento do Office. 
 
-Também é possível usar o [Fiddler](http://www.telerik.com/fiddler) para identificar e depurar problemas com os suplementos.
-
-Depois de resolver o problema do usuário, é possível [responder diretamente às avaliações dos clientes no AppSource](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings).
+Também é possível usar o [Fiddler](https://www.telerik.com/fiddler) para identificar e depurar problemas com os suplementos.
 
 ## <a name="common-errors-and-troubleshooting-steps"></a>Erros comuns e etapas de solução de problemas
 
@@ -30,10 +29,18 @@ A tabela a seguir lista as mensagens de erro comuns que os usuários podem receb
 |Erro: objeto não dá suporte à propriedade ou ao método 'defineProperty'|Confirme se o Internet Explorer não está sendo executado no modo de compatibilidade. Vá para Ferramentas >  **Configurações do Modo de Exibição de Compatibilidade**.|
 |Não foi possível carregar o aplicativo porque não há suporte para sua versão do navegador. Clique aqui para obter uma lista de versões do navegador compatíveis.|Verifique se o navegador dá suporte a armazenamento local HTML5 ou redefina as configurações do Internet Explorer. Para saber mais sobre os navegadores compatíveis, confira [Requisitos para a execução de Suplementos do Office](../concepts/requirements-for-running-office-add-ins.md).|
 
+## <a name="when-installing-an-add-in-you-see-error-loading-add-in-in-the-status-bar"></a>Ao instalar um suplemento, você verá “erro ao carregar suplemento” na barra de status
+
+1. Feche o Office.
+2. Verifique se o manifesto é valido
+3. Reinicie o suplemento
+4. Instale o suplemento novamente.
+
+Você também pode enviar comentários: se estiver usando o Excel no Windows ou Mac, envie comentários à equipe de extensibilidade do Office diretamente do Excel. Para fazer isso, selecione **Arquivo** | **Comentário** | **Enviar um Rosto Triste**. Enviando um rosto triste, você fornece os logs necessários para entendermos o problema.
 
 ## <a name="outlook-add-in-doesnt-work-correctly"></a>O suplemento do Outlook não funciona corretamente
 
-Se um suplemento do Outlook executado no Windows não está funcionando corretamente, tente ativar a depuração de scripts no Internet Explorer. 
+Se um suplemento do Outlook executado no Windows e [usando o Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md) não está funcionando corretamente, tente ativar a depuração de scripts no Internet Explorer. 
 
 
 - Vá para Ferramentas > **Opções da Internet** > **Avançado**.
@@ -72,7 +79,7 @@ Quando o usuário usa um suplemento do Office, ele é solicitado a permitir a ex
 
 |**Navegadores afetados**|**Plataformas afetadas**|
 |:--------------------|:---------------------|
-|Internet Explorer, Microsoft Edge|Office Online|
+|Internet Explorer, Microsoft Edge|Office na Web|
 
 Para resolver o problema, os administradores ou usuários finais podem adicionar o domínio do suplemento à lista de sites confiáveis no Internet Explorer. Use o mesmo procedimento se estiver trabalhando com o navegador Internet Explorer ou Microsoft Edge.
 
@@ -81,33 +88,34 @@ Para resolver o problema, os administradores ou usuários finais podem adicionar
 
 Para adicionar uma URL à lista de sites confiáveis:
 
-1. No Internet Explorer, escolha o botão Ferramentas e vá para **Opções da Internet** > **Segurança**.
+1. No **Painel de Controle**, abra **Opções da Internet** > **Security**.
 2. Escolha a zona de **Sites confiáveis** e escolha **Sites**.
 3. Insira a URL exibida na mensagem de erro e escolha **Adicionar**.
 4. Tente usar o suplemento novamente. Se o problema persistir, verifique as configurações de outras zonas de segurança e confira se o domínio do suplemento está na mesma zona que a URL exibida na barra de endereços do aplicativo do Office.
 
-Esse problema ocorre quando a API da caixa de diálogo é usada no modo pop-up. Para evitar esse problema, use o sinalizador [displayInFrame](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js). Isso requer que a página tenha suporte para exibição dentro de um iframe. O exemplo a seguir mostra como usar o sinalizador.
+Esse problema ocorre quando a API da caixa de diálogo é usada no modo pop-up. Para evitar esse problema, use o sinalizador [displayInFrame](/javascript/api/office/office.ui). Isso requer que a página tenha suporte para exibição dentro de um iframe. O exemplo a seguir mostra como usar o sinalizador.
 
 ```js
-
 Office.context.ui.displayDialogAsync(startAddress, {displayInFrame:true}, callback);
 ```
 
 ## <a name="changes-to-add-in-commands-including-ribbon-buttons-and-menu-items-do-not-take-effect"></a>Alterações nos comandos de suplemento, incluindo botões da faixa de opções e itens de menu, não entram em vigor
-Às vezes, as alterações nos comandos de suplemento, como o ícone de um botão da faixa de opções ou o texto de um item de menu, não parecem entrar em vigor. Limpe o cache do Office das versões antigas.
 
-#### <a name="for-windows"></a>No Windows:
-Exclua o conteúdo da pasta `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
+Se alterações feitas no manifesto, como nomes de arquivo de ícones de botão da faixa de opções ou texto de comandos de suplemento, não parecerem entrar em vigor, experimente limpar o cache do Office no computador. 
 
-#### <a name="for-mac"></a>No Mac:
-Exclua o conteúdo da pasta `/Users/{your_name_on_the_device}/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
+#### <a name="for-windows"></a>Para Windows:
+Exclua os conteúdos da pasta `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
+
+#### <a name="for-mac"></a>Para Mac:
+
+[!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
 #### <a name="for-ios"></a>No iOS:
 Chame `window.location.reload(true)` usando o JavaScript no suplemento para forçar um recarregamento. Outra alternativa é reinstalar o Office.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
-- [Depurar suplementos no Office Online](debug-add-ins-in-office-online.md) 
+- [Depurar suplementos no Office na Web](debug-add-ins-in-office-online.md) 
 - [Realizar sideload de um suplemento do Office no iPad e no Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  
 - [Depurar suplementos do Office no iPad e no Mac](debug-office-add-ins-on-ipad-and-mac.md)  
 - [Validar e solucionar problemas com seu manifesto](troubleshoot-manifest.md)

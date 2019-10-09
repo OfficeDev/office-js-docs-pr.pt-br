@@ -1,42 +1,41 @@
 ---
 title: Autorizar serviços externos no seu suplemento do Office
-description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: ee88019e85ba37f24c81fd7bf3663ee7cf066d45
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+description: Obter autorização para outras fontes de dados além da Microsoft como Google, Facebook, LinkedIn, SalesForce e GitHub, usando o OAuth 2.0, o código de autorização e os fluxos implícitos.
+ms.date: 08/07/2019
+localization_priority: Priority
+ms.openlocfilehash: 3b6ba291912f9d6284ca5e71a7bf634261a0bd24
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945740"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838540"
 ---
 # <a name="authorize-external-services-in-your-office-add-in"></a>Autorizar serviços externos no seu suplemento do Office
 
 Serviços online populares, incluindo o Office 365, o Google, o Facebook, o LinkedIn, o SalesForce e o GitHub, permitem que os desenvolvedores forneçam acesso para os usuários a suas contas em outros aplicativos, o que possibilita que você inclua esses serviços no seu Suplemento do Office.
 
+> [!NOTE]
+> O restante deste artigo é sobre o acesso a serviços que não são da Microsoft. Para saber mais sobre como acessar o Microsoft Graph (incluindo o Office 365), confira[ acessar o Microsoft Graph com o SSO](overview-authn-authz.md#access-to-microsoft-graph-with-sso) e [acessar o Microsoft Graph sem o SSO](overview-authn-authz.md#access-to-microsoft-graph-without-sso).
+
 A estrutura padrão do setor para habilitar o acesso de aplicativos Web a um serviço online é **OAuth 2.0**. Na maioria das situações, você não precisa saber os detalhes de como a estrutura funciona para usá-la no seu suplemento. Estão disponíveis muitas bibliotecas que simplificam os detalhes para você.
 
-Uma ideia fundamental do OAuth é que um aplicativo pode ser uma entidade de segurança por si só, assim como um usuário ou um grupo, com sua própria identidade e conjunto de permissões. Nos cenários mais comuns, quando o usuário realiza uma ação no suplemento do Office que requer o serviço online, o suplemento envia ao serviço uma solicitação para um conjunto específico de permissões para a conta do usuário. Em seguida, o serviço solicita que o usuário conceda essas permissões ao suplemento. Após a concessão das permissões, o serviço envia ao suplemento um pequeno *token de acesso* codificado. O suplemento pode usar o serviço, incluindo o token, em todas as suas solicitações para as APIs do serviço. Porém, o suplemento só pode agir dentro das permissões concedidas a ele pelo usuário. O token também expira após um tempo especificado.
+Uma ideia fundamental do OAuth é que um aplicativo pode ser uma [entidade de segurança](/windows/security/identity-protection/access-control/security-principals) por si só, assim como um usuário ou um grupo, com sua própria identidade e conjunto de permissões. Nos cenários mais comuns, quando o usuário realiza uma ação no Suplemento do Office que requer o serviço online, o suplemento envia ao serviço uma solicitação para um conjunto específico de permissões para a conta do usuário. Em seguida, o serviço solicita que o usuário conceda essas permissões ao suplemento. Após a concessão das permissões, o serviço envia ao suplemento um pequeno *token de acesso* codificado. O suplemento pode usar o serviço, incluindo o token, em todas as suas solicitações para as APIs do serviço. Porém, o suplemento só pode agir dentro das permissões concedidas a ele pelo usuário. O token também expira após um tempo especificado.
 
 Vários padrões OAuth, chamados de *fluxos* ou *tipos de concessão*, foram projetados para diferentes cenários. Os dois padrões a seguir são os mais comumente implementados:
 
-- **Fluxo Implícito**: a comunicação entre o suplemento e o serviço online é implementada com um JavaScript no lado do cliente.
-- **Fluxo de Código de Autorização**: a comunicação é *de servidor para servidor* entre o aplicativo Web do seu suplemento e o serviço online. Portanto, a implementação é feita com código no lado do servidor.
+- **Fluxo Implícito**: a comunicação entre o suplemento e o serviço online é implementada com um JavaScript no lado do cliente. Esse fluxo costuma ser usado em aplicativos página única (SPAs).
+- **Fluxo de Código de Autorização**: A comunicação é *de servidor para servidor* entre o aplicativo Web do seu suplemento e o serviço online. Portanto, a implementação é feita com código no lado do servidor.
 
-A finalidade dos fluxos do OAuth é proteger a identidade e a autorização do aplicativo. No fluxo de Código de Autorização, você recebe um *segredo de cliente* que precisa permanecer oculto. Como um Aplicativo de Página Única (SPA) não tem como proteger o segredo, recomendamos que você use o fluxo Implícito em SPAs.
+A finalidade de um fluxo OAuth é garantir a identidade e autorização do aplicativo. No fluxo de Código de Autorização, você recebe um *segredo do cliente* que precisa permanecer oculto. Um aplicativo que não tem nenhum back-end do lado do servidor, como é o caso de um SPA, não tem como proteger o segredo; por isso recomendamos usar o fluxo Implícito em SPAs.
 
-Você deve estar familiarizado com os prós e os contras do fluxo implícito e o fluxo do Código de Autorização. Para obter mais informações sobre esses dois fluxos, consulte [Código de Autorização](https://tools.ietf.org/html/rfc6749#section-1.3.1) e [Implícito](https://tools.ietf.org/html/rfc6749#section-1.3.2).
+Você deve estar familiarizado com os prós e os contras do fluxo implícito e o fluxo do código de autorização. Para obter mais informações sobre esses dois fluxos, consulte [Código de Autorização](https://tools.ietf.org/html/rfc6749#section-1.3.1) e [Implícito](https://tools.ietf.org/html/rfc6749#section-1.3.2).
 
 > [!NOTE]
-> Você também tem a opção de usar um serviço intermediário para executar a autorização e passar o token de acesso ao seu suplemento. Confira detalhes sobre esse cenário na seção **Serviços intermediários** mais adiante neste artigo.
-
-## <a name="authorization-to-microsoft-graph"></a>Autorização para o Microsoft Graph
-
-Se o serviço externo puder ser acessado por meio do Microsoft Graph, como o Office 365 ou o OneDrive, você poderá fornecer a melhor experiência para os usuários e ter a experiência de desenvolvimento mais fácil com o uso do sistema de logon único descrito em [Autorizar o Microsoft Graph no suplemento do Office](authorize-to-microsoft-graph.md) e seus artigos relacionados. As técnicas descritas neste artigo são melhores para usar em serviços externos que não sejam acessíveis com o Microsoft Graph. No entanto, elas *podem* ser usadas para acessar o Microsoft Graph, e você pode preferir as vantagens do logon único. Por exemplo, o sistema de logon único requer código do lado do servidor, portanto, ele não pode ser usado com um aplicativo de página única. Além disso, o sistema de logon único ainda não é compatível com todas as plataformas.
+> Você também tem a opção de usar um serviço intermediário para executar a autorização e passar o token de acesso ao seu suplemento. Para obter detalhes sobre esse cenário, consulte a seção **Serviços intermediários** mais adiante neste artigo.
 
 ## <a name="using-the-implicit-flow-in-office-add-ins"></a>Usando o fluxo Implícito em suplementos do Office
-A melhor maneira de descobrir se um serviço online suporta o fluxo implícito é consultar a documentação do serviço. Para serviços que suportam o fluxo implícito, você pode usar a biblioteca de JavaScript **Office-js-helpers** para fazer todo o trabalho detalhado para você:
 
-- [Office-js-helpers](https://github.com/OfficeDev/office-js-helpers)
+A melhor maneira de descobrir se um serviço online suporta o fluxo implícito é consultar a documentação do serviço.
 
 Para obter informações sobre outras bibliotecas que suportam o fluxo implícito, consulte a seção **Bibliotecas** mais adiante neste artigo.
 
@@ -44,38 +43,21 @@ Para obter informações sobre outras bibliotecas que suportam o fluxo implícit
 
 Muitas bibliotecas estão disponíveis para implementar o fluxo de Código de Autorização em várias linguagens e estruturas. Para mais informações sobre algumas dessas bibliotecas, consulte a seção **Bibliotecas** mais adiante neste artigo.
 
-As seguintes amostras fornecem exemplos de suplementos que implementam o Fluxo do Código de Autorização:
-
-- [Office-Add-in-Nodejs-ServerAuth](https://github.com/OfficeDev/Office-Add-in-Nodejs-ServerAuth) (NodeJS)
-- [PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) (ASP.NET MVC)
-
-### <a name="relayproxy-functions"></a>Funções de retransmissão/Proxy
-
-Você pode usar o fluxo do Código de Autorização mesmo com um aplicativo Web sem servidor armazenando os valores de **ID do cliente** e **segredo cliente** em uma função simples hospedada em um serviço como o [Azure Functions](https://azure.microsoft.com/services/functions) ou o [Amazon Lambda](https://aws.amazon.com/lambda). A função troca um código específico por um **token de acesso** e transmite-o de volta para o cliente. A segurança dessa abordagem depende do quanto protegido é o acesso à função.
-
-Para usar essa técnica, o suplemento exibe uma interface do usuário/pop-up para mostrar a tela de logon do serviço online (Google, Facebook e assim por diante). Quando o usuário se conecta e concede ao suplemento a permissão para acessar seus recursos no serviço online, o suplemento recebe um código que então pode ser enviado para a função online. Os serviços descritos em **Serviços intermediários** neste artigo usam um fluxo semelhante a esse.
-
 ## <a name="libraries"></a>Bibliotecas
 
 As bibliotecas estão disponíveis para vários idiomas e plataformas, tanto para o fluxo implícito quanto para o fluxo do Código de Autorização. Algumas bibliotecas são de propósito geral, enquanto outras são para serviços online específicos.
-
-**Office 365 e outros serviços que usam o Azure Active Directory como provedor de autorização**: [Bibliotecas de autenticação do Active Directory do Azure](https://azure.microsoft.com/documentation/articles/active-directory-authentication-libraries/). Também está disponível uma visualização da [Biblioteca de Autenticação da Microsoft](https://www.nuget.org/packages/Microsoft.Identity.Client).
 
 **Google**: Pesquise "auth" ou o nome da sua linguagem no [GitHub.com/Google](https://github.com/google). A maioria dos repositórios relevantes se chama `google-auth-library-[name of language]`.
 
 **Facebook**: Pesquise "library" ou "sdk" no [Facebook para Desenvolvedores](https://developers.facebook.com).
 
-**OAuth 2.0 Geral**: Uma página de links para bibliotecas de mais de uma dúzia de linguagens é mantida pelo IETF OAuth Working Group, em: [Código OAuth](http://oauth.net/code/). Observe que algumas dessas bibliotecas são para implementar um serviço compatível com o OAuth. As bibliotecas interessantes para você, como desenvolvedor do suplemento, são chamadas de bibliotecas de *cliente* nesta página, pois o servidor Web é um cliente do serviço compatível com o OAuth.
+**OAuth 2.0 Geral**: Uma página de links para bibliotecas de mais de uma dúzia de linguagens é mantida pelo IETF OAuth Working Group, em: [Código OAuth](https://oauth.net/code/). Observe que algumas dessas bibliotecas são para implementar um serviço compatível com o OAuth. As bibliotecas interessantes para você, como desenvolvedor do suplemento, são chamadas de bibliotecas de *cliente* nesta página, pois o servidor Web é um cliente do serviço compatível com o OAuth.
 
 ## <a name="middleman-services"></a>Serviços intermediários
 
-Seu suplemento pode usar um serviço intermediário, como o OAuth.io ou o Auth0, para executar a autorização. O serviço intermediário fornece tokens de acesso para serviços online populares ou simplifica o processo de habilitar o logon social para esse suplemento. Com muito pouco código, o suplemento pode usar qualquer script no lado do cliente ou código no lado do servidor para se conectar ao serviço intermediário e enviar ao suplemento qualquer token necessário para o serviço online. Todo o código de implementação de autorização está no serviço intermediário.
+Seu suplemento pode usar um serviço intermediário, como o [OAuth.io](https://oauth.io) ou [Auth0](https://auth0.com), para executar a autorização. Um serviço intermediário fornece tokens de acesso para serviços online populares ou simplifica o processo de habilitar o logon social para esse suplemento. Com muito pouco código, o suplemento pode usar qualquer script no lado do cliente ou código no lado do servidor para se conectar ao serviço intermediário e enviar ao suplemento qualquer token necessário para o serviço online. Todo o código de implementação de autorização está no serviço intermediário. 
 
-Para obter exemplos de suplementos que usam um serviço intermediário para autorização, consulte as seguintes amostras:
-
-- [Office-Add-in-Auth0](https://github.com/OfficeDev/Office-Add-in-Auth0) usa o Auth0 para habilitar o login social com o Facebook, Google e contas da Microsoft.
-
-- [Office-Add-in-OAuth.io](https://github.com/OfficeDev/Office-Add-in-OAuth.io) usa o OAuth.io para obter tokens de acesso a partir do Facebook e Google.
+É recomendável que a interface do usuário de autenticação/autorização no suplemento usar nossos APIs de caixa de diálogo para abrir uma página de logon. Ver [usar as APIs REST de caixa de diálogo em um fluxo de autenticação](dialog-api-in-office-add-ins.md#use-the-dialog-apis-in-an-authentication-flow) para saber mais. Quando você abre uma caixa de diálogo do Office dessa forma, a caixa de diálogo tem uma instância totalmente nova e separada do navegador e mecanismo JavaScript da instância na página pai (por exemplo, painel de tarefas do suplemento ou FunctionFile). Um token e outras informações que podem ser convertidas em uma cadeia de caracteres é passado para o pai usando uma chamada de API `messageParent`. Página pai, em seguida, pode usar o token para fazer chamadas autorizadas ao recurso. Devido à arquitetura, tenha cuidado como usar as APIs REST fornecidas pelo serviço de intermediário. Muitas vezes o serviço fornecerá uma configuração API no qual o código cria algum tipo de objeto contexto que é um token e o utiliza para fazer chamadas subsequentes ao recurso. Muitas vezes o serviço fornece um método de API único que faz a chamada inicial *e* cria objeto contexto. Um objeto assim não pode ser stringificado completamente, para que não possam ser passado de caixa de diálogo Office para a página de pai. Normalmente, o serviço intermediário fornece um segundo conjunto de API um nível inferior de abstração, como uma API REST. Este segundo conjunto tem um API que recebe um token do serviço e outras APIs que passam o token para o serviço ao usa-lo para obter acesso autorizado ao recurso. Precisa trabalhar com uma API neste nível inferior de abstração para que você possa obter o token na caixa de diálogo do Office e, em seguida, usar `messageParent` para passar para a página de pai. 
 
 ## <a name="what-is-cors"></a>O que é CORS?
 

@@ -1,15 +1,26 @@
-
+---
+title: Office. Context. Mailbox. userProfile – conjunto de requisitos de visualização
+description: ''
+ms.date: 06/20/2019
+localization_priority: Normal
+ms.openlocfilehash: 5941c4e1276535091a3ffcf5b2fb6aa972ed8c4d
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36696467"
+---
 # <a name="userprofile"></a>userProfile
 
-### [Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md). userProfile
+### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmduserprofile"></a>[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).userProfile
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
+|[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
 ##### <a name="members-and-methods"></a>Membros e métodos
 
@@ -22,103 +33,118 @@
 
 ### <a name="members"></a>Membros
 
-####  <a name="accounttype-string"></a>accountType :String
+#### <a name="accounttype-string"></a>AccountType: cadeia de caracteres
 
 > [!NOTE]
-> Esse membro é compatível somente no Outlook 2016 ou posterior para Mac (build 16.9.1212 ou posterior).
+> Atualmente, esse membro só tem suporte no Outlook 2016 ou posterior no Mac (Build 16.9.1212 ou posterior).
 
-Obtém o tipo de conta do usuário associado com a caixa de correio. Os valores possíveis são listados na tabela a seguir.
+Obtém o tipo de conta do usuário associado à caixa de correio. Os valores possíveis estão listados na tabela a seguir.
 
 | Valor | Descrição |
 |-------|-------------|
-| `enterprise` | A caixa de correio está em um servidor local do Exchange. |
-| `gmail` | A caixa de correio está associada a uma conta do Gmail. |
+| `enterprise` | A caixa de correio está em um servidor Exchange local. |
+| `gmail` | A caixa de correio está associada a uma conta do gmail. |
 | `office365` | A caixa de correio está associada a uma conta corporativa ou de estudante do Office 365. |
 | `outlookCom` | A caixa de correio está associada a uma conta pessoal do Outlook.com. |
 
-##### <a name="type"></a>Tipo:
+##### <a name="type"></a>Tipo
 
-*   Sequência de caracteres
+*   String
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.6 |
-|[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
+|[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.6 |
+|[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
 ##### <a name="example"></a>Exemplo
 
-```
+```js
 console.log(Office.context.mailbox.userProfile.accountType);
 ```
 
-####  <a name="displayname-string"></a>displayName :String
+<br>
 
-Obtém o nome para exibição do usuário.
+---
+---
 
-##### <a name="type"></a>Tipo:
+#### <a name="displayname-string"></a>displayName: cadeia de caracteres
 
-*   Sequência de caracteres
+Obtém o nome de exibição do usuário.
+
+##### <a name="type"></a>Tipo
+
+*   String
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
+|[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
 ##### <a name="example"></a>Exemplo
 
-```
+```js
 // Example: Allie Bellew
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
 
-####  <a name="emailaddress-string"></a>emailAddress :String
+<br>
+
+---
+---
+
+#### <a name="emailaddress-string"></a>emailAddress: cadeia de caracteres
 
 Obtém o endereço de email SMTP do usuário.
 
-##### <a name="type"></a>Tipo:
+##### <a name="type"></a>Tipo
 
-*   Sequência de caracteres
+*   String
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
+|[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
 ##### <a name="example"></a>Exemplo
 
-```
+```js
 // Example: allieb@contoso.com
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
 
-####  <a name="timezone-string"></a>timeZone :String
+<br>
+
+---
+---
+
+#### <a name="timezone-string"></a>timeZone: cadeia de caracteres
 
 Obtém o fuso horário padrão do usuário.
 
-##### <a name="type"></a>Tipo:
+##### <a name="type"></a>Tipo
 
-*   Sequência de caracteres
+*   String
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
-|[Versão mínima do conjunto de requisitos de caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Nível de permissão mínimo](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](https://docs.microsoft.com/outlook/add-ins/#extension-points)| Redação ou leitura|
+|[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
 ##### <a name="example"></a>Exemplo
 
-```
+```js
 // Example: Pacific Standard Time
 console.log(Office.context.mailbox.userProfile.timeZone);
 ```

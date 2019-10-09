@@ -1,15 +1,16 @@
 ---
-title: Painéis de tarefas nos suplementos do Office
-description: Os painéis de tarefas concedem aos usuários acesso aos controles de interface que executam o código para modificar os documentos ou e-mails ou exibir dados de uma fonte de dados.
-ms.date: 12/04/2017
-ms.openlocfilehash: fefba14528a4fc3a75b0936c8f5e2ae1bf01ca1b
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+title: Painéis de tarefas nos Suplementos do Office
+description: Os painéis de tarefa concedem aos usuários acesso a controles de interface que executam códigos para modificar documentos ou emails ou exibir dados de uma fonte de dados.
+ms.date: 06/20/2019
+localization_priority: Priority
+ms.openlocfilehash: 69fc1e2a228aa757613847095c91514264948c65
+ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23943940"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "35127692"
 ---
-# <a name="task-panes-in-office-add-ins"></a>Painéis de tarefas nos suplementos do Office
+# <a name="task-panes-in-office-add-ins"></a>Painéis de tarefas nos Suplementos do Office
  
 Painéis de tarefas são superfícies de interface que normalmente são exibidas no lado direito da janela no Word, PowerPoint, Excel e Outlook. As painéis de tarefa concedem aos usuários acesso a controles de interface que executam códigos para modificar documentos ou emails ou exibir dados de uma fonte de dados. Use painéis de tarefa quando não precisar inserir a funcionalidade diretamente no documento.
 
@@ -22,7 +23,7 @@ Painéis de tarefas são superfícies de interface que normalmente são exibidas
 |**Faça**|**Não faça**|
 |:-----|:--------|
 |<ul><li>Inclua o nome do seu suplemento no título.</li></ul>|<ul><li>Não adicione o nome da sua empresa ao título.</li></ul>|
-|<ul><li>Use nomes descritivos curtos no título.</li></ul>|<ul><li>Não acrescente sequência de caracteres como "suplemento", "para Word" ou "para Office" no título do suplemento.</li></ul>|
+|<ul><li>Use nomes descritivos curtos no título.</li></ul>|<ul><li>Não acrescente cadeias de caracteres como "suplemento", "para Word" ou "para Office" no título do suplemento.</li></ul>|
 |<ul><li>Inclua alguns elementos de navegação ou comando, como CommandBar ou Pivot, na parte superior do suplemento.</li></ul>||
 |<ul><li>Inclua um elemento da marca, como BrandBar, na parte inferior do suplemento, a menos que seu suplemento seja voltado para uso no Outlook.</li></ul>||
 
@@ -49,7 +50,7 @@ As imagens a seguir mostram vários tamanhos de painel de tarefas com a faixa de
 - Excel – 350 x 378
 - PowerPoint – 348 x 391
 - Word – 329 x 445
-- Outlook Web App – 320 x 570
+- Outlook (na Web) - 320x570
 
 ## <a name="personality-menu"></a>Menu de personalidade
 
@@ -72,9 +73,8 @@ No Mac, no menu de personalidade mede 26 x 26 pixels, mas flutua 8 pixels a part
 Para ver uma amostra que implementa um painel de tarefas, confira [Suplemento do Excel JS Tendências de Despesas do WoodGrove](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends) no GitHub. 
 
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 - [Office UI Fabric em Suplementos do Office](office-ui-fabric.md) 
-- [Padrões de design da experiência do usuário para suplementos do Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
-
+- [Padrões de design da experiência do usuário para suplementos do Office](../design/ux-design-pattern-templates.md)
 

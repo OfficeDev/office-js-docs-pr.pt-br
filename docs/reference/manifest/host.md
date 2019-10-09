@@ -1,32 +1,49 @@
+---
+title: Elemento Host no arquivo de manifesto
+description: ''
+ms.date: 07/01/2019
+localization_priority: Normal
+ms.openlocfilehash: e7b557034f70b03ed57598b7ffb9f43878db7392
+ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "35454892"
+---
 # <a name="host-element"></a>Elemento Host
 
 Especifica um tipo de aplicativo individual do Office em que o suplemento deve ser ativado.
 
 > [!IMPORTANT] 
-> A sintaxe do elemento **Host** varia dependendo se o elemento está definido no [manifesto básico](#basic-manifest) ou no nó [VersionOverrides](#versionoverrides-node). No entanto, a funcionalidade é a mesma.  
+> A sintaxe do elemento **Host** varia de acordo com a definição do elemento, se dentro do [manifesto básico](#basic-manifest) ou dentro do nó [VersionOverrides](#versionoverrides-node). No entanto, a funcionalidade é a mesma.  
 
 ## <a name="basic-manifest"></a>Manifesto básico
 
-Quando definido no manifesto básico (abaixo de [OfficeApp](officeapp.md)), o tipo de host é determinado pelo atributo `Name`.   
+Quando definido no manifesto básico (em [OfficeApp](officeapp.md)), o tipo de host é determinado pelo atributo `Name`.
 
 ### <a name="attributes"></a>Atributos
 
 | Atributo     | Tipo   | Obrigatório | Descrição                                      |
 |:--------------|:-------|:---------|:-------------------------------------------------|
-| [Name](#name) | string | obrigatório | O nome do tipo de aplicativo host do Office. |
+| [Nome](#name) | cadeia de caracteres | obrigatório | O nome do tipo de aplicativo host do Office. |
 
 ### <a name="name"></a>Name
-Especifica o tipo de Host destinado por esse suplemento. O valor deve ser uma das seguintes opções:
+
+Especifica o tipo de Host destinado por esse suplemento. O valor deve ser um dos seguintes.
 
 - `Document` (Word)
 - `Database` (Access)
-- `Mailbox` Outlook
+- `Mailbox` (Outlook)
 - `Notebook` (OneNote)
 - `Presentation` (PowerPoint)
 - `Project` (Project)
 - `Workbook` (Excel)
 
+> [!IMPORTANT]
+> Não recomendamos mais criar e usar aplicativos Web do Access e bancos de dados no SharePoint. Como alternativa, use o [Microsoft PowerApps](https://powerapps.microsoft.com/) para criar soluções de negócios sem código para dispositivos móveis e Web.
+
 ### <a name="example"></a>Exemplo
+
 ```xml
 <Hosts>
     <Host Name="Mailbox">
@@ -35,20 +52,21 @@ Especifica o tipo de Host destinado por esse suplemento. O valor deve ser uma da
 ```
 
 ## <a name="versionoverrides-node"></a>Nó VersionOverrides
+
 Quando definido em [VersionOverrides](versionoverrides.md), o tipo de host é determinado pelo atributo `xsi:type`. 
 
 ### <a name="attributes"></a>Atributos
 
 |  Atributo  |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  [xsi:type](#xsitype)  |  Sim  | Descreve o host do Office ao qual se aplicam essas configurações.|
+|  [xsi:type](#xsitype)  |  Sim  | Descreve o host do Office a que essas configurações se aplicam.|
 
 ### <a name="child-elements"></a>Elementos filho
 
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
 |  [DesktopFormFactor](desktopformfactor.md)    |  Sim   |  Define as configurações do fator forma da área de trabalho. |
-|  [MobileFormFactor](mobileformfactor.md)    |  Não   |  Define as configurações do fator forma móvel. **Observação:** esse elemento só tem suporte no Outlook para iOS. |
+|  [MobileFormFactor](mobileformfactor.md)    |  Não   |  Define as configurações do fator forma móvel. **Observação:** Esse elemento só é suportado no Outlook no iOS. |
 |  [AllFormFactors](allformfactors.md)    |  Não   |  Define as configurações de todos os fatores forma. Usado somente pelas funções personalizadas no Excel. |
 
 ### <a name="xsitype"></a>xsi:type
@@ -56,12 +74,13 @@ Quando definido em [VersionOverrides](versionoverrides.md), o tipo de host é de
 Controla a qual host do Office (Word, Excel, PowerPoint, Outlook, OneNote) as configurações contidas se aplicam. O valor deve ser uma das seguintes opções:
 
 - `Document` (Word)
-- `MailHost` Outlook    
+- `MailHost` (Outlook)
 - `Notebook` (OneNote)
 - `Presentation` (PowerPoint)
 - `Workbook` (Excel)
 
 ## <a name="host-example"></a>Exemplo de host 
+
 ```xml
 <Hosts>
     <Host xsi:type="MailHost">

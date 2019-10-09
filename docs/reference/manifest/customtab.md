@@ -1,10 +1,22 @@
+---
+title: Elemento CustomTab no arquivo de manifesto
+description: ''
+ms.date: 10/09/2018
+localization_priority: Normal
+ms.openlocfilehash: c1c3c6883a1feb94299feb35c078431e6e2e322c
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450629"
+---
 # <a name="customtab-element"></a>Elemento CustomTab
 
-Na faixa de opções, especifique qual guia e grupo para seus comandos de suplemento. Isso pode ser realizado na guia padrão (**Página inicial**, **Mensagem** ou **Reunião**) ou em uma guia personalizada definida pelo suplemento.
+Na faixa de opções, especifique qual guia e grupo para seus comandos de suplemento. Isso pode ser realizado na guia padrão (**Início**, **Mensagem** ou **Reunião**) ou em uma guia personalizada definida pelo suplemento.
 
-Nas guias personalizadas, o suplemento poderá criar até 10 grupos. Cada grupo está limitado a seis controles, independentemente da guia na qual aparece. Os suplementos estão limitados a uma guia personalizada.
+Nas guias personalizadas, o suplemento poderá criar até 10 grupos. Cada grupo está limitado a seis controles, independentemente da guia na qual ele aparece. Os suplementos estão limitados a uma guia personalizada.
 
-O atributo **id** deve ser único dentro do manifesto.
+O atributo **id** deve ser exclusivo dentro do manifesto.
 
 ## <a name="child-elements"></a>Elementos filho
 
@@ -16,14 +28,14 @@ O atributo **id** deve ser único dentro do manifesto.
 
 ### <a name="group"></a>Group
 
-Obrigatório. Confira [Elemento Group](group.md).
+Obrigatório. Confira [Elemento Group](group.md)
 
 ### <a name="label-tab"></a>Label (Tab)
 
 Obrigatório. O rótulo da guia personalizada. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String** no elemento **ShortStrings** do elemento [Resources](resources.md).
 
 
-## <a name="customtab-example"></a>Exemplo CustomTab
+## <a name="customtab-example"></a>Exemplo de CustomTab
 
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">

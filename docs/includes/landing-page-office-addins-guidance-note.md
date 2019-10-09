@@ -1,0 +1,1 @@
+<b>Observação</b>: Consulte a <a href="../overview/index.md">seção das instruções de Suplementos do Office</a> desta documentação para obter o conjunto completo de artigos que se aplicam a todos os tipos de Suplementos do Office.

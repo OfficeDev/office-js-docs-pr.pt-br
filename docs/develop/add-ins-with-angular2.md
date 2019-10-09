@@ -1,13 +1,14 @@
 ---
 title: Desenvolver suplementos do Office para o Angular
 description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: 65b2a229e0379106b63b0f1abaaa8b66d7cdf367
-ms.sourcegitcommit: eb74e94d3e1bc1930a9c6582a0a99355d0da34f2
+ms.date: 09/18/2019
+localization_priority: Priority
+ms.openlocfilehash: 6687cb5a661217e3bc6b240ce550edd082e565c7
+ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "25004970"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "37035214"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Desenvolver suplementos do Office para o Angular
 
@@ -19,9 +20,10 @@ Este artigo fornece orientações sobre como usar o Angular 2+ para criar um Sup
 Para ver um exemplo de Suplementos do Office criado utilizando a estrutura do Angular, confira o [Suplemento de Verificação de Estilo do Word Criado no Angular](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker).
 
 ## <a name="install-the-typescript-type-definitions"></a>Instalar as definições de tipo TypeScript
-Abra uma janela de nodejs e insira o seguinte na linha de comando: 
 
-```bash
+Abra uma janela de nodejs e insira o seguinte na linha de comando:
+
+```command&nbsp;line
 npm install --save-dev @types/office-js
 ```
 
@@ -72,19 +74,25 @@ const routes: Routes = // route definitions go here
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-```   
+```
 
 
 ## <a name="consider-wrapping-fabric-components-with-angular-components"></a>Considere a possibilidade de dispor componentes do Fabric com componentes do Angular
 
-Recomendamos usar o uso do estilo [Office UI Fabric](https://developer.microsoft.com/fabric#/fabric-js) no seu suplemento. O Fabric contém componentes que vêm com em várias versões, incluindo uma versão [baseada no TypeScript](https://github.com/OfficeDev/office-ui-fabric-js). Considere o uso de componentes do Fabric no seu suplemento dispondo-os em componentes do Angular. Para ver um exemplo de como fazer isso, consulte [Suplemento de verificação de estilo do Word criado no Angular](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker). Observe, por exemplo, como o componente do Angular definido em [fabric.textfield.wrapper](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/shared/office-fabric-component-wrappers/fabric.textfield.wrapper.component.ts) importa o arquivo do Fabric TextField.ts, onde o componente do Fabric é definido. 
+Recomendamos o uso do estilo [UI Fabric](https://developer.microsoft.com/fabric#) em seu suplemento. O UI Fabric para a Web está disponível em duas versões: 
+
+- O Fabric React](https://developer.microsoft.com/fabric#/controls/web) oferece componentes robustos, acessíveis e atualizados que são altamente personalizáveis.
+
+- O [Fabric Core](https://developer.microsoft.com/fabric#/styles/web) é um conjunto de classes CSS e mixins de Sass que oferecem acesso a cores, animações, fontes, ícones e grade do Fabric.
+
+Considere o uso de componentes do Fabric no seu suplemento dispondo-os em componentes do Angular. Para ver um exemplo de como fazer isso, consulte [Suplemento de verificação de estilo do Word criado no Angular](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker). Observe, por exemplo, como o componente do Angular definido em [fabric.textfield.wrapper](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/shared/office-fabric-component-wrappers/fabric.textfield.wrapper.component.ts) importa o arquivo do Fabric TextField.ts, onde o componente do Fabric é definido. 
 
 
-## <a name="using-the-office-dialog-api-with-angular"></a>Usar a API de diálogo do Office com o Angular
+## <a name="using-the-office-dialog-api-with-angular"></a>Usar a API de caixa diálogo do Office com o Angular
 
-A API de Diálogo do Suplemento do Office permite que seu suplemento abra uma página em uma caixa de diálogo semi-modal que pode trocar informações com a página principal, que costuma ficar no painel de tarefas. 
+A API de caixa de diálogo do Suplemento do Office permite que seu suplemento abra uma página em uma caixa de diálogo semimodal que pode trocar informações com a página principal, que, em geral, está no painel de tarefas.
 
-O método [displayDialogAsync](https://docs.microsoft.com/javascript/api/office/office.ui?view=office-js) usa um parâmetro que especifica a URL da página que deve ser aberta na caixa de diálogo. Seu suplemento pode ter uma página HTML distinta (diferente da página de base) para transmitir esse parâmetro ou você pode transmitir a URL de uma rota em um aplicativo do Angular. 
+O método [displayDialogAsync](/javascript/api/office/office.ui) usa um parâmetro que especifica a URL da página que deve ser aberta na caixa de diálogo. Seu suplemento pode ter uma página HTML distinta (diferente da página de base) para transmitir esse parâmetro ou você pode transmitir a URL de uma rota em um aplicativo do Angular. 
 
 É importante lembrar, se você transmitir uma rota, que a caixa de diálogo cria uma nova janela com seu próprio contexto de execução. Sua página de base e todos os códigos de inicialização são executados novamente nesse novo contexto e todas as variáveis são definidas para seus valores iniciais na caixa de diálogo. Então essa técnica lança uma segunda instância do seu aplicativo com uma única página na caixa de diálogo. O código que altera as variáveis na caixa de diálogo não altera a versão do painel tarefas das mesmas variáveis. Da mesma forma, a caixa de diálogo tem seu próprio armazenamento de sessão, que não pode ser acessado a partir do código no painel de tarefas.  
 
@@ -105,11 +113,11 @@ export class MyComponent {
     });
   }
 }
-``` 
+```
 
 ## <a name="using-observable"></a>Usando o Observable
 
-O Angular usa o RxJS (Expansões Reativas para JavaScript) e o RxJS introduz os objetos `Observable` e `Observer` para implementar o processamento assíncrono. Esta seção fornece uma breve introdução ao uso de `Observables`; para saber mais informações, consulte a documentação de [RxJS](http://reactivex.io/rxjs/) oficial.
+O Angular usa o RxJS (Expansões Reativas para JavaScript) e o RxJS introduz os objetos `Observable` e `Observer` para implementar o processamento assíncrono. Esta seção fornece uma breve introdução ao uso de `Observables`; para saber mais informações, consulte a documentação de [RxJS](https://rxjs-dev.firebaseapp.com/) oficial.
 
 Um `Observable` é como um objeto `Promise` em certos aspectos. Ele é retornado diretamente de uma chamada assíncrona, mas poderá só ser resolvido algum tempo depois. Contudo, embora `Promise` seja um único valor (que pode ser um objeto de matriz), um `Observable` é uma matriz de objetos (possivelmente com apenas um único membro). Isso permite que o código chame [métodos de matriz](https://www.w3schools.com/jsref/jsref_obj_array.asp), como `concat`, `map` e `filter`, em objetos `Observable`. 
 
@@ -144,3 +152,16 @@ const subscription = source.subscribe(
 );
 ``` 
 
+## <a name="compile-the-angular-application-using-the-ahead-of-time-aot-compiler"></a>Compilar o aplicativo Angular usando o compilador AOT (Ahead-of-Time)
+
+O desempenho do aplicativo é um dos aspectos mais importantes da experiência do usuário. Um aplicativo Angular pode ser otimizado usando o compilador Angular AOT (Ahead-of-Time) para compilar o aplicativo durante a compilação. Ele converte todo o código-fonte (modelos HTML e TypeScript) em um código JavaScript eficiente. Se você compilar o aplicativo com o compilador AOT, nenhuma compilação adicional ocorrerá no tempo de execução, o que resultará em um processamento mais rápido e solicitações assíncronas mais rápidas para modelos HTML. Além disso, o tamanho geral do aplicativo diminui, pois o compilador Angular não precisa ser incluído no aplicativo para distribuição. 
+
+Para usar o compilador AOT, adicione `--aot` aos comandos `ng build` ou `ng serve`:
+
+```command&nbsp;line
+ng build --aot
+ng serve --aot
+```
+
+> [!NOTE]
+> Para saber mais sobre o compilador Angular AOT (Ahead-of-Time), consulte o [guia oficial](https://angular.io/guide/aot-compiler).

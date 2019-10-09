@@ -1,34 +1,33 @@
 ---
 title: Converter um projeto de Suplemento do Office no Visual Studio para TypeScript
 description: ''
-ms.date: 01/19/2018
-ms.openlocfilehash: 015fd9d7e9bf4412c09b76f0de5a97c9946e4d58
-ms.sourcegitcommit: 3da2038e827dc3f274d63a01dc1f34c98b04557e
+ms.date: 08/14/2019
+localization_priority: Priority
+ms.openlocfilehash: 29305df541a39ad76655a0f8a848138a369bbf39
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "24016329"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477765"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Converter um projeto de Suplemento do Office no Visual Studio para TypeScript
 
-Você pode usar o modelo de Suplemento do Office no Visual Studio para criar um suplemento que usa JavaScript e depois converter esse projeto de suplemento para o TypeScript. Use o Visual Studio para criar projeto suplemento, evite ter que criar desde o início o projeto de suplemento do Office no TypeScript. 
-
-Este artigo mostra como criar um suplemento do Excel usando o Visual Studio e depois converter o projeto do suplemento do JavaScript para o TypeScript. Você pode usar o mesmo processo para converter outros tipos de projetos JavaScript para Suplementos do Office para TypeScript no Visual Studio.
+Você pode usar o modelo de Suplemento do Office no Visual Studio para criar um suplemento que usa JavaScript e depois converter esse projeto de suplemento para o TypeScript. Este artigo descreve o processo de conversão de um suplemento do Excel. Você pode usar o mesmo processo para converter outros tipos de projetos de suplementos do Office de JavaScript para TypeScript no Visual Studio.
 
 > [!NOTE]
-> Para criar um projeto TypeScript de Suplementos do Office sem usar o Visual Studio, siga as instruções na seção "Qualquer editor" de um [Início rápido em 5 minutos](../index.yml) e escolha `TypeScript` quando for solicitado pelo [Gerador Yeoman de Suplementos do Office](https://github.com/OfficeDev/generator-office).
+> Para criar um projeto de suplementos TypeScript do Office sem usar o Visual Studio, siga as instruções na seção "Gerador do Yeoman" de um [início rápido em 5 minutos](../index.md) e escolha `TypeScript` quando for solicitado pelo [Gerador de suplementos do Office do Yeoman](https://github.com/OfficeDev/generator-office).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - [Visual Studio 2017](https://www.visualstudio.com/vs/) com a carga de trabalho de **desenvolvimento do Office/SharePoint** instalada
 
-    > [!NOTE]
-    > Se você já instalou o Visual Studio 2017, [use o Instalador do Visual Studio](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) para garantir que a carga de trabalho de **desenvolvimento do Office/SharePoint** seja instalada. 
+    > [!TIP]
+    > Se você já instalou o Visual Studio 2017, [use o Instalador do Visual Studio](/visualstudio/install/modify-visual-studio) para garantir que a carga de trabalho de **desenvolvimento do Office/SharePoint** seja instalada. Se essa carga de trabalho ainda não estiver instalada, use o instalador do Visual Studio para [instalá-la](/visualstudio/install/modify-visual-studio?view=vs-2017#modify-workloads).
 
-- TypeScript 2.3 para Visual Studio 2017
+- SDK do TypeScript versão 2.3 ou posterior (para Visual Studio 2017)
 
-    > [!NOTE]
-    > O TypeScript deve ser instalado por padrão com o Visual Studio 2017, mas você pode [usar o Instalador do Visual Studio](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) para confirmar se ele foi instalado. No Instalador do Visual Studio, selecione a guia **Componentes individuais** e verifique se a opção**TypeScript 2.3 SDK** está selecionada em **SDKs, bibliotecas e estruturas**.
+    > [!TIP]
+    > No [Instalador do Visual Studio](/visualstudio/install/modify-visual-studio), selecione a guia **Componentes individuais** e role a tela para baixo até a seção **SDKs, bibliotecas e estruturas**. Nessa seção, verifique se pelo menos um dos componentes do **SDK do TypeScript** (versão 2.3 ou posterior) está selecionado. Se nenhum dos componentes do **SDK do TypeScript** estiver selecionado, selecione a versão mais recente do SDK disponível e, em seguida, escolha o botão **Modificar** para [instalar esse componente individual](/visualstudio/install/modify-visual-studio?view=vs-2017#modify-individual-components). 
 
 - Excel 2016 ou posterior
 
@@ -61,7 +60,7 @@ Este artigo mostra como criar um suplemento do Excel usando o Visual Studio e de
 
 6. Crie um novo arquivo chamado **jQuery.d.ts** na raiz do projeto de aplicativo Web.
 
-7. No navegador, abra o [arquivo de definições de tipos para jQuery](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/jquery/index.d.ts). Copie o conteúdo do arquivo para a área de transferência.
+7. No navegador, abra o [arquivo de definições de tipos para jQuery](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/jquery/misc.d.ts). Copie o conteúdo do arquivo para a área de transferência.
 
 8. No Visual Studio, abra o arquivo **jQuery.d.ts**, cole o conteúdo de sua área de transferência nesse arquivo e salve-o.
 
@@ -69,30 +68,50 @@ Este artigo mostra como criar um suplemento do Excel usando o Visual Studio e de
 
 10. Abra o arquivo **tsconfig.json**, adicione o conteúdo a seguir no arquivo e salve-o:
 
-    ```javascript
+    ```json
     {
         "compilerOptions": {
             "skipLibCheck": true,
-            "lib": [ "es5", "dom", "es2015.promise" ]
+            "lib": [ "es5", "dom", "es2015.promise" ],
+            "sourceMap": true
         }
     }
     ```
 
 11. Abra o arquivo **Home.ts** e adicione a seguinte declaração à parte superior do arquivo:
 
-    ```javascript
+    ```typescript
     declare var fabric: any;
     ```
 
-12. No arquivo **Home.ts**, altere **'1.1'** para **1.1** (ou seja, remova as aspas) na seguinte linha e salve o arquivo:
+12. No arquivo **Home.ts** localize a linha `Office.initialize = function (reason) {` e adicione uma linha imediatamente após ela para usar o polyfill na `window.Promise` global, conforme mostrado aqui:
 
-    ```javascript
-    if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
+    ```typescript
+    Office.initialize = function (reason) {
+        // add the following line
+        (window as any).Promise = OfficeExtension.Promise;
+        ...
+    ```
+
+13. No arquivo **Home.ts**, localize a função `displaySelectedCells`, substitua toda a função pelo código a seguir e salve o arquivo:
+
+    ```typescript
+    function displaySelectedCells() {
+        Office.context.document.getSelectedDataAsync(Office.CoercionType.Text,
+            null,
+            function (result) {
+                if (result.status === Office.AsyncResultStatus.Succeeded) {
+                    showNotification('The selected text is:', '"' + result.value + '"');
+                } else {
+                    showNotification('Error', result.error.message);
+                }
+            });
+    }
     ```
 
 ## <a name="run-the-converted-add-in-project"></a>Executar o projeto do suplemento convertido
 
-1. No Visual Studio, pressione F5 ou clique no botão **Iniciar** para iniciar o Excel com o botão do suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
+1. No Visual Studio, pressione **F5** ou clique no botão **Iniciar** para iniciar o Excel com o botão do suplemento **Mostrar painel de tarefas** exibido na faixa de opções. O suplemento estará hospedado localmente no IIS.
 
 2. No Excel, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
@@ -104,7 +123,7 @@ Este artigo mostra como criar um suplemento do Excel usando o Visual Studio e de
 
 Para sua referência o trecho de código a seguir mostra o conteúdo do arquivo **Home.ts** após a aplicação das alterações descritas anteriormente. Esse código contém o número mínimo de alterações necessárias para que seu suplemento seja executado.
 
-```javascript
+```typescript
 declare var fabric: any;
 
 (function () {
@@ -115,14 +134,16 @@ declare var fabric: any;
 
     // The initialize function must be run each time a new page is loaded.
     Office.initialize = function (reason) {
+        (window as any).Promise = OfficeExtension.Promise;
+
         $(document).ready(function () {
             // Initialize the FabricUI notification mechanism and hide it
             var element = document.querySelector('.ms-MessageBanner');
             messageBanner = new fabric.MessageBanner(element);
             messageBanner.hideBanner();
-            
-            // If not using Excel 2016 or later, use fallback logic.
-            if (!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
+
+            // If not using Excel 2016, use fallback logic.
+            if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
                 $("#template-description").text("This sample will display the value of the cells that you have selected in the spreadsheet.");
                 $('#button-text').text("Display!");
                 $('#button-desc').text("Display the selection");
@@ -134,11 +155,11 @@ declare var fabric: any;
             $("#template-description").text("This sample highlights the highest value from the cells you have selected in the spreadsheet.");
             $('#button-text').text("Highlight!");
             $('#button-desc').text("Highlights the largest number.");
-                
+
             loadSampleData();
 
             // Add a click event handler for the highlight button.
-            $('#highlight-button').click(hightlightHighestValue);
+            $('#highlight-button').click(highlightHighestValue);
         });
     };
 
@@ -162,7 +183,7 @@ declare var fabric: any;
         .catch(errorHandler);
     }
 
-    function hightlightHighestValue() {
+    function highlightHighestValue() {
         // Run a batch operation against the Excel object model
         Excel.run(function (ctx) {
             // Create a proxy object for the selected range and load its properties
@@ -201,6 +222,7 @@ declare var fabric: any;
 
     function displaySelectedCells() {
         Office.context.document.getSelectedDataAsync(Office.CoercionType.Text,
+            null,
             function (result) {
                 if (result.status === Office.AsyncResultStatus.Succeeded) {
                     showNotification('The selected text is:', '"' + result.value + '"');

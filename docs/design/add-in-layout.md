@@ -1,3 +1,15 @@
+---
+title: Diretrizes de layout para Suplementos do Office
+description: ''
+ms.date: 06/27/2018
+localization_priority: Normal
+ms.openlocfilehash: 9570bf041cf1df70ab95af656decb3c458c0d480
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32447165"
+---
 # <a name="layout"></a>Layout
 Cada contêiner HTML inserido no Office terá um layout. Esses layouts são das telas principais do suplemento. Nelas, você criará experiências que permitem que os clientes iniciem ações, modifiquem configurações, exibam, rolem ou naveguem pelo conteúdo. Projeta o suplemento com layouts consistentes nas telas para garantir a continuidade da experiência. Se você tiver um site existente com o qual ps clientes estão familiarizados, considere a reutilização de layouts de páginas da Web existentes. Adapte-as para se ajustar de forma harmoniosa em contêineres HTML do Office.
 

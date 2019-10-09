@@ -2,12 +2,13 @@
 title: Diretrizes de estilo de visualização de dados para Suplementos do Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 27de6b6b2f4352488ad8f63c3b6e1250cbfbb324
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 134153f0705c810e777fd47b27a5a440e2e7bc9e
+ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23945789"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "36268142"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Diretrizes de estilo de visualização de dados para Suplementos do Office
 
@@ -34,7 +35,7 @@ Siga estas diretrizes para títulos de gráfico:
 
 - Deixe seus títulos de gráfico bem legíveis. Posicione-os para criar uma hierarquia visual em relação ao restante do gráfico.
 - Em geral, use maiúsculas nas frases (a primeira letra da primeira palavra em letra maiúscula). Para criar o contraste ou reforçar hierarquias, você poderá usar todas em maiúsculas, mas use isso com moderação.
-- Incorpore a [typeramp do Office UI Fabric](https://developer.microsoft.com/fabric#/styles/typography) para deixar seus gráficos consistentes com a interface de usuário do Office, que usa o Segoe. Você também pode usar outra fonte para diferenciar o conteúdo do gráfico da interface do usuário.
+- Incorpore a [rampa de tipos do Office UI Fabric](https://developer.microsoft.com/fabric#/styles/typography) para deixar seus gráficos consistentes com a IU do Office, que usa o Segoe. Você também pode usar outra fonte para diferenciar o conteúdo do gráfico da interface do usuário.
 - Use tipos sem serifa com contadores grandes.
 
 Os exemplos a seguir mostram tipos com serifa e sem serifa usados em títulos de gráfico. Observe como o contraste de escala e o uso eficaz do espaço em branco criam uma hierarquia visual forte.
@@ -58,10 +59,9 @@ Escolha cores que acompanham os temas do sistema operacional ou aplicativo em ve
 
 Para ver as práticas recomendadas para o uso de cores nas visualizações de dados, consulte o seguinte:
 
-
-- [Por que as cores do arco-íris não são a melhor opção para as visualizações de dados](http://www.poynter.org/2013/why-rainbow-colors-arent-always-the-best-options-for-data-visualizations/224413/)
+- [Por que as cores do arco-íris não são a melhor opção para as visualizações de dados](https://www.poynter.org/2013/why-rainbow-colors-arent-always-the-best-options-for-data-visualizations/224413/)
 - [Color Brewer 2.0: Aviso de Cor para Cartografia](http://colorbrewer2.org/)
-- [Eu Quero Matiz](http://tools.medialab.sciences-po.fr/iwanthue/)
+- [Eu Quero Matiz](https://tools.medialab.sciences-po.fr/iwanthue/)
 
 ### <a name="gridlines"></a>Linhas de grade
 
@@ -108,7 +108,7 @@ A equipe de Design do Office criou o conjunto de princípios de design a seguir,
 - Permitir interações diretas com objetos que revelam novas informações (classificação ao arrastar, por exemplo).
 - Use modelos de interação simples, diretos e familiares.
 
-Para obter mais informações sobre como criar visualizações de dados interativas e amigáveis, confira [Princípios e armadilhas de interface do usuário](http://uitraps.com/).
+Para obter mais informações sobre como criar visualizações de dados interativas e amigáveis, confira [Princípios e armadilhas de interface do usuário](https://uitraps.com/).
 
 ### <a name="motion-design-principles"></a>Princípios de design de animação
 
@@ -124,7 +124,7 @@ A animação segue o estímulo. Os elementos visuais devem se mover na mesma dir
 
 Crie uma percepção de causalidade. Quando preparar animações:
 
-- Prepare uma coisa de cada vez. 
+- Prepare uma coisa de cada vez. 
 - Prepare as mudanças nos eixos antes da mudança na tinta dos dados.
 - Prepare e anime objetos como um grupo se eles estiverem se movendo na mesma velocidade e na mesma direção.
 - Prepare elementos de dados em grupos de não mais do que 4 a 5 objetos. Os espectadores têm dificuldade de acompanhar mais de 4 e 5 objetos independentemente.
@@ -133,7 +133,7 @@ A animação adiciona significado.
 
 - Animações aumentam a compreensão do usuário das alterações nos dados, fornecem contexto e atuam como uma camada de anotação não verbal.
 - A animação deve ocorrer em um espaço de coordenadas significativo da visualização.
-- Personalize a animação para o visual. 
+- Personalize a animação para o visual. 
 - Evite animações gratuitas.
 
 A animação segue os dados.
@@ -147,8 +147,7 @@ A animação segue os dados.
 - Torne todos os elementos interativos, como botões de ação ou listas de escolha, acessíveis a partir de um teclado.
 - Envie eventos de acessibilidade para leitores de tela para anunciar alterações de foco, dicas de ferramentas e assim por diante.
 
-## <a name="see-also"></a>Veja também 
+## <a name="see-also"></a>Confira também 
 
-- [Dados + Design: uma introdução simples para preparar e  visualizar as informações](https://infoactive.co/data-design)
-- [As cinco melhores bibliotecas para criar visualizações de dados](http://www.fastcompany.com/3029760/the-five-best-libraries-for-building-data-vizualizations)
+- [As cinco melhores bibliotecas para criar visualizações de dados](https://www.fastcompany.com/3029760/the-five-best-libraries-for-building-data-vizualizations)
 - [Exibição Visual de informações quantitativas](https://www.edwardtufte.com/tufte/books_vdqi)

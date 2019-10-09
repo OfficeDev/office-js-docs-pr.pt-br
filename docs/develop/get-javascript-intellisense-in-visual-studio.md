@@ -1,17 +1,18 @@
 ---
 title: Obtenha o JavaScript IntelliSense no Visual Studio 2017
 description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: 1d112ba2374ca8f05fb1ed79407ef8549e88c72c
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+ms.date: 03/19/2019
+localization_priority: Priority
+ms.openlocfilehash: 78a774397069d0c6ff91cc098cad0fd9b8e5c7b9
+ms.sourcegitcommit: d34aa0b282cc76ffff579da2a7945efd12fb7340
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925280"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "36769544"
 ---
-# <a name="get-javascript-intellisense-in-visual-studio-2017"></a>Obtenha o JavaScript IntelliSense no Visual Studio 2017 
+# <a name="get-javascript-intellisense-in-visual-studio-2017"></a>Obtenha o JavaScript IntelliSense no Visual Studio 2017
 
-Quando você usa o Visual Studio 2017 para desenvolver suplementos do Office, pode usar o JSDoc para habilitar o IntelliSense para as variáveis, os objetos, os parâmetros e os valores de retorno de JavaScript. Este artigo fornece uma visão geral do JSDoc e como usá-lo para criar IntellSense no Visual Studio. Confira mais detalhes em [JavaScript IntelliSense](https://docs.microsoft.com/visualstudio/ide/javascript-intellisense) e [Suporte ao JSDoc no JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript). 
+Quando você usa o Visual Studio 2017 para desenvolver suplementos do Office, pode usar o JSDoc para habilitar o IntelliSense para as variáveis, os objetos, os parâmetros e os valores de retorno de JavaScript. Este artigo fornece uma visão geral do JSDoc e como usá-lo para criar IntellSense no Visual Studio. Confira mais detalhes em [JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense) e [Suporte ao JSDoc no JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript). 
 
 ## <a name="officejs-type-definitions"></a>Definições de tipo do Office.js
 
@@ -21,7 +22,7 @@ Você precisa fornecer as definições dos tipos no Office.js para o Visual Stud
 - Use a versão online do Office.js adicionando um arquivo tsconfig.json à raiz do projeto de aplicativo da Web na solução do suplemento. O arquivo deve incluir o seguinte conteúdo:
 
     ```json
-        {        
+        {
             "compilerOptions": {
                 "allowJs": true,            // These settings apply to JavaScript files also.
                 "noEmit":  true             // Do not compile the JS (or TS) files in this project.
@@ -81,6 +82,6 @@ function myFunc() {
 ```
 ![IntelliSense para tipo complexo](../images/intellisense-vs17-complex-type.png)
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 - [Criar e depurar suplementos no Visual Studio](create-and-debug-office-add-ins-in-visual-studio.md)

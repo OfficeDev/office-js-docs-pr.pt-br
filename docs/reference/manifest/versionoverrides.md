@@ -1,6 +1,18 @@
+---
+title: Elemento VersionOverrides no arquivo de manifesto
+description: ''
+ms.date: 08/12/2019
+localization_priority: Normal
+ms.openlocfilehash: ce65cdced1b3cf885cee09732c2cda0081a53cfc
+ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "36477877"
+---
 # <a name="versionoverrides-element"></a>Elemento VersionOverrides
 
-O elemento raiz que contém informações para os comandos de suplemento implementados pelo suplemento. **VersionOverrides** é um elemento filho do elemento [OfficeApp](./officeapp.md) no manifesto. Ele recebe suporte no manifesto esquema v1.1 e posterior, mas é definido no esquema VersionOverrides v1.0 ou v1.1.
+O elemento raiz que contém informações para os comandos de suplemento implementados pelo suplemento. **VersionOverrides** é um elemento filho do elemento [OfficeApp](./officeapp.md) no manifesto. Ele recebe suporte no esquema de manifesto v1.1 e posterior, mas é definido no esquema VersionOverrides v1.0 ou v1.1.
 
 ## <a name="attributes"></a>Atributos
 
@@ -10,22 +22,25 @@ O elemento raiz que contém informações para os comandos de suplemento impleme
 |  **xsi:type**  |  Sim  | A versão do esquema. Nesse momento, os únicos valores válidos são `VersionOverridesV1_0` e `VersionOverridesV1_1`. |
 
 > [!NOTE]
-> Atualmente, apenas o Outlook 2016 é compatível com o esquema VersionOverrides v1.1 e com o tipo `VersionOverridesV1_1`.
+> Atualmente, somente o Outlook 2016 ou posterior oferece suporte ao esquema do VersionOverrides `VersionOverridesV1_1` v 1.1 e ao tipo.
 
 ## <a name="child-elements"></a>Elementos filho
 
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **Descrição**    |  Não   |  Descreve o suplemento. Isso substitui o elemento `Description` em qualquer parte pai do manifesto. O texto da descrição está contido em um elemento filho do elemento **LongString** , contido no elemento [Resources](./resources.md). O atributo `resid` do elemento **Description** está definido como o valor do atributo `id` do elemento `String` que contém o texto.|
+|  **Descrição**    |  Não   |  Descreve o suplemento. Isso substitui o elemento `Description` em qualquer parte pai do manifesto. O texto da descrição está contido em um elemento filho do elemento **LongString**, contido no elemento [Resources](./resources.md). O atributo `resid` do elemento **Description** está definido como o valor do atributo `id` do elemento `String` que contém o texto.|
+| **EquivalentAddins** | Não | Especifica a compatibilidade com versões anteriores com um suplemento COM equivalente, XLL ou ambos. |
 |  **Requisitos**  |  Não   |  Especifica o conjunto de requisitos mínimos e a versão do Office.js exigida pelo suplemento. Isso substitui o elemento `Requirements` na parte pai do manifesto.|
 |  [Hosts](./hosts.md)                |  Sim  |  Especifica um conjunto de hosts do Office. O elemento filho Hosts substitui o elemento Hosts na parte pai do manifesto.  |
-|  [Recursos](./resources.md)    |  Sim  | Define um conjunto de recursos (sequências de caracteres, URLs e imagens) que outros elementos do manifesto referenciam.|
+|  [Resources](./resources.md)    |  Sim  | Define um conjunto de recursos (cadeias de caracteres, URLs e imagens) consultado por outros elementos do manifesto.|
+|  [EquivalentAddins](./equivalentaddins.md)    |  Não  | Especifica os suplementos nativos (COM/XLL) equivalentes ao suplemento Web. O suplemento Web não será ativado se um suplemento nativo equivalente estiver instalado.|
 |  **VersionOverrides**    |  Não  | Define comandos de suplemento em uma versão mais recente do esquema. Para saber mais, confira o tópico [Implementar várias versões](#implementing-multiple-versions). |
-|  **WebApplicationInfo**    |  Não  | Especifica detalhes sobre o aplicativo da Web associado do suplemento. |
-
-
+|  [WebApplicationInfo](./webapplicationinfo.md)    |  Não  | Especifica detalhes sobre o registro do suplemento com emissores de token seguros, como o Azure Active Directory V 2.0. |
 
 ### <a name="versionoverrides-example"></a>Exemplo de VersionOverrides
+
+Veja a seguir um exemplo de um elemento `<VersionOverrides>` típico, incluindo alguns elementos filhos que não são necessários, mas que são normalmente usados.
+
 ```xml
 <OfficeApp>
 ...
@@ -53,7 +68,7 @@ Um manifesto pode implementar várias versões do elemento `VersionOverrides` qu
 
 Para implementar várias versões, o elemento `VersionOverrides` da versão mais recente deve ser um filho do elemento `VersionOverrides` da versão anterior. O elemento filho `VersionOverrides` não herda os valores do elemento pai.
 
-Para implementar o esquema VersionOverrides v1.0 e v1.1, o manifesto seria semelhante ao exemplo a seguir:
+Para implementar o esquema do VersionOverrides v1.0 e do v1.1, o manifesto seria semelhante ao exemplo a seguir.
 
 ```xml
 <OfficeApp>
@@ -86,6 +101,7 @@ Para implementar o esquema VersionOverrides v1.0 e v1.1, o manifesto seria semel
         <!-- add information on resources -->
       </Resources>
     </VersionOverrides>  
+  </VersionOverrides>
 ...
 </OfficeApp>
 ```

@@ -1,58 +1,235 @@
-# <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos comuns da API do Office
+---
+title: Conjuntos de requisitos da API Comum do Office
+description: ''
+ms.date: 07/17/2019
+ms.prod: non-product-specific
+localization_priority: Priority
+ms.openlocfilehash: bd06b1955d426db4c2c777fe3a370ccaea774bb4
+ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "35940826"
+---
+# <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API Comum do Office
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação em tempo de execução para determinar se um host do Office oferece suporte a APIs que um suplemento precisa. Para obter mais informações, confira [Versões do Office e conjuntos de requisitos](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 
-Precisa de informações sobre onde os suplementos são suportados pelo host do Office? Confira  [Disponibilidade de host e plataforma para suplementos do Office](https://docs.microsoft.com/office/dev/add-ins/overview/office-add-in-availability).
+Precisa de informações sobre onde os suplementos têm suporte do host do Office? Consulte [Disponibilidade de host e plataforma para suplementos do Office](/office/dev/add-ins/overview/office-add-in-availability).
 
-Procurando pelos conjuntos de requisitos de API *específicos do host*? Veja os seguintes conjuntos de API:
- 
-- [Conjuntos de requisitos de API JavaScript do Excel](excel-api-requirement-sets.md) (ExcelApi)
+Procurando pelos conjuntos de requisitos de API *específicos do host*? Confira os seguintes conjuntos de requisitos de API:
+
+- [Conjuntos de requisitos de API JavaScript para Excel](excel-api-requirement-sets.md) (ExcelApi)
 - [Conjuntos de requisitos de API JavaScript para Word](word-api-requirement-sets.md) (WordApi)
-- [Conjuntos de requisitos da API JavaScript do OneNote](onenote-api-requirement-sets.md) (OneNoteApi)
-- [Noções básicas sobre conjuntos de requisitos da API do Outlook](outlook-api-requirement-sets.md) (MailBox)
+- [Conjuntos de requisitos de API JavaScript para OneNote](onenote-api-requirement-sets.md) (OneNoteApi)
+- [Conjuntos de requisitos da API JavaScript do PowerPoint](powerpoint-api-requirement-sets.md) (PowerPointApi)
+- [Noções básicas sobre os conjuntos de requisitos da API do Outlook](outlook-api-requirement-sets.md) (Caixa de Correio)
 
 > [!IMPORTANT]
-> Não recomendamos mais que você crie e use aplicativos da Web e bancos de dados do Access no SharePoint. Como alternativa, é recomendável que você use o [Microsoft PowerApps](https://powerapps.microsoft.com/) para criar soluções de negócios sem código para web e dispositivos móveis.
+> Não recomendamos mais criar e usar aplicativos Web do Access e bancos de dados no SharePoint. Como alternativa, use o [Microsoft PowerApps](https://powerapps.microsoft.com/) para criar soluções de negócios sem código para dispositivos móveis e Web.
 
-## <a name="common-api-requirement-sets"></a>Conjuntos de requisitos da API comum
+## <a name="common-api-requirement-sets"></a>Conjuntos de requisitos da API Comum
 
-A tabela a seguir lista os conjuntos de requisitos comuns da API, os métodos em cada conjunto e os aplicativos host do Office que aceitam esse conjunto de requisitos. Todos esses conjuntos de requisitos da API são versão 1.1.
+As seções a seguir listam os conjuntos de requisitos da API Comum, os métodos em cada conjunto e os aplicativos host do Office compatíveis com esse conjunto de requisitos. Todos esses conjuntos de requisitos da API são versão 1.1, a menos que especificado de outra forma.
 
-|**Conjunto de requisitos**|**Host do Office**|**Métodos no conjunto**|
-|:-----|:-----|:-----|
-| ActiveView | PowerPoint<br>PowerPoint Online<br>PowerPoint para iPad<br>PowerPoint para Mac|Document.getActiveViewAsync|
-| AddInCommands | Confira [Conjuntos de requisitos de suplementos de comandos](add-in-commands-requirement-sets.md). | |
-| BindingEvents  | Aplicativos Web do Access<br>Excel<br>Excel Online<br>Excel para iPad<br>Excel para Mac<br>Word 2013 e posterior<br>Word 2016 para Mac e posterior<br>Word Online<br>Word para iPad|Binding.addHanderAsync<br>Binding.removeHanderAsync|
-| CompressedFile    | Excel<br>Excel Online<br>Excel para iPad<br>Excel para Mac<br>PowerPoint<br>PowerPoint Online<br>PowerPoint para iPad<br>PowerPoint para Mac<br>Word 2013 e posterior<br>Word 2016 para Mac e posterior<br>Word Online<br>Word para iPad|Suporta saída para o formato Office Open XML (OOXML) como uma matriz de bytes<br>(Office.FileType.Compressed) ao usar o método Document.getFileAsync.|
-| CustomXmlParts    | Word 2013 e posterior<br>Word 2016 para Mac e posterior<br>Word Online<br>Word para iPad|CustomXmlNode.getNodesAsync<br>CustomXmlNode.getNodeValueAsync<br>CustomXmlNode.getXmlAsync<br>CustomXmlNode.setNodeValueAsync<br>CustomXmlNode.setXmlAsync<br>CustomXmlPart.addHandlerAsync<br>CustomXmlPart.deleteAsync<br>CustomXmlPart.getNodesAsync<br>CustomXmlPart.getXmlAsync<br>CustomXmlPart.removeHandlerAsync<br>CustomXmlParts.addAsync<br>CustomXmlParts.getByIdAsync<br>CustomXmlParts.getByNamespaceAsync<br>CustomXmlPrefixMappings.addNamespaceAsync<br>CustomXmlPrefixMappings.getNamespaceAsync<br>CustomXmlPrefixMappings.getPrefixAsync|
-| DialogApi | Confira [Conjuntos de requisitos da API de caixa de diálogo](dialog-api-requirement-sets.md). | UI.messageParent<br>UI.displayDialogAsync<br>UI.closeContainer<br>UI.Dialog |
-| DocumentEvents    | Excel<br>Excel Online<br>Excel para iPad<br>Excel para Mac<br>OneNote Online<br>PowerPoint<br>PowerPoint Online<br>PowerPoint para iPad<br>PowerPoint para Mac<br>Word 2013 e posterior<br>Word 2016 para Mac e posterior<br>Word Online<br>Word para iPad|Document.addHandlerAsync<br>Document.removeHandlerAsync|
-| Arquivo  | Excel<br>Excel Online<br>Excel para iPad<br>Excel para Mac<br>PowerPoint<br>PowerPoint Online<br>PowerPoint para iPad<br>PowerPoint para Mac<br>Word 2013 e posterior<br>Word 2016 para Mac e posterior<br>Word Online<br>Word para iPad|Document.getFileAsync<br>File.closeAsync<br>File.getSliceAsync|
-| HtmlCoercion  | OneNote Online<br>Word 2013 e posterior<br>Word 2016 para Mac e posterior<br>Word Online<br>Word para iPad|Dá suporte à coerção para HTML (Office.CoercionType.Html) ao ler e gravar dados usando os métodos Document.getSelectedDataAsync<br>Métodos Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
-| IdentityAPI | Confira [Conjuntos de requisitos de APIs de identidade](identity-api-requirement-sets.md). | Auth.getAccessTokenAsync |
-| ImageCoercion | Excel<br>Excel para iPad<br>Excel para Mac<br>OneNote Online<br>PowerPoint<br>PowerPoint Online<br>PowerPoint para iPad<br>PowerPoint para Mac<br>Word 2013 e posterior<br>Word 2016 para Mac e posterior<br>Word Online<br>Word para iPad|Dá suporte à conversão para uma imagem (Office.CoercionType.Image) ao gravar dados usando o método Document.setSelectedDataAsync.|
-| Mailbox   |Outlook para Windows<br>Outlook para Web<br>Outlook para Android<br>Outlook para Mac<br>Aplicativo Web do Outlook |Confira [Noções básicas sobre conjuntos de requisitos da API do Outlook](outlook-api-requirement-sets.md).|
-| MatrixBindings    | Excel<br>Excel Online<br>Excel para iPad<br>Excel para Mac<br>Word<br>Word Online<br>Word para iPad<br>Word para Mac|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsyncMatrix<br>Binding.getDataAsyncMatrix<br>Binding.setDataAsync|
-| MatrixCoercion    | Excel<br>Excel Online<br>Excel para iPad<br>Excel para Mac<br>Word 2013 e posterior<br>Word 2016 para Mac e posterior<br>Word Online<br>Word para iPad|Dá suporte à coerção para a estrutura de dados “matrix” (matriz de matrizes) (Office.CoercionType.Matrix) ao ler e gravar dados usando os métodos Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
-| OoxmlCoercion | Word 2013 e posterior<br>Word 2016 para Mac e posterior<br>Word Online<br>Word para iPad|Dá suporte à coerção para o formato OOXML (Open Office XML) (Office.CoercionType.Ooxml) ao ler e gravar dados usando os métodos Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
-| PartialTableBindings  | Aplicativos Web do Access||
-| PdfFile   | Excel para Mac<br>PowerPoint<br>PowerPoint Online<br>PowerPoint para iPad<br>PowerPoint para Mac<br>Word 2013 e posterior<br>Word 2016 para Mac e posterior<br>Word Online<br>Word para iPad|Dá suporte à saída para o formato PDF (Office.FileType.Pdf)<br>ao usar o método Document.getFileAsync.|
-| Seleção | Excel<br>Excel Online<br>Excel para iPad<br>Excel para Mac<br>PowerPoint<br>PowerPoint Online<br>PowerPoint para iPad<br>PowerPoint para Mac<br>Project<br>Word 2013 e posterior<br>Word 2016 para Mac e posterior<br>Word Online<br>Word para iPad|Document.getSelectedDataAsync<br>Document.setSelectedDataAsync|
-| Configurações  | Aplicativos Web do Access<br>Excel<br>Excel Online<br>Excel para iPad<br>Excel para Mac<br>OneNote Online<br>PowerPoint<br>PowerPoint Online<br>PowerPoint para iPad<br>PowerPoint para Mac<br>Word 2013 e posterior<br>Word 2016 para Mac e posterior<br>Word Online<br>Word para iPad|Settings.get<br>Settings.remove<br>Settings.saveAsync<br>Settings.set|
-| TableBindings | Aplicativos Web do Access<br>Excel<br>Excel Online<br>Excel para iPad<br>Excel para Mac<br>Word 2013 e posterior<br>Word 2016 para Mac e posterior<br>Word Online<br>Word para iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsyncTable<br>Binding.addColumnsAsyncTable<br>Binding.addRowsAsyncTable<br>Binding.deleteAllDataValuesAsyncTable<br>Binding.getDataAsyncTable<br>Binding.setDataAsync|
-| TableCoercion | Aplicativos Web do Access<br>Excel<br>Excel Online<br>Excel para iPad<br>Excel para Mac<br>Word 2013 e posterior<br>Word 2016 para Mac e posterior<br>Word Online<br>Word para iPad|Dá suporte à coerção para a estrutura de dados “table” (Office.CoercionType.Table) ao ler e gravar dados usando os métodos Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
-| TextBindings  | Excel<br>Excel Online<br>Excel para iPad<br>Word 2013 e posterior<br>Word 2016 para Mac e posterior<br>Word Online<br>Word para iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsyncText<br>Binding.getDataAsyncText<br>Binding.setDataAsync|
-| TextCoercion  | Excel<br>Excel Online<br>Excel para iPad<br>OneNote Online<br>PowerPoint<br>PowerPoint Online<br>PowerPoint para iPad<br>PowerPoint para Mac<br>Project<br>Word 2013 e posterior<br>Word 2016 para Mac e posterior<br>Word Online<br>Word para iPad|Dá suporte à coerção para o formato de texto (Office.CoercionType.Text) ao ler e gravar dados usando os métodos Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
-| TextFile  | Word 2013 e posterior<br>Word 2016 para Mac e posterior<br>Word Online<br>Word para iPad|Dá suporte à saída para o formato de texto (Office.FileType.Text) ao usar o método Document.getFileAsync.|
+### <a name="activeview"></a>ActiveView
+
+|**Hosts do Office**|**Métodos no conjunto**|
+|:-----|:-----|
+| PowerPoint no Windows<br>PowerPoint Online<br>PowerPoint no iPad<br>PowerPoint no Mac|Document.getActiveViewAsync|
+
+---
+
+### <a name="addincommands"></a>AddInCommands
+
+Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-requirement-sets.md).
+
+---
+
+### <a name="bindingevents"></a>BindingEvents
+
+|**Hosts do Office**|**Métodos no conjunto**|
+|:-----|:-----|
+| Aplicativos Web do Access<br>Excel no Windows<br>Excel Online<br>Excel no iPad<br>Excel no Mac<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Binding.addHandlerAsync<br>Binding.removeHandlerAsync|
+
+---
+
+### <a name="compressedfile"></a>CompressedFile
+
+|**Hosts do Office**|**Métodos no conjunto**|
+|:-----|:-----|
+| Excel no Windows<br>Excel Online<br>Excel no Mac<br>PowerPoint no Windows<br>PowerPoint Online<br>PowerPoint no iPad<br>PowerPoint no Mac<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Dá suporte à saída para o formato OOXML (Office Open XML) como uma matriz de bytes<br>(Office.FileType.Compressed) ao usar o método Document.getFileAsync.|
+
+---
+
+### <a name="customxmlparts"></a>CustomXmlParts
+
+|**Hosts do Office**|**Métodos no conjunto**|
+|:-----|:-----|
+| Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|CustomXmlNode.getNodesAsync<br>CustomXmlNode.getNodeValueAsync<br>CustomXmlNode.getTextAsync<br>CustomXmlNode.getXmlAsync<br>CustomXmlNode.setNodeValueAsync<br>CustomXmlNode.setTextAsync<br>CustomXmlNode.setXmlAsync<br>CustomXmlPart.addHandlerAsync<br>CustomXmlPart.deleteAsync<br>CustomXmlPart.getNodesAsync<br>CustomXmlPart.getXmlAsync<br>CustomXmlPart.removeHandlerAsync<br>CustomXmlParts.addAsync<br>CustomXmlParts.getByIdAsync<br>CustomXmlParts.getByNamespaceAsync<br>CustomXmlPrefixMappings.addNamespaceAsync<br>CustomXmlPrefixMappings.getNamespaceAsync<br>CustomXmlPrefixMappings.getPrefixAsync|
+
+---
+
+### <a name="dialogapi"></a>DialogApi
+
+|**Hosts do Office**|**Métodos no conjunto**|
+|:-----|:-----|
+| Confira [Conjuntos de requisitos da API da Caixa de Diálogo](dialog-api-requirement-sets.md). | UI.messageParent<br>UI.displayDialogAsync<br>UI.closeContainer<br>UI.Dialog |
+
+---
+
+### <a name="documentevents"></a>DocumentEvents
+
+|**Hosts do Office**|**Métodos no conjunto**|
+|:-----|:-----|
+| Excel no Windows<br>Excel Online<br>Excel no iPad<br>Excel no Mac<br>OneNote Online<br>PowerPoint no Windows<br>PowerPoint Online<br>PowerPoint no iPad<br>PowerPoint no Mac<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Document.addHandlerAsync<br>Document.removeHandlerAsync|
+
+---
+
+### <a name="file"></a>Arquivo
+
+|**Hosts do Office**|**Métodos no conjunto**|
+|:-----|:-----|
+| Excel no Windows<br>Excel Online<br>Excel no iPad<br>Excel no Mac<br>PowerPoint no Windows<br>PowerPoint Online<br>PowerPoint no iPad<br>PowerPoint no Mac<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Document.getFileAsync<br>File.closeAsync<br>File.getSliceAsync|
+
+---
+
+### <a name="htmlcoercion"></a>HtmlCoercion
+
+|**Hosts do Office**|**Métodos no conjunto**|
+|:-----|:-----|
+| OneNote Online<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Dá suporte à coerção para HTML (Office.CoercionType.Html) ao ler e gravar dados usando os métodos Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
+
+---
+
+### <a name="identityapi"></a>IdentityAPI
+
+|**Hosts do Office**|**Métodos no conjunto**|
+|:-----|:-----|
+| Confira [Conjuntos de requisitos da API de Identidade](identity-api-requirement-sets.md). | Auth.getAccessTokenAsync |
+
+---
+
+### <a name="imagecoercion"></a>ImageCoercion
+
+|**Hosts do Office**|**Métodos no conjunto**|
+|:-----|:-----|
+| Confira [conjuntos de requisitos de Coerção de Imagens](image-coercion-requirement-sets.md). | Método Document.setSelectedDataAsync|
+
+---
+
+### <a name="mailbox"></a>Caixa de correio
+
+|**Hosts do Office**|**Métodos no conjunto**|
+|:-----|:-----|
+|Outlook no Windows<br>Outlook Online<br>Outlook no Android<br>Outlook no Mac<br>Outlook no iOS|Confira [Noções básicas sobre conjuntos de requisitos da API do Outlook](outlook-api-requirement-sets.md).|
+
+---
+
+### <a name="matrixbindings"></a>MatrixBindings
+
+|**Hosts do Office**|**Métodos no conjunto**|
+|:-----|:-----|
+| Excel no Windows<br>Excel Online<br>Excel no iPad<br>Excel no Mac<br>Word no Windows<br>Word Online<br>Word no iPad<br>Word no Mac|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
+
+---
+
+### <a name="matrixcoercion"></a>MatrixCoercion
+
+|**Hosts do Office**|**Métodos no conjunto**|
+|:-----|:-----|
+| Excel no Windows<br>Excel Online<br>Excel no iPad<br>Excel no Mac<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Dá suporte à coerção para a estrutura de dados “matrix” (matriz de matrizes) (Office.CoercionType.Matrix) ao ler e gravar dados usando os métodos Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
+
+---
+
+### <a name="ooxmlcoercion"></a>OoxmlCoercion
+
+|**Hosts do Office**|**Métodos no conjunto**|
+|:-----|:-----|
+| Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Dá suporte à coerção para o formato OOXML (Open Office XML) (Office.CoercionType.Ooxml) ao ler e gravar dados usando os métodos Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
+
+---
+
+### <a name="partialtablebindings"></a>PartialTableBindings
+
+|**Hosts do Office**|**Métodos no conjunto**|
+|:-----|:-----|
+| Aplicativos Web do Access||
+
+---
+
+### <a name="pdffile"></a>PdfFile
+
+|**Hosts do Office**|**Métodos no conjunto**|
+|:-----|:-----|
+| Excel no Mac<br>PowerPoint no Windows<br>PowerPoint Online<br>PowerPoint no iPad<br>PowerPoint no Mac<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Dá suporte à saída para o formato PDF (Office.FileType.Pdf)<br>ao usar o método Document.getFileAsync.|
+
+---
+
+### <a name="selection"></a>Seleção
+
+|**Hosts do Office**|**Métodos no conjunto**|
+|:-----|:-----|
+| Excel no Windows<br>Excel Online<br>Excel no iPad<br>Excel no Mac<br>PowerPoint no Windows<br>PowerPoint Online<br>PowerPoint no iPad<br>PowerPoint no Mac<br>Project no Windows<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Document.getSelectedDataAsync<br>Document.setSelectedDataAsync|
+
+---
+
+### <a name="settings"></a>Configurações
+
+|**Hosts do Office**|**Métodos no conjunto**|
+|:-----|:-----|
+| Aplicativos Web do Access<br>Excel no Windows<br>Excel Online<br>Excel no iPad<br>Excel no Mac<br>OneNote Online<br>PowerPoint no Windows<br>PowerPoint Online<br>PowerPoint no iPad<br>PowerPoint no Mac<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Settings.get<br>Settings.remove<br>Settings.saveAsync<br>Settings.set|
+
+---
+
+### <a name="tablebindings"></a>TableBindings
+
+|**Hosts do Office**|**Métodos no conjunto**|
+|:-----|:-----|
+| Aplicativos Web do Access<br>Excel no Windows<br>Excel Online<br>Excel no iPad<br>Excel no Mac<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.addColumnsAsync<br>Binding.addRowsAsync<br>Binding.deleteAllDataValuesAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
+
+---
+
+### <a name="tablecoercion"></a>TableCoercion
+
+|**Hosts do Office**|**Métodos no conjunto**|
+|:-----|:-----|
+| Aplicativos Web do Access<br>Excel no Windows<br>Excel Online<br>Excel no iPad<br>Excel no Mac<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Dá suporte à coerção para a estrutura de dados “table” (Office.CoercionType.Table) ao ler e gravar dados usando os métodos Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
+
+---
+
+### <a name="textbindings"></a>TextBindings
+
+|**Hosts do Office**|**Métodos no conjunto**|
+|:-----|:-----|
+| Excel no Windows<br>Excel Online<br>Excel no iPad<br>Excel no Mac<br>Word 2013 e posterior e Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
+
+---
+
+### <a name="textcoercion"></a>TextCoercion
+
+|**Hosts do Office**|**Métodos no conjunto**|
+|:-----|:-----|
+| Excel no Windows<br>Excel Online<br>Excel no iPad<br>OneNote Online<br>PowerPoint no Windows<br>PowerPoint Online<br>PowerPoint no iPad<br>PowerPoint no Mac<br>Project no Windows<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Dá suporte à coerção para o formato de texto (Office.CoercionType.Text) ao ler e gravar dados usando os métodos Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
+
+---
+
+### <a name="textfile"></a>TextFile
+
+|**Hosts do Office**|**Métodos no conjunto**|
+|:-----|:-----|
+| Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Dá suporte à saída para o formato de texto (Office.FileType.Text) ao usar o método Document.getFileAsync.|
+
+---
 
 ## <a name="methods-that-arent-part-of-a-requirement-set"></a>Métodos que não fazem parte de um conjunto de requisitos
 
-Os seguintes métodos na API JavaScript para Office não são parte de um conjunto de requisitos. Se o suplemento exigir qualquer um desses métodos, use os elementos de **Methods** e **Method** no manifesto do suplemento para declarar que são necessários ou executar a verificação de tempo de execução usando uma instrução `if` . Para saber mais , confira [Especificar hosts do Office e requisitos de API](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements).
+Os seguintes métodos da API JavaScript para Office não fazem parte de um conjunto de requisitos. Se o suplemento exigir qualquer um desses métodos, use os elementos **Methods** e **Method** no manifesto do suplemento para declarar que eles são exigidos, ou então execute a verificação de tempo de execução usando uma instrução`if`. Para saber mais, confira [Especificar requisitos de API e hosts do Office](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements).
 
 |**Nome do método**|**Suporte ao host do Office**|
 |:-----|:-----|
-|Bindings.addFromPromptAsync|Acessar aplicativos da web, Excel, Excel Online e Excel para iPad|
-|Document.getFilePropertiesAsync|Excel, Excel Online, Excel para iPad, Excel para Mac, PowerPoint, PowerPoint Online, PowerPoint para iPad, PowerPoint para Mac, Word, Word Online, Word para iPad e Word para Mac|
+|Bindings.addFromPromptAsync|Acesse aplicativos web, Excel no Windows, Excel Online, Excel no iPad e Excel no Mac|
+|Document.getFilePropertiesAsync|Excel no Windows, Excel Online, Excel no iPad, Excel no Mac, PowerPoint no Windows, PowerPoint Online, PowerPoint no iPad, PowerPoint no Mac, Word no Windows, Word Online, Word no iPad e Word no Mac|
 |Document.getProjectFieldAsync|Project Standard 2013 e Project Professional 2013|
 |Document.getResourceFieldAsync|Project Standard 2013 e Project Professional 2013|
 |Document.getSelectedResourceAsync|Project Standard 2013 e Project Professional 2013|
@@ -60,16 +237,16 @@ Os seguintes métodos na API JavaScript para Office não são parte de um conjun
 |Document.getSelectedViewAsync|Project Standard 2013 e Project Professional 2013|
 |Document.getTaskAsync|Project Standard 2013 e Project Professional 2013|
 |Document.getTaskFieldAsync|Project Standard 2013 e Project Professional 2013|
-|Document.goToByIdAsync|Excel, Excel Online, Excel para iPad, Excel para Mac, PowerPoint, PowerPoint Online, PowerPoint para iPad, PowerPoint para Mac, Word, Word Online, Word para iPad e Word para Mac|
-|Settings.addHandlerAsync|Acessar aplicativos da Web, Excel, Excel Online, PowerPoint, PowerPoint Online, Word e Word Online|
-|Settings.refreshAsync|Acessar aplicativos da Web, Excel, Excel Online, PowerPoint, PowerPoint Online, Word e Word Online|
-|Settings.removeHandlerAsync|Acessar aplicativos da Web, Excel, Excel Online, PowerPoint, PowerPoint Online, Word e Word Online|
-|TableBinding.clearFormatsAsync|Excel, Excel Online e Excel para Mac|
-|TableBinding.setFormatsAsync|Excel, Excel Online, Excel para iPad e Excel para Mac|
-|TableBinding.setTableOptionsAsync|Excel, Excel Online, Excel para iPad e Excel para Mac|
+|Document.goToByIdAsync|Excel no Windows, Excel Online, Excel no iPad, Excel no Mac, PowerPoint no Windows, PowerPoint Online, PowerPoint no iPad, PowerPoint no Mac, Word no Windows, Word Online, Word no iPad e Word no Mac|
+|Settings.addHandlerAsync|Acesse aplicativos web e Excel Online|
+|Settings.refreshAsync|Acesse aplicativos web, Excel no Windows, Excel Online, PowerPoint no Windows, PowerPoint Online, Word e Word Online|
+|Settings.removeHandlerAsync|Acesse aplicativos web e Excel Online|
+|TableBinding.clearFormatsAsync|Excel no Windows, Excel Online, Excel no iPad e Excel no Mac|
+|TableBinding.setFormatsAsync|Excel no Windows, Excel Online, Excel no iPad e Excel no Mac|
+|TableBinding.setTableOptionsAsync|Excel no Windows, Excel Online, Excel no iPad e Excel no Mac|
 
 ## <a name="see-also"></a>Confira também
 
-- [Versões do Office e conjuntos de requisitos](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [Especificar requisitos de API e hosts do Office](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Manifesto XML dos suplementos do Office](https://docs.microsoft.com/office/dev/add-ins/develop/add-in-manifests)
+- [Versões do Office e conjuntos de requisitos](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
+- [Especificar requisitos da API e de hosts do Office](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
+- [Manifesto XML dos Suplementos do Office](/office/dev/add-ins/develop/add-in-manifests)

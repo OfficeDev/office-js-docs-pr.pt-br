@@ -2,11 +2,12 @@
 title: Obter todo o documento por meio de um suplemento para Word
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: 4b340a32787378cad4dc14c140eb86bfb6c13e72
-ms.sourcegitcommit: 7ecc1dc24bf7488b53117d7a83ad60e952a6f7aa
+localization_priority: Priority
+ms.openlocfilehash: 99b6209051223c36b33441d65ed3384e0ab013e4
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "19438435"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449873"
 ---
 [!include[Get the whole document from an add-in for Word](../includes/file-get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)]

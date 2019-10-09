@@ -1,2 +1,7 @@
-> [!NOTE]
-> As funções personalizadas estão atualmente disponíveis na versão prévia do desenvolvedor. As funções personalizadas são suportadas no Excel 2016 para Windows (compilação 10827 ou posterior), Excel 2016 para Mac (compilação 13.329 ou posterior) e Excel Online. Além disso, você deve associar-se ao programa [Office Insider](https://products.office.com/office-insider) para usar as funções personalizadas. As funções personalizadas estão desativadas no momento em todas as compilações do Office, a menos que você seja um membro do programa Office Insider.
+> [!IMPORTANT]
+> Observe que as funções personalizadas do Excel estão disponíveis nas seguintes plataformas.
+> - Office no Windows (versão 1904 ou posterior, conectado ao Office 365 assinatura)
+> - Office no Mac (versão 16,24 ou posterior, conectado ao Office 365 assinatura)
+> - Office na Web
+>
+> As funções personalizadas do Excel não são suportadas no iPad ou nas versões de compras de um único momento do Office 2019 ou anterior.

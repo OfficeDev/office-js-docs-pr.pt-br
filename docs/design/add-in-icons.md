@@ -1,12 +1,24 @@
+---
+title: Diretrizes de ícone para suplementos do Office
+description: ''
+ms.date: 03/02/2019
+localization_priority: Priority
+ms.openlocfilehash: 189139aaff3807ec5758462dd2bd1ad8916f65ae
+ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "35617069"
+---
 # <a name="icons"></a>Ícones
-Ícones são a representação visual de um comportamento ou conceito. Eles costumam ser usados ​​para adicionar significado a controles e comandos. Os visuais, realistas ou simbólicos, permitem ao usuário navegar na interface do usuário da mesma forma que os sinais os ajudam a navegar em seu ambiente. Eles devem ser simples, claros e conter apenas os detalhes necessários para permitir que os clientes analisem rapidamente qual ação ocorrerá quando escolherem um controle.
+Ícones são a representação visual de um comportamento ou conceito. Eles são usados frequentemente para adicionar significado a controles e comandos. Os elementos visuais, realistas ou simbólicos, permitem ao usuário navegar pela interface do usuário da mesma maneira que os avisos os ajudam a navegar pelo ambiente. Eles devem ser simples, claros e conter apenas os detalhes necessários para permitir que os clientes analisem rapidamente a ação que ocorrerá ao escolherem um controle.
 
-As interfaces da faixa de opções do Office têm um estilo visual padrão. Isso garante consistência e familiaridade entre os aplicativos do Office. As diretrizes ajudarão você a criar um conjunto de recursos PNG para sua solução que se encaixe como parte natural do Office.
+As interfaces de faixa de opções do Office têm um estilo visual padrão. Isso garante a consistência e a familiaridade em aplicativos do Office. As diretrizes ajudarão você a criar um conjunto de ativos PNG para sua solução que se ajuste como parte natural do Office.
 
 Muitos contêineres HTML contêm controles com iconografia. Use a fonte personalizada do Office UI Fabric para renderizar os ícones com o estilo do Office no suplemento. A fonte de ícone do Fabric contém muitos glifos para metáforas comuns do Office que você pode dimensionar, colorir e estilizar para atender às suas necessidades. Se você tiver uma linguagem visual existente com seu próprio conjunto de ícones, fique à vontade para usá-la em telas HTML. Criar continuidade com sua própria marca com um conjunto de ícones padrão é uma parte importante de qualquer linguagem de design. Tenha cuidado para não criar confusão para os clientes entrando em conflito com as metáforas do Office.
 
 
-# <a name="design-icons-for-add-in-commands"></a>Desenvolver ícones para comandos de suplemento
+## <a name="design-icons-for-add-in-commands"></a>Desenvolver ícones para comandos de suplemento
 
 Os [Comandos de suplementos](add-in-commands.md) adicionam botões, texto e ícones à interface do usuário do Office. Os botões de comando de suplemento devem fornecer ícones significativos e rótulos que identifiquem claramente a ação que o usuário está realizando ao usar um comando. Este artigo fornece diretrizes de estilo e produção que ajudam você a desenvolver ícones que se integrem perfeitamente ao Office. 
 
@@ -30,19 +42,19 @@ Siga estas diretrizes ao criar seus ícones:
 
 |Fazer|Não fazer|
 |:---|:---|
-|Mantenha o visual simples e claro, concentrando-se no(s) elemento(s)-chave da comunicação.| Não use artefatos que façam seu ícone parecer confuso.|
-|Use a linguagem de ícones do Office para representar comportamentos ou conceitos.|Não reutilize glifos do Office UI Fabric para comandos de suplemento na faixa de opções do Office ou em menus contextuais. Os ícones do Fabric são estilisticamente diferentes e não serão compatíveis.|
-|Reutilize metáforas visuais comuns do Office, como o pincel para formatar ou a lupa para localizar.|Não reutilize metáforas visuais para comandos diferentes. Usar o mesmo ícone para comportamentos e conceitos diferentes pode causar confusão. |
-|Redesenhe seus ícones para torná-los pequenos ou maiores. Redesenhe recortes, cantos e bordas arredondadas com calma e cuidado para maximizar a clareza da linha. |Não redimensione seus ícones diminuindo ou aumentando de tamanho. Isso pode levar à baixa qualidade visual e ações pouco claras. Ícones complexos criados em um tamanho maior podem perder a clareza se redimensionados para serem menores sem redesenhar. |
-|Use um preenchimento branco para acessibilidade. A maioria dos objetos em seus ícones exigirá um fundo branco para ser legível nos temas da interface do usuário do Office e nos modos de alto contraste.  ||
-|Use o formato PNG com uma tela de fundo transparente. ||
-|Evite usar conteúdo localizável em seus ícones, como caracteres tipográficos, indicações de parágrafos e pontos de interrogação. ||
+|Manter os elementos visuais simples e claros, concentrando-se nos elementos principais da comunicação.| Não usar artefatos que façam com que o ícone pareça confuso.|
+|Usar a linguagem de ícones do Office para representar comportamentos ou conceitos.|Não reutilizar glifos do Office UI Fabric para comandos de suplemento na faixa de opções do Office ou em menus contextuais. Os ícones do Fabric são estilisticamente diferentes e não serão compatíveis.|
+|Reutilizar metáforas visuais comuns do Office, como o pincel para formatar ou a lupa para localizar.|Não reutilizar metáforas visuais para comandos diferentes. Usar o mesmo ícone para conceitos e comportamentos diferentes pode causar confusão. |
+|Redesenhar os ícones para deixá-los pequenos ou maiores. Dedicar um tempo para redesenhar recortes, cantos e bordas arredondadas para maximizar a clareza da linha. |Não redimensionar os ícones reduzindo-os ou aumentando-os. Isso pode levar a uma baixa qualidade visual e a ações confusas. Os ícones complexos criados em um tamanho maior podem perder clareza ao ser redimensionados para ficar menores sem um redesenho. |
+|Usar um preenchimento branco para acessibilidade. A maioria dos objetos em seus ícones exigirá um fundo branco para ser legível nos temas da interface do usuário do Office e nos modos de alto contraste.  ||
+|Usar o formato PNG com uma tela de fundo transparente. ||
+|Evitar usar conteúdo localizável nos ícones, como caracteres tipográficos, indicações de parágrafos e pontos de interrogação. ||
 
 
 
 ## <a name="icon-size-recommendations-and-requirements"></a>Recomendações e requisitos de tamanho de ícone
 
-Os ícones de área de trabalho do Office são imagens bitmap. Tamanhos diferentes serão renderizados de acordo com o modo de toque e da configuração de DPI do usuário. Inclua todos os oito tamanhos com suporte para criar a melhor experiência para todas as resoluções e contextos suportados. Estes são os tamanhos compatíveis (três são obrigatórios):
+Os ícones da área de trabalho do Office são imagens bitmap. Os tamanhos diferentes serão renderizados, dependendo do modo de toque e da configuração de DPI do usuário. Inclua todos os oito tamanhos com suporte para criar a melhor experiência para todas as resoluções e contextos com suporte. Estes são os tamanhos compatíveis (três são obrigatórios):
 
 - 16 px (obrigatório)
 - 20 px
@@ -99,26 +111,29 @@ A imagem a seguir mostra o layout de elementos básicos e modificadores em um í
 - Coloque modificadores conceituais no canto inferior direito.
 - Limite o número de elementos em seus ícones. Com 32 px, limite o número de modificadores a no máximo dois. Com 16 px, limite o número de modificadores a um.
 
-###<a name="base-element-padding"></a>Preenchimento do elemento base
+### <a name="base-element-padding"></a>Preenchimento do elemento básico
 Coloque elementos básicos com tamanhos consistentes. Se os elementos básicos não puderem ser centralizados no quadro, alinhe-os no canto superior esquerdo, deixando os pixels extras na parte inferior direita. Para melhores resultados, aplique as diretrizes de preenchimento listadas na tabela a seguir.
 
-###<a name="modifiers"></a>Modificadores
+### <a name="modifiers"></a>Modificadores
 Todos os modificadores devem ter um recorte transparente de 1 px entre cada elemento, incluindo a tela de fundo. Os elementos não devem se sobrepor diretamente. Crie um espaço em branco entre as regras e as bordas. Os modificadores podem variar um pouco de tamanho, mas use essas dimensões como ponto de partida.
 
 
 |**Tamanho do ícone**|**Preenchimento em torno do elemento básico**|**Tamanho do modificador**|
 |:---|:---|:---|
-|16 px|0|9 px|
-|20 px|1 px|10 px|
-|24 px|1 px|12 px|
-|32 px|2 px|14 px|
-|40 px|2 px|20 px|
-|48 px|3 px|22 px|
-|64 px|5 px|29 px|
-|80 px|5 px|38 px|
+|16px|0|9px|
+|20px|1px|10px|
+|24px|1px|12px|
+|32px|2px|14px|
+|40px|2px|20px|
+|48px|3px|22px|
+|64px|5px|29px|
+|80px|5px|38px|
 
 
 ## <a name="icon-colors"></a>Cores do ícone
+
+> [!NOTE]
+> Estas diretrizes de cor são destinadas a ícones da faixa de opções usados em [Comandos do suplemento](add-in-commands.md). Esses ícones não são processados com o Microsoft UI Fabric e a paleta de cores é diferente da paleta descrita em [Microsoft UI Fabric| Cores | Compartilhado](https://fluentfabric.azurewebsites.net/#/color/shared).
 
 Os ícones do Office têm uma paleta de cores limitada. Use as cores listadas na tabela a seguir para garantir uma integração perfeita com a interface de usuário do Office. Aplique as seguintes diretrizes para o uso de cor: 
 
@@ -126,7 +141,7 @@ Os ícones do Office têm uma paleta de cores limitada. Use as cores listadas na
 - Se possível, use somente uma cor além do cinza. Limite as cores adicionais a no máximo duas.
 - As cores devem ter uma aparência consistente em todos os tamanhos de ícone. Os ícones do Office têm paletas de cores um pouco diferentes para tamanhos de ícones diferentes. Ícones com 16 px e menores são um pouco mais escuros e mais vibrantes do que os ícones de 32 px e maiores. Sem esses ajustes sutis, as cores parecem variar entre os tamanhos.   
 
-|**Nome da cor**|**RGB**|**Hexa**|**Cor**|**Categoria**|
+|**Nome da cor**|**RGB**|**Hex**|**Cor**|**Categoria**|
 |:---|:---|:---|:---|:---|
 |Texto Cinza (80)|80, 80, 80|#505050| ![Imagem colorida texto cinza 80](../images/color-text-gray-80.png) |Texto|
 |Texto Cinza (95)|95, 95, 95|#5F5F5F| ![Imagem colorida texto cinza 95](../images/color-text-gray-95.png) |Texto|
@@ -160,7 +175,7 @@ Os ícones do Office foram projetados para renderizar bem em modos de alto contr
 - Evite o uso de gradientes.
 - Evite blocos grandes de cores com valores similares.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 - [Práticas recomendadas de desenvolvimento de suplementos](../concepts/add-in-development-best-practices.md)
 - [Comandos de suplemento para Excel, Word e PowerPoint](../design/add-in-commands.md)

@@ -1,3 +1,15 @@
+---
+title: Elemento OfficeMenu no arquivo de manifesto
+description: ''
+ms.date: 10/09/2018
+localization_priority: Normal
+ms.openlocfilehash: 20d020b8ab826049ef0271cbdb8d51201ee88ab4
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32452015"
+---
 # <a name="officemenu-element"></a>Elemento OfficeMenu
 
 Define um conjunto de controles que serão adicionados ao menu de contexto do Office. Aplica-se aos suplementos do Word, do Excel, do PowerPoint e do OneNote.
@@ -6,7 +18,7 @@ Define um conjunto de controles que serão adicionados ao menu de contexto do Of
 
 | Atributo            | Obrigatório | Descrição                          |
 |:---------------------|:--------:|:-------------------------------------|
-| [xsi:type](#xsitype) | Sim      | O tipo de OfficeMenu que está sendo definido.|
+| [xsi:type](#xsitype) | Sim      | O tipo de OfficeMenu está sendo definido.|
 
 ## <a name="child-elements"></a>Elementos filho
 
@@ -16,10 +28,10 @@ Define um conjunto de controles que serão adicionados ao menu de contexto do Of
 
 ## <a name="xsitype"></a>xsi:type
 
-Especifica um menu interno do aplicativo cliente do Office ao qual você deseja adicionar esse suplemento do Office.
+Especifica um menu interno do aplicativo cliente do Office no qual você deseja adicionar esse suplemento do Office.
 
-- `ContextMenuText` - Exibe o item no menu de contexto quando o texto for selecionado e o usuário abrir o menu de contexto (clicando com o botão direito do mouse) no texto selecionado. Aplica-se a Word, Excel, PowerPoint e OneNote.
-- `ContextMenuCell` - Exibe o item no menu de contexto quando o usuário abrir o menu de contexto (clicando com o botão direito do mouse) em uma célula na planilha. Aplica-se ao Excel. 
+- `ContextMenuText` -  Exibe o item no menu de contexto quando o texto for selecionado e o usuário abre o menu de contexto (clica com o botão direito do mouse) no texto selecionado. Aplica-se a Word, Excel, PowerPoint e OneNote.
+- `ContextMenuCell` -  Exibe o item no menu de contexto quando o usuário abre o menu de contexto (clica com o botão direito do mouse) em uma célula na planilha. Aplica-se ao Excel. 
 
 ## <a name="control"></a>Control
 

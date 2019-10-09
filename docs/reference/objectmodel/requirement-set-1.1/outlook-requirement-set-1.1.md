@@ -1,30 +1,42 @@
-# <a name="outlook-add-in-api-requirement-set-11"></a>Conjunto de requisitos de API versão 1.1 para suplementos do Outlook
+---
+title: Conjunto de requisitos de API para suplementos do Outlook versão 1.1
+description: ''
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: 537c99e8662d04ad006eb1bac6d76c0f753e8785
+ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "36064414"
+---
+# <a name="outlook-add-in-api-requirement-set-11"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.1
 
-O subconjunto de APIs para suplementos do Outlook das APIs JavaScript para Office inclui objetos, métodos, propriedades e eventos que você pode usar em um suplemento do Office.
+O subconjunto de APIs de suplemento do Outlook para as APIs JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um suplemento do Office.
 
 > [!NOTE]
-> Esta documentação destina-se a um [conjunto de requisitos](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) que não seja o conjunto de requisitos mais recente. 
+> Esta documentação destina-se a um [conjunto de requisitos](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) que não seja o mais recente. 
 
 ## <a name="whats-new-in-11"></a>Novidades na versão 1.1?
 
-O conjunto de requisitos 1.1 inclui todos os recursos do conjunto de requisitos 1.0. Ele adicionou a capacidade de os suplementos acessarem o corpo de mensagens e compromissos e a capacidade de modificar o item atual.
+O conjunto de requisitos 1.1 inclui todos os recursos do Conjunto de requisitos 1.0. Ele adicionou a capacidade de os suplementos para acessarem o corpo de mensagens e os compromissos e a capacidade de modificar o item atual.
 
 ### <a name="change-log"></a>Log de alterações
 
-- Foi adicionado o objeto [Body](/javascript/api/outlook_1_1/office.body): fornece métodos para adicionar e atualizar o conteúdo de um item em um suplemento do Outlook.
-- Foi adicionado o objeto [Location](/javascript/api/outlook_1_1/office.location): fornece métodos para obter e definir a localização de uma reunião em um suplemento do Outlook.
-- Foi adicionado o objeto [Recipients](/javascript/api/outlook_1_1/office.recipients): fornece métodos para obter e definir os destinatários de um compromisso ou mensagem em um suplemento do Outlook.
-- Foi adicionado o objeto [Subject](/javascript/api/outlook_1_1/office.subject): fornece métodos para obter e definir o assunto de um compromisso ou mensagem em um suplemento do Outlook.
-- Foi adicionado o objeto [Time](/javascript/api/outlook_1_1/office.time): fornece métodos para obter e definir o horário de início ou fim de uma reunião em um suplemento do Outlook.
-- Foi adicionado o [Office.context.mailbox.item.addFileAttachmentAsync](office.context.mailbox.item.md#addfileattachmentasyncuri-attachmentname-options-callback): adiciona um arquivo a uma mensagem ou compromisso como um anexo.
-- Foi adicionado o [Office.context.mailbox.item.addItemAttachmentAsync](office.context.mailbox.item.md#additemattachmentasyncitemid-attachmentname-options-callback): adiciona um item do Exchange, como uma mensagem, como anexo na mensagem ou no compromisso.
-- Foi adicionado o [Office.context.mailbox.item.removeAttachmentAsync](office.context.mailbox.item.md#removeattachmentasyncattachmentid-options-callback): remove um anexo de uma mensagem ou de um compromisso.
-- Foi adicionado o [Office.context.mailbox.item.body](office.context.mailbox.item.md#body-bodyjavascriptapioutlook11officebody): obtém um objeto que fornece métodos para manipular o corpo de um item.
-- Foi adicionado o [Office.context.mailbox.item.bcc](office.context.mailbox.item.md#bcc-recipientsjavascriptapioutlook11officerecipients): obtém ou define os destinatários na linha Cco (com cópia oculta) de uma mensagem.
-- Foi adicionado o [Office.MailboxEnums.RecipientType](/javascript/api/outlook_1_1/office.mailboxenums.recipienttype): especifica o tipo de destinatário para um compromisso.
+- Foi adicionado o objeto [Body](/javascript/api/outlook/office.body?view=outlook-js-1.1): Fornece métodos para adicionar e atualizar o conteúdo de um item em um suplemento do Outlook.
+- Foi adicionado o objeto [Location](/javascript/api/outlook/office.location?view=outlook-js-1.1): Fornece métodos para obter e definir o local de uma reunião em um suplemento do Outlook.
+- Foi adicionado o objeto [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.1): Fornece métodos para obter e definir os destinatários de um compromisso ou uma mensagem em um suplemento do Outlook.
+- Foi adicionado o objeto [Subject](/javascript/api/outlook/office.subject?view=outlook-js-1.1): Fornece métodos para obter e definir o assunto de um compromisso ou uma mensagem em um suplemento do Outlook.
+- Foi adicionado o objeto [Time](/javascript/api/outlook/office.time?view=outlook-js-1.1): Fornece métodos para obter e definir o tempo de início ou fim de uma reunião em um suplemento do Outlook.
+- Foi adicionado o [Office.context.mailbox.item.addFileAttachmentAsync](office.context.mailbox.item.md#addfileattachmentasyncuri-attachmentname-options-callback): Adiciona um arquivo a uma mensagem ou um compromisso como um anexo.
+- Foi adicionado o [Office.context.mailbox.item.addItemAttachmentAsync](office.context.mailbox.item.md#additemattachmentasyncitemid-attachmentname-options-callback): Adiciona um item do Exchange, como uma mensagem, como anexo na mensagem ou no compromisso.
+- Foi adicionado o [Office.context.mailbox.item.removeAttachmentAsync](office.context.mailbox.item.md#removeattachmentasyncattachmentid-options-callback): Remove um anexo de uma mensagem ou de um compromisso.
+- Foi adicionado o [Office.context.mailbox.item.body](office.context.mailbox.item.md#body-body): Obtém um objeto que fornece métodos para manipular o corpo de um item.
+- Foi adicionada a linha [Office. Context. Mailbox. Item. Bcc](office.context.mailbox.item.md#bcc-recipients) de uma mensagem.
+- Adicionado o [Office.MailboxEnums.RecipientType](/javascript/api/outlook/office.mailboxenums.recipienttype?view=outlook-js-1.1): especifica o tipo de destinatário para um compromisso.
 
 ## <a name="see-also"></a>Confira também
 
-- [Suplementos do Outlook](https://docs.microsoft.com/outlook/add-ins/)
+- [Suplementos do Outlook](/outlook/add-ins/)
 - [Exemplos de código de suplementos do Outlook](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [Introdução](https://docs.microsoft.com/outlook/add-ins/quick-start)
+- [Introdução](/outlook/add-ins/quick-start)

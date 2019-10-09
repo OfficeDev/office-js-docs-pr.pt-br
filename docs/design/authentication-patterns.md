@@ -1,49 +1,65 @@
+---
+title: Diretrizes de design de autenticação para suplementos do Office
+description: ''
+ms.date: 03/19/2019
+localization_priority: Normal
+ms.openlocfilehash: c8d61d42eabca0a57e1a09dda95ee8c0572d5ecb
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32449165"
+---
 # <a name="authentication-patterns"></a>Padrões de autenticação
 
-Os suplementos podem exigir que os usuários façam login ou se inscrevam para acessar recursos e funcionalidades. As caixas de entrada para nome de usuário e senha ou os botões que iniciam fluxos de credenciais de terceiros são controles de interface comuns em experiências de autenticação. Uma experiência de autenticação simples e eficiente é um primeiro passo importante para que os usuários comecem a usar seu suplemento.
+Os suplementos podem exigir que os usuários entrem ou se inscrevam para acessar os recursos e funcionalidades. As caixas de entrada de nome de usuário e senha ou botões que iniciam fluxos de credenciais de terceiros são controles comuns da interface em experiências de autenticação. Uma experiência de autenticação simples e eficiente é uma primeira etapa importante para iniciar os usuários no uso de seu suplemento.
 
 ## <a name="best-practices"></a>Práticas recomendadas
 
 |Fazer|Não fazer|
 |:----|:----|
-|Usar o logon único (SSO) para autenticar usuários em seu suplemento.|Exigir que usuários conectem-se ao seu suplemento usando credenciais diferentes de suas contas pessoais da Microsoft ou de suas contas do Office 365 (profissional ou estudantil).|
-|Antes de fazer o usuário se conectar, descrever o valor de seu suplemento ou demonstrar funcionalidades sem exigir uma conta. |Esperar que os usuários se conectem sem entender o valor e os benefícios de seu complemento.|
-|Guiar os usuários por meio de fluxos de autenticação com um botão primário, altamente visível em cada tela. |Chamar atenção para tarefas secundárias e terciárias com botões e solicitações de ação concorrentes entre si.|
-|Usar rótulos claros de botão que descrevam tarefas específicas, como "Entrar" ou "Criar conta".   |Usar rótulos de botão vagos, como "Enviar" ou "Começar" para orientar os usuários em fluxos de autenticação.|
-|Usar um diálogo para focar a atenção dos usuários nos formulários de autenticação.    |Sobrecarregar seu painel de tarefas com uma tela de apresentação e formulários de autenticação.|
-|Encontrar pequenas eficiências no fluxo, como foco automático nas caixas de entrada. |Adicionar etapas desnecessárias à interação, como exigir que os usuários cliquem nos campos do formulário.|
-|Fornecer uma maneira para os usuários saírem e se autenticarem novamente.    |Forçar usuários a desinstalar para alternar entre identidades.|
-
-> [!NOTE]
-> A API de logon único é atualmente compatível com as versões prévias do Word, Excel, Outlook e PowerPoint. Para mais informações sobre a compatibilidade da API de logon único, veja [Conjuntos de requisitos da API de identidade](https://docs.microsoft.com/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets?view=office-js). Se você estiver trabalhando com um suplemento do Outlook, não esqueça de habilitar a Autenticação Moderna para o locatário do Office 365. Para saber como fazer isso, veja [Exchange Online: Como habilitar o seu locatário para a Autenticação Moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
-
+|Antes de entrar, descreva o valor do suplemento ou demonstre a funcionalidade sem exigir uma conta. |Espere que os usuários entrem sem compreender o valor e os benefícios do suplemento.|
+|Oriente os usuários pelos fluxos de autenticação com um botão principal bem visível em cada tela. |Chame atenção para as tarefas secundárias e terciárias com outros botões e chamadas para ação.|
+|Use rótulos de botão claros que descrevam tarefas específicas, como “Entrar” ou “Criar conta”.   |Use rótulos de botão vagos como “Enviar” ou “Começar” para orientar os usuários por meio de fluxos de autenticação.|
+|Use uma caixa de diálogo para concentrar a atenção do usuário em formulários de autenticação.    |Encha seu painel de tarefas com uma primeira experiência de execução e formulários de autenticação.|
+|Inclua pequenos recursos eficientes no fluxo como foco automático em caixas de entrada. |Adicione etapas desnecessárias à interação como exigir que os usuários cliquem nos campos de formulário.|
+|Ofereça uma maneira para os usuários saírem e autenticarem-se novamente.    |Force os usuários a fazer a desinstalação para alternar identidades.|
 
 ## <a name="authentication-flow"></a>Fluxo de autenticação
-Se o logon único ainda não estiver disponível para seus usuários, considere um fluxo de autenticação alternativo. Dê aos usuários a opção de entrar diretamente com seu serviço ou um provedor de identidade como a Microsoft.
 
-1. Placemat da tela de apresentação: coloque o botão de login como uma solicitação de ação clara dentro da tela de apresentação do seu suplemento.
-![](../images/add-in-fre-value-placemat.png)
+Até o logon único estar fora da versão prévia, os suplementos de produção devem conceder aos usuários uma opção para entrar diretamente com o serviço ou um provedor de identidade como a Microsoft.
 
-2. Caixa de diálogo de opções de provedores de identidade - exiba uma lista clara de provedores de identidade, incluindo um formulário de nome de usuário e senha, se aplicável. A interface do usuário do suplemento pode ser bloqueada enquanto a caixa de diálogo de autenticação estiver aberta. ![](../images/add-in-auth-choices-dialog.png)
+1. Marcador de primeira execução: coloque o botão de entrada como uma chamada para ação clara na primeira experiência de execução do seu suplemento.
+![Captura de tela de um painel de tarefas do suplemento em um aplicativo do Office](../images/add-in-fre-value-placemat.png)
+
+2. Caixa de diálogo de opções do provedor de identidade: exiba uma lista clara de provedores de identidade, incluindo um formulário de nome de usuário e senha, se aplicável. A interface de usuário do seu suplemento poderá ser bloqueada enquanto a caixa de diálogo de autenticação estiver aberta.
+![Captura de tela da caixa de diálogo Opções do Provedor de Identidade em um aplicativo do Office](../images/add-in-auth-choices-dialog.png)
 
 
 
-3. Login do provedor de identidade - o provedor de identidade terá sua própria interface do usuário. O Active Directory do Microsoft Azure permite a personalização de páginas de login e painel de acesso para uma aparência consistente com seu serviço. [Saiba mais](https://docs.microsoft.com/azure/active-directory/fundamentals/customize-branding). ![](../images/add-in-auth-identity-sign-in.png)
+3. Entrada de um provedor de identidade: os provedores de identidade têm as próprias interfaces de usuário. O Microsoft Azure Active Directory permite a personalização das páginas de entrada e do painel de acesso para uma aparência consistente com o serviço. [Saiba mais](/azure/active-directory/fundamentals/customize-branding).
+![Captura de tela da caixa de diálogo Entrar no provedor de identidade em um aplicativo do Office](../images/add-in-auth-identity-sign-in.png)
 
-4. Progresso - indica o progresso enquanto as configurações e o a interface do usuário são carregadas.
-![](../images/add-in-auth-modal-interstitial.png)
+4. Progresso: indique o progresso enquanto as configurações e a interface do usuário são carregadas.
+![Captura de tela de uma caixa de diálogo que mostra um indicador de progresso em um aplicativo do Office](../images/add-in-auth-modal-interstitial.png)
 
 > [!NOTE] 
-> Ao usar o serviço de identidade da Microsoft, você terá a oportunidade de usar um botão personalizado de login que é ajustável para temas claros e escuros. Saiba mais.
+> Ao usar o serviço de identidade da Microsoft, você terá a oportunidade de usar um botão de entrada com marca que poderá ser personalizado com temas claros e escuros.Saiba mais.
 
-## <a name="single-sign-on-authentication-flow"></a>Fluxo de autenticação de logon único
-O logon único ainda está em versão prévia. Uma vez disponível para todos, use-o para que o usuário final tenha uma melhor experiência. A identidade do usuário no Office é usada para fazer login no seu suplemento. Como resultado, os usuários só fazem login uma vez. Isso elimina as dificuldades na experiência, facilitando o uso de seus clientes.
+## <a name="single-sign-on-authentication-flow-preview"></a>Fluxo de autenticação de logon único (versão prévia)
 
-1. Ao instalar um suplemento, o usuário verá uma janela de consentimento semelhante a esta: ![](../images/add-in-auth-SSO-consent-dialog.png)
 > [!NOTE]
-> O publicador de suplementos terá controle sobre o logotipo, as sequências de caracteres e os escopos de permissão, incluídos na janela de consentimento. A interface do usuário é pré-configurada pela Microsoft.
+> Atualmente a API de logon único tem suporte na visualização para Word, Excel, Outlook e PowerPoint. Para saber mais informações sobre o suporte a logon único, confira  [Conjuntos de requisitos da IdentityAPI](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets). Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Office 365. Para saber mais informações sobre como fazer isso, confira  [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
-2. O suplemento será carregado depois que o usuário consentir. Ele pode extrair e exibir qualquer informação personalizada necessária ao usuário. ![](../images/add-in-ribbon.png)
+Depois que o recurso de logon único for disponibilizado para suplementos de produção, use-o em uma experiência de usuário final mais estável. A identidade do usuário no Office (identidade da conta Microsoft ou do Office 365) é usada para entrar no suplemento. Como resultado, os usuários somente entram uma vez. Isso remove conflitos na experiência e faz com que os clientes comecem a usar o suplemento sem dificuldades.
+
+1. Conforme o suplemento é instalado, um usuário vê uma janela de consentimento semelhante à exibida abaixo: ![Captura de tela da janela de consentimento em um aplicativo do Office enquanto um suplemento é instalado](../images/add-in-auth-SSO-consent-dialog.png)
+> [!NOTE]
+> O publicador do suplemento terá controle sobre o logotipo, sobre as cadeias de caracteres e escopos de permissão incluídos na janela de consentimento. A interface do usuário é pré-configurada pela Microsoft.
+
+2. O suplemento será carregado após o consentimento do usuário. Ele pode extrair e exibir todas as informações personalizadas necessárias do usuário.
+![Captura de tela de um aplicativo do Office com os botões de suplemento exibidos na faixa de opções](../images/add-in-ribbon.png)
 
 ## <a name="see-also"></a>Confira também
-- Saiba mais sobre [desenvolvimento de suplementos de logon único](https://docs.microsoft.com/office/dev/add-ins/develop/sso-in-office-add-ins)
+
+- Saiba mais sobre como [desenvolver suplementos de SSO (versão prévia)](/office/dev/add-ins/develop/sso-in-office-add-ins)

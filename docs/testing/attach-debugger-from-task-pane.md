@@ -1,17 +1,18 @@
 ---
 title: Anexar um depurador do painel de tarefas
 description: ''
-ms.date: 12/04/2017
-ms.openlocfilehash: 2bc3d44f1d554fb065dbb8004a744acac67ed06c
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.date: 09/09/2019
+localization_priority: Priority
+ms.openlocfilehash: 39d952cc1162107881f6f6860a36be45c7eb4d30
+ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944443"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "36838470"
 ---
 # <a name="attach-a-debugger-from-the-task-pane"></a>Anexar um depurador do painel de tarefas
 
-No Office 2016 para Windows, Build 77xx.xxxx ou posterior, é possível anexar o depurador do painel de tarefas. O recurso de anexar o depurador anexará diretamente o depurador ao processo correto do Internet Explorer. É possível anexar um depurador independentemente de você estar utilizando Yeoman Generator, Visual Studio Code, node.js, Angular ou outra ferramenta. 
+No Office 2016 no Windows, Build 77xx.xxxx ou posterior, é possível anexar o depurador do painel de tarefas. O recurso de anexar o depurador anexará diretamente o depurador ao processo correto do Internet Explorer. É possível anexar um depurador independentemente de você estar utilizando Yeoman Generator, Visual Studio Code, Node.js, Angular ou outra ferramenta. 
 
 Para iniciar a ferramenta **Anexar Depurador**, escolha o canto superior direito do painel de tarefas para ativar o menu **Personalidade** (conforme mostrado no círculo vermelho na imagem a seguir).   
 
@@ -27,13 +28,20 @@ Selecione **Anexar Depurador**. Isso inicia a caixa de diálogo **Depurador Just
 
 No Visual Studio, você verá os arquivos de código no **Gerenciador de Soluções**.   Você pode definir pontos de interrupção na linha de código que deseja depurar no Visual Studio.
 
-Confira mais informações sobre depuração no Visual Studio em:
+> [!NOTE]
+> Se você não vir o menu Personalidade, é possível depurar o suplemento com o Visual Studio. Certifique-se de que o suplemento do painel tarefas esteja aberto no Office e, em seguida, siga estas etapas:
+>
+> 1. No Visual Studio, escolha **DEPURAR** > **Anexar ao Processo**.
+> 2. Em **Processos disponíveis**, selecione*qualquer um* dos `Iexplore.exe` processos disponíveis *ou* todos os `MicrosoftEdge*.exe` processos disponíveis, dependendo [ se seu suplemento usa Internet Explorer ou Microsoft Edge](../concepts/browsers-used-by-office-web-add-ins.md), e depois clique no botão **Anexar**.
+
+Veja mais informações sobre depuração no Visual Studio, em:
 
 -   Para iniciar e usar o Explorador do DOM no Visual Studio, confira a Dica 4 na seção [Dicas e Truques](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates/#tips_tricks) da publicação [Building great-looking apps for Office using the new project templates](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates) (Criar aplicativos atraentes para o Office usando os novos modelos de projeto) do blog.
--   Para definir pontos de interrupção, confira [Usar Pontos de Interrupção](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints?view=vs-2015).
--   Para usar o F12, confira o artigo [Usando as ferramentas de desenvolvedor F12](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85)).
+-   Para definir pontos de interrupção, confira [Usar Pontos de Interrupção](/visualstudio/debugger/using-breakpoints?view=vs-2015).
+-   Para usar o F12, confira o artigo [Usando as ferramentas de desenvolvedor F12](/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85)).
+-   Para usar as ferramentas de desenvolvedor do Microsoft Edge, confira [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab).
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 - [Criar e depurar suplementos do Office no Visual Studio](../develop/create-and-debug-office-add-ins-in-visual-studio.md)
 - [Publicar seu Suplemento do Office](../publish/publish.md)

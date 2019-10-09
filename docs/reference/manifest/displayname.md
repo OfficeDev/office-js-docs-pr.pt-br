@@ -1,6 +1,18 @@
+---
+title: Elemento DisplayName no arquivo de manifesto
+description: ''
+ms.date: 10/09/2018
+localization_priority: Normal
+ms.openlocfilehash: f3c986c92bfcdfa0ea419d81d0ae0c4c8db3f61f
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32450489"
+---
 # <a name="displayname-element"></a>Elemento DisplayName
 
-Especifica o nome do Suplemento do Office como uma sequência de até 125 caracteres.
+Especifica o nome do Suplemento do Office como uma cadeia de caracteres de até 125 caracteres.
 
 **Tipo de suplemento:** Conteúdo, Painel de tarefas, Email
 
@@ -17,5 +29,5 @@ Especifica o nome do Suplemento do Office como uma sequência de até 125 caract
 
 ## <a name="can-contain"></a>Pode conter
 
-[Substituição](override.md)
+[Override](override.md)
 

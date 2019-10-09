@@ -1,3 +1,15 @@
+---
+title: Diretrizes de acessibilidade para suplementos do Office
+description: ''
+ms.date: 09/24/2018
+localization_priority: Normal
+ms.openlocfilehash: c40ca0c3c1fad238d605e5f3f67b58a0272ff83a
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448130"
+---
 # <a name="accessibility-guidelines"></a>Diretrizes de acessibilidade
 
 À medida que você projeta e desenvolve seus suplementos do Office, convém verificar se todos os usuários e clientes potenciais são capazes de usar seu suplemento com êxito. Aplique as seguintes diretrizes para garantir que sua solução seja acessível a todos os públicos.
@@ -30,8 +42,8 @@
 - Forneça uma maneira para os usuários ativarem legendas ou descrições de áudio com fontes de áudio.
 - Forneça alternativas para o som como um meio para alertar os usuários, como indicações visuais ou vibrações.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 - [Diretrizes de Acessibilidade para Conteúdo da Web (WCAG) 2.0](https://www.w3.org/TR/wcag2ict/#REF-WCAG20)
 - [Orientações sobre a Aplicação das WCAG 2.0 para Tecnologias de Comunicação e Informação que não Sejam da Web (WCAG2ICT)](https://www.w3.org/TR/wcag2ict/)
-- [Padrão Europeu para requisitos de acessibilidade para Tecnologias de Comunicação e Informação (ICT)](http://www.etsi.org/deliver/etsi_en/301500_301599/301549/01.00.00_20/en_301549v010000c.pdf) 
+- [Padrão Europeu para requisitos de acessibilidade para Tecnologias de Comunicação e Informação (ICT)](https://www.etsi.org/deliver/etsi_en/301500_301599/301549/01.00.00_20/en_301549v010000c.pdf) 

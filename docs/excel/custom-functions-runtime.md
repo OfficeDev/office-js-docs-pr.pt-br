@@ -1,30 +1,37 @@
 ---
-ms.date: 10/03/2018
-description: Compreenda os principais cenários no desenvolvimento de funções personalizadas do Excel que usam o novo runtime do JavaScript.
-title: Runtime de funções personalizadas do Excel
-ms.openlocfilehash: a48b02a8ca404b51740d9052d199da934eb9312e
-ms.sourcegitcommit: 563c53bac52b31277ab935f30af648f17c5ed1e2
-ms.translationtype: HT
+ms.date: 05/08/2019
+description: Entenda os principais cenários de desenvolvimento de funções personalizadas do Excel que usam o novo tempo de execução do JavaScript.
+title: Tempo de execução de funções personalizadas do Excel
+localization_priority: Normal
+ms.openlocfilehash: bb73ab2f20eadbac3f5fc97e272d69fe8bb983cd
+ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "25459102"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "36695858"
 ---
-# <a name="runtime-for-excel-custom-functions-preview"></a>Runtime de funções personalizadas do Excel (versão prévia)
+# <a name="runtime-for-excel-custom-functions"></a>Tempo de execução de funções personalizadas do Excel
 
-As funções personalizadas usam um novo runtime JavaScript que difere do runtime usado por outras partes de um suplemento, como o painel de tarefas ou outros elementos de interface do usuário. Esse runtime Javascript é projetado para otimizar o desempenho dos cálculos em funções personalizadas e expõe novas APIs que você pode usar para executar ações comuns baseadas na Web dentro de funções personalizadas como solicitar dados externos ou trocar dados sobre uma conexão persistente com um servidor. Esse runtime JavaScript também dá acesso a novas APIs no namespace `OfficeRuntime` que podem ser usadas em funções personalizadas ou por outras partes de um suplemento como armazenamento de dados ou exibição de uma caixa de diálogo. Este artigo descreve como usar essas APIs em funções personalizadas e também lista considerações adicionais que você deve ter em mente ao desenvolver funções personalizadas.
+Funções personalizadas usam um novo tempo de execução do JavaScript, diferente do tempo de execução usado por outras partes de um suplemento, como o painel de tarefas ou outros elementos da interface do usuário. Esse tempo de execução do JavaScript foi projetado para otimizar o desempenho de cálculos em funções personalizadas, e expõe as novas APIs disponíveis para executar ações comuns baseadas na Web, dentro de funções personalizadas, como solicitação de dados externos ou troca de dados por meio de uma conexão persistente com um servidor.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-## <a name="requesting-external-data"></a>Solicitação de dados externos
+O tempo de execução do JavaScript também fornece acesso às novas APIs no namespace `OfficeRuntime` que pode ser usado em funções personalizadas ou por outras partes de um suplemento para armazenar dados ou exibir uma caixa de diálogo. Este artigo mostra como usar essas APIs em funções personalizadas e descreve considerações adicionais para o desenvolvimento de funções personalizadas.
 
-Em uma função personalizada, você pode solicitar dados externos usando uma API como [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) ou usando [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), uma API da web padrão que envia solicitações HTTP para interagir com os servidores. No novo runtime do JavaScript, XHR implementa medidas adicionais de segurança, exigindo a [Política de mesma origem](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) e [CORS](https://www.w3.org/TR/cors/) simples.  
+## <a name="requesting-external-data"></a>Como solicitar dados externos
 
-### <a name="xhr-example"></a>Exemplo XHR
+É possível solicitar dados externos em uma função personalizada por meio de uma API, como a API [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), ou por meio de um objeto [XmlHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), uma API Web padrão que envia solicitações HTTP para interagir com os servidores.
 
-No exemplo de código a seguir, a função `getTemperature` chama a função `sendWebRequest` para obter a temperatura de uma determinada área com base no ID de termômetro. A função `sendWebRequest` usa XHR para fazer uma solicitação `GET` para um ponto de extremidade que pode fornecer os dados. 
+Dentro do tempo de execução do JavaScript usado por funções personalizadas, o XHR implementa medidas de segurança adicionais exigindo a [mesma política de origem](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) e o [CORS](https://www.w3.org/TR/cors/)simples.
+
+Observe que uma implementação CORS simples não pode usar cookies e é compatível apenas com métodos simples (GET, HEAD, POST). A CORS simples aceita cabeçalhos simples com nomes de campos `Accept`, `Accept-Language`, `Content-Language`. Você também pode usar um `Content-Type` cabeçalho no CORS simples, desde que o tipo de conteúdo `application/x-www-form-urlencoded`seja `text/plain`, ou `multipart/form-data`.
+
+### <a name="xhr-example"></a>Exemplo de XHR
+
+No código de exemplo a seguir, a função `getTemperature` chama a função `sendWebRequest` para obter a temperatura de uma área específica, de acordo com a ID do termômetro. A função `sendWebRequest` usa XHR para emitir uma solicitação `GET` para um ponto de extremidade que fornece os dados.
 
 > [!NOTE] 
-> Ao  efetuar fetch ou usar XHR, um novo `Promise` JavaScript é retornado. Até antes de setembro de 2018, você tinha que especificar `OfficeExtension.Promise` para usar promessas na API JavaScript do Office, mas agora, pode simplesmente usar um `Promise` JavaScript.
+> Se usar fetch ou XHR, uma nova `Promise` JavaScript será retornada. Antes de setembro de 2018, era necessário especificar `OfficeExtension.Promise` para usar promessas na API JavaScript para Office, mas agora, basta usar um `Promise` JavaScript.
 
 ```js
 function getTemperature(thermometerID) {
@@ -43,157 +50,79 @@ function sendWebRequest(thermometerID, data) {
         if (this.readyState == 4 && this.status == 200) {
            data.temperature = JSON.parse(xhttp.responseText).temperature
         };
+        
+        //set Content-Type to application/text. Application/json is not currently supported with Simple CORS
+        xhttp.setRequestHeader("Content-Type", "application/text");
         xhttp.open("GET", "https://contoso.com/temperature/" + thermometerID), true)
         xhttp.send();  
     }
 }
 ```
 
-## <a name="receiving-data-via-websockets"></a>Receber dados via WebSockets
+## <a name="receiving-data-via-websockets"></a>Como receber dados por meio de WebSockets
 
-Dentro de uma função personalizada, você pode usar [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) para trocar dados através de uma conexão persistente com um servidor. Usando WebSockets, a sua função personalizada por abrir uma conexão com um servidor e receber mensagens automaticamente quando certos eventos ocorrerem, sem precisar explicitamente buscar dados do servidor .
+Em uma função personalizada, é possível usar [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) para trocar dados por meio de uma conexão persistente com um servidor. Usando WebSockets, a função personalizada pode abrir uma conexão com um servidor e, em seguida, receber mensagens do servidor automaticamente, quando determinados eventos ocorrerem, sem precisar consultar explicitamente os dados do servidor.
 
 ### <a name="websockets-example"></a>Exemplo de WebSockets
 
-O exemplo de código a seguir estabelece uma conexão `WebSocket` e, em seguida, registra cada mensagem de entrada vinda do servidor. 
+O código de exemplo a seguir estabelece uma conexão `WebSocket` e registra cada mensagem de entrada do servidor.
 
-```typescript
+```js
 const ws = new WebSocket('wss://bundles.office.com');
-ws.onmessage = (message) => {
+ws.onmessage = function (message) {
     console.log(`Received: ${message}`);
-};
-ws.onerror = (error) => {
+}
+ws.onerror = function (error) {
     console.err(`Failed: ${error}`);
 }
 ```
 
-## <a name="storing-and-accessing-data"></a>Armazenamento e acesso a dados
+## <a name="storing-and-accessing-data"></a>Como armazenar e acessar os dados
 
-Em  uma função personalizada (ou em qualquer parte de um suplemento), você pode armazenar e acessar dados usando o objeto `OfficeRuntime.AsyncStorage` . `AsyncStorage` é um sistema de armazenamento de chave-valor persistente e descriptografados que oferece uma alternativa a [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) que não pode ser usado em funções personalizadas. Um suplemento pode armazenar até 10 MB de dados usando `AsyncStorage`.
+Em uma função personalizada (ou em outras partes de um suplemento), você pode armazenar e acessar dados usando o objeto `OfficeRuntime.storage`. `Storage` é um sistema de armazenamento de chave-valor persistente e não criptografado, que fornece uma alternativa para [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), que não pode ser usado em funções personalizadas. `Storage`o oferece 10 MB de dados por domínio. Os domínios podem ser compartilhados por mais de um suplemento.
 
-Os métodos a seguir estão disponíveis no objeto `AsyncStorage`:
- 
+`Storage` é uma solução de armazenamento compartilhado, o que significa que várias partes de um suplemento podem acessar os mesmos dados. Por exemplo, tokens para autenticação de usuário podem ser armazenados em `storage`, já que ele pode ser acessado tanto por uma função personalizada quanto por elementos da interface do usuário de um suplemento, como um painel de tarefas. Da mesma forma, quando dois suplementos compartilham o mesmo domínio (por exemplo, www.contoso.com/suplemento1, www.contoso.com/suplemento2), eles também podem compartilhar informações por meio de `storage`. Observe que os suplementos que têm diferentes subdomínios terão diferentes instâncias de `storage`; por exemplo, subdominio.contoso.com/suplemento1, diferentesubdominio.contoso.com/suplemento2.
+
+Como `storage` pode ser um local compartilhado, é importante notar que é possível substituir os pares chave-valor.
+
+Os métodos a seguir estão disponíveis no objeto `storage`:
+
  - `getItem`
+ - `getItems`
  - `setItem`
+ - `setItems`
  - `removeItem`
- - `clear`
- - `getAllKeys`
- - `flushGetRequests`
- - `multiGet`
- - `multiSet`
- - `multiRemove`
+ - `removeItems`
+ - `getKeys`
 
-### <a name="asyncstorage-example"></a>Exemplo de AsyncStorage 
+.[!NOTE]
+> Não há nenhum método para limpar todas as informações (como `clear`). Em vez disso, use `removeItems` para remover várias entradas de uma só vez.
 
-O exemplo de código a seguir chama a função `AsyncStorage.getItem` para recuperar um valor armazenado.
+### <a name="officeruntimestorage-example"></a>Exemplo de OfficeRuntime. Storage
 
-```typescript
-_goGetData = async () => {
-    try {
-        const value = await AsyncStorage.getItem('toDoItem');
-        if (value !== null) {
-            //data exists and you can do something with it here
-        }
-    } catch (error) {
-        //handle errors here
-    }
-}
-```
-
-## <a name="displaying-a-dialog-box"></a>Exibição de uma caixa de diálogo
-
-Em uma função personalizada (ou em qualquer parte de um suplemento), você pode usar a API `OfficeRuntime.displayWebDialogOptions` para exibir uma caixa de diálogo. Essa API de caixa de diálogo oferece uma alternativa para a [API de diálogo](../develop/dialog-api-in-office-add-ins.md) que pode ser usada em painéis de tarefas e comandos do suplemento, mas não em funções personalizadas.
-
-### <a name="dialog-api-example"></a>Exemplo da API de diálogo 
-
-No exemplo de código a seguir, a função `getTokenViaDialog` usa a API de diálogo `displayWebDialogOptions` função para exibir uma caixa de diálogo.
+O exemplo de código a seguir `OfficeRuntime.storage.setItem` chama a função para definir uma chave e `storage`um valor para.
 
 ```js
-// Get auth token before calling my service, a hypothetical API that will deliver a stock price based on stock ticker string, such as "MSFT"
+function StoreValue(key, value) {
 
-function getStock (ticker) {
-  return new Promise(function (resolve, reject) {
-    // Get a token
-    getToken("https://www.contoso.com/auth")
-    .then(function (token) {
-
-      // Use token to get stock price
-      fetch("https://www.contoso.com/?token=token&ticker= + ticker")
-      .then(function (result) {
-
-        // Return stock price to cell
-        resolve(result);
-      });
-    })
-    .catch(function (error) {
-      reject(error);
-    });
+  return OfficeRuntime.storage.setItem(key, value).then(function (result) {
+      return "Success: Item with key '" + key + "' saved to storage.";
+  }, function (error) {
+      return "Error: Unable to save item with key '" + key + "' to storage. " + error;
   });
-  
-  //Helper
-  function getToken(url) {
-    return new Promise(function (resolve,reject) {
-      if(_cachedToken) {
-        resolve(_cachedToken);
-      } else {
-        getTokenViaDialog(url)
-        .then(function (result) {
-          resolve(result);
-        })
-        .catch(function (result) {
-          reject(result);
-        });
-      }
-    });
-  }
-
-  function getTokenViaDialog(url) {
-    return new Promise (function (resolve, reject) {
-      if (_dialogOpen) {
-        // Can only have one dialog open at once, wait for previous dialog's token
-        let timeout = 5;
-        let count = 0;
-        var intervalId = setInterval(function () {
-          count++;
-          if(_cachedToken) {
-            resolve(_cachedToken);
-            clearInterval(intervalId);
-          }
-          if(count >= timeout) {
-            reject("Timeout while waiting for token");
-            clearInterval(intervalId);
-          }
-        }, 1000);
-      } else {
-        _dialogOpen = true;
-        OfficeRuntime.displayWebDialogOptions(url, {
-          height: '50%',
-          width: '50%',
-          onMessage: function (message, dialog) {
-            _cachedToken = message;
-            resolve(message);
-            dialog.closeDialog();
-            return;
-          },
-          onRuntimeError: function(error, dialog) {
-            reject(error);
-          },
-        }).catch(function (e) {
-          reject(e);
-        });
-      }
-    });
-  }
 }
 ```
 
 ## <a name="additional-considerations"></a>Considerações adicionais
 
-Para criar um suplemento que possa ser executado em múltiplas plataformas (um dos locatários principais de Suplementos do Office), você não deve acessar o Document Object Model (DOM) em funções personalizadas ou usar bibliotecas como a jQuery que dependem do DOM. No Excel para Windows, onde as funções personalizadas usam o runtime do JavaScript, elas não podem acessar o DOM.
+Para criar um suplemento que será executado em várias plataformas (um dos principais locatários de Suplementos do Office), você não deve acessar o DOM (Modelo de Objeto do Documento) em funções personalizadas nem usar bibliotecas, como a jQuery, que dependem do DOM. No Excel no Windows, onde as funções personalizadas usam o tempo de execução do JavaScript, as funções personalizadas não podem acessar o DOM.
+
+## <a name="next-steps"></a>Próximas etapas
+Saiba como [realizar solicitações da Web com funções personalizadas](custom-functions-web-reqs.md).
 
 ## <a name="see-also"></a>Confira também
 
 * [Criar funções personalizadas no Excel](custom-functions-overview.md)
-* [Metadados de funções personalizadas](custom-functions-json.md)
-* [Melhores práticas de funções personalizadas](custom-functions-best-practices.md)
-* [Tutorial de funções personalizadas do Excel](excel-tutorial-custom-functions.md)
+* [Arquitetura de funções personalizadas](custom-functions-architecture.md)
+* [Exibir uma caixa de diálogo em funções personalizadas](custom-functions-dialog.md)
+* [Tutorial de funções personalizadas](../tutorials/excel-tutorial-create-custom-functions.md)

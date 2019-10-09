@@ -1,20 +1,21 @@
 ---
 title: Práticas recomendadas para o desenvolvimento de suplementos do Office
 description: ''
-ms.date: 01/23/2018
-ms.openlocfilehash: efb637cfd31f95688d6b0db0e17b24fefe51c2fc
-ms.sourcegitcommit: 30435939ab8b8504c3dbfc62fd29ec6b0f1a7d22
+ms.date: 03/19/2019
+localization_priority: Priority
+ms.openlocfilehash: b5f5595d9109df10e910459b2fc61a71d5180bbf
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "23944645"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448237"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Práticas recomendadas para o desenvolvimento de suplementos do Office
 
 Os suplementos eficazes oferecem uma funcionalidade exclusiva e fascinante que estende os aplicativos do Office de uma maneira visualmente atraente. Para criar um excelente suplemento, ofereça uma primeira experiência envolvente para seus usuários, desenvolva uma experiência de interface de usuário de alto nível e otimize o desempenho do seu suplemento. Aplique as práticas recomendadas descritas neste artigo para criar suplementos que ajudem os usuários a concluir suas tarefas de forma rápida e eficiente.
 
 > [!NOTE]
-> Caso pretenda [publicar](../publish/publish.md) o suplemento na experiência do Office depois de criá-lo, verifique se você está em conformidade com as [Políticas de validação do AppSource](https://docs.microsoft.com/office/dev/store/validation-policies). Por exemplo, para passar na validação, seu suplemento deve funcionar em todas as plataformas com suporte aos métodos que você definir (para mais informações, confira a [seção 4.12](https://docs.microsoft.com/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) e a [Página de hospedagem e disponibilidade de suplementos do Office](../overview/office-add-in-availability.md)). 
+> Caso pretenda [publicar](../publish/publish.md) o suplemento na experiência do Office depois de criá-lo, verifique se você está em conformidade com as [Políticas de validação do AppSource](/office/dev/store/validation-policies). Por exemplo, para passar na validação, seu suplemento deve funcionar em todas as plataformas com suporte aos métodos que você definir (para mais informações, confira a [seção 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) e a [Página de hospedagem e disponibilidade de suplementos do Office](../overview/office-add-in-availability.md)). 
 
 ## <a name="provide-clear-value"></a>Fornecer um valor claro
 
@@ -24,7 +25,7 @@ Os suplementos eficazes oferecem uma funcionalidade exclusiva e fascinante que e
  - Incorpore serviços complementares nos hosts do Office.
  - Melhore a experiência do Office para aumentar a produtividade.
 - Certifique-se de que o valor do seu suplemento seja claro para os usuários desde o princípio, [criando uma experiência envolvente na primeira execução](#create-an-engaging-first-run-experience).
-- Crie uma [listagem eficaz do AppSource](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings). Deixe claro quais são os benefícios do seu suplemento no título e na descrição. Não dependa da sua marca para dizer o que seu suplemento faz.
+- Crie uma [listagem eficaz do AppSource](/office/dev/store/create-effective-office-store-listings). Deixe claro quais são os benefícios do seu suplemento no título e na descrição. Não dependa da sua marca para dizer o que seu suplemento faz.
 
 
 ## <a name="create-an-engaging-first-run-experience"></a>Criar uma experiência envolvente na primeira execução
@@ -43,15 +44,13 @@ Os suplementos eficazes oferecem uma funcionalidade exclusiva e fascinante que e
 
    ![Uma captura de tela que mostra um suplemento de conteúdo com dados ao lado de um suplemento de conteúdo sem dados](../images/add-in-title.png)
 
-- Ofereça [avaliações gratuitas](https://docs.microsoft.com/office/dev/store/decide-on-a-pricing-model#office-store-pricing-options). Caso o suplemento exija uma assinatura, disponibilize algumas funcionalidades sem a necessidade da assinatura.
+- Ofereça [avaliações gratuitas](/office/dev/store/decide-on-a-pricing-model). Caso o suplemento exija uma assinatura, disponibilize algumas funcionalidades sem a necessidade da assinatura.
 
 - Simplifique o processo de inscrição. Preencha automaticamente as informações (email, nome de exibição) e ignore as verificações de email.
 
 - Evite os pop-ups. Se você tiver de usá-los, oriente o usuário sobre como habilitar o seu pop-up.
 
-- Use a [autenticação de logon único (SSO)](https://docs.microsoft.com/outlook/add-ins/authenticate-a-user-with-an-identity-token).
-
-Para modelos que ilustram padrões que podem ser aplicados enquanto você desenvolve sua experiência na primeira execução, consulte [padrões de design UX para Suplementos do Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
+Para padrões que podem ser aplicados ao desenvolver sua experiência de primeira execução, consulte [Padrões de design da experiência do usuário para suplementos do Office](/office/dev/add-ins/design/first-run-experience-patterns).
 
 ## <a name="use-add-in-commands"></a>Usar comandos de suplemento
 
@@ -73,15 +72,13 @@ Para modelos que ilustram padrões que podem ser aplicados enquanto você desenv
 
 - Use uma [linguagem clara e simples](../design/voice-guidelines.md) no seu suplemento.
 
-- Preocupe-se com a acessibilidade – facilite a interação dos usuários com o seu suplemento e inclua tecnologias adaptativas, como leitores de tela.
+- Preocupe-se com a acessibilidade: facilite a interação dos usuários com o seu suplemento e inclua tecnologias adaptativas, como leitores de tela.
 
-- Desenvolva para todas as plataformas e métodos de entrada, incluindo teclado/mouse e [touch](#optimize-for-touch). Certifique-se de que sua interface do usuário seja responsiva a diferentes fatores de formulários.
-
-Para modelos que aplicam os princípios de design que você pode usar e personalizar durante o desenvolvimento do suplemento, consulte [padrões de design UX para Suplementos do Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
+- Desenvolva para todas as plataformas e métodos de entrada, incluindo teclado/mouse e [toque](#optimize-for-touch). Certifique-se de que sua interface do usuário responda a diferentes fatores forma.
 
 ### <a name="optimize-for-touch"></a>Otimizar para toque
 
-- Use a propriedade [Context.touchEnabled](https://docs.microsoft.com/javascript/api/office/office.context?view=office-js) para descobrir se o aplicativo host que executa o suplemento está habilitado para toque.
+- Use a propriedade [Context.touchEnabled](/javascript/api/office/office.context) para descobrir se o aplicativo host que executa o suplemento está habilitado para toque.
 
   > [!NOTE]
   > Essa propriedade não tem suporte no Outlook.
@@ -121,14 +118,14 @@ Para modelos que aplicam os princípios de design que você pode usar e personal
   |Contínuo|>500 ms|5 segundos|Tempo de espera médio, já não parece ser dinâmico. Podem ser necessários comentários.|
   |Cativo|>500 ms|10 segundos|Longo, mas não o suficiente para fazer executar outra ação. Podem ser necessários comentários.|
   |Estendida|>500 ms|>10 segundos|Longo o suficiente para realizar outra ação durante o tempo de espera. Podem ser necessários comentários.|
-  |Execução longa|>5 segundos|>1 minuto|Os usuários certamente farão algo mais.|
+  |Longa execução|> 5 segundos|> 1 minuto|Os usuários certamente farão algo mais.|
 
 - Monitore a integridade do serviço e use a telemetria para monitorar o sucesso do usuário.
 
 
 ## <a name="market-your-add-in"></a>Comercializar seu suplemento
 
-- Publique seu suplemento no [AppSource](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store) e [promova-o](https://docs.microsoft.com/office/dev/store/promote-your-office-store-solution) pelo seu site. Crie uma [listagem eficaz do AppSource](https://docs.microsoft.com/office/dev/store/create-effective-office-store-listings).
+- Publique seu suplemento no [AppSource](/office/dev/store/submit-to-the-office-store) e [promova-o](/office/dev/store/promote-your-office-store-solution) pelo seu site. Crie uma [listagem eficaz do AppSource](/office/dev/store/create-effective-office-store-listings).
 
 - Use títulos sucintos e descritivos para o suplemento. Inclua no máximo 128 caracteres.
 
@@ -138,6 +135,6 @@ Para modelos que aplicam os princípios de design que você pode usar e personal
 
 - Crie um site para ajudar os usuários a encontrar e utilizar seu suplemento.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 - [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)

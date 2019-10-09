@@ -1,8 +1,20 @@
+---
+title: Elemento AlternateId no arquivo de manifesto
+description: ''
+ms.date: 10/09/2018
+localization_priority: Normal
+ms.openlocfilehash: 6f340f106b5eef85249297f771b1267940509384
+ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "35771706"
+---
 # <a name="alternateid-element"></a>Elemento AlternateId
 
-Especifica o ID alternativo para o Suplemento do Office emitido pela Office Store.
+Especifica a ID alternativa para o suplemento do Office conforme emitido por AppSource.
 
-**Tipo de suplemento:** Conteúdo, Painel de tarefas, E-mail
+**Tipo de suplemento:** Conteúdo, Painel de tarefas, Email
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -16,5 +28,5 @@ Especifica o ID alternativo para o Suplemento do Office emitido pela Office Stor
 
 ## <a name="remarks"></a>Comentários
 
-Você não cria esse valor por conta própria. Ele será atribuído ao seu suplemento quando você enviá-lo à Office Store.
+Você não cria esse valor sozinho; Ele é atribuído ao seu suplemento quando você o envia para o AppSource.
 

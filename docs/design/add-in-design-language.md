@@ -2,12 +2,13 @@
 title: Idioma de design de suplemento do Office
 description: ''
 ms.date: 12/04/2017
-ms.openlocfilehash: e0975f8ec5c0706509dbb7d1fb39defc6c21e006
-ms.sourcegitcommit: 4de2a1b62ccaa8e51982e95537fc9f52c0c5e687
+localization_priority: Priority
+ms.openlocfilehash: abeeca02687c44f6a3cc513867ff3eb637c07348
+ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "22925084"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "32448592"
 ---
 # <a name="office-add-in-design-language"></a>Idioma de design de suplemento do Office
 
