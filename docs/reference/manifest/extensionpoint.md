@@ -3,12 +3,12 @@ title: Elemento ExtensionPoint no arquivo de manifesto
 description: ''
 ms.date: 09/05/2019
 localization_priority: Priority
-ms.openlocfilehash: ed26c5e81a2c8229faad2c8af6b1edaff2f288e5
-ms.sourcegitcommit: d34aa0b282cc76ffff579da2a7945efd12fb7340
+ms.openlocfilehash: c9d3c9313c13a069de2ac105b6a44a7260498e8f
+ms.sourcegitcommit: 4d9f3e177b0bcd62804d5045f52b03e441af244f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "36769586"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "37440133"
 ---
 # <a name="extensionpoint-element"></a>Elemento ExtensionPoint
 
@@ -272,7 +272,7 @@ Este ponto extensão adiciona uma ativação do suplemento contextual em um tipo
 O elemento [VersionOverrides](versionoverrides.md) incluído deve ter um valor de atributo `xsi:type` de `VersionOverridesV1_1`.
 
 > [!NOTE]
-> Este tipo de elemento está disponível para [ clientes do Outlook que ofereçam suporte a conjuntos de requisitos 1.6 e posteriores](../requirement-sets/outlook-api-requirement-sets.md#clients).
+> Este tipo de elemento está disponível para [ clientes do Outlook que ofereçam suporte a conjuntos de requisitos 1.6 e posteriores](../requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients).
 
 |  Elemento |  Descrição  |
 |:-----|:-----|

@@ -3,12 +3,12 @@ title: Elemento GetStarted no arquivo de manifesto
 description: ''
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: d9ebcba7881b388544eeb3e2c3028bff9bdcf9a6
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 82fa1b9b62674adfb05c07536a7fdf2bbabf8f45
+ms.sourcegitcommit: e5a5ec4ba32bacd0ccd13291b4e7f4bfc42901a3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32452078"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "37429732"
 ---
 # <a name="getstarted-element"></a>Elemento GetStarted
 
@@ -20,9 +20,9 @@ Fornece informações usadas pelo balão que aparece quando o suplemento está i
 |:------------------------------|:--------:|:---------------------------------------------------|
 | [Title](#title)               | Sim      | Define onde um suplemento expõe a funcionalidade.     |
 | [Descrição](#description)   | Sim      | Uma URL para um arquivo que contém funções JavaScript.|
-| [LearnMoreUrl](#learnmoreurl) | Não       | Uma URL para uma página que explica o suplemento em detalhes.   |
+| [LearnMoreUrl](#learnmoreurl) | Sim       | Uma URL para uma página que explica o suplemento em detalhes.   |
 
-### <a name="title"></a>Título 
+### <a name="title"></a>Cargo 
 
 Obrigatório. O título usado para o início do texto explicativo. O atributo **resid** faz referência a uma identificação válida no elemento **ShortStrings** na seção [Recursos](resources.md).
 

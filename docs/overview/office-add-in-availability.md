@@ -1,14 +1,14 @@
 ---
 title: Disponibilidade de host e plataforma para suplementos do Office
 description: Conjuntos de requisitos com suporte para o Excel, OneNote, Outlook, PowerPoint, Project e Word.
-ms.date: 08/13/2019
+ms.date: 10/09/2019
 localization_priority: Priority
-ms.openlocfilehash: a3c580f32ad7cd384309a9b53e55ea488a470a90
-ms.sourcegitcommit: f781d7cfd980cd866d6d1d00c5b9d16c8a4b7f9b
+ms.openlocfilehash: 28d63866a03bcae99829d3a6b6c6198059a92bdc
+ms.sourcegitcommit: 4d9f3e177b0bcd62804d5045f52b03e441af244f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "37053323"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "37440147"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilidade de host e plataforma para suplementos do Office
 
@@ -465,6 +465,9 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
 </table>
 
 *&ast; – Adicionado com atualizações pós-lançamento.*
+
+> [!IMPORTANT]
+> O suporte ao cliente para um conjunto de requisitos pode ser restringido pelo suporte do servidor Exchange. Consulte [Conjuntos de requisitos da API JavaScript do Outlook](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) para obter detalhes sobre o intervalo de conjuntos de requisitos suportado pelo servidor Exchange e pelos clientes Outlook.
 
 <br/>
 
@@ -946,10 +949,10 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
 ## <a name="see-also"></a>Confira também
 
 - [Visão geral da plataforma Suplementos do Office](office-add-ins.md)
-- [Versões do Office e conjuntos de requisitos](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [Conjuntos de requisitos comuns da API](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
-- [Conjuntos de requisitos dos comandos de suplemento](/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets)
-- [Referência da API JavaScript do Office](/office/dev/add-ins/reference/javascript-api-for-office)
+- [Versões do Office e conjuntos de requisitos](../develop/office-versions-and-requirement-sets.md)
+- [Conjuntos de requisitos comuns da API](../reference/requirement-sets/office-add-in-requirement-sets.md)
+- [Conjuntos de requisitos dos comandos de suplemento](../reference/requirement-sets/add-in-commands-requirement-sets.md)
+- [Referência da API JavaScript do Office](../reference/javascript-api-for-office.md)
 - [Histórico de atualizações do Office 365 ProPlus](/officeupdates/update-history-office365-proplus-by-date)
 - [Histórico de atualizações do Office 2016 e 2019 (Clique para Executar)](/officeupdates/update-history-office-2019)
 - [Histórico de atualizações do Office 2013 (clique para executar)](/officeupdates/update-history-office-2013)
