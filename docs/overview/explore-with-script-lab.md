@@ -2,15 +2,15 @@
 title: Explorar a API JavaScript do Office usando o script Lab
 description: Use o script Lab para explorar a API do Office JS e a funcionalidade de protótipo.
 ms.date: 07/05/2019
-ms.topic: overview
-scenarios: getting-started
+ms.topic: conceptual
+ms.custom: scenarios:getting-started
 localization_priority: Normal
-ms.openlocfilehash: 908d27cdb5c8a7d4bc080c266cdb4d604114c42f
-ms.sourcegitcommit: 49af31060aa56c1e1ec1e08682914d3cbefc3f1c
+ms.openlocfilehash: fcd1863e71bdfa6923ccd598b49879a77e629b4c
+ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "36672835"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "37468788"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>Explorar a API JavaScript do Office usando o script Lab
 
@@ -32,14 +32,14 @@ O script Lab oferece vários recursos para ajudá-lo a explorar a API JavaScript
 
 Comece rapidamente com uma coleção de trechos de código internos que mostram como concluir tarefas com a API. Você pode executar os exemplos para ver instantaneamente o resultado no painel de tarefas ou no documento, examinar os exemplos para saber como a API funciona, e até mesmo usar exemplos para executar um protótipo do seu próprio suplemento.
 
-![Amostras](../images/script-lab-samples.jpg)
+![Exemplos](../images/script-lab-samples.jpg)
 
 ### <a name="code-and-style"></a>Código e estilo
 
 Além do código JavaScript ou TypeScript que chama a API do Office JS, cada trecho também contém marcação HTML que define o conteúdo do painel de tarefas e o CSS que define a aparência do painel de tarefas. Você pode personalizar a marcação HTML e o CSS para testar o posicionamento e o estilo do elemento conforme o design do painel de tarefas do protótipo para seu próprio suplemento.
 
 > [!TIP]
-> Para chamar APIs de visualização dentro de um trecho de código, você precisará atualizar as bibliotecas do trecho de código para`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`usar a CDN beta () `@types/office-js-preview`e as definições de tipo de visualização. Além disso, algumas APIs de visualização são acessíveis somente se você se inscreveu no [programa Office](https://products.office.com/office-insider) Insider e está executando uma compilação do Office Insider.
+> Para chamar APIs de visualização dentro de um trecho de código, você precisará atualizar as bibliotecas do trecho de código para`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`usar a CDN beta () `@types/office-js-preview`e as definições de tipo de visualização. Além disso, algumas APIs de visualização são acessíveis somente se você se inscreveu no [programa Office Insider](https://products.office.com/office-insider) e está executando uma compilação do Office Insider.
 
 ### <a name="save-and-share-snippets"></a>Salvar e compartilhar trechos de código
 

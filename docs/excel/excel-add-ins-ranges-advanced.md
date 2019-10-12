@@ -3,12 +3,12 @@ title: Trabalhar com intervalos usando a API JavaScript do Excel (avançado)
 description: ''
 ms.date: 09/18/2019
 localization_priority: Normal
-ms.openlocfilehash: d260ee6140d0153b426e530304e95025dc235b74
-ms.sourcegitcommit: c8914ce0f48a0c19bbfc3276a80d090bb7ce68e1
+ms.openlocfilehash: 90dff45ee01197a9a6f4d35fb9ab3379adf129b9
+ms.sourcegitcommit: 78bbbd6cb5a270164b26038675a222defc3be55e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "37235327"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "37471357"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Trabalhar com intervalos usando a API JavaScript do Excel (avançado)
 
@@ -276,7 +276,7 @@ Excel.run(function (context) {
 
 As linhas ou colunas de um intervalo podem ser agrupadas para criar uma [estrutura de tópicos](https://support.office.com/article/Outline-group-data-in-a-worksheet-08CE98C4-0063-4D42-8AC7-8278C49E9AFF). Esses grupos podem ser recolhidos e expandidos para ocultar e mostrar as células correspondentes. Isso facilita a análise rápida dos dados de linha principal. Use [Range. Group](/javascript/api/excel/excel.range#group-groupoption-) para tornar esses grupos de estrutura de tópicos.
 
-Uma estrutura de tópicos pode ter uma hierarquia, onde grupos menores estão aninhados em grupos maiores. Isso permite que a estrutura de tópicos seja exibida em diferentes níveis. Alterar o nível de estrutura de tópicos visível pode ser feito programaticamente por meio do método [Range. showOutlineLevels](/javascript/api/excel/excel.range#showOutlineLevels-rowLevels--columnLevels-) . Observe que o Excel só oferece suporte a oito níveis de grupos de estrutura de tópicos.
+Uma estrutura de tópicos pode ter uma hierarquia, onde grupos menores estão aninhados em grupos maiores. Isso permite que a estrutura de tópicos seja exibida em diferentes níveis. Alterar o nível de estrutura de tópicos visível pode ser feito programaticamente por meio do método [Worksheet. showOutlineLevels](/javascript/api/excel/excel.worksheet#showoutlinelevels-rowlevels--columnlevels-) . Observe que o Excel só oferece suporte a oito níveis de grupos de estrutura de tópicos.
 
 O exemplo de código a seguir mostra como criar uma estrutura de tópicos com dois níveis de grupos para ambas as linhas e colunas. A imagem subsequente mostra os agrupamentos dessa estrutura de tópicos. Observe que, no exemplo de código, os intervalos que estão sendo agrupados não incluem a linha ou coluna do controle de estrutura de tópicos (o "total" para este exemplo). Um grupo define o que será recolhido, não a linha ou coluna com o controle.
 
@@ -309,7 +309,7 @@ Excel.run(function (context) {
 
 ![Um intervalo com um contorno de duas dimensões de dois níveis](../images/excel-outline.png)
 
-Para desagrupar um grupo de linhas ou colunas, use o método [Range. Upgroup](/javascript/api/excel/excel.range#ungroup-groupoption-) . Isso remove o nível mais externo da estrutura de tópicos. Se vários grupos do mesmo tipo de linha ou coluna estiverem no mesmo nível no intervalo especificado, todos esses grupos serão desagrupados.
+Para desagrupar um grupo de linhas ou colunas, use o método [Range. Ungroup](/javascript/api/excel/excel.range#ungroup-groupoption-) . Isso remove o nível mais externo da estrutura de tópicos. Se vários grupos do mesmo tipo de linha ou coluna estiverem no mesmo nível no intervalo especificado, todos esses grupos serão desagrupados.
 
 ## <a name="see-also"></a>Confira também
 
