@@ -1,14 +1,14 @@
 ---
 title: Trabalhar com eventos usando a API JavaScript do Excel
 description: ''
-ms.date: 09/09/2019
+ms.date: 10/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 338085b297e760057987fd94d7caf96b5134ce6a
-ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
+ms.openlocfilehash: 1838ddf2016d5c0d4651991ce569fd98d6ac960e
+ms.sourcegitcommit: 78bbbd6cb5a270164b26038675a222defc3be55e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "36838477"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "37471350"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Trabalhar com eventos usando a API JavaScript do Excel
 
@@ -31,6 +31,15 @@ Sempre que ocorrerem certos tipos de alterações em uma pasta de trabalho do Ex
 | `onFormatChanged` | Ocorre quando o formato é alterado em uma planilha. | [**WorksheetCollection**](/javascript/api/excel/excel.worksheet), [**Planilha**](/javascript/api/excel/excel.worksheetcollection) |
 | `onSelectionChanged` | Ocorre quando uma célula ativa ou um intervalo selecionado são alterados. | [**Associação**](/javascript/api/excel/excel.binding), [**Tabela**](/javascript/api/excel/excel.table),  [**Worksheet**](/javascript/api/excel/excel.worksheet), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection) |
 | `onSettingsChanged` | Ocorre quando as Configurações no documento são alteradas. | [**SettingCollection**](/javascript/api/excel/excel.settingcollection) |
+
+> [!WARNING]
+> O `onSelectionChanged` atualmente é instável. Existe uma solução alternativa para o uso confiável de `onSelectionChanged`. Adicione o seguinte código à seção `<head>` da sua home page HTML:
+>
+> ```HTML
+> <script> MutationObserver=null; </script>
+> ```
+>
+> Uma discussão completa sobre o assunto pode ser encontrada no [repositório office-js GitHub](https://github.com/OfficeDev/office-js/issues/533).
 
 ### <a name="events-in-preview"></a>Eventos no modo de visualização
 
