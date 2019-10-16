@@ -3,12 +3,12 @@ title: Atualize para a API de JavaScript mais recente da biblioteca do Office e 
 description: Atualize seus arquivos de JavaScript (Office.js e arquivos .js específicos do aplicativo) e o arquivo de validação de manifesto de suplemento usados no seu projeto de Suplemento do Office para a versão 1.1.
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: a685f1a2e482a99af2a7184c2ab44104fa38c6a7
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
+ms.openlocfilehash: 83e09cee76aaea7343e456f4fed28af31d978bba
+ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353857"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "37524238"
 ---
 # <a name="update-to-the-latest-javascript-api-for-office-library-and-version-11-add-in-manifest-schema"></a>Atualize para a API de JavaScript mais recente da biblioteca do Office e o esquema de manifesto do suplemento da versão 1.1
 
@@ -54,7 +54,7 @@ As etapas a seguir atualizam seus arquivos da biblioteca do Office para a versã
 Você precisará realizar algumas etapas adicionais para concluir a atualização. Na marca **head** das páginas HTML do suplemento, comente ou exclua quaisquer referências existentes ao script office.js e faça referência à biblioteca atualizada da API JavaScript para Office da seguinte maneira:
 
   ```html
-  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
   ```
 
    > [!NOTE] 
@@ -98,7 +98,7 @@ Você não precisa de cópias locais dos arquivos da API JavaScript para Office 
 2. Na marca **head** das páginas HTML do suplemento, comente ou exclua quaisquer referências existentes ao script office.js e faça referência à biblioteca atualizada da API JavaScript para Office da seguinte maneira:
 
     ```html
-    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
     ```
 
    > [!NOTE]
