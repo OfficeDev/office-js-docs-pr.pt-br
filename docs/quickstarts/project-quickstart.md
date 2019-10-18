@@ -11,43 +11,43 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 09/18/2019
 ms.locfileid: "37035284"
 ---
-# <a name="build-your-first-project-task-pane-add-in"></a><span data-ttu-id="cca90-102">Crie o seu primeiro suplemento do painel de tarefas do Project</span><span class="sxs-lookup"><span data-stu-id="cca90-102">Build your first Project task pane add-in</span></span>
+# <a name="build-your-first-project-task-pane-add-in"></a><span data-ttu-id="81410-102">Crie o seu primeiro suplemento do painel de tarefas do Project</span><span class="sxs-lookup"><span data-stu-id="81410-102">Build your first Project task pane add-in</span></span>
 
-<span data-ttu-id="cca90-103">Neste artigo, você passará pelo processo de criação de um suplemento do painel de tarefas do Project.</span><span class="sxs-lookup"><span data-stu-id="cca90-103">In this article, you'll walk through the process of building a Project task pane add-in.</span></span>
+<span data-ttu-id="81410-103">Neste artigo, você passará pelo processo de criação de um suplemento do painel de tarefas do Project.</span><span class="sxs-lookup"><span data-stu-id="81410-103">In this article, you'll walk through the process of building a Project task pane add-in.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="cca90-104">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="cca90-104">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="81410-104">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="81410-104">Prerequisites</span></span>
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- <span data-ttu-id="cca90-105">Project 2016 ou posterior no Windows</span><span class="sxs-lookup"><span data-stu-id="cca90-105">Project 2016 or later on Windows</span></span>
+- <span data-ttu-id="81410-105">Project 2016 ou posterior no Windows</span><span class="sxs-lookup"><span data-stu-id="81410-105">Project 2016 or later on Windows</span></span>
 
-## <a name="create-the-add-in"></a><span data-ttu-id="cca90-106">Criar o suplemento</span><span class="sxs-lookup"><span data-stu-id="cca90-106">Create the add-in</span></span>
+## <a name="create-the-add-in"></a><span data-ttu-id="81410-106">Criar o suplemento</span><span class="sxs-lookup"><span data-stu-id="81410-106">Create the add-in</span></span>
 
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-- <span data-ttu-id="cca90-107">**Escolha o tipo de projeto:** `Office Add-in Task Pane project`</span><span class="sxs-lookup"><span data-stu-id="cca90-107">**Choose a project type:** `Office Add-in Task Pane project`</span></span>
-- <span data-ttu-id="cca90-108">**Escolha o tipo de script:** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="cca90-108">**Choose a script type:** `Javascript`</span></span>
-- <span data-ttu-id="cca90-109">**Qual será o nome do suplemento?**</span><span class="sxs-lookup"><span data-stu-id="cca90-109">**What do you want to name your add-in?**</span></span> `My Office Add-in`
-- <span data-ttu-id="cca90-110">**Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?**</span><span class="sxs-lookup"><span data-stu-id="cca90-110">**Which Office client application would you like to support?**</span></span> `Project`
+- <span data-ttu-id="81410-107">**Escolha o tipo de projeto:** `Office Add-in Task Pane project`</span><span class="sxs-lookup"><span data-stu-id="81410-107">**Choose a project type:** `Office Add-in Task Pane project`</span></span>
+- <span data-ttu-id="81410-108">**Escolha o tipo de script:** `Javascript`</span><span class="sxs-lookup"><span data-stu-id="81410-108">**Choose a script type:** `Javascript`</span></span>
+- <span data-ttu-id="81410-109">**Qual será o nome do suplemento?**</span><span class="sxs-lookup"><span data-stu-id="81410-109">**What do you want to name your add-in?**</span></span> `My Office Add-in`
+- <span data-ttu-id="81410-110">**Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?**</span><span class="sxs-lookup"><span data-stu-id="81410-110">**Which Office client application would you like to support?**</span></span> `Project`
 
 ![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-project.png)
 
-<span data-ttu-id="cca90-112">Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.</span><span class="sxs-lookup"><span data-stu-id="cca90-112">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
+<span data-ttu-id="81410-112">Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.</span><span class="sxs-lookup"><span data-stu-id="81410-112">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
-## <a name="explore-the-project"></a><span data-ttu-id="cca90-113">Explore o projeto</span><span class="sxs-lookup"><span data-stu-id="cca90-113">Explore the project</span></span>
+## <a name="explore-the-project"></a><span data-ttu-id="81410-113">Explore o projeto</span><span class="sxs-lookup"><span data-stu-id="81410-113">Explore the project</span></span>
 
-<span data-ttu-id="cca90-114">O projeto de suplemento que você criou com o gerador do Yeoman contém um exemplo de código para um suplemento de painel de tarefas bem básico.</span><span class="sxs-lookup"><span data-stu-id="cca90-114">The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in.</span></span> 
+<span data-ttu-id="81410-114">O projeto de suplemento que você criou com o gerador do Yeoman contém um exemplo de código para um suplemento de painel de tarefas bem básico.</span><span class="sxs-lookup"><span data-stu-id="81410-114">The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in.</span></span> 
 
-- <span data-ttu-id="cca90-115">O arquivo **./manifest.xml** no diretório raiz do projeto define as configurações e os recursos do suplemento.</span><span class="sxs-lookup"><span data-stu-id="cca90-115">The **./manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.</span></span>
-- <span data-ttu-id="cca90-116">O arquivo **./src/taskpane/taskpane.html** contém a marcação HTML do painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="cca90-116">The **./src/taskpane/taskpane.html** file contains the HTML markup for the task pane.</span></span>
-- <span data-ttu-id="cca90-117">O arquivo **./src/taskpane/taskpane.css** contém o CSS que é aplicado ao conteúdo no painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="cca90-117">The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.</span></span>
-- <span data-ttu-id="cca90-118">O arquivo **./src/taskpane/taskpane.js** contém o código da API JavaScript do Office que facilita a interação entre o painel de tarefas e o aplicativo host do Office.</span><span class="sxs-lookup"><span data-stu-id="cca90-118">The **./src/taskpane/taskpane.js** file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office host application.</span></span>
+- <span data-ttu-id="81410-115">O arquivo **./manifest.xml** no diretório raiz do projeto define as configurações e os recursos do suplemento.</span><span class="sxs-lookup"><span data-stu-id="81410-115">The **./manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.</span></span>
+- <span data-ttu-id="81410-116">O arquivo **./src/taskpane/taskpane.html** contém a marcação HTML do painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="81410-116">The **./src/taskpane/taskpane.html** file contains the HTML markup for the task pane.</span></span>
+- <span data-ttu-id="81410-117">O arquivo **./src/taskpane/taskpane.css** contém o CSS que é aplicado ao conteúdo no painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="81410-117">The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.</span></span>
+- <span data-ttu-id="81410-118">O arquivo **./src/taskpane/taskpane.js** contém o código da API JavaScript do Office que facilita a interação entre o painel de tarefas e o aplicativo host do Office.</span><span class="sxs-lookup"><span data-stu-id="81410-118">The **./src/taskpane/taskpane.js** file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office host application.</span></span>
 
-## <a name="update-the-code"></a><span data-ttu-id="cca90-119">Atualizar o código</span><span class="sxs-lookup"><span data-stu-id="cca90-119">Update the code</span></span>
+## <a name="update-the-code"></a><span data-ttu-id="81410-119">Atualizar o código</span><span class="sxs-lookup"><span data-stu-id="81410-119">Update the code</span></span>
 
-<span data-ttu-id="cca90-120">No seu editor de código, abra o arquivo **./src/taskpane/taskpane.js** e adicione o seguinte código dentro da função **executar**.</span><span class="sxs-lookup"><span data-stu-id="cca90-120">In your code editor, open the file **./src/taskpane/taskpane.js** and add the following code within the **run** function.</span></span> <span data-ttu-id="cca90-121">Este código usa a API JavaScript do Office para configurar o `Name` campo e `Notes` campo da tarefa selecionada.</span><span class="sxs-lookup"><span data-stu-id="cca90-121">This code uses the Office JavaScript API to set the `Name` field and `Notes` field of the selected task.</span></span>
+<span data-ttu-id="81410-120">No seu editor de código, abra o arquivo **./src/taskpane/taskpane.js** e adicione o seguinte código dentro da função **executar**.</span><span class="sxs-lookup"><span data-stu-id="81410-120">In your code editor, open the file **./src/taskpane/taskpane.js** and add the following code within the **run** function.</span></span> <span data-ttu-id="81410-121">Este código usa a API JavaScript do Office para configurar o `Name` campo e `Notes` campo da tarefa selecionada.</span><span class="sxs-lookup"><span data-stu-id="81410-121">This code uses the Office JavaScript API to set the `Name` field and `Notes` field of the selected task.</span></span>
 
 ```js
 var taskGuid;
@@ -87,39 +87,39 @@ Office.context.document.getSelectedTaskAsync(
 );
 ```
 
-## <a name="try-it-out"></a><span data-ttu-id="cca90-122">Experimente</span><span class="sxs-lookup"><span data-stu-id="cca90-122">Try it out</span></span>
+## <a name="try-it-out"></a><span data-ttu-id="81410-122">Experimente</span><span class="sxs-lookup"><span data-stu-id="81410-122">Try it out</span></span>
 
-1. <span data-ttu-id="cca90-123">Navegue até a pasta raiz do projeto.</span><span class="sxs-lookup"><span data-stu-id="cca90-123">Navigate to the root folder of the project.</span></span>
+1. <span data-ttu-id="81410-123">Navegue até a pasta raiz do projeto.</span><span class="sxs-lookup"><span data-stu-id="81410-123">Navigate to the root folder of the project.</span></span>
 
     ```command&nbsp;line
     cd "My Office Add-in"
     ```
 
-2. <span data-ttu-id="cca90-124">Inicie o servidor Web local.</span><span class="sxs-lookup"><span data-stu-id="cca90-124">Start the local web server and sideload your add-in.</span></span>
+2. <span data-ttu-id="81410-124">Inicie o servidor Web local.</span><span class="sxs-lookup"><span data-stu-id="81410-124">Start the local web server and sideload your add-in.</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="cca90-125">Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento.</span><span class="sxs-lookup"><span data-stu-id="cca90-125">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="cca90-126">Se for solicitado a instalação de um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.</span><span class="sxs-lookup"><span data-stu-id="cca90-126">If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
+    > <span data-ttu-id="81410-125">Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento.</span><span class="sxs-lookup"><span data-stu-id="81410-125">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="81410-126">Se for solicitado a instalação de um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.</span><span class="sxs-lookup"><span data-stu-id="81410-126">If you are prompted to install a certificate after you run one of the following commands, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
 
-    <span data-ttu-id="cca90-127">Execute o seguinte comando no diretório raiz do seu projeto.</span><span class="sxs-lookup"><span data-stu-id="cca90-127">Run the following command in the root directory of your project.</span></span> <span data-ttu-id="cca90-128">O servidor Web local é iniciado quando este comando é executado.</span><span class="sxs-lookup"><span data-stu-id="cca90-128">When you run this command, the local web server will start.</span></span>
+    <span data-ttu-id="81410-127">Execute o seguinte comando no diretório raiz do seu projeto.</span><span class="sxs-lookup"><span data-stu-id="81410-127">Run the following command in the root directory of your project.</span></span> <span data-ttu-id="81410-128">O servidor Web local é iniciado quando este comando é executado.</span><span class="sxs-lookup"><span data-stu-id="81410-128">When you run this command, the local web server will start.</span></span>
 
     ```command&nbsp;line
     npm start
     ```
 
-3. <span data-ttu-id="cca90-129">Em Project, crie um plano de projeto simples.</span><span class="sxs-lookup"><span data-stu-id="cca90-129">In Project, create a simple project plan.</span></span>
+3. <span data-ttu-id="81410-129">Em Project, crie um plano de projeto simples.</span><span class="sxs-lookup"><span data-stu-id="81410-129">In Project, create a simple project plan.</span></span>
 
-4. <span data-ttu-id="cca90-130">Carregue seu suplemento no Project seguindo as instruções em [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).</span><span class="sxs-lookup"><span data-stu-id="cca90-130">Load your add-in in Project by following the instructions in [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).</span></span>
+4. <span data-ttu-id="81410-130">Carregue seu suplemento no Project seguindo as instruções em [Realizar sideload de Suplementos do Office no Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).</span><span class="sxs-lookup"><span data-stu-id="81410-130">Load your add-in in Project by following the instructions in [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).</span></span>
 
-5. <span data-ttu-id="cca90-131">Selecione uma única tarefa dentro do projeto.</span><span class="sxs-lookup"><span data-stu-id="cca90-131">Select a single task within the project.</span></span>
+5. <span data-ttu-id="81410-131">Selecione uma única tarefa dentro do projeto.</span><span class="sxs-lookup"><span data-stu-id="81410-131">Select a single task within the project.</span></span>
 
-6. <span data-ttu-id="cca90-132">Na parte inferior do painel de tarefas, escolha o link **Executar** para renomear a tarefa selecionada e adicionar anotações à tarefa selecionada.</span><span class="sxs-lookup"><span data-stu-id="cca90-132">At the bottom of the task pane, choose the **Run** link to rename the selected task and add notes to the selected task.</span></span>
+6. <span data-ttu-id="81410-132">Na parte inferior do painel de tarefas, escolha o link **Executar** para renomear a tarefa selecionada e adicionar anotações à tarefa selecionada.</span><span class="sxs-lookup"><span data-stu-id="81410-132">At the bottom of the task pane, choose the **Run** link to rename the selected task and add notes to the selected task.</span></span>
 
     ![Captura de tela do aplicativo Project com o suplemento do painel de tarefas carregado](../images/project-quickstart-addin-1.png)
 
-## <a name="next-steps"></a><span data-ttu-id="cca90-134">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="cca90-134">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="81410-134">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="81410-134">Next steps</span></span>
 
-<span data-ttu-id="cca90-135">Parabéns, você criou com êxito um suplemento do painel de tarefas do Project!</span><span class="sxs-lookup"><span data-stu-id="cca90-135">Congratulations, you've successfully created a Project task pane add-in!</span></span> <span data-ttu-id="cca90-136">Em seguida, saiba mais sobre os recursos de um suplemento do Project e explore os cenários comuns.</span><span class="sxs-lookup"><span data-stu-id="cca90-136">Next, learn more about the capabilities of a Project add-in and explore common scenarios.</span></span>
+<span data-ttu-id="81410-135">Parabéns, você criou com êxito um suplemento do painel de tarefas do Project!</span><span class="sxs-lookup"><span data-stu-id="81410-135">Congratulations, you've successfully created a Project task pane add-in!</span></span> <span data-ttu-id="81410-136">Em seguida, saiba mais sobre os recursos de um suplemento do Project e explore os cenários comuns.</span><span class="sxs-lookup"><span data-stu-id="81410-136">Next, learn more about the capabilities of a Project add-in and explore common scenarios.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="cca90-137">Suplementos do Project</span><span class="sxs-lookup"><span data-stu-id="cca90-137">Project add-ins</span></span>](../project/project-add-ins.md)
+> [<span data-ttu-id="81410-137">Suplementos do Project</span><span class="sxs-lookup"><span data-stu-id="81410-137">Project add-ins</span></span>](../project/project-add-ins.md)
 

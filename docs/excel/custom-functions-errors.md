@@ -10,13 +10,13 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 07/17/2019
 ms.locfileid: "35771572"
 ---
-# <a name="error-handling-within-custom-functions"></a><span data-ttu-id="fedc9-103">Tratamento de erros nas funções personalizadas</span><span class="sxs-lookup"><span data-stu-id="fedc9-103">Error handling within custom functions</span></span>
+# <a name="error-handling-within-custom-functions"></a><span data-ttu-id="5fb60-103">Tratamento de erros nas funções personalizadas</span><span class="sxs-lookup"><span data-stu-id="5fb60-103">Error handling within custom functions</span></span>
 
-<span data-ttu-id="fedc9-104">Quando você cria um suplemento que define funções personalizadas certifique-se de incluir a lógica de tratamento de erro para lidar com os erros de tempo de execução.</span><span class="sxs-lookup"><span data-stu-id="fedc9-104">When you build an add-in that defines custom functions, be sure to include error handling logic to account for runtime errors.</span></span> <span data-ttu-id="fedc9-105">O tratamento de erro para funções personalizadas equivale  ao [tratamento de erro para API JavaScript do Excel em](excel-add-ins-error-handling.md).</span><span class="sxs-lookup"><span data-stu-id="fedc9-105">Error handling for custom functions is the same as [error handling for the Excel JavaScript API at large](excel-add-ins-error-handling.md).</span></span>
+<span data-ttu-id="5fb60-104">Quando você cria um suplemento que define funções personalizadas certifique-se de incluir a lógica de tratamento de erro para lidar com os erros de tempo de execução.</span><span class="sxs-lookup"><span data-stu-id="5fb60-104">When you build an add-in that defines custom functions, be sure to include error handling logic to account for runtime errors.</span></span> <span data-ttu-id="5fb60-105">O tratamento de erro para funções personalizadas equivale  ao [tratamento de erro para API JavaScript do Excel em](excel-add-ins-error-handling.md).</span><span class="sxs-lookup"><span data-stu-id="5fb60-105">Error handling for custom functions is the same as [error handling for the Excel JavaScript API at large](excel-add-ins-error-handling.md).</span></span>
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-<span data-ttu-id="fedc9-106">No seguinte exemplo de código `.catch` tratará os erros que ocorreram anteriormente no código.</span><span class="sxs-lookup"><span data-stu-id="fedc9-106">In the following code sample, `.catch` will handle any errors that occur previously in the code.</span></span>
+<span data-ttu-id="5fb60-106">No seguinte exemplo de código `.catch` tratará os erros que ocorreram anteriormente no código.</span><span class="sxs-lookup"><span data-stu-id="5fb60-106">In the following code sample, `.catch` will handle any errors that occur previously in the code.</span></span>
 
 ```js
 /**
@@ -40,11 +40,11 @@ function getComment(commentID) {
 }
 ```
 
-## <a name="next-steps"></a><span data-ttu-id="fedc9-107">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="fedc9-107">Next steps</span></span>
-<span data-ttu-id="fedc9-108">Saiba como [solucionar problemas com as suas funções personalizadas](custom-functions-troubleshooting.md).</span><span class="sxs-lookup"><span data-stu-id="fedc9-108">Learn how to [troubleshoot problems with your custom functions](custom-functions-troubleshooting.md).</span></span>
+## <a name="next-steps"></a><span data-ttu-id="5fb60-107">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="5fb60-107">Next steps</span></span>
+<span data-ttu-id="5fb60-108">Saiba como [solucionar problemas com as suas funções personalizadas](custom-functions-troubleshooting.md).</span><span class="sxs-lookup"><span data-stu-id="5fb60-108">Learn how to [troubleshoot problems with your custom functions](custom-functions-troubleshooting.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="fedc9-109">Confira também</span><span class="sxs-lookup"><span data-stu-id="fedc9-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5fb60-109">Confira também</span><span class="sxs-lookup"><span data-stu-id="5fb60-109">See also</span></span>
 
-* [<span data-ttu-id="fedc9-110">Depuração de funções personalizadas</span><span class="sxs-lookup"><span data-stu-id="fedc9-110">Custom functions debugging</span></span>](custom-functions-debugging.md)
-* [<span data-ttu-id="fedc9-111">Requisitos de funções personalizadas</span><span class="sxs-lookup"><span data-stu-id="fedc9-111">Custom functions requirements</span></span>](custom-functions-requirement-sets.md)
-* [<span data-ttu-id="fedc9-112">Criar funções personalizadas no Excel</span><span class="sxs-lookup"><span data-stu-id="fedc9-112">Create custom functions in Excel</span></span>](custom-functions-overview.md)
+* [<span data-ttu-id="5fb60-110">Depuração de funções personalizadas</span><span class="sxs-lookup"><span data-stu-id="5fb60-110">Custom functions debugging</span></span>](custom-functions-debugging.md)
+* [<span data-ttu-id="5fb60-111">Requisitos de funções personalizadas</span><span class="sxs-lookup"><span data-stu-id="5fb60-111">Custom functions requirements</span></span>](custom-functions-requirement-sets.md)
+* [<span data-ttu-id="5fb60-112">Criar funções personalizadas no Excel</span><span class="sxs-lookup"><span data-stu-id="5fb60-112">Create custom functions in Excel</span></span>](custom-functions-overview.md)
