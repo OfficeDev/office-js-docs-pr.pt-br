@@ -30,7 +30,7 @@ Este artigo descreve como usar o Visual Studio 2017 para criar um suplemento do 
 - Office 2013 ou posterior
 
     > [!TIP]
-    > Se você não tiver o Office, você pode participar do[programa de desenvolvedor do Office 365](https://developer.microsoft.com/office/dev-program) para obter uma assinatura do Office 365 ou [Inscreva-se para uma avaliação gratuita de 1 mês](https://products.office.com/pt-BR/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735).
+    > Se você não tiver o Office, você pode participar do[programa de desenvolvedor do Office 365](https://developer.microsoft.com/office/dev-program) para obter uma assinatura do Office 365 ou [Inscreva-se para uma avaliação gratuita de 1 mês](https://products.office.com/en-US/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735).
 
 ## <a name="create-the-add-in-project-in-visual-studio"></a>Criar um projeto de suplemento no Visual Studio
 
