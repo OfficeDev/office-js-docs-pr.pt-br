@@ -80,7 +80,7 @@ Finalmente, quando o Excel chama sua função personalizada, você precisa envia
 
 Esse código também verifica se um lote está programado. Neste exemplo, cada lote está programado para ser executado a cada 100 ms. Você pode ajustar esse valor conforme necessário. Valores mais altos resultam em lotes maiores sendo enviados ao serviço remoto e um tempo de espera maior para o usuário ver os resultados. Valores mais baixos tendem a enviar mais lotes para o serviço remoto, mas com um tempo de resposta rápido para os usuários.
 
-### <a name="add-the-pushoperation-function-to-functionsts"></a>Adicione a função `_pushOperation` ao functions.ts
+### <a name="add-the-_pushoperation-function-to-functionsts"></a>Adicione a função `_pushOperation` ao functions.ts
 
 ```typescript
 function _pushOperation(op: string, args: any[]) {
@@ -118,7 +118,7 @@ function _pushOperation(op: string, args: any[]) {
 
 O objetivo da função `_makeRemoteRequest` é passar o lote de operações para o serviço remoto e, em seguida, retornar os resultados para cada função personalizada. Primeiro, ela cria uma cópia da matriz de lotes. Isso permite que chamadas de função personalizadas simultâneas do Excel iniciem imediatamente o envio em lote em uma nova matriz. A cópia é então transformada em uma matriz mais simples que não contém as informações de promessa. Não faria sentido passar as promessas para um serviço remoto, uma vez que não funcionariam. `_makeRemoteRequest` irá rejeitar ou resolver cada promessa com base no que o serviço remoto retornar.
 
-### <a name="add-the-following-makeremoterequest-method-to-functionsts"></a>Adicione o seguinte método `_makeRemoteRequest` ao functions.ts
+### <a name="add-the-following-_makeremoterequest-method-to-functionsts"></a>Adicione o seguinte método `_makeRemoteRequest` ao functions.ts
 
 ```typescript
 function _makeRemoteRequest() {
@@ -150,7 +150,7 @@ function _makeRemoteRequest() {
 }
 ```
 
-### <a name="modify-makeremoterequest-for-your-own-solution"></a>Modifique `_makeRemoteRequest` para sua própria solução
+### <a name="modify-_makeremoterequest-for-your-own-solution"></a>Modifique `_makeRemoteRequest` para sua própria solução
 
 A função `_makeRemoteRequest` chama `_fetchFromRemoteService`, que, como você verá mais adiante, é apenas uma simulação representando o serviço remoto. Isso facilita estudar e executar o código neste artigo. Mas quando você quiser usar esse código para um serviço remoto real, faça as seguintes alterações:
 
@@ -161,7 +161,7 @@ A função `_makeRemoteRequest` chama `_fetchFromRemoteService`, que, como você
 
 A última etapa é manipular a chamada em lote no serviço remoto. O exemplo de código a seguir mostra a função `_fetchFromRemoteService`. Essa função descompacta cada operação, executa a operação especificada e retorna os resultados. Para fins de aprendizado neste artigo, a função `_fetchFromRemoteService` foi projetada para ser executada em seu suplemento da Web e simular um serviço remoto. Você pode adicionar este código ao seu arquivo **functions.ts** para poder estudar e executar todo o código deste artigo sem precisar configurar um serviço remoto real.
 
-### <a name="add-the-following-fetchfromremoteservice-function-to-functionsts"></a>Adicione a seguinte função `_fetchFromRemoteService` ao functions.ts
+### <a name="add-the-following-_fetchfromremoteservice-function-to-functionsts"></a>Adicione a seguinte função `_fetchFromRemoteService` ao functions.ts
 
 ```typescript
 async function _fetchFromRemoteService(
@@ -204,7 +204,7 @@ function pause(ms: number) {
 }
 ```
 
-### <a name="modify-fetchfromremoteservice-for-your-live-remote-service"></a>Modifique `_fetchFromRemoteService` para o seu serviço remoto ao vivo
+### <a name="modify-_fetchfromremoteservice-for-your-live-remote-service"></a>Modifique `_fetchFromRemoteService` para o seu serviço remoto ao vivo
 
 Para modificar a função `_fetchFromRemoteService` para que esta possa ser executada em seu serviço remoto ao vivo, faça as seguintes alterações:
 

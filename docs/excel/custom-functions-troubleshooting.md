@@ -41,11 +41,11 @@ Informações sobre funções personalizadas são armazenadas em cache pelo Offi
 
 ### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exception"></a>Não é possível abrir um suplemento de um localhost: utilize uma exceção de loopback local
 
-Se você vir o erro "Não é possível abrir este suplemento de um localhost", será necessário habilitar uma exceção de loopback local. Para obter detalhes sobre como fazer isso, confira [este artigo de suporte da Microsoft](https://support.microsoft.com/pt-BR/help/4490419/local-loopback-exemption-does-not-work).
+Se você vir o erro "Não é possível abrir este suplemento de um localhost", será necessário habilitar uma exceção de loopback local. Para obter detalhes sobre como fazer isso, confira [este artigo de suporte da Microsoft](https://support.microsoft.com/en-us/help/4490419/local-loopback-exemption-does-not-work).
 
 ### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-on-windows"></a>Relatórios de log de tempo de execução "TypeError: Falha na solicitação de rede" no Excel para Windows
 
-Se você ver o erro "TypeError: Falha na solicitação de rede" em seu [log de tempo de execução](custom-functions-troubleshooting.md#enable-runtime-logging) enquanto faz chamadas para seu servidor localhost, você precisará habilitar uma exceção de loopback local. Para mais detalhes sobre como fazer isso, confira *Opção #2* neste [artigo de suporte da Microsoft ](https://support.microsoft.com/pt-BR/help/4490419/local-loopback-exemption-does-not-work).
+Se você ver o erro "TypeError: Falha na solicitação de rede" em seu [log de tempo de execução](custom-functions-troubleshooting.md#enable-runtime-logging) enquanto faz chamadas para seu servidor localhost, você precisará habilitar uma exceção de loopback local. Para mais detalhes sobre como fazer isso, confira *Opção #2* neste [artigo de suporte da Microsoft ](https://support.microsoft.com/en-us/help/4490419/local-loopback-exemption-does-not-work).
 
 ### <a name="ensure-promises-return"></a>Garantir que as promessas retornem resultados
 

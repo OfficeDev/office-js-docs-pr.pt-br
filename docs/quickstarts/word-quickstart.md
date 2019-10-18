@@ -312,5 +312,5 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em
 ## <a name="see-also"></a>Confira também
 
 * [Visão geral dos suplementos do Word](../word/word-add-ins-programming-overview.md)
-* [Exemplos de código do suplemento do Word](https://developer.microsoft.com/pt-BR/office/gallery/?filterBy=Samples,Word)
+* [Exemplos de código do suplemento do Word](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
 * [Referências da API JavaScript do Word](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)
