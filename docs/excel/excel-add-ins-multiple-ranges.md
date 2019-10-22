@@ -1,21 +1,18 @@
 ---
 title: Trabalhar simultaneamente com vários intervalos em suplementos do Excel
 description: ''
-ms.date: 02/20/2019
+ms.date: 04/30/2019
 localization_priority: Normal
-ms.openlocfilehash: d284f3cb12153b1c05cff0b7f7a66bbf98961443
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: a327b6c379884107f5e00c0663ecfa6c71b8097f
+ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449236"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "33620042"
 ---
-# <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins-preview"></a>Trabalhar simultaneamente com vários intervalos em suplementos do Excel (Visualização)
+# <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins"></a>Trabalhar simultaneamente com vários intervalos em suplementos do Excel
 
 A biblioteca de JavaScript do Excel permite que o suplemento realize operações e defina propriedades, em vários intervalos simultaneamente. Os intervalos não precisam ser contíguos. Além de tornar seu código mais simples, essa maneira de definir uma propriedade é executada muito mais rapidamente do que definir a mesma propriedade individualmente para cada um dos intervalos.
-
-> [!NOTE]
-> As APIs descritas neste artigo requerem a ** versão 1809 Build 10820.20000 clique para executar do Office 2016** ou posterior. (Talvez seja necessário participar do [programa Office](https://products.office.com/office-insider) Insider para obter uma compilação apropriada.)[!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 ## <a name="rangeareas"></a>RangeAreas
 
@@ -40,43 +37,41 @@ Alguns exemplos:
 
 Familiarize-se com as [Propriedades de leitura do RangeAreas](#read-properties-of-rangeareas) antes de escrever o código que lê as propriedades listadas. Existem sutilezas para o que é retornado.
 
-- address
-- addressLocal
-- cellCount
-- conditionalFormats
-- context
-- dataValidation
-- formato
-- isEntireColumn
-- isEntireRow
-- style
-- planilha
+- `address`
+- `addressLocal`
+- `cellCount`
+- `conditionalFormats`
+- `context`
+- `dataValidation`
+- `format`
+- `isEntireColumn`
+- `isEntireRow`
+- `style`
+- `worksheet`
 
 ##### <a name="methods"></a>Métodos
 
-Os métodos de intervalo na visualização são marcados.
-
-- calculate()
-- clear()
-- convertDataTypeToText() (visualização)
-- convertToLinkedDataType() (visualização)
-- copyFrom() (visualização)
-- getEntireColumn()
-- getEntireRow()
-- getIntersection()
-- getIntersectionOrNullObject()
-- getOffsetRange() (chamada getOffsetRangeAreas no objeto RangeAreas)
-- getSpecialCells() (visualização)
-- getSpecialCellsOrNullObject() (visualização)
-- getTables() (visualização)
-- getUsedRange() (chamada getUsedRangeAreas no objeto RangeAreas)
-- getUsedRangeOrNullObject() (chamada getUsedRangeAreasOrNullObject no objeto RangeAreas)
-- load()
-- set()
-- setDirty() (visualização)
-- toJSON()
-- track()
-- untrack()
+- `calculate()`
+- `clear()`
+- `convertDataTypeToText()`
+- `convertToLinkedDataType()`
+- `copyFrom()`
+- `getEntireColumn()`
+- `getEntireRow()`
+- `getIntersection()`
+- `getIntersectionOrNullObject()`
+- `getOffsetRange()`(nomeado `getOffsetRangeAreas` no `RangeAreas` objeto)
+- `getSpecialCells()`
+- `getSpecialCellsOrNullObject()`
+- `getTables()`
+- `getUsedRange()`(nomeado `getUsedRangeAreas` no `RangeAreas` objeto)
+- `getUsedRangeOrNullObject()`(nomeado `getUsedRangeAreasOrNullObject` no `RangeAreas` objeto)
+- `load()`
+- `set()`
+- `setDirty()`
+- `toJSON()`
+- `track()`
+- `untrack()`
 
 ### <a name="rangearea-specific-properties-and-methods"></a>Métodos e propriedades específicos do RangeArea
 
@@ -124,7 +119,7 @@ Este exemplo se aplica a cenários nos quais você pode codificar os endereços 
 
 ## <a name="get-special-cells-from-multiple-ranges"></a>Obter células especiais de vários intervalos
 
-As `getSpecialCells` e `getSpecialCellsOrNullObject` métodos no `RangeAreas` objeto funciona analogamente para métodos de mesmo nome no `Range` objeto. Esses métodos retornam as células com característica especificada de todos os intervalos no `RangeAreas.areas` conjunto. Confira a seção [Localizar células especiais em um intervalo](excel-add-ins-ranges-advanced.md#find-special-cells-within-a-range-preview) para saber mais sobre células especiais.
+As `getSpecialCells` e `getSpecialCellsOrNullObject` métodos no `RangeAreas` objeto funciona analogamente para métodos de mesmo nome no `Range` objeto. Esses métodos retornam as células com característica especificada de todos os intervalos no `RangeAreas.areas` conjunto. Confira a seção [Localizar células especiais em um intervalo](excel-add-ins-ranges-advanced.md#find-special-cells-within-a-range) para saber mais sobre células especiais.
 
 Ao chamar as `getSpecialCells` ou `getSpecialCellsOrNullObject` método em um `RangeAreas` objeto:
 

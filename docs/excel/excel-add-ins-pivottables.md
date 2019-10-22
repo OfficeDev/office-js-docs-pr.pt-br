@@ -1,22 +1,23 @@
 ---
 title: Trabalhar com tabelas dinâmicas usando a API JavaScript do Excel
 description: Use a API JavaScript do Excel para criar tabelas dinâmicas e interagir com seus componentes.
-ms.date: 03/21/2019
+ms.date: 05/01/2019
 localization_priority: Normal
-ms.openlocfilehash: b53d734e676417a6438f1008bac720a38a244d1f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 4a60b820d6e50dd44a193dd08df69817330c636d
+ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449336"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "33620196"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Trabalhar com tabelas dinâmicas usando a API JavaScript do Excel
 
 As tabelas dinâmicas simplificam conjuntos de dados maiores. Eles permitem a manipulação rápida dos dados agrupados. A API JavaScript do Excel permite que o suplemento crie tabelas dinâmicas e interaja com seus componentes.
 
-Se você não estiver familiarizado com a funcionalidade das tabelas dinâmicas, considere explorá-las como um usuário final. ConFira [criar uma tabela dinâmica para analisar os dados da planilha](https://support.office.com/en-us/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) para obter uma boa opção mais interessante nessas ferramentas. 
+Se você não estiver familiarizado com a funcionalidade das tabelas dinâmicas, considere explorá-las como um usuário final.
+Confira [criar uma tabela dinâmica para analisar os dados da planilha](https://support.office.com/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) para obter uma boa opção mais interessante nessas ferramentas.
 
-Este artigo fornece exemplos de código para cenários comuns. Para saber mais sobre a API de tabela dinâmica, confira [**tabela dinâmica**](/javascript/api/excel/excel.pivottable) e [**tabela dinâmica**](/javascript/api/excel/excel.pivottable).
+Este artigo fornece exemplos de código para cenários comuns. Para saber mais sobre a API de tabela dinâmica, confira [**tabela dinâmica**](/javascript/api/excel/excel.pivottable) e [**tabela dinâmica**](/javascript/api/excel/excel.pivottablecollection).
 
 > [!IMPORTANT]
 > As tabelas dinâmicas criadas com OLAP não têm suporte no momento. Também não há suporte para o Power pivot.
@@ -27,15 +28,15 @@ As tabelas dinâmicas são organizadas com base em quatro categorias de hierarqu
 
 ![Uma coleção de vendas de frutas de diferentes tipos de farms diferentes.](../images/excel-pivots-raw-data.png)
 
-Esses dados têm cinco hierarquias: **farms**, **tipo**, **classificação**, enquando são **vendidas no farm**e as vendidas no **atacado**. Cada hierarquia só pode existir em uma das quatro categorias. Se **Type** for adicionado a hierarquias de coluna e, em seguida, adicionado às hierarquias de linha, ele permanecerá somente no último.
+Esses dados têm cinco hierarquias: **farms**, **tipo**, **classificação**, **enquando são vendidas no farm**e as **vendidas no atacado**. Cada hierarquia só pode existir em uma das quatro categorias. Se **Type** for adicionado a hierarquias de coluna e, em seguida, adicionado às hierarquias de linha, ele permanecerá somente no último.
 
-Hierarquias de linha e coluna definem como os dados serão agrupados. Por exemplo, uma hierarquia de linha **** de farms agrupará todos os conjuntos de dados do mesmo farm. A escolha entre hierarquia de linha e coluna define a orientação da tabela dinâmica.
+Hierarquias de linha e coluna definem como os dados serão agrupados. Por exemplo, uma hierarquia de linha de **farms** agrupará todos os conjuntos de dados do mesmo farm. A escolha entre hierarquia de linha e coluna define a orientação da tabela dinâmica.
 
-Hierarquias de dados são os valores a serem agregados com base nas hierarquias de linha e coluna. Uma tabela dinâmica com uma hierarquia de **** linha de farms e uma hierarquia de dados de **envenda vendida** mostra a soma total (por padrão) de todos os diferentes frutas para cada farm.
+Hierarquias de dados são os valores a serem agregados com base nas hierarquias de linha e coluna. Uma tabela dinâmica com uma hierarquia de linha de **farms** e uma hierarquia de dados de **envenda vendida** mostra a soma total (por padrão) de todos os diferentes frutas para cada farm.
 
 As hierarquias de filtro incluem ou excluem dados da tabela dinâmica com base nos valores desse tipo filtrado. Uma hierarquia de filtro de **classificação** com o tipo **orgânica** selecionado mostra apenas dados para frutas orgânicas.
 
-Estes são os dados do farm novamente, juntamente com uma tabela dinâmica. A tabela dinâmica está usando o **farm** e o **tipo** como hierarquias de linha, as televendedas **no farm** e as doutilizações **vendidas** como as hierarquias de dados (com a função de agregação padrão de Sum) e a **classificação** como um filtro hierarquia (com a **orgânica** selecionada). 
+Estes são os dados do farm novamente, juntamente com uma tabela dinâmica. A tabela dinâmica está usando o **farm** e o **tipo** como hierarquias de linha, as **televendedas no farm** e as doutilizações **vendidas** como as hierarquias de dados (com a função de agregação padrão de Sum) e a **classificação** como um filtro hierarquia (com a **orgânica** selecionada). 
 
 ![Uma seleção de dados de vendas de frutas ao lado de uma tabela dinâmica com hierarquias de linha, dados e filtros.](../images/excel-pivot-table-and-data.png)
 
@@ -43,56 +44,58 @@ Esta tabela dinâmica pode ser gerada por meio da API JavaScript ou através da 
 
 ## <a name="create-a-pivottable"></a>Criar uma tabela dinâmica
 
-As tabelas dinâmicas precisam de um nome, origem e destino. A origem pode ser um endereço de intervalo ou nome de tabela (passado `Range`como `string`um, `Table` ou tipo). O destino é um endereço de intervalo (fornecido como ou `Range` um `string`ou). Os exemplos a seguir mostram várias técnicas de criação de tabela dinâmica.
+As tabelas dinâmicas precisam de um nome, origem e destino. A origem pode ser um endereço de intervalo ou nome de tabela (passado `Range`como `string`um, `Table` ou tipo). O destino é um endereço de intervalo (fornecido como ou `Range` um `string`ou).
+Os exemplos a seguir mostram várias técnicas de criação de tabela dinâmica.
 
 ### <a name="create-a-pivottable-with-range-addresses"></a>Criar uma tabela dinâmica com endereços de intervalo
 
-```typescript
-await Excel.run(async (context) => {
-    // creating a PivotTable named "Farm Sales" on the current worksheet at cell A22 with data from the range A1:E21
-    context.workbook.worksheets.getActiveWorksheet().pivotTables.add("Farm Sales", "A1:E21", "A22");
+```js
+Excel.run(function (context) {
+    // Create a PivotTable named "Farm Sales" on the current worksheet at cell
+    // A22 with data from the range A1:E21.
+    context.workbook.worksheets.getActiveWorksheet().pivotTables.add(
+      "Farm Sales", "A1:E21", "A22");
 
-    await context.sync();
+    return context.sync();
 });
 ```
 
 ### <a name="create-a-pivottable-with-range-objects"></a>Criar uma tabela dinâmica com objetos Range
 
-```typescript
-await Excel.run(async (context) => {
-    // creating a PivotTable named "Farm Sales" on a worksheet called "PivotWorksheet" at cell A2
-    // the data comes from the worksheet "DataWorksheet" across the range A1:E21
-    const rangeToAnalyze = context.workbook.worksheets.getItem("DataWorksheet").getRange("A1:E21");
-    const rangeToPlacePivot = context.workbook.worksheets.getItem("PivotWorksheet").getRange("A2");
+```js
+Excel.run(function (context) {
+    // Create a PivotTable named "Farm Sales" on a worksheet called "PivotWorksheet" at cell A2
+    // the data comes from the worksheet "DataWorksheet" across the range A1:E21.
+    var rangeToAnalyze = context.workbook.worksheets.getItem("DataWorksheet").getRange("A1:E21");
+    var rangeToPlacePivot = context.workbook.worksheets.getItem("PivotWorksheet").getRange("A2");
     context.workbook.worksheets.getItem("PivotWorksheet").pivotTables.add(
-        "Farm Sales", rangeToAnalyze, rangeToPlacePivot);
+      "Farm Sales", rangeToAnalyze, rangeToPlacePivot);
 
-    await context.sync();
+    return context.sync();
 });
 ```
 
 ### <a name="create-a-pivottable-at-the-workbook-level"></a>Criar uma tabela dinâmica no nível da pasta de trabalho
 
-```typescript
-await Excel.run(async (context) => {
-    // creating a PivotTable named "Farm Sales" on a worksheet called "PivotWorksheet" at cell A2
-    // the data is from the worksheet "DataWorksheet" across the range A1:E21
-    context.workbook.pivotTables.add("Farm Sales", "DataWorksheet!A1:E21", "PivotWorksheet!A2");
+```js
+Excel.run(function (context) {
+    // Create a PivotTable named "Farm Sales" on a worksheet called "PivotWorksheet" at cell A2
+    // the data is from the worksheet "DataWorksheet" across the range A1:E21.
+    context.workbook.pivotTables.add(
+        "Farm Sales", "DataWorksheet!A1:E21", "PivotWorksheet!A2");
 
-    await context.sync();
+    return context.sync();
 });
 ```
 
 ## <a name="use-an-existing-pivottable"></a>Usar uma tabela dinâmica existente
 
-As tabelas dinâmicas criadas manualmente também podem ser acessadas por meio da coleção PivotTable da pasta de trabalho ou de planilhas individuais. 
+As tabelas dinâmicas criadas manualmente também podem ser acessadas por meio da coleção PivotTable da pasta de trabalho ou de planilhas individuais. O código a seguir obtém uma tabela dinâmica chamada **My pivot** da pasta de trabalho.
 
-O código a seguir obtém a primeira tabela dinâmica na pasta de trabalho. Em seguida, ele fornece ao nome da tabela uma referência fácil no futuro.
-
-```typescript
-await Excel.run(async (context) => {
-    const pivotTable = context.workbook.pivotTables.getItem("My Pivot");
-    await context.sync();
+```js
+Excel.run(function (context) {
+    var pivotTable = context.workbook.pivotTables.getItem("My Pivot");
+    return context.sync();
 });
 ```
 
@@ -104,54 +107,145 @@ A adição da coluna do **farm** dinamiza todas as vendas em torno de cada farm.
 
 ![Uma tabela dinâmica com uma coluna do farm e linhas de tipo e classificação.](../images/excel-pivots-table-rows-and-columns.png)
 
-```typescript
-await Excel.run(async (context) => {
-    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+```js
+Excel.run(function (context) {
+    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
 
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Type"));
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Classification"));
 
     pivotTable.columnHierarchies.add(pivotTable.hierarchies.getItem("Farm"));
 
-    await context.sync();
+    return context.sync();
 });
 ```
 
 Você também pode ter uma tabela dinâmica com apenas linhas ou colunas.
 
-```typescript
-await Excel.run(async (context) => {
-    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+```js
+Excel.run(function (context) {
+    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Farm"));
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Type"));
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Classification"));
 
-    await context.sync();
+    return context.sync();
 });
 ```
 
 ## <a name="add-data-hierarchies-to-the-pivottable"></a>Adicionar hierarquias de dados à tabela dinâmica
 
-As hierarquias de dados preenchem a tabela dinâmica com informações para combinar com base nas linhas e colunas. Adicionar as hierarquias de dados das pessoas **vendidas no farm** e as pessoas vendidas no **atacado** fornece somas desses números para cada linha e coluna. 
+As hierarquias de dados preenchem a tabela dinâmica com informações para combinar com base nas linhas e colunas. Adicionar as hierarquias de dados das pessoas **vendidas no farm** e as pessoas **vendidas no atacado** fornece somas desses números para cada linha e coluna.
 
-No exemplo, **farm** e **tipo** são linhas, com as vendas de compra como os dados. 
+No exemplo, **farm** e **tipo** são linhas, com as vendas de compra como os dados.
 
 ![Uma tabela dinâmica mostrando as vendas totais de diferentes frutas com base no farm de onde elas vieram.](../images/excel-pivots-data-hierarchy.png)
 
-```typescript
-await Excel.run(async (context) => {
-    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+```js
+Excel.run(function (context) {
+    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
 
-    // "Farm" and "Type" are the hierarchies on which the aggregation is based
+    // "Farm" and "Type" are the hierarchies on which the aggregation is based.
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Farm"));
     pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Type"));
 
     // "Crates Sold at Farm" and "Crates Sold Wholesale" are the hierarchies
-    // that will have their data aggregated (summed in this case)
+    // that will have their data aggregated (summed in this case).
     pivotTable.dataHierarchies.add(pivotTable.hierarchies.getItem("Crates Sold at Farm"));
     pivotTable.dataHierarchies.add(pivotTable.hierarchies.getItem("Crates Sold Wholesale"));
 
-    await context.sync();
+    return context.sync();
+});
+```
+
+## <a name="slicers-preview"></a>Segmentação de Slices (visualização)
+
+> [!NOTE]
+> As APIs de segmentação de trabalho estão atualmente disponíveis somente na visualização pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+
+As [segmentações](/javascript/api/excel/excel.slicer) de dados permitem que os dados sejam filtrados de uma tabela dinâmica ou tabela do Excel. Uma segmentação de, usa valores de uma coluna especificada ou PivotField para filtrar as linhas correspondentes. Esses valores são armazenados como objetos [SlicerItem](/javascript/api/excel/excel.sliceritem) no `Slicer`. O suplemento pode ajustar esses filtros, como os usuários ([por meio da interface do usuário do Excel](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d)). A segmentação de trabalho fica na parte superior da planilha na camada de desenho, conforme mostrado na captura de tela a seguir.
+
+![Uma segmentação de dados Filtrando dados em uma tabela dinâmica.](../images/excel-slicer.png)
+
+> [!NOTE]
+> As técnicas descritas nesta seção concentram-se em como usar slicers conectados a tabelas dinâmicas. As mesmas técnicas também se aplicam ao uso de segmentações de, conectadas a tabelas.
+
+### <a name="create-a-slicer"></a>Criar uma segmentação de um
+
+Você pode criar uma segmentação de, em uma pasta de trabalho ou `Workbook.slicers.add` planilha, `Worksheet.slicers.add` usando o método ou método. Isso adiciona uma segmentação de objetos à [SlicerCollection](/javascript/api/excel/excel.slicercollection) do objeto especificado `Workbook` ou `Worksheet` . O `SlicerCollection.add` método tem três parâmetros:
+
+- `slicerSource`: A fonte de dados na qual a nova segmentação de dados se baseia. `PivotTable`Pode ser um `Table`, ou cadeia de caracteres que representa o nome ou a ID `PivotTable` de `Table`um ou.
+- `sourceField`: O campo na fonte de dados pela qual filtrar. `PivotField`Pode ser um `TableColumn`, ou cadeia de caracteres que representa o nome ou a ID `PivotField` de `TableColumn`um ou.
+- `slicerDestination`: A planilha onde a nova segmentação de trabalho será criada. Pode ser um `Worksheet` objeto ou o nome ou a ID de um `Worksheet`. Esse parâmetro é desnecessário quando `SlicerCollection` o é acessado `Worksheet.slicers`. Nesse caso, a planilha da coleção é usada como o destino.
+
+O exemplo de código a seguir adiciona uma nova segmentação de trabalho à planilha **dinâmica** . A origem da segmentação de dados é a tabela dinâmica de **vendas do farm** e filtra usando os dados do **tipo** . A segmentação de, também é chamada de **segmentação de frutas** para referência futura.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Pivot");
+    var slicer = sheet.slicers.add(
+        "Farm Sales" /* The slicer data source. For PivotTables, this can be the PivotTable object reference or name. */,
+        "Type" /* The field in the data to filter by. For PivotTables, this can be a PivotField object reference or ID. */
+    );
+    slicer.name = "Fruit Slicer";
+    return context.sync();
+});
+```
+
+### <a name="filter-items-with-a-slicer"></a>Filtrar itens com uma segmentação de um
+
+A segmentação de relatório filtra a tabela dinâmica com `sourceField`itens do. O `Slicer.selectItems` método define os itens que permanecem na segmentação de,. Esses itens são passados para o método como a `string[]`, representando as chaves dos itens. Qualquer linha que contenha esses itens permanecerá na agregação da tabela dinâmica. Chamadas subsequentes `selectItems` para definir a lista como as chaves especificadas nessas chamadas.
+
+> [!NOTE]
+> Se `Slicer.selectItems` for passado um item que não está na fonte de dados, um `InvalidArgument` erro será gerado. O conteúdo pode ser verificado através da `Slicer.slicerItems` Propriedade, que é um [SlicerItemCollection](/javascript/api/excel/excel.sliceritemcollection).
+
+O exemplo de código a seguir mostra três itens que estão sendo selecionados para a segmentação de itens: **casca**de limão, **verde-limão**e **laranja**.
+
+```js
+Excel.run(function (context) {
+    var slicer = context.workbook.slicers.getItem("Fruit Slicer");
+    // Anything other than the following three values will be filtered out of the PivotTable for display and aggregation.
+    slicer.selectItems(["Lemon", "Lime", "Orange"]);
+    return context.sync();
+});
+```
+
+Para remover todos os filtros da segmentação de itens, `Slicer.clearFilters` use o método, conforme mostrado no exemplo a seguir.
+
+```js
+Excel.run(function (context) {
+    var slicer = context.workbook.slicers.getItem("Fruit Slicer");
+    slicer.clearFilters();
+    return context.sync();
+});
+```
+
+### <a name="style-and-format-a-slicer"></a>Estilo e formatação de uma segmentação de subconjuntos
+
+O suplemento pode ajustar as configurações de exibição de uma segmentação por `Slicer` meio de propriedades. O exemplo de código a seguir define o estilo como **SlicerStyleLight6**, define o texto na parte superior da segmentação de texto para **tipos de frutas**, coloca a segmentação de texto na posição **(395, 15)** na camada de desenho e define o tamanho da segmentação de texto como **135x150** pixels.
+
+```js
+Excel.run(function (context) {
+    var slicer = context.workbook.slicers.getItem("Fruit Slicer");
+    slicer.caption = "Fruit Types";
+    slicer.left = 395;
+    slicer.top = 15;
+    slicer.height = 135;
+    slicer.width = 150;
+    slicer.style = "SlicerStyleLight6";
+    return context.sync();
+});
+```
+
+### <a name="delete-a-slicer"></a>Excluir uma segmentação de um
+
+Para excluir uma segmentação de, chame `Slicer.delete` o método. O exemplo de código a seguir exclui a primeira segmentação de itens da planilha atual.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    sheet.slicers.getItemAt(0).delete();
+    return context.sync();
 });
 ```
 
@@ -163,16 +257,17 @@ Os tipos de função de agregação `Sum`suportados `Count`atualmente `Average`s
 
 O exemplo de código a seguir altera a agregação para ser a média dos dados.
 
-```typescript
-await Excel.run(async (context) => {
-    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+```js
+Excel.run(function (context) {
+    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
     pivotTable.dataHierarchies.load("no-properties-needed");
-    await context.sync();
+    return context.sync().then(function() {
 
-    // changing the aggregation from the default sum to an average of all the values in the hierarchy
-    pivotTable.dataHierarchies.items[0].summarizeBy = Excel.AggregationFunction.average;
-    pivotTable.dataHierarchies.items[1].summarizeBy = Excel.AggregationFunction.average;
-    await context.sync();
+        // Change the aggregation from the default sum to an average of all the values in the hierarchy.
+        pivotTable.dataHierarchies.items[0].summarizeBy = Excel.AggregationFunction.average;
+        pivotTable.dataHierarchies.items[1].summarizeBy = Excel.AggregationFunction.average;
+        return context.sync();
+    });
 });
 ```
 
@@ -182,30 +277,29 @@ As tabelas dinâmicas, por padrão, agregam os dados de suas hierarquias de linh
 
 O `ShowAsRule` objeto tem três propriedades:
 
--   `calculation`: O tipo de cálculo relativo a ser aplicado à hierarquia de dados (o padrão `none`é).
--   `baseField`: O campo dentro da hierarquia que contém os dados básicos antes do cálculo ser aplicado. Normalmente [](/javascript/api/excel/excel.pivotfield) , o PivotField tem o mesmo nome de sua hierarquia pai.
--   `baseItem`: O [PivotItem](/javascript/api/excel/excel.pivotitem) individual comparado com os valores dos campos base com base no tipo de cálculo. Nem todos os cálculos exigem esse campo.
+- `calculation`: O tipo de cálculo relativo a ser aplicado à hierarquia de dados (o padrão `none`é).
+- `baseField`: O campo dentro da hierarquia que contém os dados básicos antes do cálculo ser aplicado. Normalmente, o [PivotField](/javascript/api/excel/excel.pivotfield) tem o mesmo nome de sua hierarquia pai.
+- `baseItem`: O [PivotItem](/javascript/api/excel/excel.pivotitem) individual comparado com os valores dos campos base com base no tipo de cálculo. Nem todos os cálculos exigem esse campo.
 
-O exemplo a seguir define o cálculo **da soma das** Enações vendidas na hierarquia de dados do farm como uma porcentagem do total da coluna. Ainda queremos que a granularidade seja estendida para o nível de tipo de frutas, portanto, usaremos a hierarquia de linha de **tipo** e seu campo base. O exemplo também tem o **farm** como a primeira hierarquia de linha, portanto, o total de entradas do farm exibe a porcentagem de produção de cada farm também.
+O exemplo a seguir define o cálculo **da soma das enações vendidas na** hierarquia de dados do farm como uma porcentagem do total da coluna. Ainda queremos que a granularidade seja estendida para o nível de tipo de frutas, portanto, usaremos a hierarquia de linha de **tipo** e seu campo base. O exemplo também tem o **farm** como a primeira hierarquia de linha, portanto, o total de entradas do farm exibe a porcentagem de produção de cada farm também.
 
 ![Uma tabela dinâmica mostrando as porcentagens das vendas de frutas em relação ao total geral de farms individuais e tipos de frutas individuais em cada farm.](../images/excel-pivots-showas-percentage.png)
 
-``` TypeScript
-await Excel.run(async (context) => {
-    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
-    const farmDataHierarchy = pivotTable.dataHierarchies.getItem("Sum of Crates Sold at Farm");
+```js
+Excel.run(function (context) {
+    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+    var farmDataHierarchy = pivotTable.dataHierarchies.getItem("Sum of Crates Sold at Farm");
 
     farmDataHierarchy.load("showAs");
-    await context.sync();
+    return context.sync().then(function () {
 
-    // show the crates of each fruit type sold at the farm as a percentage of the column's total
-    let farmShowAs = farmDataHierarchy.showAs;
-    farmShowAs.calculation = Excel.ShowAsCalculation.percentOfColumnTotal;
-    farmShowAs.baseField = pivotTable.rowHierarchies.getItem("Type").fields.getItem("Type");
-    farmDataHierarchy.showAs = farmShowAs; 
-    farmDataHierarchy.name = "Percentage of Total Farm Sales";
-
-    await context.sync();
+        // Show the crates of each fruit type sold at the farm as a percentage of the column's total.
+        var farmShowAs = farmDataHierarchy.showAs;
+        farmShowAs.calculation = Excel.ShowAsCalculation.percentOfColumnTotal;
+        farmShowAs.baseField = pivotTable.rowHierarchies.getItem("Type").fields.getItem("Type");
+        farmDataHierarchy.showAs = farmShowAs;
+        farmDataHierarchy.name = "Percentage of Total Farm Sales";
+    });
 });
 ```
 
@@ -216,23 +310,22 @@ O `baseField` **farm**de is, portanto, vemos as diferenças entre os outros farm
 
 ![Uma tabela dinâmica mostrando as diferenças das vendas de frutas entre "um farm" e outros. Isso mostra a diferença no total de vendas de frutas dos farms e nas vendas dos tipos de frutas. Se "um farm" não vender um tipo específico de frutas, "#N/A" será exibido.](../images/excel-pivots-showas-differencefrom.png)
 
-``` TypeScript
-await Excel.run(async (context) => {
-    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
-    const farmDataHierarchy = pivotTable.dataHierarchies.getItem("Sum of Crates Sold at Farm");
+```js
+Excel.run(function (context) {
+    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+    var farmDataHierarchy = pivotTable.dataHierarchies.getItem("Sum of Crates Sold at Farm");
 
     farmDataHierarchy.load("showAs");
-    await context.sync();
-
-    // show the difference between crate sales of the "A Farms" and the other farms
-    // this difference is both aggregated and shown for individual fruit types (where applicable)
-    let farmShowAs = farmDataHierarchy.showAs;
-    farmShowAs.calculation = Excel.ShowAsCalculation.differenceFrom;
-    farmShowAs.baseField = pivotTable.rowHierarchies.getItem("Farm").fields.getItem("Farm");
-    farmShowAs.baseItem = pivotTable.rowHierarchies.getItem("Farm").fields.getItem("Farm").items.getItem("A Farms");
-    farmDataHierarchy.showAs = farmShowAs;
-    farmDataHierarchy.name = "Difference from A Farms";
-    await context.sync();
+    return context.sync().then(function () {
+        // Show the difference between crate sales of the "A Farms" and the other farms.
+        // This difference is both aggregated and shown for individual fruit types (where applicable).
+        var farmShowAs = farmDataHierarchy.showAs;
+        farmShowAs.calculation = Excel.ShowAsCalculation.differenceFrom;
+        farmShowAs.baseField = pivotTable.rowHierarchies.getItem("Farm").fields.getItem("Farm");
+        farmShowAs.baseItem = pivotTable.rowHierarchies.getItem("Farm").fields.getItem("Farm").items.getItem("A Farms");
+        farmDataHierarchy.showAs = farmShowAs;
+        farmDataHierarchy.name = "Difference from A Farms";
+    });
 });
 ```
 
@@ -246,24 +339,23 @@ O diagrama a seguir mostra quais chamadas de função de layout correspondem aos
 
 O código a seguir demonstra como obter a última linha dos dados da tabela dinâmica percorrendo o layout. Esses valores são somados em um total geral.
 
-```typescript
-await Excel.run(async (context) => {
-    const pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+```js
+Excel.run(function (context) {
+    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
 
-    // get the totals for each data hierarchy from the layout
-    const range = pivotTable.layout.getDataBodyRange();
-    const grandTotalRange = range.getLastRow();
+    // Get the totals for each data hierarchy from the layout.
+    var range = pivotTable.layout.getDataBodyRange();
+    var grandTotalRange = range.getLastRow();
     grandTotalRange.load("address");
-    await context.sync();
-
-    // sum the totals from the PivotTable data hierarchies and place them in a new range
-    const masterTotalRange = context.workbook.worksheets.getActiveWorksheet().getRange("B27:C27");
-    masterTotalRange.formulas = [["All Crates", "=SUM(" + grandTotalRange.address + ")"]];
-    await context.sync();
+    return context.sync().then(function () {
+        // Sum the totals from the PivotTable data hierarchies and place them in a new range.
+        var masterTotalRange = context.workbook.worksheets.getActiveWorksheet().getRange("B27:C27");
+        masterTotalRange.formulas = [["All Crates", "=SUM(" + grandTotalRange.address + ")"]];
+    });
 });
 ```
 
-As tabelas dinâmicas têm três estilos de layout: compactar, estrutura de tópicos e tabular. Vimos o estilo compacto nos exemplos anteriores. 
+As tabelas dinâmicas têm três estilos de layout: compactar, estrutura de tópicos e tabular. Vimos o estilo compacto nos exemplos anteriores.
 
 Os exemplos a seguir usam os estilos de estrutura de tópicos e tabular, respectivamente. O exemplo de código mostra como fazer o ciclo entre os diferentes layouts.
 
@@ -279,17 +371,16 @@ Os exemplos a seguir usam os estilos de estrutura de tópicos e tabular, respect
 
 Os campos de hierarquia são editáveis. O código a seguir demonstra como alterar os nomes exibidos de duas hierarquias de dados.
 
-```typescript
-await Excel.run(async (context) => {
-    const dataHierarchies = context.workbook.worksheets.getActiveWorksheet()
+```js
+Excel.run(function (context) {
+    var dataHierarchies = context.workbook.worksheets.getActiveWorksheet()
         .pivotTables.getItem("Farm Sales").dataHierarchies;
     dataHierarchies.load("no-properties-needed");
-    await context.sync();
-
-    // changing the displayed names of these entries
-    dataHierarchies.items[0].name = "Farm Sales";
-    dataHierarchies.items[1].name = "Wholesale";
-    await context.sync();
+    return context.sync().then(function () {
+        // changing the displayed names of these entries
+        dataHierarchies.items[0].name = "Farm Sales";
+        dataHierarchies.items[1].name = "Wholesale";
+    });
 });
 ```
 
@@ -297,11 +388,10 @@ await Excel.run(async (context) => {
 
 As tabelas dinâmicas são excluídas usando seus nomes.
 
-```typescript
-await Excel.run(async (context) => {
+```js
+Excel.run(function (context) {
     context.workbook.worksheets.getItem("Pivot").pivotTables.getItem("Farm Sales").delete();
-
-    await context.sync();
+    return context.sync();
 });
 ```
 
