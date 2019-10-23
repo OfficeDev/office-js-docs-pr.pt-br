@@ -1,20 +1,20 @@
 ---
 title: Office. Context. Mailbox – conjunto de requisitos 1,6
 description: ''
-ms.date: 08/30/2019
+ms.date: 10/21/2019
 localization_priority: Normal
-ms.openlocfilehash: 82a7039602c1896488e6a2358cf345bc157b79de
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: b4bc64aa1ff836408a8b8b1efdaed7ddc8ce5725
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36695977"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37627080"
 ---
 # <a name="mailbox"></a>mailbox
 
 ### <a name="officeofficemdcontextofficecontextmdmailbox"></a>[Office](Office.md)[.context](Office.context.md).mailbox
 
-Fornece acesso ao modelo de objeto do suplemento do Outlook para o Microsoft Outlook.
+Fornece acesso ao modelo de objeto de suplemento do Outlook para o Microsoft Outlook.
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -53,11 +53,11 @@ Fornece acesso ao modelo de objeto do suplemento do Outlook para o Microsoft Out
 
 [userProfile](Office.context.mailbox.userProfile.md): Fornece informações sobre o usuário em um suplemento do Outlook.
 
-### <a name="members"></a>Membros
+### <a name="members"></a>Members
 
-#### <a name="ewsurl-string"></a>ewsUrl: cadeia de caracteres
+#### <a name="ewsurl-string"></a>ewsUrl: String
 
-Obtém a URL do ponto de extremidade dos Serviços Web do Exchange (EWS) para esta conta de email. Somente modo de leitura.
+Obtém a URL do ponto de extremidade dos EWS (Serviços Web do Exchange) para esta conta de email. Somente modo de Leitura.
 
 > [!NOTE]
 > Não há suporte para esse membro no Outlook no iOS ou no Android.
@@ -85,7 +85,7 @@ No modo de composição, é preciso chamar o método [`saveAsync`](Office.contex
 ---
 ---
 
-#### <a name="resturl-string"></a>restUrl: cadeia de caracteres
+#### <a name="resturl-string"></a>restUrl: String
 
 Obtém a URL do ponto de extremidade de REST para esta conta de email.
 
@@ -204,9 +204,9 @@ var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.Re
 
 Obtém um dicionário contendo informações de hora em tempo local do cliente.
 
-Um aplicativo de email para o Outlook em uma área de trabalho ou na Web pode usar fusos horários diferentes para datas e horas. O Outlook em uma área de trabalho usa o fuso horário do computador cliente; O Outlook na Web usa o fuso horário definido no centro de administração do Exchange (Eat). Você deve lidar com valores de data e hora para que os valores exibidos na interface do usuário sejam sempre consistentes com o fuso horário que o usuário espera.
+Um aplicativo de email para o Outlook em uma área de trabalho ou na Web pode usar fusos horários diferentes para as datas e horas. O Outlook em uma área de trabalho usa o fuso horário do computador cliente; o Outlook na Web usa o fuso horário definido no Centro de Administração do Exchange (EAC). Você deve lidar com valores de data e hora para que os valores exibidos na interface do usuário sejam sempre consistentes com o fuso horário que o usuário espera.
 
-Se o aplicativo de email estiver em execução no Outlook em um cliente desktop `convertToLocalClientTime` , o método retornará um objeto Dictionary com os valores definidos para o fuso horário do computador cliente. Se o aplicativo de email estiver em execução no Outlook na Web, `convertToLocalClientTime` o método retornará um objeto Dictionary com os valores definidos para o fuso horário especificado no Eat.
+Se o aplicativo de email estiver sendo executado no Outlook em um cliente da área de trabalho, o método `convertToLocalClientTime` retornará um objeto de dicionário com os valores definidos para o fuso horário do computador cliente. Se o aplicativo de email estiver sendo executado no Outlook na Web, o método `convertToLocalClientTime` retornará um objeto de dicionário com os valores definidos para o fuso horário especificado no EAC.
 
 ##### <a name="parameters"></a>Parâmetros
 
@@ -298,7 +298,7 @@ O método `convertToUtcClientTime` converte um dicionário que contém uma data 
 
 Um objeto Date com a hora expressa em UTC.
 
-Tipo: data
+Tipo: Data
 
 ##### <a name="example"></a>Exemplo
 
@@ -336,9 +336,9 @@ Exibe um compromisso de calendário existente.
 
 O método `displayAppointmentForm` abre um compromisso de calendário existente em uma nova janela na área de trabalho ou em uma caixa de diálogo em dispositivos móveis.
 
-No Outlook no Mac, você pode usar esse método para exibir um único compromisso que não faz parte de uma série recorrente ou o compromisso mestre de uma série recorrente, mas não é possível exibir uma instância da série. Isso ocorre porque, no Outlook no Mac, você não pode acessar as propriedades (incluindo a ID do item) de instâncias de uma série recorrente.
+No Outlook no Mac, você pode usar esse método para exibir um único compromisso que não faz parte de uma série recorrente, ou o compromisso mestre de uma série recorrente, mas não pode exibir um instância da série. Isso ocorre porque no Outlook no Mac você não pode acessar as propriedades (incluindo a ID do item) das instâncias de uma série recorrente.
 
-No Outlook na Web, este método abre o formulário especificado somente se o corpo do formulário for menor ou igual ao número de caracteres 32 KB.
+No Outlook na Web, este método abre o formulário especificado somente se o corpo do formulário for menor ou igual ao número de caracteres de 32KB.
 
 Se o identificador do item especificado não identificar um compromisso existente, um painel em branco abre no dispositivo ou no computador cliente e nenhuma mensagem de erro será exibida.
 
@@ -416,7 +416,7 @@ Exibe um formulário para criar um compromisso no calendário.
 
 O método `displayNewAppointmentForm` abre um formulário que permite ao usuário criar um novo compromisso ou reunião. Se os parâmetros forem especificados, os campos de formulário do compromisso serão preenchidos automaticamente com o conteúdo dos parâmetros.
 
-No Outlook na Web e dispositivos móveis, este método sempre exibe um formulário com um campo participantes. Se você não especificar quaisquer participantes como argumentos de entrada, o método exibe um formulário com um botão **Salvar**. Se você especificar participantes, o formulário inclui os participantes e um botão **Enviar**.
+No Outlook na Web e em dispositivos móveis, este método sempre exibe um formulário com um campo de participantes. Se você não especificar quaisquer participantes como argumentos de entrada, o método exibe um formulário com um botão **Salvar**. Se você especificar participantes, o formulário inclui os participantes e um botão **Enviar**.
 
 No cliente avançado do Outlook e no Outlook RT, se você especificar quaisquer participantes ou recursos nos parâmetros `requiredAttendees`, `optionalAttendees`ou `resources`, este método exibirá um formulário de reunião com um botão **Enviar**. Se você não especificar destinatários, este método exibirá um formulário de compromisso com um botão **Salvar e Fechar**.
 
@@ -541,7 +541,11 @@ Obtém uma cadeia de caracteres que contém um token usado para chamar APIs REST
 O método `getCallbackTokenAsync` faz uma chamada assíncrona para obter um token opaco do Exchange Server que hospeda a caixa de correio do usuário. A vida útil do token de retorno de chamada é de 5 minutos.
 
 > [!NOTE]
-> É recomendável que suplementos usem as APIs REST em vez dos Serviços Web do Exchange sempre que possível. 
+> É recomendável que suplementos usem as APIs REST em vez dos Serviços Web do Exchange sempre que possível.
+
+Chamar o `getCallbackTokenAsync` método no modo de leitura requer um nível mínimo de permissão de **ReadItem**.
+
+A `getCallbackTokenAsync` chamada no modo de redação requer que você tenha salvo o item. O [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) método requer um nível de permissão mínimo de **ReadWriteItem**.
 
 **Tokens REST**
 
@@ -555,6 +559,8 @@ Quando um token EWS é solicitado (`options.isRest = false`), o token resultante
 
 O suplemento deve usar a propriedade `ewsUrl` para determinar a URL correta a ser usada ao fazer chamadas de EWS.
 
+Você pode passar o token e um identificador de anexo ou identificador de item para um sistema de terceiros. O sistema de terceiros usa o token como um token de autorização de portador para chamar a operação [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) dos serviços Web do Exchange (EWS) ou a operação [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) para retornar um anexo ou item. Por exemplo, você pode criar um serviço remoto para [obter anexos do item selecionado](/outlook/add-ins/get-attachments-of-an-outlook-item).
+
 ##### <a name="parameters"></a>Parâmetros
 
 |Nome| Tipo| Atributos| Descrição|
@@ -562,14 +568,14 @@ O suplemento deve usar a propriedade `ewsUrl` para determinar a URL correta a se
 | `options` | Object | &lt;opcional&gt; | Um objeto literal que contém uma ou mais das propriedades a seguir. |
 | `options.isRest` | Booliano |  &lt;opcional&gt; | Determina se o token fornecido será usado para as APIs REST do Outlook ou Serviços Web do Exchange. O valor padrão é `false`. |
 | `options.asyncContext` | Objeto |  &lt;opcional&gt; | Quaisquer dados de estado que são passados ao método assíncrono. |
-|`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O token é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`.<br><br>Se houvesse um erro, as `asyncResult.error` propriedades `asyncResult.diagnostics` e podem fornecer informações adicionais.|
+|`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O token é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`.<br><br>Se ocorreu um erro, as propriedades`asyncResult.error` e `asyncResult.diagnostics` podem fornecer informações adicionais.|
 
 ##### <a name="errors"></a>Erros
 
 |Código de erro|Descrição|
 |------------|-------------|
-|`HTTPRequestFailure`|A solicitação falhou. Confira o objeto Diagnostics do código de erro HTTP.|
-|`InternalServerError`|O servidor do Exchange retornou um erro. Confira o objeto Diagnostics para obter mais informações.|
+|`HTTPRequestFailure`|A solicitação falhou. Examine o objeto de diagnóstico para o código de erro HTTP.|
+|`InternalServerError`|O servidor do Exchange retornou um erro. Para saber mais, confira o objeto de diagnóstico.|
 |`NetworkError`|O usuário não está mais conectado à rede. Verifique sua conexão de rede e tente novamente.|
 
 ##### <a name="requirements"></a>Requisitos
@@ -608,34 +614,34 @@ Obtém uma cadeia de caracteres que contém um token usado para obter um anexo o
 
 O método `getCallbackTokenAsync` faz uma chamada assíncrona para obter um token opaco do Exchange Server que hospeda a caixa de correio do usuário. A vida útil do token de retorno de chamada é de 5 minutos.
 
-Você pode passar o token e um identificador de anexo ou um identificador de item a um sistema de terceiros. O sistema de terceiros usa o token como portador da autorização para chamar as operações [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) ou [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) dos Serviços Web do Exchange (EWS) para retornar um anexo ou item. Por exemplo, você pode criar um serviço remoto para [obter anexos do item selecionado](/outlook/add-ins/get-attachments-of-an-outlook-item).
+Você pode passar o token e um identificador de anexo ou identificador de item para um sistema de terceiros. O sistema de terceiros usa o token como um token de autorização de portador para chamar a operação [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) dos serviços Web do Exchange (EWS) ou a operação [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) para retornar um anexo ou item. Por exemplo, você pode criar um serviço remoto para [obter anexos do item selecionado](/outlook/add-ins/get-attachments-of-an-outlook-item).
 
-Seu aplicativo deve ter a permissão **ReadItem** especificada em seu manifesto para chamar o método `getCallbackTokenAsync` em modo de leitura.
+Chamar o `getCallbackTokenAsync` método no modo de leitura requer um nível mínimo de permissão de **ReadItem**.
 
-No modo de composição, você deve chamar o método [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) para obter um identificador de item para passar ao método `getCallbackTokenAsync`. Seu aplicativo deve ter permissões **ReadWriteItem** para chamar o método `saveAsync`.
+A `getCallbackTokenAsync` chamada no modo de redação requer que você tenha salvo o item. O [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) método requer um nível de permissão mínimo de **ReadWriteItem**.
 
 ##### <a name="parameters"></a>Parâmetros
 
 |Nome| Tipo| Atributos| Descrição|
 |---|---|---|---|
-|`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O token é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`.<br><br>Se houvesse um erro, as `asyncResult.error` propriedades `asyncResult.diagnostics` e podem fornecer informações adicionais.|
+|`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O token é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`.<br><br>Se ocorreu um erro, as propriedades`asyncResult.error` e `asyncResult.diagnostics` podem fornecer informações adicionais.|
 |`userContext`| Objeto| &lt;opcional&gt;|Quaisquer dados de estado que são passados ao método assíncrono.|
 
 ##### <a name="errors"></a>Erros
 
 |Código de erro|Descrição|
 |------------|-------------|
-|`HTTPRequestFailure`|A solicitação falhou. Confira o objeto Diagnostics do código de erro HTTP.|
-|`InternalServerError`|O servidor do Exchange retornou um erro. Confira o objeto Diagnostics para obter mais informações.|
+|`HTTPRequestFailure`|A solicitação falhou. Examine o objeto de diagnóstico para o código de erro HTTP.|
+|`InternalServerError`|O servidor do Exchange retornou um erro. Para saber mais, confira o objeto de diagnóstico.|
 |`NetworkError`|O usuário não está mais conectado à rede. Verifique sua conexão de rede e tente novamente.|
 
 ##### <a name="requirements"></a>Requisitos
 
-|Requisito| Valor|
-|---|---|
-|[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
-|[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Redação e leitura|
+|Requisito|||
+|---|---|---|
+|[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0 | 1.3 |
+|[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem | ReadItem |
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Read | Escrever |
 
 ##### <a name="example"></a>Exemplo
 
@@ -664,15 +670,15 @@ O método `getUserIdentityTokenAsync` retorna um token que pode ser utilizado pa
 
 |Nome| Tipo| Atributos| Descrição|
 |---|---|---|---|
-|`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O token é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`.<br><br>Se houvesse um erro, as `asyncResult.error` propriedades `asyncResult.diagnostics` e podem fornecer informações adicionais.|
+|`callback`| function||Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>O token é fornecido como uma cadeia de caracteres na propriedade `asyncResult.value`.<br><br>Se ocorreu um erro, as propriedades`asyncResult.error` e `asyncResult.diagnostics` podem fornecer informações adicionais.|
 |`userContext`| Objeto| &lt;opcional&gt;|Quaisquer dados de estado que são passados ao método assíncrono.|
 
 ##### <a name="errors"></a>Erros
 
 |Código de erro|Descrição|
 |------------|-------------|
-|`HTTPRequestFailure`|A solicitação falhou. Confira o objeto Diagnostics do código de erro HTTP.|
-|`InternalServerError`|O servidor do Exchange retornou um erro. Confira o objeto Diagnostics para obter mais informações.|
+|`HTTPRequestFailure`|A solicitação falhou. Examine o objeto de diagnóstico para o código de erro HTTP.|
+|`InternalServerError`|O servidor do Exchange retornou um erro. Para saber mais, confira o objeto de diagnóstico.|
 |`NetworkError`|O usuário não está mais conectado à rede. Verifique sua conexão de rede e tente novamente.|
 
 ##### <a name="requirements"></a>Requisitos

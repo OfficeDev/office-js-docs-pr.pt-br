@@ -1,15 +1,15 @@
 ---
 title: Tutorial de suplemento do PowerPoint
 description: Neste tutorial, você vai criar um suplemento do PowerPoint que insere imagem, texto, obtém metadados do slide e navega entre slides.
-ms.date: 12/31/2018
+ms.date: 10/17/2019
 ms.prod: powerpoint
 localization_priority: Normal
-ms.openlocfilehash: 0ffd3eedf0cb1d3a118edd0a22b3066cc396d320
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 8f1b67341c2d796ff9213682e7ee759995f915f2
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696026"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37627108"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>Tutorial: Criar um Suplemento do Painel de Tarefas
 
@@ -29,11 +29,11 @@ Neste tutorial, você usará o Visual Studio para criar um Suplementos do Painel
 
 Conclua as etapas a seguir para criar um projeto de suplemento do PowerPoint usando o Visual Studio.
 
-1. Na barra de menus do Visual Studio, selecione **Arquivo**  >  **Novo**  >  **Projeto**.
-    
-2. Na lista de tipos de projeto em **Visual C#** ou no **Visual Basic**, expanda a opção **Office/SharePoint**, escolha **Suplementos** e depois **Suplemento da Web do PowerPoint** como o tipo de projeto. 
+1. Escolha **criar um novo projeto**.
 
-3. Nomeie o projeto como **HelloWorld** e depois selecione o botão **OK**.
+2. Usando a caixa de pesquisa, insira o **suplemento**. Escolha **suplemento do PowerPoint Web**e, em seguida, selecione **Avançar**.
+
+3. Nomeie o projeto e selecione **criar**.
 
 4. Na caixa de diálogo **Criar suplementos do Office**, escolha **Adicionar novas funcionalidades ao PowerPoint**e depois **Concluir** para criar o projeto.
 

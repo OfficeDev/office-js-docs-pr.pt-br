@@ -1,14 +1,14 @@
 ---
 title: Crie o seu primeiro suplemento de painel de tarefas para o Microsoft Project usando um editor de texto
 description: ''
-ms.date: 09/26/2019
+ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: 36e2688240ad348669e7d6845f371997cd3c3ec2
-ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
+ms.openlocfilehash: 4834567d88369fdc9b67a5a7e62a996384b131e5
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "37524273"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626989"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>Crie o seu primeiro suplemento de painel de tarefas para o Microsoft Project usando um editor de texto
 
@@ -71,7 +71,7 @@ O Procedimento 2 mostra como criar o arquivo HTML que o manifesto JSOM_SimpleOMC
 
 1. Crie um arquivo HTML com um nome especificado pelo elemento **SourceLocation** no manifesto JSOM_SimpleOMCalls.xml. 
 
-   Por exemplo, crie o arquivo JSOMCall.html no `C:\Project\AppSource` diretório. Embora você possa usar um editor de texto simples para criar os arquivos de origem, é mais fácil usar uma ferramenta como o código do Visual Studio, que funciona com tipos específicos de documentos (como HTML e JavaScript) e tem outros auxílios de edição. Se você ainda não tiver feito o exemplo da Pesquisa do Bing descrito em [Suplementos de painel de tarefas para Project](../project/project-add-ins.md), o Procedimento 3 mostra como criar o `\\ServerName\AppSource` compartilhamento de arquivos que o manifesto especifica.
+   Por exemplo, crie o arquivo JSOMCall.html no `C:\Project\AppSource` diretório. Embora você possa usar um editor de texto simples para criar os arquivos de origem, é mais fácil usar uma ferramenta como o Visual Studio Code, que funciona com tipos de documento específicos (como HTML e JavaScript) e tem outros auxílios de edição. Se você ainda não tiver feito o exemplo da Pesquisa do Bing descrito em [Suplementos de painel de tarefas para Project](../project/project-add-ins.md), o Procedimento 3 mostra como criar o `\\ServerName\AppSource` compartilhamento de arquivos que o manifesto especifica.
 
    O arquivo JSOMCall.html usa o arquivo MicrosoftAjax.js comum para a funcionalidade AJAX e o arquivo Office.js para a funcionalidade de suplemento em aplicativos do Microsoft Office 2013.
 

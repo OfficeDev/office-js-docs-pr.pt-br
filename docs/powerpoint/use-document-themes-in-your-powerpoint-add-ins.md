@@ -1,14 +1,14 @@
 ---
 title: Usar temas de documentos em seus suplementos do PowerPoint
 description: ''
-ms.date: 12/17/2018
+ms.date: 10/14/2019
 localization_priority: Normal
-ms.openlocfilehash: f98fe4b7d99bef2ab4c684a09490ed73f0ed3bb1
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: bb37f4a9f1860d38c2218a00fbd8c8092beadd63
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451451"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37627003"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>Usar temas de documentos em seus suplementos do PowerPoint
 
@@ -61,7 +61,7 @@ Use as etapas a seguir para adicionar o arquivo OfficeThemes.css ao seu projeto 
 #### <a name="to-add-officethemescss-to-your-visual-studio-project"></a>Para adicionar o OfficeThemes.css ao seu projeto do Visual Studio
 
 > [!NOTE]
-> As etapas deste procedimento se aplicam apenas para Visual Studio 2015. Se você estiver usando o Visual Studio 2017, o arquivo OfficeThemes.css é criado automaticamente para os novos projetos do suplemento do PowerPoint que você criar.
+> As etapas deste procedimento se aplicam apenas para Visual Studio 2015. Se você estiver usando o Visual Studio 2019, o arquivo OfficeThemes. CSS será criado automaticamente para todos os novos projetos de suplemento do PowerPoint que você criar.
 
 1. No **Gerenciador de Soluções**, clique com o botão direito do mouse na pasta **Conteúdo** no projeto _**nome_projeto**_**Web**, aponte para **Adicionar** e selecione a **Folha de Estilos**.
     
@@ -143,9 +143,17 @@ Para fazer isso no Visual Studio, execute estas etapas.
 
 #### <a name="to-reference-officethemescss-in-your-add-in-for-powerpoint"></a>Para fazer referência ao OfficeThemes.css em seu suplemento para PowerPoint
 
-1. No Visual Studio 2017, abra ou crie um novo projeto de **Suplemento do Office**.
-    
-2. Nas páginas HTML que implementam a interface de usuário de seu suplemento, como Home.html no modelo padrão, adicione a seguinte marca `<link>`dentro da marca `<head>` que faz referência ao arquivo OfficeThemes.css:
+1. Escolha **criar um novo projeto**.
+
+2. Usando a caixa de pesquisa, insira o **suplemento**. Escolha **suplemento do PowerPoint Web**e, em seguida, selecione **Avançar**.
+
+3. Nomeie o projeto e selecione **criar**.
+
+3. Na caixa de diálogo **Criar suplementos do Office**, escolha **Adicionar novas funcionalidades ao PowerPoint**e depois **Concluir** para criar o projeto.
+
+4. O Visual Studio cria uma solução, e os dois projetos dele são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.
+
+5. Nas páginas HTML que implementam a interface de usuário de seu suplemento, como Home.html no modelo padrão, adicione a seguinte marca `<link>`dentro da marca `<head>` que faz referência ao arquivo OfficeThemes.css:
     
     ```HTML
     <link href="../../Content/OfficeThemes.css" rel="stylesheet" type="text/css" />

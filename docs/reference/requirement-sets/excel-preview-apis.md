@@ -4,12 +4,12 @@ description: Detalhes sobre as futuras APIs JavaScript do Excel
 ms.date: 09/24/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 95cecd1c6a0b26f945e96834fe39757490788a97
-ms.sourcegitcommit: c8914ce0f48a0c19bbfc3276a80d090bb7ce68e1
+ms.openlocfilehash: 86be9d60f37950d11b755d89bf2dd1b1190ae4ca
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "37235313"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37627087"
 ---
 # <a name="excel-javascript-preview-apis"></a>APIs de visualização do JavaScript para Excel
 
@@ -22,7 +22,7 @@ A primeira tabela fornece um resumo conciso das APIs e, a tabela subsequente, fo
 | Área de recurso | Descrição | Objetos relevantes |
 |:--- |:--- |:--- |
 | [Segmentação de dados](../../excel/excel-add-ins-pivottables.md#slicers-preview) | Insira e configure as segmentações de dados em tabelas e Tabelas dinâmicas. | [Segmentação de dados](/javascript/api/excel/excel.slicer) |
-| [Comments](../../excel/excel-add-ins-workbooks.md#comments-preview) | Adicione, edite e exclua comentários. | [Comment](/javascript/api/excel/excel.comment), [CommentCollection](/javascript/api/excel/excel.commentcollection) |
+| [Comments](../../excel/excel-add-ins-comments.md) | Adicione, edite e exclua comentários. | [Comment](/javascript/api/excel/excel.comment), [CommentCollection](/javascript/api/excel/excel.commentcollection) |
 | [Salvar](../../excel/excel-add-ins-workbooks.md#save-the-workbook-preview) e [Fechar](../../excel/excel-add-ins-workbooks.md#close-the-workbook-preview) a pasta de trabalho | Salve e feche a pasta de trabalho.  | [Workbook](/javascript/api/excel/excel.workbook) |
 | [Inserir pasta de trabalho](../../excel/excel-add-ins-workbooks.md#insert-a-copy-of-an-existing-workbook-into-the-current-one-preview) | Insira uma pasta de trabalho em outra.  | [Workbook](/javascript/api/excel/excel.worksheetcollection) |
 
@@ -39,7 +39,7 @@ A tabela a seguir lista as APIs JavaScript do Excel atualmente em versão prévi
 ||[authorName](/javascript/api/excel/excel.comment#authorname)|Obtém o nome do autor do comentário.|
 ||[creationDate](/javascript/api/excel/excel.comment#creationdate)|Obtém o horário de criação do comentário. Retorna null se o comentário foi convertido de uma nota, pois o comentário não possui uma data de criação.|
 ||[id](/javascript/api/excel/excel.comment#id)|Representa o identificador de comentário. Somente leitura.|
-||[mentions](/javascript/api/excel/excel.comment#mentions)|Obtém as entidades (por exemplo, pessoas) mencionadas em comentários.|
+||[menções](/javascript/api/excel/excel.comment#mentions)|Obtém as entidades (por exemplo, pessoas) mencionadas em comentários.|
 ||[replies](/javascript/api/excel/excel.comment#replies)|Representa uma coleção de objetos de resposta associados ao comentário. Somente leitura.|
 ||[richContent](/javascript/api/excel/excel.comment#richcontent)|Obtém o conteúdo de comentário avançado (por exemplo, menciona em comentários). Essa cadeia de caracteres não deve ser exibida para os usuários finais. Seu suplemento só deve usar este para analisar conteúdo de comentário avançado.|
 ||[Obtido](/javascript/api/excel/excel.comment#resolved)|Obtém ou define o status do thread de comentários. O valor "true" significa que o thread de comentário está no estado resolvido.|
@@ -62,7 +62,7 @@ A tabela a seguir lista as APIs JavaScript do Excel atualmente em versão prévi
 ||[authorName](/javascript/api/excel/excel.commentreply#authorname)|Obtém o nome do autor da resposta do comentário.|
 ||[creationDate](/javascript/api/excel/excel.commentreply#creationdate)|Obtém o horário de criação da resposta do comentário.|
 ||[id](/javascript/api/excel/excel.commentreply#id)|Representa o identificador de resposta do comentário. Somente leitura.|
-||[mentions](/javascript/api/excel/excel.commentreply#mentions)|Obtém as entidades (por exemplo, pessoas) mencionadas em comentários.|
+||[menções](/javascript/api/excel/excel.commentreply#mentions)|Obtém as entidades (por exemplo, pessoas) mencionadas em comentários.|
 ||[Obtido](/javascript/api/excel/excel.commentreply#resolved)|Obtém ou define o status de resposta de comentário. O valor "true" significa que a resposta de comentário está no estado resolvido.|
 ||[richContent](/javascript/api/excel/excel.commentreply#richcontent)|Obtém o conteúdo de comentário avançado (por exemplo, menciona em comentários). Essa cadeia de caracteres não deve ser exibida para os usuários finais. Seu suplemento só deve usar este para analisar conteúdo de comentário avançado.|
 ||[updateMentions (contentWithMentions: Excel. CommentRichContent)](/javascript/api/excel/excel.commentreply#updatementions-contentwithmentions-)|Atualiza o conteúdo de comentários com uma cadeia de caracteres especialmente formatada e uma lista de menção.|
@@ -71,7 +71,7 @@ A tabela a seguir lista as APIs JavaScript do Excel atualmente em versão prévi
 ||[getItem(commentReplyId: string)](/javascript/api/excel/excel.commentreplycollection#getitem-commentreplyid-)|Retorna uma resposta de comentário identificada pela respectiva ID. Somente leitura.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.commentreplycollection#getitemat-index-)|Obtém uma resposta de comentário com base em sua posição na coleção.|
 ||[items](/javascript/api/excel/excel.commentreplycollection#items)|Obtém os itens filhos carregados nesta coleção.|
-|[CommentRichContent](/javascript/api/excel/excel.commentrichcontent)|[mentions](/javascript/api/excel/excel.commentrichcontent#mentions)|Uma matriz que contém todas as entidades (por exemplo, pessoas) mencionadas no comentário.|
+|[CommentRichContent](/javascript/api/excel/excel.commentrichcontent)|[menções](/javascript/api/excel/excel.commentrichcontent#mentions)|Uma matriz que contém todas as entidades (por exemplo, pessoas) mencionadas no comentário.|
 ||[richContent](/javascript/api/excel/excel.commentrichcontent#richcontent)||
 |[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[enableFieldList](/javascript/api/excel/excel.pivotlayout#enablefieldlist)|Especifica se a lista de campos pode ser mostrada na interface do usuário.|
 ||[getCell(dataHierarchy: DataPivotHierarchy \| string, rowItems: Array<PivotItem \| string>, columnItems: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotlayout#getcell-datahierarchy--rowitems--columnitems-)|Obtém uma célula exclusiva na tabela dinâmica com base em uma hierarquia de dados, bem como os itens de linha e coluna de suas respectivas hierarquias. A célula retornada é a interseção da linha e coluna fornecidas que contém os dados da hierarquia especificada. Esse método é o inverso de chamar getPivotItems e getDataHierarchy em uma célula específica.|
@@ -187,18 +187,18 @@ A tabela a seguir lista as APIs JavaScript do Excel atualmente em versão prévi
 ||[save(saveBehavior?: Excel.SaveBehavior)](/javascript/api/excel/excel.workbook#save-savebehavior-)|Salvar a pasta de trabalho atual.|
 ||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904datesystem)|True se a pasta de trabalho usar o sistema de dados 1904.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[comments](/javascript/api/excel/excel.worksheet#comments)|Retorna um conjunto de todos os objetos Comments na planilha. Somente leitura.|
-||[onColumnSorted](/javascript/api/excel/excel.worksheet#oncolumnsorted)|Ocorre quando uma ou mais colunas foram classificadas. Isso acontece como resultado de uma operação de classificação da esquerda para a direita.|
+||[onColumnSorted](/javascript/api/excel/excel.worksheet#oncolumnsorted)|Ocorre quando uma ou mais colunas são classificadas. Isso acontece como resultado de uma operação de classificação da esquerda para a direita.|
 ||[onFiltered](/javascript/api/excel/excel.worksheet#onfiltered)|Ocorre quando o filtro é aplicado em uma planilha específica.|
 ||[onRowHiddenChanged](/javascript/api/excel/excel.worksheet#onrowhiddenchanged)|Ocorre quando o estado oculto de uma ou mais linhas é alterado em uma planilha específica.|
-||[onRowSorted](/javascript/api/excel/excel.worksheet#onrowsorted)|Ocorre quando uma ou mais linhas foram classificadas. Isso acontece como resultado de uma operação de classificação de cima para baixo.|
+||[onRowSorted](/javascript/api/excel/excel.worksheet#onrowsorted)|Ocorre quando uma ou mais linhas são classificadas. Isso ocorre como resultado de uma operação de classificação de cima para baixo.|
 ||[onSingleClicked](/javascript/api/excel/excel.worksheet#onsingleclicked)|Ocorre quando a operação clicada/pressionada à esquerda ocorre na planilha. Esse evento não será acionado quando você clicar nos seguintes casos:|
 ||[slicers](/javascript/api/excel/excel.worksheet#slicers)|Retorna uma coleção de segmentações de dados que fazem parte da planilha. Somente leitura.|
 ||[showOutlineLevels (translevels: Number, columnLevels: Number)](/javascript/api/excel/excel.worksheet#showoutlinelevels-rowlevels--columnlevels-)|Mostra grupos de linhas ou colunas por seus níveis de estrutura de tópicos.|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addfrombase64-base64file--sheetnamestoinsert--positiontype--relativeto-)|Insere as planilhas especificadas de uma pasta de trabalho na pasta de trabalho atual.|
-||[onColumnSorted](/javascript/api/excel/excel.worksheetcollection#oncolumnsorted)|Ocorre quando uma ou mais colunas foram classificadas. Isso acontece como resultado de uma operação de classificação da esquerda para a direita.|
+||[onColumnSorted](/javascript/api/excel/excel.worksheetcollection#oncolumnsorted)|Ocorre quando uma ou mais colunas são classificadas. Isso acontece como resultado de uma operação de classificação da esquerda para a direita.|
 ||[onFiltered](/javascript/api/excel/excel.worksheetcollection#onfiltered)|Ocorre quando filtro de uma planilha é aplicado na pasta de trabalho.|
 ||[onRowHiddenChanged](/javascript/api/excel/excel.worksheetcollection#onrowhiddenchanged)|Ocorre quando o estado oculto de uma ou mais linhas é alterado em uma planilha específica.|
-||[onRowSorted](/javascript/api/excel/excel.worksheetcollection#onrowsorted)|Ocorre quando uma ou mais linhas foram classificadas. Isso acontece como resultado de uma operação de classificação de cima para baixo.|
+||[onRowSorted](/javascript/api/excel/excel.worksheetcollection#onrowsorted)|Ocorre quando uma ou mais linhas são classificadas. Isso ocorre como resultado de uma operação de classificação de cima para baixo.|
 ||[onSingleClicked](/javascript/api/excel/excel.worksheetcollection#onsingleclicked)|Ocorre quando a operação com o botão esquerdo/tocado acontece na coleção de planilhas. Esse evento não será acionado quando você clicar nos seguintes casos:|
 |[WorksheetColumnSortedEventArgs](/javascript/api/excel/excel.worksheetcolumnsortedeventargs)|[address](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#address)|Obtém o endereço do intervalo que representa as áreas classificadas de uma planilha específica. Somente colunas alteradas como resultado da operação de classificação são retornadas.|
 ||[source](/javascript/api/excel/excel.worksheetcolumnsortedeventargs#source)|Obtém a origem do evento. Para saber detalhes, confira Excel.EventSource.|
@@ -223,5 +223,5 @@ A tabela a seguir lista as APIs JavaScript do Excel atualmente em versão prévi
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação de referência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-preview)
+- [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-preview)
 - [Conjuntos de requisitos da API JavaScript do Excel](./excel-api-requirement-sets.md)

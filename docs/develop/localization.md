@@ -1,14 +1,14 @@
 ---
 title: Localização para Suplementos do Office
 description: Você pode usar a API JavaScript para Office para determinar uma localidade e exibir cadeias de caracteres com base na localidade do aplicativo host ou para interpretar ou exibir dados com base na localidade dos dados.
-ms.date: 06/20/2019
+ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: de0037c687e49b79acb90ff59f1babc9da1f13f5
-ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
+ms.openlocfilehash: c2404177f2188a505522d972d5bdfdf323394eba
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "35575559"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626765"
 ---
 # <a name="localization-for-office-add-ins"></a>Localização para Suplementos do Office
 
@@ -172,7 +172,7 @@ Você pode incluir cadeias de caracteres de recurso localizadas diretamente em a
 Esta seção fornece exemplos que mostram como localizar uma descrição do Suplemento do Office, o nome de exibição e interface do usuário. 
 
 > [!NOTE]
-> Para baixar o Visual Studio 2017, confira a [página IDE do Visual Studio](https://visualstudio.microsoft.com/vs/). Durante a instalação, você precisará selecionar a carga de trabalho de desenvolvimento do Office/SharePoint.
+> Para baixar o Visual Studio 2019, confira a [página IDE do Visual Studio](https://visualstudio.microsoft.com/vs/). Durante a instalação, você precisará selecionar a carga de trabalho de desenvolvimento do Office/SharePoint.
 
 ### <a name="configure-office-to-use-additional-languages-for-display-or-editing"></a>Configurar o Office para usar idiomas adicionais para exibição ou edição
 
@@ -184,15 +184,19 @@ Depois de instalar o Language Accessory Pack, você pode configurar o Office par
 
 ### <a name="create-an-office-add-in-project"></a>Criar um projeto de Suplemento do Office
 
-Você precisará criar um projeto de Suplemento do Office do Visual Studio 2017.
+Você precisará criar um projeto de suplemento do Office do Visual Studio 2019.
 
 > [!NOTE]
-> Se ainda não instalou o Visual Studio 2017, confira a [página IDE do Visual Studio](https://visualstudio.microsoft.com/vs/) para obter instruções de download. Durante a instalação, você precisará selecionar a carga de trabalho de desenvolvimento do Office/SharePoint. Se você já instalou o Visual Studio 2017, [use o Instalador do Visual Studio](/visualstudio/install/modify-visual-studio/) para garantir que a carga de trabalho de desenvolvimento do Office/SharePoint seja instalada.
+> Se você ainda não instalou o Visual Studio 2019, consulte a [página do Visual Studio IDE](https://visualstudio.microsoft.com/vs/) para obter instruções de download. Durante a instalação, você precisará selecionar a carga de trabalho de desenvolvimento do Office/SharePoint. Se você já instalou o Visual Studio 2019, [use o instalador do Visual Studio](/visualstudio/install/modify-visual-studio/) para garantir que a carga de trabalho de desenvolvimento do Office/SharePoint esteja instalada.
 
+1. Escolha **criar um novo projeto**.
 
-1. No Visual Studio, escolha **Arquivo**  >  **Novo Projeto**.
-2. Na caixa de diálogo **Novo Projeto**, expanda **Visual Basic**, **Visual C#**, expanda **Office/SharePoint** e escolha **Suplementos**.
-3. Escolha **Suplemento do Word** e nomeie o suplemento **WorldReadyAddIn**. Escolha **OK**.
+2. Usando a caixa de pesquisa, insira o **suplemento**. Escolha **suplemento da Web do Word**e, em seguida, selecione **Avançar**.
+
+3. Nomeie o projeto **WorldReadyAddIn** e selecione **criar**.
+
+4. O Visual Studio cria uma solução, e os dois projetos dele são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.
+
 
 ### <a name="localize-the-text-used-in-your-add-in"></a>Localizar o texto usado no seu suplemento
 
