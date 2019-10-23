@@ -1,15 +1,15 @@
 ---
 title: Crie seu primeiro suplemento do painel de tarefas do Excel
 description: Saiba como criar um Suplemento do Excel simples usando a API JS do Office.
-ms.date: 09/18/2019
+ms.date: 10/17/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 6f5b78e1ffb154eb014bb4bb0ef8cb7135b2012f
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: 3ade0eb77f525ebd593a475736ab81742d915b94
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035313"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626968"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Criar um suplemento do painel de tarefas do Excel
 
@@ -72,11 +72,12 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 
 ### <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
-1. Na barra de menus do Visual Studio, selecione **Arquivo**  >  **Novo**  >  **Projeto**.
 
-2. Na lista de tipos de projeto em **Visual C#** ou em **Visual Basic**, expanda a opção **Office/SharePoint**, escolha **Suplementos** e depois **Suplemento da Web do Outlook** como o tipo de projeto. 
+1. No Visual Studio, escolha **Criar um novo projeto**.
 
-3. Dê um nome ao projeto e escolha **OK**.
+2. Usando a caixa de pesquisa, insira **suplemento**. Escolha **suplemento do Excel Web **, em seguida, selecione **Próximo**.
+
+3. Nomeie seu projeto e selecione **Criar**.
 
 4. Na janela **Criar Suplemento do Office**, escolha **Adicionar novas funcionalidades para o Excel**e clique em **Concluir** para criar o projeto.
 

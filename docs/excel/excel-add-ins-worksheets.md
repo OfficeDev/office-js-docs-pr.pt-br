@@ -1,25 +1,25 @@
 ---
 title: Trabalhe com planilhas usando a API JavaScript do Excel
 description: ''
-ms.date: 09/09/2019
+ms.date: 10/16/2019
 localization_priority: Priority
-ms.openlocfilehash: 3c06e3660c2c8d6bf362b38185b96c8012dc4b90
-ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
+ms.openlocfilehash: ea8dad58bdd1ce3875751661806293e9aa1222fb
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "36838557"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626842"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Trabalhe com planilhas usando a API JavaScript do Excel
 
-Este artigo fornece exemplos de código que mostram como executar tarefas comuns com planilhas usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos aos quais os objetos **Worksheet** e **WorksheetCollection** dão suporte, confira [Objeto Worksheet (API JavaScript para Excel)](/javascript/api/excel/excel.worksheet) e [Objeto WorksheetCollection (API JavaScript para Excel)](/javascript/api/excel/excel.worksheetcollection).
+Este artigo fornece exemplos de código que mostram como executar tarefas comuns com planilhas usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos aos quais os objetos `Worksheet` e `WorksheetCollection` dão suporte, confira [Objeto Worksheet (API JavaScript para Excel)](/javascript/api/excel/excel.worksheet) e [Objeto WorksheetCollection (API JavaScript para Excel)](/javascript/api/excel/excel.worksheetcollection).
 
 > [!NOTE]
 > As informações deste artigo se aplicam apenas a planilhas regulares; elas não se aplicam às folhas "gráfico" ou "macro".
 
 ## <a name="get-worksheets"></a>Obter planilhas
 
-O exemplo de código a seguir obtém a coleção de planilhas, carrega a propriedade **name** de cada planilha e grava uma mensagem no console.
+O exemplo de código a seguir obtém a coleção de planilhas, carrega a propriedade `name` de cada planilha e grava uma mensagem no console.
 
 ```js
 Excel.run(function (context) {
@@ -41,11 +41,11 @@ Excel.run(function (context) {
 ```
 
 > [!NOTE]
-> A propriedade **id** de uma planilha identifica exclusivamente a planilha em uma determinada pasta de trabalho e seu valor permanecerá igual, mesmo quando a planilha for renomeada ou movida. Quando uma planilha é excluída de uma pasta de trabalho no Excel para Mac, a **id** da planilha excluída pode ser reatribuída a uma nova planilha que é subsequentemente criada.
+> A propriedade `id` de uma planilha identifica exclusivamente a planilha em uma determinada pasta de trabalho e seu valor permanecerá igual, mesmo quando a planilha for renomeada ou movida. Quando uma planilha é excluída de uma pasta de trabalho no Excel para Mac, a `id` da planilha excluída pode ser reatribuída a uma nova planilha que é subsequentemente criada.
 
 ## <a name="get-the-active-worksheet"></a>Obter a planilha ativa
 
-O exemplo de código a seguir obtém a planilha ativa, carrega sua propriedade **name** e grava uma mensagem no console.
+O exemplo de código a seguir obtém a planilha ativa, carrega sua propriedade `name` e grava uma mensagem no console.
 
 ```js
 Excel.run(function (context) {
@@ -61,7 +61,7 @@ Excel.run(function (context) {
 
 ## <a name="set-the-active-worksheet"></a>Definir a planilha ativa
 
-O exemplo de código a seguir define a planilha ativa para a planilha chamada **Amostra**, carrega sua propriedade **name** e grava uma mensagem no console. Se não houver planilha com esse nome, o método **activate()** gerará um erro **ItemNotFound**.
+O exemplo de código a seguir define a planilha ativa para a planilha chamada **Amostra**, carrega sua propriedade `name` e grava uma mensagem no console. Se não houver planilha com esse nome, o método `activate()` gerará um erro `ItemNotFound`.
 
 ```js
 Excel.run(function (context) {
@@ -82,7 +82,7 @@ Esses exemplos mostram como fazer referência a uma planilha por sua posição r
 
 ### <a name="get-the-first-worksheet"></a>Obter a primeira planilha
 
-O exemplo de código a seguir obtém a primeira planilha na pasta de trabalho, carrega sua propriedade **name** e grava uma mensagem no console.
+O exemplo de código a seguir obtém a primeira planilha na pasta de trabalho, carrega sua propriedade `name` e grava uma mensagem no console.
 
 ```js
 Excel.run(function (context) {
@@ -98,7 +98,7 @@ Excel.run(function (context) {
 
 ### <a name="get-the-last-worksheet"></a>Obter a última planilha
 
-O exemplo de código a seguir obtém a última planilha na pasta de trabalho, carrega sua propriedade **name** e grava uma mensagem no console.
+O exemplo de código a seguir obtém a última planilha na pasta de trabalho, carrega sua propriedade `name` e grava uma mensagem no console.
 
 ```js
 Excel.run(function (context) {
@@ -114,7 +114,7 @@ Excel.run(function (context) {
 
 ### <a name="get-the-next-worksheet"></a>Obter a próxima planilha
 
-O exemplo de código a seguir obtém a planilha que vem depois da planilha ativa na pasta de trabalho, carrega sua propriedade **name** e grava uma mensagem no console. Se não houver planilha após a planilha ativa, o método **getNext()** gerará um erro **ItemNotFound**.
+O exemplo de código a seguir obtém a planilha que vem depois da planilha ativa na pasta de trabalho, carrega sua propriedade `name` e grava uma mensagem no console. Se não houver planilha após a planilha ativa, o método `getNext()` gerará um erro `ItemNotFound`.
 
 ```js
  Excel.run(function (context) {
@@ -131,7 +131,7 @@ O exemplo de código a seguir obtém a planilha que vem depois da planilha ativa
 
 ### <a name="get-the-previous-worksheet"></a>Obter a planilha anterior
 
-O exemplo de código a seguir obtém a planilha que precede a planilha ativa na pasta de trabalho, carrega sua propriedade **name** e grava uma mensagem no console. Se não houver planilha antes da planilha ativa, o método **getPrevious()** gerará um erro **ItemNotFound**.
+O exemplo de código a seguir obtém a planilha que precede a planilha ativa na pasta de trabalho, carrega sua propriedade `name` e grava uma mensagem no console. Se não houver planilha antes da planilha ativa, o método `getPrevious()` gerará um erro `ItemNotFound`.
 
 ```js
 Excel.run(function (context) {
@@ -148,7 +148,7 @@ Excel.run(function (context) {
 
 ## <a name="add-a-worksheet"></a>Adicionar uma planilha
 
-O exemplo de código a seguir adiciona uma nova planilha chamada **Amostra** à pasta de trabalho, carrega suas propriedades **name** e **position** e grava uma mensagem no console. A nova planilha é adicionada após todas as planilhas existentes.
+O exemplo de código a seguir adiciona uma nova planilha chamada **Amostra** à pasta de trabalho, carrega suas propriedades `name` e `position` e grava uma mensagem no console. A nova planilha é adicionada após todas as planilhas existentes.
 
 ```js
 Excel.run(function (context) {
@@ -162,6 +162,24 @@ Excel.run(function (context) {
             console.log(`Added worksheet named "${sheet.name}" in position ${sheet.position}`);
         });
 }).catch(errorHandlerFunction);
+```
+
+### <a name="copy-an-existing-worksheet"></a>Copiar uma planilha existente
+
+`Worksheet.copy` adiciona uma nova planilha que é uma cópia de uma planilha existente. O nome da nova planilha terá um número anexado ao final, consistente com a cópia de uma planilha feita pela Interface do Usuário do Excel (por exemplo, **MySheet (2) **). `Worksheet.copy` pode-se usar dois parâmetros, ambos opcionais:
+
+- `positionType` -Um [WorksheetPositionType](/javascript/api/excel/excel.worksheetpositiontype) enum especificando o local da pasta de trabalho em que a nova planilha deve ser adicionada.
+- `relativeTo` -Se o `positionType` for `Before` ou `After`, você precisa especificar uma planilha relativa à qual a nova planilha deve ser adicionada (esse parâmetro responde a pergunta "antes ou depois?").
+
+O exemplo de código a seguir copia a planilha atual e insere a nova planilha logo após a planilha atual.
+
+```js
+Excel.run(function (context) {
+    var myWorkbook = context.workbook;
+    var sampleSheet = myWorkbook.worksheets.getActiveWorksheet();
+    var copiedSheet = sampleSheet.copy(Excel.WorksheetPositionType.after, sampleSheet);
+    return context.sync();
+});
 ```
 
 ## <a name="delete-a-worksheet"></a>Excluir uma planilha
@@ -230,7 +248,7 @@ Esses exemplos mostram como definir a visibilidade de uma planilha.
 
 ### <a name="hide-a-worksheet"></a>Ocultar uma planilha
 
-O exemplo de código a seguir define a visibilidade da planilha chamada **Amostra** para oculta, carrega sua propriedade **name** e grava uma mensagem no console.
+O exemplo de código a seguir define a visibilidade da planilha chamada **Amostra** para oculta, carrega sua propriedade `name` e grava uma mensagem no console.
 
 ```js
 Excel.run(function (context) {
@@ -247,7 +265,7 @@ Excel.run(function (context) {
 
 ### <a name="unhide-a-worksheet"></a>Reexibir uma planilha
 
-O exemplo de código a seguir define a visibilidade da planilha chamada **Amostra** para visível, carrega sua propriedade **name** e grava uma mensagem no console.
+O exemplo de código a seguir define a visibilidade da planilha chamada **Amostra** para visível, carrega sua propriedade `name` e grava uma mensagem no console.
 
 ```js
 Excel.run(function (context) {
@@ -264,7 +282,7 @@ Excel.run(function (context) {
 
 ## <a name="get-a-single-cell-within-a-worksheet"></a>Obter uma única célula em uma planilha
 
-O exemplo de código a seguir obtém a célula que está localizada na linha 2, coluna 5 da planilha chamada **Amostra**, carrega suas propriedades **address** e **values** e grava uma mensagem no console. Os valores que são passados no método `getCell(row: number, column:number)` são número de linha e número de coluna indexados por zero para a célula que está sendo recuperada.
+O exemplo de código a seguir obtém a célula que está localizada na linha 2, coluna 5 da planilha chamada **Amostra**, carrega suas propriedades `address` e `values` e grava uma mensagem no console. Os valores que são passados no método `getCell(row: number, column:number)` são número de linha e número de coluna indexados por zero para a célula que está sendo recuperada.
 
 ```js
 Excel.run(function (context) {
