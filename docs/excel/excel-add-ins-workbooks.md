@@ -1,14 +1,14 @@
 ---
 title: Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 description: ''
-ms.date: 09/26/2019
+ms.date: 10/21/2019
 localization_priority: Priority
-ms.openlocfilehash: 66e531a382d467326e5132e60f06c98d414dbb16
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
+ms.openlocfilehash: 76f1a82b22fabaab63f5dc791656720ce82250c9
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353871"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626821"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 
@@ -75,7 +75,7 @@ reader.readAsDataURL(myFile.files[0]);
 ### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one-preview"></a>Inserir uma cópia de uma pasta de trabalho para a seção atual (visualização)
 
 > [!NOTE]
-> O método`WorksheetCollection.addFromBase64` só está atualmente disponível na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> O método `WorksheetCollection.addFromBase64` no momento só está disponível na visualização pública e somente no Office no Windows e Mac. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 O exemplo anterior mostra uma nova pasta de trabalho criada a partir de uma pasta de trabalho. Você também pode copiar algumas ou todas de uma pasta de trabalho para a atualmente associada com o suplemento. Uma pasta de trabalho [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) tem o método `addFromBase64` para inserir cópias de planilhas da pasta de trabalho de destino nela mesma. O outro arquivo da pasta de trabalho é passado como em cadeia de caracteres codificado em base 64, como a chamada `Excel.createWorkbook`.
 
@@ -261,54 +261,6 @@ A API do Excel também permite que os suplementos desativem os cálculos até qu
 ```js
 context.application.suspendApiCalculationUntilNextSync();
 ```
-
-## <a name="comments-preview"></a>Comentários (visualização)
-
-> [!NOTE]
-> As APIs de comentário estão disponíveis atualmente apenas na visualização pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-
-Todos os [comentários](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) em uma pasta de trabalho são acompanhados pela propriedade `Workbook.comments`. Isso inclui comentários criados por usuários e comentários criados por seu suplemento. A propriedade `Workbook.comments` é um objeto [CommentCollection](/javascript/api/excel/excel.commentcollection) que contém um conjunto de objetos [Comentário](/javascript/api/excel/excel.comment).
-
-Para adicionar comentários a uma pasta de trabalho, use o método `CommentCollection.add`, passando a célula onde o comentário será adicionado, como uma cadeia de caracteres ou um objeto [Range](/javascript/api/excel/excel.range) e o texto do comentário, como uma cadeia de caracteres. O exemplo a seguir adiciona um comentário à célula **A2**.
-
-```js
-Excel.run(function (context) {
-    var comments = context.workbook.comments;
-
-    // Note that an InvalidArgument error will be thrown if multiple cells passed to `Comment.add`.
-    comments.add("A2", "TODO: add data.");
-    return context.sync();
-});
-```
-
-Cada comentário contém metadados sobre a criação, como o autor e a data de criação. Os comentários criados por seu suplemento são considerados criados pelo usuário atual. O exemplo a seguir mostra como exibir o email do autor, o nome do autor e a data de criação de um comentário em **A2**.
-
-```js
-Excel.run(function (context) {
-    // Get the comment at cell A2.
-    var comment = context.workbook.comments.getItemByCell("Comments!A2");
-    comment.load(["authorEmail", "authorName", "creationDate"]);
-    return context.sync().then(function () {
-        console.log(`${comment.creationDate.toDateString()}: ${comment.authorName} (${comment.authorEmail})`);
-    });
-});
-```
-
-Cada comentário contém zero ou mais respostas. os objetos `Comment` têm uma propriedade `replies`, que é [CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection) que contém objetos [CommentReply](/javascript/api/excel/excel.commentreply). Para adicionar uma resposta a um comentário, use o método `CommentReplyCollection.add`, passando o texto da resposta. As respostas são exibidas na ordem em que são adicionadas. O exemplo a seguir adiciona uma resposta ao primeiro comentário da pasta de trabalho.
-
-```js
-Excel.run(function (context) {
-    // Get the first comment added to the workbook.
-    var comment = context.workbook.comments.getItemAt(0);
-    comment.replies.add("Thanks for the reminder!");
-    return context.sync();
-});
-```
-
-Para editar um comentário ou uma resposta de comentário, defina uma propriedade`Comment.content` e uma propriedade`CommentReply.content`. Para excluir um comentário ou uma resposta de comentário, use o método `Comment.delete` ou o método`CommentReply.delete`. Excluir um comentário também exclui todas as respostas associadas a esse comentário.
-
-> [!TIP]
-> Os comentários também podem ser gerenciados no nível da [planilha](/javascript/api/excel/excel.worksheet) usando as mesmas técnicas.
 
 ## <a name="save-the-workbook-preview"></a>Salvar a pasta de trabalho (visualização)
 

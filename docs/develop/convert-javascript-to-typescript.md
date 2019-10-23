@@ -1,43 +1,43 @@
 ---
 title: Converter um projeto de Suplemento do Office no Visual Studio para TypeScript
 description: ''
-ms.date: 08/14/2019
+ms.date: 10/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 29305df541a39ad76655a0f8a848138a369bbf39
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: 0a828a3f11a1fcaf71e277bdb667f866ea4ae06a
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477765"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626800"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Converter um projeto de Suplemento do Office no Visual Studio para TypeScript
 
 Você pode usar o modelo de Suplemento do Office no Visual Studio para criar um suplemento que usa JavaScript e depois converter esse projeto de suplemento para o TypeScript. Este artigo descreve o processo de conversão de um suplemento do Excel. Você pode usar o mesmo processo para converter outros tipos de projetos de suplementos do Office de JavaScript para TypeScript no Visual Studio.
 
 > [!NOTE]
-> Para criar um projeto de suplementos TypeScript do Office sem usar o Visual Studio, siga as instruções na seção "Gerador do Yeoman" de um [início rápido em 5 minutos](../index.md) e escolha `TypeScript` quando for solicitado pelo [Gerador de suplementos do Office do Yeoman](https://github.com/OfficeDev/generator-office).
+> Para criar um projeto de suplementos TypeScript do Office sem usar o Visual Studio, siga as instruções na seção "Gerador do Yeoman" de um [início rápido em 5 minutos](../index.md) e escolha `TypeScript` quando for solicitado pelo [Gerador de suplementos do Office do Yeoman](https://github.com/officedev/generator-office).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- [Visual Studio 2017](https://www.visualstudio.com/vs/) com a carga de trabalho de **desenvolvimento do Office/SharePoint** instalada
+- [Visual Studio 2019](https://www.visualstudio.com/vs/) com a carga de trabalho de **desenvolvimento do Office/SharePoint** instalada
 
     > [!TIP]
-    > Se você já instalou o Visual Studio 2017, [use o Instalador do Visual Studio](/visualstudio/install/modify-visual-studio) para garantir que a carga de trabalho de **desenvolvimento do Office/SharePoint** seja instalada. Se essa carga de trabalho ainda não estiver instalada, use o instalador do Visual Studio para [instalá-la](/visualstudio/install/modify-visual-studio?view=vs-2017#modify-workloads).
+    > Se você já instalou o Visual Studio 2019, [use o Instalador do Visual Studio](/visualstudio/install/modify-visual-studio) para garantir que a carga de trabalho de **desenvolvimento do Office/SharePoint** seja instalada. Se essa carga de trabalho ainda não estiver instalada, use o instalador do Visual Studio para [instalá-la](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-workloads).
 
-- SDK do TypeScript versão 2.3 ou posterior (para Visual Studio 2017)
+- TypeScript SDK versão 2.3 ou posterior (para o Visual Studio 2019)
 
     > [!TIP]
-    > No [Instalador do Visual Studio](/visualstudio/install/modify-visual-studio), selecione a guia **Componentes individuais** e role a tela para baixo até a seção **SDKs, bibliotecas e estruturas**. Nessa seção, verifique se pelo menos um dos componentes do **SDK do TypeScript** (versão 2.3 ou posterior) está selecionado. Se nenhum dos componentes do **SDK do TypeScript** estiver selecionado, selecione a versão mais recente do SDK disponível e, em seguida, escolha o botão **Modificar** para [instalar esse componente individual](/visualstudio/install/modify-visual-studio?view=vs-2017#modify-individual-components). 
+    > No [Instalador do Visual Studio](/visualstudio/install/modify-visual-studio), selecione a guia **Componentes individuais** e role a tela para baixo até a seção **SDKs, bibliotecas e estruturas**. Nessa seção, verifique se pelo menos um dos componentes do **SDK do TypeScript** (versão 2.3 ou posterior) está selecionado. Se nenhum dos componentes do **SDK do TypeScript** estiver selecionado, selecione a versão mais recente do SDK disponível e, em seguida, escolha o botão **Modificar** para [instalar esse componente individual](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-individual-components). 
 
 - Excel 2016 ou posterior
 
 ## <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
-1. Na barra de menus do Visual Studio, selecione **Arquivo** > **Novo**  >  **Projeto**.
+1. No Visual Studio, escolha **Criar um novo projeto**.
 
-2. Na lista de tipos de projeto em **Visual C#** ou em **Visual Basic**, expanda a opção **Office/SharePoint**, escolha **Suplementos** e depois **Suplemento da Web do Outlook** como o tipo de projeto. 
+2. Usando a caixa de pesquisa, insira **suplemento**. Escolha **Suplemento Excel Web **, em seguida, selecione **Próximo**.
 
-3. Dê um nome ao projeto e escolha **OK**.
+3. Nomeie seu projeto e selecione **Criar**.
 
 4. Na janela **Criar Suplemento do Office**, escolha **Adicionar novas funcionalidades para o Excel**e clique em **Concluir** para criar o projeto.
 
@@ -45,69 +45,54 @@ Você pode usar o modelo de Suplemento do Office no Visual Studio para criar um 
 
 ## <a name="convert-the-add-in-project-to-typescript"></a>Converter o projeto do suplemento para TypeScript
 
-1. No **Gerenciador de Soluções**, renomeie o arquivo **Home.js** como **Home.ts**.
+1. Localize o arquivo **Home.js** e o renomeie para **Home.ts**.
+
+2. Na guia **Ferramentas**, escolha **Gerenciador de Pacotes NuGet** e, em seguida, selecione **Gerenciar Pacotes do NuGet para Solução...**.
+
+3. Com a guia **Navegar** selecionada, insira **office-js.TypeScript.DefinitelyTyped** na caixa de pesquisa. Instalar ou atualizar esse pacote se ele já estiver instalado. Isso adicionará as definições de tipo de TypeScript da biblioteca do Office.js ao seu projeto.
+
+4. Na mesma caixa de pesquisa, digite **jquery.TypeScript.DefinitelyTyped**. Instalar ou atualizar esse pacote se ele já estiver instalado. Isso adicionará as definições do TypeScript jQuery ao seu projeto. Os pacotes do jQuery e do Office.js agora serão exibidos em um novo arquivo gerado pelo Visual Studio, chamado **packages.config**.
 
     > [!NOTE]
-    > Em seu projeto em TypeScript, você pode ter uma combinação de arquivos TypeScript e JavaScript e seu projeto irá compilar. Isso ocorre porque o TypeScript é um superconjunto tipado do JavaScript que compila o JavaScript. 
+    > Em seu projeto em TypeScript, você pode ter uma combinação de arquivos TypeScript e JavaScript e seu projeto irá compilar. Isso ocorre porque o TypeScript é um superconjunto tipado do JavaScript que compila o JavaScript.
 
-2. Selecione **Sim** para confirmar que você deseja alterar a extensão do nome de arquivo.
+5. Abra o arquivo **Home.ts** e adicione a seguinte declaração à parte superior do arquivo:
 
-3. Crie um novo arquivo chamado **Office.d.ts** na raiz do projeto de aplicativo Web.
-
-4. No navegador, abra o [arquivo de definições de tipo para o Office.js](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js/index.d.ts). Copie o conteúdo do arquivo para a área de transferência.
-
-5. No Visual Studio, abra o arquivo **Office.d.ts**, cole o conteúdo de sua área de transferência de arquivo e salve-o.
-
-6. Crie um novo arquivo chamado **jQuery.d.ts** na raiz do projeto de aplicativo Web.
-
-7. No navegador, abra o [arquivo de definições de tipos para jQuery](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/jquery/misc.d.ts). Copie o conteúdo do arquivo para a área de transferência.
-
-8. No Visual Studio, abra o arquivo **jQuery.d.ts**, cole o conteúdo de sua área de transferência nesse arquivo e salve-o.
-
-9. No Visual Studio, crie um novo arquivo chamado **tsconfig.json** na raiz do projeto de aplicativo web.
-
-10. Abra o arquivo **tsconfig.json**, adicione o conteúdo a seguir no arquivo e salve-o:
-
-    ```json
-    {
-        "compilerOptions": {
-            "skipLibCheck": true,
-            "lib": [ "es5", "dom", "es2015.promise" ],
-            "sourceMap": true
-        }
-    }
-    ```
-
-11. Abra o arquivo **Home.ts** e adicione a seguinte declaração à parte superior do arquivo:
-
-    ```typescript
+    ```TypeScript
     declare var fabric: any;
     ```
 
-12. No arquivo **Home.ts** localize a linha `Office.initialize = function (reason) {` e adicione uma linha imediatamente após ela para usar o polyfill na `window.Promise` global, conforme mostrado aqui:
+6. Em **Home.ts**, exclua a linha `if(!Office.context.requirements.isSetSupported('ExcelApi', '1.1') {` e substitua pela seguinte:
 
-    ```typescript
+    ```TypeScript
+    if(!Office.context.requirements.isSetSupported('ExcelApi', 1.1) {
+    ```
+
+7. No arquivo **Home.ts** localize a linha `Office.initialize = function (reason) {` e adicione uma linha imediatamente após ela para usar o polyfill na `window.Promise` global, conforme mostrado aqui:
+
+    ```TypeScript
     Office.initialize = function (reason) {
         // add the following line
         (window as any).Promise = OfficeExtension.Promise;
         ...
     ```
 
-13. No arquivo **Home.ts**, localize a função `displaySelectedCells`, substitua toda a função pelo código a seguir e salve o arquivo:
+8. No arquivo **Home.ts**, localize a função `displaySelectedCells`, substitua toda a função pelo código a seguir e salve o arquivo:
 
-    ```typescript
-    function displaySelectedCells() {
-        Office.context.document.getSelectedDataAsync(Office.CoercionType.Text,
-            null,
-            function (result) {
-                if (result.status === Office.AsyncResultStatus.Succeeded) {
-                    showNotification('The selected text is:', '"' + result.value + '"');
-                } else {
-                    showNotification('Error', result.error.message);
-                }
-            });
-    }
-    ```
+```TypeScript
+function displaySelectedCells() {
+    Office.context.document.getSelectedDataAsync(
+        Office.CoercionType.Text,
+        null,
+        function (result) {
+            if (result.status === Office.AsyncResultStatus.Succeeded) {
+                showNotification('The selected text is:', '"' + result.value + '"');
+            } else {
+                showNotification('Error', result.error.message);
+            }
+        });
+}
+```
 
 ## <a name="run-the-converted-add-in-project"></a>Executar o projeto do suplemento convertido
 

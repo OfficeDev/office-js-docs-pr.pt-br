@@ -1,18 +1,18 @@
 ---
 title: Criar e depurar suplementos do Office no Visual Studio
 description: Use o Visual Studio para criar e depurar suplementos do Office na área de trabalho do cliente Office no Windows
-ms.date: 06/20/2019
+ms.date: 10/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 9cc4d50d9b61daa4b1f55f7dd4c1e1156f8d959c
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 878cd308747ac7049ca37b21a9fcb2282a4bf60d
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128182"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626828"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Criar e depurar suplementos do Office no Visual Studio
 
-Este artigo descreve como usar o Visual Studio 2017 para criar um suplemento do Office para Excel, Word, PowerPoint ou Outlook e depurar suplemento na área de trabalho do cliente Office no Windows. Se você estiver usando outra versão do Visual Studio, os procedimentos poderão variar um pouco.
+Este artigo descreve como usar o Visual Studio 2019 para criar um Suplemento do Office para Excel, Word, PowerPoint ou Outlook e depurar o suplemento na área de trabalho do cliente Office no Windows. Se você estiver usando outra versão do Visual Studio, os procedimentos poderão variar um pouco.
 
 > [!NOTE]
 > O Visual Studio não suporta a criação de suplementos do Office para o OneNote ou o Project, mas você pode usar o [Yeoman gerador de suplementos do Office](https://github.com/OfficeDev/generator-office) para criar esses tipos de suplementos.
@@ -22,10 +22,10 @@ Este artigo descreve como usar o Visual Studio 2017 para criar um suplemento do 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- [Visual Studio 2017](https://www.visualstudio.com/vs/) com a carga de trabalho de **desenvolvimento do Office/SharePoint** instalada
+- [Visual Studio 2019](https://www.visualstudio.com/vs/) com a carga de trabalho de **desenvolvimento do Office/SharePoint** instalada
 
     > [!TIP]
-    > Se você já instalou o Visual Studio 2017, [use o Instalador do Visual Studio](/visualstudio/install/modify-visual-studio) para garantir que a carga de trabalho de **desenvolvimento do Office/SharePoint** seja instalada. Se essa carga de trabalho ainda não estiver instalada, use o instalador Visual Studio para [instalá-la](/visualstudio/install/modify-visual-studio?view=vs-2017#modify-workloads).
+    > Se você já instalou o Visual Studio 2019, [use o Instalador do Visual Studio](/visualstudio/install/modify-visual-studio) para garantir que a carga de trabalho de **desenvolvimento do Office/SharePoint** seja instalada. Se essa carga de trabalho ainda não estiver instalada, use o instalador do Visual Studio para [instalá-la](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-workloads).
 
 - Office 2013 ou posterior
 
@@ -36,19 +36,19 @@ Este artigo descreve como usar o Visual Studio 2017 para criar um suplemento do 
 
 Inicie realizando estas três etapas e, em seguida, conclua as etapas na seção a seguir que corresponde ao tipo de suplemento que você está criando. 
 
-1. Na barra de menus do Visual Studio, selecione **Arquivo** > **Novo**  >  **Projeto**.
+1. Abra o Visual Studio e na barra de menus do Visual Studio, selecione **Criar novo projeto**.
 
-2. Na lista de tipos de projeto em **Visual C#** ou no **Visual Basic**, expanda a opção **Office/SharePoint**, escolha **Suplementos** e escolha o tipo de projeto que você deseja criar. 
+2. Use a caixa de pesquisa, digite **Suplementos**, em seguida, escolha o tipo de projeto de suplemento que deseja criar.
 
 3. Dê um nome ao projeto e escolha **OK**.
 
 ### <a name="word-web-add-in-or-outlook-web-add-in"></a>Suplemento do Word na Web ou suplemento do Outlook na Web
 
-Se você optou por criar um **Suplemento Word na Web** ou uma **Suplemento do Outlook Web**O Visual Studio cria uma solução e os dois projetos aparecem no**Explorador de soluções**. Em seguida, você pode [explorar a solução do Visual Studio](#explore-the-visual-studio-solution). 
+Se você optou por criar um **Suplemento Word na Web** ou uma **Suplemento do Outlook Web**O Visual Studio cria uma solução e os dois projetos aparecem no**Explorador de soluções**. Em seguida, você pode [explorar a solução do Visual Studio](#explore-the-visual-studio-solution).
 
 ### <a name="powerpoint-web-add-in"></a>Suplemento do PowerPoint Web 
 
-Se você optou por criar um **suplemento PowerPoint Web**, a caixa de diálogo**Criar Suplemento do Office** aparece. 
+Se você optou por criar um **suplemento PowerPoint Web**, a caixa de diálogo**Criar Suplemento do Office** aparece.
 
 - Para criar um suplemento no painel tarefas, selecione **Adicionar novas funcionalidades para o PowerPoint** e, em seguida, escolha o botão **Concluir** para criar a  solução no Visual Studio.
 
@@ -200,7 +200,7 @@ Depois, o Visual Studio faz o seguinte:
 
 3. Abre o aplicativo host.
 
-O Visual Studio não mostra erros de validação na janela **OUTPUT** ao compilar o projeto. O Visual Studio relata erros e avisos na janela **ERRORLIST** à medida que eles ocorrem. O Visual Studio também relata erros de validação mostrando sublinhados ondulados (conhecidos como rabiscos) de cores diferentes no editor de código e texto. Essas marcas o notificam de problemas que o Visual Studio detectou no código. Para saber mais, confira [Editor de código e texto](https://msdn.microsoft.com/library/se2f663y(v=vs.140).aspx). Para saber mais sobre como habilitar ou desabilitar a validação, confira: [Opções, Editor de texto, JavaScript, IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2017).
+O Visual Studio não mostra erros de validação na janela **OUTPUT** ao compilar o projeto. O Visual Studio relata erros e avisos na janela **ERRORLIST** à medida que eles ocorrem. O Visual Studio também relata erros de validação mostrando sublinhados ondulados (conhecidos como rabiscos) de cores diferentes no editor de código e texto. Essas marcas o notificam de problemas que o Visual Studio detectou no código. Para saber mais sobre como habilitar ou desabilitar a validação, confira: [Opções, Editor de texto, JavaScript, IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019).
 
 Para examinar as regras de validação do arquivo de manifesto XML no projeto, confira [Manifesto XML de suplementos do Office](../develop/add-in-manifests.md).
 

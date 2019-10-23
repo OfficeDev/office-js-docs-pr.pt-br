@@ -1,14 +1,14 @@
 ---
 title: Criar um Suplemento do Office com ASP.NET que use logon único
 description: ''
-ms.date: 04/15/2019
+ms.date: 10/11/2019
 localization_priority: Priority
-ms.openlocfilehash: bc8c2427171f06865de6c809a5d7311018fcc278
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 9844b8f9b9b966c0a5348f02f5797e7a07eb67b6
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36695802"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626793"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>Criar um Suplemento do Office com ASP.NET que use logon único (visualização)
 
@@ -21,7 +21,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* A versão mais recente disponível do Visual Studio 2017.
+* A versão mais recente disponível do Visual Studio 2019.
 
 * Office 365 (a versão de assinatura do Office). Build e versão mensal mais recentes do canal de Participante do programa Office Insider. É necessário ingressar no programa Office Insider para obter essa versão. Para saber mais, confira a página [Seja um Office Insider](https://products.office.com/office-insider?tab=tab-1). Observe que, quando um build é promovido ao Canal Semestral de produção, o suporte para recursos de visualização, como o SSO, é desativado para esse build.
 
@@ -125,7 +125,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
     > * O valor de **Resource** é o **URI da ID do Aplicativo** que você definiu quando adicionou a plataforma API Web no registro do suplemento.
     > * A seção **Scopes** só será usada para gerar uma caixa de diálogo de consentimento se o suplemento for vendido no AppSource.
 
-1. Abra a guia **Avisos** da **Lista de Erros** no Visual Studio. Se houver um aviso que `<WebApplicationInfo>` não é um filho válido de `<VersionOverrides>`, sua versão do Visual Studio 2017 Preview não reconhecerá a marcação SSO. Para solucionar esse problema, faça o seguinte para um suplemento do Word, Excel ou PowerPoint. Se você estiver trabalhando com um suplemento do Outlook, confira a solução abaixo.
+1. Abra a guia **Avisos** da **Lista de Erros** no Visual Studio. Se houver um aviso informando que o `<WebApplicationInfo>` não é um filho válido do `<VersionOverrides>`, sua versão do Visual Studio não reconhece a marcação SSO. Para solucionar esse problema, faça o seguinte para um suplemento do Word, Excel ou PowerPoint. Se você estiver trabalhando com um suplemento do Outlook, confira a solução abaixo.
 
    - **Solução alternativa para Word, Excel e PowerPoint**
 
@@ -373,7 +373,7 @@ As instruções a seguir são escritas de forma geral, elas podem ser usadas em 
     var message = JSON.parse(result.responseText).Message;
     ```
 
-1. Substitua `TODO12` pelo código a seguir. Observação sobre o código:
+1. Substitua `TODO12` pelo código a seguir. Observação sobre este código:
 
     * O erro 50076 ocorre quando o Microsoft Graph requer uma forma adicional de autenticação.
     * O host do Office deve obter um novo token com o valor **Claims** como a opção `authChallenge`. Isso instrui o AAD a solicitar ao usuário todas as formas de autenticação requeridas.
