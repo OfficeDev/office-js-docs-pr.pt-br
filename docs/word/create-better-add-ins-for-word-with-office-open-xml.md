@@ -1,14 +1,14 @@
 ---
 title: Criar suplementos melhores para o Word com o Office Open XML
 description: ''
-ms.date: 03/19/2019
+ms.date: 10/10/2019
 localization_priority: Priority
-ms.openlocfilehash: e13911da0dbdb9fdb0215d433a9559bf1b747eb9
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 1eb143e60da88ac8786b9b56f5db93a20aac4e20
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449986"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37627094"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Criar suplementos melhores para o Word com o Office Open XML
 
@@ -833,13 +833,10 @@ Após executar as sete etapas anteriores, você provavelmente terá removido cer
 
 Independentemente de você parar por aqui ou optar por se aprofundar ainda mais no conteúdo para localizar todas as linhas de marcação que pode recortar, lembre-se de que pode usar o exemplo de código referenciado anteriormente, [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML), como um bloco de rascunho para testar com rapidez e facilidade a marcação editada.
 
-
 > [!TIP]
-> Se você atualizar um trecho do Office Open XML em uma solução existente durante o desenvolvimento, limpe arquivos de Internet temporários antes de executar a solução novamente para atualizar o Office Open XML usado pelo código. A marcação incluída na solução em arquivos XML é armazenada no cache no computador. Claro, você pode limpar os arquivos de Internet temporários do navegador da Web padrão. Para acessar as opções da Internet e excluir essas configurações de dentro do Visual Studio 2017, no menu **Depurar**, escolha **Opções**. Em seguida, em **Ambiente**, escolha **Navegador da Web** e **Opções do Internet Explorer**.
-
+> Se você atualizar um trecho do Office Open XML em uma solução existente durante o desenvolvimento, limpe arquivos temporários de Internet antes de executar a solução novamente para atualizar o Office Open XML usado pelo código. A marcação incluída na solução em arquivos XML é armazenada em cache no computador. Claro, você pode limpar os arquivos temporários de Internet do navegador Web padrão. Para acessar as opções da Internet e excluir essas configurações de dentro do Visual Studio 2019, no menu **Depurar**, escolha **Opções**. Em seguida, em **Ambiente**, escolha **Navegador da Web** e **Opções do Internet Explorer**.
 
 ## <a name="creating-an-add-in-for-both-template-and-stand-alone-use"></a>Criação de um suplemento para o modelo e para uso autônomo
-
 
 Neste tópico, você viu vários exemplos do que pode fazer com o Office Open XML em suplementos. Vimos uma ampla variedade de exemplos de tipo de conteúdo avançado que você pode inserir em documentos usando o tipo de coerção do Office Open XML, juntamente com os métodos de JavaScript para inserir o conteúdo na seleção ou em um local específico (associado).
 
