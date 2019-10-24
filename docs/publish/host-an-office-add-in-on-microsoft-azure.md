@@ -1,14 +1,14 @@
 ---
 title: Hospedar um suplemento do Office no Microsoft Azure | Microsoft Docs
 description: Saiba como implantar o aplicativo Web de um suplemento no Azure e realizar sideload do suplemento para testar em um aplicativo cliente do Office.
-ms.date: 03/19/2019
+ms.date: 10/16/2019
 localization_priority: Priority
-ms.openlocfilehash: 5db98ca65aac019a027592a442f427ee3b6126f1
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 0cfddacf48bda9ed7b63d4018e3ae0437f15bcd9
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451091"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626975"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>Hospedar um Suplemento do Office no Microsoft Azure
 
@@ -18,10 +18,10 @@ Este artigo descreve como implantar o aplicativo Web de um suplemento no Azure e
 
 ## <a name="prerequisites"></a>Pré-requisitos 
 
-1. Instale o [Visual Studio 2017](https://www.visualstudio.com/downloads) e opte por incluir a carga de trabalho de **desenvolvimento do Azure**.
+1. Instale o [Visual Studio 2019](https://www.visualstudio.com/downloads) e opte por incluir a carga de trabalho de **desenvolvimento do Azure**.
 
     > [!NOTE]
-    > Se você tiver instalado o Visual Studio 2017 anteriormente, [use o Instalador do Visual Studio](/visualstudio/install/modify-visual-studio) para garantir que a carga de trabalho de **desenvolvimento do Azure** esteja instalada. 
+    > Se você tiver instalado o Visual Studio 2019 anteriormente, [use o Instalador do Visual Studio](/visualstudio/install/modify-visual-studio) para garantir que a carga de trabalho de **desenvolvimento do Azure** esteja instalada. 
 
 2. Instalar o Office.
 
@@ -68,69 +68,37 @@ Este artigo descreve como implantar o aplicativo Web de um suplemento no Azure e
 
 6. Feche o Word.
 
-## <a name="step-3-create-a-web-app-in-azure"></a>Etapa 3: Criar um aplicativo Web no Azure
-
-Crie um aplicativo Web vazio no Azure usando [Visual Studio 2017](../publish/host-an-office-add-in-on-microsoft-azure.md#using-visual-studio-2017) ou o [portal do Azure](../publish/host-an-office-add-in-on-microsoft-azure.md#using-the-azure-portal).
-
-### <a name="using-visual-studio-2017"></a>Usar o Visual Studio 2017
-
-Para criar o aplicativo Web usando o Visual Studio 2017, realize as etapas a seguir.
-
-1. No Visual Studio, no menu **Exibir**, escolha **Gerenciador de Servidores**. Clique com o botão direito do mouse em **Azure** e escolha **Conectar-se à assinatura do Microsoft Azure**. Siga as instruções para se conectar à sua assinatura do Azure.
-
-2. No Visual Studio, no **Gerenciador de Servidores**, expanda **Azure**, clique com o botão direito do mouse em **Serviço de Aplicativo** e escolha **Criar novo aplicativo Web**.
-
-3. Na caixa de diálogo **Criar Serviço de Aplicativo**, forneça estas informações:
-
-      - Insira um **Nome do Aplicativo Web** exclusivo para seu site. O Azure verifica se o nome do site é exclusivo em todo o domínio azurewebsites.net.
-
-      - Escolha a **Assinatura** a ser usada para criar esse site.
-
-      - Escolha o **Grupo de Recursos** para seu site. Se você criar um novo grupo, também precisará dar um nome a ele.
-
-      - Escolha o **Plano do Serviço de Aplicativo** a ser usado para criar esse site. Se você criar um novo plano, também precisará dar um nome a ele.
-
-      - Escolha **Criar**.
-
-    O novo aplicativo Web aparece no **Gerenciador de Servidores** em **Azure** >> **Serviço de Aplicativo** >> (o grupo de recursos escolhido).
-
-4. Clique com o botão direito do mouse no novo aplicativo Web e escolha **Exibir no Navegador**. O navegador será aberto e exibirá uma página da Web com a mensagem "Seu aplicativo de Serviço de Aplicativo foi criado".
-
-5. Na barra de endereços do navegador, altere a URL do aplicativo Web para que ela use HTTPS e pressione **Enter** para confirmar se o protocolo HTTPS foi habilitado. 
-
-    > [!IMPORTANT]
-    > [!include[HTTPS guidance](../includes/https-guidance.md)] Os sites do Azure fornecem automaticamente um ponto de extremidade HTTPS.
-
-### <a name="using-the-azure-portal"></a>Usar o portal do Azure
+## <a name="step-3-create-a-web-app-in-azure-using-the-azure-portal"></a>Etapa 3: Criar um aplicativo Web no Azure usando o portal do Azure
 
 Para criar o aplicativo Web usando o portal do Azure, realize as etapas a seguir.
 
 1. Faça logon no [portal do Azure](https://portal.azure.com/) usando suas credenciais do Azure.
 
-2. Escolha **Novo** > **Web + Celular** > **Aplicativo Web**.
+2. Em **Serviços do Azure**, selecione **Aplicativos Web**.
 
-3. Na caixa de diálogo **Criar Aplicativo Web**, forneça estas informações:
-
-      - Insira um **Nome de aplicativo** exclusivo para seu site. O Azure verifica se o nome do site é exclusivo em todo o domínio azureweb apps.net.
+3. Na página **Serviço de Aplicativo**, selecione **Adicionar**. Forneça estas informações:
 
       - Escolha a **Assinatura** a ser usada para criar esse site.
-
+      
       - Escolha o **Grupo de Recursos** para seu site. Se você criar um novo grupo, também precisará dar um nome a ele.
+      
+      - Insira um **Nome de aplicativo** exclusivo para seu site. O Azure verifica se o nome do site é exclusivo em todo o domínio azureweb apps.net.
+
+      - Escolha se deseja publicar usando um código ou um contêiner do docker.
+
+      - Especificar uma **Pilha de tempo de execução**.
 
       - Escolha o **SO** para seu site.
 
-      - Escolha o **Plano do Serviço de Aplicativo** a ser usado para criar esse site. Se você criar um novo plano, também precisará dar um nome a ele.
+      - Escolha uma **Região**.
+
+      - Escolha o **Plano do Serviço de Aplicativo** a ser usado para criar esse site.
 
       - Escolha **Criar**.
 
-4. Escolha **Notificações** (o ícone de sino localizado na borda superior do portal do Azure) e, em seguida, escolha a notificação **Implantações bem-sucedidas** para abrir a página **Visão geral** no portal do Azure.
+4. A próxima página informa que a implantação está em andamento e quando ela é concluída. Quando estiver concluída, selecione **Ir ao recurso**.  
 
-    > [!NOTE]
-    > A notificação será alterada de **Implantação em andamento** para **Implantações bem-sucedidas** quando a implantação do site for concluída.
-
-5. Na seção **Fundamentos** da página **Visão geral** do site no portal do Azure, escolha a URL exibida em **URL**. O navegador será aberto e exibirá uma página da Web com a mensagem "Seu aplicativo de Serviço de Aplicativo foi criado". 
-
-6. Na barra de endereços do navegador, altere a URL do aplicativo Web para que ela use HTTPS e pressione **Enter** para confirmar se o protocolo HTTPS foi habilitado. 
+5. Na seção **Visão geral**, escolha a URL exibida em **URL**. O navegador será aberto e exibirá uma página da Web com a mensagem “Seu aplicativo de Serviço de Aplicativo está funcionando”.
 
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)] Os sites do Azure fornecem automaticamente um ponto de extremidade HTTPS.
@@ -139,17 +107,17 @@ Para criar o aplicativo Web usando o portal do Azure, realize as etapas a seguir
 
 1. Inicie o Visual Studio como um administrador.
 
-2. Escolha **Arquivo** > **Novo** > **Projeto**.
+2. Escolha **Criar um novo projeto**.
 
-3. Em **Modelos**, expanda **Visual C#** (ou **Visual Basic**), expanda **Office/SharePoint** e escolha **Suplementos**.
+3. Usando a caixa de pesquisa, insira **suplemento**.
 
-4. Escolha **Suplemento da Web do Word** e escolha **OK** para aceitar as configurações padrão.
+4. Escolha **Suplemento da Web do Word** como o tipo de projeto e, em seguida, escolha **Avançar** para aceitar as configurações padrão.
 
-O Visual Studio cria um suplemento básico do Word que você pode publicar como está, sem fazer alterações no projeto da Web.
+O Visual Studio cria um suplemento básico do Word que você pode publicar como está, sem fazer alterações no projeto da Web. Para criar um suplemento para outro tipo de host do Office, como o Excel, repita as etapas e escolha um tipo de projeto com o host do Office desejado.
 
 ## <a name="step-5-publish-your-office-add-in-web-app-to-azure"></a>Etapa 5: publicar seu aplicativo Web do suplemento do Office no Azure
 
-1. Com seu projeto de suplemento aberto no Visual Studio, expanda o nó da solução no **Gerenciador de Soluções** a fim de ver ambos os projetos para a solução.
+1. Com seu projeto de suplemento aberto no Visual Studio, expanda o nó da solução no **Gerenciador de Soluções**, em seguida, selecione **Serviço de Aplicativo**.
 
 2. Clique com botão direito do mouse no projeto da Web e escolha **Publicar**. O projeto da Web contém arquivos do aplicativo Web do suplemento do Office, portanto, esse é o projeto que você publica no Azure.
 
@@ -161,11 +129,9 @@ O Visual Studio cria um suplemento básico do Word que você pode publicar como 
 
       - Escolha **Publicar**.
 
-4. Na caixa de diálogo **Serviço de Aplicativo**, localize e escolha o aplicativo Web que você criou na [Etapa 3: criar um aplicativo Web no Azure](../publish/host-an-office-add-in-on-microsoft-azure.md#step-3-create-a-web-app-in-azure) e, em seguida, escolha **OK**. 
+4. O Visual Studio publica o projeto da Web de seu Suplemento do Office no seu aplicativo Web do Azure. Quando o Visual Studio terminar de publicar o projeto da Web, o navegador abrirá e mostrará uma página da Web com o texto "Seu aplicativo de Serviço de Aplicativo foi criado." Esta é a página padrão atual do aplicativo Web.
 
-    O Visual Studio publica o projeto da Web de seu Suplemento do Office no seu aplicativo Web do Azure. Quando o Visual Studio terminar de publicar o projeto da Web, o navegador abrirá e mostrará uma página da Web com o texto "Seu aplicativo de Serviço de Aplicativo foi criado." Esta é a página padrão atual do aplicativo Web.
-
- Para ver a página da Web do seu suplemento, altere a URL para que ela use HTTPS e especifique o caminho da página HTML do seu suplemento (por exemplo: https://YourDomain.azurewebsites.net/Home.html). Isso confirma que o aplicativo Web do suplemento já está hospedado no Azure. Copie a URL raiz (por exemplo: https://YourDomain.azurewebsites.net); você precisará dela ao editar o arquivo de manifesto do suplemento mais tarde neste artigo.
+5. Copie a URL raiz (por exemplo:https://YourDomain.azurewebsites.net); você precisará dela ao editar o arquivo de manifesto do suplemento, mais tarde neste artigo.
 
 ## <a name="step-6-edit-and-deploy-the-add-in-xml-manifest-file"></a>Etapa 6: Editar e implantar o arquivo de manifesto XML do suplemento
 
@@ -175,13 +141,9 @@ O Visual Studio cria um suplemento básico do Word que você pode publicar como 
 
 3. No arquivo de manifesto XML, localize e substitua todas as instâncias de "~remoteAppUrl" pela URL raiz do aplicativo Web do suplemento no Azure. Esta é a URL que você copiou anteriormente depois que publicou o aplicativo Web do suplemento no Azure (por exemplo: https://YourDomain.azurewebsites.net). 
 
-4. Escolha **Arquivo** e, em seguida, **Salvar Tudo**. Feche o arquivo do manifesto XML do suplemento.
+4. Escolha **Arquivo** e **Salvar tudo**. Em seguida, copie o arquivo do manifesto XML (por exemplo, WordWebAddIn.xml).
 
-5. No **Gerenciador de Soluções**, clique com o botão direito do mouse na pasta do manifesto e escolha **Abrir Pasta no Gerenciador de Arquivos**.
-
-6. Copie o arquivo de manifesto XML do suplemento (por exemplo, WordWebAddIn.xml). 
-
-7. Navegue até o compartilhamento de arquivos de rede que você criou na [Etapa 1: criar uma pasta compartilhada](../publish/host-an-office-add-in-on-microsoft-azure.md#step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file) e cole o arquivo de manifesto na pasta.
+5. Usando o programa **Gerenciador de Arquivos**, navegue até o compartilhamento de arquivos de rede que você criou na [Etapa 1: criar uma pasta compartilhada](../publish/host-an-office-add-in-on-microsoft-azure.md#step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file) e cole o arquivo de manifesto na pasta.
 
 ## <a name="step-7-insert-and-run-the-add-in-in-the-office-client-application"></a>Etapa 7: Inserir e executar o suplemento no aplicativo cliente do Office
 

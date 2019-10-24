@@ -1,60 +1,48 @@
 ---
-title: Empacotar seu suplemento usando o Visual Studio para preparar a publicação | Microsoft Docs
-description: Como implantar seu projeto Web e empacotar seu suplemento usando o Visual Studio 2017.
-ms.date: 03/19/2019
+title: Empacotar seu suplemento usando o Visual Studio para preparar a publicação
+description: Como implantar seu projeto Web e empacotar seu suplemento usando o Visual Studio 2019.
+ms.date: 10/14/2019
 localization_priority: Priority
-ms.openlocfilehash: 9233ebed217c9e4cc5def0dace67043f29462296
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 784741cffa0e3015caaa9c70fbb56f4b70df9462
+ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451084"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "37626961"
 ---
 # <a name="package-your-add-in-using-visual-studio-to-prepare-for-publishing"></a>Empacotar seu suplemento usando o Visual Studio para preparar a publicação
 
-Seu pacote de Suplemento do Office contém um [arquivo de manifesto XML](../develop/add-in-manifests.md) que deve ser usado para publicar o suplemento. Você terá que publicar os arquivos do aplicativo Web do seu projeto separadamente. Este artigo descreve como implantar seu projeto Web e empacotar seu suplemento usando o Visual Studio 2017.
+Seu pacote de Suplemento do Office contém um [arquivo de manifesto XML](../develop/add-in-manifests.md) que deve ser usado para publicar o suplemento. Você terá que publicar os arquivos do aplicativo Web do seu projeto separadamente. Este artigo descreve como implantar seu projeto Web e empacotar seu suplemento usando o Visual Studio 2019.
 
-## <a name="to-deploy-your-web-project-using-visual-studio-2017"></a>Implantar seu projeto Web usando o Visual Studio 2017
+## <a name="to-deploy-your-web-project-using-visual-studio-2019"></a>Para implantar seu projeto Web usando o Visual Studio 2019
 
-Conclua as etapas a seguir para implantar seu projeto Web usando o Visual Studio 2017.
+Conclua as etapas a seguir para implantar seu projeto Web usando o Visual Studio 2019.
 
-1. No **Gerenciador de Soluções**, abra o menu de atalho do projeto do suplemento e escolha  **Publicar**.
+1. Na guia **Compilar**, escolha **Publicar [Nome do seu suplemento]**.
 
-    A página **Publicar seu suplemento** é exibida.
-
-2. Na lista suspensa **Perfil atual**, selecione um perfil ou escolha **Novo...** para criar um novo perfil.
+2. Na janela **Escolha um destino de publicação**, escolha uma das opções de publicação para o seu destino preferido. Cada destino de publicação exige que você inclua mais informações para começar, como um local de pasta ou uma Máquina Virtual do Azure. Depois de especificar um local de publicação e preencher todas as informações necessárias, selecione **Publicar**
 
     > [!NOTE]
-    > Um perfil de publicação especifica o servidor que você está implantando, as credenciais necessárias para fazer logon no servidor, os bancos de dados para implantar e outras opções de implantação.
+    > A escolha de um destino de publicação especifica o servidor que você está implantando, as credenciais necessárias para fazer logon no servidor, os bancos de dados para implantar e outras opções de implantação.
 
-    Se você escolher **Novo ...**, o assistente é exibido com a página **Criar perfil de Publicação**. Use esse assistente para importar um perfil de publicação de um site de hospedagem, como o Microsoft Azure, ou criar um novo perfil e adicionar seu servidor, as credenciais e outras configurações no procedimento seguinte.
+3. Para obter mais informações sobre as etapas de implantação de cada opção de destino de publicação, confira [Primeiro contato com a implantação no Visual Studio](/visualstudio/deployment/deploying-applications-services-and-components?view=vs-2019).
 
-    Para mais informações sobre como importar perfis de publicação ou criar novos perfis de publicação, veja [Criar um Perfil de Publicação](https://msdn.microsoft.com/library/dd465337.aspx#creating_a_profile).
+## <a name="to-package-and-publish-your-add-in-using-iis-ftp-or-web-deploy-using-visual-studio-2019"></a>Para empacotar e publicar seu suplemento usando IIS, FTP ou implantação da Web usando o Visual Studio 2019
 
-3. Na página **Publicar seu suplemento**, escolha o link **Implantar seu projeto Web**.
+Conclua as etapas a seguir para empacotar seu suplemento usando o Visual Studio 2019.
 
-    A caixa de diálogo **Publicar** é exibida. Para mais informações sobre como usar o assistente, veja [Como: implantar um Projeto Web usando a Publicação On-Click no Visual Studio](https://msdn.microsoft.com/library/dd465337.aspx).
-
-## <a name="to-package-your-add-in-using-visual-studio-2017"></a>Empacotar seu suplemento usando o Visual Studio 2017
-
-Conclua as etapas a seguir para empacotar seu suplemento usando o Visual Studio 2017.
-
-1. Na página **Publicar seu suplemento**, escolha o botão **Empacotar o suplemento**.
-
-    Um assistente é exibido com a página **Empacotar o suplemento**.
-
-2. Na lista suspensa **Onde seu site está hospedado?**, escolha ou digite a URL do site que hospedará os arquivos de conteúdo do seu suplemento e escolha **Concluir**.
+1. Na guia **Compilar**, escolha **Publicar [Nome do seu suplemento]**.
+2. Na janela **Escolha um destino de publicação**, escolha **IIS, FTP, etc** e selecione **Configurar**. Em seguida, selecione **Publicar**.
+3. Será exibido um assistente que o ajudará durante todo o processo. Verifique se o método de publicação é o método preferido, como implantação da Web.
+4. Na caixa **URL de destino**, digite a URL do site que hospedará os arquivos de conteúdo do seu suplemento e, em seguida, selecione **Avançar**. Se você pretende enviar seu suplemento ao AppSource, escolha o botão **Validar conexão** para identificar problemas que possam impedir a aceitação do seu suplemento. Você deve resolver todos os problemas antes de enviar seu suplemento para a loja.
+5. Confirme as configurações desejadas, incluindo **Opções de publicação de arquivo** e selecione **Salvar**.
 
     > [!IMPORTANT]
-    > [!include[HTTPS guidance](../includes/https-guidance.md)]Os sites do Azure fornecem automaticamente um ponto de extremidade HTTPS.
-
-    O Visual Studio gera os arquivos nos quais você precisa publicar seu suplemento e, em seguida, abre a pasta de saída de publicação.
-
-Se você pretende enviar seu suplemento ao AppSource, escolha o botão **Executar uma verificação de validação** para identificar problemas que possam impedir a aceitação do seu suplemento. Você deve resolver todos os problemas antes de enviar seu suplemento para a loja.
+    > [!include[HTTPS guidance](../includes/https-guidance.md)] Os sites do Azure fornecem automaticamente um ponto de extremidade HTTPS.
 
 Agora é possível carregar seu manifesto XML no local apropriado para [publicar seu suplemento](../publish/publish.md). É possível encontrar o manifesto XML em `OfficeAppManifests` na pasta `app.publish`. Por exemplo:
 
- `%UserProfile%\Documents\Visual Studio 2017\Projects\MyApp\bin\Debug\app.publish\OfficeAppManifests`
+ `%UserProfile%\Documents\Visual Studio 2019\Projects\MyApp\bin\Debug\app.publish\OfficeAppManifests`
 
 ## <a name="see-also"></a>Confira também
 
