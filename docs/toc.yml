@@ -489,6 +489,9 @@
         - name: Coautoria em suplementos do Excel
           href: excel/co-authoring-in-excel-add-ins.md
           displayName: Excel
+        - name: Comentários
+          href: excel/excel-add-ins-comments.md
+          displayName: Excel
         - name: Formatação condicional de intervalos
           href: excel/excel-add-ins-conditional-formatting.md
           displayName: Excel
