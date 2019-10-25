@@ -3,12 +3,12 @@ title: Conceitos avançados de programação com a API JavaScript do Excel
 description: ''
 ms.date: 07/17/2019
 localization_priority: Priority
-ms.openlocfilehash: a4639070ed74f9beb757de7c30d1d7e32a3e63fa
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: 8755b479543d48fcbbbf2bfa1ea93fb40af87ecf
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477751"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37681925"
 ---
 # <a name="advanced-programming-concepts-with-the-excel-javascript-api"></a>Conceitos avançados de programação com a API JavaScript do Excel
 
@@ -145,7 +145,7 @@ myWorksheets.load({
 
 ## <a name="scalar-and-navigation-properties"></a>Propriedades escalares e de navegação
 
-Há duas categorias de propriedades: **escalar** e de **navegação**. As propriedades escalares são tipos atribuíveis, como cadeias de caracteres, inteiros e estruturas JSON. As propriedades de navegação são objetos Somente Leitura e coleções de objetos que têm seus campos atribuídos, em vez de atribuir diretamente a propriedade. Por exemplo, os membros `name` e `position` no objeto [Planilha](/javascript/api/excel/excel.worksheet) são propriedades escalares, enquanto `protection` e `tables` são propriedades de navegação. `prompt` no objeto [DataValidation] é um exemplo de uma propriedade escalar que deve ser definida usando um objeto JSON (`dv.prompt = { title: "MyPrompt"}`), em vez de definir as subpropriedades (`dv.prompt.title = "MyPrompt" // will not set the title`).
+Há duas categorias de propriedades: **escalar** e de **navegação**. As propriedades escalares são tipos atribuíveis, como cadeias de caracteres, inteiros e estruturas JSON. As propriedades de navegação são objetos Somente Leitura e coleções de objetos que têm seus campos atribuídos, em vez de atribuir diretamente a propriedade. Por exemplo, os membros `name` e `position` no objeto [Planilha](/javascript/api/excel/excel.worksheet) são propriedades escalares, enquanto `protection` e `tables` são propriedades de navegação. `prompt` no objeto [DataValidation](/javascript/api/excel/excel.datavalidation) é um exemplo de uma propriedade escalar que deve ser definida usando um objeto JSON (`dv.prompt = { title: "MyPrompt"}`), em vez de definir as subpropriedades (`dv.prompt.title = "MyPrompt" // will not set the title`).
 
 ### <a name="scalar-properties-and-navigation-properties-with-objectload"></a>Propriedades escalares e propriedades de navegação com `object.load()`
 

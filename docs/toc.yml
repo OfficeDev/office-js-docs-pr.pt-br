@@ -444,6 +444,9 @@
             - name: APIs de visualização do Excel
               href: reference/requirement-sets/excel-preview-apis.md
               displayName: Excel
+            - name: 'Conjunto de requisitos do ExcelApi 1,10'
+              href: reference/requirement-sets/excel-api-1-10-requirement-set.md
+              displayName: Excel
             - name: 'Conjunto de requisitos do ExcelApi 1,9'
               href: reference/requirement-sets/excel-api-1-9-requirement-set.md
               displayName: Excel

@@ -1,14 +1,14 @@
 ---
 title: Trabalhe com planilhas usando a API JavaScript do Excel
 description: ''
-ms.date: 10/16/2019
+ms.date: 10/22/2019
 localization_priority: Priority
-ms.openlocfilehash: ea8dad58bdd1ce3875751661806293e9aa1222fb
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 0f5e91d32e0fdd3111364dda2b00a9a62dba3d63
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626842"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37681946"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Trabalhe com planilhas usando a API JavaScript do Excel
 
@@ -318,10 +318,7 @@ function onWorksheetChanged(eventArgs) {
 }
 ```
 
-## <a name="handle-sorting-events-preview"></a>Manipulação de eventos de classificação (visualização)
-
-> [!NOTE]
-> As APIs para esses eventos relacionados à classificação estão disponíveis atualmente apenas na visualização pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="handle-sorting-events"></a>Manipulação de eventos de classificação
 
 Os eventos `onColumnSorted` e `onRowSorted` indicam quando quaisquer dados de planilha são classificados. Esses eventos estão conectados a objetos `Worksheet` individuais e à `WorkbookCollection` da pasta de trabalho. Eles são acionados independentemente da classificação ser realizada de forma programática ou manualmente por meio da interface de usuário do Excel.
 

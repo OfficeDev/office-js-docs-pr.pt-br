@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos da API JavaScript do Excel
 description: Informações do conjunto de requisitos do Suplemento do Office para Builds do Excel
-ms.date: 07/11/2019
+ms.date: 10/22/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: ec49cbdadf65b653170f9b5cbcafa6aaf0fa5177
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: 11fcf917b5dddb4a366465f11362c93660881597
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35804973"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37681939"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Excel
 
@@ -27,6 +27,7 @@ Os suplementos do Excel são executados em várias versões do Office, incluindo
 |  Conjunto de requisitos  |  Office no Windows<br>(conectado à assinatura do Office 365)  |  Office no iPad<br>(conectado à assinatura do Office 365)  |  Office no Mac<br>(conectado à assinatura do Office 365)  | Office na Web |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [Visualização](excel-preview-apis.md)  | Use a versão mais recente do Office para testar as APIs de visualização (talvez seja exigido ser membro do [programa Office Insider](https://products.office.com/office-insider)) |
+| [ExcelApi 1.10](excel-api-1-10-requirement-set.md) | Versão 1907 (Build 11929.20306) ou posterior | 2.30 ou posterior. | 16.30 ou posterior | Outubro de 2019 |
 | [ExcelApi 1.9](excel-api-1-9-requirement-set.md)  | Versão 1903 (Build 11425.20204) ou posterior | 2.24 ou posterior | 16.24 ou posterior | Maio de 2019 |
 | [ExcelApi 1.8](excel-api-1-8-requirement-set.md)  | Versão 1808 (Build 10730.20102) ou posterior | 2.17 ou posterior | 16.17 ou posterior | Setembro de 2018 |
 | [ExcelApi 1.7](excel-api-1-7-requirement-set.md)  | Versão 1801 (Build 9001.2171) ou posterior   | 2.9 ou posterior  | 16.9 ou posterior  | Abril de 2018 |
