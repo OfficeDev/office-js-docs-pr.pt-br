@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 description: ''
-ms.date: 08/15/2019
+ms.date: 10/18/2019
 localization_priority: Priority
-ms.openlocfilehash: aa3f46c505e8c87508699f6e84194272ee4d13bb
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 40bf17a6bfcc429b3de013a1b232a7c054b22768
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696453"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37682526"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 
@@ -226,15 +226,21 @@ Adicionada uma nova função que retorna os dados inicialização que são trans
 
 #### <a name="internetheadersjavascriptapioutlookofficeinternetheaders"></a>[InternetHeaders](/javascript/api/outlook/office.internetheaders)
 
-Adicionado um novo objeto que representa os cabeçalhos de internet personalizados de um item de mensagem.
+Adicionado um novo objeto que representa os cabeçalhos de internet personalizados de um item de mensagem. Somente modo de redação.
 
 **Disponível no**: Outlook no Windows (conectado à assinatura do Office 365), Outlook para Mac (conectado à assinatura do Office 365)
 
-#### <a name="officecontextmailboxiteminternetheadersofficecontextmailboxitemmdinternetheaders-internetheaders"></a>[Office.context.mailbox.item.internetHeaders](office.context.mailbox.item.md#internetheaders-internetheaders)
+#### <a name="officecontextmailboxiteminternetheadersjavascriptapioutlookofficemessagecomposeinternetheaders"></a>[Office.context.mailbox.item.internetHeaders](/javascript/api/outlook/office.messagecompose#internetheaders)
 
-Adicionada uma nova propriedade que representa os cabeçalhos de internet personalizados de um item de mensagem.
+Adicionada uma nova propriedade que representa os cabeçalhos de internet personalizados de um item de mensagem. Somente modo de redação.
 
 **Disponível no**: Outlook no Windows (conectado à assinatura do Office 365), Outlook para Mac (conectado à assinatura do Office 365)
+
+#### <a name="officecontextmailboxitemgetallinternetheadersasyncjavascriptapioutlookofficemessagereadgetallinternetheadersasync-options--callback-"></a>[Office.context.mailbox.item.getAllInternetHeadersAsync](/javascript/api/outlook/office.messageread#getallinternetheadersasync-options--callback-)
+
+Adicionado um novo método que obtém todos os cabeçalhos de Internet de um item de mensagem. Somente modo de leitura.
+
+**Disponível no**: Outlook no Windows (conectado à assinatura do Office 365)
 
 <br>
 
