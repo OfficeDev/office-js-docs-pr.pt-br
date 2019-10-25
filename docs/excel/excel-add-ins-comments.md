@@ -1,19 +1,16 @@
 ---
-title: Trabalhar com comentários usando a API JavaScript do Excel (visualização)
+title: Trabalhar com comentários usando a API JavaScript do Excel
 description: ''
-ms.date: 10/16/2019
+ms.date: 10/22/2019
 localization_priority: Normal
-ms.openlocfilehash: f289808245b64de34f03f4d105dd363c2aa84bc7
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: d79f99d1922def58fe2c8887d01ec5a2b173220a
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37627024"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37681911"
 ---
-# <a name="work-with-comments-using-the-excel-javascript-api-preview"></a>Trabalhar com comentários usando a API JavaScript do Excel (visualização)
-
-> [!NOTE]
-> As APIs de comentário estão disponíveis atualmente apenas na visualização pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+# <a name="work-with-comments-using-the-excel-javascript-api"></a>Trabalhar com comentários usando a API JavaScript do Excel
 
 Este artigo descreve como adicionar, ler, modificar e remover comentários em uma pasta de trabalho com a API JavaScript do Excel. Você pode saber mais sobre o recurso comentário do artigo [inserir comentários e anotações no Excel](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) .
 
@@ -28,8 +25,8 @@ Os `Workbook.comments` comentários em uma pasta de trabalho são rastreados pel
 Use o `CommentCollection.add` método para adicionar comentários a uma pasta de trabalho. Este método utiliza até três parâmetros:
 
 - `cellAddress`: A célula onde o comentário é adicionado. Pode ser um objeto String ou [Range](/javascript/api/excel/excel.range) . O intervalo deve ser uma única célula.
-- `content`: O conteúdo do comentário. Use uma cadeia de caracteres para comentários de texto sem formatação. Use um objeto [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) para comentários com [menção](#mentions).
-- `contentType`: Um enum [ContentType](/javascript/api/excel/excel.contenttype) especificando o tipo de conteúdo. O valor padrão é `ContentType.plain`. 
+- `content`: O conteúdo do comentário. Use uma cadeia de caracteres para comentários de texto sem formatação. Use um objeto [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) para comentários com [menção](#mentions-preview).
+- `contentType`: Um enum [ContentType](/javascript/api/excel/excel.contenttype) especificando o tipo de conteúdo. O valor padrão é `ContentType.plain`.
 
 O exemplo a seguir adiciona um comentário à célula **A2**.
 
@@ -172,7 +169,10 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="mentions"></a>Menções
+## <a name="mentions-preview"></a>Menciona (versão prévia)
+
+> [!NOTE]
+> O comentário mencionando APIs estão atualmente disponíveis somente na visualização pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 > [!IMPORTANT]
 > As mencionadas de comentários atualmente só têm suporte no Excel na Web.
