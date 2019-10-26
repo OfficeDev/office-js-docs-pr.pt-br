@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox.item - conjunto de requisitos 1.5
 description: ''
-ms.date: 09/23/2019
+ms.date: 10/23/2019
 localization_priority: Priority
-ms.openlocfilehash: a76440c2353483d0754aa0ba2fed98f051bc1c6f
-ms.sourcegitcommit: 3c84fe6302341668c3f9f6dd64e636a97d03023c
+ms.openlocfilehash: 7d585d3fd60d51b68d86b632701e8ac512fe708c
+ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "37167365"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "37682519"
 ---
 # <a name="item"></a>item
 
@@ -139,6 +139,11 @@ console.log(outputString);
 
 Obtém um objeto que fornece métodos para acessar ou atualizar os destinatários na linha Cco (com cópia oculta) de uma mensagem. Somente modo de redação.
 
+Por padrão, o conjunto está limitado a um máximo de 100 membros. No entanto, no Windows e no Mac, os seguintes limites se aplicam.
+
+- Tenha no máximo 500 membros.
+- Defina o máximo de 100 membros por chamada, até 500 no total.
+
 ##### <a name="type"></a>Tipo
 
 *   [Destinatários](/javascript/api/outlook/office.recipients?view=outlook-js-1.5)
@@ -219,7 +224,7 @@ Fornece acesso aos destinatários na linha Cc (com cópia) de uma mensagem. O ti
 
 ##### <a name="read-mode"></a>Modo de leitura
 
-A propriedade `cc` retorna uma matriz que contém um objeto `EmailAddressDetails` para cada destinatário listado na linha **Cc** da mensagem. O conjunto está limitado a um máximo de 100 membros.
+A propriedade `cc` retorna uma matriz que contém um objeto `EmailAddressDetails` para cada destinatário listado na linha **Cc** da mensagem. Por padrão, o conjunto está limitado a um máximo de 100 membros. No entanto, no Windows e Mac, você pode ter o máximo de 500 membros.
 
 ```js
 console.log(JSON.stringify(Office.context.mailbox.item.cc));
@@ -227,7 +232,10 @@ console.log(JSON.stringify(Office.context.mailbox.item.cc));
 
 ##### <a name="compose-mode"></a>Modo de redação
 
-A propriedade `cc` retorna um objeto `Recipients` que fornece métodos para obter ou atualizar os destinatários na linha **Cc** da mensagem.
+A propriedade `cc` retorna um objeto `Recipients` que fornece métodos para obter ou atualizar os destinatários na linha **Cc** da mensagem. Por padrão, o conjunto está limitado a um máximo de 100 membros. No entanto, no Windows e no Mac, os seguintes limites se aplicam.
+
+- Tenha no máximo 500 membros.
+- Defina o máximo de 100 membros por chamada, até 500 no total.
 
 ```js
 Office.context.mailbox.item.cc.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -684,7 +692,7 @@ Fornece acesso aos participantes opcionais de um evento. O tipo de objeto e o n�
 
 ##### <a name="read-mode"></a>Modo de leitura
 
-A propriedade `optionalAttendees` retorna uma matriz que contém um objeto `EmailAddressDetails` para cada participante opcional da reunião.
+A propriedade `optionalAttendees` retorna uma matriz que contém um objeto `EmailAddressDetails` para cada participante opcional da reunião. Por padrão, o conjunto está limitado a um máximo de 100 membros. No entanto, no Windows e Mac, você pode ter o máximo de 500 membros.
 
 ```js
 var optionalAttendees = Office.context.mailbox.item.optionalAttendees;
@@ -693,7 +701,10 @@ console.log("Optional attendees: " + JSON.stringify(optionalAttendees));
 
 ##### <a name="compose-mode"></a>Modo de redação
 
-A propriedade `optionalAttendees` retorna um objeto `Recipients` que fornece métodos para obter ou atualizar os participantes opcionais de uma reunião.
+A propriedade `optionalAttendees` retorna um objeto `Recipients` que fornece métodos para obter ou atualizar os participantes opcionais de uma reunião. Por padrão, o conjunto está limitado a um máximo de 100 membros. No entanto, no Windows e no Mac, os seguintes limites se aplicam.
+
+- Tenha no máximo 500 membros.
+- Defina o máximo de 100 membros por chamada, até 500 no total.
 
 ```js
 Office.context.mailbox.item.optionalAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -757,7 +768,7 @@ Fornece acesso aos participantes obrigatórios de um evento. O tipo de objeto e 
 
 ##### <a name="read-mode"></a>Modo de leitura
 
-A propriedade `requiredAttendees` retorna uma matriz que contém um objeto `EmailAddressDetails` para cada participante obrigatório da reunião.
+A propriedade `requiredAttendees` retorna uma matriz que contém um objeto `EmailAddressDetails` para cada participante obrigatório da reunião. Por padrão, o conjunto está limitado a um máximo de 100 membros. No entanto, no Windows e Mac, você pode ter o máximo de 500 membros.
 
 ```js
 var requiredAttendees = Office.context.mailbox.item.requiredAttendees;
@@ -766,7 +777,10 @@ console.log("Required attendees: " + JSON.stringify(requiredAttendees));
 
 ##### <a name="compose-mode"></a>Modo de redação
 
-A propriedade `requiredAttendees` retorna um objeto `Recipients` que fornece métodos para obter ou atualizar os participantes obrigatórios de uma reunião.
+A propriedade `requiredAttendees` retorna um objeto `Recipients` que fornece métodos para obter ou atualizar os participantes obrigatórios de uma reunião. Por padrão, o conjunto está limitado a um máximo de 100 membros. No entanto, no Windows e no Mac, os seguintes limites se aplicam.
+
+- Tenha no máximo 500 membros.
+- Defina o máximo de 100 membros por chamada, até 500 no total.
 
 ```js
 Office.context.mailbox.item.requiredAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -937,7 +951,7 @@ Fornece acesso aos destinatários na linha **Para** de uma mensagem. O tipo de o
 
 ##### <a name="read-mode"></a>Modo de leitura
 
-A propriedade `to` retorna uma matriz que contém um objeto `EmailAddressDetails` para cada destinatário listado na linha **Para** da mensagem. O conjunto está limitado a um máximo de 100 membros.
+A propriedade `to` retorna uma matriz que contém um objeto `EmailAddressDetails` para cada destinatário listado na linha **Para** da mensagem. Por padrão, o conjunto está limitado a um máximo de 100 membros. No entanto, no Windows e Mac, você pode ter o máximo de 500 membros.
 
 ```js
 console.log(JSON.stringify(Office.context.mailbox.item.to));
@@ -945,7 +959,10 @@ console.log(JSON.stringify(Office.context.mailbox.item.to));
 
 ##### <a name="compose-mode"></a>Modo de redação
 
-A propriedade `to` retorna um objeto `Recipients` que fornece métodos para obter ou atualizar os destinatários na linha **Para** da mensagem.
+A propriedade `to` retorna um objeto `Recipients` que fornece métodos para obter ou atualizar os destinatários na linha **Para** da mensagem. Por padrão, o conjunto está limitado a um máximo de 100 membros. No entanto, no Windows e no Mac, os seguintes limites se aplicam.
+
+- Tenha no máximo 500 membros.
+- Defina o máximo de 100 membros por chamada, até 500 no total.
 
 ```js
 Office.context.mailbox.item.to.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
