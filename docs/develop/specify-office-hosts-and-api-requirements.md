@@ -3,12 +3,12 @@ title: Especificar hosts do Office e requisitos de API
 description: ''
 ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: 1d5c922787192263e5290d2a428c352ab32378b0
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
+ms.openlocfilehash: c3f1979eb216d20f6c409010e84c1388d2069489
+ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353836"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "37524266"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>Especificar hosts do Office e requisitos de API
 
@@ -51,7 +51,7 @@ Seu manifesto de suplemento deve usar a versão 1.1 do esquema de manifesto de s
 Se você usar as verificações no tempo de execução, faça referência à versão mais recente da biblioteca de API JavaScript para Office na CDN (rede de distribuição de conteúdo). Para tanto, adicione a seguinte marca `script` ao código HTML. O uso de `/1/` na URL da CDN garante a referência à versão mais recente do Office.js.
 
 ```HTML
-<script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
+<script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
 ```
 
 ## <a name="options-to-specify-office-hosts-or-api-requirements"></a>Opções para especificar os hosts do Office ou requisitos de API
