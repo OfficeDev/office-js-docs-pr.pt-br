@@ -1,14 +1,14 @@
 ---
 title: Converter um projeto de Suplemento do Office no Visual Studio para TypeScript
 description: ''
-ms.date: 10/11/2019
+ms.date: 10/29/2019
 localization_priority: Priority
-ms.openlocfilehash: 0a828a3f11a1fcaf71e277bdb667f866ea4ae06a
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: dc9384aff605db31ded4197ad00d1a7823f2de6f
+ms.sourcegitcommit: 818036a7163b1513d047e66a20434060415df241
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626800"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "37775288"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Converter um projeto de Suplemento do Office no Visual Studio para TypeScript
 
@@ -35,7 +35,7 @@ Você pode usar o modelo de Suplemento do Office no Visual Studio para criar um 
 
 1. No Visual Studio, escolha **Criar um novo projeto**.
 
-2. Usando a caixa de pesquisa, insira **suplemento**. Escolha **Suplemento Excel Web **, em seguida, selecione **Próximo**.
+2. Usando a caixa de pesquisa, insira **suplemento**. Escolha **suplemento do Excel Web **, em seguida, selecione **Próximo**.
 
 3. Nomeie seu projeto e selecione **Criar**.
 
@@ -47,28 +47,31 @@ Você pode usar o modelo de Suplemento do Office no Visual Studio para criar um 
 
 1. Localize o arquivo **Home.js** e o renomeie para **Home.ts**.
 
-2. Na guia **Ferramentas**, escolha **Gerenciador de Pacotes NuGet** e, em seguida, selecione **Gerenciar Pacotes do NuGet para Solução...**.
+2. Localize o arquivo **./Functions/FunctionFile.js** e renomeie-o para **FunctionFile.ts**.
 
-3. Com a guia **Navegar** selecionada, insira **office-js.TypeScript.DefinitelyTyped** na caixa de pesquisa. Instalar ou atualizar esse pacote se ele já estiver instalado. Isso adicionará as definições de tipo de TypeScript da biblioteca do Office.js ao seu projeto.
+3. Localize o arquivo **./Scripts/MessageBanner.js** e renomeie-o para **MessageBanner.ts**.
 
-4. Na mesma caixa de pesquisa, digite **jquery.TypeScript.DefinitelyTyped**. Instalar ou atualizar esse pacote se ele já estiver instalado. Isso adicionará as definições do TypeScript jQuery ao seu projeto. Os pacotes do jQuery e do Office.js agora serão exibidos em um novo arquivo gerado pelo Visual Studio, chamado **packages.config**.
+4. Na guia **Ferramentas**, escolha **Gerenciador de Pacotes NuGet** e, em seguida, selecione **Gerenciar Pacotes do NuGet para Solução...**.
+
+5. Com a guia **Navegar** selecionada, insira **office-js.TypeScript.DefinitelyTyped** na caixa de pesquisa. Instalar ou atualizar esse pacote se ele já estiver instalado. Isso adicionará as definições de tipo de TypeScript da biblioteca do Office.js ao seu projeto.
+
+6. Na mesma caixa de pesquisa, digite **jquery.TypeScript.DefinitelyTyped**. Instalar ou atualizar esse pacote se ele já estiver instalado. Isso adicionará as definições do TypeScript jQuery ao seu projeto. Os pacotes do jQuery e do Office.js agora serão exibidos em um novo arquivo gerado pelo Visual Studio, chamado **packages.config**.
 
     > [!NOTE]
     > Em seu projeto em TypeScript, você pode ter uma combinação de arquivos TypeScript e JavaScript e seu projeto irá compilar. Isso ocorre porque o TypeScript é um superconjunto tipado do JavaScript que compila o JavaScript.
 
-5. Abra o arquivo **Home.ts** e adicione a seguinte declaração à parte superior do arquivo:
+7. Em **Home.ts**, localize a linha `if(!Office.context.requirements.isSetSupported('ExcelApi', '1.1') {` e substitua-a pelo seguinte:
 
     ```TypeScript
-    declare var fabric: any;
+    if(!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
     ```
 
-6. Em **Home.ts**, exclua a linha `if(!Office.context.requirements.isSetSupported('ExcelApi', '1.1') {` e substitua pela seguinte:
+    > [!NOTE]
+    > Atualmente, para que o projeto seja compilado com êxito depois de convertido para TypeScript, você deve especificar o número do conjunto de requisitos como um valor numérico, conforme mostrado no trecho de código anterior. Infelizmente, isso significa que você não poderá usar `isSetSupported` para testar o suporte ao conjunto de requisitos `1.10`, pois o valor numérico `1.10` retorna `1.1` em tempo de execução. 
+    > 
+    > Esse problema ocorre devido ao pacote NuGet **office-js.TypeScript.DefinitelyTyped** se encontrar desatualizado, o que significa que o seu projeto não tem acesso às definições TypeScript mais recentes para o Office.js. Esse problema está sendo solucionado e este artigo será atualizado quando o problema for resolvido.
 
-    ```TypeScript
-    if(!Office.context.requirements.isSetSupported('ExcelApi', 1.1) {
-    ```
-
-7. No arquivo **Home.ts** localize a linha `Office.initialize = function (reason) {` e adicione uma linha imediatamente após ela para usar o polyfill na `window.Promise` global, conforme mostrado aqui:
+8. Em **Home.ts**, localize a linha `Office.initialize = function (reason) {` e adicione uma linha imediatamente depois para fazer polyfill do `window.Promise` global, como mostrado aqui:
 
     ```TypeScript
     Office.initialize = function (reason) {
@@ -77,22 +80,28 @@ Você pode usar o modelo de Suplemento do Office no Visual Studio para criar um 
         ...
     ```
 
-8. No arquivo **Home.ts**, localize a função `displaySelectedCells`, substitua toda a função pelo código a seguir e salve o arquivo:
+9. Em **Home.ts**, localize a função `displaySelectedCells`, substitua a função inteira pelo código a seguir e, em seguida, salve o arquivo:
 
-```TypeScript
-function displaySelectedCells() {
-    Office.context.document.getSelectedDataAsync(
-        Office.CoercionType.Text,
-        null,
-        function (result) {
-            if (result.status === Office.AsyncResultStatus.Succeeded) {
-                showNotification('The selected text is:', '"' + result.value + '"');
-            } else {
-                showNotification('Error', result.error.message);
-            }
-        });
-}
-```
+    ```TypeScript
+    function displaySelectedCells() {
+        Office.context.document.getSelectedDataAsync(
+            Office.CoercionType.Text,
+            null,
+            function (result) {
+                if (result.status === Office.AsyncResultStatus.Succeeded) {
+                    showNotification('The selected text is:', '"' + result.value + '"');
+                } else {
+                    showNotification('Error', result.error.message);
+                }
+            });
+    }
+    ```
+
+10. Em **./Scripts/MessageBanner.ts**, localize a linha `_onResize(null);` e substitua-a pelo seguinte:
+
+    ```TypeScript
+    _onResize();
+    ```
 
 ## <a name="run-the-converted-add-in-project"></a>Executar o projeto do suplemento convertido
 
@@ -109,8 +118,6 @@ function displaySelectedCells() {
 Para sua referência o trecho de código a seguir mostra o conteúdo do arquivo **Home.ts** após a aplicação das alterações descritas anteriormente. Esse código contém o número mínimo de alterações necessárias para que seu suplemento seja executado.
 
 ```typescript
-declare var fabric: any;
-
 (function () {
     "use strict";
 
@@ -120,15 +127,14 @@ declare var fabric: any;
     // The initialize function must be run each time a new page is loaded.
     Office.initialize = function (reason) {
         (window as any).Promise = OfficeExtension.Promise;
-
         $(document).ready(function () {
-            // Initialize the FabricUI notification mechanism and hide it
-            var element = document.querySelector('.ms-MessageBanner');
-            messageBanner = new fabric.MessageBanner(element);
+            // Initialize the notification mechanism and hide it
+            var element = document.querySelector('.MessageBanner');
+            messageBanner = new components.MessageBanner(element);
             messageBanner.hideBanner();
-
+            
             // If not using Excel 2016, use fallback logic.
-            if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
+            if (!Office.context.requirements.isSetSupported('ExcelApi', 1.1)) {
                 $("#template-description").text("This sample will display the value of the cells that you have selected in the spreadsheet.");
                 $('#button-text').text("Display!");
                 $('#button-desc').text("Display the selection");
@@ -140,7 +146,7 @@ declare var fabric: any;
             $("#template-description").text("This sample highlights the highest value from the cells you have selected in the spreadsheet.");
             $('#button-text').text("Highlight!");
             $('#button-desc').text("Highlights the largest number.");
-
+                
             loadSampleData();
 
             // Add a click event handler for the highlight button.
@@ -206,7 +212,8 @@ declare var fabric: any;
     }
 
     function displaySelectedCells() {
-        Office.context.document.getSelectedDataAsync(Office.CoercionType.Text,
+        Office.context.document.getSelectedDataAsync(
+            Office.CoercionType.Text,
             null,
             function (result) {
                 if (result.status === Office.AsyncResultStatus.Succeeded) {
@@ -239,5 +246,5 @@ declare var fabric: any;
 
 ## <a name="see-also"></a>Confira também
 
-* [Discussão de implementação do Promise no StackOverflow](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
-* [Exemplos de Suplementos do Office no GitHub](https://github.com/officedev)
+- [Discussão de implementação do Promise no StackOverflow](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
+- [Exemplos de Suplementos do Office no GitHub](https://github.com/officedev)
