@@ -1,14 +1,14 @@
 ---
 title: Elemento DesktopFormFactor no arquivo de manifesto
 description: ''
-ms.date: 06/20/2019
+ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: d1f09203518a38f1568b13e6c1a9c70752697152
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: bada3cd4cff7973517aedb83235a224ef6c273eb
+ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128514"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "37901959"
 ---
 # <a name="desktopformfactor-element"></a>Elemento DesktopFormFactor
 
@@ -23,7 +23,7 @@ Cada definição de DesktopFormFactor contém o elemento **FunctionFile** e um o
 | [ExtensionPoint](extensionpoint.md)   | Sim      | Define onde um suplemento expõe a funcionalidade. |
 | [FunctionFile](functionfile.md)       | Sim      | Uma URL para um arquivo que contém funções JavaScript.|
 | [GetStarted](getstarted.md)           | Não       | Define o texto explicativo que aparece ao instalar o suplemento em hosts do Word, Excel ou PowerPoint. |
-| [SupportsSharedFolders](supportssharedfolders.md) | Não | Define se o suplemento do Outlook está disponível em cenários de representante e é definido como *false* por padrão.<br><br>**Importante**: como o acesso de representante para suplementos do Outlook está atualmente em versão prévia, os suplementos que usam `SupportSharedFolders` o elemento não podem ser publicados no AppSource ou implantados por meio da implantação centralizada. |
+| [SupportsSharedFolders](supportssharedfolders.md) | Não | Define se o suplemento do Outlook está disponível em cenários de representante e é definido como *false* por padrão. |
 
 ## <a name="desktopformfactor-example"></a>Exemplo de DesktopFormFactor
 
@@ -37,9 +37,9 @@ Cada definição de DesktopFormFactor contém o elemento **FunctionFile** e um o
         <!-- GetStarted callout -->
       </GetStarted>
       <ExtensionPoint xsi:type="PrimaryCommandSurface">
-        <!-- information on this extension point -->
+        <!-- Information on this extension point. -->
       </ExtensionPoint>
-      <!-- possibly more ExtensionPoint elements -->
+      <!-- Possibly more ExtensionPoint elements. -->
     </DesktopFormFactor>
   </Host>
 </Hosts>

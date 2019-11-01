@@ -1,14 +1,14 @@
 ---
-title: Office. Context. Mailbox-visualização do conjunto de requisitos
+title: Office. Context. Mailbox – conjunto de requisitos 1,8
 description: ''
-ms.date: 10/30/2019
+ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: ff649029713984b32e817bbeaf7c59a48cc5b023
+ms.openlocfilehash: 3f6d639cdf8bdff6f2df365622f58eba1c4b38e0
 ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902106"
+ms.locfileid: "37902124"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -86,7 +86,7 @@ No modo de composição, é preciso chamar o método [`saveAsync`](Office.contex
 ---
 ---
 
-#### <a name="mastercategories-mastercategoriesjavascriptapioutlookofficemastercategories"></a>Nova mastercategories: [nova mastercategories](/javascript/api/outlook/office.mastercategories)
+#### <a name="mastercategories-mastercategoriesjavascriptapioutlookofficemastercategoriesviewoutlook-js-18"></a>Nova mastercategories: [nova mastercategories](/javascript/api/outlook/office.mastercategories?view=outlook-js-1.8)
 
 Obtém um objeto que fornece métodos para gerenciar a lista mestra de categorias nesta caixa de correio.
 
@@ -95,7 +95,7 @@ Obtém um objeto que fornece métodos para gerenciar a lista mestra de categoria
 
 ##### <a name="type"></a>Tipo
 
-*   [MasterCategories](/javascript/api/outlook/office.mastercategories)
+*   [MasterCategories](/javascript/api/outlook/office.mastercategories?view=outlook-js-1.8)
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -210,7 +210,7 @@ IDs de itens recuperadas por meio de uma API REST (como a [API do Email do Outlo
 |Nome| Tipo| Descrição|
 |---|---|---|
 |`itemId`| String|Uma ID de item formatada para APIs REST do Outlook|
-|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion)|Um valor que indica a versão da API REST do Outlook usada para recuperar a ID do item.|
+|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion?view=outlook-js-1.8)|Um valor que indica a versão da API REST do Outlook usada para recuperar a ID do item.|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -239,7 +239,7 @@ var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.Re
 ---
 ---
 
-#### <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlookofficelocalclienttime"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook/office.LocalClientTime)}
+#### <a name="converttolocalclienttimetimevalue--localclienttimejavascriptapioutlookofficelocalclienttimeviewoutlook-js-18"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.8)}
 
 Obtém um dicionário contendo informações de hora em tempo local do cliente.
 
@@ -263,7 +263,7 @@ Se o aplicativo de email estiver sendo executado no Outlook em um cliente da ár
 
 ##### <a name="returns"></a>Retorna:
 
-Tipo: [LocalClientTime](/javascript/api/outlook/office.LocalClientTime)
+Tipo: [LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.8)
 
 <br>
 
@@ -284,7 +284,7 @@ IDs de itens recuperadas por EWS ou pela propriedade `itemId` usam um formato di
 |Nome| Tipo| Descrição|
 |---|---|---|
 |`itemId`| String|Uma ID de item formatada para os Serviços Web do Exchange (EWS)|
-|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion)|Um valor que indica a versão da API REST do Outlook com a qual a ID convertida será usada.|
+|`restVersion`| [Office.MailboxEnums.RestVersion](/javascript/api/outlook/office.mailboxenums.restversion?view=outlook-js-1.8)|Um valor que indica a versão da API REST do Outlook com a qual a ID convertida será usada.|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -323,7 +323,7 @@ O método `convertToUtcClientTime` converte um dicionário que contém uma data 
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`input`| [LocalClientTime](/javascript/api/outlook/office.LocalClientTime)|O valor de hora local a converter.|
+|`input`| [LocalClientTime](/javascript/api/outlook/office.LocalClientTime?view=outlook-js-1.8)|O valor de hora local a converter.|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -469,8 +469,8 @@ Se qualquer dos parâmetros exceder os limites de tamanho especificados, ou se u
 |Nome| Tipo| Descrição|
 |---|---|---|
 | `parameters` | Object | Um dicionário de parâmetros que descreve o novo compromisso. |
-| `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email ou uma matriz contendo um objeto `EmailAddressDetails` para cada um dos participantes obrigatórios do compromisso. A matriz está limitada a um máximo de 100 entradas. |
-| `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email ou uma matriz contendo um objeto `EmailAddressDetails` para cada um dos participantes opcionais do compromisso. A matriz está limitada a um máximo de 100 entradas. |
+| `parameters.requiredAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email ou uma matriz contendo um objeto `EmailAddressDetails` para cada um dos participantes obrigatórios do compromisso. A matriz está limitada a um máximo de 100 entradas. |
+| `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email ou uma matriz contendo um objeto `EmailAddressDetails` para cada um dos participantes opcionais do compromisso. A matriz está limitada a um máximo de 100 entradas. |
 | `parameters.start` | Data | Um objeto `Date` que especifica a data e a hora de início do compromisso. |
 | `parameters.end` | Data | Um objeto `Date` que especifica a data e a hora de término do compromisso. |
 | `parameters.location` | String | Uma cadeia de caracteres que contém o local do compromisso. A cadeia de caracteres está limitada a um máximo de 255 caracteres. |
@@ -527,9 +527,9 @@ Se qualquer dos parâmetros exceder os limites de tamanho especificados, ou se u
 |Nome| Tipo| Descrição|
 |---|---|---|
 | `parameters` | Objeto | Um dicionário de parâmetros que descreve a nova mensagem. |
-| `parameters.toRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email `EmailAddressDetails` ou uma matriz que contém um objeto para cada um dos destinatários na linha para. A matriz está limitada a um máximo de 100 entradas. |
-| `parameters.ccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email `EmailAddressDetails` ou uma matriz que contém um objeto para cada um dos destinatários na linha CC. A matriz está limitada a um máximo de 100 entradas. |
-| `parameters.bccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email `EmailAddressDetails` ou uma matriz que contém um objeto para cada um dos destinatários na linha Cco. A matriz está limitada a um máximo de 100 entradas. |
+| `parameters.toRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email `EmailAddressDetails` ou uma matriz que contém um objeto para cada um dos destinatários na linha para. A matriz está limitada a um máximo de 100 entradas. |
+| `parameters.ccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email `EmailAddressDetails` ou uma matriz que contém um objeto para cada um dos destinatários na linha CC. A matriz está limitada a um máximo de 100 entradas. |
+| `parameters.bccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-1.8)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email `EmailAddressDetails` ou uma matriz que contém um objeto para cada um dos destinatários na linha Cco. A matriz está limitada a um máximo de 100 entradas. |
 | `parameters.subject` | String | Uma cadeia de caracteres que contém o assunto da mensagem. A cadeia de caracteres está limitada a um máximo de 255 caracteres. |
 | `parameters.htmlBody` | String | O corpo HTML da mensagem. O conteúdo do corpo está limitado a um tamanho máximo de 32 KB. |
 | `parameters.attachments` | Array.&lt;Object&gt; | Uma matriz de objetos JSON que são anexos de arquivo ou item. |

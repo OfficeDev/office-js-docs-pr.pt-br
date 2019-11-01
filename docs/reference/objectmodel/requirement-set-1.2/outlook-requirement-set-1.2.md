@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos de API para suplementos do Outlook versão 1.2
 description: ''
-ms.date: 03/19/2019
+ms.date: 10/30/2019
 localization_priority: Normal
-ms.openlocfilehash: dfd61738fe9e941d7d0f3a70173ab1f087f9f552
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 898e768dfc1828ba44f29e9da5c4baa61de186cb
+ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451889"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "37902092"
 ---
 # <a name="outlook-add-in-api-requirement-set-12"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.2
 
@@ -33,3 +33,4 @@ O conjunto de requisitos 1.2 inclui todos os recursos do [Conjunto de requisitos
 - [Suplementos do Outlook](/outlook/add-ins/)
 - [Exemplos de código de suplementos do Outlook](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
 - [Introdução](/outlook/add-ins/quick-start)
+- [Conjuntos de requisitos e clientes com suporte](../../requirement-sets/outlook-api-requirement-sets.md)

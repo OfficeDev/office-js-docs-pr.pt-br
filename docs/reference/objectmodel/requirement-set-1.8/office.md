@@ -1,14 +1,14 @@
 ---
-title: Namespace do Office – conjunto de requisitos de visualização
+title: Namespace do Office – conjunto de requisitos 1,8
 description: ''
-ms.date: 10/30/2019
+ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: eae6f99d166695f24f4a94e89ea4b876bea080ef
+ms.openlocfilehash: 91a0bef2a8280a068763c98b17644bd9268e2fb4
 ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902099"
+ms.locfileid: "37902130"
 ---
 # <a name="office"></a>Office
 
@@ -34,7 +34,7 @@ O namespace do Office fornece interfaces compartilhadas que são usadas pelos su
 
 [context](office.context.md): fornece interfaces compartilhadas do namespace de contexto da API de Suplementos do Office para uso na API de suplemento do Outlook.
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat): inclui um número de enumerações, por exemplo, `ItemType` `EntityType` `AttachmentType` `RecipientType` `ResponseType`,,,,, e `ItemNotificationMessageType`.
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.8): inclui um número de enumerações, por exemplo, `ItemType` `EntityType` `AttachmentType` `RecipientType` `ResponseType`,,,,, e `ItemNotificationMessageType`.
 
 ### <a name="members"></a>Members
 
@@ -108,7 +108,6 @@ Especifica o evento associado a um manipulador de eventos.
 |`AttachmentsChanged`| String | Um anexo foi adicionado ou removido do item. | 1,8 |
 |`EnhancedLocationsChanged`| String | O local do compromisso selecionado foi alterado. | 1,8 |
 |`ItemChanged`| String | Um item diferente do Outlook é selecionado para exibição enquanto o painel de tarefas está fixado. | 1,5 |
-|`OfficeThemeChanged`| String | O tema do Office na caixa de correio foi alterado. | Visualização |
 |`RecipientsChanged`| String | A lista de destinatários do item selecionado ou local do compromisso foi alterada. | 1.7 |
 |`RecurrenceChanged`| String | O padrão de recorrência da série selecionada foi alterado. | 1.7 |
 

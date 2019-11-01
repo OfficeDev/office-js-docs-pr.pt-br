@@ -1,21 +1,18 @@
 ---
 title: Elemento SupportsSharedFolders no arquivo de manifesto
 description: ''
-ms.date: 04/02/2019
+ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 976f8ba00f6ac9ac32def56933af1077527b7e9c
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 42fa1cf74634b183994e633d728d3be66e1e83f0
+ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32452036"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "37902239"
 ---
 # <a name="supportssharedfolders-element"></a>Elemento SupportsSharedFolders
 
 Define se o suplemento do Outlook está disponível nos cenários de representante. O **SupportsSharedFolders** é um elemento filho de [DesktopFormFactor](desktopformfactor.md). Ele é definido como *false* por padrão.
-
-> [!IMPORTANT]
-> O acesso de representante para suplementos do Outlook está atualmente [em visualização](/office/dev/add-ins/reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview) e é suportado apenas em clientes que são executados no Exchange Online. Os suplementos que usam esse elemento não podem ser publicados no AppSource nem implantados por meio da implantação centralizada.
 
 Veja a seguir um exemplo do elemento **SupportsSharedFolders**.
 
@@ -30,10 +27,10 @@ Veja a seguir um exemplo do elemento **SupportsSharedFolders**.
           <SupportsSharedFolders>true</SupportsSharedFolders>
           <FunctionFile resid="residDesktopFuncUrl" />
           <ExtensionPoint xsi:type="MessageReadCommandSurface">
-            <!-- configure selected extension point -->
+            <!-- Configure selected extension point. -->
           </ExtensionPoint>
 
-          <!-- You can define more than one ExtensionPoint element as needed -->
+          <!-- You can define more than one ExtensionPoint element as needed. -->
 
         </DesktopFormFactor>
       </Host>
