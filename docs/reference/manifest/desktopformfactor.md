@@ -1,31 +1,31 @@
 ---
 title: Elemento DesktopFormFactor no arquivo de manifesto
 description: ''
-ms.date: 06/20/2019
+ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: d1f09203518a38f1568b13e6c1a9c70752697152
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: bada3cd4cff7973517aedb83235a224ef6c273eb
+ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128514"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "37901959"
 ---
-# <a name="desktopformfactor-element"></a><span data-ttu-id="22b6b-102">Elemento DesktopFormFactor</span><span class="sxs-lookup"><span data-stu-id="22b6b-102">DesktopFormFactor element</span></span>
+# <a name="desktopformfactor-element"></a><span data-ttu-id="35030-102">Elemento DesktopFormFactor</span><span class="sxs-lookup"><span data-stu-id="35030-102">DesktopFormFactor element</span></span>
 
-<span data-ttu-id="22b6b-103">Especifica as configurações de um suplemento para o fator forma da área de trabalho.</span><span class="sxs-lookup"><span data-stu-id="22b6b-103">Specifies the settings for an add-in for the desktop form factor.</span></span> <span data-ttu-id="22b6b-104">O fator de forma da área de trabalho inclui o Office na Web, Windows e Mac.</span><span class="sxs-lookup"><span data-stu-id="22b6b-104">The desktop form factor includes Office on the web, Windows, and Mac.</span></span> <span data-ttu-id="22b6b-105">Ele contém todas as informações do suplemento para o fator forma da área de trabalho, exceto para o nó **Resources**.</span><span class="sxs-lookup"><span data-stu-id="22b6b-105">It contains all the add-in information for the desktop form factor except for the  **Resources** node.</span></span>
+<span data-ttu-id="35030-103">Especifica as configurações de um suplemento para o fator forma da área de trabalho.</span><span class="sxs-lookup"><span data-stu-id="35030-103">Specifies the settings for an add-in for the desktop form factor.</span></span> <span data-ttu-id="35030-104">O fator de forma da área de trabalho inclui o Office na Web, Windows e Mac.</span><span class="sxs-lookup"><span data-stu-id="35030-104">The desktop form factor includes Office on the web, Windows, and Mac.</span></span> <span data-ttu-id="35030-105">Ele contém todas as informações do suplemento para o fator forma da área de trabalho, exceto para o nó **Resources**.</span><span class="sxs-lookup"><span data-stu-id="35030-105">It contains all the add-in information for the desktop form factor except for the  **Resources** node.</span></span>
 
-<span data-ttu-id="22b6b-p102">Cada definição de DesktopFormFactor contém o elemento **FunctionFile** e um ou mais elementos **ExtensionPoint**. Para saber mais, confira [Elemento FunctionFile](functionfile.md) e [Elemento ExtensionPoint](extensionpoint.md).</span><span class="sxs-lookup"><span data-stu-id="22b6b-p102">Each DesktopFormFactor definition contains the  **FunctionFile** element and one or more **ExtensionPoint** elements. For more information, see [FunctionFile element](functionfile.md) and [ExtensionPoint element](extensionpoint.md).</span></span>
+<span data-ttu-id="35030-p102">Cada definição de DesktopFormFactor contém o elemento **FunctionFile** e um ou mais elementos **ExtensionPoint**. Para saber mais, confira [Elemento FunctionFile](functionfile.md) e [Elemento ExtensionPoint](extensionpoint.md).</span><span class="sxs-lookup"><span data-stu-id="35030-p102">Each DesktopFormFactor definition contains the  **FunctionFile** element and one or more **ExtensionPoint** elements. For more information, see [FunctionFile element](functionfile.md) and [ExtensionPoint element](extensionpoint.md).</span></span>
 
-## <a name="child-elements"></a><span data-ttu-id="22b6b-108">Elementos filho</span><span class="sxs-lookup"><span data-stu-id="22b6b-108">Child elements</span></span>
+## <a name="child-elements"></a><span data-ttu-id="35030-108">Elementos filho</span><span class="sxs-lookup"><span data-stu-id="35030-108">Child elements</span></span>
 
-| <span data-ttu-id="22b6b-109">Elemento</span><span class="sxs-lookup"><span data-stu-id="22b6b-109">Element</span></span>                               | <span data-ttu-id="22b6b-110">Obrigatório</span><span class="sxs-lookup"><span data-stu-id="22b6b-110">Required</span></span> | <span data-ttu-id="22b6b-111">Descrição</span><span class="sxs-lookup"><span data-stu-id="22b6b-111">Description</span></span>  |
+| <span data-ttu-id="35030-109">Elemento</span><span class="sxs-lookup"><span data-stu-id="35030-109">Element</span></span>                               | <span data-ttu-id="35030-110">Obrigatório</span><span class="sxs-lookup"><span data-stu-id="35030-110">Required</span></span> | <span data-ttu-id="35030-111">Descrição</span><span class="sxs-lookup"><span data-stu-id="35030-111">Description</span></span>  |
 |:--------------------------------------|:--------:|:-------------|
-| [<span data-ttu-id="22b6b-112">ExtensionPoint</span><span class="sxs-lookup"><span data-stu-id="22b6b-112">ExtensionPoint</span></span>](extensionpoint.md)   | <span data-ttu-id="22b6b-113">Sim</span><span class="sxs-lookup"><span data-stu-id="22b6b-113">Yes</span></span>      | <span data-ttu-id="22b6b-114">Define onde um suplemento expõe a funcionalidade.</span><span class="sxs-lookup"><span data-stu-id="22b6b-114">Defines where an add-in exposes functionality.</span></span> |
-| [<span data-ttu-id="22b6b-115">FunctionFile</span><span class="sxs-lookup"><span data-stu-id="22b6b-115">FunctionFile</span></span>](functionfile.md)       | <span data-ttu-id="22b6b-116">Sim</span><span class="sxs-lookup"><span data-stu-id="22b6b-116">Yes</span></span>      | <span data-ttu-id="22b6b-117">Uma URL para um arquivo que contém funções JavaScript.</span><span class="sxs-lookup"><span data-stu-id="22b6b-117">A URL to a file that contains JavaScript functions.</span></span>|
-| [<span data-ttu-id="22b6b-118">GetStarted</span><span class="sxs-lookup"><span data-stu-id="22b6b-118">GetStarted</span></span>](getstarted.md)           | <span data-ttu-id="22b6b-119">Não</span><span class="sxs-lookup"><span data-stu-id="22b6b-119">No</span></span>       | <span data-ttu-id="22b6b-120">Define o texto explicativo que aparece ao instalar o suplemento em hosts do Word, Excel ou PowerPoint.</span><span class="sxs-lookup"><span data-stu-id="22b6b-120">Defines the callout that appears when installing the add-in in Word, Excel, or PowerPoint hosts.</span></span> |
-| [<span data-ttu-id="22b6b-121">SupportsSharedFolders</span><span class="sxs-lookup"><span data-stu-id="22b6b-121">SupportsSharedFolders</span></span>](supportssharedfolders.md) | <span data-ttu-id="22b6b-122">Não</span><span class="sxs-lookup"><span data-stu-id="22b6b-122">No</span></span> | <span data-ttu-id="22b6b-123">Define se o suplemento do Outlook está disponível em cenários de representante e é definido como *false* por padrão.</span><span class="sxs-lookup"><span data-stu-id="22b6b-123">Defines whether the Outlook add-in is available in delegate scenarios and is set to *false* by default.</span></span><br><br><span data-ttu-id="22b6b-124">**Importante**: como o acesso de representante para suplementos do Outlook está atualmente em versão prévia, os suplementos que usam `SupportSharedFolders` o elemento não podem ser publicados no AppSource ou implantados por meio da implantação centralizada.</span><span class="sxs-lookup"><span data-stu-id="22b6b-124">**Important**: Because delegate access for Outlook add-ins is currently in preview, add-ins that use the `SupportSharedFolders` element cannot be published to AppSource or deployed via centralized deployment.</span></span> |
+| [<span data-ttu-id="35030-112">ExtensionPoint</span><span class="sxs-lookup"><span data-stu-id="35030-112">ExtensionPoint</span></span>](extensionpoint.md)   | <span data-ttu-id="35030-113">Sim</span><span class="sxs-lookup"><span data-stu-id="35030-113">Yes</span></span>      | <span data-ttu-id="35030-114">Define onde um suplemento expõe a funcionalidade.</span><span class="sxs-lookup"><span data-stu-id="35030-114">Defines where an add-in exposes functionality.</span></span> |
+| [<span data-ttu-id="35030-115">FunctionFile</span><span class="sxs-lookup"><span data-stu-id="35030-115">FunctionFile</span></span>](functionfile.md)       | <span data-ttu-id="35030-116">Sim</span><span class="sxs-lookup"><span data-stu-id="35030-116">Yes</span></span>      | <span data-ttu-id="35030-117">Uma URL para um arquivo que contém funções JavaScript.</span><span class="sxs-lookup"><span data-stu-id="35030-117">A URL to a file that contains JavaScript functions.</span></span>|
+| [<span data-ttu-id="35030-118">GetStarted</span><span class="sxs-lookup"><span data-stu-id="35030-118">GetStarted</span></span>](getstarted.md)           | <span data-ttu-id="35030-119">Não</span><span class="sxs-lookup"><span data-stu-id="35030-119">No</span></span>       | <span data-ttu-id="35030-120">Define o texto explicativo que aparece ao instalar o suplemento em hosts do Word, Excel ou PowerPoint.</span><span class="sxs-lookup"><span data-stu-id="35030-120">Defines the callout that appears when installing the add-in in Word, Excel, or PowerPoint hosts.</span></span> |
+| [<span data-ttu-id="35030-121">SupportsSharedFolders</span><span class="sxs-lookup"><span data-stu-id="35030-121">SupportsSharedFolders</span></span>](supportssharedfolders.md) | <span data-ttu-id="35030-122">Não</span><span class="sxs-lookup"><span data-stu-id="35030-122">No</span></span> | <span data-ttu-id="35030-123">Define se o suplemento do Outlook está disponível em cenários de representante e é definido como *false* por padrão.</span><span class="sxs-lookup"><span data-stu-id="35030-123">Defines whether the Outlook add-in is available in delegate scenarios and is set to *false* by default.</span></span> |
 
-## <a name="desktopformfactor-example"></a><span data-ttu-id="22b6b-125">Exemplo de DesktopFormFactor</span><span class="sxs-lookup"><span data-stu-id="22b6b-125">DesktopFormFactor example</span></span>
+## <a name="desktopformfactor-example"></a><span data-ttu-id="35030-124">Exemplo de DesktopFormFactor</span><span class="sxs-lookup"><span data-stu-id="35030-124">DesktopFormFactor example</span></span>
 
 ```xml
 ...
@@ -37,9 +37,9 @@ ms.locfileid: "35128514"
         <!-- GetStarted callout -->
       </GetStarted>
       <ExtensionPoint xsi:type="PrimaryCommandSurface">
-        <!-- information on this extension point -->
+        <!-- Information on this extension point. -->
       </ExtensionPoint>
-      <!-- possibly more ExtensionPoint elements -->
+      <!-- Possibly more ExtensionPoint elements. -->
     </DesktopFormFactor>
   </Host>
 </Hosts>
