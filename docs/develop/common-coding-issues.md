@@ -1,18 +1,51 @@
 ---
 title: Problemas de codificação comuns e comportamentos de plataforma inesperados
 description: Uma lista de problemas da plataforma de API JavaScript do Office frequentemente encontrada pelos desenvolvedores.
-ms.date: 10/29/2019
+ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 8cea95e3214585ba8e0b77535916f9c564dde9df
-ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.openlocfilehash: d39c379961833cdb924628becf2c2da3f7e271b9
+ms.sourcegitcommit: 59d29d01bce7543ebebf86e5a86db00cf54ca14a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902120"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "37924791"
 ---
 # <a name="common-coding-issues-and-unexpected-platform-behaviors"></a>Problemas de codificação comuns e comportamentos de plataforma inesperados
 
 Este artigo realça aspectos da API JavaScript do Office que podem resultar em comportamento inesperado ou exigir padrões de codificação específicos para obter o resultado desejado. Se você encontrar um problema que pertença à lista, informe-nos usando o formulário de comentários na parte inferior do artigo.
+
+## <a name="common-apis-and-outlook-apis-are-not-promise-based"></a>APIs comuns e APIs do Outlook não são baseados em promessa
+
+As [APIs comuns](/javascript/api/office) (aquelas que não estão vinculadas a um host específico do Office) e [APIs do Outlook](/javascript/api/outlook) usam um modelo de programação baseado em retorno de chamada. A interação com o documento subjacente do Office requer uma chamada de leitura ou gravação assíncrona que especifica um retorno de chamada a ser executado quando a operação for concluída. Para obter um exemplo desse padrão, consulte [Document. getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-).
+
+Esses métodos comuns de API e API do Outlook não retornam [promessas](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise). Portanto, você não pode usar [Await](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/await) para pausar a execução até que a operação assíncrona seja concluída. Se você precisar `await` de comportamento, você pode encapsule a chamada do método em uma promessa criada explicitamente.
+
+```js
+readDocumentFileAsync(): Promise<any> {
+    return new Promise((resolve, reject) => {
+        const chunkSize = 65536;
+        const self = this;
+
+        Office.context.document.getFileAsync(Office.FileType.Compressed, { sliceSize: chunkSize }, (asyncResult) => {
+            if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+                reject(asyncResult.error);
+            } else {
+                // `getAllSlices` is a Promise-wrapped implementation of File.getSliceAsync.
+                self.getAllSlices(asyncResult.value).then(result => {
+                    if (result.IsSuccess) {
+                        resolve(result.Data);
+                    } else {
+                        reject(asyncResult.error);
+                    }
+                });
+            }
+        });
+    });
+}
+```
+
+> [!NOTE]
+> A documentação de referência contém a implementação com a promessa do [arquivo. getSliceAsync](/javascript/api/office/office.file#getsliceasync-sliceindex--callback-).
 
 ## <a name="some-properties-must-be-set-with-json-structs"></a>Algumas propriedades devem ser definidas com as estruturas JSON
 
@@ -39,6 +72,17 @@ Você pode identificar uma propriedade que deve ter suas subpropriedades definid
 
 - Propriedade somente leitura: as subpropriedades podem ser definidas por meio de navegação.
 - Propriedade writable: as subpropriedades devem ser definidas com uma estrutura JSON (e não podem ser definidas por meio de navegação).
+
+## <a name="excel-range-limits"></a>Limites de intervalo do Excel
+
+Se você estiver criando um suplemento do Excel que usa intervalos, esteja ciente das seguintes limitações de tamanho:
+
+- O Excel na Web tem um limite de tamanho de conteúdo para solicitações e respostas de 5 MB. `RichAPI.Error` será lançado se esse limite for excedido.
+- Um intervalo é limitado a 5 milhões células para operações de conjunto.
+
+Se você espera que a entrada do usuário exceda esses limites, verifique os dados e divida os intervalos em vários objetos. Você também precisará enviar várias `context.sync()` chamadas para evitar que as operações de intervalo menores fiquem novamente em lotes.
+
+O suplemento pode ser capaz de usar o [RangeAreas](/javascript/api/excel/excel.rangeareas) para atualizar as células estrategicamente em um intervalo maior. Confira [trabalhar com vários intervalos simultaneamente em suplementos do Excel](../excel/excel-add-ins-multiple-ranges.md) para obter mais informações.
 
 ## <a name="setting-read-only-properties"></a>Configuração de propriedades somente leitura
 

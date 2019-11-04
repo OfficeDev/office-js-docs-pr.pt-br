@@ -3,16 +3,19 @@ title: Conjunto de requisitos de API para suplementos do Outlook versão 1.7
 description: ''
 ms.date: 03/20/2019
 localization_priority: Priority
-ms.openlocfilehash: aa5033422d30c41d455ad54aa71cc29c3c4c0c91
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 0f804ba44ab15749d868104719f88ecac5286480
+ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064463"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "37902064"
 ---
 # <a name="outlook-add-in-api-requirement-set-17"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.7
 
 O subconjunto de APIs de suplemento do Outlook para as APIs de JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um suplemento do Office.
+
+> [!NOTE]
+> Esta documentação destina-se a um [conjunto de requisitos](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) que não seja o mais recente.
 
 ## <a name="whats-new-in-17"></a>Quais as novidades da versão 1.7?
 
@@ -47,3 +50,4 @@ O conjunto de requisitos versão 1.7 inclui todos os recursos do [Conjunto de re
 - [Suplementos do Outlook](/outlook/add-ins/)
 - [Exemplos de código de suplementos do Outlook](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
 - [Introdução](/outlook/add-ins/quick-start)
+- [Conjuntos de requisitos e clientes com suporte](../../requirement-sets/outlook-api-requirement-sets.md)
