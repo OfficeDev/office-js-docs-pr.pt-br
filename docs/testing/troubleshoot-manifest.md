@@ -1,14 +1,14 @@
 ---
 title: Validar e solucionar problemas com seu manifesto
 description: Use estes métodos para validar o manifesto de suplementos do Office
-ms.date: 09/18/2019
+ms.date: 10/29/2019
 localization_priority: Priority
-ms.openlocfilehash: c320c05b944bba9e24a4d3c0e5ef514ac13cc3c6
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: c1af6308a975bf9204a519e21f828454d286aa19
+ms.sourcegitcommit: 59d29d01bce7543ebebf86e5a86db00cf54ca14a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035333"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "37924805"
 ---
 # <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>Validar e solucionar problemas com seu manifesto
 
@@ -68,6 +68,38 @@ Você pode usar o log de tempo de execução para depurar o manifesto do seu sup
 > [!IMPORTANT]
 > o log do tempo de execução afeta o desempenho. Ative-o somente quando precisar depurar problemas com o manifesto do suplemento.
 
+### <a name="use-runtime-logging-from-the-command-line"></a>Use o log de tempo de execução na linha de comandos
+
+Habilitar o log de tempo de execução na linha de comando é a maneira mais rápida de usar essa ferramenta de log. Esse usa npx, que é fornecido por padrão como parte do npm@5.2.0+. Se você possui uma versão anterior do [npm](https://www.npmjs.com/), tente as instruções do [Log de tempo de execução no Windows](#runtime-logging-on-windows) ou do [Log de tempo de execução no Mac](#runtime-logging-on-mac), ou [instale o npx](https://www.npmjs.com/package/npx).
+
+- Para habilitar o log de tempo de execução:
+    ```command&nbsp;line
+    npx office-addin-dev-settings runtime-log --enable
+    ```
+- Para habilitar o log de tempo de execução apenas para um arquivo específico, use o mesmo comando com um nome de arquivo:
+
+    ```command&nbsp;line
+    npx office-addin-dev-settings runtime-log --enable [filename.txt]
+    ```
+
+- Para desabilitar o log de tempo de execução:
+
+    ```command&nbsp;line
+    npx office-addin-dev-settings runtime-log --disable
+    ```
+
+- Para exibir se o log de tempo de execução está ativado:
+
+    ```command&nbsp;line
+    npx office-addin-dev-settings runtime-log
+    ```
+
+- Para exibir ajuda na linha de comandos para o log de tempo de execução:
+
+    ```command&nbsp;line
+    npx office-addin-dev-settings runtime-log --help
+    ```
+
 ### <a name="runtime-logging-on-windows"></a>Log de tempo de execução no Windows
 
 1. Verifique se você está executando o Office 2016 para área de trabalho na compilação **16.0.7019** ou posterior. 
@@ -79,7 +111,7 @@ Você pode usar o log de tempo de execução para depurar o manifesto do seu sup
     > 1. Clique com o botão direito do mouse na chave (pasta) **WEF** e selecione **Novo** > **Chave**.
     > 2. Nomeie a nova chave como **Developer**.
 
-3. Defina o valor padrão da chave para o caminho completo do arquivo onde você deseja que o log seja gravado. Para obter um exemplo, veja [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip). 
+3. Defina o valor padrão da chave **RuntimeLogging** para o caminho completo do arquivo em que você deseja que o log seja gravado. Para obter um exemplo, veja [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip). 
 
     > [!NOTE]
     > A pasta na qual o arquivo de log será gravado deverá existir e você precisará ter permissões de gravação. 

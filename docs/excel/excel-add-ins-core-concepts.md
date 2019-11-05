@@ -3,12 +3,12 @@ title: Conceitos fundamentais de programação com a API JavaScript do Excel
 description: Use a API JavaScript do Excel para criar suplementos para o Excel.
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: cd811a61ccd74496ab31c8b9a59ecd1c6e42aa42
-ms.sourcegitcommit: 5e90a90175909e0f4f392f5c98bd1273f444fe49
+ms.openlocfilehash: bd346764c3faba0cf3be7612c8b29dd5e0d4c28b
+ms.sourcegitcommit: 59d29d01bce7543ebebf86e5a86db00cf54ca14a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "35851578"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "37924798"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Conceitos fundamentais de programação com a API JavaScript do Excel
 
@@ -210,8 +210,7 @@ range.values = 'Due Date';
 
 Se um intervalo contiver um grande número de células, valores, formatos de número e/ou fórmulas, talvez não seja possível executar operações de API nesse intervalo. A API sempre fará a melhor tentativa de executar a operação solicitada em um intervalo (isto é, para recuperar ou gravar os dados especificados), mas tentar executar operações de leitura ou gravação para um intervalo grande pode resultar em um erro de API devido à utilização excessiva de recursos. Para evitar tais erros, é recomendável executar operações de leitura ou gravação separadas para subconjuntos menores de um intervalo grande, em vez de tentar executar uma única operação de leitura ou gravação em um intervalo grande.
 
-> [!IMPORTANT]
-> O Excel na Web tem um limite de tamanho de conteúdo para solicitações e respostas de **5 MB**. `RichAPI.Error` será lançado se esse limite for excedido.
+Para detalhes sobre as limitações do sistema, confira [Limites do Intervalo do Excel](../develop/common-coding-issues.md#excel-range-limits).
 
 ## <a name="update-all-cells-in-a-range"></a>Atualizar todas as células em um intervalo
 
@@ -253,3 +252,4 @@ Quando ocorrer um erro de API, a API retornará um objeto **error** que contém 
 - [Conceitos fundamentais de programação com a API JavaScript do Excel](excel-add-ins-advanced-concepts.md)
 - [Otimização de desempenho do da API JavaScript do Excel](/office/dev/add-ins/excel/performance)
 - [Referência da API JavaScript do Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+- [Problemas comuns de codificação e comportamentos inesperados da plataforma](../develop/common-coding-issues.md).
