@@ -547,6 +547,9 @@
         - name: Tutorial de funções personalizadas
           href: tutorials/excel-tutorial-create-custom-functions.md
           displayName: 'Excel, Custom Functions'
+        - name: Tutorial de funções personalizadas de dados compartilhados no painel de tarefas
+          href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
+          displayName: 'Excel, Custom Functions'
         - name: Arquitetura
           href: excel/custom-functions-architecture.md
           displayName: 'Excel, Custom Functions'
