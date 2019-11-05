@@ -3,12 +3,12 @@ ms.date: 07/10/2019
 description: Depurar suas funções personalizadas no Excel.
 title: Depuração de funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: 987df4fc638b94b7a5002c99aee6e36642f4e4a4
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 823f261af5dd50e8b965a421998234ceddd3551c
+ms.sourcegitcommit: 42bcf9059327a8d71a7ab223805aea68be9ed6b5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771453"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "37962021"
 ---
 # <a name="custom-functions-debugging"></a>Depuração de funções personalizadas
 
@@ -29,7 +29,7 @@ No Mac:
 > [!NOTE]
 > Para simplificar, este artigo mostra a depuração no contexto de uso do Visual Studio Code para editar, executar tarefas e, em alguns casos, usar o modo de exibição de depuração. Se você estiver usando um editor ou uma ferramenta de linha de comando diferente, consulte as [instruções de linha de comando](#commands-for-building-and-running-your-add-in) no final deste artigo.
 
-## <a name="requirements"></a>Requisitos
+## <a name="requirements"></a>Requirements
 
 Antes de começar a depurar, você deve usar o [gerador Yeoman para suplementos do Office](https://github.com/OfficeDev/generator-office) para criar um projeto de funções personalizadas. Para obter orientação sobre como criar um projeto de funções personalizadas, consulte o [tutorial de funções personalizadas](../tutorials/excel-tutorial-create-custom-functions.md).
 
@@ -108,7 +108,7 @@ Você pode usar as ferramentas de desenvolvedor do navegador para depurar funç�
 
 ### <a name="sideload-your-add-in"></a>Realizar o sideload do seu suplemento
 
-1. Abra [o Microsoft Office na Web](https://office.live.com/).
+1. Abra o [Microsoft Office na Web](https://office.live.com/).
 2. Abra uma nova pasta de trabalho do Excel.
 3. Abra a guia **Inserir** na faixa de opções e, na seção **Suplementos**, escolha **Suplementos do Office**.
 4. Na caixa de diálogo **Suplementos do Office**, selecione a guia **MEUS SUPLEMENTOS**, escolha **Gerenciar Meus Suplementos** e **Carregar Meu Suplemento**.
@@ -172,5 +172,6 @@ Saiba mais sobre as [práticas de autenticação em funções personalizadas](cu
 ## <a name="see-also"></a>Confira também
 
 * [Solução de problemas de funções personalizadas](custom-functions-troubleshooting.md)
+* [Tratamento de erros para funções personalizadas no Excel](custom-functions-errors.md)
 * [Torne as suas funções personalizadas compatíveis com as funções XLL definidas pelo usuário](make-custom-functions-compatible-with-xll-udf.md)
 * [Criar funções personalizadas no Excel](custom-functions-overview.md)
