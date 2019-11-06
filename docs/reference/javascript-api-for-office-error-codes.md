@@ -3,12 +3,12 @@ title: Códigos de erro da API JavaScript do Office
 description: ''
 ms.date: 08/06/2019
 localization_priority: Normal
-ms.openlocfilehash: f51d7860c0e7b4de530d30326f56380b28b03736
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: b5a5480b620f6ba9869a1faa40af0cd0faa3fcfc
+ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268558"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "38001939"
 ---
 # <a name="javascript-api-for-office-error-codes"></a>Códigos de erro da API JavaScript para Office
 
@@ -89,7 +89,7 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 |12006|||A caixa de diálogo foi fechada, geralmente pelo usuário ter escolhido o botão **X**. Lançado dentro da caixa de diálogo e dispara um evento `DialogEventReceived` na página de host.|
 |12007|||Uma caixa de diálogo já está aberta na janela do host. Uma janela do host, como um painel de tarefas, só pode ter uma caixa de diálogo aberta por vez. Lançada por chamada de `displayDialogAsync`.|
 |12009|||O usuário opta por ignorar a caixa de diálogo. Este erro pode ocorrer em versões online do Office, em que os usuários podem optar por não permitir que um suplemento apresente uma caixa de diálogo. Lançada por chamada de `displayDialogAsync`.|
-|13000 – 13010|||Veja [Causas e tratamento dos erros do getAccessTokenAsync](/office/dev/add-ins/develop/troubleshoot-sso-in-office-add-ins#causes-and-handling-of-errors-from-getaccesstokenasync).|
+|13000 – 13010|||Confira as [causas e o tratamento de erros do getAccessToken](/office/dev/add-ins/develop/troubleshoot-sso-in-office-add-ins#causes-and-handling-of-errors-from-getAccessToken).|
 
 ## <a name="binding-creation-error-conditions"></a>Condições do erro de criação de associação
 

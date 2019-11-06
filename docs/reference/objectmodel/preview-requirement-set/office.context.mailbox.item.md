@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Item-visualização do conjunto de requisitos
 description: ''
-ms.date: 10/30/2019
+ms.date: 11/05/2019
 localization_priority: Normal
-ms.openlocfilehash: 3ccafccd0c84ab243572421609083f56e3f7dfb1
-ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.openlocfilehash: a529dff046f48eff65b70813617bbb9d216dba5e
+ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902232"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "38001625"
 ---
 # <a name="item"></a>item
 
@@ -31,7 +31,7 @@ O namespace `item` é usado para acessar a mensagem, a solicitação de reunião
 | [attachments](#attachments-arrayattachmentdetails) | Membro |
 | [bcc](#bcc-recipients) | Membro |
 | [body](#body-body) | Membro |
-| [Categorias](#categories-categories) | Membro |
+| [categories](#categories-categories) | Membro |
 | [cc](#cc-arrayemailaddressdetailsrecipients) | Membro |
 | [conversationId](#nullable-conversationid-string) | Membro |
 | [dateTimeCreated](#datetimecreated-date) | Membro |
@@ -66,21 +66,21 @@ O namespace `item` é usado para acessar a mensagem, a solicitação de reunião
 | [getAllInternetHeadersAsync](#getallinternetheadersasyncoptions-callback) | Método |
 | [getAttachmentContentAsync](#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent) | Método |
 | [getAttachmentsAsync](#getattachmentsasyncoptions-callback--arrayattachmentdetails) | Método |
-| [getEntities](#getentities--entities) | Método |
-| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Método |
-| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Método |
-| [getInitializationContextAsync](#getinitializationcontextasyncoptions-callback) | Método |
-| [getItemIdAsync](#getitemidasyncoptions-callback) | Método |
-| [getRegExMatches](#getregexmatches--object) | Método |
-| [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | Método |
-| [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | Método |
-| [getSelectedEntities](#getselectedentities--entities) | Método |
-| [getSelectedRegExMatches](#getselectedregexmatches--object) | Método |
-| [getSharedPropertiesAsync](#getsharedpropertiesasyncoptions-callback) | Método |
-| [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | Método |
+| [getEntities](#getentities--entities) | Method |
+| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Method |
+| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Method |
+| [getInitializationContextAsync](#getinitializationcontextasyncoptions-callback) | Method |
+| [getItemIdAsync](#getitemidasyncoptions-callback) | Method |
+| [getRegExMatches](#getregexmatches--object) | Method |
+| [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | Method |
+| [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | Method |
+| [getSelectedEntities](#getselectedentities--entities) | Method |
+| [getSelectedRegExMatches](#getselectedregexmatches--object) | Method |
+| [getSharedPropertiesAsync](#getsharedpropertiesasyncoptions-callback) | Method |
+| [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | Method |
 | [removeAttachmentAsync](#removeattachmentasyncattachmentid-options-callback) | Método |
 | [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | Método |
-| [saveAsync](#saveasyncoptions-callback) | Método |
+| [saveAsync](#saveasyncoptions-callback) | Method |
 | [setSelectedDataAsync](#setselecteddataasyncdata-options-callback) | Método |
 
 ### <a name="example"></a>Exemplo
@@ -658,10 +658,10 @@ console.log("Item class: " + itemClass);
 
 #### <a name="nullable-itemid-string"></a>(anulável) itemId: Cadeia de caracteres
 
-Obtém o identificador do item dos Serviços Web do Exchange para o item atual. Somente modo de leitura.
+Obtém o [identificador do item dos serviços Web do Exchange](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange) para o item atual. Somente modo de leitura.
 
 > [!NOTE]
-> O identificador retornado pela propriedade `itemId` é o mesmo que o identificador do item dos Serviços Web do Exchange. A propriedade `itemId` não é idêntica à ID de Entrada do Outlook ou a ID usada pela API REST do Outlook. Antes de fazer chamadas API REST usando esse valor, ela deverá ser convertida usando [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string). Para obter detalhes, confira [Usar APIs REST do Outlook de um suplemento do Outlook](/outlook/add-ins/use-rest-api#get-the-item-id).
+> O identificador retornado pela `itemId` propriedade é o mesmo que o identificador de [item dos serviços Web do Exchange](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange). A propriedade `itemId` não é idêntica à ID de Entrada do Outlook ou a ID usada pela API REST do Outlook. Antes de fazer chamadas API REST usando esse valor, ela deverá ser convertida usando [Office.context.mailbox.convertToRestId](office.context.mailbox.md#converttorestiditemid-restversion--string). Para obter detalhes, confira [Usar APIs REST do Outlook de um suplemento do Outlook](/outlook/add-ins/use-rest-api#get-the-item-id).
 
 A propriedade `itemId` não está disponível no modo de redação. Se for obrigatório o identificador de um item, pode ser usado o método [`saveAsync`](#saveasyncoptions-callback) para salvar o item no servidor, o que retornará o identificador do item no parâmetro [`AsyncResult.value`](/javascript/api/office/office.asyncresult) na função de retorno de chamada.
 
@@ -2299,6 +2299,11 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 Retorna de forma assíncrona os dados selecionados do assunto ou do corpo de uma mensagem.
 
 Se não houver seleção, mas o cursor estiver no corpo ou no assunto, o método retorna nulo para os dados selecionados. Se um campo que não seja o corpo ou o assunto estiver selecionado, o método retorna o erro `InvalidSelection`.
+
+> [!NOTE]
+> No Outlook na Web, o método retorna a cadeia de caracteres "NULL" se nenhum texto está selecionado, mas o cursor está no corpo. Para verificar essa situação, inclua um código semelhante ao seguinte:
+>
+> `var selectedText = (asyncResult.value.endPosition === asyncResult.value.startPosition) ? "" : asyncResult.value.data;`
 
 ##### <a name="parameters"></a>Parâmetros
 

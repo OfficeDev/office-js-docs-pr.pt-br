@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Item-conjunto de requisitos 1,1
 description: ''
-ms.date: 10/23/2019
+ms.date: 11/05/2019
 localization_priority: Normal
-ms.openlocfilehash: 3d0b9783ea7fd235f4f989182ced04e0bce735ff
-ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
+ms.openlocfilehash: 5cbf942ea9b1351e0f945a9ca5534a9ba090b79b
+ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "37682652"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "38001611"
 ---
 # <a name="item"></a>item
 
@@ -134,10 +134,10 @@ console.log(outputString);
 
 Obtém um objeto que fornece métodos para acessar ou atualizar os destinatários na linha Cco (com cópia oculta) de uma mensagem. Somente modo de redação.
 
-Por padrão, a coleção é limitada a um máximo de 100 membros. No entanto, no Windows e no Mac, os seguintes limites se aplicam.
+Por padrão, o conjunto está limitado a um máximo de 100 membros. No entanto, no Windows e no Mac, os seguintes limites se aplicam.
 
-- Obter máximo de 500 membros.
-- Defina um máximo de 100 membros por chamada, até 500, no total.
+- Tenha no máximo 500 membros.
+- Defina o máximo de 100 membros por chamada, até 500 no total.
 
 ##### <a name="type"></a>Tipo
 
@@ -219,7 +219,7 @@ Fornece acesso aos destinatários na linha Cc (com cópia) de uma mensagem. O ti
 
 ##### <a name="read-mode"></a>Modo de leitura
 
-A propriedade `cc` retorna uma matriz que contém um objeto `EmailAddressDetails` para cada destinatário listado na linha **Cc** da mensagem. Por padrão, a coleção é limitada a um máximo de 100 membros. No entanto, no Windows e no Mac, é possível obter o máximo de 500 membros.
+A propriedade `cc` retorna uma matriz que contém um objeto `EmailAddressDetails` para cada destinatário listado na linha **Cc** da mensagem. Por padrão, o conjunto está limitado a um máximo de 100 membros. No entanto, no Windows e Mac, você pode ter o máximo de 500 membros.
 
 ```js
 console.log(JSON.stringify(Office.context.mailbox.item.cc));
@@ -227,10 +227,10 @@ console.log(JSON.stringify(Office.context.mailbox.item.cc));
 
 ##### <a name="compose-mode"></a>Modo de redação
 
-A propriedade `cc` retorna um objeto `Recipients` que fornece métodos para obter ou atualizar os destinatários na linha **Cc** da mensagem. Por padrão, a coleção é limitada a um máximo de 100 membros. No entanto, no Windows e no Mac, os seguintes limites se aplicam.
+A propriedade `cc` retorna um objeto `Recipients` que fornece métodos para obter ou atualizar os destinatários na linha **Cc** da mensagem. Por padrão, o conjunto está limitado a um máximo de 100 membros. No entanto, no Windows e no Mac, os seguintes limites se aplicam.
 
-- Obter máximo de 500 membros.
-- Defina um máximo de 100 membros por chamada, até 500, no total.
+- Tenha no máximo 500 membros.
+- Defina o máximo de 100 membros por chamada, até 500 no total.
 
 ```js
 Office.context.mailbox.item.cc.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -305,7 +305,7 @@ Obtém a data e a hora em que um item foi criado. Modo somente leitura.
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)| Read|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Read|
 
 ##### <a name="example"></a>Exemplo
 
@@ -336,7 +336,7 @@ Obtém a data e a hora em que um item foi alterado pela última vez. Somente mod
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
-|[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)| Read|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Read|
 
 ##### <a name="example"></a>Exemplo
 
@@ -505,10 +505,10 @@ console.log("Item class: " + itemClass);
 
 #### <a name="nullable-itemid-string"></a>(anulável) itemId: Cadeia de caracteres
 
-Obtém o identificador do item dos Serviços Web do Exchange para o item atual. Somente modo de leitura.
+Obtém o [identificador do item dos serviços Web do Exchange](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange) para o item atual. Somente modo de leitura.
 
 > [!NOTE]
-> O identificador retornado pela propriedade `itemId` é o mesmo que o identificador do item dos Serviços Web do Exchange. A propriedade `itemId` não é idêntica à ID de Entrada do Outlook ou a ID usada pela API REST do Outlook. Antes de fazer chamadas da API REST usando esse valor, ele deve ser `Office.context.mailbox.convertToRestId`convertido usando o, que está disponível a partir do conjunto de requisitos 1,3. Para obter detalhes, confira [Usar APIs REST do Outlook de um suplemento do Outlook](/outlook/add-ins/use-rest-api#get-the-item-id).
+> O identificador retornado pela `itemId` propriedade é o mesmo que o identificador de [item dos serviços Web do Exchange](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange). A propriedade `itemId` não é idêntica à ID de Entrada do Outlook ou a ID usada pela API REST do Outlook. Antes de fazer chamadas da API REST usando esse valor, ele deve ser `Office.context.mailbox.convertToRestId`convertido usando o, que está disponível a partir do conjunto de requisitos 1,3. Para obter detalhes, confira [Usar APIs REST do Outlook de um suplemento do Outlook](/outlook/add-ins/use-rest-api#get-the-item-id).
 
 ##### <a name="type"></a>Tipo
 
@@ -653,7 +653,7 @@ Fornece acesso aos participantes opcionais de um evento. O tipo de objeto e o n�
 
 ##### <a name="read-mode"></a>Modo de leitura
 
-A propriedade `optionalAttendees` retorna uma matriz que contém um objeto `EmailAddressDetails` para cada participante opcional da reunião. Por padrão, a coleção é limitada a um máximo de 100 membros. No entanto, no Windows e no Mac, é possível obter o máximo de 500 membros.
+A propriedade `optionalAttendees` retorna uma matriz que contém um objeto `EmailAddressDetails` para cada participante opcional da reunião. Por padrão, o conjunto está limitado a um máximo de 100 membros. No entanto, no Windows e Mac, você pode ter o máximo de 500 membros.
 
 ```js
 var optionalAttendees = Office.context.mailbox.item.optionalAttendees;
@@ -662,10 +662,10 @@ console.log("Optional attendees: " + JSON.stringify(optionalAttendees));
 
 ##### <a name="compose-mode"></a>Modo de redação
 
-A propriedade `optionalAttendees` retorna um objeto `Recipients` que fornece métodos para obter ou atualizar os participantes opcionais de uma reunião. Por padrão, a coleção é limitada a um máximo de 100 membros. No entanto, no Windows e no Mac, os seguintes limites se aplicam.
+A propriedade `optionalAttendees` retorna um objeto `Recipients` que fornece métodos para obter ou atualizar os participantes opcionais de uma reunião. Por padrão, o conjunto está limitado a um máximo de 100 membros. No entanto, no Windows e no Mac, os seguintes limites se aplicam.
 
-- Obter máximo de 500 membros.
-- Defina um máximo de 100 membros por chamada, até 500, no total.
+- Tenha no máximo 500 membros.
+- Defina o máximo de 100 membros por chamada, até 500 no total.
 
 ```js
 Office.context.mailbox.item.optionalAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -729,7 +729,7 @@ Fornece acesso aos participantes obrigatórios de um evento. O tipo de objeto e 
 
 ##### <a name="read-mode"></a>Modo de leitura
 
-A propriedade `requiredAttendees` retorna uma matriz que contém um objeto `EmailAddressDetails` para cada participante obrigatório da reunião. Por padrão, a coleção é limitada a um máximo de 100 membros. No entanto, no Windows e no Mac, é possível obter o máximo de 500 membros.
+A propriedade `requiredAttendees` retorna uma matriz que contém um objeto `EmailAddressDetails` para cada participante obrigatório da reunião. Por padrão, o conjunto está limitado a um máximo de 100 membros. No entanto, no Windows e Mac, você pode ter o máximo de 500 membros.
 
 ```js
 var requiredAttendees = Office.context.mailbox.item.requiredAttendees;
@@ -738,10 +738,10 @@ console.log("Required attendees: " + JSON.stringify(requiredAttendees));
 
 ##### <a name="compose-mode"></a>Modo de redação
 
-A propriedade `requiredAttendees` retorna um objeto `Recipients` que fornece métodos para obter ou atualizar os participantes obrigatórios de uma reunião. Por padrão, a coleção é limitada a um máximo de 100 membros. No entanto, no Windows e no Mac, os seguintes limites se aplicam.
+A propriedade `requiredAttendees` retorna um objeto `Recipients` que fornece métodos para obter ou atualizar os participantes obrigatórios de uma reunião. Por padrão, o conjunto está limitado a um máximo de 100 membros. No entanto, no Windows e no Mac, os seguintes limites se aplicam.
 
-- Obter máximo de 500 membros.
-- Defina um máximo de 100 membros por chamada, até 500, no total.
+- Tenha no máximo 500 membros.
+- Defina o máximo de 100 membros por chamada, até 500 no total.
 
 ```js
 Office.context.mailbox.item.requiredAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -912,7 +912,7 @@ Fornece acesso aos destinatários na linha **Para** de uma mensagem. O tipo de o
 
 ##### <a name="read-mode"></a>Modo de leitura
 
-A propriedade `to` retorna uma matriz que contém um objeto `EmailAddressDetails` para cada destinatário listado na linha **Para** da mensagem. Por padrão, a coleção é limitada a um máximo de 100 membros. No entanto, no Windows e no Mac, é possível obter o máximo de 500 membros.
+A propriedade `to` retorna uma matriz que contém um objeto `EmailAddressDetails` para cada destinatário listado na linha **Para** da mensagem. Por padrão, o conjunto está limitado a um máximo de 100 membros. No entanto, no Windows e Mac, você pode ter o máximo de 500 membros.
 
 ```js
 console.log(JSON.stringify(Office.context.mailbox.item.to));
@@ -920,10 +920,10 @@ console.log(JSON.stringify(Office.context.mailbox.item.to));
 
 ##### <a name="compose-mode"></a>Modo de redação
 
-A propriedade `to` retorna um objeto `Recipients` que fornece métodos para obter ou atualizar os destinatários na linha **Para** da mensagem. Por padrão, a coleção é limitada a um máximo de 100 membros. No entanto, no Windows e no Mac, os seguintes limites se aplicam.
+A propriedade `to` retorna um objeto `Recipients` que fornece métodos para obter ou atualizar os destinatários na linha **Para** da mensagem. Por padrão, o conjunto está limitado a um máximo de 100 membros. No entanto, no Windows e no Mac, os seguintes limites se aplicam.
 
-- Obter máximo de 500 membros.
-- Defina um máximo de 100 membros por chamada, até 500, no total.
+- Tenha no máximo 500 membros.
+- Defina o máximo de 100 membros por chamada, até 500 no total.
 
 ```js
 Office.context.mailbox.item.to.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
@@ -961,7 +961,7 @@ Posteriormente, você poderá usar o identificador com o método [`removeAttachm
 
 |Nome| Tipo| Atributos| Descrição|
 |---|---|---|---|
-|`uri`| Cadeia de caracteres||O URI que fornece o local do arquivo anexado à mensagem ou compromisso. O comprimento máximo é de 2048 caracteres.|
+|`uri`| String||O URI que fornece o local do arquivo anexado à mensagem ou compromisso. O comprimento máximo é de 2048 caracteres.|
 |`attachmentName`| String||O nome do anexo que é mostrado enquanto o anexo está sendo carregado. O tamanho máximo é de 255 caracteres.|
 |`options`| Objeto| &lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
 |`options.asyncContext`| Objeto| &lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
@@ -1022,7 +1022,7 @@ Se o Suplemento do Office estiver em execução no Outlook na Web, o método `ad
 
 |Nome| Tipo| Atributos| Descrição|
 |---|---|---|---|
-|`itemId`| Cadeia de caracteres||O identificador do Exchange do item a anexar. O comprimento máximo é de 100 caracteres.|
+|`itemId`| String||O identificador do Exchange do item a anexar. O comprimento máximo é de 100 caracteres.|
 |`attachmentName`| Cadeia de caracteres||O assunto do item a ser anexado. O tamanho máximo é de 255 caracteres.|
 |`options`| Object| &lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
 |`options.asyncContext`| Objeto| &lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
@@ -1323,7 +1323,7 @@ O método `getFilteredEntitiesByName` retorna as entidades que correspondem à e
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`name`| Cadeia de caracteres|O nome do elemento de regra `ItemHasKnownEntity` que define o filtro a corresponder.|
+|`name`| String|O nome do elemento de regra `ItemHasKnownEntity` que define o filtro a corresponder.|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -1423,7 +1423,7 @@ Se você especificar uma regra `ItemHasRegularExpressionMatch` na propriedade do
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`name`| Cadeia de caracteres|O nome do elemento de regra `ItemHasRegularExpressionMatch` que define o filtro a corresponder.|
+|`name`| String|O nome do elemento de regra `ItemHasRegularExpressionMatch` que define o filtro a corresponder.|
 
 ##### <a name="requirements"></a>Requisitos
 
