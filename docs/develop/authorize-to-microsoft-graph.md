@@ -1,14 +1,14 @@
 ---
 title: Autorizar o Microsoft Graph com SSO
 description: ''
-ms.date: 08/09/2019
+ms.date: 11/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 98b1219c0fe5459c497a27b915d31108545f14ae
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 03fa2b862d397ea9a28589d6d1aa9b1030a0b6c5
+ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36302557"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "38001436"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso-preview"></a>Autorizar o Microsoft Graph com SSO (visualização)
 
@@ -29,12 +29,12 @@ O diagrama a seguir mostra como funciona o processo de entrar e obter acesso ao 
 
 ![Diagrama que mostra o processo de SSO](../images/sso-access-to-microsoft-graph.png)
 
-1. No suplemento, o JavaScript chama uma nova API Office.js [getAccessTokenAsync](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference). Isso informa ao aplicativo host do Office para obter um token de acesso para o suplemento. (De agora em diante, isso se chamará **token de acesso de inicialização** porque é substituído por um segundo token mais tarde durante o processo. Para ver um exemplo de um token de acesso de inicialização decodificado, confira [Token de acesso de exemplo](sso-in-office-add-ins.md#example-access-token).)
+1. No suplemento, o JavaScript chama uma nova API do Office.js [getAccessToken](/javascript/api/office/officeruntime.auth#getaccesstoken-options--callback-). Isso informa ao aplicativo host do Office para obter um token de acesso para o suplemento. (De agora em diante, isso se chamará **token de acesso de inicialização** porque é substituído por um segundo token mais tarde durante o processo. Para ver um exemplo de um token de acesso de inicialização decodificado, confira [Token de acesso de exemplo](sso-in-office-add-ins.md#example-access-token).)
 1. Se o usuário não estiver conectado, o aplicativo host do Office abrirá uma janela pop-up para o usuário entrar.
 1. Se essa é a primeira vez que o usuário atual usa seu suplemento, será solicitado que ele dê o consentimento.
 1. O aplicativo host do Office solicita o **token de acesso de inicialização** do ponto de extremidade v2.0 do Azure AD para o usuário atual.
 1. O Azure AD envia o token de inicialização para o aplicativo host do Office.
-1. O aplicativo host do Office envia o **token de acesso de inicialização** ao suplemento como parte do objeto de resultado retornado pela chamada de `getAccessTokenAsync`.
+1. O aplicativo host do Office envia o **token de acesso de inicialização** ao suplemento como parte do objeto de resultado retornado pela chamada de `getAccessToken`.
 1. O JavaScript no suplemento faz uma solicitação HTTP a uma API Web que está hospedada no mesmo domínio totalmente qualificado que o suplemento e inclui o **token de acesso de inicialização** como prova de autorização.  
 1. O código no lado do servidor valida o **token de acesso de inicialização** de entrada.
 1. O código do lado do servidor usa o fluxo "on behalf of" (em nome de) (definido nos documentos [OAuth2 Token Exchange](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02) e [Aplicativo para servidores ou daemon para um cenário com API web do Azure](/azure/active-directory/develop/active-directory-authentication-scenarios)) para obter um token de acesso para o Microsoft Graph em troca do token de acesso de inicialização.
@@ -46,14 +46,14 @@ O diagrama a seguir mostra como funciona o processo de entrar e obter acesso ao 
 
 ## <a name="develop-an-sso-add-in-that-accesses-microsoft-graph"></a>Desenvolver um suplemento SSO que acessa o Microsoft Graph
 
-Você desenvolve um suplemento que acessa o Microsoft Graph como faria com qualquer outro suplemento que use SSO. Para obter uma descrição completa, confira [Habilitar o logon único para Suplementos do Office](/office/dev/add-ins/develop/sso-in-office-add-ins). A diferença é que é obrigatório que o suplemento tenha uma API Web do lado do servidor, e o token de acesso nesse artigo é chamado de "token de acesso de inicialização". 
+Você desenvolve um suplemento que acessa o Microsoft Graph como faria com qualquer outro suplemento que use SSO. Para obter uma descrição completa, confira [Habilitar o logon único para Suplementos do Office](/office/dev/add-ins/develop/sso-in-office-add-ins). A diferença é que é obrigatório que o suplemento tenha uma API Web do lado do servidor, e o token de acesso nesse artigo é chamado de "token de acesso de inicialização".
 
 Dependendo do seu idioma e da estrutura, podem estar disponíveis bibliotecas que simplificarão o código do lado do servidor que você precisa escrever. O código deve fazer o seguinte:
 
-* Validar o token de acesso de inicialização que é recebido do manipulador de token que você criou anteriormente. Para saber mais, confira [Validar o token de acesso](sso-in-office-add-ins.md#validate-the-access-token). 
 * Inicie o fluxo "on behalf of" com uma chamada para o ponto de extremidade v2.0 do Azure AD que inclui o token de acesso de inicialização, alguns metadados sobre o usuário e as credenciais do suplemento (sua ID e segredo).
-* Armazene em cache o token de acesso retornado no Microsoft Graph. Para mais informações sobre esse fluxo, confira [Azure Active Directory v2.0 e fluxo "On-Behalf-Of" do OAuth 2.0](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of).
-* Crie um ou mais métodos de API Web que obtêm dados do Microsoft Graph passando o token de acesso em cache do Microsoft Graph.
+* Crie um ou mais métodos de API Web que obtêm dados do Microsoft Graph passando o token de acesso (possivelmente em cache) para o Microsoft Graph.
+* Opcionalmente, antes de iniciar o fluxo, valide o token de acesso de inicialização que é recebido do manipulador de token que você criou anteriormente. Para saber mais, confira [Validar o token de acesso](sso-in-office-add-ins.md#validate-the-access-token). 
+* Opcionalmente, após concluir o fluxo, armazene em cache o token de acesso retornado no Microsoft Graph. Faça isso se o suplemento fizer mais de uma chamada para o Microsoft Graph. Para mais informações sobre esse fluxo, confira [Azure Active Directory v2.0 e fluxo "On-Behalf-Of" do OAuth 2.0](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of).
 
 > [!NOTE]
 > Para exemplos de tokens de acesso decodificados do Microsoft Graph obtidos pelo fluxo "on behalf of", confira [Azure Active Directory v2.0 e fluxo "On-Behalf-Of" do OAuth 2.0](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of).

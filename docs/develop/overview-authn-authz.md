@@ -1,14 +1,14 @@
 ---
 title: Visão geral da autenticação e autorização nos Suplementos do Office
 description: ''
-ms.date: 08/09/2019
+ms.date: 11/05/2019
 localization_priority: Priority
-ms.openlocfilehash: dab5eec14a95aea9c27e1d26151b121ac2ed82ac
-ms.sourcegitcommit: 24303ca235ebd7144a1d913511d8e4fb7c0e8c0d
+ms.openlocfilehash: 7960e47b615828bb844660565804db9ec7e4e1db
+ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "36838505"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "38001457"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Visão geral da autenticação e autorização nos Suplementos do Office
 
@@ -37,18 +37,20 @@ Você pode obter autorização para os dados do Microsoft Graph para seu supleme
 
 ## <a name="user-authentication-with-sso"></a>Autenticação do usuário com o SSO
 
-Para usar o SSO para autenticar o usuário, seu código em um arquivo de função ou painel de tarefas chama o método [getAccessTokenAsync](/javascript/api/office/office.auth#getaccesstokenasync-options--callback-). Se o usuário não estiver conectado ao Office, o Office abrirá uma caixa de diálogo e o navegará para a página de logon do Azure Active Directory. Depois que o usuário estiver conectado ou se o usuário já tiver entrado, o método retorna um token de acesso. O token é um token de Bootstrap no fluxo **On Behalf Of**. (Confira [Acessar o Microsoft Graph com o SSO](#access-to-microsoft-graph-with-sso).) No entanto, ele também pode ser usado como um token de ID, pois inclui várias declarações exclusivas para o usuário atual, incluindo `preferred_username`, `name`, `sub` e `oid`. Para obter orientação sobre qual propriedade usar como a ID de usuário final, consulte [Tokensde acesso da plataforma de identidade da Microsoft](https://docs.microsoft.com/pt-BR/azure/active-directory/develop/access-tokens#payload-claims). Para obter um exemplo de um desses tokens, consulte o [Exemplo de token de acesso](sso-in-office-add-ins.md#example-access-token).
+Para usar o SSO para autenticar o usuário, seu código em um arquivo de função ou painel de tarefas chama o método [getAccessToken](/javascript/api/office/officeruntime.auth#getAccessToken-options--callback-). Se o usuário não estiver conectado ao Office, o Office abrirá uma caixa de diálogo e o navegará para a página de logon do Azure Active Directory. Depois que o usuário estiver conectado ou se o usuário já tiver entrado, o método retorna um token de acesso. O token é um token de Bootstrap no fluxo **On Behalf Of**. (Confira [Acessar o Microsoft Graph com o SSO](#access-to-microsoft-graph-with-sso).) No entanto, ele também pode ser usado como um token de ID, pois inclui várias declarações exclusivas para o usuário atual, incluindo `preferred_username`, `name`, `sub` e `oid`. Para obter orientação sobre qual propriedade usar como a ID de usuário final, consulte [Tokensde acesso da plataforma de identidade da Microsoft](https://docs.microsoft.com/azure/active-directory/develop/access-tokens#payload-claims). Para obter um exemplo de um desses tokens, consulte o [Exemplo de token de acesso](sso-in-office-add-ins.md#example-access-token).
 
 Após o seu código ter extraído a declaração desejada no token, ele usará esse valor para pesquisar o usuário em uma tabela de usuário ou banco de dados de usuário que você mantém. Use o banco de dados para armazenar informações relativas ao usuário, como as preferências do usuário ou o estado da conta do usuário. Uma vez que você está usando o SSO, os usuários não entram separadamente no seu suplemento, assim você não precisa armazenar uma senha para o usuário.
 
 Antes de começar a implementar a autenticação do usuário com o SSO, certifique-se de que você está totalmente familiarizado com o artigo [Habilitar o logon único para Suplementos do Office](sso-in-office-add-ins.md). Observe também estes exemplos:
 
-- [Suplemento do Office NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO), especialmente o arquivo [auth.ts](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/src/auth.ts), que usa a biblioteca [jswebtoken](https://github.com/auth0/node-jsonwebtoken) para decodificar e analisar o token. (Esse exemplo, no entanto, não usa o token como um token de ID. Ele a usa para obter acesso ao Microsoft Graph com o fluxo **On Behalf Of**.)
-- [O suplemento do Office ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO), especialmente o arquivo [ValuesController.ts](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Controllers/ValuesController.cs), que usa a biblioteca [System.Security.Claims.ClaimsPrincipal](https://docs.microsoft.com/dotnet/api/system.security.claims.claimsprincipal) para extrair declarações do token. (Esse exemplo, no entanto, não usa o token como um token de ID. Ele extrai uma `scope`declaração do token e a usa para obter acesso ao Microsoft Graph com o fluxo **On Behalf Of**).
+- [SSO do NodeJS do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO), especialmente o arquivo [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/src/auth.ts). 
+- [SSO do ASP.NET do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO). 
 
-## <a name="access-to-microsoft-graph-with-sso"></a>Acesso ao Microsoft Graph com oSSO
+Esses exemplos, no entanto, não usam o token como um token de ID. Eles o utilizam para obter acesso ao Microsoft Graph com o fluxo **On Behalf Of**.
 
-Para usar o SSO para acessar o Microsoft Graph, seu suplemento em um arquivo de função ou painel de tarefas chama o método [getAccessTokenAsync](/javascript/api/office/office.auth#getaccesstokenasync-options--callback-). Se o usuário não estiver conectado ao Office, o Office abrirá uma caixa de diálogo e o navegará para a página de logon do Azure Active Directory. Depois que o usuário estiver conectado ou se o usuário já tiver entrado, o método retorna um token de acesso. O token é um token de Bootstrap no fluxo **On Behalf Of**. Especificamente, ele tem uma `scope` Declaração com o valor `access_as_user`. Para mais instruções sobre as declarações no token, consulte [Tokens de acesso à plataforma de identidade da Microsoft](https://docs.microsoft.com/pt-BR/azure/active-directory/develop/access-tokens#payload-claims). Para obter um exemplo de um desses tokens, consulte o [Exemplo de token de acesso](sso-in-office-add-ins.md#example-access-token).
+## <a name="access-to-microsoft-graph-with-sso"></a>Acesso ao Microsoft Graph pelo SSO
+
+Para usar o SSO para acessar o Microsoft Graph, seu suplemento em um arquivo de função ou painel de tarefas chama o método [getAccessToken](/javascript/api/office/officeruntime.auth#getAccessToken-options--callback-). Se o usuário não estiver conectado ao Office, o Office abrirá uma caixa de diálogo e o navegará para a página de logon do Azure Active Directory. Depois que o usuário estiver conectado ou se o usuário já tiver entrado, o método retorna um token de acesso. O token é um token de Bootstrap no fluxo **On Behalf Of**. Especificamente, ele tem uma `scope` Declaração com o valor `access_as_user`. Para mais instruções sobre as declarações no token, consulte [Tokens de acesso à plataforma de identidade da Microsoft](https://docs.microsoft.com/azure/active-directory/develop/access-tokens#payload-claims). Para obter um exemplo de um desses tokens, consulte o [Exemplo de token de acesso](sso-in-office-add-ins.md#example-access-token).
 
 Após o código obter o token, ele o usará o fluxo **On Behalf Of** para obter um segundo token: um token de acesso ao Microsoft Graph.
 
@@ -73,4 +75,3 @@ Serviços online populares, incluindo o Google, o Facebook, o LinkedIn, o SalesF
 
 > [!IMPORTANT]
 > Antes de começar a codificar, descubra se a fonte de dados permite que o logon na tela seja aberto em um iFrame. Quando um suplemento do Office está sendo executado no *Office na Web*, o painel de tarefas é um iFrame. Se a fonte de dados não permitir que sua tela de logon seja aberta em um iFrame, você precisará abrir a tela de logon em uma caixa de diálogo aberta com a API de Diálogo do Office. Para saber mais, confira [Autenticação com a API de Diálogo do Office](auth-with-office-dialog-api.md).
-
