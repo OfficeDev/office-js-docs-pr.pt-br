@@ -1,14 +1,14 @@
 ---
 title: Habilitar o logon único para Suplementos do Office
 description: ''
-ms.date: 04/10/2019
+ms.date: 11/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 27a5d8e1dba55f1479fbdc4c23706e4322181c62
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 88bc29b3a1038bf8df74d30621015b472572f7e3
+ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449854"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "38001443"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Habilitar o logon único para Suplementos do Office (visualização)
 
@@ -31,7 +31,7 @@ Nem todos os aplicativos do Office oferecem suporte a visualização de SSO. Est
 
 Se você estiver trabalhando com um suplemento do **Outlook**, certifique-se de habilitar a Autenticação Moderna para o locatário do Office 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
-Você *não* deve confiar no SSO como único método do suplemento de autenticação. Devem implementar um sistema de autenticação alternativo que o suplemento possa se enquadrar em determinadas situações de erro. Você pode usar um sistema de autenticação e tabelas de usuário ou utilizar um dos provedores de logon de redes sociais. Para saber mais sobre como fazer isso com um suplemento do Office, confira [Autorizar serviços externos nos suplementos do Office](/office/dev/add-ins/develop/auth-external-add-ins). Para *Outlook*, há um sistema de retorno recomendado. Para mais informações, confira [Cenário: implementar o logon único no serviço em um Suplemento do Outlook](/outlook/add-ins/implement-sso-in-outlook-add-in).
+Você *não* deve confiar no SSO como único método do suplemento de autenticação. Devem implementar um sistema de autenticação alternativo que o suplemento possa se enquadrar em determinadas situações de erro. Você pode usar um sistema de autenticação e tabelas de usuário ou utilizar um dos provedores de logon de redes sociais. Para saber mais sobre como fazer isso com um suplemento do Office, confira [Autorizar serviços externos nos suplementos do Office](/office/dev/add-ins/develop/auth-external-add-ins). Para *Outlook*, há um sistema de fallback recomendado. Para mais informações, confira [Cenário: implementar o logon único no serviço em um Suplemento do Outlook](/outlook/add-ins/implement-sso-in-outlook-add-in). Para exemplos que usam o Azure Active Directory como o sistema de fallback, confira [SSO com Suplemento NodeJS do Office](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO) e [SSO com Suplemento ASP.NET do Office](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO).
 
 ### <a name="how-sso-works-at-runtime"></a>Como o SSO funciona em tempo de execução
 
@@ -39,18 +39,18 @@ O diagrama a seguir mostra como funciona o processo de SSO.
 
 ![Diagrama que mostra o processo de SSO](../images/sso-overview-diagram.png)
 
-1. No suplemento, o JavaScript chama uma nova API Office.js [getAccessTokenAsync](#sso-api-reference). Isso informa ao aplicativo host do Office para obter um token de acesso para o suplemento. Confira [Token de acesso de amostra](#example-access-token).
+1. No suplemento, o JavaScript chama uma nova API do Office.js [getAccessTokenAsync](/javascript/api/office/officeruntime.auth#getAccessToken-options--callback-). Isso informa ao aplicativo host do Office para obter um token de acesso para o suplemento. Confira [Token de acesso de amostra](#example-access-token).
 2. Se o usuário não estiver conectado, o aplicativo host do Office abrirá uma janela pop-up para o usuário entrar.
 3. Se essa é a primeira vez que o usuário atual usa seu suplemento, será solicitado que ele dê o consentimento.
 4. O aplicativo host do Office solicita o **token do suplemento** do ponto de extremidade v 2.0 do Azure AD para o usuário atual. 
 5. O Azure AD envia o token do suplemento ao aplicativo host do Office.
-6. O aplicativo host do Office envia o **token do suplemento** ao suplemento como parte do objeto de resultado que retornou pela chamada de `getAccessTokenAsync`.
+6. O aplicativo host do Office envia o **token do suplemento** ao suplemento como parte do objeto de resultado que retornou pela chamada de `getAccessToken`.
 7. O JavaScript no suplemento pode analisar o token e extrair informações necessárias, como endereço de email do usuário.
 8. Opcionalmente, o suplemento pode enviar solicitação HTTP para o servidor para obter mais dados sobre o usuário; como as preferências do usuário. Como alternativa, o próprio token de acesso pode ser enviado para o servidor para análise e validação.
 
 ## <a name="develop-an-sso-add-in"></a>Desenvolver um suplemento com SSO
 
-Esta seção descreve as tarefas envolvidas na criação de um suplemento do Office que usa SSO. Essas tarefas descritas aqui apresentam uma linguagem e uma estrutura de forma agnóstica. Confira exemplos de explicações detalhadas em:
+Esta seção descreve as tarefas envolvidas na criação de um suplemento do Office que usa SSO. Essas tarefas descritas aqui apresentam uma linguagem e uma estrutura de forma agnóstica. Para orientações detalhadas, confira:
 
 * [Criar um Suplemento do Office com Node.js que usa logon único](create-sso-office-add-ins-nodejs.md)
 * [Criar um Suplemento do Office com ASP.NET que usa logon único](create-sso-office-add-ins-aspnet.md)
@@ -96,31 +96,34 @@ Veja a seguir um exemplo da marcação:
 
 Adicione o JavaScript ao suplemento para:
 
-* Ligue [getAccessTokenAsync](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference).
+* Chamar [getAccessToken](/javascript/api/office/officeruntime.auth#getAccessToken-options--callback-).
 
 * Analisar o token de acesso ou encaminhá-lo ao código de servidor do suplemento.
 
-Aqui está um exemplo simples de uma chamada para `getAccessTokenAsync`.
+Aqui está um exemplo simples de uma chamada para `getAccessToken`.
 
 > [!NOTE]
-> Este exemplo lida explicitamente com apenas um tipo de erro. Exemplos de tratamento de erro mais elaborados, confira [Home.js Office – adicionar-em-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/Home.js) e [program.js Office – adicionar-em-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Completed/public/program.js). E veja [solucionar problemas de mensagens de erro no logon único (SSO)](troubleshoot-sso-in-office-add-ins.md).
- 
+> Este exemplo lida explicitamente com apenas um tipo de erro. Para exemplos de tratamento de erro mais elaborados, confira [SSO com Suplemento NodeJS do Office](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO) e [SSO com Suplemento ASP.NET do Office](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO).
+
 
 ```js
-Office.context.auth.getAccessTokenAsync(function (result) {
-    if (result.status === "succeeded") {
-        // Use this token to call Web API
-        var ssoToken = result.value;
-        ...
-    } else {
-        if (result.error.code === 13003) {
+async function getGraphData() {
+    try {
+        let bootstrapToken = await OfficeRuntime.auth.getAccessToken({ allowSignInPrompt: true, forMSGraphAccess: true });
+
+        // The /api/values controller will make the token exchange and use the
+        // access token it gets back to make the call to MS Graph.
+        getData("/api/DoSomething", bootstrapToken);
+    }
+    catch (exception) {
+        if (exception.code === 13003) {
             // SSO is not supported for domain user accounts, only
             // work or school (Office 365) or Microsoft Account IDs.
         } else {
             // Handle error
         }
     }
-});
+}
 ```
 
 Aqui está um exemplo simples de como passar o token de suplemento para o lado do servidor. O token é incluído como um cabeçalho de `Authorization`ao enviar uma solicitação para o lado do servidor. Este exemplo prevê enviar dados JSON, para que ele tenha o método `POST`, mas `GET` é suficiente para enviar o token de acesso quando você não estiver escrevendo no servidor.
@@ -130,7 +133,7 @@ $.ajax({
     type: "POST",
     url: "/api/DoSomething",
     headers: {
-        "Authorization": "Bearer " + ssoToken
+        "Authorization": "Bearer " + bootstrapToken
     },
     data: { /* some JSON payload */ },
     contentType: "application/json; charset=utf-8"
@@ -145,9 +148,9 @@ $.ajax({
 
 #### <a name="when-to-call-the-method"></a>Quando chamar o método
 
-Se o seu suplemento não puder ser usado quando nenhum usuário estiver logado no Office, então você deve chamar `getAccessTokenAsync` * quando o suplemento for iniciado *.
+Se o seu suplemento não puder ser usado quando nenhum usuário estiver logado no Office, então será necessário chamar o `getAccessToken` *quando o suplemento for iniciado* e passar `allowSignInPrompt: true` no parâmetro de `options` do `getAccessToken`.
 
-Se o complemento tiver alguma funcionalidade que não exija um usuário conectado, então chame `getAccessTokenAsync` * quando o usuário fizer uma ação que exija acesso a um usuário logado*. Não há uma degradação significativa do desempenho com chamadas redundantes de `getAccessTokenAsync` porque o Office armazena em cache o token de acesso e o reutilizará, até que ele expire, sem fazer outra chamada para o AAD V. Ponto de extremidade 2.0 sempre que `getAccessTokenAsync` for chamado. Portanto, você pode adicionar chamadas de `getAccessTokenAsync` para todas as funções e manipuladores que iniciam uma ação onde o token é necessário.
+Se o complemento tiver alguma funcionalidade que não exija um usuário conectado, então chame `getAccessToken` * quando o usuário fizer uma ação que exija acesso a um usuário logado*. Não há uma degradação significativa do desempenho com chamadas redundantes de `getAccessToken` porque o Office armazena em cache o token de inicialização e o reutilizará, até que ele expire, sem fazer outra chamada para o AAD v. Ponto de extremidade 2.0 sempre que `getAccessToken` for chamado. Portanto, você pode adicionar chamadas de `getAccessToken` para todas as funções e manipuladores que iniciam uma ação onde o token é necessário.
 
 ### <a name="add-server-side-code"></a>Adicionar código no lado do servidor
 
@@ -156,16 +159,16 @@ Na maioria dos cenários, não haverá muitas razões para obter o token de aces
 * Criar um ou mais métodos de Web API com informações sobre o usuário que são extraídas do token; Por exemplo, uma forma que procura preferências do usuário em seu banco de dados hospedado. (Confira **usando o token SSO, como uma identidade** abaixo.)Dependendo do seu idioma e da estrutura, podem estar disponíveis bibliotecas que simplificarão o código que você precisa escrever.
 * Obter dados do Microsoft Graph. O código do lado do servidor precisa fazer o seguinte:
 
-    * Validar o token de acesso (consulte **validar o token de acesso** abaixo).
     * Iniciar o fluxo "on behalf of" com uma chamada para o ponto de extremidade v 2.0 do Azure AD que inclui o token de acesso, alguns metadados sobre o usuário e as credenciais do suplemento (sua ID e segredo). O token de acesso nesse contexto é chamado de bootstrap token.
-    * Armazenar em cache o novo token de acesso que é retornado do fluxo em nome de.
     * Obter os dados do Microsoft Graph usando o novo token.
+    * Opcionalmente, valide o token de acesso antes de iniciar o fluxo (confira **Validar o token de acesso** abaixo).
+    * Opcionalmente, após a conclusão do fluxo on-behalf-of, armazene em cache o novo token de acesso retornado do fluxo, de forma que ele seja reutilizado em outras chamadas para o Microsoft Graph até que ele expire.
 
  Para saber mais sobre como obter acesso autorizado aos dados do usuário Microsoft Graph, confira [Autorizar o Microsoft Graph nos suplementos do Office](authorize-to-microsoft-graph.md).
 
 #### <a name="validate-the-access-token"></a>Validar o token de acesso
 
-Após a API Web receber o token de acesso, ela deve validá-lo antes que ele possa ser usado. O token é um Token Web JSON (JWT) e isso significa que validação funciona como uma validação de token na maioria dos fluxos padrão do OAuth. Há diversas bibliotecas disponíveis que podem lidar com a validação de JWT. No entanto, as noções básicas incluem:
+Após a API da Web receber o token de acesso, ela deve validá-lo antes que ele possa ser usado. O token é um Token Web JSON (JWT) e isso significa que validação funciona como uma validação de token na maioria dos fluxos padrão do OAuth. Há diversas bibliotecas disponíveis que podem lidar com a validação de JWT. No entanto, as noções básicas incluem:
 
 - Verificar se o token foi bem formado
 - Verificar se o token foi emitido pela autoridade desejada
@@ -193,7 +196,6 @@ Por exemplo, o serviço poderia formatar os valores em conjunto como `{oid-value
 ### <a name="example-access-token"></a>Token de acesso de exemplo
 
 A seguir está uma carga decodificada típica do token de acesso. Para saber mais sobre as propriedades, confira [Referência de tokens de versão do Azure Active Directory 2.0](/azure/active-directory/develop/active-directory-v2-tokens).
-
 
 ```js
 {
@@ -223,12 +225,12 @@ Há algumas diferenças pequenas, mas importantes entre usar o SSO em um supleme
 
 ## <a name="sso-api-reference"></a>Referência da API do SSO
 
-### <a name="getaccesstokenasync"></a>getAccessTokenAsync
+### <a name="getaccesstoken"></a>getAccessToken
 
-O namespace [Auth](/javascript/api/office/office.auth) do Office, `Office.context.auth`, fornece um método, `getAccessTokenAsync` que permite com que o host do Office obtenha um token de acesso para o aplicativo web do suplemento. Indiretamente, isso também habilita o suplemento para acessar os dados do Microsoft Graph do usuário sem exigir que o usuário se conecte uma segunda vez.
+O namespace [Auth](/javascript/api/office/officeruntime.auth) do OfficeRuntime, `OfficeRuntime.auth`, fornece um método, `getAccessToken` que permite com que o host do Office obtenha um token de acesso para o aplicativo web do suplemento. Indiretamente, isso também habilita o suplemento para acessar os dados do Microsoft Graph do usuário sem exigir que o usuário se conecte uma segunda vez.
 
 ```typescript
-getAccessTokenAsync(options?: AuthOptions, callback?: (result: AsyncResult<string>) => void): void;
+getAccessToken(options?: AuthOptions, callback?: (result: AsyncResult<string>) => void): void;
 ```
 
 O método chama o ponto de extremidade do Azure Active Directory V 2.0 para obter um token de acesso para o aplicativo Web do seu suplemento. Isso permite que os suplementos identifiquem usuários. O código do lado do servidor pode usar esse token para acessar o Microsoft Graph do aplicativo Web do suplemento usando o [fluxo OAuth "em nome de"](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of).
@@ -242,8 +244,8 @@ O método chama o ponto de extremidade do Azure Active Directory V 2.0 para obte
 
 #### <a name="parameters"></a>Parâmetros
 
-`options` – Opcional. Aceite um objeto [AuthOptions](/javascript/api/office/office.authoptions) (veja abaixo) para definir comportamentos de logon.
+`options` – Opcional. Aceite um objeto [AuthOptions](/javascript/api/office/officeruntime.authoptions) (veja abaixo) para definir comportamentos de logon.
 
 `callback` – Opcional. Aceita um método de retorno que possa analisar o token de ID de usuário ou usar o token fluxo "em nome de" para obter acesso ao Microsoft Graph. Se [AsyncResult](/javascript/api/office/office.asyncresult) `.status` é "bem-sucedido", em seguida, `AsyncResult.value` é o v AAD bruto. token de acesso 2.0 formatado.
 
-A interface [AuthOptions](/javascript/api/office/office.authoptions) fornece opções para a experiência do usuário quando o Office obtém um token de acesso para o suplemento do AAD v. 2.0 com o método`getAccessTokenAsync`.
+A interface [AuthOptions](/javascript/api/office/officeruntime.authoptions) fornece opções para a experiência do usuário quando o Office obtém um token de acesso para o suplemento do AAD v. 2.0 com o método`getAccessToken`.
