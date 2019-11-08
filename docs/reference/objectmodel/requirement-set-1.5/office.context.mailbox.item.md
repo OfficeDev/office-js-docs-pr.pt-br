@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox.item - conjunto de requisitos 1.5
 description: ''
-ms.date: 11/05/2019
+ms.date: 11/06/2019
 localization_priority: Priority
-ms.openlocfilehash: 7cb755ecb7bcc836e93cf11e0caa5db55a6ddc29
-ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
+ms.openlocfilehash: c5ab134c91e156368c21722726d7ee502397b99e
+ms.sourcegitcommit: 08c0b9ff319c391922fa43d3c2e9783cf6b53b1b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "38001576"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "38066253"
 ---
 # <a name="item"></a>item
 
@@ -1640,12 +1640,10 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 
 Retorna de forma assíncrona os dados selecionados do assunto ou do corpo de uma mensagem.
 
-Se não houver seleção, mas o cursor estiver no corpo ou no assunto, o método retorna nulo para os dados selecionados. Se um campo que não seja o corpo ou o assunto estiver selecionado, o método retorna o erro `InvalidSelection`.
+Se não houver seleção, mas o cursor estiver no corpo ou no assunto, o método retorna uma cadeia de caracteres vazia para os dados selecionados. Se um campo que não seja o corpo ou o assunto estiver selecionado, o método retorna o erro `InvalidSelection`.
 
 > [!NOTE]
-> No Outlook na Web, o método retorna a cadeia de caracteres “null” se nenhum texto for selecionado, mas o cursor estiver no corpo. Para verificar essa situação, inclua um código semelhante ao seguinte:
->
-> `var selectedText = (asyncResult.value.endPosition === asyncResult.value.startPosition) ? "" : asyncResult.value.data;`
+> No Outlook na Web, o método retorna a cadeia de caracteres “null” se nenhum texto for selecionado, mas o cursor estiver no corpo. Para verificar essa situação, confira o exemplo mais adiante nesta seção.
 
 ##### <a name="parameters"></a>Parâmetros
 
@@ -1682,11 +1680,13 @@ function getCallback(asyncResult) {
   var text = asyncResult.value.data;
   var prop = asyncResult.value.sourceProperty;
 
-  Office.context.mailbox.item.setSelectedDataAsync('Setting ' + prop + ': ' + text, {}, setCallback);
-}
+  // Handle where Outlook on the web erroneously returns "null" instead of empty string.
+  if (Office.context.mailbox.diagnostics.hostName === 'OutlookWebApp'
+      && asyncResult.value.endPosition === asyncResult.value.startPosition) {
+    text = "";
+  }
 
-function setCallback(asyncResult) {
-  // Check for errors.
+  console.log("Selected text in " + prop + ": " + text);
 }
 ```
 

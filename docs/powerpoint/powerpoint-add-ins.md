@@ -1,30 +1,30 @@
 ---
 title: Suplementos do PowerPoint
 description: ''
-ms.date: 09/03/2019
+ms.date: 11/07/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 86f05a70478652c546f0015e6f69e71bf3dacec0
-ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
+ms.openlocfilehash: d2ae12765beedd37892c84a84607b00e33b8703f
+ms.sourcegitcommit: 08c0b9ff319c391922fa43d3c2e9783cf6b53b1b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "37468739"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "38066281"
 ---
 # <a name="powerpoint-add-ins"></a>Suplementos do PowerPoint
 
-Você pode usar suplementos do PowerPoint na criação de soluções envolventes para as apresentações de seus usuários em todas as plataformas, incluindo Windows, iOS, Mac e em um navegador. Você pode criar dois tipos de comandos de suplementos do PowerPoint:
+Você pode usar suplementos do PowerPoint na criação de soluções envolventes para as apresentações de seus usuários em todas as plataformas, incluindo Windows, iPad, Mac e em um navegador. Você pode criar dois tipos de comandos de suplementos do PowerPoint:
 
 - Use **suplementos de conteúdo** para adicionar conteúdo dinâmico do HTML5 às suas apresentações. Por exemplo, confira o suplemento [LucidChart Diagrams for PowerPoint](https://appsource.microsoft.com/product/office/WA104380117) que pode ser usado para inserir um diagrama interativo do LucidChart para seu conjunto.
 
-- Use **suplementos do painel de tarefas** para exibir as informações de referência ou inserir dados na apresentação através de um serviço. Por exemplo, confira o suplemento [Pixton Comic Characters](https://appsource.microsoft.com/product/office/WA104380907), que você pode usar para adicionar fotos profissionais à sua apresentação. 
+- Use **suplementos do painel de tarefas** para exibir as informações de referência ou inserir dados na apresentação através de um serviço. Por exemplo, confira o suplemento [Pixton Comic Characters](https://appsource.microsoft.com/product/office/WA104380907), que você pode usar para adicionar fotos profissionais à sua apresentação.
 
 ## <a name="powerpoint-add-in-scenarios"></a>Cenários de suplemento do PowerPoint
 
 Os exemplos de código no artigo mostram algumas tarefas básicas para desenvolver suplementos para o PowerPoint. Além disso, observe o seguinte:
 
-- Para exibir as informações, esses exemplos dependem da função `app.showNotification`, incluída em modelos de projeto de Suplementos do Office do Visual Studio. Se você não estiver usando o Visual Studio para desenvolver seu suplemento, será necessário substituir a função `showNotification` por seu próprio código. 
+- Para exibir as informações, esses exemplos dependem da função `app.showNotification`, incluída em modelos de projeto de Suplementos do Office do Visual Studio. Se você não estiver usando o Visual Studio para desenvolver seu suplemento, será necessário substituir a função `showNotification` por seu próprio código.
 
 - Vários desses exemplos também usam um objeto `Globals` que é declarado fora do âmbito destas funções como:   `var Globals = {activeViewHandler:0, firstSlideId:0};`
 
