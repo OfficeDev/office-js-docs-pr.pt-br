@@ -1,20 +1,20 @@
 ---
 title: Elemento Host no arquivo de manifesto
 description: ''
-ms.date: 07/01/2019
+ms.date: 11/05/2019
 localization_priority: Normal
-ms.openlocfilehash: e7b557034f70b03ed57598b7ffb9f43878db7392
-ms.sourcegitcommit: 90c2d8236c6b30d80ac2b13950028a208ef60973
+ms.openlocfilehash: 824cc6ae51eb9db713a0a9a768e3ec48e3271e95
+ms.sourcegitcommit: 08c0b9ff319c391922fa43d3c2e9783cf6b53b1b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "35454892"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "38066274"
 ---
 # <a name="host-element"></a>Elemento Host
 
 Especifica um tipo de aplicativo individual do Office em que o suplemento deve ser ativado.
 
-> [!IMPORTANT] 
+> [!IMPORTANT]
 > A sintaxe do elemento **Host** varia de acordo com a definição do elemento, se dentro do [manifesto básico](#basic-manifest) ou dentro do nó [VersionOverrides](#versionoverrides-node). No entanto, a funcionalidade é a mesma.  
 
 ## <a name="basic-manifest"></a>Manifesto básico
@@ -53,7 +53,7 @@ Especifica o tipo de Host destinado por esse suplemento. O valor deve ser um dos
 
 ## <a name="versionoverrides-node"></a>Nó VersionOverrides
 
-Quando definido em [VersionOverrides](versionoverrides.md), o tipo de host é determinado pelo atributo `xsi:type`. 
+Quando definido em [VersionOverrides](versionoverrides.md), o tipo de host é determinado pelo atributo `xsi:type`.
 
 ### <a name="attributes"></a>Atributos
 
@@ -66,7 +66,7 @@ Quando definido em [VersionOverrides](versionoverrides.md), o tipo de host é de
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
 |  [DesktopFormFactor](desktopformfactor.md)    |  Sim   |  Define as configurações do fator forma da área de trabalho. |
-|  [MobileFormFactor](mobileformfactor.md)    |  Não   |  Define as configurações do fator forma móvel. **Observação:** Esse elemento só é suportado no Outlook no iOS. |
+|  [MobileFormFactor](mobileformfactor.md)    |  Não   |  Define as configurações do fator forma móvel. **Observação:** Esse elemento só é suportado no Outlook no iOS e no Android. |
 |  [AllFormFactors](allformfactors.md)    |  Não   |  Define as configurações de todos os fatores forma. Usado somente pelas funções personalizadas no Excel. |
 
 ### <a name="xsitype"></a>xsi:type
@@ -79,7 +79,7 @@ Controla a qual host do Office (Word, Excel, PowerPoint, Outlook, OneNote) as co
 - `Presentation` (PowerPoint)
 - `Workbook` (Excel)
 
-## <a name="host-example"></a>Exemplo de host 
+## <a name="host-example"></a>Exemplo de host
 
 ```xml
 <Hosts>

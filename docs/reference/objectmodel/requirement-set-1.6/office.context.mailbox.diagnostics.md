@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Diagnostics – conjunto de requisitos 1,6
 description: ''
-ms.date: 08/08/2019
+ms.date: 11/05/2019
 localization_priority: Normal
-ms.openlocfilehash: 6cfd67d988e4bf2915c96f77b7bc64ea7e78222e
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 27e738b71edb5b1b1c4aad69218eea702ffbef57
+ms.sourcegitcommit: 08c0b9ff319c391922fa43d3c2e9783cf6b53b1b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696117"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "38066204"
 ---
 # <a name="diagnostics"></a>diagnostics
 
@@ -64,7 +64,7 @@ Uma cadeia de caracteres que pode ser um dos valores a seguir: `Outlook`, `Outlo
 
 Obtém uma cadeia de caracteres que representa a versão do aplicativo host ou do servidor Exchange (por exemplo, "15.0.468.0").
 
-Se o suplemento de email estiver em execução no cliente da área de trabalho do Outlook ou `hostVersion` Ios, a propriedade retornará a versão do aplicativo host, Outlook. No Outlook na Web, a propriedade retorna a versão do servidor Exchange.
+Se o suplemento de email estiver em execução em uma área de trabalho do Outlook ou cliente `hostVersion` móvel, a propriedade retornará a versão do aplicativo host, Outlook. No Outlook na Web, a propriedade retorna a versão do servidor Exchange.
 
 ##### <a name="type"></a>Tipo
 

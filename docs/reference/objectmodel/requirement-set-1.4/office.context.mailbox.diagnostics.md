@@ -3,12 +3,12 @@ title: Office. Context. Mailbox. Diagnostics – conjunto de requisitos 1,4
 description: ''
 ms.date: 08/08/2019
 localization_priority: Normal
-ms.openlocfilehash: 9c6543cad17d464ce139381270ad1495d43d5cd9
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: eea3384d5ad8a1266b8f71c1669f09c186b6240c
+ms.sourcegitcommit: 08c0b9ff319c391922fa43d3c2e9783cf6b53b1b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696257"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "38066127"
 ---
 # <a name="diagnostics"></a>diagnostics
 

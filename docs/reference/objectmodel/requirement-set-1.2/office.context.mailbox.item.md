@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Item-conjunto de requisitos 1,2
 description: ''
-ms.date: 11/05/2019
+ms.date: 11/06/2019
 localization_priority: Normal
-ms.openlocfilehash: 97fa271f500e89c6ce69d82b95a0818f6d5bc7d4
-ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
+ms.openlocfilehash: 50cc2bcf338d2fb2fee5e32e0cd408c72c138214
+ms.sourcegitcommit: 08c0b9ff319c391922fa43d3c2e9783cf6b53b1b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "38001604"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "38066267"
 ---
 # <a name="item"></a>item
 
@@ -28,39 +28,39 @@ O namespace `item` é usado para acessar a mensagem, a solicitação de reunião
 
 | Membro	 | Tipo	 |
 |--------|------|
-| [attachments](#attachments-arrayattachmentdetails) | Member |
-| [bcc](#bcc-recipients) | Member |
-| [body](#body-body) | Member |
-| [cc](#cc-arrayemailaddressdetailsrecipients) | Member |
-| [conversationId](#nullable-conversationid-string) | Member |
-| [dateTimeCreated](#datetimecreated-date) | Member |
-| [dateTimeModified](#datetimemodified-date) | Member |
-| [end](#end-datetime) | Member |
-| [from](#from-emailaddressdetails) | Member |
-| [internetMessageId](#internetmessageid-string) | Member |
-| [itemClass](#itemclass-string) | Member |
-| [itemId](#nullable-itemid-string) | Member |
-| [itemType](#itemtype-officemailboxenumsitemtype) | Member |
-| [location](#location-stringlocation) | Member |
-| [normalizedSubject](#normalizedsubject-string) | Member |
-| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | Member |
-| [organizer](#organizer-emailaddressdetails) | Member |
+| [attachments](#attachments-arrayattachmentdetails) | Membro |
+| [bcc](#bcc-recipients) | Membro |
+| [body](#body-body) | Membro |
+| [cc](#cc-arrayemailaddressdetailsrecipients) | Membro |
+| [conversationId](#nullable-conversationid-string) | Membro |
+| [dateTimeCreated](#datetimecreated-date) | Membro |
+| [dateTimeModified](#datetimemodified-date) | Membro |
+| [end](#end-datetime) | Membro |
+| [from](#from-emailaddressdetails) | Membro |
+| [internetMessageId](#internetmessageid-string) | Membro |
+| [itemClass](#itemclass-string) | Membro |
+| [itemId](#nullable-itemid-string) | Membro |
+| [itemType](#itemtype-officemailboxenumsitemtype) | Membro |
+| [location](#location-stringlocation) | Membro |
+| [normalizedSubject](#normalizedsubject-string) | Membro |
+| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | Membro |
+| [organizer](#organizer-emailaddressdetails) | Membro |
 | [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | Member |
-| [sender](#sender-emailaddressdetails) | Member |
-| [start](#start-datetime) | Member |
+| [sender](#sender-emailaddressdetails) | Membro |
+| [start](#start-datetime) | Membro |
 | [subject](#subject-stringsubject) | Membro |
 | [to](#to-arrayemailaddressdetailsrecipients) | Membro |
-| [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | Method |
-| [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | Method |
-| [displayReplyAllForm](#displayreplyallformformdata-callback) | Method |
-| [displayReplyForm](#displayreplyformformdata-callback) | Method |
-| [getEntities](#getentities--entities) | Method |
-| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Method |
-| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Method |
-| [getRegExMatches](#getregexmatches--object) | Method |
-| [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | Method |
-| [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | Method |
-| [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | Method |
+| [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | Método |
+| [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | Método |
+| [displayReplyAllForm](#displayreplyallformformdata-callback) | Método |
+| [displayReplyForm](#displayreplyformformdata-callback) | Método |
+| [getEntities](#getentities--entities) | Método |
+| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Método |
+| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Método |
+| [getRegExMatches](#getregexmatches--object) | Método |
+| [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | Método |
+| [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | Método |
+| [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | Método |
 | [removeAttachmentAsync](#removeattachmentasyncattachmentid-options-callback) | Método |
 | [setSelectedDataAsync](#setselecteddataasyncdata-options-callback) | Método |
 
@@ -507,10 +507,10 @@ console.log("Item class: " + itemClass);
 
 #### <a name="nullable-itemid-string"></a>(anulável) itemId: Cadeia de caracteres
 
-Obtém o [identificador do item dos serviços Web do Exchange](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange) para o item atual. Somente modo de leitura.
+Obtém o [identificador do item dos Serviços Web do Exchange](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange) para o item atual. Somente modo de leitura.
 
 > [!NOTE]
-> O identificador retornado pela `itemId` propriedade é o mesmo que o identificador de [item dos serviços Web do Exchange](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange). A propriedade `itemId` não é idêntica à ID de Entrada do Outlook ou a ID usada pela API REST do Outlook. Antes de fazer chamadas da API REST usando esse valor, ele deve ser `Office.context.mailbox.convertToRestId`convertido usando o, que está disponível a partir do conjunto de requisitos 1,3. Para obter detalhes, confira [Usar APIs REST do Outlook de um suplemento do Outlook](/outlook/add-ins/use-rest-api#get-the-item-id).
+> O identificador retornado pela propriedade `itemId` é o mesmo que o [identificador do item dos Serviços Web do Exchange](/exchange/client-developer/exchange-web-services/ews-identifiers-in-exchange). A propriedade `itemId` não é idêntica à ID de Entrada do Outlook ou a ID usada pela API REST do Outlook. Antes de fazer chamadas da API REST usando esse valor, ele deve ser `Office.context.mailbox.convertToRestId`convertido usando o, que está disponível a partir do conjunto de requisitos 1,3. Para obter detalhes, confira [Usar APIs REST do Outlook de um suplemento do Outlook](/outlook/add-ins/use-rest-api#get-the-item-id).
 
 ##### <a name="type"></a>Tipo
 
@@ -962,7 +962,7 @@ Posteriormente, você poderá usar o identificador com o método [`removeAttachm
 
 |Nome| Tipo| Atributos| Descrição|
 |---|---|---|---|
-|`uri`| String||O URI que fornece o local do arquivo anexado à mensagem ou compromisso. O comprimento máximo é de 2048 caracteres.|
+|`uri`| Cadeia de caracteres||O URI que fornece o local do arquivo anexado à mensagem ou compromisso. O comprimento máximo é de 2048 caracteres.|
 |`attachmentName`| String||O nome do anexo que é mostrado enquanto o anexo está sendo carregado. O tamanho máximo é de 255 caracteres.|
 |`options`| Objeto| &lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
 |`options.asyncContext`| Objeto| &lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
@@ -1023,7 +1023,7 @@ Se o Suplemento do Office estiver em execução no Outlook na Web, o método `ad
 
 |Nome| Tipo| Atributos| Descrição|
 |---|---|---|---|
-|`itemId`| String||O identificador do Exchange do item a anexar. O comprimento máximo é de 100 caracteres.|
+|`itemId`| Cadeia de caracteres||O identificador do Exchange do item a anexar. O comprimento máximo é de 100 caracteres.|
 |`attachmentName`| Cadeia de caracteres||O assunto do item a ser anexado. O tamanho máximo é de 255 caracteres.|
 |`options`| Object| &lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
 |`options.asyncContext`| Objeto| &lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
@@ -1090,10 +1090,10 @@ Quando os anexos são especificados no parâmetro `formData.attachments`, os cli
 |Nome| Tipo| Descrição|
 |---|---|---|
 |`formData`| String &#124; Object| |Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.<br/>**OU**<br/>Um objeto que contém os dados do corpo ou do anexo e uma função de retorno de chamada. O objeto é definido da maneira a seguir. |
-| `formData.htmlBody` | String | &lt;opcional&gt; | Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.
+| `formData.htmlBody` | Cadeia de caracteres | &lt;opcional&gt; | Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.
 | `formData.attachments` | Array.&lt;Object&gt; | &lt;opcional&gt; | Uma matriz de objetos JSON que são anexos de arquivo ou item. |
-| `formData.attachments.type` | String | | Indica o tipo de anexo. Deve ser `file` para um anexo de arquivo ou `item` para um anexo de item. |
-| `formData.attachments.name` | String | | Uma cadeia de caracteres que contém o nome do anexo, até 255 caracteres de comprimento.|
+| `formData.attachments.type` | Cadeia de caracteres | | Indica o tipo de anexo. Deve ser `file` para um anexo de arquivo ou `item` para um anexo de item. |
+| `formData.attachments.name` | Cadeia de caracteres | | Uma cadeia de caracteres que contém o nome do anexo, até 255 caracteres de comprimento.|
 | `formData.attachments.url` | String | | Usado somente se `type` estiver definido como `file`. O URI do local para o arquivo. |
 | `formData.attachments.itemId` | String | | Usado somente se `type` estiver definido como `item`. A ID do item do EWS do anexo. Isso é uma cadeia de até 100 caracteres. |
 | `callback` | function | &lt;opcional&gt; | Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [AsyncResult](/javascript/api/office/office.asyncresult). |
@@ -1213,11 +1213,11 @@ Quando os anexos são especificados no parâmetro `formData.attachments`, os cli
 |Nome| Tipo| Descrição|
 |---|---|---|
 |`formData`| String &#124; Object| | Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.<br/>**OU**<br/>Um objeto que contém os dados do corpo ou do anexo e uma função de retorno de chamada. O objeto é definido da maneira a seguir. |
-| `formData.htmlBody` | String | &lt;opcional&gt; | Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.
+| `formData.htmlBody` | Cadeia de caracteres | &lt;opcional&gt; | Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.
 | `formData.attachments` | Array.&lt;Object&gt; | &lt;opcional&gt; | Uma matriz de objetos JSON que são anexos de arquivo ou item. |
-| `formData.attachments.type` | String | | Indica o tipo de anexo. Deve ser `file` para um anexo de arquivo ou `item` para um anexo de item. |
-| `formData.attachments.name` | String | | Uma cadeia de caracteres que contém o nome do anexo, até 255 caracteres de comprimento.|
-| `formData.attachments.url` | String | | Usado somente se `type` estiver definido como `file`. O URI do local para o arquivo. |
+| `formData.attachments.type` | Cadeia de caracteres | | Indica o tipo de anexo. Deve ser `file` para um anexo de arquivo ou `item` para um anexo de item. |
+| `formData.attachments.name` | Cadeia de caracteres | | Uma cadeia de caracteres que contém o nome do anexo, até 255 caracteres de comprimento.|
+| `formData.attachments.url` | Cadeia de caracteres | | Usado somente se `type` estiver definido como `file`. O URI do local para o arquivo. |
 | `formData.attachments.itemId` | Cadeia de caracteres | | Usado somente se `type` estiver definido como `item`. A ID do item do EWS do anexo. Isso é uma cadeia de até 100 caracteres. |
 | `callback` | function | &lt;opcional&gt; | Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [AsyncResult](/javascript/api/office/office.asyncresult). |
 
@@ -1425,7 +1425,7 @@ O método `getFilteredEntitiesByName` retorna as entidades que correspondem à e
 
 |Nome| Tipo| Descrição|
 |---|---|---|
-|`name`| String|O nome do elemento de regra `ItemHasKnownEntity` que define o filtro a corresponder.|
+|`name`| Cadeia de caracteres|O nome do elemento de regra `ItemHasKnownEntity` que define o filtro a corresponder.|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -1555,12 +1555,10 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 
 Retorna de forma assíncrona os dados selecionados do assunto ou do corpo de uma mensagem.
 
-Se não houver seleção, mas o cursor estiver no corpo ou no assunto, o método retorna nulo para os dados selecionados. Se um campo que não seja o corpo ou o assunto estiver selecionado, o método retorna o erro `InvalidSelection`.
+Se não houver seleção, mas o cursor estiver no corpo ou no assunto, o método retornará uma cadeia de caracteres vazia para os dados selecionados. Se um campo que não seja o corpo ou o assunto estiver selecionado, o método retorna o erro `InvalidSelection`.
 
 > [!NOTE]
-> No Outlook na Web, o método retorna a cadeia de caracteres "NULL" se nenhum texto está selecionado, mas o cursor está no corpo. Para verificar essa situação, inclua um código semelhante ao seguinte:
->
-> `var selectedText = (asyncResult.value.endPosition === asyncResult.value.startPosition) ? "" : asyncResult.value.data;`
+> No Outlook na Web, o método retorna a cadeia de caracteres “null” se nenhum texto for selecionado, mas o cursor estiver no corpo. Para verificar essa situação, confira o exemplo mais adiante nesta seção.
 
 ##### <a name="parameters"></a>Parâmetros
 
@@ -1597,11 +1595,13 @@ function getCallback(asyncResult) {
   var text = asyncResult.value.data;
   var prop = asyncResult.value.sourceProperty;
 
-  Office.context.mailbox.item.setSelectedDataAsync('Setting ' + prop + ': ' + text, {}, setCallback);
-}
+  // Handle where Outlook on the web erroneously returns "null" instead of empty string.
+  if (Office.context.mailbox.diagnostics.hostName === 'OutlookWebApp'
+      && asyncResult.value.endPosition === asyncResult.value.startPosition) {
+    text = "";
+  }
 
-function setCallback(asyncResult) {
-  // Check for errors.
+  console.log("Selected text in " + prop + ": " + text);
 }
 ```
 
@@ -1673,7 +1673,7 @@ O método `removeAttachmentAsync` remove o anexo com o identificador especificad
 
 |Nome| Tipo| Atributos| Descrição|
 |---|---|---|---|
-|`attachmentId`| String||O identificador do anexo a remover.|
+|`attachmentId`| Cadeia de caracteres||O identificador do anexo a remover.|
 |`options`| Objeto| &lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
 |`options.asyncContext`| Objeto| &lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
 |`callback`| function| &lt;opcional&gt;|Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult). <br/>Se a remoção do anexo falhar, a propriedade `asyncResult.error` conterá um código de erro com o motivo da falha.|
