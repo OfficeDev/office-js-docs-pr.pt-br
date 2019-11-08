@@ -47,8 +47,9 @@
 1. Na seção **Aplicativos clientes autorizados**, você identifica os aplicativos que deseja autorizar para o aplicativo da Web do seu suplemento. Cada uma das seguintes IDs precisa ser pré-autorizada.
   
     * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
-    * `57fb890c-0dab-4253-a5e0-7188c88b2bb4` (Office Online)
-    * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Office Online)
+    * `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
+    * `57fb890c-0dab-4253-a5e0-7188c88b2bb4`(Office na Web)
+    * `bc59ab01-8403-45c6-8796-ac3ef710b3e3`(Office na Web)
 
     Para cada ID, siga estas etapas:
 
