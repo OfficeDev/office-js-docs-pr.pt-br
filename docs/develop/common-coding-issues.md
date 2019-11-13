@@ -1,14 +1,14 @@
 ---
 title: Problemas de codificação comuns e comportamentos de plataforma inesperados
 description: Uma lista de problemas da plataforma de API JavaScript do Office frequentemente encontrada pelos desenvolvedores.
-ms.date: 10/31/2019
+ms.date: 11/06/2019
 localization_priority: Normal
-ms.openlocfilehash: d39c379961833cdb924628becf2c2da3f7e271b9
-ms.sourcegitcommit: 59d29d01bce7543ebebf86e5a86db00cf54ca14a
+ms.openlocfilehash: a4d7a09c1645bea181060157d933036d1924044f
+ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "37924791"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "38301929"
 ---
 # <a name="common-coding-issues-and-unexpected-platform-behaviors"></a>Problemas de codificação comuns e comportamentos de plataforma inesperados
 
@@ -73,16 +73,16 @@ Você pode identificar uma propriedade que deve ter suas subpropriedades definid
 - Propriedade somente leitura: as subpropriedades podem ser definidas por meio de navegação.
 - Propriedade writable: as subpropriedades devem ser definidas com uma estrutura JSON (e não podem ser definidas por meio de navegação).
 
-## <a name="excel-range-limits"></a>Limites de intervalo do Excel
+## <a name="excel-data-transfer-limits"></a>Limites de transferência de dados do Excel
 
-Se você estiver criando um suplemento do Excel que usa intervalos, esteja ciente das seguintes limitações de tamanho:
+Se você estiver criando um suplemento do Excel, esteja ciente das seguintes limitações de tamanho ao interagir com a pasta de trabalho:
 
 - O Excel na Web tem um limite de tamanho de conteúdo para solicitações e respostas de 5 MB. `RichAPI.Error` será lançado se esse limite for excedido.
-- Um intervalo é limitado a 5 milhões células para operações de conjunto.
+- Um intervalo está limitado a 5 milhões células para operações Get.
 
-Se você espera que a entrada do usuário exceda esses limites, verifique os dados e divida os intervalos em vários objetos. Você também precisará enviar várias `context.sync()` chamadas para evitar que as operações de intervalo menores fiquem novamente em lotes.
+Se você espera que a entrada do usuário exceda esses limites, verifique os dados antes de `context.sync()`chamar. Divida a operação em partes menores, conforme necessário. Certifique-se de `context.sync()` chamar para cada suboperação para evitar que as operações sejam encaixadas novamente.
 
-O suplemento pode ser capaz de usar o [RangeAreas](/javascript/api/excel/excel.rangeareas) para atualizar as células estrategicamente em um intervalo maior. Confira [trabalhar com vários intervalos simultaneamente em suplementos do Excel](../excel/excel-add-ins-multiple-ranges.md) para obter mais informações.
+Essas limitações são normalmente excedidos por intervalos grandes. O suplemento pode ser capaz de usar o [RangeAreas](/javascript/api/excel/excel.rangeareas) para atualizar as células estrategicamente em um intervalo maior. Confira [trabalhar com vários intervalos simultaneamente em suplementos do Excel](../excel/excel-add-ins-multiple-ranges.md) para obter mais informações.
 
 ## <a name="setting-read-only-properties"></a>Configuração de propriedades somente leitura
 

@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos da API de Identidade
 description: ''
-ms.date: 06/20/2019
+ms.date: 11/11/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: a2992569f6807499156ef13aa6663267839e1853
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 96f5c305f4ecfe0fdc0ee89aed6955e090f87b02
+ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127076"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "38301922"
 ---
 # <a name="identity-api-requirement-sets"></a>Conjuntos de requisitos da API de Identidade
 
@@ -19,9 +19,11 @@ Os suplementos do Office executam várias versões do Office. A tabela a seguir 
 
 |  Conjunto de requisitos  | Office 2013 ou posterior no Windows<br>(compra avulsa) | Office no Windows<br>(conectado à assinatura do Office 365) |  Office no iPad<br>(conectado à assinatura do Office 365)  |  Office no Mac<br>(conectado à assinatura do Office 365)  | Office na Web  | SharePoint Online | OneDrive.com |Outlook.com e Exchange Online|
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| IdentityAPI 1.1  | N/D | Versão prévia<b>*</b> | Em breve | Versão prévia<b>*</b> | Versão prévia<b>*</b> | Versão prévia<b>*</b>| Em breve | Em breve |
+| Visualização do IdentityAPI  | N/D | Versão prévia<b>*</b> | Em breve | Versão prévia<b>*</b> | Visualização<b>* &#8224;</b> | Visualização<b>* &#8224;</b>| Em breve | Em breve |
 
 > **&#42;** Durante a fase de visualização, a API de identidade requer o Office 365 (a versão de assinatura do Office). Você deve usar o build e a versão mensal mais recente do canal Insiders. É necessário ingressar no programa Office Insider para obter essa versão. Para saber mais, confira a página [Seja um Office Insider](https://products.office.com/office-insider?tab=tab-1). Observe que, quando um build é promovido ao Canal Semestral de produção, o suporte para recursos de visualização, como o SSO, é desativado para esse build.
+>
+> **&#8224;** Os suplementos que usam as APIs SSO nessas plataformas só funcionarão se o administrador de locatário do usuário tiver concedido o consentimento para o suplemento. O usuário não pode conceder consentimento mesmo ao seu próprio perfil do Azure AD.
 
 Para saber mais sobre versões, números de build e sobre o Servidor do Office Online, confira:
 
@@ -36,9 +38,9 @@ Para saber mais sobre versões, números de build e sobre o Servidor do Office O
 
 Para saber mais sobre conjuntos de requisitos comuns da API, confira [Conjuntos de requisitos comuns da API do Office](office-add-in-requirement-sets.md).
 
-## <a name="identityapi-11"></a>IdentityAPI 1.1
+## <a name="identityapi-preview"></a>Visualização do IdentityAPI
 
-A IdentityAPI 1.1 de Logon Único é a primeira versão da API. Para saber mais sobre essa API, confira a seção [Referência da API de SSO](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) em [Habilitar o SSO em um suplemento](/office/dev/add-ins/develop/sso-in-office-add-ins).
+Para obter detalhes sobre essa API, consulte a versão que usa promessas em [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-) ou a versão que usa retornos de chamada em [getAccessTokenAsync](/javascript/api/office/office.auth#getaccesstokenasync-options--callback-).
 
 ## <a name="see-also"></a>Confira também
 
