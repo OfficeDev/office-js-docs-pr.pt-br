@@ -1,14 +1,14 @@
 ---
 title: Autorizar o Microsoft Graph com SSO
 description: ''
-ms.date: 11/05/2019
+ms.date: 11/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 03fa2b862d397ea9a28589d6d1aa9b1030a0b6c5
-ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
+ms.openlocfilehash: 44abb05c49786f4b7e050feb7e8eaf8c535f8de8
+ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "38001436"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "38301950"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso-preview"></a>Autorizar o Microsoft Graph com SSO (visualização)
 
@@ -29,7 +29,7 @@ O diagrama a seguir mostra como funciona o processo de entrar e obter acesso ao 
 
 ![Diagrama que mostra o processo de SSO](../images/sso-access-to-microsoft-graph.png)
 
-1. No suplemento, o JavaScript chama uma nova API do Office.js [getAccessToken](/javascript/api/office/officeruntime.auth#getaccesstoken-options--callback-). Isso informa ao aplicativo host do Office para obter um token de acesso para o suplemento. (De agora em diante, isso se chamará **token de acesso de inicialização** porque é substituído por um segundo token mais tarde durante o processo. Para ver um exemplo de um token de acesso de inicialização decodificado, confira [Token de acesso de exemplo](sso-in-office-add-ins.md#example-access-token).)
+1. No suplemento, o JavaScript chama uma nova API do Office.js [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). Isso informa ao aplicativo host do Office para obter um token de acesso para o suplemento. (De agora em diante, isso se chamará **token de acesso de inicialização** porque é substituído por um segundo token mais tarde durante o processo. Para ver um exemplo de um token de acesso de inicialização decodificado, confira [Token de acesso de exemplo](sso-in-office-add-ins.md#example-access-token).)
 1. Se o usuário não estiver conectado, o aplicativo host do Office abrirá uma janela pop-up para o usuário entrar.
 1. Se essa é a primeira vez que o usuário atual usa seu suplemento, será solicitado que ele dê o consentimento.
 1. O aplicativo host do Office solicita o **token de acesso de inicialização** do ponto de extremidade v2.0 do Azure AD para o usuário atual.

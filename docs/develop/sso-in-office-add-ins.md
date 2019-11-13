@@ -1,14 +1,14 @@
 ---
 title: Habilitar o logon único para Suplementos do Office
 description: ''
-ms.date: 11/05/2019
+ms.date: 11/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 88bc29b3a1038bf8df74d30621015b472572f7e3
-ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
+ms.openlocfilehash: e32f9429ee05772b1a36f5e3408eb775cc03919a
+ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "38001443"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "38301936"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Habilitar o logon único para Suplementos do Office (visualização)
 
@@ -39,7 +39,7 @@ O diagrama a seguir mostra como funciona o processo de SSO.
 
 ![Diagrama que mostra o processo de SSO](../images/sso-overview-diagram.png)
 
-1. No suplemento, o JavaScript chama uma nova API do Office.js [getAccessTokenAsync](/javascript/api/office/officeruntime.auth#getAccessToken-options--callback-). Isso informa ao aplicativo host do Office para obter um token de acesso para o suplemento. Confira [Token de acesso de amostra](#example-access-token).
+1. No suplemento, o JavaScript chama uma nova API do Office.js [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). Isso informa ao aplicativo host do Office para obter um token de acesso para o suplemento. Confira [Token de acesso de amostra](#example-access-token).
 2. Se o usuário não estiver conectado, o aplicativo host do Office abrirá uma janela pop-up para o usuário entrar.
 3. Se essa é a primeira vez que o usuário atual usa seu suplemento, será solicitado que ele dê o consentimento.
 4. O aplicativo host do Office solicita o **token do suplemento** do ponto de extremidade v 2.0 do Azure AD para o usuário atual. 
@@ -96,7 +96,7 @@ Veja a seguir um exemplo da marcação:
 
 Adicione o JavaScript ao suplemento para:
 
-* Chamar [getAccessToken](/javascript/api/office/officeruntime.auth#getAccessToken-options--callback-).
+* Chamar [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-).
 
 * Analisar o token de acesso ou encaminhá-lo ao código de servidor do suplemento.
 
@@ -227,10 +227,10 @@ Há algumas diferenças pequenas, mas importantes entre usar o SSO em um supleme
 
 ### <a name="getaccesstoken"></a>getAccessToken
 
-O namespace [Auth](/javascript/api/office/officeruntime.auth) do OfficeRuntime, `OfficeRuntime.auth`, fornece um método, `getAccessToken` que permite com que o host do Office obtenha um token de acesso para o aplicativo web do suplemento. Indiretamente, isso também habilita o suplemento para acessar os dados do Microsoft Graph do usuário sem exigir que o usuário se conecte uma segunda vez.
+O namespace [Auth](/javascript/api/office-runtime/officeruntime.auth) do OfficeRuntime, `OfficeRuntime.Auth`, fornece um método, `getAccessToken` que permite com que o host do Office obtenha um token de acesso para o aplicativo web do suplemento. Indiretamente, isso também habilita o suplemento para acessar os dados do Microsoft Graph do usuário sem exigir que o usuário se conecte uma segunda vez.
 
 ```typescript
-getAccessToken(options?: AuthOptions, callback?: (result: AsyncResult<string>) => void): void;
+getAccessToken(options?: AuthOptions: (result: AsyncResult<string>) => void): void;
 ```
 
 O método chama o ponto de extremidade do Azure Active Directory V 2.0 para obter um token de acesso para o aplicativo Web do seu suplemento. Isso permite que os suplementos identifiquem usuários. O código do lado do servidor pode usar esse token para acessar o Microsoft Graph do aplicativo Web do suplemento usando o [fluxo OAuth "em nome de"](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of).
@@ -244,8 +244,8 @@ O método chama o ponto de extremidade do Azure Active Directory V 2.0 para obte
 
 #### <a name="parameters"></a>Parâmetros
 
-`options` – Opcional. Aceite um objeto [AuthOptions](/javascript/api/office/officeruntime.authoptions) (veja abaixo) para definir comportamentos de logon.
+`options` – Opcional. Aceite um objeto [AuthOptions](/javascript/api/office-runtime/officeruntime.authoptions) (veja abaixo) para definir comportamentos de logon.
 
 `callback` – Opcional. Aceita um método de retorno que possa analisar o token de ID de usuário ou usar o token fluxo "em nome de" para obter acesso ao Microsoft Graph. Se [AsyncResult](/javascript/api/office/office.asyncresult) `.status` é "bem-sucedido", em seguida, `AsyncResult.value` é o v AAD bruto. token de acesso 2.0 formatado.
 
-A interface [AuthOptions](/javascript/api/office/officeruntime.authoptions) fornece opções para a experiência do usuário quando o Office obtém um token de acesso para o suplemento do AAD v. 2.0 com o método`getAccessToken`.
+A interface [AuthOptions](/javascript/api/office-runtime/officeruntime.authoptions) fornece opções para a experiência do usuário quando o Office obtém um token de acesso para o suplemento do AAD v. 2.0 com o método`getAccessToken`.
