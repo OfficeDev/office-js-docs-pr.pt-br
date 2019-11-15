@@ -3,12 +3,12 @@ title: Conceitos fundamentais de programação com a API JavaScript do Excel
 description: Use a API JavaScript do Excel para criar suplementos para o Excel.
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: bd346764c3faba0cf3be7612c8b29dd5e0d4c28b
-ms.sourcegitcommit: 59d29d01bce7543ebebf86e5a86db00cf54ca14a
+ms.openlocfilehash: eed6a7a4dcc480d93e15bbb75432a2345364a5dc
+ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "37924798"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "38301915"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Conceitos fundamentais de programação com a API JavaScript do Excel
 
@@ -210,7 +210,7 @@ range.values = 'Due Date';
 
 Se um intervalo contiver um grande número de células, valores, formatos de número e/ou fórmulas, talvez não seja possível executar operações de API nesse intervalo. A API sempre fará a melhor tentativa de executar a operação solicitada em um intervalo (isto é, para recuperar ou gravar os dados especificados), mas tentar executar operações de leitura ou gravação para um intervalo grande pode resultar em um erro de API devido à utilização excessiva de recursos. Para evitar tais erros, é recomendável executar operações de leitura ou gravação separadas para subconjuntos menores de um intervalo grande, em vez de tentar executar uma única operação de leitura ou gravação em um intervalo grande.
 
-Para detalhes sobre as limitações do sistema, confira [Limites do Intervalo do Excel](../develop/common-coding-issues.md#excel-range-limits).
+Para detalhes sobre as limitações do sistema, consulte [Limites de transferência de dados do Excel](../develop/common-coding-issues.md#excel-data-transfer-limits).
 
 ## <a name="update-all-cells-in-a-range"></a>Atualizar todas as células em um intervalo
 
