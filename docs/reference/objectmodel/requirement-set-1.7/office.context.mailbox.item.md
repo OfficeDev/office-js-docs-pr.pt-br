@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Item-conjunto de requisitos 1,7
 description: ''
-ms.date: 11/06/2019
+ms.date: 11/25/2019
 localization_priority: Normal
-ms.openlocfilehash: 1c0948490c5c0b77252a8605b43f85dd529f2897
-ms.sourcegitcommit: 08c0b9ff319c391922fa43d3c2e9783cf6b53b1b
+ms.openlocfilehash: d400765293449899eb2e26f3d87128bc88b70000
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "38066211"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629676"
 ---
 # <a name="item"></a>item
 
@@ -1139,7 +1139,7 @@ Posteriormente, você poderá usar o identificador com o método [`removeAttachm
 ##### <a name="parameters"></a>Parâmetros
 |Nome|Tipo|Atributos|Descrição|
 |---|---|---|---|
-|`uri`|Cadeia de caracteres||O URI que fornece o local do arquivo anexado à mensagem ou compromisso. O comprimento máximo é de 2048 caracteres.|
+|`uri`|String||O URI que fornece o local do arquivo anexado à mensagem ou compromisso. O comprimento máximo é de 2048 caracteres.|
 |`attachmentName`|String||O nome do anexo que é mostrado enquanto o anexo está sendo carregado. O tamanho máximo é de 255 caracteres.|
 |`options`|Objeto|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
 |`options.asyncContext`|Objeto|&lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
@@ -1265,7 +1265,7 @@ Se o Suplemento do Office estiver em execução no Outlook na Web, o método `ad
 
 |Nome|Tipo|Atributos|Descrição|
 |---|---|---|---|
-|`itemId`|Cadeia de caracteres||O identificador do Exchange do item a anexar. O comprimento máximo é de 100 caracteres.|
+|`itemId`|String||O identificador do Exchange do item a anexar. O comprimento máximo é de 100 caracteres.|
 |`attachmentName`|Cadeia de caracteres||O assunto do item a ser anexado. O tamanho máximo é de 255 caracteres.|
 |`options`|Object|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
 |`options.asyncContext`|Objeto|&lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
@@ -1356,9 +1356,9 @@ Quando os anexos são especificados no parâmetro `formData.attachments`, os cli
 |Nome|Tipo|Atributos|Descrição|
 |---|---|---|---|
 |`formData`|String &#124; Object||Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.<br/>**OU**<br/>Um objeto que contém os dados do corpo ou do anexo e uma função de retorno de chamada. O objeto é definido da maneira a seguir.|
-|`formData.htmlBody`|Cadeia de caracteres|&lt;opcional&gt;|Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.
+|`formData.htmlBody`|String|&lt;opcional&gt;|Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.
 |`formData.attachments`|Array.&lt;Object&gt;|&lt;opcional&gt;|Uma matriz de objetos JSON que são anexos de arquivo ou item.|
-|`formData.attachments.type`|Cadeia de caracteres||Indica o tipo de anexo. Deve ser `file` para um anexo de arquivo ou `item` para um anexo de item.|
+|`formData.attachments.type`|String||Indica o tipo de anexo. Deve ser `file` para um anexo de arquivo ou `item` para um anexo de item.|
 |`formData.attachments.name`|Cadeia de caracteres||Uma cadeia de caracteres que contém o nome do anexo, até 255 caracteres de comprimento.|
 |`formData.attachments.url`|String||Usado somente se `type` estiver definido como `file`. O URI do local para o arquivo.|
 |`formData.attachments.isInline`|Booliano||Usado somente se `type` estiver definido como `file`. Se for `true`, indicará que o anexo será mostrado embutido no corpo da mensagem e não deverá ser exibido na lista de anexos.|
@@ -1480,7 +1480,7 @@ Quando os anexos são especificados no parâmetro `formData.attachments`, os cli
 |Nome|Tipo|Atributos|Descrição|
 |---|---|---|---|
 |`formData`|String &#124; Object||Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.<br/>**OU**<br/>Um objeto que contém os dados do corpo ou do anexo e uma função de retorno de chamada. O objeto é definido da maneira a seguir.|
-|`formData.htmlBody`|Cadeia de caracteres|&lt;opcional&gt;|Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.
+|`formData.htmlBody`|String|&lt;opcional&gt;|Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.
 |`formData.attachments`|Array.&lt;Object&gt;|&lt;opcional&gt;|Uma matriz de objetos JSON que são anexos de arquivo ou item.|
 |`formData.attachments.type`|String||Indica o tipo de anexo. Deve ser `file` para um anexo de arquivo ou `item` para um anexo de item.|
 |`formData.attachments.name`|Cadeia de caracteres||Uma cadeia de caracteres que contém o nome do anexo, até 255 caracteres de comprimento.|
@@ -1693,7 +1693,7 @@ O método `getFilteredEntitiesByName` retorna as entidades que correspondem à e
 
 |Nome|Tipo|Descrição|
 |---|---|---|
-|`name`|Cadeia de caracteres|O nome do elemento de regra `ItemHasKnownEntity` que define o filtro a corresponder.|
+|`name`|String|O nome do elemento de regra `ItemHasKnownEntity` que define o filtro a corresponder.|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -1822,10 +1822,7 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 
 Retorna de forma assíncrona os dados selecionados do assunto ou do corpo de uma mensagem.
 
-Se não houver seleção, mas o cursor estiver no corpo ou no assunto, o método retornará uma cadeia de caracteres vazia para os dados selecionados. Se um campo que não seja o corpo ou o assunto estiver selecionado, o método retorna o erro `InvalidSelection`.
-
-> [!NOTE]
-> No Outlook na Web, o método retorna a cadeia de caracteres “null” se nenhum texto for selecionado, mas o cursor estiver no corpo. Para verificar essa situação, confira o exemplo mais adiante nesta seção.
+Se não houver seleção, mas o cursor estiver no corpo ou no assunto, o método retorna uma cadeia de caracteres vazia para os dados selecionados. Se um campo que não seja o corpo ou o assunto estiver selecionado, o método retorna o erro `InvalidSelection`.
 
 ##### <a name="parameters"></a>Parâmetros
 
@@ -1861,12 +1858,6 @@ Office.initialize = function () {
 function getCallback(asyncResult) {
   var text = asyncResult.value.data;
   var prop = asyncResult.value.sourceProperty;
-
-  // Handle where Outlook on the web erroneously returns "null" instead of empty string.
-  if (Office.context.mailbox.diagnostics.hostName === 'OutlookWebApp'
-      && asyncResult.value.endPosition === asyncResult.value.startPosition) {
-    text = "";
-  }
 
   console.log("Selected text in " + prop + ": " + text);
 }

@@ -1,14 +1,14 @@
 ---
 title: Namespace do Office – conjunto de requisitos de visualização
 description: ''
-ms.date: 10/30/2019
+ms.date: 11/25/2019
 localization_priority: Normal
-ms.openlocfilehash: eae6f99d166695f24f4a94e89ea4b876bea080ef
-ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.openlocfilehash: bd37b1be4d77d73cb56b0b2593ccc57dea6cab27
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902099"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629227"
 ---
 # <a name="office"></a>Office
 
@@ -21,14 +21,14 @@ O namespace do Office fornece interfaces compartilhadas que são usadas pelos su
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
-##### <a name="members-and-methods"></a>Membros e métodos
+##### <a name="properties"></a>Propriedades
 
-| Membro | Tipo |
-|--------|------|
-| [AsyncResultStatus](#asyncresultstatus-string) | Member |
-| [CoercionType](#coerciontype-string) | Member |
-| [EventType](#eventtype-string) | Member |
-| [SourceProperty](#sourceproperty-string) | Membro |
+| Propriedade | Modelos | Tipo de retorno | Mínimo<br>conjunto de requisitos |
+|---|---|---|---|
+| [AsyncResultStatus](#asyncresultstatus-string) | Escrever<br>Ler | String | 1.0 |
+| [CoercionType](#coerciontype-string) | Escrever<br>Ler | String | 1.0 |
+| [EventType](#eventtype-string) | Escrever<br>Ler | String | 1,5 |
+| [SourceProperty](#sourceproperty-string) | Escrever<br>Ler | String | 1.0 |
 
 ### <a name="namespaces"></a>Namespaces
 
@@ -36,7 +36,7 @@ O namespace do Office fornece interfaces compartilhadas que são usadas pelos su
 
 [MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat): inclui um número de enumerações, por exemplo, `ItemType` `EntityType` `AttachmentType` `RecipientType` `ResponseType`,,,,, e `ItemNotificationMessageType`.
 
-### <a name="members"></a>Members
+## <a name="property-details"></a>Detalhes da propriedade
 
 #### <a name="asyncresultstatus-string"></a>AsyncResultStatus: cadeia de caracteres
 

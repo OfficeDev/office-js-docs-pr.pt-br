@@ -1,20 +1,20 @@
 ---
 title: Office. Context. Mailbox. Item-visualização do conjunto de requisitos
 description: ''
-ms.date: 11/06/2019
+ms.date: 11/25/2019
 localization_priority: Normal
-ms.openlocfilehash: 8a65f3b36c6c05c6885cb6925b61ee8c9520dc4a
-ms.sourcegitcommit: 08c0b9ff319c391922fa43d3c2e9783cf6b53b1b
+ms.openlocfilehash: a71d3869d5dbf91db7823118a8d0409699e17cd5
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "38066288"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629220"
 ---
 # <a name="item"></a>item
 
 ### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmditem"></a>[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).item
 
-O namespace `item` é usado para acessar a mensagem, a solicitação de reunião ou o compromisso selecionado no momento. Você pode determinar o tipo de `item` usando a propriedade [itemType](#itemtype-officemailboxenumsitemtype).
+O namespace `item` é usado para acessar a mensagem, a solicitação de reunião ou o compromisso selecionado no momento. Você pode determinar o tipo de `item` usando a propriedade [itemType](#itemtype-mailboxenumsitemtype).
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -24,64 +24,103 @@ O namespace `item` é usado para acessar a mensagem, a solicitação de reunião
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)|Restrito|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)|Escrever ou Ler|
 
-##### <a name="members-and-methods"></a>Membros e métodos
+##### <a name="properties"></a>Propriedades
 
-| Membro | Tipo |
-|--------|------|
-| [attachments](#attachments-arrayattachmentdetails) | Membro |
-| [bcc](#bcc-recipients) | Membro |
-| [body](#body-body) | Membro |
-| [Categorias](#categories-categories) | Membro |
-| [cc](#cc-arrayemailaddressdetailsrecipients) | Membro |
-| [conversationId](#nullable-conversationid-string) | Membro |
-| [dateTimeCreated](#datetimecreated-date) | Membro |
-| [dateTimeModified](#datetimemodified-date) | Membro |
-| [end](#end-datetime) | Membro |
-| [enhancedLocation](#enhancedlocation-enhancedlocation) | Membro |
-| [from](#from-emailaddressdetailsfrom) | Membro |
-| [Internetheaders:](#internetheaders-internetheaders) | Membro |
-| [internetMessageId](#internetmessageid-string) | Membro |
-| [itemClass](#itemclass-string) | Membro |
-| [itemId](#nullable-itemid-string) | Membro |
-| [itemType](#itemtype-officemailboxenumsitemtype) | Membro |
-| [location](#location-stringlocation) | Membro |
-| [normalizedSubject](#normalizedsubject-string) | Membro |
-| [notificationMessages](#notificationmessages-notificationmessages) | Member |
-| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | Membro |
-| [organizer](#organizer-emailaddressdetailsorganizer) | Membro |
-| [recurrence](#nullable-recurrence-recurrence) | Membro |
-| [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | Membro |
-| [sender](#sender-emailaddressdetails) | Membro |
-| [seriesid](#nullable-seriesid-string) | Membro |
-| [start](#start-datetime) | Membro |
-| [subject](#subject-stringsubject) | Membro |
-| [to](#to-arrayemailaddressdetailsrecipients) | Membro |
-| [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | Método |
-| [addFileAttachmentFromBase64Async](#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback) | Método |
-| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | Método |
-| [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | Método |
-| [close](#close) | Método |
-| [displayReplyAllForm](#displayreplyallformformdata-callback) | Método |
-| [displayReplyForm](#displayreplyformformdata-callback) | Método |
-| [getAllInternetHeadersAsync](#getallinternetheadersasyncoptions-callback) | Método |
-| [getAttachmentContentAsync](#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent) | Método |
-| [getAttachmentsAsync](#getattachmentsasyncoptions-callback--arrayattachmentdetails) | Método |
-| [getEntities](#getentities--entities) | Método |
-| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Método |
-| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Método |
-| [getInitializationContextAsync](#getinitializationcontextasyncoptions-callback) | Método |
-| [getItemIdAsync](#getitemidasyncoptions-callback) | Método |
-| [getRegExMatches](#getregexmatches--object) | Método |
-| [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | Método |
-| [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | Método |
-| [getSelectedEntities](#getselectedentities--entities) | Método |
-| [getSelectedRegExMatches](#getselectedregexmatches--object) | Método |
-| [getSharedPropertiesAsync](#getsharedpropertiesasyncoptions-callback) | Método |
-| [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | Método |
-| [removeAttachmentAsync](#removeattachmentasyncattachmentid-options-callback) | Método |
-| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | Método |
-| [saveAsync](#saveasyncoptions-callback) | Método |
-| [setSelectedDataAsync](#setselecteddataasyncdata-options-callback) | Método |
+| Propriedade | Mínimo<br>nível de permissão | Modelos | Tipo de retorno | Mínimo<br>conjunto de requisitos |
+|---|---|---|---|---|
+| [attachments](#attachments-arrayattachmentdetails) | ReadItem | Ler | Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)> | 1.0 |
+| [bcc](#bcc-recipients) | ReadItem | Composição de mensagem | [Destinatários](/javascript/api/outlook/office.recipients) | 1.1 |
+| [body](#body-body) | ReadItem | Escrever | [Body](/javascript/api/outlook/office.body) | 1.1 |
+| | | Ler | | |
+| [categories](#categories-categories) | ReadItem | Escrever | [Categories](/javascript/api/outlook/office.categories) | Visualização |
+| | | Ler | | |
+| [cc](#cc-arrayemailaddressdetailsrecipients) | ReadItem | Composição de mensagem | [Destinatários](/javascript/api/outlook/office.recipients) | 1.0 |
+| | | Mensagem lida | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) de matriz. <> | |
+| [conversationId](#nullable-conversationid-string) | ReadItem | Composição de mensagem | String | 1.0 |
+| | | Mensagem lida | | |
+| [dateTimeCreated](#datetimecreated-date) | ReadItem | Ler | Data | 1.0 |
+| [dateTimeModified](#datetimemodified-date) | ReadItem | Ler | Data | 1.0 |
+| [end](#end-datetime) | ReadItem | Organizador de compromisso | [Time](/javascript/api/outlook/office.time) | 1.0 |
+| | | Participante do compromisso | Data | |
+| | | Mensagem lida<br>(Solicitação de reunião) | Data | |
+| [enhancedLocation](#enhancedlocation-enhancedlocation) | ReadItem | Organizador de compromisso | [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) | Visualização |
+| | | Participante do compromisso | | |
+| [from](#from-emailaddressdetailsfrom) | ReadWriteItem | Composição de mensagem | [De](/javascript/api/outlook/office.from) | 1.7 |
+| | ReadItem | Mensagem lida | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | 1.0 |
+| [Internetheaders:](#internetheaders-internetheaders) | ReadItem | Composição de mensagem | [InternetHeaders](/javascript/api/outlook/office.internetheaders) | Visualização |
+| [internetMessageId](#internetmessageid-string) | ReadItem | Mensagem lida | String | 1.0 |
+| [itemClass](#itemclass-string) | ReadItem | Ler | String | 1.0 |
+| [itemId](#nullable-itemid-string) | ReadItem | Ler | String | 1.0 |
+| [itemType](#itemtype-mailboxenumsitemtype) | ReadItem | Escrever | [MailboxEnums. ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | 1.0 |
+| | | Ler | | |
+| [location](#location-stringlocation) | ReadItem | Organizador de compromisso | [Location](/javascript/api/outlook/office.location) | 1.0 |
+| | | Participante do compromisso | String | |
+| | | Mensagem lida<br>(Solicitação de reunião) | String | |
+| [normalizedSubject](#normalizedsubject-string) | ReadItem | Ler | String | 1.0 |
+| [notificationMessages](#notificationmessages-notificationmessages) | ReadItem | Composição de mensagem | [NotificationMessages](/javascript/api/outlook/office.notificationmessages) | 1.3 |
+| | ReadItem | Mensagem lida | | |
+| [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | ReadItem | Organizador de compromisso | [Destinatários](/javascript/api/outlook/office.recipients) | 1.0 |
+| | | Participante do compromisso | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) de matriz. <> | |
+| [organizer](#organizer-emailaddressdetailsorganizer) | ReadWriteItem | Organizador de compromisso | [Organizador](/javascript/api/outlook/office.organizer) | 1.7 |
+| | ReadItem | Participante do compromisso | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | 1.0 |
+| [recurrence](#nullable-recurrence-recurrence) | ReadItem | Organizador de compromisso | [Recorrência](/javascript/api/outlook/office.recurrence) | 1.7 |
+| | | Participante do compromisso | | |
+| | | Mensagem lida<br>(Solicitação de reunião) | | |
+| [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | ReadItem | Organizador de compromisso | [Destinatários](/javascript/api/outlook/office.recipients) | 1.0 |
+| | | Participante do compromisso | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) de matriz. <> | |
+| [sender](#sender-emailaddressdetails) | ReadItem | Mensagem lida | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | 1.0 |
+| [seriesid](#nullable-seriesid-string) | ReadItem | Escrever | String | 1.7 |
+| | | Ler | | |
+| [start](#start-datetime) | ReadItem | Organizador de compromisso | [Time](/javascript/api/outlook/office.time) | 1.0 |
+| | | Participante do compromisso | Data | |
+| | | Mensagem lida<br>(Solicitação de reunião) | Data | |
+| [subject](#subject-stringsubject) | ReadItem | Escrever | [Subject](/javascript/api/outlook/office.subject) | 1.0 |
+| | | Ler | String | |
+| [to](#to-arrayemailaddressdetailsrecipients) | ReadItem | Composição de mensagem | [Destinatários](/javascript/api/outlook/office.recipients) | 1.0 |
+| | | Mensagem lida | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) de matriz. <> | |
+
+##### <a name="methods"></a>Métodos
+
+| Método | Mínimo<br>nível de permissão | Modelos | Mínimo<br>conjunto de requisitos |
+|---|---|---|---|
+| [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | ReadWriteItem | Escrever | 1.1 |
+| [addFileAttachmentFromBase64Async](#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback) | ReadWriteItem | Escrever | Visualização |
+| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | ReadItem | Escrever<br>Ler | 1.7 |
+| [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | ReadWriteItem | Escrever | 1.1 |
+| [close](#close) | Restrito | Escrever | 1.3 |
+| [displayReplyAllForm](#displayreplyallformformdata-callback) | ReadItem | Ler | 1.0 |
+| [displayReplyForm](#displayreplyformformdata-callback) | ReadItem | Ler | 1.0 |
+| [getAllInternetHeadersAsync](#getallinternetheadersasyncoptions-callback) | ReadItem | Mensagem lida | 1,8 |
+| [getAttachmentContentAsync](#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent) | ReadItem | Escrever<br>Ler | Visualização |
+| [getAttachmentsAsync](#getattachmentsasyncoptions-callback--arrayattachmentdetails) | ReadItem | Escrever | Visualização |
+| [getEntities](#getentities--entities) | ReadItem | Ler | 1.0 |
+| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Restrito | Ler | 1.0 |
+| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | ReadItem | Ler | 1.0 |
+| [getInitializationContextAsync](#getinitializationcontextasyncoptions-callback) | ReadItem | Ler | Visualização |
+| [getItemIdAsync](#getitemidasyncoptions-callback) | ReadItem | Escrever | Visualização |
+| [getRegExMatches](#getregexmatches--object) | ReadItem | Ler | 1.0 |
+| [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | ReadItem | Ler | 1.0 |
+| [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | ReadItem | Escrever | 1.2 |
+| [getSelectedEntities](#getselectedentities--entities) | ReadItem | Ler | 1.6 |
+| [getSelectedRegExMatches](#getselectedregexmatches--object) | ReadItem | Ler | 1.6 |
+| [getSharedPropertiesAsync](#getsharedpropertiesasyncoptions-callback) | ReadItem | Escrever<br>Ler | Visualização |
+| [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | ReadItem | Escrever<br>Ler | 1.0 |
+| [removeAttachmentAsync](#removeattachmentasyncattachmentid-options-callback) | ReadWriteItem | Escrever | 1.1 |
+| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | ReadItem | Escrever<br>Ler | 1.7 |
+| [saveAsync](#saveasyncoptions-callback) | ReadWriteItem | Escrever | 1.3 |
+| [setSelectedDataAsync](#setselecteddataasyncdata-options-callback) | ReadWriteItem | Escrever | 1.2 |
+
+##### <a name="events"></a>Eventos
+
+Você pode assinar e cancelar a assinatura dos eventos a seguir usando o [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) e o [removeHandlerAsync](#removehandlerasynceventtype-options-callback) , respectivamente.
+
+| Evento | Descrição | Mínimo<br>conjunto de requisitos |
+|---|---|---|
+|`AppointmentTimeChanged`| A data ou hora do compromisso ou série selecionado foi alterada. | 1.7 |
+|`AttachmentsChanged`| Um anexo foi adicionado ou removido do item. | Visualização |
+|`EnhancedLocationsChanged`| O local do compromisso selecionado foi alterado. | Visualização |
+|`RecipientsChanged`| A lista de destinatários do item selecionado ou local do compromisso foi alterada. | 1.7 |
+|`RecurrenceChanged`| O padrão de recorrência da série selecionada foi alterado. | 1.7 |
 
 ### <a name="example"></a>Exemplo
 
@@ -101,7 +140,7 @@ Office.initialize = function () {
 };
 ```
 
-### <a name="members"></a>Members
+## <a name="property-details"></a>Detalhes da propriedade
 
 #### <a name="attachments-arrayattachmentdetailsjavascriptapioutlookofficeattachmentdetails"></a>anexos: Matriz.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)>
 
@@ -395,7 +434,7 @@ Obtém a data e a hora em que um item foi alterado pela última vez. Somente mod
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)|Read|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)|Read|
 
 ##### <a name="example"></a>Exemplo
 
@@ -642,7 +681,7 @@ Você pode criar classes de mensagem personalizadas que estendem uma classe de m
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)|Read|
+|[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)|Read|
 
 ##### <a name="example"></a>Exemplo
 
@@ -675,7 +714,7 @@ A propriedade `itemId` não está disponível no modo de redação. Se for obrig
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)|Read|
+|[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)|Read|
 
 ##### <a name="example"></a>Exemplo
 
@@ -695,7 +734,7 @@ if (itemId === null || itemId == undefined) {
 ---
 ---
 
-#### <a name="itemtype-officemailboxenumsitemtypejavascriptapioutlookofficemailboxenumsitemtype"></a>itemType :[Office.MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype)
+#### <a name="itemtype-mailboxenumsitemtypejavascriptapioutlookofficemailboxenumsitemtype"></a>itemType: [MailboxEnums. ItemType](/javascript/api/outlook/office.mailboxenums.itemtype)
 
 Obtém o tipo de item que representa uma instância.
 
@@ -703,7 +742,7 @@ A propriedade `itemType` retorna um dos valores de enumeração `ItemType`, indi
 
 ##### <a name="type"></a>Tipo
 
-*   [Office.MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype)
+*   [MailboxEnums. ItemType](/javascript/api/outlook/office.mailboxenums.itemtype)
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -1090,7 +1129,7 @@ A `seriesId` propriedade retorna `null` para itens que não têm itens pai, como
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.7|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)|Escrever ou Ler|
+|[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)|Escrever ou Ler|
 
 ##### <a name="example"></a>Exemplo
 
@@ -1159,7 +1198,7 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)|Escrever ou Ler|
+|[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)|Escrever ou Ler|
 
 <br>
 
@@ -1205,7 +1244,7 @@ function callback(asyncResult) {
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)|Escrever ou Ler|
+|[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)|Escrever ou Ler|
 
 <br>
 
@@ -1251,9 +1290,9 @@ function callback(asyncResult) {
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)|Escrever ou Ler|
+|[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)|Escrever ou Ler|
 
-### <a name="methods"></a>Métodos
+## <a name="method-details"></a>Detalhes do método
 
 #### <a name="addfileattachmentasyncuri-attachmentname-options-callback"></a>addFileAttachmentAsync(uri, attachmentName, [options], [callback])
 
@@ -1266,7 +1305,7 @@ Posteriormente, você poderá usar o identificador com o método [`removeAttachm
 ##### <a name="parameters"></a>Parâmetros
 |Nome|Tipo|Atributos|Descrição|
 |---|---|---|---|
-|`uri`|Cadeia de caracteres||O URI que fornece o local do arquivo anexado à mensagem ou compromisso. O comprimento máximo é de 2048 caracteres.|
+|`uri`|String||O URI que fornece o local do arquivo anexado à mensagem ou compromisso. O comprimento máximo é de 2048 caracteres.|
 |`attachmentName`|String||O nome do anexo que é mostrado enquanto o anexo está sendo carregado. O tamanho máximo é de 255 caracteres.|
 |`options`|Objeto|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
 |`options.asyncContext`|Objeto|&lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
@@ -1347,7 +1386,7 @@ Posteriormente, você poderá usar o identificador com o método [`removeAttachm
 
 |Nome|Tipo|Atributos|Descrição|
 |---|---|---|---|
-|`base64File`|Cadeia de caracteres||O conteúdo codificado em Base64 de uma imagem ou arquivo a ser adicionado a um email ou evento.|
+|`base64File`|String||O conteúdo codificado em Base64 de uma imagem ou arquivo a ser adicionado a um email ou evento.|
 |`attachmentName`|String||O nome do anexo que é mostrado enquanto o anexo está sendo carregado. O tamanho máximo é de 255 caracteres.|
 |`options`|Objeto|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
 |`options.asyncContext`|Objeto|&lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
@@ -1453,7 +1492,7 @@ Se o Suplemento do Office estiver em execução no Outlook na Web, o método `ad
 
 |Nome|Tipo|Atributos|Descrição|
 |---|---|---|---|
-|`itemId`|Cadeia de caracteres||O identificador do Exchange do item a anexar. O comprimento máximo é de 100 caracteres.|
+|`itemId`|String||O identificador do Exchange do item a anexar. O comprimento máximo é de 100 caracteres.|
 |`attachmentName`|Cadeia de caracteres||O assunto do item a ser anexado. O tamanho máximo é de 255 caracteres.|
 |`options`|Object|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
 |`options.asyncContext`|Objeto|&lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
@@ -1544,9 +1583,9 @@ Quando os anexos são especificados no parâmetro `formData.attachments`, os cli
 |Nome|Tipo|Atributos|Descrição|
 |---|---|---|---|
 |`formData`|String &#124; Object||Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.<br/>**OU**<br/>Um objeto que contém os dados do corpo ou do anexo e uma função de retorno de chamada. O objeto é definido da maneira a seguir.|
-|`formData.htmlBody`|Cadeia de caracteres|&lt;opcional&gt;|Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.
+|`formData.htmlBody`|String|&lt;opcional&gt;|Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.
 |`formData.attachments`|Array.&lt;Object&gt;|&lt;opcional&gt;|Uma matriz de objetos JSON que são anexos de arquivo ou item.|
-|`formData.attachments.type`|Cadeia de caracteres||Indica o tipo de anexo. Deve ser `file` para um anexo de arquivo ou `item` para um anexo de item.|
+|`formData.attachments.type`|String||Indica o tipo de anexo. Deve ser `file` para um anexo de arquivo ou `item` para um anexo de item.|
 |`formData.attachments.name`|Cadeia de caracteres||Uma cadeia de caracteres que contém o nome do anexo, até 255 caracteres de comprimento.|
 |`formData.attachments.url`|Cadeia de caracteres||Usado somente se `type` estiver definido como `file`. O URI do local para o arquivo.|
 |`formData.attachments.isInline`|Booliano||Usado somente se `type` estiver definido como `file`. Se for `true`, indicará que o anexo será mostrado embutido no corpo da mensagem e não deverá ser exibido na lista de anexos.|
@@ -1559,7 +1598,7 @@ Quando os anexos são especificados no parâmetro `formData.attachments`, os cli
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)|1.0|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)|Read|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)|Read|
 
 ##### <a name="examples"></a>Exemplos
 
@@ -1668,9 +1707,9 @@ Quando os anexos são especificados no parâmetro `formData.attachments`, os cli
 |Nome|Tipo|Atributos|Descrição|
 |---|---|---|---|
 |`formData`|String &#124; Object||Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.<br/>**OU**<br/>Um objeto que contém os dados do corpo ou do anexo e uma função de retorno de chamada. O objeto é definido da maneira a seguir.|
-|`formData.htmlBody`|Cadeia de caracteres|&lt;opcional&gt;|Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.
+|`formData.htmlBody`|String|&lt;opcional&gt;|Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.
 |`formData.attachments`|Array.&lt;Object&gt;|&lt;opcional&gt;|Uma matriz de objetos JSON que são anexos de arquivo ou item.|
-|`formData.attachments.type`|Cadeia de caracteres||Indica o tipo de anexo. Deve ser `file` para um anexo de arquivo ou `item` para um anexo de item.|
+|`formData.attachments.type`|String||Indica o tipo de anexo. Deve ser `file` para um anexo de arquivo ou `item` para um anexo de item.|
 |`formData.attachments.name`|Cadeia de caracteres||Uma cadeia de caracteres que contém o nome do anexo, até 255 caracteres de comprimento.|
 |`formData.attachments.url`|Cadeia de caracteres||Usado somente se `type` estiver definido como `file`. O URI do local para o arquivo.|
 |`formData.attachments.isInline`|Booliano||Usado somente se `type` estiver definido como `file`. Se for `true`, indicará que o anexo será mostrado embutido no corpo da mensagem e não deverá ser exibido na lista de anexos.|
@@ -1835,7 +1874,7 @@ O `getAttachmentContentAsync` método obtém o anexo com o identificador especif
 
 |Nome|Tipo|Atributos|Descrição|
 |---|---|---|---|
-|`attachmentId`|Cadeia de caracteres||O identificador do anexo que você deseja obter.|
+|`attachmentId`|String||O identificador do anexo que você deseja obter.|
 |`options`|Objeto|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
 |`options.asyncContext`|Objeto|&lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
 |`callback`|function|&lt;opcional&gt;|Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [AsyncResult](/javascript/api/office/office.asyncresult).|
@@ -2009,7 +2048,7 @@ Enquanto o nível de permissão mínimo a usar esse método é **Restricted**, a
 
 |Valor de `entityType`|Tipo de objetos na matriz retornada|Nível de permissão exigido|
 |---|---|---|
-|`Address`|Cadeia de caracteres|**Restrito**|
+|`Address`|String|**Restrito**|
 |`Contact`|Contato|**ReadItem**|
 |`EmailAddress`|String|**ReadItem**|
 |`MeetingSuggestion`|MeetingSuggestion|**ReadItem**|
@@ -2055,7 +2094,7 @@ O método `getFilteredEntitiesByName` retorna as entidades que correspondem à e
 
 |Nome|Tipo|Descrição|
 |---|---|---|
-|`name`|Cadeia de caracteres|O nome do elemento de regra `ItemHasKnownEntity` que define o filtro a corresponder.|
+|`name`|String|O nome do elemento de regra `ItemHasKnownEntity` que define o filtro a corresponder.|
 
 ##### <a name="requirements"></a>Requisitos
 
@@ -2087,8 +2126,8 @@ Obtém dados de inicialização passados quando o suplemento é [ativado por uma
 
 |Nome|Tipo|Atributos|Descrição|
 |---|---|---|---|
-|`options`|Object|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
-|`options.asyncContext`|Object|&lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
+|`options`|Objeto|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
+|`options.asyncContext`|Objeto|&lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
 |`callback`|function|&lt;opcional&gt;|Quando o método for concluído, a função passada ao parâmetro `callback` é chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult). <br/>Com êxito, os dados de inicialização são fornecidos na `asyncResult.value` Propriedade como uma cadeia de caracteres.<br/>Se não houver nenhum contexto de inicialização, `asyncResult` o objeto conterá `Error` um objeto com `code` sua propriedade definida `9020` como e `name` sua propriedade definida `GenericResponseError`como.|
 
 ##### <a name="requirements"></a>Requisitos
@@ -2298,18 +2337,15 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 
 Retorna de forma assíncrona os dados selecionados do assunto ou do corpo de uma mensagem.
 
-Se não houver seleção, mas o cursor estiver no corpo ou no assunto, o método retornará uma cadeia de caracteres vazia para os dados selecionados. Se um campo que não seja o corpo ou o assunto estiver selecionado, o método retorna o erro `InvalidSelection`.
-
-> [!NOTE]
-> No Outlook na Web, o método retorna a cadeia de caracteres “null” se nenhum texto for selecionado, mas o cursor estiver no corpo. Para verificar essa situação, confira o exemplo mais adiante nesta seção.
+Se não houver seleção, mas o cursor estiver no corpo ou no assunto, o método retorna uma cadeia de caracteres vazia para os dados selecionados. Se um campo que não seja o corpo ou o assunto estiver selecionado, o método retorna o erro `InvalidSelection`.
 
 ##### <a name="parameters"></a>Parâmetros
 
 |Nome|Tipo|Atributos|Descrição|
 |---|---|---|---|
 |`coercionType`|[Office.CoercionType](office.md#coerciontype-string)||Solicita um formato para os dados. Se Text, o método retorna o texto sem formatação como uma cadeia de caracteres, removendo quaisquer marcas HTML presentes. Se HTML, o método retorna o texto selecionado, seja ele texto sem formatação ou HTML.|
-|`options`|Objeto|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
-|`options.asyncContext`|Objeto|&lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
+|`options`|Object|&lt;opcional&gt;|Um objeto literal que contém uma ou mais das propriedades a seguir.|
+|`options.asyncContext`|Object|&lt;opcional&gt;|Os desenvolvedores podem fornecer qualquer objeto que desejarem acessar no método de retorno de chamada.|
 |`callback`|function||Quando o método for concluído, a função passada ao parâmetro `callback` será chamada com um único parâmetro, `asyncResult`, que é um objeto [`AsyncResult`](/javascript/api/office/office.asyncresult).<br/><br/>Para acessar os dados selecionados do método de retorno de chamada, chame `asyncResult.value.data`. Para acessar a propriedade de origem de que a seleção é proveniente, chame `asyncResult.value.sourceProperty`, que será `body` ou `subject`.|
 
 ##### <a name="requirements"></a>Requisitos
@@ -2337,12 +2373,6 @@ Office.initialize = function () {
 function getCallback(asyncResult) {
   var text = asyncResult.value.data;
   var prop = asyncResult.value.sourceProperty;
-
-  // Handle where Outlook on the web erroneously returns "null" instead of empty string.
-  if (Office.context.mailbox.diagnostics.hostName === 'OutlookWebApp'
-      && asyncResult.value.endPosition === asyncResult.value.startPosition) {
-    text = "";
-  }
 
   console.log("Selected text in " + prop + ": " + text);
 }

@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox-visualização do conjunto de requisitos
 description: ''
-ms.date: 10/30/2019
+ms.date: 11/25/2019
 localization_priority: Normal
-ms.openlocfilehash: ff649029713984b32e817bbeaf7c59a48cc5b023
-ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.openlocfilehash: 8c67f7cf9231dd1c0db0d9a8d4ae9fb48e458435
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902106"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629192"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -24,27 +24,41 @@ Fornece acesso ao modelo de objeto de suplemento do Outlook para o Microsoft Out
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| Restrito|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
-##### <a name="members-and-methods"></a>Membros e métodos
+##### <a name="properties"></a>Propriedades
 
-| Membro | Tipo |
-|--------|------|
-| [ewsUrl](#ewsurl-string) | Membro |
-| [Nova mastercategories](#mastercategories-mastercategories) | Membro |
-| [restUrl](#resturl-string) | Membro |
-| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | Método |
-| [convertToEwsId](#converttoewsiditemid-restversion--string) | Método |
-| [convertToLocalClientTime](#converttolocalclienttimetimevalue--localclienttime) | Método |
-| [convertToRestId](#converttorestiditemid-restversion--string) | Método |
-| [convertToUtcClientTime](#converttoutcclienttimeinput--date) | Método |
-| [displayAppointmentForm](#displayappointmentformitemid) | Método |
-| [displayMessageForm](#displaymessageformitemid) | Método |
-| [displayNewAppointmentForm](#displaynewappointmentformparameters) | Método |
-| [displayNewMessageForm](#displaynewmessageformparameters) | Método |
-| [getCallbackTokenAsync](#getcallbacktokenasyncoptions-callback) | Método |
-| [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | Método |
-| [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | Método |
-| [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | Método |
-| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | Método |
+| Propriedade | Mínimo<br>nível de permissão | Modelos | Tipo de retorno | Mínimo<br>conjunto de requisitos |
+|---|---|---|---|---|
+| [ewsUrl](#ewsurl-string) | ReadItem | Escrever<br>Ler | String | 1.0 |
+| [Nova mastercategories](#mastercategories-mastercategories) | ReadWriteMailbox | Escrever<br>Ler | [MasterCategories](/javascript/api/outlook/office.mastercategories) | Visualização |
+| [restUrl](#resturl-string) | ReadItem | Escrever<br>Ler | String | 1,5 |
+
+##### <a name="methods"></a>Métodos
+
+| Método | Mínimo<br>nível de permissão | Modelos | Mínimo<br>conjunto de requisitos |
+|---|---|---|---|
+| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | ReadItem | Escrever<br>Ler | 1,5 |
+| [convertToEwsId](#converttoewsiditemid-restversion--string) | Restrito | Escrever<br>Ler | 1.3 |
+| [convertToLocalClientTime](#converttolocalclienttimetimevalue--localclienttime) | ReadItem | Escrever<br>Ler | 1.0 |
+| [convertToRestId](#converttorestiditemid-restversion--string) | Restrito | Escrever<br>Ler | 1.3 |
+| [convertToUtcClientTime](#converttoutcclienttimeinput--date) | ReadItem | Escrever<br>Ler | 1.0 |
+| [displayAppointmentForm](#displayappointmentformitemid) | ReadItem | Escrever<br>Ler | 1.0 |
+| [displayMessageForm](#displaymessageformitemid) | ReadItem | Escrever<br>Ler | 1.0 |
+| [displayNewAppointmentForm](#displaynewappointmentformparameters) | ReadItem | Ler | 1.0 |
+| [displayNewMessageForm](#displaynewmessageformparameters) | ReadItem | Escrever<br>Ler | 1.6 |
+| [getCallbackTokenAsync](#getcallbacktokenasyncoptions-callback) | ReadItem | Escrever<br>Ler | 1,5 |
+| [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | ReadItem | Escrever<br>Ler | 1.3<br>1.0 |
+| [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | ReadItem | Escrever<br>Ler | 1.0 |
+| [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | ReadWriteMailbox | Escrever<br>Ler | 1.0 |
+| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | ReadItem | Escrever<br>Ler | 1,5 |
+
+##### <a name="events"></a>Eventos
+
+Você pode assinar e cancelar a assinatura dos eventos a seguir usando o [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) e o [removeHandlerAsync](#removehandlerasynceventtype-options-callback) , respectivamente.
+
+| Evento | Descrição | Mínimo<br>conjunto de requisitos |
+|---|---|---|
+|`ItemChanged`| Um item diferente do Outlook é selecionado para exibição enquanto o painel de tarefas está fixado. | 1,5 |
+|`OfficeThemeChanged`| O tema do Office na caixa de correio foi alterado. | Visualização |
 
 ### <a name="namespaces"></a>Namespaces
 
@@ -54,7 +68,7 @@ Fornece acesso ao modelo de objeto de suplemento do Outlook para o Microsoft Out
 
 [userProfile](Office.context.mailbox.userProfile.md): Fornece informações sobre o usuário em um suplemento do Outlook.
 
-### <a name="members"></a>Members
+## <a name="property-details"></a>Detalhes da propriedade
 
 #### <a name="ewsurl-string"></a>ewsUrl: String
 
@@ -130,10 +144,6 @@ Obtém a URL do ponto de extremidade de REST para esta conta de email.
 
 O valor `restUrl` pode ser usado para fazer chamadas da [API REST](/outlook/rest/) para a caixa de correio do usuário.
 
-Seu aplicativo deve ter a permissão **ReadItem** especificada em seu manifesto para chamar o membro `restUrl` em modo de leitura.
-
-No modo de composição, é preciso chamar o método [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) antes de poder usar o membro `restUrl`. Seu aplicativo deve ter permissões **ReadWriteItem** para chamar o método `saveAsync`.
-
 ##### <a name="type"></a>Tipo
 
 *   String
@@ -146,7 +156,7 @@ No modo de composição, é preciso chamar o método [`saveAsync`](Office.contex
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
-### <a name="methods"></a>Métodos
+## <a name="method-details"></a>Detalhes do método
 
 #### <a name="addhandlerasynceventtype-handler-options-callback"></a>addHandlerAsync(eventType, handler, [options], [callback])
 
@@ -870,4 +880,4 @@ Atualmente, os tipos de eventos com `Office.EventType.ItemChanged` suporte `Offi
 |---|---|
 |[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1,5 |
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem |
-|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
+|[Modo Aplicável do Outlook](/outlook/add-ins/#extension-points)| Escrever ou Ler|

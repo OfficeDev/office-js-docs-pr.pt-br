@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox – conjunto de requisitos 1,8
 description: ''
-ms.date: 10/31/2019
+ms.date: 11/27/2019
 localization_priority: Normal
-ms.openlocfilehash: 3f6d639cdf8bdff6f2df365622f58eba1c4b38e0
-ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.openlocfilehash: 908eff7b34e63b62fbe250f1a6f810be69b17627
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902124"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629213"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -129,10 +129,6 @@ Office.context.mailbox.masterCategories.getAsync(function (asyncResult) {
 Obtém a URL do ponto de extremidade de REST para esta conta de email.
 
 O valor `restUrl` pode ser usado para fazer chamadas da [API REST](/outlook/rest/) para a caixa de correio do usuário.
-
-Seu aplicativo deve ter a permissão **ReadItem** especificada em seu manifesto para chamar o membro `restUrl` em modo de leitura.
-
-No modo de composição, é preciso chamar o método [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) antes de poder usar o membro `restUrl`. Seu aplicativo deve ter permissões **ReadWriteItem** para chamar o método `saveAsync`.
 
 ##### <a name="type"></a>Tipo
 

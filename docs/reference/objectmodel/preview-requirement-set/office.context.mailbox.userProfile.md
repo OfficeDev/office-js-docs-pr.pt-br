@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. userProfile – conjunto de requisitos de visualização
 description: ''
-ms.date: 06/20/2019
+ms.date: 11/25/2019
 localization_priority: Normal
-ms.openlocfilehash: 5941c4e1276535091a3ffcf5b2fb6aa972ed8c4d
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 4afc64f247155576ab3f0024d1929a29a0f7dc0c
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696467"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629255"
 ---
 # <a name="userprofile"></a>userProfile
 
@@ -22,16 +22,16 @@ ms.locfileid: "36696467"
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
-##### <a name="members-and-methods"></a>Membros e métodos
+##### <a name="properties"></a>Propriedades
 
-| Membro | Tipo |
-|--------|------|
-| [accountType](#accounttype-string) | Membro |
-| [displayName](#displayname-string) | Membro |
-| [emailAddress](#emailaddress-string) | Membro |
-| [timeZone](#timezone-string) | Membro |
+| Propriedade | Mínimo<br>nível de permissão | Modelos | Tipo de retorno | Mínimo<br>conjunto de requisitos |
+|---|---|---|---|---|
+| [accountType](#accounttype-string) | ReadItem | Escrever<br>Ler | String | 1.6 |
+| [displayName](#displayname-string) | ReadItem | Escrever<br>Ler | String | 1.0 |
+| [emailAddress](#emailaddress-string) | ReadItem | Escrever<br>Ler | String | 1.0 |
+| [timeZone](#timezone-string) | ReadItem | Escrever<br>Ler | String | 1.0 |
 
-### <a name="members"></a>Membros
+## <a name="property-details"></a>Detalhes da propriedade
 
 #### <a name="accounttype-string"></a>AccountType: cadeia de caracteres
 

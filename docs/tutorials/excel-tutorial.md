@@ -1,15 +1,15 @@
 ---
 title: Tutorial de suplemento do Excel
 description: Neste tutorial, você criará um suplemento do Excel que cria, preenche, filtra e classifica uma tabela, cria um gráfico, congela um cabeçalho de tabela, protege uma planilha e abre uma caixa de diálogo
-ms.date: 09/18/2019
+ms.date: 11/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: ef68834085486827bb0c09b86ce60bee9c9b7b3f
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: 1611a5d6fcded6430d9ef0d21242f6dd643ae016
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035395"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629725"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Tutorial: criar um suplemento do painel de tarefas no Excel
 
@@ -41,7 +41,7 @@ Neste tutorial: você criará um suplemento do painel de tarefas no Excel
 
 ![Gerador do Yeoman](../images/yo-office-excel.png)
 
-Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes de suporte do nó.
+Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -172,13 +172,13 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
 
 ### <a name="test-the-add-in"></a>Testar o suplemento
 
-1. Conclua as etapas a seguir para iniciar o servidor Web local e Sideload seu suplemento.
+1. Conclua as etapas a seguir para iniciar o servidor Web local e fazer o sideload do seu suplemento.
 
     > [!NOTE]
     > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
 
     > [!TIP]
-    > Se você estiver testando seu suplemento no Mac, execute o seguinte comando no diretório raiz do seu projeto antes de prosseguir. Quando você executa esse comando, o servidor Web local é iniciado.
+    > Se você estiver testando seu suplemento no Mac, execute o seguinte comando no diretório raiz do seu projeto antes de prosseguir. O servidor Web local é iniciado quando este comando é executado.
     >
     > ```command&nbsp;line
     > npm run dev-server
@@ -190,7 +190,7 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
         npm start
         ```
 
-    - Para testar seu suplemento no Excel na Web, execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor Web local será iniciado (se ainda não estiver sendo executado).
+    - Para testar seu suplemento no Excel na Web, execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor Web local será iniciado (se ainda não estiver em execução).
 
         ```command&nbsp;line
         npm run start:web
@@ -732,6 +732,7 @@ Estas etapas devem ser concluídas sempre que seu código precisar *ler* informa
         > [!NOTE]
         > Se essa pasta não existir, verifique as seguintes pastas e, se encontrar, exclua o conteúdo da pasta:
         >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/`onde `{host}` é o host do Office (por exemplo `Excel`,)
+        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/`onde `{host}` é o host do Office (por exemplo `Excel`,)
         >    - `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
 
 3. Se o servidor Web local já estiver em execução, interrompa-o fechando a janela de comando do nó.
@@ -744,7 +745,7 @@ Estas etapas devem ser concluídas sempre que seu código precisar *ler* informa
         npm start
         ```
 
-    - Para testar seu suplemento no Excel na Web, execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor Web local será iniciado (se ainda não estiver sendo executado).
+    - Para testar seu suplemento no Excel na Web, execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor Web local será iniciado (se ainda não estiver em execução).
 
         ```command&nbsp;line
         npm run start:web

@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox – conjunto de requisitos 1,6
 description: ''
-ms.date: 10/21/2019
+ms.date: 11/27/2019
 localization_priority: Normal
-ms.openlocfilehash: b4bc64aa1ff836408a8b8b1efdaed7ddc8ce5725
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 09c3930daf6f26edbc38b01f515ee5b1830ce802
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37627080"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629690"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -90,10 +90,6 @@ No modo de composição, é preciso chamar o método [`saveAsync`](Office.contex
 Obtém a URL do ponto de extremidade de REST para esta conta de email.
 
 O valor `restUrl` pode ser usado para fazer chamadas da [API REST](/outlook/rest/) para a caixa de correio do usuário.
-
-Seu aplicativo deve ter a permissão **ReadItem** especificada em seu manifesto para chamar o membro `restUrl` em modo de leitura.
-
-No modo de composição, é preciso chamar o método [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) antes de poder usar o membro `restUrl`. Seu aplicativo deve ter permissões **ReadWriteItem** para chamar o método `saveAsync`.
 
 ##### <a name="type"></a>Tipo
 
@@ -543,9 +539,9 @@ O método `getCallbackTokenAsync` faz uma chamada assíncrona para obter um toke
 > [!NOTE]
 > É recomendável que suplementos usem as APIs REST em vez dos Serviços Web do Exchange sempre que possível.
 
-Chamar o `getCallbackTokenAsync` método no modo de leitura requer um nível mínimo de permissão de **ReadItem**.
+Chamar o método `getCallbackTokenAsync` no modo de leitura requer um nível de permissão mínimo de **ReadItem**.
 
-A `getCallbackTokenAsync` chamada no modo de redação requer que você tenha salvo o item. O [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) método requer um nível de permissão mínimo de **ReadWriteItem**.
+Chamar `getCallbackTokenAsync` no modo redigir exige que você tenha salvo o item. O método [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) requer um nível de permissão mínimo de **ReadWriteItem**.
 
 **Tokens REST**
 
@@ -559,7 +555,7 @@ Quando um token EWS é solicitado (`options.isRest = false`), o token resultante
 
 O suplemento deve usar a propriedade `ewsUrl` para determinar a URL correta a ser usada ao fazer chamadas de EWS.
 
-Você pode passar o token e um identificador de anexo ou identificador de item para um sistema de terceiros. O sistema de terceiros usa o token como um token de autorização de portador para chamar a operação [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) dos serviços Web do Exchange (EWS) ou a operação [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) para retornar um anexo ou item. Por exemplo, você pode criar um serviço remoto para [obter anexos do item selecionado](/outlook/add-ins/get-attachments-of-an-outlook-item).
+Você pode passar o token e também um identificador de anexo ou um identificador de item a um sistema de terceiros. O sistema de terceiros usa o token como portador da autorização para chamar as operações [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) ou [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) dos Serviços Web do Exchange (EWS) para retornar um anexo ou item. Por exemplo, você pode criar um serviço remoto para [obter anexos do item selecionado](/outlook/add-ins/get-attachments-of-an-outlook-item).
 
 ##### <a name="parameters"></a>Parâmetros
 
@@ -614,11 +610,11 @@ Obtém uma cadeia de caracteres que contém um token usado para obter um anexo o
 
 O método `getCallbackTokenAsync` faz uma chamada assíncrona para obter um token opaco do Exchange Server que hospeda a caixa de correio do usuário. A vida útil do token de retorno de chamada é de 5 minutos.
 
-Você pode passar o token e um identificador de anexo ou identificador de item para um sistema de terceiros. O sistema de terceiros usa o token como um token de autorização de portador para chamar a operação [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) dos serviços Web do Exchange (EWS) ou a operação [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) para retornar um anexo ou item. Por exemplo, você pode criar um serviço remoto para [obter anexos do item selecionado](/outlook/add-ins/get-attachments-of-an-outlook-item).
+Você pode passar o token e também um identificador de anexo ou um identificador de item a um sistema de terceiros. O sistema de terceiros usa o token como portador da autorização para chamar as operações [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) ou [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) dos Serviços Web do Exchange (EWS) para retornar um anexo ou item. Por exemplo, você pode criar um serviço remoto para [obter anexos do item selecionado](/outlook/add-ins/get-attachments-of-an-outlook-item).
 
-Chamar o `getCallbackTokenAsync` método no modo de leitura requer um nível mínimo de permissão de **ReadItem**.
+Chamar o método `getCallbackTokenAsync` no modo de leitura requer um nível de permissão mínimo de **ReadItem**.
 
-A `getCallbackTokenAsync` chamada no modo de redação requer que você tenha salvo o item. O [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) método requer um nível de permissão mínimo de **ReadWriteItem**.
+Chamar `getCallbackTokenAsync` no modo redigir exige que você tenha salvo o item. O método [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) requer um nível de permissão mínimo de **ReadWriteItem**.
 
 ##### <a name="parameters"></a>Parâmetros
 

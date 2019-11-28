@@ -1,14 +1,14 @@
 ---
 title: 'Office.context.mailbox.diagnostics: conjunto de requisitos da visualização'
 description: ''
-ms.date: 08/08/2019
+ms.date: 11/25/2019
 localization_priority: Normal
-ms.openlocfilehash: 47949fb26629b6619514bbd0d7f760cfa31d5839
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 492e292737417854adfaf98feb2b67788933d874
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696488"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629199"
 ---
 # <a name="diagnostics"></a>diagnostics
 
@@ -24,15 +24,15 @@ Fornece informações de diagnóstico para um suplemento do Outlook.
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| ReadItem|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
-##### <a name="members-and-methods"></a>Membros e métodos
+##### <a name="properties"></a>Propriedades
 
-| Membro | Tipo |
-|--------|------|
-| [hostName](#hostname-string) | Membro |
-| [hostVersion](#hostversion-string) | Membro |
-| [OWAView](#owaview-string) | Membro |
+| Propriedade | Mínimo<br>nível de permissão | Modelos | Tipo de retorno | Mínimo<br>conjunto de requisitos |
+|---|---|---|---|---|
+| [hostName](#hostname-string) | ReadItem | Escrever<br>Ler | String | 1.0 |
+| [hostVersion](#hostversion-string) | ReadItem | Escrever<br>Ler | String | 1.0 |
+| [OWAView](#owaview-string) | ReadItem | Escrever<br>Ler | String | 1.0 |
 
-### <a name="members"></a>Membros
+## <a name="property-details"></a>Detalhes da propriedade
 
 #### <a name="hostname-string"></a>Nome do host: cadeia de caracteres
 
@@ -64,7 +64,7 @@ Uma cadeia de caracteres que pode ser um dos valores a seguir: `Outlook`, `Outlo
 
 Obtém uma cadeia de caracteres que representa a versão do aplicativo host ou do servidor Exchange (por exemplo, "15.0.468.0").
 
-Se o suplemento de email estiver em execução no cliente da área de trabalho do Outlook ou no `hostVersion` Ios, a propriedade retornará a versão do aplicativo host do Outlook. No Outlook na Web, a propriedade retorna a versão do servidor Exchange.
+Se o suplemento de email estiver em execução em uma área de trabalho do Outlook ou cliente `hostVersion` móvel, a propriedade retornará a versão do aplicativo host, Outlook. No Outlook na Web, a propriedade retorna a versão do servidor Exchange.
 
 ##### <a name="type"></a>Tipo
 

@@ -1,25 +1,25 @@
 ---
 title: Conjunto de requisitos de API para suplementos do Outlook versão 1.1
 description: ''
-ms.date: 10/30/2019
+ms.date: 11/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 312d40d499531eb6f93d3b1555bfb057cd4651d6
-ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.openlocfilehash: 1c2e8ea26cac7ff630961b176391ef1adf2249fd
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "37901952"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629234"
 ---
 # <a name="outlook-add-in-api-requirement-set-11"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.1
 
-O subconjunto de APIs de suplemento do Outlook para as APIs JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um suplemento do Office.
+O subconjunto de APIs de suplemento do Outlook para as APIs JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um suplemento do Office. API JavaScript do Outlook 1,1 (caixa de correio 1,1) é a primeira versão da API.
 
 > [!NOTE]
-> Esta documentação destina-se a um [conjunto de requisitos](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets) que não seja o mais recente. 
+> Esta documentação destina-se a um [conjunto de requisitos](../../requirement-sets/outlook-api-requirement-sets.md) que não seja o mais recente.
 
 ## <a name="whats-new-in-11"></a>Novidades na versão 1.1?
 
-O conjunto de requisitos 1.1 inclui todos os recursos do Conjunto de requisitos 1.0. Ele adicionou a capacidade de os suplementos para acessarem o corpo de mensagens e os compromissos e a capacidade de modificar o item atual.
+O conjunto de requisitos 1,1 inclui todos os [conjuntos de requisitos de API comuns](../../requirement-sets/office-add-in-requirement-sets.md) com suporte no Outlook. Ele adicionou a capacidade de os suplementos para acessarem o corpo de mensagens e os compromissos e a capacidade de modificar o item atual.
 
 ### <a name="change-log"></a>Log de alterações
 
