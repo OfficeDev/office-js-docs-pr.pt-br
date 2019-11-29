@@ -1,14 +1,14 @@
 ---
 title: 'Office.context.mailbox: conjunto de requisitos da versão 1.5'
 description: ''
-ms.date: 10/21/2019
+ms.date: 11/27/2019
 localization_priority: Priority
-ms.openlocfilehash: bb63d8186d41d072aa62b180b16958d61ce9a66c
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: eefeab2cf6fbe78451afae7e588640fe7f50dba4
+ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37627010"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "39629683"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -89,10 +89,6 @@ No modo de composição, é preciso chamar o método [`saveAsync`](Office.contex
 Obtém a URL do ponto de extremidade de REST para esta conta de email.
 
 O valor `restUrl` pode ser usado para fazer chamadas da [API REST](/outlook/rest/) para a caixa de correio do usuário.
-
-Seu aplicativo deve ter a permissão **ReadItem** especificada em seu manifesto para chamar o membro `restUrl` em modo de leitura.
-
-No modo de composição, é preciso chamar o método [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) antes de poder usar o membro `restUrl`. Seu aplicativo deve ter permissões **ReadWriteItem** para chamar o método `saveAsync`.
 
 > [!NOTE]
 > Os clientes do Outlook conectados a instalações locais do Exchange 2016 ou posterior com um REST personalizado da URL configurada retornarão um valor inválido para `restUrl`.
