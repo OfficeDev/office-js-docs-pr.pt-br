@@ -136,6 +136,8 @@
           href: develop/develop-office-add-ins-for-the-ipad.md
         - name: Desenvolver suplementos com o Angular
           href: develop/add-ins-with-angular2.md
+        - name: Desenvolver suplementos com o Código do Visual Studio
+          href: develop/develop-add-ins-vscode.md
         - name: Desenvolver suplementos com o Visual Studio
           items:
             - name: Criar e depurar suplementos do Office no Visual Studio
@@ -214,12 +216,16 @@
           href: testing/troubleshoot-manifest.md
     - name: Publicar
       items:
-        - name: Visão Geral
+        - name: Visão geral
           href: publish/publish.md
-        - name: Hospedar um Suplemento do Office no Microsoft Azure
-          href: publish/host-an-office-add-in-on-microsoft-azure.md
-        - name: Empacotar o seu suplemento usando o Visual Studio
-          href: publish/package-your-add-in-using-visual-studio.md
+        - name: Publique o suplemento (VS Code)
+          href: publish/publish-add-in-vs-code.md
+        - name: Visual Studio
+          items:
+            - name: Publicar o suplemento (Visual Studio)
+              href: publish/package-your-add-in-using-visual-studio.md
+            - name: Hospedar um Suplemento do Office no Microsoft Azure
+              href: publish/host-an-office-add-in-on-microsoft-azure.md
         - name: Publicar suplementos no AppSource
           href: /office/dev/store/submit-to-the-office-store
         - name: Políticas de validação do AppSource
