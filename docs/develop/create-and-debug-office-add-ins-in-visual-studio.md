@@ -3,12 +3,12 @@ title: Criar e depurar suplementos do Office no Visual Studio
 description: Use o Visual Studio para criar e depurar suplementos do Office na área de trabalho do cliente Office no Windows
 ms.date: 10/11/2019
 localization_priority: Priority
-ms.openlocfilehash: 878cd308747ac7049ca37b21a9fcb2282a4bf60d
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 8274022a6a3af6e1b5d82c9d7105142d5a49e905
+ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626828"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "39670164"
 ---
 # <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Criar e depurar suplementos do Office no Visual Studio
 
@@ -30,7 +30,7 @@ Este artigo descreve como usar o Visual Studio 2019 para criar um Suplemento do 
 - Office 2013 ou posterior
 
     > [!TIP]
-    > Se você não tiver o Office, você pode participar do[programa de desenvolvedor do Office 365](https://developer.microsoft.com/office/dev-program) para obter uma assinatura do Office 365 ou [Inscreva-se para uma avaliação gratuita de 1 mês](https://products.office.com/en-US/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735).
+    > Se você não tiver o Office, você pode participar do[programa de desenvolvedor do Office 365](https://developer.microsoft.com/office/dev-program) para obter uma assinatura do Office 365 ou [Inscreva-se para uma avaliação gratuita de 1 mês](https://products.office.com/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735).
 
 ## <a name="create-the-add-in-project-in-visual-studio"></a>Criar um projeto de suplemento no Visual Studio
 

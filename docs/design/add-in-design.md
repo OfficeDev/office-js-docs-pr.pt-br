@@ -3,12 +3,12 @@ title: Crie o design dos seus suplementos do Office
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 766110b9b1ff9d22a783f592f1e38eb848b8b737
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 1b2f6a57ddea385ec676a4981e4576c155d93886
+ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127671"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "39670143"
 ---
 # <a name="design-your-office-add-ins"></a>Crie o design dos seus suplementos do Office
 
@@ -33,6 +33,6 @@ Siga os princípios de design do Office para criar experiências positivas com o
 - **Design para todas as plataformas e métodos de entrada**. Os suplementos são projetados para funcionar em todas as plataformas com suporte do Office, portanto, a Experiência de Usuário do suplemento deve ser otimizada para funcionar em plataformas e fatores forma. Dê suporte a mouse/teclado e dispositivos de entrada por toque e verifique se a interface do usuário HTML personalizada responde na adaptação aos diversos fatores forma. Para saber mais, confira o tópico [Otimizar para toque](../concepts/add-in-development-best-practices.md#optimize-for-touch). 
 
 ## <a name="see-also"></a>Confira também
-- [Office UI Fabric](https://developer.microsoft.com/pt-BR/fabric) 
+- [Office UI Fabric](https://developer.microsoft.com/fabric) 
 - [Práticas recomendadas de desenvolvimento de suplementos](../concepts/add-in-development-best-practices.md)
 

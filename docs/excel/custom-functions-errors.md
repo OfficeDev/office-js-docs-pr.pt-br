@@ -3,17 +3,17 @@ ms.date: 11/04/2019
 description: 'Manipular e retornar erros como #NULL! da sua função personalizada'
 title: Manipular e retornar erros da sua função personalizada (visualização)
 localization_priority: Priority
-ms.openlocfilehash: b04da2f3023e65a4a8b1d8f9a7b8f753322e8b46
-ms.sourcegitcommit: 42bcf9059327a8d71a7ab223805aea68be9ed6b5
+ms.openlocfilehash: b51161c3f5292ffdfb516a731b102a634aaf7d83
+ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "37962014"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "39670150"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function-preview"></a>Manipular e retornar erros da sua função personalizada (visualização)
 
 > [!NOTE]
-> Os recursos descritos neste artigo estão atualmente em visualização, estando sujeitos a alterações. No momento, eles não têm suporte para utilização em ambientes de produção. Você precisará do [Office Insider](https://insider.office.com/pt-BR/join) para experimentar os recursos de visualização.  Uma boa maneira de testar os recursos de visualização é usar uma assinatura do Office 365. Caso ainda não tenha uma assinatura do Office 365, obtenha uma ingressando no [Programa para Desenvolvedores do Office 365](https://developer.microsoft.com/office/dev-program).
+> Os recursos descritos neste artigo estão atualmente em visualização, estando sujeitos a alterações. No momento, eles não têm suporte para utilização em ambientes de produção. Você precisará do [Office Insider](https://insider.office.com/join) para experimentar os recursos de visualização.  Uma boa maneira de testar os recursos de visualização é usar uma assinatura do Office 365. Caso ainda não tenha uma assinatura do Office 365, obtenha uma ingressando no [Programa para Desenvolvedores do Office 365](https://developer.microsoft.com/office/dev-program).
 
 Se algo der errado enquanto sua função personalizada é executada, você precisará retornar um erro para informar o usuário. Se você tiver requisitos de parâmetros específicos, como apenas números positivos, será necessário testar os parâmetros e gerar um erro se eles não estiverem corretos. Você também pode usar um bloco `try`-`catch` para detectar quaisquer erros que ocorram enquanto sua função personalizada é executada.
 

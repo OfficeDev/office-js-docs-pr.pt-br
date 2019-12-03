@@ -4,19 +4,19 @@ title: 'Tutorial: compartilhar dados e eventos entre as funções personalizadas
 ms.prod: excel
 description: No Excel, compartilhe dados e eventos entre as funções personalizadas e o painel de tarefas.
 localization_priority: Priority
-ms.openlocfilehash: dcd4bced7e1419a57256f4ec54e3ff72c0edf9ef
-ms.sourcegitcommit: 42bcf9059327a8d71a7ab223805aea68be9ed6b5
+ms.openlocfilehash: 714e2645d78293b683a4824b58cb2b9b0b72ebb8
+ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "37962096"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "39670199"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane-preview"></a>Tutorial: compartilhar dados e eventos entre as funções personalizadas do Excel e o painel de tarefas (versão prévia)
 
 As funções personalizadas do Excel e o painel de tarefas compartilham dados globais e podem fazer chamadas de função entre si. Para configurar o projeto para que as funções personalizadas possam funcionar com o painel de tarefas, siga as instruções neste artigo.
 
 > [!NOTE]
-> Os recursos descritos neste artigo estão em versão prévia e sujeitos a alterações. No momento, eles não têm suporte para utilização em ambientes de produção. Os recursos de versão prévia deste artigo só estão disponíveis no Excel no Windows. Para experimentar os recursos de versão prévia, você precisará [ingressar no Office Insider](https://insider.office.com/pt-BR/join).  Uma boa maneira de experimentar recursos de versão prévia é usar uma assinatura do Office 365. Caso ainda não tenha uma assinatura do Office 365, obtenha uma ingressando no [Programa para Desenvolvedores do Office 365](https://developer.microsoft.com/office/dev-program).
+> Os recursos descritos neste artigo estão em versão prévia e sujeitos a alterações. No momento, eles não têm suporte para utilização em ambientes de produção. Os recursos de versão prévia deste artigo só estão disponíveis no Excel no Windows. Para experimentar os recursos de versão prévia, você precisará [ingressar no Office Insider](https://insider.office.com/join).  Uma boa maneira de experimentar recursos de versão prévia é usar uma assinatura do Office 365. Caso ainda não tenha uma assinatura do Office 365, obtenha uma ingressando no [Programa para Desenvolvedores do Office 365](https://developer.microsoft.com/office/dev-program).
 
 ## <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
