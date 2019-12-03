@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox-visualização do conjunto de requisitos
 description: ''
-ms.date: 11/25/2019
+ms.date: 12/02/2019
 localization_priority: Normal
-ms.openlocfilehash: 8c67f7cf9231dd1c0db0d9a8d4ae9fb48e458435
-ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
+ms.openlocfilehash: 864c4f2931762ff6d8a02abb8da1a03e1abcab80
+ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "39629192"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "39670115"
 ---
 # <a name="mailbox"></a>mailbox
 
@@ -28,28 +28,28 @@ Fornece acesso ao modelo de objeto de suplemento do Outlook para o Microsoft Out
 
 | Propriedade | Mínimo<br>nível de permissão | Modelos | Tipo de retorno | Mínimo<br>conjunto de requisitos |
 |---|---|---|---|---|
-| [ewsUrl](#ewsurl-string) | ReadItem | Escrever<br>Ler | String | 1.0 |
-| [Nova mastercategories](#mastercategories-mastercategories) | ReadWriteMailbox | Escrever<br>Ler | [MasterCategories](/javascript/api/outlook/office.mastercategories) | Visualização |
-| [restUrl](#resturl-string) | ReadItem | Escrever<br>Ler | String | 1,5 |
+| [ewsUrl](#ewsurl-string) | ReadItem | Escrever<br>Read | Cadeia de Caracteres | 1.0 |
+| [Nova mastercategories](#mastercategories-mastercategories) | ReadWriteMailbox | Escrever<br>Read | [MasterCategories](/javascript/api/outlook/office.mastercategories) | 1,8 |
+| [restUrl](#resturl-string) | ReadItem | Escrever<br>Read | Cadeia de Caracteres | 1,5 |
 
 ##### <a name="methods"></a>Métodos
 
 | Método | Mínimo<br>nível de permissão | Modelos | Mínimo<br>conjunto de requisitos |
 |---|---|---|---|
-| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | ReadItem | Escrever<br>Ler | 1,5 |
-| [convertToEwsId](#converttoewsiditemid-restversion--string) | Restrito | Escrever<br>Ler | 1.3 |
-| [convertToLocalClientTime](#converttolocalclienttimetimevalue--localclienttime) | ReadItem | Escrever<br>Ler | 1.0 |
-| [convertToRestId](#converttorestiditemid-restversion--string) | Restrito | Escrever<br>Ler | 1.3 |
-| [convertToUtcClientTime](#converttoutcclienttimeinput--date) | ReadItem | Escrever<br>Ler | 1.0 |
-| [displayAppointmentForm](#displayappointmentformitemid) | ReadItem | Escrever<br>Ler | 1.0 |
-| [displayMessageForm](#displaymessageformitemid) | ReadItem | Escrever<br>Ler | 1.0 |
-| [displayNewAppointmentForm](#displaynewappointmentformparameters) | ReadItem | Ler | 1.0 |
-| [displayNewMessageForm](#displaynewmessageformparameters) | ReadItem | Escrever<br>Ler | 1.6 |
-| [getCallbackTokenAsync](#getcallbacktokenasyncoptions-callback) | ReadItem | Escrever<br>Ler | 1,5 |
-| [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | ReadItem | Escrever<br>Ler | 1.3<br>1.0 |
-| [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | ReadItem | Escrever<br>Ler | 1.0 |
-| [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | ReadWriteMailbox | Escrever<br>Ler | 1.0 |
-| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | ReadItem | Escrever<br>Ler | 1,5 |
+| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | ReadItem | Escrever<br>Read | 1,5 |
+| [convertToEwsId](#converttoewsiditemid-restversion--string) | Restrito | Escrever<br>Read | 1.3 |
+| [convertToLocalClientTime](#converttolocalclienttimetimevalue--localclienttime) | ReadItem | Escrever<br>Read | 1.0 |
+| [convertToRestId](#converttorestiditemid-restversion--string) | Restrito | Escrever<br>Read | 1.3 |
+| [convertToUtcClientTime](#converttoutcclienttimeinput--date) | ReadItem | Escrever<br>Read | 1.0 |
+| [displayAppointmentForm](#displayappointmentformitemid) | ReadItem | Escrever<br>Read | 1.0 |
+| [displayMessageForm](#displaymessageformitemid) | ReadItem | Escrever<br>Read | 1.0 |
+| [displayNewAppointmentForm](#displaynewappointmentformparameters) | ReadItem | Read | 1.0 |
+| [displayNewMessageForm](#displaynewmessageformparameters) | ReadItem | Escrever<br>Read | 1.6 |
+| [getCallbackTokenAsync](#getcallbacktokenasyncoptions-callback) | ReadItem | Escrever<br>Read | 1,5 |
+| [getCallbackTokenAsync](#getcallbacktokenasynccallback-usercontext) | ReadItem | Escrever<br>Read | 1.3<br>1.0 |
+| [getUserIdentityTokenAsync](#getuseridentitytokenasynccallback-usercontext) | ReadItem | Escrever<br>Read | 1.0 |
+| [makeEwsRequestAsync](#makeewsrequestasyncdata-callback-usercontext) | ReadWriteMailbox | Escrever<br>Read | 1.0 |
+| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | ReadItem | Escrever<br>Read | 1,5 |
 
 ##### <a name="events"></a>Eventos
 
@@ -483,7 +483,7 @@ Se qualquer dos parâmetros exceder os limites de tamanho especificados, ou se u
 | `parameters.optionalAttendees` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email ou uma matriz contendo um objeto `EmailAddressDetails` para cada um dos participantes opcionais do compromisso. A matriz está limitada a um máximo de 100 entradas. |
 | `parameters.start` | Data | Um objeto `Date` que especifica a data e a hora de início do compromisso. |
 | `parameters.end` | Data | Um objeto `Date` que especifica a data e a hora de término do compromisso. |
-| `parameters.location` | String | Uma cadeia de caracteres que contém o local do compromisso. A cadeia de caracteres está limitada a um máximo de 255 caracteres. |
+| `parameters.location` | Cadeia de Caracteres | Uma cadeia de caracteres que contém o local do compromisso. A cadeia de caracteres está limitada a um máximo de 255 caracteres. |
 | `parameters.resources` | Array.&lt;String&gt; | Uma matriz de cadeias de caracteres que contém os recursos necessários para o compromisso. A matriz está limitada a um máximo de 100 entradas. |
 | `parameters.subject` | String | Uma cadeia de caracteres que contém o assunto do compromisso. A cadeia de caracteres está limitada a um máximo de 255 caracteres. |
 | `parameters.body` | String | O corpo do compromisso. O conteúdo do corpo está limitado a um tamanho máximo de 32 KB. |
@@ -540,12 +540,12 @@ Se qualquer dos parâmetros exceder os limites de tamanho especificados, ou se u
 | `parameters.toRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email `EmailAddressDetails` ou uma matriz que contém um objeto para cada um dos destinatários na linha para. A matriz está limitada a um máximo de 100 entradas. |
 | `parameters.ccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email `EmailAddressDetails` ou uma matriz que contém um objeto para cada um dos destinatários na linha CC. A matriz está limitada a um máximo de 100 entradas. |
 | `parameters.bccRecipients` | Array.&lt;String&gt; &#124; Array.&lt;[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)&gt; | Uma matriz de cadeias de caracteres que contém os endereços de email `EmailAddressDetails` ou uma matriz que contém um objeto para cada um dos destinatários na linha Cco. A matriz está limitada a um máximo de 100 entradas. |
-| `parameters.subject` | String | Uma cadeia de caracteres que contém o assunto da mensagem. A cadeia de caracteres está limitada a um máximo de 255 caracteres. |
+| `parameters.subject` | Cadeia de Caracteres | Uma cadeia de caracteres que contém o assunto da mensagem. A cadeia de caracteres está limitada a um máximo de 255 caracteres. |
 | `parameters.htmlBody` | String | O corpo HTML da mensagem. O conteúdo do corpo está limitado a um tamanho máximo de 32 KB. |
 | `parameters.attachments` | Array.&lt;Object&gt; | Uma matriz de objetos JSON que são anexos de arquivo ou item. |
-| `parameters.attachments.type` | String | Indica o tipo de anexo. Deve ser `file` para um anexo de arquivo ou `item` para um anexo de item. |
-| `parameters.attachments.name` | String | Uma cadeia de caracteres que contém o nome do anexo, até 255 caracteres de comprimento.|
-| `parameters.attachments.url` | String | Usado somente se `type` estiver definido como `file`. O URI do local para o arquivo. |
+| `parameters.attachments.type` | Cadeia de Caracteres | Indica o tipo de anexo. Deve ser `file` para um anexo de arquivo ou `item` para um anexo de item. |
+| `parameters.attachments.name` | Cadeia de Caracteres | Uma cadeia de caracteres que contém o nome do anexo, até 255 caracteres de comprimento.|
+| `parameters.attachments.url` | Cadeia de Caracteres | Usado somente se `type` estiver definido como `file`. O URI do local para o arquivo. |
 | `parameters.attachments.isInline` | Booliano | Usado somente se `type` estiver definido como `file`. Se for `true`, indicará que o anexo será mostrado embutido no corpo da mensagem e não deverá ser exibido na lista de anexos. |
 | `parameters.attachments.itemId` | Cadeia de caracteres | Usado somente se `type` estiver definido como `item`. A ID do item do EWS do email existente que você deseja anexar à nova mensagem. Isso é uma cadeia de até 100 caracteres. |
 

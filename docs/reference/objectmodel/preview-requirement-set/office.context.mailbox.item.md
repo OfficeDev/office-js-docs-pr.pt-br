@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Item-visualização do conjunto de requisitos
 description: ''
-ms.date: 11/25/2019
+ms.date: 12/02/2019
 localization_priority: Normal
-ms.openlocfilehash: a71d3869d5dbf91db7823118a8d0409699e17cd5
-ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
+ms.openlocfilehash: 2ebcacb1f99df047b5f5c5ebe82c012e21e45d3c
+ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "39629220"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "39670136"
 ---
 # <a name="item"></a>item
 
@@ -28,35 +28,35 @@ O namespace `item` é usado para acessar a mensagem, a solicitação de reunião
 
 | Propriedade | Mínimo<br>nível de permissão | Modelos | Tipo de retorno | Mínimo<br>conjunto de requisitos |
 |---|---|---|---|---|
-| [attachments](#attachments-arrayattachmentdetails) | ReadItem | Ler | Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)> | 1.0 |
+| [attachments](#attachments-arrayattachmentdetails) | ReadItem | Read | Array.<[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)> | 1.0 |
 | [bcc](#bcc-recipients) | ReadItem | Composição de mensagem | [Destinatários](/javascript/api/outlook/office.recipients) | 1.1 |
 | [body](#body-body) | ReadItem | Escrever | [Body](/javascript/api/outlook/office.body) | 1.1 |
-| | | Ler | | |
-| [categories](#categories-categories) | ReadItem | Escrever | [Categories](/javascript/api/outlook/office.categories) | Visualização |
-| | | Ler | | |
+| | | Read | | |
+| [categories](#categories-categories) | ReadItem | Escrever | [Categories](/javascript/api/outlook/office.categories) | 1,8 |
+| | | Read | | |
 | [cc](#cc-arrayemailaddressdetailsrecipients) | ReadItem | Composição de mensagem | [Destinatários](/javascript/api/outlook/office.recipients) | 1.0 |
 | | | Mensagem lida | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) de matriz. <> | |
-| [conversationId](#nullable-conversationid-string) | ReadItem | Composição de mensagem | String | 1.0 |
+| [conversationId](#nullable-conversationid-string) | ReadItem | Composição de mensagem | Cadeia de Caracteres | 1.0 |
 | | | Mensagem lida | | |
-| [dateTimeCreated](#datetimecreated-date) | ReadItem | Ler | Data | 1.0 |
-| [dateTimeModified](#datetimemodified-date) | ReadItem | Ler | Data | 1.0 |
+| [dateTimeCreated](#datetimecreated-date) | ReadItem | Read | Data | 1.0 |
+| [dateTimeModified](#datetimemodified-date) | ReadItem | Read | Data | 1.0 |
 | [end](#end-datetime) | ReadItem | Organizador de compromisso | [Time](/javascript/api/outlook/office.time) | 1.0 |
 | | | Participante do compromisso | Data | |
 | | | Mensagem lida<br>(Solicitação de reunião) | Data | |
-| [enhancedLocation](#enhancedlocation-enhancedlocation) | ReadItem | Organizador de compromisso | [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) | Visualização |
+| [enhancedLocation](#enhancedlocation-enhancedlocation) | ReadItem | Organizador de compromisso | [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation) | 1,8 |
 | | | Participante do compromisso | | |
 | [from](#from-emailaddressdetailsfrom) | ReadWriteItem | Composição de mensagem | [De](/javascript/api/outlook/office.from) | 1.7 |
 | | ReadItem | Mensagem lida | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | 1.0 |
-| [Internetheaders:](#internetheaders-internetheaders) | ReadItem | Composição de mensagem | [InternetHeaders](/javascript/api/outlook/office.internetheaders) | Visualização |
-| [internetMessageId](#internetmessageid-string) | ReadItem | Mensagem lida | String | 1.0 |
-| [itemClass](#itemclass-string) | ReadItem | Ler | String | 1.0 |
-| [itemId](#nullable-itemid-string) | ReadItem | Ler | String | 1.0 |
+| [Internetheaders:](#internetheaders-internetheaders) | ReadItem | Composição de mensagem | [InternetHeaders](/javascript/api/outlook/office.internetheaders) | 1,8 |
+| [internetMessageId](#internetmessageid-string) | ReadItem | Mensagem lida | Cadeia de Caracteres | 1.0 |
+| [itemClass](#itemclass-string) | ReadItem | Read | Cadeia de Caracteres | 1.0 |
+| [itemId](#nullable-itemid-string) | ReadItem | Read | Cadeia de Caracteres | 1.0 |
 | [itemType](#itemtype-mailboxenumsitemtype) | ReadItem | Escrever | [MailboxEnums. ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | 1.0 |
-| | | Ler | | |
+| | | Read | | |
 | [location](#location-stringlocation) | ReadItem | Organizador de compromisso | [Location](/javascript/api/outlook/office.location) | 1.0 |
-| | | Participante do compromisso | String | |
-| | | Mensagem lida<br>(Solicitação de reunião) | String | |
-| [normalizedSubject](#normalizedsubject-string) | ReadItem | Ler | String | 1.0 |
+| | | Participante do compromisso | Cadeia de Caracteres | |
+| | | Mensagem lida<br>(Solicitação de reunião) | Cadeia de Caracteres | |
+| [normalizedSubject](#normalizedsubject-string) | ReadItem | Read | Cadeia de Caracteres | 1.0 |
 | [notificationMessages](#notificationmessages-notificationmessages) | ReadItem | Composição de mensagem | [NotificationMessages](/javascript/api/outlook/office.notificationmessages) | 1.3 |
 | | ReadItem | Mensagem lida | | |
 | [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | ReadItem | Organizador de compromisso | [Destinatários](/javascript/api/outlook/office.recipients) | 1.0 |
@@ -69,13 +69,13 @@ O namespace `item` é usado para acessar a mensagem, a solicitação de reunião
 | [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | ReadItem | Organizador de compromisso | [Destinatários](/javascript/api/outlook/office.recipients) | 1.0 |
 | | | Participante do compromisso | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) de matriz. <> | |
 | [sender](#sender-emailaddressdetails) | ReadItem | Mensagem lida | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | 1.0 |
-| [seriesid](#nullable-seriesid-string) | ReadItem | Escrever | String | 1.7 |
-| | | Ler | | |
+| [seriesid](#nullable-seriesid-string) | ReadItem | Escrever | Cadeia de Caracteres | 1.7 |
+| | | Read | | |
 | [start](#start-datetime) | ReadItem | Organizador de compromisso | [Time](/javascript/api/outlook/office.time) | 1.0 |
 | | | Participante do compromisso | Data | |
 | | | Mensagem lida<br>(Solicitação de reunião) | Data | |
 | [subject](#subject-stringsubject) | ReadItem | Escrever | [Subject](/javascript/api/outlook/office.subject) | 1.0 |
-| | | Ler | String | |
+| | | Read | Cadeia de Caracteres | |
 | [to](#to-arrayemailaddressdetailsrecipients) | ReadItem | Composição de mensagem | [Destinatários](/javascript/api/outlook/office.recipients) | 1.0 |
 | | | Mensagem lida | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) de matriz. <> | |
 
@@ -84,29 +84,29 @@ O namespace `item` é usado para acessar a mensagem, a solicitação de reunião
 | Método | Mínimo<br>nível de permissão | Modelos | Mínimo<br>conjunto de requisitos |
 |---|---|---|---|
 | [addFileAttachmentAsync](#addfileattachmentasyncuri-attachmentname-options-callback) | ReadWriteItem | Escrever | 1.1 |
-| [addFileAttachmentFromBase64Async](#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback) | ReadWriteItem | Escrever | Visualização |
-| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | ReadItem | Escrever<br>Ler | 1.7 |
+| [addFileAttachmentFromBase64Async](#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback) | ReadWriteItem | Escrever | 1,8 |
+| [addHandlerAsync](#addhandlerasynceventtype-handler-options-callback) | ReadItem | Escrever<br>Read | 1.7 |
 | [addItemAttachmentAsync](#additemattachmentasyncitemid-attachmentname-options-callback) | ReadWriteItem | Escrever | 1.1 |
 | [close](#close) | Restrito | Escrever | 1.3 |
-| [displayReplyAllForm](#displayreplyallformformdata-callback) | ReadItem | Ler | 1.0 |
-| [displayReplyForm](#displayreplyformformdata-callback) | ReadItem | Ler | 1.0 |
+| [displayReplyAllForm](#displayreplyallformformdata-callback) | ReadItem | Read | 1.0 |
+| [displayReplyForm](#displayreplyformformdata-callback) | ReadItem | Read | 1.0 |
 | [getAllInternetHeadersAsync](#getallinternetheadersasyncoptions-callback) | ReadItem | Mensagem lida | 1,8 |
-| [getAttachmentContentAsync](#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent) | ReadItem | Escrever<br>Ler | Visualização |
-| [getAttachmentsAsync](#getattachmentsasyncoptions-callback--arrayattachmentdetails) | ReadItem | Escrever | Visualização |
-| [getEntities](#getentities--entities) | ReadItem | Ler | 1.0 |
-| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Restrito | Ler | 1.0 |
-| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | ReadItem | Ler | 1.0 |
-| [getInitializationContextAsync](#getinitializationcontextasyncoptions-callback) | ReadItem | Ler | Visualização |
-| [getItemIdAsync](#getitemidasyncoptions-callback) | ReadItem | Escrever | Visualização |
-| [getRegExMatches](#getregexmatches--object) | ReadItem | Ler | 1.0 |
-| [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | ReadItem | Ler | 1.0 |
+| [getAttachmentContentAsync](#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent) | ReadItem | Escrever<br>Read | 1,8 |
+| [getAttachmentsAsync](#getattachmentsasyncoptions-callback--arrayattachmentdetails) | ReadItem | Escrever | 1,8 |
+| [getEntities](#getentities--entities) | ReadItem | Read | 1.0 |
+| [getEntitiesByType](#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | Restrito | Read | 1.0 |
+| [getFilteredEntitiesByName](#getfilteredentitiesbynamename--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) | ReadItem | Read | 1.0 |
+| [getInitializationContextAsync](#getinitializationcontextasyncoptions-callback) | ReadItem | Read | Visualização |
+| [getItemIdAsync](#getitemidasyncoptions-callback) | ReadItem | Escrever | 1,8 |
+| [getRegExMatches](#getregexmatches--object) | ReadItem | Read | 1.0 |
+| [getRegExMatchesByName](#getregexmatchesbynamename--nullable-array-string-) | ReadItem | Read | 1.0 |
 | [getSelectedDataAsync](#getselecteddataasynccoerciontype-options-callback--string) | ReadItem | Escrever | 1.2 |
-| [getSelectedEntities](#getselectedentities--entities) | ReadItem | Ler | 1.6 |
-| [getSelectedRegExMatches](#getselectedregexmatches--object) | ReadItem | Ler | 1.6 |
-| [getSharedPropertiesAsync](#getsharedpropertiesasyncoptions-callback) | ReadItem | Escrever<br>Ler | Visualização |
-| [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | ReadItem | Escrever<br>Ler | 1.0 |
+| [getSelectedEntities](#getselectedentities--entities) | ReadItem | Read | 1.6 |
+| [getSelectedRegExMatches](#getselectedregexmatches--object) | ReadItem | Read | 1.6 |
+| [getSharedPropertiesAsync](#getsharedpropertiesasyncoptions-callback) | ReadItem | Escrever<br>Read | 1,8 |
+| [loadCustomPropertiesAsync](#loadcustompropertiesasynccallback-usercontext) | ReadItem | Escrever<br>Read | 1.0 |
 | [removeAttachmentAsync](#removeattachmentasyncattachmentid-options-callback) | ReadWriteItem | Escrever | 1.1 |
-| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | ReadItem | Escrever<br>Ler | 1.7 |
+| [removeHandlerAsync](#removehandlerasynceventtype-options-callback) | ReadItem | Escrever<br>Read | 1.7 |
 | [saveAsync](#saveasyncoptions-callback) | ReadWriteItem | Escrever | 1.3 |
 | [setSelectedDataAsync](#setselecteddataasyncdata-options-callback) | ReadWriteItem | Escrever | 1.2 |
 
@@ -117,8 +117,8 @@ Você pode assinar e cancelar a assinatura dos eventos a seguir usando o [addHan
 | Evento | Descrição | Mínimo<br>conjunto de requisitos |
 |---|---|---|
 |`AppointmentTimeChanged`| A data ou hora do compromisso ou série selecionado foi alterada. | 1.7 |
-|`AttachmentsChanged`| Um anexo foi adicionado ou removido do item. | Visualização |
-|`EnhancedLocationsChanged`| O local do compromisso selecionado foi alterado. | Visualização |
+|`AttachmentsChanged`| Um anexo foi adicionado ou removido do item. | 1,8 |
+|`EnhancedLocationsChanged`| O local do compromisso selecionado foi alterado. | 1,8 |
 |`RecipientsChanged`| A lista de destinatários do item selecionado ou local do compromisso foi alterada. | 1.7 |
 |`RecurrenceChanged`| O padrão de recorrência da série selecionada foi alterado. | 1.7 |
 
@@ -1583,9 +1583,9 @@ Quando os anexos são especificados no parâmetro `formData.attachments`, os cli
 |Nome|Tipo|Atributos|Descrição|
 |---|---|---|---|
 |`formData`|String &#124; Object||Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.<br/>**OU**<br/>Um objeto que contém os dados do corpo ou do anexo e uma função de retorno de chamada. O objeto é definido da maneira a seguir.|
-|`formData.htmlBody`|String|&lt;opcional&gt;|Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.
+|`formData.htmlBody`|Cadeia de Caracteres|&lt;opcional&gt;|Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.
 |`formData.attachments`|Array.&lt;Object&gt;|&lt;opcional&gt;|Uma matriz de objetos JSON que são anexos de arquivo ou item.|
-|`formData.attachments.type`|String||Indica o tipo de anexo. Deve ser `file` para um anexo de arquivo ou `item` para um anexo de item.|
+|`formData.attachments.type`|Cadeia de Caracteres||Indica o tipo de anexo. Deve ser `file` para um anexo de arquivo ou `item` para um anexo de item.|
 |`formData.attachments.name`|Cadeia de caracteres||Uma cadeia de caracteres que contém o nome do anexo, até 255 caracteres de comprimento.|
 |`formData.attachments.url`|Cadeia de caracteres||Usado somente se `type` estiver definido como `file`. O URI do local para o arquivo.|
 |`formData.attachments.isInline`|Booliano||Usado somente se `type` estiver definido como `file`. Se for `true`, indicará que o anexo será mostrado embutido no corpo da mensagem e não deverá ser exibido na lista de anexos.|
@@ -1707,9 +1707,9 @@ Quando os anexos são especificados no parâmetro `formData.attachments`, os cli
 |Nome|Tipo|Atributos|Descrição|
 |---|---|---|---|
 |`formData`|String &#124; Object||Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.<br/>**OU**<br/>Um objeto que contém os dados do corpo ou do anexo e uma função de retorno de chamada. O objeto é definido da maneira a seguir.|
-|`formData.htmlBody`|String|&lt;opcional&gt;|Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.
+|`formData.htmlBody`|Cadeia de Caracteres|&lt;opcional&gt;|Uma cadeia de caracteres que contém texto e HTML e que representa o corpo do formulário de resposta. A cadeia de caracteres está limitada a 32 KB.
 |`formData.attachments`|Array.&lt;Object&gt;|&lt;opcional&gt;|Uma matriz de objetos JSON que são anexos de arquivo ou item.|
-|`formData.attachments.type`|String||Indica o tipo de anexo. Deve ser `file` para um anexo de arquivo ou `item` para um anexo de item.|
+|`formData.attachments.type`|Cadeia de Caracteres||Indica o tipo de anexo. Deve ser `file` para um anexo de arquivo ou `item` para um anexo de item.|
 |`formData.attachments.name`|Cadeia de caracteres||Uma cadeia de caracteres que contém o nome do anexo, até 255 caracteres de comprimento.|
 |`formData.attachments.url`|Cadeia de caracteres||Usado somente se `type` estiver definido como `file`. O URI do local para o arquivo.|
 |`formData.attachments.isInline`|Booliano||Usado somente se `type` estiver definido como `file`. Se for `true`, indicará que o anexo será mostrado embutido no corpo da mensagem e não deverá ser exibido na lista de anexos.|
