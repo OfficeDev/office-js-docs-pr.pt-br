@@ -3,12 +3,12 @@ title: Hospedar um suplemento do Office no Microsoft Azure | Microsoft Docs
 description: Saiba como implantar o aplicativo Web de um suplemento no Azure e realizar sideload do suplemento para testar em um aplicativo cliente do Office.
 ms.date: 10/16/2019
 localization_priority: Priority
-ms.openlocfilehash: 0cfddacf48bda9ed7b63d4018e3ae0437f15bcd9
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 106c775fa74b83d85111922f5488477772018b90
+ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626975"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "39670178"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>Hospedar um Suplemento do Office no Microsoft Azure
 
@@ -26,12 +26,12 @@ Este artigo descreve como implantar o aplicativo Web de um suplemento no Azure e
 2. Instalar o Office.
 
     > [!NOTE]
-    > Se você ainda não tem o Office, [registre-se para fazer uma avaliação gratuita de um mês](https://products.office.com/en-US/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735).
+    > Se você ainda não tem o Office, [registre-se para fazer uma avaliação gratuita de um mês](https://products.office.com/try?legRedir=true&WT.intid1=ODC_ENUS_FX101785584_XT104056786&CorrelationId=64c762de-7a97-4dd1-bb96-e231d7485735).
 
 3. Obtenha uma assinatura do Azure.
 
     > [!NOTE]
-    > Se você ainda não tem uma assinatura do Azure, pode [obter uma como parte da sua assinatura do Visual Studio](https://azure.microsoft.com/pt-BR/pricing/member-offers/visual-studio-subscriptions/) ou [registrar-se para uma avaliação gratuita](https://azure.microsoft.com/pricing/free-trial). 
+    > Se você ainda não tem uma assinatura do Azure, pode [obter uma como parte da sua assinatura do Visual Studio](https://azure.microsoft.com/pricing/member-offers/visual-studio-subscriptions/) ou [registrar-se para uma avaliação gratuita](https://azure.microsoft.com/pricing/free-trial). 
 
 ## <a name="step-1-create-a-shared-folder-to-host-your-add-in-xml-manifest-file"></a>Etapa 1: criar uma pasta compartilhada para hospedar o arquivo de manifesto XML do suplemento
 
@@ -162,4 +162,4 @@ O Visual Studio cria um suplemento básico do Word que você pode publicar como 
 ## <a name="see-also"></a>Confira também
 
 - [Publicar seu Suplemento do Office](../publish/publish.md)
-- [Empacotar seu suplemento usando o Visual Studio para preparar a publicação](../publish/package-your-add-in-using-visual-studio.md)
+- [Publicar seu suplemento usando o Visual Studio](../publish/package-your-add-in-using-visual-studio.md)

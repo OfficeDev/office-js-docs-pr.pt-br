@@ -1,18 +1,21 @@
 ---
-title: Empacotar seu suplemento usando o Visual Studio para preparar a publicação
+title: Publicar seu suplemento usando o Visual Studio
 description: Como implantar seu projeto Web e empacotar seu suplemento usando o Visual Studio 2019.
-ms.date: 10/14/2019
+ms.date: 12/02/2019
 localization_priority: Priority
-ms.openlocfilehash: 784741cffa0e3015caaa9c70fbb56f4b70df9462
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 5da7fc643eb517f777325658d01889f3e51906bd
+ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626961"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "39670192"
 ---
-# <a name="package-your-add-in-using-visual-studio-to-prepare-for-publishing"></a>Empacotar seu suplemento usando o Visual Studio para preparar a publicação
+# <a name="publish-your-add-in-using-visual-studio"></a>Publicar seu suplemento usando o Visual Studio
 
 Seu pacote de Suplemento do Office contém um [arquivo de manifesto XML](../develop/add-in-manifests.md) que deve ser usado para publicar o suplemento. Você terá que publicar os arquivos do aplicativo Web do seu projeto separadamente. Este artigo descreve como implantar seu projeto Web e empacotar seu suplemento usando o Visual Studio 2019.
+
+> [!NOTE]
+> Para saber mais sobre como publicar um Suplemento do Office criado com o gerador Yeoman e desenvolvido com o Código do Visual Studio ou qualquer outro editor, confira [Publicar um suplemento desenvolvido com o Código do Visual Studio](publish-add-in-vs-code.md).
 
 ## <a name="to-deploy-your-web-project-using-visual-studio-2019"></a>Para implantar seu projeto Web usando o Visual Studio 2019
 
