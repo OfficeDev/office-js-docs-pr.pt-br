@@ -3,12 +3,12 @@ title: Teste de usabilidade de Suplementos do Office
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 9c5536e74133a51fb73dbfc609e252968ee3bc55
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 636aae3da2b97c3f46582361487c73dfc61f3041
+ms.sourcegitcommit: 960ceaf6776ec3ed41a8f5b7bf70b3c95c43386a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449292"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "39830206"
 ---
 # <a name="usability-testing-for-office-add-ins"></a>Teste de usabilidade de Suplementos do Office
 
@@ -25,7 +25,7 @@ Esses serviços de teste o ajudam a simplificar a criação do plano de teste e 
 Você precisa de apenas cinco participantes para descobrir a maioria dos problemas de usabilidade no seu design. Incorpore testes pequenos regularmente durante o ciclo de desenvolvimento para garantir que seu produto seja centralizado no usuário.
 
 > [!NOTE]
-> Recomendamos que você teste a usabilidade do seu suplemento em várias plataformas. Para [publicar](/office/dev/store/submit-to-the-office-store) seu suplemento no AppSource, ele deve funcionar em todas as [plataformas compatíveis com os métodos que você definir](../overview/office-add-in-availability.md).
+> Recomendamos que você teste a usabilidade do seu suplemento em várias plataformas. Para [publicar](/office/dev/store/submit-to-appsource-via-partner-center) seu suplemento no AppSource, ele deve funcionar em todas as [plataformas compatíveis com os métodos que você definir](../overview/office-add-in-availability.md).
 
 ## <a name="1---sign-up-for-a-testing-service"></a>1.   Inscreva-se em um serviço de teste
 
