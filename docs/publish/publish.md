@@ -3,12 +3,12 @@ title: Implantar e publicar seu suplemento do Office | Microsoft Docs
 description: Você pode usar um dos vários métodos para implantar o suplemento do Office para testar ou distribuir aos usuários.
 ms.date: 09/05/2019
 localization_priority: Priority
-ms.openlocfilehash: c47f8743edeed1fd366d948d781c97da1c97958a
-ms.sourcegitcommit: d34aa0b282cc76ffff579da2a7945efd12fb7340
+ms.openlocfilehash: 2948e558ddd063ff36ebbfdd2edcb8c986a1445a
+ms.sourcegitcommit: 960ceaf6776ec3ed41a8f5b7bf70b3c95c43386a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "36769551"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "39830199"
 ---
 # <a name="deploy-and-publish-your-office-add-in"></a>Implantar e publicar seu Suplemento do Office
 
@@ -19,7 +19,7 @@ Você pode usar um dos vários métodos para implantar o suplemento do Office pa
 |[Sideload](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)|Usado como parte do processo de desenvolvimento para testar o suplemento em execução no Windows, no iPad, no Mac ou em um navegador.|
 |[Implantação Centralizada](centralized-deployment.md)|Em uma implantação híbrida ou de nuvem para distribuir seu suplemento aos usuários na sua organização usando o centro de administração do Office 365.|
 |[Catálogo do SharePoint](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|Usado para distribuir o suplemento aos usuários da organização em um ambiente local.|
-|[AppSource](/office/dev/store/submit-to-the-office-store)|Usado para distribuir o suplemento publicamente aos usuários.|
+|[AppSource](/office/dev/store/submit-to-appsource-via-partner-center)|Usado para distribuir o suplemento publicamente aos usuários.|
 |[Servidor Exchange](#outlook-add-in-deployment)|Usado para distribuir suplementos do Outlook aos usuários em um ambiente local ou online.|
 |[Compartilhamento de rede](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|No computador do Windows em uma rede na qual você deseja hospedar seu suplemento, acesse a pasta pai ou letra da unidade da pasta que você deseja usar como seu catálogo de pasta compartilhada.|
 
@@ -87,5 +87,5 @@ Para atribuir suplementos a locatários, use o Centro de administração do Exch
 - [Criar listagens eficazes do AppSource](/office/dev/store/create-effective-office-store-listings)
 - [Solucionar erros de usuários com Suplementos do Office](../testing/testing-and-troubleshooting.md)
 
-[AppSource]: /office/dev/store/submit-to-the-office-store
+[AppSource]: /office/dev/store/submit-to-appsource-via-partner-center
 [Office Add-in host and platform availability]: ../overview/office-add-in-availability

@@ -3,12 +3,12 @@ title: Práticas recomendadas para o desenvolvimento de suplementos do Office
 description: ''
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: b5f5595d9109df10e910459b2fc61a71d5180bbf
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 2b07ffa898d0db6d84bb96c9db797b91930446e0
+ms.sourcegitcommit: 960ceaf6776ec3ed41a8f5b7bf70b3c95c43386a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448237"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "39830192"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Práticas recomendadas para o desenvolvimento de suplementos do Office
 
@@ -125,7 +125,7 @@ Para padrões que podem ser aplicados ao desenvolver sua experiência de primeir
 
 ## <a name="market-your-add-in"></a>Comercializar seu suplemento
 
-- Publique seu suplemento no [AppSource](/office/dev/store/submit-to-the-office-store) e [promova-o](/office/dev/store/promote-your-office-store-solution) pelo seu site. Crie uma [listagem eficaz do AppSource](/office/dev/store/create-effective-office-store-listings).
+- Publique seu suplemento no [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) e [promova-o](/office/dev/store/promote-your-office-store-solution) pelo seu site. Crie uma [listagem eficaz do AppSource](/office/dev/store/create-effective-office-store-listings).
 
 - Use títulos sucintos e descritivos para o suplemento. Inclua no máximo 128 caracteres.
 
