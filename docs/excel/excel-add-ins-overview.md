@@ -5,12 +5,12 @@ ms.date: 07/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: c4c60482e557f85edf044ab8e68e6b96f9e860ab
-ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
+ms.openlocfilehash: 7d68dd52575f3b706ffac2751d68ea4019faaa8c
+ms.sourcegitcommit: 960ceaf6776ec3ed41a8f5b7bf70b3c95c43386a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "37468781"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "39830220"
 ---
 # <a name="excel-add-ins-overview"></a>Visão geral dos suplementos do Excel
 
@@ -51,7 +51,7 @@ O [manifesto](../develop/add-in-manifests.md) é um arquivo de configuração XM
 * Como o suplemento integra-se ao Excel, incluindo qualquer interface de usuário personalizada que o suplemento cria (botões da faixa de opções, menus de contexto, etc.).
 * Permissões exigidas pelo suplemento, como leitura e gravação no documento.
 
-Para permitir que os usuários finais instalem e usem um suplemento do Excel, você deve publicar o respectivo manifesto no AppSource ou em um catálogo de suplementos. 
+Para permitir que os usuários finais instalem e usem um suplemento do Excel, você deve publicar o respectivo manifesto no AppSource ou em um catálogo de suplementos. Para obter detalhes sobre como publicar no AppSource, confira [Disponibilizar suas soluções no AppSource e no Office](/office/dev/store/submit-to-appsource-via-partner-center).
 
 ## <a name="capabilities-of-an-excel-add-in"></a>Recursos de um suplemento do Excel
 
