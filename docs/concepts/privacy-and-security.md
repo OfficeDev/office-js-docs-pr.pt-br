@@ -3,12 +3,12 @@ title: Privacidade e segurança para suplementos do Office
 description: ''
 ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: c26f1f97382b8e8b1807a3eeeaa63cb6b553cb1e
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
+ms.openlocfilehash: bf71bfdba331f3726445c5095bd7dba1e4c5d39e
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353850"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814030"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 
@@ -33,9 +33,6 @@ Além disso, a estrutura de tempo de execução fornece os seguintes benefícios
 E o uso de memória, CPU e recursos de rede por suplementos do Office é governável para garantir que o bom desempenho e a confiabilidade sejam mantidos.
 
 As seções a seguir descrevem brevemente como a arquitetura de tempo de execução dá suporte a suplementos em execução em clientes do Office em dispositivos Windows, em dispositivos Mac OS X e navegadores da web.
-
-> [!NOTE]
-> Para saber mais sobre como usar o WIP e Intune com os Suplementos do Office, confira [Usar WIP e Intune para proteger dados corporativos em documentos executando os Suplementos do Office](/microsoft-365/enterprise/office-add-ins-wip).
 
 ### <a name="clients-on-windows-and-os-x-devices"></a>Clientes para dispositivos Windows e OS X
 

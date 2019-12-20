@@ -1,40 +1,112 @@
 ---
 title: Office.context – conjunto de requisitos 1.6
 description: ''
-ms.date: 06/25/2019
+ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: 10453801f023ee928e9d5f4fcff3fc22f8cd0319
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: 118e51b88e369690601946ad0430e9cae9e2bd1e
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36695991"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814686"
 ---
 # <a name="context"></a>context
 
-### <a name="officeofficemdcontext"></a>[Office](Office.md).context
+### <a name="officeofficemdcontext"></a>[Office](office.md).context
 
-O namespace Office.context fornece interfaces compartilhadas que são usadas pelos suplementos em todos os aplicativos do Office. Esta listagem documenta apenas as interfaces usados pelos suplementos do Outlook. Para uma listagem completa do namespace Office.context, veja a referência [Office.context na API Comum](/javascript/api/office/office.context).
+O Office. Context fornece interfaces compartilhadas usadas por suplementos em todos os aplicativos do Office. Esta listagem documenta apenas as interfaces usados pelos suplementos do Outlook. Para uma listagem completa do namespace Office.context, veja a referência [Office.context na API Comum](/javascript/api/office/office.context?view=outlook-js-1.6).
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
-|[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Versão do conjunto de requisitos mínimos da caixa de correio](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
-##### <a name="members-and-methods"></a>Membros e métodos
+##### <a name="properties"></a>Propriedades
 
-| Membro | Tipo |
-|--------|------|
-| [displayLanguage](#displaylanguage-string) | Membro |
-| [roamingSettings](#roamingsettings-roamingsettings) | Membro |
+| Propriedade | Modelos | Tipo de retorno | Mínimo<br>conjunto de requisitos |
+|---|---|---|:---:|
+| [contentLanguage](#contentlanguage-string) | Escrever<br>Leitura | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [la](#diagnostics-contextinformation) | Escrever<br>Leitura | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.6) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [displayLanguage](#displaylanguage-string) | Escrever<br>Leitura | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [principal](#host-hosttype) | Escrever<br>Leitura | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.6) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [mailbox](office.context.mailbox.md) | Escrever<br>Leitura | [Caixa de Correio](/javascript/api/office/office.mailbox?view=outlook-js-1.6) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [plataforma](#platform-platformtype) | Escrever<br>Leitura | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.6) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [atende](#requirements-requirementsetsupport) | Escrever<br>Leitura | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.6) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [roamingSettings](#roamingsettings-roamingsettings) | Escrever<br>Leitura | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.6) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [ui](#ui-ui) | Escrever<br>Leitura | [UI](/javascript/api/office/office.ui?view=outlook-js-1.6) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
-### <a name="namespaces"></a>Namespaces
+## <a name="property-details"></a>Detalhes da propriedade
 
-[Mailbox](office.context.mailbox.md): fornece acesso ao modelo de objeto do suplemento do Outlook para o Microsoft Outlook.
+#### <a name="contentlanguage-string"></a>contentLanguage: cadeia de caracteres
 
-### <a name="members"></a>Members
+Obtém a localidade (idioma) especificada pelo usuário para edição do item.
+
+O `contentLanguage` valor reflete a configuração de **idioma de edição** atual especificada com opções de **arquivo > > idioma** no aplicativo host do Office.
+
+##### <a name="type"></a>Tipo
+
+*   String
+
+##### <a name="requirements"></a>Requisitos
+
+|Requisito| Valor|
+|---|---|
+|[Versão do conjunto de requisitos mínimos da caixa de correio](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
+
+##### <a name="example"></a>Exemplo
+
+```js
+function sayHelloWithContentLanguage() {
+  var myContentLanguage = Office.context.contentLanguage;
+  switch (myContentLanguage) {
+    case 'en-US':
+      write('Hello!');
+      break;
+    case 'en-NZ':
+      write('G\'day mate!');
+      break;
+  }
+}
+
+// Function that writes to a div with id='message' on the page.
+function write(message){
+  document.getElementById('message').innerText += message;
+}
+```
+
+<br>
+
+---
+---
+
+#### <a name="diagnostics-contextinformationjavascriptapiofficeofficecontextinformation"></a>diagnóstico: [ContextInformation](/javascript/api/office/office.contextinformation)
+
+Obtém informações sobre o ambiente no qual o suplemento está sendo executado.
+
+##### <a name="type"></a>Tipo
+
+*   [ContextInformation](/javascript/api/office/office.contextinformation)
+
+##### <a name="requirements"></a>Requisitos
+
+|Requisito| Valor|
+|---|---|
+|[Versão do conjunto de requisitos mínimos da caixa de correio](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
+
+##### <a name="example"></a>Exemplo
+
+```js
+console.log(JSON.stringify(Office.context.diagnostics));
+```
+
+<br>
+
+---
+---
 
 #### <a name="displaylanguage-string"></a>displayLanguage: cadeia de caracteres
 
@@ -50,7 +122,7 @@ O valor `displayLanguage` reflete a configuração atual de **Display Language**
 
 |Requisito| Valor|
 |---|---|
-|[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Versão do conjunto de requisitos mínimos da caixa de correio](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
 ##### <a name="example"></a>Exemplo
@@ -79,7 +151,85 @@ function write(message){
 ---
 ---
 
-#### <a name="roamingsettings-roamingsettingsjavascriptapioutlookofficeroamingsettingsviewoutlook-js-16"></a>roamingSettings: [roamingSettings](/javascript/api/outlook/office.RoamingSettings?view=outlook-js-1.6)
+#### <a name="host-hosttypejavascriptapiofficeofficehosttype"></a>host: [HostType](/javascript/api/office/office.hosttype)
+
+Obtém o host do aplicativo do Office no qual o suplemento está sendo executado.
+
+##### <a name="type"></a>Tipo
+
+*   [HostType](/javascript/api/office/office.hosttype)
+
+##### <a name="requirements"></a>Requisitos
+
+|Requisito| Valor|
+|---|---|
+|[Versão do conjunto de requisitos mínimos da caixa de correio](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
+
+##### <a name="example"></a>Exemplo
+
+```js
+console.log(JSON.stringify(Office.context.host));
+```
+
+<br>
+
+---
+---
+
+#### <a name="platform-platformtypejavascriptapiofficeofficeplatformtype"></a>Platform: [platformtype](/javascript/api/office/office.platformtype)
+
+Fornece a plataforma na qual o suplemento está sendo executado.
+
+##### <a name="type"></a>Tipo
+
+*   [PlatformType](/javascript/api/office/office.platformtype)
+
+##### <a name="requirements"></a>Requisitos
+
+|Requisito| Valor|
+|---|---|
+|[Versão do conjunto de requisitos mínimos da caixa de correio](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
+
+##### <a name="example"></a>Exemplo
+
+```js
+console.log(JSON.stringify(Office.context.platform));
+```
+
+<br>
+
+---
+---
+
+#### <a name="requirements-requirementsetsupportjavascriptapiofficeofficerequirementsetsupport"></a>requisitos: [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
+
+Fornece um método para determinar quais conjuntos de requisitos são compatíveis com o host atual e a plataforma.
+
+##### <a name="type"></a>Tipo
+
+*   [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
+
+##### <a name="requirements"></a>Requisitos
+
+|Requisito| Valor|
+|---|---|
+|[Versão do conjunto de requisitos mínimos da caixa de correio](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
+
+##### <a name="example"></a>Exemplo
+
+```js
+console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox", "1.1")));
+```
+
+<br>
+
+---
+---
+
+#### <a name="roamingsettings-roamingsettingsjavascriptapioutlookofficeroamingsettings"></a>roamingSettings: [roamingSettings](/javascript/api/outlook/office.roamingsettings)
 
 Obtém um objeto que representa as configurações personalizadas ou o estado de um suplemento de email do Outlook salvos na caixa de correio do usuário.
 
@@ -87,12 +237,32 @@ O objeto `RoamingSettings` permite armazenar e acessar os dados de um suplemento
 
 ##### <a name="type"></a>Tipo
 
-*   [RoamingSettings](/javascript/api/outlook/office.RoamingSettings?view=outlook-js-1.6)
+*   [RoamingSettings](/javascript/api/outlook/office.RoamingSettings)
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
-|[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Versão do conjunto de requisitos mínimos da caixa de correio](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Nível de permissão mínimo](/outlook/add-ins/understanding-outlook-add-in-permissions)| Restrito|
+|[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
+
+<br>
+
+---
+---
+
+#### <a name="ui-uijavascriptapiofficeofficeui"></a>UI: [UI](/javascript/api/office/office.ui)
+
+Fornece objetos e métodos que você pode usar para criar e manipular componentes da interface do usuário, como caixas de diálogo, em seus suplementos do Office.
+
+##### <a name="type"></a>Tipo
+
+*   [UI](/javascript/api/office/office.ui)
+
+##### <a name="requirements"></a>Requisitos
+
+|Requisito| Valor|
+|---|---|
+|[Versão do conjunto de requisitos mínimos da caixa de correio](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|

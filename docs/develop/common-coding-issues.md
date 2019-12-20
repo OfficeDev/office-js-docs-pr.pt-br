@@ -1,14 +1,14 @@
 ---
 title: Problemas de codificação comuns e comportamentos de plataforma inesperados
 description: Uma lista de problemas da plataforma de API JavaScript do Office frequentemente encontrada pelos desenvolvedores.
-ms.date: 11/06/2019
+ms.date: 12/05/2019
 localization_priority: Normal
-ms.openlocfilehash: a4d7a09c1645bea181060157d933036d1924044f
-ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
+ms.openlocfilehash: 4271db2a9c61de419dd36fb0277574ffe0929c58
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "38301929"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814009"
 ---
 # <a name="common-coding-issues-and-unexpected-platform-behaviors"></a>Problemas de codificação comuns e comportamentos de plataforma inesperados
 
@@ -86,11 +86,27 @@ Essas limitações são normalmente excedidos por intervalos grandes. O suplemen
 
 ## <a name="setting-read-only-properties"></a>Configuração de propriedades somente leitura
 
-As [definições do TypeScript](/referencing-the-javascript-api-for-office-library-from-its-cdn.md) para o Office js especificam quais propriedades de objeto são somente leitura. Se você tentar definir uma propriedade somente leitura, a operação de gravação falhará silenciosamente, sem nenhum erro. O exemplo a seguir tenta erroneamente definir a propriedade somente leitura [Chart.ID](/javascript/api/excel/excel.chart#id).
+As [definições do TypeScript](referencing-the-javascript-api-for-office-library-from-its-cdn.md) para o Office js especificam quais propriedades de objeto são somente leitura. Se você tentar definir uma propriedade somente leitura, a operação de gravação falhará silenciosamente, sem nenhum erro. O exemplo a seguir tenta erroneamente definir a propriedade somente leitura [Chart.ID](/javascript/api/excel/excel.chart#id).
 
 ```js
 // This will do nothing, since `id` is a read-only property.
 myChart.id = "5";
+```
+
+## <a name="removing-event-handlers"></a>Remover manipuladores de eventos
+
+Manipuladores de eventos devem ser removidos usando o `RequestContext` mesmo em que foram adicionados. Se você precisar que seu suplemento remova um manipulador de eventos durante a execução, será necessário armazenar o objeto Context usado para adicionar o manipulador.
+
+```js
+Excel.run(async (context) => {
+    [...]
+
+    // To later remove an event handler, store the context somewhere accessible to the handler removal function.
+    // You may find it helpful to also store the event handler object and associate it with the context.
+    selectionChangedHandler = myWorksheet.onSelectionChanged.add(callback);
+    savedContext = currentContext;
+    return context.sync();
+}
 ```
 
 ## <a name="see-also"></a>Confira também

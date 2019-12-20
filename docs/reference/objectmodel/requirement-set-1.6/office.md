@@ -1,14 +1,14 @@
 ---
 title: Namespace do Office – conjunto de requisitos 1,6
 description: ''
-ms.date: 08/13/2019
+ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: ae764e8cda2b3f14e33b883d054379db7b37a687
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: e15f01db9423a9df38608f18098d2c808f5d944b
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36695998"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814665"
 ---
 # <a name="office"></a>Office
 
@@ -18,25 +18,29 @@ O namespace do Office fornece interfaces compartilhadas que são usadas pelos su
 
 |Requisito| Valor|
 |---|---|
-|[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Versão do conjunto de requisitos mínimos da caixa de correio](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
-##### <a name="members-and-methods"></a>Membros e métodos
+##### <a name="properties"></a>Propriedades
 
-| Membro | Tipo |
-|--------|------|
-| [AsyncResultStatus](#asyncresultstatus-string) | Membro |
-| [CoercionType](#coerciontype-string) | Membro |
-| [EventType](#eventtype-string) | Membro |
-| [SourceProperty](#sourceproperty-string) | Membro |
+| Propriedade | Modelos | Tipo de retorno | Mínimo<br>conjunto de requisitos |
+|---|---|---|:---:|
+| [context](office.context.md) | Escrever<br>Leitura | [Context](/javascript/api/office/office.context?view=outlook-js-1.6) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+
+##### <a name="enumerations"></a>Enumerações
+
+| Enumeração | Modelos | Tipo de retorno | Mínimo<br>conjunto de requisitos |
+|---|---|---|:---:|
+| [AsyncResultStatus](#asyncresultstatus-string) | Escrever<br>Leitura | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | Escrever<br>Leitura | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [EventType](#eventtype-string) | Escrever<br>Leitura | String | [1,5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [SourceProperty](#sourceproperty-string) | Escrever<br>Leitura | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ### <a name="namespaces"></a>Namespaces
 
-[context](office.context.md): fornece interfaces compartilhadas do namespace de contexto da API de Suplementos do Office para uso na API de suplemento do Outlook.
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.6): inclui uma série de enumerações específicas do Outlook, por exemplo, `ItemType` `EntityType` `AttachmentType` `RecipientType` `ResponseType`,,,, e `ItemNotificationMessageType`.
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmenttype?view=outlook-js-1.6): inclui um número de enumerações, por exemplo, `ItemType` `EntityType` `AttachmentType` `RecipientType` `ResponseType`,,,,, e `ItemNotificationMessageType`.
-
-### <a name="members"></a>Members
+## <a name="enumeration-details"></a>Detalhes da enumeração
 
 #### <a name="asyncresultstatus-string"></a>AsyncResultStatus: cadeia de caracteres
 
@@ -57,7 +61,7 @@ Especifica o resultado de uma chamada assíncrona.
 
 |Requisito| Valor|
 |---|---|
-|[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Versão do conjunto de requisitos mínimos da caixa de correio](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
 <br>
@@ -84,7 +88,7 @@ Especifica como forçar dados retornados ou definidos pelo método invocado.
 
 |Requisito| Valor|
 |---|---|
-|[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Versão do conjunto de requisitos mínimos da caixa de correio](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|
 
 <br>
@@ -102,15 +106,15 @@ Especifica o evento associado a um manipulador de eventos.
 
 ##### <a name="properties"></a>Propriedades:
 
-| Nome | Tipo | Descrição |
-|---|---|---|
-|`ItemChanged`| String | Um item diferente do Outlook é selecionado para exibição enquanto o painel de tarefas está fixado. |
+| Nome | Tipo | Descrição | Conjunto de requisitos mínimo |
+|---|---|---|:---:|
+|`ItemChanged`| String | Um item diferente do Outlook é selecionado para exibição enquanto o painel de tarefas está fixado. | 1,5 |
 
 ##### <a name="requirements"></a>Requisitos
 
 |Requisito| Valor|
 |---|---|
-|[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1,5 |
+|[Versão do conjunto de requisitos mínimos da caixa de correio](../../requirement-sets/outlook-api-requirement-sets.md)| 1,5 |
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler |
 
 <br>
@@ -137,5 +141,5 @@ Especifica a origem dos dados retornados pelo método chamado.
 
 |Requisito| Valor|
 |---|---|
-|[Versão do conjunto de requisitos mínimos da caixa de correio](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| 1.0|
+|[Versão do conjunto de requisitos mínimos da caixa de correio](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Modo do Outlook aplicável](/outlook/add-ins/#extension-points)| Escrever ou Ler|

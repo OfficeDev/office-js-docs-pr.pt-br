@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos de API para suplementos do Outlook versão 1.1
 description: ''
-ms.date: 11/26/2019
+ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 1c2e8ea26cac7ff630961b176391ef1adf2249fd
-ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
+ms.openlocfilehash: 17878f5ad4f12b11ef803efcb37f257181f7e2ca
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "39629234"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814399"
 ---
 # <a name="outlook-add-in-api-requirement-set-11"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.1
 
@@ -28,11 +28,11 @@ O conjunto de requisitos 1,1 inclui todos os [conjuntos de requisitos de API com
 - Foi adicionado o objeto [Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-1.1): Fornece métodos para obter e definir os destinatários de um compromisso ou uma mensagem em um suplemento do Outlook.
 - Foi adicionado o objeto [Subject](/javascript/api/outlook/office.subject?view=outlook-js-1.1): Fornece métodos para obter e definir o assunto de um compromisso ou uma mensagem em um suplemento do Outlook.
 - Foi adicionado o objeto [Time](/javascript/api/outlook/office.time?view=outlook-js-1.1): Fornece métodos para obter e definir o tempo de início ou fim de uma reunião em um suplemento do Outlook.
-- Foi adicionado o [Office.context.mailbox.item.addFileAttachmentAsync](office.context.mailbox.item.md#addfileattachmentasyncuri-attachmentname-options-callback): Adiciona um arquivo a uma mensagem ou um compromisso como um anexo.
-- Foi adicionado o [Office.context.mailbox.item.addItemAttachmentAsync](office.context.mailbox.item.md#additemattachmentasyncitemid-attachmentname-options-callback): Adiciona um item do Exchange, como uma mensagem, como anexo na mensagem ou no compromisso.
-- Foi adicionado o [Office.context.mailbox.item.removeAttachmentAsync](office.context.mailbox.item.md#removeattachmentasyncattachmentid-options-callback): Remove um anexo de uma mensagem ou de um compromisso.
-- Foi adicionado o [Office.context.mailbox.item.body](office.context.mailbox.item.md#body-body): Obtém um objeto que fornece métodos para manipular o corpo de um item.
-- Foi adicionada a linha [Office. Context. Mailbox. Item. Bcc](office.context.mailbox.item.md#bcc-recipients) de uma mensagem.
+- Foi adicionado o [Office.context.mailbox.item.addFileAttachmentAsync](office.context.mailbox.item.md#methods): Adiciona um arquivo a uma mensagem ou um compromisso como um anexo.
+- Foi adicionado o [Office.context.mailbox.item.addItemAttachmentAsync](office.context.mailbox.item.md#methods): Adiciona um item do Exchange, como uma mensagem, como anexo na mensagem ou no compromisso.
+- Foi adicionado o [Office.context.mailbox.item.removeAttachmentAsync](office.context.mailbox.item.md#methods): Remove um anexo de uma mensagem ou de um compromisso.
+- Foi adicionado o [Office.context.mailbox.item.body](office.context.mailbox.item.md#properties): Obtém um objeto que fornece métodos para manipular o corpo de um item.
+- Foi adicionada a linha [Office. Context. Mailbox. Item. Bcc](office.context.mailbox.item.md#properties) de uma mensagem.
 - Adicionado o [Office.MailboxEnums.RecipientType](/javascript/api/outlook/office.mailboxenums.recipienttype?view=outlook-js-1.1): especifica o tipo de destinatário para um compromisso.
 
 ## <a name="see-also"></a>Confira também

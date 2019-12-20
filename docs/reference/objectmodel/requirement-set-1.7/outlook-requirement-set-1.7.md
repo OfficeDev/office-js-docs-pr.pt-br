@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos de API para suplementos do Outlook versão 1.7
 description: ''
-ms.date: 03/20/2019
+ms.date: 12/17/2019
 localization_priority: Priority
-ms.openlocfilehash: 0f804ba44ab15749d868104719f88ecac5286480
-ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.openlocfilehash: 2041f6550fe5ea1fe17ee7d2779ba7ce2d7c0a4a
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902064"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814574"
 ---
 # <a name="outlook-add-in-api-requirement-set-17"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.7
 
@@ -32,12 +32,12 @@ O conjunto de requisitos versão 1.7 inclui todos os recursos do [Conjunto de re
 - Adicionado o [Recurrence](/javascript/api/outlook/office.recurrence?view=outlook-js-1.7): adiciona um novo objeto que fornece métodos para obter e definir o padrão de recorrência de compromissos, mas obtém apenas o padrão de recorrência de mensagens de solicitações de reunião.
 - Adicionado o [RecurrenceTimeZone](/javascript/api/outlook/office.recurrencetimezone?view=outlook-js-1.7): adiciona um novo objeto que representa a configuração de fuso horário do padrão de recorrência.
 - Adicionado o [SeriesTime](/javascript/api/outlook/office.seriestime?view=outlook-js-1.7): adiciona um novo objeto que fornece métodos para obter e definir as datas e horas de compromissos em uma série recorrente e obter as datas e horas de solicitações de reunião em uma série recorrente.
-- Adicionado o [Office.context.mailbox.item.addHandlerAsync](office.context.mailbox.item.md#addhandlerasynceventtype-handler-options-callback): adiciona um novo método que adiciona um manipulador de eventos para um evento com suporte.
-- Modificado [Office.context.mailbox.item.from](office.context.mailbox.item.md#from-emailaddressdetailsfrom): Adiciona a capacidade de adquirir o valor from no modo de Redação.
-- Modificado [Office.context.mailbox.item.organizer](office.context.mailbox.item.md#organizer-emailaddressdetailsorganizer): Adiciona a capacidade de adquirir o valor organizer no modo de Redação.
-- Adicionado o [Office.context.mailbox.item.recurrence](office.context.mailbox.item.md#nullable-recurrence-recurrence): adiciona uma nova propriedade que obtém ou define um objeto que fornece métodos de gerenciamento do padrão de recorrência de um item de compromisso. Essa propriedade também pode ser usada para obter o padrão de recorrência de um item de solicitação de reunião.
-- Adicionado o [Office.context.mailbox.item.removeHandlerAsync](office.context.mailbox.item.md#removehandlerasynceventtype-options-callback): adiciona um novo método que remove um manipulador de eventos.
-- Adicionado o [Office.context.mailbox.item.seriesId](office.context.mailbox.item.md#nullable-seriesid-string): adiciona uma nova propriedade que obtém a ID da série à qual uma ocorrência pertence.
+- Adicionado o [Office.context.mailbox.item.addHandlerAsync](office.context.mailbox.item.md#methods): adiciona um novo método que adiciona um manipulador de eventos para um evento com suporte.
+- Modificado [Office.context.mailbox.item.from](office.context.mailbox.item.md#properties): Adiciona a capacidade de adquirir o valor from no modo de Redação.
+- Modificado [Office.context.mailbox.item.organizer](office.context.mailbox.item.md#properties): Adiciona a capacidade de adquirir o valor organizer no modo de Redação.
+- Adicionado o [Office.context.mailbox.item.recurrence](office.context.mailbox.item.md#properties): adiciona uma nova propriedade que obtém ou define um objeto que fornece métodos de gerenciamento do padrão de recorrência de um item de compromisso. Essa propriedade também pode ser usada para obter o padrão de recorrência de um item de solicitação de reunião.
+- Adicionado o [Office.context.mailbox.item.removeHandlerAsync](office.context.mailbox.item.md#methods): adiciona um novo método que remove um manipulador de eventos.
+- Adicionado o [Office.context.mailbox.item.seriesId](office.context.mailbox.item.md#properties): adiciona uma nova propriedade que obtém a ID da série à qual uma ocorrência pertence.
 - Adicionado o [Office.MailboxEnums.Days](/javascript/api/outlook/office.mailboxenums.days?view=outlook-js-1.7): adiciona uma nova enumeração que especifica o dia da semana ou o tipo de dia.
 - Adicionado o [Office.MailboxEnums.Month](/javascript/api/outlook/office.mailboxenums.month?view=outlook-js-1.7): adiciona uma nova enumeração que especifica o mês.
 - Adicionado o [Office.MailboxEnums.RecurrenceTimeZone](/javascript/api/outlook/office.mailboxenums.recurrencetimezone?view=outlook-js-1.7): adiciona uma nova enumeração que especifica o fuso horário aplicado à recorrência.

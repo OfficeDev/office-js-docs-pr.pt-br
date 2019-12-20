@@ -1,14 +1,14 @@
 ---
 title: Navegadores usados pelos Suplementos do Office
 description: Especifica como o sistema operacional e a versão do Office determinam o navegador que é usado pelos suplementos do Office.
-ms.date: 09/25/2019
+ms.date: 12/13/2019
 localization_priority: Priority
-ms.openlocfilehash: b5d7198e556f020bccdf7ba1e0a0fcffa3a9171b
-ms.sourcegitcommit: c8914ce0f48a0c19bbfc3276a80d090bb7ce68e1
+ms.openlocfilehash: 3709157449634dfb49805e2247e47debe60f468f
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "37235292"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40813981"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navegadores usados pelos Suplementos do Office
 
@@ -36,19 +36,6 @@ A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sis
 
 > [!IMPORTANT]
 > O Internet Explorer 11 não oferece suporte às versões do JavaScript posteriores a ES5. Se qualquer um dos usuários de suplemento tiverem plataformas com Internet Explorer 11, para que seja possível usar a sintaxe e os recursos do ECMAScript 2015 ou posterior, você precisará fazer o transpile do seu JavaScript para o ES5 ou usar um polyfill. Além disso, o Internet Explorer 11 não oferece suporte a alguns recursos do HTML5, como mídia, gravação e localização.
-
-> [!NOTE]
-> Até que eles estejam disponíveis, você precisará ser um Windows Insider para obter a versão 1903 do Windows ou superior, e ser um Office Insider para obter a versão 16.0.11629 do Office ou superior.
->
-> Para participar do programa Windows Insider:
-> 
-> 1. Vá até [Windows Insider](https://insider.windows.com) e clique no link para participar do Windows Insider.
-> 2. Você será direcionado para uma página com instruções sobre como usar as Configurações do Windows para habilitar as compilações de visualização do Windows. Siga as instruções. Quando for selecionar a velocidade das atualizações, escolha a opção mais rápida.
->
-> Para participar do programa Office Insider:
-> 
-> 1. Vá até [Introdução ao Programa Office Insider](https://insider.office.com/join).
-> 2. Siga as instruções na página para participar. Quando solicitado a especificar um canal, selecione Insider.
 
 ## <a name="troubleshooting-microsoft-edge-issues"></a>Solucionar problemas do Microsoft Edge
 

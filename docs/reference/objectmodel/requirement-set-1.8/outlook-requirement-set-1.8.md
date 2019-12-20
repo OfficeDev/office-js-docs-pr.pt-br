@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos 1.8 da API de suplemento do Outlook
 description: ''
-ms.date: 10/31/2019
+ms.date: 12/17/2019
 localization_priority: Priority
-ms.openlocfilehash: 1e1420bd355c16941c7cb4ce66ecdca56e1c8927
-ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.openlocfilehash: 1a542a0b00bd04674c4da4c45909ff03a152983c
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902121"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814156"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Conjunto de requisitos 1.8 da API de suplemento do Outlook
 
@@ -34,16 +34,16 @@ O conjunto de requisitos 1.8 inclui todos os recursos do [Conjunto de requisitos
 - Adicionado [MasterCategories](/javascript/api/outlook/office.mastercategories?view=outlook-js-1.8): adiciona um novo objeto que representa a lista mestre de categorias em uma caixa de correio.
 - Adicionado [SharedProperties](/javascript/api/outlook/office.sharedproperties?view=outlook-js-1.8): adiciona um novo objeto que representa as propriedades de um compromisso ou item de mensagem em uma pasta, calendário ou caixa de correio compartilhados.
 - Adicionado [elemento de manifesto SupportsSharedFolders](../../manifest/supportssharedfolders.md): adiciona um elemento filho ao elemento de manifesto [DesktopFormFactor](../../manifest/desktopformfactor.md). Define se o suplemento está disponível nos cenários de representante.
-- Adicionado [Office.context.mailbox.masterCategories](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8#mastercategories): adiciona uma nova propriedade que representa a lista principal de categorias em uma caixa de correio.
-- Adicionado [Office.context.mailbox.item.categories](/javascript/api/outlook/office.item?view=outlook-js-1.8#categories): adiciona uma nova propriedade que representa o conjunto de categorias em um item.
-- Adicionado [Office.context.mailbox.item.addFileAttachmentFromBase64Async](office.context.mailbox.item.md#addfileattachmentfrombase64asyncbase64file-attachmentname-options-callback): adiciona um novo método que permite anexar um arquivo representado como uma cadeia de caracteres codificada em base64 a uma mensagem ou compromisso.
-- Adicionado [Office.context.mailbox.item.enhancedLocation](office.context.mailbox.item.md#enhancedlocation-enhancedlocation): adiciona uma nova propriedade que representa o conjunto de locais em um compromisso.
-- Adicionado [Office.context.mailbox.item.getAllInternetHeadersAsync](/javascript/api/outlook/office.messageread?view=outlook-js-1.8#getallinternetheadersasync-options--callback-): adiciona um novo método que obtém todos os cabeçalhos da Internet para um item de mensagem. Somente modo de leitura.
-- Adicionado [Office.context.mailbox.item.getAttachmentContentAsync](office.context.mailbox.item.md#getattachmentcontentasyncattachmentid-options-callback--attachmentcontent): adiciona um novo método para obter o conteúdo de um anexo específico.
-- Adicionado [Office.context.mailbox.item.getAttachmentsAsync](office.context.mailbox.item.md#getattachmentsasyncoptions-callback--arrayattachmentdetails): adiciona um novo método que obtém os anexos de um item no modo de redação.
-- Adicionado [Office.context.mailbox.item.getItemIdAsync](office.context.mailbox.item.md#getitemidasyncoptions-callback): adiciona um novo método que obtém a ID de um compromisso ou item de mensagem salvo.
-- Adicionado [Office.context.mailbox.item.getSharedPropertiesAsync](office.context.mailbox.item.md#getsharedpropertiesasyncoptions-callback): adiciona um novo método que obtém um objeto que representa as sharedProperties de um compromisso ou item de mensagem.
-- Adicionado [Office.context.mailbox.item.internetHeaders](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.8#internetheaders): adiciona uma nova propriedade que representa os cabeçalhos da Internet personalizados em um item de mensagem. Somente modo de redação.
+- Adicionado [Office.context.mailbox.masterCategories](office.context.mailbox.md#properties): adiciona uma nova propriedade que representa a lista principal de categorias em uma caixa de correio.
+- Adicionado [Office.context.mailbox.item.categories](office.context.mailbox.item.md#properties): adiciona uma nova propriedade que representa o conjunto de categorias em um item.
+- Adicionado [Office.context.mailbox.item.addFileAttachmentFromBase64Async](office.context.mailbox.item.md#methods): adiciona um novo método que permite anexar um arquivo representado como uma cadeia de caracteres codificada em base64 a uma mensagem ou compromisso.
+- Adicionado [Office.context.mailbox.item.enhancedLocation](office.context.mailbox.item.md#properties): adiciona uma nova propriedade que representa o conjunto de locais em um compromisso.
+- Adicionado [Office.context.mailbox.item.getAllInternetHeadersAsync](office.context.mailbox.item.md#methods): adiciona um novo método que obtém todos os cabeçalhos da Internet para um item de mensagem. Somente modo de leitura.
+- Adicionado [Office.context.mailbox.item.getAttachmentContentAsync](office.context.mailbox.item.md#methods): adiciona um novo método para obter o conteúdo de um anexo específico.
+- Adicionado [Office.context.mailbox.item.getAttachmentsAsync](office.context.mailbox.item.md#methods): adiciona um novo método que obtém os anexos de um item no modo de redação.
+- Adicionado [Office.context.mailbox.item.getItemIdAsync](office.context.mailbox.item.md#methods): adiciona um novo método que obtém a ID de um compromisso ou item de mensagem salvo.
+- Adicionado [Office.context.mailbox.item.getSharedPropertiesAsync](office.context.mailbox.item.md#methods): adiciona um novo método que obtém um objeto que representa as sharedProperties de um compromisso ou item de mensagem.
+- Adicionado [Office.context.mailbox.item.internetHeaders](office.context.mailbox.item.md#properties): adiciona uma nova propriedade que representa os cabeçalhos da Internet personalizados em um item de mensagem. Somente modo de redação.
 - Modificado [Event.completed](/javascript/api/office/office.addincommands.event#completed-options-): adiciona um novo parâmetro opcional `options`, que é um dicionário com um valor válido `allowEvent`. Esse valor é usado para cancelar a execução de um evento.
 - Adicionado [Office.MailboxEnums.AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.8): adiciona uma nova enumeração que especifica a formatação que se aplica ao conteúdo de um anexo.
 - Adicionado [Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus?view=outlook-js-1.8): adiciona uma nova enumeração que especifica se um anexo foi adicionado ou removido de um item.
