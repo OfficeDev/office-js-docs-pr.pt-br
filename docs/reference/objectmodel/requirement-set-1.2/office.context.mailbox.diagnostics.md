@@ -1,110 +1,33 @@
 ---
 title: Office. Context. Mailbox. Diagnostics – conjunto de requisitos 1,2
 description: ''
-ms.date: 08/08/2019
+ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: 713e51f86145944a9618fa819239e35394b6dd04
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.openlocfilehash: dad9d35c397351938944d89bf98e450427cb74a3
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36696404"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814980"
 ---
-# <a name="diagnostics"></a><span data-ttu-id="76031-102">diagnostics</span><span class="sxs-lookup"><span data-stu-id="76031-102">diagnostics</span></span>
+# <a name="diagnostics"></a><span data-ttu-id="0a5d3-102">diagnostics</span><span class="sxs-lookup"><span data-stu-id="0a5d3-102">diagnostics</span></span>
 
-### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmddiagnostics"></a><span data-ttu-id="76031-103">[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).diagnostics</span><span class="sxs-lookup"><span data-stu-id="76031-103">[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).diagnostics</span></span>
+### <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmddiagnostics"></a><span data-ttu-id="0a5d3-103">[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).diagnostics</span><span class="sxs-lookup"><span data-stu-id="0a5d3-103">[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).diagnostics</span></span>
 
-<span data-ttu-id="76031-104">Fornece informações de diagnóstico para um suplemento do Outlook.</span><span class="sxs-lookup"><span data-stu-id="76031-104">Provides diagnostic information to an Outlook add-in.</span></span>
+<span data-ttu-id="0a5d3-104">Fornece informações de diagnóstico para um suplemento do Outlook.</span><span class="sxs-lookup"><span data-stu-id="0a5d3-104">Provides diagnostic information to an Outlook add-in.</span></span>
 
-##### <a name="requirements"></a><span data-ttu-id="76031-105">Requisitos</span><span class="sxs-lookup"><span data-stu-id="76031-105">Requirements</span></span>
+##### <a name="requirements"></a><span data-ttu-id="0a5d3-105">Requisitos</span><span class="sxs-lookup"><span data-stu-id="0a5d3-105">Requirements</span></span>
 
-|<span data-ttu-id="76031-106">Requisito</span><span class="sxs-lookup"><span data-stu-id="76031-106">Requirement</span></span>| <span data-ttu-id="76031-107">Valor</span><span class="sxs-lookup"><span data-stu-id="76031-107">Value</span></span>|
+|<span data-ttu-id="0a5d3-106">Requisito</span><span class="sxs-lookup"><span data-stu-id="0a5d3-106">Requirement</span></span>| <span data-ttu-id="0a5d3-107">Valor</span><span class="sxs-lookup"><span data-stu-id="0a5d3-107">Value</span></span>|
 |---|---|
-|[<span data-ttu-id="76031-108">Versão do conjunto de requisitos mínimos da caixa de correio</span><span class="sxs-lookup"><span data-stu-id="76031-108">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="76031-109">1.0</span><span class="sxs-lookup"><span data-stu-id="76031-109">1.0</span></span>|
-|[<span data-ttu-id="76031-110">Nível de permissão mínimo</span><span class="sxs-lookup"><span data-stu-id="76031-110">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="76031-111">ReadItem</span><span class="sxs-lookup"><span data-stu-id="76031-111">ReadItem</span></span>|
-|[<span data-ttu-id="76031-112">Modo do Outlook aplicável</span><span class="sxs-lookup"><span data-stu-id="76031-112">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="76031-113">Escrever ou Ler</span><span class="sxs-lookup"><span data-stu-id="76031-113">Compose or Read</span></span>|
+|[<span data-ttu-id="0a5d3-108">Versão do conjunto de requisitos mínimos da caixa de correio</span><span class="sxs-lookup"><span data-stu-id="0a5d3-108">Minimum mailbox requirement set version</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)| <span data-ttu-id="0a5d3-109">1.1</span><span class="sxs-lookup"><span data-stu-id="0a5d3-109">1.1</span></span>|
+|[<span data-ttu-id="0a5d3-110">Nível de permissão mínimo</span><span class="sxs-lookup"><span data-stu-id="0a5d3-110">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="0a5d3-111">ReadItem</span><span class="sxs-lookup"><span data-stu-id="0a5d3-111">ReadItem</span></span>|
+|[<span data-ttu-id="0a5d3-112">Modo do Outlook aplicável</span><span class="sxs-lookup"><span data-stu-id="0a5d3-112">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="0a5d3-113">Escrever ou Ler</span><span class="sxs-lookup"><span data-stu-id="0a5d3-113">Compose or Read</span></span>|
 
-##### <a name="members-and-methods"></a><span data-ttu-id="76031-114">Membros e métodos</span><span class="sxs-lookup"><span data-stu-id="76031-114">Members and methods</span></span>
+## <a name="properties"></a><span data-ttu-id="0a5d3-114">Propriedades</span><span class="sxs-lookup"><span data-stu-id="0a5d3-114">Properties</span></span>
 
-| <span data-ttu-id="76031-115">Membro</span><span class="sxs-lookup"><span data-stu-id="76031-115">Member</span></span> | <span data-ttu-id="76031-116">Tipo</span><span class="sxs-lookup"><span data-stu-id="76031-116">Type</span></span> |
-|--------|------|
-| [<span data-ttu-id="76031-117">hostName</span><span class="sxs-lookup"><span data-stu-id="76031-117">hostName</span></span>](#hostname-string) | <span data-ttu-id="76031-118">Membro</span><span class="sxs-lookup"><span data-stu-id="76031-118">Member</span></span> |
-| [<span data-ttu-id="76031-119">hostVersion</span><span class="sxs-lookup"><span data-stu-id="76031-119">hostVersion</span></span>](#hostversion-string) | <span data-ttu-id="76031-120">Membro</span><span class="sxs-lookup"><span data-stu-id="76031-120">Member</span></span> |
-| [<span data-ttu-id="76031-121">OWAView</span><span class="sxs-lookup"><span data-stu-id="76031-121">OWAView</span></span>](#owaview-string) | <span data-ttu-id="76031-122">Membro</span><span class="sxs-lookup"><span data-stu-id="76031-122">Member</span></span> |
-
-### <a name="members"></a><span data-ttu-id="76031-123">Membros</span><span class="sxs-lookup"><span data-stu-id="76031-123">Members</span></span>
-
-#### <a name="hostname-string"></a><span data-ttu-id="76031-124">Nome do host: cadeia de caracteres</span><span class="sxs-lookup"><span data-stu-id="76031-124">hostName: String</span></span>
-
-<span data-ttu-id="76031-125">Obtém uma cadeia de caracteres que representa o nome do aplicativo host.</span><span class="sxs-lookup"><span data-stu-id="76031-125">Gets a string that represents the name of the host application.</span></span>
-
-<span data-ttu-id="76031-126">Uma cadeia de caracteres que pode ser um dos seguintes valores `Outlook`: `OutlookIOS`, ou `OutlookWebApp`.</span><span class="sxs-lookup"><span data-stu-id="76031-126">A string that can be one of the following values: `Outlook`, `OutlookIOS`, or `OutlookWebApp`.</span></span>
-
-> [!NOTE]
-> <span data-ttu-id="76031-127">O `Outlook` valor é retornado para o Outlook em clientes de área de trabalho (ou seja, Windows e Mac).</span><span class="sxs-lookup"><span data-stu-id="76031-127">The `Outlook` value is returned for Outlook on desktop clients (i.e., Windows and Mac).</span></span>
-
-##### <a name="type"></a><span data-ttu-id="76031-128">Tipo</span><span class="sxs-lookup"><span data-stu-id="76031-128">Type</span></span>
-
-*   <span data-ttu-id="76031-129">String</span><span class="sxs-lookup"><span data-stu-id="76031-129">String</span></span>
-
-##### <a name="requirements"></a><span data-ttu-id="76031-130">Requisitos</span><span class="sxs-lookup"><span data-stu-id="76031-130">Requirements</span></span>
-
-|<span data-ttu-id="76031-131">Requisito</span><span class="sxs-lookup"><span data-stu-id="76031-131">Requirement</span></span>| <span data-ttu-id="76031-132">Valor</span><span class="sxs-lookup"><span data-stu-id="76031-132">Value</span></span>|
-|---|---|
-|[<span data-ttu-id="76031-133">Versão do conjunto de requisitos mínimos da caixa de correio</span><span class="sxs-lookup"><span data-stu-id="76031-133">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="76031-134">1.0</span><span class="sxs-lookup"><span data-stu-id="76031-134">1.0</span></span>|
-|[<span data-ttu-id="76031-135">Nível de permissão mínimo</span><span class="sxs-lookup"><span data-stu-id="76031-135">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="76031-136">ReadItem</span><span class="sxs-lookup"><span data-stu-id="76031-136">ReadItem</span></span>|
-|[<span data-ttu-id="76031-137">Modo do Outlook aplicável</span><span class="sxs-lookup"><span data-stu-id="76031-137">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="76031-138">Escrever ou Ler</span><span class="sxs-lookup"><span data-stu-id="76031-138">Compose or Read</span></span>|
-
-<br>
-
----
----
-
-#### <a name="hostversion-string"></a><span data-ttu-id="76031-139">hostVersion: cadeia de caracteres</span><span class="sxs-lookup"><span data-stu-id="76031-139">hostVersion: String</span></span>
-
-<span data-ttu-id="76031-140">Obtém uma cadeia de caracteres que representa a versão do aplicativo host ou do servidor Exchange (por exemplo, "15.0.468.0").</span><span class="sxs-lookup"><span data-stu-id="76031-140">Gets a string that represents the version of either the host application or the Exchange Server (e.g., "15.0.468.0").</span></span>
-
-<span data-ttu-id="76031-141">Se o suplemento de email estiver em execução no cliente da área de trabalho do Outlook ou `hostVersion` Ios, a propriedade retornará a versão do aplicativo host, Outlook.</span><span class="sxs-lookup"><span data-stu-id="76031-141">If the mail add-in is running on the Outlook desktop client or iOS, the `hostVersion` property returns the version of the host application, Outlook.</span></span> <span data-ttu-id="76031-142">No Outlook na Web, a propriedade retorna a versão do servidor Exchange.</span><span class="sxs-lookup"><span data-stu-id="76031-142">In Outlook on the web, the property returns the version of the Exchange Server.</span></span>
-
-##### <a name="type"></a><span data-ttu-id="76031-143">Tipo</span><span class="sxs-lookup"><span data-stu-id="76031-143">Type</span></span>
-
-*   <span data-ttu-id="76031-144">String</span><span class="sxs-lookup"><span data-stu-id="76031-144">String</span></span>
-
-##### <a name="requirements"></a><span data-ttu-id="76031-145">Requisitos</span><span class="sxs-lookup"><span data-stu-id="76031-145">Requirements</span></span>
-
-|<span data-ttu-id="76031-146">Requisito</span><span class="sxs-lookup"><span data-stu-id="76031-146">Requirement</span></span>| <span data-ttu-id="76031-147">Valor</span><span class="sxs-lookup"><span data-stu-id="76031-147">Value</span></span>|
-|---|---|
-|[<span data-ttu-id="76031-148">Versão do conjunto de requisitos mínimos da caixa de correio</span><span class="sxs-lookup"><span data-stu-id="76031-148">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="76031-149">1.0</span><span class="sxs-lookup"><span data-stu-id="76031-149">1.0</span></span>|
-|[<span data-ttu-id="76031-150">Nível de permissão mínimo</span><span class="sxs-lookup"><span data-stu-id="76031-150">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="76031-151">ReadItem</span><span class="sxs-lookup"><span data-stu-id="76031-151">ReadItem</span></span>|
-|[<span data-ttu-id="76031-152">Modo do Outlook aplicável</span><span class="sxs-lookup"><span data-stu-id="76031-152">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="76031-153">Escrever ou Ler</span><span class="sxs-lookup"><span data-stu-id="76031-153">Compose or Read</span></span>|
-
-<br>
-
----
----
-
-#### <a name="owaview-string"></a><span data-ttu-id="76031-154">OWAView: cadeia de caracteres</span><span class="sxs-lookup"><span data-stu-id="76031-154">OWAView: String</span></span>
-
-<span data-ttu-id="76031-155">Obtém uma cadeia de caracteres que representa o modo de exibição atual do Outlook na Web.</span><span class="sxs-lookup"><span data-stu-id="76031-155">Gets a string that represents the current view of Outlook on the web.</span></span>
-
-<span data-ttu-id="76031-156">A cadeia de caracteres retornada pode ser um dos valores a seguir: `OneColumn`, `TwoColumns` ou `ThreeColumns`.</span><span class="sxs-lookup"><span data-stu-id="76031-156">The returned string can be one of the following values: `OneColumn`, `TwoColumns`, or `ThreeColumns`.</span></span>
-
-<span data-ttu-id="76031-157">Se o aplicativo host não for o Outlook na Web, então acessar essa propriedade resultará `undefined`em.</span><span class="sxs-lookup"><span data-stu-id="76031-157">If the host application is not Outlook on the web, then accessing this property results in `undefined`.</span></span>
-
-<span data-ttu-id="76031-158">O Outlook na Web tem três exibições que correspondem à largura da tela e à janela e ao número de colunas que podem ser exibidas:</span><span class="sxs-lookup"><span data-stu-id="76031-158">Outlook on the web has three views that correspond to the width of the screen and the window, and the number of columns that can be displayed:</span></span>
-
-*   <span data-ttu-id="76031-159">`OneColumn`, que é exibido quando a tela é estreita.</span><span class="sxs-lookup"><span data-stu-id="76031-159">`OneColumn`, which is displayed when the screen is narrow.</span></span> <span data-ttu-id="76031-160">O Outlook na Web usa esse layout de coluna única em toda a tela de um smartphone.</span><span class="sxs-lookup"><span data-stu-id="76031-160">Outlook on the web uses this single-column layout on the entire screen of a smartphone.</span></span>
-*   <span data-ttu-id="76031-161">`TwoColumns`, que é exibido quando a tela é mais larga.</span><span class="sxs-lookup"><span data-stu-id="76031-161">`TwoColumns`, which is displayed when the screen is wider.</span></span> <span data-ttu-id="76031-162">O Outlook na Web usa esse modo de exibição na maioria dos Tablets.</span><span class="sxs-lookup"><span data-stu-id="76031-162">Outlook on the web uses this view on most tablets.</span></span>
-*   <span data-ttu-id="76031-163">`ThreeColumns`, que é exibido quando a tela é ainda mais larga.</span><span class="sxs-lookup"><span data-stu-id="76031-163">`ThreeColumns`, which is displayed when the screen is wide.</span></span> <span data-ttu-id="76031-164">Por exemplo, o Outlook na Web usa esse modo de exibição em uma janela de tela inteira em um computador desktop.</span><span class="sxs-lookup"><span data-stu-id="76031-164">For example, Outlook on the web uses this view in a full screen window on a desktop computer.</span></span>
-
-##### <a name="type"></a><span data-ttu-id="76031-165">Tipo</span><span class="sxs-lookup"><span data-stu-id="76031-165">Type</span></span>
-
-*   <span data-ttu-id="76031-166">String</span><span class="sxs-lookup"><span data-stu-id="76031-166">String</span></span>
-
-##### <a name="requirements"></a><span data-ttu-id="76031-167">Requisitos</span><span class="sxs-lookup"><span data-stu-id="76031-167">Requirements</span></span>
-
-|<span data-ttu-id="76031-168">Requisito</span><span class="sxs-lookup"><span data-stu-id="76031-168">Requirement</span></span>| <span data-ttu-id="76031-169">Valor</span><span class="sxs-lookup"><span data-stu-id="76031-169">Value</span></span>|
-|---|---|
-|[<span data-ttu-id="76031-170">Versão do conjunto de requisitos mínimos da caixa de correio</span><span class="sxs-lookup"><span data-stu-id="76031-170">Minimum mailbox requirement set version</span></span>](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)| <span data-ttu-id="76031-171">1.0</span><span class="sxs-lookup"><span data-stu-id="76031-171">1.0</span></span>|
-|[<span data-ttu-id="76031-172">Nível de permissão mínimo</span><span class="sxs-lookup"><span data-stu-id="76031-172">Minimum permission level</span></span>](/outlook/add-ins/understanding-outlook-add-in-permissions)| <span data-ttu-id="76031-173">ReadItem</span><span class="sxs-lookup"><span data-stu-id="76031-173">ReadItem</span></span>|
-|[<span data-ttu-id="76031-174">Modo do Outlook aplicável</span><span class="sxs-lookup"><span data-stu-id="76031-174">Applicable Outlook mode</span></span>](/outlook/add-ins/#extension-points)| <span data-ttu-id="76031-175">Escrever ou Ler</span><span class="sxs-lookup"><span data-stu-id="76031-175">Compose or Read</span></span>|
+| <span data-ttu-id="0a5d3-115">Propriedade</span><span class="sxs-lookup"><span data-stu-id="0a5d3-115">Property</span></span> | <span data-ttu-id="0a5d3-116">Mínimo</span><span class="sxs-lookup"><span data-stu-id="0a5d3-116">Minimum</span></span><br><span data-ttu-id="0a5d3-117">nível de permissão</span><span class="sxs-lookup"><span data-stu-id="0a5d3-117">permission level</span></span> | <span data-ttu-id="0a5d3-118">Modelos</span><span class="sxs-lookup"><span data-stu-id="0a5d3-118">Modes</span></span> | <span data-ttu-id="0a5d3-119">Tipo de retorno</span><span class="sxs-lookup"><span data-stu-id="0a5d3-119">Return type</span></span> | <span data-ttu-id="0a5d3-120">Mínimo</span><span class="sxs-lookup"><span data-stu-id="0a5d3-120">Minimum</span></span><br><span data-ttu-id="0a5d3-121">conjunto de requisitos</span><span class="sxs-lookup"><span data-stu-id="0a5d3-121">requirement set</span></span> |
+|---|---|---|---|:---:|
+| [<span data-ttu-id="0a5d3-122">hostName</span><span class="sxs-lookup"><span data-stu-id="0a5d3-122">hostName</span></span>](/javascript/api/outlook/office.diagnostics?view=outlook-js-1.2#hostname) | <span data-ttu-id="0a5d3-123">ReadItem</span><span class="sxs-lookup"><span data-stu-id="0a5d3-123">ReadItem</span></span> | <span data-ttu-id="0a5d3-124">Escrever</span><span class="sxs-lookup"><span data-stu-id="0a5d3-124">Compose</span></span><br><span data-ttu-id="0a5d3-125">Leitura</span><span class="sxs-lookup"><span data-stu-id="0a5d3-125">Read</span></span> | <span data-ttu-id="0a5d3-126">String</span><span class="sxs-lookup"><span data-stu-id="0a5d3-126">String</span></span> | [<span data-ttu-id="0a5d3-127">1.1</span><span class="sxs-lookup"><span data-stu-id="0a5d3-127">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [<span data-ttu-id="0a5d3-128">hostVersion</span><span class="sxs-lookup"><span data-stu-id="0a5d3-128">hostVersion</span></span>](/javascript/api/outlook/office.diagnostics?view=outlook-js-1.2#hostversion) | <span data-ttu-id="0a5d3-129">ReadItem</span><span class="sxs-lookup"><span data-stu-id="0a5d3-129">ReadItem</span></span> | <span data-ttu-id="0a5d3-130">Escrever</span><span class="sxs-lookup"><span data-stu-id="0a5d3-130">Compose</span></span><br><span data-ttu-id="0a5d3-131">Leitura</span><span class="sxs-lookup"><span data-stu-id="0a5d3-131">Read</span></span> | <span data-ttu-id="0a5d3-132">String</span><span class="sxs-lookup"><span data-stu-id="0a5d3-132">String</span></span> | [<span data-ttu-id="0a5d3-133">1.1</span><span class="sxs-lookup"><span data-stu-id="0a5d3-133">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [<span data-ttu-id="0a5d3-134">OWAView</span><span class="sxs-lookup"><span data-stu-id="0a5d3-134">OWAView</span></span>](/javascript/api/outlook/office.diagnostics?view=outlook-js-1.2#owaview) | <span data-ttu-id="0a5d3-135">ReadItem</span><span class="sxs-lookup"><span data-stu-id="0a5d3-135">ReadItem</span></span> | <span data-ttu-id="0a5d3-136">Escrever</span><span class="sxs-lookup"><span data-stu-id="0a5d3-136">Compose</span></span><br><span data-ttu-id="0a5d3-137">Leitura</span><span class="sxs-lookup"><span data-stu-id="0a5d3-137">Read</span></span> | <span data-ttu-id="0a5d3-138">String</span><span class="sxs-lookup"><span data-stu-id="0a5d3-138">String</span></span> | [<span data-ttu-id="0a5d3-139">1.1</span><span class="sxs-lookup"><span data-stu-id="0a5d3-139">1.1</span></span>](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
