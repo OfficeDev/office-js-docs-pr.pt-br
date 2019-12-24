@@ -1,15 +1,15 @@
 ---
 title: Tutorial de suplemento do Word
 description: Neste tutorial, voc? criar? um suplemento do Word que insere (e substitui) intervalos de texto, par?grafos, imagens, HTML, tabelas e controles de conte?do. Você também aprenderá como formatar texto e como inserir (e substituir) conteúdo nos controles de conteúdo.
-ms.date: 09/18/2019
+ms.date: 12/24/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 24b0ab5cecf9cfbc493da4488a71ac34dff61b47
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: e6f4a0bee75a9f0de648d8354c6b23b87845c00f
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035341"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851408"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Tutorial: Criar Suplemento do Painel de Tarefas no Word
 
@@ -40,7 +40,7 @@ Neste tutorial: você criará um suplemento do painel de tarefas no Word:
 
 ![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-word.png)
 
-Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes de suporte do nó.
+Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -126,33 +126,33 @@ Nesta etapa do tutorial, você testará programaticamente se o suplemento oferec
 
 ### <a name="test-the-add-in"></a>Testar o suplemento
 
-1. Conclua as etapas a seguir para iniciar o servidor Web local e Sideload seu suplemento.
+1. Conclua as etapas a seguir para iniciar o servidor Web local e fazer o sideload do seu suplemento.
 
     > [!NOTE]
     > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
 
     > [!TIP]
-    > Se você estiver testando seu suplemento no Mac, execute o seguinte comando no diretório raiz do seu projeto antes de prosseguir. Quando você executa esse comando, o servidor Web local é iniciado.
+    > Se você estiver testando seu suplemento no Mac, execute o seguinte comando no diretório raiz do seu projeto antes de prosseguir. O servidor Web local é iniciado quando este comando é executado.
     >
     > ```command&nbsp;line
     > npm run dev-server
     > ```
 
-    - Para testar seu suplemento no Word, execute o seguinte comando no diretório raiz do seu projeto. Isso inicia o servidor Web local (se ele ainda não estiver sendo executado) e abre o Word com seu suplemento carregado.
+    - Para testar seu suplemento no Word, execute o seguinte comando no diretório raiz do seu projeto. Isso inicia o servidor Web local (caso ainda não esteja em execução) e abre o Word com o suplemento carregado.
 
         ```command&nbsp;line
         npm start
         ```
 
-    - Para testar seu suplemento no Word na Web, execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor Web local será iniciado (se ainda não estiver sendo executado).
+    - Para testar seu suplemento no Word na Web, execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor Web local será iniciado (se ainda não estiver em execução).
 
         ```command&nbsp;line
         npm run start:web
         ```
 
-        Para usar seu suplemento, abra um novo documento no Word na Web e, em seguida, Sideload seu suplemento seguindo as instruções em [suplementos do Sideload Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
+        Para usar o seu suplemento, abra um novo documento no Word na Web e em seguida realize o sideload no suplemento de acordo com as instruções em [Realizar Sideload nos Suplementos do Office no Office na Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-2. No Word, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na Faixa de Opções para abrir o painel de tarefas do suplemento.
+2. No Word, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
     ![Uma captura de tela do aplicativo Word com o botão Mostrar Painel de Tarefas realçado](../images/word-quickstart-addin-2b.png)
 
@@ -941,3 +941,9 @@ Neste tutorial, você criou um suplemento do painel de tarefas do Word que inser
 
 > [!div class="nextstepaction"]
 > [Visão geral dos suplementos do Word](../word/word-add-ins-programming-overview.md)
+
+## <a name="see-also"></a>Confira também
+
+* [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
+* [Criar suplementos do Office](../overview/office-add-ins-fundamentals.md)
+* [Desenvolver suplementos do Office](../develop/develop-overview.md)

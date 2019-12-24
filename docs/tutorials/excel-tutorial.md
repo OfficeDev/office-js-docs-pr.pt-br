@@ -4,12 +4,12 @@ description: Neste tutorial, você criará um suplemento do Excel que cria, pree
 ms.date: 11/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: c0a3df72d600acb34008ff574ec2ab2eee070e2e
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: 48f4decc0cadddecd5669b960238ddd3381f0932
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814212"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851415"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Tutorial: criar um suplemento do painel de tarefas no Excel
 
@@ -1015,3 +1015,10 @@ Neste tutorial você criou um suplemento do Excel que interage com tabelas, grá
 
 > [!div class="nextstepaction"]
 > [Visão geral dos suplementos do Excel](../excel/excel-add-ins-overview.md)
+
+## <a name="see-also"></a>Confira também
+
+* [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
+* [Criar suplementos do Office](../overview/office-add-ins-fundamentals.md)
+* [Desenvolver suplementos do Office](../develop/develop-overview.md)
+* [Conceitos fundamentais de programação com a API JavaScript do Excel](../excel/excel-add-ins-core-concepts.md)

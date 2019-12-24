@@ -3,12 +3,12 @@ title: Suporte da API JavaScript para Office para suplementos de conteúdo e de 
 description: ''
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 017542766fc6fb03cd7d4038de0cf3091d74857e
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
+ms.openlocfilehash: b9a6d1f81cb86cb84c0f825394d14e8559017d11
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353787"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851380"
 ---
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>Suporte da API JavaScript para Office para suplementos de conteúdo e de painel de tarefas no Office 2013
 
@@ -18,7 +18,7 @@ Você pode usar a [API JavaScript para Office](/office/dev/add-ins/reference/jav
 
 1. **Objetos comuns compartilhados com outros Suplementos do Office.** Esses objetos incluem [Office](/javascript/api/office), [Context](/javascript/api/office/office.context) e [AsyncResult](/javascript/api/office/office.asyncresult). O objeto **Office** é o objeto raiz da API JavaScript para Office. O objeto **Context** representa o ambiente de tempo de execução do suplemento. **Office** e **Context** são os objetos fundamentais para qualquer Suplemento do Office. O objeto **AsyncResult** representa os resultados de uma operação assíncrona, como os dados retornados ao método **getSelectedDataAsync**, que lê o que um usuário selecionou em um documento.
 
-2. **O objeto Document.** A maior parte da API disponível para os suplementos de conteúdo e de painel de tarefas é exposta por meio dos métodos, propriedades e eventos do objeto [Document](/javascript/api/office/office.document) . Um suplemento de conteúdo ou de painel de tarefas pode usar a propriedade [Office. Context. Document](/javascript/api/office/office.context#document) para acessar o objeto **Document** e por meio dele, pode acessar os principais membros da API para trabalhar com dados em documentos, como [associações](/javascript/api/office/office.bindings) e [ CustomXmlParts](/javascript/api/office/office.customxmlparts) objetos e os métodos [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-), [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-)e [getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-) . O objeto **Document** também fornece a propriedade [Mode](/javascript/api/office/office.document#mode) para determinar se um documento é somente leitura ou no modo de edição, a propriedade [URL](/javascript/api/office/office.document#url) para obter a URL do documento atual e o acesso ao objeto [Settings](/javascript/api/office/office.settings) . O objeto **Document** também oferece suporte à adição de manipuladores de eventos para o evento [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) , para que você possa detectar quando um usuário altera sua seleção no documento.
+2. **O objeto Document.** A maior parte da API disponível para os suplementos de conteúdo e de painel de tarefas é exposta por meio dos métodos, propriedades e eventos do objeto [Document](/javascript/api/office/office.document) . Um suplemento de conteúdo ou de painel de tarefas pode usar a propriedade [Office. Context. Document](/javascript/api/office/office.context#document) para acessar o objeto **Document** e por meio dele, pode acessar os principais membros da API para trabalhar com dados em documentos, como [associações](/javascript/api/office/office.bindings) e objetos [CustomXmlParts](/javascript/api/office/office.customxmlparts) , e os métodos [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-), [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-)e [getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-) . O objeto **Document** também fornece a propriedade [Mode](/javascript/api/office/office.document#mode) para determinar se um documento é somente leitura ou no modo de edição, a propriedade [URL](/javascript/api/office/office.document#url) para obter a URL do documento atual e o acesso ao objeto [Settings](/javascript/api/office/office.settings) . O objeto **Document** também oferece suporte à adição de manipuladores de eventos para o evento [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) , para que você possa detectar quando um usuário altera sua seleção no documento.
 
    Um suplemento de conteúdo ou painel de tarefas só pode acessar o objeto **Document** depois que o DOM e o ambiente de tempo de execução são carregados, normalmente no manipulador de eventos para o evento [Office.initialize](/javascript/api/office). Para saber mais sobre o fluxo de eventos quando um suplemento é inicializado e como verificar se o DOM e o tempo de execução foram carregados com êxito, confira [Carregar o DOM e o ambiente de tempo de execução](loading-the-dom-and-runtime-environment.md).
 
@@ -160,7 +160,7 @@ O suplemento usa o elemento **Permissions** em seu manifesto para solicitar perm
 
 ```
 
-Para saber mais, consulte [Solicitação de permissões para uso da API em suplementos de conteúdo e de painel de tarefas](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md).
+Para obter mais informações, consulte [solicitar permissões para uso da API em suplementos](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md).
 
 
 ## <a name="see-also"></a>Confira também

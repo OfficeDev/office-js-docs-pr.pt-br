@@ -1,18 +1,18 @@
 ---
-title: Explorar a API JavaScript do Office usando o script Lab
+title: Explorar a API JavaScript do Office usando o Script Lab.
 description: Use o script Lab para explorar a API do Office JS e a funcionalidade de protótipo.
 ms.date: 07/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Normal
-ms.openlocfilehash: fcd1863e71bdfa6923ccd598b49879a77e629b4c
-ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
+ms.openlocfilehash: fbefd205ac929579cea1120b8398a53146bca19c
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "37468788"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851513"
 ---
-# <a name="explore-office-javascript-api-using-script-lab"></a>Explorar a API JavaScript do Office usando o script Lab
+# <a name="explore-office-javascript-api-using-script-lab"></a>Explorar a API JavaScript do Office usando o Script Lab.
 
 O [suplemento de laboratório de script](https://appsource.microsoft.com/product/office/WA104380862), que está disponível gratuitamente no AppSource, permite explorar a API JavaScript do Office enquanto você está trabalhando em um programa do Office, como o Excel ou Word. O script Lab é uma ferramenta conveniente para adicionar ao seu kit de ferramentas de desenvolvimento conforme você protótipo e verificar a funcionalidade desejada no seu suplemento.
 
@@ -22,7 +22,7 @@ O script Lab é uma ferramenta para qualquer pessoa que deseje saber como desenv
 
 Parece bom até agora? Dê uma olhada neste vídeo de um minuto para ver o script Lab em ação.
 
-[![Visualizar vídeo mostrando o laboratório de script em execução no Excel, Word e PowerPoint.] (../images/screenshot-wide-youtube.png 'Vídeo do script Lab Preview')](https://aka.ms/scriptlabvideo)
+[![Visualizar vídeo mostrando o laboratório de script em execução no Excel, Word e PowerPoint.](../images/screenshot-wide-youtube.png 'Vídeo do script Lab Preview')](https://aka.ms/scriptlabvideo)
 
 ## <a name="key-features"></a>Principais recursos
 
@@ -74,3 +74,4 @@ Quando estiver pronto para criar seu primeiro suplemento do Office, experimente 
 - [Obter o laboratório de scripts](https://appsource.microsoft.com/product/office/WA104380862)
 - [Saiba mais sobre o script Lab](https://github.com/OfficeDev/script-lab#script-lab-a-microsoft-garage-project)
 - [Inscreva-se no programa dev](https://developer.microsoft.com/office/dev-program)
+- [Criar suplementos do Office](../overview/office-add-ins-fundamentals.md)

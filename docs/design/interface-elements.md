@@ -1,14 +1,14 @@
 ---
 title: Elementos da interface do usuário do Office para suplementos do Office
 description: ''
-ms.date: 12/04/2017
+ms.date: 12/24/2019
 localization_priority: Priority
-ms.openlocfilehash: 444aca7b75e35ef502075876a7d1324fcdca0603
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 1f680d93c995d306717c7b5a81af073f378b0fbd
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32446228"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851234"
 ---
 # <a name="office-ui-elements-for-office-add-ins"></a>Elementos da interface do usuário do Office para suplementos do Office
 
@@ -16,7 +16,7 @@ Você pode usar vários tipos de elementos para estender a interface do usuário
 
 A imagem a seguir mostra os tipos de elementos de interface do usuário do Office que você pode criar.
 
-![Uma imagem que mostra comandos de suplemento na faixa de opções, um painel de tarefas e uma caixa de diálogo em um documento do Office](../images/overview-with-app-interface-elements.png)
+![Uma imagem que mostra comandos de suplemento na faixa de opções, um painel de tarefas e uma caixa de diálogo em um documento do Office](../images/add-in-ui-elements.png)
 
 ## <a name="add-in-commands"></a>Comandos de suplemento
 

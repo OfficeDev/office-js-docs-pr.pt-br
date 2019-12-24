@@ -3,12 +3,12 @@ title: Elemento Permissions no arquivo de manifesto
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 3442a8e0caee442ce1b38c5ff39cfd1ef5088fb7
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: a70d72e454273873c6a30ffd82c3a2a5194f55e0
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450657"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851303"
 ---
 # <a name="permissions-element"></a>Elemento Permissions
 
@@ -36,4 +36,4 @@ Para suplementos de email
 
 ## <a name="remarks"></a>Comentários
 
-Para saber mais, confira [Solicitando permissões para API usadas em suplementos de conteúdo e de painel de tarefas](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins) e [Entendendo as permissões de suplemento do Outlook](/outlook/add-ins/understanding-outlook-add-in-permissions).
+Para obter mais detalhes, consulte [solicitando permissões para uso da API em suplementos](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins) e [noções básicas sobre permissões de suplementos do Outlook](/outlook/add-ins/understanding-outlook-add-in-permissions).
