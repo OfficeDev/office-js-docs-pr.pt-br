@@ -1,15 +1,15 @@
 ---
 title: Crie seu primeiro suplemento do painel de tarefas do Word
 description: Saiba como criar um suplemento do painel de tarefas do Word simples usando a API JS do Office.
-ms.date: 10/17/2019
+ms.date: 12/24/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 87f2e4d46748328461529fd41ea11b109fe4785e
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 039348503d75746bf30da253e84402e128006497
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626863"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851331"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do Word
 
@@ -312,6 +312,9 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em
 
 ## <a name="see-also"></a>Confira também
 
+* [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
+* [Criando Suplementos do Office ](../overview/office-add-ins-fundamentals.md)
+* [Desenvolver Suplementos do Office ](../develop/develop-overview.md)
 * [Visão geral dos suplementos do Word](../word/word-add-ins-programming-overview.md)
 * [Exemplos de código do suplemento do Word](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
 * [Referências da API JavaScript do Word](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)
