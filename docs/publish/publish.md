@@ -1,16 +1,16 @@
 ---
-title: Implantar e publicar seu suplemento do Office | Microsoft Docs
+title: Implantar e publicar Suplementos do Office
 description: Você pode usar um dos vários métodos para implantar o suplemento do Office para testar ou distribuir aos usuários.
 ms.date: 09/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 2948e558ddd063ff36ebbfdd2edcb8c986a1445a
-ms.sourcegitcommit: 960ceaf6776ec3ed41a8f5b7bf70b3c95c43386a
+ms.openlocfilehash: a00119254f53f6dbf0e6ebc2279e0a0b70af1270
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "39830199"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851541"
 ---
-# <a name="deploy-and-publish-your-office-add-in"></a>Implantar e publicar seu Suplemento do Office
+# <a name="deploy-and-publish-office-add-ins"></a>Implantar e publicar Suplementos do Office
 
 Você pode usar um dos vários métodos para implantar o suplemento do Office para teste ou distribuição aos usuários.
 

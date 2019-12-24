@@ -4,12 +4,12 @@ description: ''
 ms.date: 07/05/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 045b5ff2af3523930e696f5faa296be7c777fe8b
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: c08e5af14c43d92a677e28d47b26014fd27f700e
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940812"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851499"
 ---
 # <a name="javascript-api-for-powerpoint"></a>API JavaScript para PowerPoint
 
@@ -39,5 +39,4 @@ Use o [Script Lab](../../overview/explore-with-script-lab.md) para começar a tr
 - [Visão geral dos Suplementos do SharePoint](../../powerpoint/powerpoint-add-ins.md)
 - [Referência da API JavaScript do PowerPoint](/javascript/api/powerpoint)
 - [Disponibilidade de host e plataforma para suplementos do Office](../../overview/office-add-in-availability.md)
-- [JavaScript API para Office](../javascript-api-for-office.md)
-- [Referência da API comum](/javascript/api/office)
+- [Documentação de Referência da API](../javascript-api-for-office.md)

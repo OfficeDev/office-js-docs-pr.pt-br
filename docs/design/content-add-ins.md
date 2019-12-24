@@ -3,12 +3,12 @@ title: Suplementos de conteúdo do Office
 description: Suplementos de conteúdo são superfícies que podem ser incorporadas diretamente em documentos do Excel ou do PowerPoint que concedem aos usuários acesso a controles de interface que executam códigos para modificar documentos ou exibir dados de uma fonte de dados.
 ms.date: 03/19/2019
 localization_priority: Priority
-ms.openlocfilehash: 46268f963545c3f5b7f45b9b590dc772ba37292f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: f3dec371d1500d85125c8762bbc5e80f0cdfb571
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32447103"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851282"
 ---
 # <a name="content-office-add-ins"></a>Suplementos de conteúdo do Office
 
@@ -59,4 +59,4 @@ Para ver um exemplo que implementa um suplemento de conteúdo, confira [Suplemen
 - [Disponibilidade de host e plataforma para suplementos do Office](/office/dev/add-ins/overview/office-add-in-availability)
 - [Office UI Fabric em Suplementos do Office](/office/dev/add-ins/design/office-ui-fabric)
 - [Padrões de design da experiência do usuário para suplementos do Office](/office/dev/add-ins/design/ux-design-pattern-templates)
-- [Solicitar permissões para uso da API em suplementos do painel de tarefas e conteúdo](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
+- [Solicitar permissões para uso da API em suplementos ](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)

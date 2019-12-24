@@ -3,12 +3,12 @@ title: Privacidade e segurança para suplementos do Office
 description: ''
 ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: bf71bfdba331f3726445c5095bd7dba1e4c5d39e
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: b40b10a0f2475a9013eb4186c852e07bfb60154f
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814030"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851296"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 
@@ -138,7 +138,7 @@ O exemplo a seguir mostra como um suplemento de painel de tarefas especifica a p
 </OfficeApp>
 ```
 
-Para saber mais sobre permissões para suplementos de painel de tarefas e de conteúdo, consulte [Solicitar permissões para uso da API em suplementos de conteúdo e de painel de tarefas](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins).
+Para saber mais sobre permissões para suplementos de painel de tarefas e de conteúdo, consulte [Solicitar permissões para uso da API em suplementos ](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins).
 
 Para saber mais sobre permissões para suplementos do Outlook, confira os tópicos a seguir:
 
@@ -259,7 +259,7 @@ O gerenciamento e a execução das configurações do Office são feitos com as 
 
 ## <a name="see-also"></a>Confira também
 
-- [Solicitar permissões para uso da API em suplementos de painel de tarefas e de conteúdo](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
+- [Solicitar permissões para uso da API em suplementos ](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
 - [Privacidade, permissões e segurança de suplementos do Outlook](/outlook/add-ins/privacy-and-security)
 - [Noções básicas sobre permissões de suplemento do Outlook](/outlook/add-ins/understanding-outlook-add-in-permissions)
 - [Limites de ativação e da API do JavaScript API para suplementos do Outlook](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)

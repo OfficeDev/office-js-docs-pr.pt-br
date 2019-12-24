@@ -3,12 +3,12 @@ title: Manifesto XML dos Suplementos do Office
 description: ''
 ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: 9a3081c13756bee668081e1fb9d04cf5458320d4
-ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
+ms.openlocfilehash: 07c8a563eb04ac4b707357f1e7ff43d9a8f2e761
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "38301971"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851275"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifesto XML dos Suplementos do Office
 
@@ -492,10 +492,14 @@ Para solucionar problemas com seu manifesto, confira [Validar e solucionar probl
 
 ## <a name="see-also"></a>Confira também
 
+* [Como identificar a ordem correta dos elementos do manifesto](manifest-element-ordering.md)
 * [Criar comandos de suplementos em seu manifesto][comandos de suplementos]
 * [Especificar requisitos da API e de hosts do Office](specify-office-hosts-and-api-requirements.md)
 * [Localização para suplementos do Office](localization.md)
 * [Referência de esquema para manifestos de suplementos do Office](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas)
+* [Atualizar a versão da API e do manifesto](update-your-javascript-api-for-office-and-manifest-schema-version.md)
+* [Identificar um suplemento COM equivalente](make-office-add-in-compatible-with-existing-com-add-in.md)
+* [Solicitar permissões para uso da API em suplementos ](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
 * [Validar e solucionar problemas com seu manifesto](../testing/troubleshoot-manifest.md)
 
 [Comandos de suplemento]: create-addin-commands.md
