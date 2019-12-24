@@ -1,15 +1,15 @@
 ---
 title: Crie o seu primeiro suplemento do painel de tarefas do Project
 description: ''
-ms.date: 09/18/2019
+ms.date: 12/24/2019
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 78712a1fec9af2c45f6e42825740364a7cd23987
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: 3de9df0dbca53e244fe2431bfa2884694e6ac232
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035284"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851310"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>Crie o seu primeiro suplemento do painel de tarefas do Project
 
@@ -123,3 +123,8 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Project!
 > [!div class="nextstepaction"]
 > [Suplementos do Project](../project/project-add-ins.md)
 
+## <a name="see-also"></a>Confira também
+
+- [Criando Suplementos do Office ](../overview/office-add-ins-fundamentals.md)
+- [Principais conceitos dos Suplementos do Office](../overview/core-concepts-office-add-ins.md)
+- [Desenvolver Suplementos do Office ](../develop/develop-overview.md)

@@ -1,15 +1,15 @@
 ---
 title: Criar um suplemento do painel de tarefas do Excel usando o Vue
 description: ''
-ms.date: 09/18/2019
+ms.date: 12/24/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: bcd4f84ce6d09db813c643d2cac8fcc5ce5f76c3
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: a8ba3ba1c401e1433eb5be121ea37b053b1a4896
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035298"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851324"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>Criar um suplemento do painel de tarefas do Excel usando o Vue
 
@@ -213,7 +213,9 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Excel us
 
 ## <a name="see-also"></a>Confira também
 
-* [Tutorial de suplemento do Excel](../tutorials/excel-tutorial-create-table.md)
+* [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
+* [Criando Suplementos do Office ](../overview/office-add-ins-fundamentals.md)
+* [Desenvolver Suplementos do Office ](../develop/develop-overview.md)
 * [Conceitos fundamentais de programação com a API JavaScript do Excel](../excel/excel-add-ins-core-concepts.md)
 * [Exemplos de código do suplemento do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Referência da API JavaScript do Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)

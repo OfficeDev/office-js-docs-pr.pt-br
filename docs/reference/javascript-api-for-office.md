@@ -1,45 +1,137 @@
 ---
-title: API JavaScript para Office
-description: ''
-ms.date: 05/13/2019
+layout: LandingPage
+ms.topic: landing-page
+title: Documentação de Referência da API JavaScript do Office
+description: Saiba mais sobre as APIs JavaScript do Office.
+ms.date: 12/24/2019
 localization_priority: Priority
-ms.openlocfilehash: 8d834aee4c21448210d9619fedd42d5ebb79e09d
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: c10eeb5c89a74b28e9af44bf72b20a7ad610738b
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575321"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851548"
 ---
-# <a name="javascript-api-for-office"></a>API JavaScript para Office
+# <a name="api-reference-documentation"></a>Documentação de referência da API
 
-A API JavaScript para Office permite que você crie aplicativos Web que interajam com os modelos de objeto em aplicativos host do Office. Seu aplicativo fará referência à biblioteca office.js, que é um carregador de script. A biblioteca office.js carrega os modelos de objeto que são aplicáveis ao aplicativo do Office em execução no suplemento. Você pode usar os seguintes modelos de objeto JavaScript:
+Um suplemento pode usar as APIs de JavaScript do Office para interagir com objetos em aplicativos de host do Office. 
 
-- **APIs comuns**: APIs introduzidas com o **Office 2013**. Elas são carregadas em **todos os aplicativos host do Office** e conectam seu aplicativo de suplemento com o aplicativo cliente do Office. O modelo de objeto contém APIs específicas aos clientes do Office e APIs aplicáveis a vários aplicativos host de clientes do Office. Todo esse conteúdo está na **API Comum**. Este modelo de objeto usa retornos de chamada. 
+<ul>
+    <li>As APIs<b>Específicas do host </b> fornecem objetos fortemente tipados que podem ser usados para interagir com objetos que são nativos de um aplicativo do Office específico.</li>
+    <li>As APIs<b> Comuns</b> pode ser usada para acessar recursos como interface de usuário, caixas de diálogo e configurações de cliente, que são comuns entre vários tipos de aplicativos do Office.</li>
+</ul>
 
-  O **Outlook** também usa a sintaxe da API Comum. Todo o conteúdo sob o alias Office contém objetos que você pode usar para gravar scripts que interagem com o conteúdo em documentos, planilhas, apresentações, itens de email e projetos do Office a partir de seus suplementos do Office. Você deve usar essas APIs Comuns se o seu suplemento servir para o Office 2013 e versões posteriores. Este modelo de objeto usa retornos de chamada.
+Você deve usar APIs específicas do host sempre que possível e usar APIs comuns somente para cenários que não têm suporte em APIs específicas do host. Para obter informações mais detalhadas sobre esses dois modelos de API, confira <a href="../overview/office-add-ins-fundamentals.md#api-models">criação de Suplementos do Office</a>.
 
-- **APIs específicas de host**: APIs introduzidas com o **Office 2016**. Este modelo de objeto fornece objetos fortemente tipados e específicos do host que correspondem aos objetos familiares exibidos quando você usa os clientes do Office, e representa o futuro das APIs JavaScript para Office. As APIs JavaScript específicas do host estão atualmente disponíveis para Excel, OneNote, PowerPoint e Word.
+<h2>Referência da API</h2>
 
-## <a name="supported-host-applications"></a>Aplicativos host compatíveis
+<ul class="panelContent cardsF cols cols3">
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <a href="/javascript/api/excel"><img src="../images/index/logo-excel.svg" alt="Excel API reference docs" /></a>
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Referência da API do Excel</h3>
+                        <p><a href="/javascript/api/excel"> APIs do JavaScript para criar suplementos do Excel.</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <a href="/javascript/api/outlook"><img src="../images/index/logo-outlook.svg" alt="Outlook API reference docs" /></a>
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Referência da API do Outlook</h3>
+                        <p><a href="/javascript/api/outlook"> APIs do JavaScript para criar suplementos do Outlook.</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <a href="/javascript/api/word"><img src="../images/index/logo-word.svg" alt="Word API reference docs" /></a>
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Referência de API do Word</h3>
+                        <p><a href="/javascript/api/word"> APIs do JavaScript para criar suplementos do Word.</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <a href="/javascript/api/powerpoint"><img src="../images/index/logo-powerpoint.svg" alt="PowerPoint API reference docs" /></a>
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Referência do API do PowerPoint</h3>
+                        <p><a href="/javascript/api/powerpoint"> APIs do JavaScript para criar suplementos do PowerPoint.</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <a href="/javascript/api/onenote"><img src="../images/index/logo-onenote.svg" alt="OneNote API reference docs" /></a>
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Referência da API do OneNote</h3>
+                        <p><a href="/javascript/api/onenote"> APIs do JavaScript para criar suplementos do OneNote.</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <a href="/javascript/api/office"><img src="../images/index-landing-page/i_code-blocks.svg" alt="reference docs" /></a>
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Referência da API comum</h3>
+                        <p><a href="/javascript/api/office">APIs do JavaScript que podem ser usadas por qualquer suplemento do Office.</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
 
-- [Excel](overview/excel-add-ins-reference-overview.md)
-- [OneNote](overview/onenote-add-ins-javascript-reference.md)
-- [Outlook](requirement-sets/outlook-api-requirement-sets.md)
-- [PowerPoint](overview/powerpoint-add-ins-reference-overview.md)
-- [Project](overview/project-add-ins-reference-overview.md)
-- [Visio](overview/visio-javascript-reference-overview.md)
-- [Word](overview/word-add-ins-reference-overview.md)
-- [API Comum](requirement-sets/office-add-in-requirement-sets.md)
+<b>Observação</b>: atualmente, não há nenhuma API JavaScript específica do host para o Project. Você usará APIs comuns para criar suplementos de Project. Além disso, a API específica do host para o PowerPoint tem um escopo muito limitado. Você usará principalmente APIs comuns para criar suplementos do PowerPoint.
 
-> [!NOTE] 
-> O [Project](overview/project-add-ins-reference-overview.md) oferece suporte a suplementos feitos com a API JavaScript, mas não há nenhuma API JavaScript projetada especificamente para interagir com o Project. Você pode usar a API comum para criar suplementos do Project.
-
-Saiba mais sobre [hosts suportados e outros requisitos](../concepts/requirements-for-running-office-add-ins.md).
-
-## <a name="open-api-specifications"></a>Especificações abertas da API
+<h2>Especificações abertas da API</h2>
 
 À medida que criamos e desenvolvemos novas APIs para suplementos do Office, nós as disponibilizamos em nossa página [Especificações abertas da API](openspec/openspec.md) a fim de obter os seus comentários. Descubra quais novos recursos estão no pipeline e forneça comentários sobre nossas especificações de design.
-
-## <a name="see-also"></a>Confira também
-
-- [Referência da API JavaScript do Office](/javascript/api/overview/office)

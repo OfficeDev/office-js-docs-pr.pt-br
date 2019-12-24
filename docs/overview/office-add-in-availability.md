@@ -3,12 +3,12 @@ title: Disponibilidade de host e plataforma para suplementos do Office
 description: Conjuntos de requisitos com suporte para o Excel, OneNote, Outlook, PowerPoint, Project e Word.
 ms.date: 11/15/2019
 localization_priority: Priority
-ms.openlocfilehash: ecb906e595c08b973b5146416a5317d59547ed39
-ms.sourcegitcommit: e56bd8f1260c73daf33272a30dc5af242452594f
+ms.openlocfilehash: 956ee6b8a9e990a3d6d942ee4a65a1e9275ea025
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "38757482"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851366"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilidade de host e plataforma para suplementos do Office
 
@@ -960,10 +960,11 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
 - [Versões do Office e conjuntos de requisitos](../develop/office-versions-and-requirement-sets.md)
 - [Conjuntos de requisitos comuns da API](../reference/requirement-sets/office-add-in-requirement-sets.md)
 - [Conjuntos de requisitos dos comandos de suplemento](../reference/requirement-sets/add-in-commands-requirement-sets.md)
-- [Referência da API JavaScript do Office](../reference/javascript-api-for-office.md)
+- [Documentação de Referência da API](../reference/javascript-api-for-office.md)
 - [Histórico de atualizações do Office 365 ProPlus](/officeupdates/update-history-office365-proplus-by-date)
 - [Histórico de atualizações do Office 2016 e 2019 (Clique para Executar)](/officeupdates/update-history-office-2019)
 - [Histórico de atualizações do Office 2013 (clique para executar)](/officeupdates/update-history-office-2013)
 - [Histórico de atualizações do Office 2010, 2013, e 2016 (MSI)](/officeupdates/office-updates-msi)
 - [Histórico de atualizações do Outlook 2010, 2013, e 2016 (MSI)](/officeupdates/outlook-updates-msi)
 - [Histórico de atualizações do Office para Mac](/officeupdates/update-history-office-for-mac)
+- [Criando Suplementos do Office ](../overview/office-add-ins-fundamentals.md)

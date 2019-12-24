@@ -5,12 +5,12 @@ ms.date: 11/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: bb4ca1de1b99ca66b716810dedf01506fb60ebe7
-ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
+ms.openlocfilehash: c8b0953655039556936c631926ed2713bdb62c57
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "38001492"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851394"
 ---
 # <a name="word-add-ins-overview"></a>Visão geral dos suplementos do Word
 
@@ -58,7 +58,7 @@ Você pode usar dois conjuntos de APIs JavaScript para interagir com metadados e
 
 O segundo é a [API JavaScript do Word](/javascript/api/word). Este é um modelo de objeto fortemente tipado que você pode usar para criar suplementos do Word que se destinam ao Word 2016 para Mac e Windows. Este modelo de objeto usa promessas e fornece acesso a objetos específicos do Word como [corpo](/javascript/api/word/word.body), [controles de conteúdo](/javascript/api/word/word.contentcontrol), [imagens embutidas](/javascript/api/word/word.inlinepicture) e [parágrafos](/javascript/api/word/word.paragraph). A API JavaScript do Word inclui definições do TypeScript e arquivos vsdoc para que você possa obter dicas de código em seu IDE.
 
-Atualmente, todos os clientes do Word oferecem suporte à API JavaScript para Office compartilhada, e a maioria dos clientes oferece suporte à API JavaScript do Word. Para obter detalhes sobre clientes com suporte, consulte a [visão geral da API do JavaScript do Office](../reference/javascript-api-for-office.md).
+Atualmente, todos os clientes do Word são compatíveis com a API do JavaScript para Office compartilhada, e a maioria dos clientes é compatível com a API do JavaScript do Word. Para obter detalhes sobre clientes compatíveis, consulte a [visão geral da API do JavaScript do Office](../overview/office-add-in-availability.md).
 
 Recomendamos que você comece com a API JavaScript do Word porque o modelo de objeto é mais fácil de usar. Use a API JavaScript do Word se precisar:
 
@@ -84,6 +84,6 @@ Depois de desenvolver seu suplemento, é possível [publicá-lo](../publish/publ
 
 ## <a name="see-also"></a>Confira também
 
-* [Documentação de suplementos do Word](index.md)
+* [Criando Suplementos do Office ](../overview/office-add-ins-fundamentals.md)
 * [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
 * [Referências da API JavaScript do Word](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)

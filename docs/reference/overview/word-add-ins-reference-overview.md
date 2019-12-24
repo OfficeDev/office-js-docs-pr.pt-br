@@ -4,12 +4,12 @@ description: ''
 ms.date: 07/05/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: fbc9e8293642d1ab8edf32d568a5dab7ef77a8f0
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: 6728c7491d84f2bc044f7e5a3199ad6d90979628
+ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575622"
+ms.lasthandoff: 12/23/2019
+ms.locfileid: "40851254"
 ---
 # <a name="word-javascript-api-overview"></a>Visão geral da API JavaScript do Word
 
@@ -19,7 +19,7 @@ Um suplemento do Word interage com objetos no Word usando a API JavaScript para 
 
 * **APIs Comuns**: Introduzida com o Office 2013, a [API Comum](/javascript/api/office) pode ser usada para acessar recursos como interface de usuário, caixas de diálogo e configurações de cliente, que são comuns entre vários tipos de aplicativos do Office.
 
-Esta seção da documentação concentra-se na API JavaScript do Word, que você usará para desenvolver a maior parte da funcionalidade em suplementos direcionados para o Word na Web ou para o Word 2016 ou posterior. Para saber mais sobre a API comum, confira [API do JavaScript para Office](../javascript-api-for-office.md). 
+Esta seção da documentação concentra-se na API JavaScript do Word, que você usará para desenvolver a maior parte da funcionalidade em suplementos direcionados para o Word na Web ou para o Word 2016 ou posterior. Para saber mais sobre a API comum, confira [ modelo de objeto de API do JavaScript para Office](../../develop/office-javascript-api-object-model.md). 
 
 ## <a name="learn-programming-concepts"></a>Aprenda conceitos de programação
 
