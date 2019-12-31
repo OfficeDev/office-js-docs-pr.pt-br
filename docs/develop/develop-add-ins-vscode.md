@@ -1,21 +1,21 @@
 ---
 title: Desenvolver Suplementos do Office com o Código do Visual Studio
 description: Como desenvolver Suplementos do Office com o Código do Visual Studio
-ms.date: 12/02/2019
+ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: a18d8a74ff269b32e83c836b06629850873e507b
-ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
+ms.openlocfilehash: d6c6cafb28c12b2beb07f0b0cc30d8159e1df1b2
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "39670475"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914858"
 ---
 # <a name="develop-office-add-ins-with-visual-studio-code"></a>Desenvolver Suplementos do Office com o Código do Visual Studio
 
 Este artigo descreve como usar [o Código do Visual Studio (VS Code)](https://code.visualstudio.com) para desenvolver um suplemento do Office.
 
 > [!NOTE]
-> Para saber mais sobre como usar o Visual Studio para criar um Suplemento do Office, confira [Criar e depurar suplementos do Office no Visual Studio](create-and-debug-office-add-ins-in-visual-studio.md).
+> Para saber mais sobre como usar o Visual Studio para criar um suplemento do Office, confira [Desenvolver suplementos do Office com o Visual Studio](develop-add-ins-visual-studio.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -48,7 +48,9 @@ Os métodos para testar, depurar e solucionar problemas de Suplementos do Office
 
 ## <a name="see-also"></a>Confira também
 
-- [Início rápido em 5 minutos](../index.md)
-- [Explorar a API JavaScript do Office usando o Script Lab](../overview/explore-with-script-lab.md).
+- [Criando Suplementos do Office ](../overview/office-add-ins-fundamentals.md)
+- [Principais conceitos dos Suplementos do Office](../overview/core-concepts-office-add-ins.md)
+- [Desenvolver Suplementos do Office](../develop/develop-overview.md)
+- [Fazer o design de Suplementos do Office](../design/add-in-design.md)
 - [Testar e depurar Suplementos do Office](../testing/test-debug-office-add-ins.md)
-- [Implantar e publicar seu suplemento do Office](../publish/publish.md)
+- [Publicar Suplementos do Office](../publish/publish.md)

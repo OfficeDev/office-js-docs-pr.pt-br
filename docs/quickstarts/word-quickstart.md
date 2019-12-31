@@ -1,15 +1,15 @@
 ---
 title: Crie seu primeiro suplemento do painel de tarefas do Word
 description: Saiba como criar um suplemento do painel de tarefas do Word simples usando a API JS do Office.
-ms.date: 12/24/2019
+ms.date: 12/31/2019
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 039348503d75746bf30da253e84402e128006497
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 7a253f884f509cc933b02c86d4d3d6d16c0ca114
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851331"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914920"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do Word
 
@@ -87,6 +87,10 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 4. Na parte inferior do painel de tarefas, escolha o link **Executar** para inserir o texto «Olá, Mundo» no documento com a fonte azul.
 
     ![Captura de tela do aplicativo Word com o suplemento do painel de tarefas carregado](../images/word-quickstart-addin-1c.png)
+
+### <a name="next-steps"></a>Próximas etapas
+
+Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em seguida, saiba mais sobre os recursos de um suplemento do Word e crie um suplemento mais complexo seguindo as etapas deste [tutorial de suplemento do Word](../tutorials/word-tutorial.md).
 
 # <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)
 
@@ -301,14 +305,11 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 
     ![Captura de tela do aplicativo Word com o suplemento de texto clichê carregado](../images/word-quickstart-addin-1b.png)
 
+### <a name="next-steps"></a>Próximas etapas
+
+Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em seguida, saiba mais sobre como [desenvolver suplementos do Office com o Visual Studio](../develop/develop-add-ins-visual-studio.md).
+
 ---
-
-## <a name="next-steps"></a>Próximas etapas
-
-Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em seguida, saiba mais sobre os recursos de um suplemento do Word e crie um suplemento mais complexo seguindo as etapas deste tutorial de suplemento do Word.
-
-> [!div class="nextstepaction"]
-> [Tutorial de suplemento do Word](../tutorials/word-tutorial.md)
 
 ## <a name="see-also"></a>Confira também
 

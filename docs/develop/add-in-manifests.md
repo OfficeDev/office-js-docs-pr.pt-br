@@ -1,14 +1,14 @@
 ---
 title: Manifesto XML dos Suplementos do Office
 description: ''
-ms.date: 09/26/2019
+ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: 07c8a563eb04ac4b707357f1e7ff43d9a8f2e761
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 1d130d041819ce7e65046b9cda84fc645bed2c51
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851275"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914990"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifesto XML dos Suplementos do Office
 
@@ -486,9 +486,9 @@ As seções a seguir mostram exemplos de arquivos XML de manifesto v1.1 para sup
 
 ---
 
-## <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>Validar e solucionar problemas com seu manifesto
+## <a name="validate-an-office-add-ins-manifest"></a>Validar o manifesto de suplemento do Office
 
-Para solucionar problemas com seu manifesto, confira [Validar e solucionar problemas com seu manifesto](../testing/troubleshoot-manifest.md). Lá, você encontrará informações sobre como validar o manifesto em relação à [Definição de esquema XML (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas) e também como usar o log de tempo de execução para depurar o manifesto.
+Para saber mais sobre como validar um manifesto em relação à [Definição do Esquema XML (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas), confira [Validar o manifesto de suplemento do Office](../testing/troubleshoot-manifest.md).
 
 ## <a name="see-also"></a>Confira também
 
@@ -500,6 +500,6 @@ Para solucionar problemas com seu manifesto, confira [Validar e solucionar probl
 * [Atualizar a versão da API e do manifesto](update-your-javascript-api-for-office-and-manifest-schema-version.md)
 * [Identificar um suplemento COM equivalente](make-office-add-in-compatible-with-existing-com-add-in.md)
 * [Solicitar permissões para uso da API em suplementos ](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
-* [Validar e solucionar problemas com seu manifesto](../testing/troubleshoot-manifest.md)
+* [Validar o manifesto de suplemento do Office](../testing/troubleshoot-manifest.md)
 
 [Comandos de suplemento]: create-addin-commands.md

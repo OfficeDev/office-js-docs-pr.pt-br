@@ -3,12 +3,12 @@ title: Criando Suplementos do Office
 description: Uma introdução ao desenvolvimento de Suplementos do Office.
 ms.date: 12/24/2019
 localization_priority: Priority
-ms.openlocfilehash: e8e0b3b1ff5578ce75b56534f90be39d4b63d9f5
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: e0deeebb3a1c8761217a9fe33a3ef04a945b2cff
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851680"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40915018"
 ---
 # <a name="building-office-add-ins"></a>Criando Suplementos do Office
 
@@ -33,11 +33,11 @@ O [Gerador Yeoman para suplementos do Office](https://github.com/officedev/gener
 - Word
 - Funções personalizadas do Excel
 
-Você pode optar por criar o projeto usando HTML, CSS e JavaScript ou usando o Angular ou React. Para qualquer estrutura escolhida, você pode escolher entre o JavaScript e o Typescript também. Cada [início rápido de 5 minutos](../index.md) contém as instruções passo a passo que descrevem como criar um suplemento do Office usando o gerador Yeoman.
+Você pode optar por criar o projeto usando HTML, CSS e JavaScript ou usando o Angular ou React. Para qualquer estrutura escolhida, você pode escolher entre o JavaScript e o Typescript também. Para saber mais sobre como criar suplementos com o gerador Yeoman, confira [Desenvolver Suplementos do Office com o Código do Visual Studio](../develop/develop-add-ins-vscode.md).
 
 ### <a name="visual-studio"></a>Visual Studio
 
-O Visual Studio pode ser usado para criar suplementos do Office para o Excel, Word, PowerPoint ou Outlook. Um projeto do suplemento do Office é criado como parte de uma solução do Visual Studio e usa HTML, CSS e JavaScript. Os [inícios rápidos de 5 minutos](../index.md) do Excel, Word, PowerPoint e Outlook contém instruções passo a passo que descrevem como criar um suplemento do Office usando o Visual Studio. 
+O Visual Studio pode ser usado para criar suplementos do Office para o Excel, Outlook, Word e PowerPoint. Um projeto do suplemento do Office é criado como parte de uma solução do Visual Studio e usa HTML, CSS e JavaScript. Para saber mais sobre como criar suplementos usando o Visual Studio, confira [Desenvolver suplementos do Office com o Visual Studio](../develop/develop-add-ins-visual-studio.md).
 
 [!include[Yeoman vs Visual Studio comparision](../includes/yeoman-generator-recommendation.md)]
 
@@ -164,6 +164,8 @@ Saiba mais sobre o desenvolvimento, testes e publicação de suplementos do Offi
 - [Visão geral da plataforma Suplementos do Office](office-add-ins.md)
 - [Principais conceitos dos Suplementos do Office](../overview/core-concepts-office-add-ins.md)
 - [Desenvolver Suplementos do Office](../develop/develop-overview.md)
+- [Desenvolver Suplementos do Office com o Código do Visual Studio](../develop/develop-add-ins-vscode.md)
+- [Desenvolver Suplementos do Office com o Visual Studio](../develop/develop-add-ins-visual-studio.md)
 - [Fazer o design de Suplementos do Office](../design/add-in-design.md)
 - [Testar e depurar Suplementos do Office](../testing/test-debug-office-add-ins.md)
 - [Publish Office Add-ins](../publish/publish.md)

@@ -3,12 +3,12 @@ title: Solucionar problemas de mensagens de erro no logon único (SSO)
 description: ''
 ms.date: 11/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 0852d70337a3d372ac495824ba2aa50469117f5c
-ms.sourcegitcommit: 21aa084875c9e07a300b3bbe8852b3e5dd163e1d
+ms.openlocfilehash: 835ae68304a6fd69648f0f182c9ff17e9cbfd56d
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "38001478"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914878"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>Solucionar problemas de mensagens de erro no logon único (SSO) (visualização)
 
@@ -64,7 +64,7 @@ Tipo de Usuário não suportado. O usuário não iniciou sessão no Office com u
 
 ### <a name="13004"></a>13004
 
-Recurso inválido. (Esse erro só deve aparecer no desenvolvimento.) O manifesto de suplemento ainda não foi configurado corretamente. Atualize o manifesto. Para obter mais informações, consulte [Validar e solucionar problemas com seu manifesto](../testing/troubleshoot-manifest.md). O problema mais comum é que o elemento **Resource** (no elemento **WebApplicationInfo**) tem um domínio que não corresponde ao domínio do suplemento. Embora a parte do protocolo do valor Resource deva ser “api” e não “https”, todas as outras partes do nome de domínio (incluindo a porta, se houver) devem ser as mesmas para o suplemento.
+Recurso inválido. (Esse erro só deve aparecer no desenvolvimento.) O manifesto de suplemento ainda não foi configurado corretamente. Atualize o manifesto. Para saber mais, confira [Validar o manifesto de suplemento do Office](../testing/troubleshoot-manifest.md). O problema mais comum é que o elemento **Resource** (no elemento **WebApplicationInfo**) tem um domínio que não corresponde ao domínio do suplemento. Embora a parte do protocolo do valor Resource deva ser “api” e não “https”, todas as outras partes do nome de domínio (incluindo a porta, se houver) devem ser as mesmas para o suplemento.
 
 ### <a name="13005"></a>13005
 

@@ -16,4 +16,4 @@ Quando o suplemento estiver funcionando como desejado e você estiver pronto par
 
 3. No VS Code, abra o arquivo de manifesto do suplemento localizado na pasta raiz do projeto (`manifest.xml`). Substitua todas as ocorrências de `https://localhost:3000` pela URL do aplicativo Web implementado no servidor Web na etapa anterior.
 
-4. Escolha o método que você deseja usar para [implantar e publicar o Suplemento do Office](../publish/publish.md) e siga as instruções para publicar o arquivo manifesto.
+4. Escolha o método que deseja usar para [implantar seu suplemento do Office](../publish/publish.md) e siga as instruções para publicar o arquivo de manifesto.

@@ -1,15 +1,15 @@
 ---
 title: Crie seu primeiro suplemento do painel de tarefas do Excel
 description: Saiba como criar um Suplemento do Excel simples usando a API JS do Office.
-ms.date: 12/24/2019
+ms.date: 12/31/2019
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 12eb48fc5f44b506bbce39d01e9bce4ca2a2b5e6
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 5b437791cea2b3f3d534b8c9053224e381f36a9e
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851352"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914948"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Criar um suplemento do painel de tarefas do Excel
 
@@ -64,6 +64,10 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 
     ![Suplemento do Excel](../images/excel-quickstart-addin-3c.png)
 
+### <a name="next-steps"></a>Próximas etapas
+
+Parabéns, você criou com êxito um suplemento do painel de tarefas do Excel! Em seguida, saiba mais sobre os recursos de um suplemento do Excel e crie um suplemento mais complexo seguindo as etapas deste [tutorial de suplemento do Excel](../tutorials/excel-tutorial.md).
+
 # <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)
 
 ### <a name="prerequisites"></a>Pré-requisitos
@@ -71,7 +75,6 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 [!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
 ### <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
-
 
 1. No Visual Studio, escolha **Criar um novo projeto**.
 
@@ -205,14 +208,11 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 
     ![Suplemento do Excel](../images/excel-quickstart-addin-2c.png)
 
+### <a name="next-steps"></a>Próximas etapas
+
+Parabéns, você criou com êxito um suplemento do painel de tarefas do Excel! Em seguida, saiba mais sobre como [desenvolver suplementos do Office com o Visual Studio](../develop/develop-add-ins-visual-studio.md).
+
 ---
-
-## <a name="next-steps"></a>Próximas etapas
-
-Parabéns, você criou com êxito um suplemento do painel de tarefas do Excel! Em seguida, saiba mais sobre os recursos de um suplemento do Excel e crie um suplemento mais complexo seguindo as etapas deste tutorial de suplemento do Excel.
-
-> [!div class="nextstepaction"]
-> [Tutorial de suplemento do Excel](../tutorials/excel-tutorial.md)
 
 ## <a name="see-also"></a>Confira também
 

@@ -1,15 +1,15 @@
 ---
 title: Crie o seu primeiro suplemento do painel de tarefas do PowerPoint
 description: Saiba como criar um Suplemento do PowerPoint simples usando a API JS do Office.
-ms.date: 12/24/2019
+ms.date: 12/31/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: fbf8ca6c52bd5a71f3db24d9661d7cce5f6004d2
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 56168749b907cdde3b9ea235d55805e1084f020c
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851345"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914941"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>Crie o seu primeiro suplemento do painel de tarefas do PowerPoint
 
@@ -85,6 +85,10 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 4. Na parte inferior do painel de tarefas, escolha o link **Executar** para inserir o texto «Olá, Mundo» no slide atual.
 
     ![Uma captura de tela do PowerPoint com a imagem de um cachorro e o texto "Olá, mundo" exibidos no slide](../images/powerpoint_quickstart_addin_3c.png)
+
+### <a name="next-steps"></a>Próximas etapas
+
+Parabéns, você criou com êxito um suplemento do painel de tarefas do PowerPoint! Em seguida, saiba mais sobre os recursos de um suplemento do PowerPoint e crie um suplemento mais complexo seguindo as etapas deste [tutorial de suplemento do PowerPoint](../tutorials/powerpoint-tutorial.md).
 
 # <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)
 
@@ -245,14 +249,11 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 
     ![Uma captura de tela do PowerPoint com a imagem de um cachorro e o texto "Olá, mundo" exibidos no slide](../images/powerpoint_quickstart_addin_3.png)
 
+### <a name="next-steps"></a>Próximas etapas
+
+Parabéns, você criou com êxito um suplemento do painel de tarefas do PowerPoint! Em seguida, saiba mais sobre como [desenvolver suplementos do Office com o Visual Studio](../develop/develop-add-ins-visual-studio.md).
+
 ---
-
-## <a name="next-steps"></a>Próximas etapas
-
-Parabéns, você criou com êxito um suplemento do painel de tarefas do PowerPoint! Em seguida, saiba mais sobre os recursos de um suplemento do PowerPoint e crie um suplemento mais complexo seguindo as etapas deste tutorial de suplemento do PowerPoint.
-
-> [!div class="nextstepaction"]
-> [Tutorial de suplemento do PowerPoint](../tutorials/powerpoint-tutorial.md)
 
 ## <a name="see-also"></a>Confira também
 

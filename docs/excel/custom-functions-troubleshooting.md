@@ -1,14 +1,14 @@
 ---
-ms.date: 07/15/2019
+ms.date: 12/31/2019
 description: Solução de problemas comuns em funções personalizadas do Excel.
 title: Solução de problemas das funções personalizadas
 localization_priority: Priority
-ms.openlocfilehash: 0ff10200da86ebecf9bbd6f724ed42d77b8ad293
-ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
+ms.openlocfilehash: 8b26120d193ac084662ff989ac28e0456c98be3f
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "39670171"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40915032"
 ---
 # <a name="troubleshoot-custom-functions"></a>Solução de problemas de funções personalizadas
 
@@ -20,7 +20,7 @@ Para resolver problemas, você pode [habilitar o log de tempo de execução para
 
 ## <a name="enable-runtime-logging"></a>Habilitar o log de tempo de execução
 
-Se estiver testando o suplemento do Office no Windows, você deverá [habilitar o log de tempo de execução](/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in). O log de tempo de execução entrega instruções `console.log` a um arquivo de log separado criado para ajudar você a descobrir problemas. As instruções abrangem vários erros, incluindo os relacionados ao arquivo de manifesto XML do suplemento, condições do tempo de execução ou a instalação de funções personalizadas.  Saiba mais sobre o log de tempo de execução em [Usar o log de tempo de execução para depurar seu suplemento](/office/dev/add-ins/testing/troubleshoot-manifest#use-runtime-logging-to-debug-your-add-in).  
+Se estiver testando o suplemento do Office no Windows, você deverá [habilitar o log do tempo de execução](../testing/runtime-logging.md). O log de tempo de execução entrega instruções `console.log` a um arquivo de log separado criado para ajudar você a descobrir problemas. As instruções abrangem vários erros, incluindo os relacionados ao arquivo de manifesto XML do suplemento, condições do tempo de execução ou a instalação de funções personalizadas. Para saber mais sobre o log do tempo de execução, confira [Depurar seu suplemento com o log do tempo de execução](../testing/runtime-logging.md).
 
 ### <a name="check-for-excel-error-messages"></a>Verificar se há mensagens de erro do Excel
 
@@ -35,7 +35,7 @@ Geralmente, estes erros correspondem aos erros que você já deve estar familiar
 
 ## <a name="clear-the-office-cache"></a>Limpar o cache do Office
 
-Informações sobre funções personalizadas são armazenadas em cache pelo Office. Às vezes, ao desenvolver e recarregar repetidamente um suplemento com funções personalizadas, as suas alterações podem não aparecer. Isso pode ser corrigido limpando o cache do Office. Para mais informações, consulte a seção “Limpar o cache do Office” no artigo [Validar e solucionar problemas com seu manifesto](../testing/troubleshoot-manifest.md#clear-the-office-cache).
+Informações sobre funções personalizadas são armazenadas em cache pelo Office. Às vezes, ao desenvolver e recarregar repetidamente um suplemento com funções personalizadas, as suas alterações podem não aparecer. Isso pode ser corrigido limpando o cache do Office. Para saber mais, confira [Limpar o cache do Office](../testing/clear-cache.md).
 
 ## <a name="common-issues"></a>Problemas comuns
 

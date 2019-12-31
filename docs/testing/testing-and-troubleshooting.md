@@ -1,14 +1,14 @@
 ---
 title: Solucionar erros de usuários com suplementos do Office
 description: ''
-ms.date: 11/26/2019
+ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: fed23cfde1380e7c5728c78c995d3b89d44451f2
-ms.sourcegitcommit: 05a883a7fd89136301ce35aabc57638e9f563288
+ms.openlocfilehash: 76bb71cebb3c6027ac86e046e1fcfe579b7031c9
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "39629732"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40915011"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Solucionar erros de usuários com suplementos do Office
 
@@ -66,7 +66,7 @@ Verifique se as atualizações mais recentes do Office foram instaladas ou baixe
 
 ## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>Não é possível carregar o suplemento no painel de tarefas ou outros problemas relacionados ao manifesto do suplemento
 
-Confira [Validar e solucionar problemas com seu manifesto](troubleshoot-manifest.md) para depurar problemas do manifesto de suplemento.
+Confira [Validar o manifesto de suplemento do Office](troubleshoot-manifest.md) e [Depurar seu suplemento com o log do tempo de execução](runtime-logging.md) para depurar problemas de manifesto de suplemento.
 
 
 ## <a name="add-in-dialog-box-cannot-be-displayed"></a>Não é possível exibir a caixa de diálogo do suplemento
@@ -143,4 +143,5 @@ del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC
 - [Depurar suplementos no Office na Web](debug-add-ins-in-office-online.md) 
 - [Realizar sideload de um suplemento do Office no iPad e no Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  
 - [Depurar suplementos do Office no iPad e no Mac](debug-office-add-ins-on-ipad-and-mac.md)  
-- [Validar e solucionar problemas com seu manifesto](troubleshoot-manifest.md)
+- [Validar o manifesto de suplemento do Office](troubleshoot-manifest.md)
+- [Depurar seu suplemento com o log do tempo de execução](runtime-logging.md)
