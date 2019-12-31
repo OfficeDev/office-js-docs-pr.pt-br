@@ -3,23 +3,23 @@ title: Obter o JavaScript IntelliSense no Visual Studio 2019
 description: ''
 ms.date: 10/11/2019
 localization_priority: Priority
-ms.openlocfilehash: afe2890015c853c2b70a00d94ea1b6a49296a14a
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 26fd5b4bff2e244d84f2f8c40e3da7049189aadf
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626779"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40914885"
 ---
-# <a name="get-javascript-intellisense-in-visual-studio-2019"></a><span data-ttu-id="1de5a-102">Obter o JavaScript IntelliSense no Visual Studio 2019</span><span class="sxs-lookup"><span data-stu-id="1de5a-102">Get JavaScript IntelliSense in Visual Studio</span></span>
+# <a name="get-javascript-intellisense-in-visual-studio-2019"></a><span data-ttu-id="a85d0-102">Obter o JavaScript IntelliSense no Visual Studio 2019</span><span class="sxs-lookup"><span data-stu-id="a85d0-102">Get JavaScript IntelliSense in Visual Studio 2019</span></span>
 
-<span data-ttu-id="1de5a-p101">Ao usar o Visual Studio 2019 para desenvolver Suplementos do Office, você pode usar o JSDoc para habilitar o IntelliSense para as variáveis, os objetos, os parâmetros e os valores de retorno de JavaScript. Este artigo fornece uma visão geral do JSDoc e como usá-lo para criar IntellSense no Visual Studio. Confira mais detalhes em [JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense) e [Suporte ao JSDoc no JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript).</span><span class="sxs-lookup"><span data-stu-id="1de5a-p101">When you use Visual Studio 2017 to develop Office Add-ins, you can use JSDoc to enable IntelliSense for your JavaScript variables, objects, parameters, and return values. This article provides an overview of JSDoc and how you can use it to create IntellSense in Visual Studio. For more details, see [JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense) and [JSDoc support in JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript).</span></span> 
+<span data-ttu-id="a85d0-p101">Ao usar o Visual Studio 2019 para desenvolver Suplementos do Office, você pode usar o JSDoc para habilitar o IntelliSense para as variáveis, os objetos, os parâmetros e os valores de retorno de JavaScript. Este artigo fornece uma visão geral do JSDoc e como usá-lo para criar IntellSense no Visual Studio. Confira mais detalhes em [JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense) e [Suporte ao JSDoc no JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript).</span><span class="sxs-lookup"><span data-stu-id="a85d0-p101">When you use Visual Studio 2019 to develop Office Add-ins, you can use JSDoc to enable IntelliSense for your JavaScript variables, objects, parameters, and return values. This article provides an overview of JSDoc and how you can use it to create IntellSense in Visual Studio. For more details, see [JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense) and [JSDoc support in JavaScript](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript).</span></span> 
 
-## <a name="officejs-type-definitions"></a><span data-ttu-id="1de5a-106">Definições de tipo do Office.js</span><span class="sxs-lookup"><span data-stu-id="1de5a-106">Office.js type definitions</span></span>
+## <a name="officejs-type-definitions"></a><span data-ttu-id="a85d0-106">Definições de tipo do Office.js</span><span class="sxs-lookup"><span data-stu-id="a85d0-106">Office.js type definitions</span></span>
 
-<span data-ttu-id="1de5a-p102">Você precisa fornecer as definições dos tipos no Office.js para o Visual Studio. Para fazer isso, é possível:</span><span class="sxs-lookup"><span data-stu-id="1de5a-p102">You need to provide the definitions of the types in Office.js to Visual Studio. To do this, you can:</span></span>
+<span data-ttu-id="a85d0-p102">Você precisa fornecer as definições dos tipos no Office.js para o Visual Studio. Para fazer isso, é possível:</span><span class="sxs-lookup"><span data-stu-id="a85d0-p102">You need to provide the definitions of the types in Office.js to Visual Studio. To do this, you can:</span></span>
 
-- <span data-ttu-id="1de5a-p103">Ter uma cópia local dos arquivos Office.js em uma pasta em sua solução denominada `\Office\1\`. Os modelos de projeto de Suplemento do Office no Visual Studio adicionam essa cópia local quando você cria o projeto de um suplemento.</span><span class="sxs-lookup"><span data-stu-id="1de5a-p103">Have a local copy of the Office.js files in a folder in your solution named `\Office\1\`. The Office Add-in project templates in Visual Studio add this local copy when you create an add-in project.</span></span> 
-- <span data-ttu-id="1de5a-p104">Use a versão online do Office.js adicionando um arquivo tsconfig.json à raiz do projeto de aplicativo da Web na solução do suplemento. O arquivo deve incluir o seguinte conteúdo:</span><span class="sxs-lookup"><span data-stu-id="1de5a-p104">Use an online version of Office.js by adding a tsconfig.json file to the root of the web application project in the add-in solution. The file should include the following content.</span></span>
+- <span data-ttu-id="a85d0-p103">Ter uma cópia local dos arquivos Office.js em uma pasta em sua solução denominada `\Office\1\`. Os modelos de projeto de Suplemento do Office no Visual Studio adicionam essa cópia local quando você cria o projeto de um suplemento.</span><span class="sxs-lookup"><span data-stu-id="a85d0-p103">Have a local copy of the Office.js files in a folder in your solution named `\Office\1\`. The Office Add-in project templates in Visual Studio add this local copy when you create an add-in project.</span></span> 
+- <span data-ttu-id="a85d0-p104">Use a versão online do Office.js adicionando um arquivo tsconfig.json à raiz do projeto de aplicativo da Web na solução do suplemento. O arquivo deve incluir o seguinte conteúdo:</span><span class="sxs-lookup"><span data-stu-id="a85d0-p104">Use an online version of Office.js by adding a tsconfig.json file to the root of the web application project in the add-in solution. The file should include the following content.</span></span>
 
     ```json
         {
@@ -38,11 +38,11 @@ ms.locfileid: "37626779"
         }
     ```
 
-## <a name="jsdoc-syntax"></a><span data-ttu-id="1de5a-113">Sintaxe JSDoc</span><span class="sxs-lookup"><span data-stu-id="1de5a-113">JSDoc syntax</span></span>
+## <a name="jsdoc-syntax"></a><span data-ttu-id="a85d0-113">Sintaxe JSDoc</span><span class="sxs-lookup"><span data-stu-id="a85d0-113">JSDoc syntax</span></span>
 
-<span data-ttu-id="1de5a-p105">A técnica básica é incluir antes da variável (ou do parâmetro e assim por diante) um comentário que identifica seu tipo de dados. Isso permite que o IntelliSense no Visual Studio infira seus membros. Eis alguns exemplos:</span><span class="sxs-lookup"><span data-stu-id="1de5a-p105">The basic technique is to precede the variable (or parameter, and so on) with a comment that identifies its data type. This allows IntelliSense in Visual Studio to infer its members. The following are examples.</span></span>
+<span data-ttu-id="a85d0-p105">A técnica básica é incluir antes da variável (ou do parâmetro e assim por diante) um comentário que identifica seu tipo de dados. Isso permite que o IntelliSense no Visual Studio infira seus membros. Eis alguns exemplos:</span><span class="sxs-lookup"><span data-stu-id="a85d0-p105">The basic technique is to precede the variable (or parameter, and so on) with a comment that identifies its data type. This allows IntelliSense in Visual Studio to infer its members. The following are examples.</span></span>
 
-### <a name="variable"></a><span data-ttu-id="1de5a-117">Variável</span><span class="sxs-lookup"><span data-stu-id="1de5a-117">Variable</span></span>
+### <a name="variable"></a><span data-ttu-id="a85d0-117">Variável</span><span class="sxs-lookup"><span data-stu-id="a85d0-117">Variable</span></span>
 
 ```js
 /** @type {Excel.Range} */
@@ -50,7 +50,7 @@ var subsetRange;
 ```
 ![IntelliSense para variável](../images/intellisense-vs17-var.png)
 
-### <a name="parameter"></a><span data-ttu-id="1de5a-119">Parâmetro</span><span class="sxs-lookup"><span data-stu-id="1de5a-119">Parameter</span></span>
+### <a name="parameter"></a><span data-ttu-id="a85d0-119">Parâmetro</span><span class="sxs-lookup"><span data-stu-id="a85d0-119">Parameter</span></span>
 
 ```js
 /** @param {Word.ParagraphCollection} paragraphs */
@@ -60,7 +60,7 @@ function myFunc(paragraphs){
 ```
 ![IntelliSense para parâmetro](../images/intellisense-vs17-param.png)
 
-### <a name="return-value"></a><span data-ttu-id="1de5a-121">Valor de retorno</span><span class="sxs-lookup"><span data-stu-id="1de5a-121">Return value</span></span>
+### <a name="return-value"></a><span data-ttu-id="a85d0-121">Valor de retorno</span><span class="sxs-lookup"><span data-stu-id="a85d0-121">Return value</span></span>
 
 ```js
 /** @returns {Word.Range} */
@@ -70,7 +70,7 @@ function myFunc() {
 ```
 ![IntelliSense para valor de retorno](../images/intellisense-vs17-return.png)
 
-### <a name="complex-types"></a><span data-ttu-id="1de5a-123">Tipos complexos</span><span class="sxs-lookup"><span data-stu-id="1de5a-123">Complex types</span></span>
+### <a name="complex-types"></a><span data-ttu-id="a85d0-123">Tipos complexos</span><span class="sxs-lookup"><span data-stu-id="a85d0-123">Complex types</span></span>
 
 ```js
 /** @typedef {{range: Word.Range, paragraphs: Word.ParagraphCollection}} MyType
@@ -82,6 +82,7 @@ function myFunc() {
 ```
 ![IntelliSense para tipo complexo](../images/intellisense-vs17-complex-type.png)
 
-## <a name="see-also"></a><span data-ttu-id="1de5a-125">Confira também</span><span class="sxs-lookup"><span data-stu-id="1de5a-125">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a85d0-125">Confira também</span><span class="sxs-lookup"><span data-stu-id="a85d0-125">See also</span></span>
 
-- [<span data-ttu-id="1de5a-126">Criar e depurar suplementos no Visual Studio</span><span class="sxs-lookup"><span data-stu-id="1de5a-126">Create and debug add-ins in Visual Studio</span></span>](create-and-debug-office-add-ins-in-visual-studio.md)
+- [<span data-ttu-id="a85d0-126">Desenvolver Suplementos do Office com o Visual Studio</span><span class="sxs-lookup"><span data-stu-id="a85d0-126">Develop Office Add-ins with Visual Studio Code</span></span>](develop-add-ins-visual-studio.md)
+- [<span data-ttu-id="a85d0-127">Depurar Suplementos do Office no Visual Studio</span><span class="sxs-lookup"><span data-stu-id="a85d0-127">Create and debug Office Add-ins in Visual Studio</span></span>](debug-office-add-ins-in-visual-studio.md)
