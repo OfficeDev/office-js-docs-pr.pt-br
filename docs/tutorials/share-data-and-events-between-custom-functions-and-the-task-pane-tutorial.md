@@ -4,12 +4,12 @@ title: 'Tutorial: compartilhar dados e eventos entre as funções personalizadas
 ms.prod: excel
 description: No Excel, compartilhe dados e eventos entre as funções personalizadas e o painel de tarefas.
 localization_priority: Priority
-ms.openlocfilehash: 714e2645d78293b683a4824b58cb2b9b0b72ebb8
-ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
+ms.openlocfilehash: 16affeb29bd5950198f81f85e44adaf812067829
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "39670199"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814128"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane-preview"></a>Tutorial: compartilhar dados e eventos entre as funções personalizadas do Excel e o painel de tarefas (versão prévia)
 
@@ -204,5 +204,5 @@ Agora que as funções personalizadas são executadas no mesmo contexto que o c�
 Após a inicialização do Excel, você pode usar os botões do painel de tarefas para armazenar ou obter os dados compartilhados. Insira `=CONTOSO.GETVALUE()` em uma célula para que a função personalizada recupere os mesmos dados compartilhados. Ou use `=CONTOSO.STOREVALUE(“new value”)` para alterar os dados compartilhados para um novo valor.
 
 > [!NOTE]
-> A configuração do seu projeto, como mostrado neste artigo, compartilhará o contexto entre as funções personalizadas e o painel de tarefas. Não há suporte para chamar APIs do Office a partir de funções personalizadas. Se você precisar interagir com o documento, implemente chamadas para as APIs do Office no [evento onCalculated](https://docs.microsoft.com/javascript/api/excel/excel.worksheet?view=excel-js-preview#event-details).
+> A configuração do seu projeto, como mostrado neste artigo, compartilhará o contexto entre as funções personalizadas e o painel de tarefas. Não há suporte para chamar APIs do Office a partir de funções personalizadas na visualização.
 

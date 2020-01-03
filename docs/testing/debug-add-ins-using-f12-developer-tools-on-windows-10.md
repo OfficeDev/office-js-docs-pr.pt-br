@@ -1,30 +1,33 @@
 ---
 title: Depurar suplementos usando as ferramentas de desenvolvedor no Windows 10
-description: ''
-ms.date: 07/01/2019
+description: Depurar suplementos usando as ferramentas de desenvolvedor do Microsoft Edge no Windows 10
+ms.date: 12/16/2019
 localization_priority: Priority
-ms.openlocfilehash: 2e6f3c10aa7e1e08aa6c4bb1b4a7724cc9e6531d
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: dd0f078b1cad0621dc99269b745a326adb69f7d6
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575671"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814469"
 ---
 # <a name="debug-add-ins-using-developer-tools-on-windows-10"></a>Depurar suplementos usando as ferramentas de desenvolvedor no Windows 10
 
 Há ferramentas de desenvolvedor fora dos IDEs disponíveis para ajudá-lo a depurar seus suplementos no Windows 10. Elas são úteis quando você precisa investigar um problema enquanto executa seu suplemento fora do IDE.
 
-A ferramenta que você usa depende se o suplemento está sendo executado no Microsoft Edge ou no Internet Explorer. Isso é determinado pela versão do Windows 10 e a versão do Office que estão instaladas no computador. Para determinar qual navegador está sendo usado em seu computador de desenvolvimento, confira [Navegadores usados pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md). 
-
+A ferramenta que você usa depende se o suplemento está sendo executado no Microsoft Edge ou no Internet Explorer. Isso é determinado pela versão do Windows 10 e a versão do Office que estão instaladas no computador. Para determinar qual navegador está sendo usado em seu computador de desenvolvimento, confira [Navegadores usados pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).
 
 > [!NOTE]
 > As instruções neste artigo não podem ser utilizadas para depurar um suplemento do Outlook que usa Funções Executar. Para depurar um suplemento do Outlook que usa Funções Executar, é recomendável que você anexe ao Visual Studio no modo de script ou outro depurador de scripts.
 
 ## <a name="when-the-add-in-is-running-in-microsoft-edge"></a>Quando o suplemento estiver sendo executado no Microsoft Edge
 
-Quando o suplemento estiver sendo executado, você pode usar o [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab). 
+[!include[Enable debugging on Microsoft Edge DevTools](../includes/enable-debugging-on-edge-devtools.md)]
 
-1. Execute o suplemento. 
+### <a name="debug-using-microsoft-edge-devtools"></a>Depurar usando o Microsoft Edge DevTools
+
+Quando o suplemento estiver sendo executado, você pode usar o [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab).
+
+1. Execute o suplemento.
 
 2. Execute o Microsoft Edge DevTools.
 

@@ -1,14 +1,14 @@
 ---
 title: Autenticar e autorizar com a API da Caixa de Diálogo do Office
 description: ''
-ms.date: 08/07/2019
+ms.date: 12/06/2019
 localization_priority: Priority
-ms.openlocfilehash: 3d61c82f28fd5780176b356e1ab4d394e5fbf8bd
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 7c8e012c2ef74e8a8e92203817b4f5f2eb60bd01
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36302927"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814023"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Autenticar e autorizar com a API da Caixa de Diálogo do Office
 
@@ -74,7 +74,10 @@ Normalmente, as bibliotecas relacionadas à autenticação fornecem um cache na 
 
 Estritamente relacionado a isso está o fato de que uma biblioteca normalmente fornece métodos interativos e "silenciosos" para obter um token. Quando for possível fazer tanto a autenticação quanto as chamadas de dados ao recurso na mesma instância do navegador, o código chamará o método silencioso para obter um token imediatamente antes do código adicionar o token à chamada de dados. O método silencioso procurará por um token não expirado no cache e o retornará, caso haja um. Caso contrário, o método silencioso chamará o método interativo que será redirecionado para o logon do STS. Após a conclusão do logon, o método interativo retorna o token e o armazena na memória. No entanto, quando a API da Caixa de Diálogo do Office está sendo usada, as chamadas de dados do recurso, que chamam o método silencioso, estão na instância do navegador do painel de tarefas. O cache de token da biblioteca não existe nessa instância.
 
-Como alternativa, a instância do navegador da Caixa de Diálogo do suplemento pode chamar diretamente o método interativo da biblioteca. Quando esse método retorna um token, o código deve armazenar explicitamente o token em algum lugar onde a instância do navegador do painel de tarefas pode recuperá-lo, como o Armazenamento Local ou um banco de dados do lado do servidor. Outra opção é passar o token para o painel de tarefas com o método `messageParent`. Essa alternativa só é possível se o método interativo armazenar o token de acesso em um local onde o código possa lê-lo. Às vezes, o método interativo de uma biblioteca é projetado para armazenar o token em uma propriedade particular de um objeto que está inacessível ao código.
+Como alternativa, a instância do navegador da Caixa de Diálogo do suplemento pode chamar diretamente o método interativo da biblioteca. Quando esse método retorna um token, o código deve armazenar explicitamente o token em algum lugar onde a instância do navegador do painel de tarefas pode recuperá-lo, como o Armazenamento Local\* ou um banco de dados do lado do servidor. Outra opção é passar o token para o painel de tarefas com o método `messageParent`. Essa alternativa só é possível se o método interativo armazenar o token de acesso em um local onde o código possa lê-lo. Às vezes, o método interativo de uma biblioteca é projetado para armazenar o token em uma propriedade particular de um objeto que está inacessível ao código.
+
+> [!NOTE]
+> \* Há um bug que afetará sua estratégia de tratamento de tokens. Se o suplemento estiver sendo executado no **Office na Web** nos navegadores Safari ou Edge, o painel de tarefas e a caixa de diálogo não compartilharão o mesmo Armazenamento Local, portanto, ele não poderá ser usado para a comunicação entre eles.
 
 ### <a name="you-usually-cannot-use-the-librarys-auth-context-object"></a>Geralmente, você não pode usar o objeto "contexto de autenticação" da biblioteca
 
@@ -84,16 +87,17 @@ Esses objetos de contexto de autenticação e os métodos que os criam não pode
 
 ### <a name="how-you-can-use-libraries-with-the-office-dialog-api"></a>Como você pode usar as bibliotecas através da API da Caixa de Diálogo do Office
 
-Além dos objetos monolíticos de "contexto de autenticação", a maioria das bibliotecas fornecem APIs em um nível inferior de abstração que permite que o código crie objetos auxiliares menos monolíticos. Por exemplo, [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki#conceptual-documentation) v. 3.x.x tem uma API para construir uma URL de logon e outra API que constrói um objeto AuthResult que contém um token de acesso em uma propriedade que pode ser acessada pelo código. Para obter exemplos de MSAL.NET em um suplemento do Office, confira: [ASP.NET Microsoft Graph no Suplemento do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET) e [ASP.NET Microsoft Graph no Suplemento do Outlook](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET).
+Além dos objetos monolíticos de "contexto de autenticação", a maioria das bibliotecas fornecem APIs em um nível inferior de abstração que permite que o código crie objetos auxiliares menos monolíticos. Por exemplo, [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki#conceptual-documentation) v. 3.x.x tem uma API para construir uma URL de logon e outra API que constrói um objeto AuthResult que contém um token de acesso em uma propriedade que pode ser acessada pelo código. Para obter exemplos de MSAL.NET em um suplemento do Office, confira: [ASP.NET Microsoft Graph no Suplemento do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET) e [ASP.NET Microsoft Graph no Suplemento do Outlook](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET). Para ver um exemplo de como usar o [msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js) em um suplemento, confira [Microsoft Graph React no Suplemento do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React).
 
 Para saber mais sobre as bibliotecas de autenticação e autorização, confira [Microsoft Graph: bibliotecas recomendadas](authorize-to-microsoft-graph-without-sso.md#recommended-libraries-and-samples) e [Outros serviços externos: bibliotecas](auth-external-add-ins.md#libraries).
 
 ## <a name="samples"></a>Exemplos
 
-- [ASP.NET Microsoft Graph no Suplemento do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET): um suplemento com base em ASP.NET (Excel, Word ou PowerPoint) que usa a biblioteca MSAL.NET para efetuar logon e obter um token de acesso para dados do Microsoft Graph.
+- [ASP.NET Microsoft Graph no Suplemento do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET): um suplemento com base em ASP.NET (Excel, Word ou PowerPoint) que usa a biblioteca MSAL.NET e o Fluxo de Código de Autorização para efetuar logon e obter um token de acesso para dados do Microsoft Graph.
 - [ASP.NET Microsoft Graph no Suplemento do Outlook](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET): semelhante a exibida acima, mas o aplicativo do Office sendo o Outlook.
+- [Microsoft Graph React no Suplemento do Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React): um suplemento com base em NodeJS (Excel, Word ou PowerPoint) que usa a biblioteca msal.js e o Fluxo Implícito para efetuar logon e obter um token de acesso para dados do Microsoft Graph.
+
 
 Para saber mais, confira:
 - [Autorizar serviços externos no Suplemento do Office](auth-external-add-ins.md)
 - [Usar a API da Caixa de Diálogo nos suplementos do Office](dialog-api-in-office-add-ins.md)
-

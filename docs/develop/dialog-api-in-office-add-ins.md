@@ -3,12 +3,12 @@ title: Use a API de Caixa de Diálogo em seus Suplementos do Office
 description: ''
 ms.date: 08/07/2019
 localization_priority: Priority
-ms.openlocfilehash: 5cafb2396c92576bd5ac6d6d52105e0bb5ee579d
-ms.sourcegitcommit: 1dc1bb0befe06d19b587961da892434bd0512fb5
+ms.openlocfilehash: 88c7afca2f1e800391443458e0c6f6b930288c44
+ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "36302578"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "40814107"
 ---
 # <a name="use-the-dialog-api-in-your-office-add-ins"></a>Use a API de Caixa de Diálogo em seus Suplementos do Office
 
@@ -329,7 +329,10 @@ Para ver um suplemento de exemplo que manipula erros dessa forma, confira [Exemp
 Às vezes, a página host precisa transmitir informações para a caixa de diálogo. Você pode fazer isso de duas maneiras principais:
 
 - Adicionar parâmetros de consulta à URL que é transmitida para `displayDialogAsync`.
-- Armazenar as informações em outro local que seja acessível para a janela do host e para a caixa de diálogo. As duas janelas não compartilham um armazenamento de sessão comum, mas *se elas tiverem o mesmo domínio* (incluindo o número da porta, se houver algum), compartilharão um [local de armazenamento](https://www.w3schools.com/html/html5_webstorage.asp) comum.
+- Armazenar as informações em outro local que seja acessível para a janela do host e para a caixa de diálogo. As duas janelas não compartilham um armazenamento de sessão comum, mas *se elas tiverem o mesmo domínio* (incluindo o número da porta, se houver algum), compartilharão um [Armazenamento Local](https://www.w3schools.com/html/html5_webstorage.asp) comum.\*
+
+> [!NOTE]
+> \* Há um bug que afetará sua estratégia de tratamento de tokens. Se o suplemento estiver sendo executado no **Office na Web** nos navegadores Safari ou Edge, o painel de tarefas e a caixa de diálogo não compartilharão o mesmo Armazenamento Local, portanto, ele não poderá ser usado para a comunicação entre eles.
 
 ### <a name="use-local-storage"></a>Usar o armazenamento local
 
