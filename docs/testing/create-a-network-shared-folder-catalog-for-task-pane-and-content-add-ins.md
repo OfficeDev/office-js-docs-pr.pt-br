@@ -1,14 +1,14 @@
 ---
 title: Realizar sideload de suplementos do Office para teste
 description: ''
-ms.date: 08/15/2019
+ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: 19cd599ea743fc577a5139d3f278dd3f993ec5b1
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: a30cfeb5af4bccb543e06c20843709083cea21f9
+ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477926"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "40915025"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>Realizar sideload de suplementos do Office para teste
 
@@ -45,7 +45,9 @@ O vídeo a seguir oferece orientações para a realização do processo de sidel
 
 6. Escolha o botão **Fechar** para fechar a caixa de diálogo **Propriedades**.
 
-## <a name="specify-the-shared-folder-as-a-trusted-catalog"></a>Especifique a pasta compartilhada como um catálogo confiável
+## <a name="specify-the-shared-folder-as-a-trusted-catalog"></a>Especifique a pasta compartilhada como um catálogo confiável 
+
+### <a name="configure-the-trust-manually"></a>Configure a confiança manualmente
       
 1. Abra um novo documento no Excel, no Word, no PowerPoint ou no Project.
     
@@ -68,10 +70,43 @@ O vídeo a seguir oferece orientações para a realização do processo de sidel
 8. Escolha o botão **OK** para fechar a janela de diálogo **Opções do Word**.
 
 9. Feche e abra novamente o aplicativo do Office para que as alterações tenham efeito.
+
+### <a name="configure-the-trust-with-a-registry-script"></a>Configurar a confiança com um script de Registro
+
+1. Em um editor de texto, crie um arquivo chamado TrustNetworkShareCatalog.reg. 
+
+2. Adicione o seguinte conteúdo ao arquivo:
+
+    ```
+    Windows Registry Editor Version 5.00
     
+    [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{-random-GUID-here-}]
+    "Id"="{-random-GUID-here-}"
+    "Url"="\\\\-share-\\-folder-"
+    "Flags"=dword:00000001
+    ```
+3. Use uma das várias ferramentas de geração de GUID online, como o [Gerador de GUIDs](https://guidgenerator.com/), para gerar um GUID aleatório e, no arquivo TrustNetworkShareCatalog.reg, substitua a cadeia de caracteres "-random-GUID-here-" *nos dois locais* pelo GUID. (Os símbolos `{}` de delimitação devem permanecer.)
+
+4. Substitua o valor `Url` pelo caminho completo da rede para a pasta que você [compartilhou](#share-a-folder) anteriormente. (Observe que quaisquer caracteres `\` na URL devem ser duplicados.) Se você não conseguiu anotar todo o caminho de rede da pasta ao compartilhar a pasta, você pode obtê-lo na janela de diálogo **Propriedades**, conforme mostrado na captura de tela a seguir. 
+
+    ![caixa de diálogo de Propriedades de pastas com o guia de compartilhamento e o caminho de rede realçado](../images/sideload-windows-properties-dialog-2.png)
+    
+5. Agora o arquivo deve ter a aparência a seguir. Salve-o.
+
+    ```
+    Windows Registry Editor Version 5.00
+    
+    [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{01234567-89ab-cedf-0123-456789abcedf}]
+    "Id"="{01234567-89ab-cedf-0123-456789abcedf}"
+    "Url"="\\\\TestServer\\OfficeAddinManifests"
+    "Flags"=dword:00000001
+    ```
+
+6. Feche *todos* os aplicativos do Office.
+
+7. Execute o TrustNetworkShareCatalog.reg como faria com qualquer arquivo executável, por exemplo, com um clique duplo.
 
 ## <a name="sideload-your-add-in"></a>Realizar o sideload do seu suplemento
-
 
 1. Coloque o arquivo de manifesto XML de qualquer suplemento que você esteja testando no catálogo de pasta compartilhada. Observe que você implanta o próprio aplicativo Web em um servidor Web. Não deixe de especificar a URL no elemento **SourceLocation** do arquivo de manifesto.
 
@@ -86,6 +121,6 @@ O vídeo a seguir oferece orientações para a realização do processo de sidel
 
 ## <a name="see-also"></a>Confira também
 
-- [Validar e solucionar problemas com seu manifesto](troubleshoot-manifest.md)
+- [Validar o manifesto de Suplemento do Office](troubleshoot-manifest.md)
+- [Limpar o cache do Office](clear-cache.md)
 - [Publicar seu Suplemento do Office](../publish/publish.md)
-    
