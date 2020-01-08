@@ -1,16 +1,16 @@
 ---
-ms.date: 09/26/2019
+ms.date: 12/28/2019
 description: Criar funções personalizadas no Excel usando JavaScript.
 title: Criar funções personalizadas no Excel
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 252ff1badd935dda161f474bb7fefa8e782fd1c4
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: 331fe37bdeed55123cb1530f235fc31c00735548
+ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814462"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "40969549"
 ---
 # <a name="create-custom-functions-in-excel"></a>Criar funções personalizadas no Excel 
 
@@ -136,6 +136,8 @@ A marcação XML a seguir mostra um exemplo dos elementos `<ExtensionPoint>` e `
 
 > [!NOTE]
 > Funções do Excel são anexadas ao namespace especificado no seu arquivo de manifesto XML. O namespace da função vem antes do nome da função e são separados por um ponto. Por exemplo, para acionar a função`ADD42` na célula de uma planilha do Excel, você digitaria `=CONTOSO.ADD42`, porque `CONTOSO` é o namespace e `ADD42` é o nome da função especificada no arquivo JSON. O namespace deve ser usado como identificador para o as sua empresa ou suplemento. Um namespace pode conter apenas caracteres alfanuméricos e períodos.
+
+[!include[manifest guidance](../includes/manifest-guidance.md)]
 
 ## <a name="coauthoring"></a>Coautoria
 

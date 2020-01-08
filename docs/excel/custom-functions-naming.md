@@ -1,14 +1,14 @@
 ---
-ms.date: 07/10/2019
+ms.date: 12/28/2019
 description: Saiba mais sobre os nomes de funções personalizadas do Excel e evite armadilhas comuns de nomeação.
 title: Diretrizes de nomenclatura para funções personalizadas no Excel
 localization_priority: Normal
-ms.openlocfilehash: 79d0bfb069fe5abefeb6d0e88428d0728f3869e3
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 547d1edd1a8103afce8b233f77085296cd85642b
+ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771530"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "40969511"
 ---
 # <a name="naming-guidelines"></a>Diretrizes de nomenclatura
 
@@ -50,6 +50,8 @@ Para corrigir um conflito de nomenclatura, altere `name` o em seu suplemento e r
 - Evite abreviações ambíguas em nomes de funções. A clareza é mais importante do que a brevidade. Escolha um nome como `=INCREASETIME` em vez `=INC`de.
 - Use consistentemente os mesmos verbos para funções que executam ações semelhantes. Por exemplo, use `=DELETEZIPCODE` e `=DELETEADDRESS`, em vez `=DELETEZIPCODE` de `=REMOVEADDRESS`e.
 - Ao nomear uma função de streaming, considere adicionar uma nota a esse efeito na descrição da função ou adicionar `STREAM` ao final do nome da função.
+
+[!include[manifest guidance](../includes/manifest-guidance.md)]
 
 ## <a name="localizing-function-names"></a>Localizando nomes de função
 

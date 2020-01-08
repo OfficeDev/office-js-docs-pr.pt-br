@@ -1,14 +1,14 @@
 ---
 title: Problemas de codificação comuns e comportamentos de plataforma inesperados
 description: Uma lista de problemas da plataforma de API JavaScript do Office frequentemente encontrada pelos desenvolvedores.
-ms.date: 12/05/2019
+ms.date: 01/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 4271db2a9c61de419dd36fb0277574ffe0929c58
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: fa33451550ab02f76a8b41ebf682e6a73d2a3a96
+ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814009"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "40969490"
 ---
 # <a name="common-coding-issues-and-unexpected-platform-behaviors"></a>Problemas de codificação comuns e comportamentos de plataforma inesperados
 
@@ -47,15 +47,15 @@ readDocumentFileAsync(): Promise<any> {
 > [!NOTE]
 > A documentação de referência contém a implementação com a promessa do [arquivo. getSliceAsync](/javascript/api/office/office.file#getsliceasync-sliceindex--callback-).
 
-## <a name="some-properties-must-be-set-with-json-structs"></a>Algumas propriedades devem ser definidas com as estruturas JSON
+## <a name="some-properties-cannot-be-set-directly"></a>Algumas propriedades não podem ser definidas diretamente
 
 > [!NOTE]
 > Esta seção só se aplica às APIs específicas do host para Excel e Word.
 
-Algumas propriedades devem ser definidas como estruturas JSON, em vez de definir suas subpropriedades individuais. Um exemplo disso é encontrado no [PageLayout](/javascript/api/excel/excel.pagelayout). A `zoom` propriedade deve ser definida com um único objeto [PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) , conforme mostrado aqui:
+Algumas propriedades não podem ser definidas, apesar de serem graváveis. Essas propriedades fazem parte de uma propriedade pai que deve ser definida como um único objeto. Isso ocorre porque a propriedade Parent depende das subpropriedades que têm relações lógicas específicas. Essas propriedades pai devem ser definidas usando a notação literal de objeto para definir o objeto inteiro, em vez de definir as subpropriedades individuais desse objeto. Um exemplo disso é encontrado no [PageLayout](/javascript/api/excel/excel.pagelayout). A `zoom` propriedade deve ser definida com um único objeto [PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) , conforme mostrado aqui:
 
 ```js
-// PageLayout.zoom must be set with JSON struct representing the PageLayoutZoomOptions object.
+// PageLayout.zoom.scale must be set by assigning PageLayout.zoom to a PageLayoutZoomOptions object.
 sheet.pageLayout.zoom = { scale: 200 };
 ```
 
@@ -68,10 +68,10 @@ Esse comportamento difere das [Propriedades de navegação](../excel/excel-add-i
 range.format.font.size = 10;
 ```
 
-Você pode identificar uma propriedade que deve ter suas subpropriedades definidas com uma estrutura JSON verificando seu modificador somente leitura. Todas as propriedades somente leitura podem ter suas subpropriedades não somente leitura definidas diretamente. Propriedades graváveis como `PageLayout.zoom` devem ser definidas com uma estrutura JSON. Em Resumo:
+Você pode identificar uma propriedade que não pode ter suas subpropriedades definidas diretamente verificando seu modificador somente leitura. Todas as propriedades somente leitura podem ter suas subpropriedades não somente leitura definidas diretamente. Propriedades graváveis como `PageLayout.zoom` devem ser definidas com um objeto nesse nível. Em Resumo:
 
 - Propriedade somente leitura: as subpropriedades podem ser definidas por meio de navegação.
-- Propriedade writable: as subpropriedades devem ser definidas com uma estrutura JSON (e não podem ser definidas por meio de navegação).
+- Propriedade writable: as subpropriedades não podem ser definidas por meio de navegação (devem ser definidas como parte da atribuição de objeto pai inicial).
 
 ## <a name="excel-data-transfer-limits"></a>Limites de transferência de dados do Excel
 

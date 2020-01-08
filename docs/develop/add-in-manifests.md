@@ -1,14 +1,14 @@
 ---
 title: Manifesto XML dos Suplementos do Office
 description: ''
-ms.date: 12/31/2019
+ms.date: 01/06/2020
 localization_priority: Priority
-ms.openlocfilehash: 1d130d041819ce7e65046b9cda84fc645bed2c51
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
+ms.openlocfilehash: 90fef1186db6411290daf9b6aef14d8d81d7a13e
+ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40914990"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "40970087"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifesto XML dos Suplementos do Office
 
@@ -30,6 +30,8 @@ Um arquivo de manifesto XML com base nesse esquema permite que um Suplemento do 
 
 > [!NOTE]
 > Caso pretenda [publicar](../publish/publish.md) o suplemento na experiência do Office depois de criá-lo, verifique se você está em conformidade com as [Políticas de validação do AppSource](/office/dev/store/validation-policies). Por exemplo, para passar na validação, seu suplemento deve funcionar em todas as plataformas com suporte aos métodos que você definir (para mais informações, confira a [seção 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) e a [Página de hospedagem e disponibilidade de suplementos do Office](../overview/office-add-in-availability.md)).
+
+[!include[manifest guidance](../includes/manifest-guidance.md)]
 
 ## <a name="required-elements"></a>Elementos exigidos
 
