@@ -3,12 +3,12 @@ title: Privacidade e segurança para suplementos do Office
 description: ''
 ms.date: 09/26/2019
 localization_priority: Priority
-ms.openlocfilehash: b40b10a0f2475a9013eb4186c852e07bfb60154f
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 88f03bed084484a98d4719fb9caacf174b13acda
+ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851296"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "41110931"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 
@@ -168,7 +168,7 @@ function loadVideoDetails(videoIndex) {
 }
 ```
 
-O Exchange e o SharePoint fornecem proxies do lado do cliente para habilitar o acesso de domínio cruzado. Em geral, a política de mesma origem em uma intranet não é tão estrita como na Internet. Para saber mais, confira [Política de mesma origem, parte 1: sem exibição](https://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx) e [Como lidar com limitações de política de mesma origem nos Suplementos do Office](../develop/addressing-same-origin-policy-limitations.md).
+O Exchange e o SharePoint fornecem proxies do lado do cliente para habilitar o acesso de domínio cruzado. Em geral, a política de mesma origem em uma intranet não é tão estrita como na Internet. Para saber mais, confira [Política de mesma origem, parte 1: sem exibição](/archive/blogs/ieinternals/same-origin-policy-part-1-no-peeking) e [Como lidar com limitações de política de mesma origem nos Suplementos do Office](../develop/addressing-same-origin-policy-limitations.md).
 
 ### <a name="tips-to-prevent-malicious-cross-site-scripting"></a>Dicas para evitar scripts mal-intencionados entre sites
 
@@ -265,6 +265,6 @@ O gerenciamento e a execução das configurações do Office são feitos com as 
 - [Limites de ativação e da API do JavaScript API para suplementos do Outlook](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
 - [Como lidar com limitações de política de mesma origem nos suplementos do Office](/office/dev/add-ins/develop/addressing-same-origin-policy-limitations)
 - [Política de Mesma Origem](https://www.w3.org/Security/wiki/Same_Origin_Policy)
-- [Política de Mesma Origem Parte 1: Sem Inspecionar](https://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)
+- [Política de Mesma Origem Parte 1: Sem Inspecionar](/archive/blogs/ieinternals/same-origin-policy-part-1-no-peeking)
 - [Política de mesma origem para JavaScript](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)
 - [Modo Protegido do IE](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)
