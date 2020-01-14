@@ -3,12 +3,12 @@ title: Office. Context – conjunto de requisitos 1,4
 description: ''
 ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: 160a10cbcfa4ce1e2bac6c37d961a17ef14024f4
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: ffb6bccf35bcd2f485cee0dc59f16a4adf697470
+ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814868"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "41110924"
 ---
 # <a name="context"></a>context
 
@@ -31,7 +31,7 @@ O Office. Context fornece interfaces compartilhadas usadas por suplementos em to
 | [la](#diagnostics-contextinformation) | Escrever<br>Leitura | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.4) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [displayLanguage](#displaylanguage-string) | Escrever<br>Leitura | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [principal](#host-hosttype) | Escrever<br>Leitura | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.4) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [mailbox](office.context.mailbox.md) | Escrever<br>Leitura | [Caixa de Correio](/javascript/api/office/office.mailbox?view=outlook-js-1.4) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [mailbox](office.context.mailbox.md) | Escrever<br>Leitura | [Caixa de Correio](/javascript/api/outlook/office.mailbox?view=outlook-js-1.4) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [plataforma](#platform-platformtype) | Escrever<br>Leitura | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.4) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [atende](#requirements-requirementsetsupport) | Escrever<br>Leitura | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.4) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [roamingSettings](#roamingsettings-roamingsettings) | Escrever<br>Leitura | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.4) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |

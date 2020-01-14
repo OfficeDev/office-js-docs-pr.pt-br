@@ -8,12 +8,12 @@ ms.author: o365devx
 ms.prod: non-product-specific
 ms.date: 12/24/2019
 localization_priority: Normal
-ms.openlocfilehash: 09e07d8fff865969f03f2b0547f04dddb130df6f
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 2e0e8932214f398169f8483b4ca8bf1a65ec16a5
+ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851401"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "41111008"
 ---
 # <a name="office-add-ins-documentation"></a>Documentação de suplementos do Office
 
@@ -51,7 +51,7 @@ Use a plataforma de suplementos do Office para criar soluções que estendem os 
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Criar suplementos do Office</h3>
+                        <h3>Criando Suplementos do Office</h3>
                         <p><a href="overview/office-add-ins-fundamentals.md">Saiba mais sobre a criação de suplementos do Office.</a></p>
                     </div>
                 </div>
@@ -84,6 +84,7 @@ Use a plataforma de suplementos do Office para criar soluções que estendem os 
                             <li><a style="font-size: 1rem;" href="quickstarts/powerpoint-quickstart.md">Início rápido de suplementos do PowerPoint</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/project-quickstart.md">Início rápido de suplementos do Project</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/word-quickstart.md">Início rápido de suplementos do Word</a></li>
+                            <li><a style="font-size: 1rem;" href="quickstarts/sso-quickstart.md">Início rápido de logon único (SSO)</a></li>
                         </ul>
                     </div>
                 </div>
@@ -152,7 +153,7 @@ Use a plataforma de suplementos do Office para criar soluções que estendem os 
                 </div>
             </div>
             <div class="cardText">
-                <h3>Core concepts</h3>
+                <h3>Principais conceitos</h3>
                 <p>Saiba mais sobre a plataforma e conceitos importantes que se aplicam à criação de qualquer suplemento do Office.</p>
             </div>
         </a>

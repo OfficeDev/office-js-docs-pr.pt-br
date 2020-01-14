@@ -3,12 +3,12 @@ title: Estender funções personalizadas com funções definidas pelo usuário X
 description: Habilitar a compatibilidade com as funções definidas pelo usuário do Excel XLL que possuem funcionalidade equivalente às suas funções personalizadas
 ms.date: 07/31/2019
 localization_priority: Normal
-ms.openlocfilehash: a0a98dab1ec046151d2dd0d80a4a3a4542654574
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
+ms.openlocfilehash: d8b5349aecad1bdd6bd9f8e00b6c09bcb0071377
+ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353878"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "41111071"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>Estender funções personalizadas com funções definidas pelo usuário XLL
 
@@ -16,7 +16,7 @@ Se você tiver os XLLs do Excel existentes, poderá criar funções personalizad
 
 > [!NOTE]
 > O suplemento de COM e a compatibilidade do XLL UDF são compatíveis com as seguintes plataformas, quando conectados a uma assinatura do Office 365:
-> - Excel na Web
+> - Excel Online
 > - Excel no Windows (versão 1904 ou posterior)
 > - Excel no Mac (versão 13,329 ou posterior)
 > 
@@ -50,10 +50,6 @@ O exemplo a seguir mostra como especificar um suplemento de COM e um XLL como eq
 > [!NOTE]
 > Se um suplemento declarar suas funções personalizadas para serem compatíveis com XLL, alterar o manifesto posteriormente poderá quebrar a pasta de trabalho de um usuário, pois ele alterará o formato de arquivo.
 
-## <a name="excel-add-in-updates"></a>Atualizações de suplementos do Excel
-
-Depois de especificar um XLL equivalente para seu suplemento do Excel, o Excel interrompe o processamento de atualizações para seu suplemento do Excel. O usuário deve desinstalar o XLL para obter as atualizações mais recentes para o suplemento do Excel.
-
 ## <a name="custom-function-behavior-for-xll-compatible-functions"></a>Comportamento de função personalizada para funções compatíveis com XLL
 
 Quando uma planilha é aberta contendo funções XLL para as quais há também um suplemento equivalente, as funções do XLL são convertidas em funções personalizadas compatíveis com XLL. Na próxima vez que você salvar, eles serão gravados no arquivo em um modo compatível para que eles funcionem com as funções personalizadas do XLL e do suplemento do Excel (quando em outras plataformas).
@@ -62,7 +58,7 @@ A tabela a seguir compara os recursos nas funções de XLL definidas pelo usuár
 
 |         |Função de XLL definida pelo usuário |Funções personalizadas compatíveis com XLL |Função personalizada de suplemento do Excel |
 |---------|---------|---------|---------|
-| Plataformas com suporte | Windows | Windows, macOS, navegador da Web | Windows, macOS, navegador da Web |
+| Plataformas compatíveis | Windows | Windows, macOS, navegador da Web | Windows, macOS, navegador da Web |
 | Formatos de arquivo com suporte | XLSX, XLSB, XLSM, XLS | XLSX, XLSB, XLSM | XLSX, XLSB, XLSM |
 | Preenchimento automático de fórmula | Não | Sim | Sim |
 | Streaming | Possível via xlfRTD e o retorno de chamada XLL. | Não | Sim |
