@@ -1,20 +1,25 @@
 ---
 title: Elemento SupportsSharedFolders no arquivo de manifesto
 description: ''
-ms.date: 10/31/2019
+ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 42fa1cf74634b183994e633d728d3be66e1e83f0
-ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.openlocfilehash: 4ce78d9ece901d8cd6f8639ce7a286f70893a2b4
+ms.sourcegitcommit: dc42e0276007f8ab006028b9cd0cc1526c1bd100
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902239"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "41120604"
 ---
-# <a name="supportssharedfolders-element"></a><span data-ttu-id="b70a5-102">Elemento SupportsSharedFolders</span><span class="sxs-lookup"><span data-stu-id="b70a5-102">SupportsSharedFolders element</span></span>
+# <a name="supportssharedfolders-element"></a><span data-ttu-id="d150e-102">Elemento SupportsSharedFolders</span><span class="sxs-lookup"><span data-stu-id="d150e-102">SupportsSharedFolders element</span></span>
 
-<span data-ttu-id="b70a5-103">Define se o suplemento do Outlook está disponível nos cenários de representante.</span><span class="sxs-lookup"><span data-stu-id="b70a5-103">Defines whether the Outlook add-in is available in delegate scenarios.</span></span> <span data-ttu-id="b70a5-104">O **SupportsSharedFolders** é um elemento filho de [DesktopFormFactor](desktopformfactor.md).</span><span class="sxs-lookup"><span data-stu-id="b70a5-104">The **SupportsSharedFolders** element is a child element of [DesktopFormFactor](desktopformfactor.md).</span></span> <span data-ttu-id="b70a5-105">Ele é definido como *false* por padrão.</span><span class="sxs-lookup"><span data-stu-id="b70a5-105">It is set to *false* by default.</span></span>
+<span data-ttu-id="d150e-103">Define se o suplemento do Outlook está disponível nos cenários de representante.</span><span class="sxs-lookup"><span data-stu-id="d150e-103">Defines whether the Outlook add-in is available in delegate scenarios.</span></span> <span data-ttu-id="d150e-104">O **SupportsSharedFolders** é um elemento filho de [DesktopFormFactor](desktopformfactor.md).</span><span class="sxs-lookup"><span data-stu-id="d150e-104">The **SupportsSharedFolders** element is a child element of [DesktopFormFactor](desktopformfactor.md).</span></span> <span data-ttu-id="d150e-105">Ele é definido como *false* por padrão.</span><span class="sxs-lookup"><span data-stu-id="d150e-105">It is set to *false* by default.</span></span>
 
-<span data-ttu-id="b70a5-106">Veja a seguir um exemplo do elemento **SupportsSharedFolders**.</span><span class="sxs-lookup"><span data-stu-id="b70a5-106">The following is an example of the  **SupportsSharedFolders** element.</span></span>
+> [!IMPORTANT]
+> <span data-ttu-id="d150e-106">Somente o Outlook na Web e o Windows dão suporte ao elemento **SupportsSharedFolders** .</span><span class="sxs-lookup"><span data-stu-id="d150e-106">Only Outlook on the web and Windows support the **SupportsSharedFolders** element.</span></span>
+>
+> <span data-ttu-id="d150e-107">O suporte para este elemento foi introduzido no conjunto de requisitos 1,8.</span><span class="sxs-lookup"><span data-stu-id="d150e-107">Support for this element was introduced in requirement set 1.8.</span></span> <span data-ttu-id="d150e-108">Confira, [clientes e plataformas](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.</span><span class="sxs-lookup"><span data-stu-id="d150e-108">See [clients and platforms](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.</span></span>
+
+<span data-ttu-id="d150e-109">Veja a seguir um exemplo do elemento **SupportsSharedFolders**.</span><span class="sxs-lookup"><span data-stu-id="d150e-109">The following is an example of the  **SupportsSharedFolders** element.</span></span>
 
 ```XML
 ...
