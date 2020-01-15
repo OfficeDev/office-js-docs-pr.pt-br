@@ -3,12 +3,12 @@ title: Depurar suplementos do Office no Visual Studio
 description: Use o Visual Studio para depurar suplementos do Office na área de trabalho do cliente Office no Windows
 ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: 15121834dc53e31c8872b8ff87ce6a1a58608a6f
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
+ms.openlocfilehash: bf8e20891709f8d9d4d4e786976730c58406b803
+ms.sourcegitcommit: dc42e0276007f8ab006028b9cd0cc1526c1bd100
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40915041"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "41120625"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Depurar suplementos do Office no Visual Studio
 
@@ -20,6 +20,8 @@ Este artigo descreve como usar o Visual Studio 2019 para depurar um suplemento d
 ## <a name="enable-debugging-for-add-in-commands-and-ui-less-code"></a>Habilitar a depuração para comandos de suplemento e código sem interface de usuário
 
 Quando o Visual Studio depura o Office no Windows, o suplemento é hospedado na instância do navegador do Microsoft Internet Explorer ou do Microsoft Edge. Para determinar qual navegador está sendo usado em seu computador de desenvolvimento, confira [Navegadores usados pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md).
+> [!NOTE]
+> A variável de ambiente JS_Debug não é mais necessária no procedimento a seguir. Para obter mais informações, confira [Comportamentos de depuração em suplementos Web do Office](https://developercommunity.visualstudio.com/content/problem/740413/office-development-inconsistent-script-debugging-b.html), no fórum de suporte da Comunidade de Desenvolvedores da Microsoft.
 
 [!include[Enable debugging on Microsoft Edge DevTools](../includes/enable-debugging-on-edge-devtools.md)]
 

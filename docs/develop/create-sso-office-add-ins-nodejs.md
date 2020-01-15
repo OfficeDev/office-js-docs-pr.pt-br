@@ -1,23 +1,23 @@
 ---
 title: Crie um Suplemento do Office com Node.js que use logon único
 description: Aprenda a criar um suplemento baseado em node.js que usa o logon único do Office
-ms.date: 11/20/2019
+ms.date: 01/13/2020
 localization_priority: Priority
-ms.openlocfilehash: 362ca4a534800a683284b049e6e53776b1aa7f38
-ms.sourcegitcommit: 013886c1b08ef2b378cf80bb88bc73ec56c3e869
+ms.openlocfilehash: 140a18628ae03d842482721394d976207cb7fa37
+ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "39191736"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "41111064"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Crie um Suplemento do Office com Node.js que use logon único (prévia)
 
 Os usuários podem entrar no Office, e o Suplemento Web do Office pode aproveitar esse processo de entrada para autorizá-los a acessar seu suplemento e o Microsoft Graph sem exigir que os eles entrem uma segunda vez. Para obter uma visão geral, confira o artigo [Habilitar o SSO em um Suplemento do Office](sso-in-office-add-ins.md).
 
-Este artigo apresenta o processo passo a passo de habilitação do logon único (SSO) em um suplemento que foi criado com Node.js e Express.
+Este artigo apresenta o processo passo a passo de habilitação do logon único (SSO) em um suplemento que foi criado com Node.js e Express. Para ler um artigo semelhante sobre um suplemento baseado em ASP.NET, confira [Criar um Suplemento do Office com ASP.NET que usa o logon único](create-sso-office-add-ins-aspnet.md).
 
 > [!NOTE]
-> Para ler um artigo semelhante sobre um suplemento baseado em ASP.NET, confira [Criar um Suplemento do Office com ASP.NET que usa o logon único](create-sso-office-add-ins-aspnet.md).
+> Como alternativa para concluir as etapas descritas neste artigo, você pode usar o gerador Yeoman para criar um Suplemento do Office com Node.js habilitado para SSO. O gerador Yeoman simplifica o processo de criação de um suplemento habilitado para SSO, automatizando as etapas necessárias para configurar o SSO no Azure e gerando o código necessário para um suplemento usar o SSO. Para obter mais informações, confira [Início rápido de logon único (SSO)](../quickstarts/sso-quickstart.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -33,7 +33,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 * Em pelo menos algumas pastas e arquivos armazenados no OneDrive for Business na assinatura do Office 365.
 
-* Um Locatário do Microsoft Azure. Este suplemento requer o Azure Active Directory (AD). O Active AD fornece serviços de identidade que os aplicativos usam para autenticação e autorização. Você pode adquirir uma assinatura de avaliação no [Microsoft Azure](https://account.windowsazure.com/SignUp).
+* Uma assinatura do Microsoft Azure. Este suplemento requer o Azure Active Directory (AD). O Active AD fornece serviços de identidade que os aplicativos usam para autenticação e autorização. Você pode adquirir uma assinatura de avaliação no [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
 ## <a name="set-up-the-starter-project"></a>Configure o projeto inicial
 
@@ -42,7 +42,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     > [!NOTE]
     > Há três versões do exemplo:  
     > * A pasta **Before** (antes) traz um projeto inicial. A interface do usuário e outros aspectos do suplemento que não estão diretamente ligados ao SSO ou à autorização já estão prontos. As próximas seções deste artigo apresentam uma orientação passo a passo para concluir o projeto.
-    > * A versão **Complete** (concluído) do exemplo apresenta como seria o suplemento quando concluídos os procedimentos apresentados neste artigo, com exceção de que o projeto concluído traz comentários de códigos que seriam redundantes neste artigo. Para usar a versão concluída, apenas siga as instruções apresentadas neste artigo, substituindo "Before" por "Completed" e pulando as seções **Codificar o lado do cliente** e Codificar o lado do servidor.
+    > * A versão **Complete** (concluído) do exemplo apresenta como seria o suplemento quando concluídos os procedimentos apresentados neste artigo, com exceção de que o projeto concluído traz comentários de códigos que seriam redundantes neste artigo. Para usar a versão concluída, apenas siga as instruções apresentadas neste artigo, substituindo "Before" por "Completed" e pulando as seções **Codificar o lado do cliente** e **Codificar o lado do servidor**.
     > * A versão **SSOAutoSetup** é um exemplo concluído que automatiza a maioria das etapas para registrar o suplemento com o Azure AD e configurá-lo. Use esta versão se desejar ver um suplemento de trabalho com SSO rapidamente. Basta seguir as etapas no README da pasta. É recomendável que, em algum momento, você siga as etapas de configuração e registro manuais deste artigo para entender melhor a relação entre o Azure AD e um suplemento. 
 
 

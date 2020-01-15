@@ -1,14 +1,14 @@
 ---
 title: Habilitar o logon único para Suplementos do Office
 description: ''
-ms.date: 11/11/2019
+ms.date: 01/13/2020
 localization_priority: Priority
-ms.openlocfilehash: e32f9429ee05772b1a36f5e3408eb775cc03919a
-ms.sourcegitcommit: 88d81aa2d707105cf0eb55d9774b2e7cf468b03a
+ms.openlocfilehash: 0a42928df7e29890fcb04a417588f7a93fdeacfd
+ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "38301936"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "41111134"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Habilitar o logon único para Suplementos do Office (visualização)
 
@@ -16,7 +16,7 @@ Os usuários entram no Office (online, em dispositivos móveis e plataformas des
 
 ![Imagem mostrando o processo de logon de um suplemento](../images/office-host-title-bar-sign-in.png)
 
-### <a name="preview-status"></a>Status de visualização
+## <a name="preview-status"></a>Status de visualização
 
 A API de logon único tem suporte somente na visualização. Está disponível para os desenvolvedores para experimentação; mas não deve ser usado em um suplemento de produção. Além disso, os suplementos que usam o SSO não são aceitos no [AppSource](https://appsource.microsoft.com).
 
@@ -24,7 +24,7 @@ O SSO exige o Office 365 (a versão de assinatura do Office). Você deve usar o 
 
 Nem todos os aplicativos do Office oferecem suporte a visualização de SSO. Está disponível no Word, Excel, Outlook e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets).
 
-### <a name="requirements-and-best-practices"></a>Requisitos e as práticas recomendadas
+## <a name="requirements-and-best-practices"></a>Requisitos e as práticas recomendadas
 
 > [!NOTE]
 > [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
@@ -33,7 +33,7 @@ Se você estiver trabalhando com um suplemento do **Outlook**, certifique-se de 
 
 Você *não* deve confiar no SSO como único método do suplemento de autenticação. Devem implementar um sistema de autenticação alternativo que o suplemento possa se enquadrar em determinadas situações de erro. Você pode usar um sistema de autenticação e tabelas de usuário ou utilizar um dos provedores de logon de redes sociais. Para saber mais sobre como fazer isso com um suplemento do Office, confira [Autorizar serviços externos nos suplementos do Office](/office/dev/add-ins/develop/auth-external-add-ins). Para *Outlook*, há um sistema de fallback recomendado. Para mais informações, confira [Cenário: implementar o logon único no serviço em um Suplemento do Outlook](/outlook/add-ins/implement-sso-in-outlook-add-in). Para exemplos que usam o Azure Active Directory como o sistema de fallback, confira [SSO com Suplemento NodeJS do Office](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO) e [SSO com Suplemento ASP.NET do Office](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO).
 
-### <a name="how-sso-works-at-runtime"></a>Como o SSO funciona em tempo de execução
+## <a name="how-sso-works-at-runtime"></a>Como o SSO funciona em tempo de execução
 
 O diagrama a seguir mostra como funciona o processo de SSO.
 
@@ -54,6 +54,9 @@ Esta seção descreve as tarefas envolvidas na criação de um suplemento do Off
 
 * [Criar um Suplemento do Office com Node.js que usa logon único](create-sso-office-add-ins-nodejs.md)
 * [Criar um Suplemento do Office com ASP.NET que usa logon único](create-sso-office-add-ins-aspnet.md)
+
+> [!NOTE]
+> Você pode usar o gerador Yeoman para criar um Suplemento do Office com Node.js habilitado para SSO. O gerador Yeoman simplifica o processo de criação de um suplemento habilitado para SSO, automatizando as etapas necessárias para configurar o SSO no Azure e gerando o código necessário para um suplemento usar o SSO. Para obter mais informações, confira [Início rápido de logon único (SSO)](../quickstarts/sso-quickstart.md).
 
 ### <a name="create-the-service-application"></a>Criar o aplicativo de serviço
 

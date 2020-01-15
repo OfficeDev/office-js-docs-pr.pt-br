@@ -24,6 +24,8 @@
           href: quickstarts/project-quickstart.md
         - name: Suplemento do Word
           href: quickstarts/word-quickstart.md
+        - name: SSO (logon único)
+          href: quickstarts/sso-quickstart-redirect.md
     - name: Explorar as APIs do Office JS usando o Script Lab
       href: overview/explore-with-script-lab.md
       displayName: 'Excel, Word, PowerPoint'
@@ -76,6 +78,8 @@
               items:
                 - name: Habilitar o logon único
                   href: develop/sso-in-office-add-ins.md
+                - name: Início rápido do SSO
+                  href: quickstarts/sso-quickstart.md
                 - name: Autorizar o Microsoft Graph com SSO
                   href: develop/authorize-to-microsoft-graph.md
                 - name: Criar um suplemento com SSO usando ASP.NET
@@ -364,6 +368,10 @@
               href: reference/manifest/requirements.md
             - name: Rule
               href: reference/manifest/rule.md
+            - name: Tempo de execução
+              href: reference/manifest/runtime.md
+            - name: Tempos de execução
+              href: reference/manifest/runtimes.md
             - name: Set
               href: reference/manifest/set.md
             - name: Sets

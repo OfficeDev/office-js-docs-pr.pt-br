@@ -3,12 +3,12 @@ title: Criar um Suplemento do Office com ASP.NET que use logon único
 description: ''
 ms.date: 12/04/2019
 localization_priority: Priority
-ms.openlocfilehash: dac45fd713de8787bd6e51f68d139915d3f572f9
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: ed648b82804d6658f3b92c5cba8d636e6dddf34b
+ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814100"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "41111057"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>Criar um Suplemento do Office com ASP.NET que use logon único (visualização)
 
@@ -28,7 +28,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 * Em pelo menos algumas pastas e arquivos armazenados no OneDrive for Business na assinatura do Office 365.
 
-* Um Locatário do Microsoft Azure. Este suplemento requer o Azure Active Directory (AD). O Active AD fornece serviços de identidade que os aplicativos usam para autenticação e autorização. Você pode adquirir uma assinatura de avaliação no [Microsoft Azure](https://account.windowsazure.com/SignUp).
+* Uma assinatura do Microsoft Azure. Este suplemento requer o Azure Active Directory (AD). O Active AD fornece serviços de identidade que os aplicativos usam para autenticação e autorização. Você pode adquirir uma assinatura de avaliação no [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
 ## <a name="set-up-the-starter-project"></a>Configure o projeto inicial
 
