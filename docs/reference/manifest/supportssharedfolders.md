@@ -1,18 +1,23 @@
 ---
 title: Elemento SupportsSharedFolders no arquivo de manifesto
 description: ''
-ms.date: 10/31/2019
+ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 42fa1cf74634b183994e633d728d3be66e1e83f0
-ms.sourcegitcommit: e989096f3d19761bf8477c585cde20b3f8e0b90d
+ms.openlocfilehash: 4ce78d9ece901d8cd6f8639ce7a286f70893a2b4
+ms.sourcegitcommit: dc42e0276007f8ab006028b9cd0cc1526c1bd100
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "37902239"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "41120604"
 ---
 # <a name="supportssharedfolders-element"></a>Elemento SupportsSharedFolders
 
 Define se o suplemento do Outlook está disponível nos cenários de representante. O **SupportsSharedFolders** é um elemento filho de [DesktopFormFactor](desktopformfactor.md). Ele é definido como *false* por padrão.
+
+> [!IMPORTANT]
+> Somente o Outlook na Web e o Windows dão suporte ao elemento **SupportsSharedFolders** .
+>
+> O suporte para este elemento foi introduzido no conjunto de requisitos 1,8. Confira, [clientes e plataformas](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
 
 Veja a seguir um exemplo do elemento **SupportsSharedFolders**.
 

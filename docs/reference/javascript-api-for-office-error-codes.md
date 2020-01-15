@@ -1,14 +1,14 @@
 ---
 title: Códigos de erro da API JavaScript do Office
 description: ''
-ms.date: 08/06/2019
+ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 45882cedf28f47be6bf2e20f9e6f6bf3cb9e816e
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: af8d53f81bdbefb5810ab02e3391cf3154096bef
+ms.sourcegitcommit: dc42e0276007f8ab006028b9cd0cc1526c1bd100
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40815071"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "41120611"
 ---
 # <a name="javascript-api-for-office-error-codes"></a>Códigos de erro da API JavaScript para Office
 
@@ -81,6 +81,7 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 |8021|Fora do intervalo|O valor de índice de coluna está fora do intervalo permitido. Use um valor positivo (0 ou maior) que seja menor do que o número de colunas.|O índice de coluna é superior ao maior índice de coluna da tabela ou menor do que 0.|
 |8022|Fora do intervalo|O valor está fora do intervalo permitido.|Alguns dos valores no formato estão fora dos intervalos suportados.|
 |9016|Permissão negada|Permissão negada|Acesso negado.|
+|9022|Mensagem em um erro de repositório diferente|A ID do EWS não pode ser recuperada porque a mensagem é salva em outro repositório.|A ID do EWS da mensagem atual não pôde ser recuperada, pois a mensagem pode ter sido movida ou a caixa de correio de envio pode ter sido alterada.|
 |9041|Erro de rede|O usuário não está mais conectado à rede. Verifique sua conexão de rede e tente novamente.|O usuário não tem mais acesso à Internet ou à rede.|
 |12002|||Uma destas opções:<br> - Não existe uma página na URL transmitida para `displayDialogAsync`.<br> - A página transmitida para `displayDialogAsync` foi carregada, mas a caixa de diálogo foi direcionada para uma página que ela não consegue localizar nem carregar ou foi direcionada para uma URL com sintaxe inválida. Lançado dentro da caixa de diálogo e dispara um evento `DialogEventReceived` na página de host.|
 |12003|||A caixa de diálogo foi direcionada para uma URL com o protocolo HTTP. HTTPS é necessário. Lançado dentro da caixa de diálogo e dispara um evento `DialogEventReceived` na página de host.|
@@ -135,6 +136,5 @@ A tabela a seguir resume o comportamento de associação no Word.
 |Texto|Seleção inválida (por exemplo, múltiplos objetos, objetos inválidos etc.)|Não é possível criar a associação.|
 
 ## <a name="see-also"></a>Confira também
-   
+
 - [Ciclo de vida de desenvolvimento de suplementos do Office](/office/dev/add-ins/concepts/add-in-development-lifecycle)
-    
