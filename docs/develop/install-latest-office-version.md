@@ -1,14 +1,14 @@
 ---
 title: Instale a última versão do Office
 description: Informações sobre como desativar essa opção para obter as versões mais recentes do Office.
-ms.date: 07/17/2019
+ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 2308bf8f825201f1074d56bba2ddc67c32ba7f24
-ms.sourcegitcommit: cb5e1726849aff591f19b07391198a96d5749243
+ms.openlocfilehash: 8d248e17433a2b6b1b31ad576ecdd237cd8543d0
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "35940623"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217377"
 ---
 # <a name="install-the-latest-version-of-office"></a>Instale a última versão do Office
 
@@ -39,7 +39,7 @@ Para receber as versões mais recentes do Office:
 
 Quando o processo de instalação for concluído, você terá os últimos aplicativos do Office instalados. Para verificar se você tem a última compilação, vá até **arquivo** > **conta** em qualquer aplicativo do Office. Em Atualizações do Office, você verá o rótulo (Office Insiders) acima do número de versão.
 
-![Uma captura de tela que mostra informações do produto com o rótulo Office Insiders](../images/office-insiders.png)
+![Uma captura de tela que mostra informações do produto com o rótulo Office Insiders](../images/office-insiders-label.png)
 
 ## <a name="minimum-office-builds-for-office-javascript-api-requirement-sets"></a>Builds mínimos do Office para conjuntos de requisitos de API JavaScript para Office
 

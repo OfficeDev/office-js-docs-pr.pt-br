@@ -4,12 +4,12 @@ description: Use o gerador Yeoman para criar um Suplemento do Office com Node.js
 ms.date: 01/13/2020
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: 3c67fdb2b8582546c13624dcb8a6f139bb638df0
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: 1f02f03fec0d6be32fc7a0d6b98fce30e19c28e2
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111100"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217362"
 ---
 # <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on-preview"></a>Use o gerador Yeoman para criar um Suplemento do Office que use logon único (prévia)
 
@@ -22,9 +22,9 @@ O gerador Yeoman simplifica o processo de criação de um suplemento de SSO, aut
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- [Node.js](https://nodejs.org) (versão 10.15.0 ou posterior)
+* [Node.js](https://nodejs.org) (versão 10.15.0 ou posterior)
 
-- A versão mais recente do [Yeoman](https://github.com/yeoman/yo) e do [Yeoman gerador de suplementos do Office](https://github.com/OfficeDev/generator-office). Para instalar essas ferramentas globalmente, execute o seguinte comando por meio do prompt de comando:
+* A versão mais recente do [Yeoman](https://github.com/yeoman/yo) e do [Yeoman gerador de suplementos do Office](https://github.com/OfficeDev/generator-office). Para instalar essas ferramentas globalmente, execute o seguinte comando por meio do prompt de comando:
 
     ```command&nbsp;line
     npm install -g yo generator-office
@@ -32,12 +32,7 @@ O gerador Yeoman simplifica o processo de criação de um suplemento de SSO, aut
 
     [!include[note to update Yeoman generator](../includes/note-yeoman-generator-update.md)]
 
-- Uma conta do Office 365 (a versão de assinatura do Office). Caso ainda não tenha uma conta do Office 365, obtenha uma assinatura gratuita renovável por 90 dias do Office 365 ingressando no [Programa para Desenvolvedores do Office 365](https://aka.ms/devprogramsignup). 
-
-- Um build de Insider do Office 365. Você deve usar a versão mensal mais recente e construir a partir do canal de Insiders, mas é necessário [ser um Office Insider](https://products.office.com/office-insider?tab=tab-1) para obter essa versão. 
-
-    > [!NOTE]
-    > Quando um build é promovido ao canal semestral de produção, o suporte para recursos de visualização, como o SSO, é desativado para esse build.
+[!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
 ## <a name="create-the-add-in-project"></a>Crie o projeto do suplemento
 

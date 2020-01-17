@@ -3,12 +3,12 @@ title: Crie um Suplemento do Office com Node.js que use logon único
 description: Aprenda a criar um suplemento baseado em node.js que usa o logon único do Office
 ms.date: 01/13/2020
 localization_priority: Priority
-ms.openlocfilehash: 140a18628ae03d842482721394d976207cb7fa37
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: a3ff47f26e0db06c1c79a4f80bd814b05e80b3a3
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111064"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217096"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Crie um Suplemento do Office com Node.js que use logon único (prévia)
 
@@ -27,7 +27,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 * TypeScript, versão 3.6.2 ou posterior.
 
-* Conta do Office 365 (a versão de assinatura do Office) que você pode obter ingressando no [Programa para Desenvolvedores do Office 365](https://aka.ms/devprogramsignup) que inclui uma assinatura gratuita de 1 ano do Office 365. Você deve usar a versão mensal mais recente e construir a partir do canal de Insiders, mas é necessário ser um Office Insider para obter essa versão. Para saber mais, confira a página [Seja um Office Insider](https://products.office.com/office-insider?tab=tab-1). Observe que, quando um build é promovido ao Canal Semestral de produção, o suporte para recursos de visualização, como o SSO, é desativado para esse build.
+[!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
 * Um editor de códigos. Recomendamos o código do Visual Studio.
 
