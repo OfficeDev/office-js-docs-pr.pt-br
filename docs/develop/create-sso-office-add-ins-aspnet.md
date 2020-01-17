@@ -3,12 +3,12 @@ title: Criar um Suplemento do Office com ASP.NET que use logon único
 description: ''
 ms.date: 12/04/2019
 localization_priority: Priority
-ms.openlocfilehash: ed648b82804d6658f3b92c5cba8d636e6dddf34b
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: a5a05c8299f22bbc1a7593eebc9bde60f52b2b84
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111057"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41216999"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>Criar um Suplemento do Office com ASP.NET que use logon único (visualização)
 
@@ -24,7 +24,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 * [Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx)
 
-* Conta do Office 365 (a versão de assinatura do Office) que você pode obter ingressando no [Programa para Desenvolvedores do Office 365](https://aka.ms/devprogramsignup) que inclui uma assinatura gratuita de 1 ano do Office 365. Você deve usar a versão mensal mais recente e construir a partir do canal de Insiders, mas é necessário ser um Office Insider para obter essa versão. Para saber mais, confira a página [Seja um Office Insider](https://products.office.com/office-insider?tab=tab-1). Observe que, quando um build é promovido ao Canal Semestral de produção, o suporte para recursos de visualização, como o SSO, é desativado para esse build.
+[!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
 * Em pelo menos algumas pastas e arquivos armazenados no OneDrive for Business na assinatura do Office 365.
 

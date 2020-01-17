@@ -1,14 +1,14 @@
 ---
 title: Programação assíncrona em Suplementos do Office
 description: ''
-ms.date: 06/20/2019
+ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 9a653f85a368688bdf2690ab6c564352f2ee611a
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: 009f8e37cc8a6eb2e808278df88f3bfdc5b0d1b1
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41110903"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217237"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Programação assíncrona em Suplementos do Office
 
@@ -20,7 +20,7 @@ O diagrama a seguir mostra o fluxo de execução de uma chamada para um método 
 
 *Figura 1. Fluxo de execução da programação assíncrona*
 
-![Asynchronous programming thread execution flow](../images/office15-app-async-prog-fig01.png)
+![Asynchronous programming thread execution flow](../images/office-addins-asynchronous-programming-flow.png)
 
 O suporte a este design assíncrono em clientes Web e avançados faz parte das metas de design "gravar plataforma cruzada já executada" do modelo de desenvolvimento de Suplementos do Office. Por exemplo, você pode criar um suplemento do painel de tarefas ou conteúdo com uma única base de código que será executada no Excel 2013 e Excel Online.
 

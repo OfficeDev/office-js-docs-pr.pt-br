@@ -1,14 +1,14 @@
 ---
-ms.date: 07/15/2019
+ms.date: 01/14/2020
 description: Definir metadados JSON para funções personalizadas no Excel e associar suas propriedades de ID de função e nome.
 title: Metadados para funções personalizadas no Excel
 localization_priority: Normal
-ms.openlocfilehash: b0e015cfa439651420487db4885647f5c7de7da8
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 2a777cb0217d48caf03983d3dbfe662dfe0b2567
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771558"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217024"
 ---
 # <a name="custom-functions-metadata"></a>Metadados de funções personalizadas
 
@@ -26,10 +26,13 @@ No entanto, você pode tornar um projeto de funções personalizadas a partir do
 
 Este artigo mostrará como realizar todas as três etapas.
 
-> [!NOTE]
-> Ao contrário dos arquivos `yo office` do estruturar, você precisa conectar seu manifesto ao arquivo JSON que você cria, através da `<Resources>` seção no arquivo de manifesto XML. Observe que as configurações do servidor no servidor que hospeda o arquivo JSON devem ter o [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) habilitado para que as funções personalizadas funcionem corretamente no Excel na Web.
+A imagem a seguir explica as diferenças entre `yo office` o uso de arquivos do estruturar e a gravação de JSON do zero.
+![Imagem das diferenças entre usar Yo Office e escrever seu próprio JSON](../images/custom-functions-json.png)
 
-## <a name="authoring-metadata-and-hooking-up-to-the-manifest"></a>Criar metadados e conectar-se ao manifesto
+> [!NOTE]
+> Ao contrário dos arquivos `yo office` do estruturar, você precisará conectar seu manifesto ao arquivo JSON que você cria, através da `<Resources>` seção no arquivo de manifesto XML. Observe que as configurações do servidor no servidor que hospeda o arquivo JSON devem ter o [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) habilitado para que as funções personalizadas funcionem corretamente no Excel na Web.
+
+## <a name="authoring-metadata-and-connecting-to-the-manifest"></a>Criação de metadados e conexão com o manifesto
 
 Você precisa criar um arquivo JSON em seu projeto e fornecer todos os detalhes sobre suas funções nele, como os parâmetros da função. Consulte o [exemplo de metadados a seguir](#json-metadata-example) e [a referência de metadados](#metadata-reference) para obter uma lista completa das propriedades de função.
 
@@ -143,7 +146,7 @@ A propriedade `functions` é um conjunto de objetos de funções personalizadas.
 | Propriedade      | Tipo de dados | Obrigatório | Descrição                                                                                                                                                                      |
 | :------------ | :-------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `description` | string    | Não       | Descrição da função que é exibida aos usuários finais no Excel. Por exemplo, **Converte um valor em Celsius para Fahrenheit**.                                                            |
-| `helpUrl`     | string    | Não       | A URL que fornece informações sobre a função. (Ela é exibida em um painel de tarefas). Por exemplo, `http://contoso.com/help/convertcelsiustofahrenheit.html`.                      |
+| `helpUrl`     | cadeia de caracteres    | Não       | A URL que fornece informações sobre a função. (Ela é exibida em um painel de tarefas). Por exemplo, `http://contoso.com/help/convertcelsiustofahrenheit.html`.                      |
 | `id`          | string    | Sim      | Identificação exclusiva para a função. Essa ID pode conter apenas caracteres alfanuméricos e pontos e não deve ser alterada depois de configurada.                                            |
 | `name`        | string    | Sim      | O nome da função que é exibida aos usuários finais no Excel. No Excel, o nome da função será prefixado pelo namespace de funções personalizadas que é especificado no arquivo de manifesto XML. |
 | `options`     | object    | Não       | Permite que você personalize alguns aspectos de como e quando o Excel executa a função. Confira [opções](#options) para obter detalhes.                                                          |

@@ -1,18 +1,21 @@
 ---
 title: Trabalhar com formas usando a API JavaScript do Excel
 description: ''
-ms.date: 09/03/2019
+ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 2461416bcd7e64c2ea300d98e504ff27edcb14ac
-ms.sourcegitcommit: 78998a9f0ebb81c4dd2b77574148b16fe6725cfc
+ms.openlocfilehash: 54362baecc44f8761f2f69d21e465caa5f1c85b7
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "36715603"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217223"
 ---
 # <a name="work-with-shapes-using-the-excel-javascript-api"></a>Trabalhar com formas usando a API JavaScript do Excel
 
 O Excel define formas como qualquer objeto que esteja na camada de desenho do Excel. Isso significa que algo fora de uma célula é uma forma. Este artigo descreve como usar formas geométricas, linhas e imagens em conjunto com as APIs [Shape](/javascript/api/excel/excel.shape) e [ShapeCollection](/javascript/api/excel/excel.shapecollection) . Os [gráficos](/javascript/api/excel/excel.chart) são abordados em seu próprio artigo, [trabalhar com gráficos usando a API JavaScript do Excel](excel-add-ins-charts.md).
+
+A imagem a seguir mostra formas que formam um termômetro.
+![Imagem de um termômetro criado como uma forma do Excel](../images/excel-shapes.png)
 
 ## <a name="create-shapes"></a>Criar formas
 
@@ -53,7 +56,7 @@ Excel.run(function (context) {
 
 Imagens JPEG, PNG e SVG podem ser inseridas em uma planilha como formas. O `ShapeCollection.addImage` método usa uma cadeia de caracteres codificada em base64 como um argumento. É uma imagem JPEG ou PNG no formato de cadeia de caracteres. `ShapeCollection.addSvg`o também usa uma cadeia de caracteres, embora esse argumento seja XML que define o gráfico.
 
-O exemplo de código a seguir mostra um arquivo de imagem sendo [](https://developer.mozilla.org/docs/Web/API/FileReader) carregado por um FileReader como uma cadeia de caracteres. A cadeia de caracteres tem os metadados "base64", removidos antes da forma ser criada.
+O exemplo de código a seguir mostra um arquivo de imagem sendo carregado por um [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) como uma cadeia de caracteres. A cadeia de caracteres tem os metadados "base64", removidos antes da forma ser criada.
 
 ```js
 // This sample creates an image as a Shape object in the worksheet.
@@ -135,7 +138,7 @@ Excel.run(function (context) {
 
 ## <a name="text-in-shapes"></a>Texto em formas
 
-Formas geométricas podem conter texto. As formas têm `textFrame` uma propriedade do tipo TextFrame. [](/javascript/api/excel/excel.textframe) O `TextFrame` objeto gerencia as opções de exibição de texto (como margens e estouro de texto). `TextFrame.textRange`é um objeto [TextRange](/javascript/api/excel/excel.textrange) com o conteúdo de texto e as configurações de fonte.
+Formas geométricas podem conter texto. As formas têm `textFrame` uma propriedade do tipo [TextFrame](/javascript/api/excel/excel.textframe). O `TextFrame` objeto gerencia as opções de exibição de texto (como margens e estouro de texto). `TextFrame.textRange`é um objeto [TextRange](/javascript/api/excel/excel.textrange) com o conteúdo de texto e as configurações de fonte.
 
 O exemplo de código a seguir cria uma forma geométrica chamada "Wave" com o texto "Shape Text". Também ajusta a forma e as cores do texto, bem como define o alinhamento horizontal do texto para o centro.
 
@@ -230,7 +233,7 @@ Excel.run(function (context) {
 
 As formas são removidas da planilha `Shape` com o `delete` método do objeto. Nenhum outro metadado é necessário.
 
-O exemplo de código a seguir exclui todas as **** formas de myworksheet.
+O exemplo de código a seguir exclui todas as formas de **myworksheet**.
 
 ```js
 // This deletes all the shapes from "MyWorksheet".

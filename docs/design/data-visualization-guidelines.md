@@ -1,14 +1,14 @@
 ---
 title: Diretrizes de estilo de visualização de dados para Suplementos do Office
 description: ''
-ms.date: 12/04/2017
+ms.date: 01/14/2019
 localization_priority: Normal
-ms.openlocfilehash: 134153f0705c810e777fd47b27a5a440e2e7bc9e
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: ef82432dacb3f63e85fd305bc682325af3312aca
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268142"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217252"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Diretrizes de estilo de visualização de dados para Suplementos do Office
 
@@ -24,10 +24,9 @@ Recomendamos que você use o [Office UI Fabric](https://developer.microsoft.com/
 
 ## <a name="data-visualization-elements"></a>Elementos de visualização de dados
 
-As visualizações de dados compartilham uma estrutura geral e elementos comuns visuais e interativos, incluindo títulos, rótulos e plotagens de dados, conforme mostrado nas figuras a seguir.
+As visualizações de dados compartilham uma estrutura geral e elementos visuais e interativos comuns, incluindo títulos, rótulos e plotagens de dados, conforme mostrado na figura a seguir.
 
-![Imagem de um gráfico de linhas com título, eixos, legenda e uma área de plotagem rotulada](../images/data-visualization-line-chart.png)
-![Imagem de um gráfico de coluna com eixos, linhas de grade, legenda e plotagem de dados rotulada](../images/data-visualization-column-chart.png)
+![Imagem de um gráfico de linhas com título, eixos, legenda e área de plotagem rotulada](../images/excel-charts-visualization.png)
 
 ### <a name="chart-titles"></a>Títulos de gráfico
 
@@ -37,11 +36,6 @@ Siga estas diretrizes para títulos de gráfico:
 - Em geral, use maiúsculas nas frases (a primeira letra da primeira palavra em letra maiúscula). Para criar o contraste ou reforçar hierarquias, você poderá usar todas em maiúsculas, mas use isso com moderação.
 - Incorpore a [rampa de tipos do Office UI Fabric](https://developer.microsoft.com/fabric#/styles/typography) para deixar seus gráficos consistentes com a IU do Office, que usa o Segoe. Você também pode usar outra fonte para diferenciar o conteúdo do gráfico da interface do usuário.
 - Use tipos sem serifa com contadores grandes.
-
-Os exemplos a seguir mostram tipos com serifa e sem serifa usados em títulos de gráfico. Observe como o contraste de escala e o uso eficaz do espaço em branco criam uma hierarquia visual forte.
-
-![Imagem de uma visualização de dados com fontes com serifa](../images/data-visualization-serif.png)
-![Imagem de uma visualização de dados com fontes sem serifa](../images/data-visualization-sans-serif.png)
 
 ### <a name="axis-labels"></a>Rótulos dos eixos
 
@@ -71,7 +65,7 @@ Cinza claro é mais eficaz para linhas de grade. Se você estiver usando o Fabri
 
 A imagem a seguir mostra uma visualização de dados com linhas de grade.
 
-![Imagem de uma visualização de dados com linhas de grade](../images/data-visualization-gridlines.png)
+![Imagem de uma visualização de dados com linhas de grade](../images/data-visualization.png)
 
 ### <a name="legends"></a>Legendas
 

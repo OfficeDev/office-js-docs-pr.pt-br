@@ -3,12 +3,12 @@ title: Estender funções personalizadas com funções definidas pelo usuário X
 description: Habilitar a compatibilidade com as funções definidas pelo usuário do Excel XLL que possuem funcionalidade equivalente às suas funções personalizadas
 ms.date: 07/31/2019
 localization_priority: Normal
-ms.openlocfilehash: d8b5349aecad1bdd6bd9f8e00b6c09bcb0071377
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: 35b6ade70e21ca36efec928d030f79c27cc38691
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111071"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217215"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>Estender funções personalizadas com funções definidas pelo usuário XLL
 
@@ -20,7 +20,7 @@ Se você tiver os XLLs do Excel existentes, poderá criar funções personalizad
 > - Excel no Windows (versão 1904 ou posterior)
 > - Excel no Mac (versão 13,329 ou posterior)
 > 
-> Para usar o suplemento de COM e a compatibilidade do XLL UDF no Excel na Web, faça logon usando sua assinatura do Office 365 ou uma [conta da Microsoft](https://account.microsoft.com/account). Caso ainda não tenha uma assinatura do Office 365, obtenha uma ingressando no [Programa para Desenvolvedores do Office 365](https://developer.microsoft.com/office/dev-program).
+> Para usar o suplemento de COM e a compatibilidade do XLL UDF no Excel na Web, faça logon usando sua assinatura do Office 365 ou uma [conta da Microsoft](https://account.microsoft.com/account). Se você ainda não tem uma assinatura do Office 365, é possível uma assinatura gratuita, de 90 dias, redimensionada do Office 365, participando do [programa de desenvolvedor do office 365](https://developer.microsoft.com/office/dev-program).
 
 ## <a name="specify-equivalent-xll-in-the-manifest"></a>Especificar o XLL equivalente no manifesto
 
@@ -66,7 +66,7 @@ A tabela a seguir compara os recursos nas funções de XLL definidas pelo usuár
 | Funções voláteis | Sim | Sim | Sim |
 | Suporte para recálculo de vários encadeamentos | Sim | Sim | Sim |
 | Comportamento de cálculo | Nenhuma interface do usuário. O Excel pode não responder durante o cálculo. | Os usuários verão #BUSY! até que um resultado seja retornado. | Os usuários verão #BUSY! até que um resultado seja retornado. |
-| Conjuntos de requisitos | N/D | CustomFunctions 1,1 e posterior | CustomFunctions 1,1 e posterior |
+| Conjuntos de requisitos | Não disponível | CustomFunctions 1,1 e posterior | CustomFunctions 1,1 e posterior |
 
 ## <a name="see-also"></a>Confira também
 
