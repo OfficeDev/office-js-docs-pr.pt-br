@@ -4,61 +4,63 @@ title: 'Tutorial: compartilhar dados e eventos entre as funções personalizadas
 ms.prod: excel
 description: No Excel, compartilhe dados e eventos entre as funções personalizadas e o painel de tarefas.
 localization_priority: Priority
-ms.openlocfilehash: 16affeb29bd5950198f81f85e44adaf812067829
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: d86b5bb59dd0da51d5b5472288fa802823d658ce
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814128"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217355"
 ---
-# <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane-preview"></a><span data-ttu-id="f4e7d-103">Tutorial: compartilhar dados e eventos entre as funções personalizadas do Excel e o painel de tarefas (versão prévia)</span><span class="sxs-lookup"><span data-stu-id="f4e7d-103">Tutorial: Share data and events between Excel custom functions and the task pane (preview)</span></span>
+# <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane-preview"></a><span data-ttu-id="bf138-103">Tutorial: compartilhar dados e eventos entre as funções personalizadas do Excel e o painel de tarefas (versão prévia)</span><span class="sxs-lookup"><span data-stu-id="bf138-103">Tutorial: Share data and events between Excel custom functions and the task pane (preview)</span></span>
 
-<span data-ttu-id="f4e7d-104">As funções personalizadas do Excel e o painel de tarefas compartilham dados globais e podem fazer chamadas de função entre si.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-104">Excel custom functions and the task pane share global data, and can make function calls into each other.</span></span> <span data-ttu-id="f4e7d-105">Para configurar o projeto para que as funções personalizadas possam funcionar com o painel de tarefas, siga as instruções neste artigo.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-105">To configure your project so that custom functions can work with the task pane, follow the instructions in this article.</span></span>
+<span data-ttu-id="bf138-104">As funções personalizadas do Excel e o painel de tarefas compartilham dados globais e podem fazer chamadas de função entre si.</span><span class="sxs-lookup"><span data-stu-id="bf138-104">Excel custom functions and the task pane share global data, and can make function calls into each other.</span></span> <span data-ttu-id="bf138-105">Para configurar o projeto para que as funções personalizadas possam funcionar com o painel de tarefas, siga as instruções neste artigo.</span><span class="sxs-lookup"><span data-stu-id="bf138-105">To configure your project so that custom functions can work with the task pane, follow the instructions in this article.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="f4e7d-106">Os recursos descritos neste artigo estão em versão prévia e sujeitos a alterações.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-106">The features described in this article are currently in preview and subject to change.</span></span> <span data-ttu-id="f4e7d-107">No momento, eles não têm suporte para utilização em ambientes de produção.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-107">They are not currently supported for use in production environments.</span></span> <span data-ttu-id="f4e7d-108">Os recursos de versão prévia deste artigo só estão disponíveis no Excel no Windows.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-108">The preview features in this article are only available on Excel on Windows.</span></span> <span data-ttu-id="f4e7d-109">Para experimentar os recursos de versão prévia, você precisará [ingressar no Office Insider](https://insider.office.com/join).</span><span class="sxs-lookup"><span data-stu-id="f4e7d-109">To try the preview features, you will need to [join Office Insider](https://insider.office.com/join).</span></span>  <span data-ttu-id="f4e7d-110">Uma boa maneira de experimentar recursos de versão prévia é usar uma assinatura do Office 365.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-110">A good way to try out preview features is by using an Office 365 subscription.</span></span> <span data-ttu-id="f4e7d-111">Caso ainda não tenha uma assinatura do Office 365, obtenha uma ingressando no [Programa para Desenvolvedores do Office 365](https://developer.microsoft.com/office/dev-program).</span><span class="sxs-lookup"><span data-stu-id="f4e7d-111">If you don't already have an Office 365 subscription, you can get one by joining the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program).</span></span>
+> <span data-ttu-id="bf138-106">Os recursos descritos neste artigo estão em versão prévia e sujeitos a alterações.</span><span class="sxs-lookup"><span data-stu-id="bf138-106">The features described in this article are currently in preview and subject to change.</span></span> <span data-ttu-id="bf138-107">No momento, eles não têm suporte para utilização em ambientes de produção.</span><span class="sxs-lookup"><span data-stu-id="bf138-107">They are not currently supported for use in production environments.</span></span> <span data-ttu-id="bf138-108">Os recursos de versão prévia deste artigo só estão disponíveis no Excel no Windows.</span><span class="sxs-lookup"><span data-stu-id="bf138-108">The preview features in this article are only available on Excel on Windows.</span></span> <span data-ttu-id="bf138-109">Para experimentar os recursos de versão prévia, você precisará [ingressar no Office Insider](https://insider.office.com/join).</span><span class="sxs-lookup"><span data-stu-id="bf138-109">To try the preview features, you will need to [join Office Insider](https://insider.office.com/join).</span></span>  <span data-ttu-id="bf138-110">Uma boa maneira de experimentar recursos de versão prévia é usar uma assinatura do Office 365.</span><span class="sxs-lookup"><span data-stu-id="bf138-110">A good way to try out preview features is by using an Office 365 subscription.</span></span> <span data-ttu-id="bf138-111">Caso você ainda não tenha uma assinatura do Office 365, obtenha uma assinatura do Office 365 gratuita e renovável por 90 dias ingressando no [Programa para Desenvolvedores do Office 365](https://developer.microsoft.com/office/dev-program).</span><span class="sxs-lookup"><span data-stu-id="bf138-111">If you don't already have an Office 365 account, you can get a free, 90-day renewable Office 365 subscription by joining the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program).</span></span>
 
-## <a name="create-the-add-in-project"></a><span data-ttu-id="f4e7d-112">Criar o projeto do suplemento</span><span class="sxs-lookup"><span data-stu-id="f4e7d-112">Create the add-in project</span></span>
+## <a name="create-the-add-in-project"></a><span data-ttu-id="bf138-112">Crie o projeto do suplemento</span><span class="sxs-lookup"><span data-stu-id="bf138-112">Create the add-in project</span></span>
 
-<span data-ttu-id="f4e7d-113">Use o gerador Yeoman para criar um projeto de suplemento do Excel.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-113">Use the Yeoman generator to create an Excel add-in project.</span></span> <span data-ttu-id="f4e7d-114">Execute o comando a seguir e responda às solicitações com as seguintes respostas:</span><span class="sxs-lookup"><span data-stu-id="f4e7d-114">Run the following command and then answer the prompts with the following answers:</span></span>
+<span data-ttu-id="bf138-113">Use o gerador Yeoman para criar um projeto de suplemento do Excel.</span><span class="sxs-lookup"><span data-stu-id="bf138-113">Use the Yeoman generator to create an Excel add-in project.</span></span> <span data-ttu-id="bf138-114">Execute o comando a seguir e responda às solicitações com as seguintes respostas:</span><span class="sxs-lookup"><span data-stu-id="bf138-114">Run the following command and then answer the prompts with the following answers:</span></span>
 
 ```command&nbsp;line
 yo office
 ```
 
-- <span data-ttu-id="f4e7d-115">Escolha um tipo de projeto: **Projeto de suplemento de funções personalizadas do Excel**</span><span class="sxs-lookup"><span data-stu-id="f4e7d-115">Choose a project type: **Excel Custom Functions Add-in project**</span></span>
-- <span data-ttu-id="f4e7d-116">Escolha um tipo de script: **JavaScript**</span><span class="sxs-lookup"><span data-stu-id="f4e7d-116">Choose a script type: **JavaScript**</span></span>
-- <span data-ttu-id="f4e7d-117">Qual será o nome do seu suplemento? **Meu suplemento do Office**</span><span class="sxs-lookup"><span data-stu-id="f4e7d-117">What do you want to name your add-in? **My Office Add-in**</span></span>
+- <span data-ttu-id="bf138-115">Escolha um tipo de projeto: **Projeto de suplemento de funções personalizadas do Excel**</span><span class="sxs-lookup"><span data-stu-id="bf138-115">Choose a project type: **Excel Custom Functions Add-in project**</span></span>
+- <span data-ttu-id="bf138-116">Escolha um tipo de script: **JavaScript**</span><span class="sxs-lookup"><span data-stu-id="bf138-116">Choose a script type: **JavaScript**</span></span>
+- <span data-ttu-id="bf138-117">Qual será o nome do seu suplemento? **Meu suplemento do Office**</span><span class="sxs-lookup"><span data-stu-id="bf138-117">What do you want to name your add-in? **My Office Add-in**</span></span>
 
 ![Captura de tela das solicitações de resposta do seu Office para criar o projeto de suplemento.](../images/yo-office-excel-project.png)
 
-<span data-ttu-id="f4e7d-119">Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-119">After you complete the wizard, the generator creates the project and installs supporting Node components.</span></span>
+<span data-ttu-id="bf138-119">Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.</span><span class="sxs-lookup"><span data-stu-id="bf138-119">After you complete the wizard, the generator creates the project and installs supporting Node components.</span></span>
 
-## <a name="configure-the-manifest"></a><span data-ttu-id="f4e7d-120">Configurar o manifesto</span><span class="sxs-lookup"><span data-stu-id="f4e7d-120">Configure the manifest</span></span>
+## <a name="configure-the-manifest"></a><span data-ttu-id="bf138-120">Configurar o manifesto</span><span class="sxs-lookup"><span data-stu-id="bf138-120">Configure the manifest</span></span>
 
-1. <span data-ttu-id="f4e7d-121">Inicie o código do Visual Studio e abra o projeto **Meu suplemento do Office**.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-121">Start Visual Studio Code and open the **My Office Add-in** project.</span></span>
-2. <span data-ttu-id="f4e7d-122">Abra o arquivo **manifest.xml**.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-122">Open the **manifest.xml** file.</span></span>
-3. <span data-ttu-id="f4e7d-123">Altere a seção `<Requirements>` para usar o **CustomFunctionsRuntime** versão **1.2**, como mostrado no código a seguir.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-123">Change the `<Requirements>` section to use **CustomFunctionsRuntime** version **1.2** as shown in the following code.</span></span>
+1. <span data-ttu-id="bf138-121">Inicie o código do Visual Studio e abra o projeto **Meu suplemento do Office**.</span><span class="sxs-lookup"><span data-stu-id="bf138-121">Start Visual Studio Code and open the **My Office Add-in** project.</span></span>
+2. <span data-ttu-id="bf138-122">Abra o arquivo **manifest.xml**.</span><span class="sxs-lookup"><span data-stu-id="bf138-122">Open the **manifest.xml** file.</span></span>
+3. <span data-ttu-id="bf138-123">Altere a seção `<Requirements>` para usar o **CustomFunctionsRuntime** versão **1.2**, como mostrado no código a seguir.</span><span class="sxs-lookup"><span data-stu-id="bf138-123">Change the `<Requirements>` section to use **CustomFunctionsRuntime** version **1.2** as shown in the following code.</span></span>
     
     ```xml
-    <Requirements> 
+    <Requirements>
     <Sets DefaultMinVersion="1.1">
     <Set Name="CustomFunctionsRuntime" MinVersion="1.2"/>
     </Sets>
     </Requirements>
     ```
     
-4. <span data-ttu-id="f4e7d-124">No elemento `<Host>` da pasta de trabalho, adicione a seção `<Runtimes>` a seguir.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-124">Under the `<Host>` element for the workbook, add the following `<Runtimes>` section.</span></span> <span data-ttu-id="f4e7d-125">O tempo de vida precisa ser **longo** para que as funções personalizadas ainda possam funcionar, mesmo quando o painel de tarefas estiver fechado.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-125">The lifetime needs to be **long** so that the custom functions can still work even when the task pane is closed.</span></span>
+4. <span data-ttu-id="bf138-124">Localize a seção `<VersionOverrides>` e adicione a seguinte seção `<Runtimes>`.</span><span class="sxs-lookup"><span data-stu-id="bf138-124">Find the <membership defaultProvider="i"> section and add the following entry:</span></span> <span data-ttu-id="bf138-125">O tempo de vida precisa ser **longo** para que as funções personalizadas ainda possam funcionar, mesmo quando o painel de tarefas estiver fechado.</span><span class="sxs-lookup"><span data-stu-id="bf138-125">The lifetime needs to be **long** so that the custom functions can still work even when the task pane is closed.</span></span>
     
     ```xml
-    <Hosts>
-    <Host xsi:type="Workbook">
-    <Runtimes>
-    <Runtime resid="TaskPaneAndCustomFunction.Url" lifetime="long" />
-    </Runtimes>
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+      <Hosts>
+        <Host xsi:type="Workbook">
+        <Runtimes>
+          <Runtime resid="TaskPaneAndCustomFunction.Url" lifetime="long" />
+        </Runtimes>
+        <AllFormFactors>
     ```
     
-5. <span data-ttu-id="f4e7d-126">No elemento `<Page>`, altere o local de origem de **Functions.Page.Url** para **TaskPaneAndCustomFunction.Url**.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-126">In the `<Page>` element, change the source location from **Functions.Page.Url** to **TaskPaneAndCustomFunction.Url**.</span></span>
+5. <span data-ttu-id="bf138-126">No elemento `<Page>`, altere o local de origem de **Functions.Page.Url** para **TaskPaneAndCustomFunction.Url**.</span><span class="sxs-lookup"><span data-stu-id="bf138-126">In the `<Page>` element, change the source location from **Functions.Page.Url** to **TaskPaneAndCustomFunction.Url**.</span></span>
 
     ```xml
     <AllFormFactors>
@@ -69,7 +71,7 @@ yo office
     ...
     ```
 
-6. <span data-ttu-id="f4e7d-127">Na seção `<DesktopFormFactor>`, altere o **FunctionFile** de **Commands.Url** para usar **TaskPaneAndCustomFunction.Url**.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-127">In the `<DesktopFormFactor>` section, change the **FunctionFile** from **Commands.Url** to use **TaskPaneAndCustomFunction.Url**.</span></span>
+6. <span data-ttu-id="bf138-127">Na seção `<DesktopFormFactor>`, altere o **FunctionFile** de **Commands.Url** para usar **TaskPaneAndCustomFunction.Url**.</span><span class="sxs-lookup"><span data-stu-id="bf138-127">In the `<DesktopFormFactor>` section, change the **FunctionFile** from **Commands.Url** to use **TaskPaneAndCustomFunction.Url**.</span></span>
     
     ```xml
     <DesktopFormFactor>
@@ -79,7 +81,7 @@ yo office
     <FunctionFile resid="TaskPaneAndCustomFunction.Url"/>
     ```
     
-7. <span data-ttu-id="f4e7d-128">Na seção `<Action>`, altere o local de origem de **Taskpane.Url** para **TaskPaneAndCustomFunction.Url**.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-128">In the `<Action>` section, change the source location from **Taskpane.Url** to **TaskPaneAndCustomFunction.Url**.</span></span>
+7. <span data-ttu-id="bf138-128">Na seção `<Action>`, altere o local de origem de **Taskpane.Url** para **TaskPaneAndCustomFunction.Url**.</span><span class="sxs-lookup"><span data-stu-id="bf138-128">In the `<Action>` section, change the source location from **Taskpane.Url** to **TaskPaneAndCustomFunction.Url**.</span></span>
     
     ```xml
     <Action xsi:type="ShowTaskpane">
@@ -88,7 +90,7 @@ yo office
     </Action>
     ```
     
-8. <span data-ttu-id="f4e7d-129">Adicione uma nova **ID de Url** para **TaskPaneAndCustomFunction.Url** que aponta para **taskpane.html**.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-129">Add a new **Url id** for **TaskPaneAndCustomFunction.Url** that points to **taskpane.html**.</span></span>
+8. <span data-ttu-id="bf138-129">Adicione uma nova **ID de Url** para **TaskPaneAndCustomFunction.Url** que aponta para **taskpane.html**.</span><span class="sxs-lookup"><span data-stu-id="bf138-129">Add a new **Url id** for **TaskPaneAndCustomFunction.Url** that points to **taskpane.html**.</span></span>
      
     ```xml
     <bt:Urls>
@@ -98,26 +100,26 @@ yo office
     ...
     ```
     
-9. <span data-ttu-id="f4e7d-130">Salve suas alterações e recompile o projeto.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-130">Save your changes and rebuild the project.</span></span>
+9. <span data-ttu-id="bf138-130">Salve suas alterações e recompile o projeto.</span><span class="sxs-lookup"><span data-stu-id="bf138-130">Save your changes and rebuild the project.</span></span>
     
     ```command&nbsp;line
     npm run build
     ```
 
-## <a name="share-state-between-custom-function-and-task-pane-code"></a><span data-ttu-id="f4e7d-131">Compartilhar o estado entre as funções personalizadas e o código do painel de tarefas</span><span class="sxs-lookup"><span data-stu-id="f4e7d-131">Share state between custom function and task pane code</span></span> 
+## <a name="share-state-between-custom-function-and-task-pane-code"></a><span data-ttu-id="bf138-131">Compartilhar o estado entre as funções personalizadas e o código do painel de tarefas</span><span class="sxs-lookup"><span data-stu-id="bf138-131">Share state between custom function and task pane code</span></span> 
 
-<span data-ttu-id="f4e7d-132">Agora que as funções personalizadas são executadas no mesmo contexto que o código do painel de tarefas, elas podem compartilhar o estado diretamente sem usar o objeto **Armazenamento**.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-132">Now that custom functions run in the same context as your task pane code, they can share state directly without using the **Storage** object.</span></span> <span data-ttu-id="f4e7d-133">As instruções a seguir mostram como compartilhar uma variável global entre as funções personalizadas e o código do painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-133">The following instructions show how to share a global variable between custom function and task pane code.</span></span>
+<span data-ttu-id="bf138-132">Agora que as funções personalizadas são executadas no mesmo contexto que o código do painel de tarefas, elas podem compartilhar o estado diretamente sem usar o objeto **Armazenamento**.</span><span class="sxs-lookup"><span data-stu-id="bf138-132">Now that custom functions run in the same context as your task pane code, they can share state directly without using the **Storage** object.</span></span> <span data-ttu-id="bf138-133">As instruções a seguir mostram como compartilhar uma variável global entre as funções personalizadas e o código do painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="bf138-133">The following instructions show how to share a global variable between custom function and task pane code.</span></span>
 
-### <a name="create-custom-functions-to-get-or-store-shared-state"></a><span data-ttu-id="f4e7d-134">Criar funções personalizadas para obter ou armazenar o estado compartilhado</span><span class="sxs-lookup"><span data-stu-id="f4e7d-134">Create custom functions to get or store shared state</span></span>
+### <a name="create-custom-functions-to-get-or-store-shared-state"></a><span data-ttu-id="bf138-134">Criar funções personalizadas para obter ou armazenar o estado compartilhado</span><span class="sxs-lookup"><span data-stu-id="bf138-134">Create custom functions to get or store shared state</span></span>
 
-1. <span data-ttu-id="f4e7d-135">No código do Visual Studio, abra o arquivo **src/functions/functions.js**.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-135">In Visual Studio Code open the file **src/functions/functions.js**.</span></span>
-2. <span data-ttu-id="f4e7d-136">Na linha 1, insira o código a seguir na parte superior.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-136">On line 1, insert the following code at the very top.</span></span> <span data-ttu-id="f4e7d-137">Isso inicializará uma variável global chamada **sharedState**.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-137">This will initialize a global variable named **sharedState**.</span></span>
+1. <span data-ttu-id="bf138-135">No código do Visual Studio, abra o arquivo **src/functions/functions.js**.</span><span class="sxs-lookup"><span data-stu-id="bf138-135">In Visual Studio Code open the file **src/functions/functions.js**.</span></span>
+2. <span data-ttu-id="bf138-136">Na linha 1, insira o código a seguir na parte superior.</span><span class="sxs-lookup"><span data-stu-id="bf138-136">On line 1, insert the following code at the very top.</span></span> <span data-ttu-id="bf138-137">Isso inicializará uma variável global chamada **sharedState**.</span><span class="sxs-lookup"><span data-stu-id="bf138-137">This will initialize a global variable named **sharedState**.</span></span>
     
     ```js
     window.sharedState = "empty";
     ```
     
-3. <span data-ttu-id="f4e7d-138">Adicione o código a seguir para criar uma função personalizada que armazena valores para a variável **sharedState**.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-138">Add the following code to create a custom function that stores values to the **sharedState** variable.</span></span>
+3. <span data-ttu-id="bf138-138">Adicione o código a seguir para criar uma função personalizada que armazena valores para a variável **sharedState**.</span><span class="sxs-lookup"><span data-stu-id="bf138-138">Add the following code to create a custom function that stores values to the **sharedState** variable.</span></span>
     
     ```js
     /**
@@ -132,7 +134,7 @@ yo office
     }
     ```
     
-4. <span data-ttu-id="f4e7d-139">Adicione o código a seguir para criar uma função personalizada que obtém o valor atual da variável **sharedState**.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-139">Add the following code to create a custom function that gets the current value of the **sharedState** variable.</span></span>
+4. <span data-ttu-id="bf138-139">Adicione o código a seguir para criar uma função personalizada que obtém o valor atual da variável **sharedState**.</span><span class="sxs-lookup"><span data-stu-id="bf138-139">Add the following code to create a custom function that gets the current value of the **sharedState** variable.</span></span>
 
     ```js
     /**
@@ -145,12 +147,18 @@ yo office
     }
     ```
     
-5. <span data-ttu-id="f4e7d-140">Salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-140">Save the file.</span></span>
+5. <span data-ttu-id="bf138-140">Salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="bf138-140">Save the file.</span></span>
 
-### <a name="create-task-pane-controls-to-work-with-global-data"></a><span data-ttu-id="f4e7d-141">Criar controles do painel de tarefas para trabalhar com dados globais</span><span class="sxs-lookup"><span data-stu-id="f4e7d-141">Create task pane controls to work with global data</span></span> 
+### <a name="create-task-pane-controls-to-work-with-global-data"></a><span data-ttu-id="bf138-141">Criar controles do painel de tarefas para trabalhar com dados globais</span><span class="sxs-lookup"><span data-stu-id="bf138-141">Create task pane controls to work with global data</span></span> 
 
-1. <span data-ttu-id="f4e7d-142">Abra o arquivo**src/taskpane/taskpane.html**.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-142">Open the file**src/taskpane/taskpane.html**.</span></span>
-2. <span data-ttu-id="f4e7d-143">Após o elemento de fechamento `</main>`, adicione o seguinte HTML.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-143">After the closing `</main>` element, add the following HTML.</span></span> <span data-ttu-id="f4e7d-144">O HTML cria duas caixas de texto e botões usados para obter ou armazenar dados globais.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-144">The HTML creates two text boxes and buttons used to get or store global data.</span></span>
+1. <span data-ttu-id="bf138-142">Abra o arquivo **src/taskpane/taskpane.html**.</span><span class="sxs-lookup"><span data-stu-id="bf138-142">Open the file **src/taskpane/taskpane.html**.</span></span>
+2. <span data-ttu-id="bf138-143">Adicione o seguinte elemento de script antes do elemento `</head>`.</span><span class="sxs-lookup"><span data-stu-id="bf138-143">Add the following script element just before the `</head>` element.</span></span>
+
+    ```html
+    <script src="functions.js"></script>
+    ```
+
+3. <span data-ttu-id="bf138-144">Após o elemento de fechamento `</main>`, adicione o seguinte HTML.</span><span class="sxs-lookup"><span data-stu-id="bf138-144">After the closing `</main>` element, add the following HTML.</span></span> <span data-ttu-id="bf138-145">O HTML cria duas caixas de texto e botões usados para obter ou armazenar dados globais.</span><span class="sxs-lookup"><span data-stu-id="bf138-145">The HTML creates two text boxes and buttons used to get or store global data.</span></span>
 
     ```html
     <ol>
@@ -172,7 +180,7 @@ yo office
     </div>
     ```
     
-3. <span data-ttu-id="f4e7d-145">Antes do elemento `<body>`, adicione o seguinte script.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-145">Before the `<body>` element add the following script.</span></span> <span data-ttu-id="f4e7d-146">Esse código manipulará os eventos de clique do botão quando o usuário desejar armazenar ou obter os dados globais.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-146">This code will handle the button click events when the user wants to store or get global data.</span></span>
+4. <span data-ttu-id="bf138-146">Antes do elemento `<body>`, adicione o seguinte script.</span><span class="sxs-lookup"><span data-stu-id="bf138-146">Before the `<body>` element add the following script.</span></span> <span data-ttu-id="bf138-147">Esse código manipulará os eventos de clique do botão quando o usuário desejar armazenar ou obter os dados globais.</span><span class="sxs-lookup"><span data-stu-id="bf138-147">This code will handle the button click events when the user wants to store or get global data.</span></span>
     
     ```js
     <script>
@@ -186,23 +194,23 @@ yo office
     }</script>
     ```
     
-4. <span data-ttu-id="f4e7d-147">Salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-147">Save the file.</span></span>
-5. <span data-ttu-id="f4e7d-148">Compilar o projeto</span><span class="sxs-lookup"><span data-stu-id="f4e7d-148">Build the project</span></span>
+5. <span data-ttu-id="bf138-148">Salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="bf138-148">Save the file.</span></span>
+6. <span data-ttu-id="bf138-149">Compilar o projeto</span><span class="sxs-lookup"><span data-stu-id="bf138-149">Build the project</span></span>
     
     ```command&nbsp;line
     npm run build 
     ```
 
-### <a name="try-sharing-data-between-the-custom-functions-and-task-pane"></a><span data-ttu-id="f4e7d-149">Experimente compartilhar dados entre as funções personalizadas e o painel de tarefas</span><span class="sxs-lookup"><span data-stu-id="f4e7d-149">Try sharing data between the custom functions and task pane</span></span>
+### <a name="try-sharing-data-between-the-custom-functions-and-task-pane"></a><span data-ttu-id="bf138-150">Experimente compartilhar dados entre as funções personalizadas e o painel de tarefas</span><span class="sxs-lookup"><span data-stu-id="bf138-150">Try sharing data between the custom functions and task pane</span></span>
 
-- <span data-ttu-id="f4e7d-150">Inicie o projeto usando o comando a seguir.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-150">Start the project by using the following command.</span></span>
+- <span data-ttu-id="bf138-151">Inicie o projeto usando o comando a seguir.</span><span class="sxs-lookup"><span data-stu-id="bf138-151">Start the project by using the following command.</span></span>
 
     ```command&nbsp;line
     npm run start
     ```
 
-<span data-ttu-id="f4e7d-151">Após a inicialização do Excel, você pode usar os botões do painel de tarefas para armazenar ou obter os dados compartilhados.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-151">Once Excel starts, you can use the task pane buttons to store or get shared data.</span></span> <span data-ttu-id="f4e7d-152">Insira `=CONTOSO.GETVALUE()` em uma célula para que a função personalizada recupere os mesmos dados compartilhados.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-152">Enter `=CONTOSO.GETVALUE()` into a cell for the custom function to retrieve the same shared data.</span></span> <span data-ttu-id="f4e7d-153">Ou use `=CONTOSO.STOREVALUE(“new value”)` para alterar os dados compartilhados para um novo valor.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-153">Or use `=CONTOSO.STOREVALUE(“new value”)` to change the shared data to a new value.</span></span>
+<span data-ttu-id="bf138-152">Após a inicialização do Excel, você pode usar os botões do painel de tarefas para armazenar ou obter os dados compartilhados.</span><span class="sxs-lookup"><span data-stu-id="bf138-152">Once Excel starts, you can use the task pane buttons to store or get shared data.</span></span> <span data-ttu-id="bf138-153">Insira `=CONTOSO.GETVALUE()` em uma célula para que a função personalizada recupere os mesmos dados compartilhados.</span><span class="sxs-lookup"><span data-stu-id="bf138-153">Enter `=CONTOSO.GETVALUE()` into a cell for the custom function to retrieve the same shared data.</span></span> <span data-ttu-id="bf138-154">Ou use `=CONTOSO.STOREVALUE(“new value”)` para alterar os dados compartilhados para um novo valor.</span><span class="sxs-lookup"><span data-stu-id="bf138-154">Or use `=CONTOSO.STOREVALUE(“new value”)` to change the shared data to a new value.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="f4e7d-154">A configuração do seu projeto, como mostrado neste artigo, compartilhará o contexto entre as funções personalizadas e o painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-154">Configuring your project as shown in this article will share context between custom functions and the task pane.</span></span> <span data-ttu-id="f4e7d-155">Não há suporte para chamar APIs do Office a partir de funções personalizadas na visualização.</span><span class="sxs-lookup"><span data-stu-id="f4e7d-155">Calling Office APIs from custom functions is not supported.</span></span>
+> <span data-ttu-id="bf138-155">A configuração do seu projeto, como mostrado neste artigo, compartilhará o contexto entre as funções personalizadas e o painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="bf138-155">Configuring your project as shown in this article will share context between custom functions and the task pane.</span></span> <span data-ttu-id="bf138-156">Não há suporte para chamar APIs do Office a partir de funções personalizadas na visualização.</span><span class="sxs-lookup"><span data-stu-id="bf138-156">Calling Office APIs from custom functions is not supported in the preview.</span></span>
 
