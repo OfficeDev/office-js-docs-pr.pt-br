@@ -3,12 +3,12 @@ title: Depurar suplementos no Office na Web
 description: Como usar o Office na Web para testar e depurar seus suplementos.
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: ebc1296c0d6f13d5327f666e72907e016fbe8c6e
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: cf2461184f5163463f3e4fbf93f2cc7a0b70a249
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575678"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217327"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>Depurar suplementos no Office na Web
 
@@ -22,7 +22,7 @@ Para começar:
 - Obtenha uma conta de desenvolvedor do Office 365, se já não tiver uma, ou o acesso a um site do SharePoint.
 
   > [!NOTE]
-  > Para se inscrever para uma assinatura gratuita de desenvolvedor do Office 365, ingresse no [Programa de Desenvolvedor do Office 365](https://developer.microsoft.com/office/dev-program). Confira as instruções passo a passo sobre como participar do Programa para Desenvolvedores do Office 365, entrar e configurar sua assinatura na [documentação do Programa para Desenvolvedores do Office 365](/office/developer-program/office-365-developer-program).
+  > Para obter uma assinatura de desenvolvedor gratuita e renovável de 90 dias do Office 365, ingresse no [Programa de Desenvolvedor do Office 365](https://developer.microsoft.com/office/dev-program). Confira as instruções passo a passo sobre como participar do Programa para Desenvolvedores do Office 365 e configura sua assinatura em [Documentação do Programa para Desenvolvedores do Office 365](/office/developer-program/office-365-developer-program).
 
 - Configure um catálogo de aplicativos no Office 365 (SharePoint Online). Um catálogo de aplicativos é um conjunto de sites dedicado no SharePoint Online, o qual hospeda bibliotecas de documentos para suplementos do Office. Se você tiver seu próprio site do SharePoint, poderá configurar uma biblioteca de documentos do catálogo de aplicativos. Para obter mais informações, consulte [Publicar suplementos de painel de tarefas e de conteúdo em um catálogo de aplicativos no SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 

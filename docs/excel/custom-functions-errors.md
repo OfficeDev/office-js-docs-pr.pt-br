@@ -3,17 +3,17 @@ ms.date: 11/04/2019
 description: 'Manipular e retornar erros como #NULL! da sua função personalizada'
 title: Manipular e retornar erros da sua função personalizada (visualização)
 localization_priority: Priority
-ms.openlocfilehash: b51161c3f5292ffdfb516a731b102a634aaf7d83
-ms.sourcegitcommit: 44f1a4a3e1ae3c33d7d5fabcee14b84af94e03da
+ms.openlocfilehash: 5c62b7ccfbc1f0b450e6f36a0fd32f76fe099716
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "39670150"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217068"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function-preview"></a>Manipular e retornar erros da sua função personalizada (visualização)
 
 > [!NOTE]
-> Os recursos descritos neste artigo estão atualmente em visualização, estando sujeitos a alterações. No momento, eles não têm suporte para utilização em ambientes de produção. Você precisará do [Office Insider](https://insider.office.com/join) para experimentar os recursos de visualização.  Uma boa maneira de testar os recursos de visualização é usar uma assinatura do Office 365. Caso ainda não tenha uma assinatura do Office 365, obtenha uma ingressando no [Programa para Desenvolvedores do Office 365](https://developer.microsoft.com/office/dev-program).
+> Os recursos descritos neste artigo estão atualmente em visualização, estando sujeitos a alterações. No momento, eles não têm suporte para utilização em ambientes de produção. Você precisará do [Office Insider](https://insider.office.com/join) para experimentar os recursos de visualização.  Uma boa maneira de experimentar recursos de versão prévia é usar uma assinatura do Office 365. Caso você ainda não tenha uma assinatura do Office 365, obtenha uma assinatura do Office 365 gratuita e renovável por 90 dias ingressando no [Programa para Desenvolvedores do Office 365](https://developer.microsoft.com/office/dev-program).
 
 Se algo der errado enquanto sua função personalizada é executada, você precisará retornar um erro para informar o usuário. Se você tiver requisitos de parâmetros específicos, como apenas números positivos, será necessário testar os parâmetros e gerar um erro se eles não estiverem corretos. Você também pode usar um bloco `try`-`catch` para detectar quaisquer erros que ocorram enquanto sua função personalizada é executada.
 

@@ -3,12 +3,12 @@ title: Abrir automaticamente um painel de tarefas com um documento
 description: ''
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: de848238979b68192bb8646e0ee6cb8d7c3879be
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 343b7650d9de5dfcda508c4ae134be6dd8696454
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127608"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217012"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Abrir automaticamente um painel de tarefas com um documento
 
@@ -159,8 +159,7 @@ Você pode implantar uma versão de teste do suplemento que abre automaticamente
 </we:webextension>
 ```
 
-Para testar o exemplo anterior, considere participar do [Programa para Desenvolvedores do Office 365](/office/developer-program/office-365-developer-program) e inscreva-se para uma [conta de desenvolvedor do Office 365](https://developer.microsoft.com/office/dev-program), caso ainda não tenha uma assinatura do Office 365. Você pode realmente testar a Implantação Centralizada e verificar se o suplemento funciona como esperado.
-
+Você pode testar o exemplo anterior usando a sua assinatura do Office 365 para experimentar uma Implantação Centralizada e verificar se seu suplemento funciona conforme o esperado. Caso você ainda não tenha uma assinatura do Office 365, obtenha uma assinatura do Office 365 gratuita renovável por 90 dias ingressando no [Programa para Desenvolvedores do Office 365](https://developer.microsoft.com/office/dev-program).
 
 ## <a name="see-also"></a>Confira também
 

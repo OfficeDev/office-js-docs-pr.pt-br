@@ -1,14 +1,14 @@
 ---
 title: Conceitos avançados de programação com a API JavaScript do Excel
 description: ''
-ms.date: 07/17/2019
+ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 8755b479543d48fcbbbf2bfa1ea93fb40af87ecf
-ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
+ms.openlocfilehash: 76308b6ce04dfcaa09e9006373caf07744572112
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "37681925"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217335"
 ---
 # <a name="advanced-programming-concepts-with-the-excel-javascript-api"></a>Conceitos avançados de programação com a API JavaScript do Excel
 
@@ -27,6 +27,10 @@ Enquanto você provavelmente use a API JavaScript do Excel para desenvolver a ma
 - [Contexto](/javascript/api/office/office.context): o objeto **Context** representa o ambiente de tempo de execução do suplemento e oferece acesso aos principais objetos da API. Ele consiste em detalhes da configuração da pasta de trabalho, como `contentLanguage` e `officeTheme`, além de fornecer informações sobre o ambiente de tempo de execução do suplemento, como `host` e `platform`. Além disso, ele fornece o método `requirements.isSetSupported()`, que você pode usar para verificar se o conjunto de requisitos especificado é suportado pelo aplicativo Excel onde o suplemento está sendo executado.
 
 - [Document](/javascript/api/office/office.document): O objeto **Document** fornece o método `getFileAsync()`, que você pode usar para baixar o arquivo Excel onde o suplemento está em execução.
+
+A imagem a seguir ilustra quando você pode usar a API JavaScript do Excel ou as APIs comuns.
+
+![Imagem das diferentes entre a API JS do Excel e as APIs comuns](../images/excel-js-api-common-api.png)
 
 ## <a name="requirement-sets"></a>Conjuntos de requisitos
 

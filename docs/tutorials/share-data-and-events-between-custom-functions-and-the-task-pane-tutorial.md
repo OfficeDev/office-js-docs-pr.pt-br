@@ -4,21 +4,21 @@ title: 'Tutorial: compartilhar dados e eventos entre as funções personalizadas
 ms.prod: excel
 description: No Excel, compartilhe dados e eventos entre as funções personalizadas e o painel de tarefas.
 localization_priority: Priority
-ms.openlocfilehash: 16affeb29bd5950198f81f85e44adaf812067829
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: d86b5bb59dd0da51d5b5472288fa802823d658ce
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814128"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41217355"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane-preview"></a>Tutorial: compartilhar dados e eventos entre as funções personalizadas do Excel e o painel de tarefas (versão prévia)
 
 As funções personalizadas do Excel e o painel de tarefas compartilham dados globais e podem fazer chamadas de função entre si. Para configurar o projeto para que as funções personalizadas possam funcionar com o painel de tarefas, siga as instruções neste artigo.
 
 > [!NOTE]
-> Os recursos descritos neste artigo estão em versão prévia e sujeitos a alterações. No momento, eles não têm suporte para utilização em ambientes de produção. Os recursos de versão prévia deste artigo só estão disponíveis no Excel no Windows. Para experimentar os recursos de versão prévia, você precisará [ingressar no Office Insider](https://insider.office.com/join).  Uma boa maneira de experimentar recursos de versão prévia é usar uma assinatura do Office 365. Caso ainda não tenha uma assinatura do Office 365, obtenha uma ingressando no [Programa para Desenvolvedores do Office 365](https://developer.microsoft.com/office/dev-program).
+> Os recursos descritos neste artigo estão em versão prévia e sujeitos a alterações. No momento, eles não têm suporte para utilização em ambientes de produção. Os recursos de versão prévia deste artigo só estão disponíveis no Excel no Windows. Para experimentar os recursos de versão prévia, você precisará [ingressar no Office Insider](https://insider.office.com/join).  Uma boa maneira de experimentar recursos de versão prévia é usar uma assinatura do Office 365. Caso você ainda não tenha uma assinatura do Office 365, obtenha uma assinatura do Office 365 gratuita e renovável por 90 dias ingressando no [Programa para Desenvolvedores do Office 365](https://developer.microsoft.com/office/dev-program).
 
-## <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
+## <a name="create-the-add-in-project"></a>Crie o projeto do suplemento
 
 Use o gerador Yeoman para criar um projeto de suplemento do Excel. Execute o comando a seguir e responda às solicitações com as seguintes respostas:
 
@@ -41,21 +41,23 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 3. Altere a seção `<Requirements>` para usar o **CustomFunctionsRuntime** versão **1.2**, como mostrado no código a seguir.
     
     ```xml
-    <Requirements> 
+    <Requirements>
     <Sets DefaultMinVersion="1.1">
     <Set Name="CustomFunctionsRuntime" MinVersion="1.2"/>
     </Sets>
     </Requirements>
     ```
     
-4. No elemento `<Host>` da pasta de trabalho, adicione a seção `<Runtimes>` a seguir. O tempo de vida precisa ser **longo** para que as funções personalizadas ainda possam funcionar, mesmo quando o painel de tarefas estiver fechado.
+4. Localize a seção `<VersionOverrides>` e adicione a seguinte seção `<Runtimes>`. O tempo de vida precisa ser **longo** para que as funções personalizadas ainda possam funcionar, mesmo quando o painel de tarefas estiver fechado.
     
     ```xml
-    <Hosts>
-    <Host xsi:type="Workbook">
-    <Runtimes>
-    <Runtime resid="TaskPaneAndCustomFunction.Url" lifetime="long" />
-    </Runtimes>
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+      <Hosts>
+        <Host xsi:type="Workbook">
+        <Runtimes>
+          <Runtime resid="TaskPaneAndCustomFunction.Url" lifetime="long" />
+        </Runtimes>
+        <AllFormFactors>
     ```
     
 5. No elemento `<Page>`, altere o local de origem de **Functions.Page.Url** para **TaskPaneAndCustomFunction.Url**.
@@ -149,8 +151,14 @@ Agora que as funções personalizadas são executadas no mesmo contexto que o c�
 
 ### <a name="create-task-pane-controls-to-work-with-global-data"></a>Criar controles do painel de tarefas para trabalhar com dados globais 
 
-1. Abra o arquivo**src/taskpane/taskpane.html**.
-2. Após o elemento de fechamento `</main>`, adicione o seguinte HTML. O HTML cria duas caixas de texto e botões usados para obter ou armazenar dados globais.
+1. Abra o arquivo **src/taskpane/taskpane.html**.
+2. Adicione o seguinte elemento de script antes do elemento `</head>`.
+
+    ```html
+    <script src="functions.js"></script>
+    ```
+
+3. Após o elemento de fechamento `</main>`, adicione o seguinte HTML. O HTML cria duas caixas de texto e botões usados para obter ou armazenar dados globais.
 
     ```html
     <ol>
@@ -172,7 +180,7 @@ Agora que as funções personalizadas são executadas no mesmo contexto que o c�
     </div>
     ```
     
-3. Antes do elemento `<body>`, adicione o seguinte script. Esse código manipulará os eventos de clique do botão quando o usuário desejar armazenar ou obter os dados globais.
+4. Antes do elemento `<body>`, adicione o seguinte script. Esse código manipulará os eventos de clique do botão quando o usuário desejar armazenar ou obter os dados globais.
     
     ```js
     <script>
@@ -186,8 +194,8 @@ Agora que as funções personalizadas são executadas no mesmo contexto que o c�
     }</script>
     ```
     
-4. Salve o arquivo.
-5. Compilar o projeto
+5. Salve o arquivo.
+6. Compilar o projeto
     
     ```command&nbsp;line
     npm run build 

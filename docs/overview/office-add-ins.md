@@ -1,18 +1,20 @@
 ---
 title: Visão geral da plataforma Suplementos do Office | Microsoft Docs
 description: Use tecnologias da Web conhecidas, como HTML, CSS e JavaScript, para estender e interagir com os aplicativos Word, Excel, PowerPoint, OneNote, Project e Outlook.
-ms.date: 12/24/2019
+ms.date: 01/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: bb3a2005679e82134d6dd045878349847ee6d916
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 3ecca3e36108b831899e9488459687cb2acc3c98
+ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851359"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "41216978"
 ---
 # <a name="office-add-ins-platform-overview"></a>Visão geral da plataforma de Suplementos do Office
+
+![Imagem da capacidade de ampliação de suplementos do Office](../images/addins-overview.png)
 
 Você pode usar a plataforma de suplementos do Office para criar soluções que estendem os aplicativos do Office e interagem com conteúdo nos documentos do Office. Com os suplementos do Office, você pode usar tecnologias de web conhecidas, como HTML, CSS e JavaScript, para estender e interagir com o Word, Excel, PowerPoint, OneNote, Project e Outlook. Sua solução pode ser executada no Office através de várias plataformas, incluindo Windows, Mac, iPad e em um navegador.
 
@@ -25,6 +27,8 @@ Os suplementos do Office podem fazer quase tudo que uma página da Web pode faze
 ## <a name="how-are-office-add-ins-different-from-com-and-vsto-add-ins"></a>Quais são as diferenças entre os suplementos do Office e os suplementos de COM e VSTO?
 
 Os suplementos de COM ou VSTO são soluções de integração anteriores do Office que são executadas apenas no Office no Windows. Ao contrário de suplementos de COM, os suplementos do Office não envolvem código executado no dispositivo do usuário ou no cliente do Office. Para um suplemento Office, o aplicativo do host, por exemplo, o Excel, lê o manifesto do suplemento e conecta os comandos do menu e os botões da faixa de opções personalizada do suplemento à interface de usuário. Quando necessário, ele carrega o código de HTML e o JavaScript, que são executados no contexto de um navegador em uma área restrita.
+
+![Imagem dos motivos para usar os suplementos do Office](../images/why.png)
 
 Os suplementos do Office fornecem as seguintes vantagens em relação aos suplementos criados usando o VBA, COM ou VSTO:
 
@@ -39,10 +43,6 @@ Os suplementos do Office fornecem as seguintes vantagens em relação aos suplem
 ## <a name="components-of-an-office-add-in"></a>Componentes de um suplemento do Office
 
 Um suplemento do Office inclui dois componentes básicos: um arquivo de manifesto XML e seu próprio aplicativo Web. O manifesto define várias configurações, incluindo como o suplemento é integrado a clientes do Office. O aplicativo Web deve ser hospedado em um servidor Web ou serviço de hospedagem na Web, como o Microsoft Azure.
-
-*Figura 1. Manifesto de suplemento (XML) + página da Web (HTML, JS) = um Suplemento do Office*
-
-![Manifesto mais página da Web é igual a Suplemento do Office](../images/about-addins-manifestwebpage.png)
 
 ### <a name="manifest"></a>Manifesto
 
@@ -124,7 +124,7 @@ Para obter uma introdução mais detalhada ao desenvolvimento de Suplementos do 
 
 - [Criando Suplementos do Office ](../overview/office-add-ins-fundamentals.md)
 - [Principais conceitos dos Suplementos do Office](../overview/core-concepts-office-add-ins.md)
-- [Desenvolver Suplementos do Office ](../develop/develop-overview.md)
+- [Desenvolver Suplementos do Office](../develop/develop-overview.md)
 - [Fazer o design de Suplementos do Office](../design/add-in-design.md)
 - [Testar e depurar Suplementos do Office](../testing/test-debug-office-add-ins.md)
 - [Publicar Suplementos do Office](../publish/publish.md)
