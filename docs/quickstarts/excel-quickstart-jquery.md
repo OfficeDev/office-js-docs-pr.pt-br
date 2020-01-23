@@ -1,15 +1,15 @@
 ---
 title: Crie seu primeiro suplemento do painel de tarefas do Excel
 description: Saiba como criar um Suplemento do Excel simples usando a API JS do Office.
-ms.date: 01/13/2020
+ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: a51ea833ae107aac677d255de4097726822facbd
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: 71253cbc5b50f6d36c8c04b25573c1ed328f9df6
+ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111127"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "41265703"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Criar um suplemento do painel de tarefas do Excel
 
