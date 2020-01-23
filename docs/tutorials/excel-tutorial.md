@@ -1,15 +1,15 @@
 ---
 title: Tutorial de suplemento do Excel
 description: Neste tutorial, você criará um suplemento do Excel que cria, preenche, filtra e classifica uma tabela, cria um gráfico, congela um cabeçalho de tabela, protege uma planilha e abre uma caixa de diálogo
-ms.date: 11/26/2019
+ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 48f4decc0cadddecd5669b960238ddd3381f0932
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 3d9350d30a89d917c30efdbaf91c0c0a5d523724
+ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851415"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "41265582"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Tutorial: criar um suplemento do painel de tarefas no Excel
 
@@ -190,7 +190,7 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
         npm start
         ```
 
-    - Para testar seu suplemento no Excel na Web, execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).
+    - Para testar seu suplemento no Excel na Web, execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor Web local será iniciado (se ainda não estiver em execução).
 
         ```command&nbsp;line
         npm run start:web
@@ -745,7 +745,7 @@ Estas etapas devem ser concluídas sempre que seu código precisar *ler* informa
         npm start
         ```
 
-    - Para testar seu suplemento no Excel na Web, execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).
+    - Para testar seu suplemento no Excel na Web, execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor Web local será iniciado (se ainda não estiver em execução).
 
         ```command&nbsp;line
         npm run start:web
@@ -1019,6 +1019,6 @@ Neste tutorial você criou um suplemento do Excel que interage com tabelas, grá
 ## <a name="see-also"></a>Confira também
 
 * [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
-* [Criar suplementos do Office](../overview/office-add-ins-fundamentals.md)
-* [Desenvolver suplementos do Office](../develop/develop-overview.md)
+* [Criando Suplementos do Office ](../overview/office-add-ins-fundamentals.md)
+* [Desenvolver Suplementos do Office ](../develop/develop-overview.md)
 * [Conceitos fundamentais de programação com a API JavaScript do Excel](../excel/excel-add-ins-core-concepts.md)

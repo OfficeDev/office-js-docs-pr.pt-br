@@ -1,15 +1,15 @@
 ---
 title: Tutorial de funções personalizadas do Excel
 description: Neste tutorial, você criará um suplemento do Excel que contém uma função personalizada que pode executar cálculos e solicitar ou transmitir dados da web.
-ms.date: 09/18/2019
+ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 4481d63cc167c2ce05ec70331ccd7fd472d7846b
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: 63379c74897a5f232804241726ac7def1809f5c1
+ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035445"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "41265533"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Tutorial: Criar funções personalizadas no Excel
 
@@ -69,9 +69,9 @@ Para testar seu suplemento no Excel no Windows ou Mac, execute o seguinte comand
 npm run start:desktop
 ```
 
-# <a name="excel-on-the-webtabexcel-online"></a>[Excel na Web](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[Excel Online](#tab/excel-online)
 
-Para testar seu suplemento no Excel em um navegador, execute o seguinte comando. Quando você executa este comando, o servidor Web local iniciará.
+Para testar seu suplemento no Excel em um navegador, execute o seguinte comando. O servidor Web local é iniciado quando este comando é executado.
 
 ```command&nbsp;line
 npm run start:web
@@ -155,7 +155,7 @@ Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio d
     ![Inserir faixa de opções no Excel no Windows com o suplemento funções personalizadas do Excel realçado na lista meus suplementos](../images/list-starcount.png)
 
 
-# <a name="excel-on-the-webtabexcel-online"></a>[Excel na Web](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[Excel Online](#tab/excel-online)
 
 1. No Excel, escolha a guia **Inserir** e, em seguida, escolha **suplementos**.  ![Inserir faixa de opções no Excel na Web com o ícone meus suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
 
@@ -222,7 +222,7 @@ function clock(invocation) {
 3. Na lista de suplementos disponíveis, encontre a seção suplementos do **desenvolvedor** e selecione o suplemento do **starcount** para registrá-lo.
     ![Inserir faixa de opções no Excel no Windows com o suplemento funções personalizadas do Excel realçado na lista meus suplementos](../images/list-starcount.png)
 
-# <a name="excel-on-the-webtabexcel-online"></a>[Excel na Web](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[Excel Online](#tab/excel-online)
 
 1. No Excel, escolha a guia **Inserir** e, em seguida, escolha **suplementos**.  ![Inserir faixa de opções no Excel na Web com o ícone meus suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
 

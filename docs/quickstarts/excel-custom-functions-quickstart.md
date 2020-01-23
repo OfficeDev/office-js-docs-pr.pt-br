@@ -1,15 +1,15 @@
 ---
-ms.date: 09/18/2019
+ms.date: 01/16/2020
 description: Desenvolvimento de funções personalizadas no guia de início rápido do Excel.
 title: Início rápido de funções personalizadas
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f34a8817a7c8ef2679fc8ce0a6ad17cec600531b
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: 7446de52832a70b30bbe39c71b37e80e006dc62f
+ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035326"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "41265561"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Introdução ao desenvolvimento de funções personalizadas do Excel
 
@@ -64,9 +64,9 @@ Para testar seu suplemento no Excel no Windows, execute o seguinte comando. Quan
 npm run start:desktop
 ```
 
-# <a name="excel-on-the-webtabexcel-online"></a>[Excel na Web](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[Excel Online](#tab/excel-online)
 
-Para testar seu suplemento no Excel na Web, execute o seguinte comando. Quando você executa este comando, o servidor Web local iniciará.
+Para testar seu suplemento no Excel na Web, execute o seguinte comando. O servidor Web local é iniciado quando este comando é executado.
 
 ```command&nbsp;line
 npm run start:web

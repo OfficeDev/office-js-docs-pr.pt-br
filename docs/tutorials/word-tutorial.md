@@ -1,15 +1,15 @@
 ---
 title: Tutorial de suplemento do Word
 description: Neste tutorial, voc? criar? um suplemento do Word que insere (e substitui) intervalos de texto, par?grafos, imagens, HTML, tabelas e controles de conte?do. Você também aprenderá como formatar texto e como inserir (e substituir) conteúdo nos controles de conteúdo.
-ms.date: 12/24/2019
+ms.date: 01/16/2020
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: e6f4a0bee75a9f0de648d8354c6b23b87845c00f
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 33a5df934dcf707831923c56a1b60f4993edc7fb
+ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851408"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "41265540"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Tutorial: Criar Suplemento do Painel de Tarefas no Word
 
@@ -945,5 +945,5 @@ Neste tutorial, você criou um suplemento do painel de tarefas do Word que inser
 ## <a name="see-also"></a>Confira também
 
 * [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
-* [Criar suplementos do Office](../overview/office-add-ins-fundamentals.md)
-* [Desenvolver suplementos do Office](../develop/develop-overview.md)
+* [Criando Suplementos do Office ](../overview/office-add-ins-fundamentals.md)
+* [Desenvolver Suplementos do Office ](../develop/develop-overview.md)
