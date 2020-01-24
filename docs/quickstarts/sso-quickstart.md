@@ -1,15 +1,15 @@
 ---
 title: Use o gerador Yeoman para criar um Suplemento do Office que use SSO (prévia)
 description: Use o gerador Yeoman para criar um Suplemento do Office com Node.js que use logon único (prévia).
-ms.date: 01/13/2020
+ms.date: 01/16/2020
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: 1f02f03fec0d6be32fc7a0d6b98fce30e19c28e2
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
+ms.openlocfilehash: becc0a03a87dcfd5b37b5ab65f45dd6516bf105a
+ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217362"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "41265589"
 ---
 # <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on-preview"></a>Use o gerador Yeoman para criar um Suplemento do Office que use logon único (prévia)
 
@@ -22,7 +22,7 @@ O gerador Yeoman simplifica o processo de criação de um suplemento de SSO, aut
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* [Node.js](https://nodejs.org) (versão 10.15.0 ou posterior)
+* [Node.js](https://nodejs.org) (a versão mais recente de [LTS](https://nodejs.org/about/releases))
 
 * A versão mais recente do [Yeoman](https://github.com/yeoman/yo) e do [Yeoman gerador de suplementos do Office](https://github.com/OfficeDev/generator-office). Para instalar essas ferramentas globalmente, execute o seguinte comando por meio do prompt de comando:
 
