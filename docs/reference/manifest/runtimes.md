@@ -1,14 +1,14 @@
 ---
 title: Tempos de execução no arquivo de manifesto
 description: ''
-ms.date: 01/06/2020
+ms.date: 01/24/2020
 localization_priority: Normal
-ms.openlocfilehash: ec2b85a92325eb4e36c61f731369ec54d44ef169
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: 6682887935ee6894b5a311ad519408067452bb23
+ms.sourcegitcommit: 72d719165cc2b64ac9d3c51fb8be277dfde7d2eb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111174"
+ms.lasthandoff: 01/25/2020
+ms.locfileid: "41554003"
 ---
 # <a name="runtimes-element"></a>Elemento de runtimes
 
@@ -32,4 +32,4 @@ Este recurso está em visualização. Especifica o tempo de execução do suplem
 
 ## <a name="see-also"></a>Confira também
 
--[Tempos](runtimes.md)
+- [Runtime](runtime.md)

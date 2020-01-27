@@ -1,18 +1,18 @@
 ---
 title: Tempo de execução no arquivo de manifesto
 description: ''
-ms.date: 01/14/2020
+ms.date: 01/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 945a30527632b23a594d7bfb82cec94e74754249
-ms.sourcegitcommit: dc42e0276007f8ab006028b9cd0cc1526c1bd100
+ms.openlocfilehash: 8fbad8276b3e1d64a6c443cf57d498597d729282
+ms.sourcegitcommit: 72d719165cc2b64ac9d3c51fb8be277dfde7d2eb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "41120632"
+ms.lasthandoff: 01/25/2020
+ms.locfileid: "41553996"
 ---
 # <a name="runtime-element"></a>Elemento Runtime
 
-Este recurso está em visualização. Elemento filho do [`<Runtimes>`](runtime.md) elemento. Este elemento facilita o compartilhamento de dados globais e chamadas de função entre as funções personalizadas do Excel e o painel de tarefas do seu suplemento.
+Este recurso está em visualização. Elemento filho do [`<Runtimes>`](runtimes.md) elemento. Este elemento facilita o compartilhamento de dados globais e chamadas de função entre as funções personalizadas do Excel e o painel de tarefas do seu suplemento.
 
 **Tipo de suplemento:** Painel de tarefas
 
@@ -26,7 +26,7 @@ Este recurso está em visualização. Elemento filho do [`<Runtimes>`](runtime.m
 
 ## <a name="contained-in"></a>Contido em
 
--[Tempos](runtimes.md)
+- [Tempos de execução](runtimes.md)
 
 ## <a name="attributes"></a>Atributos
 
@@ -37,4 +37,4 @@ Este recurso está em visualização. Elemento filho do [`<Runtimes>`](runtime.m
 
 ## <a name="see-also"></a>Confira também
 
--[Tempo](runtime.md)
+- [Tempos de execução](runtimes.md)
