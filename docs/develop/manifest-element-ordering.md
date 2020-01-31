@@ -3,12 +3,12 @@ title: Como encontrar a ordem correta dos elementos do manifesto
 description: Saiba como encontrar a ordem correta na qual colocar elementos filho em um elemento pai.
 ms.date: 08/22/2019
 localization_priority: Normal
-ms.openlocfilehash: 6e88ee4f6eac09d4af8bc79a53f5faf890551a15
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
+ms.openlocfilehash: ae09fa90345188a80c910c6bad69fbbc7ad85c5b
+ms.sourcegitcommit: 413f163729183994de61a8281685184b377ef76c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111050"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "41571380"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>Como encontrar a ordem correta dos elementos do manifesto
 
@@ -160,6 +160,8 @@ As seções a seguir mostram os elementos manifest na ordem em que devem ser exi
             <Set>
       <Hosts>
         <Host>
+            <Runtimes>
+                <Runtime>
             <AllFormFactors>
             <ExtensionPoint>
                 <Script>
@@ -257,8 +259,6 @@ As seções a seguir mostram os elementos manifest na ordem em que devem ser exi
                                     <SourceLocation>
                                     <Title>
                                     <FunctionName>
-        <Runtimes>
-            <Runtime>
         <Resources>
             <Images>
                 <Image>

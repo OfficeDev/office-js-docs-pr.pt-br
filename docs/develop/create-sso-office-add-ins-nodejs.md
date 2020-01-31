@@ -3,12 +3,12 @@ title: Crie um Suplemento do Office com Node.js que use logon único
 description: Aprenda a criar um suplemento baseado em node.js que usa o logon único do Office
 ms.date: 01/16/2020
 localization_priority: Priority
-ms.openlocfilehash: 562351011ef8aaf2ba936cceea862ebfec888b11
-ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
+ms.openlocfilehash: 618750cac33c7f6928a017b67a7f63deee35d29b
+ms.sourcegitcommit: 43166612e9b4bf7a73312a572663c8696353dbc6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "41265449"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "41580984"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Crie um Suplemento do Office com Node.js que use logon único (prévia)
 
@@ -101,7 +101,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
     - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
     - `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
     - `57fb890c-0dab-4253-a5e0-7188c88b2bb4`(Office na Web)
-    - `bc59ab01-8403-45c6-8796-ac3ef710b3e3`(Office na Web)
+    - `bc59ab01-8403-45c6-8796-ac3ef710b3e3`(Outlook na Web)
 
     Para cada ID, siga estas etapas:
 
