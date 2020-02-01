@@ -1,14 +1,14 @@
 ---
 title: Códigos de erro da API JavaScript do Office
 description: ''
-ms.date: 01/14/2020
+ms.date: 01/30/2020
 localization_priority: Normal
-ms.openlocfilehash: af8d53f81bdbefb5810ab02e3391cf3154096bef
-ms.sourcegitcommit: dc42e0276007f8ab006028b9cd0cc1526c1bd100
+ms.openlocfilehash: 286cf00bf60d0e86a68eef9183fcd887e5f30ddf
+ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "41120611"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "41650016"
 ---
 # <a name="javascript-api-for-office-error-codes"></a>Códigos de erro da API JavaScript para Office
 
@@ -81,8 +81,10 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 |8021|Fora do intervalo|O valor de índice de coluna está fora do intervalo permitido. Use um valor positivo (0 ou maior) que seja menor do que o número de colunas.|O índice de coluna é superior ao maior índice de coluna da tabela ou menor do que 0.|
 |8022|Fora do intervalo|O valor está fora do intervalo permitido.|Alguns dos valores no formato estão fora dos intervalos suportados.|
 |9016|Permissão negada|Permissão negada|Acesso negado.|
+|9021|Salvar erro|Erro de conexão ao tentar salvar o item no servidor.|O item não pôde ser salvo. No modo online, isso pode ser devido a um erro de conexão do servidor.|
 |9022|Mensagem em um erro de repositório diferente|A ID do EWS não pode ser recuperada porque a mensagem é salva em outro repositório.|A ID do EWS da mensagem atual não pôde ser recuperada, pois a mensagem pode ter sido movida ou a caixa de correio de envio pode ter sido alterada.|
 |9041|Erro de rede|O usuário não está mais conectado à rede. Verifique sua conexão de rede e tente novamente.|O usuário não tem mais acesso à Internet ou à rede.|
+|9043|Tipo de anexo não suportado|Não há suporte para o tipo de anexo.|A API não dá suporte ao tipo de anexo. Por exemplo, `item.getAttachmentContentAsync` lança esse erro se o anexo for uma imagem inserida no formato Rich Text ou se for um tipo de item diferente de um item de email ou de calendário (como um contato ou item de tarefa).|
 |12002|||Uma destas opções:<br> - Não existe uma página na URL transmitida para `displayDialogAsync`.<br> - A página transmitida para `displayDialogAsync` foi carregada, mas a caixa de diálogo foi direcionada para uma página que ela não consegue localizar nem carregar ou foi direcionada para uma URL com sintaxe inválida. Lançado dentro da caixa de diálogo e dispara um evento `DialogEventReceived` na página de host.|
 |12003|||A caixa de diálogo foi direcionada para uma URL com o protocolo HTTP. HTTPS é necessário. Lançado dentro da caixa de diálogo e dispara um evento `DialogEventReceived` na página de host.|
 |12004|||O domínio que a URL transmitiu para `displayDialogAsync` não é confiável. O domínio deve ser o mesmo domínio que o da página de host (incluindo o protocolo e o número da porta). Lançada por chamada de `displayDialogAsync`.|
