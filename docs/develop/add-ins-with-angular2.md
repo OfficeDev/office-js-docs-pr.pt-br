@@ -1,14 +1,14 @@
 ---
 title: Desenvolver suplementos do Office para o Angular
 description: ''
-ms.date: 09/18/2019
+ms.date: 01/27/2020
 localization_priority: Priority
-ms.openlocfilehash: 6687cb5a661217e3bc6b240ce550edd082e565c7
-ms.sourcegitcommit: a0257feabcfe665061c14b8bdb70cf82f7aca414
+ms.openlocfilehash: 51e47b72e819a96d4766785243d542811386dca7
+ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "37035214"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "41649974"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Desenvolver suplementos do Office para o Angular
 
@@ -81,18 +81,18 @@ export class AppRoutingModule { }
 
 Recomendamos o uso do estilo [UI Fabric](https://developer.microsoft.com/fabric#) em seu suplemento. O UI Fabric para a Web está disponível em duas versões: 
 
-- O Fabric React](https://developer.microsoft.com/fabric#/controls/web) oferece componentes robustos, acessíveis e atualizados que são altamente personalizáveis.
+- O [Fabric React](https://developer.microsoft.com/fabric#/controls/web) oferece componentes robustos, acessíveis e atualizados que são altamente personalizáveis.
 
 - O [Fabric Core](https://developer.microsoft.com/fabric#/styles/web) é um conjunto de classes CSS e mixins de Sass que oferecem acesso a cores, animações, fontes, ícones e grade do Fabric.
 
 Considere o uso de componentes do Fabric no seu suplemento dispondo-os em componentes do Angular. Para ver um exemplo de como fazer isso, consulte [Suplemento de verificação de estilo do Word criado no Angular](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker). Observe, por exemplo, como o componente do Angular definido em [fabric.textfield.wrapper](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/shared/office-fabric-component-wrappers/fabric.textfield.wrapper.component.ts) importa o arquivo do Fabric TextField.ts, onde o componente do Fabric é definido. 
 
 
-## <a name="using-the-office-dialog-api-with-angular"></a>Usar a API de caixa diálogo do Office com o Angular
+## <a name="using-the-office-dialog-api-with-angular"></a>Usando a API de diálogo do Office com Angular
 
-A API de caixa de diálogo do Suplemento do Office permite que seu suplemento abra uma página em uma caixa de diálogo semimodal que pode trocar informações com a página principal, que, em geral, está no painel de tarefas.
+A API da caixa de diálogo Suplemento do Office permite que o suplemento abra uma página em uma caixa de diálogo não modal que pode trocar informações com a página principal, normalmente em um painel de tarefas.
 
-O método [displayDialogAsync](/javascript/api/office/office.ui) usa um parâmetro que especifica a URL da página que deve ser aberta na caixa de diálogo. Seu suplemento pode ter uma página HTML distinta (diferente da página de base) para transmitir esse parâmetro ou você pode transmitir a URL de uma rota em um aplicativo do Angular. 
+O método [displayDialogAsync](/javascript/api/office/office.ui) usa um parâmetro que especifica a URL da página que deve ser aberta na caixa de diálogo. Seu suplemento pode ter uma página HTML distinta (diferente da página de base) para transmitir esse parâmetro, ou você pode transmitir a URL de uma rota em um aplicativo do Angular. 
 
 É importante lembrar, se você transmitir uma rota, que a caixa de diálogo cria uma nova janela com seu próprio contexto de execução. Sua página de base e todos os códigos de inicialização são executados novamente nesse novo contexto e todas as variáveis são definidas para seus valores iniciais na caixa de diálogo. Então essa técnica lança uma segunda instância do seu aplicativo com uma única página na caixa de diálogo. O código que altera as variáveis na caixa de diálogo não altera a versão do painel tarefas das mesmas variáveis. Da mesma forma, a caixa de diálogo tem seu próprio armazenamento de sessão, que não pode ser acessado a partir do código no painel de tarefas.  
 

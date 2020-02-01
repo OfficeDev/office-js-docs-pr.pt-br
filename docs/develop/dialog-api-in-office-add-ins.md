@@ -1,23 +1,23 @@
 ---
-title: Use a API de Caixa de Diálogo em seus Suplementos do Office
-description: ''
-ms.date: 08/07/2019
+title: Usar a API da Caixa de Diálogo do Office nos suplementos do Office
+description: Conhecer as noções básicas da criação de uma caixa de diálogo em um suplemento do Office
+ms.date: 01/29/2020
 localization_priority: Priority
-ms.openlocfilehash: 88c7afca2f1e800391443458e0c6f6b930288c44
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: 13badafd0d3a6bb3fdf656b5caf93c9f514921d9
+ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814107"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "41650002"
 ---
-# <a name="use-the-dialog-api-in-your-office-add-ins"></a>Use a API de Caixa de Diálogo em seus Suplementos do Office
+# <a name="use-the-office-dialog-api-in-office-add-ins"></a>Usar a API de diálogo do Office em suplementos do Office
 
-Você pode usar a [API de Caixa de diálogo](/javascript/api/office/office.ui) para abrir caixas de diálogo no seu Suplemento do Office. Este artigo fornece orientações para usar a API de Caixa de diálogo em seu Suplemento do Office.
+Você pode usar a [API de Caixa de diálogo do Office](/javascript/api/office/office.ui) para abrir caixas de diálogo no seu Suplemento do Office. Este artigo fornece orientações para usar a API de Caixa de diálogo em seu Suplemento do Office.
 
 > [!NOTE]
 > Para informações sobre os programas para os quais a API de Caixa de Diálogo tem suporte no momento, confira [Conjuntos de requisitos da API de Caixa de Diálogo](/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets). Atualmente, a API de Caixa de Diálogo tem suporte para Word, Excel, PowerPoint e Outlook.
 
-Um cenário fundamental para as APIs de Caixa de Diálogo é habilitar a autenticação com um recurso como o Google, o Facebook ou o Microsoft Graph. Para saber mais, confira [ autenticação com APIs de Caixa de Diálogo do Office](auth-with-office-dialog-api.md) *depois* que você se familiarizar com este artigo.
+Um cenário fundamental para a API de Caixa de Diálogo é habilitar a autenticação com um recurso como o Google, o Facebook ou o Microsoft Graph. Para saber mais, confira [ autenticação com APIs de Caixa de Diálogo do Office](auth-with-office-dialog-api.md) *depois* que você se familiarizar com este artigo.
 
 Considere abrir uma caixa de diálogo em um painel de tarefas, suplemento de conteúdo ou [comando de suplemento](../design/add-in-commands.md) para fazer o seguinte:
 
@@ -32,15 +32,15 @@ A imagem abaixo mostra um exemplo de uma caixa de diálogo.
 
 ![Comandos de suplemento](../images/auth-o-dialog-open.png)
 
-A caixa de diálogo sempre abre no centro da tela. O usuário pode movê-la e redimensioná-la. A janela é *não modal*: o usuário pode continuar a interagir com o documento no aplicativo do Office do host e com a página host no painel de tarefas, caso houver uma.
+A caixa de diálogo sempre abre no centro da tela. O usuário pode movê-la e redimensioná-la. A janela é *não modal*: o usuário pode continuar a interagir com o documento no aplicativo do Office do host e com a página no painel de tarefas, caso houver uma.
 
-## <a name="dialog-api-scenarios"></a>Cenários da API de Caixa de Diálogo
+## <a name="open-a-dialog-box-from-a-host-page"></a>Abrir uma caixa de diálogo em uma página de host
 
-As APIs JavaScript para Office têm suporte para os seguintes cenários com um objeto [Dialog](/javascript/api/office/office.dialog) e duas funções no [namespace Office.context.ui](/javascript/api/office/office.ui).
+As APIs JavaScript para Office incluem um objeto[Dialog](/javascript/api/office/office.dialog) e duas funções no [namespace Office.context.ui](/javascript/api/office/office.ui).
 
-### <a name="open-a-dialog-box"></a>Abra uma caixa de diálogo
+Para abrir uma caixa de diálogo, seu código, geralmente uma página no painel de tarefas chama o método [displayDialogAsync](/javascript/api/office/office.ui) e transmite a ele a URL do recurso que você deseja abrir. A página em que esse método é chamado é conhecida como "página host". Por exemplo, se você chamar esse método no script index.html em um painel de tarefas, index.html será a página do host da caixa de diálogo que o método abre.
 
-Para abrir uma caixa de diálogo, seu código no painel de tarefas chama o método [displayDialogAsync](/javascript/api/office/office.ui) e transmite a ele a URL do recurso que você deseja abrir. Isso geralmente é uma página, mas pode ser um método controlador em um aplicativo MVC, uma rota, um método de serviço Web ou qualquer outro recurso. Neste artigo, 'página' ou 'site' refere-se ao recurso na caixa de diálogo. Apresentamos um exemplo de código simples a seguir.
+O recurso aberto na página de diálogo geralmente é uma página, mas pode ser um método controlador em um aplicativo MVC, uma rota, um método de serviço Web ou qualquer outro recurso. Neste artigo, 'página' ou 'site' refere-se ao recurso na caixa de diálogo. O código a seguir é um exemplo simples:
 
 ```js
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
@@ -48,12 +48,12 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 
 > [!NOTE]
 > - A URL usa o protocolo HTTP**S**. Isso é obrigatório para todas as páginas carregadas em uma caixa diálogo, não apenas para a primeira página carregada.
-> - O domínio do recurso de caixa de diálogo é o mesmo que o domínio da página de host, que pode ser a página em um painel de tarefas ou o [arquivo de função](/office/dev/add-ins/reference/manifest/functionfile) de um comando de suplemento. Isso é necessário: a página, o método do controlador ou outro recurso que é passado para o método `displayDialogAsync` deve estar no mesmo domínio que a página de host.
+> - A caixa de diálogo é igual ao domínio da página de host, que pode ser a página em um painel de tarefas ou o [arquivo de função](/office/dev/add-ins/reference/manifest/functionfile) de um comando de suplemento. Isso é necessário: a página, o método do controlador ou outro recurso que é passado para o método `displayDialogAsync` deve estar no mesmo domínio que a página de host.
 
 > [!IMPORTANT]
-> A página de host e os recursos de caixa de diálogo devem ter o mesmo domínio completo. Se você tentar passar `displayDialogAsync` para um subdomínio do domínio do suplemento, ele não funcionará. O domínio completo, incluindo qualquer subdomínio, deve corresponder.
+> A página de host e o recurso que abrem na caixa de diálogo devem ter o mesmo domínio inteiro. Se você tentar passar `displayDialogAsync` para um subdomínio do domínio do suplemento, ele não funcionará. O domínio completo, incluindo qualquer subdomínio, deve corresponder.
 
-Após o carregamento da primeira página (ou de outro recurso), um usuário pode ir para qualquer site (ou outro recurso) que usa HTTPS. Também é possível criar a primeira página para redirecionar imediatamente para outro site.
+Após o carregamento da primeira página (ou de outro recurso), um usuário pode usar links ou outra interface de usuário para qualquer site (ou outro recurso) que usa HTTPS. Também é possível criar a primeira página para redirecionar imediatamente para outro site.
 
 Por padrão, a caixa de diálogo ocupará 80% da altura e da largura na tela do dispositivo, mas você pode definir porcentagens diferentes. Basta transmitir um objeto de configuração para o método, como mostra o exemplo a seguir.
 
@@ -66,7 +66,7 @@ Para ver um suplemento de exemplo que faz isso, confira [Exemplo de API de Caixa
 Defina os dois valores como 100% para ter uma verdadeira experiência de tela inteira. O máximo real é 99,5%, e a janela ainda poderá ser movida e redimensionada.
 
 > [!NOTE]
-> Apenas uma caixa de diálogo pode ser aberta em uma janela do host. Tentar abrir outra caixa de diálogo gera um erro. Portanto, por exemplo, se um usuário abrir uma caixa de diálogo no painel de tarefas, ele não poderá abrir uma segunda caixa de diálogo em uma página diferente no painel de tarefas. No entanto, quando uma caixa de diálogo é aberta em um [comando de suplemento](../design/add-in-commands.md), o comando abre um arquivo HTML novo (mas não visto) sempre que ele é selecionado. Isso cria uma nova janela do host (não vista) para que cada janela possa iniciar sua própria caixa de diálogo. Para obter mais informações, confira [Erros de displayDialogAsync](#errors-from-displaydialogasync).
+> Apenas uma caixa de diálogo pode ser aberta em uma janela do host. Tentar abrir outra caixa de diálogo gera um erro. Portanto, por exemplo, se um usuário abrir uma caixa de diálogo no painel de tarefas, ele não poderá abrir uma segunda caixa de diálogo em uma página diferente no painel de tarefas. No entanto, quando uma caixa de diálogo é aberta em um [comando de suplemento](../design/add-in-commands.md), o comando abre um arquivo HTML novo (mas não visto) sempre que ele é selecionado. Isso cria uma nova janela do host (não vista) para que cada janela possa iniciar sua própria caixa de diálogo. Para obter mais informações, confira [Erros de displayDialogAsync](dialog-handle-errors-events.md#errors-from-displaydialogasync).
 
 ### <a name="take-advantage-of-a-performance-option-in-office-on-the-web"></a>Aproveite uma opção de desempenho no Office na Web
 
@@ -81,25 +81,14 @@ O valor padrão é `false`, que é o mesmo que omitir a propriedade inteiramente
 > [!NOTE]
 > Você **não** deverá usar `displayInIframe: true` se a caixa de diálogo redirecionar a qualquer ponto para uma página que não possa ser aberta em um iframe. Por exemplo, as páginas de entrada de muitos serviços Web populares, como Google e Conta da Microsoft, não podem ser abertas em um iframe.
 
-### <a name="handling-pop-up-blockers-with-office-on-the-web"></a>Tratamento de bloqueadores de pop-up com o Office na Web
-
-Tentar exibir uma caixa de diálogo enquanto usa o Office na Web pode fazer com que bloqueadores de pop-up do navegador bloqueiem a caixa de diálogo. O bloqueador de pop-up do navegador pode ser evitado se o usuário de seu suplemento concordar primeiro com um aviso do suplemento. `displayDialogAsync`'s [DialogOptions](/javascript/api/office/office.dialogoptions) tem a `promptBeforeOpen` propriedade para acionar esse tipo de pop-up. `promptBeforeOpen` é um valor booliano que fornece o comportamento a seguir:
-
- - `true` - A estrutura exibe um pop-up para acionar o painel de navegação e evitar bloqueadores de pop-up do navegador. 
- - `false` - A caixa de diálogo não será exibida e o desenvolvedor deverá lidar com pop-ups (fornecendo um artefato da interface de usuário para acionar a navegação). 
- 
-O pop-up parece semelhante ao da captura de tela a seguir:
-
-![O aviso que uma caixa de diálogo do suplemento pode gerar para evitar bloqueadores de pop-up no navegador.](../images/dialog-prompt-before-open.png)
- 
-### <a name="send-information-from-the-dialog-box-to-the-host-page"></a>Envie informações da caixa de diálogo para a página host
+## <a name="send-information-from-the-dialog-box-to-the-host-page"></a>Envie informações da caixa de diálogo para a página host
 
 A caixa de diálogo não pode se comunicar com a página host no painel de tarefas, a menos que:
 
 - A página atual na caixa de diálogo esteja no mesmo domínio da página host.
 - A biblioteca JavaScript do Office seja carregada na página. Como qualquer página que usa a biblioteca JavaScript do Office, o script da página deve atribuir um método à propriedade `Office.initialize`, embora ele possa ser um método vazio. Para mais detalhes, confira [Iniciar o suplemento](understanding-the-javascript-api-for-office.md#initializing-your-add-in).
 
-O código na página de diálogo use a função `messageParent` para enviar uma mensagem de cadeia de caracteres ou um valor booliano para a página host. A cadeia de caracteres pode ser uma palavra, uma frase, um blob XML, um JSON em formato de cadeia de caracteres ou qualquer outra coisa que possa ser serializada em uma cadeia de caracteres. Apresentamos um exemplo a seguir:
+O código na caixa de diálogo use a função [messageParent](/javascript/api/office/office.ui#messageparent-message-) para enviar uma mensagem de cadeia de caracteres ou um valor booliano para a página host. A cadeia de caracteres pode ser uma palavra, uma frase, um blob XML, um JSON em formato de cadeia de caracteres ou qualquer outra coisa que possa ser serializada em uma cadeia de caracteres. Este é um exemplo:
 
 ```js
 if (loginSuccess) {
@@ -132,7 +121,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 ```
 
 > [!NOTE]
-> - O Office transmite um objeto [AsyncResult](/javascript/api/office/office.asyncresult) para o retorno de chamada. Ele representa o resultado de tentativas de abrir a caixa de diálogo, mas não representa o resultado de eventos na caixa diálogo. Para obter mais informações sobre essa distinção, confira a seção [Manipular erros e eventos](#handle-errors-and-events).
+> - O Office transmite um objeto [AsyncResult](/javascript/api/office/office.asyncresult) para o retorno de chamada. Ele representa o resultado de tentativas de abrir a caixa de diálogo,  Ela não representa o resultado de eventos na caixa diálogo. Para saber mais sobre essa distinção, confira [Manipular erros e eventos](dialog-handle-errors-events.md).
 > - A propriedade `value` do `asyncResult` é definida como um objeto [Dialog](/javascript/api/office/office.dialog) que existe na página host, não no contexto da execução da caixa de diálogo.
 > - O `processMessage` é a função que manipula o evento. Você pode dar a ele o nome que desejar.
 > - A variável `dialog` é declarada em um escopo mais amplo do que o retorno de chamada porque ela também é referenciada em `processMessage`.
@@ -178,7 +167,7 @@ function processMessage(arg) {
 
 Para ver um exemplo de um suplemento que faz isso, consulte [Inserir gráficos do Excel usando o Microsoft Graph em um Suplemento do PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart).
 
-#### <a name="conditional-messaging"></a>Mensagens condicionais
+### <a name="conditional-messaging"></a>Mensagens condicionais
 
 Como você pode enviar várias chamadas `messageParent` a partir da caixa de diálogo, mas tem apenas um manipulador na página host do evento `DialogMessageReceived`, o manipulador tem que usar a lógica condicional para distinguir mensagens diferentes. Por exemplo, se a caixa de diálogo solicitar que o usuário entre em um provedor de identidade como a Conta da Microsoft ou o Google, ele enviará o perfil do usuário como uma mensagem. Se a autenticação falhar, a caixa de diálogo enviará informações de erro à página host, como no exemplo a seguir:
 
@@ -220,116 +209,12 @@ function processMessage(arg) {
 > [!NOTE]
 > A `showNotification` implementação não é exibida no código de exemplo fornecido neste artigo. Um exemplo de como você pode implementar essa função dentro do suplemento, confira [Exemplo do suplemento do Office exemplo do diálogo API](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).
 
-### <a name="closing-the-dialog-box"></a>Feche a caixa de diálogo
-
-Você pode implementar um botão na caixa de diálogo para fechá-la. Para fazer isso, o manipulador de eventos de clique do botão deve usar `messageParent` para informar a página host em que o botão foi clicado. Apresentamos um exemplo a seguir:
-
-```js
-function closeButtonClick() {
-    var messageObject = {messageType: "dialogClosed"};
-    var jsonMessage = JSON.stringify(messageObject);
-    Office.context.ui.messageParent(jsonMessage);
-}
-```
-
-O manipulador de página host de `DialogMessageReceived` poderia chamar `dialog.close`, como neste exemplo. (Veja exemplos anteriores que mostram como o objeto dialog é inicializado.)
-
-
-```js
-function processMessage(arg) {
-    var messageFromDialog = JSON.parse(arg.message);
-    if (messageFromDialog.messageType === "dialogClosed") {
-       dialog.close();
-    }
-}
-```
-
-Mesmo quando você não tem sua própria interface de usuário de diálogo de fechar, um usuário final pode fechar a caixa de diálogo escolhendo a opção **X** no canto superior direito. Essa ação aciona o evento `DialogEventReceived`. Se seu painel do host precisar saber quando isso acontece, ele deverá declarar um manipulador para esse evento. Confira a seção [Erros e eventos na janela de diálogo](#errors-and-events-in-the-dialog-window) para ver os detalhes.
-
-## <a name="handle-errors-and-events"></a>Manipular erros e eventos
-
-Seu código deve manipular duas categorias de eventos:
-
-- Erros retornados pela chamada de `displayDialogAsync` porque não foi possível criar a caixa de diálogo.
-- Erros e outros eventos na janela de diálogo.
-
-### <a name="errors-from-displaydialogasync"></a>Erros de displayDialogAsync
-
-Além dos erros gerais de sistema e de plataforma, três erros são específicos para chamar `displayDialogAsync`.
-
-|Número do código|Significado|
-|:-----|:-----|
-|12004|O domínio que a URL transmitiu para `displayDialogAsync` não é confiável. O domínio deve ser o mesmo domínio que o da página de host (incluindo o protocolo e o número de porta).|
-|12005|A URL passada para `displayDialogAsync` usa o protocolo HTTP. HTTPS é necessário. (Em algumas versões do Office, a mensagem de erro retornada com 12005 é a mesma retornada para 12004.)|
-|<span id="12007">12007</span>|Uma caixa de diálogo já está aberta na janela do host. Uma janela do host, como um painel de tarefas, só pode ter uma caixa de diálogo aberta por vez.|
-|12009|O usuário opta por ignorar a caixa de diálogo. Este erro pode ocorrer em versões online do Office, em que os usuários podem optar por não permitir que um suplemento apresente uma caixa de diálogo.|
-
-Quando `displayDialogAsync` é chamado, ele sempre transmite um objeto [AsyncResult](/javascript/api/office/office.asyncresult) para sua função de retorno de chamada. Se a chamada for bem-sucedida, ou seja, a janela de diálogo for aberta, a propriedade `value` do objeto `AsyncResult` será um objeto [Dialog](/javascript/api/office/office.dialog). Um exemplo disso encontra-se na seção [Enviar informações da caixa de diálogo para a página de host](#send-information-from-the-dialog-box-to-the-host-page). Quando a chamada para `displayDialogAsync` falha, a janela não é criada, a propriedade `status` do objeto `AsyncResult` é definida como `Office.AsyncResultStatus.Failed` e a propriedade `error` do objeto é preenchida. Você deve ter sempre um retorno de chamada que testa o `status` e responde quando é um erro. Para um exemplo que simplesmente relata a mensagem de erro independentemente do número do código, veja o código a seguir:
-
-```js
-var dialog;
-Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html',
-function (asyncResult) {
-    if (asyncResult.status === Office.AsyncResultStatus.Failed) {
-        showNotification(asyncResult.error.code = ": " + asyncResult.error.message);
-    } else {
-        dialog = asyncResult.value;
-        dialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessage);
-    }
-});
-```
-
-### <a name="errors-and-events-in-the-dialog-window"></a>Erros e eventos na janela de diálogo
-
-Três erros e eventos, conhecidos por seus números de códigos, na caixa de diálogo acionarão um evento `DialogEventReceived` na página host.
-
-|Número do código|Significado|
-|:-----|:-----|
-|12002|Uma destas opções:<br> - Não existe uma página na URL transmitida para `displayDialogAsync`.<br> - A página transmitida para `displayDialogAsync` foi carregada, mas a caixa de diálogo foi direcionada para uma página que ela não consegue localizar nem carregar ou foi direcionada para uma URL com sintaxe inválida.|
-|12003|A caixa de diálogo foi direcionada para uma URL com o protocolo HTTP. HTTPS é necessário.|
-|12006|A caixa de diálogo foi fechada, geralmente pelo usuário ter escolhido o botão **X**.|
-
-Seu código pode atribuir um manipulador para o evento `DialogEventReceived` na chamada para `displayDialogAsync`. Apresentamos um exemplo simples a seguir:
-
-```js
-var dialog;
-Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html',
-    function (result) {
-        dialog = result.value;
-        dialog.addEventHandler(Office.EventType.DialogEventReceived, processDialogEvent);
-    }
-);
-```
-
-Para obter um exemplo de um manipulador para o evento `DialogEventReceived` que cria mensagens de erro personalizadas para cada código de erro, veja o exemplo a seguir:
-
-```js
-function processDialogEvent(arg) {
-    switch (arg.error) {
-        case 12002:
-            showNotification("The dialog box has been directed to a page that it cannot find or load, or the URL syntax is invalid.");
-            break;
-        case 12003:
-            showNotification("The dialog box has been directed to a URL with the HTTP protocol. HTTPS is required.");            break;
-        case 12006:
-            showNotification("Dialog closed.");
-            break;
-        default:
-            showNotification("Unknown error in dialog box.");
-            break;
-    }
-}
-```
-
-Para ver um suplemento de exemplo que manipula erros dessa forma, confira [Exemplo de API de Caixa de diálogo do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).
-
-
 ## <a name="pass-information-to-the-dialog-box"></a>Transmitir informações para a caixa diálogo
 
 Às vezes, a página host precisa transmitir informações para a caixa de diálogo. Você pode fazer isso de duas maneiras principais:
 
 - Adicionar parâmetros de consulta à URL que é transmitida para `displayDialogAsync`.
-- Armazenar as informações em outro local que seja acessível para a janela do host e para a caixa de diálogo. As duas janelas não compartilham um armazenamento de sessão comum, mas *se elas tiverem o mesmo domínio* (incluindo o número da porta, se houver algum), compartilharão um [Armazenamento Local](https://www.w3schools.com/html/html5_webstorage.asp) comum.\*
+- Armazenar as informações em outro local que seja acessível para a janela do host e para a caixa de diálogo. As duas janelas não compartilham um armazenamento de sessão comum, mas *se elas tiverem o mesmo domínio* (incluindo o número da porta, se houver algum), compartilharão um [local de armazenamento](https://www.w3schools.com/html/html5_webstorage.asp) comum.\*
 
 > [!NOTE]
 > \* Há um bug que afetará sua estratégia de tratamento de tokens. Se o suplemento estiver sendo executado no **Office na Web** nos navegadores Safari ou Edge, o painel de tarefas e a caixa de diálogo não compartilharão o mesmo Armazenamento Local, portanto, ele não poderá ser usado para a comunicação entre eles.
@@ -342,7 +227,7 @@ Para usar o armazenamento local, seu código chama o método `setItem` do objeto
 localStorage.setItem("clientID", "15963ac5-314f-4d9b-b5a1-ccb2f1aea248");
 ```
 
-O código na janela de diálogo lê o item quando necessário, como no exemplo a seguir:
+O código na caixa de diálogo lê o item quando necessário, como no exemplo a seguir:
 
 ```js
 var clientID = localStorage.getItem("clientID");
@@ -360,40 +245,54 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 
 Para ver um exemplo que usa essa técnica, consulte [Inserir gráficos do Excel usando o Microsoft Graph em um Suplemento do PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart).
 
-O código na janela de diálogo pode analisar a URL e ler o valor do parâmetro.
+O código na caixa de diálogo pode analisar a URL e ler o valor do parâmetro.
 
 > [!NOTE]
 > O Office adiciona automaticamente um parâmetro de consulta chamado `_host_info` à URL que é transmitida para `displayDialogAsync`. Ele é anexado após os parâmetros de consulta personalizados, se houver algum. Ele não é anexado às URLs subsequentes para as quais a caixa de diálogo navega. No futuro, a Microsoft poderá alterar o conteúdo desse valor ou removê-lo completamente para que seu código não consiga lê-lo. O mesmo valor é adicionado ao armazenamento de sessão da caixa de diálogo. Novamente, *seu código não deve ler nem gravar esse valor*.
 
-## <a name="use-the-dialog-apis-to-show-a-video"></a>Use APIs de Caixa de Diálogo para exibir um vídeo
+## <a name="closing-the-dialog-box"></a>Feche a caixa de diálogo
 
-Para mostrar um vídeo em uma caixa de diálogo:
+Você pode implementar um botão na caixa de diálogo para fechá-la. Para fazer isso, o manipulador de eventos de clique do botão deve usar `messageParent` para informar a página host em que o botão foi clicado. Apresentamos um exemplo a seguir:
 
-1.  Crie uma página cujo único conteúdo seja um iframe. O atributo `src` dos pontos do iframe para um vídeo online. O protocolo da URL do vídeo deve ser HTTP**S**. Neste artigo, chamaremos esta página de "video.dialogbox.html". Veja a seguir um exemplo da marcação:
+```js
+function closeButtonClick() {
+    var messageObject = {messageType: "dialogClosed"};
+    var jsonMessage = JSON.stringify(messageObject);
+    Office.context.ui.messageParent(jsonMessage);
+}
+```
 
-    ```HTML
-    <iframe class="ms-firstrun-video__player"  width="640" height="360"
-        src="https://www.youtube.com/embed/XVfOe5mFbAE?rel=0&autoplay=1"
-        frameborder="0" allowfullscreen>
-    </iframe>
-    ```
+O manipulador de página host de `DialogMessageReceived` poderia chamar `dialog.close`, como neste exemplo. (Veja exemplos anteriores que mostram como o objeto `dialog` é inicializado.)
 
-2.  A página video.dialogbox.html deve estar no mesmo domínio que a página de host.
-3.  Use uma chamada de `displayDialogAsync` na página host para abrir video.dialogbox.html.
-4.  Se o suplemento precisar saber quando o usuário fecha a caixa de diálogo, registre um manipulador para o evento `DialogEventReceived` e manipule o evento 12006. Para mais detalhes, confira a seção [Erros e eventos na janela de diálogo](#errors-and-events-in-the-dialog-window).
+```js
+function processMessage(arg) {
+    var messageFromDialog = JSON.parse(arg.message);
+    if (messageFromDialog.messageType === "dialogClosed") {
+       dialog.close();
+    }
+}
+```
 
-Para ver um exemplo que mostre um vídeo na caixa de diálogo, confira a [padrão de design de roteiro de vídeo](/office/dev/add-ins/design/first-run-experience-patterns#video-placemat).
+Mesmo quando você não tem sua própria interface de usuário de diálogo de fechar, um usuário final pode fechar a caixa de diálogo escolhendo a opção **X** no canto superior direito. Essa ação aciona o evento `DialogEventReceived`. Se seu painel do host precisar saber quando isso acontece, ele deverá declarar um manipulador para esse evento. Confira a seção [Erros e eventos na caixa de diálogo](dialog-handle-errors-events.md#errors-and-events-in-the-dialog-box) para ver os detalhes.
 
-![Captura de tela de um vídeo mostrando uma caixa de diálogo de um suplemento](../images/video-placemats-dialog-open.png)
+## <a name="advanced-topics-and-special-scenarios"></a>Tópicos avançados e cenários especiais
 
-## <a name="use-the-dialog-apis-in-an-authentication-flow"></a>Use as APIs de Caixa de Diálogo em um fluxo de autenticação
+### <a name="use-the-dialog-api-to-show-a-video"></a>Use a API de Caixa de Diálogo para exibir um vídeo
+
+Confira [use a caixa de diálogo do Office para mostrar um vídeo](dialog-video.md).
+
+### <a name="use-the-dialog-apis-in-an-authentication-flow"></a>Use as APIs de Caixa de Diálogo em um fluxo de autenticação
 
 Confira[Autenticar com a API da Caixa de Diálogo do Office](auth-with-office-dialog-api.md).
 
-## <a name="using-the-office-dialog-api-with-single-page-applications-and-client-side-routing"></a>Usar a API de Caixa de diálogo do Office com aplicativos de página única e roteamento do lado do cliente
+### <a name="using-the-office-dialog-api-with-single-page-applications-and-client-side-routing"></a>Usar a API de Caixa de diálogo do Office com aplicativos de página única e roteamento do lado do cliente
 
-Se seu suplemento usa o roteamento do lado do cliente, como os aplicativos de página única geralmente fazem, você tem a opção de transmitir a URL de uma rota para o método [displayDialogAsync](/javascript/api/office/office.ui)(*o que não recomendamos*), em vez da URL de uma página HTML completa e separada.
+SPAs e o roteamento do lado do cliente devem ser manuseados com cuidado ao usar a API de diálogo do Office. Confira [práticas recomendadas para usar o Office Dialog API em um SPA](dialog-best-practices.md#best-practices-for-using-the-office-dialog-api-in-an-spa).
 
-A caixa de diálogo está em uma nova janela com seu próprio contexto de execução. Se você transmitir uma rota, sua página de base e todos os códigos de inicialização e bootstrapping serão executados novamente nesse novo contexto e todas as variáveis serão definidas com seus valores iniciais na caixa de diálogo. Essa técnica baixa e Inicia uma segunda instância do seu aplicativo na janela da caixa de diálogo, o que é parcialmente contraproducente em se tratando de um SPA (aplicativo de página única). Além disso, o código que altera as variáveis na janela de diálogo não altera a versão do painel de tarefas das mesmas variáveis. De forma semelhante, a janela da caixa de diálogo tem seu próprio armazenamento de sessão, que não pode ser acessado a partir do código no painel de tarefas.
+### <a name="error-and-event-handling"></a>Manipulação de erros e eventos
 
-Portanto, se você passar uma rota para o método`displayDialogAsync`, você não teria somente um SPA; você teria duas instâncias do mesmo SPA. Além disso, a maior parte do código na instância do painel de tarefas nunca seria usada nessa instância assim como grande parte do código na instância de caixa de diálogo também nunca seria usado nessa dada instância. Seria como ter dois SPAs no mesmo grupo. Se o código que você deseja executar na caixa de diálogo for complexo o suficiente, talvez você queira fazer isso explicitamente; ou seja, ter dois SPAs em pastas diferentes do mesmo domínio. Mas na maioria dos cenários, apenas a lógica simples é necessária na caixa de diálogo. Nesses casos, o projeto será bastante simplificado simplesmente hospedando uma página HTML simples, com JavaScript incorporado ou referenciado no domínio do seu SPA. Passe a URL da página para o método`displayDialogAsync`. Isso pode significar que você está de desviando da ideia literal de um aplicativo de página única; no entanto, como observado acima, na verdade não há uma única instância de uma SPA quando você usa a caixa de diálogo.
+Confira [Manipulando erros e eventos na caixa de diálogo do Office](dialog-handle-errors-events.md).
+
+## <a name="next-steps"></a>Próximas etapas
+
+Saiba mais sobre as armadilhas e as práticas recomendadas para a API de diálogo do Office em [práticas recomendadas e regras para a API do Office Dialog](dialog-best-practices.md).
