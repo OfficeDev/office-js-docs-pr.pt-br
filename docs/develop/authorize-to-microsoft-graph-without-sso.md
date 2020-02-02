@@ -1,20 +1,20 @@
 ---
 title: Autorizar o Microsoft Graph sem SSO
-description: ''
-ms.date: 12/06/2019
+description: Saiba como autorizar o Microsoft Graph sem SSO
+ms.date: 01/29/2020
 localization_priority: Priority
-ms.openlocfilehash: 2f65a76c31ba47f90860bc6a432cdcd32c992a17
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: a7dbd1fdd85852a82fcb00050283fece84a04e04
+ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814002"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "41649967"
 ---
 # <a name="authorize-to-microsoft-graph-without-sso"></a>Autorizar o Microsoft Graph sem SSO
 
-Você pode conseguir autorização para o seu suplemento acessar os dados do Microsoft Graph obtendo um token de acesso ao Graph a partir do Azure Active Directory (AAD). Você faz isso usando o fluxo de código de autorização ou fluxo implícito da mesma forma que faria em qualquer outro aplicativo Web com uma exceção: o AAD não permite que sua página de logon seja aberta em um iframe. Quando um suplemento do Office está sendo executado no *Office na Web*, o painel de tarefas é um iframe. Isso significa que você precisará abrir a tela de logon do AAD em uma caixa de diálogo aberta com a API de diálogo do Office. Isso afetará a maneira como você usa as bibliotecas auxiliares de autenticação e autorização. Para saber mais, confira [Autenticação com a API de diálogo do Office](auth-with-office-dialog-api.md).
+Seu suplemento pode obter autorização para acessar os dados do Microsoft Graph obtendo um token de acesso ao Graph a partir do Azure Active Directory (AAD). Use o fluxo de código de autorização ou fluxo implícito da mesma forma que faria em qualquer outro aplicativo Web que sua página de logon seja aberta em um iframe. Quando um suplemento do Office está sendo executado no *Office na Web*, o painel de tarefas é um iframe. Isso significa que será necessário abrir a tela de logon do AAD em uma caixa de diálogo aberta com a API de Diálogo do Office. Isso afeta a maneira como você usa as bibliotecas auxiliares de autenticação e autorização. Para saber mais, confira [Autenticação com a API de Diálogo do Office](auth-with-office-dialog-api.md).
 
-Para obter informações sobre a autenticação de programação com o AAD, comece com [Visão geral da plataforma de Identidade da Microsoft (v 2.0)](/azure/active-directory/develop/v2-overview). Há muitos tutoriais e guias nesse conjunto de documentos, bem como links para exemplos relevantes. Uma vez mais para não esquecer: Talvez seja necessário ajustar o código nos exemplos para execução na caixa de diálogo do Office pois devemos levar em consideração o fato de que a caixa de diálogo é executada em um processo separado do painel de tarefas.
+Para obter informações sobre autenticação de programação com o AAD, comece por [visão geral do Microsoft Identity Platform (v 2.0)](/azure/active-directory/develop/v2-overview), onde você encontrará tutoriais e guias nesse conjunto de documentos, bem como links para exemplos relevantes. Novamente, talvez seja necessário ajustar o código nos exemplos para execução na caixa de diálogo do Office pois devemos levar em consideração o fato de que a caixa de diálogo do Office é executada em um processo separado do painel de tarefas.
 
 Após o seu código obter o token de acesso para o Microsoft Graph, ele passa o token de acesso da caixa de diálogo para o painel de tarefas, ou armazena o token em um banco de dados e sinaliza o painel de tarefas no qual o token está disponível. (Confira [autenticação com a API de caixa de diálogo do Office](auth-with-office-dialog-api.md) para obter mais detalhes). O código no painel de tarefas solicita dados do Microsoft Graph e inclui o token nestas solicitações. Para obter mais informações sobre como chamar o Microsoft Graph e os SDKs para Microsoft Graph, confira a[ documentação do Microsoft Graph](/graph/).
 
@@ -33,4 +33,3 @@ Os exemplos a seguir recebem dados do Microsoft Graph de um suplemento do Office
 - [Suplemento do Office Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
 - [Suplemento do Outlook Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)
 - [Suplemento do Office Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React)
-
