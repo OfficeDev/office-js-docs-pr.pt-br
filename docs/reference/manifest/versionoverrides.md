@@ -1,14 +1,14 @@
 ---
 title: Elemento VersionOverrides no arquivo de manifesto
 description: ''
-ms.date: 08/12/2019
+ms.date: 02/04/2020
 localization_priority: Normal
-ms.openlocfilehash: ce65cdced1b3cf885cee09732c2cda0081a53cfc
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: 26183caeb4862038d5304607310aa061d37cf3f1
+ms.sourcegitcommit: c1dbea577ae6183523fb663d364422d2adbc8bcf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477877"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "41773569"
 ---
 # <a name="versionoverrides-element"></a>Elemento VersionOverrides
 
@@ -18,8 +18,18 @@ O elemento raiz que contém informações para os comandos de suplemento impleme
 
 |  Atributo  |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **xmlns**       |  Sim  |  O local do esquema, que deve ser `http://schemas.microsoft.com/office/mailappversionoverrides` quando `xsi:type` for `VersionOverridesV1_0` e `http://schemas.microsoft.com/office/mailappversionoverrides/1.1` quando `xsi:type` for `VersionOverridesV1_1`.|
+|  **xmlns**       |  Sim  |  O namespace do esquema VersionOverrides. Os valores permitidos variam de acordo com o `<VersionOverrides>` valor **xsi: Type** do elemento e o valor **xsi: Type** do elemento pai `<OfficeApp>` . Consulte [namespace valores](#namespace-values) a seguir.|
 |  **xsi:type**  |  Sim  | A versão do esquema. Nesse momento, os únicos valores válidos são `VersionOverridesV1_0` e `VersionOverridesV1_1`. |
+
+### <a name="namespace-values"></a>Valores do namespace
+
+A seguir, a lista o valor necessário do valor **xmlns** , dependendo do valor **xsi: Type** do elemento pai `<OfficeApp>` .
+
+- **TaskPaneApp** oferece suporte somente à versão 1,0 do VersionOverrides e o **xmlns** deve `http://schemas.microsoft.com/office/taskpaneappversionoverrides`ser.
+- **ContentApp** oferece suporte somente à versão 1,0 do VersionOverrides e o **xmlns** deve `http://schemas.microsoft.com/office/contentappversionoverrides`ser.
+- O **MailApp** suporta as versões 1,0 e 1,1 do VersionOverrides, portanto, o valor de **xmlns** varia de `<VersionOverrides>` acordo com o valor **xsi: Type** do elemento:
+    - Quando **xsi: Type** é `VersionOverridesV1_0`, o **xmlns** deve `http://schemas.microsoft.com/office/mailappversionoverrides`ser.
+    - Quando **xsi: Type** é `VersionOverridesV1_1`, o **xmlns** deve `http://schemas.microsoft.com/office/mailappversionoverrides/1.1`ser.
 
 > [!NOTE]
 > Atualmente, somente o Outlook 2016 ou posterior oferece suporte ao esquema do VersionOverrides `VersionOverridesV1_1` v 1.1 e ao tipo.
@@ -29,7 +39,6 @@ O elemento raiz que contém informações para os comandos de suplemento impleme
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
 |  **Descrição**    |  Não   |  Descreve o suplemento. Isso substitui o elemento `Description` em qualquer parte pai do manifesto. O texto da descrição está contido em um elemento filho do elemento **LongString**, contido no elemento [Resources](./resources.md). O atributo `resid` do elemento **Description** está definido como o valor do atributo `id` do elemento `String` que contém o texto.|
-| **EquivalentAddins** | Não | Especifica a compatibilidade com versões anteriores com um suplemento COM equivalente, XLL ou ambos. |
 |  **Requisitos**  |  Não   |  Especifica o conjunto de requisitos mínimos e a versão do Office.js exigida pelo suplemento. Isso substitui o elemento `Requirements` na parte pai do manifesto.|
 |  [Hosts](./hosts.md)                |  Sim  |  Especifica um conjunto de hosts do Office. O elemento filho Hosts substitui o elemento Hosts na parte pai do manifesto.  |
 |  [Resources](./resources.md)    |  Sim  | Define um conjunto de recursos (cadeias de caracteres, URLs e imagens) consultado por outros elementos do manifesto.|
@@ -42,7 +51,7 @@ O elemento raiz que contém informações para os comandos de suplemento impleme
 Veja a seguir um exemplo de um elemento `<VersionOverrides>` típico, incluindo alguns elementos filhos que não são necessários, mas que são normalmente usados.
 
 ```xml
-<OfficeApp>
+<OfficeApp ... xsi:type="MailApp">
 ...
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
     <Description resid="residDescription" />
@@ -71,7 +80,7 @@ Para implementar várias versões, o elemento `VersionOverrides` da versão mais
 Para implementar o esquema do VersionOverrides v1.0 e do v1.1, o manifesto seria semelhante ao exemplo a seguir.
 
 ```xml
-<OfficeApp>
+<OfficeApp ... xsi:type="MailApp">
 ...
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
     <Description resid="residDescription" />
