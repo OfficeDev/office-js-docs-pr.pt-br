@@ -77,7 +77,7 @@ Estritamente relacionado a isso está o fato de que uma biblioteca normalmente f
 Como alternativa, a instância do navegador da Caixa de Diálogo do suplemento pode chamar diretamente o método interativo da biblioteca. Quando esse método retorna um token, o código deve armazenar explicitamente o token em algum lugar onde a instância do navegador do painel de tarefas pode recuperá-lo, como o Armazenamento Local\* ou um banco de dados do lado do servidor. Outra opção é passar o token para o painel de tarefas com o método `messageParent`. Essa alternativa só é possível se o método interativo armazenar o token de acesso em um local onde o código possa lê-lo. Às vezes, o método interativo de uma biblioteca é projetado para armazenar o token em uma propriedade particular de um objeto que está inacessível ao código.
 
 > [!NOTE]
-> \* Há um bug que afetará sua estratégia de tratamento de tokens. Se o suplemento estiver sendo executado no **Office na Web** nos navegadores Safari ou Edge, o painel de tarefas e a caixa de diálogo não compartilharão o mesmo Armazenamento Local, portanto, ele não poderá ser usado para a comunicação entre eles.
+> \* Há um bug que afetará sua estratégia de tratamento de tokens. Se o suplemento estiver sendo executado no **Office na Web** nos navegadores Safari ou Microsoft Edge, o painel de tarefas e a caixa de diálogo não compartilharão o mesmo Armazenamento Local, portanto, ele não poderá ser usado para a comunicação entre eles.
 
 ### <a name="you-usually-cannot-use-the-librarys-auth-context-object"></a>Geralmente, você não pode usar o objeto "contexto de autenticação" da biblioteca
 
