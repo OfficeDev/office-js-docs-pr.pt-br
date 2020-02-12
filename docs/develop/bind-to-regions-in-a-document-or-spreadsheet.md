@@ -2,13 +2,13 @@
 title: Associar a regiões em um documento ou em uma planilha
 description: ''
 ms.date: 06/20/2019
-localization_priority: Priority
-ms.openlocfilehash: 5de421f142320d5d1f8c2c31c5dac073142f0d1e
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: dd78a4daa14dbcc0dec48c401973f9e5297de637
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575587"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41949651"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>Associar a regiões em um documento ou em uma planilha
 

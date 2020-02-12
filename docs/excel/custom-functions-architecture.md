@@ -2,13 +2,13 @@
 ms.date: 07/10/2019
 description: Saiba mais sobre o tempo de execução de funções personalizadas do Excel.
 title: Arquitetura de funções personalizadas
-localization_priority: Priority
-ms.openlocfilehash: abe4f847069b3bb9d3813b4520bf8eb078a40c18
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: ced62f7efb826862eee8079a66fa657ea466e4b3
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771460"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950351"
 ---
 # <a name="custom-functions-architecture"></a>Arquitetura de funções personalizadas
 
