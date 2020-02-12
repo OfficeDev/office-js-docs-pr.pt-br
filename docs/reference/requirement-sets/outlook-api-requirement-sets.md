@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos de API JavaScript do Outlook
 description: ''
-ms.date: 01/14/2020
+ms.date: 02/11/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: bd6b20e9f0ddb5141f2f889a4e99af2c042a10ab
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
+ms.openlocfilehash: 7ea6be0cb1879ba583eaa64a7611899bf5adb73f
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217369"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950541"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Conjuntos de requisitos de API JavaScript do Outlook
 
@@ -66,7 +66,7 @@ Os desenvolvedores devem usar o conjunto de requisitos mínimos que contém o co
 
 ## <a name="requirement-sets-supported-by-exchange-servers-and-outlook-clients"></a>Conjuntos de requisitos suportados pelos Exchange Servers e clientes do Outlook
 
-Nesta seção, vemos a gama de conjuntos de requisitos com suporte do Exchange Server e clientes do Outlook.
+Nesta seção, vemos a gama de conjuntos de requisitos com suporte do Exchange Server e clientes do Outlook. Para obter detalhes sobre os requisitos de cliente e servidor para executar suplementos do Outlook, confira [requisitos dos suplementos do Outlook](/outlook/add-ins/add-in-requirements).
 
 > [!IMPORTANT]
 > Se o seu Exchange Server de destino e o cliente do Outlook oferecem suporte a conjuntos de requisitos diferentes, então você estará restrito ao intervalo menor de conjunto de requisitos. Por exemplo, se um suplemento estiver sendo executado no Outlook 2016 para Mac (conjunto de requisitos mais alto: 1.6) em relação ao Exchange 2013 (conjunto de requisitos mais alto: 1.1), seu suplemento estará limitado ao conjunto de requisitos 1.1.
