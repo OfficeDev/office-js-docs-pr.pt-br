@@ -2,13 +2,13 @@
 title: Navegadores usados pelos Suplementos do Office
 description: Especifica como o sistema operacional e a versão do Office determinam o navegador que é usado pelos suplementos do Office.
 ms.date: 12/13/2019
-localization_priority: Priority
-ms.openlocfilehash: 3709157449634dfb49805e2247e47debe60f468f
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 37d001d7feb170b11edc4f6a233f6fdc15cf3438
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40813981"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950359"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navegadores usados pelos Suplementos do Office
 
@@ -38,6 +38,10 @@ A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sis
 > O Internet Explorer 11 não oferece suporte às versões do JavaScript posteriores a ES5. Se qualquer um dos usuários de suplemento tiverem plataformas com Internet Explorer 11, para que seja possível usar a sintaxe e os recursos do ECMAScript 2015 ou posterior, você precisará fazer o transpile do seu JavaScript para o ES5 ou usar um polyfill. Além disso, o Internet Explorer 11 não oferece suporte a alguns recursos do HTML5, como mídia, gravação e localização.
 
 ## <a name="troubleshooting-microsoft-edge-issues"></a>Solucionar problemas do Microsoft Edge
+
+### <a name="chromium-based-edge-is-installed-on-my-development-computer-but-my-add-in-does-not-use-it"></a>A borda baseada em Chromium está instalada no meu computador de desenvolvimento, mas meu suplemento não a usa
+
+O navegador base no [Microsoft Edge](https://support.microsoft.com/help/4501095/download-the-new-microsoft-edge-based-on-chromium) foi alterado para Chromium. A base mais antiga, chamada EdgeHTML, não é removida quando a borda baseada no Chromium é instalada. O Office ainda usará a base de EdgeHTML para suplementos até que uma compilação do Office 365 que suporte o Chromium esteja instalada no computador. Esperamos que essas compilações sejam fornecidas no 2020. Eles provavelmente aparecerão no canal de insiders na primeira metade do ano.
 
 ### <a name="scroll-bar-does-not-appear-in-task-pane"></a>Barra de rolagem não aparece no painel de tarefas
 

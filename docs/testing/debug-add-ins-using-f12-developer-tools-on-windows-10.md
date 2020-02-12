@@ -2,13 +2,13 @@
 title: Depurar suplementos usando as ferramentas de desenvolvedor no Windows 10
 description: Depurar suplementos usando as ferramentas de desenvolvedor do Microsoft Edge no Windows 10
 ms.date: 12/16/2019
-localization_priority: Priority
-ms.openlocfilehash: dd0f078b1cad0621dc99269b745a326adb69f7d6
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 16964b69f144d30c4ac5a9616ee4fdba2d536fd3
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814469"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950520"
 ---
 # <a name="debug-add-ins-using-developer-tools-on-windows-10"></a>Depurar suplementos usando as ferramentas de desenvolvedor no Windows 10
 

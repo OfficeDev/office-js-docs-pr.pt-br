@@ -2,13 +2,13 @@
 title: Privacidade e segurança para suplementos do Office
 description: ''
 ms.date: 09/26/2019
-localization_priority: Priority
-ms.openlocfilehash: 88f03bed084484a98d4719fb9caacf174b13acda
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: c4f2ea5413ff1fa404c242bc729c59f9feedaca3
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41110931"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41949699"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 
@@ -187,7 +187,7 @@ Um usuário mal-intencionado pode atacar a origem de um suplemento inserindo um 
 
 - Se estiver usando jQuery, use o método [.text()](https://api.jquery.com/text/) em vez do método [.html()](https://api.jquery.com/html/).
 
-- Use o método [toStaticHTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Reference) para remover atributos e elementos HTML dinâmicos da entrada dos usuários antes de passá-la para **innerHTML**.
+- Use o método [toStaticHTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) para remover atributos e elementos HTML dinâmicos da entrada dos usuários antes de passá-la para **innerHTML**.
 
 - Use a função [encodeURIComponent](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuricomponent) ou [encodeURI](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuri) para codificar texto que se destina a ser uma URL que vem da entrada do usuário ou a contém.
 

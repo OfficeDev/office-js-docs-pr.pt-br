@@ -2,13 +2,13 @@
 title: Práticas recomendadas para o desenvolvimento de suplementos do Office
 description: ''
 ms.date: 03/19/2019
-localization_priority: Priority
-ms.openlocfilehash: 2b07ffa898d0db6d84bb96c9db797b91930446e0
-ms.sourcegitcommit: 960ceaf6776ec3ed41a8f5b7bf70b3c95c43386a
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 6fc1a12e1f6fca44c137aec1ac17d71d76156e1a
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "39830192"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41949698"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Práticas recomendadas para o desenvolvimento de suplementos do Office
 

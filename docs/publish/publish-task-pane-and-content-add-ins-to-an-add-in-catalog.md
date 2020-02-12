@@ -2,13 +2,13 @@
 title: Publicar suplementos de painel de tarefas e de conteúdo em um catálogo de aplicativos do SharePoint
 description: Para tornar os suplementos do Office acessíveis aos usuários em sua organização, os administradores podem carregar arquivos de manifesto dos suplementos do Office no catálogo de aplicativos da organização.
 ms.date: 06/20/2019
-localization_priority: Priority
-ms.openlocfilehash: 106dfd2b1610be92f1b53dc1644ff3f8c60c0543
-ms.sourcegitcommit: 9c5a836d4464e49846c9795bf44cfe23e9fc8fbe
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: fe97cdb1af0cbf75eb6f1d99f81aef430e362c8e
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "35617027"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950709"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>Publicar suplementos de painel de tarefas e de conteúdo em um catálogo de aplicativos do SharePoint
 

@@ -2,13 +2,13 @@
 title: Trabalhar com intervalos usando a API JavaScript do Excel (fundamental)
 description: ''
 ms.date: 04/30/2019
-localization_priority: Priority
-ms.openlocfilehash: c90ce16eeed731bcee025c4c61df1bd818b3dd6f
-ms.sourcegitcommit: c8914ce0f48a0c19bbfc3276a80d090bb7ce68e1
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: af51e22535dd9d2d26c157d133b1bb16237a32d2
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "37235334"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950870"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Trabalhar com intervalos usando a API JavaScript do Excel
 

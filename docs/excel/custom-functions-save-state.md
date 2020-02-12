@@ -2,13 +2,13 @@
 ms.date: 07/10/2019
 description: Use `OfficeRuntime.storage` para salvar o estado com funções personalizadas.
 title: Salvar e compartilhar o estado em funções personalizadas
-localization_priority: Priority
-ms.openlocfilehash: a1b70433ef0c00d507175b32fc12603ff3de1e3f
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 397c785a4dedb7d2e9d1b38c8db0edb811448e1d
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771586"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950807"
 ---
 # <a name="save-and-share-state-in-custom-functions"></a>Salvar e compartilhar o estado em funções personalizadas
 

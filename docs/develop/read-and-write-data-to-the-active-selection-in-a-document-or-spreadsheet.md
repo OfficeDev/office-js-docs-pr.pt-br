@@ -2,13 +2,13 @@
 title: Ler e gravar dados na seleção ativa em um documento ou em uma planilha
 description: ''
 ms.date: 06/20/2019
-localization_priority: Priority
-ms.openlocfilehash: b831de475a1946d6e0f9f13463e2750efe6cca5b
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 004f78c4cfa5b5665212cebcdb2d71986398c62a
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128042"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950583"
 ---
 # <a name="read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet"></a>Ler e gravar dados na seleção ativa em um documento ou em uma planilha
 

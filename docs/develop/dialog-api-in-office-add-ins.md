@@ -2,13 +2,13 @@
 title: Usar a API da Caixa de Diálogo do Office nos suplementos do Office
 description: Conhecer as noções básicas da criação de uma caixa de diálogo em um suplemento do Office
 ms.date: 01/29/2020
-localization_priority: Priority
-ms.openlocfilehash: 13badafd0d3a6bb3fdf656b5caf93c9f514921d9
-ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 18ea221618e2a674266784517be3aa31d029c612
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "41650002"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950660"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Usar a API de diálogo do Office em suplementos do Office
 

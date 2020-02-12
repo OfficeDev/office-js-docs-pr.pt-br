@@ -2,20 +2,20 @@
 title: Converter um projeto de Suplemento do Office no Visual Studio para TypeScript
 description: ''
 ms.date: 10/29/2019
-localization_priority: Priority
-ms.openlocfilehash: dc9384aff605db31ded4197ad00d1a7823f2de6f
-ms.sourcegitcommit: 818036a7163b1513d047e66a20434060415df241
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: c497035f1b973fd77e7e460549c239776356b09f
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "37775288"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950562"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Converter um projeto de Suplemento do Office no Visual Studio para TypeScript
 
 Você pode usar o modelo de Suplemento do Office no Visual Studio para criar um suplemento que usa JavaScript e depois converter esse projeto de suplemento para o TypeScript. Este artigo descreve o processo de conversão de um suplemento do Excel. Você pode usar o mesmo processo para converter outros tipos de projetos de suplementos do Office de JavaScript para TypeScript no Visual Studio.
 
 > [!NOTE]
-> Para criar um projeto de suplementos TypeScript do Office sem usar o Visual Studio, siga as instruções na seção "Gerador do Yeoman" de um [início rápido em 5 minutos](../index.md) e escolha `TypeScript` quando for solicitado pelo [Gerador de suplementos do Office do Yeoman](https://github.com/officedev/generator-office).
+> Para criar um projeto de suplementos TypeScript do Office sem usar o Visual Studio, siga as instruções na seção "Gerador do Yeoman" de um [início rápido em 5 minutos](../index.md) e escolha `TypeScript` quando for solicitado pelo [Gerador de suplementos do Office do Yeoman](https://github.com/OfficeDev/generator-office).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
