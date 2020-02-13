@@ -3,13 +3,13 @@ title: Tutorial de funções personalizadas do Excel
 description: Neste tutorial, você criará um suplemento do Excel que contém uma função personalizada que pode executar cálculos e solicitar ou transmitir dados da web.
 ms.date: 01/16/2020
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 63379c74897a5f232804241726ac7def1809f5c1
-ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
-ms.translationtype: MT
+localization_priority: Priority
+ms.openlocfilehash: 9c8cfedd5f8219f2105456597d43201068b4c21e
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "41265533"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950499"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Tutorial: Criar funções personalizadas no Excel
 
@@ -26,11 +26,11 @@ Neste tutorial, você vai:
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel no Windows (versão 1904 ou posterior, conectada à assinatura do Office 365) ou na Web
+* Excel no Windows (versão 1904 ou posterior, conectado a assinatura do Office 365) ou na Web
 
 ## <a name="create-a-custom-functions-project"></a>Criar um projeto com funções personalizadas
 
- Para começar, você criará o projeto de código para criar o suplemento função personalizada. O [gerador Yeoman para suplementos do Office](https://www.npmjs.com/package/generator-office) configurará seu projeto com algumas funções personalizadas predefinidas que você pode experimentar. Se você já tiver executado o início rápido de funções personalizadas e gerado um projeto, continue a usar esse projeto e pule para [esta etapa](#create-a-custom-function-that-requests-data-from-the-web) .
+ Para começar, você criará o projeto de código para criar o suplemento função personalizada. O [gerador Yeoman para suplementos do Office](https://www.npmjs.com/package/generator-office) configura seu projeto com algumas funções personalizadas predefinidas que você pode experimentar. Se você executou a inicialização rápida de funções personalizadas e gerou um projeto, continue usando o projeto e pule para [esta etapa](#create-a-custom-function-that-requests-data-from-the-web).
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
     
@@ -59,41 +59,41 @@ Neste tutorial, você vai:
     > [!NOTE]
     > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar `npm run build`, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
 
-4. Inicie o servidor local da web, que é executado no Node. Você pode experimentar o suplemento função personalizada no Excel na Web ou no Windows.
+4. Inicie o servidor local da web, que é executado no Node.js. Você pode experimentar o suplemento função personalizada no Excel na Web ou no Windows.
 
-# <a name="excel-on-windows-or-mactabexcel-windows"></a>[Excel no Windows ou Mac](#tab/excel-windows)
+# <a name="excel-on-windows-or-mactabexcel-windows"></a>[Excel para Windows ou Mac](#tab/excel-windows)
 
-Para testar seu suplemento no Excel no Windows ou Mac, execute o seguinte comando. Quando você executar este comando, o servidor Web local será iniciado e o Excel será aberto com o seu suplemento carregado.
+Para testar o seu suplemento no Excel para Windows ou Mac, execute o seguinte comando. Quando você executa este comando, o servidor Web local iniciará e o Excel abrirá com o seu suplemento carregado.
 
 ```command&nbsp;line
 npm run start:desktop
 ```
 
-# <a name="excel-on-the-webtabexcel-online"></a>[Excel Online](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[Excel na Web](#tab/excel-online)
 
-Para testar seu suplemento no Excel em um navegador, execute o seguinte comando. O servidor Web local é iniciado quando este comando é executado.
+Para testar o seu suplemento no Excel em um navegador, execute o seguinte comando. O servidor Web local é iniciado quando este comando é executado.
 
 ```command&nbsp;line
 npm run start:web
 ```
 
-Para usar seu suplemento de funções personalizadas, abra uma nova pasta de trabalho no Excel na Web. Nesta pasta de trabalho, conclua as seguintes etapas para Sideload seu suplemento.
+Para usar o suplemento de funções personalizadas, abra uma nova pasta de trabalho no Excel na Web. Nesta pasta de trabalho, conclua as seguintes etapas para realizar o sideload do suplemento.
 
-1. No Excel, escolha a guia **Inserir** e, em seguida, escolha **suplementos**.
+1. No Excel, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.
 
-   ![Inserir faixa de opções no Excel na Web com o ícone meus suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
+   ![Inserir a faixa de opções no Excel na Web com o ícone Meus suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
    
 2. Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**.
 
 3. Escolha **Procurar... ** e navegue até o diretório raiz do projeto criado pelo gerador Yeoman.
 
-4. Selecione o arquivo **manifest. XML** e escolha **aberto**, escolha **Carregar**.
+4. Selecione o arquivo **manifest. XML** e escolha **abrir**, escolha **Carregar**.
 
 --- 
     
 ## <a name="try-out-a-prebuilt-custom-function"></a>Experimente uma função personalizada predefinida
 
-O projeto de funções personalizadas que você criou contém algumas funções personalizadas predefinidas, definidas no arquivo **./src/Functions/functions.js** . O arquivo **./manifest.xml** especifica que todas as funções personalizadas pertencem a `CONTOSO` namespace. Você usará o namespace CONTOSO para acessar as funções personalizadas no Excel.
+O projeto de funções personalizadas criado contém algumas funções personalizadas predefinidas configuradas no arquivo **src/functions/functions.js**. O arquivo **./manifest.xml** especifica que todas as funções personalizadas pertencem a `CONTOSO` namespace. Você usará o namespace CONTOSO para acessar as funções personalizadas no Excel.
 
 Em seguida você vai experimentar a função personalizada `ADD` preenchendo as seguintes etapas:
 
@@ -105,11 +105,11 @@ As `ADD` função personalizada calcula a soma dos dois números que você forne
 
 ## <a name="create-a-custom-function-that-requests-data-from-the-web"></a>Criar uma função personalizada que solicita dados da web
 
-Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio de funções personalizadas. Em seguida, você criará uma função `getStarCount` personalizada chamada que mostra quantas estrelas um determinado repositório do GitHub possui.
+Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio de funções personalizadas. Em seguida, você criará uma função personalizada chamada `getStarCount` que mostra quantas estrelas um determinado repositório do GitHub tem.
 
-1. No projeto **starcount** , localize o arquivo **./src/Functions/functions.js** e abra-o no editor de código. 
+1. No projeto**Contagem de estrelas** localize o arquivo **./src/functions/functions.js** e abra-o no seu editor de código. 
 
-2. Em **Function. js**, adicione o seguinte código: 
+2. Em **function.js**, adicione o código a seguir: 
 
 ```JS
 /**
@@ -143,21 +143,21 @@ Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio d
     npm run build
     ```
 
-4. Complete as etapas a seguir (para Excel na Web, Windows ou Mac) para registrar novamente o suplemento no Excel. Você deve concluir estas etapas para que a nova função esteja disponível.
+4. Execute as etapas a seguir (para o Excel na Web, Windows ou Mac) para registrá-lo novamente no Excel. Você deve concluir essas etapas antes que a nova função esteja disponível.
 
-### <a name="excel-on-windows-or-mactabexcel-windows"></a>[Excel no Windows ou Mac](#tab/excel-windows)
+### <a name="excel-on-windows-or-mactabexcel-windows"></a>[Excel para Windows ou Mac](#tab/excel-windows)
 
-1. Feche o Excel e abra novamente o Excel.
+1. Feche o Excel e abra-o novamente.
 
-2. No Excel, escolha a guia **Inserir** e, em seguida, escolha a seta para baixo localizada à direita de **meus**suplementos.  ![Inserir faixa de opções no Excel no Windows com a seta meus suplementos realçada](../images/select-insert.png)
+2. No Excel, escolha a guia**Inserir** e, em seguida, escolha a seta para baixo localizada à direita de **Meus Suplementos**.  ![ Inserir faixa de opções no Excel no Windows com a seta Meus complementos realçada](../images/select-insert.png)
 
-3. Na lista de suplementos disponíveis, encontre a seção suplementos do **desenvolvedor** e selecione o suplemento do **starcount** para registrá-lo.
-    ![Inserir faixa de opções no Excel no Windows com o suplemento funções personalizadas do Excel realçado na lista meus suplementos](../images/list-starcount.png)
+3. Na lista de suplementos disponíveis, localize a seção **Suplementos do desenvolvedor** e selecione o seu suplemento **contagem de estrelas** para registrá-lo.
+    ![Inserir faixa de opções no Excel no Windows com o suplemento Funções Personalizadas do Excel realçado na minha lista de suplementos](../images/list-starcount.png)
 
 
-# <a name="excel-on-the-webtabexcel-online"></a>[Excel Online](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[Excel na Web](#tab/excel-online)
 
-1. No Excel, escolha a guia **Inserir** e, em seguida, escolha **suplementos**.  ![Inserir faixa de opções no Excel na Web com o ícone meus suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
+1. No Excel, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.  ![Inserir faixa de opções no Excel na Web com o ícone Meus Suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
 
 2. Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**.
 
@@ -168,16 +168,16 @@ Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio d
 ---
 
 <ol start="5">
-<li> Agora, vamos experimentar a nova função. Na célula <strong>B1</strong>, digite o texto <strong>= contoso. GETSTARCOUNT ("OfficeDev", "Excel-Custom-Functions")</strong> e pressione Enter. Você verá que o resultado na célula <strong>B1</strong> é o número atual de estrelas fornecido para o [repositório GitHub do Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions).</li>
+<li> Agora, vamos experimentar a nova função. Na célula <strong>B1</strong>, digite o texto <strong>=CONTOSO.GETSTARCOUNT("OfficeDev", "Funções personalizadas do Excel")</strong> e pressione Enter. Você deve ver que o resultado na célula <strong>B1</strong> é o número atual de estrelas fornecido para o [repositório do GitHub de funções personalizadas do Excel](https://github.com/OfficeDev/Excel-Custom-Functions).</li>
 </ol>
 
 ## <a name="create-a-streaming-asynchronous-custom-function"></a>Criar uma função personalizada assíncrona de streaming
 
-A `getStarCount` função retorna o número de estrelas que um repositório tem em um momento específico no tempo. As funções personalizadas também podem retornar dados que estão sempre mudando. Essas funções são chamadas de fluxo de funções. Eles devem incluir um `invocation` parâmetro que se refira à célula de onde a função foi chamada. O `invocation` parâmetro é usado para atualizar o conteúdo da célula a qualquer momento.  
+A função `getStarCount` retorna o número de estrelas que um repositório tem em um determinado momento. As funções personalizadas também podem retornar dados que estão mudando continuamente. Essas funções são chamadas de funções de streaming. Elas devem incluir um parâmetro `invocation` que se refere à célula na qual a função foi chamada. O parâmetro `invocation` é usado para atualizar o conteúdo da célula a qualquer momento.  
 
-No exemplo de código a seguir, você verá que há duas funções `currentTime` e. `clock` A `currentTime` função é uma função estática que não usa streaming. Ele retorna a data como uma cadeia de caracteres. A `clock` função usa a `currentTime` função para fornecer a nova hora a cada segundo para uma célula no Excel. Ele usa `invocation.setResult` para entregar o tempo para a célula Excel e `invocation.onCanceled` para manipular o que ocorre quando a função é cancelada.
+No exemplo de código a seguir, você perceberá que há duas funções, `currentTime` e `clock`. A função `currentTime` é uma função estática que não usa streaming. Ele retorna a data como uma cadeia de caracteres. A função `clock` usa a função `currentTime` para fornecer o novo horário a cada segundo a uma célula no Excel. Ele usa o `invocation.setResult` para fornecer o horário para a célula do Excel e `invocation.onCanceled` para controlar o que acontece quando a função é cancelada.
 
-1. No projeto **starcount** , adicione o código a seguir a **./src/Functions/functions.js** e salve o arquivo.
+1. No projeto**contagem de estrelas**, adicione o código a seguir **./src/functions/functions.js** e salve o arquivo.
 
 ```JS
 /**
@@ -211,20 +211,20 @@ function clock(invocation) {
     npm run build
     ```
 
-3. Complete as etapas a seguir (para Excel na Web, Windows ou Mac) para registrar novamente o suplemento no Excel. Você deve concluir estas etapas para que a nova função esteja disponível. 
+3. Execute as etapas a seguir (para o Excel na Web, Windows ou Mac) para registrá-lo novamente no Excel. Você deve concluir essas etapas antes que a nova função esteja disponível. 
 
-# <a name="excel-on-windows-or-mactabexcel-windows"></a>[Excel no Windows ou Mac](#tab/excel-windows)
+# <a name="excel-on-windows-or-mactabexcel-windows"></a>[Excel para Windows ou Mac](#tab/excel-windows)
 
-1. Feche o Excel e abra novamente o Excel.
+1. Feche o Excel e abra-o novamente.
 
-2. No Excel, escolha a guia **Inserir** e, em seguida, escolha a seta para baixo localizada à direita de **meus**suplementos.  ![Inserir faixa de opções no Excel no Windows com a seta meus suplementos realçada](../images/select-insert.png)
+2. No Excel, escolha a guia**Inserir** e, em seguida, escolha a seta para baixo localizada à direita de **Meus Suplementos**.  ![ Inserir faixa de opções no Excel no Windows com a seta Meus complementos realçada](../images/select-insert.png)
 
-3. Na lista de suplementos disponíveis, encontre a seção suplementos do **desenvolvedor** e selecione o suplemento do **starcount** para registrá-lo.
-    ![Inserir faixa de opções no Excel no Windows com o suplemento funções personalizadas do Excel realçado na lista meus suplementos](../images/list-starcount.png)
+3. Na lista de suplementos disponíveis, localize a seção **Suplementos do desenvolvedor** e selecione o seu suplemento **contagem de estrelas** para registrá-lo.
+    ![Inserir faixa de opções no Excel no Windows com o suplemento Funções Personalizadas do Excel realçado na minha lista de suplementos](../images/list-starcount.png)
 
-# <a name="excel-on-the-webtabexcel-online"></a>[Excel Online](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[Excel na Web](#tab/excel-online)
 
-1. No Excel, escolha a guia **Inserir** e, em seguida, escolha **suplementos**.  ![Inserir faixa de opções no Excel na Web com o ícone meus suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
+1. No Excel, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.  ![Inserir faixa de opções no Excel na Web com o ícone Meus Suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
 
 2. Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**.
 
@@ -235,12 +235,12 @@ function clock(invocation) {
 --- 
 
 <ol start="4">
-<li>Agora, vamos experimentar a nova função. Na célula <strong>C1</strong>, digite o texto <strong>= contoso. RELÓGIO ())</strong> e pressione Enter. Você deve ver a data atual, que transmite uma atualização a cada segundo. Embora esse relógio seja apenas um cronômetro em um loop, você pode usar a mesma ideia de definir um timer em funções mais complexas que fazem solicitações da Web para dados em tempo real.</li>
+<li>Agora, vamos experimentar a nova função. Na célula <strong>C1</strong>, digite o texto <strong>=CONTOSO.CLOCK())</strong> e pressione enter. Você deverá ver a data atual, que transmite uma atualização a cada segundo. Embora esse relógio seja um cronômetro em um loop, você pode usar a mesma ideia para definir um cronômetro em funções mais complexas que fazem solicitações da Web para dados em tempo real.</li>
 </ol>
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Parabéns! Você criou um novo projeto de funções personalizadas, tentou uma função predefinida, criou uma função personalizada que solicita dados da Web e criou uma função personalizada que transmite dados. Você também pode experimentar a depuração dessa função usando [as instruções de depuração da função personalizada](../excel/custom-functions-debugging.md). Para saber mais sobre funções personalizadas no Excel, prossiga para o seguinte artigo:
+Parabéns! Neste tutorial, você criou um novo projeto de funções personalizadas, experimentou uma função predefinida, criou uma função personalizada que solicita dados da Web e criou uma função personalizada que transmite dados. Você também pode experimentar a depuração dessa função usando [as instruções de depuração da função personalizada](../excel/custom-functions-debugging.md). Para saber mais sobre funções personalizadas no Excel, prossiga para o seguinte artigo:
 
 > [!div class="nextstepaction"]
 > [Criar funções personalizadas no Excel](../excel/custom-functions-overview.md)
