@@ -2,13 +2,13 @@
 title: Fazer referência à biblioteca da API JavaScript para Office de sua CDN (rede de distribuição de conteúdo)
 description: ''
 ms.date: 03/19/2019
-localization_priority: Priority
-ms.openlocfilehash: 6b9512d5d0969e185902d7ab9d3227e820c4d0dc
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
-ms.translationtype: HT
+localization_priority: Normal
+ms.openlocfilehash: 49fd83af4f5467cb4c612191e9fec235606fc05f
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353815"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950786"
 ---
 # <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-cdn"></a>Fazer referência à biblioteca da API JavaScript para Office de sua CDN (rede de distribuição de conteúdo)
 
