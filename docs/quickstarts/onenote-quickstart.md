@@ -1,15 +1,15 @@
 ---
 title: Crie seu primeiro suplemento do painel de tarefas do OneNote
-description: ''
+description: Saiba como criar um suplemento do painel de tarefas do OneNote simples usando a API JS do Office.
 ms.date: 01/16/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 2c7cd2a7adbfc8b5c368c4933a3910d4b3d32b82
-ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
+ms.openlocfilehash: 6098e3859103b5869072edfa133fb6ad39d4da8b
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "41265682"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950635"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do OneNote
 
