@@ -1,27 +1,27 @@
 ---
 layout: LandingPage
 ms.topic: landing-page
-title: Documentação de suplementos do Office
+title: Documentação de Suplementos do Office
 description: Saiba como criar suplementos do Office.
 author: o365devx
 ms.author: o365devx
 ms.prod: non-product-specific
 ms.date: 12/24/2019
-localization_priority: Normal
-ms.openlocfilehash: 2e0e8932214f398169f8483b4ca8bf1a65ec16a5
-ms.sourcegitcommit: 0dacbe7c80ed387099e3ec21e151f8990b181ede
-ms.translationtype: MT
+localization_priority: Priority
+ms.openlocfilehash: 4a2134fec212b75abff95d225f6238bd1f888c3b
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "41111008"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950758"
 ---
-# <a name="office-add-ins-documentation"></a>Documentação de suplementos do Office
+# <a name="office-add-ins-documentation"></a>Documentação de Suplementos do Office
 
-Use a plataforma de suplementos do Office para criar soluções que estendem os aplicativos do Office e interagem com conteúdo nos documentos do Office. Com os suplementos do Office, você pode usar tecnologias da Web conhecidas, como HTML, CSS e JavaScript, para criar soluções que podem ser executadas no Office no Windows, Mac, iPad e na Web.
+Use a plataforma de suplementos do Office para criar soluções que estendem os aplicativos do Office e interagem com conteúdo nos documentos do Office. Com os suplementos do Office, você pode usar tecnologias de Web conhecidas, como HTML, CSS e JavaScript, para criar uma solução que possa ser executada no Office no Windows, Mac, iPad e na Web.
 
 <h2>Introdução</h2>
 
-<p>Primeira vez que vai criar Suplementos do Office? Comece aprendendo sobre a plataforma de suplementos do Office e Criando suplementos do Office:</p>
+<p>Primeira vez que vai criar Suplementos do Office? Comece aprendendo sobre a plataforma de suplementos do Office e criar suplementos do Office:</p>
 
 <ul class="panelContent cardsF cols cols3">
     <li>
@@ -60,7 +60,7 @@ Use a plataforma de suplementos do Office para criar soluções que estendem os 
     </li>
 </ul>
 
-<p>Em seguida, use início rápido, tutoriais e laboratório de script para obter experiência de criação de suplementos do Office.</p>
+<p>Em seguida, use o início rápido, tutoriais e o script Lab para aproveitar a experiência de criação de suplementos do Office.</p>
 
 <ul class="cardsK panelContent cols cols3">
     <li>
@@ -73,18 +73,18 @@ Use a plataforma de suplementos do Office para criar soluções que estendem os 
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Início rápido de 5 minutos</h3>
-                        <p>Crie seu primeiro suplemento do Office em menos de 5 minutos!</p>
+                        <h3>Início rápido em 5 minutos</h3>
+                        <p>Crie seu primeiro suplemento do Office em até 5 minutos!</p>
                         <br/>
                         <ul>
-                            <li><a style="font-size: 1rem;" href="quickstarts/excel-quickstart-jquery.md">Início rápido de suplemento do Excel</a></li>
+                            <li><a style="font-size: 1rem;" href="quickstarts/excel-quickstart-jquery.md">Início rápido do suplemento do Excel</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/excel-custom-functions-quickstart.md">Início rápido de funções personalizadas do Excel</a></li>
-                            <li><a style="font-size: 1rem;" href="quickstarts/onenote-quickstart.md">Início rápido de suplementos do OneNote</a></li>
-                            <li><a style="font-size: 1rem;" href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">Início rápido de suplementos do Outlook</a></li>
-                            <li><a style="font-size: 1rem;" href="quickstarts/powerpoint-quickstart.md">Início rápido de suplementos do PowerPoint</a></li>
-                            <li><a style="font-size: 1rem;" href="quickstarts/project-quickstart.md">Início rápido de suplementos do Project</a></li>
-                            <li><a style="font-size: 1rem;" href="quickstarts/word-quickstart.md">Início rápido de suplementos do Word</a></li>
-                            <li><a style="font-size: 1rem;" href="quickstarts/sso-quickstart.md">Início rápido de logon único (SSO)</a></li>
+                            <li><a style="font-size: 1rem;" href="quickstarts/onenote-quickstart.md">Início rápido do suplemento do OneNote</a></li>
+                            <li><a style="font-size: 1rem;" href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">Início rápido do suplemento do Outlook</a></li>
+                            <li><a style="font-size: 1rem;" href="quickstarts/powerpoint-quickstart.md">Início rápido do suplemento do PowerPoint</a></li>
+                            <li><a style="font-size: 1rem;" href="quickstarts/project-quickstart.md">Início rápido do suplemento do Project</a></li>
+                            <li><a style="font-size: 1rem;" href="quickstarts/word-quickstart.md">Início rápido do suplemento do Word</a></li>
+                            <li><a style="font-size: 1rem;" href="quickstarts/sso-quickstart.md">Início rápido logon único (SSO).</a></li>
                         </ul>
                     </div>
                 </div>
@@ -102,7 +102,7 @@ Use a plataforma de suplementos do Office para criar soluções que estendem os 
                     </div>
                     <div class="cardText">
                         <h3>Tutoriais</h3>
-                        <p>Conclua um tutorial para saber mais sobre os recursos de um suplemento.</p>
+                        <p>Complete um tutorial para saber mais sobre os recursos de um suplemento.</p>
                         <br/>
                         <ul>
                             <li><a style="font-size: 1rem;" href="tutorials/excel-tutorial.md">Tutorial de suplemento do Excel</a></li>
@@ -127,7 +127,7 @@ Use a plataforma de suplementos do Office para criar soluções que estendem os 
                     </div>
                     <div class="cardText">
                         <h3>Script Lab</h3>
-                        <p>Experimente as APIs JavaScript do Office para Excel, Word e PowerPoint no laboratório de scripts.</p>
+                        <p>Experimente as APIs JavaScript do Office para Excel, Word e PowerPoint no laboratório de script.</p>
                         <br/>
                         <ul style="list-style: none!important;">
                         
@@ -154,7 +154,7 @@ Use a plataforma de suplementos do Office para criar soluções que estendem os 
             </div>
             <div class="cardText">
                 <h3>Principais conceitos</h3>
-                <p>Saiba mais sobre a plataforma e conceitos importantes que se aplicam à criação de qualquer suplemento do Office.</p>
+                <p>Saiba mais sobre a plataforma e conceitos importantes que se aplicam à criação de suplementos do Office.</p>
             </div>
         </a>
     </li>
@@ -254,7 +254,7 @@ Use a plataforma de suplementos do Office para criar soluções que estendem os 
                         </div>
                     </div>
                     <div class="cardText">
-                        <a href="overview/explore-with-script-lab.md"><h3>Explorar APIs<br/>com o script Lab</h3></a>
+                        <a href="overview/explore-with-script-lab.md"><h3>Explorar APIs<br/>com o Script Lab</h3></a>
                     </div>
                 </div>
             </div>
@@ -270,7 +270,7 @@ Use a plataforma de suplementos do Office para criar soluções que estendem os 
                         </div>
                     </div>
                     <div class="cardText">
-                        <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank"><h3>Fazer perguntas</h3></a>
+                        <a href="https://stackoverflow.com/questions/tagged/office-js" target="_blank"><h3>Tire dúvidas</h3></a>
                     </div>
                 </div>
             </div>
@@ -302,7 +302,7 @@ Use a plataforma de suplementos do Office para criar soluções que estendem os 
                         </div>
                     </div>
                     <div class="cardText">
-                        <a href="https://officespdev.uservoice.com/" target="_blank"><h3>Recursos de solicitação</h3></a>
+                        <a href="https://officespdev.uservoice.com/" target="_blank"><h3>Solicitar recursos</h3></a>
                     </div>
                 </div>
             </div>

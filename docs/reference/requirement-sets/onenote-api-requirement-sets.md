@@ -3,13 +3,13 @@ title: Conjuntos de requisitos da API JavaScript do OneNote
 description: ''
 ms.date: 07/17/2019
 ms.prod: onenote
-localization_priority: Normal
-ms.openlocfilehash: 3a1e5133b36af612156fb272651f1775e916a0fe
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
-ms.translationtype: MT
+localization_priority: Priority
+ms.openlocfilehash: 00bf9f23c307a6094345b753d7cccf1c10be7c32
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064869"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950961"
 ---
 # <a name="onenote-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do OneNote
 
@@ -31,7 +31,7 @@ A OneNote JavaScript API 1.1 é a primeira versão da API. Para obter mais detal
 
 ## <a name="runtime-requirement-support-check"></a>Verificação do suporte a requisitos de tempo de execução
 
-No tempo de execução, os suplementos podem verificar se um determinado host oferece suporte a um conjunto de requisitos de API, fazendo o seguinte.
+Durante o tempo de execução, os suplementos podem verificar se um determinado host oferece suporte a um conjunto de requisitos de API, realizando a seguinte verificação.
 
 ```js
 if (Office.context.requirements.isSetSupported('OneNoteApi', '1.1')) {
@@ -44,7 +44,7 @@ else {
 
 ## <a name="manifest-based-requirement-support-check"></a>Verificação de suporte a requisitos com base em manifesto
 
-Use o `Requirements` elemento no manifesto do suplemento para especificar conjuntos de requisitos críticos ou membros da API que seu suplemento deve usar. Se o host ou a plataforma do Office não oferecer suporte aos conjuntos de requisitos ou membros `Requirements` de API especificados no elemento, o suplemento não será executado nesse host ou plataforma e não será exibido em meus suplementos.
+Use o `Requirements` elemento no manifesto do suplemento para especificar conjuntos de requisitos ou membros de API cruciais que o seu suplemento precisa usar. Se o host do Office ou a plataforma não der suporte ao conjunto de requisitos ou membros da API especificados no. `Requirements` elemento, o suplemento não será executado no host ou na plataforma e não será exibido em Meus Suplementos.
 
 O exemplo de código a seguir mostra um suplemento que é carregado em todos os aplicativos host do Office que oferecem suporte ao conjunto de requisitos OneNoteApi, versão 1.1.
 
@@ -62,7 +62,7 @@ Para saber mais sobre conjuntos de requisitos comuns da API, confira [Conjuntos 
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação de referência da API JavaScript do OneNote](/javascript/api/onenote)
+- [Documentação de Referência da API JavaScript do OneNote](/javascript/api/onenote)
 - [Versões do Office e conjuntos de requisitos](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
 - [Especificar requisitos da API e de hosts do Office](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
 - [Manifesto XML dos Suplementos do Office](/office/dev/add-ins/develop/add-in-manifests)
