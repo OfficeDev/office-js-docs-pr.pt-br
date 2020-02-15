@@ -1,31 +1,31 @@
 ---
 ms.date: 01/16/2020
-description: Desenvolvimento de funções personalizadas no guia de início rápido do Excel.
-title: Início rápido de funções personalizadas
+description: Desenvolvendo funções personalizadas no guia de início rápido do Excel.
+title: 'Início rápido de funções personalizadas '
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 7446de52832a70b30bbe39c71b37e80e006dc62f
-ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
-ms.translationtype: MT
+localization_priority: Priority
+ms.openlocfilehash: 79c10a7ba032f478843ce94bf2eae39def051f40
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "41265561"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950723"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Introdução ao desenvolvimento de funções personalizadas do Excel
 
-Com funções personalizadas, os desenvolvedores agora podem adicionar novas funções ao Excel, definindo-as em JavaScript ou typescript como parte de um suplemento. Os usuários do Excel podem acessar funções personalizadas da mesma forma que fariam com qualquer função nativa `SUM()`no Excel, como.
+Com as funções personalizadas, os desenvolvedores agora podem adicionar novas funções ao Excel definindo-as em JavaScript ou Typescript como parte de um suplemento. Os usuários do Excel podem acessar funções personalizadas da mesma forma que fariam com qualquer função nativa no Excel, como `SUM()`.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel no Windows (versão 1904 ou posterior, conectada à assinatura do Office 365) ou Excel na Web
-* As funções personalizadas do Excel têm suporte no Office no Mac (conectado à assinatura do Office 365) e uma atualização para este tutorial está em breve.
+* Excel no Windows (versão 1904 ou posterior, conectado a assinatura do Office 365) ou Excel na Web
+* As funções personalizadas do Excel são compatíveis com o Office no Mac (conectado à assinatura do Office 365) e uma atualização para esse tutorial está disponível.
 
 >[!NOTE]
->As funções personalizadas do Excel não são suportadas no Office 2019 (compra única).
+>As funções personalizadas do Excel não são compatíveis com o Office 2019 (compra única).
 
-## <a name="build-your-first-custom-functions-project"></a>Criar seu primeiro projeto de funções personalizadas
+## <a name="build-your-first-custom-functions-project"></a>Crie seu primeiro projeto com funções personalizadas
 
 Para começar, você usará o gerador Yeoman para criar projeto com funções personalizadas. Isso configurará seu projeto com a estrutura de pastas, arquivos de origem e dependências corretos para começar a codificar suas funções personalizadas.
 
@@ -39,7 +39,7 @@ Para começar, você usará o gerador Yeoman para criar projeto com funções pe
 
     O gerador Yeoman criará os arquivos do projeto e instalará os componentes Node de suporte.
 
-2. O gerador Yeoman fornecerá algumas instruções na linha de comando sobre o que fazer com o projeto, mas ignorará e continuarão seguindo as instruções. Navegue até a pasta raiz do projeto.
+2. O gerador Yeoman fornecerá algumas instruções na linha de comando sobre o que fazer com o projeto, mas ignore-as e continue seguindo nossas instruções. Navegue até a pasta raiz do projeto.
 
     ```command&nbsp;line
     cd starcount
@@ -54,60 +54,60 @@ Para começar, você usará o gerador Yeoman para criar projeto com funções pe
     > [!NOTE]
     > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar `npm run build`, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
 
-4. Inicie o servidor local da web, que é executado no Node. Você pode experimentar o suplemento função personalizada no Excel na Web ou no Windows. Você pode ser solicitado a abrir o painel de tarefas do suplemento, embora isso seja opcional. Você ainda pode executar suas funções personalizadas sem abrir o painel de tarefas do suplemento.
+4. Inicie o servidor local da web, que é executado no Node.js. Você pode experimentar o suplemento função personalizada no Excel na Web ou no Windows. Você pode ser solicitado a abrir o painel de tarefas do suplemento, embora seja opcional. Ainda é possível executar as funções personalizadas sem abrir o painel de tarefas do suplemento.
 
 # <a name="excel-on-windowstabexcel-windows"></a>[Excel no Windows](#tab/excel-windows)
 
-Para testar seu suplemento no Excel no Windows, execute o seguinte comando. Quando você executar este comando, o servidor Web local será iniciado e o Excel será aberto com o seu suplemento carregado.
+Para testar o suplemento no Excel para Windows ou Mac, execute o seguinte comando. Quando você executa este comando, o servidor Web local iniciará e o Excel abrirá com o seu suplemento carregado.
 
 ```command&nbsp;line
 npm run start:desktop
 ```
 
-# <a name="excel-on-the-webtabexcel-online"></a>[Excel Online](#tab/excel-online)
+# <a name="excel-on-the-webtabexcel-online"></a>[Excel na Web](#tab/excel-online)
 
-Para testar seu suplemento no Excel na Web, execute o seguinte comando. O servidor Web local é iniciado quando este comando é executado.
+Para testar o suplemento no Excel na Web, execute o seguinte comando. O servidor Web local será iniciado ao executar este comando.
 
 ```command&nbsp;line
 npm run start:web
 ```
 
-Para usar seu suplemento de funções personalizadas, abra uma nova pasta de trabalho no Excel em um navegador. Nesta pasta de trabalho, conclua as seguintes etapas para Sideload seu suplemento.
+Para usar o suplemento de funções personalizadas, abra uma nova pasta de trabalho no Excel em um navegador. Nesta pasta de trabalho, conclua as seguintes etapas para realizar o sideload do suplemento.
 
-1. No Excel, escolha a guia **Inserir** e, em seguida, escolha **suplementos**.
+1. No Excel, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.
 
-   ![Inserir faixa de opções no Excel na Web com o ícone meus suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
+   ![Inserir a faixa de opções no Excel na Web com o ícone Meus suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
    
 2. Escolha **Gerenciar Meus suplementos** e selecione **Carregar o Suplemento**.
 
 3. Escolha **Procurar... ** e navegue até o diretório raiz do projeto criado pelo gerador Yeoman.
 
-4. Selecione o arquivo **manifest. XML** e escolha **aberto**, escolha **Carregar**.
+4. Selecione o arquivo **manifest. XML** e escolha **abrir**, escolha **Carregar**.
 
 ---
 
 ## <a name="try-out-a-prebuilt-custom-function"></a>Experimente uma função personalizada predefinida
 
-O projeto de funções personalizadas criado usando o gerador Yeoman contém algumas funções personalizadas predefinidas, definidas no arquivo **./src/Functions/functions.js** . O arquivo **./manifest.xml** no diretório raiz do projeto especifica que todas as funções personalizadas pertencem ao `CONTOSO` namespace.
+O projeto de funções personalizadas criado usando o gerador Yeoman contém algumas funções personalizadas predefinidas definidas no arquivo **./src/functions/functions.js**. O arquivo **./manifest.xml** na pasta raiz do projeto especifica que todas as funções personalizadas pertencem ao namespace `CONTOSO`.
 
-Na sua pasta de trabalho do Excel, `ADD` Experimente a função personalizada realizando as seguintes etapas:
+Em sua pasta de trabalho do Excel experimente a função personalizada `ADD` preenchendo as seguintes etapas:
 
-1. Selecione uma célula e digite `=CONTOSO`. Observe que o menu de preenchimento automático mostra a lista de todas as funções na `CONTOSO` namespace.
+1. Selecione uma célula e digite `=CONTOSO` Observe que o menu de preenchimento automático mostra a lista de todas as funções no namespace `CONTOSO`.
 
-2. Execute a `CONTOSO.ADD` função, usando números `10` e `200` como parâmetros de entrada, digitando o `=CONTOSO.ADD(10,200)` valor na célula e pressionando ENTER.
+2. Executar a função `CONTOSO.ADD`, usando os números `10` e `200` como parâmetros de entrada, digitando o valor `=CONTOSO.ADD(10,200)` na célula e pressionando enter.
 
 O `ADD` função personalizada calcula a soma de dois números que você especificar como os parâmetros de entrada. Digitando `=CONTOSO.ADD(10,200)` deve obter o resultado **210** na célula, depois pressionar enter.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Parabéns, você criou com êxito uma função personalizada em um suplemento do Excel! Em seguida, crie um suplemento mais complexo com recurso de dados de streaming. O link a seguir o orienta pelas próximas etapas do tutorial do suplemento do Excel com funções personalizadas.
+Você criou com êxito uma função personalizada em um suplemento do Excel, parabéns! Em seguida, crie um suplemento mais complexo com o recurso de fluxo de dados. O link a seguir mostra as próximas etapas do tutorial do suplemento do Excel com funções personalizadas.
 
 > [!div class="nextstepaction"]
-> [Tutorial de suplemento de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md#create-a-custom-function-that-requests-data-from-the-web
+> [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md#create-a-custom-function-that-requests-data-from-the-web
 )
 
 ## <a name="see-also"></a>Confira também
 
-* [Visão geral das funções personalizadas](../excel/custom-functions-overview.md)
+* [Visão geral de funções personalizadas](../excel/custom-functions-overview.md)
 * [Metadados de funções personalizadas](../excel/custom-functions-json.md)
 * [Tempo de execução de funções personalizadas do Excel](../excel/custom-functions-runtime.md)

@@ -3,13 +3,13 @@ title: Tutorial de suplemento do PowerPoint
 description: Neste tutorial, você vai criar um suplemento do PowerPoint que insere imagem, texto, obtém metadados do slide e navega entre slides.
 ms.date: 12/24/2019
 ms.prod: powerpoint
-localization_priority: Normal
-ms.openlocfilehash: 524c6727e8a1b8e4bb42156a5cec9fead45fd45c
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
-ms.translationtype: MT
+localization_priority: Priority
+ms.openlocfilehash: aace13a3dba55abcac258b48ceb852fed746adcc
+ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851422"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "41950884"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>Tutorial: Criar um Suplemento do Painel de Tarefas
 
@@ -33,7 +33,7 @@ Conclua as etapas a seguir para criar um projeto de suplemento do PowerPoint usa
 
 2. Usando a caixa de pesquisa, insira **suplemento**. Escolha **Suplemento do PowerPoint Web **, em seguida, selecione **Próximo**.
 
-3. Nomeie o projeto `HelloWorld`e selecione **criar**.
+3. Nomeie o projeto como `HelloWorld` e selecione **Criar**.
 
 4. Na caixa de diálogo **Criar suplementos do Office**, escolha **Adicionar novas funcionalidades ao PowerPoint**e depois **Concluir** para criar o projeto.
 
@@ -511,5 +511,5 @@ Neste tutorial, você criou um suplemento do PowerPoint que insere imagem, texto
 ## <a name="see-also"></a>Confira também
 
 * [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
-* [Criar suplementos do Office](../overview/office-add-ins-fundamentals.md)
-* [Desenvolver suplementos do Office](../develop/develop-overview.md)
+* [Criando Suplementos do Office ](../overview/office-add-ins-fundamentals.md)
+* [Desenvolver Suplementos do Office ](../develop/develop-overview.md)
