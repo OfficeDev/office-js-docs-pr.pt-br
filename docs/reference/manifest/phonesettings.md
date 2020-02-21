@@ -3,19 +3,19 @@ title: Elemento PhoneSettings no arquivo de manifesto
 description: ''
 ms.date: 01/13/2020
 localization_priority: Normal
-ms.openlocfilehash: e3ea104af7e634b4e6e6cbeaac395af11ae4e376
-ms.sourcegitcommit: dc42e0276007f8ab006028b9cd0cc1526c1bd100
+ms.openlocfilehash: 4614c86af865e5242657f47e21e6786545a616b6
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "41120653"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165535"
 ---
 # <a name="phonesettings-element"></a>Elemento PhoneSettings
 
 Especifica o local de origem e as configurações de controle aplicadas quando o seu suplemento de email é usado em um telefone.
 
 > [!IMPORTANT]
-> O `PhoneSettings` elemento só está disponível no Outlook clássico na Web (geralmente conectado a versões anteriores do Exchange Server local) e no Outlook 2013 no Windows. Para dar suporte ao Outlook no Android e iOS, confira [suplementos do Outlook Mobile](/outlook/add-ins/outlook-mobile-addins).
+> O `PhoneSettings` elemento só está disponível no Outlook clássico na Web (geralmente conectado a versões anteriores do Exchange Server local) e no Outlook 2013 no Windows. Para dar suporte ao Outlook no Android e iOS, confira [suplementos do Outlook Mobile](../../outlook/outlook-mobile-addins.md).
 
 **Tipo de suplemento:** Email
 

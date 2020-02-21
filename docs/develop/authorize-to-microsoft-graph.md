@@ -3,12 +3,12 @@ title: Autorizar o Microsoft Graph com SSO
 description: ''
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 77dec8eda1c630bef6277008bef4b129e29a8dae
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 06605ab54dc0565aaa5632abd911c68e29aba33f
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41949678"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42162794"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso-preview"></a>Autorizar o Microsoft Graph com SSO (visualização)
 
@@ -62,4 +62,4 @@ Para obter exemplos detalhados passo a passo de cenários, confira:
 
 * [Criar um Suplemento do Office com Node.js que usa logon único](create-sso-office-add-ins-nodejs.md)
 * [Criar um Suplemento do Office com ASP.NET que usa logon único](create-sso-office-add-ins-aspnet.md)
-* [Cenário: implementar o logon único no serviço em um suplemento do Outlook](/outlook/add-ins/implement-sso-in-outlook-add-in)
+* [Cenário: implementar o logon único no serviço em um suplemento do Outlook](../outlook/implement-sso-in-outlook-add-in.md)

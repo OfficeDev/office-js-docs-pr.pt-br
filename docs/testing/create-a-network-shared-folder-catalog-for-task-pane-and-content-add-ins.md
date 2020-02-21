@@ -1,14 +1,14 @@
 ---
 title: Realizar sideload de suplementos do Office para teste
 description: ''
-ms.date: 12/31/2019
+ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 5008e75c1932d83070bdbc896675ce342f81e1ea
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 0eb8e6c2114b69575505508f05ed701f74b6849e
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950534"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163588"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>Realizar sideload de suplementos do Office para teste
 
@@ -21,7 +21,7 @@ Este artigo se aplica somente para testes de suplementos do Word, Excel, PowerPo
 
 - [Realizar sideload de suplementos do Office no Office na Web para teste](sideload-office-add-ins-for-testing.md)
 - [Sideload suplementos do Office para teste em um iPad ou Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
-- [Realizar sideload de suplementos do Outlook para teste](/outlook/add-ins/sideload-outlook-add-ins-for-testing)
+- [Realizar sideload de suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md)
 
 O vídeo a seguir oferece orientações para a realização do processo de sideload no suplemento do Office na Web ou para área de trabalho usando um catálogo de pasta compartilhada.  
 
@@ -45,22 +45,22 @@ O vídeo a seguir oferece orientações para a realização do processo de sidel
 
 6. Escolha o botão **Fechar** para fechar a caixa de diálogo **Propriedades**.
 
-## <a name="specify-the-shared-folder-as-a-trusted-catalog"></a>Especifique a pasta compartilhada como um catálogo confiável 
+## <a name="specify-the-shared-folder-as-a-trusted-catalog"></a>Especifique a pasta compartilhada como um catálogo confiável
 
 ### <a name="configure-the-trust-manually"></a>Configure a confiança manualmente
-      
+
 1. Abra um novo documento no Excel, no Word, no PowerPoint ou no Project.
-    
+
 2. Escolha a guia **Arquivo** e, então, **Opções**.
-    
+
 3. Escolha **Central de Confiabilidade**, e escolha o botão **Configurações da Central de Confiabilidade**.
-    
+
 4. Escolha **Catálogos de Suplemento Confiáveis**.
-    
-5. Na caixa**Url catálogo**, digite o caminho completo da rede para a pasta que você [compartilhou](#share-a-folder) anteriormente. Se você não conseguiu anotar todo o caminho de rede da pasta ao compartilhar a pasta, você pode obtê-lo na janela de diálogo **Propriedades**, conforme mostrado na captura de tela a seguir. 
+
+5. Na caixa**Url catálogo**, digite o caminho completo da rede para a pasta que você [compartilhou](#share-a-folder) anteriormente. Se você não conseguiu anotar todo o caminho de rede da pasta ao compartilhar a pasta, você pode obtê-lo na janela de diálogo **Propriedades**, conforme mostrado na captura de tela a seguir.
 
     ![caixa de diálogo de Propriedades de pastas com o guia de compartilhamento e o caminho de rede realçado](../images/sideload-windows-properties-dialog-2.png)
-    
+
 6. Depois de inserir o caminho de de rede completo da pasta na caixa **Url catálogo**, escolha o botão **Adicionar Catálogo**.
 
 7. Selecione a caixa de seleção **Mostrar no Menu** no novo item adicionado e, em seguida, escolha o botão **Ok** para fechar a janela de diálogo **Central de Confiabilidade**. 
@@ -73,13 +73,13 @@ O vídeo a seguir oferece orientações para a realização do processo de sidel
 
 ### <a name="configure-the-trust-with-a-registry-script"></a>Configurar a confiança com um script de Registro
 
-1. Em um editor de texto, crie um arquivo chamado TrustNetworkShareCatalog.reg. 
+1. Em um editor de texto, crie um arquivo chamado TrustNetworkShareCatalog.reg.
 
 2. Adicione o seguinte conteúdo ao arquivo:
 
     ```
     Windows Registry Editor Version 5.00
-    
+
     [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{-random-GUID-here-}]
     "Id"="{-random-GUID-here-}"
     "Url"="\\\\-share-\\-folder-"
@@ -87,15 +87,15 @@ O vídeo a seguir oferece orientações para a realização do processo de sidel
     ```
 3. Use uma das várias ferramentas de geração de GUID online, como o [Gerador de GUIDs](https://guidgenerator.com/), para gerar um GUID aleatório e, no arquivo TrustNetworkShareCatalog.reg, substitua a cadeia de caracteres "-random-GUID-here-" *nos dois locais* pelo GUID. (Os símbolos `{}` de delimitação devem permanecer.)
 
-4. Substitua o valor `Url` pelo caminho completo da rede para a pasta que você [compartilhou](#share-a-folder) anteriormente. (Observe que quaisquer caracteres `\` na URL devem ser duplicados.) Se você não conseguiu anotar todo o caminho de rede da pasta ao compartilhar a pasta, você pode obtê-lo na janela de diálogo **Propriedades**, conforme mostrado na captura de tela a seguir. 
+4. Substitua o valor `Url` pelo caminho completo da rede para a pasta que você [compartilhou](#share-a-folder) anteriormente. (Observe que quaisquer caracteres `\` na URL devem ser duplicados.) Se você não conseguiu anotar todo o caminho de rede da pasta ao compartilhar a pasta, você pode obtê-lo na janela de diálogo **Propriedades**, conforme mostrado na captura de tela a seguir.
 
     ![caixa de diálogo de Propriedades de pastas com o guia de compartilhamento e o caminho de rede realçado](../images/sideload-windows-properties-dialog-2.png)
-    
+
 5. Agora o arquivo deve ter a aparência a seguir. Salve-o.
 
     ```
     Windows Registry Editor Version 5.00
-    
+
     [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{01234567-89ab-cedf-0123-456789abcedf}]
     "Id"="{01234567-89ab-cedf-0123-456789abcedf}"
     "Url"="\\\\TestServer\\OfficeAddinManifests"
@@ -113,11 +113,15 @@ O vídeo a seguir oferece orientações para a realização do processo de sidel
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-2. No Excel, Word ou PowerPoint, selecione **Meus Suplementos** na guia **Inserir** da faixa de opções. No Project, selecione **Meus Suplementos** na guia **Projeto** da faixa de opções. 
+2. No Excel, Word ou PowerPoint, selecione **Meus Suplementos** na guia **Inserir** da faixa de opções. No Project, selecione **Meus Suplementos** na guia **Projeto** da faixa de opções.
 
 3. Escolha **PASTA COMPARTILHADA** na parte superior da caixa de diálogo **Suplementos do Office**.
 
 4. Selecione o nome do suplemento e escolha **Adicionar** para inseri-lo.
+
+## <a name="remove-a-sideloaded-add-in"></a>Remover um suplemento do suplementos foi feito
+
+Você pode remover um suplemento suplementos foi feito anteriormente limpando o cache do Office em seu computador. Os detalhes sobre como limpar o cache no Windows podem ser encontrados no artigo [limpar o cache do Office](clear-cache.md#clear-the-office-cache-on-windows).
 
 ## <a name="see-also"></a>Confira também
 

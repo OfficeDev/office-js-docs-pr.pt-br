@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos de API para suplementos do Outlook versão 1.6
 description: ''
-ms.date: 12/17/2019
+ms.date: 02/19/2020
 localization_priority: Normal
-ms.openlocfilehash: 22702448b82a108c401f9f81d3b8a321e14ead63
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: aedfa635c5208ddb8a0972e880fafe50ddc0b3d6
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814658"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165360"
 ---
 # <a name="outlook-add-in-api-requirement-set-16"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.6
 
@@ -30,11 +30,11 @@ O conjunto de requisitos 1.6 inclui todos os recursos do [Conjunto de requisitos
 - Adicionado [Office.context.mailbox.item.getSelectedEntities](office.context.mailbox.item.md#methods): adiciona uma nova função que obtém as entidades encontradas em uma correspondência realçada selecionada por um usuário. As correspondências realçadas aplicam-se aos suplementos contextuais.
 - Adicionado [Office.context.mailbox.item.getSelectedRegExMatches](office.context.mailbox.item.md#methods): adiciona uma nova função que retorna valores de cadeia de caracteres em uma correspondência realçada que corresponde às expressões regulares definidas no arquivo de manifesto XML. As correspondências realçadas aplicam-se aos suplementos contextuais.
 - Adicionado [Office.context.mailbox.displayNewMessageForm](office.context.mailbox.md#methods): adiciona uma nova função que abre um novo formulário de mensagem.
-- Adicionado [Office.context.mailbox.userProfile.accountType](office.context.mailbox.userprofile.md#properties): adiciona um novo membro ao perfil de usuário, que indica o tipo de conta do usuário.
+- Adicionado [Office.context.mailbox.userProfile.accountType](/javascript/api/outlook/office.userprofile?view=outlook-js-1.6#accounttype): adiciona um novo membro ao perfil de usuário, que indica o tipo de conta do usuário.
 
 ## <a name="see-also"></a>Confira também
 
-- [Suplementos do Outlook](/outlook/add-ins/)
+- [Suplementos do Outlook](../../../outlook/outlook-add-ins-overview.md)
 - [Exemplos de código de suplementos do Outlook](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [Introdução](/outlook/add-ins/quick-start)
+- [Introdução](../../../quickstarts/outlook-quickstart.md)
 - [Conjuntos de requisitos e clientes com suporte](../../requirement-sets/outlook-api-requirement-sets.md)

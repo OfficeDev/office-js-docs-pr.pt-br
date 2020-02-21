@@ -5,12 +5,12 @@ title: Documentação de suplementos do Outlook
 description: Recursos para saber mais sobre suplementos do Outlook.
 ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 2af0c791ba90df68b80ca7e4af773e1b024e337e
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: b9d7c7ff05dddda3e3ae3235e90400c6913f1f49
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35576740"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165549"
 ---
 # <a name="outlook-add-ins-documentation"></a>Documentação de Suplementos do Outlook
 
@@ -28,7 +28,7 @@ Com os suplementos do Outlook, você pode usar tecnologias de Web conhecidas, co
                     </div>
                     <div class="cardText">
                         <h3>Visão geral</h3>
-                        <p><a href="/outlook/add-ins/index?context=office/dev/add-ins/context">Saiba mais sobre os componentes e recursos de um suplemento do Outlook.</a></p>
+                        <p><a href="outlook-add-ins-overview.md">Saiba mais sobre os componentes e recursos de um suplemento do Outlook.</a></p>
                     </div>
                 </div>
             </div>
@@ -45,24 +45,7 @@ Com os suplementos do Outlook, você pode usar tecnologias de Web conhecidas, co
                     </div>
                     <div class="cardText">
                         <h3>Introdução</h3>
-                        <p><a href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">Crie seu primeiro suplemento do Outlook em até 5 minutos</a>.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../images/index-landing-page/i_code-automate.svg" alt="Custom functions" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Desenvolvimento de suplemento do Outlook</h3>
-                        <p><a href="/outlook/add-ins/outlook-addin-design">Saiba mais sobre os principais aspectos do desenvolvimento do suplemento do Outlook.</a></p>
+                        <p><a href="../quickstarts/outlook-quickstart.md">Crie seu primeiro suplemento do Outlook em até 5 minutos</a>.</p>
                     </div>
                 </div>
             </div>
@@ -79,7 +62,7 @@ Com os suplementos do Outlook, você pode usar tecnologias de Web conhecidas, co
                     </div>
                     <div class="cardText">
                         <h3>API JavaScript do Outlook</h3>
-                        <p><a href="/outlook/add-ins/apis?context=office/dev/add-ins/context">Saiba como usar a API JavaScript do Outlook para interagir com objetos no Outlook.</a></p>
+                        <p><a href="apis.md">Saiba como usar a API JavaScript do Outlook para interagir com objetos no Outlook.</a></p>
                     </div>
                 </div>
             </div>

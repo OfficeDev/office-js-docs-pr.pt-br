@@ -3,18 +3,18 @@ title: Como encontrar a ordem correta dos elementos do manifesto
 description: Saiba como encontrar a ordem correta na qual colocar elementos filho em um elemento pai.
 ms.date: 08/22/2019
 localization_priority: Normal
-ms.openlocfilehash: 95cdce30beda5eeda73e9b06b65eff5048005723
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 5cd755c69093267ad6ea87d5b1f0676169e7a672
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950695"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42162780"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>Como encontrar a ordem correta dos elementos do manifesto
 
 Os elementos XML do manifesto de um Suplemento do Office devem estar no elemento pai apropriado *e* em uma ordem específica em relação uns aos outros.
 
-A ordem exigida é especificada nos arquivos XSD, na pasta [Esquemas](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas). Os arquivos XSD são categorizados em subpastas para suplementos de painel de tarefas, conteúdo e email.
+A ordem exigida é especificada nos arquivos XSD, na pasta [Esquemas](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8). Os arquivos XSD são categorizados em subpastas para suplementos de painel de tarefas, conteúdo e email.
 
 Por exemplo, no elemento `<OfficeApp>`, os elementos `<Id>`, `<Version>` e `<ProviderName>` devem aparecer nessa ordem. Se adicionar um elemento `<AlternateId>`, deverá colocá-lo entre os elementos `<Id>` e `<Version>`. Se algum dos elementos estiver na posição incorreta, o manifesto não será válido e o suplemento não será carregado.
 
@@ -24,7 +24,7 @@ Por exemplo, no elemento `<OfficeApp>`, os elementos `<Id>`, `<Version>` e `<Pro
 As seções a seguir mostram os elementos manifest na ordem em que devem ser exibidos. Há `type` diferenças dependendo se o atributo do `<OfficeApp>` elemento é `TaskPaneApp`, `ContentApp`ou. `MailApp` Para evitar que essas seções fiquem muito difíceis, o elemento altamente complexo `<VersionOverrides>` é dividido em seções separadas.
 
 > [!Note]
-> Nem todos os elementos mostrados são obrigatórios. Se o `minOccurs` valor de um elemento for **0** no [esquema](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas), o elemento será opcional.
+> Nem todos os elementos mostrados são obrigatórios. Se o `minOccurs` valor de um elemento for **0** no [esquema](/openspecs/office_file_formats/ms-owemxml/4e112d0a-c8ab-46a6-8a6c-2a1c1d1299e3), o elemento será opcional.
 
 ## <a name="basic-task-pane-add-in-element-ordering"></a>Ordenação básica de elemento de suplemento do painel de tarefas
 

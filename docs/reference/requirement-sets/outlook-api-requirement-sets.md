@@ -4,12 +4,12 @@ description: ''
 ms.date: 02/11/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 7ea6be0cb1879ba583eaa64a7611899bf5adb73f
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: ad83a9627aba29c6b2877d83f1d359ec1f7dd3a5
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950541"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163597"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Conjuntos de requisitos de API JavaScript do Outlook
 
@@ -66,7 +66,7 @@ Os desenvolvedores devem usar o conjunto de requisitos mínimos que contém o co
 
 ## <a name="requirement-sets-supported-by-exchange-servers-and-outlook-clients"></a>Conjuntos de requisitos suportados pelos Exchange Servers e clientes do Outlook
 
-Nesta seção, vemos a gama de conjuntos de requisitos com suporte do Exchange Server e clientes do Outlook. Para obter detalhes sobre os requisitos de cliente e servidor para executar suplementos do Outlook, confira [requisitos dos suplementos do Outlook](/outlook/add-ins/add-in-requirements).
+Nesta seção, vemos a gama de conjuntos de requisitos com suporte do Exchange Server e clientes do Outlook. Para obter detalhes sobre os requisitos de cliente e servidor para executar suplementos do Outlook, confira [requisitos dos suplementos do Outlook](../../outlook/add-in-requirements.md).
 
 > [!IMPORTANT]
 > Se o seu Exchange Server de destino e o cliente do Outlook oferecem suporte a conjuntos de requisitos diferentes, então você estará restrito ao intervalo menor de conjunto de requisitos. Por exemplo, se um suplemento estiver sendo executado no Outlook 2016 para Mac (conjunto de requisitos mais alto: 1.6) em relação ao Exchange 2013 (conjunto de requisitos mais alto: 1.1), seu suplemento estará limitado ao conjunto de requisitos 1.1.
@@ -108,11 +108,11 @@ Os suplementos são compatíveis com o Outlook nas seguintes plataformas.
 >
 > **moderno**
 >
-> ![captura de tela parcial da barra de ferramentas moderna do Outlook](https://docs.microsoft.com/outlook/add-ins/images/outlook-on-the-web-new-toolbar.png)
+> ![captura de tela parcial da barra de ferramentas moderna do Outlook](../../images/outlook-on-the-web-new-toolbar.png)
 >
 > **clássico**
 >
-> ![captura de tela parcial da barra de ferramentas clássica do Outlook](https://docs.microsoft.com/outlook/add-ins/images/outlook-on-the-web-classic-toolbar.png)
+> ![captura de tela parcial da barra de ferramentas clássica do Outlook](../../images/outlook-on-the-web-classic-toolbar.png)
 
 ## <a name="using-preview-apis"></a>Usando APIs de visualização
 

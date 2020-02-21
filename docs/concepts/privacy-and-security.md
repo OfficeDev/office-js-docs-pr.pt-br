@@ -3,12 +3,12 @@ title: Privacidade e segurança para suplementos do Office
 description: ''
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: c4f2ea5413ff1fa404c242bc729c59f9feedaca3
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 30ebae88d40795b4be36628a60539397fb1deb29
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41949699"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42162801"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 
@@ -97,7 +97,7 @@ A plataforma de suplementos lida com as preocupações com privacidade dos usuá
 
   - A execução em um controle de navegador da Web permite que o suplemento faça quase tudo que uma página da Web regular em execução em um navegador pode fazer, mas, ao mesmo tempo, restringe o suplemento a observar a política de mesma origem para o isolamento de domínio e as zonas segurança.
 
-Os suplementos do Outlook fornecem recursos adicionais de segurança e desempenho por meio do monitoramento de uso de recursos específicos do suplemento do Outlook. Para saber mais, consulte [Privacidade, permissões e segurança de suplementos do Outlook](/outlook/add-ins/privacy-and-security).
+Os suplementos do Outlook fornecem recursos adicionais de segurança e desempenho por meio do monitoramento de uso de recursos específicos do suplemento do Outlook. Para saber mais, consulte [Privacidade, permissões e segurança de suplementos do Outlook](../outlook/privacy-and-security.md).
 
 ### <a name="developer-guidelines-to-handle-pii"></a>Diretrizes de desenvolvedor para lidar com PII
 
@@ -138,13 +138,13 @@ O exemplo a seguir mostra como um suplemento de painel de tarefas especifica a p
 </OfficeApp>
 ```
 
-Para saber mais sobre permissões para suplementos de painel de tarefas e de conteúdo, consulte [Solicitar permissões para uso da API em suplementos ](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins).
+Para saber mais sobre permissões para suplementos de painel de tarefas e de conteúdo, consulte [Solicitar permissões para uso da API em suplementos ](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md).
 
 Para saber mais sobre permissões para suplementos do Outlook, confira os tópicos a seguir:
 
-- [Privacidade, permissões e segurança de suplementos do Outlook](/outlook/add-ins/privacy-and-security)
+- [Privacidade, permissões e segurança de suplementos do Outlook](../outlook/privacy-and-security.md)
 
-- [Noções básicas sobre permissões de suplemento do Outlook](/outlook/add-ins/understanding-outlook-add-in-permissions)
+- [Noções básicas sobre permissões de suplemento do Outlook](../outlook/understanding-outlook-add-in-permissions.md)
 
 ### <a name="same-origin-policy"></a>Política de mesma origem
 
@@ -240,7 +240,7 @@ Os desenvolvedores também devem observar as seguintes práticas de segurança:
   - Produzir uma declaração com uma política de privacidade compatível.
   - Estar preparados para assinar um acordo contratual ao enviar o suplemento.
 
-Além das regras de uso de recursos, os desenvolvedores de suplementos do Outlook também devem verificar se os suplementos estão de acordo com os limites para a especificação de regras de ativação e se usam a API JavaScript. Para saber mais, confira [Limites de ativação e API JavaScript para suplementos do Outlook](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins).
+Além das regras de uso de recursos, os desenvolvedores de suplementos do Outlook também devem verificar se os suplementos estão de acordo com os limites para a especificação de regras de ativação e se usam a API JavaScript. Para saber mais, confira [Limites de ativação e API JavaScript para suplementos do Outlook](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md).
 
 ## <a name="it-administrators-control"></a>Controle de administradores de TI
 
@@ -259,11 +259,11 @@ O gerenciamento e a execução das configurações do Office são feitos com as 
 
 ## <a name="see-also"></a>Confira também
 
-- [Solicitar permissões para uso da API em suplementos ](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
-- [Privacidade, permissões e segurança de suplementos do Outlook](/outlook/add-ins/privacy-and-security)
-- [Noções básicas sobre permissões de suplemento do Outlook](/outlook/add-ins/understanding-outlook-add-in-permissions)
-- [Limites de ativação e da API do JavaScript API para suplementos do Outlook](/outlook/add-ins/limits-for-activation-and-javascript-api-for-outlook-add-ins)
-- [Como lidar com limitações de política de mesma origem nos suplementos do Office](/office/dev/add-ins/develop/addressing-same-origin-policy-limitations)
+- [Solicitar permissões para uso da API em suplementos ](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
+- [Privacidade, permissões e segurança de suplementos do Outlook](../outlook/privacy-and-security.md)
+- [Noções básicas sobre permissões de suplemento do Outlook](../outlook/understanding-outlook-add-in-permissions.md)
+- [Limites de ativação e da API do JavaScript API para suplementos do Outlook](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
+- [Como lidar com limitações de política de mesma origem nos suplementos do Office](../develop/addressing-same-origin-policy-limitations.md)
 - [Política de Mesma Origem](https://www.w3.org/Security/wiki/Same_Origin_Policy)
 - [Política de Mesma Origem Parte 1: Sem Inspecionar](/archive/blogs/ieinternals/same-origin-policy-part-1-no-peeking)
 - [Política de mesma origem para JavaScript](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)

@@ -3,12 +3,12 @@ title: Desenvolver Suplementos do Office com o Visual Studio
 description: Como desenvolver Suplementos do Office com o Visual Studio
 ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: 2acafc08dcbb8e1fde439f2be289afff3185272c
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
+ms.openlocfilehash: 9f250078a4da80dea3276c51a2183a072da44f81
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40915039"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42162808"
 ---
 # <a name="develop-office-add-ins-with-visual-studio"></a>Desenvolver Suplementos do Office com o Visual Studio
 
@@ -22,7 +22,7 @@ Esse artigo descreve como usar o Visual Studio para desenvolver um suplemento do
 O Visual Studio pode ser usado para criar suplementos do Office para o Excel, Outlook, Word e PowerPoint. Um projeto do suplemento do Office é criado como parte de uma solução do Visual Studio e usa HTML, CSS e JavaScript. Para criar um suplemento do Office com o Visual Studio, siga as instruções no início rápido que correspondam ao suplemento que você deseja criar:
 
 - [Início rápido do Excel](../quickstarts/excel-quickstart-jquery.md?tabs=visualstudio)
-- [Início rápido do Outlook](/outlook/add-ins/quick-start?context=office/dev/add-ins/context&tabs=visualstudio)
+- [Início rápido do Outlook](../quickstarts/outlook-quickstart.md?tabs=visualstudio)
 - [Início rápido do Word](../quickstarts/word-quickstart.md?tabs=visualstudio)
 - [Início rápido do PowerPoint](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio)
 

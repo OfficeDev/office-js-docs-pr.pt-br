@@ -3,12 +3,12 @@ title: Conjunto de requisitos de API para suplementos do Outlook versão 1.5
 description: ''
 ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 1a12156feb7a03e596e521650a757fe7198b4d76
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: 65453a0cff8db682f5f573c25a9afa4e9ff63f67
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814742"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163735"
 ---
 # <a name="outlook-add-in-api-requirement-set-15"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.5
 
@@ -21,8 +21,8 @@ O subconjunto de APIs de suplemento do Outlook para as APIs JavaScript do Office
 
 O conjunto de requisitos 1.5 inclui todos os recursos do [Conjunto de requisitos 1.4](../requirement-set-1.4/outlook-requirement-set-1.4.md) e contém os seguintes recursos adicionais.
 
-- Adicionado suporte para [painéis de tarefas fixáveis](/outlook/add-ins/pinnable-taskpane).
-- Adicionado suporte para chamar [APIs REST](/outlook/add-ins/use-rest-api).
+- Adicionado suporte para [painéis de tarefas fixáveis](../../../outlook/pinnable-taskpane.md).
+- Adicionado suporte para chamar [APIs REST](../../../outlook/use-rest-api.md).
 - Adicionada a capacidade de marcar um anexo como embutido.
 - Adicionada a capacidade de fechar um painel de tarefas ou uma caixa de diálogo.
 
@@ -40,7 +40,7 @@ O conjunto de requisitos 1.5 inclui todos os recursos do [Conjunto de requisitos
 
 ## <a name="see-also"></a>Confira também
 
-- [Suplementos do Outlook](/outlook/add-ins/)
+- [Suplementos do Outlook](../../../outlook/outlook-add-ins-overview.md)
 - [Exemplos de código de suplementos do Outlook](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [Introdução](/outlook/add-ins/quick-start)
+- [Introdução](../../../quickstarts/outlook-quickstart.md)
 - [Conjuntos de requisitos e clientes com suporte](../../requirement-sets/outlook-api-requirement-sets.md)

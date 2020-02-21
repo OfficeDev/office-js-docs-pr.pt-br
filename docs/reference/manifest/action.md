@@ -3,12 +3,12 @@ title: Elemento Action no arquivo de manifesto
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: db05538fdb3f655a61050e0eeafa0b5ceb0dfd18
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: 3b0a82362988d4e64c1a376e0bd774e84e4a8fa3
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477933"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165556"
 ---
 # <a name="action-element"></a>Elemento Action
 
@@ -129,7 +129,7 @@ O exemplo a seguir mostra uma ação que usa o elemento **title** . Observe que 
 
 ## <a name="supportspinning"></a>SupportsPinning
 
-Elemento opcional quando **xsi:type** for "ShowTaskpane". Os elementos [VersionOverrides](versionoverrides.md) incluídos devem ter um valor `VersionOverridesV1_1` para o atributo `xsi:type`. Inclua esse elemento com um valor `true` a fim de fornecer suporte para fixação do painel de tarefas. O usuário pode "fixar" o painel de tarefas, fazendo com que ele permaneça aberto quando alterar a seleção. Para saber mais, consulte [Implementar um painel de tarefas fixável no Outlook](/outlook/add-ins/pinnable-taskpane).
+Elemento opcional quando **xsi:type** for "ShowTaskpane". Os elementos [VersionOverrides](versionoverrides.md) incluídos devem ter um valor `VersionOverridesV1_1` para o atributo `xsi:type`. Inclua esse elemento com um valor `true` a fim de fornecer suporte para fixação do painel de tarefas. O usuário pode "fixar" o painel de tarefas, fazendo com que ele permaneça aberto quando alterar a seleção. Para saber mais, consulte [Implementar um painel de tarefas fixável no Outlook](../../outlook/pinnable-taskpane.md).
 
 > [!NOTE]
 > No momento, o SupportsPinning só tem suporte no Outlook 2016 ou posterior no Windows (Build 7628,1000 ou posterior) e no Outlook 2016 ou posterior no Mac (Build 16.13.503 ou posterior).

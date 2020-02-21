@@ -3,12 +3,12 @@ title: Comandos de suplemento para Excel, Word e PowerPoint
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: f57e5465e503d936b7e8a404c9acf59ef897b4ac
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 92e9b23eaf23aa9c6e0a2eda048dc34e3942f4ed
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950408"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42162836"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Comandos de suplemento para Excel, Word e PowerPoint
 
@@ -94,4 +94,4 @@ Aplique as seguintes práticas recomendadas ao desenvolver comandos de suplement
 
 A melhor maneira de começar a usar os comandos de suplemento é conferir os [exemplos de comandos de Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) no GitHub.
 
-Saiba mais sobre como especificar comandos de suplemento no manifesto em [Criar comandos de suplemento no manifesto](../develop/create-addin-commands.md) e no conteúdo de referência [VersionOverrides](/office/dev/add-ins/reference/manifest/versionoverrides).
+Saiba mais sobre como especificar comandos de suplemento no manifesto em [Criar comandos de suplemento no manifesto](../develop/create-addin-commands.md) e no conteúdo de referência [VersionOverrides](../reference/manifest/versionoverrides.md).

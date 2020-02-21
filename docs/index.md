@@ -8,12 +8,12 @@ ms.author: o365devx
 ms.prod: non-product-specific
 ms.date: 12/24/2019
 localization_priority: Priority
-ms.openlocfilehash: 4a2134fec212b75abff95d225f6238bd1f888c3b
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 2ebef8254d264442f3f57c6e19b015a7ef18a829
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950758"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165605"
 ---
 # <a name="office-add-ins-documentation"></a>Documentação de Suplementos do Office
 
@@ -80,7 +80,7 @@ Use a plataforma de suplementos do Office para criar soluções que estendem os 
                             <li><a style="font-size: 1rem;" href="quickstarts/excel-quickstart-jquery.md">Início rápido do suplemento do Excel</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/excel-custom-functions-quickstart.md">Início rápido de funções personalizadas do Excel</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/onenote-quickstart.md">Início rápido do suplemento do OneNote</a></li>
-                            <li><a style="font-size: 1rem;" href="/outlook/add-ins/quick-start?context=office/dev/add-ins/context">Início rápido do suplemento do Outlook</a></li>
+                            <li><a style="font-size: 1rem;" href="quickstarts/outlook-quickstart.md">Início rápido do suplemento do Outlook</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/powerpoint-quickstart.md">Início rápido do suplemento do PowerPoint</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/project-quickstart.md">Início rápido do suplemento do Project</a></li>
                             <li><a style="font-size: 1rem;" href="quickstarts/word-quickstart.md">Início rápido do suplemento do Word</a></li>
@@ -107,7 +107,7 @@ Use a plataforma de suplementos do Office para criar soluções que estendem os 
                         <ul>
                             <li><a style="font-size: 1rem;" href="tutorials/excel-tutorial.md">Tutorial de suplemento do Excel</a></li>
                             <li><a style="font-size: 1rem;" href="tutorials/excel-tutorial-create-custom-functions.md">Tutorial de funções personalizadas do Excel</a></li>
-                            <li><a style="font-size: 1rem;" href="/outlook/add-ins/addin-tutorial?context=office/dev/add-ins/context">Tutorial de suplemento do Outlook</a></li>
+                            <li><a style="font-size: 1rem;" href="tutorials/outlook-tutorial.md">Tutorial de suplemento do Outlook</a></li>
                             <li><a style="font-size: 1rem;" href="tutorials/powerpoint-tutorial.md">Tutorial de suplemento do PowerPoint</a></li>
                             <li><a style="font-size: 1rem;" href="tutorials/word-tutorial.md">Tutorial de suplemento do Word</a></li>
                         </ul>

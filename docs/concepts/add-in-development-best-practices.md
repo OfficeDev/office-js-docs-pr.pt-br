@@ -3,12 +3,12 @@ title: Práticas recomendadas para o desenvolvimento de suplementos do Office
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 6fc1a12e1f6fca44c137aec1ac17d71d76156e1a
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: bbf32369e45f126d22c09270459eaaa015a6c0e1
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41949698"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42162773"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Práticas recomendadas para o desenvolvimento de suplementos do Office
 
@@ -50,7 +50,7 @@ Os suplementos eficazes oferecem uma funcionalidade exclusiva e fascinante que e
 
 - Evite os pop-ups. Se você tiver de usá-los, oriente o usuário sobre como habilitar o seu pop-up.
 
-Para padrões que podem ser aplicados ao desenvolver sua experiência de primeira execução, consulte [Padrões de design da experiência do usuário para suplementos do Office](/office/dev/add-ins/design/first-run-experience-patterns).
+Para padrões que podem ser aplicados ao desenvolver sua experiência de primeira execução, consulte [Padrões de design da experiência do usuário para suplementos do Office](../design/first-run-experience-patterns.md).
 
 ## <a name="use-add-in-commands"></a>Usar comandos de suplemento
 

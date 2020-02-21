@@ -3,12 +3,12 @@ title: Conjunto de requisitos de API para suplementos do Outlook versão 1.3
 description: ''
 ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: ba74102d70d2f2c38e96cb833b779d3381595f0f
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: 375fc5d7cce8592b8e4a270713c1f611129cc7d0
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814861"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165423"
 ---
 # <a name="outlook-add-in-api-requirement-set-13"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.3
 
@@ -21,7 +21,7 @@ O subconjunto de APIs de suplemento do Outlook para as APIs JavaScript do Office
 
 O conjunto de requisitos 1.3 inclui todos os recursos do [Conjunto de requisitos 1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md). Ele adicionou os seguintes recursos.
 
-- Foi adicionado o suporte para [comandos de suplemento](/outlook/add-ins/add-in-commands-for-outlook).
+- Foi adicionado o suporte para [comandos de suplemento](../../../outlook/add-in-commands-for-outlook.md).
 - Foi adicionada a capacidade para salvar ou fechar um item que está sendo composto.
 - Objeto [Body](/javascript/api/outlook/office.body?view=outlook-js-1.3) avançado para permitir que os suplementos obtenham ou definam todo o corpo.
 - Foram adicionados os métodos de conversão para converter IDs entre os formatos EWS e REST.
@@ -44,7 +44,7 @@ O conjunto de requisitos 1.3 inclui todos os recursos do [Conjunto de requisitos
 
 ## <a name="see-also"></a>Confira também
 
-- [Suplementos do Outlook](/outlook/add-ins/)
+- [Suplementos do Outlook](../../../outlook/outlook-add-ins-overview.md)
 - [Exemplos de código de suplementos do Outlook](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [Introdução](/outlook/add-ins/quick-start)
+- [Introdução](../../../quickstarts/outlook-quickstart.md)
 - [Conjuntos de requisitos e clientes com suporte](../../requirement-sets/outlook-api-requirement-sets.md)

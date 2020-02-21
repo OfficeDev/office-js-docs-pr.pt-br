@@ -1,16 +1,16 @@
 ---
-title: Modelo de objeto de API JavaScript para Office
+title: Modelo de objeto comum de API JavaScript para Office
 description: ''
-ms.date: 03/19/2019
+ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: cc34d6ee9424c00bfc49762f779605f66bc9f36b
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 98e53140beb99d557391e332569e594250d37fca
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950772"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163497"
 ---
-# <a name="office-javascript-api-object-model"></a>Modelo de objeto de API JavaScript para Office
+# <a name="common-javascript-api-object-model"></a>Modelo de objeto comum de API JavaScript para Office
 
 Suplementos de JavaScript do Office oferecem acesso às funcionalidades subjacentes do host. A maioria desse acesso percorre alguns objetos importantes. O objeto [contexto](#context-object) oferece acesso ao tempo de execução ambiente depois de inicialização. O objeto[documento](#document-object) oferece o controle do usuário a um documento do Excel, PowerPoint ou Word. O objeto [caixa de correio](#mailbox-object) oferece um acesso ao suplemento do Outlook para mensagens e perfis de usuário. Noções básicas sobre as relações entre esses objetos gerais é a base de um suplemento JavaScript.
 
@@ -168,4 +168,4 @@ Além disso, os suplementos do Outlook podem usar os seguintes objetos:
 
 -  Objeto **RoamingSettings**: para salvar as configurações personalizadas do suplemento do Outlook na caixa de correio do usuário em que o suplemento está instalado.
 
-Para obter informações sobre como usar o JavaScript em suplementos do Outlook, confira [Suplementos do Outlook ](/outlook/add-ins/).
+Para obter informações sobre como usar o JavaScript em suplementos do Outlook, confira [Suplementos do Outlook ](../outlook/outlook-add-ins-overview.md).
