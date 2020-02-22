@@ -3,12 +3,12 @@ title: Manifesto XML dos Suplementos do Office
 description: ''
 ms.date: 01/06/2020
 localization_priority: Priority
-ms.openlocfilehash: 90fef1186db6411290daf9b6aef14d8d81d7a13e
-ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
+ms.openlocfilehash: abc228fda18b432ddd16d04cce95a8d5af17dd8d
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "40970087"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42162829"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifesto XML dos Suplementos do Office
 
@@ -157,9 +157,9 @@ Seu suplemento pode fazer chamadas API do Office.js a partir do domínio referen
 
 As seções a seguir mostram exemplos de arquivos XML de manifesto v1.1 para suplementos de conteúdo, de painel de tarefas e do Outlook.
 
-# <a name="task-panetabtabid-1"></a>[Painel de tarefas](#tab/tabid-1)
+# <a name="task-pane"></a>[Painel de tarefas](#tab/tabid-1)
 
-[Esquema de manifesto do aplicativo do painel de tarefas](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/taskpane)
+[Esquemas de manifesto de suplemento](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -355,9 +355,9 @@ As seções a seguir mostram exemplos de arquivos XML de manifesto v1.1 para sup
 </OfficeApp>
 ```
 
-# <a name="contenttabtabid-2"></a>[Conteúdo](#tab/tabid-2)
+# <a name="content"></a>[Conteúdo](#tab/tabid-2)
 
-[Esquema de manifesto do aplicativo de conteúdo](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/content)
+[Esquemas de manifesto de suplemento](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -395,9 +395,9 @@ As seções a seguir mostram exemplos de arquivos XML de manifesto v1.1 para sup
 </OfficeApp>
 ```
 
-# <a name="mailtabtabid-3"></a>[Email](#tab/tabid-3)
+# <a name="mail"></a>[Email](#tab/tabid-3)
 
-[Esquema de manifesto do aplicativo de email](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas/mail)
+[Esquemas de manifesto de suplemento](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -490,7 +490,7 @@ As seções a seguir mostram exemplos de arquivos XML de manifesto v1.1 para sup
 
 ## <a name="validate-an-office-add-ins-manifest"></a>Validar o manifesto de suplemento do Office
 
-Para saber mais sobre como validar um manifesto em relação à [Definição do Esquema XML (XSD)](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas), confira [Validar o manifesto de suplemento do Office](../testing/troubleshoot-manifest.md).
+Para saber mais sobre como validar um manifesto em relação à [Definição do Esquema XML (XSD)](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8), confira [Validar o manifesto de suplemento do Office](../testing/troubleshoot-manifest.md).
 
 ## <a name="see-also"></a>Confira também
 
@@ -498,7 +498,7 @@ Para saber mais sobre como validar um manifesto em relação à [Definição do 
 * [Criar comandos de suplementos em seu manifesto][comandos de suplementos]
 * [Especificar requisitos da API e de hosts do Office](specify-office-hosts-and-api-requirements.md)
 * [Localização para suplementos do Office](localization.md)
-* [Referência de esquema para manifestos de suplementos do Office](https://github.com/OfficeDev/office-js-docs-pr/tree/master/docs/overview/schemas)
+* [Referência de esquema para manifestos de suplementos do Office](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
 * [Atualizar a versão da API e do manifesto](update-your-javascript-api-for-office-and-manifest-schema-version.md)
 * [Identificar um suplemento COM equivalente](make-office-add-in-compatible-with-existing-com-add-in.md)
 * [Solicitar permissões para uso da API em suplementos ](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)

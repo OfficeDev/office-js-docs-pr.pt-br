@@ -3,12 +3,12 @@ title: Noções básicas da API JavaScript para Office
 description: ''
 ms.date: 06/21/2019
 localization_priority: Priority
-ms.openlocfilehash: 1954457b477472b8940841bb1ffe5954e49e01ec
-ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
+ms.openlocfilehash: a82437fc82d9c9a31e75d448579f37d440784aa2
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "37524231"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163511"
 ---
 # <a name="understanding-the-javascript-api-for-office"></a>Noções básicas da API JavaScript para Office
 
@@ -169,4 +169,4 @@ Para saber mais, veja [Evento Office.initialize](/javascript/api/office) e [Enum
 
 ## <a name="office-javascript-api-object-model"></a>Modelo de objeto de API JavaScript para Office
 
-Depois de inicializado, o suplemento pode interagir com o host (por exemplo, o Excel ou o Outlook). A página [Modelo de objeto de API JavaScript para Office](office-javascript-api-object-model.md) tem mais detalhes sobre padrões de uso específicos. Há também documentação de referência detalhada para [APIs Comuns](/office/dev/add-ins/reference/javascript-api-for-office) e hosts específicos.
+Depois de inicializado, o suplemento pode interagir com o host (por exemplo, o Excel ou o Outlook). A página [Modelo do objeto do JavaScript API comum](office-javascript-api-object-model.md) possui mais detalhes sobre padrões de uso específicos. Há também documentação de referência detalhada para [APIs Comuns](/office/dev/add-ins/reference/javascript-api-for-office) e hosts específicos.
