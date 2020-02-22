@@ -1,15 +1,15 @@
 ---
 title: Visão geral da API JavaScript do Excel
 description: ''
-ms.date: 07/05/2019
+ms.date: 02/19/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 0c07bb7ce964708a9fef737fabebb13939e357f0
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: aa0e18025e539f747851f5dc9f5a25197761c5c8
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851527"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42163616"
 ---
 # <a name="excel-javascript-api-overview"></a>Visão geral da API JavaScript do Excel
 
@@ -19,7 +19,7 @@ Um suplemento do Excel interage com objetos no Excel usando a API JavaScript par
 
 * **APIs Comuns**: Introduzida com o Office 2013, a [API Comum](/javascript/api/office) pode ser usada para acessar recursos como interface de usuário, caixas de diálogo e configurações de cliente, que são comuns entre vários tipos de aplicativos do Office.
 
-Esta seção da documentação concentra-se na API JavaScript do Excel, que você usará para desenvolver a maior parte da funcionalidade em suplementos direcionados para o Excel na Web ou para o Excel 2016 ou posterior. Para saber mais sobre a API comum, confira [ modelo de objeto de API do JavaScript para Office](../../develop/office-javascript-api-object-model.md). 
+Esta seção da documentação concentra-se na API JavaScript do Excel, que você usará para desenvolver a maior parte da funcionalidade em suplementos direcionados para o Excel na Web ou para o Excel 2016 ou posterior. Para obter mais informações do API comum, consulte [Modelo do objeto do JavaScript API comum](../../develop/office-javascript-api-object-model.md). 
 
 ## <a name="learn-programming-concepts"></a>Aprenda conceitos de programação
 

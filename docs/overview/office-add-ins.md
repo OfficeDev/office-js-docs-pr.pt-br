@@ -1,22 +1,22 @@
 ---
 title: Visão geral da plataforma Suplementos do Office | Microsoft Docs
 description: Use tecnologias da Web conhecidas, como HTML, CSS e JavaScript, para estender e interagir com os aplicativos Word, Excel, PowerPoint, OneNote, Project e Outlook.
-ms.date: 01/14/2020
+ms.date: 02/13/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 3ecca3e36108b831899e9488459687cb2acc3c98
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
+ms.openlocfilehash: fd69f3e93b18d2d17ef7ba1b213bfb39b86b74f4
+ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41216978"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "42165570"
 ---
 # <a name="office-add-ins-platform-overview"></a>Visão geral da plataforma de Suplementos do Office
 
-![Imagem da capacidade de ampliação de suplementos do Office](../images/addins-overview.png)
-
 Você pode usar a plataforma de suplementos do Office para criar soluções que estendem os aplicativos do Office e interagem com conteúdo nos documentos do Office. Com os suplementos do Office, você pode usar tecnologias de web conhecidas, como HTML, CSS e JavaScript, para estender e interagir com o Word, Excel, PowerPoint, OneNote, Project e Outlook. Sua solução pode ser executada no Office através de várias plataformas, incluindo Windows, Mac, iPad e em um navegador.
+
+![Imagem da extensibilidade dos suplementos do Office](../images/addins-overview.png)
 
 Os suplementos do Office podem fazer quase tudo que uma página da Web pode fazer dentro do navegador. Use a plataforma de suplementos do Office para:
 
@@ -102,7 +102,7 @@ Os suplementos do Outlook podem estender a faixa de opções do Office e também
 
 Os suplementos do Outlook podem acessar informações contextuais do item, como o endereço ou a ID de rastreamento, e usar esses dados para acessar informações adicionais no servidor e de serviços Web para criar experiências de usuário envolventes. Na maioria dos casos, um suplemento do Outlook é executado sem modificação no aplicativo host do Outlook para fornecer uma experiência perfeita na área de trabalho, na Web e em dispositivos móveis e tablet.
 
-Confira a visão geral dos suplementos do Outlook em [Visão geral dos suplementos do Outlook](/outlook/add-ins/).
+Confira a visão geral dos suplementos do Outlook em [Visão geral dos suplementos do Outlook](../outlook/outlook-add-ins-overview.md).
 
 ### <a name="create-new-objects-in-office-documents"></a>Criar novos objetos nos documentos do Office
 
