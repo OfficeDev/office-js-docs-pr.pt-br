@@ -1,26 +1,31 @@
 ---
-title: Tempo de execução no arquivo de manifesto
+title: Tempo de execução no arquivo de manifesto (versão prévia)
 description: ''
-ms.date: 01/24/2020
+ms.date: 02/21/2020
 localization_priority: Normal
-ms.openlocfilehash: 8fbad8276b3e1d64a6c443cf57d498597d729282
-ms.sourcegitcommit: 72d719165cc2b64ac9d3c51fb8be277dfde7d2eb
+ms.openlocfilehash: 26702896604f9ecf4c69296e5110efe5cdf4218b
+ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/25/2020
-ms.locfileid: "41553996"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "42283881"
 ---
-# <a name="runtime-element"></a>Elemento Runtime
+# <a name="runtime-element-preview"></a>Elemento Runtime (visualização)
 
-Este recurso está em visualização. Elemento filho do [`<Runtimes>`](runtimes.md) elemento. Este elemento facilita o compartilhamento de dados globais e chamadas de função entre as funções personalizadas do Excel e o painel de tarefas do seu suplemento.
+[!include[Running custom functions in browser runtime note](../../includes/excel-shared-runtime-preview-note.md)]
+
+Elemento filho do [`<Runtimes>`](runtimes.md) elemento. Este elemento configura seu suplemento para usar um tempo de execução de JavaScript compartilhado para que a faixa de opções, o painel de tarefas e as funções personalizadas, todos sejam executados no mesmo tempo de execução. Para obter mais informações, consulte [Configurar o suplemento do Excel para usar um tempo de execução do JavaScript compartilhado](../../excel/configure-your-add-in-to-use-a-shared-runtime.md).
 
 **Tipo de suplemento:** Painel de tarefas
+
+> [!IMPORTANT]
+<<<<<<< o tempo de execução compartilhado HEAD está atualmente em versão prévia e está disponível apenas no Excel no Windows. Para experimentar os recursos de visualização, você precisará ingressar no [Office Insider](https://insider.office.com/).
 
 ## <a name="syntax"></a>Sintaxe
 
 ```XML
 <Runtimes>
-    <Runtime resid="TaskPaneAndCustomFunction.Url" lifetime="long" />
+    <Runtime resid="ContosoAddin.Url" lifetime="long" />
 </Runtimes>
 ```
 
@@ -32,8 +37,8 @@ Este recurso está em visualização. Elemento filho do [`<Runtimes>`](runtimes.
 
 |  Atributo  |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **Lifetime = "Long"**  |  Sim  | Deve sempre ser listado como longo se você quiser que as funções personalizadas do Excel funcionem enquanto o painel de tarefas do seu suplemento estiver fechado. |
-|  **resid**  |  Sim  | Se usado para funções personalizadas do Excel, `resid` o deve apontar `TaskPaneAndCustomFunction.Url`para. |
+|  **Lifetime = "Long"**  |  Sim  | Deve ser `long` sempre se você quiser usar um tempo de execução compartilhado para o suplemento do Excel. |
+|  **resid**  |  Sim  | Especifica o local da URL da página HTML do suplemento. O `resid` deve corresponder a `id` um atributo de `Url` um elemento no `Resources` elemento. |
 
 ## <a name="see-also"></a>Confira também
 

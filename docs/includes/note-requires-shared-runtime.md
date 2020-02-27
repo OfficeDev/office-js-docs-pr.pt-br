@@ -1,0 +1,2 @@
+> [!NOTE]
+> Este artigo requer que seu suplemento do Office esteja configurado para usar um tempo de execução compartilhado. Para obter mais informações, consulte [Configurar o suplemento do Office para usar um tempo de execução compartilhado](../excel/configure-your-add-in-to-use-a-shared-runtime.md).

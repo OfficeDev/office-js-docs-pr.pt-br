@@ -1,14 +1,14 @@
 ---
 title: Noções básicas sobre permissões de suplemento do Outlook
 description: Suplementos do Outlook especificam o nível de permissão necessário em seu manifesto que incluem o modo restrito, ReadItem, ReadWriteItem ou ReadWriteMailbox.
-ms.date: 12/10/2019
+ms.date: 02/19/2020
 localization_priority: Normal
-ms.openlocfilehash: 58d21a33034475b8c33b8449ece24c9dafc84e2b
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: d3e5ac55619460e39c3853ea1a0a05c30d767bfd
+ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165691"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "42283902"
 ---
 # <a name="understanding-outlook-add-in-permissions"></a>Noções básicas sobre permissões de suplemento do Outlook
 
@@ -30,7 +30,7 @@ A permissão **Restricted** é o nível mais básico de permissão. Especifique 
 
 ### <a name="cant-do"></a>Não pode ser feito
 
-- Usar uma regra [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) nas entidades de contato, endereço de email, sugestão de reunião ou sugestão de tarefa.
+- Use uma regra [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) no contato, no endereço de email, na sugestão de reunião ou na entidade sugestão de tarefa.
 
 - Usar a regra [ItemHasAttachment](../reference/manifest/rule.md#itemhasattachment-rule) ou [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule).
 

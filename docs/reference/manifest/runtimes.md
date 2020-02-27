@@ -1,34 +1,42 @@
 ---
-title: Tempos de execução no arquivo de manifesto
+title: Tempos de execução no arquivo de manifesto (versão prévia)
 description: ''
-ms.date: 01/24/2020
+ms.date: 02/21/2020
 localization_priority: Normal
-ms.openlocfilehash: 6682887935ee6894b5a311ad519408067452bb23
-ms.sourcegitcommit: 72d719165cc2b64ac9d3c51fb8be277dfde7d2eb
+ms.openlocfilehash: 17e53b53d55ea9547cdfc5c4f89f8f4c3a7ab75e
+ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/25/2020
-ms.locfileid: "41554003"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "42283868"
 ---
-# <a name="runtimes-element"></a>Elemento de runtimes
+# <a name="runtimes-element-preview"></a>Elemento de runtimes (visualização)
 
-Este recurso está em visualização. Especifica o tempo de execução do suplemento e permite que as funções personalizadas e o painel de tarefas compartilhem dados globais e façam chamadas de função entre si. Deve seguir o `<Host>` elemento no seu arquivo de manifesto.
+[!include[Running custom functions in browser runtime note](../../includes/excel-shared-runtime-preview-note.md)]
+
+Especifica o tempo de execução do suplemento e permite funções personalizadas, botões da faixa de opções e o painel de tarefas para usar o mesmo tempo de execução do JavaScript. Filho do `<Host>` elemento no seu arquivo de manifesto. Para obter mais informações, consulte [Configurar o suplemento do Excel para usar um tempo de execução do JavaScript compartilhado](../../excel/configure-your-add-in-to-use-a-shared-runtime.md).
 
 **Tipo de suplemento:** Painel de tarefas
+
+> [!IMPORTANT]
+> O tempo de execução compartilhado está atualmente em versão prévia e só está disponível no Excel no Windows. Para experimentar os recursos de visualização, você precisará ingressar no [Office Insider](https://insider.office.com/).
 
 ## <a name="syntax"></a>Sintaxe
 
 ```XML
 <Runtimes>
-    <Runtime resid="TaskPaneAndCustomFunction.Url" lifetime="long" />
+    <Runtime resid="ContosoAddin.Url" lifetime="long" />
 </Runtimes>
 ```
+
+## <a name="contained-in"></a>Contido em 
+[Host](./host.md)
 
 ## <a name="child-elements"></a>Elementos filho
 
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **Runtime**     | Sim |  O tempo de execução do suplemento, geralmente usado com funções personalizadas do Excel.
+|  **Runtime**     | Sim |  O tempo de execução do suplemento.
 
 ## <a name="see-also"></a>Confira também
 
