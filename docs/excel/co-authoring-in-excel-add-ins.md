@@ -3,12 +3,12 @@ title: Coautoria em suplementos do Excel
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 65401f30448db2edbefb42b3d64d580a79250404
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: 0c1386eb6662ff47fce585db99fedd32f08aae06
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35128000"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324663"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>Coautoria em suplementos do Excel  
 
@@ -45,7 +45,7 @@ Se quiser que as visualizações personalizadas do Usuário A respondam às alte
 
 Conforme descrito anteriormente, em alguns cenários, acionar eventos para todos os coautores proporciona uma experiência do usuários aprimorada. No entanto, lembre-se de que, em alguns cenários, esse comportamento pode resultar em uma má experiência do usuário. 
 
-Por exemplo, em cenários de validação de dados, é comum exibir a interface do usuário em resposta a eventos. O evento [BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) descrito na seção anterior é executado quando um usuário local ou coautor (remoto) altera o conteúdo da pasta de trabalho na associação. Se o manipulador de eventos do evento **BindingDataChanged** exibir a interface do usuário, os usuários verão a interface do usuário que não está relacionada às alterações em que eles estavam trabalhando na pasta de trabalho, levando a uma má experiência do usuário. Evite a exibição da interface do usuário ao usar eventos no suplemento.
+Por exemplo, em cenários de validação de dados, é comum exibir a interface do usuário em resposta a eventos. O evento [BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) descrito na seção anterior é executado quando um usuário local ou coautor (remoto) altera o conteúdo da pasta de trabalho na associação. Se o manipulador de eventos do `BindingDataChanged` evento exibir o UI, os usuários verão a interface do usuário que não está relacionada às alterações em que estavam trabalhando na pasta de trabalho, levando a uma experiência de usuário ruim. Evite a exibição da interface do usuário ao usar eventos no suplemento.
 
 ## <a name="see-also"></a>Confira também
 

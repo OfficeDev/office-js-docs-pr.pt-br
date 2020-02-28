@@ -3,19 +3,19 @@ title: Tratamento de erros
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 87401773ad4a27bf0a30bc80b229d2879dd5234f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: e3732af26aeaa6129a4b98d6cbb8e3caf501141f
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448158"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325105"
 ---
 # <a name="error-handling"></a>Tratamento de erros
 
 Quando você cria um suplemento usando a API JavaScript do Excel, certifique-se de incluir a lógica de tratamento de erro para lidar com os erros de tempo de execução. Isso é fundamental devido à natureza assíncrona da API.
 
 > [!NOTE]
-> Para saber mais sobre o método **sync()** e a natureza assíncrona da API JavaScript do Excel, consulte [Principais conceitos de programação com a API JavaScript do Excel](excel-add-ins-core-concepts.md).
+> Para obter mais informações sobre `sync()` o método e a natureza assíncrona da API JavaScript do Excel, consulte [conceitos fundamentais de programação com a API JavaScript do Excel](excel-add-ins-core-concepts.md).
 
 ## <a name="best-practices"></a>Práticas recomendadas
 

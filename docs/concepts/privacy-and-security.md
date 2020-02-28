@@ -3,12 +3,12 @@ title: Privacidade e segurança para suplementos do Office
 description: ''
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 30ebae88d40795b4be36628a60539397fb1deb29
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 5782cc7fcf23190cca73cc91a35a73e82d182261
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42162801"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42323837"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 
@@ -20,7 +20,7 @@ Os suplementos do Office são protegidos por um ambiente de tempo de execução 
 
 - É permitido somente o acesso indireto ao thread da interface do usuário do aplicativo host.
 
-- As interações modais não são permitidas. Por exemplo, chamadas às funções **alert**, **confirm** e **prompt** do JavaScript não são permitidas porque são modais.
+- As interações modais não são permitidas-por exemplo `alert`, `confirm`as chamadas `prompt` para JavaScript, e funções não são permitidas porque são modais.
 
 Além disso, a estrutura de tempo de execução fornece os seguintes benefícios para garantir que um suplemento do Office não possa danificar o ambiente do usuário:
 
@@ -54,7 +54,8 @@ O tempo de execução de Suplementos do Office gerencia a comunicação entre pr
 
 ### <a name="web-clients"></a>Clientes Web
 
-Em clientes Web com suporte, os suplementos do Office são hospedados em um **iframe** que é executado usando o atributo **sandbox** do HTML5. Não são permitidos componentes ActiveX nem a navegação na página principal do cliente Web. O suporte a Suplementos do Office é habilitado em clientes Web por meio de integração da API JavaScript para Office. De maneira semelhante aos aplicativos cliente de área de trabalho, a API de JavaScript gerencia o ciclo de vida do suplemento e a interoperabilidade entre o suplemento e o cliente Web. Essa interoperabilidade é implementada por meio de uma infraestrutura especial de comunicação de mensagens de publicação entre quadros. A mesma biblioteca JavaScript (Office.js) que é usada em clientes de área de trabalho, está disponível para interagir com o cliente Web. A figura a seguir ilustra a infraestrutura que dá suporte a suplementos no Office em execução no navegador e os componentes relevantes (o cliente Web, o **iframe**, o tempo de execução de Suplementos do Office e a API JavaScript para o Office) que são necessários para dar suporte a eles.
+Em clientes Web com suporte, os suplementos do Office são hospedados em um **iframe** que é executado usando o atributo de **área restrita** do HTML5. Não são permitidos componentes ActiveX nem a navegação na página principal do cliente Web. O suporte a Suplementos do Office é habilitado em clientes Web por meio da integração da API JavaScript para Office. De maneira semelhante aos aplicativos cliente de área de trabalho, a API JavaScript gerencia o ciclo de vida do suplemento e a interoperabilidade entre o suplemento e o cliente Web. Essa interoperabilidade é implementada por meio de uma infraestrutura especial de comunicação de mensagens de publicação entre quadros. A mesma biblioteca JavaScript (Office.js) que é usada em clientes de área de trabalho está disponível para interagir com o cliente Web. A figura a seguir mostra a infraestrutura que oferece suporte a suplementos no Office em execução no navegador, e os componentes relevantes (o cliente da Web, o **iframe**, o tempo de execução de suplementos do Office e a API JavaScript para Office) que são necessários para dar suporte a eles.
+
 
 *Figura 3. Infraestrutura que dá suporte aos Suplementos do Office nos clientes Web do Office*
 
@@ -89,7 +90,7 @@ A plataforma de suplementos lida com as preocupações com privacidade dos usuá
 
 - Ao compartilhar um documento, os usuários também compartilham suplementos que foram inseridos no documento ou associados a ele. Se um usuário abrir um documento que contenha um suplemento que o usuário não usou antes, o aplicativo host solicitará que o usuário conceda permissão para que o suplemento seja executado no documento. Em um ambiente empresarial, o aplicativo host do Office também consultará o usuário se o documento for proveniente de uma fonte externa.
 
-- Os usuários podem habilitar ou desabilitar o acesso ao AppSource. Para os suplementos do conteúdo e do painel de tarefas, os usuários gerenciam o acesso aos suplementos e catálogos confiáveis na **Central de Confiabilidade** no cliente host do Office (aberto com **Arquivo** > **Opções** > **Central de Confiabilidade** > **Configurações da Central de Confiabilidade** > **Catálogos de Suplementos Confiáveis**). Para suplementos do Outlook, os usuários podem gerenciar os suplementos escolhendo o botão **Gerenciar Suplementos**: no Outlook no Windows, escolha **Arquivo** > **Gerenciar Suplementos**. No Outlook no Mac, escolha o botão **Gerenciar Suplementos** na barra de suplementos. No Outlook na Web, escolha o menu **Configurações** (ícone de engrenagem) > **Gerenciar suplementos**. Os administradores também podem gerenciar este acesso [usando a política de grupo](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
+- Os usuários podem habilitar ou desabilitar o acesso ao AppSource. Para suplementos de conteúdo e de painel de tarefas, os usuários gerenciam o acesso a suplementos e catálogos confiáveis **da central de confiabilidade** no cliente do Office do host (aberto nas**Opções** > de **arquivo** > **configurações** > da central de confiabilidade da**central** > de confiabilidade dos**catálogos de suplementos confiáveis**). Para os suplementos do Outlook, os usos podem gerenciar suplementos escolhendo o botão **gerenciar suplementos** : no Outlook no Windows, escolha **arquivo** > **gerenciar suplementos**. No Outlook no Mac, escolha o botão **gerenciar suplementos** na barra de suplementos. No Outlook na Web, escolha o menu **Configurações** (ícone de engrenagem) > **Gerenciar suplementos**. Os administradores também podem gerenciar este acesso [usando a política de grupo](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
 
 - O design da plataforma do suplemento fornece segurança e desempenho aos usuários finais das seguintes maneiras:
 
@@ -117,11 +118,11 @@ Siga estas diretrizes gerais para dar suporte ao modelo de segurança de Supleme
 
 ### <a name="permissions-choices"></a>Opções de permissões
 
-A plataforma de suplementos fornece um modelo de permissões que o suplemento usa para declarar o nível de acesso aos dados de um usuário de que necessita para seus recursos. Cada nível de permissão corresponde ao subconjunto da API JavaScript para Office que o suplemento tem permissão para usar para seus recursos. Por exemplo, a permissão **WriteDocument** para suplementos de conteúdo e de painel de tarefas permite acessar o método [Document.setSelectedDataAsync](/javascript/api/office/office.document), que permite que um suplemento grave no documento do usuário, mas não permite o acesso a nenhum dos métodos para ler dados do documento. Esse nível de permissão faz sentido para suplementos que só precisam gravar em um documento, como um suplemento em que o usuário pode consultar dados para inserir em seu documento.
+A plataforma de suplementos fornece um modelo de permissões que o suplemento usa para declarar o nível de acesso aos dados de um usuário de que necessita para seus recursos. Cada nível de permissão corresponde ao subconjunto da API JavaScript para Office que o suplemento tem permissão para usar para seus recursos. Por exemplo, a permissão **WriteDocument** para suplementos de painel de tarefas e de conteúdo permite o acesso ao método [Document. setSelectedDataAsync](/javascript/api/office/office.document) que permite que um suplemento grave no documento do usuário, mas não permite o acesso a qualquer um dos métodos de leitura de dados do documento. Esse nível de permissão faz sentido para suplementos que só precisam gravar em um documento, como um suplemento em que o usuário pode consultar dados para inserir em seu documento.
 
 Como prática recomendada, você deve solicitar permissões com base no princípio de _menor privilégio_. Ou seja, você deve solicitar permissão para acessar apenas o subconjunto mínimo da API que o suplemento requer para funcionar corretamente. Por exemplo, se o suplemento precisa apenas ler dados no documento de um usuário para seus recursos, você não deve solicitar mais do que a permissão **ReadDocument**. (Porém, lembre-se de que a solicitação de permissões insuficientes fará com que a plataforma de suplementos bloqueie o uso de algumas APIs pelo suplemento e gerará erros em tempo de execução.)
 
-Você especifica permissões no manifesto do suplemento, conforme mostrado no exemplo abaixo nesta seção, e os usuários finais podem ver o nível de permissão solicitado de um suplemento antes de decidirem instalar ou ativar o suplemento pela primeira vez. Além disso, os suplementos do Outlook que solicitam a permissão **ReadWriteMailbox** exigem o privilégio de administrador explícito para serem instalados.
+Você especifica permissões no manifesto do suplemento, conforme mostrado no exemplo abaixo nesta seção, e os usuários finais podem ver o nível de permissão solicitado de um suplemento antes de decidirem instalar ou ativar o suplemento pela primeira vez. Além disso, os suplementos do Outlook que solicitam a permissão **ReadWriteMailbox** exigem privilégio de administrador explícito para instalar o.
 
 O exemplo a seguir mostra como um suplemento de painel de tarefas especifica a permissão **ReadDocument** em seu manifesto. Para manter as permissões em destaque, outros elementos no manifesto não são exibidos.
 
@@ -150,7 +151,7 @@ Para saber mais sobre permissões para suplementos do Outlook, confira os tópic
 
 Como os suplementos do Office são páginas da Web executadas em um controle de navegador da Web, eles devem seguir a política de mesma origem imposta pelo navegador: por padrão, uma página da Web em um domínio não pode fazer chamadas ao serviço Web [XmlHttpRequest](https://www.w3.org/TR/XMLHttpRequest/) para outro domínio que não aquele em que está hospedada.
 
-Uma maneira de superar essa limitação é usar JSON/P: forneça um proxy para o serviço Web incluindo uma marca **script** com um atributo **src** que aponte para algum script hospedado em outro domínio. Você pode criar as marcas**script** via programação gerando de forma dinâmica a URL para a qual apontar o atributo **src** e passando parâmetros à URL por meio de parâmetros da consulta de URI. Os provedores de serviços Web criam e hospedam o código JavaScript em URLs específicas e retornam scripts diferentes, dependendo dos parâmetros de consulta de URI. Em seguida, esses scripts são executados onde estão inseridos e funcionam como esperado.
+Uma maneira de superar essa limitação é usar JSON/P--fornecer um proxy para o serviço Web, incluindo uma marca de **script** com um atributo **src** que aponta para um script hospedado em outro domínio. Você pode criar as marcas**script** via programação gerando de forma dinâmica a URL para a qual apontar o atributo **src** e passando parâmetros à URL por meio de parâmetros da consulta de URI. Os provedores de serviços Web criam e hospedam o código JavaScript em URLs específicas e retornam scripts diferentes, dependendo dos parâmetros de consulta de URI. Em seguida, esses scripts serão executados onde estiverem inseridos e funcionarão como esperado.
 
 A seguir há um exemplo de JSON/P no exemplo de suplemento do Outlook. 
 
@@ -181,9 +182,9 @@ Um usuário mal-intencionado pode atacar a origem de um suplemento inserindo um 
      var text = x.innerText || x.textContent
     ```
 
-    Para saber mais sobre as diferenças entre **innerText** e **textContent**, confira [Node.textContent](https://developer.mozilla.org/docs/DOM/Node.textContent). Para saber mais sobre a compatibilidade de DOM entre navegadores comuns, consulte [Compatibilidade de DOM W3C ‒ HTML](https://www.quirksmode.org/dom/w3c_html.html#t07).
+    Para obter informações sobre as diferenças entre **InnerText** e **textcontent**, consulte [node. textcontent](https://developer.mozilla.org/docs/DOM/Node.textContent). Para saber mais sobre a compatibilidade de DOM entre navegadores comuns, consulte [Compatibilidade de DOM W3C ‒ HTML](https://www.quirksmode.org/dom/w3c_html.html#t07).
 
-- Se precisar usar **innerHTML**, verifique se a entrada do usuário não tem conteúdo mal-intencionado antes de passá-la para **innerHTML**. Para saber mais e obter um exemplo de como usar **innerHTML** com segurança, confira a propriedade [innerHTML](https://developer.mozilla.org/docs/Web/API/Element/innerHTML).
+- Se você precisar usar **InnerHtml**, certifique-se de que a entrada do usuário não contenha conteúdo mal-intencionado antes de passá-la para **InnerHtml**. Para obter mais informações e um exemplo de como usar o **InnerHtml** com segurança, consulte Propriedade [InnerHtml](https://developer.mozilla.org/docs/Web/API/Element/innerHTML) .
 
 - Se estiver usando jQuery, use o método [.text()](https://api.jquery.com/text/) em vez do método [.html()](https://api.jquery.com/html/).
 
@@ -224,7 +225,7 @@ Os desenvolvedores também devem observar as seguintes práticas de segurança:
 
     Para garantir que os suplementos não estejam fornecendo conteúdo usando HTTP, ao testá-los, os desenvolvedores devem se certificar que as seguintes configurações estão selecionadas nas **Opções de Internet** no **Painel de Controle** e que não ocorra avisos de segurança em seus cenários de teste:
 
-    - Verifique se a configuração de segurança **Exibir conteúdo misto** da zona **Internet** está definida para **Solicitar**. Você pode fazer isso selecionando o seguinte nas **Opções de Internet**: na guia **Segurança**, clique na zona **Internet**, clique em **Nível personalizado**, role até **Exibir conteúdo misto** e selecione **Solicitar** se essa opção não estiver selecionada.
+    - Certifique-se de que a configuração de segurança, **Exibir conteúdo misto**, para a zona da **Internet** esteja definida como **avisar**. Você pode fazer isso selecionando o seguinte em **Opções da Internet**: na **guia Segurança** , selecione a zona da **Internet** , selecione **nível personalizado**, rolar para procurar por **Exibir conteúdo misto**e selecione **avisar** se ainda não estiver selecionado.
 
     - Verifique se a opção **Avisar ao alterar o modo de segurança** está marcada na guia **Avançado** da caixa de diálogo **Opções da Internet**.
 

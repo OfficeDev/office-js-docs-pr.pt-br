@@ -3,12 +3,12 @@ title: Chamar funções internas de planilha do Excel usando as APIs JavaScript 
 description: ''
 ms.date: 12/19/2019
 localization_priority: Normal
-ms.openlocfilehash: a2c98d21b36a88777e58d85c14169ffc2d67ae59
-ms.sourcegitcommit: d5ac9284d1e96dc91a9168d7641e44d88535e1a7
+ms.openlocfilehash: c5b725f09c4bd6be8d6061f08fe7fbf84ff30762
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "40914997"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325147"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>Chamar funções internas de planilha do Excel
 
@@ -19,7 +19,7 @@ Este artigo explica como chamar funções internas de planilha do Excel, como `V
 
 ## <a name="calling-a-worksheet-function"></a>Chamar uma função de planilha
 
-O trecho de código a seguir mostra como chamar uma função de planilha, onde `sampleFunction()` é um espaço reservado que deve ser substituído pelo nome da função a chamar e os parâmetros de entrada que a função exige. A propriedade **valor** do objeto **FunctionResult** que uma função de planilha retorna contém o resultado da função especificada. Como mostra este exemplo, você deve carregar `load` a propriedade **valor** do objeto **FunctionResult** antes de lê-lo. Neste exemplo, o resultado da função está simplesmente sendo gravado no console.
+O trecho de código a seguir mostra como chamar uma função de planilha, onde `sampleFunction()` é um espaço reservado que deve ser substituído pelo nome da função a chamar e os parâmetros de entrada que a função exige. A `value` Propriedade do `FunctionResult` objeto retornado por uma função de planilha contém o resultado da função especificada. Como mostra este exemplo, você deve `load` ter `value` a propriedade do `FunctionResult` objeto antes de lê-lo. Neste exemplo, o resultado da função está simplesmente sendo gravado no console.
 
 ```js
 var functionResult = context.workbook.functions.sampleFunction();

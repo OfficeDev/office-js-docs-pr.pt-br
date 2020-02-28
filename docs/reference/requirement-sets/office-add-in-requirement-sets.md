@@ -4,12 +4,12 @@ description: ''
 ms.date: 07/17/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: b37adca116c60b465e11858cb813e9a7f9247ed3
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 77ebd486f35a75f693941749a958cd122916fcfd
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950548"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325168"
 ---
 # <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API Comum do Office
 
@@ -182,6 +182,14 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ---
 
+### <a name="sharedruntime"></a>SharedRuntime
+
+|**Hosts do Office**|**Métodos no conjunto**|
+|:-----|:-----|
+| Confira [conjuntos de requisitos de tempo de execução compartilhados](shared-runtime-requirement-sets.md). | Office. AddIn. getStartupBehavior<br>Office. AddIn. Hide<br>Office. AddIn. onVisibilityModeChanged<br>Office. AddIn. setStartupBehavior<br>Office. AddIn. showAsTaskpane<br> |
+
+---
+
 ### <a name="tablebindings"></a>TableBindings
 
 |**Hosts do Office**|**Métodos no conjunto**|
@@ -224,7 +232,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ## <a name="methods-that-arent-part-of-a-requirement-set"></a>Métodos que não fazem parte de um conjunto de requisitos
 
-Os seguintes métodos da API JavaScript para Office não fazem parte de um conjunto de requisitos. Se o suplemento exigir qualquer um desses métodos, use os elementos **Methods** e **Method** no manifesto do suplemento para declarar que eles são exigidos, ou então execute a verificação de tempo de execução usando uma instrução`if`. Para saber mais, confira [Especificar requisitos de API e hosts do Office](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements).
+Os seguintes métodos na API JavaScript do Office não fazem parte de um conjunto de requisitos. Se o suplemento exigir qualquer um desses métodos, use os elementos **Methods** e **Method** no manifesto do suplemento para declarar que eles são exigidos, ou então execute a verificação de tempo de execução usando uma instrução`if`. Para saber mais, confira [Especificar requisitos de API e hosts do Office](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements).
 
 |**Nome do método**|**Suporte ao host do Office**|
 |:-----|:-----|

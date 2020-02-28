@@ -3,12 +3,12 @@ title: Elemento Group no arquivo de manifesto
 description: ''
 ms.date: 12/02/2019
 localization_priority: Normal
-ms.openlocfilehash: 35db4829b40078e97fbfc007e2fb552e00875f9c
-ms.sourcegitcommit: 164b11b1e9d2ae20b3d816092025b32a9070450f
+ms.openlocfilehash: 27a168ea17352482e955e7a0d1f8267c7d6b17d8
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "39818724"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324859"
 ---
 # <a name="group-element"></a>Elemento Group
 
@@ -31,9 +31,9 @@ Obrigatório. O identificador exclusivo do grupo. É uma cadeia de caracteres co
 |  [Icon](icon.md)      | Sim |  A imagem de um grupo.  |
 |  [Control](#control)    | Sim |  Conjunto de um ou mais objetos Control.  |
 
-### <a name="label"></a>Label 
+### <a name="label"></a>Rótulo 
 
-Obrigatório. O rótulo do grupo. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String** no elemento **ShortStrings** do elemento [Resources](resources.md).
+Obrigatório. O rótulo do grupo. O atributo **Resid** deve ser definido como o valor do atributo **ID** de um elemento **String** no elemento **ShortStrings** no elemento [Resources](resources.md) .
 
 ### <a name="icon"></a>Ícone
 

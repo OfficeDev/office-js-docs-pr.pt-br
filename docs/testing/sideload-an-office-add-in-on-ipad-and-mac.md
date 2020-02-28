@@ -3,12 +3,12 @@ title: Realizar o sideload de suplementos do Office em um iPad ou Mac para teste
 description: ''
 ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 63e7e22bd7db3aec8808a3c7e043a48a28b14486
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: c4af2c9ac6f209ab88f9f69efa56e58af0af50cd
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42163945"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325042"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>Realizar o sideload de suplementos do Office em um iPad ou Mac para teste
 
@@ -36,21 +36,21 @@ Para ver como seu suplemento será executado no Office no iOS, você pode realiz
 
 ## <a name="sideload-an-add-in-on-excel-or-word-on-ipad"></a>Realizar um sideload de um suplemento no Excel ou no Word no iPad
 
-1. Use um cabo de sincronização para conectar seu iPad ao computador. Se estiver conectando o iPad ao computador pela primeira vez, será solicitado a responder **Confiar Neste Computador?** Escolha **Confiar** para continuar.
+1. Use um cabo de sincronização para conectar o iPad ao computador. Se você estiver conectando o iPad ao computador pela primeira vez, você será solicitado a **confiar neste computador?**. Escolha **confiança** para continuar.
 
 2. No iTunes, escolha o ícone do **iPad** abaixo da barra de menus.
 
-3. Em **Ajustes** no lado esquerdo do iTunes, escolha **Aplicativos**.
+3. Em **configurações** no lado esquerdo do iTunes, escolha **aplicativos**.
 
-4. No lado direito do iTunes, role para baixo até **Compartilhamento de Arquivos**, e escolha **Excel** ou **Word** na coluna **Aplicativos**.
+4. No lado direito do iTunes, role para baixo até **compartilhamento de arquivos**e, em seguida, escolha **Excel** ou **Word** na coluna **suplementos** .
 
-5. Na parte inferior da coluna Documentos do **Excel** ou do **Word**, escolha **Adicionar Arquivo** e selecione o arquivo de manifesto .xml do suplemento para o qual você deseja realizar sideload.
+5. Na parte inferior da coluna documentos do **Excel** ou do **Word** , escolha **Adicionar arquivo**e, em seguida, selecione o arquivo manifest. XML do suplemento que você deseja Sideload.
 
-6. Abra o aplicativo Excel ou Word em seu iPad. Se já estiver executando o aplicativo Excel ou Word, escolha o botão **Início**, feche e reinicie o aplicativo.
+6. Abra o aplicativo Excel ou Word no seu iPad. Se o aplicativo Excel ou Word já estiver em execução, escolha o botão **página inicial** e, em seguida, feche e reinicie o aplicativo.
 
 7. Abra um documento.
 
-8. Escolha **Suplementos** na guia **Inserir**. O suplemento com sideload está disponível para inserção no cabeçalho **Desenvolvedor** na interface de usuário **Suplementos**.
+8. Escolha **suplementos** na guia **Inserir** . O suplemento do suplementos foi feito está disponível para inserção sob o título do **desenvolvedor** na interface do usuário de **suplementos** .
 
     ![Inserir Suplementos no aplicativo do Excel](../images/excel-insert-add-in.png)
 
@@ -59,19 +59,19 @@ Para ver como seu suplemento será executado no Office no iOS, você pode realiz
 > [!NOTE]
 > Para realizar o sideload de um suplemento do Outlook no Mac, confira [Realizar sideload de suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md).
 
-1. Abra o **Terminal** e navegue até uma das pastas a seguir, onde você salvará o arquivo de manifesto do suplemento. Se a pasta `wef` não existir em seu computador, crie-a.
+1. Abra o **terminal** e vá para uma das seguintes pastas onde você salvará o arquivo de manifesto do suplemento. Se a `wef` pasta não existir no seu computador, crie-a.
 
     - Para o Word:  `/Users/<username>/Library/Containers/com.microsoft.Word/Data/Documents/wef`    
     - Para o Excel:  `/Users/<username>/Library/Containers/com.microsoft.Excel/Data/Documents/wef`
     - Para o PowerPoint: `/Users/<username>/Library/Containers/com.microsoft.Powerpoint/Data/Documents/wef`
 
-2. Abra a pasta no **Finder** usando o comando `open .` (incluindo o ponto final). Copie o arquivo de manifesto do suplemento nessa pasta.
+2. Abra a pasta no **Finder** usando o comando `open .` (incluindo o ponto ou ponto). Copie o arquivo de manifesto do suplemento para esta pasta.
 
     ![Pasta Wef no Office no Mac](../images/all-my-files.png)
 
 3. Abra o Word e abra um documento. Reinicie o Word se já estiver em execução.
 
-4. No Word, escolha **Inserir** > **Suplementos** > **Meus Suplementos** (menu suspenso) e escolha seu suplemento.
+4. No Word, escolha **Inserir** > **suplementos** > **meus** suplementos (menu suspenso) e, em seguida, escolha seu suplemento.
 
     ![Meus Suplementos no Office no Mac](../images/my-add-ins-wikipedia.png)
 

@@ -3,12 +3,12 @@ title: Criar um suplemento de painel de tarefas de dicionário
 description: ''
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 10eb66c224a7c40346669d630d4316f300d55dcc
-ms.sourcegitcommit: 528577145b2cf0a42bc64c56145d661c4d019fb8
+ms.openlocfilehash: 4145727ef092bd56117dfd5d6c89e976a3aaa11a
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "37353899"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324719"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>Criar um suplemento de painel de tarefas de dicionário
 
@@ -23,7 +23,8 @@ Em um suplemento de painel de tarefas de dicionário típico, um usuário seleci
 
 ![Um aplicativo de dicionário exibindo uma definição](../images/dictionary-agave-01.jpg)
 
-Você determina se clicar no link **Ver Mais** na interface do usuário HTML do suplemento de dicionário exibe mais informações no painel de tarefas ou abre uma janela separada do navegador para a página da Web completa para a palavra ou frase selecionada. A Figura 2 mostra o comando do menu de contexto **Definir** que habilita os usuários a iniciar rapidamente os dicionários instalados. As Figuras 3 a 5 mostram os locais na interface do usuário do Office em que os serviços de dicionário XML são usados para fornecer definições no Word 2013.
+Você pode determinar se clicar no link **Ver mais** na interface de usuário do suplemento de dicionário do dicionário de dados do HTML exibe mais informações dentro do painel de tarefas ou abre uma janela do navegador separada para a página da Web completa da palavra ou frase selecionada.
+A Figura 2 mostra o comando **definir** menu de contexto que permite que os usuários iniciem os dicionários instalados rapidamente. As Figuras 3 a 5 mostram os locais na interface do usuário do Office em que os serviços de dicionário XML são usados para fornecer definições no Word 2013.
 
 *Figura 2. Comando Definir no menu de contexto*
 
@@ -93,7 +94,7 @@ O código a seguir mostra o XSD para o esquema XML OfficeDefinitions.
 </xs:schema>
 ```
 
-O XML retornado que está de acordo com o esquema OfficeDefinitions consiste em um elemento raiz **Result** que contém um elemento **Definitions** com zero a três elementos filho **Definition**, cada um dos quais contém definições com no máximo 400 caracteres. Além disso, a URL da página completa no site do dicionário deve ser fornecida com o elemento **SeeMoreURL**. O exemplo a seguir mostra a estrutura do XML retornado que está em conformidade com o esquema OfficeDefinitions.
+Retornado XML que está de acordo com o esquema OfficeDefinitions consiste em um elemento `Result` raiz que contém um `Definitions` elemento com de zero a três `Definition` elementos filho, cada um deles contendo definições que não têm mais de 400 caracteres de comprimento. Além disso, a URL para a página inteira no site do dicionário deve ser fornecida no `SeeMoreURL` elemento. O exemplo a seguir mostra a estrutura do XML retornado que está em conformidade com o esquema OfficeDefinitions.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -257,7 +258,7 @@ A seguir há um arquivo de manifesto de exemplo para um suplemento de dicionári
 </OfficeApp>
 ```
 
-O elemento **Dictionary** e seus elementos filho que são específicos para a criação do arquivo de manifesto de um suplemento de dicionário são descritos nas seções a seguir. Para obter informações sobre os outros elementos no arquivo de manifesto, confira [Manifesto XML de suplementos do Office](../develop/add-in-manifests.md).
+O `Dictionary` elemento e seus elementos filhos específicos para a criação de um arquivo de manifesto do suplemento de dicionário são descritos nas seções a seguir. Para obter informações sobre os outros elementos no arquivo de manifesto, confira [Manifesto XML de suplementos do Office](../develop/add-in-manifests.md).
 
 
 ### <a name="dictionary-element"></a>Elemento Dictionary
@@ -271,11 +272,11 @@ Especifica configurações para suplementos de dicionário.
 
  **Elementos filho**
 
- `<TargetDialects>`,  `<QueryUri>`,  `<CitationText>`,  `<DictionaryName>`,  `<DictionaryHomePage>`
+ `<TargetDialects>`, `<QueryUri>`, `<CitationText>`, `<DictionaryName>`, `<DictionaryHomePage>`
 
  **Comentários**
 
-O elemento **Dictionary** e seus elementos filho são adicionados ao manifesto de um suplemento de painel de tarefas ao criar um suplemento de dicionário.
+O `Dictionary` elemento e seus elementos filho são adicionados ao manifesto de um suplemento de painel de tarefas quando você cria um suplemento de dicionário.
 
 
 #### <a name="targetdialects-element"></a>Elemento TargetDialects
@@ -293,7 +294,7 @@ Especifica os idiomas regionais aos quais o dicionário oferece suporte. Necess�
 
  **Comentários**
 
-O elemento **TargetDialects** e os elementos filho dele especificam o conjunto de idiomas regionais que o dicionário contém. Por exemplo, se o dicionário se aplica a Espanhol (México) e Espanhol (Peru), mas não a Espanhol (Espanha), é possível especificar isso nesse elemento. Não especifique mais de um idioma (por exemplo, espanhol e inglês) nesse manifesto. Publique idiomas separados como dicionários separados.
+O `TargetDialects` elemento e seus elementos filho especificam o conjunto de idiomas regionais que seu dicionário contém. Por exemplo, se o dicionário se aplica a Espanhol (México) e Espanhol (Peru), mas não a Espanhol (Espanha), é possível especificar isso nesse elemento. Não especifique mais de um idioma (por exemplo, espanhol e inglês) nesse manifesto. Publique idiomas separados como dicionários separados.
 
  **Exemplo**
 
@@ -376,7 +377,7 @@ Especifica o texto a ser usado em citações. Necessário para suplementos de di
 
 Esse elemento especifica o início do texto de citação que será exibido em uma linha abaixo do conteúdo que é retornado do serviço Web (por exemplo, "Resultados do:" ou "Da plataforma:").
 
-Para esse elemento, você pode especificar valores para localidades adicionais usando o elemento **Override**. Por exemplo, se um usuário está executando a SKU do português brasileiro do Office, mas usando um dicionário de inglês, isso permite que a linha de citação seja "Resultados por: Bing"em vez de "Results by: Bing". Para saber mais sobre como especificar valores para localidades adicionais, confira a seção "Fornecer configurações para localidades diferentes" em [Manifesto XML de suplementos do Office](../develop/add-in-manifests.md).
+Para esse elemento, você pode especificar valores para localidades adicionais usando o `Override` elemento. Por exemplo, se um usuário está executando a SKU do português brasileiro do Office, mas usando um dicionário de inglês, isso permite que a linha de citação seja "Resultados por: Bing"em vez de "Results by: Bing". Para saber mais sobre como especificar valores para localidades adicionais, confira a seção "Fornecer configurações para localidades diferentes" em [Manifesto XML de suplementos do Office](../develop/add-in-manifests.md).
 
  **Exemplo**
 
@@ -525,16 +526,16 @@ a:hover, a:active
 
 O exemplo a seguir mostra a implementação de JavaScript no arquivo Dictionary.js que é chamada da página HTML do suplemento para fornecer a lógica de programação ao suplemento de Dicionário de Demonstração. Esse script reutiliza o serviço Web XML descrito anteriormente. Quando colocado no mesmo diretório que o serviço Web de exemplo, o script obterá definições desse serviço. Para usá-lo com um serviço Web XML público em conformidade com OfficeDefinitions, modifique a variável `xmlServiceURL` no início do arquivo e substitua a chave API do Bing para pronúncias com um script registrado corretamente.
 
-Os membros primários da API JavaScript para Office (Office.js) que são chamados por essa implementação são os seguintes:
+Os membros primários da API JavaScript do Office (Office. js) chamados desta implementação são os seguintes:
 
 
-- O evento [initialize](/javascript/api/office) do objeto **Office**, que é gerado quando o contexto do suplemento é inicializado e fornece acesso a uma instância de objeto [Document](/javascript/api/office/office.document) que representa o documento com o qual o suplemento está interagindo.
+- O evento [Initialize](/javascript/api/office) do `Office` objeto, que é gerado quando o contexto do suplemento é inicializado e fornece acesso a uma instância do objeto [Document](/javascript/api/office/office.document) que representa o documento com o qual o suplemento está interagindo.
     
-- O método [addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) do objeto **Document**, que é chamado na função **initialize** para adicionar um manipulador de eventos ao evento [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) do documento para escutar alterações de seleção de usuário.
+- O método [addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) do `Document` objeto, que é chamado na `initialize` função para adicionar um manipulador de eventos para o evento [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) do documento para ouvir as alterações na seleção do usuário.
     
-- O método [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) do objeto **Document**, que é chamado na função `tryUpdatingSelectedWord()` quando o manipulador de eventos **SelectionChanged** é gerado para obter a palavra ou frase que o usuário selecionou, fazer a coerção dela para texto sem formatação e executar a função `selectedTextCallback` de retorno de chamada assíncrono.
+- O [método getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) `Document` do objeto, que é chamado `tryUpdatingSelectedWord()` na função quando o manipulador de `SelectionChanged` eventos é aumentado para obter a palavra ou frase que o usuário selecionou, força-a para texto sem formatação e, em `selectedTextCallback` seguida, executar a função de retorno de chamada assíncrono.
     
-- Quando a função de retorno de chamada assíncrono `selectTextCallback` que é passada como o argumento _callback_ do método **getSelectedDataAsync** é executada, obtém o valor do texto selecionado quando o retorno de chamada retorna. Ela obtém o valor do argumento _selectedText_ do retorno de chamada (que é do tipo [AsyncResult](/javascript/api/office/office.asyncresult)) usando a propriedade [value](/javascript/api/office/office.asyncresult#status) do objeto **AsyncResult** retornado.
+- Quando a `selectTextCallback` função de retorno de chamada assíncrono que é passada como o argumento `getSelectedDataAsync` de retorno de _chamada_ do método é executada, ela obtém o valor do texto selecionado quando o retorno de chamada retorna. Ele obtém o valor do argumento _selectedText_ do retorno de chamada (que é do tipo [AsyncResult](/javascript/api/office/office.asyncresult)) usando a propriedade [Value](/javascript/api/office/office.asyncresult#status) do objeto retornado `AsyncResult` .
     
 - O restante do código na função `selectedTextCallback` consulta o serviço Web XML para obter definições. Também chama as APIs do Microsoft Translator para fornecer a URL de um arquivo .wav que tem a pronúncia da palavra selecionada.
     

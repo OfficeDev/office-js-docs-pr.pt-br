@@ -3,16 +3,16 @@ title: Extrair cadeias de caracteres de entidade de um item do Outlook
 description: Saiba como extrair cadeias de caracteres de entidade de um item do Outlook em um suplemento do Outlook.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 95f88b6bcd47cbfd85de89a3de89d9a9e2fe571f
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 0a9a41d0b479420c0754c0e0d283982082a1452f
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165749"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325451"
 ---
 # <a name="extract-entity-strings-from-an-outlook-item"></a>Extrair cadeias de caracteres de entidade de um item do Outlook
 
-Este artigo descreve como criar o suplemento do Outlook **Exibir entidades**, que extrai instâncias de cadeia de caracteres de entidades conhecidas compatíveis no assunto e no corpo do item do Outlook escolhido. Esse item pode ser um compromisso, uma mensagem de email ou solicitação, resposta ou cancelamento de reunião. 
+Este artigo descreve como criar o suplemento do Outlook **Exibir entidades**, que extrai instâncias de cadeia de caracteres de entidades conhecidas compatíveis no assunto e no corpo do item do Outlook escolhido. Esse item pode ser um compromisso, uma mensagem de email ou solicitação, resposta ou cancelamento de reunião.
 
 As entidades compatíveis incluem:
 
@@ -205,7 +205,7 @@ As seções restantes descrevem como essa amostra (arquivo default_entities.js) 
 
 ## <a name="extracting-entities-upon-initialization"></a>Extrair entidades na inicialização
 
-Após o evento [Office.initialize](/javascript/api/office#office-initialize-reason-), o suplemento de entidades chama o método [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) do item atual. O método **getEntities** retorna a variável global `_MyEntities`, uma matriz de instâncias de entidades compatível. A seguir apresentamos o código JavaScript relacionado.
+Após o evento [Office.initialize](/javascript/api/office#office-initialize-reason-), o suplemento de entidades chama o método [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) do item atual. O `getEntities` método retorna a variável `_MyEntities` global uma matriz de instâncias de entidades com suporte. A seguir apresentamos o código JavaScript relacionado.
 
 
 ```js
@@ -373,7 +373,7 @@ Quando o usuário clica no botão **Obter Sugestões de Reunião**, o manipulado
 
 
  > [!NOTE]
- > Somente mensagens, e não compromissos, dão suporte ao tipo de entidade **MeetingSuggestion**.
+ > Somente as mensagens, mas não os compromissos `MeetingSuggestion` , dão suporte ao tipo de entidade.
 
 Cada sugestão de reunião extraída é armazenada como um objeto [MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion) na matriz. `myGetMeetingSuggestions` obtém dados adicionais sobre cada sugestão de reunião:
 

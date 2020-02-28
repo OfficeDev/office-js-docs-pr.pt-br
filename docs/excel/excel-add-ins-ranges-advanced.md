@@ -1,18 +1,18 @@
 ---
 title: Trabalhar com intervalos usando a API JavaScript do Excel (avançado)
-description: ''
-ms.date: 10/22/2019
+description: Funções e cenários de objetos de intervalo avançados, como células especiais, remoção de duplicatas e trabalho com datas.
+ms.date: 02/11/2020
 localization_priority: Normal
-ms.openlocfilehash: 96f001e7c7e51a9685a52d0a07309beed2f1fe4b
-ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
+ms.openlocfilehash: 0e42549c7ecb9eb8bf8ebe707906224b4059e176
+ms.sourcegitcommit: d85efbf41a3382ca7d3ab08f2c3f0664d4b26c53
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "37681932"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "42327751"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Trabalhar com intervalos usando a API JavaScript do Excel (avançado)
 
-Este artigo baseia-se em informações em [Trabalhar com intervalos usando a API JavaScript do Excel (fundamental)](excel-add-ins-ranges.md) fornecendo exemplos de código que mostram como executar tarefas mais avançadas com intervalos usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos que o objeto **Range** suporta, confira [Objeto Range (API JavaScript para Excel)](/javascript/api/excel/excel.range).
+Este artigo baseia-se em informações em [Trabalhar com intervalos usando a API JavaScript do Excel (fundamental)](excel-add-ins-ranges.md) fornecendo exemplos de código que mostram como executar tarefas mais avançadas com intervalos usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos aos `Range` quais o objeto oferece suporte, consulte [objeto Range (API JavaScript para Excel)](/javascript/api/excel/excel.range).
 
 ## <a name="work-with-dates-using-the-moment-msdate-plug-in"></a>Trabalhar com datas usando o plug-in Moment-MSDate
 
@@ -172,9 +172,11 @@ Excel.run(function (context) {
 })
 ```
 
-## <a name="copy-and-paste"></a>Copy and paste
+## <a name="cut-copy-and-paste"></a>Recortar, copiar e colar 
 
-O método [Range. copyFrom](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) Replica o comportamento de copiar e colar da interface do usuário do Excel. O objeto de intervalo para o qual a função`copyFrom` é chamada é o destino. A fonte a ser copiada é passada como um intervalo ou um endereço de cadeia de caracteres que representa um intervalo.
+### <a name="copy-and-paste"></a>Copy and paste 
+
+O método [Range. copyFrom](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) Replica as ações de **copiar** e **colar** da interface do usuário do Excel. O objeto de intervalo para o qual a função`copyFrom` é chamada é o destino. A fonte a ser copiada é passada como um intervalo ou um endereço de cadeia de caracteres que representa um intervalo. 
 
 O exemplo a seguir copia dados de **A1:E1** para o intervalo que começa em **G1** (que acaba sendo colado em **G1:K1**).
 
@@ -232,6 +234,23 @@ Excel.run(function (context) {
 *Após a função precedente ter sido executada.*
 
 ![Os dados no Excel após o método de copiar do intervalo foram executados](../images/excel-range-copyfrom-skipblanks-after.png)
+
+### <a name="cut-and-paste-move-cells-online-only"></a>Células recortar e colar (mover) ([somente online](../reference/requirement-sets/excel-api-online-requirement-set.md)) 
+
+O método [Range. MoveTo](/javascript/api/excel/excel.range#moveto-destinationrange-) move as células para um novo local na pasta de trabalho. Esse comportamento de movimentação de célula funciona da mesma forma que quando as células são movidas [arrastando-se a borda do intervalo](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e) ou ao pegar as ações **recortar** e **colar** . Tanto a formatação quanto os valores do intervalo são movidos para o local especificado como `destinationRange` o parâmetro. 
+
+O exemplo de código a seguir mostra um intervalo que está `Range.moveTo` sendo movido com o método. Observe que, se o intervalo de destino for menor do que a fonte, ele será expandido para abranger o conteúdo de origem. 
+
+```js 
+Excel.run(function (context) { 
+    var sheet = context.workbook.worksheets.getActiveWorksheet(); 
+    sheet.getRange("F1").values = [["Moved Range"]]; 
+
+    // Move the cells "A1:E1" to "G1" (which fills the range "G1:K1"). 
+    sheet.getRange("A1:E1").moveTo("G1"); 
+    return context.sync(); 
+}); 
+``` 
 
 ## <a name="remove-duplicates"></a>Remover duplicatas
 

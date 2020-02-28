@@ -3,12 +3,12 @@ title: Noções básicas sobre permissões de suplemento do Outlook
 description: Suplementos do Outlook especificam o nível de permissão necessário em seu manifesto que incluem o modo restrito, ReadItem, ReadWriteItem ou ReadWriteMailbox.
 ms.date: 02/19/2020
 localization_priority: Normal
-ms.openlocfilehash: d3e5ac55619460e39c3853ea1a0a05c30d767bfd
-ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
+ms.openlocfilehash: 60b65416585b5215ed565a3689c1e7f398e001a5
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "42283902"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325323"
 ---
 # <a name="understanding-outlook-add-in-permissions"></a>Noções básicas sobre permissões de suplemento do Outlook
 
@@ -135,7 +135,7 @@ Especifique o **ReadWriteItem** no elemento **Permissions**, no manifesto, para 
 
 - [Adicionar ou remover anexos](add-and-remove-attachments-to-an-item-in-a-compose-form.md) desse item.
 
-- Usar todos os outros membros da API JavaScript para o Office que se aplicam a suplementos de email, exceto **Mailbox.makeEWSRequestAsync**.
+- Use todos os outros membros da API JavaScript do Office que se aplicam a suplementos de email, exceto **Mailbox. makeEWSRequestAsync**.
 
 ### <a name="cant-do"></a>Não pode ser feito
 

@@ -1,0 +1,5 @@
+Os [conjuntos de requisitos](../develop/office-versions-and-requirement-sets.md) são grupos nomeados de membros da API. Os conjuntos de requisitos podem ser específicos para os hosts do Office, como o conjunto de requisitos `ExcelApi 1.7` (um conjunto de APIs que só podem ser usadas no Excel) ou comuns a vários hosts, como o conjunto de requisitos `DialogApi 1.1` (um conjunto de APIs que podem ser usadas em qualquer aplicativo do Office que forneça suporte à API de Caixa de Diálogo).
+
+Seu suplemento pode usar conjuntos de requisitos para determinar se o host do Office oferece suporte aos membros da API necessários. Para saber mais sobre isso, confira [Especificar requisitos de API e host do Office](../develop/specify-office-hosts-and-api-requirements.md).
+
+O suporte a um conjunto de requisitos varia de acordo com o host do Office, a versão e a plataforma. Para obter informações detalhadas sobre as plataformas, os conjuntos de requisitos e as APIs comuns compatíveis com cada aplicativo do Office, confira [Disponibilidade de host e plataforma para suplementos do Office](../overview/office-add-in-availability.md).

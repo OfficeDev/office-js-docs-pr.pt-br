@@ -3,16 +3,16 @@ title: Elemento OfficeTab no arquivo de manifesto
 description: ''
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: d073d712cec2fd58e957ffe8f344d7443d1e896e
-ms.sourcegitcommit: 382e2735a1295da914f2bfc38883e518070cec61
+ms.openlocfilehash: b8458233ba93e98fe0bd8d51f5734b1fece65864
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "35127559"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324831"
 ---
 # <a name="officetab-element"></a>Elemento OfficeTab
 
-Define a guia da faixa de opções no qual seu comando de suplemento é exibido. Pode ser a guia padrão (**Início**, **Mensagem** ou **Reunião**) ou uma guia personalizada definida pelo suplemento. Este elemento é obrigatório.
+Define a guia da faixa de opções no qual seu comando de suplemento é exibido. Pode ser a guia padrão ( **página inicial**, de **mensagem**ou **reunião**) ou uma guia personalizada definida pelo suplemento. Este elemento é obrigatório.
 
 ## <a name="child-elements"></a>Elementos filho
 
@@ -93,7 +93,7 @@ A seguir estão os valores válidos de `id` por host. Os valores em **negrito** 
 
 ## <a name="group"></a>Group
 
-Um grupo de pontos de extensão de interface do usuário em uma guia. O grupo pode ter até seis controles. O atributo **id** é obrigatório, e cada **id** deve ser exclusiva dentro do manifesto. A **id** é uma cadeia de caracteres com, no máximo, 125 caracteres. Confira [Elemento Group](group.md)
+Um grupo de pontos de extensão da interface do usuário em uma guia. Um grupo pode ter até seis controles. O atributo **ID** é obrigatório e cada **ID** deve ser exclusivo no manifesto. A **ID** é uma cadeia de caracteres com, no máximo, 125 caracteres. Confira [Elemento Group](group.md)
 
 ## <a name="officetab-example"></a>Exemplo de OfficeTab
 

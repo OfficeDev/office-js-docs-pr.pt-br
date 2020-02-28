@@ -3,12 +3,12 @@ title: Elemento Icon no arquivo de manifesto
 description: ''
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 45f3dcda8e74430cf70aa765efc6b3aae0e2b448
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: f428588aa206b1f38102b04d2f60a016813a48a6
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450615"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324852"
 ---
 # <a name="icon-element"></a>Elemento Icon
 
@@ -28,7 +28,7 @@ Define elementos de **Imagem** para controles de [Botão](control.md#button-cont
 
 ### <a name="image"></a>Image
 
-Uma imagem para o botão. O atributo **resid** deve ser definido para o valor do atributo **id** de um elemento **Image** no elemento **Images** no elemento [Resources](resources.md). O atributo **tamanho** indica o tamanho em pixels da imagem. São obrigatórios três tamanhos de imagem (16, 32 e 80 pixels) e há suporte para outros cinco tamanhos (20, 24, 40, 48 e 64 pixels).|
+Uma imagem para o botão. O atributo **Resid** deve ser definido como o valor do atributo **ID** de um elemento **Image** no elemento **images** no elemento [Resources](resources.md) . O atributo **tamanho** indica o tamanho em pixels da imagem. São obrigatórios três tamanhos de imagem (16, 32 e 80 pixels) e há suporte para outros cinco tamanhos (20, 24, 40, 48 e 64 pixels).|
 
 ```xml
 <Icon>

@@ -3,23 +3,23 @@ title: Trabalhar com tabelas usando a API JavaScript do Excel
 description: ''
 ms.date: 09/09/2019
 localization_priority: Normal
-ms.openlocfilehash: e368447d50400d81953762bcdccfb174edbbdf22
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 8c83367f9727d4d63144eb7e8c590605c8230026
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950856"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325077"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Trabalhar com tabelas usando a API JavaScript do Excel
 
-Este artigo fornece exemplos de código que mostram como executar tarefas comuns com tabelas usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos aos quais os objetos **Table** e **TableCollection** dão suporte, confira [Objeto Table (API do JavaScript para Excel)](/javascript/api/excel/excel.table) e [Objeto TableCollection (API do JavaScript para Excel)](/javascript/api/excel/excel.tablecollection).
+Este artigo fornece exemplos de código que mostram como executar tarefas comuns com tabelas usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos que `Table` o `TableCollection` e os objetos dão suporte, consulte [objeto Table (API JavaScript para Excel)](/javascript/api/excel/excel.table) e [objeto TableCollection (API JavaScript para Excel)](/javascript/api/excel/excel.tablecollection).
 
 ## <a name="create-a-table"></a>Criar uma tabela
 
 O exemplo de código a seguir cria uma tabela na planilha chamada **Exemplo**. A tabela tem cabeçalhos e contém quatro colunas e sete linhas de dados. Se o aplicativo host do Excel em que o código está sendo executado der suporte ao [conjunto de requisito](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, a largura das colunas e a altura das linhas serão definidas para o melhor ajuste aos dados atuais da tabela.
 
 > [!NOTE]
-> Para especificar um nome para uma tabela, primeiro crie a tabela e defina sua propriedade **name**, como mostrado no exemplo a seguir.
+> Para especificar um nome para uma tabela, primeiro você deve criar a tabela e, em seguida `name` , definir sua propriedade, conforme mostrado no exemplo a seguir.
 
 ```js
 Excel.run(function (context) {
@@ -59,7 +59,7 @@ Excel.run(function (context) {
 O exemplo de código a seguir adiciona sete novas linhas à tabela **ExpensesTable** na planilha **Exemplo**. As novas linhas são adicionadas ao fim da tabela. Se o aplicativo host do Excel em que o código está sendo executado der suporte ao [conjunto de requisito](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**, a largura das colunas e a altura das linhas serão definidas para o melhor ajuste aos dados atuais da tabela.
 
 > [!NOTE]
-> A propriedade **index** de um objeto [TableRow](/javascript/api/excel/excel.tablerow) indica o número de índice da linha no conjunto de linhas da tabela. Um objeto **TableRow** não contém uma propriedade **id** que pode ser usada como chave exclusiva para identificar a linha.
+> A `index` propriedade de um objeto [TableRow](/javascript/api/excel/excel.tablerow) indica o número de índice da linha dentro da coleção Rows da tabela. Um `TableRow` objeto não contém uma `id` propriedade que pode ser usada como uma chave exclusiva para identificar a linha.
 
 ```js
 Excel.run(function (context) {
@@ -340,7 +340,7 @@ Excel.run(function (context) {
 
 ## <a name="get-the-visible-range-from-a-filtered-table"></a>Obter o intervalo visível de uma tabela filtrada
 
-O exemplo de código a seguir obtém um intervalo que contém dados somente para células que estão visíveis atualmente na tabela especificada e grava os valores do intervalo no console. Você pode usar o método **getVisibleView()** conforme mostrado abaixo para obter o conteúdo visível de uma tabela sempre que filtros de coluna tiverem sido aplicados.
+O exemplo de código a seguir obtém um intervalo que contém dados somente para as células que estão visíveis no momento dentro da tabela especificada e, em seguida, grava os valores desse intervalo no console. Você pode usar o `getVisibleView()` método conforme mostrado abaixo para obter o conteúdo visível de uma tabela sempre que os filtros de coluna tiverem sido aplicados.
 
 ```js
 Excel.run(function (context) {

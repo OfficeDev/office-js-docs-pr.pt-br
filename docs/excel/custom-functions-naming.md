@@ -3,16 +3,16 @@ ms.date: 12/28/2019
 description: Saiba mais sobre os nomes de funções personalizadas do Excel e evite armadilhas comuns de nomeação.
 title: Diretrizes de nomenclatura para funções personalizadas no Excel
 localization_priority: Normal
-ms.openlocfilehash: 547d1edd1a8103afce8b233f77085296cd85642b
-ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
+ms.openlocfilehash: 2dcd35a91f460fcd556dec479fb717942a987908
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "40969511"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324656"
 ---
 # <a name="naming-guidelines"></a>Diretrizes de nomenclatura
 
-Uma função personalizada é identificada por uma propriedade **ID** e **nome** no arquivo de metadados JSON.
+Uma função personalizada é identificada por `id` uma `name` Propriedade e no arquivo de metadados JSON.
 
 - A função `id` é usada para identificar exclusivamente as funções personalizadas no seu código JavaScript.
 - A função `name` é usada como o nome de exibição que aparece para um usuário no Excel.

@@ -3,16 +3,16 @@ title: Obter ou definir a hora do compromisso em um suplemento do Outlook
 description: Saiba como obter ou definir a hora de início e término de um compromisso em um suplemento do Outlook.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: af4ec04c8f7af865c826a036b6670c0aec7341b4
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: d07d461b852e523626946a79a5c9c5e21c95fcdc
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165737"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324958"
 ---
 # <a name="get-or-set-the-time-when-composing-an-appointment-in-outlook"></a>Obter ou definir a hora ao compor um compromisso no Outlook
 
-A API JavaScript para Office fornece métodos assíncronos ([Time.getAsync](/javascript/api/outlook/office.Time#getasync-options--callback-) e [Time.setAsync](/javascript/api/outlook/office.Time#setasync-datetime--options--callback-)) para obter e definir a hora de início ou de término de um compromisso que o usuário está compondo. Esses métodos assíncronos estão disponíveis somente para suplementos de composição. Para usar esses métodos, verifique se você configurou o manifesto do suplemento adequadamente para o Outlook ativar o suplemento nos formulários de composição, conforme descrito em [Criar suplementos do Outlook para formulários de composição](compose-scenario.md).
+A API JavaScript do Office fornece métodos assíncronos ([time. getasync](/javascript/api/outlook/office.Time#getasync-options--callback-) e [time. setasync](/javascript/api/outlook/office.Time#setasync-datetime--options--callback-)) para obter e definir a hora de início ou de término de um compromisso que o usuário está redigindo. Esses métodos assíncronos estão disponíveis apenas para compor suplementos. Para usar esses métodos, verifique se você configurou o manifesto do suplemento apropriadamente para que o Outlook ative o suplemento nos formulários de redação, conforme descrito em [criar suplementos do Outlook para formulários de composição](compose-scenario.md).
 
 As propriedades [start](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) e [end](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) estão disponíveis para compromissos tanto em formulários de composição quanto de leitura. No formulário de leitura, você pode acessar as propriedades diretamente do objeto pai, como em:
 
@@ -38,7 +38,7 @@ e:
 item.end.getAsync
 ```
 
-Como ocorre com a maioria dos métodos assíncronos na API JavaScript para Office, **getAsync** e **setAsync** usam parâmetros de entrada opcionais. Saiba mais sobre como especificar esses parâmetros de entrada opcionais em [Transmitir parâmetros opcionais para métodos assíncronos](../develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline) em [Programação assíncrona em suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md).
+Assim como a maioria dos métodos assíncronos na API JavaScript do Office, **getasync** e **setasync** aceita parâmetros de entrada opcionais. Para saber mais sobre como especificar esses parâmetros de entrada opcionais, confira [Passar parâmetros opcionais para métodos assíncronos](../develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline) em [Programação assíncrona em suplementos do Office](../develop/asynchronous-programming-in-office-add-ins.md).
 
 
 ## <a name="get-the-start-or-end-time"></a>Obter a hora de início ou de término

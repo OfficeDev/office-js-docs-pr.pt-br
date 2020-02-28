@@ -3,12 +3,12 @@ ms.date: 01/14/2020
 description: Solicite, transmita e cancele o fluxo de dados externos para sua pasta de trabalho com funções personalizadas no Excel
 title: Receber e tratar dados com funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: c59133389311721c4d0507337a17b346af97e690
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: ca1353fcc8c9fcd79db273f0cb1d7bf3d7d58a70
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41949703"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42323830"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>Receber e tratar dados com funções personalizadas
 
@@ -27,7 +27,7 @@ Se uma função personalizada recupera dados de uma fonte externa como na web, e
 
 ### <a name="fetch-example"></a>Exemplo de busca
 
-No exemplo a seguir, a função ** WebRequest** chega à API hipotética "número de pessoas no espaço", que controla o número de pessoas que estão na estação de espaço internacional. A função retorna uma promessa de JavaScript e usa fetch para solicitar informações da API. Os dados resultantes são transformados em JSON e a`names` propriedade é convertida em uma cadeia de caracteres, que é usada para resolver a promessa.
+No exemplo de código a seguir, `webRequest` a função chega à API hipotética "número de pessoas no espaço" da Contoso, que acompanha o número de pessoas atualmente na estação de espaço internacional. A função retorna uma promessa de JavaScript e usa fetch para solicitar informações da API. Os dados resultantes são transformados em JSON e a`names` propriedade é convertida em uma cadeia de caracteres, que é usada para resolver a promessa.
 
 Ao desenvolver suas próprias funções, talvez você queira executar uma ação caso a solicitação da Web não tenha sido concluída de maneira oportuna ou considere [o envio de várias solicitações](./custom-functions-batching.md)da API.
 
@@ -60,7 +60,7 @@ No tempo de execução das funções personalizadas, o XHR implementa medidas de
 
 Observe que uma implementação CORS simples não pode usar cookies e é compatível apenas com métodos simples (GET, HEAD, POST). A CORS simples aceita cabeçalhos simples com nomes de campos `Accept`, `Accept-Language`, `Content-Language`. Você também pode usar um cabeçalho de tipo de conteúdo no CORS simples, desde que o tipo de conteúdo seja `application/x-www-form-urlencoded`, `text/plain`, ou `multipart/form-data`.
 
-No exemplo a seguir, a função** getStarCount** chama o GitHub API para descobrir o valor de estrelas fornecido para o repositório de um determinado usuário. Essa é uma função assíncrona que retorna uma promessa de JavaScript. Quando os dados forem obtidos da chamada da Web, a promessa será resolvida, que retornará os dados para a célula.
+No exemplo de código a seguir, `getStarCount` a função chama a API do GitHub para descobrir a quantidade de estrelas dadas ao repositório de um usuário específico. Essa é uma função assíncrona que retorna uma promessa de JavaScript. Quando os dados forem obtidos da chamada da Web, a promessa será resolvida, que retornará os dados para a célula.
 
 ```TS
 /**

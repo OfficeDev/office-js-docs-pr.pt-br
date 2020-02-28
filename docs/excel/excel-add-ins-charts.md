@@ -3,16 +3,16 @@ title: Trabalhar com gráficos usando a API JavaScript do Excel
 description: ''
 ms.date: 07/17/2019
 localization_priority: Normal
-ms.openlocfilehash: b89e8dffc45eb2a740b5e26373d92cc8cf4bed3e
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 2b55fee9689af03e9dbfbdb7133d2482f7ca6852
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950877"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42323851"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Trabalhar com gráficos usando a API JavaScript do Excel
 
-Este artigo fornece exemplos de código que mostram como executar tarefas comuns com gráficos usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos aos quais os objetos **Chart** e **ChartCollection** dão suporte, confira [Objeto Chart (API JavaScript para Excel)](/javascript/api/excel/excel.chart) e [Objeto Chart Collection (API JavaScript para Excel)](/javascript/api/excel/excel.chartcollection).
+Este artigo fornece exemplos de código que mostram como executar tarefas comuns com gráficos usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos que `Chart` o `ChartCollection` e os objetos dão suporte, consulte [Chart Object (JavaScript API for Excel)](/javascript/api/excel/excel.chart) e [objeto de coleção Chart (API JavaScript para Excel)](/javascript/api/excel/excel.chartcollection).
 
 ## <a name="create-a-chart"></a>Criar um gráfico
 
@@ -127,7 +127,7 @@ Excel.run(function (context) {
 
 ## <a name="set-visibility-of-gridlines-in-a-chart"></a>Definir visibilidade de linhas de grade em um gráfico
 
-O exemplo de código a seguir oculta as principais linhas de grade para o eixo dos valores do primeiro gráfico na planilha. Você pode mostrar as principais linhas de grade do eixo dos valores do gráfico, definindo `chart.axes.valueAxis.majorGridlines.visible` como **true**.
+O exemplo de código a seguir oculta as linhas de grade principais do eixo dos valores do primeiro gráfico da planilha. Você pode mostrar as linhas de grade principais do eixo dos valores do gráfico, definindo `chart.axes.valueAxis.majorGridlines.visible` como. `true`
 
 ```js
 Excel.run(function (context) {
@@ -168,7 +168,7 @@ Excel.run(function (context) {
 
 ### <a name="update-a-trendline"></a>Atualizar uma linha de tendência
 
-O exemplo de código a seguir define a linha de tendência para o tipo **Linear** para a primeira série no primeiro gráfico da planilha chamada **Amostra**.
+O exemplo de código a seguir define a tendência `Linear` como tipo para a primeira série no primeiro gráfico da planilha chamada **amostra**.
 
 ```js
 Excel.run(function (context) {

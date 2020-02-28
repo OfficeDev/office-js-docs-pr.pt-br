@@ -3,12 +3,12 @@ title: Obter e definir dados de item em um formulário de composição no Outloo
 description: Obtenha ou defina várias propriedades de um item em um suplemento do Outlook em um cenário de redação, incluindo seus destinatários, o assunto, o corpo e o local e a hora do compromisso.
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: ff75c6565b6ff49dfb2ad1ac95c75499c9b32284
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 3b82f418ffa2820e5f8cf04805a62b0d85691420
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165831"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325444"
 ---
 # <a name="get-and-set-item-data-in-a-compose-form-in-outlook"></a>Obter e definir dados de item em um formulário de redação no Outlook
 
@@ -18,9 +18,9 @@ Saiba como obter ou definir várias propriedades de um item em um suplemento do 
 
 Em um formulário de composição, é possível obter a maioria das propriedades que estão expostas no mesmo tipo de item de um formulário de leitura (por exemplo, participantes, destinatários, assunto e corpo) e acessar algumas propriedades adicionais que são relevantes somente no formulário de composição, mas não de leitura (corpo, cco).
 
-Para a maioria dessas propriedades, como é possível que um suplemento do Outlook e o usuário estejam modificando a mesma propriedade na interface de usuário ao mesmo tempo, os métodos para obtê-las e defini-las é assíncrono. A Tabela 1 lista as propriedades no nível do item e os métodos assíncronos correspondentes para obtê-los e defini-los em um formulário de redação. As propriedades [item.itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) e [item.conversationId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) são exceções porque os usuários não podem modificá-las. Você pode obtê-las via programação da mesma maneira em um formulário de redação e em um formulário de leitura, diretamente do objeto pai.
+Para a maioria dessas propriedades, como é possível que um suplemento do Outlook e o usuário estejam modificando a mesma propriedade na interface de usuário ao mesmo tempo, os métodos para obtê-las e defini-las é assíncrono. A Tabela 1 lista as propriedades no nível do item e os métodos assíncronos correspondentes para obtê-los e defini-los em um formulário de composição. As propriedades [item.itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) e [item.conversationId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) são exceções porque os usuários não podem modificá-las. Você pode obtê-las via programação da mesma maneira em um formulário de composição e em um formulário de leitura, diretamente do objeto pai.
 
-Em vez de acessar as propriedades do item da API JavaScript para Office, você pode acessar as propriedades no nível do item usando os EWS (Serviços Web do Exchange). Com a permissão **ReadWriteMailbox**, você pode usar o método [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) para acessar as operações [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) e [UpdateItem](/exchange/client-developer/web-service-reference/updateitem-operation) dos EWS para obter e definir propriedades de um ou mais itens na caixa de correio do usuário.
+Além de acessar as propriedades do item na API JavaScript do Office, você pode acessar as propriedades de nível de item usando os serviços Web do Exchange (EWS). Com a permissão **ReadWriteMailbox**, você pode usar o método [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) para acessar as operações [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) e [UpdateItem](/exchange/client-developer/web-service-reference/updateitem-operation) dos EWS para obter e definir propriedades de um ou mais itens na caixa de correio do usuário.
 
 A função `makeEwsRequestAsync` está disponível nos formulários de leitura e redação. Para saber mais sobre a permissão **ReadWriteMailbox** e acessar os EWS na plataforma de suplementos do Office, confira [Noções básicas sobre permissões de suplemento do Outlook](understanding-outlook-add-in-permissions.md) e [Chamar serviços Web de um suplemento do Outlook](web-services.md).
 

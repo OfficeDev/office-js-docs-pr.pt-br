@@ -1,18 +1,18 @@
 ---
 title: APIs de suplemento do Outlook
 description: Saiba como fazer referência a APIs de suplemento do Outlook e declarar permissões em seu suplemento do Outlook.
-ms.date: 10/31/2019
+ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 2abe365f1606789b1c6ac113b133019055767b28
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: bd7f3b5a1b52ec3ca7a48ae7a2d467c6cd30f1e4
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165851"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325465"
 ---
 # <a name="outlook-add-in-apis"></a>APIs de suplemento do Outlook
 
-Para usar APIs no seu suplemento do Outlook, você deve especificar o local da biblioteca Office.js, o conjunto de requisitos, o esquema e as permissões.
+Para usar APIs no seu suplemento do Outlook, você deve especificar o local da biblioteca Office.js, o conjunto de requisitos, o esquema e as permissões. Você usará principalmente as APIs JavaScript do Office expostas pelo objeto [Mailbox](#mailbox-object) .
 
 ## <a name="officejs-library"></a>Biblioteca Office.js
 
@@ -26,7 +26,7 @@ Referência CDN em um `<script>` marca na `<head>` marca da página da web (arqu
 À medida que adicionamos novas APIs, a URL para Office.js permanecerá a mesma. Somente mudaremos a versão na URL se mudarmos um comportamento de API existente.
 
 > [!IMPORTANT]
-> Ao desenvolver um suplemento para qualquer aplicativo host do Office, faça referência à API JavaScript para Office de dentro da seção `<head>` da página. Isso garante que a API seja totalmente inicializada antes de qualquer elemento de corpo. Os hosts do Office requerem que suplementos inicializem até 5 segundos depois da ativação. Ao ultrapassar esse limite, considera-se que o suplemento não respondeu e uma mensagem de erro é exibida para o usuário.
+> Ao desenvolver um suplemento para qualquer aplicativo host do Office, faça referência à API JavaScript do Office de dentro `<head>` da seção da página. Isso garante que a API seja totalmente inicializada antes de qualquer elemento de corpo. Os hosts do Office requerem que suplementos inicializem até 5 segundos depois da ativação. Ao ultrapassar esse limite, considera-se que o suplemento não respondeu e uma mensagem de erro é exibida para o usuário.
 
 ## <a name="requirement-sets"></a>Conjuntos de requisitos
 
@@ -66,6 +66,9 @@ Seu suplemento requer as permissões apropriadas para usar as APIs de que precis
 
 Em geral, você deve especificar a permissão mínima necessária para o seu suplemento. As permissões são declaradas no elemento `<Permissions>` no manifesto. Para saber mais, confira [Manifestos de suplementos do Outlook](manifests.md). Para saber mais sobre problemas de segurança, confira [privacidade e segurança para suplementos do Office](../concepts/privacy-and-security.md).
 
+## <a name="mailbox-object"></a>Objeto Mailbox
+
+[!include[information about Mailbox object](../includes/mailbox-object-desc.md)]
 
 ## <a name="see-also"></a>Confira também
 

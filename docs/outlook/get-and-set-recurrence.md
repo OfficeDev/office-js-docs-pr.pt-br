@@ -3,16 +3,16 @@ title: Obter e definir uma recorrência em um suplemento do Outlook
 description: Este tópico mostra como usar a API JavaScript do Office para obter e definir várias propriedades de recorrência de um item em um suplemento do Outlook.
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: cc7160ed8fe82a02ced9c03bab181df57e66bb54
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 850fd49721dbb0e3835a44148d03f5687726c58c
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165850"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324972"
 ---
 # <a name="get-and-set-recurrence"></a>Obter e definir uma recorrência
 
-Às vezes, você precisa criar e atualizar um compromisso recorrente, como uma reunião de status semanal para um projeto da equipe ou um lembrete anual de aniversário. É possível usar a API JavaScript para Office para gerenciar os padrões de recorrência de uma série de compromissos no seu suplemento.
+Às vezes, você precisa criar e atualizar um compromisso recorrente, como uma reunião de status semanal para um projeto da equipe ou um lembrete anual de aniversário. Você pode usar a API JavaScript do Office para gerenciar os padrões de recorrência de uma série de compromissos no seu suplemento.
 
 > [!NOTE]
 > O suporte para esse recurso foi introduzido no conjunto de requisitos 1,7. Confira, [clientes e plataformas](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.

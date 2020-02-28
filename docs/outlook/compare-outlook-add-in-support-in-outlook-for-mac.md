@@ -3,16 +3,16 @@ title: Comparar o suporte a suplementos do Outlook no Outlook no Mac
 description: Saiba como o suporte a suplementos no Outlook no Mac compara com outros hosts do Outlook.
 ms.date: 11/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 337938b9bb2e8f0e9b9343841a8240e46741eed9
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: ec5e9934249ddc1a90240890d7f0201d23599446
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165748"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325458"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-hosts"></a>Comparar o suporte a suplementos do Outlook no Outlook no Mac com outros hosts do Outlook
 
-Você pode criar e executar um suplemento do Outlook da mesma maneira no Outlook no Mac, como nos outros hosts, incluindo Outlook na Web, Windows, iOS e Android, sem personalizar o JavaScript para cada host. As chamadas do suplemento à API JavaScript para Office geralmente funcionam da mesma maneira, exceto nas áreas descritas na tabela a seguir.
+Você pode criar e executar um suplemento do Outlook da mesma maneira no Outlook no Mac, como nos outros hosts, incluindo Outlook na Web, Windows, iOS e Android, sem personalizar o JavaScript para cada host. As mesmas chamadas do suplemento para a API JavaScript do Office geralmente funcionam da mesma maneira, exceto as áreas descritas na tabela a seguir.
 
 Para obter mais informações, consulte [Implantar e instalar suplementos do Outlook para teste](testing-and-tips.md).
 

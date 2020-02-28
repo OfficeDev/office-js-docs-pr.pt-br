@@ -3,12 +3,12 @@ title: Elemento Control no arquivo de manifesto
 description: ''
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: d77b464fde9898ef216ef9e47c651fb5750e4453
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: ed76cc46c624d1b97d43e4270944b8ef4dc63723
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450636"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42323795"
 ---
 # <a name="control-element"></a>Elemento Control
 
@@ -31,8 +31,8 @@ Um botão executa uma única ação quando o usuário o seleciona. Pode ser a ex
 ### <a name="child-elements"></a>Elementos filho
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **Label**     | Sim |  O texto do botão. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String** no elemento **ShortStrings** do elemento [Resources](resources.md).        |
-|  **Emergente**  |Não|A dica de ferramenta do botão. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **LongStrings**, que é filho do elemento [Resources](resources.md).|        
+|  **Label**     | Sim |  O texto do botão. O atributo **Resid** deve ser definido como o valor do atributo **ID** de um elemento **String** no elemento **ShortStrings** no elemento [Resources](resources.md) .        |
+|  **Emergente**  |Não|A dica de ferramenta do botão. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **LongStrings**, que é filho do elemento [Resources](resources.md).|     
 |  [Supertip](supertip.md)  | Sim |  A dica detalhada do botão.    |
 |  [Icon](icon.md)      | Sim |  Uma imagem para o botão.         |
 |  [Action](action.md)    | Sim |  Especifica a ação a ser executada.  |
@@ -87,7 +87,7 @@ Quando usado com um **ponto de extensão****PrimaryCommandSurface** ou [ContextM
 
 - Uma lista de itens de submenu.
 
-Quando usado com **PrimaryCommandSurface**, o item de menu raiz é exibido como um botão na faixa de opções. Quando o botão é selecionado, o submenu é exibido como uma lista suspensa. Quando usado com **ContextMenu**, um item de menu com um submenu é inserido no menu de contexto. Em ambos os casos, cada item de submenu pode executar uma função JavaScript ou mostrar um painel de tarefas. Somente há suporte para um nível de submenus no momento.
+Quando usado com **PrimaryCommandSurface**, o item de menu raiz é exibido como um botão na faixa de opções. Quando o botão é selecionado, o submenu é exibido como uma lista suspensa. Quando usado com **ContextMenu**, um item de menu com um submenu é inserido no menu de contexto. Em ambos os casos, cada item de submenu pode executar uma função JavaScript ou mostrar um painel de tarefas. Somente um nível de submenus é compatível no momento.
 
 O exemplo a seguir mostra como definir um item de menu com dois itens de submenu. O primeiro item do submenu mostra um painel de tarefas e o segundo item executa uma função JavaScript.
 
@@ -145,10 +145,10 @@ O exemplo a seguir mostra como definir um item de menu com dois itens de submenu
 
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **Label**     | Sim |  O texto do botão. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String** no elemento **ShortStrings** no elemento [Resources](resources.md).      |
-|  **Emergente**  |Não|A dica de ferramenta do botão. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **LongStrings**, que é filho do elemento [Resources](resources.md).|        
+|  **Label**     | Sim |  O texto do botão. O atributo **Resid** deve ser definido como o valor do atributo **ID** de um elemento **String** no elemento **ShortStrings** no elemento [Resources](resources.md) .      |
+|  **Emergente**  |Não|A dica de ferramenta do botão. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **LongStrings**, que é filho do elemento [Resources](resources.md).|     
 |  [Supertip](supertip.md)  | Sim |  A dica detalhada do botão.    |
-|  [Ícone](icon.md)      | Sim |  Uma imagem para o botão.         |
+|  [Icon](icon.md)      | Sim |  Uma imagem para o botão.         |
 |  **Items**     | Sim |  Um conjunto de botões a exibir dentro do menu. Contém os elementos **Item** para cada item do submenu. Cada elemento **Item** contém os mesmos elementos filhos que [Button control](#button-control).|
 
 ### <a name="menu-control-examples"></a>Exemplo de controle de menu
@@ -244,7 +244,7 @@ O valor `MobileButton` de **xsi:type** é definido no esquema VersionOverrides 1
 ### <a name="child-elements"></a>Elementos filho
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **Label**     | Sim |  O texto do botão. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String** no elemento **ShortStrings** do elemento [Resources](resources.md).        |
+|  **Label**     | Sim |  O texto do botão. O atributo **Resid** deve ser definido como o valor do atributo **ID** de um elemento **String** no elemento **ShortStrings** no elemento [Resources](resources.md) .        |
 |  [Icon](icon.md)      | Sim |  Uma imagem para o botão.         |
 |  [Action](action.md)    | Sim |  Especifica a ação a ser executada.  |
 

@@ -3,16 +3,16 @@ title: Elemento Methods no arquivo de manifesto
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 0d295c2657ef03451c26a324410a684490a180fb
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 52e12de0fde9fa1ede4687c3f27707d1dc3dce5f
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32452092"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325252"
 ---
 # <a name="methods-element"></a>Elemento Methods
 
-Especifica a lista de métodos da API JavaScript para Office que o Suplemento do Office exige para ativar.
+Especifica a lista de métodos da API JavaScript do Office que o suplemento do Office exige para ativar.
 
 **Tipo de suplemento:** Conteúdo, Painel de tarefas
 
@@ -34,5 +34,5 @@ Especifica a lista de métodos da API JavaScript para Office que o Suplemento do
 
 ## <a name="remarks"></a>Comentários
 
-Os elementos **Method** e **Methods** não têm suporte nos suplementos de email. Para saber mais sobre conjuntos de requisitos, confira [Versões do Office e conjuntos de requisitos](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+Os **métodos** e elementos de **método** não têm suporte em suplementos de email. Para obter mais informações sobre conjuntos de requisitos, confira [versões do Office e conjuntos de requisitos](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
 

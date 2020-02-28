@@ -3,12 +3,12 @@ title: Obter ou definir dados de item em um suplemento do Outlook
 description: Dependendo da ativação do suplemento ser em um formulário de leitura ou de composição, as propriedades que estão disponíveis para o suplemento no item variam.
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: be7d14a6c417d01c0537e3375524da5cc807d749
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 925dcaff524be3f4e3d76213c0ee3413a11f43d6
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165733"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325351"
 ---
 # <a name="get-and-set-outlook-item-data-in-read-or-compose-forms"></a>Obter e configurar dados de item do Outlook em formulários de leitura ou composição
 
@@ -18,7 +18,7 @@ Por exemplo, as propriedades [dateTimeCreated](../reference/objectmodel/preview-
 
 ## <a name="item-properties-available-in-compose-and-read-forms"></a>Propriedades de item disponíveis nos formulários de leitura e de redação
 
-A Tabela 1 mostra as propriedades a nível de item na API JavaScript para Office que estão disponíveis em cada modo (leitura e redação) de suplementos de email. Normalmente, essas propriedades disponíveis nos formulários de leitura são somente leitura e as disponíveis nos formulários de redação são de leitura/gravação, com exceção das propriedades [itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties), [conversationId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) e [itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties), que são sempre somente leitura.
+A tabela 1 mostra as propriedades de nível de item da API JavaScript do Office que estão disponíveis em cada modo (ler e redigir) de suplementos de email. normalmente, essas propriedades disponíveis nos formulários de leitura são somente leitura e aquelas disponíveis nos formulários de redação são de leitura/gravação, com exceção das propriedades [ItemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties), [conversaid](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)e [ItemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) , que são sempre somente leitura independentemente.
 
 Para as propriedades do nível de item restantes disponíveis em formulários de composição, como o suplemento e o usuário podem estar lendo ou gravando a mesma propriedade ao mesmo tempo, os métodos para obtê-los ou defini-los s no modo redigir são assíncronos e, portanto, o tipo de objeto retornado por essas propriedades também podem ser diferentes entre os formulários de composição e de leitura. Para saber mais sobre como usar métodos assíncronos para obter ou definir propriedades de nível de item no modo de composição, confira [Obter e definir dados de item em um formulário de composição no Outlook](get-and-set-item-data-in-a-compose-form.md).
 

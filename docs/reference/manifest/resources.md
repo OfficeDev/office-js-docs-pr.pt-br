@@ -3,12 +3,12 @@ title: Elemento Resources no arquivo de manifesto
 description: ''
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: e29e7e36585be8fd728eb46128d7ead538ea8069
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 7e1cd9fcb383fa4d5881917b3dd8d6dec3bbe4f8
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32452050"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324824"
 ---
 # <a name="resources-element"></a>Elemento Resources
 
@@ -29,7 +29,7 @@ Cada recurso pode ter um ou mais elementos filhos **Override** para definir um r
 > Use o protocolo SSL (Secure Sockets Layer) para todas as URLs nos elementos **Image** e **Url**.
 
 ### <a name="images"></a>Imagens
-Cada ícone deve ter três elementos **Images**, um para cada um dos três tamanhos obrigatórios:
+Cada ícone deve ter três elementos **images** , um para cada um dos três tamanhos obrigatórios:
 
 - 16 x 16
 - 32x32

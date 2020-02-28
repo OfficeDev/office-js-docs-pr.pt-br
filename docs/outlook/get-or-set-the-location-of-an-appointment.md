@@ -3,16 +3,16 @@ title: Obter ou definir o local de um compromisso em um suplemento.
 description: Saiba como obter ou definir o local de um compromisso em um suplemento do Outlook.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 7e2c2b604948b7630581af03aa9f8fddc4c68da6
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: cc412da5dd64d8e908b86a81b847f6479dbd4a34
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165849"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324965"
 ---
 # <a name="get-or-set-the-location-when-composing-an-appointment-in-outlook"></a>Obter ou definir o local ao compor um compromisso no Outlook
 
-A API JavaScript para Office fornece propriedades e métodos para gerenciar o local de um compromisso que o usuário está redigindo. No momento, há duas propriedades que fornecem o local de um compromisso:
+A API JavaScript do Office fornece propriedades e métodos para gerenciar o local de um compromisso que o usuário está redigindo. No momento, há duas propriedades que fornecem o local de um compromisso:
 
 - [Item. Location](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): API básica que permite obter e definir o local.
 - [Item. enhancedLocation](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): API avançada que permite obter e definir o local e inclui a especificação do tipo de [local](/javascript/api/outlook/office.mailboxenums.locationtype). O tipo é `LocationType.Custom` se você definir o local usando `item.location`.

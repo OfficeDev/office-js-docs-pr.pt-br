@@ -3,18 +3,18 @@ title: Elemento MobileFormFactor no arquivo de manifesto
 description: ''
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: aead8ea0b60130109c5537dc0017f3a9e3ef986f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 34106011cb855b6ac7c6d0fc21c16fd13e52b281
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450566"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324838"
 ---
 # <a name="mobileformfactor-element"></a>Elemento MobileFormFactor
 
 Especifica as configurações de um suplemento para um fator forma móvel. Ele contém todas as informações do suplemento para o fator forma móvel, exceto para o nó **Resources**.
 
-Cada definição de **MobileFormFactor** contém o elemento **FunctionFile** e um ou mais elementos **ExtensionPoint**. Para saber mais, confira [Elemento FunctionFile](functionfile.md) e [Elemento ExtensionPoint](extensionpoint.md).
+Cada definição de **MobileFormFactor** contém o elemento **functionfile** e um ou mais elementos **ExtensionPoint** . Para saber mais, confira [Elemento FunctionFile](functionfile.md) e [Elemento ExtensionPoint](extensionpoint.md).
 
 O elemento **MobileFormFactor** é definido no esquema VersionOverrides 1.1. O elemento [VersionOverrides](versionoverrides.md) incluído deve ter um valor de atributo `xsi:type` de `VersionOverridesV1_1`.
 

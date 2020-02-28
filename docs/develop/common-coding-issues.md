@@ -1,16 +1,16 @@
 ---
-title: Problemas de codificação comuns e comportamentos de plataforma inesperados
+title: Diretrizes de codificação para problemas comuns e comportamentos de plataforma inesperados
 description: Uma lista de problemas da plataforma de API JavaScript do Office frequentemente encontrada pelos desenvolvedores.
-ms.date: 01/02/2020
+ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: fa33451550ab02f76a8b41ebf682e6a73d2a3a96
-ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
+ms.openlocfilehash: da6986149172238963a06b3296d9fdd7c2411d9d
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "40969490"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324607"
 ---
-# <a name="common-coding-issues-and-unexpected-platform-behaviors"></a>Problemas de codificação comuns e comportamentos de plataforma inesperados
+# <a name="coding-guidance-for-common-issues-and-unexpected-platform-behaviors"></a>Diretrizes de codificação para problemas comuns e comportamentos de plataforma inesperados
 
 Este artigo realça aspectos da API JavaScript do Office que podem resultar em comportamento inesperado ou exigir padrões de codificação específicos para obter o resultado desejado. Se você encontrar um problema que pertença à lista, informe-nos usando o formulário de comentários na parte inferior do artigo.
 

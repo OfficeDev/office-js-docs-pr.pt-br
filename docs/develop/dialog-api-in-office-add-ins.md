@@ -3,12 +3,12 @@ title: Usar a API da Caixa de Diálogo do Office nos suplementos do Office
 description: Conhecer as noções básicas da criação de uma caixa de diálogo em um suplemento do Office
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 18ea221618e2a674266784517be3aa31d029c612
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: ed77173f57c8a16344d469585610917a08d3dcad
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950660"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324677"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Usar a API de diálogo do Office em suplementos do Office
 
@@ -86,7 +86,7 @@ O valor padrão é `false`, que é o mesmo que omitir a propriedade inteiramente
 A caixa de diálogo não pode se comunicar com a página host no painel de tarefas, a menos que:
 
 - A página atual na caixa de diálogo esteja no mesmo domínio da página host.
-- A biblioteca JavaScript do Office seja carregada na página. Como qualquer página que usa a biblioteca JavaScript do Office, o script da página deve atribuir um método à propriedade `Office.initialize`, embora ele possa ser um método vazio. Para mais detalhes, confira [Iniciar o suplemento](understanding-the-javascript-api-for-office.md#initializing-your-add-in).
+- A biblioteca da API JavaScript do Office é carregada na página. (Como qualquer página que usa a biblioteca da API JavaScript do Office, o script para a página deve atribuir um `Office.initialize` método à propriedade, embora possa ser um método vazio. Para obter detalhes, consulte [inicializar o suplemento do Office](initialize-add-in.md).
 
 O código na caixa de diálogo use a função [messageParent](/javascript/api/office/office.ui#messageparent-message-) para enviar uma mensagem de cadeia de caracteres ou um valor booliano para a página host. A cadeia de caracteres pode ser uma palavra, uma frase, um blob XML, um JSON em formato de cadeia de caracteres ou qualquer outra coisa que possa ser serializada em uma cadeia de caracteres. Este é um exemplo:
 

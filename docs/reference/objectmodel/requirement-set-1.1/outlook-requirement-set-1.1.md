@@ -3,16 +3,16 @@ title: Conjunto de requisitos de API para suplementos do Outlook versão 1.1
 description: ''
 ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 2ecd337cd838cd6dd9deb4fe5e77ee789106f3f9
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 159cfb223efff3893bce71687475c5e512b37ede
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165465"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324782"
 ---
 # <a name="outlook-add-in-api-requirement-set-11"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.1
 
-O subconjunto de APIs de suplemento do Outlook para as APIs JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um suplemento do Office. API JavaScript do Outlook 1,1 (caixa de correio 1,1) é a primeira versão da API.
+O subconjunto de APIs de suplemento do Outlook da API JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um suplemento do Outlook. API JavaScript do Outlook 1,1 (caixa de correio 1,1) é a primeira versão da API.
 
 > [!NOTE]
 > Esta documentação destina-se a um [conjunto de requisitos](../../requirement-sets/outlook-api-requirement-sets.md) que não seja o mais recente.

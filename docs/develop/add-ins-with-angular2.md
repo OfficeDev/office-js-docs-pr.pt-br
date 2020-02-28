@@ -3,12 +3,12 @@ title: Desenvolver suplementos do Office para o Angular
 description: ''
 ms.date: 01/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 09092880efcf4d86f38b6559ce5e556a5e5416ce
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 0e78a2e000016e28f2012902e0e8db487b80d930
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950450"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324635"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Desenvolver suplementos do Office para o Angular
 
@@ -29,7 +29,7 @@ npm install --save-dev @types/office-js
 
 ## <a name="bootstrapping-must-be-inside-officeinitialize"></a>A inicialização deve ocorrer no Office.initialize
 
-Em qualquer página que chame as APIs do JavaScript do Office, do Word ou do Excel, seu código deve atribuir primeiro um método para a propriedade `Office.initialize`. (Se você não tiver nenhum código de inicialização, o corpo do método poderá ser apenas símbolos "`{}`" vazios, mas você não deve deixar a propriedade `Office.initialize` indefinida. Para mais detalhes, confira [Iniciar o suplemento](understanding-the-javascript-api-for-office.md#initializing-your-add-in).) O Office chama esse método imediatamente depois que ele inicializa as bibliotecas JavaScript do Office.
+Em qualquer página que chama as APIs JavaScript do Office, Word ou Excel, seu código deve primeiro atribuir um método à `Office.initialize` propriedade. (Se você não tiver código de inicialização, o corpo do método poderá ser apenas`{}`vazio "" símbolos, mas você não deve `Office.initialize` deixar a propriedade indefinida. Para obter detalhes, consulte [inicializar o suplemento do Office](initialize-add-in.md). O Office chama esse método imediatamente depois de inicializar as bibliotecas JavaScript do Office.
 
 **O seu código de inicialização do Angular deve ser chamado dentro do método atribuído a `Office.initialize`** para garantir que as bibliotecas JavaScript do Office inicializem primeiro. O exemplo a seguir mostra como fazer isso. Este código deve estar no arquivo main.ts do projeto.
 

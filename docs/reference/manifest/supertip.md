@@ -3,12 +3,12 @@ title: Elemento Supertip no arquivo de manifesto
 description: ''
 ms.date: 05/07/2019
 localization_priority: Normal
-ms.openlocfilehash: 269a3723db6f98cdb25c61e5a88608c5fb5f3191
-ms.sourcegitcommit: 5b9c2b39dfe76cabd98bf28d5287d9718788e520
+ms.openlocfilehash: ab280ec550a58f85082c36a24f5f7c3b4112a214
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "33659648"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325231"
 ---
 # <a name="supertip"></a>Supertip
 
@@ -21,13 +21,13 @@ Define uma dica de ferramenta avançada (título e descrição). É usada pelos 
 | [Title](#title) | Sim | O texto da superdica. |
 | [Descrição](#description) | Sim | A descrição da superdica.<br>**Observação**: (Outlook) só há suporte para clientes Windows e Mac. |
 
-### <a name="title"></a>Título
+### <a name="title"></a>Cargo
 
-Obrigatório. O texto da superdica. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String** no elemento **ShortStrings** do elemento [Resources](resources.md).
+Obrigatório. O texto da superdica. O atributo **Resid** deve ser definido como o valor do atributo **ID** de um elemento **String** no elemento **ShortStrings** no elemento [Resources](resources.md) .
 
 ### <a name="description"></a>Descrição
 
-Obrigatório. A descrição da superdica. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String** no elemento **LongStrings** do elemento [Resources](resources.md).
+Obrigatório. A descrição da superdica. O atributo **Resid** deve ser definido como o valor do atributo **ID** de um elemento **String** no elemento **LongStrings** no elemento [Resources](resources.md) .
 
 > [!NOTE]
 > Para o Outlook, apenas clientes Windows e Mac dão suporte ao elemento **Description** .

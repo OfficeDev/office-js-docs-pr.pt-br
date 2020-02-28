@@ -1,16 +1,16 @@
 ---
-title: Atualize para a API de JavaScript mais recente da biblioteca do Office e o esquema de manifesto do suplemento da versão 1.1
+title: Atualizar para a biblioteca de API JavaScript do Office mais recente e o esquema de manifesto de suplemento versão 1,1
 description: Atualize seus arquivos de JavaScript (Office.js e arquivos .js específicos do aplicativo) e o arquivo de validação de manifesto de suplemento usados no seu projeto de Suplemento do Office para a versão 1.1.
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: 6acd08a388b162cec4ac30fdfb256adc980d9e69
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: a8f1193d571278531eae169b12bc56e0e560e62e
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626751"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324649"
 ---
-# <a name="update-to-the-latest-javascript-api-for-office-library-and-version-11-add-in-manifest-schema"></a>Atualize para a API de JavaScript mais recente da biblioteca do Office e o esquema de manifesto do suplemento da versão 1.1
+# <a name="update-to-the-latest-office-javascript-api-library-and-version-11-add-in-manifest-schema"></a>Atualizar para a biblioteca de API JavaScript do Office mais recente e o esquema de manifesto de suplemento versão 1,1
 
 Este artigo descreve como atualizar os arquivos do JavaScript (Office.js e arquivos .js específicos do aplicativo) e o arquivo de validação do manifesto do suplemento no projeto do suplemento do Office para a versão 1.1.
 
@@ -19,7 +19,7 @@ Este artigo descreve como atualizar os arquivos do JavaScript (Office.js e arqui
 
 ## <a name="use-the-most-up-to-date-project-files"></a>Usar os arquivos de projeto mais atualizados
 
-Se você usar o Visual Studio para desenvolver seu suplemento, para usar os membros mais recentes da API da API JavaScript para Office e os [recursos do v 1.1 do manifesto do suplemento](../develop/add-in-manifests.md) (que é validado no offappmanifest-1.1. xsd), será necessário baixar o Visual Studio 2019. Para baixar o Visual Studio 2019, confira a [página IDE do Visual Studio](https://visualstudio.microsoft.com/vs/). Durante a instalação, você precisará selecionar a carga de trabalho de desenvolvimento do Office/SharePoint.
+Se você usar o Visual Studio para desenvolver seu suplemento, para usar os membros mais recentes da API da API JavaScript do Office e os [recursos do v 1.1 do manifesto do suplemento](../develop/add-in-manifests.md) (que é validado no offappmanifest-1.1. xsd), será necessário baixar o Visual Studio 2019. Para baixar o Visual Studio 2019, confira a [página IDE do Visual Studio](https://visualstudio.microsoft.com/vs/). Durante a instalação, você precisará selecionar a carga de trabalho de desenvolvimento do Office/SharePoint.
 
 Se estiver usando um editor de texto ou IDE que não o Visual Studio para desenvolver o suplemento, é precisa atualizar as referências à CDN para o Office.js e a versão do esquema consultada pelo manifesto do suplemento.
 
@@ -36,21 +36,20 @@ Para baixar os produtos do Office, SharePoint e Exchange SP1, consulte o seguint
 
 ## <a name="updating-an-office-add-in-project-created-with-visual-studio"></a>Atualização de um projeto de suplemento do Office criado com o Visual Studio
 
-Para projetos criados antes do lançamento da v1.1 da API JavaScript para Office e o esquema de manifesto do suplemento, é possível atualizar os arquivos de um projeto usando o **NuGet Package Manager** e, em seguida, atualizar as páginas HTML do suplemento para fazer referência a eles. 
+Para projetos criados antes do lançamento da versão v 1.1 da API JavaScript do Office e do esquema de manifesto de suplemento, você pode atualizar os arquivos de um projeto usando o **Gerenciador de pacotes do NuGet**e, em seguida, atualizar as páginas HTML do suplemento para fazer referência a eles. 
 
 Observe que o processo de atualização é aplicado _por projeto_. Você precisará repetir o processo de atualização para cada projeto de suplemento em que deseja usar a v1.1 do Office.js e o esquema de manifesto de suplemento.
 
-
-### <a name="update-the-javascript-api-for-office-library-files-in-your-project-to-the-newest-release"></a>Atualizar os arquivos da biblioteca da API JavaScript para Office em seu projeto para a versão mais recente
+### <a name="update-the-office-javascript-api-library-files-in-your-project-to-the-newest-release"></a>Atualizar os arquivos da biblioteca da API JavaScript do Office em seu projeto para a versão mais recente
 As etapas a seguir atualizarão seus arquivos de biblioteca do Office. js para a versão mais recente. As etapas usam o Visual Studio 2019, mas são semelhantes para versões anteriores do Visual Studio.
 
 1. No Visual Studio 2019, abra ou crie um novo projeto de **suplemento do Office** .
-2. Escolha **Ferramentas** > **Gerenciador de Pacotes NuGet** > **Gerenciar Pacotes Nuget para a solução**.
+2. Escolha **ferramentas** > **NuGet Package Manager** > **gerenciar pacotes NuGet para solução**.
 3. Escolha a guia **Atualizações**.
 4. Selecione Microsoft.Office.js. Verifique se a origem do pacote é de **NuGet.org**.
 5. No painel esquerdo, escolha **instalar** e concluir o processo de atualização do pacote.
 
-Você precisará realizar algumas etapas adicionais para concluir a atualização. Na marca **head** das páginas HTML do suplemento, comente ou exclua quaisquer referências existentes ao script office.js e faça referência à biblioteca atualizada da API JavaScript para Office da seguinte maneira:
+Você precisará realizar algumas etapas adicionais para concluir a atualização. Na marca **Head** das páginas HTML do suplemento, comente ou exclua as referências de script do Office. js existentes e faça referência à biblioteca atualizada da API JavaScript do Office da seguinte maneira:
 
   ```html
   <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
@@ -76,25 +75,25 @@ No arquivo de manifesto do suplemento, atualize o atributo **xmlns** do elemento
 ```
 
 > [!NOTE]
-> Após atualizar a versão do esquema do manifesto do suplemento para 1.1, será preciso remover os elementos **Capabilities** e **Capability** e substituí-los pelos [Hosts](/office/dev/add-ins/reference/manifest/hosts) e elementos [Host](/office/dev/add-ins/reference/manifest/host) ou pelos [elementos Requirements e Requirement](specify-office-hosts-and-api-requirements.md).
+> Após a atualização da versão do esquema de manifesto do suplemento para 1,1, você precisará remover os **recursos** e os elementos de **capacidade** e substituí-los pelos elementos [hosts](/office/dev/add-ins/reference/manifest/hosts) e [host](/office/dev/add-ins/reference/manifest/host) ou nos [elementos requirements](specify-office-hosts-and-api-requirements.md)e requirement.
 
 ## <a name="updating-an-office-add-in-project-created-with-a-text-editor-or-other-ide"></a>Atualização de um projeto de suplemento do Office criado com um editor de texto ou outro IDE
 
-Para projetos criados antes do lançamento da v1.1 da API JavaScript para Office e o esquema de manifesto de suplemento, é preciso atualizar as páginas HTML do suplemento para fazerem referência à CDN da biblioteca v1.1 e atualizar o arquivo de manifesto do suplemento para usar a v1.1 do esquema. 
+Para projetos criados antes da versão do v 1.1 da API JavaScript do Office e do esquema de manifesto de suplemento, você precisa atualizar suas páginas HTML do suplemento para fazer referência à CDN da biblioteca v 1.1 e atualizar o arquivo de manifesto do suplemento para usar o esquema v 1.1. 
 
 O processo de atualização é aplicado _por projeto_. Você precisará repetir o processo de atualização para cada projeto de suplemento em que deseja usar a v1.1 do Office.js e o esquema de manifesto de suplemento.
 
-Você não precisa de cópias locais dos arquivos da API JavaScript para Office (Office.js e arquivos .js específicos do aplicativo) para desenvolver um suplemento do Office (a referência à CDN para Office.js baixa os arquivos necessários no tempo de execução). Porém, se desejar uma cópia local dos arquivos da biblioteca, pode usar o [Utilitário de Linha de Comando NuGet](https://docs.nuget.org/consume/installing-nuget) e o comando `Install-Package Microsoft.Office.js` para baixá-los.
+Você não precisa de cópias locais dos arquivos da API JavaScript do Office (Office. js e arquivos. js específicos do aplicativo) para desenvolver o suplemento do Office (fazer referência à CDN para o Office. js baixa os arquivos necessários em tempo de execução), mas se você quiser uma cópia local dos arquivos da biblioteca, poderá usar o utilitário de `Install-Package Microsoft.Office.js` [linha de comando NuGet](https://docs.nuget.org/consume/installing-nuget) e o comando para baixá-los
 
 > [!NOTE]
 > Para obter uma cópia da XSD (Definição de esquema XML) para o manifesto do suplemento v1.1, confira a listagem em [Referência de esquema para manifestos de Suplementos do Office (v1.1)](../develop/add-in-manifests.md).
 
 
-### <a name="update-the-javascript-api-for-office-library-files-in-your-project-to-use-the-newest-release"></a>Atualizar os arquivos da biblioteca da API JavaScript para Office em seu projeto para usar a versão mais recente
+### <a name="update-the-office-javascript-api-library-files-in-your-project-to-use-the-newest-release"></a>Atualizar os arquivos da biblioteca da API JavaScript do Office em seu projeto para usar a versão mais recente
 
 1. Abra as páginas HTML do suplemento no editor de texto ou IDE.
 
-2. Na marca **head** das páginas HTML do suplemento, comente ou exclua quaisquer referências existentes ao script office.js e faça referência à biblioteca atualizada da API JavaScript para Office da seguinte maneira:
+2. Na marca **Head** das páginas HTML do suplemento, comente ou exclua as referências de script do Office. js existentes e faça referência à biblioteca atualizada da API JavaScript do Office da seguinte maneira:
 
     ```html
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
@@ -119,11 +118,11 @@ No arquivo de manifesto do suplemento, atualize o atributo **xmlns** do elemento
 ```
 
 > [!NOTE]
-> Após atualizar a versão do esquema do manifesto do suplemento para 1.1, será preciso remover os elementos **Capabilities** e **Capability** e substituí-los pelos [Hosts](/office/dev/add-ins/reference/manifest/hosts) e elementos [Host](/office/dev/add-ins/reference/manifest/host) ou pelos [elementos Requirements e Requirement](specify-office-hosts-and-api-requirements.md).
+> Após a atualização da versão do esquema de manifesto do suplemento para 1,1, você precisará remover os **recursos** e os elementos de **capacidade** e substituí-los pelos elementos [hosts](/office/dev/add-ins/reference/manifest/hosts) e [host](/office/dev/add-ins/reference/manifest/host) ou nos [elementos requirements](specify-office-hosts-and-api-requirements.md)e requirement.
 
 ## <a name="see-also"></a>Confira também
 
 - [Especificar hosts do Office e requisitos de API](specify-office-hosts-and-api-requirements.md) ]
-- [Noções básicas da API JavaScript para Office](understanding-the-javascript-api-for-office.md)
+- [Noções básicas sobre a API JavaScript do Office](understanding-the-javascript-api-for-office.md)
 - [API JavaScript para Office](/office/dev/add-ins/reference/javascript-api-for-office)
 - [Referência de esquema para manifestos de suplementos do Office (versão 1.1)](../develop/add-in-manifests.md)

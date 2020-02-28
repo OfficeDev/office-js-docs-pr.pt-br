@@ -3,12 +3,12 @@ title: Realizar sideload de suplementos do Office no Office na Web para teste
 description: Testar o suplemento do Office no Office na web através de sideloading
 ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 869cabec737c39d7dded04fe7c52011347e0f314
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 43dafda913516119ba1aadaae24701865596205f
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42163581"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325035"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>Realizar sideload de suplementos do Office no Office na Web para teste
 
@@ -27,11 +27,11 @@ O vídeo a seguir oferece orientações para o processo de sideload do seu suple
 
 1. Abra o [Microsoft Office na Web](https://office.live.com/).
 
-2. Em **Comece a usar os aplicativos online agora**, escolha **Excel**, **Word** ou **PowerPoint** e abra um novo documento.
+2. Em introdução **aos aplicativos online agora**, escolha **Excel**, **Word**ou **PowerPoint**; e, em seguida, abra um novo documento.
 
-3. Abra a guia **Inserir** na faixa de opções e, na seção **Suplementos**, escolha **Suplementos do Office**.
+3. Abra a guia **Inserir** na faixa de opções e, na seção **suplementos** , escolha **suplementos do Office**.
 
-4. Na caixa de diálogo **Suplementos do Office**, selecione a guia **MEUS SUPLEMENTOS**, escolha **Gerenciar Meus Suplementos** e **Carregar Meu Suplemento**.
+4. Na caixa de diálogo **suplementos do Office** , selecione a guia **meus suplementos** , escolha **gerenciar meus suplementos**e, em seguida, **carregar meu suplemento**.
 
     ![A caixa de diálogo Suplementos do Office com um menu suspenso "Gerenciar meus suplementos" no canto superior direito e abaixo o menu suspenso com a opção "Carregar meu suplemento"](../images/office-add-ins-my-account.png)
 
@@ -54,7 +54,7 @@ O vídeo a seguir oferece orientações para o processo de sideload do seu suple
 
 1. Entre em sua conta do Office 365.
 
-2. Abra o inicializador de aplicativos à esquerda da barra de ferramentas, selecione  **Excel**, **Word** ou **PowerPoint** e crie um novo documento.
+2. Abra o inicializador de aplicativos na extremidade esquerda da barra de ferramentas e selecione **Excel**, **Word**ou **PowerPoint**e, em seguida, crie um novo documento.
 
 3. As etapas 3 a 6 são as mesmas da seção anterior **Realize sideload para um suplemento do Office no Office na Web**. 
 

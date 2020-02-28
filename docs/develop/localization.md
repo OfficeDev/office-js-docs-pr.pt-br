@@ -1,22 +1,22 @@
 ---
 title: Localização para Suplementos do Office
-description: Você pode usar a API JavaScript para Office para determinar uma localidade e exibir cadeias de caracteres com base na localidade do aplicativo host ou para interpretar ou exibir dados com base na localidade dos dados.
+description: Você pode usar a API JavaScript do Office para determinar uma localidade e exibir cadeias de caracteres com base na localidade do aplicativo host ou para interpretar ou exibir dados com base na localidade dos dados.
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: c2404177f2188a505522d972d5bdfdf323394eba
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: af91923871b72279b749dec4ff2f9fa4460a72d5
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37626765"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42323788"
 ---
 # <a name="localization-for-office-add-ins"></a>Localização para Suplementos do Office
 
-Você pode implementar qualquer esquema de localização que seja apropriado para o seu Suplemento do Office. A API JavaScript e o esquema do manifesto da plataforma de Suplementos do Office oferecem algumas opções. Você pode usar a API JavaScript para Office para determinar uma localidade e exibir cadeias de caracteres com base na localidade do aplicativo host ou para interpretar ou exibir dados com base na localidade dos dados. Você pode usar o manifesto para especificar informações descritivas e o local do arquivo do suplemento específico da localidade. Como alternativa, você pode usar o script do Microsoft Ajax para dar suporte à globalização e localização.
+Você pode implementar qualquer esquema de localização que seja apropriado para o seu Suplemento do Office. A API JavaScript e o esquema do manifesto da plataforma de Suplementos do Office oferecem algumas opções. Você pode usar a API JavaScript do Office para determinar uma localidade e exibir cadeias de caracteres com base na localidade do aplicativo host ou para interpretar ou exibir dados com base na localidade dos dados. Você pode usar o manifesto para especificar informações descritivas e o local do arquivo do suplemento específico da localidade. Como alternativa, você pode usar o script do Microsoft Ajax para dar suporte à globalização e localização.
 
 ## <a name="use-the-javascript-api-to-determine-locale-specific-strings"></a>Usar a API JavaScript para determinar cadeias de caracteres específicas da localidade
 
-A API JavaScript para Office fornece duas propriedades que oferecem suporte à exibição ou interpretação de valores consistentes com a localidade do aplicativo host e dos dados:
+A API JavaScript do Office fornece duas propriedades que oferecem suporte à exibição ou interpretação de valores consistentes com a localidade do aplicativo host e dos dados:
 
 - [Context.displayLanguage][displayLanguage] especifica a localidade (ou o idioma) da interface do usuário do aplicativo host. O exemplo a seguir verifica se o aplicativo host usa a localidade en-US ou fr-FR e exibe uma saudação específica para a localidade.
 
@@ -189,9 +189,9 @@ Você precisará criar um projeto de suplemento do Office do Visual Studio 2019.
 > [!NOTE]
 > Se você ainda não instalou o Visual Studio 2019, consulte a [página do Visual Studio IDE](https://visualstudio.microsoft.com/vs/) para obter instruções de download. Durante a instalação, você precisará selecionar a carga de trabalho de desenvolvimento do Office/SharePoint. Se você já instalou o Visual Studio 2019, [use o instalador do Visual Studio](/visualstudio/install/modify-visual-studio/) para garantir que a carga de trabalho de desenvolvimento do Office/SharePoint esteja instalada.
 
-1. Escolha **criar um novo projeto**.
+1. Escolha **Criar um novo projeto**.
 
-2. Usando a caixa de pesquisa, insira o **suplemento**. Escolha **suplemento da Web do Word**e, em seguida, selecione **Avançar**.
+2. Usando a caixa de pesquisa, insira **suplemento**. Escolha **Suplemento do Word Web **, em seguida, selecione **Próximo**.
 
 3. Nomeie o projeto **WorldReadyAddIn** e selecione **criar**.
 
@@ -208,7 +208,7 @@ O texto que você deseja localizar para outro idioma aparece em duas áreas:
 
 Para localizar o nome de exibição e a descrição do suplemento:
 
-1. Em **Gerenciador de Soluções**, expanda **WorldReadyAddIn**, **WorldReadyAddInManifest** e, em seguida, selecione **WorldReadyAddIn.xml**.
+1. No **Gerenciador de soluções**, expanda **WorldReadyAddIn**, **WorldReadyAddInManifest**e, em seguida, escolha **WorldReadyAddIn. xml**.
 
 2. No arquivo WorldReadyAddInManifest.xml, substitua os elementos [DisplayName] e [Description] pelo seguinte bloco de código:
 
@@ -335,7 +335,7 @@ Agora você pode usar o objeto **UIStrings** para definir as cadeias de caracter
 
 Se você quiser alterar a localização do seu suplemento com base no idioma usado para exibição nos menus e comandos no aplicativo host, use a propriedade **Office.context.displayLanguage** para obter a localidade desse idioma. Por exemplo, se o idioma do aplicativo host utilizar espanhol para exibir menus e comandos, a propriedade **Office.context.displayLanguage** retornará o código es-ES.
 
-Se você quiser alterar a localização do seu suplemento com base no idioma que está sendo usado para editar o conteúdo do documento, use a propriedade **Office.context.contentLanguage** para obter a localidade do idioma. Por exemplo, se o idioma do aplicativo host utilizar espanhol para editar o conteúdo do documento, a propriedade **Office.context.contentLanguage** retornará o código es-ES.
+Se você quiser alterar a localização do seu suplemento com base em qual idioma está sendo usado para editar o conteúdo do documento, use a propriedade **Office. Context. contentLanguage** para obter a localidade desse idioma. Por exemplo, se o idioma do aplicativo host utilizar espanhol para editar o conteúdo do documento, a propriedade **Office.context.contentLanguage** retornará o código es-ES.
 
 Depois que você souber o idioma que o aplicativo host está utilizando, é possível usar **UIStrings** para obter o conjunto de cadeias de caracteres localizadas correspondentes ao idioma do aplicativo host.
 
@@ -391,7 +391,7 @@ Para alterar o idioma usado para exibir ou editar no seu suplemento:
 
     ![Caixa de diálogo Opções do Word](../images/office15-app-how-to-localize-fig04.png)
 
-2. Em **Escolher Idioma de Exibição**, selecione o idioma desejado para exibição, por exemplo, espanhol, e selecione a seta para cima para mover o idioma espanhol para a primeira posição na lista. Ou, para alterar o idioma usado para edição, em **Escolher Idiomas de Edição**, escolha o idioma que você deseja usar para edição, por exemplo, espanhol, e selecione **Definir como Padrão**.
+2. Em **Escolher Idioma de Exibição**, selecione o idioma desejado para exibição, por exemplo, espanhol, e selecione a seta para cima para mover o idioma espanhol para a primeira posição na lista. Como alternativa, para alterar o idioma usado para edição, em **escolher idiomas de edição**, escolha o idioma que você deseja usar para edição, por exemplo, espanhol e, em seguida, escolha **definir como padrão**.
 
 3. Escolha **OK** para confirmar sua seleção e feche o Word.
 

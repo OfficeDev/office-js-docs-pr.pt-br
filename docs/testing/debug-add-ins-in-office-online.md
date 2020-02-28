@@ -3,12 +3,12 @@ title: Depurar suplementos no Office na Web
 description: Como usar o Office na Web para testar e depurar seus suplementos.
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: d28ffc7cba6d7029799bc8d5931c873bf8390d21
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 76f26a58cca2e89e50547188b99259ee250b550d
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950926"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325161"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>Depurar suplementos no Office na Web
 
@@ -46,7 +46,7 @@ Para depurar seu suplemento usando o Office na Web:
 
 4. Inicie o Excel ou Word na Web do inicializador de aplicativos no Office 365 e abra um novo documento.
 
-5. Na guia Inserir, escolha **Meus Suplementos** ou **Suplementos do Office** para inserir seu suplemento e testá-lo no aplicativo.
+5. Na guia Inserir, escolha **meus** suplementos ou **suplementos do Office** para inserir seu suplemento e testá-lo no aplicativo.
 
 6. Use seu depurador de navegador favorito para depurar o suplemento.
 

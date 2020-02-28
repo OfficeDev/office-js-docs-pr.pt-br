@@ -3,12 +3,12 @@ title: Usar temas de documentos em seus suplementos do PowerPoint
 description: ''
 ms.date: 10/14/2019
 localization_priority: Normal
-ms.openlocfilehash: bb37f4a9f1860d38c2218a00fbd8c8092beadd63
-ms.sourcegitcommit: 499bf49b41205f8034c501d4db5fe4b02dab205e
+ms.openlocfilehash: 83b4c2192ba3c01deedfe69a8338265fbf7eaf53
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "37627003"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324916"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>Usar temas de documentos em seus suplementos do PowerPoint
 
@@ -26,7 +26,7 @@ Todo tema de documento do Office define 12 cores. Dez dessas cores ficam dispon�
 
 ![Paleta de cores](../images/office15-app-color-palette.png)
 
-Para exibir ou personalizar o conjunto completo de 12 cores de temas no PowerPoint, no grupo  **Variantes** da guia **Design**, clique no menu suspenso **Mais** em seguida, selecione **Cores** > **Personalizar Cores** para exibir a caixa de diálogo**Criar Novas Cores de Tema**.
+Para exibir ou personalizar o conjunto completo de 12 cores de tema no PowerPoint, no **grupo variantes** na guia **design** , clique na lista **suspensa mais** e, em seguida, selecione **cores** > **Personalizar cores** para exibir a caixa de diálogo **criar novas cores de tema** .
 
 ![Criar caixas de diálogo de novas cores de tema](../images/office15-app-create-new-theme-colors.png)
 
@@ -34,17 +34,17 @@ As quatro primeiras cores são para texto e planos de fundo. O texto criado com 
 
 ### <a name="document-theme-fonts"></a>Fontes de tema do documento
 
-Cada tema de documento do Office também define duas fontes: uma para títulos e outra para o corpo do texto. O PowerPoint usa essas fontes para construir os estilos de texto automáticos. Além disso, as galerias **Estilos Rápidos** para texto e **WordArt** usam essas mesmas fontes de tema. Essas duas fontes ficam disponíveis como as duas primeiras seleções quando você usa o seletor de fonte.
+Cada tema de documento do Office também define duas fontes: uma para títulos e outra para o corpo do texto. O PowerPoint usa essas fontes para construir os estilos de texto automáticos. Além disso, as galerias de **estilos rápidos** para texto e **WordArt** usam essas fontes de tema. Essas duas fontes ficam disponíveis como as duas primeiras seleções quando você usa o seletor de fonte.
 
 ![O seletor de fonte](../images/office15-app-font-picker.png)
 
-Para exibir ou personalizar as fontes de tema no PowerPoint, no grupo**Variantes** da guia **Design** clique no menu suspenso**Mais** em seguida, selecione **Fontes** > **Personalizar Fontes** para exibir a caixa de diálogo**Criar Novas Fontes de Tema**.
+Para exibir ou personalizar fontes de tema no PowerPoint, no grupo **variantes** na guia **design** , clique na lista **suspensa mais** e, em seguida, **selecione fontes** > **Personalizar** fontes para exibir a caixa de diálogo **criar novas fontes de tema** .
 
 ![Criar caixas de diálogo de novas fontes de tema](../images/office15-app-create-new-theme-fonts.png)
 
 ### <a name="office-ui-theme-fonts-and-colors"></a>Cores e fontes de tema da interface de usuário do Office
 
-O Office também permite escolher entre vários temas predefinidos que especificam algumas das cores e fontes usadas na interface de usuário de todos os aplicativos do Office. Para fazer isso, use o menu suspenso **Arquivo** > **Conta** > **Tema do Office** (de qualquer aplicativo do Office).
+O Office também permite escolher entre vários temas predefinidos que especificam algumas das cores e fontes usadas na interface de usuário de todos os aplicativos do Office. Para fazer isso, você usa a lista suspensa de temas de**conta** > de **arquivo** > do**Office** (de qualquer aplicativo do Office).
 
 ![Menu suspenso de tema do Office](../images/office15-app-office-theme-picker.png)
 
@@ -143,11 +143,11 @@ Para fazer isso no Visual Studio, execute estas etapas.
 
 #### <a name="to-reference-officethemescss-in-your-add-in-for-powerpoint"></a>Para fazer referência ao OfficeThemes.css em seu suplemento para PowerPoint
 
-1. Escolha **criar um novo projeto**.
+1. Escolha **Criar um novo projeto**.
 
-2. Usando a caixa de pesquisa, insira o **suplemento**. Escolha **suplemento do PowerPoint Web**e, em seguida, selecione **Avançar**.
+2. Usando a caixa de pesquisa, insira **suplemento**. Escolha **Suplemento do PowerPoint Web **, em seguida, selecione **Próximo**.
 
-3. Nomeie o projeto e selecione **criar**.
+3. Nomeie seu projeto e selecione **Criar**.
 
 3. Na caixa de diálogo **Criar suplementos do Office**, escolha **Adicionar novas funcionalidades ao PowerPoint**e depois **Concluir** para criar o projeto.
 
@@ -180,7 +180,7 @@ Veja a seguir um exemplo simples de HTML em um suplemento de conteúdo que usa a
 </body>
 ```
 
-No tempo de execução, quando inserido em uma apresentação que usa o **Tema do Office** padrão, o suplemento de conteúdo é processado da maneira a seguir.
+No tempo de execução, quando inserido em uma apresentação que usa o **tema do Office**padrão, o suplemento de conteúdo é renderizado dessa forma.
 
 ![Conteúdo do aplicativo sendo executado com tema Office](../images/office15-app-content-app-office-theme.png)
 

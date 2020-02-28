@@ -3,12 +3,12 @@ title: Limites de recurso e otimização de desempenho para Suplementos do Offic
 description: ''
 ms.date: 09/09/2019
 localization_priority: Normal
-ms.openlocfilehash: 332ea72e9c96ff7a9b61a4fb0249284ca44079ac
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 5263abdafb6655325a22754ab22f36b99ca32cbe
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42162787"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42323886"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites de recurso e otimização de desempenho para Suplementos do Office
 
@@ -26,7 +26,7 @@ Os limites de uso de recursos de tempo de execução aplicam-se a todos os tipos
 
 - **Uso de memória**: um limite de uso de memória padrão que é determinado dinamicamente com base na memória física disponível do dispositivo.
 
-   Por padrão, quando um cliente avançado de host detecta que o uso da memória física em um dispositivo excedeu 80% da memória disponível, o cliente começa a monitorar o uso de memória do suplemento, no âmbito de um documento para suplementos de conteúdo e de painel de tarefas e no âmbito de caixa de correio para suplementos do Outlook. Com um intervalo padrão de 5 segundos, o cliente avisa o usuário se o uso da memória física exceder os 50% em um conjunto de suplementos de documento ou de caixa de correio. Esse limite de uso da memória utiliza a memória física, e não a virtual, para garantir o desempenho em dispositivos com RAM limitada, como tablets. Os administradores podem sobrepor esta configuração dinâmica com um limite explícito usando a chave de registro do Windows **MemoryAlertThreshold** como configuração global, ou ajustando o intervalo de alerta usando a chave **AlertInterval** como configuração global.
+   Por padrão, quando um cliente avançado do host detecta que o uso da memória física em um dispositivo excede 80% da memória disponível, o cliente começa a monitorar o uso da memória do suplemento, em um nível de documento para suplementos de conteúdo e de painel de tarefas e em um nível de caixa de correio para suplementos do Outlook. Em um intervalo padrão de 5 segundos, o cliente avisará o usuário se o uso da memória física para um conjunto de suplementos no nível do documento ou da caixa de correio exceder 50%. Esse limite de uso de memória usa memória física, em vez de virtual, para garantir o desempenho de dispositivos com RAM limitada, como Tablets. Os administradores podem substituir essa configuração dinâmica com um limite explícito usando a chave de registro do Windows **MemoryAlertThreshold** como uma configuração global, ir ajustar o intervalo de alerta usando a chave **AlertInterval** como uma configuração global.
 
 - **Tolerância a falhas**: um limite padrão de quatro falhas para um suplemento.
 
@@ -47,11 +47,11 @@ Além do núcleo da CPU, da memória e de regras de confiabilidade, os suplement
 
 - **Tempo de resposta de expressões regulares**: um limite padrão de 1.000 milissegundos para que o Outlook avalie todas as expressões regulares no manifesto de um suplemento do Outlook. Exceder o limite faz com que o Outlook repita a avaliação posteriormente.
 
-    Usando uma política de grupo ou uma configuração específica do aplicativo no registro do Windows, os administradores podem ajustar esse valor limite padrão de 1.000 milissegundos na configuração **OutlookActivationAlertThreshold**.
+    Usando uma política de grupo ou uma configuração específica do aplicativo no registro do Windows, os administradores podem ajustar esse valor de limite padrão de 1.000 milissegundos na configuração **OutlookActivationAlertThreshold** .
 
-- **Reavaliação de expressões regulares**: um limite padrão de três vezes para que o Outlook reavalie todas as expressões regulares em um manifesto. Se a avaliação falhar todas as três vezes excedendo o limite aplicável (que é o padrão de 1.000 milissegundos ou um valor especificado por **OutlookActivationAlertThreshold**, se essa configuração existir no Registro do Windows), o Outlook desabilitará o suplemento do Outlook. O Centro de Administração do Exchange exibe o status desabilitado e o suplemento é desabilitado para uso nos clientes avançados do Outlook, no Outlook Online e para dispositivos móveis.
+- **Reavaliação de expressões regulares** -um limite padrão de três vezes para o Outlook reavaliar todas as expressões regulares em um manifesto. Se a avaliação falhar em todos os três momentos exceder o limite aplicável (que é o padrão de 1.000 milissegundos ou um valor especificado por **OutlookActivationAlertThreshold**, se essa configuração existir no registro do Windows), o Outlook desabilitará o suplemento do Outlook. O centro de administração do Exchange exibe o status desabilitado, e o suplemento é desabilitado para uso nos clientes avançados do Outlook e no Outlook na Web e em dispositivos móveis.
 
-    Usando uma política de grupo ou uma configuração específica do aplicativo no registro do Windows, os administradores podem ajustar esse número de novas tentativas de avaliação na configuração **OutlookActivationManagerRetryLimit**.
+    Usando uma política de grupo ou uma configuração específica do aplicativo no registro do Windows, os administradores podem ajustar esse número de vezes para tentar a avaliação novamente na configuração **OutlookActivationManagerRetryLimit** .
 
 ### <a name="task-pane-and-content-add-ins"></a>Suplementos do painel de tarefas e de conteúdo
 
@@ -81,10 +81,10 @@ A tabela a seguir lista os eventos que o Log de Telemetria acompanha para os Sup
 |8|Manifesto de suplemento não baixado|Crítico|O aplicativo host não pôde carregar o arquivo de manifesto do suplemento do Office do catálogo do SharePoint, do catálogo corporativo ou do AppSource.|
 |9|Não foi possível analisar a marcação do suplemento|Crítico|O aplicativo host carregou o manifesto do suplemento do Office, mas não pôde ler a marcação HTML do aplicativo.|
 |10|O suplemento usou CPU em excesso|Crítico|O suplemento do Office usou mais de 90% dos recursos da CPU em um período de tempo finito.|
-|15|Suplemento desabilitado porque esgotou o tempo limite na pesquisa de cadeia de caracteres||Os suplementos do Outlook pesquisam a linha de assunto e a mensagem de um e-mail para determinar se devem ser exibidas usando uma expressão regular. O suplemento do Outlook listado na coluna **Arquivo** foi desabilitado pelo Outlook porque atingiu o tempo limite repetidamente ao tentar fazer a correspondência de uma expressão regular.|
+|15|Suplemento desabilitado porque esgotou o tempo limite na pesquisa de cadeia de caracteres||Os suplementos do Outlook pesquisam a linha de assunto e a mensagem de um email para determinar se eles devem ser exibidos usando uma expressão regular. O suplemento do Outlook listado na coluna **arquivo** foi desabilitado pelo Outlook porque ele atingiu o tempo limite repetidamente ao tentar corresponder a uma expressão regular.|
 |18|Suplemento fechado com êxito||O aplicativo host conseguiu fechar o suplemento do Office com êxito.|
-|19|O suplemento encontrou um erro de tempo de execução|Crítico|O suplemento do Office teve um problema que causou sua falha. Para saber mais, examine o log de **Alertas do Microsoft Office** usando o Visualizador de Eventos do Windows no computador que encontrou o erro.|
-|20|Falha ao verificar a licença do suplemento|Crítico|As informações de licenciamento do suplemento do Office não puderam ser verificadas e podem ter expirado. Para saber mais, examine o log de **Alertas do Microsoft Office** usando o Visualizador de Eventos do Windows no computador que encontrou o erro.|
+|19|O suplemento encontrou um erro de tempo de execução|Crítico|O suplemento do Office teve um problema que causou a falha. Para obter mais detalhes, consulte o log de **alertas do Microsoft Office** usando o Visualizador de eventos do Windows no computador que encontrou o erro.|
+|20|Falha ao verificar a licença do suplemento|Crítico|As informações de licenciamento para o suplemento do Office não puderam ser verificadas e podem ter expirado. Para obter mais detalhes, consulte o log de **alertas do Microsoft Office** usando o Visualizador de eventos do Windows no computador que encontrou o erro.|
 
 Saiba mais em [Implantar o Painel de Telemetria](/previous-versions/office/office-2013-resource-kit/jj219431(v=office.15)) e [Solução de problemas de arquivos do Office e soluções personalizadas com o log de telemetria](/office/client-developer/shared/troubleshooting-office-files-and-custom-solutions-with-the-telemetry-log).
 

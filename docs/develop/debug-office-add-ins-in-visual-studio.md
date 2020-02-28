@@ -3,12 +3,12 @@ title: Depurar suplementos do Office no Visual Studio
 description: Use o Visual Studio para depurar suplementos do Office na área de trabalho do cliente Office no Windows
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 3bfbc52a8739cb5d51868794f1be701de52b292e
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: d55b764343b5dc7c850a35b013b134fa2ad5a069
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950597"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324614"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Depurar suplementos do Office no Visual Studio
 
@@ -35,7 +35,7 @@ Abrir a janela **Propriedades**para o projeto de suplemento revisar as proprieda
 
 1. No **Explorador de soluções** Escolha o projeto do suplemento (*não* o projeto do aplicativo Web).
 
-2. Na barra de menus, escolha **Exibir** >  **Janela Propriedades**.
+2. Na barra de menus, escolha **Exibir**,  > **Janela Propriedades**.
 
 A tabela a seguir descreve as propriedades do projeto.
 
@@ -59,9 +59,9 @@ A tabela a seguir descreve as propriedades do projeto.
 
 Abrir a janela **Propriedades**para o projeto de aplicativo Web para revisar as propriedades do projeto:
 
-1. No **Explorador de soluções** Escolha o projeto o projeto do aplicativo Web.
+1. No **Gerenciador de soluções**, escolha o projeto de aplicativo Web.
 
-2. Na barra de menus, escolha **Exibir** >  **Janela Propriedades**.
+2. Na barra de menus, escolha **Exibir**,  > **Janela Propriedades**.
 
 A tabela a seguir descreve as propriedades do projeto de aplicativo web que são mais relevantes para projetos de suplementos do Office.
 
@@ -119,7 +119,7 @@ Depois, o Visual Studio faz o seguinte:
 
 3. Abre o aplicativo host.
 
-O Visual Studio não mostra erros de validação na janela **OUTPUT** ao compilar o projeto. O Visual Studio relata erros e avisos na janela **ERRORLIST** à medida que eles ocorrem. O Visual Studio também relata erros de validação mostrando sublinhados ondulados (conhecidos como rabiscos) de cores diferentes no editor de código e texto. Essas marcas o notificam de problemas que o Visual Studio detectou no código. Para saber mais sobre como habilitar ou desabilitar a validação, confira: [Opções, Editor de texto, JavaScript, IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019).
+O Visual Studio não mostra erros de validação na janela de **saída** quando você cria o projeto. O Visual Studio relata erros e avisos na janela **ERRORLIST** à medida que eles ocorrem. O Visual Studio também relata erros de validação mostrando sublinhados ondulados (conhecidos como rabiscos) de cores diferentes no editor de código e texto. Essas marcas o notificam de problemas que o Visual Studio detectou no código. Para saber mais sobre como habilitar ou desabilitar a validação, confira: [Opções, Editor de texto, JavaScript, IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019).
 
 Para examinar as regras de validação do arquivo de manifesto XML no projeto, confira [Manifesto XML de suplementos do Office](../develop/add-in-manifests.md).
 

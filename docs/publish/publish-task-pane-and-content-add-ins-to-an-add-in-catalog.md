@@ -3,12 +3,12 @@ title: Publicar suplementos de painel de tarefas e de conteúdo em um catálogo 
 description: Para tornar os suplementos do Office acessíveis aos usuários em sua organização, os administradores podem carregar arquivos de manifesto dos suplementos do Office no catálogo de aplicativos da organização.
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: fe97cdb1af0cbf75eb6f1d99f81aef430e362c8e
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: e9a600cd807379e9c55f2fc98bb4f2d71552058f
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950709"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325302"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>Publicar suplementos de painel de tarefas e de conteúdo em um catálogo de aplicativos do SharePoint
 
@@ -38,7 +38,7 @@ Depois de criar o catálogo de aplicativos, siga as etapas para [publicar um Sup
     > [!NOTE]
     > Use o centro de administração do SharePoint Clássico para criar o catálogo. Se você estiver no novo centro de administração do SharePoint, escolha **Centro de administração do SharePoint clássico** no painel esquerdo.
 
-3. No painel de tarefas à esquerda, escolha  **aplicativos**.
+3. No painel de tarefas à esquerda, escolha **aplicativos**.
 
 4. Na página **aplicativos**, escolha **Catálogo de Aplicativos**.
     > [!NOTE]
@@ -66,7 +66,7 @@ Conclua as etapas em uma das seções a seguir para publicar um Suplemento do Of
 2. Na página do centro de administração do Microsoft 365, expanda a lista dos **Centros de administração** e selecione**SharePoint**.
     > [!NOTE]
     > Use o centro de administração do SharePoint Clássico para criar o catálogo. Se você estiver no novo centro de administração do SharePoint, escolha **Centro de administração do SharePoint clássico** no painel esquerdo.
-3. No painel de tarefas à esquerda, escolha  **aplicativos**.
+3. No painel de tarefas à esquerda, escolha **aplicativos**.
 4. Na página **aplicativos**, escolha **Catálogo de Aplicativos**.
 5. Escolha **Distribuir aplicativos para o Office**.
 6. Na página **Aplicativos do Office**, escolha **Novo**.

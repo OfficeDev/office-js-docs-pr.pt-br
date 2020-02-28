@@ -3,12 +3,12 @@ ms.date: 07/10/2019
 description: Depurar suas funções personalizadas no Excel.
 title: Depuração de funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: 823f261af5dd50e8b965a421998234ceddd3551c
-ms.sourcegitcommit: 42bcf9059327a8d71a7ab223805aea68be9ed6b5
+ms.openlocfilehash: dc620d8bab50c5efb3b9d9ec4f79f6532605f48b
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "37962021"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324621"
 ---
 # <a name="custom-functions-debugging"></a>Depuração de funções personalizadas
 
@@ -82,11 +82,11 @@ Você pode usar o VS Code para depurar funções personalizadas no Excel no nave
 ### <a name="sideload-your-add-in"></a>Realizar o sideload do seu suplemento
 
 1. Selecione a guia **Inserir** na faixa de opções e, na seção **suplementos** , escolha **suplementos do Office**.
-2. Na caixa de diálogo **Suplementos do Office**, selecione a guia **MEUS SUPLEMENTOS**, escolha **Gerenciar Meus Suplementos** e **Carregar Meu Suplemento**.
+2. Na caixa de diálogo **suplementos do Office** , selecione a guia **meus suplementos** , escolha **gerenciar meus suplementos**e, em seguida, **carregar meu suplemento**.
     
     ![A caixa de diálogo Suplementos do Office com um menu suspenso "Gerenciar meus suplementos" no canto superior direito e abaixo o menu suspenso com a opção "Carregar meu suplemento"](../images/office-add-ins-my-account.png)
 
-3.  **Navegue** até o arquivo de manifesto do suplemento e selecione **carregar**.
+3. **Navegue** até o arquivo de manifesto do suplemento e selecione **carregar**.
     
     ![A caixa de diálogo Carregar suplemento com botões para pesquisar, carregar e cancelar.](../images/upload-add-in.png)
 
@@ -110,12 +110,12 @@ Você pode usar as ferramentas de desenvolvedor do navegador para depurar funç�
 
 1. Abra o [Microsoft Office na Web](https://office.live.com/).
 2. Abra uma nova pasta de trabalho do Excel.
-3. Abra a guia **Inserir** na faixa de opções e, na seção **Suplementos**, escolha **Suplementos do Office**.
-4. Na caixa de diálogo **Suplementos do Office**, selecione a guia **MEUS SUPLEMENTOS**, escolha **Gerenciar Meus Suplementos** e **Carregar Meu Suplemento**.
+3. Abra a guia **Inserir** na faixa de opções e, na seção **suplementos** , escolha **suplementos do Office**.
+4. Na caixa de diálogo **suplementos do Office** , selecione a guia **meus suplementos** , escolha **gerenciar meus suplementos**e, em seguida, **carregar meu suplemento**.
     
     ![A caixa de diálogo Suplementos do Office com um menu suspenso "Gerenciar meus suplementos" no canto superior direito e abaixo o menu suspenso com a opção "Carregar meu suplemento"](../images/office-add-ins-my-account.png)
 
-5.  **Navegue** até o arquivo de manifesto do suplemento e selecione **Carregar**.
+5. **Navegue** até o arquivo de manifesto do suplemento e selecione **Carregar**.
     
     ![A caixa de diálogo Carregar suplemento com botões para pesquisar, carregar e cancelar.](../images/upload-add-in.png)
 
