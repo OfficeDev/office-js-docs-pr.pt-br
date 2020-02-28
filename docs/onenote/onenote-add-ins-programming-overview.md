@@ -5,12 +5,12 @@ ms.date: 02/19/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 2023daa422bd9078271f4b989f824101dc8b85f9
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 0ea7273b15ad430d2d19d91ff5d8f57fe64c675a
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165563"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325486"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>Visão geral da programação da API JavaScript do OneNote
 
@@ -33,25 +33,25 @@ Os suplementos consistem de dois componentes básicos:
 
 ## <a name="using-the-javascript-api"></a>Usar a API JavaScript
 
-Os suplementos usam o contexto de tempo de execução do aplicativo host para acessar a API JavaScript. A API tem duas camadas: 
+Os suplementos usam o contexto de tempo de execução do aplicativo host para acessar a API JavaScript. A API tem duas camadas:
 
-- Uma **API avançada** para operações específicas do OneNote, acessada por meio do objeto **Aplicativo**.
-- Uma **API comum** compartilhada entre os aplicativos do Office, acessada por meio do objeto **Documento**.
+- Uma **API específica do host** para operações específicas do OneNote, acessada por meio do objeto `Application`.
+- Uma **API comum** compartilhada entre aplicativos do Office, acessada por meio do objeto `Document`.
 
 ### <a name="accessing-the-host-specific-api-through-the-application-object"></a>Acessar uma API avançada por meio do objeto *Aplicativo*.
 
-Use o objeto **Aplicativo** para acessar os objetos do OneNote, como **Bloco de anotações**, **Seção** e **Página**. Com as APIs avançadas, você executa operações em lotes em objetos proxy. O fluxo básico será semelhante a: 
+Use o objeto `Application` para acessar objetos do OneNote, como **Bloco de Anotações**, **Seção** e **Página**. Com as APIs avançadas, você executa operações em lotes em objetos proxy. O fluxo básico será semelhante a:
 
 1. Obtenha a instância do aplicativo do contexto.
 
 2. Crie um proxy que representa o objeto do OneNote com o qual você deseja trabalhar. Você interage com sincronia com os objetos proxy lendo e gravar suas propriedades e chamando seus métodos.
 
-3. Chame **load** no proxy para preenchê-lo com valores de propriedade especificados no parâmetro. Essa chamada é adicionada à fila de comandos.
+3. Chame `load` no proxy para preenchê-lo com valores de propriedade especificados no parâmetro. Essa chamada é adicionada à fila de comandos.
 
    > [!NOTE]
    > Chamadas de método para a API (como `context.application.getActiveSection().pages;`) também são adicionadas à fila.
 
-4. Chame **context.sync** para executar todos os comandos na fila na ordem em que eles estão. Isso sincroniza o estado entre o momento em que os scripts e os objetos reais estão sendo executados, além de recuperar as propriedades dos objetos do OneNote carregados para uso no seu script. Você pode usar o objeto promessa retornado para o encadeamento ações adicionais.
+4. Chame `context.sync` para executar todos os comandos na fila na ordem em que eles estão. Isso sincroniza o estado entre o momento em que os scripts e os objetos reais estão sendo executados, além de recuperar as propriedades dos objetos do OneNote carregados para uso no seu script. Você pode usar o objeto promessa retornado para o encadeamento ações adicionais.
 
 Por exemplo:
 
@@ -95,7 +95,7 @@ Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplemento
 
 ### <a name="accessing-the-common-api-through-the-document-object"></a>Acessar a API comum por meio do objeto *Documento*
 
-Use o objeto **Documento** para acessar a API comum, como os métodos [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) e [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-). 
+Use o objeto `Document`para acessar a API comum, como os métodos [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) e [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-).
 
 
 Por exemplo:  
@@ -119,8 +119,8 @@ Os suplementos do OneNote são compatíveis apenas com as seguintes APIs comuns:
 
 | API | Observações |
 |:------|:------|
-| [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) | Apenas **Office.CoercionType.Text** e **Office.CoercionType.Matrix** |
-| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) | Apenas **Office.CoercionType.Text**, **Office.CoercionType.Image** e **Office.CoercionType.Html** | 
+| [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) | Somente `Office.CoercionType.Text` e `Office.CoercionType.Matrix` |
+| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) | Somente `Office.CoercionType.Text`, `Office.CoercionType.Image` e `Office.CoercionType.Html` | 
 | [var mySetting = Office.context.document.settings.get(nome);](/javascript/api/office/office.settings#get-name-) | As configurações são compatíveis apenas com os suplementos de conteúdo | 
 | [Office.context.document.settings.set(nome, valor);](/javascript/api/office/office.settings#set-name--value-) | As configurações são compatíveis apenas com os suplementos de conteúdo | 
 | [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) ||

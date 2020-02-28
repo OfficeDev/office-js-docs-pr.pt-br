@@ -6,12 +6,12 @@ ms.prod: visio
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: d770356f22f0f9ffb6bd19ecbd5a3fb6460519ac
-ms.sourcegitcommit: 7d4d721fc3d246ef8a2464bc714659cd84d6faab
+ms.openlocfilehash: e40349a009638828ded4bd0651f3776bbf7290fa
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "37468753"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324747"
 ---
 # <a name="visio-javascript-api-overview"></a>Visão geral da API JavaScript do Visio
 
@@ -27,7 +27,7 @@ Você pode usar as APIs JavaScript do Visio para inserir diagramas do Visio no S
 * Adicionar manipuladores personalizados para eventos com o mouse no desenho.
 * Expôr dados de diagrama, como texto da forma, dados da forma e hiperlinks, em sua solução.
 
-Este artigo descreve como usar as APIs JavaScript do Visio com o Visio na Web para desenvolver suas soluções para o SharePoint Online. Ele apresenta os principais conceitos que são fundamentais para o uso das APIs, como **EmbeddedSession**, **RequestContext** e dos objetos proxy do JavaScript, além dos métodos **sync()**, **Visio.run()**, and **load()**. Os exemplos de código mostram como aplicar esses conceitos.
+Este artigo descreve como usar as APIs JavaScript do Visio com o Visio na Web para desenvolver suas soluções para o SharePoint Online. Ele apresenta os principais conceitos que são fundamentais para o uso das APIs, como `EmbeddedSession`, `RequestContext` e dos objetos proxy do JavaScript, além dos métodos `sync()`, `Visio.run()`, and `load()`. Os exemplos de código mostram como aplicar esses conceitos.
 
 ## <a name="embeddedsession"></a>EmbeddedSession
 
@@ -42,9 +42,9 @@ session.init().then(function () {
 
 ## <a name="visiorunsession-functioncontext--batch-"></a>Visio.run(session, function(context) { batch })
 
-O método **Visio.run()** executa um script em lotes que realiza ações no modelo de objeto do Visio. Os comandos em lotes incluem definições de objetos proxy JavaScript locais e métodos **sync()** que sincronizam o estado entre objetos locais e do Visio, e a resolução de promessa. A vantagem do envio de solicitações em lotes com o método **Visio.run()** é que, quando a promessa é resolvida, todos os objetos de página controlados que foram alocados durante a execução são automaticamente liberados.
+`Visio.run()` executa um script em lote que executa ações no modelo de objeto do Visio. Os comandos em lotes incluem definições de objetos proxy JavaScript locais e métodos `sync()` que sincronizam o estado entre objetos locais e do Visio, e a resolução de promessa. A vantagem do envio de solicitações em lotes com o método `Visio.run()` é que, quando a promessa é resolvida, todos os objetos de página controlados que foram alocados durante a execução são automaticamente liberados.
 
-O método de execução recebe a sessão e o objeto RequestContext e retorna uma promessa (normalmente, apenas o resultado de **context.sync()**). É possível executar a operação em lotes fora do **Visio.run()**. No entanto, todas as referências aos objetos de página devem ser rastreadas e gerenciadas manualmente nesse cenário.
+O método run recebe a sessão e o objeto RequestContext e retorna uma promessa (normalmente, apenas o resultado de `context.sync()`). É possível executar a operação em lote fora do `Visio.run()`. No entanto, todas as referências aos objetos de página devem ser rastreadas e gerenciadas manualmente nesse cenário.
 
 ## <a name="requestcontext"></a>RequestContext
 
@@ -69,7 +69,7 @@ function hideToolbars() {
 
 Os objetos JavaScript do Visio declarados e usados em um suplemento são objetos proxy dos objetos reais de um documento do Visio. Todas as ações executadas em objetos proxy não são percebidas no Visio, e o estado do documento do Visio não é percebido em objetos proxy, até que o estado do documento tenha sido sincronizado. O estado do documento é sincronizado quando `context.sync()` é executado.
 
-Por exemplo, o objeto JavaScript local getActivePage é declarado para fazer referência à página selecionada. Você pode usá-lo para colocar a configuração das respectivas propriedades em fila e para invocar métodos. As ações são realizadas sobre esses objetos apenas quando o método **sync()** é executado.
+Por exemplo, o objeto JavaScript local getActivePage é declarado para fazer referência à página selecionada. Você pode usá-lo para colocar a configuração das respectivas propriedades em fila e para invocar métodos. As ações nesses objetos não são realizadas até que o método `sync()` seja executado.
 
 ```js
 var activePage = context.document.getActivePage();
@@ -77,28 +77,28 @@ var activePage = context.document.getActivePage();
 
 ## <a name="sync"></a>sync()
 
-O método **sync()** sincroniza o estado entre objetos proxy JavaScript e objetos reais no Visio, com a execução de instruções enfileiradas no contexto e com a recuperação de propriedades de objetos carregados do Office para uso no código. Este método retorna uma promessa, que é resolvida quando o sistema conclui a sincronização. 
+O método `sync()` sincroniza o estado entre objetos proxy JavaScript e objetos reais no Visio, com a execução de instruções enfileiradas no contexto e com a recuperação de propriedades de objetos carregados do Office para uso no código. Este método retorna uma promessa, que é resolvida quando o sistema conclui a sincronização. 
 
 ## <a name="load"></a>load()
 
-O método **load()** é usado para preencher os objetos proxy criados na camada JavaScript do suplemento. Ao tentar recuperar um objeto, como um documento, um objeto proxy local é criado inicialmente na camada JavaScript. Você pode usar esse objeto para colocar a configuração das respectivas propriedades em fila e para invocar métodos. No entanto, você deve invocar inicialmente os métodos **load()** e **sync()** para as relações ou propriedades do objeto de leitura. O método load() realizado nas propriedades e relações que devem ser carregadas quando você chama o método **sync()**.
+O método `load()` é usado para preencher os objetos proxy criados na camada JavaScript do suplemento. Ao tentar recuperar um objeto, como um documento, um objeto proxy local é criado inicialmente na camada JavaScript. Você pode usar esse objeto para colocar a configuração das respectivas propriedades em fila e para invocar métodos. No entanto, você deve invocar inicialmente os métodos `load()` e `sync()` para as relações ou propriedades do objeto de leitura. O método load() realizado nas propriedades e relações que devem ser carregadas quando você chama o método `sync()`.
 
-O seguinte mostra a sintaxe para o método **load()**.
+A seguir, é mostrada a sintaxe do método `load()`.
 
 ```js
 object.load(string: properties); //or object.load(array: properties); //or object.load({loadOption});
 ```
 
-1. **properties** é a lista de nomes de propriedades a carregar, especificados como cadeias de caracteres delimitadas por vírgulas ou por uma matriz de nomes. Consulte os métodos **.load()** em cada objeto para saber mais.
+1. **properties** é a lista de nomes de propriedades a carregar, especificados como cadeias de caracteres delimitadas por vírgulas ou por uma matriz de nomes. Veja os métodos `.load()` em cada objeto para obter detalhes.
 
 2. **loadOption** especifica um objeto que descreve as opções de seleção, expansão, topo e ignorar. Consulte as [opções](/javascript/api/office/officeextension.loadoption) de carregamento do objeto para saber mais.
 
 ## <a name="example-printing-all-shapes-text-in-active-page"></a>Exemplo: imprimir todo o texto de formas na página ativa
 
 O exemplo a seguir mostra como imprimir o valor de texto de forma de um objeto de formas de matriz.
-O método **Visio.run()** inclui um lote de instruções. Como parte deste lote, o sistema cria um objeto proxy que faz referência a formas no documento ativo.
+O método `Visio.run()` contém um lote de instruções. Como parte deste lote, o sistema cria um objeto proxy que faz referência a formas no documento ativo.
 
-Todos esses comandos são enfileirados e executados ao chamar o método **context.sync()**. O método **sync()** retorna uma promessa que pode ser usada para encadeamento com outras operações.
+Todos esses comandos são enfileirados e executados quando `context.sync()` é chamado. O método `sync()` retorna uma promessa que pode ser usada para encadeá-lo com outras operações.
 
 ```js
 Visio.run(session, function (context) {

@@ -4,16 +4,16 @@ description: ''
 ms.date: 07/05/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: c08e5af14c43d92a677e28d47b26014fd27f700e
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: ae079105b508f4e7dabb85fbf0ad8898275bdb67
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851499"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324754"
 ---
 # <a name="javascript-api-for-powerpoint"></a>API JavaScript para PowerPoint
 
-Um suplemento do PowerPoint interage com objetos no PowerPoint usando a API JavaScript para Office, que inclui dois modelos de objeto JavaScript:
+Um suplemento do PowerPoint interage com objetos no PowerPoint usando a API JavaScript do Office, que inclui dois modelos de objeto JavaScript:
 
 * **API JavaScript do PowerPoint**: A [API JavaScript do PowerPoint](/javascript/api/powerpoint) fornece objetos fortemente tipados que você pode usar para acessar objetos no PowerPoint.
 

@@ -4,12 +4,12 @@ description: Neste tutorial, você vai criar um suplemento do PowerPoint que ins
 ms.date: 12/24/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: aace13a3dba55abcac258b48ceb852fed746adcc
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: e45fe0a4d7561329b22f4d29ec295dabb2e2ee0f
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950884"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324733"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>Tutorial: Criar um Suplemento do Painel de Tarefas
 
@@ -183,7 +183,7 @@ Conclua as seguintes etapas para adicionar o código que recupera a foto do dia 
     $('#insert-image').click(insertImage);
     ```
 
-8. No arquivo **Home.js**, substitua `TODO2` pelo código a seguir para definir a função **insertImage**. Esta função busca a imagem do serviço Web Bing e chama a função `insertImageFromBase64String` para inserir a imagem no documento.
+8. No arquivo **Home.js**, substitua `TODO2` pelo código a seguir para definir a função `insertImage`. Esta função busca a imagem do serviço Web Bing e chama a função `insertImageFromBase64String` para inserir a imagem no documento.
 
     ```js
     function insertImage() {
@@ -295,7 +295,7 @@ Conclua as seguintes etapas para adicionar o código que insere texto no slide d
     $('#insert-text').click(insertText);
     ```
 
-3. No arquivo **Home.js**, substitua `TODO5` pelo código a seguir para definir a função **insertText**. Esta função insere texto no slide atual.
+3. No arquivo **Home.js**, substitua `TODO5` pelo código a seguir para definir a função `insertText`. Esta função insere texto no slide atual.
 
     ```js
     function insertText() {
@@ -352,7 +352,7 @@ Conclua as seguintes etapas para adicionar o código que recupera os metadados p
     $('#get-slide-metadata').click(getSlideMetadata);
     ```
 
-3. No arquivo **Home.js**, substitua `TODO7` pelo código a seguir para definir a função **getSlideMetadata**. Esta função recupera metadados dos slides selecionados e os grava em uma janela pop-up da caixa de diálogo no painel de tarefas do suplemento.
+3. No arquivo **Home.js**, substitua `TODO7` pelo código a seguir para definir a função `getSlideMetadata`. Esta função recupera metadados dos slides selecionados e os grava em uma janela pop-up da caixa de diálogo no painel de tarefas do suplemento.
 
     ```js
     function getSlideMetadata() {

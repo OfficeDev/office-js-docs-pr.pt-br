@@ -4,12 +4,12 @@ description: Saiba como criar um Suplemento do Outlook simples usando a API JS d
 ms.date: 12/28/2019
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 9a9835caf4ca729999a0f85a7947b82115841372
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 6c50ed57cd9fa809081060662c13af662b475ed2
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165682"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325288"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Criar seu primeiro suplemento do Outlook
 
@@ -81,7 +81,7 @@ O projeto de suplemento que você criou com o gerador do Yeoman contém um exemp
     </main>
     ```
 
-1. No seu editor de código, abra o arquivo **./src/taskpane/taskpane.js** e adicione o seguinte código dentro da função **executar**. Este código usa a API JavaScript do Office para obter uma referência da mensagem atual e gravar o seu valor de propriedade `subject` no painel de tarefas.
+1. No seu editor de código, abra o arquivo **./src/taskpane/taskpane.js** e adicione o seguinte código na função `run`. Este código usa a API JavaScript do Office para obter uma referência da mensagem atual e gravar o seu valor de propriedade `subject` no painel de tarefas.
 
     ```js
     // Get a reference to the current message

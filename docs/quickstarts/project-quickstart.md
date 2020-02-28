@@ -4,12 +4,12 @@ description: Saiba como criar um Suplemento do Excel simples usando a API JS do 
 ms.date: 01/16/2020
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 821cdc9f32b0fbc2b48e2a92259f340e65a03f64
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 3a1a7e03ef040d24186ed71baa6fe9eea9589b34
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950618"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42323844"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>Crie o seu primeiro suplemento do painel de tarefas do Project
 
@@ -47,7 +47,7 @@ O projeto de suplemento que você criou com o gerador do Yeoman contém um exemp
 
 ## <a name="update-the-code"></a>Atualizar o código
 
-No seu editor de código, abra o arquivo **./src/taskpane/taskpane.js** e adicione o seguinte código dentro da função **executar**. Este código usa a API JavaScript do Office para configurar o `Name` campo e `Notes` campo da tarefa selecionada.
+No seu editor de código, abra o arquivo **./src/taskpane/taskpane.js** e adicione o seguinte código na função `run`. Este código usa a API JavaScript do Office para configurar o `Name` campo e `Notes` campo da tarefa selecionada.
 
 ```js
 var taskGuid;

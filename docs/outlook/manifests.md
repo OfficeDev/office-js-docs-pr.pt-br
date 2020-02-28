@@ -3,12 +3,12 @@ title: Manifestos do suplemento do Outlook
 description: O manifesto descreve como um suplemento do Outlook se integra a clientes do Outlook; inclui um exemplo.
 ms.date: 10/31/2019
 localization_priority: Priority
-ms.openlocfilehash: 79751ea0f3b7baab28ada8ac44d71e5f4124b74a
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: f4d60919db15c4f470ecccac634abee94973bb6c
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165728"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324937"
 ---
 # <a name="outlook-add-in-manifests"></a>Manifestos do suplemento do Outlook
 
@@ -238,10 +238,10 @@ As versões atuais do esquema são:
 
 |Versão|Descrição|
 |:-----|:-----|
-|v1.0|Oferece suporte à versão 1.0 da API JavaScript para Office. Para suplementos do Outlook, isso dá suporte ao formulário de leitura. |
-|v1.1|Oferece suporte à versão 1.1 da API JavaScript para Office e **VersionOverrides**. Para suplementos do Outlook, acrescenta o suporte ao formulário de redação.|
-|**VersionOverrides** 1.0|Oferece suporte a versões posteriores da API JavaScript para Office. Oferece suporte aos comandos de suplemento.|
-|**VersionOverrides** 1.1|Oferece suporte a versões posteriores da API JavaScript para Office. Isso é compatível com comandos de suplemento e adiciona suporte para recursos mais recentes, como [painéis de tarefa que podem ser fixados](pinnable-taskpane.md) e suplementos móveis.|
+|v1.0|Oferece suporte à versão 1.0 da API JavaScript do Office. Para suplementos do Outlook, isso oferece suporte ao formulário de leitura. |
+|v1.1|Oferece suporte à versão 1.1 da API do Office JavaScript e **VersionOverrides**. Para suplementos do Outlook, isso adiciona suporte ao formulário de composição.|
+|**VersionOverrides** 1.0|Oferece suporte a versões posteriores da API JavaScript do Office. Isso oferece suporte a comandos de suplemento.|
+|**VersionOverrides** 1.1|Oferece suporte a versões posteriores da API JavaScript do Office. Isso oferece suporte a comandos de suplemento e adiciona suporte para recursos mais recentes, como [painéis de tarefas fixáveis](pinnable-taskpane.md) e suplementos para dispositivos móveis.|
 
 Este artigo abordará os requisitos de um manifesto da versão 1.1. Mesmo que seu manifesto de suplemento use o elemento **VersionOverrides**, ainda é importante incluir os elementos do manifesto da versão 1.1 para permitir que seu suplemento funcione com clientes mais antigos que não oferecem suporte a **VersionOverrides**.
 

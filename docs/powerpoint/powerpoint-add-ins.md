@@ -5,12 +5,12 @@ ms.date: 11/07/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 798e7c8357f2f2f021a76c0b88b0617764428c8c
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: a6535808a3e59723556efa3133c44767a52a250e
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851338"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324923"
 ---
 # <a name="powerpoint-add-ins"></a>Suplementos do PowerPoint
 
@@ -90,7 +90,7 @@ function registerActiveViewChanged() {
 
 ## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>Navegue até um determinado slide na apresentação
 
-No seguinte exemplo de código, o método `getSelectedRange` função chamadas do [Document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) para acessar o objeto JSON retornado pela `asyncResult.value`, que contém uma matriz chamada **slides**. A matriz **slides** contém índices, ids e títulos do intervalo selecionado slides (ou do slide atual, se vários slides não forem selecionados). Ela também salva a id do primeiro slide no intervalo selecionado em uma variável global.
+No exemplo de código a seguir, a função `getSelectedRange` chama o método [Document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) para obter o objeto JSON retornado por `asyncResult.value`, que contém uma matriz denominada `slides`. A matriz `slides` contém índices, ids e títulos do intervalo selecionado slides (ou do slide atual, se vários slides não forem selecionados). Ela também salva a id do primeiro slide no intervalo selecionado em uma variável global.
 
 ```js
 function getSelectedRange() {
@@ -126,7 +126,7 @@ function goToFirstSlide() {
 
 ## <a name="navigate-between-slides-in-the-presentation"></a>Navegue entre os slides na apresentação
 
-No seguinte exemplo de código, o método `goToSlideByIndex` função chamadas a **Document.goToByIdAsync** para navegar até o próximo slide na apresentação.
+No exemplo de código a seguir, a função `goToSlideByIndex` chama o método `Document.goToByIdAsync` para navegar para o próximo slide da apresentação.
 
 ```js
 function goToSlideByIndex() {

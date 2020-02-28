@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: Tutorial sobre como compartilhar código entre um suplemento VSTO e um suplemento do Office.
 title: 'Tutorial: compartilhar código entre um suplemento VSTO e um suplemento do Office usando uma biblioteca de códigos compartilhado'
 localization_priority: Priority
-ms.openlocfilehash: c0d90f0f808bb5a7f96f546f0f82a90815676df7
-ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
+ms.openlocfilehash: 87f34c04ce3ac475c82fbb2673d0a4b3e95f04a2
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "41650064"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42324740"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>Tutorial: compartilhar código entre um suplemento VSTO e um suplemento do Office com uma biblioteca de códigos compartilhadas
 
@@ -145,7 +145,7 @@ Os suplementos do VSTO são criados no Visual Studio como projetos .NET, portant
     > [!NOTE]
     > Não use a biblioteca de classe central do .NET porque ela não funcionará com seu projeto do VSTO.
 4. Na caixa de diálogo **Configure seu novo Project**, defina os seguintes campos.
-    - Defina o **nome do projeto** como **CellAnalyzerSharedLibrary**.
+    - Defina o **Nome do projeto** como **CellAnalyzerSharedLibrary**.
     - Deixe o **Local**com o valor padrão.
     - Defina a **estrutura** como **4.7.2**.
 5. Escolha **Criar**.
@@ -333,7 +333,7 @@ A biblioteca do Office. js exige o CORS nas chamadas de saída, como a realizada
     ```
     
     > [!NOTE]
-    > Deixe o `/` no final da URL ao usá-la no método **builder.WithOrigins**. Por exemplo, ele deve parecer semelhante a `https://localhost:44000`. Caso contrário, você receberá um erro CORS em tempo de execução.
+    > Mantenha o final `/` da URL ao usá-lo no método `builder.WithOrigins`. Por exemplo, ele deve parecer semelhante a `https://localhost:44000`. Caso contrário, você receberá um erro CORS em tempo de execução.
     
 6. Adicione o campo a seguir à classe `Startup`:
     

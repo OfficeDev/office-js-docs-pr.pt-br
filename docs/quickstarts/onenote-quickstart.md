@@ -4,12 +4,12 @@ description: Saiba como criar um suplemento do painel de tarefas do OneNote simp
 ms.date: 01/16/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 6098e3859103b5869072edfa133fb6ad39d4da8b
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: cdf1dbd3f234b77bd406a66927b8fad3d5ef4859
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950635"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325295"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do OneNote
 
@@ -45,7 +45,7 @@ O projeto de suplemento que você criou com o gerador do Yeoman contém um exemp
 
 ## <a name="update-the-code"></a>Atualizar o código
 
-No seu editor de código, abra o arquivo **./src/taskpane/taskpane.js** e adicione o seguinte código dentro da função **executar**. Este código usa a API JavaScript do OneNote para definir o título da página e adicionar um contorno ao corpo da página.
+No seu editor de código, abra o arquivo **./src/taskpane/taskpane.js** e adicione o seguinte código na função `run`. Este código usa a API JavaScript do OneNote para definir o título da página e adicionar um contorno ao corpo da página.
 
 ```js
 try {

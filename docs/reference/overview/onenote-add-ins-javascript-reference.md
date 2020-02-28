@@ -4,16 +4,16 @@ description: ''
 ms.date: 02/19/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 27d6770ae64a6f2259e7dbbf38b756d54fe7cec2
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 8e97b0ac34e02ea64a1cb944be9c113bd37a9717
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165317"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325182"
 ---
 # <a name="onenote-javascript-api-overview"></a>Visão geral da API JavaScript do OneNote
 
-Um suplemento do OneNote interage com objetos no OneNote usando a API JavaScript para Office, que inclui dois modelos de objeto JavaScript:
+Um suplemento do OneNote interage com objetos no OneNote na Web usando a API JavaScript do Office, que inclui dois modelos de objetos JavaScript:
 
 * **API JavaScript do OneNote para JavaScript**: introduzida com o Office 2016, a [API JavaScript do OneNote](/javascript/api/onenote) fornece objetos de tipo forte que você pode usar para acessar objetos no OneNote na Web. 
 

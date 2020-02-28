@@ -1,14 +1,14 @@
 ---
 title: Criando Suplementos do Office
 description: Uma introdução ao desenvolvimento de Suplementos do Office.
-ms.date: 02/19/2020
+ms.date: 02/27/2020
 localization_priority: Priority
-ms.openlocfilehash: 95a930f89c3ce6c2c4fc894c61bd4337851a8614
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 2ab0c79771d9aa60b2fd99984914554214978089
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42163868"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325309"
 ---
 # <a name="building-office-add-ins"></a>Criando Suplementos do Office
 
@@ -93,42 +93,17 @@ Para saber mais sobre o manifesto, confira [Manifesto XML de suplementos do Offi
 
 Um suplemento do Office pode usar as APIs JavaScript para Office para interagir com o conteúdo no documento do Office no qual o documento está sendo executado. 
 
-#### <a name="accessing-the-office-javascript-library"></a>Acessar a biblioteca JavaScript do Office
+#### <a name="accessing-the-office-javascript-api-library"></a>Acessando a biblioteca da API JavaScript do Office
 
-A biblioteca JavaScript do Office pode ser acessada pela CDN (rede de distribuição de conteúdo do Office JS) em: `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js`. Para usar as APIs JavaScript para Office em qualquer uma das páginas da Web do seu suplemento, você deve fazer referência à CDN em uma tag `<script>` na tag `<head>` da página.
-
-```html
-<head>
-    ...
-    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
-</head>
-```
-
-> [!NOTE]
-> Para usar as APIs de visualização, referencie a versão de visualização da biblioteca JavaScript para Office na CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
-
-Para saber mais sobre como acessar a biblioteca JavaScript para Office, incluindo como obter o IntelliSense, confira [Fazer referência à biblioteca da API JavaScript para Office de sua CDN (rede de distribuição de conteúdo)](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md).
+[!include[information about accessing the Office JS API library](../includes/office-js-access-library.md)]
 
 #### <a name="api-models"></a>Modelos de API
 
-As API do JavaScript para Office incluem dois modelos diferentes:
-
-- As APIs **Específicas do host** fornecem objetos fortemente tipados que podem ser usados para interagir com objetos que são nativos de um aplicativos do Office específico. Por exemplo, você pode usar as APIs JavaScript do Excel para acessar planilhas, intervalos, tabelas, gráficos e mais. As APIs específicas do host estão disponíveis atualmente para o [Excel](../reference/overview/excel-add-ins-reference-overview.md), [Word](../reference/overview/word-add-ins-reference-overview.md) e [OneNote](../reference/overview/onenote-add-ins-javascript-reference.md). Esse modelo de API usa [promessas](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) e permite que você especifique várias operações em cada solicitação enviada ao host do Office. Operações de envio em lote dessa maneira podem melhorar significativamente o desempenho do suplemento no Office nos aplicativos Web. As APIs específicas do host foram introduzidas com o Office 2016 e não pode ser usadas para interagir com o Office 2013.
-
-- As APIs **Comuns** podem ser usadas para acessar recursos como interface do usuário, caixas de diálogo e configurações de cliente, que são comuns entre vários tipos de aplicativos do Office. Esse modelo de API usa [retornos de chamada](https://developer.mozilla.org/docs/Glossary/Callback_function), em que você pode especificar apenas uma operação em cada solicitação enviada ao host do Office. As APIs comuns foram introduzidas com o Office 2013 e podem ser usadas para interagir com o Office 2013 ou posterior. Para obter mais detalhes do modelo de objeto API comum, que inclui APIs para interagir com o Outlook e o PowerPoint, consulte [modelo do objeto JavaScript API comum](../develop/office-javascript-api-object-model.md).
-
-> [!NOTE]
-> As funções personalizadas do Excel são executadas dentro de um tempo de execução único que prioriza a execução de cálculos e, portanto, usa um modelo de programação ligeiramente diferente. Para saber mais, confira [Arquitetura de funções personalizadas](../excel/custom-functions-architecture.md).
-
-Para obter mais informações sobre as APIs JavaScript para Office, confira [Noções básicas da API JavaScript para Office](../develop/understanding-the-javascript-api-for-office.md).
+[!include[information about the Office JS API models](../includes/office-js-api-models.md)]
 
 #### <a name="api-requirement-sets"></a>Conjuntos de requisitos da API
 
-Os [conjuntos de requisitos](../develop/office-versions-and-requirement-sets.md) são grupos nomeados de membros da API. Os conjuntos de requisitos podem ser específicos para os hosts do Office, como o conjunto de requisitos `ExcelApi 1.7` (um conjunto de APIs que só podem ser usadas no Excel) ou comuns a vários hosts, como o conjunto de requisitos `DialogApi 1.1` (um conjunto de APIs que podem ser usadas em qualquer aplicativo do Office que forneça suporte à API de Caixa de Diálogo).
-
-Seu suplemento pode usar conjuntos de requisitos para determinar se o host do Office oferece suporte aos membros da API necessários. Para saber mais sobre isso, confira [Especificar requisitos de API e host do Office](../develop/specify-office-hosts-and-api-requirements.md).
-
-O suporte a um conjunto de requisitos varia de acordo com o host do Office, a versão e a plataforma. Para obter informações detalhadas sobre as plataformas, os conjuntos de requisitos e as APIs comuns compatíveis com cada aplicativo do Office, confira [Disponibilidade de host e plataforma para suplementos do Office](office-add-in-availability.md).
+[!include[information about the Office JS API requirement sets](../includes/office-js-requirement-sets.md)]
 
 ## <a name="testing-and-debugging-an-office-add-in"></a>Teste e depuração de um suplemento do Office
 

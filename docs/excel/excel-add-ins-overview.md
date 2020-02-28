@@ -5,12 +5,12 @@ ms.date: 07/05/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: c529dc88f310466c5aaae8c6a0ea4e7d0ea6e287
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 6f2e319c5de310df5bd30a1161332d03344f0021
+ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851387"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "42325098"
 ---
 # <a name="excel-add-ins-overview"></a>Visão geral dos suplementos do Excel
 
@@ -36,7 +36,7 @@ A plataforma Suplementos do Office fornece a estrutura e as APIs JavaScript Offi
 
 Um suplemento do Excel inclui dois componentes básicos: um aplicativo Web e um arquivo de configuração, chamado de arquivo de manifesto. 
 
-O aplicativo Web usa a [API JavaScript para Office](/office/dev/add-ins/reference/javascript-api-for-office) para interagir com objetos no Excel e também pode facilitar a interação com recursos online. Por exemplo, um suplemento pode executar alguma das seguintes tarefas:
+O aplicativo Web usa a [API JavaScript do Office](/office/dev/add-ins/reference/javascript-api-for-office) para interagir com objetos no Excel, e também pode facilitar a interação com recursos online. Por exemplo, um suplemento pode executar alguma das seguintes tarefas:
 
 * Criar, ler, atualizar e excluir dados na pasta de trabalho (planilhas, intervalos, tabelas, gráficos, itens nomeados e muito mais).
 * Executar autorização de usuário em um serviço online usando o fluxo padrão OAuth 2.0.
@@ -109,7 +109,7 @@ Para saber mais sobre suplementos conteúdos, confira [Suplementos do Office de 
 
 ## <a name="javascript-apis-to-interact-with-workbook-content"></a>APIs JavaScript para interagir com o conteúdo da pasta de trabalho
 
-Um suplemento do Excel interage com objetos no Excel usando a [API JavaScript para Office](/office/dev/add-ins/reference/javascript-api-for-office), que inclui dois modelos de objeto JavaScript:
+Um suplemento do Excel interage com objetos no Excel usando a [API JavaScript do Office](/office/dev/add-ins/reference/javascript-api-for-office), que inclui dois modelos de objetos JavaScript:
 
 * **API JavaScript do Excel**: Introduzida com o Office 2016, a [API JavaScript do Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) fornece objetos do Excel fortemente tipados que você pode usar para acessar planilhas, intervalos, tabelas, gráficos e muito mais. 
 
