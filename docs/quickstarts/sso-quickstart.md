@@ -1,15 +1,15 @@
 ---
 title: Use o gerador Yeoman para criar um Suplemento do Office que use SSO (prévia)
 description: Use o gerador Yeoman para criar um Suplemento do Office com Node.js que use logon único (prévia).
-ms.date: 01/30/2020
+ms.date: 02/20/2020
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: db3567a17a01af76c9db5f859a35dba46fd4858d
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: fb543516eb371b422fdd7aa91001aa9ca21ba576
+ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42163875"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "42283910"
 ---
 # <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on-preview"></a>Use o gerador Yeoman para criar um Suplemento do Office que use logon único (prévia)
 
@@ -22,7 +22,7 @@ O gerador Yeoman simplifica o processo de criação de um suplemento de SSO, aut
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* [Node.js](https://nodejs.org) (a versão mais recente de [LTS](https://nodejs.org/about/releases))
+* [Node.js](https://nodejs.org) (a versão mais recente de [LTS](https://nodejs.org/about/releases)).
 
 * A versão mais recente do [Yeoman](https://github.com/yeoman/yo) e do [Yeoman gerador de suplementos do Office](https://github.com/OfficeDev/generator-office). Para instalar essas ferramentas globalmente, execute o seguinte comando por meio do prompt de comando:
 
@@ -58,21 +58,7 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 
 O projeto de suplemento que você criou com o gerador do Yeoman contém um código para um suplemento de painel de tarefas habilitado para SSO.
 
-- O arquivo **./manifest.xml** no diretório raiz do projeto define as configurações e os recursos do suplemento.
-
-- O arquivo **./src/taskpane/taskpane.html** contém a marcação HTML do painel de tarefas.
-- O arquivo **./src/taskpane/taskpane.css** contém o CSS que é aplicado ao conteúdo no painel de tarefas.
-- O arquivo **./src/taskpane/taskpane.js** contém o código da API JavaScript do Office que facilita a interação entre o painel de tarefas e o aplicativo host do Office.
-
-- O arquivo **./src/helpers/documentHelper.js** usa a biblioteca JavaScript do Office para adicionar os dados do Microsoft Graph ao documento do Office.
-- O arquivo **./src/helpers/fallbackauthdialog.html** é a página sem interface do usuário que carrega o JavaScript do método de autenticação de fallback.
-- O arquivo **./src/Helpers/fallbackauthdialog.js** contém o JavaScript do método de autenticação fallback que entra no usuário com o msal.js.
-- O arquivo **./src/helpers/fallbackauthhelper.js** contém o painel de tarefas JavaScript que chama o método de autenticação de fallback em cenários em que não há suporte à autenticação SSO.
-- O arquivo **./src/helpers/ssoauthhelper.js** contém a chamada JavaScript à API de SSO, `getAccessToken`, recebe o token de inicialização, inicia a troca do token de inicialização por um token de acesso ao Microsoft Graph e chama o Microsoft Graph para obter os dados.
-
-- O arquivo **./ENV** no diretório raiz do projeto define as constantes que são usadas pelo projeto do suplemento.
-    > [!NOTE]
-    > Algumas das constantes definidas neste arquivo são usadas para facilitar o processo de SSO. Talvez você queira atualizar os valores nesse arquivo para que eles correspondam ao seu cenário específico. Por exemplo, você pode atualizar o arquivo para especificar um escopo diferente, se o seu suplemento exigir algo diferente de `User.Read`.
+[!include[project structure for an SSO-enabled add-in created with the Yeoman generator](../includes/sso-yeoman-project-structure.md)]
 
 ## <a name="configure-sso"></a>Configure o SSO
 
@@ -172,10 +158,11 @@ Execute as etapas a seguir para experimentar um suplemento do Outlook.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Parabéns, você criou com êxito um suplemento do painel de tarefas que usa SSO sempre que possível; e usa um método alternativo de autenticação de usuário quando não há suporte ao SSO. Para saber mais sobre as etapas de configuração do SSO que o gerador Yeoman concluiu automaticamente e o código que facilita o processo de SSO, confira o tutorial [Criar um Suplemento do Office com Node.js que usa logon único](../develop/create-sso-office-add-ins-nodejs.md).
+Parabéns, você criou com êxito um suplemento do painel de tarefas que usa SSO sempre que possível; e usa um método alternativo de autenticação de usuário quando não há suporte ao SSO. Para saber como personalizar seu suplemento para adicionar novas funcionalidades que requerem permissões diferentes, consulte [Personalizar o suplemento habilitado para SSO do Node.js](sso-quickstart-customize.md).
 
 ## <a name="see-also"></a>Confira também
 
 - [Habilitar o logon único para Suplementos do Office](../develop/sso-in-office-add-ins.md)
+- [Personalizar o suplemento habilitado para SSO do Node.js](sso-quickstart-customize.md).
 - [Criar um Suplemento do Office com Node.js que usa logon único](../develop/create-sso-office-add-ins-nodejs.md)
 - [Solucionar problemas de mensagens de erro no logon único (SSO)](../develop/troubleshoot-sso-in-office-add-ins.md)

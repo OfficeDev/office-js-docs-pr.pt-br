@@ -80,6 +80,8 @@
                   href: develop/sso-in-office-add-ins.md
                 - name: Início rápido do SSO
                   href: quickstarts/sso-quickstart.md
+                - name: Personalizar o seu suplemento habilitado para SSO
+                  href: quickstarts/sso-quickstart-customize.md
                 - name: Autorizar o Microsoft Graph com SSO
                   href: develop/authorize-to-microsoft-graph.md
                 - name: Criar um suplemento com SSO usando ASP.NET
@@ -559,6 +561,9 @@
         - name: Formatação condicional de intervalos
           href: excel/excel-add-ins-conditional-formatting.md
           displayName: Excel
+        - name: Configure seu suplemento para usar um tempo de execução compartilhado
+          href: excel/configure-your-add-in-to-use-a-shared-runtime.md
+          displayName: Excel
         - name: Validação de dados
           href: excel/excel-add-ins-data-validation.md
           displayName: Excel
@@ -583,6 +588,9 @@
         - name: Intervalos (avançados)
           href: excel/excel-add-ins-ranges-advanced.md
           displayName: Excel
+        - name: Executar o código no documento aberto
+          href: excel/run-code-on-document-open.md
+          displayName: Excel
         - name: Formas
           href: excel/excel-add-ins-shapes.md
           displayName: Excel
@@ -605,9 +613,6 @@
           displayName: 'Excel, Custom Functions'
         - name: Tutorial de funções personalizadas
           href: tutorials/excel-tutorial-create-custom-functions.md
-          displayName: 'Excel, Custom Functions'
-        - name: Tutorial de funções personalizadas de dados compartilhados no painel de tarefas
-          href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
           displayName: 'Excel, Custom Functions'
         - name: Arquitetura
           href: excel/custom-functions-architecture.md
@@ -657,6 +662,17 @@
         - name: Solução de problemas
           href: excel/custom-functions-troubleshooting.md
           displayName: 'Excel, Custom Functions'
+        - name: Usar um tempo de execução compartilhado
+          items:
+            - name: Visão geral de como usar um tempo de execução compartilhado
+              href: excel/custom-functions-shared-overview.md
+              displayName: 'Excel, Custom Functions'
+            - name: Dados das funções personalizadas compartilhadas com o tutorial do painel de tarefas
+              href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
+              displayName: 'Excel, Custom Functions'
+            - name: Chame APIs do Excel JS a partir da sua função personalizada
+              href: excel/call-excel-apis-from-custom-function.md
+              displayName: 'Excel, Custom Functions'
         - name: Funções voláteis
           href: excel/custom-functions-volatile.md
           displayName: 'Excel, Custom Functions'
