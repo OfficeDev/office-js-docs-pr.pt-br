@@ -600,6 +600,9 @@
         - name: Formas
           href: excel/excel-add-ins-shapes.md
           displayName: Excel
+        - name: Mostrar ou ocultar um suplemento do Office em um tempo de execução compartilhado
+          href: excel/show-hide-add-in.md
+          displayName: Excel
         - name: Tabelas
           href: excel/excel-add-ins-tables.md
           displayName: Excel
