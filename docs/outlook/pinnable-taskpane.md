@@ -1,14 +1,14 @@
 ---
 title: Implementar um painel de tarefas fixável em um suplemento do Outlook
 description: A forma do painel de tarefas da experiência de usuário dos comandos do suplemento abre um painel de tarefas vertical à direita de uma solicitação de reunião ou de uma mensagem aberta, permitindo ao suplemento fornecer à interface do usuário interações mais detalhadas.
-ms.date: 11/18/2019
+ms.date: 02/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 94c136a74dfddac1af663aea06c3c6ca27f22dcd
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 09baf7f1faa7611baa85a53a3d5d92fad2d140a1
+ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165706"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "42413773"
 ---
 # <a name="implement-a-pinnable-task-pane-in-outlook"></a>Implementar um painel de tarefas fixável no Outlook
 
@@ -17,7 +17,10 @@ A forma do [painel de tarefas](add-in-commands-for-outlook.md#launching-a-task-p
 No entanto, se o usuário abrir um painel de tarefas do suplemento em uma mensagem no painel de leitura e selecionar uma nova mensagem, o painel de tarefas será fechado automaticamente, por padrão. Para um suplemento bastante usado, o usuário pode optar por manter esse painel aberto, eliminando a necessidade de reativar o suplemento em cada mensagem. Com os painéis de tarefas fixáveis, o suplemento pode fornecer essa opção aos usuários.
 
 > [!NOTE]
-> Painéis de tarefa fixáveis estão atualmente disponíveis para assinantes do Office 365 usando o Outlook 2016 ou posterior no Windows (build 7668.2000 ou posterior para usuários nos canais atuais ou do Office Insider e build 7900.xxxx ou posterior para usuários em canais adiados), Outlook 2016 ou posterior para Mac (versão 16.13.503 ou posterior) e Outlook na Web.
+> Embora o recurso painéis de tarefas do fixável tenha sido introduzido no [conjunto de requisitos 1,5](../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), ele está disponível atualmente apenas para assinantes do Office 365 usando o seguinte.
+> - Outlook 2016 ou posterior no Windows (Build 7668,2000 ou posterior para usuários nos canais atuais ou Office Insider, Build 7900. xxxx ou posterior para usuários em canais adiados)
+> - Outlook 2016 ou posterior no Mac (versão 16.13.503 ou posterior)
+> - Outlook na Web moderno
 
 > [!IMPORTANT]
 > Painéis de tarefas fixáveis não estão disponíveis para o seguinte.

@@ -1,14 +1,14 @@
 ---
 title: Elemento Action no arquivo de manifesto
 description: ''
-ms.date: 06/20/2019
+ms.date: 02/28/2020
 localization_priority: Normal
-ms.openlocfilehash: b05da08f4995c7d8f7270e7fba6f416c9903b066
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: f7bd577fea1672f592f2b1bac2823d96f0e8a134
+ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324888"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "42413766"
 ---
 # <a name="action-element"></a>Elemento Action
 
@@ -131,8 +131,11 @@ O exemplo a seguir mostra uma ação que usa o elemento **title** . Observe que 
 
 Elemento opcional quando **xsi:type** for "ShowTaskpane". Os elementos [VersionOverrides](versionoverrides.md) incluídos devem ter um valor `VersionOverridesV1_1` para o atributo `xsi:type`. Inclua esse elemento com um valor `true` a fim de fornecer suporte para fixação do painel de tarefas. O usuário pode "fixar" o painel de tarefas, fazendo com que ele permaneça aberto quando alterar a seleção. Para saber mais, consulte [Implementar um painel de tarefas fixável no Outlook](../../outlook/pinnable-taskpane.md).
 
-> [!NOTE]
-> No momento, o SupportsPinning só tem suporte no Outlook 2016 ou posterior no Windows (Build 7628,1000 ou posterior) e no Outlook 2016 ou posterior no Mac (Build 16.13.503 ou posterior).
+> [!IMPORTANT]
+> Embora o `SupportsPinning` elemento tenha sido introduzido no [conjunto de requisitos 1,5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), atualmente só há suporte para assinantes do Office 365 usando o seguinte.
+> - Outlook 2016 ou posterior no Windows (compilação 7628,1000 ou posterior)
+> - Outlook 2016 ou posterior no Mac (Build 16.13.503 ou posterior)
+> - Outlook na Web moderno
 
 ```xml
 <Action xsi:type="ShowTaskpane">
