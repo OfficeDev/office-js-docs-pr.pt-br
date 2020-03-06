@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos de API JavaScript do Outlook
 description: ''
-ms.date: 02/11/2020
+ms.date: 03/04/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: ad83a9627aba29c6b2877d83f1d359ec1f7dd3a5
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 06e97000cab0696f1597032f5a4709c607013eaf
+ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42163597"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "42413780"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Conjuntos de requisitos de API JavaScript do Outlook
 
@@ -25,7 +25,7 @@ Por exemplo, o trecho de código de manifesto a seguir indica um conjunto mínim
 </Requirements>
 ```
 
-Todas as APIs do Outlook pertencem ao [conjunto de requisitos](../../develop/specify-office-hosts-and-api-requirements.md) `Mailbox`. O conjunto de requisitos `Mailbox` tem versões, e cada novo conjunto de APIs que lançamos pertence a uma versão superior. Nem todos os clientes do Outlook serão compatíveis com o conjunto mais recente de APIs, mas se um cliente do Outlook declarar suporte a um conjunto de requisitos, será compatível com todas as APIs nesse conjunto.
+Todas as APIs do Outlook pertencem ao [conjunto de requisitos](../../develop/specify-office-hosts-and-api-requirements.md)`Mailbox`. O conjunto de requisitos `Mailbox` tem versões, e cada novo conjunto de APIs que lançamos pertence a uma versão superior. Nem todos os clientes do Outlook serão compatíveis com o conjunto mais recente de APIs, mas se um cliente do Outlook declarar suporte a um conjunto de requisitos, será compatível com todas as APIs nesse conjunto (verifique a documentação de uma API ou recurso específicos para qualquer possível exceção).
 
 A especificação de uma versão mínima de conjunto de requisitos controla em quais clientes do Outlook o suplemento aparecerá. Se um cliente não oferece suporte para o conjunto de requisitos mínimos, ele não carrega o suplemento. Por exemplo, se for especificada a versão 1.3 do conjunto de requisitos, significa que o suplemento não aparecerá nos clientes do Outlook incompatíveis com a versão 1.3.
 
@@ -101,7 +101,7 @@ Os suplementos são compatíveis com o Outlook nas seguintes plataformas.
 || clássico | Exchange local | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md), [1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md), [1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md), [1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md), [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), [1.6](../objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md) |
 
 > [!NOTE]
-> O suporte para a versão 1.3 no Outlook 2013 foi adicionado como parte da [atualização para Outlook 2013 de 8 de dezembro de 2015 (KB3114349)](https://support.microsoft.com/kb/3114349). O suporte para a versão 1.4 no Outlook 2013 foi adicionado como parte da [atualização para Outlook 2013 de 13 de setembro de 2016 (KB3118280)](https://support.microsoft.com/help/3118280). O suporte para a versão 1.4 no Outlook 2016 (MSI) foi adicionado como parte da [atualização para Office 2016 de 3 de julho de 2018 (KB4022223)](https://support.microsoft.com/help/4022223).
+> O suporte para a versão 1.3 no Outlook 2013 foi adicionado como parte da [atualização para Outlook 2013 de 8 de dezembro de 2015 (KB3114349)](https://support.microsoft.com/kb/3114349). O suporte para a versão 1.4 no Outlook 2013 foi adicionado como parte da [atualização para Outlook 2013 de 13 de setembro de 2016 (KB3118280)](https://support.microsoft.com/help/3118280). O suporte para a versão 1.4 no Outlook 2016 (compra única) foi adicionado como parte da [atualização para o Office 2016 de 3 de julho de 2018 (KB4022223)](https://support.microsoft.com/help/4022223).
 
 > [!TIP]
 > É possível distinguir o Outlook clássico do moderno no navegador da Web, verificando sua barra de ferramentas da caixa de correio.
