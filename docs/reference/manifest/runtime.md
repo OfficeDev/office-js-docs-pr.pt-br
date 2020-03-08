@@ -3,12 +3,12 @@ title: Tempo de execução no arquivo de manifesto (versão prévia)
 description: ''
 ms.date: 02/21/2020
 localization_priority: Normal
-ms.openlocfilehash: 26702896604f9ecf4c69296e5110efe5cdf4218b
-ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
+ms.openlocfilehash: dd51c5b317700f92ee74c94835e68523371789f8
+ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "42283881"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "42561825"
 ---
 # <a name="runtime-element-preview"></a>Elemento Runtime (visualização)
 
@@ -19,7 +19,7 @@ Elemento filho do [`<Runtimes>`](runtimes.md) elemento. Este elemento configura 
 **Tipo de suplemento:** Painel de tarefas
 
 > [!IMPORTANT]
-<<<<<<< o tempo de execução compartilhado HEAD está atualmente em versão prévia e está disponível apenas no Excel no Windows. Para experimentar os recursos de visualização, você precisará ingressar no [Office Insider](https://insider.office.com/).
+> O tempo de execução compartilhado está atualmente em versão prévia e só está disponível no Excel no Windows. Para experimentar os recursos de visualização, você precisará ingressar no [Office Insider](https://insider.office.com/).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -40,6 +40,6 @@ Elemento filho do [`<Runtimes>`](runtimes.md) elemento. Este elemento configura 
 |  **Lifetime = "Long"**  |  Sim  | Deve ser `long` sempre se você quiser usar um tempo de execução compartilhado para o suplemento do Excel. |
 |  **resid**  |  Sim  | Especifica o local da URL da página HTML do suplemento. O `resid` deve corresponder a `id` um atributo de `Url` um elemento no `Resources` elemento. |
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Também consulte
 
 - [Tempos de execução](runtimes.md)

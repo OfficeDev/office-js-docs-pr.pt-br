@@ -3,12 +3,12 @@ title: Usar a API da Caixa de Diálogo do Office nos suplementos do Office
 description: Conhecer as noções básicas da criação de uma caixa de diálogo em um suplemento do Office
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: ed77173f57c8a16344d469585610917a08d3dcad
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: ba7027319016901598e381a87d69766eb44fce29
+ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324677"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "42561755"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Usar a API de diálogo do Office em suplementos do Office
 
@@ -247,8 +247,11 @@ Para ver um exemplo que usa essa técnica, consulte [Inserir gráficos do Excel 
 
 O código na caixa de diálogo pode analisar a URL e ler o valor do parâmetro.
 
-> [!NOTE]
+> [!IMPORTANT]
 > O Office adiciona automaticamente um parâmetro de consulta chamado `_host_info` à URL que é transmitida para `displayDialogAsync`. Ele é anexado após os parâmetros de consulta personalizados, se houver algum. Ele não é anexado às URLs subsequentes para as quais a caixa de diálogo navega. No futuro, a Microsoft poderá alterar o conteúdo desse valor ou removê-lo completamente para que seu código não consiga lê-lo. O mesmo valor é adicionado ao armazenamento de sessão da caixa de diálogo. Novamente, *seu código não deve ler nem gravar esse valor*.
+
+> [!NOTE]
+> Agora, há uma `messageChild` API que a página pai pode usar para enviar mensagens para a caixa de diálogo, assim como `messageParent` a API descrita acima envia mensagens da caixa de diálogo. Para saber mais sobre ele, consulte [passando dados e mensagens para uma caixa de diálogo da página host](parent-to-dialog.md). Recomendamos que você experimente, mas para suplementos de produção, é recomendável usar as técnicas descritas nesta seção.
 
 ## <a name="closing-the-dialog-box"></a>Feche a caixa de diálogo
 

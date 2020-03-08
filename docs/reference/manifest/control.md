@@ -1,14 +1,14 @@
 ---
 title: Elemento Control no arquivo de manifesto
 description: ''
-ms.date: 10/09/2018
+ms.date: 01/10/2020
 localization_priority: Normal
-ms.openlocfilehash: ed76cc46c624d1b97d43e4270944b8ef4dc63723
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: ccf7c3065db13a311825498292713b619f1cd745
+ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42323795"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "42562004"
 ---
 # <a name="control-element"></a>Elemento Control
 
@@ -36,8 +36,11 @@ Um botão executa uma única ação quando o usuário o seleciona. Pode ser a ex
 |  [Supertip](supertip.md)  | Sim |  A dica detalhada do botão.    |
 |  [Icon](icon.md)      | Sim |  Uma imagem para o botão.         |
 |  [Action](action.md)    | Sim |  Especifica a ação a ser executada.  |
+|  [Enabled](enabled.md)    | Não |  Especifica se o controle está habilitado quando o suplemento é iniciado.  |
 
 ### <a name="executefunction-button-example"></a>Exemplo do botão ExecuteFunction
+
+No exemplo a seguir, o botão é desabilitado quando o suplemento é iniciado. Ele pode ser habilitado programaticamente. Para obter mais informações, consulte [habilitar e desabilitar comandos de suplemento](/office/dev/add-ins/design/disable-add-in-commands).
 
 ```xml
 <Control xsi:type="Button" id="msgReadFunctionButton">
@@ -54,6 +57,7 @@ Um botão executa uma única ação quando o usuário o seleciona. Pode ser a ex
   <Action xsi:type="ExecuteFunction">
     <FunctionName>getSubject</FunctionName>
   </Action>
+  <Enabled>false</Enabled>
 </Control>
 ```
 

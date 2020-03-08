@@ -4,12 +4,12 @@ description: ''
 ms.date: 07/17/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 77ebd486f35a75f693941749a958cd122916fcfd
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 8410ee6d9ff7a16d58c8efab53d6cc92112f942a
+ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325168"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "42561804"
 ---
 # <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API Comum do Office
 
@@ -163,6 +163,14 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 |**Hosts do Office**|**Métodos no conjunto**|
 |:-----|:-----|
 | Excel no Mac<br>PowerPoint no Windows<br>PowerPoint Online<br>PowerPoint no iPad<br>PowerPoint no Mac<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Dá suporte à saída para o formato PDF (Office.FileType.Pdf)<br>ao usar o método Document.getFileAsync.|
+
+---
+
+### <a name="ribbonapi"></a>RibbonApi
+
+|**Hosts do Office**|**Métodos no conjunto**|
+|:-----|:-----|
+| Confira [conjuntos de requisitos do RibbonAPI](ribbon-api-requirement-sets.md).|Office. UI. GetRibbon<br>Ribbon. requestUpdate|
 
 ---
 

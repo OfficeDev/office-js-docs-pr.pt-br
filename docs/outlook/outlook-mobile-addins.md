@@ -1,14 +1,14 @@
 ---
 title: Suplementos do Outlook para o Outlook Mobile
 description: Os suplementos do Outlook Mobile têm suporte em todas as contas do Office 365 Comercial, Outlook.com e, em breve, haverá suporte para contas do Gmail.
-ms.date: 10/31/2019
+ms.date: 02/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 7ede3165f40e644715dc488214e047f00dafbede
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 7fc4ac511fe7e101775334cad6d4b000f7dc24ae
+ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165799"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "42561791"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Suplementos do Outlook Mobile
 
@@ -25,6 +25,9 @@ Os suplementos do Outlook Mobile têm suporte em todas as contas do Office 365 C
 **Um painel de tarefas de exemplo no Outlook no Android**
 
 ![Uma captura de tela do painel de tarefas no Outlook no Android](../images/outlook-mobile-addin-taskpane-android.png)
+
+> [!IMPORTANT]
+> Os suplementos não funcionam na versão moderna do Outlook em um navegador móvel. Para obter mais informações, consulte [Outlook em seu navegador móvel está sendo atualizado](https://techcommunity.microsoft.com/t5/outlook-blog/outlook-on-your-mobile-browser-is-being-upgraded/ba-p/1125816).
 
 ## <a name="whats-different-on-mobile"></a>Qual é a diferença no celular?
 
