@@ -151,6 +151,8 @@
                   href: develop/dialog-api-in-office-add-ins.md
                 - name: Práticas recomendadas e regras para a API da caixa de diálogo do Office
                   href: develop/dialog-best-practices.md
+                - name: Enviar dados da página do host para a caixa de diálogo
+                  href: develop/parent-to-dialog.md
                 - name: Manipulando erros e eventos na caixa de diálogo do Office
                   href: develop/dialog-handle-errors-events.md
                 - name: Use a caixa de diálogo do Office para reproduzir um vídeo
