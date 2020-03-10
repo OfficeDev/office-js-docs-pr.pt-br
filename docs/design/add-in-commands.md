@@ -1,14 +1,14 @@
 ---
-title: Comandos de suplemento para Excel, Word e PowerPoint
-description: ''
-ms.date: 06/20/2019
-localization_priority: Normal
-ms.openlocfilehash: 92e9b23eaf23aa9c6e0a2eda048dc34e3942f4ed
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
-ms.translationtype: MT
+title: Conceitos básicos para comandos de suplemento
+description: Aprenda a adicionar botões e itens de menu personalizados da faixa de opções ao Office como parte de um suplemento do Office Web.
+ms.date: 02/11/2020
+localization_priority: Priority
+ms.openlocfilehash: 11636838feb384cdb0761bd17a3c1c0e0f42f8ce
+ms.sourcegitcommit: 0e7ed44019d6564c79113639af831ea512fa0a13
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42162836"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "42566149"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Comandos de suplemento para Excel, Word e PowerPoint
 
@@ -34,20 +34,27 @@ Os seguintes recursos de comando são compatíveis no momento.
 > [!NOTE]
 > Atualmente os suplementos de conteúdo não dão suporte a comandos de suplemento.
 
-**Pontos de extensão**
+### <a name="extension-points"></a>Pontos de extensão
 
 - Guias da faixa de opções: estender as guias internas ou criar uma nova guia personalizada.
-- Menus de contexto: estender os menus de contexto selecionados.
+- Menus de contexto: estender menus de contexto selecionados.
 
-**Tipos de controle**
+### <a name="control-types"></a>Tipos de controle
 
 - Botões simples: disparar ações específicas.
 - Menus – menu suspenso simples com botões que disparam ações.
 
-**Ações**
+### <a name="actions"></a>Ações
 
 - ShowTaskpane: exibe um ou vários painéis que carregam páginas HTML personalizadas dentro deles.
 - ExecuteFunction: carrega uma página HTML invisível e executa uma função JavaScript dentro dela. Para mostrar a interface do usuário dentro de sua função (como erros, progresso ou entrada adicional), você pode usar a API [displayDialog](/javascript/api/office/office.ui).  
+
+### <a name="default-enabled-or-disabled-status-preview"></a>Status padrão Habilitado ou Desabilitado (visualização)
+
+Você pode especificar se o comando está ativado ou desativado quando o suplemento é iniciado e alterar programaticamente a configuração. 
+
+> [!NOTE]
+> Esse recurso está em visualização e não tem suporte em todos os hosts ou cenários. Para obter mais informações, consulte [Ativar e Desativar Comandos de Suplemento](disable-add-in-commands.md).
 
 ## <a name="supported-platforms"></a>Plataformas compatíveis
 
@@ -59,8 +66,6 @@ Os comandos de suplemento atualmente têm suporte nas seguintes plataformas.
 - Office no Mac (build 15.33+, conectado à assinatura do Office 365)
 - Office 2019 no Mac
 - Office na Web
-
-Mais plataformas serão incluídas em breve.
 
 ## <a name="debugging"></a>Depuração
 
