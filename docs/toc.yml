@@ -207,7 +207,11 @@
             - name: Visão Geral
               href: design/interface-elements.md
             - name: Comandos de suplemento
-              href: design/add-in-commands.md
+              items:
+                - name: Conceitos básicos dos comandos do suplemento
+                  href: design/add-in-commands.md
+                - name: Habilitar e desabilitar os comandos do suplemento
+                  href: design/disable-add-in-commands.md
             - name: Caixas de diálogo
               href: design/dialog-boxes.md
             - name: Suplementos de conteúdo
@@ -307,6 +311,8 @@
               href: reference/requirement-sets/image-coercion-requirement-sets.md
             - name: Conjuntos de requisitos da API comum do Office
               href: reference/requirement-sets/office-add-in-requirement-sets.md
+            - name: Conjuntos de requisitos comuns da API
+              href: reference/requirement-sets/ribbon-api-requirement-sets.md
             - name: Conjuntos de requisitos de tempo de execução compartilhado
               href: reference/requirement-sets/shared-runtime-requirement-sets.md
         - name: Referência do manifesto de Suplemento do Office
@@ -425,6 +431,8 @@
                   href: reference/manifest/control.md
                 - name: CustomTab
                   href: reference/manifest/customtab.md
+                - name: Habilitado
+                  href: reference/manifest/enabled.md
                 - name: EquivalentAddin
                   href: reference/manifest/equivalentaddin.md
                 - name: EquivalentAddins
