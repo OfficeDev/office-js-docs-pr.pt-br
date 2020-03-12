@@ -4,12 +4,12 @@ description: Aprenda a criar um suplemento do painel de tarefas simples do Excel
 ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: b7c4fbbb26935bedb5d1d2d09f0137cfda3e34f4
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: d98d3145a092b18bdfa60f29aa5dda885b9168ed
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950625"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596841"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-react"></a>Criar um suplemento do painel de tarefas do Excel usando o React
 
@@ -75,4 +75,4 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Excel us
 * [Tutorial de suplemento do Excel](../tutorials/excel-tutorial-create-table.md)
 * [Conceitos fundamentais de programação com a API JavaScript do Excel](../excel/excel-add-ins-core-concepts.md)
 * [Exemplos de código do suplemento do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Referência da API JavaScript do Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [Referência da API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md)

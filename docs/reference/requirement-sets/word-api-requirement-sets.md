@@ -1,19 +1,19 @@
 ---
 title: Conjuntos de requisitos da API JavaScript do Word
 description: O requisito do suplemento do Office define informações para os builds do Word
-ms.date: 01/06/2020
+ms.date: 03/11/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: c90daafe46d301b404ee902b38bb7417562adc44
-ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
+ms.openlocfilehash: 41cb1189bba31c83958c1c1284f347b615a5a220
+ms.sourcegitcommit: 05b73cdec5f4db7f0b8d48a5a552ee296a0332ca
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "40969528"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42600708"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Word
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
 
 ## <a name="requirement-set-availability"></a>Disponibilidade do conjunto de requisitos
 
@@ -41,15 +41,11 @@ Os suplementos do Word são executados em várias versões do Office, incluindo 
 
 Para saber mais sobre as versões do Office e os números de build, confira:
 
-- 
-  [Números de versão e de build de lançamentos de canais de atualização para clientes do Office 365](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
-- [Qual versão do Office estou usando?](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
-- 
-  [Onde você pode encontrar o número de versão e de build de um aplicativo cliente do Office 365](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
+[!INCLUDE [Links to get Office versions and how to find Office client version](../../includes/links-get-office-versions-builds.md)]
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Também consulte
 
 - [Documentação de Referência da API JavaScript do Word](/javascript/api/word)
-- [Versões do Office e conjuntos de requisitos](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [Especificar requisitos da API e de hosts do Office](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Manifesto XML dos Suplementos do Office](/office/dev/add-ins/develop/add-in-manifests)
+- [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md)
+- [Especificar requisitos da API e de hosts do Office](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Manifesto XML dos Suplementos do Office](../../develop/add-in-manifests.md)

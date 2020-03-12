@@ -4,12 +4,12 @@ description: Saiba como criar um Suplemento do Excel simples usando a API JS do 
 ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 71253cbc5b50f6d36c8c04b25573c1ed328f9df6
-ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
+ms.openlocfilehash: cdd4de9cad88c09ec33e2cb1566b0a64afdf7745
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "41265703"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596617"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Criar um suplemento do painel de tarefas do Excel
 
@@ -19,7 +19,7 @@ Neste artigo, você passará pelo processo de criação de um suplemento do pain
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# <a name="yeoman-generatortabyeomangenerator"></a>[Gerador do Yeoman](#tab/yeomangenerator)
+# <a name="yeoman-generator"></a>[Gerador do Yeoman](#tab/yeomangenerator)
 
 [!include[Redirect to the single sign-on (SSO) quick start](../includes/sso-quickstart-reference.md)]
 
@@ -70,7 +70,7 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 
 Parabéns, você criou com êxito um suplemento do painel de tarefas do Excel! Em seguida, saiba mais sobre os recursos de um suplemento do Excel e crie um suplemento mais complexo seguindo as etapas deste [tutorial de suplemento do Excel](../tutorials/excel-tutorial.md).
 
-# <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)
+# <a name="visual-studio"></a>[Visual Studio](#tab/visualstudio)
 
 ### <a name="prerequisites"></a>Pré-requisitos
 
@@ -223,4 +223,4 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Excel! E
 * [Desenvolver Suplementos do Office ](../develop/develop-overview.md)
 * [Conceitos fundamentais de programação com a API JavaScript do Excel](../excel/excel-add-ins-core-concepts.md)
 * [Exemplos de código do suplemento do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Referência da API JavaScript do Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [Referência da API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md)

@@ -4,12 +4,12 @@ description: Saiba como criar um suplemento do painel de tarefas do Word simples
 ms.date: 01/16/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 2206f18cd752bb1723d303d3fc862c72907d0afb
-ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
+ms.openlocfilehash: 90416db9847f5f78b38fb1c22c4a6751bf95d5e0
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "41265668"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596820"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do Word
 
@@ -21,7 +21,7 @@ Neste artigo, você aprenderá sobre o processo de criação de um suplemento do
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# <a name="yeoman-generatortabyeomangenerator"></a>[Gerador do Yeoman](#tab/yeomangenerator)
+# <a name="yeoman-generator"></a>[Gerador do Yeoman](#tab/yeomangenerator)
 
 [!include[Redirect to the single sign-on (SSO) quick start](../includes/sso-quickstart-reference.md)]
 
@@ -94,7 +94,7 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 
 Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em seguida, saiba mais sobre os recursos de um suplemento do Word e crie um suplemento mais complexo seguindo as etapas deste [tutorial de suplemento do Word](../tutorials/word-tutorial.md).
 
-# <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)
+# <a name="visual-studio"></a>[Visual Studio](#tab/visualstudio)
 
 ### <a name="prerequisites"></a>Pré-requisitos
 
@@ -320,4 +320,4 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em
 * [Desenvolver Suplementos do Office ](../develop/develop-overview.md)
 * [Visão geral dos suplementos do Word](../word/word-add-ins-programming-overview.md)
 * [Exemplos de código do suplemento do Word](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
-* [Referências da API JavaScript do Word](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview)
+* [Referências da API JavaScript do Word](../reference/overview/word-add-ins-reference-overview.md)

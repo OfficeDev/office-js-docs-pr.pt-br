@@ -3,12 +3,12 @@ title: Conceitos avançados de programação com a API JavaScript do Excel
 description: ''
 ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: b9249ad86ff72fb669ca7d45d10a252bb7d98ca8
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 7c88f8e8b54c6777a18ae0a0807148383d14417d
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42323809"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596561"
 ---
 # <a name="advanced-programming-concepts-with-the-excel-javascript-api"></a>Conceitos avançados de programação com a API JavaScript do Excel
 
@@ -18,7 +18,7 @@ Este artigo se baseia nas informações contidas em [conceitos fundamentais de p
 
 Um suplemento do Excel interage com objetos no Excel usando a API JavaScript do Office, que inclui dois modelos de objetos JavaScript:
 
-* **API JavaScript do Excel**: introduzida com o Office 2016, a [API JavaScript do Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) fornece objetos fortemente tipados que você pode usar para acessar planilhas, intervalos, tabelas, gráficos e muito mais.
+* **API JavaScript do Excel**: introduzida com o Office 2016, a [API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md) fornece objetos fortemente tipados que você pode usar para acessar planilhas, intervalos, tabelas, gráficos e muito mais.
 
 * **APIs Comuns**: Introduzida com o Office 2013, a [API Comum](/javascript/api/office) pode ser usada para acessar recursos como interface de usuário, caixas de diálogo e configurações de cliente, que são comuns entre vários tipos de aplicativos do Office.
 
@@ -34,7 +34,7 @@ A imagem a seguir ilustra quando você pode usar a API JavaScript do Excel ou as
 
 ## <a name="requirement-sets"></a>Conjuntos de requisitos
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Um Suplemento do Office pode executar uma verificação de tempo de execução ou usar conjuntos de requisitos especificados no manifesto para determinar se um host do Office dá suporte às APIs necessárias ao suplemento. Para identificar os conjuntos de requisitos específicos que estão disponíveis em cada plataforma suportada, confira [Conjuntos de requisitos da API JavaScript do Excel](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Um Suplemento do Office pode executar uma verificação de tempo de execução ou usar conjuntos de requisitos especificados no manifesto para determinar se um host do Office dá suporte às APIs necessárias ao suplemento. Para identificar os conjuntos de requisitos específicos que estão disponíveis em cada plataforma suportada, confira [Conjuntos de requisitos da API JavaScript do Excel](../reference/requirement-sets/excel-api-requirement-sets.md).
 
 ### <a name="checking-for-requirement-set-support-at-runtime"></a>Verificando o suporte ao conjunto de requisitos no tempo de execução
 
@@ -51,7 +51,7 @@ else {
 
 ### <a name="defining-requirement-set-support-in-the-manifest"></a>Definindo o suporte ao conjunto de requisitos no manifesto
 
-Você pode usar o [elemento Requirements](/office/dev/add-ins/reference/manifest/requirements) no manifesto do suplemento para especificar os conjuntos de requisitos mínimos e/ou os métodos de API exigidos pelo suplemento para ser ativado. Se a plataforma ou o host do Office não der suporte aos conjuntos de requisitos ou aos métodos de API que são especificados no elemento `Requirements` do manifesto, o suplemento não será executado nesse host ou plataforma e não será exibido na lista de suplementos que são mostrados em **Meus Suplementos**.
+Você pode usar o [elemento Requirements](../reference/manifest/requirements.md) no manifesto do suplemento para especificar os conjuntos de requisitos mínimos e/ou os métodos de API exigidos pelo suplemento para ser ativado. Se a plataforma ou o host do Office não der suporte aos conjuntos de requisitos ou aos métodos de API que são especificados no elemento `Requirements` do manifesto, o suplemento não será executado nesse host ou plataforma e não será exibido na lista de suplementos que são mostrados em **Meus Suplementos**.
 
 O exemplo de código a seguir mostra o elemento `Requirements` em um manifesto de suplemento que especifica se o suplemento deve ser carregado em todos os aplicativos host do Office que dão suporte ao conjunto de requisitos ExcelApi, versão 1.3 ou superior.
 
@@ -68,7 +68,7 @@ O exemplo de código a seguir mostra o elemento `Requirements` em um manifesto d
 
 ### <a name="requirement-sets-for-the-officejs-common-api"></a>Conjuntos de requisitos para a API comum Office.js
 
-Para saber mais sobre conjuntos de requisitos comuns da API, confira [Conjuntos de requisitos comuns da API do Office](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).
+Para saber mais sobre conjuntos de requisitos comuns da API, confira [Conjuntos de requisitos comuns da API do Office](../reference/requirement-sets/office-add-in-requirement-sets.md).
 
 ## <a name="loading-the-properties-of-an-object"></a>Carregando as propriedades de um objeto
 
@@ -247,4 +247,4 @@ return context.sync()
 * [Conceitos fundamentais de programação com a API JavaScript do Excel](excel-add-ins-core-concepts.md)
 * [Exemplos de código de suplementos do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Otimização de desempenho da API JavaScript do Excel](performance.md)
-* [Referência da API JavaScript do Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview)
+* [Referência da API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md)

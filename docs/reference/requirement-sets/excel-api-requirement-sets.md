@@ -1,19 +1,19 @@
 ---
 title: Conjuntos de requisitos da API JavaScript do Excel
 description: Informações do conjunto de requisitos do Suplemento do Office para Builds do Excel
-ms.date: 01/06/2020
+ms.date: 03/11/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 742c2e925ed7b1be8e1449cd9021c6cf03519d7b
-ms.sourcegitcommit: abe8188684b55710261c69e206de83d3a6bd2ed3
+ms.openlocfilehash: b6e1570d7487e552197201d12f9a783f18a30fe3
+ms.sourcegitcommit: 05b73cdec5f4db7f0b8d48a5a552ee296a0332ca
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "40969521"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42600701"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Excel
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
 
 ## <a name="requirement-set-availability"></a>Disponibilidade do conjunto de requisitos
 
@@ -22,7 +22,7 @@ Os suplementos do Excel são executados em várias versões do Office, incluindo
 > [!NOTE]
 > Para usar APIs em qualquer um dos conjuntos de requisitos numerados ou `ExcelApiOnline`, faça referência à biblioteca **production** no CDN: https://appsforoffice.microsoft.com/lib/1/hosted/office.js.
 >
-> Para obter informações sobre o uso de APIs de visualização, confira o artigo [APIs de visualização do JavaScript para Excel](./excel-preview-apis.md).
+> Para obter informações sobre o uso de APIs de visualização, confira o artigo [APIs de visualização do JavaScript para Excel](excel-preview-apis.md).
 
 |  Conjunto de requisitos  |  Office no Windows<br>(conectado à assinatura do Office 365)  |  Office no iPad<br>(conectado à assinatura do Office 365)  |  Office no Mac<br>(conectado à assinatura do Office 365)  | Office na Web |
 |:-----|-----|:-----|:-----|:-----|:-----|
@@ -49,16 +49,12 @@ Os suplementos do Excel são executados em várias versões do Office, incluindo
 
 Para saber mais sobre as versões do Office e os números de build, confira:
 
-- 
-  [Números de versão e de build de lançamentos de canais de atualização para clientes do Office 365](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
-- [Qual versão do Office estou usando?](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
-- 
-  [Onde você pode encontrar o número de versão e de build de um aplicativo cliente do Office 365](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
+[!INCLUDE [Links to get Office versions and how to find Office client version](../../includes/links-get-office-versions-builds.md)]
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Também consulte
 
 - [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel)
-- [Versões do Office e conjuntos de requisitos](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [Especificar requisitos da API e de hosts do Office](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Manifesto XML dos Suplementos do Office](/office/dev/add-ins/develop/add-in-manifests)
+- [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md)
+- [Especificar requisitos da API e de hosts do Office](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Manifesto XML dos Suplementos do Office](../../develop/add-in-manifests.md)
 - [Visão geral sobre o Servidor do Office Online](/officeonlineserver/office-online-server-overview)

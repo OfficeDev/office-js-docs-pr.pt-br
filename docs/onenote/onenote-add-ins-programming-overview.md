@@ -5,12 +5,12 @@ ms.date: 02/19/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 0ea7273b15ad430d2d19d91ff5d8f57fe64c675a
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: a4e060570f4eccc3fff9017042ff6bf278714ed6
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325486"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596848"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>Visão geral da programação da API JavaScript do OneNote
 
@@ -87,7 +87,7 @@ function getPagesInSection() {
 }
 ```
 
-Você pode encontrar objetos do OneNote e operações compatíveis na [Referência API](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference).
+Você pode encontrar objetos do OneNote e operações compatíveis na [Referência API](../reference/overview/onenote-add-ins-javascript-reference.md).
 
 #### <a name="onenote-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do OneNote
 
@@ -139,6 +139,6 @@ O diagrama a seguir representa o que está disponível atualmente na API JavaScr
 
 - [Criando Suplementos do Office ](../overview/office-add-ins-fundamentals.md)
 - [Criar seu primeiro suplemento do OneNote](../quickstarts/onenote-quickstart.md)
-- [Referência da API JavaScript do OneNote](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
+- [Referência da API JavaScript do OneNote](../reference/overview/onenote-add-ins-javascript-reference.md)
 - [Amostra de Rubric Grader](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)

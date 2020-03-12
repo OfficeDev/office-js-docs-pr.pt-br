@@ -3,12 +3,12 @@ title: Conceitos fundamentais de programação com a API JavaScript do Word
 description: Use as APIs JavaScript do Word para criar suplementos para o Word.
 ms.date: 07/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 7849780c1aed48152355c3fdbf350d798b2de1f2
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 319570a7790504bdf95c6a66c07db67ca29dec55
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325014"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596764"
 ---
 # <a name="fundamental-programming-concepts-with-the-word-javascript-api"></a>Conceitos fundamentais de programação com a API JavaScript do Word
 
@@ -28,7 +28,7 @@ Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplemento
 
 ## <a name="running-word-add-ins"></a>Execução de suplementos do Word
 
-Para executar seu suplemento, use um manipulador de eventos `Office.initialize`. Confira [Entendendo a API](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office) para saber mais sobre a inicialização do suplemento.
+Para executar seu suplemento, use um manipulador de eventos `Office.initialize`. Confira [Entendendo a API](../develop/understanding-the-javascript-api-for-office.md) para saber mais sobre a inicialização do suplemento.
 
 Os suplementos destinados ao Word 2016 ou posterior são executados passando uma função para o método `Word.run()`. A função passada para o método `run` deve ter um argumento de contexto. Esse [objeto de contexto](/javascript/api/word/word.requestcontext) é diferente do objeto de contexto obtido do objeto do Office, mas ele é usado para interagir com o ambiente de tempo de execução do Word. O objeto de contexto fornece acesso ao modelo de objeto da API JavaScript do Word. O exemplo a seguir mostra como inicializar e executar um suplemento do Word usando o método `Word.run()`.
 
