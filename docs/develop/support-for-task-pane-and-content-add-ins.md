@@ -3,12 +3,12 @@ title: Suporte da API JavaScript para Office para suplementos de conteúdo e de 
 description: ''
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: a9eb67ca78f89888860ff3ed11ae1632ff62b690
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 043ce34b05b3b158dcf4162fb49cfe94a791dad1
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42323816"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596652"
 ---
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>Suporte da API JavaScript para Office para suplementos de conteúdo e de painel de tarefas no Office 2013
 
@@ -165,6 +165,7 @@ Para obter mais informações, consulte [solicitar permissões para uso da API e
 
 ## <a name="see-also"></a>Confira também
 
-- [API JavaScript para Office](/office/dev/add-ins/reference/javascript-api-for-office)
+
+- [API JavaScript para Office](../reference/javascript-api-for-office.md)
 - [Referência de esquema para os manifestos dos Suplementos do Office](../develop/add-in-manifests.md)
 - [Solucionar erros de usuários com Suplementos do Office](../testing/testing-and-troubleshooting.md)

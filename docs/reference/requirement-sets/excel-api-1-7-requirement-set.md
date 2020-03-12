@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos ExcelApi 1,7
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 5e923cb096c7335fbe65d18b6af0280d78be1fb2
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 5a39b961e8cce97be3bb74e4032914f60c366ffb
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064855"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596988"
 ---
 # <a name="whats-new-in-excel-javascript-api-17"></a>Quais são as novidades na API JavaScript do Excel 1.7
 
@@ -29,7 +29,7 @@ Com as novas APIs de gráficos, você pode criar tipos degráficos adicionais, a
 
 ## <a name="events"></a>Eventos
 
-As APIs de eventos JavaScript do Excel fornecem diversos,  manipuladores de eventos que permitem que o suplemento execute automaticamente uma função designada quando ocorre um evento específico. Você pode criar essa função para executar as ações que seu cenário exige. Para obter uma lista de eventos que estão disponíveis, confira [trabalhar com eventos usando as API JavaScript do Excel](/office/dev/add-ins/excel/excel-add-ins-events).
+As APIs de eventos JavaScript do Excel fornecem diversos,  manipuladores de eventos que permitem que o suplemento execute automaticamente uma função designada quando ocorre um evento específico. Você pode criar essa função para executar as ações que seu cenário exige. Para obter uma lista de eventos que estão disponíveis, confira [trabalhar com eventos usando as API JavaScript do Excel](../../excel/excel-add-ins-events.md).
 
 ## <a name="customize-the-appearance-of-worksheets-and-ranges"></a>Personalizar a aparência de planilhas e intervalos
 
@@ -72,7 +72,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 |[Chart](/javascript/api/excel/excel.chart)|[chartType](/javascript/api/excel/excel.chart#charttype)|Representa o tipo de gráfico. Confira Excel. ChartType para obter detalhes.|
 ||[id](/javascript/api/excel/excel.chart#id)|Id exclusiva do gráfico. Somente leitura.|
 ||[showAllFieldButtons](/javascript/api/excel/excel.chart#showallfieldbuttons)|Representa se deseja exibir todos os botões de campo em um Gráfico Dinâmico.|
-|[ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)|[Borderô](/javascript/api/excel/excel.chartareaformat#border)|Representa o formato da borda da área do gráfico, que inclui cores, LineStyle e Weight. Somente leitura.|
+|[ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)|[borda](/javascript/api/excel/excel.chartareaformat#border)|Representa o formato da borda da área do gráfico, que inclui cores, LineStyle e Weight. Somente leitura.|
 |[ChartAxes](/javascript/api/excel/excel.chartaxes)|[getItem (tipo: Excel. ChartAxisType, Group?: Excel. ChartAxisGroup)](/javascript/api/excel/excel.chartaxes#getitem-type--group-)|Retorna o eixo específico identificado por tipo e grupo.|
 |[ChartAxis](/javascript/api/excel/excel.chartaxis)|[baseTimeUnit](/javascript/api/excel/excel.chartaxis#basetimeunit)|Retorna ou define a unidade base para o eixo da categoria especificada.|
 ||[categoryType](/javascript/api/excel/excel.chartaxis#categorytype)|Retorna ou define o tipo de eixo de categoria.|
@@ -87,7 +87,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[height](/javascript/api/excel/excel.chartaxis#height)|Representa a altura, em pontos, do eixo do gráfico. Nulo se o eixo não estiver visível. Somente leitura.|
 ||[left](/javascript/api/excel/excel.chartaxis#left)|Representa a distância, em pontos, da borda esquerda do eixo à esquerda da área do gráfico. Nulo se o eixo não estiver visível. Somente leitura.|
 ||[top](/javascript/api/excel/excel.chartaxis#top)|Representa a distância, em pontos, da borda superior do eixo a parte superior da área do gráfico. Nulo se o eixo não estiver visível. Somente leitura.|
-||[tipo](/javascript/api/excel/excel.chartaxis#type)|Representa o tipo de eixo. Consulte Excel. ChartAxisType para obter detalhes.|
+||[type](/javascript/api/excel/excel.chartaxis#type)|Representa o tipo de eixo. Consulte Excel. ChartAxisType para obter detalhes.|
 ||[width](/javascript/api/excel/excel.chartaxis#width)|Representa a largura, em pontos, do eixo do gráfico. Nulo se o eixo não estiver visível. Somente leitura.|
 ||[reversePlotOrder](/javascript/api/excel/excel.chartaxis#reverseplotorder)|Representa se o Microsoft Excel plota os pontos de dados do último para o primeiro.|
 ||[scaleType](/javascript/api/excel/excel.chartaxis#scaletype)|Representa o tipo de escala do eixo dos valores. Consulte Excel. ChartAxisScaleType para obter detalhes.|
@@ -130,7 +130,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[top](/javascript/api/excel/excel.chartlegend#top)|Representa o início de uma legenda do gráfico.|
 ||[width](/javascript/api/excel/excel.chartlegend#width)|Representa a largura, em pontos, da legenda no gráfico. NULL se a legenda não estiver visível.|
 |[ChartLegendEntry](/javascript/api/excel/excel.chartlegendentry)|[height](/javascript/api/excel/excel.chartlegendentry#height)|Representa a altura de legendEntry na legenda do gráfico.|
-||[index](/javascript/api/excel/excel.chartlegendentry#index)|Representa o índice de legendEntry na legenda do gráfico.|
+||[índice](/javascript/api/excel/excel.chartlegendentry#index)|Representa o índice de legendEntry na legenda do gráfico.|
 ||[left](/javascript/api/excel/excel.chartlegendentry#left)|Representa a esquerda de um gráfico legendEntry.|
 ||[top](/javascript/api/excel/excel.chartlegendentry#top)|Representa a parte superior de um gráfico legendEntry.|
 ||[width](/javascript/api/excel/excel.chartlegendentry#width)|Representa a largura de legendEntry na legenda do gráfico.|
@@ -146,7 +146,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[markerSize](/javascript/api/excel/excel.chartpoint#markersize)|Representa o tamanho do marcador do ponto de dados.|
 ||[markerStyle](/javascript/api/excel/excel.chartpoint#markerstyle)|Representa estilo do marcador de um ponto de dados do gráfico. Consulte Excel. ChartMarkerStyle para obter detalhes.|
 ||[dataLabel](/javascript/api/excel/excel.chartpoint#datalabel)|Retorna o rótulo de dados de um ponto de gráfico. Somente leitura.|
-|[ChartPointFormat](/javascript/api/excel/excel.chartpointformat)|[Borderô](/javascript/api/excel/excel.chartpointformat#border)|Representa o formato da borda de um ponto de dados do gráfico, que inclui informações de cor, estilo e peso. Somente leitura.|
+|[ChartPointFormat](/javascript/api/excel/excel.chartpointformat)|[borda](/javascript/api/excel/excel.chartpointformat#border)|Representa o formato da borda de um ponto de dados do gráfico, que inclui informações de cor, estilo e peso. Somente leitura.|
 |[ChartSeries](/javascript/api/excel/excel.chartseries)|[chartType](/javascript/api/excel/excel.chartseries#charttype)|Representa o tipo de gráfico de uma série. Confira Excel. ChartType para obter detalhes.|
 ||[delete()](/javascript/api/excel/excel.chartseries#delete--)|Exclui a série de gráfico.|
 ||[doughnutHoleSize](/javascript/api/excel/excel.chartseries#doughnutholesize)|Representa o tamanho do furo de rosca de uma série de gráficos.  Válida apenas em gráficos de rosca e doughnutExploded.|
@@ -176,7 +176,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[textOrientation](/javascript/api/excel/excel.charttitle#textorientation)|Representa a orientação de texto do título do gráfico. O valor deve ser um número inteiro de -90 a 90 ou 180 para texto orientado verticalmente.|
 ||[top](/javascript/api/excel/excel.charttitle#top)|Representa a distância em pontos, da borda superior do título do gráfico a parte superior da área do gráfico. NULL se o título do gráfico não estiver visível.|
 ||[verticalAlignment](/javascript/api/excel/excel.charttitle#verticalalignment)|Representa o alinhamento vertical do título do gráfico. Consulte Excel. ChartTextVerticalAlignment para obter detalhes.|
-|[ChartTitleFormat](/javascript/api/excel/excel.charttitleformat)|[Borderô](/javascript/api/excel/excel.charttitleformat#border)|Representa o formato da borda do título do gráfico, que inclui cores, LineStyle e Weight. Somente leitura.|
+|[ChartTitleFormat](/javascript/api/excel/excel.charttitleformat)|[borda](/javascript/api/excel/excel.charttitleformat#border)|Representa o formato da borda do título do gráfico, que inclui cores, LineStyle e Weight. Somente leitura.|
 |[ChartTrendline](/javascript/api/excel/excel.charttrendline)|[backwardPeriod](/javascript/api/excel/excel.charttrendline#backwardperiod)|Representa o número de períodos que a linha de tendência se estende para trás.|
 ||[delete()](/javascript/api/excel/excel.charttrendline#delete--)|Deleta o objeto Trendline.|
 ||[forwardPeriod](/javascript/api/excel/excel.charttrendline#forwardperiod)|Representa o número de períodos que a linha de tendência se estende para frente.|
@@ -188,7 +188,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[rótulo](/javascript/api/excel/excel.charttrendline#label)|Representa o rótulo de linha de tendência um gráfico.|
 ||[a equação](/javascript/api/excel/excel.charttrendline#showequation)|Verdadeiro se a equação da linha de tendência for exibida no gráfico.|
 ||[showRSquared](/javascript/api/excel/excel.charttrendline#showrsquared)|Verdadeiro se o R-quadrado da linha de tendência for exibido no gráfico.|
-||[tipo](/javascript/api/excel/excel.charttrendline#type)|Representa o tipo da linha de tendência de um gráfico.|
+||[type](/javascript/api/excel/excel.charttrendline#type)|Representa o tipo da linha de tendência de um gráfico.|
 |[ChartTrendlineCollection](/javascript/api/excel/excel.charttrendlinecollection)|[Add (tipo?: Excel. ChartTrendlineType)](/javascript/api/excel/excel.charttrendlinecollection#add-type-)|Adiciona uma nova linha de tendência ao conjunto de linha de tendência.|
 ||[getCount()](/javascript/api/excel/excel.charttrendlinecollection#getcount--)|Retorna o número de linha de tendência na coleção.|
 ||[getItem(index: number)](/javascript/api/excel/excel.charttrendlinecollection#getitem-index-)|Obtém o objeto da linha de tendência por índice, que é a ordem de inserção na matriz de itens.|
@@ -210,7 +210,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[comments](/javascript/api/excel/excel.documentproperties#comments)|Obtém ou define os comentários da pasta de trabalho.|
 ||[company](/javascript/api/excel/excel.documentproperties#company)|Obtém ou define a empresa do documento.|
 ||[Palavras-chave](/javascript/api/excel/excel.documentproperties#keywords)|Obtém ou define as palavras-chave da pasta de trabalho.|
-||[Gerenciador](/javascript/api/excel/excel.documentproperties#manager)|Obtém ou define o gerenciador da pasta de trabalho.|
+||[manager](/javascript/api/excel/excel.documentproperties#manager)|Obtém ou define o gerenciador da pasta de trabalho.|
 ||[creationDate](/javascript/api/excel/excel.documentproperties#creationdate)|Obtém a data de criação da pasta de trabalho. Somente leitura.|
 ||[cliente](/javascript/api/excel/excel.documentproperties#custom)|Obtém a coleção de propriedades personalizadas da pasta de trabalho. Somente leitura.|
 ||[lastAuthor](/javascript/api/excel/excel.documentproperties#lastauthor)|Obtém o último autor da pasta de trabalho. Somente leitura.|
@@ -336,5 +336,5 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação de referência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.7)
+- [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.7)
 - [Conjuntos de requisitos da API JavaScript do Excel](./excel-api-requirement-sets.md)

@@ -3,12 +3,12 @@ title: Elemento TargetDialect no arquivo de manifesto
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: bfdeac9d2533bc95c2e17d0275728e234d193914
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 8ee97d0851c82bcd8763152a6d0cf4331e0f0bdb
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451924"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596869"
 ---
 # <a name="targetdialect-element"></a>Elemento TargetDialect
 
@@ -34,5 +34,4 @@ Especifica o valor no formato de marca do idioma BCP 47, como `en-US`.
 
 ## <a name="see-also"></a>Confira também
 
-- [Criar um suplemento de painel de tarefas de dicionário](/office/dev/add-ins/word/dictionary-task-pane-add-ins)
-    
+- [Criar um suplemento de painel de tarefas de dicionário](../../word/dictionary-task-pane-add-ins.md)

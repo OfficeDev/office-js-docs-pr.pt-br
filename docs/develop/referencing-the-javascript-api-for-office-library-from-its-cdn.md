@@ -3,12 +3,12 @@ title: Fazendo referência à biblioteca da API JavaScript do Office
 description: Saiba como fazer referência à biblioteca da API JavaScript do Office e definições de tipo no suplemento.
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 9f7753b24e0a5861778b09ea93fecdc26fd2ca96
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 5e26d5b0454a6833c593ff60c1577d24583dcc51
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325154"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596715"
 ---
 # <a name="referencing-the-office-javascript-api-library"></a>Fazendo referência à biblioteca da API JavaScript do Office
 
@@ -33,7 +33,7 @@ No trecho de código HTML anterior, `/1/` o na frente `office.js` da URL de CDN 
 Caso planeje publicar seu Suplemento do Office no AppSource, você deve usar esta referência da CDN. As referências locais são adequadas somente para cenários internos, de depuração e de desenvolvimento.
 
 > [!NOTE]
-> Para usar as APIs de visualização, consulte a versão prévia da biblioteca da API JavaScript do Office na `https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`CDN:.
+> Para usar APIs de visualização, faça referência à versão de visualização da biblioteca da API JavaScript do Office na CDN: `https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`.
 
 ## <a name="enabling-intellisense-for-a-typescript-project"></a>Habilitando o IntelliSense para um projeto TypeScript
 
@@ -50,5 +50,6 @@ npm install --save-dev @types/office-js
 
 ## <a name="see-also"></a>Confira também
 
-- [Noções básicas sobre a API JavaScript do Office](understanding-the-javascript-api-for-office.md)
-- [API JavaScript para Office](/office/dev/add-ins/reference/javascript-api-for-office)
+
+- [Entendendo a API JavaScript do Office](understanding-the-javascript-api-for-office.md)
+- [API JavaScript para Office](../reference/javascript-api-for-office.md)

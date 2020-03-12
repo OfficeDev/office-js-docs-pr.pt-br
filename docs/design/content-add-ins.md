@@ -3,12 +3,12 @@ title: Suplementos de conteúdo do Office
 description: Suplementos de conteúdo são superfícies que podem ser incorporadas diretamente em documentos do Excel ou do PowerPoint que concedem aos usuários acesso a controles de interface que executam códigos para modificar documentos ou exibir dados de uma fonte de dados.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 53b61e5ba97e54a54ccd225745cdc2ce9086ebf8
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 7de031de864eadcd3d71fc66fcc9e59d00d3abb6
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950394"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596694"
 ---
 # <a name="content-office-add-ins"></a>Suplementos de conteúdo do Office
 
@@ -50,13 +50,13 @@ Para ver um exemplo que implementa um suplemento de conteúdo, confira [Suplemen
 
 ## <a name="support-considerations"></a>Considerações sobre o suporte
 
-- Verifique se os suplementos do Office funcionarão em uma [plataforma de host do Office específica](/office/dev/add-ins/overview/office-add-in-availability). 
-- Alguns suplementos de conteúdo podem obrigar o usuário a "confiar" nele para ler e gravar no Excel ou PowerPoint. Você pode declarar no manifesto do suplemento quais [níveis de permissão](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins) deseja que o usuário tenha.  
+- Verifique se os suplementos do Office funcionarão em uma [plataforma de host do Office específica](../overview/office-add-in-availability.md).
+- Alguns suplementos de conteúdo podem obrigar o usuário a "confiar" nele para ler e gravar no Excel ou PowerPoint. Você pode declarar no manifesto do suplemento quais [níveis de permissão](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md) deseja que o usuário tenha.  
 - Os suplementos de conteúdo são compatíveis com o Excel e PowerPoint nas versões do Office 2013 e posteriores. Se você abrir um suplemento em uma versão do Office não compatível com os suplementos web do Office, eles aparecerão como imagem.
 
 ## <a name="see-also"></a>Confira também
 
-- [Disponibilidade de host e plataforma para suplementos do Office](/office/dev/add-ins/overview/office-add-in-availability)
-- [Office UI Fabric em Suplementos do Office](/office/dev/add-ins/design/office-ui-fabric)
-- [Padrões de design da experiência do usuário para suplementos do Office](/office/dev/add-ins/design/ux-design-pattern-templates)
-- [Solicitar permissões para uso da API em suplementos ](/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)
+- [Disponibilidade de host e plataforma para suplementos do Office](../overview/office-add-in-availability.md)
+- [Office UI Fabric em Suplementos do Office](../design/office-ui-fabric.md)
+- [Padrões de design da experiência do usuário para suplementos do Office](../design/ux-design-pattern-templates.md)
+- [Solicitar permissões para uso da API em suplementos ](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)

@@ -3,12 +3,12 @@ title: Usar as opções de pesquisa para localizar o texto no suplemento do Word
 description: ''
 ms.date: 09/27/2019
 localization_priority: Normal
-ms.openlocfilehash: 213853af31ae7ae15ad3f6386da70f22698d421d
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 9f90771ebb7e6f70f2f27081ea0409e0f29b0e2d
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950478"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596757"
 ---
 # <a name="use-search-options-to-find-text-in-your-word-add-in"></a>Usar as opções de pesquisa para localizar o texto no suplemento do Word
 
@@ -19,7 +19,7 @@ Uma função de pesquisa é exposta por cada controle de conteúdo (isso inclui 
 
 As opções de pesquisa são uma coleção de valores boolianos que definem como o parâmetro de pesquisa deve ser tratado.
 
-| Propriedade     | Descrição|
+| Propriedade       | Descrição|
 |:---------------|:----|
 |ignorePunct|Obtém ou define um valor que indica se devem ser ignorados todos os caracteres de pontuação entre as palavras. Corresponde à caixa de seleção "Ignorar caracteres de pontuação" na caixa de diálogo Localizar e Substituir.|
 |ignoreSpace|Obtém ou define um valor que indica se devem ser ignorados todos os espaços em branco entre as palavras. Corresponde à caixa de seleção "Ignorar caracteres de espaço em branco" na caixa de diálogo Localizar e Substituir.|
@@ -204,4 +204,4 @@ Word.run(function (context) {
 });
 ```
 
-Mais informações podem ser encontradas na [Referência de API JavaScript do Word](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview).
+Mais informações podem ser encontradas na [Referência de API JavaScript do Word](../reference/overview/word-add-ins-reference-overview.md).

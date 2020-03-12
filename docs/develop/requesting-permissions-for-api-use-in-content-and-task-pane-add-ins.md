@@ -3,12 +3,12 @@ title: 'Solicitar permissões para uso da API em suplementos '
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: ef78764e2ccc6d1cab3783584834317331961c2d
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: d146322c6977e11eedcd7e0b9ffdc9d5eeaac7c2
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325493"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596659"
 ---
 # <a name="requesting-permissions-for-api-use-in-add-ins"></a>Solicitar permissões para uso da API em suplementos 
 
@@ -22,7 +22,7 @@ Um modelo de permissões de acesso da API JavaScript com cinco níveis fornece a
 
 ![Níveis de permissões para os aplicativos do painel de tarefas](../images/office15-app-sdk-task-pane-app-permission.png)
 
-Essas permissões especificam o subconjunto da API que o tempo de execução do suplemento permitirá que o suplemento de conteúdo ou de painel de tarefas use quando um usuário inserir e ativar o suplemento (confiar nele). Para declarar o nível de permissão que o suplemento do conteúdo ou do painel de tarefas requer, especifique um dos valores de texto da permissão no elemento [Permissions](/office/dev/add-ins/reference/manifest/permissions) do manifesto do suplemento. O exemplo a seguir solicita a permissão  **WriteDocument**, que autorizará somente os métodos que podem gravar no documento, mas não lê-lo.
+Essas permissões especificam o subconjunto da API que o tempo de execução do suplemento permitirá que o suplemento de conteúdo ou de painel de tarefas use quando um usuário inserir e ativar o suplemento (confiar nele). Para declarar o nível de permissão que o suplemento do conteúdo ou do painel de tarefas requer, especifique um dos valores de texto da permissão no elemento [Permissions](../reference/manifest/permissions.md) do manifesto do suplemento. O exemplo a seguir solicita a permissão  **WriteDocument**, que autorizará somente os métodos que podem gravar no documento, mas não lê-lo.
 
 ```XML
 <Permissions>WriteDocument</Permissions>

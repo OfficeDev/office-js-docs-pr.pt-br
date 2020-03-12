@@ -3,12 +3,12 @@ title: Elemento Control no arquivo de manifesto
 description: ''
 ms.date: 01/10/2020
 localization_priority: Normal
-ms.openlocfilehash: ccf7c3065db13a311825498292713b619f1cd745
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.openlocfilehash: 0add0d102b62411b67c081b74ecd0a138df3b625
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42562004"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596470"
 ---
 # <a name="control-element"></a>Elemento Control
 
@@ -32,7 +32,7 @@ Um botão executa uma única ação quando o usuário o seleciona. Pode ser a ex
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
 |  **Label**     | Sim |  O texto do botão. O atributo **Resid** deve ser definido como o valor do atributo **ID** de um elemento **String** no elemento **ShortStrings** no elemento [Resources](resources.md) .        |
-|  **Emergente**  |Não|A dica de ferramenta do botão. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **LongStrings**, que é filho do elemento [Resources](resources.md).|     
+|  **Emergente**    |Não|A dica de ferramenta do botão. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **LongStrings**, que é filho do elemento [Resources](resources.md).|        
 |  [Supertip](supertip.md)  | Sim |  A dica detalhada do botão.    |
 |  [Icon](icon.md)      | Sim |  Uma imagem para o botão.         |
 |  [Action](action.md)    | Sim |  Especifica a ação a ser executada.  |
@@ -40,7 +40,7 @@ Um botão executa uma única ação quando o usuário o seleciona. Pode ser a ex
 
 ### <a name="executefunction-button-example"></a>Exemplo do botão ExecuteFunction
 
-No exemplo a seguir, o botão é desabilitado quando o suplemento é iniciado. Ele pode ser habilitado programaticamente. Para obter mais informações, consulte [habilitar e desabilitar comandos de suplemento](/office/dev/add-ins/design/disable-add-in-commands).
+No exemplo a seguir, o botão é desabilitado quando o suplemento é iniciado. Ele pode ser habilitado programaticamente. Para obter mais informações, consulte [Ativar e Desativar Comandos de Suplemento](../../design/disable-add-in-commands.md).
 
 ```xml
 <Control xsi:type="Button" id="msgReadFunctionButton">
@@ -150,7 +150,7 @@ O exemplo a seguir mostra como definir um item de menu com dois itens de submenu
 |  Elemento |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
 |  **Label**     | Sim |  O texto do botão. O atributo **Resid** deve ser definido como o valor do atributo **ID** de um elemento **String** no elemento **ShortStrings** no elemento [Resources](resources.md) .      |
-|  **Emergente**  |Não|A dica de ferramenta do botão. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **LongStrings**, que é filho do elemento [Resources](resources.md).|     
+|  **Emergente**    |Não|A dica de ferramenta do botão. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **LongStrings**, que é filho do elemento [Resources](resources.md).|        
 |  [Supertip](supertip.md)  | Sim |  A dica detalhada do botão.    |
 |  [Icon](icon.md)      | Sim |  Uma imagem para o botão.         |
 |  **Items**     | Sim |  Um conjunto de botões a exibir dentro do menu. Contém os elementos **Item** para cada item do submenu. Cada elemento **Item** contém os mesmos elementos filhos que [Button control](#button-control).|

@@ -1,14 +1,14 @@
 ---
 title: Códigos de erro da API JavaScript do Office
 description: ''
-ms.date: 01/30/2020
+ms.date: 03/10/2020
 localization_priority: Normal
-ms.openlocfilehash: d46254f3cd8c353bcafb9e76cf97a7244afd13e1
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 93852e7cfa7188cd30bba370ed6cfeb556af39b8
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325280"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596806"
 ---
 # <a name="office-javascript-api-error-codes"></a>Códigos de erro da API JavaScript do Office
 
@@ -139,4 +139,4 @@ A tabela a seguir resume o comportamento de associação no Word.
 
 ## <a name="see-also"></a>Confira também
 
-- [Ciclo de vida de desenvolvimento de suplementos do Office](/office/dev/add-ins/concepts/add-in-development-lifecycle)
+- [Ciclo de vida de desenvolvimento de suplementos do Office](../overview/office-add-ins.md)

@@ -3,12 +3,12 @@ title: Elemento Override no arquivo de manifesto
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 020ae490dacbb9b8c493dc022c23d0ebf311a1b9
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: a1e11257e28d015d6fca9c9a1868e75989616e16
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450447"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596876"
 ---
 # <a name="override-element"></a>Elemento Override
 
@@ -46,5 +46,4 @@ Fornece uma maneira de especificar o valor de uma configuração para uma locali
 
 ## <a name="see-also"></a>Confira também
 
-- [Localização para suplementos do Office](/office/dev/add-ins/develop/localization)
-    
+- [Localização para suplementos do Office](../../develop/localization.md)

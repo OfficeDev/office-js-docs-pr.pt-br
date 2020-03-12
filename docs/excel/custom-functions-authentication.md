@@ -3,12 +3,12 @@ ms.date: 07/09/2019
 description: Autentique usuários usando funções personalizadas no Excel.
 title: Autenticação para funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: aa966aeb8d8161339bab0161b4cc329a9b495d08
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 872553986ebb74a97fd30afa0516ae6a72cf77bf
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950681"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596498"
 ---
 # <a name="authentication-for-custom-functions"></a>Autenticação para funções personalizadas
 
@@ -33,7 +33,7 @@ Se um token não existir, você deverá usar a API de diálogo para solicitar qu
 > [!NOTE]
 > O tempo de execução de funções personalizadas usa um objeto Dialog que é um pouco diferente do objeto Dialog no tempo de execução do mecanismo do navegador usado pelos painéis de tarefas. Ambos são chamados de "API de Caixa de Diálogo", mas usam `OfficeRuntime.Dialog` para autenticar usuários no tempo de execução de funções personalizadas.
 
-Para obter informações sobre como usar o objeto `Dialog`, consulte a [Caixa de Diálogo Funções Personalizadas](/office/dev/add-ins/excel/custom-functions-dialog).
+Para obter informações sobre como usar o objeto `Dialog`, consulte a [Caixa de Diálogo Funções Personalizadas](../excel/custom-functions-dialog.md).
 
 Ao visualizar o processo de autenticação como um todo, pode ser útil pensar no painel de tarefas e nos elementos de IU de seu suplemento, bem como pensar nas funções personalizadas de seu complemento como entidades separadas que podem se comunicar entre si por meio de `OfficeRuntime.storage`.
 
@@ -90,7 +90,7 @@ function receiveTokenFromCustomFunction() {
 
 ## <a name="general-guidance"></a>Orientação geral
 
-Os Suplementos do Office são baseados na Web e você pode usar qualquer técnica de autenticação da Web. Não há um padrão ou método específico que você deva seguir para implementar sua própria autenticação com funções personalizadas. Você pode querer consultar a documentação sobre vários padrões de autenticação, começando com [este artigo sobre a autorização por serviços externos](/office/dev/add-ins/develop/auth-external-add-ins).  
+Os Suplementos do Office são baseados na Web e você pode usar qualquer técnica de autenticação da Web. Não há um padrão ou método específico que você deva seguir para implementar sua própria autenticação com funções personalizadas. Você pode querer consultar a documentação sobre vários padrões de autenticação, começando com [este artigo sobre a autorização por serviços externos](../develop/auth-external-add-ins.md).  
 
 Evite usar os seguintes locais para armazenar dados ao desenvolver funções personalizadas:  
 

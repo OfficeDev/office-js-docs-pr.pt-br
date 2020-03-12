@@ -4,18 +4,18 @@ description: ''
 ms.date: 07/17/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 8410ee6d9ff7a16d58c8efab53d6cc92112f942a
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.openlocfilehash: cd8af8762fa55bde78a6eb62cabc37606db47099
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42561804"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596953"
 ---
 # <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API Comum do Office
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
 
-Precisa de informações sobre onde os suplementos têm suporte do host do Office? Consulte [Disponibilidade de host e plataforma para suplementos do Office](/office/dev/add-ins/overview/office-add-in-availability).
+Precisa de informações sobre onde os suplementos têm suporte do host do Office? Consulte [Disponibilidade de host e plataforma para suplementos do Office](../../overview/office-add-in-availability.md).
 
 Procurando pelos conjuntos de requisitos de API *específicos do host*? Confira os seguintes conjuntos de requisitos de API:
 
@@ -166,14 +166,6 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ---
 
-### <a name="ribbonapi"></a>RibbonApi
-
-|**Hosts do Office**|**Métodos no conjunto**|
-|:-----|:-----|
-| Confira [conjuntos de requisitos do RibbonAPI](ribbon-api-requirement-sets.md).|Office. UI. GetRibbon<br>Ribbon. requestUpdate|
-
----
-
 ### <a name="selection"></a>Seleção
 
 |**Hosts do Office**|**Métodos no conjunto**|
@@ -240,7 +232,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ## <a name="methods-that-arent-part-of-a-requirement-set"></a>Métodos que não fazem parte de um conjunto de requisitos
 
-Os seguintes métodos na API JavaScript do Office não fazem parte de um conjunto de requisitos. Se o suplemento exigir qualquer um desses métodos, use os elementos **Methods** e **Method** no manifesto do suplemento para declarar que eles são exigidos, ou então execute a verificação de tempo de execução usando uma instrução`if`. Para saber mais, confira [Especificar requisitos de API e hosts do Office](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements).
+Os seguintes métodos na API JavaScript do Office não fazem parte de um conjunto de requisitos. Se o suplemento exigir qualquer um desses métodos, use os elementos **Methods** e **Method** no manifesto do suplemento para declarar que eles são exigidos, ou então execute a verificação de tempo de execução usando uma instrução`if`. Para saber mais, confira [Especificar requisitos de API e hosts do Office](../../develop/specify-office-hosts-and-api-requirements.md).
 
 |**Nome do método**|**Suporte ao host do Office**|
 |:-----|:-----|
@@ -263,6 +255,6 @@ Os seguintes métodos na API JavaScript do Office não fazem parte de um conjunt
 
 ## <a name="see-also"></a>Confira também
 
-- [Versões do Office e conjuntos de requisitos](/office/dev/add-ins/develop/office-versions-and-requirement-sets)
-- [Especificar requisitos da API e de hosts do Office](/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)
-- [Manifesto XML dos Suplementos do Office](/office/dev/add-ins/develop/add-in-manifests)
+- [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md)
+- [Especificar requisitos da API e de hosts do Office](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Manifesto XML dos Suplementos do Office](../../develop/add-in-manifests.md)

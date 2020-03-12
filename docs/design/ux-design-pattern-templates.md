@@ -3,12 +3,12 @@ title: Padrões de design da experiência do usuário para suplementos do Office
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: d903f6cb2c6cad90c07b05303eac6b25a05a4af2
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: db939e12fcc3f81f70fd000a803941d4513ea534
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950415"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596708"
 ---
 # <a name="ux-design-patterns-for-office-add-ins"></a>Padrões de design da experiência do usuário para suplementos do Office
 
@@ -46,5 +46,5 @@ Navegar por cada agrupamento para ter uma ideia de como você pode projetar o su
 
 * [Kits de ferramentas de design](design-toolkits.md)
 * [Office UI Fabric](https://developer.microsoft.com/fabric)
-* [Práticas recomendadas para o desenvolvimento de Suplementos do Office](/office/dev/add-ins/concepts/add-in-development-best-practices)
-* [Introdução ao uso do Fabric React](/office/dev/add-ins/design/using-office-ui-fabric-react)
+* [Práticas recomendadas para o desenvolvimento de Suplementos do Office](../concepts/add-in-development-best-practices.md)
+* [Introdução ao uso do Fabric React](../design/using-office-ui-fabric-react.md)

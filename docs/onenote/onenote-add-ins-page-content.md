@@ -3,12 +3,12 @@ title: Trabalhar com conteúdo da página do OneNote
 description: ''
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: f60cdee7eb549acc0f2c84a1aa9acea7fe77274a
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 94c12815823e2860615fc731f460f08a468756e6
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32448433"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596855"
 ---
 # <a name="work-with-onenote-page-content"></a>Trabalhar com conteúdo da página do OneNote
 
@@ -61,6 +61,6 @@ Metadados, como título, ainda podem ser consultados para qualquer página.
 ## <a name="see-also"></a>Confira também
 
 - [Visão geral da programação da API JavaScript do OneNote](onenote-add-ins-programming-overview.md)
-- [Referência da API JavaScript do OneNote](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference)
+- [Referência da API JavaScript do OneNote](../reference/overview/onenote-add-ins-javascript-reference.md)
 - [Amostra de Rubric Grader](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)

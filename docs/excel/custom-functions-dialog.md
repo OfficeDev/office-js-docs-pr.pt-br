@@ -3,12 +3,12 @@ ms.date: 06/18/2019
 description: Crie uma caixa de diálogo por meio de funções personalizadas no Excel usando JavaScript.
 title: Exibir uma caixa de diálogo a partir de um função personalizada
 localization_priority: Normal
-ms.openlocfilehash: 8db5034cf9079ac5cd05654614087882ed1a8d52
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 54648e87cfdcb314c3d9d3ba3a4e0dbe3c708859
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950765"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596631"
 ---
 # <a name="display-a-dialog-box-from-a-custom-function"></a>Exibir uma caixa de diálogo a partir de um função personalizada
 
@@ -17,11 +17,11 @@ Se precisar que sua função personalizada interaja com o usuário, você pode c
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 >[!NOTE]
-> O objeto `Office.Dialog` faz parte do tempo de execução de funções personalizadas. Painéis de tarefas não usam o objeto `Dialog`. Para criar uma caixa de diálogo a partir de um painel de tarefas, confira [API de Caixa de Diálogo](/office/dev/add-ins/develop/dialog-api-in-office-add-ins).
+> O objeto `Office.Dialog` faz parte do tempo de execução de funções personalizadas. Painéis de tarefas não usam o objeto `Dialog`. Para criar uma caixa de diálogo a partir de um painel de tarefas, confira [API de Caixa de Diálogo](../develop/dialog-api-in-office-add-ins.md).
 
 ## <a name="dialog-box-api-example"></a>exemplo de API da caixa de diálogo
 
-Na amostra de código a seguir, a função `getTokenViaDialog` usa a função da `Dialog`API`displayWebDialogOptions` para exibir uma caixa de diálogo.
+No exemplo de código a seguir, a `getTokenViaDialog` função usa `Dialog` a função `displayWebDialogOptions` da API para exibir uma caixa de diálogo.
 
 ```js
 /**

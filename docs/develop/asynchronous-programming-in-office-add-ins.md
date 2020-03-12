@@ -3,12 +3,12 @@ title: Programação assíncrona em Suplementos do Office
 description: ''
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: fc39bddbe050f8253769a0013be2d48b26dcb599
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 931ef17115885c8f96d41bf00143b3269a515d56
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324642"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596687"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Programação assíncrona em Suplementos do Office
 
@@ -398,5 +398,5 @@ Em ambos os exemplos de parâmetros opcionais, o parâmetro _callback_ é especi
 
 ## <a name="see-also"></a>Confira também
 
-- [Noções básicas sobre a API JavaScript do Office](understanding-the-javascript-api-for-office.md)
-- [API JavaScript para Office](/office/dev/add-ins/reference/javascript-api-for-office)
+- [Entendendo a API JavaScript do Office](understanding-the-javascript-api-for-office.md)
+- [API JavaScript para Office](../reference/javascript-api-for-office.md)

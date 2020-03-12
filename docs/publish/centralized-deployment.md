@@ -3,12 +3,12 @@ title: Publicar Suplementos do Office usando a Implantação Centralizada por me
 description: ''
 ms.date: 02/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 92ae938669ad53b50c8635a998dcfa4525ac2bef
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 943216ec8f42160a8eb406999fa2c86c45a0081a
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165580"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596827"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-office-365-admin-center"></a>Publicar Suplementos do Office usando a Implantação Centralizada por meio do Centro de administração do Office 365
 
@@ -78,7 +78,7 @@ Se sua organização atender aos requisitos, conclua as etapas a seguir para pub
     ![Gerenciar quem tem acesso e método de implantação no centro de administração do Office 365](../images/manage-users-deployment-admin-center.png)
 
     > [!NOTE]
-    > Um sistema de [logon único (SSO)](/office/dev/add-ins/develop/sso-in-office-add-ins) para suplementos está atualmente em versão prévia e não deve ser usado para suplementos de produção. Quando for implantado um suplemento que use o SSO, os usuários e grupos atribuídos também são compartilhados com suplementos que compartilham a mesma ID de aplicativo Azure. Todas as alterações nas atribuições do usuário também são aplicadas a esses suplementos. Os suplementos relacionados serão mostrados nessa página. Apenas em suplementos de SSO, essa página exibe a lista de permissões do Microsoft Graph exigida pelo suplemento.
+    > Um sistema de [logon único (SSO)](../develop/sso-in-office-add-ins.md) para suplementos está atualmente em versão prévia e não deve ser usado para suplementos de produção. Quando for implantado um suplemento que use o SSO, os usuários e grupos atribuídos também são compartilhados com suplementos que compartilham a mesma ID de aplicativo Azure. Todas as alterações nas atribuições do usuário também são aplicadas a esses suplementos. Os suplementos relacionados serão mostrados nessa página. Apenas em suplementos de SSO, essa página exibe a lista de permissões do Microsoft Graph exigida pelo suplemento.
 
 11. Quando terminar, escolha **implantar**. Este processo pode levar até três minutos. Conclua a passo a passo, pressionando **Avançar**. Você verá o suplemento juntamente com outros aplicativos no Office 365.
 

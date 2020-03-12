@@ -3,12 +3,12 @@ title: Instale a última versão do Office
 description: Informações sobre como desativar essa opção para obter as versões mais recentes do Office.
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 1f08595ec5d4b7821bf0f2954b306108b0c449bb
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: ff573a13a6621e5c9bfa5c2dfd704bb64b731372
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950667"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596603"
 ---
 # <a name="install-the-latest-version-of-office"></a>Instale a última versão do Office
 
@@ -45,10 +45,10 @@ Quando o processo de instalação for concluído, você terá os últimos aplica
 
 Para saber mais sobre os builds mínimos de produtos para cada plataforma dos conjuntos de requisitos de API, confira o seguinte:
 
-- [Conjuntos de requisitos da API JavaScript do Excel](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets)
-- [Conjuntos de requisitos da API JavaScript do OneNote](/office/dev/add-ins/reference/requirement-sets/onenote-api-requirement-sets)
-- [Conjuntos de requisitos de API JavaScript do Outlook](/office/dev/add-ins/reference/requirement-sets/outlook-api-requirement-sets)
-- [Conjuntos de requisitos de API JavaScript do PowerPoint](/office/dev/add-ins/reference/requirement-sets/powerpoint-api-requirement-sets)
-- [Conjuntos de requisitos da API JavaScript do Word](/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets)
-- [Conjuntos de requisitos da API de Caixa de Diálogo](/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets)
-- [Conjuntos de requisitos da API comum do Office](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
+- [Conjuntos de requisitos da API JavaScript do Excel](../reference/requirement-sets/excel-api-requirement-sets.md)
+- [Conjuntos de requisitos da API JavaScript do OneNote](../reference/requirement-sets/onenote-api-requirement-sets.md)
+- [Conjuntos de requisitos de API JavaScript do Outlook](../reference/requirement-sets/outlook-api-requirement-sets.md)
+- [Conjuntos de requisitos de API JavaScript do PowerPoint](../reference/requirement-sets/powerpoint-api-requirement-sets.md)
+- [Conjuntos de requisitos da API JavaScript do Word](../reference/requirement-sets/word-api-requirement-sets.md)
+- [Conjuntos de requisitos da API de Caixa de Diálogo](../reference/requirement-sets/dialog-api-requirement-sets.md)
+- [Conjuntos de requisitos da API comum do Office](../reference/requirement-sets/office-add-in-requirement-sets.md)

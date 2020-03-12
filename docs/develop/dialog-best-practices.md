@@ -1,16 +1,16 @@
 ---
-title: Práticas recomendadas e regras para a API de diálogo do Office
+title: Práticas recomendadas e regras para a API da caixa de diálogo do Office
 description: Fornece regras e práticas recomendadas para a API de caixa de diálogo do Office, como as práticas recomendadas para um aplicativo de página única (SPA)
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 7a38337ca9a263df1f8405f2883fa4481c342e6b
-ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
+ms.openlocfilehash: e684c56768cd2ca7c9b14788206c925808c90b63
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "41650059"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596596"
 ---
-# <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Práticas recomendadas e regras para a API de diálogo do Office
+# <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Práticas recomendadas e regras para a API da caixa de diálogo do Office
 
 Este artigo fornece regras, armadilhas e práticas recomendadas para a API de diálogo do Office, incluindo as práticas recomendadas para projetar a interface do usuário de uma caixa de diálogo e usar a API com um aplicativo de página única (SPA)
 
@@ -19,11 +19,11 @@ Este artigo fornece regras, armadilhas e práticas recomendadas para a API de di
 > 
 > Consulte também [manipulação de erros e eventos com a caixa de diálogo do Office](dialog-handle-errors-events.md).
 
-## <a name="rules-and-gotchas"></a>Regras e armadilhas
+## <a name="rules-and-gotchas"></a>Regras e dicas
 
 - A caixa de diálogo só pode navegar para URLs HTTPS, não para HTTP.
 - A URL passada para o método [displayDialogAsync](/javascript/api/office/office.ui) deve estar no mesmo domínio que o suplemento em si. Ele não pode ser um subdomínio. Mas a página que é passada para ela pode redirecionar para uma página em outro domínio.
-- Uma janela hospedeira, que pode ser um painel de tarefas ou o arquivo de [função](/office/dev/add-ins/reference/manifest/functionfile) sem interface do usuário de um suplemento, pode ter apenas uma caixa de diálogo aberta por vez.
+- Uma janela hospedeira, que pode ser um painel de tarefas ou o arquivo de [função](../reference/manifest/functionfile.md) sem interface do usuário de um suplemento, pode ter apenas uma caixa de diálogo aberta por vez.
 - Apenas duas APIs do Office podem ser chamadas na caixa de diálogo:
   - A função [messageParent](/javascript/api/office/office.ui#messageparent-message-) .
   - `Office.context.requirements.isSetSupported`(Para obter mais informações, consulte [especificar hosts do Office e requisitos de API](specify-office-hosts-and-api-requirements.md).)
@@ -33,7 +33,7 @@ Este artigo fornece regras, armadilhas e práticas recomendadas para a API de di
 
 ### <a name="avoid-overusing-dialog-boxes"></a>Evitar a superutilização de caixas de diálogo
 
-Como elementos de interface do usuário sobrepostos são desencorajados, evite abrir uma caixa de diálogo de um painel de tarefas, a menos que seu cenário o exija. Ao considerar como usar a área de superfície de um painel de tarefas, observe que painéis de tarefas podem ter guias. Por exemplo, confira o exemplo [Suplemento do Excel JavaScriptSalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker).
+Como a sobreposição de elementos de IU não são recomendáveis, evite abrir uma caixa de diálogo em um painel de tarefas a menos que seu cenário o obrigue a fazer isso. Ao considerar como usar a área de superfície de um painel de tarefas, observe que painéis de tarefas podem ter guias. Por exemplo, confira o exemplo [Suplemento do Excel JavaScriptSalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker).
 
 ### <a name="designing-a-dialog-box-ui"></a>Criar uma interface do usuário de caixa de diálogo
 

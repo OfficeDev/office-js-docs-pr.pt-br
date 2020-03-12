@@ -3,19 +3,19 @@ title: Gerenciar o estado e as configurações de um suplemento do Outlook
 description: Saiba como persistir o estado e as configurações do suplemento para um suplemento do Outlook.
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 7a76da625faab98de1f6ef6d32e0274056dba9f2
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 7d981107da68c329d209834059bfac494d6ccae4
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325344"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596645"
 ---
 # <a name="manage-state-and-settings-for-an-outlook-add-in"></a>Gerenciar o estado e as configurações de um suplemento do Outlook
 
 > [!NOTE]
 > Revise o [estado e as configurações do suplemento persistentes](../develop/persisting-add-in-state-and-settings.md) na seção **principais conceitos** desta documentação antes de ler este artigo.
 
-Para suplementos do Outlook, a API JavaScript do Office fornece objetos [RoamingSettings](/javascript/api/outlook/office.roamingsettings) e [CustomProperties](/javascript/api/outlook/office.customproperties) para salvar o estado do suplemento entre as sessões, conforme descrito na tabela a seguir. Em todos os casos, os valores de configurações salvos são associados à [Id](/office/dev/add-ins/reference/manifest/id) do suplemento que os criou.
+Para suplementos do Outlook, a API JavaScript do Office fornece objetos [RoamingSettings](/javascript/api/outlook/office.roamingsettings) e [CustomProperties](/javascript/api/outlook/office.customproperties) para salvar o estado do suplemento entre as sessões, conforme descrito na tabela a seguir. Em todos os casos, os valores de configurações salvos são associados à [Id](../reference/manifest/id.md) do suplemento que os criou.
 
 |**Objeto**|**Local de armazenamento**|
 |:-----|:-----|:-----|
@@ -150,4 +150,4 @@ function saveCallback(asyncResult) {
 ## <a name="see-also"></a>Confira também
 
 - [Persistir o estado e as configurações do suplemento](../develop/persisting-add-in-state-and-settings.md)
-- [Inicializar o suplemento do Office](../develop/initialize-add-in.md)
+- [Inicialize seu suplemento do Office](../develop/initialize-add-in.md)

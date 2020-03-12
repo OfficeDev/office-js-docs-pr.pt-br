@@ -1,14 +1,14 @@
 ---
 title: Solucionar problemas de mensagens de erro no logon único (SSO)
 description: ''
-ms.date: 02/20/2020
+ms.date: 03/10/2020
 localization_priority: Normal
-ms.openlocfilehash: a29efa4a501ee10b185cb2bbc72cb8e8e5e8b098
-ms.sourcegitcommit: 7464eac3b54a6a6b65e27549a3ad603af6ee1011
+ms.openlocfilehash: 7bde083277ece303597dd1c52398f8a91cacc765
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42315869"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596799"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>Solucionar problemas de mensagens de erro no logon único (SSO) (visualização)
 
@@ -34,12 +34,12 @@ Para acessar exemplos de tratamento de erro descritos nesta seção, confira:
 
 ### <a name="13000"></a>13000
 
-A API [getAccessToken](/office/dev/add-ins/develop/sso-in-office-add-ins#sso-api-reference) não é compatível pelo suplemento ou pela versão do Office.
+A API [getAccessToken](../develop/sso-in-office-add-ins.md#sso-api-reference) não é compatível pelo suplemento ou pela versão do Office.
 
-- A versão do Office não é compatível com o SSO. A versão necessária é o Office 365 (a versão de assinatura do Office), em qualquer canal mensal. 
-- O manifesto do suplemento está sem a seção [WebApplicationInfo](/office/dev/add-ins/reference/manifest/webapplicationinfo) adequada.
+- A versão do Office não é compatível com o SSO. A versão necessária é o Office 365 (a versão de assinatura do Office), em qualquer canal mensal.
+- O manifesto do suplemento está sem a seção [WebApplicationInfo](../reference/manifest/webapplicationinfo.md) adequada.
 
-O suplemento deverá responder a esse erro recorrendo a um sistema de autenticação de usuário alternativo. Para obter mais informações, confira [Requisitos e Melhores Práticas](/office/dev/add-ins/develop/sso-in-office-add-ins#requirements-and-best-practices).
+O suplemento deverá responder a esse erro recorrendo a um sistema de autenticação de usuário alternativo. Para obter mais informações, confira [Requisitos e Melhores Práticas](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
 
 ### <a name="13001"></a>13001
 
@@ -60,11 +60,11 @@ O usuário abortou a entrada ou o consentimento; por exemplo, escolhendo **Cance
 
 ### <a name="13003"></a>13003
 
-Tipo de Usuário não suportado. O usuário não iniciou sessão no Office com uma conta Microsoft ou do Office 365 válida (corporativa ou de estudante). Isso pode acontecer se o Office funcionar com uma conta de domínio no local, por exemplo. O código deve retornar a um sistema alternativo de autenticação de usuário. Para obter mais informações, confira [Requisitos e Melhores Práticas](/office/dev/add-ins/develop/sso-in-office-add-ins##requirements-and-best-practices).
+Tipo de Usuário não suportado. O usuário não iniciou sessão no Office com uma conta Microsoft ou do Office 365 válida (corporativa ou de estudante). Isso pode acontecer se o Office funcionar com uma conta de domínio no local, por exemplo. O código deve retornar a um sistema alternativo de autenticação de usuário. Para obter mais informações, confira [Requisitos e Melhores Práticas](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
 
 ### <a name="13004"></a>13004
 
-Recurso inválido. (Esse erro só deve aparecer no desenvolvimento.) O manifesto de suplemento ainda não foi configurado corretamente. Atualize o manifesto. Para saber mais, confira [Validar o manifesto de suplemento do Office](../testing/troubleshoot-manifest.md). O problema mais comum é que o elemento **Resource** (no elemento **WebApplicationInfo**) tem um domínio que não corresponde ao domínio do suplemento. Embora a parte do protocolo do valor Resource deva ser “api” e não “https”, todas as outras partes do nome de domínio (incluindo a porta, se houver) devem ser as mesmas para o suplemento.
+Recurso inválido. (Esse erro só deve ser visto no desenvolvimento.) O manifesto do suplemento não foi configurado corretamente. Atualize o manifesto. Para saber mais, confira [Validar o manifesto de suplemento do Office](../testing/troubleshoot-manifest.md). O problema mais comum é que o elemento **Resource** (no elemento **WebApplicationInfo**) tem um domínio que não corresponde ao domínio do suplemento. Embora a parte do protocolo do valor Resource deva ser “api” e não “https”, todas as outras partes do nome de domínio (incluindo a porta, se houver) devem ser as mesmas para o suplemento.
 
 ### <a name="13005"></a>13005
 
@@ -93,13 +93,13 @@ O usuário desencadeou uma operação que chama o `getAccessToken` antes de uma 
 
 ### <a name="13010"></a>13010
 
-O usuário está executando o suplemento no Office, no Microsoft Edge ou no Internet Explorer. O domínio do Office 365 do usuário e o domínio `login.microsoftonline.com` estão em zonas de segurança diferentes nas configurações do navegador. Este erro somente aparece no **Office na Web**. Se esse erro for retornado, o usuário já terá visto uma mensagem explicando o erro e vinculando a uma página sobre como alterar a configuração da zona. Se o seu suplemento fornece funções que não exigem que o usuário esteja conectado, o código deve capturar esse erro e permitir que o suplemento permaneça em execução.
+O usuário está executando o suplemento no Office, no Microsoft Edge ou no Internet Explorer. O domínio do Office 365 do usuário e o `login.microsoftonline.com` domínio estão em zonas de segurança diferentes nas configurações do navegador. Este erro somente aparece no **Office na Web**. Se esse erro for retornado, o usuário já terá visto uma mensagem explicando o erro e vinculando a uma página sobre como alterar a configuração da zona. Se o seu suplemento fornece funções que não exigem que o usuário esteja conectado, o código deve capturar esse erro e permitir que o suplemento permaneça em execução.
 
 ### <a name="13012"></a>13012
 
 Há várias causas possíveis:
 
-- O suplemento está em execução em uma plataforma não dá suporte à API `getAccessToken`. Por exemplo, ele não é suportado no iPad. Confira também [Conjuntos de requisitos da API de Identidade](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets).
+- O suplemento está em execução em uma plataforma não dá suporte à API `getAccessToken`. Por exemplo, ele não é suportado no iPad. Confira também [Conjuntos de requisitos da API de Identidade](../reference/requirement-sets/identity-api-requirement-sets.md).
 - A opção `forMSGraphAccess` foi passada na chamada ao `getAccessToken` e o usuário obteve o suplemento no AppSource. Nesse cenário, o administrador do locatário não deu o consentimento ao suplemento para os escopos (permissões) do Microsoft Graph necessários. Uma nova chamada ao `getAccessToken` com o `allowConsentPrompt`, não resolverá o problema porque o Office poderá solicitar ao usuário o consentimento apenas para o escopo AAD do `profile`.
 
 O código deve retornar a um sistema alternativo de autenticação de usuário.
@@ -114,7 +114,7 @@ O `getAccessToken` era chamado muitas vezes em um curto período de tempo, porta
 
 Este erro (que não é específico de `getAccessToken`) pode indicar que o navegador colocou um cópia antiga dos arquivos office.js em cache. Quando você estiver desenvolvendo, limpe o cache do navegador. Também é possível que a versão do Office não esteja suficientemente recente para dar suporte à SSO. No Windows, a versão mínima é a 16.0.12215.20006. No Mac, é a 16.32.19102902.
 
-Em um suplemento de produção, o suplemento deverá responder a esse erro recorrendo a um sistema de autenticação de usuário alternativo. Para obter mais informações, confira [Requisitos e Melhores Práticas](/office/dev/add-ins/develop/sso-in-office-add-ins##requirements-and-best-practices).
+Em um suplemento de produção, o suplemento deverá responder a esse erro recorrendo a um sistema de autenticação de usuário alternativo. Para obter mais informações, confira [Requisitos e Melhores Práticas](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
 
 ## <a name="errors-on-the-server-side-from-azure-active-directory"></a>Erros no lado do servidor do Azure Active Directory
 
@@ -141,7 +141,7 @@ Se o suplemento precisar de escopos do Microsoft Graph que só possam ser consen
 Esse tipo de erro só deve aparecer no desenvolvimento.
 
 - Seu código do lado do servidor deve enviar a resposta `403 Forbidden` ao cliente, que deve registrar o erro no console ou gravá-lo em um log.
-- Verifique se a seção de [Escopos](/office/dev/add-ins/reference/manifest/scopes) do manifesto do suplemento especifica todas as permissões necessárias. E certifique-se de que seu registro do serviço Web do suplemento especifique as mesmas permissões. Verifique também os erros de ortografia. Para mais informações, confira [Registrar o suplemento com o ponto de extremidade do Microsoft Azure AD v2.0](register-sso-add-in-aad-v2.md).
+- Verifique se a seção de [Escopos](../reference/manifest/scopes.md) do manifesto do suplemento especifica todas as permissões necessárias. E certifique-se de que seu registro do serviço Web do suplemento especifique as mesmas permissões. Verifique também os erros de ortografia. Para mais informações, confira [Registrar o suplemento com o ponto de extremidade do Microsoft Azure AD v2.0](register-sso-add-in-aad-v2.md).
 
 ### <a name="invalid-audience-error-in-the-access-token-not-the-bootstrap-token"></a>Erro de audiência inválido no token de acesso (não no token de inicialização)
 

@@ -3,12 +3,12 @@ ms.date: 12/31/2019
 description: Solução de problemas comuns em funções personalizadas do Excel.
 title: Solução de problemas das funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: 10e1e3ec934d16806aa137a6468bbdada3fc1db2
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: f574bdbb385c840fb20de4ab64705b167cd51e05
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950828"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596554"
 ---
 # <a name="troubleshoot-custom-functions"></a>Solução de problemas de funções personalizadas
 
@@ -76,7 +76,7 @@ function add(first, second) {
 CustomFunctions.associate("ADD", add);
 ```
 
-Saiba mais sobre esse processo em [Associar os nomes de função com metadados JSON](/office/dev/add-ins/excel/custom-functions-json#associating-function-names-with-json-metadata).
+Saiba mais sobre esse processo em [Associar os nomes de função com metadados JSON](../excel/custom-functions-json.md#associating-function-names-with-json-metadata).
 
 ## <a name="reporting-feedback"></a>Fornecer comentários
 

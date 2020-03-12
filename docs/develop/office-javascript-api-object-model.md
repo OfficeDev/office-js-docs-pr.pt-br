@@ -1,26 +1,26 @@
 ---
 title: Modelo de objeto comum de API JavaScript para Office
 description: ''
-ms.date: 02/27/2020
+ms.date: 03/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 3b1e1db21f3deb4b6a311a433dbd922c4bb6b50d
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 85ecd3b7b676a11a4ff41868adbbd9a0d907f32a
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325126"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596722"
 ---
 # <a name="common-javascript-api-object-model"></a>Modelo de objeto comum de API JavaScript para Office
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
 
-Suplementos de JavaScript do Office oferecem acesso às funcionalidades subjacentes do host. A maioria desse acesso percorre alguns objetos importantes. O objeto [contexto](#context-object) oferece acesso ao tempo de execução ambiente depois de inicialização. O objeto[documento](#document-object) oferece o controle do usuário a um documento do Excel, PowerPoint ou Word. O objeto [caixa de correio](#mailbox-object) oferece um acesso ao suplemento do Outlook para mensagens e perfis de usuário. Noções básicas sobre as relações entre esses objetos gerais é a base de um suplemento JavaScript.
+Os suplementos de JavaScript do Office oferecem acesso à funcionalidade subjacente do host. A maioria desse acesso percorre alguns objetos importantes. O objeto [contexto](#context-object) oferece acesso ao tempo de execução ambiente depois de inicialização. O objeto[documento](#document-object) oferece o controle do usuário a um documento do Excel, PowerPoint ou Word. O objeto [caixa de correio](#mailbox-object) oferece um acesso ao suplemento do Outlook para mensagens e perfis de usuário. Noções básicas sobre as relações entre esses objetos gerais é a base de um suplemento JavaScript.
 
 ## <a name="context-object"></a>Objeto de contexto
 
 **Aplica-se a:** todos os tipos de suplementos
 
-Quando um suplemento é [inicializado](/office/dev/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in), ele possui diversos objetos diferentes com os quais pode interagir no ambiente do tempo de execução. O contexto do tempo de execução do suplemento é refletido na API por meio do objeto [Contexto](/javascript/api/office/office.context). O**Contexto** é o principal objeto que fornece acesso aos objetos mais importantes da API, como os objetos [Documento](/javascript/api/office/office.document) e [Caixa de correio](/javascript/api/outlook/Office.mailbox) que, por sua vez, fornecem acesso ao conteúdo do documento e da caixa de correio.
+Quando um suplemento é [inicializado](initialize-add-in.md), ele possui diversos objetos diferentes com os quais pode interagir no ambiente do tempo de execução. O contexto do tempo de execução do suplemento é refletido na API por meio do objeto [Contexto](/javascript/api/office/office.context). O**Contexto** é o principal objeto que fornece acesso aos objetos mais importantes da API, como os objetos [Documento](/javascript/api/office/office.document) e [Caixa de correio](/javascript/api/outlook/Office.mailbox) que, por sua vez, fornecem acesso ao conteúdo do documento e da caixa de correio.
 
 Por exemplo, nos suplementos do painel de tarefas e de conteúdo, é possível usar a propriedade [documento](/javascript/api/office/office.context#document) do objeto **Context** para acessar as propriedades e os métodos do objeto **Document**. Isso permite interagir com o conteúdo de documentos do Word, planilhas do Excel ou tarefas do Project. Do mesmo modo, com os suplementos do Outlook, você pode usar a propriedade [mailbox](/javascript/api/outlook/Office.mailbox) do objeto **Context** para acessar as propriedades e os métodos do objeto **Mailbox** e interagir com a mensagem, a solicitação de reunião ou o conteúdo do compromisso.
 

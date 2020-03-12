@@ -3,12 +3,12 @@ title: Elemento AppDomain no arquivo de manifesto
 description: ''
 ms.date: 07/03/2019
 localization_priority: Normal
-ms.openlocfilehash: 2f65302d1ac3d85f2867cd13501bc67606cd00b5
-ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
+ms.openlocfilehash: da28b3b4dec5d669462a781db3c0628bd32c7182
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "35575636"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596785"
 ---
 # <a name="appdomain-element"></a>Elemento AppDomain
 
@@ -32,4 +32,4 @@ Especifica domínios adicionais que carregam páginas na janela do suplemento. E
 
 ## <a name="remarks"></a>Comentários
 
-Os elementos **AppDomain** deve ser usado para especificar os domínios adicionais diferentes daqueles especificados no elemento [SourceLocation](sourcelocation.md). Confira mais informações em [Manifesto XML de Suplementos do Office](/office/dev/add-ins/develop/add-in-manifests).
+Os elementos **AppDomain** deve ser usado para especificar os domínios adicionais diferentes daqueles especificados no elemento [SourceLocation](sourcelocation.md). Confira mais informações em [Manifesto XML de Suplementos do Office](../../develop/add-in-manifests.md).

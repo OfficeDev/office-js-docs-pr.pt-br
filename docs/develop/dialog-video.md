@@ -1,14 +1,14 @@
 ---
-title: Usar a caixa de diálogo do Office para reproduzir um vídeo
+title: Use a caixa de diálogo do Office para reproduzir um vídeo
 description: Saiba como abrir e reproduzir um vídeo na caixa de diálogo do Office
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 407eec467ed8ed51350f6195a3607c430524e6b4
-ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
+ms.openlocfilehash: 9c65dfb9c0cf1adbc827be25b655e380dc39e2d2
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "41650058"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596526"
 ---
 # <a name="use-the-office-dialog-box-to-show-a-video"></a>Usar a caixa de diálogo do Office para mostrar um vídeo
 
@@ -31,6 +31,6 @@ Para reproduzir um vídeo em uma caixa de diálogo com a API de diálogo do Offi
 2. Use uma chamada de `displayDialogAsync` na página host para abrir video.dialogbox.html.
 3. Se o suplemento precisar saber quando o usuário fecha a caixa de diálogo, registre um manipulador para o evento `DialogEventReceived` e manipule o evento 12006. Para obter detalhes, consulte [erros e eventos na caixa de diálogo do Office](dialog-handle-errors-events.md).
 
-Para ver um exemplo de reprodução de vídeo em uma caixa de diálogo, confira o [padrão de design do roteiro de vídeo](/office/dev/add-ins/design/first-run-experience-patterns#video-placemat).
+Para ver um exemplo de reprodução de vídeo em uma caixa de diálogo, confira o [padrão de design do roteiro de vídeo](../design/first-run-experience-patterns.md#video-placemat).
 
 ![Captura de tela de um vídeo sendo executado em uma caixa de diálogo de suplemento](../images/video-placemats-dialog-open.png)

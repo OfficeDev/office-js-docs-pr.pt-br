@@ -3,12 +3,12 @@ ms.date: 01/14/2020
 description: Definir metadados JSON para funções personalizadas no Excel e associar suas propriedades de ID de função e nome.
 title: Metadados para funções personalizadas no Excel
 localization_priority: Normal
-ms.openlocfilehash: 2a777cb0217d48caf03983d3dbfe662dfe0b2567
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
+ms.openlocfilehash: 79f23f83dfd4bff40880cb39edc6ebe9bf2e052e
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217024"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596778"
 ---
 # <a name="custom-functions-metadata"></a>Metadados de funções personalizadas
 
@@ -160,7 +160,7 @@ O objeto `options` permite que você personalize alguns aspectos de como e quand
 | Propriedade          | Tipo de dados | Obrigatório                               | Descrição                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | :---------------- | :-------- | :------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `cancelable`      | booliano   | Não<br/><br/>O valor padrão é `false`.  | Se o valor for `true`, o Excel chamará o manipulador `CancelableInvocation` sempre que o usuário realizar uma ação que tenha o efeito de cancelar a função, por exemplo, manualmente acionar um recálculo ou editar uma célula referenciada pela função. As funções de cancelamento normalmente são usadas apenas para funções assíncronas que retornam um único resultado e precisam lidar com o cancelamento de uma solicitação de dados. Uma função não pode ser streaming e cancelamento. Para obter mais informações, consulte a observação próxima ao final de [fazer uma função de streaming](custom-functions-web-reqs.md#make-a-streaming-function). |
-| `requiresAddress` | booliano   | Não <br/><br/>O valor padrão é `false`. | Se `true`, sua função personalizada pode acessar o endereço da célula que invocou sua função personalizada. Para obter o endereço da célula que chamou sua função personalizada, use Context. Address em sua função personalizada. Para saber mais, confira o [parâmetro context da célula de endereçamento](/office/dev/add-ins/excel/custom-functions-parameter-options#addressing-cells-context-parameter). As funções personalizadas não podem ser definidas como streaming e requiresAddress. Ao usar essa opção, o parâmetro "invocar" deve ser o último parâmetro passado em opções.                                              |
+| `requiresAddress` | booliano   | Não <br/><br/>O valor padrão é `false`. | Se `true`, sua função personalizada pode acessar o endereço da célula que invocou sua função personalizada. Para obter o endereço da célula que chamou sua função personalizada, use Context. Address em sua função personalizada. Para saber mais, confira o [parâmetro context da célula de endereçamento](../excel/custom-functions-parameter-options.md#addressing-cells-context-parameter). As funções personalizadas não podem ser definidas como streaming e requiresAddress. Ao usar essa opção, o parâmetro "invocar" deve ser o último parâmetro passado em opções.                                              |
 | `stream`          | booliano   | Não<br/><br/>O valor padrão é `false`.  | Se o valor for `true`, a função poderá gerar uma saída para a célula de forma repetida, mesmo quando invocada somente uma vez. Essa opção é útil para fontes de dados que mudam constantemente, como preços de ações. A função não deve ter instruções `return`. Em vez disso, o valor resultante é passado como o argumento do método de retorno `StreamingInvocation.setResult`. Para saber mais informações, confira [Funções de streaming](custom-functions-web-reqs.md#make-a-streaming-function).                                                                                                                                                                |
 | `volatile`        | booliano   | Não <br/><br/>O valor padrão é `false`. | <br /><br /> Se for `true`, a função será recalculada sempre que o Excel recalcular, em vez de apenas quando os valores dependentes da fórmula forem alterados. Uma função não pode ser de streaming e volátil ao mesmo tempo. Se as propriedades `stream` e `volatile` forem definidas como `true`, a opção volátil será ignorada.                                                                                                                                                                                                                                                                                             |
 
@@ -268,6 +268,7 @@ O exemplo a seguir mostra os metadados JSON que correspondem às funções defin
 Conheça as [práticas recomendadas para nomear sua função](custom-functions-naming.md) ou descubra como [localizar sua função](custom-functions-localize.md) usando o método JSON manuscrito descrito anteriormente.
 
 ## <a name="see-also"></a>Confira também
+
 
 - [Gerar metadados JSON automaticamente para funções personalizadas](custom-functions-json-autogeneration.md)
 - [Opções de parâmetros de funções personalizadas](custom-functions-parameter-options.md)

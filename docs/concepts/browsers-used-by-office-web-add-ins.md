@@ -1,14 +1,14 @@
 ---
 title: Navegadores usados pelos Suplementos do Office
 description: Especifica como o sistema operacional e a versão do Office determinam o navegador que é usado pelos suplementos do Office.
-ms.date: 12/13/2019
+ms.date: 03/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 37d001d7feb170b11edc4f6a233f6fdc15cf3438
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: d53ea0da29c9d2cc1177d233eed9e3ee62a891f2
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950359"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596463"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navegadores usados pelos Suplementos do Office
 
@@ -38,6 +38,10 @@ A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sis
 > O Internet Explorer 11 não oferece suporte às versões do JavaScript posteriores a ES5. Se qualquer um dos usuários de suplemento tiverem plataformas com Internet Explorer 11, para que seja possível usar a sintaxe e os recursos do ECMAScript 2015 ou posterior, você precisará fazer o transpile do seu JavaScript para o ES5 ou usar um polyfill. Além disso, o Internet Explorer 11 não oferece suporte a alguns recursos do HTML5, como mídia, gravação e localização.
 
 ## <a name="troubleshooting-microsoft-edge-issues"></a>Solucionar problemas do Microsoft Edge
+
+### <a name="service-workers-are-not-working"></a>Os funcionários de serviço não estão funcionando
+
+Os suplementos do Office não dão suporte a trabalhadores de serviço no [Microsoft Edge WebView](/microsoft-edge/hosting/webview). Confira a [visão geral dos suplementos do Office](../overview/office-add-ins.md) para obter os recursos mais recentes suportados no controle de WebView de borda. Estamos trabalhando duro para trazer o novo [WebView2 de borda baseado em Chromium](/microsoft-edge/hosting/webview2) para a plataforma de suplementos do Office, que esperamos que seja compatível com os funcionários de serviço.
 
 ### <a name="chromium-based-edge-is-installed-on-my-development-computer-but-my-add-in-does-not-use-it"></a>A borda baseada em Chromium está instalada no meu computador de desenvolvimento, mas meu suplemento não a usa
 

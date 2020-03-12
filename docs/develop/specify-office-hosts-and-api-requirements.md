@@ -3,12 +3,12 @@ title: Especificar hosts do Office e requisitos de API
 description: ''
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 4ee8dabd5a364a2c5566b2918c173da9b6d04a5a
-ms.sourcegitcommit: d85efbf41a3382ca7d3ab08f2c3f0664d4b26c53
+ms.openlocfilehash: bf5c263da57224036aa12ec652a1cb38f73e31c0
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "42327786"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596491"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>Especificar hosts do Office e requisitos de API
 
@@ -31,8 +31,8 @@ A tabela a seguir lista os principais conceitos discutidos neste artigo.
 |:-----|:-----|
 |Aplicativo do Office, aplicativo host do Office, host do Office ou host|O aplicativo do Office usado para executar seu suplemento. Por exemplo, Word e assim por diante.|
 |Plataforma|Onde o host do Office é executado, como em um navegador ou em um iPad.|
-|Conjunto de requisitos|Um grupo nomeado de membros relacionados da API. Os suplementos usam conjuntos de requisitos para determinar se o host do Office oferece suporte a membros da API usados por seu suplemento. É mais fácil testar se há suporte para um conjunto de requisitos do que o suporte para membros individuais da API. O suporte a um conjunto de requisitos varia de acordo com o host do Office e a versão do host do Office. <br >Conjuntos de requisitos são especificados no arquivo de manifesto. Ao especificar conjuntos de requisitos no manifesto, você estabelece o nível mínimo de suporte à API que o host do Office deve fornecer a fim de executar seu suplemento. Os hosts do Office que não suportam conjuntos de requisitos especificados no manifesto não podem executar o suplemento e o mesmo não será exibido em <span class="ui">Meus suplementos</span>. Isso restringirá onde o suplemento está disponível. No código usando verificações de tempo de execução. Para obter uma lista completa de conjuntos de requisitos, confira [Conjuntos de requisitos de Suplemento do Office](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).|
-|Verificação no tempo de execução|Um teste é executado no tempo de execução para determinar se o host do Office que está executando seu suplemento oferece suporte aos conjuntos de requisitos ou métodos usados por seu suplemento. Para executar uma verificação de tempo de execução, **** use uma instrução If `isSetSupported` com o método, os conjuntos de requisitos ou os nomes dos métodos que não fazem parte de um conjunto de requisitos. Use as verificações no tempo de execução para garantir que seu suplemento alcance o maior número de clientes. Ao contrário dos conjuntos de requisitos, as verificações no tempo de execução não especificam o nível mínimo de suporte à API exigido do host do Office para que seu suplemento possa ser executado. Em vez disso, use a instrução **If** para determinar se há suporte para um membro da API. Se houver, você poderá proporcionar mais funcionalidade em seu suplemento. Seu suplemento sempre aparecerá em **Meus Suplementos** ao usar verificações no tempo de execução.|
+|Conjunto de requisitos|Um grupo nomeado de membros relacionados da API. Os suplementos usam conjuntos de requisitos para determinar se o host do Office oferece suporte a membros da API usados por seu suplemento. É mais fácil testar se há suporte para um conjunto de requisitos do que o suporte para membros individuais da API. O suporte a um conjunto de requisitos varia de acordo com o host do Office e a versão do host do Office. <br >Conjuntos de requisitos são especificados no arquivo de manifesto. Ao especificar conjuntos de requisitos no manifesto, você estabelece o nível mínimo de suporte à API que o host do Office deve fornecer a fim de executar seu suplemento. Os hosts do Office que não suportam conjuntos de requisitos especificados no manifesto não podem executar o suplemento e o mesmo não será exibido em <span class="ui">Meus suplementos</span>. Isso restringirá onde o suplemento está disponível. No código usando verificações de tempo de execução. Para obter uma lista completa de conjuntos de requisitos, confira [Conjuntos de requisitos de Suplemento do Office](../reference/requirement-sets/office-add-in-requirement-sets.md).|
+|Verificação no tempo de execução|Um teste é executado no tempo de execução para determinar se o host do Office que está executando seu suplemento oferece suporte aos conjuntos de requisitos ou métodos usados por seu suplemento. Para executar uma verificação de tempo de execução, **if** use uma instrução If `isSetSupported` com o método, os conjuntos de requisitos ou os nomes dos métodos que não fazem parte de um conjunto de requisitos. Use as verificações no tempo de execução para garantir que seu suplemento alcance o maior número de clientes. Ao contrário dos conjuntos de requisitos, as verificações no tempo de execução não especificam o nível mínimo de suporte à API exigido do host do Office para que seu suplemento possa ser executado. Em vez disso, use a instrução **If** para determinar se há suporte para um membro da API. Se houver, você poderá proporcionar mais funcionalidade em seu suplemento. Seu suplemento sempre aparecerá em **Meus Suplementos** ao usar verificações no tempo de execução.|
 
 ## <a name="before-you-begin"></a>Antes de começar
 
@@ -127,7 +127,7 @@ O exemplo de código a seguir mostra um suplemento que carrega em todos os aplic
 
 - O `Sets` elemento pode conter um ou mais `Set` elementos. `DefaultMinVersion` especifica o valor `MinVersion` padrão de todos os `Set` elementos filhos.
 
-- O `Set` elemento especifica conjuntos de requisitos que o host do Office deve suportar para executar o suplemento. O `Name` atributo especifica o nome do conjunto de requisitos. O `MinVersion` especifica a versão mínima do conjunto de requisitos. `MinVersion`Substitui o valor de `DefaultMinVersion` para obter mais informações sobre conjuntos de requisitos e versões de conjunto de requisitos aos quais seus membros da API pertencem, confira [conjuntos de requisitos de suplemento do Office](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).
+- O `Set` elemento especifica conjuntos de requisitos que o host do Office deve suportar para executar o suplemento. O `Name` atributo especifica o nome do conjunto de requisitos. O `MinVersion` especifica a versão mínima do conjunto de requisitos. `MinVersion`Substitui o valor de `DefaultMinVersion` para obter mais informações sobre conjuntos de requisitos e versões de conjunto de requisitos aos quais seus membros da API pertencem, confira [conjuntos de requisitos de suplemento do Office](../reference/requirement-sets/office-add-in-requirement-sets.md).
 
 - O `Methods` elemento pode conter um ou mais `Method` elementos. Você não pode usar `Methods` o elemento com os suplementos do Outlook.
 
@@ -145,7 +145,7 @@ if (Office.context.requirements.isSetSupported(RequirementSetName, MinimumVersio
 
 ```
 
-- _RequirementSetName_ (obrigatório) é uma cadeia de caracteres que representa o nome do conjunto de requisitos (por exemplo, "**ExcelApi**", "**Mailbox**", etc.). Para saber mais sobre os conjuntos de requisitos disponíveis, confira [Conjuntos de requisitos de Suplemento do Office](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets).
+- _RequirementSetName_ (obrigatório) é uma cadeia de caracteres que representa o nome do conjunto de requisitos (por exemplo, "**ExcelApi**", "**Mailbox**", etc.). Para saber mais sobre os conjuntos de requisitos disponíveis, confira [Conjuntos de requisitos de Suplemento do Office](../reference/requirement-sets/office-add-in-requirement-sets.md).
 - _MinimumVersion_ (opcional) é uma cadeia de caracteres que especifica a versão mínima do conjunto de requisitos que o host deve suportar para que o código dentro da instrução `if` seja executado (por exemplo, "**1.9**").
 
 > [!WARNING]
@@ -183,7 +183,7 @@ else
 
 ## <a name="runtime-checks-using-methods-not-in-a-requirement-set"></a>Verificações no tempo de execução usando métodos que não fazem parte de um conjunto de requisitos
 
-Alguns membros de API não pertencem a conjuntos de requisitos. Isso aplica-se somente a membros da API que fazem parte do namespace da [API JavaScript](/office/dev/add-ins/reference/javascript-api-for-office) do `Office.` Office (qualquer coisa em relação à exceção de [APIs de caixa de correio do Outlook](/javascript/api/outlook)), mas não membros da API que pertencem à [API JavaScript do Word](/office/dev/add-ins/reference/overview/word-add-ins-reference-overview) (qualquer coisa em `Word.`), [API JavaScript do Excel](/office/dev/add-ins/reference/overview/excel-add-ins-reference-overview) (qualquer coisa em `Excel.`) ou namespaces da [API JavaScript do OneNote](/office/dev/add-ins/reference/overview/onenote-add-ins-javascript-reference) (tudo em `OneNote.`). Quando seu suplemento depende de um método que não faz parte de um conjunto de requisitos, é possível usar a verificação no tempo de execução para determinar se o método tem suporte no host do Office, conforme mostra o exemplo de código a seguir. Para obter uma lista completa dos métodos que não pertencem a um conjunto de requisitos, confira [Conjuntos de requisitos de Suplemento do Office](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets#methods-that-arent-part-of-a-requirement-set).
+Alguns membros de API não pertencem a conjuntos de requisitos. Isso aplica-se somente a membros da API que fazem parte do namespace da [API JavaScript](../reference/javascript-api-for-office.md) do `Office.` Office (qualquer coisa em relação à exceção de [APIs de caixa de correio do Outlook](/javascript/api/outlook)), mas não membros da API que pertencem à [API JavaScript do Word](../reference/overview/word-add-ins-reference-overview.md) (qualquer coisa em `Word.`), [API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md) (qualquer coisa em `Excel.`) ou namespaces da [API JavaScript do OneNote](../reference/overview/onenote-add-ins-javascript-reference.md) (tudo em `OneNote.`). Quando seu suplemento depende de um método que não faz parte de um conjunto de requisitos, é possível usar a verificação no tempo de execução para determinar se o método tem suporte no host do Office, conforme mostra o exemplo de código a seguir. Para obter uma lista completa dos métodos que não pertencem a um conjunto de requisitos, confira [Conjuntos de requisitos de Suplemento do Office](../reference/requirement-sets/office-add-in-requirement-sets.md#methods-that-arent-part-of-a-requirement-set).
 
 > [!NOTE]
 > Recomendamos limitar o uso desse tipo de verificação no tempo de execução no código de seu suplemento.
@@ -201,5 +201,5 @@ if (Office.context.document.setSelectedDataAsync)
 ## <a name="see-also"></a>Confira também
 
 - [Manifesto XML dos Suplementos do Office](add-in-manifests.md)
-- [Conjuntos de requisitos de Suplemento do Office](/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets)
+- [Conjuntos de requisitos de Suplemento do Office](../reference/requirement-sets/office-add-in-requirement-sets.md)
 - [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML)
