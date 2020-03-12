@@ -1,14 +1,14 @@
 ---
 title: Habilitar e Desabilitar Comandos de Suplemento
 description: Aprenda a alterar o status habilitado ou desabilitado dos botões da faixa de opções personalizados e itens de menu no seu Suplemento da Web do Office.
-ms.date: 03/02/2020
+ms.date: 03/09/2020
 localization_priority: Priority
-ms.openlocfilehash: e1edf3c8375e323b2b8eeb114050195fe3402b0f
-ms.sourcegitcommit: 0e7ed44019d6564c79113639af831ea512fa0a13
+ms.openlocfilehash: dbe895a121a5d10d687c9a599b85234ae62919f5
+ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "42566178"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "42596680"
 ---
 # <a name="enable-and-disable-add-in-commands-preview"></a>Habilitar e Desabilitar Comandos de Suplemento (visualização)
 
@@ -38,17 +38,17 @@ No Office na Web, as APIs e a marcação de manifesto descritas neste artigo afe
 
 As APIs e a marcação de manifesto descritas neste artigo que o manifesto do suplemento especifica que ela deve usar um tempo de execução compartilhado. Para fazer isso, execute as seguintes etapas.
 
-1. No elemento [Runtimes](/office/dev/add-ins/reference/manifest/runtimes) no manifesto, adicione o seguinte elemento filho: `<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />`. (Se ainda não houver um elemento `<Runtimes>` no manifesto, crie-o como o primeiro filho abaixo do elemento `<Host>` na seção `VersionOverrides`.)
-2. Na seção [Recursos](/office/dev/add-ins/reference/manifest/resources).[URLs](/office/dev/add-ins/reference/manifest/urls) do manifesto, adicione o seguinte elemento filho: `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://{MyDomain}/{path-to-start-page}" />`, em que `{MyDomain}` é o domínio do suplemento e `{path-to-start-page}` é o caminho da página inicial do suplemento; por exemplo: `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://localhost:3000/index.html" />`.
+1. No elemento [Runtimes](../reference/manifest/runtimes.md) no manifesto, adicione o seguinte elemento filho: `<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />`. (Se ainda não houver um elemento `<Runtimes>` no manifesto, crie-o como o primeiro filho abaixo do elemento `<Host>` na seção `VersionOverrides`.)
+2. Na seção [Resources.Urls](../reference/manifest/resources.md) do manifesto, adicione o seguinte elemento filho: `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://{MyDomain}/{path-to-start-page}" />`, onde `{MyDomain}` é o domínio do suplemento e `{path-to-start-page}` o caminho da página inicial do suplemento; por exemplo: `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://localhost:3000/index.html" />`.
 3. Dependendo do seu suplemento conter um painel de tarefas, um arquivo de função ou uma função personalizada do Excel, você deve executar uma ou mais das três etapas a seguir:
 
-    - Se o suplemento contiver um painel de tarefas, defina o atributo `resid` do elemento [Action](/office/dev/add-ins/reference/manifest/action).[SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) como `Contoso.SharedRuntime.Url`. O elemento deve ficar assim: `<SourceLocation resid="Contoso.SharedRuntime.Url"/>`.
-    - Se o suplemento contiver uma função personalizada do Excel, defina o atributo `resid` do elemento [Page](/office/dev/add-ins/reference/manifest/page).[SourceLocation](/office/dev/add-ins/reference/manifest/sourcelocation) como `Contoso.SharedRuntime.Url`. O elemento deve ficar assim: `<SourceLocation resid="Contoso.SharedRuntime.Url"/>`.
-    - Se o suplemento contiver um arquivo de função, defina o atributo `resid` do elemento [FunctionFile](/office/dev/add-ins/reference/manifest/functionfile) como `Contoso.SharedRuntime.Url`. O elemento deve ficar assim: `<FunctionFile resid="Contoso.SharedRuntime.Url"/>`.
+    - Se o suplemento contiver um painel de tarefas, defina o atributo `resid` do elemento [Action](../reference/manifest/action.md).[SourceLocation](../reference/manifest/sourcelocation.md) como `Contoso.SharedRuntime.Url`. O elemento deve ficar assim: `<SourceLocation resid="Contoso.SharedRuntime.Url"/>`.
+    - Se o suplemento contiver uma função personalizada do Excel, defina o atributo `resid` do elemento [Page](../reference/manifest/page.md).[SourceLocation](../reference/manifest/sourcelocation.md) como `Contoso.SharedRuntime.Url`. O elemento deve ficar assim: `<SourceLocation resid="Contoso.SharedRuntime.Url"/>`.
+    - Se o suplemento contiver um arquivo de função, defina o atributo `resid` do elemento [FunctionFile](../reference/manifest/functionfile.md) como `Contoso.SharedRuntime.Url`. O elemento deve ficar assim: `<FunctionFile resid="Contoso.SharedRuntime.Url"/>`.
 
 ## <a name="set-the-default-state-to-disabled"></a>Defina o estado padrão como desabilitado
 
-Por padrão, qualquer comando de suplemento é habilitado quando o aplicativo do Office é iniciado. Se você deseja que um botão ou item de menu personalizado esteja desabilitado quando o aplicativo do Office for iniciado, especifique isso no manifesto. Basta adicionar um elemento [Enabled](/office/dev/add-ins/reference/manifest/enabled) (com o valor `false`) imediatamente abaixo do elemento [Action](/office/dev/add-ins/reference/manifest/action) na declaração do controle. Veja a estrutura básica a seguir:
+Por padrão, qualquer comando de suplemento é habilitado quando o aplicativo do Office é iniciado. Se você deseja que um botão ou item de menu personalizado esteja desabilitado quando o aplicativo do Office for iniciado, especifique isso no manifesto. Basta adicionar um elemento [Enabled](../reference/manifest/enabled.md) (com o valor `false`) imediatamente abaixo do elemento [Action](../reference/manifest/action.md) na declaração do controle. Veja a estrutura básica a seguir:
 
 ```xml
 <OfficeApp ...>
@@ -142,7 +142,7 @@ O Office controla quando atualiza o estado da faixa de opções. O método **req
 
 Um cenário comum em que o estado da faixa de opções deve mudar é quando um evento iniciado pelo usuário altera o contexto do suplemento.
 
-Considere um cenário em que um botão deve ser ativado quando e somente quando um gráfico é ativado. A primeira etapa é definir o elemento [Enabled](/office/dev/add-ins/reference/manifest/enabled) para o botão no manifesto como `false`. Veja um exemplo acima.
+Considere um cenário em que um botão deve ser ativado quando e somente quando um gráfico é ativado. A primeira etapa é definir o elemento [Enabled](../reference/manifest/enabled.md) para o botão no manifesto como `false`. Veja um exemplo acima.
 
 Segundo, atribua manipuladores. Isso geralmente é feito no método **Office.onReady**, como no exemplo a seguir, que atribui manipuladores (criados em uma etapa posterior) aos eventos **onActivated** e **onDeactivated** de todos os gráficos da planilha.
 
@@ -182,7 +182,7 @@ Em algumas circunstâncias, a faixa de opções não é redesenhada após `reque
 1. Sempre que `requestUpdate` é chamado, o código deve registrar o estado pretendido dos botões e itens de menu personalizados.
 2. Quando um controle personalizado é clicado, o primeiro código no manipulador deve verificar se o botão deveria ter sido clicável. Se não deveria ter sido, o código deve relatar ou registrar um erro e tentar novamente definir os botões no estado pretendido.
 
-O exemplo a seguir mostra uma função que desativa um botão e registra o status do botão. Observe que `chartFormatButtonEnabled` é uma variável booleana global inicializada com o mesmo valor que o elemento [Enabled](/office/dev/add-ins/reference/manifest/enabled) para o botão no manifesto.
+O exemplo a seguir mostra uma função que desativa um botão e registra o status do botão. Observe que `chartFormatButtonEnabled` é uma variável booleana global inicializada com o mesmo valor que o elemento [Enabled](../reference/manifest/enabled.md) para o botão no manifesto.
 
 ```javascript
 function disableChartFormat() {
@@ -239,10 +239,8 @@ function disableChartFormat() {
 
 ## <a name="test-for-platform-support-with-requirement-sets"></a>Teste se há suporte à plataforma com conjuntos de requisitos
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](/office/dev/add-ins/develop/office-versions-and-requirement-sets).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../develop/office-versions-and-requirement-sets.md).
 
 As APIs de ativação/desativação requerem suporte dos seguintes conjuntos de requisitos:
 
-- [AddinCommands 1.1](/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets)
-- [RibbonAPI 1.1](/office/dev/add-ins/reference/requirement-sets/ribbon-api-requirement-sets)
-
+- [AddinCommands 1.1](../reference/requirement-sets/add-in-commands-requirement-sets.md)
