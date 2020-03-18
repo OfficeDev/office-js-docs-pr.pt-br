@@ -1,14 +1,14 @@
 ---
 title: Elemento Event no arquivo de manifesto
-description: ''
+description: Define um manipulador de eventos em um suplemento.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 51bbcd5a3d5abe60b850e88e4063e6bbc2da37bc
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 02037a54ad4b7e91a3697b53b04fa30e8a4909a9
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450587"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718227"
 ---
 # <a name="event-element"></a>Elemento Event
 
@@ -21,7 +21,7 @@ Define um manipulador de eventos em um suplemento.
 
 |  Atributo  |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  [Type](#type-attribute)  |  Sim  | Especifica o evento a ser manipulado. |
+|  [Tipo](#type-attribute)  |  Sim  | Especifica o evento a ser manipulado. |
 |  [FunctionExecution](#functionexecution-attribute)  |  Sim  | Especifica o estilo de execução para o manipulador de eventos, assíncrono ou síncrono. No momento, somente os manipuladores de eventos síncronos têm suporte. |
 |  [FunctionName](#functionname-attribute)  |  Sim  | Especifica o nome da função para o manipulador de eventos. |
 

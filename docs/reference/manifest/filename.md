@@ -1,14 +1,14 @@
 ---
 title: Elemento FileName no arquivo de manifesto
-description: ''
+description: Especifica o nome de arquivo do XLL equivalente para funções personalizadas no seu suplemento Web.
 ms.date: 05/03/2019
 localization_priority: Normal
-ms.openlocfilehash: 691f57e99d93c35bdf65bd673f131eab15464450
-ms.sourcegitcommit: ff73cc04e5718765fcbe74181505a974db69c3f5
+ms.openlocfilehash: a2a4dac08038a30d69fd8818f3f030adebe0728b
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "33628057"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718213"
 ---
 # <a name="filename-element"></a>Elemento FileName
 
@@ -29,5 +29,5 @@ Especifica o nome de arquivo do XLL equivalente para funções personalizadas no
 
 ## <a name="see-also"></a>Confira também
 
-- [Tornar suas funções personalizadas compatíveis com as funções definidas pelo usuário XLL](../../excel/make-custom-functions-compatible-with-xll-udf.md)
+- [Torne as suas funções personalizadas compatíveis com as funções XLL definidas pelo usuário](../../excel/make-custom-functions-compatible-with-xll-udf.md)
 - [Tornar seu suplemento do Excel compatível com um suplemento de COM existente](../../develop/make-office-add-in-compatible-with-existing-com-add-in.md)
