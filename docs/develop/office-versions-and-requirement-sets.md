@@ -1,14 +1,14 @@
 ---
 title: Versões do Office e conjuntos de requisitos
-description: ''
+description: Suporte a plataformas do Office.js usando API JavaScript
 ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 95c647b3362fb98402c5d8d20c0975580ae45131
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: aa3beb7177c2d6019dd85cdab5a0f4b7277506a4
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596736"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718892"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Versões do Office e conjuntos de requisitos
 

@@ -1,14 +1,14 @@
 ---
 title: Fazer o design de Suplementos do Office
-description: ''
+description: Conhecer as práticas recomendadas para o design visual de suplementos do Office.
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: 5d8cf0cb56a4a77eb54ea7df68350773ead352d2
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 5ed68b81cb4e3edfbecd56733ab213716bce6401
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851261"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718584"
 ---
 # <a name="design-office-add-ins"></a>Fazer o design de Suplementos do Office
 
