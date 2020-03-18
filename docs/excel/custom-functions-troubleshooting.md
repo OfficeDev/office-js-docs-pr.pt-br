@@ -1,14 +1,14 @@
 ---
 ms.date: 12/31/2019
-description: Solução de problemas comuns em funções personalizadas do Excel.
+description: Solucionar problemas comuns com funções personalizadas do Excel.
 title: Solução de problemas das funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: f574bdbb385c840fb20de4ab64705b167cd51e05
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: bc8a450b1436b487f2c2a77e191182c540f55923
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596554"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719606"
 ---
 # <a name="troubleshoot-custom-functions"></a>Solução de problemas de funções personalizadas
 

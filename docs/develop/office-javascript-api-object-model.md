@@ -1,14 +1,14 @@
 ---
 title: Modelo de objeto comum de API JavaScript para Office
-description: ''
-ms.date: 03/10/2020
+description: Saiba mais sobre o modelo de objeto da API comum do Office JavaScript
+ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 85ecd3b7b676a11a4ff41868adbbd9a0d907f32a
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 0944ed36f2d8e4a4ed557dbd25e9f21be137cdaf
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596722"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719445"
 ---
 # <a name="common-javascript-api-object-model"></a>Modelo de objeto comum de API JavaScript para Office
 
@@ -31,7 +31,7 @@ O objeto **Contexto** também fornece acesso às propriedades [contentLanguage](
 
 **Aplica-se a:** tipos de suplemento de conteúdo e painel de tarefas
 
-Para interagir com dados de documento no Excel, PowerPoint e Word, a API fornece o objeto [Document](/javascript/api/office/office.document) . Você pode usar `Document` membros do objeto para acessar dados das seguintes maneiras:
+Para interagir com dados do documento no Excel, PowerPoint e Word, a API fornece o objeto [Document](/javascript/api/office/office.document). Você pode usar `Document` membros do objeto para acessar dados das seguintes maneiras:
 
 - Ler e gravar as seleções ativas na forma de texto, células contíguas (matrizes) ou tabelas.
 
@@ -43,7 +43,7 @@ Para interagir com dados de documento no Excel, PowerPoint e Word, a API fornece
 
 - Configurações ou estado do suplemento persistido por suplemento no documento.
 
-Você também pode usar o `Document` objeto para interagir com dados em documentos do projeto. A funcionalidade específica do projeto da API está documentada na classe abstrata Members [ProjectDocument](/javascript/api/office/office.document) . Para obter mais informações sobre a criação de suplementos do painel de tarefas para o Project, consulte [suplementos do painel de tarefas para o Project](../project/project-add-ins.md).
+Você também pode usar o `Document` objeto para interagir com dados em documentos do projeto. A funcionalidade específica do Project para a API está documentada nos membros da classe abstrata [ProjectDocument](/javascript/api/office/office.document). Para saber mais sobre a criação de suplementos de painel de tarefas, consulte [Suplementos de painel de tarefas para o Project](../project/project-add-ins.md).
 
 Todas essas formas de acesso a dados começam a partir de uma instância `Document` do objeto abstract.
 
@@ -80,15 +80,15 @@ Nos acessos a dados baseados em seleção e em associação, os conteúdos dos d
 |:-----|:-----|:-----|
 |Texto|Fornece uma representação, em uma cadeia de caracteres, dos dados na seleção ou associação.|No Excel 2013, no Project 2013 e no PowerPoint 2013, há suporte apenas para texto sem formatação. No Word 2013, há suporte para três formatos de texto: texto sem formatação, HTML e OOXML (Office Open XML). Quando o texto é selecionado em uma célula no Excel, os métodos baseados em seleção realizam os processos de leitura e gravação para todo o conteúdo da célula, mesmo que apenas uma parte do texto esteja selecionada na célula. Quando texto é selecionado no Word e no PowerPoint, os métodos baseados em seleção realizam os processos de leitura e gravação apenas para os caracteres selecionados. O Project 2013 e o PowerPoint 2013 dão suporte apenas ao acesso a dados com base em seleção.|
 |Matriz|Fornece os dados na seleção ou associação como uma **Array** bidimensional, que, no JavaScript, é implementada como uma matriz de matrizes. Por exemplo, duas linhas de valores **string** em duas colunas seriam ` [['a', 'b'], ['c', 'd']]`, e uma única coluna com três linhas seria `[['a'], ['b'], ['c']]`.|Há suporte ao acesso a dados de matriz apenas no Excel 2013 e no Word 2013.|
-|Tabela|Fornece os dados na seleção ou associação como um objeto [TableData](/javascript/api/office/office.tabledata) . O `TableData` objeto expõe os dados por meio `headers` das `rows` Propriedades e.|Há suporte ao acesso a dados de tabela apenas no Excel 2013 e no Word 2013.|
+|Tabela|Fornece os dados na seleção ou associação como um objeto [TableData](/javascript/api/office/office.tabledata). O `TableData` objeto expõe os dados por meio `headers` das `rows` Propriedades e.|Há suporte ao acesso a dados de tabela apenas no Excel 2013 e no Word 2013.|
 
 #### <a name="data-type-coercion"></a>Coerção de tipo de dados
 
-Os métodos de acesso a dados `Document` nos objetos de vinculação e de [Associação](/javascript/api/office/office.binding) oferecem suporte à especificação do tipo de dados desejado usando o parâmetro _coercionType_ desses métodos e valores de enumeração [coercionType](/javascript/api/office/office.coerciontype) correspondentes. Independentemente da forma real da associação, os diferentes aplicativos do Office dão suporte aos tipos de dados comuns tentando forçar os dados para o tipo de dados solicitado. Por exemplo, se uma tabela ou parágrafo do Word é selecionado, o desenvolvedor pode especificar para lê-lo como texto sem formatação, HTML, Office Open XML ou uma tabela, e a implementação da API trata das transformações e conversões de dados necessárias.
+Os métodos de acesso a dados `Document` nos objetos de vinculação e de [Associação](/javascript/api/office/office.binding) oferecem suporte à especificação do tipo de dados desejado usando o parâmetro _coercionType_ desses métodos e valores de enumeração [coercionType](/javascript/api/office/office.coerciontype) correspondentes. Independentemente da forma real da associação, os diferentes aplicativos do Office dão suporte aos tipos de dados comuns ao tentar forçar os dados a usarem o tipo de dados solicitado. Por exemplo, se uma tabela ou um parágrafo do Word for selecionado, o desenvolvedor pode escolher se deseja lê-lo como texto sem formatação, Office Open XML ou tabela, e a implementação da API manipula as conversões de dados e as transformações necessárias.
 
 
 > [!TIP]
-> **Quando você deve usar a matriz versus a tabela coercionType para acesso a dados?** Se você precisar que seus dados de tabulação sejam expandidos dinamicamente quando as linhas e colunas forem adicionadas, e você deve trabalhar com cabeçalhos de tabela, você deve usar o tipo de dados Table `Document` ( `Binding` especificando o parâmetro _coercionType_ de `"table"` um `Office.CoercionType.Table`objeto ou um método de acesso a dados como ou). A adição de linhas e colunas dentro da estrutura de dados é suportada em dados de tabela e matriz, mas só é possível acrescentar linhas e colunas para dados de tabela. Se você não estiver planejando a adição de linhas e colunas e seus dados não exigirem funcionalidade de cabeçalho, você deverá usar o tipo de dados Matrix (especificando o parâmetro _coercionType_ do método de acesso `"matrix"` a `Office.CoercionType.Matrix`dados como ou), que fornece um modelo mais simples de interagir com os dados.
+> **Quando devo usar a matriz ou a tabela coercionType para o acesso aos dados?** Se você precisar que seus dados de tabulação sejam expandidos dinamicamente quando as linhas e colunas forem adicionadas, e você deve trabalhar com cabeçalhos de tabela, você deve usar o tipo de dados Table `Document` ( `Binding` especificando o parâmetro _coercionType_ de `"table"` um `Office.CoercionType.Table`objeto ou um método de acesso a dados como ou). A adição de linhas e colunas na estrutura de dados tem suporte nos dados de tabela e matriz, mas o acréscimo de linhas e colunas só tem suporte para dados de tabela. Se você não estiver planejando a adição de linhas e colunas e seus dados não exigirem funcionalidade de cabeçalho, você deverá usar o tipo de dados Matrix (especificando o parâmetro _coercionType_ do método de acesso `"matrix"` a `Office.CoercionType.Matrix`dados como ou), que fornece um modelo mais simples de interagir com os dados.
 
 Se os dados não puderem ser forçados para o tipo especificado, a propriedade [AsyncResult.status](/javascript/api/office/office.asyncresult#status) presente nos retornos de chamada retorna `"failed"`, e você pode usar a propriedade [AsyncResult.error](/javascript/api/office/office.asyncresult#error) para acessar um objeto [Error](/javascript/api/office/office.error) com informações sobre o motivo pelo qual a chamada de método falhou.
 
@@ -125,7 +125,7 @@ Há três tipos diferentes de associações que você especifica com o parâmetr
 |:-----|:-----|:-----|
 |Associação de texto|Associa a uma região do documento que pode ser representada como um texto.|No Word, a maioria das seleções contíguas são válidas, enquanto no Excel apenas as seleções de células únicas podem ser usadas para uma associação de texto. No Excel, só há suporte para texto sem formatação. No Word, há suporte para três formatos: texto sem formatação, HTML e Open XML do Office.|
 |Associação de matriz|Associa a uma região fixa de um documento que contém dados tabulares sem cabeçalhos. Os dados de uma associação de matriz são gravados ou lidos como uma **Array** bidimensional, que é implementada como uma matriz de matrizes no JavaScript. Por exemplo, duas linhas de valores **string** em duas colunas podem ser gravadas ou lidas como ` [['a', 'b'], ['c', 'd']]`, e uma única coluna de três linhas pode ser gravada ou lida como `[['a'], ['b'], ['c']]`.|No Excel, qualquer seleção contígua de células pode ser usada para estabelecer uma associação de matriz. No Word, apenas as tabelas dão suporte à associação de matriz.|
-|Associação de tabelas|Vincula a uma região de um documento que contém uma tabela com cabeçalhos. Os dados em uma vinculação de tabela são gravados ou lidos como um objeto [TableData](/javascript/api/office/office.tabledata) . O `TableData` objeto expõe os dados por meio das propriedades de **cabeçalhos** e **linhas** .|Qualquer tabela do Excel ou Word pode ser a base para uma associação de tabela. Após estabelecer uma associação de tabelas, as linhas ou colunas novas que um usuário adicionar à tabela são automaticamente incluídas na associação.  |
+|Associação de tabelas|Associa a uma região de um documento que contém uma tabela com cabeçalhos. Os dados em uma associação de tabela são gravados ou lidos como um objeto [TableData](/javascript/api/office/office.tabledata). O `TableData` objeto expõe os dados por meio das propriedades de **cabeçalhos** e **linhas** .|Qualquer tabela do Excel ou Word pode ser a base para uma associação de tabela. Após estabelecer uma associação de tabelas, as linhas ou colunas novas que um usuário adicionar à tabela são automaticamente incluídas na associação.  |
 
 <br/>
 

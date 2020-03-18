@@ -1,14 +1,14 @@
 ---
 title: Tempo de execução no arquivo de manifesto (versão prévia)
-description: ''
+description: O elemento de tempo de execução configura seu suplemento para usar um tempo de execução de JavaScript compartilhado para sua faixa de opções, painel de tarefas e funções personalizadas.
 ms.date: 02/21/2020
 localization_priority: Normal
-ms.openlocfilehash: dd51c5b317700f92ee74c94835e68523371789f8
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.openlocfilehash: 6237f64fec47ed22b0105bf74c8eb7e2b7c38afe
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42561825"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717926"
 ---
 # <a name="runtime-element-preview"></a>Elemento Runtime (visualização)
 
@@ -40,6 +40,6 @@ Elemento filho do [`<Runtimes>`](runtimes.md) elemento. Este elemento configura 
 |  **Lifetime = "Long"**  |  Sim  | Deve ser `long` sempre se você quiser usar um tempo de execução compartilhado para o suplemento do Excel. |
 |  **resid**  |  Sim  | Especifica o local da URL da página HTML do suplemento. O `resid` deve corresponder a `id` um atributo de `Url` um elemento no `Resources` elemento. |
 
-## <a name="see-also"></a>Também consulte
+## <a name="see-also"></a>Também confira
 
 - [Tempos de execução](runtimes.md)

@@ -3,12 +3,12 @@ title: Painéis de tarefas nos Suplementos do Office
 description: Os painéis de tarefa concedem aos usuários acesso a controles de interface que executam códigos para modificar documentos ou emails ou exibir dados de uma fonte de dados.
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 048c6a508a9d8106d129469880396a564b26aea4
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 862cfc94bb49a1454453c877dade79a22e073adc
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688525"
+ms.locfileid: "42719158"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Painéis de tarefas nos Suplementos do Office
  
@@ -23,7 +23,7 @@ Painéis de tarefas são superfícies de interface que normalmente são exibidas
 |**Faça**|**Não faça**|
 |:-----|:--------|
 |<ul><li>Inclua o nome do seu suplemento no título.</li></ul>|<ul><li>Não adicione o nome da sua empresa ao título.</li></ul>|
-|<ul><li>Use nomes descritivos curtos no título.</li></ul>|<ul><li>Não acrescente cadeias de caracteres como "suplemento", "para Word" ou "para Office" no título do suplemento.</li></ul>|
+|<ul><li>Use nomes descritivos curtos no título.</li></ul>|<ul><li>Não acrescente cadeias de caracteres, como "suplemento", "para Word" ou "para Office", ao título do seu suplemento.</li></ul>|
 |<ul><li>Inclua alguns elementos de navegação ou comando, como CommandBar ou Pivot, na parte superior do suplemento.</li></ul>||
 |<ul><li>Inclua um elemento da marca, como BrandBar, na parte inferior do suplemento, a menos que seu suplemento seja voltado para uso no Outlook.</li></ul>||
 

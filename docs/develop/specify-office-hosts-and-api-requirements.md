@@ -1,14 +1,14 @@
 ---
 title: Especificar hosts do Office e requisitos de API
-description: ''
+description: Saiba como especificar os hosts do Office e requisitos de API para que o suplemento funcione conforme o esperado.
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: bf5c263da57224036aa12ec652a1cb38f73e31c0
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: ab9b97f3d3232339010179097e1fd03dbeb86aa2
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596491"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718808"
 ---
 # <a name="specify-office-hosts-and-api-requirements"></a>Especificar hosts do Office e requisitos de API
 
@@ -36,11 +36,11 @@ A tabela a seguir lista os principais conceitos discutidos neste artigo.
 
 ## <a name="before-you-begin"></a>Antes de começar
 
-O suplemento deve usar a versão mais atual do esquema de manifesto do suplemento. Se você usar verificações de tempo de execução no seu suplemento, certifique-se de usar a biblioteca de API JavaScript do Office (Office. js) mais recente.
+O suplemento deve usar a versão mais recente do esquema de manifesto de suplemento. Se você usar verificações de tempo de execução no seu suplemento, certifique-se de usar a biblioteca de API JavaScript do Office (Office. js) mais recente.
 
 ### <a name="specify-the-latest-add-in-manifest-schema"></a>Especificar o esquema de manifesto de suplemento mais recente
 
-O manifesto do suplemento deve usar a versão 1,1 do esquema de manifesto do suplemento. Defina o `OfficeApp` elemento no manifesto do suplemento da seguinte maneira.
+Seu manifesto de suplemento deve usar a versão 1.1 do esquema de manifesto de suplemento. Defina o `OfficeApp` elemento no manifesto do suplemento da seguinte maneira.
 
 ```XML
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
@@ -48,7 +48,7 @@ O manifesto do suplemento deve usar a versão 1,1 do esquema de manifesto do sup
 
 ### <a name="specify-the-latest-office-javascript-api-library"></a>Especificar a biblioteca de API JavaScript do Office mais recente
 
-Se você usar verificações de tempo de execução, faça referência à versão mais recente da biblioteca da API JavaScript do Office na CDN (rede de distribuição de conteúdo). Para fazer isso, adicione a marca `script` a seguir ao HTML. Usar `/1/` na URL da CDN garante que você faça referência à versão mais recente do Office. js.
+Se você usar verificações de tempo de execução, faça referência à versão mais recente da biblioteca da API JavaScript do Office na CDN (rede de distribuição de conteúdo). Para tanto, adicione a seguinte marca `script` ao código HTML. Usar `/1/` na URL da CDN garante a referência à versão mais recente do Office.js.
 
 ```HTML
 <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
@@ -60,9 +60,9 @@ Ao especificar os hosts do Office ou os requisitos de API, há vários fatores a
 
 ![Escolha a melhor opção para o seu suplemento ao especificar os hosts do Office ou os requisitos de API](../images/options-for-office-hosts.png)
 
-- Se o suplemento for executado em um host do Office, defina o `Hosts` elemento no manifesto. Para obter mais informações, consulte [set the hosts Element](#set-the-hosts-element).
+- Se o suplemento for executado em um host do Office, defina o `Hosts` elemento no manifesto. Para saber mais, confira [Definir o elemento Hosts](#set-the-hosts-element).
 
-- Para definir o conjunto de requisitos mínimo ou membros da API que um host do Office deve suportar para executar seu suplemento, defina `Requirements` o elemento no manifesto. Para obter mais informações, consulte [definir o elemento requirements no manifesto](#set-the-requirements-element-in-the-manifest).
+- Para definir o conjunto de requisitos mínimo ou membros da API que um host do Office deve suportar para executar seu suplemento, defina `Requirements` o elemento no manifesto. Para saber mais, confira [Definir o elemento Requirements no manifesto](#set-the-requirements-element-in-the-manifest).
 
 - Se você quiser fornecer outras funcionalidades caso conjuntos de requisitos ou membros da API específicos estejam disponíveis no host do Office, execute uma verificação no tempo de execução no código JavaScript do seu suplemento. Por exemplo, se o suplemento for executado no Excel 2016, use os membros do API JavaScript do Excel a fim de fornecer funcionalidades adicionais. Para saber mais, confira [Usar verificações de tempo de execução em seu código JavaScript](#use-runtime-checks-in-your-javascript-code).
 
@@ -125,7 +125,7 @@ O exemplo de código a seguir mostra um suplemento que carrega em todos os aplic
 
 - O `Requirements` elemento contém os `Sets` elementos `Methods` filho e.
 
-- O `Sets` elemento pode conter um ou mais `Set` elementos. `DefaultMinVersion` especifica o valor `MinVersion` padrão de todos os `Set` elementos filhos.
+- O `Sets` elemento pode conter um ou mais `Set` elementos. `DefaultMinVersion`Especifica o valor `MinVersion` padrão de todos os `Set` elementos filhos.
 
 - O `Set` elemento especifica conjuntos de requisitos que o host do Office deve suportar para executar o suplemento. O `Name` atributo especifica o nome do conjunto de requisitos. O `MinVersion` especifica a versão mínima do conjunto de requisitos. `MinVersion`Substitui o valor de `DefaultMinVersion` para obter mais informações sobre conjuntos de requisitos e versões de conjunto de requisitos aos quais seus membros da API pertencem, confira [conjuntos de requisitos de suplemento do Office](../reference/requirement-sets/office-add-in-requirement-sets.md).
 

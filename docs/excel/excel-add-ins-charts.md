@@ -1,18 +1,19 @@
 ---
 title: Trabalhar com gráficos usando a API JavaScript do Excel
-description: ''
+description: Exemplos de código que demonstram tarefas de gráfico usando a API JavaScript do Excel.
 ms.date: 07/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 2b55fee9689af03e9dbfbdb7133d2482f7ca6852
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 5dd6c2752c0ab6470c58049aa80ff4f6ebcff76a
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42323851"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719578"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Trabalhar com gráficos usando a API JavaScript do Excel
 
-Este artigo fornece exemplos de código que mostram como executar tarefas comuns com gráficos usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos que `Chart` o `ChartCollection` e os objetos dão suporte, consulte [Chart Object (JavaScript API for Excel)](/javascript/api/excel/excel.chart) e [objeto de coleção Chart (API JavaScript para Excel)](/javascript/api/excel/excel.chartcollection).
+Este artigo fornece exemplos de código que mostram como executar tarefas comuns com gráficos usando a API JavaScript do Excel.
+Para obter a lista completa de propriedades e métodos que `Chart` o `ChartCollection` e os objetos dão suporte, consulte [Chart Object (JavaScript API for Excel)](/javascript/api/excel/excel.chart) e [objeto de coleção Chart (API JavaScript para Excel)](/javascript/api/excel/excel.chartcollection).
 
 ## <a name="create-a-chart"></a>Criar um gráfico
 
@@ -127,7 +128,7 @@ Excel.run(function (context) {
 
 ## <a name="set-visibility-of-gridlines-in-a-chart"></a>Definir visibilidade de linhas de grade em um gráfico
 
-O exemplo de código a seguir oculta as linhas de grade principais do eixo dos valores do primeiro gráfico da planilha. Você pode mostrar as linhas de grade principais do eixo dos valores do gráfico, definindo `chart.axes.valueAxis.majorGridlines.visible` como. `true`
+O exemplo de código a seguir oculta as principais linhas de grade para o eixo dos valores do primeiro gráfico na planilha. Você pode mostrar as linhas de grade principais do eixo dos valores do gráfico, definindo `chart.axes.valueAxis.majorGridlines.visible` como. `true`
 
 ```js
 Excel.run(function (context) {
@@ -210,9 +211,9 @@ getImage(width?: number, height?: number, fittingMode?: Excel.ImageFittingMode):
 
 Esses parâmetros determinam o tamanho da imagem. As imagens são sempre dimensionadas proporcionalmente. Os parâmetros de largura e altura definem limites superiores ou inferiores na imagem dimensionada. `ImageFittingMode` tem três valores com os seguintes comportamentos:
 
-- `Fill`: a altura ou largura mínima da imagem é a altura ou largura especificada (o que for atingido primeiro quando a imagem for dimensionada). Esse é o comportamento padrão quando nenhum modo de ajuste é especificado.
-- `Fit`: a altura ou largura máxima da imagem é a altura ou largura especificada (o que for atingido primeiro quando a imagem for dimensionada).
-- `FitAndCenter`: a altura ou largura máxima da imagem é a altura ou largura especificada (o que for atingido primeiro quando a imagem for dimensionada). A imagem resultante é centralizada proporcionalmente à outra dimensão.
+- `Fill`: A altura ou largura mínima da imagem é a altura ou largura especificada (o que for atingido primeiro ao dimensionar a imagem). Esse é o comportamento padrão quando nenhum modo de ajuste é especificado.
+- `Fit`: A altura ou largura máxima da imagem é a altura ou largura especificada (o que for atingido primeiro ao dimensionar a imagem).
+- `FitAndCenter`: A altura ou largura máxima da imagem é a altura ou largura especificada (o que for atingido primeiro ao dimensionar a imagem). A imagem resultante é centralizada proporcionalmente à outra dimensão.
 
 ## <a name="see-also"></a>Confira também
 

@@ -3,12 +3,12 @@ ms.date: 07/10/2019
 description: Saiba mais sobre o tempo de execução de funções personalizadas do Excel.
 title: Arquitetura de funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: ced62f7efb826862eee8079a66fa657ea466e4b3
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: a11ac40591e11725bb35b16bf53fa07062541c8f
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950351"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718766"
 ---
 # <a name="custom-functions-architecture"></a>Arquitetura de funções personalizadas
 
@@ -24,9 +24,9 @@ Observe que, se você estiver usando o [gerador Yeoman de suplementos do Office]
 
 A tabela a seguir destaca as diferenças entre o tempo de execução de funções personalizadas e o tempo de execução do mecanismo do navegador:
 
-| Tempo de execução de funções personalizadas  | Tempo de execução do mecanismo do navegador    |
-|------------------------------------------------------------------ |-------------------------------------------------------------------------------------------------------------- |
-| Suporte para retornar o valor de uma célula    | Suporte para APIs Office.js e elementos de interface do usuário   |
+| Tempo de execução de funções personalizadas     | Tempo de execução do mecanismo do navegador     |
+|------------------------------------------------------------------    |--------------------------------------------------------------------------------------------------------------    |
+| Suporte para retornar o valor de uma célula     | Suporte para APIs Office.js e elementos de interface do usuário     |
 | Não há o objeto `localStorage`, em vez disso, usa-se o objeto `OfficeRuntime.storage`.     | Há o objeto `localStorage`, opcionalmente poderá usar o objeto`OfficeRuntime.storage`.     |
 | Não suporta a interação com o DOM ou o carregamento de  bibliotecas que dependem do DOM, como jQuery.    | Suporta interação com o DOM e com o carregamento de bibliotecas que dependem do DOM. |
 

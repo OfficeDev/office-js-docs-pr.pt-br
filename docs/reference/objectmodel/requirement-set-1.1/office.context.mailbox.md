@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox – conjunto de requisitos 1,1
-description: ''
+description: O modelo de objeto para o objeto de caixa de correio do Outlook na API de suplementos do Outlook (versão da API de caixa de correio 1,1).
 ms.date: 03/06/2020
 localization_priority: Normal
-ms.openlocfilehash: d79a9b95808378a95a4e8e72080ab3237600ce24
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.openlocfilehash: be948e8ff49141d591affd195b0d0fabfab0d7ff
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42561839"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720208"
 ---
 # <a name="mailbox"></a>mailbox
 

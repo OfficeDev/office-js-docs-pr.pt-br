@@ -1,16 +1,16 @@
 ---
-title: Inicializar o suplemento do Office
+title: Inicialize seu suplemento do Office
 description: Saiba como inicializar o suplemento do Office.
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 5adce84867a96917135ca379bbd032fcc3bc824a
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: ca7b21c35fc82011c673cb83d077a89cc29f56eb
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325007"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718934"
 ---
-# <a name="initialize-your-office-add-in"></a>Inicializar o suplemento do Office
+# <a name="initialize-your-office-add-in"></a>Inicialize seu suplemento do Office
 
 Os Suplementos do Office têm sempre uma lógica de inicialização para fazer coisas como:
 
@@ -139,7 +139,7 @@ Para saber mais, veja [Evento Office.initialize](/javascript/api/office) e [Enum
 > [!NOTE]
 > Mesmo que não tenha uma lógica de inicialização, você deve atribuir ou chamar `Office.onReady()` uma função vazia para `Office.initialize` quando o JavaScript do suplemento for carregado. Algumas combinações de host e da plataforma do Office não carregam o painel de tarefas até uma das delas aconteça. Os exemplos a seguir mostram essas duas abordagens.
 >
->```js  
+>```js    
 >Office.onReady();
 >```
 >
@@ -148,7 +148,7 @@ Para saber mais, veja [Evento Office.initialize](/javascript/api/office) e [Enum
 >Office.initialize = function () {};
 >```
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Também confira
 
-- [Noções básicas sobre a API JavaScript do Office](understanding-the-javascript-api-for-office.md)
-- [Carregar o ambiente de tempo de execução e DOM](loading-the-dom-and-runtime-environment.md)
+- [Entendendo a API JavaScript do Office](understanding-the-javascript-api-for-office.md)
+- [Carregando o DOM e o ambiente de tempo de execução](loading-the-dom-and-runtime-environment.md)

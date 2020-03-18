@@ -1,14 +1,14 @@
 ---
 title: Realizar o sideload de suplementos do Office em um iPad ou Mac para teste
-description: ''
+description: Testar o suplemento do Office no iPad e Mac por Sideload
 ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: c4af2c9ac6f209ab88f9f69efa56e58af0af50cd
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 4863a55d21ab37411e76810a744f103cc364f7c1
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325042"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719774"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>Realizar o sideload de suplementos do Office em um iPad ou Mac para teste
 
@@ -36,7 +36,7 @@ Para ver como seu suplemento será executado no Office no iOS, você pode realiz
 
 ## <a name="sideload-an-add-in-on-excel-or-word-on-ipad"></a>Realizar um sideload de um suplemento no Excel ou no Word no iPad
 
-1. Use um cabo de sincronização para conectar o iPad ao computador. Se você estiver conectando o iPad ao computador pela primeira vez, você será solicitado a **confiar neste computador?**. Escolha **confiança** para continuar.
+1. Use um cabo de sincronização para conectar seu iPad ao computador. Se você estiver conectando o iPad ao computador pela primeira vez, você será solicitado a **confiar neste computador?**. Escolha **Confiar** para continuar.
 
 2. No iTunes, escolha o ícone do **iPad** abaixo da barra de menus.
 
@@ -46,7 +46,7 @@ Para ver como seu suplemento será executado no Office no iOS, você pode realiz
 
 5. Na parte inferior da coluna documentos do **Excel** ou do **Word** , escolha **Adicionar arquivo**e, em seguida, selecione o arquivo manifest. XML do suplemento que você deseja Sideload.
 
-6. Abra o aplicativo Excel ou Word no seu iPad. Se o aplicativo Excel ou Word já estiver em execução, escolha o botão **página inicial** e, em seguida, feche e reinicie o aplicativo.
+6. Abra o aplicativo Excel ou Word em seu iPad. Se o aplicativo Excel ou Word já estiver em execução, escolha o botão **página inicial** e, em seguida, feche e reinicie o aplicativo.
 
 7. Abra um documento.
 
@@ -59,13 +59,13 @@ Para ver como seu suplemento será executado no Office no iOS, você pode realiz
 > [!NOTE]
 > Para realizar o sideload de um suplemento do Outlook no Mac, confira [Realizar sideload de suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md).
 
-1. Abra o **terminal** e vá para uma das seguintes pastas onde você salvará o arquivo de manifesto do suplemento. Se a `wef` pasta não existir no seu computador, crie-a.
+1. Abra o **terminal** e vá para uma das seguintes pastas onde você salvará o arquivo de manifesto do suplemento. Se a pasta `wef` não existir em seu computador, crie-a.
 
     - Para o Word:  `/Users/<username>/Library/Containers/com.microsoft.Word/Data/Documents/wef`    
     - Para o Excel:  `/Users/<username>/Library/Containers/com.microsoft.Excel/Data/Documents/wef`
     - Para o PowerPoint: `/Users/<username>/Library/Containers/com.microsoft.Powerpoint/Data/Documents/wef`
 
-2. Abra a pasta no **Finder** usando o comando `open .` (incluindo o ponto ou ponto). Copie o arquivo de manifesto do suplemento para esta pasta.
+2. Abra a pasta no **Finder** usando o comando `open .` (incluindo o ponto ou ponto). Copie o arquivo de manifesto do suplemento nessa pasta.
 
     ![Pasta Wef no Office no Mac](../images/all-my-files.png)
 

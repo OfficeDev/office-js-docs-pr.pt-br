@@ -1,14 +1,14 @@
 ---
 title: Elemento AlternateId no arquivo de manifesto
-description: ''
+description: Especifica a ID alternativa para o suplemento do Office conforme emitido por AppSource.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 6f340f106b5eef85249297f771b1267940509384
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: ce4c1d126a08145cdca8224442a762aa6e12b5f5
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771706"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720705"
 ---
 # <a name="alternateid-element"></a>Elemento AlternateId
 

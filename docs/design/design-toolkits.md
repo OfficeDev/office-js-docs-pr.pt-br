@@ -1,14 +1,14 @@
 ---
 title: Kits de ferramentas de design para suplementos do Office
-description: ''
+description: Obtenha links para algumas ferramentas para ajudá-lo a projetar a interface do usuário de um suplemento do Office.
 ms.date: 06/27/2018
 localization_priority: Normal
-ms.openlocfilehash: 4e8bfcd45895be7a873462c19cca98b68cb3757b
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 4905d2d0c4178133210bba6b838184c69184dcbc
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950387"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717212"
 ---
 # <a name="design-toolkits"></a>Kits de ferramentas de design
 

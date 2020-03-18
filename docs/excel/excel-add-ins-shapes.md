@@ -1,14 +1,14 @@
 ---
 title: Trabalhar com formas usando a API JavaScript do Excel
-description: ''
+description: Saiba como o Excel define formas como qualquer objeto que se encontra na camada de desenho do Excel.
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 54362baecc44f8761f2f69d21e465caa5f1c85b7
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
+ms.openlocfilehash: 7522bf440389e983efc3ec696375694e5539c442
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217223"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717114"
 ---
 # <a name="work-with-shapes-using-the-excel-javascript-api"></a>Trabalhar com formas usando a API JavaScript do Excel
 

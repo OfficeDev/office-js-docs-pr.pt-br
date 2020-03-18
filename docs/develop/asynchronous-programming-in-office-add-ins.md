@@ -1,22 +1,22 @@
 ---
 title: Programação assíncrona em Suplementos do Office
-description: ''
+description: Saiba como a biblioteca JavaScript do Office usa a programação assíncrona em suplementos do Office.
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 931ef17115885c8f96d41bf00143b3269a515d56
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 04486ec0155daeed18768297ded7aa395ccc0ad9
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596687"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719186"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Programação assíncrona em Suplementos do Office
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
 
-Por que a API de suplementos do Office usa a programação assíncrona? Como o JavaScript é um idioma de thread único, se o script invocar um processo síncrono de execução longa, a execução do script subsequente será bloqueada até que o processo seja concluído. Como determinadas operações com clientes Web do Office (mas também clientes avançados) podem bloquear a execução se forem executadas de forma síncrona, a maioria das APIs JavaScript do Office é projetada para ser executada de forma assíncrona. Isso garante que os suplementos do Office sejam responsivos e rápidos. Também costuma exigir que você grave funções de retorno de chamada ao trabalhar com esses métodos assíncronos.
+Por que a API de Suplementos do Office usa a programação assíncrona? Como o JavaScript é uma linguagem de thread único, se o script invocar um processo síncrono demorado, todas as execuções subsequentes do script serão bloqueadas até que o processo seja concluído. Como determinadas operações com clientes Web do Office (mas também clientes avançados) podem bloquear a execução se forem executadas de forma síncrona, a maioria das APIs JavaScript do Office é projetada para ser executada de forma assíncrona. Isso garante que os suplementos do Office sejam responsivos e rápidos. Em geral, isso também requer que você escreva funções de retorno de chamada ao trabalhar com esses métodos assíncronos.
 
-Os nomes de todos os métodos assíncronos na API terminam com "Async", como `Document.getSelectedDataAsync`os `Binding.getDataAsync`métodos, `Item.loadCustomPropertiesAsync` ou. Quando um método "Async" é chamado, ele é executado imediatamente e qualquer execução de script subsequente pode continuar. A função de retorno de chamada opcional que você passa para um método "Async" é executada assim que os dados ou a operação solicitada estão prontos. Isso geralmente ocorre imediatamente, mas pode haver um ligeiro atraso antes de retornar.
+Os nomes de todos os métodos assíncronos na API terminam com "Async", como `Document.getSelectedDataAsync`os `Binding.getDataAsync`métodos, `Item.loadCustomPropertiesAsync` ou. Quando um método "Async" é chamado, ele é executado imediatamente e qualquer execução subsequente do script poderá continuar. A função de retorno de chamada opcional que você passar para um método de "Async" é executada assim que os dados ou a operação solicitada está pronta. Isso geralmente ocorre imediatamente, mas pode haver um pequeno atraso antes de retornar.
 
 O diagrama a seguir mostra o fluxo de execução de uma chamada para um método de "Async" que lê os dados selecionados pelo usuário em um documento aberto no Word ou Excel baseados no servidor. No ponto em que a chamada "Async" é feita, o thread de execução do JavaScript fica livre para executar qualquer processamento adicional do lado do cliente (embora nada seja mostrado no diagrama). Quando o método "Async" retorna, o retorno de chamada retoma a execução no thread e o suplemento pode acessar os dados, fazer algo com eles e exibir os resultados. O mesmo padrão de execução assíncrona ocorre ao trabalhar com aplicativos host de clientes avançados do Office, como Word 2013 ou Excel 2013.
 
@@ -29,7 +29,7 @@ O suporte a este design assíncrono em clientes Web e avançados faz parte das m
 ## <a name="writing-the-callback-function-for-an-async-method"></a>Gravar a função de retorno de chamada para um método "Async"
 
 
-A função de retorno de chamada passada como o argumento de _retorno de chamada_ para um método "Async" deve declarar um único parâmetro que o tempo de execução do suplemento usará para fornecer acesso a um objeto [AsyncResult](/javascript/api/office/office.asyncresult) quando a função de retorno de chamada for executada. Você pode escrever:
+A função de retorno de chamada passada como o argumento de _retorno de chamada_ para um método "Async" deve declarar um único parâmetro que o tempo de execução do suplemento usará para fornecer acesso a um objeto [AsyncResult](/javascript/api/office/office.asyncresult) quando a função de retorno de chamada for executada. Você pode gravar:
 
 
 - Uma função anônima que deve ser gravada e transmitida diretamente em linha com a chamada para o método "Async" como o parâmetro _callback_ do método "Async".
@@ -71,14 +71,14 @@ function write(message){
 }
 ```
 
-Você também pode usar o parâmetro de sua função de retorno de chamada para acessar outras `AsyncResult` Propriedades do objeto. Use a propriedade [AsyncResult. status](/javascript/api/office/office.asyncresult#status) para determinar se a chamada teve êxito ou falhou. Se a chamada falhar, você poderá usar a propriedade [AsyncResult. Error](/javascript/api/office/office.asyncresult#error) para acessar um objeto [Error](/javascript/api/office/office.error) para obter informações de erro.
+Você também pode usar o parâmetro de sua função de retorno de chamada para acessar outras `AsyncResult` Propriedades do objeto. Use a propriedade [AsyncResult.status](/javascript/api/office/office.asyncresult#status) para determinar se a chamada teve êxito ou falhou. Se sua chamada falhar, você pode usar a propriedade [AsyncResult.error](/javascript/api/office/office.asyncresult#error) para acessar um objeto [Error](/javascript/api/office/office.error) para informações sobre o erro.
 
 Para obter mais informações sobre como `getSelectedDataAsync` usar o método, confira [ler e gravar dados na seleção ativa em um documento ou planilha](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md). 
 
 
 ### <a name="writing-a-named-callback-function"></a>Gravar uma função de retorno de chamada nomeada
 
-Como alternativa, você pode escrever uma função nomeada e passar seu nome para o parâmetro _callback_ de um método "Async". Por exemplo, o exemplo anterior pode ser reescrito para passar uma função chamada `writeDataCallback` como o parâmetro de _retorno de chamada_ como este.
+Como alternativa, você pode escrever uma função nomeada e passar seu nome para o parâmetro _callback_ de um método "Async". Por exemplo, o exemplo anterior pode ser reescrito para transmitir uma função chamada `writeDataCallback` como o parâmetro _callback_ assim.
 
 
 ```js
@@ -121,7 +121,7 @@ A API JavaScript do Office oferece suporte a dois tipos de padrões de programa�
     
 A programação assíncrona com funções de retorno de chamada frequentemente exigem que você aninhe o resultado retornado de um retorno de chamada dentro de dois ou mais retornos de chamada. Se você precisar fazer isso, é possível usar retornos de chamada aninhados de todos os métodos "Async" da API.
 
-O uso de retornos de chamada aninhados é um padrão de programação familiar para a maioria dos desenvolvedores de JavaScript, mas é difícil ler e entender o código com retornos de chamada profundamente aninhados. Como alternativa para retornos de chamada aninhados, a API JavaScript do Office também oferece suporte a uma implementação do padrão de promessas. No entanto, na versão atual da API JavaScript do Office, o padrão de promessas só funciona com o código para [associações em planilhas do Excel e documentos do Word](bind-to-regions-in-a-document-or-spreadsheet.md).
+Usar retornos de chamada aninhados é um padrão de programação familiar para a maioria dos desenvolvedores de JavaScript, mas códigos com retornos de chamada profundamente aninhados podem ser difíceis de ler e entender. Como alternativa para retornos de chamada aninhados, a API JavaScript do Office também oferece suporte a uma implementação do padrão de promessas. No entanto, na versão atual da API JavaScript do Office, o padrão de promessas só funciona com o código para [associações em planilhas do Excel e documentos do Word](bind-to-regions-in-a-document-or-spreadsheet.md).
 
 <a name="AsyncProgramming_NestedCallbacks" />
 ### <a name="asynchronous-programming-using-nested-callback-functions"></a>Programação assíncrona usando funções aninhadas de retorno de chamada
@@ -132,7 +132,7 @@ Frequentemente, você precisa executar duas ou mais operações assíncronas par
 O exemplo de código a seguir aninha duas ou mais chamadas assíncronas.
 
 
-- Primeiro, o método [bindings. getByIdAsync](/javascript/api/office/office.bindings#getbyidasync-id--options--callback-) é chamado para acessar uma associação no documento chamado "myBinding". O `AsyncResult` objeto retornado para o `result` parâmetro desse retorno de chamada fornece acesso ao objeto Binding especificado a `AsyncResult.value` partir da propriedade.
+- Primeiro, o método [Bindings.getByIdAsync](/javascript/api/office/office.bindings#getbyidasync-id--options--callback-) é chamado para acessar uma associação no documento chamado "MyBinding". O `AsyncResult` objeto retornado para o `result` parâmetro desse retorno de chamada fornece acesso ao objeto Binding especificado a `AsyncResult.value` partir da propriedade.
 
 - Em seguida, o objeto de vinculação acessado do primeiro `result` parâmetro é usado para chamar o método [Binding. getDataAsync](/javascript/api/office/office.binding#getdataasync-options--callback-) .
 
@@ -161,7 +161,7 @@ As seções a seguir mostram como usar funções anônimas ou nomeadas para reto
 
 #### <a name="using-anonymous-functions-for-nested-callbacks"></a>Usando funções anônimas para retornos de chamada aninhados
 
-No exemplo a seguir, duas funções anônimas são declaradas embutidas `getByIdAsync` e `getDataAsync` passadas para os métodos e como callbacks aninhados. Como as funções são simples e embutidas, a intenção da implementação é imediatamente desmarcada.
+No exemplo a seguir, duas funções anônimas são declaradas embutidas `getByIdAsync` e `getDataAsync` passadas para os métodos e como callbacks aninhados. Como as funções são simples e embutidas, a intenção da implementação fica imediatamente clara.
 
 
 ```js
@@ -184,7 +184,7 @@ function write(message){
 
 #### <a name="using-named-functions-for-nested-callbacks"></a>Usando funções nomeadas para retornos de chamada aninhados
 
-Em implementações complexas, pode ser útil usar funções nomeadas para tornar seu código mais fácil de ler, manter e reutilizar. No exemplo a seguir, as duas funções anônimas do exemplo na seção anterior foram reescritas como funções chamadas `deleteAllData` e. `showResult` Essas funções nomeadas são então passadas `getByIdAsync` para `deleteAllDataValuesAsync` os métodos e como callbacks por nome.
+Em implementações complexas, pode ser útil usar funções nomeadas para facilitar a leitura, manutenção e reutilização do seu código. No exemplo a seguir, as duas funções anônimas do exemplo na seção anterior foram reescritas como funções chamadas `deleteAllData` e. `showResult` Essas funções nomeadas são então passadas `getByIdAsync` para `deleteAllDataValuesAsync` os métodos e como callbacks por nome.
 
 
 ```js
@@ -224,7 +224,7 @@ O padrão de promessas para funcionar com associações tem este formato:
 
 O parâmetro _selectoré_ assume o formato `"bindings#bindingId"`, em que _BindingId_ é o nome `id`() de uma associação que você criou anteriormente no documento ou planilha (usando um dos métodos "addfrom" `Bindings` do conjunto: `addFromNamedItemAsync`, `addFromPromptAsync`, ou `addFromSelectionAsync`). Por exemplo, a expressão `bindings#cities` de seletor especifica que você deseja acessar a associação com uma **ID** de "cidades".
 
-O parâmetro _OnError_ é uma função de tratamento de erros que usa um único `AsyncResult` parâmetro do tipo que pode ser usado `Error` para acessar um objeto `select` , se o método falhar ao acessar a associação especificada. O exemplo a seguir mostra uma função básica de manipulador de erros que pode ser passada para o parâmetro _OnError_ .
+O parâmetro _OnError_ é uma função de tratamento de erros que usa um único `AsyncResult` parâmetro do tipo que pode ser usado `Error` para acessar um objeto `select` , se o método falhar ao acessar a associação especificada. O exemplo a seguir mostra uma função de manipulador de erro básica que pode ser transmitida para o parâmetro _onError_.
 
 
 
@@ -240,7 +240,7 @@ function write(message){
 }
 ```
 
-Substitua o espaço reservado _BindingObjectAsyncMethod_ por uma chamada para qualquer um dos `Binding` quatro métodos de objeto suportados pelo objeto Promise `getDataAsync`: `setDataAsync`, `addHandlerAsync`, ou `removeHandlerAsync`. As chamadas para esses métodos não dão suporte a promessas adicionais. Você deve chamá-las usando o [padrão de função de retorno de chamada aninhado](#AsyncProgramming_NestedCallbacks).
+Substitua o espaço reservado _BindingObjectAsyncMethod_ por uma chamada para qualquer um dos `Binding` quatro métodos de objeto suportados pelo objeto Promise `getDataAsync`: `setDataAsync`, `addHandlerAsync`, ou `removeHandlerAsync`. As chamadas para esses métodos não oferecem suporte a promessas adicionais. Você deve chamá-los usando o [padrão de função de retorno de chamada aninhado](#AsyncProgramming_NestedCallbacks).
 
 Depois que `Binding` uma promessa de objeto é atendida, ela pode ser reutilizada na chamada do método encadeado como se fosse uma associação (o tempo de execução do suplemento não tentará executar a promessa de forma assíncrona). Se a `Binding` promessa do objeto não puder ser atendida, o tempo de execução do suplemento tentará novamente acessar o objeto Binding na próxima vez que um de seus métodos assíncronos for chamado.
 
@@ -393,7 +393,7 @@ function write(message){
 ```
 
 
-Em ambos os exemplos de parâmetros opcionais, o parâmetro _callback_ é especificado como o último parâmetro (seguindo os parâmetros opcionais embutidos ou seguindo o objeto de argumento _Options_ ). Como alternativa, você pode especificar o parâmetro _callback_ no objeto JSON embutido ou no `options` objeto. No entanto, você pode passar o parâmetro de _retorno de chamada_ em apenas um local: no objeto _Options_ (Inline ou criado externamente) ou como último parâmetro, mas não ambos.
+Em ambos os exemplos de parâmetros opcionais, o parâmetro _callback_ é especificado como o último parâmetro (seguindo os parâmetros opcionais embutidos ou seguindo o objeto de argumento _Options_ ). Como alternativa, você pode especificar o parâmetro _callback_ dentro o objeto JSON embutido ou no objeto `options`. No entanto, você pode transmitir o parâmetro _callback_ em um só local: no objeto _options_ (embutido ou criado externamente) ou como o último parâmetro, mas não ambos.
 
 
 ## <a name="see-also"></a>Confira também

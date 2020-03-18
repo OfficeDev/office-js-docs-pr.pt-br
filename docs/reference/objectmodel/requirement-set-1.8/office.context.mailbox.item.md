@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Item-conjunto de requisitos 1,8
-description: ''
+description: O modelo de objeto do Office. Context. Mailbox. Item (conjunto de requisitos 1,8)
 ms.date: 03/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 2d7df72954f7c8acc052aa827007c466011dbf18
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.openlocfilehash: 0e6c47db0854fd76a69bb7d4e5387ec634662676
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42562084"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720026"
 ---
 # <a name="item"></a>item
 

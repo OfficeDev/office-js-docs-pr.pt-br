@@ -1,14 +1,14 @@
 ---
 title: Namespace do Office – conjunto de requisitos 1,3
-description: ''
+description: O modelo de objeto para o namespace de nível superior da API de suplementos do Outlook (versão da API de caixa de correio 1,3).
 ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: b6a8c581670692ed48c4dcc2a7e1f86196b5bce7
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 706f12f4425a883f0d18fcd6f9ee18972972d72b
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165430"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717772"
 ---
 # <a name="office"></a>Office
 

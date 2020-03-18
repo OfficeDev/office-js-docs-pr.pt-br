@@ -3,12 +3,12 @@ title: Habilitar cenários de acesso de representante em um suplemento do Outloo
 description: Descreve brevemente o acesso de representante e discute como configurar o suporte a suplementos.
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 6cee68af9efc02bbb474effaba1a898511aea531
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 0941e4f0b5e1082b8a762acfa013d4e58be03469
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165828"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42721013"
 ---
 # <a name="enable-delegate-access-scenarios-in-an-outlook-add-in"></a>Habilitar cenários de acesso de representante em um suplemento do Outlook
 
@@ -129,7 +129,7 @@ function performOperation() {
 }
 ```
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Também confira
 
 - [Permitir que outra pessoa Gerencie seu email e calendário](https://support.office.com/article/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926)
 - [Compartilhamento de calendário no Office 365](https://support.office.com/article/calendar-sharing-in-office-365-b576ecc3-0945-4d75-85f1-5efafb8a37b4)

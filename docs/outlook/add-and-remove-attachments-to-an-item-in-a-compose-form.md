@@ -3,12 +3,12 @@ title: Adicionar e remover os anexos em um suplemento do Outlook
 description: Você pode usar várias APIs de anexo para gerenciar os arquivos ou os itens do Outlook anexados ao item que o usuário está redigindo.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 2110c22b65d1410cf4c607b6560eae72d169275c
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: bb966ff80bae37fbaa781b5a428f6e26391aa9f4
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325479"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720880"
 ---
 # <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>Gerenciar anexos de um item em um formulário de composição no Outlook
 

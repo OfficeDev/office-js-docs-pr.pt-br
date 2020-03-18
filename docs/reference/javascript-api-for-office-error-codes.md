@@ -1,14 +1,14 @@
 ---
 title: Códigos de erro da API JavaScript do Office
-description: ''
+description: Este artigo documenta as mensagens de erro que você pode encontrar ao usar a API JavaScript do Office.
 ms.date: 03/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 93852e7cfa7188cd30bba370ed6cfeb556af39b8
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: e85242e1cf83aef3b4173abf7ce52631cb6a8f80
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596806"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720978"
 ---
 # <a name="office-javascript-api-error-codes"></a>Códigos de erro da API JavaScript do Office
 
@@ -40,7 +40,7 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 |2005|Erro de Gravação de Dados|Os valores startRow ou startColumn especificados são inválidos.|O usuário fornece valores inválidos de startRow ou startCol.|
 |2006|Erro de formato inválido|O formato do objeto de dados especificado não é válido.|O desenvolvedor de solução fornece uma cadeia de caracteres HTML ou OOXML inválida, uma cadeia de caracteres HTML mal formada ou uma cadeia de caracteres OOXML inválida.|
 |2007|Objeto de dados inválido|O tipo do objeto de dados especificado não é compatível com a seleção atual.|O desenvolvedor da solução fornece um objeto de dados incompatível com o tipo de coerção especificado.|
-|2008|Erro de Gravação de Dados|A definir|A definir|
+|2008|Erro de Gravação de Dados|A definir|TBD|
 |2009|Erro de Gravação de Dados|O objeto de dados especificado é muito grande.|O usuário tenta definir dados além dos limites de dados definidos pelos suplementos do host.|
 |2010|Erro de Gravação de Dados|Os parâmetros de coordenadas não podem ser usados com o tipo de coerção Table quando a tabela contiver células mescladas.|O usuário tenta definir dados parciais de uma tabela não uniforme (ou seja, uma tabela que possui células mescladas).|
 |3000|Erro de Criação de Associação|Não é possível associar à seleção atual.|Não há suporte para a associação da seleção do usuário. (Por exemplo, o usuário está selecionando uma imagem ou outro objeto sem suporte.)|

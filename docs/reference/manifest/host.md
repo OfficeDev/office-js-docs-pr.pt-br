@@ -1,14 +1,14 @@
 ---
 title: Elemento Host no arquivo de manifesto
-description: ''
+description: Especifica um tipo de aplicativo individual do Office em que o suplemento deve ser ativado.
 ms.date: 11/05/2019
 localization_priority: Normal
-ms.openlocfilehash: 824cc6ae51eb9db713a0a9a768e3ec48e3271e95
-ms.sourcegitcommit: 08c0b9ff319c391922fa43d3c2e9783cf6b53b1b
+ms.openlocfilehash: b9f03e6d6b028ca6f4616ae81b8fd76601256793
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "38066274"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718129"
 ---
 # <a name="host-element"></a>Elemento Host
 

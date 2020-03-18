@@ -1,18 +1,18 @@
 ---
 title: Elemento Rule no arquivo de manifesto
-description: ''
-ms.date: 03/19/2019
+description: O elemento Rule especifica as regras de ativação que devem ser avaliadas para esse suplemento de email contextual.
+ms.date: 03/16/2020
 localization_priority: Normal
-ms.openlocfilehash: 78fb38d8fb18c276bfe2eed1bd5b52659cadcaa3
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 06d9985615617e50567dcf614268d9181989f2a1
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165528"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720432"
 ---
 # <a name="rule-element"></a>Elemento Rule
 
-Especifica a(s) regra(s) de ativação que deve(m) ser avaliada(s) para este suplemento contextual de email.
+Especifica as regras de ativação que devem ser avaliadas para esse suplemento de email contextual.
 
 **Tipo de suplemento:** Suplemento contextual de email
 

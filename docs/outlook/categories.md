@@ -3,12 +3,12 @@ title: Obter e definir categorias
 description: Como gerenciar categorias de caixa de correio e item
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 50b98191661674b50c5636733075e4a882183d82
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: d0bb2e9f51675c263d0a3a130c64e02e7d55b764
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165836"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42721020"
 ---
 # <a name="get-and-set-categories"></a>Obter e definir categorias
 
@@ -138,7 +138,7 @@ Office.context.mailbox.item.categories.removeAsync(categoriesToRemove, function 
 });
 ```
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Também confira
 
 - [Permissões do Outlook](understanding-outlook-add-in-permissions.md)
 - [Elemento Permissions no manifesto](../reference/manifest/permissions.md)

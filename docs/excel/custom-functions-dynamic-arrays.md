@@ -3,12 +3,12 @@ ms.date: 12/18/2019
 description: Retornar vários resultados de sua função personalizada em um suplemento do Office Excel.
 title: Retornar vários resultados de sua função personalizada
 localization_priority: Normal
-ms.openlocfilehash: dcca2047cab7b47118da6031aafe7cf8c935ed10
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: a2632c621071f0cbc55f545847d9e9392d884b90
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324670"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719291"
 ---
 # <a name="return-multiple-results-from-your-custom-function"></a>Retornar vários resultados de sua função personalizada
 
@@ -63,7 +63,7 @@ function spillRectangle() {
 }
 ```
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Também confira
 
 - [Matrizes dinâmicas e comportamento de matriz derramada](https://support.office.com/article/dynamic-arrays-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531)
 - [Opções para funções personalizadas do Excel](custom-functions-parameter-options.md)

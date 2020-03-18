@@ -1,14 +1,14 @@
 ---
 title: Teste de usabilidade de Suplementos do Office
-description: ''
+description: Saiba como testar seu design de suplemento com usuários reais.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 636aae3da2b97c3f46582361487c73dfc61f3041
-ms.sourcegitcommit: 960ceaf6776ec3ed41a8f5b7bf70b3c95c43386a
+ms.openlocfilehash: 0fd9475599ebad6a81c8d7dada8780b0c1c08116
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "39830206"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718773"
 ---
 # <a name="usability-testing-for-office-add-ins"></a>Teste de usabilidade de Suplementos do Office
 

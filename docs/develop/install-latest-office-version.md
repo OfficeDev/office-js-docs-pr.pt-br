@@ -3,12 +3,12 @@ title: Instale a última versão do Office
 description: Informações sobre como desativar essa opção para obter as versões mais recentes do Office.
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: ff573a13a6621e5c9bfa5c2dfd704bb64b731372
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: ad956135bea0ffccc18fc07f455af5597d0e2341
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596603"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718920"
 ---
 # <a name="install-the-latest-version-of-office"></a>Instale a última versão do Office
 

@@ -3,12 +3,12 @@ ms.date: 01/14/2020
 description: Definir metadados JSON para funções personalizadas no Excel e associar suas propriedades de ID de função e nome.
 title: Metadados para funções personalizadas no Excel
 localization_priority: Normal
-ms.openlocfilehash: 79f23f83dfd4bff40880cb39edc6ebe9bf2e052e
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 679087336fc7aea741c98d0104514ab96068ffbf
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596778"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719459"
 ---
 # <a name="custom-functions-metadata"></a>Metadados de funções personalizadas
 
@@ -146,7 +146,7 @@ A propriedade `functions` é um conjunto de objetos de funções personalizadas.
 | Propriedade      | Tipo de dados | Obrigatório | Descrição                                                                                                                                                                      |
 | :------------ | :-------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `description` | string    | Não       | Descrição da função que é exibida aos usuários finais no Excel. Por exemplo, **Converte um valor em Celsius para Fahrenheit**.                                                            |
-| `helpUrl`     | cadeia de caracteres    | Não       | A URL que fornece informações sobre a função. (Ela é exibida em um painel de tarefas). Por exemplo, `http://contoso.com/help/convertcelsiustofahrenheit.html`.                      |
+| `helpUrl`     | string    | Não       | A URL que fornece informações sobre a função. (Ela é exibida em um painel de tarefas). Por exemplo, `http://contoso.com/help/convertcelsiustofahrenheit.html`.                      |
 | `id`          | string    | Sim      | Identificação exclusiva para a função. Essa ID pode conter apenas caracteres alfanuméricos e pontos e não deve ser alterada depois de configurada.                                            |
 | `name`        | string    | Sim      | O nome da função que é exibida aos usuários finais no Excel. No Excel, o nome da função será prefixado pelo namespace de funções personalizadas que é especificado no arquivo de manifesto XML. |
 | `options`     | object    | Não       | Permite que você personalize alguns aspectos de como e quando o Excel executa a função. Confira [opções](#options) para obter detalhes.                                                          |
@@ -267,8 +267,7 @@ O exemplo a seguir mostra os metadados JSON que correspondem às funções defin
 
 Conheça as [práticas recomendadas para nomear sua função](custom-functions-naming.md) ou descubra como [localizar sua função](custom-functions-localize.md) usando o método JSON manuscrito descrito anteriormente.
 
-## <a name="see-also"></a>Confira também
-
+## <a name="see-also"></a>Também confira
 
 - [Gerar metadados JSON automaticamente para funções personalizadas](custom-functions-json-autogeneration.md)
 - [Opções de parâmetros de funções personalizadas](custom-functions-parameter-options.md)

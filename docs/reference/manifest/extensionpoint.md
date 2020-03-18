@@ -1,14 +1,14 @@
 ---
 title: Elemento ExtensionPoint no arquivo de manifesto
-description: ''
+description: Define onde um suplemento expõe a funcionalidade na interface de usuário do Office.
 ms.date: 09/05/2019
 localization_priority: Normal
-ms.openlocfilehash: 44075bd12c15b4ac9117a51d71fdcc7d6436a7ce
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: c945875140fdbdb7ba6aaeed7bb0a7bf5d06e050
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324873"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720565"
 ---
 # <a name="extensionpoint-element"></a>Elemento ExtensionPoint
 
@@ -74,7 +74,7 @@ Os exemplos a seguir mostram como usar o elemento **ExtensionPoint** com os valo
 |**Elemento**|**Descrição**|
 |:-----|:-----|
 |**CustomTab**|Obrigatório se você quiser adicionar uma guia personalizada à faixa de opções (usando **PrimaryCommandSurface**). Se você usar o elemento **CustomTab**, o elemento **OfficeTab** não poderá ser usado. O atributo **id** é obrigatório. |
-|**OfficeTab**|Obrigatório se você deseja estender uma guia padrão da faixa de opções do Office (usando **PrimaryCommandSurface**). Se você usar o elemento **OfficeTab** , não poderá usar o elemento **CustomTab** . Para obter detalhes, consulte [OfficeTab](officetab.md).|
+|**OfficeTab**|Obrigatório se você quiser estender uma guia de faixa de opções padrão do Office (usando **PrimaryCommandSurface**). Se você usar o elemento **OfficeTab**, o elemento **CustomTab** não poderá ser usado. Para saber mais, confira [OfficeTab](officetab.md).|
 |**OfficeMenu**|Obrigatório se você estiver adicionando comandos de suplemento a um menu de contexto padrão (usando **ContextMenu**). O atributo **id** deve ser definido como: <br/> - **ContextMenuText** para o Excel ou Word. Exibe o item no menu de contexto quando o texto for selecionado e o usuário clicar com o botão direito do mouse no texto selecionado. <br/> - **ContextMenuCell** para Excel. Exibe o item no menu de contexto quando o usuário clica com o botão direito do mouse em uma célula na planilha.|
 |**Group**|Um grupo de pontos de extensão de interface do usuário em uma guia. Um grupo pode ter até seis controles. O atributo **id** é obrigatório. É uma cadeia de caracteres com, no máximo, 125 caracteres. |
 |**Label**|Obrigatório. O rótulo do grupo. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **ShortStrings**, que é elemento filho do elemento **Resources**. |
@@ -282,7 +282,7 @@ O elemento [VersionOverrides](versionoverrides.md) incluído deve ter um valor d
 
 #### <a name="label"></a>Label
 
-Necessário. O rótulo do grupo. O atributo **Resid** deve ser definido como o valor do atributo **ID** de um elemento **String** no elemento **ShortStrings** no elemento [Resources](resources.md) .
+Obrigatório. O rótulo do grupo. O atributo **Resid** deve ser definido como o valor do atributo **ID** de um elemento **String** no elemento **ShortStrings** no elemento [Resources](resources.md) .
 
 #### <a name="highlight-requirements"></a>Requisitos de realce
 

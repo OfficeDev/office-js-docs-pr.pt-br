@@ -3,12 +3,12 @@ title: Estender funções personalizadas com funções definidas pelo usuário X
 description: Habilitar a compatibilidade com as funções definidas pelo usuário do Excel XLL que possuem funcionalidade equivalente às suas funções personalizadas
 ms.date: 07/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 35b6ade70e21ca36efec928d030f79c27cc38691
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
+ms.openlocfilehash: 8c83ea8a5b97cd4f23a9e25fddabe3d178b1e482
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217215"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717037"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>Estender funções personalizadas com funções definidas pelo usuário XLL
 
@@ -68,7 +68,7 @@ A tabela a seguir compara os recursos nas funções de XLL definidas pelo usuár
 | Comportamento de cálculo | Nenhuma interface do usuário. O Excel pode não responder durante o cálculo. | Os usuários verão #BUSY! até que um resultado seja retornado. | Os usuários verão #BUSY! até que um resultado seja retornado. |
 | Conjuntos de requisitos | Não disponível | CustomFunctions 1,1 e posterior | CustomFunctions 1,1 e posterior |
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Também confira
 
 - [Tornar seu suplemento do Excel compatível com um suplemento de COM existente](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)
 - [Tutorial de funções personalizadas do Excel](../tutorials/excel-tutorial-create-custom-functions.md)

@@ -1,14 +1,14 @@
 ---
 title: Chamar funções internas de planilha do Excel usando as APIs JavaScript do Excel
-description: ''
+description: Saiba como chamar funções internas de planilha do Excel, como `VLOOKUP` e `SUM` usar a API JavaScript do Excel.
 ms.date: 12/19/2019
 localization_priority: Normal
-ms.openlocfilehash: c5b725f09c4bd6be8d6061f08fe7fbf84ff30762
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: b4f7a88b48bebdc6e336aeb24105845af6624f1a
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325147"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717058"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>Chamar funções internas de planilha do Excel
 

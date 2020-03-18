@@ -3,12 +3,12 @@ title: Executar o código em seu suplemento do Excel quando o documento for aber
 description: Executar o código em seu suplemento do Excel quando o documento for aberto.
 ms.date: 02/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 5b8c646a1154540244b1f5e0ac47ad8eaec1801f
-ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
+ms.openlocfilehash: fba43fdc508245632da911acecbfa52e00847b3b
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "42284108"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717030"
 ---
 # <a name="run-code-in-your-excel-add-in-when-the-document-opens-preview"></a>Executar o código em seu suplemento do Excel quando o documento for aberto (visualização)
 
@@ -83,6 +83,6 @@ async function onChange(event) {
 
 ```
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Também confira
 
 - [Compartilhar dados e eventos entre as funções personalizadas do Excel e o tutorial do painel de tarefas](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)

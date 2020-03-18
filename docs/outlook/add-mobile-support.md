@@ -3,12 +3,12 @@ title: Adicionar suporte móvel a um suplemento do Outlook
 description: A adição de suporte para o Outlook Mobile requer atualização do manifesto do suplemento e, possivelmente, a alteração do código para cenários móveis.
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: 2e4ff53b371fdf50ddca43142cb5a036cfc96b25
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 31f58102129ae207da55839f7b48cc8a060645ad
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165766"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720852"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Adicionar suporte para comandos de suplementos para Outlook Mobile
 
@@ -107,6 +107,6 @@ As APIs introduzidas no conjunto de requisitos 1,6 ou posterior não são suport
   - [Office.context.mailbox.item.getRegexMatches](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
   - [Office.context.mailbox.item.getRegexMatchesByName](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Também confira
 
 [Suporte ao conjunto de requisitos](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)

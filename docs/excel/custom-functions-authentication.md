@@ -3,12 +3,12 @@ ms.date: 07/09/2019
 description: Autentique usuários usando funções personalizadas no Excel.
 title: Autenticação para funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: 872553986ebb74a97fd30afa0516ae6a72cf77bf
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 7cffe879a341824a3cfda7c535feb0cc64e191a8
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596498"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719319"
 ---
 # <a name="authentication-for-custom-functions"></a>Autenticação para funções personalizadas
 

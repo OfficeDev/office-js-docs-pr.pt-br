@@ -1,14 +1,14 @@
 ---
 title: Padrões de navegação para Suplementos do Office
-description: ''
+description: Saiba mais sobre as práticas recomendadas para usar barras de comandos, barras de guias e botões voltar para projetar a navegação de um suplemento do Office.
 ms.date: 06/26/2018
 localization_priority: Normal
-ms.openlocfilehash: f0482f7742c6fab97fe563d61d21135c072f8f8f
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 6fb025a897cfc820117a0b6153acc92c2aeb837e
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32449127"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718752"
 ---
 # <a name="navigation-patterns"></a>Padrões de navegação
 

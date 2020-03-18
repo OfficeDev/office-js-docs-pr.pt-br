@@ -1,14 +1,14 @@
 ---
 title: Trabalhar com tabelas usando a API JavaScript do Excel
-description: ''
+description: Exemplos de código que mostram como executar tarefas comuns com tabelas usando a API JavaScript do Excel.
 ms.date: 09/09/2019
 localization_priority: Normal
-ms.openlocfilehash: 4bc1b86f84b2002ad199174ffb37c3c080d51add
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: b6000773a70c74d115643f3353658287b6d66235
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596575"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717135"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Trabalhar com tabelas usando a API JavaScript do Excel
 
@@ -340,7 +340,7 @@ Excel.run(function (context) {
 
 ## <a name="get-the-visible-range-from-a-filtered-table"></a>Obter o intervalo visível de uma tabela filtrada
 
-O exemplo de código a seguir obtém um intervalo que contém dados somente para as células que estão visíveis no momento dentro da tabela especificada e, em seguida, grava os valores desse intervalo no console. Você pode usar o `getVisibleView()` método conforme mostrado abaixo para obter o conteúdo visível de uma tabela sempre que os filtros de coluna tiverem sido aplicados.
+O exemplo de código a seguir obtém um intervalo que contém dados somente para células que estão visíveis atualmente na tabela especificada e grava os valores do intervalo no console. Você pode usar o `getVisibleView()` método conforme mostrado abaixo para obter o conteúdo visível de uma tabela sempre que os filtros de coluna tiverem sido aplicados.
 
 ```js
 Excel.run(function (context) {

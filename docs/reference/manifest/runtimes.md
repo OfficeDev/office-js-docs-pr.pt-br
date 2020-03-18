@@ -1,14 +1,14 @@
 ---
 title: Tempos de execução no arquivo de manifesto (versão prévia)
-description: ''
+description: O elemento de Runtime especifica o tempo de execução do seu suplemento.
 ms.date: 02/21/2020
 localization_priority: Normal
-ms.openlocfilehash: 17e53b53d55ea9547cdfc5c4f89f8f4c3a7ab75e
-ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
+ms.openlocfilehash: 5797aa78ae3667461de48de481ff44f14c307ced
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "42283868"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720418"
 ---
 # <a name="runtimes-element-preview"></a>Elemento de runtimes (visualização)
 
@@ -38,6 +38,6 @@ Especifica o tempo de execução do suplemento e permite funções personalizada
 |:-----|:-----|:-----|
 |  **Runtime**     | Sim |  O tempo de execução do suplemento.
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Também confira
 
 - [Runtime](runtime.md)

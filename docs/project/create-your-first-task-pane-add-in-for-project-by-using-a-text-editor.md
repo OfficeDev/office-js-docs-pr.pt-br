@@ -1,14 +1,14 @@
 ---
 title: Crie o seu primeiro suplemento de painel de tarefas para o Microsoft Project usando um editor de texto
-description: ''
+description: Criar um suplemento do painel de tarefas para o Project Standard 2013, o Project Professional 2013 ou versões posteriores usando o gerador Yeoman para suplementos do Office.
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: 9c742374dec8db92e076f05d8c65712d62c72a42
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 12d5f898e642989e999034dbcf2764244b0c2379
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596813"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720747"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>Crie o seu primeiro suplemento de painel de tarefas para o Microsoft Project usando um editor de texto
 

@@ -3,12 +3,12 @@ title: Localização para Suplementos do Office
 description: Você pode usar a API JavaScript do Office para determinar uma localidade e exibir cadeias de caracteres com base na localidade do aplicativo host ou para interpretar ou exibir dados com base na localidade dos dados.
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: fe608e68f353fab7deca29e2989b9ee21a8e4cb2
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 2b7cc7e414e8d8b3da50afdb1d44b3f693834b62
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688625"
+ms.locfileid: "42718906"
 ---
 # <a name="localization-for-office-add-ins"></a>Localização para Suplementos do Office
 

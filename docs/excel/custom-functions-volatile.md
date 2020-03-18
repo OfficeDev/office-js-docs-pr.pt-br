@@ -3,12 +3,12 @@ ms.date: 01/14/2020
 description: Saiba como implementar funções personalizadas de streaming volátil e offline.
 title: Valores voláteis nas funções
 localization_priority: Normal
-ms.openlocfilehash: 57a41578f400b10806fc169fed09db7d7a66ce84
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
+ms.openlocfilehash: 617599a2687696a96240c4f162f9b02788a215f4
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217019"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717205"
 ---
 # <a name="volatile-values-in-functions"></a>Valores voláteis nas funções
 
@@ -40,7 +40,7 @@ function roll6sided() {
 ## <a name="next-steps"></a>Próximas etapas
 Saiba como [salvar o estado em suas funções personalizadas](custom-functions-save-state.md).
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Também confira
 
 * [Opções de parâmetros de funções personalizadas](custom-functions-parameter-options.md)
 * [Metadados de funções personalizadas](custom-functions-json.md)

@@ -1,18 +1,18 @@
 ---
 title: Elemento SourceLocation no arquivo de manifesto
-description: ''
-ms.date: 10/09/2018
+description: O elemento SourceLocation especifica os locais do arquivo de origem para o suplemento do Office.
+ms.date: 03/16/2020
 localization_priority: Normal
-ms.openlocfilehash: 7544e2bae480b9431c8912533ea1b761132a355e
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: fcca051b0d85c98cb011d5b886981c543ef8e3b0
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32451973"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717898"
 ---
 # <a name="sourcelocation-element"></a>Elemento SourceLocation
 
-Especifica o local de origem do arquivo para o Suplemento do Office como uma URL que contém entre 1 e 2.018 caracteres de comprimento. O local de origem deve ser um endereço HTTPS, não um caminho de arquivo.
+Especifica os locais do arquivo de origem para o suplemento do Office como uma URL entre 1 e 2018 caracteres de comprimento. O local de origem deve ser um endereço HTTPS, não um caminho de arquivo.
 
 **Tipo de suplemento:** Conteúdo, Painel de tarefas, Email
 

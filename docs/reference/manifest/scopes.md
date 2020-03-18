@@ -1,20 +1,20 @@
 ---
 title: Elemento Scopes no arquivo de manifesto
-description: ''
+description: O elemento de escopos contém permissões que o suplemento precisa para se conectar a um recurso externo.
 ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 1e36bdcd0cdcaa8c842e924c2543d56bdc4e26a7
-ms.sourcegitcommit: da8e6148f4bd9884ab9702db3033273a383d15f0
+ms.openlocfilehash: 69a394b4cbe324b49c03425e6b2df92f44cbd21f
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "36477730"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717919"
 ---
 # <a name="scopes-element"></a>Elemento Scopes
 
 Contém permissões que o suplemento precisa para um recurso externo, como o Microsoft Graph. Quando o Microsoft Graph é o recurso, AppSource usa o elemento de escopos para criar uma caixa de diálogo de consentimento. Quando os usuários instalam o suplemento da Office Store, eles são solicitados a conceder ao suplemento permissões especificas para os dados do Microsoft Graph do usuário.
 
-**** Escopos é um elemento filho dos elementos [WebApplicationInfo](webapplicationinfo.md) e [Authorization](authorization.md) no manifesto.
+**Escopos** é um elemento filho dos elementos [WebApplicationInfo](webapplicationinfo.md) e [Authorization](authorization.md) no manifesto.
 
 ## <a name="child-elements"></a>Elementos filho
 

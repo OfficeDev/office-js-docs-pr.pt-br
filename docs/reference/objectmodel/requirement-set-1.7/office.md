@@ -1,14 +1,14 @@
 ---
 title: Namespace do Office – conjunto de requisitos 1,7
-description: ''
+description: Este namespace fornece interfaces compartilhadas que são usadas pelos suplementos do Office Outlook (conjunto de requisitos 1,7)
 ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: 23f3fb705c03eabd8ee7fce53f4c89a48128672f
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 50fa22ac14aee3b7276be83813db248681435dc1
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165345"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717591"
 ---
 # <a name="office"></a>Office
 

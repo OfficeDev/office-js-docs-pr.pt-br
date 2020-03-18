@@ -3,12 +3,12 @@ ms.date: 07/15/2019
 description: Saiba como usar parâmetros diferentes em suas funções personalizadas, como intervalos do Excel, parâmetros opcionais, contexto de invocação e muito mais.
 title: Opções para funções personalizadas do Excel
 localization_priority: Normal
-ms.openlocfilehash: e5b75b098d64d5998b0393d5995896f0289337fc
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 66e873117b82ed7258b5965a6e964f4b9e01df21
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771416"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719480"
 ---
 # <a name="custom-functions-parameter-options"></a>Opções de parâmetros de funções personalizadas
 
@@ -20,7 +20,7 @@ Funções personalizadas são configuráveis com muitas opções diferentes para
 
 Enquanto parâmetros regulares são necessários, os parâmetros opcionais não. Quando um usuário invoca uma função no Excel, os parâmetros opcionais são exibidos entre colchetes. No exemplo a seguir, a função Add pode opcionalmente adicionar um terceiro número. Essa função aparece como `=CONTOSO.ADD(first, second, [third])` no Excel.
 
-#### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+#### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```js
 /**
@@ -39,7 +39,7 @@ function add(first, second, third) {
 }
 ```
 
-#### <a name="typescripttabtypescript"></a>[TypeScript](#tab/typescript)
+#### <a name="typescript"></a>[TypeScript](#tab/typescript)
 
 ```typescript
 /**
@@ -65,7 +65,7 @@ function add(first: number, second: number, third?: number): number {
 
 Ao definir uma função que contenha um ou mais parâmetros opcionais, você deve especificar o que acontece quando os parâmetros opcionais são nulos. No exemplo a seguir, `zipCode` e `dayOfWeek` são dois parâmetros opcionais da função `getWeatherReport`. Se o `zipCode` parâmetro for NULL, o valor padrão será definido como `98052`. Se o `dayOfWeek` parâmetro for NULL, ele será definido como quarta-feira.
 
-#### <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+#### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```js
 /**
@@ -89,7 +89,7 @@ function getWeatherReport(zipCode, dayOfWeek) {
 }
 ```
 
-#### <a name="typescripttabtypescript"></a>[TypeScript](#tab/typescript)
+#### <a name="typescript"></a>[TypeScript](#tab/typescript)
 
 ```typescript
 /**
@@ -225,7 +225,7 @@ No typescript, indique que o parâmetro é multidimensional. Por exemplo, `ADD(v
 
 Em JavaScript, use `@param values {number[]}` para matrizes unidimensionais `@param <name> {number[][]}` , para matrizes bidimensionais e assim por diante para mais dimensões.
 
-Para o JSON com autoria, certifique-se de que seu `"repeating": true` parâmetro é especificado como em seu arquivo JSON, bem como Verifique se os parâmetros `"dimensionality”: matrix`estão marcados como.
+Para o JSON com autoria, certifique-se de que seu `"repeating": true` parâmetro é especificado como em seu arquivo JSON, bem como Verifique se os parâmetros `"dimensionality": matrix`estão marcados como.
 
 >[!NOTE]
 >Funções contendo parâmetros repetidos contêm automaticamente um parâmetro de chamada como o último parâmetro. Para obter mais informações sobre parâmetros de chamada, consulte a seção a seguir.
@@ -255,7 +255,7 @@ O parâmetro permite que você obtenha o contexto da célula de invocação, que
 
 Em alguns casos, você precisa obter o endereço da célula que chamou sua função personalizada. Isso é útil nos seguintes cenários:
 
-- Intervalos de formatação: Use o endereço da célula como a chave para armazenar informações no [OfficeRuntime. armazenamento](/office/dev/add-ins/excel/custom-functions-runtime#storing-and-accessing-data). Em seguida, use [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) no Excel para carregar a chave de `OfficeRuntime.storage`.
+- Intervalos de formatação: Use o endereço da célula como a chave para armazenar informações no [OfficeRuntime. armazenamento](../excel/custom-functions-runtime.md#storing-and-accessing-data). Em seguida, use [onCalculated](/javascript/api/excel/excel.worksheet#oncalculated) no Excel para carregar a chave de `OfficeRuntime.storage`.
 - Exibição de valores armazenados em cache: se sua função for usada offline, exiba valores armazenados em cache de `OfficeRuntime.storage` usando `onCalculated`.
 - Reconciliação: Use o endereço da célula para descobrir uma célula de origem para ajudá-lo a reconciliar onde o processamento está ocorrendo.
 
@@ -281,7 +281,7 @@ Por padrão, os valores retornados de uma função `getAddress` seguem o formato
 
 Saiba como [salvar o estado em suas funções personalizadas](custom-functions-save-state.md) ou usar [valores voláteis em suas funções personalizadas](custom-functions-volatile.md).
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Também confira
 
 * [Receber e tratar dados com funções personalizadas](custom-functions-web-reqs.md)
 * [Metadados de funções personalizadas](custom-functions-json.md)

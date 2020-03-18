@@ -1,14 +1,14 @@
 ---
 title: Persistir o estado e as configurações do suplemento
-description: ''
+description: Saiba como manter dados nos aplicativos Web de suplemento do Office em execução no ambiente sem estado de um controle de navegador.
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 99b645d27ff094e50ae4ad52a1a7f96aac07b9ed
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 7d66a8693c18dbc7f2be59b2799db7429681a57f
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325140"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719389"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>Persistir o estado e as configurações do suplemento
 
@@ -22,11 +22,11 @@ Essencialmente, os suplementos do Office são aplicativos Web em execução no a
 
 - Usar técnicas fornecidas pelo controle de navegador subjacente: cookies de navegador ou armazenamento Web HTML5 ([localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) ou [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)).
 
-Este artigo se concentra em como usar a API JavaScript do Office para persistir o estado do suplemento. Para obter exemplos de como usar cookies do navegador e armazenamento na Web, consulte o [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings).
+Este artigo se concentra em como usar a API JavaScript do Office para persistir o estado do suplemento. Para obter exemplos do uso de cookies de navegador e armazenamento na Web, confira [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings).
 
 ## <a name="persisting-add-in-state-and-settings-with-the-office-javascript-api"></a>Persistir o estado e as configurações do suplemento com a API JavaScript do Office
 
-A API JavaScript do Office fornece os objetos [Settings](/javascript/api/office/office.settings), [RoamingSettings](/javascript/api/outlook/office.roamingsettings)e [CustomProperties](/javascript/api/outlook/office.customproperties) para salvar o estado do suplemento nas sessões, conforme descrito na tabela a seguir. Em todos os casos, os valores de configurações salvos são associados à [ID](/office/dev/add-ins/reference/manifest/id) do suplemento que os criou.
+A API JavaScript do Office fornece os objetos [Settings](/javascript/api/office/office.settings), [RoamingSettings](/javascript/api/outlook/office.roamingsettings)e [CustomProperties](/javascript/api/outlook/office.customproperties) para salvar o estado do suplemento nas sessões, conforme descrito na tabela a seguir. Em todos os casos, os valores de configurações salvos são associados à [Id](../reference/manifest/id.md) do suplemento que os criou.
 
 |**Object**|**Suporte a tipos de suplementos**|**Local de armazenamento**|**Suporte ao host do Office**|
 |:-----|:-----|:-----|:-----|
@@ -78,12 +78,12 @@ O exemplo de código a seguir mostra como usar o método [Settings.set](/javascr
 Office.context.document.settings.set('themeColor', 'green');
 ```
 
- A configuração com o nome especificado será criada se ainda não existir, ou seu valor será atualizado, se existir. Use o `Settings.saveAsync` método para manter as configurações novas ou atualizadas no documento.
+ A configuração com o nome especificado é criada se ainda não existir, ou seu valor é atualizado se já existir. Use o `Settings.saveAsync` método para manter as configurações novas ou atualizadas no documento.
 
 
 ### <a name="getting-the-value-of-a-setting"></a>Obter o valor de uma configuração
 
-O exemplo a seguir mostra como usar o método [Settings. Get](/javascript/api/office/office.settings#get-name-) para obter o valor de uma configuração chamada "themeColor". O único parâmetro do `get` método é o _nome_ da configuração que diferencia maiúsculas de minúsculas.
+O exemplo a seguir mostra como usar o método [Settings.get](/javascript/api/office/office.settings#get-name-) para obter o valor de uma configuração chamada "themeColor". O único parâmetro do `get` método é o _nome_ da configuração que diferencia maiúsculas de minúsculas.
 
 
 ```js
@@ -95,12 +95,12 @@ function write(message){
 }
 ```
 
- O `get` método retorna o valor que foi salvo anteriormente para o _nome_ da configuração que foi passado. Se a configuração não existir, o método retornará **NULL**.
+ O `get` método retorna o valor que foi salvo anteriormente para o _nome_ da configuração que foi passado. Se a configuração não existir, o método retornará **null**.
 
 
 ### <a name="removing-a-setting"></a>Remover uma configuração
 
-O exemplo a seguir mostra como usar o método [Settings. Remove](/javascript/api/office/office.settings#remove-name-) para remover uma configuração com o nome "themeColor". O único parâmetro do `remove` método é o _nome_ da configuração que diferencia maiúsculas de minúsculas.
+O exemplo a seguir mostra como usar o método [Settings.remove](/javascript/api/office/office.settings#remove-name-) para remover uma configuração com o nome "themeColor". O único parâmetro do `remove` método é o _nome_ da configuração que diferencia maiúsculas de minúsculas.
 
 
 ```js
@@ -112,7 +112,7 @@ Nada acontecerá se a configuração não existir. Use o `Settings.saveAsync` m�
 
 ### <a name="saving-your-settings"></a>Salvar suas configurações
 
-Para salvar quaisquer adições, alterações ou exclusões que seu suplemento fez na cópia na memória do recipiente de propriedades de configurações durante a sessão atual, você deve chamar o método [Settings. saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-) para armazená-los no documento. O único parâmetro do `saveAsync` método é _callback_, que é uma função de retorno de chamada com um único parâmetro. 
+Para salvar adições, alterações ou exclusões que o suplemento fez na cópia na memória do conjunto de propriedades de configurações durante a sessão atual, você deve chamar o método [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-) para armazená-lo no documento. O único parâmetro do `saveAsync` método é _callback_, que é uma função de retorno de chamada com um único parâmetro. 
 
 
 ```js
@@ -190,9 +190,9 @@ function getReviewers() {
 Para obter informações sobre como salvar as configurações em um suplemento do Outlook, consulte [gerenciar o estado e as configurações de um suplemento do Outlook](../outlook/manage-state-and-settings-outlook.md).
 
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Também confira
 
-- [Noções básicas sobre a API JavaScript do Office](understanding-the-javascript-api-for-office.md)
+- [Entendendo a API JavaScript do Office](understanding-the-javascript-api-for-office.md)
 - [Suplementos do Outlook](../outlook/outlook-add-ins-overview.md)
 - [Gerenciar o estado e as configurações de um suplemento do Outlook](../outlook/manage-state-and-settings-outlook.md)
 - [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)

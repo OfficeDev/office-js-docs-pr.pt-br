@@ -3,12 +3,12 @@ ms.date: 12/28/2019
 description: Saiba mais sobre os nomes de funções personalizadas do Excel e evite armadilhas comuns de nomeação.
 title: Diretrizes de nomenclatura para funções personalizadas no Excel
 localization_priority: Normal
-ms.openlocfilehash: 2dcd35a91f460fcd556dec479fb717942a987908
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 81ce0e1a1d510fd9558a3e57273903382326ad55
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324656"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719473"
 ---
 # <a name="naming-guidelines"></a>Diretrizes de nomenclatura
 

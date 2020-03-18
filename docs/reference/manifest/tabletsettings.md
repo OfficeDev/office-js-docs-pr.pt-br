@@ -1,14 +1,14 @@
 ---
 title: Elemento TabletSettings no arquivo de manifesto
-description: ''
+description: O elemento TabletSettings especifica as configurações de controle que se aplicam quando seu suplemento de email é usado em um Tablet.
 ms.date: 01/13/2020
 localization_priority: Normal
-ms.openlocfilehash: bf11dcfec4dfe2c40764722d23c7a69c289bba65
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 2b8b372d27274d89d3aed4b5bacb9faa4893fda5
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42163861"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717856"
 ---
 # <a name="tabletsettings-element"></a>Elemento TabletSettings
 

@@ -1,14 +1,14 @@
 ---
 title: Depurar suplementos do Office em um Mac
-description: ''
+description: Saiba como usar um Mac para depurar suplementos do Office
 ms.date: 11/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 38aca8b9c5245ee83ed79c94497c26250d726245
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: 0cd7edf8db40cbcb9057dc07e549e11e11b2c51c
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950933"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719767"
 ---
 # <a name="debug-office-add-ins-on-a-mac"></a>Depurar suplementos do Office em um Mac
 

@@ -1,14 +1,14 @@
 ---
 title: Diretrizes de estilo de visualização de dados para Suplementos do Office
-description: ''
+description: Obtenha algumas boas práticas de visualização de dados em um suplemento do Office.
 ms.date: 01/14/2019
 localization_priority: Normal
-ms.openlocfilehash: ef82432dacb3f63e85fd305bc682325af3312aca
-ms.sourcegitcommit: 212c810f3480a750df779777c570159a7f76054a
+ms.openlocfilehash: c22943959408d1df5febd8f5aad84ee791c40504
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "41217252"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717219"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Diretrizes de estilo de visualização de dados para Suplementos do Office
 

@@ -1,14 +1,14 @@
 ---
 title: Solucionar erros de usuários com suplementos do Office
-description: ''
+description: Saiba como solucionar erros de usuários em suplementos do Office.
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 27755c6e378c8002565dc1ea938776c66c204c89
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 6050b05a39a49ff5bd504b68635388a8ceb3fc65
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325028"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719760"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Solucionar erros de usuários com suplementos do Office
 
@@ -47,7 +47,7 @@ Se um suplemento do Outlook executado no Windows e [usando o Internet Explorer](
     
 - Em **navegação**, desmarque **Desabilitar depuração de scripts (Internet Explorer)** e **Desabilitar depuração de scripts (outros)**.
     
-Recomendamos que você desmarque essas configurações apenas para solucionar o problema. Se você deixá-los desmarcados, receberá prompts ao navegar. Depois que o problema for resolvido, marque **Desabilitar depuração de scripts (Internet Explorer)** e **Desabilitar depuração de scripts (outros)** novamente.
+Recomendamos que você desmarque essas configurações somente para solucionar o problema. Se você deixar desmarcado, receberá prompts durante a navegação. Depois que o problema for resolvido, marque **Desabilitar depuração de scripts (Internet Explorer)** e **Desabilitar depuração de scripts (outros)** novamente.
 
 
 ## <a name="add-in-doesnt-activate-in-office-2013"></a>O suplemento não é ativado no Office 2013

@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox. Item-conjunto de requisitos 1,6
-description: ''
+description: O modelo de objeto do objeto de item do Outlook na API de suplementos do Outlook (versão da API de caixa de correio 1,6).
 ms.date: 03/06/2020
 localization_priority: Normal
-ms.openlocfilehash: b9d67886976e1f4867b0bc7b00a5244eff428a2c
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.openlocfilehash: 8149a9fce462cfb12d190de320d951dd1937f42b
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42562006"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717667"
 ---
 # <a name="item"></a>item
 

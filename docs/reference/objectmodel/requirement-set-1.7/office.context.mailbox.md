@@ -1,14 +1,14 @@
 ---
 title: Office. Context. Mailbox – conjunto de requisitos 1,7
-description: ''
-ms.date: 03/06/2020
+description: Office.context.mailbox
+ms.date: 03/16/2020
 localization_priority: Normal
-ms.openlocfilehash: 3e6ed6064e3dee86b5b58a1ac4d884666e26bde5
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.openlocfilehash: e3a06346b226d4170d5dfb949bc61e63e850aada
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42561762"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717604"
 ---
 # <a name="mailbox"></a>mailbox
 

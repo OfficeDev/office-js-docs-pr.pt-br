@@ -1,14 +1,14 @@
 ---
 title: Diretrizes de ícone para suplementos do Office
-description: ''
+description: Obtenha uma visão geral de como criar ícones e os estilos de design novos e monolinhas para comandos de suplemento.
 ms.date: 12/09/2019
 localization_priority: Normal
-ms.openlocfilehash: d4afaf0e131bd28778198c0a9eb5c2126c4dda0e
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: ce474ef20493e738fca7072d5b6a3bcd28594fbb
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814016"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718500"
 ---
 # <a name="icons"></a>Ícones
 
@@ -20,7 +20,7 @@ Muitos contêineres HTML contêm controles com iconografia. Use a fonte personal
 
 ## <a name="design-icons-for-add-in-commands"></a>Desenvolver ícones para comandos de suplemento
 
-Os [comandos de suplemento](add-in-commands.md) adicionam botões, textos e ícones à interface do usuário do Office. Os botões de comando do suplemento devem fornecer ícones e rótulos significativos que identifiquem claramente a ação que o usuário está levando ao usar um comando. Os artigos a seguir fornecem diretrizes de produção e de uso para ajudá-lo a projetar ícones que se integram perfeitamente ao Office.
+Os [Comandos de suplementos](add-in-commands.md) adicionam botões, texto e ícones à interface do usuário do Office. Os botões de comando de suplemento devem fornecer ícones significativos e rótulos que identifiquem claramente a ação que o usuário está realizando ao usar um comando. Os artigos a seguir fornecem diretrizes de produção e de uso para ajudá-lo a projetar ícones que se integram perfeitamente ao Office.
 
 - Para o estilo monoline do Office 365, confira [diretrizes de ícone de estilo monoline para suplementos do Office](add-in-icons-monoline.md).
 - Para obter o estilo novo do Office 2013 sem assinatura, confira [diretrizes de ícone de estilo atualizado para suplementos do Office](add-in-icons-fresh.md).

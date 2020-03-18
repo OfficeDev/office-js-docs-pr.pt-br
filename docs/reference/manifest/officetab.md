@@ -1,14 +1,14 @@
 ---
 title: Elemento OfficeTab no arquivo de manifesto
-description: ''
+description: O elemento OfficeTab define a guia faixa de opções onde o comando de suplemento é exibido.
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: b8458233ba93e98fe0bd8d51f5734b1fece65864
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 1d1810f3d3a206f72bf9544814a3fdaaa556476e
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324831"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720488"
 ---
 # <a name="officetab-element"></a>Elemento OfficeTab
 

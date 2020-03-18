@@ -1,14 +1,14 @@
 ---
 title: Trabalhar com intervalos usando a API JavaScript do Excel (fundamental)
-description: ''
+description: Exemplos de código que mostram como executar tarefas comuns com intervalos usando a API JavaScript do Excel.
 ms.date: 04/30/2019
 localization_priority: Normal
-ms.openlocfilehash: cb77721649608cf18fc7bad99974cfe96f6be6f3
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 027f71b7927c4c8405c5c791e6f640315e46abf1
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688507"
+ms.locfileid: "42717142"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Trabalhar com intervalos usando a API JavaScript do Excel
 
@@ -57,7 +57,7 @@ Excel.run(function (context) {
 
 ### <a name="get-used-range"></a>Obter intervalo usado
 
-O exemplo de código a seguir obtém o intervalo usado da planilha chamada **amostra**, carrega `address` sua propriedade e grava uma mensagem no console. O intervalo usado é o menor intervalo que abrange todas as células da planilha que têm um valor ou formatação atribuída a elas. Se a planilha inteira estiver em branco, `getUsedRange()` o método retornará um intervalo que consiste apenas na célula superior esquerda na planilha.
+O exemplo de código a seguir obtém o intervalo usado da planilha chamada **amostra**, carrega `address` sua propriedade e grava uma mensagem no console. O intervalo usado é o menor intervalo que abrange todas as células na planilha que têm um valor ou uma formatação atribuída a elas. Se a planilha inteira estiver em branco, `getUsedRange()` o método retornará um intervalo que consiste apenas na célula superior esquerda na planilha.
 
 ```js
 Excel.run(function (context) {

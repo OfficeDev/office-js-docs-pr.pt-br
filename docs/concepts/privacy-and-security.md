@@ -1,14 +1,14 @@
 ---
 title: Privacidade e segurança para suplementos do Office
-description: ''
+description: Saiba mais sobre os aspectos de privacidade e segurança da plataforma de suplementos do Office.
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 5782cc7fcf23190cca73cc91a35a73e82d182261
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 9d002a8cc8dff8f8f4a8e2cc08c7e9c81a1641de
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42323837"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717303"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 

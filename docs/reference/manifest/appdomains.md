@@ -1,14 +1,14 @@
 ---
 title: Elemento AppDomains no arquivo de manifesto
-description: ''
+description: Lista todos os domínios, além do domínio especificado no `SourceLocation` elemento que seu suplemento do Office usará para carregar páginas.
 ms.date: 07/03/2019
 localization_priority: Normal
-ms.openlocfilehash: b6db3d46d004021f25edd5733566544010abb457
-ms.sourcegitcommit: c3673cc693fa7070e1b397922bd735ba3f9342f3
+ms.openlocfilehash: f60579d773e81a7e8006bafcf1c151874af42aeb
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "35575328"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720698"
 ---
 # <a name="appdomains-element"></a>Elemento AppDomains
 

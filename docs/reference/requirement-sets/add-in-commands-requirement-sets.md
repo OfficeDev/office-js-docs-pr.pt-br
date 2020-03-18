@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos dos comandos de suplemento
-description: ''
+description: Visão geral dos conjuntos de requisitos de comandos de suplemento do Office
 ms.date: 03/11/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 969f07ea773a49b66b8d3992ea2fb0d2681cda91
-ms.sourcegitcommit: 05b73cdec5f4db7f0b8d48a5a552ee296a0332ca
+ms.openlocfilehash: ca75f7de01b5e3a31f0b5b75461b459567b53cf3
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42600722"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717492"
 ---
 # <a name="add-in-commands-requirement-sets"></a>Conjuntos de requisitos dos comandos de suplemento
 
@@ -21,7 +21,7 @@ A versão inicial dos comandos do suplemento não tem um conjunto de requisitos 
 
 | Lançar   |  Office 2013 no Windows<br>(compra avulsa) | Office 2016 no Windows<br>(compra avulsa) | Office 2019 no Windows<br>(compra avulsa) | Office no Windows<br>(conectado à assinatura do Office 365)   |  Office no iPad<br>(conectado à assinatura do Office 365)  |  Office no Mac<br>(conectado à assinatura do Office 365)  | Office na Web  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| Comandos de suplemento (versão inicial, nenhum conjunto de requisitos) | N/D | 16.0.4678.1000 *suportado somente no Outlook* | Versão 1809 (Build 10827.20150) ou posterior |Versão 1603 (Build 6769.0000) ou posterior | N/D | 15.33 ou posterior| Janeiro de 2016 |
+| Comandos de suplemento (versão inicial, nenhum conjunto de requisitos) | Não disponível | 16.0.4678.1000 *suportado somente no Outlook* | Versão 1809 (Build 10827.20150) ou posterior |Versão 1603 (Build 6769.0000) ou posterior | N/D | 15.33 ou posterior| Janeiro de 2016 |
 
 O conjunto de requisitos 1.1 dos comandos do suplemento introduz a capacidade de [abrir automaticamente um painel de tarefas com documentos](../../develop/automatically-open-a-task-pane-with-a-document.md).
 

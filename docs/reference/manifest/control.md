@@ -1,14 +1,14 @@
 ---
 title: Elemento Control no arquivo de manifesto
-description: ''
+description: Define a função JavaScript que executa e aciona ou inicia um painel de tarefas.
 ms.date: 01/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 0add0d102b62411b67c081b74ecd0a138df3b625
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 0d13fc4fd30f32b4998d385058cff941d3f72353
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688596"
+ms.locfileid: "42720670"
 ---
 # <a name="control-element"></a>Elemento Control
 

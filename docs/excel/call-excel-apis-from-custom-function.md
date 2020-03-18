@@ -3,12 +3,12 @@ title: Chamar as APIs do Microsoft Excel a partir de uma função personalizada
 description: Saiba quais APIs do Microsoft Excel você pode chamar a partir de sua função personalizada.
 ms.date: 02/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 2f24f8fc27db65466cb586307d7f4bc8f8eefe20
-ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
+ms.openlocfilehash: e22ed897e95a74707bd0d8bded3f8dca724731d1
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "42284102"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719340"
 ---
 # <a name="call-microsoft-excel-apis-from-a-custom-function"></a>Chamar as APIs do Microsoft Excel a partir de uma função personalizada
 
@@ -62,6 +62,6 @@ Em vez disso, faça alterações no Excel a partir do contexto de um botão da f
 
 - [Conceitos fundamentais de programação com a API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md)
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Também confira
 
 - [Compartilhar dados e eventos entre as funções personalizadas do Excel e o tutorial do painel de tarefas](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)

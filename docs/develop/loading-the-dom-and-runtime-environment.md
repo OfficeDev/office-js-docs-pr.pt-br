@@ -1,14 +1,14 @@
 ---
 title: Carregar o ambiente de tempo de execução e DOM
-description: ''
-ms.date: 03/10/2020
+description: Carregar o ambiente de tempo de execução de suplementos do Office e DOM
+ms.date: 07/01/2019
 localization_priority: Normal
-ms.openlocfilehash: 15e2b94275d6a4d4de689ce9524b2731f044d425
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 2ea5f1fdc42fe1ffde30f8145fd0c24599c7e702
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596666"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718913"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>Carregar o ambiente de tempo de execução e DOM
 
@@ -110,7 +110,7 @@ O suplemento do Outlook de amostra de discagem telefônica mostra uma abordagem 
 >
 > Se o suplemento incluir mais de uma página, sempre que carregar uma nova página, a página deverá chamar `Office.onReady` ou atribuir um manipulador de `Office.initialize` eventos.
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Também confira
 
 - [Entendendo a API JavaScript do Office](understanding-the-javascript-api-for-office.md)
 - [Inicialize seu suplemento do Office](initialize-add-in.md)

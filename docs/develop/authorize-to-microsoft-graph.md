@@ -1,14 +1,14 @@
 ---
 title: Autorizar o Microsoft Graph com SSO
-description: ''
+description: Saiba como os usuários de um suplemento do Office podem usar o logon único (SSO) para buscar dados do Microsoft Graph.
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: e3dfae7c1b665dfcc5dea300ef4c3dfb6af209cd
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 58b27e4549b4d31889e0e03ff8591fb3bdd7a7c0
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596673"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719081"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso-preview"></a>Autorizar o Microsoft Graph com SSO (visualização)
 

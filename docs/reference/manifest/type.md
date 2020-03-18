@@ -1,18 +1,18 @@
 ---
 title: Elemento Type no arquivo de manifesto
-description: ''
-ms.date: 05/03/2019
+description: O elemento Type Especifica se o suplemento equivalente é um suplemento de COM ou um XLL.
+ms.date: 03/16/2020
 localization_priority: Normal
-ms.openlocfilehash: 1c053d65c5e3c6ce597c9912ec608e0b36bc623b
-ms.sourcegitcommit: b3996b1444e520b44cf752e76eef50908386ca26
+ms.openlocfilehash: 9eeab172ed4ebf06fc93e42f56f8d33f5e7a92db
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "33628225"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720313"
 ---
 # <a name="type-element"></a>Elemento Type
 
-Especifica se o suplemento equivalente é um suplemento COM ou um XLL.
+Especifica se o suplemento equivalente é um suplemento de COM ou um XLL.
 
 **Tipo de suplemento:** Painel de tarefas, função personalizada
 

@@ -1,14 +1,14 @@
 ---
 title: Abrir automaticamente um painel de tarefas com um documento
-description: ''
+description: Saiba como configurar um suplemento do Office para abrir automaticamente quando um documento é aberto.
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: c7b14259aa0bfc9f1f7a395bedc46e598eb66607
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: eaa05bdbac600f9e12f4c8583b8bd5b6abe0b89f
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596477"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719165"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Abrir automaticamente um painel de tarefas com um documento
 
@@ -19,7 +19,7 @@ Alguns cenários exigem que um painel de tarefas seja exibido automaticamente ao
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>De que forma o recurso autoopen é diferente da inserção de um painel de tarefas?
 
-Quando um usuário inicia suplementos que não usam comandos de suplemento, por exemplo, suplementos executados no Office 2013, eles são inseridos no documento e persistem nesse documento. Como resultado, quando outros usuários abrem o documento, ele é solicitado a instalar o suplemento e o painel de tarefas é aberto. O desafio desse modelo é que, em muitos casos, os usuários não querem que o suplemento persista no documento. Por exemplo, um aluno que usa um suplemento de dicionário em um documento do Word pode não querer que seus colegas ou professores sejam solicitados a instalar esse suplemento ao abrir o documento.
+Quando um usuário lançar suplementos que não usam comandos de suplemento, por exemplo, suplementos que são executados no Office 2013, eles serão inseridos no documento e persistirão nesse documento. Como resultado, quando outros usuários abrem o documento, é solicitado que eles instalem o suplemento, e o painel de tarefas abrirá. O desafio desse modelo é que, em muitos casos, os usuários não querem que o suplemento persista no documento. Por exemplo, um aluno que usa um suplemento de dicionário em um documento do Word pode não querer que seus colegas ou professores sejam avisados para instalar esse suplemento quando abrirem o documento.
 
 Com o recurso autoopen, você pode explicitamente definir, ou permitir que o usuário defina, se um suplemento do painel de tarefas irá persistir em um documento específico.
 
@@ -41,7 +41,7 @@ Aplique as seguintes práticas recomendadas ao usar o recurso autoopen:
   - Quando é muito provável que o usuário sempre utilizará o suplemento com um determinado documento. Por exemplo, um suplemento que ajuda os usuários a preencher ou alterar dados em um documento puxando informações de um sistema de back-end.
 - Permita que os usuários ativem ou desativem o recurso autoopen. Inclua uma opção em sua interface de usuário para que eles possam escolher quando não querem mais que o suplemento abra automaticamente no painel de tarefas.  
 - Use a detecção de conjunto de requisitos para determinar se o recurso AutoOpen está disponível e forneça um comportamento de fallback se não for.
-- Não use o recurso AutoOpen para aumentar artificialmente o uso do suplemento. Se não fizer sentido para que seu suplemento abra automaticamente com determinados documentos, esse recurso pode incomodar os usuários.
+- Não use o recurso autoopen para aumentar artificialmente o uso do seu suplemento. Se não fizer sentido para que seu suplemento abra automaticamente com determinados documentos, esse recurso pode incomodar os usuários.
 
     > [!NOTE]
     > Se a Microsoft detectar abuso do recurso autoopen, seu suplemento poderá ser rejeitado no AppSource.

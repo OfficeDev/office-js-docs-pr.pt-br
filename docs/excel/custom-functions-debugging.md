@@ -3,12 +3,12 @@ ms.date: 07/10/2019
 description: Depurar suas funções personalizadas no Excel.
 title: Depuração de funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: dc620d8bab50c5efb3b9d9ec4f79f6532605f48b
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 4abd5f3da58c35485004b17f92b334b133cabd27
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324621"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719305"
 ---
 # <a name="custom-functions-debugging"></a>Depuração de funções personalizadas
 
@@ -169,7 +169,7 @@ Você pode usar as seguintes tarefas para iniciar a depuração no desktop ou on
 ## <a name="next-steps"></a>Próximas etapas
 Saiba mais sobre as [práticas de autenticação em funções personalizadas](custom-functions-authentication.md). Ou, revise a [arquitetura exclusiva da função personalizada](custom-functions-architecture.md).
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Também confira
 
 * [Solução de problemas de funções personalizadas](custom-functions-troubleshooting.md)
 * [Tratamento de erros para funções personalizadas no Excel](custom-functions-errors.md)

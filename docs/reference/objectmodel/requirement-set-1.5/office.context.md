@@ -1,14 +1,14 @@
 ---
 title: Office. Context – conjunto de requisitos 1,5
-description: ''
+description: O modelo de objeto para o objeto Context do Outlook na API de suplementos do Outlook (versão da API da caixa de correio 1,5).
 ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: 7f156f3f998aa2f86e6f969e158aa7e315ae6ad8
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 0a226b796a3ac31729b08d68920a060094604a9f
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42163742"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717709"
 ---
 # <a name="context"></a>context
 

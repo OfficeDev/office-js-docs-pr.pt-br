@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
-description: ''
+description: Recursos e APIs que estão atualmente em versão prévia para suplementos do Outlook e as APIs JavaScript do Office.
 ms.date: 03/04/2020
 localization_priority: Normal
-ms.openlocfilehash: 4365dab3d8dd1ddb876536b3030926d68a89ac49
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: c87ce8472becc072702f58e7d8c21665904673d2
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "42605670"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42717807"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 
@@ -37,7 +37,7 @@ Foi adicionada uma nova função ao `Body` objeto que acrescenta dados ao final 
 
 Adicionado um novo elemento ao manifesto onde a `AppendOnSend` permissão estendida deve ser incluída na coleção de permissões estendidas.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
+**Disponível em**: Outlook no Windows (conectado a assinatura do Office 365)
 
 <br>
 

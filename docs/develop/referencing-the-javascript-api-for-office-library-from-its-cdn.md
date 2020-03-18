@@ -3,12 +3,12 @@ title: Fazendo referência à biblioteca da API JavaScript do Office
 description: Saiba como fazer referência à biblioteca da API JavaScript do Office e definições de tipo no suplemento.
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 5e26d5b0454a6833c593ff60c1577d24583dcc51
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 3b468ae9286eb53ffd5d3c0199c14045131105f3
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596715"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719347"
 ---
 # <a name="referencing-the-office-javascript-api-library"></a>Fazendo referência à biblioteca da API JavaScript do Office
 
@@ -48,8 +48,7 @@ npm install --save-dev @types/office-js
 >
 > `npm install --save-dev @types/office-js-preview`
 
-## <a name="see-also"></a>Confira também
-
+## <a name="see-also"></a>Também confira
 
 - [Entendendo a API JavaScript do Office](understanding-the-javascript-api-for-office.md)
 - [API JavaScript para Office](../reference/javascript-api-for-office.md)

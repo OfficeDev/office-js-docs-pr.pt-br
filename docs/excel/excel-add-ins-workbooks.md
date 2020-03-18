@@ -1,14 +1,14 @@
 ---
 title: Trabalhar com pastas de trabalho usando a API JavaScript do Excel
-description: ''
+description: Exemplos de código que mostram como executar tarefas comuns com pastas de trabalho usando a API JavaScript do Excel.
 ms.date: 10/21/2019
 localization_priority: Normal
-ms.openlocfilehash: c148dab1f11ba0a4f33eb4ef4c6dc4e189069808
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 0f86278cdb52edc16e5c43323d874d985564de3a
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688512"
+ms.locfileid: "42719620"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 

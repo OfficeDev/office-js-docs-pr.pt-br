@@ -1,14 +1,14 @@
 ---
 title: Especificações abertas da API para a API JavaScript do Office
-description: ''
+description: Especificações abertas da API
 ms.date: 07/17/2019
 localization_priority: Normal
-ms.openlocfilehash: ee4b8ce52eefe0419dbbc04124b865d5c20fea4c
-ms.sourcegitcommit: 6d9b4820a62a914c50cef13af8b80ce626034c26
+ms.openlocfilehash: bc06e93f0cae2ea630f23d1524d2c7cc8c03c784
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "35804994"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719970"
 ---
 # <a name="api-open-specifications"></a>Especificações abertas da API
 
@@ -21,7 +21,7 @@ As especificações abertas da API JavaScript do Office fornecem informações s
 
 No momento, não temos APIs na fase de especificação pública aberta. Atualizaremos essa página com novos designs à medida que forem disponibilizadas.
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Também confira
 
 - [Referência da API de visualização do Excel](/javascript/api/excel)
 - [Conjunto de requisitos de visualização da API JavaScript do Excel](../requirement-sets/excel-preview-apis.md)
