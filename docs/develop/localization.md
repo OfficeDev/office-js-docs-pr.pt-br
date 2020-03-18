@@ -3,12 +3,12 @@ title: Localização para Suplementos do Office
 description: Você pode usar a API JavaScript do Office para determinar uma localidade e exibir cadeias de caracteres com base na localidade do aplicativo host ou para interpretar ou exibir dados com base na localidade dos dados.
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: af91923871b72279b749dec4ff2f9fa4460a72d5
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: fe608e68f353fab7deca29e2989b9ee21a8e4cb2
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42323788"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688625"
 ---
 # <a name="localization-for-office-add-ins"></a>Localização para Suplementos do Office
 
@@ -411,17 +411,17 @@ Após estar em execução, as cadeias de caracteres na interface do usuário do 
 - [Diretrizes de design para suplementos do Office](../design/add-in-design.md)
 - [Identificadores de idioma e valores da ID de OptionState no Office 2013](/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
 
-[DefaultLocale]:        /office/dev/add-ins/reference/manifest/defaultlocale
-[Descrição]:          /office/dev/add-ins/reference/manifest/description
-[DisplayName]:          /office/dev/add-ins/reference/manifest/displayname
-[IconUrl]:              /office/dev/add-ins/reference/manifest/iconurl
-[HighResolutionIconUrl]:/office/dev/add-ins/reference/manifest/highresolutioniconurl
-[Resources]:            /office/dev/add-ins/reference/manifest/resources
-[SourceLocation]:       /office/dev/add-ins/reference/manifest/sourcelocation
-[Override]:             /office/dev/add-ins/reference/manifest/override
-[DesktopSettings]:      /office/dev/add-ins/reference/manifest/desktopsettings
-[TabletSettings]:       /office/dev/add-ins/reference/manifest/tabletsettings
-[PhoneSettings]:        /office/dev/add-ins/reference/manifest/phonesettings
-[displayLanguage]:  /javascript/api/office/office.context#displaylanguage 
-[contentLanguage]:  /javascript/api/office/office.context#contentlanguage 
-[RFC 3066]: https://www.rfc-editor.org/info/rfc3066
+[DefaultLocale]:         ../reference/manifest/defaultlocale.md
+[Descrição]:           ../reference/manifest/description.md
+[DisplayName]:           ../reference/manifest/displayname.md
+[IconUrl]:               ../reference/manifest/iconurl.md
+[HighResolutionIconUrl]: ../reference/manifest/highresolutioniconurl.md
+[Resources]:             ../reference/manifest/resources.md
+[SourceLocation]:        ../reference/manifest/sourcelocation.md
+[Override]:              ../reference/manifest/override.md
+[DesktopSettings]:       ../reference/manifest/desktopsettings.md
+[TabletSettings]:        ../reference/manifest/tabletsettings.md
+[PhoneSettings]:         ../reference/manifest/phonesettings.md
+[displayLanguage]:       /javascript/api/office/office.context#displaylanguage
+[contentLanguage]:       /javascript/api/office/office.context#contentlanguage
+[RFC 3066]:              https://www.rfc-editor.org/info/rfc3066

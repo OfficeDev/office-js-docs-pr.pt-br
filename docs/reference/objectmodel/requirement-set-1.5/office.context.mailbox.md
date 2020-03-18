@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/06/2020
 localization_priority: Normal
 ms.openlocfilehash: b74a8d7c5d41978dc6e2044f1bb1d1a803654622
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42562070"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688550"
 ---
 # <a name="mailbox"></a>mailbox
 

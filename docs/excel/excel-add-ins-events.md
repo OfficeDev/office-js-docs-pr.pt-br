@@ -4,11 +4,11 @@ description: Uma lista de eventos para objetos JavaScript do Excel. Isso inclui 
 ms.date: 02/11/2020
 localization_priority: Normal
 ms.openlocfilehash: f1a1faf9acc370e7183a078aeeba34019e54900f
-ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "42554784"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688508"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Trabalhar com eventos usando a API JavaScript do Excel
 

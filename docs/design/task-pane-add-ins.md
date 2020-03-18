@@ -4,11 +4,11 @@ description: Os painéis de tarefa concedem aos usuários acesso a controles de 
 ms.date: 01/14/2020
 localization_priority: Normal
 ms.openlocfilehash: 048c6a508a9d8106d129469880396a564b26aea4
-ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "42554675"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688525"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Painéis de tarefas nos Suplementos do Office
  

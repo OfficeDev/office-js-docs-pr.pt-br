@@ -5,11 +5,11 @@ ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
 ms.openlocfilehash: 9c8cfedd5f8219f2105456597d43201068b4c21e
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950499"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688528"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Tutorial: Criar funções personalizadas no Excel
 
@@ -61,7 +61,7 @@ Neste tutorial, você vai:
 
 4. Inicie o servidor local da web, que é executado no Node.js. Você pode experimentar o suplemento função personalizada no Excel na Web ou no Windows.
 
-# <a name="excel-on-windows-or-mactabexcel-windows"></a>[Excel para Windows ou Mac](#tab/excel-windows)
+# <a name="excel-on-windows-or-mac"></a>[Excel para Windows ou Mac](#tab/excel-windows)
 
 Para testar o seu suplemento no Excel para Windows ou Mac, execute o seguinte comando. Quando você executa este comando, o servidor Web local iniciará e o Excel abrirá com o seu suplemento carregado.
 
@@ -69,7 +69,7 @@ Para testar o seu suplemento no Excel para Windows ou Mac, execute o seguinte co
 npm run start:desktop
 ```
 
-# <a name="excel-on-the-webtabexcel-online"></a>[Excel na Web](#tab/excel-online)
+# <a name="excel-on-the-web"></a>[Excel na Web](#tab/excel-online)
 
 Para testar o seu suplemento no Excel em um navegador, execute o seguinte comando. O servidor Web local é iniciado quando este comando é executado.
 
@@ -145,7 +145,7 @@ Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio d
 
 4. Execute as etapas a seguir (para o Excel na Web, Windows ou Mac) para registrá-lo novamente no Excel. Você deve concluir essas etapas antes que a nova função esteja disponível.
 
-### <a name="excel-on-windows-or-mactabexcel-windows"></a>[Excel para Windows ou Mac](#tab/excel-windows)
+### <a name="excel-on-windows-or-mac"></a>[Excel para Windows ou Mac](#tab/excel-windows)
 
 1. Feche o Excel e abra-o novamente.
 
@@ -155,7 +155,7 @@ Integração de dados da Web é uma ótima maneira de ampliar o Excel por meio d
     ![Inserir faixa de opções no Excel no Windows com o suplemento Funções Personalizadas do Excel realçado na minha lista de suplementos](../images/list-starcount.png)
 
 
-# <a name="excel-on-the-webtabexcel-online"></a>[Excel na Web](#tab/excel-online)
+# <a name="excel-on-the-web"></a>[Excel na Web](#tab/excel-online)
 
 1. No Excel, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.  ![Inserir faixa de opções no Excel na Web com o ícone Meus Suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
 
@@ -213,7 +213,7 @@ function clock(invocation) {
 
 3. Execute as etapas a seguir (para o Excel na Web, Windows ou Mac) para registrá-lo novamente no Excel. Você deve concluir essas etapas antes que a nova função esteja disponível. 
 
-# <a name="excel-on-windows-or-mactabexcel-windows"></a>[Excel para Windows ou Mac](#tab/excel-windows)
+# <a name="excel-on-windows-or-mac"></a>[Excel para Windows ou Mac](#tab/excel-windows)
 
 1. Feche o Excel e abra-o novamente.
 
@@ -222,7 +222,7 @@ function clock(invocation) {
 3. Na lista de suplementos disponíveis, localize a seção **Suplementos do desenvolvedor** e selecione o seu suplemento **contagem de estrelas** para registrá-lo.
     ![Inserir faixa de opções no Excel no Windows com o suplemento Funções Personalizadas do Excel realçado na minha lista de suplementos](../images/list-starcount.png)
 
-# <a name="excel-on-the-webtabexcel-online"></a>[Excel na Web](#tab/excel-online)
+# <a name="excel-on-the-web"></a>[Excel na Web](#tab/excel-online)
 
 1. No Excel, escolha a guia **Inserir** e, em seguida, escolha **Suplementos**.  ![Inserir faixa de opções no Excel na Web com o ícone Meus Suplementos realçado](../images/excel-cf-online-register-add-in-1.png)
 

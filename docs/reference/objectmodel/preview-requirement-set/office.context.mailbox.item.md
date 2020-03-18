@@ -4,11 +4,11 @@ description: ''
 ms.date: 03/06/2020
 localization_priority: Normal
 ms.openlocfilehash: deb5006d8253c7f9fdcf0bdd1a0ee24df9342d66
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42561811"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688591"
 ---
 # <a name="item"></a>item
 

@@ -4,11 +4,11 @@ description: ''
 ms.date: 01/25/2020
 localization_priority: Priority
 ms.openlocfilehash: 2bcf9f0fe4ba6f7efd55885da5ac6f972ffe4883
-ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "41650009"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688622"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Visão geral da autenticação e autorização nos Suplementos do Office
 

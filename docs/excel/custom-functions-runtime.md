@@ -4,11 +4,11 @@ description: Entenda os principais cenários de desenvolvimento de funções per
 title: Tempo de execução de funções personalizadas do Excel
 localization_priority: Normal
 ms.openlocfilehash: bb73ab2f20eadbac3f5fc97e272d69fe8bb983cd
-ms.sourcegitcommit: 1fb99b1b4e63868a0e81a928c69a34c42bf7e209
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "36695858"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688506"
 ---
 # <a name="runtime-for-excel-custom-functions"></a>Tempo de execução de funções personalizadas do Excel
 

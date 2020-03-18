@@ -3,12 +3,12 @@ title: Trabalhar com intervalos usando a API JavaScript do Excel (avançado)
 description: Funções e cenários de objetos de intervalo avançados, como células especiais, remoção de duplicatas e trabalho com datas.
 ms.date: 02/11/2020
 localization_priority: Normal
-ms.openlocfilehash: 0e42549c7ecb9eb8bf8ebe707906224b4059e176
-ms.sourcegitcommit: d85efbf41a3382ca7d3ab08f2c3f0664d4b26c53
+ms.openlocfilehash: ed5f946c58b14f7f09b1bdc6fb0815430849f0bd
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "42327751"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688514"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Trabalhar com intervalos usando a API JavaScript do Excel (avançado)
 
@@ -99,7 +99,7 @@ Se nenhuma célula com característica destino existe no intervalo, `getSpecialC
 Se você espera que células com característica direcionada sempre deveriam existir, provavelmente desejará o código para gerar um erro se as células não estiverem lá. Se for um cenário válido que não há uma ou mais células correspondentes, o código deve verificar se há essa possibilidade e tratar normalmente sem enviar um erro. Você pode obter esse comportamento com o `getSpecialCellsOrNullObject` método e sua propriedade retornada `isNullObject`. O exemplo a seguir usa esse padrão. Sobre este código, observe:
 
 - O método `getSpecialCellsOrNullObject` sempre retorna um objeto de proxy, portanto, `null` nunca está no sentido comum do JavaScript. Mas se nenhuma célula de correspondência for encontrada, as propriedades do objeto`isNullObject` serão definida como `true`.
-- Ele chama `context.sync` *antes* de testar a propriedade`isNullObject`. Esse é um requisito com todos os métodos e propriedades `*OrNullObject`, pois sempre terá que carregar e sincronizar as propriedades na ordem para lê-la. No entanto, não é necessário carregar *explicitamente* a propriedade`isNullObject`. Será carregado automaticamente pelo `context.sync` mesmo se `load` não for chamado no objeto. Para saber mais, confira [ \*OrNullObject](/office/dev/add-ins/excel/excel-add-ins-advanced-concepts#ornullobject-methods).
+- Ele chama `context.sync` *antes* de testar a propriedade`isNullObject`. Esse é um requisito com todos os métodos e propriedades `*OrNullObject`, pois sempre terá que carregar e sincronizar as propriedades na ordem para lê-la. No entanto, não é necessário carregar *explicitamente* a propriedade`isNullObject`. Será carregado automaticamente pelo `context.sync` mesmo se `load` não for chamado no objeto. Para saber mais, confira [ \*OrNullObject](../excel/excel-add-ins-advanced-concepts.md#ornullobject-methods).
 - Você pode testar esse código selecionando primeiro um intervalo sem células de fórmula e executando-o. Selecione um intervalo que tem pelo menos uma célula com uma fórmula e execute novamente.
 
 ```js
@@ -197,10 +197,10 @@ copyFrom(sourceRange: Range | RangeAreas | string, copyType?: Excel.RangeCopyTyp
 
 `copyType` especifica quais dados são copiados da origem para o destino.
 
-- `Excel.RangeCopyType.formulas` transfere as fórmulas nas células de origem e preserva o posicionamento relativo dos intervalos dessas fórmulas. As entradas que não sejam uma fórmula são copiadas no seu estado original.
+- `Excel.RangeCopyType.formulas`transfere as fórmulas nas células de origem e preserva o posicionamento relativo dos intervalos de fórmulas. As entradas que não sejam uma fórmula são copiadas no seu estado original.
 - `Excel.RangeCopyType.values` copia os valores dos dados e, no caso de fórmulas, o resultado da fórmula.
 - `Excel.RangeCopyType.formats` copia a formatação do intervalo incluindo a fonte, cor e outras configurações de formato, mas nenhum valor.
-- `Excel.RangeCopyType.all` (a opção padrão) copia ambos os dados e formatação, preservando as fórmulas das células, caso elas sejam encontradas.
+- `Excel.RangeCopyType.all`(a opção padrão) copia dados e formatação, preservando as fórmulas das células, se encontradas.
 
 `skipBlanks` define se as células em branco são copiadas para o destino. Quando for verdadeiro, `copyFrom` ignora células em branco no intervalo de origem.
 As células ignoradas não substituem os dados existentes de suas células correspondentes no intervalo de destino. O padrão é false.
@@ -229,11 +229,11 @@ Excel.run(function (context) {
 
 *Antes da função precedente ter sido executada.*
 
-![Os dados no Excel antes do método de copiar do intervalo foram executados](../images/excel-range-copyfrom-skipblanks-before.png)
+![Dados no Excel antes do método Copy do intervalo ter sido executado](../images/excel-range-copyfrom-skipblanks-before.png)
 
 *Após a função precedente ter sido executada.*
 
-![Os dados no Excel após o método de copiar do intervalo foram executados](../images/excel-range-copyfrom-skipblanks-after.png)
+![Dados no Excel após a execução do método Copy do intervalo](../images/excel-range-copyfrom-skipblanks-after.png)
 
 ### <a name="cut-and-paste-move-cells-online-only"></a>Células recortar e colar (mover) ([somente online](../reference/requirement-sets/excel-api-online-requirement-set.md)) 
 
@@ -286,7 +286,7 @@ Excel.run(function (context) {
 
 *Após a função precedente ter sido executada.*
 
-![Dados no Excel depois da execução do método de remoção de duplicatas do intervalo](../images/excel-ranges-remove-duplicates-after.png)
+![Dados no Excel após a execução do método de remoção de duplicatas do intervalo](../images/excel-ranges-remove-duplicates-after.png)
 
 ## <a name="group-data-for-an-outline"></a>Agrupar dados para uma estrutura de tópicos
 

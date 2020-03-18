@@ -4,11 +4,11 @@ description: Conjuntos de requisitos com suporte para o Excel, OneNote, Outlook,
 ms.date: 01/23/2020
 localization_priority: Priority
 ms.openlocfilehash: b30fe872fd89bb02afac99a7838d43d1fbee5464
-ms.sourcegitcommit: 72d719165cc2b64ac9d3c51fb8be277dfde7d2eb
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/25/2020
-ms.locfileid: "41554017"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688602"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilidade de host e plataforma para suplementos do Office
 

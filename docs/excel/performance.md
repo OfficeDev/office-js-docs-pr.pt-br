@@ -4,11 +4,11 @@ description: Otimizar o desempenho usando as API JavaScript do Excel
 ms.date: 06/20/2019
 localization_priority: Normal
 ms.openlocfilehash: 843a8fffbe916003b81ac974db12e3128efb7997
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596995"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42688509"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Otimização de desempenho usando a API JavaScript do Excel
 
