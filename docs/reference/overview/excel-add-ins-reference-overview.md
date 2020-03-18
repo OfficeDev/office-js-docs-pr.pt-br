@@ -1,15 +1,15 @@
 ---
 title: Visão geral da API JavaScript do Excel
-description: ''
+description: Saiba mais sobre as APIs JavaScript do Excel
 ms.date: 02/19/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 3cdc1b19bbf2a57e26a8fe65dd55aa6f39340df7
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: d4721c349de7b93ec34ce3c35fbcee25438564db
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324775"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719914"
 ---
 # <a name="excel-javascript-api-overview"></a>Visão geral da API JavaScript do Excel
 
