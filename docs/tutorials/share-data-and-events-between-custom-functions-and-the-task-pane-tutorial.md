@@ -1,15 +1,15 @@
 ---
-ms.date: 02/20/2020
 title: 'Tutorial: compartilhar dados e eventos entre as funções personalizadas do Excel e o painel de tarefas (versão prévia)'
-ms.prod: excel
 description: No Excel, compartilhe dados e eventos entre as funções personalizadas e o painel de tarefas.
+ms.date: 02/20/2020
+ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 13ef4c199f7cb1de84e58f0ada554c851aee0cad
-ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
+ms.openlocfilehash: 34f2f1006a592c3ee7ab63fdc643648ca26cd01f
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "42283888"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719725"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane-preview"></a>Tutorial: compartilhar dados e eventos entre as funções personalizadas do Excel e o painel de tarefas (versão prévia)
 
@@ -207,7 +207,7 @@ Agora que as funções personalizadas são executadas no mesmo contexto que o c�
   npm run start
   ```
 
-Após a inicialização do Excel, você pode usar os botões do painel de tarefas para armazenar ou obter os dados compartilhados. Insira `=CONTOSO.GETVALUE()` em uma célula para que a função personalizada recupere os mesmos dados compartilhados. Ou use `=CONTOSO.STOREVALUE(“new value”)` para alterar os dados compartilhados para um novo valor.
+Após a inicialização do Excel, você pode usar os botões do painel de tarefas para armazenar ou obter os dados compartilhados. Insira `=CONTOSO.GETVALUE()` em uma célula para que a função personalizada recupere os mesmos dados compartilhados. Ou use `=CONTOSO.STOREVALUE("new value")` para alterar os dados compartilhados para um novo valor.
 
 > [!NOTE]
 > A configuração do seu projeto, como mostrado neste artigo, compartilhará o contexto entre as funções personalizadas e o painel de tarefas. Não há suporte para chamar APIs do Office a partir de funções personalizadas na visualização.

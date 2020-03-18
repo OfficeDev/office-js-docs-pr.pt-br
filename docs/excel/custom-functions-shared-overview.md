@@ -3,12 +3,12 @@ ms.date: 02/13/2020
 description: Aprenda a executar funções personalizadas, botões da faixa de opções e código do painel de tarefas no mesmo tempo de execução do JavaScript para coordenar cenários em seu suplemento.
 title: Execute seu código de suplemento em um tempo de execução do Javascript compartilhado (visualização)
 localization_priority: Priority
-ms.openlocfilehash: d9d73a5ae2ff1da09d1a5fd7d02514cb28be0e2d
-ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
+ms.openlocfilehash: 774990a9452d450bd5c4d968027bc64ebee858af
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "42284097"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719529"
 ---
 # <a name="overview-run-your-add-in-code-in-a-shared-javascript-runtime-preview"></a>Visão geral: Execute seu código de suplemento em um tempo de execução do Javascript compartilhado (visualização)
 

@@ -4,12 +4,12 @@ title: Configure o suplemento do Excel para compartilhar o tempo de execução d
 ms.prod: excel
 description: Configure o suplemento do Excel para compartilhar o tempo de execução do navegador e executar a faixa de opções, o painel de tarefas e o código de função personalizado no mesmo tempo de execução.
 localization_priority: Priority
-ms.openlocfilehash: 7945bd8fdb29a9d6d44d7d29676410a54bacf83f
-ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
+ms.openlocfilehash: 7fad97039d5a463978ca9a2d450af9bb698b49b5
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "42284099"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719326"
 ---
 # <a name="configure-your-excel-add-in-to-use-a-shared-javascript-runtime-preview"></a>Configure seu suplemento do Excel para usar um tempo de execução JavaScript compartilhado (visualização)
 
