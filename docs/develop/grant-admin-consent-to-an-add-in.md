@@ -1,15 +1,15 @@
 ---
-title: Conceder consentimento do administrador ao suplemento
-description: ''
+title: Conceder consentimento ao administrador para o suplemento
+description: Saiba como conceder ao administrador consentimento para o suplemento
 ms.date: 04/10/2018
 localization_priority: Normal
-ms.openlocfilehash: 5ded46f966060a666d7846672fcc1517ea9b3992
-ms.sourcegitcommit: 9e7b4daa8d76c710b9d9dd4ae2e3c45e8fe07127
+ms.openlocfilehash: 854e860af49b01150121460adc8699baa9217ea0
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "32450174"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718948"
 ---
-# <a name="grant-administrator-consent-to-the-add-in"></a><span data-ttu-id="1b1ab-102">Conceder consentimento do administrador ao suplemento</span><span class="sxs-lookup"><span data-stu-id="1b1ab-102">Grant administrator consent to the add-in</span></span>
+# <a name="grant-administrator-consent-to-the-add-in"></a><span data-ttu-id="6dcca-103">Conceder consentimento ao administrador para o suplemento</span><span class="sxs-lookup"><span data-stu-id="6dcca-103">Grant administrator consent to the add-in</span></span>
 
 [!INCLUDE[](../includes/grant-admin-consent-to-an-add-in-include.md)]

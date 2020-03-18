@@ -1,25 +1,25 @@
 ---
 title: Elemento DesktopSettings no arquivo de manifesto
-description: ''
+description: Especifica o local de origem e as configurações de controle aplicadas quando seu suplemento de email é usado em um computador desktop.
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 6dfa69d407e267a1cbcfdeaad0bdf9cdf75c1465
-ms.sourcegitcommit: dc42e0276007f8ab006028b9cd0cc1526c1bd100
+ms.openlocfilehash: d48532482fc71fec2a96133ee8e813cae798613f
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "41120639"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718353"
 ---
-# <a name="desktopsettings-element"></a><span data-ttu-id="1b08b-102">Elemento DesktopSettings</span><span class="sxs-lookup"><span data-stu-id="1b08b-102">DesktopSettings element</span></span>
+# <a name="desktopsettings-element"></a><span data-ttu-id="b2662-103">Elemento DesktopSettings</span><span class="sxs-lookup"><span data-stu-id="b2662-103">DesktopSettings element</span></span>
 
-<span data-ttu-id="1b08b-103">Especifica o local de origem e as configurações de controle aplicadas quando seu suplemento de email é usado em um computador desktop.</span><span class="sxs-lookup"><span data-stu-id="1b08b-103">Specifies source location and control settings that apply when your mail add-in is used on a desktop computer.</span></span>
+<span data-ttu-id="b2662-104">Especifica o local de origem e as configurações de controle aplicadas quando seu suplemento de email é usado em um computador desktop.</span><span class="sxs-lookup"><span data-stu-id="b2662-104">Specifies source location and control settings that apply when your mail add-in is used on a desktop computer.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="1b08b-104">O `DesktopSettings` elemento só está disponível no Outlook clássico na Web (geralmente conectado a versões anteriores do Exchange Server local) e no Outlook 2013 no Windows.</span><span class="sxs-lookup"><span data-stu-id="1b08b-104">The `DesktopSettings` element is available only in classic Outlook on the web (usually connected to older versions of on-premises Exchange server) and Outlook 2013 on Windows.</span></span>
+> <span data-ttu-id="b2662-105">O `DesktopSettings` elemento só está disponível no Outlook clássico na Web (geralmente conectado a versões anteriores do Exchange Server local) e no Outlook 2013 no Windows.</span><span class="sxs-lookup"><span data-stu-id="b2662-105">The `DesktopSettings` element is available only in classic Outlook on the web (usually connected to older versions of on-premises Exchange server) and Outlook 2013 on Windows.</span></span>
 
-<span data-ttu-id="1b08b-105">**Tipo de suplemento:** Email</span><span class="sxs-lookup"><span data-stu-id="1b08b-105">**Add-in type:** Mail</span></span>
+<span data-ttu-id="b2662-106">**Tipo de suplemento:** Email</span><span class="sxs-lookup"><span data-stu-id="b2662-106">**Add-in type:** Mail</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="1b08b-106">Sintaxe</span><span class="sxs-lookup"><span data-stu-id="1b08b-106">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="b2662-107">Sintaxe</span><span class="sxs-lookup"><span data-stu-id="b2662-107">Syntax</span></span>
 
 ```XML
 <Form xsi:type="ItemRead">
@@ -40,6 +40,6 @@ ms.locfileid: "41120639"
 </Form>
 ```
 
-## <a name="contained-in"></a><span data-ttu-id="1b08b-107">Contido em</span><span class="sxs-lookup"><span data-stu-id="1b08b-107">Contained in</span></span>
+## <a name="contained-in"></a><span data-ttu-id="b2662-108">Contido em</span><span class="sxs-lookup"><span data-stu-id="b2662-108">Contained in</span></span>
 
-[<span data-ttu-id="1b08b-108">Form</span><span class="sxs-lookup"><span data-stu-id="1b08b-108">Form</span></span>](form.md)
+[<span data-ttu-id="b2662-109">Form</span><span class="sxs-lookup"><span data-stu-id="b2662-109">Form</span></span>](form.md)

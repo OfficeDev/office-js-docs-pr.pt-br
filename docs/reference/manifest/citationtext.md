@@ -1,31 +1,31 @@
 ---
 title: Elemento CitationText no arquivo de manifesto
-description: ''
+description: Especifica o texto clichê de citação deste dicionário.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 76aba2081734e239c84b6938950f89f8199544b8
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: d63ba369e7732d8e81e3f735f4b8033143a5be9e
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596792"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42720663"
 ---
-# <a name="citationtext-element"></a><span data-ttu-id="d0767-102">Elemento CitationText</span><span class="sxs-lookup"><span data-stu-id="d0767-102">CitationText element</span></span>
+# <a name="citationtext-element"></a><span data-ttu-id="03f0f-103">Elemento CitationText</span><span class="sxs-lookup"><span data-stu-id="03f0f-103">CitationText element</span></span>
 
-<span data-ttu-id="d0767-103">Especifica o texto clichê de citação deste dicionário.</span><span class="sxs-lookup"><span data-stu-id="d0767-103">Specifies the citation boilerplate text for this dictionary.</span></span>
+<span data-ttu-id="03f0f-104">Especifica o texto clichê de citação deste dicionário.</span><span class="sxs-lookup"><span data-stu-id="03f0f-104">Specifies the citation boilerplate text for this dictionary.</span></span>
 
-<span data-ttu-id="d0767-104">**Tipo de suplemento:** Conteúdo, Painel de tarefas, Email</span><span class="sxs-lookup"><span data-stu-id="d0767-104">**Add-in type:** Content, Task pane, Mail</span></span>
+<span data-ttu-id="03f0f-105">**Tipo de suplemento:** Conteúdo, Painel de tarefas, Email</span><span class="sxs-lookup"><span data-stu-id="03f0f-105">**Add-in type:** Content, Task pane, Mail</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="d0767-105">Sintaxe</span><span class="sxs-lookup"><span data-stu-id="d0767-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="03f0f-106">Sintaxe</span><span class="sxs-lookup"><span data-stu-id="03f0f-106">Syntax</span></span>
 
 ```XML
 <CitationText DefaultValue="string" />
 ```
 
-## <a name="contained-in"></a><span data-ttu-id="d0767-106">Contido em</span><span class="sxs-lookup"><span data-stu-id="d0767-106">Contained in</span></span>
+## <a name="contained-in"></a><span data-ttu-id="03f0f-107">Contido em</span><span class="sxs-lookup"><span data-stu-id="03f0f-107">Contained in</span></span>
 
-[<span data-ttu-id="d0767-107">Dictionary</span><span class="sxs-lookup"><span data-stu-id="d0767-107">Dictionary</span></span>](dictionary.md)
+[<span data-ttu-id="03f0f-108">Dictionary</span><span class="sxs-lookup"><span data-stu-id="03f0f-108">Dictionary</span></span>](dictionary.md)
 
-## <a name="see-also"></a><span data-ttu-id="d0767-108">Confira também</span><span class="sxs-lookup"><span data-stu-id="d0767-108">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="03f0f-109">Confira também</span><span class="sxs-lookup"><span data-stu-id="03f0f-109">See also</span></span>
 
-- [<span data-ttu-id="d0767-109">Criar um suplemento de painel de tarefas de dicionário</span><span class="sxs-lookup"><span data-stu-id="d0767-109">Create a dictionary task pane add-in</span></span>](../../word/dictionary-task-pane-add-ins.md)
+- [<span data-ttu-id="03f0f-110">Criar um suplemento de painel de tarefas de dicionário</span><span class="sxs-lookup"><span data-stu-id="03f0f-110">Create a dictionary task pane add-in</span></span>](../../word/dictionary-task-pane-add-ins.md)

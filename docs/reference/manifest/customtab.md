@@ -1,43 +1,43 @@
 ---
 title: Elemento CustomTab no arquivo de manifesto
-description: ''
+description: Na faixa de opções, especifique qual guia e grupo para seus comandos de suplemento.
 ms.date: 01/24/2020
 localization_priority: Normal
-ms.openlocfilehash: ba0419b6cf9cc4a0c1e3038dbb7f972e65868ec4
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 8db29f166b5a5238a7ecf121ba5e5adca66ebe94
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42323802"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42718423"
 ---
-# <a name="customtab-element"></a><span data-ttu-id="f4581-102">Elemento CustomTab</span><span class="sxs-lookup"><span data-stu-id="f4581-102">CustomTab element</span></span>
+# <a name="customtab-element"></a><span data-ttu-id="28fd9-103">Elemento CustomTab</span><span class="sxs-lookup"><span data-stu-id="28fd9-103">CustomTab element</span></span>
 
-<span data-ttu-id="f4581-103">Na faixa de opções, especifique qual guia e grupo para seus comandos de suplemento.</span><span class="sxs-lookup"><span data-stu-id="f4581-103">On the ribbon, you specify which tab and group for their add-in commands.</span></span> <span data-ttu-id="f4581-104">Isso pode ser a guia padrão ( **página inicial**, de **mensagem**ou **reunião**) ou em uma guia personalizada definida pelo suplemento.</span><span class="sxs-lookup"><span data-stu-id="f4581-104">This can either be on the default tab (either **Home**, **Message**, or **Meeting**), or on a custom tab defined by the add-in.</span></span>
+<span data-ttu-id="28fd9-104">Na faixa de opções, especifique qual guia e grupo para seus comandos de suplemento.</span><span class="sxs-lookup"><span data-stu-id="28fd9-104">On the ribbon, you specify which tab and group for their add-in commands.</span></span> <span data-ttu-id="28fd9-105">Isso pode ser a guia padrão ( **página inicial**, de **mensagem**ou **reunião**) ou em uma guia personalizada definida pelo suplemento.</span><span class="sxs-lookup"><span data-stu-id="28fd9-105">This can either be on the default tab (either **Home**, **Message**, or **Meeting**), or on a custom tab defined by the add-in.</span></span>
 
-<span data-ttu-id="f4581-p102">Nas guias personalizadas, o suplemento poderá criar até 10 grupos. Cada grupo está limitado a seis controles, independentemente da guia na qual ele aparece. Os suplementos estão limitados a uma guia personalizada.</span><span class="sxs-lookup"><span data-stu-id="f4581-p102">On custom tabs, the add-in can create up to 10 groups. Each group is limited to 6 controls, regardless of which tab it appears on. Add-ins are limited to one custom tab.</span></span>
+<span data-ttu-id="28fd9-p102">Nas guias personalizadas, o suplemento poderá criar até 10 grupos. Cada grupo está limitado a seis controles, independentemente da guia na qual ele aparece. Os suplementos estão limitados a uma guia personalizada.</span><span class="sxs-lookup"><span data-stu-id="28fd9-p102">On custom tabs, the add-in can create up to 10 groups. Each group is limited to 6 controls, regardless of which tab it appears on. Add-ins are limited to one custom tab.</span></span>
 
-<span data-ttu-id="f4581-108">O atributo **ID** deve ser exclusivo dentro do manifesto.</span><span class="sxs-lookup"><span data-stu-id="f4581-108">The **id** attribute must be unique within the manifest.</span></span>
+<span data-ttu-id="28fd9-109">O atributo **ID** deve ser exclusivo dentro do manifesto.</span><span class="sxs-lookup"><span data-stu-id="28fd9-109">The **id** attribute must be unique within the manifest.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="f4581-109">No Outlook no Mac, o `CustomTab` elemento não está disponível, portanto, você terá que usar o [OfficeTab](officetab.md) .</span><span class="sxs-lookup"><span data-stu-id="f4581-109">In Outlook on Mac, the `CustomTab` element is not available so you'll have to use [OfficeTab](officetab.md) instead.</span></span>
+> <span data-ttu-id="28fd9-110">No Outlook no Mac, o `CustomTab` elemento não está disponível, portanto, você terá que usar o [OfficeTab](officetab.md) .</span><span class="sxs-lookup"><span data-stu-id="28fd9-110">In Outlook on Mac, the `CustomTab` element is not available so you'll have to use [OfficeTab](officetab.md) instead.</span></span>
 
-## <a name="child-elements"></a><span data-ttu-id="f4581-110">Elementos filho</span><span class="sxs-lookup"><span data-stu-id="f4581-110">Child elements</span></span>
+## <a name="child-elements"></a><span data-ttu-id="28fd9-111">Elementos filho</span><span class="sxs-lookup"><span data-stu-id="28fd9-111">Child elements</span></span>
 
-|  <span data-ttu-id="f4581-111">Elemento</span><span class="sxs-lookup"><span data-stu-id="f4581-111">Element</span></span> |  <span data-ttu-id="f4581-112">Obrigatório</span><span class="sxs-lookup"><span data-stu-id="f4581-112">Required</span></span>  |  <span data-ttu-id="f4581-113">Descrição</span><span class="sxs-lookup"><span data-stu-id="f4581-113">Description</span></span>  |
+|  <span data-ttu-id="28fd9-112">Elemento</span><span class="sxs-lookup"><span data-stu-id="28fd9-112">Element</span></span> |  <span data-ttu-id="28fd9-113">Obrigatório</span><span class="sxs-lookup"><span data-stu-id="28fd9-113">Required</span></span>  |  <span data-ttu-id="28fd9-114">Descrição</span><span class="sxs-lookup"><span data-stu-id="28fd9-114">Description</span></span>  |
 |:-----|:-----|:-----|
-|  [<span data-ttu-id="f4581-114">Group</span><span class="sxs-lookup"><span data-stu-id="f4581-114">Group</span></span>](group.md)      | <span data-ttu-id="f4581-115">Sim</span><span class="sxs-lookup"><span data-stu-id="f4581-115">Yes</span></span> |  <span data-ttu-id="f4581-116">Define um grupo de comandos</span><span class="sxs-lookup"><span data-stu-id="f4581-116">Defines a Group of commands.</span></span>  |
-|  [<span data-ttu-id="f4581-117">Label</span><span class="sxs-lookup"><span data-stu-id="f4581-117">Label</span></span>](#label-tab)      | <span data-ttu-id="f4581-118">Sim</span><span class="sxs-lookup"><span data-stu-id="f4581-118">Yes</span></span> |  <span data-ttu-id="f4581-119">O rótulo para CustomTab ou Group.</span><span class="sxs-lookup"><span data-stu-id="f4581-119">The label for the CustomTab or a Group.</span></span>  |
+|  [<span data-ttu-id="28fd9-115">Group</span><span class="sxs-lookup"><span data-stu-id="28fd9-115">Group</span></span>](group.md)      | <span data-ttu-id="28fd9-116">Sim</span><span class="sxs-lookup"><span data-stu-id="28fd9-116">Yes</span></span> |  <span data-ttu-id="28fd9-117">Define um grupo de comandos</span><span class="sxs-lookup"><span data-stu-id="28fd9-117">Defines a Group of commands.</span></span>  |
+|  [<span data-ttu-id="28fd9-118">Label</span><span class="sxs-lookup"><span data-stu-id="28fd9-118">Label</span></span>](#label-tab)      | <span data-ttu-id="28fd9-119">Sim</span><span class="sxs-lookup"><span data-stu-id="28fd9-119">Yes</span></span> |  <span data-ttu-id="28fd9-120">O rótulo para CustomTab ou Group.</span><span class="sxs-lookup"><span data-stu-id="28fd9-120">The label for the CustomTab or a Group.</span></span>  |
 
-### <a name="group"></a><span data-ttu-id="f4581-120">Group</span><span class="sxs-lookup"><span data-stu-id="f4581-120">Group</span></span>
+### <a name="group"></a><span data-ttu-id="28fd9-121">Group</span><span class="sxs-lookup"><span data-stu-id="28fd9-121">Group</span></span>
 
-<span data-ttu-id="f4581-p103">Obrigatório. Confira [Elemento Group](group.md)</span><span class="sxs-lookup"><span data-stu-id="f4581-p103">Required. See [Group element](group.md).</span></span>
+<span data-ttu-id="28fd9-p103">Obrigatório. Confira [Elemento Group](group.md)</span><span class="sxs-lookup"><span data-stu-id="28fd9-p103">Required. See [Group element](group.md).</span></span>
 
-### <a name="label-tab"></a><span data-ttu-id="f4581-123">Label (Tab)</span><span class="sxs-lookup"><span data-stu-id="f4581-123">Label (Tab)</span></span>
+### <a name="label-tab"></a><span data-ttu-id="28fd9-124">Label (Tab)</span><span class="sxs-lookup"><span data-stu-id="28fd9-124">Label (Tab)</span></span>
 
-<span data-ttu-id="f4581-124">Obrigatório.</span><span class="sxs-lookup"><span data-stu-id="f4581-124">Required.</span></span> <span data-ttu-id="f4581-125">O rótulo da guia personalizado. O atributo **Resid** deve ser definido como o valor do atributo **ID** de um elemento **String** no elemento **ShortStrings** no elemento [Resources](resources.md) .</span><span class="sxs-lookup"><span data-stu-id="f4581-125">The label of the custom tab. The **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md) element.</span></span>
+<span data-ttu-id="28fd9-125">Obrigatório.</span><span class="sxs-lookup"><span data-stu-id="28fd9-125">Required.</span></span> <span data-ttu-id="28fd9-126">O rótulo da guia personalizado. O atributo **Resid** deve ser definido como o valor do atributo **ID** de um elemento **String** no elemento **ShortStrings** no elemento [Resources](resources.md) .</span><span class="sxs-lookup"><span data-stu-id="28fd9-126">The label of the custom tab. The **resid** attribute must be set to the value of the **id** attribute of a **String** element in the **ShortStrings** element in the [Resources](resources.md) element.</span></span>
 
 
-## <a name="customtab-example"></a><span data-ttu-id="f4581-126">Exemplo de CustomTab</span><span class="sxs-lookup"><span data-stu-id="f4581-126">CustomTab example</span></span>
+## <a name="customtab-example"></a><span data-ttu-id="28fd9-127">Exemplo de CustomTab</span><span class="sxs-lookup"><span data-stu-id="28fd9-127">CustomTab example</span></span>
 
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">
