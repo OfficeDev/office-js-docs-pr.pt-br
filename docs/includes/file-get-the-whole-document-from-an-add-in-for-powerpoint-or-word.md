@@ -122,7 +122,7 @@ Use o procedimento a seguir para criar uma interface de usuário simples para o 
 
 No código para o suplemento, um manipulador para o evento [Office.initialize](/javascript/api/office) adiciona um manipulador para o evento de clique do botão **Enviar** no formulário e informa aos usuários que o suplemento está pronto.
 
-O exemplo de código a seguir mostra o manipulador de eventos do evento **Office.initialize** juntamente com a função auxiliar, `updateStatus`, para escrever na div de status.
+O exemplo de código a seguir mostra o manipulador de `Office.initialize` eventos para o evento juntamente com uma `updateStatus`função auxiliar,, para escrever na div de status.
 
 ```js
 // The initialize function is required for all add-ins.
@@ -148,13 +148,14 @@ function updateStatus(message) {
 }
 ```
 
-Quando você escolhe o botão **Enviar** na interface do usuário, o suplemento chama a função `sendFile`, que contém uma chamada para o método [Document.getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-). O método **getFileAsync** usa o padrão assíncrono, semelhante a outros métodos na API JavaScript para Office. Ele tem um parâmetro obrigatório, _fileType_, e dois parâmetros opcionais,  _options_ e _callback_. 
+Quando você escolhe o botão **Enviar** na interface do usuário, o suplemento chama a `sendFile` função, que contém uma chamada para o método [Document. getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-) . O `getFileAsync` método usa o padrão assíncrono, semelhante a outros métodos na API JavaScript para Office. Ele tem um parâmetro obrigatório, _fileType_, e dois parâmetros opcionais,  _options_ e _callback_. 
 
-O parâmetro _fileType_ espera uma das três constantes da enumeração [FileType](/javascript/api/office/office.filetype): **Office.FileType.Compressed** ("compactado"), **Office.FileType.PDF** ("PDF"), ou **Office.FileType.Text** ("texto"). O PowerPoint só suporta **Compressed** como argumento; o Word suporta todos os três. Quando você transmite **Compressed** para o parâmetro _fileType_, o método **getFileAsync** retorna o documento como um arquivo de apresentação do PowerPoint 2013 (*.pptx) ou arquivo de documento do Word 2013 (*.docx) criando uma cópia temporária do arquivo no computador local.
 
-O método **getFileAsync** retorna uma referência para o arquivo como um objeto [File](/javascript/api/office/office.file). O objeto **File** expõe quatro membros: a propriedade [size](/javascript/api/office/office.file#size), a propriedade [sliceCount](/javascript/api/office/office.file#slicecount), o método [getSliceAsync](/javascript/api/office/office.file#getsliceasync-sliceindex--callback-) e o método [closeAsync](/javascript/api/office/office.file#closeasync-callback-). A propriedade **size** retorna o número de bytes no arquivo. A propriedade **sliceCount** retorna o número de objetos [Slice](/javascript/api/office/office.slice) (será discutido posteriormente neste artigo) no arquivo.
+O parâmetro _filetype_ espera uma das três constantes da enumeração [filetype](/javascript/api/office/office.filetype) : `Office.FileType.Compressed` ("Compressed"), **Office. filetype. pdf** ("PDF") ou **Office. filetype. Text** ("text"). O PowerPoint só suporta **Compressed** como argumento; o Word suporta todos os três. Quando você passa **compactado** para o parâmetro _filetype_ , o `getFileAsync` método retorna o documento como um arquivo de apresentação do PowerPoint 2013 (*. pptx) ou um arquivo de documento do Word 2013 (*. docx) criando uma cópia temporária do arquivo no computador local.
 
-Use o código a seguir para obter o documento do PowerPoint ou Word como um objeto **File** usando o método **Document.getFileAsync** e, em seguida, faça uma chamada para a função `getSlice` definida localmente. Observe que o objeto **File**, uma variável de contador e o número total de fatias no arquivo são transmitidos na chamada para `getSlice` em um objeto anônimo.
+O `getFileAsync` método retorna uma referência ao arquivo como um objeto [File](/javascript/api/office/office.file) . O `File` objeto expõe quatro membros: a propriedade [size](/javascript/api/office/office.file#size) , a propriedade [sliceCount](/javascript/api/office/office.file#slicecount) , o método [getSliceAsync](/javascript/api/office/office.file#getsliceasync-sliceindex--callback-) e o método [closeAsync](/javascript/api/office/office.file#closeasync-callback-) . A `size` propriedade retorna o número de bytes no arquivo. O `sliceCount` retorna o número de objetos [Slice](/javascript/api/office/office.slice) (discutidos posteriormente neste artigo) no arquivo.
+
+Use o código a seguir para obter o documento PowerPoint ou Word como `File` um objeto usando `Document.getFileAsync` o método e, em seguida, faz uma chamada `getSlice` para a função definida localmente. Observe que o `File` objeto, uma variável de contador, e o número total de fatias no arquivo são passados na chamada para `getSlice` em um objeto anônimo.
 
 ```js
 // Get all of the content from a PowerPoint or Word document in 100-KB chunks of text.
@@ -183,9 +184,10 @@ function sendFile() {
 }
 ```
 
-A função local `getSlice` faz uma chamada para o método **File.getSliceAsync** para recuperar uma fatia do objeto **File**. O método **getSliceAsync** retorna um objeto **Slice** do conjunto de fatias. Ele tem dois parâmetros obrigatórios, _sliceIndex_ e _callback_. O parâmetro _sliceIndex_ usa um número inteiro como um indexador na coleção de fatias. Como outras funções na API JavaScript para Office, o método **getSliceAsync** também usa uma função de retorno de chamada como um parâmetro para manipular os resultados da chamada do método.
+A função `getSlice` local faz uma chamada para o `File.getSliceAsync` método para recuperar uma fatia do `File` objeto. O `getSliceAsync` método retorna um `Slice` objeto da coleção de fatias. Ele tem dois parâmetros obrigatórios, _sliceIndex_ e _callback_. O parâmetro _sliceIndex_ usa um número inteiro como um indexador na coleção de fatias. Como outras funções da API JavaScript para Office, o `getSliceAsync` método também utiliza uma função de retorno de chamada como um parâmetro para lidar com os resultados da chamada do método.
+íon `getSlice` faz uma chamada para o método **File. getSliceAsync** para recuperar uma fatia do objeto **File** . O método **getSliceAsync** retorna um objeto **Slice** do conjunto de fatias. Ele tem dois parâmetros obrigatórios, _sliceIndex_ e _callback_. O parâmetro _sliceIndex_ usa um número inteiro como um indexador na coleção de fatias. Como outras funções da API JavaScript do Office, o método **getSliceAsync** também aceita uma função de retorno de chamada como um parâmetro para lidar com os resultados da chamada do método.
 
-O objeto **Slice** dá acesso aos dados do arquivo. A menos que seja especificado de outra forma no parâmetro _options_ do método **getFileAsync**, o objeto **Slice** tem 4 MB de tamanho. O objeto **Slice** expõe três propriedades: [size](/javascript/api/office/office.slice#size), [data](/javascript/api/office/office.slice#data) e [index](/javascript/api/office/office.slice#index). A propriedade **size** obtém o tamanho, em bytes, da fatia. A propriedade **index** obtém um número inteiro que representa a posição da fatia na coleção de fatias.
+O `Slice` objeto dá acesso aos dados contidos no arquivo. A menos que especificado de _options_ outra forma no parâmetro `getFileAsync` Options do método `Slice` , o objeto terá 4 MB de tamanho. O `Slice` objeto expõe três propriedades: [size](/javascript/api/office/office.slice#size), [Data](/javascript/api/office/office.slice#data)e [index](/javascript/api/office/office.slice#index). A `size` propriedade Obtém o tamanho, em bytes, da fatia. A `index` propriedade Obtém um inteiro que representa a posição da fatia na coleção de fatias.
 
 ```js
 // Get a slice from the file and then call sendSlice.
@@ -202,7 +204,7 @@ function getSlice(state) {
 }
 ```
 
-A propriedade **Slice.data** retorna os dados brutos do arquivo como uma matriz de bytes. Se os dados forem no formato de texto (ou seja, XML ou texto sem formatação), a fatia contém o texto não processado. Se você transmitir o **Office.FileType.Compressed** para o parâmetro _fileType_ de **Document.getFileAsync**, a fatia contém os dados binários do arquivo como uma matriz de byte. No caso de um arquivo do PowerPoint ou do Word, as fatias contêm matrizes de bytes.
+A `Slice.data` propriedade retorna os dados brutos do arquivo como uma matriz de bytes. Se os dados forem no formato de texto (ou seja, XML ou texto sem formatação), a fatia contém o texto não processado. Se você passar **Office. filetype. Compressed** para o parâmetro _filetype_ de `Document.getFileAsync`, a fatia contém os dados binários do arquivo como uma matriz de bytes. No caso de um arquivo do PowerPoint ou do Word, as fatias contêm matrizes de bytes.
 
 Você deve implementar sua própria função (ou usar uma biblioteca disponível) para converter dados da matriz de bytes em uma cadeia de caracteres com codificação por Base64. Para saber mais sobre a codificação por Base64 com JavaScript, confira [Codificação e decodificação por Base64](https://developer.mozilla.org/docs/Web/JavaScript/Base64_encoding_and_decoding).
 
@@ -257,7 +259,7 @@ function sendSlice(slice, state) {
 }
 ```
 
-Como o nome sugere, o método **File.closeAsync** fecha a conexão com o documento e libera os recursos. Embora o lixo de área restrita dos Suplementos do Office colete referências fora do escopo para arquivos, ainda é uma prática recomendada fechar explicitamente os arquivos depois que o código não precisar mais deles. O método **closeAsync** tem um único parâmetro, _callback_, que especifica a função a ser chamada na conclusão da chamada.
+Como o nome indica, o `File.closeAsync` método fecha a conexão com o documento e libera os recursos. Embora o lixo de área restrita dos Suplementos do Office colete referências fora do escopo para arquivos, ainda é uma prática recomendada fechar explicitamente os arquivos depois que o código não precisar mais deles. O `closeAsync` método tem um único parâmetro, _callback_, que especifica a função a ser chamada na conclusão da chamada.
 
 ```js
 function closeFile(state) {
