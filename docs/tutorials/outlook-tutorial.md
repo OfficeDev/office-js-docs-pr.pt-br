@@ -1,15 +1,15 @@
 ---
 title: 'Tutorial: criar uma mensagem para compor o suplemento do Outlook'
-description: Neste tutorial você vai criar um suplemento do Outlook que insira Gists do GitHub no corpo de novas mensagens de email.
+description: Neste tutorial, você criará um suplemento do Outlook que insere Gists do GitHub no corpo de uma nova mensagem.
 ms.date: 12/10/2019
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 8ea955cb26ead840171ba81e1290658474dbd6d5
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 49553a7194eceb4ec86fc39769ce369cff092bce
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165676"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719753"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Tutorial: criar uma mensagem para compor o suplemento do Outlook
 

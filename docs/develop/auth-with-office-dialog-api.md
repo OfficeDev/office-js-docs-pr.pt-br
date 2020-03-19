@@ -1,16 +1,16 @@
 ---
-title: Autenticar e autorizar com a API da Caixa de Diálogo do Office
-description: ''
+title: Autenticação e autorização com a API da caixa de diálogo do Office
+description: Aprenda a usar a API da caixa de diálogo do Office para permitir que os usuários entrem no Google, no Facebook, no Microsoft 365 e em outros serviços protegidos pela Plataforma de Identidade da Microsoft.
 ms.date: 01/25/2020
 localization_priority: Priority
-ms.openlocfilehash: 7311eb4f86c52afe01b18e8ea61133b2e8267a24
-ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
+ms.openlocfilehash: f75b9c1ed61c100de9fe53c17d7b8373d57b377d
+ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "41649981"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "42719172"
 ---
-# <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Autenticar e autorizar com a API da Caixa de Diálogo do Office
+# <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Autenticação e autorização com a API da caixa de diálogo do Office
 
 Várias autoridades de identidade, também chamadas de Serviços de Token Seguro (STS), impedem que a página de logon seja aberta em um IFrame. Elas incluem o Google, o Facebook e os serviços protegidos pela Plataforma de Identidade da Microsoft (antigo Azure AD V 2.0), como a Conta da Microsoft e o Office 365 (contas corporativas ou de estudante). Isso cria um problema para os suplementos do Office, porque quando o suplemento é executado no **Office na Web**, o painel de tarefas é um IFrame. Os usuários de um suplemento só podem fazer logon em um desses serviços se o suplemento puder abrir uma instância do navegador completamente separada. Isso porque o Office fornece a [API da Caixa de Diálogo](dialog-api-in-office-add-ins.md), especificamente o método [displayDialogAsync](/javascript/api/office/office.ui).
 
