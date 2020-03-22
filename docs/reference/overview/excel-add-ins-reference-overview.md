@@ -4,12 +4,12 @@ description: Saiba mais sobre as APIs JavaScript do Excel
 ms.date: 02/19/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: d4721c349de7b93ec34ce3c35fbcee25438564db
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 336944f4315e9e5aea492ecbb8cd557a38edbb39
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719914"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891191"
 ---
 # <a name="excel-javascript-api-overview"></a>Visão geral da API JavaScript do Excel
 
@@ -47,4 +47,3 @@ Use o [Script Lab](../../overview/explore-with-script-lab.md) para começar a tr
 - [Visão geral dos suplementos do Excel](../../excel/excel-add-ins-overview.md)
 - [Referência da API JavaScript do Excel](/javascript/api/excel)
 - [Disponibilidade de host e plataforma para suplementos do Office](../../overview/office-add-in-availability.md)
-- [Especificações abertas da API](../openspec/openspec.md)

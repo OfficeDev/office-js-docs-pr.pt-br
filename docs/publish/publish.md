@@ -1,14 +1,14 @@
 ---
 title: Implantar e publicar Suplementos do Office
 description: Você pode usar um dos vários métodos para implantar o suplemento do Office para testar ou distribuir aos usuários.
-ms.date: 09/05/2019
+ms.date: 03/18/2020
 localization_priority: Priority
-ms.openlocfilehash: a00119254f53f6dbf0e6ebc2279e0a0b70af1270
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: a21535a637ceb54d0e84a36b2a0610873d408e1c
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851541"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890981"
 ---
 # <a name="deploy-and-publish-office-add-ins"></a>Implantar e publicar Suplementos do Office
 
@@ -23,8 +23,7 @@ Você pode usar um dos vários métodos para implantar o suplemento do Office pa
 |[Servidor Exchange](#outlook-add-in-deployment)|Usado para distribuir suplementos do Outlook aos usuários em um ambiente local ou online.|
 |[Compartilhamento de rede](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|No computador do Windows em uma rede na qual você deseja hospedar seu suplemento, acesse a pasta pai ou letra da unidade da pasta que você deseja usar como seu catálogo de pasta compartilhada.|
 
-> [!NOTE]
-> Caso pretenda [publicar](../publish/publish.md) o suplemento na experiência do Office depois de criá-lo, verifique se você está em conformidade com as [Políticas de validação do AppSource](/office/dev/store/validation-policies). Por exemplo, para passar na validação, seu suplemento deve funcionar em todas as plataformas com suporte aos métodos que você definir (para mais informações, confira a [seção 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) e a [Página de hospedagem e disponibilidade de suplementos do Office](../overview/office-add-in-availability.md)).
+[!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 ## <a name="deployment-options-by-office-host"></a>Opções de implantação pelo host do Office
 

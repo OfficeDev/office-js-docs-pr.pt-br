@@ -1,15 +1,15 @@
 ---
 title: Crie o seu primeiro suplemento do painel de tarefas do PowerPoint
 description: Saiba como criar um Suplemento do PowerPoint simples usando a API JS do Office.
-ms.date: 01/16/2020
+ms.date: 03/19/2020
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 67af5529596f6659b331379dffcea838397a5bad
-ms.sourcegitcommit: 8bce9c94540ed484d0749f07123dc7c72a6ca126
+ms.openlocfilehash: 1056dcfbeb49b4f0e2b8142de1a4e66ebb0dcca5
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "41265689"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891401"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>Crie o seu primeiro suplemento do painel de tarefas do PowerPoint
 
@@ -19,7 +19,7 @@ Neste artigo, você passará pelo processo de criação de um suplemento do pain
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
-# <a name="yeoman-generatortabyeomangenerator"></a>[Gerador do Yeoman](#tab/yeomangenerator)
+# <a name="yeoman-generator"></a>[Gerador do Yeoman](#tab/yeomangenerator)
 
 [!include[Redirect to the single sign-on (SSO) quick start](../includes/sso-quickstart-reference.md)]
 
@@ -92,7 +92,7 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 
 Parabéns, você criou com êxito um suplemento do painel de tarefas do PowerPoint! Em seguida, saiba mais sobre os recursos de um suplemento do PowerPoint e crie um suplemento mais complexo seguindo as etapas deste [tutorial de suplemento do PowerPoint](../tutorials/powerpoint-tutorial.md).
 
-# <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)
+# <a name="visual-studio"></a>[Visual Studio](#tab/visualstudio)
 
 ### <a name="prerequisites"></a>Pré-requisitos
 
@@ -250,6 +250,8 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do PowerPoi
 4. No painel de tarefas, escolha o botão **Inserir texto** para adicionar texto no slide selecionado.
 
     ![Uma captura de tela do PowerPoint com a imagem de um cachorro e o texto "Olá, mundo" exibidos no slide](../images/powerpoint_quickstart_addin_3.png)
+
+[!include[Console tool note](../includes/console-tool-note.md)]
 
 ### <a name="next-steps"></a>Próximas etapas
 

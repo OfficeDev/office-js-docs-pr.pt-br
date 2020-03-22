@@ -4,12 +4,12 @@ description: Os suplementos do Outlook são integrações criadas por terceiros 
 ms.date: 10/09/2019
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: cb6e19788390a804b0bbacb97666a3ca8a9d5971
-ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
+ms.openlocfilehash: d8f536940cf83899cd5586006980d14342e297c7
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "42554689"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891058"
 ---
 # <a name="outlook-add-ins-overview"></a>Visão geral dos suplementos do Outlook
 
@@ -23,8 +23,7 @@ Os suplementos do Outlook são diferentes dos suplementos de COM ou VSTO, que s�
 
 Os itens do Outlook que dão suporte a suplementos incluem mensagens de email, compromissos, solicitações, respostas e cancelamentos de reunião. Cada suplemento do Outlook define o contexto no qual está disponível, incluindo os tipos de itens e se o usuário está lendo ou redigindo um item.
 
-> [!NOTE]
-> Caso pretenda [publicar](../publish/publish.md) o suplemento no AppSource depois de criá-lo, verifique se você está em conformidade com as [Políticas de validação do AppSource](/office/dev/store/validation-policies). Por exemplo, para passar na validação, seu suplemento deve funcionar em todas as plataformas com suporte aos métodos que você definir (para mais informações, confira a [seção 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) e a [Página de hospedagem e disponibilidade do suplemento do Office](../overview/office-add-in-availability.md)).
+[!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 ## <a name="extension-points"></a>Pontos de extensão
 
