@@ -1,21 +1,20 @@
 ---
 title: Requisitos para a execução de Suplementos do Office
 description: Saiba mais sobre os requisitos de cliente e servidor de que um usuário final precisa para executar suplementos do Office.
-ms.date: 07/01/2019
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 858a951322a34543277b1d7000ca01df12cca7bb
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: c387d3d7ca9be1d47fa9ff4033fe492ae0e0fb3a
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718633"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890501"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Requisitos para a execução de Suplementos do Office
 
 Este artigo descreve os requisitos de software e de dispositivo para execução de Suplementos do Office.
 
-> [!NOTE]
-> Caso pretenda [publicar](../publish/publish.md) o suplemento na experiência do Office depois de criá-lo, verifique se você está em conformidade com as [Políticas de validação do AppSource](/office/dev/store/validation-policies). Por exemplo, para passar na validação, seu suplemento deve funcionar em todas as plataformas com suporte aos métodos que você definir (para mais informações, confira a [seção 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) e a [Página de hospedagem e disponibilidade de suplementos do Office](../overview/office-add-in-availability.md)).
+[!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 Para uma visão avançada da compatibilidade atual dos suplementos do Office, veja [Disponibilidade de hosts e plataformas de suplementos do Office](../overview/office-add-in-availability.md).
 

@@ -1,14 +1,14 @@
 ---
 title: Realizar sideload de suplementos do Office para teste
 description: Saiba como Sideload um suplemento do Office para teste
-ms.date: 02/18/2020
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: d8e1b0e1078ee534445baf275f386d85d68675c0
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 0cfb1060ead27f7f034880361c51f8a1d0ec87dc
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717401"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891121"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>Realizar sideload de suplementos do Office para teste
 
@@ -77,7 +77,7 @@ O vídeo a seguir oferece orientações para a realização do processo de sidel
 
 2. Adicione o seguinte conteúdo ao arquivo:
 
-    ```
+    ```text
     Windows Registry Editor Version 5.00
 
     [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{-random-GUID-here-}]
@@ -93,7 +93,7 @@ O vídeo a seguir oferece orientações para a realização do processo de sidel
 
 5. Agora o arquivo deve ter a aparência a seguir. Salve-o.
 
-    ```
+    ```text
     Windows Registry Editor Version 5.00
 
     [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\{01234567-89ab-cedf-0123-456789abcedf}]

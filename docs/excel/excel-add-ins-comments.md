@@ -1,20 +1,20 @@
 ---
 title: Trabalhar com comentários usando a API JavaScript do Excel
 description: Informações sobre como usar as APIs para adicionar, remover e editar comentários e encadeamentos de comentários.
-ms.date: 02/11/2020
+ms.date: 03/17/2020
 localization_priority: Normal
-ms.openlocfilehash: d6be0f07e0d3bb134385f0a08c20ce00da4de892
-ms.sourcegitcommit: d85efbf41a3382ca7d3ab08f2c3f0664d4b26c53
+ms.openlocfilehash: 275828915730d3438101315ee28bf76aa8b8bf3f
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "42327779"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890567"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>Trabalhar com comentários usando a API JavaScript do Excel
 
 Este artigo descreve como adicionar, ler, modificar e remover comentários em uma pasta de trabalho com a API JavaScript do Excel. Você pode saber mais sobre o recurso comentário do artigo [inserir comentários e anotações no Excel](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) .
 
-Na API JavaScript do Excel, um comentário é a anotação inicial e a discussão encadeada conectada. Ele está vinculado a uma célula individual. Qualquer pessoa que exiba a pasta de trabalho com permissões suficientes pode responder a um comentário. Um objeto [comment](/javascript/api/excel/excel.comment) armazena as respostas como objetos [CommentReply](/javascript/api/excel/excel.commentreply) . Você deve considerar um comentário para ser um thread e que um thread deve ter uma entrada especial como o ponto de partida.
+Na API JavaScript do Excel, um comentário inclui o único comentário inicial e a discussão encadeada conectada. Ele está vinculado a uma célula individual. Qualquer pessoa que exiba a pasta de trabalho com permissões suficientes pode responder a um comentário. Um objeto [comment](/javascript/api/excel/excel.comment) armazena as respostas como objetos [CommentReply](/javascript/api/excel/excel.commentreply) . Você deve considerar um comentário para ser um thread e que um thread deve ter uma entrada especial como o ponto de partida.
 
 ![Um comentário do Excel, rotulado "comentário" com duas respostas, rotuladas "comentário. respostas [0]" e "comentário. respostas [1].](../images/excel-comments.png)
 

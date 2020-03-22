@@ -3,12 +3,12 @@ title: Depurar suplementos no Office na Web
 description: Como usar o Office na Web para testar e depurar seus suplementos.
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: c840d0a16e2a4cdf0bb9f4b213099cb74c2aa815
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 3c69c6a7008e1496fd888357968714d7abbb05d6
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719809"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891114"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>Depurar suplementos no Office na Web
 
@@ -63,7 +63,6 @@ A seguir apresentamos alguns problemas que você pode encontrar ao depurar:
 ## <a name="see-also"></a>Confira também
 
 - [Práticas recomendadas para o desenvolvimento de suplementos do Office](../concepts/add-in-development-best-practices.md)
-- [Políticas de validação do AppSource](/office/dev/store/validation-policies)  
+- [Políticas de validação do AppSource](/legal/marketplace/certification-policies)  
 - [Criar aplicativos e suplementos eficazes para o AppSource](/office/dev/store/create-effective-office-store-listings)  
 - [Solucionar erros de usuários com suplementos do Office](testing-and-troubleshooting.md)
-    

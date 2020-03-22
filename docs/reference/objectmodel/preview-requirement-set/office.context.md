@@ -1,16 +1,16 @@
 ---
 title: Office. Context – conjunto de requisitos de visualização
-description: O modelo de objeto do objeto Context do Outlook na API de suplementos do Outlook (versão prévia da API da caixa de correio).
-ms.date: 12/16/2019
+description: Membros do objeto Office. Context disponíveis para suplementos do Outlook usando o conjunto de requisitos de visualização da API da caixa de correio.
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 409f0a5b46eba667f79228f45081c160c3c3ce7f
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: c61769cb1ae98097ffabb8b3ef19b2f82257c2b1
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717800"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890862"
 ---
-# <a name="context"></a>context
+# <a name="context-mailbox-preview-requirement-set"></a>contexto (conjunto de requisitos de visualização da caixa de correio)
 
 ### <a name="officecontext"></a>[Office](office.md).context
 

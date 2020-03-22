@@ -1,16 +1,16 @@
 ---
 title: Office. Context. Mailbox – conjunto de requisitos 1,7
-description: Office.context.mailbox
-ms.date: 03/16/2020
+description: Conjunto de requisitos da API de caixa de correio do Outlook versão 1,7 do modelo de objeto Mailbox.
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: e3a06346b226d4170d5dfb949bc61e63e850aada
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 2efbcbbfa3257ce7a42be3d4b4bf6d8631af9be4
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717604"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891275"
 ---
-# <a name="mailbox"></a>mailbox
+# <a name="mailbox-requirement-set-17"></a>caixa de correio (conjunto de requisitos 1,7)
 
 ### <a name="officecontextmailbox"></a>[Office](office.md)[.context](office.context.md).mailbox
 
@@ -34,7 +34,7 @@ Fornece acesso ao modelo de objeto de suplemento do Outlook para o Microsoft Out
 | [restUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.7#resturl) | ReadItem | Escrever<br>Ler | String | [1,5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [userProfile](/javascript/api/outlook/office.mailbox?view=outlook-js-1.7#userprofile) | ReadItem | Escrever<br>Ler | [UserProfile](/javascript/api/outlook/office.userprofile?view=outlook-js-1.7) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
-## <a name="methods"></a>Métodos
+## <a name="methods"></a>Methods
 
 | Método | Mínimo<br>nível de permissão | Modelos | Mínimo<br>conjunto de requisitos |
 |---|---|---|:---:|

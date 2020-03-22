@@ -1,16 +1,16 @@
 ---
 title: Namespace do Office – conjunto de requisitos 1,4
-description: O modelo de objeto para o namespace de nível superior da API de suplementos do Outlook (versão da API de caixa de correio 1,4).
-ms.date: 12/16/2019
+description: Membros de namespace do Office disponíveis para suplementos do Outlook usando o conjunto de requisitos de API da caixa de correio 1,4.
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: e5a5c6de5bb87cb32968d9d9d80c621f0acc238d
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 8b0447b819a7360be195de1262c88877efc2f2fc
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720054"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891387"
 ---
-# <a name="office"></a>Office
+# <a name="office-mailbox-requirement-set-14"></a>Office (conjunto de requisitos de caixa de correio 1,4)
 
 O namespace do Office fornece interfaces compartilhadas que são usadas pelos suplementos em todos os aplicativos do Office. Esta listagem documenta somente as interfaces que são usadas pelos suplementos do Outlook. Para obter uma lista completa de namespaces do Office, confira [API compartilhada](/javascript/api/office).
 

@@ -1,14 +1,14 @@
 ---
 title: Trabalhar com pastas de trabalho usando a API JavaScript do Excel
-description: Exemplos de código que mostram como executar tarefas comuns com pastas de trabalho usando a API JavaScript do Excel.
-ms.date: 10/21/2019
+description: Exemplos de código que mostram como executar tarefas comuns com pastas de trabalho ou recursos de nível de aplicativo usando a API JavaScript do Excel.
+ms.date: 03/19/2020
 localization_priority: Normal
-ms.openlocfilehash: 0f86278cdb52edc16e5c43323d874d985564de3a
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: aa30f888bf6de1926d2a36522febf0001e1e6130
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719620"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891023"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 
@@ -51,7 +51,7 @@ Excel.createWorkbook();
 
 O método `createWorkbook` também cria uma cópia de uma pasta de trabalho existente. O método aceita uma representação de cadeia de caracteres codificada em Base64 de um arquivo .xlsx como parâmetro opcional. A pasta de trabalho resultante será uma cópia desse arquivo, supondo que o argumento da cadeia de caracteres seja um arquivo. xlsx válido.
 
-Você pode obter a pasta de trabalho atual do suplemento como uma cadeia de caracteres codificada com Base64 usando a [divisão de arquivos](/javascript/api/office/office.document#getfileasync-filetype--options--callback-). A classe [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) pode ser usada para converter um arquivo em uma cadeia de caracteres codificada com Base64, como demonstrado no seguinte exemplo.
+Você pode obter a pasta de trabalho atual do suplemento como uma cadeia de caracteres codificada em base64 usando a [divisão de arquivos](/javascript/api/office/office.document#getfileasync-filetype--options--callback-). A classe [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) pode ser usada para converter um arquivo em uma cadeia de caracteres codificada com Base64, como demonstrado no seguinte exemplo.
 
 ```js
 var myFile = document.getElementById("file");
@@ -184,6 +184,41 @@ Excel.run(function (context) {
         console.log("Workbook needs review : " + needsReview.value);
     });
 }).catch(errorHandlerFunction);
+```
+
+## <a name="access-application-culture-settings-preview"></a>Configurações de cultura de aplicativo do Access (visualização)
+
+Uma pasta de trabalho tem configurações de idioma e cultura que afetam o modo como determinados dados são exibidos. Essas configurações podem ajudar a localizar dados quando os usuários do seu suplemento estiverem compartilhando pastas de trabalho em diferentes idiomas e culturas. O suplemento pode usar a análise de cadeia de caracteres para localizar o formato de números, datas e horas com base nas configurações de cultura do sistema para que cada usuário veja os dados em seu próprio formato de cultura.
+
+`Application.cultureInfo`define as configurações de cultura do sistema como um objeto [CultureInfo](/javascript/api/excel/excel.cultureinfo) . Contém configurações como o separador decimal numérico ou o formato de data.
+
+Algumas configurações de cultura podem ser [alteradas por meio da interface do usuário do Excel](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e). As configurações do sistema são preservadas `CultureInfo` no objeto. As alterações locais são mantidas como propriedades no nível do [aplicativo](/javascript/api/excel/excel.application), `Application.decimalSeparator`como.
+
+O exemplo a seguir altera o caractere separador decimal de uma cadeia de caracteres numérica de um ', ' para o caractere usado pelas configurações do sistema.
+
+```js
+// This will convert a number like "14,37" to "14.37"
+// (assuming the system decimal separator is ".").
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    var decimalSource = sheet.getRange("B2");
+    decimalSource.load("values");
+    context.application.cultureInfo.numberFormat.load("numberDecimalSeparator");
+
+    return context.sync().then(function() {
+        var systemDecimalSeparator =
+            context.application.cultureInfo.numberFormat.numberDecimalSeparator;
+        var oldDecimalString = decimalSource.values[0][0];
+
+        // This assumes the input column is standardized to use "," as the decimal separator.
+        var newDecimalString = oldDecimalString.replace(",", systemDecimalSeparator);
+
+        var resultRange = sheet.getRange("C2");
+        resultRange.values = [[newDecimalString]];
+        resultRange.format.autofitColumns();
+        return context.sync();
+    });
+});
 ```
 
 ## <a name="add-custom-xml-data-to-the-workbook"></a>Adicionar dados XML personalizados à pasta de trabalho

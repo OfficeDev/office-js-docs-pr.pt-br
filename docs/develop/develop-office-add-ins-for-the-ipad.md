@@ -1,14 +1,14 @@
 ---
 title: Desenvolver suplementos do Office para iPad
-description: Obtenha uma visão geral e as práticas recomendadas para criar um suplemento do Office que é executado em um IPad.
-ms.date: 06/20/2019
+description: Obtenha uma visão geral e as práticas recomendadas para criar um suplemento do Office que é executado em um iPad.
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: c71e935e92a4d88077c95b88334225ef08818dac
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: ca3e7e5521b44e13a26f3d6117128592b88efdc6
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719025"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890494"
 ---
 # <a name="develop-office-add-ins-for-the-ipad"></a>Desenvolver suplementos do Office para iPad
 
@@ -22,8 +22,8 @@ A tabela a seguir lista as tarefas a serem realizadas para desenvolver um suplem
 |Aplique as práticas recomendadas de design de interface do usuário.|Integre perfeitamente a interface do usuário do seu suplemento à experiência para iOS.|[Projetar para o iOS](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/)|
 |Aplique as práticas recomendadas de design de suplemento.|Verifique se o suplemento fornece um valor claro, é dedicado e tem um desempenho consistente.|[Práticas recomendadas para o desenvolvimento de suplementos do Office](../concepts/add-in-development-best-practices.md)|
 |Otimize seu suplemento para toque.|Torne sua interface do usuário responsiva a entradas de toque, além de mouse e teclado.|[Aplicar os princípios de design da UX](../concepts/add-in-development-best-practices.md#apply-ux-design-principles)|
-|Torne seu suplemento gratuito.|O Office no iPad é um canal pelo qual você pode atingir mais usuários e promover seus serviços. Esses novos usuários têm potencial para se tornarem seus clientes.|[Política de validação 10.8](/office/dev/store/validation-policies#10-apps-and-add-ins-utilize-supported-capabilities)|
-|Torne a comercialização do seu suplemento gratuita.|Seu suplemento não deve oferecer compras no aplicativo, ofertas de avaliação, interfaces de usuários com o objetivo de maximizar as vendas nem links para lojas online onde os usuários possam comprar ou adquirir outros conteúdos, aplicativos ou suplementos. Suas páginas de Política de Privacidade e Termos de Uso também não devem ter nenhuma interface de usuário destinada ao comércio ou links para o AppSource.|[Política de validação 3.4](/office/dev/store/validation-policies#3-apps-and-add-ins-can-sell-additional-features-or-content-through-purchases-within-the-app-or-add-in)|
+|Torne seu suplemento gratuito.|O Office no iPad é um canal pelo qual você pode atingir mais usuários e promover seus serviços. Esses novos usuários têm potencial para se tornarem seus clientes.|[Política de certificação 1120,2](/legal/marketplace/certification-policies#11202-acquisition-pricing-and-terms)|
+|Torne a comercialização do seu suplemento gratuita.|Seu suplemento não deve oferecer compras no aplicativo, ofertas de avaliação, interfaces de usuários com o objetivo de maximizar as vendas nem links para lojas online onde os usuários possam comprar ou adquirir outros conteúdos, aplicativos ou suplementos. Suas páginas de Política de Privacidade e Termos de Uso também não devem ter nenhuma interface de usuário destinada ao comércio ou links para o AppSource.|[Política de certificação 1100,3](/legal/marketplace/certification-policies#11003-selling-additional-features)|
 |Enviar soluções ao AppSource|No centro de parceria, na página **configuração do produto** , marque a caixa de seleção **tornar meu produto disponível no Ios e no Android (se aplicável)** e forneça sua ID de desenvolvedor da Apple em configurações de conta. Revise o [contrato do provedor de aplicativos](https://go.microsoft.com/fwlink/?linkid=715691) para se certificar de que você entendeu os termos.|[Disponibilizar suas soluções no AppSource e no Office](/office/dev/store/submit-to-appsource-via-partner-center)|
 
 Seu suplemento pode permanecer como está para aplicativos do Office que estão sendo executados em outras plataformas. Você também pode fornecer uma interface de usuário diferente com base no navegador/dispositivo em que seu suplemento está sendo executado. Para detectar se seu suplemento está sendo executado em um iPad, você pode usar as seguintes APIs:

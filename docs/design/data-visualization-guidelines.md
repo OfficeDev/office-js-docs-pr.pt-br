@@ -3,12 +3,12 @@ title: Diretrizes de estilo de visualização de dados para Suplementos do Offic
 description: Obtenha algumas boas práticas de visualização de dados em um suplemento do Office.
 ms.date: 01/14/2019
 localization_priority: Normal
-ms.openlocfilehash: c22943959408d1df5febd8f5aad84ee791c40504
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 215bea269d14245e9ac55d74f12228565f60c2a3
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717219"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891016"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Diretrizes de estilo de visualização de dados para Suplementos do Office
 
@@ -41,7 +41,7 @@ Siga estas diretrizes para títulos de gráfico:
 
 Deixe os rótulos dos eixos escuros para serem lidos claramente, com um bom contraste entre as cores do plano de fundo e do texto. Verifique se não estão tão escuros que competem com a tinta dos dados.
 
-Cinza claro é mais eficaz para rótulos dos eixos. Se você estiver usando o Fabric, consulte a [Paleta de cores neutras](https://developer.microsoft.com/fabric#/styles/colors).
+Cinza claro é mais eficaz para rótulos dos eixos. Se você estiver usando o Fabric, consulte a [paleta cores neutras](https://developer.microsoft.com/fabric#/styles/colors).
 
 ### <a name="data-ink"></a>Tinta dos dados
 
@@ -54,14 +54,14 @@ Escolha cores que acompanham os temas do sistema operacional ou aplicativo em ve
 Para ver as práticas recomendadas para o uso de cores nas visualizações de dados, consulte o seguinte:
 
 - [Por que as cores do arco-íris não são a melhor opção para as visualizações de dados](https://www.poynter.org/2013/why-rainbow-colors-arent-always-the-best-options-for-data-visualizations/224413/)
-- [Color Brewer 2.0: Aviso de Cor para Cartografia](http://colorbrewer2.org/)
+- [Color Brewer 2.0: Aviso de Cor para Cartografia](https://colorbrewer2.org/)
 - [Eu Quero Matiz](https://tools.medialab.sciences-po.fr/iwanthue/)
 
 ### <a name="gridlines"></a>Linhas de grade
 
 As linhas de grade geralmente são necessárias para a leitura precisa de um gráfico, mas elas devem ser apresentadas como um elemento visual secundário, aprimorando a tinta dos dados e não competindo com ela. Use linhas de grade estáticas finas e leves, a menos que elas tenham sido projetadas especificamente para alto contraste. Você também pode usar interação para criar linhas de grade dinâmicas, que aparecem no contexto quando um usuário interage com um gráfico.
 
-Cinza claro é mais eficaz para linhas de grade. Se você estiver usando o Fabric, consulte a [Paleta de cores neutras](https://developer.microsoft.com/fabric#/styles/colors).
+Cinza claro é mais eficaz para linhas de grade. Se você estiver usando o Fabric, consulte a [paleta cores neutras](https://developer.microsoft.com/fabric#/styles/colors).
 
 A imagem a seguir mostra uma visualização de dados com linhas de grade.
 

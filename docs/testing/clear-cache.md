@@ -3,12 +3,12 @@ title: Limpar o cache do Office
 description: Saiba como limpar o cache do Office em seu computador.
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: c0cf6350cb77a83791f5810c8b98034792fdfd0e
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: a73a8d276f0d6301644005cf87f44f4d7606d26d
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719851"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42891128"
 ---
 # <a name="clear-the-office-cache"></a>Limpar o cache do Office
 
@@ -18,9 +18,13 @@ Além disso, se você fizer alterações no manifesto do seu suplemento (por exe
 
 ## <a name="clear-the-office-cache-on-windows"></a>Limpar o cache do Office no Windows
 
-Para remover todos os suplementos com sideload do Excel, Word e PowerPoint, exclua o conteúdo da pasta `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
+Para remover todos os suplementos do suplementos foi feito do Excel, Word e PowerPoint, exclua o conteúdo da pasta:
 
-Para remover um suplemento sideloaded do Outlook, use as etapas descritas em [Sideload de suplementos do Outlook para testar](../outlook/sideload-outlook-add-ins-for-testing.md) para localizar o suplemento na seção **Suplementos personalizados** da caixa de diálogo que lista os suplementos instalados. Escolha as reticências (`...`) para o suplemento e, em seguida, escolha **Remover** para remover esse suplemento específico.
+```
+%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\
+```
+
+Para remover um suplemento do suplementos foi feito do Outlook, use as etapas descritas em suplementos do [Sideload do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md) para localizar o suplemento na seção **suplementos personalizados** da caixa de diálogo que lista seus suplementos instalados. escolha as reticências (`...`) para o suplemento e, em seguida, escolha **remover** para remover o suplemento específico do.
 
 Além disso, para limpar o cache do Office no Windows 10 quando o suplemento estiver sendo executado no Microsoft Edge, você pode usar o Microsoft Edge DevTools.
 

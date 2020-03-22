@@ -3,12 +3,12 @@ title: Implementar um painel de tarefas fixável em um suplemento do Outlook
 description: A forma do painel de tarefas da experiência de usuário dos comandos do suplemento abre um painel de tarefas vertical à direita de uma solicitação de reunião ou de uma mensagem aberta, permitindo ao suplemento fornecer à interface do usuário interações mais detalhadas.
 ms.date: 02/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 09baf7f1faa7611baa85a53a3d5d92fad2d140a1
-ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
+ms.openlocfilehash: 892cee7b5ff89e210c68308f03710ee92b6f0f72
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "42413773"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890988"
 ---
 # <a name="implement-a-pinnable-task-pane-in-outlook"></a>Implementar um painel de tarefas fixável no Outlook
 
@@ -34,7 +34,7 @@ A primeira etapa consiste em adicionar o suporte para fixação no [manifesto](m
 O elemento `SupportsPinning` é definido no esquema VersionOverrides v1.1. Portanto, você deve incluir um elemento [VersionOverrides](../reference/manifest/versionoverrides.md) nas versões 1.0 e 1.1.
 
 > [!NOTE]
-> Se você pretende [publicar](../publish/publish.md) seu suplemento do Outlook em [AppSource](https://appsource.microsoft.com), quando usar o elemento **SupportsPinning**, para passar a [validação da AppSource](/office/dev/store/validation-policies), o conteúdo do seu suplemento não deve ser estático e deve exibir claramente os dados relacionados à mensagem que está aberta ou selecionada na caixa de correio.
+> Se você pretende [publicar](../publish/publish.md) seu suplemento do Outlook em [AppSource](https://appsource.microsoft.com), quando usar o elemento **SupportsPinning**, para passar a [validação da AppSource](/legal/marketplace/certification-policies), o conteúdo do seu suplemento não deve ser estático e deve exibir claramente os dados relacionados à mensagem que está aberta ou selecionada na caixa de correio.
 
 ```xml
 <!-- Task pane button -->

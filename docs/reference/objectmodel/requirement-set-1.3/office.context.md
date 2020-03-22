@@ -1,16 +1,16 @@
 ---
 title: Office. Context – conjunto de requisitos 1,3
-description: O modelo de objeto para o objeto Context do Outlook na API de suplementos do Outlook (versão da API da caixa de correio 1,3).
-ms.date: 12/16/2019
+description: Membros do objeto Office. Context disponíveis para suplementos do Outlook usando o conjunto de requisitos de API da caixa de correio 1,3.
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: dc524c5657380845744e241a600fbf66f1eed5ce
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: f6bc2c73ac40003910ae64ba7d58d8326b8e5bad
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720117"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890708"
 ---
-# <a name="context"></a>context
+# <a name="context-mailbox-requirement-set-13"></a>contexto (conjunto de requisitos de caixa de correio 1,3)
 
 ### <a name="officecontext"></a>[Office](office.md).context
 

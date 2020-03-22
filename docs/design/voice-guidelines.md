@@ -3,12 +3,12 @@ title: Diretrizes de voz para Suplementos do Office
 description: Conheça as práticas recomendadas para escrever a ajuda do usuário e outras cadeias de caracteres para suplementos do Office.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 6f39c17687b176ca015bfe7d3df0173266a7798c
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 3621a13a2ec24a9f2f761012f331e245f95df31e
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719221"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890508"
 ---
 # <a name="voice-guidelines"></a>Diretrizes de voz
 
@@ -28,4 +28,4 @@ Para alinhar seu texto aos princípios do tom do Office:
 - Diretrizes para [gravar para todas as habilidades](/style-guide/accessibility/writing-all-abilities)
 - [As 10 principais dicas de estilo e voz da Microsoft](/style-guide/top-10-tips-style-voice)
 - Diretrizes para [escolher as palavras](/style-guide/word-choice/)
-- [Políticas de validação](/office/dev/store/validation-policies) do Suplemento do Office
+- [Políticas de validação](/legal/marketplace/certification-policies) do Suplemento do Office

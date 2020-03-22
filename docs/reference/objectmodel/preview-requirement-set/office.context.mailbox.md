@@ -1,16 +1,16 @@
 ---
 title: Office. Context. Mailbox-visualização do conjunto de requisitos
-description: O modelo de objeto para o objeto de caixa de correio do Outlook na API de suplementos do Outlook (versão prévia da API da caixa de correio).
-ms.date: 03/06/2020
+description: Versão do conjunto de requisitos de visualização do Outlook Mailbox API do modelo de objeto de caixa de correio.
+ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 3de58203e4ddb0f7ca8b773653bafb16eb50e322
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 9655c38821f052b21b33db0099f7aba087191d52
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720278"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890848"
 ---
-# <a name="mailbox"></a>mailbox
+# <a name="mailbox-preview-requirement-set"></a>caixa de correio (conjunto de requisitos de visualização)
 
 ### <a name="officecontextmailbox"></a>[Office](office.md)[.context](office.context.md).mailbox
 
@@ -35,7 +35,7 @@ Fornece acesso ao modelo de objeto de suplemento do Outlook para o Microsoft Out
 | [restUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#resturl) | ReadItem | Escrever<br>Ler | String | [1,5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [userProfile](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#userprofile) | ReadItem | Escrever<br>Ler | [UserProfile](/javascript/api/outlook/office.userprofile?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
-## <a name="methods"></a>Métodos
+## <a name="methods"></a>Methods
 
 | Método | Mínimo<br>nível de permissão | Modelos | Mínimo<br>conjunto de requisitos |
 |---|---|---|:---:|
