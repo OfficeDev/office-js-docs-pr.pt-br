@@ -289,7 +289,7 @@
         - name: Publicar suplementos no AppSource
           href: /office/dev/store/submit-to-the-office-store
         - name: Políticas de validação do AppSource
-          href: /office/dev/store/validation-policies
+          href: /legal/marketplace/certification-policies
         - name: Publicar suplementos via Implantação Centralizada
           href: publish/centralized-deployment.md
         - name: Publicar suplementos em um catálogo de aplicativos do SharePoint
@@ -477,8 +477,6 @@
                   href: reference/manifest/supportssharedfolders.md
                 - name: WebApplicationInfo
                   href: reference/manifest/webapplicationinfo.md
-        - name: Especificações abertas da API
-          href: reference/openspec/openspec.md
         - name: Códigos de erro
           href: reference/javascript-api-for-office-error-codes.md
     - name: Recursos
@@ -1125,4 +1123,4 @@
     - name: Salvar e compartilhar o estado em funções personalizadas
       href: excel/custom-functions-save-state-redirect.md
     - name: Lidar com a solução do Office de escala DPI e DPI alto
-      href: develop/dynamic-dpi.md
+      href: /office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution
