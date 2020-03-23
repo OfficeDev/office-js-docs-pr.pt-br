@@ -1,14 +1,14 @@
 ---
 title: Entendendo a API JavaScript do Office
 description: Uma introdução à API JavaScript do Office
-ms.date: 02/27/2020
+ms.date: 03/18/2020
 localization_priority: Priority
-ms.openlocfilehash: 67ee9459aab3065466ac8f52f2f835ca1e94bfc3
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 66f7343e42d3cb8aa602e4a807216c33eb72dcf7
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718787"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890380"
 ---
 # <a name="understanding-the-office-javascript-api"></a>Entendendo a API JavaScript do Office
 
@@ -26,8 +26,7 @@ Um suplemento do Office pode usar as APIs JavaScript para Office para interagir 
 
 [!include[information about the Office JS API requirement sets](../includes/office-js-requirement-sets.md)]
 
-> [!NOTE]
-> Caso pretenda [publicar](../publish/publish.md) o suplemento na experiência do Office depois de criá-lo, verifique se você está em conformidade com as [Políticas de validação do AppSource](/office/dev/store/validation-policies). Por exemplo, para passar na validação, seu suplemento deve funcionar em todas as plataformas com suporte aos métodos que você definir (para mais informações, confira a [seção 4.12](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably) e a [Página de hospedagem e disponibilidade de suplementos do Office](../overview/office-add-in-availability.md)). 
+[!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 ## <a name="see-also"></a>Confira também
 

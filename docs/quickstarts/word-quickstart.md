@@ -1,15 +1,15 @@
 ---
 title: Crie seu primeiro suplemento do painel de tarefas do Word
 description: Saiba como criar um suplemento do painel de tarefas do Word simples usando a API JS do Office.
-ms.date: 01/16/2020
+ms.date: 03/19/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 90416db9847f5f78b38fb1c22c4a6751bf95d5e0
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 495fcc84ceb7705cf04be7a371c14b776eb0e560
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596820"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890932"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do Word
 
@@ -306,6 +306,8 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em
 3. No painel de tarefas, escolha qualquer um dos botões para adicionar o texto clichê ao documento.
 
     ![Captura de tela do aplicativo Word com o suplemento de texto clichê carregado](../images/word-quickstart-addin-1b.png)
+
+[!include[Console tool note](../includes/console-tool-note.md)]
 
 ### <a name="next-steps"></a>Próximas etapas
 

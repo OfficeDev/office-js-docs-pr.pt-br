@@ -3,12 +3,12 @@ title: Conceitos básicos para comandos de suplemento
 description: Aprenda a adicionar botões e itens de menu personalizados da faixa de opções ao Office como parte de um suplemento do Office Web.
 ms.date: 02/11/2020
 localization_priority: Priority
-ms.openlocfilehash: 11636838feb384cdb0761bd17a3c1c0e0f42f8ce
-ms.sourcegitcommit: 0e7ed44019d6564c79113639af831ea512fa0a13
+ms.openlocfilehash: 6395b087ea191b37e9398096038dacfd66ed263c
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "42566149"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890553"
 ---
 # <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Comandos de suplemento para Excel, Word e PowerPoint
 
@@ -85,7 +85,7 @@ Aplique as seguintes práticas recomendadas ao desenvolver comandos de suplement
     - Não adicione botões supérfluos para aumentar o estado real do seu suplemento.
 
      > [!NOTE]
-     > Os suplementos que ocupam muito espaço podem não passar na [Validação do AppSource](/office/dev/store/validation-policies).
+     > Os suplementos que ocupam muito espaço podem não passar na [Validação do AppSource](/legal/marketplace/certification-policies).
 
 - Para todos os ícones, siga as [diretrizes de design de ícones](add-in-icons.md).
 - Forneça uma versão do seu suplemento que também funcione em hosts que não tenham suporte para comandos. Um manifesto de suplemento único pode funcionar tanto em hosts cientes do comando (com os comandos) quanto em hosts não cientes do comando (como um painel de tarefas).
