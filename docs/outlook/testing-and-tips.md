@@ -1,14 +1,14 @@
 ---
 title: Implante e instale suplementos do Outlook para teste
 description: Crie um arquivo de manifesto, implante o arquivo de interface do usuário suplemento em um servidor web, instale o suplemento na caixa de correio e teste o suplemento.
-ms.date: 11/06/2019
+ms.date: 03/18/2020
 localization_priority: Priority
-ms.openlocfilehash: 521199a87282b58c3bf10553886174e8be26cacf
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 76688ad3e1eca2dda832a94c3a9ae815e37678bc
+ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165696"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "42890974"
 ---
 # <a name="deploy-and-install-outlook-add-ins-for-testing"></a>Implante e instale suplementos do Outlook para teste
 
@@ -76,11 +76,11 @@ A decisão de quais versões de cliente do Outlook testar depende dos seus requi
 
 - Se você estiver desenvolvendo um suplemento para uso privado ou apenas para membros da sua organização, é importante testar as versões do Outlook usadas pela sua empresa. Lembre-se que alguns usuários podem usar o Outlook na Web, portanto testar as versões para o navegador padrão da sua empresa também é importante.
 
-- Se você estiver desenvolvendo um suplemento na [AppSource](https://appsource.microsoft.com), teste as versões exigidas conforme especificado nas [Políticas de validação da AppSource 4.12.1](/office/dev/store/validation-policies#4-apps-and-add-ins-behave-predictably). Isso inclui:
+- Se você estiver desenvolvendo um suplemento no [AppSource](https://appsource.microsoft.com), teste as versões exigidas conforme especificado nas [Políticas de certificação do mercado comercial 1120.3](/legal/marketplace/certification-policies#11203-functionality). Isso inclui:
     - A versão mais recente do Outlook no Windows e a versão anterior à mais recente.
     - A versão mais recente do Outlook no Mac.
     - A versão mais recente do Outlook no iOS e Android (se o suplemento for [compatível com mobilidade](add-mobile-support.md)).
-    - As versões do navegador especificadas na política de validação 4.12.1 da AppSource.
+    - As versões do navegador especificadas na política de validação do mercado comercial 1120.3
 
 > [!NOTE]
 > Se seu suplemento não for compatível com um dos clientes acima devido a uma [solicitação de um conjunto de exigências da API](apis.md) que o cliente não dá suporte, esse cliente será removido da lista de clientes exigidos.
