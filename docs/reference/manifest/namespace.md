@@ -3,12 +3,12 @@ title: Elemento Namespace no arquivo de manifesto
 description: O elemento namespace define o namespace que uma função personalizada usa no Excel.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 45fd0caa039fdeb885cba4b739750fbd8b642252
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: eabd73d3be98271c81723787dd3d1bdb6ee2ebcd
+ms.sourcegitcommit: 315a648cce38609c3e1c92bd4a339e268f8a2e1d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718052"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "42978666"
 ---
 # <a name="namespace-element"></a>Elemento Namespace
 
@@ -18,7 +18,7 @@ Define o namespace usado por uma função personalizada no Excel.
 
 |  Atributo  |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **resid="namespace"**  |  Sim  | Deve corresponder ao título ShortStrings para sua função personalizada, especificada no elemento [Resources](resources.md). |
+|  **resid="namespace"**  |  Não  | Deve corresponder ao título ShortStrings para sua função personalizada, especificada no elemento [Resources](resources.md). |
 
 ## <a name="child-elements"></a>Elementos filho
 

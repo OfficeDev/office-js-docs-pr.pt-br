@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 description: Recursos e APIs que estão atualmente em versão prévia para suplementos do Outlook e as APIs JavaScript do Office.
-ms.date: 03/17/2020
+ms.date: 03/26/2020
 localization_priority: Normal
-ms.openlocfilehash: 437629687972e030a7b34f035db5d2a2f8a5eba1
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: 55de284932a53d2226258a15c86ead4f05361c30
+ms.sourcegitcommit: 315a648cce38609c3e1c92bd4a339e268f8a2e1d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890869"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "42978617"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 
@@ -65,13 +65,13 @@ Adicionada uma nova função que retorna os dados inicialização que são trans
 
 Foi adicionada uma nova função ao `Body` objeto que adiciona ou substitui a assinatura no corpo do item no modo de composição.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
+**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno)
 
 #### <a name="officecontextmailboxitemdisableclientsignatureasync"></a>[Office. Context. Mailbox. Item. disableClientSignatureAsync](office.context.mailbox.item.md#methods)
 
 Adicionada uma nova função que desabilita a assinatura do cliente para a caixa de correio de envio no modo de composição.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
+**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno)
 
 #### <a name="officecontextmailboxitemgetcomposetypeasync"></a>[Office. Context. Mailbox. Item. getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#getcomposetypeasync-options--callback-)
 
@@ -83,13 +83,13 @@ Foi adicionada uma nova função que obtém o tipo de redação de uma mensagem 
 
 Adicionada uma nova função que verifica se a assinatura do cliente está habilitada no modo de composição.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
+**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno)
 
 #### <a name="officemailboxenumscomposetype"></a>[Office. MailboxEnums. composetype](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-preview)
 
 Adição de uma nova `ComposeType` Enumeração disponível no modo de composição.
 
-**Disponível no**: Outlook no Windows (conectado à assinatura do Office 365)
+**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno)
 
 <br>
 

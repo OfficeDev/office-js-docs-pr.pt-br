@@ -1,14 +1,14 @@
 ---
 title: Recurso Ao enviar para suplementos do Outlook
 description: Fornece uma maneira de manipular um item ou impedir que usuários realizem determinadas ações e permite que um suplemento defina determinadas propriedades ao enviar.
-ms.date: 11/07/2019
+ms.date: 03/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 7cb5e2d799756e92053f5c3d04501e2b5d562ed3
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.openlocfilehash: de570e70a0562720d8ba069f98cff0693a6894bf
+ms.sourcegitcommit: 315a648cce38609c3e1c92bd4a339e268f8a2e1d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42561812"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "42978673"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Recurso Ao enviar para suplementos do Outlook
 
@@ -21,7 +21,7 @@ O recurso Ao enviar para suplementos do Outlook fornece uma maneira de manipular
 > No momento, o recurso ao enviar é compatível com o Outlook na Web, no Exchange Online (Office 365), Exchange 2016 local (Atualização Cumulativa 6 ou posterior) e Exchange 2019 local (Atualização Cumulativa 1 ou posterior). Esse recurso também está disponível nas versões mais recentes do Outlook, no Windows e no Mac, conectado ao Exchange Online (Office 365). O recurso foi introduzido no conjunto de requisitos 1.8.
 
 > [!IMPORTANT]
-> Os suplementos que usam o recurso ao enviar não são permitidos na [AppSource](https://appsource.microsoft.com).
+> Os suplementos que usam o recurso ao enviar não são permitidos no [AppSource](https://appsource.microsoft.com).
 
 O recurso ao enviar é acionado pelo tipo de evento `ItemSend` e é sem interface de usuário.
 
@@ -35,7 +35,7 @@ Você pode usar o recurso Ao enviar para criar um suplemento do Outlook que inte
 - Verificar se a mensagem inclui uma linha de assunto
 - Definir um destinatário predeterminado
 
-A validação é feita no lado do cliente no Outlook, no acionamento do evento de envio. Se houver falha na validação, o envio do item será impedido e uma mensagem de erro será exibida na barra de informações que solicita a ação do usuário.  
+A validação é feita no lado do cliente no Outlook quando o evento Send é disparado e o suplemento tem até 5 minutos antes do tempo limite. Se a validação falhar, o envio do item será bloqueado e uma mensagem de erro será exibida em uma barra de informações que solicitará que o usuário execute a ação.
 
 A captura de tela a seguir mostra uma barra de informações que notifica que o remetente adicione um assunto.
 
@@ -340,9 +340,9 @@ Os suplementos serão executados durante o evento de envio, que em seguida permi
 
 |Cenário|Recurso Ao enviar da caixa de correio 1|Recurso Ao enviar da caixa de correio 2|Sessão Web do Outlook (clássico)|Resultado|Com suporte?|
 |:------------|:------------|:--------------------------|:---------|:-------------|:-------------|
-|1 |Habilitado|Habilitado|Nova sessão|A caixa de correio 1 não consegue enviar um item de mensagem ou de reunião da caixa de correio 2.|Não há suporte atualmente. Como alternativa, use o cenário 3.|
-|2 |Desabilitado|Habilitado|Nova sessão|A caixa de correio 1 não consegue enviar um item de mensagem ou de reunião da caixa de correio 2.|Não há suporte atualmente. Como alternativa, use o cenário 3.|
-|3 |Habilitado|Habilitado|Mesma sessão|Os suplementos Ao enviar atribuídos à caixa de correio 1 são executados ao enviar.|Com suporte.|
+|1|Habilitado|Habilitado|Nova sessão|A caixa de correio 1 não consegue enviar um item de mensagem ou de reunião da caixa de correio 2.|Não há suporte atualmente. Como alternativa, use o cenário 3.|
+|duas|Desabilitado|Habilitado|Nova sessão|A caixa de correio 1 não consegue enviar um item de mensagem ou de reunião da caixa de correio 2.|Não há suporte atualmente. Como alternativa, use o cenário 3.|
+|3D|Habilitado|Habilitado|Mesma sessão|Os suplementos Ao enviar atribuídos à caixa de correio 1 são executados ao enviar.|Com suporte.|
 |4 |Habilitado|Desabilitado|Nova sessão|Nenhum suplemento Ao envio é executado; item de mensagem ou de reunião é enviado.|Com suporte.|
 
 #### <a name="web-browser-modern-outlook-windows-mac"></a>Navegador da Web (Outlook moderno), Windows, Mac
@@ -355,8 +355,8 @@ Para impor o Ao enviar, os administradores devem garantir que a política tenha 
 
 |Cenário|Política Ao enviar da caixa de correio 1|Suplementos Ao enviar habilitados?|Ação da caixa de correio 1|Resultado|Com suporte?|
 |:------------|:-------------------------|:-------------------|:---------|:----------|:-------------|
-|1 |Habilitado|Sim|A caixa de correio 1 compõe uma nova mensagem ou reunião para o grupo 1.|Os suplementos Ao enviar são executados durante o envio.|Sim|
-|2 |Habilitado|Sim|A caixa de correio 1 compõe uma nova mensagem ou reunião para o grupo 1 dentro da janela de grupo do grupo 1 no Outlook na Web.|Os suplementos Ao enviar não são executados durante o envio.|Não há suporte atualmente. Como alternativa, use o cenário 1.|
+|1|Habilitado|Sim|A caixa de correio 1 compõe uma nova mensagem ou reunião para o grupo 1.|Os suplementos Ao enviar são executados durante o envio.|Sim|
+|duas|Habilitado|Sim|A caixa de correio 1 compõe uma nova mensagem ou reunião para o grupo 1 dentro da janela de grupo do grupo 1 no Outlook na Web.|Os suplementos Ao enviar não são executados durante o envio.|Não há suporte atualmente. Como alternativa, use o cenário 1.|
 
 ### <a name="user-mailbox-with-on-send-add-in-featurepolicy-enabled-add-ins-that-support-on-send-are-installed-and-enabled-and-offline-mode-is-enabled"></a>Caixa de correio do usuário com recurso/política de suplemento Ao enviar habilitado, os suplementos com suporte à funcionalidade Ao enviar estão instalados e habilitados e o modo offline está habilitado
 

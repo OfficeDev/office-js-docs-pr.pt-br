@@ -1,14 +1,14 @@
 ---
 title: Publicar Suplementos do Office usando a Implantação Centralizada por meio do Centro de administração do Office 365
 description: Saiba como usar a implantação centralizada para implantar suplementos internos, bem como suplementos fornecidos por ISVs.
-ms.date: 02/14/2020
+ms.date: 03/24/2020
 localization_priority: Normal
-ms.openlocfilehash: ac17113ee1e8d38d0b891a8decb3b48ca299c8fe
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: cd271aec9ac222815d52adf6375d09b02cb93ea9
+ms.sourcegitcommit: 315a648cce38609c3e1c92bd4a339e268f8a2e1d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720985"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "42978624"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-office-365-admin-center"></a>Publicar Suplementos do Office usando a Implantação Centralizada por meio do Centro de administração do Office 365
 
@@ -17,7 +17,7 @@ No Centro de administração do Office 365, é mais fácil para o administrador 
 Atualmente, o Centro de administração do Office 365 tem suporte para os seguintes cenários:
 
 - Implantação Centralizada de suplementos novos e atualizados para usuários, grupos ou para uma organização.
-- Implantação para várias plataformas, incluindo Windows, Mac, iOS/iPad, Android e na Web.
+- Implantação para várias plataformas, incluindo Windows, Mac, iOS, Android e na Web.
 - Implantação no idioma inglês e para locatários no mundo inteiro.
 - Implantação de suplementos hospedados na nuvem.
 - Implantação de suplementos hospedados em um firewall.
