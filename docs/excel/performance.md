@@ -1,14 +1,14 @@
 ---
 title: Otimização de desempenho do da API JavaScript do Excel
 description: Otimizar o desempenho usando as API JavaScript do Excel
-ms.date: 06/20/2019
+ms.date: 03/27/2020
 localization_priority: Normal
-ms.openlocfilehash: a09b01c698a09bbb25d60518069f6e26fe5acaf1
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: a202776569cdfc31a1221e3de1a356f0dafa2bfb
+ms.sourcegitcommit: 559a7e178e84947e830cc00dfa01c5c6e398ddc2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42891009"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "43030828"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Otimização de desempenho usando a API JavaScript do Excel
 
@@ -75,7 +75,7 @@ _Onde:_
 * `properties` é a lista de propriedades para carregar, especificadas como cadeias de caracteres delimitadas por vírgula ou como uma matriz de nomes. Para obter mais informações, consulte `load()` os métodos definidos para objetos na [referência da API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md).
 * `loadOption` especifica um objeto que descreve as opções de seleção, expansão, topo e ignorar. Confira as [opções](/javascript/api/office/officeextension.loadoption) de carregamento do objeto para saber mais.
 
-Observe que algumas das "Propriedades" em um objeto podem ter o mesmo nome de outro objeto. Por exemplo, `format` é uma propriedade dentro do objeto de intervalo, mas `format` também é um objeto. Portanto, se você fizer uma chamada, como `range.load("format")`, isso equivale a`range.format.load()`, que é uma chamada load vazia () que pode causar problemas de desempenho, conforme descrito anteriormente. Para evitar isso, o código só deve carregar os "nós folha" em uma árvore de objetos. 
+Observe que algumas das "Propriedades" em um objeto podem ter o mesmo nome de outro objeto. Por exemplo, `format` é uma propriedade dentro do objeto de intervalo, mas `format` também é um objeto. Portanto, se você fizer uma chamada, como `range.load("format")`, isso equivale a`range.format.load()`, que é uma chamada load vazia () que pode causar problemas de desempenho, conforme descrito anteriormente. Para evitar isso, o código só deve carregar os "nós folha" em uma árvore de objetos.
 
 ## <a name="suspend-excel-processes-temporarily"></a>Suspender temporariamente os processos do Excel
 
@@ -129,6 +129,9 @@ Excel.run(async function(ctx) {
 ### <a name="suspend-screen-updating"></a>Suspender a atualização da tela
 
 O Excel exibe as alterações que seu suplemento faz aproximadamente conforme elas acontecem no código. Para conjuntos de dados grandes e interativos, talvez não seja necessário não esse andamento na tela em tempo real. `Application.suspendScreenUpdatingUntilNextSync()` pausa atualizações visuais no Excel até as chamadas do suplemento `context.sync()`, ou até o`Excel.run` terminar (chamadas implícitas `context.sync`). Lembre-se, o Excel não mostrará os sinais de atividade até a próxima sincronização. Seu suplemento deve fornecer orientação aos usuários para prepará-los para esse atraso ou fornecer uma barra de status para demonstrar atividade.
+
+> [!NOTE]
+> Não chame `suspendScreenUpdatingUntilNextSync` repetidamente (como em um loop). As chamadas repetidas farão com que a janela do Excel fique de piscar.
 
 ### <a name="enable-and-disable-events"></a>Habilitar e desabilitar eventos
 
@@ -191,7 +194,7 @@ Excel.run(async (context) => {
     var largeRange = context.workbook.getSelectedRange();
     largeRange.load(["rowCount", "columnCount"]);
     await context.sync();
-    
+
     for (var i = 0; i < largeRange.rowCount; i++) {
         for (var j = 0; j < largeRange.columnCount; j++) {
             var cell = largeRange.getCell(i, j);

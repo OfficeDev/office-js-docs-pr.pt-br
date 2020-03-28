@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 description: Recursos e APIs que estão atualmente em versão prévia para suplementos do Outlook e as APIs JavaScript do Office.
-ms.date: 03/26/2020
+ms.date: 03/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 55de284932a53d2226258a15c86ead4f05361c30
-ms.sourcegitcommit: 315a648cce38609c3e1c92bd4a339e268f8a2e1d
+ms.openlocfilehash: 3d8eaac1b665d4bd65d5cf0383e53d6f6fb70324
+ms.sourcegitcommit: 559a7e178e84947e830cc00dfa01c5c6e398ddc2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "42978617"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "43030814"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 
@@ -25,6 +25,44 @@ O conjunto de requisitos de visualização inclui todos os recursos do [Conjunto
 
 Os seguintes recursos estão no modo de visualização.
 
+### <a name="additional-calendar-properties"></a>Propriedades de calendário adicionais
+
+#### <a name="isalldayevent"></a>[IsAllDayEvent](/javascript/api/outlook/office.isalldayevent?view=outlook-js-preview)
+
+Adicionado um novo objeto que representa a propriedade de evento de dia inteiro de um compromisso no modo de composição.
+
+**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
+
+#### <a name="sensitivity"></a>[Sensitivity](/javascript/api/outlook/office.sensitivity?view=outlook-js-preview)
+
+Adicionado um novo objeto que representa a sensibilidade de um compromisso no modo de composição.
+
+**Disponível em**: Outlook no Windows (conectado a assinatura do Office 365)
+
+#### <a name="officecontextmailboxitemisalldayevent"></a>[Office. Context. Mailbox. Item. isAllDayEvent](office.context.mailbox.item.md#properties)
+
+Adicionada uma nova propriedade que representa se um compromisso é um evento de dia inteiro.
+
+**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
+
+#### <a name="officecontextmailboxitemsensitivity"></a>[Office. Context. Mailbox. Item. sensibilidade](office.context.mailbox.item.md#properties)
+
+Adicionada uma nova propriedade que representa a sensibilidade de um compromisso.
+
+**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
+
+#### <a name="officemailboxenumsappointmentsensitivitytype"></a>[Office. MailboxEnums. AppointmentSensitivityType](/javascript/api/outlook/office.mailboxenums.appointmentsensitivitytype?view=outlook-js-preview)
+
+Foi adicionada uma nova `AppointmentSensitivityType` enumeração que representa as opções de sensibilidade disponíveis em um compromisso.
+
+**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
+
+<br>
+
+---
+
+---
+
 ### <a name="append-on-send"></a>Anexar ao enviar
 
 #### <a name="officecontextmailboxitembodyappendonsendasync"></a>[Office. Context. Mailbox. Item. Body. appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-)
@@ -37,7 +75,7 @@ Foi adicionada uma nova função ao `Body` objeto que acrescenta dados ao final 
 
 Adicionado um novo elemento ao manifesto onde a `AppendOnSend` permissão estendida deve ser incluída na coleção de permissões estendidas.
 
-**Disponível em**: Outlook no Windows (conectado a assinatura do Office 365)
+**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
 
 <br>
 
