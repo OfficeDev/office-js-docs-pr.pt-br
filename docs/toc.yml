@@ -56,7 +56,7 @@
               href: develop/initialize-add-in.md
             - name: Diretrizes de codificação para problemas comuns
               href: develop/common-coding-issues.md
-            - name: APIs comuns (Office 2013 ou superior)
+            - name: APIs comuns
               items:
                 - name: Modelo de objeto comum de API JavaScript para Office
                   href: develop/office-javascript-api-object-model.md
