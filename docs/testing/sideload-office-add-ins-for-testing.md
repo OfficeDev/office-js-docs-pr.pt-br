@@ -3,12 +3,12 @@ title: Realizar sideload de suplementos do Office no Office na Web para teste
 description: Testar o suplemento do Office no Office na web através de sideloading
 ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 43dafda913516119ba1aadaae24701865596205f
-ms.sourcegitcommit: 6c7c98f085dd20f827e0c388e672993412944851
+ms.openlocfilehash: 2b3082eeae35a36f320ad8d1477d99f24b3fce40
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "42554682"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185404"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>Realizar sideload de suplementos do Office no Office na Web para teste
 
@@ -46,7 +46,7 @@ O vídeo a seguir oferece orientações para o processo de sideload do seu suple
 >
 > - Em um prompt de comando do Windows, execute a seguinte linha: `CheckNetIsolation LoopbackExempt -a -n="Microsoft.MicrosoftEdge_8wekyb3d8bbwe"`
 >
-> - Digite “**about:flags**” na barra de pesquisa do Microsoft Edge para exibir as opções de Configurações do Desenvolvedor.  Verifique a opção “**Permitir loopback do localhost**” e reinicie o Microsoft Edge.
+> - Digite "**about: flags**" na barra de pesquisa do Microsoft Edge para exibir as opções de configurações do desenvolvedor.  Marque a opção "**permitir auto-retorno de localhost**" e reinicie o Microsoft Edge.
 
 >    ![A opção “Permitir loopback do localhost” do Microsoft Edge com a caixa marcada.](../images/allow-localhost-loopback.png)
 

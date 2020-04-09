@@ -1,14 +1,14 @@
 ---
 title: Recurso Ao enviar para suplementos do Outlook
 description: Fornece uma maneira de manipular um item ou impedir que usuários realizem determinadas ações e permite que um suplemento defina determinadas propriedades ao enviar.
-ms.date: 03/30/2020
+ms.date: 04/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 59d633169fa74687032691bef65fb7f0b114822a
-ms.sourcegitcommit: 73a3df90a51acf13416d6a049bddcd9aabc32441
+ms.openlocfilehash: 017759628cd9b3716c3992f7c6631911491ca246
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "43069306"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185635"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Recurso Ao enviar para suplementos do Outlook
 
@@ -18,7 +18,7 @@ O recurso Ao enviar para suplementos do Outlook fornece uma maneira de manipular
 - Adicionar um destinatário específico à linha CC em mensagens ou à linha destinatários opcionais em reuniões.
 
 > [!NOTE]
-> No momento, o recurso ao enviar é compatível com o Outlook na Web, no Exchange Online (Office 365), Exchange 2016 local (Atualização Cumulativa 6 ou posterior) e Exchange 2019 local (Atualização Cumulativa 1 ou posterior). Esse recurso também está disponível nas versões mais recentes do Outlook, no Windows e no Mac, conectado ao Exchange Online (Office 365). O recurso foi introduzido no conjunto de requisitos 1,8 ([suporte ao servidor e ao cliente atual](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)).
+> No momento, o recurso ao enviar é compatível com o Outlook na Web, no Exchange Online (Office 365), Exchange 2016 local (Atualização Cumulativa 6 ou posterior) e Exchange 2019 local (Atualização Cumulativa 1 ou posterior). Esse recurso também está disponível nas versões mais recentes do Outlook, no Windows e no Mac, conectado ao Exchange Online (Office 365). O recurso foi introduzido no conjunto de requisitos 1,8 (consulte [suporte de servidor e cliente atual](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) para obter detalhes).
 
 > [!IMPORTANT]
 > Os suplementos que usam o recurso ao enviar não são permitidos no [AppSource](https://appsource.microsoft.com).

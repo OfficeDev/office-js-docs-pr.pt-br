@@ -3,12 +3,12 @@ title: Publicar suplementos de painel de tarefas e de conteúdo em um catálogo 
 description: Para tornar os suplementos do Office acessíveis aos usuários em sua organização, os administradores podem carregar arquivos de manifesto dos suplementos do Office no catálogo de aplicativos da organização.
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: e9a600cd807379e9c55f2fc98bb4f2d71552058f
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 5557dd31e829fac2c2dbd421200da46a5c3b9b99
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325302"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185586"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>Publicar suplementos de painel de tarefas e de conteúdo em um catálogo de aplicativos do SharePoint
 
@@ -31,30 +31,7 @@ Depois de criar o catálogo de aplicativos, siga as etapas para [publicar um Sup
 
 ### <a name="to-create-an-app-catalog-on-office-365"></a>Criar um catálogo de aplicativos no Office 365
 
-1. Vá para o centro de administração do Microsoft 365. Para saber mais sobre como encontrar o centro de administração, confira [Centro de administração do Microsoft 365](/office365/admin/admin-overview/about-the-admin-center).
-
-2. Na página do centro de administração do Microsoft 365, expanda a lista dos **Centros de administração** e selecione**SharePoint**.
-
-    > [!NOTE]
-    > Use o centro de administração do SharePoint Clássico para criar o catálogo. Se você estiver no novo centro de administração do SharePoint, escolha **Centro de administração do SharePoint clássico** no painel esquerdo.
-
-3. No painel de tarefas à esquerda, escolha **aplicativos**.
-
-4. Na página **aplicativos**, escolha **Catálogo de Aplicativos**.
-    > [!NOTE]
-    > Se um catálogo de aplicativos já foi criado e exibido nesta página, você poderá ignorar o restante dessas etapas e ir para a próxima seção deste artigo para publicar o suplemento no catálogo.
-
-5. Na página do **Site do Catálogo de Aplicativos**, escolha **OK** para aceitar a opção padrão e criar um novo site de catálogo de aplicativos.
-
-6. Na página **Criar Conjunto de Sites do Catálogo de Aplicativos**, especifique o título do seu site de Catálogo de Aplicativos.
-
-7. Especifique o **Endereço do site da Web**.
-
-8. Especifique um **administrador**.
-
-9. Defina a **Cota de Recursos de Servidor** como 0 (zero). (A cota de recursos de servidor está relacionada à limitação das soluções de área restrita com mau desempenho, mas não instala soluções de área restrita no seu site de catálogo de aplicativos.)
-
-10. Escolha **OK**.
+Para criar o catálogo de aplicativos do SharePoint, siga as instruções em [criar o conjunto de sites do catálogo de aplicativos](/sharepoint/use-app-catalog#step-1-create-the-app-catalog-site-collection). Depois de criar o catálogo de aplicativos, siga as etapas na próxima seção para publicar um suplemento do Office.
 
 ## <a name="publish-an-office-add-in"></a>Publicar um Suplemento do Office
 
@@ -62,17 +39,21 @@ Conclua as etapas em uma das seções a seguir para publicar um Suplemento do Of
 
 ### <a name="to-publish-an-office-add-in-to-a-sharepoint-app-catalog-on-office-365"></a>Para publicar um suplemento do Office em um catálogo de aplicativos do SharePoint no Office 365
 
-1. Vá para o centro de administração do Microsoft 365. Para saber mais sobre como encontrar o centro de administração, confira [Centro de administração do Microsoft 365](/office365/admin/admin-overview/about-the-admin-center).
-2. Na página do centro de administração do Microsoft 365, expanda a lista dos **Centros de administração** e selecione**SharePoint**.
-    > [!NOTE]
-    > Use o centro de administração do SharePoint Clássico para criar o catálogo. Se você estiver no novo centro de administração do SharePoint, escolha **Centro de administração do SharePoint clássico** no painel esquerdo.
-3. No painel de tarefas à esquerda, escolha **aplicativos**.
-4. Na página **aplicativos**, escolha **Catálogo de Aplicativos**.
-5. Escolha **Distribuir aplicativos para o Office**.
-6. Na página **Aplicativos do Office**, escolha **Novo**.
-7. Na caixa de diálogo **Adicionar um documento**, selecione o botão **Escolher Arquivos**.
-8. Localize e especifique o arquivo [manifesto](../develop/add-in-manifests.md) para carregar e escolha **Abrir**.
-9. Na caixa de diálogo **Adicionar um documento**, escolha **OK**.
+1. Vá para a [página Sites ativos do novo centro de administração do SharePoint](https://admin.microsoft.com/sharepoint?page=siteManagement&modern=true) e entre com uma conta que tenha [permissões de administrador](/sharepoint/sharepoint-admin-role) da sua organização.
+
+>[!NOTE]
+>Se você tiver o Office 365 Germany, [entre no centro de administração do Microsoft 365](https://go.microsoft.com/fwlink/p/?linkid=848041), navegue até o centro de administração do SharePoint e abra a página Mais recursos. <br>Se você tiver o Office 365 operado pela 21Vianet (China), [entre no centro de administração do Microsoft 365](https://go.microsoft.com/fwlink/p/?linkid=850627), navegue até o centro de administração do SharePoint e abra a página Mais recursos.
+ 
+2. Abra o site do catálogo de aplicativos selecionando sua URL na coluna URL. 
+
+>[!NOTE]
+>Se você acabou de criar o site de catálogo de aplicativos na seção anterior, pode levar alguns minutos para que o site termine a configuração.
+
+3. Escolha **Distribuir aplicativos para o Office**.
+4. Na página **Aplicativos do Office**, escolha **Novo**.
+5. Na caixa de diálogo **Adicionar um documento**, selecione o botão **Escolher Arquivos**.
+6. Localize e especifique o arquivo [manifesto](../develop/add-in-manifests.md) para carregar e escolha **Abrir**.
+7. Na caixa de diálogo **Adicionar um documento**, escolha **OK**.
 
 ### <a name="to-publish-an-add-in-to-an-app-catalog-with-on-premises-sharepoint-server"></a>Para publicar um suplemento em um catálogo de aplicativos com o SharePoint Server local
 

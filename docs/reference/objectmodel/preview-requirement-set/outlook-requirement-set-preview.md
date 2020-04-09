@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 description: Recursos e APIs que estão atualmente em versão prévia para suplementos do Outlook e as APIs JavaScript do Office.
-ms.date: 03/27/2020
+ms.date: 04/08/2020
 localization_priority: Normal
-ms.openlocfilehash: 3d8eaac1b665d4bd65d5cf0383e53d6f6fb70324
-ms.sourcegitcommit: 559a7e178e84947e830cc00dfa01c5c6e398ddc2
+ms.openlocfilehash: acc19c81f929596b0bd5622e696c1988cf31ee5c
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "43030814"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185411"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 
@@ -69,13 +69,13 @@ Foi adicionada uma nova `AppointmentSensitivityType` enumeração que representa
 
 Foi adicionada uma nova função ao `Body` objeto que acrescenta dados ao final do corpo do item no modo de composição.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
+**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno)
 
 #### <a name="extendedpermissions"></a>[ExtendedPermissions](../../manifest/extendedpermissions.md)
 
 Adicionado um novo elemento ao manifesto onde a `AppendOnSend` permissão estendida deve ser incluída na coleção de permissões estendidas.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
+**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno)
 
 <br>
 
@@ -103,13 +103,13 @@ Adicionada uma nova função que retorna os dados inicialização que são trans
 
 Foi adicionada uma nova função ao `Body` objeto que adiciona ou substitui a assinatura no corpo do item no modo de composição.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno)
+**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
 
 #### <a name="officecontextmailboxitemdisableclientsignatureasync"></a>[Office. Context. Mailbox. Item. disableClientSignatureAsync](office.context.mailbox.item.md#methods)
 
 Adicionada uma nova função que desabilita a assinatura do cliente para a caixa de correio de envio no modo de composição.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno)
+**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
 
 #### <a name="officecontextmailboxitemgetcomposetypeasync"></a>[Office. Context. Mailbox. Item. getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#getcomposetypeasync-options--callback-)
 
@@ -121,13 +121,13 @@ Foi adicionada uma nova função que obtém o tipo de redação de uma mensagem 
 
 Adicionada uma nova função que verifica se a assinatura do cliente está habilitada no modo de composição.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno)
+**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
 
 #### <a name="officemailboxenumscomposetype"></a>[Office. MailboxEnums. composetype](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-preview)
 
 Adição de uma nova `ComposeType` Enumeração disponível no modo de composição.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno)
+**Disponível no**: Outlook no Windows (conectado à assinatura do Office 365)
 
 <br>
 
@@ -148,6 +148,20 @@ Capacidade adicional para obter o tema do Office.
 Adicionado `OfficeThemeChanged` evento `Mailbox`.
 
 **Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
+
+<br>
+
+---
+
+---
+
+### <a name="online-meeting-provider-integration"></a>Integração do provedor de reunião online
+
+#### <a name="mobileonlinemeetingcommandsurface-extension-point"></a>[Ponto de extensão MobileOnlineMeetingCommandSurface](../../manifest/extensionpoint.md#mobileonlinemeetingcommandsurface-preview)
+
+Adicionado `MobileOnlineMeetingCommandSurface` o ponto de extensão ao manifesto. Ele define a integração da reunião online.
+
+**Disponível em**: Outlook no Android (conectado à assinatura do Office 365)
 
 <br>
 
