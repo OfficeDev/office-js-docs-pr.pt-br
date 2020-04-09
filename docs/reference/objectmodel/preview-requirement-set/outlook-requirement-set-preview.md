@@ -1,81 +1,61 @@
 ---
 title: Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 description: Recursos e APIs que estão atualmente em versão prévia para suplementos do Outlook e as APIs JavaScript do Office.
-ms.date: 03/27/2020
+ms.date: 04/08/2020
 localization_priority: Normal
-ms.openlocfilehash: 3d8eaac1b665d4bd65d5cf0383e53d6f6fb70324
-ms.sourcegitcommit: 559a7e178e84947e830cc00dfa01c5c6e398ddc2
+ms.openlocfilehash: acc19c81f929596b0bd5622e696c1988cf31ee5c
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "43030814"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185411"
 ---
-# <a name="outlook-add-in-api-preview-requirement-set"></a><span data-ttu-id="9d085-103">Conjunto de requisitos do modo de visualização de API para suplementos do Outlook</span><span class="sxs-lookup"><span data-stu-id="9d085-103">Outlook add-in API Preview requirement set</span></span>
+# <a name="outlook-add-in-api-preview-requirement-set"></a><span data-ttu-id="8b92a-103">Conjunto de requisitos do modo de visualização de API para suplementos do Outlook</span><span class="sxs-lookup"><span data-stu-id="8b92a-103">Outlook add-in API Preview requirement set</span></span>
 
-<span data-ttu-id="9d085-104">O subconjunto de APIs de suplemento do Outlook da API JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um suplemento do Outlook.</span><span class="sxs-lookup"><span data-stu-id="9d085-104">The Outlook add-in API subset of the Office JavaScript API includes objects, methods, properties, and events that you can use in an Outlook add-in.</span></span>
+<span data-ttu-id="8b92a-104">O subconjunto de APIs de suplemento do Outlook da API JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um suplemento do Outlook.</span><span class="sxs-lookup"><span data-stu-id="8b92a-104">The Outlook add-in API subset of the Office JavaScript API includes objects, methods, properties, and events that you can use in an Outlook add-in.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="9d085-105">Esta documentação destina-se a um modo de **visualização** de [conjunto de requisitos](../../requirement-sets/outlook-api-requirement-sets.md).</span><span class="sxs-lookup"><span data-stu-id="9d085-105">This documentation is for a **preview** [requirement set](../../requirement-sets/outlook-api-requirement-sets.md).</span></span> <span data-ttu-id="9d085-106">Esse conjunto de requisitos ainda não está totalmente implementado e os clientes não informarão precisamente o suporte para ele.</span><span class="sxs-lookup"><span data-stu-id="9d085-106">This requirement set is not fully implemented yet, and clients will not accurately report support for it.</span></span> <span data-ttu-id="9d085-107">Você não deve especificar a esse conjunto de requisitos em seu manifesto de suplemento.</span><span class="sxs-lookup"><span data-stu-id="9d085-107">You should not specify this requirement set in your add-in manifest.</span></span>
+> <span data-ttu-id="8b92a-105">Esta documentação destina-se a um modo de **visualização** de [conjunto de requisitos](../../requirement-sets/outlook-api-requirement-sets.md).</span><span class="sxs-lookup"><span data-stu-id="8b92a-105">This documentation is for a **preview** [requirement set](../../requirement-sets/outlook-api-requirement-sets.md).</span></span> <span data-ttu-id="8b92a-106">Esse conjunto de requisitos ainda não está totalmente implementado e os clientes não informarão precisamente o suporte para ele.</span><span class="sxs-lookup"><span data-stu-id="8b92a-106">This requirement set is not fully implemented yet, and clients will not accurately report support for it.</span></span> <span data-ttu-id="8b92a-107">Você não deve especificar a esse conjunto de requisitos em seu manifesto de suplemento.</span><span class="sxs-lookup"><span data-stu-id="8b92a-107">You should not specify this requirement set in your add-in manifest.</span></span>
 
 [!INCLUDE [Information about using preview APIs](../../../includes/using-preview-apis-host.md)]
 
-<span data-ttu-id="9d085-108">O conjunto de requisitos de visualização inclui todos os recursos do [Conjunto de requisitos 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md).</span><span class="sxs-lookup"><span data-stu-id="9d085-108">The Preview Requirement set includes all of the features of [Requirement set 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md).</span></span>
+<span data-ttu-id="8b92a-108">O conjunto de requisitos de visualização inclui todos os recursos do [Conjunto de requisitos 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md).</span><span class="sxs-lookup"><span data-stu-id="8b92a-108">The Preview Requirement set includes all of the features of [Requirement set 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md).</span></span>
 
-## <a name="features-in-preview"></a><span data-ttu-id="9d085-109">Recursos no modo de visualização</span><span class="sxs-lookup"><span data-stu-id="9d085-109">Features in preview</span></span>
+## <a name="features-in-preview"></a><span data-ttu-id="8b92a-109">Recursos no modo de visualização</span><span class="sxs-lookup"><span data-stu-id="8b92a-109">Features in preview</span></span>
 
-<span data-ttu-id="9d085-110">Os seguintes recursos estão no modo de visualização.</span><span class="sxs-lookup"><span data-stu-id="9d085-110">The following features are in preview.</span></span>
+<span data-ttu-id="8b92a-110">Os seguintes recursos estão no modo de visualização.</span><span class="sxs-lookup"><span data-stu-id="8b92a-110">The following features are in preview.</span></span>
 
-### <a name="additional-calendar-properties"></a><span data-ttu-id="9d085-111">Propriedades de calendário adicionais</span><span class="sxs-lookup"><span data-stu-id="9d085-111">Additional calendar properties</span></span>
+### <a name="additional-calendar-properties"></a><span data-ttu-id="8b92a-111">Propriedades de calendário adicionais</span><span class="sxs-lookup"><span data-stu-id="8b92a-111">Additional calendar properties</span></span>
 
-#### <a name="isalldayevent"></a>[<span data-ttu-id="9d085-112">IsAllDayEvent</span><span class="sxs-lookup"><span data-stu-id="9d085-112">IsAllDayEvent</span></span>](/javascript/api/outlook/office.isalldayevent?view=outlook-js-preview)
+#### <a name="isalldayevent"></a>[<span data-ttu-id="8b92a-112">IsAllDayEvent</span><span class="sxs-lookup"><span data-stu-id="8b92a-112">IsAllDayEvent</span></span>](/javascript/api/outlook/office.isalldayevent?view=outlook-js-preview)
 
-<span data-ttu-id="9d085-113">Adicionado um novo objeto que representa a propriedade de evento de dia inteiro de um compromisso no modo de composição.</span><span class="sxs-lookup"><span data-stu-id="9d085-113">Added a new object that represents the all-day event property of an appointment in Compose mode.</span></span>
+<span data-ttu-id="8b92a-113">Adicionado um novo objeto que representa a propriedade de evento de dia inteiro de um compromisso no modo de composição.</span><span class="sxs-lookup"><span data-stu-id="8b92a-113">Added a new object that represents the all-day event property of an appointment in Compose mode.</span></span>
 
-<span data-ttu-id="9d085-114">**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)</span><span class="sxs-lookup"><span data-stu-id="9d085-114">**Available in**: Outlook on Windows (connected to Office 365 subscription)</span></span>
+<span data-ttu-id="8b92a-114">**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)</span><span class="sxs-lookup"><span data-stu-id="8b92a-114">**Available in**: Outlook on Windows (connected to Office 365 subscription)</span></span>
 
-#### <a name="sensitivity"></a>[<span data-ttu-id="9d085-115">Sensitivity</span><span class="sxs-lookup"><span data-stu-id="9d085-115">Sensitivity</span></span>](/javascript/api/outlook/office.sensitivity?view=outlook-js-preview)
+#### <a name="sensitivity"></a>[<span data-ttu-id="8b92a-115">Sensitivity</span><span class="sxs-lookup"><span data-stu-id="8b92a-115">Sensitivity</span></span>](/javascript/api/outlook/office.sensitivity?view=outlook-js-preview)
 
-<span data-ttu-id="9d085-116">Adicionado um novo objeto que representa a sensibilidade de um compromisso no modo de composição.</span><span class="sxs-lookup"><span data-stu-id="9d085-116">Added a new object that represents the sensitivity of an appointment in Compose mode.</span></span>
+<span data-ttu-id="8b92a-116">Adicionado um novo objeto que representa a sensibilidade de um compromisso no modo de composição.</span><span class="sxs-lookup"><span data-stu-id="8b92a-116">Added a new object that represents the sensitivity of an appointment in Compose mode.</span></span>
 
-<span data-ttu-id="9d085-117">**Disponível em**: Outlook no Windows (conectado a assinatura do Office 365)</span><span class="sxs-lookup"><span data-stu-id="9d085-117">**Available in**: Outlook on Windows (connected to Office 365 subscription)</span></span>
+<span data-ttu-id="8b92a-117">**Disponível em**: Outlook no Windows (conectado a assinatura do Office 365)</span><span class="sxs-lookup"><span data-stu-id="8b92a-117">**Available in**: Outlook on Windows (connected to Office 365 subscription)</span></span>
 
-#### <a name="officecontextmailboxitemisalldayevent"></a>[<span data-ttu-id="9d085-118">Office. Context. Mailbox. Item. isAllDayEvent</span><span class="sxs-lookup"><span data-stu-id="9d085-118">Office.context.mailbox.item.isAllDayEvent</span></span>](office.context.mailbox.item.md#properties)
+#### <a name="officecontextmailboxitemisalldayevent"></a>[<span data-ttu-id="8b92a-118">Office. Context. Mailbox. Item. isAllDayEvent</span><span class="sxs-lookup"><span data-stu-id="8b92a-118">Office.context.mailbox.item.isAllDayEvent</span></span>](office.context.mailbox.item.md#properties)
 
-<span data-ttu-id="9d085-119">Adicionada uma nova propriedade que representa se um compromisso é um evento de dia inteiro.</span><span class="sxs-lookup"><span data-stu-id="9d085-119">Added a new property that represents if an appointment is an all-day event.</span></span>
+<span data-ttu-id="8b92a-119">Adicionada uma nova propriedade que representa se um compromisso é um evento de dia inteiro.</span><span class="sxs-lookup"><span data-stu-id="8b92a-119">Added a new property that represents if an appointment is an all-day event.</span></span>
 
-<span data-ttu-id="9d085-120">**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)</span><span class="sxs-lookup"><span data-stu-id="9d085-120">**Available in**: Outlook on Windows (connected to Office 365 subscription)</span></span>
+<span data-ttu-id="8b92a-120">**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)</span><span class="sxs-lookup"><span data-stu-id="8b92a-120">**Available in**: Outlook on Windows (connected to Office 365 subscription)</span></span>
 
-#### <a name="officecontextmailboxitemsensitivity"></a>[<span data-ttu-id="9d085-121">Office. Context. Mailbox. Item. sensibilidade</span><span class="sxs-lookup"><span data-stu-id="9d085-121">Office.context.mailbox.item.sensitivity</span></span>](office.context.mailbox.item.md#properties)
+#### <a name="officecontextmailboxitemsensitivity"></a>[<span data-ttu-id="8b92a-121">Office. Context. Mailbox. Item. sensibilidade</span><span class="sxs-lookup"><span data-stu-id="8b92a-121">Office.context.mailbox.item.sensitivity</span></span>](office.context.mailbox.item.md#properties)
 
-<span data-ttu-id="9d085-122">Adicionada uma nova propriedade que representa a sensibilidade de um compromisso.</span><span class="sxs-lookup"><span data-stu-id="9d085-122">Added a new property that represents the sensitivity of an appointment.</span></span>
+<span data-ttu-id="8b92a-122">Adicionada uma nova propriedade que representa a sensibilidade de um compromisso.</span><span class="sxs-lookup"><span data-stu-id="8b92a-122">Added a new property that represents the sensitivity of an appointment.</span></span>
 
-<span data-ttu-id="9d085-123">**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)</span><span class="sxs-lookup"><span data-stu-id="9d085-123">**Available in**: Outlook on Windows (connected to Office 365 subscription)</span></span>
+<span data-ttu-id="8b92a-123">**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)</span><span class="sxs-lookup"><span data-stu-id="8b92a-123">**Available in**: Outlook on Windows (connected to Office 365 subscription)</span></span>
 
-#### <a name="officemailboxenumsappointmentsensitivitytype"></a>[<span data-ttu-id="9d085-124">Office. MailboxEnums. AppointmentSensitivityType</span><span class="sxs-lookup"><span data-stu-id="9d085-124">Office.MailboxEnums.AppointmentSensitivityType</span></span>](/javascript/api/outlook/office.mailboxenums.appointmentsensitivitytype?view=outlook-js-preview)
+#### <a name="officemailboxenumsappointmentsensitivitytype"></a>[<span data-ttu-id="8b92a-124">Office. MailboxEnums. AppointmentSensitivityType</span><span class="sxs-lookup"><span data-stu-id="8b92a-124">Office.MailboxEnums.AppointmentSensitivityType</span></span>](/javascript/api/outlook/office.mailboxenums.appointmentsensitivitytype?view=outlook-js-preview)
 
-<span data-ttu-id="9d085-125">Foi adicionada uma nova `AppointmentSensitivityType` enumeração que representa as opções de sensibilidade disponíveis em um compromisso.</span><span class="sxs-lookup"><span data-stu-id="9d085-125">Added a new enum `AppointmentSensitivityType` that represents the sensitivity options available on an appointment.</span></span>
+<span data-ttu-id="8b92a-125">Foi adicionada uma nova `AppointmentSensitivityType` enumeração que representa as opções de sensibilidade disponíveis em um compromisso.</span><span class="sxs-lookup"><span data-stu-id="8b92a-125">Added a new enum `AppointmentSensitivityType` that represents the sensitivity options available on an appointment.</span></span>
 
-<span data-ttu-id="9d085-126">**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)</span><span class="sxs-lookup"><span data-stu-id="9d085-126">**Available in**: Outlook on Windows (connected to Office 365 subscription)</span></span>
-
-<br>
-
----
-
----
-
-### <a name="append-on-send"></a><span data-ttu-id="9d085-127">Anexar ao enviar</span><span class="sxs-lookup"><span data-stu-id="9d085-127">Append on send</span></span>
-
-#### <a name="officecontextmailboxitembodyappendonsendasync"></a>[<span data-ttu-id="9d085-128">Office. Context. Mailbox. Item. Body. appendOnSendAsync</span><span class="sxs-lookup"><span data-stu-id="9d085-128">Office.context.mailbox.item.body.appendOnSendAsync</span></span>](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-)
-
-<span data-ttu-id="9d085-129">Foi adicionada uma nova função ao `Body` objeto que acrescenta dados ao final do corpo do item no modo de composição.</span><span class="sxs-lookup"><span data-stu-id="9d085-129">Added a new function to the `Body` object that appends data to the end of the item body in Compose mode.</span></span>
-
-<span data-ttu-id="9d085-130">**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)</span><span class="sxs-lookup"><span data-stu-id="9d085-130">**Available in**: Outlook on Windows (connected to Office 365 subscription)</span></span>
-
-#### <a name="extendedpermissions"></a>[<span data-ttu-id="9d085-131">ExtendedPermissions</span><span class="sxs-lookup"><span data-stu-id="9d085-131">ExtendedPermissions</span></span>](../../manifest/extendedpermissions.md)
-
-<span data-ttu-id="9d085-132">Adicionado um novo elemento ao manifesto onde a `AppendOnSend` permissão estendida deve ser incluída na coleção de permissões estendidas.</span><span class="sxs-lookup"><span data-stu-id="9d085-132">Added a new element to the manifest where the `AppendOnSend` extended permission must be included in the collection of extended permissions.</span></span>
-
-<span data-ttu-id="9d085-133">**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)</span><span class="sxs-lookup"><span data-stu-id="9d085-133">**Available in**: Outlook on Windows (connected to Office 365 subscription)</span></span>
+<span data-ttu-id="8b92a-126">**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)</span><span class="sxs-lookup"><span data-stu-id="8b92a-126">**Available in**: Outlook on Windows (connected to Office 365 subscription)</span></span>
 
 <br>
 
@@ -83,51 +63,19 @@ ms.locfileid: "43030814"
 
 ---
 
-### <a name="integration-with-actionable-messages"></a><span data-ttu-id="9d085-134">Integração à mensagens acionáveis</span><span class="sxs-lookup"><span data-stu-id="9d085-134">Integration with actionable messages</span></span>
+### <a name="append-on-send"></a><span data-ttu-id="8b92a-127">Anexar ao enviar</span><span class="sxs-lookup"><span data-stu-id="8b92a-127">Append on send</span></span>
 
-#### <a name="officecontextmailboxitemgetinitializationcontextasync"></a>[<span data-ttu-id="9d085-135">Office.context.mailbox.item.getInitializationContextAsync</span><span class="sxs-lookup"><span data-stu-id="9d085-135">Office.context.mailbox.item.getInitializationContextAsync</span></span>](office.context.mailbox.item.md#methods)
+#### <a name="officecontextmailboxitembodyappendonsendasync"></a>[<span data-ttu-id="8b92a-128">Office. Context. Mailbox. Item. Body. appendOnSendAsync</span><span class="sxs-lookup"><span data-stu-id="8b92a-128">Office.context.mailbox.item.body.appendOnSendAsync</span></span>](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-)
 
-<span data-ttu-id="9d085-136">Adicionada uma nova função que retorna os dados inicialização que são transmitidos quando o suplemento é [ativado por uma mensagem acionável](/outlook/actionable-messages/invoke-add-in-from-actionable-message).</span><span class="sxs-lookup"><span data-stu-id="9d085-136">Added a new function that returns initialization data passed when the add-in is [activated by an actionable message](/outlook/actionable-messages/invoke-add-in-from-actionable-message).</span></span>
+<span data-ttu-id="8b92a-129">Foi adicionada uma nova função ao `Body` objeto que acrescenta dados ao final do corpo do item no modo de composição.</span><span class="sxs-lookup"><span data-stu-id="8b92a-129">Added a new function to the `Body` object that appends data to the end of the item body in Compose mode.</span></span>
 
-<span data-ttu-id="9d085-137">**Disponível em:** Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (clássico)</span><span class="sxs-lookup"><span data-stu-id="9d085-137">**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (classic)</span></span>
+<span data-ttu-id="8b92a-130">**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno)</span><span class="sxs-lookup"><span data-stu-id="8b92a-130">**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)</span></span>
 
-<br>
+#### <a name="extendedpermissions"></a>[<span data-ttu-id="8b92a-131">ExtendedPermissions</span><span class="sxs-lookup"><span data-stu-id="8b92a-131">ExtendedPermissions</span></span>](../../manifest/extendedpermissions.md)
 
----
+<span data-ttu-id="8b92a-132">Adicionado um novo elemento ao manifesto onde a `AppendOnSend` permissão estendida deve ser incluída na coleção de permissões estendidas.</span><span class="sxs-lookup"><span data-stu-id="8b92a-132">Added a new element to the manifest where the `AppendOnSend` extended permission must be included in the collection of extended permissions.</span></span>
 
----
-
-### <a name="mail-signature"></a><span data-ttu-id="9d085-138">Assinatura de email</span><span class="sxs-lookup"><span data-stu-id="9d085-138">Mail signature</span></span>
-
-#### <a name="officecontextmailboxitembodysetsignatureasync"></a>[<span data-ttu-id="9d085-139">Office. Context. Mailbox. Item. Body. setSignatureAsync</span><span class="sxs-lookup"><span data-stu-id="9d085-139">Office.context.mailbox.item.body.setSignatureAsync</span></span>](/javascript/api/outlook/office.body?view=outlook-js-preview#setsignatureasync-data--options--callback-)
-
-<span data-ttu-id="9d085-140">Foi adicionada uma nova função ao `Body` objeto que adiciona ou substitui a assinatura no corpo do item no modo de composição.</span><span class="sxs-lookup"><span data-stu-id="9d085-140">Added a new function to the `Body` object that adds or replaces the signature in the item body in Compose mode.</span></span>
-
-<span data-ttu-id="9d085-141">**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno)</span><span class="sxs-lookup"><span data-stu-id="9d085-141">**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)</span></span>
-
-#### <a name="officecontextmailboxitemdisableclientsignatureasync"></a>[<span data-ttu-id="9d085-142">Office. Context. Mailbox. Item. disableClientSignatureAsync</span><span class="sxs-lookup"><span data-stu-id="9d085-142">Office.context.mailbox.item.disableClientSignatureAsync</span></span>](office.context.mailbox.item.md#methods)
-
-<span data-ttu-id="9d085-143">Adicionada uma nova função que desabilita a assinatura do cliente para a caixa de correio de envio no modo de composição.</span><span class="sxs-lookup"><span data-stu-id="9d085-143">Added a new function that disables the client signature for the sending mailbox in Compose mode.</span></span>
-
-<span data-ttu-id="9d085-144">**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno)</span><span class="sxs-lookup"><span data-stu-id="9d085-144">**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)</span></span>
-
-#### <a name="officecontextmailboxitemgetcomposetypeasync"></a>[<span data-ttu-id="9d085-145">Office. Context. Mailbox. Item. getComposeTypeAsync</span><span class="sxs-lookup"><span data-stu-id="9d085-145">Office.context.mailbox.item.getComposeTypeAsync</span></span>](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#getcomposetypeasync-options--callback-)
-
-<span data-ttu-id="9d085-146">Foi adicionada uma nova função que obtém o tipo de redação de uma mensagem no modo de composição.</span><span class="sxs-lookup"><span data-stu-id="9d085-146">Added a new function that gets the compose type of a message in Compose mode.</span></span>
-
-<span data-ttu-id="9d085-147">**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)</span><span class="sxs-lookup"><span data-stu-id="9d085-147">**Available in**: Outlook on Windows (connected to Office 365 subscription)</span></span>
-
-#### <a name="officecontextmailboxitemisclientsignatureenabledasync"></a>[<span data-ttu-id="9d085-148">Office. Context. Mailbox. Item. isClientSignatureEnabledAsync</span><span class="sxs-lookup"><span data-stu-id="9d085-148">Office.context.mailbox.item.isClientSignatureEnabledAsync</span></span>](office.context.mailbox.item.md#methods)
-
-<span data-ttu-id="9d085-149">Adicionada uma nova função que verifica se a assinatura do cliente está habilitada no modo de composição.</span><span class="sxs-lookup"><span data-stu-id="9d085-149">Added a new function that checks if the client signature is enabled on the item in Compose mode.</span></span>
-
-<span data-ttu-id="9d085-150">**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno)</span><span class="sxs-lookup"><span data-stu-id="9d085-150">**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)</span></span>
-
-#### <a name="officemailboxenumscomposetype"></a>[<span data-ttu-id="9d085-151">Office. MailboxEnums. composetype</span><span class="sxs-lookup"><span data-stu-id="9d085-151">Office.MailboxEnums.ComposeType</span></span>](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-preview)
-
-<span data-ttu-id="9d085-152">Adição de uma nova `ComposeType` Enumeração disponível no modo de composição.</span><span class="sxs-lookup"><span data-stu-id="9d085-152">Added a new enum `ComposeType` available in Compose mode.</span></span>
-
-<span data-ttu-id="9d085-153">**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno)</span><span class="sxs-lookup"><span data-stu-id="9d085-153">**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)</span></span>
+<span data-ttu-id="8b92a-133">**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno)</span><span class="sxs-lookup"><span data-stu-id="8b92a-133">**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (modern)</span></span>
 
 <br>
 
@@ -135,19 +83,13 @@ ms.locfileid: "43030814"
 
 ---
 
-### <a name="office-theme"></a><span data-ttu-id="9d085-154">Tema do Office</span><span class="sxs-lookup"><span data-stu-id="9d085-154">Office theme</span></span>
+### <a name="integration-with-actionable-messages"></a><span data-ttu-id="8b92a-134">Integração à mensagens acionáveis</span><span class="sxs-lookup"><span data-stu-id="8b92a-134">Integration with actionable messages</span></span>
 
-#### <a name="officecontextofficetheme"></a>[<span data-ttu-id="9d085-155">Office.context.officeTheme</span><span class="sxs-lookup"><span data-stu-id="9d085-155">Office.context.officeTheme</span></span>](/javascript/api/office/office.context#officetheme)
+#### <a name="officecontextmailboxitemgetinitializationcontextasync"></a>[<span data-ttu-id="8b92a-135">Office.context.mailbox.item.getInitializationContextAsync</span><span class="sxs-lookup"><span data-stu-id="8b92a-135">Office.context.mailbox.item.getInitializationContextAsync</span></span>](office.context.mailbox.item.md#methods)
 
-<span data-ttu-id="9d085-156">Capacidade adicional para obter o tema do Office.</span><span class="sxs-lookup"><span data-stu-id="9d085-156">Added ability to get Office theme.</span></span>
+<span data-ttu-id="8b92a-136">Adicionada uma nova função que retorna os dados inicialização que são transmitidos quando o suplemento é [ativado por uma mensagem acionável](/outlook/actionable-messages/invoke-add-in-from-actionable-message).</span><span class="sxs-lookup"><span data-stu-id="8b92a-136">Added a new function that returns initialization data passed when the add-in is [activated by an actionable message](/outlook/actionable-messages/invoke-add-in-from-actionable-message).</span></span>
 
-<span data-ttu-id="9d085-157">**Disponível em**: Outlook no Windows (conectado a assinatura do Office 365)</span><span class="sxs-lookup"><span data-stu-id="9d085-157">**Available in**: Outlook on Windows (connected to Office 365 subscription)</span></span>
-
-#### <a name="officeeventtypeofficethemechanged"></a>[<span data-ttu-id="9d085-158">Office.EventType.OfficeThemeChanged</span><span class="sxs-lookup"><span data-stu-id="9d085-158">Office.EventType.OfficeThemeChanged</span></span>](/javascript/api/office/office.eventtype)
-
-<span data-ttu-id="9d085-159">Adicionado `OfficeThemeChanged` evento `Mailbox`.</span><span class="sxs-lookup"><span data-stu-id="9d085-159">Added `OfficeThemeChanged` event to `Mailbox`.</span></span>
-
-<span data-ttu-id="9d085-160">**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)</span><span class="sxs-lookup"><span data-stu-id="9d085-160">**Available in**: Outlook on Windows (connected to Office 365 subscription)</span></span>
+<span data-ttu-id="8b92a-137">**Disponível em:** Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (clássico)</span><span class="sxs-lookup"><span data-stu-id="8b92a-137">**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on the web (classic)</span></span>
 
 <br>
 
@@ -155,17 +97,89 @@ ms.locfileid: "43030814"
 
 ---
 
-### <a name="sso"></a><span data-ttu-id="9d085-161">SSO</span><span class="sxs-lookup"><span data-stu-id="9d085-161">SSO</span></span>
+### <a name="mail-signature"></a><span data-ttu-id="8b92a-138">Assinatura de email</span><span class="sxs-lookup"><span data-stu-id="8b92a-138">Mail signature</span></span>
 
-#### <a name="officeruntimeauthgetaccesstoken"></a>[<span data-ttu-id="9d085-162">OfficeRuntime.auth.getAccessToken</span><span class="sxs-lookup"><span data-stu-id="9d085-162">OfficeRuntime.auth.getAccessToken</span></span>](../../../develop/sso-in-office-add-ins.md#sso-api-reference)
+#### <a name="officecontextmailboxitembodysetsignatureasync"></a>[<span data-ttu-id="8b92a-139">Office. Context. Mailbox. Item. Body. setSignatureAsync</span><span class="sxs-lookup"><span data-stu-id="8b92a-139">Office.context.mailbox.item.body.setSignatureAsync</span></span>](/javascript/api/outlook/office.body?view=outlook-js-preview#setsignatureasync-data--options--callback-)
 
-<span data-ttu-id="9d085-163">Foi adicionado acesso ao `getAccessToken`, que permite que os suplementos [obtenham um token de acesso](../../../outlook/authenticate-a-user-with-an-sso-token.md) da API do Microsoft Graph.</span><span class="sxs-lookup"><span data-stu-id="9d085-163">Added access to `getAccessToken`, which allows add-ins to [get an access token](../../../outlook/authenticate-a-user-with-an-sso-token.md) for the Microsoft Graph API.</span></span>
+<span data-ttu-id="8b92a-140">Foi adicionada uma nova função ao `Body` objeto que adiciona ou substitui a assinatura no corpo do item no modo de composição.</span><span class="sxs-lookup"><span data-stu-id="8b92a-140">Added a new function to the `Body` object that adds or replaces the signature in the item body in Compose mode.</span></span>
 
-<span data-ttu-id="9d085-164">**Disponível em:** Outlook no Windows (conectado à assinatura do Office 365), Outlook para Mac (conectado à assinatura do Office 365), Outlook na Web (moderno), Outlook na Web (clássico)</span><span class="sxs-lookup"><span data-stu-id="9d085-164">**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on Mac (connected to Office 365 subscription), Outlook on the web (modern), Outlook on the web (classic)</span></span>
+<span data-ttu-id="8b92a-141">**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)</span><span class="sxs-lookup"><span data-stu-id="8b92a-141">**Available in**: Outlook on Windows (connected to Office 365 subscription)</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="9d085-165">Confira também</span><span class="sxs-lookup"><span data-stu-id="9d085-165">See also</span></span>
+#### <a name="officecontextmailboxitemdisableclientsignatureasync"></a>[<span data-ttu-id="8b92a-142">Office. Context. Mailbox. Item. disableClientSignatureAsync</span><span class="sxs-lookup"><span data-stu-id="8b92a-142">Office.context.mailbox.item.disableClientSignatureAsync</span></span>](office.context.mailbox.item.md#methods)
 
-- [<span data-ttu-id="9d085-166">Suplementos do Outlook</span><span class="sxs-lookup"><span data-stu-id="9d085-166">Outlook add-ins</span></span>](../../../outlook/outlook-add-ins-overview.md)
-- [<span data-ttu-id="9d085-167">Exemplos de código de suplementos do Outlook</span><span class="sxs-lookup"><span data-stu-id="9d085-167">Outlook add-in code samples</span></span>](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [<span data-ttu-id="9d085-168">Introdução</span><span class="sxs-lookup"><span data-stu-id="9d085-168">Get started</span></span>](../../../quickstarts/outlook-quickstart.md)
-- [<span data-ttu-id="9d085-169">Conjuntos de requisitos e clientes com suporte</span><span class="sxs-lookup"><span data-stu-id="9d085-169">Requirement sets and supported clients</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)
+<span data-ttu-id="8b92a-143">Adicionada uma nova função que desabilita a assinatura do cliente para a caixa de correio de envio no modo de composição.</span><span class="sxs-lookup"><span data-stu-id="8b92a-143">Added a new function that disables the client signature for the sending mailbox in Compose mode.</span></span>
+
+<span data-ttu-id="8b92a-144">**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)</span><span class="sxs-lookup"><span data-stu-id="8b92a-144">**Available in**: Outlook on Windows (connected to Office 365 subscription)</span></span>
+
+#### <a name="officecontextmailboxitemgetcomposetypeasync"></a>[<span data-ttu-id="8b92a-145">Office. Context. Mailbox. Item. getComposeTypeAsync</span><span class="sxs-lookup"><span data-stu-id="8b92a-145">Office.context.mailbox.item.getComposeTypeAsync</span></span>](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#getcomposetypeasync-options--callback-)
+
+<span data-ttu-id="8b92a-146">Foi adicionada uma nova função que obtém o tipo de redação de uma mensagem no modo de composição.</span><span class="sxs-lookup"><span data-stu-id="8b92a-146">Added a new function that gets the compose type of a message in Compose mode.</span></span>
+
+<span data-ttu-id="8b92a-147">**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)</span><span class="sxs-lookup"><span data-stu-id="8b92a-147">**Available in**: Outlook on Windows (connected to Office 365 subscription)</span></span>
+
+#### <a name="officecontextmailboxitemisclientsignatureenabledasync"></a>[<span data-ttu-id="8b92a-148">Office. Context. Mailbox. Item. isClientSignatureEnabledAsync</span><span class="sxs-lookup"><span data-stu-id="8b92a-148">Office.context.mailbox.item.isClientSignatureEnabledAsync</span></span>](office.context.mailbox.item.md#methods)
+
+<span data-ttu-id="8b92a-149">Adicionada uma nova função que verifica se a assinatura do cliente está habilitada no modo de composição.</span><span class="sxs-lookup"><span data-stu-id="8b92a-149">Added a new function that checks if the client signature is enabled on the item in Compose mode.</span></span>
+
+<span data-ttu-id="8b92a-150">**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)</span><span class="sxs-lookup"><span data-stu-id="8b92a-150">**Available in**: Outlook on Windows (connected to Office 365 subscription)</span></span>
+
+#### <a name="officemailboxenumscomposetype"></a>[<span data-ttu-id="8b92a-151">Office. MailboxEnums. composetype</span><span class="sxs-lookup"><span data-stu-id="8b92a-151">Office.MailboxEnums.ComposeType</span></span>](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-preview)
+
+<span data-ttu-id="8b92a-152">Adição de uma nova `ComposeType` Enumeração disponível no modo de composição.</span><span class="sxs-lookup"><span data-stu-id="8b92a-152">Added a new enum `ComposeType` available in Compose mode.</span></span>
+
+<span data-ttu-id="8b92a-153">**Disponível no**: Outlook no Windows (conectado à assinatura do Office 365)</span><span class="sxs-lookup"><span data-stu-id="8b92a-153">**Available in**: Outlook on Windows (connected to Office 365 subscription)</span></span>
+
+<br>
+
+---
+
+---
+
+### <a name="office-theme"></a><span data-ttu-id="8b92a-154">Tema do Office</span><span class="sxs-lookup"><span data-stu-id="8b92a-154">Office theme</span></span>
+
+#### <a name="officecontextofficetheme"></a>[<span data-ttu-id="8b92a-155">Office.context.officeTheme</span><span class="sxs-lookup"><span data-stu-id="8b92a-155">Office.context.officeTheme</span></span>](/javascript/api/office/office.context#officetheme)
+
+<span data-ttu-id="8b92a-156">Capacidade adicional para obter o tema do Office.</span><span class="sxs-lookup"><span data-stu-id="8b92a-156">Added ability to get Office theme.</span></span>
+
+<span data-ttu-id="8b92a-157">**Disponível em**: Outlook no Windows (conectado a assinatura do Office 365)</span><span class="sxs-lookup"><span data-stu-id="8b92a-157">**Available in**: Outlook on Windows (connected to Office 365 subscription)</span></span>
+
+#### <a name="officeeventtypeofficethemechanged"></a>[<span data-ttu-id="8b92a-158">Office.EventType.OfficeThemeChanged</span><span class="sxs-lookup"><span data-stu-id="8b92a-158">Office.EventType.OfficeThemeChanged</span></span>](/javascript/api/office/office.eventtype)
+
+<span data-ttu-id="8b92a-159">Adicionado `OfficeThemeChanged` evento `Mailbox`.</span><span class="sxs-lookup"><span data-stu-id="8b92a-159">Added `OfficeThemeChanged` event to `Mailbox`.</span></span>
+
+<span data-ttu-id="8b92a-160">**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)</span><span class="sxs-lookup"><span data-stu-id="8b92a-160">**Available in**: Outlook on Windows (connected to Office 365 subscription)</span></span>
+
+<br>
+
+---
+
+---
+
+### <a name="online-meeting-provider-integration"></a><span data-ttu-id="8b92a-161">Integração do provedor de reunião online</span><span class="sxs-lookup"><span data-stu-id="8b92a-161">Online meeting provider integration</span></span>
+
+#### <a name="mobileonlinemeetingcommandsurface-extension-point"></a>[<span data-ttu-id="8b92a-162">Ponto de extensão MobileOnlineMeetingCommandSurface</span><span class="sxs-lookup"><span data-stu-id="8b92a-162">MobileOnlineMeetingCommandSurface extension point</span></span>](../../manifest/extensionpoint.md#mobileonlinemeetingcommandsurface-preview)
+
+<span data-ttu-id="8b92a-163">Adicionado `MobileOnlineMeetingCommandSurface` o ponto de extensão ao manifesto.</span><span class="sxs-lookup"><span data-stu-id="8b92a-163">Added `MobileOnlineMeetingCommandSurface` extension point to manifest.</span></span> <span data-ttu-id="8b92a-164">Ele define a integração da reunião online.</span><span class="sxs-lookup"><span data-stu-id="8b92a-164">It defines the online meeting integration.</span></span>
+
+<span data-ttu-id="8b92a-165">**Disponível em**: Outlook no Android (conectado à assinatura do Office 365)</span><span class="sxs-lookup"><span data-stu-id="8b92a-165">**Available in**: Outlook on Android (connected to Office 365 subscription)</span></span>
+
+<br>
+
+---
+
+---
+
+### <a name="sso"></a><span data-ttu-id="8b92a-166">SSO</span><span class="sxs-lookup"><span data-stu-id="8b92a-166">SSO</span></span>
+
+#### <a name="officeruntimeauthgetaccesstoken"></a>[<span data-ttu-id="8b92a-167">OfficeRuntime.auth.getAccessToken</span><span class="sxs-lookup"><span data-stu-id="8b92a-167">OfficeRuntime.auth.getAccessToken</span></span>](../../../develop/sso-in-office-add-ins.md#sso-api-reference)
+
+<span data-ttu-id="8b92a-168">Foi adicionado acesso ao `getAccessToken`, que permite que os suplementos [obtenham um token de acesso](../../../outlook/authenticate-a-user-with-an-sso-token.md) da API do Microsoft Graph.</span><span class="sxs-lookup"><span data-stu-id="8b92a-168">Added access to `getAccessToken`, which allows add-ins to [get an access token](../../../outlook/authenticate-a-user-with-an-sso-token.md) for the Microsoft Graph API.</span></span>
+
+<span data-ttu-id="8b92a-169">**Disponível em:** Outlook no Windows (conectado à assinatura do Office 365), Outlook para Mac (conectado à assinatura do Office 365), Outlook na Web (moderno), Outlook na Web (clássico)</span><span class="sxs-lookup"><span data-stu-id="8b92a-169">**Available in**: Outlook on Windows (connected to Office 365 subscription), Outlook on Mac (connected to Office 365 subscription), Outlook on the web (modern), Outlook on the web (classic)</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="8b92a-170">Confira também</span><span class="sxs-lookup"><span data-stu-id="8b92a-170">See also</span></span>
+
+- [<span data-ttu-id="8b92a-171">Suplementos do Outlook</span><span class="sxs-lookup"><span data-stu-id="8b92a-171">Outlook add-ins</span></span>](../../../outlook/outlook-add-ins-overview.md)
+- [<span data-ttu-id="8b92a-172">Exemplos de código de suplementos do Outlook</span><span class="sxs-lookup"><span data-stu-id="8b92a-172">Outlook add-in code samples</span></span>](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
+- [<span data-ttu-id="8b92a-173">Introdução</span><span class="sxs-lookup"><span data-stu-id="8b92a-173">Get started</span></span>](../../../quickstarts/outlook-quickstart.md)
+- [<span data-ttu-id="8b92a-174">Conjuntos de requisitos e clientes com suporte</span><span class="sxs-lookup"><span data-stu-id="8b92a-174">Requirement sets and supported clients</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)
