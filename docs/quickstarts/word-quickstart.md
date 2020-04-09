@@ -1,15 +1,15 @@
 ---
 title: Crie seu primeiro suplemento do painel de tarefas do Word
 description: Saiba como criar um suplemento do painel de tarefas do Word simples usando a API JS do Office.
-ms.date: 03/19/2020
+ms.date: 04/03/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 495fcc84ceb7705cf04be7a371c14b776eb0e560
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: 3c3482747817e26ea6c85687cca54bc1133eb17a
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890932"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185488"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do Word
 
@@ -27,6 +27,7 @@ Neste artigo, você aprenderá sobre o processo de criação de um suplemento do
 
 ### <a name="prerequisites"></a>Pré-requisitos
 
+[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 ### <a name="create-the-add-in-project"></a>Criar o projeto do suplemento

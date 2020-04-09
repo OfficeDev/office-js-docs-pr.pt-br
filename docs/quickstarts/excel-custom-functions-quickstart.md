@@ -4,12 +4,12 @@ description: Desenvolvendo funções personalizadas no guia de início rápido d
 title: 'Início rápido de funções personalizadas '
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 79c10a7ba032f478843ce94bf2eae39def051f40
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: abe4026da79f5348e9da559c8310b863ccf8abd9
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950723"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185593"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Introdução ao desenvolvimento de funções personalizadas do Excel
 
@@ -17,6 +17,7 @@ Com as funções personalizadas, os desenvolvedores agora podem adicionar novas 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
+[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 * Excel no Windows (versão 1904 ou posterior, conectado a assinatura do Office 365) ou Excel na Web
@@ -56,7 +57,7 @@ Para começar, você usará o gerador Yeoman para criar projeto com funções pe
 
 4. Inicie o servidor local da web, que é executado no Node.js. Você pode experimentar o suplemento função personalizada no Excel na Web ou no Windows. Você pode ser solicitado a abrir o painel de tarefas do suplemento, embora seja opcional. Ainda é possível executar as funções personalizadas sem abrir o painel de tarefas do suplemento.
 
-# <a name="excel-on-windowstabexcel-windows"></a>[Excel no Windows](#tab/excel-windows)
+# <a name="excel-on-windows"></a>[Excel no Windows](#tab/excel-windows)
 
 Para testar o suplemento no Excel para Windows ou Mac, execute o seguinte comando. Quando você executa este comando, o servidor Web local iniciará e o Excel abrirá com o seu suplemento carregado.
 
@@ -64,7 +65,7 @@ Para testar o suplemento no Excel para Windows ou Mac, execute o seguinte comand
 npm run start:desktop
 ```
 
-# <a name="excel-on-the-webtabexcel-online"></a>[Excel na Web](#tab/excel-online)
+# <a name="excel-on-the-web"></a>[Excel na Web](#tab/excel-online)
 
 Para testar o suplemento no Excel na Web, execute o seguinte comando. O servidor Web local será iniciado ao executar este comando.
 

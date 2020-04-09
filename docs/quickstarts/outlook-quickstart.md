@@ -1,15 +1,15 @@
 ---
 title: Criar seu primeiro suplemento do Outlook
 description: Saiba como criar um Suplemento do Outlook simples usando a API JS do Office.
-ms.date: 12/28/2019
+ms.date: 03/04/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 6c50ed57cd9fa809081060662c13af662b475ed2
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: bdef3ba43d8bb016f5d79ed3cafc25a6d89c345d
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325288"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185446"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Criar seu primeiro suplemento do Outlook
 
@@ -22,6 +22,8 @@ Você pode criar um suplemento do Office usando o [Gerador Yeoman para suplement
 # <a name="yeoman-generator"></a>[Gerador do Yeoman](#tab/yeomangenerator)
 
 ### <a name="prerequisites"></a>Pré-requisitos
+
+[!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 
 - [Node.js](https://nodejs.org/) (a versão mais recente de [LTS](https://nodejs.org/about/releases))
 
