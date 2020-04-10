@@ -3,12 +3,12 @@ title: Realizar sideload de suplementos do Office para teste
 description: Saiba como Sideload um suplemento do Office para teste
 ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 0cfb1060ead27f7f034880361c51f8a1d0ec87dc
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: dbadf9f7f692e1e71dd9696f531ed79bfc84f786
+ms.sourcegitcommit: c6e3bfd3deb77982d0b7082afd6a48678e96e1c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42891121"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43215058"
 ---
 # <a name="sideload-office-add-ins-for-testing"></a>Realizar sideload de suplementos do Office para teste
 
@@ -67,7 +67,7 @@ O vídeo a seguir oferece orientações para a realização do processo de sidel
 
     ![Caixa de diálogo Central de confiabilidade com catálogo selecionado](../images/sideload-windows-trust-center-dialog.png)
 
-8. Escolha o botão **OK** para fechar a janela de diálogo **Opções do Word**.
+8. Escolha o botão **OK** para fechar a janela de diálogo **Opções** .
 
 9. Feche e abra novamente o aplicativo do Office para que as alterações tenham efeito.
 
