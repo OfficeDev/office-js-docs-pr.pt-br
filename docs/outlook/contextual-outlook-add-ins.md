@@ -1,14 +1,14 @@
 ---
 title: Suplementos contextuais do Outlook
 description: Inicie tarefas relacionadas a uma mensagem sem sair da mensagem para resultar em uma experiência de usuário mais fácil e mais sofisticada.
-ms.date: 10/09/2019
+ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 84ea058e031fd2334706145bcdf8ca8e530c2c38
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: b7fa034eaafb60fb3328cabfe8c39106b8f71c51
+ms.sourcegitcommit: c6e3bfd3deb77982d0b7082afd6a48678e96e1c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720803"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43215093"
 ---
 # <a name="contextual-outlook-add-ins"></a>Suplementos contextuais do Outlook
 
@@ -28,13 +28,15 @@ A seguir apresentamos exemplos de suplementos contextuais:
 
 ## <a name="how-to-make-a-contextual-add-in"></a>Como fazer um suplemento contextual
 
-O manifesto de um suplemento contextual deve conter um elemento [ExtensionPoint](../reference/manifest/extensionpoint.md) com um atributo `xsi:type` definido como `DetectedEntity`. No elemento **ExtensionPoint**, o suplemento especifica as entidades ou a expressão regular que podem ativá-lo. Se uma entidade for especificada, ela poderá ser qualquer uma das propriedades no objeto [Entities](/javascript/api/outlook/office.entities).
+O manifesto de um suplemento contextual deve conter um elemento [ExtensionPoint](../reference/manifest/extensionpoint.md#detectedentity) com um atributo `xsi:type` definido como `DetectedEntity`. No elemento **ExtensionPoint**, o suplemento especifica as entidades ou a expressão regular que podem ativá-lo. Se uma entidade for especificada, ela poderá ser qualquer uma das propriedades no objeto [Entities](/javascript/api/outlook/office.entities).
 
 Dessa forma, o manifesto do suplemento precisa conter uma regra do tipo **ItemHasKnownEntity** ou **ItemHasRegularExpressionMatch**. O exemplo a seguir mostra como especificar que um suplemento deve se ativar em mensagens com uma entidade detectada que é um número de telefone:
 
 ```XML
 <ExtensionPoint xsi:type="DetectedEntity">
   <Label resid="contextLabel" />
+  <!--If you opt to include RequestedHeight, it must be between 140px to 450px, inclusive.-->
+  <!--<RequestedHeight>360</RequestedHeight>-->
   <SourceLocation resid="detectedEntityURL" />
   <Rule xsi:type="RuleCollection" Mode="And">
     <Rule xsi:type="ItemIs" ItemType="Message" />
