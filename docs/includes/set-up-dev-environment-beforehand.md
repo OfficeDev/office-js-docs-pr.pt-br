@@ -1,0 +1,2 @@
+>[!NOTE]
+> <span data-ttu-id="3a9bf-101">Se você não conhece o Node.js ou o npm, deve começar [configurando seu ambiente de desenvolvimento](../overview/set-up-your-dev-environment.md).</span><span class="sxs-lookup"><span data-stu-id="3a9bf-101">If you aren't familiar with Node.js or npm, you should start by [setting up your development environment](../overview/set-up-your-dev-environment.md).</span></span>
