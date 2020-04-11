@@ -161,7 +161,11 @@
                 - name: Use a caixa de diálogo do Office para reproduzir um vídeo
                   href: develop/dialog-video.md
             - name: Desempenho
-              href: concepts/resource-limits-and-performance-optimization.md
+              items:
+                - name: Evite usar o método context.sync em loops
+                  href: concepts/correlated-objects-pattern.md
+                - name: Limites de recurso e otimização de desempenho para Suplementos do Office
+                  href: concepts/resource-limits-and-performance-optimization.md
             - name: Privacidade e segurança
               href: concepts/privacy-and-security.md
             - name: 'Solicitar permissões para uso da API em suplementos '
@@ -956,6 +960,8 @@
               href: outlook/get-or-set-the-time-of-an-appointment.md
             - name: Obter e definir locais
               href: outlook/get-or-set-the-location-of-an-appointment.md
+            - name: Configurar uma reunião online (visualização)
+              href: outlook/online-meeting.md
         - name: Privacidade e segurança
           items:
             - name: Visão Geral
