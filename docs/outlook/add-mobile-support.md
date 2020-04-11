@@ -1,14 +1,14 @@
 ---
 title: Adicionar suporte móvel a um suplemento do Outlook
 description: A adição de suporte para o Outlook Mobile requer atualização do manifesto do suplemento e, possivelmente, a alteração do código para cenários móveis.
-ms.date: 12/10/2019
+ms.date: 04/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 31f58102129ae207da55839f7b48cc8a060645ad
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: de5f1209527c853afb2d0bf2061bd3e3cfa8d3e0
+ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720852"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43225663"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Adicionar suporte para comandos de suplementos para Outlook Mobile
 
@@ -84,7 +84,7 @@ Nos Outlook Mobile, os painéis de tarefa ocupam a tela inteira e, por padrão, 
 
 ### <a name="compose-mode-and-appointments"></a>Modo de redação e compromissos
 
-Atualmente, os suplementos do Outlook Mobile dão suporte à ativação apenas durante a leitura de mensagens. Os suplementos não são ativados ao redigir mensagens ou ao exibir ou redigir compromissos.
+Atualmente, os suplementos do Outlook Mobile dão suporte à ativação apenas durante a leitura de mensagens. Os suplementos não são ativados ao redigir mensagens ou ao exibir ou redigir compromissos. No entanto, os suplementos integrados do provedor de reunião online podem ser ativados no modo organizador de compromisso. Confira o artigo [criar um suplemento do Outlook Mobile para um provedor de reunião online](online-meeting.md) para saber mais sobre essa exceção.
 
 ### <a name="unsupported-apis"></a>APIs sem suporte
 
@@ -107,6 +107,6 @@ As APIs introduzidas no conjunto de requisitos 1,6 ou posterior não são suport
   - [Office.context.mailbox.item.getRegexMatches](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
   - [Office.context.mailbox.item.getRegexMatchesByName](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
 
-## <a name="see-also"></a>Também confira
+## <a name="see-also"></a>Confira também
 
 [Suporte ao conjunto de requisitos](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)

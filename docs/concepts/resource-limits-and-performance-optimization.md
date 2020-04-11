@@ -1,14 +1,14 @@
 ---
 title: Limites de recurso e otimização de desempenho para Suplementos do Office
 description: Saiba mais sobre os limites de recursos da plataforma de suplementos do Office, incluindo CPU e memória.
-ms.date: 09/09/2019
+ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 2265042e9c6d94476953d3fb71d89a022897371d
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 68f0bae8514a5f5769e648d6b74ffc3bdbccc194
+ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718626"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43225656"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites de recurso e otimização de desempenho para Suplementos do Office
 
@@ -26,7 +26,7 @@ Os limites de uso de recursos de tempo de execução aplicam-se a todos os tipos
 
 - **Uso de memória**: um limite de uso de memória padrão que é determinado dinamicamente com base na memória física disponível do dispositivo.
 
-   Por padrão, quando um cliente avançado do host detecta que o uso da memória física em um dispositivo excede 80% da memória disponível, o cliente começa a monitorar o uso de memória do suplemento, em um nível de documento para suplementos de conteúdo e de painel de tarefas e em um nível de caixa de correio para o Outlook suplementos. Em um intervalo padrão de 5 segundos, o cliente avisará o usuário se o uso da memória física para um conjunto de suplementos no nível do documento ou da caixa de correio exceder 50%. Esse limite de uso de memória usa memória física, em vez de virtual, para garantir o desempenho de dispositivos com RAM limitada, como Tablets. Os administradores podem substituir essa configuração dinâmica com um limite explícito usando a chave de registro do Windows **MemoryAlertThreshold** como uma configuração global, ir ajustar o intervalo de alerta usando a chave **AlertInterval** como uma configuração global.
+   Por padrão, quando um cliente avançado do host detecta que o uso da memória física em um dispositivo excede 80% da memória disponível, o cliente começa a monitorar o uso da memória do suplemento, em um nível de documento para suplementos de conteúdo e de painel de tarefas e em um nível de caixa de correio para suplementos do Outlook. Em um intervalo padrão de 5 segundos, o cliente avisará o usuário se o uso da memória física para um conjunto de suplementos no nível do documento ou da caixa de correio exceder 50%. Esse limite de uso de memória usa memória física, em vez de virtual, para garantir o desempenho de dispositivos com RAM limitada, como Tablets. Os administradores podem substituir essa configuração dinâmica com um limite explícito usando a chave de registro do Windows **MemoryAlertThreshold** como uma configuração global, ir ajustar o intervalo de alerta usando a chave **AlertInterval** como uma configuração global.
 
 - **Tolerância a falhas**: um limite padrão de quatro falhas para um suplemento.
 
@@ -102,6 +102,8 @@ Embora os limites de recursos para o uso de CPU e memória, a tolerância a falh
 - Se o suplemento usa um algoritmo com uso intensivo de CPU, mas é possível dividir a entrada ou a saída de dados em conjuntos menores, considere criar um serviço Web passando os dados para o serviço Web para aliviar a carga da CPU e aguarde um retorno de chamada assíncrono.
 
 - Teste o suplemento em relação ao maior volume de dados esperado e restrinja o suplemento a processar até esse limite.
+
+- Minimize as trocas de dados entre o suplemento e o documento do Office. Para obter mais informações, consulte [Evite usar o método Context. Sync em loops](correlated-objects-pattern.md).
 
 
 ## <a name="see-also"></a>Confira também

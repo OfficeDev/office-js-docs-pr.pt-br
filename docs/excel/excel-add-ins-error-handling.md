@@ -1,14 +1,14 @@
 ---
 title: Tratamento de erros
 description: Saiba mais sobre a lógica de tratamento de erro da API JavaScript do Excel para considerar os erros de tempo de execução.
-ms.date: 03/19/2019
+ms.date: 04/10/2020
 localization_priority: Normal
-ms.openlocfilehash: bee5824d8854a55d5ac4041be1335ce239b31a9e
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 85fcd580828a2db95cd8e021dec3611ca6591e1c
+ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717163"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43225725"
 ---
 # <a name="error-handling"></a>Tratamento de erros
 
@@ -53,25 +53,25 @@ A tabela a seguir é uma lista de erros que a API pode retornar.
 
 |error.code | error.message |
 |:----------|:--------------|
-|InvalidArgument |O argumento é inválido, está ausente ou tem um formato incorreto.|
-|InvalidRequest  |Não é possível processar a solicitação.|
-|InvalidReference|Esta referência não é válida para a operação atual.|
-|InvalidBinding  |Esta associação de objetos não é mais válida devido às atualizações anteriores.|
-|InvalidSelection|A seleção atual é inválida para esta operação.|
-|Unauthenticated |Informações de autenticação necessárias estão ausentes ou inválidas.|
-|AccessDenied |Você não pode realizar a operação solicitada.|
-|ItemNotFound |O recurso solicitado não existe.|
-|ActivityLimitReached|O limite de atividades foi alcançado.|
-|GeneralException|Ocorreu um erro interno ao processar a solicitação.|
-|NotImplemented  |O recurso solicitado não foi implementado.|
-|ServiceNotAvailable|O serviço não está disponível.|
-|Conflito|A solicitação não pôde ser processada devido a um conflito.|
-|ItemAlreadyExists|O recurso que está sendo criado já existe.|
-|UnsupportedOperation|Não há suporte para a operação que está sendo tentada.|
-|RequestAborted|A solicitação foi anulada durante o tempo de execução.|
-|ApiNotAvailable|A API solicitada não está disponível.|
-|InsertDeleteConflict|A tentativa de operação de exclusão ou inserção resultou em um conflito.|
-|InvalidOperation|A tentativa de operação é inválida no objeto.|
+|`AccessDenied` |Você não pode realizar a operação solicitada.|
+|`ActivityLimitReached`|O limite de atividades foi alcançado.|
+|`ApiNotAvailable`|A API solicitada não está disponível.|
+|`Conflict`|A solicitação não pôde ser processada devido a um conflito.|
+|`GeneralException`|Ocorreu um erro interno ao processar a solicitação.|
+|`InsertDeleteConflict`|A tentativa de operação de exclusão ou inserção resultou em um conflito.|
+|`InvalidArgument` |O argumento é inválido, está ausente ou tem um formato incorreto.|
+|`InvalidBinding`  |Esta associação de objetos não é mais válida devido às atualizações anteriores.|
+|`InvalidOperation`|A tentativa de operação é inválida no objeto.|
+|`InvalidReference`|Esta referência não é válida para a operação atual.|
+|`InvalidRequest`  |Não é possível processar a solicitação.|
+|`InvalidSelection`|A seleção atual é inválida para esta operação.|
+|`ItemAlreadyExists`|O recurso que está sendo criado já existe.|
+|`ItemNotFound` |O recurso solicitado não existe.|
+|`NotImplemented`  |O recurso solicitado não foi implementado.|
+|`RequestAborted`|A solicitação foi anulada durante o tempo de execução.|
+|`ServiceNotAvailable`|O serviço não está disponível.|
+|`Unauthenticated` |Informações de autenticação necessárias estão ausentes ou inválidas.|
+|`UnsupportedOperation`|Não há suporte para a operação que está sendo tentada.|
 
 ## <a name="see-also"></a>Confira também
 

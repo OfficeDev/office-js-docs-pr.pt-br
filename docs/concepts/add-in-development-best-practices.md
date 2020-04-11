@@ -1,14 +1,14 @@
 ---
 title: Práticas recomendadas para o desenvolvimento de suplementos do Office
 description: Aplique as práticas recomendadas ao desenvolver para criar suplementos do Office.
-ms.date: 03/18/2020
+ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 71a090721768b822a058091c258dd0c6c87e1425
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: aa544abaaa9f730bb751d6640e9157d7292c2608
+ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890536"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43225677"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Práticas recomendadas para o desenvolvimento de suplementos do Office
 
@@ -121,6 +121,7 @@ Para padrões que podem ser aplicados ao desenvolver sua experiência de primeir
 
 - Monitore a integridade do serviço e use a telemetria para monitorar o sucesso do usuário.
 
+- Minimize as trocas de dados entre o suplemento e o documento do Office. Para obter mais informações, consulte [Evite usar o método Context. Sync em loops](correlated-objects-pattern.md).
 
 ## <a name="market-your-add-in"></a>Comercializar seu suplemento
 

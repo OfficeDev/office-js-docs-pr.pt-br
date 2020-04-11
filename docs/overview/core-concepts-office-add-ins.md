@@ -2,15 +2,15 @@
 layout: LandingPage
 ms.topic: landing-page
 title: Principais conceitos dos Suplementos do Office
-description: Informações que se aplicam a todos os Suplementos do Office.
+description: Saiba mais sobre a plataforma de suplementos do Office.
 ms.date: 12/24/2019
 localization_priority: Priority
-ms.openlocfilehash: 47849cdca24d66e53a98e30b6b62ef7c08a669a4
-ms.sourcegitcommit: 350f5c6954dec3e9384e2030cd3265aaba7ae904
+ms.openlocfilehash: 9ee2f8704ae1c2e625a95c4822cd75eb76f56704
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/23/2019
-ms.locfileid: "40851682"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185628"
 ---
 # <a name="core-concepts"></a>Principais conceitos
 

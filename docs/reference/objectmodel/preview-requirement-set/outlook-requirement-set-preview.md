@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 description: Recursos e APIs que estão atualmente em versão prévia para suplementos do Outlook e as APIs JavaScript do Office.
-ms.date: 04/08/2020
+ms.date: 04/10/2020
 localization_priority: Normal
-ms.openlocfilehash: acc19c81f929596b0bd5622e696c1988cf31ee5c
-ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
+ms.openlocfilehash: f8ef7b8c37dbd7539c30457c4922c1c16262381c
+ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "43185411"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "43225670"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 
@@ -156,6 +156,8 @@ Adicionado `OfficeThemeChanged` evento `Mailbox`.
 ---
 
 ### <a name="online-meeting-provider-integration"></a>Integração do provedor de reunião online
+
+Adicionado suporte para integração de reunião online nos suplementos móveis do Outlook. Confira [criar um suplemento do Outlook Mobile para um provedor de reunião online](../../../outlook/online-meeting.md) para saber mais.
 
 #### <a name="mobileonlinemeetingcommandsurface-extension-point"></a>[Ponto de extensão MobileOnlineMeetingCommandSurface](../../manifest/extensionpoint.md#mobileonlinemeetingcommandsurface-preview)
 

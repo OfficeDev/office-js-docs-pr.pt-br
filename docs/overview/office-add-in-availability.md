@@ -1,14 +1,14 @@
 ---
 title: Disponibilidade de host e plataforma para suplementos do Office
 description: Conjuntos de requisitos com suporte para o Excel, OneNote, Outlook, PowerPoint, Project e Word.
-ms.date: 01/23/2020
+ms.date: 04/07/2020
 localization_priority: Priority
-ms.openlocfilehash: b30fe872fd89bb02afac99a7838d43d1fbee5464
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 823fd53e71c71f4a845f9a7b5c6177ad3f14745f
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688602"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185614"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilidade de host e plataforma para suplementos do Office
 
@@ -328,8 +328,10 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
   </tr>
   <tr>
     <td>Office na Web<br>(moderno)</td>
-    <td> - Leitura de email<br>
-      - Composição de email<br>
+    <td> - Mensagem lida<br>
+      - Composição da mensagem<br>
+      - Participante do compromisso (Leitura)<br>
+      - Organizador de compromissos (Redigir)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1"> Caixa de correio 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Caixa de correio 1.2</a><br>
@@ -343,8 +345,10 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
   </tr>
   <tr>
     <td>Office na Web<br>(clássico)</td>
-    <td> - Leitura de email<br>
-      - Composição de email<br>
+    <td> - Mensagem lida<br>
+      - Composição da mensagem<br>
+      - Participante do compromisso (Leitura)<br>
+      - Organizador de compromissos (Redigir)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1"> Caixa de correio 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Caixa de correio 1.2</a><br>
@@ -356,8 +360,10 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
   </tr>
   <tr>
     <td>Office no Windows<br>(conectado à assinatura do Office 365)</td>
-    <td> - Leitura de email<br>
-      - Composição de email<br>
+    <td> - Mensagem lida<br>
+      - Composição da mensagem<br>
+      - Participante do compromisso (Leitura)<br>
+      - Organizador de compromissos (Redigir)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a><br>
       - Módulos</td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1"> Caixa de correio 1.1</a><br>
@@ -372,8 +378,10 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
   </tr>
   <tr>
     <td>Office 2019 no Windows<br>(compra avulsa)</td>
-    <td> - Leitura de email<br>
-      - Composição de email<br>
+    <td> - Mensagem lida<br>
+      - Composição da mensagem<br>
+      - Participante do compromisso (Leitura)<br>
+      - Organizador de compromissos (Redigir)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a><br>
       - Módulos</td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1"> Caixa de correio 1.1</a><br>
@@ -387,8 +395,10 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
   </tr>
   <tr>
     <td>Office 2016 no Windows<br>(compra avulsa)</td>
-    <td> - Leitura de email<br>
-      - Composição de email<br>
+    <td> - Mensagem lida<br>
+      - Composição da mensagem<br>
+      - Participante do compromisso (Leitura)<br>
+      - Organizador de compromissos (Redigir)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a><br>
       - Módulos</td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1"> Caixa de correio 1.1</a><br>
@@ -399,8 +409,10 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
   </tr>
   <tr>
     <td>Office 2013 no Windows<br>(compra avulsa)</td>
-    <td> - Leitura de email<br>
-      - Composição de email</td>
+    <td> - Mensagem lida<br>
+      - Composição da mensagem<br>
+      - Participante do compromisso (Leitura)<br>
+      - Organizador de compromissos (Redigir)<br>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1"> Caixa de correio 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Caixa de correio 1.2</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Caixa de correio 1.3</a>*<br>
@@ -409,7 +421,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
   </tr>
   <tr>
     <td>Office no iOS<br>(conectado à assinatura do Office 365)</td>
-    <td> - Leitura de email<br>
+    <td> - Mensagem lida<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1"> Caixa de correio 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Caixa de correio 1.2</a><br>
@@ -420,8 +432,10 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
   </tr>
   <tr>
     <td>Office no Mac<br>(conectado à assinatura do Office 365)</td>
-    <td> - Leitura de email<br>
-      - Composição de email<br>
+    <td> - Mensagem lida<br>
+      - Composição da mensagem<br>
+      - Participante do compromisso (Leitura)<br>
+      - Organizador de compromissos (Redigir)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1"> Caixa de correio 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Caixa de correio 1.2</a><br>
@@ -435,8 +449,10 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
   </tr>
   <tr>
     <td>Office 2019 no Mac<br>(compra avulsa)</td>
-    <td> - Leitura de email<br>
-      - Composição de email<br>
+    <td> - Mensagem lida<br>
+      - Composição da mensagem<br>
+      - Participante do compromisso (Leitura)<br>
+      - Organizador de compromissos (Redigir)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1"> Caixa de correio 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Caixa de correio 1.2</a><br>
@@ -448,8 +464,10 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
   </tr>
   <tr>
     <td>Office 2016 no Mac<br>(compra avulsa)</td>
-    <td> - Leitura de email<br>
-      - Composição de email<br>
+    <td> - Mensagem lida<br>
+      - Composição da mensagem<br>
+      - Participante do compromisso (Leitura)<br>
+      - Organizador de compromissos (Redigir)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1"> Caixa de correio 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Caixa de correio 1.2</a><br>
@@ -461,7 +479,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
   </tr>
   <tr>
     <td>Outlook no Android<br>(conectado à assinatura do Office 365)</td>
-    <td> - Leitura de email<br>
+    <td> - Mensagem lida<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1"> Caixa de correio 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Caixa de correio 1.2</a><br>

@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos de API JavaScript do Outlook
 description: Saiba mais sobre os conjuntos de requisitos da API JavaScript do Outlook
-ms.date: 03/19/2020
+ms.date: 04/06/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 4df79433644990a6c1e65bbf623cc8bbdff5fe7a
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: 75c30bc3d4fdd59da26aa2a71eb2da0a4888b165
+ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42891135"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "43185418"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Conjuntos de requisitos de API JavaScript do Outlook
 
@@ -95,8 +95,8 @@ Os suplementos são compatíveis com o Outlook nas seguintes plataformas.
 | Mac | Assinatura do Office 365 | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md), [1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md), [1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md), [1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md), [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), [1.6](../objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md), [1.7](../objectmodel/requirement-set-1.7/outlook-requirement-set-1.7.md), [1.8](../objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md) |
 || compra avulsa 2019 | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md), [1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md), [1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md), [1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md), [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), [1.6](../objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md) |
 || compra avulsa 2016 | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md), [1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md), [1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md), [1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md), [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), [1.6](../objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md) |
-| iOS | Assinatura do Office 365 | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md), [1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md), [1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md), [1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md), [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| Android | Assinatura do Office 365 | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md), [1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md), [1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md), [1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md), [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| iOS | Assinatura do Office 365 | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md), [1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md), [1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md), [1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md), [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)<sup>3</sup> |
+| Android | Assinatura do Office 365 | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md), [1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md), [1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md), [1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md), [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)<sup>3</sup> |
 | Navegador da Web | interface do usuário moderna do Outlook quando conectado ao<br>Exchange Online: assinatura do Office 365, Outlook.com | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md), [1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md), [1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md), [1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md), [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), [1.6](../objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md), [1.7](../objectmodel/requirement-set-1.7/outlook-requirement-set-1.7.md), [1.8](../objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md) |
 | | interface do usuário clássica do Outlook quando conectado ao<br>Exchange local | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md), [1.2](../objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md), [1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md), [1.4](../objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md), [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), [1.6](../objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md) |
 
@@ -104,6 +104,8 @@ Os suplementos são compatíveis com o Outlook nas seguintes plataformas.
 > <sup>1</sup> O suporte de 1.8 no Outlook no Windows com uma assinatura do Office 365 está disponível na versão 1910 (criação 12130.20272). Para obter mais detalhes, consulte a [página atualizar histórico](/officeupdates/update-history-office365-proplus-by-date) e como [localizar a versão do cliente do Office e atualizar o canal ](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19).
 >
 > <sup>2</sup> O suporte de 1.3 no Outlook 2013 foi adicionado como parte da atualização de [8 de dezembro de 2015 do Outlook 2013 (KB3114349).](https://support.microsoft.com/kb/3114349). O suporte para a versão 1.4 no Outlook 2013 foi adicionado como parte da [atualização para Outlook 2013 de 13 de setembro de 2016 (KB3118280)](https://support.microsoft.com/help/3118280). O suporte para a versão 1.4 no Outlook 2016 (compra única) foi adicionado como parte da [atualização para o Office 2016 de 3 de julho de 2018 (KB4022223)](https://support.microsoft.com/help/4022223).
+>
+> <sup>3</sup> No momento, existem considerações adicionais ao projetar e implementar suplementos para clientes móveis. Por exemplo, o único modo suportado é o Message Read. Para obter mais detalhes, consulte [considerações de código ao adicionar suporte aos comandos de suplemento do Outlook Mobile](../../outlook/add-mobile-support.md#code-considerations).
 
 > [!TIP]
 > É possível distinguir o Outlook clássico do moderno no navegador da Web, verificando sua barra de ferramentas da caixa de correio.
