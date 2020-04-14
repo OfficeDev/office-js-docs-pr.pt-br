@@ -1,14 +1,14 @@
 ---
 title: Visão geral da autenticação e autorização nos Suplementos do Office
 description: Exija que os usuários autentiquem o logon nos aplicativos Web e suplementos do Office.
-ms.date: 01/25/2020
+ms.date: 04/13/2020
 localization_priority: Priority
-ms.openlocfilehash: 79734cf0ee67c2e01db80934b2699da18a686034
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 25dbe38497e3f375bab8ec60f541d2610753576d
+ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719431"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43241060"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Visão geral da autenticação e autorização nos Suplementos do Office
 
@@ -43,8 +43,8 @@ Após o seu código ter extraído a declaração desejada no token, ele usará e
 
 Antes de começar a implementar a autenticação do usuário com o SSO, certifique-se de que você está totalmente familiarizado com o artigo [Habilitar o logon único para Suplementos do Office](sso-in-office-add-ins.md). Observe também estes exemplos:
 
-- [SSO do NodeJS do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO), especialmente o arquivo [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/src/auth.ts). 
-- [SSO do ASP.NET do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO). 
+- [SSO do NodeJS do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO), especialmente o arquivo [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js).
+- [SSO do ASP.NET do Suplemento do Office](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO).
 
 Esses exemplos, no entanto, não usam o token como um token de ID. Eles o utilizam para obter acesso ao Microsoft Graph com o fluxo **On Behalf Of**.
 
