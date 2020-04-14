@@ -1,14 +1,14 @@
 ---
-ms.date: 07/15/2019
+ms.date: 04/13/2020
 description: Use tags JSDoc para criar dinamicamente seus metadados JSON de funções personalizadas.
 title: Gerar metadados JSON automaticamente para funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: e346392a5d2f643b1484de52a9bddb3e3be52f2f
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: d62def1d107d4472d2e89623c4f10b5cd012f28c
+ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719452"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43241067"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Gerar metadados JSON automaticamente para funções personalizadas
 
@@ -103,7 +103,7 @@ No exemplo a seguir, incremento é o `id` e o `name` da função.
 Fornece a exibição `name` da função personalizada.
 
 * Se o nome não for fornecido, o id também será usado como nome.
-* Caracteres permitidos: Letras de [caractere Alfabético Unicode](https://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic), números, ponto (.) e sublinhado (\_).
+* Caracteres permitidos: Letras de [caractere Alfabético Unicode](http://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic), números, ponto (.) e sublinhado (\_).
 * Deve começar com uma letra.
 * O comprimento máximo é de 128 caracteres.
 
@@ -139,7 +139,7 @@ Sintaxe: @helpurl _url_
 
 A _url_ fornecida é exibida no Excel.
 
-No exemplo a seguir, o `helpurl` é www.contoso.com/weatherhelp.
+No exemplo a seguir, o `helpurl` é `www.contoso.com/weatherhelp`.
 
 ```js
 /**

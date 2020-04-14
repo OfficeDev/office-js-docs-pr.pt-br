@@ -1,14 +1,14 @@
 ---
 title: Obter e definir cabeçalhos de Internet
 description: Como obter e definir cabeçalhos da Internet em uma mensagem em um suplemento do Outlook.
-ms.date: 11/04/2019
+ms.date: 04/10/2020
 localization_priority: Normal
-ms.openlocfilehash: d7f38b7564683ce51ed0bd840480b4a8b2040bf6
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 488a4414580296da59eef3eb703e1c8da7e7d7c2
+ms.sourcegitcommit: 231e23d72e04e0536480d6b16df95113f1eff738
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165809"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43238210"
 ---
 # <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>Obter e definir cabeçalhos de Internet em uma mensagem em um suplemento do Outlook
 
@@ -33,6 +33,8 @@ Introduzido no conjunto de requisitos 1,8, as APIs de cabeçalhos da Internet pe
 - Informações de carimbo em um email que persiste depois de deixar o Exchange entre todos os clientes.
 - Leia as informações em um email que persistiram depois que o email deixou o Exchange entre todos os clientes em cenários de leitura de email.
 - Acessar o cabeçalho MIME inteiro do email.
+
+![Diagrama de cabeçalhos de Internet. Text: o usuário 1 envia email. O suplemento gerencia cabeçalhos de Internet personalizados enquanto o usuário está redigindo email. O usuário 2 recebe o email. O suplemento Obtém cabeçalhos de Internet de emails recebidos e, em seguida, analisa e usa cabeçalhos personalizados. ](../images/outlook-internet-headers.png)
 
 ## <a name="set-internet-headers-while-composing-a-message"></a>Definir cabeçalhos de Internet ao redigir uma mensagem
 

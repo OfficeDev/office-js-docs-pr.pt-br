@@ -3,12 +3,12 @@ title: Elemento ExtensionPoint no arquivo de manifesto
 description: Define onde um suplemento expõe a funcionalidade na interface de usuário do Office.
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 89040ff84afd7e4c33bea8af04255ef19a8e0f50
-ms.sourcegitcommit: c6e3bfd3deb77982d0b7082afd6a48678e96e1c3
+ms.openlocfilehash: 40b5ab8c2dcae01238854f5a3bfcc599f6b01a9b
+ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43215086"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43241032"
 ---
 # <a name="extensionpoint-element"></a>Elemento ExtensionPoint
 
@@ -263,7 +263,7 @@ Os elementos **Control** contidos neste ponto de extensão precisam ter o atribu
 > [!NOTE]
 > Este ponto de extensão só tem suporte na [Visualização](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) no Android com uma assinatura do Office 365.
 
-Este ponto de extensão coloca uma alternância apropriada de modo na superfície de comando para um compromisso no fator de forma móvel. Um organizador da reunião pode criar uma reunião online. Um participante pode ingressar na reunião online subsequentemente.
+Este ponto de extensão coloca uma alternância apropriada de modo na superfície de comando para um compromisso no fator de forma móvel. Um organizador da reunião pode criar uma reunião online. Um participante pode ingressar na reunião online subsequentemente. Para saber mais sobre esse cenário, confira o artigo [criar um suplemento do Outlook Mobile para um provedor de reunião online](../../outlook/online-meeting.md) .
 
 #### <a name="child-elements"></a>Elementos filho
 
@@ -271,9 +271,11 @@ Este ponto de extensão coloca uma alternância apropriada de modo na superfíci
 |:-----|:-----|
 |  [Control](control.md) |  Adiciona um botão à superfície de comando.  |
 
-Os elementos **ExtensionPoint** desse tipo só podem ter um elemento filho: um elemento **Control** .
+`ExtensionPoint`elementos desse tipo só podem ter um elemento filho: um `Control` elemento.
 
-O elemento de **controle** contido neste ponto de extensão deve ter o atributo **xsi: Type** definido `MobileButton`como.
+O `Control` elemento contido neste ponto de extensão deve ter o `xsi:type` atributo definido como `MobileButton`.
+
+As `Icon` imagens devem estar em escala de cinza usando `#919191` o código hex ou seu equivalente em [outros formatos de cor](https://convertingcolors.com/hex-color-919191.html).
 
 #### <a name="example"></a>Exemplo
 
@@ -293,7 +295,7 @@ O elemento de **controle** contido neste ponto de extensão deve ter o atributo 
       <bt:Image resid="UiLessIcon" size="48" scale="3" />
     </Icon>
     <Action xsi:type="ExecuteFunction">
-      <FunctionName>UiLessInsertMeetingLink</FunctionName>
+      <FunctionName>insertContosoMeeting</FunctionName>
     </Action>
   </Control>
 </ExtensionPoint>

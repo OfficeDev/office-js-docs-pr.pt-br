@@ -1,14 +1,14 @@
 ---
-ms.date: 05/08/2019
+ms.date: 04/13/2020
 description: Entenda os principais cenários de desenvolvimento de funções personalizadas do Excel que usam o novo tempo de execução do JavaScript.
 title: Tempo de execução de funções personalizadas do Excel
 localization_priority: Normal
-ms.openlocfilehash: 2cb950cd6f5f78ed76b19a1fa443720d7cfb86a2
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: dc049aa681ae4f7664d5bd92f925e7566c0d7103
+ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719494"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43241039"
 ---
 # <a name="runtime-for-excel-custom-functions"></a>Tempo de execução de funções personalizadas do Excel
 
@@ -81,7 +81,7 @@ ws.onerror = function (error) {
 
 Em uma função personalizada (ou em outras partes de um suplemento), você pode armazenar e acessar dados usando o objeto `OfficeRuntime.storage`. `Storage` é um sistema de armazenamento de chave-valor persistente e não criptografado, que fornece uma alternativa para [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), que não pode ser usado em funções personalizadas. `Storage`o oferece 10 MB de dados por domínio. Os domínios podem ser compartilhados por mais de um suplemento.
 
-`Storage` é uma solução de armazenamento compartilhado, o que significa que várias partes de um suplemento podem acessar os mesmos dados. Por exemplo, tokens para autenticação de usuário podem ser armazenados em `storage`, já que ele pode ser acessado tanto por uma função personalizada quanto por elementos da interface do usuário de um suplemento, como um painel de tarefas. Da mesma forma, quando dois suplementos compartilham o mesmo domínio (por exemplo, www.contoso.com/suplemento1, www.contoso.com/suplemento2), eles também podem compartilhar informações por meio de `storage`. Observe que os suplementos que têm diferentes subdomínios terão diferentes instâncias de `storage`; por exemplo, subdominio.contoso.com/suplemento1, diferentesubdominio.contoso.com/suplemento2.
+`Storage` é uma solução de armazenamento compartilhado, o que significa que várias partes de um suplemento podem acessar os mesmos dados. Por exemplo, tokens para autenticação de usuário podem ser armazenados em `storage`, já que ele pode ser acessado tanto por uma função personalizada quanto por elementos da interface do usuário de um suplemento, como um painel de tarefas. Da mesma forma, se dois suplementos compartilham o mesmo domínio (por exemplo, `www.contoso.com/addin1` `www.contoso.com/addin2`), eles também podem compartilhar informações de frente e para trás `storage`. Observe que os suplementos que possuem subdomínios diferentes terão instâncias diferentes `storage` (por exemplo, `subdomain.contoso.com/addin1`, `differentsubdomain.contoso.com/addin2`).
 
 Como `storage` pode ser um local compartilhado, é importante notar que é possível substituir os pares chave-valor.
 

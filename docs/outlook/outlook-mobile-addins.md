@@ -1,14 +1,14 @@
 ---
 title: Suplementos do Outlook para o Outlook Mobile
 description: Os suplementos do Outlook Mobile têm suporte em todas as contas do Office 365 Comercial, Outlook.com e, em breve, haverá suporte para contas do Gmail.
-ms.date: 02/28/2020
+ms.date: 04/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 7fc4ac511fe7e101775334cad6d4b000f7dc24ae
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.openlocfilehash: 4b6341ac1b340ebc46c616ae4274bfdf1e2d0672
+ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42561791"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43241081"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Suplementos do Outlook Mobile
 
@@ -35,7 +35,7 @@ Os suplementos do Outlook Mobile têm suporte em todas as contas do Office 365 C
     - O suplemento **DEVE** cumprir as [diretrizes de interface do usuário](outlook-addin-design.md).
     - O cenário do suplemento **DEVE** [fazer sentido no mobile](#what-makes-a-good-scenario-for-mobile-add-ins).
 
-- Há suporte apenas para leitura de emails no momento. Isso significa que o `MobileMessageReadCommandSurface` é o único [ExtensionPoint](../reference/manifest/extensionpoint.md) que você deve declarar na seção móvel de seu manifesto.
+- Em geral, só há suporte para o modo de leitura de mensagens no momento. Isso significa `MobileMessageReadCommandSurface` que é o único [ExtensionPoint](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface) que você deve declarar na seção móvel do seu manifesto. No entanto, o modo organizador de compromissos tem suporte para suplementos integrados de provedor de reunião online que, em vez disso, declare o [ponto de extensão MobileOnlineMeetingCommandSurface](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface-preview). Confira o artigo [criar um suplemento do Outlook Mobile para um provedor de reunião online](online-meeting.md) para saber mais sobre esse cenário.
 
 - A API [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) não é suportada no celular, já que o aplicativo móvel usa APIs REST para se comunicar com o servidor. Se seu back-end do aplicativo precisa se conectar ao servidor do Exchange, é possível usar o token de retorno de chamada para fazer chamadas de API REST. Para obter detalhes, consulte [Usar APIs REST do Outlook de um suplemento do Outlook](use-rest-api.md).
 

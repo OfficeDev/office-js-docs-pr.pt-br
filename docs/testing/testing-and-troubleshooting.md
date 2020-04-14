@@ -1,14 +1,14 @@
 ---
 title: Solucionar erros de usuários com suplementos do Office
 description: Saiba como solucionar erros de usuários em suplementos do Office.
-ms.date: 12/31/2019
+ms.date: 04/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 6050b05a39a49ff5bd504b68635388a8ceb3fc65
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 81ca9eac89fb949bd2c1f7f63861d8a4f5295a79
+ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719760"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43241046"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Solucionar erros de usuários com suplementos do Office
 
@@ -121,7 +121,7 @@ O navegador pode estar armazenando esses arquivos em cache. Para evitar isso, de
 - Pragma: "sem cache"
 - Expira: "-1"
 
-Para um exemplo de como fazer isso em um servidor Node.JS Express, confira [este arquivo app.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/app.js). Para um exemplo em um projeto ASP.NET, confira [este arquivo cshtml](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/src/Office-Add-in-ASPNET-SSO-WebAPI/Views/Shared/_Layout.cshtml).
+Para um exemplo de como fazer isso em um servidor Node.JS Express, confira [este arquivo app.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/app.js). Para um exemplo em um projeto ASP.NET, confira [este arquivo cshtml](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Views/Shared/_Layout.cshtml).
 
 Se o seu suplemento estiver hospedado no Servidor de Informações da Internet (IIS), você também poderá adicionar o seguinte ao web.config.
 
