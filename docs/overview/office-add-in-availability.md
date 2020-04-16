@@ -1,14 +1,14 @@
 ---
 title: Disponibilidade de host e plataforma para suplementos do Office
 description: Conjuntos de requisitos com suporte para o Excel, OneNote, Outlook, PowerPoint, Project e Word.
-ms.date: 04/07/2020
+ms.date: 04/13/2020
 localization_priority: Priority
-ms.openlocfilehash: 823fd53e71c71f4a845f9a7b5c6177ad3f14745f
-ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
+ms.openlocfilehash: 72da8db755fe6d1d166f66a70c8c298e5a27adff
+ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "43185614"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "43241053"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilidade de host e plataforma para suplementos do Office
 
@@ -328,10 +328,10 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
   </tr>
   <tr>
     <td>Office na Web<br>(moderno)</td>
-    <td> - Mensagem lida<br>
-      - Composição da mensagem<br>
-      - Participante do compromisso (Leitura)<br>
-      - Organizador de compromissos (Redigir)<br>
+    <td> - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagereadcommandsurface">Mensagem lida</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagecomposecommandsurface">Composição da mensagem</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#appointmentattendeecommandsurface">Participante do compromisso (Leitura)</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#appointmentorganizercommandsurface">Organizador de compromissos (Redigir)</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1"> Caixa de correio 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Caixa de correio 1.2</a><br>
@@ -345,10 +345,10 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
   </tr>
   <tr>
     <td>Office na Web<br>(clássico)</td>
-    <td> - Mensagem lida<br>
-      - Composição da mensagem<br>
-      - Participante do compromisso (Leitura)<br>
-      - Organizador de compromissos (Redigir)<br>
+    <td> - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagereadcommandsurface">Mensagem lida</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagecomposecommandsurface">Composição da mensagem</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#appointmentattendeecommandsurface">Participante do compromisso (Leitura)</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#appointmentorganizercommandsurface">Organizador de compromissos (Redigir)</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1"> Caixa de correio 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Caixa de correio 1.2</a><br>
@@ -360,12 +360,12 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
   </tr>
   <tr>
     <td>Office no Windows<br>(conectado à assinatura do Office 365)</td>
-    <td> - Mensagem lida<br>
-      - Composição da mensagem<br>
-      - Participante do compromisso (Leitura)<br>
-      - Organizador de compromissos (Redigir)<br>
+    <td> - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagereadcommandsurface">Mensagem lida</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagecomposecommandsurface">Composição da mensagem</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#appointmentattendeecommandsurface">Participante do compromisso (Leitura)</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#appointmentorganizercommandsurface">Organizador de compromissos (Redigir)</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a><br>
-      - Módulos</td>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#module">Módulos</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1"> Caixa de correio 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Caixa de correio 1.2</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3"> Caixa de correio 1.3</a><br>
@@ -378,12 +378,12 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
   </tr>
   <tr>
     <td>Office 2019 no Windows<br>(compra avulsa)</td>
-    <td> - Mensagem lida<br>
-      - Composição da mensagem<br>
-      - Participante do compromisso (Leitura)<br>
-      - Organizador de compromissos (Redigir)<br>
+    <td> - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagereadcommandsurface">Mensagem lida</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagecomposecommandsurface">Composição da mensagem</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#appointmentattendeecommandsurface">Participante do compromisso (Leitura)</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#appointmentorganizercommandsurface">Organizador de compromissos (Redigir)</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a><br>
-      - Módulos</td>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#module">Módulos</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1"> Caixa de correio 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Caixa de correio 1.2</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3"> Caixa de correio 1.3</a><br>
@@ -395,12 +395,12 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
   </tr>
   <tr>
     <td>Office 2016 no Windows<br>(compra avulsa)</td>
-    <td> - Mensagem lida<br>
-      - Composição da mensagem<br>
-      - Participante do compromisso (Leitura)<br>
-      - Organizador de compromissos (Redigir)<br>
+    <td> - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagereadcommandsurface">Mensagem lida</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagecomposecommandsurface">Composição da mensagem</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#appointmentattendeecommandsurface">Participante do compromisso (Leitura)</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#appointmentorganizercommandsurface">Organizador de compromissos (Redigir)</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a><br>
-      - Módulos</td>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#module">Módulos</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1"> Caixa de correio 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Caixa de correio 1.2</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3"> Caixa de correio 1.3</a><br>
@@ -409,10 +409,10 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
   </tr>
   <tr>
     <td>Office 2013 no Windows<br>(compra avulsa)</td>
-    <td> - Mensagem lida<br>
-      - Composição da mensagem<br>
-      - Participante do compromisso (Leitura)<br>
-      - Organizador de compromissos (Redigir)<br>
+    <td> - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagereadcommandsurface">Mensagem lida</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagecomposecommandsurface">Composição da mensagem</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#appointmentattendeecommandsurface">Participante do compromisso (Leitura)</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#appointmentorganizercommandsurface">Organizador de compromissos (Redigir)</a><br>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1"> Caixa de correio 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Caixa de correio 1.2</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3">Caixa de correio 1.3</a>*<br>
@@ -421,7 +421,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
   </tr>
   <tr>
     <td>Office no iOS<br>(conectado à assinatura do Office 365)</td>
-    <td> - Mensagem lida<br>
+    <td> - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#mobilemessagereadcommandsurface">Mensagem lida</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1"> Caixa de correio 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Caixa de correio 1.2</a><br>
@@ -432,10 +432,10 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
   </tr>
   <tr>
     <td>Office no Mac<br>(conectado à assinatura do Office 365)</td>
-    <td> - Mensagem lida<br>
-      - Composição da mensagem<br>
-      - Participante do compromisso (Leitura)<br>
-      - Organizador de compromissos (Redigir)<br>
+    <td> - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagereadcommandsurface">Mensagem lida</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagecomposecommandsurface">Composição da mensagem</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#appointmentattendeecommandsurface">Participante do compromisso (Leitura)</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#appointmentorganizercommandsurface">Organizador de compromissos (Redigir)</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1"> Caixa de correio 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Caixa de correio 1.2</a><br>
@@ -449,10 +449,10 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
   </tr>
   <tr>
     <td>Office 2019 no Mac<br>(compra avulsa)</td>
-    <td> - Mensagem lida<br>
-      - Composição da mensagem<br>
-      - Participante do compromisso (Leitura)<br>
-      - Organizador de compromissos (Redigir)<br>
+    <td> - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagereadcommandsurface">Mensagem lida</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagecomposecommandsurface">Composição da mensagem</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#appointmentattendeecommandsurface">Participante do compromisso (Leitura)</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#appointmentorganizercommandsurface">Organizador de compromissos (Redigir)</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1"> Caixa de correio 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Caixa de correio 1.2</a><br>
@@ -464,10 +464,10 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
   </tr>
   <tr>
     <td>Office 2016 no Mac<br>(compra avulsa)</td>
-    <td> - Mensagem lida<br>
-      - Composição da mensagem<br>
-      - Participante do compromisso (Leitura)<br>
-      - Organizador de compromissos (Redigir)<br>
+    <td> - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagereadcommandsurface">Mensagem lida</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagecomposecommandsurface">Composição da mensagem</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#appointmentattendeecommandsurface">Participante do compromisso (Leitura)</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#appointmentorganizercommandsurface">Organizador de compromissos (Redigir)</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1"> Caixa de correio 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Caixa de correio 1.2</a><br>
@@ -479,7 +479,8 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
   </tr>
   <tr>
     <td>Outlook no Android<br>(conectado à assinatura do Office 365)</td>
-    <td> - Mensagem lida<br>
+    <td> - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#mobilemessagereadcommandsurface">Mensagem lida</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#mobileonlinemeetingcommandsurface-preview">Organizador de compromissos (Redigir): reunião on-line (visualização)<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de suplemento</a></td>
     <td> - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1"> Caixa de correio 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2">Caixa de correio 1.2</a><br>
