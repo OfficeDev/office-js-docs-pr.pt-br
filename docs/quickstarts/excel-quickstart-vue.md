@@ -1,15 +1,15 @@
 ---
 title: Criar um suplemento do painel de tarefas do Excel usando o Vue
 description: Aprenda a criar um suplemento do painel de tarefas simples do Excel usando a API do Office JS e o Vue.
-ms.date: 01/16/2020
+ms.date: 04/14/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: aff58bf3021be2efed0aef14a505dab8433d92a3
-ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
+ms.openlocfilehash: ef20d56181d3b0f6c865e81de9c8500ef9906c83
+ms.sourcegitcommit: 90c5830a5f2973a9ccd5c803b055e1b98d83f099
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "43185558"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "43529117"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>Criar um suplemento do painel de tarefas do Excel usando o Vue
 
@@ -58,12 +58,12 @@ Cada suplemento requer um arquivo de manifesto para definir os recursos e config
     Quando solicitado, forneça as seguintes informações para criar seu projeto de suplemento:
 
     - **Escolha o tipo de projeto:** `Office Add-in project containing the manifest only`
-    - **Qual será o nome do suplemento?** `my-office-add-in`
+    - **Qual será o nome do suplemento?** `My Office Add-in`
     - **Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?** `Excel`
 
     ![Gerador do Yeoman](../images/yo-office-manifest-only-vue.png)
 
-Após concluir o assistente, uma pasta `my-office-add-in` será criada, contendo um arquivo `manifest.xml`. Você usará o manifesto para sideload e testará seu suplemento no final do início rápido.
+Após concluir o assistente, uma pasta `My Office Add-in` será criada, contendo um arquivo `manifest.xml`. Você usará o manifesto para sideload e testará seu suplemento no final do início rápido.
 
 > [!TIP]
 > Você pode ignorar as orientações da *próximas etapas* fornecidas pelo gerador Yeoman após a criação do projeto de suplemento. As instruções passo a passo deste artigo fornecem todas as orientações necessárias para concluir este tutorial.
@@ -72,16 +72,29 @@ Após concluir o assistente, uma pasta `my-office-add-in` será criada, contendo
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-Para habilitar o HTTPS no seu aplicativo, crie um arquivo `vue.config.js` na pasta raiz do projeto Vue com o seguinte conteúdo:
+1. Para habilitar o HTTPS no seu aplicativo, crie um arquivo `vue.config.js` na pasta raiz do projeto Vue com o seguinte conteúdo:
 
-```js
-module.exports = {
-  devServer: {
-    port: 3000,
-    https: true
-  }
-};
-```
+    ```js
+    var fs = require("fs");
+    var path = require("path");
+    var homedir = require('os').homedir()
+  
+    module.exports = {
+      devServer: {
+        port: 3000,
+        https: true,
+        key: fs.readFileSync(path.resolve(`${homedir}/.office-addin-dev-certs/localhost.key`)),
+        cert: fs.readFileSync(path.resolve(`${homedir}/.office-addin-dev-certs/localhost.crt`)),
+        ca: fs.readFileSync(path.resolve(`${homedir}/.office-addin-dev-certs/ca.crt`))
+      }
+    }
+    ```
+
+2. No terminal, execute o seguinte comando para instalar os certificados do suplemento.
+
+   ```command&nbsp;line
+   npx office-addin-dev-certs install
+   ```
 
 ## <a name="update-the-app"></a>Atualizar o aplicativo
 
@@ -183,9 +196,7 @@ module.exports = {
    npm run serve
    ```
 
-2. Em um navegador da web, acesse `https://localhost:3000` (observe o `https`).. Se o navegador indicar que o certificado do site não é confiável, [configure o computador para confiar no certificado](https://github.com/OfficeDev/generator-office/blob/fd600bbe00747e64aa5efb9846295a3f66d428aa/src/docs/ssl.md#add-certification-file-through-ie).
-
-3. Quando a página no `https://localhost:3000` estiver em branco e sem erros de certificado, significa que ela está funcionando. O Aplicativo Vue é montado após a inicialização do Office, portanto, ele só mostra itens dentro de um ambiente do Excel.
+2. Em um navegador da web, acesse `https://localhost:3000` (observe o `https`).. Se a página no `https://localhost:3000` estiver em branco e sem erros de certificado, significa que ela está funcionando. O Aplicativo Vue é montado após a inicialização do Office, portanto, ele só mostra itens dentro de um ambiente do Excel.
 
 ## <a name="try-it-out"></a>Experimente
 
