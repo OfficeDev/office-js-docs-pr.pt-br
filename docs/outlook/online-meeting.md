@@ -2,14 +2,14 @@
 title: Criar um suplemento do Outlook Mobile para um provedor de reunião online (visualização)
 description: Descreve como configurar um suplemento móvel do Outlook para um provedor de serviços de reunião online.
 ms.topic: article
-ms.date: 04/13/2020
+ms.date: 04/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 6a9d484bb74f238c0c62e689c66afaeb284eec2d
-ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
+ms.openlocfilehash: ed89205962bf4662096167eb78388b475fffdf91
+ms.sourcegitcommit: 90c5830a5f2973a9ccd5c803b055e1b98d83f099
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "43241088"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "43529110"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider-preview"></a>Criar um suplemento do Outlook Mobile para um provedor de reunião online (visualização)
 
@@ -144,7 +144,7 @@ Como organizador da reunião, você deve ver telas semelhantes às três imagens
 
 Como participante da reunião, você verá uma tela semelhante à seguinte imagem ao exibir a reunião.
 
-[![captura de tela da tela ingressar na reunião no Android](../images/outlook-android-join-online-meeting-view.png)](../images/outlook-android-join-online-meeting-view-expanded.png#lightbox)
+[![captura de tela da tela ingressar na reunião no Android](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
 
 ## <a name="available-apis"></a>APIs disponíveis
 
