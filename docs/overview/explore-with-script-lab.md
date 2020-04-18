@@ -1,16 +1,16 @@
 ---
 title: Explore a API JavaScript do Office usando o Script Lab
 description: Use o script Lab para explorar a funcionalidade de protótipo e a API do Office JS.
-ms.date: 07/05/2019
+ms.date: 04/16/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: b3971bea435f4c1767026568e2b3d64955be8ef9
-ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
+ms.openlocfilehash: 6fb886f1c86267ed7081d1892d1314798ab4cedc
+ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "43185621"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "43547252"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>Explore a API JavaScript do Office usando o Script Lab
 
@@ -39,7 +39,7 @@ Comece a trabalhar rapidamente com um conjunto de exemplos internos que mostram 
 Além de código JavaScript ou TypeScript que chama a API do Office JS, cada snippet também contém marcação HTML que define o conteúdo do painel de tarefas e CSS que define a aparência do painel de tarefas. Você pode personalizar a marcação HTML e CSS para experimentar o posicionamento e o estilo de elementos à medida que você cria seu próprio suplemento no painel de tarefas.
 
 > [!TIP]
-> Para chamar as APIs de visualização dentro de um snippet, você precisará atualizar as bibliotecas do trecho para usar a CDN beta (`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`) e as `@types/office-js-preview`definições de tipo de visualização. Além disso, algumas APIs de visualização são acessíveis apenas se você se inscreveu no programa [Office Insider](https://products.office.com/office-insider) e está executando uma compilação do Office Insider.
+> Para chamar as APIs de visualização dentro de um snippet, você precisará atualizar as bibliotecas do trecho para usar a CDN beta (`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`) e as `@types/office-js-preview`definições de tipo de visualização. Além disso, algumas APIs de visualização são acessíveis apenas se você se inscreveu no programa [Office Insider](https://insider.office.com) e está executando uma compilação do Office Insider.
 
 ### <a name="save-and-share-snippets"></a>Salvar e compartilhar trechos
 
