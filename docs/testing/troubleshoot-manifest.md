@@ -1,14 +1,14 @@
 ---
 title: Validar o manifesto de suplemento do Office
 description: Saiba como validar o manifesto de um suplemento do Office usando o esquema XML e outras ferramentas.
-ms.date: 12/31/2019
+ms.date: 04/16/2020
 localization_priority: Normal
-ms.openlocfilehash: bb24cdca34ac92fa1ca9f292bc1f52b5fbd01688
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: a6c33603f278e092d5b2b1c85879e03ee10031e3
+ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719746"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "43547227"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>Validar o manifesto de suplemento do Office
 
@@ -36,16 +36,18 @@ Se você não tiver usado o [gerador Yeoman para Suplementos do Office](https://
 
 1. Instale o [Node.js](https://nodejs.org/download/).
 
-2. Execute o seguinte comando no diretório raiz do seu projeto. Substitua o `MANIFEST_FILE` pelo nome do arquivo de manifesto.
+2. Execute o seguinte comando no diretório raiz do seu projeto. 
 
     ```command&nbsp;line
-    npx office-addin-manifest validate MANIFEST_FILE
+    npm run validate
     ```
 
     > [!NOTE]
-    > Se ao executar esse comando resultar na mensagem de erro "A sintaxe do comando não é válida". (como o comando `validate` não é reconhecido), execute o seguinte comando para validar o manifesto (substitua o `MANIFEST_FILE` pelo nome do arquivo de manifesto): 
+    > Se este comando não estiver disponível ou não estiver funcionando, execute o seguinte comando em vez de forçar o uso da versão mais recente da ferramenta Office-AddIn-manifest ( `MANIFEST_FILE` substituindo pelo nome do arquivo de manifesto):
     >
-    > `npx --ignore-existing office-addin-manifest validate MANIFEST_FILE`
+    > ```command&nbsp;line
+    > npx --ignore-existing office-addin-manifest validate MANIFEST_FILE
+    > ```
 
 ## <a name="validate-your-manifest-against-the-xml-schema"></a>Validar seu manifesto em relação ao esquema XML
 

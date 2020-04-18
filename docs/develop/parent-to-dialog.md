@@ -1,14 +1,14 @@
 ---
 title: Passando dados e mensagens para uma caixa de diálogo da página host
-description: Saiba como transmitir dados para uma caixa de diálogo da página host usando as APIs messageChild e DialogParentMessageReceived
-ms.date: 03/11/2020
+description: Saiba como transmitir dados para uma caixa de diálogo da página host usando as APIs messageChild e DialogParentMessageReceived.
+ms.date: 04/16/2020
 localization_priority: Normal
-ms.openlocfilehash: 03d89a2e5ffb9060edb25dd8e0c3c71c0dd274eb
-ms.sourcegitcommit: 153576b1efd0234c6252433e22db213238573534
+ms.openlocfilehash: cd332a58aa79a81aab7cf5a3d247950ce8bc655e
+ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "42561867"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "43547054"
 ---
 # <a name="passing-data-and-messages-to-a-dialog-box-from-its-host-page-preview"></a>Passando dados e mensagens para uma caixa de diálogo da página de host (visualização)
 
@@ -17,7 +17,7 @@ O suplemento pode enviar mensagens da [página host](dialog-api-in-office-add-in
 > [!Important]
 >
 > - As APIs descritas neste artigo estão em visualização. Eles estão disponíveis para os desenvolvedores de experimentação; Mas não deve ser usado em um suplemento de produção. Até que esta API seja liberada, use as técnicas descritas em [passar informações para a caixa de diálogo](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box) para suplementos de produção.
-> - As APIs descritas neste artigo exigem o Office 365 (a versão de assinatura do Office). Você deve usar o build e a versão mensal mais recente do canal Insiders. É necessário ingressar no programa Office Insider para obter essa versão. Para saber mais, confira a página [Seja um Office Insider](https://products.office.com/office-insider?tab=tab-1). Observe que, quando uma compilação é graduada para o canal semestral de produção, o suporte para recursos de visualização é desativado para essa compilação.
+> - As APIs descritas neste artigo exigem o Office 365 (a versão de assinatura do Office). Você deve usar o build e a versão mensal mais recente do canal Insiders. É necessário ingressar no programa Office Insider para obter essa versão. Para saber mais, confira a página [Seja um Office Insider](https://insider.office.com). Observe que, quando uma compilação é graduada para o canal semestral de produção, o suporte para recursos de visualização é desativado para essa compilação.
 > - Na fase inicial da visualização, as APIs têm suporte no Excel, PowerPoint e Word; Mas não no Outlook.
 >
 > [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
