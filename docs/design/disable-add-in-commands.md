@@ -3,12 +3,12 @@ title: Habilitar e Desabilitar Comandos de Suplemento
 description: Aprenda a alterar o status habilitado ou desabilitado dos botões da faixa de opções personalizados e itens de menu no seu Suplemento da Web do Office.
 ms.date: 04/11/2020
 localization_priority: Priority
-ms.openlocfilehash: a0436a07ef5c7ec64ad391747da69061e1a7b0f0
-ms.sourcegitcommit: 231e23d72e04e0536480d6b16df95113f1eff738
+ms.openlocfilehash: b223949c5665f0e523a6003ccb4e3f29cc3f017c
+ms.sourcegitcommit: 79c55e59294e220bd21a5006080f72acf3ec0a3f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "43238224"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "43581922"
 ---
 # <a name="enable-and-disable-add-in-commands-preview"></a>Habilitar e Desabilitar Comandos de Suplemento (visualização)
 
@@ -76,7 +76,7 @@ Por padrão, qualquer comando de suplemento é habilitado quando o aplicativo do
 
 As etapas essenciais para alterar o status habilitado de um Comando de Suplemento são:
 
-1. Criar um objeto [RibbonUpdaterData](/javascript/api/office-runtime/officeruntime.ribbonupdaterdata) que (1) especifique o comando e sua guia pai por seus IDs, conforme especificado no manifesto; e (2) especifica o estado habilitado ou desabilitado do comando.
+1. Criar um objeto [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) que (1) especifique o comando e sua guia pai por seus IDs, conforme especificado no manifesto; e (2) especifica o estado habilitado ou desabilitado do comando.
 2. Passe o objeto **RibbonUpdaterData** para o método [OfficeRuntime.Ribbon.requestUpdate()](/javascript/api/office/office.ribbon?view=common-js#requestupdate-input-).
 
 Apresentamos um exemplo simples a seguir. Observe que "MyButton" e "OfficeAddinTab1" são copiados do manifesto.

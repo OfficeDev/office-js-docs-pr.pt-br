@@ -1,14 +1,14 @@
 ---
 title: Navegadores usados pelos Suplementos do Office
 description: Especifica como o sistema operacional e a versão do Office determinam o navegador que é usado pelos suplementos do Office.
-ms.date: 03/09/2020
+ms.date: 04/21/2020
 localization_priority: Normal
-ms.openlocfilehash: d53ea0da29c9d2cc1177d233eed9e3ee62a891f2
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 9ef4b6d4c09140fc6d6bb04eca51d845b79b6dc7
+ms.sourcegitcommit: 3355c6bd64ecb45cea4c0d319053397f11bc9834
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596463"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "43744849"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navegadores usados pelos Suplementos do Office
 
@@ -29,10 +29,12 @@ A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sis
 |Android|Chrome|
 |Windows / Office 2013 sem assinatura ou posterior.|Internet Explorer 11|
 |Versão do Windows 10 < 1903 / Office 365|Internet Explorer 11|
-|Versão do Windows 10 >= 1903 / versão do Office 365 < 16.0.11629|Internet Explorer 11|
-|Versão do Windows 10 >= 1903 / versão do Office 365 >= 16.0.11629|Microsoft Edge\*|
+|Versão do Windows 10 >= 1903/Office 365 ver < 16.0.11629<sup>1</sup>|Internet Explorer 11|
+|Versão do Windows 10 >= 1903/Office 365 ver >= 16.0.11629<sup>1</sup>|Microsoft Edge<sup>2</sup>|
 
-\*Quando o Microsoft Edge está sendo usado, o Windows 10 Narrator (às vezes chamado de "leitor de tela") lê a marcação `<title>` na página que é aberta no painel de tarefas. Quando o Internet Explorer 11 está sendo usado, o Narrador lê a barra de título do painel de tarefas, que vem do valor `<DisplayName>` no manifesto de suplemento.
+<sup>1</sup> consulte a [página Histórico de atualizações](/officeupdates/update-history-office365-proplus-by-date) e como [encontrar sua versão e canal de atualização do cliente Office](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19) para obter mais detalhes.
+
+<sup>2</sup> quando o Microsoft Edge está sendo usado, o Windows 10 Narrator (às vezes chamado de "leitor de tela" `<title>` ) lê a marca na página que é aberta no painel de tarefas. Quando o Internet Explorer 11 está sendo usado, o Narrador lê a barra de título do painel de tarefas, que vem do valor `<DisplayName>` no manifesto de suplemento.
 
 > [!IMPORTANT]
 > O Internet Explorer 11 não oferece suporte às versões do JavaScript posteriores a ES5. Se qualquer um dos usuários de suplemento tiverem plataformas com Internet Explorer 11, para que seja possível usar a sintaxe e os recursos do ECMAScript 2015 ou posterior, você precisará fazer o transpile do seu JavaScript para o ES5 ou usar um polyfill. Além disso, o Internet Explorer 11 não oferece suporte a alguns recursos do HTML5, como mídia, gravação e localização.
@@ -59,6 +61,9 @@ A definição de pontos de interrupção nas [DevTools do Microsoft Edge](https:
 
 Uma causa conhecida é que o Microsoft Edge exige que o localhost tenha uma isenção de auto-retorno no computador de desenvolvimento. Siga as instruções em [não é possível abrir o suplemento do localhost](/office/troubleshoot/error-messages/cannot-open-add-in-from-localhost).
 
+### <a name="get-errors-trying-to-download-a-pdf-file"></a>Obter erros ao tentar baixar um arquivo PDF
+
+O download de BLOBs diretamente como arquivos PDF em um suplemento não é suportado quando Edge é o navegador. A solução alternativa é criar um aplicativo Web simples que baixe BLOBs como arquivos PDF. No seu suplemento, chame o `Office.context.ui.openBrowserWindow(url)` método e passe a URL do aplicativo Web. Isso abrirá o aplicativo Web em uma janela do navegador fora do Office.
 
 ## <a name="see-also"></a>Confira também
 

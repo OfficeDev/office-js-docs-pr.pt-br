@@ -1,14 +1,14 @@
 ---
 title: Trabalhar com tabelas dinâmicas usando a API JavaScript do Excel
 description: Use a API JavaScript do Excel para criar tabelas dinâmicas e interagir com seus componentes.
-ms.date: 01/22/2020
+ms.date: 04/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 5899959b108ace2da35950655ff9313cd94243d3
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: f89e945f717982163a967971aaeff90ec0125545
+ms.sourcegitcommit: 79c55e59294e220bd21a5006080f72acf3ec0a3f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717100"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "43581936"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Trabalhar com tabelas dinâmicas usando a API JavaScript do Excel
 
@@ -25,7 +25,8 @@ Confira [criar uma tabela dinâmica para analisar os dados da planilha](https://
 A [tabela dinâmica](/javascript/api/excel/excel.pivottable) é o objeto central para tabelas dinâmicas na API JavaScript do Office.
 
 - `Workbook.pivotTables`e `Worksheet.pivotTables` são [PivotTableCollections](/javascript/api/excel/excel.pivottablecollection) que contêm as [tabelas dinâmicas](/javascript/api/excel/excel.pivottable) na pasta de trabalho e planilha, respectivamente.
-- Uma [tabela dinâmica](/javascript/api/excel/excel.pivottable) contém um [PivotTableCollections](/javascript/api/excel/excel.pivottablecollection) que tem vários [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy).
+- Uma [tabela dinâmica](/javascript/api/excel/excel.pivottable) contém um [PivotHierarchyCollection](/javascript/api/excel/excel.pivothierarchycollection) que tem vários [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy).
+- Esses [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy) podem ser adicionados a coleções de hierarquias específicas para definir como os dados dinâmicos de tabela dinâmica (conforme explicado na [seção a seguir](#hierarchies)).
 - Um [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) contém um [PivotFieldCollection](/javascript/api/excel/excel.pivotfieldcollection) que tem exatamente um [PivotField](/javascript/api/excel/excel.pivotfield). Se o design expandir para incluir tabelas dinâmicas OLAP, isso pode ser alterado.
 - Um [PivotField](/javascript/api/excel/excel.pivotfield) contém um [PivotItemCollection](/javascript/api/excel/excel.pivotitemcollection) que tem vários [PivotItems](/javascript/api/excel/excel.pivotitem).
 - Uma [tabela dinâmica](/javascript/api/excel/excel.pivottable) contém um [PivotLayout](/javascript/api/excel/excel.pivotlayout) que define onde o [PivotFields](/javascript/api/excel/excel.pivotfield) e o [PivotItems](/javascript/api/excel/excel.pivotitem) são exibidos na planilha.
@@ -166,6 +167,61 @@ Excel.run(function (context) {
     pivotTable.dataHierarchies.add(pivotTable.hierarchies.getItem("Crates Sold at Farm"));
     pivotTable.dataHierarchies.add(pivotTable.hierarchies.getItem("Crates Sold Wholesale"));
 
+    return context.sync();
+});
+```
+
+## <a name="pivottable-layouts-and-getting-pivoted-data"></a>Layouts de tabela dinâmica e obtendo dados dinâmicos
+
+Um [PivotLayout](/javascript/api/excel/excel.pivotlayout) define o posicionamento de hierarquias e seus dados. Você acessa o layout para determinar os intervalos onde os dados são armazenados.
+
+O diagrama a seguir mostra quais chamadas de função de layout correspondem aos intervalos da tabela dinâmica.
+
+![Um diagrama mostrando quais seções de uma tabela dinâmica são retornadas pelas funções obter intervalo do layout.](../images/excel-pivots-layout-breakdown.png)
+
+### <a name="get-data-from-the-pivottable"></a>Obter dados da tabela dinâmica
+
+O layout define como a tabela dinâmica é exibida na planilha. Isso significa que `PivotLayout` o objeto controla os intervalos usados para elementos de tabela dinâmica. Use os intervalos fornecidos pelo layout para obter dados coletados e agregados pela tabela dinâmica. Em particular, use `PivotLayout.getDataBodyRange` para acessar o que a tabela dinâmica produz.
+
+O código a seguir demonstra como obter a última linha dos dados da tabela dinâmica percorrendo o layout (o **total geral** da soma de enfileiras **vendidas no farm** e a **soma das colunas vendidas do atacadista** no exemplo anterior). Esses valores são somados em um total final, que é exibido na célula **E30** (fora da tabela dinâmica).
+
+```js
+Excel.run(function (context) {
+    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+
+    // Get the totals for each data hierarchy from the layout.
+    var range = pivotTable.layout.getDataBodyRange();
+    var grandTotalRange = range.getLastRow();
+    grandTotalRange.load("address");
+    return context.sync().then(function () {
+        // Sum the totals from the PivotTable data hierarchies and place them in a new range, outside of the PivotTable.
+        var masterTotalRange = context.workbook.worksheets.getActiveWorksheet().getRange("E30");
+        masterTotalRange.formulas = [["=SUM(" + grandTotalRange.address + ")"]];
+    });
+});
+```
+
+### <a name="layout-types"></a>Tipos de layout
+
+As tabelas dinâmicas têm três estilos de layout: compactar, estrutura de tópicos e tabular. Vimos o estilo compacto nos exemplos anteriores.
+
+Os exemplos a seguir usam os estilos de estrutura de tópicos e tabular, respectivamente. O exemplo de código mostra como fazer o ciclo entre os diferentes layouts.
+
+#### <a name="outline-layout"></a>Layout de estrutura de tópicos
+
+![Uma tabela dinâmica usando o layout de estrutura de tópicos.](../images/excel-pivots-outline-layout.png)
+
+#### <a name="tabular-layout"></a>Layout tabular
+
+![Uma tabela dinâmica usando o layout tabular.](../images/excel-pivots-tabular-layout.png)
+
+## <a name="delete-a-pivottable"></a>Excluir uma tabela dinâmica
+
+As tabelas dinâmicas são excluídas usando seus nomes.
+
+```js
+Excel.run(function (context) {
+    context.workbook.worksheets.getItem("Pivot").pivotTables.getItem("Farm Sales").delete();
     return context.sync();
 });
 ```
@@ -340,44 +396,6 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="pivottable-layouts"></a>Layouts de tabela dinâmica
-
-Um [PivotLayout](/javascript/api/excel/excel.pivotlayout) define o posicionamento de hierarquias e seus dados. Você acessa o layout para determinar os intervalos onde os dados são armazenados.
-
-O diagrama a seguir mostra quais chamadas de função de layout correspondem aos intervalos da tabela dinâmica.
-
-![Um diagrama mostrando quais seções de uma tabela dinâmica são retornadas pelas funções obter intervalo do layout.](../images/excel-pivots-layout-breakdown.png)
-
-O código a seguir demonstra como obter a última linha dos dados da tabela dinâmica percorrendo o layout. Esses valores são somados em um total geral.
-
-```js
-Excel.run(function (context) {
-    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
-
-    // Get the totals for each data hierarchy from the layout.
-    var range = pivotTable.layout.getDataBodyRange();
-    var grandTotalRange = range.getLastRow();
-    grandTotalRange.load("address");
-    return context.sync().then(function () {
-        // Sum the totals from the PivotTable data hierarchies and place them in a new range.
-        var masterTotalRange = context.workbook.worksheets.getActiveWorksheet().getRange("B27:C27");
-        masterTotalRange.formulas = [["All Crates", "=SUM(" + grandTotalRange.address + ")"]];
-    });
-});
-```
-
-As tabelas dinâmicas têm três estilos de layout: compactar, estrutura de tópicos e tabular. Vimos o estilo compacto nos exemplos anteriores.
-
-Os exemplos a seguir usam os estilos de estrutura de tópicos e tabular, respectivamente. O exemplo de código mostra como fazer o ciclo entre os diferentes layouts.
-
-### <a name="outline-layout"></a>Layout de estrutura de tópicos
-
-![Uma tabela dinâmica usando o layout de estrutura de tópicos.](../images/excel-pivots-outline-layout.png)
-
-### <a name="tabular-layout"></a>Layout tabular
-
-![Uma tabela dinâmica usando o layout tabular.](../images/excel-pivots-tabular-layout.png)
-
 ## <a name="change-hierarchy-names"></a>Alterar nomes de hierarquia
 
 Os campos de hierarquia são editáveis. O código a seguir demonstra como alterar os nomes exibidos de duas hierarquias de dados.
@@ -392,17 +410,6 @@ Excel.run(function (context) {
         dataHierarchies.items[0].name = "Farm Sales";
         dataHierarchies.items[1].name = "Wholesale";
     });
-});
-```
-
-## <a name="delete-a-pivottable"></a>Excluir uma tabela dinâmica
-
-As tabelas dinâmicas são excluídas usando seus nomes.
-
-```js
-Excel.run(function (context) {
-    context.workbook.worksheets.getItem("Pivot").pivotTables.getItem("Farm Sales").delete();
-    return context.sync();
 });
 ```
 
