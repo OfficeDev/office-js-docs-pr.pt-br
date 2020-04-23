@@ -4,12 +4,12 @@ description: Neste tutorial, você criará um suplemento do Excel que contém um
 ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 83568d7bb3ec1706fb9a2fb373be75b0774d9d94
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: d7f6f30bde7b56b1dec1abb55d01e6b65f8d3c7e
+ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717366"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "43547075"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Tutorial: Criar funções personalizadas no Excel
 
@@ -235,7 +235,7 @@ function clock(invocation) {
 --- 
 
 <ol start="4">
-<li>Agora, vamos experimentar a nova função. Na célula <strong>C1</strong>, digite o texto <strong>=CONTOSO.CLOCK())</strong> e pressione enter. Você deverá ver a data atual, que transmite uma atualização a cada segundo. Embora esse relógio seja um cronômetro em um loop, você pode usar a mesma ideia para definir um cronômetro em funções mais complexas que fazem solicitações da Web para dados em tempo real.</li>
+<li>Agora, vamos experimentar a nova função. Na célula <strong>C1</strong>, digite o texto <strong>=CONTOSO.CLOCK()</strong> e pressione enter. Você deverá ver a data atual, que transmite uma atualização a cada segundo. Embora esse relógio seja um cronômetro em um loop, você pode usar a mesma ideia para definir um cronômetro em funções mais complexas que fazem solicitações da Web para dados em tempo real.</li>
 </ol>
 
 ## <a name="next-steps"></a>Próximas etapas

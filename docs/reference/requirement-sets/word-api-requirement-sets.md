@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos da API JavaScript do Word
-description: O requisito do suplemento do Office define informações para os builds do Word
-ms.date: 03/11/2020
+description: Informações do conjunto de requisitos do Suplemento do Office para builds do Word.
+ms.date: 04/16/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 41cb1189bba31c83958c1c1284f347b615a5a220
-ms.sourcegitcommit: 05b73cdec5f4db7f0b8d48a5a552ee296a0332ca
+ms.openlocfilehash: 69addff587b026ab717a438e204b1258b06266b6
+ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42600708"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "43547217"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Word
 
@@ -26,7 +26,7 @@ Os suplementos do Word são executados em várias versões do Office, incluindo 
 
 |  Conjunto de requisitos  |   Office no Windows\*<br>(conectado à assinatura do Office 365)  |  Office no iPad<br>(conectado à assinatura do Office 365)  |  Office no Mac<br>(conectado à assinatura do Office 365)  | Office na Web  |
 |:-----|-----|:-----|:-----|:-----|
-| [Visualização](word-preview-apis.md) | Use a versão mais recente do Office para testar as APIs de visualização (talvez seja exigido ser membro do [programa Office Insider](https://products.office.com/office-insider)) |
+| [Visualização](word-preview-apis.md) | Use a versão mais recente do Office para testar as APIs de visualização (talvez seja exigido ser membro do [programa Office Insider](https://insider.office.com)) |
 | [WordApi 1.3](word-api-1-3-requirement-set.md) | Versão 1612 (Compilação 7668.1000) ou posterior| Março de 2017, 2.22 ou posterior | Março de 2017, 15.32 ou posterior| Março de 2017 |
 | [WordApi 1.2](word-api-1-2-requirement-set.md) | Atualização de dezembro de 2015, versão 1601 (build 6568.1000) ou posterior | Janeiro de 2016, 1.18 ou posterior | Janeiro de 2016, 15.19 ou posterior| Setembro de 2016 |
 | [WordApi 1.1](word-api-1-1-requirement-set.md) | Versão 1509 (build 4266.1001) ou posterior| Janeiro de 2016, 1.18 ou posterior | Janeiro de 2016, 15.19 ou posterior| Setembro de 2016 |

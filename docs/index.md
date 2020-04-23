@@ -8,12 +8,12 @@ ms.author: o365devx
 ms.prod: non-product-specific
 ms.date: 12/24/2019
 localization_priority: Priority
-ms.openlocfilehash: 2ebef8254d264442f3f57c6e19b015a7ef18a829
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 3cd783fd45ecabefac1512735b6befd4af2308ef
+ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165605"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "43547082"
 ---
 # <a name="office-add-ins-documentation"></a>Documentação de Suplementos do Office
 
@@ -34,25 +34,8 @@ Use a plataforma de suplementos do Office para criar soluções que estendem os 
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Visão geral da plataforma de Suplementos do Office</h3>
-                        <p><a href="overview/office-add-ins.md">Saiba mais sobre a plataforma de suplementos do Office.</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="images/index-landing-page/i_article.svg" alt="article" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Criando Suplementos do Office</h3>
-                        <p><a href="overview/office-add-ins-fundamentals.md">Saiba mais sobre a criação de suplementos do Office.</a></p>
+                        <h3>Introdução aos Suplementos do Office</h3>
+                        <p><a href="overview/learning-path-beginner.md">Saiba mais sobre a plataforma de Suplementos do Office.</a></p>
                     </div>
                 </div>
             </div>

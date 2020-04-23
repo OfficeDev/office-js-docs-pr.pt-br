@@ -1,15 +1,15 @@
 ---
-ms.date: 02/20/2020
+ms.date: 04/16/2020
 title: Configure o suplemento do Excel para compartilhar o tempo de execução do navegador (visualização)
 ms.prod: excel
 description: Configure o suplemento do Excel para compartilhar o tempo de execução do navegador e executar a faixa de opções, o painel de tarefas e o código de função personalizado no mesmo tempo de execução.
 localization_priority: Priority
-ms.openlocfilehash: 7fad97039d5a463978ca9a2d450af9bb698b49b5
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: f84de010787921eeb13205935b733ec36b2c3d37
+ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719326"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "43547245"
 ---
 # <a name="configure-your-excel-add-in-to-use-a-shared-javascript-runtime-preview"></a>Configure seu suplemento do Excel para usar um tempo de execução JavaScript compartilhado (visualização)
 
@@ -117,9 +117,8 @@ Não projete seu suplemento para usar vários painéis de tarefas se você plane
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Agora experimente alguns recursos do tempo de execução compartilhado, observando os seguintes artigos.
-
-- [Chamar APIs do Excel a partir de uma função personalizada](call-excel-apis-from-custom-function.md)
+- Leia o artigo [Chamar APIs do Excel de uma função personalizada](call-excel-apis-from-custom-function.md) para obter detalhes sobre o uso das APIs JavaScript do Excel e funções personalizadas do Excel em um tempo de execução compartilhado.
+- Explore o exemplo de padrões e práticas [Gerenciar a interface do usuário da faixa de opções e do painel de tarefas e executar o código no documento aberto](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-shared-runtime-scenario) para ver um exemplo maior do tempo de execução compartilhado JavaScript em ação.
 
 ## <a name="see-also"></a>Confira também
 
