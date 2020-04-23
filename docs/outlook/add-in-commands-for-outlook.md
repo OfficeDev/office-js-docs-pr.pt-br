@@ -3,12 +3,12 @@ title: Comandos de suplementos do Outlook
 description: Os comandos de suplementos do Outlook oferecem maneiras de iniciar ações específicas do suplemento na faixa de opções ao adicionar botões ou menus suspensos.
 ms.date: 12/05/2019
 localization_priority: Priority
-ms.openlocfilehash: 130722d5d97df15c4e47561d7053c6101de24c35
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 8d0fce06277de6ef699dbde640f13c657ca4919c
+ms.sourcegitcommit: 9da68c00ecc00a2f307757e0f5a903a8e31b7769
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718472"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "43785785"
 ---
 # <a name="add-in-commands-for-outlook"></a>Comandos de suplemento para o Outlook
 
@@ -32,7 +32,7 @@ Os comandos do suplemento são declarados no manifesto do suplemento no elemento
 
 As entradas de manifesto `VersionOverrides` especificam muitos itens para o suplemento, como host, tipos de controles a serem adicionados à faixa de opções, texto, ícones e quaisquer funções associadas.
 
-Quando um suplemento precisa fornecer atualizações de status, como indicadores de progresso ou mensagens de erro, ele deve fazer isso por meio das [APIs de notificação](/javascript/api/outlook/office.NotificationMessages). O processamento para as notificações também deve ser definido em um arquivo HTML separado que é especificado no nó `FunctionFile` do manifesto.
+Quando um suplemento precisa fornecer atualizações de status, como indicadores de progresso ou mensagens de erro, ele deve fazer isso por meio das [APIs de notificação](/javascript/api/outlook/office.notificationmessages). O processamento para as notificações também deve ser definido em um arquivo HTML separado que é especificado no nó `FunctionFile` do manifesto.
 
 Os desenvolvedores devem definir ícones para todos os tamanhos necessários, para que os comandos do suplemento se ajustem sem problemas junto com a faixa de opções. Os tamanhos de ícone obrigatórios são 80 x 80 pixels, 32 x 32 pixels e 16 x 16 pixels para área de trabalho e 48 x 48 pixels, 32 x 32 pixels e 25 x 25 pixels para dispositivos móveis.
 

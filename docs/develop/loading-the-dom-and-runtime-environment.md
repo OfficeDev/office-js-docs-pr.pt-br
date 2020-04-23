@@ -1,14 +1,14 @@
 ---
 title: Carregar o ambiente de tempo de execução e DOM
 description: Carregar o ambiente de tempo de execução de suplementos do Office e DOM
-ms.date: 07/01/2019
+ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 2ea5f1fdc42fe1ffde30f8145fd0c24599c7e702
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 7248f5b09a54552c3f16a9bc97bd4eae9795c8cd
+ms.sourcegitcommit: 9da68c00ecc00a2f307757e0f5a903a8e31b7769
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718913"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "43785714"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>Carregar o ambiente de tempo de execução e DOM
 
@@ -62,7 +62,7 @@ Os eventos a seguir ocorrem quando um suplemento Outlook é iniciado:
 
 ## <a name="checking-the-load-status"></a>Verificar o status de carregamento
 
-Uma maneira de verificar se o ambiente de tempo de execução e o DOM concluíram o carregamento é usar a função [.ready()](https://api.jquery.com/ready/) do jQuery: `$(document).ready()`. Por exemplo, o manipulador `onReady` de eventos a seguir garante que o dom seja carregado primeiro antes que o código específico para inicializar o suplemento seja executado. Subsequentemente, `onReady` o manipulador continua a usar a propriedade [Mailbox. Item](/javascript/api/outlook/office.mailbox) para obter o item atualmente selecionado no Outlook e chama a função principal do suplemento, `initDialer`.
+Uma maneira de verificar se o ambiente de tempo de execução e o DOM concluíram o carregamento é usar a função [.ready()](https://api.jquery.com/ready/) do jQuery: `$(document).ready()`. Por exemplo, o manipulador `onReady` de eventos a seguir garante que o dom seja carregado primeiro antes que o código específico para inicializar o suplemento seja executado. Subsequentemente, `onReady` o manipulador continua a usar a propriedade [Mailbox. Item](/javascript/api/outlook/office.mailbox#item) para obter o item atualmente selecionado no Outlook e chama a função principal do suplemento, `initDialer`.
 
 ```js
 Office.onReady()
@@ -110,7 +110,7 @@ O suplemento do Outlook de amostra de discagem telefônica mostra uma abordagem 
 >
 > Se o suplemento incluir mais de uma página, sempre que carregar uma nova página, a página deverá chamar `Office.onReady` ou atribuir um manipulador de `Office.initialize` eventos.
 
-## <a name="see-also"></a>Também confira
+## <a name="see-also"></a>Confira também
 
 - [Entendendo a API JavaScript do Office](understanding-the-javascript-api-for-office.md)
 - [Inicialize seu suplemento do Office](initialize-add-in.md)

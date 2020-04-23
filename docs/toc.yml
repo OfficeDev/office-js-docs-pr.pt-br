@@ -5,6 +5,9 @@
   displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
 - name: Introdução
   items:
+    - name: Comece aqui! Um guia para iniciantes
+      href: overview/learning-path-beginner.md
+      displayName: develop
     - name: Criando Suplementos do Office
       href: overview/office-add-ins-fundamentals.md
       displayName: develop
@@ -754,7 +757,7 @@
           href: reference/requirement-sets/outlook-api-requirement-sets.md
           displayName: Outlook
         - name: Referência da API
-          href: reference/outlook-api-reference-preview.md
+          href: reference/outlook-api-reference-1-8.md
           displayName: Outlook
         - name: Modelo de objeto da API
           items:

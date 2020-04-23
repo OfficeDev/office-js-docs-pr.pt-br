@@ -1,14 +1,14 @@
 ---
 title: Gerenciar o estado e as configurações de um suplemento do Outlook
 description: Saiba como persistir o estado e as configurações do suplemento para um suplemento do Outlook.
-ms.date: 02/27/2020
+ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 7d981107da68c329d209834059bfac494d6ccae4
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 3cb4f7d6e31fd4d37e01939f743682f60f24f959
+ms.sourcegitcommit: 9da68c00ecc00a2f307757e0f5a903a8e31b7769
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596645"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "43785778"
 ---
 # <a name="manage-state-and-settings-for-an-outlook-add-in"></a>Gerenciar o estado e as configurações de um suplemento do Outlook
 
@@ -65,7 +65,7 @@ function saveMyAppSettingsCallback(asyncResult) {
 }
 ```
 
-O método **saveAsync** salva as configurações móveis de forma assíncrona e utiliza uma função de retorno de chamada opcional. Este exemplo de código passa uma função de retorno de chamada denominada `saveMyAppSettingsCallback` para o método **saveAsync**. Quando a chamada assíncrona é retornada, o parâmetro _asyncResult_ da função `saveMyAppSettingsCallback` fornece acesso a um objeto [AsyncResult](/javascript/api/outlook) que você pode usar para determinar o êxito ou a falha da operação com a propriedade **AsyncResult.status**.
+O método **saveAsync** salva as configurações móveis de forma assíncrona e utiliza uma função de retorno de chamada opcional. Este exemplo de código passa uma função de retorno de chamada denominada `saveMyAppSettingsCallback` para o método **saveAsync**. Quando a chamada assíncrona é retornada, o parâmetro _asyncResult_ da função `saveMyAppSettingsCallback` fornece acesso a um objeto [AsyncResult](/javascript/api/office/office.asyncresult) que você pode usar para determinar o êxito ou a falha da operação com a propriedade **AsyncResult.status**.
 
 ### <a name="removing-a-roaming-setting"></a>Remover uma configuração móvel
 

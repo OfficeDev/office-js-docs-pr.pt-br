@@ -1,14 +1,14 @@
 ---
 title: Modelo de objeto comum de API JavaScript para Office
 description: Saiba mais sobre o modelo de objeto da API comum do Office JavaScript
-ms.date: 02/27/2020
+ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 0944ed36f2d8e4a4ed557dbd25e9f21be137cdaf
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 4f1f3e0de81e2422c43a9777b108783bb7810c3b
+ms.sourcegitcommit: 9da68c00ecc00a2f307757e0f5a903a8e31b7769
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719445"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "43785700"
 ---
 # <a name="common-javascript-api-object-model"></a>Modelo de objeto comum de API JavaScript para Office
 
@@ -20,9 +20,9 @@ Os suplementos de JavaScript do Office oferecem acesso à funcionalidade subjace
 
 **Aplica-se a:** todos os tipos de suplementos
 
-Quando um suplemento é [inicializado](initialize-add-in.md), ele possui diversos objetos diferentes com os quais pode interagir no ambiente do tempo de execução. O contexto do tempo de execução do suplemento é refletido na API por meio do objeto [Contexto](/javascript/api/office/office.context). O**Contexto** é o principal objeto que fornece acesso aos objetos mais importantes da API, como os objetos [Documento](/javascript/api/office/office.document) e [Caixa de correio](/javascript/api/outlook/Office.mailbox) que, por sua vez, fornecem acesso ao conteúdo do documento e da caixa de correio.
+Quando um suplemento é [inicializado](initialize-add-in.md), ele possui diversos objetos diferentes com os quais pode interagir no ambiente do tempo de execução. O contexto do tempo de execução do suplemento é refletido na API por meio do objeto [Contexto](/javascript/api/office/office.context). O**Contexto** é o principal objeto que fornece acesso aos objetos mais importantes da API, como os objetos [Documento](/javascript/api/office/office.document) e [Caixa de correio](/javascript/api/outlook/office.mailbox) que, por sua vez, fornecem acesso ao conteúdo do documento e da caixa de correio.
 
-Por exemplo, nos suplementos do painel de tarefas e de conteúdo, é possível usar a propriedade [documento](/javascript/api/office/office.context#document) do objeto **Context** para acessar as propriedades e os métodos do objeto **Document**. Isso permite interagir com o conteúdo de documentos do Word, planilhas do Excel ou tarefas do Project. Do mesmo modo, com os suplementos do Outlook, você pode usar a propriedade [mailbox](/javascript/api/outlook/Office.mailbox) do objeto **Context** para acessar as propriedades e os métodos do objeto **Mailbox** e interagir com a mensagem, a solicitação de reunião ou o conteúdo do compromisso.
+Por exemplo, nos suplementos do painel de tarefas e de conteúdo, é possível usar a propriedade [documento](/javascript/api/office/office.context#document) do objeto **Context** para acessar as propriedades e os métodos do objeto **Document**. Isso permite interagir com o conteúdo de documentos do Word, planilhas do Excel ou tarefas do Project. Do mesmo modo, com os suplementos do Outlook, você pode usar a propriedade [mailbox](/javascript/api/outlook/office.mailbox) do objeto **Context** para acessar as propriedades e os métodos do objeto **Mailbox** e interagir com a mensagem, a solicitação de reunião ou o conteúdo do compromisso.
 
 O objeto **Contexto** também fornece acesso às propriedades [contentLanguage](/javascript/api/office/office.context#contentlanguage) e [displayLanguage](/javascript/api/office/office.context#displaylanguage) que permitem determinar a localidade (idioma) usada no documento ou no item, ou pelo aplicativo host. A propriedade [roamingSettings](/javascript/api/office/office.context#roamingsettings) permite que você acesse os membros do objeto [RoamingSettings](/javascript/api/office/office.context#roamingsettings), que armazena configurações específicas para o suplemento para caixas de correio de usuários individuais. Por fim, o objeto **Contexto** fornece uma propriedade [ui](/javascript/api/office/office.ui) que permite que o suplemento inicie caixas de diálogo pop-up.
 
@@ -154,7 +154,7 @@ O método [Document.getFileAsync](/javascript/api/office/office.document#getfile
 
 **Aplica-se a:** suplementos do Outlook
 
-Os suplementos do Outlook usam principalmente um subconjunto da API exposta no objeto [Mailbox](/javascript/api/outlook/Office.mailbox). Para acessar os objetos e membros específicos para suplementos do Outlook, como o objeto [Item](/javascript/api/outlook/Office.mailbox), use a propriedade [mailbox](/javascript/api/outlook/Office.mailbox) do objeto **Context** para acessar o objeto **Mailbox**, conforme exibido na linha de código abaixo.
+Os suplementos do Outlook usam principalmente um subconjunto da API exposta no objeto [Mailbox](/javascript/api/outlook/office.mailbox). Para acessar os objetos e membros específicos para suplementos do Outlook, como o objeto [Item](/javascript/api/outlook/office.item), use a propriedade [mailbox](/javascript/api/outlook/office.context#mailbox) do objeto **Context** para acessar o objeto **Mailbox**, conforme exibido na linha de código abaixo.
 
 ```js
 // Access the Item object.

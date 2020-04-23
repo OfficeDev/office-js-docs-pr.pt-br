@@ -1,4 +1,4 @@
-Os suplementos do Outlook usam principalmente as APIs expostas pelo objeto [Mailbox](/javascript/api/outlook/Office.mailbox) . Para acessar os objetos e membros específicos para suplementos do Outlook, como o objeto [Item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md), use a propriedade [mailbox](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md) do objeto **Context** para acessar o objeto **Mailbox**, conforme exibido na linha de código abaixo.
+Os suplementos do Outlook usam principalmente as APIs expostas pelo objeto [Mailbox](/javascript/api/outlook/office.mailbox) . Para acessar os objetos e membros específicos para suplementos do Outlook, como o objeto [Item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md), use a propriedade [mailbox](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md) do objeto **Context** para acessar o objeto **Mailbox**, conforme exibido na linha de código abaixo.
 
 ```js
 // Access the Item object.

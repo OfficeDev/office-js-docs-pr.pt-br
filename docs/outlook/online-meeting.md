@@ -2,14 +2,14 @@
 title: Criar um suplemento do Outlook Mobile para um provedor de reunião online (visualização)
 description: Descreve como configurar um suplemento móvel do Outlook para um provedor de serviços de reunião online.
 ms.topic: article
-ms.date: 04/15/2020
+ms.date: 04/21/2020
 localization_priority: Normal
-ms.openlocfilehash: ed89205962bf4662096167eb78388b475fffdf91
-ms.sourcegitcommit: 90c5830a5f2973a9ccd5c803b055e1b98d83f099
+ms.openlocfilehash: 5fd0b28a661f6d2e8f3084427920c1a31053ae5b
+ms.sourcegitcommit: 3355c6bd64ecb45cea4c0d319053397f11bc9834
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "43529110"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "43744856"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider-preview"></a>Criar um suplemento do Outlook Mobile para um provedor de reunião online (visualização)
 
@@ -24,7 +24,10 @@ Neste artigo, você aprenderá como configurar seu suplemento do Outlook Mobile 
 
 Para permitir que os usuários criem reuniões online com seu suplemento, você deve configurar o `MobileOnlineMeetingCommandSurface` ponto de extensão no manifesto no elemento `MobileFormFactor`pai. Não há suporte para outros fatores de formulário.
 
-O exemplo a seguir mostra um exemplo do manifesto que inclui o `MobileFormFactor` elemento e `MobileOnlineMeetingCommandSurface` o ponto de extensão.
+O exemplo a seguir mostra um trecho do manifesto que inclui o `MobileFormFactor` elemento e `MobileOnlineMeetingCommandSurface` o ponto de extensão.
+
+> [!TIP]
+> Para saber mais sobre manifestos para suplementos do Outlook, confira [manifestos de suplemento do Outlook](manifests.md) e [Adicione suporte para comandos de suplemento do Outlook Mobile](add-mobile-support.md).
 
 ```xml
 ...
