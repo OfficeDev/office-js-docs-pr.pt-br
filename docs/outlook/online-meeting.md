@@ -2,14 +2,14 @@
 title: Criar um suplemento do Outlook Mobile para um provedor de reunião online (visualização)
 description: Descreve como configurar um suplemento móvel do Outlook para um provedor de serviços de reunião online.
 ms.topic: article
-ms.date: 04/21/2020
+ms.date: 04/23/2020
 localization_priority: Normal
-ms.openlocfilehash: 5fd0b28a661f6d2e8f3084427920c1a31053ae5b
-ms.sourcegitcommit: 3355c6bd64ecb45cea4c0d319053397f11bc9834
+ms.openlocfilehash: 8a54ddf96ca2b5e697198b4bc69b2ec5abee10d1
+ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "43744856"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "43930320"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider-preview"></a>Criar um suplemento do Outlook Mobile para um provedor de reunião online (visualização)
 
@@ -48,7 +48,7 @@ O exemplo a seguir mostra um trecho do manifesto que inclui o `MobileFormFactor`
                 <bt:Image resid="UiLessIcon" size="25" scale="3" />
                 <bt:Image resid="UiLessIcon" size="32" scale="1" />
                 <bt:Image resid="UiLessIcon" size="32" scale="2" />
-                <bt:Image resid="UiLessIcon" size="32" scale="2" />
+                <bt:Image resid="UiLessIcon" size="32" scale="3" />
                 <bt:Image resid="UiLessIcon" size="48" scale="1" />
                 <bt:Image resid="UiLessIcon" size="48" scale="2" />
                 <bt:Image resid="UiLessIcon" size="48" scale="3" />

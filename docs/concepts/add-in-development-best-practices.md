@@ -1,14 +1,14 @@
 ---
 title: Práticas recomendadas para o desenvolvimento de suplementos do Office
 description: Aplique as práticas recomendadas ao desenvolver para criar suplementos do Office.
-ms.date: 04/09/2020
+ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: aa544abaaa9f730bb751d6640e9157d7292c2608
-ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
+ms.openlocfilehash: 422e0ae57480481590a15f695e5942f712961cc1
+ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43225677"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "43930272"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Práticas recomendadas para o desenvolvimento de suplementos do Office
 
@@ -134,6 +134,10 @@ Para padrões que podem ser aplicados ao desenvolver sua experiência de primeir
 - Transmita a proposta de valor do seu suplemento em seu título e descrição. Não confie apenas em sua marca.
 
 - Crie um site para ajudar os usuários a encontrar e utilizar seu suplemento.
+
+## <a name="use-javascript-that-supports-internet-explorer"></a>Usar JavaScript que suporte o Internet Explorer
+
+[!INCLUDE [How to support IE](../includes/es5-support.md)]
 
 ## <a name="see-also"></a>Confira também
 

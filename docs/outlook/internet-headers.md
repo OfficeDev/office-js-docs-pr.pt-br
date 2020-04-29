@@ -1,14 +1,14 @@
 ---
 title: Obter e definir cabeçalhos de Internet
 description: Como obter e definir cabeçalhos da Internet em uma mensagem em um suplemento do Outlook.
-ms.date: 04/10/2020
+ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 488a4414580296da59eef3eb703e1c8da7e7d7c2
-ms.sourcegitcommit: 231e23d72e04e0536480d6b16df95113f1eff738
+ms.openlocfilehash: 1b6bdbbe77998ce92ea1b1b43874a32a30aa160a
+ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "43238210"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "43930285"
 ---
 # <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>Obter e definir cabeçalhos de Internet em uma mensagem em um suplemento do Outlook
 
@@ -28,13 +28,13 @@ Embora haja uma maneira de definir os cabeçalhos da Internet por meio de solici
 
 ## <a name="purpose-of-the-internet-headers-api"></a>Propósito da API de cabeçalhos de Internet
 
-Introduzido no conjunto de requisitos 1,8, as APIs de cabeçalhos da Internet permitem que os desenvolvedores:
+Introduzido no [conjunto de requisitos 1,8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md), as APIs de cabeçalhos da Internet permitem que os desenvolvedores:
 
 - Informações de carimbo em um email que persiste depois de deixar o Exchange entre todos os clientes.
 - Leia as informações em um email que persistiram depois que o email deixou o Exchange entre todos os clientes em cenários de leitura de email.
 - Acessar o cabeçalho MIME inteiro do email.
 
-![Diagrama de cabeçalhos de Internet. Text: o usuário 1 envia email. O suplemento gerencia cabeçalhos de Internet personalizados enquanto o usuário está redigindo email. O usuário 2 recebe o email. O suplemento Obtém cabeçalhos de Internet de emails recebidos e, em seguida, analisa e usa cabeçalhos personalizados. ](../images/outlook-internet-headers.png)
+![Diagrama de cabeçalhos de Internet. Text: o usuário 1 envia email. O suplemento gerencia cabeçalhos de Internet personalizados enquanto o usuário está redigindo email. O usuário 2 recebe o email. O suplemento Obtém cabeçalhos de Internet de emails recebidos e, em seguida, analisa e usa cabeçalhos personalizados.](../images/outlook-internet-headers.png)
 
 ## <a name="set-internet-headers-while-composing-a-message"></a>Definir cabeçalhos de Internet ao redigir uma mensagem
 
@@ -132,7 +132,16 @@ Sender's preferred vegetable: broccoli
 ```
 
 > [!IMPORTANT]
-> Este exemplo funciona para casos simples. Para recuperação de informações mais complexas (por exemplo, cabeçalhos de várias instâncias ou valores dobrados conforme descrito na [RFC 2822](https://tools.ietf.org/html/rfc2822)), tente usar uma biblioteca de análise de MIME apropriada.
+> Este exemplo funciona para casos simples. Para obter recuperação de informações mais complexas (por exemplo, cabeçalhos de várias instâncias ou valores dobrados conforme descrito na [RFC 2822](https://tools.ietf.org/html/rfc2822)), tente usar uma biblioteca de análise de MIME apropriada.
+
+## <a name="recommended-practices"></a>Práticas recomendadas
+
+No momento, os cabeçalhos da Internet são um recurso finito da caixa de correio de um usuário. Quando a cota estiver esgotada, você não poderá criar mais cabeçalhos de Internet nessa caixa de correio, o que pode resultar em um comportamento inesperado dos clientes que dependem disso para funcionar.
+
+Aplique as seguintes diretrizes ao criar cabeçalhos de Internet no suplemento.
+
+- Crie o número mínimo de cabeçalhos necessários.
+- Cabeçalhos de nome para que você possa reutilizar e atualizar seus valores posteriormente. Como tal, evite nomes de cabeçalhos de forma variável (por exemplo, com base na entrada do usuário, carimbo de data/hora, etc.).
 
 ## <a name="see-also"></a>Confira também
 

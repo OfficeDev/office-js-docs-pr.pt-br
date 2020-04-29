@@ -1,14 +1,14 @@
 ---
 title: Autenticação de usuário com um token de logon único
 description: Saiba como usar o token de logon único fornecido por um suplemento do Outlook para implementar o SSO com o serviço.
-ms.date: 11/19/2019
+ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 9ee3ece5929df602a35ddd9883c08e25164d8a22
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 588979159446b2ceb0b1bce834d72e6853cef5ee
+ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42721027"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "43930299"
 ---
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in-preview"></a>Autenticar um usuário com um token de logon único em um suplemento do Outlook (visualização)
 
@@ -22,7 +22,7 @@ Usando este método, o suplemento pode obter um token de acesso com escopo para 
 Para obter uma visão geral do SSO em suplementos do Office, confira [Habilitar o logon único para suplementos do Office](../develop/sso-in-office-add-ins.md) e [Autorizar acesso ao Microsoft Graph em suplementos do Office](../develop/authorize-to-microsoft-graph.md).
 
 > [!NOTE]
-> Para usar o SSO, você deve carregar a versão beta da biblioteca de JavaScript do Office de https://appsforoffice.microsoft.com/lib/beta/hosted/office.js na página de inicialização HTML do suplemento.
+> Para usar o SSO, você deve carregar a versão beta da biblioteca de JavaScript do Office de https://appsforoffice.microsoft.com/lib/beta/hosted/office.js na página de inicialização HTML do suplemento. No entanto, você **não** deve usar APIs beta em suplementos de produção.
 
 ## <a name="enable-modern-authentication-in-your-office-365-tenancy"></a>Habilitar a autenticação moderna em seu locatário do Office 365
 
