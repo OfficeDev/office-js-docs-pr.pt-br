@@ -1,34 +1,36 @@
 ---
 title: Opções de autenticação em suplementos do Outlook
 description: Os suplementos do Outlook oferecem diversos métodos de autenticação, dependendo do cenário específico.
-ms.date: 11/05/2019
+ms.date: 04/28/2020
 localization_priority: Priority
-ms.openlocfilehash: c7fc3f72dd04b2a64f6f5ce34732885a1a917001
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: dacd4677161def3f1580d1cbc953f73a7158ac9d
+ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720838"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "43930292"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Opções de autenticação em suplementos do Outlook
 
-O suplemento do Outlook pode acessar informações de qualquer lugar na Internet, seja do servidor que hospeda o suplemento, da sua rede interna ou de outro lugar na nuvem. Se essas informações estiverem protegidas, o suplemento precisará de uma forma de autenticar o usuário. Suplementos do Outlook oferecem diversos métodos de autenticação, dependendo do cenário específico.
+O suplemento do Outlook pode acessar informações de qualquer lugar na Internet, seja do servidor que hospeda o suplemento, da sua rede interna ou de outro lugar na nuvem. Se essas informações estiverem protegidas, o suplemento precisará de uma forma de autenticar o usuário. Os suplementos do Outlook oferecem diversos métodos de autenticação, dependendo do cenário específico.
 
-## <a name="single-sign-on-access-token"></a>Token de acesso de logon único
+## <a name="single-sign-on-access-token-preview"></a>Token de acesso de logon único (visualização)
 
 Os tokens de acesso de logon único oferecem uma maneira simples de o suplemento autenticar e obter tokens de acesso para fazer uma chamada para a [API do Microsoft Graph](/graph/overview). Esse recurso reduz conflitos porque o usuário não precisa inserir credenciais.
 
 > [!NOTE]
-> Atualmente, a API de logon único tem suporte para Word, Excel, Outlook e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md).
+> No momento, há suporte para a API de logon único na visualização do Word, do Excel, do Outlook e do PowerPoint, e **não** deveria ser usada em suplementos de produção. Para obter mais informações sobre o local em que a API de logon único tem suporte no momento, consulte [IdentityAPI conjuntos de requisitos](../reference/requirement-sets/identity-api-requirement-sets.md).
+>
 > Para usar o SSO, você deve carregar a versão beta da biblioteca de JavaScript do Office de https://appsforoffice.microsoft.com/lib/beta/hosted/office.js na página de inicialização HTML do suplemento.
+>
 > Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Office 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 Considere usar tokens de acesso SSO se o suplemento:
 
 - For usado principalmente por usuários do Office 365
 - Precisa de acesso para:
-    - Os serviços Microsoft que são expostos como parte do Microsoft Graph
-    - Um serviço que não seja da Microsoft que você controle
+  - Os serviços Microsoft que são expostos como parte do Microsoft Graph
+  - Um serviço que não seja da Microsoft que você controle
 
 O método de autenticação SSO usa o [Fluxo Em Nome De do OAuth2 fornecido pelo Azure Active Directory](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of). Ele exige o registro do suplemento no [Portal de Registro do Aplicativo](https://apps.dev.microsoft.com/) e a especificação dos escopos necessários do Microsoft Graph no manifesto.
 
