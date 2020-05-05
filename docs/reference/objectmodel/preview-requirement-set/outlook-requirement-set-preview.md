@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 description: Recursos e APIs que estão atualmente em versão prévia para suplementos do Outlook.
-ms.date: 04/10/2020
+ms.date: 05/04/2020
 localization_priority: Normal
-ms.openlocfilehash: 94104a9fcb239d991d585abcebdd07bcab6e315f
-ms.sourcegitcommit: 3355c6bd64ecb45cea4c0d319053397f11bc9834
+ms.openlocfilehash: 433abf5ea15cfe9ee7cefa579b1ad965fdeb93cf
+ms.sourcegitcommit: 800dacf0399465318489c9d949e259b5cf0f81ca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "43744863"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "44022180"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 
@@ -69,13 +69,13 @@ Foi adicionada uma nova `AppointmentSensitivityType` enumeração que representa
 
 Foi adicionada uma nova função ao `Body` objeto que acrescenta dados ao final do corpo do item no modo de composição.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno)
+**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
 
 #### <a name="extendedpermissions"></a>[ExtendedPermissions](../../manifest/extendedpermissions.md)
 
 Adicionado um novo elemento ao manifesto onde a `AppendOnSend` permissão estendida deve ser incluída na coleção de permissões estendidas.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno)
+**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
 
 <br>
 
