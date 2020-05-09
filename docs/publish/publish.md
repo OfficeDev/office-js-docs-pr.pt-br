@@ -1,14 +1,14 @@
 ---
 title: Implantar e publicar Suplementos do Office
 description: Você pode usar um dos vários métodos para implantar o suplemento do Office para testar ou distribuir aos usuários.
-ms.date: 03/18/2020
+ms.date: 05/06/2020
 localization_priority: Priority
-ms.openlocfilehash: a21535a637ceb54d0e84a36b2a0610873d408e1c
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: b4ee2dab2fec0237ad06776861678c4c23da6ca8
+ms.sourcegitcommit: 1e3d7051ba7c8c0ccfd6607099d90469fc8141e2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890981"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "44066085"
 ---
 # <a name="deploy-and-publish-office-add-ins"></a>Implantar e publicar Suplementos do Office
 
@@ -17,7 +17,7 @@ Você pode usar um dos vários métodos para implantar o suplemento do Office pa
 |**Method**|**Use...**|
 |:---------|:------------|
 |[Sideload](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)|Usado como parte do processo de desenvolvimento para testar o suplemento em execução no Windows, no iPad, no Mac ou em um navegador.|
-|[Implantação Centralizada](centralized-deployment.md)|Em uma implantação híbrida ou de nuvem para distribuir seu suplemento aos usuários na sua organização usando o centro de administração do Office 365.|
+|[Implantação Centralizada](centralized-deployment.md)|Em uma implantação em nuvem, distribua seu suplemento aos usuários da sua organização usando o centro de administração do Office 365.|
 |[Catálogo do SharePoint](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|Usado para distribuir o suplemento aos usuários da organização em um ambiente local.|
 |[AppSource](/office/dev/store/submit-to-appsource-via-partner-center)|Usado para distribuir o suplemento publicamente aos usuários.|
 |[Servidor Exchange](#outlook-add-in-deployment)|Usado para distribuir suplementos do Outlook aos usuários em um ambiente local ou online.|
