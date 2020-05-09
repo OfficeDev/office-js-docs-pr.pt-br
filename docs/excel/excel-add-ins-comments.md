@@ -3,12 +3,12 @@ title: Trabalhar com comentários usando a API JavaScript do Excel
 description: Informações sobre como usar as APIs para adicionar, remover e editar comentários e encadeamentos de comentários.
 ms.date: 03/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 275828915730d3438101315ee28bf76aa8b8bf3f
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: 971e0a830c0a34aea3e79b13fcd9fb869f971d2c
+ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890567"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "44170818"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>Trabalhar com comentários usando a API JavaScript do Excel
 
@@ -25,7 +25,7 @@ Os `Workbook.comments` comentários em uma pasta de trabalho são rastreados pel
 Use o `CommentCollection.add` método para adicionar comentários a uma pasta de trabalho. Este método utiliza até três parâmetros:
 
 - `cellAddress`: A célula onde o comentário é adicionado. Pode ser um objeto String ou [Range](/javascript/api/excel/excel.range) . O intervalo deve ser uma única célula.
-- `content`: O conteúdo do comentário. Use uma cadeia de caracteres para comentários de texto sem formatação. Use um objeto [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) para comentários com [menção](#mentions-online-only). 
+- `content`: O conteúdo do comentário. Use uma cadeia de caracteres para comentários de texto sem formatação. Use um objeto [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) para comentários com [menção](#mentions).
 - `contentType`: Um enum [ContentType](/javascript/api/excel/excel.contenttype) especificando o tipo de conteúdo. O valor padrão é `ContentType.plain`.
 
 O exemplo a seguir adiciona um comentário à célula **A2**.
@@ -111,7 +111,7 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="resolve-comment-threads-preview"></a>Resolver threads de comentário ([Visualização](../reference/requirement-sets/excel-preview-apis.md)) 
+## <a name="resolve-comment-threads"></a>Resolver threads de comentário
 
 Um thread de comentário tem um valor booliano `resolved`configurável, para indicar se ele foi resolvido. Um valor de `true` significa que o thread de comentários é resolvido. Um valor de `false` significa que o thread de comentários é novo ou reaberto.
 
@@ -169,13 +169,7 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="mentions-online-only"></a>Menciona ([somente online](../reference/requirement-sets/excel-api-online-requirement-set.md)) 
-
-> [!NOTE]
-> O comentário mencionando APIs estão atualmente disponíveis somente na visualização pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-
-> [!IMPORTANT]
-> As mencionadas de comentários atualmente só têm suporte no Excel na Web.
+## <a name="mentions"></a>Menções
 
 As [mencionas](https://support.office.com/article/use-mention-in-comments-to-tag-someone-for-feedback-644bf689-31a0-4977-a4fb-afe01820c1fd) são usadas para marcar colegas em um comentário. Isso envia notificações com o conteúdo do comentário. O suplemento pode criar essas menção em seu nome.
 

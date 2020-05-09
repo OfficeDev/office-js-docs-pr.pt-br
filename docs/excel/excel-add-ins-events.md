@@ -1,14 +1,14 @@
 ---
 title: Trabalhar com eventos usando a API JavaScript do Excel
 description: Uma lista de eventos para objetos JavaScript do Excel. Isso inclui informações sobre como usar manipuladores de eventos e os padrões associados.
-ms.date: 03/31/2020
+ms.date: 05/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 31f4123e812eae8a9a57abf7151b3500ce1ed296
-ms.sourcegitcommit: 9c0e581b210eb31a7076496bbc7cd7d59192d799
+ms.openlocfilehash: 075544c529ba7200aa181d42dd5fc8c3fbd661bc
+ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "43122898"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "44170804"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Trabalhar com eventos usando a API JavaScript do Excel
 
@@ -32,6 +32,7 @@ Sempre que ocorrerem certos tipos de alterações em uma pasta de trabalho do Ex
 | `onFormatChanged` | Ocorre quando o formato é alterado em uma planilha. | [**Planilha**](/javascript/api/excel/excel.worksheet#onformatchanged), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onformatchanged) |
 | `onRowSorted` | Ocorre quando uma ou mais linhas são classificadas. Isso ocorre como resultado de uma operação de classificação de cima para baixo. | [**WorksheetCollection**](/javascript/api/excel/excel.worksheet#onrowsorted), [**Planilha**](/javascript/api/excel/excel.worksheetcollection#onrowsorted) |
 | `onSelectionChanged` | Ocorre quando uma célula ativa ou um intervalo selecionado são alterados. | [**Associação**](/javascript/api/excel/excel.binding#onselectionchanged), [**tabela**](/javascript/api/excel/excel.table#onselectionchanged), [**pasta de trabalho**](/javascript/api/excel/excel.workbook#onselectionchanged), [**planilha**](/javascript/api/excel/excel.worksheet#onselectionchanged), [**planilhacollection**](/javascript/api/excel/excel.worksheetcollection#onselectionchanged) |
+| `onRowHiddenChanged` | Ocorre quando o estado de linha oculta é alterado em uma planilha específica. | [**Planilha**](/javascript/api/excel/excel.worksheet#onrowhiddenchanged), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onrowhiddenchanged) |
 | `onSettingsChanged` | Ocorre quando as Configurações no documento são alteradas. | [**SettingCollection**](/javascript/api/excel/excel.settingcollection#onsettingschanged) |
 | `onSingleClicked` | Acontece quando a operação é clicada/pressionada com o botão esquerdo do mouse ocorre na planilha. | [**Planilha**](/javascript/api/excel/excel.worksheet#onsingleclicked), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onsingleclicked) |
 
@@ -52,7 +53,6 @@ Sempre que ocorrerem certos tipos de alterações em uma pasta de trabalho do Ex
 | Evento | Descrição | Objetos com suporte |
 |:---------------|:-------------|:-----------|
 | `onFiltered` | Ocorre quando um filtro é aplicado a um objeto. | [**Tabela**](/javascript/api/excel/excel.table#onfiltered), [**TableCollection**](/javascript/api/excel/excel.tablecollection#onfiltered), [**Planilha**](/javascript/api/excel/excel.worksheet#onfiltered), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onfiltered) |
-| `onRowHiddenChanged` | Ocorre quando o estado de linha oculta é alterado em uma planilha específica. | [**Planilha**](/javascript/api/excel/excel.worksheet#onrowhiddenchanged), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onrowhiddenchanged) |
 
 ### <a name="event-triggers"></a>Gatilhos de eventos
 

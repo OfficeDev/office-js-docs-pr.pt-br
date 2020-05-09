@@ -1,14 +1,14 @@
 ---
 title: Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 description: Exemplos de código que mostram como executar tarefas comuns com pastas de trabalho ou recursos de nível de aplicativo usando a API JavaScript do Excel.
-ms.date: 03/19/2020
+ms.date: 05/06/2020
 localization_priority: Normal
-ms.openlocfilehash: aa30f888bf6de1926d2a36522febf0001e1e6130
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: 4fec6a217a2764eaf664463943ca384b3a2d847b
+ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42891023"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "44170762"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 
@@ -186,7 +186,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="access-application-culture-settings-preview"></a>Configurações de cultura de aplicativo do Access (visualização)
+## <a name="access-application-culture-settings"></a>Configurações de cultura de aplicativo do Access
 
 Uma pasta de trabalho tem configurações de idioma e cultura que afetam o modo como determinados dados são exibidos. Essas configurações podem ajudar a localizar dados quando os usuários do seu suplemento estiverem compartilhando pastas de trabalho em diferentes idiomas e culturas. O suplemento pode usar a análise de cadeia de caracteres para localizar o formato de números, datas e horas com base nas configurações de cultura do sistema para que cada usuário veja os dados em seu próprio formato de cultura.
 
@@ -297,10 +297,7 @@ A API do Excel também permite que os suplementos desativem os cálculos até qu
 context.application.suspendApiCalculationUntilNextSync();
 ```
 
-## <a name="save-the-workbook-preview"></a>Salvar a pasta de trabalho (visualização)
-
-> [!NOTE]
-> O método`Workbook.save` só está atualmente disponível na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="save-the-workbook"></a>Salvar a pasta de trabalho
 
 `Workbook.save` salva a pasta de trabalho para armazenamento persistente. O método `save` usa um parâmetro simples e opcional `saveBehavior` que pode ter um dos seguintes valores:
 
@@ -314,10 +311,7 @@ context.application.suspendApiCalculationUntilNextSync();
 context.workbook.save(Excel.SaveBehavior.prompt);
 ```
 
-## <a name="close-the-workbook-preview"></a>Feche a pasta de trabalho (visualização)
-
-> [!NOTE]
-> O método`Workbook.close` só está atualmente disponível na versão prévia pública. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+## <a name="close-the-workbook"></a>Fechar a pasta de trabalho
 
 `Workbook.close` fecha a pasta de trabalho, além de suplementos que estão associados com a pasta de trabalho (o aplicativo Excel permanece aberto). O método `close` usa um parâmetro simples e opcional `closeBehavior` que pode ter um dos seguintes valores:
 

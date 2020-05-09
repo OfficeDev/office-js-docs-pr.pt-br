@@ -1,15 +1,15 @@
 ---
 title: O conjunto de requisitos somente online da API JavaScript do Excel
 description: Detalhes sobre o conjunto de requisitos ExcelApiOnline
-ms.date: 12/05/2019
+ms.date: 05/06/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: ad2a3cd627552baeb449397fa917fe10e86ebbaf
-ms.sourcegitcommit: 8c5c5a1bd3fe8b90f6253d9850e9352ed0b283ee
+ms.openlocfilehash: f177e0107de7172c350f94c3a022cb3e0db5c6f5
+ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "40814149"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "44170783"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>O conjunto de requisitos somente online da API JavaScript do Excel
 
@@ -44,19 +44,13 @@ As seguintes APIs estão atualmente disponíveis para o Excel na Web como parte 
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
-|[Comment](/javascript/api/excel/excel.comment)|[menções](/javascript/api/excel/excel.comment#mentions)|Obtém as entidades (por exemplo, pessoas) mencionadas em comentários.|
-||[richContent](/javascript/api/excel/excel.comment#richcontent)|Obtém o conteúdo de comentário avançado (por exemplo, menciona em comentários). Essa cadeia de caracteres não deve ser exibida para os usuários finais. Seu suplemento só deve usar este para analisar conteúdo de comentário avançado.|
-||[updateMentions (contentWithMentions: Excel. CommentRichContent)](/javascript/api/excel/excel.comment#updatementions-contentwithmentions-)|Atualiza o conteúdo de comentários com uma cadeia de caracteres especialmente formatada e uma lista de menção.|
-|[CommentMention](/javascript/api/excel/excel.commentmention)|[email](/javascript/api/excel/excel.commentmention#email)|Obtém ou define o endereço de email da entidade que é mencionada em comentário.|
-||[id](/javascript/api/excel/excel.commentmention#id)|Obtém ou define a ID da entidade. Isso corresponde a uma das IDs no `CommentRichContent.richContent`.|
-||[name](/javascript/api/excel/excel.commentmention#name)|Obtém ou define o nome da entidade que é mencionada em comentário.|
-|[CommentReply](/javascript/api/excel/excel.commentreply)|[menções](/javascript/api/excel/excel.commentreply#mentions)|Obtém as entidades (por exemplo, pessoas) mencionadas em comentários.|
-||[richContent](/javascript/api/excel/excel.commentreply#richcontent)|Obtém o conteúdo de comentário avançado (por exemplo, menciona em comentários). Essa cadeia de caracteres não deve ser exibida para os usuários finais. Seu suplemento só deve usar este para analisar conteúdo de comentário avançado.|
-||[updateMentions (contentWithMentions: Excel. CommentRichContent)](/javascript/api/excel/excel.commentreply#updatementions-contentwithmentions-)|Atualiza o conteúdo de comentários com uma cadeia de caracteres especialmente formatada e uma lista de menção.|
-|[CommentRichContent](/javascript/api/excel/excel.commentrichcontent)|[menções](/javascript/api/excel/excel.commentrichcontent#mentions)|Uma matriz que contém todas as entidades (por exemplo, pessoas) mencionadas no comentário.|
-||[richContent](/javascript/api/excel/excel.commentrichcontent#richcontent)||
-|[Range](/javascript/api/excel/excel.range)|[moveTo (destinationRange: cadeia \| de caracteres de intervalo)](/javascript/api/excel/excel.range#moveto-destinationrange-)|Move valores de célula, formatação e fórmulas do intervalo atual para o intervalo de destino, substituindo as informações antigas nessas células.|
-|[RangeFormat](/javascript/api/excel/excel.rangeformat)|[adjustIndent (valor: número)](/javascript/api/excel/excel.rangeformat#adjustindent-amount-)|Ajusta o recuo da formatação do intervalo. O valor de recuo varia de 0 a 250 e é medido em caracteres.|
+|[ChartAxisTitle](/javascript/api/excel/excel.chartaxistitle)|[textOrientation](/javascript/api/excel/excel.chartaxistitle#textorientation)|Especifica o ângulo no qual o texto é orientado para o título do eixo do gráfico. O valor deve ser um inteiro de-90 a 90 ou o inteiro 180 para texto orientado verticalmente.|
+|[PivotTableScopedCollection](/javascript/api/excel/excel.pivottablescopedcollection)|[getCount()](/javascript/api/excel/excel.pivottablescopedcollection#getcount--)|Obtém o número de tabelas dinâmicas na coleção.|
+||[getFirst()](/javascript/api/excel/excel.pivottablescopedcollection#getfirst--)|Obtém a primeira tabela dinâmica na coleção. As tabelas dinâmicas da coleção são classificadas de cima para baixo e da esquerda para a direita, de forma que a tabela superior esquerda seja a primeira tabela dinâmica na coleção.|
+||[getItem(key: string)](/javascript/api/excel/excel.pivottablescopedcollection#getitem-key-)|Obtém uma Tabela Dinâmica por nome.|
+||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.pivottablescopedcollection#getitemornullobject-name-)|Obtém uma Tabela Dinâmica por nome. Se a tabela dinâmica não existir, retornará um objeto null.|
+||[items](/javascript/api/excel/excel.pivottablescopedcollection#items)|Obtém os itens filhos carregados nesta coleção.|
+|[Range](/javascript/api/excel/excel.range)|[getpivotrs (fullyContained?: Boolean)](/javascript/api/excel/excel.range#getpivottables-fullycontained-)|Obtém uma coleção com escopo de tabelas dinâmicas que se sobrepõe ao intervalo.|
 
 ## <a name="see-also"></a>Confira também
 
