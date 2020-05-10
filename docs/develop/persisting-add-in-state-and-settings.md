@@ -1,14 +1,14 @@
 ---
 title: Persistir o estado e as configurações do suplemento
 description: Saiba como manter dados nos aplicativos Web de suplemento do Office em execução no ambiente sem estado de um controle de navegador.
-ms.date: 02/27/2020
+ms.date: 05/08/2020
 localization_priority: Normal
-ms.openlocfilehash: 7d66a8693c18dbc7f2be59b2799db7429681a57f
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 0162bc17897cba99f4ce2457cea08d0da70f4341
+ms.sourcegitcommit: 7e6faf3dc144400a7b7e5a42adecbbec0bd4602d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719389"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "44180221"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>Persistir o estado e as configurações do suplemento
 
@@ -30,8 +30,8 @@ A API JavaScript do Office fornece os objetos [Settings](/javascript/api/office/
 
 |**Object**|**Suporte a tipos de suplementos**|**Local de armazenamento**|**Suporte ao host do Office**|
 |:-----|:-----|:-----|:-----|
-|[Configurações](/javascript/api/office/office.settings)|conteúdo e painel de tarefas|O documento, a planilha ou a apresentação com o qual o suplemento está trabalhando. Configurações de suplementos de conteúdo e de painel de tarefas estão disponíveis para o suplemento que os criou por meio do documento em que são salvos.<br/><br/>**Importante:** não armazene senhas e outras IIP (informações de identificação pessoal) confidenciais com o objeto **Settings**. Os dados salvos não ficam visíveis para os usuários finais, mas são armazenados como parte do documento, que pode ser acessado pela leitura direta do formato de arquivo do documento. Você deve limitar o uso de PII pelo suplemento e armazenar quaisquer itens de PII necessários ao suplemento somente no servidor que hospeda o suplemento como um recurso protegido pelo usuário.|Word, Excel ou PowerPoint<br/><br/> **Observação:** os suplementos de painel de tarefas para o Project 2013 não dão suporte à API **Settings** para o armazenamento do estado ou das configurações do suplemento. No entanto, para suplementos em execução no Project (bem como outros aplicativos de host do Office), você pode usar técnicas como cookies de navegador ou armazenamento na Web. Para saber mais sobre essas técnicas, confira [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings). |
-|[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|Outlook|A caixa de correio do servidor Exchange do usuário em que o suplemento está instalado. Como essas configurações são armazenadas na caixa de correio do servidor do usuário, elas podem se "mover" com o usuário e estão disponíveis para o suplemento quando ele é executado no contexto de qualquer aplicativo de host de cliente com suporte ou navegador que acessa a caixa de correio do usuário.<br/><br/> As configurações móveis de suplementos do Outlook estão disponíveis apenas para o suplemento que os criou e somente por meio da caixa de correio em que o suplemento está instalado.|Outlook|
+|[Configurações](/javascript/api/office/office.settings)|conteúdo e painel de tarefas|O documento, planilha ou apresentação com o qual o suplemento está trabalhando. As configurações de suplemento de conteúdo e de painel de tarefas estão disponíveis para o suplemento que as criou do documento em que foram salvas.<br/><br/>**Importante:** não armazene senhas e outras IIP (informações de identificação pessoal) confidenciais com o objeto **Settings**. Os dados salvos não ficam visíveis para os usuários finais, mas são armazenados como parte do documento, que pode ser acessado pela leitura direta do formato de arquivo do documento. Você deve limitar o uso de PII pelo suplemento e armazenar quaisquer itens de PII necessários ao suplemento somente no servidor que hospeda o suplemento como um recurso protegido pelo usuário.|Word, Excel ou PowerPoint<br/><br/> **Observação:** os suplementos de painel de tarefas para o Project 2013 não dão suporte à API **Settings** para o armazenamento do estado ou das configurações do suplemento. No entanto, para suplementos em execução no Project (bem como outros aplicativos de host do Office), você pode usar técnicas como cookies de navegador ou armazenamento na Web. Para saber mais sobre essas técnicas, confira [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings). |
+|[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|Outlook|A caixa de correio do Exchange Server do usuário onde o suplemento está instalado. Como essas configurações são armazenadas na caixa de correio do servidor do usuário, elas podem "mover-se" com o usuário e estão disponíveis para o suplemento quando ele estiver sendo executado no contexto de qualquer aplicativo de host de cliente com suporte ou navegador que acessar a caixa de correio desse usuário.<br/><br/> As configurações móveis de suplementos do Outlook estão disponíveis apenas para o suplemento que os criou e somente por meio da caixa de correio em que o suplemento está instalado.|Outlook|
 |[CustomProperties](/javascript/api/outlook/office.customproperties)|Outlook|A mensagem, o compromisso ou o item de solicitação de reunião com o qual o suplemento está trabalhando. As propriedades personalizadas de itens de suplementos do Outlook estão disponíveis apenas para o suplemento que as criou e apenas por meio do item em que estão salvas.|Outlook|
 |[CustomXmlParts](/javascript/api/office/office.customxmlparts)|painel de tarefas|O documento, planilha ou apresentação com o qual o suplemento está trabalhando. As configurações de suplementos do painel de tarefas estão disponíveis para o suplemento que as criou por meio do documento em que são salvos.<br/><br/>**Importante:** não armazene senhas e outras IIP (informações de identificação pessoal) confidenciais em uma parte XML personalizada. objeto. Os dados salvos não ficam visíveis para os usuários finais, mas são armazenados como parte do documento, que pode ser acessado pela leitura direta do formato de arquivo do documento. Você deve limitar o uso de PII pelo suplemento e armazenar quaisquer itens de PII necessários ao suplemento somente no servidor que hospeda o suplemento como um recurso protegido pelo usuário.|Word (usando a API comum de JavaScript do Office), Excel (usando a API do JavaScript do Excel com host específico)|
 
@@ -190,7 +190,7 @@ function getReviewers() {
 Para obter informações sobre como salvar as configurações em um suplemento do Outlook, consulte [gerenciar o estado e as configurações de um suplemento do Outlook](../outlook/manage-state-and-settings-outlook.md).
 
 
-## <a name="see-also"></a>Também confira
+## <a name="see-also"></a>Confira também
 
 - [Entendendo a API JavaScript do Office](understanding-the-javascript-api-for-office.md)
 - [Suplementos do Outlook](../outlook/outlook-add-ins-overview.md)

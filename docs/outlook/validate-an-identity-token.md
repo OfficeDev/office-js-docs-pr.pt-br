@@ -1,14 +1,14 @@
 ---
 title: Validar um token de identidade de suplementos do Outlook
 description: O suplemento do Outlook pode enviar um token de identidade do usuário do Exchange, mas, antes de você confiar na solicitação, deve validar o token para garantir que tenha sido enviado pelo servidor Exchange solicitado.
-ms.date: 11/07/2019
+ms.date: 05/08/2020
 localization_priority: Normal
-ms.openlocfilehash: b412756a980d54a20a1c8deab43cd7634c0188cb
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: b416353b0d9875a2024ca4706152472c7e5012b0
+ms.sourcegitcommit: 7e6faf3dc144400a7b7e5a42adecbbec0bd4602d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165797"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "44180207"
 ---
 # <a name="validate-an-exchange-identity-token"></a>Validar um token de identidade do Exchange
 
@@ -106,7 +106,10 @@ Você pode criar um identificador exclusivo para uma conta do Exchange, concaten
 
 ## <a name="use-a-library-to-validate-the-token"></a>Usar uma biblioteca para validar o token
 
-Há diversas bibliotecas que podem fazer a análise e validação de um JWT geral. A Microsoft fornece duas bibliotecas que podem ser usadas para validar tokens de identidade do usuário do Exchange.
+Há diversas bibliotecas que podem fazer a análise e validação de um JWT geral. A Microsoft fornece `System.IdentityModel.Tokens.Jwt` a biblioteca que pode ser usada para validar tokens de identidade do usuário do Exchange.
+
+> [!IMPORTANT]
+> Não recomendamos mais a API gerenciada de serviços Web do Exchange porque o Microsoft. Exchange. WebServices. auth. dll, embora ainda esteja disponível, agora é obsoleto e se baseia em bibliotecas sem suporte, como Microsoft. IdentityModel. Extensions. dll.
 
 ### <a name="systemidentitymodeltokensjwt"></a>System.IdentityModel.Tokens.Jwt
 
@@ -189,30 +192,6 @@ public class ExchangeAppContext
 ```
 
 Para obter um exemplo que usa essa biblioteca para validar tokens do Exchange e tem uma implementação de `GetSigningKeys`, confira [Outlook-Add-In-Token-Viewer](https://github.com/OfficeDev/Outlook-Add-In-Token-Viewer).
-
-### <a name="microsoftexchangewebservices"></a>Microsoft.Exchange.WebServices
-
-A [API Gerenciada dos Serviços Web do Exchange](https://www.nuget.org/packages/Microsoft.Exchange.WebServices/) também valida tokens de identidade do usuário do Exchange. Como é específica do Exchange, implementa toda a lógica necessária para analisar a declaração `appctx` e verificar a versão do token.
-
-```cs
-using Microsoft.Exchange.WebServices.Auth.Validation;
-
-AppIdentityToken ValidateIdentityToken(string rawToken, string expectedAudience)
-{
-    try
-    {
-        AppIdentityToken appIdToken = AuthToken.Parse(rawToken) as AppIdentityToken;
-        appIdToken.Validate(new Uri(expectedAudience));
-
-        // No exception, validation succeeded
-        return appIdToken;
-    }
-    catch (TokenValidationException ex)
-    {
-        throw new Exception(string.Format("Token validation failed: {0}", ex.Message));
-    }
-}
-```
 
 ## <a name="see-also"></a>Confira também
 

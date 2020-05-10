@@ -1,25 +1,25 @@
 ---
 title: Limites para ativação e uso da API em suplementos do Outlook
 description: Você deve estar ciente das determinadas diretrizes de ativação e de uso da API e implementar seus suplementos dentro desses limites.
-ms.date: 10/31/2019
+ms.date: 05/08/2020
 localization_priority: Normal
-ms.openlocfilehash: a86d2a350db61d843a67945348dfb8154951b53c
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: b4fbdcea72585ff77457dfb6cd3039040b012031
+ms.sourcegitcommit: 7e6faf3dc144400a7b7e5a42adecbbec0bd4602d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324944"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "44180214"
 ---
 # <a name="limits-for-activation-and-javascript-api-for-outlook-add-ins"></a>Limites para ativação e API JavaScript para suplementos do Outlook
 
-A fim de fornecer uma experiência satisfatória para os usuários dos suplementos do Outlook, você deve estar ciente das determinadas diretrizes de ativação e de uso da API e implementar seus suplementos dentro desses limites Essas diretrizes existem para que um suplemento individual não possa exigir do Exchange Server ou do Outlook que gastem um tempo excessivamente longo processando suas regras de ativação ou chamadas à API JavaScript para Office, afetando a experiência do usuário geral no Outlook e outros suplementos. Essas diretrizes existem para que um suplemento individual não possa exigir que o Exchange Server ou o Outlook gaste um período de tempo excepcionalmente longo para processar suas regras de ativação ou chamadas para a API JavaScript do Office, afetando a experiência geral do usuário para Outlook e outros suplementos. Esses limites se aplicam ao design de regras de ativação no manifesto do suplemento e usando propriedades personalizadas, configurações de roaming, destinatários, solicitações e respostas de serviços Web do Exchange (EWS) e chamadas assíncronas.
+A fim de fornecer uma experiência satisfatória para os usuários dos suplementos do Outlook, você deve estar ciente das determinadas diretrizes de ativação e de uso da API e implementar seus suplementos dentro desses limites Essas diretrizes existem para que um suplemento individual não possa exigir do Exchange Server ou do Outlook que gastem um tempo excessivamente longo processando suas regras de ativação ou chamadas à API JavaScript para Office, afetando a experiência do usuário geral no Outlook e outros suplementos. Essas diretrizes existem para que um suplemento individual não possa exigir que o Exchange Server ou o Outlook gaste um período de tempo excepcionalmente longo para processar suas regras de ativação ou chamadas para a API JavaScript do Office, afetando a experiência geral do usuário para o Outlook e outros suplementos. Esses limites se aplicam ao design de regras de ativação no manifesto do suplemento e usando propriedades personalizadas, configurações de roaming, destinatários, solicitações e respostas de serviços Web do Exchange (EWS) e chamadas assíncronas.
 
 > [!NOTE]
 > Se o suplemento é executado em um cliente avançado do Outlook, você também deve verificar se o suplemento está funcionando dentro de certos limites de uso dos recursos do tempo de execução.
 
 ## <a name="limits-on-where-add-ins-activate"></a>Limites em que os suplementos são ativados
 
-Os suplementos foram projetados apenas para serem ativados na caixa de correio principal do usuário. Os suplementos não são ativados em caixas de correio compartilhadas, pastas de caixas de correio do outro usuário abertas com acesso de representante, caixas de correio de arquivo morto ou pastas públicas.
+Por padrão, os suplementos são projetados para serem ativados na caixa de correio principal do usuário. Isso significa que os suplementos normalmente não são ativados em caixas de correio compartilhadas, pastas de caixas de correio de outros usuários abertas com acesso de representante, caixas de correio de arquivo morto ou pastas públicas. No entanto, os suplementos que dão suporte ao [acesso de representante ou pastas compartilhadas](delegate-access.md) devem ser ativados.
 
 ## <a name="limits-for-activation-rules"></a>Limites para regras de ativação
 
