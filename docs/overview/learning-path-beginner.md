@@ -4,16 +4,19 @@ description: Um caminho recomendado para iniciantes, através dos recursos de ap
 ms.date: 04/16/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 026f90ea62960cbbf5ab4420d40a4a9165139cae
-ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
+ms.openlocfilehash: 61a8e455c5fdb676166f05d03d3d360593c53445
+ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "43547615"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "44170773"
 ---
 # <a name="start-here-a-guide-for-beginners-making-office-add-ins"></a>Comece aqui! Um guia para iniciantes na criação de suplementos do Office
 
 Deseja começar a criar suas próprias extensões do Office para várias plataformas? As etapas a seguir mostram o que ler primeiro, quais ferramentas instalar e os tutoriais recomendados a serem concluídos.
+
+> [!NOTE]
+> Se você tiver experiência na criação de suplementos do VSTO para o Office, recomendamos que você acesse imediatamente [Transição aqui!](learning-path-transition.md) Um guia para criadores de suplemento do VSTO que fazem suplementos Web do Office.
 
 ## <a name="step-0-prerequisites"></a>Etapa 0: Pré-requisitos
 

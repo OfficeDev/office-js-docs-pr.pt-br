@@ -8,6 +8,9 @@
     - name: Comece aqui! Um guia para iniciantes
       href: overview/learning-path-beginner.md
       displayName: develop
+    - name: Transição aqui! Um guia para desenvolvedores de suplemento do VSTO
+      href: overview/learning-path-transition.md
+      displayName: develop
     - name: Criando Suplementos do Office
       href: overview/office-add-ins-fundamentals.md
       displayName: develop
@@ -405,10 +408,6 @@
               href: reference/manifest/requirements.md
             - name: Rule
               href: reference/manifest/rule.md
-            - name: Tempo de execução
-              href: reference/manifest/runtime.md
-            - name: Tempos de execução
-              href: reference/manifest/runtimes.md
             - name: Set
               href: reference/manifest/set.md
             - name: Sets
@@ -475,6 +474,10 @@
                   href: reference/manifest/page.md
                 - name: Recursos
                   href: reference/manifest/resources.md
+                - name: Tempo de execução
+                  href: reference/manifest/runtime.md
+                - name: Tempos de execução
+                  href: reference/manifest/runtimes.md
                 - name: Scopes
                   href: reference/manifest/scopes.md
                 - name: Script
@@ -532,6 +535,9 @@
               displayName: Excel
             - name: Conjunto de requisitos do ExcelApi somente online
               href: reference/requirement-sets/excel-api-online-requirement-set.md
+              displayName: Excel
+            - name: 'Conjunto de requisitos do ExcelApi 1,11'
+              href: reference/requirement-sets/excel-api-1-11-requirement-set.md
               displayName: Excel
             - name: 'Conjunto de requisitos do ExcelApi 1,10'
               href: reference/requirement-sets/excel-api-1-10-requirement-set.md
