@@ -3,12 +3,12 @@ title: Publicar Suplementos do Office usando a Implantação Centralizada por me
 description: Saiba como usar a implantação centralizada para implantar suplementos internos, bem como suplementos fornecidos por ISVs.
 ms.date: 03/24/2020
 localization_priority: Normal
-ms.openlocfilehash: cd271aec9ac222815d52adf6375d09b02cb93ea9
-ms.sourcegitcommit: 315a648cce38609c3e1c92bd4a339e268f8a2e1d
+ms.openlocfilehash: 4c19a272e448e38bb5e895cd0bc2a53707a172ad
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "42978624"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217771"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-office-365-admin-center"></a>Publicar Suplementos do Office usando a Implantação Centralizada por meio do Centro de administração do Office 365
 
@@ -44,14 +44,14 @@ Dependendo do tamanho do público-alvo, convém adicionar etapas a ou remover et
 
 ## <a name="publish-an-office-add-in-via-centralized-deployment"></a>Publicar um suplemento por meio da Implantação Centralizada
 
-Antes de começar, confirme se a sua organização atende a todos os requisitos para usar a Implantação Centralizada, conforme descrito em [Determinar se a Implantação Centralizada de suplementos funciona para sua organização do Office 365](https://support.office.com/article/Determine-if-Centralized-Deployment-of-add-ins-works-for-your-Office-365-organization-B4527D49-4073-4B43-8274-31B7A3166F92).
+Antes de começar, confirme se a sua organização atende a todos os requisitos para usar a Implantação Centralizada, conforme descrito em [Determinar se a Implantação Centralizada de suplementos funciona para sua organização do Office 365](/microsoft-365/admin/manage/centralized-deployment-of-add-ins).
 
 Se sua organização atender aos requisitos, conclua as etapas a seguir para publicar um suplemento do Office por meio da Implantação Centralizada:
 
 1. Entre no Office 365 com uma conta corporativa ou de estudante.
 2. Selecione o ícone do inicializador de aplicativos no canto superior esquerdo e escolha **Administrador**.
 3. No menu de navegação, pressione **Mostrar mais** e, em seguida, escolha **Configurações** > **Serviços e suplementos**.
-4. Se você vir uma mensagem na parte superior da página anunciando o novo Centro de administração do Office 365, escolha a mensagem para ir para a Visualização do Centro de administração (consulte [Sobre o Centro de administração do Office 365](https://support.office.com/article/About-the-Office-365-admin-center-758befc4-0888-4009-9f14-0d147402fd23)).
+4. Se você vir uma mensagem na parte superior da página anunciando o novo Centro de administração do Office 365, escolha a mensagem para ir para a Visualização do Centro de administração (consulte [Sobre o Centro de administração do Office 365](/microsoft-365/admin/admin-overview/about-the-admin-center)).
 5. Escolha **Implantar Suplemento** na parte superior da página.
 6. Escolha **Avançar** depois de analisar os requisitos.
 7. Escolha uma das opções a seguir na página **Implantação Centralizada**:

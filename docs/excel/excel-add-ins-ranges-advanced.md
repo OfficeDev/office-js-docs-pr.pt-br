@@ -3,16 +3,16 @@ title: Trabalhar com intervalos usando a API JavaScript do Excel (avançado)
 description: Funções e cenários de objetos de intervalo avançados, como células especiais, remoção de duplicatas e trabalho com datas.
 ms.date: 05/06/2020
 localization_priority: Normal
-ms.openlocfilehash: eb25ae3f4bbe1231cfdf49f7535490b39c7a419e
-ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
+ms.openlocfilehash: 442e31494911bd00c9def895549af3ec7fce8d76
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "44170811"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217841"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Trabalhar com intervalos usando a API JavaScript do Excel (avançado)
 
-Este artigo baseia-se em informações em [Trabalhar com intervalos usando a API JavaScript do Excel (fundamental)](excel-add-ins-ranges.md) fornecendo exemplos de código que mostram como executar tarefas mais avançadas com intervalos usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos aos `Range` quais o objeto oferece suporte, consulte [objeto Range (API JavaScript para Excel)](/javascript/api/excel/excel.range).
+Este artigo baseia-se em informações em [Trabalhar com intervalos usando a API JavaScript do Excel (fundamental)](excel-add-ins-ranges.md) fornecendo exemplos de código que mostram como executar tarefas mais avançadas com intervalos usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos aos quais o `Range` objeto oferece suporte, consulte [objeto Range (API JavaScript para Excel)](/javascript/api/excel/excel.range).
 
 ## <a name="work-with-dates-using-the-moment-msdate-plug-in"></a>Trabalhar com datas usando o plug-in Moment-MSDate
 
@@ -60,7 +60,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-Seu suplemento terá que formatar os intervalos para exibir as datas em um formato mais legível. O exemplo de `"[$-409]m/d/yy h:mm AM/PM;@"` exibe a hora como "3/12/18 15:57". Para obter mais informações sobre formatos de números de data e hora, confira as "Diretrizes para formatos de data e hora" no artigo [Diretrizes de revisão para personalizar um formato de número](https://support.office.com/article/review-guidelines-for-customizing-a-number-format-c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5).
+Seu suplemento terá que formatar os intervalos para exibir as datas em um formato mais legível. O exemplo de `"[$-409]m/d/yy h:mm AM/PM;@"` exibe a hora como "3/12/18 15:57". Para obter mais informações sobre formatos de números de data e hora, confira as "Diretrizes para formatos de data e hora" no artigo [Diretrizes de revisão para personalizar um formato de número](https://support.microsoft.com/office/c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5).
 
 ## <a name="work-with-multiple-ranges-simultaneously"></a>Trabalhar com vários intervalos simultaneamente
 
@@ -237,9 +237,9 @@ Excel.run(function (context) {
 
 ### <a name="cut-and-paste-move-cells"></a>Células recortar e colar (mover)
 
-O método [Range. MoveTo](/javascript/api/excel/excel.range#moveto-destinationrange-) move as células para um novo local na pasta de trabalho. Esse comportamento de movimentação de célula funciona da mesma forma que quando as células são movidas [arrastando-se a borda do intervalo](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e) ou ao pegar as ações **recortar** e **colar** . Tanto a formatação quanto os valores do intervalo são movidos para o local especificado como `destinationRange` o parâmetro.
+O método [Range. MoveTo](/javascript/api/excel/excel.range#moveto-destinationrange-) move as células para um novo local na pasta de trabalho. Esse comportamento de movimentação de célula funciona da mesma forma que quando as células são movidas [arrastando-se a borda do intervalo](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e) ou ao pegar as ações **recortar** e **colar** . Tanto a formatação quanto os valores do intervalo são movidos para o local especificado como o `destinationRange` parâmetro.
 
-O exemplo de código a seguir mostra um intervalo que está `Range.moveTo` sendo movido com o método. Observe que, se o intervalo de destino for menor do que a fonte, ele será expandido para abranger o conteúdo de origem.
+O exemplo de código a seguir mostra um intervalo que está sendo movido com o `Range.moveTo` método. Observe que, se o intervalo de destino for menor do que a fonte, ele será expandido para abranger o conteúdo de origem.
 
 ```js
 Excel.run(function (context) {
@@ -258,7 +258,7 @@ O método [Range. removeDuplicates](/javascript/api/excel/excel.range#removedupl
 
 `removeDuplicates` leva um `number[]` representando os índices da coluna que são verificados para duplicatas. Essa matriz é baseada em zero e relativa ao intervalo, não à planilha. O método também utiliza um parâmetro Boolean que especifica se a primeira linha é um cabeçalho. Quando **verdadeiro**, a primeira linha será ignorada ao considerar duplicatas. O `removeDuplicates` método retorna um `RemoveDuplicatesResult` objeto que especifica o número de linhas removidas e o número de linhas exclusivas restantes.
 
-Ao usar o método de `removeDuplicates` um intervalo, lembre-se do seguinte:
+Ao usar o método de um intervalo `removeDuplicates` , lembre-se do seguinte:
 
 - `removeDuplicates` considera valores de célula, não resultados de função. Se as duas funções diferentes forem avaliadas como o mesmo resultado, os valores de célula não são considerados duplicatas.
 - Células vazias não serão ignoradas por `removeDuplicates`. O valor de uma célula vazia é tratado como qualquer outro valor. Isso significa que as linhas vazias contidas no intervalo serão incluídas em `RemoveDuplicatesResult`.

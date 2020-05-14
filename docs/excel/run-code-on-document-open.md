@@ -1,20 +1,18 @@
 ---
-title: Executar o código em seu suplemento do Excel quando o documento for aberto (visualização)
+title: Executar o código em seu suplemento do Excel quando o documento for aberto
 description: Executar o código em seu suplemento do Excel quando o documento for aberto.
-ms.date: 02/20/2020
+ms.date: 05/11/2020
 localization_priority: Normal
-ms.openlocfilehash: fba43fdc508245632da911acecbfa52e00847b3b
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 0a9090315a4ddca80e25a94092c779a3f3271087
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717030"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217946"
 ---
-# <a name="run-code-in-your-excel-add-in-when-the-document-opens-preview"></a>Executar o código em seu suplemento do Excel quando o documento for aberto (visualização)
+# <a name="run-code-in-your-excel-add-in-when-the-document-opens"></a>Executar o código em seu suplemento do Excel quando o documento for aberto
 
-[!include[Running custom functions in browser runtime note](../includes/excel-shared-runtime-preview-note.md)]
-
-Você pode configurar seu suplemento do Excel para carregar e executar o código assim que o documento é aberto. Isso é útil se você precisar registrar manipuladores de eventos, pré-carregar dados para o painel de tarefas, sincronizar interface do usuário ou executar outras tarefas antes de o suplemento ficar visível.
+Você pode configurar seu suplemento do Excel para carregar e executar o código assim que o documento é aberto. Isso será útil se você precisar registrar manipuladores de eventos, dados pré-carregados para o painel de tarefas, sincronizar interface do usuário ou executar outras tarefas antes de o suplemento ficar visível.
 
 [!include[Excel shared runtime note](../includes/note-requires-shared-runtime.md)]
 
@@ -83,6 +81,6 @@ async function onChange(event) {
 
 ```
 
-## <a name="see-also"></a>Também confira
+## <a name="see-also"></a>Confira também
 
 - [Compartilhar dados e eventos entre as funções personalizadas do Excel e o tutorial do painel de tarefas](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)

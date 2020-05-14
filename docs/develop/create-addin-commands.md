@@ -1,27 +1,23 @@
 ---
-title: Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint
-description: Use VersionOverrides no manifesto para definir comandos de suplemento para Excel, Word e PowerPoint. Use comandos de suplemento para criar elementos da interface do usuário, adicionar listas ou botões e executar ações.
-ms.date: 09/26/2019
+title: Criar comandos de suplemento em seu manifesto para Excel, PowerPoint e Word
+description: Use VersionOverrides no manifesto para definir comandos de suplemento para Excel, PowerPoint e Word. Use comandos de suplemento para criar elementos de interface do usuário, adicionar botões ou listas e realizar ações.
+ms.date: 05/12/2020
 localization_priority: Normal
-ms.openlocfilehash: e3b85315d68368416df9d9bc09227ad06689026a
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: d318df0ab80a4cd83c6a74e77662f3e85df9f92d
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719179"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217883"
 ---
-# <a name="create-add-in-commands-in-your-manifest-for-excel-word-and-powerpoint"></a>Criar comandos de suplemento no manifesto para Excel, Word e PowerPoint
+# <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Criar comandos de suplemento em seu manifesto para Excel, PowerPoint e Word
 
+Use **[VersionOverrides](../reference/manifest/versionoverrides.md)** no manifesto para definir comandos de suplemento para Excel, PowerPoint e Word. Os comandos de suplemento fornecem uma maneira fácil de personalizar a interface do usuário do Office (UI) padrão com elementos de interface do usuário especificados que executam ações. Você pode usar comandos de suplemento para:
 
-Use **[VersionOverrides](../reference/manifest/versionoverrides.md)** no manifesto para definir comandos de suplemento para Excel, Word e PowerPoint. Os comandos de suplemento fornecem uma maneira fácil de personalizar a interface do usuário padrão do Office com elementos de interface do usuário especificados que executam ações. Você pode usar comandos de suplemento para:
-- Criar elementos de interface do usuário ou pontos de entrada que facilitam o uso da funcionalidade dos suplementos.  
-  
+- Criar elementos de interface do usuário ou pontos de entrada que facilitam o uso da funcionalidade dos suplementos.
 - Adicionar botões ou uma lista suspensa de botões à faixa de opções.
-  
 - Adicionar itens de menu individuais — cada um contendo submenus opcionais — aos menus de contexto específicos (atalho).
-  
 - Executar ações quando seu comando de suplemento é escolhido. É possível:
-
   - Mostrar um ou mais suplementos de painel de tarefa com os quais os usuários podem interagir. Dentro do suplemento de painel de tarefa, é possível exibir HTML que use a malha da interface do usuário do Office para criar uma interface do usuário personalizada.
 
      *ou*
@@ -154,7 +150,7 @@ Veja a seguir um exemplo do elemento **FunctionFile**.
     <FunctionFile resid="residDesktopFuncUrl" />
     <ExtensionPoint xsi:type="PrimaryCommandSurface">
       <!-- information about this extension point -->
-    </ExtensionPoint> 
+    </ExtensionPoint>
 
     <!-- You can define more than one ExtensionPoint element as needed -->
 </DesktopFormFactor>
@@ -168,7 +164,6 @@ O JavaScript no arquivo HTML referenciado pelo elemento **FunctionFile** deve ch
 O código a seguir mostra como implementar a função usada por **FunctionName**.
 
 ```js
-
 <script>
     // The initialize function must be run each time a new page is loaded.
     (function () {
@@ -192,7 +187,7 @@ O código a seguir mostra como implementar a função usada por **FunctionName**
                 }
             });
 
-        // Calling event.completed is required. event.completed lets the platform know that processing has completed. 
+        // Calling event.completed is required. event.completed lets the platform know that processing has completed.
         event.completed();
     }
 </script>
@@ -257,7 +252,6 @@ Os exemplos a seguir mostram como usar o elemento **ExtensionPoint** com os valo
 |**Tooltip** <br/> |Opcional. A dica de ferramenta do grupo. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **LongStrings**, que é um elemento filho do elemento **Resources**. <br/> |
 |**Control** <br/> |Cada grupo exige pelo menos um controle. Um elemento **Control** pode ser um **Button** ou um **Menu**. Use **Menu** para especificar uma lista suspensa de controles de botão. Atualmente, há suporte apenas para botões e menus. Confira as seguintes seções [Controles de botão](../reference/manifest/control.md#button-control) e [Controles de menu](../reference/manifest/control.md#menu-dropdown-button-controls) para saber mais.<br/>**Observação:** para facilitar a solução de problemas, recomendamos adicionar um elemento **Control** e os elementos filho **Resources** relacionados, um de cada vez.          |
 
-
 ### <a name="button-controls"></a>Controles de botão
 
 Um botão executa uma única ação quando o usuário o seleciona. Pode ser a execução de uma função JavaScript ou a exibição de um painel de tarefas. O exemplo a seguir mostra como definir dois botões. O primeiro botão executa uma função JavaScript sem mostrar uma interface do usuário e o segundo botão mostra um painel de tarefas. No elemento **Control**:
@@ -312,24 +306,21 @@ Um botão executa uma única ação quando o usuário o seleciona. Pode ser a ex
 |**Icon** <br/> | Obrigatório. Contém os elementos **Image** para o botão. Arquivos de imagem devem estar no formato .png. <br/> **Imagem** <br/>  Define uma imagem a ser exibida no botão. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **Image**. O elemento **Image** é um elemento filho do elemento **Images**, que é um elemento filho do elemento **Resources**. O atributo **size** indica o tamanho em pixels da imagem. Três tamanhos de imagem são obrigatórios: 16, 32 e 80 pixels. Também há suporte para cinco tamanhos opcionais: 20, 24, 40, 48 e 64 pixels. <br/> |
 |**Action** <br/> | Obrigatório. Especifica a ação a ser executada quando o usuário seleciona o botão. Você pode especificar um dos seguintes valores para o atributo **xsi:type**: <br/> **ExecuteFunction**, que executa uma função JavaScript localizada no arquivo referenciado por **FunctionFile**. **ExecuteFunction** não exibe uma interface do usuário. O elemento filho **FunctionName** especifica o nome da função a ser executada. <br/> **ShowTaskPane**, que mostra um suplemento de painel de tarefas. O elemento filho **SourceLocation** especifica o local do arquivo de origem do suplemento de painel de tarefas a ser exibido. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **Url** no elemento **Urls** do elemento **Resources**. <br/> |
 
-
 ### <a name="menu-controls"></a>Controles de menu
+
 Um controle **Menu** pode ser usado com **PrimaryCommandSurface** ou **ContextMenu** e define:
   
 - Um item de menu no nível raiz.
-
 - Uma lista de itens de submenu.
- 
+
 Quando usado com **PrimaryCommandSurface**, o item de menu raiz é exibido como um botão na faixa de opções. Quando o botão é selecionado, o submenu é exibido como uma lista suspensa. Quando usado com **ContextMenu**, um item de menu com um submenu é inserido no menu de contexto. Em ambos os casos, cada item de submenu pode executar uma função JavaScript ou mostrar um painel de tarefas. Somente um nível de submenus é compatível no momento.
 
 O exemplo a seguir mostra como definir um item de menu com dois itens de submenu. O primeiro item do submenu mostra um painel de tarefas e o segundo item do submenu executa uma função JavaScript. No elemento **Control**:
 
 - O atributo **xsi:type** é obrigatório e deve ser definido como **Menu**.
-  
 - O atributo **id** é uma cadeia de caracteres com, no máximo, 125 caracteres.
 
 ```xml
-
 <Control xsi:type="Menu" id="TestMenu2">
   <Label resid="residLabel3" />
   <Tooltip resid="residToolTip" />
@@ -385,13 +376,12 @@ O exemplo a seguir mostra como definir um item de menu com dois itens de submenu
 |**SuperTip** <br/> | Obrigatório. A superdica para o menu, que é definida pelos seguintes itens: <br/> **Título** <br/>  Obrigatório. O texto da superdica. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **ShortStrings**, que é elemento filho do elemento **Resources**. <br/> **Descrição** <br/>  Obrigatório. A descrição da superdica. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **String**. O elemento **String** é um elemento filho do elemento **LongStrings**, que é um elemento filho do elemento **Resources**. <br/> |
 |**Icon** <br/> | Obrigatório. Contém os elementos **Image** para o menu. Arquivos de imagem devem estar no formato .png. <br/> **Image** <br/>  Uma imagem para o menu. O atributo **resid** deve ser definido como o valor do atributo **id** de um elemento **Image**. O elemento **Image** é um elemento filho do elemento **Images**, que é um elemento filho do elemento **Resources**. O atributo **size** indica o tamanho em pixels da imagem. Três tamanhos de imagem, em pixels, são obrigatórios: 16, 32 e 80 pixels. Cinco tamanhos opcionais, em pixels, também têm suporte: 20, 24, 40, 48 e 64 pixels. <br/> |
 |**Items** <br/> |Obrigatório. Contém os elementos **Item** para cada item do submenu. Cada elemento **Item** contém os mesmos elementos filho que [Controles de botão](../reference/manifest/control.md#button-control).  <br/> |
-   
+
 ## <a name="step-7-add-the-resources-element"></a>Etapa 7: adicionar o elemento Resources
 
 O elemento **Resources** contém recursos usados pelos diferentes elementos filho do elemento **VersionOverrides**. Resources inclui ícones, cadeias de caracteres e URLs. Um elemento no manifesto pode usar um recurso fazendo referência a **id** do recurso. O uso da **id** ajuda a organizar o manifesto, especialmente quando há versões diferentes do recurso para localidades diferentes. Uma **id** tem no máximo 32 caracteres.
   
 Veja a seguir um exemplo de como usar o elemento **Resources**. Cada recurso pode ter um ou mais elementos filho **Override** para definir um recurso diferente para uma localidade específica.
-
 
 ```xml
 <Resources>
@@ -430,7 +420,8 @@ Veja a seguir um exemplo de como usar o elemento **Resources**. Cada recurso pod
 |**Urls**/ **Url** <br/> |Fornece um local para a URL HTTPS. Uma URL pode ter no máximo 2048 caracteres.  <br/> |
 |**ShortStrings**/ **String** <br/> |O texto para os elementos **Label** e **Title**. Cada **String** contém no máximo 125 caracteres. <br/> |
 |**LongStrings**/ **String** <br/> |O texto para os elementos **Tooltip** e **Description**. Cada **String** contém no máximo 250 caracteres.<br/> |
-   > [!NOTE]
+
+> [!NOTE]
 > Use o protocolo SSL (Secure Sockets Layer) para todas as URLs nos elementos **Image** e **Url**.
 
 ### <a name="tab-values-for-default-office-ribbon-tabs"></a>Valores para as guias de faixa de opções padrão do Office
@@ -445,4 +436,4 @@ No Excel e no Word, é possível adicionar seus comandos de suplemento na faixa 
 
 ## <a name="see-also"></a>Confira também
 
--  [Comandos de suplemento para Excel, Word e PowerPoint](../design/add-in-commands.md)
+- [Comandos de suplemento para Excel, PowerPoint e Word](../design/add-in-commands.md)

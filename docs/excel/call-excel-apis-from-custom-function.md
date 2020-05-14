@@ -1,18 +1,16 @@
 ---
 title: Chamar as APIs do Microsoft Excel a partir de uma função personalizada
 description: Saiba quais APIs do Microsoft Excel você pode chamar a partir de sua função personalizada.
-ms.date: 02/06/2020
+ms.date: 05/11/2020
 localization_priority: Normal
-ms.openlocfilehash: e22ed897e95a74707bd0d8bded3f8dca724731d1
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: a24cdfba2d79b6e2ad165765d22cd77743047d34
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719340"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217876"
 ---
 # <a name="call-microsoft-excel-apis-from-a-custom-function"></a>Chamar as APIs do Microsoft Excel a partir de uma função personalizada
-
-[!include[Running custom functions in a shared runtime note](../includes/excel-shared-runtime-preview-note.md)]
 
 Chamar as APIs do Excel do Office. js de suas funções personalizadas para obter dados de intervalo e obter mais contexto para seus cálculos.
 
@@ -62,6 +60,6 @@ Em vez disso, faça alterações no Excel a partir do contexto de um botão da f
 
 - [Conceitos fundamentais de programação com a API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md)
 
-## <a name="see-also"></a>Também confira
+## <a name="see-also"></a>Confira também
 
 - [Compartilhar dados e eventos entre as funções personalizadas do Excel e o tutorial do painel de tarefas](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)

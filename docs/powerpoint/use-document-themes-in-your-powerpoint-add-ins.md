@@ -3,16 +3,16 @@ title: Usar temas de documentos em seus suplementos do PowerPoint
 description: Saiba como coordenar visualmente temas, como fontes e cores, para aplicar a apresentações, documentos, planilhas e emails.
 ms.date: 10/14/2019
 localization_priority: Normal
-ms.openlocfilehash: 040458d504e2dbb3d9883711503a61eb955f8d89
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: e3affe277cfb4c52e83e0c27815884949afbe336
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720775"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217785"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>Usar temas de documentos em seus suplementos do PowerPoint
 
-Um [tema do Office](https://support.office.com/Article/What-is-a-theme--7528ccc2-4327-4692-8bf5-9b5a3f2a5ef5) é composto, em parte, por um conjunto visualmente coordenado de fontes e cores que é possível aplicar em apresentações, documentos, planilhas e emails. Para aplicar ou personalizar o tema de uma apresentação no PowerPoint, use os grupos **Temas** e **Variantes** na guia **Design** da faixa de opções. O PowerPoint atribui uma nova apresentação em branco com o **Tema do Office** padrão, mas é possível escolher outros temas disponíveis na guia **Design**, baixar temas adicionais do Office.com ou criar e personalizar seu próprio tema.
+Um [tema do Office](https://support.office.com/article/create-your-own-theme-in-powerpoint-83e68627-2c17-454a-9fd8-62deb81951a6) é composto, em parte, por um conjunto visualmente coordenado de fontes e cores que é possível aplicar em apresentações, documentos, planilhas e emails. Para aplicar ou personalizar o tema de uma apresentação no PowerPoint, use os grupos **Temas** e **Variantes** na guia **Design** da faixa de opções. O PowerPoint atribui uma nova apresentação em branco com o **Tema do Office** padrão, mas é possível escolher outros temas disponíveis na guia **Design**, baixar temas adicionais do Office.com ou criar e personalizar seu próprio tema.
 
 O OfficeThemes.css ajuda a criar suplementos coordenados com o PowerPoint de duas maneiras:
 
@@ -26,7 +26,7 @@ Todo tema de documento do Office define 12 cores. Dez dessas cores ficam dispon�
 
 ![Paleta de cores](../images/office15-app-color-palette.png)
 
-Para exibir ou personalizar o conjunto completo de 12 cores de tema no PowerPoint, no **grupo variantes** na guia **design** , clique na lista **suspensa mais** e, em seguida, selecione **cores** > **Personalizar cores** para exibir a caixa de diálogo **criar novas cores de tema** .
+Para exibir ou personalizar o conjunto completo de 12 cores de tema no PowerPoint, no grupo **variantes** na guia **design** , clique na lista suspensa **mais** e, em seguida, selecione **cores**  >  **Personalizar cores** para exibir a caixa de diálogo **criar novas cores de tema** .
 
 ![Criar caixas de diálogo de novas cores de tema](../images/office15-app-create-new-theme-colors.png)
 
@@ -38,13 +38,13 @@ Cada tema de documento do Office também define duas fontes: uma para títulos e
 
 ![O seletor de fonte](../images/office15-app-font-picker.png)
 
-Para exibir ou personalizar fontes de tema no PowerPoint, no grupo **variantes** na guia **design** , clique na lista **suspensa mais** e, em seguida, **selecione fontes** > **Personalizar** fontes para exibir a caixa de diálogo **criar novas fontes de tema** .
+Para exibir ou personalizar fontes de tema no PowerPoint, no grupo **variantes** na guia **design** , clique na lista suspensa **mais** e, em seguida, selecione **fontes**  >  **Personalizar** fontes para exibir a caixa de diálogo **criar novas fontes de tema** .
 
 ![Criar caixas de diálogo de novas fontes de tema](../images/office15-app-create-new-theme-fonts.png)
 
 ### <a name="office-ui-theme-fonts-and-colors"></a>Cores e fontes de tema da interface de usuário do Office
 
-O Office também permite escolher entre vários temas predefinidos que especificam algumas das cores e fontes usadas na interface de usuário de todos os aplicativos do Office. Para fazer isso, você usa a lista suspensa de temas de**conta** > de **arquivo** > do**Office** (de qualquer aplicativo do Office).
+O Office também permite escolher entre vários temas predefinidos que especificam algumas das cores e fontes usadas na interface de usuário de todos os aplicativos do Office. Para fazer isso, você usa a lista suspensa de temas de conta de **arquivo**  >  **Account**  >  do**Office** (de qualquer aplicativo do Office).
 
 ![Menu suspenso de tema do Office](../images/office15-app-office-theme-picker.png)
 

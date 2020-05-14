@@ -1,25 +1,20 @@
 ---
-title: Tempo de execução no arquivo de manifesto (versão prévia)
+title: Tempo de execução no arquivo de manifesto
 description: O elemento de tempo de execução configura seu suplemento para usar um tempo de execução de JavaScript compartilhado para sua faixa de opções, painel de tarefas e funções personalizadas.
-ms.date: 02/21/2020
+ms.date: 05/11/2020
 localization_priority: Normal
-ms.openlocfilehash: 6237f64fec47ed22b0105bf74c8eb7e2b7c38afe
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: c5c7356f9985ca7b5972068629b0587f8916348e
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717926"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217757"
 ---
-# <a name="runtime-element-preview"></a>Elemento Runtime (visualização)
-
-[!include[Running custom functions in browser runtime note](../../includes/excel-shared-runtime-preview-note.md)]
+# <a name="runtime-element"></a>Elemento Runtime
 
 Elemento filho do [`<Runtimes>`](runtimes.md) elemento. Este elemento configura seu suplemento para usar um tempo de execução de JavaScript compartilhado para que a faixa de opções, o painel de tarefas e as funções personalizadas, todos sejam executados no mesmo tempo de execução. Para obter mais informações, consulte [Configurar o suplemento do Excel para usar um tempo de execução do JavaScript compartilhado](../../excel/configure-your-add-in-to-use-a-shared-runtime.md).
 
 **Tipo de suplemento:** Painel de tarefas
-
-> [!IMPORTANT]
-> O tempo de execução compartilhado está atualmente em versão prévia e só está disponível no Excel no Windows. Para experimentar os recursos de visualização, você precisará ingressar no [Office Insider](https://insider.office.com/).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -37,9 +32,9 @@ Elemento filho do [`<Runtimes>`](runtimes.md) elemento. Este elemento configura 
 
 |  Atributo  |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **Lifetime = "Long"**  |  Sim  | Deve ser `long` sempre se você quiser usar um tempo de execução compartilhado para o suplemento do Excel. |
-|  **resid**  |  Sim  | Especifica o local da URL da página HTML do suplemento. O `resid` deve corresponder a `id` um atributo de `Url` um elemento no `Resources` elemento. |
+|  **Lifetime = "Long"**  |  Sim  | Deve ser sempre `long` se você quiser usar um tempo de execução compartilhado para o suplemento do Excel. |
+|  **resid**  |  Sim  | Especifica o local da URL da página HTML do suplemento. O `resid` deve corresponder a um `id` atributo de um `Url` elemento no `Resources` elemento. |
 
-## <a name="see-also"></a>Também confira
+## <a name="see-also"></a>Confira também
 
 - [Tempos de execução](runtimes.md)
