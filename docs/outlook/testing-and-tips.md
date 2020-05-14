@@ -1,14 +1,14 @@
 ---
 title: Implante e instale suplementos do Outlook para teste
 description: Crie um arquivo de manifesto, implante o arquivo de interface do usuário suplemento em um servidor web, instale o suplemento na caixa de correio e teste o suplemento.
-ms.date: 03/18/2020
+ms.date: 05/13/2020
 localization_priority: Priority
-ms.openlocfilehash: 76688ad3e1eca2dda832a94c3a9ae815e37678bc
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: 9b539f2f70a6615cdcf87f0d8d01dd5f0e6c2241
+ms.sourcegitcommit: 9c73a6117d933f0fbe307256aa62e6c84db4e9e3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890974"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44222191"
 ---
 # <a name="deploy-and-install-outlook-add-ins-for-testing"></a>Implante e instale suplementos do Outlook para teste
 
@@ -66,9 +66,9 @@ A URL totalmente qualificada é o local do arquivo de manifesto do suplemento qu
 
 Você pode usar os seguintes cmdlets do PowerShell adicionais para gerenciar os suplementos de uma caixa de correio:
 
--  `Get-App` – Lista os suplementos que estão habilitados para uma caixa de correio.
--  `Set-App` – Habilita ou desabilita um suplemento em uma caixa de correio.
--  `Remove-App` – Remove um suplemento instalado anteriormente de um servidor Exchange.
+- `Get-App` – Lista os suplementos que estão habilitados para uma caixa de correio.
+- `Set-App` – Habilita ou desabilita um suplemento em uma caixa de correio.
+- `Remove-App` – Remove um suplemento instalado anteriormente de um servidor Exchange.
 
 ## <a name="client-versions"></a>Versões de cliente
 
@@ -77,10 +77,10 @@ A decisão de quais versões de cliente do Outlook testar depende dos seus requi
 - Se você estiver desenvolvendo um suplemento para uso privado ou apenas para membros da sua organização, é importante testar as versões do Outlook usadas pela sua empresa. Lembre-se que alguns usuários podem usar o Outlook na Web, portanto testar as versões para o navegador padrão da sua empresa também é importante.
 
 - Se você estiver desenvolvendo um suplemento no [AppSource](https://appsource.microsoft.com), teste as versões exigidas conforme especificado nas [Políticas de certificação do mercado comercial 1120.3](/legal/marketplace/certification-policies#11203-functionality). Isso inclui:
-    - A versão mais recente do Outlook no Windows e a versão anterior à mais recente.
-    - A versão mais recente do Outlook no Mac.
-    - A versão mais recente do Outlook no iOS e Android (se o suplemento for [compatível com mobilidade](add-mobile-support.md)).
-    - As versões do navegador especificadas na política de validação do mercado comercial 1120.3
+  - A versão mais recente do Outlook no Windows e a versão anterior à mais recente.
+  - A versão mais recente do Outlook no Mac.
+  - A versão mais recente do Outlook no iOS e Android (se o suplemento for [compatível com mobilidade](add-mobile-support.md)).
+  - As versões do navegador especificadas na política de validação do mercado comercial 1120.3
 
 > [!NOTE]
 > Se seu suplemento não for compatível com um dos clientes acima devido a uma [solicitação de um conjunto de exigências da API](apis.md) que o cliente não dá suporte, esse cliente será removido da lista de clientes exigidos.

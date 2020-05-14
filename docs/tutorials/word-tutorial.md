@@ -4,12 +4,12 @@ description: Neste tutorial, voc? criar? um suplemento do Word que insere (e sub
 ms.date: 01/16/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: c04816037ec822719437affff95c1afa779f9d02
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: e3d6f2c590ae34189ce9127d55b3f4332a63e1aa
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717373"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217764"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Tutorial: Criar Suplemento do Painel de Tarefas no Word
 
@@ -316,7 +316,7 @@ Nesta etapa do tutorial, você aplicará um estilo interno ao texto, aplicará u
 
 3. Verifique se há pelo menos três parágrafos no documento. É possível escolher o botão **Inserir Parágrafo** três vezes. *Verifique com atenção se não há um parágrafo em branco no final do documento. Se houver, exclua-o.*
 
-4. No Word, crie um [estilo personalizado](https://support.office.com/article/Customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563) chamado de "MyCustomStyle". Pode ter a formatação que você quiser.
+4. No Word, crie um [estilo personalizado](https://support.office.com/article/customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563) chamado de "MyCustomStyle". Pode ter a formatação que você quiser.
 
 5. Escolha o botão **Aplicar Estilo**. O primeiro parágrafo receberá o estilo interno **Referência Intensa**.
 

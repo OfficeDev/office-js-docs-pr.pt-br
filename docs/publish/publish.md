@@ -3,12 +3,12 @@ title: Implantar e publicar Suplementos do Office
 description: Você pode usar um dos vários métodos para implantar o suplemento do Office para testar ou distribuir aos usuários.
 ms.date: 05/06/2020
 localization_priority: Priority
-ms.openlocfilehash: b4ee2dab2fec0237ad06776861678c4c23da6ca8
-ms.sourcegitcommit: 1e3d7051ba7c8c0ccfd6607099d90469fc8141e2
+ms.openlocfilehash: e7bcd3a1de0c81d0626cf0f59569acb0a8a1d09e
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "44066085"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217995"
 ---
 # <a name="deploy-and-publish-office-add-ins"></a>Implantar e publicar Suplementos do Office
 
@@ -50,9 +50,9 @@ As opções de implantação disponíveis dependem do host do Office que você p
 
 As seções a seguir fornecem informações adicionais sobre os métodos de implantação mais comumente usados para distribuir Suplementos do Office para usuários da organização.
 
-Saiba mais sobre como os usuários finais podem adquirir, inserir e executar suplementos em [Começar a usar seu Suplemento do Office](https://support.office.com/en-ie/article/Start-using-your-Office-Add-in-82e665c4-6700-4b56-a3f3-ef5441996862?ui=en-US&rs=en-IE&ad=IE).
+Saiba mais sobre como os usuários finais podem adquirir, inserir e executar suplementos em [Começar a usar seu Suplemento do Office](https://support.office.com/article/start-using-your-office-add-in-82e665c4-6700-4b56-a3f3-ef5441996862).
 
-### <a name="centralized-deployment-via-the-office-365-admin-center"></a>Implantação Centralizada por meio do centro de administração do Office 365 
+### <a name="centralized-deployment-via-the-office-365-admin-center"></a>Implantação Centralizada por meio do centro de administração do Office 365
 
 No Centro de administração do Office 365, é mais fácil para o administrador implantar Suplementos do Office para usuários e grupos dentro da organização. Os suplementos implantados por meio do Centro de administração ficam disponíveis imediatamente para os usuários nos aplicativos do Office, sem a necessidade de configuração do cliente. É possível usar a Implantação Centralizada para implantar suplementos internos, além de suplementos fornecidos por ISVs.
 
