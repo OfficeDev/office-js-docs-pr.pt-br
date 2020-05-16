@@ -1,25 +1,25 @@
 ---
 title: Elemento Rule no arquivo de manifesto
 description: O elemento Rule especifica as regras de ativação que devem ser avaliadas para esse suplemento de email contextual.
-ms.date: 03/16/2020
+ms.date: 05/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 06d9985615617e50567dcf614268d9181989f2a1
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: c1f2be3371333bfd87e0693d02a9a5984c18317b
+ms.sourcegitcommit: b634bfe9a946fbd95754e87f070a904ed57586ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720432"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "44253618"
 ---
 # <a name="rule-element"></a>Elemento Rule
 
 Especifica as regras de ativação que devem ser avaliadas para esse suplemento de email contextual.
 
-**Tipo de suplemento:** Suplemento contextual de email
+**Tipo de suplemento:** Email (contextual)
 
 ## <a name="contained-in"></a>Contido em
 
 - [OfficeApp](officeapp.md)
-- [ExtensionPoint](extensionpoint.md)
+- [ExtensionPoint](extensionpoint.md) ([**CustomPane** (preterido)](https://developer.microsoft.com/outlook/blogs/make-your-add-ins-available-in-the-office-ribbon/), [**DetectedEntity**](extensionpoint.md#detectedentity))
 
 ## <a name="attributes"></a>Atributos
 

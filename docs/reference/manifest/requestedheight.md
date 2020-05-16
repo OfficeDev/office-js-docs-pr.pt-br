@@ -1,14 +1,14 @@
 ---
 title: Elemento RequestedHeight no arquivo de manifesto
 description: O elemento RequestedHeight especifica a altura inicial (em pixels) de um suplemento de conteúdo ou email.
-ms.date: 10/09/2018
+ms.date: 05/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 5f4c3ca1ff39cc3150249fbc824b0db76f6b8a85
-ms.sourcegitcommit: c6e3bfd3deb77982d0b7082afd6a48678e96e1c3
+ms.openlocfilehash: fa40043e6192e1304e67f1f96f770898b230036c
+ms.sourcegitcommit: b634bfe9a946fbd95754e87f070a904ed57586ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43215037"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "44253611"
 ---
 # <a name="requestedheight-element"></a>Elemento RequestedHeight
 
@@ -26,4 +26,4 @@ Especifica a altura inicial (em pixels) de um suplemento de conteúdo ou de emai
 
 - [DefaultSettings](defaultsettings.md) (suplementos de conteúdo) com um valor entre 32 e 1000
 - [DesktopSettings](desktopsettings.md) e [TabletSettings](tabletsettings.md) (suplementos de email ) com um valor entre 32 e 450
-- [ExtensionPoint](extensionpoint.md) (suplementos contextuais de email) com um valor entre 140 e 450 para o ponto de extensão **DetectedEntity** e entre 32 e 450 para o ponto de extensão **CustomPane**
+- [ExtensionPoint](extensionpoint.md) (suplementos de email contextuais) com um valor que pode ser entre 140 e 450 para o ponto de extensão **DetectedEntity** e entre 32 e 450 para o [ponto de extensão **CustomPane** (preterido)](https://developer.microsoft.com/outlook/blogs/make-your-add-ins-available-in-the-office-ribbon/)
