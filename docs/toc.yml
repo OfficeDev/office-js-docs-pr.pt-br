@@ -905,6 +905,8 @@
           href: outlook/extension-module-outlook-add-ins.md
         - name: Suplementos do Outlook Mobile
           href: outlook/outlook-mobile-addins.md
+        - name: Reunião online no celular (visualização)
+          href: outlook/online-meeting.md
         - name: Suplementos Ao enviar
           href: outlook/outlook-on-send-addins.md
         - name: Painel de tarefas fixável
@@ -969,8 +971,6 @@
               href: outlook/get-or-set-the-time-of-an-appointment.md
             - name: Obter e definir locais
               href: outlook/get-or-set-the-location-of-an-appointment.md
-            - name: Configurar uma reunião online (visualização)
-              href: outlook/online-meeting.md
         - name: Privacidade e segurança
           items:
             - name: Visão Geral
