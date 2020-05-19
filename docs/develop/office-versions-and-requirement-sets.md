@@ -3,12 +3,12 @@ title: Versões do Office e conjuntos de requisitos
 description: Suporte a plataformas do Office.js usando API JavaScript
 ms.date: 01/14/2020
 localization_priority: Priority
-ms.openlocfilehash: aa3beb7177c2d6019dd85cdab5a0f4b7277506a4
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 37456e32dc6111e2b4aa40f0c2240b17916c3778
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718892"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44276026"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Versões do Office e conjuntos de requisitos
 
@@ -35,7 +35,7 @@ Além disso, outras funcionalidades como comandos de suplemento (extensibilidade
 
 Um suplemento só pode usar APIs em conjuntos de requisitos compatíveis com a versão do host do Office na qual ele está em execução. Para saber exatamente quais conjuntos de requisitos estão disponíveis para uma versão específica de host do Office, confira os seguintes artigos sobre conjunto de requisitos específicos ao host:
 
-- [Conjuntos de requisitos de API JavaScript para Excel](../reference/requirement-sets/excel-api-requirement-sets.md) (ExcelApi, [CustomFunctionsRuntime](../excel/custom-functions-architecture.md))
+- [Conjuntos de requisitos de API JavaScript para Excel](../reference/requirement-sets/excel-api-requirement-sets.md) (ExcelApi)
 - [Conjuntos de requisitos de API JavaScript para Word](../reference/requirement-sets/word-api-requirement-sets.md) (WordApi)
 - [Conjuntos de requisitos de API JavaScript para OneNote](../reference/requirement-sets/onenote-api-requirement-sets.md) (OneNoteApi)
 - [Conjuntos de requisitos da API JavaScript do PowerPoint](../reference/requirement-sets/powerpoint-api-requirement-sets.md) (PowerPointApi)
