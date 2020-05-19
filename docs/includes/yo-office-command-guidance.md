@@ -5,6 +5,6 @@ yo office
 ```
 
 > [!NOTE]
-> Ao executar o `yo office` comando, você pode receber prompts sobre as políticas de coleta de dados do Yeoman e as ferramentas CLI do suplemento do Office. Use as informações fornecidas para responder aos prompts conforme você vir ajustar.
+> Ao executar o comando `yo office`, você receberá informações sobre as políticas de coleta de dados de Yeoman e as ferramentas da CLI do suplemento do Office. Use as informações fornecidas para responder às solicitações como achar melhor.
 
 Quando solicitado, forneça as seguintes informações para criar seu projeto de suplemento:

@@ -4,12 +4,12 @@ description: Neste tutorial, você criará um suplemento do Excel que contém um
 ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: d7f6f30bde7b56b1dec1abb55d01e6b65f8d3c7e
-ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
-ms.translationtype: HT
+ms.openlocfilehash: 6ce3bbb4f36819599451f6f87db6c6a6f882f5a1
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "43547075"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275605"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Tutorial: Criar funções personalizadas no Excel
 
@@ -240,7 +240,7 @@ function clock(invocation) {
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Parabéns! Neste tutorial, você criou um novo projeto de funções personalizadas, experimentou uma função predefinida, criou uma função personalizada que solicita dados da Web e criou uma função personalizada que transmite dados. Você também pode experimentar a depuração dessa função usando [as instruções de depuração da função personalizada](../excel/custom-functions-debugging.md). Para saber mais sobre funções personalizadas no Excel, prossiga para o seguinte artigo:
+Parabéns! Neste tutorial, você criou um novo projeto de funções personalizadas, experimentou uma função predefinida, criou uma função personalizada que solicita dados da Web e criou uma função personalizada que transmite dados. Em seguida, você pode modificar seu projeto para usar um tempo de execução compartilhado, tornando mais fácil para sua função interagir com o painel de tarefas. Siga as etapas no seguinte artigo:
 
 > [!div class="nextstepaction"]
-> [Criar funções personalizadas no Excel](../excel/custom-functions-overview.md)
+> [Configure seu suplemento para usar um tempo de execução compartilhado](../excel/configure-your-add-in-to-use-a-shared-runtime.md)

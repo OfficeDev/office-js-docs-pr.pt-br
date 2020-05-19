@@ -1,21 +1,23 @@
 ---
-title: 'Tutorial: compartilhar dados e eventos entre as funções personalizadas do Excel e o painel de tarefas (versão prévia)'
+title: 'Tutorial: compartilhar dados e eventos entre as funções personalizadas do Excel e o painel de tarefas'
 description: No Excel, compartilhe dados e eventos entre as funções personalizadas e o painel de tarefas.
-ms.date: 02/20/2020
+ms.date: 05/17/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 34f2f1006a592c3ee7ab63fdc643648ca26cd01f
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
-ms.translationtype: HT
+ms.openlocfilehash: 6d96b10d6cd6e9bb7909b9d6d64b9a65fcac5b3a
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719725"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275598"
 ---
-# <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane-preview"></a>Tutorial: compartilhar dados e eventos entre as funções personalizadas do Excel e o painel de tarefas (versão prévia)
+# <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Tutorial: compartilhar dados e eventos entre as funções personalizadas do Excel e o painel de tarefas
 
-[!include[Running custom functions in browser runtime note](../includes/excel-shared-runtime-preview-note.md)]
+Você pode configurar o suplemento do Excel para usar um tempo de execução compartilhado. Isso torna possível compartilhar dados globais ou enviar eventos entre o painel de tarefas e as funções personalizadas.
 
-Você pode configurar o suplemento do Excel para usar um tempo de execução compartilhado. Isso permitirá compartilhar dados globais ou enviar eventos entre o painel de tarefas e as funções personalizadas.
+Para a maioria dos cenários de funções personalizadas, recomendamos o uso de um tempo de execução compartilhado, a menos que você tenha um motivo específico para usar uma função personalizada de painel não-tarefa (sem interface do usuário).
+
+Este tutorial pressupõe que você esteja familiarizado com o uso do gerador de Yo Office para criar projetos de suplemento. Considere concluir o [tutorial de funções personalizadas do Excel](./excel-tutorial-create-custom-functions.md), se ainda não tiver feito isso.
 
 ## <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
@@ -210,4 +212,4 @@ Agora que as funções personalizadas são executadas no mesmo contexto que o c�
 Após a inicialização do Excel, você pode usar os botões do painel de tarefas para armazenar ou obter os dados compartilhados. Insira `=CONTOSO.GETVALUE()` em uma célula para que a função personalizada recupere os mesmos dados compartilhados. Ou use `=CONTOSO.STOREVALUE("new value")` para alterar os dados compartilhados para um novo valor.
 
 > [!NOTE]
-> A configuração do seu projeto, como mostrado neste artigo, compartilhará o contexto entre as funções personalizadas e o painel de tarefas. Não há suporte para chamar APIs do Office a partir de funções personalizadas na visualização.
+> A configuração do seu projeto, como mostrado neste artigo, compartilhará o contexto entre as funções personalizadas e o painel de tarefas. É possível chamar algumas APIs do Office a partir de funções personalizadas. [Consulte chamar as APIs do Microsoft Excel a partir de uma função personalizada](../excel/call-excel-apis-from-custom-function.md) para obter mais detalhes.

@@ -1,21 +1,21 @@
 ---
-ms.date: 04/16/2020
-title: Configure o suplemento do Excel para compartilhar o tempo de execução do navegador (visualização)
+ms.date: 05/17/2020
+title: Configurar seu suplemento do Excel para compartilhar o tempo de execução do navegador
 ms.prod: excel
 description: Configure o suplemento do Excel para compartilhar o tempo de execução do navegador e executar a faixa de opções, o painel de tarefas e o código de função personalizado no mesmo tempo de execução.
 localization_priority: Priority
-ms.openlocfilehash: f84de010787921eeb13205935b733ec36b2c3d37
-ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
-ms.translationtype: HT
+ms.openlocfilehash: 166e0f9f2c2fe99b303484d5212e5d8b23726d6a
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "43547245"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44276012"
 ---
-# <a name="configure-your-excel-add-in-to-use-a-shared-javascript-runtime-preview"></a>Configure seu suplemento do Excel para usar um tempo de execução JavaScript compartilhado (visualização)
+# <a name="configure-your-excel-add-in-to-use-a-shared-javascript-runtime"></a>Configurar seu suplemento do Excel para usar um tempo de execução do JavaScript compartilhado
 
-[!include[Running custom functions in a shared runtime note](../includes/excel-shared-runtime-preview-note.md)]
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-Ao executar o Excel no Windows ou Mac, o suplemento executará o código para botões da faixa de opções, funções personalizadas e o painel de tarefas em ambientes de tempo de execução JavaScript separados. Isso cria limitações, como não poder compartilhar facilmente dados globais e não poder acessar todas as funcionalidades do CORS a partir de uma função customizada.
+Ao executar o Excel no Windows ou Mac, o suplemento executará o código para botões da faixa de opções, funções personalizadas e o painel de tarefas em ambientes de tempo de execução JavaScript separados. Isso cria limitações, como não ser capaz de compartilhar facilmente dados globais e não ter acesso a todas as funcionalidades de CORS de uma função personalizada.
 
 No entanto, você pode configurar o suplemento do Excel para compartilhar código em um tempo de execução JavaScript compartilhado. Isso permite uma melhor coordenação entre seu suplemento e acesso ao DOM e CORS de todas as partes do seu suplemento. Também permite executar o código quando o documento é aberto ou executar o código enquanto o painel de tarefas está fechado. Para configurar seu suplemento para usar um tempo de execução compartilhado, siga as instruções neste artigo.
 
@@ -103,7 +103,7 @@ Siga estas etapas para um projeto novo ou existente para configurá-lo para usar
 
 Ao adicionar o elemento `Runtime`, você também especifica uma vida útil com um valor de `long` ou `short`. Defina esse valor como `long` para aproveitar os recursos, como iniciar o suplemento quando o documento for aberto, continuar executando o código após o fechamento do painel de tarefas ou usar o CORS e o DOM nas funções personalizadas.
 
-Se você definir esse valor como `short`, o suplemento se comportará de maneira semelhante ao comportamento padrão. O suplemento será iniciado quando um dos botões da faixa de opções for pressionado, mas poderá desligar após a execução do manipulador da faixa de opções. Da mesma forma, o suplemento será iniciado quando o painel de tarefas for aberto, mas poderá ser desativado quando o painel de tarefas estiver fechado.
+>! Observação O valor de tempo de vida padrão é `short` , mas recomendamos o uso `long` de suplementos do Excel. Se você definir seu tempo de execução como `short` neste exemplo, o suplemento do Excel será iniciado quando um dos botões da faixa de opções for pressionado, mas poderá ser desligado após a execução do manipulador de faixa de opções. Da mesma forma, o suplemento será iniciado quando o painel de tarefas for aberto, mas poderá ser desativado quando o painel de tarefas estiver fechado.
 
 ```xml
 <Runtimes>
@@ -113,7 +113,7 @@ Se você definir esse valor como `short`, o suplemento se comportará de maneira
 
 ## <a name="multiple-task-panes"></a>Vários painéis de tarefas
 
-Não projete seu suplemento para usar vários painéis de tarefas se você planeja usar o tempo de execução compartilhado. O tempo de execução compartilhado tem suporte para o uso de apenas um único painel de tarefas. Observe que qualquer painel de tarefas sem um `<TaskpaneID>` é considerado um painel de tarefas diferente.
+Não projete seu suplemento para usar vários painéis de tarefas se você estiver planejando usar um tempo de execução compartilhado. Um tempo de execução compartilhado só dá suporte ao uso de um painel de tarefas. Observe que qualquer painel de tarefas sem um `<TaskpaneID>` é considerado um painel de tarefas diferente.
 
 ## <a name="next-steps"></a>Próximas etapas
 
@@ -122,4 +122,4 @@ Não projete seu suplemento para usar vários painéis de tarefas se você plane
 
 ## <a name="see-also"></a>Confira também
 
-- [Visão geral: Execute seu código de suplemento em um tempo de execução JavaScript compartilhado (visualização)](custom-functions-shared-overview.md)
+- [Visão geral: executar o código do seu suplemento em um tempo de execução JavaScript compartilhado](custom-functions-shared-overview.md)
