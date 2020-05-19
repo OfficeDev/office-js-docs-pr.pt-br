@@ -1,18 +1,18 @@
 ---
-ms.date: 12/18/2019
+ms.date: 05/11/2020
 description: Retornar vários resultados de sua função personalizada em um suplemento do Office Excel.
 title: Retornar vários resultados de sua função personalizada
 localization_priority: Normal
-ms.openlocfilehash: 753755b481ab3db0de711c80ef082aedc82177ae
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: 23ca1b038d73a93e6f96167cbdc23d79ccbfe622
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217834"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275970"
 ---
 # <a name="return-multiple-results-from-your-custom-function"></a>Retornar vários resultados de sua função personalizada
 
-Você pode retornar vários resultados de sua função personalizada que serão retornadas às células vizinhas. Esse comportamento é chamado de despejo. Quando sua função personalizada retorna uma matriz de resultados, ela é conhecida como uma fórmula de matriz dinâmica. Para obter mais informações sobre fórmulas de matriz dinâmicas no Excel, consulte [matrizes dinâmicas e comportamento de matriz despejada](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531).
+Você pode retornar vários resultados de sua função personalizada que serão retornadas às células vizinhas. Esse comportamento é chamado de despejo. Quando sua função personalizada retorna uma matriz de resultados, ela é conhecida como uma fórmula de matriz dinâmica. Para obter mais informações sobre fórmulas de matriz dinâmicas no Excel, consulte [matrizes dinâmicas e comportamento de matriz despejada](https://support.office.com/article/dynamic-arrays-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531).
 
 A imagem a seguir mostra como a `SORT` função é despejada para baixo nas células vizinhas. Sua função personalizada também pode retornar vários resultados como este.
 

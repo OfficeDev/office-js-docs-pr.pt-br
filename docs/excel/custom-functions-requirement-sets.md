@@ -4,12 +4,12 @@ description: Detalhes sobre os conjuntos de requisitos de funções personalizad
 ms.date: 07/15/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: cc8fac9d925ac05bc77ae862e4e3637403842cc3
-ms.sourcegitcommit: bb44c9694f88cde32ffbb642689130db44456964
+ms.openlocfilehash: 85f91e4a42bf64f38ddca91ff06679f72abba514
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "35771936"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275956"
 ---
 # <a name="custom-functions-requirement-sets"></a>Conjuntos de requisitos de funções personalizadas
 
@@ -17,7 +17,7 @@ As [Funções Personalizadas](./custom-functions-overview.md) usam conjuntos de 
 
 |  Conjunto de requisitos  |  Office no Windows<br>(conectado à assinatura do Office 365)  |  Office no iPad<br>(conectado à assinatura do Office 365)  |  Office no Mac<br>(conectado à assinatura do Office 365)  | Office na Web |
 |:-----|-----|:-----|:-----|:-----|:-----|
-| CustomFunctionsRuntime 1.1 | Versão 1904 (Build 11601.20144) ou posterior | Sem suporte | 16.24 ou posterior | Abril de 2019 |
+| CustomFunctionsRuntime 1.1 | 16.0.12527.20092 ou posterior | Sem suporte | 16,34 ou posterior | Talvez |
 
 > [!NOTE]
 > As funções personalizadas do Excel não são suportadas no Office 2019 ou versões anteriores (compra única).

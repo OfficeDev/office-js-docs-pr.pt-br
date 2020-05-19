@@ -3,12 +3,12 @@ ms.date: 01/14/2020
 description: Saiba como implementar funções personalizadas de streaming volátil e offline.
 title: Valores voláteis nas funções
 localization_priority: Normal
-ms.openlocfilehash: 617599a2687696a96240c4f162f9b02788a215f4
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 7545d9928eaeb3779a8f7e04c87d0d5f33a7a131
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717205"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275774"
 ---
 # <a name="volatile-values-in-functions"></a>Valores voláteis nas funções
 
@@ -20,7 +20,7 @@ O Excel contém várias funções voláteis internas, como `RAND` e `TODAY`. Par
 
 As funções personalizadas permitem que você crie suas próprias funções voláteis, o que pode ser útil ao lidar com datas, horas, números aleatórios e modelagem. Por exemplo, as [simulações do Monte Carlo](https://en.wikipedia.org/wiki/Monte_Carlo_method) exigem a geração de entradas aleatórias para determinar uma solução ideal.
 
-Se escolher gerar automaticamente o arquivo JSON, declare uma função volátil com a marca `@volatile`de comentário JSDoc. Para obter mais informações sobre a autogeração, consulte [criar metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md).
+Se escolher gerar automaticamente o arquivo JSON, declare uma função volátil com a marca de comentário JSDoc `@volatile` . Para obter mais informações sobre a autogeração, consulte [criar metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md).
 
 Um exemplo de uma função personalizada volátil segue, que simula a transferência de um ou mais de seis lados.
 
@@ -38,10 +38,9 @@ function roll6sided() {
 ```
 
 ## <a name="next-steps"></a>Próximas etapas
-Saiba como [salvar o estado em suas funções personalizadas](custom-functions-save-state.md).
+* Saiba mais sobre [as opções de parâmetro de funções personalizadas](custom-functions-parameter-options.md).
 
-## <a name="see-also"></a>Também confira
+## <a name="see-also"></a>Confira também
 
-* [Opções de parâmetros de funções personalizadas](custom-functions-parameter-options.md)
 * [Metadados de funções personalizadas](custom-functions-json.md)
 * [Criar funções personalizadas no Excel](custom-functions-overview.md)

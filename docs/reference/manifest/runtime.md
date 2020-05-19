@@ -1,20 +1,29 @@
 ---
 title: Tempo de execução no arquivo de manifesto
-description: O elemento de tempo de execução configura seu suplemento para usar um tempo de execução de JavaScript compartilhado para sua faixa de opções, painel de tarefas e funções personalizadas.
-ms.date: 05/11/2020
+description: O elemento de tempo de execução configura seu suplemento para usar um tempo de execução de JavaScript compartilhado para seus vários componentes, por exemplo, faixa de opções, painel de tarefas, funções personalizadas.
+ms.date: 05/18/2020
 localization_priority: Normal
-ms.openlocfilehash: c5c7356f9985ca7b5972068629b0587f8916348e
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: c2c404bcaad6e24af58f5c0ed8835343abb97e5f
+ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217757"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44278410"
 ---
-# <a name="runtime-element"></a>Elemento Runtime
+# <a name="runtime-element-preview"></a>Elemento Runtime (visualização)
 
-Elemento filho do [`<Runtimes>`](runtimes.md) elemento. Este elemento configura seu suplemento para usar um tempo de execução de JavaScript compartilhado para que a faixa de opções, o painel de tarefas e as funções personalizadas, todos sejam executados no mesmo tempo de execução. Para obter mais informações, consulte [Configurar o suplemento do Excel para usar um tempo de execução do JavaScript compartilhado](../../excel/configure-your-add-in-to-use-a-shared-runtime.md).
+Configura seu suplemento para usar um tempo de execução de JavaScript compartilhado para que vários componentes sejam executados no mesmo tempo de execução. Filho do [`<Runtimes>`](runtimes.md) elemento.
 
-**Tipo de suplemento:** Painel de tarefas
+No Excel, esse elemento permite que a faixa de opções, o painel de tarefas e as funções personalizadas usem o mesmo tempo de execução. Para obter mais informações, consulte [Configurar o suplemento do Excel para usar um tempo de execução do JavaScript compartilhado](../../excel/configure-your-add-in-to-use-a-shared-runtime.md).
+
+No Outlook, esse elemento habilita a ativação de suplementos baseada em eventos. Para obter mais informações, consulte [Configure Your Outlook Add-in for Event-based Activation](../../outlook/autolaunch.md).
+
+**Tipo de suplemento:** Painel de tarefas, email
+
+> [!IMPORTANT]
+> **Excel**: o tempo de execução compartilhado está atualmente em versão prévia e disponível apenas no Excel no Windows. Para experimentar os recursos de visualização, você precisará ingressar no [Office Insider](https://insider.office.com/).
+>
+> **Outlook**: a ativação baseada em evento está atualmente [em versão prévia](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) e disponível apenas no Outlook na Web. Para obter mais informações, consulte [como visualizar o recurso de ativação baseado em eventos](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -32,8 +41,8 @@ Elemento filho do [`<Runtimes>`](runtimes.md) elemento. Este elemento configura 
 
 |  Atributo  |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **Lifetime = "Long"**  |  Sim  | Deve ser sempre `long` se você quiser usar um tempo de execução compartilhado para o suplemento do Excel. |
 |  **resid**  |  Sim  | Especifica o local da URL da página HTML do suplemento. O `resid` deve corresponder a um `id` atributo de um `Url` elemento no `Resources` elemento. |
+|  **marca**  |  Não  | O valor padrão para `lifetime` é `short` e não precisa ser especificado. Os suplementos do Outlook usam apenas o `short` valor. Se você quiser usar um tempo de execução compartilhado em um suplemento do Excel, defina explicitamente o valor como `long` . |
 
 ## <a name="see-also"></a>Confira também
 

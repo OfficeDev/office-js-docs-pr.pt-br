@@ -1,14 +1,14 @@
 ---
-ms.date: 04/13/2020
+ms.date: 05/06/2020
 description: Use tags JSDoc para criar dinamicamente seus metadados JSON de funções personalizadas.
 title: Gerar metadados JSON automaticamente para funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: d62def1d107d4472d2e89623c4f10b5cd012f28c
-ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
+ms.openlocfilehash: bad11e6ce8e58dc7970bc920e2619ab4732ebc34
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "43241067"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275977"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Gerar metadados JSON automaticamente para funções personalizadas
 
@@ -52,9 +52,9 @@ As seguintes marcações JSDoc possuem suporte em funções personalizadas do Ex
 ### <a name="cancelable"></a>@cancelable
 <a id="cancelable"/>
 
-Indica que uma função personalizada deseja executar uma ação quando a função é cancelada.
+Indica que uma função personalizada executa uma ação quando a função é cancelada.
 
-O último parâmetro da função deve ser do tipo `CustomFunctions.CancelableInvocation`. A função pode atribuir uma função à propriedade `oncanceled` para denotar a ação a ser executada quando a função é cancelada.
+O último parâmetro da função deve ser do tipo `CustomFunctions.CancelableInvocation`. A função pode atribuir uma função à `oncanceled` propriedade para indicar o resultado quando a função é cancelada.
 
 Se o último parâmetro da função for do tipo `CustomFunctions.CancelableInvocation`, ela será considerada `@cancelable`, mesmo se a tag não estiver presente.
 
@@ -66,11 +66,9 @@ Uma função não pode ter as tags `@cancelable` e `@streaming` ao mesmo tempo.
 
 Sintaxe: @customfunction _id_ _nome_
 
-Especifique esta marcação para tratar a função JavaScript/TypeScript como uma função personalizada do Excel.
+Essa marca indica que a função JavaScript/TypeScript é uma função personalizada do Excel. É necessário criar metadados para a função personalizada.
 
-Essa marcação é necessária para criar metadados para a função personalizada.
-
-O exemplo a seguir mostra a maneira mais simples de declarar uma função personalizada.
+Veja a seguir um exemplo dessa marca.
 
 ```js
 /**
@@ -82,7 +80,7 @@ O exemplo a seguir mostra a maneira mais simples de declarar uma função person
 
 #### <a name="id"></a>id
 
-O `id` é um identificador invariável para a função customizada.
+O `id` identifica uma função personalizada.
 
 * Se `id` não for fornecido, o nome da função JavaScript/TypeScript será convertido em maiúsculas e os caracteres não permitidos serão removidos.
 * O `id` deve ser exclusivo para todas as funções personalizadas.
@@ -119,9 +117,9 @@ No exemplo a seguir, Inc é a `id`da função e `increment` é o `name`.
 
 ### <a name="description"></a>descrição
 
-Uma descrição não exige nenhuma tag específica. Adicione uma descrição a uma função personalizada acrescentando uma frase para descrever o que a função realiza dentro do comentário JSDoc. Por padrão, qualquer texto sem tags na seção de comentários JSDoc será a descrição da função. A descrição aparece para os usuários no Excel quando eles entram na função. No exemplo a seguir, a frase "Uma função que soma dois números" é a descrição da função personalizada com a propriedade id de `ADD`.
+Uma descrição aparece para os usuários no Excel à medida que estão inserindo a função e especifica o que a função faz. Uma descrição não exige nenhuma tag específica. Adicione uma descrição a uma função personalizada acrescentando uma frase para descrever o que a função realiza dentro do comentário JSDoc. Por padrão, qualquer texto sem tags na seção de comentários JSDoc será a descrição da função.
 
-No exemplo a seguir, adicionar é o `id` e `name` da função e uma descrição é fornecida.
+No exemplo a seguir, a frase "Uma função que soma dois números" é a descrição da função personalizada com a propriedade id de `ADD`.
 
 ```js
 /**
@@ -139,7 +137,7 @@ Sintaxe: @helpurl _url_
 
 A _url_ fornecida é exibida no Excel.
 
-No exemplo a seguir, o `helpurl` é `www.contoso.com/weatherhelp`.
+No exemplo a seguir, o `helpurl` é `www.contoso.com/weatherhelp` .
 
 ```js
 /**
@@ -158,9 +156,9 @@ No exemplo a seguir, o `helpurl` é `www.contoso.com/weatherhelp`.
 
 Sintaxe de JavaScript: @param {type} nome _descrição_
 
-* `{type}` deve especificar a informação de tipo entre chaves. Confira a seção [Tipos](#types) para mais informações sobre os tipos que podem ser usados. Opcional: se não especificado, o tipo `any` será usado.
-* `name` especifica a qual parâmetro a marcação @param se aplica. Obrigatório.
-* `description` fornece a descrição que aparece no Excel para o parâmetro de função. Opcional.
+* `{type}`Especifica as informações de tipo nas chaves. Confira a seção [Tipos](#types) para mais informações sobre os tipos que podem ser usados. Se nenhum tipo for especificado, o tipo padrão `any` será usado.
+* `name`Especifica o parâmetro ao qual a marca @param se aplica. É necessário.
+* `description` fornece a descrição que aparece no Excel para o parâmetro de função. É opcional.
 
 Para denotar um parâmetro de função personalizado como opcional:
 * Coloque colchetes ao redor do nome do parâmetro. Por exemplo: `@param {string} [text] Optional text`.
@@ -168,7 +166,7 @@ Para denotar um parâmetro de função personalizado como opcional:
 > [!NOTE]
 > O valor padrão para parâmetros opcionais é `null`.
 
-O exemplo a seguir mostra uma função adicionar que adiciona dois ou três números, com o terceiro número como um parâmetro opcional.
+O exemplo a seguir mostra uma função ADD que adiciona dois ou três números, com o terceiro número como um parâmetro opcional.
 
 ```js
 /**
@@ -185,8 +183,8 @@ O exemplo a seguir mostra uma função adicionar que adiciona dois ou três núm
 
 Sintaxe de TypeScript: @param nome _descrição_
 
-* `name` especifica a qual parâmetro a marcação @param se aplica. Obrigatório.
-* `description` fornece a descrição que aparece no Excel para o parâmetro de função. Opcional.
+* `name`Especifica o parâmetro ao qual a marca @param se aplica. É necessário.
+* `description` fornece a descrição que aparece no Excel para o parâmetro de função. É opcional.
 
 Confira a seção [Tipos](#types) para mais informações sobre os tipos de parâmetros de função que podem ser usados.
 
@@ -220,7 +218,7 @@ function add(first: number, second: number): number {
 
 Indica que o endereço da célula onde a função está sendo avaliada deve ser fornecido.
 
-O último parâmetro da função deve ser do tipo `CustomFunctions.Invocation` ou de um tipo derivado. Quando a função é chamada, a propriedade `address` conterá o endereço. Para obter um exemplo de uma função que usa `@requiresAddress` a marca, [Confira o parâmetro contexto](custom-functions-parameter-options.md#addressing-cells-context-parameter)da célula de endereçamento.
+O último parâmetro da função deve ser do tipo `CustomFunctions.Invocation` ou de um tipo derivado. Quando a função é chamada, a propriedade `address` conterá o endereço.
 
 ---
 ### <a name="returns"></a>@returns
@@ -253,10 +251,10 @@ function add(first: number, second: number): number {
 
 Usado para indicar que uma função personalizada é uma função de streaming. 
 
-O último parâmetro deve ser do tipo `CustomFunctions.StreamingInvocation<ResultType>`.
-A função deve retornar `void`.
+O último parâmetro é do tipo `CustomFunctions.StreamingInvocation<ResultType>` .
+A função retorna `void` .
 
-As funções de streaming não retornam valores diretamente, mas devem chamar `setResult(result: ResultType)` usando o último parâmetro.
+As funções de streaming não retornam valores diretamente, em vez de chamarem `setResult(result: ResultType)` usando o último parâmetro.
 
 Exceções lançadas por uma função de streaming são ignoradas. `setResult()` pode ser chamado com Erro para indicar um resultado de erro. Para obter um exemplo de uma função de streaming e mais informações, confira [, criar uma função de streaming](./custom-functions-web-reqs.md#make-a-streaming-function).
 
@@ -305,7 +303,7 @@ Uma função de streaming pode indicar um erro chamando `setResult()` com um tip
 
 ### <a name="promise"></a>Promessa
 
-Uma função pode retornar uma Promessa, que fornecerá o valor quando a promessa for resolvida. Se a promessa for rejeitada, então é um erro.
+Uma função pode retornar uma promessa, que fornece o valor quando a promessa é resolvida. Se a promessa for rejeitada, será gerado um erro.
 
 ### <a name="other-types"></a>Outros tipos
 

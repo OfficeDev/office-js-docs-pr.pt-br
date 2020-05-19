@@ -1,14 +1,14 @@
 ---
 title: Comparar o suporte a suplementos do Outlook no Outlook no Mac
 description: Saiba como o suporte a suplementos no Outlook no Mac compara com outros hosts do Outlook.
-ms.date: 11/26/2019
+ms.date: 05/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 452a162a05a44477c85a99417b3a8cefbf49e515
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: fd03141fbcaecb88db358101a00681c8a85af382
+ms.sourcegitcommit: 71a44405e42b4798a8354f7f96d84548ae7a00f0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720824"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44280349"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-hosts"></a>Comparar o suporte a suplementos do Outlook no Outlook no Mac com outros hosts do Outlook
 
@@ -18,10 +18,10 @@ Para obter mais informações, consulte [Implantar e instalar suplementos do Out
 
 | Área | Outlook na Web, Windows e dispositivos móveis | Outlook no Mac |
 |:-----|:-----|:-----|
-| Versões compatíveis do office.js e do esquema do manifesto de suplementos do Office | Todas as APIs no Office.js e esquema versão 1.1. | Todas as APIs no Office.js e esquema versão 1.1.<br><br>**Observação**: o Outlook no Mac não dá suporte à gravação de uma reunião. O método `saveAsync` falha quando chamado a partir de uma reunião no modo de composição. Consulte [Não é possível salvar uma reunião como um rascunho no Outlook para Mac usando a API do Office JS](https://support.microsoft.com/help/4505745) para obter uma solução alternativa. |
+| Versões compatíveis do office.js e do esquema do manifesto de suplementos do Office | Todas as APIs no Office.js e esquema versão 1.1. | Todas as APIs no Office.js e esquema versão 1.1.<br><br>**Observação**: no Outlook no Mac, somente compilar o 16.35.308 ou posterior oferece suporte para salvar uma reunião. Caso contrário, o `saveAsync` método falhará quando for chamado a partir de uma reunião no modo de composição. Consulte [Não é possível salvar uma reunião como um rascunho no Outlook para Mac usando a API do Office JS](https://support.microsoft.com/help/4505745) para obter uma solução alternativa. |
 | Instâncias de uma série de compromissos recorrentes | <ul><li>Pode obter a ID do item e outras propriedades de um compromisso mestre ou a instância de compromisso de uma série recorrente.</li><li>Pode usar [mailbox.displayAppointmentForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) para exibir uma instância ou o mestre de uma série recorrente.</li></ul> | <ul><li>Pode obter a ID do item e outras propriedades do compromisso mestre, mas não de uma instância de uma série recorrente.</li><li>Pode exibir o compromisso mestre de uma série recorrente. Sem a ID do item, não pode exibir uma instância de uma série recorrente.</li></ul> |
 | Tipo de destinatário do participante de um compromisso | Pode usar [EmailAddressDetails.recipientType](/javascript/api/outlook/office.emailaddressdetails#recipienttype) para identificar o tipo de destinatário de um participante. | `EmailAddressDetails.recipientType` retorna `undefined` para participantes do compromisso. |
-| Cadeia de caracteres da versão do host | O formato da cadeia de caracteres de versão retornada por [diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#hostversion) depende do tipo real do host. Por exemplo:<ul><li>Outlook no Windows:`15.0.4454.1002`</li><li>Outlook na Web:`15.0.918.2`</li></ul> |Um exemplo da cadeia de caracteres de versão `Diagnostics.hostVersion` retornada por no Outlook no Mac:`15.0 (140325)` |
+| Cadeia de caracteres da versão do host | O formato da cadeia de caracteres de versão retornada por [diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#hostversion) depende do tipo real do host. Por exemplo:<ul><li>Outlook no Windows:`15.0.4454.1002`</li><li>Outlook na Web:`15.0.918.2`</li></ul> |Um exemplo da cadeia de caracteres de versão retornada por `Diagnostics.hostVersion` no Outlook no Mac:`15.0 (140325)` |
 | Propriedades personalizadas de um item | Se a rede falhar, um suplemento ainda poderá acessar as propriedades personalizadas armazenadas em cache. | Como o Outlook no Mac não armazena propriedades personalizadas em cache, se a rede for desativada, os suplementos não poderão acessá-los. |
 | Detalhes de anexo | Os nomes de anexos e o tipo de conteúdo em um objeto [AttachmentDetails](/javascript/api/outlook/office.attachmentdetails) dependem do tipo de host:<ul><li>Um exemplo JSON de `AttachmentDetails.contentType`: `"contentType": "image/x-png"`. </li><li>`AttachmentDetails.name` não contém nenhuma extensão de nome de arquivo. Por exemplo, se o anexo é uma mensagem que tem o assunto "RES: Atividade de verão", o objeto JSON que representa o nome do anexo é `"name": "RE: Summer activity"`.</li></ul> | <ul><li>Um exemplo JSON de `AttachmentDetails.contentType`: `"contentType" "image/png"`</li><li>`AttachmentDetails.name` sempre inclui uma extensão de nome de arquivo. Anexos que são itens de email têm uma extensão .eml, e compromissos têm uma extensão .ics. Por exemplo, se um anexo é um email com o assunto "RES: Atividade de verão", o objeto JSON que representa o nome do anexo é `"name": "RE: Summer activity.eml"`.<p>**Observação**: se um arquivo for anexado programaticamente (por exemplo, por meio de um suplemento) sem uma extensão, `AttachmentDetails.name` não conterá essa extensão como parte do nome do arquivo.</p></li></ul> |
 | Cadeia de caracteres que representa o fuso horário nas propriedades `dateTimeCreated` e `dateTimeModified` |Como exemplo: `Thu Mar 13 2014 14:09:11 GMT+0800 (China Standard Time)` | Como exemplo: `Thu Mar 13 2014 14:09:11 GMT+0800 (CST)` |

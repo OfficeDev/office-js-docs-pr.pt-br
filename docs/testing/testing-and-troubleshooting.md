@@ -1,14 +1,14 @@
 ---
 title: Solucionar erros de usuários com suplementos do Office
 description: Saiba como solucionar erros de usuários em suplementos do Office.
-ms.date: 04/13/2020
+ms.date: 05/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 81ca9eac89fb949bd2c1f7f63861d8a4f5295a79
-ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
+ms.openlocfilehash: 1ef805f4a35431d3bd7611054963ff6adfa53de0
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "43241046"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275718"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Solucionar erros de usuários com suplementos do Office
 
@@ -43,7 +43,7 @@ Você também pode enviar comentários: se estiver usando o Excel no Windows ou 
 Se um suplemento do Outlook executado no Windows e [usando o Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md) não está funcionando corretamente, tente ativar a depuração de scripts no Internet Explorer. 
 
 
-- Vá para ferramentas > **Opções** > da Internet**avançadas**.
+- Vá para ferramentas > **Opções da Internet**  >  **avançadas**.
     
 - Em **navegação**, desmarque **Desabilitar depuração de scripts (Internet Explorer)** e **Desabilitar depuração de scripts (outros)**.
     
@@ -96,7 +96,7 @@ Para adicionar uma URL à lista de sites confiáveis:
 Esse problema ocorre quando a API da caixa de diálogo é usada no modo pop-up. Para evitar esse problema, use o sinalizador [displayInFrame](/javascript/api/office/office.ui). Isso requer que a página tenha suporte para exibição dentro de um iframe. O exemplo a seguir mostra como usar o sinalizador.
 
 ```js
-Office.context.ui.displayDialogAsync(startAddress, {displayInFrame:true}, callback);
+Office.context.ui.displayDialogAsync(startAddress, {displayInIFrame:true}, callback);
 ```
 
 ## <a name="changes-to-add-in-commands-including-ribbon-buttons-and-menu-items-do-not-take-effect"></a>Alterações nos comandos de suplemento, incluindo botões da faixa de opções e itens de menu, não entram em vigor

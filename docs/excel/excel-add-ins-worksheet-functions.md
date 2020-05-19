@@ -3,12 +3,12 @@ title: Chamar funções internas de planilha do Excel usando as APIs JavaScript 
 description: Saiba como chamar funções internas de planilha do Excel, como `VLOOKUP` e `SUM` usar a API JavaScript do Excel.
 ms.date: 12/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 9fbc9ed56de0c1657a964718ad0b5eb3ef0e6aea
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: 1c988f2bc7ca6a8fc60953dad5ac070051b4c281
+ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217953"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44278368"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>Chamar funções internas de planilha do Excel
 
@@ -184,7 +184,7 @@ As seguintes funções internas de planilhas do Excel podem ser chamadas usando 
 | <a href="https://support.office.com/article/DGET-function-455568bf-4eef-45f7-90f0-ec250d00892e" target="_blank">Função BDEXTRAIR</a> | Extrai de um banco de dados um único registro que corresponde aos critérios especificados |
 | <a href="https://support.office.com/article/DISC-function-71fce9f3-3f05-4acf-a5a3-eac6ef4daa53" target="_blank">Função DESC</a> | Retorna a taxa de desconto de um título |
 | <a href="https://support.microsoft.com/office/f4e8209d-8958-4c3d-a1ee-6351665d41c2" target="_blank">Função BDMÁX</a> | Retorna o valor máximo de entradas selecionadas de banco de dados |
-| <a href="https://support.microsoft.com/office/DMIN-function-4ae6f1d9-1f26-40f1-a783-6dc3680192a3" target="_blank">Função BDMÍN</a> | Retorna o valor mínimo de entradas selecionadas de um banco de dados |
+| <a href="https://support.microsoft.com/office/4ae6f1d9-1f26-40f1-a783-6dc3680192a3" target="_blank">Função BDMÍN</a> | Retorna o valor mínimo de entradas selecionadas de um banco de dados |
 | <a href="https://support.microsoft.com/office/a6cd05d9-9740-4ad3-a469-8109d18ff611" target="_blank">Dólar, funções USDOLLAR</a> | Converte um número em texto, usando o formato de moeda $ (cifrão) |
 | <a href="https://support.office.com/article/DOLLARDE-function-db85aab0-1677-428a-9dfd-a38476693427" target="_blank">Função MOEDADEC</a> | Converte um preço em moeda expresso como uma fração em um preço em moeda expresso como um número decimal |
 | <a href="https://support.office.com/article/DOLLARFR-function-0835d163-3023-4a33-9824-3042c5d4f495" target="_blank">Função MOEDAFRA</a> | Converte um preço em moeda expresso como um número decimal em um preço em moeda expresso como uma fração |
@@ -317,7 +317,7 @@ As seguintes funções internas de planilhas do Excel podem ser chamadas usando 
 | <a href="https://support.microsoft.com/office/7f1ae29b-6b92-435e-b950-ad8b190ddd2b" target="_blank">Função NOMINAL</a> | Retorna a taxa de juros nominal anual |
 | <a href="https://support.office.com/article/NORMDIST-function-edb1cc14-a21c-4e53-839d-8082074c9f8d" target="_blank">Função DIST.NORM.N</a> | Retorna a distribuição cumulativa normal |
 | <a href="https://support.microsoft.com/office/54b30935-fee7-493c-bedb-2278a9db7e13" target="_blank">Função INV.NORM.N</a> | Retorna o inverso da distribuição cumulativa normal |
-| <a href="https://support.microsoft.com/office/NORMSDIST-function-1e787282-3832-4520-a9ae-bd2a8d99ba88" target="_blank">Função DIST.NORMP.N</a> | Retorna a distribuição cumulativa normal padrão |
+| <a href="https://support.microsoft.com/office/1e787282-3832-4520-a9ae-bd2a8d99ba88" target="_blank">Função DIST.NORMP.N</a> | Retorna a distribuição cumulativa normal padrão |
 | <a href="https://support.office.com/article/NORMSINV-function-d6d556b4-ab7f-49cd-b526-5a20918452b1" target="_blank">Função INV.NORMP.N</a> | Retorna o inverso da distribuição cumulativa normal padrão |
 | <a href="https://support.office.com/article/NOT-function-9cfc6011-a054-40c7-a140-cd4ba2d87d77" target="_blank">Função NÃO</a> | Inverte o valor lógico do argumento |
 | <a href="https://support.office.com/article/NOW-function-3337fd29-145a-4347-b2e6-20c904739c46" target="_blank">Função AGORA</a> | Retorna o número de série sequencial da data e hora atuais |
@@ -434,7 +434,7 @@ As seguintes funções internas de planilhas do Excel podem ser chamadas usando 
 | <a href="https://support.office.com/article/WORKDAY-function-f764a5b7-05fc-4494-9486-60d494efbf33" target="_blank">Função DIATRABALHO</a> | Retorna o número de série da data antes ou depois de um número específico de dias úteis |
 | <a href="https://support.microsoft.com/office/a378391c-9ba7-4678-8a39-39611a9bf81d" target="_blank">Função DIATRABALHO.INTL</a> | Retorna o número de série da data antes ou depois de um número específico de dias úteis usando parâmetros para indicar quais e quantos dias são de fim de semana |
 | <a href="https://support.office.com/article/XIRR-function-de1242ec-6477-445b-b11b-a303ad9adc9d" target="_blank">Função XTIR</a> | Fornece a taxa interna de retorno para um programa de fluxos de caixa que não é necessariamente periódico |
-| <a href="https://support.microsoft.com/office/XNPV-function-1b42bbf6-370f-4532-a0eb-d67c16b664b7" target="_blank">Função XVPL</a> | Retorna o valor presente líquido de um programa de fluxos de caixa que não é necessariamente periódico |
+| <a href="https://support.microsoft.com/office/1b42bbf6-370f-4532-a0eb-d67c16b664b7" target="_blank">Função XVPL</a> | Retorna o valor presente líquido de um programa de fluxos de caixa que não é necessariamente periódico |
 | <a href="https://support.microsoft.com/office/1548d4c2-5e47-4f77-9a92-0533bba14f37" target="_blank">Função XOR</a> | Retorna um OU exclusivo lógico de todos os argumentos |
 | <a href="https://support.office.com/article/YEAR-function-c64f017a-1354-490d-981f-578e8ec8d3b9" target="_blank">Função ANO</a> | Converte um número de série em um ano |
 | <a href="https://support.office.com/article/YEARFRAC-function-3844141e-c76d-4143-82b6-208454ddc6a8" target="_blank">Função FRAÇÃOANO</a> | Retorna a fração do ano que representa o número de dias entre a data_inicial e a data_final |

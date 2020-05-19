@@ -3,12 +3,12 @@ title: Usar as opções de pesquisa para localizar o texto no suplemento do Word
 description: Saiba como usar as opções de pesquisa no suplemento do Word
 ms.date: 09/27/2019
 localization_priority: Normal
-ms.openlocfilehash: 54ffa3e283f0ae4f43a8d47f7d8cc3a20ea14f6d
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 1b0c1250b875ac2e61e68c65e9db6eba8fda4c67
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717317"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44276047"
 ---
 # <a name="use-search-options-to-find-text-in-your-word-add-in"></a>Usar as opções de pesquisa para localizar o texto no suplemento do Word
 
@@ -174,7 +174,7 @@ Word.run(function (context) {
 
     // Queue a command to search the document with a wildcard
     // for any string of characters that starts with 'to' and ends with 'n'.
-    var searchResults = context.document.body.search('to*n', {matchWildCards: true});
+    var searchResults = context.document.body.search('to*n', {matchWildcards: true});
 
     // Queue a command to load the search results and get the font property values.
     context.load(searchResults, 'font');

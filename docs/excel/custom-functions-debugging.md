@@ -1,20 +1,22 @@
 ---
-ms.date: 07/10/2019
-description: Depurar suas funções personalizadas no Excel.
-title: Depuração de funções personalizadas
+ms.date: 05/17/2020
+description: Saiba como depurar suas funções personalizadas do Excel que não usam um painel de tarefas.
+title: Depuração de funções personalizadas sem interface do usuário
 localization_priority: Normal
-ms.openlocfilehash: 4abd5f3da58c35485004b17f92b334b133cabd27
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 6de7dda2e22195096f75cd2bd475ee0e49f4461d
+ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719305"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44278382"
 ---
-# <a name="custom-functions-debugging"></a>Depuração de funções personalizadas
+# <a name="ui-less-custom-functions-debugging"></a>Depuração de funções personalizadas sem interface do usuário
 
-A depuração de funções personalizadas pode ser realizada por vários meios, dependendo de qual plataforma você está usando.
+A depuração de funções personalizadas que não usam um painel de tarefas ou outros elementos de interface do usuário (funções personalizadas sem interface do usuário) pode ser realizada por vários meios, dependendo de qual plataforma você está usando.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
+
+[!include[Shared runtime note](../includes/shared-runtime-note.md)]
 
 No Windows:
 - [Depurador de área de trabalho do Excel e Visual Studio (VS Code)](#use-the-vs-code-debugger-for-excel-desktop)
@@ -35,7 +37,7 @@ Antes de começar a depurar, você deve usar o [gerador Yeoman para suplementos 
 
 ## <a name="use-the-vs-code-debugger-for-excel-desktop"></a>Usar o depurador de código VS para a área de trabalho do Excel
 
-Você pode usar o VS Code para depurar funções personalizadas no Office Excel na área de trabalho.
+Você pode usar o VS Code para depurar funções personalizadas sem interface do usuário no Office Excel na área de trabalho.
 
 > [!NOTE]
 > A depuração de área de trabalho do Mac não está disponível, mas pode ser obtida [usando as ferramentas de navegador e a linha de comando para depurar o Excel na Web](#use-the-command-line-tools-to-debug)).
@@ -62,7 +64,7 @@ Nesse ponto, a execução será interrompida na linha de código em que você de
 
 ## <a name="use-the-vs-code-debugger-for-excel-in-microsoft-edge"></a>Usar o depurador de código VS para Excel no Microsoft Edge
 
-Você pode usar o VS Code para depurar funções personalizadas no Excel no navegador Microsoft Edge. Para usar o VS Code com o Microsoft Edge, você deve instalar o depurador para a extensão do [Microsoft Edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge) .
+Você pode usar o VS Code para depurar funções personalizadas sem interface do usuário no Excel no navegador Microsoft Edge. Para usar o VS Code com o Microsoft Edge, você deve instalar o depurador para a extensão do [Microsoft Edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge) .
 
 ### <a name="run-your-add-in-from-vs-code"></a>Executar seu suplemento de VS Code
 
@@ -98,7 +100,7 @@ Você pode usar o VS Code para depurar funções personalizadas no Excel no nave
 
 ## <a name="use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web"></a>Usar as ferramentas de desenvolvedor do navegador para depurar funções personalizadas no Excel na Web
 
-Você pode usar as ferramentas de desenvolvedor do navegador para depurar funções personalizadas no Excel na Web. As etapas a seguir funcionam para o Windows e o macOS.
+Você pode usar as ferramentas de desenvolvedor do navegador para depurar funções personalizadas sem interface do usuário no Excel na Web. As etapas a seguir funcionam para o Windows e o macOS.
 
 ### <a name="run-your-add-in-from-visual-studio-code"></a>Executar seu suplemento do Visual Studio Code
 
@@ -134,7 +136,7 @@ Se você precisar alterar o código, poderá fazer edições no VS Code e salvar
 
 Se você não estiver usando o VS, poderá usar a linha de comando (como bash ou PowerShell) para executar o suplemento. Você precisará usar as ferramentas de desenvolvedor do navegador para depurar seu código no Excel na Web. Não é possível depurar a versão da área de trabalho do Excel usando a linha de comando.
 
-1. A partir da linha de `npm run watch` comando, execute para observar e recriar quando ocorrerem alterações de código.
+1. A partir da linha de comando `npm run watch` , execute para observar e recriar quando ocorrerem alterações de código.
 2. Abra uma segunda janela de linha de comando (a primeira será bloqueada durante a execução da inspeção).
 
 3. Se você deseja iniciar o suplemento na versão da área de trabalho do Excel, execute o seguinte comando
@@ -167,11 +169,10 @@ Você pode usar as seguintes tarefas para iniciar a depuração no desktop ou on
 - `npm run stop`: Interrompe o Excel e a depuração.
 
 ## <a name="next-steps"></a>Próximas etapas
-Saiba mais sobre as [práticas de autenticação em funções personalizadas](custom-functions-authentication.md). Ou, revise a [arquitetura exclusiva da função personalizada](custom-functions-architecture.md).
+Saiba mais sobre as [práticas de autenticação para funções personalizadas sem interface do usuário](custom-functions-authentication.md).
 
-## <a name="see-also"></a>Também confira
+## <a name="see-also"></a>Confira também
 
 * [Solução de problemas de funções personalizadas](custom-functions-troubleshooting.md)
 * [Tratamento de erros para funções personalizadas no Excel](custom-functions-errors.md)
-* [Torne as suas funções personalizadas compatíveis com as funções XLL definidas pelo usuário](make-custom-functions-compatible-with-xll-udf.md)
 * [Criar funções personalizadas no Excel](custom-functions-overview.md)

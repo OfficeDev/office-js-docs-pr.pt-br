@@ -1,0 +1,2 @@
+>[!NOTE]
+> A menos que você tenha uma razão específica para usar uma função sem interface do usuário, recomendamos o uso de funções personalizadas com um [tempo de execução compartilhado](../excel/configure-your-add-in-to-use-a-shared-runtime.md).

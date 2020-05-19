@@ -1,24 +1,24 @@
 ---
 title: Mostrar ou ocultar um suplemento do Office em um tempo de execução compartilhado
 description: Saiba como ocultar ou mostrar programaticamente a interface do usuário de um suplemento enquanto ele é executado continuamente
-ms.date: 05/11/2020
+ms.date: 05/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 05d254bd4dd5ddb11fd124d75e62ce1a4d8125d2
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: e49c47c86a986c85ad12e09666b7ac2fb5411322
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217904"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275711"
 ---
 # <a name="show-or-hide-an-office-add-in-in-a-shared-runtime"></a>Mostrar ou ocultar um suplemento do Office em um tempo de execução compartilhado
 
 Um suplemento do Office pode incluir qualquer uma das seguintes partes:
 
 - Um painel de tarefas
-- Um arquivo de função sem interface do usuário
+- Um arquivo de função sem IU (funções personalizadas que não usam um painel de tarefas ou outros elementos da interface do usuário)
 - Uma função personalizada do Excel
 
-Por padrão, cada parte é executada em seu próprio tempo de execução de JavaScript separado, com seu próprio objeto global e variáveis globais. 
+Por padrão, cada parte é executada em seu próprio tempo de execução de JavaScript separado, com seu próprio objeto global e variáveis globais.
 
 É possível para suplementos com duas ou mais partes para compartilhar um tempo de execução JavaScript comum. Esse recurso de tempo de execução compartilhado habilita novas APIs que ocultam e reabrem o painel de tarefas enquanto o suplemento é executado.
 

@@ -1,14 +1,14 @@
 ---
 title: Elemento ExtensionPoint no arquivo de manifesto
 description: Define onde um suplemento expõe a funcionalidade na interface de usuário do Office.
-ms.date: 05/04/2020
+ms.date: 05/18/2020
 localization_priority: Normal
-ms.openlocfilehash: ede99ad73beb1e4a46c9b08188ca79efb556acb0
-ms.sourcegitcommit: 800dacf0399465318489c9d949e259b5cf0f81ca
+ms.openlocfilehash: 41d4ede1ef4198430d888891e3eedda4e050456f
+ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "44022173"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44278417"
 ---
 # <a name="extensionpoint-element"></a>Elemento ExtensionPoint
 
@@ -93,6 +93,7 @@ Os exemplos a seguir mostram como usar o elemento **ExtensionPoint** com os valo
 - [Module](#module) (Só pode ser usado em [DesktopFormFactor](desktopformfactor.md)).
 - [MobileMessageReadCommandSurface](#mobilemessagereadcommandsurface)
 - [MobileOnlineMeetingCommandSurface](#mobileonlinemeetingcommandsurface-preview)
+- [LaunchEvent](#launchevent-preview)
 - [Eventos](#events)
 - [DetectedEntity](#detectedentity)
 
@@ -273,7 +274,7 @@ Este ponto de extensão coloca uma alternância apropriada de modo na superfíci
 
 `ExtensionPoint`elementos desse tipo só podem ter um elemento filho: um `Control` elemento.
 
-O `Control` elemento contido neste ponto de extensão deve ter o `xsi:type` atributo definido como `MobileButton`.
+O `Control` elemento contido neste ponto de extensão deve ter o `xsi:type` atributo definido como `MobileButton` .
 
 As `Icon` imagens devem estar em escala de cinza usando `#919191` o código hex ou seu equivalente em [outros formatos de cor](https://convertingcolors.com/hex-color-919191.html).
 
@@ -301,9 +302,36 @@ As `Icon` imagens devem estar em escala de cinza usando `#919191` o código hex 
 </ExtensionPoint>
 ```
 
+### <a name="launchevent-preview"></a>LaunchEvent (visualização)
+
+> [!NOTE]
+> Este ponto de extensão só tem suporte na [Visualização](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) no Outlook na Web com uma assinatura do Office 365.
+
+Este ponto de extensão permite que um suplemento seja ativado com base nos eventos suportados no fator forma da área de trabalho. Atualmente, os únicos eventos com suporte são `OnNewMessageCompose` e `OnNewAppointmentOrganizer` . Para saber mais sobre esse cenário, confira o artigo [Configurar o suplemento do Outlook para ativação baseada em eventos](../../outlook/autolaunch.md) .
+
+#### <a name="child-elements"></a>Elementos filho
+
+|  Elemento |  Descrição  |
+|:-----|:-----|
+| [LaunchEvents](launchevents.md) |  Lista de [LaunchEvent](launchevent.md) para a ativação baseada em evento.  |
+| [SourceLocation](sourcelocation.md) |  O local do arquivo JavaScript de origem.  |
+
+#### <a name="example"></a>Exemplo
+
+```xml
+<ExtensionPoint xsi:type="LaunchEvent">
+  <LaunchEvents>
+    <LaunchEvent Type="OnNewMessageCompose" FunctionName="onMessageComposeHandler"/>
+    <LaunchEvent Type="OnNewAppointmentOrganizer" FunctionName="onAppointmentComposeHandler"/>
+  </LaunchEvents>
+  <!-- Identifies the runtime to be used (also referenced by the Runtime element). -->
+  <SourceLocation resid="WebViewRuntime.Url"/>
+</ExtensionPoint>
+```
+
 ### <a name="events"></a>Eventos
 
-Este ponto de extensão adiciona um manipulador de eventos para um evento especificado.
+Este ponto de extensão adiciona um manipulador de eventos para um evento especificado. Para obter mais informações sobre como usar esse ponto de extensão, consulte o [recurso ao enviar para suplementos do Outlook](../../outlook/outlook-on-send-addins.md).
 
 | Elemento | Descrição  |
 |:-----|:-----|

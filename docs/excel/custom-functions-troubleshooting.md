@@ -1,14 +1,14 @@
 ---
-ms.date: 12/31/2019
+ms.date: 04/29/2020
 description: Solucionar problemas comuns com funções personalizadas do Excel.
 title: Solução de problemas das funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: bc8a450b1436b487f2c2a77e191182c540f55923
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 33404426cf8c017b7c43f988dbc8aa3a4ddea892
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719606"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275816"
 ---
 # <a name="troubleshoot-custom-functions"></a>Solução de problemas de funções personalizadas
 
@@ -53,7 +53,7 @@ Quando o Excel está aguardando a conclusão de uma função personalizada, ele 
 
 ### <a name="error-the-dev-server-is-already-running-on-port-3000"></a>Erro: O servidor de desenvolvimento já está em execução na porta 3000
 
-Às vezes, ao executar `npm start` você poderá ver um erro que o servidor de desenvolvimento já está executando na porta 3000 (ou qualquer outra porta que o seu suplemento use). Você pode parar o servidor de desenvolvimento executando `npm stop` ou fechando a janela Node.js. Mas em alguns casos, poderá levar alguns minutos para que o servidor de desenvolvimento realmente pare de executar.
+Às vezes, ao executar `npm start` você poderá ver um erro que o servidor de desenvolvimento já está executando na porta 3000 (ou qualquer outra porta que o seu suplemento use). Você pode parar o servidor de desenvolvimento executando `npm stop` ou fechando a janela Node.js. Em alguns casos, pode levar alguns minutos para que o servidor de desenvolvimento pare de funcionar.
 
 ### <a name="my-functions-wont-load-associate-functions"></a>Minhas funções não carregam: associar funções
 
@@ -91,11 +91,9 @@ Se estiver usando o Excel no Windows ou Mac, envie comentários à equipe de ext
 Sinta-se à vontade para enviar problemas encontrados através do recurso "Comentários do conteúdo" na parte inferior de todas as páginas de documentação ou [informe um novo problema diretamente no repositório de funções personalizadas](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
 
 ## <a name="next-steps"></a>Próximas etapas
-Saiba como [depurar as suas funções personalizadas](custom-functions-debugging.md).
+Saiba como [tornar as suas funções personalizadas compatíveis com as funções definidas pelo usuário de XLL](make-custom-functions-compatible-with-xll-udf.md).
 
 ## <a name="see-also"></a>Confira também
 
 * [Geração automática de metadados das funções personalizadas](custom-functions-json-autogeneration.md)
-* [Tempo de execução de funções personalizadas do Excel](custom-functions-runtime.md)
-* [Torne as suas funções personalizadas compatíveis com as funções XLL definidas pelo usuário](make-custom-functions-compatible-with-xll-udf.md)
 * [Criar funções personalizadas no Excel](custom-functions-overview.md)

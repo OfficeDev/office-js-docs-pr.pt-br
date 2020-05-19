@@ -1,27 +1,27 @@
 ---
 title: Elemento Event no arquivo de manifesto
 description: Define um manipulador de eventos em um suplemento.
-ms.date: 10/09/2018
+ms.date: 05/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 02037a54ad4b7e91a3697b53b04fa30e8a4909a9
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 80f21d1819e3d7e335389070ccac0db583026045
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718227"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44275704"
 ---
 # <a name="event-element"></a>Elemento Event
 
 Define um manipulador de eventos em um suplemento.
 
-> [!NOTE] 
-> No `Event` momento, o elemento só tem suporte pelo Outlook na Web no Office 365.
+> [!NOTE]
+> Para obter informações sobre o suporte e uso, consulte [recurso ao enviar para suplementos do Outlook](../../outlook/outlook-on-send-addins.md).
 
 ## <a name="attributes"></a>Atributos
 
 |  Atributo  |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  [Tipo](#type-attribute)  |  Sim  | Especifica o evento a ser manipulado. |
+|  [Type](#type-attribute)  |  Sim  | Especifica o evento a ser manipulado. |
 |  [FunctionExecution](#functionexecution-attribute)  |  Sim  | Especifica o estilo de execução para o manipulador de eventos, assíncrono ou síncrono. No momento, somente os manipuladores de eventos síncronos têm suporte. |
 |  [FunctionName](#functionname-attribute)  |  Sim  | Especifica o nome da função para o manipulador de eventos. |
 
@@ -42,5 +42,5 @@ Obrigatório. DEVE ser definido como `synchronous`.
 Obrigatório. Especifica o nome da função do manipulador de eventos. Esse valor deve coincidir com um nome de função no [arquivo de função](functionfile.md) do suplemento.
 
 ```xml
-<Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" /> 
+<Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" />
 ```
