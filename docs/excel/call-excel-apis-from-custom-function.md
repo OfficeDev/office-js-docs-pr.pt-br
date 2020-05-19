@@ -3,29 +3,27 @@ title: Chamar as APIs do Microsoft Excel a partir de uma função personalizada
 description: Saiba quais APIs do Microsoft Excel você pode chamar a partir de sua função personalizada.
 ms.date: 05/11/2020
 localization_priority: Normal
-ms.openlocfilehash: a24cdfba2d79b6e2ad165765d22cd77743047d34
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: 0cdae939b70211367bee6317b9d5234d5b153c95
+ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217876"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "44276019"
 ---
-# <a name="call-microsoft-excel-apis-from-a-custom-function"></a><span data-ttu-id="50434-103">Chamar as APIs do Microsoft Excel a partir de uma função personalizada</span><span class="sxs-lookup"><span data-stu-id="50434-103">Call Microsoft Excel APIs from a custom function</span></span>
+# <a name="call-microsoft-excel-apis-from-a-custom-function"></a><span data-ttu-id="3c1c8-103">Chamar as APIs do Microsoft Excel a partir de uma função personalizada</span><span class="sxs-lookup"><span data-stu-id="3c1c8-103">Call Microsoft Excel APIs from a custom function</span></span>
 
-<span data-ttu-id="50434-104">Chamar as APIs do Excel do Office. js de suas funções personalizadas para obter dados de intervalo e obter mais contexto para seus cálculos.</span><span class="sxs-lookup"><span data-stu-id="50434-104">Call Office.js Excel APIs from your custom functions to get range data and obtain more context for your calculations.</span></span>
+<span data-ttu-id="3c1c8-104">Chamar as APIs do Excel do Office. js de suas funções personalizadas para obter dados de intervalo e obter mais contexto para seus cálculos.</span><span class="sxs-lookup"><span data-stu-id="3c1c8-104">Call Office.js Excel APIs from your custom functions to get range data and obtain more context for your calculations.</span></span>
 
-<span data-ttu-id="50434-105">Chamar APIs do Office. js por meio de uma função personalizada pode ser útil quando:</span><span class="sxs-lookup"><span data-stu-id="50434-105">Calling Office.js APIs through a custom function can be helpful when:</span></span>
+<span data-ttu-id="3c1c8-105">Chamar APIs do Office. js por meio de uma função personalizada pode ser útil quando:</span><span class="sxs-lookup"><span data-stu-id="3c1c8-105">Calling Office.js APIs through a custom function can be helpful when:</span></span>
 
-- <span data-ttu-id="50434-106">Uma função personalizada precisa obter informações do Excel antes do cálculo.</span><span class="sxs-lookup"><span data-stu-id="50434-106">A custom function needs to get information from Excel before calculation.</span></span> <span data-ttu-id="50434-107">Essas informações podem incluir propriedades de documento, formatos de intervalo, partes XML personalizadas, um nome de pasta de trabalho ou outras informações específicas do Excel.</span><span class="sxs-lookup"><span data-stu-id="50434-107">This information might include document properties, range formats, custom XML parts, a workbook name, or other Excel-specific information.</span></span>
-- <span data-ttu-id="50434-108">Uma função personalizada definirá o formato de número da célula para os valores de retorno após o cálculo.</span><span class="sxs-lookup"><span data-stu-id="50434-108">A custom function will set the cell's number format for the return values after calculation.</span></span>
+- <span data-ttu-id="3c1c8-106">Uma função personalizada precisa obter informações do Excel antes do cálculo.</span><span class="sxs-lookup"><span data-stu-id="3c1c8-106">A custom function needs to get information from Excel before calculation.</span></span> <span data-ttu-id="3c1c8-107">Essas informações podem incluir propriedades de documento, formatos de intervalo, partes XML personalizadas, um nome de pasta de trabalho ou outras informações específicas do Excel.</span><span class="sxs-lookup"><span data-stu-id="3c1c8-107">This information might include document properties, range formats, custom XML parts, a workbook name, or other Excel-specific information.</span></span>
+- <span data-ttu-id="3c1c8-108">Uma função personalizada definirá o formato de número da célula para os valores de retorno após o cálculo.</span><span class="sxs-lookup"><span data-stu-id="3c1c8-108">A custom function will set the cell's number format for the return values after calculation.</span></span>
 
-[!include[Excel shared runtime note](../includes/note-requires-shared-runtime.md)]
+## <a name="code-sample"></a><span data-ttu-id="3c1c8-109">Exemplo de código</span><span class="sxs-lookup"><span data-stu-id="3c1c8-109">Code sample</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="50434-109">Exemplo de código</span><span class="sxs-lookup"><span data-stu-id="50434-109">Code sample</span></span>
+<span data-ttu-id="3c1c8-110">Para chamar as APIs do Office. js, você precisa primeiro de um contexto.</span><span class="sxs-lookup"><span data-stu-id="3c1c8-110">To call into the Office.js APIs you first need a context.</span></span> <span data-ttu-id="3c1c8-111">Use o `Excel.RequestContext` objeto para obter um contexto.</span><span class="sxs-lookup"><span data-stu-id="3c1c8-111">Use the `Excel.RequestContext` object to get a context.</span></span> <span data-ttu-id="3c1c8-112">Em seguida, use o contexto para chamar as APIs de que você precisa na pasta de trabalho.</span><span class="sxs-lookup"><span data-stu-id="3c1c8-112">Then use the context to call the APIs you need in the workbook.</span></span>
 
-<span data-ttu-id="50434-110">Para chamar as APIs do Office. js, você precisa primeiro de um contexto.</span><span class="sxs-lookup"><span data-stu-id="50434-110">To call into the Office.js APIs you first need a context.</span></span> <span data-ttu-id="50434-111">Use o `Excel.RequestContext` objeto para obter um contexto.</span><span class="sxs-lookup"><span data-stu-id="50434-111">Use the `Excel.RequestContext` object to get a context.</span></span> <span data-ttu-id="50434-112">Em seguida, use o contexto para chamar as APIs de que você precisa na pasta de trabalho.</span><span class="sxs-lookup"><span data-stu-id="50434-112">Then use the context to call the APIs you need in the workbook.</span></span>
-
-<span data-ttu-id="50434-113">O exemplo de código a seguir mostra como obter um intervalo de valores da pasta de trabalho.</span><span class="sxs-lookup"><span data-stu-id="50434-113">The following code sample shows how to get a range of values from the workbook.</span></span>
+<span data-ttu-id="3c1c8-113">O exemplo de código a seguir mostra como obter um intervalo de valores da pasta de trabalho.</span><span class="sxs-lookup"><span data-stu-id="3c1c8-113">The following code sample shows how to get a range of values from the workbook.</span></span>
 
 ```JavaScript
 /**
@@ -41,25 +39,25 @@ async function getRangeValue (address) {
 }
 ```
 
-## <a name="limitations-of-calling-officejs-through-a-custom-function"></a><span data-ttu-id="50434-114">Limitações da chamada do Office. js por meio de uma função personalizada</span><span class="sxs-lookup"><span data-stu-id="50434-114">Limitations of calling Office.js through a custom function</span></span>
+## <a name="limitations-of-calling-officejs-through-a-custom-function"></a><span data-ttu-id="3c1c8-114">Limitações da chamada do Office. js por meio de uma função personalizada</span><span class="sxs-lookup"><span data-stu-id="3c1c8-114">Limitations of calling Office.js through a custom function</span></span>
 
-<span data-ttu-id="50434-115">Não chame APIs do Office. js de uma função personalizada que altere o ambiente do Excel.</span><span class="sxs-lookup"><span data-stu-id="50434-115">Don't call Office.js APIs from a custom function that change the environment of Excel.</span></span> <span data-ttu-id="50434-116">Isso significa que suas funções personalizadas não devem fazer o seguinte:</span><span class="sxs-lookup"><span data-stu-id="50434-116">This means your custom functions should not do any of the following:</span></span>
+<span data-ttu-id="3c1c8-115">Não chame APIs do Office. js de uma função personalizada que altere o ambiente do Excel.</span><span class="sxs-lookup"><span data-stu-id="3c1c8-115">Don't call Office.js APIs from a custom function that change the environment of Excel.</span></span> <span data-ttu-id="3c1c8-116">Isso significa que suas funções personalizadas não devem fazer o seguinte:</span><span class="sxs-lookup"><span data-stu-id="3c1c8-116">This means your custom functions should not do any of the following:</span></span>
 
-- <span data-ttu-id="50434-117">Inserir, excluir ou Formatar células na planilha.</span><span class="sxs-lookup"><span data-stu-id="50434-117">Insert, delete, or format cells on the spreadsheet.</span></span>
-- <span data-ttu-id="50434-118">Altera o valor de outra célula.</span><span class="sxs-lookup"><span data-stu-id="50434-118">Change another cell's value.</span></span>
-- <span data-ttu-id="50434-119">Mover, renomear, excluir ou adicionar planilhas a uma pasta de trabalho.</span><span class="sxs-lookup"><span data-stu-id="50434-119">Move, rename, delete, or add sheets to a workbook.</span></span>
-- <span data-ttu-id="50434-120">Alterar qualquer uma das opções de ambiente, como modo de cálculo ou modos de exibição de tela.</span><span class="sxs-lookup"><span data-stu-id="50434-120">Change any of the environment options, such as calculation mode or screen views.</span></span>
-- <span data-ttu-id="50434-121">Adicionar nomes a uma pasta de trabalho.</span><span class="sxs-lookup"><span data-stu-id="50434-121">Add names to a workbook.</span></span>
-- <span data-ttu-id="50434-122">Definir propriedades ou executar a maioria dos métodos.</span><span class="sxs-lookup"><span data-stu-id="50434-122">Set properties or execute most methods.</span></span>
+- <span data-ttu-id="3c1c8-117">Inserir, excluir ou Formatar células na planilha.</span><span class="sxs-lookup"><span data-stu-id="3c1c8-117">Insert, delete, or format cells on the spreadsheet.</span></span>
+- <span data-ttu-id="3c1c8-118">Altera o valor de outra célula.</span><span class="sxs-lookup"><span data-stu-id="3c1c8-118">Change another cell's value.</span></span>
+- <span data-ttu-id="3c1c8-119">Mover, renomear, excluir ou adicionar planilhas a uma pasta de trabalho.</span><span class="sxs-lookup"><span data-stu-id="3c1c8-119">Move, rename, delete, or add sheets to a workbook.</span></span>
+- <span data-ttu-id="3c1c8-120">Alterar qualquer uma das opções de ambiente, como modo de cálculo ou modos de exibição de tela.</span><span class="sxs-lookup"><span data-stu-id="3c1c8-120">Change any of the environment options, such as calculation mode or screen views.</span></span>
+- <span data-ttu-id="3c1c8-121">Adicionar nomes a uma pasta de trabalho.</span><span class="sxs-lookup"><span data-stu-id="3c1c8-121">Add names to a workbook.</span></span>
+- <span data-ttu-id="3c1c8-122">Definir propriedades ou executar a maioria dos métodos.</span><span class="sxs-lookup"><span data-stu-id="3c1c8-122">Set properties or execute most methods.</span></span>
 
-<span data-ttu-id="50434-123">Alterar o Excel pode resultar em desempenho ruim, tempo limite e loops infinitos.</span><span class="sxs-lookup"><span data-stu-id="50434-123">Changing Excel can result in poor performance, time outs, and infinite loops.</span></span> <span data-ttu-id="50434-124">Cálculos de função personalizada não devem ser executados enquanto um recálculo do Excel está ocorrendo, pois resultará em resultados imprevisíveis.</span><span class="sxs-lookup"><span data-stu-id="50434-124">Custom function calculations shouldn't run while an Excel recalculation is taking place as it will result in unpredictable results.</span></span>
+<span data-ttu-id="3c1c8-123">Alterar o Excel pode resultar em desempenho ruim, tempo limite e loops infinitos.</span><span class="sxs-lookup"><span data-stu-id="3c1c8-123">Changing Excel can result in poor performance, time outs, and infinite loops.</span></span> <span data-ttu-id="3c1c8-124">Cálculos de função personalizada não devem ser executados enquanto um recálculo do Excel está ocorrendo, pois resultará em resultados imprevisíveis.</span><span class="sxs-lookup"><span data-stu-id="3c1c8-124">Custom function calculations shouldn't run while an Excel recalculation is taking place as it will result in unpredictable results.</span></span>
 
-<span data-ttu-id="50434-125">Em vez disso, faça alterações no Excel a partir do contexto de um botão da faixa de opções ou de um painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="50434-125">Instead, make changes to Excel from the context of a ribbon button, or task pane.</span></span>
+<span data-ttu-id="3c1c8-125">Em vez disso, faça alterações no Excel a partir do contexto de um botão da faixa de opções ou de um painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="3c1c8-125">Instead, make changes to Excel from the context of a ribbon button, or task pane.</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="50434-126">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="50434-126">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="3c1c8-126">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="3c1c8-126">Next steps</span></span>
 
-- [<span data-ttu-id="50434-127">Conceitos fundamentais de programação com a API JavaScript do Excel</span><span class="sxs-lookup"><span data-stu-id="50434-127">Fundamental programming concepts with the Excel JavaScript API</span></span>](../reference/overview/excel-add-ins-reference-overview.md)
+- [<span data-ttu-id="3c1c8-127">Conceitos fundamentais de programação com a API JavaScript do Excel</span><span class="sxs-lookup"><span data-stu-id="3c1c8-127">Fundamental programming concepts with the Excel JavaScript API</span></span>](../reference/overview/excel-add-ins-reference-overview.md)
 
-## <a name="see-also"></a><span data-ttu-id="50434-128">Confira também</span><span class="sxs-lookup"><span data-stu-id="50434-128">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="3c1c8-128">Confira também</span><span class="sxs-lookup"><span data-stu-id="3c1c8-128">See also</span></span>
 
-- [<span data-ttu-id="50434-129">Compartilhar dados e eventos entre as funções personalizadas do Excel e o tutorial do painel de tarefas</span><span class="sxs-lookup"><span data-stu-id="50434-129">Share data and events between Excel custom functions and task pane tutorial</span></span>](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
+- [<span data-ttu-id="3c1c8-129">Compartilhar dados e eventos entre as funções personalizadas do Excel e o tutorial do painel de tarefas</span><span class="sxs-lookup"><span data-stu-id="3c1c8-129">Share data and events between Excel custom functions and task pane tutorial</span></span>](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
