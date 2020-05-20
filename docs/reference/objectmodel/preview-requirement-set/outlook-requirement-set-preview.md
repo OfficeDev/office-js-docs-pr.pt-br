@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 description: Recursos e APIs que estão atualmente em versão prévia para suplementos do Outlook.
-ms.date: 05/18/2020
+ms.date: 05/19/2020
 localization_priority: Normal
-ms.openlocfilehash: 893c90dc7344adba86a8a92b86063ed2419eae34
-ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
+ms.openlocfilehash: 3183c81a9af99f480c2dbecc787695501380cea7
+ms.sourcegitcommit: 8499a4247d1cb1e96e99c17cb520f4a8a41667e3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44278340"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "44292291"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 
@@ -188,23 +188,7 @@ Adicionado `OfficeThemeChanged` evento `Mailbox`.
 
 ---
 
-### <a name="online-meeting-provider-integration"></a>Integração do provedor de reunião online
-
-Adicionado suporte para integração de reunião online nos suplementos móveis do Outlook. Confira [criar um suplemento do Outlook Mobile para um provedor de reunião online](../../../outlook/online-meeting.md) para saber mais.
-
-#### <a name="mobileonlinemeetingcommandsurface-extension-point"></a>[Ponto de extensão MobileOnlineMeetingCommandSurface](../../manifest/extensionpoint.md#mobileonlinemeetingcommandsurface-preview)
-
-Adicionado o `MobileOnlineMeetingCommandSurface` ponto de extensão ao manifesto. Ele define a integração da reunião online.
-
-**Disponível em**: Outlook no Android (conectado à assinatura do Office 365)
-
-<br>
-
----
-
----
-
-### <a name="sso"></a>SSO
+### <a name="single-sign-on-sso"></a>SSO (logon único)
 
 #### <a name="officeruntimeauthgetaccesstoken"></a>[OfficeRuntime.auth.getAccessToken](../../../develop/sso-in-office-add-ins.md#sso-api-reference)
 

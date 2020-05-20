@@ -1,14 +1,14 @@
 ---
 title: Recurso Ao enviar para suplementos do Outlook
 description: Fornece uma maneira de manipular um item ou impedir que usuários realizem determinadas ações e permite que um suplemento defina determinadas propriedades ao enviar.
-ms.date: 04/15/2020
+ms.date: 05/19/2020
 localization_priority: Normal
-ms.openlocfilehash: d882bf988473e71de2621c144964f6116afe962c
-ms.sourcegitcommit: 79c55e59294e220bd21a5006080f72acf3ec0a3f
+ms.openlocfilehash: 7ee9e42c5be2fc25f4f310ae5c14cebe1c5b64af
+ms.sourcegitcommit: 66c73c64ad1b5708ffccdd80817f557292c706b8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "43581929"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "44321863"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Recurso Ao enviar para suplementos do Outlook
 
@@ -17,15 +17,26 @@ O recurso Ao enviar para suplementos do Outlook fornece uma maneira de manipular
 - Impedir que um usuário envie informações confidenciais ou deixe a linha de assunto em branco.  
 - Adicionar um destinatário específico à linha CC em mensagens ou à linha destinatários opcionais em reuniões.
 
-> [!NOTE]
-> No momento, o recurso ao enviar é compatível com o Outlook na Web, no Exchange Online (Office 365), Exchange 2016 local (Atualização Cumulativa 6 ou posterior) e Exchange 2019 local (Atualização Cumulativa 1 ou posterior). Esse recurso também está disponível nas versões mais recentes do Outlook, no Windows e no Mac, conectado ao Exchange Online (Office 365). O recurso foi introduzido no conjunto de requisitos 1,8 (consulte [suporte de servidor e cliente atual](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) para obter detalhes).
-
-> [!IMPORTANT]
-> Os suplementos que usam o recurso ao enviar não são permitidos no [AppSource](https://appsource.microsoft.com).
-
 O recurso ao enviar é acionado pelo tipo de evento `ItemSend` e é sem interface de usuário.
 
 Para obter informações sobre limitações relacionadas ao recurso Ao enviar, consulte as [Limitações](#limitations) posteriormente neste artigo.
+
+## <a name="supported-clients-and-platforms"></a>Clientes e plataformas compatíveis
+
+A tabela a seguir mostra combinações de cliente-servidor suportadas para o recurso de envio. Não há suporte para combinações excluídas.
+
+| Client | Exchange Online | Exchange 2016 local<br>(Atualização cumulativa 6 ou posterior) | Exchange 2019 local<br>(Atualização cumulativa 1 ou posterior) |
+|---|:---:|:---:|:---:|
+|Windows:<br>versão 1910 (Build 12130,20272) ou posterior|Sim|Sim|Sim|
+|MacOS<br>Build 16,30 ou posterior|Sim|Não|Não|
+|Navegador da Web:<br>interface do usuário moderna do Outlook|Sim|Não aplicável|Não aplicável|
+|Navegador da Web:<br>IU clássica do Outlook|Não aplicável|Sim|Sim|
+
+> [!NOTE]
+> O recurso ao enviar foi lançado no conjunto de requisitos 1,8 (Confira [suporte atual a servidor e cliente](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) para obter detalhes).
+
+> [!IMPORTANT]
+> Os suplementos que usam o recurso ao enviar não são permitidos no [AppSource](https://appsource.microsoft.com).
 
 ## <a name="how-does-the-on-send-feature-work"></a>Como o recurso Ao enviar funciona?
 
@@ -340,8 +351,8 @@ Os suplementos serão executados durante o evento de envio, que em seguida permi
 
 |Cenário|Recurso Ao enviar da caixa de correio 1|Recurso Ao enviar da caixa de correio 2|Sessão Web do Outlook (clássico)|Resultado|Com suporte?|
 |:------------|:------------|:--------------------------|:---------|:-------------|:-------------|
-|1|Habilitado|Habilitado|Nova sessão|A caixa de correio 1 não consegue enviar um item de mensagem ou de reunião da caixa de correio 2.|Não há suporte atualmente. Como alternativa, use o cenário 3.|
-|duas|Desabilitado|Habilitado|Nova sessão|A caixa de correio 1 não consegue enviar um item de mensagem ou de reunião da caixa de correio 2.|Não há suporte atualmente. Como alternativa, use o cenário 3.|
+|1 |Habilitado|Habilitado|Nova sessão|A caixa de correio 1 não consegue enviar um item de mensagem ou de reunião da caixa de correio 2.|Não há suporte atualmente. Como alternativa, use o cenário 3.|
+|2 |Desabilitado|Habilitado|Nova sessão|A caixa de correio 1 não consegue enviar um item de mensagem ou de reunião da caixa de correio 2.|Não há suporte atualmente. Como alternativa, use o cenário 3.|
 |3D|Habilitado|Habilitado|Mesma sessão|Os suplementos Ao enviar atribuídos à caixa de correio 1 são executados ao enviar.|Com suporte.|
 |4 |Habilitado|Desabilitado|Nova sessão|Nenhum suplemento Ao envio é executado; item de mensagem ou de reunião é enviado.|Com suporte.|
 
@@ -355,8 +366,8 @@ Para impor o Ao enviar, os administradores devem garantir que a política tenha 
 
 |Cenário|Política Ao enviar da caixa de correio 1|Suplementos Ao enviar habilitados?|Ação da caixa de correio 1|Resultado|Com suporte?|
 |:------------|:-------------------------|:-------------------|:---------|:----------|:-------------|
-|1|Habilitado|Sim|A caixa de correio 1 compõe uma nova mensagem ou reunião para o grupo 1.|Os suplementos Ao enviar são executados durante o envio.|Sim|
-|duas|Habilitado|Sim|A caixa de correio 1 compõe uma nova mensagem ou reunião para o grupo 1 dentro da janela de grupo do grupo 1 no Outlook na Web.|Os suplementos Ao enviar não são executados durante o envio.|Não há suporte atualmente. Como alternativa, use o cenário 1.|
+|1 |Habilitado|Sim|A caixa de correio 1 compõe uma nova mensagem ou reunião para o grupo 1.|Os suplementos Ao enviar são executados durante o envio.|Sim|
+|2 |Habilitado|Sim|A caixa de correio 1 compõe uma nova mensagem ou reunião para o grupo 1 dentro da janela de grupo do grupo 1 no Outlook na Web.|Os suplementos Ao enviar não são executados durante o envio.|Não há suporte atualmente. Como alternativa, use o cenário 1.|
 
 ### <a name="user-mailbox-with-on-send-add-in-featurepolicy-enabled-add-ins-that-support-on-send-are-installed-and-enabled-and-offline-mode-is-enabled"></a>Caixa de correio do usuário com recurso/política de suplemento Ao enviar habilitado, os suplementos com suporte à funcionalidade Ao enviar estão instalados e habilitados e o modo offline está habilitado
 
@@ -408,7 +419,7 @@ No arquivo de manifesto `Contoso Message Body Checker.xml`, inclua o arquivo de 
 ```
 
 > [!IMPORTANT]
-> Se você estiver usando o Visual Studio 2019 para desenvolver seu suplemento ao enviar, você pode receber um aviso de validação como o seguinte: "Este é um xsi: tipo inválido 'http://schemas.microsoft.com/office/mailappversionoverrides/1.1:Events'." Para contornar isso, você precisará de uma versão mais recente do MailAppVersionOverridesV1_1. xsd que tenha sido fornecida como um serviço de GitHub em um [blog sobre esse aviso](https://theofficecontext.com/2018/11/29/visual-studio-2017-this-is-an-invalid-xsitype-mailappversionoverrides-1-1event/).
+> Se você estiver usando o Visual Studio 2019 para desenvolver seu suplemento ao enviar, você pode receber um aviso de validação como o seguinte: "Este é um xsi: tipo inválido ' http://schemas.microsoft.com/office/mailappversionoverrides/1.1:Events '." Para contornar isso, você precisará de uma versão mais recente do MailAppVersionOverridesV1_1. xsd que tenha sido fornecida como um serviço de GitHub em um [blog sobre esse aviso](https://theofficecontext.com/2018/11/29/visual-studio-2017-this-is-an-invalid-xsitype-mailappversionoverrides-1-1event/).
 
 Para o arquivo de manifesto `Contoso Subject and CC Checker.xml`, o exemplo a seguir mostra o arquivo de função e o nome da função para chamar o evento de envio de mensagem.
 

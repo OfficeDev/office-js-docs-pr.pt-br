@@ -1,30 +1,30 @@
 ---
-title: Criar um suplemento do Outlook Mobile para um provedor de reunião online (visualização)
+title: Criar um suplemento do Outlook Mobile para um provedor de reunião online
 description: Descreve como configurar um suplemento móvel do Outlook para um provedor de serviços de reunião online.
 ms.topic: article
-ms.date: 04/23/2020
+ms.date: 05/19/2020
 localization_priority: Normal
-ms.openlocfilehash: 8a54ddf96ca2b5e697198b4bc69b2ec5abee10d1
-ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
+ms.openlocfilehash: 1d42ec82e12e9f34f0211ca9926f5ae8b92c7804
+ms.sourcegitcommit: 8499a4247d1cb1e96e99c17cb520f4a8a41667e3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "43930320"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "44292284"
 ---
-# <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider-preview"></a>Criar um suplemento do Outlook Mobile para um provedor de reunião online (visualização)
+# <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>Criar um suplemento do Outlook Mobile para um provedor de reunião online
 
 A configuração de uma reunião online é uma experiência principal para um usuário do Outlook e é fácil [criar uma reunião do teams com o Outlook](/microsoftteams/teams-add-in-for-outlook) Mobile. No entanto, a criação de uma reunião online no Outlook com um serviço que não seja da Microsoft pode ser complicada. Ao implementar esse recurso, os provedores de serviços podem simplificar a experiência de criação de reunião online para os usuários de suplementos do Outlook.
 
-> [!NOTE]
-> Este recurso só tem suporte na [Visualização](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) no Android com uma assinatura do Office 365.
+> [!IMPORTANT]
+> Este recurso só é suportado no Android com uma assinatura do Office 365.
 
 Neste artigo, você aprenderá como configurar seu suplemento do Outlook Mobile para permitir que os usuários organizem e ingressem em uma reunião usando o serviço de reunião online. Neste artigo, vamos usar um provedor de serviço de reunião online fictício, "contoso".
 
 ## <a name="configure-the-manifest"></a>Configurar o manifesto
 
-Para permitir que os usuários criem reuniões online com seu suplemento, você deve configurar o `MobileOnlineMeetingCommandSurface` ponto de extensão no manifesto no elemento `MobileFormFactor`pai. Não há suporte para outros fatores de formulário.
+Para permitir que os usuários criem reuniões online com seu suplemento, você deve configurar o `MobileOnlineMeetingCommandSurface` ponto de extensão no manifesto no elemento pai `MobileFormFactor` . Não há suporte para outros fatores de formulário.
 
-O exemplo a seguir mostra um trecho do manifesto que inclui o `MobileFormFactor` elemento e `MobileOnlineMeetingCommandSurface` o ponto de extensão.
+O exemplo a seguir mostra um trecho do manifesto que inclui o `MobileFormFactor` elemento e o `MobileOnlineMeetingCommandSurface` ponto de extensão.
 
 > [!TIP]
 > Para saber mais sobre manifestos para suplementos do Outlook, confira [manifestos de suplemento do Outlook](manifests.md) e [Adicione suporte para comandos de suplemento do Outlook Mobile](add-mobile-support.md).
@@ -87,7 +87,7 @@ const newBody = '<br>' +
     '<br><br>';
 ```
 
-O exemplo a seguir mostra como definir uma função sem interface do usuário `insertContosoMeeting` chamada referenciada no manifesto para atualizar o corpo da reunião com os detalhes da reunião online.
+O exemplo a seguir mostra como definir uma função sem interface do usuário chamada `insertContosoMeeting` referenciada no manifesto para atualizar o corpo da reunião com os detalhes da reunião online.
 
 ```js
 var mailboxItem;
@@ -114,7 +114,7 @@ function insertContosoMeeting(event) {
 }
 ```
 
-O exemplo a seguir mostra uma implementação da função `updateBody` de suporte usada no exemplo anterior que acrescenta os detalhes da reunião online ao corpo atual da reunião.
+O exemplo a seguir mostra uma implementação da função de suporte `updateBody` usada no exemplo anterior que acrescenta os detalhes da reunião online ao corpo atual da reunião.
 
 ```js
 function updateBody(event, existingBody) {
@@ -141,7 +141,7 @@ Siga as orientações usuais para [testar e validar o suplemento](testing-and-ti
 
 Como organizador da reunião, você deve ver telas semelhantes às três imagens a seguir ao criar uma reunião.
 
-[captura de tela da tela criar reunião no Android-ativar/desativar captura de tela da tela criar reunião no Android-carregando a captura de tela da Contoso Toggle Screen do botão criar reunião no Android-ativar/desativar ![](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [ ![](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [ ![](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
+[ ![ captura de tela da tela criar reunião no Android-ativar/desativar](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [ ![ captura de tela da tela criar reunião no Android-carregando a](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [ ![ captura de tela da Contoso Toggle Screen do botão criar reunião no Android-ativar/desativar](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
 
 ### <a name="join-meeting-ui"></a>Ingressar na IU da reunião
 
@@ -171,10 +171,9 @@ As seguintes APIs estão disponíveis para este recurso.
 Várias restrições se aplicam.
 
 - Aplicável somente aos provedores de serviço de reunião online.
-- Atualmente em visualização, portanto, esse recurso não deve ser usado em suplementos de produção.
 - No momento, o Android é o único cliente com suporte. O suporte ao iOS estará disponível em breve.
 - Somente os suplementos instalados pelo administrador serão exibidos na tela de redação da reunião, substituindo a opção Teams ou Skype padrão. Os suplementos instalados pelo usuário não serão ativados.
-- O ícone do suplemento deve estar em escala de cinza usando o `#919191` código hex ou seu equivalente em [outros formatos de cor](https://convertingcolors.com/hex-color-919191.html).
+- O ícone do suplemento deve estar em escala de cinza usando o código hex `#919191` ou seu equivalente em [outros formatos de cor](https://convertingcolors.com/hex-color-919191.html).
 - Só há suporte para um comando sem interface do usuário no modo de organizador de compromisso (compor).
 
 ## <a name="see-also"></a>Confira também
