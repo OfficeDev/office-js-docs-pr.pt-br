@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos 1.8 da API de suplemento do Outlook
 description: Conjunto de requisitos 1,8 para a API do suplemento do Outlook
-ms.date: 12/17/2019
+ms.date: 05/20/2020
 localization_priority: Normal
-ms.openlocfilehash: ca107a13080e8b25ed76bcae4bf4afe1bec9938f
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 1e6a903a9e627f3344eee9283e051ac84b5abf10
+ms.sourcegitcommit: b6fd04b55cb1f39b316bcb0b3f3e1e33800b1d36
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719991"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "44326873"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Conjunto de requisitos 1.8 da API de suplemento do Outlook
 
@@ -20,11 +20,12 @@ O conjunto de requisitos 1.8 inclui todos os recursos do [Conjunto de requisitos
 
 - Adicionadas novas APIs para anexos, categorias, acesso de representante, local aprimorado, cabeçalhos da Internet e recursos de bloqueio ao enviar.
 - Adicionado o parâmetro opcional `options` ao Event.completed.
-- Adicionado suporte para os eventos AttachmentsChanged e EnhancedLocationsChanged.
+- Adição de suporte `AttachmentsChanged` e `EnhancedLocationsChanged` eventos.
 
 ### <a name="change-log"></a>Log de mudanças
 
 - Adicionado [AttachmentContent](/javascript/api/outlook/office.attachmentcontent?view=outlook-js-1.8): adiciona um novo objeto que representa o conteúdo de um anexo.
+- Adicionado [AttachmentDetailsCompose](/javascript/api/outlook/office.attachmentdetailscompose?view=outlook-js-1.8): Adiciona um novo objeto que representa os detalhes de um anexo no modo de composição.
 - Adicionado [Categories](/javascript/api/outlook/office.categories?view=outlook-js-1.8): adiciona um novo objeto que representa as categorias de um item.
 - Adicionado [CategoryDetails](/javascript/api/outlook/office.categorydetails?view=outlook-js-1.8): adiciona um novo objeto que representa os detalhes de uma categoria (nome e cor associada).
 - Adicionado [EnhancedLocation](/javascript/api/outlook/office.enhancedlocation?view=outlook-js-1.8): adiciona um novo objeto que representa o conjunto de locais em um compromisso.
