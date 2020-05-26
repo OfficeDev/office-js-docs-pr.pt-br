@@ -1,14 +1,14 @@
 ---
 title: Diretrizes de codificação para problemas comuns e comportamentos de plataforma inesperados
 description: Uma lista de problemas da plataforma de API JavaScript do Office frequentemente encontrada pelos desenvolvedores.
-ms.date: 04/22/2020
+ms.date: 05/21/2020
 localization_priority: Normal
-ms.openlocfilehash: dea879899dce2e957d34f2eb8e7498d4fdb868c0
-ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
+ms.openlocfilehash: fee5504d1db95d59b7667e402ff246b16b07b57c
+ms.sourcegitcommit: d88b3dcfe13ba06f821b55db2de46aed152a378d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "43930313"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "44347655"
 ---
 # <a name="coding-guidance-for-common-issues-and-unexpected-platform-behaviors"></a>Diretrizes de codificação para problemas comuns e comportamentos de plataforma inesperados
 
@@ -59,9 +59,9 @@ Algumas propriedades não podem ser definidas, apesar de serem graváveis. Essas
 sheet.pageLayout.zoom = { scale: 200 };
 ```
 
-No exemplo anterior, você ***não*** poderá atribuir `zoom` um valor diretamente: `sheet.pageLayout.zoom.scale = 200;`. Essa instrução gera um erro porque `zoom` não está carregada. Mesmo que `zoom` fosse carregado, o conjunto de escala não terá efeito. Todas as operações de contexto `zoom`acontecem em, atualizando o objeto de proxy no suplemento e substituindo os valores definidos localmente.
+No exemplo anterior, você ***não*** poderá atribuir `zoom` um valor diretamente: `sheet.pageLayout.zoom.scale = 200;` . Essa instrução gera um erro porque `zoom` não está carregada. Mesmo que `zoom` fosse carregado, o conjunto de escala não terá efeito. Todas as operações de contexto acontecem em `zoom` , atualizando o objeto de proxy no suplemento e substituindo os valores definidos localmente.
 
-Esse comportamento difere das [Propriedades de navegação](../excel/excel-add-ins-advanced-concepts.md#scalar-and-navigation-properties) , como [Range. Format](/javascript/api/excel/excel.range#format). As propriedades `format` de podem ser definidas usando a navegação de objeto, conforme mostrado aqui:
+Esse comportamento difere das [Propriedades de navegação](../excel/excel-add-ins-advanced-concepts.md#scalar-and-navigation-properties) , como [Range. Format](/javascript/api/excel/excel.range#format). As propriedades de `format` podem ser definidas usando a navegação de objeto, conforme mostrado aqui:
 
 ```js
 // This will set the font size on the range during the next `content.sync()`.
@@ -72,17 +72,6 @@ Você pode identificar uma propriedade que não pode ter suas subpropriedades de
 
 - Propriedade somente leitura: as subpropriedades podem ser definidas por meio de navegação.
 - Propriedade writable: as subpropriedades não podem ser definidas por meio de navegação (devem ser definidas como parte da atribuição de objeto pai inicial).
-
-## <a name="excel-data-transfer-limits"></a>Limites de transferência de dados do Excel
-
-Se você estiver criando um suplemento do Excel, esteja ciente das seguintes limitações de tamanho ao interagir com a pasta de trabalho:
-
-- O Excel na Web tem um limite de tamanho de conteúdo para solicitações e respostas de 5 MB. `RichAPI.Error` será lançado se esse limite for excedido.
-- Um intervalo está limitado a 5 milhões células para operações Get.
-
-Se você espera que a entrada do usuário exceda esses limites, verifique os dados antes de `context.sync()`chamar. Divida a operação em partes menores, conforme necessário. Certifique-se de `context.sync()` chamar para cada suboperação para evitar que as operações sejam encaixadas novamente.
-
-Essas limitações são normalmente excedidos por intervalos grandes. O suplemento pode ser capaz de usar o [RangeAreas](/javascript/api/excel/excel.rangeareas) para atualizar as células estrategicamente em um intervalo maior. Confira [trabalhar com vários intervalos simultaneamente em suplementos do Excel](../excel/excel-add-ins-multiple-ranges.md) para obter mais informações.
 
 ## <a name="setting-read-only-properties"></a>Configuração de propriedades somente leitura
 
@@ -95,7 +84,7 @@ myChart.id = "5";
 
 ## <a name="removing-event-handlers"></a>Remover manipuladores de eventos
 
-Manipuladores de eventos devem ser removidos usando o `RequestContext` mesmo em que foram adicionados. Se você precisar que seu suplemento remova um manipulador de eventos durante a execução, será necessário armazenar o objeto Context usado para adicionar o manipulador.
+Manipuladores de eventos devem ser removidos usando o mesmo `RequestContext` em que foram adicionados. Se você precisar que seu suplemento remova um manipulador de eventos durante a execução, será necessário armazenar o objeto Context usado para adicionar o manipulador.
 
 ```js
 Excel.run(async (context) => {
@@ -112,6 +101,47 @@ Excel.run(async (context) => {
 ## <a name="supporting-internet-explorer"></a>Suporte do Internet Explorer
 
 [!INCLUDE [How to support IE](../includes/es5-support.md)]
+
+## <a name="excel-specific-issues"></a>Problemas específicos do Excel
+
+### <a name="excel-data-transfer-limits"></a>Limites de transferência de dados do Excel
+
+Se você estiver criando um suplemento do Excel, esteja ciente das seguintes limitações de tamanho ao interagir com a pasta de trabalho:
+
+- O Excel na Web tem um limite de tamanho de conteúdo para solicitações e respostas de 5 MB. `RichAPI.Error` será lançado se esse limite for excedido.
+- Um intervalo está limitado a 5 milhões células para operações Get.
+
+Se você espera que a entrada do usuário exceda esses limites, verifique os dados antes de chamar `context.sync()` . Divida a operação em partes menores, conforme necessário. Certifique-se de chamar `context.sync()` para cada suboperação para evitar que as operações sejam encaixadas novamente.
+
+Essas limitações são normalmente excedidos por intervalos grandes. O suplemento pode ser capaz de usar o [RangeAreas](/javascript/api/excel/excel.rangeareas) para atualizar as células estrategicamente em um intervalo maior. Confira [trabalhar com vários intervalos simultaneamente em suplementos do Excel](../excel/excel-add-ins-multiple-ranges.md) para obter mais informações.
+
+### <a name="api-limitations-when-the-active-workbook-switches"></a>Limitações de API quando a pasta de trabalho ativa alterna
+
+Os suplementos para Excel se destinam a operar em uma única pasta de trabalho por vez. Os erros podem ocorrer quando uma pasta de trabalho separada da que está executando o suplemento Obtém o foco. Isso ocorre apenas quando determinados métodos estão no processo de chamada quando o foco é alterado.
+
+As seguintes APIs são afetadas por essa opção de pasta de trabalho:
+
+|API JavaScript do Excel | Erro gerado |
+|--|--|
+| `Chart.activate` | GeneralException |
+| `Range.select` | GeneralException |
+| `Table.clearFilters` | GeneralException |
+| `Workbook.getActiveCell`  | InvalidSelection|
+| `Workbook.getSelectedRange` | InvalidSelection|
+| `Workbook.getSelectedRanges`  | InvalidSelection|
+| `Worksheet.activate` | GeneralException |
+| `Worksheet.delete`  | InvalidSelection|
+| `Worksheet.gridlines` | GeneralException |
+| `Worksheet.showHeadings` | GeneralException |
+| `WorksheetCollection.add` | GeneralException |
+| `WorksheetFreezePanes.freezeAt` | GeneralException |
+| `WorksheetFreezePanes.freezeColumns` | GeneralException |
+| `WorksheetFreezePanes.freezeRows` | GeneralException |
+| `WorksheetFreezePanes.getLocationOrNullObject`| GeneralException |
+| `WorksheetFreezePanes.unfreeze` | GeneralException |
+
+> [!NOTE]
+> Isso aplica-se apenas a várias pastas de trabalho do Excel abertas no Windows ou Mac.
 
 ## <a name="see-also"></a>Confira também
 

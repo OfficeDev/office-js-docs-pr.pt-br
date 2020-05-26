@@ -1,23 +1,26 @@
 ---
 title: Conceitos básicos para comandos de suplemento
-description: Aprenda a adicionar botões e itens de menu personalizados da faixa de opções ao Office como parte de um suplemento do Office Web.
-ms.date: 02/11/2020
+description: Aprenda a adicionar botões e itens de menu personalizados da faixa de opções ao Office como parte de um suplemento do Office.
+ms.date: 05/12/2020
 localization_priority: Priority
-ms.openlocfilehash: 6395b087ea191b37e9398096038dacfd66ed263c
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: dbd25761dcf852905a766489cf4689856115cc39
+ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890553"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "44217897"
 ---
-# <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Comandos de suplemento para Excel, Word e PowerPoint
+# <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Comandos de suplemento para Excel, Word e PowerPoint
 
 Comandos de suplemento são elementos de interface do usuário que estendem a interface do usuário do Office e iniciam ações no suplemento. Você pode usar comandos de suplemento para adicionar um botão à faixa de opções ou um item a um menu de contexto. Ao selecionar um comando de suplemento, os usuários iniciam ações como executar código JavaScript ou exibir uma página do suplemento em um painel de tarefas. Os comandos de suplemento ajudam os usuários a localizar e usar o suplemento, o que pode ajudá-lo a aumentar a adoção e a reutilização do suplemento, além de melhorar a retenção de clientes.
 
 Para uma visão geral do recurso, confira o vídeo [Comandos de Suplemento na Faixa de Opções do Office](https://channel9.msdn.com/events/Build/2016/P551).
 
 > [!NOTE]
-> Os catálogos do SharePoint não são compatíveis com os comandos de suplemento. É possível implantar comandos de suplemento pela [Implantação centralizada](../publish/centralized-deployment.md) ou pelo [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) ou usar [sideload](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) para implantar seu comando de suplemento para testes. 
+> Os catálogos do SharePoint não são compatíveis com os comandos de suplemento. É possível implantar comandos de suplemento pela [Implantação centralizada](../publish/centralized-deployment.md) ou pelo [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) ou usar [sideload](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) para implantar seu comando de suplemento para testes.
+
+> [!IMPORTANT]
+> Os comandos de suplemento também são compatíveis com o Outlook. Para saber mais, confira [Comandos de suplemento para o Outlook](../outlook/add-in-commands-for-outlook.md).
 
 *Figura 1. Suplemento com comandos em execução na Área de Trabalho do Excel*
 
@@ -51,7 +54,7 @@ Os seguintes recursos de comando são compatíveis no momento.
 
 ### <a name="default-enabled-or-disabled-status-preview"></a>Status padrão Habilitado ou Desabilitado (visualização)
 
-Você pode especificar se o comando está ativado ou desativado quando o suplemento é iniciado e alterar programaticamente a configuração. 
+Você pode especificar se o comando está ativado ou desativado quando o suplemento é iniciado e alterar programaticamente a configuração.
 
 > [!NOTE]
 > Esse recurso está em visualização e não tem suporte em todos os hosts ou cenários. Para obter mais informações, consulte [Ativar e Desativar Comandos de Suplemento](disable-add-in-commands.md).
@@ -60,12 +63,14 @@ Você pode especificar se o comando está ativado ou desativado quando o supleme
 
 Os comandos de suplemento atualmente têm suporte nas seguintes plataformas.
 
-- Outlook 2016 no Windows (build 16.0.4678.1000+)
 - Outlook no Windows (build 16.0.6769+, conectado à assinatura do Office 365)
 - Office 2019 no Windows
 - Office no Mac (build 15.33+, conectado à assinatura do Office 365)
 - Office 2019 no Mac
 - Office na Web
+
+> [!NOTE]
+> Para saber mais sobre o suporte do Outlook, confira [comandos de suplemento do Outlook](../outlook/add-in-commands-for-outlook.md).
 
 ## <a name="debugging"></a>Depuração
 
