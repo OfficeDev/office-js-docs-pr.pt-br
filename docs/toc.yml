@@ -906,12 +906,12 @@
           href: outlook/online-meeting.md
         - name: Suplementos Ao enviar
           href: outlook/outlook-on-send-addins.md
+        - name: Ativação baseada em evento (visualização)
+          href: outlook/autolaunch.md
         - name: Painel de tarefas fixável
           href: outlook/pinnable-taskpane.md
         - name: Acesso de representante
           href: outlook/delegate-access.md
-        - name: Configurar ativação baseada em evento (visualização)
-          href: outlook/autolaunch.md
         - name: Manifestos
           items:
             - name: Manifestos do suplemento do Outlook
