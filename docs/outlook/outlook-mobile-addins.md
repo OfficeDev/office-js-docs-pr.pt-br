@@ -1,14 +1,14 @@
 ---
 title: Suplementos do Outlook para o Outlook Mobile
 description: Os suplementos do Outlook Mobile têm suporte em todas as contas do Office 365 Comercial, Outlook.com e, em breve, haverá suporte para contas do Gmail.
-ms.date: 04/13/2020
+ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 4b6341ac1b340ebc46c616ae4274bfdf1e2d0672
-ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
+ms.openlocfilehash: 6cc91bd021640988b2f216dda258b185748b2e40
+ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "43241081"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "44413207"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Suplementos do Outlook Mobile
 
@@ -35,7 +35,7 @@ Os suplementos do Outlook Mobile têm suporte em todas as contas do Office 365 C
     - O suplemento **DEVE** cumprir as [diretrizes de interface do usuário](outlook-addin-design.md).
     - O cenário do suplemento **DEVE** [fazer sentido no mobile](#what-makes-a-good-scenario-for-mobile-add-ins).
 
-- Em geral, só há suporte para o modo de leitura de mensagens no momento. Isso significa `MobileMessageReadCommandSurface` que é o único [ExtensionPoint](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface) que você deve declarar na seção móvel do seu manifesto. No entanto, o modo organizador de compromissos tem suporte para suplementos integrados de provedor de reunião online que, em vez disso, declare o [ponto de extensão MobileOnlineMeetingCommandSurface](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface-preview). Confira o artigo [criar um suplemento do Outlook Mobile para um provedor de reunião online](online-meeting.md) para saber mais sobre esse cenário.
+- Em geral, só há suporte para o modo de leitura de mensagens no momento. Isso significa que `MobileMessageReadCommandSurface` é o único [ExtensionPoint](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface) que você deve declarar na seção móvel do seu manifesto. No entanto, o modo organizador de compromissos tem suporte para suplementos integrados de provedor de reunião online que, em vez disso, declare o [ponto de extensão MobileOnlineMeetingCommandSurface](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface-preview). Confira o artigo [criar um suplemento do Outlook Mobile para um provedor de reunião online](online-meeting.md) para saber mais sobre esse cenário.
 
 - A API [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) não é suportada no celular, já que o aplicativo móvel usa APIs REST para se comunicar com o servidor. Se seu back-end do aplicativo precisa se conectar ao servidor do Exchange, é possível usar o token de retorno de chamada para fazer chamadas de API REST. Para obter detalhes, consulte [Usar APIs REST do Outlook de um suplemento do Outlook](use-rest-api.md).
 
@@ -69,7 +69,7 @@ Para testar um suplemento no Outlook Mobile, você pode carregar um suplemento p
 
 Depois que seu suplemento estiver funcionando, certifique-se de testá-lo em tamanhos de tela diferentes, incluindo celulares e tablets. Você deve verificar se ele atende às diretrizes de acessibilidade de contraste, tamanho da fonte e cor, bem como de usabilidade com um leitor de tela, como o VoiceOver no iOS ou TalkBack no Android.
 
-A solução de problemas em dispositivos móveis pode ser difícil, já que pode você não ter as ferramentas com as quais está acostumado. Uma opção para solução de problemas é [usar Vorlon.js](../testing/debug-office-add-ins-on-ipad-and-mac.md). Ou, se tiver usado o Fiddler antes, confira [este tutorial sobre como usá-lo com um dispositivo iOS](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices).
+A solução de problemas no Mobile pode ser difícil, já que você pode não ter as ferramentas para as quais você está acostumado. No entanto, uma opção de solução de problemas no iOS é usar o Fiddler (Confira [este tutorial sobre como usá-lo com um dispositivo IOS](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)).
 
 ## <a name="next-steps"></a>Próximas etapas
 

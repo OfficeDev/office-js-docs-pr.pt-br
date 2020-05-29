@@ -4,12 +4,12 @@ description: Saiba mais sobre os conjuntos de requisitos da API comum do Office
 ms.date: 07/17/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 39358b26547a464b9bb1b96f571bac7741e1c32d
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 5905e655f5af437cd516bd58163c8a49d0c8aab2
+ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717464"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "44413235"
 ---
 # <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API Comum do Office
 
@@ -162,7 +162,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 |**Hosts do Office**|**Métodos no conjunto**|
 |:-----|:-----|
-| Excel no Mac<br>PowerPoint no Windows<br>PowerPoint Online<br>PowerPoint no iPad<br>PowerPoint no Mac<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Dá suporte à saída para o formato PDF (Office.FileType.Pdf)<br>ao usar o método Document.getFileAsync.|
+| Excel no Windows<br>Excel Online<br>Excel no Mac<br>PowerPoint no Windows<br>PowerPoint Online<br>PowerPoint no iPad<br>PowerPoint no Mac<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Dá suporte à saída para o formato PDF (Office.FileType.Pdf)<br>ao usar o método Document.getFileAsync.|
 
 ---
 

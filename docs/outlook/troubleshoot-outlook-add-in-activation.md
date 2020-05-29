@@ -1,14 +1,14 @@
 ---
 title: Solução de problemas de ativação de suplementos contextuais do Outlook
 description: Se o seu suplemento não for ativado conforme o esperado, procure a causa nas áreas a seguir.
-ms.date: 10/31/2019
+ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: cfc5595257b6f8413aa3c1452fb5752e83ece631
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 555ae2a45bf49d74d1fd439258fd87035644e86a
+ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165693"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "44413179"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Solução de problemas de ativação de suplementos do Outlook
 
@@ -81,10 +81,17 @@ Se seu suplemento é um suplemento de redação e deve ser ativado quando o usu�
 Este cenário se aplica somente ao Outlook no Windows. Normalmente, quando você instala um suplemento do Outlook para uma caixa de correio, o Exchange Server copia o manifesto do suplemento do local indicado para a caixa de correio no Exchange Server. Toda vez que o Outlook inicia, ele lê todos os manifestos instalados para essa caixa de correio em um cache temporário no seguinte local:
 
 ```text
-%LocalAppData%\Microsoft\Office\15.0\WEF
+%LocalAppData%\Microsoft\Office\16.0\WEF
 ```
 
-Por exemplo, para o usuário Donato, o cache pode correr C:\Usuários\donato\AppData\Local\Microsoft\Office\15.0\WEF.
+Por exemplo, para o usuário John, o cache pode estar em C:\Users\john\AppData\Local\Microsoft\Office\16.0\WEF.
+
+> [!IMPORTANT]
+> Para o Outlook 2013 no Windows, use 15,0 em vez de 16,0 para que o local seja:
+>
+> ```text
+> %LocalAppData%\Microsoft\Office\15.0\WEF
+> ```
 
 Se um suplemento não foi ativado para todos os itens, o manifesto talvez não tenha sido instalado corretamente no Exchange Server ou o Outlook não leu o manifesto corretamente na inicialização. Usando o Centro de Administração do Exchange, verifique se o suplemento está instalado e habilitado para sua caixa de correio e reinicie o Exchange Server, se necessário.
 
@@ -103,7 +110,7 @@ O procedimento a seguir descreve os detalhes.
 1. Se o Outlook não ativar o suplemento, verifique se tem uma cópia corretamente armazenada em cache do manifesto para o suplemento. Procure no seguinte caminho:
 
     ```text
-    %LocalAppData%\Microsoft\Office\15.0\WEF
+    %LocalAppData%\Microsoft\Office\16.0\WEF
     ```
 
     Você pode encontrar o manifesto na pasta a seguir:
@@ -116,7 +123,7 @@ O procedimento a seguir descreve os detalhes.
     > Este é um exemplo de caminho para um manifesto instalado para uma caixa de correio para o usuário Donato:
     >
     > ```text
-    > C:\Users\john\appdata\Local\Microsoft\Office\15.0\WEF\{8D8445A4-80E4-4D6B-B7AC-D4E6AF594E73}\GoRshCWa7vW8+jhKmyiDhA==\Manifests\b3d7d9d5-6f57-437d-9830-94e2aaccef16_1.2
+    > C:\Users\john\appdata\Local\Microsoft\Office\16.0\WEF\{8D8445A4-80E4-4D6B-B7AC-D4E6AF594E73}\GoRshCWa7vW8+jhKmyiDhA==\Manifests\b3d7d9d5-6f57-437d-9830-94e2aaccef16_1.2
     > ```
 
     Verifique se o manifesto do suplemento que você está testando está entre os manifestos armazenados em cache.
@@ -140,7 +147,7 @@ O procedimento a seguir descreve os detalhes.
 1. Se você não vir um evento bem-sucedido, feche o Outlook e exclua todos os manifestos no caminho abaixo:
 
     ```text
-    %LocalAppData%\Microsoft\Office\15.0\WEF\<insert your guid>\<insert base 64 hash>\Manifests\
+    %LocalAppData%\Microsoft\Office\16.0\WEF\<insert your guid>\<insert base 64 hash>\Manifests\
     ```
 
     Inicie o Outlook e teste se ele agora ativa o suplemento.

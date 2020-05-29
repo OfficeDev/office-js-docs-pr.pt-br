@@ -1,14 +1,14 @@
 ---
 title: Criar comandos de suplemento em seu manifesto para Excel, PowerPoint e Word
 description: Use VersionOverrides no manifesto para definir comandos de suplemento para Excel, PowerPoint e Word. Use comandos de suplemento para criar elementos de interface do usuário, adicionar botões ou listas e realizar ações.
-ms.date: 05/12/2020
+ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: d318df0ab80a4cd83c6a74e77662f3e85df9f92d
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: 02d61d90f500712b2970c4dfb5b439b3367f59d7
+ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217883"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "44413172"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Criar comandos de suplemento em seu manifesto para Excel, PowerPoint e Word
 
@@ -25,6 +25,9 @@ Use **[VersionOverrides](../reference/manifest/versionoverrides.md)** no manifes
   - Executar código JavaScript, que normalmente é executado sem exibir qualquer interface do usuário.
 
 Este artigo descreve como editar seu manifesto para definir comandos de suplemento. O diagrama a seguir mostra a hierarquia de elementos usada para definir comandos de suplemento. Descrevemos esses elementos com mais detalhes neste artigo.
+
+> [!NOTE]
+> Os comandos de suplemento também são compatíveis com o Outlook. Para obter mais informações, consulte [comandos de suplemento para o Outlook](../outlook/add-in-commands-for-outlook.md)
 
 A imagem a seguir representa uma visão geral dos elementos dos comandos de suplemento no manifesto. ![Visão geral dos elementos dos comandos de suplemento no manifesto](../images/version-overrides.png)
 
@@ -436,4 +439,4 @@ No Excel e no Word, é possível adicionar seus comandos de suplemento na faixa 
 
 ## <a name="see-also"></a>Confira também
 
-- [Comandos de suplemento para Excel, PowerPoint e Word](../design/add-in-commands.md)
+- [Comandos de suplemento para Excel, Word e PowerPoint](../design/add-in-commands.md)

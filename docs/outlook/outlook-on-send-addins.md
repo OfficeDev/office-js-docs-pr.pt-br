@@ -1,14 +1,14 @@
 ---
 title: Recurso Ao enviar para suplementos do Outlook
 description: Fornece uma maneira de manipular um item ou impedir que usuários realizem determinadas ações e permite que um suplemento defina determinadas propriedades ao enviar.
-ms.date: 05/19/2020
+ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 7ee9e42c5be2fc25f4f310ae5c14cebe1c5b64af
-ms.sourcegitcommit: 66c73c64ad1b5708ffccdd80817f557292c706b8
+ms.openlocfilehash: 7dc35d71f78ec282ecedda9eba0ab4fc52811fee
+ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "44321863"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "44413186"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Recurso Ao enviar para suplementos do Outlook
 
@@ -352,7 +352,7 @@ Os suplementos serão executados durante o evento de envio, que em seguida permi
 |Cenário|Recurso Ao enviar da caixa de correio 1|Recurso Ao enviar da caixa de correio 2|Sessão Web do Outlook (clássico)|Resultado|Com suporte?|
 |:------------|:------------|:--------------------------|:---------|:-------------|:-------------|
 |1 |Habilitado|Habilitado|Nova sessão|A caixa de correio 1 não consegue enviar um item de mensagem ou de reunião da caixa de correio 2.|Não há suporte atualmente. Como alternativa, use o cenário 3.|
-|2 |Desabilitado|Habilitado|Nova sessão|A caixa de correio 1 não consegue enviar um item de mensagem ou de reunião da caixa de correio 2.|Não há suporte atualmente. Como alternativa, use o cenário 3.|
+|duas|Desabilitado|Habilitado|Nova sessão|A caixa de correio 1 não consegue enviar um item de mensagem ou de reunião da caixa de correio 2.|Não há suporte atualmente. Como alternativa, use o cenário 3.|
 |3D|Habilitado|Habilitado|Mesma sessão|Os suplementos Ao enviar atribuídos à caixa de correio 1 são executados ao enviar.|Com suporte.|
 |4 |Habilitado|Desabilitado|Nova sessão|Nenhum suplemento Ao envio é executado; item de mensagem ou de reunião é enviado.|Com suporte.|
 
@@ -367,7 +367,7 @@ Para impor o Ao enviar, os administradores devem garantir que a política tenha 
 |Cenário|Política Ao enviar da caixa de correio 1|Suplementos Ao enviar habilitados?|Ação da caixa de correio 1|Resultado|Com suporte?|
 |:------------|:-------------------------|:-------------------|:---------|:----------|:-------------|
 |1 |Habilitado|Sim|A caixa de correio 1 compõe uma nova mensagem ou reunião para o grupo 1.|Os suplementos Ao enviar são executados durante o envio.|Sim|
-|2 |Habilitado|Sim|A caixa de correio 1 compõe uma nova mensagem ou reunião para o grupo 1 dentro da janela de grupo do grupo 1 no Outlook na Web.|Os suplementos Ao enviar não são executados durante o envio.|Não há suporte atualmente. Como alternativa, use o cenário 1.|
+|duas|Habilitado|Sim|A caixa de correio 1 compõe uma nova mensagem ou reunião para o grupo 1 dentro da janela de grupo do grupo 1 no Outlook na Web.|Os suplementos Ao enviar não são executados durante o envio.|Não há suporte atualmente. Como alternativa, use o cenário 1.|
 
 ### <a name="user-mailbox-with-on-send-add-in-featurepolicy-enabled-add-ins-that-support-on-send-are-installed-and-enabled-and-offline-mode-is-enabled"></a>Caixa de correio do usuário com recurso/política de suplemento Ao enviar habilitado, os suplementos com suporte à funcionalidade Ao enviar estão instalados e habilitados e o modo offline está habilitado
 
@@ -454,7 +454,6 @@ A API Ao enviar requer `VersionOverrides v1_1`. Veja a seguir como adicionar o n
 > [!NOTE]
 > Para obter mais informações, confira o seguinte:
 > - [Manifestos de suplementos do Outlook](manifests.md)
-> - [VersionOverrides](../develop/create-addin-commands.md#step-3-add-versionoverrides-element)
 > - [Manifesto XML dos Suplementos do Office](../overview/add-in-manifests.md)
 
 
