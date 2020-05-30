@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 description: Recursos e APIs que estão atualmente em versão prévia para suplementos do Outlook.
-ms.date: 05/19/2020
+ms.date: 05/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 3183c81a9af99f480c2dbecc787695501380cea7
-ms.sourcegitcommit: 8499a4247d1cb1e96e99c17cb520f4a8a41667e3
+ms.openlocfilehash: 5a53b1b5f477a420c9aaafbf8d778e1e58a7fe88
+ms.sourcegitcommit: 3a72d13c82b3d627691f4712d0d24b9e71bae9dc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "44292291"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "44415874"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 
@@ -69,6 +69,8 @@ Foi adicionada uma nova enumeração `AppointmentSensitivityType` que representa
 ---
 
 ### <a name="append-on-send"></a>Anexar ao enviar
+
+Para saber mais sobre como usar o recurso Append-on-Send, confira [implementar anexar ao enviar em seu suplemento do Outlook](../../../outlook/append-on-send.md).
 
 #### <a name="officecontextmailboxitembodyappendonsendasync"></a>[Office. Context. Mailbox. Item. Body. appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-)
 
