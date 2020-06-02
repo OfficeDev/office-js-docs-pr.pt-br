@@ -3,12 +3,12 @@ title: Conjunto de requisitos do modo de visualização de API para suplementos 
 description: Recursos e APIs que estão atualmente em versão prévia para suplementos do Outlook.
 ms.date: 05/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 5a53b1b5f477a420c9aaafbf8d778e1e58a7fe88
-ms.sourcegitcommit: 3a72d13c82b3d627691f4712d0d24b9e71bae9dc
+ms.openlocfilehash: 600aad32c394d35e62f4024808b185e8a9abe5e8
+ms.sourcegitcommit: 09a8683ff29cf06d0d1d822be83cf0798f1ccdf9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "44415874"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "44471342"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 
@@ -111,6 +111,20 @@ Adicionado o `LaunchEvent` suporte a ponto de extensão ao manifesto. Ele config
 Adicionado suporte do Outlook ao `Runtimes` elemento manifest. Ele faz referência aos arquivos HTML e JavaScript necessários para a funcionalidade de ativação baseada em eventos.
 
 **Disponível no**: Outlook na Web (moderno, [solicitar acesso de visualização](https://aka.ms/OWAPreview))
+
+<br>
+
+---
+
+---
+
+### <a name="get-all-custom-properties"></a>Obter todas as propriedades personalizadas
+
+#### <a name="custompropertiesgetall"></a>[CustomProperties. getAll](/javascript/api/outlook/office.customproperties?view=outlook-js-preview#getall--)
+
+Foi adicionada uma nova função ao `CustomProperties` objeto que obtém todas as propriedades personalizadas.
+
+**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno), Outlook no Mac (conectado à assinatura do Office 365), Outlook no Android, Outlook no Ios
 
 <br>
 
