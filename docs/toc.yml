@@ -906,6 +906,8 @@
           href: outlook/online-meeting.md
         - name: Suplementos Ao enviar
           href: outlook/outlook-on-send-addins.md
+        - name: Anexar no envio (visualização)
+          href: outlook/outlook-on-send-addins.md
         - name: Ativação baseada em evento (visualização)
           href: outlook/autolaunch.md
         - name: Painel de tarefas fixável
