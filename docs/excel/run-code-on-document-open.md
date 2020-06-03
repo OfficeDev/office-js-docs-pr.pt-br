@@ -1,53 +1,53 @@
 ---
 title: Executar o código em seu suplemento do Excel quando o documento for aberto
 description: Executar o código em seu suplemento do Excel quando o documento for aberto.
-ms.date: 05/11/2020
+ms.date: 05/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 0a9090315a4ddca80e25a94092c779a3f3271087
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: f544140a08a81c69aeb2fbdbe53afc098a738ad1
+ms.sourcegitcommit: 9229102c16a1864e3a8724aaf9b0dc68b1428094
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217946"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "44275760"
 ---
-# <a name="run-code-in-your-excel-add-in-when-the-document-opens"></a><span data-ttu-id="ce3ab-103">Executar o código em seu suplemento do Excel quando o documento for aberto</span><span class="sxs-lookup"><span data-stu-id="ce3ab-103">Run code in your Excel add-in when the document opens</span></span>
+# <a name="run-code-in-your-excel-add-in-when-the-document-opens"></a><span data-ttu-id="f121c-103">Executar o código em seu suplemento do Excel quando o documento for aberto</span><span class="sxs-lookup"><span data-stu-id="f121c-103">Run code in your Excel add-in when the document opens</span></span>
 
-<span data-ttu-id="ce3ab-104">Você pode configurar seu suplemento do Excel para carregar e executar o código assim que o documento é aberto.</span><span class="sxs-lookup"><span data-stu-id="ce3ab-104">You can configure your Excel add-in to load and run code as soon as the document is opened.</span></span> <span data-ttu-id="ce3ab-105">Isso será útil se você precisar registrar manipuladores de eventos, dados pré-carregados para o painel de tarefas, sincronizar interface do usuário ou executar outras tarefas antes de o suplemento ficar visível.</span><span class="sxs-lookup"><span data-stu-id="ce3ab-105">This is useful if you need to register event handlers, pre-load data for the task pane, synchronize UI, or perform other tasks before the add-in is visible.</span></span>
+<span data-ttu-id="f121c-104">Você pode configurar seu suplemento do Excel para carregar e executar o código assim que o documento é aberto.</span><span class="sxs-lookup"><span data-stu-id="f121c-104">You can configure your Excel add-in to load and run code as soon as the document is opened.</span></span> <span data-ttu-id="f121c-105">Isso será útil se você precisar registrar manipuladores de eventos, dados pré-carregados para o painel de tarefas, sincronizar interface do usuário ou executar outras tarefas antes de o suplemento ficar visível.</span><span class="sxs-lookup"><span data-stu-id="f121c-105">This is useful if you need to register event handlers, pre-load data for the task pane, synchronize UI, or perform other tasks before the add-in is visible.</span></span>
 
 [!include[Excel shared runtime note](../includes/note-requires-shared-runtime.md)]
 
-## <a name="configure-your-add-in-to-load-when-the-document-opens"></a><span data-ttu-id="ce3ab-106">Configurar seu suplemento para carregar quando o documento for aberto</span><span class="sxs-lookup"><span data-stu-id="ce3ab-106">Configure your add-in to load when the document opens</span></span>
+## <a name="configure-your-add-in-to-load-when-the-document-opens"></a><span data-ttu-id="f121c-106">Configurar seu suplemento para carregar quando o documento for aberto</span><span class="sxs-lookup"><span data-stu-id="f121c-106">Configure your add-in to load when the document opens</span></span>
 
-<span data-ttu-id="ce3ab-107">O código a seguir configura o suplemento para carregar e começar a ser executado quando o documento é aberto.</span><span class="sxs-lookup"><span data-stu-id="ce3ab-107">The following code configures your add-in to load and start running when the document is opened.</span></span>
+<span data-ttu-id="f121c-107">O código a seguir configura o suplemento para carregar e começar a ser executado quando o documento é aberto.</span><span class="sxs-lookup"><span data-stu-id="f121c-107">The following code configures your add-in to load and start running when the document is opened.</span></span>
 
 ```JavaScript
 Office.addin.setStartupBehavior(Office.StartupBehavior.load);
 ```
 
 > [!NOTE]
-> <span data-ttu-id="ce3ab-108">O `setStartupBehavior` método é assíncrono.</span><span class="sxs-lookup"><span data-stu-id="ce3ab-108">The `setStartupBehavior` method is asynchronous.</span></span>
+> <span data-ttu-id="f121c-108">O `setStartupBehavior` método é assíncrono.</span><span class="sxs-lookup"><span data-stu-id="f121c-108">The `setStartupBehavior` method is asynchronous.</span></span>
 
-## <a name="configure-your-add-in-for-no-load-behavior-on-document-open"></a><span data-ttu-id="ce3ab-109">Configurar seu suplemento para nenhum comportamento de carga no documento aberto</span><span class="sxs-lookup"><span data-stu-id="ce3ab-109">Configure your add-in for no load behavior on document open</span></span>
+## <a name="configure-your-add-in-for-no-load-behavior-on-document-open"></a><span data-ttu-id="f121c-109">Configurar seu suplemento para nenhum comportamento de carga no documento aberto</span><span class="sxs-lookup"><span data-stu-id="f121c-109">Configure your add-in for no load behavior on document open</span></span>
 
-<span data-ttu-id="ce3ab-110">O código a seguir configura seu suplemento para não iniciar quando o documento é aberto.</span><span class="sxs-lookup"><span data-stu-id="ce3ab-110">The following code configures your add-in not to start when the document is opened.</span></span> <span data-ttu-id="ce3ab-111">Em vez disso, ele será iniciado quando o usuário o envolver de alguma maneira (como a escolha de um botão de faixa de opções ou a abertura do painel de tarefas).</span><span class="sxs-lookup"><span data-stu-id="ce3ab-111">Instead it will start when the user engages it in some way (such as choosing a ribbon button, or opening the task pane.)</span></span>
+<span data-ttu-id="f121c-110">O código a seguir configura seu suplemento para não iniciar quando o documento é aberto.</span><span class="sxs-lookup"><span data-stu-id="f121c-110">The following code configures your add-in not to start when the document is opened.</span></span> <span data-ttu-id="f121c-111">Em vez disso, ele será iniciado quando o usuário o envolver de alguma maneira (como a escolha de um botão de faixa de opções ou a abertura do painel de tarefas).</span><span class="sxs-lookup"><span data-stu-id="f121c-111">Instead it will start when the user engages it in some way (such as choosing a ribbon button, or opening the task pane.)</span></span>
 
 ```JavaScript
 Office.addin.setStartupBehavior(Office.StartupBehavior.none);
 ```
 
-## <a name="get-the-current-load-behavior"></a><span data-ttu-id="ce3ab-112">Obter o comportamento de carregamento atual</span><span class="sxs-lookup"><span data-stu-id="ce3ab-112">Get the current load behavior</span></span>
+## <a name="get-the-current-load-behavior"></a><span data-ttu-id="f121c-112">Obter o comportamento de carregamento atual</span><span class="sxs-lookup"><span data-stu-id="f121c-112">Get the current load behavior</span></span>
 
-<span data-ttu-id="ce3ab-113">Para determinar qual é o comportamento de inicialização atual, execute a seguinte função, que retorna um objeto Office. StartupBehavior.</span><span class="sxs-lookup"><span data-stu-id="ce3ab-113">To determine what the current startup behavior is, run the following function, which returns an Office.StartupBehavior object.</span></span>
+<span data-ttu-id="f121c-113">Para determinar qual é o comportamento de inicialização atual, execute a seguinte função, que retorna um objeto Office. StartupBehavior.</span><span class="sxs-lookup"><span data-stu-id="f121c-113">To determine what the current startup behavior is, run the following function, which returns an Office.StartupBehavior object.</span></span>
 
 ```JavaScript
 let behavior = await Office.addin.getStartupBehavior();
 ```
 
-## <a name="how-to-run-code-when-the-document-opens"></a><span data-ttu-id="ce3ab-114">Como executar o código quando o documento é aberto</span><span class="sxs-lookup"><span data-stu-id="ce3ab-114">How to run code when the document opens</span></span>
+## <a name="how-to-run-code-when-the-document-opens"></a><span data-ttu-id="f121c-114">Como executar o código quando o documento é aberto</span><span class="sxs-lookup"><span data-stu-id="f121c-114">How to run code when the document opens</span></span>
 
-<span data-ttu-id="ce3ab-115">Quando o suplemento estiver configurado para carregar no documento aberto, ele será executado imediatamente.</span><span class="sxs-lookup"><span data-stu-id="ce3ab-115">When your add-in is configured to load on document open, it will run immediately.</span></span> <span data-ttu-id="ce3ab-116">O `Office.initialize` manipulador de eventos será chamado.</span><span class="sxs-lookup"><span data-stu-id="ce3ab-116">The `Office.initialize` event handler will be called.</span></span> <span data-ttu-id="ce3ab-117">Coloque o código de inicialização no `Office.initialize` manipulador de eventos.</span><span class="sxs-lookup"><span data-stu-id="ce3ab-117">Place your startup code in the `Office.initialize` event handler.</span></span>
+<span data-ttu-id="f121c-115">Quando o suplemento estiver configurado para carregar no documento aberto, ele será executado imediatamente.</span><span class="sxs-lookup"><span data-stu-id="f121c-115">When your add-in is configured to load on document open, it will run immediately.</span></span> <span data-ttu-id="f121c-116">O `Office.initialize` manipulador de eventos será chamado.</span><span class="sxs-lookup"><span data-stu-id="f121c-116">The `Office.initialize` event handler will be called.</span></span> <span data-ttu-id="f121c-117">Coloque o código de inicialização no `Office.initialize` manipulador de eventos.</span><span class="sxs-lookup"><span data-stu-id="f121c-117">Place your startup code in the `Office.initialize` event handler.</span></span>
 
-<span data-ttu-id="ce3ab-118">O código a seguir mostra como registrar um manipulador de eventos para eventos de alteração da planilha ativa.</span><span class="sxs-lookup"><span data-stu-id="ce3ab-118">The following code shows how to register an event handler for change events from the active worksheet.</span></span> <span data-ttu-id="ce3ab-119">Se você configurar seu suplemento para carregar no documento aberto, esse código registrará o manipulador de eventos quando o documento for aberto.</span><span class="sxs-lookup"><span data-stu-id="ce3ab-119">If you configure your add-in to load on document open, this code will register the event handler when the document is opened.</span></span> <span data-ttu-id="ce3ab-120">Você pode manipular eventos de alteração antes de abrir o painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="ce3ab-120">You can handle change events before the task pane is opened.</span></span>
+<span data-ttu-id="f121c-118">O código a seguir mostra como registrar um manipulador de eventos para eventos de alteração da planilha ativa.</span><span class="sxs-lookup"><span data-stu-id="f121c-118">The following code shows how to register an event handler for change events from the active worksheet.</span></span> <span data-ttu-id="f121c-119">Se você configurar seu suplemento para carregar no documento aberto, esse código registrará o manipulador de eventos quando o documento for aberto.</span><span class="sxs-lookup"><span data-stu-id="f121c-119">If you configure your add-in to load on document open, this code will register the event handler when the document is opened.</span></span> <span data-ttu-id="f121c-120">Você pode manipular eventos de alteração antes de abrir o painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="f121c-120">You can handle change events before the task pane is opened.</span></span>
 
 
 ```JavaScript
@@ -81,6 +81,6 @@ async function onChange(event) {
 
 ```
 
-## <a name="see-also"></a><span data-ttu-id="ce3ab-121">Confira também</span><span class="sxs-lookup"><span data-stu-id="ce3ab-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f121c-121">Confira também</span><span class="sxs-lookup"><span data-stu-id="f121c-121">See also</span></span>
 
-- [<span data-ttu-id="ce3ab-122">Compartilhar dados e eventos entre as funções personalizadas do Excel e o tutorial do painel de tarefas</span><span class="sxs-lookup"><span data-stu-id="ce3ab-122">Share data and events between Excel custom functions and task pane tutorial</span></span>](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
+- [<span data-ttu-id="f121c-122">Compartilhar dados e eventos entre as funções personalizadas do Excel e o tutorial do painel de tarefas</span><span class="sxs-lookup"><span data-stu-id="f121c-122">Share data and events between Excel custom functions and task pane tutorial</span></span>](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
