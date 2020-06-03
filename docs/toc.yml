@@ -326,6 +326,8 @@
               href: reference/requirement-sets/image-coercion-requirement-sets.md
             - name: Conjuntos de requisitos da API comum do Office
               href: reference/requirement-sets/office-add-in-requirement-sets.md
+            - name: Conjuntos de requisitos comuns da API
+              href: reference/requirement-sets/ribbon-api-requirement-sets.md
             - name: Conjuntos de requisitos de tempo de execução compartilhado
               href: reference/requirement-sets/shared-runtime-requirement-sets.md
         - name: Referência do manifesto de Suplemento do Office
