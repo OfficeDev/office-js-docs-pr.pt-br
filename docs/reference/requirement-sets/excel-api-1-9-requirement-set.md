@@ -5,10 +5,10 @@ ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
 ms.openlocfilehash: e27c4e6a93890c94f759eee451eb5168a30b1817
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.sourcegitcommit: 9229102c16a1864e3a8724aaf9b0dc68b1428094
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
+ms.lasthandoff: 06/03/2020
 ms.locfileid: "36268618"
 ---
 # <a name="whats-new-in-excel-javascript-api-19"></a>O que há de novo na API JavaScript do Excel 1,9
@@ -484,5 +484,5 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação de referência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.9)
+- [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.9)
 - [Conjuntos de requisitos da API JavaScript do Excel](./excel-api-requirement-sets.md)
