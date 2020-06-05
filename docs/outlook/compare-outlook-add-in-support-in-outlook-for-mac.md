@@ -1,20 +1,22 @@
 ---
 title: Comparar o suporte a suplementos do Outlook no Outlook no Mac
 description: Saiba como o suporte a suplementos no Outlook no Mac compara com outros hosts do Outlook.
-ms.date: 05/18/2020
+ms.date: 06/04/2020
 localization_priority: Normal
-ms.openlocfilehash: fd03141fbcaecb88db358101a00681c8a85af382
-ms.sourcegitcommit: 71a44405e42b4798a8354f7f96d84548ae7a00f0
+ms.openlocfilehash: 553d9bada0fb66a5319c998ff1c262f8815e2f7d
+ms.sourcegitcommit: c00db2625d6c222ac09b5845095c21e5cbad81d9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44280349"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "44561865"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-hosts"></a>Comparar o suporte a suplementos do Outlook no Outlook no Mac com outros hosts do Outlook
 
 Você pode criar e executar um suplemento do Outlook da mesma maneira no Outlook no Mac, como nos outros hosts, incluindo Outlook na Web, Windows, iOS e Android, sem personalizar o JavaScript para cada host. As mesmas chamadas do suplemento para a API JavaScript do Office geralmente funcionam da mesma maneira, exceto as áreas descritas na tabela a seguir.
 
-Para obter mais informações, consulte [Implantar e instalar suplementos do Outlook para teste](testing-and-tips.md).
+Para saber mais, confira [implantar e instalar suplementos do Outlook para teste](testing-and-tips.md).
+
+Para obter informações sobre o novo suporte de interface do usuário no Mac, consulte [novo Outlook no Mac](#new-outlook-on-mac-preview).
 
 | Área | Outlook na Web, Windows e dispositivos móveis | Outlook no Mac |
 |:-----|:-----|:-----|
@@ -27,3 +29,26 @@ Para obter mais informações, consulte [Implantar e instalar suplementos do Out
 | Cadeia de caracteres que representa o fuso horário nas propriedades `dateTimeCreated` e `dateTimeModified` |Como exemplo: `Thu Mar 13 2014 14:09:11 GMT+0800 (China Standard Time)` | Como exemplo: `Thu Mar 13 2014 14:09:11 GMT+0800 (CST)` |
 | Precisão do tempo de `dateTimeCreated` e `dateTimeModified` | Se um suplemento usar o código a seguir, a precisão será de até um milissegundo:<br/>`JSON.stringify(Office.context.mailbox.item, null, 4);`| A precisão é de até um segundo. |
 
+## <a name="new-outlook-on-mac-preview"></a>Novo Outlook no Mac (versão prévia)
+
+Os suplementos do Outlook agora têm suporte na nova interface do usuário do Mac, até o conjunto de requisitos 1,6. No entanto, os seguintes conjuntos de requisitos e recursos ainda **não** têm suporte.
+
+1. Conjuntos de requisitos de API 1,7 e 1,8
+1. Painel de tarefas fixável, `ItemChanged` evento
+1. Suplementos contextuais
+1. Ao enviar
+1. Suporte a pastas compartilhadas
+1. `saveAsync`ao redigir uma reunião
+1. SSO (logon único)
+
+Recomendamos que você visualize o novo Outlook no Mac, disponível na versão 16.38.506. Para saber mais sobre como experimentá-lo, confira [Outlook para Mac-Release Notes for Insider Builds Fast](https://support.microsoft.com/office/d6347358-5613-433e-a49e-a9a0e8e0462a).
+
+Você pode determinar qual versão da interface do usuário você está, como a seguir.
+
+**UI atual**
+
+&nbsp;&nbsp;&nbsp;&nbsp;![UI atual no Mac](../images/outlook-on-mac-classic.png)
+
+**Nova interface do usuário (versão prévia)**
+
+&nbsp;&nbsp;&nbsp;&nbsp;![Nova interface do usuário na visualização no Mac](../images/outlook-on-mac-new.png)

@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos da API Comum do Office
 description: Saiba mais sobre os conjuntos de requisitos da API comum do Office
-ms.date: 07/17/2019
+ms.date: 06/03/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 5905e655f5af437cd516bd58163c8a49d0c8aab2
-ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
+ms.openlocfilehash: cedf2a54d0582739b5c9ed13a3c859d0eaf90acf
+ms.sourcegitcommit: c00db2625d6c222ac09b5845095c21e5cbad81d9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "44413235"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "44561893"
 ---
 # <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API Comum do Office
 
@@ -17,13 +17,14 @@ Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplemento
 
 Precisa de informações sobre onde os suplementos têm suporte do host do Office? Consulte [Disponibilidade de host e plataforma para suplementos do Office](../../overview/office-add-in-availability.md).
 
-Procurando pelos conjuntos de requisitos de API *específicos do host*? Confira os seguintes conjuntos de requisitos de API:
-
-- [Conjuntos de requisitos de API JavaScript para Excel](excel-api-requirement-sets.md) (ExcelApi)
-- [Conjuntos de requisitos de API JavaScript para Word](word-api-requirement-sets.md) (WordApi)
-- [Conjuntos de requisitos de API JavaScript para OneNote](onenote-api-requirement-sets.md) (OneNoteApi)
-- [Conjuntos de requisitos da API JavaScript do PowerPoint](powerpoint-api-requirement-sets.md) (PowerPointApi)
-- [Noções básicas sobre os conjuntos de requisitos da API do Outlook](outlook-api-requirement-sets.md) (Caixa de Correio)
+> [!TIP]
+> Procurando pelos conjuntos de requisitos de API *específicos do host*? Confira os seguintes conjuntos de requisitos de API:
+>
+> - [Conjuntos de requisitos de API JavaScript para Excel](excel-api-requirement-sets.md) (ExcelApi)
+> - [Conjuntos de requisitos de API JavaScript para Word](word-api-requirement-sets.md) (WordApi)
+> - [Conjuntos de requisitos de API JavaScript para OneNote](onenote-api-requirement-sets.md) (OneNoteApi)
+> - [Conjuntos de requisitos da API JavaScript do PowerPoint](powerpoint-api-requirement-sets.md) (PowerPointApi)
+> - [Noções básicas sobre os conjuntos de requisitos da API do Outlook](outlook-api-requirement-sets.md) (Caixa de Correio)
 
 > [!IMPORTANT]
 > Não recomendamos mais criar e usar aplicativos Web do Access e bancos de dados no SharePoint. Como alternativa, use o [Microsoft PowerApps](https://powerapps.microsoft.com/) para criar soluções de negócios sem código para dispositivos móveis e Web.
