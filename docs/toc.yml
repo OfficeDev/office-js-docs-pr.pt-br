@@ -258,7 +258,7 @@
           displayName: 'test, debug'
         - name: Windows
           items:
-            - name: Realizar sideload de Suplementos do Office no Windows
+            - name: Realizar o sideload de Suplementos do Office no Windows
               href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
             - name: Anexar um depurador do painel de tarefas
               href: testing/attach-debugger-from-task-pane.md
