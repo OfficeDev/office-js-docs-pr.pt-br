@@ -4,12 +4,12 @@ description: Saiba mais sobre os conjuntos de requisitos da API comum do Office
 ms.date: 06/03/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: cedf2a54d0582739b5c9ed13a3c859d0eaf90acf
-ms.sourcegitcommit: c00db2625d6c222ac09b5845095c21e5cbad81d9
+ms.openlocfilehash: 22379e1196b6112fe51c2e71793912d066c69864
+ms.sourcegitcommit: 6754aa2835e57c3a95b0c513095ba4b29744f9eb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "44561893"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "44567831"
 ---
 # <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API Comum do Office
 
@@ -164,6 +164,14 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 |**Hosts do Office**|**Métodos no conjunto**|
 |:-----|:-----|
 | Excel no Windows<br>Excel Online<br>Excel no Mac<br>PowerPoint no Windows<br>PowerPoint Online<br>PowerPoint no iPad<br>PowerPoint no Mac<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Dá suporte à saída para o formato PDF (Office.FileType.Pdf)<br>ao usar o método Document.getFileAsync.|
+
+---
+
+### <a name="ribbonapi"></a>RibbonApi
+
+|**Hosts do Office**|**Métodos no conjunto**|
+|:-----|:-----|
+| Confira [conjuntos de requisitos de API da faixa](ribbon-api-requirement-sets.md)de opções. | Office. Ribbon. requestUpdate |
 
 ---
 
