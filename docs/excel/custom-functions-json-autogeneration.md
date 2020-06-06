@@ -3,12 +3,12 @@ ms.date: 05/06/2020
 description: Use tags JSDoc para criar dinamicamente seus metadados JSON de funções personalizadas.
 title: Gerar metadados JSON automaticamente para funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: bad11e6ce8e58dc7970bc920e2619ab4732ebc34
-ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.openlocfilehash: 97cd9a06a53019c4065c4be29e46908da766ea71
+ms.sourcegitcommit: 0300165295fcbd4226aa048be2fad660892d35ea
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44275977"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "44591127"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Gerar metadados JSON automaticamente para funções personalizadas
 
@@ -101,7 +101,7 @@ No exemplo a seguir, incremento é o `id` e o `name` da função.
 Fornece a exibição `name` da função personalizada.
 
 * Se o nome não for fornecido, o id também será usado como nome.
-* Caracteres permitidos: Letras de [caractere Alfabético Unicode](http://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic), números, ponto (.) e sublinhado (\_).
+* Caracteres permitidos: Letras de [caractere Alfabético Unicode](https://www.unicode.org/reports/tr44/tr44-22.html#Alphabetic), números, ponto (.) e sublinhado (\_).
 * Deve começar com uma letra.
 * O comprimento máximo é de 128 caracteres.
 

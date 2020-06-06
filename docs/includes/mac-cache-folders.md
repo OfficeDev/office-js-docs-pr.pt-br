@@ -10,7 +10,8 @@ Você pode limpar o cache usando o menu de personalidade de qualquer suplemento 
 Você também pode limpar o cache manualmente excluindo o conteúdo da `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` pasta.
 
 > [!NOTE]
-> Se essa pasta não existir, verifique as seguintes pastas e, se encontrar, exclua o conteúdo da pasta:
->    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/`onde `{host}` é o host do Office (por exemplo `Excel`,)
->    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/`onde `{host}` é o host do Office (por exemplo `Excel`,)
+> Se essa pasta não existir, verifique as seguintes pastas. Se encontrada, exclua o conteúdo da pasta:
+>    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/` em que `{host}` é o host do Office (por exemplo, `Excel`)
+>    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/` em que `{host}` é o host do Office (por exemplo, `Excel`)
 >    - `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
+>    - `com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
