@@ -1,15 +1,15 @@
 ---
 title: Tutorial de suplemento do Excel
 description: Neste tutorial, você criará um suplemento do Excel que cria, preenche, filtra e classifica uma tabela, cria um gráfico, congela um cabeçalho de tabela, protege uma planilha e abre uma caixa de diálogo.
-ms.date: 03/30/2020
+ms.date: 06/05/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: bc14027600a108f47cdf4766a51ebf2437b6f976
-ms.sourcegitcommit: 73a3df90a51acf13416d6a049bddcd9aabc32441
+ms.openlocfilehash: 42ce837bd03d3b8fd9be35e812b8e87e66a5e35d
+ms.sourcegitcommit: 0300165295fcbd4226aa048be2fad660892d35ea
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "43069313"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "44591148"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Tutorial: criar um suplemento do painel de tarefas no Excel
 
@@ -734,6 +734,7 @@ Essas etapas devem ser concluídas sempre que seu código precisar *ler* informa
         >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/` em que `{host}` é o host do Office (por exemplo, `Excel`)
         >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/` em que `{host}` é o host do Office (por exemplo, `Excel`)
         >    - `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
+        >    - `com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
 
 3. Se o servidor da Web local já estiver em execução, feche a janela de comando do nó para interrompê-lo.
 
