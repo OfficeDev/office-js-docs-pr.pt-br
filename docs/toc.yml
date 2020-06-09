@@ -1063,10 +1063,10 @@
           displayName: Project
 - name: Visio
   items:
-    - name: Documentação de suplementos do Visio
+    - name: Documentação do Visio
       href: visio/index.md
       displayName: Visio
-    - name: Visão Geral
+    - name: Visão geral
       href: reference/overview/visio-javascript-reference-overview.md
       displayName: Visio
     - name: Referência da API
