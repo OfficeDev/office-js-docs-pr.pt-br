@@ -3,12 +3,12 @@ title: Padrões de design da experiência do usuário para suplementos do Office
 description: Obtenha uma visão geral dos padrões de design de interface do usuário para suplementos do Office, incluindo padrões para navegação, autenticação, primeira-execução e identidade visual.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 164784fcacb8e0869d0c0b8031a71cf0358b03fb
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: d7201cd91dbfd019a7b045a7f63c1c86a74b9142
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719074"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608457"
 ---
 # <a name="ux-design-patterns-for-office-add-ins"></a>Padrões de design da experiência do usuário para suplementos do Office
 

@@ -3,12 +3,12 @@ title: Requisitos para a execução de Suplementos do Office
 description: Saiba mais sobre os requisitos de cliente e servidor de que um usuário final precisa para executar suplementos do Office.
 ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: c387d3d7ca9be1d47fa9ff4033fe492ae0e0fb3a
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: 1c135b362516bef35cab2fa50e9ceeefdaf74015
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890501"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608011"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Requisitos para a execução de Suplementos do Office
 

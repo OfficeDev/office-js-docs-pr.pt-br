@@ -3,12 +3,12 @@ title: Obter ou definir a hora do compromisso em um suplemento do Outlook
 description: Saiba como obter ou definir a hora de início e término de um compromisso em um suplemento do Outlook.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: d07d461b852e523626946a79a5c9c5e21c95fcdc
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 5e02523852584d4b5f1ede9bcd191b9ee16d4c24
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324958"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609130"
 ---
 # <a name="get-or-set-the-time-when-composing-an-appointment-in-outlook"></a>Obter ou definir a hora ao compor um compromisso no Outlook
 

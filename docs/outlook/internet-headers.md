@@ -3,12 +3,12 @@ title: Obter e definir cabeçalhos de Internet
 description: Como obter e definir cabeçalhos da Internet em uma mensagem em um suplemento do Outlook.
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 1b6bdbbe77998ce92ea1b1b43874a32a30aa160a
-ms.sourcegitcommit: 0fdb78cefa669b727b817614a4147a46d249a0ed
+ms.openlocfilehash: a05ba86eebd8dc01c8368b61e39d1de1d90f9efa
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "43930285"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609080"
 ---
 # <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>Obter e definir cabeçalhos de Internet em uma mensagem em um suplemento do Outlook
 
@@ -21,7 +21,7 @@ Um requisito comum no desenvolvimento de suplementos do Outlook é armazenar pro
 
 Os dois tipos de propriedades não são preservados depois que o item deixa o servidor do Exchange para que os destinatários de email não possam obter nenhuma propriedade definida no item. Portanto, os desenvolvedores não podem acessar essas configurações ou outras propriedades de MIME para permitir melhores cenários de leitura.
 
-Embora haja uma maneira de definir os cabeçalhos da Internet por meio de solicitações EWS, em alguns cenários, a solicitação do EWS não funcionará. Por exemplo, no modo de redação na área de trabalho do Outlook, a ID do `saveAsync` item não é sincronizada no modo em cache.
+Embora haja uma maneira de definir os cabeçalhos da Internet por meio de solicitações EWS, em alguns cenários, a solicitação do EWS não funcionará. Por exemplo, no modo de redação na área de trabalho do Outlook, a ID do item não é sincronizada no  `saveAsync`   modo em cache.
 
 > [!TIP]
 > Confira [obter e definir metadados de suplemento para um suplemento do Outlook](metadata-for-an-outlook-add-in.md) para saber mais sobre como usar essas opções.

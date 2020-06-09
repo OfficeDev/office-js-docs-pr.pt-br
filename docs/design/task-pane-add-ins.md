@@ -3,12 +3,12 @@ title: Painéis de tarefas nos Suplementos do Office
 description: Os painéis de tarefa concedem aos usuários acesso a controles de interface que executam códigos para modificar documentos ou emails ou exibir dados de uma fonte de dados.
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 862cfc94bb49a1454453c877dade79a22e073adc
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 429042db7e30f5fefe48c9648e6ad5410f6594c4
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719158"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608492"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Painéis de tarefas nos Suplementos do Office
  

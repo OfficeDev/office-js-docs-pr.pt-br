@@ -1,16 +1,16 @@
 ---
-title: Tratamento de erros e eventos na caixa de diálogo do Office
+title: Manipulando erros e eventos na caixa de diálogo do Office
 description: Descreve como capturar e lidar com erros ao abrir e usar a caixa de diálogo do Office
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: a35131a46dc9f5edc18df37495abe5d8c2c5ad2a
-ms.sourcegitcommit: 4c9e02dac6f8030efc7415e699370753ec9415c8
+ms.openlocfilehash: d83d5c4627f68c3f4b1c196cf543d01bf981abbe
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "41650061"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608171"
 ---
-# <a name="handling-errors-and-events-in-the-office-dialog-box"></a>Tratamento de erros e eventos na caixa de diálogo do Office
+# <a name="handling-errors-and-events-in-the-office-dialog-box"></a>Manipulando erros e eventos na caixa de diálogo do Office
 
 Este artigo descreve como capturar e lidar com erros ao abrir a caixa de diálogo e os erros que ocorrem dentro da caixa de diálogo.
 
@@ -26,7 +26,7 @@ Seu código deve manipular duas categorias de eventos:
 
 ## <a name="errors-from-displaydialogasync"></a>Erros de displayDialogAsync
 
-Além dos erros gerais de plataforma e de sistema, quatro erros são específicos para `displayDialogAsync`chamar.
+Além dos erros gerais de plataforma e de sistema, quatro erros são específicos para chamar `displayDialogAsync` .
 
 |Número do código|Significado|
 |:-----|:-----|
@@ -35,7 +35,7 @@ Além dos erros gerais de plataforma e de sistema, quatro erros são específico
 |<span id="12007">12007</span><!-- The span is needed because office-js-helpers has an error message that links to this table row. -->|Uma caixa de diálogo já está aberta na janela do host. Uma janela do host, como um painel de tarefas, só pode ter uma caixa de diálogo aberta por vez.|
 |12009|O usuário opta por ignorar a caixa de diálogo. Este erro pode ocorrer no Office na Web, onde os usuários podem optar por não permitir que um suplemento apresente uma caixa de diálogo. Para obter mais informações, consulte [lidando de bloqueadores de pop-up com o Office na Web](dialog-best-practices.md#handling-pop-up-blockers-with-office-on-the-web).|
 
-Quando `displayDialogAsync` é chamado, ele passa um objeto [AsyncResult](/javascript/api/office/office.asyncresult) para sua função de retorno de chamada. Quando a chamada for bem-sucedida, a caixa de diálogo será aberta e a `value` Propriedade do `AsyncResult` objeto será um objeto [Dialog](/javascript/api/office/office.dialog) . Para obter um exemplo disso, consulte [enviar informações da caixa de diálogo para a página host](dialog-api-in-office-add-ins.md#send-information-from-the-dialog-box-to-the-host-page). Quando a `displayDialogAsync` chamada falhar, a caixa de diálogo não é criada, a `status` propriedade `AsyncResult` do objeto é definida como `Office.AsyncResultStatus.Failed`e a `error` Propriedade do objeto é preenchida. Você sempre deve fornecer um retorno de chamada que `status` testa o e responde quando é um erro. Para obter um exemplo que relata a mensagem de erro independentemente de seu número de código, consulte o código a seguir. (A `showNotification` função, não definida neste artigo, exibe ou registra o erro. Para obter um exemplo de como você pode implementar essa função no seu suplemento, confira [exemplo de API de caixa de diálogo do suplemento do Office](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).)
+Quando `displayDialogAsync` é chamado, ele passa um objeto [AsyncResult](/javascript/api/office/office.asyncresult) para sua função de retorno de chamada. Quando a chamada for bem-sucedida, a caixa de diálogo será aberta e a `value` Propriedade do `AsyncResult` objeto será um objeto [Dialog](/javascript/api/office/office.dialog) . Para obter um exemplo disso, consulte [enviar informações da caixa de diálogo para a página host](dialog-api-in-office-add-ins.md#send-information-from-the-dialog-box-to-the-host-page). Quando a chamada `displayDialogAsync` falhar, a caixa de diálogo não é criada, a `status` Propriedade do `AsyncResult` objeto é definida como `Office.AsyncResultStatus.Failed` e a `error` Propriedade do objeto é preenchida. Você sempre deve fornecer um retorno de chamada que testa o `status` e responde quando é um erro. Para obter um exemplo que relata a mensagem de erro independentemente de seu número de código, consulte o código a seguir. (A `showNotification` função, não definida neste artigo, exibe ou registra o erro. Para obter um exemplo de como você pode implementar essa função no seu suplemento, confira [exemplo de API de caixa de diálogo do suplemento do Office](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).)
 
 ```js
 var dialog;

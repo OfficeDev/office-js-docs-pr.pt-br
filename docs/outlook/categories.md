@@ -3,12 +3,12 @@ title: Obter e definir categorias
 description: Como gerenciar categorias de caixa de correio e item
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: d0bb2e9f51675c263d0a3a130c64e02e7d55b764
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: d4589571de47218741308c01caec0166d72919d8
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42721020"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608975"
 ---
 # <a name="get-and-set-categories"></a>Obter e definir categorias
 
@@ -22,7 +22,7 @@ No Outlook, um usuário pode aplicar categorias a mensagens e compromissos como 
 Somente as categorias na lista mestra da caixa de correio estão disponíveis para que você se aplique a uma mensagem ou um compromisso. Você pode usar a API para adicionar, obter e remover categorias mestras.
 
 > [!IMPORTANT]
-> Para o suplemento gerenciar a lista mestra de categorias, você deve definir o `Permissions` nó no manifesto. `ReadWriteMailbox`
+> Para o suplemento gerenciar a lista mestra de categorias, você deve definir o `Permissions` nó no manifesto `ReadWriteMailbox` .
 
 ### <a name="add-master-categories"></a>Adicionar categorias mestras
 
@@ -90,7 +90,7 @@ Você pode usar a API para adicionar, obter e remover categorias de um item de c
 
 ### <a name="add-categories-to-an-item"></a>Adicionar categorias a um item
 
-O exemplo a seguir mostra como aplicar a categoria chamada "urgente!" para o item atual chamando [addasync](/javascript/api/outlook/office.categories#addasync-categories--options--callback-) on `item.categories`.
+O exemplo a seguir mostra como aplicar a categoria chamada "urgente!" para o item atual chamando [addasync](/javascript/api/outlook/office.categories#addasync-categories--options--callback-) on `item.categories` .
 
 ```js
 var categoriesToAdd = ["Urgent!"];
@@ -106,7 +106,7 @@ Office.context.mailbox.item.categories.addAsync(categoriesToAdd, function (async
 
 ### <a name="get-an-items-categories"></a>Obter categorias de um item
 
-O exemplo a seguir mostra como obter as categorias aplicadas ao item atual chamando [getasync](/javascript/api/outlook/office.categories#getasync-options--callback-) on `item.categories`.
+O exemplo a seguir mostra como obter as categorias aplicadas ao item atual chamando [getasync](/javascript/api/outlook/office.categories#getasync-options--callback-) on `item.categories` .
 
 ```js
 Office.context.mailbox.item.categories.getAsync(function (asyncResult) {
@@ -124,7 +124,7 @@ Office.context.mailbox.item.categories.getAsync(function (asyncResult) {
 
 ### <a name="remove-categories-from-an-item"></a>Remover categorias de um item
 
-O exemplo a seguir mostra como remover a categoria chamada "urgente!" do item atual chamando [removeAsync](/javascript/api/outlook/office.categories#removeasync-categories--options--callback-) `item.categories`.
+O exemplo a seguir mostra como remover a categoria chamada "urgente!" do item atual chamando [removeAsync](/javascript/api/outlook/office.categories#removeasync-categories--options--callback-) `item.categories` .
 
 ```js
 var categoriesToRemove = ["Urgent!"];
@@ -138,7 +138,7 @@ Office.context.mailbox.item.categories.removeAsync(categoriesToRemove, function 
 });
 ```
 
-## <a name="see-also"></a>Também confira
+## <a name="see-also"></a>Confira também
 
 - [Permissões do Outlook](understanding-outlook-add-in-permissions.md)
 - [Elemento Permissions no manifesto](../reference/manifest/permissions.md)

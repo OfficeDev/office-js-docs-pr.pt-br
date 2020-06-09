@@ -3,12 +3,12 @@ title: Códigos de erro da API JavaScript do Office
 description: Este artigo documenta as mensagens de erro que você pode encontrar ao usar a API JavaScript do Office.
 ms.date: 03/10/2020
 localization_priority: Normal
-ms.openlocfilehash: e85242e1cf83aef3b4173abf7ce52631cb6a8f80
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 2c2df8be76fe9515f0cc23955a199f92e64110a8
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720978"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608807"
 ---
 # <a name="office-javascript-api-error-codes"></a>Códigos de erro da API JavaScript do Office
 
@@ -53,7 +53,7 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 |3007|Erro de Criação de Associação|Foram encontrados vários objetos com o mesmo nome.|Erro de colisão: há mais de um controle de conteúdo com o mesmo nome, e a falha na colisão é definida como **true**.|
 |3008|Erro de Criação de Associação|O tipo de associação especificado não é compatível com o item nomeado fornecido.|Não é possível associar o item nomeado ao tipo. Por exemplo, um controle de conteúdo contém texto, mas o desenvolvedor tentou associar usando o tipo coerção _table_.|
 |3009|Operação de Associação Inválida|Não há suporte para o tipo de vinculação.|Usado para fins de compatibilidade com versões anteriores.|
-|3010|Operação de Associação Inválida|O conteúdo selecionado precisa estar em formato de tabela. Formate os dados como uma tabela e tente novamente.|O desenvolvedor está `addRowsAsynch` tentando usar os métodos ou `deleteAllDataValuesAsynch` do `TableBinding` objeto em dados da _matriz_de tipo de coerção.|
+|3010|Operação de Associação Inválida|O conteúdo selecionado precisa estar em formato de tabela. Formate os dados como uma tabela e tente novamente.|O desenvolvedor está tentando usar os `addRowsAsynch` métodos ou `deleteAllDataValuesAsynch` do `TableBinding` objeto em dados da _matriz_de tipo de coerção.|
 |4000|Erro de leitura de configurações|O nome de configuração especificado não existe.|Um nome de configuração inexistente foi fornecido.|
 |4001|Salvar erro de configurações|Não foi possível salvar as configurações.|Não foi possível salvar as configurações.|
 |4002|Erro de configurações obsoletos|Não foi possível salvar as configurações porque elas estão obsoletas.|As configurações estão obsoletas e o desenvolvedor indicou que não devem ser substituídas.|

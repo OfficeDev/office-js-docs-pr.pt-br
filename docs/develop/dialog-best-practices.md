@@ -3,12 +3,12 @@ title: Práticas recomendadas e regras para a API da caixa de diálogo do Office
 description: Fornece regras e práticas recomendadas para a API de caixa de diálogo do Office, como as práticas recomendadas para um aplicativo de página única (SPA)
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: e684c56768cd2ca7c9b14788206c925808c90b63
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 88c833d91cc16684b5e434d6aff9e77f23bbbdb4
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596596"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608268"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Práticas recomendadas e regras para a API da caixa de diálogo do Office
 
@@ -45,13 +45,13 @@ A tentativa de exibir uma caixa de diálogo ao usar o Office na Web pode fazer c
 
 ![O prompt que um suplemento pode gerar para evitar bloqueadores de pop-ups no navegador.](../images/dialog-prompt-before-open.png)
 
-Se o usuário escolher **permitir**, a caixa de diálogo do Office será aberta. Se o usuário escolher **ignorar**, o prompt será fechado e a caixa de diálogo do Office não será aberta. Em vez disso `displayDialogAsync` , o método retorna o erro 12009. O código deve capturar esse erro e fornecer uma experiência alternativa que não requer uma caixa de diálogo ou exibir uma mensagem para o usuário que avisa que o suplemento exige que eles permitam a caixa de diálogo. (Para saber mais sobre 12009, confira [erros de displayDialogAsync](dialog-handle-errors-events.md#errors-from-displaydialogasync).)
+Se o usuário escolher **permitir**, a caixa de diálogo do Office será aberta. Se o usuário escolher **ignorar**, o prompt será fechado e a caixa de diálogo do Office não será aberta. Em vez disso, o `displayDialogAsync` método retorna o erro 12009. O código deve capturar esse erro e fornecer uma experiência alternativa que não requer uma caixa de diálogo ou exibir uma mensagem para o usuário que avisa que o suplemento exige que eles permitam a caixa de diálogo. (Para saber mais sobre 12009, confira [erros de displayDialogAsync](dialog-handle-errors-events.md#errors-from-displaydialogasync).)
 
-Se, por qualquer motivo, você deseja desativar esse recurso, o código deve ser recusado. Ele faz essa solicitação com o objeto [dialogoptions](/javascript/api/office/office.dialogoptions) que é passado para o `displayDialogAsync` método. Especificamente, o objeto deve incluir `promptBeforeOpen: false`. Quando essa opção é definida como false, o Office na Web não solicitará que o usuário permita que o suplemento abra uma caixa de diálogo e a caixa de diálogo do Office não será aberta.
+Se, por qualquer motivo, você deseja desativar esse recurso, o código deve ser recusado. Ele faz essa solicitação com o objeto [dialogoptions](/javascript/api/office/office.dialogoptions) que é passado para o `displayDialogAsync` método. Especificamente, o objeto deve incluir `promptBeforeOpen: false` . Quando essa opção é definida como false, o Office na Web não solicitará que o usuário permita que o suplemento abra uma caixa de diálogo e a caixa de diálogo do Office não será aberta.
 
-### <a name="do-not-use-the-_host_info-value"></a>Não usar o valor \_de\_informações do host
+### <a name="do-not-use-the-_host_info-value"></a>Não usar o \_ valor de \_ informações do host
 
-O Office adiciona automaticamente um parâmetro de `_host_info` consulta chamado à URL que é transmitida para `displayDialogAsync`. Ele é acrescentado após os parâmetros de consulta personalizados, se houver. Ele não é acrescentado a quaisquer URLs subsequentes às quais a caixa de diálogo navega. A Microsoft pode alterar o conteúdo desse valor ou removê-lo totalmente, portanto seu código não deve lê-lo. O mesmo valor é adicionado ao armazenamento da sessão da caixa de diálogo. Novamente, *seu código não deve ser lido nem gravado para esse valor*.
+O Office adiciona automaticamente um parâmetro de consulta chamado `_host_info` à URL que é transmitida para `displayDialogAsync` . Ele é acrescentado após os parâmetros de consulta personalizados, se houver. Ele não é acrescentado a quaisquer URLs subsequentes às quais a caixa de diálogo navega. A Microsoft pode alterar o conteúdo desse valor ou removê-lo totalmente, portanto seu código não deve lê-lo. O mesmo valor é adicionado ao armazenamento da sessão da caixa de diálogo. Novamente, *seu código não deve ser lido nem gravado para esse valor*.
 
 ### <a name="best-practices-for-using-the-office-dialog-api-in-an-spa"></a>Práticas recomendadas para usar a API de caixa de diálogo do Office em um SPA
 
@@ -62,13 +62,13 @@ Se seu suplemento usa o roteamento do lado do cliente, como aplicativos de pági
 
 #### <a name="problems-with-spas-and-the-office-dialog-api"></a>Problemas com o spas usam e a API de caixa de diálogo do Office
 
-A caixa de diálogo do Office está em uma nova janela com sua própria instância do mecanismo JavaScript e, portanto, é o contexto de execução completo. Se você passar uma rota, sua página de base e todos os seus códigos de inicialização e Bootstrap serão executados novamente neste novo contexto, e qualquer variável será definida para seus valores iniciais na caixa de diálogo. Portanto, essa técnica baixa e inicia uma segunda instância do aplicativo na janela da caixa, que anula parcialmente a finalidade de um SPA. Além disso, o código que altera as variáveis na janela da caixa de diálogo não altera a versão do painel de tarefas das mesmas variáveis. Da mesma forma, a janela da caixa de diálogo tem seu próprio armazenamento de sessão, que não é acessível a partir do código no painel de tarefas. A caixa de diálogo e a página host na `displayDialogAsync` qual o foi chamado têm a aparência de dois clientes diferentes para o seu servidor. (Para obter um lembrete sobre o que é uma página de host, consulte [abrir uma caixa de diálogo em uma página de host](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page).)
+A caixa de diálogo do Office está em uma nova janela com sua própria instância do mecanismo JavaScript e, portanto, é o contexto de execução completo. Se você passar uma rota, sua página de base e todos os seus códigos de inicialização e Bootstrap serão executados novamente neste novo contexto, e qualquer variável será definida para seus valores iniciais na caixa de diálogo. Portanto, essa técnica baixa e inicia uma segunda instância do aplicativo na janela da caixa, que anula parcialmente a finalidade de um SPA. Além disso, o código que altera as variáveis na janela da caixa de diálogo não altera a versão do painel de tarefas das mesmas variáveis. Da mesma forma, a janela da caixa de diálogo tem seu próprio armazenamento de sessão, que não é acessível a partir do código no painel de tarefas. A caixa de diálogo e a página host na qual o `displayDialogAsync` foi chamado têm a aparência de dois clientes diferentes para o seu servidor. (Para obter um lembrete sobre o que é uma página de host, consulte [abrir uma caixa de diálogo em uma página de host](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page).)
 
-Portanto, se você passou uma rota para o `displayDialogAsync` método, você realmente não tem um spa; Você teria *duas instâncias do mesmo Spa*. Além disso, grande parte do código na instância do painel de tarefas nunca seria usada nessa instância, e grande parte do código na instância da caixa de diálogo nunca seria usada nessa instância. Seria como ter dois SPAs no mesmo grupo.
+Portanto, se você passou uma rota para o `displayDialogAsync` método, você realmente não tem um spa; você teria *duas instâncias do mesmo Spa*. Além disso, grande parte do código na instância do painel de tarefas nunca seria usada nessa instância, e grande parte do código na instância da caixa de diálogo nunca seria usada nessa instância. Seria como ter dois SPAs no mesmo grupo.
 
 #### <a name="microsoft-recommendations"></a>Recomendações da Microsoft
 
-Em vez de passar uma rota do lado do cliente `displayDialogAsync` para o método, recomendamos que você siga um destes procedimentos:
+Em vez de passar uma rota do lado do cliente para o `displayDialogAsync` método, recomendamos que você siga um destes procedimentos:
 
-* Se o código que você deseja executar na caixa de diálogo for suficientemente complexo, crie dois spas usam distintos explicitamente; ou seja, têm duas spas usam em pastas diferentes do mesmo domínio. Um SPA é executado na caixa de diálogo e o outro na página host da caixa de diálogo `displayDialogAsync` , onde foi chamado. 
+* Se o código que você deseja executar na caixa de diálogo for suficientemente complexo, crie dois spas usam distintos explicitamente; ou seja, têm duas spas usam em pastas diferentes do mesmo domínio. Um SPA é executado na caixa de diálogo e o outro na página host da caixa de diálogo, onde `displayDialogAsync` foi chamado. 
 * Na maioria dos cenários, só é necessária uma lógica simples na caixa de diálogo. Nesses casos, o projeto será bastante simplificado, hospedando uma única página HTML, com JavaScript incorporado ou referenciado, no domínio de seu SPA. Passe a URL da página para o método`displayDialogAsync`. Embora isso signifique que você está deviating da ideia literal de um aplicativo de página única; na verdade, você não tem uma única instância de um SPA ao usar a API de diálogo do Office.

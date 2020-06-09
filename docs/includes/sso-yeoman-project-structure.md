@@ -14,13 +14,13 @@ Os seguintes arquivos definem a interface do usuário e a funcionalidade do pain
 
 - O arquivo **./src/taskpane/taskpane.css** contém o CSS que é aplicado ao conteúdo no painel de tarefas.
 
-- Em um projeto JavaScript, o arquivo **./src/TaskPane/TaskPane.js** contém código para inicializar o suplemento. Em um projeto TypeScript, o arquivo **./src/TaskPane/TaskPane.TS** contém código para inicializar o suplemento e também o código que usa a biblioteca JavaScript do Office para adicionar os dados do Microsoft Graph ao documento do Office.
+- Em um projeto JavaScript, o arquivo **./src/TaskPane/TaskPane.js** contém código para inicializar o suplemento. Em um projeto TypeScript, o arquivo **./src/TaskPane/TaskPane.TS** contém código para inicializar o suplemento e também o código que usa a biblioteca da API JavaScript do Office para adicionar os dados do Microsoft Graph ao documento do Office.
 
 ### <a name="authentication"></a>Autenticação
 
 Os seguintes arquivos facilitam o processo de SSO e gravam dados no documento do Office.
 
-- Em um projeto JavaScript, o arquivo **./src/Helpers/documentHelper.js** contém código que usa a biblioteca JavaScript do Office para adicionar os dados do Microsoft Graph ao documento do Office. Não há nenhum arquivo em um projeto TypeScript; o código que usa a biblioteca JavaScript do Office para adicionar os dados do Microsoft Graph ao documento do Office existe em **./src/TaskPane/TaskPane.TS** em vez disso.
+- Em um projeto JavaScript, o arquivo **./src/Helpers/documentHelper.js** contém código que usa a biblioteca da API JavaScript do Office para adicionar os dados do Microsoft Graph ao documento do Office. Não há nenhum arquivo em um projeto TypeScript; o código que usa a biblioteca da API JavaScript do Office para adicionar os dados do Microsoft Graph ao documento do Office existe em **./src/TaskPane/TaskPane.TS** em vez disso.
 
 - O arquivo **./src/Helpers/fallbackauthdialog.html** é a página sem interface do usuário que carrega o JavaScript para a estratégia de autenticação de fallback.
 

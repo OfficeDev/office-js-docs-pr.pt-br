@@ -1,17 +1,17 @@
 ---
-title: Personalizar seu suplemento habilitado para SSO do node. js
+title: Personalizar o suplemento habilitado para SSO do Node.js.
 description: Saiba mais sobre como personalizar o suplemento habilitado para SSO que você criou com o gerador Yeoman.
 ms.date: 02/20/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: c02e0f74a8ea3f3f8f831b65aa403ce49655953b
-ms.sourcegitcommit: dd6d00202f6466c27418247dad7bd136555a6036
+ms.openlocfilehash: d71206d6b03b8a92e50b316cc75c401866be5334
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "42284101"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608822"
 ---
-# <a name="customize-your-nodejs-sso-enabled-add-in"></a>Personalizar seu suplemento habilitado para SSO do node. js
+# <a name="customize-your-nodejs-sso-enabled-add-in"></a>Personalizar o suplemento habilitado para SSO do Node.js.
 
 > [!IMPORTANT]
 > Este artigo cria o suplemento habilitado para SSO que é criado ao concluir o [início rápido de logon único (SSO)](sso-quickstart.md). Conclua o início rápido antes de ler este artigo.
@@ -24,7 +24,7 @@ O [início rápido do SSO](sso-quickstart.md) cria um suplemento habilitado para
 
 * Em pelo menos algumas pastas e arquivos armazenados no OneDrive for Business na assinatura do Office 365.
 
-* [Node. js](https://nodejs.org) (a versão mais recente do [LTS](https://nodejs.org/about/releases) ).
+* [Node.js](https://nodejs.org) (a versão mais recente de [LTS](https://nodejs.org/about/releases)).
 
 [!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
@@ -103,9 +103,9 @@ Conclua as seguintes etapas para o seu suplemento, para alterar a URL, os parâm
 
     c. Substitua `SCOPE=User.Read` pelo seguinte:`SCOPE=Files.Read.All`
 
-2. Em **./manifest.xml**, localize a linha `<Scope>User.Read</Scope>` próxima ao final do arquivo e substitua-a pela linha `<Scope>Files.Read.All</Scope>`.
+2. Em **./manifest.xml**, localize a linha `<Scope>User.Read</Scope>` próxima ao final do arquivo e substitua-a pela linha `<Scope>Files.Read.All</Scope>` .
 
-3. Em **./src/Helpers/fallbackauthdialog.js** (ou em **./src/Helpers/fallbackauthdialog.TS** para um projeto TypeScript), localize a cadeia `https://graph.microsoft.com/User.Read` de caracteres e substitua-a `https://graph.microsoft.com/Files.Read.All`pela cadeia de `requestObj` caracteres, tal como é definida da seguinte maneira:
+3. Em **./src/Helpers/fallbackauthdialog.js** (ou em **./src/Helpers/fallbackauthdialog.TS** para um projeto TypeScript), localize a cadeia de caracteres `https://graph.microsoft.com/User.Read` e substitua-a pela cadeia de caracteres `https://graph.microsoft.com/Files.Read.All` , tal como `requestObj` é definida da seguinte maneira:
 
     ```javascript
     var requestObj = {
@@ -129,7 +129,7 @@ Conclua as seguintes etapas para o seu suplemento, para alterar a URL, os parâm
     </section>
     ```
 
-5. Em **./src/TaskPane/TaskPane.html**, localize e substitua as duas ocorrências da cadeia `Get My User Profile Information` de caracteres pela `Read my OneDrive for Business`cadeia de caracteres.
+5. Em **./src/TaskPane/TaskPane.html**, localize e substitua as duas ocorrências da cadeia de caracteres `Get My User Profile Information` pela cadeia de caracteres `Read my OneDrive for Business` .
 
     ```html
     <li class="ms-ListItem">
@@ -146,7 +146,7 @@ Conclua as seguintes etapas para o seu suplemento, para alterar a URL, os parâm
     </p>
     ```
 
-6. Em **./src/TaskPane/TaskPane.html**, localize e substitua a cadeia `Your user profile information will be displayed in the document.` de caracteres com `The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.`a cadeia de caracteres.
+6. Em **./src/TaskPane/TaskPane.html**, localize e substitua a cadeia de caracteres `Your user profile information will be displayed in the document.` com a cadeia de caracteres `The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.` .
 
     ```html
     <li class="ms-ListItem">
@@ -225,17 +225,17 @@ Se o suplemento for um suplemento do Excel que foi criado com JavaScript, faça 
     }
     ```
 
-4. Exclua `writeDataToOutlook` a função.
+4. Exclua a `writeDataToOutlook` função.
 
-5. Exclua `writeDataToPowerPoint` a função.
+5. Exclua a `writeDataToPowerPoint` função.
 
-6. Exclua `writeDataToWord` a função.
+6. Exclua a `writeDataToWord` função.
 
 Depois de fazer essas alterações, pule para a seção [Experimente](#try-it-out) , deste artigo, para experimentar o suplemento atualizado.
 
 ### <a name="changes-required-for-an-excel-add-in-typescript"></a>Alterações necessárias para um suplemento do Excel (TypeScript)
 
-Se o suplemento for um suplemento do Excel que foi criado com TypeScript, abra **./src/TaskPane/TaskPane.TS**, localize a função e substitua `writeDataToOfficeDocument` -a pela seguinte função:
+Se o suplemento for um suplemento do Excel que foi criado com TypeScript, abra **./src/TaskPane/TaskPane.TS**, localize a `writeDataToOfficeDocument` função e substitua-a pela seguinte função:
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): Promise<any> {
@@ -323,17 +323,17 @@ Se o suplemento for um suplemento do Outlook que foi criado com JavaScript, faç
     }
     ```
 
-4. Exclua `writeDataToExcel` a função.
+4. Exclua a `writeDataToExcel` função.
 
-5. Exclua `writeDataToPowerPoint` a função.
+5. Exclua a `writeDataToPowerPoint` função.
 
-6. Exclua `writeDataToWord` a função.
+6. Exclua a `writeDataToWord` função.
 
 Depois de fazer essas alterações, pule para a seção [Experimente](#try-it-out) , deste artigo, para experimentar o suplemento atualizado.
 
 ### <a name="changes-required-for-an-outlook-add-in-typescript"></a>Alterações necessárias para um suplemento do Outlook (TypeScript)
 
-Se o suplemento for um suplemento do Outlook que foi criado com TypeScript, abra **./src/TaskPane/TaskPane.TS**, localize a função e substitua `writeDataToOfficeDocument` -a pela seguinte função:
+Se o suplemento for um suplemento do Outlook que foi criado com TypeScript, abra **./src/TaskPane/TaskPane.TS**, localize a `writeDataToOfficeDocument` função e substitua-a pela seguinte função:
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): void {
@@ -422,17 +422,17 @@ Se o suplemento for um suplemento do PowerPoint que foi criado com JavaScript, f
     }
     ```
 
-4. Exclua `writeDataToExcel` a função.
+4. Exclua a `writeDataToExcel` função.
 
-5. Exclua `writeDataToOutlook` a função.
+5. Exclua a `writeDataToOutlook` função.
 
-6. Exclua `writeDataToWord` a função.
+6. Exclua a `writeDataToWord` função.
 
 Depois de fazer essas alterações, pule para a seção [Experimente](#try-it-out) , deste artigo, para experimentar o suplemento atualizado.
 
 ### <a name="changes-required-for-a-powerpoint-add-in-typescript"></a>Alterações necessárias para um suplemento do PowerPoint (TypeScript)
 
-Se o suplemento for um suplemento do PowerPoint que foi criado com TypeScript, abra **./src/TaskPane/TaskPane.TS**, localize a função e substitua `writeDataToOfficeDocument` -a pela seguinte função:
+Se o suplemento for um suplemento do PowerPoint que foi criado com TypeScript, abra **./src/TaskPane/TaskPane.TS**, localize a `writeDataToOfficeDocument` função e substitua-a pela seguinte função:
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): void {
@@ -523,17 +523,17 @@ Se o suplemento for um suplemento do Word que foi criado com JavaScript, faça a
     }
     ```
 
-4. Exclua `writeDataToExcel` a função.
+4. Exclua a `writeDataToExcel` função.
 
-5. Exclua `writeDataToOutlook` a função.
+5. Exclua a `writeDataToOutlook` função.
 
-6. Exclua `writeDataToPowerPoint` a função.
+6. Exclua a `writeDataToPowerPoint` função.
 
 Depois de fazer essas alterações, pule para a seção [Experimente](#try-it-out) , deste artigo, para experimentar o suplemento atualizado.
 
 ### <a name="changes-required-for-a-word-add-in-typescript"></a>Alterações necessárias para um suplemento do Word (TypeScript)
 
-Se o suplemento for um suplemento do Word que foi criado com TypeScript, abra **./src/TaskPane/TaskPane.TS**, localize a função e substitua `writeDataToOfficeDocument` -a pela seguinte função:
+Se o suplemento for um suplemento do Word que foi criado com TypeScript, abra **./src/TaskPane/TaskPane.TS**, localize a `writeDataToOfficeDocument` função e substitua-a pela seguinte função:
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): Promise<any> {

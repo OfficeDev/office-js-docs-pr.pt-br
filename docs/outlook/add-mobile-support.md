@@ -3,12 +3,12 @@ title: Adicionar suporte móvel a um suplemento do Outlook
 description: A adição de suporte para o Outlook Mobile requer atualização do manifesto do suplemento e, possivelmente, a alteração do código para cenários móveis.
 ms.date: 04/10/2020
 localization_priority: Normal
-ms.openlocfilehash: de5f1209527c853afb2d0bf2061bd3e3cfa8d3e0
-ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
+ms.openlocfilehash: a4fb02fee8bb429d0193903ba03fcee17b7ede48
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43225663"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44607614"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Adicionar suporte para comandos de suplementos para Outlook Mobile
 
@@ -20,7 +20,7 @@ A primeira etapa para habilitar os comandos de suplemento no Outlook Mobile é d
 
 Esse elemento contém todas as informações para carregar o suplemento em clientes móveis. Isso permite que você defina elementos de interface completamente diferentes e arquivos JavaScript para a experiência móvel.
 
-O exemplo a seguir mostra um único botão de painel de `MobileFormFactor` tarefas em um elemento.
+O exemplo a seguir mostra um único botão de painel de tarefas em um `MobileFormFactor` elemento.
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">

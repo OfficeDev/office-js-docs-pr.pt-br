@@ -3,12 +3,12 @@ title: Inserir dados no corpo de um suplemento do Outlook
 description: Saiba como inserir dados no corpo de um compromisso ou mensagem em um suplemento do Outlook.
 ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: e092a67f8794c2821167ced84bede70a601c77e1
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: e8100e036d29c13f12aedddd4436cf35569309cf
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324951"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609094"
 ---
 # <a name="insert-data-in-the-body-when-composing-an-appointment-or-message-in-outlook"></a>Inserir dados no corpo ao compor um compromisso ou uma mensagem no Outlook
 

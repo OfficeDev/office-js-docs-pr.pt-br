@@ -3,16 +3,16 @@ title: Trabalhar com tabelas usando a API JavaScript do Excel
 description: Exemplos de código que mostram como executar tarefas comuns com tabelas usando a API JavaScript do Excel.
 ms.date: 09/09/2019
 localization_priority: Normal
-ms.openlocfilehash: b6000773a70c74d115643f3353658287b6d66235
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 6d76edb5e13623a479a74cf69b5b87e2bbe86e3f
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717135"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609208"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Trabalhar com tabelas usando a API JavaScript do Excel
 
-Este artigo fornece exemplos de código que mostram como executar tarefas comuns com tabelas usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos que `Table` o `TableCollection` e os objetos dão suporte, consulte [objeto Table (API JavaScript para Excel)](/javascript/api/excel/excel.table) e [objeto TableCollection (API JavaScript para Excel)](/javascript/api/excel/excel.tablecollection).
+Este artigo fornece exemplos de código que mostram como executar tarefas comuns com tabelas usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos que o `Table` e os `TableCollection` objetos dão suporte, consulte [objeto Table (API JavaScript para Excel)](/javascript/api/excel/excel.table) e [objeto TableCollection (API JavaScript para Excel)](/javascript/api/excel/excel.tablecollection).
 
 ## <a name="create-a-table"></a>Criar uma tabela
 

@@ -3,12 +3,12 @@ title: Obter ou definir o assunto em um suplemento do Outlook
 description: Saiba como obter ou definir o assunto de uma mensagem ou compromisso em um suplemento do Outlook.
 ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: 93864aee005af61d9648c39402a843d9105bb021
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 3dda0ad519bdb2c3fc49b71f27e6f1d8a2aefcac
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325437"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609137"
 ---
 # <a name="get-or-set-the-subject-when-composing-an-appointment-or-message-in-outlook"></a>Obter ou definir o assunto ao compor um compromisso ou uma mensagem no Outlook
 

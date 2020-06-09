@@ -3,12 +3,12 @@ title: Usar movimento em suplementos do Office
 description: Obtenha as práticas recomendadas para usar transições, animações ou animação em suplementos do Office.
 ms.date: 07/19/2019
 localization_priority: Normal
-ms.openlocfilehash: effbd2c3e1e811d9f73c345c80a55a350db909d2
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 9eeedd4c41dfa9abc0ed1f2af580b1d42137bc93
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719263"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608485"
 ---
 # <a name="using-motion-in-office-add-ins"></a>Usar movimento em suplementos do Office
 

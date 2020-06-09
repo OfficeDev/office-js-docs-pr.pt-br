@@ -3,12 +3,12 @@ title: Criar um suplemento de painel de tarefas de dicionário
 description: Saiba como criar um suplemento de painel de tarefas de dicionário
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: e72ef049c355e756a3bd8a843fc6075a59c3c8a6
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 07e2222520999729e3677296869b2367265687f8
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719690"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608646"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>Criar um suplemento de painel de tarefas de dicionário
 
@@ -94,7 +94,7 @@ O código a seguir mostra o XSD para o esquema XML OfficeDefinitions.
 </xs:schema>
 ```
 
-Retornado XML que está de acordo com o esquema OfficeDefinitions consiste em um elemento `Result` raiz que contém um `Definitions` elemento com de zero a três `Definition` elementos filho, cada um deles contendo definições que não têm mais de 400 caracteres de comprimento. Além disso, a URL para a página inteira no site do dicionário deve ser fornecida no `SeeMoreURL` elemento. O exemplo a seguir mostra a estrutura do XML retornado que está em conformidade com o esquema OfficeDefinitions.
+Retornado XML que está de acordo com o esquema OfficeDefinitions consiste em um `Result` elemento raiz que contém um `Definitions` elemento com de zero a três `Definition` elementos filho, cada um deles contendo definições que não têm mais de 400 caracteres de comprimento. Além disso, a URL para a página inteira no site do dicionário deve ser fornecida no `SeeMoreURL` elemento. O exemplo a seguir mostra a estrutura do XML retornado que está em conformidade com o esquema OfficeDefinitions.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -533,9 +533,9 @@ Os membros primários da API JavaScript do Office (Office. js) chamados desta im
     
 - O método [addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) do `Document` objeto, que é chamado na `initialize` função para adicionar um manipulador de eventos para o evento [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) do documento para ouvir as alterações na seleção do usuário.
     
-- O [método getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) `Document` do objeto, que é chamado `tryUpdatingSelectedWord()` na função quando o manipulador de `SelectionChanged` eventos é aumentado para obter a palavra ou frase que o usuário selecionou, força-a para texto sem formatação e, em `selectedTextCallback` seguida, executar a função de retorno de chamada assíncrono.
+- O método [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) do `Document` objeto, que é chamado na `tryUpdatingSelectedWord()` função quando o manipulador de `SelectionChanged` eventos é aumentado para obter a palavra ou frase que o usuário selecionou, força-a para texto sem formatação e, em seguida, executar a `selectedTextCallback` função de retorno de chamada assíncrono.
     
-- Quando a `selectTextCallback` função de retorno de chamada assíncrono que é passada como o argumento `getSelectedDataAsync` de retorno de _chamada_ do método é executada, ela obtém o valor do texto selecionado quando o retorno de chamada retorna. Ele obtém o valor do argumento _selectedText_ do retorno de chamada (que é do tipo [AsyncResult](/javascript/api/office/office.asyncresult)) usando a propriedade [Value](/javascript/api/office/office.asyncresult#status) do objeto retornado `AsyncResult` .
+- Quando a `selectTextCallback` função de retorno de chamada assíncrono que é passada como o argumento de _retorno de chamada_ do `getSelectedDataAsync` método é executada, ela obtém o valor do texto selecionado quando o retorno de chamada retorna. Ele obtém o valor do argumento _selectedText_ do retorno de chamada (que é do tipo [AsyncResult](/javascript/api/office/office.asyncresult)) usando a propriedade [Value](/javascript/api/office/office.asyncresult#status) do objeto retornado `AsyncResult` .
     
 - O restante do código na função `selectedTextCallback` consulta o serviço Web XML para obter definições. Também chama as APIs do Microsoft Translator para fornecer a URL de um arquivo .wav que tem a pronúncia da palavra selecionada.
     

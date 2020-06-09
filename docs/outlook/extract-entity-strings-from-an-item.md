@@ -3,12 +3,12 @@ title: Extrair cadeias de caracteres de entidade de um item do Outlook
 description: Saiba como extrair cadeias de caracteres de entidade de um item do Outlook em um suplemento do Outlook.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 0a9a41d0b479420c0754c0e0d283982082a1452f
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: b15ad23427f79a333ae8ae9d342acdf28e6d010c
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42325451"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608940"
 ---
 # <a name="extract-entity-strings-from-an-outlook-item"></a>Extrair cadeias de caracteres de entidade de um item do Outlook
 
@@ -205,7 +205,7 @@ As seções restantes descrevem como essa amostra (arquivo default_entities.js) 
 
 ## <a name="extracting-entities-upon-initialization"></a>Extrair entidades na inicialização
 
-Após o evento [Office.initialize](/javascript/api/office#office-initialize-reason-), o suplemento de entidades chama o método [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) do item atual. O `getEntities` método retorna a variável `_MyEntities` global uma matriz de instâncias de entidades com suporte. A seguir apresentamos o código JavaScript relacionado.
+Após o evento [Office.initialize](/javascript/api/office#office-initialize-reason-), o suplemento de entidades chama o método [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) do item atual. O `getEntities` método retorna a variável global `_MyEntities` uma matriz de instâncias de entidades com suporte. A seguir apresentamos o código JavaScript relacionado.
 
 
 ```js
@@ -373,7 +373,7 @@ Quando o usuário clica no botão **Obter Sugestões de Reunião**, o manipulado
 
 
  > [!NOTE]
- > Somente as mensagens, mas não os compromissos `MeetingSuggestion` , dão suporte ao tipo de entidade.
+ > Somente as mensagens, mas não os compromissos, dão suporte ao `MeetingSuggestion` tipo de entidade.
 
 Cada sugestão de reunião extraída é armazenada como um objeto [MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion) na matriz. `myGetMeetingSuggestions` obtém dados adicionais sobre cada sugestão de reunião:
 

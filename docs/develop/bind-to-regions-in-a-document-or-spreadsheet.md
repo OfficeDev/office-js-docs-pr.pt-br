@@ -3,12 +3,12 @@ title: Associar a regiões em um documento ou em uma planilha
 description: Saiba como usar a associação para garantir o acesso consistente a uma região ou um elemento específico de um documento ou planilha por meio de um identificador.
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 61ae64688253dede80989114f4abca2f236d48af
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 8fe754dedc2313f2a56dab71491dbdf8026085e1
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719067"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608387"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>Associar a regiões em um documento ou em uma planilha
 
@@ -42,7 +42,7 @@ Há [três tipos diferentes de associações][Office. BindingType] que você esp
 
     Qualquer tabela do Excel ou Word pode ser a base para uma associação de tabela. Após estabelecer uma associação de tabelas, as linhas ou colunas novas que um usuário adicionar à tabela são automaticamente incluídas na associação. 
 
-Depois que `Bindings` uma associação é criada usando um dos três métodos "addfrom" do objeto, você pode trabalhar com as propriedades e os dados da Associação usando os métodos do objeto correspondente: [matrixbinding], [TableBinding]ou [TextBinding]. Esses três objetos herdam os métodos [getDataAsync] e [setDataAsync] do objeto `Binding`, o que permite interagir com os dados associados.
+Depois que uma associação é criada usando um dos três métodos "addfrom" do `Bindings` objeto, você pode trabalhar com as propriedades e os dados da Associação usando os métodos do objeto correspondente: [matrixbinding], [TableBinding]ou [TextBinding]. Esses três objetos herdam os métodos [getDataAsync] e [setDataAsync] do objeto `Binding`, o que permite interagir com os dados associados.
 
 > [!NOTE]
 > **Quando devo usar a matriz ou as associações de tabela?** Quando os dados tabulares com os quais você está trabalhando contiverem uma linha de totais, você deverá usar uma associação de matriz se o script do suplemento precisar acessar valores na linha de totais ou detectar que a seleção do usuário está na linha de totais. Se você estabelecer uma associação de tabela para os dados tabulares que contêm uma linha de totais, a propriedade [TableBinding.rowCount] e as propriedades `rowCount` and `startRow` do objeto [BindingSelectionChangedEventArgs] nos manipuladores de eventos não refletirão a linha de totais em seus valores. Para resolver essa limitação, você deve estabelecer uma associação de matriz para trabalhar com a linha de totais.
@@ -112,7 +112,7 @@ A Figura 1 mostra o prompt de seleção do intervalo interno no Excel.
 ## <a name="add-a-binding-to-a-named-item"></a>Adicionar uma associação a um item nomeado
 
 
-O exemplo a seguir mostra como adicionar uma associação ao item nomeado `myRange` existente como uma associação "Matrix" usando o método [addFromNamedItemAsync] e atribui a associação `id` como "myMatrix".
+O exemplo a seguir mostra como adicionar uma associação ao `myRange` Item nomeado existente como uma associação "Matrix" usando o método [addFromNamedItemAsync] e atribui a associação `id` como "myMatrix".
 
 
 ```js
@@ -133,13 +133,13 @@ function write(message){
 
 ```
 
-**Para o Excel**, `itemName` o parâmetro do [método addFromNamedItemAsync] pode se referir a um intervalo nomeado existente, um intervalo especificado `A1` com o `("A1:A3")`estilo de referência ou uma tabela. Por padrão, a adição de uma tabela no Excel atribui o nome "Tabela1" à primeira tabela que você adicionar, "Tabela2" para a segunda tabela adicionada e assim por diante. Para atribuir um nome significativo para uma tabela na interface do usuário do Excel, `Table Name` use a propriedade nas **ferramentas de tabela | Guia Design** da faixa de opções.
+**Para o Excel**, o `itemName` parâmetro do método [addFromNamedItemAsync] pode se referir a um intervalo nomeado existente, um intervalo especificado com o estilo de `A1` referência `("A1:A3")` ou uma tabela. Por padrão, a adição de uma tabela no Excel atribui o nome "Tabela1" à primeira tabela que você adicionar, "Tabela2" para a segunda tabela adicionada e assim por diante. Para atribuir um nome significativo para uma tabela na interface do usuário do Excel, use a `Table Name` Propriedade nas **ferramentas de tabela | Guia Design** da faixa de opções.
 
 
 > [!NOTE]
 > No Excel, ao especificar uma tabela como um item nomeado, você deve qualificar totalmente o nome para incluir o nome da planilha no nome da tabela neste formato:`"Sheet1!Table1"`
 
-O exemplo a seguir cria uma associação no Excel com as três primeiras células na coluna A `"A1:A3"`(), atribui a ID `"MyCities"`e, em seguida, grava três nomes de cidades nessa associação.
+O exemplo a seguir cria uma associação no Excel com as três primeiras células na coluna A ( `"A1:A3"` ), atribui a ID `"MyCities"` e, em seguida, grava três nomes de cidades nessa associação.
 
 
 ```js
@@ -166,11 +166,11 @@ function write(message){
 }
 ```
 
-**Para o Word**, `itemName` o parâmetro do [método addFromNamedItemAsync] refere-se `Title` à propriedade de `Rich Text` um controle de conteúdo. Não é possível associar a controles de conteúdo diferentes de controles de conteúdo `Rich Text`.
+**Para o Word**, o `itemName` parâmetro do método [addFromNamedItemAsync] refere-se à `Title` propriedade de um controle de `Rich Text` conteúdo. Não é possível associar a controles de conteúdo diferentes de controles de conteúdo `Rich Text`.
 
-Por padrão, um controle de conteúdo não `Title*`tem valor atribuído. Para atribuir um nome significativo na interface do usuário do Word, depois de inserir um controle de conteúdo **Rich Text** do grupo **Controles** na guia **Desenvolvedor** da faixa de opções, use o comando **Propriedades** no grupo **Controles** para exibir a caixa de diálogo **Propriedades de Controle de Conteúdo**. Em seguida, `Title` defina a propriedade do controle de conteúdo com o nome que você deseja fazer referência a partir do seu código.
+Por padrão, um controle de conteúdo não tem `Title*` valor atribuído. Para atribuir um nome significativo na interface do usuário do Word, depois de inserir um controle de conteúdo **Rich Text** do grupo **Controles** na guia **Desenvolvedor** da faixa de opções, use o comando **Propriedades** no grupo **Controles** para exibir a caixa de diálogo **Propriedades de Controle de Conteúdo**. Em seguida, defina a `Title` Propriedade do controle de conteúdo com o nome que você deseja fazer referência a partir do seu código.
 
-O exemplo a seguir cria uma associação de texto no Word para um controle de conteúdo `"FirstName"`de Rich Text denominado, atribui a **ID** `"firstName"`e, em seguida, exibe essas informações.
+O exemplo a seguir cria uma associação de texto no Word para um controle de conteúdo de Rich Text denominado `"FirstName"` , atribui a **ID** `"firstName"` e, em seguida, exibe essas informações.
 
 
 ```js
@@ -213,7 +213,7 @@ function write(message){
 }
 ```
 
-A função anônima que é passada para a função como o `callback` parâmetro é executada quando a operação é concluída. A função é chamada com um único parâmetro, `asyncResult`, que contém uma matriz de associações no documento. A matriz é repetida para criar uma cadeia de caracteres contendo as IDs das vinculações. A cadeia de caracteres é, então, exibida em uma caixa de mensagem.
+A função anônima que é passada para a função como o `callback` parâmetro é executada quando a operação é concluída. A função é chamada com um único parâmetro, `asyncResult` , que contém uma matriz de associações no documento. A matriz é repetida para criar uma cadeia de caracteres contendo as IDs das vinculações. A cadeia de caracteres é, então, exibida em uma caixa de mensagem.
 
 
 ## <a name="get-a-binding-by-id-using-the-getbyidasync-method-of-the-bindings-object"></a>Obter uma associação por ID usando o método getByIdAsync do objeto Bindings
@@ -266,7 +266,7 @@ function write(message){
 
 
 > [!NOTE]
-> Se o `select` método promessa retornar com êxito um objeto [Binding] , esse objeto exponhaá apenas os quatro métodos a seguir do objeto: [getDataAsync], [setDataAsync], [addHandlerAsync]e [removeHandlerAsync]. Se a promessa não puder retornar um objeto Binding, `onError` o retorno de chamada poderá ser usado para acessar um objeto [AsyncResult]. Error para obter mais informações. Se você precisar chamar um membro do objeto Binding diferente dos quatro métodos expostos pela promessa do objeto [Binding] retornada pelo `select` método, use o método [getByIdAsync] usando a propriedade [Document. Bindings] e vinculações. método [getByIdAsync] para recuperar o objeto [Binding] .
+> Se o `select` método promessa retornar com êxito um objeto [Binding] , esse objeto exponhaá apenas os quatro métodos a seguir do objeto: [getDataAsync], [setDataAsync], [addHandlerAsync]e [removeHandlerAsync]. Se a promessa não puder retornar um objeto Binding, o `onError` retorno de chamada poderá ser usado para acessar um objeto [AsyncResult]. Error para obter mais informações. Se você precisar chamar um membro do objeto Binding diferente dos quatro métodos expostos pela promessa do objeto [Binding] retornada pelo `select` método, use o método [GetByIdAsync] usando a propriedade [Document. Bindings] e vinculações.[ método getByIdAsync] para recuperar o objeto [Binding] .
 
 ## <a name="release-a-binding-by-id"></a>Liberar uma associação pela ID
 
@@ -330,9 +330,9 @@ myBinding.setDataAsync('Hello World!', function (asyncResult) { });
 
  `myBinding` é uma variável que contém uma associação de texto existente no documento.
 
-No exemplo, o primeiro parâmetro é o valor a ser definido `myBinding`. Como esta é uma associação de texto, o valor é uma `string`. Diferentes tipos de associação aceitam diferentes tipos de dados.
+No exemplo, o primeiro parâmetro é o valor a ser definido `myBinding` . Como esta é uma associação de texto, o valor é uma `string`. Diferentes tipos de associação aceitam diferentes tipos de dados.
 
-A função anônima que é transmitida para a função é um retorno de chamada executado quando a operação é concluída. A função é chamada com um único parâmetro, `asyncResult`, que contém o status do resultado.
+A função anônima que é transmitida para a função é um retorno de chamada executado quando a operação é concluída. A função é chamada com um único parâmetro, `asyncResult` , que contém o status do resultado.
 
 > [!NOTE]
 > A partir da versão do Excel 2013 SP1 e da compilação correspondente do Excel Online, agora é possível [definir a formatação ao escrever e atualizar dados em tabelas associadas](../excel/excel-add-ins-tables.md).
@@ -384,10 +384,10 @@ function removeEventHandlerFromBinding() {
 
 
 > [!IMPORTANT]
-> Se o parâmetro _Handler_ opcional for omitido quando o método [removeHandlerAsync] for chamado, todos os manipuladores de eventos `eventType` para o especificado serão removidos.
+> Se o parâmetro _Handler_ opcional for omitido quando o método [removeHandlerAsync] for chamado, todos os manipuladores de eventos para o especificado `eventType` serão removidos.
 
 
-## <a name="see-also"></a>Também confira
+## <a name="see-also"></a>Confira também
 
 - [Entendendo a API JavaScript do Office](understanding-the-javascript-api-for-office.md) 
 - [Programação assíncrona nos Suplementos do Office](asynchronous-programming-in-office-add-ins.md)

@@ -3,12 +3,12 @@ title: Desenvolver suplementos do Office para iPad
 description: Obtenha uma visão geral e as práticas recomendadas para criar um suplemento do Office que é executado em um iPad.
 ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: ca3e7e5521b44e13a26f3d6117128592b88efdc6
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: 2630b3e685c0bd0dc8d9ad9c6ce48b0f42f060c6
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890494"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608289"
 ---
 # <a name="develop-office-add-ins-for-the-ipad"></a>Desenvolver suplementos do Office para iPad
 

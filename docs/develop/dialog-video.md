@@ -3,12 +3,12 @@ title: Use a caixa de diálogo do Office para reproduzir um vídeo
 description: Saiba como abrir e reproduzir um vídeo na caixa de diálogo do Office
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 9c65dfb9c0cf1adbc827be25b655e380dc39e2d2
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: e150206b60fdff852621971fd4417ff9bdfe7eb3
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596526"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608164"
 ---
 # <a name="use-the-office-dialog-box-to-show-a-video"></a>Usar a caixa de diálogo do Office para mostrar um vídeo
 

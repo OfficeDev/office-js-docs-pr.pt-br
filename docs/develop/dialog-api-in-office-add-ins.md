@@ -3,12 +3,12 @@ title: Usar a API da Caixa de Diálogo do Office nos suplementos do Office
 description: Conhecer as noções básicas da criação de uma caixa de diálogo em um suplemento do Office
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 5ebe8fe5a0411ab87e978267242c1179dec2d89f
-ms.sourcegitcommit: a0262ea40cd23f221e69bcb0223110f011265d13
+ms.openlocfilehash: 96ed3169e7909e700bde894a4caf03348d039b74
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42688614"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608275"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Usar a API de diálogo do Office em suplementos do Office
 
@@ -86,7 +86,7 @@ O valor padrão é `false`, que é o mesmo que omitir a propriedade inteiramente
 A caixa de diálogo não pode se comunicar com a página host no painel de tarefas, a menos que:
 
 - A página atual na caixa de diálogo esteja no mesmo domínio da página host.
-- A biblioteca da API JavaScript do Office é carregada na página. (Como qualquer página que usa a biblioteca da API JavaScript do Office, o script para a página deve atribuir um `Office.initialize` método à propriedade, embora possa ser um método vazio. Para obter detalhes, consulte [inicializar o suplemento do Office](initialize-add-in.md).
+- A biblioteca da API JavaScript do Office é carregada na página. (Como qualquer página que usa a biblioteca da API JavaScript do Office, o script para a página deve atribuir um método à `Office.initialize` propriedade, embora possa ser um método vazio. Para obter detalhes, consulte [inicializar o suplemento do Office](initialize-add-in.md).
 
 O código na caixa de diálogo use a função [messageParent](/javascript/api/office/office.ui#messageparent-message-) para enviar uma mensagem de cadeia de caracteres ou um valor booliano para a página host. A cadeia de caracteres pode ser uma palavra, uma frase, um blob XML, um JSON em formato de cadeia de caracteres ou qualquer outra coisa que possa ser serializada em uma cadeia de caracteres. Este é um exemplo:
 
@@ -251,7 +251,7 @@ O código na caixa de diálogo pode analisar a URL e ler o valor do parâmetro.
 > O Office adiciona automaticamente um parâmetro de consulta chamado `_host_info` à URL que é transmitida para `displayDialogAsync`. Ele é anexado após os parâmetros de consulta personalizados, se houver algum. Ele não é anexado às URLs subsequentes para as quais a caixa de diálogo navega. No futuro, a Microsoft poderá alterar o conteúdo desse valor ou removê-lo completamente para que seu código não consiga lê-lo. O mesmo valor é adicionado ao armazenamento de sessão da caixa de diálogo. Novamente, *seu código não deve ler nem gravar esse valor*.
 
 > [!NOTE]
-> Agora, há uma `messageChild` API que a página pai pode usar para enviar mensagens para a caixa de diálogo, assim como `messageParent` a API descrita acima envia mensagens da caixa de diálogo. Para saber mais sobre ele, consulte [passando dados e mensagens para uma caixa de diálogo da página host](parent-to-dialog.md). Recomendamos que você experimente, mas para suplementos de produção, é recomendável usar as técnicas descritas nesta seção.
+> Agora, há uma `messageChild` API que a página pai pode usar para enviar mensagens para a caixa de diálogo, assim como a `messageParent` API descrita acima envia mensagens da caixa de diálogo. Para saber mais sobre ele, consulte [passando dados e mensagens para uma caixa de diálogo da página host](parent-to-dialog.md). Recomendamos que você experimente, mas para suplementos de produção, é recomendável usar as técnicas descritas nesta seção.
 
 ## <a name="closing-the-dialog-box"></a>Feche a caixa de diálogo
 

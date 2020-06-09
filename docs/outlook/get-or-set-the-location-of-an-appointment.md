@@ -3,19 +3,19 @@ title: Obter ou definir o local de um compromisso em um suplemento.
 description: Saiba como obter ou definir o local de um compromisso em um suplemento do Outlook.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: cc412da5dd64d8e908b86a81b847f6479dbd4a34
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 79cf5ebe029d2b95b1501b6f9066a2c8f9013ef3
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324965"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609180"
 ---
 # <a name="get-or-set-the-location-when-composing-an-appointment-in-outlook"></a>Obter ou definir o local ao compor um compromisso no Outlook
 
 A API JavaScript do Office fornece propriedades e métodos para gerenciar o local de um compromisso que o usuário está redigindo. No momento, há duas propriedades que fornecem o local de um compromisso:
 
 - [Item. Location](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): API básica que permite obter e definir o local.
-- [Item. enhancedLocation](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): API avançada que permite obter e definir o local e inclui a especificação do tipo de [local](/javascript/api/outlook/office.mailboxenums.locationtype). O tipo é `LocationType.Custom` se você definir o local usando `item.location`.
+- [Item. enhancedLocation](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): API avançada que permite obter e definir o local e inclui a especificação do tipo de [local](/javascript/api/outlook/office.mailboxenums.locationtype). O tipo é `LocationType.Custom` se você definir o local usando `item.location` .
 
 A tabela a seguir lista as APIs de local e os modos (ou seja, redigir ou ler) onde estão disponíveis.
 
@@ -119,7 +119,7 @@ Você pode usar a `location` API para obter e definir o local de um compromisso.
 
 Esta seção mostra um exemplo de código que obtém o local do compromisso que o usuário está compondo e o exibe.
 
-Para usar `item.location.getAsync`, forneça um método de retorno de chamada que verifica o status e o resultado da chamada assíncrona. Você pode fornecer os argumentos necessários para o método de retorno de chamada por meio do parâmetro opcional `asyncContext`. Você pode obter status, resultados e qualquer erro usando o parâmetro `asyncResult` de saída do retorno de chamada. Se a chamada assíncrona for bem-sucedida, você poderá obter o local como uma cadeia de caracteres usando a propriedade [AsyncResult.value](/javascript/api/office/office.asyncresult#value).
+Para usar `item.location.getAsync`, forneça um método de retorno de chamada que verifica o status e o resultado da chamada assíncrona. Você pode fornecer os argumentos necessários para o método de retorno de chamada por meio do parâmetro opcional `asyncContext`. Você pode obter status, resultados e qualquer erro usando o parâmetro de saída `asyncResult` do retorno de chamada. Se a chamada assíncrona for bem-sucedida, você poderá obter o local como uma cadeia de caracteres usando a propriedade [AsyncResult.value](/javascript/api/office/office.asyncresult#value).
 
 ```js
 var item;

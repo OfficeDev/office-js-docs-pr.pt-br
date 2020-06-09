@@ -3,12 +3,12 @@ title: Diretrizes de acessibilidade para suplementos do Office
 description: Saiba como tornar o suplemento do Office acessível a todos os usuários.
 ms.date: 09/24/2018
 localization_priority: Normal
-ms.openlocfilehash: 61028c86e9ff79271b67d217e2dc93df300af006
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 889563af8ab5f7bbcd4037eedb42933369a92cf2
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718619"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44607989"
 ---
 # <a name="accessibility-guidelines"></a>Diretrizes de acessibilidade
 

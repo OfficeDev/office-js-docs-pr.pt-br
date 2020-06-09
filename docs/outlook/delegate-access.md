@@ -3,12 +3,12 @@ title: Habilitar cenários de acesso de representante em um suplemento do Outloo
 description: Descreve brevemente o acesso de representante e discute como configurar o suporte a suplementos.
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 0941e4f0b5e1082b8a762acfa013d4e58be03469
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 68b9e09afbe2bcd5cfc302d6714b1c22fd945047
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42721013"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608947"
 ---
 # <a name="enable-delegate-access-scenarios-in-an-outlook-add-in"></a>Habilitar cenários de acesso de representante em um suplemento do Outlook
 
@@ -23,10 +23,10 @@ Um proprietário de caixa de correio pode usar o recurso de acesso de representa
 
 A tabela a seguir descreve as permissões de representante que a API JavaScript do Office suporta.
 
-|Permissão|Valor|Descrição|
+|Permission|Valor|Descrição|
 |---|---:|---|
-|Ler|1 (000001)|Pode ler itens.|
-|Gravar|2 (000010)|Pode criar itens.|
+|Read|1 (000001)|Pode ler itens.|
+|Gravação|2 (000010)|Pode criar itens.|
 |DeleteOwn|4 (000100)|Só pode excluir os itens que eles criaram.|
 |DeleteAll|8 (001000)|Pode excluir qualquer item.|
 |EditOwn|16 (010000)|Só pode editar os itens que eles criaram.|
@@ -35,7 +35,7 @@ A tabela a seguir descreve as permissões de representante que a API JavaScript 
 > [!NOTE]
 > Atualmente, a API oferece suporte para obter permissões de representante existentes, mas não definir permissões de representante.
 
-O objeto [DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions) é implementado usando uma bitmask para indicar as permissões do representante. Cada posição na bitmask representa uma permissão específica e, se estiver definida como `1` , o representante tem a respectiva permissão. Por exemplo, se o segundo bit à direita é `1`, o representante tem permissão de **gravação** . Você pode ver um exemplo de como verificar se há uma permissão específica na seção [executar uma operação como representante,](#perform-an-operation-as-delegate) posteriormente neste artigo.
+O objeto [DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions) é implementado usando uma bitmask para indicar as permissões do representante. Cada posição na bitmask representa uma permissão específica e, se estiver definida como `1` , o representante tem a respectiva permissão. Por exemplo, se o segundo bit à direita é `1` , o representante tem permissão de **gravação** . Você pode ver um exemplo de como verificar se há uma permissão específica na seção [executar uma operação como representante,](#perform-an-operation-as-delegate) posteriormente neste artigo.
 
 ## <a name="sync-across-mailbox-clients"></a>Sincronizar entre clientes de caixa de correio
 
@@ -45,9 +45,9 @@ No entanto, se o suplemento usar operações REST ou EWS para definir uma propri
 
 ## <a name="configure-the-manifest"></a>Configurar o manifesto
 
-Para habilitar cenários de acesso de representante no suplemento, você deve definir o elemento [SupportsSharedFolders](../reference/manifest/supportssharedfolders.md) `true` no manifesto no elemento `DesktopFormFactor`pai. No momento, não há suporte para outros fatores de formulário.
+Para habilitar cenários de acesso de representante no suplemento, você deve definir o elemento [SupportsSharedFolders](../reference/manifest/supportssharedfolders.md) `true` no manifesto no elemento pai `DesktopFormFactor` . No momento, não há suporte para outros fatores de formulário.
 
-O exemplo a seguir mostra `SupportsSharedFolders` o elemento definido `true` como em uma seção do manifesto.
+O exemplo a seguir mostra o `SupportsSharedFolders` elemento definido como `true` em uma seção do manifesto.
 
 ```XML
 ...
@@ -129,7 +129,7 @@ function performOperation() {
 }
 ```
 
-## <a name="see-also"></a>Também confira
+## <a name="see-also"></a>Confira também
 
 - [Permitir que outra pessoa Gerencie seu email e calendário](https://support.office.com/article/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926)
 - [Compartilhamento de calendário no Office 365](https://support.office.com/article/calendar-sharing-in-office-365-b576ecc3-0945-4d75-85f1-5efafb8a37b4)

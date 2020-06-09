@@ -3,12 +3,12 @@ title: Inicialize seu suplemento do Office
 description: Saiba como inicializar o suplemento do Office.
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: ca7b21c35fc82011c673cb83d077a89cc29f56eb
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 8310c5efb803391f7f0d4b01fda70dc0df537b21
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718934"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608136"
 ---
 # <a name="initialize-your-office-add-in"></a>Inicialize seu suplemento do Office
 
@@ -26,11 +26,11 @@ Os Suplementos do Office têm sempre uma lógica de inicialização para fazer c
 
 No entanto, um suplemento do Office não pode chamar com êxito nenhuma API JavaScript do Office até que a biblioteca seja carregada. Este artigo descreve as duas maneiras pelas quais o código pode garantir que a biblioteca tenha sido carregada:
 
-- Inicializar `Office.onReady()`.
-- Inicializar `Office.initialize`.
+- Inicializar `Office.onReady()` .
+- Inicializar `Office.initialize` .
 
 > [!TIP]
-> Recomendamos que use `Office.onReady()`em vez de`Office.initialize`. Embora `Office.initialize` ainda tenha suporte, `Office.onReady()` o oferece mais flexibilidade. Você pode atribuir apenas um manipulador ao `Office.initialize` e ele é chamado apenas uma vez pela infraestrutura do Office. Você pode chamar `Office.onReady()` diferentes locais no seu código e usar retornos de chamada diferentes.
+> Recomendamos que use `Office.onReady()`em vez de`Office.initialize`. Embora `Office.initialize` ainda tenha suporte, o `Office.onReady()` oferece mais flexibilidade. Você pode atribuir apenas um manipulador ao `Office.initialize` e ele é chamado apenas uma vez pela infraestrutura do Office. Você pode chamar `Office.onReady()` diferentes locais no seu código e usar retornos de chamada diferentes.
 > 
 > Para saber mais sobre as diferenças entre essas técnicas, veja [Principais diferenças entre Office.initialize e Office.onReady()](#major-differences-between-officeinitialize-and-officeonready).
 
@@ -148,7 +148,7 @@ Para saber mais, veja [Evento Office.initialize](/javascript/api/office) e [Enum
 >Office.initialize = function () {};
 >```
 
-## <a name="see-also"></a>Também confira
+## <a name="see-also"></a>Confira também
 
 - [Entendendo a API JavaScript do Office](understanding-the-javascript-api-for-office.md)
 - [Carregando o DOM e o ambiente de tempo de execução](loading-the-dom-and-runtime-environment.md)

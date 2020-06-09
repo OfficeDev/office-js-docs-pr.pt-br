@@ -3,12 +3,12 @@ title: Elemento TargetDialect no arquivo de manifesto
 description: O elemento TargetDialect define um idioma regional suportado por esse dicionário, representado como uma cadeia de caracteres de nome de cultura.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: ba5c43b6471f11d7599da8542c30618ea1de78e0
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: d0f60989ee5375f356343a8b3495f9c84120d467
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720327"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609010"
 ---
 # <a name="targetdialect-element"></a>Elemento TargetDialect
 

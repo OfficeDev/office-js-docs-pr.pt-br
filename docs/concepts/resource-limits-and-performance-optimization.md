@@ -3,12 +3,12 @@ title: Limites de recurso e otimização de desempenho para Suplementos do Offic
 description: Saiba mais sobre os limites de recursos da plataforma de suplementos do Office, incluindo CPU e memória.
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 68f0bae8514a5f5769e648d6b74ffc3bdbccc194
-ms.sourcegitcommit: 76552b3e5725d9112c772595971b922c295e6b4c
+ms.openlocfilehash: be4727ba12fa8f9b3ee8133026d9de94a612a9fc
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43225656"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608003"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites de recurso e otimização de desempenho para Suplementos do Office
 

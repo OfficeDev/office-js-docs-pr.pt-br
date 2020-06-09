@@ -3,12 +3,12 @@ title: Elemento SupportsSharedFolders no arquivo de manifesto
 description: O elemento SupportsSharedFolders define se o suplemento do Outlook está disponível nos cenários de representante.
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 66a426b0c31bda61feb23cb83d63722898dfb503
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 3835f7060cc52a72ff0a5ed4dbdb9f1e09258669
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717884"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608709"
 ---
 # <a name="supportssharedfolders-element"></a>Elemento SupportsSharedFolders
 

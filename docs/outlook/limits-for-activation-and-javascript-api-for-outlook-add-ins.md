@@ -3,12 +3,12 @@ title: Limites para ativação e uso da API em suplementos do Outlook
 description: Você deve estar ciente das determinadas diretrizes de ativação e de uso da API e implementar seus suplementos dentro desses limites.
 ms.date: 05/08/2020
 localization_priority: Normal
-ms.openlocfilehash: b4fbdcea72585ff77457dfb6cd3039040b012031
-ms.sourcegitcommit: 7e6faf3dc144400a7b7e5a42adecbbec0bd4602d
+ms.openlocfilehash: 90260e4edd2059e98bc8618c6dcb6308424f43c9
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "44180214"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609066"
 ---
 # <a name="limits-for-activation-and-javascript-api-for-outlook-add-ins"></a>Limites para ativação e API JavaScript para suplementos do Outlook
 
@@ -33,7 +33,7 @@ Siga estas diretrizes ao criar regras de ativação para suplementos do Outlook:
 
 - Se você usa expressões regulares no `ItemHasKnownEntity` ou [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) regras, esteja ciente dos seguintes limites e diretrizes que geralmente se aplicam a qualquer host do Outlook e aqueles descritos nas tabelas 1, 2 e 3 que diferem dependendo do host:
    - Especifique no máximo cinco expressões regulares em regras de ativação em um suplemento. Se você exceder esse limite, não poderá instalar um suplemento.
-   - Especifique expressões regulares, de forma que os resultados que você prevê são retornados `getRegExMatches` pela chamada de método dentro das primeiras 50 correspondências.
+   - Especifique expressões regulares, de forma que os resultados que você prevê são retornados pela `getRegExMatches` chamada de método dentro das primeiras 50 correspondências.
    - Pode especificar declarações look-ahead em expressões regulares, mas não look-behind, `(?<=text)` e negative look-behind `(?<!text)`.
 
 A tabela 1 lista os limites e descreve as diferenças no suporte a expressões regulares entre um cliente avançado do Outlook e o Outlook na Web ou dispositivos móveis. O suporte independe de qualquer tipo específico de dispositivo e de corpo de item.
@@ -85,7 +85,7 @@ Além das diretrizes anteriores para regras de ativação, cada host do Outlook 
 |Corpo em um novo formulário de compromisso|32 KB número de caracteres|`Mailbox.displayNewAppointmentForm`IME|Limite do corpo em um formulário de novo compromisso.|
 |Exibir o corpo de um item existente|32 KB número de caracteres|Método[mailbox.displayAppointmentForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) método<br/><br/> Método [mailbox.displayMessageForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)|Para o Outlook na Web e dispositivos móveis: limite para o corpo em um formulário de compromisso ou mensagem existente.|
 |Definir o corpo|1 MB número de caracteres|Método [Body.prependAsync](/javascript/api/outlook/office.Body#prependasync-data--options--callback-) método<br/> <br/>[Body.setAsync](/javascript/api/outlook/office.Body#setasync-data--options--callback-)<br/><br/>Método [Body.setSelectedDataAsync](/javascript/api/outlook/office.Body#setselecteddataasync-data--options--callback-)|Limite para configurar o corpo de um item de compromisso ou de mensagem.|
-|Número de anexos|499 arquivos no Outlook na Web e dispositivos móveis|Método [item.addFileAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)|Limite do número de arquivos que podem ser anexados a um item para envio. O Outlook na Web e dispositivos móveis geralmente limitam a conexão de até 499 arquivos, por meio da `addFileAttachmentAsync`interface do usuário e. Um cliente avançado do Outlook não limita especificamente o número de anexos de arquivo. No entanto, todos os hosts do Outlook observam o limite de tamanho dos anexos configurado para o usuário do Exchange Server Confira o "Tamanho dos anexos" na próxima linha.|
+|Número de anexos|499 arquivos no Outlook na Web e dispositivos móveis|Método [item.addFileAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)|Limite do número de arquivos que podem ser anexados a um item para envio. O Outlook na Web e dispositivos móveis geralmente limitam a conexão de até 499 arquivos, por meio da interface do usuário e `addFileAttachmentAsync` . Um cliente avançado do Outlook não limita especificamente o número de anexos de arquivo. No entanto, todos os hosts do Outlook observam o limite de tamanho dos anexos configurado para o usuário do Exchange Server Confira o "Tamanho dos anexos" na próxima linha.|
 |Tamanho dos anexos|Depende do Exchange Server|`item.addFileAttachmentAsync`IME|Há um limite no tamanho de todos os anexos de um item que um administrador pode configurar no Exchange Server da caixa de correio do usuário. Para um cliente avançado do Outlook, isso limita a quantidade de anexos de um item. Para o Outlook na Web e dispositivos móveis, o menor dos dois limites-o número de anexos e o tamanho de todos os anexos-restringe os anexos reais de um item.|
 |Nome do arquivo anexo|255 caracteres|`item.addFileAttachmentAsync`IME|Limite para o comprimento do nome de arquivo de um anexo a ser adicionado a um item.|
 |URI do anexo|2048 caracteres|`item.addFileAttachmentAsync`IME|Limite do URI do nome de arquivo a ser adicionado como um anexo a um item.|

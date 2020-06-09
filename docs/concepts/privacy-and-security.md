@@ -3,12 +3,12 @@ title: Privacidade e segurança para suplementos do Office
 description: Saiba mais sobre os aspectos de privacidade e segurança da plataforma de suplementos do Office.
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 9d002a8cc8dff8f8f4a8e2cc08c7e9c81a1641de
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 9c947c88f62c550eae4b8a38dc1888a8a3385154
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717303"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608024"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 
@@ -20,7 +20,7 @@ Os suplementos do Office são protegidos por um ambiente de tempo de execução 
 
 - É permitido somente o acesso indireto ao thread da interface do usuário do aplicativo host.
 
-- As interações modais não são permitidas-por exemplo `alert`, `confirm`as chamadas `prompt` para JavaScript, e funções não são permitidas porque são modais.
+- As interações modais não são permitidas-por exemplo, as chamadas para JavaScript `alert` , `confirm` e `prompt` funções não são permitidas porque são modais.
 
 Além disso, a estrutura de tempo de execução fornece os seguintes benefícios para garantir que um suplemento do Office não possa danificar o ambiente do usuário:
 
@@ -90,7 +90,7 @@ A plataforma de suplementos lida com as preocupações com privacidade dos usuá
 
 - Ao compartilhar um documento, os usuários também compartilham suplementos que foram inseridos no documento ou associados a ele. Se um usuário abrir um documento que contenha um suplemento que o usuário não usou antes, o aplicativo host solicitará que o usuário conceda permissão para que o suplemento seja executado no documento. Em um ambiente empresarial, o aplicativo host do Office também consultará o usuário se o documento for proveniente de uma fonte externa.
 
-- Os usuários podem habilitar ou desabilitar o acesso ao AppSource. Para suplementos de conteúdo e de painel de tarefas, os usuários gerenciam o acesso a suplementos e catálogos confiáveis **da central de confiabilidade** no cliente do Office do host (aberto nas**Opções** > de **arquivo** > **configurações** > da central de confiabilidade da**central** > de confiabilidade dos**catálogos de suplementos confiáveis**). Para os suplementos do Outlook, os usos podem gerenciar suplementos escolhendo o botão **gerenciar suplementos** : no Outlook no Windows, escolha **arquivo** > **gerenciar suplementos**. No Outlook no Mac, escolha o botão **gerenciar suplementos** na barra de suplementos. No Outlook na Web, escolha o menu **Configurações** (ícone de engrenagem) > **Gerenciar suplementos**. Os administradores também podem gerenciar este acesso [usando a política de grupo](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
+- Os usuários podem habilitar ou desabilitar o acesso ao AppSource. Para suplementos de conteúdo e de painel de tarefas, os usuários gerenciam o acesso a suplementos e catálogos confiáveis da **central de confiabilidade** no cliente do Office do host (aberto nas opções de **arquivo**configurações da central de confiabilidade da central de confiabilidade dos  >  **Options**  >  **Trust Center**  >  **Trust Center Settings**  >  **catálogos de suplementos confiáveis**). Para os suplementos do Outlook, os usos podem gerenciar suplementos escolhendo o botão **gerenciar suplementos** : no Outlook no Windows, escolha **arquivo**  >  **gerenciar suplementos**. No Outlook no Mac, escolha o botão **gerenciar suplementos** na barra de suplementos. No Outlook na Web, escolha o menu **Configurações** (ícone de engrenagem) > **Gerenciar suplementos**. Os administradores também podem gerenciar este acesso [usando a política de grupo](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
 
 - O design da plataforma do suplemento fornece segurança e desempenho aos usuários finais das seguintes maneiras:
 

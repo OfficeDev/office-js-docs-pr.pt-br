@@ -3,16 +3,16 @@ title: Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 description: Exemplos de código que mostram como executar tarefas comuns com pastas de trabalho ou recursos de nível de aplicativo usando a API JavaScript do Excel.
 ms.date: 05/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 4fec6a217a2764eaf664463943ca384b3a2d847b
-ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
+ms.openlocfilehash: 16c091c3f01ffba144cf28c4f6e2bf4889872194
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "44170762"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609195"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 
-Este artigo fornece exemplos de código que mostram como executar tarefas comuns com pastas de trabalho usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos aos `Workbook` quais o objeto oferece suporte, consulte [objeto Workbook (API JavaScript para Excel)](/javascript/api/excel/excel.workbook). Este artigo aborda também ações em nível de pasta de trabalho executadas através do objeto [Application](/javascript/api/excel/excel.application).
+Este artigo fornece exemplos de código que mostram como executar tarefas comuns com pastas de trabalho usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos aos quais o `Workbook` objeto oferece suporte, consulte [objeto WORKBOOK (API JavaScript para Excel)](/javascript/api/excel/excel.workbook). Este artigo aborda também ações em nível de pasta de trabalho executadas através do objeto [Application](/javascript/api/excel/excel.application).
 
 O objeto Workbook é o ponto de entrada para que se suplemento interaja com o Excel. Ele mantém conjuntos de planilhas, tabelas, Tabelas Dinâmicas e muito mais, através dos quais os dados do Excel são acessados e alterados. O objeto [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) dá a seu suplemento acesso a todos os dados de pastas de trabalho através de planilhas individuais. Especificamente, ele permite seu suplemento adicione planilhas, navegue entre elas e atribua manipuladores a eventos de planilhas. O artigo [Trabalhar com planilhas usando a API JavaScript do Excel](excel-add-ins-worksheets.md) descreve como acessar e editar planilhas.
 
@@ -192,7 +192,7 @@ Uma pasta de trabalho tem configurações de idioma e cultura que afetam o modo 
 
 `Application.cultureInfo`define as configurações de cultura do sistema como um objeto [CultureInfo](/javascript/api/excel/excel.cultureinfo) . Contém configurações como o separador decimal numérico ou o formato de data.
 
-Algumas configurações de cultura podem ser [alteradas por meio da interface do usuário do Excel](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e). As configurações do sistema são preservadas `CultureInfo` no objeto. As alterações locais são mantidas como propriedades no nível do [aplicativo](/javascript/api/excel/excel.application), `Application.decimalSeparator`como.
+Algumas configurações de cultura podem ser [alteradas por meio da interface do usuário do Excel](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e). As configurações do sistema são preservadas no `CultureInfo` objeto. As alterações locais são mantidas como propriedades no nível do [aplicativo](/javascript/api/excel/excel.application), como `Application.decimalSeparator` .
 
 O exemplo a seguir altera o caractere separador decimal de uma cadeia de caracteres numérica de um ', ' para o caractere usado pelas configurações do sistema.
 

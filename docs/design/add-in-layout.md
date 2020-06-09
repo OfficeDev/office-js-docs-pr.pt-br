@@ -3,12 +3,12 @@ title: Diretrizes de layout para Suplementos do Office
 description: Obter diretrizes sobre como fazer o layout de um painel de tarefas ou de uma caixa de diálogo em um suplemento do Office.
 ms.date: 06/27/2018
 localization_priority: Normal
-ms.openlocfilehash: 38c98aeed1ddd1af5fcda95aa6d44ff1f1f2e53b
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: c88d2e9d978a22688eb10b57607750286209e5d5
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718502"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44607663"
 ---
 # <a name="layout"></a>Layout
 Cada contêiner HTML inserido no Office terá um layout. Esses layouts são das telas principais do suplemento. Nelas, você criará experiências que permitem que os clientes iniciem ações, modifiquem configurações, exibam, rolem ou naveguem pelo conteúdo. Projeta o suplemento com layouts consistentes nas telas para garantir a continuidade da experiência. Se você tiver um site existente com o qual ps clientes estão familiarizados, considere a reutilização de layouts de páginas da Web existentes. Adapte-as para se ajustar de forma harmoniosa em contêineres HTML do Office.

@@ -3,12 +3,12 @@ ms.date: 04/29/2020
 description: Saiba como usar parâmetros diferentes em suas funções personalizadas, como intervalos do Excel, parâmetros opcionais, contexto de invocação e muito mais.
 title: Opções para funções personalizadas do Excel
 localization_priority: Normal
-ms.openlocfilehash: 9f785002b90b7cb242d33a8756690c751f358d37
-ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.openlocfilehash: ee193ed68ef59bfd9068bc43cd30721d6bb7b86a
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44275998"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609272"
 ---
 # <a name="custom-functions-parameter-options"></a>Opções de parâmetros de funções personalizadas
 

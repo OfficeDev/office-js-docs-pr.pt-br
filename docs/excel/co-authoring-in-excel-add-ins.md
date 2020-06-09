@@ -3,12 +3,12 @@ title: Coautoria em suplementos do Excel
 description: Saiba como co-autoria de uma pasta de trabalho do Excel armazenada no OneDrive, OneDrive for Business ou SharePoint Online.
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 3802983df28594d39e116a5af8b87a4d6b7a6590
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: b70db9c6a0f1f9582288f1078561277b395d3815
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718759"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609349"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>Coautoria em suplementos do Excel  
 
