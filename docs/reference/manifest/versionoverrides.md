@@ -3,12 +3,12 @@ title: Elemento VersionOverrides no arquivo de manifesto
 description: Documentação de referência do elemento VersionOverrides para arquivos de manifesto de suplementos do Office (XML).
 ms.date: 03/05/2020
 localization_priority: Normal
-ms.openlocfilehash: 055a796d269ffb230293639a7f69b2dde4e36eee
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: cb23a78c336be891cdfa30262713ee3c80b9160f
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717849"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44604493"
 ---
 # <a name="versionoverrides-element"></a>Elemento VersionOverrides
 
@@ -25,14 +25,14 @@ O elemento raiz que contém informações para os comandos de suplemento impleme
 
 A seguir, a lista o valor necessário do valor **xmlns** , dependendo do valor **xsi: Type** do elemento pai `<OfficeApp>` .
 
-- **TaskPaneApp** oferece suporte somente à versão 1,0 do VersionOverrides e o **xmlns** deve `http://schemas.microsoft.com/office/taskpaneappversionoverrides`ser.
-- **ContentApp** oferece suporte somente à versão 1,0 do VersionOverrides e o **xmlns** deve `http://schemas.microsoft.com/office/contentappversionoverrides`ser.
-- O **MailApp** suporta as versões 1,0 e 1,1 do VersionOverrides, portanto, o valor de **xmlns** varia de `<VersionOverrides>` acordo com o valor **xsi: Type** do elemento:
-    - Quando **xsi: Type** é `VersionOverridesV1_0`, o **xmlns** deve `http://schemas.microsoft.com/office/mailappversionoverrides`ser.
-    - Quando **xsi: Type** é `VersionOverridesV1_1`, o **xmlns** deve `http://schemas.microsoft.com/office/mailappversionoverrides/1.1`ser.
+- **TaskPaneApp** oferece suporte somente à versão 1,0 do VersionOverrides e o **xmlns** deve ser `http://schemas.microsoft.com/office/taskpaneappversionoverrides` .
+- **ContentApp** oferece suporte somente à versão 1,0 do VersionOverrides e o **xmlns** deve ser `http://schemas.microsoft.com/office/contentappversionoverrides` .
+- O **MailApp** suporta as versões 1,0 e 1,1 do VersionOverrides, portanto, o valor de **xmlns** varia de acordo com o `<VersionOverrides>` valor **xsi: Type** do elemento:
+    - Quando **xsi: Type** é `VersionOverridesV1_0` , o **xmlns** deve ser `http://schemas.microsoft.com/office/mailappversionoverrides` .
+    - Quando **xsi: Type** é `VersionOverridesV1_1` , o **xmlns** deve ser `http://schemas.microsoft.com/office/mailappversionoverrides/1.1` .
 
 > [!NOTE]
-> Atualmente, somente o Outlook 2016 ou posterior oferece suporte ao esquema do VersionOverrides `VersionOverridesV1_1` v 1.1 e ao tipo.
+> Atualmente, somente o Outlook 2016 ou posterior oferece suporte ao esquema do VersionOverrides v 1.1 e ao `VersionOverridesV1_1` tipo.
 
 ## <a name="child-elements"></a>Elementos filho
 
@@ -49,7 +49,7 @@ A seguir, a lista o valor necessário do valor **xmlns** , dependendo do valor *
 
 ### <a name="versionoverrides-example"></a>Exemplo de VersionOverrides
 
-Veja a seguir um exemplo de um elemento `<VersionOverrides>` típico, incluindo alguns elementos filhos que não são necessários, mas que são normalmente usados.
+Veja a seguir um exemplo de um `<VersionOverrides>` elemento típico, incluindo alguns elementos filhos que não são necessários, mas que são normalmente usados.
 
 ```xml
 <OfficeApp ... xsi:type="MailApp">

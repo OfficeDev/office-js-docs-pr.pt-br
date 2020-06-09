@@ -3,12 +3,12 @@ title: Implementar um painel de tarefas fixável em um suplemento do Outlook
 description: A forma do painel de tarefas da experiência de usuário dos comandos do suplemento abre um painel de tarefas vertical à direita de uma solicitação de reunião ou de uma mensagem aberta, permitindo ao suplemento fornecer à interface do usuário interações mais detalhadas.
 ms.date: 02/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 892cee7b5ff89e210c68308f03710ee92b6f0f72
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: ea9dc255bfb3b689a05d880007282da011edef3e
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890988"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44605315"
 ---
 # <a name="implement-a-pinnable-task-pane-in-outlook"></a>Implementar um painel de tarefas fixável no Outlook
 

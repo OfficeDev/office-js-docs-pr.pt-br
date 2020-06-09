@@ -30,7 +30,7 @@ Use o GitHub para contribuir para esta documentação sem precisar clonar o repo
 2. Quando estiver no artigo no GitHub, entre no GitHub (obtenha uma conta gratuita do [GitHub](https://github.com/join)).
 3. Escolha o **ícone de lápis** (edite o arquivo na bifurcação deste projeto) e faça as alterações na janela **<>Editar arquivo** . 
 4. Role até a parte inferior e insira uma descrição.
-5. Escolha **propor alteração**>de arquivo**criar solicitação pull**.
+5. Escolha **propor alteração de arquivo** > **criar solicitação pull**.
 
 Agora você enviou com êxito uma solicitação pull. Solicitações pull geralmente são analisadas dentro de 10 dias úteis. 
 
@@ -68,7 +68,7 @@ Solicitações pull geralmente são analisadas dentro de 10 dias úteis.
 
 1.  Configure uma conta GitHub para que você pode contribuir para esse projeto. Se você ainda não fez isso, vá para o [GitHub](https://github.com/join) e faça isso agora.
 2.  Instale o Git em seu computador. Siga as etapas no tutorial de [configuração do git] .
-3.  Crie sua própria bifurcação para este repositório. Para fazer isso, na parte superior da página, escolha o botão **** de bifurcação.
+3.  Crie sua própria bifurcação para este repositório. Para fazer isso, na parte superior da página, escolha o botão de **bifurcação** .
 4.  Copie sua bifurcação para seu computador. Para fazer isso, abra o Git bash. No prompt de comando, digite:
 
         git clone https://github.com/<your user name>/<repo name>.git
@@ -101,13 +101,13 @@ Para tornar o processo de contribuição o mais simples possível, siga estas et
 #### <a name="to-create-a-new-branch"></a>Para criar uma nova ramificação
 
 1.  Abra o Git bash.
-2.  No prompt de comando do git bash, `git pull upstream master:<new branch name>`digite. Isso cria uma nova ramificação localmente que é copiada da ramificação mestra OfficeDev mais recente.
-3.  No prompt de comando do git bash, `git push origin <new branch name>`digite. Isso alerta o GitHub para a nova ramificação. Agora você deverá surgir a nova ramificação na sua bifurcação do repositório no GitHub.
-4.  No prompt de comando do git bash, `git checkout <new branch name>` digite para mudar para a nova ramificação.
+2.  No prompt de comando do git bash, digite `git pull upstream master:<new branch name>` . Isso cria uma nova ramificação localmente que é copiada da ramificação mestra OfficeDev mais recente.
+3.  No prompt de comando do git bash, digite `git push origin <new branch name>` . Isso alerta o GitHub para a nova ramificação. Agora você deverá surgir a nova ramificação na sua bifurcação do repositório no GitHub.
+4.  No prompt de comando do git bash, digite `git checkout <new branch name>` para mudar para a nova ramificação.
 
 #### <a name="add-new-content-or-edit-existing-content"></a>Adicionar novo conteúdo ou editar o conteúdo existente
 
-Navegue até o repositório no computador usando o explorador de arquivos. Os arquivos do repositório estão `C:\Users\<yourusername>\<repo name>`em.
+Navegue até o repositório no computador usando o explorador de arquivos. Os arquivos do repositório estão em `C:\Users\<yourusername>\<repo name>` .
 
 Para editar arquivos, abra-os em um editor de sua escolha e modifique-os. Para criar um novo arquivo, use o editor de sua escolha e salve o novo arquivo no local apropriado na sua cópia local do repositório. Enquanto estiver trabalhando, salve seu trabalho com frequência.
 
@@ -128,15 +128,15 @@ Quando você tiver concluído o trabalho e estiver pronto para mesclá-lo no rep
 
 #### <a name="to-submit-a-pull-request-to-the-main-repository"></a>Para enviar uma solicitação pull para o repositório principal
 
-1.  No prompt de comando do git bash, `git push origin <new branch name>`digite. Em seu repositório local, `origin` refere-se ao repositório do GitHub a partir do qual você clonou o repositório local. Esse comando coloca o estado atual do sua nova ramificação, incluindo todas as confirmações feitas nas etapas anteriores, na ramificação do GitHub.
+1.  No prompt de comando do git bash, digite `git push origin <new branch name>` . Em seu repositório local, `origin` refere-se ao repositório do GitHub a partir do qual você clonou o repositório local. Esse comando coloca o estado atual do sua nova ramificação, incluindo todas as confirmações feitas nas etapas anteriores, na ramificação do GitHub.
 2.  No site do GitHub, navegue em sua bifurcação para a nova ramificação.
 3.  Escolha o botão de **solicitação pull** na parte superior da página.
-4.  Verifique se o Branch base `OfficeDev/<repo name>@master` é e a ramificação `<your username>/<repo name>@<branch name>`principal é.
+4.  Verifique se o Branch base é `OfficeDev/<repo name>@master` e a ramificação principal é `<your username>/<repo name>@<branch name>` .
 5.  Escolha o botão **Atualizar intervalo de confirmação** .
 6.  Adicione um título à sua solicitação pull e descreva todas as alterações que você está fazendo.
 7.  Envie a solicitação pull.
 
-Um dos administradores do site processará sua solicitação pull. Sua solicitação pull será a área de OfficeDev/<repo name> site em problemas. Quando a solicitação pull for aceita, o problema será resolvido.
+Um dos administradores do site processará sua solicitação pull. Sua solicitação pull será a área de OfficeDev/ <repo name> site em problemas. Quando a solicitação pull for aceita, o problema será resolvido.
 
 #### <a name="create-a-new-branch-after-merge"></a>Criar uma nova ramificação após a mesclagem
 
@@ -160,8 +160,8 @@ Depois que as alterações forem mescladas com êxito no repositório principal,
 
 #### <a name="to-delete-a-branch"></a>Para excluir uma ramificação
 
-1.  No prompt de comando do git bash, `git checkout master`digite. Isso garante que você não fique na ramificação a ser excluída (o que não é permitido).
-2.  Em seguida, no prompt de comando, `git branch -d <branch name>`digite. Isso excluirá a ramificação em seu computador somente se ela tiver sido mesclada com êxito no repositório upstream. (Você pode substituir esse comportamento com o sinalizador `–D`, mas primeiro certifique-se de que deseja fazer isso).
+1.  No prompt de comando do git bash, digite `git checkout master` . Isso garante que você não fique na ramificação a ser excluída (o que não é permitido).
+2.  Em seguida, no prompt de comando, digite `git branch -d <branch name>` . Isso excluirá a ramificação em seu computador somente se ela tiver sido mesclada com êxito no repositório upstream. (Você pode substituir esse comportamento com o sinalizador `–D`, mas primeiro certifique-se de que deseja fazer isso).
 3.  Por fim, digite `git push origin :<branch name>` no comando prompt (um espaço antes dos dois pontos e nenhum espaço depois deles).   Essa ação excluirá a ramificação em uma bifurcação do github.  
 
 Parabéns, você contribuiu com êxito para o projeto!

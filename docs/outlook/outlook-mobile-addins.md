@@ -3,12 +3,12 @@ title: Suplementos do Outlook para o Outlook Mobile
 description: Os suplementos do Outlook Mobile têm suporte em todas as contas do Office 365 Comercial, Outlook.com e, em breve, haverá suporte para contas do Gmail.
 ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 6cc91bd021640988b2f216dda258b185748b2e40
-ms.sourcegitcommit: 77617f6ad06e07f5ff8078b26301748f73e2ee01
+ms.openlocfilehash: 9a7345840d5a26b27f824470efd58d846d0aab11
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "44413207"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44606438"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Suplementos do Outlook Mobile
 

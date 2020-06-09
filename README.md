@@ -1,4 +1,4 @@
-# <a name="office-add-ins-documentation"></a>Documentação de suplementos do Office
+# <a name="office-add-ins-documentation"></a>Documentação de Suplementos do Office
 
 Bem-vindo ao repositório de documentação dos suplementos do Office. Neste repositório, você pode encontrar os arquivos de origem da documentação dos conceitos da API JavaScript do Office, inícios rápidos, tutoriais e guias de instruções. Para obter a melhor experiência, recomendamos que você veja esse conteúdo no [docs.Microsoft.com](https://docs.microsoft.com/office/dev/add-ins).
 
@@ -23,9 +23,9 @@ Recomendamos que você faça a bifurcação, a correção e uma solicitação de
 
 Se seu problema não estiver relacionado à documentação de suplementos do Office, poste-o em um dos seguintes canais:
 
- - Para fazer uma pergunta sobre como usar a API do Office. js, poste sua pergunta para emPilhar o estouro e marcá-la com a marcahttp://stackoverflow.com/questions/tagged/office-js)"Office-js" (.
- - Para relatar um problema com a API ou a plataforma do Office. js, crie o problema no repositório OfficeDev/Office-jshttps://github.com/OfficeDev/office-js)(, que os membros da equipe de produto monitoram os problemas relatados pelo cliente.
- - Para enviar uma solicitação de recurso para a API ou a plataforma do Office. js, poste sua ideia em nossa páginahttps://officespdev.uservoice.com/)de voz do usuário (, ou se a solicitação de recurso já existir, adicione seu voto para ela.
+ - Para fazer uma pergunta sobre como usar a API do Office. js, poste sua pergunta para empilhar o estouro e marcá-la com a marca "Office-js" ( http://stackoverflow.com/questions/tagged/office-js) .
+ - Para relatar um problema com a API ou a plataforma do Office. js, crie o problema no repositório OfficeDev/Office-js ( https://github.com/OfficeDev/office-js) , que os membros da equipe de produto monitoram os problemas relatados pelo cliente.
+ - Para enviar uma solicitação de recurso para a API ou a plataforma do Office. js, poste sua ideia em nossa página de voz do usuário ( https://officespdev.uservoice.com/) , ou se a solicitação de recurso já existir, adicione seu voto para ela.
 
 ## <a name="copyright"></a>Direitos autorais
 

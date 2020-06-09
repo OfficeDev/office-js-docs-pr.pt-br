@@ -3,12 +3,12 @@ title: Realizar sideload de suplementos do Outlook para teste
 description: Use o sideload para instalar um suplemento do Outlook para teste sem precisar primeiro colocá-lo em um catálogo de suplementos.
 ms.date: 06/24/2019
 localization_priority: Normal
-ms.openlocfilehash: b177e6adbc4ac702b7bd9dcec38f2fe2d2f29cf1
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 3543eeb58f441819edb2c129e6e14206e26de524
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165698"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44605322"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>Realizar sideload de suplementos do Outlook para teste
 
@@ -91,4 +91,4 @@ O processo de sideload de um suplemento do Outlook no Office 365 depende de se v
 
 ## <a name="remove-a-sideloaded-add-in"></a>Remover um suplemento do suplementos foi feito
 
-Para remover um suplemento do suplementos foi feito do Outlook, use as etapas descritas anteriormente neste artigo para localizar o suplemento na seção **suplementos personalizados** da caixa de diálogo que lista seus suplementos instalados. escolha as reticências (`...`) para o suplemento e, em seguida, escolha **remover** para remover o suplemento específico do.
+Para remover um suplemento do suplementos foi feito do Outlook, use as etapas descritas anteriormente neste artigo para localizar o suplemento na seção **suplementos personalizados** da caixa de diálogo que lista seus suplementos instalados. escolha as reticências ( `...` ) para o suplemento e, em seguida, escolha **remover** para remover o suplemento específico do.
