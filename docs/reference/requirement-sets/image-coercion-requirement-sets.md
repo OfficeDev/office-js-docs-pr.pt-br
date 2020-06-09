@@ -4,12 +4,12 @@ description: Suporte para conjuntos de requisitos de coerção de imagens com su
 ms.date: 08/13/2019
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: ccc65f3c38e8ddc4bea88d897e6abda73aa61e64
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: f2baf8115d6a43c6b713e9acfeb5928f8549c583
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717471"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611355"
 ---
 # <a name="image-coercion-requirement-sets"></a>Conjuntos de requisitos de Coerção de Imagens
 
@@ -17,7 +17,7 @@ Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplemento
 
 ## <a name="imagecoercion-11"></a>ImageCoercion 1.1
 
-ImageCoercion 1,1 permite a conversão para uma imagem`Office.CoercionType.Image`() ao gravar dados usando [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) o método. Há suporte para os seguintes hosts:
+ImageCoercion 1,1 permite a conversão para uma imagem ( `Office.CoercionType.Image` ) ao gravar dados usando o [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) método. Há suporte para os seguintes hosts:
 
 - Excel 2013 e posterior no Windows
 - Excel 2016 e posterior no Mac
@@ -34,7 +34,7 @@ ImageCoercion 1,1 permite a conversão para uma imagem`Office.CoercionType.Image
 
 ## <a name="imagecoercion-12"></a>ImageCoercion 1.2
 
-ImageCoercion 1,2 permite conversão para o formato SVG`Office.CoercionType.XmlSvg`() ao gravar dados usando [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) o método. Há suporte para os seguintes hosts:
+ImageCoercion 1,2 permite conversão para o formato SVG ( `Office.CoercionType.XmlSvg` ) ao gravar dados usando o [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) método. Há suporte para os seguintes hosts:
 
 - Excel no Windows (conectado a uma assinatura do Office 365)
 - Excel no Mac (conectado a uma assinatura do Office 365)

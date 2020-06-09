@@ -3,12 +3,12 @@ title: Elemento DefaultSettings no arquivo de manifesto
 description: Especifica a localização de origem padrão e outras configurações padrão para o suplemento de conteúdo ou de painel de tarefas.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: b97f692a1fd39e4b1f55080f6ed77e623be0000c
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: ace4f971d342f98d0aca5c21a7a48ceaf2563a2f
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718367"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611579"
 ---
 # <a name="defaultsettings-element"></a>Elemento DefaultSettings
 

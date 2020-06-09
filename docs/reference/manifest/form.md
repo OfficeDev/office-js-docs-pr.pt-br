@@ -3,19 +3,19 @@ title: Elemento Form no arquivo de manifesto
 description: Configurações UX para os formulários que seu suplemento de email usará durante a execução em um determinado dispositivo (área de trabalho, tablet ou telefone).
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 3e8d60c13a72a50090075d7cd16a0719498c4982
-ms.sourcegitcommit: c6e3bfd3deb77982d0b7082afd6a48678e96e1c3
+ms.openlocfilehash: c9cd1d9104fc51edc84149ef677c4308dfb1a9f5
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "43215065"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611852"
 ---
 # <a name="form-element"></a>Elemento Form
 
 Configurações UX para os formulários que seu suplemento de email usará durante a execução em um determinado dispositivo (área de trabalho, tablet ou telefone).
 
 > [!IMPORTANT]
-> Os `DesktopSettings`elementos `TabletSettings`, e `PhoneSettings` estão disponíveis somente no Outlook clássico na Web (geralmente conectados a versões mais antigas do Exchange Server local) e no Outlook 2013 no Windows.
+> Os `DesktopSettings` `TabletSettings` elementos, e `PhoneSettings` estão disponíveis somente no Outlook clássico na Web (geralmente conectados a versões mais antigas do Exchange Server local) e no Outlook 2013 no Windows.
 
 **Tipo de suplemento:** Email
 

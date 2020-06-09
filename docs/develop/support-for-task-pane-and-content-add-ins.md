@@ -3,12 +3,12 @@ title: Suporte da API JavaScript para Office para suplementos de conteúdo e de 
 description: Use a API JavaScript do Office para criar um painel de tarefas no Office 2013.
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 185397073a9d62a868b5ebc065d94c57b778e1e7
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 334db88bbec07755678e3ba35e0d4998951ff5ab
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718794"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609703"
 ---
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>Suporte da API JavaScript para Office para suplementos de conteúdo e de painel de tarefas no Office 2013
 
@@ -20,7 +20,7 @@ Você pode usar a [API JavaScript para Office](../reference/javascript-api-for-o
 
 2. **O objeto Document.** A maior parte da API disponível para os suplementos de conteúdo e de painel de tarefas é exposta por meio dos métodos, propriedades e eventos do objeto [Document](/javascript/api/office/office.document) . Um suplemento de conteúdo ou de painel de tarefas pode usar a propriedade [Office. Context. Document](/javascript/api/office/office.context#document) para acessar o objeto **Document** e por meio dele, pode acessar os principais membros da API para trabalhar com dados em documentos, como [associações](/javascript/api/office/office.bindings) e objetos [CustomXmlParts](/javascript/api/office/office.customxmlparts) , e os métodos [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-), [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-)e [getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-) . O `Document` objeto também fornece a propriedade [Mode](/javascript/api/office/office.document#mode) para determinar se um documento é somente leitura ou no modo de edição, a propriedade [URL](/javascript/api/office/office.document#url) para obter a URL do documento atual e o acesso ao objeto [Settings](/javascript/api/office/office.settings) . O `Document` objeto também oferece suporte à adição de manipuladores de eventos para o evento [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) , para que você possa detectar quando um usuário altera sua seleção no documento.
 
-   Um suplemento de conteúdo ou de painel de tarefas pode acessar `Document` o objeto somente depois que o dom e o ambiente de tempo de execução foram carregados, normalmente no manipulador de eventos do evento [Office. Initialize](/javascript/api/office) . Para saber mais sobre o fluxo de eventos quando um suplemento é inicializado e como verificar se o DOM e o tempo de execução foram carregados com êxito, confira [Carregar o DOM e o ambiente de tempo de execução](loading-the-dom-and-runtime-environment.md).
+   Um suplemento de conteúdo ou de painel de tarefas pode acessar o `Document` objeto somente depois que o dom e o ambiente de tempo de execução foram carregados, normalmente no manipulador de eventos do evento [Office. Initialize](/javascript/api/office) . Para saber mais sobre o fluxo de eventos quando um suplemento é inicializado e como verificar se o DOM e o tempo de execução foram carregados com êxito, confira [Carregar o DOM e o ambiente de tempo de execução](loading-the-dom-and-runtime-environment.md).
 
 3. **Objetos para trabalhar com recursos específicos.** Para trabalhar com recursos específicos da API, use as seguintes objetos e métodos:
 
@@ -67,7 +67,7 @@ Para saber mais e obter exemplos, consulte [Ler e gravar dados na seleção ativ
 
 ## <a name="binding-to-a-region-in-a-document-or-spreadsheet"></a>Associar a uma região em um documento ou planilha
 
-Você pode usar os `getSelectedDataAsync` métodos `setSelectedDataAsync` e para ler ou gravar na seleção *atual* do usuário em um documento, planilha ou apresentação. No entanto, para acessar a mesma região em um documento entre sessões de execução do suplemento sem exigir que o usuário faça uma seleção, primeiro você deve se associar a essa região. Você também pode se inscrever para eventos de dados e alteração de seleção para a região associada.
+Você pode usar os `getSelectedDataAsync` `setSelectedDataAsync` métodos e para ler ou gravar na seleção *atual* do usuário em um documento, planilha ou apresentação. No entanto, para acessar a mesma região em um documento entre sessões de execução do suplemento sem exigir que o usuário faça uma seleção, primeiro você deve se associar a essa região. Você também pode se inscrever para eventos de dados e alteração de seleção para a região associada.
 
 Você pode adicionar uma associação usando os métodos [addFromNamedItemAsync](/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-), [addFromPromptAsync](/javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-) ou [addFromSelectionAsync](/javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-) para o objeto [Bindings](/javascript/api/office/office.bindings). Esses métodos retornam um identificador que você pode usar para acessar dados na associação ou para assinar seus eventos de alteração de dados ou alteração de seleção.
 
@@ -99,7 +99,7 @@ Para saber mais e obter exemplos, consulte [Associar a regiões em um documento 
 
 Se o suplemento de painel de tarefas for executado no PowerPoint ou no Word, você poderá usar os métodos [Document.getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-), [File.getSliceAsync](/javascript/api/office/office.file#getsliceasync-sliceindex--callback-) e [File.closeAsync](/javascript/api/office/office.file#closeasync-callback-) para obter um documento ou apresentação inteira.
 
-Ao chamar `Document.getFileAsync` você obtém uma cópia do documento em um objeto [File](/javascript/api/office/office.file) . O `File` objeto fornece acesso ao documento em "partes" representadas como objetos de [fatia](/javascript/api/office/office.slice) . Ao chamar `getFileAsync`, você pode especificar o tipo de arquivo (texto ou o formato XML do Open Office compactado) e o tamanho das fatias (até 4 MB). Para acessar o conteúdo do `File` objeto, você chama `File.getSliceAsync` o que retorna os dados brutos na propriedade [Slice. Data](/javascript/api/office/office.slice#data) . Se tiver especificado o formato compactado, você obterá os dados do arquivo como uma matriz de bytes. Se estiver transmitindo o arquivo para um serviço Web, você poderá transformar os dados brutos compactados em uma cadeia de caracteres codificada na base 64 antes do envio. Por fim, quando terminar de obter as fatias do arquivo, use `File.closeAsync` o método para fechar o documento.
+Ao chamar `Document.getFileAsync` você obtém uma cópia do documento em um objeto [File](/javascript/api/office/office.file) . O `File` objeto fornece acesso ao documento em "partes" representadas como objetos de [fatia](/javascript/api/office/office.slice) . Ao chamar `getFileAsync` , você pode especificar o tipo de arquivo (texto ou o formato XML do Open Office compactado) e o tamanho das fatias (até 4 MB). Para acessar o conteúdo do `File` objeto, você chama `File.getSliceAsync` o que retorna os dados brutos na propriedade [Slice. Data](/javascript/api/office/office.slice#data) . Se tiver especificado o formato compactado, você obterá os dados do arquivo como uma matriz de bytes. Se estiver transmitindo o arquivo para um serviço Web, você poderá transformar os dados brutos compactados em uma cadeia de caracteres codificada na base 64 antes do envio. Por fim, quando terminar de obter as fatias do arquivo, use o `File.closeAsync` método para fechar o documento.
 
 Para saber mais, veja como [obter todo o documento por meio de um suplemento para PowerPoint ou Word](../word/get-the-whole-document-from-an-add-in-for-word.md).
 
@@ -120,9 +120,9 @@ Para saber mais sobre como trabalhar com partes XML personalizadas em um supleme
 ## <a name="persisting-add-in-settings"></a>Persistir configurações de suplemento
 
 
-Muitas vezes, você precisa salvar dados personalizados no suplemento, como preferências do usuário ou o estado do suplemento, e acessar esses dados na próxima vez que o suplemento for aberto. Você pode usar técnicas de programação comuns para salvar os dados, como cookies do navegador ou armazenamento na Web em HTML 5. Como alternativa, se o suplemento for executado no Excel, no PowerPoint ou no Word, você poderá usar os métodos do objeto [Settings](/javascript/api/office/office.settings). Os dados criados com `Settings` o objeto são armazenados na planilha, apresentação ou documento no qual o suplemento foi inserido e salvo. Esses dados estão disponíveis apenas para o suplemento que os criou.
+Muitas vezes, você precisa salvar dados personalizados no suplemento, como preferências do usuário ou o estado do suplemento, e acessar esses dados na próxima vez que o suplemento for aberto. Você pode usar técnicas de programação comuns para salvar os dados, como cookies do navegador ou armazenamento na Web em HTML 5. Como alternativa, se o suplemento for executado no Excel, no PowerPoint ou no Word, você poderá usar os métodos do objeto [Settings](/javascript/api/office/office.settings). Os dados criados com o `Settings` objeto são armazenados na planilha, apresentação ou documento no qual o suplemento foi inserido e salvo. Esses dados estão disponíveis apenas para o suplemento que os criou.
 
-Para evitar viagens de ida e volta ao servidor onde o documento está armazenado, os `Settings` dados criados com o objeto são gerenciados na memória em tempo de execução. Dados de configurações salvos anteriormente são carregados na memória quando o suplemento é inicializado, e alterações nesses dados só são salvas de volta para o documento quando você chama o método [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-). Internamente, os dados são armazenados em um objeto JSON serializado como pares de nome/valor. Você usa os métodos [get](/javascript/api/office/office.settings#get-name-), [set](/javascript/api/office/office.settings#set-name--value-) e [remove](/javascript/api/office/office.settings#remove-name-) para o objeto **Settings**, para ler, gravar e excluir itens da cópia dos dados na memória. A linha de código a seguir mostra como criar uma configuração denominada `themeColor` e definir seu valor como 'verde'.
+Para evitar viagens de ida e volta ao servidor onde o documento está armazenado, os dados criados com o `Settings` objeto são gerenciados na memória em tempo de execução. Dados de configurações salvos anteriormente são carregados na memória quando o suplemento é inicializado, e alterações nesses dados só são salvas de volta para o documento quando você chama o método [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-). Internamente, os dados são armazenados em um objeto JSON serializado como pares de nome/valor. Você usa os métodos [get](/javascript/api/office/office.settings#get-name-), [set](/javascript/api/office/office.settings#set-name--value-) e [remove](/javascript/api/office/office.settings#remove-name-) para o objeto **Settings**, para ler, gravar e excluir itens da cópia dos dados na memória. A linha de código a seguir mostra como criar uma configuração denominada `themeColor` e definir seu valor como 'verde'.
 
 
 
@@ -131,9 +131,9 @@ Para evitar viagens de ida e volta ao servidor onde o documento está armazenado
 Office.context.document.settings.set('themeColor', 'green');
 ```
 
-Como os dados de configurações criados ou excluídos `set` com `remove` os métodos e estão agindo em uma cópia na memória dos dados, você deve chamar `saveAsync` para manter as alterações nos dados de configurações no documento com o qual o suplemento está trabalhando.
+Como os dados de configurações criados ou excluídos com os `set` `remove` métodos e estão agindo em uma cópia na memória dos dados, você deve chamar `saveAsync` para manter as alterações nos dados de configurações no documento com o qual o suplemento está trabalhando.
 
-Para obter mais detalhes sobre como trabalhar com dados personalizados usando os métodos `Settings` do objeto, consulte [persistendo o estado e as configurações do suplemento](persisting-add-in-state-and-settings.md).
+Para obter mais detalhes sobre como trabalhar com dados personalizados usando os métodos do `Settings` objeto, consulte [persistendo o estado e as configurações do suplemento](persisting-add-in-state-and-settings.md).
 
 
 ## <a name="reading-properties-of-a-project-document"></a>Ler propriedades de um documento do Project
@@ -163,7 +163,7 @@ Seu suplemento usa o `Permissions` elemento em seu manifesto para solicitar perm
 Para obter mais informações, consulte [solicitar permissões para uso da API em suplementos](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md).
 
 
-## <a name="see-also"></a>Também confira
+## <a name="see-also"></a>Confira também
 
 - [API JavaScript para Office](../reference/javascript-api-for-office.md)
 - [Referência de esquema para os manifestos dos Suplementos do Office](../develop/add-in-manifests.md)

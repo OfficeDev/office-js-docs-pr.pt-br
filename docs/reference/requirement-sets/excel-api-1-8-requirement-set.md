@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos ExcelApi 1,8
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 4a512b10dd23b2165d72226d9df27d5f9454c24e
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: e5d40df0ec9e6b5fb307f834c239c7fa895af42e
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42597002"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611397"
 ---
 # <a name="whats-new-in-excel-javascript-api-18"></a>O que há de novo na API JavaScript do Excel 1,8
 
@@ -68,7 +68,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[textOrientation](/javascript/api/excel/excel.chartaxis#textorientation)|Representa a orientação do texto do rótulo de seleção do eixo. O valor deve ser um número inteiro de -90 a 90 ou 180 para texto orientado verticalmente.|
 |[ChartAxisFormat](/javascript/api/excel/excel.chartaxisformat)|[fill](/javascript/api/excel/excel.chartaxisformat#fill)|Representa a formatação de preenchimento de gráfico. Somente leitura.|
 |[ChartAxisTitle](/javascript/api/excel/excel.chartaxistitle)|[setformula (fórmula: cadeia de caracteres)](/javascript/api/excel/excel.chartaxistitle#setformula-formula-)|Um valor de cadeia de caracteres que representa a fórmula do título do eixo do gráfico usando a notação no estilo A1.|
-|[ChartAxisTitleFormat](/javascript/api/excel/excel.chartaxistitleformat)|[borda](/javascript/api/excel/excel.chartaxistitleformat#border)|Representa o formato de borda, que inclui a espessura de cor e estilo de linha.|
+|[ChartAxisTitleFormat](/javascript/api/excel/excel.chartaxistitleformat)|[Borderô](/javascript/api/excel/excel.chartaxistitleformat#border)|Representa o formato de borda, que inclui a espessura de cor e estilo de linha.|
 ||[fill](/javascript/api/excel/excel.chartaxistitleformat#fill)|Representa a formatação de preenchimento de gráfico.|
 |[ChartBorder](/javascript/api/excel/excel.chartborder)|[clear()](/javascript/api/excel/excel.chartborder#clear--)|Limpa a formatação da borda de um elemento do gráfico.|
 |[ChartCollection](/javascript/api/excel/excel.chartcollection)|[onActivated](/javascript/api/excel/excel.chartcollection#onactivated)|Ocorre quando um gráfico é ativado.|
@@ -87,7 +87,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[textOrientation](/javascript/api/excel/excel.chartdatalabel#textorientation)|Representa a orientação de texto de rótulo de dados do gráfico. O valor deve ser um número inteiro de -90 a 90 ou 180 para texto orientado verticalmente.|
 ||[top](/javascript/api/excel/excel.chartdatalabel#top)|Representa a distância, em pontos, da borda superior do rótulo de dados do gráfico até a borda superior da área do gráfico. Nulo se o rótulo de dados do gráfico não estiver visível.|
 ||[verticalAlignment](/javascript/api/excel/excel.chartdatalabel#verticalalignment)|Representa o alinhamento vertical do rótulo de dados do gráfico. Consulte Excel. ChartTextVerticalAlignment para obter detalhes.|
-|[ChartDataLabelFormat](/javascript/api/excel/excel.chartdatalabelformat)|[borda](/javascript/api/excel/excel.chartdatalabelformat#border)|Representa o formato de borda, que inclui a espessura de cor e estilo de linha. Somente leitura.|
+|[ChartDataLabelFormat](/javascript/api/excel/excel.chartdatalabelformat)|[Borderô](/javascript/api/excel/excel.chartdatalabelformat#border)|Representa o formato de borda, que inclui a espessura de cor e estilo de linha. Somente leitura.|
 |[ChartDataLabels](/javascript/api/excel/excel.chartdatalabels)|[AutoTexto](/javascript/api/excel/excel.chartdatalabels#autotext)|Indica se os rótulos de dados geram automaticamente texto apropriado com base no contexto.|
 ||[horizontalAlignment](/javascript/api/excel/excel.chartdatalabels#horizontalalignment)|Representa o alinhamento horizontal de rótulo de dados do gráfico. Consulte Excel. ChartTextHorizontalAlignment para obter detalhes.|
 ||[numberFormat](/javascript/api/excel/excel.chartdatalabels#numberformat)|Representa o código de formatação para rótulos de dados.|
@@ -105,7 +105,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[left](/javascript/api/excel/excel.chartlegendentry#left)|Representa a esquerda de um gráfico legendEntry.|
 ||[top](/javascript/api/excel/excel.chartlegendentry#top)|Representa a parte superior de um gráfico legendEntry.|
 ||[width](/javascript/api/excel/excel.chartlegendentry#width)|Representa a largura de legendEntry na legenda do gráfico.|
-|[ChartLegendFormat](/javascript/api/excel/excel.chartlegendformat)|[borda](/javascript/api/excel/excel.chartlegendformat#border)|Representa o formato de borda, que inclui a espessura de cor e estilo de linha. Somente leitura.|
+|[ChartLegendFormat](/javascript/api/excel/excel.chartlegendformat)|[Borderô](/javascript/api/excel/excel.chartlegendformat#border)|Representa o formato de borda, que inclui a espessura de cor e estilo de linha. Somente leitura.|
 |[ChartPlotArea](/javascript/api/excel/excel.chartplotarea)|[height](/javascript/api/excel/excel.chartplotarea#height)|Representa o valor de altura de plotArea.|
 ||[insideHeight](/javascript/api/excel/excel.chartplotarea#insideheight)|Representa o valor insideHeight plotArea.|
 ||[insideLeft](/javascript/api/excel/excel.chartplotarea#insideleft)|Representa o valor insideLeft de plotArea.|
@@ -116,7 +116,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[format](/javascript/api/excel/excel.chartplotarea#format)|Representa a formatação de um gráfico plotArea.|
 ||[top](/javascript/api/excel/excel.chartplotarea#top)|Representa o valor máximo de plotArea.|
 ||[width](/javascript/api/excel/excel.chartplotarea#width)|Representa o valor de largura de plotArea.|
-|[ChartPlotAreaFormat](/javascript/api/excel/excel.chartplotareaformat)|[borda](/javascript/api/excel/excel.chartplotareaformat#border)|Representa os atributos de borda de um gráfico plotArea.|
+|[ChartPlotAreaFormat](/javascript/api/excel/excel.chartplotareaformat)|[Borderô](/javascript/api/excel/excel.chartplotareaformat#border)|Representa os atributos de borda de um gráfico plotArea.|
 ||[fill](/javascript/api/excel/excel.chartplotareaformat#fill)|Representa o formato de preenchimento de um objeto, que inclui informações sobre a formatação da tela de fundo.|
 |[ChartSeries](/javascript/api/excel/excel.chartseries)|[axisGroup](/javascript/api/excel/excel.chartseries#axisgroup)|Retorna ou define o grupo da série especificada. Leitura/gravação|
 ||[crescimento](/javascript/api/excel/excel.chartseries#explosion)|Retorna ou define o valor de explosão para um gráfico de pizza ou fatia de gráfico de rosca. Retorna 0 (zero) se não houver explosão (a ponta da fatia está no centro da pizza). Leitura/gravação.|
@@ -144,7 +144,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[textOrientation](/javascript/api/excel/excel.charttrendlinelabel#textorientation)|Representa a orientação de texto de rótulo de linha de tendência de gráfico. O valor deve ser um número inteiro de -90 a 90 ou 180 para texto orientado verticalmente.|
 ||[top](/javascript/api/excel/excel.charttrendlinelabel#top)|Representa a distância, em pontos, da borda superior do rótulo de linha de tendência do gráfico até a borda superior da área do gráfico. Nulo se o rótulo de linha de tendência do gráfico não estiver visível.|
 ||[verticalAlignment](/javascript/api/excel/excel.charttrendlinelabel#verticalalignment)|Representa o alinhamento vertical do rótulo de linha de tendência de gráfico. Consulte Excel. ChartTextVerticalAlignment para obter detalhes.|
-|[ChartTrendlineLabelFormat](/javascript/api/excel/excel.charttrendlinelabelformat)|[borda](/javascript/api/excel/excel.charttrendlinelabelformat#border)|Representa o formato de borda, que inclui a espessura de cor e estilo de linha.|
+|[ChartTrendlineLabelFormat](/javascript/api/excel/excel.charttrendlinelabelformat)|[Borderô](/javascript/api/excel/excel.charttrendlinelabelformat#border)|Representa o formato de borda, que inclui a espessura de cor e estilo de linha.|
 ||[fill](/javascript/api/excel/excel.charttrendlinelabelformat#fill)|Representa o formato de preenchimento do rótulo de linha de tendência atual do gráfico.|
 ||[font](/javascript/api/excel/excel.charttrendlinelabelformat#font)|Representa os atributos de fonte do rótulo de linha de tendência do gráfico, como nome, tamanho, cor, dentre outros.|
 |[CustomDataValidation](/javascript/api/excel/excel.customdatavalidation)|[formula](/javascript/api/excel/excel.customdatavalidation#formula)|Uma fórmula de validação de dados personalizados. Isso cria regras de entrada especiais, como impedir duplicatas ou limitar o total em um intervalo de células.|
@@ -169,17 +169,17 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[type](/javascript/api/excel/excel.datavalidation#type)|Tipo de validação de dados, confira Excel.DataValidationType para obter detalhes.|
 ||[inválido](/javascript/api/excel/excel.datavalidation#valid)|Representa se todos os valores de célula são válidos de acordo com as regras de validação de dados.|
 ||[norma](/javascript/api/excel/excel.datavalidation#rule)|Regra de validação de dados que contém diferentes tipos de critérios de validação de dados.|
-|[DataValidationErrorAlert](/javascript/api/excel/excel.datavalidationerroralert)|[mensagem](/javascript/api/excel/excel.datavalidationerroralert#message)|Representa a mensagem de alerta de erro.|
+|[DataValidationErrorAlert](/javascript/api/excel/excel.datavalidationerroralert)|[message](/javascript/api/excel/excel.datavalidationerroralert#message)|Representa a mensagem de alerta de erro.|
 ||[Enviar alerta](/javascript/api/excel/excel.datavalidationerroralert#showalert)|Determina se deseja mostrar uma caixa de diálogo de alerta de erro ou não quando um usuário insere dados inválidos. O padrão é verdadeiro.|
 ||[style](/javascript/api/excel/excel.datavalidationerroralert#style)|Representa o tipo de alerta de validação de dados, confira Excel.DataValidationAlertStyle para obter detalhes.|
 ||[title](/javascript/api/excel/excel.datavalidationerroralert#title)|Representa o título da caixa de diálogo de alerta de erro.|
-|[DataValidationPrompt](/javascript/api/excel/excel.datavalidationprompt)|[mensagem](/javascript/api/excel/excel.datavalidationprompt#message)|Representa a mensagem a solicitação.|
+|[DataValidationPrompt](/javascript/api/excel/excel.datavalidationprompt)|[message](/javascript/api/excel/excel.datavalidationprompt#message)|Representa a mensagem a solicitação.|
 ||[Mostrar prompt](/javascript/api/excel/excel.datavalidationprompt#showprompt)|Determina se deseja ou não mostrar o prompt quando o usuário seleciona uma célula com a validação de dados.|
 ||[title](/javascript/api/excel/excel.datavalidationprompt#title)|Representa o título para a solicitação.|
 |[DataValidationRule](/javascript/api/excel/excel.datavalidationrule)|[cliente](/javascript/api/excel/excel.datavalidationrule#custom)|Critérios de validação de dados personalizados.|
 ||[data](/javascript/api/excel/excel.datavalidationrule#date)|Critérios de validação de dados de data.|
 ||[dígitos](/javascript/api/excel/excel.datavalidationrule#decimal)|Critérios de validação de dados decimais.|
-||[lista](/javascript/api/excel/excel.datavalidationrule#list)|Critérios de validação de dados da lista.|
+||[list](/javascript/api/excel/excel.datavalidationrule#list)|Critérios de validação de dados da lista.|
 ||[textLength](/javascript/api/excel/excel.datavalidationrule#textlength)|Critérios de validação de dados TextLength.|
 ||[time](/javascript/api/excel/excel.datavalidationrule#time)|Critérios de validação de dados de tempo.|
 ||[wholeNumber](/javascript/api/excel/excel.datavalidationrule#wholenumber)|Critérios de validação de dados WholeNumber.|
@@ -241,7 +241,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[hierarquias](/javascript/api/excel/excel.pivottable#hierarchies)|Hierarquias pivô da Tabela Dinâmica.|
 ||[teclado](/javascript/api/excel/excel.pivottable#layout)|O PivotLayout descreve o layout e estrutura visual da Tabela Dinâmica.|
 ||[transhierarquias](/javascript/api/excel/excel.pivottable#rowhierarchies)|As hierarquias de pivô de linha da Tabela Dinâmica.|
-|[PivotTableCollection](/javascript/api/excel/excel.pivottablecollection)|[Add (Name: String, Source: tabela \| de \| cadeia de caracteres de intervalo \| , destino: cadeia de caracteres de intervalo)](/javascript/api/excel/excel.pivottablecollection#add-name--source--destination-)|Adiciona um Pivottable com base nos dados de origem especificados e insere-o na célula superior esquerda do intervalo de destino.|
+|[PivotTableCollection](/javascript/api/excel/excel.pivottablecollection)|[Add (Name: String, Source: \| \| tabela de cadeia de caracteres de intervalo, destino: cadeia de caracteres de intervalo \| )](/javascript/api/excel/excel.pivottablecollection#add-name--source--destination-)|Adiciona um Pivottable com base nos dados de origem especificados e insere-o na célula superior esquerda do intervalo de destino.|
 |[Range](/javascript/api/excel/excel.range)|[dataValidation](/javascript/api/excel/excel.range#datavalidation)|Retorna um objeto de validação de dados.|
 |[RowColumnPivotHierarchy](/javascript/api/excel/excel.rowcolumnpivothierarchy)|[name](/javascript/api/excel/excel.rowcolumnpivothierarchy#name)|Nome da RowColumnPivotHierarchy.|
 ||[position](/javascript/api/excel/excel.rowcolumnpivothierarchy#position)|Posição da RowColumnPivotHierarchy.|
@@ -254,7 +254,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.rowcolumnpivothierarchycollection#getitemornullobject-name-)|Obtém um RowColumnPivotHierarchy por nome. Se o RowColumnPivotHierarchy não existir, retornará um objeto nulo.|
 ||[items](/javascript/api/excel/excel.rowcolumnpivothierarchycollection#items)|Obtém os itens filhos carregados nesta coleção.|
 ||[remover (rowColumnPivotHierarchy: Excel. RowColumnPivotHierarchy)](/javascript/api/excel/excel.rowcolumnpivothierarchycollection#remove-rowcolumnpivothierarchy-)|Remove o PivotHierarchy do eixo atual.|
-|[Runtime](/javascript/api/excel/excel.runtime)|[enableEvents](/javascript/api/excel/excel.runtime#enableevents)|Alternar eventos JavaScript no painel de tarefas ou no suplemento de conteúdo atual.|
+|[Tempo de execução](/javascript/api/excel/excel.runtime)|[enableEvents](/javascript/api/excel/excel.runtime#enableevents)|Alternar eventos JavaScript no painel de tarefas ou no suplemento de conteúdo atual.|
 |[ShowAsRule](/javascript/api/excel/excel.showasrule)|[baseField](/javascript/api/excel/excel.showasrule#basefield)|O PivotField base para basear o cálculo ShowAs, se aplicável com base no tipo ShowAsCalculation, caso contrário, null.|
 ||[baseItem](/javascript/api/excel/excel.showasrule#baseitem)|O Item base para basear o cálculo ShowAs, se aplicável com base no tipo ShowAsCalculation, caso contrário, null.|
 ||[cálculo](/javascript/api/excel/excel.showasrule#calculation)|O cálculo de ShowAs a ser usado para o Data PivotField. Consulte Excel. ShowAsCalculation para obter detalhes.|

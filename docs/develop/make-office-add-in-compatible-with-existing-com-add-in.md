@@ -3,12 +3,12 @@ title: Torne o seu suplemento do Office compatível com um suplemento COM existe
 description: Habilitar a compatibilidade entre o suplemento do Office e o suplemento COM equivalente
 ms.date: 07/31/2019
 localization_priority: Normal
-ms.openlocfilehash: cfe39dcecafc23bd0813251f7c883aa7a8810273
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: ff47b75e8e560bc891c84dc839b7eceffb2400be
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718899"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609419"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>Torne o seu suplemento do Office compatível com um suplemento COM existente
 
@@ -26,7 +26,7 @@ Você pode configurar seu suplemento do Office para que, quando o suplemento COM
 
 Para habilitar a compatibilidade entre o suplemento do Office e o suplemento de COM, identifique o suplemento COM equivalente no [manifesto](add-in-manifests.md) do suplemento do Office. O Office no Windows usará o suplemento COM em vez do suplemento do Office, se eles estiverem instalados.
 
-O exemplo a seguir mostra a parte do manifesto que especifica um suplemento de COM como um suplemento equivalente. O valor do `ProgId` elemento identifica o suplemento de com e o `EquivalentAddins` elemento deve ser posicionado imediatamente antes da marca de `VersionOverrides` fechamento.
+O exemplo a seguir mostra a parte do manifesto que especifica um suplemento de COM como um suplemento equivalente. O valor do `ProgId` elemento identifica o suplemento de com e o `EquivalentAddins` elemento deve ser posicionado imediatamente antes da marca de fechamento `VersionOverrides` .
 
 ```xml
 <VersionOverrides>
@@ -85,6 +85,6 @@ Se um usuário desinstalar o suplemento COM equivalente, o Office no Windows res
 
 Depois de especificar um suplemento COM equivalente para o suplemento do Office, o Office interrompe o processamento de atualizações para seu suplemento do Office. Para adquirir as atualizações mais recentes para o suplemento do Office, o usuário deve primeiro desinstalar o suplemento de COM.
 
-## <a name="see-also"></a>Também confira
+## <a name="see-also"></a>Confira também
 
 - [Tornar suas funções personalizadas compatíveis com as funções definidas pelo usuário XLL](../excel/make-custom-functions-compatible-with-xll-udf.md)

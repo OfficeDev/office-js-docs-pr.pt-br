@@ -3,12 +3,12 @@ title: Elemento CitationText no arquivo de manifesto
 description: Especifica o texto clichê de citação deste dicionário.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: d63ba369e7732d8e81e3f735f4b8033143a5be9e
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: f29640f04d940d8ba7fc7f933f6f7884f1667e9e
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720663"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612323"
 ---
 # <a name="citationtext-element"></a>Elemento CitationText
 

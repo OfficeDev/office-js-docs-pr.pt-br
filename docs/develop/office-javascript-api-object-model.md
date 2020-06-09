@@ -3,12 +3,12 @@ title: Modelo de objeto comum de API JavaScript para Office
 description: Saiba mais sobre o modelo de objeto da API comum do Office JavaScript
 ms.date: 04/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 4bfe027b09fc806021212d00c895527bd661f3a6
-ms.sourcegitcommit: 99b41e8b90f2df6dafcc12b3883e83751de9facd
+ms.openlocfilehash: 44c5258ad164c19df53ebe2fcbb00f420018a710
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "43952252"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609731"
 ---
 # <a name="common-javascript-api-object-model"></a>Modelo de objeto comum de API JavaScript para Office
 
@@ -45,9 +45,9 @@ Para interagir com dados do documento no Excel, PowerPoint e Word, a API fornece
 
 Você também pode usar o `Document` objeto para interagir com dados em documentos do projeto. A funcionalidade específica do Project para a API está documentada nos membros da classe abstrata [ProjectDocument](/javascript/api/office/office.document). Para saber mais sobre a criação de suplementos de painel de tarefas, consulte [Suplementos de painel de tarefas para o Project](../project/project-add-ins.md).
 
-Todas essas formas de acesso a dados começam a partir de uma instância `Document` do objeto abstract.
+Todas essas formas de acesso a dados começam a partir de uma instância do `Document` objeto abstract.
 
-Você pode acessar uma instância do `Document` objeto quando o painel de tarefas ou o suplemento de conteúdo é inicializado usando a propriedade [Document](/javascript/api/office/office.context#document) do `Context` objeto. O `Document` objeto define as funções de acesso de dados comuns compartilhadas entre documentos do Word e Excel, `CustomXmlParts` e também fornece acesso ao objeto para documentos do Word.
+Você pode acessar uma instância do `Document` objeto quando o painel de tarefas ou o suplemento de conteúdo é inicializado usando a propriedade [Document](/javascript/api/office/office.context#document) do `Context` objeto. O `Document` objeto define as funções de acesso de dados comuns compartilhadas entre documentos do Word e Excel, e também fornece acesso ao `CustomXmlParts` objeto para documentos do Word.
 
 O `Document` objeto suporta quatro maneiras para os desenvolvedores acessar o conteúdo do documento:
 
@@ -84,11 +84,11 @@ Nos acessos a dados baseados em seleção e em associação, os conteúdos dos d
 
 #### <a name="data-type-coercion"></a>Coerção de tipo de dados
 
-Os métodos de acesso a dados `Document` nos objetos de vinculação e de [Associação](/javascript/api/office/office.binding) oferecem suporte à especificação do tipo de dados desejado usando o parâmetro _coercionType_ desses métodos e valores de enumeração [coercionType](/javascript/api/office/office.coerciontype) correspondentes. Independentemente da forma real da associação, os diferentes aplicativos do Office dão suporte aos tipos de dados comuns ao tentar forçar os dados a usarem o tipo de dados solicitado. Por exemplo, se uma tabela ou um parágrafo do Word for selecionado, o desenvolvedor pode escolher se deseja lê-lo como texto sem formatação, Office Open XML ou tabela, e a implementação da API manipula as conversões de dados e as transformações necessárias.
+Os métodos de acesso a dados nos `Document` objetos de vinculação e de [Associação](/javascript/api/office/office.binding) oferecem suporte à especificação do tipo de dados desejado usando o parâmetro _coercionType_ desses métodos e valores de enumeração [coercionType](/javascript/api/office/office.coerciontype) correspondentes. Independentemente da forma real da associação, os diferentes aplicativos do Office dão suporte aos tipos de dados comuns ao tentar forçar os dados a usarem o tipo de dados solicitado. Por exemplo, se uma tabela ou um parágrafo do Word for selecionado, o desenvolvedor pode escolher se deseja lê-lo como texto sem formatação, Office Open XML ou tabela, e a implementação da API manipula as conversões de dados e as transformações necessárias.
 
 
 > [!TIP]
-> **Quando devo usar a matriz ou a tabela coercionType para o acesso aos dados?** Se você precisar que seus dados de tabulação sejam expandidos dinamicamente quando as linhas e colunas forem adicionadas, e você deve trabalhar com cabeçalhos de tabela, você deve usar o tipo de dados Table `Document` ( `Binding` especificando o parâmetro _coercionType_ de `"table"` um `Office.CoercionType.Table`objeto ou um método de acesso a dados como ou). A adição de linhas e colunas na estrutura de dados tem suporte nos dados de tabela e matriz, mas o acréscimo de linhas e colunas só tem suporte para dados de tabela. Se você não estiver planejando a adição de linhas e colunas e seus dados não exigirem funcionalidade de cabeçalho, você deverá usar o tipo de dados Matrix (especificando o parâmetro _coercionType_ do método de acesso `"matrix"` a `Office.CoercionType.Matrix`dados como ou), que fornece um modelo mais simples de interagir com os dados.
+> **Quando devo usar a matriz ou a tabela coercionType para o acesso aos dados?** Se você precisar que seus dados de tabulação sejam expandidos dinamicamente quando as linhas e colunas forem adicionadas, e você deve trabalhar com cabeçalhos de tabela, você deve usar o tipo de dados Table (especificando o parâmetro _coercionType_ de um `Document` objeto ou um `Binding` método de acesso a dados como `"table"` ou `Office.CoercionType.Table` ). A adição de linhas e colunas na estrutura de dados tem suporte nos dados de tabela e matriz, mas o acréscimo de linhas e colunas só tem suporte para dados de tabela. Se você não estiver planejando a adição de linhas e colunas e seus dados não exigirem funcionalidade de cabeçalho, você deverá usar o tipo de dados Matrix (especificando o parâmetro _coercionType_ do método de acesso a dados como `"matrix"` ou `Office.CoercionType.Matrix` ), que fornece um modelo mais simples de interagir com os dados.
 
 Se os dados não puderem ser forçados para o tipo especificado, a propriedade [AsyncResult.status](/javascript/api/office/office.asyncresult#status) presente nos retornos de chamada retorna `"failed"`, e você pode usar a propriedade [AsyncResult.error](/javascript/api/office/office.asyncresult#error) para acessar um objeto [Error](/javascript/api/office/office.error) com informações sobre o motivo pelo qual a chamada de método falhou.
 
@@ -96,7 +96,7 @@ Se os dados não puderem ser forçados para o tipo especificado, a propriedade [
 ## <a name="working-with-selections-using-the-document-object"></a>Trabalhar com seleções que usam o objeto Document
 
 
-O `Document` objeto expõe métodos que permitem que você leia e grave na seleção atual do usuário em uma maneira "Get e Set". Para fazer isso, o `Document` objeto fornece os `getSelectedDataAsync` métodos `setSelectedDataAsync` e.
+O `Document` objeto expõe métodos que permitem que você leia e grave na seleção atual do usuário em uma maneira "Get e Set". Para fazer isso, o `Document` objeto fornece os `getSelectedDataAsync` `setSelectedDataAsync` métodos e.
 
 Para obter exemplos de códigos que demostram como realizar tarefas com seleções, consulte [Ler e gravar dados na seleção ativa em um documento ou uma planilha](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md).
 
@@ -115,9 +115,9 @@ O acesso a dados baseado em associação habilita os suplementos de conteúdo e 
 
 A criação de uma associação também permite que você se inscreva em eventos de alteração de seleção e de dados que apresentem um escopo definido para essa região específica do documento ou da planilha. Isso significa que o suplemento só é notificado sobre alterações que ocorrem dentro da região associada, e não sobre alterações gerais que ocorrem em todo o documento ou planilha.
 
-O objeto [bindings](/javascript/api/office/office.bindings) expõe um método [getAllAsync](/javascript/api/office/office.bindings#getallasync-options--callback-) que fornece acesso ao conjunto de todas as associações estabelecidas no documento ou na planilha. Uma associação individual pode ser acessada por sua ID usando os métodos [bindings. getBindingByIdAsync](/javascript/api/office/office.bindings#getbyidasync-id--options--callback-) ou [Office. Select](/javascript/api/office) . Você pode estabelecer novas associações, bem como remover as existentes usando um dos seguintes `Bindings` métodos do objeto: [addFromSelectionAsync](/javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-), [addFromPromptAsync](/javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-), [addFromNamedItemAsync](/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-)ou [releaseByIdAsync](/javascript/api/office/office.bindings#releasebyidasync-id--options--callback-).
+O objeto [bindings](/javascript/api/office/office.bindings) expõe um método [getAllAsync](/javascript/api/office/office.bindings#getallasync-options--callback-) que fornece acesso ao conjunto de todas as associações estabelecidas no documento ou na planilha. Uma associação individual pode ser acessada por sua ID usando os métodos [bindings. getBindingByIdAsync](/javascript/api/office/office.bindings#getbyidasync-id--options--callback-) ou [Office. Select](/javascript/api/office) . Você pode estabelecer novas associações, bem como remover as existentes usando um dos seguintes métodos do `Bindings` objeto: [addFromSelectionAsync](/javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-), [AddFromPromptAsync](/javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-), [addFromNamedItemAsync](/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-)ou [releaseByIdAsync](/javascript/api/office/office.bindings#releasebyidasync-id--options--callback-).
 
-Há três tipos diferentes de associações que você especifica com o parâmetro _BindingType_ quando você cria uma associação com os `addFromSelectionAsync`métodos, `addFromPromptAsync` ou: `addFromNamedItemAsync`
+Há três tipos diferentes de associações que você especifica com o parâmetro _BindingType_ quando você cria uma associação com os `addFromSelectionAsync` `addFromPromptAsync` métodos, ou `addFromNamedItemAsync` :
 
 
 
@@ -129,7 +129,7 @@ Há três tipos diferentes de associações que você especifica com o parâmetr
 
 <br/>
 
-Depois que `Bindings` uma associação é criada usando um dos três métodos "Add" do objeto, você pode trabalhar com as propriedades e os dados da Associação usando os métodos do objeto correspondente: [matrixbinding](/javascript/api/office/office.matrixbinding), [TableBinding](/javascript/api/office/office.tablebinding)ou [TextBinding](/javascript/api/office/office.textbinding). Todos esses três objetos herdam os métodos [getDataAsync](/javascript/api/office/office.binding#getdataasync-options--callback-) e [setDataAsync](/javascript/api/office/office.binding#setdataasync-data--options--callback-) do `Binding` objeto que permitem que você interaja com os dados associados.
+Depois que uma associação é criada usando um dos três métodos "Add" do `Bindings` objeto, você pode trabalhar com as propriedades e os dados da Associação usando os métodos do objeto correspondente: [matrixbinding](/javascript/api/office/office.matrixbinding), [TableBinding](/javascript/api/office/office.tablebinding)ou [TextBinding](/javascript/api/office/office.textbinding). Todos esses três objetos herdam os métodos [getDataAsync](/javascript/api/office/office.binding#getdataasync-options--callback-) e [setDataAsync](/javascript/api/office/office.binding#setdataasync-data--options--callback-) do `Binding` objeto que permitem que você interaja com os dados associados.
 
 Para obter exemplos de códigos que demonstram como realizar tarefas com associações, consulte [Associar a regiões em um documento ou uma planilha](bind-to-regions-in-a-document-or-spreadsheet.md).
 

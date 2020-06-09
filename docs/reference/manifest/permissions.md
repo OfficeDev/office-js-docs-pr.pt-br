@@ -3,12 +3,12 @@ title: Elemento Permissions no arquivo de manifesto
 description: O elemento Permissions especifica o nível de acesso da API para o suplemento do Office.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 91e024a2f13ea7605941c8c17a642f325cbcd61d
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 603494b61ef126b35cb5cdff8c5f5b911bd25840
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717996"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611488"
 ---
 # <a name="permissions-element"></a>Elemento Permissions
 

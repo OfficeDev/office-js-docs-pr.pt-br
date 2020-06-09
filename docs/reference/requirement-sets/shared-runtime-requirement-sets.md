@@ -4,12 +4,12 @@ description: Especifica as plataformas e hosts do Office que dão suporte às AP
 ms.date: 03/11/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 9750dd2e20a9f2426c7faf3864a2fccac5c11a80
-ms.sourcegitcommit: 05b73cdec5f4db7f0b8d48a5a552ee296a0332ca
+ms.openlocfilehash: ebf83216759419c092361aab1a83b234bcf22f97
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42600673"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611313"
 ---
 # <a name="shared-runtime-requirement-sets"></a>Conjuntos de requisitos de tempo de execução compartilhado
 
@@ -21,7 +21,7 @@ A tabela a seguir lista o conjunto de requisitos SharedRuntime 1,1, os aplicativ
 
 |  Conjunto de requisitos  |  Office 2013 (ou posterior) no Windows<br>(compra avulsa) | Office no Windows<br>(conectado à assinatura do Office 365)   |  Office no iPad<br>(conectado à assinatura do Office 365)  |  Office no Mac<br>(conectado à assinatura do Office 365)  | Office na Web  | Servidor do Office Online |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| SharedRuntime 1,1  | Não disponível | Versão 2002 (Build 12527,20092) ou posterior | Não disponível | 16,35 ou posterior | Fevereiro de 2020 | Não disponível |
+| SharedRuntime 1,1  | N/A | Versão 2002 (Build 12527,20092) ou posterior | N/A | 16.35 ou posterior | Fevereiro de 2020 | N/A |
 
 ## <a name="office-versions-and-build-numbers"></a>Versões do Office e números de build
 

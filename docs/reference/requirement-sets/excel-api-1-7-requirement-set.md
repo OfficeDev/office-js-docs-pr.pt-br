@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos ExcelApi 1,7
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 5a39b961e8cce97be3bb74e4032914f60c366ffb
-ms.sourcegitcommit: 4079903c3cc45b7d8c041509a44e9fc38da399b1
+ms.openlocfilehash: 2e7c2fb053aa16479091a2085b38b760fa86db4a
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "42596988"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611404"
 ---
 # <a name="whats-new-in-excel-javascript-api-17"></a>Quais são as novidades na API JavaScript do Excel 1.7
 
@@ -72,7 +72,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 |[Chart](/javascript/api/excel/excel.chart)|[chartType](/javascript/api/excel/excel.chart#charttype)|Representa o tipo de gráfico. Confira Excel. ChartType para obter detalhes.|
 ||[id](/javascript/api/excel/excel.chart#id)|Id exclusiva do gráfico. Somente leitura.|
 ||[showAllFieldButtons](/javascript/api/excel/excel.chart#showallfieldbuttons)|Representa se deseja exibir todos os botões de campo em um Gráfico Dinâmico.|
-|[ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)|[borda](/javascript/api/excel/excel.chartareaformat#border)|Representa o formato da borda da área do gráfico, que inclui cores, LineStyle e Weight. Somente leitura.|
+|[ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)|[Borderô](/javascript/api/excel/excel.chartareaformat#border)|Representa o formato da borda da área do gráfico, que inclui cores, LineStyle e Weight. Somente leitura.|
 |[ChartAxes](/javascript/api/excel/excel.chartaxes)|[getItem (tipo: Excel. ChartAxisType, Group?: Excel. ChartAxisGroup)](/javascript/api/excel/excel.chartaxes#getitem-type--group-)|Retorna o eixo específico identificado por tipo e grupo.|
 |[ChartAxis](/javascript/api/excel/excel.chartaxis)|[baseTimeUnit](/javascript/api/excel/excel.chartaxis#basetimeunit)|Retorna ou define a unidade base para o eixo da categoria especificada.|
 ||[categoryType](/javascript/api/excel/excel.chartaxis#categorytype)|Retorna ou define o tipo de eixo de categoria.|
@@ -146,7 +146,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[markerSize](/javascript/api/excel/excel.chartpoint#markersize)|Representa o tamanho do marcador do ponto de dados.|
 ||[markerStyle](/javascript/api/excel/excel.chartpoint#markerstyle)|Representa estilo do marcador de um ponto de dados do gráfico. Consulte Excel. ChartMarkerStyle para obter detalhes.|
 ||[dataLabel](/javascript/api/excel/excel.chartpoint#datalabel)|Retorna o rótulo de dados de um ponto de gráfico. Somente leitura.|
-|[ChartPointFormat](/javascript/api/excel/excel.chartpointformat)|[borda](/javascript/api/excel/excel.chartpointformat#border)|Representa o formato da borda de um ponto de dados do gráfico, que inclui informações de cor, estilo e peso. Somente leitura.|
+|[ChartPointFormat](/javascript/api/excel/excel.chartpointformat)|[Borderô](/javascript/api/excel/excel.chartpointformat#border)|Representa o formato da borda de um ponto de dados do gráfico, que inclui informações de cor, estilo e peso. Somente leitura.|
 |[ChartSeries](/javascript/api/excel/excel.chartseries)|[chartType](/javascript/api/excel/excel.chartseries#charttype)|Representa o tipo de gráfico de uma série. Confira Excel. ChartType para obter detalhes.|
 ||[delete()](/javascript/api/excel/excel.chartseries#delete--)|Exclui a série de gráfico.|
 ||[doughnutHoleSize](/javascript/api/excel/excel.chartseries#doughnutholesize)|Representa o tamanho do furo de rosca de uma série de gráficos.  Válida apenas em gráficos de rosca e doughnutExploded.|
@@ -176,7 +176,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[textOrientation](/javascript/api/excel/excel.charttitle#textorientation)|Representa a orientação de texto do título do gráfico. O valor deve ser um número inteiro de -90 a 90 ou 180 para texto orientado verticalmente.|
 ||[top](/javascript/api/excel/excel.charttitle#top)|Representa a distância em pontos, da borda superior do título do gráfico a parte superior da área do gráfico. NULL se o título do gráfico não estiver visível.|
 ||[verticalAlignment](/javascript/api/excel/excel.charttitle#verticalalignment)|Representa o alinhamento vertical do título do gráfico. Consulte Excel. ChartTextVerticalAlignment para obter detalhes.|
-|[ChartTitleFormat](/javascript/api/excel/excel.charttitleformat)|[borda](/javascript/api/excel/excel.charttitleformat#border)|Representa o formato da borda do título do gráfico, que inclui cores, LineStyle e Weight. Somente leitura.|
+|[ChartTitleFormat](/javascript/api/excel/excel.charttitleformat)|[Borderô](/javascript/api/excel/excel.charttitleformat#border)|Representa o formato da borda do título do gráfico, que inclui cores, LineStyle e Weight. Somente leitura.|
 |[ChartTrendline](/javascript/api/excel/excel.charttrendline)|[backwardPeriod](/javascript/api/excel/excel.charttrendline#backwardperiod)|Representa o número de períodos que a linha de tendência se estende para trás.|
 ||[delete()](/javascript/api/excel/excel.charttrendline#delete--)|Deleta o objeto Trendline.|
 ||[forwardPeriod](/javascript/api/excel/excel.charttrendline#forwardperiod)|Representa o número de períodos que a linha de tendência se estende para frente.|
@@ -210,7 +210,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[comments](/javascript/api/excel/excel.documentproperties#comments)|Obtém ou define os comentários da pasta de trabalho.|
 ||[company](/javascript/api/excel/excel.documentproperties#company)|Obtém ou define a empresa do documento.|
 ||[Palavras-chave](/javascript/api/excel/excel.documentproperties#keywords)|Obtém ou define as palavras-chave da pasta de trabalho.|
-||[manager](/javascript/api/excel/excel.documentproperties#manager)|Obtém ou define o gerenciador da pasta de trabalho.|
+||[Gerenciador](/javascript/api/excel/excel.documentproperties#manager)|Obtém ou define o gerenciador da pasta de trabalho.|
 ||[creationDate](/javascript/api/excel/excel.documentproperties#creationdate)|Obtém a data de criação da pasta de trabalho. Somente leitura.|
 ||[cliente](/javascript/api/excel/excel.documentproperties#custom)|Obtém a coleção de propriedades personalizadas da pasta de trabalho. Somente leitura.|
 ||[lastAuthor](/javascript/api/excel/excel.documentproperties#lastauthor)|Obtém o último autor da pasta de trabalho. Somente leitura.|
@@ -320,7 +320,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 |[WorksheetDeletedEventArgs](/javascript/api/excel/excel.worksheetdeletedeventargs)|[source](/javascript/api/excel/excel.worksheetdeletedeventargs#source)|Obtém a origem do evento. Para saber detalhes, confira Excel.EventSource.|
 ||[tipo](/javascript/api/excel/excel.worksheetdeletedeventargs#type)|Obtém o tipo do evento. Para saber detalhes, confira Excel.EventType.|
 ||[worksheetId](/javascript/api/excel/excel.worksheetdeletedeventargs#worksheetid)|Obtém o id do gráfico que é excluído da pasta de trabalho.|
-|[WorksheetFreezePanes](/javascript/api/excel/excel.worksheetfreezepanes)|[freezeAt (frozenRange: cadeia \| de caracteres de intervalo)](/javascript/api/excel/excel.worksheetfreezepanes#freezeat-frozenrange-)|Define as células congeladas no modo de exibição da planilha ativa.|
+|[WorksheetFreezePanes](/javascript/api/excel/excel.worksheetfreezepanes)|[freezeAt (frozenRange: cadeia de caracteres de intervalo \| )](/javascript/api/excel/excel.worksheetfreezepanes#freezeat-frozenrange-)|Define as células congeladas no modo de exibição da planilha ativa.|
 ||[freezeColumns (contagem?: número)](/javascript/api/excel/excel.worksheetfreezepanes#freezecolumns-count-)|Congela a primeira colunas da planilha no local.|
 ||[freezeRows (contagem?: número)](/javascript/api/excel/excel.worksheetfreezepanes#freezerows-count-)|Congela as linhas superiores da planilha no local.|
 ||[getLocation()](/javascript/api/excel/excel.worksheetfreezepanes#getlocation--)|Obtém um intervalo que descreve as células congeladas no modo de exibição da planilha ativa.|

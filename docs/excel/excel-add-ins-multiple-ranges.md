@@ -3,12 +3,12 @@ title: Trabalhar simultaneamente com vários intervalos em suplementos do Excel
 description: Saiba como a biblioteca JavaScript do Excel permite que o suplemento realize operações e defina propriedades em vários intervalos simultaneamente.
 ms.date: 04/30/2019
 localization_priority: Normal
-ms.openlocfilehash: 97481b4b8ab76f7bbc5bd10378d4cc6512bc7b6a
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 6a508d8481d9851c7f7ae98ec959fcec9663972c
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717065"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609766"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins"></a>Trabalhar simultaneamente com vários intervalos em suplementos do Excel
 
@@ -49,7 +49,7 @@ Familiarize-se com as [Propriedades de leitura do RangeAreas](#read-properties-o
 - `style`
 - `worksheet`
 
-##### <a name="methods"></a>Métodos
+##### <a name="methods"></a>Methods
 
 - `calculate()`
 - `clear()`

@@ -3,16 +3,16 @@ title: Trabalhar com intervalos usando a API JavaScript do Excel (fundamental)
 description: Exemplos de código que mostram como executar tarefas comuns com intervalos usando a API JavaScript do Excel.
 ms.date: 04/30/2019
 localization_priority: Normal
-ms.openlocfilehash: 027f71b7927c4c8405c5c791e6f640315e46abf1
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 8cba0908d2179c397dc3530e9bcb4063c09fce19
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717142"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609591"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Trabalhar com intervalos usando a API JavaScript do Excel
 
-Este artigo fornece exemplos de código que mostram como executar tarefas comuns com intervalos usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos aos `Range` quais o objeto oferece suporte, consulte [objeto Range (API JavaScript para Excel)](/javascript/api/excel/excel.range).
+Este artigo fornece exemplos de código que mostram como executar tarefas comuns com intervalos usando a API JavaScript do Excel. Para obter a lista completa de propriedades e métodos aos quais o `Range` objeto oferece suporte, consulte [objeto Range (API JavaScript para Excel)](/javascript/api/excel/excel.range).
 
 > [!NOTE]
 > Confira exemplos de código que mostram como executar tarefas avançadas com intervalos em [Trabalhar com intervalos usando a API JavaScript do Excel (avançado)](excel-add-ins-ranges-advanced.md).
@@ -23,7 +23,7 @@ Os exemplos a seguir mostram diferentes maneiras de obter uma referência a um i
 
 ### <a name="get-range-by-address"></a>Obter intervalo por endereço
 
-O exemplo de código a seguir obtém o intervalo com o endereço **B2: C5** da planilha chamada **amostra**, `address` carrega sua propriedade e grava uma mensagem no console.
+O exemplo de código a seguir obtém o intervalo com o endereço **B2: C5** da planilha chamada **amostra**, carrega sua `address` propriedade e grava uma mensagem no console.
 
 ```js
 Excel.run(function (context) {
@@ -40,7 +40,7 @@ Excel.run(function (context) {
 
 ### <a name="get-range-by-name"></a>Obter intervalo por nome
 
-O exemplo de código a seguir obtém o `MyRange` intervalo nomeado da planilha chamada **amostra**, carrega `address` sua propriedade e grava uma mensagem no console.
+O exemplo de código a seguir obtém o intervalo nomeado `MyRange` da planilha chamada **amostra**, carrega sua `address` propriedade e grava uma mensagem no console.
 
 ```js
 Excel.run(function (context) {
@@ -57,7 +57,7 @@ Excel.run(function (context) {
 
 ### <a name="get-used-range"></a>Obter intervalo usado
 
-O exemplo de código a seguir obtém o intervalo usado da planilha chamada **amostra**, carrega `address` sua propriedade e grava uma mensagem no console. O intervalo usado é o menor intervalo que abrange todas as células na planilha que têm um valor ou uma formatação atribuída a elas. Se a planilha inteira estiver em branco, `getUsedRange()` o método retornará um intervalo que consiste apenas na célula superior esquerda na planilha.
+O exemplo de código a seguir obtém o intervalo usado da planilha chamada **amostra**, carrega sua `address` propriedade e grava uma mensagem no console. O intervalo usado é o menor intervalo que abrange todas as células na planilha que têm um valor ou uma formatação atribuída a elas. Se a planilha inteira estiver em branco, o `getUsedRange()` método retornará um intervalo que consiste apenas na célula superior esquerda na planilha.
 
 ```js
 Excel.run(function (context) {
@@ -74,7 +74,7 @@ Excel.run(function (context) {
 
 ### <a name="get-entire-range"></a>Obter intervalo inteiro
 
-O exemplo de código a seguir obtém todo o intervalo de planilha da planilha chamada **amostra**, `address` carrega sua propriedade e grava uma mensagem no console.
+O exemplo de código a seguir obtém todo o intervalo de planilha da planilha chamada **amostra**, carrega sua `address` propriedade e grava uma mensagem no console.
 
 ```js
 Excel.run(function (context) {
@@ -179,7 +179,7 @@ Excel.run(function (context) {
 
 ## <a name="get-the-selected-range"></a>Obter o intervalo selecionado
 
-O exemplo de código a seguir obtém o intervalo selecionado, `address` carrega sua propriedade e grava uma mensagem no console. 
+O exemplo de código a seguir obtém o intervalo selecionado, carrega sua `address` propriedade e grava uma mensagem no console. 
 
 ```js
 Excel.run(function (context) {
@@ -310,7 +310,7 @@ Estes exemplos mostram como obter valores, texto e fórmulas de um intervalo de 
 
 ### <a name="get-values-from-a-range-of-cells"></a>Obter valores de um intervalo de células
 
-O exemplo de código a seguir obtém o intervalo **B2: E6**, `values` carrega sua propriedade e grava os valores no console. A `values` propriedade de um intervalo especifica os valores brutos que as células contêm. Mesmo que algumas células em um intervalo contenham fórmulas, a `values` Propriedade do intervalo especifica os valores brutos para essas células, e não qualquer uma das fórmulas.
+O exemplo de código a seguir obtém o intervalo **B2: E6**, carrega sua `values` propriedade e grava os valores no console. A `values` propriedade de um intervalo especifica os valores brutos que as células contêm. Mesmo que algumas células em um intervalo contenham fórmulas, a `values` Propriedade do intervalo especifica os valores brutos para essas células, e não qualquer uma das fórmulas.
 
 ```js
 Excel.run(function (context) {
@@ -368,7 +368,7 @@ Excel.run(function (context) {
 
 ### <a name="get-text-from-a-range-of-cells"></a>Obter texto de um intervalo de células
 
-O exemplo de código a seguir obtém o intervalo **B2: E6**, `text` carrega sua propriedade e o grava no console. A `text` propriedade de um intervalo especifica os valores de exibição para as células no intervalo. Mesmo que algumas células em um intervalo contenham fórmulas, a `text` Propriedade do intervalo especifica os valores de exibição para essas células, e não qualquer uma das fórmulas.
+O exemplo de código a seguir obtém o intervalo **B2: E6**, carrega sua `text` propriedade e o grava no console. A `text` propriedade de um intervalo especifica os valores de exibição para as células no intervalo. Mesmo que algumas células em um intervalo contenham fórmulas, a `text` Propriedade do intervalo especifica os valores de exibição para essas células, e não qualquer uma das fórmulas.
 
 ```js
 Excel.run(function (context) {
@@ -426,7 +426,7 @@ Excel.run(function (context) {
 
 ### <a name="get-formulas-from-a-range-of-cells"></a>Obter fórmulas de um intervalo de células
 
-O exemplo de código a seguir obtém o intervalo **B2: E6**, `formulas` carrega sua propriedade e o grava no console. A `formulas` propriedade de um intervalo especifica as fórmulas para células no intervalo que contêm fórmulas e os valores brutos para células no intervalo que não contêm fórmulas.
+O exemplo de código a seguir obtém o intervalo **B2: E6**, carrega sua `formulas` propriedade e o grava no console. A `formulas` propriedade de um intervalo especifica as fórmulas para células no intervalo que contêm fórmulas e os valores brutos para células no intervalo que não contêm fórmulas.
 
 ```js
 Excel.run(function (context) {

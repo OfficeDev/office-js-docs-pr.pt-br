@@ -3,12 +3,12 @@ title: Extensão do depurador de suplementos do Microsoft Office para o Visual S
 description: Use o depurador de suplemento do Visual Studio Code Extension para depurar seu suplemento do Office.
 ms.date: 05/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 57a59029ee9bb9791829d9d3583ce8b85e417b16
-ms.sourcegitcommit: 71a44405e42b4798a8354f7f96d84548ae7a00f0
+ms.openlocfilehash: 1bd3814eba6da2339e7865d720b8a4c792b9310e
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44280356"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611208"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Extensão do depurador de suplementos do Microsoft Office para o Visual Studio Code
 

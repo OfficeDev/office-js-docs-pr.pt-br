@@ -3,12 +3,12 @@ ms.date: 05/11/2020
 description: Retornar vários resultados de sua função personalizada em um suplemento do Office Excel.
 title: Retornar vários resultados de sua função personalizada
 localization_priority: Normal
-ms.openlocfilehash: 23ca1b038d73a93e6f96167cbdc23d79ccbfe622
-ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.openlocfilehash: e25965277fbbe1c39007f79f401bf62b25760488
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44275970"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609647"
 ---
 # <a name="return-multiple-results-from-your-custom-function"></a>Retornar vários resultados de sua função personalizada
 

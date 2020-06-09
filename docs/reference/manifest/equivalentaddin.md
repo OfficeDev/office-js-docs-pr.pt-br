@@ -3,12 +3,12 @@ title: Elemento EquivalentAddin no arquivo de manifesto
 description: Especifica a compatibilidade COM versões anteriores para um suplemento COM equivalente ou XLL.
 ms.date: 06/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 425b926901b7325665eeede04263f74e4b854d50
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: e14fe91bf7a5fe321019acf205ddb1753fedd569
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718283"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611558"
 ---
 # <a name="equivalentaddin-element"></a>Elemento EquivalentAddin
 
@@ -34,12 +34,12 @@ Especifica a compatibilidade COM versões anteriores para um suplemento COM equi
 
 ## <a name="can-contain"></a>Pode conter
 
-[ProgId](progid.md)
-[Nome de arquivo](filename.md) ProgID
+[ProgID](progid.md) 
+ [Nome do arquivo](filename.md)
 
 ## <a name="remarks"></a>Comentários
 
-Para especificar um suplemento de COM como o suplemento equivalente, forneça os `ProgId` elementos e. `Type` Para especificar um XLL como o suplemento equivalente, forneça os `FileName` elementos e. `Type`
+Para especificar um suplemento de COM como o suplemento equivalente, forneça os `ProgId` `Type` elementos e. Para especificar um XLL como o suplemento equivalente, forneça os `FileName` `Type` elementos e.
 
 ## <a name="see-also"></a>Confira também
 

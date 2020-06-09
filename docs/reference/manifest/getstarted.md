@@ -3,12 +3,12 @@ title: Elemento GetStarted no arquivo de manifesto
 description: Fornece informações usadas pelo balão que aparece quando o suplemento está instalado em hosts do Word, do Excel, do PowerPoint e do OneNote.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 7b4eb0e0413eff97751eac01c3dc6e5a452722aa
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: c1fbdd5d4f4365f9f8190805519fc7a70c8c87ca
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718185"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611831"
 ---
 # <a name="getstarted-element"></a>Elemento GetStarted
 
@@ -22,7 +22,7 @@ Fornece informações usadas pelo balão que aparece quando o suplemento está i
 | [Descrição](#description)   | Sim      | Uma URL para um arquivo que contém funções JavaScript.|
 | [LearnMoreUrl](#learnmoreurl) | Sim       | Uma URL para uma página que explica o suplemento em detalhes.   |
 
-### <a name="title"></a>Cargo 
+### <a name="title"></a>Title 
 
 Obrigatório. O título usado para o início do texto explicativo. O atributo **resid** faz referência a uma identificação válida no elemento **ShortStrings** na seção [Recursos](resources.md).
 

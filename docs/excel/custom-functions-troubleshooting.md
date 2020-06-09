@@ -3,12 +3,12 @@ ms.date: 04/29/2020
 description: Solucionar problemas comuns com funções personalizadas do Excel.
 title: Solução de problemas das funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: 33404426cf8c017b7c43f988dbc8aa3a4ddea892
-ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.openlocfilehash: 3ee18eabd19be56eece465da880fae7af1c12f3d
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44275816"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609794"
 ---
 # <a name="troubleshoot-custom-functions"></a>Solução de problemas de funções personalizadas
 

@@ -3,12 +3,12 @@ title: Publicar um suplemento desenvolvido com o Código do Visual Studio
 description: Como publicar um suplemento desenvolvido com o Código do Visual Studio
 ms.date: 12/02/2019
 localization_priority: Normal
-ms.openlocfilehash: 4bf3ad40c1de447d61d2ee612292d6d90c347666
-ms.sourcegitcommit: d15bca2c12732f8599be2ec4b2adc7c254552f52
+ms.openlocfilehash: a42db9215652f15b5c4bf9f1ad025898afc8fca4
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "41950646"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611908"
 ---
 # <a name="publish-an-add-in-developed-with-visual-studio-code"></a>Publicar um suplemento desenvolvido com o Código do Visual Studio
 

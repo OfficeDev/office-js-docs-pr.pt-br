@@ -3,12 +3,12 @@ title: Crie o seu primeiro suplemento de painel de tarefas para o Microsoft Proj
 description: Criar um suplemento do painel de tarefas para o Project Standard 2013, o Project Professional 2013 ou versões posteriores usando o gerador Yeoman para suplementos do Office.
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: 12d5f898e642989e999034dbcf2764244b0c2379
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 9bf47066f15f0650b8da0ede496537973604142b
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720747"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611887"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>Crie o seu primeiro suplemento de painel de tarefas para o Microsoft Project usando um editor de texto
 
@@ -26,7 +26,7 @@ Para obter uma introdução ao uso do JavaScript em suplementos do Office, consu
 
 ## <a name="procedure-1-to-create-the-add-in-manifest-file"></a>Procedimento 1. Para criar o arquivo de manifesto do suplemento
 
-Crie um arquivo XML em um diretório local. O arquivo XML inclui o `OfficeApp` elemento e os elementos filho, que são descritos no [manifesto XML de suplementos do Office](../develop/add-in-manifests.md). Por exemplo, crie um arquivo chamado JSOM_SimpleOMCalls. XML que contenha o seguinte XML (altere o valor de GUID `Id` do elemento).
+Crie um arquivo XML em um diretório local. O arquivo XML inclui o `OfficeApp` elemento e os elementos filho, que são descritos no [manifesto XML de suplementos do Office](../develop/add-in-manifests.md). Por exemplo, crie um arquivo chamado JSOM_SimpleOMCalls. XML que contenha o seguinte XML (altere o valor de GUID do `Id` elemento).
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -63,7 +63,7 @@ Crie um arquivo XML em um diretório local. O arquivo XML inclui o `OfficeApp` e
    </OfficeApp>
 ```
 
-Para o Project, `OfficeApp` o elemento deve incluir `xsi:type="TaskPaneApp"` o valor do atributo. O `Id` elemento é um GUID. O `SourceLocation` valor deve ser um caminho de compartilhamento de arquivo ou uma URL do SharePoint para o arquivo de origem HTML do suplemento ou o aplicativo Web que é executado no painel de tarefas. Confira [Suplementos do painel de tarefas para o Project](../project/project-add-ins.md) para acessar uma explicação dos outros elementos no arquivo do manifesto.
+Para o Project, o `OfficeApp` elemento deve incluir o `xsi:type="TaskPaneApp"` valor do atributo. O `Id` elemento é um GUID. O `SourceLocation` valor deve ser um caminho de compartilhamento de arquivo ou uma URL do SharePoint para o arquivo de origem HTML do suplemento ou o aplicativo Web que é executado no painel de tarefas. Confira [Suplementos do painel de tarefas para o Project](../project/project-add-ins.md) para acessar uma explicação dos outros elementos no arquivo do manifesto.
 
 O Procedimento 2 mostra como criar o arquivo HTML que o manifesto JSOM_SimpleOMCalls.xml especifica para o suplemento de teste do Project. Botões especificados no arquivo HTML chamam funções JavaScript relacionadas. Você pode adicionar funções JavaScript no arquivo HTML ou colocá-las em um arquivo .js separado.
 
@@ -109,7 +109,7 @@ O Procedimento 2 mostra como criar o arquivo HTML que o manifesto JSOM_SimpleOMC
 
    O código a seguir obtém as informações de contexto e documentação do aplicativo usando funções no arquivo Office.js. O `text` objeto é a ID do `textarea` controle no arquivo HTML.
 
-   A ** \_variável projDoc** é inicializada com `ProjectDocument` um objeto. O código inclui algumas funções de tratamento de erros simples e `getContextValues` a função que obtém o contexto do aplicativo e as propriedades de contexto do documento do projeto. Para saber mais sobre o modelo de objeto JavaScript para o Project, confira [API do JavaScript para Office](../reference/javascript-api-for-office.md).
+   A variável ** \_ projDoc** é inicializada com um `ProjectDocument` objeto. O código inclui algumas funções de tratamento de erros simples e a `getContextValues` função que obtém o contexto do aplicativo e as propriedades de contexto do documento do projeto. Para saber mais sobre o modelo de objeto JavaScript para o Project, confira [API do JavaScript para Office](../reference/javascript-api-for-office.md).
 
 
     ```js
@@ -178,21 +178,21 @@ O Procedimento 2 mostra como criar o arquivo HTML que o manifesto JSOM_SimpleOMC
 
    - Por exemplo, `getSelectedDataAsync` é uma função geral no Office. js que obtém texto não formatado para os dados selecionados. Para saber mais, confira [objeto AsyncResult](/javascript/api/office/office.asyncresult).
 
-   - A `getSelectedTaskAsync` função no Project-15. js Obtém o GUID da tarefa selecionada. Da mesma forma `getSelectedResourceAsync` , a função obtém o GUID do recurso selecionado. Se você chamar essas funções quando uma tarefa ou um recurso não estiver selecionado, as funções mostrarão um erro indefinido.
+   - A `getSelectedTaskAsync` função no Project-15. js Obtém o GUID da tarefa selecionada. Da mesma forma, a `getSelectedResourceAsync` função obtém o GUID do recurso selecionado. Se você chamar essas funções quando uma tarefa ou um recurso não estiver selecionado, as funções mostrarão um erro indefinido.
 
-   - A `getTaskAsync` função obtém o nome da tarefa e os nomes dos recursos atribuídos. Se a tarefa estiver em uma lista de tarefas do SharePoint `getTaskAsync` sincronizada, obtém a ID da tarefa na lista do SharePoint; caso contrário, a ID da tarefa do SharePoint será 0.
+   - A `getTaskAsync` função obtém o nome da tarefa e os nomes dos recursos atribuídos. Se a tarefa estiver em uma lista de tarefas do SharePoint sincronizada, `getTaskAsync` Obtém a ID da tarefa na lista do SharePoint; caso contrário, a ID da tarefa do SharePoint será 0.
 
      > [!NOTE]
      > Para fins de demonstração, o código de exemplo inclui um bug. Se `taskGuid` estiver indefinido, os `getTaskAsync` erros de função desativados. Se você receber um GUID de tarefa válido e selecionar uma tarefa diferente, a `getTaskAsync` função obterá dados para a tarefa mais recente que foi operada pela `getSelectedTaskAsync` função.
   
-   - `getTaskFields`, `getResourceFields`e `getProjectFields` são funções locais que chamam `getTaskFieldAsync`, `getResourceFieldAsync`ou `getProjectFieldAsync` várias vezes para obter campos especificados de uma tarefa ou um recurso. No arquivo Project-15. Debug. js, a `ProjectTaskFields` enumeração e a `ProjectResourceFields` Enumeração mostram quais campos têm suporte.
+   - `getTaskFields`, `getResourceFields` e `getProjectFields` são funções locais que chamam `getTaskFieldAsync` , `getResourceFieldAsync` ou `getProjectFieldAsync` várias vezes para obter campos especificados de uma tarefa ou um recurso. No arquivo Project-15. Debug. js, a `ProjectTaskFields` enumeração e a `ProjectResourceFields` Enumeração mostram quais campos têm suporte.
 
-   - A `getSelectedViewAsync` função obtém o tipo de modo de exibição (definido `ProjectViewTypes` na enumeração em Project-15. Debug. js) e o nome do modo de exibição.
+   - A `getSelectedViewAsync` função obtém o tipo de modo de exibição (definido na `ProjectViewTypes` enumeração em Project-15. Debug. js) e o nome do modo de exibição.
 
-   - Se o projeto estiver sincronizado com uma lista de tarefas do `getWSSUrlAsync` SharePoint, a função obterá a URL e o nome da lista de tarefas. Se o projeto não estiver sincronizado com uma lista de tarefas do `getWSSUrlAsync` SharePoint, os erros de função serão desativados.
+   - Se o projeto estiver sincronizado com uma lista de tarefas do SharePoint, a `getWSSUrlAsync` função obterá a URL e o nome da lista de tarefas. Se o projeto não estiver sincronizado com uma lista de tarefas do SharePoint, os `getWSSUrlAsync` erros de função serão desativados.
 
      > [!NOTE]
-     > Para obter a URL e o nome da lista de tarefas do SharePoint, recomendamos que você `getProjectFieldAsync` use a função `WSSUrl` com `WSSList` as constantes e na enumeração [ProjectProjectFields](/javascript/api/office/office.projectprojectfields) .
+     > Para obter a URL e o nome da lista de tarefas do SharePoint, recomendamos que você use a `getProjectFieldAsync` função com as `WSSUrl` `WSSList` constantes e na enumeração [ProjectProjectFields](/javascript/api/office/office.projectprojectfields) .
 
    Cada uma das funções no código a seguir inclui uma função anônima que é especificada por `function (asyncResult)`, que é um retorno de chamada que obtém o resultado assíncrono. Em vez de funções anônimas, você poderia usar funções nomeadas, que podem ajudar na capacidade de manutenção de suplementos complexos.
 
@@ -549,9 +549,9 @@ O Procedimento 2 mostra como criar o arquivo HTML que o manifesto JSOM_SimpleOMC
     }
     ```
 
-4. Adicione retornos de chamada e funções de manipulador de eventos JavaScript para registrar a seleção de tarefas, a seleção de recursos, exibir os manipuladores de eventos de alteração de seleção e desfazer o registro dos manipuladores de eventos. A `manageEventHandlerAsync` função adiciona ou remove o manipulador de eventos especificado, dependendo do parâmetro _Operation_ . A operação pode ser `addHandlerAsync` ou `removeHandlerAsync`.
+4. Adicione retornos de chamada e funções de manipulador de eventos JavaScript para registrar a seleção de tarefas, a seleção de recursos, exibir os manipuladores de eventos de alteração de seleção e desfazer o registro dos manipuladores de eventos. A `manageEventHandlerAsync` função adiciona ou remove o manipulador de eventos especificado, dependendo do parâmetro _Operation_ . A operação pode ser `addHandlerAsync` ou `removeHandlerAsync` .
 
-   As `manageTaskEventHandler`funções `manageResourceEventHandler`, e `manageViewEventHandler` podem adicionar ou remover um manipulador de eventos, conforme especificado pelo parâmetro _docMethod_ .
+   As `manageTaskEventHandler` `manageResourceEventHandler` funções, e `manageViewEventHandler` podem adicionar ou remover um manipulador de eventos, conforme especificado pelo parâmetro _docMethod_ .
 
     ```js
     // Task selection changed event handler.
@@ -640,7 +640,7 @@ O Procedimento 2 mostra como criar o arquivo HTML que o manifesto JSOM_SimpleOMC
         <!--  more code . . .  -->
     ```
 
-6. Adicione uma `div` seção com botões para funções de tarefas específicas do projeto e para `TaskSelectionChanged` o evento.
+6. Adicione uma `div` seção com botões para funções de tarefas específicas do projeto e para o `TaskSelectionChanged` evento.
 
     ```HTML
     <div id="ProjectSpecificTask">
@@ -723,7 +723,7 @@ O Procedimento 3 mostra como instalar e usar os recursos do suplemento Teste de 
 
 4. Na caixa de diálogo **Central de Confiabilidade**, no painel esquerdo, escolha **Catálogos de Suplementos Confiáveis**.
 
-5. Se você já tiver adicionado o `\\ServerName\AppManifests` caminho para o suplemento pesquisa do Bing, pule esta etapa. Caso contrário, no **painel catálogos de suplementos confiáveis** , adicione `\\ServerName\AppManifests` o caminho na caixa de texto **URL do catálogo** , escolha **Adicionar Catálogo**, habilitar o compartilhamento de rede como uma fonte padrão (consulte a Figura 1) e, em seguida, escolha **OK**.
+5. Se você já tiver adicionado o `\\ServerName\AppManifests` caminho para o suplemento pesquisa do Bing, pule esta etapa. Caso contrário, no **painel catálogos de suplementos confiáveis** , adicione o `\\ServerName\AppManifests` caminho na caixa de texto **URL do catálogo** , escolha **Adicionar Catálogo**, habilitar o compartilhamento de rede como uma fonte padrão (consulte a Figura 1) e, em seguida, escolha **OK**.
 
    *Figura 1. Adicionar um compartilhamento de arquivos de rede para manifestos de suplementos*
 
@@ -741,17 +741,17 @@ O Procedimento 3 mostra como instalar e usar os recursos do suplemento Teste de 
 
    ![Usando o aplicativo do Teste de Modelo de Objeto do Project](../images/pj15-create-simple-agave-project-om-test.png)
 
-8. Selecione a célula na coluna **duração** da primeira tarefa e, em seguida, escolha o botão **getSelectedDataAsync** no suplemento de **teste de OM do Project** . A `getSelectedDataAsync` função define o valor da caixa de texto `2 days`a ser mostrado. 
+8. Selecione a célula na coluna **duração** da primeira tarefa e, em seguida, escolha o botão **getSelectedDataAsync** no suplemento de **teste de OM do Project** . A `getSelectedDataAsync` função define o valor da caixa de texto a ser mostrado `2 days` . 
 
-9. Selecione as três células de **duração** para todas as três tarefas. A `getSelectedDataAsync` função retorna valores de texto separados por ponto-e-vírgula para células selecionadas em linhas `2 days;4 days;0 days`diferentes, por exemplo,.
+9. Selecione as três células de **duração** para todas as três tarefas. A `getSelectedDataAsync` função retorna valores de texto separados por ponto-e-vírgula para células selecionadas em linhas diferentes, por exemplo, `2 days;4 days;0 days` .
 
-   A `getSelectedDataAsync` função retorna valores de texto separados por vírgula para as células selecionadas em uma linha. Por exemplo, na Figura 3, a linha inteira da tarefa T2 está selecionada. Quando você escolhe `getSelectedDataAsync`, a caixa de texto mostra o seguinte:`,Auto Scheduled,T2,4 days,Thu 6/14/12,Tue 6/19/12,1,,<NA>`
+   A `getSelectedDataAsync` função retorna valores de texto separados por vírgula para as células selecionadas em uma linha. Por exemplo, na Figura 3, a linha inteira da tarefa T2 está selecionada. Quando você escolhe `getSelectedDataAsync` , a caixa de texto mostra o seguinte:`,Auto Scheduled,T2,4 days,Thu 6/14/12,Tue 6/19/12,1,,<NA>`
 
    A coluna **indicadores** e a coluna **nomes dos recursos** estão vazias, portanto, a matriz de texto mostra valores vazios para essas colunas. O valor `<NA>` é para a célula **Adicionar Nova Coluna**.
 
-10. Selecione qualquer célula na linha da tarefa T2 ou a linha inteira da tarefa T2 e, em seguida, escolha **getSelectedTaskAsync**. A caixa de texto mostra o valor de tarefa do GUID, por exemplo, `{25D3E03B-9A7D-E111-92FC-00155D3BA208}`. O Project armazena esse valor na variável `taskGuid` global do suplemento de **teste de OM do Project** .
+10. Selecione qualquer célula na linha da tarefa T2 ou a linha inteira da tarefa T2 e, em seguida, escolha **getSelectedTaskAsync**. A caixa de texto mostra o valor de tarefa do GUID, por exemplo, `{25D3E03B-9A7D-E111-92FC-00155D3BA208}`. O Project armazena esse valor na `taskGuid` variável global do suplemento de **teste de OM do Project** .
 
-11. Selecionar `getTaskAsync`. Se a `taskGuid` variável contiver o GUID da tarefa T2, a caixa de texto exibirá as informações da tarefa. O valor **ResourceNames** fica vazio.
+11. Selecionar `getTaskAsync` . Se a `taskGuid` variável contiver o GUID da tarefa T2, a caixa de texto exibirá as informações da tarefa. O valor **ResourceNames** fica vazio.
 
     Crie dois recursos locais R1 andR2, atribua-os à tarefa T2 em 50% cada e escolha **getTaskAsync** novamente. Os resultados na caixa de texto incluem as informações do recurso. Se a tarefa estiver em uma lista de tarefas do SharePoint sincronizada, os resultados também incluirão a ID da tarefa do SharePoint.
 
@@ -782,9 +782,9 @@ O Procedimento 3 mostra como instalar e usar os recursos do suplemento Teste de 
     - URL do SharePoint: `http://ServerName`
     - Nome da lista: `Test task list`
 
-14. Selecione o botão **Adicionar** na seção **evento TaskSelectionChanged** , que chama a `manageTaskEventHandler` função para registrar um evento de seleção de tarefa alterada e `In onComplete function for addHandlerAsync Status: succeeded` retorna na caixa de texto. Selecionar uma tarefa diferente; a caixa de texto `In task selection changed event handler`mostra, que é a saída da função de retorno de chamada para o evento alterado da seleção de tarefa. Escolha o botão **remover** para cancelar o registro do manipulador de eventos.
+14. Selecione o botão **Adicionar** na seção **evento TaskSelectionChanged** , que chama a `manageTaskEventHandler` função para registrar um evento de seleção de tarefa alterada e retorna `In onComplete function for addHandlerAsync Status: succeeded` na caixa de texto. Selecionar uma tarefa diferente; a caixa de texto mostra `In task selection changed event handler` , que é a saída da função de retorno de chamada para o evento alterado da seleção de tarefa. Escolha o botão **remover** para cancelar o registro do manipulador de eventos.
 
-15. Para usar os métodos de recurso, primeiro selecione um modo de exibição, como **planilha de recursos**, **uso do recurso**ou formulário de **recursos**e, em seguida, selecione um recurso nesse modo de exibição. Escolha **getSelectedResourceAsync** para inicializar a variável **resourceGuid** e, em seguida, escolha **obter campos** de `getResourceFieldAsync` recurso para chamar várias vezes para as propriedades de recurso. Você também pode adicionar ou remover o manipulador de eventos da alteração da seleção do recurso.
+15. Para usar os métodos de recurso, primeiro selecione um modo de exibição, como **planilha de recursos**, **uso do recurso**ou formulário de **recursos**e, em seguida, selecione um recurso nesse modo de exibição. Escolha **getSelectedResourceAsync** para inicializar a variável **resourceGuid** e, em seguida, escolha **obter campos de recurso** para chamar `getResourceFieldAsync` várias vezes para as propriedades de recurso. Você também pode adicionar ou remover o manipulador de eventos da alteração da seleção do recurso.
 
     - Nome do recurso: `R1`
     - Custo: `$800.00`
@@ -793,12 +793,12 @@ O Procedimento 3 mostra como instalar e usar os recursos do suplemento Teste de 
     - Trabalho real: `0h`
     - Unidades: `100%`
 
-16. Selecione **getSelectedViewAsync** para mostrar o tipo e o nome do modo de exibição ativo. Você também pode adicionar ou remover o manipulador de eventos da alteração da seleção de exibição. Por exemplo, se o **formulário de recursos** for o modo de `getSelectedViewAsync` exibição ativo, a função mostrará o seguinte na caixa de texto:
+16. Selecione **getSelectedViewAsync** para mostrar o tipo e o nome do modo de exibição ativo. Você também pode adicionar ou remover o manipulador de eventos da alteração da seleção de exibição. Por exemplo, se o **formulário de recursos** for o modo de exibição ativo, a `getSelectedViewAsync` função mostrará o seguinte na caixa de texto:
 
     - Tipo de exibição: `6`
     - Nome: `Resource Form`
 
-17. Selecione **obter campos de projeto** para chamar `getProjectFieldAsync` a função várias vezes para diferentes propriedades do projeto ativo. Se o projeto for aberto a partir do Project Web App `getProjectFieldAsync` , a função poderá obter a URL da instância do Project Web App.
+17. Selecione **obter campos de projeto** para chamar a `getProjectFieldAsync` função várias vezes para diferentes propriedades do projeto ativo. Se o projeto for aberto a partir do Project Web App, a `getProjectFieldAsync` função poderá obter a URL da instância do Project Web App.
 
     - GUID do projeto: `9845922E-DAB4-E111-8AF3-00155D3BA208`
     - Início: `Tue 6/12/12`
@@ -903,9 +903,9 @@ O download do SDK do Project 2013 contém o código completo no arquivo JSOMCall
 
 ## <a name="robust-programming"></a>Programação robusta
 
-O suplemento de **teste do Project OM** é um exemplo que mostra o uso de algumas funções JavaScript para o Project 2013 nos arquivos Project-15. js e Office. js. O exemplo é somente para teste e não inclui verificações de erro robustas. Por exemplo, se você não selecionar um recurso e executar a `getSelectedResourceAsync` função, a variável `resourceGuid` não será inicializada e as chamadas para `getResourceFieldAsync` retornar um erro. Para um suplemento de produção, você deve verificar se há erros específicos e ignorar os resultados, ocultar funcionalidades que não se aplicam ou notificar o usuário para escolher um modo de exibição e fazer uma seleção válida antes de usar uma função.
+O suplemento de **teste do Project OM** é um exemplo que mostra o uso de algumas funções JavaScript para o Project 2013 nos arquivos Project-15. js e Office. js. O exemplo é somente para teste e não inclui verificações de erro robustas. Por exemplo, se você não selecionar um recurso e executar a `getSelectedResourceAsync` função, a `resourceGuid` variável não será inicializada e as chamadas para `getResourceFieldAsync` retornar um erro. Para um suplemento de produção, você deve verificar se há erros específicos e ignorar os resultados, ocultar funcionalidades que não se aplicam ou notificar o usuário para escolher um modo de exibição e fazer uma seleção válida antes de usar uma função.
 
-Para um exemplo simples, a saída de erro no código a seguir inclui `actionMessage` a variável que especifica a ação a ser tomada para evitar um erro `getSelectedResourceAsync` na função.
+Para um exemplo simples, a saída de erro no código a seguir inclui `actionMessage` a variável que especifica a ação a ser tomada para evitar um erro na `getSelectedResourceAsync` função.
 
 ```js
 function logError(errorText) {
@@ -936,7 +936,7 @@ function getSelectedResourceAsync() {
 
 O exemplo **HelloProject_OData** no download do SDK do Project 2013 inclui o arquivo SurfaceErrors.js que usa a biblioteca JQuery para exibir uma mensagem de erro pop-up. A Figura 4 mostra a mensagem de erro em uma notificação do sistema.
 
-O código a seguir no arquivo SurfaceErrors. js inclui a `throwError` função th que cria `Toast` um objeto.
+O código a seguir no arquivo SurfaceErrors. js inclui a `throwError` função th que cria um `Toast` objeto.
 
 ```js
 /*
@@ -1046,7 +1046,7 @@ var Toast = {
 }
 ```
 
-Para usar a `throwError` função, inclua a biblioteca jQuery e o script SurfaceErrors. js no arquivo JSOMCall. html e, em seguida, adicione uma chamada `throwError` a outras funções JavaScript, como `logMethodError`.
+Para usar a `throwError` função, inclua a biblioteca jQuery e o script SurfaceErrors. js no arquivo JSOMCall. html e, em seguida, adicione uma chamada a `throwError` outras funções JavaScript, como `logMethodError` .
 
 > [!NOTE]
 > Antes de implantar o suplemento, mude a referência office.js e a referência jQuery para a referência CDN (rede de distribuição de conteúdo). A referência CDN fornece a versão mais recente e melhora o desempenho.

@@ -3,12 +3,12 @@ title: Persistir o estado e as configurações do suplemento
 description: Saiba como manter dados nos aplicativos Web de suplemento do Office em execução no ambiente sem estado de um controle de navegador.
 ms.date: 05/08/2020
 localization_priority: Normal
-ms.openlocfilehash: 0162bc17897cba99f4ce2457cea08d0da70f4341
-ms.sourcegitcommit: 7e6faf3dc144400a7b7e5a42adecbbec0bd4602d
+ms.openlocfilehash: 81f149bdff540b236252a02a0c368799a11fed10
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "44180221"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609398"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>Persistir o estado e as configurações do suplemento
 
@@ -40,7 +40,7 @@ A API JavaScript do Office fornece os objetos [Settings](/javascript/api/office/
 > [!NOTE]
 > As duas seções a seguir discutem configurações no contexto da API comum de JavaScript do Office. A API JavaScript do Excel com host específico também fornece acesso às configurações personalizadas. As APIs do Excel e os padrões de programação são um pouco diferentes. Para saber mais, confira [SettingCollection do Excel](/javascript/api/excel/excel.settingcollection).
 
-Internamente, os dados no conjunto de propriedades acessados `Settings`com `CustomProperties`o, `RoamingSettings` , ou objetos, são armazenados como um objeto JSON (JavaScript Object Notation) serializado que contém pares de nome/valor. O nome (chave) para cada valor deve ser um `string`, e o valor armazenado pode ser um JavaScript `string`, `number` `date`, ou `object`, mas não uma **função**.
+Internamente, os dados no conjunto de propriedades acessados com o `Settings` , `CustomProperties` , ou `RoamingSettings` objetos, são armazenados como um objeto JSON (JavaScript Object Notation) serializado que contém pares de nome/valor. O nome (chave) para cada valor deve ser um `string` , e o valor armazenado pode ser um JavaScript `string` , `number` , `date` ou `object` , mas não uma **função**.
 
 Este exemplo da estrutura do conjunto de propriedades contém três valores de **cadeia de caracteres** definidos nomeados como `firstName`, `location` e `defaultView`.
 
@@ -52,11 +52,11 @@ Este exemplo da estrutura do conjunto de propriedades contém três valores de *
 }
 ```
 
-Depois que o conjunto de propriedades de configurações é salvo durante a sessão anterior do suplemento, ele pode ser carregado quando o suplemento é inicializado ou a qualquer momento depois disso durante a sessão atual do suplemento. Durante a sessão, as configurações são gerenciadas totalmente na memória usando os `get`métodos `set`, e `remove` do objeto que corresponde ao tipo de configuração que você está criando (**Settings**, **CustomProperties**ou **RoamingSettings**).
+Depois que o conjunto de propriedades de configurações é salvo durante a sessão anterior do suplemento, ele pode ser carregado quando o suplemento é inicializado ou a qualquer momento depois disso durante a sessão atual do suplemento. Durante a sessão, as configurações são gerenciadas totalmente na memória usando os `get` `set` métodos, e `remove` do objeto que corresponde ao tipo de configuração que você está criando (**Settings**, **CustomProperties**ou **RoamingSettings**).
 
 
 > [!IMPORTANT]
-> Para persistir quaisquer adições, atualizações ou exclusões feitas durante a sessão atual do suplemento para o local de armazenamento, você deve chamar o `saveAsync` método do objeto correspondente usado para trabalhar com esse tipo de configuração. Os `get`métodos `set`, e `remove` operam apenas na cópia na memória do recipiente de propriedades de configurações. Se o suplemento for fechado sem chamadas `saveAsync`, as alterações feitas nas configurações durante essa sessão serão perdidas.
+> Para persistir quaisquer adições, atualizações ou exclusões feitas durante a sessão atual do suplemento para o local de armazenamento, você deve chamar o `saveAsync` método do objeto correspondente usado para trabalhar com esse tipo de configuração. Os `get` `set` métodos, e `remove` operam apenas na cópia na memória do recipiente de propriedades de configurações. Se o suplemento for fechado sem chamadas, as `saveAsync` alterações feitas nas configurações durante essa sessão serão perdidas.
 
 
 ## <a name="how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins"></a>Como salvar o estado e as configurações do suplemento por documento para suplementos de conteúdo e de painel de tarefas
@@ -64,7 +64,7 @@ Depois que o conjunto de propriedades de configurações é salvo durante a sess
 
 Para persistir as configurações de estado ou personalizadas de um suplemento de conteúdo ou de painel de tarefas para Word, Excel ou PowerPoint, use o objeto [Settings](/javascript/api/office/office.settings) e seus métodos. O conjunto de propriedades criado com os métodos do `Settings` objeto está disponível somente para a instância do suplemento de conteúdo ou de painel de tarefas que o criou, e apenas do documento no qual ele foi salvo.
 
-O `Settings` objeto é carregado automaticamente como parte do objeto [Document](/javascript/api/office/office.document) e está disponível quando o painel de tarefas ou suplemento de conteúdo é ativado. Depois que `Document` o objeto é instanciado, você pode acessar `Settings` o objeto com a propriedade [Settings](/javascript/api/office/office.document#settings) do `Document` objeto. Durante o tempo de vida da sessão, você só pode usar `Settings.get`os `Settings.set`métodos, `Settings.remove` e para ler, gravar ou remover configurações persistentes e estado de suplemento da cópia na memória do recipiente de propriedades.
+O `Settings` objeto é carregado automaticamente como parte do objeto [Document](/javascript/api/office/office.document) e está disponível quando o painel de tarefas ou suplemento de conteúdo é ativado. Depois `Document` que o objeto é instanciado, você pode acessar o `Settings` objeto com a propriedade [Settings](/javascript/api/office/office.document#settings) do `Document` objeto. Durante o tempo de vida da sessão, você só pode usar `Settings.get` os `Settings.set` métodos, e `Settings.remove` para ler, gravar ou remover configurações persistentes e estado de suplemento da cópia na memória do recipiente de propriedades.
 
 Como os métodos set e remove operam apenas em relação à cópia na memória do conjunto de propriedades de configurações, para salvar configurações novas ou alteradas no documento ao qual o suplemento está associado, você deve chamar o método [Settings.saveAsync](/javascript/api/office/office.settings#saveasync-options--callback-).
 
@@ -129,7 +129,7 @@ function write(message){
 }
 ```
 
-A função anônima passada para o `saveAsync` método como o parâmetro _callback_ é executada quando a operação é concluída. O parâmetro _AsyncResult_ do retorno de chamada fornece acesso a `AsyncResult` um objeto que contém o status da operação. No exemplo, a função verifica a `AsyncResult.status` propriedade para ver se a operação de salvamento foi bem-sucedida ou falhou e, em seguida, exibe o resultado na página do suplemento.
+A função anônima passada para o `saveAsync` método como o parâmetro _callback_ é executada quando a operação é concluída. O parâmetro _AsyncResult_ do retorno de chamada fornece acesso a um `AsyncResult` objeto que contém o status da operação. No exemplo, a função verifica a `AsyncResult.status` propriedade para ver se a operação de salvamento foi bem-sucedida ou falhou e, em seguida, exibe o resultado na página do suplemento.
 
 ## <a name="how-to-save-custom-xml-to-the-document"></a>Como salvar XML personalizado no documento
 

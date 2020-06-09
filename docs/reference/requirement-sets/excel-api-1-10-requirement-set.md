@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos ExcelApi 1,10
 ms.date: 10/22/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: a04e9c7b32dfece1c8a1455c7662dc71228a46f4
-ms.sourcegitcommit: 5ba325cc88183a3f230cd89d615fd49c695addcf
+ms.openlocfilehash: 50d38f610606b4d172d3f79f6a968ad7b1e8e344
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "37682547"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612098"
 ---
 # <a name="whats-new-in-excel-javascript-api-110"></a>O que há de novo na API JavaScript do Excel 1,10
 
@@ -36,7 +36,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[creationDate](/javascript/api/excel/excel.comment#creationdate)|Obtém o horário de criação do comentário. Retorna null se o comentário foi convertido de uma nota, pois o comentário não possui uma data de criação.|
 ||[id](/javascript/api/excel/excel.comment#id)|Representa o identificador de comentário. Somente leitura.|
 ||[replies](/javascript/api/excel/excel.comment#replies)|Representa uma coleção de objetos de resposta associados ao comentário. Somente leitura.|
-|[CommentCollection](/javascript/api/excel/excel.commentcollection)|[Add (cellAddress: String \| de intervalo, Content: \| cadeia de caracteres CommentRichContent, ContentType?: Excel. ContentType)](/javascript/api/excel/excel.commentcollection#add-celladdress--content--contenttype-)|Cria um novo comentário com o conteúdo fornecido na célula especificada. Um `InvalidArgument` erro será acionado se o intervalo fornecido for maior que uma célula.|
+|[CommentCollection](/javascript/api/excel/excel.commentcollection)|[Add (cellAddress: \| String de intervalo, Content: \| cadeia de caracteres CommentRichContent, ContentType?: Excel. ContentType)](/javascript/api/excel/excel.commentcollection#add-celladdress--content--contenttype-)|Cria um novo comentário com o conteúdo fornecido na célula especificada. Um `InvalidArgument` erro será acionado se o intervalo fornecido for maior que uma célula.|
 ||[getCount()](/javascript/api/excel/excel.commentcollection#getcount--)|Obtém o número de comentários na coleção.|
 ||[getItem(commentId: string)](/javascript/api/excel/excel.commentcollection#getitem-commentid-)|Obtém um comentário da coleção com base em seu ID. Somente leitura.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.commentcollection#getitemat-index-)|Obtém um comentário da coleção com base em sua posição.|

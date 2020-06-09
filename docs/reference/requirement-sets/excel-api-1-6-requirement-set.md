@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos ExcelApi 1,6
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: c38dd942c3002af05f847846145bc89f1cbbccbe
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: f86a470d39bacfe4940a6c225b9ce7d8903e2092
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064904"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611411"
 ---
 # <a name="whats-new-in-excel-javascript-api-16"></a>Quais são as novidades na API JavaScript do Excel 1.6
 
@@ -49,7 +49,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[minimum](/javascript/api/excel/excel.conditionalcolorscalecriteria#minimum)|O critério de escala de cores de ponto mínimo.|
 |[ConditionalColorScaleCriterion](/javascript/api/excel/excel.conditionalcolorscalecriterion)|[color](/javascript/api/excel/excel.conditionalcolorscalecriterion#color)|Representação do código de cor HTML da cor de escala de cores. Por exemplo #FF0000 representa vermelho.|
 ||[formula](/javascript/api/excel/excel.conditionalcolorscalecriterion#formula)|Um número, uma fórmula ou nulo (se Type for LowestValue).|
-||[tipo](/javascript/api/excel/excel.conditionalcolorscalecriterion#type)|O que a fórmula condicional de critério deve se basear.|
+||[type](/javascript/api/excel/excel.conditionalcolorscalecriterion#type)|O que a fórmula condicional de critério deve se basear.|
 |[ConditionalDataBarNegativeFormat](/javascript/api/excel/excel.conditionaldatabarnegativeformat)|[borderColor](/javascript/api/excel/excel.conditionaldatabarnegativeformat#bordercolor)|Código de cor HTML que representa a cor #RRGGBB da linha de borda do formulário (por exemplo, "FFA500") ou uma cor HTML nomeada (por exemplo, "laranja").|
 ||[fillColor](/javascript/api/excel/excel.conditionaldatabarnegativeformat#fillcolor)|Código de cor HTML que representa a cor #RRGGBB do formulário (por exemplo, "FFA500") ou um nome de cor HTML (por exemplo, "laranja").|
 ||[matchPositiveBorderColor](/javascript/api/excel/excel.conditionaldatabarnegativeformat#matchpositivebordercolor)|Representação booliana para indicar se o DataBar negativo tem ou não a mesma cor de borda que o DataBar positivo.|
@@ -58,7 +58,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[fillColor](/javascript/api/excel/excel.conditionaldatabarpositiveformat#fillcolor)|Código de cor HTML que representa a cor #RRGGBB do formulário (por exemplo, "FFA500") ou um nome de cor HTML (por exemplo, "laranja").|
 ||[gradientFill](/javascript/api/excel/excel.conditionaldatabarpositiveformat#gradientfill)|Representação booliana para indicar se a DataBar tem um gradiente ou não.|
 |[ConditionalDataBarRule](/javascript/api/excel/excel.conditionaldatabarrule)|[formula](/javascript/api/excel/excel.conditionaldatabarrule#formula)|A fórmula, se necessário, para avaliar a regra databar.|
-||[tipo](/javascript/api/excel/excel.conditionaldatabarrule#type)|O tipo de regra para o databar.|
+||[type](/javascript/api/excel/excel.conditionaldatabarrule#type)|O tipo de regra para o databar.|
 |[ConditionalFormat](/javascript/api/excel/excel.conditionalformat)|[delete()](/javascript/api/excel/excel.conditionalformat#delete--)|Exclui esse formato condicional.|
 ||[getRange()](/javascript/api/excel/excel.conditionalformat#getrange--)|Retorna o intervalo ao qual a formatação condicional é aplicada. Gera um erro se a formatação condicional for aplicada a vários intervalos. Somente leitura.|
 ||[getRangeOrNullObject()](/javascript/api/excel/excel.conditionalformat#getrangeornullobject--)|Retorna o intervalo ao qual o formato conditonal é aplicado, ou um objeto NULL, se o formato condicional for aplicado a vários intervalos. Somente leitura.|
@@ -80,7 +80,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[textComparisonOrNullObject](/javascript/api/excel/excel.conditionalformat#textcomparisonornullobject)|Retorna as propriedades de formato condicional de texto específico se o formato condicional atual for um tipo de texto.|
 ||[topBottom](/javascript/api/excel/excel.conditionalformat#topbottom)|Retorna as propriedades de formato condicional superior/inferior se o formato condicional atual for um tipo TopBottom.|
 ||[topBottomOrNullObject](/javascript/api/excel/excel.conditionalformat#topbottomornullobject)|Retorna as propriedades de formato condicional superior/inferior se o formato condicional atual for um tipo TopBottom.|
-||[tipo](/javascript/api/excel/excel.conditionalformat#type)|Um tipo de formato condicional. Apenas um pode ser definido por vez. Somente leitura.|
+||[type](/javascript/api/excel/excel.conditionalformat#type)|Um tipo de formato condicional. Apenas um pode ser definido por vez. Somente leitura.|
 ||[stopIfTrue](/javascript/api/excel/excel.conditionalformat#stopiftrue)|Se as condições desse formato condicional forem atendidas, nenhum formato de prioridade mais baixa terá efeito nessa célula.|
 |[ConditionalFormatCollection](/javascript/api/excel/excel.conditionalformatcollection)|[Adicionar (tipo: Excel. Valorconditionalformattype)](/javascript/api/excel/excel.conditionalformatcollection#add-type-)|Adiciona um novo formato condicional à coleção na prioridade First/Top.|
 ||[clearAll ()](/javascript/api/excel/excel.conditionalformatcollection#clearall--)|Limpa todos os formatos condicionais ativos no intervalo atual especificado.|
@@ -94,7 +94,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 |[ConditionalIconCriterion](/javascript/api/excel/excel.conditionaliconcriterion)|[customIcon](/javascript/api/excel/excel.conditionaliconcriterion#customicon)|O ícone personalizado para o critério atual, se diferente do IconSet padrão; caso contrário, será retornado nulo.|
 ||[formula](/javascript/api/excel/excel.conditionaliconcriterion#formula)|Um número ou uma fórmula, dependendo do tipo.|
 ||[operador](/javascript/api/excel/excel.conditionaliconcriterion#operator)|GreaterThan ou GreaterThanOrEqual para cada tipo de regra para o formato condicional de ícone.|
-||[tipo](/javascript/api/excel/excel.conditionaliconcriterion#type)|No que a fórmula condicional de ícone deve se basear.|
+||[type](/javascript/api/excel/excel.conditionaliconcriterion#type)|No que a fórmula condicional de ícone deve se basear.|
 |[ConditionalPresetCriteriaRule](/javascript/api/excel/excel.conditionalpresetcriteriarule)|[critério](/javascript/api/excel/excel.conditionalpresetcriteriarule#criterion)|O critério do formato condicional.|
 |[ConditionalRangeBorder](/javascript/api/excel/excel.conditionalrangeborder)|[color](/javascript/api/excel/excel.conditionalrangeborder#color)|Código de cor HTML que representa a cor #RRGGBB da linha de borda do formulário (por exemplo, "FFA500") ou uma cor HTML nomeada (por exemplo, "laranja").|
 ||[sideIndex](/javascript/api/excel/excel.conditionalrangeborder#sideindex)|Valor constante que indica o lado específico da borda. Consulte Excel. ConditionalRangeBorderIndex para obter detalhes. Somente leitura.|
@@ -122,7 +122,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 |[ConditionalTextComparisonRule](/javascript/api/excel/excel.conditionaltextcomparisonrule)|[operador](/javascript/api/excel/excel.conditionaltextcomparisonrule#operator)|O operador do formato condicional de texto.|
 ||[text](/javascript/api/excel/excel.conditionaltextcomparisonrule#text)|O valor de texto do formato condicional.|
 |[ConditionalTopBottomRule](/javascript/api/excel/excel.conditionaltopbottomrule)|[Classificação](/javascript/api/excel/excel.conditionaltopbottomrule#rank)|A classificação entre 1 e 1000 para classificações numéricas ou 1 e 100 para classificações percentuais.|
-||[tipo](/javascript/api/excel/excel.conditionaltopbottomrule#type)|Formatar valores com base na classificação superior ou inferior.|
+||[type](/javascript/api/excel/excel.conditionaltopbottomrule#type)|Formatar valores com base na classificação superior ou inferior.|
 |[CustomConditionalFormat](/javascript/api/excel/excel.customconditionalformat)|[format](/javascript/api/excel/excel.customconditionalformat#format)|Retorna um objeto Format, encapsulando a fonte, o preenchimento, as bordas e outras propriedades de formatos condicionais. Somente leitura.|
 ||[norma](/javascript/api/excel/excel.customconditionalformat#rule)|Representa o objeto Regra neste formato condicional. Somente leitura.|
 |[DataBarConditionalFormat](/javascript/api/excel/excel.databarconditionalformat)|[axisColor](/javascript/api/excel/excel.databarconditionalformat#axiscolor)|Código de cor HTML que representa a cor da linha de Eixo, no formato #RRGGBB (por exemplo, "FFA500") ou uma cor HTML nomeada (por exemplo, "laranja").|
@@ -149,5 +149,5 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação de referência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.6)
+- [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.6)
 - [Conjuntos de requisitos da API JavaScript do Excel](./excel-api-requirement-sets.md)

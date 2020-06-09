@@ -3,12 +3,12 @@ title: LaunchEvent no arquivo de manifesto (versão prévia)
 description: O elemento LaunchEvent configura seu suplemento para ser ativado com base nos eventos com suporte.
 ms.date: 05/15/2020
 localization_priority: Normal
-ms.openlocfilehash: a4f5208ec7f735d926c3a878cae34973c3992cf9
-ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
+ms.openlocfilehash: 4874b9f4c14e3a999f41ec3fa20a15393b031ea6
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44278522"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611775"
 ---
 # <a name="launchevent-element-preview"></a>Elemento LaunchEvent (visualização)
 
@@ -40,7 +40,7 @@ Configura o suplemento para que ele seja ativado com base nos eventos com suport
 
 |  Atributo  |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  **Type**  |  Sim  | Especifica um tipo de evento suportado. Os tipos disponíveis são `OnNewMessageCompose` e `OnNewAppointmentOrganizer` . |
+|  **Tipo**  |  Sim  | Especifica um tipo de evento suportado. Os tipos disponíveis são `OnNewMessageCompose` e `OnNewAppointmentOrganizer` . |
 |  **FunctionName**  |  Sim  | Especifica o nome da função JavaScript para manipular o evento especificado no `Type` atributo. |
 
 ## <a name="see-also"></a>Confira também

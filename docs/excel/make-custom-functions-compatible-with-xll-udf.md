@@ -3,12 +3,12 @@ title: Estender funções personalizadas com funções definidas pelo usuário X
 description: Habilitar a compatibilidade com as funções definidas pelo usuário do Excel XLL que possuem funcionalidade equivalente às suas funções personalizadas
 ms.date: 04/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 82f4dba3bd82743efd84a2fe88c893042c061461
-ms.sourcegitcommit: 54e2892c0c26b9ad1e4dba8aba48fea39f853b6c
+ms.openlocfilehash: 06a776678c60a4b66494097385f304ddac9a4ce0
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44275767"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44610358"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>Estender funções personalizadas com funções definidas pelo usuário XLL
 
@@ -58,7 +58,7 @@ A tabela a seguir compara os recursos nas funções de XLL definidas pelo usuár
 
 |         |Função de XLL definida pelo usuário |Funções personalizadas compatíveis com XLL |Função personalizada de suplemento do Excel |
 |---------|---------|---------|---------|
-| Plataformas com suporte | Windows | Windows, macOS, navegador da Web | Windows, macOS, navegador da Web |
+| Plataformas compatíveis | Windows | Windows, macOS, navegador da Web | Windows, macOS, navegador da Web |
 | Formatos de arquivo com suporte | XLSX, XLSB, XLSM, XLS | XLSX, XLSB, XLSM | XLSX, XLSB, XLSM |
 | Preenchimento automático de fórmula | Não | Sim | Sim |
 | Streaming | Possível via xlfRTD e o retorno de chamada XLL. | Não | Sim |

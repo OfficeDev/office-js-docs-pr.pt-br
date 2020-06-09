@@ -3,12 +3,12 @@ title: Elemento HighResolutionIconUrl no arquivo de manifesto
 description: Especifica a URL da imagem que é usada para representar o seu Suplemento do Office na experiência de usuário de inserção e na Office Store em telas de DPI alto.
 ms.date: 12/04/2018
 localization_priority: Normal
-ms.openlocfilehash: 78a9296f38a688073e516fb78a77bb4cdac822c4
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 1ebe69a7576c82ec121094ed84c0d49acde1098a
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718136"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611817"
 ---
 # <a name="highresolutioniconurl-element"></a>Elemento HighResolutionIconUrl
 
@@ -34,6 +34,6 @@ Especifica a URL da imagem que é usada para representar o seu Suplemento do Off
 
 ## <a name="remarks"></a>Comentários
 
-Para um suplemento de email, o ícone é exibido na >  **interface do usuário****gerenciar suplementos** . Para um suplemento de conteúdo ou de painel de tarefas, o ícone é exibido na interface de usuário **Inserir** > **Suplementos**.
+Para um suplemento de email, o ícone é exibido na **File**  >  interface do usuário**gerenciar suplementos** . Para um suplemento de conteúdo ou de painel de tarefas, o ícone é exibido na interface de usuário **Inserir** > **Suplementos**.
 
 A imagem deve estar em um dos seguintes formatos: GIF, JPG, PNG, EXIF, BMP ou TIFF. Para aplicativos do painel de tarefas e de conteúdo, a resolução de imagem recomendada é 64 x 64 pixels. Para aplicativos de email, a imagem deve ter 128 x 128 pixels. Para saber mais, confira a seção _Criar uma identidade visual consistente para seu aplicativo_ em [Criar listagens eficazes no AppSource e no Office](/office/dev/store/create-effective-office-store-listings#create-a-consistent-visual-identity).

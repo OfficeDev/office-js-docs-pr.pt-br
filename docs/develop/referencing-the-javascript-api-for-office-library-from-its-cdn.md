@@ -3,16 +3,16 @@ title: Fazendo referência à biblioteca da API JavaScript do Office
 description: Saiba como fazer referência à biblioteca da API JavaScript do Office e definições de tipo no suplemento.
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 3b468ae9286eb53ffd5d3c0199c14045131105f3
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 8bd011c140ce61581ad4b1d06a43b04ad437f5c7
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719347"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609384"
 ---
 # <a name="referencing-the-office-javascript-api-library"></a>Fazendo referência à biblioteca da API JavaScript do Office
 
-A biblioteca da [API JavaScript do Office](../reference/javascript-api-for-office.md) fornece as APIs que o suplemento pode usar para interagir com o host do Office. A maneira mais simples de fazer referência à biblioteca é usar a CDN (rede de distribuição de conteúdo) adicionando a `<script>` seguinte marca dentro `<head>` da seção da página HTML:  
+A biblioteca da [API JavaScript do Office](../reference/javascript-api-for-office.md) fornece as APIs que o suplemento pode usar para interagir com o host do Office. A maneira mais simples de fazer referência à biblioteca é usar a CDN (rede de distribuição de conteúdo) adicionando a seguinte `<script>` marca dentro da `<head>` seção da página HTML:  
 
 ```html
 <head>
@@ -24,11 +24,11 @@ A biblioteca da [API JavaScript do Office](../reference/javascript-api-for-offic
 Isso baixará e armazenará em cache os arquivos da API JavaScript do Office na primeira vez em que seu suplemento for carregado para garantir que ele esteja usando a implementação mais atualizada do Office. js e seus arquivos associados para a versão especificada.
 
 > [!IMPORTANT]
-> Você deve fazer referência à API JavaScript do Office de `<head>` dentro da seção da página para garantir que a API seja totalmente inicializada antes de qualquer elemento body. Os hosts do Office requerem que os suplementos inicializem até 5 segundos depois da ativação. Se seu suplemento não ativar dentro deste limite, ele será declarado sem resposta e uma mensagem de erro será exibida ao usuário.
+> Você deve fazer referência à API JavaScript do Office de dentro da `<head>` seção da página para garantir que a API seja totalmente inicializada antes de qualquer elemento body. Os hosts do Office requerem que os suplementos inicializem até 5 segundos depois da ativação. Se seu suplemento não ativar dentro deste limite, ele será declarado sem resposta e uma mensagem de erro será exibida ao usuário.
 
 ## <a name="api-versioning-and-backward-compatibility"></a>Versão da API e compatibilidade com versões anteriores
 
-No trecho de código HTML anterior, `/1/` o na frente `office.js` da URL de CDN especifica a versão incremental mais recente na versão 1 do Office. js. Como a API JavaScript do Office mantém a compatibilidade com versões anteriores, a versão mais recente continuará a dar suporte a membros da API que foram introduzidos anteriormente na versão 1. Se você precisar atualizar um projeto existente, confira [atualizar a versão da API JavaScript do Office e dos arquivos de esquema de manifesto](update-your-javascript-api-for-office-and-manifest-schema-version.md). 
+No trecho de código HTML anterior, o `/1/` na frente da `office.js` URL de CDN especifica a versão incremental mais recente na versão 1 do Office. js. Como a API JavaScript do Office mantém a compatibilidade com versões anteriores, a versão mais recente continuará a dar suporte a membros da API que foram introduzidos anteriormente na versão 1. Se você precisar atualizar um projeto existente, confira [atualizar a versão da API JavaScript do Office e dos arquivos de esquema de manifesto](update-your-javascript-api-for-office-and-manifest-schema-version.md). 
 
 Caso planeje publicar seu Suplemento do Office no AppSource, você deve usar esta referência da CDN. As referências locais são adequadas somente para cenários internos, de depuração e de desenvolvimento.
 
@@ -48,7 +48,7 @@ npm install --save-dev @types/office-js
 >
 > `npm install --save-dev @types/office-js-preview`
 
-## <a name="see-also"></a>Também confira
+## <a name="see-also"></a>Confira também
 
 - [Entendendo a API JavaScript do Office](understanding-the-javascript-api-for-office.md)
 - [API JavaScript para Office](../reference/javascript-api-for-office.md)

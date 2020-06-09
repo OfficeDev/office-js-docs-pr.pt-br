@@ -3,12 +3,12 @@ title: 'Solicitar permissões para uso da API em suplementos '
 description: Saiba mais sobre diferentes níveis de permissão para declarar no manifesto de um suplemento de conteúdo ou de painel de tarefas para especificar o nível de acesso à API JavaScript.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 37aef33f5e86460d8f471dd4253b309d2051c097
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: a37c4cb4a46bf946618178d46a2af73dbf05717a
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719354"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609724"
 ---
 # <a name="requesting-permissions-for-api-use-in-add-ins"></a>Solicitar permissões para uso da API em suplementos 
 

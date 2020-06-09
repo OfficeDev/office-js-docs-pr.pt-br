@@ -3,12 +3,12 @@ title: Elemento ExtendedPermissions no arquivo de manifesto
 description: Define o conjunto de permissões estendidas que o suplemento precisa para acessar as APIs ou recursos associados.
 ms.date: 03/05/2020
 localization_priority: Normal
-ms.openlocfilehash: 86d898052af6ba0e6f6bc8b341fff9f0f8408967
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: cf59d13d794f8f303da6cc0ca39066584bc3f56c
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42718220"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611530"
 ---
 # <a name="extendedpermissions-element"></a>Elemento ExtendedPermissions
 

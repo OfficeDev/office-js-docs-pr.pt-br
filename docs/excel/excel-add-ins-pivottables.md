@@ -3,12 +3,12 @@ title: Trabalhar com tabelas dinâmicas usando a API JavaScript do Excel
 description: Use a API JavaScript do Excel para criar tabelas dinâmicas e interagir com seus componentes.
 ms.date: 04/20/2020
 localization_priority: Normal
-ms.openlocfilehash: f89e945f717982163a967971aaeff90ec0125545
-ms.sourcegitcommit: 79c55e59294e220bd21a5006080f72acf3ec0a3f
+ms.openlocfilehash: 8e09f4bbd4c6429d585b4bd7d54a1f0c918ff6c3
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "43581936"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609752"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Trabalhar com tabelas dinâmicas usando a API JavaScript do Excel
 
@@ -35,7 +35,7 @@ Vamos ver como essas relações se aplicam a alguns dados de exemplo. Os dados a
 
 ![Uma coleção de vendas de frutas de diferentes tipos de farms diferentes.](../images/excel-pivots-raw-data.png)
 
-Estes dados de vendas do farm de frutas serão usados para criar uma tabela dinâmica. Cada coluna, como **tipos**, é um `PivotHierarchy`. A hierarquia **tipos** contém o campo **tipos** . O campo **tipos** contém os itens **Apple**, **Kiwi**, **casca**, **verde-limão**e **laranja**.
+Estes dados de vendas do farm de frutas serão usados para criar uma tabela dinâmica. Cada coluna, como **tipos**, é um `PivotHierarchy` . A hierarquia **tipos** contém o campo **tipos** . O campo **tipos** contém os itens **Apple**, **Kiwi**, **casca**, **verde-limão**e **laranja**.
 
 ### <a name="hierarchies"></a>Hierarquias
 
@@ -57,7 +57,7 @@ Esta tabela dinâmica pode ser gerada por meio da API JavaScript ou através da 
 
 ## <a name="create-a-pivottable"></a>Criar uma tabela dinâmica
 
-As tabelas dinâmicas precisam de um nome, origem e destino. A origem pode ser um endereço de intervalo ou nome de tabela (passado `Range`como `string`um, `Table` ou tipo). O destino é um endereço de intervalo (fornecido como ou `Range` um `string`ou).
+As tabelas dinâmicas precisam de um nome, origem e destino. A origem pode ser um endereço de intervalo ou nome de tabela (passado como um `Range` , `string` ou `Table` tipo). O destino é um endereço de intervalo (fornecido como `Range` ou um ou `string` ).
 Os exemplos a seguir mostram várias técnicas de criação de tabela dinâmica.
 
 ### <a name="create-a-pivottable-with-range-addresses"></a>Criar uma tabela dinâmica com endereços de intervalo
@@ -181,7 +181,7 @@ O diagrama a seguir mostra quais chamadas de função de layout correspondem aos
 
 ### <a name="get-data-from-the-pivottable"></a>Obter dados da tabela dinâmica
 
-O layout define como a tabela dinâmica é exibida na planilha. Isso significa que `PivotLayout` o objeto controla os intervalos usados para elementos de tabela dinâmica. Use os intervalos fornecidos pelo layout para obter dados coletados e agregados pela tabela dinâmica. Em particular, use `PivotLayout.getDataBodyRange` para acessar o que a tabela dinâmica produz.
+O layout define como a tabela dinâmica é exibida na planilha. Isso significa que o `PivotLayout` objeto controla os intervalos usados para elementos de tabela dinâmica. Use os intervalos fornecidos pelo layout para obter dados coletados e agregados pela tabela dinâmica. Em particular, use `PivotLayout.getDataBodyRange` para acessar o que a tabela dinâmica produz.
 
 O código a seguir demonstra como obter a última linha dos dados da tabela dinâmica percorrendo o layout (o **total geral** da soma de enfileiras **vendidas no farm** e a **soma das colunas vendidas do atacadista** no exemplo anterior). Esses valores são somados em um total final, que é exibido na célula **E30** (fora da tabela dinâmica).
 
@@ -228,7 +228,7 @@ Excel.run(function (context) {
 
 ## <a name="slicers"></a>Segmentações de dados
 
-As [segmentações](/javascript/api/excel/excel.slicer) de dados permitem que os dados sejam filtrados de uma tabela dinâmica ou tabela do Excel. Uma segmentação de, usa valores de uma coluna especificada ou PivotField para filtrar as linhas correspondentes. Esses valores são armazenados como objetos [SlicerItem](/javascript/api/excel/excel.sliceritem) no `Slicer`. O suplemento pode ajustar esses filtros, como os usuários ([por meio da interface do usuário do Excel](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d)). A segmentação de trabalho fica na parte superior da planilha na camada de desenho, conforme mostrado na captura de tela a seguir.
+As [segmentações](/javascript/api/excel/excel.slicer) de dados permitem que os dados sejam filtrados de uma tabela dinâmica ou tabela do Excel. Uma segmentação de, usa valores de uma coluna especificada ou PivotField para filtrar as linhas correspondentes. Esses valores são armazenados como objetos [SlicerItem](/javascript/api/excel/excel.sliceritem) no `Slicer` . O suplemento pode ajustar esses filtros, como os usuários ([por meio da interface do usuário do Excel](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d)). A segmentação de trabalho fica na parte superior da planilha na camada de desenho, conforme mostrado na captura de tela a seguir.
 
 ![Uma segmentação de dados Filtrando dados em uma tabela dinâmica.](../images/excel-slicer.png)
 
@@ -237,11 +237,11 @@ As [segmentações](/javascript/api/excel/excel.slicer) de dados permitem que os
 
 ### <a name="create-a-slicer"></a>Criar uma segmentação de um
 
-Você pode criar uma segmentação de, em uma pasta de trabalho ou `Workbook.slicers.add` planilha, `Worksheet.slicers.add` usando o método ou método. Isso adiciona uma segmentação de objetos à [SlicerCollection](/javascript/api/excel/excel.slicercollection) do objeto especificado `Workbook` ou `Worksheet` . O `SlicerCollection.add` método tem três parâmetros:
+Você pode criar uma segmentação de, em uma pasta de trabalho ou planilha, usando o `Workbook.slicers.add` método ou `Worksheet.slicers.add` método. Isso adiciona uma segmentação de objetos à [SlicerCollection](/javascript/api/excel/excel.slicercollection) do objeto especificado `Workbook` ou `Worksheet` . O `SlicerCollection.add` método tem três parâmetros:
 
-- `slicerSource`: A fonte de dados na qual a nova segmentação de dados se baseia. `PivotTable`Pode ser um `Table`, ou cadeia de caracteres que representa o nome ou a ID `PivotTable` de `Table`um ou.
-- `sourceField`: O campo na fonte de dados pela qual filtrar. `PivotField`Pode ser um `TableColumn`, ou cadeia de caracteres que representa o nome ou a ID `PivotField` de `TableColumn`um ou.
-- `slicerDestination`: A planilha onde a nova segmentação de trabalho será criada. Pode ser um `Worksheet` objeto ou o nome ou a ID de um `Worksheet`. Esse parâmetro é desnecessário quando `SlicerCollection` o é acessado `Worksheet.slicers`. Nesse caso, a planilha da coleção é usada como o destino.
+- `slicerSource`: A fonte de dados na qual a nova segmentação de dados se baseia. Pode ser um `PivotTable` , `Table` ou cadeia de caracteres que representa o nome ou a ID de um `PivotTable` ou `Table` .
+- `sourceField`: O campo na fonte de dados pela qual filtrar. Pode ser um `PivotField` , `TableColumn` ou cadeia de caracteres que representa o nome ou a ID de um `PivotField` ou `TableColumn` .
+- `slicerDestination`: A planilha onde a nova segmentação de trabalho será criada. Pode ser um `Worksheet` objeto ou o nome ou a ID de um `Worksheet` . Esse parâmetro é desnecessário quando o `SlicerCollection` é acessado `Worksheet.slicers` . Nesse caso, a planilha da coleção é usada como o destino.
 
 O exemplo de código a seguir adiciona uma nova segmentação de trabalho à planilha **dinâmica** . A origem da segmentação de dados é a tabela dinâmica de **vendas do farm** e filtra usando os dados do **tipo** . A segmentação de, também é chamada de **segmentação de frutas** para referência futura.
 
@@ -259,10 +259,10 @@ Excel.run(function (context) {
 
 ### <a name="filter-items-with-a-slicer"></a>Filtrar itens com uma segmentação de um
 
-A segmentação de relatório filtra a tabela dinâmica com `sourceField`itens do. O `Slicer.selectItems` método define os itens que permanecem na segmentação de,. Esses itens são passados para o método como a `string[]`, representando as chaves dos itens. Qualquer linha que contenha esses itens permanecerá na agregação da tabela dinâmica. Chamadas subsequentes `selectItems` para definir a lista como as chaves especificadas nessas chamadas.
+A segmentação de relatório filtra a tabela dinâmica com itens do `sourceField` . O `Slicer.selectItems` método define os itens que permanecem na segmentação de,. Esses itens são passados para o método como a `string[]` , representando as chaves dos itens. Qualquer linha que contenha esses itens permanecerá na agregação da tabela dinâmica. Chamadas subsequentes para `selectItems` definir a lista como as chaves especificadas nessas chamadas.
 
 > [!NOTE]
-> Se `Slicer.selectItems` for passado um item que não está na fonte de dados, um `InvalidArgument` erro será gerado. O conteúdo pode ser verificado através da `Slicer.slicerItems` Propriedade, que é um [SlicerItemCollection](/javascript/api/excel/excel.sliceritemcollection).
+> Se `Slicer.selectItems` for passado um item que não está na fonte de dados, um `InvalidArgument` erro será gerado. O conteúdo pode ser verificado através da `Slicer.slicerItems` propriedade, que é um [SlicerItemCollection](/javascript/api/excel/excel.sliceritemcollection).
 
 O exemplo de código a seguir mostra três itens que estão sendo selecionados para a segmentação de itens: **casca**de limão, **verde-limão**e **laranja**.
 
@@ -275,7 +275,7 @@ Excel.run(function (context) {
 });
 ```
 
-Para remover todos os filtros da segmentação de itens, `Slicer.clearFilters` use o método, conforme mostrado no exemplo a seguir.
+Para remover todos os filtros da segmentação de itens, use o `Slicer.clearFilters` método, conforme mostrado no exemplo a seguir.
 
 ```js
 Excel.run(function (context) {
@@ -287,7 +287,7 @@ Excel.run(function (context) {
 
 ### <a name="style-and-format-a-slicer"></a>Estilo e formatação de uma segmentação de subconjuntos
 
-O suplemento pode ajustar as configurações de exibição de uma segmentação por `Slicer` meio de propriedades. O exemplo de código a seguir define o estilo como **SlicerStyleLight6**, define o texto na parte superior da segmentação de texto para **tipos de frutas**, coloca a segmentação de texto na posição **(395, 15)** na camada de desenho e define o tamanho da segmentação de texto como **135x150** pixels.
+O suplemento pode ajustar as configurações de exibição de uma segmentação por meio de `Slicer` Propriedades. O exemplo de código a seguir define o estilo como **SlicerStyleLight6**, define o texto na parte superior da segmentação de texto para **tipos de frutas**, coloca a segmentação de texto na posição **(395, 15)** na camada de desenho e define o tamanho da segmentação de texto como **135x150** pixels.
 
 ```js
 Excel.run(function (context) {
@@ -304,7 +304,7 @@ Excel.run(function (context) {
 
 ### <a name="delete-a-slicer"></a>Excluir uma segmentação de um
 
-Para excluir uma segmentação de, chame `Slicer.delete` o método. O exemplo de código a seguir exclui a primeira segmentação de itens da planilha atual.
+Para excluir uma segmentação de, chame o `Slicer.delete` método. O exemplo de código a seguir exclui a primeira segmentação de itens da planilha atual.
 
 ```js
 Excel.run(function (context) {
@@ -318,7 +318,7 @@ Excel.run(function (context) {
 
 As hierarquias de dados têm seus valores agregados. Para conjuntos de números de valores, esta é uma soma por padrão. A `summarizeBy` propriedade define esse comportamento com base em um tipo [AggregationFunction](/javascript/api/excel/excel.aggregationfunction) .
 
-Os tipos de função de agregação `Sum`suportados `Count`atualmente `Average`são `Max`, `Min` `Product`,, `CountNumbers`, `StandardDeviation`, `StandardDeviationP`, `Variance`, `VarianceP`,, `Automatic` e (o padrão).
+Os tipos de função de agregação suportados atualmente são,,,,, `Sum` `Count` ,,,, `Average` `Max` `Min` `Product` `CountNumbers` `StandardDeviation` `StandardDeviationP` `Variance` `VarianceP` e `Automatic` (o padrão).
 
 O exemplo de código a seguir altera a agregação para ser a média dos dados.
 
@@ -342,7 +342,7 @@ As tabelas dinâmicas, por padrão, agregam os dados de suas hierarquias de linh
 
 O `ShowAsRule` objeto tem três propriedades:
 
-- `calculation`: O tipo de cálculo relativo a ser aplicado à hierarquia de dados (o padrão `none`é).
+- `calculation`: O tipo de cálculo relativo a ser aplicado à hierarquia de dados (o padrão é `none` ).
 - `baseField`: O [PivotField](/javascript/api/excel/excel.pivotfield) na hierarquia que contém os dados básicos antes do cálculo ser aplicado. Como as tabelas dinâmicas do Excel têm um mapeamento de um-para-um de hierarquia para campo, você usará o mesmo nome para acessar a hierarquia e o campo.
 - `baseItem`: O [PivotItem](/javascript/api/excel/excel.pivotitem) individual comparado com os valores dos campos base com base no tipo de cálculo. Nem todos os cálculos exigem esse campo.
 
@@ -372,7 +372,7 @@ Excel.run(function (context) {
 
 O exemplo anterior definiu o cálculo para a coluna, em relação ao campo de uma hierarquia de linha individual. Quando o cálculo está relacionado a um item individual, use a `baseItem` propriedade.
 
-O exemplo a seguir mostra `differenceFrom` o cálculo. Ele exibe a diferença entre as entradas de hierarquia de dados de vendas do farm em relação às de **um farm**.
+O exemplo a seguir mostra o `differenceFrom` cálculo. Ele exibe a diferença entre as entradas de hierarquia de dados de vendas do farm em relação às de **um farm**.
 O `baseField` **farm**de is, portanto, vemos as diferenças entre os outros farms, bem como as divisões de cada tipo de fruta (**Type** também é uma hierarquia de linha neste exemplo).
 
 ![Uma tabela dinâmica mostrando as diferenças das vendas de frutas entre "um farm" e outros. Isso mostra a diferença no total de vendas de frutas dos farms e nas vendas dos tipos de frutas. Se "um farm" não vender um tipo específico de frutas, "#N/A" será exibido.](../images/excel-pivots-showas-differencefrom.png)

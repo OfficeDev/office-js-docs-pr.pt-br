@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos ExcelApi 1,3
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: d0ab1e0a1c41d6da0104c03355f64f5f5abbb3b2
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 482d04a951acc48d34838a758834adfba273bd19
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064729"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611432"
 ---
 # <a name="whats-new-in-excel-javascript-api-13"></a>Quais são as novidades na API JavaScript do Excel 1.3
 
@@ -22,7 +22,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 | Classe | Campos | Descrição |
 |:---|:---|:---|
 |[Associação](/javascript/api/excel/excel.binding)|[delete()](/javascript/api/excel/excel.binding#delete--)|Especifica a associação.|
-|[BindingCollection](/javascript/api/excel/excel.bindingcollection)|[Add (Range: String \| de intervalo, BindingType: Excel. BindingType, ID: String)](/javascript/api/excel/excel.bindingcollection#add-range--bindingtype--id-)|Adiciona uma nova associação a um intervalo específico.|
+|[BindingCollection](/javascript/api/excel/excel.bindingcollection)|[Add (Range: \| String de intervalo, BindingType: Excel. BindingType, ID: String)](/javascript/api/excel/excel.bindingcollection#add-range--bindingtype--id-)|Adiciona uma nova associação a um intervalo específico.|
 ||[addFromNamedItem (Name: String, BindingType: Excel. BindingType, ID: String)](/javascript/api/excel/excel.bindingcollection#addfromnameditem-name--bindingtype--id-)|Adiciona uma nova associação com base em um item nomeado na pasta de trabalho.|
 ||[addFromSelection (BindingType: Excel. BindingType, ID: String)](/javascript/api/excel/excel.bindingcollection#addfromselection-bindingtype--id-)|Adiciona uma nova associação com base na seleção atual.|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[name](/javascript/api/excel/excel.pivottable#name)|Nome da Tabela Dinâmica.|
@@ -39,7 +39,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[numberFormat](/javascript/api/excel/excel.rangeview#numberformat)|Representa o código de formato de número do Excel para determinada célula.|
 ||[cellAddresses](/javascript/api/excel/excel.rangeview#celladdresses)|Representa os endereços de célula da RangeView. Somente leitura.|
 ||[columnCount](/javascript/api/excel/excel.rangeview#columncount)|Retorna o número de colunas visíveis. Somente leitura.|
-||[index](/javascript/api/excel/excel.rangeview#index)|Retorna um valor que representa o índice da RangeView. Somente leitura.|
+||[índice](/javascript/api/excel/excel.rangeview#index)|Retorna um valor que representa o índice da RangeView. Somente leitura.|
 ||[Validação](/javascript/api/excel/excel.rangeview#rowcount)|Retorna o número de linhas visíveis. Somente leitura.|
 ||[rows](/javascript/api/excel/excel.rangeview#rows)|Representa uma coleção de exibições de tabelas associadas ao intervalo. Somente leitura.|
 ||[text](/javascript/api/excel/excel.rangeview#text)|Valores de texto do intervalo especificado. O valor de texto não depende da largura da célula. A substituição pelo sinal #, que ocorre na interface de usuário do Excel, não afeta o valor de texto retornado pela API. Somente leitura.|
@@ -52,10 +52,10 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[showBandedColumns](/javascript/api/excel/excel.table#showbandedcolumns)|Indica se as colunas mostram formatação em faixas nas quais as colunas ímpares são realçadas de modo diferente das colunas pares, tornando a leitura da tabela mais fácil.|
 ||[showBandedRows](/javascript/api/excel/excel.table#showbandedrows)|Indica se as linhas mostram formatação em faixas nas quais as linhas ímpares são realçadas de modo diferente das colunas pares, tornando a leitura da tabela mais fácil.|
 ||[showFilterButton](/javascript/api/excel/excel.table#showfilterbutton)|Indica se os botões de filtro estão visíveis na parte superior de cada cabeçalho da coluna. Essa configuração só será permitida se a tabela tiver uma linha de cabeçalho.|
-|[Workbook](/javascript/api/excel/excel.workbook)|[pivotTables](/javascript/api/excel/excel.workbook#pivottables)|Representa uma coleção de Tabelas Dinâmicas associadas à pasta de trabalho. Somente leitura.|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[pivotTables](/javascript/api/excel/excel.worksheet#pivottables)|Coleção de Tabelas Dinâmicas que fazem parte da planilha. Somente leitura.|
+|[Workbook](/javascript/api/excel/excel.workbook)|[Tabelas dinâmicas](/javascript/api/excel/excel.workbook#pivottables)|Representa uma coleção de Tabelas Dinâmicas associadas à pasta de trabalho. Somente leitura.|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[Tabelas dinâmicas](/javascript/api/excel/excel.worksheet#pivottables)|Coleção de Tabelas Dinâmicas que fazem parte da planilha. Somente leitura.|
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação de referência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.3)
+- [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.3)
 - [Conjuntos de requisitos da API JavaScript do Excel](./excel-api-requirement-sets.md)

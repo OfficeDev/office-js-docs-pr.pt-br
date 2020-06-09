@@ -4,18 +4,18 @@ description: Detalhes sobre o conjunto de requisitos ExcelApiOnline
 ms.date: 05/06/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f177e0107de7172c350f94c3a022cb3e0db5c6f5
-ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
+ms.openlocfilehash: e4a78cd0052be1869434cba154d470070b15a5aa
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "44170783"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611383"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>O conjunto de requisitos somente online da API JavaScript do Excel
 
 O `ExcelApiOnline` conjunto de requisitos é um conjunto de requisitos especiais que inclui recursos que estão disponíveis apenas para o Excel na Web. As APIs neste conjunto de requisitos são consideradas APIs de produção (não sujeitas a alterações estruturais ou comportamentais não documentadas) para o Excel no host da Web. `ExcelApiOnline`são considerados como "Preview" APIs para outras plataformas (Windows, Mac, iOS) e podem não ser compatíveis com nenhuma dessas plataformas.
 
-Quando há suporte para `ExcelApiOnline` APIs no conjunto de requisitos em todas as plataformas, elas serão adicionadas ao próximo conjunto de`ExcelApi 1.[NEXT]`requisitos liberados (). Depois que o novo requisito for público, essas APIs serão removidas do `ExcelApiOnline`. Pense nisso como um processo de promoção semelhante à de uma API que se move da versão prévia para o lançamento.
+Quando há suporte para APIs no `ExcelApiOnline` conjunto de requisitos em todas as plataformas, elas serão adicionadas ao próximo conjunto de requisitos liberados ( `ExcelApi 1.[NEXT]` ). Depois que o novo requisito for público, essas APIs serão removidas do `ExcelApiOnline` . Pense nisso como um processo de promoção semelhante à de uma API que se move da versão prévia para o lançamento.
 
 > [!IMPORTANT]
 > `ExcelApiOnline`é o superconjunto do conjunto de requisitos mais recente.
@@ -25,7 +25,7 @@ Quando há suporte para `ExcelApiOnline` APIs no conjunto de requisitos em todas
 
 ## <a name="recommended-usage"></a>Uso recomendado
 
-Como `ExcelApiOnline` as APIs só têm suporte no Excel na Web, seu suplemento deve verificar se o conjunto de requisitos é suportado antes de chamar essas APIs. Isso evita chamar uma API somente online em uma plataforma diferente.
+Como as `ExcelApiOnline` APIs só têm suporte no Excel na Web, seu suplemento deve verificar se o conjunto de requisitos é suportado antes de chamar essas APIs. Isso evita chamar uma API somente online em uma plataforma diferente.
 
 ```js
 if (Office.context.requirements.isSetSupported("ExcelApiOnline", "1.1")) {
@@ -33,14 +33,14 @@ if (Office.context.requirements.isSetSupported("ExcelApiOnline", "1.1")) {
 }
 ```
 
-Depois que a API estiver em um conjunto de requisitos de plataforma cruzada, você deverá remover `isSetSupported` ou editar a verificação. Isso habilitará o recurso do seu suplemento em outras plataformas. Certifique-se de testar o recurso nessas plataformas ao fazer essa alteração.
+Depois que a API estiver em um conjunto de requisitos de plataforma cruzada, você deverá remover ou editar a `isSetSupported` verificação. Isso habilitará o recurso do seu suplemento em outras plataformas. Certifique-se de testar o recurso nessas plataformas ao fazer essa alteração.
 
 > [!IMPORTANT]
-> O manifesto não pode `ExcelApiOnline 1.1` ser especificado como um requisito de ativação. Não é um valor válido a ser usado no [elemento Set](../manifest/set.md).
+> O manifesto não pode ser especificado `ExcelApiOnline 1.1` como um requisito de ativação. Não é um valor válido a ser usado no [elemento Set](../manifest/set.md).
 
 ## <a name="api-list"></a>Lista de APIs
 
-As seguintes APIs estão atualmente disponíveis para o Excel na Web como parte do conjunto `ExcelApiOnline 1.1` de requisitos.
+As seguintes APIs estão atualmente disponíveis para o Excel na Web como parte do `ExcelApiOnline 1.1` conjunto de requisitos.
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|

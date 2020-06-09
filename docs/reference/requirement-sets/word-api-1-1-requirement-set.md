@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos WordApi 1,1
 ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 30a4378a74b0d2848a5a913cbafd4f6eb780f519
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: 9f7efdd0ce8f67a05d8197ec3005b2d6e9049409
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268569"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611306"
 ---
 # <a name="whats-new-in-word-javascript-api-11"></a>O que há de novo no Word JavaScript API 1,1
 
@@ -22,7 +22,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do W
 | Classe | Campos | Descrição |
 |:---|:---|:---|
 |[Body](/javascript/api/word/word.body)|[clear()](/javascript/api/word/word.body#clear--)|Limpa o conteúdo do objeto Body. O usuário pode executar a operação de desfazer no conteúdo limpo.|
-||[getHtml()](/javascript/api/word/word.body#gethtml--)|Obtém uma representação HTML do objeto Body. Quando renderizado em uma página da Web ou em um visualizador de HTML, a formatação será uma correspondência próxima, mas não exata, à formatação do documento. Este método não retorna o mesmo HTML para o mesmo documento em diferentes plataformas (Windows, Mac, etc.). Se você precisar de fidelidade exata ou consistência entre plataformas, use `Body.getOoxml()` e converta o XML RETORNADO em HTML.|
+||[getHtml()](/javascript/api/word/word.body#gethtml--)|Obtém uma representação HTML do objeto Body. Quando renderizado em uma página da Web ou em um visualizador de HTML, a formatação será uma correspondência próxima, mas não exata, à formatação do documento. Este método não retorna o mesmo HTML para o mesmo documento em diferentes plataformas (Windows, Mac, etc.). Se você precisar de fidelidade exata ou consistência entre plataformas, use `Body.getOoxml()` e converta o XML retornado em HTML.|
 ||[getOoxml()](/javascript/api/word/word.body#getooxml--)|Obtém a representação OOXML (Office Open XML) do objeto Body.|
 ||[insertBreak (breaktype: Word. Breaktype, insertLocation: Word. InsertLocation)](/javascript/api/word/word.body#insertbreak-breaktype--insertlocation-)|Insere uma quebra no local especificado no documento principal. O valor de insertLocation pode ser 'Start' ou 'End'.|
 ||[insertContentControl()](/javascript/api/word/word.body#insertcontentcontrol--)|Quebra o objeto Body com um controle de conteúdo de rich text.|
@@ -46,7 +46,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do W
 ||[clear()](/javascript/api/word/word.contentcontrol#clear--)|Limpa o conteúdo do controle de conteúdo. O usuário pode executar a operação de desfazer no conteúdo limpo.|
 ||[color](/javascript/api/word/word.contentcontrol#color)|Obtém ou define a cor do controle de conteúdo. A cor é especificada no formato ' #RRGGBB ' ou usando o nome da cor.|
 ||[excluir (keepContent: Boolean)](/javascript/api/word/word.contentcontrol#delete-keepcontent-)|Exclui o controle de conteúdo e o respectivo conteúdo. Quando keepContent é definido como verdadeiro, o conteúdo não é excluído.|
-||[getHtml()](/javascript/api/word/word.contentcontrol#gethtml--)|Obtém uma representação HTML do objeto de controle de conteúdo. Quando renderizado em uma página da Web ou em um visualizador de HTML, a formatação será uma correspondência próxima, mas não exata, à formatação do documento. Este método não retorna o mesmo HTML para o mesmo documento em diferentes plataformas (Windows, Mac, etc.). Se você precisar de fidelidade exata ou consistência entre plataformas, use `ContentControl.getOoxml()` e converta o XML RETORNADO em HTML.|
+||[getHtml()](/javascript/api/word/word.contentcontrol#gethtml--)|Obtém uma representação HTML do objeto de controle de conteúdo. Quando renderizado em uma página da Web ou em um visualizador de HTML, a formatação será uma correspondência próxima, mas não exata, à formatação do documento. Este método não retorna o mesmo HTML para o mesmo documento em diferentes plataformas (Windows, Mac, etc.). Se você precisar de fidelidade exata ou consistência entre plataformas, use `ContentControl.getOoxml()` e converta o XML retornado em HTML.|
 ||[getOoxml()](/javascript/api/word/word.contentcontrol#getooxml--)|Obtém a representação OOXML (Office Open XML) do objeto do controle de conteúdo.|
 ||[insertBreak (breaktype: Word. Breaktype, insertLocation: Word. InsertLocation)](/javascript/api/word/word.contentcontrol#insertbreak-breaktype--insertlocation-)|Insere uma quebra no local especificado no documento principal. O valor insertLocation pode ser ' Start ', ' End ', ' before ' ou ' after '. Este método não pode ser usado com os controles de conteúdo "RichTextTable", "RichTextTableRow" e "RichTextTableCell".|
 ||[insertFileFromBase64 (base64file: String, insertLocation: Word. InsertLocation)](/javascript/api/word/word.contentcontrol#insertfilefrombase64-base64file--insertlocation-)|Insere um documento no controle de conteúdo no local especificado. O valor de insertLocation pode ser 'Replace', 'Start' ou 'End'.|
@@ -62,7 +62,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do W
 ||[paragraphs](/javascript/api/word/word.contentcontrol#paragraphs)|Obtém a coleção de objetos Paragraph no controle de conteúdo. Somente leitura.|
 ||[parentContentControl](/javascript/api/word/word.contentcontrol#parentcontentcontrol)|Obtém o controle de conteúdo que inclui o controle de conteúdo. Gera se não há um controle de conteúdo pai. Somente leitura.|
 ||[text](/javascript/api/word/word.contentcontrol#text)|Obtém o texto do controle de conteúdo. Somente leitura.|
-||[tipo](/javascript/api/word/word.contentcontrol#type)|Obtém o tipo de controle de conteúdo. Atualmente, temos suporte apenas para controles de conteúdo de rich text. Somente leitura.|
+||[type](/javascript/api/word/word.contentcontrol#type)|Obtém o tipo de controle de conteúdo. Atualmente, temos suporte apenas para controles de conteúdo de rich text. Somente leitura.|
 ||[removeWhenEdited](/javascript/api/word/word.contentcontrol#removewhenedited)|Obtém ou define um valor que determina quando o controle de conteúdo é removido após a edição. Mutuamente exclusivo com a propriedade cannotDelete.|
 ||[Search (ProcurarTexto: String, searchoptions?: Word. Searchoptions)](/javascript/api/word/word.contentcontrol#search-searchtext--searchoptions-)|Realiza uma pesquisa com o Searchoptions especificado no escopo do objeto de controle de conteúdo. Os resultados da pesquisa são uma coleção de objetos Range.|
 ||[selecionar (selectionMode?: Word. SelectionMode)](/javascript/api/word/word.contentcontrol#select-selectionmode-)|Seleciona o controle de conteúdo. Isso faz com que o Word role até a seleção.|
@@ -105,7 +105,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do W
 ||[clear()](/javascript/api/word/word.paragraph#clear--)|Limpa o conteúdo do objeto Paragraph. O usuário pode executar a operação de desfazer no conteúdo limpo.|
 ||[delete()](/javascript/api/word/word.paragraph#delete--)|Exclui o parágrafo e o respectivo conteúdo do documento.|
 ||[firstLineIndent](/javascript/api/word/word.paragraph#firstlineindent)|Retorna ou define o valor, em pontos, para um recuo deslocado ou da primeira linha. Usa um valor positivo para definir um recuo da primeira linha e um valor negativo para definir um recuo deslocado.|
-||[getHtml()](/javascript/api/word/word.paragraph#gethtml--)|Obtém uma representação HTML do objeto Paragraph. Quando renderizado em uma página da Web ou em um visualizador de HTML, a formatação será uma correspondência próxima, mas não exata, à formatação do documento. Este método não retorna o mesmo HTML para o mesmo documento em diferentes plataformas (Windows, Mac, etc.). Se você precisar de fidelidade exata ou consistência entre plataformas, use `Paragraph.getOoxml()` e converta o XML RETORNADO em HTML.|
+||[getHtml()](/javascript/api/word/word.paragraph#gethtml--)|Obtém uma representação HTML do objeto Paragraph. Quando renderizado em uma página da Web ou em um visualizador de HTML, a formatação será uma correspondência próxima, mas não exata, à formatação do documento. Este método não retorna o mesmo HTML para o mesmo documento em diferentes plataformas (Windows, Mac, etc.). Se você precisar de fidelidade exata ou consistência entre plataformas, use `Paragraph.getOoxml()` e converta o XML retornado em HTML.|
 ||[getOoxml()](/javascript/api/word/word.paragraph#getooxml--)|Obtém a representação OOXML (Office Open XML) do objeto Paragraph.|
 ||[insertBreak (breaktype: Word. Breaktype, insertLocation: Word. InsertLocation)](/javascript/api/word/word.paragraph#insertbreak-breaktype--insertlocation-)|Insere uma quebra no local especificado no documento principal. O valor de insertLocation pode ser 'Before' ou 'After'.|
 ||[insertContentControl()](/javascript/api/word/word.paragraph#insertcontentcontrol--)|Quebra o objeto Paragraph com um controle de conteúdo de rich text.|
@@ -134,7 +134,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do W
 |[ParagraphCollection](/javascript/api/word/word.paragraphcollection)|[items](/javascript/api/word/word.paragraphcollection#items)|Obtém os itens filhos carregados nesta coleção.|
 |[Range](/javascript/api/word/word.range)|[clear()](/javascript/api/word/word.range#clear--)|Limpa o conteúdo do objeto Range. O usuário pode executar a operação de desfazer no conteúdo limpo.|
 ||[delete()](/javascript/api/word/word.range#delete--)|Exclui o intervalo e o respectivo conteúdo do documento.|
-||[getHtml()](/javascript/api/word/word.range#gethtml--)|Obtém uma representação HTML do objeto Range. Quando renderizado em uma página da Web ou em um visualizador de HTML, a formatação será uma correspondência próxima, mas não exata, à formatação do documento. Este método não retorna o mesmo HTML para o mesmo documento em diferentes plataformas (Windows, Mac, etc.). Se você precisar de fidelidade exata ou consistência entre plataformas, use `Range.getOoxml()` e converta o XML RETORNADO em HTML.|
+||[getHtml()](/javascript/api/word/word.range#gethtml--)|Obtém uma representação HTML do objeto Range. Quando renderizado em uma página da Web ou em um visualizador de HTML, a formatação será uma correspondência próxima, mas não exata, à formatação do documento. Este método não retorna o mesmo HTML para o mesmo documento em diferentes plataformas (Windows, Mac, etc.). Se você precisar de fidelidade exata ou consistência entre plataformas, use `Range.getOoxml()` e converta o XML retornado em HTML.|
 ||[getOoxml()](/javascript/api/word/word.range#getooxml--)|Obtém a representação OOXML do objeto Range.|
 ||[insertBreak (breaktype: Word. Breaktype, insertLocation: Word. InsertLocation)](/javascript/api/word/word.range#insertbreak-breaktype--insertlocation-)|Insere uma quebra no local especificado no documento principal. O valor de insertLocation pode ser 'Before' ou 'After'.|
 ||[insertContentControl()](/javascript/api/word/word.range#insertcontentcontrol--)|Quebra o objeto Range com um controle de conteúdo de rich text.|
@@ -167,5 +167,5 @@ A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do W
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação de referência da API JavaScript do Word](/javascript/api/word)
+- [Documentação de Referência da API JavaScript do Word](/javascript/api/word)
 - [Conjuntos de requisitos da API JavaScript do Word](word-api-requirement-sets.md)

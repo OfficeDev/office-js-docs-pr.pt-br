@@ -3,12 +3,12 @@ title: Criar suplementos melhores para o Word com o Office Open XML
 description: Visão geral de como melhorar o suplemento do Word com o Office Open XML
 ms.date: 10/10/2019
 localization_priority: Normal
-ms.openlocfilehash: 710265eab022b4da3035699c353d01f567354013
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 2faaedec831a9ae18f218ff160fee26a8d36910e
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717387"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609584"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Criar suplementos melhores para o Word com o Office Open XML
 
@@ -107,7 +107,7 @@ Você pode inserir gráficos do Excel como gráficos dinâmicos em documentos do
 
 
 > [!NOTE]
-> Um documento do Office Open XML é realmente um pacote compactado de arquivos que representa o conteúdo do documento. Salvar o arquivo no formato de documento XML do Word oferece o pacote do entireOffice Open XML simplificado em um arquivo XML, que também é o que você obtém `getSelectedDataAsync` ao usar para recuperar a marcação do Office Open XML.
+> Um documento do Office Open XML é realmente um pacote compactado de arquivos que representa o conteúdo do documento. Salvar o arquivo no formato de documento XML do Word oferece o pacote do entireOffice Open XML simplificado em um arquivo XML, que também é o que você obtém ao usar `getSelectedDataAsync` para recuperar a marcação do Office Open XML.
 
 Se você salvar o arquivo em um formato XML do Word, observe que há duas opções na lista Salvar como Tipo na caixa de diálogo Salvar como para arquivos no formato .xml. Certifique-se de escolher **documento XML do Word** e não a opção Word 2003.
 Baixe o código de exemplo nomeado [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML), que pode ser usado como uma ferramenta para recuperar e testar sua marcação.
@@ -122,7 +122,7 @@ Ao usar [getSelectedDataAsync](/javascript/api/office/office.document#getselecte
 
 Até mesmo um pacote de documento simples do Word inclui partes para propriedades de documentos, estilos, tema (configurações de formatação), configurações da Web, fontes e muito mais, além de partes para o conteúdo real.
 
-Por exemplo, digamos que você queira inserir apenas um parágrafo de texto com formatação direta, conforme mostrado anteriormente na Figura 1. Quando você obtém o Office Open XML para o texto formatado usando `getSelectedDataAsync`o, você vê uma grande quantidade de marcação. A marcação inclui um elemento de pacote que representa um documento inteiro, que contém várias partes (comumente conhecidas como partes do documento ou, no Office Open XML, partes do pacote), como pode ver listado na Figura 13. Cada parte representa um arquivo separado dentro do pacote.
+Por exemplo, digamos que você queira inserir apenas um parágrafo de texto com formatação direta, conforme mostrado anteriormente na Figura 1. Quando você obtém o Office Open XML para o texto formatado usando o `getSelectedDataAsync` , você vê uma grande quantidade de marcação. A marcação inclui um elemento de pacote que representa um documento inteiro, que contém várias partes (comumente conhecidas como partes do documento ou, no Office Open XML, partes do pacote), como pode ver listado na Figura 13. Cada parte representa um arquivo separado dentro do pacote.
 
 > [!TIP]
 > Você pode editar a marcação do Office Open XML em um editor de texto como o Bloco de Notas. Se você o abrir no Visual Studio, poderá usar **editar >documento de > formato avançado** (CTRL + K, CTRL + D) para formatar o pacote para facilitar a edição. Em seguida, você pode recolher ou expandir partes de um documento ou seções delas, conforme mostrado na Figura 12, para examinar e editar mais facilmente o conteúdo do pacote do Office Open XML. Cada parte do documento começa com uma marca **pkg:part**.
@@ -557,7 +557,7 @@ O código mostrado aqui realiza as seguintes etapas:
 
   Execute esta etapa primeiro se houver uma possibilidade para seu suplemento em que o controle nomeado pode já existir no documento quando o código for executado. Por exemplo, faça isto se o suplemento foi inserido em e salvo com um modelo projetado para funcionar com o suplemento, em que o controle foi colocado anteriormente. Você também precisa fazer isto caso necessite associar a um controle que foi colocado anteriormente pelo suplemento.
 
-- O retorno de chamada na primeira chamada para `addFromNamedItemAsync` o método verifica o status do resultado para ver se a associação falhou porque o item nomeado não existe no documento (ou seja, o controle de conteúdo chamado MyContentControlTitle neste exemplo). Em caso afirmativo, o código adicionará o controle no ponto de seleção `setSelectedDataAsync`ativo (usando) e, em seguida, vinculará a ele.
+- O retorno de chamada na primeira chamada para o `addFromNamedItemAsync` método verifica o status do resultado para ver se a associação falhou porque o item nomeado não existe no documento (ou seja, o controle de conteúdo chamado MyContentControlTitle neste exemplo). Em caso afirmativo, o código adicionará o controle no ponto de seleção ativo (usando `setSelectedDataAsync` ) e, em seguida, vinculará a ele.
 
 
 > [!NOTE]
@@ -591,7 +591,7 @@ function populateBinding(filename) {
 }
 ```
 
-Como com `setSelectedDataAsync`o, você especifica o conteúdo a ser inserido e o tipo de coerção. O único requisito adicional para gravar em uma associação é identificá-la por ID. Observe como a ID de associação usada neste código (bindings#myBinding) corresponde à ID de associação estabelecida (myBinding) quando a associação foi criada na função anterior.
+Como com o `setSelectedDataAsync` , você especifica o conteúdo a ser inserido e o tipo de coerção. O único requisito adicional para gravar em uma associação é identificá-la por ID. Observe como a ID de associação usada neste código (bindings#myBinding) corresponde à ID de associação estabelecida (myBinding) quando a associação foi criada na função anterior.
 
 
 > [!NOTE]

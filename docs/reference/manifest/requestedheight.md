@@ -3,12 +3,12 @@ title: Elemento RequestedHeight no arquivo de manifesto
 description: O elemento RequestedHeight especifica a altura inicial (em pixels) de um suplemento de conteúdo ou email.
 ms.date: 05/14/2020
 localization_priority: Normal
-ms.openlocfilehash: fa40043e6192e1304e67f1f96f770898b230036c
-ms.sourcegitcommit: b634bfe9a946fbd95754e87f070a904ed57586ff
+ms.openlocfilehash: 44675918a4208683f442fe8a6e8f4f906f484571
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "44253611"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611726"
 ---
 # <a name="requestedheight-element"></a>Elemento RequestedHeight
 

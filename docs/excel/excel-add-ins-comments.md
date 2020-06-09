@@ -3,12 +3,12 @@ title: Trabalhar com comentários usando a API JavaScript do Excel
 description: Informações sobre como usar as APIs para adicionar, remover e editar comentários e encadeamentos de comentários.
 ms.date: 03/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 971e0a830c0a34aea3e79b13fcd9fb869f971d2c
-ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
+ms.openlocfilehash: a0ea156c8599b98800d03d2238451c7935d6466f
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "44170818"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609773"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>Trabalhar com comentários usando a API JavaScript do Excel
 
@@ -18,7 +18,7 @@ Na API JavaScript do Excel, um comentário inclui o único comentário inicial e
 
 ![Um comentário do Excel, rotulado "comentário" com duas respostas, rotuladas "comentário. respostas [0]" e "comentário. respostas [1].](../images/excel-comments.png)
 
-Os `Workbook.comments` comentários em uma pasta de trabalho são rastreados pela propriedade. Isso inclui comentários criados por usuários e comentários criados por seu suplemento. A propriedade `Workbook.comments` é um objeto [CommentCollection](/javascript/api/excel/excel.commentcollection) que contém um conjunto de objetos [Comentário](/javascript/api/excel/excel.comment). Os comentários também podem ser acessados no nível da [planilha](/javascript/api/excel/excel.worksheet) . Os exemplos neste artigo trabalham com comentários no nível da pasta de trabalho, mas eles podem ser facilmente modificados para `Worksheet.comments` usar a propriedade.
+Os comentários em uma pasta de trabalho são rastreados pela `Workbook.comments` propriedade. Isso inclui comentários criados por usuários e comentários criados por seu suplemento. A propriedade `Workbook.comments` é um objeto [CommentCollection](/javascript/api/excel/excel.commentcollection) que contém um conjunto de objetos [Comentário](/javascript/api/excel/excel.comment). Os comentários também podem ser acessados no nível da [planilha](/javascript/api/excel/excel.worksheet) . Os exemplos neste artigo trabalham com comentários no nível da pasta de trabalho, mas eles podem ser facilmente modificados para usar a `Worksheet.comments` propriedade.
 
 ## <a name="add-comments"></a>Adicionar comentários
 
@@ -74,7 +74,7 @@ Excel.run(function (context) {
 
 ### <a name="edit-comment-replies"></a>Editar respostas de comentário
 
-Para editar uma resposta de comentário, defina `CommentReply.content` sua propriedade.
+Para editar uma resposta de comentário, defina sua `CommentReply.content` propriedade.
 
 ```js
 Excel.run(function (context) {
@@ -88,7 +88,7 @@ Excel.run(function (context) {
 
 ## <a name="delete-comments"></a>Excluir comentários
 
-Para excluir um comentário, use `Comment.delete` o método. A exclusão de um comentário também exclui as respostas associadas a esse comentário.
+Para excluir um comentário, use o `Comment.delete` método. A exclusão de um comentário também exclui as respostas associadas a esse comentário.
 
 ```js
 Excel.run(function (context) {
@@ -100,7 +100,7 @@ Excel.run(function (context) {
 
 ### <a name="delete-comment-replies"></a>Excluir respostas de comentário
 
-Para excluir uma resposta de comentário, use `CommentReply.delete` o método.
+Para excluir uma resposta de comentário, use o `CommentReply.delete` método.
 
 ```js
 Excel.run(function (context) {
@@ -113,7 +113,7 @@ Excel.run(function (context) {
 
 ## <a name="resolve-comment-threads"></a>Resolver threads de comentário
 
-Um thread de comentário tem um valor booliano `resolved`configurável, para indicar se ele foi resolvido. Um valor de `true` significa que o thread de comentários é resolvido. Um valor de `false` significa que o thread de comentários é novo ou reaberto.
+Um thread de comentário tem um valor booliano configurável, `resolved` para indicar se ele foi resolvido. Um valor de `true` significa que o thread de comentários é resolvido. Um valor de `false` significa que o thread de comentários é novo ou reaberto.
 
 ```js
 Excel.run(function (context) {
@@ -173,7 +173,7 @@ Excel.run(function (context) {
 
 As [mencionas](https://support.office.com/article/use-mention-in-comments-to-tag-someone-for-feedback-644bf689-31a0-4977-a4fb-afe01820c1fd) são usadas para marcar colegas em um comentário. Isso envia notificações com o conteúdo do comentário. O suplemento pode criar essas menção em seu nome.
 
-Comentários com menção precisam ser criados com objetos [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) . Call `CommentCollection.add` com um `CommentRichContent` contendo um ou mais mencionas e especifique `ContentType.mention` como o `contentType` parâmetro. A `content` cadeia de caracteres também precisa ser formatada para inserir o menção no texto. O formato de um menção é: `<at id="{replyIndex}">{mentionName}</at>`.
+Comentários com menção precisam ser criados com objetos [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) . Call `CommentCollection.add` com um `CommentRichContent` contendo um ou mais mencionas e especifique `ContentType.mention` como o `contentType` parâmetro. A `content` cadeia de caracteres também precisa ser formatada para inserir o menção no texto. O formato de um menção é: `<at id="{replyIndex}">{mentionName}</at>` .
 
 > Observação Atualmente, apenas o nome exato de menção pode ser usado como o texto do link de menção. O suporte para versões reduzidas de um nome será adicionado posteriormente.
 

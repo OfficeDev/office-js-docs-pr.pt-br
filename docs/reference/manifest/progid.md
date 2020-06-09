@@ -3,12 +3,12 @@ title: Elemento ProgId no arquivo de manifesto
 description: O elemento ProgId especifica a identificação programática do suplemento COM equivalente para o painel de tarefas do seu suplemento Web.
 ms.date: 06/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 401160f5a6c11a11eadd33491e9422545b6e3687
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: e27e75aa05cd4fd605094be98d1db0a2413f1f36
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717989"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611747"
 ---
 # <a name="progid-element"></a>Elemento ProgId
 

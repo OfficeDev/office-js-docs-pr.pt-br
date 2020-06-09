@@ -3,12 +3,12 @@ title: Trabalhar com eventos usando a API JavaScript do Excel
 description: Uma lista de eventos para objetos JavaScript do Excel. Isso inclui informações sobre como usar manipuladores de eventos e os padrões associados.
 ms.date: 05/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 075544c529ba7200aa181d42dd5fc8c3fbd661bc
-ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
+ms.openlocfilehash: fbf92d34a0fb1d8b18b9ebb379cd24d34775c243
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "44170804"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609598"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Trabalhar com eventos usando a API JavaScript do Excel
 

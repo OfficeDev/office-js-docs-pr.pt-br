@@ -3,12 +3,12 @@ title: Elemento Id no arquivo de manifesto
 description: O elemento ID especifica a ID exclusiva do seu suplemento do Office como um GUID.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 137daee6346f3320697cfc52963d8e98d147e5d8
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 3df4277b19878a5fe358d1458ec69a694e5d87d0
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720558"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611782"
 ---
 # <a name="id-element"></a>Elemento Id
 

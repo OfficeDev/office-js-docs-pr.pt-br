@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos ExcelApi 1,1
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 4668cebd545cdefeb033f5c397afb1ad796e2d04
-ms.sourcegitcommit: 3f5d7f4794e3d3c8bc3a79fa05c54157613b9376
+ms.openlocfilehash: 0b1c1cc6cb6b21609a716210c832b4b1cb325438
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "36064484"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44612105"
 ---
 # <a name="excel-javascript-api-requirement-set-11"></a>Conjunto de requisitos de API JavaScript do Excel 1,1
 
@@ -22,12 +22,12 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 | Classe | Campos | Descrição |
 |:---|:---|:---|
 |[Aplicativo](/javascript/api/excel/excel.application)|[Calculate (calculatype: Excel. Calculatype)](/javascript/api/excel/excel.application#calculate-calculationtype-)|Recalcula todas as pastas de trabalho abertas no Excel no momento.|
-||[cálculomode](/javascript/api/excel/excel.application#calculationmode)|Retorna o modo de cálculo usado na pasta de trabalho, conforme definido pelas constantes no Excel. Calculation. Os valores possíveis são `Automatic`:, onde o Excel controla o recálculo; `AutomaticExceptTables`, onde o Excel controla o recálculo, mas ignora as alterações nas tabelas; `Manual`, onde o cálculo é feito quando o usuário solicita.|
+||[cálculomode](/javascript/api/excel/excel.application#calculationmode)|Retorna o modo de cálculo usado na pasta de trabalho, conforme definido pelas constantes no Excel. Calculation. Os valores possíveis são: `Automatic` , onde o Excel controla o recálculo; `AutomaticExceptTables` , onde o Excel controla o recálculo, mas ignora as alterações nas tabelas; `Manual` , onde o cálculo é feito quando o usuário solicita.|
 |[Associação](/javascript/api/excel/excel.binding)|[getRange()](/javascript/api/excel/excel.binding#getrange--)|Retorna o intervalo representado pela associação. Gera um erro quando a associação não é do tipo correto.|
 ||[getTable()](/javascript/api/excel/excel.binding#gettable--)|Retorna a tabela representada pela associação. Gera um erro quando a associação não é do tipo correto.|
 ||[getText()](/javascript/api/excel/excel.binding#gettext--)|Retorna o texto representado pela associação. Gera um erro quando a associação não é do tipo correto.|
 ||[id](/javascript/api/excel/excel.binding#id)|Representa um identificador de associação. Somente leitura.|
-||[tipo](/javascript/api/excel/excel.binding#type)|Retorna o tipo da associação. Consulte Excel. BindingType para obter detalhes. Somente leitura.|
+||[type](/javascript/api/excel/excel.binding#type)|Retorna o tipo da associação. Consulte Excel. BindingType para obter detalhes. Somente leitura.|
 |[BindingCollection](/javascript/api/excel/excel.bindingcollection)|[getItem(id: string)](/javascript/api/excel/excel.bindingcollection#getitem-id-)|Obtém um objeto de associação pela ID.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.bindingcollection#getitemat-index-)|Obtém um objeto de associação com base em sua posição na matriz dos itens.|
 ||[Count](/javascript/api/excel/excel.bindingcollection#count)|Retorna o número de associações da coleção. Somente leitura.|
@@ -43,7 +43,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[series](/javascript/api/excel/excel.chart#series)|Representa uma única série ou uma coleção de séries no gráfico. Somente leitura.|
 ||[title](/javascript/api/excel/excel.chart#title)|Representa o título do gráfico especificado, incluindo o respectivo texto, a visibilidade, a posição e a formatação. Somente leitura.|
 ||[setData (sourceData: Range, Seriesby como?: Excel. ChartSeriesBy)](/javascript/api/excel/excel.chart#setdata-sourcedata--seriesby-)|Redefine os dados de origem do gráfico.|
-||[SETPOSITION (startCell: String \| de intervalo, endcell?: \| cadeia de caracteres de intervalo)](/javascript/api/excel/excel.chart#setposition-startcell--endcell-)|Posiciona o gráfico em relação às células na planilha.|
+||[SETPOSITION (startCell: \| String de intervalo, endcell?: \| cadeia de caracteres de intervalo)](/javascript/api/excel/excel.chart#setposition-startcell--endcell-)|Posiciona o gráfico em relação às células na planilha.|
 ||[top](/javascript/api/excel/excel.chart#top)|Representa a distância, em pontos, da borda superior do objeto à parte superior da primeira linha de uma planilha ou da área de um gráfico.|
 ||[width](/javascript/api/excel/excel.chart#width)|Representa a largura, em pontos, do objeto de gráfico.|
 |[ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)|[fill](/javascript/api/excel/excel.chartareaformat#fill)|Representa o formato de preenchimento de um objeto, que inclui informações sobre a formatação da tela de fundo. Somente leitura.|
@@ -122,7 +122,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[font](/javascript/api/excel/excel.charttitleformat#font)|Representa os atributos de fonte de um objeto, como nome, tamanho, cor, dentre outros. Somente leitura.|
 |[NamedItem](/javascript/api/excel/excel.nameditem)|[getRange()](/javascript/api/excel/excel.nameditem#getrange--)|Retorna o objeto Range associado ao nome. Gerará um erro se o tipo do item nomeado não for um intervalo.|
 ||[name](/javascript/api/excel/excel.nameditem#name)|O nome do objeto. Somente leitura.|
-||[tipo](/javascript/api/excel/excel.nameditem#type)|Indica o tipo do valor retornado pela fórmula do nome. Consulte Excel. NamedItemType para obter detalhes. Somente leitura.|
+||[type](/javascript/api/excel/excel.nameditem#type)|Indica o tipo do valor retornado pela fórmula do nome. Consulte Excel. NamedItemType para obter detalhes. Somente leitura.|
 ||[value](/javascript/api/excel/excel.nameditem#value)|Representa o valor calculado pela fórmula do nome. Para um intervalo nomeado, retornará o endereço do intervalo. Somente leitura.|
 ||[visible](/javascript/api/excel/excel.nameditem#visible)|Determina se o objeto estará visível ou não.|
 |[NamedItemCollection](/javascript/api/excel/excel.nameditemcollection)|[getItem(name: string)](/javascript/api/excel/excel.nameditemcollection#getitem-name-)|Obtém um objeto NamedItem usando seu nome.|
@@ -131,12 +131,12 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[excluir (Shift: Excel. DeleteShiftDirection)](/javascript/api/excel/excel.range#delete-shift-)|Exclui as células associadas ao intervalo.|
 ||[fórmulas](/javascript/api/excel/excel.range#formulas)|Representa a fórmula em notação A1.|
 ||[formulasLocal](/javascript/api/excel/excel.range#formulaslocal)|Representa a fórmula em notação A1, na formatação de número da localidade e no idioma do usuário.  Por exemplo, a fórmula "=SUM(A1, 1.5)" em inglês seria "=SOMA(A1; 1,5)" em português.|
-||[getBoundingRect (anotherRange: cadeia \| de caracteres de intervalo)](/javascript/api/excel/excel.range#getboundingrect-anotherrange-)|Obtém o menor objeto Range que engloba os intervalos determinados. Por exemplo, o GetBoundingRect de "B2:C5" e "D10:E15" é "B2:E15".|
+||[getBoundingRect (anotherRange: cadeia de caracteres de intervalo \| )](/javascript/api/excel/excel.range#getboundingrect-anotherrange-)|Obtém o menor objeto Range que engloba os intervalos determinados. Por exemplo, o GetBoundingRect de "B2:C5" e "D10:E15" é "B2:E15".|
 ||[getCell(row: number, column: number)](/javascript/api/excel/excel.range#getcell-row--column-)|Obtém o objeto de intervalo que contém a célula única com base nos números de linha e de coluna. A célula pode estar fora dos limites de seu intervalo pai, desde que ela permaneça dentro da grade da planilha. A localização da célula retornada está relacionada à célula superior esquerda do intervalo.|
 ||[getColumn(column: number)](/javascript/api/excel/excel.range#getcolumn-column-)|Obtém uma coluna incluída no intervalo.|
 ||[getEntireColumn()](/javascript/api/excel/excel.range#getentirecolumn--)|Obtém um objeto que representa a coluna inteira do intervalo (por exemplo, se o intervalo atual representa as células "B4: E11", seu `getEntireColumn` é um intervalo que representa as colunas "B:E").|
 ||[getEntireRow()](/javascript/api/excel/excel.range#getentirerow--)|Obtém um objeto que representa a linha inteira do intervalo (por exemplo, se o intervalo atual representa as células "B4: E11", seu `GetEntireRow` é um intervalo que representa as linhas "4:11").|
-||[getintersection (anotherRange: cadeia \| de caracteres de intervalo)](/javascript/api/excel/excel.range#getintersection-anotherrange-)|Obtém o objeto Range que representa a interseção retangular dos intervalos determinados.|
+||[getintersection (anotherRange: cadeia de caracteres de intervalo \| )](/javascript/api/excel/excel.range#getintersection-anotherrange-)|Obtém o objeto Range que representa a interseção retangular dos intervalos determinados.|
 ||[getLastCell()](/javascript/api/excel/excel.range#getlastcell--)|Obtém a última célula do intervalo. Por exemplo, a última célula de "B2:D5" é "D5".|
 ||[getLastColumn()](/javascript/api/excel/excel.range#getlastcolumn--)|Obtém a última coluna do intervalo. Por exemplo, a última coluna de "B2:D5" é "D2:D5".|
 ||[getLastRow()](/javascript/api/excel/excel.range#getlastrow--)|Obtém a última linha do intervalo. Por exemplo, a última linha de "B2:D5" é "B5:D5".|
@@ -185,13 +185,13 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[getRange()](/javascript/api/excel/excel.table#getrange--)|Obtém o objeto de intervalo associado a toda a tabela.|
 ||[getTotalRowRange()](/javascript/api/excel/excel.table#gettotalrowrange--)|Obtém o objeto de intervalo associado à linha de totais da tabela.|
 ||[name](/javascript/api/excel/excel.table#name)|Nome da tabela.|
-||[colunas](/javascript/api/excel/excel.table#columns)|Representa uma coleção de todas as colunas na tabela. Somente leitura.|
+||[columns](/javascript/api/excel/excel.table#columns)|Representa uma coleção de todas as colunas na tabela. Somente leitura.|
 ||[id](/javascript/api/excel/excel.table#id)|Retorna um valor que identifica de forma exclusiva a tabela em uma determinada pasta de trabalho. O valor do identificador permanece o mesmo, ainda que a tabela seja renomeada. Somente leitura.|
 ||[rows](/javascript/api/excel/excel.table#rows)|Representa uma coleção de todas as linhas na tabela. Somente leitura.|
 ||[showHeaders](/javascript/api/excel/excel.table#showheaders)|Indica se a linha do cabeçalho está visível ou não. Esse valor pode ser definido para mostrar ou remover a linha do cabeçalho.|
 ||[showTotals](/javascript/api/excel/excel.table#showtotals)|Indica se a linha do total está visível ou não. Esse valor pode ser definido para mostrar ou remover a linha do total.|
 ||[style](/javascript/api/excel/excel.table#style)|Valor da constante que representa o estilo de Tabela. Os valores possíveis são: TableStyleLight1 a TableStyleLight21, TableStyleMedium1 a TableStyleMedium28, TableStyleStyleDark1 a TableStyleStyleDark11. Também é possível usar um estilo definido pelo usuário que esteja presente na planilha.|
-|[TableCollection](/javascript/api/excel/excel.tablecollection)|[Add (endereço: cadeia \| de caracteres de intervalo, hasHeaders: Boolean)](/javascript/api/excel/excel.tablecollection#add-address--hasheaders-)|Cria uma nova tabela. O objeto de intervalo ou endereço de origem determina a planilha à qual a tabela será adicionada. Se a tabela não puder ser adicionada (por exemplo, porque o endereço é inválido ou a tabela se sobreporia a outra), será gerado um erro.|
+|[TableCollection](/javascript/api/excel/excel.tablecollection)|[Add (endereço: \| cadeia de caracteres de intervalo, hasHeaders: Boolean)](/javascript/api/excel/excel.tablecollection#add-address--hasheaders-)|Cria uma nova tabela. O objeto de intervalo ou endereço de origem determina a planilha à qual a tabela será adicionada. Se a tabela não puder ser adicionada (por exemplo, porque o endereço é inválido ou a tabela se sobreporia a outra), será gerado um erro.|
 ||[getItem(key: string)](/javascript/api/excel/excel.tablecollection#getitem-key-)|Obtém uma tabela pelo nome ou ID.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.tablecollection#getitemat-index-)|Obtém uma tabela com base em sua posição na coleção.|
 ||[Count](/javascript/api/excel/excel.tablecollection#count)|Retorna o número de tabelas na pasta de trabalho. Somente leitura.|
@@ -203,26 +203,26 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[getTotalRowRange()](/javascript/api/excel/excel.tablecolumn#gettotalrowrange--)|Obtém o objeto de intervalo associado à linha de totais da coluna.|
 ||[name](/javascript/api/excel/excel.tablecolumn#name)|Representa o nome da coluna da tabela.|
 ||[id](/javascript/api/excel/excel.tablecolumn#id)|Retorna uma chave exclusiva que identifica a coluna na tabela. Somente leitura.|
-||[index](/javascript/api/excel/excel.tablecolumn#index)|Retorna o número de índice da coluna na coleção de colunas da tabela. Indexado com zero. Somente leitura.|
+||[índice](/javascript/api/excel/excel.tablecolumn#index)|Retorna o número de índice da coluna na coleção de colunas da tabela. Indexado com zero. Somente leitura.|
 ||[values](/javascript/api/excel/excel.tablecolumn#values)|Representa os valores brutos do intervalo especificado. Os dados retornados podem ser dos tipos: cadeia de caracteres, número ou booliano. Células que contêm um erro retornarão a cadeia de caracteres de erro.|
-|[TableColumnCollection](/javascript/api/excel/excel.tablecolumncollection)|[Add (index?: Number, Values?: matriz<matriz<\| número \| da cadeia \| de \| caracteres \| Boolean>> número da cadeia de caracteres booleana, Name?: String)](/javascript/api/excel/excel.tablecolumncollection#add-index--values--name-)|Adiciona uma nova coluna à tabela.|
-||[getItem (Key: String \| de número)](/javascript/api/excel/excel.tablecolumncollection#getitem-key-)|Obtém um objeto de coluna por nome ou ID.|
+|[TableColumnCollection](/javascript/api/excel/excel.tablecolumncollection)|[Add (index?: Number, Values?: matriz<matriz<\| número da cadeia de caracteres boolean \|>> \| número da \| cadeia de caracteres booleana \| , Name?: String)](/javascript/api/excel/excel.tablecolumncollection#add-index--values--name-)|Adiciona uma nova coluna à tabela.|
+||[getItem (Key: String de número \| )](/javascript/api/excel/excel.tablecolumncollection#getitem-key-)|Obtém um objeto de coluna por nome ou ID.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.tablecolumncollection#getitemat-index-)|Obtém uma coluna com base em sua posição na coleção.|
 ||[Count](/javascript/api/excel/excel.tablecolumncollection#count)|Retorna o número de colunas na tabela. Somente leitura.|
 ||[items](/javascript/api/excel/excel.tablecolumncollection#items)|Obtém os itens filhos carregados nesta coleção.|
 |[TableRow](/javascript/api/excel/excel.tablerow)|[delete()](/javascript/api/excel/excel.tablerow#delete--)|Exclui a linha da tabela.|
 ||[getRange()](/javascript/api/excel/excel.tablerow#getrange--)|Retorna o objeto de intervalo associado a toda a linha.|
-||[index](/javascript/api/excel/excel.tablerow#index)|Retorna o número de índice da linha na coleção de linhas da tabela. Indexados com zero. Somente leitura.|
+||[índice](/javascript/api/excel/excel.tablerow#index)|Retorna o número de índice da linha na coleção de linhas da tabela. Indexados com zero. Somente leitura.|
 ||[values](/javascript/api/excel/excel.tablerow#values)|Representa os valores brutos do intervalo especificado. Os dados retornados podem ser dos tipos: cadeia de caracteres, número ou booliano. Células que contêm um erro retornarão a cadeia de caracteres de erro.|
-|[TableRowCollection](/javascript/api/excel/excel.tablerowcollection)|[Add (index?: Number, Values?: matriz<matriz<\| número \| da cadeia \| de \| caracteres \| Boolean>> número da cadeia de caracteres booleana)](/javascript/api/excel/excel.tablerowcollection#add-index--values-)|Adiciona uma ou mais linhas à tabela. O objeto de retorno será a parte superior das linhas adicionadas recentemente.|
+|[TableRowCollection](/javascript/api/excel/excel.tablerowcollection)|[Add (index?: Number, Values?: matriz<matriz<\| número da cadeia de caracteres boolean \|>> \| número da cadeia de caracteres booleana \| \| )](/javascript/api/excel/excel.tablerowcollection#add-index--values-)|Adiciona uma ou mais linhas à tabela. O objeto de retorno será a parte superior das linhas adicionadas recentemente.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.tablerowcollection#getitemat-index-)|Obtém uma linha com base em sua posição na coleção.|
 ||[Count](/javascript/api/excel/excel.tablerowcollection#count)|Retorna o número de linhas na tabela. Somente leitura.|
 ||[items](/javascript/api/excel/excel.tablerowcollection#items)|Obtém os itens filhos carregados nesta coleção.|
 |[Workbook](/javascript/api/excel/excel.workbook)|[getSelectedRange()](/javascript/api/excel/excel.workbook#getselectedrange--)|Obtém o intervalo único selecionado atualmente da pasta de trabalho. Se houver vários intervalos selecionados, este método gerará um erro.|
-||[application](/javascript/api/excel/excel.workbook#application)|Representa a instância do aplicativo Excel que contém esta pasta de trabalho. Somente leitura.|
+||[aplicativo](/javascript/api/excel/excel.workbook#application)|Representa a instância do aplicativo Excel que contém esta pasta de trabalho. Somente leitura.|
 ||[bindings](/javascript/api/excel/excel.workbook#bindings)|Representa uma coleção de ligações que fazem parte da pasta de trabalho. Somente leitura.|
 ||[names](/javascript/api/excel/excel.workbook#names)|Representa uma coleção de itens denominados de escopo da pasta de trabalho (chamados intervalos e constantes). Somente leitura.|
-||[tables](/javascript/api/excel/excel.workbook#tables)|Representa uma coleção de tabelas associadas à pasta de trabalho. Somente leitura.|
+||[tabelas](/javascript/api/excel/excel.workbook#tables)|Representa uma coleção de tabelas associadas à pasta de trabalho. Somente leitura.|
 ||[planilhas](/javascript/api/excel/excel.workbook#worksheets)|Representa uma coleção de planilhas associadas à pasta de trabalho. Somente leitura.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[activate()](/javascript/api/excel/excel.worksheet#activate--)|Ative a planilha na interface do usuário do Excel.|
 ||[delete()](/javascript/api/excel/excel.worksheet#delete--)|Exclui a planilha da pasta de trabalho. Observe que, se a visibilidade da planilha estiver definida como "VeryHidden", a operação de exclusão falhará com uma Generalexception.|
@@ -230,10 +230,10 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[GetRange (endereço?: cadeia de caracteres)](/javascript/api/excel/excel.worksheet#getrange-address-)|Obtém o objeto Range, representando um único bloco retangular de células, especificado pelo endereço ou nome.|
 ||[name](/javascript/api/excel/excel.worksheet#name)|O nome de exibição da planilha.|
 ||[position](/javascript/api/excel/excel.worksheet#position)|A posição baseada em zero da planilha na pasta de trabalho.|
-||[charts](/javascript/api/excel/excel.worksheet#charts)|Retorna uma coleção de gráficos que fazem parte da planilha. Somente leitura.|
+||[gráficos](/javascript/api/excel/excel.worksheet#charts)|Retorna uma coleção de gráficos que fazem parte da planilha. Somente leitura.|
 ||[id](/javascript/api/excel/excel.worksheet#id)|Retorna um valor que identifica de forma exclusiva a planilha em uma determinada pasta de trabalho. O valor do identificador permanece o mesmo, ainda que a planilha seja renomeada ou movida. Somente leitura.|
-||[tables](/javascript/api/excel/excel.worksheet#tables)|Coleção de tabelas que fazem parte da planilha. Somente leitura.|
-||[visibilidade](/javascript/api/excel/excel.worksheet#visibility)|A visibilidade da planilha.|
+||[tabelas](/javascript/api/excel/excel.worksheet#tables)|Coleção de tabelas que fazem parte da planilha. Somente leitura.|
+||[visibility](/javascript/api/excel/excel.worksheet#visibility)|A visibilidade da planilha.|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[Add (Name?: String)](/javascript/api/excel/excel.worksheetcollection#add-name-)|Adiciona uma nova planilha à pasta de trabalho. A planilha será adicionada ao final das planilhas existentes. Se você quiser ativar a planilha recém-adicionada, chame “.activate()” nela.|
 ||[getActiveWorksheet()](/javascript/api/excel/excel.worksheetcollection#getactiveworksheet--)|Obtém a planilha ativa no momento na pasta de trabalho.|
 ||[getItem(key: string)](/javascript/api/excel/excel.worksheetcollection#getitem-key-)|Obtém um objeto worksheet usando o Nome ou ID dele.|
@@ -241,5 +241,5 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação de referência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.1)
+- [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.1)
 - [Conjuntos de requisitos da API JavaScript do Excel](./excel-api-requirement-sets.md)

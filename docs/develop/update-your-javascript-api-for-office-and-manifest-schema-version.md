@@ -3,12 +3,12 @@ title: Atualizar para a biblioteca de API JavaScript do Office mais recente e o 
 description: Atualize seus arquivos de JavaScript (Office.js e arquivos .js específicos do aplicativo) e o arquivo de validação de manifesto de suplemento usados no seu projeto de Suplemento do Office para a versão 1.1.
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: 74d940c1dfd885e1f48935776481bd5ab3bbda16
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 1c088c27319817c466e1ed9b928806c88e0f89c8
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719333"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609661"
 ---
 # <a name="update-to-the-latest-office-javascript-api-library-and-version-11-add-in-manifest-schema"></a>Atualizar para a biblioteca de API JavaScript do Office mais recente e o esquema de manifesto de suplemento versão 1,1
 
@@ -44,7 +44,7 @@ Observe que o processo de atualização é aplicado _por projeto_. Você precisa
 As etapas a seguir atualizarão seus arquivos de biblioteca do Office. js para a versão mais recente. As etapas usam o Visual Studio 2019, mas são semelhantes para versões anteriores do Visual Studio.
 
 1. No Visual Studio 2019, abra ou crie um novo projeto de **suplemento do Office** .
-2. Escolha **ferramentas** > **NuGet Package Manager** > **gerenciar pacotes NuGet para solução**.
+2. Escolha **ferramentas**  >  **NuGet Package Manager**  >  **gerenciar pacotes NuGet para solução**.
 3. Escolha a guia **Atualizações**.
 4. Selecione Microsoft.Office.js. Verifique se a origem do pacote é de **NuGet.org**.
 5. No painel esquerdo, escolha **instalar** e concluir o processo de atualização do pacote.
@@ -83,7 +83,7 @@ Para projetos criados antes da versão do v 1.1 da API JavaScript do Office e do
 
 O processo de atualização é aplicado _por projeto_. Você precisará repetir o processo de atualização para cada projeto de suplemento em que deseja usar a v1.1 do Office.js e o esquema de manifesto de suplemento.
 
-Você não precisa de cópias locais dos arquivos da API JavaScript do Office (Office. js e arquivos. js específicos do aplicativo) para desenvolver o suplemento do Office (fazer referência à CDN para o Office. js baixa os arquivos necessários em tempo de execução), mas se você quiser uma cópia local dos arquivos da biblioteca, poderá usar o utilitário de `Install-Package Microsoft.Office.js` [linha de comando NuGet](https://docs.nuget.org/consume/installing-nuget) e o comando para baixá-los
+Você não precisa de cópias locais dos arquivos da API JavaScript do Office (Office. js e arquivos. js específicos do aplicativo) para desenvolver o suplemento do Office (fazer referência à CDN para o Office. js baixa os arquivos necessários em tempo de execução), mas se você quiser uma cópia local dos arquivos da biblioteca, poderá usar o [Utilitário de linha de comando NuGet](https://docs.nuget.org/consume/installing-nuget) e o `Install-Package Microsoft.Office.js` comando para baixá-los
 
 > [!NOTE]
 > Para obter uma cópia da XSD (Definição de esquema XML) para o manifesto do suplemento v1.1, confira a listagem em [Referência de esquema para manifestos de Suplementos do Office (v1.1)](../develop/add-in-manifests.md).
@@ -120,7 +120,7 @@ No arquivo de manifesto do suplemento, atualize o atributo **xmlns** do elemento
 > [!NOTE]
 > Após a atualização da versão do esquema de manifesto do suplemento para 1,1, você precisará remover os **recursos** e os elementos de **capacidade** e substituí-los pelos elementos [hosts](../reference/manifest/hosts.md) e [host](../reference/manifest/host.md) ou nos [elementos requirements](specify-office-hosts-and-api-requirements.md)e requirement.
 
-## <a name="see-also"></a>Também confira
+## <a name="see-also"></a>Confira também
 
 - [Especificar hosts do Office e requisitos de API](specify-office-hosts-and-api-requirements.md) ]
 - [Entendendo a API JavaScript do Office](understanding-the-javascript-api-for-office.md)

@@ -3,12 +3,12 @@ title: Elemento ExtensionPoint no arquivo de manifesto
 description: Define onde um suplemento expõe a funcionalidade na interface de usuário do Office.
 ms.date: 05/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 41d4ede1ef4198430d888891e3eedda4e050456f
-ms.sourcegitcommit: f62d9630de69c5c070e3d4048205f5cc654db7e4
+ms.openlocfilehash: 56a7365f986060a225cc0d20c89a310deb4a52b3
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "44278417"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611866"
 ---
 # <a name="extensionpoint-element"></a>Elemento ExtensionPoint
 

@@ -3,12 +3,12 @@ title: Conjunto de requisitos de API para suplementos do Outlook versão 1.6
 description: Recursos e APIs que foram introduzidos para suplementos do Outlook e APIs JavaScript do Office como parte da API de caixa de correio 1,6.
 ms.date: 02/19/2020
 localization_priority: Normal
-ms.openlocfilehash: c1ce30ef1dd717a5d19ef9d71cf737e342cd660f
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 024b5ab992b146a1958653c38941434da00e1a03
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717632"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611446"
 ---
 # <a name="outlook-add-in-api-requirement-set-16"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.6
 

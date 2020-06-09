@@ -3,12 +3,12 @@ title: Solucionar problemas de mensagens de erro no logon único (SSO)
 description: Orientações sobre como solucionar problemas com logon único (SSO) em suplementos do Office e lidar com condições ou erros especiais.
 ms.date: 04/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 33826558b9b145433adbe96005e60db97fc067f7
-ms.sourcegitcommit: 118e8bcbcfb73c93e2053bda67fe8dd20799b170
+ms.openlocfilehash: da42b3b3d9b5cf1fede999a18bbe36c5532bd866
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "43241074"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44609696"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>Solucionar problemas de mensagens de erro no logon único (SSO) (visualização)
 
@@ -108,7 +108,7 @@ No desenvolvimento, o suplemento é sideloaded no Outlook e a opção `forMSGrap
 
 ### <a name="13013"></a>13013
 
-O `getAccessToken` era chamado muitas vezes em um curto período de tempo, portanto, o Office limitou a chamada mais recente. Isso geralmente é causado por um loop infinito de chamadas para o método. Há situações em que se rechamar o método é aconselhável. No entanto, seu código deve usar uma variável de contador ou sinalizador para garantir que o método não seja rechamado repetidamente. Se o mesmo caminho de código de "repetição" estiver em execução novamente, o código deverá retornar a um sistema alternativo de autenticação do usuário. Para obter um exemplo de código, consulte `retryGetAccessToken` como a variável é usada no [HomeES6. js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) ou [ssoAuthES6. js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js).
+O `getAccessToken` era chamado muitas vezes em um curto período de tempo, portanto, o Office limitou a chamada mais recente. Isso geralmente é causado por um loop infinito de chamadas para o método. Há situações em que se rechamar o método é aconselhável. No entanto, seu código deve usar uma variável de contador ou sinalizador para garantir que o método não seja rechamado repetidamente. Se o mesmo caminho de código de "repetição" estiver em execução novamente, o código deverá retornar a um sistema alternativo de autenticação do usuário. Para obter um exemplo de código, consulte como a `retryGetAccessToken` variável é usada no [HomeES6. js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) ou [ssoAuthES6. js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js).
 
 ### <a name="50001"></a>50001
 
@@ -128,7 +128,7 @@ Em certas configurações de identidade no AAD e no Office 365, é possível que
 
 O código deve testar essa propriedade de `claims`. Dependendo da arquitetura do seu suplemento, você poderá testá-lo no lado do cliente ou testá-lo no lado do servidor e retransmiti-lo ao cliente. Você precisa dessa informação no cliente porque o Office processa a autenticação para os suplementos de SSO. Se você retransmiti-lo do lado do servidor, a mensagem para o cliente pode ser um erro (como `500 Server Error` ou `401 Unauthorized`) ou estar no corpo de uma resposta de sucesso (como `200 OK`). Em ambos os casos, o retorno de chamada (falha ou sucesso) da chamada AJAX do lado do cliente do seu código para a API da Web do seu suplemento deve testar essa resposta. 
 
-Independentemente da arquitetura, se o valor de declarações tiver sido enviado do AAD, seu código deverá se `getAccessToken` lembrar e passar a `authChallenge: CLAIMS-STRING-HERE` opção no `options` parâmetro. Quando o AAD vir essa string, ele solicitará ao usuário os fatores adicionais e retornará um novo token de acesso que será aceito no fluxo Em Nome De.
+Independentemente da arquitetura, se o valor de declarações tiver sido enviado do AAD, seu código deverá se lembrar `getAccessToken` e passar a opção `authChallenge: CLAIMS-STRING-HERE` no `options` parâmetro. Quando o AAD vir essa string, ele solicitará ao usuário os fatores adicionais e retornará um novo token de acesso que será aceito no fluxo Em Nome De.
 
 ### <a name="consent-missing-errors"></a>Erros de falta de consentimento
 

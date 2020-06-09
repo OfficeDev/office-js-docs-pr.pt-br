@@ -3,12 +3,12 @@ title: Usar temas de documentos em seus suplementos do PowerPoint
 description: Saiba como coordenar visualmente temas, como fontes e cores, para aplicar a apresentações, documentos, planilhas e emails.
 ms.date: 10/14/2019
 localization_priority: Normal
-ms.openlocfilehash: e3affe277cfb4c52e83e0c27815884949afbe336
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: a07b56cda012c34d2f92cb8a0da9e6594b30188b
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217785"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611923"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>Usar temas de documentos em seus suplementos do PowerPoint
 

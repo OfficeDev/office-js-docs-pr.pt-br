@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos WordApi 1,3
 ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: fe72a3047fdbdd719fd115858e4010fbc2c639e5
-ms.sourcegitcommit: 654ac1a0c477413662b48cffc0faee5cb65fc25f
+ms.openlocfilehash: 15ec2129f53d0b408191ceb595f1fe115feb0d1a
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "36268555"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611292"
 ---
 # <a name="whats-new-in-word-javascript-api-13"></a>Quais são as novidades na API JavaScript do Word 1.3
 
@@ -24,19 +24,19 @@ A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do W
 |[Aplicativo](/javascript/api/word/word.application)|[CreateDocument (base64file?: cadeia de caracteres)](/javascript/api/word/word.application#createdocument-base64file-)|Cria um novo documento usando um arquivo. docx codificado em base64 opcional.|
 |[Body](/javascript/api/word/word.body)|[GetRange (rangeLocation?: Word. RangeLocation)](/javascript/api/word/word.body#getrange-rangelocation-)|Obtém o corpo todo, ou então, os pontos inicial ou final do corpo, como um intervalo.|
 ||[InsertTable (rowCount: Number, columnCount: Number, insertLocation: Word. InsertLocation, Values?: String [] [])](/javascript/api/word/word.body#inserttable-rowcount--columncount--insertlocation--values-)|Insere uma tabela com a quantidade especificada de linhas e colunas. O valor de insertLocation pode ser 'Start' ou 'End'.|
-||[listas](/javascript/api/word/word.body#lists)|Obtém a coleção de listas de objetos no corpo. Somente leitura.|
+||[lists](/javascript/api/word/word.body#lists)|Obtém a coleção de listas de objetos no corpo. Somente leitura.|
 ||[parentBody](/javascript/api/word/word.body#parentbody)|Obtém o corpo pai do corpo. Por exemplo, o corpo pai do corpo de uma célula de tabela poderia ser um cabeçalho. Gera uma exceção se não há um corpo pai. Somente leitura.|
 ||[parentBodyOrNullObject](/javascript/api/word/word.body#parentbodyornullobject)|Obtém o corpo pai do corpo. Por exemplo, o corpo pai do corpo de uma célula de tabela poderia ser um cabeçalho. Retorna um objeto nulo se não há um corpo pai. Somente leitura.|
 ||[parentContentControlOrNullObject](/javascript/api/word/word.body#parentcontentcontrolornullobject)|Obtém o controle de conteúdo que inclui o corpo. Retorna um objeto NULL se não houver um controle de conteúdo pai. Somente leitura.|
 ||[parentSection](/javascript/api/word/word.body#parentsection)|Obtém a seção pai do corpo. Gera se não há uma seção pai. Somente leitura.|
 ||[parentSectionOrNullObject](/javascript/api/word/word.body#parentsectionornullobject)|Obtém a seção pai do corpo. Retorna um objeto NULL se não houver uma seção pai. Somente leitura.|
-||[tables](/javascript/api/word/word.body#tables)|Obtém a coleção de tabelas de objetos no corpo. Somente leitura.|
-||[tipo](/javascript/api/word/word.body#type)|Obtém o tipo do corpo. O tipo pode ser 'MainDoc', 'Section', 'Header', 'Footer' ou 'TableCell'. Somente leitura.|
+||[tabelas](/javascript/api/word/word.body#tables)|Obtém a coleção de tabelas de objetos no corpo. Somente leitura.|
+||[type](/javascript/api/word/word.body#type)|Obtém o tipo do corpo. O tipo pode ser 'MainDoc', 'Section', 'Header', 'Footer' ou 'TableCell'. Somente leitura.|
 ||[styleBuiltIn](/javascript/api/word/word.body#stylebuiltin)|Obtém ou define o nome do estilo interno para o corpo. Use esta propriedade para estilos internos que são portáteis entre localidades. Para usar estilos personalizados ou nomes de estilo localizados, confira a propriedade "estilo".|
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[GetRange (rangeLocation?: Word. RangeLocation)](/javascript/api/word/word.contentcontrol#getrange-rangelocation-)|Obtém o controle de todo o conteúdo, ou então, os pontos inicial ou final do controle de conteúdo, como um intervalo.|
 ||[gettextranges (endingMarks: String [], trimSpacing?: Boolean)](/javascript/api/word/word.contentcontrol#gettextranges-endingmarks--trimspacing-)|Obtém os intervalos de texto no controle de conteúdo usando marcas de Pontuação e/ou outras marcas de fim.|
 ||[InsertTable (rowCount: Number, columnCount: Number, insertLocation: Word. InsertLocation, Values?: String [] [])](/javascript/api/word/word.contentcontrol#inserttable-rowcount--columncount--insertlocation--values-)|Insere uma tabela com a quantidade especificada de linhas e colunas dentro ou próxima do controle de conteúdo. O valor insertLocation pode ser ' Start ', ' End ', ' before ' ou ' after '.|
-||[listas](/javascript/api/word/word.contentcontrol#lists)|Obtém a coleção de listas de objetos no controle de conteúdo. Somente leitura.|
+||[lists](/javascript/api/word/word.contentcontrol#lists)|Obtém a coleção de listas de objetos no controle de conteúdo. Somente leitura.|
 ||[parentBody](/javascript/api/word/word.contentcontrol#parentbody)|Obtém o corpo pai do controle de conteúdo. Somente leitura.|
 ||[parentContentControlOrNullObject](/javascript/api/word/word.contentcontrol#parentcontentcontrolornullobject)|Obtém o controle de conteúdo que inclui o controle de conteúdo. Retorna um objeto NULL se não houver um controle de conteúdo pai. Somente leitura.|
 ||[parentTable](/javascript/api/word/word.contentcontrol#parenttable)|Obtém a tabela que contém o controle de conteúdo. Lança se não está contida em uma tabela. Somente leitura.|
@@ -44,7 +44,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do W
 ||[parentTableCellOrNullObject](/javascript/api/word/word.contentcontrol#parenttablecellornullobject)|Obtém a célula de tabela que contém o controle de conteúdo. Retorna um objeto nulo se não estiver contido em uma célula de tabela. Somente leitura.|
 ||[parentTableOrNullObject](/javascript/api/word/word.contentcontrol#parenttableornullobject)|Obtém a tabela que contém o controle de conteúdo. Retorna um objeto nulo se não estiver contido em uma tabela. Somente leitura.|
 ||[subtipo](/javascript/api/word/word.contentcontrol#subtype)|Obtém o subtipo de controle de conteúdo. O subtipo pode ser 'RichTextInline', 'RichTextParagraphs', 'RichTextTableCell', 'RichTextTableRow' e 'RichTextTable' para controles de conteúdo em rich text. Somente leitura.|
-||[tables](/javascript/api/word/word.contentcontrol#tables)|Obtém a coleção de objetos de tabela no controle de conteúdo. Somente leitura.|
+||[tabelas](/javascript/api/word/word.contentcontrol#tables)|Obtém a coleção de objetos de tabela no controle de conteúdo. Somente leitura.|
 ||[Split (Delimiters: String [], multiparagraphs?: Boolean, trimDelimiters?: Boolean, trimSpacing?: Boolean)](/javascript/api/word/word.contentcontrol#split-delimiters--multiparagraphs--trimdelimiters--trimspacing-)|Divide o controle de conteúdo em intervalos filho usando delimitadores.|
 ||[styleBuiltIn](/javascript/api/word/word.contentcontrol#stylebuiltin)|Obtém ou define o nome do estilo interno para o controle de conteúdo. Use esta propriedade para estilos internos que são portáteis entre localidades. Para usar estilos personalizados ou nomes de estilo localizados, confira a propriedade "estilo".|
 |[ContentControlCollection](/javascript/api/word/word.contentcontrolcollection)|[getByIdOrNullObject (ID: Number)](/javascript/api/word/word.contentcontrolcollection#getbyidornullobject-id-)|Obtém um controle de conteúdo pelo respectivo identificador. Retorna um objeto NULL se não houver um controle de conteúdo com o identificador nessa coleção.|
@@ -107,7 +107,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do W
 ||[setLevelAlignment (Level: Number, Alignment: Word. Alignment)](/javascript/api/word/word.list#setlevelalignment-level--alignment-)|Define o alinhamento do marcador, o número ou a imagem no nível especificado na lista.|
 ||[setLevelBullet (Level: Number, listBullet: Word. ListBullet, charco?: Number, NomeDaFonte?: String)](/javascript/api/word/word.list#setlevelbullet-level--listbullet--charcode--fontname-)|Define o formato de marcador no nível especificado na lista. Se o marcador é 'Custom', o charCode é necessário.|
 ||[setLevelIndents (Level: Number, TextIndent: Number, bulletNumberPictureIndent: Number)](/javascript/api/word/word.list#setlevelindents-level--textindent--bulletnumberpictureindent-)|Define os dois recuos do nível especificado na lista.|
-||[setLevelNumbering (Level: Number, listNumbering: Word. ListNumbering, formatString?: matriz<número \| de cadeia de caracteres>)](/javascript/api/word/word.list#setlevelnumbering-level--listnumbering--formatstring-)|Define o formato de numeração no nível especificado na lista.|
+||[setLevelNumbering (Level: Number, listNumbering: Word. ListNumbering, formatString?: matriz<número de cadeia de caracteres \|>)](/javascript/api/word/word.list#setlevelnumbering-level--listnumbering--formatstring-)|Define o formato de numeração no nível especificado na lista.|
 ||[setLevelStartingNumber (Level: Number, startingNumber: Number)](/javascript/api/word/word.list#setlevelstartingnumber-level--startingnumber-)|Define o número inicial no nível especificado na lista. O valor padrão é 1.|
 |[ListCollection](/javascript/api/word/word.listcollection)|[getById(id: number)](/javascript/api/word/word.listcollection#getbyid-id-)|Obtém uma lista por seu identificador. Lança se não há uma lista com o identificador nessa coleção.|
 ||[getByIdOrNullObject (ID: Number)](/javascript/api/word/word.listcollection#getbyidornullobject-id-)|Obtém uma lista por seu identificador. Retorna um objeto NULL se não houver uma lista com o identificador nessa coleção.|
@@ -163,14 +163,14 @@ A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do W
 ||[intersectWith (Range: Word. Range)](/javascript/api/word/word.range#intersectwith-range-)|Retorna um novo intervalo como ponto de interseção deste intervalo com outro intervalo. Este intervalo não é alterado. Lança se os dois intervalos não são sobrepostos ou adjacentes.|
 ||[intersectWithOrNullObject (Range: Word. Range)](/javascript/api/word/word.range#intersectwithornullobject-range-)|Retorna um novo intervalo como ponto de interseção deste intervalo com outro intervalo. Este intervalo não é alterado. Retorna um objeto NULL se os dois intervalos não forem sobrepostos ou adjacentes.|
 ||[isEmpty](/javascript/api/word/word.range#isempty)|Verifica se o comprimento do intervalo é zero. Somente leitura.|
-||[listas](/javascript/api/word/word.range#lists)|Obtém a coleção de listas de objetos no intervalo. Somente leitura.|
+||[lists](/javascript/api/word/word.range#lists)|Obtém a coleção de listas de objetos no intervalo. Somente leitura.|
 ||[parentBody](/javascript/api/word/word.range#parentbody)|Obtém o corpo pai do intervalo. Somente leitura.|
 ||[parentContentControlOrNullObject](/javascript/api/word/word.range#parentcontentcontrolornullobject)|Obtém o controle de conteúdo que inclui o intervalo. Retorna um objeto NULL se não houver um controle de conteúdo pai. Somente leitura.|
 ||[parentTable](/javascript/api/word/word.range#parenttable)|Obtém a tabela que contém o intervalo. Lança se não está contida em uma tabela. Somente leitura.|
 ||[parentTableCell](/javascript/api/word/word.range#parenttablecell)|Obtém a célula de tabela que contém o intervalo. Lança se não está contida em uma célula de tabela. Somente leitura.|
 ||[parentTableCellOrNullObject](/javascript/api/word/word.range#parenttablecellornullobject)|Obtém a célula de tabela que contém o intervalo. Retorna um objeto nulo se não estiver contido em uma célula de tabela. Somente leitura.|
 ||[parentTableOrNullObject](/javascript/api/word/word.range#parenttableornullobject)|Obtém a tabela que contém o intervalo. Retorna um objeto nulo se não estiver contido em uma tabela. Somente leitura.|
-||[tables](/javascript/api/word/word.range#tables)|Obtém a coleção de tabelas de objetos no intervalo. Somente leitura.|
+||[tabelas](/javascript/api/word/word.range#tables)|Obtém a coleção de tabelas de objetos no intervalo. Somente leitura.|
 ||[Split (Delimiters: String [], multiparagraphs?: Boolean, trimDelimiters?: Boolean, trimSpacing?: Boolean)](/javascript/api/word/word.range#split-delimiters--multiparagraphs--trimdelimiters--trimspacing-)|Divide o intervalo em intervalos filho usando delimitadores.|
 ||[styleBuiltIn](/javascript/api/word/word.range#stylebuiltin)|Obtém ou define o nome do estilo interno para o intervalo. Use esta propriedade para estilos internos que são portáteis entre localidades. Para usar estilos personalizados ou nomes de estilo localizados, confira a propriedade "estilo".|
 |[RangeCollection](/javascript/api/word/word.rangecollection)|[getFirst()](/javascript/api/word/word.rangecollection#getfirst--)|Obtém o primeiro intervalo nesta coleção. Lança se esta coleção está vazia.|
@@ -216,7 +216,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do W
 ||[parentTableOrNullObject](/javascript/api/word/word.table#parenttableornullobject)|Obtém a tabela que contém esta tabela. Retorna um objeto nulo se não estiver contido em uma tabela. Somente leitura.|
 ||[Validação](/javascript/api/word/word.table#rowcount)|Obtém a quantidade de linhas na tabela. Somente leitura.|
 ||[rows](/javascript/api/word/word.table#rows)|Obtém todas as linhas da tabela. Somente leitura.|
-||[tables](/javascript/api/word/word.table#tables)|Obtém as tabelas filho aninhadas em um nível mais profundo. Somente leitura.|
+||[tabelas](/javascript/api/word/word.table#tables)|Obtém as tabelas filho aninhadas em um nível mais profundo. Somente leitura.|
 ||[Search (ProcurarTexto: String, searchoptions?: Word. Searchoptions](/javascript/api/word/word.table#search-searchtext--searchoptions-)|Realiza uma pesquisa com o Searchoptions especificado no escopo do objeto Table. Os resultados da pesquisa são uma coleção de objetos Range.|
 ||[selecionar (selectionMode?: Word. SelectionMode)](/javascript/api/word/word.table#select-selectionmode-)|Seleciona a tabela, ou então, a posição no início ou no final da tabela e navega na interface do usuário do Word até ela.|
 ||[setCellPadding (cellPaddingLocation: Word. CellPaddingLocation, cellPadding: Number)](/javascript/api/word/word.table#setcellpadding-cellpaddinglocation--cellpadding-)|Define o preenchimento de célula em pontos.|
@@ -232,7 +232,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do W
 ||[verticalAlignment](/javascript/api/word/word.table#verticalalignment)|Obtém e define o alinhamento vertical de cada célula na tabela. O valor pode ser "Top", "Center" ou "Bottom".|
 ||[width](/javascript/api/word/word.table#width)|Obtém e define a largura da tabela em pontos.|
 |[TableBorder](/javascript/api/word/word.tableborder)|[color](/javascript/api/word/word.tableborder#color)|Obtém ou define a cor da borda da tabela.|
-||[tipo](/javascript/api/word/word.tableborder#type)|Obtém ou define o tipo de borda da tabela.|
+||[type](/javascript/api/word/word.tableborder#type)|Obtém ou define o tipo de borda da tabela.|
 ||[width](/javascript/api/word/word.tableborder#width)|Obtém ou define a largura, em pontos, da borda da tabela. Não aplicável a tipos de borda de tabela que têm larguras fixas.|
 |[TableCell](/javascript/api/word/word.tablecell)|[columnWidth](/javascript/api/word/word.tablecell#columnwidth)|Obtém e define a largura da coluna da célula em pontos. Isto é aplicável às tabelas uniformes.|
 ||[deleteColumn()](/javascript/api/word/word.tablecell#deletecolumn--)|Exclui a coluna que contém essa célula. Isto é aplicável às tabelas uniformes.|
@@ -287,5 +287,5 @@ A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do W
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação de referência da API JavaScript do Word](/javascript/api/word)
+- [Documentação de Referência da API JavaScript do Word](/javascript/api/word)
 - [Conjuntos de requisitos da API JavaScript do Word](word-api-requirement-sets.md)

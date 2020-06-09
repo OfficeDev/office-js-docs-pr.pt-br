@@ -3,12 +3,12 @@ title: Validar o manifesto de suplemento do Office
 description: Saiba como validar o manifesto de um suplemento do Office usando o esquema XML e outras ferramentas.
 ms.date: 04/16/2020
 localization_priority: Normal
-ms.openlocfilehash: a6c33603f278e092d5b2b1c85879e03ee10031e3
-ms.sourcegitcommit: 803587b324fc8038721709d7db5664025cf03c6b
+ms.openlocfilehash: fee4fd048092734eb479f1993c69fcf99c153c79
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "43547227"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611096"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>Validar o manifesto de suplemento do Office
 
@@ -43,7 +43,7 @@ Se você não tiver usado o [gerador Yeoman para Suplementos do Office](https://
     ```
 
     > [!NOTE]
-    > Se este comando não estiver disponível ou não estiver funcionando, execute o seguinte comando em vez de forçar o uso da versão mais recente da ferramenta Office-AddIn-manifest ( `MANIFEST_FILE` substituindo pelo nome do arquivo de manifesto):
+    > Se este comando não estiver disponível ou não estiver funcionando, execute o seguinte comando em vez de forçar o uso da versão mais recente da ferramenta Office-AddIn-manifest (substituindo `MANIFEST_FILE` pelo nome do arquivo de manifesto):
     >
     > ```command&nbsp;line
     > npx --ignore-existing office-addin-manifest validate MANIFEST_FILE

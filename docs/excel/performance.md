@@ -3,12 +3,12 @@ title: Otimização de desempenho do da API JavaScript do Excel
 description: Otimizar o desempenho usando as API JavaScript do Excel
 ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 273ae6d98c5430bdcd9612670121a6b22a8288af
-ms.sourcegitcommit: 9da68c00ecc00a2f307757e0f5a903a8e31b7769
+ms.openlocfilehash: 1108c3a9cbb5efa23d52f2c7d8a6601e4b4bd493
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "43785732"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44610351"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Otimização de desempenho usando a API JavaScript do Excel
 
@@ -72,7 +72,7 @@ object.load({ loadOption });
 
 _Onde:_
 
-* `properties` é a lista de propriedades para carregar, especificadas como cadeias de caracteres delimitadas por vírgula ou como uma matriz de nomes. Para obter mais informações, consulte `load()` os métodos definidos para objetos na [referência da API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md).
+* `properties` é a lista de propriedades para carregar, especificadas como cadeias de caracteres delimitadas por vírgula ou como uma matriz de nomes. Para obter mais informações, consulte os `load()` métodos definidos para objetos na [referência da API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md).
 * `loadOption` especifica um objeto que descreve as opções de seleção, expansão, topo e ignorar. Confira as [opções](/javascript/api/office/officeextension.loadoption) de carregamento do objeto para saber mais.
 
 Observe que algumas das "Propriedades" em um objeto podem ter o mesmo nome de outro objeto. Por exemplo, `format` é uma propriedade dentro do objeto de intervalo, mas `format` também é um objeto. Portanto, se você fizer uma chamada, como `range.load("format")`, isso equivale a`range.format.load()`, que é uma chamada load vazia () que pode causar problemas de desempenho, conforme descrito anteriormente. Para evitar isso, o código só deve carregar os "nós folha" em uma árvore de objetos.

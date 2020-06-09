@@ -3,12 +3,12 @@ title: Realizar o sideload de suplementos do Office em um iPad ou Mac para teste
 description: Testar o suplemento do Office no iPad e Mac por Sideload
 ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 4863a55d21ab37411e76810a744f103cc364f7c1
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 092207898547969a361b10d72fad106311563907
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719774"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611137"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>Realizar o sideload de suplementos do Office em um iPad ou Mac para teste
 
@@ -71,7 +71,7 @@ Para ver como seu suplemento será executado no Office no iOS, você pode realiz
 
 3. Abra o Word e abra um documento. Reinicie o Word se já estiver em execução.
 
-4. No Word, escolha **Inserir** > **suplementos** > **meus** suplementos (menu suspenso) e, em seguida, escolha seu suplemento.
+4. No Word, escolha **Inserir**  >  **suplementos**  >  **meus** suplementos (menu suspenso) e, em seguida, escolha seu suplemento.
 
     ![Meus Suplementos no Office no Mac](../images/my-add-ins-wikipedia.png)
 
