@@ -4,12 +4,12 @@ description: Um caminho recomendado para iniciantes, através dos recursos de ap
 ms.date: 04/16/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 61a8e455c5fdb676166f05d03d3d360593c53445
-ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
+ms.openlocfilehash: b62c7a5d2117c52f4bd3f91c1a2e1b735554028e
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "44170773"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44604494"
 ---
 # <a name="start-here-a-guide-for-beginners-making-office-add-ins"></a>Comece aqui! Um guia para iniciantes na criação de suplementos do Office
 

@@ -3,12 +3,12 @@ title: Manifesto XML dos Suplementos do Office
 description: Obtenha uma visão geral do manifesto de suplemento do Office e seus usos.
 ms.date: 03/18/2020
 localization_priority: Priority
-ms.openlocfilehash: ad2827c45dca4652c504d57232f1aa40f72373fe
-ms.sourcegitcommit: 6c381634c77d316f34747131860db0a0bced2529
+ms.openlocfilehash: 0df47ac67a924ab9fd2b3064e0a1ff1b4aa63360
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "42890560"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608990"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifesto XML dos Suplementos do Office
 

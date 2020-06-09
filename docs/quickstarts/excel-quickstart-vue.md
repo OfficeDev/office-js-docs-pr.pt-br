@@ -4,12 +4,12 @@ description: Aprenda a criar um suplemento do painel de tarefas simples do Excel
 ms.date: 04/14/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: ef20d56181d3b0f6c865e81de9c8500ef9906c83
-ms.sourcegitcommit: 90c5830a5f2973a9ccd5c803b055e1b98d83f099
+ms.openlocfilehash: 49c38a8b9055692f40fed9dc110528694e3fbf55
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "43529117"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608919"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>Criar um suplemento do painel de tarefas do Excel usando o Vue
 

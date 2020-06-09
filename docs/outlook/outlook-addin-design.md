@@ -3,12 +3,12 @@ title: Design de suplementos do Outlook
 description: Diretrizes para ajudar a projetar e construir um suplemento atraente, que oferece o melhor do seu aplicativo diretamente para o Outlook – no Windows, na Web, no iOS, no Mac e no Android.
 ms.date: 06/24/2019
 localization_priority: Priority
-ms.openlocfilehash: efedeb32643bff12e167931ac4da80fdcc2c277f
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: ed2ffe1b46ba4673dea531450a0452afa8de11c5
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165721"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44606522"
 ---
 # <a name="outlook-add-in-design-guidelines"></a>Diretrizes de design de suplementos do Outlook
 

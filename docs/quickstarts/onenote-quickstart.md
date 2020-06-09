@@ -4,12 +4,12 @@ description: Saiba como criar um suplemento do painel de tarefas do OneNote simp
 ms.date: 01/16/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 8903e2142ebccef2285d7dd6f12cc8a01ef3ce70
-ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
+ms.openlocfilehash: 6c09ca26047adeaacf93d77238cf831fbd2601ea
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "43185481"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608912"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do OneNote
 

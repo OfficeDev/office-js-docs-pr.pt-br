@@ -3,12 +3,12 @@ title: Criar suplementos do Outlook para formulários de leitura
 description: Suplementos de leitura são suplementos do Outlook que são ativados no painel de leitura ou no inspetor de leitura do Outlook.
 ms.date: 04/12/2018
 localization_priority: Priority
-ms.openlocfilehash: a2a5448261fe6fcd150ed0cabda0184d941334e0
-ms.sourcegitcommit: a3ddfdb8a95477850148c4177e20e56a8673517c
+ms.openlocfilehash: 815234ed046b4c00b91f5acd6cd2c4dcd226dba2
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "42165705"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44605301"
 ---
 # <a name="create-outlook-add-ins-for-read-forms"></a>Criar suplementos do Outlook para formulários de leitura
 

@@ -4,12 +4,12 @@ description: Neste tutorial, voc? criar? um suplemento do Word que insere (e sub
 ms.date: 01/16/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: e3d6f2c590ae34189ce9127d55b3f4332a63e1aa
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
+ms.openlocfilehash: a45cbcc9980a2f07218257f6fef0bd7c781f9992
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217764"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44610829"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Tutorial: Criar Suplemento do Painel de Tarefas no Word
 

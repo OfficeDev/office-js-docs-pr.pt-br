@@ -4,12 +4,12 @@ description: Neste tutorial, você criará um suplemento do PowerPoint que inser
 ms.date: 12/24/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: a72310c0ab58e544050ec7574841b38560df2fbf
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: b9c31e589369bdcc844e3c587d12e6a26406357b
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42717394"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611047"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>Tutorial: Criar um Suplemento do Painel de Tarefas
 

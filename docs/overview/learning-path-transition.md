@@ -4,12 +4,12 @@ description: Um roteiro recomendado para desenvolvedores experientes de suplemen
 ms.date: 05/10/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 6ed812bae73282999716c448ef683dcc6aeae778
-ms.sourcegitcommit: 735bf94ac3c838f580a992e7ef074dbc8be2b0ea
+ms.openlocfilehash: 499a8fdf12c2f46c5cf5fc5c37f8bb68af540e57
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "44170832"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44604570"
 ---
 # <a name="transition-here-a-guide-for-vsto-add-in-creators-making-office-web-add-ins"></a>Transição aqui! Um guia para criadores de suplemento do VSTO que fazem suplementos Web do Office
 

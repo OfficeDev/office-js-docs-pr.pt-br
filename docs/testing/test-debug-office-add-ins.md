@@ -3,12 +3,12 @@ title: Testar e depurar suplementos do Office
 description: Aprenda a testar e depurar Suplementos do Office.
 ms.date: 06/20/2019
 localization_priority: Priority
-ms.openlocfilehash: b620d351c4d584a933431bc6d23a88f1a1de0962
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 5eed657382f90a6248a464b90835e01eabfbfc85
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719739"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44611123"
 ---
 # <a name="test-and-debug-office-add-ins"></a>Testar e depurar suplementos do Office
 
