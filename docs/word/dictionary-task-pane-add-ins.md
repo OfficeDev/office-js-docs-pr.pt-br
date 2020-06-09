@@ -3,66 +3,66 @@ title: Criar um suplemento de painel de tarefas de dicionário
 description: Saiba como criar um suplemento de painel de tarefas de dicionário
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: e72ef049c355e756a3bd8a843fc6075a59c3c8a6
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 07e2222520999729e3677296869b2367265687f8
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42719690"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608646"
 ---
-# <a name="create-a-dictionary-task-pane-add-in"></a><span data-ttu-id="c0534-103">Criar um suplemento de painel de tarefas de dicionário</span><span class="sxs-lookup"><span data-stu-id="c0534-103">Create a dictionary task pane add-in</span></span>
+# <a name="create-a-dictionary-task-pane-add-in"></a><span data-ttu-id="b584d-103">Criar um suplemento de painel de tarefas de dicionário</span><span class="sxs-lookup"><span data-stu-id="b584d-103">Create a dictionary task pane add-in</span></span>
 
 
-<span data-ttu-id="c0534-104">Este artigo mostra um exemplo de um suplemento de painel de tarefas e o serviço Web correspondente que fornece definições de dicionário ou sinônimos de dicionário de sinônimos para a seleção do usuário atual em um documento do Word 2013.</span><span class="sxs-lookup"><span data-stu-id="c0534-104">This article shows you an example of a task pane add-in with an accompanying web service that provides dictionary definitions or thesaurus synonyms for the user's current selection in a Word 2013 document.</span></span> 
+<span data-ttu-id="b584d-104">Este artigo mostra um exemplo de um suplemento de painel de tarefas e o serviço Web correspondente que fornece definições de dicionário ou sinônimos de dicionário de sinônimos para a seleção do usuário atual em um documento do Word 2013.</span><span class="sxs-lookup"><span data-stu-id="b584d-104">This article shows you an example of a task pane add-in with an accompanying web service that provides dictionary definitions or thesaurus synonyms for the user's current selection in a Word 2013 document.</span></span> 
 
-<span data-ttu-id="c0534-105">Um Suplemento do Office de dicionário baseia-se no suplemento de painel de tarefas padrão, com recursos adicionais para dar suporte a consultas e exibir definições de um serviço Web XML de dicionário em locais adicionais na interface do usuário do aplicativo do Office.</span><span class="sxs-lookup"><span data-stu-id="c0534-105">A dictionary Office Add-in is based on the standard task pane add-in with additional features to support querying and displaying definitions from a dictionary XML web service in additional places in the Office application's UI.</span></span> 
+<span data-ttu-id="b584d-105">Um Suplemento do Office de dicionário baseia-se no suplemento de painel de tarefas padrão, com recursos adicionais para dar suporte a consultas e exibir definições de um serviço Web XML de dicionário em locais adicionais na interface do usuário do aplicativo do Office.</span><span class="sxs-lookup"><span data-stu-id="b584d-105">A dictionary Office Add-in is based on the standard task pane add-in with additional features to support querying and displaying definitions from a dictionary XML web service in additional places in the Office application's UI.</span></span> 
 
-<span data-ttu-id="c0534-p101">Em um suplemento de painel de tarefas de dicionário típico, um usuário seleciona uma palavra ou frase no documento e a lógica de JavaScript por trás do suplemento passa essa seleção ao serviço Web XML do provedor do dicionário. A página Web do provedor do dicionário então é atualizada para mostrar as definições para a seleção ao usuário. O componente do serviço Web XML retorna até três definições no formato definido pelo esquema OfficeDefinitions XML, que são exibidas para o usuário em outros locais na interface do usuário do aplicativo host do Office. A Figura 1 mostra a experiência de seleção e exibição para um suplemento de dicionário com a marca do Bing que está em execução no Word 2013.</span><span class="sxs-lookup"><span data-stu-id="c0534-p101">In a typical dictionary task pane add-in, a user selects a word or phrase in their document, and the JavaScript logic behind the add-in passes this selection to the dictionary provider's XML web service. The dictionary provider's webpage then updates to show the definitions for the selection to the user. The XML web service component returns up to three definitions in the format defined by the OfficeDefinitions XML schema, which are then displayed to the user in other places in the hosting Office application's UI. Figure 1 shows the selection and display experience for a Bing-branded dictionary add-in that is running in Word 2013.</span></span>
+<span data-ttu-id="b584d-p101">Em um suplemento de painel de tarefas de dicionário típico, um usuário seleciona uma palavra ou frase no documento e a lógica de JavaScript por trás do suplemento passa essa seleção ao serviço Web XML do provedor do dicionário. A página Web do provedor do dicionário então é atualizada para mostrar as definições para a seleção ao usuário. O componente do serviço Web XML retorna até três definições no formato definido pelo esquema OfficeDefinitions XML, que são exibidas para o usuário em outros locais na interface do usuário do aplicativo host do Office. A Figura 1 mostra a experiência de seleção e exibição para um suplemento de dicionário com a marca do Bing que está em execução no Word 2013.</span><span class="sxs-lookup"><span data-stu-id="b584d-p101">In a typical dictionary task pane add-in, a user selects a word or phrase in their document, and the JavaScript logic behind the add-in passes this selection to the dictionary provider's XML web service. The dictionary provider's webpage then updates to show the definitions for the selection to the user. The XML web service component returns up to three definitions in the format defined by the OfficeDefinitions XML schema, which are then displayed to the user in other places in the hosting Office application's UI. Figure 1 shows the selection and display experience for a Bing-branded dictionary add-in that is running in Word 2013.</span></span>
 
-<span data-ttu-id="c0534-110">*Figura 1. Suplemento de dicionário exibindo definições para a palavra selecionada*</span><span class="sxs-lookup"><span data-stu-id="c0534-110">*Figure 1. Dictionary add-in displaying definitions for the selected word*</span></span>
+<span data-ttu-id="b584d-110">*Figura 1. Suplemento de dicionário exibindo definições para a palavra selecionada*</span><span class="sxs-lookup"><span data-stu-id="b584d-110">*Figure 1. Dictionary add-in displaying definitions for the selected word*</span></span>
 
 ![Um aplicativo de dicionário exibindo uma definição](../images/dictionary-agave-01.jpg)
 
-<span data-ttu-id="c0534-112">Você pode determinar se clicar no link **Ver mais** na interface de usuário do suplemento de dicionário do dicionário de dados do HTML exibe mais informações dentro do painel de tarefas ou abre uma janela do navegador separada para a página da Web completa da palavra ou frase selecionada.</span><span class="sxs-lookup"><span data-stu-id="c0534-112">It is up to you to determine if clicking the **See More** link in the dictionary add-in's HTML UI displays more information within the task pane or opens a separate browser window to the full webpage for the selected word or phrase.</span></span>
-<span data-ttu-id="c0534-113">A Figura 2 mostra o comando **definir** menu de contexto que permite que os usuários iniciem os dicionários instalados rapidamente.</span><span class="sxs-lookup"><span data-stu-id="c0534-113">Figure 2 shows the **Define** context menu command that enables users to quickly launch installed dictionaries.</span></span> <span data-ttu-id="c0534-114">As Figuras 3 a 5 mostram os locais na interface do usuário do Office em que os serviços de dicionário XML são usados para fornecer definições no Word 2013.</span><span class="sxs-lookup"><span data-stu-id="c0534-114">Figures 3 through 5 show the places in the Office UI where the dictionary XML services are used to provide definitions in Word 2013.</span></span>
+<span data-ttu-id="b584d-112">Você pode determinar se clicar no link **Ver mais** na interface de usuário do suplemento de dicionário do dicionário de dados do HTML exibe mais informações dentro do painel de tarefas ou abre uma janela do navegador separada para a página da Web completa da palavra ou frase selecionada.</span><span class="sxs-lookup"><span data-stu-id="b584d-112">It is up to you to determine if clicking the **See More** link in the dictionary add-in's HTML UI displays more information within the task pane or opens a separate browser window to the full webpage for the selected word or phrase.</span></span>
+<span data-ttu-id="b584d-113">A Figura 2 mostra o comando **definir** menu de contexto que permite que os usuários iniciem os dicionários instalados rapidamente.</span><span class="sxs-lookup"><span data-stu-id="b584d-113">Figure 2 shows the **Define** context menu command that enables users to quickly launch installed dictionaries.</span></span> <span data-ttu-id="b584d-114">As Figuras 3 a 5 mostram os locais na interface do usuário do Office em que os serviços de dicionário XML são usados para fornecer definições no Word 2013.</span><span class="sxs-lookup"><span data-stu-id="b584d-114">Figures 3 through 5 show the places in the Office UI where the dictionary XML services are used to provide definitions in Word 2013.</span></span>
 
-<span data-ttu-id="c0534-115">*Figura 2. Comando Definir no menu de contexto*</span><span class="sxs-lookup"><span data-stu-id="c0534-115">*Figure 2. Define command in the context menu*</span></span>
+<span data-ttu-id="b584d-115">*Figura 2. Comando Definir no menu de contexto*</span><span class="sxs-lookup"><span data-stu-id="b584d-115">*Figure 2. Define command in the context menu*</span></span>
 
 ![Menu de contexto de Definir](../images/dictionary-agave-02.jpg)
 
 
-<span data-ttu-id="c0534-117">*Figura 3. Definições nos painéis Ortografia e Gramática*</span><span class="sxs-lookup"><span data-stu-id="c0534-117">*Figure 3. Definitions in the Spelling and Grammar panes*</span></span>
+<span data-ttu-id="b584d-117">*Figura 3. Definições nos painéis Ortografia e Gramática*</span><span class="sxs-lookup"><span data-stu-id="b584d-117">*Figure 3. Definitions in the Spelling and Grammar panes*</span></span>
 
 ![Definições nos painéis Ortografia e Gramática](../images/dictionary-agave-03.jpg)
 
 
-<span data-ttu-id="c0534-119">*Figura 4. Definições no painel Dicionário de Sinônimos*</span><span class="sxs-lookup"><span data-stu-id="c0534-119">*Figure 4. Definitions in the Thesaurus pane*</span></span>
+<span data-ttu-id="b584d-119">*Figura 4. Definições no painel Dicionário de Sinônimos*</span><span class="sxs-lookup"><span data-stu-id="b584d-119">*Figure 4. Definitions in the Thesaurus pane*</span></span>
 
 ![Definições no painel Dicionário de Sinônimos](../images/dictionary-agave-04.jpg)
 
 
-<span data-ttu-id="c0534-121">*Figura 5. Definições no Modo de Leitura*</span><span class="sxs-lookup"><span data-stu-id="c0534-121">*Figure 5. Definitions in Reading Mode*</span></span>
+<span data-ttu-id="b584d-121">*Figura 5. Definições no Modo de Leitura*</span><span class="sxs-lookup"><span data-stu-id="b584d-121">*Figure 5. Definitions in Reading Mode*</span></span>
 
 ![Definitions in Reading Mode](../images/dictionary-agave-05.jpg)
 
-<span data-ttu-id="c0534-123">Para criar um suplemento de painel de tarefas que forneça uma pesquisa de dicionário, crie dois componentes principais:</span><span class="sxs-lookup"><span data-stu-id="c0534-123">To create a task pane add-in that provides a dictionary lookup, you create two main components:</span></span> 
+<span data-ttu-id="b584d-123">Para criar um suplemento de painel de tarefas que forneça uma pesquisa de dicionário, crie dois componentes principais:</span><span class="sxs-lookup"><span data-stu-id="b584d-123">To create a task pane add-in that provides a dictionary lookup, you create two main components:</span></span> 
 
 
-- <span data-ttu-id="c0534-124">Um serviço Web XML que pesquisa definições de um serviço de dicionário e, em seguida, retorna os valores em um formato XML que pode ser consumido e exibido pelo suplemento de dicionário.</span><span class="sxs-lookup"><span data-stu-id="c0534-124">An XML web service that looks up definitions from a dictionary service, and then returns those values in an XML format that can be consumed and displayed by the dictionary add-in.</span></span>
+- <span data-ttu-id="b584d-124">Um serviço Web XML que pesquisa definições de um serviço de dicionário e, em seguida, retorna os valores em um formato XML que pode ser consumido e exibido pelo suplemento de dicionário.</span><span class="sxs-lookup"><span data-stu-id="b584d-124">An XML web service that looks up definitions from a dictionary service, and then returns those values in an XML format that can be consumed and displayed by the dictionary add-in.</span></span>
     
-- <span data-ttu-id="c0534-125">Um suplemento de painel de tarefas que envia a seleção atual do usuário ao serviço Web de dicionário, exibe definições e, opcionalmente, pode inserir esses valores no documento.</span><span class="sxs-lookup"><span data-stu-id="c0534-125">A task pane add-in that submits the user's current selection to the dictionary web service, displays definitions, and can optionally insert those values into the document.</span></span>
+- <span data-ttu-id="b584d-125">Um suplemento de painel de tarefas que envia a seleção atual do usuário ao serviço Web de dicionário, exibe definições e, opcionalmente, pode inserir esses valores no documento.</span><span class="sxs-lookup"><span data-stu-id="b584d-125">A task pane add-in that submits the user's current selection to the dictionary web service, displays definitions, and can optionally insert those values into the document.</span></span>
     
-<span data-ttu-id="c0534-126">As seções a seguir fornecem exemplos de como criar esses componentes.</span><span class="sxs-lookup"><span data-stu-id="c0534-126">The following sections provide examples of how to create these components.</span></span>
+<span data-ttu-id="b584d-126">As seções a seguir fornecem exemplos de como criar esses componentes.</span><span class="sxs-lookup"><span data-stu-id="b584d-126">The following sections provide examples of how to create these components.</span></span>
 
-## <a name="creating-a-dictionary-xml-web-service"></a><span data-ttu-id="c0534-127">Criar um serviço Web XML de dicionário</span><span class="sxs-lookup"><span data-stu-id="c0534-127">Creating a dictionary XML web service</span></span>
-
-
-<span data-ttu-id="c0534-p103">O serviço Web XML deve retornar consultas ao serviço Web como XML que estejam de acordo com o esquema XML OfficeDefinitions. As duas seções a seguir descrevem o esquema XML OfficeDefinitions e fornecem um exemplo de como escrever código para um serviço Web XML que retorna consultas nesse formato XML.</span><span class="sxs-lookup"><span data-stu-id="c0534-p103">The XML web service must return queries to the web service as XML that conforms to the OfficeDefinitions XML schema. The following two sections describe the OfficeDefinitions XML schema, and provide an example of how to code an XML web service that returns queries in that XML format.</span></span>
+## <a name="creating-a-dictionary-xml-web-service"></a><span data-ttu-id="b584d-127">Criar um serviço Web XML de dicionário</span><span class="sxs-lookup"><span data-stu-id="b584d-127">Creating a dictionary XML web service</span></span>
 
 
-### <a name="officedefinitions-xml-schema"></a><span data-ttu-id="c0534-130">Esquema XML OfficeDefinitions</span><span class="sxs-lookup"><span data-stu-id="c0534-130">OfficeDefinitions XML schema</span></span>
+<span data-ttu-id="b584d-p103">O serviço Web XML deve retornar consultas ao serviço Web como XML que estejam de acordo com o esquema XML OfficeDefinitions. As duas seções a seguir descrevem o esquema XML OfficeDefinitions e fornecem um exemplo de como escrever código para um serviço Web XML que retorna consultas nesse formato XML.</span><span class="sxs-lookup"><span data-stu-id="b584d-p103">The XML web service must return queries to the web service as XML that conforms to the OfficeDefinitions XML schema. The following two sections describe the OfficeDefinitions XML schema, and provide an example of how to code an XML web service that returns queries in that XML format.</span></span>
 
-<span data-ttu-id="c0534-131">O código a seguir mostra o XSD para o esquema XML OfficeDefinitions.</span><span class="sxs-lookup"><span data-stu-id="c0534-131">The following code shows the XSD for the OfficeDefinitions XML Schema.</span></span>
+
+### <a name="officedefinitions-xml-schema"></a><span data-ttu-id="b584d-130">Esquema XML OfficeDefinitions</span><span class="sxs-lookup"><span data-stu-id="b584d-130">OfficeDefinitions XML schema</span></span>
+
+<span data-ttu-id="b584d-131">O código a seguir mostra o XSD para o esquema XML OfficeDefinitions.</span><span class="sxs-lookup"><span data-stu-id="b584d-131">The following code shows the XSD for the OfficeDefinitions XML Schema.</span></span>
 
 
 ```XML
@@ -94,7 +94,7 @@ ms.locfileid: "42719690"
 </xs:schema>
 ```
 
-<span data-ttu-id="c0534-132">Retornado XML que está de acordo com o esquema OfficeDefinitions consiste em um elemento `Result` raiz que contém um `Definitions` elemento com de zero a três `Definition` elementos filho, cada um deles contendo definições que não têm mais de 400 caracteres de comprimento.</span><span class="sxs-lookup"><span data-stu-id="c0534-132">Returned XML that conforms to the OfficeDefinitions schema consists of a root `Result` element that contains a `Definitions` element with from zero to three `Definition` child elements, each of which contains definitions that are no more than 400 characters in length.</span></span> <span data-ttu-id="c0534-133">Além disso, a URL para a página inteira no site do dicionário deve ser fornecida no `SeeMoreURL` elemento.</span><span class="sxs-lookup"><span data-stu-id="c0534-133">Additionally, the URL to the full page on the dictionary site must be provided in the `SeeMoreURL` element.</span></span> <span data-ttu-id="c0534-134">O exemplo a seguir mostra a estrutura do XML retornado que está em conformidade com o esquema OfficeDefinitions.</span><span class="sxs-lookup"><span data-stu-id="c0534-134">The following example shows the structure of returned XML that conforms to the OfficeDefinitions schema.</span></span>
+<span data-ttu-id="b584d-132">Retornado XML que está de acordo com o esquema OfficeDefinitions consiste em um `Result` elemento raiz que contém um `Definitions` elemento com de zero a três `Definition` elementos filho, cada um deles contendo definições que não têm mais de 400 caracteres de comprimento.</span><span class="sxs-lookup"><span data-stu-id="b584d-132">Returned XML that conforms to the OfficeDefinitions schema consists of a root `Result` element that contains a `Definitions` element with from zero to three `Definition` child elements, each of which contains definitions that are no more than 400 characters in length.</span></span> <span data-ttu-id="b584d-133">Além disso, a URL para a página inteira no site do dicionário deve ser fornecida no `SeeMoreURL` elemento.</span><span class="sxs-lookup"><span data-stu-id="b584d-133">Additionally, the URL to the full page on the dictionary site must be provided in the `SeeMoreURL` element.</span></span> <span data-ttu-id="b584d-134">O exemplo a seguir mostra a estrutura do XML retornado que está em conformidade com o esquema OfficeDefinitions.</span><span class="sxs-lookup"><span data-stu-id="b584d-134">The following example shows the structure of returned XML that conforms to the OfficeDefinitions schema.</span></span>
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -110,9 +110,9 @@ ms.locfileid: "42719690"
 ```
 
 
-### <a name="sample-dictionary-xml-web-service"></a><span data-ttu-id="c0534-135">Serviço Web XML de dicionário de exemplo</span><span class="sxs-lookup"><span data-stu-id="c0534-135">Sample dictionary XML web service</span></span>
+### <a name="sample-dictionary-xml-web-service"></a><span data-ttu-id="b584d-135">Serviço Web XML de dicionário de exemplo</span><span class="sxs-lookup"><span data-stu-id="b584d-135">Sample dictionary XML web service</span></span>
 
-<span data-ttu-id="c0534-136">O código C# a seguir fornece um exemplo simples de como escrever código para um serviço Web XML que retorna o resultado de uma consulta ao dicionário no formato XML OfficeDefinitions.</span><span class="sxs-lookup"><span data-stu-id="c0534-136">The following C# code provides a simple example of how to write code for an XML web service that returns the result of a dictionary query in the OfficeDefinitions XML format.</span></span>
+<span data-ttu-id="b584d-136">O código C# a seguir fornece um exemplo simples de como escrever código para um serviço Web XML que retorna o resultado de uma consulta ao dicionário no formato XML OfficeDefinitions.</span><span class="sxs-lookup"><span data-stu-id="b584d-136">The following C# code provides a simple example of how to write code for an XML web service that returns the result of a dictionary query in the OfficeDefinitions XML format.</span></span>
 
 
 ```cs
@@ -182,22 +182,22 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-## <a name="creating-the-components-of-a-dictionary-add-in"></a><span data-ttu-id="c0534-137">Criar os componentes de um suplemento de dicionário</span><span class="sxs-lookup"><span data-stu-id="c0534-137">Creating the components of a dictionary add-in</span></span>
+## <a name="creating-the-components-of-a-dictionary-add-in"></a><span data-ttu-id="b584d-137">Criar os componentes de um suplemento de dicionário</span><span class="sxs-lookup"><span data-stu-id="b584d-137">Creating the components of a dictionary add-in</span></span>
 
 
-<span data-ttu-id="c0534-138">Um suplemento de dicionário consiste em três arquivos de componentes principais:</span><span class="sxs-lookup"><span data-stu-id="c0534-138">A dictionary add-in consists of three main component files:</span></span>
+<span data-ttu-id="b584d-138">Um suplemento de dicionário consiste em três arquivos de componentes principais:</span><span class="sxs-lookup"><span data-stu-id="b584d-138">A dictionary add-in consists of three main component files:</span></span>
 
 
-- <span data-ttu-id="c0534-139">Um arquivo de manifesto XML que descreve o suplemento.</span><span class="sxs-lookup"><span data-stu-id="c0534-139">An XML manifest file that describes the add-in.</span></span>
+- <span data-ttu-id="b584d-139">Um arquivo de manifesto XML que descreve o suplemento.</span><span class="sxs-lookup"><span data-stu-id="b584d-139">An XML manifest file that describes the add-in.</span></span>
     
-- <span data-ttu-id="c0534-140">Um arquivo HTML que fornece a interface do usuário do suplemento.</span><span class="sxs-lookup"><span data-stu-id="c0534-140">An HTML file that provides the add-in's UI.</span></span>
+- <span data-ttu-id="b584d-140">Um arquivo HTML que fornece a interface do usuário do suplemento.</span><span class="sxs-lookup"><span data-stu-id="b584d-140">An HTML file that provides the add-in's UI.</span></span>
     
-- <span data-ttu-id="c0534-141">Um arquivo JavaScript que fornece a lógica para obter a seleção do usuário do documento, envia a seleção como uma consulta ao serviço Web e exibe os resultados retornados na interface do usuário do suplemento.</span><span class="sxs-lookup"><span data-stu-id="c0534-141">A JavaScript file that provides logic to get the user's selection from the document, sends the selection as a query to the web service, and then displays returned results in the add-in's UI.</span></span>
+- <span data-ttu-id="b584d-141">Um arquivo JavaScript que fornece a lógica para obter a seleção do usuário do documento, envia a seleção como uma consulta ao serviço Web e exibe os resultados retornados na interface do usuário do suplemento.</span><span class="sxs-lookup"><span data-stu-id="b584d-141">A JavaScript file that provides logic to get the user's selection from the document, sends the selection as a query to the web service, and then displays returned results in the add-in's UI.</span></span>
     
 
-### <a name="creating-a-dictionary-add-ins-manifest-file"></a><span data-ttu-id="c0534-142">Criar um arquivo de manifesto de um suplemento de dicionário</span><span class="sxs-lookup"><span data-stu-id="c0534-142">Creating a dictionary add-in's manifest file</span></span>
+### <a name="creating-a-dictionary-add-ins-manifest-file"></a><span data-ttu-id="b584d-142">Criar um arquivo de manifesto de um suplemento de dicionário</span><span class="sxs-lookup"><span data-stu-id="b584d-142">Creating a dictionary add-in's manifest file</span></span>
 
-<span data-ttu-id="c0534-143">A seguir há um arquivo de manifesto de exemplo para um suplemento de dicionário.</span><span class="sxs-lookup"><span data-stu-id="c0534-143">The following is an example manifest file for a dictionary add-in.</span></span>
+<span data-ttu-id="b584d-143">A seguir há um arquivo de manifesto de exemplo para um suplemento de dicionário.</span><span class="sxs-lookup"><span data-stu-id="b584d-143">The following is an example manifest file for a dictionary add-in.</span></span>
 
 
 ```XML
@@ -258,45 +258,45 @@ public class WebService : System.Web.Services.WebService {
 </OfficeApp>
 ```
 
-<span data-ttu-id="c0534-144">O `Dictionary` elemento e seus elementos filhos específicos para a criação de um arquivo de manifesto do suplemento de dicionário são descritos nas seções a seguir.</span><span class="sxs-lookup"><span data-stu-id="c0534-144">The `Dictionary` element and its child elements that are specific to creating a dictionary add-in's manifest file are described in the following sections.</span></span> <span data-ttu-id="c0534-145">Para obter informações sobre os outros elementos no arquivo de manifesto, confira [Manifesto XML de suplementos do Office](../develop/add-in-manifests.md).</span><span class="sxs-lookup"><span data-stu-id="c0534-145">For information about the other elements in the manifest file, see [Office Add-ins XML manifest](../develop/add-in-manifests.md).</span></span>
+<span data-ttu-id="b584d-144">O `Dictionary` elemento e seus elementos filhos específicos para a criação de um arquivo de manifesto do suplemento de dicionário são descritos nas seções a seguir.</span><span class="sxs-lookup"><span data-stu-id="b584d-144">The `Dictionary` element and its child elements that are specific to creating a dictionary add-in's manifest file are described in the following sections.</span></span> <span data-ttu-id="b584d-145">Para obter informações sobre os outros elementos no arquivo de manifesto, confira [Manifesto XML de suplementos do Office](../develop/add-in-manifests.md).</span><span class="sxs-lookup"><span data-stu-id="b584d-145">For information about the other elements in the manifest file, see [Office Add-ins XML manifest](../develop/add-in-manifests.md).</span></span>
 
 
-### <a name="dictionary-element"></a><span data-ttu-id="c0534-146">Elemento Dictionary</span><span class="sxs-lookup"><span data-stu-id="c0534-146">Dictionary element</span></span>
+### <a name="dictionary-element"></a><span data-ttu-id="b584d-146">Elemento Dictionary</span><span class="sxs-lookup"><span data-stu-id="b584d-146">Dictionary element</span></span>
 
 
-<span data-ttu-id="c0534-147">Especifica configurações para suplementos de dicionário.</span><span class="sxs-lookup"><span data-stu-id="c0534-147">Specifies settings for dictionary add-ins.</span></span>
+<span data-ttu-id="b584d-147">Especifica configurações para suplementos de dicionário.</span><span class="sxs-lookup"><span data-stu-id="b584d-147">Specifies settings for dictionary add-ins.</span></span>
 
- <span data-ttu-id="c0534-148">**Elemento pai**</span><span class="sxs-lookup"><span data-stu-id="c0534-148">**Parent element**</span></span>
+ <span data-ttu-id="b584d-148">**Elemento pai**</span><span class="sxs-lookup"><span data-stu-id="b584d-148">**Parent element**</span></span>
 
  `<OfficeApp>`
 
- <span data-ttu-id="c0534-149">**Elementos filho**</span><span class="sxs-lookup"><span data-stu-id="c0534-149">**Child elements**</span></span>
+ <span data-ttu-id="b584d-149">**Elementos filho**</span><span class="sxs-lookup"><span data-stu-id="b584d-149">**Child elements**</span></span>
 
- <span data-ttu-id="c0534-150">`<TargetDialects>`, `<QueryUri>`, `<CitationText>`, `<DictionaryName>`, `<DictionaryHomePage>`</span><span class="sxs-lookup"><span data-stu-id="c0534-150">`<TargetDialects>`, `<QueryUri>`, `<CitationText>`, `<DictionaryName>`, `<DictionaryHomePage>`</span></span>
+ <span data-ttu-id="b584d-150">`<TargetDialects>`, `<QueryUri>`, `<CitationText>`, `<DictionaryName>`, `<DictionaryHomePage>`</span><span class="sxs-lookup"><span data-stu-id="b584d-150">`<TargetDialects>`, `<QueryUri>`, `<CitationText>`, `<DictionaryName>`, `<DictionaryHomePage>`</span></span>
 
- <span data-ttu-id="c0534-151">**Comentários**</span><span class="sxs-lookup"><span data-stu-id="c0534-151">**Remarks**</span></span>
+ <span data-ttu-id="b584d-151">**Comentários**</span><span class="sxs-lookup"><span data-stu-id="b584d-151">**Remarks**</span></span>
 
-<span data-ttu-id="c0534-152">O `Dictionary` elemento e seus elementos filho são adicionados ao manifesto de um suplemento de painel de tarefas quando você cria um suplemento de dicionário.</span><span class="sxs-lookup"><span data-stu-id="c0534-152">The `Dictionary` element and its child elements are added to the manifest of a task pane add-in when you create a dictionary add-in.</span></span>
-
-
-#### <a name="targetdialects-element"></a><span data-ttu-id="c0534-153">Elemento TargetDialects</span><span class="sxs-lookup"><span data-stu-id="c0534-153">TargetDialects element</span></span>
+<span data-ttu-id="b584d-152">O `Dictionary` elemento e seus elementos filho são adicionados ao manifesto de um suplemento de painel de tarefas quando você cria um suplemento de dicionário.</span><span class="sxs-lookup"><span data-stu-id="b584d-152">The `Dictionary` element and its child elements are added to the manifest of a task pane add-in when you create a dictionary add-in.</span></span>
 
 
-<span data-ttu-id="c0534-p106">Especifica os idiomas regionais aos quais o dicionário oferece suporte. Necessário para suplementos de dicionário.</span><span class="sxs-lookup"><span data-stu-id="c0534-p106">Specifies the regional languages that this dictionary supports. Required for dictionary add-ins.</span></span>
+#### <a name="targetdialects-element"></a><span data-ttu-id="b584d-153">Elemento TargetDialects</span><span class="sxs-lookup"><span data-stu-id="b584d-153">TargetDialects element</span></span>
 
- <span data-ttu-id="c0534-156">**Elemento pai**</span><span class="sxs-lookup"><span data-stu-id="c0534-156">**Parent element**</span></span>
+
+<span data-ttu-id="b584d-p106">Especifica os idiomas regionais aos quais o dicionário oferece suporte. Necessário para suplementos de dicionário.</span><span class="sxs-lookup"><span data-stu-id="b584d-p106">Specifies the regional languages that this dictionary supports. Required for dictionary add-ins.</span></span>
+
+ <span data-ttu-id="b584d-156">**Elemento pai**</span><span class="sxs-lookup"><span data-stu-id="b584d-156">**Parent element**</span></span>
 
  `<Dictionary>`
 
- <span data-ttu-id="c0534-157">**Elemento filho**</span><span class="sxs-lookup"><span data-stu-id="c0534-157">**Child element**</span></span>
+ <span data-ttu-id="b584d-157">**Elemento filho**</span><span class="sxs-lookup"><span data-stu-id="b584d-157">**Child element**</span></span>
 
  `<TargetDialect>`
 
- <span data-ttu-id="c0534-158">**Comentários**</span><span class="sxs-lookup"><span data-stu-id="c0534-158">**Remarks**</span></span>
+ <span data-ttu-id="b584d-158">**Comentários**</span><span class="sxs-lookup"><span data-stu-id="b584d-158">**Remarks**</span></span>
 
-<span data-ttu-id="c0534-159">O `TargetDialects` elemento e seus elementos filho especificam o conjunto de idiomas regionais que seu dicionário contém.</span><span class="sxs-lookup"><span data-stu-id="c0534-159">The `TargetDialects` element and its child elements specify the set of regional languages your dictionary contains.</span></span> <span data-ttu-id="c0534-160">Por exemplo, se o dicionário se aplica a Espanhol (México) e Espanhol (Peru), mas não a Espanhol (Espanha), é possível especificar isso nesse elemento.</span><span class="sxs-lookup"><span data-stu-id="c0534-160">For example, if your dictionary applies to both Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify that in this element.</span></span> <span data-ttu-id="c0534-161">Não especifique mais de um idioma (por exemplo, espanhol e inglês) nesse manifesto.</span><span class="sxs-lookup"><span data-stu-id="c0534-161">Do not specify more than one language (e.g., Spanish and English) in this manifest.</span></span> <span data-ttu-id="c0534-162">Publique idiomas separados como dicionários separados.</span><span class="sxs-lookup"><span data-stu-id="c0534-162">Publish separate languages as separate dictionaries.</span></span>
+<span data-ttu-id="b584d-159">O `TargetDialects` elemento e seus elementos filho especificam o conjunto de idiomas regionais que seu dicionário contém.</span><span class="sxs-lookup"><span data-stu-id="b584d-159">The `TargetDialects` element and its child elements specify the set of regional languages your dictionary contains.</span></span> <span data-ttu-id="b584d-160">Por exemplo, se o dicionário se aplica a Espanhol (México) e Espanhol (Peru), mas não a Espanhol (Espanha), é possível especificar isso nesse elemento.</span><span class="sxs-lookup"><span data-stu-id="b584d-160">For example, if your dictionary applies to both Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify that in this element.</span></span> <span data-ttu-id="b584d-161">Não especifique mais de um idioma (por exemplo, espanhol e inglês) nesse manifesto.</span><span class="sxs-lookup"><span data-stu-id="b584d-161">Do not specify more than one language (e.g., Spanish and English) in this manifest.</span></span> <span data-ttu-id="b584d-162">Publique idiomas separados como dicionários separados.</span><span class="sxs-lookup"><span data-stu-id="b584d-162">Publish separate languages as separate dictionaries.</span></span>
 
- <span data-ttu-id="c0534-163">**Exemplo**</span><span class="sxs-lookup"><span data-stu-id="c0534-163">**Example**</span></span>
+ <span data-ttu-id="b584d-163">**Exemplo**</span><span class="sxs-lookup"><span data-stu-id="b584d-163">**Example**</span></span>
 
 ```XML
 <TargetDialects>
@@ -322,20 +322,20 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-#### <a name="targetdialect-element"></a><span data-ttu-id="c0534-164">Elemento TargetDialect</span><span class="sxs-lookup"><span data-stu-id="c0534-164">TargetDialect element</span></span>
+#### <a name="targetdialect-element"></a><span data-ttu-id="b584d-164">Elemento TargetDialect</span><span class="sxs-lookup"><span data-stu-id="b584d-164">TargetDialect element</span></span>
 
 
-<span data-ttu-id="c0534-p108">Especifica um idioma regional ao qual o dicionário oferece suporte. Necessário para suplementos de dicionário.</span><span class="sxs-lookup"><span data-stu-id="c0534-p108">Specifies a regional language that this dictionary supports. Required for dictionary add-ins.</span></span>
+<span data-ttu-id="b584d-p108">Especifica um idioma regional ao qual o dicionário oferece suporte. Necessário para suplementos de dicionário.</span><span class="sxs-lookup"><span data-stu-id="b584d-p108">Specifies a regional language that this dictionary supports. Required for dictionary add-ins.</span></span>
 
- <span data-ttu-id="c0534-167">**Elemento pai**</span><span class="sxs-lookup"><span data-stu-id="c0534-167">**Parent element**</span></span>
+ <span data-ttu-id="b584d-167">**Elemento pai**</span><span class="sxs-lookup"><span data-stu-id="b584d-167">**Parent element**</span></span>
 
  `<TargetDialects>`
 
- <span data-ttu-id="c0534-168">**Comentários**</span><span class="sxs-lookup"><span data-stu-id="c0534-168">**Remarks**</span></span>
+ <span data-ttu-id="b584d-168">**Comentários**</span><span class="sxs-lookup"><span data-stu-id="b584d-168">**Remarks**</span></span>
 
-<span data-ttu-id="c0534-169">Especifique o valor para um idioma regional no formato de tag de `language` RFC1766, como PT-BR.</span><span class="sxs-lookup"><span data-stu-id="c0534-169">Specify the value for a regional language in the RFC1766  `language` tag format, such as EN-US.</span></span>
+<span data-ttu-id="b584d-169">Especifique o valor para um idioma regional no formato de tag de `language` RFC1766, como PT-BR.</span><span class="sxs-lookup"><span data-stu-id="b584d-169">Specify the value for a regional language in the RFC1766  `language` tag format, such as EN-US.</span></span>
 
- <span data-ttu-id="c0534-170">**Exemplo**</span><span class="sxs-lookup"><span data-stu-id="c0534-170">**Example**</span></span>
+ <span data-ttu-id="b584d-170">**Exemplo**</span><span class="sxs-lookup"><span data-stu-id="b584d-170">**Example**</span></span>
 
 
 ```XML
@@ -343,20 +343,20 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-#### <a name="queryuri-element"></a><span data-ttu-id="c0534-171">Elemento QueryUri</span><span class="sxs-lookup"><span data-stu-id="c0534-171">QueryUri element</span></span>
+#### <a name="queryuri-element"></a><span data-ttu-id="b584d-171">Elemento QueryUri</span><span class="sxs-lookup"><span data-stu-id="b584d-171">QueryUri element</span></span>
 
 
-<span data-ttu-id="c0534-p109">Especifica o ponto de extremidade do serviço de consulta de dicionário. Necessário para suplementos de dicionário.</span><span class="sxs-lookup"><span data-stu-id="c0534-p109">Specifies the endpoint for the dictionary query service. Required for dictionary add-ins.</span></span>
+<span data-ttu-id="b584d-p109">Especifica o ponto de extremidade do serviço de consulta de dicionário. Necessário para suplementos de dicionário.</span><span class="sxs-lookup"><span data-stu-id="b584d-p109">Specifies the endpoint for the dictionary query service. Required for dictionary add-ins.</span></span>
 
- <span data-ttu-id="c0534-174">**Elemento pai**</span><span class="sxs-lookup"><span data-stu-id="c0534-174">**Parent element**</span></span>
+ <span data-ttu-id="b584d-174">**Elemento pai**</span><span class="sxs-lookup"><span data-stu-id="b584d-174">**Parent element**</span></span>
 
  `<Dictionary>`
 
- <span data-ttu-id="c0534-175">**Comentários**</span><span class="sxs-lookup"><span data-stu-id="c0534-175">**Remarks**</span></span>
+ <span data-ttu-id="b584d-175">**Comentários**</span><span class="sxs-lookup"><span data-stu-id="b584d-175">**Remarks**</span></span>
 
-<span data-ttu-id="c0534-p110">Esse é o URI do serviço Web XML para o provedor do dicionário. A consulta com escape correto será anexada a esse URI.</span><span class="sxs-lookup"><span data-stu-id="c0534-p110">This is the URI of the XML web service for the dictionary provider. The properly escaped query will be appended to this URI.</span></span> 
+<span data-ttu-id="b584d-p110">Esse é o URI do serviço Web XML para o provedor do dicionário. A consulta com escape correto será anexada a esse URI.</span><span class="sxs-lookup"><span data-stu-id="b584d-p110">This is the URI of the XML web service for the dictionary provider. The properly escaped query will be appended to this URI.</span></span> 
 
- <span data-ttu-id="c0534-178">**Exemplo**</span><span class="sxs-lookup"><span data-stu-id="c0534-178">**Example**</span></span>
+ <span data-ttu-id="b584d-178">**Exemplo**</span><span class="sxs-lookup"><span data-stu-id="b584d-178">**Example**</span></span>
 
 
 ```XML
@@ -364,22 +364,22 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-#### <a name="citationtext-element"></a><span data-ttu-id="c0534-179">Elemento CitationText</span><span class="sxs-lookup"><span data-stu-id="c0534-179">CitationText element</span></span>
+#### <a name="citationtext-element"></a><span data-ttu-id="b584d-179">Elemento CitationText</span><span class="sxs-lookup"><span data-stu-id="b584d-179">CitationText element</span></span>
 
 
-<span data-ttu-id="c0534-p111">Especifica o texto a ser usado em citações. Necessário para suplementos de dicionário.</span><span class="sxs-lookup"><span data-stu-id="c0534-p111">Specifies the text to use in citations. Required for dictionary add-ins.</span></span>
+<span data-ttu-id="b584d-p111">Especifica o texto a ser usado em citações. Necessário para suplementos de dicionário.</span><span class="sxs-lookup"><span data-stu-id="b584d-p111">Specifies the text to use in citations. Required for dictionary add-ins.</span></span>
 
- <span data-ttu-id="c0534-182">**Elemento pai**</span><span class="sxs-lookup"><span data-stu-id="c0534-182">**Parent element**</span></span>
+ <span data-ttu-id="b584d-182">**Elemento pai**</span><span class="sxs-lookup"><span data-stu-id="b584d-182">**Parent element**</span></span>
 
  `<Dictionary>`
 
- <span data-ttu-id="c0534-183">**Comentários**</span><span class="sxs-lookup"><span data-stu-id="c0534-183">**Remarks**</span></span>
+ <span data-ttu-id="b584d-183">**Comentários**</span><span class="sxs-lookup"><span data-stu-id="b584d-183">**Remarks**</span></span>
 
-<span data-ttu-id="c0534-184">Esse elemento especifica o início do texto de citação que será exibido em uma linha abaixo do conteúdo que é retornado do serviço Web (por exemplo, "Resultados do:" ou "Da plataforma:").</span><span class="sxs-lookup"><span data-stu-id="c0534-184">This element specifies the beginning of the citation text that will be displayed on a line below the content that is returned from the web service (for example, "Results by: " or "Powered by: ").</span></span>
+<span data-ttu-id="b584d-184">Esse elemento especifica o início do texto de citação que será exibido em uma linha abaixo do conteúdo que é retornado do serviço Web (por exemplo, "Resultados do:" ou "Da plataforma:").</span><span class="sxs-lookup"><span data-stu-id="b584d-184">This element specifies the beginning of the citation text that will be displayed on a line below the content that is returned from the web service (for example, "Results by: " or "Powered by: ").</span></span>
 
-<span data-ttu-id="c0534-185">Para esse elemento, você pode especificar valores para localidades adicionais usando o `Override` elemento.</span><span class="sxs-lookup"><span data-stu-id="c0534-185">For this element, you can specify values for additional locales by using the `Override` element.</span></span> <span data-ttu-id="c0534-186">Por exemplo, se um usuário está executando a SKU do português brasileiro do Office, mas usando um dicionário de inglês, isso permite que a linha de citação seja "Resultados por: Bing"em vez de "Results by: Bing".</span><span class="sxs-lookup"><span data-stu-id="c0534-186">For example, if a user is running the Spanish SKU of Office, but using an English dictionary, this allows the citation line to read "Resultados por: Bing" rather than "Results by: Bing".</span></span> <span data-ttu-id="c0534-187">Para saber mais sobre como especificar valores para localidades adicionais, confira a seção "Fornecer configurações para localidades diferentes" em [Manifesto XML de suplementos do Office](../develop/add-in-manifests.md).</span><span class="sxs-lookup"><span data-stu-id="c0534-187">For more information about how to specify values for additional locales, see the section "Providing settings for different locales" in [Office Add-ins XML manifest](../develop/add-in-manifests.md).</span></span>
+<span data-ttu-id="b584d-185">Para esse elemento, você pode especificar valores para localidades adicionais usando o `Override` elemento.</span><span class="sxs-lookup"><span data-stu-id="b584d-185">For this element, you can specify values for additional locales by using the `Override` element.</span></span> <span data-ttu-id="b584d-186">Por exemplo, se um usuário está executando a SKU do português brasileiro do Office, mas usando um dicionário de inglês, isso permite que a linha de citação seja "Resultados por: Bing"em vez de "Results by: Bing".</span><span class="sxs-lookup"><span data-stu-id="b584d-186">For example, if a user is running the Spanish SKU of Office, but using an English dictionary, this allows the citation line to read "Resultados por: Bing" rather than "Results by: Bing".</span></span> <span data-ttu-id="b584d-187">Para saber mais sobre como especificar valores para localidades adicionais, confira a seção "Fornecer configurações para localidades diferentes" em [Manifesto XML de suplementos do Office](../develop/add-in-manifests.md).</span><span class="sxs-lookup"><span data-stu-id="b584d-187">For more information about how to specify values for additional locales, see the section "Providing settings for different locales" in [Office Add-ins XML manifest](../develop/add-in-manifests.md).</span></span>
 
- <span data-ttu-id="c0534-188">**Exemplo**</span><span class="sxs-lookup"><span data-stu-id="c0534-188">**Example**</span></span>
+ <span data-ttu-id="b584d-188">**Exemplo**</span><span class="sxs-lookup"><span data-stu-id="b584d-188">**Example**</span></span>
 
 
 ```XML
@@ -387,44 +387,44 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-#### <a name="dictionaryname-element"></a><span data-ttu-id="c0534-189">Elemento DictionaryName</span><span class="sxs-lookup"><span data-stu-id="c0534-189">DictionaryName element</span></span>
+#### <a name="dictionaryname-element"></a><span data-ttu-id="b584d-189">Elemento DictionaryName</span><span class="sxs-lookup"><span data-stu-id="b584d-189">DictionaryName element</span></span>
 
 
-<span data-ttu-id="c0534-p113">Especifica o nome deste dicionário. Necessário para suplementos de dicionário.</span><span class="sxs-lookup"><span data-stu-id="c0534-p113">Specifies the name of this dictionary. Required for dictionary add-ins.</span></span>
+<span data-ttu-id="b584d-p113">Especifica o nome deste dicionário. Necessário para suplementos de dicionário.</span><span class="sxs-lookup"><span data-stu-id="b584d-p113">Specifies the name of this dictionary. Required for dictionary add-ins.</span></span>
 
- <span data-ttu-id="c0534-192">**Elemento pai**</span><span class="sxs-lookup"><span data-stu-id="c0534-192">**Parent element**</span></span>
+ <span data-ttu-id="b584d-192">**Elemento pai**</span><span class="sxs-lookup"><span data-stu-id="b584d-192">**Parent element**</span></span>
 
  `<Dictionary>`
 
- <span data-ttu-id="c0534-193">**Comentários**</span><span class="sxs-lookup"><span data-stu-id="c0534-193">**Remarks**</span></span>
+ <span data-ttu-id="b584d-193">**Comentários**</span><span class="sxs-lookup"><span data-stu-id="b584d-193">**Remarks**</span></span>
 
-<span data-ttu-id="c0534-p114">Esse elemento especifica o texto do link no texto de citação. O texto de citação é exibido em uma linha abaixo do conteúdo que é retornado do serviço Web.</span><span class="sxs-lookup"><span data-stu-id="c0534-p114">This element specifies the link text in the citation text. Citation text is displayed on a line below the content that is returned from the web service.</span></span>
+<span data-ttu-id="b584d-p114">Esse elemento especifica o texto do link no texto de citação. O texto de citação é exibido em uma linha abaixo do conteúdo que é retornado do serviço Web.</span><span class="sxs-lookup"><span data-stu-id="b584d-p114">This element specifies the link text in the citation text. Citation text is displayed on a line below the content that is returned from the web service.</span></span>
 
-<span data-ttu-id="c0534-196">Para esse elemento, você pode especificar valores para localidades adicionais.</span><span class="sxs-lookup"><span data-stu-id="c0534-196">For this element, you can specify values for additional locales.</span></span>
+<span data-ttu-id="b584d-196">Para esse elemento, você pode especificar valores para localidades adicionais.</span><span class="sxs-lookup"><span data-stu-id="b584d-196">For this element, you can specify values for additional locales.</span></span>
 
- <span data-ttu-id="c0534-197">**Exemplo**</span><span class="sxs-lookup"><span data-stu-id="c0534-197">**Example**</span></span>
+ <span data-ttu-id="b584d-197">**Exemplo**</span><span class="sxs-lookup"><span data-stu-id="b584d-197">**Example**</span></span>
 
 ```XML
 <DictionaryName DefaultValue="Bing Dictionary" />
 ```
 
 
-#### <a name="dictionaryhomepage-element"></a><span data-ttu-id="c0534-198">Elemento DictionaryHomePage</span><span class="sxs-lookup"><span data-stu-id="c0534-198">DictionaryHomePage element</span></span>
+#### <a name="dictionaryhomepage-element"></a><span data-ttu-id="b584d-198">Elemento DictionaryHomePage</span><span class="sxs-lookup"><span data-stu-id="b584d-198">DictionaryHomePage element</span></span>
 
 
-<span data-ttu-id="c0534-p115">Especifica a URL da página inicial do dicionário. Necessário para suplementos de dicionário.</span><span class="sxs-lookup"><span data-stu-id="c0534-p115">Specifies the URL of the home page for the dictionary. Required for dictionary add-ins.</span></span>
+<span data-ttu-id="b584d-p115">Especifica a URL da página inicial do dicionário. Necessário para suplementos de dicionário.</span><span class="sxs-lookup"><span data-stu-id="b584d-p115">Specifies the URL of the home page for the dictionary. Required for dictionary add-ins.</span></span>
 
- <span data-ttu-id="c0534-201">**Elemento pai**</span><span class="sxs-lookup"><span data-stu-id="c0534-201">**Parent element**</span></span>
+ <span data-ttu-id="b584d-201">**Elemento pai**</span><span class="sxs-lookup"><span data-stu-id="b584d-201">**Parent element**</span></span>
 
  `<Dictionary>`
 
- <span data-ttu-id="c0534-202">**Comentários**</span><span class="sxs-lookup"><span data-stu-id="c0534-202">**Remarks**</span></span>
+ <span data-ttu-id="b584d-202">**Comentários**</span><span class="sxs-lookup"><span data-stu-id="b584d-202">**Remarks**</span></span>
 
-<span data-ttu-id="c0534-p116">Esse elemento especifica a URL do link no texto de citação. O texto de citação é exibido em uma linha abaixo do conteúdo que é retornado do serviço Web.</span><span class="sxs-lookup"><span data-stu-id="c0534-p116">This element specifies the link URL in the citation text. Citation text is displayed on a line below the content that is returned from the web service.</span></span>
+<span data-ttu-id="b584d-p116">Esse elemento especifica a URL do link no texto de citação. O texto de citação é exibido em uma linha abaixo do conteúdo que é retornado do serviço Web.</span><span class="sxs-lookup"><span data-stu-id="b584d-p116">This element specifies the link URL in the citation text. Citation text is displayed on a line below the content that is returned from the web service.</span></span>
 
-<span data-ttu-id="c0534-205">Para esse elemento, você pode especificar valores para localidades adicionais.</span><span class="sxs-lookup"><span data-stu-id="c0534-205">For this element, you can specify values for additional locales.</span></span>
+<span data-ttu-id="b584d-205">Para esse elemento, você pode especificar valores para localidades adicionais.</span><span class="sxs-lookup"><span data-stu-id="b584d-205">For this element, you can specify values for additional locales.</span></span>
 
- <span data-ttu-id="c0534-206">**Exemplo**</span><span class="sxs-lookup"><span data-stu-id="c0534-206">**Example**</span></span>
+ <span data-ttu-id="b584d-206">**Exemplo**</span><span class="sxs-lookup"><span data-stu-id="b584d-206">**Example**</span></span>
 
 
 ```XML
@@ -432,9 +432,9 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-### <a name="creating-a-dictionary-add-ins-html-user-interface"></a><span data-ttu-id="c0534-207">Criar a interface do usuário HTML de um suplemento de dicionário</span><span class="sxs-lookup"><span data-stu-id="c0534-207">Creating a dictionary add-in's HTML user interface</span></span>
+### <a name="creating-a-dictionary-add-ins-html-user-interface"></a><span data-ttu-id="b584d-207">Criar a interface do usuário HTML de um suplemento de dicionário</span><span class="sxs-lookup"><span data-stu-id="b584d-207">Creating a dictionary add-in's HTML user interface</span></span>
 
-<span data-ttu-id="c0534-p117">Os dois exemplos a seguir mostram os arquivos HTML e CSS para a interface do usuário do suplemento de Dicionário de Demonstração. Para ver como a interface do usuário é exibida no suplemento de painel de tarefas, confira a Figura 6 após o código. Para ver como a implementação do JavaScript no arquivo Dictionary.js fornece lógica de programação para essa interface do usuário HTML, confira "Escrever a implementação de JavaScript" imediatamente após esta seção.</span><span class="sxs-lookup"><span data-stu-id="c0534-p117">The following two examples show the HTML and CSS files for the UI of the Demo Dictionary add-in. To view how the UI is displayed in the add-in's task pane, see Figure 6 following the code. To see how the implementation of the JavaScript in the Dictionary.js file provides programming logic for this HTML UI, see "Writing the JavaScript implementation" immediately following this section.</span></span>
+<span data-ttu-id="b584d-p117">Os dois exemplos a seguir mostram os arquivos HTML e CSS para a interface do usuário do suplemento de Dicionário de Demonstração. Para ver como a interface do usuário é exibida no suplemento de painel de tarefas, confira a Figura 6 após o código. Para ver como a implementação do JavaScript no arquivo Dictionary.js fornece lógica de programação para essa interface do usuário HTML, confira "Escrever a implementação de JavaScript" imediatamente após esta seção.</span><span class="sxs-lookup"><span data-stu-id="b584d-p117">The following two examples show the HTML and CSS files for the UI of the Demo Dictionary add-in. To view how the UI is displayed in the add-in's task pane, see Figure 6 following the code. To see how the implementation of the JavaScript in the Dictionary.js file provides programming logic for this HTML UI, see "Writing the JavaScript implementation" immediately following this section.</span></span>
 
 ```HTML
 <!DOCTYPE html>
@@ -475,7 +475,7 @@ public class WebService : System.Web.Services.WebService {
 </html>
 ```
 
-<span data-ttu-id="c0534-211">O exemplo a seguir mostra o conteúdo de Style.css.</span><span class="sxs-lookup"><span data-stu-id="c0534-211">The following example shows the contents of Style.css.</span></span>
+<span data-ttu-id="b584d-211">O exemplo a seguir mostra o conteúdo de Style.css.</span><span class="sxs-lookup"><span data-stu-id="b584d-211">The following example shows the contents of Style.css.</span></span>
 
 ```CSS
 #mainContainer
@@ -516,30 +516,30 @@ a:hover, a:active
 }
 ```
 
-<span data-ttu-id="c0534-212">*Figura 6. Demonstração da interface de usuário do dicionário*</span><span class="sxs-lookup"><span data-stu-id="c0534-212">*Figure 6. Demo dictionary UI*</span></span>
+<span data-ttu-id="b584d-212">*Figura 6. Demonstração da interface de usuário do dicionário*</span><span class="sxs-lookup"><span data-stu-id="b584d-212">*Figure 6. Demo dictionary UI*</span></span>
 
 ![Demonstração da interface de usuário do dicionário](../images/dictionary-agave-06.jpg)
 
 
-### <a name="writing-the-javascript-implementation"></a><span data-ttu-id="c0534-214">Escrever a implementação de JavaScript</span><span class="sxs-lookup"><span data-stu-id="c0534-214">Writing the JavaScript implementation</span></span>
+### <a name="writing-the-javascript-implementation"></a><span data-ttu-id="b584d-214">Escrever a implementação de JavaScript</span><span class="sxs-lookup"><span data-stu-id="b584d-214">Writing the JavaScript implementation</span></span>
 
 
-<span data-ttu-id="c0534-p118">O exemplo a seguir mostra a implementação de JavaScript no arquivo Dictionary.js que é chamada da página HTML do suplemento para fornecer a lógica de programação ao suplemento de Dicionário de Demonstração. Esse script reutiliza o serviço Web XML descrito anteriormente. Quando colocado no mesmo diretório que o serviço Web de exemplo, o script obterá definições desse serviço. Para usá-lo com um serviço Web XML público em conformidade com OfficeDefinitions, modifique a variável `xmlServiceURL` no início do arquivo e substitua a chave API do Bing para pronúncias com um script registrado corretamente.</span><span class="sxs-lookup"><span data-stu-id="c0534-p118">The following example shows the JavaScript implementation in the Dictionary.js file that is called from the add-in's HTML page to provide the programming logic for the Demo Dictionary add-in. This script reuses the XML web service described previously. When placed in the same directory as the example web service, the script will get definitions from that service. It can be used with a public OfficeDefinitions-conforming XML web service by modifying the  `xmlServiceURL` variable at the top of the file, and then replacing the Bing API key for pronunciations with a properly registered one.</span></span>
+<span data-ttu-id="b584d-p118">O exemplo a seguir mostra a implementação de JavaScript no arquivo Dictionary.js que é chamada da página HTML do suplemento para fornecer a lógica de programação ao suplemento de Dicionário de Demonstração. Esse script reutiliza o serviço Web XML descrito anteriormente. Quando colocado no mesmo diretório que o serviço Web de exemplo, o script obterá definições desse serviço. Para usá-lo com um serviço Web XML público em conformidade com OfficeDefinitions, modifique a variável `xmlServiceURL` no início do arquivo e substitua a chave API do Bing para pronúncias com um script registrado corretamente.</span><span class="sxs-lookup"><span data-stu-id="b584d-p118">The following example shows the JavaScript implementation in the Dictionary.js file that is called from the add-in's HTML page to provide the programming logic for the Demo Dictionary add-in. This script reuses the XML web service described previously. When placed in the same directory as the example web service, the script will get definitions from that service. It can be used with a public OfficeDefinitions-conforming XML web service by modifying the  `xmlServiceURL` variable at the top of the file, and then replacing the Bing API key for pronunciations with a properly registered one.</span></span>
 
-<span data-ttu-id="c0534-219">Os membros primários da API JavaScript do Office (Office. js) chamados desta implementação são os seguintes:</span><span class="sxs-lookup"><span data-stu-id="c0534-219">The primary members of the Office JavaScript API (Office.js) that are called from this implementation are as follows:</span></span>
+<span data-ttu-id="b584d-219">Os membros primários da API JavaScript do Office (Office. js) chamados desta implementação são os seguintes:</span><span class="sxs-lookup"><span data-stu-id="b584d-219">The primary members of the Office JavaScript API (Office.js) that are called from this implementation are as follows:</span></span>
 
 
-- <span data-ttu-id="c0534-220">O evento [Initialize](/javascript/api/office) do `Office` objeto, que é gerado quando o contexto do suplemento é inicializado e fornece acesso a uma instância do objeto [Document](/javascript/api/office/office.document) que representa o documento com o qual o suplemento está interagindo.</span><span class="sxs-lookup"><span data-stu-id="c0534-220">The [initialize](/javascript/api/office) event of the `Office` object, which is raised when the add-in context is initialized, and provides access to a [Document](/javascript/api/office/office.document) object instance that represents the document the add-in is interacting with.</span></span>
+- <span data-ttu-id="b584d-220">O evento [Initialize](/javascript/api/office) do `Office` objeto, que é gerado quando o contexto do suplemento é inicializado e fornece acesso a uma instância do objeto [Document](/javascript/api/office/office.document) que representa o documento com o qual o suplemento está interagindo.</span><span class="sxs-lookup"><span data-stu-id="b584d-220">The [initialize](/javascript/api/office) event of the `Office` object, which is raised when the add-in context is initialized, and provides access to a [Document](/javascript/api/office/office.document) object instance that represents the document the add-in is interacting with.</span></span>
     
-- <span data-ttu-id="c0534-221">O método [addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) do `Document` objeto, que é chamado na `initialize` função para adicionar um manipulador de eventos para o evento [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) do documento para ouvir as alterações na seleção do usuário.</span><span class="sxs-lookup"><span data-stu-id="c0534-221">The [addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) method of the `Document` object, which is called in the `initialize` function to add an event handler for the [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) event of the document to listen for user selection changes.</span></span>
+- <span data-ttu-id="b584d-221">O método [addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) do `Document` objeto, que é chamado na `initialize` função para adicionar um manipulador de eventos para o evento [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) do documento para ouvir as alterações na seleção do usuário.</span><span class="sxs-lookup"><span data-stu-id="b584d-221">The [addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) method of the `Document` object, which is called in the `initialize` function to add an event handler for the [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) event of the document to listen for user selection changes.</span></span>
     
-- <span data-ttu-id="c0534-222">O [método getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) `Document` do objeto, que é chamado `tryUpdatingSelectedWord()` na função quando o manipulador de `SelectionChanged` eventos é aumentado para obter a palavra ou frase que o usuário selecionou, força-a para texto sem formatação e, em `selectedTextCallback` seguida, executar a função de retorno de chamada assíncrono.</span><span class="sxs-lookup"><span data-stu-id="c0534-222">The [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) method of the `Document` object, which is called in the `tryUpdatingSelectedWord()` function when the `SelectionChanged` event handler is raised to get the word or phrase the user selected, coerce it to plain text, and then execute the `selectedTextCallback` asynchronous callback function.</span></span>
+- <span data-ttu-id="b584d-222">O método [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) do `Document` objeto, que é chamado na `tryUpdatingSelectedWord()` função quando o manipulador de `SelectionChanged` eventos é aumentado para obter a palavra ou frase que o usuário selecionou, força-a para texto sem formatação e, em seguida, executar a `selectedTextCallback` função de retorno de chamada assíncrono.</span><span class="sxs-lookup"><span data-stu-id="b584d-222">The [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) method of the `Document` object, which is called in the `tryUpdatingSelectedWord()` function when the `SelectionChanged` event handler is raised to get the word or phrase the user selected, coerce it to plain text, and then execute the `selectedTextCallback` asynchronous callback function.</span></span>
     
-- <span data-ttu-id="c0534-223">Quando a `selectTextCallback` função de retorno de chamada assíncrono que é passada como o argumento `getSelectedDataAsync` de retorno de _chamada_ do método é executada, ela obtém o valor do texto selecionado quando o retorno de chamada retorna.</span><span class="sxs-lookup"><span data-stu-id="c0534-223">When the  `selectTextCallback` asynchronous callback function that is passed as the _callback_ argument of the `getSelectedDataAsync` method executes, it gets the value of the selected text when the callback returns.</span></span> <span data-ttu-id="c0534-224">Ele obtém o valor do argumento _selectedText_ do retorno de chamada (que é do tipo [AsyncResult](/javascript/api/office/office.asyncresult)) usando a propriedade [Value](/javascript/api/office/office.asyncresult#status) do objeto retornado `AsyncResult` .</span><span class="sxs-lookup"><span data-stu-id="c0534-224">It gets that value from the callback's _selectedText_ argument (which is of type [AsyncResult](/javascript/api/office/office.asyncresult)) by using the [value](/javascript/api/office/office.asyncresult#status) property of the returned `AsyncResult` object.</span></span>
+- <span data-ttu-id="b584d-223">Quando a `selectTextCallback` função de retorno de chamada assíncrono que é passada como o argumento de _retorno de chamada_ do `getSelectedDataAsync` método é executada, ela obtém o valor do texto selecionado quando o retorno de chamada retorna.</span><span class="sxs-lookup"><span data-stu-id="b584d-223">When the  `selectTextCallback` asynchronous callback function that is passed as the _callback_ argument of the `getSelectedDataAsync` method executes, it gets the value of the selected text when the callback returns.</span></span> <span data-ttu-id="b584d-224">Ele obtém o valor do argumento _selectedText_ do retorno de chamada (que é do tipo [AsyncResult](/javascript/api/office/office.asyncresult)) usando a propriedade [Value](/javascript/api/office/office.asyncresult#status) do objeto retornado `AsyncResult` .</span><span class="sxs-lookup"><span data-stu-id="b584d-224">It gets that value from the callback's _selectedText_ argument (which is of type [AsyncResult](/javascript/api/office/office.asyncresult)) by using the [value](/javascript/api/office/office.asyncresult#status) property of the returned `AsyncResult` object.</span></span>
     
-- <span data-ttu-id="c0534-p120">O restante do código na função `selectedTextCallback` consulta o serviço Web XML para obter definições. Também chama as APIs do Microsoft Translator para fornecer a URL de um arquivo .wav que tem a pronúncia da palavra selecionada.</span><span class="sxs-lookup"><span data-stu-id="c0534-p120">The rest of the code in the  `selectedTextCallback` function queries the XML web service for definitions. It also calls into the Microsoft Translator APIs to provide the URL of a .wav file that has the selected word's pronunciation.</span></span>
+- <span data-ttu-id="b584d-p120">O restante do código na função `selectedTextCallback` consulta o serviço Web XML para obter definições. Também chama as APIs do Microsoft Translator para fornecer a URL de um arquivo .wav que tem a pronúncia da palavra selecionada.</span><span class="sxs-lookup"><span data-stu-id="b584d-p120">The rest of the code in the  `selectedTextCallback` function queries the XML web service for definitions. It also calls into the Microsoft Translator APIs to provide the URL of a .wav file that has the selected word's pronunciation.</span></span>
     
-- <span data-ttu-id="c0534-227">O código restante em Dictionary.js exibe a lista de definições e o link de pronúncia na interface do usuário HTML do suplemento.</span><span class="sxs-lookup"><span data-stu-id="c0534-227">The remaining code in Dictionary.js displays the list of definitions and the pronunciation link in the add-in's HTML UI.</span></span>
+- <span data-ttu-id="b584d-227">O código restante em Dictionary.js exibe a lista de definições e o link de pronúncia na interface do usuário HTML do suplemento.</span><span class="sxs-lookup"><span data-stu-id="b584d-227">The remaining code in Dictionary.js displays the list of definitions and the pronunciation link in the add-in's HTML UI.</span></span>
     
 
 

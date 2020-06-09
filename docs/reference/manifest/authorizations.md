@@ -3,26 +3,26 @@ title: Elemento Authorizations no arquivo de manifesto
 description: Especifica os recursos externos que o aplicativo Web do suplemento precisa de autorização e as permissões necessárias.
 ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 7ae0b9d0ec32a20846142a9fc89c48fe9cdf8053
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 675585f99fc6261a2145219d553f02b9f9abded3
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720656"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608751"
 ---
-# <a name="authorizations-element"></a><span data-ttu-id="1580b-103">Elemento Authorizations</span><span class="sxs-lookup"><span data-stu-id="1580b-103">Authorizations element</span></span>
+# <a name="authorizations-element"></a><span data-ttu-id="bf8f3-103">Elemento Authorizations</span><span class="sxs-lookup"><span data-stu-id="bf8f3-103">Authorizations element</span></span>
 
-<span data-ttu-id="1580b-104">Especifica os recursos externos que o aplicativo Web do suplemento precisa de autorização e as permissões necessárias.</span><span class="sxs-lookup"><span data-stu-id="1580b-104">Specifies the external resources that the add-in's web application needs authorization to and the required permissions.</span></span>
+<span data-ttu-id="bf8f3-104">Especifica os recursos externos que o aplicativo Web do suplemento precisa de autorização e as permissões necessárias.</span><span class="sxs-lookup"><span data-stu-id="bf8f3-104">Specifies the external resources that the add-in's web application needs authorization to and the required permissions.</span></span>
 
-<span data-ttu-id="1580b-105">**Autorizações** é um elemento filho do elemento [WebApplicationInfo](webapplicationinfo.md) no manifesto.</span><span class="sxs-lookup"><span data-stu-id="1580b-105">**Authorizations** is a child element of the [WebApplicationInfo](webapplicationinfo.md) element in the manifest.</span></span>
+<span data-ttu-id="bf8f3-105">**Autorizações** é um elemento filho do elemento [WebApplicationInfo](webapplicationinfo.md) no manifesto.</span><span class="sxs-lookup"><span data-stu-id="bf8f3-105">**Authorizations** is a child element of the [WebApplicationInfo](webapplicationinfo.md) element in the manifest.</span></span>
 
-## <a name="child-elements"></a><span data-ttu-id="1580b-106">Elementos filho</span><span class="sxs-lookup"><span data-stu-id="1580b-106">Child elements</span></span>
+## <a name="child-elements"></a><span data-ttu-id="bf8f3-106">Elementos filho</span><span class="sxs-lookup"><span data-stu-id="bf8f3-106">Child elements</span></span>
 
-|  <span data-ttu-id="1580b-107">Elemento</span><span class="sxs-lookup"><span data-stu-id="1580b-107">Element</span></span> |  <span data-ttu-id="1580b-108">Obrigatório</span><span class="sxs-lookup"><span data-stu-id="1580b-108">Required</span></span>  |  <span data-ttu-id="1580b-109">Descrição</span><span class="sxs-lookup"><span data-stu-id="1580b-109">Description</span></span>  |
+|  <span data-ttu-id="bf8f3-107">Elemento</span><span class="sxs-lookup"><span data-stu-id="bf8f3-107">Element</span></span> |  <span data-ttu-id="bf8f3-108">Obrigatório</span><span class="sxs-lookup"><span data-stu-id="bf8f3-108">Required</span></span>  |  <span data-ttu-id="bf8f3-109">Descrição</span><span class="sxs-lookup"><span data-stu-id="bf8f3-109">Description</span></span>  |
 |:-----|:-----|:-----|
-|  [<span data-ttu-id="1580b-110">Autorização</span><span class="sxs-lookup"><span data-stu-id="1580b-110">Authorization</span></span>](authorization.md)                |  <span data-ttu-id="1580b-111">Sim</span><span class="sxs-lookup"><span data-stu-id="1580b-111">Yes</span></span>     |   <span data-ttu-id="1580b-112">Identifica um recurso externo para o qual o aplicativo Web do suplemento precisa de autorização e os escopos (permissões) necessários.</span><span class="sxs-lookup"><span data-stu-id="1580b-112">Identifies an external resource that the add-in's web application needs authorization to, and the scopes (permissions) that it needs.</span></span> |
+|  [<span data-ttu-id="bf8f3-110">Autorização</span><span class="sxs-lookup"><span data-stu-id="bf8f3-110">Authorization</span></span>](authorization.md)                |  <span data-ttu-id="bf8f3-111">Sim</span><span class="sxs-lookup"><span data-stu-id="bf8f3-111">Yes</span></span>     |   <span data-ttu-id="bf8f3-112">Identifica um recurso externo para o qual o aplicativo Web do suplemento precisa de autorização e os escopos (permissões) necessários.</span><span class="sxs-lookup"><span data-stu-id="bf8f3-112">Identifies an external resource that the add-in's web application needs authorization to, and the scopes (permissions) that it needs.</span></span> |
 
-## <a name="example"></a><span data-ttu-id="1580b-113">Exemplo</span><span class="sxs-lookup"><span data-stu-id="1580b-113">Example</span></span>
+## <a name="example"></a><span data-ttu-id="bf8f3-113">Exemplo</span><span class="sxs-lookup"><span data-stu-id="bf8f3-113">Example</span></span>
 
 ```xml
 <OfficeApp>
