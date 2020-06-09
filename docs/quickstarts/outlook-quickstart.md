@@ -4,74 +4,74 @@ description: Saiba como criar um Suplemento do Outlook simples usando a API JS d
 ms.date: 03/04/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: bdef3ba43d8bb016f5d79ed3cafc25a6d89c345d
-ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
+ms.openlocfilehash: ba2177e16a73ba626a201105f3f7a187a372a6b7
+ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "43185446"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "44608905"
 ---
-# <a name="build-your-first-outlook-add-in"></a><span data-ttu-id="4e548-103">Criar seu primeiro suplemento do Outlook</span><span class="sxs-lookup"><span data-stu-id="4e548-103">Build your first Outlook add-in</span></span>
+# <a name="build-your-first-outlook-add-in"></a><span data-ttu-id="7d342-103">Criar seu primeiro suplemento do Outlook</span><span class="sxs-lookup"><span data-stu-id="7d342-103">Build your first Outlook add-in</span></span>
 
-<span data-ttu-id="4e548-104">Neste artigo, você acompanhará o processo de criação de um suplemento do painel de tarefas do Outlook que exibe pelo menos uma propriedade da mensagem selecionada.</span><span class="sxs-lookup"><span data-stu-id="4e548-104">In this article, you'll walk through the process of building an Outlook task pane add-in that displays at least one property of a selected message.</span></span>
+<span data-ttu-id="7d342-104">Neste artigo, você acompanhará o processo de criação de um suplemento do painel de tarefas do Outlook que exibe pelo menos uma propriedade da mensagem selecionada.</span><span class="sxs-lookup"><span data-stu-id="7d342-104">In this article, you'll walk through the process of building an Outlook task pane add-in that displays at least one property of a selected message.</span></span>
 
-## <a name="create-the-add-in"></a><span data-ttu-id="4e548-105">Criar o suplemento</span><span class="sxs-lookup"><span data-stu-id="4e548-105">Create the add-in</span></span>
+## <a name="create-the-add-in"></a><span data-ttu-id="7d342-105">Criar o suplemento</span><span class="sxs-lookup"><span data-stu-id="7d342-105">Create the add-in</span></span>
 
-<span data-ttu-id="4e548-106">Você pode criar um suplemento do Office usando o [Gerador Yeoman para suplementos do Office](https://github.com/OfficeDev/generator-office) ou Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="4e548-106">You can create an Office Add-in by using the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) or Visual Studio.</span></span> <span data-ttu-id="4e548-107">O gerador Yeoman cria um projeto Node.js que pode ser gerenciado com o Visual Studio Code ou com qualquer outro editor, enquanto o Visual Studio cria uma solução do Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="4e548-107">The Yeoman generator creates a Node.js project that can be managed with Visual Studio Code or any other editor, whereas Visual Studio creates a Visual Studio solution.</span></span>  <span data-ttu-id="4e548-108">Selecione a guia do que você deseja usar e, em seguida, siga as instruções para criar o suplemento e testá-lo localmente.</span><span class="sxs-lookup"><span data-stu-id="4e548-108">Select the tab for the one you'd like to use and then follow the instructions to create your add-in and test it locally.</span></span>
+<span data-ttu-id="7d342-106">Você pode criar um suplemento do Office usando o [Gerador Yeoman para suplementos do Office](https://github.com/OfficeDev/generator-office) ou Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="7d342-106">You can create an Office Add-in by using the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office) or Visual Studio.</span></span> <span data-ttu-id="7d342-107">O gerador Yeoman cria um projeto Node.js que pode ser gerenciado com o Visual Studio Code ou com qualquer outro editor, enquanto o Visual Studio cria uma solução do Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="7d342-107">The Yeoman generator creates a Node.js project that can be managed with Visual Studio Code or any other editor, whereas Visual Studio creates a Visual Studio solution.</span></span>  <span data-ttu-id="7d342-108">Selecione a guia do que você deseja usar e, em seguida, siga as instruções para criar o suplemento e testá-lo localmente.</span><span class="sxs-lookup"><span data-stu-id="7d342-108">Select the tab for the one you'd like to use and then follow the instructions to create your add-in and test it locally.</span></span>
 
-# <a name="yeoman-generator"></a>[<span data-ttu-id="4e548-109">Gerador do Yeoman</span><span class="sxs-lookup"><span data-stu-id="4e548-109">Yeoman generator</span></span>](#tab/yeomangenerator)
+# <a name="yeoman-generator"></a>[<span data-ttu-id="7d342-109">Gerador do Yeoman</span><span class="sxs-lookup"><span data-stu-id="7d342-109">Yeoman generator</span></span>](#tab/yeomangenerator)
 
-### <a name="prerequisites"></a><span data-ttu-id="4e548-110">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="4e548-110">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="7d342-110">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="7d342-110">Prerequisites</span></span>
 
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 
-- <span data-ttu-id="4e548-111">[Node.js](https://nodejs.org/) (a versão mais recente de [LTS](https://nodejs.org/about/releases))</span><span class="sxs-lookup"><span data-stu-id="4e548-111">[Node.js](https://nodejs.org/) (the latest [LTS](https://nodejs.org/about/releases) version)</span></span>
+- <span data-ttu-id="7d342-111">[Node.js](https://nodejs.org/) (a versão mais recente de [LTS](https://nodejs.org/about/releases))</span><span class="sxs-lookup"><span data-stu-id="7d342-111">[Node.js](https://nodejs.org/) (the latest [LTS](https://nodejs.org/about/releases) version)</span></span>
 
-- <span data-ttu-id="4e548-112">A versão mais recente do [Yeoman](https://github.com/yeoman/yo) e do [Yeoman gerador de suplementos do Office](https://github.com/OfficeDev/generator-office). Para instalar essas ferramentas globalmente, execute o seguinte comando por meio do prompt de comando:</span><span class="sxs-lookup"><span data-stu-id="4e548-112">The latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). To install these tools globally, run the following command via the command prompt:</span></span>
+- <span data-ttu-id="7d342-112">A versão mais recente do [Yeoman](https://github.com/yeoman/yo) e do [Yeoman gerador de suplementos do Office](https://github.com/OfficeDev/generator-office). Para instalar essas ferramentas globalmente, execute o seguinte comando por meio do prompt de comando:</span><span class="sxs-lookup"><span data-stu-id="7d342-112">The latest version of [Yeoman](https://github.com/yeoman/yo) and the [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office). To install these tools globally, run the following command via the command prompt:</span></span>
 
     ```command&nbsp;line
     npm install -g yo generator-office
     ```
 
     > [!NOTE]
-    > <span data-ttu-id="4e548-113">Mesmo se você já instalou o gerador Yeoman, recomendamos atualizar seu pacote para a versão mais recente do npm.</span><span class="sxs-lookup"><span data-stu-id="4e548-113">Even if you've previously installed the Yeoman generator, we recommend you update your package to the latest version from npm.</span></span>
+    > <span data-ttu-id="7d342-113">Mesmo se você já instalou o gerador Yeoman, recomendamos atualizar seu pacote para a versão mais recente do npm.</span><span class="sxs-lookup"><span data-stu-id="7d342-113">Even if you've previously installed the Yeoman generator, we recommend you update your package to the latest version from npm.</span></span>
 
-### <a name="create-the-add-in-project"></a><span data-ttu-id="4e548-114">Criar o projeto do suplemento</span><span class="sxs-lookup"><span data-stu-id="4e548-114">Create the add-in project</span></span>
+### <a name="create-the-add-in-project"></a><span data-ttu-id="7d342-114">Criar o projeto do suplemento</span><span class="sxs-lookup"><span data-stu-id="7d342-114">Create the add-in project</span></span>
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-    - <span data-ttu-id="4e548-115">**Escolha o tipo de projeto** - `Office Add-in Task Pane project`</span><span class="sxs-lookup"><span data-stu-id="4e548-115">**Choose a project type** - `Office Add-in Task Pane project`</span></span>
+    - <span data-ttu-id="7d342-115">**Escolha o tipo de projeto** - `Office Add-in Task Pane project`</span><span class="sxs-lookup"><span data-stu-id="7d342-115">**Choose a project type** - `Office Add-in Task Pane project`</span></span>
 
-    - <span data-ttu-id="4e548-116">**Escolha o tipo de script** - `Javascript`</span><span class="sxs-lookup"><span data-stu-id="4e548-116">**Choose a script type** - `Javascript`</span></span>
+    - <span data-ttu-id="7d342-116">**Escolha o tipo de script** - `Javascript`</span><span class="sxs-lookup"><span data-stu-id="7d342-116">**Choose a script type** - `Javascript`</span></span>
 
-    - <span data-ttu-id="4e548-117">**Qual será o nome do suplemento?**</span><span class="sxs-lookup"><span data-stu-id="4e548-117">**What do you want to name your add-in?**</span></span> - `My Office Add-in`
+    - <span data-ttu-id="7d342-117">**Qual será o nome do suplemento?**</span><span class="sxs-lookup"><span data-stu-id="7d342-117">**What do you want to name your add-in?**</span></span> - `My Office Add-in`
 
-    - <span data-ttu-id="4e548-118">**Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?**</span><span class="sxs-lookup"><span data-stu-id="4e548-118">**Which Office client application would you like to support?**</span></span> - `Outlook`
+    - <span data-ttu-id="7d342-118">**Você gostaria de proporcionar suporte para qual aplicativo cliente do Office?**</span><span class="sxs-lookup"><span data-stu-id="7d342-118">**Which Office client application would you like to support?**</span></span> - `Outlook`
 
     ![Uma captura de tela dos prompts e respostas do gerador Yeoman](../images/yo-office-outlook.png)
     
-    <span data-ttu-id="4e548-120">Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.</span><span class="sxs-lookup"><span data-stu-id="4e548-120">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
+    <span data-ttu-id="7d342-120">Depois que você concluir o assistente, o gerador criará o projeto e instalará os componentes Node de suporte.</span><span class="sxs-lookup"><span data-stu-id="7d342-120">After you complete the wizard, the generator will create the project and install supporting Node components.</span></span>
 
     [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
-1. <span data-ttu-id="4e548-121">Navegue até a pasta raiz do projeto do aplicativo Web.</span><span class="sxs-lookup"><span data-stu-id="4e548-121">Navigate to the root folder of the web application project.</span></span>
+1. <span data-ttu-id="7d342-121">Navegue até a pasta raiz do projeto do aplicativo Web.</span><span class="sxs-lookup"><span data-stu-id="7d342-121">Navigate to the root folder of the web application project.</span></span>
 
     ```command&nbsp;line
     cd "My Office Add-in"
     ```
 
-### <a name="explore-the-project"></a><span data-ttu-id="4e548-122">Explore o projeto</span><span class="sxs-lookup"><span data-stu-id="4e548-122">Explore the project</span></span>
+### <a name="explore-the-project"></a><span data-ttu-id="7d342-122">Explore o projeto</span><span class="sxs-lookup"><span data-stu-id="7d342-122">Explore the project</span></span>
 
-<span data-ttu-id="4e548-123">O projeto de suplemento que você criou com o gerador do Yeoman contém um exemplo de código para um suplemento de painel de tarefas bem básico.</span><span class="sxs-lookup"><span data-stu-id="4e548-123">The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in.</span></span> 
+<span data-ttu-id="7d342-123">O projeto de suplemento que você criou com o gerador do Yeoman contém um exemplo de código para um suplemento de painel de tarefas bem básico.</span><span class="sxs-lookup"><span data-stu-id="7d342-123">The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in.</span></span> 
 
-- <span data-ttu-id="4e548-124">O arquivo **./manifest.xml** no diretório raiz do projeto define as configurações e os recursos do suplemento.</span><span class="sxs-lookup"><span data-stu-id="4e548-124">The **./manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.</span></span>
-- <span data-ttu-id="4e548-125">O arquivo **./src/taskpane/taskpane.html** contém a marcação HTML do painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="4e548-125">The **./src/taskpane/taskpane.html** file contains the HTML markup for the task pane.</span></span>
-- <span data-ttu-id="4e548-126">O arquivo **./src/taskpane/taskpane.css** contém o CSS que é aplicado ao conteúdo no painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="4e548-126">The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.</span></span>
-- <span data-ttu-id="4e548-127">O arquivo **./src/taskpane/taskpane.js** contém o código da API JavaScript do Office que facilita a interação entre o painel de tarefas e o Outlook.</span><span class="sxs-lookup"><span data-stu-id="4e548-127">The **./src/taskpane/taskpane.js** file contains the Office JavaScript API code that facilitates interaction between the task pane and Outlook.</span></span>
+- <span data-ttu-id="7d342-124">O arquivo **./manifest.xml** no diretório raiz do projeto define as configurações e os recursos do suplemento.</span><span class="sxs-lookup"><span data-stu-id="7d342-124">The **./manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.</span></span>
+- <span data-ttu-id="7d342-125">O arquivo **./src/taskpane/taskpane.html** contém a marcação HTML do painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="7d342-125">The **./src/taskpane/taskpane.html** file contains the HTML markup for the task pane.</span></span>
+- <span data-ttu-id="7d342-126">O arquivo **./src/taskpane/taskpane.css** contém o CSS que é aplicado ao conteúdo no painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="7d342-126">The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.</span></span>
+- <span data-ttu-id="7d342-127">O arquivo **./src/taskpane/taskpane.js** contém o código da API JavaScript do Office que facilita a interação entre o painel de tarefas e o Outlook.</span><span class="sxs-lookup"><span data-stu-id="7d342-127">The **./src/taskpane/taskpane.js** file contains the Office JavaScript API code that facilitates interaction between the task pane and Outlook.</span></span>
 
-### <a name="update-the-code"></a><span data-ttu-id="4e548-128">Atualizar o código</span><span class="sxs-lookup"><span data-stu-id="4e548-128">Update the code</span></span>
+### <a name="update-the-code"></a><span data-ttu-id="7d342-128">Atualizar o código</span><span class="sxs-lookup"><span data-stu-id="7d342-128">Update the code</span></span>
 
-1. <span data-ttu-id="4e548-129">No seu editor de código, abra o arquivo **./src/taskpane/taskpane.html** e substitua o elemento `<main>` inteiro (dentro do elemento `<body>`) com a seguinte marcação.</span><span class="sxs-lookup"><span data-stu-id="4e548-129">In your code editor, open the file **./src/taskpane/taskpane.html** and replace the entire `<main>` element (within the `<body>` element) with the following markup.</span></span> <span data-ttu-id="4e548-130">A próxima marcação adiciona uma etiqueta onde o script no **./src/taskpane/taskpane.js** gravará os dados.</span><span class="sxs-lookup"><span data-stu-id="4e548-130">This new markup adds a label where the script in **./src/taskpane/taskpane.js** will write data.</span></span>
+1. <span data-ttu-id="7d342-129">No seu editor de código, abra o arquivo **./src/taskpane/taskpane.html** e substitua o elemento `<main>` inteiro (dentro do elemento `<body>`) com a seguinte marcação.</span><span class="sxs-lookup"><span data-stu-id="7d342-129">In your code editor, open the file **./src/taskpane/taskpane.html** and replace the entire `<main>` element (within the `<body>` element) with the following markup.</span></span> <span data-ttu-id="7d342-130">A próxima marcação adiciona uma etiqueta onde o script no **./src/taskpane/taskpane.js** gravará os dados.</span><span class="sxs-lookup"><span data-stu-id="7d342-130">This new markup adds a label where the script in **./src/taskpane/taskpane.js** will write data.</span></span>
 
     ```html
     <main id="app-body" class="ms-welcome__main" style="display: none;">
@@ -83,7 +83,7 @@ ms.locfileid: "43185446"
     </main>
     ```
 
-1. <span data-ttu-id="4e548-131">No seu editor de código, abra o arquivo **./src/taskpane/taskpane.js** e adicione o seguinte código na função `run`.</span><span class="sxs-lookup"><span data-stu-id="4e548-131">In your code editor, open the file **./src/taskpane/taskpane.js** and add the following code within the `run` function.</span></span> <span data-ttu-id="4e548-132">Este código usa a API JavaScript do Office para obter uma referência da mensagem atual e gravar o seu valor de propriedade `subject` no painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="4e548-132">This code uses the Office JavaScript API to get a reference to the current message and write its `subject` property value to the task pane.</span></span>
+1. <span data-ttu-id="7d342-131">No seu editor de código, abra o arquivo **./src/taskpane/taskpane.js** e adicione o seguinte código na função `run`.</span><span class="sxs-lookup"><span data-stu-id="7d342-131">In your code editor, open the file **./src/taskpane/taskpane.js** and add the following code within the `run` function.</span></span> <span data-ttu-id="7d342-132">Este código usa a API JavaScript do Office para obter uma referência da mensagem atual e gravar o seu valor de propriedade `subject` no painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="7d342-132">This code uses the Office JavaScript API to get a reference to the current message and write its `subject` property value to the task pane.</span></span>
 
     ```js
     // Get a reference to the current message
@@ -93,71 +93,71 @@ ms.locfileid: "43185446"
     document.getElementById("item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
     ```
 
-### <a name="try-it-out"></a><span data-ttu-id="4e548-133">Experimente</span><span class="sxs-lookup"><span data-stu-id="4e548-133">Try it out</span></span>
+### <a name="try-it-out"></a><span data-ttu-id="7d342-133">Experimente</span><span class="sxs-lookup"><span data-stu-id="7d342-133">Try it out</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="4e548-134">Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento.</span><span class="sxs-lookup"><span data-stu-id="4e548-134">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="4e548-135">Se for solicitado a instalação de um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.</span><span class="sxs-lookup"><span data-stu-id="4e548-135">If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
+> <span data-ttu-id="7d342-134">Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento.</span><span class="sxs-lookup"><span data-stu-id="7d342-134">Office Add-ins should use HTTPS, not HTTP, even when you are developing.</span></span> <span data-ttu-id="7d342-135">Se for solicitado a instalação de um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.</span><span class="sxs-lookup"><span data-stu-id="7d342-135">If you are prompted to install a certificate after you run the following command, accept the prompt to install the certificate that the Yeoman generator provides.</span></span>
 
-1. <span data-ttu-id="4e548-136">Execute o seguinte comando no diretório raiz do seu projeto.</span><span class="sxs-lookup"><span data-stu-id="4e548-136">Run the following command in the root directory of your project.</span></span> <span data-ttu-id="4e548-137">Quando você executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).</span><span class="sxs-lookup"><span data-stu-id="4e548-137">When you run this command, the local web server will start (if it's not already running).</span></span>
+1. <span data-ttu-id="7d342-136">Execute o seguinte comando no diretório raiz do seu projeto.</span><span class="sxs-lookup"><span data-stu-id="7d342-136">Run the following command in the root directory of your project.</span></span> <span data-ttu-id="7d342-137">Quando você executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).</span><span class="sxs-lookup"><span data-stu-id="7d342-137">When you run this command, the local web server will start (if it's not already running).</span></span>
 
     ```command&nbsp;line
     npm run dev-server
     ```
 
-1. <span data-ttu-id="4e548-138">Siga as instruções [Realizar sideload dos suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md)para realizar o sideload do suplemento do Outlook.</span><span class="sxs-lookup"><span data-stu-id="4e548-138">Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to sideload the add-in in Outlook.</span></span>
+1. <span data-ttu-id="7d342-138">Siga as instruções [Realizar sideload dos suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md)para realizar o sideload do suplemento do Outlook.</span><span class="sxs-lookup"><span data-stu-id="7d342-138">Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to sideload the add-in in Outlook.</span></span>
 
-1. <span data-ttu-id="4e548-139">No Outlook, escolha ou abra uma mensagem.</span><span class="sxs-lookup"><span data-stu-id="4e548-139">In Outlook, select or open a message.</span></span>
+1. <span data-ttu-id="7d342-139">No Outlook, escolha ou abra uma mensagem.</span><span class="sxs-lookup"><span data-stu-id="7d342-139">In Outlook, select or open a message.</span></span>
 
-1. <span data-ttu-id="4e548-140">Escolha a guia **Página Inicial** (ou a guia **Mensagem**, se você abriu a mensagem em uma nova janela), e em seguida o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="4e548-140">Choose the **Home** tab (or the **Message** tab if you opened the message in a new window), and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
+1. <span data-ttu-id="7d342-140">Escolha a guia **Página Inicial** (ou a guia **Mensagem**, se você abriu a mensagem em uma nova janela), e em seguida o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="7d342-140">Choose the **Home** tab (or the **Message** tab if you opened the message in a new window), and then choose the **Show Taskpane** button in the ribbon to open the add-in task pane.</span></span>
 
     ![Captura de tela de uma janela de mensagem do Outlook com o botão do suplemento realçado](../images/quick-start-button-1.png)
 
-1. <span data-ttu-id="4e548-142">Role para parte inferior do painel de tarefas e escolha o link **Executar** para escrever o assunto da mensagem no painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="4e548-142">Scroll to the bottom of the task pane and choose the **Run** link to write the message subject to the task pane.</span></span>
+1. <span data-ttu-id="7d342-142">Role para parte inferior do painel de tarefas e escolha o link **Executar** para escrever o assunto da mensagem no painel de tarefas.</span><span class="sxs-lookup"><span data-stu-id="7d342-142">Scroll to the bottom of the task pane and choose the **Run** link to write the message subject to the task pane.</span></span>
 
     ![Uma captura de tela do painel de tarefas do suplemento com o link Executar realçado](../images/quick-start-task-pane-2.png)
 
     ![Uma captura de tela do painel de tarefas do suplemento exibindo o assunto da mensagem](../images/quick-start-task-pane-3.png)
 
-### <a name="next-steps"></a><span data-ttu-id="4e548-145">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="4e548-145">Next steps</span></span>
+### <a name="next-steps"></a><span data-ttu-id="7d342-145">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="7d342-145">Next steps</span></span>
 
-<span data-ttu-id="4e548-146">Parabéns, você criou o seu primeiro suplemento do painel de tarefas do Outlook!</span><span class="sxs-lookup"><span data-stu-id="4e548-146">Congratulations, you've successfully created your first Outlook task pane add-in!</span></span> <span data-ttu-id="4e548-147">Em seguida, saiba mais sobre os recursos de um suplemento do Outlook e crie um suplemento mais complexo seguindo as etapas deste [tutorial de suplemento do Word](../tutorials/outlook-tutorial.md).</span><span class="sxs-lookup"><span data-stu-id="4e548-147">Next, learn more about the capabilities of an Outlook add-in and build a more complex add-in by following along with the [Outlook add-in tutorial](../tutorials/outlook-tutorial.md).</span></span>
+<span data-ttu-id="7d342-146">Parabéns, você criou o seu primeiro suplemento do painel de tarefas do Outlook!</span><span class="sxs-lookup"><span data-stu-id="7d342-146">Congratulations, you've successfully created your first Outlook task pane add-in!</span></span> <span data-ttu-id="7d342-147">Em seguida, saiba mais sobre os recursos de um suplemento do Outlook e crie um suplemento mais complexo seguindo as etapas deste [tutorial de suplemento do Word](../tutorials/outlook-tutorial.md).</span><span class="sxs-lookup"><span data-stu-id="7d342-147">Next, learn more about the capabilities of an Outlook add-in and build a more complex add-in by following along with the [Outlook add-in tutorial](../tutorials/outlook-tutorial.md).</span></span>
 
-# <a name="visual-studio"></a>[<span data-ttu-id="4e548-148">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="4e548-148">Visual Studio</span></span>](#tab/visualstudio)
+# <a name="visual-studio"></a>[<span data-ttu-id="7d342-148">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="7d342-148">Visual Studio</span></span>](#tab/visualstudio)
 
-### <a name="prerequisites"></a><span data-ttu-id="4e548-149">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="4e548-149">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="7d342-149">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="7d342-149">Prerequisites</span></span>
 
-- <span data-ttu-id="4e548-150">[Visual Studio 2019](https://www.visualstudio.com/vs/) com a carga de trabalho de **desenvolvimento do Office/SharePoint** instalada</span><span class="sxs-lookup"><span data-stu-id="4e548-150">[Visual Studio 2019](https://www.visualstudio.com/vs/) with the **Office/SharePoint development** workload installed</span></span>
-
-    > [!NOTE]
-    > <span data-ttu-id="4e548-151">Se você já instalou o Visual Studio 2019, [use o Instalador do Visual Studio](/visualstudio/install/modify-visual-studio) para garantir que a carga de trabalho de **desenvolvimento do Office/SharePoint** seja instalada.</span><span class="sxs-lookup"><span data-stu-id="4e548-151">If you've previously installed Visual Studio 2019, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed.</span></span>
-
-- <span data-ttu-id="4e548-152">Office 365</span><span class="sxs-lookup"><span data-stu-id="4e548-152">Office 365</span></span>
+- <span data-ttu-id="7d342-150">[Visual Studio 2019](https://www.visualstudio.com/vs/) com a carga de trabalho de **desenvolvimento do Office/SharePoint** instalada</span><span class="sxs-lookup"><span data-stu-id="7d342-150">[Visual Studio 2019](https://www.visualstudio.com/vs/) with the **Office/SharePoint development** workload installed</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="4e548-153">Se você não tiver uma assinatura do Office 365, poderá obter uma assinatura gratuita inscrevendo-se no [programa de desenvolvedores do Office 365](https://developer.microsoft.com/office/dev-program).</span><span class="sxs-lookup"><span data-stu-id="4e548-153">If you do not have an Office 365 subscription, you can get a free one by signing up for the [Office 365 developer program](https://developer.microsoft.com/office/dev-program).</span></span>
+    > <span data-ttu-id="7d342-151">Se você já instalou o Visual Studio 2019, [use o Instalador do Visual Studio](/visualstudio/install/modify-visual-studio) para garantir que a carga de trabalho de **desenvolvimento do Office/SharePoint** seja instalada.</span><span class="sxs-lookup"><span data-stu-id="7d342-151">If you've previously installed Visual Studio 2019, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed.</span></span>
 
-### <a name="create-the-add-in-project"></a><span data-ttu-id="4e548-154">Criar o projeto do suplemento</span><span class="sxs-lookup"><span data-stu-id="4e548-154">Create the add-in project</span></span>
+- <span data-ttu-id="7d342-152">Office 365</span><span class="sxs-lookup"><span data-stu-id="7d342-152">Office 365</span></span>
 
-1. <span data-ttu-id="4e548-155">Na barra de menus do Visual Studio, selecione **Arquivo** > **Novo** > **Projeto**.</span><span class="sxs-lookup"><span data-stu-id="4e548-155">On the Visual Studio menu bar, choose **File** > **New** > **Project**.</span></span>
+    > [!NOTE]
+    > <span data-ttu-id="7d342-153">Se você não tiver uma assinatura do Office 365, poderá obter uma assinatura gratuita inscrevendo-se no [programa de desenvolvedores do Office 365](https://developer.microsoft.com/office/dev-program).</span><span class="sxs-lookup"><span data-stu-id="7d342-153">If you do not have an Office 365 subscription, you can get a free one by signing up for the [Office 365 developer program](https://developer.microsoft.com/office/dev-program).</span></span>
 
-1. <span data-ttu-id="4e548-156">Na lista de tipos de projeto sob **Visual C#** ou **Visual Basic**, expanda a opção **Office/SharePoint**, escolha **Suplementos** e depois **Suplemento da Web do Outlook** como o tipo de projeto.</span><span class="sxs-lookup"><span data-stu-id="4e548-156">In the list of project types under **Visual C#** or **Visual Basic**, expand **Office/SharePoint**, choose **Add-ins**, and then choose **Outlook Web Add-in** as the project type.</span></span>
+### <a name="create-the-add-in-project"></a><span data-ttu-id="7d342-154">Criar o projeto do suplemento</span><span class="sxs-lookup"><span data-stu-id="7d342-154">Create the add-in project</span></span>
 
-1. <span data-ttu-id="4e548-157">Dê um nome ao projeto e escolha **OK**.</span><span class="sxs-lookup"><span data-stu-id="4e548-157">Name the project, and then choose **OK**.</span></span>
+1. <span data-ttu-id="7d342-155">Na barra de menus do Visual Studio, selecione **Arquivo** > **Novo** > **Projeto**.</span><span class="sxs-lookup"><span data-stu-id="7d342-155">On the Visual Studio menu bar, choose **File** > **New** > **Project**.</span></span>
 
-1. <span data-ttu-id="4e548-158">O Visual Studio cria uma solução, e os dois projetos dele aparecem no **Gerenciador de Soluções**.</span><span class="sxs-lookup"><span data-stu-id="4e548-158">Visual Studio creates a solution and its two projects appear in **Solution Explorer**.</span></span> <span data-ttu-id="4e548-159">O arquivo **MessageRead.html** é aberto no Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="4e548-159">The **MessageRead.html** file opens in Visual Studio.</span></span>
+1. <span data-ttu-id="7d342-156">Na lista de tipos de projeto sob **Visual C#** ou **Visual Basic**, expanda a opção **Office/SharePoint**, escolha **Suplementos** e depois **Suplemento da Web do Outlook** como o tipo de projeto.</span><span class="sxs-lookup"><span data-stu-id="7d342-156">In the list of project types under **Visual C#** or **Visual Basic**, expand **Office/SharePoint**, choose **Add-ins**, and then choose **Outlook Web Add-in** as the project type.</span></span>
 
-### <a name="explore-the-visual-studio-solution"></a><span data-ttu-id="4e548-160">Explorar a solução do Visual Studio</span><span class="sxs-lookup"><span data-stu-id="4e548-160">Explore the Visual Studio solution</span></span>
+1. <span data-ttu-id="7d342-157">Dê um nome ao projeto e escolha **OK**.</span><span class="sxs-lookup"><span data-stu-id="7d342-157">Name the project, and then choose **OK**.</span></span>
 
-<span data-ttu-id="4e548-161">Ao concluir o assistente, o Visual Studio cria uma solução que contém dois projetos.</span><span class="sxs-lookup"><span data-stu-id="4e548-161">When you've completed the wizard, Visual Studio creates a solution that contains two projects.</span></span>
+1. <span data-ttu-id="7d342-158">O Visual Studio cria uma solução, e os dois projetos dele aparecem no **Gerenciador de Soluções**.</span><span class="sxs-lookup"><span data-stu-id="7d342-158">Visual Studio creates a solution and its two projects appear in **Solution Explorer**.</span></span> <span data-ttu-id="7d342-159">O arquivo **MessageRead.html** é aberto no Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="7d342-159">The **MessageRead.html** file opens in Visual Studio.</span></span>
 
-|<span data-ttu-id="4e548-162">**Projeto**</span><span class="sxs-lookup"><span data-stu-id="4e548-162">**Project**</span></span>|<span data-ttu-id="4e548-163">**Descrição**</span><span class="sxs-lookup"><span data-stu-id="4e548-163">**Description**</span></span>|
+### <a name="explore-the-visual-studio-solution"></a><span data-ttu-id="7d342-160">Explorar a solução do Visual Studio</span><span class="sxs-lookup"><span data-stu-id="7d342-160">Explore the Visual Studio solution</span></span>
+
+<span data-ttu-id="7d342-161">Ao concluir o assistente, o Visual Studio cria uma solução que contém dois projetos.</span><span class="sxs-lookup"><span data-stu-id="7d342-161">When you've completed the wizard, Visual Studio creates a solution that contains two projects.</span></span>
+
+|<span data-ttu-id="7d342-162">**Projeto**</span><span class="sxs-lookup"><span data-stu-id="7d342-162">**Project**</span></span>|<span data-ttu-id="7d342-163">**Descrição**</span><span class="sxs-lookup"><span data-stu-id="7d342-163">**Description**</span></span>|
 |:-----|:-----|
-|<span data-ttu-id="4e548-164">Projeto de suplemento</span><span class="sxs-lookup"><span data-stu-id="4e548-164">Add-in project</span></span>|<span data-ttu-id="4e548-165">Contém somente um arquivo de manifesto XML, que contém todas as configurações que descrevem o suplemento.</span><span class="sxs-lookup"><span data-stu-id="4e548-165">Contains only an XML manifest file, which contains all the settings that describe your add-in.</span></span> <span data-ttu-id="4e548-166">As configurações ajudam o host do Office a determinar quando o suplemento deverá ser ativado e onde ele deverá aparecer.</span><span class="sxs-lookup"><span data-stu-id="4e548-166">These settings help the Office host determine when your add-in should be activated and where the add-in should appear.</span></span> <span data-ttu-id="4e548-167">O Visual Studio gera o conteúdo desse arquivo para que você possa executar o projeto e usar o suplemento imediatamente.</span><span class="sxs-lookup"><span data-stu-id="4e548-167">Visual Studio generates the contents of this file for you so that you can run the project and use your add-in immediately.</span></span> <span data-ttu-id="4e548-168">Você pode alterar essas configurações a qualquer momento modificando o arquivo XML.</span><span class="sxs-lookup"><span data-stu-id="4e548-168">You can change these settings any time by modifying the XML file.</span></span>|
-|<span data-ttu-id="4e548-169">Projeto de aplicativo Web</span><span class="sxs-lookup"><span data-stu-id="4e548-169">Web application project</span></span>|<span data-ttu-id="4e548-p109">Contém as páginas de conteúdo do suplemento, incluindo todos os arquivos e referências de arquivo de que você precisa para desenvolver páginas HTML e JavaScript com reconhecimento do Office. Enquanto você desenvolve o suplemento, o Visual Studio hospeda o aplicativo Web no servidor IIS local. Quando estiver pronto para publicar, você precisará implantar este projeto de aplicativo Web em um servidor Web.</span><span class="sxs-lookup"><span data-stu-id="4e548-p109">Contains the content pages of your add-in, including all the files and file references that you need to develop Office-aware HTML and JavaScript pages. While you develop your add-in, Visual Studio hosts the web application on your local IIS server. When you're ready to publish the add-in, you'll need to deploy this web application project to a web server.</span></span>|
+|<span data-ttu-id="7d342-164">Projeto de suplemento</span><span class="sxs-lookup"><span data-stu-id="7d342-164">Add-in project</span></span>|<span data-ttu-id="7d342-165">Contém somente um arquivo de manifesto XML, que contém todas as configurações que descrevem o suplemento.</span><span class="sxs-lookup"><span data-stu-id="7d342-165">Contains only an XML manifest file, which contains all the settings that describe your add-in.</span></span> <span data-ttu-id="7d342-166">As configurações ajudam o host do Office a determinar quando o suplemento deverá ser ativado e onde ele deverá aparecer.</span><span class="sxs-lookup"><span data-stu-id="7d342-166">These settings help the Office host determine when your add-in should be activated and where the add-in should appear.</span></span> <span data-ttu-id="7d342-167">O Visual Studio gera o conteúdo desse arquivo para que você possa executar o projeto e usar o suplemento imediatamente.</span><span class="sxs-lookup"><span data-stu-id="7d342-167">Visual Studio generates the contents of this file for you so that you can run the project and use your add-in immediately.</span></span> <span data-ttu-id="7d342-168">Você pode alterar essas configurações a qualquer momento modificando o arquivo XML.</span><span class="sxs-lookup"><span data-stu-id="7d342-168">You can change these settings any time by modifying the XML file.</span></span>|
+|<span data-ttu-id="7d342-169">Projeto de aplicativo Web</span><span class="sxs-lookup"><span data-stu-id="7d342-169">Web application project</span></span>|<span data-ttu-id="7d342-p109">Contém as páginas de conteúdo do suplemento, incluindo todos os arquivos e referências de arquivo de que você precisa para desenvolver páginas HTML e JavaScript com reconhecimento do Office. Enquanto você desenvolve o suplemento, o Visual Studio hospeda o aplicativo Web no servidor IIS local. Quando estiver pronto para publicar, você precisará implantar este projeto de aplicativo Web em um servidor Web.</span><span class="sxs-lookup"><span data-stu-id="7d342-p109">Contains the content pages of your add-in, including all the files and file references that you need to develop Office-aware HTML and JavaScript pages. While you develop your add-in, Visual Studio hosts the web application on your local IIS server. When you're ready to publish the add-in, you'll need to deploy this web application project to a web server.</span></span>|
 
-### <a name="update-the-code"></a><span data-ttu-id="4e548-173">Atualizar o código</span><span class="sxs-lookup"><span data-stu-id="4e548-173">Update the code</span></span>
+### <a name="update-the-code"></a><span data-ttu-id="7d342-173">Atualizar o código</span><span class="sxs-lookup"><span data-stu-id="7d342-173">Update the code</span></span>
 
-1. <span data-ttu-id="4e548-174">**MessageRead.html** especifica o HTML que será renderizado no painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="4e548-174">**MessageRead.html** specifies the HTML that will be rendered in the add-in's task pane.</span></span> <span data-ttu-id="4e548-175">Em **MessageRead.html**, substitua o elemento `<body>` pela marcação a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="4e548-175">In **MessageRead.html**, replace the `<body>` element with the following markup and save the file.</span></span>
+1. <span data-ttu-id="7d342-174">**MessageRead.html** especifica o HTML que será renderizado no painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="7d342-174">**MessageRead.html** specifies the HTML that will be rendered in the add-in's task pane.</span></span> <span data-ttu-id="7d342-175">Em **MessageRead.html**, substitua o elemento `<body>` pela marcação a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="7d342-175">In **MessageRead.html**, replace the `<body>` element with the following markup and save the file.</span></span>
  
     ```HTML
     <body class="ms-font-m ms-welcome">
@@ -193,7 +193,7 @@ ms.locfileid: "43185446"
     </body>
     ```
 
-1. <span data-ttu-id="4e548-176">Abra o arquivo **MessageRead.js** na raiz do projeto do aplicativo Web.</span><span class="sxs-lookup"><span data-stu-id="4e548-176">Open the file **MessageRead.js** in the root of the web application project.</span></span> <span data-ttu-id="4e548-177">Este arquivo especifica o script do suplemento.</span><span class="sxs-lookup"><span data-stu-id="4e548-177">This file specifies the script for the add-in.</span></span> <span data-ttu-id="4e548-178">Substitua todo o conteúdo pelo código a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="4e548-178">Replace the entire contents with the following code and save the file.</span></span>
+1. <span data-ttu-id="7d342-176">Abra o arquivo **MessageRead.js** na raiz do projeto do aplicativo Web.</span><span class="sxs-lookup"><span data-stu-id="7d342-176">Open the file **MessageRead.js** in the root of the web application project.</span></span> <span data-ttu-id="7d342-177">Este arquivo especifica o script do suplemento.</span><span class="sxs-lookup"><span data-stu-id="7d342-177">This file specifies the script for the add-in.</span></span> <span data-ttu-id="7d342-178">Substitua todo o conteúdo pelo código a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="7d342-178">Replace the entire contents with the following code and save the file.</span></span>
 
     ```js
     'use strict';
@@ -218,7 +218,7 @@ ms.locfileid: "43185446"
     })();
     ```
 
-1. <span data-ttu-id="4e548-179">Abra o arquivo **MessageRead.css** na raiz do projeto do aplicativo Web.</span><span class="sxs-lookup"><span data-stu-id="4e548-179">Open the file **MessageRead.css** in the root of the web application project.</span></span> <span data-ttu-id="4e548-180">Este arquivo especifica os estilos personalizados para o suplemento.</span><span class="sxs-lookup"><span data-stu-id="4e548-180">This file specifies the custom styles for the add-in.</span></span> <span data-ttu-id="4e548-181">Substitua todo o conteúdo pelo código a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="4e548-181">Replace the entire contents with the following code and save the file.</span></span>
+1. <span data-ttu-id="7d342-179">Abra o arquivo **MessageRead.css** na raiz do projeto do aplicativo Web.</span><span class="sxs-lookup"><span data-stu-id="7d342-179">Open the file **MessageRead.css** in the root of the web application project.</span></span> <span data-ttu-id="7d342-180">Este arquivo especifica os estilos personalizados para o suplemento.</span><span class="sxs-lookup"><span data-stu-id="7d342-180">This file specifies the custom styles for the add-in.</span></span> <span data-ttu-id="7d342-181">Substitua todo o conteúdo pelo código a seguir e salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="7d342-181">Replace the entire contents with the following code and save the file.</span></span>
 
     ```CSS
     html,
@@ -238,17 +238,17 @@ ms.locfileid: "43185446"
     }
     ```
 
-### <a name="update-the-manifest"></a><span data-ttu-id="4e548-182">Atualizar o manifesto</span><span class="sxs-lookup"><span data-stu-id="4e548-182">Update the manifest</span></span>
+### <a name="update-the-manifest"></a><span data-ttu-id="7d342-182">Atualizar o manifesto</span><span class="sxs-lookup"><span data-stu-id="7d342-182">Update the manifest</span></span>
 
-1. <span data-ttu-id="4e548-p113">Abra o arquivo de manifesto XML do projeto do Suplemento. Este arquivo define as configurações e os recursos do suplemento.</span><span class="sxs-lookup"><span data-stu-id="4e548-p113">Open the XML manifest file in the Add-in project. This file defines the add-in's settings and capabilities.</span></span>
+1. <span data-ttu-id="7d342-p113">Abra o arquivo de manifesto XML do projeto do Suplemento. Este arquivo define as configurações e os recursos do suplemento.</span><span class="sxs-lookup"><span data-stu-id="7d342-p113">Open the XML manifest file in the Add-in project. This file defines the add-in's settings and capabilities.</span></span>
 
-1. <span data-ttu-id="4e548-p114">O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o com seu nome.</span><span class="sxs-lookup"><span data-stu-id="4e548-p114">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
+1. <span data-ttu-id="7d342-p114">O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o com seu nome.</span><span class="sxs-lookup"><span data-stu-id="7d342-p114">The `ProviderName` element has a placeholder value. Replace it with your name.</span></span>
 
-1. <span data-ttu-id="4e548-187">O atributo `DefaultValue` do elemento `DisplayName` tem um espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="4e548-187">The `DefaultValue` attribute of the `DisplayName` element has a placeholder.</span></span> <span data-ttu-id="4e548-188">Substitua-o por `My Office Add-in`.</span><span class="sxs-lookup"><span data-stu-id="4e548-188">Replace it with `My Office Add-in`.</span></span>
+1. <span data-ttu-id="7d342-187">O atributo `DefaultValue` do elemento `DisplayName` tem um espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="7d342-187">The `DefaultValue` attribute of the `DisplayName` element has a placeholder.</span></span> <span data-ttu-id="7d342-188">Substitua-o por `My Office Add-in`.</span><span class="sxs-lookup"><span data-stu-id="7d342-188">Replace it with `My Office Add-in`.</span></span>
 
-1. <span data-ttu-id="4e548-189">O atributo `DefaultValue` do elemento `Description` tem um espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="4e548-189">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="4e548-190">Substitua-o por `My First Outlook add-in`.</span><span class="sxs-lookup"><span data-stu-id="4e548-190">Replace it with `My First Outlook add-in`.</span></span>
+1. <span data-ttu-id="7d342-189">O atributo `DefaultValue` do elemento `Description` tem um espaço reservado.</span><span class="sxs-lookup"><span data-stu-id="7d342-189">The `DefaultValue` attribute of the `Description` element has a placeholder.</span></span> <span data-ttu-id="7d342-190">Substitua-o por `My First Outlook add-in`.</span><span class="sxs-lookup"><span data-stu-id="7d342-190">Replace it with `My First Outlook add-in`.</span></span>
 
-1. <span data-ttu-id="4e548-191">Salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="4e548-191">Save the file.</span></span>
+1. <span data-ttu-id="7d342-191">Salve o arquivo.</span><span class="sxs-lookup"><span data-stu-id="7d342-191">Save the file.</span></span>
 
     ```xml
     ...
@@ -260,34 +260,34 @@ ms.locfileid: "43185446"
     ...
     ```
 
-### <a name="try-it-out"></a><span data-ttu-id="4e548-192">Experimente</span><span class="sxs-lookup"><span data-stu-id="4e548-192">Try it out</span></span>
+### <a name="try-it-out"></a><span data-ttu-id="7d342-192">Experimente</span><span class="sxs-lookup"><span data-stu-id="7d342-192">Try it out</span></span>
 
-1. <span data-ttu-id="4e548-193">Usando o Visual Studio, teste o suplemento do Outlook recém-criado ao pressionar F5 ou o botão **Iniciar**.</span><span class="sxs-lookup"><span data-stu-id="4e548-193">Using Visual Studio, test the newly created Outlook add-in by pressing F5 or choosing the **Start** button.</span></span> <span data-ttu-id="4e548-194">O suplemento será hospedado localmente no IIS.</span><span class="sxs-lookup"><span data-stu-id="4e548-194">The add-in will be hosted locally on IIS.</span></span>
+1. <span data-ttu-id="7d342-193">Usando o Visual Studio, teste o suplemento do Outlook recém-criado ao pressionar F5 ou o botão **Iniciar**.</span><span class="sxs-lookup"><span data-stu-id="7d342-193">Using Visual Studio, test the newly created Outlook add-in by pressing F5 or choosing the **Start** button.</span></span> <span data-ttu-id="7d342-194">O suplemento será hospedado localmente no IIS.</span><span class="sxs-lookup"><span data-stu-id="7d342-194">The add-in will be hosted locally on IIS.</span></span>
 
-1. <span data-ttu-id="4e548-195">Na caixa de diálogo**Conectar-se à conta de email do Exchange**, digite o endereço de email e senha da sua [conta da Microsoft](https://account.microsoft.com/account) e, em seguida, escolha **Conectar**.</span><span class="sxs-lookup"><span data-stu-id="4e548-195">In the **Connect to Exchange email account** dialog box, enter the email address and password for your [Microsoft account](https://account.microsoft.com/account) and then choose **Connect**.</span></span> <span data-ttu-id="4e548-196">Quando a página de login do Outlook.com for aberta em um navegador, entre em sua conta de email com as mesmas credenciais que você inseriu anteriormente.</span><span class="sxs-lookup"><span data-stu-id="4e548-196">When the Outlook.com login page opens in a browser, sign in to your email account with the same credentials as you entered previously.</span></span>
+1. <span data-ttu-id="7d342-195">Na caixa de diálogo**Conectar-se à conta de email do Exchange**, digite o endereço de email e senha da sua [conta da Microsoft](https://account.microsoft.com/account) e, em seguida, escolha **Conectar**.</span><span class="sxs-lookup"><span data-stu-id="7d342-195">In the **Connect to Exchange email account** dialog box, enter the email address and password for your [Microsoft account](https://account.microsoft.com/account) and then choose **Connect**.</span></span> <span data-ttu-id="7d342-196">Quando a página de login do Outlook.com for aberta em um navegador, entre em sua conta de email com as mesmas credenciais que você inseriu anteriormente.</span><span class="sxs-lookup"><span data-stu-id="7d342-196">When the Outlook.com login page opens in a browser, sign in to your email account with the same credentials as you entered previously.</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="4e548-197">Se a caixa de diálogo **Conectar a uma conta de email do Exchange** repetidamente solicitar que você entre, a Autenticação Básica poderá ser desabilitada para contas no locatário do Office 365.</span><span class="sxs-lookup"><span data-stu-id="4e548-197">If the **Connect to Exchange email account** dialog box repeatedly prompts you to sign in, Basic Auth may be disabled for accounts on your Office 365 tenant.</span></span> <span data-ttu-id="4e548-198">Para testar esse suplemento, entre usando uma [Conta da Microsoft](https://account.microsoft.com/account).</span><span class="sxs-lookup"><span data-stu-id="4e548-198">To test this add-in, sign in using a [Microsoft account](https://account.microsoft.com/account) instead.</span></span>
+    > <span data-ttu-id="7d342-197">Se a caixa de diálogo **Conectar a uma conta de email do Exchange** repetidamente solicitar que você entre, a Autenticação Básica poderá ser desabilitada para contas no locatário do Office 365.</span><span class="sxs-lookup"><span data-stu-id="7d342-197">If the **Connect to Exchange email account** dialog box repeatedly prompts you to sign in, Basic Auth may be disabled for accounts on your Office 365 tenant.</span></span> <span data-ttu-id="7d342-198">Para testar esse suplemento, entre usando uma [Conta da Microsoft](https://account.microsoft.com/account).</span><span class="sxs-lookup"><span data-stu-id="7d342-198">To test this add-in, sign in using a [Microsoft account](https://account.microsoft.com/account) instead.</span></span>
 
-1. <span data-ttu-id="4e548-199">No Outlook na Web, escolha ou abra uma mensagem.</span><span class="sxs-lookup"><span data-stu-id="4e548-199">In Outlook on the web, select or open a message.</span></span>
+1. <span data-ttu-id="7d342-199">No Outlook na Web, escolha ou abra uma mensagem.</span><span class="sxs-lookup"><span data-stu-id="7d342-199">In Outlook on the web, select or open a message.</span></span>
 
-1. <span data-ttu-id="4e548-200">Dentro da mensagem, localize as reticências do menu de estouro que contém o botão do suplemento.</span><span class="sxs-lookup"><span data-stu-id="4e548-200">Within the message, locate the ellipsis for the overflow menu containing the add-in's button.</span></span>
+1. <span data-ttu-id="7d342-200">Dentro da mensagem, localize as reticências do menu de estouro que contém o botão do suplemento.</span><span class="sxs-lookup"><span data-stu-id="7d342-200">Within the message, locate the ellipsis for the overflow menu containing the add-in's button.</span></span>
 
     ![Uma captura de tela de uma janela de mensagem do Outlook na Web com as reticências realçadas](../images/quick-start-button-owa-1.png)
 
-1. <span data-ttu-id="4e548-202">No menu estouro, localize o botão do suplemento.</span><span class="sxs-lookup"><span data-stu-id="4e548-202">Within the overflow menu, locate the add-in's button.</span></span>
+1. <span data-ttu-id="7d342-202">No menu estouro, localize o botão do suplemento.</span><span class="sxs-lookup"><span data-stu-id="7d342-202">Within the overflow menu, locate the add-in's button.</span></span>
 
     ![Uma captura de tela de uma janela de mensagem do Outlook na Web com o botão do suplemento realçado](../images/quick-start-button-owa-2.png)
 
-1. <span data-ttu-id="4e548-204">Clique no botão para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="4e548-204">Click the button to open the add-in's task pane.</span></span>
+1. <span data-ttu-id="7d342-204">Clique no botão para abrir o painel de tarefas do suplemento.</span><span class="sxs-lookup"><span data-stu-id="7d342-204">Click the button to open the add-in's task pane.</span></span>
 
     ![Uma captura de tela do painel de tarefas do suplemento no Outlook na Web exibindo as propriedades da mensagem](../images/quick-start-task-pane-owa-1.png)
 
     > [!NOTE]
-    > <span data-ttu-id="4e548-206">Se o painel de tarefas não carregar, tente verificar abrindo-o em um navegador no mesmo computador.</span><span class="sxs-lookup"><span data-stu-id="4e548-206">If the task pane doesn't load, try to verify by opening it in a browser on the same machine.</span></span>
+    > <span data-ttu-id="7d342-206">Se o painel de tarefas não carregar, tente verificar abrindo-o em um navegador no mesmo computador.</span><span class="sxs-lookup"><span data-stu-id="7d342-206">If the task pane doesn't load, try to verify by opening it in a browser on the same machine.</span></span>
 
-### <a name="next-steps"></a><span data-ttu-id="4e548-207">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="4e548-207">Next steps</span></span>
+### <a name="next-steps"></a><span data-ttu-id="7d342-207">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="7d342-207">Next steps</span></span>
 
-<span data-ttu-id="4e548-208">Parabéns, você criou o seu primeiro suplemento do painel de tarefas do Outlook!</span><span class="sxs-lookup"><span data-stu-id="4e548-208">Congratulations, you've successfully created your first Outlook task pane add-in!</span></span> <span data-ttu-id="4e548-209">Em seguida, saiba mais sobre como [desenvolver suplementos do Office com o Visual Studio](../develop/develop-add-ins-visual-studio.md).</span><span class="sxs-lookup"><span data-stu-id="4e548-209">Next, learn more about [developing Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).</span></span>
+<span data-ttu-id="7d342-208">Parabéns, você criou o seu primeiro suplemento do painel de tarefas do Outlook!</span><span class="sxs-lookup"><span data-stu-id="7d342-208">Congratulations, you've successfully created your first Outlook task pane add-in!</span></span> <span data-ttu-id="7d342-209">Em seguida, saiba mais sobre como [desenvolver suplementos do Office com o Visual Studio](../develop/develop-add-ins-visual-studio.md).</span><span class="sxs-lookup"><span data-stu-id="7d342-209">Next, learn more about [developing Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).</span></span>
 
 ---
