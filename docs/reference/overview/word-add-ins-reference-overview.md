@@ -4,12 +4,12 @@ description: Visão geral da API JavaScript do Word.
 ms.date: 02/19/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 75670e4be045ccd6d7b29e43e4faaa7688f8058d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: efcf963e311f57aab781e1b71c0cd45d4655928f
+ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612126"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "44679294"
 ---
 # <a name="word-javascript-api-overview"></a>Visão geral da API JavaScript do Word
 
@@ -39,7 +39,7 @@ Use o [Script Lab](../../overview/explore-with-script-lab.md) para começar a tr
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação de suplementos do Word](../../word/index.md)
+- [Documentação de suplementos do Word](../../word/index.yml)
 - [Visão geral dos suplementos do Word](../../word/word-add-ins-programming-overview.md)
 - [Referências da API JavaScript do Word](/javascript/api/word)
 - [Disponibilidade de host e plataforma para suplementos do Office](../../overview/office-add-in-availability.md)

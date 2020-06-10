@@ -4,12 +4,12 @@ description: Visão geral da API JavaScript do PowerPoint
 ms.date: 07/05/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 8a35d178f9c00d138de4386d7308c01ddbef51d2
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: d04a30013cabc11a3f20ba7becf833b8d582a11b
+ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612147"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "44679322"
 ---
 # <a name="javascript-api-for-powerpoint"></a>API JavaScript para PowerPoint
 
@@ -35,7 +35,7 @@ Use o [Script Lab](../../overview/explore-with-script-lab.md) para começar a tr
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação de suplementos do PowerPoint](../../powerpoint/index.md)
+- [Documentação de suplementos do PowerPoint](../../powerpoint/index.yml)
 - [Visão geral dos Suplementos do SharePoint](../../powerpoint/powerpoint-add-ins.md)
 - [Referência da API JavaScript do PowerPoint](/javascript/api/powerpoint)
 - [Disponibilidade de host e plataforma para suplementos do Office](../../overview/office-add-in-availability.md)

@@ -3,12 +3,12 @@ title: Criando Suplementos do Office
 description: Uma introdução ao desenvolvimento de Suplementos do Office.
 ms.date: 02/27/2020
 localization_priority: Priority
-ms.openlocfilehash: 85f743756d552234e4ff18fd250b18904a9f63c4
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9ef552698bb0e9d71076b38d0ea3af49eee408d7
+ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611966"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "44679392"
 ---
 # <a name="building-office-add-ins"></a>Criando Suplementos do Office
 
@@ -119,7 +119,7 @@ Este artigo descreveu as diferentes maneiras de criar suplementos do Office, apr
 
 ### <a name="create-an-office-add-in"></a>Criar um suplemento do Office
 
-Você pode criar rapidamente um suplemento básico para o Excel, o OneNote, o Outlook, o PowerPoint, o Project ou o Word realizando um [início rápido de 5 minutos](../index.md). Se você já concluiu um início rápido e deseja criar um suplemento um pouco mais complexo, experiente o [tutorial](../index.md).
+Você pode criar rapidamente um suplemento básico para o Excel, o OneNote, o Outlook, o PowerPoint, o Project ou o Word realizando um [início rápido de 5 minutos](/office/dev/add-ins/). Se você já concluiu um início rápido e deseja criar um suplemento um pouco mais complexo, experiente o [tutorial](/office/dev/add-ins/).
 
 ### <a name="explore-the-apis-with-script-lab"></a>Explorar as APIs com o Script Lab
 
@@ -130,7 +130,7 @@ Explore a biblioteca de amostras internas no [Script Lab](explore-with-script-la
 Saiba mais sobre o desenvolvimento, testes e publicação de suplementos do Office explorando essa documentação.
 
 > [!TIP]
-> Para qualquer suplemento que você criar, use as informações na seção [Principais conceitos](core-concepts-office-add-ins.md) desta documentação, juntamente com as informações na seção específica do host que correspondem ao tipo de suplemento que você está criando (por exemplo, [Excel](../excel/index.md)).
+> Para qualquer suplemento que você criar, use as informações na seção [Principais conceitos](core-concepts-office-add-ins.md) desta documentação, juntamente com as informações na seção específica do host que correspondem ao tipo de suplemento que você está criando (por exemplo, [Excel](../excel/index.yml)).
 >
 > ![Uma imagem que mostra o sumário](../images/top-level-toc.png)
 

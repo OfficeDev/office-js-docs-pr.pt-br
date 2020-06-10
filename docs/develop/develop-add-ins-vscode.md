@@ -3,12 +3,12 @@ title: Desenvolver Suplementos do Office com o Código do Visual Studio
 description: Como desenvolver Suplementos do Office com o Código do Visual Studio
 ms.date: 01/16/2020
 localization_priority: Priority
-ms.openlocfilehash: 0aef01c5b892a0cf08254ca8ffd9dd751b993139
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 4e4d979e8a3174a4e772534255d2f9719338a4f3
+ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608297"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "44679266"
 ---
 # <a name="develop-office-add-ins-with-visual-studio-code"></a>Desenvolver Suplementos do Office com o Código do Visual Studio
 
@@ -27,7 +27,7 @@ Este artigo descreve como usar [o Código do Visual Studio (VS Code)](https://co
 
 Se você estiver usando o VS Code como o seu ambiente de desenvolvimento integrado (IDE), crie o projeto do Suplemento do Office com o [Gerador Yeoman para Suplementos do Office](https://github.com/OfficeDev/generator-office). O gerador Yeoman cria um projeto Node.js que pode ser gerenciado com o VS Code ou qualquer outro editor. 
 
-Para criar um Suplemento do Office com o gerador Yeoman, siga as instruções em[início rápido em 5 minutos](../index.md) que corresponda ao tipo de suplemento que você deseja criar.
+Para criar um Suplemento do Office com o gerador Yeoman, siga as instruções em[início rápido em 5 minutos](/office/dev/add-ins/) que corresponda ao tipo de suplemento que você deseja criar.
 
 ## <a name="develop-the-add-in-using-vs-code"></a>Desenvolver o suplemento usando o VS Code
 
@@ -36,7 +36,7 @@ Quando o gerador Yeoman terminar de criar o projeto do suplemento, abra a pasta 
 > [!TIP]
 > No Windows, navegue até o diretório raiz do projeto por meio da linha de comando e, em seguida, insira `code .` para abrir essa pasta no VS Code. No Mac, você precisará [adicionar o comando `code` ao caminho](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) antes de poder usá-lo para abrir a pasta do projeto no VS Code.
 
-O gerador Yeoman cria um suplemento básico com funcionalidade limitada. Você pode personalizar o suplemento editando o [manifesto](add-in-manifests.md), HTML, JavaScript ou TypeScript e arquivos CSS no VS Code. Para obter uma descrição de alto nível sobre a estrutura e os arquivos do projeto no projeto de suplemento que o gerador de Yeoman cria, confira o tópico diretrizes do gerador Yeoman dentro em [Início rápido em 5 minutos](../index.md) que corresponda ao tipo de suplemento que você criou.
+O gerador Yeoman cria um suplemento básico com funcionalidade limitada. Você pode personalizar o suplemento editando o [manifesto](add-in-manifests.md), HTML, JavaScript ou TypeScript e arquivos CSS no VS Code. Para obter uma descrição de alto nível sobre a estrutura e os arquivos do projeto no projeto de suplemento que o gerador de Yeoman cria, confira o tópico diretrizes do gerador Yeoman dentro em [Início rápido em 5 minutos](/office/dev/add-ins/) que corresponda ao tipo de suplemento que você criou.
 
 ## <a name="test-and-debug-the-add-in"></a>Testar e depurar o suplemento
 

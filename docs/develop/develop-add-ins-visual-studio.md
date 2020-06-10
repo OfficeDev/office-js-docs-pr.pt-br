@@ -3,12 +3,12 @@ title: Desenvolver Suplementos do Office com o Visual Studio
 description: Como desenvolver Suplementos do Office com o Visual Studio
 ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: 198a277d56d499b2b2cfef84667ceefccec81a72
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: cf8ed9d47840115f22641d0c4b6c6426e3a01a11
+ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608324"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "44679246"
 ---
 # <a name="develop-office-add-ins-with-visual-studio"></a>Desenvolver Suplementos do Office com o Visual Studio
 
@@ -35,7 +35,7 @@ O Visual Studio cria um suplemento básico com funcionalidade limitada. Você po
 > [!TIP]
 > Como um suplemento do Office é um aplicativo da Web, você precisará de pelo menos habilidades básicas de desenvolvimento na Web para personalizar seu suplemento. Se você não conhece o JavaScript, recomendamos que revise o [tutorial do Mozilla JavaScript](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Introduction).
 
-Para personalizar o seu suplemento, você precisará compreender os conceitos descritos na área [Conceitos básicos > Desenvolver](develop-overview.md) dessa documentação, além dos conceitos descritos na área de documentação específica do host que corresponde ao suplemento que você está criando (por exemplo, o [Excel](../excel/index.md)). 
+Para personalizar o seu suplemento, você precisará compreender os conceitos descritos na área [Conceitos básicos > Desenvolver](develop-overview.md) dessa documentação, além dos conceitos descritos na área de documentação específica do host que corresponde ao suplemento que você está criando (por exemplo, o [Excel](../excel/index.yml)). 
 
 ## <a name="test-and-debug-the-add-in"></a>Testar e depurar o suplemento
 
