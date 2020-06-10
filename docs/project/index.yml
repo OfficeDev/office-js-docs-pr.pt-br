@@ -1,0 +1,63 @@
+### YamlMime:Landing
+title: Documentação de suplementos do Project
+summary: Com os suplementos do Project, é possível usar tecnologias de Web conhecidas, como HTML, CSS e JavaScript, para criar uma solução que possa ser executada no Project no Windows. Saiba como criar, testar, depurar e publicar suplementos do Project.
+metadata:
+  title: Documentação de Suplementos do Project
+  description: Recursos para saber mais sobre suplementos do Project.
+  ms.prod: project
+  ms.topic: landing-page
+  ms.date: 06/08/2020
+  localization_priority: Priority
+  ms.openlocfilehash: 77a49026234bf1c2e8487a7b56af0940ead6813f
+  ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+  ms.translationtype: MT
+  ms.contentlocale: pt-BR
+  ms.lasthandoff: 06/10/2020
+  ms.locfileid: "44679408"
+landingContent:
+- title: Sobre os suplementos do Project
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: O que são suplementos do Project?
+      url: project-add-ins.md
+    - text: JavaScript API para Project
+      url: ../reference/overview/project-add-ins-reference-overview.md
+  - linkListType: quickstart
+    links:
+    - text: Criar o seu primeiro suplemento do Project
+      url: ../quickstarts/project-quickstart.md
+  - linkListType: how-to-guide
+    links:
+    - text: Testar e depurar suplementos do Project
+      url: ../testing/test-debug-office-add-ins.md
+    - text: Implantar e publicar suplementos do Project
+      url: ../publish/publish.md
+- title: Principais conceitos de suplementos do Office
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Visão geral da plataforma de Suplementos do Office
+      url: ../overview/office-add-ins.md
+  - linkListType: get-started
+    links:
+    - text: Criando Suplementos do Office
+      url: ../overview/office-add-ins-fundamentals.md
+    - text: Principais conceitos dos Suplementos do Office
+      url: ../overview/core-concepts-office-add-ins.md
+    - text: Fazer o design de Suplementos do Office
+      url: ../design/add-in-design.md
+    - text: 'Desenvolver Suplementos do Office '
+      url: ../develop/develop-overview.md
+- title: Recursos
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Tire dúvidas
+      url: https://stackoverflow.com/questions/tagged/office-js
+    - text: Solicitar recursos
+      url: https://officespdev.uservoice.com/
+    - text: Relatar problemas
+      url: https://github.com/officedev/office-js/issues
+    - text: Recursos adicionais de suplementos do Office
+      url: ../resources/resources-links-help.md

@@ -3,12 +3,12 @@ title: Defina seu ambiente de desenvolvimento
 description: Configurar seu ambiente de desenvolvedor para criar suplementos do Office
 ms.date: 04/03/2020
 localization_priority: Normal
-ms.openlocfilehash: 6c3f533b56cafc8300837cc835b26361490afedb
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f44f8e48aec402f0ffa6327732613a902ea0cfe6
+ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611951"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "44679350"
 ---
 # <a name="set-up-your-development-environment"></a>Defina seu ambiente de desenvolvimento
 
@@ -63,7 +63,7 @@ Tente criar seu próprio suplemento ou use o script Lab para experimentar exempl
 
 ### <a name="create-an-office-add-in"></a>Criar um suplemento do Office
 
-Você pode criar rapidamente um suplemento básico para o Excel, o OneNote, o Outlook, o PowerPoint, o Project ou o Word realizando um [início rápido de 5 minutos](../index.md). Se você já concluiu um início rápido e deseja criar um suplemento um pouco mais complexo, experiente o [tutorial](../index.md).
+Você pode criar rapidamente um suplemento básico para o Excel, o OneNote, o Outlook, o PowerPoint, o Project ou o Word realizando um [início rápido de 5 minutos](/office/dev/add-ins/). Se você já concluiu um início rápido e deseja criar um suplemento um pouco mais complexo, experiente o [tutorial](/office/dev/add-ins/).
 
 ### <a name="explore-the-apis-with-script-lab"></a>Explorar as APIs com o Script Lab
 

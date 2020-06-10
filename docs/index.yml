@@ -1,0 +1,90 @@
+### YamlMime:Landing
+title: Documentação de Suplementos do Office
+summary: Use a plataforma de suplementos do Office para criar soluções que estendem os aplicativos do Office e interagem com conteúdo nos documentos do Office. Com os suplementos do Office, você pode usar tecnologias familiares da Web, como HTML, CSS e JavaScript, para criar soluções que podem ser executadas no Office na Web, Windows, Mac e iPad.
+metadata:
+  title: Documentação de Suplementos do Office
+  description: Saiba como criar suplementos do Office.
+  ms.prod: non-product-specific
+  ms.topic: landing-page
+  author: o365devx
+  ms.author: o365devx
+  ms.date: 06/09/2020
+  ms.openlocfilehash: 72bad801f05ae7315476abebaea0f8391d57ea42
+  ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+  ms.translationtype: MT
+  ms.contentlocale: pt-BR
+  ms.lasthandoff: 06/10/2020
+  ms.locfileid: "44679412"
+landingContent:
+- title: Sobre os Suplementos do Office
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Principais conceitos
+      url: overview/office-add-ins.md
+  - linkListType: overview
+    links:
+    - text: Documentação de suplementos do Excel
+      url: excel/index.yml
+    - text: Documentação de suplementos do OneNote
+      url: onenote/index.yml
+    - text: Documentação de suplementos do Outlook
+      url: outlook/index.yml
+    - text: Documentação de suplementos do PowerPoint
+      url: powerpoint/index.yml
+    - text: Documentação de suplementos do Project
+      url: project/index.yml
+    - text: Documentação de suplementos do Word
+      url: word/index.yml
+- title: Introdução
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Introdução aos Suplementos do Office
+      url: overview/learning-path-beginner.md
+    - text: Explore a API JavaScript do Office usando o Script Lab
+      url: overview/explore-with-script-lab.md
+  - linkListType: quickstart
+    links:
+    - text: Início rápido do suplemento do Excel
+      url: quickstarts/excel-quickstart-jquery.md
+    - text: Início rápido de funções personalizadas do Excel
+      url: quickstarts/excel-custom-functions-quickstart.md
+    - text: Início rápido do suplemento do OneNote
+      url: quickstarts/onenote-quickstart.md
+    - text: Início rápido do suplemento do Outlook
+      url: quickstarts/outlook-quickstart.md
+    - text: Início rápido do suplemento do PowerPoint
+      url: quickstarts/powerpoint-quickstart.md
+    - text: Início rápido do suplemento do Project
+      url: quickstarts/project-quickstart.md
+    - text: Início rápido do suplemento do Word
+      url: quickstarts/word-quickstart.md
+    - text: Início rápido logon único (SSO).
+      url: quickstarts/sso-quickstart.md
+- title: Tutoriais
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Tutorial de suplemento do Excel
+      url: tutorials/excel-tutorial.md
+    - text: Tutorial de funções personalizadas do Excel
+      url: tutorials/excel-tutorial-create-custom-functions.md
+    - text: Tutorial de suplemento do Outlook
+      url: tutorials/outlook-tutorial.md
+    - text: Tutorial de suplemento do PowerPoint
+      url: tutorials/powerpoint-tutorial.md
+    - text: Tutorial de suplemento do Word
+      url: tutorials/word-tutorial.md
+- title: Recursos
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Tire dúvidas
+      url: https://stackoverflow.com/questions/tagged/office-js
+    - text: Relatar problemas
+      url: https://github.com/officedev/office-js/issues
+    - text: Solicitar recursos
+      url: https://officespdev.uservoice.com/
+    - text: Documentação dos suplementos COM ou VSTO
+      url: /office/client-developer/office-client-development

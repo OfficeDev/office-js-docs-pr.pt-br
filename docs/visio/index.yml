@@ -1,0 +1,43 @@
+### YamlMime:Landing
+title: Documentação do Visio
+summary: Você pode usar as APIs JavaScript do Visio para inserir diagramas do Visio no SharePoint Online. Saiba como usar as APIs JavaScript do Visio com o Visio na Web para desenvolver suas soluções para o SharePoint Online.
+metadata:
+  title: Documentação do Visio
+  description: Recursos para aprender sobre como incorporar diagramas do Visio no SharePoint.
+  ms.prod: visio
+  ms.topic: landing-page
+  ms.date: 06/09/2020
+  localization_priority: Priority
+  ms.openlocfilehash: a58aedff61bd2edf52b6b2b3a748c7206c8af9c3
+  ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+  ms.translationtype: MT
+  ms.contentlocale: pt-BR
+  ms.lasthandoff: 06/10/2020
+  ms.locfileid: "44679406"
+landingContent:
+- title: Sobre a API JavaScript do Visio
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: O que é API JavaScript do Visio?
+      url: ../reference/overview/visio-javascript-reference-overview.md
+  - linkListType: get-started
+    links:
+    - text: Criar um script que exibe o texto da forma selecionada
+      url: ../reference/overview/visio-javascript-reference-overview.md#get-started
+  - linkListType: reference
+    links:
+    - text: Explorar a API JavaScript do Visio
+      url: /javascript/api/visio
+- title: Recursos
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Tire dúvidas
+      url: https://stackoverflow.com/questions/tagged/office-js
+    - text: Solicitar recursos
+      url: https://officespdev.uservoice.com/
+    - text: Relatar problemas
+      url: https://github.com/officedev/office-js/issues
+    - text: Recursos adicionais de suplementos do Office
+      url: ../resources/resources-links-help.md

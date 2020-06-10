@@ -1,0 +1,65 @@
+### YamlMime:Landing
+title: Documentação de suplementos do Outlook
+summary: Com os suplementos do Outlook, você pode usar tecnologias da Web conhecidas, como HTML, CSS e JavaScript, para criar uma solução que possa ser executada no Outlook em várias plataformas, incluindo na Web, Windows, Mac e iOS. Saiba como criar, testar, depurar e publicar suplementos do Outlook.
+metadata:
+  title: Documentação de suplementos do Outlook
+  description: Recursos para saber mais sobre suplementos do Outlook.
+  ms.prod: outlook
+  ms.topic: landing-page
+  ms.date: 06/08/2020
+  localization_priority: Priority
+  ms.openlocfilehash: 785265171dfe7d7c214ad8b731ba0a1aefdeb282
+  ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+  ms.translationtype: MT
+  ms.contentlocale: pt-BR
+  ms.lasthandoff: 06/10/2020
+  ms.locfileid: "44679410"
+landingContent:
+- title: Sobre suplementos do Outlook
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: O que são suplementos do Outlook?
+      url: outlook-add-ins-overview.md
+  - linkListType: quickstart
+    links:
+    - text: Criar seu primeiro suplemento do Outlook
+      url: ../quickstarts/outlook-quickstart.md
+    - text: Explore a API JavaScript do Office usando o Script Lab
+      url: ../overview/explore-with-script-lab.md
+  - linkListType: how-to-guide
+    links:
+    - text: Usar a API JavaScript do Outlook para interagir com objetos
+      url: apis.md
+    - text: Testar e depurar um suplemento do Outlook
+      url: ../testing/test-debug-office-add-ins.md
+    - text: Implantar e publicar um suplemento do Outlook
+      url: ../publish/publish.md
+- title: Principais conceitos de suplementos do Office
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Visão geral da plataforma de Suplementos do Office
+      url: ../overview/office-add-ins.md
+  - linkListType: concept
+    links:
+    - text: Criando Suplementos do Office
+      url: ../overview/office-add-ins-fundamentals.md
+    - text: Principais conceitos dos Suplementos do Office
+      url: ../overview/core-concepts-office-add-ins.md
+    - text: Fazer o design de Suplementos do Office
+      url: ../design/add-in-design.md
+    - text: 'Desenvolver Suplementos do Office '
+      url: ../develop/develop-overview.md
+- title: Recursos
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Tire dúvidas
+      url: https://stackoverflow.com/questions/tagged/office-js
+    - text: Solicitar recursos
+      url: https://officespdev.uservoice.com/
+    - text: Relatar problemas
+      url: https://github.com/officedev/office-js/issues
+    - text: Recursos adicionais de suplementos do Office
+      url: ../resources/resources-links-help.md

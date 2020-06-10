@@ -3,12 +3,12 @@ title: Limpar o cache do Office
 description: Saiba como limpar o cache do Office em seu computador.
 ms.date: 05/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 60edfd22283a67255640dde1a986b5016c411980
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: c48f3ed6f4c2f5f246341b6b878a725a54758bbe
+ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611250"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "44679399"
 ---
 # <a name="clear-the-office-cache"></a>Limpar o cache do Office
 
@@ -29,7 +29,7 @@ Para remover um suplemento do suplementos foi feito do Outlook, use as etapas de
 Além disso, para limpar o cache do Office no Windows 10 quando o suplemento estiver sendo executado no Microsoft Edge, você pode usar o Microsoft Edge DevTools.
 
 > [!TIP]
-> Se você quer apenas que o suplemento sideloaded reflita alterações recentes em seus arquivos de origem HTML ou JavaScript, não deverá ser necessário usar as etapas a seguir para limpar o cache. Em vez disso, coloque o foco no painel de tarefas do suplemento (clicando em qualquer lugar no painel de tarefas) e, em seguida, pressione **F5** para recarregar o suplemento.
+> Se você quiser que o suplemento do suplementos foi feito reflita alterações recentes em seus arquivos de origem HTML ou JavaScript, você não precisará limpar o cache. Em vez disso, coloque o foco no painel de tarefas do suplemento (clicando em qualquer lugar no painel de tarefas) e, em seguida, pressione **F5** para recarregar o suplemento.
 
 > [!NOTE]
 > Para limpar o cache do Office usando as etapas a seguir, seu suplemento deve ter um painel de tarefas. Se o seu suplemento for um suplemento sem interface de usuário, por exemplo, um que use o recurso [em envio](../outlook/outlook-on-send-addins.md), você precisará adicionar um painel de tarefas ao seu suplemento que use o mesmo domínio para [SourceLocation](../reference/manifest/sourcelocation.md), antes de poder usar as etapas a seguir para limpar o cache.
