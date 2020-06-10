@@ -1,0 +1,63 @@
+### YamlMime:Landing
+title: Documentação de suplementos do OneNote
+summary: Com os suplementos do OneNote, você pode usar tecnologias de Web conhecidas, como HTML, CSS e JavaScript, para criar uma solução que possa ser executada no OneNote no Windows. Saiba como criar, testar, depurar e publicar suplementos do OneNote.
+metadata:
+  title: Documentação de suplementos do OneNote
+  description: Recursos para saber mais sobre suplementos do OneNote.
+  ms.prod: onenote
+  ms.topic: landing-page
+  ms.date: 06/08/2020
+  localization_priority: Priority
+  ms.openlocfilehash: e7860e0e6b1378cce3db46434b1da5931754eec6
+  ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+  ms.translationtype: MT
+  ms.contentlocale: pt-BR
+  ms.lasthandoff: 06/10/2020
+  ms.locfileid: "44679411"
+landingContent:
+- title: Sobre os suplementos do OneNote
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: O que são suplementos do OneNote?
+      url: onenote-add-ins-programming-overview.md
+  - linkListType: quickstart
+    links:
+    - text: Criar o seu primeiro suplemento do OneNote
+      url: ../quickstarts/onenote-quickstart.md
+  - linkListType: how-to-guide
+    links:
+    - text: Usar a API JavaScript do OneNote para interagir com os objetos e o conteúdo do bloco de anotações
+      url: ../reference/overview/onenote-add-ins-javascript-reference.md
+    - text: Testar e depurar um suplemento do OneNote
+      url: ../testing/test-debug-office-add-ins.md
+    - text: Implantar e publicar um suplemento do OneNote
+      url: ../publish/publish.md
+- title: Principais conceitos de suplementos do Office
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Visão geral da plataforma de Suplementos do Office
+      url: ../overview/office-add-ins.md
+  - linkListType: concept
+    links:
+    - text: Criando Suplementos do Office
+      url: ../overview/office-add-ins-fundamentals.md
+    - text: Principais conceitos dos Suplementos do Office
+      url: ../overview/core-concepts-office-add-ins.md
+    - text: Fazer o design de Suplementos do Office
+      url: ../design/add-in-design.md
+    - text: 'Desenvolver Suplementos do Office '
+      url: ../develop/develop-overview.md
+- title: Recursos
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Tire dúvidas
+      url: https://stackoverflow.com/questions/tagged/office-js
+    - text: Solicitar recursos
+      url: https://officespdev.uservoice.com/
+    - text: Relatar problemas
+      url: https://github.com/officedev/office-js/issues
+    - text: Recursos adicionais de suplementos do Office
+      url: ../resources/resources-links-help.md

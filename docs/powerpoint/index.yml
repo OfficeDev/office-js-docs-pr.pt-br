@@ -1,0 +1,65 @@
+### YamlMime:Landing
+title: Documentação de suplementos do PowerPoint
+summary: Com os suplementos do PowerPoint, você pode usar tecnologias da Web conhecidas, como HTML, CSS e JavaScript, para criar uma solução que possa ser executada no PowerPoint em várias plataformas, incluindo na Web, Windows, Mac e iPad. Saiba como criar, testar, depurar e publicar suplementos do PowerPoint.
+metadata:
+  title: Documentação de suplementos do PowerPoint
+  description: Recursos para saber mais sobre suplementos do PowerPoint.
+  ms.prod: powerpoint
+  ms.topic: landing-page
+  ms.date: 06/08/2020
+  localization_priority: Priority
+  ms.openlocfilehash: 1b8b81f939322d9276e47003ec3e8a5765c9790b
+  ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+  ms.translationtype: MT
+  ms.contentlocale: pt-BR
+  ms.lasthandoff: 06/10/2020
+  ms.locfileid: "44679409"
+landingContent:
+- title: Sobre os suplementos do PowerPoint
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: O que são suplementos do PowerPoint?
+      url: powerpoint-add-ins.md
+    - text: API JavaScript para PowerPoint
+      url: ../reference/overview/powerpoint-add-ins-reference-overview.md
+  - linkListType: quickstart
+    links:
+    - text: Crie o seu primeiro suplemento do PowerPoint
+      url: ../quickstarts/powerpoint-quickstart.md
+    - text: Explore a API JavaScript do Office usando o Script Lab
+      url: ../overview/explore-with-script-lab.md
+  - linkListType: how-to-guide
+    links:
+    - text: Testar e depurar os suplementos do PowerPoint
+      url: ../testing/test-debug-office-add-ins.md
+    - text: Implantar e publicar um suplemento do PowerPoint
+      url: ../publish/publish.md
+- title: Principais conceitos de suplementos do Office
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Visão geral da plataforma de Suplementos do Office
+      url: ../overview/office-add-ins.md
+  - linkListType: get-started
+    links:
+    - text: Criando Suplementos do Office
+      url: ../overview/office-add-ins-fundamentals.md
+    - text: Principais conceitos dos Suplementos do Office
+      url: ../overview/core-concepts-office-add-ins.md
+    - text: Fazer o design de Suplementos do Office
+      url: ../design/add-in-design.md
+    - text: 'Desenvolver Suplementos do Office '
+      url: ../develop/develop-overview.md
+- title: Recursos
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Tire dúvidas
+      url: https://stackoverflow.com/questions/tagged/office-js
+    - text: Solicitar recursos
+      url: https://officespdev.uservoice.com/
+    - text: Relatar problemas
+      url: https://github.com/officedev/office-js/issues
+    - text: Recursos adicionais de suplementos do Office
+      url: ../resources/resources-links-help.md

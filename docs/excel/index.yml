@@ -1,0 +1,67 @@
+### YamlMime:Landing
+title: Documentação de suplementos do Excel
+summary: Com os suplementos do Excel, você pode usar tecnologias de Web conhecidas, como HTML, CSS e JavaScript para criar uma solução que possa ser executada no Excel em várias plataformas, inclusive no Windows, Mac, iPad e em um navegador da Web. Saiba como criar, testar, depurar e publicar suplementos do Excel.
+metadata:
+  title: Documentação de suplementos do Excel
+  description: Recursos para saber mais sobre suplementos do Excel.
+  ms.prod: excel
+  ms.topic: landing-page
+  ms.date: 06/09/2020
+  localization_priority: Priority
+  ms.openlocfilehash: c2bbe9e007111beed49d33eaaeff3dd6c7a38aae
+  ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+  ms.translationtype: MT
+  ms.contentlocale: pt-BR
+  ms.lasthandoff: 06/10/2020
+  ms.locfileid: "44679418"
+landingContent:
+- title: Sobre os suplementos do Excel
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: O que são suplementos do Excel?
+      url: excel-add-ins-overview.md
+  - linkListType: quickstart
+    links:
+    - text: Criar o seu primeiro suplemento do Excel
+      url: ../quickstarts/excel-quickstart-jquery.md
+    - text: Explorar APIs com o script Lab
+      url: ../overview/explore-with-script-lab.md
+  - linkListType: how-to-guide
+    links:
+    - text: Usar a API JavaScript do Excel para interagir com objetos e o conteúdo da pasta de trabalho
+      url: ../reference/overview/excel-add-ins-reference-overview.md
+    - text: Adicionar funções personalizadas ao Excel
+      url: custom-functions-overview.md
+    - text: Testar e depurar um suplemento do Excel
+      url: ../testing/test-debug-office-add-ins.md
+    - text: Implantar e publicar um suplemento do Excel
+      url: ../publish/publish.md
+- title: Principais conceitos de suplementos do Office
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Visão geral da plataforma de Suplementos do Office
+      url: ../overview/office-add-ins.md
+  - linkListType: concept
+    links:
+    - text: Criando Suplementos do Office
+      url: ../overview/office-add-ins-fundamentals.md
+    - text: Principais conceitos dos Suplementos do Office
+      url: ../overview/core-concepts-office-add-ins.md
+    - text: Fazer o design de Suplementos do Office
+      url: ../design/add-in-design.md
+    - text: 'Desenvolver Suplementos do Office '
+      url: ../develop/develop-overview.md
+- title: Recursos
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Tire dúvidas
+      url: https://stackoverflow.com/questions/tagged/office-js
+    - text: Solicitar recursos
+      url: https://officespdev.uservoice.com/
+    - text: Relatar problemas
+      url: https://github.com/officedev/office-js/issues
+    - text: Recursos adicionais de suplementos do Office
+      url: ../resources/resources-links-help.md
