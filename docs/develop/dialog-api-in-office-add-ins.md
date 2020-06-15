@@ -1,14 +1,14 @@
 ---
 title: Usar a API da Caixa de Diálogo do Office nos suplementos do Office
-description: Conhecer as noções básicas da criação de uma caixa de diálogo em um suplemento do Office
-ms.date: 01/29/2020
+description: Saiba mais sobre a criação de uma caixa de diálogo em um suplemento do Office.
+ms.date: 06/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 96ed3169e7909e700bde894a4caf03348d039b74
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 749fd6041c2ef60a4d766e865e25d53e97298d01
+ms.sourcegitcommit: 449a728118db88dea22a44f83728d21604d6ee8c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608275"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "44719067"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Usar a API de diálogo do Office em suplementos do Office
 
@@ -96,9 +96,10 @@ if (loginSuccess) {
 }
 ```
 
-> [!NOTE]
-> - A função `messageParent` é uma das *únicas* duas APIs do Office que pode ser chamada na caixa de diálogo. A outra é `Office.context.requirements.isSetSupported`. Para saber mais, confira [Especificar hosts do Office e requisitos da API](specify-office-hosts-and-api-requirements.md).
+> [!IMPORTANT]
 > - A função `messageParent` só pode ser chamada em uma página com o mesmo domínio (incluindo o protocolo e a porta) da página host.
+> - A `messageParent` função é uma das *only* duas APIs do Office js que podem ser chamadas na caixa de diálogo. 
+> - A outra API JS que pode ser chamada na caixa de diálogo é `Office.context.requirements.isSetSupported` . Para saber mais, confira [Especificar hosts do Office e requisitos da API](specify-office-hosts-and-api-requirements.md). No entanto, na caixa de diálogo, essa API não tem suporte no Outlook 2016 1-time Purchase (ou seja, a versão MSI).
 
 No próximo exemplo, `googleProfile` é uma versão em formato de cadeia de caracteres do perfil do Google do usuário.
 
