@@ -1,32 +1,32 @@
 ---
 title: Anexar um depurador do painel de tarefas
 description: Saiba como anexar um depurador do painel de tarefas
-ms.date: 09/09/2019
+ms.date: 06/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 903ecfc577804ab052109d8a8f25c5a6eb799488
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 53cfce211241dbdf3d16e8a126e059a2f2db3f23
+ms.sourcegitcommit: b939312ffdeb6e0a0dfe085db7efe0ff143ef873
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611257"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "44810839"
 ---
 # <a name="attach-a-debugger-from-the-task-pane"></a>Anexar um depurador do painel de tarefas
 
-No Office 2016 no Windows, Build 77xx.xxxx ou posterior, é possível anexar o depurador do painel de tarefas. O recurso de anexar o depurador anexará diretamente o depurador ao processo correto do Internet Explorer. É possível anexar um depurador independentemente de você estar utilizando Yeoman Generator, Visual Studio Code, Node.js, Angular ou outra ferramenta. 
+In Office 2016 on Windows, Build 77xx.xxxx or later, you can attach the debugger from the task pane. The attach debugger feature will directly attach the debugger to the correct Internet Explorer process for you. You can attach a debugger regardless of whether you are using Yeoman Generator, Visual Studio Code, Node.js, Angular, or another tool. 
 
 Para iniciar a ferramenta **Anexar Depurador**, escolha o canto superior direito do painel de tarefas para ativar o menu **Personalidade** (conforme mostrado no círculo vermelho na imagem a seguir).   
 
 > [!NOTE]
 > - Atualmente, a única ferramenta de depurador é o [Visual Studio 2015](https://www.visualstudio.com/downloads/) com a [Atualização 3](https://msdn.microsoft.com/library/mt752379.aspx) ou posterior. Se você não tiver o Visual Studio instalado, selecionar a opção **anexar depurador** não resultará em nenhuma ação.   
-> - Só é possível depurar o JavaScript do lado do cliente com a ferramenta **Anexar Depurador**. Para depurar o código do lado do servidor, como com um servidor Node.js, há várias opções. Confira informações sobre como depurar com o Visual Studio Code em [Depuração do Node.js no VS Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging). Se você não estiver usando o Visual Studio Code, pesquise por "depurar Node.js" ou "depurar {nome do servidor}".
+> - You can only debug client-side JavaScript with the **Attach Debugger** tool. To debug server-side code, such as with a Node.js server, you have many options. For information on how to debug with Visual Studio Code, see [Node.js Debugging in VS Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging). If you are not using Visual Studio Code, search for "debug Node.js" or "debug {name-of-server}".
 
 ![Captura de tela do menu Anexar Depurador](../images/attach-debugger.png)
 
-Selecione **Anexar Depurador**. Isso inicia a caixa de diálogo **Depurador Just-In-Time do Visual Studio**, conforme mostrado na imagem a seguir. 
+Select **Attach Debugger**. This launches the **Visual Studio Just-in-Time Debugger** dialog box, as shown in the following image. 
 
 ![Captura de tela da caixa de diálogo Depurador JIT do Visual Studio](../images/visual-studio-debugger.png)
 
-No Visual Studio, você verá os arquivos de código no **Gerenciador de Soluções**.   Você pode definir pontos de interrupção na linha de código que deseja depurar no Visual Studio.
+In Visual Studio, you will see the code files in **Solution Explorer**.   You can set breakpoints to the line of code you want to debug in Visual Studio.
 
 > [!NOTE]
 > Se você não vir o menu Personalidade, é possível depurar o suplemento com o Visual Studio. Certifique-se de que o suplemento do painel tarefas esteja aberto no Office e, em seguida, siga estas etapas:
@@ -45,3 +45,4 @@ Veja mais informações sobre depuração no Visual Studio, em:
 
 - [Depurar Suplementos do Office no Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md)
 - [Publicar seu Suplemento do Office](../publish/publish.md)
+- [Extensão do depurador de suplementos do Microsoft Office para o Visual Studio Code](debug-with-vs-extension.md)
