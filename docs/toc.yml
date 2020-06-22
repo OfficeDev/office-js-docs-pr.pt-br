@@ -283,6 +283,8 @@
           displayName: 'uninstall, sideload'
         - name: Depurar com o log de tempo de execução
           href: testing/runtime-logging.md
+        - name: Extensão depurador para o Visual Studio Code
+          href: testing/debug-with-vs-extension.md
         - name: Solucionar problemas de erros de usuário
           href: testing/testing-and-troubleshooting.md
         - name: Testes de usabilidade
