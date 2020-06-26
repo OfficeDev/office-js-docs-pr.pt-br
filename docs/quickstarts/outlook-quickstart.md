@@ -1,15 +1,15 @@
 ---
 title: Criar seu primeiro suplemento do Outlook
 description: Saiba como criar um Suplemento do Outlook simples usando a API JS do Office.
-ms.date: 03/04/2020
+ms.date: 06/23/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: ba2177e16a73ba626a201105f3f7a187a372a6b7
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 07f4eeae8cfd4a1962c15640555b2283a8d9fa3b
+ms.sourcegitcommit: a4873c3525c7d30ef551545d27eb2c0a16b4eb50
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608905"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "44888149"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Criar seu primeiro suplemento do Outlook
 
@@ -153,7 +153,7 @@ Ao concluir o assistente, o Visual Studio cria uma solução que contém dois pr
 |**Projeto**|**Descrição**|
 |:-----|:-----|
 |Projeto de suplemento|Contém somente um arquivo de manifesto XML, que contém todas as configurações que descrevem o suplemento. As configurações ajudam o host do Office a determinar quando o suplemento deverá ser ativado e onde ele deverá aparecer. O Visual Studio gera o conteúdo desse arquivo para que você possa executar o projeto e usar o suplemento imediatamente. Você pode alterar essas configurações a qualquer momento modificando o arquivo XML.|
-|Projeto de aplicativo Web|Contém as páginas de conteúdo do suplemento, incluindo todos os arquivos e referências de arquivo de que você precisa para desenvolver páginas HTML e JavaScript com reconhecimento do Office. Enquanto você desenvolve o suplemento, o Visual Studio hospeda o aplicativo Web no servidor IIS local. Quando estiver pronto para publicar, você precisará implantar este projeto de aplicativo Web em um servidor Web.|
+|Projeto de aplicativo Web|Contains the content pages of your add-in, including all the files and file references that you need to develop Office-aware HTML and JavaScript pages. While you develop your add-in, Visual Studio hosts the web application on your local IIS server. When you're ready to publish the add-in, you'll need to deploy this web application project to a web server.|
 
 ### <a name="update-the-code"></a>Atualizar o código
 
@@ -240,9 +240,9 @@ Ao concluir o assistente, o Visual Studio cria uma solução que contém dois pr
 
 ### <a name="update-the-manifest"></a>Atualizar o manifesto
 
-1. Abra o arquivo de manifesto XML do projeto do Suplemento. Este arquivo define as configurações e os recursos do suplemento.
+1. Open the XML manifest file in the Add-in project. This file defines the add-in's settings and capabilities.
 
-1. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o com seu nome.
+1. The `ProviderName` element has a placeholder value. Replace it with your name.
 
 1. O atributo `DefaultValue` do elemento `DisplayName` tem um espaço reservado. Substitua-o por `My Office Add-in`.
 
@@ -252,7 +252,7 @@ Ao concluir o assistente, o Visual Studio cria uma solução que contém dois pr
 
     ```xml
     ...
-    <ProviderName>Northwind Traders</ProviderName>
+    <ProviderName>John Doe</ProviderName>
     <DefaultLocale>en-US</DefaultLocale>
     <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
     <DisplayName DefaultValue="My Office Add-in" />
