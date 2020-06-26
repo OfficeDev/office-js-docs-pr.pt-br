@@ -1,14 +1,14 @@
 ---
 title: Disponibilidade de host e plataforma para suplementos do Office
 description: Conjuntos de requisitos com suporte para o Excel, OneNote, Outlook, PowerPoint, Project e Word.
-ms.date: 05/11/2020
+ms.date: 06/23/2020
 localization_priority: Priority
-ms.openlocfilehash: 8c3c187d8f9b70f40a35e3773a2267dc76decbd0
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 979c873b1c5f2d1d7847414f037d5c75737aa33d
+ms.sourcegitcommit: a4873c3525c7d30ef551545d27eb2c0a16b4eb50
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611979"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "44888156"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilidade de host e plataforma para suplementos do Office
 
@@ -154,7 +154,6 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
           - <a href="/office/dev/add-ins/reference/requirement-sets/image-coercion-requirement-sets#imagecoercion-11">ImageCoercion 1.1</a></td>
     <td>
         - BindingEvents<br>
-        - CompressedFile<br>
         - DocumentEvents<br>
         - Arquivo<br>
         - MatrixBindings<br>
@@ -311,7 +310,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
     </td>
   </tr>
   <tr>
-    <td>Office para Mac<br>(conectado ao Office 365)</td>
+    <td>Office no Mac<br>(conectado ao Office 365)</td>
     <td>
         - Funções personalizadas</td>
     <td>
