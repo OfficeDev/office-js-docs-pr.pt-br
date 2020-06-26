@@ -1,14 +1,14 @@
 ---
 title: Fazendo referência à biblioteca da API JavaScript do Office
 description: Saiba como fazer referência à biblioteca da API JavaScript do Office e definições de tipo no suplemento.
-ms.date: 02/27/2020
+ms.date: 06/23/2020
 localization_priority: Normal
-ms.openlocfilehash: 8bd011c140ce61581ad4b1d06a43b04ad437f5c7
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 3f90b0798b14b66fe6d01f62eca3802fce179bec
+ms.sourcegitcommit: a4873c3525c7d30ef551545d27eb2c0a16b4eb50
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609384"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "44888128"
 ---
 # <a name="referencing-the-office-javascript-api-library"></a>Fazendo referência à biblioteca da API JavaScript do Office
 
@@ -21,16 +21,16 @@ A biblioteca da [API JavaScript do Office](../reference/javascript-api-for-offic
 </head>
 ```
 
-Isso baixará e armazenará em cache os arquivos da API JavaScript do Office na primeira vez em que seu suplemento for carregado para garantir que ele esteja usando a implementação mais atualizada do Office. js e seus arquivos associados para a versão especificada.
+Isso baixará e armazenará em cache os arquivos da API JavaScript do Office na primeira vez em que seu suplemento for carregado para garantir que ele esteja usando a implementação mais atualizada de Office.js e seus arquivos associados para a versão especificada.
 
 > [!IMPORTANT]
 > Você deve fazer referência à API JavaScript do Office de dentro da `<head>` seção da página para garantir que a API seja totalmente inicializada antes de qualquer elemento body. Os hosts do Office requerem que os suplementos inicializem até 5 segundos depois da ativação. Se seu suplemento não ativar dentro deste limite, ele será declarado sem resposta e uma mensagem de erro será exibida ao usuário.
 
 ## <a name="api-versioning-and-backward-compatibility"></a>Versão da API e compatibilidade com versões anteriores
 
-No trecho de código HTML anterior, o `/1/` na frente da `office.js` URL de CDN especifica a versão incremental mais recente na versão 1 do Office. js. Como a API JavaScript do Office mantém a compatibilidade com versões anteriores, a versão mais recente continuará a dar suporte a membros da API que foram introduzidos anteriormente na versão 1. Se você precisar atualizar um projeto existente, confira [atualizar a versão da API JavaScript do Office e dos arquivos de esquema de manifesto](update-your-javascript-api-for-office-and-manifest-schema-version.md). 
+No trecho de código HTML anterior, o `/1/` na frente da `office.js` URL de CDN especifica a versão incremental mais recente na versão 1 de Office.js. Como a API JavaScript do Office mantém a compatibilidade com versões anteriores, a versão mais recente continuará a dar suporte a membros da API que foram introduzidos anteriormente na versão 1. Se você precisar atualizar um projeto existente, confira [atualizar a versão da API JavaScript do Office e dos arquivos de esquema de manifesto](update-your-javascript-api-for-office-and-manifest-schema-version.md). 
 
-Caso planeje publicar seu Suplemento do Office no AppSource, você deve usar esta referência da CDN. As referências locais são adequadas somente para cenários internos, de depuração e de desenvolvimento.
+If you plan to publish your Office Add-in from AppSource, you must use this CDN reference. Local references are only appropriate for internal, development, and debugging scenarios.
 
 > [!NOTE]
 > Para usar APIs de visualização, faça referência à versão de visualização da biblioteca da API JavaScript do Office na CDN: `https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`.
@@ -43,10 +43,11 @@ Além de fazer referência à API JavaScript do Office, conforme descrito anteri
 npm install --save-dev @types/office-js
 ```
 
-> [!NOTE]
-> Para habilitar o IntelliSense para APIs de visualização, use as definições de tipo de visualização do [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/office-js-preview) executando o seguinte comando na raiz da pasta do seu projeto: 
->
-> `npm install --save-dev @types/office-js-preview`
+## <a name="preview-apis"></a>APIs de visualização
+
+As novas APIs JavaScript são primeiro introduzidas em "Preview" e, posteriormente, se tornam parte de um conjunto de requisitos específico, após o teste suficiente e o feedback do usuário é necessário.
+
+[!INCLUDE [Information about using preview APIs](../includes/using-preview-apis-host.md)]
 
 ## <a name="see-also"></a>Confira também
 
