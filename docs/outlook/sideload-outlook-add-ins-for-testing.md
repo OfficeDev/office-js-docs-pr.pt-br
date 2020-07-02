@@ -1,23 +1,22 @@
 ---
 title: Realizar sideload de suplementos do Outlook para teste
 description: Use o sideload para instalar um suplemento do Outlook para teste sem precisar primeiro colocá-lo em um catálogo de suplementos.
-ms.date: 06/24/2019
+ms.date: 06/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 3543eeb58f441819edb2c129e6e14206e26de524
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b99b72dbf4691d6a27ac9405c88f2cc642baaadd
+ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44605322"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "45006476"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>Realizar sideload de suplementos do Outlook para teste
 
 Você pode usar sideload para instalar um suplemento do Outlook para teste sem precisar primeiro colocá-lo em um catálogo de suplementos.
 
+## <a name="sideload-an-add-in-in-outlook-on-the-web"></a>Realizar o sideload de um suplemento do Outlook na Web
 
-## <a name="sideload-an-add-in-in-outlook-in-office-365"></a>Realizar sideload de um suplemento do Outlook no Office 365
-
-O processo de sideload de um suplemento do Outlook no Office 365 depende de se você está usando o novo Outlook na Web ou o Outlook na Web clássico.
+O processo de Sideload de um suplemento no Outlook na Web depende se você está usando a versão nova ou clássica.
 
 - Se sua barra de ferramentas de caixa de correio for parecida com a imagem a seguir, confira [Sideload de um suplemento no novo Outlook na Web](#sideload-an-add-in-in-the-new-outlook-on-the-web).
 
@@ -34,7 +33,7 @@ O processo de sideload de um suplemento do Outlook no Office 365 depende de se v
 
 1. Acesse o [Outlook no Office 365](https://outlook.office.com).
 
-1. No Outlook na Web, crie uma nova mensagem.   
+1. No Outlook na Web, crie uma nova mensagem.
 
 1. Escolha **...** na parte inferior da nova mensagem e selecione **Obter Suplementos** menu que aparecer.
 
@@ -48,7 +47,7 @@ O processo de sideload de um suplemento do Outlook no Office 365 depende de se v
 
     ![Captura de tela Gerenciar suplementos apontando para a opção Adicionar do arquivo](../images/outlook-sideload-desktop-add-from-file.png)
 
-1. Localize o arquivo de manifesto de seu suplemento personalizado e instale-o. Aceite todos os prompts durante a instalação.
+1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
 
 ### <a name="sideload-an-add-in-in-classic-outlook-on-the-web"></a>Realizar sideload de um suplemento no Outlook na Web clássico
 
@@ -66,11 +65,13 @@ O processo de sideload de um suplemento do Outlook no Office 365 depende de se v
 
     ![Captura de tela Gerenciar suplementos apontando para a opção Adicionar do arquivo](../images/outlook-sideload-desktop-add-from-file.png)
 
-1. Localize o arquivo de manifesto de seu suplemento personalizado e instale-o. Aceite todos os prompts durante a instalação.
+1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
 
 ## <a name="sideload-an-add-in-in-outlook-on-the-desktop"></a>Realizar sideload de um suplemento do Outlook na área de trabalho
 
-1. Abra o Outlook 2013 ou posterior no Windows ou Outlook 2016 ou posterior no Mac.
+### <a name="outlook-2016-or-later"></a>Outlook 2016 ou posterior
+
+1. Abra o Outlook 2016 ou posterior no Windows ou Mac.
 
 1. Selecione o botão **Obter Suplementos** na faixa de opções.
 
@@ -87,7 +88,15 @@ O processo de sideload de um suplemento do Outlook no Office 365 depende de se v
 
     ![Captura de tela da Loja apontando para a opção Adicionar do arquivo](../images/outlook-sideload-desktop-add-from-file.png)
 
-1. Localize o arquivo de manifesto de seu suplemento personalizado e instale-o. Aceite todos os prompts durante a instalação.
+1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
+
+#### <a name="outlook-2013"></a>Outlook 2013
+
+1. Abra o Outlook 2013 no Windows.
+
+1. Selecione o menu **arquivo** e, em seguida, selecione o botão **gerenciar suplementos** na guia **informações** . o Outlook abrirá um navegador.
+
+1. Siga as etapas na seção [Sideload um suplemento no Outlook na Web](#sideload-an-add-in-in-outlook-on-the-web) de acordo com a sua versão do Outlook na Web.
 
 ## <a name="remove-a-sideloaded-add-in"></a>Remover um suplemento do suplementos foi feito
 

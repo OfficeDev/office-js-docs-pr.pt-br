@@ -1,14 +1,14 @@
 ---
 title: Habilitar cenários de acesso de representante em um suplemento do Outlook
 description: Descreve brevemente o acesso de representante e discute como configurar o suporte a suplementos.
-ms.date: 01/14/2020
+ms.date: 06/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 68b9e09afbe2bcd5cfc302d6714b1c22fd945047
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: a5b4581783ca65bfe858dcf6638287418a3dcfe2
+ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608947"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "45006413"
 ---
 # <a name="enable-delegate-access-scenarios-in-an-outlook-add-in"></a>Habilitar cenários de acesso de representante em um suplemento do Outlook
 
@@ -25,7 +25,7 @@ A tabela a seguir descreve as permissões de representante que a API JavaScript 
 
 |Permission|Valor|Descrição|
 |---|---:|---|
-|Read|1 (000001)|Pode ler itens.|
+|Ler|1 (000001)|Pode ler itens.|
 |Gravação|2 (000010)|Pode criar itens.|
 |DeleteOwn|4 (000100)|Só pode excluir os itens que eles criaram.|
 |DeleteAll|8 (001000)|Pode excluir qualquer item.|
@@ -41,11 +41,16 @@ O objeto [DelegatePermissions](/javascript/api/outlook/office.mailboxenums.deleg
 
 As atualizações de um representante para a caixa de correio do proprietário costumam ser sincronizadas imediatamente nas caixas de correio.
 
-No entanto, se o suplemento usar operações REST ou EWS para definir uma propriedade estendida em um item, essas alterações poderão levar algumas horas para a sincronização. Em vez disso, recomendamos usar o objeto [CustomProperties](/javascript/api/outlook/office.customproperties) e APIs relacionadas para evitar esse atraso. Para saber mais, confira a [seção Propriedades personalizadas](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties) do artigo "obter e definir metadados em um suplemento do Outlook".
+No entanto, se as operações REST ou Exchange Web Services (EWS) foram usadas para definir uma propriedade estendida em um item, essas alterações poderão levar algumas horas para a sincronização. Em vez disso, recomendamos usar o objeto [CustomProperties](/javascript/api/outlook/office.customproperties) e APIs relacionadas para evitar esse atraso. Para saber mais, confira a [seção Propriedades personalizadas](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties) do artigo "obter e definir metadados em um suplemento do Outlook".
+
+> [!IMPORTANT]
+> Em um cenário de representante, não é possível usar o EWS com os tokens atualmente fornecidos pela API office.js.
 
 ## <a name="configure-the-manifest"></a>Configurar o manifesto
 
 Para habilitar cenários de acesso de representante no suplemento, você deve definir o elemento [SupportsSharedFolders](../reference/manifest/supportssharedfolders.md) `true` no manifesto no elemento pai `DesktopFormFactor` . No momento, não há suporte para outros fatores de formulário.
+
+Para oferecer suporte a chamadas REST de um representante, defina o nó de [permissões](../reference/manifest/permissions.md) no manifesto como `ReadWriteMailbox` .
 
 O exemplo a seguir mostra o `SupportsSharedFolders` elemento definido como `true` em uma seção do manifesto.
 
@@ -77,6 +82,9 @@ O exemplo a seguir mostra o `SupportsSharedFolders` elemento definido como `true
 ## <a name="perform-an-operation-as-delegate"></a>Executar uma operação como representante
 
 Você pode obter as propriedades compartilhadas de um item no modo de redação ou leitura chamando o método [Item. getSharedPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) . Isso retorna um objeto [SharedProperties](/javascript/api/outlook/office.sharedproperties) que atualmente fornece as permissões do representante, o endereço de email do proprietário, a URL base da API REST e a caixa de correio de destino.
+
+> [!IMPORTANT]
+> Em um cenário de representante, o suplemento pode usar REST, mas não EWS, e a permissão do suplemento deve ser definida para `ReadWriteMailbox` habilitar o acesso REST à caixa de correio do proprietário.
 
 O exemplo a seguir mostra como obter as propriedades compartilhadas de uma mensagem ou compromisso, verificar se o representante tem permissão de **gravação** e fazer uma chamada REST.
 
@@ -129,7 +137,10 @@ function performOperation() {
 }
 ```
 
-## <a name="see-also"></a>Confira também
+> [!TIP]
+> Como representante, você pode usar o REST para [obter o conteúdo de uma mensagem do Outlook anexada a um item do Outlook ou a uma postagem de grupo](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post).
+
+## <a name="see-also"></a>Também consulte
 
 - [Permitir que outra pessoa Gerencie seu email e calendário](https://support.office.com/article/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926)
 - [Compartilhamento de calendário no Office 365](https://support.office.com/article/calendar-sharing-in-office-365-b576ecc3-0945-4d75-85f1-5efafb8a37b4)

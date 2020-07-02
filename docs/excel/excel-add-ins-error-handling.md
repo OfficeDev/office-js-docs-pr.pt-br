@@ -1,25 +1,25 @@
 ---
 title: Tratamento de erros
 description: Saiba mais sobre a lógica de tratamento de erro da API JavaScript do Excel para considerar os erros de tempo de execução.
-ms.date: 05/13/2020
+ms.date: 06/25/2020
 localization_priority: Normal
-ms.openlocfilehash: ff6336e4d76e84ddc708d65eda70f5f2e172fde7
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 8d410ae7eea315e14383b5aa08373ede3768cace
+ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609605"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "45006441"
 ---
 # <a name="error-handling"></a>Tratamento de erros
 
-Quando você cria um suplemento usando a API JavaScript do Excel, certifique-se de incluir a lógica de tratamento de erro para lidar com os erros de tempo de execução. Isso é fundamental devido à natureza assíncrona da API.
+When you build an add-in using the Excel JavaScript API, be sure to include error handling logic to account for runtime errors. Doing so is critical, due to the asynchronous nature of the API.
 
 > [!NOTE]
 > Para obter mais informações sobre o `sync()` método e a natureza assíncrona da API JavaScript do Excel, consulte [conceitos fundamentais de programação com a API JavaScript do Excel](excel-add-ins-core-concepts.md).
 
 ## <a name="best-practices"></a>Práticas recomendadas
 
-Em todos os exemplos de código desta documentação, você notará que cada chamada a `Excel.run` é acompanhada de uma instrução `catch` para capturar todos os erros que ocorrem no `Excel.run`. É recomendável usar o mesmo padrão quando você cria um suplemento usando as APIs JavaScript do Excel.
+Throughout the code samples in this documentation, you'll notice that every call to `Excel.run` is accompanied by a `catch` statement to catch any errors that occur within the `Excel.run`. We recommend that you use the same pattern when you build an add-in using the Excel JavaScript APIs.
 
 ```js
 Excel.run(function (context) {
@@ -38,7 +38,7 @@ Excel.run(function (context) {
 
 Quando uma solicitação da API JavaScript do Excel não é bem-sucedida, a API retorna um objeto de erro que contém as seguintes propriedades:
 
-- **code**:  A propriedade `code` de uma mensagem de erro contém uma cadeia de caracteres que faz parte da lista `OfficeExtension.ErrorCodes` ou `Excel.ErrorCodes`. Por exemplo, o código de erro "InvalidReference" indica que a referência não é válida para a operação especificada. Os códigos de erro não são localizados.
+- **code**:  The `code` property of an error message contains a string that is part of the `OfficeExtension.ErrorCodes` or `Excel.ErrorCodes` list. For example, the error code "InvalidReference" indicates that the reference is not valid for the specified operation. Error codes are not localized.
 
 - **message**: a propriedade `message` de uma mensagem de erro contém um resumo do erro na cadeia de caracteres localizada. A mensagem de erro não se destina aos usuários finais; você deve usar o código de erro e a lógica de negócios adequada para determinar a mensagem de erro que seu suplemento mostra aos usuários finais.
 
@@ -72,6 +72,7 @@ A tabela a seguir é uma lista de erros que a API pode retornar.
 |`ServiceNotAvailable`|O serviço não está disponível.|
 |`Unauthenticated` |Informações de autenticação necessárias estão ausentes ou inválidas.|
 |`UnsupportedOperation`|Não há suporte para a operação que está sendo tentada.|
+|`UnsupportedSheet`|Este tipo de planilha não tem suporte para essa operação, pois é uma macro ou uma planilha de gráfico.|
 
 ## <a name="see-also"></a>Confira também
 

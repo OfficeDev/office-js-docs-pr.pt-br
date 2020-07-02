@@ -3,12 +3,12 @@ ms.date: 05/16/2020
 description: Teste seu suplemento do Office usando o Internet Explorer 11.
 title: Testes do Internet Explorer 11
 localization_priority: Normal
-ms.openlocfilehash: 4ea2b4da153e2908f928086cd4997502c194e578
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1d6852d08308088a020e86ce7f5ab9cfdb9ab978
+ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611201"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "45006434"
 ---
 # <a name="test-your-office-add-in-using-internet-explorer-11"></a>Testar o suplemento do Office usando o Internet Explorer 11
 
@@ -31,7 +31,7 @@ Estas instruções pressupõem que você tenha configurado um projeto de gerador
 2. Na pasta raiz do seu novo projeto, execute o seguinte na linha de comando:
 
 ```command&nbsp;line
-office-add-dev-settings webview manifest.xml ie
+npx office-addin-dev-settings webview manifest.xml ie
 ```
 Você verá uma observação na linha de comando que o tipo de modo de exibição da Web agora está definido como IE.
 
@@ -41,7 +41,7 @@ Você verá uma observação na linha de comando que o tipo de modo de exibiçã
 
 Se você tiver um caminho de manifesto diferente, especifique-o no comando, conforme mostrado a seguir:
 
-`office-add-dev-settings webview [path to your manifest] ie`
+`npx office-addin-dev-settings webview [path to your manifest] ie`
 
 O `office-addin-dev-settings webview` comando também pode ter vários tempos de execução como argumentos:
 
@@ -49,7 +49,7 @@ O `office-addin-dev-settings webview` comando também pode ter vários tempos de
 - vertical
 - Padrão.
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Também consulte
 * [Testar e depurar Suplementos do Office](test-debug-office-add-ins.md)
 * [Realizar sideload de suplementos do Office para teste](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 * [Depurar suplementos usando as ferramentas de desenvolvedor no Windows 10](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
