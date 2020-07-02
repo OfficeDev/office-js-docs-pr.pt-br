@@ -3,12 +3,12 @@ title: Habilitar o logon único para Suplementos do Office
 description: Saiba como habilitar o logon único para suplementos do Office usando sua conta do Office 365 da Microsoft, corporativa ou de estudante.
 ms.date: 04/16/2020
 localization_priority: Priority
-ms.openlocfilehash: df09f57785e5f85e2492940c90af97926f896a32
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: af5fe3eac1b8e8d38162a41ca2a89ace7b23cd4a
+ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609710"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "45006469"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Habilitar o logon único para Suplementos do Office (visualização)
 
@@ -60,7 +60,7 @@ Esta seção descreve as tarefas envolvidas na criação de um suplemento do Off
 
 ### <a name="create-the-service-application"></a>Criar o aplicativo de serviço
 
-Registre o suplemento no portal de registro para o ponto de extremidade do Azure v 2.0. Esse é um processo que leva entre 5 e 10 minutos e inclui as seguintes tarefas:
+Register the add-in at the registration portal for the Azure v2.0 endpoint. This is a 5–10 minute process that includes the following tasks:
 
 * Obter um ID de cliente e o segredo para o suplemento.
 * Especificar as permissões que seu suplemento precisa de AAD v. ponto de extremidade 2.0 (e, opcionalmente, para o Microsoft Graph). A permissão "perfil" sempre é necessária.
@@ -79,7 +79,7 @@ Adicione novas marcações ao manifesto do suplemento:
 * **Scopes** – O pai de uma ou mais elementos **Scope**.
 * **Scope** – Especifica uma permissão que seu suplemento precisa para o AAD. A permissão `profile` sempre é necessária, e pode ser a única permissão necessária, se o suplemento não acessar o Microsoft Graph. Se isso acontecer, você também precisa de elementos **Escopo** para as permissões necessárias do Microsoft Graph; por exemplo, `User.Read`, `Mail.Read`. Bibliotecas que você usa no seu código para acessar o Microsoft Graph pode precisar de permissões adicionais. Por exemplo, a biblioteca de autenticação da Microsoft (MSAL) para .NET requer a permissão `offline_access`. Para saber mais, confira [autorizar o Microsoft Graph de um suplemento do Office](authorize-to-microsoft-graph.md).
 
-Para hosts do Office diferentes do Outlook, adicione a marcação no final da seção `<VersionOverrides ... xsi:type="VersionOverridesV1_0">`. Para o Outlook, adicione a marcação no final da seção `<VersionOverrides ... xsi:type="VersionOverridesV1_1">`.
+For Office hosts other than Outlook, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_0">` section. For Outlook, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_1">` section.
 
 Veja a seguir um exemplo da marcação:
 
@@ -241,7 +241,7 @@ O método chama o ponto de extremidade do Azure Active Directory V 2.0 para obte
 > [!NOTE]
 > No Outlook, não há suporte para esse API se o suplemento for carregado em uma caixa de correio do Gmail ou do Outlook.com.
 
-|Hosts|Excel, OneNote, Outlook, PowerPoint, Word|
+|Hosts|Excel, Outlook, PowerPoint, Word|
 |---|---|
 |[Conjuntos de requisitos](specify-office-hosts-and-api-requirements.md)|[IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md)|
 
