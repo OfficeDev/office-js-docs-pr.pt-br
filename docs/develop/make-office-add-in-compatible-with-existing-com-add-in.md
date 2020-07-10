@@ -3,12 +3,12 @@ title: Torne o seu suplemento do Office compatível com um suplemento COM existe
 description: Habilitar a compatibilidade entre o suplemento do Office e o suplemento COM equivalente
 ms.date: 07/31/2019
 localization_priority: Normal
-ms.openlocfilehash: ff47b75e8e560bc891c84dc839b7eceffb2400be
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1ded60366c36edb876b8b2dd0a4ea9e6a39521b0
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609419"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093592"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>Torne o seu suplemento do Office compatível com um suplemento COM existente
 
@@ -17,7 +17,7 @@ Se você tiver um suplemento COM existente, poderá criar uma funcionalidade equ
 Você pode configurar seu suplemento do Office para que, quando o suplemento COM equivalente já estiver instalado no computador de um usuário, o Office no Windows execute o suplemento COM em vez do suplemento do Office. O suplemento de COM é chamado de "equivalente" porque o Office faz uma transição transparente entre o suplemento de COM e o suplemento do Office de acordo com o qual está instalado o computador de um usuário.
 
 > [!NOTE]
-> Este recurso é suportado pelas seguintes plataformas, quando conectado a uma assinatura do Office 365:
+> Este recurso é suportado pelas seguintes plataformas, quando conectado a uma assinatura do Microsoft 365:
 > - Excel, Word e PowerPoint na Web
 > - Excel, Word e PowerPoint no Windows (versão 1904 ou posterior)
 > - Excel, Word e PowerPoint no Mac (versão 13,329 ou posterior)

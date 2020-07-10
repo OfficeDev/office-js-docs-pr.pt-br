@@ -4,19 +4,19 @@ description: Descreve como configurar um suplemento móvel do Outlook para um pr
 ms.topic: article
 ms.date: 06/25/2020
 localization_priority: Normal
-ms.openlocfilehash: 052ab4e71f8bc90e655a6ba780eacc18d43069e1
-ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
+ms.openlocfilehash: 9f0b50602ab4941b16c15abe97c3f099a54f5b42
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "45006420"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093998"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>Criar um suplemento do Outlook Mobile para um provedor de reunião online
 
 A configuração de uma reunião online é uma experiência principal para um usuário do Outlook e é fácil [criar uma reunião do teams com o Outlook](/microsoftteams/teams-add-in-for-outlook) Mobile. No entanto, a criação de uma reunião online no Outlook com um serviço que não seja da Microsoft pode ser complicada. Ao implementar esse recurso, os provedores de serviços podem simplificar a experiência de criação de reunião online para os usuários de suplementos do Outlook.
 
 > [!IMPORTANT]
-> Este recurso só é suportado no Android com uma assinatura do Office 365.
+> Este recurso só é suportado no Android com uma assinatura do Microsoft 365.
 
 Neste artigo, você aprenderá como configurar seu suplemento do Outlook Mobile para permitir que os usuários organizem e ingressem em uma reunião usando o serviço de reunião online. Neste artigo, vamos usar um provedor de serviço de reunião online fictício, "contoso".
 
@@ -263,7 +263,7 @@ Várias restrições se aplicam.
 - O ícone do suplemento deve estar em escala de cinza usando o código hex `#919191` ou seu equivalente em [outros formatos de cor](https://convertingcolors.com/hex-color-919191.html).
 - Só há suporte para um comando sem interface do usuário no modo de organizador de compromisso (compor).
 
-## <a name="see-also"></a>Também consulte
+## <a name="see-also"></a>Confira também
 
 - [Suplementos do Outlook Mobile](outlook-mobile-addins.md)
 - [Adicionar suporte para comandos de suplementos para Outlook Mobile](add-mobile-support.md)

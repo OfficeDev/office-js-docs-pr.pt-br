@@ -2,7 +2,7 @@
 
 1. Acesse a página [Portal do Azure - Registros de aplicativo](https://go.microsoft.com/fwlink/?linkid=2083908) para registrar o seu aplicativo.
 
-1. Entre com as credenciais de ***administrador*** em sua locação do Office 365. Por exemplo, MeuNome@contoso.onmicrosoft.com.
+1. Entre com as credenciais de ***administrador*** em seu Microsoft 365 locação. Por exemplo, MeuNome@contoso.onmicrosoft.com.
 
 1. Selecione **Novo registro**. Na página **Registrar um aplicativo**, defina os valores da seguinte forma.
 
@@ -24,7 +24,7 @@
     > Você pode receber um erro impreciso nesse momento, dizendo "O URI da ID de aplicativo deve ser um URI válido começando HTTPS, API, URN, MS APPX. Ele não pode terminar com uma barra." Se a ID atende às condições mencionadas, ignore o erro e salve suas alterações.
 
     > [!NOTE]
-    > Se você receber um erro dizendo que o domínio já pertence a alguém, mas você é o seu proprietário, siga o procedimento em [Início Rápido: Adicionar um domínio personalizado ao Azure Active Directory](/azure/active-directory/add-custom-domain) para registrá-lo e, em seguida, repita esta etapa. (Esse erro também poderá ocorrer se você não estiver conectado com as credenciais de administrador no locatário do Office 365. (Confira a etapa 2.) Saia e entre novamente com credenciais de administrador e repita o processo da etapa 3.)
+    > Se você receber um erro dizendo que o domínio já pertence a alguém, mas você é o seu proprietário, siga o procedimento em [Início Rápido: Adicionar um domínio personalizado ao Azure Active Directory](/azure/active-directory/add-custom-domain) para registrá-lo e, em seguida, repita esta etapa. (Esse erro também pode ocorrer se você não tiver entrado com as credenciais de um administrador no Microsoft 365 locação. (Confira a etapa 2.) Saia e entre novamente com credenciais de administrador e repita o processo da etapa 3.)
 
 1. Selecione o botão **Adicionar um escopo**. No painel que se abre, insira `access_as_user` como o **Nome de escopo**.
 

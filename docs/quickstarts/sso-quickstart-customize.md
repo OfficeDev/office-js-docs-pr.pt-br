@@ -1,15 +1,15 @@
 ---
 title: Personalizar o suplemento habilitado para SSO do Node.js.
 description: Saiba mais sobre como personalizar o suplemento habilitado para SSO que você criou com o gerador Yeoman.
-ms.date: 02/20/2020
+ms.date: 07/07/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: d71206d6b03b8a92e50b316cc75c401866be5334
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: c1d292ed8ead40201dd035d6ae8e6997174ea477
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608822"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094481"
 ---
 # <a name="customize-your-nodejs-sso-enabled-add-in"></a>Personalizar o suplemento habilitado para SSO do Node.js.
 
@@ -22,7 +22,7 @@ O [início rápido do SSO](sso-quickstart.md) cria um suplemento habilitado para
 
 * Um suplemento do Office que você criou seguindo as instruções no [início rápido de SSO](sso-quickstart.md).
 
-* Em pelo menos algumas pastas e arquivos armazenados no OneDrive for Business na assinatura do Office 365.
+* Pelo menos alguns arquivos e pastas armazenados no OneDrive for Business em sua assinatura do Microsoft 365.
 
 * [Node.js](https://nodejs.org) (a versão mais recente de [LTS](https://nodejs.org/about/releases)).
 
@@ -37,7 +37,7 @@ Vamos começar com uma revisão rápida do projeto de suplemento [criado anterio
 
 [!include[project structure for an SSO-enabled add-in created with the Yeoman generator](../includes/sso-yeoman-project-structure.md)]
 
-## <a name="add-new-functionality"></a>Adicionar nova funcionalidade 
+## <a name="add-new-functionality"></a>Adicionar nova funcionalidade
 
 O suplemento que você criou com o início rápido do SSO usa o Microsoft Graph para obter as informações de perfil do usuário conectado e grava essas informações no documento ou na mensagem. Vamos alterar a funcionalidade do suplemento de forma que ele obtenha os nomes dos dez principais arquivos e pastas do OneDrive for Business do usuário conectado e grava essas informações no documento ou na mensagem. Habilitar essa nova funcionalidade requer a atualização das permissões do aplicativo no Azure e a atualização do código no projeto do suplemento.
 
@@ -45,9 +45,9 @@ O suplemento que você criou com o início rápido do SSO usa o Microsoft Graph 
 
 Antes que o suplemento possa ler com êxito o conteúdo do OneDrive for Business do usuário, suas informações de registro de aplicativo no Azure devem ser atualizadas com as permissões apropriadas. Complete as etapas a seguir para conceder ao aplicativo a permissão **files. Read. All** e revogar a permissão **User. Read** , que não é mais necessária.
 
-1. Navegue até o [portal do Azure](https://ms.portal.azure.com/#home) e **entre usando suas credenciais de administrador do Office 365**. 
+1. Navegue até o [portal do Azure](https://ms.portal.azure.com/#home) e **entre usando suas credenciais de administrador do Microsoft 365**.
 
-2. Navegue até a página **registros de aplicativos** . 
+2. Navegue até a página **registros de aplicativos** .
     > [!TIP]
     > Você pode fazer isso escolhendo o bloco de **registros do aplicativo** na home page do Azure ou usando a caixa de pesquisa na home page para localizar e escolher registros de **aplicativos**.
 
@@ -105,7 +105,7 @@ Conclua as seguintes etapas para o seu suplemento, para alterar a URL, os parâm
 
 2. Em **./manifest.xml**, localize a linha `<Scope>User.Read</Scope>` próxima ao final do arquivo e substitua-a pela linha `<Scope>Files.Read.All</Scope>` .
 
-3. Em **./src/Helpers/fallbackauthdialog.js** (ou em **./src/Helpers/fallbackauthdialog.TS** para um projeto TypeScript), localize a cadeia de caracteres `https://graph.microsoft.com/User.Read` e substitua-a pela cadeia de caracteres `https://graph.microsoft.com/Files.Read.All` , tal como `requestObj` é definida da seguinte maneira:
+3. Em **./src/helpers/fallbackauthdialog.js** (ou em **./src/Helpers/fallbackauthdialog.TS** para um projeto TypeScript), localize a cadeia de caracteres `https://graph.microsoft.com/User.Read` e substitua-a pela cadeia de caracteres `https://graph.microsoft.com/Files.Read.All` , tal como `requestObj` é definida da seguinte maneira:
 
     ```javascript
     var requestObj = {
@@ -119,7 +119,7 @@ Conclua as seguintes etapas para o seu suplemento, para alterar a URL, os parâm
     };
     ```
 
-4. Em **./src/TaskPane/TaskPane.html**, localize o elemento `<section class="ms-firstrun-instructionstep__header">` e atualize o texto dentro desse elemento para descrever a nova funcionalidade do suplemento.
+4. Em **./src/taskpane/taskpane.html**, encontre o elemento `<section class="ms-firstrun-instructionstep__header">` e atualize o texto dentro desse elemento para descrever a nova funcionalidade do suplemento.
 
     ```html
     <section class="ms-firstrun-instructionstep__header">
@@ -129,7 +129,7 @@ Conclua as seguintes etapas para o seu suplemento, para alterar a URL, os parâm
     </section>
     ```
 
-5. Em **./src/TaskPane/TaskPane.html**, localize e substitua as duas ocorrências da cadeia de caracteres `Get My User Profile Information` pela cadeia de caracteres `Read my OneDrive for Business` .
+5. Em **./src/taskpane/taskpane.html**, localize e substitua as duas ocorrências da cadeia de caracteres `Get My User Profile Information` pela cadeia de caracteres `Read my OneDrive for Business` .
 
     ```html
     <li class="ms-ListItem">
@@ -146,7 +146,7 @@ Conclua as seguintes etapas para o seu suplemento, para alterar a URL, os parâm
     </p>
     ```
 
-6. Em **./src/TaskPane/TaskPane.html**, localize e substitua a cadeia de caracteres `Your user profile information will be displayed in the document.` com a cadeia de caracteres `The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.` .
+6. Em **./src/taskpane/taskpane.html**, localize e substitua a cadeia de caracteres `Your user profile information will be displayed in the document.` pela cadeia de caracteres `The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.` .
 
     ```html
     <li class="ms-ListItem">
@@ -168,7 +168,7 @@ Conclua as seguintes etapas para o seu suplemento, para alterar a URL, os parâm
 
 ### <a name="changes-required-for-an-excel-add-in-javascript"></a>Alterações necessárias para um suplemento do Excel (JavaScript)
 
-Se o suplemento for um suplemento do Excel que foi criado com JavaScript, faça as seguintes alterações em **./src/Helpers/documentHelper.js**:
+Se o suplemento for um suplemento do Excel que foi criado com JavaScript, faça as seguintes alterações em **./src/helpers/documentHelper.js**:
 
 1. Encontre a `writeDataToOfficeDocument` função e substitua-a pela seguinte função:
 
@@ -271,7 +271,7 @@ Depois de fazer essas alterações, pule para a seção [Experimente](#try-it-ou
 
 ### <a name="changes-required-for-an-outlook-add-in-javascript"></a>Alterações necessárias para um suplemento do Outlook (JavaScript)
 
-Se o suplemento for um suplemento do Outlook que foi criado com JavaScript, faça as seguintes alterações em **./src/Helpers/documentHelper.js**:
+Se o suplemento for um suplemento do Outlook que foi criado com JavaScript, faça as seguintes alterações em **./src/helpers/documentHelper.js**:
 
 1. Encontre a `writeDataToOfficeDocument` função e substitua-a pela seguinte função:
 
@@ -364,7 +364,7 @@ Depois de fazer essas alterações, pule para a seção [Experimente](#try-it-ou
 
 ### <a name="changes-required-for-a-powerpoint-add-in-javascript"></a>Alterações necessárias para um suplemento do PowerPoint (JavaScript)
 
-Se o suplemento for um suplemento do PowerPoint que foi criado com JavaScript, faça as seguintes alterações em **./src/Helpers/documentHelper.js**:
+Se o suplemento for um suplemento do PowerPoint que foi criado com JavaScript, faça as seguintes alterações em **./src/helpers/documentHelper.js**:
 
 1. Encontre a `writeDataToOfficeDocument` função e substitua-a pela seguinte função:
 
@@ -467,7 +467,7 @@ Depois de fazer essas alterações, pule para a seção [Experimente](#try-it-ou
 
 ### <a name="changes-required-for-a-word-add-in-javascript"></a>Alterações necessárias para um suplemento do Word (JavaScript)
 
-Se o suplemento for um suplemento do Word que foi criado com JavaScript, faça as seguintes alterações em **./src/Helpers/documentHelper.js**:
+Se o suplemento for um suplemento do Word que foi criado com JavaScript, faça as seguintes alterações em **./src/helpers/documentHelper.js**:
 
 1. Encontre a `writeDataToOfficeDocument` função e substitua-a pela seguinte função:
 
@@ -582,7 +582,7 @@ Execute as etapas a seguir para experimentar um suplemento do Excel, do Word ou 
     npm start
     ```
 
-2. No aplicativo cliente do Office que é aberto quando você executa o comando anterior (ou seja, Excel, Word ou PowerPoint), certifique-se de que você está conectado com um usuário que seja membro da mesma organização do Office 365 como a conta de administrador do Office 365 que você usou para se conectar ao Azure durante a [configuração do SSO](sso-quickstart.md#configure-sso) para o aplicativo. Isso estabelecerá as condições apropriadas para que o SSO seja bem-sucedido. 
+2. No aplicativo cliente do Office que é aberto quando você executa o comando anterior (ou seja, Excel, Word ou PowerPoint), certifique-se de que você está conectado com um usuário que seja membro da mesma organização do Microsoft 365 que a conta de administrador do Microsoft 365 que você usou para se conectar ao Azure durante a [configuração do SSO](sso-quickstart.md#configure-sso) para o aplicativo. Isso estabelecerá as condições apropriadas para que o SSO seja bem-sucedido. 
 
 3. No aplicativo cliente do Office, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento. A imagem a seguir mostra esse botão no Excel.
 
@@ -590,7 +590,7 @@ Execute as etapas a seguir para experimentar um suplemento do Excel, do Word ou 
 
 4. Na parte inferior do painel de tarefas, escolha o botão **ler meu onedrive for Business** para iniciar o processo de SSO. 
 
-5. Se uma janela de diálogo for exibida solicitando permissões em nome do suplemento, isso significa que não há suporte ao SSO no seu cenário e, em vez disso, o suplemento voltou para um método alternativo de autenticação do usuário. Isso pode ocorrer quando o administrador do locatário não tiver consentido ao suplemento acesso ao Microsoft Graph, ou quando o usuário não estiver conectado ao Office com uma conta válida da Microsoft ou do Office 365 ("Corporativa ou de Estudante"). Escolha o botão **Aceitar** na janela de diálogo para continuar.
+5. Se uma janela de diálogo for exibida solicitando permissões em nome do suplemento, isso significa que não há suporte ao SSO no seu cenário e, em vez disso, o suplemento voltou para um método alternativo de autenticação do usuário. Isso pode ocorrer quando o administrador de locatários não concedeu consentimento para o suplemento para acessar o Microsoft Graph ou quando o usuário não está conectado ao Office com uma conta Microsoft válida ou uma conta de treinamento ou de trabalho do Microsoft 365. Escolha o botão **Aceitar** na janela de diálogo para continuar.
 
     ![Caixa de diálogo Solicitação de permissões](../images/sso-permissions-request.png)
 
@@ -614,7 +614,7 @@ Execute as etapas a seguir para experimentar um suplemento do Outlook.
     npm start
     ```
 
-2. Siga as instruções [Realizar sideload dos suplementos do Outlook para teste](/outlook/add-ins/sideload-outlook-add-ins-for-testing)para realizar o sideload do suplemento do Outlook. Certifique-se de que você está conectado ao Outlook com um usuário que é membro da mesma organização do Office 365 que a conta de administrador do Office 365 que você usou para se conectar ao Azure durante a [configuração do SSO](sso-quickstart.md#configure-sso) para o aplicativo. Isso estabelecerá as condições apropriadas para que o SSO seja bem-sucedido. 
+2. Siga as instruções [Realizar sideload dos suplementos do Outlook para teste](/outlook/add-ins/sideload-outlook-add-ins-for-testing)para realizar o sideload do suplemento do Outlook. Certifique-se de que você está conectado ao Outlook com um usuário que é membro da mesma organização do Microsoft 365 que a conta de administrador do Microsoft 365 que você usou para se conectar ao Azure durante a [configuração do SSO](sso-quickstart.md#configure-sso) para o aplicativo. Isso estabelecerá as condições apropriadas para que o SSO seja bem-sucedido. 
 
 3. Escreva uma nova mensagem no Outlook.
 
@@ -624,7 +624,7 @@ Execute as etapas a seguir para experimentar um suplemento do Outlook.
 
 5. Na parte inferior do painel de tarefas, escolha o botão **ler meu onedrive for Business** para iniciar o processo de SSO. 
 
-6. Se uma janela de diálogo for exibida solicitando permissões em nome do suplemento, isso significa que não há suporte ao SSO no seu cenário e, em vez disso, o suplemento voltou para um método alternativo de autenticação do usuário. Isso pode ocorrer quando o administrador do locatário não tiver consentido ao suplemento acesso ao Microsoft Graph, ou quando o usuário não estiver conectado ao Office com uma conta válida da Microsoft ou do Office 365 ("Corporativa ou de Estudante"). Escolha o botão **Aceitar** na janela de diálogo para continuar.
+6. Se uma janela de diálogo for exibida solicitando permissões em nome do suplemento, isso significa que não há suporte ao SSO no seu cenário e, em vez disso, o suplemento voltou para um método alternativo de autenticação do usuário. Isso pode ocorrer quando o administrador de locatários não concedeu consentimento para o suplemento para acessar o Microsoft Graph ou quando o usuário não está conectado ao Office com uma conta Microsoft válida ou uma conta de treinamento ou de trabalho do Microsoft 365. Escolha o botão **Aceitar** na janela de diálogo para continuar.
 
     ![Caixa de diálogo Solicitação de permissões](../images/sso-permissions-request.png)
 

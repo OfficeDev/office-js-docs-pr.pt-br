@@ -3,12 +3,12 @@ title: Requisitos para a execução de Suplementos do Office
 description: Saiba mais sobre os requisitos de cliente e servidor de que um usuário final precisa para executar suplementos do Office.
 ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 1c135b362516bef35cab2fa50e9ceeefdaf74015
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: fa01decddcc7cc59945ad92912fabab90cc505f7
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608011"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093480"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Requisitos para a execução de Suplementos do Office
 
@@ -31,7 +31,7 @@ Para todos os tipos de suplementos (suplementos de conteúdo, do Outlook e de pa
 
 Para suplementos e painel de tarefas e de conteúdo, nos aplicativos host do Office com suporte - Excel, PowerPoint, Project ou Word - você também precisa de um [catálogo de aplicativos](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) no SharePoint para carregar o arquivo de manifesto XML do suplemento.
 
-Para testar e executar um suplemento do Outlook, a conta de email do Outlook do usuário deve residir no Exchange 2013 ou posterior, que está disponível pelo Office 365, Exchange Online ou por meio de uma instalação local. O usuário ou administrador instala os arquivos de manifesto para suplementos do Outlook nesse servidor.
+Para testar e executar um suplemento do Outlook, a conta de email do Outlook do usuário deve residir no Exchange 2013 ou posterior, que está disponível no Microsoft 365, no Exchange Online ou por meio de uma instalação local. O usuário ou administrador instala os arquivos de manifesto para suplementos do Outlook nesse servidor.
 
 > [!NOTE]
 > Contas de email POP e IMAP no Outlook não são compatíveis com Suplementos do Office.
@@ -43,9 +43,9 @@ O software a seguir é necessário para o desenvolvimento de um Suplemento do Of
 
 - Para computadores de mesa com Windows x86 e x64, e tablets como o Surface Pro:
     - A versão de 32 ou de 64 bits do Office 2013 ou uma versão posterior, em execução no Windows 7 ou em uma versão posterior.
-    - Excel 2013, Outlook 2013, PowerPoint 2013, Project Professional 2013, Project 2013 SP1, Word 2013 ou uma versão posterior do cliente do Office, se você estiver testando ou executando um Suplemento do Office especificamente para um desses clientes de área de trabalho do Office. É possível instalar clientes de área de trabalho do Office localmente ou por meio do recurso Clique para Executar no computador cliente.
+    - Excel 2013, Outlook 2013, PowerPoint 2013, Project Professional 2013, Project 2013 SP1, Word 2013, or a later version of the Office client, if you are testing or running an Office Add-in specifically for one of these Office desktop clients. Office desktop clients can be installed on premises or via Click-to-Run on the client computer.
 
-  Se você tiver uma assinatura válida do Office 365 e não tem acesso ao cliente do Office, basta [baixar e instalar a versão mais recente do Office](https://support.office.com/article/download-and-install-or-reinstall-office-365-or-office-2019-on-a-pc-or-mac-4414eaaf-0478-48be-9c42-23adc4716658).
+  Se você tiver uma assinatura válida do Microsoft 365 e não tiver acesso ao cliente do Office, poderá [baixar e instalar a versão mais recente do Office](https://support.office.com/article/download-and-install-or-reinstall-office-365-or-office-2019-on-a-pc-or-mac-4414eaaf-0478-48be-9c42-23adc4716658).
 
 - O Internet Explorer 11 ou o Microsoft Edge (dependendo das versões do Windows e do Office) devem estar instalados, mas não precisam ser o navegador padrão. Para oferecer suporte aos Suplementos do Office, o cliente do Office que atua como host usa componentes do navegador que fazem parte do Internet Explorer 11 ou do Microsoft Edge. Consulte [Navegadores usados pelos Suplementos do Office](browsers-used-by-office-web-add-ins.md) para obter mais detalhes.
 
@@ -57,7 +57,7 @@ O software a seguir é necessário para o desenvolvimento de um Suplemento do Of
 
 ## <a name="client-requirements-os-x-desktop"></a>Requisitos de cliente: Computador com OS X
 
-O Outlook para Mac, que é distribuído como parte do Office 365, suporta suplementos do Outlook. A execução de suplementos do Outlook no Outlook para Mac possui os mesmos requisitos que o próprio Outlook para Mac: o sistema operacional deve ser pelo menos o OS X v10.10 "Yosemite". Como o Outlook para Mac usa WebKit como um mecanismo de layout para processar as páginas do suplemento, não há qualquer dependência adicional de navegador.
+O Outlook no Mac, que é distribuído como parte do Microsoft 365, oferece suporte a suplementos do Outlook. a execução de suplementos do Outlook no Outlook no Mac tem os mesmos requisitos que o Outlook no Mac em si: o sistema operacional deve ser pelo menos o "Yosemite" do so X v. Como o Outlook para Mac usa WebKit como um mecanismo de layout para processar as páginas do suplemento, não há qualquer dependência adicional de navegador.
 
 Estas são as versões mínimas do cliente do Office para Mac que suporta suplementos do Office.
 
@@ -77,9 +77,9 @@ Especificamente para o Outlook em execução em um navegador em smartphones e ta
 
 | Aplicativo host | Dispositivo | Sistema operacional | Conta do Exchange | Navegador móvel |
 |:-----|:-----|:-----|:-----|:-----|
-|Outlook no Android|Tablets e smartphones com Android|Android 4.4 Kitkat ou posterior|Atualização mais recente do Office 365 para empresas ou do Exchange Online|Aplicativo nativo para Android, navegador não aplicável|
-|Outlook no iOS|tablets iPad, smartphones iPhone|iOS 11 ou posterior|Atualização mais recente do Office 365 para empresas ou do Exchange Online|Aplicativo nativo para iOS, navegador não aplicável|
-|Outlook na Web|iPhone 4 ou posterior, iPad 2 ou posterior, iPod Touch 4 ou posterior|iOS 5 ou posterior|Office 365, Exchange Online ou Exchange Server 2013 local ou posterior|Safari|
+|Outlook no Android|Tablets e smartphones com Android|Android 4.4 Kitkat ou posterior|Na atualização mais recente do Microsoft 365 Apps for Business ou Exchange Online|Aplicativo nativo para Android, navegador não aplicável|
+|Outlook no iOS|tablets iPad, smartphones iPhone|iOS 11 ou posterior|Na atualização mais recente do Microsoft 365 Apps for Business ou Exchange Online|Aplicativo nativo para iOS, navegador não aplicável|
+|Outlook na Web|iPhone 4 ou posterior, iPad 2 ou posterior, iPod Touch 4 ou posterior|iOS 5 ou posterior|No Microsoft 365, no Exchange Online ou no local no Exchange Server 2013 ou posterior|Safari|
 
 > [!NOTE]
 > Os aplicativos nativos OWA para Android, OWA para iPad e OWA para iPhone foram [preteridos](https://support.office.com/article/Microsoft-OWA-mobile-apps-are-being-retired-076ec122-4576-4900-bc26-937f84d25a4b) e não são mais necessários ou estão disponíveis para testar os suplementos do Outlook.

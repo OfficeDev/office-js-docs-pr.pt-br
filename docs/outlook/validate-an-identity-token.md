@@ -1,14 +1,14 @@
 ---
 title: Validar um token de identidade de suplementos do Outlook
 description: O suplemento do Outlook pode enviar um token de identidade do usuário do Exchange, mas, antes de você confiar na solicitação, deve validar o token para garantir que tenha sido enviado pelo servidor Exchange solicitado.
-ms.date: 05/08/2020
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 89be659085dbf35b4ad6644eba3b5bf3acd24a9d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 6ad5f99093530528ec83cfc7a6e3a2571e0df491
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44604577"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094103"
 ---
 # <a name="validate-an-exchange-identity-token"></a>Validar um token de identidade do Exchange
 
@@ -40,7 +40,7 @@ Para validar o conteúdo do token, verifique o seguinte.
     - `x5t`a declaração está presente.
 
 - Verifique a carga e verifique se:
-    - `amurl`a declaração dentro do `appctx` é definida como o local de um arquivo de manifesto de chave de assinatura de token autorizado. Por exemplo, o `amurl` valor esperado para o Office 365 https://outlook.office365.com:443/autodiscover/metadata/json/1 é. Consulte a próxima seção [Verifique o domínio](#verify-the-domain) para obter informações adicionais.
+    - `amurl`a declaração dentro do `appctx` é definida como o local de um arquivo de manifesto de chave de assinatura de token autorizado. Por exemplo, o `amurl` valor esperado para o Microsoft 365 https://outlook.office365.com:443/autodiscover/metadata/json/1 é. Consulte a próxima seção [Verifique o domínio](#verify-the-domain) para obter informações adicionais.
     - A hora atual está entre as horas especificadas nas `nbf` `exp` declarações e. A declaração `nbf` especifica a primeira hora que o token é considerado válido e a declaração `exp` especifica a hora de expiração do token. Isso é recomendável para permitir algumas variações nas configurações do relógio entre servidores.
     - `aud`Claim é a URL esperada para seu suplemento.
     - `version`a declaração dentro da `appctx` declaração é definida como `ExIdTok.V1` .
@@ -109,7 +109,7 @@ Você pode criar um identificador exclusivo para uma conta do Exchange, concaten
 Há diversas bibliotecas que podem fazer a análise e validação de um JWT geral. A Microsoft fornece a `System.IdentityModel.Tokens.Jwt` biblioteca que pode ser usada para validar tokens de identidade do usuário do Exchange.
 
 > [!IMPORTANT]
-> Não recomendamos mais a API gerenciada de serviços Web do Exchange porque o Microsoft. Exchange. WebServices. auth. dll, embora ainda esteja disponível, agora é obsoleto e se baseia em bibliotecas sem suporte, como Microsoft. IdentityModel. Extensions. dll.
+> Não recomendamos mais a API gerenciada de serviços Web do Exchange porque o Microsoft.Exchange.WebServices.Auth.dll, embora ainda esteja disponível, agora é obsoleto e se baseia em bibliotecas sem suporte, como Microsoft.IdentityModel.Extensions.dll.
 
 ### <a name="systemidentitymodeltokensjwt"></a>System.IdentityModel.Tokens.Jwt
 

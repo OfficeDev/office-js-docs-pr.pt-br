@@ -4,19 +4,19 @@ description: Saiba como implementar o recurso Append-on-Send em seu suplemento d
 ms.topic: article
 ms.date: 05/26/2020
 localization_priority: Normal
-ms.openlocfilehash: f7f345ad726529c7ba3f8fa3ceedb46246310547
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b9c834778d68e50806da908732cd0c8663ec6680
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44607593"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093984"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a>Implementar Append no Send no suplemento do Outlook (visualização)
 
 Ao final deste passo a passo, você terá um suplemento do Outlook que pode inserir um aviso de isenção de responsabilidade quando uma mensagem for enviada.
 
 > [!IMPORTANT]
-> No momento, esse recurso tem suporte para [Visualização](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) no Outlook na Web e no Windows com uma assinatura do Office 365. Veja [como visualizar o recurso Append-on-Send](#how-to-preview-the-append-on-send-feature) neste artigo para obter mais detalhes.
+> No momento, esse recurso tem suporte para [Visualização](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) no Outlook na Web e no Windows com uma assinatura do Microsoft 365. Veja [como visualizar o recurso Append-on-Send](#how-to-preview-the-append-on-send-feature) neste artigo para obter mais detalhes.
 >
 > Como os recursos de visualização estão sujeitos a alterações sem aviso prévio, eles não devem ser usados em suplementos de produção.
 
@@ -42,7 +42,7 @@ Para esse cenário, em vez de executar a `action` função ao escolher o botão 
 
 1. Em seu editor de código, abra o projeto de início rápido.
 
-1. Abra o arquivo **manifest. xml** localizado na raiz do seu projeto.
+1. Abra o arquivo **manifest.xml** localizado na raiz do seu projeto.
 
 1. Selecione o `<VersionOverrides>` nó inteiro (incluindo marcas de abertura e fechamento) e substitua-o pelo seguinte XML.
 
@@ -140,7 +140,7 @@ Em seguida, implemente Append no evento Send.
 
 Para este cenário, você implementará o acréscimo de um aviso de isenção de responsabilidade ao item quando o usuário enviar.
 
-1. No mesmo projeto de início rápido, abra o arquivo **./src/Commands/Commands.js** no editor de código.
+1. No mesmo projeto de início rápido, abra o arquivo **./src/commands/commands.js** em seu editor de código.
 
 1. Após a `action` função, insira a seguinte função JavaScript.
 

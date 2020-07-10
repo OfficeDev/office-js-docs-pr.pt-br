@@ -3,17 +3,17 @@ ms.date: 05/06/2020
 description: 'Manipular e retornar erros como #NULL! da sua função personalizada'
 title: Manipular e retornar erros da sua função personalizada (visualização)
 localization_priority: Normal
-ms.openlocfilehash: 6ded6a03151777c30fe5037b373272c04fc64620
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5b1efcdc22a4efc59304bbe76f8d3f2d09979bc1
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609314"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093466"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function-preview"></a>Manipular e retornar erros da sua função personalizada (visualização)
 
 > [!NOTE]
-> Os recursos descritos neste artigo estão atualmente em visualização, estando sujeitos a alterações. No momento, eles não têm suporte para utilização em ambientes de produção. Você precisará participar do programa [Office Insider](https://insider.office.com/join) para experimentar os recursos de visualização.  Uma boa maneira de experimentar recursos de versão prévia é usar uma assinatura do Office 365. Caso você ainda não tenha uma assinatura do Office 365, obtenha uma assinatura do Office 365 gratuita e renovável por 90 dias ingressando no [Programa para Desenvolvedores do Office 365](https://developer.microsoft.com/office/dev-program).
+> Os recursos descritos neste artigo estão atualmente em visualização, estando sujeitos a alterações. No momento, eles não têm suporte para utilização em ambientes de produção. Você precisará participar do programa [Office Insider](https://insider.office.com/join) para experimentar os recursos de visualização.  Uma boa maneira de experimentar recursos de visualização é usar uma assinatura do Microsoft 365. Se você ainda não tem uma assinatura do Microsoft 365, é possível obter uma assinatura gratuita, de 90 dias, redimensionada pela Microsoft 365, participando do [programa de desenvolvedor do microsoft 365](https://developer.microsoft.com/office/dev-program).
 
 Se algo der errado enquanto sua função personalizada é executada, retorne um erro para informar ao usuário. Se você tiver requisitos de parâmetros específicos, como apenas números positivos, teste os parâmetros e acione um erro se eles não estiverem corretos. Você também pode usar um bloco `try`-`catch` para detectar quaisquer erros que ocorram enquanto sua função personalizada é executada.
 

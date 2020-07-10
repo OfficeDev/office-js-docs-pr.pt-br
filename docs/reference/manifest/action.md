@@ -1,14 +1,14 @@
 ---
 title: Elemento Action no arquivo de manifesto
 description: Este elemento Especifica a ação a ser executada quando o usuário seleciona um botão ou controle de menu.
-ms.date: 02/28/2020
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: c542cec38b400100014c51c978c8fcd71a546f2a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 92c783a15d104aba0adb722ab887391b4511ebed
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608800"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094446"
 ---
 # <a name="action-element"></a>Elemento Action
 
@@ -33,14 +33,14 @@ Especifica a ação a ser executada quando o usuário seleciona um controle de [
 
 ## <a name="xsitype"></a>xsi:type
 
-Este atributo especifica o tipo de ação realizada quando o usuário seleciona o botão. Pode ser uma das seguintes:
+This attribute specifies the kind of action performed when the user selects the button. It can be one of the following:
 
 - `ExecuteFunction`
 - `ShowTaskpane`
 
 ## <a name="functionname"></a>FunctionName
 
-Elemento obrigatório quando **xsi:type** é "ExecuteFunction". Especifica o nome da função a ser executada. A função está contida no arquivo especificado no elemento [FunctionFile](functionfile.md).
+Required element when **xsi:type** is "ExecuteFunction". Specifies the name of the function to execute. The function is contained in the file specified in the [FunctionFile](functionfile.md) element.
 
 ```xml
 <Action xsi:type="ExecuteFunction">
@@ -79,7 +79,7 @@ O exemplo a seguir mostra duas ações que compartilham o mesmo **TaskpaneId**.
 </Action>
 ```  
 
-O exemplo a seguir mostra duas ações que usam um **TaskpaneId** diferente. Para ver esses exemplos em contexto, consulte [Exemplo de comando de suplemento simples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/blob/master/Simple/Manifest/SimpleAddin.xml).
+The following examples show two actions that use a different **TaskpaneId**. To see these examples in context, see [Simple Add-in Commands Sample](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/blob/master/Simple/Manifest/SimpleAddin.xml).
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -132,7 +132,7 @@ O exemplo a seguir mostra uma ação que usa o elemento **title** . Observe que 
 Elemento opcional quando **xsi:type** for "ShowTaskpane". Os elementos [VersionOverrides](versionoverrides.md) incluídos devem ter um valor `VersionOverridesV1_1` para o atributo `xsi:type`. Inclua esse elemento com um valor `true` a fim de fornecer suporte para fixação do painel de tarefas. O usuário pode "fixar" o painel de tarefas, fazendo com que ele permaneça aberto quando alterar a seleção. Para saber mais, consulte [Implementar um painel de tarefas fixável no Outlook](../../outlook/pinnable-taskpane.md).
 
 > [!IMPORTANT]
-> Embora o `SupportsPinning` elemento tenha sido introduzido no [conjunto de requisitos 1,5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), atualmente só há suporte para assinantes do Office 365 usando o seguinte.
+> Embora o `SupportsPinning` elemento tenha sido introduzido no [conjunto de requisitos 1,5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), atualmente só há suporte para assinantes do Microsoft 365 usando o seguinte.
 > - Outlook 2016 ou posterior no Windows (compilação 7628,1000 ou posterior)
 > - Outlook 2016 ou posterior no Mac (Build 16.13.503 ou posterior)
 > - Outlook na Web moderno

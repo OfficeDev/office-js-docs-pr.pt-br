@@ -1,18 +1,18 @@
 ---
 title: Painéis de tarefas nos Suplementos do Office
 description: Os painéis de tarefa concedem aos usuários acesso a controles de interface que executam códigos para modificar documentos ou emails ou exibir dados de uma fonte de dados.
-ms.date: 01/14/2020
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 429042db7e30f5fefe48c9648e6ad5410f6594c4
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 39a96f4d5aa63d55f4dcb30d9aeb9e680357aa09
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608492"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093753"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Painéis de tarefas nos Suplementos do Office
  
-Painéis de tarefas são superfícies de interface que normalmente são exibidas no lado direito da janela no Word, PowerPoint, Excel e Outlook. As painéis de tarefa concedem aos usuários acesso a controles de interface que executam códigos para modificar documentos ou emails ou exibir dados de uma fonte de dados. Use painéis de tarefa quando não precisar inserir a funcionalidade diretamente no documento.
+Task panes are interface surfaces that typically appear on the right side of the window within Word, PowerPoint, Excel, and Outlook. Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source. Use task panes when you don't need to embed functionality directly into the document.
 
 *Figura 1. Layout típico do painel de tarefa*
 
@@ -30,7 +30,7 @@ Painéis de tarefas são superfícies de interface que normalmente são exibidas
 
 ## <a name="variants"></a>Variantes
 
-As imagens a seguir mostram vários tamanhos de painel de tarefas com a faixa de opções do Office em uma resolução de 1366 x 768. No Excel, é necessário um espaço vertical adicional para acomodar a barra de fórmulas.  
+The following images show the various task pane sizes with the Office app ribbon at a 1366x768 resolution. For Excel, additional vertical space is required to accommodate the formula bar.  
 
 *Figura 2. Tamanhos de painel de tarefas da área de trabalho do Office 2016*
 
@@ -43,7 +43,7 @@ As imagens a seguir mostram vários tamanhos de painel de tarefas com a faixa de
 
 <br/>
 
-*Figura 3. Tamanhos de painel de tarefas do Office 365*
+*Figura 3. Tamanhos de painel de tarefas do Office*
 
 ![Imagem exibindo os tamanhos de painel de tarefas da área de trabalho em 1366 x 768](../images/office-365-taskpane-sizes.png)
 
@@ -54,7 +54,7 @@ As imagens a seguir mostram vários tamanhos de painel de tarefas com a faixa de
 
 ## <a name="personality-menu"></a>Menu de personalidade
 
-Menus de personalidade podem obstruir elementos de navegação e comando localizados perto da parte superior direita do suplemento. Veja a seguir as dimensões atuais do menu personalidade no Windows e Mac.
+Personality menus can obstruct navigational and commanding elements located near the top right of the add-in. The following are the current dimensions of the personality menu on Windows and Mac.
 
 No Windows, o menu de personalidade mede 12 x 32 pixels, conforme mostrado.
 

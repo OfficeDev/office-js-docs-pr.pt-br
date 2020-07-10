@@ -1,23 +1,23 @@
 ---
 title: Realizar sideload de suplementos do Office no Office na Web para teste
 description: Testar o suplemento do Office no Office na web através de sideloading
-ms.date: 02/18/2020
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 5e6352f63959dce54b3a67c79c522446913e0c38
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 60b7e4f1d598e4f5ec09307d58294f54123112ad
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611130"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094117"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>Realizar sideload de suplementos do Office no Office na Web para teste
 
-Você pode instalar um suplemento do Office para teste usando sideloading, sem precisar primeiro colocá-lo em um catálogo de suplementos. O sideloading pode ser realizado no Office 365 ou no Office na Web. O procedimento é ligeiramente diferente nas duas plataformas.
+Você pode instalar um suplemento do Office para teste usando sideloading, sem precisar primeiro colocá-lo em um catálogo de suplementos. O Sideload pode ser feito no Microsoft 365 ou no Office na Web. O procedimento é ligeiramente diferente nas duas plataformas.
 
 Quando você realiza o sideload de um suplemento, o manifesto do suplemento é armazenado localmente do navegador e, portanto, se você limpar o cache do navegador ou alternar para um navegador diferente, precisará realizar o sideload do suplemento novamente.
 
 > [!NOTE]
-> A realização do sideload como descrito neste artigo tem suporte no Word, no Excel e no PowerPoint. Para realizar o sideload de um suplemento do Outlook, confira [Realizar sideload de suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md).
+> Sideloading as described in this article is supported on Word, Excel, and PowerPoint. To sideload an Outlook add-in, see [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md).
 
 O vídeo a seguir oferece orientações para o processo de sideload do seu suplemento no Office na Web ou para área de trabalho.
 
@@ -39,7 +39,7 @@ O vídeo a seguir oferece orientações para o processo de sideload do seu suple
 
     ![A caixa de diálogo Carregar suplemento com botões para pesquisar, carregar e cancelar.](../images/upload-add-in.png)
 
-6. Verifique se o suplemento está instalado. Por exemplo, se for um comando do suplemento, ele deve aparecer na faixa de opções ou no menu de contexto. Se for um suplemento de painel de tarefas, o painel deve ser exibido.
+6. Verify that your add-in is installed. For example, if it is an add-in command, it should appear on either the ribbon or the context menu. If it is a task pane add-in, the pane should appear.
 
 > [!NOTE]
 >Para testar o suplemento do Office com o Microsoft Edge, são necessárias duas etapas de configuração: 
@@ -52,7 +52,7 @@ O vídeo a seguir oferece orientações para o processo de sideload do seu suple
 
 ## <a name="sideload-an-office-add-in-in-office-365"></a>Realizar sideload de um suplemento do Office no Office 365
 
-1. Entre em sua conta do Office 365.
+1. Entre em sua conta do Microsoft 365.
 
 2. Abra o inicializador de aplicativos na extremidade esquerda da barra de ferramentas e selecione **Excel**, **Word**ou **PowerPoint**e, em seguida, crie um novo documento.
 

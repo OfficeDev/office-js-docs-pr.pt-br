@@ -3,24 +3,24 @@ title: Estender funções personalizadas com funções definidas pelo usuário X
 description: Habilitar a compatibilidade com as funções definidas pelo usuário do Excel XLL que possuem funcionalidade equivalente às suas funções personalizadas
 ms.date: 04/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 06a776678c60a4b66494097385f304ddac9a4ce0
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 23fd1e78d3a570a0f13b85559ae34b887d92e2ea
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44610358"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093431"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>Estender funções personalizadas com funções definidas pelo usuário XLL
 
 Se você tiver os XLLs do Excel existentes, poderá criar funções personalizadas equivalentes em um suplemento do Excel para estender seus recursos de solução para outras plataformas, como online ou em um Mac. No entanto, os suplementos do Excel não possuem todas as funcionalidades disponíveis em XLLs. Dependendo da funcionalidade que sua solução usa, o XLL pode fornecer uma experiência melhor do que as funções personalizadas do suplemento do Excel no Excel no Windows.
 
 > [!NOTE]
-> O suplemento de COM e a compatibilidade do XLL UDF são compatíveis com as seguintes plataformas, quando conectados a uma assinatura do Office 365:
+> O suplemento de COM e a compatibilidade do XLL UDF são compatíveis com as seguintes plataformas, quando conectados a uma assinatura do Microsoft 365:
 > - Excel Online
 > - Excel no Windows (versão 1904 ou posterior)
 > - Excel no Mac (versão 13,329 ou posterior)
 > 
-> Para usar o suplemento de COM e a compatibilidade do XLL UDF no Excel na Web, faça logon usando sua assinatura do Office 365 ou uma [conta da Microsoft](https://account.microsoft.com/account). Se você ainda não tem uma assinatura do Office 365, é possível uma assinatura gratuita, de 90 dias, redimensionada do Office 365, participando do [programa de desenvolvedor do office 365](https://developer.microsoft.com/office/dev-program).
+> Para usar o suplemento de COM e a compatibilidade do XLL UDF no Excel na Web, faça logon usando sua assinatura do Microsoft 365 ou uma [conta da Microsoft](https://account.microsoft.com/account). Se você ainda não tem uma assinatura do Microsoft 365, é possível uma assinatura gratuita, de 90 dias, redimensionada para o Microsoft 365, participando do [programa de desenvolvedor do microsoft 365](https://developer.microsoft.com/office/dev-program).
 
 ## <a name="specify-equivalent-xll-in-the-manifest"></a>Especificar o XLL equivalente no manifesto
 
@@ -66,7 +66,7 @@ A tabela a seguir compara os recursos nas funções de XLL definidas pelo usuár
 | Funções voláteis | Sim | Sim | Sim |
 | Suporte para recálculo de vários encadeamentos | Sim | Sim | Sim |
 | Comportamento de cálculo | Nenhuma interface do usuário. O Excel pode não responder durante o cálculo. | Os usuários verão #BUSY! até que um resultado seja retornado. | Os usuários verão #BUSY! até que um resultado seja retornado. |
-| Conjuntos de requisitos | N/A | CustomFunctions 1,1 e posterior | CustomFunctions 1,1 e posterior |
+| Conjuntos de requisitos | N/D | CustomFunctions 1,1 e posterior | CustomFunctions 1,1 e posterior |
 
 ## <a name="see-also"></a>Confira também
 

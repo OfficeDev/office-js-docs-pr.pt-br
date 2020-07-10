@@ -5,12 +5,12 @@ title: Criar funções personalizadas no Excel
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 4f8416b9058def9dcb4998fb2f31684b59276ac4
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 42ace6208abbd95d0f538345a1f5b5cc15ba1823
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609279"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093459"
 ---
 # <a name="create-custom-functions-in-excel"></a>Criar funções personalizadas no Excel
 
@@ -84,7 +84,7 @@ Para ver um manifesto de trabalho completo de um suplemento de exemplo, confira 
 
 ## <a name="coauthoring"></a>Coautoria
 
-O Excel na Web e o Windows conectado a uma assinatura do Office 365 permitem que você coautor no Excel. Se sua pasta de trabalho usa uma função personalizada, seu colega de coautoria é solicitado a carregar o suplemento da função personalizada. Depois que você carregar o suplemento, a função personalizada compartilhará os resultados por meio de coautoria.
+O Excel na Web e o Windows conectado a uma assinatura do Microsoft 365 permitem que você coautor no Excel. Se sua pasta de trabalho usa uma função personalizada, seu colega de coautoria é solicitado a carregar o suplemento da função personalizada. Depois que você carregar o suplemento, a função personalizada compartilhará os resultados por meio de coautoria.
 
 Para saber mais sobre coautoria, confira o tópico [Sobre o recurso de coautoria no Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).
 

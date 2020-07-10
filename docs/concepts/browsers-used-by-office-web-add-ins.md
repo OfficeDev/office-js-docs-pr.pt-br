@@ -1,14 +1,14 @@
 ---
 title: Navegadores usados pelos Suplementos do Office
 description: Especifica como o sistema operacional e a versão do Office determinam o navegador que é usado pelos suplementos do Office.
-ms.date: 06/01/2020
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 2dc66439ff4ab7f9bee148168df4d9d9b30a11a1
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 0cdb601da7625eb3cafdcd883192861938529e0d
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608038"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093438"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navegadores usados pelos Suplementos do Office
 
@@ -17,7 +17,7 @@ Os suplementos do Office são aplicativos Web exibidos usando iFrames durante a 
 Qual navegador é usado depende do:
 
 - Sistema operacional do computador.
-- Se o suplemento está em execução no Office na Web, no Office 365 ou no Office 2013 sem assinatura ou posterior.
+- Se o suplemento está sendo executado no Office na Web, no Microsoft 365 ou no Office 2013 ou posterior que não está em assinatura.
 
 A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sistemas operacionais.
 
@@ -36,7 +36,7 @@ A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sis
 
 <sup>2</sup> quando o Microsoft Edge está sendo usado, o Windows 10 Narrator (às vezes chamado de "leitor de tela") lê a `<title>` marca na página que é aberta no painel de tarefas. Quando o Internet Explorer 11 está sendo usado, o Narrador lê a barra de título do painel de tarefas, que vem do valor `<DisplayName>` no manifesto de suplemento.
 
-<sup>3</sup> se o suplemento incluir o `Runtimes` elemento no manifesto, ele usará o Internet Explorer 11 independentemente da versão do Windows ou do Office 365. Para obter mais informações, consulte [runtimes](../reference/manifest/runtimes.md).
+<sup>3</sup> se o suplemento incluir o `Runtimes` elemento no manifesto, ele usará o Internet Explorer 11 independentemente da versão do Windows ou do Microsoft 365. Para obter mais informações, consulte [runtimes](../reference/manifest/runtimes.md).
 
 > [!IMPORTANT]
 > O Internet Explorer 11 não oferece suporte às versões do JavaScript posteriores a ES5. Se qualquer um dos usuários de suplemento tiverem plataformas com Internet Explorer 11, para que seja possível usar a sintaxe e os recursos do ECMAScript 2015 ou posterior, você precisará fazer o transpile do seu JavaScript para o ES5 ou usar um polyfill. Além disso, o Internet Explorer 11 não oferece suporte a alguns recursos do HTML5, como mídia, gravação e localização.
@@ -49,7 +49,7 @@ Os suplementos do Office não dão suporte a trabalhadores de serviço no [Micro
 
 ### <a name="chromium-based-edge-is-installed-on-my-development-computer-but-my-add-in-does-not-use-it"></a>A borda baseada em Chromium está instalada no meu computador de desenvolvimento, mas meu suplemento não a usa
 
-O navegador base no [Microsoft Edge](https://support.microsoft.com/help/4501095/download-the-new-microsoft-edge-based-on-chromium) foi alterado para Chromium. A base mais antiga, chamada EdgeHTML, não é removida quando a borda baseada no Chromium é instalada. O Office ainda usará a base de EdgeHTML para suplementos até que uma compilação do Office 365 que suporte o Chromium esteja instalada no computador. Esperamos que essas compilações sejam fornecidas no 2020. Eles provavelmente aparecerão no canal de insiders na primeira metade do ano.
+O navegador base no [Microsoft Edge](https://support.microsoft.com/help/4501095/download-the-new-microsoft-edge-based-on-chromium) foi alterado para Chromium. A base mais antiga, chamada EdgeHTML, não é removida quando a borda baseada no Chromium é instalada. O Office ainda usará a base de EdgeHTML para suplementos até que uma compilação do Microsoft 365 que suporte o Chromium esteja instalada no computador. Esperamos que essas compilações sejam fornecidas no 2020. Eles provavelmente aparecerão no canal de insiders na primeira metade do ano.
 
 ### <a name="scroll-bar-does-not-appear-in-task-pane"></a>Barra de rolagem não aparece no painel de tarefas
 

@@ -1,14 +1,14 @@
 ---
 title: Realizar sideload de suplementos do Outlook para teste
 description: Use o sideload para instalar um suplemento do Outlook para teste sem precisar primeiro colocá-lo em um catálogo de suplementos.
-ms.date: 06/29/2020
+ms.date: 07/09/2020
 localization_priority: Normal
-ms.openlocfilehash: b99b72dbf4691d6a27ac9405c88f2cc642baaadd
-ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
+ms.openlocfilehash: 9b44b988ddd6552d5f7d14088a0b6f3ae1e410ed
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "45006476"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093879"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>Realizar sideload de suplementos do Outlook para teste
 
@@ -90,7 +90,7 @@ O processo de Sideload de um suplemento no Outlook na Web depende se você está
 
 1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
 
-#### <a name="outlook-2013"></a>Outlook 2013
+### <a name="outlook-2013"></a>Outlook 2013
 
 1. Abra o Outlook 2013 no Windows.
 

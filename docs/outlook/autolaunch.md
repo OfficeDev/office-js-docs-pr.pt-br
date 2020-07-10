@@ -4,12 +4,12 @@ description: Saiba como configurar seu suplemento do Outlook para ativação bas
 ms.topic: article
 ms.date: 05/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 43c1f50f7758efed6472b4d54841c6ed662a20bc
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7b14dfb425223dbf486173e7df103d1a2cd09641
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611649"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093424"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>Configurar seu suplemento do Outlook para ativação baseada em evento (visualização)
 
@@ -21,7 +21,7 @@ Sem o recurso de ativação baseada em eventos, um usuário precisa iniciar expl
 Ao final deste passo a passo, você terá um suplemento que é executado sempre que uma nova mensagem é criada.
 
 > [!IMPORTANT]
-> Este recurso só tem suporte para [Visualização](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) no Outlook na Web com uma assinatura do Office 365. Veja [como visualizar o recurso de ativação baseado em eventos](#how-to-preview-the-event-based-activation-feature) neste artigo para obter mais detalhes.
+> Este recurso só tem suporte para [Visualização](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) no Outlook na Web com uma assinatura do Microsoft 365. Veja [como visualizar o recurso de ativação baseado em eventos](#how-to-preview-the-event-based-activation-feature) neste artigo para obter mais detalhes.
 >
 > Como os recursos de visualização estão sujeitos a alterações sem aviso prévio, eles não devem ser usados em suplementos de produção.
 
@@ -44,7 +44,7 @@ Para habilitar a ativação baseada em eventos do suplemento, você deve configu
 
 1. Em seu editor de código, abra o projeto de início rápido.
 
-1. Abra o arquivo **manifest. xml** localizado na raiz do seu projeto.
+1. Abra o arquivo **manifest.xml** localizado na raiz do seu projeto.
 
 1. Selecione o `<VersionOverrides>` nó inteiro (incluindo marcas de abertura e fechamento) e substitua-o pelo seguinte XML.
 
@@ -158,7 +158,7 @@ Você precisa implementar o tratamento dos eventos selecionados.
 
 Neste cenário, você adicionará o tratamento para compor novos itens.
 
-1. No mesmo projeto de início rápido, abra o arquivo **./src/Commands/Commands.js** no editor de código.
+1. No mesmo projeto de início rápido, abra o arquivo **./src/commands/commands.js** em seu editor de código.
 
 1. Após a `action` função, insira as seguintes funções de JavaScript.
 
@@ -205,7 +205,7 @@ Se o usuário tiver vários suplementos que se inscreveram no mesmo evento, a pl
 
 O usuário pode alternar ou navegar para fora do item de email atual onde o suplemento começou a ser executado. O suplemento que foi iniciado concluirá a operação em segundo plano.
 
-Algumas APIs do Office. js que alteram ou alteram a interface do usuário não são permitidas a partir de suplementos baseados em eventos. A seguir estão as APIs bloqueadas.
+Algumas APIs do Office.js que alteram ou alteram a interface do usuário não são permitidas a partir de suplementos baseados em eventos. A seguir estão as APIs bloqueadas.
 
 - Em `Office.context.mailbox` :
   - `displayAppointmentForm`

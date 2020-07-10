@@ -3,12 +3,12 @@ title: Conjunto de requisitos do modo de visualização de API para suplementos 
 description: Recursos e APIs que estão atualmente em versão prévia para suplementos do Outlook.
 ms.date: 06/17/2020
 localization_priority: Normal
-ms.openlocfilehash: d165d6ff82edf66034bb90ea40d522a23f919191
-ms.sourcegitcommit: 9eed5201a3ef556f77ba3b6790f007358188d57d
+ms.openlocfilehash: d91d1e16382a9ada71210657d6111f548c85ccfd
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "44778659"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094418"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 
@@ -36,31 +36,31 @@ Os seguintes recursos estão no modo de visualização.
 
 Adicionado um novo objeto que representa a propriedade de evento de dia inteiro de um compromisso no modo de composição.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
+**Disponível em**: Outlook no Windows (conectado à assinatura do Microsoft 365)
 
 #### <a name="sensitivity"></a>[Sensitivity](/javascript/api/outlook/office.sensitivity?view=outlook-js-preview)
 
 Adicionado um novo objeto que representa a sensibilidade de um compromisso no modo de composição.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
+**Disponível em**: Outlook no Windows (conectado à assinatura do Microsoft 365)
 
 #### <a name="officecontextmailboxitemisalldayevent"></a>[Office. Context. Mailbox. Item. isAllDayEvent](office.context.mailbox.item.md#properties)
 
 Adicionada uma nova propriedade que representa se um compromisso é um evento de dia inteiro.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
+**Disponível em**: Outlook no Windows (conectado à assinatura do Microsoft 365)
 
 #### <a name="officecontextmailboxitemsensitivity"></a>[Office. Context. Mailbox. Item. sensibilidade](office.context.mailbox.item.md#properties)
 
 Adicionada uma nova propriedade que representa a sensibilidade de um compromisso.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
+**Disponível em**: Outlook no Windows (conectado à assinatura do Microsoft 365)
 
 #### <a name="officemailboxenumsappointmentsensitivitytype"></a>[Office. MailboxEnums. AppointmentSensitivityType](/javascript/api/outlook/office.mailboxenums.appointmentsensitivitytype?view=outlook-js-preview)
 
 Foi adicionada uma nova enumeração `AppointmentSensitivityType` que representa as opções de sensibilidade disponíveis em um compromisso.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
+**Disponível em**: Outlook no Windows (conectado à assinatura do Microsoft 365)
 
 <br>
 
@@ -76,13 +76,13 @@ Para saber mais sobre como usar o recurso Append-on-Send, confira [implementar a
 
 Foi adicionada uma nova função ao `Body` objeto que acrescenta dados ao final do corpo do item no modo de composição.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno, [Configurar acesso de visualização](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+**Disponível em**: Outlook no Windows (conectado à assinatura do Microsoft 365), Outlook na Web (moderno, [Configurar acesso de visualização](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 #### <a name="extendedpermissions"></a>[ExtendedPermissions](../../manifest/extendedpermissions.md)
 
 Adicionado um novo elemento ao manifesto onde a `AppendOnSend` permissão estendida deve ser incluída na coleção de permissões estendidas.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno, [Configurar acesso de visualização](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+**Disponível em**: Outlook no Windows (conectado à assinatura do Microsoft 365), Outlook na Web (moderno, [Configurar acesso de visualização](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 <br>
 
@@ -96,37 +96,37 @@ Adicionado um novo elemento ao manifesto onde a `AppendOnSend` permissão estend
 
 Foi adicionada uma nova função ao `Mailbox` objeto que exibe um compromisso existente. Esta é a versão assíncrona do `displayAppointmentForm` método.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
+**Disponível em**: Outlook no Windows (conectado à assinatura do Microsoft 365)
 
 #### <a name="officecontextmailboxdisplaymessageformasync"></a>[Office. Context. Mailbox. displayMessageFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaymessageformasync-itemid--options--callback-)
 
 Foi adicionada uma nova função ao `Mailbox` objeto que exibe uma mensagem existente. Esta é a versão assíncrona do `displayMessageForm` método.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
+**Disponível em**: Outlook no Windows (conectado à assinatura do Microsoft 365)
 
 #### <a name="officecontextmailboxdisplaynewappointmentformasync"></a>[Office. Context. Mailbox. displayNewAppointmentFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaynewappointmentformasync-parameters--options--callback-)
 
 Foi adicionada uma nova função ao `Mailbox` objeto que exibe um novo formulário de compromisso. Esta é a versão assíncrona do `displayNewAppointmentForm` método.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
+**Disponível em**: Outlook no Windows (conectado à assinatura do Microsoft 365)
 
 #### <a name="officecontextmailboxdisplaynewmessageformasync"></a>[Office. Context. Mailbox. displayNewMessageFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview#displaynewmessageformasync-parameters--options--callback-)
 
 Foi adicionada uma nova função ao `Mailbox` objeto que exibe um novo formulário de mensagem. Esta é a versão assíncrona do `displayNewMessageForm` método.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
+**Disponível em**: Outlook no Windows (conectado à assinatura do Microsoft 365)
 
 #### <a name="officecontextmailboxitemdisplayreplyallformasync"></a>[Office. Context. Mailbox. Item. displayReplyAllFormAsync](office.context.mailbox.item.md#methods)
 
 Foi adicionada uma nova função ao `Item` objeto que exibe o formulário "responder a todos" no modo de leitura. Esta é a versão assíncrona do `displayReplyAllForm` método.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
+**Disponível em**: Outlook no Windows (conectado à assinatura do Microsoft 365)
 
 #### <a name="officecontextmailboxitemdisplayreplyformasync"></a>[Office. Context. Mailbox. Item. displayReplyFormAsync](office.context.mailbox.item.md#methods)
 
 Foi adicionada uma nova função ao `Item` objeto que exibe o formulário "responder" no modo de leitura. Esta é a versão assíncrona do `displayReplyForm` método.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
+**Disponível em**: Outlook no Windows (conectado à assinatura do Microsoft 365)
 
 <br>
 
@@ -168,7 +168,7 @@ Adicionado suporte do Outlook ao `Runtimes` elemento manifest. Ele faz referênc
 
 Foi adicionada uma nova função ao `CustomProperties` objeto que obtém todas as propriedades personalizadas.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno), Outlook no Mac (conectado à assinatura do Office 365), Outlook no Android, Outlook no Ios
+**Disponível em**: Outlook no Windows (conectado à assinatura do Microsoft 365), Outlook na Web (moderno), Outlook no Mac (conectado à assinatura do Microsoft 365), Outlook no Android, Outlook no Ios
 
 <br>
 
@@ -182,7 +182,7 @@ Foi adicionada uma nova função ao `CustomProperties` objeto que obtém todas a
 
 Adicionada uma nova função que retorna os dados inicialização que são transmitidos quando o suplemento é [ativado por uma mensagem acionável](/outlook/actionable-messages/invoke-add-in-from-actionable-message).
 
-**Disponível em:** Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (clássico)
+**Disponível em**: Outlook no Windows (conectado à assinatura do Microsoft 365), Outlook na Web (clássico)
 
 <br>
 
@@ -196,31 +196,31 @@ Adicionada uma nova função que retorna os dados inicialização que são trans
 
 Foi adicionada uma nova função ao `Body` objeto que adiciona ou substitui a assinatura no corpo do item no modo de composição.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno, [Configurar acesso de visualização](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+**Disponível em**: Outlook no Windows (conectado à assinatura do Microsoft 365), Outlook na Web (moderno, [Configurar acesso de visualização](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 #### <a name="officecontextmailboxitemdisableclientsignatureasync"></a>[Office. Context. Mailbox. Item. disableClientSignatureAsync](office.context.mailbox.item.md#methods)
 
 Adicionada uma nova função que desabilita a assinatura do cliente para a caixa de correio de envio no modo de composição.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno, [Configurar acesso de visualização](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+**Disponível em**: Outlook no Windows (conectado à assinatura do Microsoft 365), Outlook na Web (moderno, [Configurar acesso de visualização](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 #### <a name="officecontextmailboxitemgetcomposetypeasync"></a>[Office. Context. Mailbox. Item. getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview#getcomposetypeasync-options--callback-)
 
 Foi adicionada uma nova função que obtém o tipo de redação de uma mensagem no modo de composição.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno, [Configurar acesso de visualização](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+**Disponível em**: Outlook no Windows (conectado à assinatura do Microsoft 365), Outlook na Web (moderno, [Configurar acesso de visualização](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 #### <a name="officecontextmailboxitemisclientsignatureenabledasync"></a>[Office. Context. Mailbox. Item. isClientSignatureEnabledAsync](office.context.mailbox.item.md#methods)
 
 Adicionada uma nova função que verifica se a assinatura do cliente está habilitada no modo de composição.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno, [Configurar acesso de visualização](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+**Disponível em**: Outlook no Windows (conectado à assinatura do Microsoft 365), Outlook na Web (moderno, [Configurar acesso de visualização](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 #### <a name="officemailboxenumscomposetype"></a>[Office. MailboxEnums. composetype](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-preview)
 
 Adição de uma nova enumeração `ComposeType` disponível no modo de composição.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365), Outlook na Web (moderno, [Configurar acesso de visualização](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+**Disponível em**: Outlook no Windows (conectado à assinatura do Microsoft 365), Outlook na Web (moderno, [Configurar acesso de visualização](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
 
 <br>
 
@@ -234,13 +234,13 @@ Adição de uma nova enumeração `ComposeType` disponível no modo de composiç
 
 Capacidade adicional para obter o tema do Office.
 
-**Disponível em**: Outlook no Windows (conectado a assinatura do Office 365)
+**Disponível em**: Outlook no Windows (conectado à assinatura do Microsoft 365)
 
 #### <a name="officeeventtypeofficethemechanged"></a>[Office.EventType.OfficeThemeChanged](/javascript/api/office/office.eventtype)
 
 Adicionado `OfficeThemeChanged` evento `Mailbox`.
 
-**Disponível em**: Outlook no Windows (conectado à assinatura do Office 365)
+**Disponível em**: Outlook no Windows (conectado à assinatura do Microsoft 365)
 
 <br>
 
@@ -254,7 +254,7 @@ Adicionado `OfficeThemeChanged` evento `Mailbox`.
 
 Foi adicionado acesso ao `getAccessToken`, que permite que os suplementos [obtenham um token de acesso](../../../outlook/authenticate-a-user-with-an-sso-token.md) da API do Microsoft Graph.
 
-**Disponível em:** Outlook no Windows (conectado à assinatura do Office 365), Outlook para Mac (conectado à assinatura do Office 365), Outlook na Web (moderno), Outlook na Web (clássico)
+**Disponível em**: Outlook no Windows (conectado à assinatura do Microsoft 365), Outlook no Mac (conectado à assinatura do Microsoft 365), Outlook na Web (moderno), Outlook na Web (clássico)
 
 ## <a name="see-also"></a>Confira também
 

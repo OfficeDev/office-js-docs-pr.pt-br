@@ -4,12 +4,12 @@ description: Neste tutorial, você criará um suplemento do Excel que contém um
 ms.date: 01/16/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 4e2ad0276690d0b427a6788adc89ba09a274e203
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7f8dcfa792b1bbce36055b865d6cc67fcb55d68a
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611082"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094264"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Tutorial: Criar funções personalizadas no Excel
 
@@ -26,7 +26,7 @@ Neste tutorial, você vai:
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel no Windows (versão 1904 ou posterior, conectado a assinatura do Office 365) ou na Web
+* Excel no Windows (versão 1904 ou posterior, conectada à assinatura do Microsoft 365) ou na Web
 
 ## <a name="create-a-custom-functions-project"></a>Criar um projeto com funções personalizadas
 

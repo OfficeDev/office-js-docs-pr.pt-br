@@ -3,12 +3,12 @@ title: Autenticação de usuário com um token de logon único
 description: Saiba como usar o token de logon único fornecido por um suplemento do Outlook para implementar o SSO com o serviço.
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 306867c3b71bb139c5c8ab4859618dcea282fd69
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: d53e75faa2d0471b43957cfa71ff6f6a50a0da4f
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44606501"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093977"
 ---
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in-preview"></a>Autenticar um usuário com um token de logon único em um suplemento do Outlook (visualização)
 
@@ -24,9 +24,9 @@ Para obter uma visão geral do SSO em suplementos do Office, confira [Habilitar 
 > [!NOTE]
 > Para usar o SSO, você deve carregar a versão beta da biblioteca de JavaScript do Office de https://appsforoffice.microsoft.com/lib/beta/hosted/office.js na página de inicialização HTML do suplemento. No entanto, você **não** deve usar APIs beta em suplementos de produção.
 
-## <a name="enable-modern-authentication-in-your-office-365-tenancy"></a>Habilitar a autenticação moderna em seu locatário do Office 365
+## <a name="enable-modern-authentication-in-your-microsoft-365-tenancy"></a>Habilitar a autenticação moderna em seu Microsoft 365 locação
 
-Para usar o SSO com um suplemento do Outlook, você deve habilitar a Autenticação Moderna para o locatário do Office 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+Para usar o SSO com um suplemento do Outlook, você deve habilitar a autenticação moderna para o Microsoft 365 locação. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 ## <a name="register-your-add-in"></a>Registrar seu suplemento
 

@@ -1,14 +1,14 @@
 ---
 title: Solucionar problemas de mensagens de erro no logon único (SSO)
 description: Orientações sobre como solucionar problemas com logon único (SSO) em suplementos do Office e lidar com condições ou erros especiais.
-ms.date: 04/13/2020
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: da42b3b3d9b5cf1fede999a18bbe36c5532bd866
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 49e967aa0d500df64828c66d9dee8574eb948cec
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609696"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093557"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>Solucionar problemas de mensagens de erro no logon único (SSO) (visualização)
 
@@ -17,11 +17,11 @@ Este artigo fornece algumas orientações sobre como solucionar problemas com o 
 > [!NOTE]
 > Atualmente, a API de logon único tem suporte para Word, Excel, Outlook e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md).
 > [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-> Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Office 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a autenticação moderna para o Microsoft 365 locação. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 ## <a name="debugging-tools"></a>Ferramentas de depuração
 
-Recomendamos fortemente que você use uma ferramenta que possa interceptar e exibir as solicitações HTTP a partir de seu serviço Web do suplemento, além de respostas para ele, quando você estiver desenvolvendo. Duas das ferramentas mais populares são:
+We strongly recommend that you use a tool that can intercept and display the HTTP Requests from, and Responses to, your add-in's web service when you are developing. Two of the most popular are:
 
 - [Fiddler](https://www.telerik.com/fiddler): gratuita ([Documentação](https://docs.telerik.com/fiddler/configure-fiddler/tasks/configurefiddler))
 - [Charles](https://www.charlesproxy.com): Gratuita por 30 dias. ([Documentação](https://www.charlesproxy.com/documentation/))
@@ -36,7 +36,7 @@ Para acessar exemplos de tratamento de erro descritos nesta seção, confira:
 
 A API [getAccessToken](../develop/sso-in-office-add-ins.md#sso-api-reference) não é compatível pelo suplemento ou pela versão do Office.
 
-- A versão do Office não é compatível com o SSO. A versão necessária é o Office 365 (a versão de assinatura do Office), em qualquer canal mensal.
+- A versão do Office não é compatível com o SSO. A versão necessária é assinatura da Microsoft 365, em qualquer canal mensal.
 - O manifesto do suplemento está sem a seção [WebApplicationInfo](../reference/manifest/webapplicationinfo.md) adequada.
 
 O suplemento deverá responder a esse erro recorrendo a um sistema de autenticação de usuário alternativo. Para obter mais informações, confira [Requisitos e Melhores Práticas](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
@@ -60,7 +60,7 @@ O usuário abortou a entrada ou o consentimento; por exemplo, escolhendo **Cance
 
 ### <a name="13003"></a>13003
 
-Tipo de Usuário não suportado. O usuário não iniciou sessão no Office com uma conta Microsoft ou do Office 365 válida (corporativa ou de estudante). Isso pode acontecer se o Office funcionar com uma conta de domínio no local, por exemplo. O código deve retornar a um sistema alternativo de autenticação de usuário. Para obter mais informações, confira [Requisitos e Melhores Práticas](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
+Tipo de Usuário não suportado. O usuário não está conectado ao Office com uma conta Microsoft válida ou uma conta de treinamento ou de trabalho do Microsoft 365. Isso pode acontecer se o Office funcionar com uma conta de domínio no local, por exemplo. O código deve retornar a um sistema alternativo de autenticação de usuário. Para obter mais informações, confira [Requisitos e Melhores Práticas](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
 
 ### <a name="13004"></a>13004
 
@@ -82,8 +82,8 @@ O host do Office não conseguiu obter um token de acesso ao serviço Web do supl
 
 - Se ocorrer este erro durante o desenvolvimento, certifique-se de que o registro e o manifesto do suplemento especifiquem as permissões de `profile` (e a permissão de `openid`, se estiver usando o MSAL.NET). Para mais informações, confira [Registrar o suplemento com o ponto de extremidade do Microsoft Azure AD v2.0](register-sso-add-in-aad-v2.md).
 - Na produção, há várias coisas que podem causar esse erro. Algumas delas são:
-    - O usuário tem uma identidade de Conta da Microsoft (MSA).
-    - Algumas situações que causariam um dos outros erros 13xxx com uma conta Corporativa ou de Estudante, causariam um 13007 quando a MSA fosse usada.
+    - O usuário tem uma identidade da conta da Microsoft (MSA).
+    - Algumas situações que poderiam causar um dos outros erros do 13xxx com uma conta de educação ou de trabalho do Microsoft 365 causarão um 13007 quando um MSA for usado.
 
   Em todos esses casos, o código deve retornar a um sistema alternativo de autenticação de usuário.
 
@@ -93,7 +93,7 @@ O usuário desencadeou uma operação que chama o `getAccessToken` antes de uma 
 
 ### <a name="13010"></a>13010
 
-O usuário está executando o suplemento no Office, no Microsoft Edge ou no Internet Explorer. O domínio do Office 365 do usuário e o `login.microsoftonline.com` domínio estão em zonas de segurança diferentes nas configurações do navegador. Este erro somente aparece no **Office na Web**. Se esse erro for retornado, o usuário já terá visto uma mensagem explicando o erro e vinculando a uma página sobre como alterar a configuração da zona. Se o seu suplemento fornece funções que não exigem que o usuário esteja conectado, o código deve capturar esse erro e permitir que o suplemento permaneça em execução.
+O usuário está executando o suplemento no Office, no Microsoft Edge ou no Internet Explorer. O domínio do Microsoft 365 do usuário e o `login.microsoftonline.com` domínio estão em zonas de segurança diferentes nas configurações do navegador. Este erro somente aparece no **Office na Web**. Se esse erro for retornado, o usuário já terá visto uma mensagem explicando o erro e vinculando a uma página sobre como alterar a configuração da zona. Se o seu suplemento fornece funções que não exigem que o usuário esteja conectado, o código deve capturar esse erro e permitir que o suplemento permaneça em execução.
 
 ### <a name="13012"></a>13012
 
@@ -108,7 +108,7 @@ No desenvolvimento, o suplemento é sideloaded no Outlook e a opção `forMSGrap
 
 ### <a name="13013"></a>13013
 
-O `getAccessToken` era chamado muitas vezes em um curto período de tempo, portanto, o Office limitou a chamada mais recente. Isso geralmente é causado por um loop infinito de chamadas para o método. Há situações em que se rechamar o método é aconselhável. No entanto, seu código deve usar uma variável de contador ou sinalizador para garantir que o método não seja rechamado repetidamente. Se o mesmo caminho de código de "repetição" estiver em execução novamente, o código deverá retornar a um sistema alternativo de autenticação do usuário. Para obter um exemplo de código, consulte como a `retryGetAccessToken` variável é usada no [HomeES6. js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) ou [ssoAuthES6. js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js).
+O `getAccessToken` era chamado muitas vezes em um curto período de tempo, portanto, o Office limitou a chamada mais recente. Isso geralmente é causado por um loop infinito de chamadas para o método. Há situações em que se rechamar o método é aconselhável. No entanto, seu código deve usar uma variável de contador ou sinalizador para garantir que o método não seja rechamado repetidamente. Se o mesmo caminho de código de "repetição" estiver em execução novamente, o código deverá retornar a um sistema alternativo de autenticação do usuário. Para obter um exemplo de código, consulte como a `retryGetAccessToken` variável é usada em [HomeES6.js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) ou [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js).
 
 ### <a name="50001"></a>50001
 
@@ -124,7 +124,7 @@ Para exemplos do tratamento de erro descritos nesta seção, confira:
 
 ### <a name="conditional-access--multifactor-authentication-errors"></a>Erros no acesso condicional/autenticação multifatorial
 
-Em certas configurações de identidade no AAD e no Office 365, é possível que alguns recursos que são acessíveis com o Microsoft Graph exijam autenticação multifator (MFA), mesmo quando o locatário do Office 365 do usuário não exija. Quando o AAD recebe uma solicitação de um token para o recurso protegido por MFA, através do fluxo Em Nome De, ele retorna ao serviço Web do seu suplemento uma mensagem JSON que contém uma propriedade `claims`. A propriedade de reivindicações tem informações sobre quais outros fatores de autenticação são necessários.
+Em determinadas configurações de identidade no AAD e no Microsoft 365, é possível que alguns recursos possam ser acessados com o Microsoft Graph para exigir a autenticação multifator (MFA), mesmo quando o Microsoft 365 do usuário não. Quando o AAD recebe uma solicitação de um token para o recurso protegido por MFA, através do fluxo Em Nome De, ele retorna ao serviço Web do seu suplemento uma mensagem JSON que contém uma propriedade `claims`. A propriedade de reivindicações tem informações sobre quais outros fatores de autenticação são necessários.
 
 O código deve testar essa propriedade de `claims`. Dependendo da arquitetura do seu suplemento, você poderá testá-lo no lado do cliente ou testá-lo no lado do servidor e retransmiti-lo ao cliente. Você precisa dessa informação no cliente porque o Office processa a autenticação para os suplementos de SSO. Se você retransmiti-lo do lado do servidor, a mensagem para o cliente pode ser um erro (como `500 Server Error` ou `401 Unauthorized`) ou estar no corpo de uma resposta de sucesso (como `200 OK`). Em ambos os casos, o retorno de chamada (falha ou sucesso) da chamada AJAX do lado do cliente do seu código para a API da Web do seu suplemento deve testar essa resposta. 
 

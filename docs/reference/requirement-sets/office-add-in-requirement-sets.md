@@ -1,21 +1,19 @@
 ---
 title: Conjuntos de requisitos da API Comum do Office
-description: Saiba mais sobre os conjuntos de requisitos da API comum do Office
-ms.date: 06/23/2020
+description: Saiba mais sobre os conjuntos de requisitos da API comum do Office.
+ms.date: 07/07/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: b4ed3f203cf5c50ab5a49c0278755d35d6826536
-ms.sourcegitcommit: a4873c3525c7d30ef551545d27eb2c0a16b4eb50
+ms.openlocfilehash: b0f2fa05a5db94614257b51f6b2867705a0a5520
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "44888142"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094349"
 ---
 # <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API Comum do Office
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
-
-Precisa de informações sobre onde os suplementos têm suporte do host do Office? Consulte [Disponibilidade de host e plataforma para suplementos do Office](../../overview/office-add-in-availability.md).
 
 > [!TIP]
 > Procurando pelos conjuntos de requisitos de API *específicos do host*? Confira os seguintes conjuntos de requisitos de API:
@@ -32,6 +30,9 @@ Precisa de informações sobre onde os suplementos têm suporte do host do Offic
 ## <a name="common-api-requirement-sets"></a>Conjuntos de requisitos da API Comum
 
 As seções a seguir listam os conjuntos de requisitos da API Comum, os métodos em cada conjunto e os aplicativos host do Office compatíveis com esse conjunto de requisitos. Todos esses conjuntos de requisitos da API são versão 1.1, a menos que especificado de outra forma.
+
+> [!TIP]
+> Precisa de informações sobre onde os suplementos e conjuntos de requisitos têm suporte do host do Office e da versão? Consulte [Disponibilidade de host e plataforma para suplementos do Office](../../overview/office-add-in-availability.md).
 
 ### <a name="activeview"></a>ActiveView
 

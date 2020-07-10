@@ -1,22 +1,22 @@
 ---
 title: Publicar suplementos de painel de tarefas e de conteúdo em um catálogo de aplicativos do SharePoint
 description: Para tornar os suplementos do Office acessíveis aos usuários em sua organização, os administradores podem carregar arquivos de manifesto dos suplementos do Office no catálogo de aplicativos da organização.
-ms.date: 06/20/2019
+ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 5557dd31e829fac2c2dbd421200da46a5c3b9b99
-ms.sourcegitcommit: c3bfea0818af1f01e71a1feff707fb2456a69488
+ms.openlocfilehash: eabb60be927dc7fb274a0187a86f0c75592870bf
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "43185586"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094215"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>Publicar suplementos de painel de tarefas e de conteúdo em um catálogo de aplicativos do SharePoint
 
-Um catálogo de aplicativos é um conjunto de sites dedicado em um aplicativo da Web do SharePoint ou uma locação do SharePoint Online que hospeda bibliotecas de documentos para suplementos do Office e do SharePoint. Para tornar os suplementos do Office acessíveis aos usuários em sua organização, os administradores podem carregar arquivos de manifesto dos Suplementos do Office no catálogo de aplicativos da organização. Quando um administrador registra um catálogo de aplicativos como um catálogo confiável, os usuários podem inserir o suplemento a partir da interface do usuário de inserção em um aplicativo cliente do Office.
+An app catalog is a dedicated site collection in a SharePoint web application or SharePoint Online tenancy that hosts document libraries for Office and SharePoint Add-ins. To make Office Add-ins accessible to users within their organization, administrators can upload Office Add-ins manifest files to the app catalog for their organization. When an administrator registers an app catalog as a trusted catalog, users can insert the add-in from the insertion UI in an Office client application.
 
 > [!IMPORTANT]
 > - Catálogos de aplicativo no SharePoint não oferecem suporte a recursos de suplemento que são implementados no nó `VersionOverrides` do [manifesto do suplemento](../develop/add-in-manifests.md), como por exemplo comandos de suplemento.
-> - Se você está direcionando para um ambiente híbrido ou de nuvem, recomendamos [usar a Implantação Centralizada por meio do Centro de Administração do Office 365](../publish/centralized-deployment.md) para publicar os suplementos.
+> - Se você estiver direcionando um ambiente híbrido ou de nuvem, recomendamos [usar a implantação centralizada por meio do centro de administração do Microsoft 365](../publish/centralized-deployment.md) para publicar seus suplementos.
 > - Catálogos de aplicativos no SharePoint não são compatíveis com o Office para Mac. Para implantar Suplementos do Office em clientes do Mac, envie-os para a [AppSource](/office/dev/store/submit-to-the-office-store).
 
 ## <a name="create-an-app-catalog"></a>Criar um catálogo de aplicativos
@@ -29,20 +29,20 @@ Para criar o catálogo de aplicativos do SharePoint, siga as instruções em [Co
 
 Depois de criar o catálogo de aplicativos, siga as etapas para [publicar um Suplemento do Office](#publish-an-office-add-in).
 
-### <a name="to-create-an-app-catalog-on-office-365"></a>Criar um catálogo de aplicativos no Office 365
+### <a name="to-create-an-app-catalog-on-microsoft-365"></a>Para criar um catálogo de aplicativos no Microsoft 365
 
 Para criar o catálogo de aplicativos do SharePoint, siga as instruções em [criar o conjunto de sites do catálogo de aplicativos](/sharepoint/use-app-catalog#step-1-create-the-app-catalog-site-collection). Depois de criar o catálogo de aplicativos, siga as etapas na próxima seção para publicar um suplemento do Office.
 
 ## <a name="publish-an-office-add-in"></a>Publicar um Suplemento do Office
 
-Conclua as etapas em uma das seções a seguir para publicar um Suplemento do Office em um catálogo de aplicativos no Office 365 ou no SharePoint Server local.
+Conclua as etapas em uma das seções a seguir para publicar um suplemento do Office em um catálogo de aplicativos no Microsoft 365 ou no SharePoint Server local.
 
-### <a name="to-publish-an-office-add-in-to-a-sharepoint-app-catalog-on-office-365"></a>Para publicar um suplemento do Office em um catálogo de aplicativos do SharePoint no Office 365
+### <a name="to-publish-an-office-add-in-to-a-sharepoint-app-catalog-on-microsoft-365"></a>Para publicar um suplemento do Office em um catálogo de aplicativos do SharePoint no Microsoft 365
 
 1. Vá para a [página Sites ativos do novo centro de administração do SharePoint](https://admin.microsoft.com/sharepoint?page=siteManagement&modern=true) e entre com uma conta que tenha [permissões de administrador](/sharepoint/sharepoint-admin-role) da sua organização.
 
 >[!NOTE]
->Se você tiver o Office 365 Germany, [entre no centro de administração do Microsoft 365](https://go.microsoft.com/fwlink/p/?linkid=848041), navegue até o centro de administração do SharePoint e abra a página Mais recursos. <br>Se você tiver o Office 365 operado pela 21Vianet (China), [entre no centro de administração do Microsoft 365](https://go.microsoft.com/fwlink/p/?linkid=850627), navegue até o centro de administração do SharePoint e abra a página Mais recursos.
+>Se você tiver o Microsoft 365 Alemanha, [entre no centro de administração do microsoft 365](https://go.microsoft.com/fwlink/p/?linkid=848041)e navegue até o centro de administração do SharePoint e abra a página mais recursos. <br>Se você tiver o Microsoft 365 operado pela 21Vianet (China), entre no centro [de administração do microsoft 365](https://go.microsoft.com/fwlink/p/?linkid=850627)e navegue até o centro de administração do SharePoint e abra a página mais recursos.
  
 2. Abra o site do catálogo de aplicativos selecionando sua URL na coluna URL. 
 
@@ -88,9 +88,9 @@ Para aplicativos do Office na área de trabalho, você pode encontrar suplemento
     
     Especifique somente a URL do conjunto de sites pai:
     - `https://<domain>/sites/<AddinCatalogSiteCollection>`
-4. Feche e reabra o aplicativo do Office. 
+4. Feche e reabra o aplicativo do Office.
 5. Escolha **Inserir** > **Obter Suplementos**.
 4. Na caixa de diálogo Suplementos do Office, escolha a guia **MINHA ORGANIZAÇÃO**. Os Suplementos do Office estão listados.
 5. Escolha um suplemento do Office e, em seguida, escolha **Adicionar**.
 
-Como alternativa, um administrador pode especificar um catálogo de aplicativos no SharePoint usando a política de grupo. As configurações de política relevantes estão disponíveis nos [arquivos de modelo administrativo (ADMX/ADML) para Office 365 ProPlus, Office 2019 e Office 2016](https://www.microsoft.com/download/details.aspx?id=49030) e ser encontradas **em configuração do usuário\Políticas\Modelos Administrativos\Microsoft Office 2016\Configurações de Segurança\Trust Center\Catalagos Trusted**.
+Como alternativa, um administrador pode especificar um catálogo de aplicativos no SharePoint usando a política de grupo. As configurações de política relevantes estão disponíveis nos [arquivos de modelo administrativo (admx/adml) para os aplicativos do Microsoft 365, no office 2019 e no office 2016](https://www.microsoft.com/download/details.aspx?id=49030) e foram encontrados em **User. Administrativos\Microsoft Office 2016 \ segurança confiabilidade \ catálogos**.

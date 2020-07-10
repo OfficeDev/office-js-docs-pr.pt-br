@@ -6,7 +6,7 @@ Execute este procedimento *depois* [de registrar o suplemento](../develop/regist
 
 1. Navegue até a página [Azure portal-app registrations](https://go.microsoft.com/fwlink/?linkid=2083908) para exibir o registro do aplicativo.
 
-1. Entre com as credenciais de ***administrador*** em sua locação do Office 365. Por exemplo, MeuNome@contoso.onmicrosoft.com.
+1. Entre com as credenciais de ***administrador*** em seu Microsoft 365 locação. Por exemplo, MeuNome@contoso.onmicrosoft.com.
 
 1. Selecione o aplicativo com o nome para exibição **$Add-in-name $**.
 
