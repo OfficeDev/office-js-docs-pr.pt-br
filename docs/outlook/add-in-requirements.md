@@ -1,14 +1,14 @@
 ---
 title: Requisitos de suplementos do Outlook
 description: Há diversos requisitos para os servidores e clientes para que os Suplementos do Outlook possam carregar e funcionar de maneira apropriada.
-ms.date: 10/09/2019
+ms.date: 07/07/2020
 localization_priority: Priority
-ms.openlocfilehash: 90c917f7dfa324f98f0a5d88ba59d6467e234ab3
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 700e0efd2ab2655de61d37d42038fa2c15a99cb4
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611656"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093991"
 ---
 # <a name="outlook-add-in-requirements"></a>Requisitos de suplementos do Outlook
 
@@ -26,11 +26,11 @@ Há diversos requisitos para os servidores e clientes para que os Suplementos do
    - Outlook na Web para Exchange 2013
    - Outlook.com
 
-- O cliente deve ser conectado a um servidor do Exchange ou Office 365 usando uma conexão direta. Ao configurar o cliente, o usuário deve escolher um tipo de conta do **Exchange**, **Office 365** ou **Outlook.com**. Se o cliente estiver configurado para conectar-se com POP3 ou IMAP, os suplementos não serão carregados.
+- The client must be connected to an Exchange server or Microsoft 365 using a direct connection. When configuring the client, the user must choose an **Exchange**, **Office 365**, or **Outlook.com** account type. If the client is configured to connect with POP3 or IMAP, add-ins will not load.
 
 ## <a name="mail-server-requirements"></a>Requisitos de servidor de email
 
-Se o usuário estiver conectado ao Office 365 ou ao Outlook.com, os requisitos do servidor de email já foram todos atendidos. No entanto, para os usuários conectados a instalações no local do Exchange Server, os seguintes requisitos se aplicam.
+If the user is connected to Microsoft 365 or Outlook.com, mail server requirements are all taken care of already. However, for users connected to on-premises installations of Exchange Server, the following requirements apply.
 
 - O servidor deve ser o Exchange 2013 ou posterior.
 - Os Serviços Web do Exchange (EWS) devem estar habilitados e expostos à Internet. Vários suplementos exigem o EWS para funcionar adequadamente.
@@ -39,7 +39,7 @@ Se o usuário estiver conectado ao Office 365 ou ao Outlook.com, os requisitos d
 
 ## <a name="add-in-server-requirements"></a>Requisitos de servidor de suplemento
 
-Os aquivos de suplemento (HTML, JavaScript, etc.) podem ser hospedados em qualquer plataforma de servidor Web desejada. O único requisito é que o servidor deve ser configurado para usar HTTPS e o cliente deve confiar no certificado SSL.
+Add-in files (HTML, JavaScript, etc.) can be hosted on any web server platform desired. The only requirement is that the server must be configured to use HTTPS, and the SSL certificate must be trusted by the client.
 
 ## <a name="see-also"></a>Confira também
 

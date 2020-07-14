@@ -1,18 +1,18 @@
 ---
 title: Autenticação e autorização com a API da caixa de diálogo do Office
 description: Aprenda a usar a API da caixa de diálogo do Office para permitir que os usuários entrem no Google, no Facebook, no Microsoft 365 e em outros serviços protegidos pela Plataforma de Identidade da Microsoft.
-ms.date: 01/25/2020
+ms.date: 07/07/2020
 localization_priority: Priority
-ms.openlocfilehash: e7dd0778e840c2cbfd415534d04f5b014f58fafc
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b119d27c0b4ca7bc91004ce8c1df7ac8f4830122
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608422"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093732"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Autenticação e autorização com a API da caixa de diálogo do Office
 
-Várias autoridades de identidade, também chamadas de Serviços de Token Seguro (STS), impedem que a página de logon seja aberta em um IFrame. Elas incluem o Google, o Facebook e os serviços protegidos pela Plataforma de Identidade da Microsoft (antigo Azure AD V 2.0), como a Conta da Microsoft e o Office 365 (contas corporativas ou de estudante). Isso cria um problema para os suplementos do Office, porque quando o suplemento é executado no **Office na Web**, o painel de tarefas é um IFrame. Os usuários de um suplemento só podem fazer logon em um desses serviços se o suplemento puder abrir uma instância do navegador completamente separada. Isso porque o Office fornece a [API da Caixa de Diálogo](dialog-api-in-office-add-ins.md), especificamente o método [displayDialogAsync](/javascript/api/office/office.ui).
+Várias autoridades de identidade, também chamadas de Serviços de Token Seguro (STS), impedem que a página de logon seja aberta em um IFrame. Isso inclui o Google, o Facebook e os serviços protegidos pela Plataforma de Identidade da Microsoft (antigo Azure AD V 2.0), como uma conta Microsoft, uma conta corporativa ou de estudante do Microsoft 365, ou outra conta comum. Isso cria um problema para os suplementos do Office, porque quando o suplemento é executado no **Office na Web**, o painel de tarefas é um IFrame. Os usuários de um suplemento só podem fazer logon em um desses serviços se o suplemento puder abrir uma instância do navegador completamente separada. Isso porque o Office fornece a [API da Caixa de Diálogo](dialog-api-in-office-add-ins.md), especificamente o método [displayDialogAsync](/javascript/api/office/office.ui).
 
 > [!NOTE]
 > Esse artigo presume que você esteja familiarizado com o [Uso da API da Caixa de Diálogo do Office nos suplementos do Office.](dialog-api-in-office-add-ins.md).
@@ -46,16 +46,16 @@ O que vem a seguir é um fluxo de autenticação simples e típico. Os detalhes 
 
 #### <a name="support-multiple-identity-providers"></a>Prestar suporte a vários provedores de identidade
 
-Se seu suplemento oferece ao usuário uma variedade de opções de provedores, como a Conta da Microsoft, o Google ou o Facebook, você precisa de uma primeira página local (confira a seção anterior) que forneça uma interface de usuário para a escolha de um provedor. A escolha do provedor acionará a construção da URL de entrada e seu redirecionamento.
+If your add-in gives the user a choice of providers, such as Microsoft Account, Google, or Facebook, you need a local first page (see preceding section) that provides a UI for the user to select a provider. Selection triggers the construction of the sign-in URL and redirection to it.
 
 #### <a name="authorization-of-the-add-in-to-an-external-resource"></a>Autorização do suplemento para um recurso externo
 
-Na Web moderna, os usuários e aplicativos da Web são entidades de segurança. O aplicativo tem sua própria identidade e permissões para recursos online, como o Office 365, Google Plus, Facebook ou LinkedIn. O aplicativo é registrado no provedor de recursos antes da implantação. O registro inclui:
+Na Web moderna, os usuários e aplicativos da Web são entidades de segurança. O aplicativo tem sua própria identidade e permissões para recursos online, como o Microsoft 365, o Google Plus, o Facebook ou o LinkedIn. O aplicativo é registrado no provedor de recursos antes da implantação. O registro inclui:
 
 - Uma lista das permissões que o aplicativo precisa.
 - Uma URL para a qual o serviço do recurso deve retornar um token de acesso quando o aplicativo acessa o serviço.  
 
-Quando um usuário invoca uma função no aplicativo que acessa os dados do usuário no serviço do recurso, ele é solicitado a entrar no serviço e a conceder ao aplicativo as permissões necessárias para os recursos do usuário. Em seguida, o serviço redireciona a janela de entrada para a URL previamente registrada e transmite o token de acesso. O aplicativo usa o token de acesso para acessar os recursos do usuário.
+When a user invokes a function in the application that accesses the user's data in the resource service, they are prompted to sign in to the service and then prompted to grant the application the permissions it needs to the user's resources. The service then redirects the sign-in window to the previously registered URL and passes the access token. The application uses the access token to access the user's resources.
 
 Você pode usar a API da Caixa de Diálogo do Office para gerenciar esse processo usando um fluxo semelhante àquele descrito para os usuários entrarem. As únicas diferenças são:
 

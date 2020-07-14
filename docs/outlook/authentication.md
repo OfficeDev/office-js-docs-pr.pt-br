@@ -3,12 +3,12 @@ title: Opções de autenticação em suplementos do Outlook
 description: Os suplementos do Outlook oferecem diversos métodos de autenticação, dependendo do cenário específico.
 ms.date: 04/28/2020
 localization_priority: Priority
-ms.openlocfilehash: 0a8c61a3e722cf1bcbfd1d9706c2dc41a7271345
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7864b2cfe76154fc8f939f0838095d23ad727054
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44606487"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094012"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Opções de autenticação em suplementos do Outlook
 
@@ -23,11 +23,11 @@ Os tokens de acesso de logon único oferecem uma maneira simples de o suplemento
 >
 > Para usar o SSO, você deve carregar a versão beta da biblioteca de JavaScript do Office de https://appsforoffice.microsoft.com/lib/beta/hosted/office.js na página de inicialização HTML do suplemento.
 >
-> Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Office 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Microsoft 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 Considere usar tokens de acesso SSO se o suplemento:
 
-- For usado principalmente por usuários do Office 365
+- For usado principalmente por usuários do Microsoft 365
 - Precisa de acesso para:
   - Os serviços Microsoft que são expostos como parte do Microsoft Graph
   - Um serviço que não seja da Microsoft que você controle

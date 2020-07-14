@@ -1,15 +1,15 @@
 ---
 title: 'Tutorial: criar uma mensagem para compor o suplemento do Outlook'
 description: Neste tutorial, você criará um suplemento do Outlook que insere Gists do GitHub no corpo de uma nova mensagem.
-ms.date: 12/10/2019
+ms.date: 07/07/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 66ce5aa01cc8ef82d8a4bd0030c9e94a9433daad
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 22b06d0c455cfcf0a4331976a4e23e0eeb123415
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611054"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093501"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Tutorial: criar uma mensagem para compor o suplemento do Outlook
 
@@ -37,7 +37,7 @@ Neste tutorial, você vai:
     > [!NOTE]
     > Mesmo se você já instalou o gerador Yeoman, recomendamos atualizar seu pacote para a versão mais recente do npm.
 
-- Outlook 2016 ou posterior no Windows (conectado a uma conta do Office 365) ou Outlook na Web
+- Outlook 2016 ou posterior no Windows (conectado a uma conta do Microsoft 365) ou Outlook na Web
 
 - Uma conta [GitHub](https://www.github.com) 
 

@@ -4,16 +4,16 @@ description: Informações do conjunto de requisitos do Suplemento do Office par
 ms.date: 04/16/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: bffd78455cd6d87a1323c4133ce16f9723e37a4c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: d9845d6670d19ab1910410bb26ab5806c84c6b84
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611279"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094286"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Word
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Office versions and requirement sets](../../develop/office-versions-and-requirement-sets.md).
 
 ## <a name="requirement-set-availability"></a>Disponibilidade do conjunto de requisitos
 
@@ -24,7 +24,7 @@ Os suplementos do Word são executados em várias versões do Office, incluindo 
 >
 > Para obter informações sobre o uso de APIs de visualização, confira o artigo [APIs de visualização do JavaScript para Excel](word-preview-apis.md).
 
-|  Conjunto de requisitos  |   Office no Windows\*<br>(conectado à assinatura do Office 365)  |  Office no iPad<br>(conectado à assinatura do Office 365)  |  Office no Mac<br>(conectado à assinatura do Office 365)  | Office na Web  |
+|  Conjunto de requisitos  |   Office no Windows\*<br>(Conectado à assinatura do Microsoft 365)  |  Office no iPad<br>(Conectado à assinatura do Microsoft 365)  |  Office no Mac<br>(Conectado à assinatura do Microsoft 365)  | Office na Web  |
 |:-----|-----|:-----|:-----|:-----|
 | [Visualização](word-preview-apis.md) | Use a versão mais recente do Office para testar as APIs de visualização (talvez seja exigido ser membro do [programa Office Insider](https://insider.office.com)) |
 | [WordApi 1.3](word-api-1-3-requirement-set.md) | Versão 1612 (Compilação 7668.1000) ou posterior| Março de 2017, 2.22 ou posterior | Março de 2017, 15.32 ou posterior| Março de 2017 |

@@ -1,24 +1,24 @@
 ---
 title: Suplementos do PowerPoint
-description: Aprenda a usar os suplementos do PowerPoint para criar soluções envolventes para as apresentações em todas as plataformas, incluindo Windows, iPad, Mac e em um navegador.
-ms.date: 11/07/2019
+description: Aprenda a usar os suplementos do PowerPoint para criar soluções atraentes para apresentações em plataformas como Windows, iPad, Mac e em um navegador.
+ms.date: 06/29/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: f5ec2375729574a48fcf61e766312a3c65c970ba
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 314b441f3d4b6d2188ed630fe2b254aec42a86bc
+ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611930"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "45006448"
 ---
 # <a name="powerpoint-add-ins"></a>Suplementos do PowerPoint
 
 Você pode usar suplementos do PowerPoint na criação de soluções envolventes para as apresentações de seus usuários em todas as plataformas, incluindo Windows, iPad, Mac e em um navegador. Você pode criar dois tipos de comandos de suplementos do PowerPoint:
 
-- Use **suplementos de conteúdo** para adicionar conteúdo dinâmico do HTML5 às suas apresentações. Por exemplo, confira o suplemento [LucidChart Diagrams for PowerPoint](https://appsource.microsoft.com/product/office/WA104380117) que pode ser usado para inserir um diagrama interativo do LucidChart para seu conjunto.
+- Use **content add-ins** to add dynamic HTML5 content to your presentations. For example, see the [LucidChart Diagrams for PowerPoint](https://appsource.microsoft.com/product/office/wa104380117) add-in, which you can use to inject an interactive diagram from LucidChart into your deck.
 
-- Use **suplementos do painel de tarefas** para exibir as informações de referência ou inserir dados na apresentação através de um serviço. Por exemplo, confira o suplemento [Pixton Comic Characters](https://appsource.microsoft.com/product/office/WA104380907), que você pode usar para adicionar fotos profissionais à sua apresentação.
+- Use **suplementos do painel de tarefas** para exibir as informações de referência ou inserir dados na apresentação através de um serviço. Por exemplo, consulte o suplemento [Pexels Free Stock Photos](https://appsource.microsoft.com/product/office/wa104379997), que você pode usar para adicionar fotos profissionais à sua apresentação.
 
 ## <a name="powerpoint-add-in-scenarios"></a>Cenários de suplemento do PowerPoint
 

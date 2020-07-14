@@ -4,12 +4,12 @@ description: Saiba como criar um Suplemento do Outlook simples usando a API JS d
 ms.date: 06/23/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 07f4eeae8cfd4a1962c15640555b2283a8d9fa3b
-ms.sourcegitcommit: a4873c3525c7d30ef551545d27eb2c0a16b4eb50
+ms.openlocfilehash: 6eb510986ebb9cd8a4362f8c11f744e694bef5f7
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "44888149"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094159"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Criar seu primeiro suplemento do Outlook
 
@@ -134,7 +134,7 @@ Parabéns, você criou o seu primeiro suplemento do painel de tarefas do Outlook
 - Office 365
 
     > [!NOTE]
-    > Se você não tiver uma assinatura do Office 365, poderá obter uma assinatura gratuita inscrevendo-se no [programa de desenvolvedores do Office 365](https://developer.microsoft.com/office/dev-program).
+    > Se você não tiver uma assinatura do Microsoft 365, poderá obter uma assinatura gratuita inscrevendo-se no [programa para desenvolvedores do Microsoft 365](https://developer.microsoft.com/office/dev-program).
 
 ### <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 
@@ -267,7 +267,7 @@ Ao concluir o assistente, o Visual Studio cria uma solução que contém dois pr
 1. Na caixa de diálogo**Conectar-se à conta de email do Exchange**, digite o endereço de email e senha da sua [conta da Microsoft](https://account.microsoft.com/account) e, em seguida, escolha **Conectar**. Quando a página de login do Outlook.com for aberta em um navegador, entre em sua conta de email com as mesmas credenciais que você inseriu anteriormente.
 
     > [!NOTE]
-    > Se a caixa de diálogo **Conectar a uma conta de email do Exchange** repetidamente solicitar que você entre, a Autenticação Básica poderá ser desabilitada para contas no locatário do Office 365. Para testar esse suplemento, entre usando uma [Conta da Microsoft](https://account.microsoft.com/account).
+    > Se a caixa de diálogo **Conectar a uma conta de email do Exchange** repetidamente solicitar que você entre, a Autenticação Básica poderá ser desabilitada para contas no locatário do Microsoft 365. Para testar esse suplemento, entre usando uma [Conta da Microsoft](https://account.microsoft.com/account).
 
 1. No Outlook na Web, escolha ou abra uma mensagem.
 

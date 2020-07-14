@@ -3,12 +3,12 @@ title: Manifesto XML dos Suplementos do Office
 description: Obtenha uma visão geral do manifesto de suplemento do Office e seus usos.
 ms.date: 03/18/2020
 localization_priority: Priority
-ms.openlocfilehash: 0df47ac67a924ab9fd2b3064e0a1ff1b4aa63360
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 4d2fa054cc268b68eb1c05ba82f9cd7745bc8685
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608990"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45093746"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifesto XML dos Suplementos do Office
 
@@ -18,7 +18,7 @@ Um arquivo de manifesto XML com base nesse esquema permite que um Suplemento do 
 
 * Descreva a si mesmo fornecendo ID, versão, descrição, nome para exibição e local padrão.
 
-* Especifique as imagens usadas para identidade visual do suplemento e a iconografia usada para os [comandos do suplemento][] na Faixa de Opções do Office.
+* Especifique as imagens usadas para identidade visual do suplemento e a iconografia usada para os [comandos do suplemento][] na faixa de opções do Aplicativo do Office.
 
 * Especifique como o suplemento se integra ao Office, incluindo qualquer interface do usuário personalizada, como botões da faixa de opções criados pelo suplemento.
 
@@ -107,7 +107,7 @@ Todas as URLs, como os locais dos arquivos de origem especificados no elemento [
 
 ## <a name="best-practices-for-submitting-to-appsource"></a>Práticas recomendadas de envio ao AppSource
 
-Verifique se a identificação do suplemento é um GUID válido e exclusivo. Diversas ferramentas de gerador de GUID estão disponíveis na Web e podem ser usadas para criar um GUID exclusivo.
+Make sure that the add-in ID is a valid and unique GUID. Various GUID generator tools are available on the web that you can use to create a unique GUID.
 
 Os suplementos enviados ao AppSource também devem conter o elemento [SupportUrl](../reference/manifest/supporturl.md). Saiba mais em [Políticas de validação para aplicativos e suplementos enviados ao AppSource](/legal/marketplace/certification-policies).
 
@@ -205,7 +205,7 @@ As seções a seguir mostram exemplos de arquivos XML de manifesto v1.1 para sup
             Think of the FunctionFile as the "code behind" ExecuteFunction-->
           <FunctionFile resid="Contoso.FunctionFile.Url" />
 
-          <!--PrimaryCommandSurface==Main Office Ribbon-->
+          <!--PrimaryCommandSurface==Main Office app ribbon-->
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
             <!--Use OfficeTab to extend an existing Tab. Use CustomTab to create a new tab -->
             <!-- Documentation includes all the IDs currently tested to work -->

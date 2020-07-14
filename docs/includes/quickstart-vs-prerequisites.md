@@ -6,4 +6,4 @@
 - Office 2016 ou posterior
 
     > [!NOTE]
-    > Se você ainda não tem o Office, você pode [participar do programa de desenvolvedor do office 365](https://developer.microsoft.com/office/dev-program) para obter uma assinatura do Office 365 gratuita e de 90 dias para uso durante o desenvolvimento.
+    > Se você ainda não tem o Office, poderá [ingressar no programa para desenvolvedores do Microsoft 365](https://developer.microsoft.com/office/dev-program) para obter uma assinatura do Microsoft 365 gratuita e renovável por 90 dias para usar durante o desenvolvimento.

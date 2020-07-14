@@ -1,24 +1,24 @@
 ---
 title: Explore a API JavaScript do Office usando o Script Lab
 description: Use o script Lab para explorar a funcionalidade de protótipo e a API do Office JS.
-ms.date: 04/16/2020
+ms.date: 06/10/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 88c57e163e8fc59e31fec80f5faa0bfbfd96402b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: ab2d086551dbfa5063615f505d8cb8aa5a210b7a
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44604549"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094131"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>Explore a API JavaScript do Office usando o Script Lab
 
-O[Script Lab é um suplemento](https://appsource.microsoft.com/product/office/WA104380862), que está disponível gratuitamente em AppSource, permite que você explore a API JavaScript do Office enquanto você trabalha em um programa do Office, como o Excel ou o Word. O script Lab é uma ferramenta conveniente para adicionar ao seu kit de ferramentas de desenvolvimento durante o protótipo e a verificação da funcionalidade que você deseja em seu suplemento.
+Os suplementos [Script Lab](https://appsource.microsoft.com/product/office/WA104380862) e [Script Lab para Outlook](https://appsource.microsoft.com/product/office/wa200001603), que estão disponíveis gratuitamente no AppSource, permitem explorar a API JavaScript do Office enquanto você trabalha em um programa do Office, como o Excel ou o Outlook. O Script Lab é uma ferramenta conveniente para adicionar ao seu kit de ferramentas de desenvolvimento durante a criação do protótipo e verificação da funcionalidade que deseja adicionar ao suplemento.
 
 ## <a name="what-is-script-lab"></a>O que é o script Lab?
 
-O Script Lab é uma ferramenta para qualquer pessoa que queira aprender a desenvolver suplementos do Office usando a API do JavaScript do Office no Excel, Word ou PowerPoint. Ele fornece IntelliSense para que você possa ver o que está disponível e que foi criado na estrutura de Mônaco, a mesma estrutura usada pelo código do Visual Studio. Por meio do Script Lab, você pode acessar uma biblioteca de amostras para experimentar rapidamente recursos ou até mesmo usar um exemplo como o ponto de partida para o seu próprio código. Você pode até usar o Script Lab para experimentar as APIs de visualização.
+O Script Lab é uma ferramenta para quem deseja saber como desenvolver suplementos do Office usando a API JavaScript do Office no Excel, no Outlook, no Word e no PowerPoint. Ele fornece IntelliSense para que você possa ver o que está disponível e que foi criado na estrutura de Mônaco, a mesma estrutura usada pelo código do Visual Studio. Por meio do Script Lab, você pode acessar uma biblioteca de amostras para experimentar rapidamente recursos ou até mesmo usar um exemplo como o ponto de partida para o seu próprio código. Você pode até usar o Script Lab para experimentar as APIs de visualização.
 
 Parece bom? Dê uma olhada neste vídeo de um minuto para ver Script Lab em ação.
 
@@ -61,9 +61,19 @@ O Script Lab tem suporte para o Excel, o Word e o PowerPoint nos clientes a segu
 - Office 2016 ou posterior no Mac
 - Office na Web
 
+O Script Lab para Outlook está disponível para os seguintes clientes.
+
+- Outlook 2013 ou posterior no Windows
+- Outlook 2016 ou posterior no Mac
+- Outlook na Web ao usar os navegadores Chrome, Microsoft Edge ou Safari
+
+Para obter mais detalhes sobre o Script Lab para Outlook, confira a [postagem do blog](https://developer.microsoft.com/outlook/blogs/script-lab-now-supports-outlook/) relacionada.
+
 ## <a name="next-steps"></a>Próximas etapas
 
 Para usar o Script Lab no Excel, no Word ou no PowerPoint, instale o [suplemento do Script Lab](https://appsource.microsoft.com/product/office/WA104380862) do AppSource. 
+
+Para usar o Script Lab para Outlook, instale o suplemento [Script Lab para Outlook](https://appsource.microsoft.com/product/office/wa200001603) do AppSource.
 
 Você é bem-vindo a expandir a biblioteca de exemplo no Script Lab, contribuindo com novos trechos para o [office-js-snippets](https://github.com/OfficeDev/office-js-snippets#office-js-snippets) repositório do GitHub.
 
@@ -71,7 +81,8 @@ Quando estiver pronto para criar seu primeiro suplemento do Office, experimente 
 
 ## <a name="see-also"></a>Confira também
 
-- [Obter Script Lab](https://appsource.microsoft.com/product/office/WA104380862)
+- [Obter o Script Lab para Excel, Word ou Powerpoint](https://appsource.microsoft.com/product/office/WA104380862)
+- [Script Lab para Outlook](https://appsource.microsoft.com/product/office/wa200001603)
 - [Saiba mais sobre o Script Lab](https://github.com/OfficeDev/script-lab#script-lab-a-microsoft-garage-project)
-- [Ingressar no Programa para Desenvolvedores do Office 365](https://developer.microsoft.com/office/dev-program)
+- [Participe do programa para desenvolvedores do Microsoft 365](https://developer.microsoft.com/office/dev-program)
 - [Criando Suplementos do Office ](../overview/office-add-ins-fundamentals.md)
