@@ -1,15 +1,15 @@
 ---
 title: Crie seu primeiro suplemento do painel de tarefas do Word
 description: Saiba como criar um suplemento do painel de tarefas do Word simples usando a API JS do Office.
-ms.date: 04/03/2020
+ms.date: 07/07/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 2e7c819cbf2860ed742435f75240f795c52c73e8
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: ab8926eae6ddc41f82ab055d727b6279f357c316
+ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608861"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "45094468"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Crie seu primeiro suplemento do painel de tarefas do Word
 
@@ -110,7 +110,7 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em
 
 3. Nomeie seu projeto e selecione **Criar**.
 
-4. O Visual Studio cria uma solução, e os dois projetos dele são exibidos no **Gerenciador de Soluções**. O arquivo **Home.html** é aberto no Visual Studio.
+4. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
 
 ### <a name="explore-the-visual-studio-solution"></a>Explorar a solução do Visual Studio
 
@@ -118,7 +118,7 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em
 
 ### <a name="update-the-code"></a>Atualizar o código
 
-1. **Home.html** especifica o HTML que será renderizado no painel de tarefas do suplemento. Em **Home.html**, substitua o elemento `<body>` pela marcação a seguir e salve o arquivo.
+1. **Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.
 
     ```html
     <body>
@@ -144,7 +144,7 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em
     </body>
     ```
 
-2. Abra o arquivo **Home.js** na raiz do projeto do aplicativo Web. Este arquivo especifica o script do suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
+2. Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.
 
     ```js
     'use strict';
@@ -245,7 +245,7 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em
     })();
     ```
 
-3. Abra o arquivo **Home.css** na raiz do projeto do aplicativo Web. Este arquivo especifica os estilos personalizados para o suplemento. Substitua todo o conteúdo pelo código a seguir e salve o arquivo.
+3. Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.
 
     ```css
     #content-header {
@@ -278,11 +278,11 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em
 
 1. Abra o arquivo de manifesto XML do projeto do suplemento. Este arquivo define as configurações e os recursos do suplemento.
 
-2. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o com seu nome.
+2. The `ProviderName` element has a placeholder value. Replace it with your name.
 
-3. O atributo `DefaultValue` do elemento `DisplayName` tem um espaço reservado. Substitua-o pelo **suplementos do My Office**.
+3. The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with **My Office Add-in**.
 
-4. O atributo `DefaultValue` do elemento `Description` tem um espaço reservado. Substitua-o com **um suplemento do painel de tarefas do PowerPoint**.
+4. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Word**.
 
 5. Salve o arquivo.
 
@@ -298,9 +298,9 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do Word! Em
 
 ### <a name="try-it-out"></a>Experimente
 
-1. Usando o Visual Studio, teste o suplemento do Word recém-criado, pressionando **F5** ou escolhendo o botão **Iniciar** para abrir o Word com o botão de suplemento **Mostrar Painel de Tarefas** exibido na faixa de opções. O suplemento será hospedado localmente no IIS.
+1. Using Visual Studio, test the newly created Word add-in by pressing **F5** or choosing the **Start** button to launch Word with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
 
-2. No Word, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na Faixa de Opções para abrir o painel de tarefas do suplemento. Caso esteja usando uma versão de compra avulsa do Office em vez de a versão do Office 365, os botões personalizados não são compatíveis. Em vez disso, o painel de tarefas abrirá imediatamente.)
+2. No Word, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na Faixa de Opções para abrir o painel de tarefas do suplemento. (Caso esteja usando uma versão de compra avulsa do Office, em vez da versão do Microsoft 365, os botões personalizados não serão compatíveis. Em vez disso, o painel de tarefas abrirá imediatamente.)
 
     ![Uma captura de tela do Word com o botão Mostrar Painel de Tarefas realçado](../images/word-quickstart-addin-0.png)
 
