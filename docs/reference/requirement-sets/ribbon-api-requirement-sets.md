@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos comuns da API
 description: Especifica quais plataformas e compilações do Office oferecem suporte às APIs de faixa de opções dinâmicas.
-ms.date: 07/07/2020
+ms.date: 07/10/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 6a0e6af3a74b0b0402710fd66bac6c915aa4c18a
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 1d8f17d56b779fb1590daa82e3c391423c3bfc9a
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094278"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159189"
 ---
 # <a name="ribbon-api-requirement-sets"></a>Conjuntos de requisitos comuns da API
 
@@ -19,7 +19,7 @@ O conjunto de API da faixa de opções suporta o controle programático de quand
 
 Os suplementos do Office executam várias versões do Office. A tabela a seguir lista os conjuntos de requisitos da API da faixa de opções, os aplicativos host do Office que dão suporte a esse conjunto de requisitos e os números de versão ou de compilação do aplicativo do Office.
 
-|  Conjunto de requisitos  | Office 2013 no Windows<br>(compra avulsa) | Office 2016 ou posterior no Windows<br>(compra avulsa)   | Office no Windows\*<br>(conectado à assinatura do Microsoft 365) |  Office no iPad<br>(conectado à assinatura do Microsoft 365)  |  Office no Mac\*<br>(conectado à assinatura do Microsoft 365)  | Office na Web\*  |  Servidor do Office Online  |
+|  Conjunto de requisitos  | Office 2013 no Windows<br>(compra avulsa) | Office 2016 ou posterior no Windows<br>(compra avulsa)   | Office no Windows\*<br>(conectado a uma assinatura do Microsoft 365) |  Office no iPad<br>(conectado a uma assinatura do Microsoft 365)  |  Office no Mac\*<br>(conectado a uma assinatura do Microsoft 365)  | Office na Web\*  |  Servidor do Office Online  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | RibbonApi 1,1  | N/D | N/D | Versão 2002 (Build 12527,20264) ou posterior | 16,38 ou posterior | N/D | Fevereiro de 2020 | N/D|
 

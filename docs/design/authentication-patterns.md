@@ -3,12 +3,12 @@ title: Diretrizes de design de autenticação para suplementos do Office
 description: Saiba como criar visualmente uma página de logon ou inscrição em um suplemento do Office.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 67d072b629f16ea9c5c467b8f59bc4b9211dc225
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 36465fbf156820cfc8980758cec0ed19c545588d
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093851"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159616"
 ---
 # <a name="authentication-patterns"></a>Padrões de autenticação
 
@@ -49,7 +49,7 @@ Até o logon único estar fora da versão prévia, os suplementos de produção 
 ## <a name="single-sign-on-authentication-flow-preview"></a>Fluxo de autenticação de logon único (versão prévia)
 
 > [!NOTE]
-> Atualmente a API de logon único tem suporte na visualização para Word, Excel, Outlook e PowerPoint. Para saber mais informações sobre o suporte a logon único, confira  [Conjuntos de requisitos da IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md). Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a autenticação moderna para o Microsoft 365 locação. Para saber mais informações sobre como fazer isso, confira  [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> Atualmente a API de logon único tem suporte na visualização para Word, Excel, Outlook e PowerPoint. Para saber mais informações sobre o suporte a logon único, confira  [Conjuntos de requisitos da IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md). Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Microsoft 365. Para saber mais informações sobre como fazer isso, confira  [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 Depois que o recurso de logon único for disponibilizado para suplementos de produção, use-o em uma experiência de usuário final mais estável. A identidade do usuário no Office (uma conta da Microsoft ou uma identidade da Microsoft 365) é usada para entrar no seu suplemento. Como resultado, os usuários somente entram uma vez. Isso remove conflitos na experiência e faz com que os clientes comecem a usar o suplemento sem dificuldades.
 

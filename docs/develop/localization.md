@@ -1,14 +1,14 @@
 ---
 title: Localização para Suplementos do Office
 description: Você pode usar a API JavaScript do Office para determinar uma localidade e exibir cadeias de caracteres com base na localidade do aplicativo host ou para interpretar ou exibir dados com base na localidade dos dados.
-ms.date: 10/11/2019
+ms.date: 07/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 72f6e7ad9c2095bffddb85be60c410963357f74c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 79994406e8477786dd93a1aa56f5cda0a1235d01
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608115"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159581"
 ---
 # <a name="localization-for-office-add-ins"></a>Localização para Suplementos do Office
 
@@ -176,7 +176,7 @@ Esta seção fornece exemplos que mostram como localizar uma descrição do Supl
 
 ### <a name="configure-office-to-use-additional-languages-for-display-or-editing"></a>Configurar o Office para usar idiomas adicionais para exibição ou edição
 
-Para executar o código de amostra fornecido, configure o Microsoft Office em seu computador para usar idiomas adicionais para que você possa testar seu suplemento, alternando o idioma usado para exibição em menus e em comandos para edição e revisão de texto ou ambos.
+Para executar o código de exemplo fornecido, configure o Office no computador para usar idiomas adicionais para que você possa testar seu suplemento alternando o idioma usado para exibição em menus e comandos, para edição e revisão de código ou ambos.
 
 Você pode usar um Office Language Pack para instalar um idioma adicional. Para saber mais sobre os Pacotes de Idiomas e onde obtê-los, veja [Language Accessory Pack do Office](https://office.microsoft.com/language-packs/).
 
@@ -208,7 +208,7 @@ O texto que você deseja localizar para outro idioma aparece em duas áreas:
 
 Para localizar o nome de exibição e a descrição do suplemento:
 
-1. No **Gerenciador de soluções**, expanda **WorldReadyAddIn**, **WorldReadyAddInManifest**e, em seguida, escolha **WorldReadyAddIn. xml**.
+1. No **Gerenciador de soluções**, expanda **WorldReadyAddIn**, **WorldReadyAddInManifest**e, em seguida, escolha **WorldReadyAddIn.xml**.
 
 2. No arquivo WorldReadyAddInManifest.xml, substitua os elementos [DisplayName] e [Description] pelo seguinte bloco de código:
 

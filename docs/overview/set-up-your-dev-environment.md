@@ -3,12 +3,12 @@ title: Defina seu ambiente de desenvolvimento
 description: Configurar seu ambiente de desenvolvedor para criar suplementos do Office
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: af59fb644d1001deb74615d6ced294ad77cbf4e6
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 1948cd83a252ea713c9b9a41941ceaef09d4a524
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094005"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159406"
 ---
 # <a name="set-up-your-development-environment"></a>Defina seu ambiente de desenvolvimento
 
@@ -73,7 +73,7 @@ Explore a biblioteca de amostras internas no [Script Lab](explore-with-script-la
 
 - [Criando Suplementos do Office ](../overview/office-add-ins-fundamentals.md)
 - [Principais conceitos dos Suplementos do Office](../overview/core-concepts-office-add-ins.md)
-- [Desenvolver Suplementos do Office](../develop/develop-overview.md)
+- [Desenvolver Suplementos do Office ](../develop/develop-overview.md)
 - [Fazer o design de Suplementos do Office](../design/add-in-design.md)
 - [Testar e depurar Suplementos do Office](../testing/test-debug-office-add-ins.md)
 - [Publicar Suplementos do Office](../publish/publish.md)

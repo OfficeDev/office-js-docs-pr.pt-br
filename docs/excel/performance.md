@@ -1,14 +1,14 @@
 ---
 title: Otimização de desempenho do da API JavaScript do Excel
 description: Otimizar o desempenho usando as API JavaScript do Excel
-ms.date: 04/22/2020
+ms.date: 07/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 1108c3a9cbb5efa23d52f2c7d8a6601e4b4bd493
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 193cbe8c8cd1a432c6567401ed645990cb93e5e9
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44610351"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159091"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Otimização de desempenho usando a API JavaScript do Excel
 
@@ -138,17 +138,6 @@ O Excel exibe as alterações que seu suplemento faz aproximadamente conforme el
 ### <a name="enable-and-disable-events"></a>Habilitar e desabilitar eventos
 
 O desempenho de um suplemento pode ser melhorado desabilitando eventos. Um exemplo de código mostrando como habilitar e desabilitar os eventos está no artigo [trabalhar com eventos](excel-add-ins-events.md#enable-and-disable-events).
-
-## <a name="update-all-cells-in-a-range"></a>Atualizar todas as células em um intervalo
-
-Quando você precisa atualizar todas as células em um intervalo com o mesmo valor ou propriedade, pode ser lento fazer isso por meio de uma matriz bidimensional que especifica repetidamente o mesmo valor, já que essa abordagem requer que o Excel faça uma iteração em todas as células do intervalo para definir cada uma delas separadamente. O Excel tem uma forma mais eficiente para atualizar todas as células em um intervalo com o mesmo valor ou propriedade.
-
-Se desejar aplicar o mesmo valor, o mesmo formato de número ou a mesma fórmula para um intervalo de células, é mais eficiente especificar um valor único em vez de uma matriz de valores. Isso melhorará consideravelmente o desempenho. Para ver uma amostra de código que mostra essa abordagem em ação, confira [conceitos fundamentais: atualizar todas as células em um intervalo](excel-add-ins-core-concepts.md#update-all-cells-in-a-range).
-
-Um cenário comum em que você pode aplicar essa abordagem é ao configurar formatos numéricos diferentes em colunas diferentes em uma planilha. Nesse caso, simplesmente percorra as colunas e defina o formato de número em cada coluna com um único valor. Lidar com cada coluna como um intervalo, como é mostrado  na amostra de código [atualizar todas as células em um intervalo](excel-add-ins-core-concepts.md#update-all-cells-in-a-range).
-
-> [!NOTE]
-> Se você estiver usando o TypeScript, vai notar um erro de compilação dizendo que um único valor não pode ser  definido como uma matriz 2D.  Isso é inevitável, pois os valores *são* uma matriz 2D ao recuperar as propriedades e o TypeScript não permite diferentes tipos de setter vs getter.  No entanto, uma solução simples é definir valores com um sufixo`as any`, por exemplo, `range.values = "hello world" as any`.
 
 ## <a name="importing-data-into-tables"></a>Importar dados em tabelas
 

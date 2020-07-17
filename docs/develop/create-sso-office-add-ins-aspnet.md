@@ -3,12 +3,12 @@ title: Criar um Suplemento do Office com ASP.NET que use logon único
 description: Um guia passo a passo sobre como criar (ou converter) um suplemento do Office com um back-end do ASP.NET para usar o logon único (SSO).
 ms.date: 12/04/2019
 localization_priority: Normal
-ms.openlocfilehash: 71c5b6a90aa17ab08c1fe172be2181c9ec8650ef
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 9d2917c334a2e90736daa1b3e4ad7ef85be6b978
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093718"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159609"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>Criar um Suplemento do Office com ASP.NET que use logon único (visualização)
 
@@ -428,7 +428,7 @@ Se você escolher "Somente contas neste diretório organizacional" para **TIPOS 
 1. Substitua o `TODO 1` pelo seguinte. Observação sobre o código:
 
     * O código instrui o OWIN a garantir que o público especificado no token de bootstrap que vem do host do Office deve coincidir com os valores especificados no Web.config.
-    * As Contas da Microsoft têm um GUID de emissor diferente de qualquer GUID de locatário organizacional, portanto, para dar suporte a ambos os tipos de contas, não validamos o emissor.
+    * As contas da Microsoft têm um GUID emissor que é diferente de qualquer GUID de locatário organizacional, portanto, para dar suporte a ambos os tipos de contas, não validamos o emissor.
     * Definir `SaveSigninToken` como `true` faz com que o OWIN salve o token bruto de bootstrap do host do Office. O suplemento precisa dele para obter um token de acesso para o Microsoft Graph com o fluxo "on-behalf-of".
     * Os escopos não são validados pelo middleware OWIN. Os escopos do token de bootstrap, que devem conter `access_as_user`, são validados no controlador.
 
@@ -608,4 +608,4 @@ Se você escolher "Somente contas neste diretório organizacional" para **TIPOS 
 
 1. Pressione F5.
 1. No aplicativo do Office, na faixa de opções **Home**, selecione **Mostrar suplemento** no grupo **SSO ASP.NET** para abrir o suplemento do painel de tarefas.
-1. Clique no botão **Definir Nome de Arquivos do One Drive**. Se você estiver conectado ao Office com uma conta de educação ou de trabalho do Microsoft 365 ou uma conta da Microsoft, e o SSO estiver funcionando conforme o esperado, os primeiros 10 nomes de arquivos e pastas no OneDrive for Business são exibidos no painel de tarefas. Se você não estiver conectado ou se você estiver em um cenário que não tem suporte para SSO, ou se o SSO não estiver funcionando por nenhum motivo, você será solicitado a fazer logon. Depois de entrar, os nomes de arquivos e pastas serão exibidos.
+1. Clique no botão **Definir Nome de Arquivos do One Drive**. Se você estiver conectado ao Office com uma conta de educação ou de trabalho do Microsoft 365, ou uma conta da Microsoft, e o SSO estiver funcionando conforme o esperado, os 10 primeiros nomes de arquivos e pastas no OneDrive for Business são exibidos no painel de tarefas. Se você não estiver conectado ou se você estiver em um cenário que não tem suporte para SSO, ou se o SSO não estiver funcionando por nenhum motivo, você será solicitado a fazer logon. Depois de entrar, os nomes de arquivos e pastas serão exibidos.

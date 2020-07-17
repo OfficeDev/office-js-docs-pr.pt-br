@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos da Dialog API
 description: Saiba mais sobre os conjuntos de requisitos de API da caixa de diálogo.
-ms.date: 06/10/2020
+ms.date: 07/10/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: d50c30fd769777c8dd3c168a9289dfb60012bbbd
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: f53bd5c62c434c361d435eb51035e45079f8e429
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094425"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159098"
 ---
 # <a name="dialog-api-requirement-sets"></a>Conjuntos de requisitos da Dialog API
 
@@ -17,7 +17,7 @@ Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplemento
 
 Os suplementos do Office executam várias versões do Office. A tabela a seguir lista os conjuntos de requisitos da Dialog API, ou seja, os aplicativos de host do Office que oferecem suporte a esse conjunto de requisitos, e os números de versão ou de build dos aplicativos do Office.
 
-|  Conjunto de requisitos  | Office 2013 no Windows\*<br>(compra avulsa) | Office 2016 ou posterior no Windows\*<br>(compra avulsa)   | Office no Windows<br>(conectado à assinatura do Microsoft 365) |  Office no iPad<br>(conectado à assinatura do Microsoft 365)  |  Office no Mac<br>(conectado à assinatura do Microsoft 365)  | Office na Web  |  Servidor do Office Online  |
+|  Conjunto de requisitos  | Office 2013 no Windows\*<br>(compra avulsa) | Office 2016 ou posterior no Windows\*<br>(compra avulsa)   | Office no Windows<br>(conectado a uma assinatura do Microsoft 365) |  Office no iPad<br>(conectado a uma assinatura do Microsoft 365)  |  Office no Mac<br>(conectado a uma assinatura do Microsoft 365)  | Office na Web  |  Servidor do Office Online  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | DialogApi 1.1  | Build 15.0.4855.1000 ou posterior | Build 16.0.4390.1000 ou posterior | Versão 1602 (build 6741.0000) ou posterior | 1.22 ou posterior | 15.20 ou posterior| Janeiro de 2017 | Versão 1608 (build 7601.6800) ou posterior|
 

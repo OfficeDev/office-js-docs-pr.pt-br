@@ -1,18 +1,18 @@
 ---
 title: Torne o seu suplemento do Office compatível com um suplemento COM existente
 description: Habilitar a compatibilidade entre o suplemento do Office e o suplemento COM equivalente
-ms.date: 07/31/2019
+ms.date: 07/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 1ded60366c36edb876b8b2dd0a4ea9e6a39521b0
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: a29fcda8eb83b8fdbc3f7d170932838ffe44d233
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093592"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159546"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>Torne o seu suplemento do Office compatível com um suplemento COM existente
 
-Se você tiver um suplemento COM existente, poderá criar uma funcionalidade equivalente no suplemento do Office, permitindo assim que sua solução seja executada em outras plataformas, como o Office na Web ou o Office no Mac. Em alguns casos, o suplemento do Office pode não ser capaz de fornecer toda a funcionalidade que está disponível no suplemento COM correspondente. Nessas situações, o suplemento COM pode fornecer uma experiência de usuário melhor no Windows do que o suplemento do Office correspondente pode fornecer.
+Se você tiver um suplemento COM existente, poderá criar uma funcionalidade equivalente no suplemento do Office, permitindo assim que sua solução seja executada em outras plataformas, como o Office na Web ou Mac. Em alguns casos, o suplemento do Office pode não ser capaz de fornecer toda a funcionalidade que está disponível no suplemento COM correspondente. Nessas situações, o suplemento COM pode fornecer uma experiência de usuário melhor no Windows do que o suplemento do Office correspondente pode fornecer.
 
 Você pode configurar seu suplemento do Office para que, quando o suplemento COM equivalente já estiver instalado no computador de um usuário, o Office no Windows execute o suplemento COM em vez do suplemento do Office. O suplemento de COM é chamado de "equivalente" porque o Office faz uma transição transparente entre o suplemento de COM e o suplemento do Office de acordo com o qual está instalado o computador de um usuário.
 

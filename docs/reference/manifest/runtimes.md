@@ -3,12 +3,12 @@ title: Tempos de execução no arquivo de manifesto
 description: O elemento de Runtime especifica o tempo de execução do seu suplemento.
 ms.date: 06/01/2020
 localization_priority: Normal
-ms.openlocfilehash: ef00bea317ae479d912b3a02f269ef97045b015d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 082491befc6b9dbdc474b0e40f9defd90a4ef75f
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608094"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159357"
 ---
 # <a name="runtimes-element"></a>Elemento de runtimes
 
@@ -24,8 +24,6 @@ No Outlook, esse elemento habilita a ativação de suplementos baseada em evento
 **Tipo de suplemento:** Painel de tarefas, email
 
 > [!IMPORTANT]
-> **Excel**: o tempo de execução compartilhado atualmente só está disponível no Excel no Windows.
->
 > **Outlook**: o recurso de ativação baseado em eventos está atualmente [em versão prévia](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) e disponível apenas no Outlook na Web. Para obter mais informações, consulte [como visualizar o recurso de ativação baseado em eventos](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature).
 
 ## <a name="syntax"></a>Sintaxe

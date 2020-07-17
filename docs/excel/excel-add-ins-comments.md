@@ -3,12 +3,12 @@ title: Trabalhar com comentários usando a API JavaScript do Excel
 description: Informações sobre como usar as APIs para adicionar, remover e editar comentários e encadeamentos de comentários.
 ms.date: 03/17/2020
 localization_priority: Normal
-ms.openlocfilehash: a0ea156c8599b98800d03d2238451c7935d6466f
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 59751086b645ed56cb2a00bc70678967cae085c5
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609773"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159427"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>Trabalhar com comentários usando a API JavaScript do Excel
 
@@ -175,7 +175,8 @@ As [mencionas](https://support.office.com/article/use-mention-in-comments-to-tag
 
 Comentários com menção precisam ser criados com objetos [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) . Call `CommentCollection.add` com um `CommentRichContent` contendo um ou mais mencionas e especifique `ContentType.mention` como o `contentType` parâmetro. A `content` cadeia de caracteres também precisa ser formatada para inserir o menção no texto. O formato de um menção é: `<at id="{replyIndex}">{mentionName}</at>` .
 
-> Observação Atualmente, apenas o nome exato de menção pode ser usado como o texto do link de menção. O suporte para versões reduzidas de um nome será adicionado posteriormente.
+> [!NOTE]
+> Atualmente, apenas o nome exato de menção pode ser usado como o texto do link de menção. O suporte para versões reduzidas de um nome será adicionado posteriormente.
 
 O exemplo a seguir mostra um comentário com uma única menção.
 

@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos de tempo de execução compartilhado
 description: Especifica as plataformas e hosts do Office que dão suporte às APIs SharedRuntime.
-ms.date: 03/11/2020
+ms.date: 07/10/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: bb1a621de9127417a8a17c2c71a3b3796e7a6ac4
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 37ab904242a07a5ae7f1f580332f709ac409c6be
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094306"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159266"
 ---
 # <a name="shared-runtime-requirement-sets"></a>Conjuntos de requisitos de tempo de execução compartilhado
 
@@ -19,7 +19,7 @@ Partes de um suplemento do Office que executam código JavaScript, como painéis
 
 A tabela a seguir lista o conjunto de requisitos SharedRuntime 1,1, os aplicativos host do Office que dão suporte a esse conjunto de requisitos e os números de versão ou de compilação do aplicativo do Office.
 
-|  Conjunto de requisitos  |  Office 2013 (ou posterior) no Windows<br>(compra avulsa) | Office no Windows<br>(conectado à assinatura do Microsoft 365)   |  Office no iPad<br>(conectado à assinatura do Microsoft 365)  |  Office no Mac<br>(conectado à assinatura do Microsoft 365)  | Office na Web  | Servidor do Office Online |
+|  Conjunto de requisitos  |  Office 2013 (ou posterior) no Windows<br>(compra avulsa) | Office no Windows<br>(conectado a uma assinatura do Microsoft 365)   |  Office no iPad<br>(conectado a uma assinatura do Microsoft 365)  |  Office no Mac<br>(conectado a uma assinatura do Microsoft 365)  | Office na Web  | Servidor do Office Online |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | SharedRuntime 1,1  | N/D | Versão 2002 (Build 12527,20092) ou posterior | N/D | 16.35 ou posterior | Fevereiro de 2020 | N/D |
 

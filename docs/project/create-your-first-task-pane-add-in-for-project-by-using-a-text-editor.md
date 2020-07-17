@@ -1,20 +1,20 @@
 ---
 title: Crie o seu primeiro suplemento de painel de tarefas para o Microsoft Project usando um editor de texto
 description: Criar um suplemento do painel de tarefas para o Project Standard 2013, o Project Professional 2013 ou versões posteriores usando o gerador Yeoman para suplementos do Office.
-ms.date: 10/11/2019
+ms.date: 07/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 9bf47066f15f0650b8da0ede496537973604142b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 4397ad2bd8e44d0962512c2a0905aa1f99a1d411
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611887"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159434"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>Crie o seu primeiro suplemento de painel de tarefas para o Microsoft Project usando um editor de texto
 
 Você pode criar um suplemento de painel de tarefas para o Project Standard 2013, o Project Professional 2013 ou versões posteriores usando o gerador Yeoman para suplementos do Office. Este artigo descreve como criar um suplemento simples que usa um manifesto XML que aponta para um arquivo HTML em um compartilhamento de arquivos. O suplemento de amostra de teste do Project OM testa algumas funções JavaScript que usam o modelo de objeto para suplementos. Após usar a **central de confiabilidade** no Project para registrar o compartilhamento de arquivos que contém o arquivo de manifesto, você pode abrir o suplemento do painel de tarefas da guia **projeto** na faixa de opções. (O código de exemplo deste artigo é baseado em um aplicativo de teste de Arvind Iyer, da Microsoft Corporation).
 
-O Project usa o mesmo esquema de manifesto de suplemento que outros clientes do Microsoft Office, e grande parte da mesma API Java. O código completo para o suplemento que está descrito neste artigo está disponível no subdiretório `Samples\Apps` do download do SDK do Project 2013.
+O Project usa o mesmo esquema de manifesto de suplemento que outros clientes do Office usam e boa parte da mesma API JavaScript. O código completo para o suplemento que está descrito neste artigo está disponível no subdiretório `Samples\Apps` do download do SDK do Project 2013.
 
 O suplemento de exemplo Teste do Project OM pode obter o GUID de uma tarefa, as propriedades do aplicativo e o projeto ativo. Se o Project Professional 2013 abre um projeto que está em uma biblioteca do SharePoint, o suplemento pode mostrar a URL do projeto. 
 
@@ -26,7 +26,7 @@ Para obter uma introdução ao uso do JavaScript em suplementos do Office, consu
 
 ## <a name="procedure-1-to-create-the-add-in-manifest-file"></a>Procedimento 1. Para criar o arquivo de manifesto do suplemento
 
-Crie um arquivo XML em um diretório local. O arquivo XML inclui o `OfficeApp` elemento e os elementos filho, que são descritos no [manifesto XML de suplementos do Office](../develop/add-in-manifests.md). Por exemplo, crie um arquivo chamado JSOM_SimpleOMCalls. XML que contenha o seguinte XML (altere o valor de GUID do `Id` elemento).
+Crie um arquivo XML em um diretório local. O arquivo XML inclui o `OfficeApp` elemento e os elementos filho, que são descritos no [manifesto XML de suplementos do Office](../develop/add-in-manifests.md). Por exemplo, crie um arquivo chamado JSOM_SimpleOMCalls.xml que contenha o seguinte XML (altere o valor de GUID do `Id` elemento).
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -69,11 +69,11 @@ O Procedimento 2 mostra como criar o arquivo HTML que o manifesto JSOM_SimpleOMC
 
 ## <a name="procedure-2-to-create-the-source-files-for-the-project-om-test-add-in"></a>Procedimento 2. Para criar os arquivos de origem para o suplemento Teste de modelo de objeto do Project
 
-1. Criar um arquivo HTML com um nome especificado pelo `SourceLocation` elemento no manifesto JSOM_SimpleOMCalls. xml. 
+1. Criar um arquivo HTML com um nome especificado pelo `SourceLocation` elemento no manifesto JSOM_SimpleOMCalls.xml. 
 
    Por exemplo, crie o arquivo JSOMCall.html no diretório `C:\Project\AppSource`. Embora você possa usar um editor de texto simples para criar os arquivos de origem, é mais fácil usar uma ferramenta como o Visual Studio Code, que funciona com tipos de documento específicos (como HTML e JavaScript) e tem outros auxílios de edição. Se você ainda não tiver feito o exemplo da Pesquisa do Bing descrito em [Suplementos de painel de tarefas para Project](../project/project-add-ins.md), o Procedimento 3 mostra como criar o `\\ServerName\AppSource` compartilhamento de arquivos que o manifesto especifica.
 
-   O arquivo JSOMCall.html usa o arquivo MicrosoftAjax.js comum para a funcionalidade AJAX e o arquivo Office.js para a funcionalidade de suplemento em aplicativos do Microsoft Office 2013.
+   O arquivo JSOMCall.html usa o arquivo de MicrosoftAjax.js comum para a funcionalidade AJAX e o arquivo Office.js para a funcionalidade de suplemento em aplicativos do Office 2013.
 
     ```HTML
     <!DOCTYPE html>
@@ -172,22 +172,22 @@ O Procedimento 2 mostra como criar o arquivo HTML que o manifesto JSOM_SimpleOMC
     }
     ```
 
-   Para obter informações sobre as funções no arquivo Office. Debug. js, confira [API JavaScript do Office](../reference/javascript-api-for-office.md). Por exemplo, a `getDocumentUrl` função obtém a URL ou o caminho do arquivo do projeto aberto.
+   Para obter informações sobre as funções no arquivo Office.debug.js, consulte [API JavaScript do Office](../reference/javascript-api-for-office.md). Por exemplo, a `getDocumentUrl` função obtém a URL ou o caminho do arquivo do projeto aberto.
 
 3. Adicione funções JavaScript que chamam funções assíncronas em Office.js e Project-15.js para acessar dados selecionados:
 
-   - Por exemplo, `getSelectedDataAsync` é uma função geral no Office. js que obtém texto não formatado para os dados selecionados. Para saber mais, confira [objeto AsyncResult](/javascript/api/office/office.asyncresult).
+   - Por exemplo, `getSelectedDataAsync` é uma função geral no Office.js que obtém texto não formatado para os dados selecionados. Para saber mais, confira [objeto AsyncResult](/javascript/api/office/office.asyncresult).
 
-   - A `getSelectedTaskAsync` função no Project-15. js Obtém o GUID da tarefa selecionada. Da mesma forma, a `getSelectedResourceAsync` função obtém o GUID do recurso selecionado. Se você chamar essas funções quando uma tarefa ou um recurso não estiver selecionado, as funções mostrarão um erro indefinido.
+   - A `getSelectedTaskAsync` função no Project-15.js Obtém o GUID da tarefa selecionada. Da mesma forma, a `getSelectedResourceAsync` função obtém o GUID do recurso selecionado. Se você chamar essas funções quando uma tarefa ou um recurso não estiver selecionado, as funções mostrarão um erro indefinido.
 
    - A `getTaskAsync` função obtém o nome da tarefa e os nomes dos recursos atribuídos. Se a tarefa estiver em uma lista de tarefas do SharePoint sincronizada, `getTaskAsync` Obtém a ID da tarefa na lista do SharePoint; caso contrário, a ID da tarefa do SharePoint será 0.
 
      > [!NOTE]
      > Para fins de demonstração, o código de exemplo inclui um bug. Se `taskGuid` estiver indefinido, os `getTaskAsync` erros de função desativados. Se você receber um GUID de tarefa válido e selecionar uma tarefa diferente, a `getTaskAsync` função obterá dados para a tarefa mais recente que foi operada pela `getSelectedTaskAsync` função.
   
-   - `getTaskFields`, `getResourceFields` e `getProjectFields` são funções locais que chamam `getTaskFieldAsync` , `getResourceFieldAsync` ou `getProjectFieldAsync` várias vezes para obter campos especificados de uma tarefa ou um recurso. No arquivo Project-15. Debug. js, a `ProjectTaskFields` enumeração e a `ProjectResourceFields` Enumeração mostram quais campos têm suporte.
+   - `getTaskFields`, `getResourceFields` e `getProjectFields` são funções locais que chamam `getTaskFieldAsync` , `getResourceFieldAsync` ou `getProjectFieldAsync` várias vezes para obter campos especificados de uma tarefa ou um recurso. No arquivo project-15.debug.js, a `ProjectTaskFields` enumeração e a `ProjectResourceFields` Enumeração mostram quais campos são suportados.
 
-   - A `getSelectedViewAsync` função obtém o tipo de modo de exibição (definido na `ProjectViewTypes` enumeração em Project-15. Debug. js) e o nome do modo de exibição.
+   - A `getSelectedViewAsync` função obtém o tipo de modo de exibição (definido na `ProjectViewTypes` enumeração em project-15.debug.js) e o nome do modo de exibição.
 
    - Se o projeto estiver sincronizado com uma lista de tarefas do SharePoint, a `getWSSUrlAsync` função obterá a URL e o nome da lista de tarefas. Se o projeto não estiver sincronizado com uma lista de tarefas do SharePoint, os `getWSSUrlAsync` erros de função serão desativados.
 
@@ -808,7 +808,7 @@ O Procedimento 3 mostra como instalar e usar os recursos do suplemento Teste de 
     - Posição do símbolo: `0`
     - URL do Project Web App: `http://servername/pwa`
   
-18. Selecione o botão **obter valores de contexto** obter as propriedades do documento e o aplicativo no qual o suplemento está sendo executado, obtendo as propriedades do objeto **Office. Context. Document** e o `Office.context.application` objeto. Por exemplo, se o arquivo Project1.mpp estiver na área de trabalho do computador local, a URL do documento será `C:\Users\UserAlias\Desktop\Project1.mpp`. Se o arquivo .mpp estiver em uma biblioteca do SharePoint, o valor será a URL do documento. Se você usar o Project Professional 2013 para abrir um projeto chamado Project1 do Project Web App, a URL do documento será `<>\Project1`.
+18. Selecione o botão **obter valores de contexto** obter propriedades do documento e o aplicativo no qual o suplemento está sendo executado, obtendo as propriedades do objeto **Office.Context.document** e o `Office.context.application` objeto. Por exemplo, se o arquivo Project1.mpp estiver na área de trabalho do computador local, a URL do documento será `C:\Users\UserAlias\Desktop\Project1.mpp`. Se o arquivo .mpp estiver em uma biblioteca do SharePoint, o valor será a URL do documento. Se você usar o Project Professional 2013 para abrir um projeto chamado Project1 do Project Web App, a URL do documento será `<>\Project1`.
 
     - URL do documento: `<>\Project1`
     - Modo do documento: `readWrite`
@@ -903,7 +903,7 @@ O download do SDK do Project 2013 contém o código completo no arquivo JSOMCall
 
 ## <a name="robust-programming"></a>Programação robusta
 
-O suplemento de **teste do Project OM** é um exemplo que mostra o uso de algumas funções JavaScript para o Project 2013 nos arquivos Project-15. js e Office. js. O exemplo é somente para teste e não inclui verificações de erro robustas. Por exemplo, se você não selecionar um recurso e executar a `getSelectedResourceAsync` função, a `resourceGuid` variável não será inicializada e as chamadas para `getResourceFieldAsync` retornar um erro. Para um suplemento de produção, você deve verificar se há erros específicos e ignorar os resultados, ocultar funcionalidades que não se aplicam ou notificar o usuário para escolher um modo de exibição e fazer uma seleção válida antes de usar uma função.
+O suplemento de **teste do Project OM** é um exemplo que mostra o uso de algumas funções JavaScript para o Project 2013 nos arquivos de Project-15.js e Office.js. O exemplo é somente para teste e não inclui verificações de erro robustas. Por exemplo, se você não selecionar um recurso e executar a `getSelectedResourceAsync` função, a `resourceGuid` variável não será inicializada e as chamadas para `getResourceFieldAsync` retornar um erro. Para um suplemento de produção, você deve verificar se há erros específicos e ignorar os resultados, ocultar funcionalidades que não se aplicam ou notificar o usuário para escolher um modo de exibição e fazer uma seleção válida antes de usar uma função.
 
 Para um exemplo simples, a saída de erro no código a seguir inclui `actionMessage` a variável que especifica a ação a ser tomada para evitar um erro na `getSelectedResourceAsync` função.
 
@@ -936,7 +936,7 @@ function getSelectedResourceAsync() {
 
 O exemplo **HelloProject_OData** no download do SDK do Project 2013 inclui o arquivo SurfaceErrors.js que usa a biblioteca JQuery para exibir uma mensagem de erro pop-up. A Figura 4 mostra a mensagem de erro em uma notificação do sistema.
 
-O código a seguir no arquivo SurfaceErrors. js inclui a `throwError` função th que cria um `Toast` objeto.
+O código a seguir no arquivo SurfaceErrors.js inclui `throwError` a função th que cria um `Toast` objeto.
 
 ```js
 /*
@@ -1046,7 +1046,7 @@ var Toast = {
 }
 ```
 
-Para usar a `throwError` função, inclua a biblioteca jQuery e o script SurfaceErrors. js no arquivo JSOMCall. html e, em seguida, adicione uma chamada a `throwError` outras funções JavaScript, como `logMethodError` .
+Para usar a `throwError` função, inclua a biblioteca jQuery e o script SurfaceErrors.js no arquivo l JSOMCall.htme, em seguida, adicione uma chamada para `throwError` outras funções JavaScript, como `logMethodError` .
 
 > [!NOTE]
 > Antes de implantar o suplemento, mude a referência office.js e a referência jQuery para a referência CDN (rede de distribuição de conteúdo). A referência CDN fornece a versão mais recente e melhora o desempenho.

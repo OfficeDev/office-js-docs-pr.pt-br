@@ -3,12 +3,12 @@ title: Usar a API da Caixa de Diálogo do Office nos suplementos do Office
 description: Saiba mais sobre a criação de uma caixa de diálogo em um suplemento do Office.
 ms.date: 06/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 749fd6041c2ef60a4d766e865e25d53e97298d01
-ms.sourcegitcommit: 449a728118db88dea22a44f83728d21604d6ee8c
+ms.openlocfilehash: 5cdd457b99636dd244eed1fa88c1b76cab23ee8c
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "44719067"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159560"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Usar a API de diálogo do Office em suplementos do Office
 
@@ -79,7 +79,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 O valor padrão é `false`, que é o mesmo que omitir a propriedade inteiramente. Se o suplemento não estiver sendo executado no Office Online, o `displayInIframe` será ignorado.
 
 > [!NOTE]
-> Você **não** deverá usar `displayInIframe: true` se a caixa de diálogo redirecionar a qualquer ponto para uma página que não possa ser aberta em um iframe. Por exemplo, as páginas de entrada de muitos serviços Web populares, como Google e Conta da Microsoft, não podem ser abertas em um iframe.
+> Você **não** deverá usar `displayInIframe: true` se a caixa de diálogo redirecionar a qualquer ponto para uma página que não possa ser aberta em um iframe. Por exemplo, as páginas de entrada de muitos serviços Web populares, como a conta do Google e da Microsoft, não podem ser abertas em um iframe.
 
 ## <a name="send-information-from-the-dialog-box-to-the-host-page"></a>Envie informações da caixa de diálogo para a página host
 
@@ -137,7 +137,7 @@ function processMessage(arg) {
 ```
 
 > [!NOTE]
-> - O Office transmite o objeto `arg` para o manipulador. Sua propriedade `message` é o booliano ou a cadeia de caracteres enviada pela chamada de `messageParent` na caixa de diálogo. Neste exemplo, ela é uma representação em formato de cadeia de caracteres de um perfil de usuário de um serviço como a Conta da Microsoft ou o Google, portanto está desserializada como um objeto com `JSON.parse` novamente.
+> - O Office transmite o objeto `arg` para o manipulador. Sua propriedade `message` é o booliano ou a cadeia de caracteres enviada pela chamada de `messageParent` na caixa de diálogo. Neste exemplo, é uma representação em formato de um perfil de usuário de um serviço como a conta da Microsoft ou o Google, para que seja desserializado de volta para um objeto com `JSON.parse` .
 > - A implementação de `showUserName` não é mostrada. Ela pode exibir uma mensagem de boas-vindas personalizada no painel de tarefas.
 
 Quando a interação do usuário com a caixa de diálogo for concluída, seu manipulador de mensagem fechará a caixa de diálogo, conforme mostrado neste exemplo.
@@ -170,7 +170,7 @@ Para ver um exemplo de um suplemento que faz isso, consulte [Inserir gráficos d
 
 ### <a name="conditional-messaging"></a>Mensagens condicionais
 
-Como você pode enviar várias chamadas `messageParent` a partir da caixa de diálogo, mas tem apenas um manipulador na página host do evento `DialogMessageReceived`, o manipulador tem que usar a lógica condicional para distinguir mensagens diferentes. Por exemplo, se a caixa de diálogo solicitar que o usuário entre em um provedor de identidade como a Conta da Microsoft ou o Google, ele enviará o perfil do usuário como uma mensagem. Se a autenticação falhar, a caixa de diálogo enviará informações de erro à página host, como no exemplo a seguir:
+Como você pode enviar várias chamadas `messageParent` a partir da caixa de diálogo, mas tem apenas um manipulador na página host do evento `DialogMessageReceived`, o manipulador tem que usar a lógica condicional para distinguir mensagens diferentes. Por exemplo, se a caixa de diálogo solicitar que um usuário entre em um provedor de identidade como a conta da Microsoft ou Google, ele enviará o perfil do usuário como uma mensagem. Se a autenticação falhar, a caixa de diálogo enviará informações de erro à página host, como no exemplo a seguir:
 
 ```js
 if (loginSuccess) {

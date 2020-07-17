@@ -3,12 +3,12 @@ title: Solucionar problemas de mensagens de erro no logon único (SSO)
 description: Orientações sobre como solucionar problemas com logon único (SSO) em suplementos do Office e lidar com condições ou erros especiais.
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 49e967aa0d500df64828c66d9dee8574eb948cec
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 0f4069ee2167a180bb4ba1fbd8db57d5d355e24b
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093557"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159567"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso-preview"></a>Solucionar problemas de mensagens de erro no logon único (SSO) (visualização)
 
@@ -17,7 +17,7 @@ Este artigo fornece algumas orientações sobre como solucionar problemas com o 
 > [!NOTE]
 > Atualmente, a API de logon único tem suporte para Word, Excel, Outlook e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md).
 > [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-> Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a autenticação moderna para o Microsoft 365 locação. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Microsoft 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 ## <a name="debugging-tools"></a>Ferramentas de depuração
 
@@ -82,7 +82,7 @@ O host do Office não conseguiu obter um token de acesso ao serviço Web do supl
 
 - Se ocorrer este erro durante o desenvolvimento, certifique-se de que o registro e o manifesto do suplemento especifiquem as permissões de `profile` (e a permissão de `openid`, se estiver usando o MSAL.NET). Para mais informações, confira [Registrar o suplemento com o ponto de extremidade do Microsoft Azure AD v2.0](register-sso-add-in-aad-v2.md).
 - Na produção, há várias coisas que podem causar esse erro. Algumas delas são:
-    - O usuário tem uma identidade da conta da Microsoft (MSA).
+    - O usuário tem uma identidade de conta da Microsoft.
     - Algumas situações que poderiam causar um dos outros erros do 13xxx com uma conta de educação ou de trabalho do Microsoft 365 causarão um 13007 quando um MSA for usado.
 
   Em todos esses casos, o código deve retornar a um sistema alternativo de autenticação de usuário.

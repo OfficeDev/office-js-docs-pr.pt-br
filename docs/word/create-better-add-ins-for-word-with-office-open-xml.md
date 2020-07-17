@@ -1,20 +1,20 @@
 ---
 title: Criar suplementos melhores para o Word com o Office Open XML
-description: Visão geral de como melhorar o suplemento do Word com o Office Open XML
-ms.date: 10/10/2019
+description: Visão geral de como melhorar o suplemento do Word com o Office Open XML.
+ms.date: 07/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 2faaedec831a9ae18f218ff160fee26a8d36910e
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 8aeb0d122c85a1bf38755d1db364222359d06e58
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609584"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159301"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Criar suplementos melhores para o Word com o Office Open XML
 
 **Fornecido por:** Stephanie Krieger, Microsoft Corporation | Juan Balmori Labra, Microsoft Corporation
 
-Se você estiver criando suplementos do Office para executar no Word, talvez já saiba que a API JavaScript do Office (Office. js) oferece vários formatos para leitura e gravação de conteúdo de documento. Eles são chamados de tipos de coerção e incluem texto sem formatação, tabelas, HTML e Office Open XML.
+Se você estiver criando suplementos do Office para executar no Word, talvez já saiba que a API JavaScript do Office (Office.js) oferece vários formatos para leitura e gravação de conteúdo de documento. Eles são chamados de tipos de coerção e incluem texto sem formatação, tabelas, HTML e Office Open XML.
 
 Então, quais são suas opções quando você precisa adicionar conteúdo avançado a um documento, como imagens, tabelas formatadas, gráficos ou apenas texto formatado? Você pode usar HTML para inserir alguns tipos de conteúdo avançado, como imagens. Dependendo do cenário, pode haver desvantagens na coerção de HTML, como limitações nas opções de formatação e posicionamento disponíveis para o conteúdo. Como o Office Open XML é a linguagem na qual os documentos do Word (como .docx e .dotx) são gravados, você pode inserir praticamente qualquer tipo de conteúdo que um usuário pode adicionar a um documento do Word, com praticamente qualquer tipo de formatação que o usuário possa aplicar. Determinar a marcação do Office Open XML necessária para fazer isso é mais fácil do que você imagina.
 
@@ -73,7 +73,7 @@ Os efeitos de texto estão disponíveis no Word para o texto dentro de uma caixa
 *Figura 7. Uma forma*
 
 
-![Uma forma de desenho do Microsoft Office no Word.](../images/office15-app-create-wd-app-using-ooxml-fig07.png)
+![Uma forma de desenho no Word.](../images/office15-app-create-wd-app-using-ooxml-fig07.png)
 
 Você pode inserir formas de desenho internas ou personalizadas, com ou sem texto e efeitos de formatação.
 
@@ -96,7 +96,7 @@ Você pode usar estilos de tabela internos ou personalizados com a mesma facilid
 
 ![Um diagrama SmartArt dinâmico no Word.](../images/office15-app-create-wd-app-using-ooxml-fig10.png)
 
-O Microsoft Office oferece uma ampla variedade de layouts de diagrama do SmartArt (e você pode usar o Office Open XML para criar os seus próprios).
+O Office oferece uma ampla variedade de layouts de diagrama do SmartArt (e você pode usar o Office Open XML para criar os seus próprios).
 
 *Figura 11. Um gráfico*
 
@@ -317,7 +317,7 @@ Como document.xml é a parte do documento principal em que você coloca o conte�
 
 - A marca de abertura **w:document** inclui várias listagens de namespaces (**xmlns**). Muitos desses namespaces referem-se a tipos específicos de conteúdo, e você só precisa deles caso sejam relevantes para o conteúdo.
 
-    O prefixo para as marcas em uma parte do documento remete aos namespaces. Neste exemplo, o único prefixo usado nas marcas em toda a parte Document. xml é **w:**, portanto, o único namespace que precisamos deixar na marca de abertura **w:Document** é **xmlns: w**.
+    O prefixo para as marcas em uma parte do documento remete aos namespaces. Neste exemplo, o único prefixo usado nas marcas ao longo da document.xml Part é **w:**, portanto, o único namespace que precisamos deixar na marca de abertura **w:Document** é **xmlns: w**.
 
 
 > [!TIP]
@@ -563,7 +563,7 @@ O código mostrado aqui realiza as seguintes etapas:
 > [!NOTE]
 > Como mencionado anteriormente e mostrado no código anterior, o nome do controle de conteúdo é usado para determinar onde criar a associação. No entanto, na marcação do Office Open XML, o código adiciona a associação ao documento usando o nome e o atributo de ID do controle de conteúdo.
 
-Após a execução de código, se examinar a marcação do documento no qual o suplemento criou associações, você verá duas partes para cada associação. Na marcação do controle de conteúdo onde uma associação foi adicionada (em Document. xml), você verá o atributo **W15: webExtensionLinked/**.
+Após a execução de código, se examinar a marcação do documento no qual o suplemento criou associações, você verá duas partes para cada associação. Na marcação do controle de conteúdo onde uma associação foi adicionada (em document.xml), você verá o atributo **W15: webExtensionLinked/**.
 
 Na parte do documento chamada webExtensions1.xml, você verá uma lista das associações que criou. Cada uma delas é identificada usando a ID de associação e o atributo de ID do controle aplicável, como o item a seguir, em que o atributo **appref** é a ID de controle de conteúdo: ** **we:binding id="myBinding" type="text" appref="1382295294"/**.
 
@@ -742,7 +742,7 @@ Lembre-se de que, como uma referência de relação é usada explicitamente (**r
 
 
 > [!NOTE]
-> Quando você revisar a marcação, observe os namespaces adicionais usados na marca a:blip. Você verá no Document. XML que o **xlmns: um** namespace (o namespace drawingML principal) é dinamicamente colocado no início do uso de referências drawingML, e não na parte superior da parte Document. xml. However, the relationships namespace (r) must be retained where it appears at the start of document.xml. Check your picture markup for additional namespace requirements. Remember that you don't have to memorize which types of content require what namespaces, you can easily tell by reviewing the prefixes of the tags throughout document.xml.
+> Quando você revisar a marcação, observe os namespaces adicionais usados na marca a:blip. Você verá no document.xml que o **xlmns: um** namespace (o namespace drawingML principal) é dinamicamente colocado no início do uso de referências do drawingML, e não na parte superior da document.xml Part. However, the relationships namespace (r) must be retained where it appears at the start of document.xml. Check your picture markup for additional namespace requirements. Remember that you don't have to memorize which types of content require what namespaces, you can easily tell by reviewing the prefixes of the tags throughout document.xml.
 
 
 ### <a name="understanding-additional-image-parts-and-formatting"></a>Noções básicas sobre partes de imagem e formatação adicionais
@@ -782,7 +782,7 @@ Um diagrama SmartArt tem quatro partes associadas, mas apenas duas são sempre n
 > [!TIP]
 > O arquivo SmartArt layout1.xml é um bom exemplo de locais em que talvez você consiga cortar ainda mais a marcação, mas talvez não valha a pena o tempo extra para fazer isso (porque é removida uma pequena quantidade de marcação em relação ao pacote inteiro). Se quiser remover todas as linhas de marcação que puder, você poderá excluir a marca **dgm:sampData** e seu conteúdo. Esses dados de exemplo definem como a visualização de miniatura do diagrama será exibida nas galerias de estilos SmartArt. No entanto, se forem omitidos, dados de exemplo padrão serão usados.
 
-Lembre-se de que a marcação de um diagrama SmartArt em document.xml contém referências de ID de relação para partes de layout, dados, cores e estilos rápidos. Você pode excluir as referências em document.xml das partes de cores e estilos ao excluir essas partes e suas definições de relação (e certamente é uma prática recomendada fazer isso, pois você está excluindo essas relações), mas não receberá um erro se as mantiver, pois não são necessárias para que o diagrama seja inserido em um documento. Encontre essas referências em Document. xml na marca **DGM: Retampas** . Independentemente de você executar esta etapa ou não, mantenha as referências de ID de relação para as partes de dados e layout necessárias.
+Lembre-se de que a marcação de um diagrama SmartArt em document.xml contém referências de ID de relação para partes de layout, dados, cores e estilos rápidos. Você pode excluir as referências em document.xml das partes de cores e estilos ao excluir essas partes e suas definições de relação (e certamente é uma prática recomendada fazer isso, pois você está excluindo essas relações), mas não receberá um erro se as mantiver, pois não são necessárias para que o diagrama seja inserido em um documento. Encontre essas referências no document.xml na marca **DGM: Retampas** . Independentemente de você executar esta etapa ou não, mantenha as referências de ID de relação para as partes de dados e layout necessárias.
 
 
 ### <a name="working-with-charts"></a>Trabalhar com gráficos

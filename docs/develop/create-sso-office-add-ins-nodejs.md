@@ -3,12 +3,12 @@ title: Crie um Suplemento do Office com Node.js que use logon único
 description: Aprenda a criar um suplemento baseado em node.js que usa o logon único do Office
 ms.date: 06/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 580e7ecaa44529f2e6415fbec638370028e2a1af
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: f2f28d0725de52c9a0647d9d1848662fb1ab7b4f
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093684"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159588"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on-preview"></a>Crie um Suplemento do Office com Node.js que use logon único (prévia)
 
@@ -571,7 +571,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 1. No aplicativo do Office, na faixa de opções **Home**, selecione o botão **Mostrar suplemento** no grupo**SSO Node.js** para abrir o suplemento do painel de tarefas.
 
-1. Clique no botão **Definir Nome de Arquivos do One Drive**. Se você estiver conectado ao Office com uma conta de trabalho ou de educação da Microsoft 365 ou uma conta da Microsoft, e o SSO estiver funcionando conforme o esperado, os primeiros 10 nomes de arquivos e pastas no OneDrive for Business serão inseridos no documento. Isso pode levar até 15 segundos pela primeira vez. Se você não estiver conectado ou se você estiver em um cenário que não tem suporte para SSO, ou se o SSO não estiver funcionando por nenhum motivo, você será solicitado a fazer logon. Depois de entrar, os nomes de arquivos e pastas serão exibidos.
+1. Clique no botão **Definir Nome de Arquivos do One Drive**. Se você estiver conectado ao Office com uma conta de educação ou de trabalho do Microsoft 365, ou uma conta da Microsoft, e o SSO estiver funcionando conforme o esperado, os 10 primeiros nomes de arquivos e pastas no OneDrive for Business serão inseridos no documento. Isso pode levar até 15 segundos pela primeira vez. Se você não estiver conectado ou se você estiver em um cenário que não tem suporte para SSO, ou se o SSO não estiver funcionando por nenhum motivo, você será solicitado a fazer logon. Depois de entrar, os nomes de arquivos e pastas serão exibidos.
 
 > [!NOTE]
 > Se você entrou no Office com uma ID diferente e se alguns aplicativos do Office que estavam abertos no momento continuam abertos, o Office pode não alterar de forma confiável sua ID, mesmo que pareça ter feito isso. Se isso acontecer, a chamada para o Microsoft Graph pode falhar ou os dados da ID anterior podem ser retornados. Para evitar isso, certifique-se de *fechar todos os outros aplicativos do Office* antes de pressionar **Obter nomes de arquivos do OneDrive**.

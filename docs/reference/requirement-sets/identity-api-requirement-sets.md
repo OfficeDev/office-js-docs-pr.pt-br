@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos da API de Identidade
 description: Identity API requirements define informações para suplementos do Office.
-ms.date: 04/16/2020
+ms.date: 07/10/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 5bface00e0ffe89e7a403b251129867b334f7f69
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: d8ef8b9eaf6e5f4f59f9bb7fd05ed0c91d741c45
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094376"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159294"
 ---
 # <a name="identity-api-requirement-sets"></a>Conjuntos de requisitos da API de Identidade
 
@@ -17,7 +17,7 @@ Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplemento
 
 Os suplementos do Office executam várias versões do Office. A tabela a seguir lista os conjuntos de requisitos da API de Identidade, ou seja, os aplicativos de host do Office que oferecem suporte a esse conjunto de requisitos, e os números de versão ou de build dos aplicativos do Office.
 
-|  Conjunto de requisitos  | Office 2013 ou posterior no Windows<br>(compra avulsa) | Office no Windows<br>(conectado à assinatura do Microsoft 365) |  Office no iPad<br>(conectado à assinatura do Microsoft 365)  |  Office no Mac<br>(conectado à assinatura do Microsoft 365)  | Office na Web  | SharePoint Online | OneDrive.com |Outlook.com e Exchange Online|
+|  Conjunto de requisitos  | Office 2013 ou posterior no Windows<br>(compra avulsa) | Office no Windows<br>(conectado a uma assinatura do Microsoft 365) |  Office no iPad<br>(conectado a uma assinatura do Microsoft 365)  |  Office no Mac<br>(conectado a uma assinatura do Microsoft 365)  | Office na Web  | SharePoint Online | OneDrive.com |Outlook.com e Exchange Online|
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | Visualização do IdentityAPI  | N/D | Versão prévia<b>*</b> | Em breve | Versão prévia<b>*</b> | Visualização<b>* &#8224;</b> | Visualização<b>* &#8224;</b>| Em breve | Em breve |
 

@@ -3,12 +3,12 @@ title: Tempo de execução no arquivo de manifesto
 description: O elemento de tempo de execução configura seu suplemento para usar um tempo de execução de JavaScript compartilhado para seus vários componentes, por exemplo, faixa de opções, painel de tarefas, funções personalizadas.
 ms.date: 05/29/2020
 localization_priority: Normal
-ms.openlocfilehash: e81bd7222585bfa7d5f0f34fe5d9b32e4d45a71e
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9e6e13f83db363fb5485c8d8defbc381c80e32d6
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608101"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159364"
 ---
 # <a name="runtime-element-preview"></a>Elemento Runtime (visualização)
 
@@ -21,8 +21,6 @@ No Outlook, esse elemento habilita a ativação de suplementos baseada em evento
 **Tipo de suplemento:** Painel de tarefas, email
 
 > [!IMPORTANT]
-> **Excel**: o tempo de execução compartilhado atualmente só está disponível no Excel no Windows.
->
 > **Outlook**: a ativação baseada em evento está atualmente [em versão prévia](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) e disponível apenas no Outlook na Web. Para obter mais informações, consulte [como visualizar o recurso de ativação baseado em eventos](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature).
 
 ## <a name="syntax"></a>Sintaxe

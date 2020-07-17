@@ -1,14 +1,14 @@
 ---
-ms.date: 05/17/2020
+ms.date: 07/10/2020
 description: Saiba como depurar suas funções personalizadas do Excel que não usam um painel de tarefas.
 title: Depuração de funções personalizadas sem interface do usuário
 localization_priority: Normal
-ms.openlocfilehash: c984c5a46f8418006fa64f167b0f5882b0cb8a17
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9a493600b6e94d86138cd7949dad0498ec9df05b
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609322"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159511"
 ---
 # <a name="ui-less-custom-functions-debugging"></a>Depuração de funções personalizadas sem interface do usuário
 
@@ -56,7 +56,7 @@ Você pode usar o VS Code para depurar funções personalizadas sem interface do
 
 ### <a name="start-debugging"></a>Iniciar Depuração
 
-1. No VS Code, abra o arquivo de script do código-fonte (**funções. js** ou **funções. TS**).
+1. No VS Code, abra o arquivo de script do código-fonte (**functions.js** ou **funções. TS**).
 2. [Defina um ponto de interrupção](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints) no código-fonte da função personalizada.
 3. Na pasta de trabalho do Excel, insira uma fórmula que usa sua função personalizada.
 
@@ -94,7 +94,7 @@ Você pode usar o VS Code para depurar funções personalizadas sem interface do
 
 
 ### <a name="set-breakpoints"></a>Definir pontos de interrupção
-1. No VS Code, abra o arquivo de script do código-fonte (**funções. js** ou **funções. TS**).
+1. No VS Code, abra o arquivo de script do código-fonte (**functions.js** ou **funções. TS**).
 2. [Defina um ponto de interrupção](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints) no código-fonte da função personalizada.
 3. Na pasta de trabalho do Excel, insira uma fórmula que usa sua função personalizada.
 
@@ -110,7 +110,7 @@ Você pode usar as ferramentas de desenvolvedor do navegador para depurar funç�
 
 ### <a name="sideload-your-add-in"></a>Realizar o sideload do seu suplemento
 
-1. Abra o [Microsoft Office na Web](https://office.live.com/).
+1. Abra [o Office na Web](https://office.live.com/).
 2. Abra uma nova pasta de trabalho do Excel.
 3. Abra a guia **Inserir** na faixa de opções e, na seção **suplementos** , escolha **suplementos do Office**.
 4. Na caixa de diálogo **suplementos do Office** , selecione a guia **meus suplementos** , escolha **gerenciar meus suplementos**e, em seguida, **carregar meu suplemento**.
@@ -127,7 +127,7 @@ Você pode usar as ferramentas de desenvolvedor do navegador para depurar funç�
 ### <a name="start-debugging"></a>Iniciar Depuração
 
 1. Abra as ferramentas de desenvolvedor no navegador. Para o Chrome e a maioria dos navegadores, o F12 abrirá as ferramentas de desenvolvedor.
-2. Em ferramentas de desenvolvedor, abra o arquivo de script do código-fonte usando **cmd + p** ou **Ctrl + p** (**funções. js** ou **funções. TS**).
+2. Em ferramentas de desenvolvedor, abra o arquivo de script do código-fonte usando **cmd + p** ou **Ctrl + p** (**functions.js** ou **funções. TS**).
 3. [Defina um ponto de interrupção](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints) no código-fonte da função personalizada. 
 
 Se você precisar alterar o código, poderá fazer edições no VS Code e salvar as alterações. Atualize o navegador para ver as alterações carregadas.
@@ -150,7 +150,7 @@ Se você não estiver usando o VS, poderá usar a linha de comando (como bash ou
     Para o Excel na Web, você também precisa Sideload seu suplemento. Siga as etapas em [Sideload seu suplemento](#sideload-your-add-in) para Sideload o suplemento. Em seguida, prossiga para a próxima seção para iniciar a depuração.
     
 4. Abra as ferramentas de desenvolvedor no navegador. Para o Chrome e a maioria dos navegadores, o F12 abrirá as ferramentas de desenvolvedor.
-5. Em ferramentas de desenvolvedor, abra o arquivo de script do código-fonte (**funções. js** ou **funções. TS**). O código de suas funções personalizadas pode estar localizado próximo ao final do arquivo.
+5. Em ferramentas de desenvolvedor, abra o arquivo de script do código-fonte (**functions.js** ou **funções. TS**). O código de suas funções personalizadas pode estar localizado próximo ao final do arquivo.
 6. No código-fonte da função personalizada, aplique um ponto de interrupção selecionando uma linha de código.
 
 Se você precisar alterar o código, poderá fazer edições no Visual Studio e salvar as alterações. Atualize o navegador para ver as alterações carregadas.

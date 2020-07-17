@@ -1,14 +1,14 @@
 ---
 title: Realizar sideload de suplementos do Office no Office na Web para teste
-description: Testar o suplemento do Office no Office na web através de sideloading
-ms.date: 07/07/2020
+description: Teste seu suplemento do Office no Office na Web por meio de Sideload.
+ms.date: 07/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 60b7e4f1d598e4f5ec09307d58294f54123112ad
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 2f9a0d058fc972316da964dd5af03b5733dc7b60
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094117"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159287"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>Realizar sideload de suplementos do Office no Office na Web para teste
 
@@ -25,7 +25,7 @@ O vídeo a seguir oferece orientações para o processo de sideload do seu suple
 
 ## <a name="sideload-an-office-add-in-in-office-on-the-web"></a>Realizar sideload de um suplemento do Office no Office na Web
 
-1. Abra o [Microsoft Office na Web](https://office.live.com/).
+1. Abra [o Office na Web](https://office.live.com/).
 
 2. Em introdução **aos aplicativos online agora**, escolha **Excel**, **Word**ou **PowerPoint**; e, em seguida, abra um novo documento.
 

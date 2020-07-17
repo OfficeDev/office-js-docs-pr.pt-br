@@ -3,16 +3,16 @@ title: Hospedar um suplemento do Office no Microsoft Azure | Microsoft Docs
 description: Saiba como implantar o aplicativo Web de um suplemento no Azure e realizar sideload do suplemento para testar em um aplicativo cliente do Office.
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: a30f1a8219501a68e6f46f013ef46640a59fe4e9
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: c9d33823850925d5c05d72422262bf62f78b051e
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094229"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159420"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>Hospedar um Suplemento do Office no Microsoft Azure
 
-O suplemento do Office mais simples é composto por um arquivo de manifesto XML e uma página HTML. O arquivo de manifesto XML descreve as características do suplemento, como o nome, quais aplicativos da área de trabalho do Office podem ser executados e a URL da página HTML do suplemento. A página HTML está contida em um aplicativo Web com o qual os usuários interagem ao instalar e executar seu suplemento em um aplicativo cliente do Office. Você pode hospedar o aplicativo Web de um suplemento do Office em qualquer plataforma de hospedagem na Web, incluindo o Azure.
+O suplemento do Office mais simples é composto por um arquivo de manifesto XML e uma página HTML. O arquivo de manifesto XML descreve as características do suplemento, como o nome, quais clientes da área de trabalho do Office podem ser executados e a URL da página HTML do suplemento. A página HTML está contida em um aplicativo Web com o qual os usuários interagem ao instalar e executar seu suplemento em um aplicativo cliente do Office. Você pode hospedar o aplicativo Web de um suplemento do Office em qualquer plataforma de hospedagem na Web, incluindo o Azure.
 
 Este artigo descreve como implantar o aplicativo Web de um suplemento no Azure e [realizar sideload do suplemento](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) para teste em um aplicativo cliente do Office.
 
