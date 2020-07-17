@@ -12,9 +12,9 @@ ms.locfileid: "45093865"
 ---
 # <a name="implement-a-pinnable-task-pane-in-outlook"></a>Implementar um painel de tarefas fixável no Outlook
 
-The [task pane](add-in-commands-for-outlook.md#launching-a-task-pane) UX shape for add-in commands opens a vertical task pane to the right of an open message or meeting request, allowing the add-in to provide UI for more detailed interactions (filling in multiple fields, etc.). This task pane can be shown in the Reading Pane when viewing a list of messages, allowing for quick processing of a message.
+A forma do [painel de tarefas](add-in-commands-for-outlook.md#launching-a-task-pane) da experiência de usuário dos comandos do suplemento abre um painel de tarefas vertical à direita de uma solicitação de reunião ou de uma mensagem aberta, permitindo ao suplemento fornecer a interface do usuário a fim de obter interações mais detalhadas (preenchimento de vários campos etc.). Esse painel de tarefas pode ser exibido no painel de leitura durante a exibição de uma lista de mensagens, permitindo o processamento rápido de uma mensagem.
 
-However, by default, if a user has an add-in task pane open for a message in the Reading Pane, and then selects a new message, the task pane is automatically closed. For a heavily-used add-in, the user may prefer to keep that pane open, eliminating the need to reactivate the add-in on each message. With pinnable task panes, your add-in can give the user that option.
+No entanto, se o usuário abrir um painel de tarefas do suplemento em uma mensagem no painel de leitura e selecionar uma nova mensagem, o painel de tarefas será fechado automaticamente, por padrão. Para um suplemento bastante usado, o usuário pode optar por manter esse painel aberto, eliminando a necessidade de reativar o suplemento em cada mensagem. Com os painéis de tarefas fixáveis, o suplemento pode fornecer essa opção aos usuários.
 
 > [!NOTE]
 > Embora o recurso painéis de tarefas fixável tenha sido introduzido no [conjunto de requisitos 1,5](../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), ele está disponível atualmente apenas para assinantes do Microsoft 365 usando o seguinte.
@@ -29,7 +29,7 @@ However, by default, if a user has an add-in task pane open for a message in the
 
 ## <a name="support-task-pane-pinning"></a>Suporte para fixação do painel de tarefas
 
-The first step is to add pinning support, which is done in the add-in [manifest](manifests.md). This is done by adding the [SupportsPinning](../reference/manifest/action.md#supportspinning) element to the `Action` element that describes the task pane button.
+A primeira etapa consiste em adicionar o suporte para fixação no [manifesto](manifests.md) do suplemento. Para fazer isso, adicione o elemento [SupportsPinning](../reference/manifest/action.md#supportspinning) ao elemento `Action`, que descreve o botão do painel de tarefas.
 
 O elemento `SupportsPinning` é definido no esquema VersionOverrides v1.1. Portanto, você deve incluir um elemento [VersionOverrides](../reference/manifest/versionoverrides.md) nas versões 1.0 e 1.1.
 
@@ -64,7 +64,7 @@ Para atualizar a interface do usuário ou as variáveis internas do painel de ta
 
 ### <a name="implement-the-event-handler"></a>Implementar o manipulador de eventos
 
-The event handler should accept a single parameter, which is an object literal. The `type` property of this object will be set to `Office.EventType.ItemChanged`. When the event is called, the `Office.context.mailbox.item` object is already updated to reflect the currently selected item.
+O manipulador de eventos deve aceitar um parâmetro exclusivo, que é um objeto literal. A propriedade `type` desse objeto será definida como `Office.EventType.ItemChanged`. Ao chamar o evento, o objeto `Office.context.mailbox.item` já estará atualizado para refletir o item atualmente selecionado.
 
 ```js
 function itemChanged(eventArgs) {
@@ -87,7 +87,7 @@ function itemChanged(eventArgs) {
 
 ### <a name="register-the-event-handler"></a>Registrar o manipulador de eventos
 
-Use the [Office.context.mailbox.addHandlerAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) method to register your event handler for the `Office.EventType.ItemChanged` event. This should be done in the `Office.initialize` function for your task pane.
+Use o método [Office.context.mailbox.addHandlerAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) para registrar o manipulador de eventos para o evento `Office.EventType.ItemChanged`. Você deve fazer isso na função `Office.initialize` do painel de tarefas.
 
 ```js
 Office.initialize = function (reason) {

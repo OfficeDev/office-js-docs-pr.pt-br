@@ -27,15 +27,15 @@ Os itens do Outlook que dão suporte a suplementos incluem mensagens de email, c
 
 ## <a name="extension-points"></a>Pontos de extensão
 
-Extension points are the ways that add-ins integrate with Outlook. The following are the ways this can be done:
+Pontos de extensão são as formas usadas pelos suplementos para se integrar ao Outlook. Estas são as maneiras de fazer isso:
 
-- Add-ins can declare buttons that appear in command surfaces across messages and appointments. For more information, see [Add-in commands for Outlook](add-in-commands-for-outlook.md).
+- Os suplementos podem declarar botões que aparecem nas superfícies de comando em mensagens e compromissos. Para saber mais, confira [Comandos de suplemento para o Outlook](add-in-commands-for-outlook.md).
 
     **Suplemento com botões de comando na Faixa de Opções**
 
     ![Comando de suplemento de forma sem interface do usuário](../images/uiless-command-shape.png)
 
-- Add-ins can link off regular expression matches or detected entities in messages and appointments. For more information, see [Contextual Outlook add-ins](contextual-outlook-add-ins.md).
+- Os suplementos podem desvincular correspondências de expressões regulares ou entidades detectadas em mensagens e compromissos. Para saber mais, confira [Suplementos contextuais do Outlook](contextual-outlook-add-ins.md).
 
     **Suplemento contextual para uma entidade realçada (um endereço)**
 
@@ -46,9 +46,9 @@ Extension points are the ways that add-ins integrate with Outlook. The following
 
 ## <a name="mailbox-items-available-to-add-ins"></a>Itens de caixa de correio disponíveis para suplementos
 
-Outlook add-ins are available on messages or appointments while composing or reading, but not other item types. Outlook does not activate add-ins if the current message item, in a compose or read form, is one of the following:
+Os suplementos do Outlook estão disponíveis nas mensagens ou compromissos durante a redação ou leitura, mas não em outros tipos de itens. O Outlook não ativa os suplementos se o item de mensagem atual, em um formato de redação ou de leitura, estiver em uma das seguintes situações:
 
-- Protected by Information Rights Management (IRM) or encrypted in other ways for protection. A digitally signed message is an example since digital signing relies on one of these mechanisms.
+- Protegido por IRM (Gerenciamento de Direitos de Informação) ou criptografado de outras maneiras para proteção. Uma mensagem assinada digitalmente é um exemplo, já que a assinatura digital se baseia em um desses mecanismos.
 
 - Um relatório de entrega ou notificação que tem a classe de mensagem IPM.Report.*, incluindo NDRs (notificações de falha na entrega) e notificações de leitura, falha na leitura e atraso.
 

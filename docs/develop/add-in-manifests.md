@@ -107,7 +107,7 @@ Todas as URLs, como os locais dos arquivos de origem especificados no elemento [
 
 ## <a name="best-practices-for-submitting-to-appsource"></a>Práticas recomendadas de envio ao AppSource
 
-Make sure that the add-in ID is a valid and unique GUID. Various GUID generator tools are available on the web that you can use to create a unique GUID.
+Verifique se a identificação do suplemento é um GUID válido e exclusivo. Diversas ferramentas de gerador de GUID estão disponíveis na Web e podem ser usadas para criar um GUID exclusivo.
 
 Os suplementos enviados ao AppSource também devem conter o elemento [SupportUrl](../reference/manifest/supporturl.md). Saiba mais em [Políticas de validação para aplicativos e suplementos enviados ao AppSource](/legal/marketplace/certification-policies).
 

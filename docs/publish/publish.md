@@ -60,9 +60,9 @@ Para mais informações, confira [Publicar Suplementos do Office usando a Implan
 
 ### <a name="sharepoint-app-catalog-deployment"></a>Implantação do catálogo de aplicativos do SharePoint
 
-A SharePoint app catalog is a special site collection that you can create to host Word, Excel, and PowerPoint add-ins. Because SharePoint catalogs don't support new add-in features implemented in the `VersionOverrides` node of the manifest, including add-in commands, we recommend that you use Centralized Deployment via the admin center if possible. Add-in commands deployed via a SharePoint catalog open in a task pane by default.
+Um catálogo de aplicativos do SharePoint é um conjunto de sites especial que você pode criar para hospedar suplementos do Word, Excel e PowerPoint. Como os catálogos do SharePoint não oferecem suporte a novos recursos de suplementos implementados no nó `VersionOverrides` do manifesto, incluindo comandos de suplementos, recomendamos que você use a Implantação Centralizada por meio do centro de administração, se possível. Comandos de suplemento implantados por meio de um catálogo do SharePoint são abertos em um painel de tarefas por padrão.
 
-If you are deploying add-ins in an on-premises environment, use a SharePoint catalog. For details, see [Publish task pane and content add-ins to a SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
+Se você está implantando suplementos em um ambiente local, use um catálogo do SharePoint. Para saber mais, confira, [Publicar suplementos de conteúdo e de painel de tarefas em um catálogo do SharePoint](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
 > [!NOTE]
 > Os catálogos do SharePoint não são compatíveis com o Office para Mac. Para implantar Suplementos do Office em clientes do Mac, envie-os para a [AppSource](/office/dev/store/submit-to-the-office-store).
@@ -76,7 +76,7 @@ Requisitos de implantação de suplemento do Outlook:
 - Microsoft 365, Exchange Online ou Exchange Server 2013 ou posterior
 - Outlook 2013 ou posterior
 
-To assign add-ins to tenants, you use the Exchange admin center to upload a manifest directly, either from a file or a URL, or add an add-in from AppSource. To assign add-ins to individual users, you must use Exchange PowerShell. For details, see [Install or remove Outlook add-ins for your organization](https://technet.microsoft.com/library/jj943752(v=exchg.150).aspx) on TechNet.
+Para atribuir suplementos a locatários, use o Centro de administração do Exchange para carregar o manifesto diretamente de um arquivo ou de uma URL ou para adicionar um suplemento do AppSource. Para atribuir suplementos a usuários individuais, é necessário usar o Exchange PowerShell. Para saber mais, confira o artigo [Instalar ou remover suplementos do Outlook para a organização](https://technet.microsoft.com/library/jj943752(v=exchg.150).aspx) no TechNet.
 
 ## <a name="see-also"></a>Confira também
 

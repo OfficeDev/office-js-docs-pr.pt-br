@@ -16,7 +16,7 @@ ms.locfileid: "45006448"
 
 Você pode usar suplementos do PowerPoint na criação de soluções envolventes para as apresentações de seus usuários em todas as plataformas, incluindo Windows, iPad, Mac e em um navegador. Você pode criar dois tipos de comandos de suplementos do PowerPoint:
 
-- Use **content add-ins** to add dynamic HTML5 content to your presentations. For example, see the [LucidChart Diagrams for PowerPoint](https://appsource.microsoft.com/product/office/wa104380117) add-in, which you can use to inject an interactive diagram from LucidChart into your deck.
+- Use **suplementos de conteúdo** para adicionar conteúdo dinâmico do HTML5 às suas apresentações. Por exemplo, confira o suplemento [LucidChart Diagrams for PowerPoint](https://appsource.microsoft.com/product/office/wa104380117) que pode ser usado para inserir um diagrama interativo do LucidChart para seu conjunto.
 
 - Use **suplementos do painel de tarefas** para exibir as informações de referência ou inserir dados na apresentação através de um serviço. Por exemplo, consulte o suplemento [Pexels Free Stock Photos](https://appsource.microsoft.com/product/office/wa104379997), que você pode usar para adicionar fotos profissionais à sua apresentação.
 

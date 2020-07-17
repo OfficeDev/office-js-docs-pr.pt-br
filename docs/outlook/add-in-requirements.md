@@ -26,11 +26,11 @@ Há diversos requisitos para os servidores e clientes para que os Suplementos do
    - Outlook na Web para Exchange 2013
    - Outlook.com
 
-- The client must be connected to an Exchange server or Microsoft 365 using a direct connection. When configuring the client, the user must choose an **Exchange**, **Office 365**, or **Outlook.com** account type. If the client is configured to connect with POP3 or IMAP, add-ins will not load.
+- O cliente deve estar conectado a um servidor do Exchange ou ao Microsoft 365 usando uma conexão direta. Ao configurar o cliente, o usuário deve escolher um tipo de conta do **Exchange**, **Office 365** ou **Outlook.com**. Se o cliente estiver configurado para se conectar com POP3 ou IMAP, os suplementos não serão carregados.
 
 ## <a name="mail-server-requirements"></a>Requisitos de servidor de email
 
-If the user is connected to Microsoft 365 or Outlook.com, mail server requirements are all taken care of already. However, for users connected to on-premises installations of Exchange Server, the following requirements apply.
+Se o usuário estiver conectado ao Microsoft 365 ou ao Outlook.com, os requisitos do servidor de email já foram todos atendidos. No entanto, para os usuários conectados a instalações locais do Exchange Server, os seguintes requisitos se aplicam.
 
 - O servidor deve ser o Exchange 2013 ou posterior.
 - Os Serviços Web do Exchange (EWS) devem estar habilitados e expostos à Internet. Vários suplementos exigem o EWS para funcionar adequadamente.
@@ -39,7 +39,7 @@ If the user is connected to Microsoft 365 or Outlook.com, mail server requiremen
 
 ## <a name="add-in-server-requirements"></a>Requisitos de servidor de suplemento
 
-Add-in files (HTML, JavaScript, etc.) can be hosted on any web server platform desired. The only requirement is that the server must be configured to use HTTPS, and the SSL certificate must be trusted by the client.
+Os aquivos de suplemento (HTML, JavaScript, etc.) podem ser hospedados em qualquer plataforma de servidor Web desejada. O único requisito é que o servidor deve ser configurado para usar HTTPS e o cliente deve confiar no certificado SSL.
 
 ## <a name="see-also"></a>Confira também
 

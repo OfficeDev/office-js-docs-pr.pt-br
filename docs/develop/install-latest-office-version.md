@@ -30,7 +30,7 @@ Aceitar para receber as versões mais recentes do Office:
 Para receber as versões mais recentes do Office:
 
 1. Baixar a [Ferramenta de Implantação do Office](https://www.microsoft.com/download/details.aspx?id=49117).
-2. Run the tool. This extracts the following two files: Setup.exe and configuration.xml.
+2. Execute a ferramenta. Isso extrai estes dois arquivos: Setup.exe e configuration.xml.
 3. Substitua o arquivo configuration.xml pelo [Arquivo de Configuração do Primeiro Lançamento](https://raw.githubusercontent.com/OfficeDev/Office-Add-in-Commands-Samples/master/Tools/FirstReleaseConfig/configuration.xml).
 4. Execute o seguinte comando como administrador: `setup.exe /configure configuration.xml`
 

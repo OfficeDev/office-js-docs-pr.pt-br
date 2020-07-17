@@ -29,7 +29,7 @@ O recurso autoopen é atualmente <!-- in **developer preview** and it is only --
 
 |**Produtos**|**Plataformas**|
 |:-----------|:------------|
-|<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|Plataformas compatíveis com todos os produtos:<ul><li>Office on Windows Desktop. Build 16.0.8121.1000+</li><li>Office on Mac. Build 15.34.17051500+</li><li>Office na Web</li></ul>|
+|<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|Plataformas compatíveis com todos os produtos:<ul><li>Office no Windows Desktop. Versão 16.0.8121.1000+</li><li>Office no Mac. Build 15.34.17051500+</li><li>Office na Web</li></ul>|
 
 
 ## <a name="best-practices"></a>Práticas recomendadas
@@ -37,16 +37,16 @@ O recurso autoopen é atualmente <!-- in **developer preview** and it is only --
 Aplique as seguintes práticas recomendadas ao usar o recurso autoopen:
 
 - Use o recurso autoopen quando ele auxiliar a eficiência dos usuários do seu suplemento, como
-  - When the document needs the add-in in order to function properly. For example, a spreadsheet that includes stock values that are periodically refreshed by an add-in. The add-in should open automatically when the spreadsheet is opened to keep the values up to date.
-  - When the user will most likely always use the add-in with a particular document. For example, an add-in that helps users fill in or change data in a document by pulling information from a backend system.
-- Allow users to turn on or turn off the autoopen feature. Include an option in your UI for users to choose to no longer automatically open the add-in task pane.  
+  - Quando o documento precisa do suplemento para funcionar corretamente. Por exemplo, uma planilha que inclui valores de ações que são atualizados periodicamente por um suplemento. O suplemento deverá abrir automaticamente quando a planilha for aberta para manter os valores atualizados.
+  - Quando é muito provável que o usuário sempre utilizará o suplemento com um determinado documento. Por exemplo, um suplemento que ajuda os usuários a preencher ou alterar dados em um documento puxando informações de um sistema de back-end.
+- Permita que os usuários ativem ou desativem o recurso autoopen. Inclua uma opção em sua interface de usuário para que eles possam escolher quando não querem mais que o suplemento abra automaticamente no painel de tarefas.  
 - Use a detecção de conjunto de requisitos para determinar se o recurso AutoOpen está disponível e forneça um comportamento de fallback se não for.
 - Não use o recurso autoopen para aumentar artificialmente o uso do seu suplemento. Se não fizer sentido para que seu suplemento abra automaticamente com determinados documentos, esse recurso pode incomodar os usuários.
 
     > [!NOTE]
     > Se a Microsoft detectar abuso do recurso autoopen, seu suplemento poderá ser rejeitado no AppSource.
 
-- Don't use this feature to pin multiple task panes. You can only set one pane of your add-in to open automatically with a document.  
+- Não use esse recurso para fixar vários painéis de tarefas. Você só pode definir um painel do suplemento para abrir automaticamente com um documento.  
 
 ## <a name="implementation"></a>Implementação
 
@@ -56,11 +56,11 @@ Para implementar o recurso autoopen:
 - Marque o documento para abrir o painel de tarefas automaticamente.
 
 > [!IMPORTANT]
-> The pane that you designate to open automatically will only open if the add-in is already installed on the user's device. If the user does not have the add-in installed when they open a document, the autoopen feature will not work and the setting will be ignored. If you also require the add-in to be distributed with the document you need to set the visibility property to 1; this can only be done using OpenXML, an example is provided later in this article.
+> O painel que você designar para abrir automaticamente só será aberto se o suplemento já estiver instalado no dispositivo do usuário. Se o usuário não tiver o suplemento instalado quando abrir um documento, o recurso autoopen não funcionará, e a configuração será ignorada. Se você também exigir que o suplemento seja distribuído com o documento, será preciso definir a propriedade de visibilidade como 1. Isso só pode ser feito usando OpenXML. Um exemplo será fornecido posteriormente neste artigo.
 
 ### <a name="step-1-specify-the-task-pane-to-open"></a>Etapa 1: especificar o painel de tarefas que será aberto
 
-To specify the task pane to open automatically, set the [TaskpaneId](../reference/manifest/action.md#taskpaneid) value to **Office.AutoShowTaskpaneWithDocument**. You can only set this value on one task pane. If you set this value on multiple task panes, the first occurrence of the value will be recognized and the others will be ignored.
+Para especificar o painel de tarefas que será aberto automaticamente, defina o valor [TaskpaneId](../reference/manifest/action.md#taskpaneid) para **Office.AutoShowTaskpaneWithDocument**. Você só pode definir esse valor em um painel de tarefas. Se você definir esse valor em vários painéis de tarefas, a primeira ocorrência do valor será reconhecida e as outras serão ignoradas.
 
 O exemplo a seguir mostra o valor TaskPaneId configurado para Office.AutoShowTaskpaneWithDocument.
 
@@ -73,7 +73,7 @@ O exemplo a seguir mostra o valor TaskPaneId configurado para Office.AutoShowTas
 
 ### <a name="step-2-tag-the-document-to-automatically-open-the-task-pane"></a>Etapa 2: marcar o documento para abrir o painel de tarefas automaticamente
 
-You can tag the document to trigger the autoopen feature in one of two ways. Pick the alternative that works best for your scenario.  
+Você pode marcar o documento para acionar o recurso autoopen de duas maneiras. Escolha a alternativa que funciona melhor para o seu cenário.  
 
 
 #### <a name="tag-the-document-on-the-client-side"></a>Marcar o documento no lado do cliente
@@ -89,7 +89,7 @@ Use esse método se você precisar marcar o documento como parte da interação 
 
 #### <a name="use-open-xml-to-tag-the-document"></a>Usar Open XML para marcar o documento
 
-You can use Open XML to create or modify a document and add the appropriate Open Office XML markup to trigger the autoopen feature. For a sample that shows you how to do this, see [Office-OOXML-EmbedAddin](https://github.com/OfficeDev/Office-OOXML-EmbedAddin).
+Você pode usar o Open XML para criar ou modificar um documento e adicionar a marcação XML do Open Office apropriada para acionar o recurso autoopen. Veja um exemplo de como fazer isso em [Office-OOXML-EmbedAddin](https://github.com/OfficeDev/Office-OOXML-EmbedAddin).
 
 Adicione duas partes do Open XML ao documento:
 
@@ -122,7 +122,7 @@ A parte `webextension` também inclui uma referência para a loja ou o catálogo
 |Registro (registro de sistema)|O GUID do suplemento no manifesto do suplemento.|"developer"|A versão no manifesto do suplemento.|
 
 > [!NOTE]
-> To find the asset ID and version of an add-in in AppSource, go to the AppSource landing page for the add-in. The asset ID appears in the address bar in the browser. The version is listed in the **Details** section of the page.
+> Para localizar a ID de ativos e a versão de um suplemento no AppSource, vá para a página inicial do suplemento no AppSource. A ID de ativo aparece na barra de endereços no navegador. A versão aparece na seção **Detalhes** da página.
 
 Saiba mais sobre a marcação webextension em [[MS-OWEXML] 2.2.5. WebExtensionReference](https://msdn.microsoft.com/library/hh695383(v=office.12).aspx).
 
@@ -136,14 +136,14 @@ O exemplo a seguir mostra como adicionar a parte `taskpane`.
 
 Observe que neste exemplo, o atributo `visibility` está definido como "0". Isso significa que, após adicionar as partes webextension e `taskpane`, a primeira vez que o documento for aberto, o usuário deve instalar o suplemento clicando no botão **Suplemento** na faixa de opções. Depois disso, o painel de tarefas do suplemento abre automaticamente quando o arquivo for aberto. E, ao definir `visibility` como "0", é possível usar o Office.js para permitir que os usuários ativem ou desativem o recurso autoopen. Especificamente, seu script define a configuração de documento **Office.AutoShowTaskpaneWithDocument** como `true` ou `false`. (Saiba mais em [Marcar o documento no lado do cliente](#tag-the-document-on-the-client-side).)
 
-If `visibility` is set to "1", the task pane opens automatically the first time the document is opened. The user is prompted to trust the add-in, and when trust is granted, the add-in opens. Thereafter, the add-in task pane opens automatically when the file is opened. However, when `visibility` is set to "1", you can't use Office.js to enable users to turn on or turn off the autoopen feature.
+Se o elemento `visibility` é definido como "1", o painel de tarefas abrirá automaticamente na primeira vez em que o documento for aberto. O usuário é solicitado a confiar no suplemento e, quando a confiança é concedida, o suplemento é aberto. Depois disso, o painel de tarefas do suplemento abrirá automaticamente quando o arquivo for aberto. Entretanto, ao definir `visibility` como "1", não é possível usar o Office.js para permitir que os usuários ativem ou desativem o recurso autoopen.
 
 Definir o `visibility` como "1" é uma boa opção quando o suplemento e o modelo ou o conteúdo do documento são muito estreitamente integrados de modo que o usuário não poderia optar por cancelar o recurso autoopen.
 
 > [!NOTE]
-> If you want to distribute your add-in with the document, so that users are prompted to install it, you must set the visibility property to 1. You can only do this via Open XML.
+> Se quiser distribuir seu suplemento com o documento, para que os usuários sejam solicitados a instalá-lo, você deverá definir a propriedade de visibilidade para 1. Isso só pode ser feito pelo Open XML.
 
-An easy way to write the XML is to first run your add-in and [tag the document on the client side](#tag-the-document-on-the-client-side) to write the value, and then save the document and inspect the XML that is generated. Office will detect and provide the appropriate attribute values. You can also use the [Open XML SDK 2.5 Productivity Tool](https://www.microsoft.com/download/details.aspx?id=30425) tool to generate C# code to programmatically add the markup based on the XML you generate.
+Uma maneira fácil de escrever o XML é primeiro executar seu suplemento e [marcar o documento no lado do cliente](#tag-the-document-on-the-client-side) para escrever o valor e, em seguida, salvar o documento e inspecionar o XML que é gerado. O Office detectará e fornecerá os valores de atributo apropriados. Você também pode usar a [Ferramenta de Produtividade Open XML SDK 2.5](https://www.microsoft.com/download/details.aspx?id=30425) para gerar o código C# para adicionar por meio de programação a marcação com base no XML que você gerou.
 
 ## <a name="test-and-verify-opening-task-panes"></a>Testar e verificar a abertura de painéis de tarefas
 

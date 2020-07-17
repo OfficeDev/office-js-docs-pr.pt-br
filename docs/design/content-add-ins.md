@@ -29,7 +29,7 @@ Tamanhos de suplementos de conteúdo para Excel e PowerPoint na área de trabalh
 
 ## <a name="personality-menu"></a>Menu de personalidade
 
-Personality menus can obstruct navigational and commanding elements located near the top right of the add-in. The following are the current dimensions of the personality menu on Windows and Mac.
+Menus de personalidade podem obstruir elementos de navegação e comando localizados perto da parte superior direita do suplemento. Veja a seguir as dimensões atuais do menu personalidade no Windows e Mac.
 
 No Windows, o menu de personalidade mede 12 x 32 pixels, conforme mostrado.
 
@@ -52,7 +52,7 @@ Para ver um exemplo que implementa um suplemento de conteúdo, confira [Suplemen
 
 - Verifique se os suplementos do Office funcionarão em uma [plataforma de host do Office específica](../overview/office-add-in-availability.md).
 - Alguns suplementos de conteúdo podem obrigar o usuário a "confiar" nele para ler e gravar no Excel ou PowerPoint. Você pode declarar no manifesto do suplemento quais [níveis de permissão](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md) deseja que o usuário tenha.  
-- Content add-ins are supported in Excel and PowerPoint in Office 2013 version and later. If you open an add-in in a version of Office that doesn't support Office web add-ins, the add-in will be displayed as an image.
+- Os suplementos de conteúdo são compatíveis com o Excel e PowerPoint nas versões do Office 2013 e posteriores. Se você abrir um suplemento em uma versão do Office não compatível com os suplementos web do Office, eles aparecerão como imagem.
 
 ## <a name="see-also"></a>Confira também
 

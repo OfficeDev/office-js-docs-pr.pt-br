@@ -47,7 +47,7 @@ O processo de Sideload de um suplemento no Outlook na Web depende se você está
 
     ![Captura de tela Gerenciar suplementos apontando para a opção Adicionar do arquivo](../images/outlook-sideload-desktop-add-from-file.png)
 
-1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
+1. Localize o arquivo de manifesto de seu suplemento personalizado e instale-o. Aceite todos os prompts durante a instalação.
 
 ### <a name="sideload-an-add-in-in-classic-outlook-on-the-web"></a>Realizar sideload de um suplemento no Outlook na Web clássico
 
@@ -65,7 +65,7 @@ O processo de Sideload de um suplemento no Outlook na Web depende se você está
 
     ![Captura de tela Gerenciar suplementos apontando para a opção Adicionar do arquivo](../images/outlook-sideload-desktop-add-from-file.png)
 
-1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
+1. Localize o arquivo de manifesto de seu suplemento personalizado e instale-o. Aceite todos os prompts durante a instalação.
 
 ## <a name="sideload-an-add-in-in-outlook-on-the-desktop"></a>Realizar sideload de um suplemento do Outlook na área de trabalho
 
@@ -88,7 +88,7 @@ O processo de Sideload de um suplemento no Outlook na Web depende se você está
 
     ![Captura de tela da Loja apontando para a opção Adicionar do arquivo](../images/outlook-sideload-desktop-add-from-file.png)
 
-1. Locate the manifest file for your custom add-in and install it. Accept all prompts during the installation.
+1. Localize o arquivo de manifesto de seu suplemento personalizado e instale-o. Aceite todos os prompts durante a instalação.
 
 ### <a name="outlook-2013"></a>Outlook 2013
 

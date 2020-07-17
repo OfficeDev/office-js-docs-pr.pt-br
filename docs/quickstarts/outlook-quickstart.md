@@ -153,7 +153,7 @@ Ao concluir o assistente, o Visual Studio cria uma solução que contém dois pr
 |**Projeto**|**Descrição**|
 |:-----|:-----|
 |Projeto de suplemento|Contém somente um arquivo de manifesto XML, que contém todas as configurações que descrevem o suplemento. As configurações ajudam o host do Office a determinar quando o suplemento deverá ser ativado e onde ele deverá aparecer. O Visual Studio gera o conteúdo desse arquivo para que você possa executar o projeto e usar o suplemento imediatamente. Você pode alterar essas configurações a qualquer momento modificando o arquivo XML.|
-|Projeto de aplicativo Web|Contains the content pages of your add-in, including all the files and file references that you need to develop Office-aware HTML and JavaScript pages. While you develop your add-in, Visual Studio hosts the web application on your local IIS server. When you're ready to publish the add-in, you'll need to deploy this web application project to a web server.|
+|Projeto de aplicativo Web|Contém as páginas de conteúdo do suplemento, incluindo todos os arquivos e referências de arquivo de que você precisa para desenvolver páginas HTML e JavaScript com reconhecimento do Office. Enquanto você desenvolve o suplemento, o Visual Studio hospeda o aplicativo Web no servidor IIS local. Quando estiver pronto para publicar, você precisará implantar este projeto de aplicativo Web em um servidor Web.|
 
 ### <a name="update-the-code"></a>Atualizar o código
 
@@ -240,9 +240,9 @@ Ao concluir o assistente, o Visual Studio cria uma solução que contém dois pr
 
 ### <a name="update-the-manifest"></a>Atualizar o manifesto
 
-1. Open the XML manifest file in the Add-in project. This file defines the add-in's settings and capabilities.
+1. Abra o arquivo de manifesto XML do projeto do Suplemento. Este arquivo define as configurações e os recursos do suplemento.
 
-1. The `ProviderName` element has a placeholder value. Replace it with your name.
+1. O elemento `ProviderName` tem um valor de espaço reservado. Substitua-o com seu nome.
 
 1. O atributo `DefaultValue` do elemento `DisplayName` tem um espaço reservado. Substitua-o por `My Office Add-in`.
 

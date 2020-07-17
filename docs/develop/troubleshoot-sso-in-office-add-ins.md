@@ -21,7 +21,7 @@ Este artigo fornece algumas orientações sobre como solucionar problemas com o 
 
 ## <a name="debugging-tools"></a>Ferramentas de depuração
 
-We strongly recommend that you use a tool that can intercept and display the HTTP Requests from, and Responses to, your add-in's web service when you are developing. Two of the most popular are:
+Recomendamos fortemente que você use uma ferramenta que possa interceptar e exibir as solicitações HTTP a partir de seu serviço Web do suplemento, além de respostas para ele, quando você estiver desenvolvendo. Duas das ferramentas mais populares são:
 
 - [Fiddler](https://www.telerik.com/fiddler): gratuita ([Documentação](https://docs.telerik.com/fiddler/configure-fiddler/tasks/configurefiddler))
 - [Charles](https://www.charlesproxy.com): Gratuita por 30 dias. ([Documentação](https://www.charlesproxy.com/documentation/))

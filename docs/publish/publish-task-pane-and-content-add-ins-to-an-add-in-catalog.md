@@ -12,7 +12,7 @@ ms.locfileid: "45094215"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>Publicar suplementos de painel de tarefas e de conteúdo em um catálogo de aplicativos do SharePoint
 
-An app catalog is a dedicated site collection in a SharePoint web application or SharePoint Online tenancy that hosts document libraries for Office and SharePoint Add-ins. To make Office Add-ins accessible to users within their organization, administrators can upload Office Add-ins manifest files to the app catalog for their organization. When an administrator registers an app catalog as a trusted catalog, users can insert the add-in from the insertion UI in an Office client application.
+Um catálogo de aplicativos é um conjunto de sites dedicado em um aplicativo da Web do SharePoint ou uma locação do SharePoint Online que hospeda bibliotecas de documentos para suplementos do Office e do SharePoint. Para tornar os suplementos do Office acessíveis aos usuários em sua organização, os administradores podem carregar arquivos de manifesto dos Suplementos do Office no catálogo de aplicativos da organização. Quando um administrador registra um catálogo de aplicativos como um catálogo confiável, os usuários podem inserir o suplemento a partir da interface do usuário de inserção em um aplicativo cliente do Office.
 
 > [!IMPORTANT]
 > - Catálogos de aplicativo no SharePoint não oferecem suporte a recursos de suplemento que são implementados no nó `VersionOverrides` do [manifesto do suplemento](../develop/add-in-manifests.md), como por exemplo comandos de suplemento.

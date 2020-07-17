@@ -12,7 +12,7 @@ ms.locfileid: "45093753"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Painéis de tarefas nos Suplementos do Office
  
-Task panes are interface surfaces that typically appear on the right side of the window within Word, PowerPoint, Excel, and Outlook. Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source. Use task panes when you don't need to embed functionality directly into the document.
+Painéis de tarefas são superfícies de interface que normalmente são exibidas no lado direito da janela no Word, PowerPoint, Excel e Outlook. As painéis de tarefa concedem aos usuários acesso a controles de interface que executam códigos para modificar documentos ou emails ou exibir dados de uma fonte de dados. Use painéis de tarefa quando não precisar inserir a funcionalidade diretamente no documento.
 
 *Figura 1. Layout típico do painel de tarefa*
 
@@ -30,7 +30,7 @@ Task panes are interface surfaces that typically appear on the right side of the
 
 ## <a name="variants"></a>Variantes
 
-The following images show the various task pane sizes with the Office app ribbon at a 1366x768 resolution. For Excel, additional vertical space is required to accommodate the formula bar.  
+As imagens a seguir mostram os vários tamanhos de painel de tarefas com a faixa de opções do aplicativo do Office em uma resolução 1366x768. Para o Excel, é necessário espaço vertical adicional para acomodar a barra de fórmulas.  
 
 *Figura 2. Tamanhos de painel de tarefas da área de trabalho do Office 2016*
 
@@ -54,7 +54,7 @@ The following images show the various task pane sizes with the Office app ribbon
 
 ## <a name="personality-menu"></a>Menu de personalidade
 
-Personality menus can obstruct navigational and commanding elements located near the top right of the add-in. The following are the current dimensions of the personality menu on Windows and Mac.
+Menus de personalidade podem obstruir elementos de navegação e comando localizados perto da parte superior direita do suplemento. Veja a seguir as dimensões atuais do menu personalidade no Windows e Mac.
 
 No Windows, o menu de personalidade mede 12 x 32 pixels, conforme mostrado.
 

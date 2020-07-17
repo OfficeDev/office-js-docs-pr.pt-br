@@ -21,9 +21,9 @@ Para começar:
 - Obtenha uma conta de desenvolvedor do Microsoft 365 se você ainda não tiver um ou tiver acesso a um site do SharePoint.
 
   > [!NOTE]
-  > To get a free, 90-day renewable Microsoft 365 developer subscription, join our [Microsoft 365 developer program](https://developer.microsoft.com/office/dev-program). See the [Microsoft 365 developer program documentation](/office/developer-program/office-365-developer-program) for step-by-step instructions about how to join the Microsoft 365 developer program and configure your subscription.
+  > Para obter uma assinatura de desenvolvedor do Microsoft 365, disponível em 90 dias, ingresse no [programa de desenvolvedor do microsoft 365](https://developer.microsoft.com/office/dev-program). Consulte a [documentação do programa para desenvolvedores do microsoft 365](/office/developer-program/office-365-developer-program) para obter instruções passo a passo sobre como participar do programa de desenvolvedor do Microsoft 365 e configurar sua assinatura.
 
-- Set up an app catalog on SharePoint Online. An app catalog is a dedicated site collection in SharePoint Online that hosts document libraries for Office Add-ins. If you have your own SharePoint site, you can set up an app catalog document library. For more information, see [Publish task pane and content add-ins to an app catalog on SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
+- Configurar um catálogo de aplicativos no SharePoint Online. Um catálogo de aplicativos é um conjunto de sites dedicado no SharePoint Online que hospeda bibliotecas de documentos para suplementos do Office. Se você tiver seu próprio site do SharePoint, você pode configurar uma biblioteca de documentos do catálogo de aplicativos. Para obter mais informações, confira [publicar suplementos de conteúdo e painel de tarefas em um catálogo de aplicativos no SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
 
 ## <a name="debug-your-add-in-from-excel-or-word-on-the-web"></a>Depurar seu suplemento do Excel ou Word na Web
@@ -35,7 +35,7 @@ Para depurar seu suplemento usando o Office na Web:
     > [!NOTE]
     > Recomendamos que você use o [gerador Yeoman](https://github.com/OfficeDev/generator-office) para criar e hospedar seu suplemento.
 
-2. In your [add-in manifest file](../develop/add-in-manifests.md), update the **SourceLocation** element value to include an absolute, rather than a relative, URI. For example:
+2. No seu [arquivo de manifesto de suplemento](../develop/add-in-manifests.md), atualize o valor do elemento **SourceLocation** para incluir um URI absoluto, em vez de relativo. Por exemplo:
 
     ```xml
     <SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />

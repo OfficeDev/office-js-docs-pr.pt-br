@@ -24,11 +24,11 @@ Como parte do processo de desenvolvimento de um suplemento do Outlook, você pro
 
 ## <a name="create-a-manifest-file-for-the-add-in"></a>Criar um arquivo de manifesto para o suplemento
 
-Each add-in is described by an XML manifest, a document that gives the server information about the add-in, provides descriptive information about the add-in for the user, and identifies the location of the add-in UI HTML file. You can store the manifest in a local folder or server, as long as the location is accessible by the Exchange server of the mailbox that you are testing with. We'll assume that you store your manifest in a local folder. For information about how to create a manifest file, see [Outlook add-in manifests](manifests.md).
+Cada suplemento é descrito por um manifesto XML, um documento que fornece as informações do servidor sobre o suplemento, fornece informações sobre o suplemento para o usuário e identifica o local da interface do arquivo HTML de interface do usuário do suplemento. Você pode armazenar o manifesto em uma pasta ou servidor local, desde que o local possa ser acessado pelo servidor Exchange da caixa de correio que você está testando. Vamos pressupor que você armazena seu manifesto em uma pasta local. Para obter informações sobre como criar um arquivo de manifesto, confira [Manifestos de suplementos do Outlook](manifests.md).
 
 ## <a name="deploy-an-add-in-to-a-web-server"></a>Implantar um suplemento em um servidor Web
 
-You can use HTML and JavaScript to create the add-in. The resulting source files are stored on a web server that can be accessed by the Exchange server that hosts the add-in. After initially deploying the source files for the add-in, you can update the add-in UI and behavior by replacing the HTML files or JavaScript files stored on the web server with a new version of the HTML file.
+Você pode usar HTML e JavaScript para criar o suplemento. Os arquivos de origem resultantes são armazenados em um servidor Web que pode ser acessado pelo servidor Exchange que hospeda o suplemento. Depois de implantar inicialmente os arquivos de origem para o suplemento, você pode atualizar a interface do usuário e o comportamento dele substituindo os arquivos HTML ou JavaScript armazenados no servidor Web por uma nova versão do arquivo HTML.
 
 ## <a name="install-the-add-in"></a>Instalar o suplemento
 
@@ -36,9 +36,9 @@ Depois de preparar o arquivo de manifesto do suplemento e implantar a interface 
 
 ### <a name="sideload-the-add-in"></a>Realizar o sideload do suplemento
 
-You can install an add-in if your mailbox is on Exchange Online, Exchange 2013 or a later release. Sideloading add-ins requires at minimum the **My Custom Apps** role for your Exchange Server. In order to test your add-in, or install add-ins in general by specifying a URL or file name for the add-in manifest, you should request your Exchange administrator to provide the necessary permissions.
+Você pode instalar um suplemento se sua caixa de correio está no Exchange Online, no Exchange 2013 ou em uma versão posterior. Os suplementos de sideload exigem no mínimo a função **Meus Aplicativos Personalizados** do seu Exchange Server. Para testar seu suplemento ou instalar suplementos em geral especificando uma URL ou um nome de arquivo de manifesto do suplemento, é preciso solicitar que o administrador do Exchange forneça as permissões necessárias.
 
-The Exchange administrator can run the following PowerShell cmdlet to assign a single user the necessary permissions. In this example, `wendyri` is the user's email alias.
+O administrador do Exchange pode executar o cmdlet do PowerShell a seguir para atribuir as permissões necessárias a um único usuário. Neste exemplo, `wendyri` é o alias de email do usuário.
 
 ```powershell
 New-ManagementRoleAssignment -Role "My Custom Apps" -User "wendyri"
@@ -74,9 +74,9 @@ Você pode usar os seguintes cmdlets do PowerShell adicionais para gerenciar os 
 
 A decisão de quais versões de cliente do Outlook testar depende dos seus requisitos de desenvolvimento.
 
-- If you are developing an add-in for private use, or only for members of your organization, then it is important to test the versions of Outlook that your company uses. Keep in mind that some users may use Outlook on the web, so testing your company's standard browser versions is also important.
+- Se você estiver desenvolvendo um suplemento para uso privado ou apenas para membros da sua organização, é importante testar as versões do Outlook usadas pela sua empresa. Lembre-se que alguns usuários podem usar o Outlook na Web, portanto testar as versões para o navegador padrão da sua empresa também é importante.
 
-- If you are developing an add-in to list in [AppSource](https://appsource.microsoft.com), you must test the required versions as specified in the [Commercial marketplace certification policies 1120.3](/legal/marketplace/certification-policies#11203-functionality). This includes:
+- Se você estiver desenvolvendo um suplemento no [AppSource](https://appsource.microsoft.com), teste as versões exigidas conforme especificado nas [Políticas de certificação do mercado comercial 1120.3](/legal/marketplace/certification-policies#11203-functionality). Isso inclui:
   - A versão mais recente do Outlook no Windows e a versão anterior à mais recente.
   - A versão mais recente do Outlook no Mac.
   - A versão mais recente do Outlook no iOS e Android (se o suplemento for [compatível com mobilidade](add-mobile-support.md)).
