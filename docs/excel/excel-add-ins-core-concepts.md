@@ -1,14 +1,14 @@
 ---
 title: Conceitos fundamentais de programação com a API JavaScript do Excel
 description: Use a API JavaScript do Excel para criar suplementos para o Excel.
-ms.date: 06/20/2019
+ms.date: 07/13/2020
 localization_priority: Priority
-ms.openlocfilehash: c9e72f7408af6b25b2db49939d02b5c96bd21ce7
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 01e5fa1037719e89eed70f00e63431bbd445c213
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609717"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159413"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Conceitos fundamentais de programação com a API JavaScript do Excel
 
@@ -211,35 +211,6 @@ range.values = 'Due Date';
 Se um intervalo contiver um grande número de células, valores, formatos de número e/ou fórmulas, talvez não seja possível executar operações de API nesse intervalo. A API sempre fará a melhor tentativa de executar a operação solicitada em um intervalo (isto é, para recuperar ou gravar os dados especificados), mas tentar executar operações de leitura ou gravação para um intervalo grande pode resultar em um erro de API devido à utilização excessiva de recursos. Para evitar tais erros, é recomendável executar operações de leitura ou gravação separadas para subconjuntos menores de um intervalo grande, em vez de tentar executar uma única operação de leitura ou gravação em um intervalo grande.
 
 Para detalhes sobre as limitações do sistema, consulte [Limites de transferência de dados do Excel](../develop/common-coding-issues.md#excel-data-transfer-limits).
-
-## <a name="update-all-cells-in-a-range"></a>Atualizar todas as células em um intervalo
-
-Para aplicar a mesma atualização a todas as células em um intervalo, (por exemplo, para popular todas as células com o mesmo valor, definir o mesmo formato de número ou popular todas as células com a mesma fórmula), defina a propriedade correspondente no objeto `range` para o valor (único) desejado.
-
-O exemplo a seguir obtém um intervalo que contém 20 células e, em seguida, define o formato de número e popula todas as células do intervalo com o valor **11/3/2015**.
-
-```js
-Excel.run(function (context) {
-    var sheetName = 'Sheet1';
-    var rangeAddress = 'A1:A20';
-    var worksheet = context.workbook.worksheets.getItem(sheetName);
-
-    var range = worksheet.getRange(rangeAddress);
-    range.numberFormat = 'm/d/yyyy';
-    range.values = '3/11/2015';
-    range.load('text');
-
-    return context.sync()
-      .then(function () {
-        console.log(range.text);
-    });
-}).catch(function (error) {
-    console.log('Error: ' + error);
-    if (error instanceof OfficeExtension.Error) {
-      console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
 
 ## <a name="handle-errors"></a>Lidar com erros
 
