@@ -1,14 +1,14 @@
 ---
 title: Conceitos básicos para comandos de suplemento
 description: Aprenda a adicionar botões e itens de menu personalizados da faixa de opções ao Office como parte de um suplemento do Office.
-ms.date: 05/12/2020
+ms.date: 07/10/2020
 localization_priority: Priority
-ms.openlocfilehash: 2fe14a41c93b53164ab0fa3a7d25f5b9810b9c6a
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 2c4731b773a20c666ed78eba7e10f59bf9404bfe
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093872"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159623"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Comandos de suplemento para Excel, Word e PowerPoint
 
@@ -63,9 +63,9 @@ Você pode especificar se o comando está ativado ou desativado quando o supleme
 
 Os comandos de suplemento atualmente têm suporte nas seguintes plataformas.
 
-- Office no Windows (Build 16.0.6769+, conectado à assinatura do Microsoft 365)
+- Office no Windows (Build 16.0.6769 ou superior, conectado a uma assinatura do Microsoft 365)
 - Office 2019 no Windows
-- Office no Windows (Build 15.33+, conectado à assinatura do Microsoft 365)
+- Office no Mac (build 15.33 ou superior, conectado a uma assinatura do Microsoft 365)
 - Office 2019 no Mac
 - Office na Web
 

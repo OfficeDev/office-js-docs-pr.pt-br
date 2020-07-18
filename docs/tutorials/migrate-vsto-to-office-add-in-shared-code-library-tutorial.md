@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: Tutorial sobre como compartilhar código entre um suplemento VSTO e um suplemento do Office.
 title: 'Tutorial: compartilhar código entre um suplemento VSTO e um suplemento do Office usando uma biblioteca de códigos compartilhado'
 localization_priority: Priority
-ms.openlocfilehash: 42903b607bd9bb6f6d81454106b8de03cc47f1e4
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 5be0b3c1064da43c8d5225c372ab65b4839f09fb
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094257"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159105"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>Tutorial: compartilhar código entre um suplemento VSTO e um suplemento do Office com uma biblioteca de códigos compartilhadas
 
@@ -50,7 +50,7 @@ Para configurar seu ambiente de desenvolvimento:
 
 Também são necessários:
 
-- Uma conta do Microsoft 365. Você pode entrar no [Programa para Desenvolvedores do Microsoft 365](https://aka.ms/devprogramsignup)que inclui uma assinatura gratuita de um ano do Office 365.
+- Uma conta do Microsoft 365. Você pode se cadastrar no [programa de desenvolvedores do Microsoft 365](https://aka.ms/devprogramsignup), que inclui um ano de assinatura gratuita do Office 365.
 - Um Locatário do Microsoft Azure. Você pode adquirir uma assinatura de avaliação no [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
 ## <a name="the-cell-analyzer-vsto-add-in"></a>O suplemento VSTO do analisador de células

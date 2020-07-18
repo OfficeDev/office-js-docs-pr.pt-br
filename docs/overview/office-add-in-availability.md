@@ -1,14 +1,14 @@
 ---
 title: Disponibilidade de host e plataforma para suplementos do Office
 description: Conjuntos de requisitos com suporte para o Excel, OneNote, Outlook, PowerPoint, Project e Word.
-ms.date: 07/07/2020
+ms.date: 07/10/2020
 localization_priority: Priority
-ms.openlocfilehash: 3e6124373295875d607d86e0c311a34982b2c046
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 655009edc42a9daff84f20a6e0d0febf505f1601
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094110"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159133"
 ---
 # <a name="office-add-in-host-and-platform-availability"></a>Disponibilidade de host e plataforma para suplementos do Office
 
@@ -65,7 +65,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
     </td>
   </tr>
   <tr>
-    <td>Office no Windows<br>(Conectado à assinatura do Microsoft 365)</td>
+    <td>Office no Windows<br>(conectado a uma assinatura do Microsoft 365)</td>
     <td>
       - TaskPane<br>
       - Conteúdo<br>
@@ -186,7 +186,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
     </td>
   </tr>
   <tr>
-    <td>Office no iPad<br>(Conectado à assinatura do Microsoft 365)</td>
+    <td>Office no iPad<br>(conectado a uma assinatura do Microsoft 365)</td>
     <td>
       - TaskPane<br>
       - Conteúdo </td>
@@ -220,7 +220,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
     </td>
   </tr>
   <tr>
-    <td>Office no Mac<br>(Conectado à assinatura do Microsoft 365)</td>
+    <td>Office no Mac<br>(conectado a uma assinatura do Microsoft 365)</td>
     <td>
       - TaskPane<br>
       - Conteúdo<br>
@@ -340,13 +340,13 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
     <td></td>
   </tr>
   <tr>
-    <td>Office no Windows<br>(Conectado à assinatura do Microsoft 365)</td>
+    <td>Office no Windows<br>(conectado a uma assinatura do Microsoft 365)</td>
     <td>- Funções personalizadas</td>
     <td>- <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
     <td></td>
   </tr>
   <tr>
-    <td>Office no Mac<br>(Conectado à assinatura do Microsoft 365)</td>
+    <td>Office no Mac<br>(conectado a uma assinatura do Microsoft 365)</td>
     <td>- Funções personalizadas</td>
     <td>- <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a></td>
     <td></td>
@@ -403,7 +403,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
     <td>Não disponível</td>
   </tr>
   <tr>
-    <td>Office no Windows<br>(Conectado à assinatura do Microsoft 365)</td>
+    <td>Office no Windows<br>(conectado a uma assinatura do Microsoft 365)</td>
     <td>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagereadcommandsurface">Mensagem lida</a><br>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagecomposecommandsurface">Composição da mensagem</a><br>
@@ -480,7 +480,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
     <td>Não disponível</td>
   </tr>
   <tr>
-    <td>Office no iOS<br>(Conectado à assinatura do Microsoft 365)</td>
+    <td>Office no iOS<br>(conectado a uma assinatura do Microsoft 365)</td>
     <td>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#mobilemessagereadcommandsurface">Mensagem lida</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de Suplemento</a>
@@ -495,7 +495,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
     <td>Não disponível</td>
   </tr>
   <tr>
-    <td>Office no Mac<br>(Conectado à assinatura do Microsoft 365)</td>
+    <td>Office no Mac<br>(conectado a uma assinatura do Microsoft 365)</td>
     <td>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagereadcommandsurface">Mensagem lida</a><br>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagecomposecommandsurface">Composição da mensagem</a><br>
@@ -554,7 +554,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
     <td>Não disponível</td>
   </tr>
   <tr>
-    <td>Outlook no Android<br>(Conectado à assinatura do Microsoft 365)</td>
+    <td>Outlook no Android<br>(conectado a uma assinatura do Microsoft 365)</td>
     <td>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#mobilemessagereadcommandsurface">Mensagem lida</a><br>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#mobileonlinemeetingcommandsurface-preview">Organizador de compromissos (Redigir): reunião on-line (visualização)<br>
@@ -621,7 +621,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
     </td>
   </tr>
   <tr>
-    <td>Office no Windows<br>(Conectado à assinatura do Microsoft 365)</td>
+    <td>Office no Windows<br>(conectado a uma assinatura do Microsoft 365)</td>
     <td>
       - TaskPane<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de Suplemento</a>
@@ -743,7 +743,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
     </td>
   </tr>
   <tr>
-    <td>Office no iPad<br>(Conectado à assinatura do Microsoft 365)</td>
+    <td>Office no iPad<br>(conectado a uma assinatura do Microsoft 365)</td>
     <td>- TaskPane</td>
     <td>
       - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-1-1-requirement-set">WordApi 1.1</a><br>
@@ -773,7 +773,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
     </td>
   </tr>
   <tr>
-    <td>Office no Mac<br>(Conectado à assinatura do Microsoft 365)</td>
+    <td>Office no Mac<br>(conectado a uma assinatura do Microsoft 365)</td>
     <td>
       - TaskPane<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Comandos de Suplemento</a>
@@ -907,7 +907,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
     </td>
   </tr>
   <tr>
-    <td>Office no Windows<br>(Conectado à assinatura do Microsoft 365)</td>
+    <td>Office no Windows<br>(conectado a uma assinatura do Microsoft 365)</td>
     <td>
       - Conteúdo<br>
       - TaskPane<br>
@@ -993,7 +993,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
     </td>
   </tr>
   <tr>
-    <td>Office no iPad<br>(Conectado à assinatura do Microsoft 365)</td>
+    <td>Office no iPad<br>(conectado a uma assinatura do Microsoft 365)</td>
     <td>
       - Conteúdo<br>
       - TaskPane </td>
@@ -1014,7 +1014,7 @@ Seu suplemento do Office pode depender de um host específico do Office, um conj
     </td>
   </tr>
   <tr>
-    <td>Office no Mac<br>(Conectado à assinatura do Microsoft 365)</td>
+    <td>Office no Mac<br>(conectado a uma assinatura do Microsoft 365)</td>
     <td>
       - Conteúdo<br>
       - TaskPane<br>

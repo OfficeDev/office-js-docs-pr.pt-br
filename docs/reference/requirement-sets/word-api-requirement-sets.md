@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos da API JavaScript do Word
 description: Informações do conjunto de requisitos do Suplemento do Office para builds do Word.
-ms.date: 04/16/2020
+ms.date: 07/10/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: d9845d6670d19ab1910410bb26ab5806c84c6b84
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 2b4de20f1f8f7e77295b49a36745d23ee044aa08
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094286"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159077"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Word
 
@@ -24,7 +24,7 @@ Os suplementos do Word são executados em várias versões do Office, incluindo 
 >
 > Para obter informações sobre o uso de APIs de visualização, confira o artigo [APIs de visualização do JavaScript para Excel](word-preview-apis.md).
 
-|  Conjunto de requisitos  |   Office no Windows\*<br>(Conectado à assinatura do Microsoft 365)  |  Office no iPad<br>(Conectado à assinatura do Microsoft 365)  |  Office no Mac<br>(Conectado à assinatura do Microsoft 365)  | Office na Web  |
+|  Conjunto de requisitos  |   Office no Windows\*<br>(conectado a uma assinatura do Microsoft 365)  |  Office no iPad<br>(conectado a uma assinatura do Microsoft 365)  |  Office no Mac<br>(conectado a uma assinatura do Microsoft 365)  | Office na Web  |
 |:-----|-----|:-----|:-----|:-----|
 | [Visualização](word-preview-apis.md) | Use a versão mais recente do Office para testar as APIs de visualização (talvez seja exigido ser membro do [programa Office Insider](https://insider.office.com)) |
 | [WordApi 1.3](word-api-1-3-requirement-set.md) | Versão 1612 (Compilação 7668.1000) ou posterior| Março de 2017, 2.22 ou posterior | Março de 2017, 15.32 ou posterior| Março de 2017 |

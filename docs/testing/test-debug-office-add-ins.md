@@ -1,14 +1,14 @@
 ---
 title: Testar e depurar suplementos do Office
 description: Aprenda a testar e depurar Suplementos do Office.
-ms.date: 06/20/2019
+ms.date: 06/17/2020
 localization_priority: Priority
-ms.openlocfilehash: 5eed657382f90a6248a464b90835e01eabfbfc85
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 526204fe94d4c97ce7e1e0bc9ac2a212f69611d3
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611123"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159245"
 ---
 # <a name="test-and-debug-office-add-ins"></a>Testar e depurar suplementos do Office
 
@@ -37,6 +37,8 @@ O procedimento para depurar um suplemento do Office também varia de acordo com 
 - [Depurar suplementos no Office na Web](debug-add-ins-in-office-online.md)
 
 - [Depurar suplementos do Office no iPad e no Mac](debug-office-add-ins-on-ipad-and-mac.md)
+
+- [Extensão de depuração de suplementos do Microsoft Office para o Visual Studio Code](debug-with-vs-extension.md)
 
 ## <a name="validate-an-office-add-in-manifest"></a>Validar o manifesto de suplemento do Office
 

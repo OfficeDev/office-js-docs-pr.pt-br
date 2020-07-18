@@ -1,15 +1,15 @@
 ---
-ms.date: 01/16/2020
+ms.date: 07/10/2020
 description: Desenvolvendo funções personalizadas no guia de início rápido do Excel.
 title: 'Início rápido de funções personalizadas '
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 126349f316cc923349f3f42e719c0017bbd7d7c0
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: adf420618ff744a409c6fc61af9b854f786055c0
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094145"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159441"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Introdução ao desenvolvimento de funções personalizadas do Excel
 
@@ -20,8 +20,8 @@ Com as funções personalizadas, os desenvolvedores agora podem adicionar novas 
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel no Windows (versão 1904 ou posterior, conectado a assinatura do Microsoft 365) ou Excel na Web
-* As funções personalizadas do Excel são compatíveis com o Office no Mac (conectado à assinatura do Microsoft 365) e uma atualização para esse tutorial está disponível.
+* Excel no Windows (versão 1904 ou posterior, conectado a uma assinatura do Microsoft 365) ou Excel na web
+* O Office no Mac (conectado a uma assinatura do Microsoft 365) é compatível com as funções personalizadas do Excel) e uma atualização desse tutorial está a caminho.
 
 >[!NOTE]
 >As funções personalizadas do Excel não são compatíveis com o Office 2019 (compra única).

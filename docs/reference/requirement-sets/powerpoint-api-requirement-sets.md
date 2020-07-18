@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos da API JavaScript do PowerPoint
-description: Saiba mais sobre os conjuntos de requisitos da API JavaScript do PowerPoint
-ms.date: 03/11/2020
+description: Saiba mais sobre os conjuntos de requisitos da API JavaScript do PowerPoint.
+ms.date: 07/10/2020
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 8349ff4c96e73ce93a77c86b709081f9355b1f06
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: eebcc78e69cd35732853daaee32f36df2b37252e
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094299"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159259"
 ---
 # <a name="powerpoint-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do PowerPoint
 
@@ -17,7 +17,7 @@ Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplemento
 
 A tabela a seguir lista os conjuntos de requisitos do PowerPoint, os aplicativos de host do Office que oferecem suporte a esses conjuntos de requisitos e os versões de compilação ou datas de disponibilidade.
 
-|  Conjunto de requisitos  |  Office no Windows<br>(Conectado à assinatura do Microsoft 365)  |  Office no iPad<br>(Conectado à assinatura do Microsoft 365)  |  Office no Mac<br>(Conectado à assinatura do Microsoft 365)  | Office na Web |
+|  Conjunto de requisitos  |  Office no Windows<br>(conectado a uma assinatura do Microsoft 365)  |  Office no iPad<br>(conectado a uma assinatura do Microsoft 365)  |  Office no Mac<br>(conectado a uma assinatura do Microsoft 365)  | Office na Web |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | PowerPointApi 1.1 | Versão 1810 (Build 11001.20074) ou posterior | 2.17 ou posterior | 16.19 ou posterior | Outubro de 2018 |
 
