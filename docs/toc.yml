@@ -502,6 +502,8 @@
                   href: reference/manifest/webapplicationinfo.md
         - name: Códigos de erro
           href: reference/javascript-api-for-office-error-codes.md
+        - name: Objetos de janela não suportados
+          href: reference/window-objects-unsupported-in-add-ins.md
     - name: Recursos
       href: resources/resources-links-help.md
       displayName: 'Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook'
