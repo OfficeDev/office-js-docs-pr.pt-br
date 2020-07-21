@@ -1,15 +1,15 @@
 ---
 title: Tutorial de funções personalizadas do Excel
 description: Neste tutorial, você criará um suplemento do Excel que contém uma função personalizada que pode fazer cálculos e solicitar ou transmitir dados da web.
-ms.date: 01/16/2020
+ms.date: 07/10/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 7f8dcfa792b1bbce36055b865d6cc67fcb55d68a
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 9ca4177024276a676fed76746da4ecf81121fc3b
+ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094264"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "45159140"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Tutorial: Criar funções personalizadas no Excel
 
@@ -26,7 +26,7 @@ Neste tutorial, você vai:
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel no Windows (versão 1904 ou posterior, conectada à assinatura do Microsoft 365) ou na Web
+* Excel no Windows (versão 1904 ou posterior, conectado a uma assinatura do Microsoft 365) ou na web
 
 ## <a name="create-a-custom-functions-project"></a>Criar um projeto com funções personalizadas
 
@@ -240,7 +240,7 @@ function clock(invocation) {
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Parabéns! Neste tutorial, você criou um novo projeto de funções personalizadas, experimentou uma função predefinida, criou uma função personalizada que solicita dados da Web e criou uma função personalizada que transmite dados. Em seguida, você pode modificar seu projeto para usar um tempo de execução compartilhado, tornando mais fácil para sua função interagir com o painel de tarefas. Siga as etapas no seguinte artigo:
+Parabéns! Neste tutorial, você criou um novo projeto de funções personalizadas, experimentou uma função predefinida, criou uma função personalizada que solicita dados da Web e criou uma função personalizada que transmite dados. Em seguida, você pode modificar seu projeto para usar um tempo de execução compartilhado, facilitando a interação com o painel de tarefas. Siga as etapas no seguinte artigo:
 
 > [!div class="nextstepaction"]
 > [Configure seu suplemento para usar um tempo de execução compartilhado](../excel/configure-your-add-in-to-use-a-shared-runtime.md)
