@@ -1,14 +1,14 @@
 ---
 title: Localização para Suplementos do Office
 description: Você pode usar a API JavaScript do Office para determinar uma localidade e exibir cadeias de caracteres com base na localidade do aplicativo host ou para interpretar ou exibir dados com base na localidade dos dados.
-ms.date: 07/10/2020
+ms.date: 07/21/2020
 localization_priority: Normal
-ms.openlocfilehash: 79994406e8477786dd93a1aa56f5cda0a1235d01
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: a879f61f2257c54a4870e03740b7409a20d4772b
+ms.sourcegitcommit: 01bc1b5d7fa16292d4ab0b40f0abe0e09f97385f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159581"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "45228343"
 ---
 # <a name="localization-for-office-add-ins"></a>Localização para Suplementos do Office
 
@@ -178,7 +178,7 @@ Esta seção fornece exemplos que mostram como localizar uma descrição do Supl
 
 Para executar o código de exemplo fornecido, configure o Office no computador para usar idiomas adicionais para que você possa testar seu suplemento alternando o idioma usado para exibição em menus e comandos, para edição e revisão de código ou ambos.
 
-Você pode usar um Office Language Pack para instalar um idioma adicional. Para saber mais sobre os Pacotes de Idiomas e onde obtê-los, veja [Language Accessory Pack do Office](https://office.microsoft.com/language-packs/).
+Você pode usar um Office Language Pack para instalar um idioma adicional. Para saber mais sobre os Pacotes de Idiomas e onde obtê-los, veja [Language Accessory Pack do Office](https://support.microsoft.com/office/82ee1236-0f9a-45ee-9c72-05b026ee809f).
 
 Depois de instalar o Language Accessory Pack, você pode configurar o Office para usar o idioma instalado para exibir na interface do usuário, para edição de conteúdo do documento ou ambos. O exemplo neste artigo usa uma instalação do Office que tenha o Pacote de Idiomas de espanhol aplicado.
 
