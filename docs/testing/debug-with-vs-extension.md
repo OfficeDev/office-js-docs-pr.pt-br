@@ -1,16 +1,16 @@
 ---
-title: Extensão do depurador de suplementos do Microsoft Office para o Visual Studio Code
+title: Extensão de depuração de suplementos do Microsoft Office para o Visual Studio Code
 description: Use o depurador de suplemento do Visual Studio Code Extension para depurar seu suplemento do Office.
 ms.date: 05/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 1bd3814eba6da2339e7865d720b8a4c792b9310e
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 2439af12f30cef1b9d291578cbababe3ed601644
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611208"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530468"
 ---
-# <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Extensão do depurador de suplementos do Microsoft Office para o Visual Studio Code
+# <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Extensão de depuração de suplementos do Microsoft Office para o Visual Studio Code
 
 O Microsoft Office Add-in Debugger Extension para o Visual Studio Code permite que você depure seu suplemento do Office em tempo de execução de borda.
 
@@ -21,7 +21,7 @@ Este modo de depuração é dinâmico, permitindo que você defina pontos de int
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - [Visual Studio Code](https://code.visualstudio.com/) (deve ser executado como um administrador)
-- [Node. js (versão 10 +)](https://nodejs.org/)
+- [Node.js (versão 10 +)](https://nodejs.org/)
 - Windows 10
 - [Microsoft Edge](https://www.microsoft.com/edge)
 
@@ -31,7 +31,8 @@ Estas instruções pressupõem que você tenha experiência em usar a linha de c
 
 1. Se você precisar criar um projeto de suplemento, [use o gerador de Yo do Office para criar um](https://docs.microsoft.com/office/dev/add-ins/quickstarts/excel-quickstart-jquery?tabs=yeomangenerator). Siga os prompts dentro da linha de comando para configurar seu projeto. Você pode escolher qualquer idioma ou tipo de projeto para atender às suas necessidades.
 
-> ! Observação Se você já tiver um projeto, pule a etapa 1 e vá para a etapa 2.
+> [!NOTE]
+> Se você já tiver um projeto, pule a etapa 1 e vá para a etapa 2.
 
 2. Abra um prompt de comando como administrador.
    ![Opções de prompt de comando, incluindo "executar como administrador" no Windows 10](../images/run-as-administrator-vs-code.jpg)
@@ -51,7 +52,7 @@ Depois que o Visual Studio code estiver aberto, navegue manualmente para a pasta
 
 5. No VS Code, selecione **Ctrl + Shift + X** para abrir a barra de extensões. Procure a extensão "depurador de suplementos do Microsoft Office" e instale-a.
 
-6. Na pasta. vscode do projeto, abra o arquivo **Launch. JSON** . Adicione o seguinte código à `configurations` seção:
+6. Na pasta. vscode do projeto, abra o **launch.jsem** arquivo. Adicione o seguinte código à `configurations` seção:
 
 ```JSON
 {

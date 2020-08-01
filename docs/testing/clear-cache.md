@@ -3,12 +3,12 @@ title: Limpar o cache do Office
 description: Saiba como limpar o cache do Office em seu computador.
 ms.date: 05/22/2020
 localization_priority: Normal
-ms.openlocfilehash: c48f3ed6f4c2f5f246341b6b878a725a54758bbe
-ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+ms.openlocfilehash: fe8184a5bd084450c3be6d3d13707bf92f5c508f
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "44679399"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530489"
 ---
 # <a name="clear-the-office-cache"></a>Limpar o cache do Office
 
@@ -20,8 +20,14 @@ Além disso, se você fizer alterações no manifesto do seu suplemento (por exe
 
 Para remover todos os suplementos do suplementos foi feito do Excel, Word e PowerPoint, exclua o conteúdo da pasta:
 
-```text
+```
 %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\
+```
+
+Se a seguinte pasta existir, exclua o conteúdo também:
+
+```
+%userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\
 ```
 
 Para remover um suplemento do suplementos foi feito do Outlook, use as etapas descritas em suplementos do [Sideload do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md) para localizar o suplemento na seção **suplementos personalizados** da caixa de diálogo que lista seus suplementos instalados. escolha as reticências ( `...` ) para o suplemento e, em seguida, escolha **remover** para remover o suplemento específico do. Se essa remoção de suplemento não funcionar, exclua o conteúdo da `Wef` pasta conforme indicado anteriormente para Excel, Word e PowerPoint.

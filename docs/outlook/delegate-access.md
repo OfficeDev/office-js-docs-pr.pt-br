@@ -1,21 +1,21 @@
 ---
 title: Habilitar cenários de acesso de representante em um suplemento do Outlook
 description: Descreve brevemente o acesso de representante e discute como configurar o suporte a suplementos.
-ms.date: 06/30/2020
+ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: a5b4581783ca65bfe858dcf6638287418a3dcfe2
-ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
+ms.openlocfilehash: 9cf4d15e81e4018d819f8f47a0729a25944c0fb5
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "45006413"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530447"
 ---
 # <a name="enable-delegate-access-scenarios-in-an-outlook-add-in"></a>Habilitar cenários de acesso de representante em um suplemento do Outlook
 
 Um proprietário de caixa de correio pode usar o recurso de acesso de representante para [permitir que outra pessoa gerencie seus emails e calendários](https://support.office.com/article/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926). Este artigo especifica a quais permissões de representante a API JavaScript do Office oferece suporte e descreve como habilitar cenários de acesso de representante no suplemento do Outlook.
 
 > [!IMPORTANT]
-> O acesso de representante não está disponível no Outlook no Mac, no Android e no iOS. Essa funcionalidade pode ser disponibilizada no futuro.
+> O acesso de representante não está disponível no Outlook no Mac, no Android e no iOS. Além disso, esse recurso não está disponível atualmente com [caixas de correio compartilhadas em grupo](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide#shared-mailboxes) no Outlook na Web. Essa funcionalidade pode ser disponibilizada no futuro.
 >
 > O suporte para esse recurso foi introduzido no conjunto de requisitos 1,8. Confira, [clientes e plataformas](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
 
@@ -23,7 +23,7 @@ Um proprietário de caixa de correio pode usar o recurso de acesso de representa
 
 A tabela a seguir descreve as permissões de representante que a API JavaScript do Office suporta.
 
-|Permission|Valor|Descrição|
+|Permissão|Valor|Descrição|
 |---|---:|---|
 |Ler|1 (000001)|Pode ler itens.|
 |Gravação|2 (000010)|Pode criar itens.|
@@ -140,7 +140,7 @@ function performOperation() {
 > [!TIP]
 > Como representante, você pode usar o REST para [obter o conteúdo de uma mensagem do Outlook anexada a um item do Outlook ou a uma postagem de grupo](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post).
 
-## <a name="see-also"></a>Também consulte
+## <a name="see-also"></a>Confira também
 
 - [Permitir que outra pessoa Gerencie seu email e calendário](https://support.office.com/article/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926)
 - [Compartilhamento de calendário no Office 365](https://support.office.com/article/calendar-sharing-in-office-365-b576ecc3-0945-4d75-85f1-5efafb8a37b4)

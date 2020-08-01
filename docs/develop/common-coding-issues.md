@@ -1,14 +1,14 @@
 ---
 title: Diretrizes de codificação para problemas comuns e comportamentos de plataforma inesperados
 description: Uma lista de problemas da plataforma de API JavaScript do Office frequentemente encontrada pelos desenvolvedores.
-ms.date: 05/21/2020
+ms.date: 07/23/2020
 localization_priority: Normal
-ms.openlocfilehash: d67a069cd2b752be3fca8ce094eaacfd0db08c18
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 8f604acaee308c3bd04e181719b091eb948d63ee
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608380"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530454"
 ---
 # <a name="coding-guidance-for-common-issues-and-unexpected-platform-behaviors"></a>Diretrizes de codificação para problemas comuns e comportamentos de plataforma inesperados
 
@@ -142,6 +142,10 @@ As seguintes APIs são afetadas por essa opção de pasta de trabalho:
 
 > [!NOTE]
 > Isso aplica-se apenas a várias pastas de trabalho do Excel abertas no Windows ou Mac.
+
+### <a name="coauthoring"></a>Coautoria
+
+Veja [coautoria em suplementos do Excel](../excel/co-authoring-in-excel-add-ins.md) para padrões a serem usados com eventos em um ambiente de coautoria. O artigo também aborda possíveis conflitos de mesclagem ao usar determinadas APIs, como [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) .
 
 ## <a name="see-also"></a>Confira também
 

@@ -3,12 +3,12 @@ title: Solucionar erros de usuários com suplementos do Office
 description: Saiba como solucionar erros de usuários em suplementos do Office.
 ms.date: 06/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 51f5ec406a09b18ece24b74dc22718e7fd422e38
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: c0d08b512f61ecfd0ec149194897d31ff32741e0
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159182"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530482"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Solucionar erros de usuários com suplementos do Office
 
@@ -104,7 +104,8 @@ Office.context.ui.displayDialogAsync(startAddress, {displayInIFrame:true}, callb
 Se alterações feitas no manifesto, como nomes de arquivo de ícones de botão da faixa de opções ou texto de comandos de suplemento, não parecerem entrar em vigor, experimente limpar o cache do Office no computador. 
 
 #### <a name="for-windows"></a>Para Windows:
-Exclua os conteúdos da pasta `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
+
+Exclua o conteúdo da pasta `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` e exclua o conteúdo da pasta `%userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\` , se ela existir.
 
 #### <a name="for-mac"></a>Para Mac:
 
@@ -143,6 +144,6 @@ del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC
 - [Depurar suplementos no Office na Web](debug-add-ins-in-office-online.md)
 - [Realizar sideload de um suplemento do Office no iPad e no Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  
 - [Depurar suplementos do Office no iPad e no Mac](debug-office-add-ins-on-ipad-and-mac.md)  
-- [Extensão do depurador de suplementos do Microsoft Office para o Visual Studio Code](debug-with-vs-extension.md)
+- [Extensão de depuração de suplementos do Microsoft Office para o Visual Studio Code](debug-with-vs-extension.md)
 - [Validar o manifesto de suplemento do Office](troubleshoot-manifest.md)
 - [Depurar seu suplemento com o log do tempo de execução](runtime-logging.md)

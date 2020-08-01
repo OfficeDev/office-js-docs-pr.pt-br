@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 description: Recursos e APIs que estão atualmente em versão prévia para suplementos do Outlook.
-ms.date: 07/10/2020
+ms.date: 07/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 457195b7511d4dabca101242400d44154a57a781
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 9a2ca9a71498c954d9864f2b967b5fb240f8c506
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159217"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530475"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 
@@ -221,6 +221,40 @@ Adicionada uma nova função que verifica se a assinatura do cliente está habil
 Adição de uma nova enumeração `ComposeType` disponível no modo de composição.
 
 **Disponível em**: Outlook no Windows (conectado a uma assinatura do Microsoft 365), Outlook na Web (moderno, [Configurar acesso de visualização](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center))
+
+<br>
+
+---
+
+---
+
+### <a name="notification-messages-with-actions"></a>Mensagens de notificação com ações
+
+Este recurso permite que o suplemento inclua uma mensagem de notificação com uma ação personalizada além da ação padrão de **ignorar** .
+
+#### <a name="officenotificationmessagedetailsactions"></a>[Office. NotificationMessageDetails. Actions](/javascript/api/outlook/office.notificationmessagedetails#actions)
+
+Adicionada uma nova propriedade que permite que você adicione uma `InsightMessage` notificação com uma ação personalizada.
+
+**Disponível em**: Outlook no Windows (conectado a uma assinatura do Microsoft 365), Outlook na Web (moderno)
+
+#### <a name="officenotificationmessageaction"></a>[Office. NotificationMessageAction](/javascript/api/outlook/office.notificationmessageaction)
+
+Adicionado um novo objeto onde você define uma ação personalizada para sua `InsightMessage` notificação.
+
+**Disponível em**: Outlook no Windows (conectado a uma assinatura do Microsoft 365), Outlook na Web (moderno)
+
+#### <a name="officemailboxenumsactiontype"></a>[Office. MailboxEnums. ActionType](/javascript/api/outlook/office.mailboxenums.actiontype)
+
+Foi adicionada uma nova enumeração `ActionType` .
+
+**Disponível em**: Outlook no Windows (conectado a uma assinatura do Microsoft 365), Outlook na Web (moderno)
+
+#### <a name="officemailboxenumsitemnotificationmessagetypeinsightmessage"></a>[Office. MailboxEnums. ItemNotificationMessageType. InsightMessage](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype)
+
+Adicionado um novo tipo `InsightMessage` à `ItemNotificationMessageType` enumeração.
+
+**Disponível em**: Outlook no Windows (conectado a uma assinatura do Microsoft 365), Outlook na Web (moderno)
 
 <br>
 
