@@ -4,12 +4,12 @@ description: Neste tutorial, você criará um suplemento do Excel que cria, pree
 ms.date: 06/05/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 8cae8a91ffe70e98a504b191566e9d6ac3c29b37
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 2e637bad83432f8adf94826b906dc68a57e02fa6
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611069"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530503"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Tutorial: criar um suplemento do painel de tarefas no Excel
 
@@ -24,7 +24,7 @@ Neste tutorial: você criará um suplemento do painel de tarefas no Excel
 > * Abre uma caixa de diálogo
 
 > [!TIP]
-> Se você já concluiu o início rápido [Criar um suplemento do painel de tarefas do Excel](../quickstarts/excel-quickstart-jquery.md) e gostaria de usar esse projeto como ponto de partida para este tutorial, vá diretamente para a seção [Criar uma tabela](#create-a-table).
+> Se você já concluiu o inicio rápido do [Criar um suplemento do painel de tarefas no Excel](../quickstarts/excel-quickstart-jquery.md) usando o gerador Yeoman e deseja usar esse projeto como ponto de partida para este tutorial, vá diretamente para a seção [Criar uma tabela](#create-a-table) para iniciar este tutorial.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -118,9 +118,9 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
 
 9. Na função `createTable()`, substitua `TODO1` pelo código a seguir. Observação:
 
-    - O código cria uma tabela usando o método `add` de conjunto de tabela da planilha, que sempre existe mesmo que ela esteja vazia. Essa é a maneira padrão de criar objetos no Excel.js. Não há nenhuma API do construtor de classe e você nunca usará um operador `new` para criar um objeto do Excel. Em vez disso, adicione a um objeto de conjunto pai.
+    - O código cria uma tabela usando o método `add` da coleção de tabelas de uma planilha, que sempre existe, mesmo que esteja vazia. Essa é a maneira padrão em que os objetos Excel.js são criados. Não há APIs de construtor de classe e você nunca usa um operador `new` para criar um objeto do Excel. Em vez disso, você adiciona a um objeto de coleção pai.
 
-    - O primeiro parâmetro do método `add`é o intervalo apenas da linha superior da tabela, não o intervalo inteiro que a tabela por fim usará. Isso ocorre porque, quando o suplemento preenche as linhas de dados (na próxima etapa), ele adicionará novas linhas à tabela, em vez de gravar os valores nas células das linhas existentes. Esse é um padrão mais comum, porque o número de linhas em uma tabela geralmente não é conhecido quando a tabela é criada.
+    - O primeiro parâmetro do método `add` é o intervalo apenas da linha superior da tabela, e não de todo o intervalo que a tabela por fim usará. Isso ocorre porque quando o suplemento preenche as linhas de dados (na próxima etapa), ele adiciona novas linhas à tabela em vez de gravar valores nas células das linhas existentes. Esse é um padrão comum, porque o número de linhas que uma tabela terá geralmente é desconhecido quando a tabela é criada.
 
     - Os nomes de tabelas devem ser exclusivos pela pasta de trabalho inteira, não só na planilha.
 
@@ -300,9 +300,9 @@ Nesta etapa do tutorial, você vai filtrar e classificar a tabela que criou ante
 
 6. Na função `sortTable()`, substitua `TODO1` pelo código a seguir. Observação:
 
-   - O código cria uma matriz de objetos `SortField` que tem apenas um membro, já que o suplemento só classifica a coluna Comerciante.
+   - O código cria uma matriz de objetos `SortField`, que possui apenas um membro, pois o suplemento é classificado apenas na coluna Merchant.
 
-   - A propriedade `key` de um objeto `SortField` é o índice com base em zero da coluna a classificar.
+   - A propriedade `key` de um objeto `SortField` é o índice baseado em zero da coluna usada para classificação. As linhas da tabela são classificadas com base nos valores da coluna referenciada.
 
    - O membro `sort` de uma `Table` é um objeto `TableSort`, não um método. Os `SortField`s são passados para o método `apply` do objeto `TableSort`.
 
@@ -473,7 +473,7 @@ Quando uma tabela for longa o suficiente para que um usuário precise rolar para
 
    - A coleção `Worksheet.freezePanes` é um conjunto de painéis da planilha que fica congelado ou fixado no mesmo lugar quando rolamos a planilha.
 
-   - O método `freezeRows` considera como parâmetro o número de linhas, começando da parte superior, que devem ser fixadas no local. Passamos `1` para fixar a primeira linha no local.
+   - O método `freezeRows` usa como parâmetro o número de linhas, a partir do topo, que devem ser fixadas no lugar. Passamos `1` para fixar a primeira linha no lugar.
 
     ```js
     var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
@@ -500,13 +500,13 @@ Quando uma tabela for longa o suficiente para que um usuário precise rolar para
 
 ## <a name="protect-a-worksheet"></a>Proteger uma planilha
 
-Nesta etapa do tutorial, você adicionará outro botão à faixa de opções que, quando selecionado, executa uma função que você precisará definir para ativar e desativar a proteção da planilha.
+Nesta etapa do tutorial, você adicionará um botão à faixa de opções que ativa ou desativa a proteção da planilha.
 
 ### <a name="configure-the-manifest-to-add-a-second-ribbon-button"></a>Configure o manifesto para adicionar um segundo botão à faixa de opções
 
 1. Abra o arquivo de manifesto **./manifest.xml**.
 
-2. Localize o elemento `<Control>`. Esse elemento define o botão **Mostrar Painel de Tarefas** na faixa de opções **Início** que você usa para iniciar o suplemento. Vamos adicionar um segundo botão ao mesmo grupo na faixa de opções **Início**. Entre a marca de Controle final (`</Control>`) e a marca de Grupo final (`</Group>`), adicione a marcação a seguir.
+2. Localize o elemento `<Control>`. Esse elemento define o botão **Mostrar Painel de Tarefas** na faixa de opções **Início** que você usa para iniciar o suplemento. Vamos adicionar um segundo botão ao mesmo grupo na faixa de opções **Início**. Entre a marca de fechamento `</Control>` e a marca de fechamento`</Group>`, adicione a marcação a seguir.
 
     ```xml
     <Control xsi:type="Button" id="<!--TODO1: Unique (in manifest) name for button -->">
@@ -532,13 +532,13 @@ Nesta etapa do tutorial, você adicionará outro botão à faixa de opções que
     <Control xsi:type="Button" id="ToggleProtection">
     ```
 
-4. Os próximos três `TODO`s definem “resid”, que significa ID de recurso. Um recurso é uma cadeia de caracteres e você criará essas três cadeias de caracteres em uma etapa posterior. Por enquanto, você precisa fornecer IDs aos recursos. O rótulo do botão deve ser "Toggle Protection", mas o *ID* dessa cadeia de caracteres deve ser "ProtectionButtonLabel", para que o elemento `Label` fique assim:
+4. Os próximos três `TODO`s definem IDs de recurso ou `resid`s. Um recurso é uma cadeia de caracteres e você criará essas três cadeias de caracteres em uma etapa posterior. Por enquanto, você precisa fornecer IDs aos recursos. O rótulo do botão deve ser "Toggle Protection", mas o *ID* dessa cadeia de caracteres deve ser "ProtectionButtonLabel", para que o elemento `Label` fique assim:
 
     ```xml
     <Label resid="ProtectionButtonLabel" />
     ```
 
-5. O elemento `SuperTip` define a dica de ferramenta do botão. O título da dica de ferramenta deve ser o mesmo que o rótulo do botão, por isso, usamos a mesma ID de recurso: "ProtectionButtonLabel". A descrição da dica de ferramenta será "Click to turn protection of the worksheet on and off". Mas o `ID` será "ProtectionButtonToolTip". Portanto, quando você terminar, o elemento `SuperTip` deverá ficar assim: 
+5. O elemento `SuperTip` define a dica de ferramenta do botão. O título da dica de ferramenta deve ser o mesmo que o rótulo do botão, por isso, usamos a mesma ID de recurso: "ProtectionButtonLabel". A descrição da dica de ferramenta será "Click to turn protection of the worksheet on and off". Mas o `resid` será "ProtectionButtonToolTip". Portanto, quando você terminar, o elemento `SuperTip` deverá ficar assim: 
 
     ```xml
     <Supertip>            
@@ -550,7 +550,7 @@ Nesta etapa do tutorial, você adicionará outro botão à faixa de opções que
    > [!NOTE] 
    > Em um suplemento de produção,não é recomendável usar o mesmo ícone para dois botões diferentes; mas, para simplificar este tutorial, faremos isso. Portanto, a marcação `Icon` em nosso novo `Control` é apenas uma cópia do elemento `Icon` do `Control` existente. 
 
-6. O elemento `Action` dentro do elemento `Control` original já está presente no manifesto, tem seu tipo definido como `ShowTaskpane`, mas nosso novo botão não abrirá um painel de tarefas, mas sim executará uma função personalizada criada em uma etapa posterior. Portanto, substitua `TODO5` por `ExecuteFunction`, que é o tipo de ação para botões que acionam funções personalizadas. A marca de abertura para o elemento `Action` deve ficar assim:
+6. O elemento `Action` dentro do elemento original `Control` tem seu tipo definido como `ShowTaskpane`, mas nosso novo botão não abre um painel de tarefas; ele executará uma função personalizada criada em uma etapa posterior. Portanto, substitua `TODO5` por `ExecuteFunction`, que é o tipo de ação para botões que acionam funções personalizadas. A marca de abertura para o elemento `Action` deve ficar assim:
  
     ```xml
     <Action xsi:type="ExecuteFunction">
@@ -645,7 +645,7 @@ Nesta etapa do tutorial, você adicionará outro botão à faixa de opções que
 
 ### <a name="add-code-to-fetch-document-properties-into-the-task-panes-script-objects"></a>Adicione código para buscar propriedades do documento em objetos de script do painel de tarefas
 
-Em cada função criada neste tutorial até agora, você enfileirou comandos para *gravar* no documento do Office. Cada função terminou com uma chamada para o método `context.sync()`, que envia os comandos em fila para o documento a ser executado. Entretanto, o código adicionado na última etapa chama a propriedade `sheet.protection.protected` e essa é uma grande diferença das funções anteriores que você escreveu, pois o objeto `sheet` é apenas um objeto de proxy que existe no script do seu painel de tarefas. Ele não sabe qual é o estado real de proteção do documento, portanto, sua propriedade `protection.protected` não pode ter um valor real. É necessário primeiro buscar o status de proteção do documento e definir o valor de `sheet.protection.protected`. Somente então será possível chamar `sheet.protection.protected` sem causar uma exceção. Esse processo de busca tem três etapas:
+Em cada função criada neste tutorial até agora, você enfileirou comandos para *gravar* no documento do Office. Cada função terminou com uma chamada para o método `context.sync()`, que envia os comandos em fila para o documento a ser executado. No entanto, o código que você adicionou na última etapa chama o `sheet.protection.protected property`. Essa é uma diferença significativa das funções anteriores que você escreveu, porque o objeto `sheet` é apenas um objeto proxy que existe no script do painel de tarefas. O objeto proxy não conhece o estado real de proteção do documento, portanto, sua propriedade `protection.protected` não pode ter um valor real. Para evitar um erro de exceção, você deve primeiro buscar o status de proteção do documento e usá-lo para definir o valor de`sheet.protection.protected`. Esse processo de busca tem três etapas:
 
    1. Coloque em fila um comando para carregar (ou seja, fetch) as propriedades que seu código precisa ler.
 
@@ -723,7 +723,7 @@ Essas etapas devem ser concluídas sempre que seu código precisar *ler* informa
 
 1. Feche todos os aplicativos do Office, incluindo o Excel. 
 
-2. Para excluir o cache do Office, exclua o conteúdo da pasta de cache. Isso é necessário para limpar totalmente a versão anterior do suplemento do host. 
+2. Exclua o cache do Office excluindo os conteúdos (todos os arquivos e subpastas) da pasta em cache. Isso é necessário para limpar totalmente a versão anterior do suplemento do host.
 
     - No Windows: `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
@@ -774,7 +774,7 @@ Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, p
 
 3. Adicione a seguinte marcação a **popup.html**. Observação:
 
-   - a página tem um `<input>` em que o usuário insere o nome dele e um botão que envia o nome para a página no painel de tarefas onde ele será exibido.
+   - A página possui um campo `<input>` onde o usuário digitará seu nome e um botão que enviará esse nome para o painel de tarefas em que será exibido.
 
    - a marcação carrega um script chamado **popup.js** que você criará em uma etapa posterior.
 
@@ -972,7 +972,7 @@ Abra o arquivo **webpack.config.js** no diretório raiz do projeto e conclua as 
 
    - O retorno de chamada é executado imediatamente depois que a caixa de diálogo é aberta com êxito e antes de usuário executar a ação na caixa de diálogo.
 
-   - O `result.value` é o objeto que funciona como um tipo de intermediário entre contextos execução das páginas de pai e de caixa de diálogo.
+   - O `result.value` é o objeto que atua como intermediário entre os contextos de execução das páginas pai e de diálogo.
 
    - A função `processMessage` será criada em uma etapa posterior. Esse identificador processará os valores que sejam enviados da página da caixa de diálogo com chamadas da função `messageParent`.
 

@@ -1,15 +1,15 @@
 ---
 title: Criar seu primeiro suplemento do Outlook
 description: Saiba como criar um Suplemento do Outlook simples usando a API JS do Office.
-ms.date: 06/23/2020
+ms.date: 07/27/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 6eb510986ebb9cd8a4362f8c11f744e694bef5f7
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: ba1b3ace97c6fcf380f013b3b394eabe8b9db8b8
+ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094159"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "46530496"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Criar seu primeiro suplemento do Outlook
 
@@ -111,6 +111,9 @@ O projeto de suplemento que você criou com o gerador do Yeoman contém um exemp
 1. Escolha a guia **Página Inicial** (ou a guia **Mensagem**, se você abriu a mensagem em uma nova janela), e em seguida o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
     ![Captura de tela de uma janela de mensagem do Outlook com o botão do suplemento realçado](../images/quick-start-button-1.png)
+
+    > [!NOTE]
+    > Se você receber a mensagem de erro "Não é possível abrir este suplemento do localhost" no painel de tarefas, siga as etapas descritas no [artigo de solução de problemas](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
 
 1. Role para parte inferior do painel de tarefas e escolha o link **Executar** para escrever o assunto da mensagem no painel de tarefas.
 
