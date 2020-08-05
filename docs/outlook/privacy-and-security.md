@@ -1,14 +1,14 @@
 ---
 title: Privacidade, permissões e segurança de suplementos do Outlook
 description: Saiba como gerenciar a privacidade, as permissões e a segurança em um suplemento do Outlook.
-ms.date: 10/31/2019
+ms.date: 08/03/2020
 localization_priority: Priority
-ms.openlocfilehash: d233eb3ac6980af24e6ba9d951834532ea79dc06
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9807cbb2346d6fc067f3894c9f5d265f83dccdc3
+ms.sourcegitcommit: a3b743598025466bad19177e0ba9ca94ea66d490
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44605329"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "46547532"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Privacidade, permissões e segurança de suplementos do Outlook
 
@@ -70,6 +70,9 @@ O modelo de segurança aborda questões de segurança, privacidade e desempenho 
 
 - Mensagens do usuário final no Outlook que são protegidas por IRM (Gerenciamento de Direitos de Informação) não interagem com os suplementos do Outlook.
     
+  > [!IMPORTANT]
+  > A partir do Outlook, compilação 13120.1000, no Windows, os suplementos agora podem ser ativados nos itens protegidos por IRM. Para obter mais informações sobre esse recurso na visualização, consulte [Ativação de suplementos em itens protegidos pela Gestão de Direitos de Informação (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
+
 - Antes de instalar um suplemento da AppSource, os usuários finais podem ver o acesso e as ações que o suplemento pode realizar em seus dados e deve confirmá-los explicitamente para prosseguir. Nenhum suplemento do Outlook é automaticamente enviado por push a um computador cliente sem validação manual pelo usuário ou administrador.
     
 - A concessão da permissão **restricted** permite que o suplemento do Outlook tenha acesso limitado apenas ao item atual. A concessão da permissão **read item** permite que o suplemento do Outlook acesse informações de identificação pessoal, como remetente e nomes dos destinatários e endereços de email, apenas no item atual.
