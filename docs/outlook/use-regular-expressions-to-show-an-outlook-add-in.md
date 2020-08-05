@@ -1,18 +1,18 @@
 ---
 title: Usar regras de ativação de expressões regulares para mostrar um suplemento
 description: Saiba como usar as regras de ativação de expressões regulares para suplementos contextuais do Outlook.
-ms.date: 10/31/2019
+ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: b697f1b0a4d20254986a7aa10a5cc7f25dbdd887
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 3943f42363bd9a34978d1f42d701dcf906aa0446
+ms.sourcegitcommit: a3b743598025466bad19177e0ba9ca94ea66d490
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44605238"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "46547518"
 ---
 # <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>Usar regras de ativação de expressões regulares para mostrar um suplemento do Outlook
 
-Você poderá especificar regras de expressão regulares para ativar um [suplemento contextual](contextual-outlook-add-ins.md) quando houver uma correspondência em campos específicos da mensagem. Os suplementos contextuais só são ativados no modo de leitura. O Outlook não ativa os suplementos contextuais quando o usuário está redigindo um item. Também há outras situações em que o Outlook não ativa suplementos, por exemplo, itens protegidos por IRM (Gerenciamento de Direitos de Informação). Saiba mais em [Regras de ativação para suplementos do Outlook](activation-rules.md).
+Você poderá especificar regras de expressão regulares para ativar um [suplemento contextual](contextual-outlook-add-ins.md) quando houver uma correspondência em campos específicos da mensagem. Os suplementos contextuais só são ativados no modo de leitura. O Outlook não ativa os suplementos contextuais quando o usuário está redigindo um item. Há também outros cenários em que o Outlook não ativa suplementos, por exemplo, itens assinados digitalmente. Saiba mais em [Regras de ativação para suplementos do Outlook](activation-rules.md).
 
 Você pode especificar uma expressão regular como parte de uma regra [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) ou de uma regra [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) no manifesto XML do suplemento. As regras são especificadas em um ponto de extensão [DetectedEntity](../reference/manifest/extensionpoint.md#detectedentity).
 

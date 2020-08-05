@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 description: Recursos e APIs que estão atualmente em versão prévia para suplementos do Outlook.
-ms.date: 07/22/2020
+ms.date: 08/03/2020
 localization_priority: Normal
-ms.openlocfilehash: 9a2ca9a71498c954d9864f2b967b5fb240f8c506
-ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
+ms.openlocfilehash: 5ffa7021fd260f41599a771a1b11aef3cafd832e
+ms.sourcegitcommit: a3b743598025466bad19177e0ba9ca94ea66d490
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "46530475"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "46547525"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 
@@ -29,6 +29,18 @@ O conjunto de requisitos de visualização inclui todos os recursos do [Conjunto
 ## <a name="features-in-preview"></a>Recursos no modo de visualização
 
 Os seguintes recursos estão no modo de visualização.
+
+### <a name="add-in-activation-on-items-protected-by-information-rights-management-irm"></a>Ativação de suplementos em itens protegidos por IRM (gerenciamento de direitos de informação)
+
+Agora, os suplementos podem ser ativados em itens protegidos por IRM. Para ativar esse recurso, um administrador de locatários precisa habilitar o `OBJMODEL` direito de uso, configurando a opção permitir política personalizada de **acesso programático** no Office. Confira os [direitos de uso e as descrições](/azure/information-protection/configure-usage-rights#usage-rights-and-descriptions) para obter mais informações.
+
+**Disponível em**: Outlook no Windows, começando com a compilação 13120,1000 (conectado a uma assinatura do Microsoft 365)
+
+<br>
+
+---
+
+---
 
 ### <a name="additional-calendar-properties"></a>Propriedades de calendário adicionais
 
