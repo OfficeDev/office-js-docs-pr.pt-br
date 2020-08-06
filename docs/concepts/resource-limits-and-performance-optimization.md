@@ -1,14 +1,14 @@
 ---
 title: Limites de recurso e otimização de desempenho para Suplementos do Office
 description: Saiba mais sobre os limites de recursos da plataforma de suplementos do Office, incluindo CPU e memória.
-ms.date: 04/09/2020
+ms.date: 07/13/2020
 localization_priority: Normal
-ms.openlocfilehash: be4727ba12fa8f9b3ee8133026d9de94a612a9fc
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: a689f52e7f92b31cc8d6e912f73e19137233ae12
+ms.sourcegitcommit: 0b95e458f76cdfbd99dbcdbe16a0508af2cd9cd7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608003"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46563808"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites de recurso e otimização de desempenho para Suplementos do Office
 
@@ -93,11 +93,9 @@ Saiba mais em [Implantar o Painel de Telemetria](/previous-versions/office/offic
 
 Embora os limites de recursos para o uso de CPU e memória, a tolerância a falhas e a capacidade de resposta da interface do usuário se apliquem a suplementos do Office executados somente em clientes avançados, otimizar o uso desses recursos e da bateria deve ter prioridade se você quer que o suplemento tenha desempenho satisfatório em todos os dispositivos e clientes compatíveis. A otimização é particularmente importante se o suplemento efetua operações de longa duração ou lida com grandes conjuntos de dados. A lista a seguir sugere algumas técnicas para dividir operações com uso intensivo da CPU ou com muitos dados em partes menores, para que o suplemento possa evitar o consumo excessivo de recursos e o aplicativo host possa continuar a responder:
 
-- Em um cenário em que o suplemento precisa ler um grande volume de dados de um conjunto de dados não associado, você pode aplicar a paginação ao ler os dados de uma tabela ou reduzir o tamanho dos dados em cada operação de leitura mais curta, em vez de tentar concluir a leitura em uma única operação. 
+- Em um cenário em que o suplemento precisa ler um grande volume de dados de um conjunto de dados não associado, você pode aplicar a paginação ao ler os dados de uma tabela ou reduzir o tamanho dos dados em cada operação de leitura mais curta, em vez de tentar concluir a leitura em uma única operação. Você pode fazer isso por meio do método [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) do objeto global para limitar a duração de entrada e saída. Também lida com os dados em blocos definidos, em vez dos dados não associados aleatoriamente. Outra opção é usar [Async](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) para lidar com suas promessas. 
 
-   Para obter exemplos de códigos JavaScript e jQuery que mostram a divisão de uma série de operações de entrada e saída em dados não associados (que possivelmente consumiria muitos recursos de CPU e demoraria em demasiado), consulte [Como posso passar o controle de volta (brevemente) ao navegador durante um processamento de JavaScript que consome muitos recursos?](https://stackoverflow.com/questions/210821/how-can-i-give-control-back-briefly-to-the-browser-during-intensive-javascript). Este exemplo usa o método [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) do objeto global para limitar a duração da entrada e da saída. Também manipula os dados em pedaços definidos, ao invés de dados não associados de forma aleatória.
-
-- Se o suplemento usa um algoritmo com uso intensivo de CPU para processar um grande volume de dados, você pode usar os web workers para executar a tarefa demorada em segundo plano enquanto executa um script separado em primeiro plano, como exibir o progreso na interface do usuário. Os Web workers não bloqueiam atividades do usuário e permitem que a página HTML continue respondendo. Para obter um exemplo de Web workers, consulte [Noções básicas de Web workers](https://www.html5rocks.com/en/tutorials/workers/basics/). Confira [Web workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API) para saber mais sobre a API Web workers.
+- Se o suplemento usa um algoritmo com uso intensivo de CPU para processar um grande volume de dados, você pode usar os web workers para executar a tarefa demorada em segundo plano enquanto executa um script separado em primeiro plano, como exibir o progreso na interface do usuário. Os Web workers não bloqueiam atividades do usuário e permitem que a página HTML continue respondendo. Para obter um exemplo de Web workers, consulte [Noções básicas de Web workers](https://www.html5rocks.com/tutorials/workers/basics/). Confira [Web workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API) para saber mais sobre a API Web workers.
 
 - Se o suplemento usa um algoritmo com uso intensivo de CPU, mas é possível dividir a entrada ou a saída de dados em conjuntos menores, considere criar um serviço Web passando os dados para o serviço Web para aliviar a carga da CPU e aguarde um retorno de chamada assíncrono.
 
