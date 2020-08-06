@@ -1,22 +1,23 @@
 ---
 title: Autorizar o Microsoft Graph com SSO
 description: Saiba como os usuários de um suplemento do Office podem usar o logon único (SSO) para buscar dados do Microsoft Graph.
-ms.date: 07/07/2020
+ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 809dc4f07c6d2afba4ea47cdee0eb7466dfb9635
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 81e8a87c21682a76c73e5e7389e85cd4f20c6a1d
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093725"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573172"
 ---
-# <a name="authorize-to-microsoft-graph-with-sso-preview"></a>Autorizar o Microsoft Graph com SSO (visualização)
+# <a name="authorize-to-microsoft-graph-with-sso"></a>Autorizar o Microsoft Graph com SSO
 
-Os usuários entram no Office (plataformas online, móvel e de área de trabalho) usando sua conta pessoal da Microsoft ou sua conta de educação ou trabalho do Microsoft 365. A melhor maneira de um Suplemento do Office receber acesso autorizado ao [Microsoft Graph](https://developer.microsoft.com/graph/docs) é usar as credenciais de logon do Office do usuário. Isso permite a eles acessar seus dados do Microsoft Graph sem precisar entrar novamente.
+Os usuários entram no Office (plataformas online, de dispositivos móveis e de área de trabalho) usando contas pessoais da Microsoft, contas corporativas ou do Microsoft 365 Education. A melhor maneira de um Suplemento do Office receber acesso autorizado ao [Microsoft Graph](https://developer.microsoft.com/graph/docs) é usar as credenciais de logon do Office do usuário. Isso permite a eles acessar seus dados do Microsoft Graph sem precisar entrar novamente.
 
 > [!NOTE]
-> Atualmente, a API de logon único tem suporte para Word, Excel, Outlook e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md).
-> Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a autenticação moderna para o Microsoft 365 locação. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> Atualmente, a API de logon único tem suporte para Word, Excel, Outlook e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets).
+> Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Office 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+
 
 ## <a name="add-in-architecture-for-sso-and-microsoft-graph"></a>Arquitetura de suplemento para SSO e Microsoft Graph
 
@@ -64,3 +65,16 @@ Para obter exemplos detalhados passo a passo de cenários, confira:
 * [Criar um Suplemento do Office com Node.js que usa logon único](create-sso-office-add-ins-nodejs.md)
 * [Criar um Suplemento do Office com ASP.NET que usa logon único](create-sso-office-add-ins-aspnet.md)
 * [Cenário: implementar o logon único no serviço em um suplemento do Outlook](../outlook/implement-sso-in-outlook-add-in.md)
+
+## <a name="distributing-sso-enabled-add-ins-in-microsoft-appsource"></a>Distribuindo suplementos habilitados para SSO no Microsoft AppSource
+
+Quando um administrador do Microsoft 365 adquire um suplemento do [AppSource](https://appsource.microsoft.com), o administrador pode redistribuí-lo pela [implantação centralizada](../publish/centralized-deployment.md) e conceder consentimento do administrador ao suplemento para acessar escopos do Microsoft Graph. Também é possível, no entanto, que o usuário final adquira o suplemento diretamente de AppSource, caso em que o usuário deve conceder consentimento ao suplemento. Isso pode criar um possível problema de desempenho para o qual fornecemos uma solução.
+
+Se seu código passar a `allowConsentPrompt` opção na chamada de `getAccessToken` , like `OfficeRuntime.auth.getAccessToken( { allowConsentPrompt: true } );` , o Office poderá solicitar o consentimento do usuário se o Azure ad reportar ao Office que o consentimento ainda não foi concedido ao suplemento. No entanto, por motivos de segurança, o Office só pode solicitar que o usuário concorde com o escopo do Azure AD `profile` . *O Office não pode solicitar o consentimento para os escopos do Microsoft Graph*, nem mesmo `User.Read` . Isso significa que, se o usuário conceder consentimento no prompt, o Office retornará um token de inicialização. Mas a tentativa de trocar o token de inicialização para um token de acesso ao Microsoft Graph falhará com o erro AADSTS65001, o que significa que o consentimento (para escopos do Microsoft Graph) não foi concedido.
+
+Seu código pode e deve lidar com esse erro recorrendo a um sistema alternativo de autenticação, o que solicitará o consentimento do usuário aos escopos do Microsoft Graph. (Para obter exemplos de código, confira [criar um Node.js suplemento do Office que usa o logon único](create-sso-office-add-ins-nodejs.md) e [criar um suplemento do Office do ASP.NET que usa o logon único](create-sso-office-add-ins-aspnet.md) e os exemplos aos quais eles se vinculam.) Mas todo o processo requer vários tempos de viagem para o Azure AD. Você pode evitar essa penalidade de desempenho, incluindo a `forMSGraphAccess` opção na chamada de `getAccessToken` ; por exemplo, `OfficeRuntime.auth.getAccessToken( { forMSGraphAccess: true } )` .  Isso indica ao Office que seu suplemento precisa de escopos do Microsoft Graph. O Office solicitará que o Azure AD Verifique se o consentimento para os escopos do Microsoft Graph já foi concedido ao suplemento. Se tiver sido, o token Bootstrap será retornado. Se não tiver, a chamada de retornará o `getAccessToken` erro 13012. Seu código pode lidar com esse erro recorrendo a um sistema alternativo de autenticação imediatamente, sem fazer uma tentativa de Doomed para trocar tokens com o Azure AD.
+
+Como prática recomendada, sempre passe `forMSGraphAccess` para `getAccessToken` quando o suplemento for distribuído no AppSource e precise de escopos do Microsoft Graph.
+
+> [!TIP]
+> Se você desenvolver um suplemento do Outlook que usa SSO e Sideload-lo para teste, o Office *sempre* retornará o erro 13012 quando `forMSGraphAccess` for passado para `getAccessToken` mesmo se o consentimento do administrador tiver sido concedido. Por esse motivo, você deve comentar a `forMSGraphAccess` opção **ao desenvolver** um suplemento do Outlook. Certifique-se de remover o comentário da opção ao implantar para produção. O 13012 falso só acontece quando você está Sideload no Outlook.

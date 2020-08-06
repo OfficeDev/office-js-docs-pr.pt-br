@@ -1,21 +1,22 @@
 ---
 title: Criar um Suplemento do Office com ASP.NET que use logon único
 description: Um guia passo a passo sobre como criar (ou converter) um suplemento do Office com um back-end do ASP.NET para usar o logon único (SSO).
-ms.date: 12/04/2019
+ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 6c231dad045623348923a12199a627acfe240aac
-ms.sourcegitcommit: 01bc1b5d7fa16292d4ab0b40f0abe0e09f97385f
+ms.openlocfilehash: 8627c2a3d54d1c45672f3af1336e3c2b891ac055
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "45228357"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573179"
 ---
-# <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on-preview"></a>Criar um Suplemento do Office com ASP.NET que use logon único (visualização)
+# <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>Criar um Suplemento do Office com ASP.NET que use logon único
 
 Quando os usuários estão conectados ao Office, o seu suplemento pode usar as mesmas credenciais para permitir que os usuários acessem vários aplicativos sem exigir que eles entrem uma segunda vez. Confira uma visão geral no artigo [Habilitar o SSO em um Suplemento do Office](sso-in-office-add-ins.md).
 Este artigo orienta você durante o processo de habilitação do logon único (SSO) em um suplemento que é criado com o ASP.NET.
 
 > [!NOTE]
+
 > Para ler um artigo semelhante sobre um suplemento baseado em Node.js, confira [Criar um Suplemento do Office com Node.js que use logon único](create-sso-office-add-ins-nodejs.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
@@ -88,6 +89,7 @@ Clone ou baixe o repositório em [SSO com Suplemento ASPNET do Office](https://g
     - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
     - `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
     - `57fb890c-0dab-4253-a5e0-7188c88b2bb4`(Office na Web)
+    - `08e18876-6177-487e-b8b5-cf950c1e598c`(Office na Web)
     - `bc59ab01-8403-45c6-8796-ac3ef710b3e3`(Outlook na Web)
 
     Para cada ID, siga estas etapas:
@@ -192,7 +194,7 @@ Se você escolher "Somente contas neste diretório organizacional" para **TIPOS 
         try {
 
             // TODO 1: Get the bootstrap token and send it to the server to exchange
-            //         for an access token to Microsoft Graphn and then get the data
+            //         for an access token to Microsoft Graph and then get the data
             //         from Microsoft Graph.
 
         }
@@ -211,7 +213,7 @@ Se você escolher "Somente contas neste diretório organizacional" para **TIPOS 
 
     * `getAccessToken` instrui o Office a obter um token de bootstrap do Azure AD e retornar ao suplemento.
     * `allowSignInPrompt` indica ao Office para solicitar que o usuário entre caso ele ainda não esteja conectado ao Office.
-    * `forMSGraphAccess` instrui o Office que o suplemento pretende trocar o token de bootstrap por um token de acesso ao Micrsoft Graph, em vez de apenas usar o token de bootstrap como um token de ID. A configuração dessa opção dá ao Office a oportunidade de cancelar o processo de obtenção do token de bootstrap (e retornar o código de erro 13012) se o administrador de locatários do usuário não tiver concedido consentimento para o suplemento. O código do lado do cliente do suplemento pode responder ao 13012 por meio da ramificação para um sistema de autorização de fallback. Se o `forMSGraphAccess` não for usado, e o administrador não tiver concedido consentimento, o token de bootstrap será retornado, mas a tentativa de alterá-lo com o fluxo "on-behalf-of" resultará em um erro. Portanto, a opção `forMSGraphAccess` permite ao suplemento ramificar para o sistema de fallback rapidamente.
+    * `forMSGraphAccess` instrui o Office que o suplemento pretende trocar o token de bootstrap por um token de acesso ao Micrsoft Graph, em vez de apenas usar o token de bootstrap como um token de ID. A configuração dessa opção dá ao Office a oportunidade de cancelar o processo de obtenção do token de bootstrap (e retornar o código de erro 13012) se o administrador de locatários do usuário não tiver concedido consentimento para o suplemento. O código do lado do cliente do suplemento pode responder ao 13012 por meio da ramificação para um sistema de autorização de fallback. Se o `forMSGraphAccess` não for usado e o administrador não tiver concedido o consentimento, o token de inicialização será retornado, mas a tentativa de troca com o fluxo em nome de para resultaria em um erro. Portanto, a opção `forMSGraphAccess` permite ao suplemento ramificar para o sistema de fallback rapidamente.
     * Você criará a função `getData` em uma etapa posterior.
     * O parâmetro `/api/values` é a URL de um controlador do lado do servidor que fará a troca de tokens e usará o token de acesso recebido para fazer a chamada para o Microsoft Graph.
 

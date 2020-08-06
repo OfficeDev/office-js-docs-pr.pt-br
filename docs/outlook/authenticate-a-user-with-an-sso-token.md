@@ -1,16 +1,16 @@
 ---
 title: Autenticação de usuário com um token de logon único
 description: Saiba como usar o token de logon único fornecido por um suplemento do Outlook para implementar o SSO com o serviço.
-ms.date: 04/28/2020
+ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 6d144e9ae4dcaf03705deb75f58c2f67a9c03106
-ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
+ms.openlocfilehash: 79768147fc91a137a363a071beff46cec60ee819
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "46530461"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573137"
 ---
-# <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in-preview"></a>Autenticar um usuário com um token de logon único em um suplemento do Outlook (visualização)
+# <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>Autenticar um usuário com um token de logon único em um suplemento do Outlook
 
 O SSO (logon único) oferece uma maneira simples para que o suplemento autentique usuários (e, opcionalmente, obtenha tokens de acesso para fazer uma chamada à [API do Microsoft Graph](/graph/overview)).
 
@@ -20,7 +20,6 @@ Usando este método, o suplemento pode obter um token de acesso com escopo para 
 - Usar as informações de identidade no token para estabelecer a identidade do usuário e autenticar seus serviços de back-end
 
 Para obter uma visão geral do SSO em suplementos do Office, confira [Habilitar o logon único para suplementos do Office](../develop/sso-in-office-add-ins.md) e [Autorizar acesso ao Microsoft Graph em suplementos do Office](../develop/authorize-to-microsoft-graph.md).
-
 
 ## <a name="enable-modern-authentication-in-your-microsoft-365-tenancy"></a>Habilitar a autenticação moderna em seu Microsoft 365 locação
 
@@ -32,7 +31,7 @@ Para usar o SSO, o suplemento do Outlook precisará ter uma API Web no lado do s
 
 ### <a name="provide-consent-when-sideloading-an-add-in"></a>Fornecer consentimento quando estiver realizando o sideload de um suplemento
 
-Quando um suplemento que usa SSO é adquirido do AppSource, ele deve ter um método de autenticação de backup para fornecer o consentimento se contiver escopos do Microsoft Graph. Ao desenvolver um suplemento, você terá que fornecer consentimento com antecedência. Para mais informações, confira [Conceder ao administrador consentimento para o suplemento](../develop/grant-admin-consent-to-an-add-in.md)
+Ao desenvolver um suplemento, você terá que fornecer consentimento com antecedência. Para obter mais informações, consulte [conceder ao administrador consentimento para o suplemento](../develop/grant-admin-consent-to-an-add-in.md).
 
 ## <a name="update-the-add-in-manifest"></a>Atualizar o manifesto do suplemento
 

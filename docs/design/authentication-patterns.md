@@ -1,14 +1,14 @@
 ---
 title: Diretrizes de design de autenticação para suplementos do Office
+ms.date: 07/30/2020
 description: Saiba como criar visualmente uma página de logon ou inscrição em um suplemento do Office.
-ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 36465fbf156820cfc8980758cec0ed19c545588d
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: ed80f6b785c582ee3fa0e3f22e6a75b778bcdf3d
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159616"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573165"
 ---
 # <a name="authentication-patterns"></a>Padrões de autenticação
 
@@ -27,8 +27,6 @@ Os suplementos podem exigir que os usuários entrem ou se inscrevam para acessar
 
 ## <a name="authentication-flow"></a>Fluxo de autenticação
 
-Até o logon único estar fora da versão prévia, os suplementos de produção devem conceder aos usuários uma opção para entrar diretamente com o serviço ou um provedor de identidade como a Microsoft.
-
 1. Marcador de primeira execução: coloque o botão de entrada como uma chamada para ação clara na primeira experiência de execução do seu suplemento.
 ![Captura de tela de um painel de tarefas do suplemento em um aplicativo do Office](../images/add-in-fre-value-placemat.png)
 
@@ -46,12 +44,13 @@ Até o logon único estar fora da versão prévia, os suplementos de produção 
 > [!NOTE] 
 > Ao usar o serviço de identidade da Microsoft, você terá a oportunidade de usar um botão de entrada com marca que poderá ser personalizado com temas claros e escuros.Saiba mais.
 
-## <a name="single-sign-on-authentication-flow-preview"></a>Fluxo de autenticação de logon único (versão prévia)
+## <a name="single-sign-on-authentication-flow"></a>Fluxo de autenticação de logon único
 
 > [!NOTE]
-> Atualmente a API de logon único tem suporte na visualização para Word, Excel, Outlook e PowerPoint. Para saber mais informações sobre o suporte a logon único, confira  [Conjuntos de requisitos da IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md). Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Microsoft 365. Para saber mais informações sobre como fazer isso, confira  [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> Atualmente, a API de logon único tem suporte para Word, Excel, Outlook e PowerPoint. Para saber mais informações sobre o suporte a logon único, confira  [Conjuntos de requisitos da IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md). Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Office 365. Para saber mais informações sobre como fazer isso, confira  [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
-Depois que o recurso de logon único for disponibilizado para suplementos de produção, use-o em uma experiência de usuário final mais estável. A identidade do usuário no Office (uma conta da Microsoft ou uma identidade da Microsoft 365) é usada para entrar no seu suplemento. Como resultado, os usuários somente entram uma vez. Isso remove conflitos na experiência e faz com que os clientes comecem a usar o suplemento sem dificuldades.
+Use o single sign-on para uma experiência de usuário final mais suave. A identidade do usuário no Office (uma conta da Microsoft ou uma identidade da Microsoft 365) é usada para entrar no seu suplemento. Como resultado, os usuários entram apenas uma vez. Isso remove conflitos na experiência e faz com que os clientes comecem a usar o suplemento sem dificuldades.
+
 
 1. Conforme o suplemento é instalado, um usuário vê uma janela de consentimento semelhante à exibida abaixo: ![Captura de tela da janela de consentimento em um aplicativo do Office enquanto um suplemento é instalado](../images/add-in-auth-SSO-consent-dialog.png)
 > [!NOTE]
@@ -62,4 +61,4 @@ Depois que o recurso de logon único for disponibilizado para suplementos de pro
 
 ## <a name="see-also"></a>Confira também
 
-- Saiba mais sobre como [desenvolver suplementos de SSO (versão prévia)](../develop/sso-in-office-add-ins.md)
+- Saiba mais sobre o [desenvolvimento de suplementos SSO](../develop/sso-in-office-add-ins.md)
