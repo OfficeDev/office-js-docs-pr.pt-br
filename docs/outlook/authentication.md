@@ -1,14 +1,14 @@
 ---
 title: Opções de autenticação em suplementos do Outlook
 description: Os suplementos do Outlook oferecem diversos métodos de autenticação, dependendo do cenário específico.
-ms.date: 04/28/2020
+ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: 7864b2cfe76154fc8f939f0838095d23ad727054
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 2f97ed75d6415e449970b09f5183d470e9cb4448
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094012"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573130"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Opções de autenticação em suplementos do Outlook
 
@@ -19,11 +19,8 @@ O suplemento do Outlook pode acessar informações de qualquer lugar na Internet
 Os tokens de acesso de logon único oferecem uma maneira simples de o suplemento autenticar e obter tokens de acesso para fazer uma chamada para a [API do Microsoft Graph](/graph/overview). Esse recurso reduz conflitos porque o usuário não precisa inserir credenciais.
 
 > [!NOTE]
-> No momento, há suporte para a API de logon único na visualização do Word, do Excel, do Outlook e do PowerPoint, e **não** deveria ser usada em suplementos de produção. Para obter mais informações sobre o local em que a API de logon único tem suporte no momento, consulte [IdentityAPI conjuntos de requisitos](../reference/requirement-sets/identity-api-requirement-sets.md).
->
-> Para usar o SSO, você deve carregar a versão beta da biblioteca de JavaScript do Office de https://appsforoffice.microsoft.com/lib/beta/hosted/office.js na página de inicialização HTML do suplemento.
->
-> Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Microsoft 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> A API de Logon Único é compatível com Word, Excel, Outlook e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md).
+> Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Office 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 Considere usar tokens de acesso SSO se o suplemento:
 

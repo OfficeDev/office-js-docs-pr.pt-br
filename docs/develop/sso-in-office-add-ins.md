@@ -1,33 +1,23 @@
 ---
 title: Habilitar o logon único para Suplementos do Office
 description: Saiba como habilitar o logon único para suplementos do Office usando contas pessoais, corporativas ou de estudante da Microsoft.
-ms.date: 07/07/2020
+ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: 6e8c93388f758514e8b6366bef7062f41fc79174
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: fa10d67d007fbcb8713fc607ca32e1c646e7f3e5
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159574"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573221"
 ---
-# <a name="enable-single-sign-on-for-office-add-ins-preview"></a>Habilitar o logon único para Suplementos do Office (visualização)
+# <a name="enable-single-sign-on-for-office-add-ins"></a>Habilitar o logon único para Suplementos do Office
+
 
 Os usuários entram no Office (plataformas online, de dispositivos móveis e de área de trabalho) usando contas pessoais da Microsoft, contas corporativas ou do Microsoft 365 Education. Você pode tirar proveito disso e usar o logon único (SSO) para autorizar usuário para suplemento, sem exigir que o usuário entre uma segunda vez.
 
 ![Imagem mostrando o processo de logon de um suplemento](../images/sso-for-office-addins.png)
 
-## <a name="preview-status"></a>Status de visualização
-
-A API de logon único tem suporte somente na visualização. Está disponível para os desenvolvedores para experimentação; mas não deve ser usado em um suplemento de produção. Além disso, os suplementos que usam o SSO não são aceitos no [AppSource](https://appsource.microsoft.com).
-
-O SSO requer uma assinatura do Microsoft 365. Você deve usar o build e a versão mensal mais recente do canal Insiders. É necessário ingressar no programa Office Insider para obter essa versão. Para saber mais, confira a página [Seja um Office Insider](https://insider.office.com). Observe que, quando um build é promovido ao Canal Semestral de produção, o suporte para recursos de visualização, como o SSO, é desativado para esse build.
-
-Nem todos os aplicativos do Office oferecem suporte a visualização de SSO. Está disponível no Word, Excel, Outlook e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md).
-
 ## <a name="requirements-and-best-practices"></a>Requisitos e as práticas recomendadas
-
-> [!NOTE]
-> [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
 
 Se você estiver trabalhando com um suplemento do **Outlook**, certifique-se de habilitar a Autenticação Moderna para a locação do Microsoft 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
@@ -112,9 +102,9 @@ Aqui está um exemplo simples de uma chamada para `getAccessToken`.
 ```js
 async function getGraphData() {
     try {
-        let bootstrapToken = await OfficeRuntime.auth.getAccessToken({ allowSignInPrompt: true, forMSGraphAccess: true });
+        let bootstrapToken = await OfficeRuntime.auth.getAccessToken();
 
-        // The /api/values controller will make the token exchange and use the
+        // The /api/DoSomething controller will make the token exchange and use the
         // access token it gets back to make the call to MS Graph.
         getData("/api/DoSomething", bootstrapToken);
     }
@@ -151,7 +141,7 @@ $.ajax({
 
 #### <a name="when-to-call-the-method"></a>Quando chamar o método
 
-Se o seu suplemento não puder ser usado quando nenhum usuário estiver logado no Office, então será necessário chamar o `getAccessToken` *quando o suplemento for iniciado* e passar `allowSignInPrompt: true` no parâmetro de `options` do `getAccessToken`.
+Se o seu suplemento não puder ser usado quando não houver usuário conectado ao Office, você deve chamar `getAccessToken` *quando o suplemento for iniciado* e passar `allowSignInPrompt: true` no `options` parâmetro `getAccessToken`. Por exemplo: `OfficeRuntime.auth.getAccessToken( { allowSignInPrompt: true });`
 
 Se o complemento tiver alguma funcionalidade que não exija um usuário conectado, então chame `getAccessToken` * quando o usuário fizer uma ação que exija acesso a um usuário logado*. Não há uma degradação significativa do desempenho com chamadas redundantes de `getAccessToken` porque o Office armazena em cache o token de inicialização e o reutilizará, até que ele expire, sem fazer outra chamada para o AAD v. Ponto de extremidade 2.0 sempre que `getAccessToken` for chamado. Portanto, você pode adicionar chamadas de `getAccessToken` para todas as funções e manipuladores que iniciam uma ação onde o token é necessário.
 

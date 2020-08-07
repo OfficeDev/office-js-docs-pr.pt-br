@@ -1,14 +1,14 @@
 ---
 title: Visão geral da autenticação e autorização nos Suplementos do Office
 description: Exija que os usuários autentiquem o logon nos aplicativos Web e suplementos do Office.
-ms.date: 07/07/2020
+ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: b30e75fd37ec642f1f5a168b658e3770c15e166d
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: ba3d0aa11f8fa6537f444c063809c89c79ea7b2b
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159553"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573144"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Visão geral da autenticação e autorização nos Suplementos do Office
 
@@ -18,7 +18,7 @@ Seu suplemento também pode obter consentimento do usuário para acessar seus da
 
 Há duas maneiras de realizar essas autenticações.
 
-- **Logon único do Office (SSO)**: Um sistema, * que está atualmente no modo de visualização.*, permite que o logon do usuário do Office funcione também como um logon no suplemento. Opcionalmente, o suplemento também pode usar as credenciais do usuário do Office para autorizar o suplemento ao Microsoft Graph. (As fontes que não são da Microsoft não podem ser acessadas por este sistema.)
+- **O Logon Único do Office(SSO)**: Um sistema que permite que o login do usuário no Office também funcione como um login para o suplemento. Opcionalmente, o suplemento também pode usar as credenciais do usuário do Office para autorizar o suplemento ao Microsoft Graph. (As fontes que não são da Microsoft não podem ser acessadas por este sistema.)
 - **Autenticação e Autorização de Aplicativos Web com o Azure Active Directory**: Não é algo novo ou especial. É apenas a maneira como o suplemento do Office (e outros aplicativos Web) autenticavam os usuários e aplicativos autorizados antes de haver um sistema de SSO do Office e ainda é usado em situações em que o SSO do Office não pode.
 
 O fluxograma a seguir mostra as decisões que você precisa tomar como desenvolvedor de suplemento. Os detalhes estão incluídos mais adiante neste artigo.

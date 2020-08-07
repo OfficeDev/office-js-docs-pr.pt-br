@@ -1,17 +1,17 @@
 ---
-title: Use o gerador Yeoman para criar um Suplemento do Office que use SSO (prévia)
-description: Use o gerador Yeoman para criar um Suplemento do Office com Node.js que use logon único (prévia).
-ms.date: 02/20/2020
+title: Use o gerador Yeoman para criar um Suplemento do Office que utilize o SSO
+description: Use o gerador Yeoman para construir um Suplemento Office Node.js que utilize o logon único.
+ms.date: 07/30/2020
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: 7b6c6121a7a0f943a8c86276bad31f06de555b79
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: abc3c0ca7fb5068bf2964e4809970fb2ea86d5bf
+ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159372"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "46573228"
 ---
-# <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on-preview"></a>Use o gerador Yeoman para criar um Suplemento do Office que use logon único (prévia)
+# <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on"></a>Use o gerador Yeoman para criar um Suplemento do Office que utilize o logon único.
 
 Neste artigo, você seguirá pelo processo de uso do gerador Yeoman para criar um Suplemento do Office para Excel, Outlook, Word ou PowerPoint que usa o logon único (SSO) sempre que possível, e usa um método alternativo de autenticação do usuário quando não há suporte ao SSO.
 
@@ -31,8 +31,6 @@ O gerador Yeoman simplifica o processo de criação de um suplemento de SSO, aut
     ```
 
     [!include[note to update Yeoman generator](../includes/note-yeoman-generator-update.md)]
-
-[!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
 * Se você estiver usando um Mac e não tiver a CLI do Azure instalada no computador, instale o [Homebrew](https://brew.sh/). O script de configuração do SSO executado durante o início rápido usará o Homebrew para instalar a CLI do Azure e, em seguida, usará a CLI do Azure para configurar o SSO no Azure.
 
