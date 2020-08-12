@@ -3,12 +3,12 @@ title: Elemento SourceLocation no arquivo de manifesto
 description: O elemento SourceLocation especifica os locais do arquivo de origem para o suplemento do Office.
 ms.date: 05/12/2020
 localization_priority: Normal
-ms.openlocfilehash: 9af2337263314bec5ce04eb0d22626ab368c19ef
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 447adb7df7d0c59305fe5046357959fcd7824735
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608723"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641400"
 ---
 # <a name="sourcelocation-element"></a>Elemento SourceLocation
 
@@ -34,6 +34,6 @@ Especifica os locais do arquivo de origem para o suplemento do Office como uma U
 
 ## <a name="attributes"></a>Atributos
 
-|**Atributo**|**Tipo**|**Obrigatório**|**Descrição**|
+|Atributo|Tipo|Obrigatório|Descrição|
 |:-----|:-----|:-----|:-----|
 |DefaultValue|URL|obrigatório|Especifica o valor padrão para essa configuração para a localidade especificada no elemento [DefaultLocale](defaultlocale.md).|

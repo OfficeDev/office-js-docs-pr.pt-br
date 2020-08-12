@@ -3,12 +3,12 @@ title: Elemento ExtensionPoint no arquivo de manifesto
 description: Define onde um suplemento expõe a funcionalidade na interface de usuário do Office.
 ms.date: 05/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 44824e0c74b35105833f1f05cdda87bc873a4427
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 7b602f81927da34a948b1762d7b91608963d2e25
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094453"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641386"
 ---
 # <a name="extensionpoint-element"></a>Elemento ExtensionPoint
 
@@ -71,7 +71,7 @@ Os exemplos a seguir mostram como usar o elemento **ExtensionPoint** com os valo
 
 #### <a name="child-elements"></a>Elementos filho
  
-|**Elemento**|**Descrição**|
+|Elemento|Descrição|
 |:-----|:-----|
 |**CustomTab**|Obrigatório se você quiser adicionar uma guia personalizada à faixa de opções (usando **PrimaryCommandSurface**). Se você usar o elemento **CustomTab**, o elemento **OfficeTab** não poderá ser usado. O atributo **id** é obrigatório. |
 |**OfficeTab**|Obrigatório se você deseja estender uma guia padrão da faixa de opções do aplicativo do Office (usando **PrimaryCommandSurface**). Se você usar o elemento **OfficeTab**, o elemento **CustomTab** não poderá ser usado. Para saber mais, confira [OfficeTab](officetab.md).|

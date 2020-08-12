@@ -3,12 +3,12 @@ title: Elemento MobileFormFactor no arquivo de manifesto
 description: O elemento MobileFormFactor especifica as configurações do fator de formulário móvel para um suplemento.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 64a7681ca23becf42af1ba435aae4d509e6ad1ba
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5e52e66a2b97a32a19d42a4938dbeaed8f367478
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612224"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641470"
 ---
 # <a name="mobileformfactor-element"></a>Elemento MobileFormFactor
 
@@ -20,8 +20,8 @@ O elemento **MobileFormFactor** é definido no esquema VersionOverrides 1.1. O e
 
 ## <a name="child-elements"></a>Elementos filho
 
-| Elemento                               | Obrigatório | Descrição  |
-|:--------------------------------------|:--------:|:-------------|
+| Elemento                             | Obrigatório | Descrição  |
+|:------------------------------------|:--------:|:-------------|
 | [ExtensionPoint](extensionpoint.md) | Sim      | Define onde um suplemento expõe a funcionalidade. |
 | [FunctionFile](functionfile.md)     | Sim      | Uma URL para um arquivo que contém funções JavaScript.|
 
@@ -36,7 +36,7 @@ O elemento **MobileFormFactor** é definido no esquema VersionOverrides 1.1. O e
       <FunctionFile resid="residUILessFunctionFileUrl" />
       <ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
         <!-- information on this extension point -->
-      </ExtensionPoint> 
+      </ExtensionPoint>
       <!-- possibly more ExtensionPoint elements -->
     </MobileFormFactor>
   </Host>

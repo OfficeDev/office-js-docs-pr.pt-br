@@ -3,12 +3,12 @@ title: Elemento Sets no arquivo de manifesto
 description: O elemento sets especifica o conjunto mínimo de API JavaScript do Office que o suplemento do Office exige para ativar.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 8c1c97bfc2934ecf3cc20b472b29a03805603729
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: bd8f8311bb06a8e9e98fc408aece6395ab5643b1
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608730"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641421"
 ---
 # <a name="sets-element"></a>Elemento Sets
 
@@ -34,7 +34,7 @@ Especifica o subconjunto mínimo da API JavaScript do Office que o suplemento do
 
 ## <a name="attributes"></a>Atributos
 
-|**Atributo**|**Tipo**|**Obrigatório**|**Descrição**|
+|Atributo|Tipo|Obrigatório|Descrição|
 |:-----|:-----|:-----|:-----|
 |DefaultMinVersion|cadeia de caracteres|opcional|Especifica o valor do atributo **MinVersion** padrão para todos os elementos do [conjunto](set.md) filho. O valor padrão é "1.1".|
 

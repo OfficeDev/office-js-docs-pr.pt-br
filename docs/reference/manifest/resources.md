@@ -3,12 +3,12 @@ title: Elemento Resources no arquivo de manifesto
 description: O elemento Recursos contém ícones, cadeias de caracteres e URLs para o nó VersionOverrides.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 717e3cecd32fbf2bdb806f7484cc954a86b82e3d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 0a528b05904ef65c3643aaebb9149eb2091e2287
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608744"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641267"
 ---
 # <a name="resources-element"></a>Elemento Resources
 
@@ -43,10 +43,10 @@ Os seguintes tamanhos adicionais também têm suporte, mas não são obrigatóri
 - 48x48
 - 64x64
 
-> [!IMPORTANT] 
-> O Outlook requer a capacidade de armazenar em cache os recursos de imagem para fins de desempenho. Por esse motivo, o servidor que hospeda um recurso de imagem não deve adicionar nenhuma diretriz CACHE-CONTROL ao cabeçalho da resposta. Isso fará com que o Outlook substitua automaticamente uma imagem padrão ou genérica.    
+> [!IMPORTANT]
+> O Outlook requer a capacidade de armazenar em cache os recursos de imagem para fins de desempenho. Por esse motivo, o servidor que hospeda um recurso de imagem não deve adicionar nenhuma diretriz CACHE-CONTROL ao cabeçalho da resposta. Isso fará com que o Outlook substitua automaticamente uma imagem padrão ou genérica.
 
-## <a name="resources-examples"></a>Exemplos de recursos 
+## <a name="resources-examples"></a>Exemplos de recursos
 
 ```XML
 <Resources>

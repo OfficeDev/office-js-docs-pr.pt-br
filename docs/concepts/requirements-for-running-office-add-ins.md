@@ -3,12 +3,12 @@ title: Requisitos para a execução de Suplementos do Office
 description: Saiba mais sobre os requisitos de cliente e servidor de que um usuário final precisa para executar suplementos do Office.
 ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: fa01decddcc7cc59945ad92912fabab90cc505f7
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 49e1799961a0367d9eaf00415375c98a42534ba9
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093480"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641225"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Requisitos para a execução de Suplementos do Office
 
@@ -29,7 +29,7 @@ Para todos os tipos de suplementos (suplementos de conteúdo, do Outlook e de pa
 > [!TIP]
 > Ao desenvolver e depurar um suplemento no Visual Studio, este implanta e executa os arquivos de página da Web do suplemento localmente com o IIS Express, e não exige um servidor Web adicional.
 
-Para suplementos e painel de tarefas e de conteúdo, nos aplicativos host do Office com suporte - Excel, PowerPoint, Project ou Word - você também precisa de um [catálogo de aplicativos](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) no SharePoint para carregar o arquivo de manifesto XML do suplemento.
+Para suplementos de conteúdo e de painel de tarefas, nos aplicativos host do Office com suporte-Excel, PowerPoint, Project ou Word-você também precisa de um [Catálogo de aplicativos](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) no SharePoint para carregar o arquivo de manifesto XML do suplemento ou você precisa implantar o suplemento usando a [implantação centralizada](../publish/centralized-deployment.md).
 
 Para testar e executar um suplemento do Outlook, a conta de email do Outlook do usuário deve residir no Exchange 2013 ou posterior, que está disponível no Microsoft 365, no Exchange Online ou por meio de uma instalação local. O usuário ou administrador instala os arquivos de manifesto para suplementos do Outlook nesse servidor.
 

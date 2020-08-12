@@ -3,12 +3,12 @@ title: Elemento OfficeApp no arquivo de manifesto
 description: O elemento OfficeApp é o elemento raiz de um manifesto de suplemento do Office.
 ms.date: 02/04/2020
 localization_priority: Normal
-ms.openlocfilehash: b6f3102a97794a19366b06734789e01fc4bc4f9d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 770c764db6d8d7d1d2e870e48437de7c8f887101
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611523"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641456"
 ---
 # <a name="officeapp-element"></a>Elemento OfficeApp
 
@@ -33,7 +33,7 @@ O elemento raiz no manifesto de um Suplemento do Office.
 
 ## <a name="must-contain"></a>Deve conter
 
-|**Element**|**Content**|**Email**|**TaskPane**|
+|Elemento|Conteúdo|Email|TaskPane|
 |:-----|:-----|:-----|:-----|
 |[Id](id.md)|x|x|x|
 |[Version](version.md)|x|x|x|
@@ -48,7 +48,7 @@ O elemento raiz no manifesto de um Suplemento do Office.
 
 ## <a name="can-contain"></a>Pode conter
 
-|**Elemento**|**Content**|**Email**|**TaskPane**|
+|Elemento|Conteúdo|Email|TaskPane|
 |:-----|:-----|:-----|:-----|
 |[AlternateId](alternateid.md)|x|x|x|
 |[IconUrl](iconurl.md)|x|x|x|
@@ -65,7 +65,7 @@ O elemento raiz no manifesto de um Suplemento do Office.
 
 ## <a name="attributes"></a>Atributos
 
-|||
+|Atributo|Descrição|
 |:-----|:-----|
 |xmlns|Define o namespace do manifesto do Suplemento do Office e o esquema da versão. Esse atributo deve ser sempre definido como `"http://schemas.microsoft.com/office/appforoffice/1.1"`|
 |xmlns: xsi|Define a instância XMLSchema. Esse atributo deve ser sempre definido como `"http://www.w3.org/2001/XMLSchema-instance"`|

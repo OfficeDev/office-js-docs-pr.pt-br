@@ -3,12 +3,12 @@ title: Elemento IconUrl no arquivo de manifesto
 description: O elemento IconUrl especifica a URL da imagem que representa o suplemento do Office no UX de inserção e na Office Store.
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 2ccfc2fc1d0a07f6d549f388bbb58e40e79a17d5
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b2c117f69259911bf4643eaddbbbcdf5fb502197
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611789"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641358"
 ---
 # <a name="iconurl-element"></a>Elemento IconUrl
 
@@ -28,7 +28,7 @@ Especifica a URL da imagem que é usada para representar o seu Suplemento do Off
 
 ## <a name="attributes"></a>Atributos
 
-|**Atributo**|**Tipo**|**Obrigatório**|**Descrição**|
+|Atributo|Tipo|Obrigatório|Descrição|
 |:-----|:-----|:-----|:-----|
 |DefaultValue|cadeia de caracteres|obrigatório|Especifica o valor padrão para essa configuração, expresso para a localidade especificada no elemento [DefaultLocale](defaultlocale.md).|
 

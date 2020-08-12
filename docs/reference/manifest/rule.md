@@ -3,12 +3,12 @@ title: Elemento Rule no arquivo de manifesto
 description: O elemento Rule especifica as regras de ativação que devem ser avaliadas para esse suplemento de email contextual.
 ms.date: 05/14/2020
 localization_priority: Normal
-ms.openlocfilehash: c4094cdf9e9006bbc49d180cb79845527461a543
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 79b97f2e442e9d8ce59d17467161b5b9b7a7252d
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608108"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641428"
 ---
 # <a name="rule-element"></a>Elemento Rule
 
@@ -128,5 +128,5 @@ Define uma coleção de regras e o operador lógico a ser usado ao avaliá-las.
 ## <a name="see-also"></a>Confira também
 
 - [Regras de ativação para suplementos do Outlook](../../outlook/activation-rules.md)
-- [Corresponder cadeias de caracteres em um item do Outlook como entidades conhecidas](../../outlook/match-strings-in-an-item-as-well-known-entities.md)    
+- [Corresponder cadeias de caracteres em um item do Outlook como entidades conhecidas](../../outlook/match-strings-in-an-item-as-well-known-entities.md)
 - [Usar regras de ativação de expressões regulares para mostrar um suplemento do Outlook](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)

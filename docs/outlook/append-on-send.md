@@ -1,17 +1,17 @@
 ---
-title: Implementar Append no Send no suplemento do Outlook (visualização)
+title: Implementar Append-on-Send no suplemento do Outlook (visualização)
 description: Saiba como implementar o recurso Append-on-Send em seu suplemento do Outlook.
 ms.topic: article
-ms.date: 05/26/2020
+ms.date: 08/07/2020
 localization_priority: Normal
-ms.openlocfilehash: b9c834778d68e50806da908732cd0c8663ec6680
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 2b97d65a0f1056257b9cf79eb23fabca10be3a78
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093984"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641498"
 ---
-# <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a>Implementar Append no Send no suplemento do Outlook (visualização)
+# <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a>Implementar Append-on-Send no suplemento do Outlook (visualização)
 
 Ao final deste passo a passo, você terá um suplemento do Outlook que pode inserir um aviso de isenção de responsabilidade quando uma mensagem for enviada.
 
@@ -137,6 +137,9 @@ Para esse cenário, em vez de executar a `action` função ao escolher o botão 
 ## <a name="implement-append-on-send-handling"></a>Implementar a manipulação de Append-on-Send
 
 Em seguida, implemente Append no evento Send.
+
+> [!IMPORTANT]
+> Se o suplemento também implementar o [tratamento de eventos ao enviar usando `ItemSend` ](outlook-on-send-addins.md), a chamada `AppendOnSendAsync` no manipulador de envio retornará um erro, pois esse cenário não é suportado.
 
 Para este cenário, você implementará o acréscimo de um aviso de isenção de responsabilidade ao item quando o usuário enviar.
 

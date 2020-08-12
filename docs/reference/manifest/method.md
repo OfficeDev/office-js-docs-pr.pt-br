@@ -3,12 +3,12 @@ title: Elemento Method no arquivo de manifesto
 description: O elemento Method especifica um método individual da API JavaScript do Office que seus suplementos do Office exigem para ativar.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: c3531475a920fd24ce8390170b5f4728d4dcd0e0
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 0e3e74a73a3422a7789e82d6f0e7a516bd795ca8
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611754"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641322"
 ---
 # <a name="method-element"></a>Elemento Method
 
@@ -28,7 +28,7 @@ Especifica um método individual da API JavaScript do Office que seu suplemento 
 
 ## <a name="attributes"></a>Atributos
 
-|**Atributo**|**Tipo**|**Obrigatório**|**Descrição**|
+|Atributo|Tipo|Obrigatório|Descrição|
 |:-----|:-----|:-----|:-----|
 |Nome|cadeia de caracteres|obrigatório|Especifica o nome do método necessário qualificado com seu objeto pai. Por exemplo, para especificar o `getSelectedDataAsync` método, você deve especificar `"Document.getSelectedDataAsync"` .|
 

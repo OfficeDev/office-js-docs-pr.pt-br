@@ -3,12 +3,12 @@ title: Estender funções personalizadas com funções definidas pelo usuário X
 description: Habilitar a compatibilidade com as funções definidas pelo usuário do Excel XLL que possuem funcionalidade equivalente às suas funções personalizadas
 ms.date: 04/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 23fd1e78d3a570a0f13b85559ae34b887d92e2ea
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 036421700c0415e5f0599b5917cdebb298c2c4fa
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093431"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641232"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>Estender funções personalizadas com funções definidas pelo usuário XLL
 
@@ -19,7 +19,7 @@ Se você tiver os XLLs do Excel existentes, poderá criar funções personalizad
 > - Excel Online
 > - Excel no Windows (versão 1904 ou posterior)
 > - Excel no Mac (versão 13,329 ou posterior)
-> 
+>
 > Para usar o suplemento de COM e a compatibilidade do XLL UDF no Excel na Web, faça logon usando sua assinatura do Microsoft 365 ou uma [conta da Microsoft](https://account.microsoft.com/account). Se você ainda não tem uma assinatura do Microsoft 365, é possível uma assinatura gratuita, de 90 dias, redimensionada para o Microsoft 365, participando do [programa de desenvolvedor do microsoft 365](https://developer.microsoft.com/office/dev-program).
 
 ## <a name="specify-equivalent-xll-in-the-manifest"></a>Especificar o XLL equivalente no manifesto
@@ -58,15 +58,15 @@ A tabela a seguir compara os recursos nas funções de XLL definidas pelo usuár
 
 |         |Função de XLL definida pelo usuário |Funções personalizadas compatíveis com XLL |Função personalizada de suplemento do Excel |
 |---------|---------|---------|---------|
-| Plataformas compatíveis | Windows | Windows, macOS, navegador da Web | Windows, macOS, navegador da Web |
-| Formatos de arquivo com suporte | XLSX, XLSB, XLSM, XLS | XLSX, XLSB, XLSM | XLSX, XLSB, XLSM |
-| Preenchimento automático de fórmula | Não | Sim | Sim |
-| Streaming | Possível via xlfRTD e o retorno de chamada XLL. | Não | Sim |
-| Localização de funções | Não | Não. O nome e a ID devem corresponder às funções de XLL existentes. | Sim |
-| Funções voláteis | Sim | Sim | Sim |
-| Suporte para recálculo de vários encadeamentos | Sim | Sim | Sim |
-| Comportamento de cálculo | Nenhuma interface do usuário. O Excel pode não responder durante o cálculo. | Os usuários verão #BUSY! até que um resultado seja retornado. | Os usuários verão #BUSY! até que um resultado seja retornado. |
-| Conjuntos de requisitos | N/D | CustomFunctions 1,1 e posterior | CustomFunctions 1,1 e posterior |
+| **Plataformas compatíveis** | Windows | Windows, macOS, navegador da Web | Windows, macOS, navegador da Web |
+| **Formatos de arquivo com suporte** | XLSX, XLSB, XLSM, XLS | XLSX, XLSB, XLSM | XLSX, XLSB, XLSM |
+| **Preenchimento automático de fórmula** | Não | Sim | Sim |
+| **Streaming** | Possível via xlfRTD e o retorno de chamada XLL. | Não | Sim |
+| **Localização de funções** | Não | Não. O nome e a ID devem corresponder às funções de XLL existentes. | Sim |
+| **Funções voláteis** | Sim | Sim | Sim |
+| **Suporte para recálculo de vários encadeamentos** | Sim | Sim | Sim |
+| **Comportamento de cálculo** | Nenhuma interface do usuário. O Excel pode não responder durante o cálculo. | Os usuários verão #BUSY! até que um resultado seja retornado. | Os usuários verão #BUSY! até que um resultado seja retornado. |
+| **Conjuntos de requisitos** | N/A | CustomFunctions 1,1 e posterior | CustomFunctions 1,1 e posterior |
 
 ## <a name="see-also"></a>Confira também
 

@@ -3,12 +3,12 @@ title: Criar um Suplemento do Office com ASP.NET que use logon único
 description: Um guia passo a passo sobre como criar (ou converter) um suplemento do Office com um back-end do ASP.NET para usar o logon único (SSO).
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 8627c2a3d54d1c45672f3af1336e3c2b891ac055
-ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
+ms.openlocfilehash: 5556f8486529129e5f73649722ed919899e5d87e
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "46573179"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641288"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>Criar um Suplemento do Office com ASP.NET que use logon único
 
@@ -16,7 +16,6 @@ Quando os usuários estão conectados ao Office, o seu suplemento pode usar as m
 Este artigo orienta você durante o processo de habilitação do logon único (SSO) em um suplemento que é criado com o ASP.NET.
 
 > [!NOTE]
-
 > Para ler um artigo semelhante sobre um suplemento baseado em Node.js, confira [Criar um Suplemento do Office com Node.js que use logon único](create-sso-office-add-ins-nodejs.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos

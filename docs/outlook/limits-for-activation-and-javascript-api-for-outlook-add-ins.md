@@ -3,12 +3,12 @@ title: Limites para ativação e uso da API em suplementos do Outlook
 description: Você deve estar ciente das determinadas diretrizes de ativação e de uso da API e implementar seus suplementos dentro desses limites.
 ms.date: 05/08/2020
 localization_priority: Normal
-ms.openlocfilehash: 90260e4edd2059e98bc8618c6dcb6308424f43c9
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7659b5292187f10b3176460c162405c7af249977
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609066"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641393"
 ---
 # <a name="limits-for-activation-and-javascript-api-for-outlook-add-ins"></a>Limites para ativação e API JavaScript para suplementos do Outlook
 
@@ -43,7 +43,7 @@ A tabela 1 lista os limites e descreve as diferenças no suporte a expressões r
 |Cliente avançado do Outlook|Outlook na Web ou em dispositivos móveis|
 |:-----|:-----|
 |Usa o mecanismo de expressões regulares C++ fornecido como parte da biblioteca de modelo padrão do Visual Studio. Esse mecanismo é compatível com as normas ECMAScript 5. |Usa a avaliação da expressão regular que faz parte do JavaScript, é fornecida pelo navegador e dá suporte a um subconjunto dos ECMAScript 5.|
-|Devido aos diferentes mecanismos de Regex, espera-se que um Regex que inclua uma classe de caracteres personalizada com base em classes de caracteres predefinidas possa retornar resultados diferentes em um cliente avançado do Outlook do que no Outlook na Web ou em dispositivos móveis.<br/><br/>Por exemplo, a regex `[\s\S]{0,100}` corresponde a qualquer número, entre 0 e 100, de caracteres únicos que sejam um espaço em branco ou um espaço não em branco. Essa Regex retorna resultados diferentes em um cliente avançado do Outlook do que o Outlook na Web e dispositivos móveis.<br/><br/>Você deve reescrever a regex como `(\s\|\S){0,100}` como solução alternativa. Essa solução alternativa para a regex corresponde a qualquer número, entre 0 e 100, de espaço em branco ou não espaço em branco.<br/><br/>Você deve testar cada regex exaustivamente em cada host do Outlook e, se uma regex retornar resultados diferentes, reescreva-a. |Você deve testar cada regex exaustivamente em cada host do Outlook e se uma regex retornar resultados diferentes, reescreva-a.|
+|Devido aos diferentes mecanismos de Regex, espera-se que um Regex que inclua uma classe de caracteres personalizada com base em classes de caracteres predefinidas possa retornar resultados diferentes em um cliente avançado do Outlook do que no Outlook na Web ou em dispositivos móveis.<br/><br/>Por exemplo, a regex `[\s\S]{0,100}` corresponde a qualquer número, entre 0 e 100, de caracteres únicos que sejam um espaço em branco ou um espaço não em branco. Essa Regex retorna resultados diferentes em um cliente avançado do Outlook do que o Outlook na Web e dispositivos móveis.<br/><br/>Você deve reescrever a regex como `(\s\|\S){0,100}` como solução alternativa. Essa solução alternativa para a regex corresponde a qualquer número, entre 0 e 100, de espaço em branco ou não espaço em branco.<br/><br/>Você deve testar cada regex exaustivamente em cada host do Outlook e se uma regex retornar resultados diferentes, reescreva-a. |Você deve testar cada regex exaustivamente em cada host do Outlook e se uma regex retornar resultados diferentes, reescreva-a.|
 |Por padrão, limita a avaliação de todas as expressões regulares de um suplemento para um segundo. Ultrapassar esse limite pode causar a reavaliação por até três vezes. Além do limite de reavaliação, um cliente avançado do Outlook desabilita o suplemento para não buscar a mesma caixa de correio em outros hosts do Outlook.<br/><br/>Os administradores podem substituir esses limites de avaliação usando `OutlookActivationAlertThreshold` as `OutlookActivationManagerRetryLimit` chaves do registro e.|Não dão suporte às mesmas configurações de registro ou monitoramento de recursos de um cliente avançado do Outlook. Mas suplementos com expressões regulares que exigem muito tempo de avaliação em um cliente avançado do Outlook estão desabilitados para a mesma caixa de correio em todos os hosts do Outlook.|
 
 A Tabela 2 lista os limites e descreve as diferenças na parte do corpo do item a que cada Outlook aplica uma expressão regular. Alguns desses limites dependem do tipo de dispositivo e do corpo do item se a expressão regular é aplicada no corpo do item.
@@ -52,9 +52,9 @@ A Tabela 2 lista os limites e descreve as diferenças na parte do corpo do item 
 
 ||Cliente avançado do Outlook|Outlook em dispositivos móveis|Outlook na Web|
 |:-----|:-----|:-----|:-----|
-|Fator forma|Qualquer dispositivo compatível|Smartphones Android, iPad ou iPhone|Qualquer dispositivo com suporte diferente dos smartphones Android, iPad e iPhone|
-|Corpo do item de texto sem formatação|Aplica a regex no primeiro 1 MB de dados do corpo, mas não no restante do corpo acima desse limite.|Ativa o suplemento somente se o corpo ficar com menos de 16 mil caracteres.|Ativa o suplemento somente se o corpo ficar com menos de 500 mil caracteres.|
-|Corpo do item HTML|Aplica a regex nos primeiros 512 KB de dados do corpo, mas não no restante do corpo acima desse limite. (O número real de caracteres depende da codificação, que pode variar de 1 a 4 bytes por caractere.)|Aplica a regex nos primeiros 64.000 KB de dados do corpo (incluindo caracteres de marca HTML), mas não no restante do corpo acima desse limite.|Ativa o suplemento somente se o corpo ficar com menos de 500 mil caracteres.|
+|**Fator forma**|Qualquer dispositivo compatível|Smartphones Android, iPad ou iPhone|Qualquer dispositivo com suporte diferente dos smartphones Android, iPad e iPhone|
+|**Corpo do item de texto sem formatação**|Aplica a regex no primeiro 1 MB de dados do corpo, mas não no restante do corpo acima desse limite.|Ativa o suplemento somente se o corpo ficar com menos de 16 mil caracteres.|Ativa o suplemento somente se o corpo ficar com menos de 500 mil caracteres.|
+|**Corpo do item HTML**|Aplica a regex nos primeiros 512 KB de dados do corpo, mas não no restante do corpo acima desse limite. (O número real de caracteres depende da codificação, que pode variar de 1 a 4 bytes por caractere.)|Aplica a regex nos primeiros 64.000 KB de dados do corpo (incluindo caracteres de marca HTML), mas não no restante do corpo acima desse limite.|Ativa o suplemento somente se o corpo ficar com menos de 500 mil caracteres.|
 
 A Tabela 3 lista os limites e descreve as diferenças entre as correspondências que cada um dos hosts do Outlook retorna depois de avaliar uma expressão regular. O suporte independe de um tipo de dispositivo específico, mas pode depender do tipo do corpo do item se a expressão regular é aplicada ao corpo do item.
 
@@ -62,9 +62,9 @@ A Tabela 3 lista os limites e descreve as diferenças entre as correspondências
 
 ||Cliente avançado do Outlook|Outlook na Web ou em dispositivos móveis|
 |:-----|:-----|:-----|
-|Ordem das correspondências retornadas|Suponha `getRegExMatches` que as correspondências da mesma expressão regular aplicada no mesmo item sejam diferentes em um cliente avançado do Outlook do que no Outlook na Web ou em dispositivos móveis.|Supor `getRegExMatches` retorna correspondências em ordem diferente em um cliente avançado do Outlook e no Outlook na Web ou em dispositivos móveis.|
-|Corpo do item de texto sem formatação|`getRegExMatches`retorna qualquer correspondência com até 1.536 (1,5 KB) de caracteres, para um máximo de 50 correspondências.<br/><br/>**Observação**: `getRegExMatches` não retorna correspondências em qualquer ordem específica na matriz retornada. Em geral, suponha que a ordem de correspondências em um cliente avançado do Outlook para a mesma expressão regular aplicada no mesmo item seja diferente da do Outlook na Web e dispositivos móveis.|`getRegExMatches`retorna qualquer correspondência com até 3.072 (3 KB) caracteres, para um máximo de 50 correspondências.|
-|Corpo do item HTML|`getRegExMatches`retorna qualquer correspondência com até 3.072 (3 KB) caracteres, para um máximo de 50 correspondências.<br/> <br/> **Observação**: `getRegExMatches` não retorna correspondências em qualquer ordem específica na matriz retornada. Em geral, suponha que a ordem de correspondências em um cliente avançado do Outlook para a mesma expressão regular aplicada no mesmo item seja diferente da do Outlook na Web e dispositivos móveis.|`getRegExMatches`retorna qualquer correspondência com até 3.072 (3 KB) caracteres, para um máximo de 50 correspondências.|
+|**Ordem das correspondências retornadas**|Suponha `getRegExMatches` que as correspondências da mesma expressão regular aplicada no mesmo item sejam diferentes em um cliente avançado do Outlook do que no Outlook na Web ou em dispositivos móveis.|Supor `getRegExMatches` retorna correspondências em ordem diferente em um cliente avançado do Outlook e no Outlook na Web ou em dispositivos móveis.|
+|**Corpo do item de texto sem formatação**|`getRegExMatches`retorna qualquer correspondência com até 1.536 (1,5 KB) de caracteres, para um máximo de 50 correspondências.<br/><br/>**Observação**: `getRegExMatches` não retorna correspondências em qualquer ordem específica na matriz retornada. Em geral, suponha que a ordem de correspondências em um cliente avançado do Outlook para a mesma expressão regular aplicada no mesmo item seja diferente da do Outlook na Web e dispositivos móveis.|`getRegExMatches`retorna qualquer correspondência com até 3.072 (3 KB) caracteres, para um máximo de 50 correspondências.|
+|**Corpo do item HTML**|`getRegExMatches`retorna qualquer correspondência com até 3.072 (3 KB) caracteres, para um máximo de 50 correspondências.<br/> <br/> **Observação**: `getRegExMatches` não retorna correspondências em qualquer ordem específica na matriz retornada. Em geral, suponha que a ordem de correspondências em um cliente avançado do Outlook para a mesma expressão regular aplicada no mesmo item seja diferente da do Outlook na Web e dispositivos móveis.|`getRegExMatches`retorna qualquer correspondência com até 3.072 (3 KB) caracteres, para um máximo de 50 correspondências.|
 
 ## <a name="limits-for-javascript-api"></a>Limites para a API JavaScript
 

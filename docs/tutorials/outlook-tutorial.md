@@ -4,12 +4,12 @@ description: Neste tutorial, você criará um suplemento do Outlook que insere G
 ms.date: 07/07/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 22b06d0c455cfcf0a4331976a4e23e0eeb123415
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: e14cb90c79b873cfc3ebd948563941f1f9738855
+ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093501"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "46641505"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Tutorial: criar uma mensagem para compor o suplemento do Outlook
 
@@ -162,7 +162,7 @@ Antes de prosseguir, vamos testar o suplemento básico que criou o gerador para 
 1. Execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).
 
     ```command&nbsp;line
-    npm run dev-server
+    npm start
     ```
 
 1. Siga as instruções em [Realizar sideload nos Suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md) para realizar o sideload do arquivo **manifest.xml** que está localizado no diretório raiz do projeto.
