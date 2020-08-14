@@ -1,15 +1,15 @@
 ---
 title: 'Tutorial: criar uma mensagem para compor o suplemento do Outlook'
 description: Neste tutorial, você criará um suplemento do Outlook que insere Gists do GitHub no corpo de uma nova mensagem.
-ms.date: 07/07/2020
+ms.date: 08/11/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: e14cb90c79b873cfc3ebd948563941f1f9738855
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: 3742e492c5d59b706508d2f9d9c2f3bdfc147bb8
+ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641505"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "46672733"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Tutorial: criar uma mensagem para compor o suplemento do Outlook
 
@@ -599,7 +599,7 @@ Por fim, abra o arquivo **webpack.config.js** no diretório raiz do projeto e co
 5. Execute o seguinte comando para iniciar o servidor Web.
 
     ```command&nbsp;line
-    npm run dev-server
+    npm start
     ```
 
 ### <a name="fetch-data-from-github"></a>Buscar dados do GitHub
@@ -900,7 +900,7 @@ function buildBodyContent(gist, callback) {
 
 ### <a name="test-the-button"></a>Testar o botão
 
-Salvar todas as suas alterações e executar `npm run dev-server` do prompt de comando, se o servidor não estiver sendo executado. Conclua as seguintes etapas para testar o botão**Inserir Gist Padrão**.
+Salvar todas as suas alterações e executar `npm start` do prompt de comando, se o servidor não estiver sendo executado. Conclua as seguintes etapas para testar o botão**Inserir Gist Padrão**.
 
 1. Abra o Outlook e redija uma nova mensagem.
 
@@ -1261,7 +1261,7 @@ No projeto que você criou, o painel de tarefas JavaScript é especificado no ar
 
 ### <a name="test-the-button"></a>Testar o botão
 
-Salvar todas as suas alterações e executar `npm run dev-server` do prompt de comando, se o servidor não estiver sendo executado. Conclua as seguintes etapas para testar o botão **Inserir gist** botão.
+Salvar todas as suas alterações e executar `npm start` do prompt de comando, se o servidor não estiver sendo executado. Conclua as seguintes etapas para testar o botão **Inserir gist** botão.
 
 1. Abra o Outlook e redija uma nova mensagem.
 

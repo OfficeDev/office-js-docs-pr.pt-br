@@ -1,15 +1,15 @@
 ---
 title: Criar seu primeiro suplemento do Outlook
 description: Saiba como criar um Suplemento do Outlook simples usando a API JS do Office.
-ms.date: 07/27/2020
+ms.date: 08/11/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: ba1b3ace97c6fcf380f013b3b394eabe8b9db8b8
-ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
+ms.openlocfilehash: 6ed50b52e0f4d5667e835c875851ed14c68bfe49
+ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "46530496"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "46672712"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Criar seu primeiro suplemento do Outlook
 
@@ -101,7 +101,7 @@ O projeto de suplemento que você criou com o gerador do Yeoman contém um exemp
 1. Execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).
 
     ```command&nbsp;line
-    npm run dev-server
+    npm start
     ```
 
 1. Siga as instruções [Realizar sideload dos suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md)para realizar o sideload do suplemento do Outlook.

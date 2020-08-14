@@ -1,18 +1,18 @@
 ---
 title: Códigos de erro da API JavaScript do Office
 description: Este artigo documenta as mensagens de erro que você pode encontrar ao usar a API JavaScript do Office.
-ms.date: 03/10/2020
+ms.date: 08/11/2020
 localization_priority: Normal
-ms.openlocfilehash: 2c2df8be76fe9515f0cc23955a199f92e64110a8
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 54f92ac7919cce0f2d8728e9c20677b3cf8cf262
+ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608807"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "46672698"
 ---
 # <a name="office-javascript-api-error-codes"></a>Códigos de erro da API JavaScript do Office
 
-Este artigo documenta as mensagens de erro que você pode encontrar ao usar a API JavaScript do Office (Office. js).
+Este artigo documenta as mensagens de erro que você pode encontrar ao usar a API JavaScript do Office (Office.js).
 
 **Aplica-se a:** Suplementos do Office | Suplementos do SharePoint | Excel | Outlook | PowerPoint | Project | Word
 
@@ -30,7 +30,7 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 |1005|Erro de Leitura de Dados|Os valores startRow ou startColumn especificados são inválidos.|O usuário fornece valores inválidos de startRow ou startCol.|
 |1006|Erro de Leitura de Dados|Os parâmetros de coordenadas não podem ser usados com o tipo de coerção “Table” quando a tabela contiver células mescladas.|O usuário tenta obter dados parciais de uma tabela não uniforme (ou seja, uma tabela que possui células mescladas). |
 |1007|Erro de Leitura de Dados|O tamanho do documento é muito grande.|O usuário tentar obter um documento maior do que o tamanho compatível no momento.|
-|1008|Erro de Leitura de Dados|O conjunto de dados solicitado é muito grande.|O usuário solicita a leitura de dados além dos limites de dados definidos pelos suplementos host.|
+|1008|Erro de Leitura de Dados|O conjunto de dados solicitado é muito grande.|O usuário solicita a leitura de dados além dos limites de dados definidos pelo aplicativo do Office.|
 |1009|Erro de Leitura de Dados|O tipo de arquivo especificado não tem suporte.|O usuário envia um tipo de arquivo inválido.|
 |2000|Erro de Gravação de Dados|Não há suporte para o tipo de objeto de dados fornecido. |Um objeto de dados sem suporte foi fornecido.|
 |2001|Erro de Gravação de Dados|Não é possível gravar na seleção atual.|Não há suporte para a seleção atual do usuário para uma operação de gravação. (Por exemplo, quando o usuário seleciona uma imagem.)|
@@ -40,8 +40,8 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 |2005|Erro de Gravação de Dados|Os valores startRow ou startColumn especificados são inválidos.|O usuário fornece valores inválidos de startRow ou startCol.|
 |2006|Erro de formato inválido|O formato do objeto de dados especificado não é válido.|O desenvolvedor de solução fornece uma cadeia de caracteres HTML ou OOXML inválida, uma cadeia de caracteres HTML mal formada ou uma cadeia de caracteres OOXML inválida.|
 |2007|Objeto de dados inválido|O tipo do objeto de dados especificado não é compatível com a seleção atual.|O desenvolvedor da solução fornece um objeto de dados incompatível com o tipo de coerção especificado.|
-|2008|Erro de Gravação de Dados|A definir|TBD|
-|2009|Erro de Gravação de Dados|O objeto de dados especificado é muito grande.|O usuário tenta definir dados além dos limites de dados definidos pelos suplementos do host.|
+|2008|Erro de Gravação de Dados|TBD|TBD|
+|2009|Erro de Gravação de Dados|O objeto de dados especificado é muito grande.|O usuário tenta definir dados além dos limites de dados definidos pelo aplicativo do Office.|
 |2010|Erro de Gravação de Dados|Os parâmetros de coordenadas não podem ser usados com o tipo de coerção Table quando a tabela contiver células mescladas.|O usuário tenta definir dados parciais de uma tabela não uniforme (ou seja, uma tabela que possui células mescladas).|
 |3000|Erro de Criação de Associação|Não é possível associar à seleção atual.|Não há suporte para a associação da seleção do usuário. (Por exemplo, o usuário está selecionando uma imagem ou outro objeto sem suporte.)|
 |3001|Erro de Criação de Associação|TBD|TBD|

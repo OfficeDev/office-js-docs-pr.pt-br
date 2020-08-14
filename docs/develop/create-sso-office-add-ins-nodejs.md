@@ -3,12 +3,12 @@ title: Crie um Suplemento do Office com Node.js que use logon único
 description: Aprenda a criar um suplemento baseado em node.js que usa o logon único do Office
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: fcd77f9cdf9ac817679b020fff887c975450e05d
-ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
+ms.openlocfilehash: 136d7c982d4eef4988e775f8235678c673169d5a
+ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "46573152"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "46672691"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>Crie um Suplemento do Office com Node.js que use logon único
 
@@ -196,11 +196,12 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 1. Substitua `TODO 1` pelo código a seguir. Sobre este código, observe:
 
     - `OfficeRuntime.auth.getAccessToken` instrui o Office a obter um token de bootstrap do Azure AD. Um token de bootstrap é semelhante a um token de ID, mas tem uma propriedade `scp` (Scope) com o valor `access-as-user`. Esse tipo de token pode ser trocado por um aplicativo Web para um token de acesso ao Microsoft Graph.
-    - Definir a opção `allowSignInPrompt`como verdadeira significa que, se nenhum usuário estiver conectado ao Office no momento, o Office abrirá uma solicitação de entrada pop-up.
+    - Definir a `allowSignInPrompt` opção como true significa que, se nenhum usuário estiver conectado ao Office no momento, o Office abrirá um prompt de entrada pop-up.
+    - A definição da `allowConsentPrompt` opção como true significa que, se o usuário não tiver sido remetido para permitir que o suplemento acesse o perfil AAD do usuário, o Office abrirá um prompt de consentimento. (O prompt permite que o usuário consentisse no perfil AAD do usuário, e não nos escopos do Microsoft Graph).
     - Definir a `forMSGraphAccess` opção como true indica ao Office que o suplemento pretende usar o token de inicialização para obter um token de acesso ao Microsoft Graph, em vez de apenas usá-lo como um token de ID. Se o administrador locatário não tiver concedido consentimento para o acesso do suplemento ao Microsoft Graph, `OfficeRuntime.auth.getAccessToken` retornará o erro **13012**. O suplemento pode responder voltando para um sistema alternativo de autorização. Isso é necessário porque o Office pode solicitar apenas consentimento para o perfil do Azure AD do usuário, não para escopos do Microsoft Graph. O sistema de autorização de fallback exige que o usuário entre novamente e o usuário *pode* ser solicitado a se concordar com escopos do Microsoft Graph. Portanto, a opção `forMSGraphAccess` garante que o suplemento não fará uma troca de tokens que falhará devido à falta de consentimento. Uma vez que você concedeu consentimento de administrador em uma etapa anterior, esse cenário não acontecerá para esse suplemento. No entanto, a opção é incluída aqui para ilustrar uma prática recomendada.
 
     ```javascript
-    let bootstrapToken = await OfficeRuntime.auth.getAccessToken({ allowSignInPrompt: true, forMSGraphAccess: true }); 
+    let bootstrapToken = await OfficeRuntime.auth.getAccessToken({ allowSignInPrompt: true, allowConsentPrompt: true, forMSGraphAccess: true }); 
     ```
 
 1. Substitua `TODO 2` pelo código a seguir. Você criará o método `getGraphToken` em uma etapa posterior.

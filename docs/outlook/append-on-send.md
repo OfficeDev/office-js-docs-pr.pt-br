@@ -2,14 +2,14 @@
 title: Implementar Append-on-Send no suplemento do Outlook (visualização)
 description: Saiba como implementar o recurso Append-on-Send em seu suplemento do Outlook.
 ms.topic: article
-ms.date: 08/07/2020
+ms.date: 08/11/2020
 localization_priority: Normal
-ms.openlocfilehash: 2b97d65a0f1056257b9cf79eb23fabca10be3a78
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: fbc2f11006d6f02d44365294476aee8aa3e262c7
+ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641498"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "46672726"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a>Implementar Append-on-Send no suplemento do Outlook (visualização)
 
@@ -182,7 +182,7 @@ Para este cenário, você implementará o acréscimo de um aviso de isenção de
 1. Execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor Web local será iniciado se ainda não estiver em execução.
 
     ```command&nbsp;line
-    npm run dev-server
+    npm start
     ```
 
 1. Siga as instruções em [Sideload suplementos do Outlook para teste](sideload-outlook-add-ins-for-testing.md).
