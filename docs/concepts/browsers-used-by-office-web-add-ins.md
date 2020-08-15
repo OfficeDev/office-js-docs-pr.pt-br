@@ -1,14 +1,14 @@
 ---
 title: Navegadores usados pelos Suplementos do Office
 description: Especifica como o sistema operacional e a versão do Office determinam o navegador que é usado pelos suplementos do Office.
-ms.date: 07/07/2020
+ms.date: 08/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 0cdb601da7625eb3cafdcd883192861938529e0d
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 53e3061f1729ac792e91a10e31bc9d0d908ab07b
+ms.sourcegitcommit: 3efa932b70035dde922929d207896e1a6007f620
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093438"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "46757356"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navegadores usados pelos Suplementos do Office
 
@@ -21,16 +21,19 @@ Qual navegador é usado depende do:
 
 A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sistemas operacionais.
 
-|**SO / Plataforma**|**Navegador**|
+|Opera|Versão do Office|O Edge WebView2 (baseado em Chromium) está instalado?|Navegador|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|Office na Web|O navegador no qual o Office está aberto.|
-|Mac|Safari|
-|iOS|Safari|
-|Android|Chrome|
-|Windows / Office 2013 sem assinatura ou posterior.|Internet Explorer 11|
-|Versão do Windows 10 < 1903 / Office 365|Internet Explorer 11|
-|Versão do Windows 10 >= 1903/Office 365 ver < 16.0.11629<sup>1</sup>|Internet Explorer 11|
-|Versão do Windows 10 >= 1903/Office 365 ver >= 16.0.11629<sup>1</sup>|Microsoft Edge<sup>2, 3</sup>|
+|qualquer|Office na Web|Não aplicável|O navegador no qual o Office está aberto.|
+|Mac|qualquer|Não aplicável|Safari|
+|iOS|qualquer|Não aplicável|Safari|
+|Android|qualquer|Não aplicável|Chrome|
+|Windows 7, 8,1, 10 | Office 2013 não inscrito ou posterior|Não importa|Internet Explorer 11|
+|Windows 7 | Microsoft 365| Não importa | Internet Explorer 11|
+|Windows 8,1,<br>Windows 10 ver. &nbsp; < &nbsp; 1903| Microsoft 365 | Não| Internet Explorer 11|
+|Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; < &nbsp; 16.0.11629<sup>1</sup>| Não importa|Internet Explorer 11|
+|Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.11629 &nbsp; _e_ &nbsp; < &nbsp; 16.0.13127.20082<sup>1</sup>| Não importa|Microsoft Edge<sup>2, 3</sup> com WebView original (EdgeHTML)|
+|Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.13127.20082<sup>1</sup>| Não |Microsoft Edge<sup>2, 3</sup> com WebView original (EdgeHTML)|
+|Windows 8.1<br>Windows 10| Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.13127.20082<sup>1</sup>| Sim|  Consulte a observação 4 abaixo. |
 
 <sup>1</sup> consulte a [página Histórico de atualizações](/officeupdates/update-history-office365-proplus-by-date) e como [encontrar sua versão e canal de atualização do cliente Office](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19) para obter mais detalhes.
 
@@ -38,6 +41,7 @@ A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sis
 
 <sup>3</sup> se o suplemento incluir o `Runtimes` elemento no manifesto, ele usará o Internet Explorer 11 independentemente da versão do Windows ou do Microsoft 365. Para obter mais informações, consulte [runtimes](../reference/manifest/runtimes.md).
 
+<sup>4</sup> o navegador usado para essa combinação de versões depende do canal de atualização da assinatura do Microsoft 365. Se o usuário estiver no [canal beta](https://insider.office.com/join/windows) (antigo canal de insider), o Office usa o Microsoft Edge com o WebView2 (baseado em Chromium). Para qualquer outro canal, o Office usa o Microsoft Edge com o WebView original (EdgeHTML). O suporte para WebView2 em outros canais é esperado no início de 2021.
 > [!IMPORTANT]
 > O Internet Explorer 11 não oferece suporte às versões do JavaScript posteriores a ES5. Se qualquer um dos usuários de suplemento tiverem plataformas com Internet Explorer 11, para que seja possível usar a sintaxe e os recursos do ECMAScript 2015 ou posterior, você precisará fazer o transpile do seu JavaScript para o ES5 ou usar um polyfill. Além disso, o Internet Explorer 11 não oferece suporte a alguns recursos do HTML5, como mídia, gravação e localização.
 
@@ -45,11 +49,7 @@ A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sis
 
 ### <a name="service-workers-are-not-working"></a>Os funcionários de serviço não estão funcionando
 
-Os suplementos do Office não dão suporte a trabalhadores de serviço no [Microsoft Edge WebView](/microsoft-edge/hosting/webview). Confira a [visão geral dos suplementos do Office](../overview/office-add-ins.md) para obter os recursos mais recentes suportados no controle de WebView de borda. Estamos trabalhando duro para trazer o novo [WebView2 de borda baseado em Chromium](/microsoft-edge/hosting/webview2) para a plataforma de suplementos do Office, que esperamos que seja compatível com os funcionários de serviço.
-
-### <a name="chromium-based-edge-is-installed-on-my-development-computer-but-my-add-in-does-not-use-it"></a>A borda baseada em Chromium está instalada no meu computador de desenvolvimento, mas meu suplemento não a usa
-
-O navegador base no [Microsoft Edge](https://support.microsoft.com/help/4501095/download-the-new-microsoft-edge-based-on-chromium) foi alterado para Chromium. A base mais antiga, chamada EdgeHTML, não é removida quando a borda baseada no Chromium é instalada. O Office ainda usará a base de EdgeHTML para suplementos até que uma compilação do Microsoft 365 que suporte o Chromium esteja instalada no computador. Esperamos que essas compilações sejam fornecidas no 2020. Eles provavelmente aparecerão no canal de insiders na primeira metade do ano.
+Os suplementos do Office não dão suporte a trabalhadores de serviço quando o [Microsoft Edge WebView](/microsoft-edge/hosting/webview) original é usado. Eles são compatíveis com o [WebView2 de borda baseado em Chromium](/microsoft-edge/hosting/webview2).
 
 ### <a name="scroll-bar-does-not-appear-in-task-pane"></a>Barra de rolagem não aparece no painel de tarefas
 

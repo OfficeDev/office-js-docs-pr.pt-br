@@ -1,2 +1,2 @@
 >[!NOTE]
-> A menos que você tenha uma razão específica para usar uma função sem interface do usuário, recomendamos o uso de funções personalizadas com um [tempo de execução compartilhado](../excel/configure-your-add-in-to-use-a-shared-runtime.md).
+> A menos que você tenha uma razão específica para usar uma função sem interface do usuário, recomendamos o uso de funções personalizadas com um [tempo de execução compartilhado](../excel/configure-your-add-in-to-use-a-shared-runtime.md). Observe também que o uso de um tempo de execução compartilhado significa que o suplemento usará o Internet Explorer 11, independentemente da versão do Windows ou do Microsoft 365. Para obter mais informações, consulte [runtimes](../reference/manifest/runtimes.md).
