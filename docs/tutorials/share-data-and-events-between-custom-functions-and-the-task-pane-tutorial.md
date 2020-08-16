@@ -1,15 +1,15 @@
 ---
 title: 'Tutorial: Compartilhar dados e eventos entre as funções personalizadas do Excel e do painel de tarefas'
 description: Aprenda como compartilhar dados e eventos no Excel entre as funções personalizadas e o painel de tarefas.
-ms.date: 05/17/2020
+ms.date: 08/13/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: a48d43270787648d8e5a53c885eab4b69cd8842e
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: e4dfb8afc57dc9590d47d927d1f540431d9c8838
+ms.sourcegitcommit: 3efa932b70035dde922929d207896e1a6007f620
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641148"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "46757377"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Tutorial: Compartilhar dados e eventos entre as funções personalizadas do Excel e do painel de tarefas
 
@@ -50,6 +50,9 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
          </Runtimes>
        <AllFormFactors>
    ```
+
+> [!NOTE]
+> Se seu suplemento inclui o elemento `Runtimes` no manifesto, ele utiliza o Internet Explorer 11 independentemente da versão do Windows ou do Microsoft 365. Para mais informações, consulte [Runtimes](../reference/manifest/runtimes.md).
 
 4. No elemento `<Page>`, altere o local de origem de **Functions.Page.Url** para **ContosoAddin.Url**.
 
