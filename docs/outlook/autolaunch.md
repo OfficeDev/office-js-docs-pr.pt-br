@@ -2,21 +2,24 @@
 title: Configurar seu suplemento do Outlook para ativação baseada em evento (visualização)
 description: Saiba como configurar seu suplemento do Outlook para ativação baseada em eventos.
 ms.topic: article
-ms.date: 08/11/2020
+ms.date: 08/18/2020
 localization_priority: Normal
-ms.openlocfilehash: f5df8c1efe5e1e5c4c83b1536e90d8f38729dcc3
-ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
+ms.openlocfilehash: 736573fb5ab5b50841348f55d89ae15e4d174a22
+ms.sourcegitcommit: e9f23a2857b90a7c17e3152292b548a13a90aa33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "46672719"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "46803748"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>Configurar seu suplemento do Outlook para ativação baseada em evento (visualização)
 
-Sem o recurso de ativação baseada em eventos, um usuário precisa iniciar explicitamente um suplemento para concluir suas tarefas. Este recurso permite que seu suplemento Execute tarefas com base em determinados eventos, especialmente para operações que se aplicam a todos os itens. Você também pode se integrar ao painel de tarefas e à funcionalidade sem interface do usuário. No momento, os eventos com suporte são os seguintes.
+Sem o recurso de ativação baseada em eventos, um usuário precisa iniciar explicitamente um suplemento para concluir suas tarefas. Este recurso permite que seu suplemento Execute tarefas com base em determinados eventos, especialmente para operações que se aplicam a todos os itens. Você também pode se integrar ao painel de tarefas e à funcionalidade sem interface do usuário. No momento, há suporte para os eventos a seguir.
 
 - `OnNewMessageCompose`: Ao redigir uma nova mensagem (inclui responder, responder a todos e encaminhar)
 - `OnNewAppointmentOrganizer`: Ao criar um novo compromisso
+
+  > [!IMPORTANT]
+  > Este recurso não **é ativado** na edição de um item, por exemplo, um rascunho ou um compromisso existente.
 
 Ao final deste passo a passo, você terá um suplemento que é executado sempre que uma nova mensagem é criada.
 

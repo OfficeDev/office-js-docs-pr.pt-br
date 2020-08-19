@@ -1,14 +1,14 @@
 ---
 title: Obter e definir uma recorrência em um suplemento do Outlook
 description: Este tópico mostra como usar a API JavaScript do Office para obter e definir várias propriedades de recorrência de um item em um suplemento do Outlook.
-ms.date: 01/14/2020
+ms.date: 08/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 6a50ba5eab39145d8e50a5a888a6ed0900200bc4
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 0b179725677f071fe2ae7baf1c719add5ccd8aa7
+ms.sourcegitcommit: e9f23a2857b90a7c17e3152292b548a13a90aa33
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44606451"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "46803741"
 ---
 # <a name="get-and-set-recurrence"></a>Obter e definir uma recorrência
 
@@ -25,11 +25,11 @@ Para configurar o padrão de recorrência, você precisa combinar o [tipo de rec
 
 |Tipo de recorrência|Propriedades válidas das recorrências|Uso|
 |---|---|---|
-|`daily`|- [`interval`][interval link]|Um compromisso ocorre a cada *interval* (intervalo) de dias. Exemplo: um compromisso ocorre a cada **_2_** dias.|
+|`daily`|-&nbsp;[`interval`][interval link]|Um compromisso ocorre a cada *interval* (intervalo) de dias. Exemplo: um compromisso ocorre a cada **_2_** dias.|
 |`weekday`|Nenhum.|Um compromisso ocorre todos os dias úteis.|
-|`monthly`|- [`interval`][interval link]<br/>- [`dayOfMonth`][dayOfMonth link]<br/>- [`dayOfWeek`][dayOfWeek link]<br/>- [`weekNumber`][weekNumber link]|– Ocorre um compromisso no dia *dayOfMonth* (diaDoMês) a cada *interval* (intervalo) de meses. Exemplo: um compromisso ocorre no dia **_5_** a cada **_4_** meses.<br/><br/>– Ocorre um compromisso na *weekNumber* (númeroDaSemana) do *dayOfWeek* (diaDoMês) a cada *interval* (intervalo) de meses. Exemplo: um compromisso ocorre na **_terceira_** **_quinta-feira_** a cada **_2_** meses.|
-|`weekly`|- [`interval`][interval link]<br/>- [`days`][days link]|Ocorre um compromisso nos *days* (dias) a cada *interval* (intervalo) de semanas. Exemplo: um compromisso ocorre na **_terça-feira_ e na _quinta-feira_** a cada **_2_** semanas.|
-|`yearly`|- [`interval`][interval link]<br/>- [`dayOfMonth`][dayOfMonth link]<br/>- [`dayOfWeek`][dayOfWeek link]<br/>- [`weekNumber`][weekNumber link]<br/>- [`month`][month link]|– Ocorre um compromisso no dia *dayOfMonth* (diaDoMês) do *month* (mês) a cada *interval* (intervalo) de anos. Exemplo: um compromisso ocorre no dia **_7_** de **_setembro_** a cada **_4_** anos.<br/><br/>– Ocorre um compromisso na *weekNumber* (númeroDaSemana) *dayOfWeek* (diaDaSemana) do *month* (mês) a cada *interval* (intervalo) de anos. Exemplo: um compromisso ocorre na **_primeira_** **_quinta-feira_** de **_setembro_** a cada **_2_** anos.|
+|`monthly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`dayOfMonth`][dayOfMonth link]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek link]<br/>-&nbsp;[`weekNumber`][weekNumber link]|– Ocorre um compromisso no dia *dayOfMonth* (diaDoMês) a cada *interval* (intervalo) de meses. Exemplo: um compromisso ocorre no dia **_5_** a cada **_4_** meses.<br/><br/>– Ocorre um compromisso na *weekNumber* (númeroDaSemana) do *dayOfWeek* (diaDoMês) a cada *interval* (intervalo) de meses. Exemplo: um compromisso ocorre na **_terceira_** **_quinta-feira_** a cada **_2_** meses.|
+|`weekly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`days`][days link]|Ocorre um compromisso nos *days* (dias) a cada *interval* (intervalo) de semanas. Exemplo: um compromisso ocorre na **_terça-feira_ e na _quinta-feira_** a cada **_2_** semanas.|
+|`yearly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`dayOfMonth`][dayOfMonth link]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek link]<br/>-&nbsp;[`weekNumber`][weekNumber link]<br/>-&nbsp;[`month`][month link]|– Ocorre um compromisso no dia *dayOfMonth* (diaDoMês) do *month* (mês) a cada *interval* (intervalo) de anos. Exemplo: um compromisso ocorre no dia **_7_** de **_setembro_** a cada **_4_** anos.<br/><br/>– Ocorre um compromisso na *weekNumber* (númeroDaSemana) *dayOfWeek* (diaDaSemana) do *month* (mês) a cada *interval* (intervalo) de anos. Exemplo: um compromisso ocorre na **_primeira_** **_quinta-feira_** de **_setembro_** a cada **_2_** anos.|
 
 > [!NOTE]
 > Você também pode usar a propriedade [`firstDayOfWeek`][firstDayOfWeek link] com o tipo de recorrência `weekly`. O dia especificado iniciará a lista de dias exibidos na caixa de diálogo de recorrência.
@@ -73,6 +73,27 @@ Office.context.mailbox.item.recurrence.setAsync(pattern, callback);
 function callback(asyncResult)
 {
     console.log(JSON.stringify(asyncResult));
+}
+```
+
+## <a name="change-recurrence-as-the-organizer"></a>Alterar a recorrência como organizador
+
+No exemplo a seguir, no modo de redação, o organizador de compromisso Obtém o objeto de recorrência de uma série de compromissos de acordo com a série ou uma instância dessa série e define uma nova duração de recorrência.
+
+```js
+Office.context.mailbox.item.recurrence.getAsync(callback);
+
+function callback(asyncResult) {
+  var recurrencePattern = asyncResult.value;
+  recurrencePattern.seriesTime.setDuration(60);
+  Office.context.mailbox.item.recurrence.setAsync(recurrencePattern, (asyncResult) => {
+    if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
+      console.log("failed");
+      return;
+    }
+
+    console.log("success");
+  });
 }
 ```
 
