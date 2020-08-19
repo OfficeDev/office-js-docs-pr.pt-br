@@ -1,16 +1,16 @@
 ---
-ms.date: 05/17/2020
-description: Criar uma função personalizada do Excel para seu suplemento do Office
+ms.date: 08/13/2020
+description: Criar uma função personalizada no Excel para o Suplemento do Office.
 title: Criar funções personalizadas no Excel
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 42ace6208abbd95d0f538345a1f5b5cc15ba1823
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
-ms.translationtype: MT
+ms.openlocfilehash: 2ea2d70b0a404c15ed9b349020b76356c70cd6de
+ms.sourcegitcommit: 3efa932b70035dde922929d207896e1a6007f620
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093459"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "46757370"
 ---
 # <a name="create-custom-functions-in-excel"></a>Criar funções personalizadas no Excel
 
@@ -40,19 +40,19 @@ function sphereVolume(radius) {
 
 ## <a name="how-a-custom-function-is-defined-in-code"></a>Como uma função personalizada é definida em código
 
-Se você usar o [gerador Yo Office](https://github.com/OfficeDev/generator-office) para criar um projeto de suplemento de funções personalizadas do Excel, ele criará arquivos que controlam as funções e o painel de tarefas. Vamos nos concentrar em arquivos que são importantes para funções personalizadas:
+Se você usar o [Gerador Yo Office](https://github.com/OfficeDev/generator-office) para criar um projeto de suplemento funções personalizadas do Excel, ele criará os arquivos que controlam as funções e o painel de tarefas. Vamos nos concentrar em arquivos que são importantes para funções personalizadas:
 
 | File | Formato de arquivo | Descrição |
 |------|-------------|-------------|
 | **./src/functions/functions.js**<br/>ou<br/>**./src/functions/functions.ts** | JavaScript<br/>ou<br/>TypeScript | Contém o código que define funções personalizadas. |
 | **./src/functions/functions.html** | HTML | Fornece uma referência&lt;script&gt;ao arquivo JavaScript que define funções personalizadas. |
-| **./manifest.xml** | XML | Especifica o local de vários arquivos que sua função personalizada usa, como as funções personalizadas JavaScript, JSON e arquivos HTML. Ele também lista os locais dos arquivos de painel de tarefas, os arquivos de comando e especifica o tempo de execução que suas funções personalizadas devem usar. |
+| **./manifest.xml** | XML | Especifica o local de vários arquivos que a sua função personalizada usa, como as funções personalizadas JavaScript, JSON e arquivos HTML. Ele também lista os locais de arquivos do painel de tarefas, os arquivos de comando e especifica o tempo de execução que suas funções personalizadas devem usar. |
 
 ### <a name="script-file"></a>Arquivo de script
 
 O arquivo de script (**./src/functions/functions.js** ou **./src/functions/functions.ts**) contém o código que define funções e comentários que definem a função.
 
-O código a seguir define a função personalizada `add`. Os comentários do código são usados para gerar um arquivo de metadados JSON que descreve a função personalizada ao Excel. O necessário `@customfunction` comentário é declarado primeiro, para indicar que se trata de uma função personalizada. Em seguida, dois parâmetros são declarados `first` e `second` , em seguida, suas `description` Propriedades. Por fim, uma `returns` descrição é fornecida. Para obter mais informações sobre quais comentários são necessários para sua função personalizada, confira [Criar metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md).
+O código a seguir define a função personalizada `add`. Os comentários do código são usados para gerar um arquivo de metadados JSON que descreve a função personalizada ao Excel. O necessário `@customfunction` comentário é declarado primeiro, para indicar que se trata de uma função personalizada. Em seguida, dois parâmetros são declarados, `first` e `second`, seguidos por suas `description`propriedades. Por fim, uma `returns` descrição é fornecida. Para obter mais informações sobre quais comentários são necessários para sua função personalizada, confira [Criar metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md).
 
 ```js
 /**
@@ -70,21 +70,21 @@ function add(first, second){
 
 ### <a name="manifest-file"></a>Arquivo de manifesto
 
-O arquivo de manifesto XML para um suplemento que define funções personalizadas (**./manifest.xml** no projeto criado pelo gerador do Office Yo) faz várias coisas:
+O arquivo de manifesto XML para um suplemento que define funções personalizadas (**./manifest.xml** no projeto que o gerador de Yo Office cria) faz várias coisas:
 
-- Define o namespace para suas funções personalizadas. Um namespace se precede às suas funções personalizadas para ajudar os clientes a identificar suas funções como parte do seu suplemento.
-- Usos `<ExtensionPoint>` e `<Resources>` elementos exclusivos de um manifesto de funções personalizadas. Esses elementos contêm informações sobre os locais dos arquivos JavaScript, JSON e HTML.
-- Especifica o tempo de execução a ser usado para a função personalizada. Recomendamos sempre usar um tempo de execução compartilhado, a menos que você tenha uma necessidade específica de outro tempo de execução, pois um tempo de execução compartilhado permite o compartilhamento de dados entre funções e o painel de tarefas.
+- Define o espaço de nomes das suas funções personalizadas. Um namespace se direciona para suas funções personalizadas para ajudar os clientes a identificar suas funções como parte do seu suplemento.
+- Usa `<ExtensionPoint>` e `<Resources>` elementos que são exclusivos de um manifesto de funções personalizadas. Esses elementos contêm informações sobre os locais dos arquivos JavaScript, JSON e HTML.
+- Especifica o tempo de execução a ser usado para a sua função personalizada. Recomendamos sempre usar um tempo de execução compartilhado, a menos que você tenha uma necessidade específica para outro tempo de execução, porque um tempo de execução compartilhado permite o compartilhamento de dados entre funções e o painel de tarefas. Observe que usar um tempo de execução compartilhado significa que seu suplemento usará o Internet Explorer 11, não o Microsoft Edge.
 
-Se você estiver usando o gerador de Yo Office para criar arquivos, recomendamos ajustar seu manifesto para usar um tempo de execução compartilhado, pois esse não é o padrão para esses arquivos. Para alterar o manifesto, siga as instruções em [configurar seu suplemento do Excel para usar um tempo de execução do JavaScript compartilhado](./configure-your-add-in-to-use-a-shared-runtime.md).
+Se você estiver usando o gerador do Yo Office para criar arquivos, recomendamos ajustar o manifesto para usar o tempo de execução compartilhado, uma vez que esse não é o padrão para esses arquivos. Para alterar o manifesto, siga as instruções no [Configurar seu suplemento do Excel para usar um de tempo de execução JavaScript compartilhado.](./configure-your-add-in-to-use-a-shared-runtime.md)
 
-Para ver um manifesto de trabalho completo de um suplemento de exemplo, confira [o repositório do GitHub](https://github.com/OfficeDev/PnP-OfficeAddins/blob/master/Samples/excel-shared-runtime-global-state/manifest.xml).
+Para ver um manifesto funcional completo de um suplemento de amostra, consulte [esse repositório do GitHub](https://github.com/OfficeDev/PnP-OfficeAddins/blob/master/Samples/excel-shared-runtime-global-state/manifest.xml).
 
 [!include[manifest guidance](../includes/manifest-guidance.md)]
 
 ## <a name="coauthoring"></a>Coautoria
 
-O Excel na Web e o Windows conectado a uma assinatura do Microsoft 365 permitem que você coautor no Excel. Se sua pasta de trabalho usa uma função personalizada, seu colega de coautoria é solicitado a carregar o suplemento da função personalizada. Depois que você carregar o suplemento, a função personalizada compartilhará os resultados por meio de coautoria.
+O Excel na Web e o Windows conectado a uma assinatura do Microsoft 365 permitem que você se conecte ao Excel. Se a pasta de trabalho usa uma função personalizada, seu colega será solicitado a carregar o suplemento da função personalizada. Depois de carregarem o suplemento, a função personalizada compartilhará resultados por meio de coautoria.
 
 Para saber mais sobre coautoria, confira o tópico [Sobre o recurso de coautoria no Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).
 
