@@ -3,12 +3,12 @@ title: Visão geral da autenticação e autorização nos Suplementos do Office
 description: Exija que os usuários autentiquem o logon nos aplicativos Web e suplementos do Office.
 ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: ba3d0aa11f8fa6537f444c063809c89c79ea7b2b
-ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
+ms.openlocfilehash: 4e63311e2c5a4af10b376d6bad32c93c6480bff8
+ms.sourcegitcommit: c3954cd2e3d1fb48c968e21d662544526afa1a8c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "46573144"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "46854431"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Visão geral da autenticação e autorização nos Suplementos do Office
 
@@ -16,10 +16,10 @@ Os aplicativos da Web e, portanto, os Suplementos do Office permitem acesso anô
 
 Seu suplemento também pode obter consentimento do usuário para acessar seus dados do Microsoft Graph (como seu perfil do Microsoft 365, arquivos do OneDrive e dados do SharePoint) ou para dados de outras fontes externas, como Google, Facebook, LinkedIn, SalesForce e GitHub. Essa tarefa é chamada de autorização de suplemento (ou aplicativo), pois é o *suplemento* que está sendo autorizado, não o usuário.
 
-Há duas maneiras de realizar essas autenticações.
+Há duas maneiras de realizar a autentificação e autorização.
 
 - **O Logon Único do Office(SSO)**: Um sistema que permite que o login do usuário no Office também funcione como um login para o suplemento. Opcionalmente, o suplemento também pode usar as credenciais do usuário do Office para autorizar o suplemento ao Microsoft Graph. (As fontes que não são da Microsoft não podem ser acessadas por este sistema.)
-- **Autenticação e Autorização de Aplicativos Web com o Azure Active Directory**: Não é algo novo ou especial. É apenas a maneira como o suplemento do Office (e outros aplicativos Web) autenticavam os usuários e aplicativos autorizados antes de haver um sistema de SSO do Office e ainda é usado em situações em que o SSO do Office não pode.
+- **Autenticação e Autorização de Aplicativos Web com o Azure Active Directory**: Não é algo novo ou especial. É apenas a maneira como os suplementos do Office (e outros aplicativos web) autenticavam os usuários e aplicativos autorizados antes de existir um sistema de SSO Office e isto ainda é usado em cenários onde o SSO do Office não pode ser usado. Além disso, existem cenários nos quais você deseja que seus usuários façam logon em seu suplemento separadamente mesmo quando o SSO estiver disponível; por exemplo, se você quiser que os eles tenham a opção de fazer o logon no suplemento com uma ID diferente daquele com o qual eles estão atualmente registrados no Office.
 
 O fluxograma a seguir mostra as decisões que você precisa tomar como desenvolvedor de suplemento. Os detalhes estão incluídos mais adiante neste artigo.
 
