@@ -3,33 +3,33 @@ title: Conjunto de requisitos de API para suplementos do Outlook versão 1.4
 description: Recursos e APIs que foram introduzidos para suplementos do Outlook e APIs JavaScript do Office como parte da API de caixa de correio 1,4.
 ms.date: 10/30/2019
 localization_priority: Normal
-ms.openlocfilehash: 6154acc357dd0e0e663d658c8de2d54b641e080a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b4460315412e1a82473a1c33319fb960b73a5a61
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609815"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293755"
 ---
-# <a name="outlook-add-in-api-requirement-set-14"></a><span data-ttu-id="34131-103">Conjunto de requisitos de API para suplementos do Outlook versão 1.4</span><span class="sxs-lookup"><span data-stu-id="34131-103">Outlook add-in API requirement set 1.4</span></span>
+# <a name="outlook-add-in-api-requirement-set-14"></a><span data-ttu-id="46501-103">Conjunto de requisitos de API para suplementos do Outlook versão 1.4</span><span class="sxs-lookup"><span data-stu-id="46501-103">Outlook add-in API requirement set 1.4</span></span>
 
-<span data-ttu-id="34131-104">O subconjunto de APIs de suplemento do Outlook da API JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um suplemento do Outlook.</span><span class="sxs-lookup"><span data-stu-id="34131-104">The Outlook add-in API subset of the Office JavaScript API includes objects, methods, properties, and events that you can use in an Outlook add-in.</span></span>
+<span data-ttu-id="46501-104">O subconjunto de APIs de suplemento do Outlook da API JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um suplemento do Outlook.</span><span class="sxs-lookup"><span data-stu-id="46501-104">The Outlook add-in API subset of the Office JavaScript API includes objects, methods, properties, and events that you can use in an Outlook add-in.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="34131-105">Esta documentação destina-se a um [conjunto de requisitos](../../requirement-sets/outlook-api-requirement-sets.md) que não seja o conjunto de requisitos mais recente.</span><span class="sxs-lookup"><span data-stu-id="34131-105">This documentation is for a [requirement set](../../requirement-sets/outlook-api-requirement-sets.md) other than the latest requirement set.</span></span>
+> <span data-ttu-id="46501-105">Esta documentação destina-se a um [conjunto de requisitos](../../requirement-sets/outlook-api-requirement-sets.md) que não seja o conjunto de requisitos mais recente.</span><span class="sxs-lookup"><span data-stu-id="46501-105">This documentation is for a [requirement set](../../requirement-sets/outlook-api-requirement-sets.md) other than the latest requirement set.</span></span>
 
-## <a name="whats-new-in-14"></a><span data-ttu-id="34131-106">Novidades na versão 1.4</span><span class="sxs-lookup"><span data-stu-id="34131-106">What's new in 1.4?</span></span>
+## <a name="whats-new-in-14"></a><span data-ttu-id="46501-106">Novidades na versão 1.4</span><span class="sxs-lookup"><span data-stu-id="46501-106">What's new in 1.4?</span></span>
 
-<span data-ttu-id="34131-p101">O conjunto de requisitos 1.4 inclui todos os recursos do [Conjunto de requisitos 1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md). Adicionou acesso ao namespace `Office.ui`.</span><span class="sxs-lookup"><span data-stu-id="34131-p101">Requirement set 1.4 includes all of the features of [Requirement set 1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md). It added access to the `Office.ui` namespace.</span></span>
+<span data-ttu-id="46501-p101">O conjunto de requisitos 1.4 inclui todos os recursos do [Conjunto de requisitos 1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md). Adicionou acesso ao namespace `Office.ui`.</span><span class="sxs-lookup"><span data-stu-id="46501-p101">Requirement set 1.4 includes all of the features of [Requirement set 1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md). It added access to the `Office.ui` namespace.</span></span>
 
-### <a name="change-log"></a><span data-ttu-id="34131-109">Log de alterações</span><span class="sxs-lookup"><span data-stu-id="34131-109">Change log</span></span>
+### <a name="change-log"></a><span data-ttu-id="46501-109">Log de alterações</span><span class="sxs-lookup"><span data-stu-id="46501-109">Change log</span></span>
 
-- <span data-ttu-id="34131-110">Foi adicionado o [Office.context.ui.displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-): Exibe uma caixa de diálogo em um host do Office.</span><span class="sxs-lookup"><span data-stu-id="34131-110">Added [Office.context.ui.displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-): Displays a dialog box in an Office host.</span></span>
-- <span data-ttu-id="34131-111">Foi adicionado o [Office.context.ui.messageParent](/javascript/api/office/office.ui#messageparent-message-): fornece uma mensagem da caixa de diálogo à sua página pai/de abertura.</span><span class="sxs-lookup"><span data-stu-id="34131-111">Added [Office.context.ui.messageParent](/javascript/api/office/office.ui#messageparent-message-): Delivers a message from the dialog box to its parent/opener page.</span></span>
-- <span data-ttu-id="34131-112">Foi adicionado o objeto [Dialog](/javascript/api/office/office.dialog): o objeto retornado quando o método [`displayDialogAsync`](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-) é chamado.</span><span class="sxs-lookup"><span data-stu-id="34131-112">Added [Dialog](/javascript/api/office/office.dialog) object: The object that is returned when the [`displayDialogAsync`](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-) method is called.</span></span>
+- <span data-ttu-id="46501-110">Foi adicionado o [Office. Context. UI. displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-): exibe uma caixa de diálogo em um aplicativo do Office.</span><span class="sxs-lookup"><span data-stu-id="46501-110">Added [Office.context.ui.displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-): Displays a dialog box in an Office application.</span></span>
+- <span data-ttu-id="46501-111">Foi adicionado o [Office.context.ui.messageParent](/javascript/api/office/office.ui#messageparent-message-): fornece uma mensagem da caixa de diálogo à sua página pai/de abertura.</span><span class="sxs-lookup"><span data-stu-id="46501-111">Added [Office.context.ui.messageParent](/javascript/api/office/office.ui#messageparent-message-): Delivers a message from the dialog box to its parent/opener page.</span></span>
+- <span data-ttu-id="46501-112">Foi adicionado o objeto [Dialog](/javascript/api/office/office.dialog): o objeto retornado quando o método [`displayDialogAsync`](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-) é chamado.</span><span class="sxs-lookup"><span data-stu-id="46501-112">Added [Dialog](/javascript/api/office/office.dialog) object: The object that is returned when the [`displayDialogAsync`](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-) method is called.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="34131-113">Confira também</span><span class="sxs-lookup"><span data-stu-id="34131-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="46501-113">Confira também</span><span class="sxs-lookup"><span data-stu-id="46501-113">See also</span></span>
 
-- [<span data-ttu-id="34131-114">Suplementos do Outlook</span><span class="sxs-lookup"><span data-stu-id="34131-114">Outlook add-ins</span></span>](../../../outlook/outlook-add-ins-overview.md)
-- [<span data-ttu-id="34131-115">Exemplos de código de suplementos do Outlook</span><span class="sxs-lookup"><span data-stu-id="34131-115">Outlook add-in code samples</span></span>](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
-- [<span data-ttu-id="34131-116">Introdução</span><span class="sxs-lookup"><span data-stu-id="34131-116">Get started</span></span>](../../../quickstarts/outlook-quickstart.md)
-- [<span data-ttu-id="34131-117">Conjuntos de requisitos e clientes com suporte</span><span class="sxs-lookup"><span data-stu-id="34131-117">Requirement sets and supported clients</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)
+- [<span data-ttu-id="46501-114">Suplementos do Outlook</span><span class="sxs-lookup"><span data-stu-id="46501-114">Outlook add-ins</span></span>](../../../outlook/outlook-add-ins-overview.md)
+- [<span data-ttu-id="46501-115">Exemplos de código de suplementos do Outlook</span><span class="sxs-lookup"><span data-stu-id="46501-115">Outlook add-in code samples</span></span>](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
+- [<span data-ttu-id="46501-116">Introdução</span><span class="sxs-lookup"><span data-stu-id="46501-116">Get started</span></span>](../../../quickstarts/outlook-quickstart.md)
+- [<span data-ttu-id="46501-117">Conjuntos de requisitos e clientes com suporte</span><span class="sxs-lookup"><span data-stu-id="46501-117">Requirement sets and supported clients</span></span>](../../requirement-sets/outlook-api-requirement-sets.md)
