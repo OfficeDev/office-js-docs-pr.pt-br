@@ -3,12 +3,12 @@ title: Padrões de tela de apresentação para suplemento dos Office
 description: Saiba as práticas recomendadas para projetar experiências de tela de apresentação em suplementos do Office.
 ms.date: 06/26/2018
 localization_priority: Normal
-ms.openlocfilehash: f89656b9c1d1741f38a7122ba11440d2dfca46bf
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: c0528e869dd8ee7fe779785fb1a9b6d347deab75
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608520"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292950"
 ---
 # <a name="first-run-experience-patterns"></a>Padrões de tela de apresentação
 
@@ -40,17 +40,17 @@ Aplique os seguintes padrões, conforme aplicável, para criar ou aprimorar a te
 
 O carrossel apresenta aos usuários uma série de recursos ou página de informações antes que eles comecem a usar o suplemento.
 
-*Figura 1: Permita que os usuários avancem ou pulem as páginas iniciais do fluxo do carrossel.*
-![ Apresentação - carrossel - Especificações para o painel de tarefas da área de trabalho](../images/add-in-FRE-step-1.png)
+*Figura 1: permitir que os usuários avancem ou ignorem as páginas iniciais do fluxo de carrossel.* 
+ ![ Primeira execução-carrossel etapa 1-especificações para o painel de tarefas da área de trabalho](../images/add-in-FRE-step-1.png)
 
 
 
-*Figura 2: Minimize o número de telas do carrossel que você apresenta ao usuário somente para as que são necessárias para comunicar efetivamente sua mensagem*
-![ Apresentação - carrossel - Especificações para o painel de tarefas da área de trabalho](../images/add-in-FRE-step-2.png)
+*Figura 2: minimize o número de telas de carrossel que você apresenta ao usuário apenas para o que é necessário para comunicar efetivamente sua mensagem.* 
+ ![ Primeira execução-carrossel etapa 2-especificações para o painel de tarefas da área de trabalho](../images/add-in-FRE-step-2.png)
 
 
-*Figura 3: Forneça um apelo à ação claro para sair da tela de apresentação.*
-![ Apresentação - carrossel - Especificações para o painel de tarefas da área de trabalho](../images/add-in-FRE-step-3.png)
+*Figura 3: forneça um plano de ação claro para sair da experiência de primeira execução.* 
+ ![ Primeira execução-carrossel etapa 3-especificações para o painel de tarefas da área de trabalho](../images/add-in-FRE-step-3.png)
 
 
 
@@ -60,8 +60,8 @@ O posicionamento do valor informa a proposta de valor do seu suplemento com posi
 
 
 
-![Apresentação - roteiro de valor - Especificações do painel de tarefas da área de trabalho ](../images/add-in-FRE-value.png)
-* Um roteiro de valor com logotipo, proposição de valor clara, resumo de recurso e chamada para ação.*
+![Roteiro de primeiro valor de execução-especificações do painel de tarefas da área de trabalho ](../images/add-in-FRE-value.png)
+ *um valor roteiro com logotipo, proposta de valor clara, Resumo de recursos e plano de ação.*
 
 
 ### <a name="video-placemat"></a>Roteiro de vídeo
@@ -69,9 +69,10 @@ O posicionamento do valor informa a proposta de valor do seu suplemento com posi
 O roteiro de vídeo mostra aos usuários um vídeo antes que eles comecem a usar o suplemento.
 
 
-*Figura 1: Apresentação do roteiro - A tela contém uma imagem estática do vídeo com um botão de reprodução e um botão de apelo para ação. *![Roteiro de vídeo - Especificações para o painel de tarefas da área de trabalho](../images/add-in-FRE-video.png)
+*Figura 1: primeira execução roteiro-a tela contém uma imagem estática do vídeo com um botão Play e um botão limpar chamada para ação.* 
+ ![ Roteiro de vídeo – especificações para o painel de tarefas da área de trabalho](../images/add-in-FRE-video.png)
 
 
 
-*Figura 2: Player de vídeo - os usuários são apresentados a um vídeo em uma janela de diálogo.*
-![ Apresentação de vídeo - Especificações para o painel de tarefas da área de trabalho](../images/add-in-FRE-video-dialog.png)
+*Figura 2: player de vídeo-os usuários são apresentados com um vídeo em uma janela de diálogo.* 
+ ![ Vídeo roteiro-diálogo-especificações do painel de tarefas da área de trabalho](../images/add-in-FRE-video-dialog.png)

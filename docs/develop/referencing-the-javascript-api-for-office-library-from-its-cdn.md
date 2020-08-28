@@ -3,16 +3,16 @@ title: Fazendo referência à biblioteca da API JavaScript do Office
 description: Saiba como fazer referência à biblioteca da API JavaScript do Office e definições de tipo no suplemento.
 ms.date: 06/23/2020
 localization_priority: Normal
-ms.openlocfilehash: 3f90b0798b14b66fe6d01f62eca3802fce179bec
-ms.sourcegitcommit: a4873c3525c7d30ef551545d27eb2c0a16b4eb50
+ms.openlocfilehash: 64dd08329b7bbc8c249bd270a431b6cbe93ec52c
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "44888128"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293181"
 ---
 # <a name="referencing-the-office-javascript-api-library"></a>Fazendo referência à biblioteca da API JavaScript do Office
 
-A biblioteca da [API JavaScript do Office](../reference/javascript-api-for-office.md) fornece as APIs que o suplemento pode usar para interagir com o host do Office. A maneira mais simples de fazer referência à biblioteca é usar a CDN (rede de distribuição de conteúdo) adicionando a seguinte `<script>` marca dentro da `<head>` seção da página HTML:  
+A biblioteca da [API JavaScript do Office](../reference/javascript-api-for-office.md) fornece as APIs que o suplemento pode usar para interagir com o aplicativo do Office. A maneira mais simples de fazer referência à biblioteca é usar a CDN (rede de distribuição de conteúdo) adicionando a seguinte `<script>` marca dentro da `<head>` seção da página HTML:  
 
 ```html
 <head>
@@ -24,7 +24,7 @@ A biblioteca da [API JavaScript do Office](../reference/javascript-api-for-offic
 Isso baixará e armazenará em cache os arquivos da API JavaScript do Office na primeira vez em que seu suplemento for carregado para garantir que ele esteja usando a implementação mais atualizada de Office.js e seus arquivos associados para a versão especificada.
 
 > [!IMPORTANT]
-> Você deve fazer referência à API JavaScript do Office de dentro da `<head>` seção da página para garantir que a API seja totalmente inicializada antes de qualquer elemento body. Os hosts do Office requerem que os suplementos inicializem até 5 segundos depois da ativação. Se seu suplemento não ativar dentro deste limite, ele será declarado sem resposta e uma mensagem de erro será exibida ao usuário.
+> Você deve fazer referência à API JavaScript do Office de dentro da `<head>` seção da página para garantir que a API seja totalmente inicializada antes de qualquer elemento body. Os aplicativos do Office exigem que os suplementos inicializem dentro de 5 segundos de ativação. Se seu suplemento não ativar dentro deste limite, ele será declarado sem resposta e uma mensagem de erro será exibida ao usuário.
 
 ## <a name="api-versioning-and-backward-compatibility"></a>Versão da API e compatibilidade com versões anteriores
 

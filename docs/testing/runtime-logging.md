@@ -3,12 +3,12 @@ title: Depurar seu suplemento com o log de tempo de execução
 description: Saiba como usar o log do tempo de execução para depurar seu suplemento.
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: e97f989ff4791da678fbecbf8bceed3670749e01
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: e7ac3c3895830ae2fc5e26bd578d34a8d6203e7b
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611144"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292325"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>Depurar seu suplemento com o log de tempo de execução
 
@@ -84,7 +84,7 @@ A imagem a seguir mostra qual deve ser a aparência do registro. Para desativar 
 
     `<bundle id>` identifica quais hosts devem ser habilitados no log de tempo de execução. `<file_name>` é o nome do arquivo de texto no qual o log será gravado.
 
-    Defina `<bundle id>` para um dos seguintes valores para habilitar o log de tempo de execução do host correspondente:
+    Defina `<bundle id>` como um dos seguintes valores para habilitar o log de tempo de execução para o aplicativo correspondente:
 
     - `com.microsoft.Word`
     - `com.microsoft.Excel`

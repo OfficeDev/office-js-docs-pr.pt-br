@@ -3,16 +3,16 @@ title: Elemento Requirements no arquivo de manifesto
 description: O elemento requirements especifica o conjunto mínimo de requisitos e os métodos que o suplemento do Office precisa para ativar.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: c6a9a7b5923401fc2551f239b2c6cbc0d1e90755
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: 319ddc59901c524ed1cee580a81cff749ad570db
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641316"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292269"
 ---
 # <a name="requirements-element"></a>Elemento Requirements
 
-Especifica o conjunto mínimo de requisitos da API JavaScript do Office ([conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md#specify-office-hosts-and-requirement-sets) e/ou métodos) que o suplemento do Office precisa ativar.
+Especifica o conjunto mínimo de requisitos da API JavaScript do Office ([conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md#specify-office-applications-and-requirement-sets) e/ou métodos) que o suplemento do Office precisa ativar.
 
 **Tipo de suplemento:** Conteúdo, Painel de tarefas, Email
 

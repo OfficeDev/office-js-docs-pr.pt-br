@@ -3,12 +3,12 @@ title: Tratamento de erros
 description: Saiba mais sobre a lógica de tratamento de erro da API JavaScript do Excel para considerar os erros de tempo de execução.
 ms.date: 06/25/2020
 localization_priority: Normal
-ms.openlocfilehash: 8d410ae7eea315e14383b5aa08373ede3768cace
-ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
+ms.openlocfilehash: 89df7723d48298862034751ab06bca766fedb30f
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "45006441"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292549"
 ---
 # <a name="error-handling"></a>Tratamento de erros
 
@@ -45,7 +45,7 @@ Quando uma solicitação da API JavaScript do Excel não é bem-sucedida, a API 
 - **debugInfo**: Quando presente, a propriedade `debugInfo` da mensagem de erro fornece informações adicionais que você pode usar para compreender a causa raiz do erro.
 
 > [!NOTE]
-> Se você usar `console.log()` para imprimir mensagens de erro no console, essas mensagens ficarão visíveis apenas no servidor. Os usuários finais não verão essas mensagens de erro no painel de tarefas do suplemento nem em qualquer outro lugar do aplicativo host.
+> Se você usar `console.log()` para imprimir mensagens de erro no console, essas mensagens ficarão visíveis apenas no servidor. Os usuários finais não verão essas mensagens de erro no painel de tarefas do suplemento ou em qualquer lugar no aplicativo do Office.
 
 ## <a name="error-messages"></a>Mensagens de erro
 

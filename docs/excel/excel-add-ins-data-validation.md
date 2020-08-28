@@ -3,12 +3,12 @@ title: Adicionar validação de dados para intervalos do Excel
 description: Saiba como as APIs JavaScript do Excel permitem que o suplemento adicione validação de dados automáticas a tabelas, colunas, linhas e outros intervalos em uma pasta de trabalho.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 54ac86def46a130b8b95876a3c42ef8704f9549c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 422876e35d90a6f61da81f112ff61a732c1d0546
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609612"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292552"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>Adicionar validação de dados para intervalos do Excel
 
@@ -163,7 +163,7 @@ Excel.run(function (context) {
 Você pode criar um alerta de erro personalizado que aparece quando um usuário tenta inserir dados inválidos em uma célula. Apresentamos um exemplo simples a seguir. Observe o seguinte sobre este código:
 
 - A propriedade `style` determina se o usuário recebe um alerta informativo, um aviso e um alerta "parar". Apenas `Stop` realmente impede que o usuário adicione dados inválidos. O pop-up para `Warning` e `Information` tem opções para permitir que o usuário insira dados inválidos assim mesmo.
-- As propriedades `showAlert` padrão para `true`. Isso significa que o host do Excel exibirá um alerta genérico (do tipo `Stop`), a menos que você crie um alerta personalizado que defina `showAlert` como `false` ou defina uma mensagem, título e estilo personalizados. O código define uma mensagem personalizada e o título.
+- As propriedades `showAlert` padrão para `true`. Isso significa que o Excel exibirá um alerta genérico (do tipo `Stop` ), a menos que você crie um alerta personalizado que `showAlert` define `false` ou define uma mensagem, título e estilo personalizados. O código define uma mensagem personalizada e o título.
 
 ```js
 Excel.run(function (context) {

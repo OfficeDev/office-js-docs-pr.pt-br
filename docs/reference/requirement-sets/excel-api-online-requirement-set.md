@@ -4,24 +4,24 @@ description: Detalhes sobre o conjunto de requisitos ExcelApiOnline
 ms.date: 05/06/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: e4a78cd0052be1869434cba154d470070b15a5aa
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f4a39406328605e11d8108ddee454c339bf3919f
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611383"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294238"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>O conjunto de requisitos somente online da API JavaScript do Excel
 
-O `ExcelApiOnline` conjunto de requisitos é um conjunto de requisitos especiais que inclui recursos que estão disponíveis apenas para o Excel na Web. As APIs neste conjunto de requisitos são consideradas APIs de produção (não sujeitas a alterações estruturais ou comportamentais não documentadas) para o Excel no host da Web. `ExcelApiOnline`são considerados como "Preview" APIs para outras plataformas (Windows, Mac, iOS) e podem não ser compatíveis com nenhuma dessas plataformas.
+O `ExcelApiOnline` conjunto de requisitos é um conjunto de requisitos especiais que inclui recursos que estão disponíveis apenas para o Excel na Web. As APIs neste conjunto de requisitos são consideradas APIs de produção (não sujeitas a alterações estruturais ou comportamentais não documentadas) para o Excel no aplicativo Web. `ExcelApiOnline` são considerados como "Preview" APIs para outras plataformas (Windows, Mac, iOS) e podem não ser compatíveis com nenhuma dessas plataformas.
 
 Quando há suporte para APIs no `ExcelApiOnline` conjunto de requisitos em todas as plataformas, elas serão adicionadas ao próximo conjunto de requisitos liberados ( `ExcelApi 1.[NEXT]` ). Depois que o novo requisito for público, essas APIs serão removidas do `ExcelApiOnline` . Pense nisso como um processo de promoção semelhante à de uma API que se move da versão prévia para o lançamento.
 
 > [!IMPORTANT]
-> `ExcelApiOnline`é o superconjunto do conjunto de requisitos mais recente.
+> `ExcelApiOnline` é o superconjunto do conjunto de requisitos mais recente.
 
 > [!IMPORTANT]
-> `ExcelApiOnline 1.1`é a única versão das APIs somente online. Isso ocorre porque o Excel na Web sempre terá uma única versão disponível para os usuários que tenham a versão mais recente.
+> `ExcelApiOnline 1.1` é a única versão das APIs somente online. Isso ocorre porque o Excel na Web sempre terá uma única versão disponível para os usuários que tenham a versão mais recente.
 
 ## <a name="recommended-usage"></a>Uso recomendado
 

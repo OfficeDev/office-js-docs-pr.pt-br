@@ -6,7 +6,7 @@ Este artigo pressupõe que você esteja usando um editor de texto para criar o s
 
 - Em uma pasta de rede compartilhada ou em um servidor Web, você precisará dos seguintes arquivos:
 
-    - Um arquivo HTML (GetDoc_App.html) contendo a interface do usuário mais links para os arquivos de JavaScript (incluindo arquivos office.js e .js específico do host) e arquivos de Folha de Estilos em Cascata (CSS).
+    - Um arquivo HTML (GetDoc_App.html) que contém a interface do usuário, além de links para os arquivos JavaScript (incluindo office.js e arquivos. js específicos do aplicativo) e arquivos de folha de estilo em cascata (CSS).
 
     - Um arquivo JavaScript (GetDoc_App.js) para conter a lógica de programação do suplemento.
 
@@ -151,7 +151,7 @@ function updateStatus(message) {
 Quando você escolhe o botão **Enviar** na interface do usuário, o suplemento chama a `sendFile` função, que contém uma chamada para o método [Document. getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-) . O `getFileAsync` método usa o padrão assíncrono, semelhante a outros métodos na API JavaScript para Office. Ele tem um parâmetro obrigatório, _fileType_, e dois parâmetros opcionais,  _options_ e _callback_. 
 
 
-O parâmetro _filetype_ espera uma das três constantes da enumeração [filetype](/javascript/api/office/office.filetype) : `Office.FileType.Compressed` ("Compressed"), **Office. filetype. pdf** ("PDF") ou **Office. filetype. Text** ("text"). O PowerPoint só suporta **Compressed** como argumento; o Word suporta todos os três. Quando você passa **compactado** para o parâmetro _filetype_ , o `getFileAsync` método retorna o documento como um arquivo de apresentação do PowerPoint 2013 (*. pptx) ou um arquivo de documento do Word 2013 (*. docx) criando uma cópia temporária do arquivo no computador local.
+O parâmetro  _filetype_ espera uma das três constantes da enumeração [filetype](/javascript/api/office/office.filetype) : `Office.FileType.Compressed` ("Compressed"), **Office.FileType.PDF** ("PDF") ou **Office. filetype. Text** ("text"). O PowerPoint só suporta **Compressed** como argumento; o Word suporta todos os três. Quando você passa **compactado** para o parâmetro _filetype_ , o `getFileAsync` método retorna o documento como um arquivo de apresentação do PowerPoint 2013 (*. pptx) ou um arquivo de documento do Word 2013 (*. docx) criando uma cópia temporária do arquivo no computador local.
 
 O `getFileAsync` método retorna uma referência ao arquivo como um objeto [File](/javascript/api/office/office.file) . O `File` objeto expõe quatro membros: a propriedade [size](/javascript/api/office/office.file#size) , a propriedade [SliceCount](/javascript/api/office/office.file#slicecount) , o método [getSliceAsync](/javascript/api/office/office.file#getsliceasync-sliceindex--callback-) e o método [closeAsync](/javascript/api/office/office.file#closeasync-callback-) . A `size` propriedade retorna o número de bytes no arquivo. O `sliceCount` retorna o número de objetos [Slice](/javascript/api/office/office.slice) (discutidos posteriormente neste artigo) no arquivo.
 

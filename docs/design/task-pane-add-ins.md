@@ -3,12 +3,12 @@ title: Painéis de tarefas nos Suplementos do Office
 description: Os painéis de tarefa concedem aos usuários acesso a controles de interface que executam códigos para modificar documentos ou emails ou exibir dados de uma fonte de dados.
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 39a96f4d5aa63d55f4dcb30d9aeb9e680357aa09
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 6d1641c2262b1d1c7b0e4570c357d36d265c80de
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093753"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292957"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Painéis de tarefas nos Suplementos do Office
  
@@ -45,7 +45,7 @@ As imagens a seguir mostram os vários tamanhos de painel de tarefas com a faixa
 
 *Figura 3. Tamanhos de painel de tarefas do Office*
 
-![Imagem exibindo os tamanhos de painel de tarefas da área de trabalho em 1366 x 768](../images/office-365-taskpane-sizes.png)
+![Imagem exibindo os tamanhos de painel de tarefas em 1366x768](../images/office-365-taskpane-sizes.png)
 
 - Excel – 350 x 378
 - PowerPoint – 348 x 391

@@ -3,12 +3,12 @@ title: Ler e gravar dados na seleção ativa em um documento ou em uma planilha
 description: Saiba como ler e gravar dados na seleção ativa em um documento do Word ou em uma planilha do Excel.
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: eb6c4d89e9c66ee3cda012c21601cb7454e73ae8
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9eaf0aac406731a9c0033e69bd8946464a4d1a4f
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609391"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292740"
 ---
 # <a name="read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet"></a>Ler e gravar dados na seleção ativa em um documento ou em uma planilha
 
@@ -39,15 +39,15 @@ function write(message){
 }
 ```
 
-Neste exemplo, o primeiro parâmetro _coercionType_ é especificado como `Office.CoercionType.Text` (você também pode especificar esse parâmetro usando a cadeia de caracteres literal `"text"` ). Isso significa que a propriedade [value](/javascript/api/office/office.asyncresult#status) do objeto [AsyncResult](/javascript/api/office/office.asyncresult), que está disponível por meio do parâmetro _asyncResult_ na função de retorno de chamada, retorne uma **string** que contenha o texto selecionado no documento. A especificação de tipos diferentes de coerção resulta em valores diferentes. [Office.CoercionType](/javascript/api/office/office.coerciontype) é uma enumeração dos valores de tipos de coerção disponíveis. `Office.CoercionType.Text`avalia a cadeia de caracteres "text".
+Neste exemplo, o primeiro parâmetro  _coercionType_ é especificado como `Office.CoercionType.Text` (você também pode especificar esse parâmetro usando a cadeia de caracteres literal `"text"` ). Isso significa que a propriedade [value](/javascript/api/office/office.asyncresult#status) do objeto [AsyncResult](/javascript/api/office/office.asyncresult), que está disponível por meio do parâmetro _asyncResult_ na função de retorno de chamada, retorne uma **string** que contenha o texto selecionado no documento. A especificação de tipos diferentes de coerção resulta em valores diferentes. [Office.CoercionType](/javascript/api/office/office.coerciontype) é uma enumeração dos valores de tipos de coerção disponíveis. `Office.CoercionType.Text` avalia a cadeia de caracteres "text".
 
 
 > [!TIP]
-> **Quando devo usar a matriz ou a tabela coercionType para o acesso aos dados?** Se você precisar que os dados tabulares selecionados sejam expandidos dinamicamente quando as linhas e colunas forem adicionadas e você precisar trabalhar com cabeçalhos de tabela, deverá usar o tipo de dados Table (especificando o parâmetro _coercionType_ do `getSelectedDataAsync` método como `"table"` ou `Office.CoercionType.Table` ). A adição de linhas e colunas na estrutura de dados tem suporte nos dados de tabela e matriz, mas o acréscimo de linhas e colunas só tem suporte para dados de tabela. Se você não estiver planejando a adição de linhas e colunas e seus dados não exigirem a funcionalidade de cabeçalho, você deverá usar o tipo de dados Matrix (especificando o parâmetro _coercionType_ do `getSelectedDataAsync` método como `"matrix"` ou `Office.CoercionType.Matrix` ), que fornece um modelo mais simples de interagir com os dados.
+> **Quando devo usar a matriz ou a tabela coercionType para o acesso aos dados?** Se você precisar que os dados tabulares selecionados sejam expandidos dinamicamente quando as linhas e colunas forem adicionadas e você precisar trabalhar com cabeçalhos de tabela, deverá usar o tipo de dados Table (especificando o parâmetro _coercionType_ do `getSelectedDataAsync` método como `"table"` ou `Office.CoercionType.Table` ). A adição de linhas e colunas na estrutura de dados tem suporte nos dados de tabela e matriz, mas o acréscimo de linhas e colunas só tem suporte para dados de tabela. Se você não estiver planejando a adição de linhas e colunas e seus dados não exigirem a funcionalidade de cabeçalho, você deverá usar o tipo de dados Matrix (especificando o parâmetro  _coercionType_ do `getSelectedDataAsync` método como `"matrix"` ou `Office.CoercionType.Matrix` ), que fornece um modelo mais simples de interagir com os dados.
 
-A função anônima que é passada para a função como o segundo parâmetro de _retorno de chamada_ é executada quando a `getSelectedDataAsync` operação é concluída. A função é chamada com um único parâmetro, _asyncResult_, que contém o resultado e o status da chamada. Se a chamada falhar, a propriedade [Error](/javascript/api/office/office.asyncresult#asynccontext) do `AsyncResult` objeto fornece acesso ao objeto [Error](/javascript/api/office/office.error) . Você pode verificar o valor das propriedades [Error.name](/javascript/api/office/office.error#name) e [Error.message](/javascript/api/office/office.error#message) para determinar por quê a operação set falhou. Caso contrário, o texto selecionado no documento é exibido.
+A função anônima que é passada para a função como o segundo parâmetro de  _retorno de chamada_ é executada quando a `getSelectedDataAsync` operação é concluída. A função é chamada com um único parâmetro, _asyncResult_, que contém o resultado e o status da chamada. Se a chamada falhar, a propriedade [Error](/javascript/api/office/office.asyncresult#asynccontext) do `AsyncResult` objeto fornece acesso ao objeto [Error](/javascript/api/office/office.error) . Você pode verificar o valor das propriedades [Error.name](/javascript/api/office/office.error#name) e [Error.message](/javascript/api/office/office.error#message) para determinar por quê a operação set falhou. Caso contrário, o texto selecionado no documento é exibido.
 
-A propriedade [AsyncResult.status](/javascript/api/office/office.asyncresult#error) é usada na instrução **if** para testar se a chamada foi bem-sucedida. [Office. AsyncResultStatus](/javascript/api/office/office.asyncresult#status) é uma enumeração dos `AsyncResult.status` valores de propriedade disponíveis. `Office.AsyncResultStatus.Failed`avalia a cadeia de caracteres "failed" (e, novamente, também pode ser especificada como essa cadeia de caracteres literal).
+A propriedade [AsyncResult.status](/javascript/api/office/office.asyncresult#error) é usada na instrução **if** para testar se a chamada foi bem-sucedida. [Office. AsyncResultStatus](/javascript/api/office/office.asyncresult#status) é uma enumeração dos `AsyncResult.status` valores de propriedade disponíveis. `Office.AsyncResultStatus.Failed` avalia a cadeia de caracteres "failed" (e, novamente, também pode ser especificada como essa cadeia de caracteres literal).
 
 
 ## <a name="write-data-to-the-selection"></a>Gravar dados na seleção
@@ -69,7 +69,7 @@ function write(message){
 }
 ```
 
-Passar diferentes tipos de objeto para o parâmetro _data_ terá resultados diferentes. O resultado depende do que está selecionado no documento no momento, qual aplicativo está hospedando o suplemento e se os dados passados podem ser forçados para a seleção atual.
+Passar diferentes tipos de objeto para o parâmetro _data_ terá resultados diferentes. O resultado depende do que está atualmente selecionado no documento, qual aplicativo cliente do Office está hospedando seu suplemento e se os dados passados podem ser forçados para a seleção atual.
 
 A função anônima passada para o método [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) como o parâmetro _callback_ é executada quando a chamada assíncrona é concluída. Quando você escreve dados na seleção usando o `setSelectedDataAsync` método, o parâmetro _AsyncResult_ do retorno de chamada fornece acesso somente ao status da chamada e ao objeto [Error](/javascript/api/office/office.error) se a chamada falhar.
 
@@ -117,8 +117,8 @@ O exemplo a seguir mostra como deixar de ouvir o evento [Document.SelectionChang
 Office.context.document.removeHandlerAsync("documentSelectionChanged", {handler:myHandler}, function(result){});
 ```
 
-O `myHandler` nome da função que é passado como o segundo parâmetro _Handler_ especifica o manipulador de eventos que será removido do `SelectionChanged` evento.
+O  `myHandler` nome da função que é passado como o segundo parâmetro _Handler_ especifica o manipulador de eventos que será removido do `SelectionChanged` evento.
 
 
 > [!IMPORTANT]
-> Se o parâmetro _Handler_ opcional for omitido quando o `removeHandlerAsync` método for chamado, todos os manipuladores de eventos do _EventType_ especificado serão removidos.
+> Se o parâmetro  _Handler_ opcional for omitido quando o `removeHandlerAsync` método for chamado, todos os manipuladores de eventos do _EventType_ especificado serão removidos.

@@ -3,12 +3,12 @@ title: Requisitos para a execução de Suplementos do Office
 description: Saiba mais sobre os requisitos de cliente e servidor de que um usuário final precisa para executar suplementos do Office.
 ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 49e1799961a0367d9eaf00415375c98a42534ba9
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: 3c4ed1116fa83de694f390cfc26fde9a01858460
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641225"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293006"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Requisitos para a execução de Suplementos do Office
 
@@ -16,7 +16,7 @@ Este artigo descreve os requisitos de software e de dispositivo para execução 
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
-Para uma visão avançada da compatibilidade atual dos suplementos do Office, veja [Disponibilidade de hosts e plataformas de suplementos do Office](../overview/office-add-in-availability.md).
+Para uma visão de alto nível do local em que os suplementos do Office têm suporte no momento, confira [disponibilidade de aplicativos e plataformas do cliente Office para suplementos do Office](../overview/office-add-in-availability.md).
 
 ## <a name="server-requirements"></a>Requisitos de servidor
 
@@ -29,7 +29,7 @@ Para todos os tipos de suplementos (suplementos de conteúdo, do Outlook e de pa
 > [!TIP]
 > Ao desenvolver e depurar um suplemento no Visual Studio, este implanta e executa os arquivos de página da Web do suplemento localmente com o IIS Express, e não exige um servidor Web adicional.
 
-Para suplementos de conteúdo e de painel de tarefas, nos aplicativos host do Office com suporte-Excel, PowerPoint, Project ou Word-você também precisa de um [Catálogo de aplicativos](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) no SharePoint para carregar o arquivo de manifesto XML do suplemento ou você precisa implantar o suplemento usando a [implantação centralizada](../publish/centralized-deployment.md).
+Para suplementos de conteúdo e de painel de tarefas, nos aplicativos cliente do Office com suporte-Excel, PowerPoint, Project ou Word-você também precisa de um [Catálogo de aplicativos](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) no SharePoint para carregar o arquivo de manifesto XML do suplemento ou você precisa implantar o suplemento usando a [implantação centralizada](../publish/centralized-deployment.md).
 
 Para testar e executar um suplemento do Outlook, a conta de email do Outlook do usuário deve residir no Exchange 2013 ou posterior, que está disponível no Microsoft 365, no Exchange Online ou por meio de uma instalação local. O usuário ou administrador instala os arquivos de manifesto para suplementos do Outlook nesse servidor.
 
@@ -57,7 +57,7 @@ O software a seguir é necessário para o desenvolvimento de um Suplemento do Of
 
 ## <a name="client-requirements-os-x-desktop"></a>Requisitos de cliente: Computador com OS X
 
-O Outlook no Mac, que é distribuído como parte do Microsoft 365, oferece suporte a suplementos do Outlook. a execução de suplementos do Outlook no Outlook no Mac tem os mesmos requisitos que o Outlook no Mac em si: o sistema operacional deve ser pelo menos o "Yosemite" do so X v. Como o Outlook para Mac usa WebKit como um mecanismo de layout para processar as páginas do suplemento, não há qualquer dependência adicional de navegador.
+O Outlook no Mac, que é distribuído como parte do Microsoft 365, oferece suporte a suplementos do Outlook. A execução de suplementos do Outlook no Outlook no Mac tem os mesmos requisitos que o Outlook no Mac em si: o sistema operacional deve ser pelo menos o "Yosemite" do so X v. Como o Outlook para Mac usa WebKit como um mecanismo de layout para processar as páginas do suplemento, não há qualquer dependência adicional de navegador.
 
 Estas são as versões mínimas do cliente do Office para Mac que suporta suplementos do Office.
 
@@ -75,7 +75,7 @@ Qualquer navegador compatível com ECMAScript 5.1, HTML5 e CSS3, como o Internet
 Especificamente para o Outlook em execução em um navegador em smartphones e tablets sem Windows, os softwares a seguir são necessários para testar e executar suplementos do Outlook.
 
 
-| Aplicativo host | Dispositivo | Sistema operacional | Conta do Exchange | Navegador móvel |
+| Aplicativo do Office | Dispositivo | Sistema operacional | Conta do Exchange | Navegador móvel |
 |:-----|:-----|:-----|:-----|:-----|
 |Outlook no Android|Tablets e smartphones com Android|Android 4.4 Kitkat ou posterior|Na atualização mais recente do Microsoft 365 Apps for Business ou Exchange Online|Aplicativo nativo para Android, navegador não aplicável|
 |Outlook no iOS|tablets iPad, smartphones iPhone|iOS 11 ou posterior|Na atualização mais recente do Microsoft 365 Apps for Business ou Exchange Online|Aplicativo nativo para iOS, navegador não aplicável|
@@ -88,5 +88,5 @@ Especificamente para o Outlook em execução em um navegador em smartphones e ta
 ## <a name="see-also"></a>Confira também
 
 - [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
-- [Disponibilidade de host e plataforma para suplementos do Office](../overview/office-add-in-availability.md)
+- [Disponibilidade de aplicativos e plataformas de cliente do Office para suplementos do Office](../overview/office-add-in-availability.md)
 - [Navegadores usados pelos Suplementos do Office](browsers-used-by-office-web-add-ins.md)

@@ -3,12 +3,12 @@ title: Elemento DesktopFormFactor no arquivo de manifesto
 description: Especifica as configurações de um suplemento para o fator forma da área de trabalho.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 46de234f2d97a9e6c7645c17a0f0a61d0c3e1a80
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 18828e6b61a45ae2dc1528b3f7a54e664af09519
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612280"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292311"
 ---
 # <a name="desktopformfactor-element"></a>Elemento DesktopFormFactor
 
@@ -22,8 +22,8 @@ Cada definição de DesktopFormFactor contém o elemento **functionfile** e um o
 |:--------------------------------------|:--------:|:-------------|
 | [ExtensionPoint](extensionpoint.md)   | Sim      | Define onde um suplemento expõe a funcionalidade. |
 | [FunctionFile](functionfile.md)       | Sim      | Uma URL para um arquivo que contém funções JavaScript.|
-| [GetStarted](getstarted.md)           | Não       | Define o texto explicativo que aparece ao instalar o suplemento em hosts do Word, Excel ou PowerPoint. |
-| [SupportsSharedFolders](supportssharedfolders.md) | Não | Define se o suplemento do Outlook está disponível em cenários de representante e é definido como *false* por padrão. |
+| [GetStarted](getstarted.md)           | Não       | Define o texto explicativo que aparece ao instalar o suplemento no Word, no Excel ou no PowerPoint. |
+| [SupportsSharedFolders](supportssharedfolders.md) | Não | Define se o suplemento do Outlook está disponível nos cenários de representante. Definido como *false* por padrão. |
 
 ## <a name="desktopformfactor-example"></a>Exemplo de DesktopFormFactor
 

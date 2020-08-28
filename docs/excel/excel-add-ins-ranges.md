@@ -1,14 +1,14 @@
 ---
 title: Trabalhar com intervalos usando a API JavaScript do Excel (fundamental)
 description: Exemplos de código que mostram como executar tarefas comuns com intervalos usando a API JavaScript do Excel.
-ms.date: 04/30/2019
+ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 8cba0908d2179c397dc3530e9bcb4063c09fce19
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 4eb04a58fdf58425f7bb13a6dc457da28625dba5
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609591"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294161"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Trabalhar com intervalos usando a API JavaScript do Excel
 
@@ -99,16 +99,16 @@ Excel.run(function (context) {
     var range = sheet.getRange("B4:E4");
 
     range.insert(Excel.InsertShiftDirection.down);
-    
+
     return context.sync();
 }).catch(errorHandlerFunction);
 ```
 
-**Dados antes da inserção do intervalo**
+### <a name="data-before-range-is-inserted"></a>Dados antes da inserção do intervalo
 
 ![Dados no Excel antes da inserção do intervalo](../images/excel-ranges-start.png)
 
-**Dados após a inserção do intervalo**
+### <a name="data-after-range-is-inserted"></a>Dados após a inserção do intervalo
 
 ![Dados no Excel após a inserção do intervalo](../images/excel-ranges-after-insert.png)
 
@@ -127,11 +127,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Dados antes da limpeza do intervalo**
+### <a name="data-before-range-is-cleared"></a>Dados antes da limpeza do intervalo
 
 ![Dados no Excel antes da limpeza do intervalo](../images/excel-ranges-start.png)
 
-**Dados após a limpeza do intervalo**
+### <a name="data-after-range-is-cleared"></a>Dados após a limpeza do intervalo
 
 ![Dados no Excel após a limpeza do intervalo](../images/excel-ranges-after-clear.png)
 
@@ -150,11 +150,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Dados antes da exclusão do intervalo**
+### <a name="data-before-range-is-deleted"></a>Dados antes da exclusão do intervalo
 
 ![Dados no Excel antes da exclusão do intervalo](../images/excel-ranges-start.png)
 
-**Dados após a exclusão do intervalo**
+### <a name="data-after-range-is-deleted"></a>Dados após a exclusão do intervalo
 
 ![Dados no Excel após a exclusão do intervalo](../images/excel-ranges-after-delete.png)
 
@@ -173,13 +173,13 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Intervalo selecionado B2:E6**
+### <a name="selected-range-b2e6"></a>Intervalo selecionado B2:E6
 
 ![Intervalo selecionado no Excel](../images/excel-ranges-set-selection.png)
 
 ## <a name="get-the-selected-range"></a>Obter o intervalo selecionado
 
-O exemplo de código a seguir obtém o intervalo selecionado, carrega sua `address` propriedade e grava uma mensagem no console. 
+O exemplo de código a seguir obtém o intervalo selecionado, carrega sua `address` propriedade e grava uma mensagem no console.
 
 ```js
 Excel.run(function (context) {
@@ -213,11 +213,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Dados antes da atualização do valor da célula**
+#### <a name="data-before-cell-value-is-updated"></a>Dados antes da atualização do valor da célula
 
 ![Dados no Excel antes da atualização do valor da célula](../images/excel-ranges-set-start.png)
 
-**Dados após a atualização do valor da célula**
+#### <a name="data-after-cell-value-is-updated"></a>Dados após a atualização do valor da célula
 
 ![Dados no Excel após a atualização do valor da célula](../images/excel-ranges-set-cell-value.png)
 
@@ -232,7 +232,7 @@ Excel.run(function (context) {
     var data = [
         ["Potato Chips", 10, 1.80],
     ];
-    
+
     var range = sheet.getRange("B5:D5");
     range.values = data;
     range.format.autofitColumns();
@@ -241,11 +241,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Dados antes da atualização dos valores da célula**
+#### <a name="data-before-cell-values-are-updated"></a>Dados antes da atualização dos valores da célula
 
 ![Dados no Excel antes da atualização dos valores da célula](../images/excel-ranges-set-start.png)
 
-**Dados após a atualização dos valores da célula**
+#### <a name="data-after-cell-values-are-updated"></a>Dados após a atualização dos valores da célula
 
 ![Dados no Excel após a atualização dos valores da célula](../images/excel-ranges-set-cell-values.png)
 
@@ -265,11 +265,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Dados antes da definição da fórmula da célula**
+#### <a name="data-before-cell-formula-is-set"></a>Dados antes da definição da fórmula da célula
 
 ![Dados no Excel antes da definição da fórmula da célula](../images/excel-ranges-start-set-formula.png)
 
-**Dados após a definição da fórmula da célula**
+#### <a name="data-after-cell-formula-is-set"></a>Dados após a definição da fórmula da célula
 
 ![Dados no Excel após a definição da fórmula da célula](../images/excel-ranges-set-formula.png)
 
@@ -287,7 +287,7 @@ Excel.run(function (context) {
         ["=C5 * D5"],
         ["=SUM(E3:E5)"]
     ];
-    
+
     var range = sheet.getRange("E3:E6");
     range.formulas = data;
     range.format.autofitColumns();
@@ -296,11 +296,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Dados antes da definição das fórmulas da célula**
+#### <a name="data-before-cell-formulas-are-set"></a>Dados antes da definição das fórmulas da célula
 
 ![Dados no Excel antes da definição das fórmulas da célula](../images/excel-ranges-start-set-formula.png)
 
-**Dados após a definição das fórmulas da célula**
+#### <a name="data-after-cell-formulas-are-set"></a>Dados após a definição das fórmulas da célula
 
 ![Dados no Excel após a definição das fórmulas da célula](../images/excel-ranges-set-formulas.png)
 
@@ -325,11 +325,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Dados no intervalo (valores na coluna E são um resultado de fórmulas)**
+#### <a name="data-in-range-values-in-column-e-are-a-result-of-formulas"></a>Dados no intervalo (valores na coluna E são um resultado de fórmulas)
 
 ![Dados no Excel após a definição das fórmulas da célula](../images/excel-ranges-set-formulas.png)
 
-**range.values (conforme registrado em log no console pelo exemplo de código acima)**
+#### <a name="rangevalues-as-logged-to-the-console-by-the-code-sample-above"></a>range.values (conforme registrado em log no console pelo exemplo de código acima)
 
 ```json
 [
@@ -383,11 +383,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Dados no intervalo (valores na coluna E são um resultado de fórmulas)**
+#### <a name="data-in-range-values-in-column-e-are-a-result-of-formulas"></a>Dados no intervalo (valores na coluna E são um resultado de fórmulas)
 
 ![Dados no Excel após a definição das fórmulas da célula](../images/excel-ranges-set-formulas.png)
 
-**range.text (conforme registrado em log no console pelo exemplo de código acima)**
+#### <a name="rangetext-as-logged-to-the-console-by-the-code-sample-above"></a>range.text (conforme registrado em log no console pelo exemplo de código acima)
 
 ```json
 [
@@ -441,11 +441,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Dados no intervalo (valores na coluna E são um resultado de fórmulas)**
+#### <a name="data-in-range-values-in-column-e-are-a-result-of-formulas"></a>Dados no intervalo (valores na coluna E são um resultado de fórmulas)
 
 ![Dados no Excel após a definição das fórmulas da célula](../images/excel-ranges-set-formulas.png)
 
-**range.formulas (conforme registrado em log no console pelo exemplo de código acima)**
+#### <a name="rangeformulas-as-logged-to-the-console-by-the-code-sample-above"></a>range.formulas (conforme registrado em log no console pelo exemplo de código acima)
 
 ```json
 [
@@ -502,11 +502,11 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Dados no intervalo antes da definição da cor da fonte e da cor de preenchimento**
+#### <a name="data-in-range-before-font-color-and-fill-color-are-set"></a>Dados no intervalo antes da definição da cor da fonte e da cor de preenchimento
 
 ![Dados no Excel antes da definição do formato](../images/excel-ranges-format-before.png)
 
-**Dados no intervalo após a definição da cor da fonte e da cor de preenchimento**
+#### <a name="data-in-range-after-font-color-and-fill-color-are-set"></a>Dados no intervalo após a definição da cor da fonte e da cor de preenchimento
 
 ![Dados no Excel após a definição do formato](../images/excel-ranges-format-font-and-fill.png)
 
@@ -531,13 +531,39 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-**Dados no intervalo antes da definição do formato de número**
+#### <a name="data-in-range-before-number-format-is-set"></a>Dados no intervalo antes da definição do formato de número
 
-![Dados no Excel antes da definição do formato](../images/excel-ranges-format-font-and-fill.png)
+![Dados no Excel antes da definição do formato de número](../images/excel-ranges-format-font-and-fill.png)
 
-**Dados no intervalo após a definição do formato de número**
+#### <a name="data-in-range-after-number-format-is-set"></a>Dados no intervalo após a definição do formato de número
 
-![Dados no Excel após a definição do formato](../images/excel-ranges-format-numbers.png)
+![Dados no Excel após a definição do formato de número](../images/excel-ranges-format-numbers.png)
+
+## <a name="read-or-write-to-an-unbounded-range"></a>Ler ou gravar em um intervalo não limitado
+
+### <a name="read-an-unbounded-range"></a>Ler um intervalo não limitado
+
+Um endereço de intervalo não associado é um endereço de intervalo que especifica colunas inteiras ou linhas inteiras. Por exemplo:
+
+- Endereços de intervalo compostos de colunas inteiras:<ul><li>`C:C`</li><li>`A:F`</li></ul>
+- Endereços de intervalo compostos de linhas inteiras:<ul><li>`2:2`</li><li>`1:4`</li></ul>
+
+Quando uma API faz uma solicitação para recuperar um intervalo não limitado (por exemplo, `getRange('C:C')`), a resposta conterá valores `null` para as propriedades no nível de célula, como `values`, `text`, `numberFormat` e `formula`. Outras propriedades do intervalo, como `address` e `cellCount`, conterão valores válidos para o intervalo não limitado.
+
+### <a name="write-to-an-unbounded-range"></a>Gravar em um intervalo não limitado
+
+Você não pode definir propriedades de nível de célula, como `values` , `numberFormat` e `formula` em um intervalo não associado, pois a solicitação de entrada é muito grande. Por exemplo, o trecho de código a seguir não é válida porque ele tenta especificar `values` para um intervalo não limitado. A API retornará um erro se você tentar definir propriedades de nível de célula para um intervalo não associado.
+
+```js
+var range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
+range.values = 'Due Date';
+```
+
+## <a name="read-or-write-to-a-large-range"></a>Ler ou gravar em um intervalo grande
+
+Se um intervalo contiver um grande número de células, valores, formatos de número e/ou fórmulas, talvez não seja possível executar operações de API nesse intervalo. A API sempre fará a melhor tentativa de executar a operação solicitada em um intervalo (isto é, para recuperar ou gravar os dados especificados), mas tentar executar operações de leitura ou gravação para um intervalo grande pode resultar em um erro de API devido à utilização excessiva de recursos. Para evitar tais erros, é recomendável executar operações de leitura ou gravação separadas para subconjuntos menores de um intervalo grande, em vez de tentar executar uma única operação de leitura ou gravação em um intervalo grande.
+
+Para obter detalhes sobre as limitações do sistema, consulte a seção "suplementos do Excel" de [limites de recurso e otimização de desempenho para suplementos do Office](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins).
 
 ### <a name="conditional-formatting-of-ranges"></a>Formatação condicional de intervalos
 
@@ -545,7 +571,7 @@ Os intervalos podem ter formatos aplicados a células individuais baseadas em co
 
 ## <a name="find-a-cell-using-string-matching"></a>Localizar uma célula usando a cadeia de correspondência
 
-O objeto `Range` tem um método `find` para pesquisar uma cadeia especificada dentro do intervalo. Ele retorna o intervalo da primeira célula com o texto correspondente. O exemplo de código a seguir localiza a primeira célula com um valor igual à cadeia de caracteres **Alimentos** e registra o seu endereço no console. Observe que `find` exibe um erro `ItemNotFound` se a cadeia de caracteres especificada não existir no intervalo. Se você acha que a cadeia de caracteres especificada pode não estar no intervalo, use o método [findOrNullObject](excel-add-ins-advanced-concepts.md#ornullobject-methods) para que seu código manipule normalmente esse cenário.
+O objeto `Range` tem um método `find` para pesquisar uma cadeia especificada dentro do intervalo. Ele retorna o intervalo da primeira célula com o texto correspondente. O exemplo de código a seguir localiza a primeira célula com um valor igual à cadeia de caracteres **Alimentos** e registra o seu endereço no console. Observe que `find` exibe um erro `ItemNotFound` se a cadeia de caracteres especificada não existir no intervalo. Se você acha que a cadeia de caracteres especificada pode não estar no intervalo, use o método [findOrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) para que seu código manipule normalmente esse cenário.
 
 ```js
 Excel.run(function (context) {

@@ -3,12 +3,12 @@ title: Desenvolver suplementos do Office para iPad
 description: Obtenha uma visão geral e as práticas recomendadas para criar um suplemento do Office que é executado em um iPad.
 ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 2630b3e685c0bd0dc8d9ad9c6ce48b0f42f060c6
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 6738cc559cc07f747e075c17419b70558dec3c66
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608289"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292782"
 ---
 # <a name="develop-office-add-ins-for-the-ipad"></a>Desenvolver suplementos do Office para iPad
 
@@ -38,11 +38,11 @@ Aplique as seguintes práticas recomendadas para desenvolver suplementos para ex
 
 -  **Use o Visual Studio para desenvolver seu suplemento.**
 
-    Se você desenvolver seu suplemento com o Visual Studio, poderá [definir os pontos de interrupção e depurar seu código](../develop/debug-office-add-ins-in-visual-studio.md) em um aplicativo de host do Office em execução no Windows, antes de fazer sideload do suplemento no iPad ou no Mac. Como um suplemento executado no Office no iOS ou Mac oferece suporte às mesmas APIs que um suplemento executado no Office no Windows, o código do seu suplemento deve ser executado da mesma maneira em ambas as plataformas.
+    Se você desenvolver seu suplemento com o Visual Studio, você pode [definir pontos de interrupção e depurar seu código](../develop/debug-office-add-ins-in-visual-studio.md) em um aplicativo cliente do Office em execução no Windows, antes de Sideload seu suplemento no iPad ou Mac. Como um suplemento executado no Office no iOS ou Mac oferece suporte às mesmas APIs que um suplemento executado no Office no Windows, o código do seu suplemento deve ser executado da mesma maneira em ambas as plataformas.
 
 -  **Especifique os requisitos da API no manifesto do seu suplemento ou com verificações da execução.**
 
-    Quando você especifica os requisitos da API no manifesto do suplemento, o Office determina se o aplicativo host é compatível com os membros da API. Se os membros da API estão disponíveis no host, então seu suplemento está disponível nesse aplicativo host. Se preferir, execute uma verificação de tempo de execução para determinar se um método está disponível no host antes de usá-lo no seu suplemento. As verificações de tempo de execução garantem que o suplemento esteja sempre disponível no host e oferecem mais funcionalidade quando os métodos estão disponíveis. Para saber mais , confira [Especificar hosts do Office e requisitos de API](specify-office-hosts-and-api-requirements.md).
+    Quando você especificar os requisitos da API no manifesto do suplemento, o Office determinará se o aplicativo cliente do Office oferece suporte a esses membros da API. Se os membros da API estiverem disponíveis no aplicativo, o suplemento estará disponível. Como alternativa, você pode executar uma verificação de tempo de execução para determinar se um método está disponível no aplicativo antes de usá-lo no seu suplemento. As verificações de tempo de execução garantem que o suplemento esteja sempre disponível no aplicativo e fornecerá funcionalidade adicional se os métodos estiverem disponíveis. Para obter mais informações, consulte [especificar aplicativos do Office e requisitos de API](specify-office-hosts-and-api-requirements.md).
 
 Para ter acesso às práticas recomendadas gerais de desenvolvimento de suplementos, confira [Práticas recomendadas para desenvolvimento de Suplementos do Office](../concepts/add-in-development-best-practices.md).
 

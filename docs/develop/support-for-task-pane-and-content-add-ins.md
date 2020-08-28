@@ -3,24 +3,24 @@ title: Suporte da API JavaScript para Office para suplementos de conteúdo e de 
 description: Use a API JavaScript do Office para criar um painel de tarefas no Office 2013.
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 334db88bbec07755678e3ba35e0d4998951ff5ab
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 35a8ff5c36d5a4bc5ce77a2aeb94d58054471086
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609703"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293139"
 ---
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>Suporte da API JavaScript para Office para suplementos de conteúdo e de painel de tarefas no Office 2013
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
 
-Você pode usar a [API JavaScript para Office](../reference/javascript-api-for-office.md) para criar suplementos de painel de tarefas ou de conteúdo para aplicativos host do Office 2013. Os objetos e métodos que dão suporte a suplementos de conteúdo e de painel de tarefas são categorizados da seguinte forma:
+Você pode usar a [API JavaScript do Office](../reference/javascript-api-for-office.md) para criar suplementos de painel de tarefas ou de conteúdo para aplicativos clientes do Office 2013. Os objetos e métodos que dão suporte a suplementos de conteúdo e de painel de tarefas são categorizados da seguinte forma:
 
 1. **Objetos comuns compartilhados com outros suplementos do Office.** Esses objetos incluem [Office](/javascript/api/office), [Context](/javascript/api/office/office.context)e [AsyncResult](/javascript/api/office/office.asyncresult). O `Office` objeto é o objeto raiz da API JavaScript do Office. O `Context` objeto representa o ambiente de tempo de execução do suplemento. Ambos `Office` e `Context` são os objetos fundamentais para qualquer suplemento do Office. O `AsyncResult` objeto representa os resultados de uma operação assíncrona, como os dados retornados para o `getSelectedDataAsync` método, que lê o que um usuário selecionou em um documento.
 
-2. **O objeto Document.** A maior parte da API disponível para os suplementos de conteúdo e de painel de tarefas é exposta por meio dos métodos, propriedades e eventos do objeto [Document](/javascript/api/office/office.document) . Um suplemento de conteúdo ou de painel de tarefas pode usar a propriedade [Office. Context. Document](/javascript/api/office/office.context#document) para acessar o objeto **Document** e por meio dele, pode acessar os principais membros da API para trabalhar com dados em documentos, como [associações](/javascript/api/office/office.bindings) e objetos [CustomXmlParts](/javascript/api/office/office.customxmlparts) , e os métodos [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-), [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-)e [getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-) . O `Document` objeto também fornece a propriedade [Mode](/javascript/api/office/office.document#mode) para determinar se um documento é somente leitura ou no modo de edição, a propriedade [URL](/javascript/api/office/office.document#url) para obter a URL do documento atual e o acesso ao objeto [Settings](/javascript/api/office/office.settings) . O `Document` objeto também oferece suporte à adição de manipuladores de eventos para o evento [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) , para que você possa detectar quando um usuário altera sua seleção no documento.
+2. **O objeto Document.** A maior parte da API disponível para os suplementos de conteúdo e de painel de tarefas é exposta por meio dos métodos, propriedades e eventos do objeto [Document](/javascript/api/office/office.document) . Um suplemento de conteúdo ou de painel de tarefas pode usar a propriedade [Office.context.document](/javascript/api/office/office.context#document) para acessar o objeto **Document** e por meio dele, pode acessar os principais membros da API para trabalhar com dados em documentos, como [associações](/javascript/api/office/office.bindings) e objetos [CustomXmlParts](/javascript/api/office/office.customxmlparts) , e os métodos [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-), [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-)e [getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-) . O `Document` objeto também fornece a propriedade [Mode](/javascript/api/office/office.document#mode) para determinar se um documento é somente leitura ou no modo de edição, a propriedade [URL](/javascript/api/office/office.document#url) para obter a URL do documento atual e o acesso ao objeto [Settings](/javascript/api/office/office.settings) . O `Document` objeto também oferece suporte à adição de manipuladores de eventos para o evento [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) , para que você possa detectar quando um usuário altera sua seleção no documento.
 
-   Um suplemento de conteúdo ou de painel de tarefas pode acessar o `Document` objeto somente depois que o dom e o ambiente de tempo de execução foram carregados, normalmente no manipulador de eventos do evento [Office. Initialize](/javascript/api/office) . Para saber mais sobre o fluxo de eventos quando um suplemento é inicializado e como verificar se o DOM e o tempo de execução foram carregados com êxito, confira [Carregar o DOM e o ambiente de tempo de execução](loading-the-dom-and-runtime-environment.md).
+   Um suplemento de conteúdo ou de painel de tarefas pode acessar o `Document` objeto somente depois que o dom e o ambiente de tempo de execução foram carregados, normalmente no manipulador de eventos para o evento [Office.initialize](/javascript/api/office) . Para saber mais sobre o fluxo de eventos quando um suplemento é inicializado e como verificar se o DOM e o tempo de execução foram carregados com êxito, confira [Carregar o DOM e o ambiente de tempo de execução](loading-the-dom-and-runtime-environment.md).
 
 3. **Objetos para trabalhar com recursos específicos.** Para trabalhar com recursos específicos da API, use as seguintes objetos e métodos:
 
@@ -36,12 +36,12 @@ Você pode usar a [API JavaScript para Office](../reference/javascript-api-for-o
 > [!IMPORTANT]
 > Alguns membros da API não têm suporte em todos os aplicativos do Office que podem hospedar suplementos de conteúdo e de painel de tarefas. Para determinar quais membros têm suporte, confira o seguinte:
 
-Para obter um resumo do suporte à API JavaScript do Office em aplicativos host do Office, consulte [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md).
+Para obter um resumo do suporte à API JavaScript do Office nos aplicativos cliente do Office, consulte [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md).
 
 
 ## <a name="reading-and-writing-to-an-active-selection"></a>Ler e gravar em uma seleção ativa
 
-Você pode ler ou gravar na seleção atual do usuário em um documento, planilha ou apresentação. Dependendo do aplicativo host para o suplemento, você pode especificar o tipo de estrutura de dados para ler ou gravar como um parâmetro nos métodos [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) e [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) do objeto [Document](/javascript/api/office/office.document). Por exemplo, você pode especificar qualquer tipo de dados (texto, HTML, dados tabulares ou Open XML do Office) para o Word, texto e dados tabulares para o Excel e texto para o PowerPoint e o Project. Você também pode criar manipuladores de eventos para detectar alterações na seleção do usuário. O exemplo a seguir obtém dados da seleção como texto usando o `getSelectedDataAsync` método.
+Você pode ler ou gravar na seleção atual do usuário em um documento, planilha ou apresentação. Dependendo do aplicativo do Office para o suplemento, você pode especificar o tipo de estrutura de dados a ser lido ou gravado como um parâmetro nos métodos [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) e [SetSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) do objeto [Document](/javascript/api/office/office.document) . Por exemplo, você pode especificar qualquer tipo de dados (texto, HTML, dados tabulares ou Open XML do Office) para o Word, texto e dados tabulares para o Excel e texto para o PowerPoint e o Project. Você também pode criar manipuladores de eventos para detectar alterações na seleção do usuário. O exemplo a seguir obtém dados da seleção como texto usando o `getSelectedDataAsync` método.
 
 
 ```js

@@ -1,15 +1,15 @@
 ---
 title: Conjunto de requisitos de API JavaScript do Excel 1,4
 description: Detalhes sobre o conjunto de requisitos ExcelApi 1,4
-ms.date: 07/26/2019
+ms.date: 07/28/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 1bd6d913bf069e4b8774b8eb65ea147992f98b9b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 3e2ad776383caf66c12e1402afe49962381dab61
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611425"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294266"
 ---
 # <a name="whats-new-in-excel-javascript-api-14"></a>Quais são as novidades na API JavaScript do Excel 1.4
 
@@ -20,13 +20,13 @@ A seguir estão as novas adições às APIs JavaScript do Excel no conjunto de r
 Novas propriedades:
 
 * `comment`
-* `scope`– Itens com escopo de planilha ou pasta de trabalho.
-* `worksheet`-Retorna a planilha na qual o item nomeado tem escopo.
+* `scope` – Itens com escopo de planilha ou pasta de trabalho.
+* `worksheet` -Retorna a planilha na qual o item nomeado tem escopo.
 
 Novos métodos:
 
-* `add(name: string, reference: Range or string, comment: string)`– Adiciona um novo nome à coleção de um determinado escopo.
-* `addFormulaLocal(name: string, formula: string, comment: string)`– Adiciona um novo nome à coleção do escopo fornecido usando a localidade do usuário para a fórmula.
+* `add(name: string, reference: Range or string, comment: string)` – Adiciona um novo nome à coleção de um determinado escopo.
+* `addFormulaLocal(name: string, formula: string, comment: string)` – Adiciona um novo nome à coleção do escopo fornecido usando a localidade do usuário para a fórmula.
 
 ## <a name="settings-api-in-the-excel-namespace"></a>Configurações de API no namespace do Excel
 
@@ -40,7 +40,7 @@ As APIs incluem `getItem()` para obter a entrada de configuração através da c
 * Adicione uma coluna de tabela ao final da tabela.
 * Adicionar várias linhas a uma tabela de cada vez.
 * `range.getColumnsAfter(count: number)` e `range.getColumnsBefore(count: number)` para obter determinado número de colunas à direita/esquerda do objeto Range atual.
-* A [função de obter item ou objeto nulo](../../excel/excel-add-ins-advanced-concepts.md#ornullobject-methods): essa funcionalidade permite obter o objeto usando uma chave. Se o objeto não existir, a propriedade do objeto retornado `isNullObject` será true. Isso permite que os desenvolvedores verifiquem se um objeto existe ou não sem precisar tratá-lo por meio da manipulação de exceção. O `*OrNullObject` método está disponível na maioria dos objetos Collection.
+* Os [ \* métodos e propriedades do OrNullObject](../../develop/application-specific-api-model.md#ornullobject-methods-and-properties): essa funcionalidade permite obter um objeto usando uma chave. Se o objeto não existir, a propriedade do objeto retornado `isNullObject` será true. Isso permite que os desenvolvedores verifiquem se um objeto existe sem precisar tratá-lo por meio da manipulação de exceção. Um `*OrNullObject` método está disponível na maioria dos objetos coleção.
 
 ```js
 worksheet.getItemOrNullObject("itemName")
@@ -88,9 +88,9 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 |[TableColumnCollection](/javascript/api/excel/excel.tablecolumncollection)|[getCount()](/javascript/api/excel/excel.tablecolumncollection#getcount--)|Obtém a quantidade de colunas na tabela.|
 ||[getItemOrNullObject (Key: String de número \| )](/javascript/api/excel/excel.tablecolumncollection#getitemornullobject-key-)|Obtém um objeto column por nome ou ID. Se a coluna não existir, retornará um objeto null.|
 |[TableRowCollection](/javascript/api/excel/excel.tablerowcollection)|[getCount()](/javascript/api/excel/excel.tablerowcollection#getcount--)|Obtém a quantidade de linhas na tabela.|
-|[Workbook](/javascript/api/excel/excel.workbook)|[configurações](/javascript/api/excel/excel.workbook#settings)|Representa uma coleção de configurações associada à pasta de trabalho. Somente leitura.|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[getUsedRangeOrNullObject (valuesOnly?: Boolean)](/javascript/api/excel/excel.worksheet#getusedrangeornullobject-valuesonly-)|O intervalo usado é o menor intervalo que abrange todas as células que têm um valor ou uma formatação atribuída a elas. Se a planilha inteira estiver em branco, esta função retornará um objeto null.|
-||[das](/javascript/api/excel/excel.worksheet#names)|Coleção de nomes com escopo para a planilha atual. Somente leitura.|
+|[Pasta de trabalho](/javascript/api/excel/excel.workbook)|[configurações](/javascript/api/excel/excel.workbook#settings)|Representa uma coleção de configurações associada à pasta de trabalho. Somente leitura.|
+|[Planilha](/javascript/api/excel/excel.worksheet)|[getUsedRangeOrNullObject (valuesOnly?: Boolean)](/javascript/api/excel/excel.worksheet#getusedrangeornullobject-valuesonly-)|O intervalo usado é o menor intervalo que abrange todas as células que têm um valor ou uma formatação atribuída a elas. Se a planilha inteira estiver em branco, esta função retornará um objeto null.|
+||[names](/javascript/api/excel/excel.worksheet#names)|Coleção de nomes com escopo para a planilha atual. Somente leitura.|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[GetCount (visibleOnly?: Boolean)](/javascript/api/excel/excel.worksheetcollection#getcount-visibleonly-)|Obtém o número de planilhas na coleção.|
 ||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.worksheetcollection#getitemornullobject-key-)|Obtém um objeto worksheet usando o Nome ou ID dele. Se a planilha não existir, retornará um objeto null.|
 

@@ -4,24 +4,24 @@ description: Identity API requirements define informações para suplementos do 
 ms.date: 07/30/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 05805451f17cc70597a61e55d1ecacbb81c383c5
-ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
+ms.openlocfilehash: c2c6ea449cef08248a9ba79051b7c0c5f9baa600
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "46573214"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293538"
 ---
 # <a name="identity-api-requirement-sets"></a>Conjuntos de requisitos da API de Identidade
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office oferece suporte a APIs necessárias para um suplemento. Para obter mais informações, consulte [versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
 
-Os suplementos do Office executam várias versões do Office. A tabela a seguir lista os conjuntos de requisitos da API de Identidade, ou seja, os aplicativos de host do Office que oferecem suporte a esse conjunto de requisitos, e os números de versão ou de build dos aplicativos do Office.
+Os suplementos do Office executam várias versões do Office. A tabela a seguir lista os conjuntos de requisitos da API de identidade, os aplicativos cliente do Office que dão suporte a esse conjunto de requisitos e os números de versão ou de compilação do aplicativo do Office.
 
 |  Conjunto de requisitos  | Office 2013 ou posterior no Windows<br>(compra avulsa) | Office no Windows<br>(conectado a uma assinatura do Microsoft 365) |  Office no iPad<br>(conectado a uma assinatura do Microsoft 365)  |  Office no Mac<br>(conectado a uma assinatura do Microsoft 365)  | Office na Web  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| IdentityAPI 1,3  | N/A | 2008 (Build 13127,20000) ou posterior | Em breve | 16,40 ou posterior | Agosto de 2020 * |
+| IdentityAPI 1,3  | N/D | 2008 (Build 13127,20000) ou posterior | Em breve | 16,40 ou posterior | Agosto de 2020 * |
 
-> \*Inicialmente, o conjunto de requisitos é suportado no Office na Web somente para documentos que são abertos a partir do SharePoint Online e do OneDrive.com. O suporte para outros documentos será colocado no Office na Web mais tarde no 2020.
+> \* Inicialmente, o conjunto de requisitos é suportado no Office na Web somente para documentos que são abertos a partir do SharePoint Online e do OneDrive.com. O suporte para outros documentos será colocado no Office na Web mais tarde no 2020.
 
 ## <a name="office-versions-and-build-numbers"></a>Versões do Office e números de build
 
@@ -41,5 +41,5 @@ Para obter detalhes sobre essa API, consulte a versão que usa promessas em [get
 ## <a name="see-also"></a>Confira também
 
 - [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md)
-- [Especificar requisitos da API e de hosts do Office](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Especificar aplicativos do Office e requisitos de API](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Manifesto XML dos Suplementos do Office](../../develop/add-in-manifests.md)

@@ -3,12 +3,12 @@ title: Criar um suplemento de painel de tarefas de dicionário
 description: Saiba como criar um suplemento de painel de tarefas de dicionário
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 07e2222520999729e3677296869b2367265687f8
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b3859b9557b5b74d9c4e487937df69c99b1ba7d1
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608646"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294203"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>Criar um suplemento de painel de tarefas de dicionário
 
@@ -214,7 +214,7 @@ A seguir há um arquivo de manifesto de exemplo para um suplemento de dicionári
   <!--IconUrl is the URI for the icon that will appear in the user's list of applications.-->
   <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg" />
   <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
-  <!--Capabilities specifies the kind of host application your dictionary add-in will support. You shouldn't have to modify this area.-->
+  <!--Capabilities specifies the kind of Office application your dictionary add-in will support. You shouldn't have to modify this area.-->
   <Capabilities>
     <Capability Name="Workbook"/>
     <Capability Name="Document"/>
@@ -526,7 +526,7 @@ a:hover, a:active
 
 O exemplo a seguir mostra a implementação de JavaScript no arquivo Dictionary.js que é chamada da página HTML do suplemento para fornecer a lógica de programação ao suplemento de Dicionário de Demonstração. Esse script reutiliza o serviço Web XML descrito anteriormente. Quando colocado no mesmo diretório que o serviço Web de exemplo, o script obterá definições desse serviço. Para usá-lo com um serviço Web XML público em conformidade com OfficeDefinitions, modifique a variável `xmlServiceURL` no início do arquivo e substitua a chave API do Bing para pronúncias com um script registrado corretamente.
 
-Os membros primários da API JavaScript do Office (Office. js) chamados desta implementação são os seguintes:
+Os membros primários da API JavaScript do Office (Office.js) chamados desta implementação são os seguintes:
 
 
 - O evento [Initialize](/javascript/api/office) do `Office` objeto, que é gerado quando o contexto do suplemento é inicializado e fornece acesso a uma instância do objeto [Document](/javascript/api/office/office.document) que representa o documento com o qual o suplemento está interagindo.
@@ -535,7 +535,7 @@ Os membros primários da API JavaScript do Office (Office. js) chamados desta im
     
 - O método [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) do `Document` objeto, que é chamado na `tryUpdatingSelectedWord()` função quando o manipulador de `SelectionChanged` eventos é aumentado para obter a palavra ou frase que o usuário selecionou, força-a para texto sem formatação e, em seguida, executar a `selectedTextCallback` função de retorno de chamada assíncrono.
     
-- Quando a `selectTextCallback` função de retorno de chamada assíncrono que é passada como o argumento de _retorno de chamada_ do `getSelectedDataAsync` método é executada, ela obtém o valor do texto selecionado quando o retorno de chamada retorna. Ele obtém o valor do argumento _selectedText_ do retorno de chamada (que é do tipo [AsyncResult](/javascript/api/office/office.asyncresult)) usando a propriedade [Value](/javascript/api/office/office.asyncresult#status) do objeto retornado `AsyncResult` .
+- Quando a  `selectTextCallback` função de retorno de chamada assíncrono que é passada como o argumento de _retorno de chamada_ do `getSelectedDataAsync` método é executada, ela obtém o valor do texto selecionado quando o retorno de chamada retorna. Ele obtém o valor do argumento _selectedText_ do retorno de chamada (que é do tipo [AsyncResult](/javascript/api/office/office.asyncresult)) usando a propriedade [Value](/javascript/api/office/office.asyncresult#status) do objeto retornado `AsyncResult` .
     
 - O restante do código na função `selectedTextCallback` consulta o serviço Web XML para obter definições. Também chama as APIs do Microsoft Translator para fornecer a URL de um arquivo .wav que tem a pronúncia da palavra selecionada.
     

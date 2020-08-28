@@ -3,12 +3,12 @@ title: Gerenciar o estado e as configurações de um suplemento do Outlook
 description: Saiba como persistir o estado e as configurações do suplemento para um suplemento do Outlook.
 ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 796c7b38f8c85a5680c9b7de43297c754a0ebc1b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b11468cdcd776a2d93bb4a435e5c878ca9ab42a3
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609059"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293839"
 ---
 # <a name="manage-state-and-settings-for-an-outlook-add-in"></a>Gerenciar o estado e as configurações de um suplemento do Outlook
 
@@ -19,7 +19,7 @@ Para suplementos do Outlook, a API JavaScript do Office fornece objetos [Roaming
 
 |**Objeto**|**Local de armazenamento**|
 |:-----|:-----|:-----|
-|[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|A caixa de correio do Exchange Server do usuário onde o suplemento está instalado. Como essas configurações são armazenadas na caixa de correio do servidor do usuário, elas podem "mover-se" com o usuário e estão disponíveis para o suplemento quando ele estiver sendo executado no contexto de qualquer aplicativo de host de cliente com suporte ou navegador que acessar a caixa de correio desse usuário.<br/><br/> As configurações móveis de suplementos do Outlook estão disponíveis apenas para o suplemento que os criou e somente por meio da caixa de correio em que o suplemento está instalado.|
+|[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|A caixa de correio do Exchange Server do usuário onde o suplemento está instalado. Como essas configurações são armazenadas na caixa de correio do servidor do usuário, elas podem "mover-se" com o usuário e estão disponíveis para o suplemento quando ele está sendo executado no contexto de qualquer cliente com suporte que tenha acesso à caixa de correio desse usuário.<br/><br/> As configurações móveis de suplementos do Outlook estão disponíveis apenas para o suplemento que os criou e somente por meio da caixa de correio em que o suplemento está instalado.|
 |[CustomProperties](/javascript/api/outlook/office.customproperties)|A mensagem, o compromisso ou o item de solicitação de reunião com o qual o suplemento está trabalhando. As propriedades personalizadas de itens de suplementos do Outlook estão disponíveis apenas para o suplemento que as criou e apenas por meio do item em que estão salvas.|
 
 ## <a name="how-to-save-settings-in-the-users-mailbox-for-outlook-add-ins-as-roaming-settings"></a>Como salvar configurações na caixa de correio do usuário para suplementos do Outlook como configurações móveis

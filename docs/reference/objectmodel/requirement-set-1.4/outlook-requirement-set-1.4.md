@@ -3,12 +3,12 @@ title: Conjunto de requisitos de API para suplementos do Outlook versão 1.4
 description: Recursos e APIs que foram introduzidos para suplementos do Outlook e APIs JavaScript do Office como parte da API de caixa de correio 1,4.
 ms.date: 10/30/2019
 localization_priority: Normal
-ms.openlocfilehash: 6154acc357dd0e0e663d658c8de2d54b641e080a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b4460315412e1a82473a1c33319fb960b73a5a61
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609815"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293755"
 ---
 # <a name="outlook-add-in-api-requirement-set-14"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.4
 
@@ -23,7 +23,7 @@ O conjunto de requisitos 1.4 inclui todos os recursos do [Conjunto de requisitos
 
 ### <a name="change-log"></a>Log de alterações
 
-- Foi adicionado o [Office.context.ui.displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-): Exibe uma caixa de diálogo em um host do Office.
+- Foi adicionado o [Office. Context. UI. displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-): exibe uma caixa de diálogo em um aplicativo do Office.
 - Foi adicionado o [Office.context.ui.messageParent](/javascript/api/office/office.ui#messageparent-message-): fornece uma mensagem da caixa de diálogo à sua página pai/de abertura.
 - Foi adicionado o objeto [Dialog](/javascript/api/office/office.dialog): o objeto retornado quando o método [`displayDialogAsync`](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-) é chamado.
 

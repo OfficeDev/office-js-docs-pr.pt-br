@@ -3,19 +3,19 @@ title: Autorizar o Microsoft Graph com SSO
 description: Saiba como os usuários de um suplemento do Office podem usar o logon único (SSO) para buscar dados do Microsoft Graph.
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 81e8a87c21682a76c73e5e7389e85cd4f20c6a1d
-ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
+ms.openlocfilehash: 68440a347e11d909f0ebd4d4d29892711646da5e
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "46573172"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292901"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso"></a>Autorizar o Microsoft Graph com SSO
 
 Os usuários entram no Office (plataformas online, de dispositivos móveis e de área de trabalho) usando contas pessoais da Microsoft, contas corporativas ou do Microsoft 365 Education. A melhor maneira de um Suplemento do Office receber acesso autorizado ao [Microsoft Graph](https://developer.microsoft.com/graph/docs) é usar as credenciais de logon do Office do usuário. Isso permite a eles acessar seus dados do Microsoft Graph sem precisar entrar novamente.
 
 > [!NOTE]
-> Atualmente, a API de logon único tem suporte para Word, Excel, Outlook e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets).
+> A API de Logon Único é compatível com Word, Excel, Outlook e PowerPoint. Confira mais informações sobre os programas para os quais a API de logon único tem suporte no momento em [Conjuntos de requisitos da IdentityAPI](/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets).
 > Se você estiver trabalhando com um suplemento do Outlook, certifique-se de habilitar a Autenticação Moderna para a locação do Office 365. Confira mais informações sobre como fazer isso em [Exchange Online: como habilitar seu locatário para autenticação moderna](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 
@@ -31,12 +31,12 @@ O diagrama a seguir mostra como funciona o processo de entrar e obter acesso ao 
 
 ![Diagrama que mostra o processo de SSO](../images/sso-access-to-microsoft-graph.png)
 
-1. No suplemento, o JavaScript chama uma nova API do Office.js [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). Isso informa ao aplicativo host do Office para obter um token de acesso para o suplemento. (De agora em diante, isso se chamará **token de acesso de inicialização** porque é substituído por um segundo token mais tarde durante o processo. Para ver um exemplo de um token de acesso de inicialização decodificado, confira [Token de acesso de exemplo](sso-in-office-add-ins.md#example-access-token).)
-2. Se o usuário não estiver conectado, o aplicativo host do Office abrirá uma janela pop-up para o usuário entrar.
+1. No suplemento, o JavaScript chama uma nova API do Office.js [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). Isso informa ao aplicativo cliente do Office para obter um token de acesso para o suplemento. (De agora em diante, isso se chamará **token de acesso de inicialização** porque é substituído por um segundo token mais tarde durante o processo. Para ver um exemplo de um token de acesso de inicialização decodificado, confira [Token de acesso de exemplo](sso-in-office-add-ins.md#example-access-token).)
+2. Se o usuário não estiver conectado, o aplicativo cliente do Office abrirá uma janela pop-up para o usuário entrar.
 3. Se essa é a primeira vez que o usuário atual usa seu suplemento, será solicitado que ele dê o consentimento.
-4. O aplicativo host do Office solicita o **token de acesso de inicialização** do ponto de extremidade v2.0 do Azure AD para o usuário atual.
-5. O Azure AD envia o token de inicialização para o aplicativo host do Office.
-6. O aplicativo host do Office envia o **token de acesso de inicialização** ao suplemento como parte do objeto de resultado retornado pela chamada de `getAccessToken`.
+4. O aplicativo cliente do Office solicita o **token de acesso de inicialização** do ponto de extremidade v 2.0 do Azure ad para o usuário atual.
+5. O Azure AD envia o token de inicialização para o aplicativo cliente do Office.
+6. O aplicativo cliente do Office envia o **token de acesso de inicialização** para o suplemento como parte do objeto de resultado retornado pela `getAccessToken` chamada.
 7. O JavaScript no suplemento faz uma solicitação HTTP a uma API Web que está hospedada no mesmo domínio totalmente qualificado que o suplemento e inclui o **token de acesso de inicialização** como prova de autorização.
 8. O código no lado do servidor valida o **token de acesso de inicialização** de entrada.
 9. O código do lado do servidor usa o fluxo "em nome de" (definido em [OAuth2 token Exchange](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02) e o [daemon ou aplicativo de servidor para o cenário da API Web do Azure](/azure/active-directory/develop/active-directory-authentication-scenarios)) para obter um token de acesso para o Microsoft Graph no Exchange para o token de acesso de inicialização.

@@ -1,20 +1,20 @@
 ---
 title: Elemento WebApplicationInfo no arquivo de manifesto
-description: Documentação de referência do elemento VersionOverrides para arquivos de manifesto de suplementos do Office (XML).
+description: Documentação de referência do elemento WebApplicationInfo para arquivos de manifesto de suplementos do Office (XML).
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: b64739f388720abb872fe2407f7e7d3031b5ec70
-ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
+ms.openlocfilehash: 8644529d82204cb9fbc07c6fe9f8a35b60a512c8
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "46573116"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293804"
 ---
 # <a name="webapplicationinfo-element"></a>Elemento WebApplicationInfo
 
 Suporta o logon único (SSO) em Suplementos do Office. Este elemento contém informações sobre o suplemento como:
 
-- Um *recurso* do OAuth 2.0 para o qual o aplicativo de hospedagem do Office pode precisar de permissões.
+- Um *recurso* OAuth 2,0 para o qual o aplicativo cliente do Office pode precisar de permissões.
 - Um *cliente* do OAuth 2.0 que pode exigir permissões para o Microsoft Graph.
 
 > [!NOTE]

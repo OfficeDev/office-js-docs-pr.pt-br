@@ -3,12 +3,12 @@ title: Usar regras de ativação de expressões regulares para mostrar um suplem
 description: Saiba como usar as regras de ativação de expressões regulares para suplementos contextuais do Outlook.
 ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 3943f42363bd9a34978d1f42d701dcf906aa0446
-ms.sourcegitcommit: a3b743598025466bad19177e0ba9ca94ea66d490
+ms.openlocfilehash: 4a5507b410ed729f76c3efa0119e87c6a6dbc71a
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "46547518"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292472"
 ---
 # <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>Usar regras de ativação de expressões regulares para mostrar um suplemento do Outlook
 
@@ -53,7 +53,7 @@ Ao usar expressões regulares, preste bastante atenção ao seguinte:
 
 - O corpo HTML de um item é um pouco diferente entre um cliente avançado do Outlook e o Outlook na Web ou Outlook Mobile. Defina as expressões regulares com cuidado.
 
-- Dependendo do aplicativo host, do tipo de dispositivo ou da propriedade aplicada à expressão regular, há outras práticas recomendadas e limites para cada um dos hosts que você deve estar ciente durante a criação de expressões regulares como regras de ativação. Confira [Limites de ativação e API JavaScript para suplementos do Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) para saber mais.
+- Dependendo do cliente do Outlook, tipo de dispositivo ou propriedade ao qual uma expressão regular está sendo aplicada, há outras práticas recomendadas e limites para cada um dos clientes que você deve estar ciente ao criar expressões regulares como regras de ativação. Confira [limites para ativação e API JavaScript para suplementos do Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) para obter detalhes.
 
 ### <a name="examples"></a>Exemplos
 

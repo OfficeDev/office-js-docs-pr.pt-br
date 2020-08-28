@@ -3,16 +3,16 @@ title: Navegadores usados pelos Suplementos do Office
 description: Especifica como o sistema operacional e a versão do Office determinam o navegador que é usado pelos suplementos do Office.
 ms.date: 08/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 53e3061f1729ac792e91a10e31bc9d0d908ab07b
-ms.sourcegitcommit: 3efa932b70035dde922929d207896e1a6007f620
+ms.openlocfilehash: 4c4462434480a82e69ebaf5a2599ceda1e4693a7
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "46757356"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293055"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navegadores usados pelos Suplementos do Office
 
-Os suplementos do Office são aplicativos Web exibidos usando iFrames durante a execução do Office na Web e no uso de controles de navegador incorporados no Office para clientes desktops e móveis. Os suplementos também precisam de um mecanismo JavaScript para executar o JavaScript. O navegador incorporado e o mecanismo são fornecidos por um navegador instalado no computador do usuário.
+Os suplementos do Office são aplicativos Web que são exibidos usando iFrames ao executar no Office na Web e usando controles de navegador incorporados no Office para clientes móveis e de área de trabalho. Os suplementos também precisam de um mecanismo JavaScript para executar o JavaScript. O navegador incorporado e o mecanismo são fornecidos por um navegador instalado no computador do usuário.
 
 Qual navegador é usado depende do:
 
@@ -39,7 +39,7 @@ A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sis
 
 <sup>2</sup> quando o Microsoft Edge está sendo usado, o Windows 10 Narrator (às vezes chamado de "leitor de tela") lê a `<title>` marca na página que é aberta no painel de tarefas. Quando o Internet Explorer 11 está sendo usado, o Narrador lê a barra de título do painel de tarefas, que vem do valor `<DisplayName>` no manifesto de suplemento.
 
-<sup>3</sup> se o suplemento incluir o `Runtimes` elemento no manifesto, ele usará o Internet Explorer 11 independentemente da versão do Windows ou do Microsoft 365. Para obter mais informações, consulte [runtimes](../reference/manifest/runtimes.md).
+<sup>3</sup> se o suplemento incluir o `Runtimes` elemento no manifesto, ele usará o Internet Explorer 11 independentemente da versão do Windows ou do Microsoft 365. Para mais informações, consulte [Runtimes](../reference/manifest/runtimes.md).
 
 <sup>4</sup> o navegador usado para essa combinação de versões depende do canal de atualização da assinatura do Microsoft 365. Se o usuário estiver no [canal beta](https://insider.office.com/join/windows) (antigo canal de insider), o Office usa o Microsoft Edge com o WebView2 (baseado em Chromium). Para qualquer outro canal, o Office usa o Microsoft Edge com o WebView original (EdgeHTML). O suporte para WebView2 em outros canais é esperado no início de 2021.
 > [!IMPORTANT]

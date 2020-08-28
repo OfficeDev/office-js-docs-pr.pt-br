@@ -3,12 +3,12 @@ title: Atualizar para a biblioteca de API JavaScript do Office mais recente e o 
 description: Atualize seus arquivos de JavaScript (Office.js e arquivos .js específicos do aplicativo) e o arquivo de validação de manifesto de suplemento usados no seu projeto de Suplemento do Office para a versão 1.1.
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: 34127b3920af1309d4e4c2e1c265c676640a1c24
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: b0536b4b55accd99e002e26c467572330ba72ae2
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093550"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293125"
 ---
 # <a name="update-to-the-latest-office-javascript-api-library-and-version-11-add-in-manifest-schema"></a>Atualizar para a biblioteca de API JavaScript do Office mais recente e o esquema de manifesto de suplemento versão 1,1
 
@@ -122,7 +122,7 @@ No arquivo de manifesto do suplemento, atualize o atributo **xmlns** do elemento
 
 ## <a name="see-also"></a>Confira também
 
-- [Especificar hosts do Office e requisitos de API](specify-office-hosts-and-api-requirements.md) ]
+- [Especificar aplicativos do Office e requisitos de API](specify-office-hosts-and-api-requirements.md) ]
 - [Entendendo a API JavaScript do Office](understanding-the-javascript-api-for-office.md)
 - [API JavaScript para Office](../reference/javascript-api-for-office.md)
 - [Referência de esquema para manifestos de suplementos do Office (versão 1.1)](../develop/add-in-manifests.md)

@@ -3,12 +3,12 @@ title: Privacidade e segurança para suplementos do Office
 description: Saiba mais sobre os aspectos de privacidade e segurança da plataforma de suplementos do Office.
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 9c947c88f62c550eae4b8a38dc1888a8a3385154
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 6707e94b53eaf714699ab666200e2c2e089b128a
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608024"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293013"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 
@@ -16,9 +16,9 @@ ms.locfileid: "44608024"
 
 Os suplementos do Office são protegidos por um ambiente de tempo de execução de suplemento, um modelo de permissões com várias camadas e administradores de desempenho. Essa estrutura protege a experiência do usuário das seguintes maneiras: 
 
-- O acesso ao quadro da interface do usuário do aplicativo host é gerenciado.
+- O acesso ao quadro da interface do usuário do aplicativo cliente do Office é gerenciado.
 
-- É permitido somente o acesso indireto ao thread da interface do usuário do aplicativo host.
+- Só é permitido o acesso indireto ao thread de interface do usuário do aplicativo cliente do Office.
 
 - As interações modais não são permitidas-por exemplo, as chamadas para JavaScript `alert` , `confirm` e `prompt` funções não são permitidas porque são modais.
 
@@ -88,13 +88,13 @@ A plataforma de suplementos lida com as preocupações com privacidade dos usuá
 
 - Antes de instalar um suplemento do AppSource, o usuário pode exibir a política de privacidade e os requisitos desse suplemento. Além disso, os suplementos do Outlook que interagem com caixas de correio dos usuários expõem as permissões específicas das quais precisam. O usuário pode examinar os termos de uso, as permissões solicitadas e a política de privacidade antes de instalar um suplemento do Outlook.
 
-- Ao compartilhar um documento, os usuários também compartilham suplementos que foram inseridos no documento ou associados a ele. Se um usuário abrir um documento que contenha um suplemento que o usuário não usou antes, o aplicativo host solicitará que o usuário conceda permissão para que o suplemento seja executado no documento. Em um ambiente empresarial, o aplicativo host do Office também consultará o usuário se o documento for proveniente de uma fonte externa.
+- Ao compartilhar um documento, os usuários também compartilham suplementos que foram inseridos no documento ou associados a ele. Se um usuário abrir um documento que contenha um suplemento que o usuário não tenha usado anteriormente, o aplicativo cliente do Office solicitará que o usuário Conceda permissão para que o suplemento seja executado no documento. Em um ambiente organizacional, o aplicativo cliente do Office também solicita o usuário se o documento vier de uma fonte externa.
 
 - Os usuários podem habilitar ou desabilitar o acesso ao AppSource. Para suplementos de conteúdo e de painel de tarefas, os usuários gerenciam o acesso a suplementos e catálogos confiáveis da **central de confiabilidade** no cliente do Office do host (aberto nas opções de **arquivo**configurações da central de confiabilidade da central de confiabilidade dos  >  **Options**  >  **Trust Center**  >  **Trust Center Settings**  >  **catálogos de suplementos confiáveis**). Para os suplementos do Outlook, os usos podem gerenciar suplementos escolhendo o botão **gerenciar suplementos** : no Outlook no Windows, escolha **arquivo**  >  **gerenciar suplementos**. No Outlook no Mac, escolha o botão **gerenciar suplementos** na barra de suplementos. No Outlook na Web, escolha o menu **Configurações** (ícone de engrenagem) > **Gerenciar suplementos**. Os administradores também podem gerenciar este acesso [usando a política de grupo](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
 
 - O design da plataforma do suplemento fornece segurança e desempenho aos usuários finais das seguintes maneiras:
 
-  - Um Suplemento do Office é executado em um controle de navegador da Web hospedado em um ambiente de tempo de execução de suplementos separado do aplicativo host do Office. Esse design fornece segurança e isolamento de desempenho do aplicativo host.
+  - Um suplemento do Office é executado em um controle de navegador da Web hospedado em um ambiente de tempo de execução do suplemento separado do aplicativo cliente do Office. Esse design oferece isolamento de segurança e desempenho do aplicativo cliente.
 
   - A execução em um controle de navegador da Web permite que o suplemento faça quase tudo que uma página da Web regular em execução em um navegador pode fazer, mas, ao mesmo tempo, restringe o suplemento a observar a política de mesma origem para o isolamento de domínio e as zonas segurança.
 
@@ -196,7 +196,7 @@ Um usuário mal-intencionado pode atacar a origem de um suplemento inserindo um 
 
 ### <a name="tips-to-prevent-clickjacking"></a>Dicas para impedir "clickjacking"
 
-Como os suplementos do Office são processados em um iframe durante a execução em um navegador com aplicativos de host do Office, use as dicas a seguir para reduzir o risco de [clickjacking](https://en.wikipedia.org/wiki/Clickjacking), uma técnica explorada por hackers para induzir os usuários a revelarem informações confidenciais.
+Como os suplementos do Office são renderizados em um iframe ao executar em um navegador com aplicativos cliente do Office, use as seguintes dicas para minimizar o risco de [clickjacking](https://en.wikipedia.org/wiki/Clickjacking) --uma técnica usada por hackers para enganar os usuários na revelação de informações confidenciais.
 
 Em primeiro lugar, identifique ações confidenciais que o suplemento pode executar. Elas incluem ações que um usuário não autorizado pode usar de forma mal-intencionada, como iniciar uma transação financeira ou publicar dados confidenciais. Por exemplo, o suplemento pode permitir que o usuário envie um pagamento a um destinatário definido pelo usuário.
 

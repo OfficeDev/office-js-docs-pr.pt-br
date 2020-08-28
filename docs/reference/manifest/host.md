@@ -3,12 +3,12 @@ title: Elemento Host no arquivo de manifesto
 description: Especifica um tipo de aplicativo individual do Office em que o suplemento deve ser ativado.
 ms.date: 11/05/2019
 localization_priority: Normal
-ms.openlocfilehash: 5db9df97c4ba558d54756b983a26cb7b71e049d5
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5b6c6e6b5471b4117c28cf92e11eb0a99b512a97
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611810"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292283"
 ---
 # <a name="host-element"></a>Elemento Host
 
@@ -25,7 +25,7 @@ Quando definido no manifesto básico (em [OfficeApp](officeapp.md)), o tipo de h
 
 | Atributo     | Tipo   | Obrigatório | Descrição                                      |
 |:--------------|:-------|:---------|:-------------------------------------------------|
-| [Nome](#name) | cadeia de caracteres | obrigatório | O nome do tipo de aplicativo host do Office. |
+| [Nome](#name) | cadeia de caracteres | obrigatório | O nome do tipo de aplicativo cliente do Office. |
 
 ### <a name="name"></a>Name
 
@@ -59,7 +59,7 @@ Quando definido em [VersionOverrides](versionoverrides.md), o tipo de host é de
 
 |  Atributo  |  Obrigatório  |  Descrição  |
 |:-----|:-----|:-----|
-|  [xsi:type](#xsitype)  |  Sim  | Descreve o host do Office a que essas configurações se aplicam.|
+|  [xsi:type](#xsitype)  |  Sim  | Descreve o aplicativo do Office onde essas configurações se aplicam.|
 
 ### <a name="child-elements"></a>Elementos filho
 
@@ -71,7 +71,7 @@ Quando definido em [VersionOverrides](versionoverrides.md), o tipo de host é de
 
 ### <a name="xsitype"></a>xsi:type
 
-Controla a qual host do Office (Word, Excel, PowerPoint, Outlook, OneNote) as configurações contidas se aplicam. O valor deve ser uma das seguintes opções:
+Controla qual aplicativo do Office (Word, Excel, PowerPoint, Outlook, OneNote) onde as configurações contidas se aplicam. O valor deve ser uma das seguintes opções:
 
 - `Document` (Word)
 - `MailHost` (Outlook)

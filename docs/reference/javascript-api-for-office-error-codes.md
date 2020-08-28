@@ -3,12 +3,12 @@ title: Códigos de erro da API JavaScript do Office
 description: Este artigo documenta as mensagens de erro que você pode encontrar ao usar a API JavaScript do Office.
 ms.date: 08/11/2020
 localization_priority: Normal
-ms.openlocfilehash: 54f92ac7919cce0f2d8728e9c20677b3cf8cf262
-ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
+ms.openlocfilehash: 9ee9aa817d518c3816ae3b0adbaf1d4b1cb8fab4
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "46672698"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294287"
 ---
 # <a name="office-javascript-api-error-codes"></a>Códigos de erro da API JavaScript do Office
 
@@ -22,7 +22,7 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 
 |**Error.code**|**Error.name**|**Error.message**|**Condição**|
 |:-----|:-----|:-----|:-----|
-|1000|Tipo inválido de coerção|O tipo de coerção especificado não tem suporte|Não há suporte para o tipo de coerção no aplicativo host. (Por exemplo, não há suporte para os tipos de coerção OOXML e HTML no Excel.)|
+|1000|Tipo inválido de coerção|O tipo de coerção especificado não tem suporte|O tipo de coerção não é suportado no aplicativo do Office. (Por exemplo, não há suporte para os tipos de coerção OOXML e HTML no Excel.)|
 |1001|Erro de Leitura de Dados|A seleção atual não tem suporte.|Não há suporte para a seleção atual do usuário (ou seja, é algo diferente dos tipos de coerção com suporte).|
 |1002|Tipo inválido de coerção|O tipo de coerção especificado não é compatível com este tipo de associação.|O desenvolvedor da solução forneceu uma combinação incompatível de tipo de coerção e tipo de associação.|
 |1003|Erro de Leitura de Dados|Os valores rowCount ou columnCount especificados são inválidos.|O usuário fornece contagens inválidas de coluna ou de linha.|
@@ -53,11 +53,11 @@ A tabela a seguir lista os códigos de erro, nomes e mensagens exibidas e as con
 |3007|Erro de Criação de Associação|Foram encontrados vários objetos com o mesmo nome.|Erro de colisão: há mais de um controle de conteúdo com o mesmo nome, e a falha na colisão é definida como **true**.|
 |3008|Erro de Criação de Associação|O tipo de associação especificado não é compatível com o item nomeado fornecido.|Não é possível associar o item nomeado ao tipo. Por exemplo, um controle de conteúdo contém texto, mas o desenvolvedor tentou associar usando o tipo coerção _table_.|
 |3009|Operação de Associação Inválida|Não há suporte para o tipo de vinculação.|Usado para fins de compatibilidade com versões anteriores.|
-|3010|Operação de Associação Inválida|O conteúdo selecionado precisa estar em formato de tabela. Formate os dados como uma tabela e tente novamente.|O desenvolvedor está tentando usar os `addRowsAsynch` métodos ou `deleteAllDataValuesAsynch` do `TableBinding` objeto em dados da _matriz_de tipo de coerção.|
+|3010|Operação de Associação Inválida|O conteúdo selecionado precisa estar em formato de tabela. Formate os dados como uma tabela e tente novamente.|O desenvolvedor está tentando usar os `addRowsAsync` métodos ou `deleteAllDataValuesAsync` do `TableBinding` objeto em dados da _matriz_de tipo de coerção.|
 |4000|Erro de leitura de configurações|O nome de configuração especificado não existe.|Um nome de configuração inexistente foi fornecido.|
 |4001|Salvar erro de configurações|Não foi possível salvar as configurações.|Não foi possível salvar as configurações.|
 |4002|Erro de configurações obsoletos|Não foi possível salvar as configurações porque elas estão obsoletas.|As configurações estão obsoletas e o desenvolvedor indicou que não devem ser substituídas.|
-|5000|Erro de configurações obsoletos|Não há suporte para a operação.|A operação não tem suporte no host atual. Por exemplo, `document.getSelectionAsync` é chamado do Outlook.|
+|5000|Erro de configurações obsoletos|Não há suporte para a operação.|A operação não é suportada no aplicativo atual do Office. Por exemplo, `document.getSelectionAsync` é chamado do Outlook.|
 |5001|Erro interno|Ocorreu um erro interno.|Refere-se a uma condição de erro interno, que pode ocorrer por qualquer um dos seguintes motivos:<br/><table><tr><td>Um suplemento que está sendo usado por outro usuário que compartilha a pasta de trabalho criada com uma associação aproximadamente no mesmo momento, e seu suplemento precisa tentar realizar a associação novamente.</tr></td><tr><td>Ocorreu um erro desconhecido.</tr></td><tr><td>Falha na operação.</tr></td><tr><td>O acesso foi negado porque o usuário não é um membro de uma função autorizada.</tr></td><tr><td>O acesso foi negado porque é necessária a comunicação segura e criptografada.</tr></td><tr><td>Os dados estão obsoletos, e o usuário precisa confirmar permitindo que as consultas os atualizem.</tr></td><tr><td>A cota de CPU do conjunto de sites foi excedida.</tr></td><tr><td>A cota de memória do conjunto de sites foi excedida.</tr></td><tr><td>A cota de memória da sessão foi excedida.</tr></td><tr><td>A pasta de trabalho está em um estado inválido, e a operação não pode ser executada.</tr></td><tr><td>A sessão expirou devido a inatividade, e o usuário precisa recarregar a pasta de trabalho.</tr></td><tr><td>A quantidade máxima de sessões permitida por usuário foi excedida.</tr></td><tr><td>A operação foi cancelada pelo usuário.</tr></td><tr><td>Não foi possível concluir a operação porque ela está demorando muito.</tr></td><tr><td>Não foi possível concluir a solicitação, e ela deve ser repetida.</tr></td><tr><td>O período de avaliação do produto expirou.</tr></td><tr><td>A sessão expirou devido a inatividade.</tr></td><tr><td>O usuário não tem permissão para executar a operação no intervalo especificado.</tr></td><tr><td>As configurações regionais do usuário não correspondem às da sessão atual de colaboração.</tr></td><tr><td>O usuário não está mais conectado e deve atualizar ou abrir novamente a pasta de trabalho.</tr></td><tr><td>O intervalo solicitado não existe na planilha.</tr></td><tr><td>O usuário não tem permissão para editar a pasta de trabalho.</tr></td><tr><td>Não foi possível editar a pasta de trabalho porque ela está bloqueada.</tr></td><tr><td>A sessão não pode salvar a pasta de trabalho automaticamente.</tr></td><tr><td>A sessão não pode atualizar seu bloqueio no arquivo de pasta de trabalho.</tr></td><tr><td>Não foi possível processar a solicitação, e ela deve ser repetida.</tr></td><tr><td>Não foi possível verificar as informações de entrada do usuário , e elas precisam ser inseridas novamente.</tr></td><tr><td>O usuário teve o acesso negado.</tr></td><tr><td>A pasta de trabalho compartilhada precisa ser atualizada.</tr></td></table>|
 |5002|Permissão negada|A operação solicitada não é permitida no modo de documento atual.|O desenvolvedor da solução envia uma operação de definição, mas o documento está em um modo que não permite alterações, como “Restringir Edição”.|
 |5003|Erro de registro de eventos|Não há suporte para o tipo de evento especificado pelo objeto atual.|O desenvolvedor da solução tenta registrar ou cancelar o registro de um manipulador para um evento que não existe.|

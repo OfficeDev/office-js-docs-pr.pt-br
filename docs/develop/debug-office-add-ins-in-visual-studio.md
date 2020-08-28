@@ -3,12 +3,12 @@ title: Depurar suplementos do Office no Visual Studio
 description: Use o Visual Studio para depurar suplementos do Office na área de trabalho do cliente Office no Windows
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 018bfa24424514598d323c29d165e3e8ec066a8e
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 8086eaeeb3556edcef40bdf9fea980bd4ae640cc
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093655"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292838"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Depurar suplementos do Office no Visual Studio
 
@@ -27,7 +27,7 @@ Quando o Visual Studio depura o Office no Windows, o suplemento é hospedado na 
 
 ## <a name="review-the-build-and-debug-properties"></a>Examinar as propriedades de compilação e depuração
 
-Antes de começar a depuração, examine as propriedades de cada projeto para confirmar se o Visual Studio abrirá o aplicativo do host desejado e se as propriedades de compilação e depuração propriedades estão configuradas adequadamente.
+Antes de iniciar a depuração, revise as propriedades de cada projeto para confirmar que o Visual Studio abrirá o aplicativo do Office desejado e que outras propriedades de compilação e depuração estão definidas de forma apropriada.
 
 ### <a name="add-in-project-properties"></a>Propriedades do projeto de suplemento
 
@@ -100,16 +100,16 @@ Iniciar o projeto escolhendo **Depurar** > **Iniciar Depuração** na barra do m
 
 Quando o Visual Studio compila o projeto ele executa as seguintes tarefas:
 
-1. Cria uma cópia do arquivo de manifesto XML e a adiciona ao diretório `_ProjectName_\bin\Debug\OfficeAppManifests`. O aplicativo host consome esta cópia quando você inicia o Visual Studio e depura o suplemento.
+1. Cria uma cópia do arquivo de manifesto XML e a adiciona ao diretório `_ProjectName_\bin\Debug\OfficeAppManifests`. O aplicativo do Office que hospeda seu suplemento consome essa cópia quando você inicia o Visual Studio e depura o suplemento.
 
-2. Cria um conjunto de entradas de registro no computador que habilitam o suplemento a aparecer no aplicativo host.
+2. Cria um conjunto de entradas do registro no computador que permitem que o suplemento apareça no aplicativo do Office.
 
 3. Compila o projeto de aplicativo Web e o implanta no servidor Web IIS local(https://localhost).
 
 4. Se este for o primeiro projeto de suplemento implantado no servidor Web do IIS local, talvez seja solicitado que você instale um Certificado Autoassinado no repositório de Certificado Raiz Confiável do usuário atual. Isso é necessário para que o IIS Express exiba o conteúdo do seu suplemento corretamente.
 
 > [!NOTE]
-> A versão mais recente do Office pode usar um controle da Web mais recente para exibir o conteúdo do suplemento ao ser executado no Windows 10. Se este for o caso, o Visual Studio pode solicitar que você adicione uma isenção de loopback de rede local. Isso é necessário para que o controle da Web, no aplicativo host do Office, possa acessar o site implantado no servidor Web do IIS local. Você também pode alterar essa configuração a qualquer momento no Visual Studio, em **Ferramentas** > **Opções** > **Ferramentas do Office (Web)** > **Depuração do Suplemento da Web**.
+> A versão mais recente do Office pode usar um controle da Web mais recente para exibir o conteúdo do suplemento ao ser executado no Windows 10. Se este for o caso, o Visual Studio pode solicitar que você adicione uma isenção de loopback de rede local. Isso é necessário para o controle da Web, no aplicativo cliente do Office, para poder acessar o site implantado no servidor Web IIS local. Você também pode alterar essa configuração a qualquer momento no Visual Studio, em **Ferramentas** > **Opções** > **Ferramentas do Office (Web)** > **Depuração do Suplemento da Web**.
 
 Depois, o Visual Studio faz o seguinte:
 
@@ -117,7 +117,7 @@ Depois, o Visual Studio faz o seguinte:
 
 2. Inicia o projeto de aplicativo Web no IIS Express.
 
-3. Abre o aplicativo host.
+3. Abre o aplicativo do Office.
 
 O Visual Studio não mostra erros de validação na janela de **saída** quando você cria o projeto. O Visual Studio relata erros e avisos na janela **ERRORLIST** à medida que eles ocorrem. O Visual Studio também relata erros de validação mostrando sublinhados ondulados (conhecidos como rabiscos) de cores diferentes no editor de código e texto. Essas marcas o notificam de problemas que o Visual Studio detectou no código. Para saber mais sobre como habilitar ou desabilitar a validação, confira: [Opções, Editor de texto, JavaScript, IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019).
 
@@ -125,7 +125,7 @@ Para examinar as regras de validação do arquivo de manifesto XML no projeto, c
 
 ## <a name="debug-the-code-for-an-excel-powerpoint-or-word-add-in"></a>Depurar o código de um suplemento Excel, PowerPoint ou Word
 
-Se o suplemento não está visível no documento que é exibido no aplicativo host (Excel, PowerPoint ou Word) após você[iniciar o projeto](#start-the-project), inicie manualmente o suplemento no aplicativo do host. Por exemplo, inicie o suplemento do painel de tarefas, escolhendo o **Mostrar painel de tarefas** botão na faixa de opções da guia **Home**. Depois do suplemento ser exibido no Excel, PowerPoint ou Word, você pode depurar seu código fazendo o seguinte:
+Se o suplemento não estiver visível no documento exibido no aplicativo do Office (Excel, PowerPoint ou Word) após você ter [iniciado o projeto](#start-the-project), inicie manualmente o suplemento no aplicativo do Office. Por exemplo, inicie o suplemento do painel de tarefas, escolhendo o **Mostrar painel de tarefas** botão na faixa de opções da guia **Home**. Depois do suplemento ser exibido no Excel, PowerPoint ou Word, você pode depurar seu código fazendo o seguinte:
 
 1. No Excel, PowerPoint ou Word, escolha o **Inserir** pressione tab e, em seguida, escolha a seta para baixo à direita de **Meus suplementos**.
 
@@ -139,11 +139,11 @@ Se o suplemento não está visível no documento que é exibido no aplicativo ho
 
 5. Como os pontos de interrupção são atingidos no Visual Studio, percorra o código conforme necessário.
 
-Você pode alterar o código e examinar os efeitos das alterações no suplemento sem ter que fechar o aplicativo host e reiniciar o projeto. Depois de salvar o código, simplesmente recarregue o suplemento no aplicativo do host. Por exemplo, recarregue um suplemento do painel tarefas escolhendo o canto superior direito do painel de tarefas para ativar o [menu personalidade](../design/task-pane-add-ins.md#personality-menu) e, em seguida, escolha **Recarregar**.
+Você pode alterar o código e examinar os efeitos dessas alterações no suplemento sem ter que fechar o aplicativo do Office e reiniciar o projeto. Após salvar as alterações no código, basta recarregar o suplemento no aplicativo do Office. Por exemplo, recarregue um suplemento do painel tarefas escolhendo o canto superior direito do painel de tarefas para ativar o [menu personalidade](../design/task-pane-add-ins.md#personality-menu) e, em seguida, escolha **Recarregar**.
 
 ## <a name="debug-the-code-for-an-outlook-add-in"></a>Depurar o código de um suplemento do Outlook
 
-Após você [iniciar o projeto](#start-the-project) e o Visual Studio iniciar o Outlook para hospedar o suplemento, abra um item de compromisso ou uma mensagem de email. 
+Após você [iniciar o projeto](#start-the-project) e o Visual Studio iniciar o Outlook para hospedar o suplemento, abra um item de compromisso ou uma mensagem de email.
 
 O Outlook ativa o suplemento para o item, contanto que os critérios de ativação sejam atendidos. A barra de suplementos aparece na parte superior da janela Inspetor ou Painel de Leitura, e o suplemento do Outlook aparece como um botão na barra de suplementos. Se o suplemento tiver um comando de suplemento, aparecerá um botão na faixa de opções, na guia padrão ou em uma guia personalizada especificada, e o suplemento não aparecerá na barra de suplementos.
 

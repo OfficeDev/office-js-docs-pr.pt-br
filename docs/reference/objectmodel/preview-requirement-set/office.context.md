@@ -3,12 +3,12 @@ title: Office. Context – conjunto de requisitos de visualização
 description: Membros do objeto Office. Context disponíveis para suplementos do Outlook usando o conjunto de requisitos de visualização da API da caixa de correio.
 ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 0e0ea973032bb5cd854856920e192522f90a26a1
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5987f81b0b4790b74bde092fc3de44df4fa3ed16
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612021"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293811"
 ---
 # <a name="context-mailbox-preview-requirement-set"></a>contexto (conjunto de requisitos de visualização da caixa de correio)
 
@@ -25,25 +25,25 @@ O Office. Context fornece interfaces compartilhadas usadas por suplementos em to
 
 ##### <a name="properties"></a>Propriedades
 
-| Propriedade | Modelos | Tipo de retorno | Mínimo<br>conjunto de requisitos |
+| Propriedade | Modelos | Tipo de retorno | Minimum<br>conjunto de requisitos |
 |---|---|---|:---:|
-| [autentica](#auth-auth) | Escrever<br>Read | [Auth](/javascript/api/office/office.auth?view=outlook-js-preview) | [Visualização](../preview-requirement-set/outlook-requirement-set-preview.md) |
-| [contentLanguage](#contentlanguage-string) | Escrever<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [la](#diagnostics-contextinformation) | Escrever<br>Read | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [displayLanguage](#displaylanguage-string) | Escrever<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [principal](#host-hosttype) | Escrever<br>Read | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [mailbox](office.context.mailbox.md) | Escrever<br>Read | [Caixa de Correio](/javascript/api/outlook/office.mailbox?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [officeTheme](#officetheme-officetheme) | Escrever<br>Read | [OfficeTheme](/javascript/api/office/office.officetheme?view=outlook-js-preview) | [Visualização](../preview-requirement-set/outlook-requirement-set-preview.md) |
-| [plataforma](#platform-platformtype) | Escrever<br>Read | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [atende](#requirements-requirementsetsupport) | Escrever<br>Read | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [roamingSettings](#roamingsettings-roamingsettings) | Escrever<br>Read | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [ui](#ui-ui) | Escrever<br>Read | [UI](/javascript/api/office/office.ui?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [autentica](#auth-auth) | Escrever<br>Ler | [Auth](/javascript/api/office/office.auth?view=outlook-js-preview) | [Visualização](../preview-requirement-set/outlook-requirement-set-preview.md) |
+| [contentLanguage](#contentlanguage-string) | Escrever<br>Ler | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [la](#diagnostics-contextinformation) | Escrever<br>Ler | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [displayLanguage](#displaylanguage-string) | Escrever<br>Ler | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [principal](#host-hosttype) | Escrever<br>Ler | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [mailbox](office.context.mailbox.md) | Escrever<br>Ler | [Caixa de Correio](/javascript/api/outlook/office.mailbox?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [officeTheme](#officetheme-officetheme) | Escrever<br>Ler | [OfficeTheme](/javascript/api/office/office.officetheme?view=outlook-js-preview) | [Visualização](../preview-requirement-set/outlook-requirement-set-preview.md) |
+| [plataforma](#platform-platformtype) | Escrever<br>Ler | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [atende](#requirements-requirementsetsupport) | Escrever<br>Ler | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [roamingSettings](#roamingsettings-roamingsettings) | Escrever<br>Ler | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [ui](#ui-ui) | Escrever<br>Ler | [UI](/javascript/api/office/office.ui?view=outlook-js-preview) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="property-details"></a>Detalhes da propriedade
 
 #### <a name="auth-auth"></a>auth: [auth](/javascript/api/office/office.auth)
 
-Oferece suporte a [logon único (SSO)](../../../outlook/authenticate-a-user-with-an-sso-token.md) , fornecendo um método que permite que o host do Office obtenha um token de acesso para o aplicativo Web do suplemento. Indiretamente, isso também habilita o suplemento para acessar os dados do Microsoft Graph do usuário sem exigir que o usuário se conecte uma segunda vez.
+Oferece suporte a [logon único (SSO)](../../../outlook/authenticate-a-user-with-an-sso-token.md) , fornecendo um método que permite que o aplicativo do Office obtenha um token de acesso para o aplicativo Web do suplemento. Indiretamente, isso também habilita o suplemento para acessar os dados do Microsoft Graph do usuário sem exigir que o usuário se conecte uma segunda vez.
 
 ##### <a name="type"></a>Tipo
 
@@ -78,7 +78,7 @@ Office.context.auth.getAccessTokenAsync(function(result) {
 
 Obtém a localidade (idioma) especificada pelo usuário para edição do item.
 
-O `contentLanguage` valor reflete a configuração de **idioma de edição** atual especificada com opções de **arquivo > > idioma** no aplicativo host do Office.
+O `contentLanguage` valor reflete a configuração de **idioma de edição** atual especificada com opções de **arquivo > > idioma** no aplicativo cliente do Office.
 
 ##### <a name="type"></a>Tipo
 
@@ -145,9 +145,9 @@ console.log(JSON.stringify(Office.context.diagnostics));
 
 #### <a name="displaylanguage-string"></a>displayLanguage: cadeia de caracteres
 
-Obtém a localidade (idioma) no formato de marca de idioma RFC 1766 especificado pelo usuário para a interface do usuário do aplicativo host do Office.
+Obtém a localidade (idioma) no formato de marca de idioma RFC 1766 especificado pelo usuário para a interface do usuário do aplicativo cliente do Office.
 
-O valor `displayLanguage` reflete a configuração atual de **Display Language** especificada com **Arquivo > Opções > Idioma** no aplicativo host do Office.
+O `displayLanguage` valor reflete a configuração de **idioma de exibição** atual especificada com opções de **arquivo > > idioma** no aplicativo cliente do Office.
 
 ##### <a name="type"></a>Tipo
 
@@ -188,7 +188,7 @@ function write(message){
 
 #### <a name="host-hosttype"></a>host: [HostType](/javascript/api/office/office.hosttype)
 
-Obtém o host do aplicativo do Office no qual o suplemento está sendo executado.
+Obtém o aplicativo do Office que está hospedando o suplemento.
 
 ##### <a name="type"></a>Tipo
 
@@ -219,7 +219,7 @@ Fornece acesso às propriedades de cores de temas do Office.
 > [!NOTE]
 > Só há suporte para esse membro no Outlook no Windows.
 
-O uso de cores de temas do Office permite coordenar o esquema de cores do seu suplemento com o tema atual do Office selecionado pelo usuário com a **conta de arquivo > office > Office Theme UI**, que é aplicada em todos os aplicativos host do Office. Usar cores de temas do Office é apropriado suplementos de email e painéis de tarefas.
+O uso de cores de temas do Office permite coordenar o esquema de cores do seu suplemento com o tema atual do Office selecionado pelo usuário com a **conta de arquivo > office > Office Theme UI**, que é aplicada em todos os aplicativos cliente do Office. Usar cores de temas do Office é apropriado suplementos de email e painéis de tarefas.
 
 ##### <a name="type"></a>Tipo
 
@@ -289,7 +289,7 @@ console.log(JSON.stringify(Office.context.platform));
 
 #### <a name="requirements-requirementsetsupport"></a>requisitos: [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
 
-Fornece um método para determinar quais conjuntos de requisitos são compatíveis com o host atual e a plataforma.
+Fornece um método para determinar quais conjuntos de requisitos são compatíveis com o aplicativo atual e a plataforma.
 
 ##### <a name="type"></a>Tipo
 
@@ -317,7 +317,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 Obtém um objeto que representa as configurações personalizadas ou o estado de um suplemento de email do Outlook salvos na caixa de correio do usuário.
 
-O objeto `RoamingSettings` permite armazenar e acessar os dados de um suplemento de email que está armazenado na caixa de correio do usuário, para que fiquem disponíveis para esse suplemento quando ele for executado em qualquer aplicativo host de cliente usado para acessar essa caixa de correio.
+O `RoamingSettings` objeto permite armazenar e acessar dados de um suplemento de email armazenado na caixa de correio de um usuário, para que esteja disponível para esse suplemento quando ele estiver sendo executado a partir de qualquer cliente do Outlook usado para acessar a caixa de correio.
 
 ##### <a name="type"></a>Tipo
 

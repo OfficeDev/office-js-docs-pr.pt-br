@@ -3,12 +3,12 @@ title: Diretrizes de ícone de estilo monoline para suplementos do Office
 description: Obter diretrizes para usar ícones de ícone de estilo monoline em suplementos do Office.
 ms.date: 12/09/2019
 localization_priority: Normal
-ms.openlocfilehash: 36142e79853a0fad47963255eb9517acd0810920
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f5e2125494fde21f22f82bee8252e79a3396c773
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44607691"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293041"
 ---
 # <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>Diretrizes de ícone de estilo monoline para suplementos do Office
 
@@ -96,7 +96,7 @@ Cada ícone de tamanho tem uma quantidade especificada de preenchimento em torno
 
 |**16px**|**20px**|**24px**|**32px**|**40px**|**48px**|**64px**|**80px**|**96px**|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|
-|![ícone 16 px](../images/monolineicon7.png)|![ícone de 20 px](../images/monolineicon8.png)|![ícone de 24 px](../images/monolineicon9.png)|![ícone da 32 px](../images/monolineicon10.png)|![ícone da 40 px](../images/monolineicon11.png)|![ícone da 48 px](../images/monolineicon12.png)|![ícone da 64 px](../images/monolineicon13.png)|![ícone da 80 px](../images/monolineicon14.png)|![ícone da 96 px](../images/monolineicon15.png)|
+|![ícone 16 px com enchimento 0 px](../images/monolineicon7.png)|![ícone de 20 px com enchimento de 1 px](../images/monolineicon8.png)|![ícone de 24 PX com enchimento de 1 px](../images/monolineicon9.png)|![32 px Icon com preenchimento de 2 px](../images/monolineicon10.png)|![40 PX Icon com preenchimento de 2 px](../images/monolineicon11.png)|![48 PX ícone com preenchimento de 3 px](../images/monolineicon12.png)|![64 PX Icon com preenchimento de 4 px](../images/monolineicon13.png)|![80 PX Icon com preenchimento de 5 px](../images/monolineicon14.png)|![96 PX Icon com preenchimento de 6 px](../images/monolineicon15.png)|
 
 #### <a name="line-weights"></a>Espessuras de linha
 

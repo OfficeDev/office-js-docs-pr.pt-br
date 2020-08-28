@@ -3,12 +3,12 @@ title: Noções básicas sobre permissões de suplemento do Outlook
 description: Suplementos do Outlook especificam o nível de permissão necessário em seu manifesto que incluem o modo restrito, ReadItem, ReadWriteItem ou ReadWriteMailbox.
 ms.date: 02/19/2020
 localization_priority: Normal
-ms.openlocfilehash: d566c0f330ff4473fc9c71a7dff26048093707db
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7b0b481edc77170bb395d86f77688bc976f8e6e4
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611621"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292514"
 ---
 # <a name="understanding-outlook-add-in-permissions"></a>Noções básicas sobre permissões de suplemento do Outlook
 
@@ -176,5 +176,5 @@ A tentativa de usar uma operação sem suporte resulta em uma resposta de erro.
 
 ## <a name="see-also"></a>Confira também
 
-- [Privacidade, permissões e segurança de suplementos do Outlook](../develop/privacy-and-security.md)
+- [Privacidade, permissões e segurança de suplementos do Outlook](../concepts/privacy-and-security.md)
 - [Corresponder cadeias de caracteres em um item do Outlook como entidades conhecidas](match-strings-in-an-item-as-well-known-entities.md)

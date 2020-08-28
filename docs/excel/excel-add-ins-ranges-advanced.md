@@ -1,14 +1,14 @@
 ---
 title: Trabalhar com intervalos usando a API JavaScript do Excel (avançado)
 description: Funções e cenários de objetos de intervalo avançados, como células especiais, remoção de duplicatas e trabalho com datas.
-ms.date: 05/06/2020
+ms.date: 08/26/2020
 localization_priority: Normal
-ms.openlocfilehash: 0a185551bf0ddd6b5d4d5a90e4faac7ce78e2cc9
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 47f154c2bffac2e730aba21204261bc1bd536af2
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609745"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294154"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Trabalhar com intervalos usando a API JavaScript do Excel (avançado)
 
@@ -99,7 +99,7 @@ Se nenhuma célula com característica destino existe no intervalo, `getSpecialC
 Se você espera que células com característica direcionada sempre deveriam existir, provavelmente desejará o código para gerar um erro se as células não estiverem lá. Se for um cenário válido que não há uma ou mais células correspondentes, o código deve verificar se há essa possibilidade e tratar normalmente sem enviar um erro. Você pode obter esse comportamento com o `getSpecialCellsOrNullObject` método e sua propriedade retornada `isNullObject`. O exemplo a seguir usa esse padrão. Sobre este código, observe:
 
 - O método `getSpecialCellsOrNullObject` sempre retorna um objeto de proxy, portanto, `null` nunca está no sentido comum do JavaScript. Mas se nenhuma célula de correspondência for encontrada, as propriedades do objeto`isNullObject` serão definida como `true`.
-- Ele chama `context.sync` *antes* de testar a propriedade`isNullObject`. Esse é um requisito com todos os métodos e propriedades `*OrNullObject`, pois sempre terá que carregar e sincronizar as propriedades na ordem para lê-la. No entanto, não é necessário carregar *explicitamente* a propriedade`isNullObject`. Será carregado automaticamente pelo `context.sync` mesmo se `load` não for chamado no objeto. Para saber mais, confira [ \*OrNullObject](../excel/excel-add-ins-advanced-concepts.md#ornullobject-methods).
+- Ele chama `context.sync` *antes* de testar a propriedade`isNullObject`. Esse é um requisito com todos os métodos e propriedades `*OrNullObject`, pois sempre terá que carregar e sincronizar as propriedades na ordem para lê-la. No entanto, não é necessário carregar *explicitamente* a propriedade`isNullObject`. Será carregado automaticamente pelo `context.sync` mesmo se `load` não for chamado no objeto. Para obter mais informações, consulte [ \* métodos e propriedades do OrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties).
 - Você pode testar esse código selecionando primeiro um intervalo sem células de fórmula e executando-o. Selecione um intervalo que tem pelo menos uma célula com uma fórmula e execute novamente.
 
 ```js
@@ -197,10 +197,10 @@ copyFrom(sourceRange: Range | RangeAreas | string, copyType?: Excel.RangeCopyTyp
 
 `copyType` especifica quais dados são copiados da origem para o destino.
 
-- `Excel.RangeCopyType.formulas`transfere as fórmulas nas células de origem e preserva o posicionamento relativo dos intervalos de fórmulas. As entradas que não sejam uma fórmula são copiadas no seu estado original.
+- `Excel.RangeCopyType.formulas` transfere as fórmulas nas células de origem e preserva o posicionamento relativo dos intervalos de fórmulas. As entradas que não sejam uma fórmula são copiadas no seu estado original.
 - `Excel.RangeCopyType.values` copia os valores dos dados e, no caso de fórmulas, o resultado da fórmula.
 - `Excel.RangeCopyType.formats` copia a formatação do intervalo incluindo a fonte, cor e outras configurações de formato, mas nenhum valor.
-- `Excel.RangeCopyType.all`(a opção padrão) copia dados e formatação, preservando as fórmulas das células, se encontradas.
+- `Excel.RangeCopyType.all` (a opção padrão) copia dados e formatação, preservando as fórmulas das células, se encontradas.
 
 `skipBlanks` define se as células em branco são copiadas para o destino. Quando for verdadeiro, `copyFrom` ignora células em branco no intervalo de origem.
 As células ignoradas não substituem os dados existentes de suas células correspondentes no intervalo de destino. O padrão é false.
@@ -326,6 +326,37 @@ Excel.run(function (context) {
 ![Um intervalo com um contorno de duas dimensões de dois níveis](../images/excel-outline.png)
 
 Para desagrupar um grupo de linhas ou colunas, use o método [Range. Ungroup](/javascript/api/excel/excel.range#ungroup-groupoption-) . Isso remove o nível mais externo da estrutura de tópicos. Se vários grupos do mesmo tipo de linha ou coluna estiverem no mesmo nível no intervalo especificado, todos esses grupos serão desagrupados.
+
+## <a name="handle-dynamic-arrays-and-spilling-preview"></a>Manipular matrizes dinâmicas e derramamento (visualização)
+
+> [!NOTE]
+> As APIs de despejo dinâmico de matriz e intervalo estão atualmente em versão prévia. [!INCLUDE [Information about using preview Excel APIs](../includes/using-excel-preview-apis.md)]
+
+Algumas fórmulas do Excel retornam [matrizes dinâmicas](https://support.microsoft.com/office/dynamic-array-formulas-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531). Eles preenchem os valores de várias células fora da célula original da fórmula. Esse estouro de valor é chamado de "derramar". O suplemento pode localizar o intervalo usado para um despejo com o método [Range. getSpillingToRange](/javascript/api/excel/excel.range#getspillingtorange--) . Há também uma [versão do * OrNullObject](..//develop/application-specific-api-model.md#ornullobject-methods-and-properties), `Range.getSpillingToRangeOrNullObject` .
+
+O exemplo a seguir mostra uma fórmula básica que copia o conteúdo de um intervalo em uma célula, que é despejada nas células vizinhas. O suplemento então registra o intervalo que contém o despejo.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getItem("Sample");
+
+    // Set G4 to a formula that returns a dynamic array.
+    var targetCell = sheet.getRange("G4");
+    targetCell.formulas = [["=A4:D4"]];
+
+    // Get the address of the cells that the dynamic array spilled into.
+    var spillRange = targetCell.getSpillingToRange();
+    spillRange.load("address");
+
+    // Sync and log the spilled-to range.
+    return context.sync().then(function () {
+        // This will log the range as "G4:J4".
+        console.log(`Copying the table headers spilled into ${spillRange.address}.`);
+    });
+}).catch(errorHandlerFunction);
+```
+
+Você também pode encontrar a célula responsável por despejar em uma determinada célula usando o método [Range. getSpillParent](/javascript/api/excel/excel.range#getspillparent--) . Observe que `getSpillParent` só funciona quando o objeto Range é uma única célula. A chamada `getSpillParent` em um intervalo com várias células resultará em um erro que será lançado (ou um intervalo nulo que está sendo retornado `Range.getSpillParentOrNullObject` ).
 
 ## <a name="see-also"></a>Confira também
 

@@ -3,12 +3,12 @@ ms.date: 07/10/2020
 description: Saiba como depurar suas funções personalizadas do Excel que não usam um painel de tarefas.
 title: Depuração de funções personalizadas sem interface do usuário
 localization_priority: Normal
-ms.openlocfilehash: 9a493600b6e94d86138cd7949dad0498ec9df05b
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 73e5d40dc2bf38ce6ea0f52c55cc2a25c1467f7f
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159511"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293111"
 ---
 # <a name="ui-less-custom-functions-debugging"></a>Depuração de funções personalizadas sem interface do usuário
 
@@ -31,7 +31,7 @@ No Mac:
 > [!NOTE]
 > Para simplificar, este artigo mostra a depuração no contexto de uso do Visual Studio Code para editar, executar tarefas e, em alguns casos, usar o modo de exibição de depuração. Se você estiver usando um editor ou uma ferramenta de linha de comando diferente, consulte as [instruções de linha de comando](#commands-for-building-and-running-your-add-in) no final deste artigo.
 
-## <a name="requirements"></a>Requisitos
+## <a name="requirements"></a>Requirements
 
 Antes de começar a depurar, você deve usar o [gerador Yeoman para suplementos do Office](https://github.com/OfficeDev/generator-office) para criar um projeto de funções personalizadas. Para obter orientação sobre como criar um projeto de funções personalizadas, consulte o [tutorial de funções personalizadas](../tutorials/excel-tutorial-create-custom-functions.md).
 

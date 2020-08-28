@@ -3,12 +3,12 @@ title: Trabalhe com planilhas usando a API JavaScript do Excel
 description: Exemplos de código que mostram como executar tarefas comuns com planilhas usando a API JavaScript do Excel.
 ms.date: 03/24/2020
 localization_priority: Normal
-ms.openlocfilehash: ff8b1c29b17dfa801feab7fcf8b1f478596eda46
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b73d99b7c78649f1d99729ba7e644816db0f2ade
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44610379"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294119"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Trabalhe com planilhas usando a API JavaScript do Excel
 
@@ -367,7 +367,7 @@ Excel.run(function (context) {
 
 ## <a name="find-all-cells-with-matching-text"></a>Localizar todas as células com texto correspondente
 
-O objeto `Worksheet` tem o método `find` para pesquisar uma cadeia especificada dentro da planilha. Ele retorna um objeto `RangeAreas`, que é um conjunto de objetos `Range` que podem ser editados ao mesmo tempo. O exemplo de código a seguir localiza todas as células com valores iguais à cadeia de caracteres **Concluída** e os marca de verde. Observe que `findAll` exibirá um erro `ItemNotFound` se a cadeia especificada não existir na planilha. Se você acha que a cadeia especificada pode não estar na planilha, use o método [findAllOrNullObject](excel-add-ins-advanced-concepts.md#ornullobject-methods) para que seu código manipule normalmente esse cenário.
+O objeto `Worksheet` tem o método `find` para pesquisar uma cadeia especificada dentro da planilha. Ele retorna um objeto `RangeAreas`, que é um conjunto de objetos `Range` que podem ser editados ao mesmo tempo. O exemplo de código a seguir localiza todas as células com valores iguais à cadeia de caracteres **Concluída** e os marca de verde. Observe que `findAll` exibirá um erro `ItemNotFound` se a cadeia especificada não existir na planilha. Se você acha que a cadeia especificada pode não estar na planilha, use o método [findAllOrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) para que seu código manipule normalmente esse cenário.
 
 ```js
 Excel.run(function (context) {

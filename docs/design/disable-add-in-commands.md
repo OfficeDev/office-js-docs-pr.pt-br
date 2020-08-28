@@ -1,33 +1,40 @@
 ---
 title: Habilitar e Desabilitar Comandos de Suplemento
 description: Aprenda a alterar o status habilitado ou desabilitado dos botões da faixa de opções personalizados e itens de menu no seu Suplemento da Web do Office.
-ms.date: 05/11/2020
-localization_priority: Priority
-ms.openlocfilehash: fa4830c0112486bbad7a13edf78e0c8c4277e143
-ms.sourcegitcommit: 682d18c9149b1153f9c38d28e2a90384e6a261dc
-ms.translationtype: HT
+ms.date: 08/26/2020
+localization_priority: Normal
+ms.openlocfilehash: 54bfa06a3acfbea561d20a1b327f093429d725fc
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "44217890"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292971"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>Habilitar e Desabilitar Comandos de Suplemento
 
 Quando alguma funcionalidade do seu suplemento deve estar disponível apenas em determinados contextos, você pode habilitar ou desabilitar programaticamente seus Comandos de Suplemento personalizados. Por exemplo, uma função que altera o cabeçalho de uma tabela só deve ser ativada quando o cursor estiver em uma tabela.
 
-Você também pode especificar se o comando será ativado ou desativado quando o aplicativo host do Office for aberto.
+Você também pode especificar se o comando está habilitado ou desabilitado quando o aplicativo cliente do Office é aberto.
 
 > [!NOTE]
 > Este artigo pressupõe que você esteja familiarizado com a seguinte documentação. Revise-o se você não trabalhou recentemente com os Comandos de Suplemento (itens de menu personalizados e botões da faixa de opções).
 >
-> [Conceitos básicos dos Comandos de Suplemento](add-in-commands.md)
+> - [Conceitos básicos dos Comandos de Suplemento](add-in-commands.md)
 
-## <a name="rules-and-gotchas"></a>Regras e dicas
+## <a name="office-application-and-platform-support-only"></a>Suporte apenas a aplicativos e plataformas do Office
 
-### <a name="single-line-ribbon-in-office-on-the-web"></a>Faixa de opções de linha única no Office na Web
+As APIs descritas neste artigo estão disponíveis apenas no Excel e apenas no Office no Windows e no Office no Mac.
 
-No Office na Web, as APIs e a marcação de manifesto descritas neste artigo afetam apenas a faixa de opções de linha única. Elas não têm efeito na faixa de opções de várias linhas. Eles afetam as duas faixas de opções do Office para área de trabalho. Para obter mais informações sobre as duas faixas de opções, confira [Usar a faixa de opções simplificada](https://support.office.com/article/Use-the-Simplified-Ribbon-44bef9c3-295d-4092-b7f0-f471fa629a98).
+### <a name="test-for-platform-support-with-requirement-sets"></a>Teste se há suporte à plataforma com conjuntos de requisitos
 
-### <a name="shared-runtime-required"></a>Tempo de execução compartilhado necessário
+Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se uma combinação de aplicativos e plataformas do Office oferece suporte a APIs necessárias para um suplemento. Para obter mais informações, consulte [versões do Office e conjuntos de requisitos](../develop/office-versions-and-requirement-sets.md).
+
+As APIs Enable/Disable pertencem ao conjunto de requisitos [RibbonApi 1,1](../reference/requirement-sets/ribbon-api-requirement-sets.md) .
+
+> [!NOTE]
+> O conjunto de requisitos **RibbonApi 1,1** ainda não tem suporte no manifesto, portanto, você não pode especificá-lo na seção do manifesto `<Requirements>` . Para testar o suporte, seu código deve chamar `Office.context.requirements.isSetSupported('RibbonApi', '1.1')` . Se, *e somente se*, essa chamada retornar `true` , seu código poderá chamar as APIs habilitar/desabilitar. Se a chamada de `isSetSupported` Devoluções `false` , todos os comandos de suplemento personalizados são habilitados todo o tempo. Você deve projetar seu suplemento de produção e quaisquer instruções no aplicativo para considerar como funcionará quando o conjunto de requisitos **RibbonApi 1,1** não for suportado. Para obter mais informações e exemplos de como usar o `isSetSupported` , consulte [especificar aplicativos do Office e requisitos de API](../develop/specify-office-hosts-and-api-requirements.md), principalmente [usar verificações de tempo de execução em seu código JavaScript](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code). (A seção [define o elemento requirements no manifesto](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest) desse artigo não se aplica à faixa de opções 1,1.)
+
+## <a name="shared-runtime-required"></a>Tempo de execução compartilhado necessário
 
 As APIs e a marcação de manifesto descritas neste artigo exigem que o manifesto do suplemento especifique que ele deve usar um tempo de execução compartilhado. Para fazer isso, execute as seguintes etapas.
 
@@ -124,7 +131,7 @@ Office.onReady(async () => {
 });
 ```
 
-Terceiro, defina o manipulador `enableChartFormat`. A seguir, é apresentado um exemplo simples, mas consulte **Prática recomendada: Teste se há erros de status do controle** abaixo para obter uma maneira mais robusta de alterar o status de um controle.
+Terceiro, defina o manipulador `enableChartFormat`. A seguir, é apresentado um exemplo simples, mas consulte [Prática recomendada: Teste se há erros de status do controle](#best-practice-test-for-control-status-errors) abaixo para obter uma maneira mais robusta de alterar o status de um controle.
 
 ```javascript
 function enableChartFormat() {
@@ -197,8 +204,9 @@ function disableChartFormat() {
 
 ## <a name="test-for-platform-support-with-requirement-sets"></a>Teste se há suporte à plataforma com conjuntos de requisitos
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../develop/office-versions-and-requirement-sets.md).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office oferece suporte a APIs necessárias para um suplemento. Para obter mais informações, consulte [versões do Office e conjuntos de requisitos](../develop/office-versions-and-requirement-sets.md).
 
 As APIs de ativação/desativação requerem suporte do seguinte conjunto de requisitos:
 
-- [AddinCommands 1.1](../reference/requirement-sets/add-in-commands-requirement-sets.md)
+- [RibbonApi 1,1](../reference/requirement-sets/ribbon-api-requirement-sets.md)
+

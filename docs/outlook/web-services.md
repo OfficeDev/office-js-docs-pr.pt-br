@@ -3,12 +3,12 @@ title: Usar os Serviços Web do Exchange a partir de um suplemento do Outlook
 description: Fornece um exemplo que mostra como um suplemento do Outlook pode solicitar informações dos Serviços Web do Exchange.
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: a1141570c14b6905584f9398b629a75b477d3870
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: a8299b3e96db48c296fe0e61b36668a788fb8799
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44604505"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292479"
 ---
 # <a name="call-web-services-from-an-outlook-add-in"></a>Chamar serviços Web de um suplemento do Outlook
 
@@ -25,7 +25,7 @@ A maneira usada para chamar um serviço Web varia com base em onde o serviço We
 |:-----|:-----|
 |O servidor Exchange que hospeda a caixa de correio do cliente|Use o método [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) para chamar operações EWS com suporte dos suplementos. O servidor Exchange que hospeda a caixa de correio também expõe os EWS.|
 |O servidor Web que fornece o local de origem para a interface do usuário|Chame o serviço Web usando técnicas JavaScript padrão. O código JavaScript no quadro da interface do usuário é executado no contexto do servidor Web que fornece a interface do usuário. Portanto, ele pode chamar serviços Web nesse servidor sem causar um erro de script entre sites.|
-|Todos os outros locais|Crie um proxy para o serviço Web no servidor Web que fornece o local de origem para a interface do usuário. Se você não fornecer um proxy, erros de script entre sites impedirão a execução do suplemento. Uma maneira de fornecer um proxy é usar JSON/P. Para saber mais, confira [Privacidade e segurança para suplementos do Office](../develop/privacy-and-security.md).|
+|Todos os outros locais|Crie um proxy para o serviço Web no servidor Web que fornece o local de origem para a interface do usuário. Se você não fornecer um proxy, erros de script entre sites impedirão a execução do suplemento. Uma maneira de fornecer um proxy é usar JSON/P. Para saber mais, confira [Privacidade e segurança para suplementos do Office](../concepts/privacy-and-security.md).|
 
 ## <a name="using-the-makeewsrequestasync-method-to-access-ews-operations"></a>Usar o método makeEwsRequestAsync para acessar operações dos EWS
 
@@ -51,7 +51,7 @@ Ao analisar uma resposta SOAP de uma operação dos EWS, observe os seguintes pr
 
 - Especifique o prefixo para um nome de marca ao usar o método DOM `getElementsByTagName` , para incluir suporte para o Internet Explorer.
 
-  `getElementsByTagName`comporta de forma diferente dependendo do tipo de navegador. Por exemplo, uma resposta do EWS pode conter o seguinte XML (formatado e abreviado para fins de exibição):
+  `getElementsByTagName` comporta de forma diferente dependendo do tipo de navegador. Por exemplo, uma resposta do EWS pode conter o seguinte XML (formatado e abreviado para fins de exibição):
 
    ```XML
         <t:ExtendedProperty><t:ExtendedFieldURI PropertySetId="00000000-0000-0000-0000-000000000000" 
@@ -154,7 +154,7 @@ O procedimento a seguir descreve como você pode usar o `makeEwsRequestAsync` m�
 
 1. No XML, substitua as IDs de item e atributos relevantes da operação dos EWS por valores apropriados.
 
-2. Inclua a solicitação SOAP como um argumento para o parâmetro de _dados_ de `makeEwsRequestAsync` .
+2. Inclua a solicitação SOAP como um argumento para o parâmetro de  _dados_ de `makeEwsRequestAsync` .
 
 3. Especifique um método de retorno de chamada e chame `makeEwsRequestAsync` .
 
@@ -203,7 +203,7 @@ O suplemento deve especificar a `ReadWriteMailbox` permissão em seu manifesto d
 
 ## <a name="see-also"></a>Confira também
 
-- [Privacidade e segurança para Suplementos do Office](../develop/privacy-and-security.md)
+- [Privacidade e segurança para Suplementos do Office](../concepts/privacy-and-security.md)
 - [Como lidar com limitações de política de mesma origem nos Suplementos do Office](../develop/addressing-same-origin-policy-limitations.md)
 - [Referência do EWS para Exchange](/exchange/client-developer/web-service-reference/ews-reference-for-exchange)
 - [Aplicativos de email para Outlook e EWS no Exchange](/exchange/client-developer/exchange-web-services/mail-apps-for-outlook-and-ews-in-exchange)

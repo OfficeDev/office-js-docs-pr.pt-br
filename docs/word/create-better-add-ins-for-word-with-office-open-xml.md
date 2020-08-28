@@ -3,12 +3,12 @@ title: Criar suplementos melhores para o Word com o Office Open XML
 description: Visão geral de como melhorar o suplemento do Word com o Office Open XML.
 ms.date: 07/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 8aeb0d122c85a1bf38755d1db364222359d06e58
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 9bc88f99cb16a8f5b3fb28208b4ce5379f8595eb
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159301"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294210"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Criar suplementos melhores para o Word com o Office Open XML
 
@@ -87,7 +87,7 @@ Você pode incluir formatação de texto, bordas, sombreamento, dimensionamento 
 *Figura 9. Uma tabela formatada usando um estilo de tabela*
 
 
-![Uma tabela formatada no Word.](../images/office15-app-create-wd-app-using-ooxml-fig09.png)
+![Uma tabela formatada com um estilo de tabela no Word.](../images/office15-app-create-wd-app-using-ooxml-fig09.png)
 
 Você pode usar estilos de tabela internos ou personalizados com a mesma facilidade com que usa um estilo de parágrafo para o texto.
 
@@ -122,7 +122,7 @@ Ao usar [getSelectedDataAsync](/javascript/api/office/office.document#getselecte
 
 Até mesmo um pacote de documento simples do Word inclui partes para propriedades de documentos, estilos, tema (configurações de formatação), configurações da Web, fontes e muito mais, além de partes para o conteúdo real.
 
-Por exemplo, digamos que você queira inserir apenas um parágrafo de texto com formatação direta, conforme mostrado anteriormente na Figura 1. Quando você obtém o Office Open XML para o texto formatado usando o `getSelectedDataAsync` , você vê uma grande quantidade de marcação. A marcação inclui um elemento de pacote que representa um documento inteiro, que contém várias partes (comumente conhecidas como partes do documento ou, no Office Open XML, partes do pacote), como pode ver listado na Figura 13. Cada parte representa um arquivo separado dentro do pacote.
+Por exemplo, digamos que você queira inserir apenas um parágrafo de texto com formatação direta, conforme mostrado anteriormente na Figura 1. Quando você obtém o Office Open XML para o texto formatado usando o  `getSelectedDataAsync` , você vê uma grande quantidade de marcação. A marcação inclui um elemento de pacote que representa um documento inteiro, que contém várias partes (comumente conhecidas como partes do documento ou, no Office Open XML, partes do pacote), como pode ver listado na Figura 13. Cada parte representa um arquivo separado dentro do pacote.
 
 > [!TIP]
 > Você pode editar a marcação do Office Open XML em um editor de texto como o Bloco de Notas. Se você o abrir no Visual Studio, poderá usar **editar >documento de > formato avançado** (CTRL + K, CTRL + D) para formatar o pacote para facilitar a edição. Em seguida, você pode recolher ou expandir partes de um documento ou seções delas, conforme mostrado na Figura 12, para examinar e editar mais facilmente o conteúdo do pacote do Office Open XML. Cada parte do documento começa com uma marca **pkg:part**.
@@ -130,7 +130,7 @@ Por exemplo, digamos que você queira inserir apenas um parágrafo de texto com 
 
 *Figura 12. Recolher e expandir partes do pacote para facilitar a edição no Visual Studio*
 
-![Trecho de código do Office Open XML de uma parte de pacote.](../images/office15-app-create-wd-app-using-ooxml-fig12.png)
+![Trecho de código Office Open XML para uma parte de pacote no Visual Studio.](../images/office15-app-create-wd-app-using-ooxml-fig12.png)
 
 *Figura 13. As partes incluídas em um pacote de documento básico do Office Open XML do Word*
 
@@ -219,7 +219,7 @@ Editamos o exemplo do Office Open XML mostrado aqui, conforme descrito na seçã
 
 Após salvar o Office Open XML anterior como um arquivo XML que pode ser acessado por meio de sua solução, você poderá usar a função a seguir para definir o conteúdo de texto formatado no documento usando a coerção do Office Open XML. 
 
-Nessa função, observe que, exceto pela última linha, tudo é usado para acessar a marcação salva para uso na chamada de método [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) no fim da função. `setSelectedDataASync`requer apenas que você especifique o conteúdo a ser inserido e o tipo de coerção.
+Nessa função, observe que, exceto pela última linha, tudo é usado para acessar a marcação salva para uso na chamada de método [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) no fim da função. `setSelectedDataASync` requer apenas que você especifique o conteúdo a ser inserido e o tipo de coerção.
 
 
 > [!NOTE]

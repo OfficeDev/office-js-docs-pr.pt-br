@@ -3,12 +3,12 @@ title: Crie um Suplemento do Office com Node.js que use logon único
 description: Aprenda a criar um suplemento baseado em node.js que usa o logon único do Office
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 136d7c982d4eef4988e775f8235678c673169d5a
-ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
+ms.openlocfilehash: 2ca1cf37bade124498c99b0b25171871522c2bc7
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "46672691"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292873"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>Crie um Suplemento do Office com Node.js que use logon único
 
@@ -67,7 +67,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 1. Na página **Office-Add-in-NodeJS-SSO**, copie e salve os valores para a **ID do aplicativo (cliente)** e a **ID do diretório (locatário)**. Use ambos os valores nos procedimentos posteriores.
 
     > [!NOTE]
-    > Essa ID é o valor "audience" (público) quando outros aplicativos, como o aplicativo host do Office (por exemplo, PowerPoint, Word, Excel), buscam o acesso autorizado ao aplicativo. Também é a "ID do cliente" do aplicativo quando ela, por sua vez, busca acesso autorizado ao Microsoft Graph.
+    > Essa ID é o valor "Audience" quando outros aplicativos, como o aplicativo cliente do Office (por exemplo, PowerPoint, Word, Excel), procuram acesso autorizado ao aplicativo. Também é a "ID do cliente" do aplicativo quando ela, por sua vez, busca acesso autorizado ao Microsoft Graph.
 
 1. Selecione **Autenticação** em **Gerenciar**. Na seção **concessão implícita** , habilite as caixas de seleção para token de **acesso** e **token de ID**. O exemplo tem um sistema de autorização de fallback que é chamado quando o SSO não está disponível. Esse sistema usa o fluxo implícito.
 
@@ -83,7 +83,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 1. Definir **Quem pode consentir?** aos **Administradores e usuários**.
 
-1. Preencha os campos para configurar a solicitação de consentimento de administrador e usuário com valores apropriados ao `access_as_user` escopo que permite que o aplicativo de host do Office use os seus APIs de suplemento da web com os mesmos direitos que o usuário atual. Sugestões:
+1. Preencha os campos para configurar os prompts de consentimento de usuário e administrador com os valores que são apropriados para o `access_as_user` escopo, o que permite que o aplicativo cliente do Office Use as APIs Web do seu suplemento com os mesmos direitos que o usuário atual. Sugestões:
 
     - **Nome para exibição do consentimento do administrador**: o Office pode atuar como o usuário.
     - **Descrição de autorização de administrador:** Permite ao Office chamar os APIs de suplemento da web com os mesmos direitos que o usuário atual.
@@ -113,7 +113,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 
 1. Selecione **Permissões para API** em **Gerenciar** e selecione **Adicionar uma permissão**. No painel que se abre, escolha **Microsoft Graph** e, em seguida, escolha **Permissões delegadas**.
 
-1. Use a caixa de pesquisa **Selecionar permissões** para procurar as permissões que o seu suplemento precisa. Selecione estas opções. Somente a primeira permissão é realmente necessária pelo suplemento em si, mas a permissão `profile` é necessária para que o host do Office obtenha um token no aplicativo Web do seu suplemento.
+1. Use a caixa de pesquisa **Selecionar permissões** para procurar as permissões que o seu suplemento precisa. Selecione estas opções. Somente o primeiro é realmente necessário para o seu suplemento; Mas a `profile` permissão é necessária para que o aplicativo do Office obtenha um token para o aplicativo Web do seu suplemento.
 
     * Files.Read.All
     * perfil

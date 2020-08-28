@@ -3,12 +3,12 @@ title: Inicialize seu suplemento do Office
 description: Saiba como inicializar o suplemento do Office.
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 8310c5efb803391f7f0d4b01fda70dc0df537b21
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5dc9d0143ac9eaab18625e280891bd601fa9f899
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608136"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293321"
 ---
 # <a name="initialize-your-office-add-in"></a>Inicialize seu suplemento do Office
 
@@ -38,7 +38,7 @@ Para saber mais sobre a sequência de eventos na inicialização do suplemento, 
 
 ## <a name="initialize-with-officeonready"></a>Inicializar com o Office.onReady()
 
-`Office.onReady()`é um método assíncrono que retorna um objeto [Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) enquanto verifica se a biblioteca do Office. js foi carregada. Somente quando a biblioteca é carregada, ela resolve o Promise como um objeto que especifica o aplicativo host do Office com um valor de enumeração `Office.HostType` (`Excel`, `Word` etc.), e a plataforma com um valor de enumeração `Office.PlatformType` (`PC`, `Mac`, `OfficeOnline` etc.). O Promise será resolvido imediatamente quando a biblioteca estiver carregada ao`Office.onReady()` ser chamada.
+`Office.onReady()` é um método assíncrono que retorna um objeto [Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) enquanto verifica se a biblioteca de Office.js foi carregada. Quando a biblioteca é carregada, ela resolve a promessa como um objeto que especifica o aplicativo cliente do Office com um `Office.HostType` valor de enumeração ( `Excel` , `Word` etc.) e a plataforma com um `Office.PlatformType` valor de enumeração ( `PC` , `Mac` , `OfficeOnline` etc.). O Promise será resolvido imediatamente quando a biblioteca estiver carregada ao`Office.onReady()` ser chamada.
 
 Uma maneira de chamar `Office.onReady()` é passá-la por um método de retorno de chamada. Exemplo:
 
@@ -88,7 +88,7 @@ Office.onReady(function() {
 });
 ```
 
-No entanto, há exceções a essa prática. Por exemplo, digamos que você queira abrir o suplemento em um navegador (em vez de fazer sideload em um host do Office) para depurar a interface do usuário com ferramentas de navegador. Já que o Office.js não será carregado no navegador, `onReady` não será executado e o `$(document).ready` não será executado quando chamado dentro de `onReady` no Office. 
+No entanto, há exceções a essa prática. Por exemplo, suponha que você deseja abrir seu suplemento em um navegador (em vez de Sideload-lo em um aplicativo do Office) para depurar sua interface do usuário com ferramentas de navegador. Já que o Office.js não será carregado no navegador, `onReady` não será executado e o `$(document).ready` não será executado quando chamado dentro de `onReady` no Office. 
 
 Outra exceção seria se você quiser que um indicador de progresso seja exibido no painel de tarefas enquanto o suplemento estiver sendo carregado. Neste cenário, o código deve chamar o jQuery `ready` e usar seu retorno de chamada para renderizar o indicador de progresso. Em seguida, a chamada de retorno do Office `onReady` pode substituir o indicador de progresso com a interface do usuário final. 
 
@@ -137,7 +137,7 @@ Para saber mais, veja [Evento Office.initialize](/javascript/api/office) e [Enum
 - O evento `Office.initialize` é disparado no final do processo interno, e que o Office.js é inicializado automaticamente. Ele também é disparado *imediatamente* após o término do processo interno. Se o código no qual você atribui um manipulador ao evento for executado muito tempo após o evento ser disparado, então o manipulador não será executado. Por exemplo, se estiver usando o gerenciador de tarefas WebPack, ele poderá configurar a home page do suplemento para carregar arquivos de polyfill, após carregar o Office.js, mas antes de carregar o JavaScript personalizado. Quando o script carrega e atribui o manipulador, o evento de inicialização já ocorreu. Mas nunca é "tarde demais" para chamar `Office.onReady()`. Caso o evento de inicialização já tenha ocorrido, o retorno de chamada é executado imediatamente.
 
 > [!NOTE]
-> Mesmo que não tenha uma lógica de inicialização, você deve atribuir ou chamar `Office.onReady()` uma função vazia para `Office.initialize` quando o JavaScript do suplemento for carregado. Algumas combinações de host e da plataforma do Office não carregam o painel de tarefas até uma das delas aconteça. Os exemplos a seguir mostram essas duas abordagens.
+> Mesmo que não tenha uma lógica de inicialização, você deve atribuir ou chamar `Office.onReady()` uma função vazia para `Office.initialize` quando o JavaScript do suplemento for carregado. Algumas combinações de aplicativos e plataformas do Office não carregarão o painel de tarefas até que uma dessas situações aconteça. Os exemplos a seguir mostram essas duas abordagens.
 >
 >```js    
 >Office.onReady();

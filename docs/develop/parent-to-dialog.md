@@ -1,103 +1,53 @@
 ---
-title: Passando dados e mensagens para uma caixa de diálogo da página host
-description: Saiba como transmitir dados para uma caixa de diálogo da página host usando as APIs messageChild e DialogParentMessageReceived.
-ms.date: 07/07/2020
+title: Maneiras alternativas de passar mensagens para uma caixa de diálogo da página host
+description: Saiba como solucionar contornos para usar quando não há suporte para o método messageChild.
+ms.date: 08/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 05220fa4cecad4fe412a5590605f774f92ef8f61
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: b516896d28979f439f3065f9ff036ff21c2c0997
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093571"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293174"
 ---
-# <a name="passing-data-and-messages-to-a-dialog-box-from-its-host-page-preview"></a>Passando dados e mensagens para uma caixa de diálogo da página de host (visualização)
+# <a name="alternative-ways-of-passing-messages-to-a-dialog-box-from-its-host-page"></a>Maneiras alternativas de passar mensagens para uma caixa de diálogo da página host
 
-O suplemento pode enviar mensagens da [página host](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page) para uma caixa de diálogo usando o método [MessageChild](/javascript/api/office/office.dialog#messagechild-message-) do objeto [Dialog](/javascript/api/office/office.dialog) .
+A maneira recomendada de passar dados e mensagens de uma página pai para uma caixa de diálogo filha é com o `messageChild` método conforme descrito em [usar a API de caixa de diálogo do Office em seus suplementos do Office](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box). Se o suplemento estiver sendo executado em uma plataforma ou host que não ofereça suporte ao [conjunto de requisitos DialogApi 1,2](../reference/requirement-sets/dialog-api-requirement-sets.md), há duas outras maneiras de passar informações para a caixa de diálogo:
 
-> [!Important]
->
-> - As APIs descritas neste artigo estão em visualização. Eles estão disponíveis para os desenvolvedores de experimentação; Mas não deve ser usado em um suplemento de produção. Até que esta API seja liberada, use as técnicas descritas em [passar informações para a caixa de diálogo](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box) para suplementos de produção.
-> - As APIs descritas neste artigo exigem uma assinatura do Microsoft 365. Você deve usar o build e a versão mensal mais recente do canal Insiders. É necessário ingressar no programa Office Insider para obter essa versão. Para saber mais, confira a página [Seja um Office Insider](https://insider.office.com). Observe que, quando uma compilação é graduada para o canal semestral de produção, o suporte para recursos de visualização é desativado para essa compilação.
-> - Na fase inicial da visualização, as APIs têm suporte no Excel, PowerPoint e Word; Mas não no Outlook.
->
-> [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis.md)]
+- Adicionar parâmetros de consulta à URL que é transmitida para `displayDialogAsync`.
+- Armazenar as informações em outro local que seja acessível para a janela do host e para a caixa de diálogo. As duas janelas não compartilham um armazenamento de sessão comum, mas *se elas tiverem o mesmo domínio* (incluindo o número da porta, se houver algum), compartilharão um [local de armazenamento](https://www.w3schools.com/html/html5_webstorage.asp) comum.\*
 
-## <a name="use-messagechild-from-the-host-page"></a>Usar `messageChild()` na página host
 
-Quando você chama a API de diálogo do Office para abrir uma caixa de diálogo, um objeto [Dialog](/javascript/api/office/office.dialog) é retornado. Ele deve ser atribuído a uma variável, que geralmente tem escopo maior do que o método [displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-) porque o objeto será referenciado por outros métodos. Este é um exemplo:
+> [!NOTE]
+> \* Há um bug que afetará sua estratégia de tratamento de tokens. Se o suplemento estiver sendo executado no **Office na Web** nos navegadores Safari ou Microsoft Edge, o painel de tarefas e a caixa de diálogo não compartilharão o mesmo Armazenamento Local, portanto, ele não poderá ser usado para a comunicação entre eles.
 
-```javascript
-var dialog;
-Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html',
-    function (asyncResult) {
-        dialog = asyncResult.value;
-        dialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessage);
-    }
-);
+## <a name="use-local-storage"></a>Usar o armazenamento local
 
-function processMessage(arg) {
-    dialog.close();
+Para usar o armazenamento local, chame o `setItem` método do `window.localStorage` objeto na página host antes da `displayDialogAsync` chamada, como no exemplo a seguir:
 
-  // message processing code goes here;
-
-}
+```js
+localStorage.setItem("clientID", "15963ac5-314f-4d9b-b5a1-ccb2f1aea248");
 ```
 
-Este `Dialog` objeto tem um método [messageChild](/javascript/api/office/office.dialog#messagechild-message-) que envia qualquer cadeia de caracteres ou em formato dados para a caixa de diálogo. Isso gera um `DialogParentMessageReceived` evento na caixa de diálogo. O código deve lidar com esse evento, conforme mostrado na próxima seção.
+O código na caixa de diálogo lê o item quando necessário, como no exemplo a seguir:
 
-Considere um cenário em que a interface do usuário da caixa de diálogo deve se correlacionar com a planilha ativa no momento e a posição dessa planilha em relação às outras planilhas. No exemplo a seguir, `sheetPropertiesChanged` envia as propriedades de planilha do Excel para a caixa de diálogo. Nesse caso, a planilha atual é chamada "minha planilha" e é a 2ª folha na pasta de trabalho. Os dados são encapsulados em um objeto que é em formato para que ele possa ser passado para `messageChild` .
-
-```javascript
-function sheetPropertiesChanged() {
-    var messageToDialog = JSON.stringify({
-                               name: "My Sheet",
-                               position: 2
-                           });
-
-    dialog.messageChild(messageToDialog);
-}
+```js
+var clientID = localStorage.getItem("clientID");
+// You can also use property syntax:
+// var clientID = localStorage.clientID;
 ```
 
-## <a name="handle-dialogparentmessagereceived-in-the-dialog-box"></a>Manipular DialogParentMessageReceived na caixa de diálogo
+## <a name="use-query-parameters"></a>Usar parâmetros de consulta
 
-No JavaScript da caixa de diálogo, registre um manipulador para o `DialogParentMessageReceived` evento com o método [UI. addHandlerAsync](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) . Isso geralmente é feito nos [métodos Office. onReady ou Office.initialize](initialize-add-in.md). Este é um exemplo:
+O exemplo a seguir mostra como transmitir dados com um parâmetro de consulta:
 
-```javascript
-Office.onReady()
-    .then(function() {
-        Office.context.ui.addHandlerAsync(
-            Office.EventType.DialogParentMessageReceived,
-            onMessageFromParent);
-    });
+```js
+Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?clientID=15963ac5-314f-4d9b-b5a1-ccb2f1aea248');
 ```
 
-Em seguida, defina o `onMessageFromParent` manipulador. O código a seguir continua o exemplo da seção anterior. Observe que o Office passa um argumento para o manipulador e que a `message` Propriedade do objeto Argument contém a cadeia de caracteres da página host. Neste exemplo, a mensagem é convertida para um objeto e o jQuery é usado para definir o título superior da caixa de diálogo para corresponder ao novo nome da planilha.
+Para ver um exemplo que usa essa técnica, consulte [Inserir gráficos do Excel usando o Microsoft Graph em um Suplemento do PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart).
 
-```javascript
-function onMessageFromParent(event) {
-    var messageFromParent = JSON.parse(event.message);
-    $('h1').text(messageFromParent.name);
-}
-```
+O código na caixa de diálogo pode analisar a URL e ler o valor do parâmetro.
 
-É uma prática recomendada verificar se o manipulador está registrado corretamente. Você pode fazer isso passando um retorno de chamada para o `addHandlerAsync` método que é executado quando a tentativa de registrar o manipulador é concluída. Use o manipulador para registrar ou mostrar um erro se o manipulador não tiver sido registrado com êxito. Apresentamos um exemplo a seguir. Observe que `reportError` é uma função, não definida aqui, que registra ou exibe o erro.
-
-```javascript
-Office.onReady()
-    .then(function() {
-        Office.context.ui.addHandlerAsync(
-            Office.EventType.DialogParentMessageReceived,
-            onMessageFromParent,
-            onRegisterMessageComplete);
-    });
-
-function onRegisterMessageComplete(asyncResult) {
-    if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
-        reportError(asyncResult.error.message);
-    }
-}
-```
-
-## <a name="conditional-messaging"></a>Mensagens condicionais
-
-Como você pode fazer várias `messageChild` chamadas a partir da página host, mas tem apenas um manipulador na caixa de diálogo para o `DialogParentMessageReceived` evento, o manipulador deve usar a lógica condicional para distinguir mensagens diferentes. Você pode fazer isso de uma maneira que seja precisamente paralela à forma como você estruturaria mensagens condicionais quando a caixa de diálogo estiver enviando uma mensagem para a página host, conforme descrito em [mensagens condicionais](dialog-api-in-office-add-ins.md#conditional-messaging).
+> [!IMPORTANT]
+> O Office adiciona automaticamente um parâmetro de consulta chamado `_host_info` à URL que é transmitida para `displayDialogAsync`. Ele é anexado após os parâmetros de consulta personalizados, se houver algum. Ele não é anexado às URLs subsequentes para as quais a caixa de diálogo navega. No futuro, a Microsoft poderá alterar o conteúdo desse valor ou removê-lo completamente para que seu código não consiga lê-lo. O mesmo valor é adicionado ao armazenamento de sessão da caixa de diálogo. Novamente, *seu código não deve ler nem gravar esse valor*.

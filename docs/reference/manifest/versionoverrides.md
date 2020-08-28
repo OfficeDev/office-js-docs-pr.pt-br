@@ -3,12 +3,12 @@ title: Elemento VersionOverrides no arquivo de manifesto
 description: Documentação de referência do elemento VersionOverrides para arquivos de manifesto de suplementos do Office (XML).
 ms.date: 03/05/2020
 localization_priority: Normal
-ms.openlocfilehash: cb23a78c336be891cdfa30262713ee3c80b9160f
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 588f0074941b41a617dd912d78ed2ef2c59f0886
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44604493"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293832"
 ---
 # <a name="versionoverrides-element"></a>Elemento VersionOverrides
 
@@ -40,7 +40,7 @@ A seguir, a lista o valor necessário do valor **xmlns** , dependendo do valor *
 |:-----|:-----|:-----|
 |  **Descrição**    |  Não   |  Descreve o suplemento. Isso substitui o elemento `Description` em qualquer parte pai do manifesto. O texto da descrição está contido em um elemento filho do elemento **LongString**, contido no elemento [Resources](resources.md). O atributo `resid` do elemento **Description** está definido como o valor do atributo `id` do elemento `String` que contém o texto.|
 |  **Requisitos**  |  Não   |  Especifica o conjunto de requisitos mínimos e a versão do Office.js exigida pelo suplemento. Isso substitui o elemento `Requirements` na parte pai do manifesto.|
-|  [Hosts](hosts.md)                |  Sim  |  Especifica um conjunto de hosts do Office. O elemento filho Hosts substitui o elemento Hosts na parte pai do manifesto.  |
+|  [Hosts](hosts.md)                |  Sim  |  Especifica uma coleção de aplicativos do Office. O elemento hosts filho substitui o elemento hosts na parte pai do manifesto.  |
 |  [Resources](resources.md)    |  Sim  | Define um conjunto de recursos (cadeias de caracteres, URLs e imagens) consultado por outros elementos do manifesto.|
 |  [EquivalentAddins](equivalentaddins.md)    |  Não  | Especifica os suplementos nativos (COM/XLL) equivalentes ao suplemento Web. O suplemento Web não será ativado se um suplemento nativo equivalente estiver instalado.|
 |  **VersionOverrides**    |  Não  | Define comandos de suplemento em uma versão mais recente do esquema. Para saber mais, confira o tópico [Implementar várias versões](#implementing-multiple-versions). |

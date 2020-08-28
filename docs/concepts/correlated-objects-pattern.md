@@ -1,21 +1,21 @@
 ---
 title: Evite usar o método context.sync em loops
 description: Saiba como usar o loop de divisão e os padrões de objetos correlacionados para evitar chamar Context. Sync em um loop.
-ms.date: 04/09/2020
+ms.date: 07/29/2020
 localization_priority: Normal
-ms.openlocfilehash: bdb7340b999d74baf200aafda2d0f2f41420bd14
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: d3628400ef783035cf6a816144dbd5cfb30582ee
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608031"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292992"
 ---
 # <a name="avoid-using-the-contextsync-method-in-loops"></a>Evite usar o método context.sync em loops
 
 > [!NOTE]
-> Este artigo pressupõe que você está além do estágio inicial do trabalho com pelo menos uma das quatro APIs JavaScript do Office específicas do host &mdash; para Excel, Word, OneNote e Visio &mdash; que usam um sistema de lote para interagir com o documento do Office. Em particular, você deve saber o que é uma chamada `context.sync` e deve saber o que é um objeto de coleção. Se você não estiver nesse estágio, comece a [entender a API JavaScript do Office](../develop/understanding-the-javascript-api-for-office.md) e a documentação vinculada a em "específico do host", neste artigo.
+> Este artigo pressupõe que você está além do estágio inicial do trabalho com pelo menos uma das quatro APIs JavaScript do Office específicas do aplicativo &mdash; para Excel, Word, OneNote e Visio &mdash; que usam um sistema de lote para interagir com o documento do Office. Em particular, você deve saber o que é uma chamada `context.sync` e deve saber o que é um objeto de coleção. Se você não estiver nesse estágio, comece a [entender a API JavaScript do Office](../develop/understanding-the-javascript-api-for-office.md) e a documentação vinculada a sob "específico do aplicativo", neste artigo.
 
-Para alguns cenários de programação nos suplementos do Office que usam um dos modelos de API específicos do host (para Excel, Word, OneNote e Visio), seu código precisa ler, gravar ou processar algumas propriedades de cada membro de um objeto coleção. Por exemplo, um suplemento do Excel que precisa obter os valores de cada célula de uma determinada coluna de tabela ou um suplemento do Word que precisa realçar cada instância de uma cadeia de caracteres no documento. Você precisa iterar sobre os membros na `items` Propriedade do objeto coleção; mas, por motivos de desempenho, você precisa evitar chamadas `context.sync` em cada iteração do loop. Cada chamada de `context.sync` é uma viagem de ida e volta do suplemento para o documento do Office. Repetidas viagens de ida e volta o desempenho, especialmente se o suplemento estiver sendo executado no Office na Web, pois os ciclos de ida e volta passam pela Internet.
+Para alguns cenários de programação nos suplementos do Office que usam um dos modelos de API específicos do aplicativo (para Excel, Word, OneNote e Visio), seu código precisa ler, gravar ou processar algumas propriedades de cada membro de um objeto coleção. Por exemplo, um suplemento do Excel que precisa obter os valores de cada célula de uma determinada coluna de tabela ou um suplemento do Word que precisa realçar cada instância de uma cadeia de caracteres no documento. Você precisa iterar sobre os membros na `items` Propriedade do objeto coleção; mas, por motivos de desempenho, você precisa evitar chamadas `context.sync` em cada iteração do loop. Cada chamada de `context.sync` é uma viagem de ida e volta do suplemento para o documento do Office. Repetidas viagens de ida e volta o desempenho, especialmente se o suplemento estiver sendo executado no Office na Web, pois os ciclos de ida e volta passam pela Internet.
 
 > [!NOTE]
 > Todos os exemplos neste artigo usam `for` loops, mas as práticas descritas aplicam-se a qualquer instrução de loop que possa percorrer uma matriz, incluindo o seguinte:
@@ -39,10 +39,10 @@ Para alguns cenários de programação nos suplementos do Office que usam um dos
 
 ## <a name="writing-to-the-document"></a>Gravação no documento
 
-No caso mais simples, você está apenas gravando para membros de um objeto de coleção, não lendo suas propriedades. Por exemplo, o código a seguir é realçado em amarelo a cada instância de "a" em um documento do Word. 
+No caso mais simples, você está apenas gravando para membros de um objeto de coleção, não lendo suas propriedades. Por exemplo, o código a seguir é realçado em amarelo a cada instância de "a" em um documento do Word.
 
 > [!NOTE]
-> Geralmente, é uma boa prática ter um ponto final `context.sync` antes do caractere de fechamento "}" do `run` método host (como `Excel.run` , `Word.run` etc.). Isso ocorre porque o `run` método faz uma chamada oculta do `context.sync` como a última coisa que faz se, e somente se, houver comandos em fila que ainda não tenham sido sincronizados. O fato de esta chamada ser oculta pode ser confuso, portanto, geralmente recomendamos que você adicione o explícito `context.sync` . No entanto, Considerando que este artigo está prestes a minimizar as chamadas `context.sync` , é, na verdade, mais confuso de adicionar um final totalmente desnecessário `context.sync` . Portanto, neste artigo, deixamos de existir quando não há comandos não sincronizados no final do `run` . 
+> Geralmente, é uma boa prática ter um ponto final `context.sync` antes do caractere de fechamento "}" do `run` método Application (como `Excel.run` , `Word.run` etc.). Isso ocorre porque o `run` método faz uma chamada oculta do `context.sync` como a última coisa que faz se, e somente se, houver comandos em fila que ainda não tenham sido sincronizados. O fato de esta chamada ser oculta pode ser confuso, portanto, geralmente recomendamos que você adicione o explícito `context.sync` . No entanto, Considerando que este artigo está prestes a minimizar as chamadas `context.sync` , é, na verdade, mais confuso de adicionar um final totalmente desnecessário `context.sync` . Portanto, neste artigo, deixamos de existir quando não há comandos não sincronizados no final do `run` .
 
 ```javascript
 Word.run(async function (context) {
@@ -191,7 +191,7 @@ Word.run(async (context) => {
     for (let i = 0; i < allSearchResults.length; i++) {
       let correlatedObject = allSearchResults[i];
 
-      for (let j = 0; j < correlatedObject.rangesMatchingJob.items.length; j++) {        
+      for (let j = 0; j < correlatedObject.rangesMatchingJob.items.length; j++) {
         let targetRange = correlatedObject.rangesMatchingJob.items[j];
         let name = correlatedObject.personAssignedToJob;
         targetRange.insertText(name, Word.InsertLocation.replace);
@@ -205,12 +205,12 @@ Word.run(async (context) => {
 Observação o código usa o padrão de loop dividido:
 
 - O loop externo do exemplo anterior foi dividido em dois. (O segundo loop tem um loop interno, que é esperado porque o código está em iteração em um conjunto de trabalhos (ou espaços reservados) e dentro desse conjunto que está Iterando nos intervalos correspondentes.)
-- Há um `context.sync` após cada loop principal, mas não `context.sync` dentro de nenhum loop. 
+- Há um `context.sync` após cada loop principal, mas não `context.sync` dentro de nenhum loop.
 - O segundo loop principal itera por meio de uma matriz criada no primeiro loop.
 
-Mas a matriz criada no primeiro loop *não contém apenas* um objeto do Office como o primeiro loop fazia na seção [lendo valores do documento com o padrão de loop dividido](#reading-values-from-the-document-with-the-split-loop-pattern). Isso ocorre porque algumas das informações necessárias para processar os objetos de intervalo do Word não estão nos próprios objetos Range, mas, em vez disso, vêm da `jobMapping` matriz. 
+Mas a matriz criada no primeiro loop *não contém apenas* um objeto do Office como o primeiro loop fazia na seção [lendo valores do documento com o padrão de loop dividido](#reading-values-from-the-document-with-the-split-loop-pattern). Isso ocorre porque algumas das informações necessárias para processar os objetos de intervalo do Word não estão nos próprios objetos Range, mas, em vez disso, vêm da `jobMapping` matriz.
 
-Portanto, os objetos na matriz criados no primeiro loop são objetos personalizados que têm duas propriedades. O primeiro é uma matriz de intervalos de palavras que correspondem a um título de trabalho específico (ou seja, uma cadeia de caracteres de espaço reservado) e a segunda é uma cadeia de caracteres que fornece o nome da pessoa atribuída ao trabalho. Isso torna o loop final fácil de escrever e fácil de ler, pois todas as informações necessárias para processar um determinado intervalo estão contidas no mesmo objeto personalizado que contém o intervalo. O nome que deve substituir _ **correlatedObject**. rangesMatchingJob. Items [j]_ é a outra Propriedade do mesmo objeto: _ **correlatedObject**. personAssignedToJob_. 
+Portanto, os objetos na matriz criados no primeiro loop são objetos personalizados que têm duas propriedades. O primeiro é uma matriz de intervalos de palavras que correspondem a um título de trabalho específico (ou seja, uma cadeia de caracteres de espaço reservado) e a segunda é uma cadeia de caracteres que fornece o nome da pessoa atribuída ao trabalho. Isso torna o loop final fácil de escrever e fácil de ler, pois todas as informações necessárias para processar um determinado intervalo estão contidas no mesmo objeto personalizado que contém o intervalo. O nome que deve substituir _ **correlatedObject**. rangesMatchingJob. Items [j]_ é a outra Propriedade do mesmo objeto: _ **correlatedObject**. personAssignedToJob_.
 
 Chamamos essa variação do padrão de loop dividido do padrão de **objetos correlacionados** . A idéia geral é que o primeiro loop cria uma matriz de objetos personalizados. Cada objeto tem uma propriedade cujo valor é um dos itens em um objeto do conjunto do Office (ou uma matriz desses itens). O objeto personalizado tem outras propriedades, cada uma das quais fornece informações necessárias para processar os objetos do Office no loop final. Consulte a seção [outros exemplos desses padrões](#other-examples-of-these-patterns) para obter um link para um exemplo em que o objeto correlacionáe personalizado tem mais de duas propriedades.
 
@@ -220,10 +220,10 @@ Uma restrição adicional: às vezes, leva mais de um loop apenas para criar a m
 
 - Para obter um exemplo muito simples para o Excel que usa `Array.forEach` loops, consulte a resposta aceita para esta pilha de excedente: [é possível enfileirar mais de um contexto. Load antes de Context. Sync?](https://stackoverflow.com/questions/44459604/is-it-possible-to-queue-more-than-one-context-load-before-context-sync)
 - Para obter um exemplo simples para o Word que usa `Array.forEach` loops e não usa `async` / `await` a sintaxe, consulte a resposta aceita para esta pilha de excedente: [iterar sobre todos os parágrafos com controles de conteúdo com a API JavaScript do Office](https://stackoverflow.com/questions/58422113/iterating-over-all-paragraphs-with-content-controls-with-office-javascript-api).
-- Para obter um exemplo do Word que está escrito em TypeScript, confira o suplemento do Word de exemplo [Angular2 de estilo](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker), especialmente o arquivo [Word. Document. Service. TS](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/services/word-document/word.document.service.ts). Ele tem uma mistura `for` e `Array.forEach` loops.
+- Para obter um exemplo do Word que está escrito no TypeScript, confira o suplemento do Word de exemplo [Angular2 Style Checker](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker), especialmente o arquivo [word.document. Service. TS](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/services/word-document/word.document.service.ts). Ele tem uma mistura `for` e `Array.forEach` loops.
 - Para obter um exemplo avançado de palavra, importe [essa essência](https://gist.github.com/9c5a803e52480ec7f00bb3224292e0ab) para a [ferramenta de laboratório de scripts](../overview/explore-with-script-lab.md). Para o contexto no uso da essência, confira a resposta aceita para o documento de pergunta de estouro de pilha [não sincronizado após substituir o texto](https://stackoverflow.com/questions/48227941/document-not-in-sync-after-replace-text). Este exemplo cria um tipo de objeto correlacionado personalizado que tem três propriedades. Ele usa um total de três loops para construir a matriz de objetos correlacionados e dois loops para fazer o processamento final. Há uma mistura de `for` e `Array.forEach` loops.
-- Embora não seja estritamente um exemplo dos padrões de loop de divisão ou objetos correlacionados, há um exemplo avançado do Excel que mostra como converter um conjunto de valores de célula em outras moedas com apenas um único `context.sync` . Para experimentá-lo, abra a [ferramenta de laboratório de script](../overview/explore-with-script-lab.md) e navegue até o exemplo de conversor de **moeda** . 
+- Embora não seja estritamente um exemplo dos padrões de loop de divisão ou objetos correlacionados, há um exemplo avançado do Excel que mostra como converter um conjunto de valores de célula em outras moedas com apenas um único `context.sync` . Para experimentá-lo, abra a [ferramenta de laboratório de script](../overview/explore-with-script-lab.md) e navegue até o exemplo de conversor de **moeda** .
 
 ## <a name="when-should-you-not-use-the-patterns-in-this-article"></a>Quando você *não* deve usar os padrões neste artigo?
 
-O Excel não pode ler mais de 5 MB de dados em uma determinada chamada de `context.sync` . Se esse limite for excedido, um erro será gerado. (Para obter mais informações, consulte [limites de transferência de dados do Excel](../develop/common-coding-issues.md#excel-data-transfer-limits).) É muito raro que esse limite seja abordado, mas se houver uma chance de que isso aconteça com seu suplemento, o código *não* deverá carregar todos os dados em um único loop e seguir o loop com um `context.sync` . Mas você ainda deve evitar ter um `context.sync` em cada iteração de um loop sobre um objeto de coleção. Em vez disso, defina subconjuntos dos itens na coleção e execute o loop sobre cada subconjunto por vez, com um `context.sync` entre os loops. Você pode estruturar isso com um loop externo que se repete nos subconjuntos e contém o `context.sync` em cada uma dessas iterações externas.
+O Excel não pode ler mais de 5 MB de dados em uma determinada chamada de `context.sync` . Se esse limite for excedido, um erro será gerado. (Consulte a seção "suplementos do Excel" de [limites de recurso e otimização de desempenho para suplementos do Office](resource-limits-and-performance-optimization.md#excel-add-ins) para obter mais informações.) É muito raro que esse limite seja abordado, mas se houver uma chance de que isso aconteça com seu suplemento, o código *não* deverá carregar todos os dados em um único loop e seguir o loop com um `context.sync` . Mas você ainda deve evitar ter um `context.sync` em cada iteração de um loop sobre um objeto de coleção. Em vez disso, defina subconjuntos dos itens na coleção e execute o loop sobre cada subconjunto por vez, com um `context.sync` entre os loops. Você pode estruturar isso com um loop externo que se repete nos subconjuntos e contém o `context.sync` em cada uma dessas iterações externas.

@@ -3,12 +3,12 @@ title: Regras de ativação para suplementos do Outlook
 description: O Outlook ativa alguns tipos de suplementos se a mensagem ou o compromisso que o usuário está lendo ou redigindo satisfaz as regras de ativação do suplemento.
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: 5fdf8499b802291539f855cce6e0a810573c8798
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7a3ed48f77146a25725d46b3e06296cb0eb5616a
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611677"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294049"
 ---
 # <a name="activation-rules-for-contextual-outlook-add-ins"></a>Regras de ativação para suplementos contextuais do Outlook
 
@@ -182,7 +182,7 @@ O exemplo a seguir ativa o suplemento quando o usuário está redigindo uma mens
 ## <a name="limits-for-rules-and-regular-expressions"></a>Limites para regras e expressões regulares
 
 
-Para oferecer uma experiência satisfatória com suplementos do Outlook, você deve seguir as diretrizes de ativação e de uso da API. A tabela a seguir mostra os limites gerais para expressões regulares e regras, mas existem regras específicas para hosts diferentes. Para saber mais, confira [Limites de ativação e API JavaScript para suplementos do Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) e [Solucionar problemas de ativação de suplemento do Outlook](troubleshoot-outlook-add-in-activation.md).
+Para fornecer uma experiência satisfatória com os suplementos do Outlook, você deve cumprir as diretrizes de ativação e uso da API. A tabela a seguir mostra os limites gerais para expressões regulares e regras, mas há regras específicas para aplicativos diferentes. Para obter mais informações, consulte [limites para ativação e API JavaScript para suplementos do Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) e [solução de problemas de ativação do suplemento do Outlook](troubleshoot-outlook-add-in-activation.md).
 
 <br/>
 
@@ -191,7 +191,7 @@ Para oferecer uma experiência satisfatória com suplementos do Outlook, você d
 |Tamanho do manifesto|Não pode exceder 256 KB.|
 |Regras|Máximo de 15 regras.|
 |ItemHasKnownEntity|Um cliente avançado do Outlook aplicará a regra em relação ao primeiro megabyte do corpo, e não no restante do corpo.|
-|Expressões Regulares|Para regras ItemHasKnownEntity ou ItemHasRegularExpressionMatch de todos os hosts do Outlook:<br><ul><li>Especifique no máximo cinco expressões regulares em regras de ativação de um suplemento do Outlook. Não será possível instalar um suplemento se você exceder esse limite.</li><li>Especifica expressões regulares cujos resultados previstos sejam retornados pela chamada de método <b>getRegExMatches</b> nas primeiras 50 correspondências. </li><li>Especifica declarações look-ahead em expressões regulares, mas não look-behind, `(?<=text)` e negative look-behind `(?<!text)`.</li><li>Especifica expressões regulares cuja correspondência não exceda os limites da tabela a seguir.<br/><br/><table><tr><th>Limite de comprimento de uma correspondência de regex</th><th>Clientes avançados do Outlook</th><th>Outlook no iOS e no Android</th></tr><tr><td>O corpo do item é texto sem formatação</td><td>1,5 KB</td><td>3 KB</td></tr><tr><td>Corpo do item em HTML</td><td>3 KB</td><td>3 KB</td></tr></table>|
+|Expressões Regulares|Para as regras do ItemHasKnownEntity ou do ItemHasRegularExpressionMatch para todos os aplicativos do Outlook:<br><ul><li>Especifique no máximo cinco expressões regulares em regras de ativação de um suplemento do Outlook. Não será possível instalar um suplemento se você exceder esse limite.</li><li>Especifica expressões regulares cujos resultados previstos sejam retornados pela chamada de método <b>getRegExMatches</b> nas primeiras 50 correspondências. </li><li>Especifica declarações look-ahead em expressões regulares, mas não look-behind, `(?<=text)` e negative look-behind `(?<!text)`.</li><li>Especifica expressões regulares cuja correspondência não exceda os limites da tabela a seguir.<br/><br/><table><tr><th>Limite de comprimento de uma correspondência de regex</th><th>Clientes avançados do Outlook</th><th>Outlook no iOS e no Android</th></tr><tr><td>O corpo do item é texto sem formatação</td><td>1,5 KB</td><td>3 KB</td></tr><tr><td>Corpo do item em HTML</td><td>3 KB</td><td>3 KB</td></tr></table>|
 
 ## <a name="see-also"></a>Confira também
 

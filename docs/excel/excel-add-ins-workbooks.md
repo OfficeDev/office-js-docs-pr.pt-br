@@ -1,14 +1,14 @@
 ---
 title: Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 description: Exemplos de código que mostram como executar tarefas comuns com pastas de trabalho ou recursos de nível de aplicativo usando a API JavaScript do Excel.
-ms.date: 05/06/2020
+ms.date: 08/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 16c091c3f01ffba144cf28c4f6e2bf4889872194
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: a7a35e2627863c648f8c3e31ab05b2714ca0aebe
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609195"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294126"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 
@@ -146,6 +146,8 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
+### <a name="custom-properties"></a>Propriedades personalizadas
+
 Você também pode definir propriedades personalizadas. O objeto DocumentProperties contém uma propriedade `custom` que representa um conjunto de pares de valores-chave para propriedades definidas pelo usuário. O exemplo a seguir mostra como criar uma propriedade personalizada chamada **Introduction** com o valor "Olá" e, em seguida, recuperá-la.
 
 ```js
@@ -160,11 +162,46 @@ Excel.run(function (context) {
 Excel.run(function (context) {
     var customDocProperties = context.workbook.properties.custom;
     var customProperty = customDocProperties.getItem("Introduction");
-    customProperty.load("key, value");
+    customProperty.load(["key, value"]);
 
     return context.sync().then(function() {
         console.log("Custom key  : " + customProperty.key); // "Introduction"
         console.log("Custom value : " + customProperty.value); // "Hello"
+    });
+}).catch(errorHandlerFunction);
+```
+
+#### <a name="worksheet-level-custom-properties-preview"></a>Propriedades personalizadas no nível da planilha (versão prévia)
+
+> [!NOTE]
+> As propriedades personalizadas em nível de planilha estão atualmente em versão prévia. [!INCLUDE [Information about using preview Excel APIs](../includes/using-excel-preview-apis.md)]
+
+As propriedades personalizadas também podem ser definidas no nível da planilha. Eles são semelhantes às propriedades personalizadas no nível do documento, exceto pelo fato de que a mesma chave pode ser repetida em diferentes planilhas. O exemplo a seguir mostra como criar uma propriedade **personalizada chamada** MySheet com o valor "Alpha" na planilha atual e, em seguida, recuperá-la.
+
+```js
+Excel.run(function (context) {
+    // Add the custom property.
+    var customWorksheetProperties = context.workbook.worksheets.getActiveWorksheet().customProperties;
+    customWorksheetProperties.add("WorksheetGroup", "Alpha");
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+
+[...]
+
+Excel.run(function (context) {
+    // Load the keys and values of all custom properties in the current worksheet.
+    var worksheet = context.workbook.worksheets.getActiveWorksheet();
+    worksheet.load("name");
+
+    var customWorksheetProperties = worksheet.customProperties;
+    var customWorksheetProperty = customWorksheetProperties.getItem("WorksheetGroup");
+    customWorksheetProperty.load(["key", "value"]);
+
+    return context.sync().then(function() {
+        // Log the WorksheetGroup custom property to the console.
+        console.log(worksheet.name + ": " + customWorksheetProperty.key); // "WorksheetGroup"
+        console.log("  Custom value : " + customWorksheetProperty.value); // "Alpha"
     });
 }).catch(errorHandlerFunction);
 ```
@@ -190,7 +227,7 @@ Excel.run(function (context) {
 
 Uma pasta de trabalho tem configurações de idioma e cultura que afetam o modo como determinados dados são exibidos. Essas configurações podem ajudar a localizar dados quando os usuários do seu suplemento estiverem compartilhando pastas de trabalho em diferentes idiomas e culturas. O suplemento pode usar a análise de cadeia de caracteres para localizar o formato de números, datas e horas com base nas configurações de cultura do sistema para que cada usuário veja os dados em seu próprio formato de cultura.
 
-`Application.cultureInfo`define as configurações de cultura do sistema como um objeto [CultureInfo](/javascript/api/excel/excel.cultureinfo) . Contém configurações como o separador decimal numérico ou o formato de data.
+`Application.cultureInfo` define as configurações de cultura do sistema como um objeto [CultureInfo](/javascript/api/excel/excel.cultureinfo) . Contém configurações como o separador decimal numérico ou o formato de data.
 
 Algumas configurações de cultura podem ser [alteradas por meio da interface do usuário do Excel](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e). As configurações do sistema são preservadas no `CultureInfo` objeto. As alterações locais são mantidas como propriedades no nível do [aplicativo](/javascript/api/excel/excel.application), como `Application.decimalSeparator` .
 

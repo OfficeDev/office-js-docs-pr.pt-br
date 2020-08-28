@@ -3,12 +3,12 @@ title: Realizar o sideload de suplementos do Office em um iPad ou Mac para teste
 description: Testar o suplemento do Office no iPad e Mac por Sideload
 ms.date: 02/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 092207898547969a361b10d72fad106311563907
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1a1cb804a72aa182480d06009cf30b41a37276d2
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611137"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292199"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>Realizar o sideload de suplementos do Office em um iPad ou Mac para teste
 
@@ -84,7 +84,7 @@ Para ver como seu suplemento será executado no Office no iOS, você pode realiz
 
 ## <a name="remove-a-sideloaded-add-in"></a>Remover um suplemento do suplementos foi feito
 
-Você pode remover um suplemento suplementos foi feito anteriormente limpando o cache do Office em seu computador. Detalhes sobre como limpar o cache para cada plataforma e host podem ser encontrados no artigo [limpar o cache do Office](clear-cache.md).
+Você pode remover um suplemento suplementos foi feito anteriormente limpando o cache do Office em seu computador. Detalhes sobre como limpar o cache para cada plataforma e aplicativo podem ser encontrados no artigo [limpar o cache do Office](clear-cache.md).
 
 ## <a name="see-also"></a>Confira também
 

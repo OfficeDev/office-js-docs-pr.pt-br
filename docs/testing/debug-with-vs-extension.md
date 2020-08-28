@@ -3,12 +3,12 @@ title: Extensão de depuração de suplementos do Microsoft Office para o Visual
 description: Use o depurador de suplemento do Visual Studio Code Extension para depurar seu suplemento do Office.
 ms.date: 05/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 2439af12f30cef1b9d291578cbababe3ed601644
-ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
+ms.openlocfilehash: 1343014fa875509fd6f0c615c3504cc9ae50dc0d
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "46530468"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293440"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Extensão de depuração de suplementos do Microsoft Office para o Visual Studio Code
 
@@ -67,7 +67,7 @@ Depois que o Visual Studio code estiver aberto, navegue manualmente para a pasta
 }
 ```
 
-7. Na seção de JSON que você acabou de copiar, encontre a seção "URL". Nesta URL, será necessário substituir o texto de HOST em maiúsculas pelo aplicativo host para o suplemento do Office. Por exemplo, se o suplemento do Office for Excel, seu valor de URL será " https://localhost:3000/taskpane.html?_host_Info= <strong>Excel</strong>$Win 32 $16.01 $ en-US $ \$ \$ \$ 0".
+7. Na seção de JSON que você acabou de copiar, encontre a seção "URL". Nesta URL, será necessário substituir o texto de HOST em maiúsculas pelo aplicativo que está hospedando o suplemento do Office. Por exemplo, se o suplemento do Office for Excel, seu valor de URL será " https://localhost:3000/taskpane.html?_host_Info= <strong>Excel</strong>$Win 32 $16.01 $ en-US $ \$ \$ \$ 0".
 
 8. Abra o prompt de comando e verifique se você está na pasta raiz do seu projeto. Execute o comando `npm start` para iniciar o servidor de desenvolvimento. Quando o suplemento for carregado no cliente do Office, abra o painel de tarefas.
 

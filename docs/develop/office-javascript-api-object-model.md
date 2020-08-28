@@ -3,18 +3,18 @@ title: Modelo de objeto comum de API JavaScript para Office
 description: Saiba mais sobre o modelo de objeto da API comum do Office JavaScript
 ms.date: 04/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 44c5258ad164c19df53ebe2fcbb00f420018a710
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 37d2bca0aa4aadfc6ab7ef00d76d74e9acde4711
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609731"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293251"
 ---
 # <a name="common-javascript-api-object-model"></a>Modelo de objeto comum de API JavaScript para Office
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
 
-Os suplementos de JavaScript do Office oferecem acesso à funcionalidade subjacente do host. A maioria desse acesso percorre alguns objetos importantes. O objeto [contexto](#context-object) oferece acesso ao tempo de execução ambiente depois de inicialização. O objeto[documento](#document-object) oferece o controle do usuário a um documento do Excel, PowerPoint ou Word. O objeto [caixa de correio](#mailbox-object) oferece um acesso ao suplemento do Outlook para mensagens e perfis de usuário. Noções básicas sobre as relações entre esses objetos gerais é a base de um suplemento JavaScript.
+As APIs JavaScript do Office oferecem acesso à funcionalidade subjacente do aplicativo cliente do Office. A maioria desse acesso percorre alguns objetos importantes. O objeto [contexto](#context-object) oferece acesso ao tempo de execução ambiente depois de inicialização. O objeto[documento](#document-object) oferece o controle do usuário a um documento do Excel, PowerPoint ou Word. O objeto [Mailbox](#mailbox-object) fornece um acesso de suplemento do Outlook a mensagens, compromissos e perfis de usuário. Entender as relações entre esses objetos de alto nível é a base de um suplemento do Office.
 
 ## <a name="context-object"></a>Objeto de contexto
 
@@ -24,7 +24,7 @@ Quando um suplemento é [inicializado](initialize-add-in.md), ele possui diverso
 
 Por exemplo, nos suplementos do painel de tarefas e de conteúdo, é possível usar a propriedade [documento](/javascript/api/office/office.context#document) do objeto **Context** para acessar as propriedades e os métodos do objeto **Document**. Isso permite interagir com o conteúdo de documentos do Word, planilhas do Excel ou tarefas do Project. Do mesmo modo, com os suplementos do Outlook, você pode usar a propriedade [mailbox](/javascript/api/office/office.context#mailbox) do objeto **Context** para acessar as propriedades e os métodos do objeto **Mailbox** e interagir com a mensagem, a solicitação de reunião ou o conteúdo do compromisso.
 
-O objeto **Contexto** também fornece acesso às propriedades [contentLanguage](/javascript/api/office/office.context#contentlanguage) e [displayLanguage](/javascript/api/office/office.context#displaylanguage) que permitem determinar a localidade (idioma) usada no documento ou no item, ou pelo aplicativo host. A propriedade [roamingSettings](/javascript/api/office/office.context#roamingsettings) permite que você acesse os membros do objeto [RoamingSettings](/javascript/api/office/office.context#roamingsettings), que armazena configurações específicas para o suplemento para caixas de correio de usuários individuais. Por fim, o objeto **Contexto** fornece uma propriedade [ui](/javascript/api/office/office.context#ui) que permite que o suplemento inicie caixas de diálogo pop-up.
+O objeto **Context** também fornece acesso às propriedades [contentLanguage](/javascript/api/office/office.context#contentlanguage) e [displayLanguage](/javascript/api/office/office.context#displaylanguage) que permitem que você determine a localidade (idioma) usada no documento ou item, ou pelo aplicativo do Office. A propriedade [roamingSettings](/javascript/api/office/office.context#roamingsettings) permite que você acesse os membros do objeto [RoamingSettings](/javascript/api/office/office.context#roamingsettings), que armazena configurações específicas para o suplemento para caixas de correio de usuários individuais. Por fim, o objeto **Contexto** fornece uma propriedade [ui](/javascript/api/office/office.context#ui) que permite que o suplemento inicie caixas de diálogo pop-up.
 
 
 ## <a name="document-object"></a>Objeto Document
@@ -88,7 +88,7 @@ Os métodos de acesso a dados nos `Document` objetos de vinculação e de [Assoc
 
 
 > [!TIP]
-> **Quando devo usar a matriz ou a tabela coercionType para o acesso aos dados?** Se você precisar que seus dados de tabulação sejam expandidos dinamicamente quando as linhas e colunas forem adicionadas, e você deve trabalhar com cabeçalhos de tabela, você deve usar o tipo de dados Table (especificando o parâmetro _coercionType_ de um `Document` objeto ou um `Binding` método de acesso a dados como `"table"` ou `Office.CoercionType.Table` ). A adição de linhas e colunas na estrutura de dados tem suporte nos dados de tabela e matriz, mas o acréscimo de linhas e colunas só tem suporte para dados de tabela. Se você não estiver planejando a adição de linhas e colunas e seus dados não exigirem funcionalidade de cabeçalho, você deverá usar o tipo de dados Matrix (especificando o parâmetro _coercionType_ do método de acesso a dados como `"matrix"` ou `Office.CoercionType.Matrix` ), que fornece um modelo mais simples de interagir com os dados.
+> **Quando devo usar a matriz ou a tabela coercionType para o acesso aos dados?** Se você precisar que seus dados de tabulação sejam expandidos dinamicamente quando as linhas e colunas forem adicionadas, e você deve trabalhar com cabeçalhos de tabela, você deve usar o tipo de dados Table (especificando o parâmetro _coercionType_ de um `Document` objeto ou um `Binding` método de acesso a dados como `"table"` ou `Office.CoercionType.Table` ). A adição de linhas e colunas na estrutura de dados tem suporte nos dados de tabela e matriz, mas o acréscimo de linhas e colunas só tem suporte para dados de tabela. Se você não estiver planejando a adição de linhas e colunas e seus dados não exigirem funcionalidade de cabeçalho, você deverá usar o tipo de dados Matrix (especificando o parâmetro  _coercionType_ do método de acesso a dados como `"matrix"` ou `Office.CoercionType.Matrix` ), que fornece um modelo mais simples de interagir com os dados.
 
 Se os dados não puderem ser forçados para o tipo especificado, a propriedade [AsyncResult.status](/javascript/api/office/office.asyncresult#status) presente nos retornos de chamada retorna `"failed"`, e você pode usar a propriedade [AsyncResult.error](/javascript/api/office/office.asyncresult#error) para acessar um objeto [Error](/javascript/api/office/office.error) com informações sobre o motivo pelo qual a chamada de método falhou.
 
@@ -117,7 +117,7 @@ A criação de uma associação também permite que você se inscreva em eventos
 
 O objeto [bindings](/javascript/api/office/office.bindings) expõe um método [getAllAsync](/javascript/api/office/office.bindings#getallasync-options--callback-) que fornece acesso ao conjunto de todas as associações estabelecidas no documento ou na planilha. Uma associação individual pode ser acessada por sua ID usando os métodos [bindings. getBindingByIdAsync](/javascript/api/office/office.bindings#getbyidasync-id--options--callback-) ou [Office. Select](/javascript/api/office) . Você pode estabelecer novas associações, bem como remover as existentes usando um dos seguintes métodos do `Bindings` objeto: [addFromSelectionAsync](/javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-), [AddFromPromptAsync](/javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-), [addFromNamedItemAsync](/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-)ou [releaseByIdAsync](/javascript/api/office/office.bindings#releasebyidasync-id--options--callback-).
 
-Há três tipos diferentes de associações que você especifica com o parâmetro _BindingType_ quando você cria uma associação com os `addFromSelectionAsync` `addFromPromptAsync` métodos, ou `addFromNamedItemAsync` :
+Há três tipos diferentes de associações que você especifica com o parâmetro  _BindingType_ quando você cria uma associação com os `addFromSelectionAsync` `addFromPromptAsync` métodos, ou `addFromNamedItemAsync` :
 
 
 
@@ -164,11 +164,10 @@ var item = Office.context.mailbox.item;
 
 Além disso, os suplementos do Outlook podem usar os seguintes objetos:
 
-- `Office`objeto: para inicialização.
+- `Office` objeto: para inicialização.
 
-- `Context`objeto: para acessar as propriedades de conteúdo e idioma de exibição.
+- `Context` objeto: para acessar as propriedades de conteúdo e idioma de exibição.
 
-- `RoamingSettings`objeto: para salvar as configurações personalizadas do suplemento do Outlook na caixa de correio do usuário onde o suplemento está instalado.
+- `RoamingSettings` objeto: para salvar as configurações personalizadas do suplemento do Outlook na caixa de correio do usuário onde o suplemento está instalado.
 
 Para obter informações sobre como usar o JavaScript em suplementos do Outlook, confira [Suplementos do Outlook ](../outlook/outlook-add-ins-overview.md).
-

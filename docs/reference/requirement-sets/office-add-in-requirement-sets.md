@@ -4,19 +4,19 @@ description: Saiba mais sobre os conjuntos de requisitos da API comum do Office.
 ms.date: 07/07/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: b0f2fa05a5db94614257b51f6b2867705a0a5520
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: f9929cb2f3de6499145540e12d1d96c55b24b1aa
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094349"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293517"
 ---
 # <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API Comum do Office
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office oferece suporte a APIs necessárias para um suplemento. Para obter mais informações, consulte [versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
 
 > [!TIP]
-> Procurando pelos conjuntos de requisitos de API *específicos do host*? Confira os seguintes conjuntos de requisitos de API:
+> Procurando conjuntos de requisitos de API *específicos do aplicativo* ? Confira os seguintes conjuntos de requisitos de API:
 >
 > - [Conjuntos de requisitos de API JavaScript para Excel](excel-api-requirement-sets.md) (ExcelApi)
 > - [Conjuntos de requisitos de API JavaScript para Word](word-api-requirement-sets.md) (WordApi)
@@ -29,14 +29,14 @@ Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplemento
 
 ## <a name="common-api-requirement-sets"></a>Conjuntos de requisitos da API Comum
 
-As seções a seguir listam os conjuntos de requisitos da API Comum, os métodos em cada conjunto e os aplicativos host do Office compatíveis com esse conjunto de requisitos. Todos esses conjuntos de requisitos da API são versão 1.1, a menos que especificado de outra forma.
+As seções a seguir listam os conjuntos de requisitos de API comuns, os métodos em cada conjunto e os aplicativos cliente do Office que dão suporte a esse conjunto de requisitos. Todos esses conjuntos de requisitos da API são versão 1.1, a menos que especificado de outra forma.
 
 > [!TIP]
-> Precisa de informações sobre onde os suplementos e conjuntos de requisitos têm suporte do host do Office e da versão? Consulte [Disponibilidade de host e plataforma para suplementos do Office](../../overview/office-add-in-availability.md).
+> Precisa de informações sobre onde os suplementos e conjuntos de requisitos são compatíveis com o aplicativo do Office e a versão? Confira [disponibilidade de aplicativos e plataformas de cliente do Office para suplementos do Office](../../overview/office-add-in-availability.md).
 
 ### <a name="activeview"></a>ActiveView
 
-|**Hosts do Office**|**Métodos no conjunto**|
+|**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
 | PowerPoint no Windows<br>PowerPoint Online<br>PowerPoint no iPad<br>PowerPoint no Mac|Document.getActiveViewAsync|
 
@@ -50,7 +50,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ### <a name="bindingevents"></a>BindingEvents
 
-|**Hosts do Office**|**Métodos no conjunto**|
+|**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
 | Aplicativos Web do Access<br>Excel no Windows<br>Excel Online<br>Excel no iPad<br>Excel no Mac<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Binding.addHandlerAsync<br>Binding.removeHandlerAsync|
 
@@ -58,7 +58,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ### <a name="compressedfile"></a>CompressedFile
 
-|**Hosts do Office**|**Métodos no conjunto**|
+|**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
 | Excel 2016 e posterior no Windows<br>Excel Online<br>Excel 2016 e posterior no Mac<br>PowerPoint no Windows<br>PowerPoint Online<br>PowerPoint no iPad<br>PowerPoint no Mac<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Dá suporte à saída para o formato OOXML (Office Open XML) como uma matriz de bytes<br>(Office.FileType.Compressed) ao usar o método Document.getFileAsync.|
 
@@ -66,7 +66,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ### <a name="customxmlparts"></a>CustomXmlParts
 
-|**Hosts do Office**|**Métodos no conjunto**|
+|**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
 | Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|CustomXmlNode.getNodesAsync<br>CustomXmlNode.getNodeValueAsync<br>CustomXmlNode.getTextAsync<br>CustomXmlNode.getXmlAsync<br>CustomXmlNode.setNodeValueAsync<br>CustomXmlNode.setTextAsync<br>CustomXmlNode.setXmlAsync<br>CustomXmlPart.addHandlerAsync<br>CustomXmlPart.deleteAsync<br>CustomXmlPart.getNodesAsync<br>CustomXmlPart.getXmlAsync<br>CustomXmlPart.removeHandlerAsync<br>CustomXmlParts.addAsync<br>CustomXmlParts.getByIdAsync<br>CustomXmlParts.getByNamespaceAsync<br>CustomXmlPrefixMappings.addNamespaceAsync<br>CustomXmlPrefixMappings.getNamespaceAsync<br>CustomXmlPrefixMappings.getPrefixAsync|
 
@@ -74,7 +74,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ### <a name="dialogapi"></a>DialogApi
 
-|**Hosts do Office**|**Métodos no conjunto**|
+|**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
 | Confira [Conjuntos de requisitos da API da Caixa de Diálogo](dialog-api-requirement-sets.md). | UI.messageParent<br>UI.displayDialogAsync<br>UI.closeContainer<br>UI.Dialog |
 
@@ -82,7 +82,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ### <a name="documentevents"></a>DocumentEvents
 
-|**Hosts do Office**|**Métodos no conjunto**|
+|**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
 | Excel no Windows<br>Excel Online<br>Excel no iPad<br>Excel no Mac<br>OneNote Online<br>PowerPoint no Windows<br>PowerPoint Online<br>PowerPoint no iPad<br>PowerPoint no Mac<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Document.addHandlerAsync<br>Document.removeHandlerAsync|
 
@@ -90,7 +90,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ### <a name="file"></a>Arquivo
 
-|**Hosts do Office**|**Métodos no conjunto**|
+|**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
 | Excel no Windows<br>Excel Online<br>Excel no iPad<br>Excel no Mac<br>PowerPoint no Windows<br>PowerPoint Online<br>PowerPoint no iPad<br>PowerPoint no Mac<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Document.getFileAsync<br>File.closeAsync<br>File.getSliceAsync|
 
@@ -98,7 +98,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ### <a name="htmlcoercion"></a>HtmlCoercion
 
-|**Hosts do Office**|**Métodos no conjunto**|
+|**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
 | OneNote Online<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Dá suporte à coerção para HTML (Office.CoercionType.Html) ao ler e gravar dados usando os métodos Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
 
@@ -106,7 +106,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ### <a name="identityapi"></a>IdentityAPI
 
-|**Hosts do Office**|**Métodos no conjunto**|
+|**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
 | Confira [Conjuntos de requisitos da API de Identidade](identity-api-requirement-sets.md). | Auth.getAccessToken |
 
@@ -114,7 +114,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ### <a name="imagecoercion"></a>ImageCoercion
 
-|**Hosts do Office**|**Métodos no conjunto**|
+|**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
 | Confira [conjuntos de requisitos de Coerção de Imagens](image-coercion-requirement-sets.md). | Método Document.setSelectedDataAsync|
 
@@ -122,7 +122,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ### <a name="mailbox"></a>Caixa de correio
 
-|**Hosts do Office**|**Métodos no conjunto**|
+|**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
 |Outlook no Windows<br>Outlook Online<br>Outlook no Android<br>Outlook no Mac<br>Outlook no iOS|Confira [Noções básicas sobre conjuntos de requisitos da API do Outlook](outlook-api-requirement-sets.md).|
 
@@ -130,7 +130,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ### <a name="matrixbindings"></a>MatrixBindings
 
-|**Hosts do Office**|**Métodos no conjunto**|
+|**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
 | Excel no Windows<br>Excel Online<br>Excel no iPad<br>Excel no Mac<br>Word no Windows<br>Word Online<br>Word no iPad<br>Word no Mac|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
 
@@ -138,7 +138,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ### <a name="matrixcoercion"></a>MatrixCoercion
 
-|**Hosts do Office**|**Métodos no conjunto**|
+|**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
 | Excel no Windows<br>Excel Online<br>Excel no iPad<br>Excel no Mac<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Dá suporte à coerção para a estrutura de dados “matrix” (matriz de matrizes) (Office.CoercionType.Matrix) ao ler e gravar dados usando os métodos Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
 
@@ -146,7 +146,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ### <a name="ooxmlcoercion"></a>OoxmlCoercion
 
-|**Hosts do Office**|**Métodos no conjunto**|
+|**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
 | Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Dá suporte à coerção para o formato OOXML (Open Office XML) (Office.CoercionType.Ooxml) ao ler e gravar dados usando os métodos Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
 
@@ -154,7 +154,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ### <a name="partialtablebindings"></a>PartialTableBindings
 
-|**Hosts do Office**|**Métodos no conjunto**|
+|**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
 | Aplicativos Web do Access||
 
@@ -162,7 +162,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ### <a name="pdffile"></a>PdfFile
 
-|**Hosts do Office**|**Métodos no conjunto**|
+|**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
 | Excel no Windows<br>Excel Online<br>Excel no Mac<br>PowerPoint no Windows<br>PowerPoint Online<br>PowerPoint no iPad<br>PowerPoint no Mac<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Dá suporte à saída para o formato PDF (Office.FileType.Pdf)<br>ao usar o método Document.getFileAsync.|
 
@@ -170,7 +170,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ### <a name="ribbonapi"></a>RibbonApi
 
-|**Hosts do Office**|**Métodos no conjunto**|
+|**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
 | Confira [conjuntos de requisitos de API da faixa](ribbon-api-requirement-sets.md)de opções. | Office. Ribbon. requestUpdate |
 
@@ -178,7 +178,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ### <a name="selection"></a>Seleção
 
-|**Hosts do Office**|**Métodos no conjunto**|
+|**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
 | Excel no Windows<br>Excel Online<br>Excel no iPad<br>Excel no Mac<br>PowerPoint no Windows<br>PowerPoint Online<br>PowerPoint no iPad<br>PowerPoint no Mac<br>Project no Windows<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Document.getSelectedDataAsync<br>Document.setSelectedDataAsync|
 
@@ -186,7 +186,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ### <a name="settings"></a>Configurações
 
-|**Hosts do Office**|**Métodos no conjunto**|
+|**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
 | Aplicativos Web do Access<br>Excel no Windows<br>Excel Online<br>Excel no iPad<br>Excel no Mac<br>OneNote Online<br>PowerPoint no Windows<br>PowerPoint Online<br>PowerPoint no iPad<br>PowerPoint no Mac<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Settings.get<br>Settings.remove<br>Settings.saveAsync<br>Settings.set|
 
@@ -194,7 +194,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ### <a name="sharedruntime"></a>SharedRuntime
 
-|**Hosts do Office**|**Métodos no conjunto**|
+|**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
 | Confira [conjuntos de requisitos de tempo de execução compartilhados](shared-runtime-requirement-sets.md). | Office. AddIn. getStartupBehavior<br>Office. AddIn. Hide<br>Office. AddIn. onVisibilityModeChanged<br>Office. AddIn. setStartupBehavior<br>Office. AddIn. showAsTaskpane<br> |
 
@@ -202,7 +202,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ### <a name="tablebindings"></a>TableBindings
 
-|**Hosts do Office**|**Métodos no conjunto**|
+|**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
 | Aplicativos Web do Access<br>Excel no Windows<br>Excel Online<br>Excel no iPad<br>Excel no Mac<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.addColumnsAsync<br>Binding.addRowsAsync<br>Binding.deleteAllDataValuesAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
 
@@ -210,7 +210,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ### <a name="tablecoercion"></a>TableCoercion
 
-|**Hosts do Office**|**Métodos no conjunto**|
+|**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
 | Aplicativos Web do Access<br>Excel no Windows<br>Excel Online<br>Excel no iPad<br>Excel no Mac<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Dá suporte à coerção para a estrutura de dados “table” (Office.CoercionType.Table) ao ler e gravar dados usando os métodos Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
 
@@ -218,7 +218,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ### <a name="textbindings"></a>TextBindings
 
-|**Hosts do Office**|**Métodos no conjunto**|
+|**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
 | Excel no Windows<br>Excel Online<br>Excel no iPad<br>Excel no Mac<br>Word 2013 e posterior e Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
 
@@ -226,7 +226,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ### <a name="textcoercion"></a>TextCoercion
 
-|**Hosts do Office**|**Métodos no conjunto**|
+|**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
 | Excel no Windows<br>Excel Online<br>Excel no iPad<br>OneNote Online<br>PowerPoint no Windows<br>PowerPoint Online<br>PowerPoint no iPad<br>PowerPoint no Mac<br>Project no Windows<br>Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Dá suporte à coerção para o formato de texto (Office.CoercionType.Text) ao ler e gravar dados usando os métodos Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
 
@@ -234,7 +234,7 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ### <a name="textfile"></a>TextFile
 
-|**Hosts do Office**|**Métodos no conjunto**|
+|**Aplicativos do Office**|**Métodos no conjunto**|
 |:-----|:-----|
 | Word 2013 e posterior no Windows<br>Word 2016 e posterior no Mac<br>Word Online<br>Word no iPad|Dá suporte à saída para o formato de texto (Office.FileType.Text) ao usar o método Document.getFileAsync.|
 
@@ -242,9 +242,9 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ## <a name="methods-that-arent-part-of-a-requirement-set"></a>Métodos que não fazem parte de um conjunto de requisitos
 
-Os seguintes métodos na API JavaScript do Office não fazem parte de um conjunto de requisitos. Se o suplemento exigir qualquer um desses métodos, use os elementos **Methods** e **Method** no manifesto do suplemento para declarar que eles são exigidos, ou então execute a verificação de tempo de execução usando uma instrução`if`. Para saber mais, confira [Especificar requisitos de API e hosts do Office](../../develop/specify-office-hosts-and-api-requirements.md).
+Os seguintes métodos na API JavaScript do Office não fazem parte de um conjunto de requisitos. Se o suplemento exigir qualquer um desses métodos, use os elementos **Methods** e **Method** no manifesto do suplemento para declarar que eles são exigidos, ou então execute a verificação de tempo de execução usando uma instrução`if`. Para obter mais informações, consulte [especificar aplicativos do Office e requisitos de API](../../develop/specify-office-hosts-and-api-requirements.md).
 
-|**Nome do método**|**Suporte ao host do Office**|
+|**Nome do método**|**Suporte a aplicativos do Office**|
 |:-----|:-----|
 |Bindings.addFromPromptAsync|Acesse aplicativos web, Excel no Windows, Excel Online, Excel no iPad e Excel no Mac|
 |Document.getFilePropertiesAsync|Excel no Windows, Excel Online, Excel no iPad, Excel no Mac, PowerPoint no Windows, PowerPoint Online, PowerPoint no iPad, PowerPoint no Mac, Word no Windows, Word Online, Word no iPad e Word no Mac|
@@ -266,5 +266,5 @@ Os seguintes métodos na API JavaScript do Office não fazem parte de um conjunt
 ## <a name="see-also"></a>Confira também
 
 - [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md)
-- [Especificar requisitos da API e de hosts do Office](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Especificar aplicativos do Office e requisitos de API](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Manifesto XML dos Suplementos do Office](../../develop/add-in-manifests.md)

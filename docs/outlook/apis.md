@@ -3,12 +3,12 @@ title: APIs de suplemento do Outlook
 description: Saiba como fazer referência a APIs de suplemento do Outlook e declarar permissões em seu suplemento do Outlook.
 ms.date: 02/27/2020
 localization_priority: Normal
-ms.openlocfilehash: d09713da401c0298a6ebd756d6dfb3fd8dce5f0b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: d7458eebf16a3d9373e59aa0455234437f25289b
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44607600"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293993"
 ---
 # <a name="outlook-add-in-apis"></a>APIs de suplemento do Outlook
 
@@ -26,7 +26,7 @@ Referência CDN em um `<script>` marca na `<head>` marca da página da web (arqu
 À medida que adicionamos novas APIs, a URL para Office.js permanecerá a mesma. Somente mudaremos a versão na URL se mudarmos um comportamento de API existente.
 
 > [!IMPORTANT]
-> Ao desenvolver um suplemento para qualquer aplicativo host do Office, faça referência à API JavaScript do Office de dentro da `<head>` seção da página. Isso garante que a API seja totalmente inicializada antes de qualquer elemento de corpo. Os hosts do Office requerem que suplementos inicializem até 5 segundos depois da ativação. Ao ultrapassar esse limite, considera-se que o suplemento não respondeu e uma mensagem de erro é exibida para o usuário.
+> Ao desenvolver um suplemento para qualquer aplicativo cliente do Office, faça referência à API JavaScript do Office de dentro da `<head>` seção da página. Isso garante que a API seja totalmente inicializada antes de qualquer elemento de corpo. Os aplicativos do Office exigem que os suplementos inicializem dentro de 5 segundos de ativação. Ao ultrapassar esse limite, considera-se que o suplemento não respondeu e uma mensagem de erro é exibida para o usuário.
 
 ## <a name="requirement-sets"></a>Conjuntos de requisitos
 

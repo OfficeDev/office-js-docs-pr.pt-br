@@ -3,12 +3,12 @@ title: Práticas recomendadas e regras para a API da caixa de diálogo do Office
 description: Fornece regras e práticas recomendadas para a API de caixa de diálogo do Office, como as práticas recomendadas para um aplicativo de página única (SPA)
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 88c833d91cc16684b5e434d6aff9e77f23bbbdb4
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5e0854137b27d8b8ae33fff8943421cc0c488abe
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608268"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292754"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Práticas recomendadas e regras para a API da caixa de diálogo do Office
 
@@ -26,7 +26,7 @@ Este artigo fornece regras, armadilhas e práticas recomendadas para a API de di
 - Uma janela hospedeira, que pode ser um painel de tarefas ou o arquivo de [função](../reference/manifest/functionfile.md) sem interface do usuário de um suplemento, pode ter apenas uma caixa de diálogo aberta por vez.
 - Apenas duas APIs do Office podem ser chamadas na caixa de diálogo:
   - A função [messageParent](/javascript/api/office/office.ui#messageparent-message-) .
-  - `Office.context.requirements.isSetSupported`(Para obter mais informações, consulte [especificar hosts do Office e requisitos de API](specify-office-hosts-and-api-requirements.md).)
+  - `Office.context.requirements.isSetSupported` (Para obter mais informações, consulte [especificar aplicativos do Office e requisitos de API](specify-office-hosts-and-api-requirements.md).)
 - A função [messageParent](/javascript/api/office/office.ui#messageparent-message-) pode ser chamada apenas de uma página no mesmo domínio que o suplemento.
 
 ## <a name="best-practices"></a>Práticas recomendadas

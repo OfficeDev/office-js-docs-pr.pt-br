@@ -4,12 +4,12 @@ description: Saiba mais sobre como personalizar o suplemento habilitado para SSO
 ms.date: 07/07/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 8d4ab4653bcd8fccdcbecbe2e7e8e29a49a3184f
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 41644ce28040f96ff2e4a22cac33ef2d45f1dc81
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159448"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294301"
 ---
 # <a name="customize-your-nodejs-sso-enabled-add-in"></a>Personalizar o suplemento habilitado para SSO do Node.js.
 
@@ -93,15 +93,15 @@ As etapas a seguir descrevem essas atualizações.
 
 ### <a name="changes-required-for-any-type-of-add-in"></a>Alterações necessárias para qualquer tipo de suplemento
 
-Conclua as seguintes etapas para o seu suplemento, para alterar a URL, os parâmetros e o escopo de acesso do Microsoft Graph e atualizar a interface do usuário do painel de tarefas. Essas etapas são as mesmas, independentemente de qual host do Office seu suplemento está direcionado.
+Conclua as seguintes etapas para o seu suplemento, para alterar a URL, os parâmetros e o escopo de acesso do Microsoft Graph e atualizar a interface do usuário do painel de tarefas. Essas etapas são as mesmas, independentemente de qual aplicativo do Office seu suplemento está direcionado.
 
 1. Na **./. ENV** arquivo:
 
-    a. Substitua `GRAPH_URL_SEGMENT=/me` pelo seguinte:`GRAPH_URL_SEGMENT=/me/drive/root/children`
+    a. Substitua `GRAPH_URL_SEGMENT=/me` pelo seguinte: `GRAPH_URL_SEGMENT=/me/drive/root/children`
 
-    b. Substitua `QUERY_PARAM_SEGMENT=` pelo seguinte:`QUERY_PARAM_SEGMENT=?$select=name&$top=10`
+    b. Substitua `QUERY_PARAM_SEGMENT=` pelo seguinte: `QUERY_PARAM_SEGMENT=?$select=name&$top=10`
 
-    c. Substitua `SCOPE=User.Read` pelo seguinte:`SCOPE=Files.Read.All`
+    c. Substitua `SCOPE=User.Read` pelo seguinte: `SCOPE=Files.Read.All`
 
 2. Em **./manifest.xml**, localize a linha `<Scope>User.Read</Scope>` próxima ao final do arquivo e substitua-a pela linha `<Scope>Files.Read.All</Scope>` .
 
@@ -590,7 +590,7 @@ Execute as etapas a seguir para experimentar um suplemento do Excel, do Word ou 
 
 4. Na parte inferior do painel de tarefas, escolha o botão **ler meu onedrive for Business** para iniciar o processo de SSO. 
 
-5. Se uma janela de diálogo for exibida solicitando permissões em nome do suplemento, isso significa que não há suporte ao SSO no seu cenário e, em vez disso, o suplemento voltou para um método alternativo de autenticação do usuário. Isso pode ocorrer quando o administrador de locatários não concedeu consentimento para o suplemento para acessar o Microsoft Graph ou quando o usuário não está conectado ao Office com uma conta Microsoft válida ou uma conta de treinamento ou de trabalho do Microsoft 365. Escolha o botão **Aceitar** na janela de diálogo para continuar.
+5. Se uma janela de diálogo for exibida solicitando permissões em nome do suplemento, isso significa que não há suporte ao SSO no seu cenário e, em vez disso, o suplemento voltou para um método alternativo de autenticação do usuário. Isso poderá ocorrer quando o administrador do locatário não tiver dado ao suplemento uma permissão de acesso ao Microsoft Graph, ou quando o usuário não estiver logado no Office com uma conta válida da Microsoft ou uma conta corporativa ou de estudante do Microsoft 365. Escolha o botão **Aceitar** na janela de diálogo para continuar.
 
     ![Caixa de diálogo Solicitação de permissões](../images/sso-permissions-request.png)
 
@@ -624,7 +624,7 @@ Execute as etapas a seguir para experimentar um suplemento do Outlook.
 
 5. Na parte inferior do painel de tarefas, escolha o botão **ler meu onedrive for Business** para iniciar o processo de SSO. 
 
-6. Se uma janela de diálogo for exibida solicitando permissões em nome do suplemento, isso significa que não há suporte ao SSO no seu cenário e, em vez disso, o suplemento voltou para um método alternativo de autenticação do usuário. Isso pode ocorrer quando o administrador de locatários não concedeu consentimento para o suplemento para acessar o Microsoft Graph ou quando o usuário não está conectado ao Office com uma conta Microsoft válida ou uma conta de treinamento ou de trabalho do Microsoft 365. Escolha o botão **Aceitar** na janela de diálogo para continuar.
+6. Se uma janela de diálogo for exibida solicitando permissões em nome do suplemento, isso significa que não há suporte ao SSO no seu cenário e, em vez disso, o suplemento voltou para um método alternativo de autenticação do usuário. Isso poderá ocorrer quando o administrador do locatário não tiver dado ao suplemento uma permissão de acesso ao Microsoft Graph, ou quando o usuário não estiver logado no Office com uma conta válida da Microsoft ou uma conta corporativa ou de estudante do Microsoft 365. Escolha o botão **Aceitar** na janela de diálogo para continuar.
 
     ![Caixa de diálogo Solicitação de permissões](../images/sso-permissions-request.png)
 

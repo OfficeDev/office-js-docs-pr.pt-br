@@ -3,12 +3,12 @@ title: Práticas recomendadas para o desenvolvimento de suplementos do Office
 description: Aplique as práticas recomendadas ao desenvolver para criar suplementos do Office.
 ms.date: 04/22/2020
 localization_priority: Normal
-ms.openlocfilehash: d94d0ff4f3ff5bed4ab9eaaae134db40f21b972c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 72bcf8c7bd994c499c1e85154a383c3a91464a79
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608052"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293062"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Práticas recomendadas para o desenvolvimento de suplementos do Office
 
@@ -21,7 +21,7 @@ Os suplementos eficazes oferecem uma funcionalidade exclusiva e fascinante que e
 - Crie suplementos que ajudem os usuários a concluir tarefas de forma rápida e eficiente. Concentre-se nos cenários que fazem sentido para aplicativos do Office. Por exemplo:
  - Torne as principais tarefas de criação mais rápidas e fáceis, com menos interrupções.
  - Habilite novos cenários no Office.
- - Incorpore serviços complementares nos hosts do Office.
+ - Inserir serviços complementares nos aplicativos do Office.
  - Melhore a experiência do Office para aumentar a produtividade.
 - Certifique-se de que o valor do seu suplemento seja claro para os usuários desde o princípio, [criando uma experiência envolvente na primeira execução](#create-an-engaging-first-run-experience).
 - Crie uma [listagem eficaz do AppSource](/office/dev/store/create-effective-office-store-listings). Deixe claro quais são os benefícios do seu suplemento no título e na descrição. Não dependa da sua marca para dizer o que seu suplemento faz.
@@ -77,7 +77,7 @@ Para padrões que podem ser aplicados ao desenvolver sua experiência de primeir
 
 ### <a name="optimize-for-touch"></a>Otimizar para toque
 
-- Use a propriedade [Context.touchEnabled](/javascript/api/office/office.context) para descobrir se o aplicativo host que executa o suplemento está habilitado para toque.
+- Use a propriedade [Context. touchEnabled](/javascript/api/office/office.context#touchenabled) para detectar se o aplicativo do Office no qual o suplemento é executado está habilitado para toque.
 
   > [!NOTE]
   > Essa propriedade não tem suporte no Outlook.
