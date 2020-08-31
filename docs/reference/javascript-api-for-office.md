@@ -5,23 +5,23 @@ title: Documentação de Referência da API JavaScript do Office
 description: Saiba mais sobre as APIs JavaScript do Office.
 ms.date: 12/24/2019
 localization_priority: Priority
-ms.openlocfilehash: 78e222c7cdc618d707678dc73dd4a0e5dab123de
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 46f5ae8a073fe45a6f6ac7f873f9adeb37fbab15
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608814"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294280"
 ---
 # <a name="api-reference-documentation"></a>Documentação de referência da API
 
-Um suplemento pode usar as APIs de JavaScript do Office para interagir com objetos em aplicativos de host do Office. 
+Um suplemento pode usar as APIs de JavaScript do Office para interagir com objetos em aplicativos do cliente Office. 
 
 <ul>
-    <li>As APIs<b>Específicas do host </b> fornecem objetos fortemente tipados que podem ser usados para interagir com objetos que são nativos de um aplicativo do Office específico.</li>
+    <li>As APIs <b>específicas do aplicativo</b> fornecem objetos fortemente tipados que podem ser usados para interagir com objetos que são nativos de um aplicativo específico do Office.</li>
     <li>As APIs<b> Comuns</b> pode ser usada para acessar recursos como interface de usuário, caixas de diálogo e configurações de cliente, que são comuns entre vários tipos de aplicativos do Office.</li>
 </ul>
 
-Você deve usar APIs específicas do host sempre que possível e usar APIs comuns somente para cenários que não têm suporte em APIs específicas do host. Para obter informações mais detalhadas sobre esses dois modelos de API, confira <a href="../overview/office-add-ins-fundamentals.md#api-models">criação de Suplementos do Office</a>.
+Você deve usar APIs específicas do aplicativo sempre que possível e usar APIs Comuns somente para cenários que não têm suporte em APIs específicas do aplicativo. Para obter informações mais detalhadas sobre esses dois modelos de API, confira <a href="../overview/office-add-ins-fundamentals.md#api-models">criação de Suplementos do Office</a>.
 
 <h2>Referência da API</h2>
 
@@ -130,4 +130,4 @@ Você deve usar APIs específicas do host sempre que possível e usar APIs comun
     </li>
 </ul>
 
-<b>Observação</b>: atualmente, não há nenhuma API JavaScript específica do host para o Project. Você usará APIs comuns para criar suplementos de Project. Além disso, a API específica do host para o PowerPoint tem um escopo muito limitado. Você usará principalmente APIs comuns para criar suplementos do PowerPoint.
+<b>Observação</b>: atualmente, não há nenhuma API de JavaScript específica do aplicativo para o Project. Você usará APIs Comuns para criar suplementos do Project. Além disso, a API específica do aplicativo para o PowerPoint tem um escopo muito limitado. Você usará principalmente APIs Comuns para criar suplementos do PowerPoint.
