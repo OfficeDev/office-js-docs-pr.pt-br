@@ -1,17 +1,17 @@
 ---
-title: Transição aqui! Um guia para criadores de suplemento do VSTO que fazem suplementos Web do Office
+title: Guia do desenvolvedor do suplemento VSTO
 description: Um roteiro recomendado para desenvolvedores experientes de suplemento do VSTO para recursos de aprendizagem de suplementos Web do Office.
 ms.date: 05/10/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 499a8fdf12c2f46c5cf5fc5c37f8bb68af540e57
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 959fb23ef86f37f46425d9b7ede7f7f60f6baf3a
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44604570"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292437"
 ---
-# <a name="transition-here-a-guide-for-vsto-add-in-creators-making-office-web-add-ins"></a>Transição aqui! Um guia para criadores de suplemento do VSTO que fazem suplementos Web do Office
+# <a name="vsto-add-in-developers-guide"></a>Guia do desenvolvedor do suplemento VSTO
 
 Você criou alguns suplementos do VSTO para aplicativos do Office executados no Windows, e agora está aprendendo um nova maneira de estender o Office que será executado no Windows, no Mac e na versão online do pacote do Office: suplementos Web do Office.
 
@@ -21,7 +21,7 @@ Sua compreensão sobre os modelos de objeto para Excel, Word e outros aplicativo
 - Os suplementos Web do Office são implantados de forma diferente dos suplementos do VSTO.
 - Os suplementos Web do Office são aplicativos Web executados em uma janela simplificada do navegador que está incorporada ao aplicativo do Office. Portanto, é necessário obter um conhecimento básico dos aplicativos Web e de como eles são hospedados em servidores Web ou em contas de nuvem. 
 
-Por esses motivos, grande parte deste artigo duplica nosso roteiro de aprendizagem para iniciantes das extensões do Office: [Comece aqui! Um guia para iniciantes na criação de Suplementos do Office](learning-path-beginner.md). O que adicionamos são alguns recursos extras de aprendizagem para ajudar os desenvolvedores de suplemento do VSTO a aproveitar suas experiências, e também a reutilizar códigos existentes.
+Por esses motivos, uma boa parte deste artigo duplica o caminho de aprendizagem para iniciantes das extensões do Office: [Guia para iniciantes](learning-path-beginner.md). O que adicionamos são alguns recursos de aprendizagem adicionais para ajudar os desenvolvedores do suplemento VSTO a aproveitar suas experiências e também a reutilizarem o código existente.
 
 ## <a name="step-0-prerequisites"></a>Etapa 0: Pré-requisitos
 

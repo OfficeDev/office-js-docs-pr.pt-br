@@ -1,15 +1,15 @@
 ---
 title: Criar um suplemento do painel de tarefas do Excel usando o Vue
 description: Aprenda a criar um suplemento do painel de tarefas simples do Excel usando a API do Office JS e o Vue.
-ms.date: 04/14/2020
+ms.date: 08/26/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 49c38a8b9055692f40fed9dc110528694e3fbf55
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1fa522b71d0f180013f4f6fd7491134297aed2af
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608919"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294322"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>Criar um suplemento do painel de tarefas do Excel usando o Vue
 
@@ -130,7 +130,7 @@ Após concluir o assistente, uma pasta `My Office Add-in` será criada, contendo
              <h1>Welcome</h1>
            </div>
          </div>
-         <div id="content-main">
+         <div class="content-main">
            <div class="padding">
              <p>
                Choose the button below to set the color of the selected range to

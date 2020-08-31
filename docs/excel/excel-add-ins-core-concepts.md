@@ -1,136 +1,158 @@
 ---
 title: Conceitos fundamentais de programação com a API JavaScript do Excel
 description: Use a API JavaScript do Excel para criar suplementos para o Excel.
-ms.date: 07/13/2020
+ms.date: 07/28/2020
 localization_priority: Priority
-ms.openlocfilehash: 01e5fa1037719e89eed70f00e63431bbd445c213
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: dde7dc66e0746fc4d9cf91ed3df824fab05c109d
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159413"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292584"
 ---
 # <a name="fundamental-programming-concepts-with-the-excel-javascript-api"></a>Conceitos fundamentais de programação com a API JavaScript do Excel
 
 Este artigo descreve como usar a [API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md) para desenvolver suplementos para o Excel 2016 ou versões posteriores. Ele apresenta os conceitos básicos que são fundamentais para usar a API e fornece orientações para executar tarefas específicas, como leitura ou gravação em um intervalo grande, atualização de todas as células do intervalo e muito mais.
 
-## <a name="asynchronous-nature-of-excel-apis"></a>Natureza assíncrona das APIs do Excel
+> [!IMPORTANT]
+> Confira [Usar o modelo da API específica do aplicativo](../develop/application-specific-api-model.md) para saber mais sobre a natureza assíncrona das APIs do Excel e como elas funcionam com a pasta de trabalho.  
 
-Os suplementos do Excel baseados na Web são executados dentro de um contêiner de navegador que é inserido no aplicativo do Office em plataformas baseadas em desktop, como Office no Windows e executado dentro de um iFrame HTML no Office na Web. Não é possível habilitar a API Office.js para interagir de modo síncrono com o host do Excel em todas as plataformas com suporte devido às considerações de desempenho. Desse modo, a chamada à API `sync()` no Office.js retorna uma [promessa](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) que é resolvida quando o aplicativo Excel conclui as ações solicitadas de leitura ou gravação. Além disso, você pode enfileirar várias ações, como configurar propriedades ou invocar métodos, e executá-las como um lote de comandos com uma única chamada a `sync()`, em vez de enviar uma solicitação separada para cada ação. As seções a seguir descrevem como fazer isso usando as APIs `Excel.run()` e `sync()`.
+## <a name="officejs-apis-for-excel"></a>APIs Office.js para Excel
 
-## <a name="excelrun"></a>Excel.run
+Um suplemento do Excel interage com objetos no Excel usando a API JavaScript do Office, que inclui dois modelos de objetos JavaScript:
 
-A `Excel.run` executa uma função em que você especifica as ações a serem executadas no modelo de objeto do Excel. A `Excel.run` cria automaticamente um contexto de solicitação que pode ser usado para sua interação com os objetos do Excel. Quando a `Excel.run` é concluída, uma promessa é resolvida e todos os objetos que foram alocados em tempo de execução são lançados automaticamente.
+* **API JavaScript do Excel**: introduzida com o Office 2016, a [API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md) fornece objetos fortemente tipados que você pode usar para acessar planilhas, intervalos, tabelas, gráficos e muito mais.
 
-O exemplo a seguir mostra como usar o `Excel.run`. A instrução catch captura e registra erros que ocorrem dentro do `Excel.run`.
+* **APIs Comuns**: Introduzida com o Office 2013, a [API Comum](/javascript/api/office) pode ser usada para acessar recursos como interface de usuário, caixas de diálogo e configurações de cliente, que são comuns entre vários tipos de aplicativos do Office.
+
+Enquanto você provavelmente use a API JavaScript do Excel para desenvolver a maioria das funcionalidades em suplementos que visam o Excel 2016, você também usará objetos na API comum. Por exemplo:
+
+* [Contexto](/javascript/api/office/office.context): o objeto `Context` representa o ambiente de tempo de execução do suplemento e oferece acesso aos principais objetos da API. Ele consiste em detalhes da configuração da pasta de trabalho, como `contentLanguage` e `officeTheme`, além de fornecer informações sobre o ambiente de tempo de execução do suplemento, como `host` e `platform`. Além disso, ele fornece o método `requirements.isSetSupported()`, que você pode usar para verificar se o conjunto de requisitos especificado é suportado pelo aplicativo Excel onde o suplemento está sendo executado.
+* [Documento](/javascript/api/office/office.document): o objeto `Document` fornece o método `getFileAsync()`, que você pode usar para baixar o arquivo do Excel em que o suplemento está sendo executado.
+
+A imagem a seguir ilustra quando você pode usar a API JavaScript do Excel ou as APIs comuns.
+
+![Imagem das diferentes entre a API JS do Excel e as APIs comuns](../images/excel-js-api-common-api.png)
+
+## <a name="object-model"></a>Modelo de objetos
+
+Para entender as APIs do Excel, você deve entender como os componentes de uma pasta de trabalho estão relacionados entre si.
+
+* Uma **Pasta de trabalho** contém uma ou mais **Planilhas**.
+* Uma **Planilha** concede acesso a células por meio de objetos de **Intervalo**.
+* Um **Intervalo** representa um grupo de células contíguas.
+* Os **Intervalos** são usados para criar e colocar **Tabelas**, **Gráficos**, **Formas** e outras visualizações de dados ou objetos da organização.
+* Uma **Planilha** contém coleções desses objetos de dados que estão presentes na planilha individual.
+* As **Pastas de trabalho** contêm coleções de alguns desses objetos de dados (por exemplo, **Tabelas**) para toda a **Pasta de trabalho**.
+
+### <a name="ranges"></a>Intervalos
+
+Um intervalo é um grupo de células contíguas na pasta de trabalho. Os suplementos costumam usar uma notação estilo A1 (por ex.: **B3** para a única célula na coluna **B** e linha **3** ou **C2:F4** para as células das colunas **C** a **F** e linhas **2** a **4**) para definir intervalos.
+
+Os intervalos têm três propriedades principais: `values`, `formulas` e `format`. Essas propriedades recebem ou definem os valores da célula, as fórmulas a serem avaliadas e a formatação visual das células.
+
+#### <a name="range-sample"></a>Exemplo de intervalo
+
+O exemplo a seguir mostra como criar registros de vendas. Essa função usa objetos `Range` para definir os valores, fórmulas e formatos.
 
 ```js
 Excel.run(function (context) {
-    // You can use the Excel JavaScript API here in the batch function
-    // to execute actions on the Excel object model.
-    console.log('Your code goes here.');
-}).catch(function (error) {
-    console.log('error: ' + error);
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+
+    // Create the headers and format them to stand out.
+    var headers = [
+      ["Product", "Quantity", "Unit Price", "Totals"]
+    ];
+    var headerRange = sheet.getRange("B2:E2");
+    headerRange.values = headers;
+    headerRange.format.fill.color = "#4472C4";
+    headerRange.format.font.color = "white";
+
+    // Create the product data rows.
+    var productData = [
+      ["Almonds", 6, 7.5],
+      ["Coffee", 20, 34.5],
+      ["Chocolate", 10, 9.56],
+    ];
+    var dataRange = sheet.getRange("B3:D5");
+    dataRange.values = productData;
+
+    // Create the formulas to total the amounts sold.
+    var totalFormulas = [
+      ["=C3 * D3"],
+      ["=C4 * D4"],
+      ["=C5 * D5"],
+      ["=SUM(E3:E5)"]
+    ];
+    var totalRange = sheet.getRange("E3:E6");
+    totalRange.formulas = totalFormulas;
+    totalRange.format.font.bold = true;
+
+    // Display the totals as US dollar amounts.
+    totalRange.numberFormat = [["$0.00"]];
+
+    return context.sync();
 });
 ```
 
-### <a name="run-options"></a>Executar opções
+Esse exemplo cria os seguintes dados na planilha atual:
+
+![Um registro de vendas mostrando as linhas de valores, uma coluna de fórmulas e cabeçalhos formatados.](../images/excel-overview-range-sample.png)
+
+### <a name="charts-tables-and-other-data-objects"></a>Gráficos, tabelas e outros objetos de dados
+
+As APIs JavaScript do Excel podem criar e manipular estruturas de dados e visualizações no Excel. As tabelas e gráficos são dois dos objetos mais usados, mas as APIs oferecem suporte a tabelas dinâmicas, formas, imagens e muito mais.
+
+#### <a name="creating-a-table"></a>Criar uma tabela
+
+Criar tabelas usando intervalos de dados preenchidos. Controles de formatação e tabela (por exemplo, filtros) são aplicados automaticamente ao intervalo.
+
+O exemplo a seguir cria uma tabela usando os intervalos do exemplo anterior.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    sheet.tables.add("B2:E5", true);
+    return context.sync();
+});
+```
+
+Usar esse código de exemplo na planilha com os dados anteriores cria a tabela a seguir:
+
+![Uma tabela criada a partir do registro de vendas anterior.](../images/excel-overview-table-sample.png)
+
+#### <a name="creating-a-chart"></a>Criar um gráfico
+
+Crie gráficos para visualizar os dados em um intervalo. As APIs suportam inúmeras variedades de gráficos que podem ser personalizadas de acordo com suas necessidades.
+
+O exemplo a seguir cria um gráfico de colunas simples para três itens e o coloca 100 pixels abaixo da parte superior da planilha.
+
+```js
+Excel.run(function (context) {
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    var chart = sheet.charts.add(Excel.ChartType.columnStacked, sheet.getRange("B3:C5"));
+    chart.top = 100;
+    return context.sync();
+});
+```
+
+Executar esse exemplo na planilha com a tabela anterior cria o seguinte gráfico:
+
+![Um gráfico de colunas mostrando as quantidades de três itens do registro de vendas anterior.](../images/excel-overview-chart-sample.png)
+
+## <a name="run-options"></a>Executar opções
 
 `Excel.run` tem uma sobrecarga que recebe um objeto [RunOptions](/javascript/api/excel/excel.runoptions). Este contém um conjunto de propriedades que afetam o comportamento de plataforma quando a função é executada. A propriedade a seguir tem suporte no momento:
 
-- `delayForCellEdit`: Determina se o Excel atrasa solicitação em lote até que o usuário sai do modo de edição de célula. Quando **verdadeira**, a solicitação em lote é atrasada e executada quando o usuário sai do modo de edição de célula. Quando **falsa**, a solicitação em lote falha automaticamente se o usuário está no modo de edição de célula (causando um erro para alcançar o usuário). O comportamento padrão sem nenhuma propriedade `delayForCellEdit` especificada é equivalente a quando é **falsa**.
+* `delayForCellEdit`: Determina se o Excel atrasa solicitação em lote até que o usuário sai do modo de edição de célula. Quando **verdadeira**, a solicitação em lote é atrasada e executada quando o usuário sai do modo de edição de célula. Quando **falsa**, a solicitação em lote falha automaticamente se o usuário está no modo de edição de célula (causando um erro para alcançar o usuário). O comportamento padrão sem nenhuma propriedade `delayForCellEdit` especificada é equivalente a quando é **falsa**.
 
 ```js
 Excel.run({ delayForCellEdit: true }, function (context) { ... })
 ```
 
-## <a name="request-context"></a>Contexto de solicitação
+## <a name="null-or-blank-property-values"></a>valores de propriedade nulos ou em branco
 
-O Excel e seu suplemento são executados em dois processos diferentes. Como eles usam diferentes ambientes de tempo de execução, os suplementos do Excel exigem um objeto `RequestContext` para conectar o suplemento aos objetos no Excel, como planilhas, intervalos, gráficos e tabelas.
-
-## <a name="proxy-objects"></a>Objetos proxy
-
-Os objetos JavaScript do Excel que você declara e usa em um suplemento são objetos proxy. Todos os métodos invocados, ou as propriedades definidas ou carregadas em objetos proxy são simplesmente adicionados a uma fila de comandos pendentes. Quando você chama o método `sync()` no contexto de solicitação (por exemplo, `context.sync()`), os comandos enfileirados são expedidos para o Excel e executados. A API JavaScript do Excel é basicamente centrada em lote. Você pode enfileirar quantas alterações desejar no contexto de solicitação e depois chamar o método `sync()` para executar o lote de comandos enfileirados.
-
-Por exemplo, o trecho de código a seguir declara o objeto JavaScript local `selectedRange` para fazer referência a um intervalo selecionado no documento do Excel e, em seguida, define algumas propriedades nesse objeto. O objeto `selectedRange` é um objeto proxy, de modo que as propriedades que são definidas e o método que é invocado nesse objeto não serão refletidos no documento do Excel até que o suplemento chame `context.sync()`.
-
-```js
-var selectedRange = context.workbook.getSelectedRange();
-selectedRange.format.fill.color = "#4472C4";
-selectedRange.format.font.color = "white";
-selectedRange.format.autofitColumns();
-```
-
-### <a name="sync"></a>sync()
-
-Chamar o método `sync()` no contexto de solicitação sincroniza o estado entre objetos proxy e objetos no documento do Excel. O método `sync()` executa todos os comandos que são enfileirados no contexto de solicitação e recupera valores para qualquer propriedade que deva ser carregada nos objetos proxy. O método `sync()` é executado de modo assíncrono e retorna uma [promessa](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise), que é resolvida quando o método `sync()` é concluído.
-
-O exemplo a seguir mostra uma função de lote que define um objeto proxy JavaScript local (`selectedRange`), carrega uma propriedade desse objeto e, em seguida, usa o padrão Promessas do JavaScript para chamar `context.sync()` a fim de sincronizar o estado entre objetos proxy e objetos no documento do Excel.
-
-```js
-Excel.run(function (context) {
-    var selectedRange = context.workbook.getSelectedRange();
-    selectedRange.load('address');
-    return context.sync()
-      .then(function () {
-        console.log('The selected range is: ' + selectedRange.address);
-    });
-}).catch(function (error) {
-    console.log('error: ' + error);
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
-
-No exemplo anterior, `selectedRange` é definido e sua propriedade `address` é carregada quando `context.sync()` é chamado.
-
-Como `sync()` é uma operação assíncrona que retorna uma promessa, você deve sempre `return` a promessa (em JavaScript). Isso garante que a operação `sync()` seja concluída antes que o script continue em execução. Para obter mais informações sobre como otimizar o desempenho com o `sync()`, consulte [Otimização de desempenho da API JavaScript do Excel](../excel/performance.md).
-
-### <a name="load"></a>load()
-
-Para que você possa ler as propriedades de um objeto proxy, é preciso carregar explicitamente as propriedades para popular o objeto proxy com dados do documento do Excel e chamar `context.sync()`. Por exemplo, se você criar um objeto proxy para fazer referência a um intervalo selecionado e, em seguida, quiser ler a propriedade `address` do intervalo selecionado, será preciso carregar a propriedade `address` para que seja possível lê-la. Para solicitar que as propriedades de um objeto proxy sejam carregadas, chame o método `load()` no objeto e especifique as propriedades a serem carregadas.
-
-> [!NOTE]
-> Se estiver apenas chamando métodos ou definindo propriedades em um objeto proxy, você não precisa chamar o método `load()`. O método `load()` só é necessário quando você deseja ler propriedades em um objeto proxy.
-
-Assim como as solicitações para definir propriedades ou invocar métodos em objetos proxy, as solicitações para carregar propriedades em objetos proxy são adicionadas à fila de comandos pendentes no contexto de solicitação, sendo executadas na próxima vez que você chamar o método `sync()`. É possível enfileirar quantas chamadas de `load()` forem necessárias no contexto de solicitação.
-
-No exemplo a seguir, somente propriedades específicas do intervalo são carregadas.
-
-```js
-Excel.run(function (context) {
-    var sheetName = 'Sheet1';
-    var rangeAddress = 'A1:B2';
-    var myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-
-    myRange.load(['address', 'format/*', 'format/fill', 'entireRow' ]);
-
-    return context.sync()
-      .then(function () {
-        console.log (myRange.address);              // ok
-        console.log (myRange.format.wrapText);      // ok
-        console.log (myRange.format.fill.color);    // ok
-        //console.log (myRange.format.font.color);  // not ok as it was not loaded
-        });
-    }).then(function () {
-        console.log('done');
-}).catch(function (error) {
-    console.log('Error: ' + error);
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
-
-No exemplo anterior, como `format/font` não está especificado na chamada para `myRange.load()`, a propriedade `format.font.color` não pode ser lida.
-
-Para otimizar o desempenho, você deve especificar explicitamente as propriedades e as relações a serem carregadas ao usar o método `load()` em um objeto, como abrangido em [Otimizações do desempenho da API JavaScript do Excel](performance.md). Para obter mais informações sobre o método `load()`, consulte [Conceitos avançados de programação com a API JavaScript do Excel](excel-add-ins-advanced-concepts.md).
-
-## <a name="null-or-blank-property-values"></a>Valores de propriedade nulos ou em branco
+`null` e as cadeias de caracteres esvaziadas têm implicações especiais nas APIs JavaScript do Excel. Elas são usadas para representar células vazias, sem formatação ou valores padrão. Essa seção detalha o uso da `null` e de uma cadeia de caracteres vazia ao obter e definir as propriedades.
 
 ### <a name="null-input-in-2-d-array"></a>entrada nula em uma matriz 2D
 
@@ -161,18 +183,16 @@ range.format.fill.color =  null;
 
 A formatação de propriedades como `size` e `color` conterá valores `null` na resposta quando valores diferentes existirem no intervalo especificado. Por exemplo, se você recuperar um intervalo e carregar sua propriedade `format.font.color`:
 
-- Se todas as células no intervalo tiverem a mesma cor de fonte, `range.format.font.color` especificará essa cor.
-- Se houver várias cores de fonte dentro do intervalo, `range.format.font.color` será `null`.
+* Se todas as células no intervalo tiverem a mesma cor de fonte, `range.format.font.color` especificará essa cor.
+* Se houver várias cores de fonte dentro do intervalo, `range.format.font.color` será `null`.
 
 ### <a name="blank-input-for-a-property"></a>Entrada em branco para uma propriedade
 
 Quando você especificar um valor em branco para uma propriedade (isto é, duas aspas sem espaço entre elas `''`), ele será interpretado como uma instrução para limpar ou redefinir a propriedade. Por exemplo:
 
-- Se você especificar um valor em branco para a propriedade `values` de um intervalo, o conteúdo do intervalo será apagado.
-
-- Se você especificar um valor em branco para a propriedade `numberFormat`, o formato de número será redefinido para `General`.
-
-- Se você especificar um valor em branco para a propriedade `formula` e a propriedade `formulaLocale`, os valores de fórmula serão apagados.
+* Se você especificar um valor em branco para a propriedade `values` de um intervalo, o conteúdo do intervalo será apagado.
+* Se você especificar um valor em branco para a propriedade `numberFormat`, o formato de número será redefinido para `General`.
+* Se você especificar um valor em branco para a propriedade `formula` e a propriedade `formulaLocale`, os valores de fórmula serão apagados.
 
 ### <a name="blank-property-values-in-the-response"></a>Valores da propriedade em branco na resposta
 
@@ -186,31 +206,43 @@ range.values = [['', 'some', 'data', 'in', 'other', 'cells', '']];
 range.formula = [['', '', '=Rand()']];
 ```
 
-## <a name="read-or-write-to-an-unbounded-range"></a>Ler ou gravar em um intervalo não limitado
+## <a name="requirement-sets"></a>Conjuntos de requisitos
 
-### <a name="read-an-unbounded-range"></a>Ler um intervalo não limitado
+Os conjuntos de requisitos são grupos nomeados de membros da API. Um Suplemento do Office pode executar uma verificação de tempo de execução ou usar conjuntos de requisitos especificados no manifesto para determinar se um aplicativo do Office dá suporte às APIs necessárias ao suplemento. Para identificar os conjuntos de requisitos específicos que estão disponíveis em cada plataforma suportada, confira [Conjuntos de requisitos da API JavaScript do Excel](../reference/requirement-sets/excel-api-requirement-sets.md).
 
-Um endereço de intervalo não limitado é um endereço de intervalo que especifica colunas ou linhas inteiras. Por exemplo:
+### <a name="checking-for-requirement-set-support-at-runtime"></a>Verificando o suporte ao conjunto de requisitos no tempo de execução
 
-- Endereços de intervalo composto por colunas inteiras:<ul><li>`C:C`</li><li>`A:F`</li></ul>
-- Endereços de intervalo composto por linhas inteiras:<ul><li>`2:2`</li><li>`1:4`</li></ul>
-
-Quando uma API faz uma solicitação para recuperar um intervalo não limitado (por exemplo, `getRange('C:C')`), a resposta conterá valores `null` para as propriedades no nível de célula, como `values`, `text`, `numberFormat` e `formula`. Outras propriedades do intervalo, como `address` e `cellCount`, conterão valores válidos para o intervalo não limitado.
-
-### <a name="write-to-an-unbounded-range"></a>Gravar em um intervalo não limitado
-
-Não é possível definir propriedades no nível de célula, como `values`, `numberFormat` e `formula`, no intervalo não limitado, pois a solicitação de entrada é muito grande. Por exemplo, o trecho de código a seguir não é válida porque ele tenta especificar `values` para um intervalo não limitado. A API retornará um erro se você tentar definir as propriedades no nível de célula para um intervalo não limitado.
+O exemplo de código a seguir mostra como determinar se o aplicativo do Office, onde o suplemento está em execução, dá suporte ao conjunto de requisitos da API especificado.
 
 ```js
-var range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
-range.values = 'Due Date';
+if (Office.context.requirements.isSetSupported('ExcelApi', '1.3')) {
+  /// perform actions
+}
+else {
+  /// provide alternate flow/logic
+}
 ```
 
-## <a name="read-or-write-to-a-large-range"></a>Ler ou gravar em um intervalo grande
+### <a name="defining-requirement-set-support-in-the-manifest"></a>Definindo o suporte ao conjunto de requisitos no manifesto
 
-Se um intervalo contiver um grande número de células, valores, formatos de número e/ou fórmulas, talvez não seja possível executar operações de API nesse intervalo. A API sempre fará a melhor tentativa de executar a operação solicitada em um intervalo (isto é, para recuperar ou gravar os dados especificados), mas tentar executar operações de leitura ou gravação para um intervalo grande pode resultar em um erro de API devido à utilização excessiva de recursos. Para evitar tais erros, é recomendável executar operações de leitura ou gravação separadas para subconjuntos menores de um intervalo grande, em vez de tentar executar uma única operação de leitura ou gravação em um intervalo grande.
+Você pode usar o [elemento Requirements](../reference/manifest/requirements.md) no manifesto do suplemento para especificar os conjuntos de requisitos mínimos e/ou os métodos de API exigidos pelo suplemento para ser ativado. Se a plataforma ou o aplicativo do Office não der suporte aos conjuntos de requisitos ou aos métodos de API que são especificados no `Requirements`elemento do manifesto, o suplemento não será executado nesse aplicativo ou plataforma e não será exibido na lista de suplementos que são mostrados em **Meus Suplementos**.
 
-Para detalhes sobre as limitações do sistema, consulte [Limites de transferência de dados do Excel](../develop/common-coding-issues.md#excel-data-transfer-limits).
+O exemplo de código a seguir mostra o elemento `Requirements` em um manifesto de suplemento que especifica se o suplemento deve ser carregado em todos os aplicativos cliente do Office que dão suporte ao conjunto de requisitos ExcelApi, versão 1.3 ou superior.
+
+```xml
+<Requirements>
+   <Sets DefaultMinVersion="1.3">
+      <Set Name="ExcelApi" MinVersion="1.3"/>
+   </Sets>
+</Requirements>
+```
+
+> [!NOTE]
+> Para disponibilizar seu suplemento em todas as plataformas de um aplicativo do Office, como Excel Online, Windows e iPad, é recomendável verificar o suporte a requisitos no tempo de execução, em vez de definir o suporte ao conjunto de requisitos no manifesto.
+
+### <a name="requirement-sets-for-the-officejs-common-api"></a>Conjuntos de requisitos para a API comum Office.js
+
+Para saber mais sobre conjuntos de requisitos comuns da API, confira [Conjuntos de requisitos comuns da API do Office](../reference/requirement-sets/office-add-in-requirement-sets.md).
 
 ## <a name="handle-errors"></a>Lidar com erros
 
@@ -218,9 +250,8 @@ Quando ocorre um erro de API, a API retorna um objeto `error` que contém um có
 
 ## <a name="see-also"></a>Confira também
 
-- [Crie seu primeiro suplemento do Excel](../quickstarts/excel-quickstart-jquery.md)
-- [Exemplos de código de suplementos do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-- [Conceitos fundamentais de programação com a API JavaScript do Excel](excel-add-ins-advanced-concepts.md)
-- [Otimização de desempenho do da API JavaScript do Excel](../excel/performance.md)
-- [Referência da API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md)
-- [Problemas comuns de codificação e comportamentos inesperados da plataforma](../develop/common-coding-issues.md).
+* [Crie seu primeiro suplemento do Excel](../quickstarts/excel-quickstart-jquery.md)
+* [Exemplos de código de suplementos do Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+* [Otimização de desempenho da API JavaScript do Excel](../excel/performance.md)
+* [Referência da API JavaScript do Excel](../reference/overview/excel-add-ins-reference-overview.md)
+* [Problemas comuns de codificação e comportamentos inesperados da plataforma](../develop/common-coding-issues.md).

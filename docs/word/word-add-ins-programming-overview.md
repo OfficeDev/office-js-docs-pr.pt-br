@@ -1,16 +1,16 @@
 ---
 title: Visão geral dos suplementos do Word
 description: Conheça as noções básicas de suplementos do Word
-ms.date: 03/18/2020
+ms.date: 07/28/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 714bbc561c987c9f9df478e9d5a95dd7a801ea04
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: b531ec5c2a5fa1e3e9366f703a57e815a5711b5a
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608555"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293069"
 ---
 # <a name="word-add-ins-overview"></a>Visão geral dos suplementos do Word
 
@@ -49,15 +49,15 @@ As APIs JavaScript do Word proporcionam ao seu aplicativo o acesso aos objetos e
 * Word 2016 ou posterior no Windows
 * Word no iPad
 
-Redija seu suplemento uma vez e ele será executado em todas as versões do Word em várias plataformas. Para obter detalhes, consulte [Disponibilidade de Suplementos do Office em hosts e plataformas](../overview/office-add-in-availability.md).
+Redija seu suplemento uma vez e ele será executado em todas as versões do Word em várias plataformas. Para obter detalhes, consulte [Disponibilidade de plataformas para os Suplementos do Office e aplicativo cliente do Office](../overview/office-add-in-availability.md).
 
 ## <a name="javascript-apis-for-word"></a>APIs JavaScript para Word
 
 Você pode usar dois conjuntos de APIs JavaScript para interagir com metadados e objetos em um documento do Word. O primeiro é a [API comuns](/javascript/api/office), que foi introduzido no Office 2013. Muitos dos objetos na API comuns podem ser usados em suplementos hospedados por dois ou mais clientes do Office.  Essa API usa retornos de chamadas de maneira ampla.
 
-O segundo é a [API JavaScript do Word](/javascript/api/word). Este é um modelo de objeto fortemente tipado que você pode usar para criar suplementos do Word que se destinam ao Word 2016 para Mac e Windows. Este modelo de objeto usa promessas e fornece acesso a objetos específicos do Word como [corpo](/javascript/api/word/word.body), [controles de conteúdo](/javascript/api/word/word.contentcontrol), [imagens embutidas](/javascript/api/word/word.inlinepicture) e [parágrafos](/javascript/api/word/word.paragraph). A API JavaScript do Word inclui definições do TypeScript e arquivos vsdoc para que você possa obter dicas de código em seu IDE.
+O segundo é a [API JavaScript do Word](/javascript/api/word). Esse é um [modelo de API específico do aplicativo](../develop/application-specific-api-model.md)introduzido no Word 2016. É um modelo de objeto fortemente tipado que você pode usar para criar suplementos do Word que se destinam ao Word 2016 para Mac e Windows. Este modelo de objeto usa promessas e fornece acesso a objetos específicos do Word como [corpo](/javascript/api/word/word.body), [controles de conteúdo](/javascript/api/word/word.contentcontrol), [imagens embutidas](/javascript/api/word/word.inlinepicture) e [parágrafo](/javascript/api/word/word.paragraph)s. A API JavaScript do Word inclui definições do TypeScript e arquivos vsdoc para que você possa obter dicas de código em seu IDE.
 
-Atualmente, todos os clientes do Word oferecem suporte à API JavaScript do Office compartilhada, e a maioria dos clientes oferece suporte à API JavaScript do Word. Para obter detalhes sobre clientes com suporte, consulte [Disponibilidade do host e da plataforma dos Suplementos do Office](../overview/office-add-in-availability.md).
+Atualmente, todos os clientes do Word oferecem suporte à API JavaScript para Office compartilhada, e a maioria dos clientes oferece suporte à API JavaScript do Word. Para obter detalhes sobre os clientes com suporte, confira a [Disponibilidade de aplicativos e plataformas do cliente do Office para suplementos do Office](../overview/office-add-in-availability.md).
 
 Recomendamos que você comece com a API JavaScript do Word porque o modelo de objeto é mais fácil de usar. Use a API JavaScript do Word se precisar:
 

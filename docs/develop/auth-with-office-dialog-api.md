@@ -3,12 +3,12 @@ title: Autenticação e autorização com a API da caixa de diálogo do Office
 description: Aprenda a usar a API da caixa de diálogo do Office para permitir que os usuários entrem no Google, no Facebook, no Microsoft 365 e em outros serviços protegidos pela Plataforma de Identidade da Microsoft.
 ms.date: 07/07/2020
 localization_priority: Priority
-ms.openlocfilehash: d98576ba0f0a0bfec9ed78cbf7438b1f31a7ee26
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 22242b3e54a63b76a44f8e610be2194a1fc5f00b
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159602"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293342"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Autenticação e autorização com a API da caixa de diálogo do Office
 
@@ -70,7 +70,7 @@ O fato de a Caixa de Diálogo do Office e o painel de tarefas serem executados e
 
 ### <a name="you-usually-cannot-use-the-librarys-internal-cache-to-store-tokens"></a>Geralmente, você não pode usar o cache interno da biblioteca para armazenar tokens
 
-Normalmente, as bibliotecas relacionadas à autenticação fornecem um cache na memória para armazenar o token de acesso. Se chamadas subsequentes para o provedor de recursos (por exemplo, Google, Microsoft Graph, Facebook, etc.) forem feitas, a biblioteca primeiro verificará se o token no cache está expirado. Caso não tenha expirado, a biblioteca retornará o token em cache, em vez de retornar ao STS para obter um novo token. No entanto, esse padrão não pode ser usado em suplementos do Office. Uma vez que o logon ocorre na instância do navegador da Caixa de Diálogo do Office, o cache do token estará nessa instância.
+Normalmente, as bibliotecas relacionadas à autenticação fornecem um cache na memória para armazenar o token de acesso. Se chamadas subsequentes para o provedor de recursos (por exemplo, Google, Microsoft Graph, Facebook, etc.) forem feitas, a biblioteca primeiro verificará se o token no cache está expirado. Caso não tenha expirado, a biblioteca retornará o token em cache, em vez de retornar ao STS para obter um novo token. No entanto, esse padrão não pode ser usado em Suplementos do Office. Uma vez que o logon ocorre na instância do navegador da caixa de diálogo do Office, o cache do token estará nessa instância.
 
 Estritamente relacionado a isso está o fato de que uma biblioteca normalmente fornece métodos interativos e "silenciosos" para obter um token. Quando for possível fazer tanto a autenticação quanto as chamadas de dados ao recurso na mesma instância do navegador, o código chamará o método silencioso para obter um token imediatamente antes do código adicionar o token à chamada de dados. O método silencioso procurará por um token não expirado no cache e o retornará, caso haja um. Caso contrário, o método silencioso chamará o método interativo que será redirecionado para o logon do STS. Após a conclusão do logon, o método interativo retorna o token e o armazena na memória. No entanto, quando a API da Caixa de Diálogo do Office está sendo usada, as chamadas de dados do recurso, que chamam o método silencioso, estão na instância do navegador do painel de tarefas. O cache de token da biblioteca não existe nessa instância.
 
@@ -83,7 +83,7 @@ Como alternativa, a instância do navegador da Caixa de Diálogo do suplemento p
 
 Frequentemente, uma biblioteca relacionada à autenticação possui um método que obtém tanto um token de forma interativa, como também cria um objeto de "contexto de autenticação" retornado pelo método. O token é uma propriedade do objeto (possivelmente particular e inacessível diretamente do código). Esse objeto tem os métodos que recebem os dados do recurso. Esses métodos incluem o token nas Solicitações HTTP feitas ao provedor de recursos (por exemplo, Google, Microsoft Graph, Facebook, etc.).
 
-Esses objetos de contexto de autenticação e os métodos que os criam não podem ser usados nos suplementos do Office. Como o logon ocorre na instância do navegador da Caixa de Diálogo do Office, o objeto teria que ser criado lá. Mas as chamadas de dados do recurso estão na instância do navegador do painel de tarefas e não há como enviar o objeto de uma instância para outra. Por exemplo, não é possível passar o objeto pela `messageParent`, porque a `messageParent` só pode passar valores booleanos ou cadeias de caracteres. Um objeto do JavaScript com métodos não pode ser transformado em cadeia de caracteres de maneira confiável.
+Esses objetos de contexto de autenticação e os métodos que os criam não podem ser usados nos Suplementos do Office. Como o logon ocorre na instância do navegador da caixa de diálogo do Office, o objeto teria que ser criado lá. Mas as chamadas de dados do recurso estão na instância do navegador do painel de tarefas e não há como enviar o objeto de uma instância para outra. Por exemplo, não é possível passar o objeto pela `messageParent`, porque a `messageParent` só pode passar valores booleanos ou cadeias de caracteres. Um objeto do JavaScript com métodos não pode ser transformado em cadeia de caracteres de maneira confiável.
 
 ### <a name="how-you-can-use-libraries-with-the-office-dialog-api"></a>Como usar as bibliotecas através da API da Caixa de Diálogo do Office
 

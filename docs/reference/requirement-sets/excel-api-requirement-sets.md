@@ -4,20 +4,20 @@ description: Informações do conjunto de requisitos do Suplemento do Office par
 ms.date: 07/10/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 4ed1b25732900357265ad9bb79228bf7a00ba888
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: aa2eb78063d3ae63efa725e13892e24596ebfceb
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159273"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294245"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Excel
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
 
 ## <a name="requirement-set-availability"></a>Disponibilidade do conjunto de requisitos
 
-Os suplementos do Excel são executados em várias versões do Office, incluindo o Office 2016 ou posterior no Windows, Office na Web, Mac e iPad. A tabela a seguir lista conjuntos de requisitos do Excel, ou seja, os aplicativos de host do Office que oferecem suporte a esse conjunto de requisitos, e as versões ou números de build desses aplicativos.
+Os suplementos do Excel são executados em várias versões do Office, incluindo o Office 2016 ou posterior no Windows, Office na Web, Mac e iPad. A tabela a seguir lista conjuntos de requisitos do Excel, ou seja, os aplicativos do cliente Office que oferecem suporte a esse conjunto de requisitos, e as versões ou números de compilação desses aplicativos.
 
 > [!NOTE]
 > Para usar APIs em qualquer um dos conjuntos de requisitos numerados ou `ExcelApiOnline`, faça referência à biblioteca **production** no CDN: https://appsforoffice.microsoft.com/lib/1/hosted/office.js.
@@ -56,6 +56,6 @@ Para saber mais sobre as versões do Office e os números de build, confira:
 
 - [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel)
 - [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md)
-- [Especificar requisitos da API e de hosts do Office](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Especificar requisitos da API e de aplicativos do Office](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Manifesto XML dos Suplementos do Office](../../develop/add-in-manifests.md)
 - [Visão geral sobre o Servidor do Office Online](/officeonlineserver/office-online-server-overview)

@@ -3,12 +3,12 @@ title: Comandos de suplementos do Outlook
 description: Os comandos de suplementos do Outlook oferecem maneiras de iniciar ações específicas do suplemento na faixa de opções ao adicionar botões ou menus suspensos.
 ms.date: 07/07/2020
 localization_priority: Priority
-ms.openlocfilehash: 7705c168077d2a704ff16b05bfb82416cd7f4154
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 598d6e055b72d517d4a6bcfb90e3968b466e3aa0
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094026"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294007"
 ---
 # <a name="add-in-commands-for-outlook"></a>Comandos de suplemento para o Outlook
 
@@ -30,7 +30,7 @@ Os comandos de suplementos estão disponíveis apenas para suplementos que não 
 
 Os comandos do suplemento são declarados no manifesto do suplemento no elemento [VersionOverrides](../reference/manifest/versionoverrides.md). Esse elemento é uma adição ao esquema de manifesto v1.1 que garante a compatibilidade com versões anteriores. Em um cliente que não dê suporte a `VersionOverrides`, os suplementos existentes continuarão a funcionar como faziam sem comandos de suplemento.
 
-As entradas de manifesto `VersionOverrides` especificam muitos itens para o suplemento, como host, tipos de controles a serem adicionados à faixa de opções, texto, ícones e quaisquer funções associadas.
+As entradas de manifesto `VersionOverrides` especificam muitos itens para o suplemento, como o aplicativo, tipos de controles a serem adicionados à faixa de opções, texto, ícones e quaisquer funções associadas.
 
 Quando um suplemento precisa fornecer atualizações de status, como indicadores de progresso ou mensagens de erro, ele deve fazer isso por meio das [APIs de notificação](/javascript/api/outlook/office.notificationmessages). O processamento para as notificações também deve ser definido em um arquivo HTML separado que é especificado no nó `FunctionFile` do manifesto.
 
@@ -58,7 +58,7 @@ No Outlook na Web, o nome do suplemento é exibido em um menu estouro. Se o supl
 
 ## <a name="what-ux-shapes-exist-for-add-in-commands"></a>Quais formas da experiência do usuário existem para comandos de suplemento?
 
-A forma da experiência do usuário para um comando de suplemento consiste em uma guia da faixa de opções no aplicativo host que contém botões que podem executar várias funções. Atualmente, há suporte para três formas de interface do usuário:
+A forma da experiência do usuário para um comando de suplemento consiste em uma guia da faixa de opções no aplicativo do Office que contém botões que podem executar várias funções. Atualmente, há suporte para três formas de Interface do Usuário:
 
 - Um botão que executa uma função JavaScript
 - Um botão que inicia um painel de tarefas

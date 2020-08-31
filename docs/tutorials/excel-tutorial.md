@@ -4,12 +4,12 @@ description: Neste tutorial, você criará um suplemento do Excel que cria, pree
 ms.date: 06/05/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 2e637bad83432f8adf94826b906dc68a57e02fa6
-ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
+ms.openlocfilehash: d75655c1bb69209cf4cdb5925d04b6c3f84bb39f
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "46530503"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293419"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Tutorial: criar um suplemento do painel de tarefas no Excel
 
@@ -63,7 +63,7 @@ Nesta etapa do tutorial, você testará no programa se o suplemento é compatív
     <button class="ms-Button" id="create-table">Create Table</button><br/><br/>
     ```
 
-5. Abra o arquivo **./src/taskpane/taskpane.js**. Ele contém o código da API JavaScript do Office que facilita a interação entre o painel de tarefas e o aplicativo host do Office.
+5. Abra o arquivo **./src/taskpane/taskpane.js**. Este arquivo contém o código da API JavaScript do Office que facilita a interação entre o painel de tarefas e o aplicativo do cliente Office.
 
 6. Remova todas as referências ao botão `run` e à função `run()` da seguinte forma:
 
@@ -602,7 +602,7 @@ Nesta etapa do tutorial, você adicionará um botão à faixa de opções que at
 
 1. Abra o arquivo **.\commands\commands.js**.
 
-2. Adicione a seguinte função imediatamente após a função `action`. Especificamos um parâmetro `args` para a função, e a última linha da função chama `args.completed`. Esse é um requisito para todos os comandos de suplemento do tipo **ExecuteFunction**. Ele sinaliza para o aplicativo host do Office que a função terminou e que a interface do usuário podem ficar responsiva novamente.
+2. Adicione a seguinte função imediatamente após a função `action`. Especificamos um parâmetro `args` para a função, e a última linha da função chama `args.completed`. Esse é um requisito para todos os comandos de suplemento do tipo **ExecuteFunction**. Ele sinaliza para o aplicativo do cliente Office que a função terminou e que a interface do usuário podem ficar responsiva novamente.
 
     ```js
     function toggleProtection(args) {
@@ -721,18 +721,18 @@ Essas etapas devem ser concluídas sempre que seu código precisar *ler* informa
 
 ### <a name="test-the-add-in"></a>Testar o suplemento
 
-1. Feche todos os aplicativos do Office, incluindo o Excel. 
+1. Feche todos os aplicativos do Office, incluindo o Excel.
 
-2. Exclua o cache do Office excluindo os conteúdos (todos os arquivos e subpastas) da pasta em cache. Isso é necessário para limpar totalmente a versão anterior do suplemento do host.
+2. Exclua o cache do Office excluindo os conteúdos (todos os arquivos e subpastas) da pasta em cache. Isso é necessário para limpar totalmente a versão anterior do suplemento do
 
     - No Windows: `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
-    - No Mac: `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. 
+    - No Mac: `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
     
         > [!NOTE]
         > Se essa pasta não existir, verifique as seguintes pastas. Se encontrada, exclua o conteúdo da pasta:
-        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/` em que `{host}` é o host do Office (por exemplo, `Excel`)
-        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/` em que `{host}` é o host do Office (por exemplo, `Excel`)
+        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/` onde `{host}` é o aplicativo do Office (por exemplo, `Excel`)
+        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/` onde `{host}` é o aplicativo do Office (por exemplo, `Excel`)
         >    - `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
         >    - `com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
 
@@ -764,7 +764,7 @@ Essas etapas devem ser concluídas sempre que seu código precisar *ler* informa
 
 ## <a name="open-a-dialog"></a>Abrir uma caixa de diálogo
 
-Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, passa uma mensagem do processo de caixa de diálogo para o processo de painel de tarefas e fecha a caixa de diálogo. As caixas de diálogo do Suplemento do Office são *não modais*: o usuário pode continuar a interagir com o documento no aplicativo do Office do host e com a página host no painel de tarefas.
+Nesta etapa final do tutorial, você abre uma caixa de diálogo no suplemento, passa uma mensagem do processo de caixa de diálogo para o processo de painel de tarefas e fecha a caixa de diálogo. As caixas de diálogo do Suplemento do Office são *não modais*: o usuário pode continuar a interagir com o documento no aplicativo do Office e com a página host no painel de tarefas.
 
 ### <a name="create-the-dialog-page"></a>Crie a página da caixa de diálogo
 
@@ -941,7 +941,7 @@ Abra o arquivo **webpack.config.js** no diretório raiz do projeto e conclua as 
     var dialog = null;
     ```
 
-7. Adicione a seguinte função ao final do arquivo, após a declaração de `dialog`. É importante observar o que esse código *não* contém: não há nenhuma chamada de `Excel.run`. Isso ocorre porque a API para abrir uma caixa de diálogo é compartilhada com todos os hosts do Office, portanto, ela faz parte da API de Office JavaScript Common, não da API específica do Excel.
+7. Adicione a seguinte função ao final do arquivo, após a declaração de `dialog`. É importante observar o que esse código *não* contém: não há nenhuma chamada de `Excel.run`. Isso ocorre porque a API para abrir uma caixa de diálogo é compartilhada com todos os aplicativos do Office, portanto, ela faz parte da API Comum de JavaScript do Office, não da API específica do Excel.
 
     ```js
     function openDialog() {

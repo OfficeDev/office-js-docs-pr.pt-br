@@ -4,12 +4,12 @@ description: Saiba mais sobre os conjuntos de requisitos da API JavaScript do Ou
 ms.date: 07/10/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 231b59818c1273b426a17656e67c9bb1153fb65c
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 64d906fdfbc50926ac864b1106e7cd1cb6017c77
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159280"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293496"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Conjuntos de requisitos de API JavaScript do Outlook
 
@@ -38,7 +38,7 @@ A especificação de uma versão mínima de conjunto de requisitos controla em q
 
 Definir um conjunto de requisitos não limita as APIs disponíveis que o suplemento pode usar. Por exemplo, se o suplemento especificar o conjunto de requisitos “Caixa de Correio 1.1”, mas estiver sendo executado em um cliente do Outlook que dá suporte à versão “Caixa de Correio 1.3”, o suplemento poderá usar APIs do conjunto de requisitos “Caixa de Correio 1.3”.
 
-Para usar uma API mais recente, os desenvolvedores podem verificar se um determinado host oferece suporte ao conjunto de requisitos fazendo o seguinte.
+Para usar uma API mais recente, os desenvolvedores podem verificar se um determinado aplicativo oferece suporte ao conjunto de requisitos fazendo o seguinte.
 
 ```js
 if (Office.context.requirements.isSetSupported('Mailbox', '1.3')) {

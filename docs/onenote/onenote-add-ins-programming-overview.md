@@ -1,16 +1,16 @@
 ---
 title: Visão geral da programação da API JavaScript do OneNote
 description: Saiba mais sobre a API JavaScript do OneNote para suplementos do OneNote na Web.
-ms.date: 03/18/2020
+ms.date: 07/28/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: c26d2f929a1c32efa3b860ef6d15275ed1e1b8fb
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 86a388c2e8a89b97d82083964e0fcf120f310e66
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44607622"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294056"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>Visão geral da programação da API JavaScript do OneNote
 
@@ -26,20 +26,20 @@ Os suplementos consistem de dois componentes básicos:
 
 - Um **manifesto XML** que especifica a URL da página da Web do suplemento e os requisitos de acesso, as configurações e os recursos para o suplemento. Este arquivo é armazenado no cliente. Os suplementos do OneNote usam o mesmo formato de [manifesto](../develop/add-in-manifests.md) como outros suplementos do Office.
 
-**Suplemento do Office = manifesto + página da Web**
+### <a name="office-add-in--manifest--webpage"></a>Suplemento do Office = Manifesto + Página da Web
 
 ![Um suplemento do Office consiste em um manifesto e uma página da Web](../images/onenote-add-in.png)
 
 ## <a name="using-the-javascript-api"></a>Usar a API JavaScript
 
-Os suplementos usam o contexto de tempo de execução do aplicativo host para acessar a API JavaScript. A API tem duas camadas:
+Os suplementos usam o contexto de tempo de execução do aplicativo do Office para acessar a API de JavaScript. A API tem duas camadas:
 
-- Uma **API específica do host** para operações específicas do OneNote, acessada por meio do objeto `Application`.
+- Uma **API específica do aplicativo** para operações específicas do OneNote, acessada por meio do objeto `Application`.
 - Uma **API comum** compartilhada entre aplicativos do Office, acessada por meio do objeto `Document`.
 
-### <a name="accessing-the-host-specific-api-through-the-application-object"></a>Acessar uma API avançada por meio do objeto *Aplicativo*.
+### <a name="accessing-the-application-specific-api-through-the-application-object"></a>Acessar uma API específica do aplicativo por meio do objeto *Aplicativo*.
 
-Use o objeto `Application` para acessar objetos do OneNote, como **Bloco de Anotações**, **Seção** e **Página**. Com as APIs avançadas, você executa operações em lotes em objetos proxy. O fluxo básico será semelhante a:
+Use o objeto `Application` para acessar objetos do OneNote, como **Bloco de Anotações**, **Seção** e **Página**. Com APIs específicas do aplicativo, você executa operações em lotes em objetos proxy. O fluxo básico será semelhante a:
 
 1. Obtenha a instância do aplicativo do contexto.
 
@@ -86,16 +86,17 @@ function getPagesInSection() {
 }
 ```
 
+Confira [Usando o modelo de API específica do aplicativo](../develop/application-specific-api-model.md) para saber mais sobre o padrão `load`/`sync` e outras práticas comuns nas APIs de JavaScript do OneNote.
+
 Você pode encontrar objetos do OneNote e operações compatíveis na [Referência API](../reference/overview/onenote-add-ins-javascript-reference.md).
 
 #### <a name="onenote-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do OneNote
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office oferece suporte para as APIs necessárias para um suplemento. Para saber mais sobre conjuntos de requisitos da API JavaScript do OneNote, consulte [Conjuntos de requisitos da API JavaScript do OneNote](../reference/requirement-sets/onenote-api-requirement-sets.md).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office oferece suporte para as APIs necessárias para um suplemento. Para saber mais sobre conjuntos de requisitos da API JavaScript do OneNote, consulte [Conjuntos de requisitos da API JavaScript do OneNote](../reference/requirement-sets/onenote-api-requirement-sets.md).
 
 ### <a name="accessing-the-common-api-through-the-document-object"></a>Acessar a API comum por meio do objeto *Documento*
 
 Use o objeto `Document`para acessar a API comum, como os métodos [getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) e [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-).
-
 
 Por exemplo:  
 
@@ -124,15 +125,13 @@ Os suplementos do OneNote são compatíveis apenas com as seguintes APIs comuns:
 | [Office.context.document.settings.set(nome, valor);](/javascript/api/office/office.settings#set-name--value-) | As configurações são compatíveis apenas com os suplementos de conteúdo | 
 | [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) ||
 
-Em geral, você usa a API comum para fazer algo que não é compatível com a API específica do host. Para obter mais informações sobre como usar a API comum, confira [Modelo do objeto do JavaScript API para Office](../develop/office-javascript-api-object-model.md).
-
+Em geral, você usa a API Comum para fazer algo que não é compatível com a API específica do aplicativo. Para obter mais informações sobre como usar a API comum, confira [Modelo do objeto do JavaScript API para Office](../develop/office-javascript-api-object-model.md).
 
 <a name="om-diagram"></a>
 ## <a name="onenote-object-model-diagram"></a>Diagrama do modelo de objeto do OneNote 
 O diagrama a seguir representa o que está disponível atualmente na API JavaScript do OneNote.
 
   ![Diagrama do modelo de objeto do OneNote](../images/onenote-om.png)
-
 
 ## <a name="see-also"></a>Confira também
 

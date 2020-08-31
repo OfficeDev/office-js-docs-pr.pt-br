@@ -3,12 +3,12 @@ title: Implantar e publicar Suplementos do Office
 description: Você pode usar um dos vários métodos para implantar o suplemento do Office para testar ou distribuir aos usuários.
 ms.date: 06/02/2020
 localization_priority: Priority
-ms.openlocfilehash: 797abbde43e6172ba26f3dd4b128fb06f1e70bec
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 7792b2196b686f36b81869ce81a3e3b87659f1c2
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094180"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292389"
 ---
 # <a name="deploy-and-publish-office-add-ins"></a>Implantar e publicar Suplementos do Office
 
@@ -25,9 +25,9 @@ Você pode usar um dos vários métodos para implantar o suplemento do Office pa
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
-## <a name="deployment-options-by-office-host-and-add-in-type"></a>Opções de implantação pelo host do Office e pelo tipo de suplemento
+## <a name="deployment-options-by-office-application-and-add-in-type"></a>Opções de implantação por aplicativo do Office e tipo de suplemento
 
-As opções de implantação disponíveis dependem do host do Office que você pretende usar e do tipo de suplemento que você pretende criar.
+As opções de implantação que estão disponíveis dependem do aplicativo do Office que você pretende usar e o tipo de suplemento que pretende criar.
 
 ### <a name="deployment-options-for-word-excel-and-powerpoint-add-ins"></a>Opções de implantação de suplementos para Word, Excel e PowerPoint
 
@@ -87,4 +87,3 @@ Para atribuir suplementos a locatários, use o Centro de administração do Exch
 - [Solucionar erros de usuários com Suplementos do Office](../testing/testing-and-troubleshooting.md)
 
 [AppSource]: /office/dev/store/submit-to-appsource-via-partner-center
-[Office Add-in host and platform availability]: ../overview/office-add-in-availability

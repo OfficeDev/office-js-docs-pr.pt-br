@@ -3,12 +3,12 @@ title: Privacidade, permissões e segurança de suplementos do Outlook
 description: Saiba como gerenciar a privacidade, as permissões e a segurança em um suplemento do Outlook.
 ms.date: 08/18/2020
 localization_priority: Priority
-ms.openlocfilehash: ab2bae004699b2e82fd74c4c320fb033dfc6c1b9
-ms.sourcegitcommit: e9f23a2857b90a7c17e3152292b548a13a90aa33
+ms.openlocfilehash: 8a95330059de39506a8f9ece6bdd10246b6c212d
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "46803762"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294294"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Privacidade, permissões e segurança de suplementos do Outlook
 
@@ -173,6 +173,6 @@ O modelo de segurança fornece os seguintes direitos e responsabilidades aos adm
 
 ## <a name="see-also"></a>Confira também
 
-- [Privacidade e segurança para Suplementos do Office](../develop/privacy-and-security.md)
+- [Privacidade e segurança para Suplementos do Office](../concepts/privacy-and-security.md)
 - [APIs de suplemento do Outlook](apis.md)
 - [Limites para ativação e API JavaScript para suplementos do Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)

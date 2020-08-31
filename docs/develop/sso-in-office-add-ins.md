@@ -3,12 +3,12 @@ title: Habilitar o logon único para Suplementos do Office
 description: Saiba como habilitar o logon único para suplementos do Office usando contas pessoais, corporativas ou de estudante da Microsoft.
 ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: fa10d67d007fbcb8713fc607ca32e1c646e7f3e5
-ms.sourcegitcommit: 8fdd7369bfd97a273e222a0404e337ba2b8807b0
+ms.openlocfilehash: ec4fc9f91f3cbc9f8882ed491c7c5bc68be346ed
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "46573221"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293195"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins"></a>Habilitar o logon único para Suplementos do Office
 
@@ -29,12 +29,12 @@ O diagrama a seguir mostra como funciona o processo de SSO.
 
 ![Diagrama que mostra o processo de SSO](../images/sso-overview-diagram.png)
 
-1. No suplemento, o JavaScript chama uma nova API do Office.js [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). Isso informa ao aplicativo host do Office para obter um token de acesso para o suplemento. Confira [Token de acesso de amostra](#example-access-token).
-2. Se o usuário não estiver conectado, o aplicativo host do Office abrirá uma janela pop-up para o usuário entrar.
+1. No suplemento, o JavaScript chama uma nova API do Office.js [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). Isso informa ao aplicativo cliente do Office para obter um token de acesso para o suplemento. Confira [Token de acesso de amostra](#example-access-token).
+2. Se o usuário não estiver conectado, o aplicativo cliente do Office abrirá uma janela pop-up para o usuário entrar.
 3. Se essa é a primeira vez que o usuário atual usa seu suplemento, será solicitado que ele dê o consentimento.
-4. O aplicativo host do Office solicita o **token do suplemento** do ponto de extremidade v 2.0 do Azure AD para o usuário atual. 
-5. O Azure AD envia o token do suplemento ao aplicativo host do Office.
-6. O aplicativo host do Office envia o **token do suplemento** ao suplemento como parte do objeto de resultado que retornou pela chamada de `getAccessToken`.
+4. O aplicativo cliente do Office solicita o **token do suplemento** do ponto de extremidade v2.0 do Azure AD para o usuário atual. 
+5. O Azure AD envia o token do suplemento ao aplicativo cliente do Office.
+6. O aplicativo cliente do Office envia o **token do suplemento** ao suplemento como parte do objeto de resultado que retornou pela chamada de `getAccessToken`.
 7. O JavaScript no suplemento pode analisar o token e extrair informações necessárias, como endereço de email do usuário.
 8. Opcionalmente, o suplemento pode enviar solicitação HTTP para o servidor para obter mais dados sobre o usuário; como as preferências do usuário. Como alternativa, o próprio token de acesso pode ser enviado para o servidor para análise e validação.
 
@@ -54,8 +54,8 @@ Registre o suplemento no portal de registro para o ponto de extremidade do Azure
 
 * Obter um ID de cliente e o segredo para o suplemento.
 * Especificar as permissões que seu suplemento precisa de AAD v. ponto de extremidade 2.0 (e, opcionalmente, para o Microsoft Graph). A permissão "perfil" sempre é necessária.
-* Conceder a confiança do aplicativo host do Office para o suplemento.
-* Autorizar previamente o aplicativo host do Office para o suplemento com a permissão padrão *access_as_user*.
+* Conceder a confiança do aplicativo cliente do Office para o suplemento.
+* Autorizar previamente o aplicativo cliente do Office para o suplemento com a permissão padrão *access_as_user*.
 
 Para mais detalhes sobre esse processo, confira [Registrar um Suplemento do Office que usa SSO com o ponto de extremidade do Azure AD v2.0](register-sso-add-in-aad-v2.md).
 
@@ -69,7 +69,7 @@ Adicione novas marcações ao manifesto do suplemento:
 * **Scopes** – O pai de uma ou mais elementos **Scope**.
 * **Scope** – Especifica uma permissão que seu suplemento precisa para o AAD. A permissão `profile` sempre é necessária, e pode ser a única permissão necessária, se o suplemento não acessar o Microsoft Graph. Se isso acontecer, você também precisa de elementos **Escopo** para as permissões necessárias do Microsoft Graph; por exemplo, `User.Read`, `Mail.Read`. Bibliotecas que você usa no seu código para acessar o Microsoft Graph pode precisar de permissões adicionais. Por exemplo, a biblioteca de autenticação da Microsoft (MSAL) para .NET requer a permissão `offline_access`. Para saber mais, confira [autorizar o Microsoft Graph de um suplemento do Office](authorize-to-microsoft-graph.md).
 
-Para hosts do Office diferentes do Outlook, adicione a marcação no final da seção `<VersionOverrides ... xsi:type="VersionOverridesV1_0">`. Para o Outlook, adicione a marcação no final da seção `<VersionOverrides ... xsi:type="VersionOverridesV1_1">`.
+Para aplicativos do Office diferentes do Outlook, adicione a marcação no final da seção `<VersionOverrides ... xsi:type="VersionOverridesV1_0">`. Para o Outlook, adicione a marcação no final da seção `<VersionOverrides ... xsi:type="VersionOverridesV1_1">`.
 
 Veja a seguir um exemplo da marcação:
 
@@ -220,7 +220,7 @@ Há algumas diferenças pequenas, mas importantes entre usar o SSO em um supleme
 
 ### <a name="getaccesstoken"></a>getAccessToken
 
-O namespace [Auth](/javascript/api/office-runtime/officeruntime.auth) do OfficeRuntime, `OfficeRuntime.Auth`, fornece um método, `getAccessToken` que permite com que o host do Office obtenha um token de acesso para o aplicativo web do suplemento. Indiretamente, isso também habilita o suplemento para acessar os dados do Microsoft Graph do usuário sem exigir que o usuário se conecte uma segunda vez.
+O namespace [Auth](/javascript/api/office-runtime/officeruntime.auth) do OfficeRuntime, `OfficeRuntime.Auth`, fornece um método, `getAccessToken` que permite com que o aplicativo do Office obtenha um token de acesso para o aplicativo web do suplemento. Indiretamente, isso também habilita o suplemento para acessar os dados do Microsoft Graph do usuário sem exigir que o usuário se conecte uma segunda vez.
 
 ```typescript
 getAccessToken(options?: AuthOptions: (result: AsyncResult<string>) => void): void;
