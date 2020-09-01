@@ -3,12 +3,12 @@ title: Criando Suplementos do Office
 description: Uma introdução ao desenvolvimento de Suplementos do Office.
 ms.date: 02/27/2020
 localization_priority: Priority
-ms.openlocfilehash: 9ef552698bb0e9d71076b38d0ea3af49eee408d7
-ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+ms.openlocfilehash: 5520a147ed1dfe234d78b4e83081e355bc3e1872
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "44679392"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292446"
 ---
 # <a name="building-office-add-ins"></a>Criando Suplementos do Office
 
@@ -130,7 +130,7 @@ Explore a biblioteca de amostras internas no [Script Lab](explore-with-script-la
 Saiba mais sobre o desenvolvimento, testes e publicação de suplementos do Office explorando essa documentação.
 
 > [!TIP]
-> Para qualquer suplemento que você criar, use as informações na seção [Principais conceitos](core-concepts-office-add-ins.md) desta documentação, juntamente com as informações na seção específica do host que correspondem ao tipo de suplemento que você está criando (por exemplo, [Excel](../excel/index.yml)).
+> Para qualquer suplemento que você criar, use as informações na seção [Principais conceitos](core-concepts-office-add-ins.md) desta documentação, juntamente com as informações na seção específica do aplicativo que correspondem ao tipo de suplemento que você está criando (por exemplo, [Excel](../excel/index.yml)).
 >
 > ![Uma imagem que mostra o sumário](../images/top-level-toc.png)
 

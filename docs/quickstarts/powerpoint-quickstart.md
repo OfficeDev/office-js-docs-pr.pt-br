@@ -4,12 +4,12 @@ description: Saiba como criar um Suplemento do PowerPoint simples usando a API J
 ms.date: 04/03/2020
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 31bfc87559550d865367f6430b980620e813bed8
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9bab9c0c05ace89a1d5dc89b62108f34b49cf679
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608898"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294336"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>Crie o seu primeiro suplemento do painel de tarefas do PowerPoint
 
@@ -242,7 +242,7 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do PowerPoi
 
 2. No PowerPoint, insira um novo slide em branco, escolha a guia **Página Inicial** e o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
-    ![Uma captura de tela do PowerPoint com o botão Mostrar painel de tarefas realçado](../images/powerpoint_quickstart_addin_1.png)
+    ![Uma captura de tela do PowerPoint com o botão Mostrar Painel de Tarefas realçado](../images/powerpoint_quickstart_addin_1.png)
 
 3. No painel de tarefas, escolha o botão **Inserir imagem** para adicionar uma imagem no slide selecionado.
 

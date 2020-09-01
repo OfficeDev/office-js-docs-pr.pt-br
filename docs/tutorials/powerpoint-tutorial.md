@@ -4,12 +4,12 @@ description: Neste tutorial, você criará um suplemento do PowerPoint que inser
 ms.date: 12/24/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: b9c31e589369bdcc844e3c587d12e6a26406357b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 4693b8a5a2f4bd7c63f76532585113db5b0805bb
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611047"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293377"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>Tutorial: Criar um Suplemento do Painel de Tarefas
 
@@ -268,7 +268,7 @@ Conclua as seguintes etapas para adicionar a marca que personaliza o painel de t
 
 3. Observe que agora o painel de tarefas contém uma seção de cabeçalho e um título e não contém mais uma seção de rodapé.
 
-    ![Captura de tela do suplemento do PowerPoint com o botão Inserir imagem realçado](../images/powerpoint-tutorial-new-task-pane-ui.png)
+    ![Captura de tela do suplemento do PowerPoint com o botão Inserir Imagem realçado](../images/powerpoint-tutorial-new-task-pane-ui.png)
 
 4. No Visual Studio, interrompa o suplemento pressionando **Shift + F5** ou selecionando o botão **Parar**. O PowerPoint fechará automaticamente quando o suplemento for interrompido.
 
@@ -320,7 +320,7 @@ Conclua as seguintes etapas para adicionar o código que insere texto no slide d
 
 3. No painel de tarefas, escolha o botão **Inserir Imagem** para adicionar a foto do dia do Bing ao slide atual e escolher um design para o slide que contém uma caixa de texto como título.
 
-    ![Captura de tela do suplemento do PowerPoint com o botão Inserir imagem realçado](../images/powerpoint-tutorial-insert-image-slide-design.png)
+    ![Uma captura de tela do PowerPoint com o slide atual realçado e suplemento com o botão Inserir Imagem realçado](../images/powerpoint-tutorial-insert-image-slide-design.png)
 
 4. Coloque o cursor na caixa de texto no slide de título e depois, no painel de tarefas, escolha o botão **Inserir Texto** para adicionar texto ao slide.
 

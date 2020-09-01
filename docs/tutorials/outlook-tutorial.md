@@ -1,15 +1,15 @@
 ---
 title: 'Tutorial: criar uma mensagem para compor o suplemento do Outlook'
 description: Neste tutorial, você criará um suplemento do Outlook que insere Gists do GitHub no corpo de uma nova mensagem.
-ms.date: 08/11/2020
+ms.date: 08/24/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 3742e492c5d59b706508d2f9d9c2f3bdfc147bb8
-ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
+ms.openlocfilehash: 6b4dabd803f304270fd7926a4d02e2cb485bb526
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "46672733"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293391"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Tutorial: criar uma mensagem para compor o suplemento do Outlook
 
@@ -164,6 +164,9 @@ Antes de prosseguir, vamos testar o suplemento básico que criou o gerador para 
     ```command&nbsp;line
     npm start
     ```
+
+    > [!IMPORTANT]
+    > Se você vir um erro "Sideload não tem suporte", ignore-o e continue.
 
 1. Siga as instruções em [Realizar sideload nos Suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md) para realizar o sideload do arquivo **manifest.xml** que está localizado no diretório raiz do projeto.
 
@@ -602,6 +605,9 @@ Por fim, abra o arquivo **webpack.config.js** no diretório raiz do projeto e co
     npm start
     ```
 
+    > [!IMPORTANT]
+    > Se você vir um erro "Sideload não tem suporte", ignore-o e continue.
+
 ### <a name="fetch-data-from-github"></a>Buscar dados do GitHub
 
 As **dialog.js** arquivo que você criou Especifica que o suplemento deverá ser carregada gists quando o `change` incêndios evento para o campo de nome de usuário do GitHub. Para recuperar gists do usuário do GitHub, você usará o [GitHub Gists API](https://developer.github.com/v3/gists/).
@@ -901,6 +907,9 @@ function buildBodyContent(gist, callback) {
 ### <a name="test-the-button"></a>Testar o botão
 
 Salvar todas as suas alterações e executar `npm start` do prompt de comando, se o servidor não estiver sendo executado. Conclua as seguintes etapas para testar o botão**Inserir Gist Padrão**.
+
+> [!IMPORTANT]
+> Se você vir um erro "Sideload não tem suporte", ignore-o e continue.
 
 1. Abra o Outlook e redija uma nova mensagem.
 
@@ -1262,6 +1271,9 @@ No projeto que você criou, o painel de tarefas JavaScript é especificado no ar
 ### <a name="test-the-button"></a>Testar o botão
 
 Salvar todas as suas alterações e executar `npm start` do prompt de comando, se o servidor não estiver sendo executado. Conclua as seguintes etapas para testar o botão **Inserir gist** botão.
+
+> [!IMPORTANT]
+> Se você vir um erro "Sideload não tem suporte", ignore-o e continue.
 
 1. Abra o Outlook e redija uma nova mensagem.
 

@@ -5,13 +5,10 @@
   displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
 - name: Introdução
   items:
-    - name: Comece aqui! Um guia para iniciantes
+    - name: Guia do iniciante
       href: overview/learning-path-beginner.md
       displayName: develop
-    - name: Transição aqui! Um guia para desenvolvedores de suplemento do VSTO
-      href: overview/learning-path-transition.md
-      displayName: develop
-    - name: Criando Suplementos do Office
+    - name: Visão geral do processo de desenvolvimento
       href: overview/office-add-ins-fundamentals.md
       displayName: develop
     - name: Inícios rápidos
@@ -38,47 +35,73 @@
     - name: Defina seu ambiente de desenvolvimento
       href: overview/set-up-your-dev-environment.md
       displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-- name: Principais conceitos
+- name: Processo de desenvolvimento
   items:
-    - name: Visão Geral
+    - name: Visão geral
       href: overview/core-concepts-office-add-ins.md
       displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+    - name: Planejar
+      items:
+        - name: Práticas recomendadas de desenvolvimento de suplementos
+          href: concepts/add-in-development-best-practices.md
+          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+        - name: Versões do Office e conjuntos de requisitos
+          href: develop/office-versions-and-requirement-sets.md
+        - name: Disponibilidade de aplicativo e plataforma do Office
+          href: overview/office-add-in-availability.md
+          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+        - name: Requisitos para executar suplementos
+          href: concepts/requirements-for-running-office-add-ins.md
+          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+        - name: Instalar a versão mais recente do Office
+          href: develop/install-latest-office-version.md
+          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
     - name: Desenvolver
       items:
         - name: 'Desenvolver Suplementos do Office '
           href: develop/develop-overview.md
           displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: Disponibilidade da plataforma e do host
-          href: overview/office-add-in-availability.md
-          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: API JavaScript para Office
+        - name: Entendendo a API de JavaScript do Office
+          href: develop/understanding-the-javascript-api-for-office.md
+        - name: Usando o modelo de API específica do aplicativo
+          href: develop/application-specific-api-model.md
+        - name: Usando o modelo de API Comum
           items:
-            - name: Entendendo a API JavaScript do Office
-              href: develop/understanding-the-javascript-api-for-office.md
-            - name: Versões do Office e conjuntos de requisitos
-              href: develop/office-versions-and-requirement-sets.md
+            - name: Modelo de objeto comum de API JavaScript para Office
+              href: develop/office-javascript-api-object-model.md
+            - name: Programação assíncrona em Suplementos do Office
+              href: develop/asynchronous-programming-in-office-add-ins.md
+            - name: Suporte para suplementos de painel de tarefas e conteúdo
+              href: develop/support-for-task-pane-and-content-add-ins.md
+            - name: Estado de persistência e as configurações
+              href: develop/persisting-add-in-state-and-settings.md
+        - name: Configurar e executar seu suplemento
+          items:
             - name: Referenciar o Office.js
               href: develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md
+            - name: Especificar requisitos da API e de aplicativos do Office
+              href: develop/specify-office-hosts-and-api-requirements.md
             - name: Seqüência de carregamento de um suplemento do Office
               href: develop/loading-the-dom-and-runtime-environment.md
             - name: Inicialize seu suplemento
               href: develop/initialize-add-in.md
-            - name: Diretrizes de codificação para problemas comuns
-              href: develop/common-coding-issues.md
-            - name: APIs comuns
-              items:
-                - name: Modelo de objeto comum de API JavaScript para Office
-                  href: develop/office-javascript-api-object-model.md
-                - name: Programação assíncrona em Suplementos do Office
-                  href: develop/asynchronous-programming-in-office-add-ins.md
-                - name: Suporte para suplementos de painel de tarefas e conteúdo
-                  href: develop/support-for-task-pane-and-content-add-ins.md
-                - name: Estado de persistência e as configurações
-                  href: develop/persisting-add-in-state-and-settings.md
+              displayName: manifest
+            - name: Abrir automaticamente um painel de tarefas com um documento
+              href: develop/automatically-open-a-task-pane-with-a-document.md
+              displayName: manifest
         - name: Manifesto
-          href: develop/add-in-manifests.md
-        - name: Autenticação e autorização
           items:
+            - name: Visão geral
+              href: develop/add-in-manifests.md
+            - name: Localizar a ordem correta dos elementos do manifesto
+              href: develop/manifest-element-ordering.md
+            - name: Atualizar a versão da API e do manifesto
+              href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
+              displayName: manifest
+        - name: 'Privacidade, segurança e autenticação'
+          items:
+            - name: Visão geral da privacidade e segurança do suplemento
+              href: concepts/privacy-and-security.md
             - name: Visão geral da autenticação e autorização
               href: develop/overview-authn-authz.md
             - name: Autenticação e autorização com a API da caixa de diálogo do Office
@@ -107,29 +130,94 @@
                   href: develop/grant-admin-consent-to-an-add-in.md
                 - name: Solucionar problemas de mensagens de erro no logon único (SSO)
                   href: develop/troubleshoot-sso-in-office-add-ins.md
-        - name: Conceitos
+            - name: 'Solicitar permissões para uso da API em suplementos '
+              href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
+        - name: Interface do usuário (UI) e experiência do usuário (UX)
           items:
-            - name: Práticas recomendadas de desenvolvimento de suplementos
-              href: concepts/add-in-development-best-practices.md
-              displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-            - name: Requisitos para executar suplementos
-              href: concepts/requirements-for-running-office-add-ins.md
-              displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-            - name: Navegadores usados pelos Suplementos do Office
-              href: concepts/browsers-used-by-office-web-add-ins.md
-              displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-            - name: Instalar a versão mais recente do Office
-              href: develop/install-latest-office-version.md
-              displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: Tutorial
+            - name: Visão Geral
+              href: design/add-in-design.md
+            - name: Diretrizes
+              items:
+                - name: Acessibilidade
+                  href: design/accessibility-guidelines.md
+                - name: Visualização de dados
+                  href: design/data-visualization-guidelines.md
+                - name: Voz
+                  href: design/voice-guidelines.md
+            - name: Linguagem de design
+              items:
+                - name: Visão Geral
+                  href: design/add-in-design-language.md
+                - name: Cor
+                  href: design/add-in-color.md
+                - name: Ícones
+                  items:
+                    - name: Diretrizes de ícones
+                      href: design/add-in-icons.md
+                    - name: Estilo atualizado
+                      href: design/add-in-icons-fresh.md
+                    - name: Estilo monoline
+                      href: design/add-in-icons-monoline.md
+                - name: Layout
+                  href: design/add-in-layout.md
+                - name: Movimento
+                  href: design/using-motion-office-addins.md
+                - name: Tipografia
+                  href: design/add-in-typography.md
+            - name: Elementos da interface
+              items:
+                - name: Visão Geral
+                  href: design/interface-elements.md
+                - name: Comandos de suplemento
+                  items:
+                    - name: Conceitos básicos dos comandos do suplemento
+                      href: design/add-in-commands.md
+                    - name: Criar comandos de suplemento
+                      href: develop/create-addin-commands.md
+                    - name: Habilitar e Desabilitar Comandos de Suplemento
+                      href: design/disable-add-in-commands.md
+                - name: Suplementos de conteúdo
+                  href: design/content-add-ins.md
+                - name: Caixas de diálogo
+                  items:
+                    - name: Visão geral
+                      href: design/dialog-boxes.md
+                    - name: Usar a API da caixa de diálogo do Office nos Suplementos do Office
+                      href: develop/dialog-api-in-office-add-ins.md
+                    - name: Práticas recomendadas e regras para a API da caixa de diálogo do Office
+                      href: develop/dialog-best-practices.md
+                    - name: Enviar dados da página do host para a caixa de diálogo
+                      href: develop/parent-to-dialog.md
+                    - name: Manipulando erros e eventos na caixa de diálogo do Office
+                      href: develop/dialog-handle-errors-events.md
+                    - name: Use a caixa de diálogo do Office para reproduzir um vídeo
+                      href: develop/dialog-video.md
+                - name: Painéis de tarefas
+                  href: design/task-pane-add-ins.md
+            - name: Localização
+              href: develop/localization.md
+            - name: Padrões de design da experiência do usuário
+              items:
+                - name: Visão Geral
+                  href: design/ux-design-pattern-templates.md
+                - name: Autenticação
+                  href: design/authentication-patterns.md
+                - name: Identidade Visual
+                  href: design/branding-patterns.md
+                - name: Experiência de primeira execução
+                  href: design/first-run-experience-patterns.md
+                - name: Navegação
+                  href: design/navigation-patterns.md
+            - name: Recursos
+              items:
+                - name: Kits de ferramentas de design
+                  href: design/design-toolkits.md
+                - name: Introdução ao uso do Fabric React
+                  href: design/using-office-ui-fabric-react.md
+                - name: Office UI Fabric
+                  href: design/office-ui-fabric.md
+        - name: Estruturas e IDEs
           items:
-            - name: Lidar com limitações de política de mesma origem
-              href: develop/addressing-same-origin-policy-limitations.md
-            - name: Abrir automaticamente um painel de tarefas com um documento
-              href: develop/automatically-open-a-task-pane-with-a-document.md
-            - name: Criar comandos de suplemento
-              href: develop/create-addin-commands.md
-              displayName: manifest
             - name: Desenvolver suplementos para o iPad
               href: develop/develop-office-add-ins-for-the-ipad.md
             - name: Desenvolver suplementos com o Angular
@@ -147,110 +235,6 @@
                   href: develop/get-javascript-intellisense-in-visual-studio.md
                 - name: Converter JavaScript em TypeScript
                   href: develop/convert-javascript-to-typescript.md
-            - name: Localizar a ordem correta dos elementos do manifesto
-              href: develop/manifest-element-ordering.md
-            - name: Identificar um suplemento COM equivalente
-              href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
-              displayName: manifest
-            - name: Localização
-              href: develop/localization.md
-            - name: Caixas de diálogo
-              items:
-                - name: Usar a API da caixa de diálogo do Office nos Suplementos do Office
-                  href: develop/dialog-api-in-office-add-ins.md
-                - name: Práticas recomendadas e regras para a API da caixa de diálogo do Office
-                  href: develop/dialog-best-practices.md
-                - name: Enviar dados da página do host para a caixa de diálogo
-                  href: develop/parent-to-dialog.md
-                - name: Manipulando erros e eventos na caixa de diálogo do Office
-                  href: develop/dialog-handle-errors-events.md
-                - name: Use a caixa de diálogo do Office para reproduzir um vídeo
-                  href: develop/dialog-video.md
-            - name: Desempenho
-              items:
-                - name: Evite usar o método context.sync em loops
-                  href: concepts/correlated-objects-pattern.md
-                - name: Limites de recurso e otimização de desempenho para Suplementos do Office
-                  href: concepts/resource-limits-and-performance-optimization.md
-            - name: Privacidade e segurança
-              href: concepts/privacy-and-security.md
-            - name: 'Solicitar permissões para uso da API em suplementos '
-              href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
-              displayName: manifest
-            - name: Especificar hosts do Office e requisitos de API
-              href: develop/specify-office-hosts-and-api-requirements.md
-              displayName: manifest
-            - name: Atualizar a versão da API e do manifesto
-              href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
-              displayName: manifest
-    - name: Interface do usuário (UI) e experiência do usuário (UX)
-      items:
-        - name: Visão Geral
-          href: design/add-in-design.md
-        - name: Diretrizes
-          items:
-            - name: Acessibilidade
-              href: design/accessibility-guidelines.md
-            - name: Visualização de dados
-              href: design/data-visualization-guidelines.md
-            - name: Voz
-              href: design/voice-guidelines.md
-        - name: Linguagem de design
-          items:
-            - name: Visão Geral
-              href: design/add-in-design-language.md
-            - name: Cor
-              href: design/add-in-color.md
-            - name: Ícones
-              items:
-                - name: Diretrizes de ícones
-                  href: design/add-in-icons.md
-                - name: Estilo atualizado
-                  href: design/add-in-icons-fresh.md
-                - name: Estilo monoline
-                  href: design/add-in-icons-monoline.md
-            - name: Layout
-              href: design/add-in-layout.md
-            - name: Movimento
-              href: design/using-motion-office-addins.md
-            - name: Tipografia
-              href: design/add-in-typography.md
-        - name: Elementos da interface
-          items:
-            - name: Visão Geral
-              href: design/interface-elements.md
-            - name: Comandos de suplemento
-              items:
-                - name: Conceitos básicos dos comandos do suplemento
-                  href: design/add-in-commands.md
-                - name: Habilitar e desabilitar os comandos do suplemento
-                  href: design/disable-add-in-commands.md
-            - name: Caixas de diálogo
-              href: design/dialog-boxes.md
-            - name: Suplementos de conteúdo
-              href: design/content-add-ins.md
-            - name: Painéis de tarefas
-              href: design/task-pane-add-ins.md
-        - name: Padrões de design da experiência do usuário
-          items:
-            - name: Visão Geral
-              href: design/ux-design-pattern-templates.md
-            - name: Autenticação
-              href: design/authentication-patterns.md
-            - name: Identidade Visual
-              href: design/branding-patterns.md
-            - name: Experiência de primeira execução
-              href: design/first-run-experience-patterns.md
-            - name: Navegação
-              href: design/navigation-patterns.md
-        - name: Recursos
-          items:
-            - name: Kits de ferramentas de design
-              href: design/design-toolkits.md
-            - name: Introdução ao uso do Fabric React
-              href: design/using-office-ui-fabric-react.md
-            - name: Office UI Fabric
-              href: design/office-ui-fabric.md
     - name: Testar e depurar
       items:
         - name: Testar e depurar Suplementos do Office
@@ -281,10 +265,18 @@
         - name: Limpar o cache do Office
           href: testing/clear-cache.md
           displayName: 'uninstall, sideload'
+        - name: Diretrizes de codificação para problemas comuns
+          href: develop/common-coding-issues.md
         - name: Depurar com o log de tempo de execução
           href: testing/runtime-logging.md
         - name: Extensão depurador para o Visual Studio Code
           href: testing/debug-with-vs-extension.md
+        - name: Desempenho
+          items:
+            - name: Evite usar o método context.sync em loops
+              href: concepts/correlated-objects-pattern.md
+            - name: Limites de recurso e otimização de desempenho para Suplementos do Office
+              href: concepts/resource-limits-and-performance-optimization.md
         - name: Solucionar problemas de erros de usuário
           href: testing/testing-and-troubleshooting.md
         - name: Testes de usabilidade
@@ -500,6 +492,11 @@
                   href: reference/manifest/supportssharedfolders.md
                 - name: WebApplicationInfo
                   href: reference/manifest/webapplicationinfo.md
+        - name: Lidar com limitações de política de mesma origem
+          href: develop/addressing-same-origin-policy-limitations.md
+        - name: Navegadores usados pelos Suplementos do Office
+          href: concepts/browsers-used-by-office-web-add-ins.md
+          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
         - name: Códigos de erro
           href: reference/javascript-api-for-office-error-codes.md
         - name: Objetos de janela não suportados
@@ -586,9 +583,6 @@
           displayName: Excel
         - name: Conceitos fundamentais de programação
           href: excel/excel-add-ins-core-concepts.md
-          displayName: Excel
-        - name: Conceitos avançados de programação
-          href: excel/excel-add-ins-advanced-concepts.md
           displayName: Excel
         - name: Chamar funções internas
           href: excel/excel-add-ins-worksheet-functions.md
@@ -1139,8 +1133,6 @@
           displayName: Word
 - name: Padrões e práticas
   items:
-    - name: Compartilhar código de suplemento VSTO com o suplemento do Office
-      href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
     - name: Chamadas remotas de funções personalizadas de envio em lote
       href: excel/custom-functions-batching.md
       displayName: 'Excel, Custom Functions'
@@ -1148,3 +1140,12 @@
       href: develop/authentication-pnp.md
     - name: Lidar com a sua solução do Office de escala DPI e DPI alto
       href: /office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution
+- name: Recursos de transição VSTO e COM
+  items:
+    - name: Guia do desenvolvedor do suplemento VSTO
+      href: overview/learning-path-transition.md
+    - name: Compartilhar código de Suplemento VSTO com o suplemento do Office
+      href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
+    - name: Identificar um suplemento COM equivalente
+      href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
+      displayName: manifest

@@ -4,12 +4,12 @@ description: Saiba como criar um Suplemento do Excel simples usando a API JS do 
 ms.date: 04/03/2020
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: db30662c93c4de4d47f3986358fb2219b84f5470
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 8bb92b7a6c2d4610a962c2b2a84d38fb545ddd34
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608836"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294308"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>Crie o seu primeiro suplemento do painel de tarefas do Project
 
@@ -44,7 +44,7 @@ O projeto de suplemento que você criou com o gerador do Yeoman contém um exemp
 - O arquivo **./manifest.xml** no diretório raiz do projeto define as configurações e os recursos do suplemento.
 - O arquivo **./src/taskpane/taskpane.html** contém a marcação HTML do painel de tarefas.
 - O arquivo **./src/taskpane/taskpane.css** contém o CSS que é aplicado ao conteúdo no painel de tarefas.
-- O arquivo **./src/taskpane/taskpane.js** contém o código da API JavaScript do Office que facilita a interação entre o painel de tarefas e o aplicativo host do Office.
+- O arquivo **./src/taskpane/taskpane.js** contém o código da API JavaScript do Office que facilita a interação entre o painel de tarefas e o aplicativo cliente do Office.
 
 ## <a name="update-the-code"></a>Atualizar o código
 

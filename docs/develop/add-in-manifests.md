@@ -3,12 +3,12 @@ title: Manifesto XML dos Suplementos do Office
 description: Obtenha uma visão geral do manifesto de suplemento do Office e seus usos.
 ms.date: 03/18/2020
 localization_priority: Priority
-ms.openlocfilehash: 4d2fa054cc268b68eb1c05ba82f9cd7745bc8685
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 495638ee70630c5330e800419076463273bd2491
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093746"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293351"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifesto XML dos Suplementos do Office
 
@@ -115,7 +115,7 @@ Use apenas o elemento [AppDomains](../reference/manifest/appdomains.md) para esp
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>Especificar os domínios que você deseja abrir na janela do suplemento
 
-Ao executar no Office Online, o seu painel de tarefas pode ser navegado para qualquer URL. No entanto, nas plataformas de desktop, se o suplemento tentar acessar uma URL em um domínio diferente do domínio que hospeda a página inicial (conforme especificado no elemento [SourceLocation](../reference/manifest/sourcelocation.md) do arquivo de manifesto), essa URL abre em uma nova janela de navegador fora do painel de suplementos do aplicativo host do Office.
+Ao executar no Office Online, o seu painel de tarefas pode ser navegado para qualquer URL. No entanto, nas plataformas de desktop, se o suplemento tentar acessar uma URL em um domínio diferente do domínio que hospeda a página inicial (conforme especificado no elemento [SourceLocation](../reference/manifest/sourcelocation.md) do arquivo de manifesto), essa URL abre em uma nova janela de navegador fora do painel de suplementos do aplicativo do Office.
 
 Para substituir esse comportamento (Office para desktop), especifique cada domínio que você deseja abrir na janela do suplemento na lista de domínios especificados no elemento [AppDomains](../reference/manifest/appdomains.md) do arquivo de manifesto. Se o suplemento tentar ir para uma URL em um domínio que está na lista, ela então abre no painel de tarefas do Office para desktop e no Office Online. Se ele tentar acessar uma URL que não está na lista, no Office para desktop, essa URL abre em uma nova janela do navegador (fora do painel de suplementos).
 
@@ -497,7 +497,7 @@ Para saber mais sobre como validar um manifesto em relação à [Definição do 
 
 * [Como identificar a ordem correta dos elementos do manifesto](manifest-element-ordering.md)
 * [Criar comandos de suplementos em seu manifesto][comandos de suplementos]
-* [Especificar requisitos da API e de hosts do Office](specify-office-hosts-and-api-requirements.md)
+* [Especificar requisitos da API e de aplicativos do Office](specify-office-hosts-and-api-requirements.md)
 * [Localização para suplementos do Office](localization.md)
 * [Referência de esquema para manifestos de suplementos do Office](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
 * [Atualizar a versão da API e do manifesto](update-your-javascript-api-for-office-and-manifest-schema-version.md)

@@ -4,20 +4,20 @@ description: Informações do conjunto de requisitos do Suplemento do Office par
 ms.date: 07/10/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 2b4de20f1f8f7e77295b49a36745d23ee044aa08
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 23db807df0c47aaab4c579d17e4fbd28bb809fed
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159077"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293433"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Word
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
 
 ## <a name="requirement-set-availability"></a>Disponibilidade do conjunto de requisitos
 
-Os suplementos do Word são executados em várias versões do Office, incluindo o Office 2016 ou posterior no Windows, Office na Web, iPad e Mac. A tabela a seguir lista os conjuntos de requisitos do Word, ou seja, os aplicativos de host do Office que oferecem suporte a esse conjunto de requisitos, e os números de versão ou de build desses aplicativos.
+Os suplementos do Word são executados em várias versões do Office, incluindo o Office 2016 ou posterior no Windows, Office na Web, iPad e Mac. A tabela a seguir lista os conjuntos de requisitos do Word, ou seja, os aplicativos do cliente Office que oferecem suporte a esse conjunto de requisitos, e os números de versão ou de compilação desses aplicativos.
 
 > [!NOTE]
 > Para usar APIs em qualquer um dos conjuntos de requisitos numerados, faça referência à biblioteca **production** no CDN: https://appsforoffice.microsoft.com/lib/1/hosted/office.js.
@@ -47,5 +47,5 @@ Para saber mais sobre as versões do Office e os números de build, confira:
 
 - [Documentação de Referência da API JavaScript do Word](/javascript/api/word)
 - [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md)
-- [Especificar requisitos da API e de hosts do Office](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Especificar requisitos da API e de aplicativos do Office](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Manifesto XML dos Suplementos do Office](../../develop/add-in-manifests.md)

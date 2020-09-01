@@ -3,12 +3,12 @@ title: Conceitos básicos para comandos de suplemento
 description: Aprenda a adicionar botões e itens de menu personalizados da faixa de opções ao Office como parte de um suplemento do Office.
 ms.date: 07/10/2020
 localization_priority: Priority
-ms.openlocfilehash: 2c4731b773a20c666ed78eba7e10f59bf9404bfe
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 13db2191d9691a699c5976b812e1ca6d8f3bf1ae
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159623"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293349"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Comandos de suplemento para Excel, Word e PowerPoint
 
@@ -57,7 +57,7 @@ Os seguintes recursos de comando são compatíveis no momento.
 Você pode especificar se o comando está ativado ou desativado quando o suplemento é iniciado e alterar programaticamente a configuração.
 
 > [!NOTE]
-> Esse recurso está em visualização e não tem suporte em todos os hosts ou cenários. Para obter mais informações, consulte [Ativar e Desativar Comandos de Suplemento](disable-add-in-commands.md).
+> Esse recurso está em visualização e não tem suporte em todos os aplicativos ou cenários do Office. Para obter mais informações, consulte [Ativar e Desativar Comandos de Suplemento](disable-add-in-commands.md).
 
 ## <a name="supported-platforms"></a>Plataformas compatíveis
 
@@ -93,7 +93,7 @@ Aplique as seguintes práticas recomendadas ao desenvolver comandos de suplement
      > Os suplementos que ocupam muito espaço podem não passar na [Validação do AppSource](/legal/marketplace/certification-policies).
 
 - Para todos os ícones, siga as [diretrizes de design de ícones](add-in-icons.md).
-- Forneça uma versão do seu suplemento que também funcione em hosts que não tenham suporte para comandos. Um manifesto de suplemento único pode funcionar tanto em hosts cientes do comando (com os comandos) quanto em hosts não cientes do comando (como um painel de tarefas).
+- Forneça uma versão do seu suplemento que também funcione em aplicações do Office que não tenham suporte para comandos. Um manifesto de suplemento único pode funcionar tanto em aplicativos cientes do comando (com os comandos) quanto em aplicativos não cientes do comando (como um painel de tarefas).
 
    *Figura 3. Suplemento de painel de tarefas no Office 2013 e o mesmo suplemento usando comandos de suplementos no Office 2016*
 

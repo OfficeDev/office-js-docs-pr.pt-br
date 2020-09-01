@@ -3,12 +3,12 @@ title: Desenvolver Suplementos do Office com o Visual Studio
 description: Como desenvolver Suplementos do Office com o Visual Studio
 ms.date: 12/31/2019
 localization_priority: Priority
-ms.openlocfilehash: cf8ed9d47840115f22641d0c4b6c6426e3a01a11
-ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+ms.openlocfilehash: ae627b09b9160abc01deec6d52abeb922f02c833
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "44679246"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47292824"
 ---
 # <a name="develop-office-add-ins-with-visual-studio"></a>Desenvolver Suplementos do Office com o Visual Studio
 
@@ -26,7 +26,7 @@ O Visual Studio pode ser usado para criar suplementos do Office para o Excel, Ou
 - [Início rápido do Word](../quickstarts/word-quickstart.md?tabs=visualstudio)
 - [Início rápido do PowerPoint](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio)
 
-O Visual Studio não tem suporte para a criação de suplementos do Office para o OneNote ou Project. Para criar suplementos do Office para qualquer um desses hosts, você precisará usar o gerador Yeoman para suplementos do Office, conforme descrito no [início rápido do OneNote](../quickstarts/onenote-quickstart.md) ou no [início rápido do Project](../quickstarts/project-quickstart.md).
+O Visual Studio não tem suporte para a criação de suplementos do Office para o OneNote ou Project. Para criar suplementos do Office para qualquer um desses aplicativos, você precisará usar o gerador Yeoman para Suplementos do Office, conforme descrito no [Início rápido do OneNote](../quickstarts/onenote-quickstart.md) ou no [Início rápido do Project](../quickstarts/project-quickstart.md).
 
 ## <a name="develop-the-add-in-using-visual-studio"></a>Desenvolver o suplemento usando o Visual Studio
 
@@ -35,7 +35,7 @@ O Visual Studio cria um suplemento básico com funcionalidade limitada. Você po
 > [!TIP]
 > Como um suplemento do Office é um aplicativo da Web, você precisará de pelo menos habilidades básicas de desenvolvimento na Web para personalizar seu suplemento. Se você não conhece o JavaScript, recomendamos que revise o [tutorial do Mozilla JavaScript](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Introduction).
 
-Para personalizar o seu suplemento, você precisará compreender os conceitos descritos na área [Conceitos básicos > Desenvolver](develop-overview.md) dessa documentação, além dos conceitos descritos na área de documentação específica do host que corresponde ao suplemento que você está criando (por exemplo, o [Excel](../excel/index.yml)). 
+Para personalizar o seu suplemento, você precisará compreender os conceitos descritos na área [Conceitos básicos > Desenvolver](develop-overview.md) dessa documentação, além dos conceitos descritos na área de documentação específica do aplicativo que corresponde ao suplemento que você está criando (por exemplo, o [Excel](../excel/index.yml)). 
 
 ## <a name="test-and-debug-the-add-in"></a>Testar e depurar o suplemento
 

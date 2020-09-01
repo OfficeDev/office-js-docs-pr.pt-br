@@ -4,12 +4,12 @@ description: Neste tutorial, voc? criar? um suplemento do Word que insere (e sub
 ms.date: 07/07/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 9ee851c9d479c15a0abce5228d89648d1268861b
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 03960f5de7e99ba4ffa52be5cd4f7fc896942b76
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093508"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47294217"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Tutorial: Criar Suplemento do Painel de Tarefas no Word
 
@@ -62,7 +62,7 @@ Nesta etapa do tutorial, você testará programaticamente se o suplemento oferec
     <button class="ms-Button" id="insert-paragraph">Insert Paragraph</button><br/><br/>
     ```
 
-5. Abra o arquivo **./src/taskpane/taskpane.js**. Ele contém o código da API JavaScript do Office que facilita a interação entre o painel de tarefas e o aplicativo host do Office.
+5. Abra o arquivo **./src/taskpane/taskpane.js**. Este arquivo contém o código da API JavaScript do Office que facilita a interação entre o painel de tarefas e o aplicativo do cliente Office.
 
 6. Remova todas as referências ao botão `run` e à função `run()` da seguinte forma:
 

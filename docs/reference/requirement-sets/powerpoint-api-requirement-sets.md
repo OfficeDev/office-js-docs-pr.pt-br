@@ -4,18 +4,18 @@ description: Saiba mais sobre os conjuntos de requisitos da API JavaScript do Po
 ms.date: 07/10/2020
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: eebcc78e69cd35732853daaee32f36df2b37252e
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: b2b5d4b7b5a0677812f227b6a32683c35bbf1662
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159259"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293503"
 ---
 # <a name="powerpoint-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do PowerPoint
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um host do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
 
-A tabela a seguir lista os conjuntos de requisitos do PowerPoint, os aplicativos de host do Office que oferecem suporte a esses conjuntos de requisitos e os versões de compilação ou datas de disponibilidade.
+A tabela a seguir lista os conjuntos de requisitos do PowerPoint, os aplicativos do cliente Office que oferecem suporte a esses conjuntos de requisitos e as versões de compilação ou datas de disponibilidade.
 
 |  Conjunto de requisitos  |  Office no Windows<br>(conectado a uma assinatura do Microsoft 365)  |  Office no iPad<br>(conectado a uma assinatura do Microsoft 365)  |  Office no Mac<br>(conectado a uma assinatura do Microsoft 365)  | Office na Web |
 |:-----|-----|:-----|:-----|:-----|:-----|
@@ -33,7 +33,7 @@ A API JavaScript do PowerPoint 1.1 contém uma única API para criar uma nova ap
 
 ## <a name="runtime-requirement-support-check"></a>Verificação do suporte a requisitos de tempo de execução
 
-Durante o tempo de execução, os suplementos podem verificar se um determinado host oferece suporte a um conjunto de requisitos de API, realizando a seguinte verificação.
+Durante o tempo de execução, os suplementos podem verificar se um determinado aplicativo oferece suporte a um conjunto de requisitos de API, realizando a seguinte verificação.
 
 ```js
 if (Office.context.requirements.isSetSupported('PowerPointApi', '1.1')) {
@@ -46,9 +46,9 @@ else {
 
 ## <a name="manifest-based-requirement-support-check"></a>Verificação de suporte a requisitos com base em manifesto
 
-Use o `Requirements` elemento no manifesto do suplemento para especificar conjuntos de requisitos ou membros de API cruciais que o seu suplemento precisa usar. Se o host do Office ou a plataforma não der suporte ao conjunto de requisitos ou membros da API especificados no. `Requirements` elemento, o suplemento não será executado no host ou na plataforma e não será exibido em Meus Suplementos.
+Use o `Requirements` elemento no manifesto do suplemento para especificar conjuntos de requisitos ou membros de API cruciais que o seu suplemento precisa usar. Se o aplicativo do Office ou a plataforma não der suporte ao conjunto de requisitos ou membros da API especificados no. elemento`Requirements`, o suplemento não será executado no aplicativo ou na plataforma e não será exibido em Meus Suplementos.
 
-O exemplo de código a seguir mostra um suplemento que é carregado em todos os aplicativos host do Office que oferecem suporte ao conjunto de requisitos OneNoteApi, versão 1.1.
+O exemplo de código a seguir mostra um suplemento que é carregado em todos os aplicativos do cliente Office que oferecem suporte ao conjunto de requisitos OneNoteApi, versão 1.1.
 
 ```xml
 <Requirements>
@@ -66,5 +66,5 @@ A maior parte da funcionalidade do suplemento do PowerPoint vem do conjunto de A
 
 - [Documentação de Referência da API JavaScript do PowerPoint](/javascript/api/powerpoint)
 - [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md)
-- [Especificar requisitos da API e de hosts do Office](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Especificar requisitos da API e de aplicativos do Office](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Manifesto XML dos Suplementos do Office](../../develop/add-in-manifests.md)

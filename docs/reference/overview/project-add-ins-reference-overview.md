@@ -4,12 +4,12 @@ description: Visão geral da API JavaScript do Project.
 ms.date: 07/05/2019
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 1e937e3c8a89340858cf715cfa4723062c780805
-ms.sourcegitcommit: 19312a54f47a17988ffa86359218a504713f9f09
+ms.openlocfilehash: 15dbe8cde9510f052f929a99f4073f5fa8bf8a12
+ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "44679301"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "47293615"
 ---
 # <a name="javascript-api-for-project"></a>JavaScript API para Project
 
@@ -24,4 +24,4 @@ Para ter experiência prática com o uso da API comum para interagir com o conte
 - [Documentação de suplementos do Project](../../project/index.yml)
 - [Visão geral dos suplementos do Project](../../project/project-add-ins.md)
 - [Documentação de Referência da API](../javascript-api-for-office.md)
-- [Disponibilidade de host e plataforma para suplementos do Office](../../overview/office-add-in-availability.md)
+- [Disponibilidade de aplicativos e plataformas do cliente Office para Suplementos do Office](../../overview/office-add-in-availability.md)
