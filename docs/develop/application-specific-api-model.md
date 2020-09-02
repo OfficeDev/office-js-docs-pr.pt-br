@@ -3,12 +3,12 @@ title: Usando o modelo de API específico do aplicativo
 description: Saiba mais sobre o modelo de API baseado em promessa para os suplementos do Excel, OneNote e Word.
 ms.date: 07/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 0a5068312b8b17f7ceeafcffd5dcea4203314ebf
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: cabd1ea0076b672a1dbda3079a767b0e8a1a62b7
+ms.sourcegitcommit: 4adfc368a366f00c3f3d7ed387f34aaecb47f17c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294028"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "47326279"
 ---
 # <a name="using-the-application-specific-api-model"></a>Usando o modelo de API específico do aplicativo
 
@@ -225,18 +225,20 @@ Excel.run(function (ctx) {
 
 ## <a name="42ornullobject-methods-and-properties"></a>Métodos e propriedades do &#42;OrNullObject
 
-Alguns métodos e propriedades de assessor geram uma exceção quando o objeto desejado não existe. Por exemplo, se você tentar obter uma planilha do Excel especificando um nome de planilha que não esteja na pasta de trabalho, o `getItem()` método gera uma `ItemNotFound` exceção.
+Alguns métodos e propriedades de assessor geram uma exceção quando o objeto desejado não existe. Por exemplo, se você tentar obter uma planilha do Excel especificando um nome de planilha que não esteja na pasta de trabalho, o `getItem()` método gera uma `ItemNotFound` exceção. As bibliotecas específicas do aplicativo fornecem uma maneira de seu código testar a existência de entidades de documento sem exigir código de tratamento de exceção. Isso é feito usando as `*OrNullObject` variações de métodos e propriedades. Essas variações retornam um objeto cuja `isNullObject` propriedade é definida como `true` , se o item especificado não existir, em vez de gerar uma exceção.
 
-Qualquer `*OrNullObject` Variant permite verificar um objeto sem gerar exceções. Esses métodos e propriedades retornam um objeto nulo (não o JavaScript `null` ) em vez de gerar uma exceção se o item especificado não existir. Por exemplo, você pode chamar o `getItemOrNullObject()` método em uma coleção como **planilhas** para recuperar um item da coleção. O método `getItemOrNullObject()` retornará o item especificado se ele existir; caso contrário, ele retornará um objeto nulo. O objeto nulo que é retornado contém a propriedade booliana `isNullObject`, que você pode avaliar para determinar se o objeto existe.
+Por exemplo, você pode chamar o `getItemOrNullObject()` método em uma coleção como **planilhas** para recuperar um item da coleção. O `getItemOrNullObject()` método retorna o item especificado se ele existir; caso contrário, retorna um objeto cuja `isNullObject` propriedade está definida como `true` . Seu código pode então avaliar essa propriedade para determinar se o objeto existe.
 
-O exemplo de código a seguir tenta recuperar uma planilha do Excel chamada "data" usando o `getItemOrNullObject()` método. Se o método retornar um objeto NULL, uma nova planilha será criada antes que as ações sejam executadas na planilha.
+> [!NOTE]
+> As `*OrNullObject` variações nunca retornam o valor de JavaScript `null` . Eles retornam objetos de proxy do Office comuns. Se a entidade que o objeto representa não existir, a `isNullObject` Propriedade do objeto será definida como `true` . Não teste o objeto retornado para nulidade ou falsity. Ele nunca é `null` , `false` ou `undefined` .
+
+O exemplo de código a seguir tenta recuperar uma planilha do Excel chamada "data" usando o `getItemOrNullObject()` método. Se uma planilha com esse nome não existir, será criada uma nova planilha. Observe que o código não carrega a `isNullObject` propriedade. O Office carrega automaticamente essa propriedade quando `context.sync` é chamado, portanto, você não precisa carregá-la explicitamente com algo como `datasheet.load('isNullObject')` .
 
 ```js
 var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
 
 return context.sync()
     .then(function () {
-        // If `dataSheet` is a null object, create the worksheet.
         if (dataSheet.isNullObject) {
             dataSheet = context.workbook.worksheets.add("Data");
         }
@@ -249,5 +251,5 @@ return context.sync()
 ## <a name="see-also"></a>Confira também
 
 * [Modelo de objeto comum de API JavaScript para Office](office-javascript-api-object-model.md)
-* [Problemas comuns de codificação e comportamentos inesperados da plataforma](/common-coding-issues.md).
+* [Problemas comuns de codificação e comportamentos inesperados da plataforma](common-coding-issues.md).
 * [Limites de recurso e otimização de desempenho para Suplementos do Office](../concepts/resource-limits-and-performance-optimization.md)
