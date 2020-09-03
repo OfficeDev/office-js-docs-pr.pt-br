@@ -144,26 +144,40 @@
                   href: design/data-visualization-guidelines.md
                 - name: Voz
                   href: design/voice-guidelines.md
-            - name: Linguagem de design
+            - name: Padrões e linguagem de design da UX
               items:
-                - name: Visão Geral
-                  href: design/add-in-design-language.md
-                - name: Cor
-                  href: design/add-in-color.md
-                - name: Ícones
+                - name: Linguagem de design
                   items:
-                    - name: Diretrizes de ícones
-                      href: design/add-in-icons.md
-                    - name: Estilo atualizado
-                      href: design/add-in-icons-fresh.md
-                    - name: Estilo monoline
-                      href: design/add-in-icons-monoline.md
-                - name: Layout
-                  href: design/add-in-layout.md
-                - name: Movimento
-                  href: design/using-motion-office-addins.md
-                - name: Tipografia
-                  href: design/add-in-typography.md
+                    - name: Visão Geral
+                      href: design/add-in-design-language.md
+                    - name: Cor
+                      href: design/add-in-color.md
+                    - name: Ícones
+                      items:
+                        - name: Diretrizes de ícones
+                          href: design/add-in-icons.md
+                        - name: Estilo atualizado
+                          href: design/add-in-icons-fresh.md
+                        - name: Estilo monoline
+                          href: design/add-in-icons-monoline.md
+                    - name: Layout
+                      href: design/add-in-layout.md
+                    - name: Movimento
+                      href: design/using-motion-office-addins.md
+                    - name: Tipografia
+                      href: design/add-in-typography.md
+                - name: Padrões de design da UX para cenários comuns
+                  items:
+                    - name: Visão geral
+                      href: design/ux-design-pattern-templates.md
+                    - name: Autenticação
+                      href: design/authentication-patterns.md
+                    - name: Identidade Visual
+                      href: design/branding-patterns.md
+                    - name: Experiência de primeira execução
+                      href: design/first-run-experience-patterns.md
+                    - name: Navegação
+                      href: design/navigation-patterns.md
             - name: Elementos da interface
               items:
                 - name: Visão Geral
@@ -196,18 +210,6 @@
                   href: design/task-pane-add-ins.md
             - name: Localização
               href: develop/localization.md
-            - name: Padrões de design da experiência do usuário
-              items:
-                - name: Visão Geral
-                  href: design/ux-design-pattern-templates.md
-                - name: Autenticação
-                  href: design/authentication-patterns.md
-                - name: Identidade Visual
-                  href: design/branding-patterns.md
-                - name: Experiência de primeira execução
-                  href: design/first-run-experience-patterns.md
-                - name: Navegação
-                  href: design/navigation-patterns.md
             - name: Recursos
               items:
                 - name: Kits de ferramentas de design
@@ -233,7 +235,7 @@
                   href: develop/debug-office-add-ins-in-visual-studio.md
                 - name: Obter o JavaScript IntelliSense no Visual Studio
                   href: develop/get-javascript-intellisense-in-visual-studio.md
-                - name: Converter JavaScript em TypeScript
+                - name: Converter projetos JavaScript em TypeScript
                   href: develop/convert-javascript-to-typescript.md
     - name: Testar e depurar
       items:
