@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: Documentação de Suplementos do Office
-summary: Use a plataforma de suplementos do Office para criar soluções que estendem os aplicativos do Office e interagem com conteúdo nos documentos do Office. Com os suplementos do Office, você pode usar tecnologias familiares da Web, como HTML, CSS e JavaScript, para criar soluções que podem ser executadas no Office na Web, Windows, Mac e iPad.
+summary: Use a plataforma de suplementos do Office para criar soluções que estendem aplicativos do Office e interajam com o conteúdo em documentos do Office e em mensagens de email e itens de calendário do Outlook. Com os suplementos do Office, você pode usar tecnologias familiares da Web, como HTML, CSS e JavaScript, para criar soluções que podem ser executadas no Office na Web, Windows, Mac, Android e iOS.
 metadata:
   title: Documentação de Suplementos do Office
   description: Saiba como criar suplementos do Office.
@@ -9,12 +9,12 @@ metadata:
   author: o365devx
   ms.author: o365devx
   ms.date: 07/31/2020
-  ms.openlocfilehash: 7477d00b20edfc64c29f2bff39aa90da6376320c
-  ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+  ms.openlocfilehash: 993ef1e5671e42b1b6d5e6316d61d51a794be62e
+  ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
   ms.translationtype: MT
   ms.contentlocale: pt-BR
-  ms.lasthandoff: 08/28/2020
-  ms.locfileid: "47294112"
+  ms.lasthandoff: 09/03/2020
+  ms.locfileid: "47363713"
 landingContent:
 - title: Sobre os Suplementos do Office
   linkLists:

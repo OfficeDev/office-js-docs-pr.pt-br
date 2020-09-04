@@ -1,14 +1,14 @@
 ---
 title: Solução de problemas de ativação de suplementos contextuais do Outlook
 description: Se o seu suplemento não for ativado conforme o esperado, procure a causa nas áreas a seguir.
-ms.date: 08/18/2020
+ms.date: 09/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 3e4fd270dbd2c8e6b258e2c473a822c791dee7a6
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 1420c1383730d6a334c181bc34b014da355d26db
+ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292528"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "47363965"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Solução de problemas de ativação de suplementos do Outlook
 
@@ -77,7 +77,7 @@ Mesmo se um item de email não for um dos tipos de acima, se ele não veio de um
 Se seu suplemento é um suplemento de redação e deve ser ativado quando o usuário cria uma mensagem ou solicitação de reunião, verifique se o item não está protegido por IRM. No entanto, há algumas exceções.
 
 1. Os suplementos são ativados em mensagens assinadas digitalmente no Outlook associadas a uma assinatura do Microsoft 365. No Windows, esse suporte foi introduzido com a compilação 8711.1000.
-1. A partir do Outlook, compilação 13120.1000, no Windows, os suplementos agora podem ser ativados nos itens protegidos por IRM.  Para obter mais informações sobre esse suporte em versão prévia, confira [ativação de suplemento em itens protegidos por IRM (gerenciamento de direitos de informação)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
+1. A partir do Outlook Build 13229,10000 no Windows, os suplementos podem agora ativar em itens protegidos pelo IRM.  Para obter mais informações sobre esse suporte em versão prévia, confira [ativação de suplemento em itens protegidos por IRM (gerenciamento de direitos de informação)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
 
 ## <a name="is-the-add-in-manifest-installed-properly-and-does-outlook-have-a-cached-copy"></a>O manifesto do suplemento está instalado corretamente? O Outlook tem uma cópia armazenada em cache?
 

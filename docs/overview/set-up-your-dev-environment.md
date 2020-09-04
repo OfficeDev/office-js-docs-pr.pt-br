@@ -3,12 +3,12 @@ title: Defina seu ambiente de desenvolvimento
 description: Configurar seu ambiente de desenvolvedor para criar suplementos do Office
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 1948cd83a252ea713c9b9a41941ceaef09d4a524
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 5e7d91d81ef3d124e9582e74151626b9fd65991a
+ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159406"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "47363692"
 ---
 # <a name="set-up-your-development-environment"></a>Defina seu ambiente de desenvolvimento
 
@@ -21,7 +21,7 @@ Este guia ajuda você a configurar ferramentas para que você possa criar suplem
 
 Este guia pressupõe que você saiba como usar uma ferramenta de linha de comando. 
 
-## <a name="install-nodejs"></a>Instalar Node.js
+## <a name="install-nodejs"></a>Instale o Node.js.
 
 Node.js é um tempo de execução de JavaScript, você precisará desenvolver suplementos do Office modernos.
 
@@ -47,7 +47,7 @@ Você pode querer usar um Gerenciador de versão do nó para permitir que você 
 
 ## <a name="get-office-365"></a>Obter o Office 365
 
-Se você ainda não tem uma conta do Microsoft 365, pode obter uma assinatura gratuita, de 90 dias, redimensionada pela Microsoft 365, participando do [programa de desenvolvedor do microsoft 365](https://developer.microsoft.com/office/dev-program).
+Se você ainda não tem uma conta no Microsoft 365, é possível obter uma assinatura gratuita do Microsoft 365 renovável por 90 dias ingressando no [programa de desenvolvedor do Microsoft 365](https://developer.microsoft.com/office/dev-program).
 
 ## <a name="install-a-code-editor"></a>Instalar um editor de códigos
 
@@ -71,7 +71,7 @@ Explore a biblioteca de amostras internas no [Script Lab](explore-with-script-la
 
 ## <a name="see-also"></a>Confira também
 
-- [Criando Suplementos do Office ](../overview/office-add-ins-fundamentals.md)
+- [Desenvolver suplementos do Office](../develop/develop-overview.md)
 - [Principais conceitos dos Suplementos do Office](../overview/core-concepts-office-add-ins.md)
 - [Desenvolver Suplementos do Office ](../develop/develop-overview.md)
 - [Fazer o design de Suplementos do Office](../design/add-in-design.md)

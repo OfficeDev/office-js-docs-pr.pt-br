@@ -3,12 +3,12 @@ title: Validar o manifesto de suplemento do Office
 description: Saiba como validar o manifesto de um suplemento do Office usando o esquema XML e outras ferramentas.
 ms.date: 04/16/2020
 localization_priority: Normal
-ms.openlocfilehash: fee4fd048092734eb479f1993c69fcf99c153c79
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 13ffafbb88003bbe0ba29ebbdf867f1138429e2f
+ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611096"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "47363832"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>Validar o manifesto de suplemento do Office
 
@@ -36,7 +36,13 @@ Se você não tiver usado o [gerador Yeoman para Suplementos do Office](https://
 
 1. Instale o [Node.js](https://nodejs.org/download/).
 
-2. Execute o seguinte comando no diretório raiz do seu projeto. 
+2. Abra um prompt de comando e instale o validador com o comando a seguir.
+
+    ```command&nbsp;line
+    npm -g office-addin-manifest
+    ```
+
+3. Execute o seguinte comando *no diretório raiz do seu projeto*.
 
     ```command&nbsp;line
     npm run validate
