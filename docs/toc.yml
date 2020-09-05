@@ -8,9 +8,6 @@
     - name: Guia do iniciante
       href: overview/learning-path-beginner.md
       displayName: develop
-    - name: Visão geral do processo de desenvolvimento
-      href: overview/office-add-ins-fundamentals.md
-      displayName: develop
     - name: Inícios rápidos
       items:
         - name: Suplemento do Excel
@@ -35,9 +32,9 @@
     - name: Defina seu ambiente de desenvolvimento
       href: overview/set-up-your-dev-environment.md
       displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-- name: Processo de desenvolvimento
+- name: Ciclo de vida do desenvolvimento
   items:
-    - name: Visão geral
+    - name: Visão geral do ciclo de vida
       href: overview/core-concepts-office-add-ins.md
       displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
     - name: Planejar
@@ -58,7 +55,7 @@
           displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
     - name: Desenvolver
       items:
-        - name: 'Desenvolver Suplementos do Office '
+        - name: Visão geral
           href: develop/develop-overview.md
           displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
         - name: Entendendo a API de JavaScript do Office
@@ -1148,6 +1145,6 @@
       href: overview/learning-path-transition.md
     - name: Compartilhar código de Suplemento VSTO com o suplemento do Office
       href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
-    - name: Identificar um suplemento COM equivalente
+    - name: Faça seu suplemento do Office ser compatível com um suplemento COM existente
       href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
       displayName: manifest
