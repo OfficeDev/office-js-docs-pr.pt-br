@@ -52,7 +52,7 @@ Se você usar o [Gerador Yo Office](https://github.com/OfficeDev/generator-offic
 
 O arquivo de script (**./src/functions/functions.js** ou **./src/functions/functions.ts**) contém o código que define funções e comentários que definem a função.
 
-O código a seguir define a função personalizada `add`. Os comentários do código são usados para gerar um arquivo de metadados JSON que descreve a função personalizada ao Excel. O necessário `@customfunction` comentário é declarado primeiro, para indicar que se trata de uma função personalizada. Em seguida, dois parâmetros são declarados, `first` e `second`, seguidos por suas `description`propriedades. Por fim, uma `returns` descrição é fornecida. Para obter mais informações sobre quais comentários são necessários para sua função personalizada, confira [Criar metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md).
+O código a seguir define a função personalizada `add`. Os comentários do código são usados para gerar um arquivo de metadados JSON que descreve a função personalizada ao Excel. O necessário `@customfunction` comentário é declarado primeiro, para indicar que se trata de uma função personalizada. Em seguida, dois parâmetros são declarados, `first` e `second`, seguidos por suas propriedades de `description`. Por fim, uma `returns` descrição é fornecida. Para obter mais informações sobre quais comentários são necessários para sua função personalizada, confira [Criar metadados JSON para funções personalizadas](custom-functions-json-autogeneration.md).
 
 ```js
 /**
@@ -73,10 +73,10 @@ function add(first, second){
 O arquivo de manifesto XML para um suplemento que define funções personalizadas (**./manifest.xml** no projeto que o gerador de Yo Office cria) faz várias coisas:
 
 - Define o espaço de nomes das suas funções personalizadas. Um namespace se direciona para suas funções personalizadas para ajudar os clientes a identificar suas funções como parte do seu suplemento.
-- Usa `<ExtensionPoint>` e `<Resources>` elementos que são exclusivos de um manifesto de funções personalizadas. Esses elementos contêm informações sobre os locais dos arquivos JavaScript, JSON e HTML.
+- Usa os elementos `<ExtensionPoint>` e `<Resources>` que são exclusivos de um manifesto de funções personalizadas. Esses elementos contêm informações sobre os locais dos arquivos JavaScript, JSON e HTML.
 - Especifica o tempo de execução a ser usado para a sua função personalizada. Recomendamos sempre usar um tempo de execução compartilhado, a menos que você tenha uma necessidade específica para outro tempo de execução, porque um tempo de execução compartilhado permite o compartilhamento de dados entre funções e o painel de tarefas. Observe que usar um tempo de execução compartilhado significa que seu suplemento usará o Internet Explorer 11, não o Microsoft Edge.
 
-Se você estiver usando o gerador do Yo Office para criar arquivos, recomendamos ajustar o manifesto para usar o tempo de execução compartilhado, uma vez que esse não é o padrão para esses arquivos. Para alterar o manifesto, siga as instruções no [Configurar seu suplemento do Excel para usar um de tempo de execução JavaScript compartilhado.](./configure-your-add-in-to-use-a-shared-runtime.md)
+Se você estiver usando o gerador do Yo Office para criar arquivos, recomendamos ajustar o manifesto para usar o tempo de execução compartilhado, uma vez que esse não é o padrão para esses arquivos. Para alterar o manifesto, siga as instruções no [Configurar seu suplemento do Excel para usar um de tempo de execução JavaScript compartilhado](./configure-your-add-in-to-use-a-shared-runtime.md).
 
 Para ver um manifesto funcional completo de um suplemento de amostra, consulte [esse repositório do GitHub](https://github.com/OfficeDev/PnP-OfficeAddins/blob/master/Samples/excel-shared-runtime-global-state/manifest.xml).
 
