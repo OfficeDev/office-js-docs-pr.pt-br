@@ -3,12 +3,12 @@ title: Adicionar validação de dados para intervalos do Excel
 description: Saiba como as APIs JavaScript do Excel permitem que o suplemento adicione validação de dados automáticas a tabelas, colunas, linhas e outros intervalos em uma pasta de trabalho.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 422876e35d90a6f61da81f112ff61a732c1d0546
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: ce792e36f9ad24eb4b26e2034c59063d65940be4
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292552"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408548"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>Adicionar validação de dados para intervalos do Excel
 
@@ -223,6 +223,6 @@ Não é necessário que o intervalo que você desmarcar seja o mesmo intervalo d
 
 ## <a name="see-also"></a>Confira também
 
-- [Conceitos fundamentais de programação com a API JavaScript do Excel](excel-add-ins-core-concepts.md)
+- [Modelo de objeto do JavaScript do Excel em suplementos do Office](excel-add-ins-core-concepts.md)
 - [Objeto Application (JavaScript API para Excel)](/javascript/api/excel/excel.datavalidation)
 - [Objeto Range (API JavaScript para Excel)](/javascript/api/excel/excel.range)

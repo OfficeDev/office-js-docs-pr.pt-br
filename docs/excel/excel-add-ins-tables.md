@@ -3,12 +3,12 @@ title: Trabalhar com tabelas usando a API JavaScript do Excel
 description: Exemplos de código que mostram como executar tarefas comuns com tabelas usando a API JavaScript do Excel.
 ms.date: 09/09/2019
 localization_priority: Normal
-ms.openlocfilehash: 8d47a747fe876e01522099f99b8c9fef2ab88a33
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: b358ff33aa3681043f86d650ae2dd9b01a95f962
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294133"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408471"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Trabalhar com tabelas usando a API JavaScript do Excel
 
@@ -498,4 +498,4 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>Confira também
 
-- [Conceitos fundamentais de programação com a API JavaScript do Excel](excel-add-ins-core-concepts.md)
+- [Modelo de objeto do JavaScript do Excel em suplementos do Office](excel-add-ins-core-concepts.md)

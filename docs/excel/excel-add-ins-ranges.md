@@ -3,12 +3,12 @@ title: Trabalhar com intervalos usando a API JavaScript do Excel (fundamental)
 description: Exemplos de código que mostram como executar tarefas comuns com intervalos usando a API JavaScript do Excel.
 ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 4eb04a58fdf58425f7bb13a6dc457da28625dba5
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 2cb5640fa9c647c0e6d1f8083986455f2b5a59a3
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294161"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408478"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api"></a>Trabalhar com intervalos usando a API JavaScript do Excel
 
@@ -597,4 +597,4 @@ Quando o método `find` é chamado em um intervalo que representa uma única cé
 ## <a name="see-also"></a>Confira também
 
 - [Trabalhar com intervalos usando a API JavaScript do Excel (avançado)](excel-add-ins-ranges-advanced.md)
-- [Conceitos fundamentais de programação com a API JavaScript do Excel](excel-add-ins-core-concepts.md)
+- [Modelo de objeto do JavaScript do Excel em suplementos do Office](excel-add-ins-core-concepts.md)

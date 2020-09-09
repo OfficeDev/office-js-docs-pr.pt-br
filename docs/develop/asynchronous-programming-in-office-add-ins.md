@@ -1,14 +1,14 @@
 ---
 title: Programação assíncrona em Suplementos do Office
 description: Saiba como a biblioteca JavaScript do Office usa a programação assíncrona em suplementos do Office.
-ms.date: 02/27/2020
+ms.date: 09/08/2020
 localization_priority: Normal
-ms.openlocfilehash: affe493cdf1633b3a8749b694da479a732271195
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 96805ee0f78caedd718642a97828db26f0de7900
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292937"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408576"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Programação assíncrona em Suplementos do Office
 
@@ -121,11 +121,13 @@ A API JavaScript do Office oferece suporte a dois tipos de padrões de programa�
     
 A programação assíncrona com funções de retorno de chamada frequentemente exigem que você aninhe o resultado retornado de um retorno de chamada dentro de dois ou mais retornos de chamada. Se você precisar fazer isso, é possível usar retornos de chamada aninhados de todos os métodos "Async" da API.
 
-Usar retornos de chamada aninhados é um padrão de programação familiar para a maioria dos desenvolvedores de JavaScript, mas códigos com retornos de chamada profundamente aninhados podem ser difíceis de ler e entender. Como alternativa para retornos de chamada aninhados, a API JavaScript do Office também oferece suporte a uma implementação do padrão de promessas. No entanto, na versão atual da API JavaScript do Office, o padrão de promessas só funciona com o código para [associações em planilhas do Excel e documentos do Word](bind-to-regions-in-a-document-or-spreadsheet.md).
+Usar retornos de chamada aninhados é um padrão de programação familiar para a maioria dos desenvolvedores de JavaScript, mas códigos com retornos de chamada profundamente aninhados podem ser difíceis de ler e entender. Como alternativa para retornos de chamada aninhados, a API JavaScript do Office também oferece suporte a uma implementação do padrão de promessas. 
 
-<a name="AsyncProgramming_NestedCallbacks" />
+> [!NOTE]
+> Na versão atual da API JavaScript do Office, o suporte *interno* para o padrão de promessas só funciona com o código para [associações em documentos do Word e planilhas do Excel](bind-to-regions-in-a-document-or-spreadsheet.md). No entanto, você pode quebrar outras funções que têm retornos de chamada dentro de sua própria função de retorno de promessa personalizada. Para obter mais informações, consulte [quebra de APIs comuns em funções que retornam a promessa](#wrap-common-apis-in-promise-returning-functions).
+
+
 ### <a name="asynchronous-programming-using-nested-callback-functions"></a>Programação assíncrona usando funções aninhadas de retorno de chamada
-
 
 Frequentemente, você precisa executar duas ou mais operações assíncronas para concluir uma tarefa. Para fazer isso, você pode aninhar uma chamada "Async" dentro de outra.
 
@@ -240,7 +242,7 @@ function write(message){
 }
 ```
 
-Substitua o espaço reservado _BindingObjectAsyncMethod_ por uma chamada para qualquer um dos quatro `Binding` métodos de objeto suportados pelo objeto Promise: `getDataAsync` , `setDataAsync` , `addHandlerAsync` ou `removeHandlerAsync` . As chamadas para esses métodos não oferecem suporte a promessas adicionais. Você deve chamá-los usando o [padrão de função de retorno de chamada aninhado](#AsyncProgramming_NestedCallbacks).
+Substitua o espaço reservado _BindingObjectAsyncMethod_ por uma chamada para qualquer um dos quatro `Binding` métodos de objeto suportados pelo objeto Promise: `getDataAsync` , `setDataAsync` , `addHandlerAsync` ou `removeHandlerAsync` . As chamadas para esses métodos não oferecem suporte a promessas adicionais. Você deve chamá-los usando o [padrão de função de retorno de chamada aninhado](#asynchronous-programming-using-nested-callback-functions).
 
 Depois que uma `Binding` promessa de objeto é atendida, ela pode ser reutilizada na chamada do método encadeado como se fosse uma associação (o tempo de execução do suplemento não tentará executar a promessa de forma assíncrona). Se a `Binding` promessa do objeto não puder ser atendida, o tempo de execução do suplemento tentará novamente acessar o objeto Binding na próxima vez que um de seus métodos assíncronos for chamado.
 
@@ -395,8 +397,59 @@ function write(message){
 
 Em ambos os exemplos de parâmetros opcionais, o parâmetro _callback_ é especificado como o último parâmetro (seguindo os parâmetros opcionais embutidos ou seguindo o objeto de argumento _Options_ ). Como alternativa, você pode especificar o parâmetro _callback_ dentro o objeto JSON embutido ou no objeto `options`. No entanto, você pode transmitir o parâmetro _callback_ em um só local: no objeto _options_ (embutido ou criado externamente) ou como o último parâmetro, mas não ambos.
 
+## <a name="wrap-common-apis-in-promise-returning-functions"></a>Dispor APIs comuns em funções que retornam a promessa
+
+Os métodos Common API (e do Outlook API) não retornam [promessas](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise). Portanto, você não pode usar [Await](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/await) para pausar a execução até que a operação assíncrona seja concluída. Se você precisar `await` de comportamento, você pode encapsule a chamada do método em uma promessa criada explicitamente. 
+
+O padrão básico é criar um método assíncrono que retorna um objeto Promise imediatamente e *resolve* esse objeto Promise quando o método interno é concluído ou *rejeita* o objeto se o método falhar. Veja a seguir um exemplo simples
+
+```javascript
+function getDocumentFilePath() {
+    return new OfficeExtension.Promise(function (resolve, reject) {
+        try {
+            Office.context.document.getFilePropertiesAsync(function (asyncResult) {
+                resolve(asyncResult.value.url);
+            });
+        }
+        catch (error) {
+            reject(WordMarkdownConversion.errorHandler(error));
+        }
+    })
+}
+```
+
+Quando esse método precisa ser aguardado, ele pode ser chamado com a `await` palavra-chave ou como a função passada para uma `then` função.
+
+> [!NOTE]
+> Essa técnica é especialmente útil quando você precisa chamar uma das APIs comuns dentro de uma chamada do `run` método em um dos modelos de objeto específicos do aplicativo. Para obter um exemplo da função acima sendo usada dessa forma, confira o arquivo [Home.js no exemplo de Word-Add-in-JavaScript-MDConversion](https://github.com/OfficeDev/Word-Add-in-MarkdownConversion/blob/master/Word-Add-in-JavaScript-MDConversionWeb/Home.js).
+
+Veja a seguir um exemplo usando TypeScript.
+
+```typescript
+readDocumentFileAsync(): Promise<any> {
+    return new Promise((resolve, reject) => {
+        const chunkSize = 65536;
+        const self = this;
+
+        Office.context.document.getFileAsync(Office.FileType.Compressed, { sliceSize: chunkSize }, (asyncResult) => {
+            if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+                reject(asyncResult.error);
+            } else {
+                // `getAllSlices` is a Promise-wrapped implementation of File.getSliceAsync.
+                self.getAllSlices(asyncResult.value).then(result => {
+                    if (result.IsSuccess) {
+                        resolve(result.Data);
+                    } else {
+                        reject(asyncResult.error);
+                    }
+                });
+            }
+        });
+    });
+}
+```
 
 ## <a name="see-also"></a>Confira também
 
-- [Entendendo a API JavaScript do Office](understanding-the-javascript-api-for-office.md)
+- [Entendendo a API de JavaScript do Office](understanding-the-javascript-api-for-office.md)
 - [API JavaScript para Office](../reference/javascript-api-for-office.md)

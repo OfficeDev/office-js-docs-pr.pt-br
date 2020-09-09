@@ -3,12 +3,12 @@ title: Trabalhar com gráficos usando a API JavaScript do Excel
 description: Exemplos de código que demonstram tarefas de gráfico usando a API JavaScript do Excel.
 ms.date: 07/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 9763657fc245a509d21267511d8d1c706e1d389e
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 3cd5008e4a71001607911ffd89da26d8b31d9377
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609633"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408583"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Trabalhar com gráficos usando a API JavaScript do Excel
 
@@ -217,4 +217,4 @@ Esses parâmetros determinam o tamanho da imagem. As imagens são sempre dimensi
 
 ## <a name="see-also"></a>Confira também
 
-- [Conceitos fundamentais de programação com a API JavaScript do Excel](excel-add-ins-core-concepts.md)
+- [Modelo de objeto do JavaScript do Excel em suplementos do Office](excel-add-ins-core-concepts.md)

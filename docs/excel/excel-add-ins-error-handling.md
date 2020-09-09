@@ -3,19 +3,19 @@ title: Tratamento de erros
 description: Saiba mais sobre a lógica de tratamento de erro da API JavaScript do Excel para considerar os erros de tempo de execução.
 ms.date: 06/25/2020
 localization_priority: Normal
-ms.openlocfilehash: 89df7723d48298862034751ab06bca766fedb30f
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 189c92a4e960c8f9f1668f67f10472fdcdf84868
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292549"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408450"
 ---
 # <a name="error-handling"></a>Tratamento de erros
 
 Quando você cria um suplemento usando a API JavaScript do Excel, certifique-se de incluir a lógica de tratamento de erro para lidar com os erros de tempo de execução. Isso é fundamental devido à natureza assíncrona da API.
 
 > [!NOTE]
-> Para obter mais informações sobre o `sync()` método e a natureza assíncrona da API JavaScript do Excel, consulte [conceitos fundamentais de programação com a API JavaScript do Excel](excel-add-ins-core-concepts.md).
+> Para obter mais informações sobre o `sync()` método e a natureza assíncrona da API JavaScript do Excel, consulte [modelo de objeto do Excel JavaScript em suplementos do Office](excel-add-ins-core-concepts.md).
 
 ## <a name="best-practices"></a>Práticas recomendadas
 
@@ -76,5 +76,5 @@ A tabela a seguir é uma lista de erros que a API pode retornar.
 
 ## <a name="see-also"></a>Confira também
 
-- [Conceitos fundamentais de programação com a API JavaScript do Excel](excel-add-ins-core-concepts.md)
+- [Modelo de objeto do JavaScript do Excel em suplementos do Office](excel-add-ins-core-concepts.md)
 - [Objeto OfficeExtension.Error (API JavaScript para Excel)](/javascript/api/office/officeextension.error?view=excel-js-preview)

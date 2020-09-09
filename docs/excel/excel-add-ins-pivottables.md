@@ -3,12 +3,12 @@ title: Trabalhar com tabelas dinâmicas usando a API JavaScript do Excel
 description: Use a API JavaScript do Excel para criar tabelas dinâmicas e interagir com seus componentes.
 ms.date: 04/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 8e09f4bbd4c6429d585b4bd7d54a1f0c918ff6c3
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f1a692f493fc945f114270b69b2ce2004588b731
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609752"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408520"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Trabalhar com tabelas dinâmicas usando a API JavaScript do Excel
 
@@ -24,7 +24,7 @@ Confira [criar uma tabela dinâmica para analisar os dados da planilha](https://
 
 A [tabela dinâmica](/javascript/api/excel/excel.pivottable) é o objeto central para tabelas dinâmicas na API JavaScript do Office.
 
-- `Workbook.pivotTables`e `Worksheet.pivotTables` são [PivotTableCollections](/javascript/api/excel/excel.pivottablecollection) que contêm as [tabelas dinâmicas](/javascript/api/excel/excel.pivottable) na pasta de trabalho e planilha, respectivamente.
+- `Workbook.pivotTables` e `Worksheet.pivotTables` são [PivotTableCollections](/javascript/api/excel/excel.pivottablecollection) que contêm as [tabelas dinâmicas](/javascript/api/excel/excel.pivottable) na pasta de trabalho e planilha, respectivamente.
 - Uma [tabela dinâmica](/javascript/api/excel/excel.pivottable) contém um [PivotHierarchyCollection](/javascript/api/excel/excel.pivothierarchycollection) que tem vários [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy).
 - Esses [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy) podem ser adicionados a coleções de hierarquias específicas para definir como os dados dinâmicos de tabela dinâmica (conforme explicado na [seção a seguir](#hierarchies)).
 - Um [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) contém um [PivotFieldCollection](/javascript/api/excel/excel.pivotfieldcollection) que tem exatamente um [PivotField](/javascript/api/excel/excel.pivotfield). Se o design expandir para incluir tabelas dinâmicas OLAP, isso pode ser alterado.
@@ -415,5 +415,5 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>Confira também
 
-- [Conceitos fundamentais de programação com a API JavaScript do Excel](excel-add-ins-core-concepts.md)
+- [Modelo de objeto do JavaScript do Excel em suplementos do Office](excel-add-ins-core-concepts.md)
 - [Referência da API JavaScript do Excel](/javascript/api/excel)

@@ -3,12 +3,12 @@ title: Aplicar formatação condicional a intervalos com a API JavaScript do Exc
 description: Este artigo aborda a formatação condicional no contexto de suplementos JavaScript do Excel.
 ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 9f0bed7fb7421984c98ad1bc396c130afda4fb50
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 04a1b18c47d76d44201ea222eac305bb8d438b58
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292642"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408590"
 ---
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>Aplicar formatação condicional a intervalos do Excel
 
@@ -336,7 +336,7 @@ await context.sync();
 
 ## <a name="see-also"></a>Confira também
 
-- [Conceitos fundamentais de programação com a API JavaScript do Excel](../excel/excel-add-ins-core-concepts.md)
+- [Modelo de objeto do JavaScript do Excel em suplementos do Office](../excel/excel-add-ins-core-concepts.md)
 - [Trabalhar com intervalos usando a API JavaScript do Excel](../excel/excel-add-ins-ranges.md)
 - [Objeto ConditionalFormat (API JavaScript para Excel)](/javascript/api/excel/excel.conditionalformat)
 - [Adicionar, alterar ou limpar formatações condicionais](https://support.office.com/article/add-change-or-clear-conditional-formats-8a1cc355-b113-41b7-a483-58460332a1af)

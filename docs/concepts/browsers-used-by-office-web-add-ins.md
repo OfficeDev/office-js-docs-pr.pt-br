@@ -3,12 +3,12 @@ title: Navegadores usados pelos Suplementos do Office
 description: Especifica como o sistema operacional e a versão do Office determinam o navegador que é usado pelos suplementos do Office.
 ms.date: 08/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 4c4462434480a82e69ebaf5a2599ceda1e4693a7
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 544388014bfef0dd647a79d655a173d09f5a4ff7
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293055"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408436"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navegadores usados pelos Suplementos do Office
 
@@ -42,10 +42,16 @@ A tabela a seguir mostra qual navegador é usado pelas várias plataformas e sis
 <sup>3</sup> se o suplemento incluir o `Runtimes` elemento no manifesto, ele usará o Internet Explorer 11 independentemente da versão do Windows ou do Microsoft 365. Para mais informações, consulte [Runtimes](../reference/manifest/runtimes.md).
 
 <sup>4</sup> o navegador usado para essa combinação de versões depende do canal de atualização da assinatura do Microsoft 365. Se o usuário estiver no [canal beta](https://insider.office.com/join/windows) (antigo canal de insider), o Office usa o Microsoft Edge com o WebView2 (baseado em Chromium). Para qualquer outro canal, o Office usa o Microsoft Edge com o WebView original (EdgeHTML). O suporte para WebView2 em outros canais é esperado no início de 2021.
-> [!IMPORTANT]
-> O Internet Explorer 11 não oferece suporte às versões do JavaScript posteriores a ES5. Se qualquer um dos usuários de suplemento tiverem plataformas com Internet Explorer 11, para que seja possível usar a sintaxe e os recursos do ECMAScript 2015 ou posterior, você precisará fazer o transpile do seu JavaScript para o ES5 ou usar um polyfill. Além disso, o Internet Explorer 11 não oferece suporte a alguns recursos do HTML5, como mídia, gravação e localização.
 
-## <a name="troubleshooting-microsoft-edge-issues"></a>Solucionar problemas do Microsoft Edge
+> [!IMPORTANT]
+> O Internet Explorer 11 não oferece suporte às versões do JavaScript posteriores a ES5. Se qualquer um dos usuários do seu suplemento tiver plataformas que usam o Internet Explorer 11, use a sintaxe e os recursos do ECMAScript 2015 ou posterior, você tem duas opções:
+>
+> - Escreva seu código no ECMAScript 2015 (também chamado de ES6) ou em JavaScript posterior, ou em TypeScript, e compile seu código para ES5 JavaScript usando um compilador como [Babel](https://babeljs.io/) ou [TSC](https://www.typescriptlang.org/index.html).
+> - Escreva em JavaScript 2015 ou superior, mas também carregue uma biblioteca de [polipreenchimento](https://wikipedia.org/wiki/Polyfill_(programming)) , como [Core-js](https://github.com/zloirock/core-js) , que permite ao ie executar o código.
+>
+> Além disso, o Internet Explorer 11 não oferece suporte a alguns recursos do HTML5, como mídia, gravação e localização.
+
+## <a name="troubleshooting-microsoft-edge-issues"></a>Solucionando problemas do Microsoft Edge
 
 ### <a name="service-workers-are-not-working"></a>Os funcionários de serviço não estão funcionando
 

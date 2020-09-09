@@ -3,12 +3,12 @@ title: Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 description: Exemplos de código que mostram como executar tarefas comuns com pastas de trabalho ou recursos de nível de aplicativo usando a API JavaScript do Excel.
 ms.date: 08/24/2020
 localization_priority: Normal
-ms.openlocfilehash: a7a35e2627863c648f8c3e31ab05b2714ca0aebe
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 1da664b5ebbc8bd44b1c4e558a48997291e8967e
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294126"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408695"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 
@@ -361,6 +361,6 @@ context.workbook.close(Excel.CloseBehavior.save);
 
 ## <a name="see-also"></a>Confira também
 
-- [Conceitos fundamentais de programação com a API JavaScript do Excel](excel-add-ins-core-concepts.md)
+- [Modelo de objeto do JavaScript do Excel em suplementos do Office](excel-add-ins-core-concepts.md)
 - [Trabalhar com planilhas usando a API JavaScript do Excel](excel-add-ins-worksheets.md)
 - [Trabalhar com intervalos usando a API JavaScript do Excel](excel-add-ins-ranges.md)

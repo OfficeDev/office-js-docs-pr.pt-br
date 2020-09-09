@@ -1,16 +1,16 @@
 ---
-title: Usando o modelo de API específico do aplicativo
+title: Usando o modelo de API específica do aplicativo
 description: Saiba mais sobre o modelo de API baseado em promessa para os suplementos do Excel, OneNote e Word.
-ms.date: 07/29/2020
+ms.date: 09/08/2020
 localization_priority: Normal
-ms.openlocfilehash: cabd1ea0076b672a1dbda3079a767b0e8a1a62b7
-ms.sourcegitcommit: 4adfc368a366f00c3f3d7ed387f34aaecb47f17c
+ms.openlocfilehash: fb25201174dcd97b40ccf6be69b238951103db07
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "47326279"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408597"
 ---
-# <a name="using-the-application-specific-api-model"></a>Usando o modelo de API específico do aplicativo
+# <a name="using-the-application-specific-api-model"></a>Usando o modelo de API específica do aplicativo
 
 Este artigo descreve como usar o modelo de API para criar suplementos no Excel, no Word e no OneNote. Ele apresenta os principais conceitos fundamentais para o uso das APIs baseadas em promessa.
 
@@ -223,6 +223,31 @@ Excel.run(function (ctx) {
 });
 ```
 
+### <a name="some-properties-cannot-be-set-directly"></a>Algumas propriedades não podem ser definidas diretamente
+
+Algumas propriedades não podem ser definidas, apesar de serem graváveis. Essas propriedades fazem parte de uma propriedade pai que deve ser definida como um único objeto. Isso ocorre porque a propriedade Parent depende das subpropriedades que têm relações lógicas específicas. Essas propriedades pai devem ser definidas usando a notação literal de objeto para definir o objeto inteiro, em vez de definir as subpropriedades individuais desse objeto. Um exemplo disso é encontrado no [PageLayout](/javascript/api/excel/excel.pagelayout). A `zoom` propriedade deve ser definida com um único objeto [PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) , conforme mostrado aqui:
+
+```js
+// PageLayout.zoom.scale must be set by assigning PageLayout.zoom to a PageLayoutZoomOptions object.
+sheet.pageLayout.zoom = { scale: 200 };
+```
+
+No exemplo anterior, você ***não*** poderá atribuir `zoom` um valor diretamente: `sheet.pageLayout.zoom.scale = 200;` . Essa instrução gera um erro porque `zoom` não está carregada. Mesmo que `zoom` fosse carregado, o conjunto de escala não terá efeito. Todas as operações de contexto acontecem em `zoom` , atualizando o objeto de proxy no suplemento e substituindo os valores definidos localmente.
+
+Esse comportamento difere das [Propriedades de navegação](application-specific-api-model.md#scalar-and-navigation-properties) , como [Range. Format](/javascript/api/excel/excel.range#format). As propriedades de `format` podem ser definidas usando a navegação de objeto, conforme mostrado aqui:
+
+```js
+// This will set the font size on the range during the next `content.sync()`.
+range.format.font.size = 10;
+```
+
+Você pode identificar uma propriedade que não pode ter suas subpropriedades definidas diretamente verificando seu modificador somente leitura. Todas as propriedades somente leitura podem ter suas subpropriedades não somente leitura definidas diretamente. Propriedades graváveis como `PageLayout.zoom` devem ser definidas com um objeto nesse nível. Em Resumo:
+
+- Propriedade somente leitura: as subpropriedades podem ser definidas por meio de navegação.
+- Propriedade writable: as subpropriedades não podem ser definidas por meio de navegação (devem ser definidas como parte da atribuição de objeto pai inicial).
+
+
+
 ## <a name="42ornullobject-methods-and-properties"></a>Métodos e propriedades do &#42;OrNullObject
 
 Alguns métodos e propriedades de assessor geram uma exceção quando o objeto desejado não existe. Por exemplo, se você tentar obter uma planilha do Excel especificando um nome de planilha que não esteja na pasta de trabalho, o `getItem()` método gera uma `ItemNotFound` exceção. As bibliotecas específicas do aplicativo fornecem uma maneira de seu código testar a existência de entidades de documento sem exigir código de tratamento de exceção. Isso é feito usando as `*OrNullObject` variações de métodos e propriedades. Essas variações retornam um objeto cuja `isNullObject` propriedade é definida como `true` , se o item especificado não existir, em vez de gerar uma exceção.
@@ -251,5 +276,4 @@ return context.sync()
 ## <a name="see-also"></a>Confira também
 
 * [Modelo de objeto comum de API JavaScript para Office](office-javascript-api-object-model.md)
-* [Problemas comuns de codificação e comportamentos inesperados da plataforma](common-coding-issues.md).
 * [Limites de recurso e otimização de desempenho para Suplementos do Office](../concepts/resource-limits-and-performance-optimization.md)

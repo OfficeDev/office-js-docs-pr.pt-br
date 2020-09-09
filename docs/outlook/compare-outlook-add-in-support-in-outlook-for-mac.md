@@ -1,14 +1,14 @@
 ---
 title: Comparar o suporte a suplementos do Outlook no Outlook no Mac
 description: Saiba como o suporte a suplementos no Outlook no Mac compara com outros clientes do Outlook.
-ms.date: 09/01/2020
+ms.date: 09/08/2020
 localization_priority: Normal
-ms.openlocfilehash: d25d0b25ee6d3ba7d6f5d78b55764de8caeba3a0
-ms.sourcegitcommit: 4adfc368a366f00c3f3d7ed387f34aaecb47f17c
+ms.openlocfilehash: d251d5c0f60e133d0d60d32a658b8f55a24ecc18
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "47326314"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408723"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-clients"></a>Comparar o suporte a suplementos do Outlook no Outlook no Mac com outros clientes do Outlook
 
@@ -34,12 +34,10 @@ Para obter informações sobre o novo suporte de interface do usuário no Mac, c
 Os suplementos do Outlook agora têm suporte na nova interface do usuário do Mac, até o conjunto de requisitos 1,7. No entanto, os seguintes conjuntos de requisitos e recursos ainda **não** têm suporte.
 
 1. Conjunto de requisitos de API 1,8
-1. Painel de tarefas fixável, `ItemChanged` evento
 1. Suplementos contextuais
 1. Ao enviar
 1. Suporte a pastas compartilhadas
 1. `saveAsync` ao redigir uma reunião
-1. SSO (logon único)
 
 Recomendamos que você visualize o novo Outlook no Mac, disponível na versão 16.38.506. Para saber mais sobre como experimentá-lo, confira [Outlook para Mac-Release Notes for Insider Builds Fast](https://support.microsoft.com/office/d6347358-5613-433e-a49e-a9a0e8e0462a).
 

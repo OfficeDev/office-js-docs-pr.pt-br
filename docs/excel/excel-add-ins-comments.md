@@ -3,12 +3,12 @@ title: Trabalhar com comentários usando a API JavaScript do Excel
 description: Informações sobre como usar as APIs para adicionar, remover e editar comentários e encadeamentos de comentários.
 ms.date: 03/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 59751086b645ed56cb2a00bc70678967cae085c5
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: f0be13cc666ed4b6b5b3cfac59f299c872139f4c
+ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159427"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "47408569"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>Trabalhar com comentários usando a API JavaScript do Excel
 
@@ -204,6 +204,6 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>Confira também
 
-- [Conceitos fundamentais de programação com a API JavaScript do Excel](excel-add-ins-core-concepts.md)
+- [Modelo de objeto do JavaScript do Excel em suplementos do Office](excel-add-ins-core-concepts.md)
 - [Trabalhar com pastas de trabalho usando a API JavaScript do Excel](excel-add-ins-workbooks.md)
 - [Inserir comentários e anotações no Excel](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)
