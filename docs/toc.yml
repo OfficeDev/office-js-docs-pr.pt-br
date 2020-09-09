@@ -217,8 +217,6 @@
                   href: design/office-ui-fabric.md
         - name: Estruturas e IDEs
           items:
-            - name: Desenvolver suplementos para o iPad
-              href: develop/develop-office-add-ins-for-the-ipad.md
             - name: Desenvolver suplementos com o Angular
               href: develop/add-ins-with-angular2.md
             - name: Desenvolver suplementos com o Código do Visual Studio
@@ -234,6 +232,8 @@
                   href: develop/get-javascript-intellisense-in-visual-studio.md
                 - name: Converter projetos JavaScript em TypeScript
                   href: develop/convert-javascript-to-typescript.md
+        - name: Exigências especiais de suplementos no iPad
+          href: develop/develop-office-add-ins-for-the-ipad.md
     - name: Testar e depurar
       items:
         - name: Testar e depurar Suplementos do Office
