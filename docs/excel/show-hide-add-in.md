@@ -3,12 +3,12 @@ title: Mostrar ou ocultar um suplemento do Office em um tempo de execução comp
 description: Saiba como ocultar ou mostrar programaticamente a interface do usuário de um suplemento enquanto ele é executado continuamente
 ms.date: 05/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 9b6c3384fda32854e26cc4852d5bd27d77fae544
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: e09fa7d0a39c7157823911307558889e2ade89db
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44610330"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430566"
 ---
 # <a name="show-or-hide-an-office-add-in-in-a-shared-runtime"></a>Mostrar ou ocultar um suplemento do Office em um tempo de execução compartilhado
 
@@ -30,7 +30,7 @@ Para configurar o suplemento para usar um tempo de execução compartilhado, con
 
 As novas APIs estão na `Office.addin` propriedade. Para mostrar o painel de tarefas, seu código chama `Office.addin.showAsTaskpane()` . O Office será exibido em um painel de tarefas a página que você atribuiu à ID de recurso ( `resid` ) para o painel de tarefas. Este é o `resid` que você atribuiu ao `<SourceLocation>` do `<Action xsi:type="ShowTaskpane">` manifesto. (Confira [Configurar o suplemento do Office para usar um tempo de execução compartilhado](configure-your-add-in-to-use-a-shared-runtime.md).)
 
-Este é um método assíncrono, portanto, seu código deve aguardar quando o código subsequente não deve ser executado até que seja concluído. Aguarde essa conclusão com a `await` palavra-chave ou um `then()` método, dependendo da sintaxe JavaScript que você está usando. O seguinte pressupõe que haja uma planilha do Excel chamada **CurrentQuarterSales**. O suplemento deve tornar o painel de tarefas visível sempre que esta planilha for ativada. O método `onCurrentQuarter` é um manipulador para o evento [Office. Worksheet. OnActivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview#onactivated) que foi registrado para a planilha.
+Este é um método assíncrono, portanto, seu código deve aguardar quando o código subsequente não deve ser executado até que seja concluído. Aguarde essa conclusão com a `await` palavra-chave ou um `then()` método, dependendo da sintaxe JavaScript que você está usando. O seguinte pressupõe que haja uma planilha do Excel chamada **CurrentQuarterSales**. O suplemento deve tornar o painel de tarefas visível sempre que esta planilha for ativada. O método `onCurrentQuarter` é um manipulador para o evento [Office. Worksheet. OnActivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#onactivated) que foi registrado para a planilha.
 
 ```javascript
 function onCurrentQuarter() {
@@ -42,7 +42,7 @@ function onCurrentQuarter() {
 }
 ```
 
-Para ocultar o painel de tarefas, seu código chama `Office.addin.hide()` . O exemplo a seguir é um manipulador registrado para o evento [Office. Worksheet. OnActivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview#ondeactivated) .
+Para ocultar o painel de tarefas, seu código chama `Office.addin.hide()` . O exemplo a seguir é um manipulador registrado para o evento [Office. Worksheet. OnActivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#ondeactivated) .
 
 ```javascript
 function onCurrentQuarterDeactivated() {

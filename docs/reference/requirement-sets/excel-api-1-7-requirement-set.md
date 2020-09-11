@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos ExcelApi 1,7
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 2e7c2fb053aa16479091a2085b38b760fa86db4a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 6fc4164f233c0b1603f4b5231ed860442920c538
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611404"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430860"
 ---
 # <a name="whats-new-in-excel-javascript-api-17"></a>Quais são as novidades na API JavaScript do Excel 1.7
 
@@ -65,11 +65,11 @@ Além disso:
 
 ## <a name="api-list"></a>Lista de APIs
 
-A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do Excel 1,7. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Excel 1,7 ou anterior, confira [APIs do Excel no conjunto de requisitos 1,7 ou anterior](/javascript/api/excel?view=excel-js-1.7).
+A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do Excel 1,7. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Excel 1,7 ou anterior, confira [APIs do Excel no conjunto de requisitos 1,7 ou anterior](/javascript/api/excel?view=excel-js-1.7&preserve-view=true).
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
-|[Chart](/javascript/api/excel/excel.chart)|[chartType](/javascript/api/excel/excel.chart#charttype)|Representa o tipo de gráfico. Confira Excel. ChartType para obter detalhes.|
+|[Gráfico](/javascript/api/excel/excel.chart)|[chartType](/javascript/api/excel/excel.chart#charttype)|Representa o tipo de gráfico. Confira Excel. ChartType para obter detalhes.|
 ||[id](/javascript/api/excel/excel.chart#id)|Id exclusiva do gráfico. Somente leitura.|
 ||[showAllFieldButtons](/javascript/api/excel/excel.chart#showallfieldbuttons)|Representa se deseja exibir todos os botões de campo em um Gráfico Dinâmico.|
 |[ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)|[Borderô](/javascript/api/excel/excel.chartareaformat#border)|Representa o formato da borda da área do gráfico, que inclui cores, LineStyle e Weight. Somente leitura.|
@@ -210,7 +210,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[comments](/javascript/api/excel/excel.documentproperties#comments)|Obtém ou define os comentários da pasta de trabalho.|
 ||[company](/javascript/api/excel/excel.documentproperties#company)|Obtém ou define a empresa do documento.|
 ||[Palavras-chave](/javascript/api/excel/excel.documentproperties#keywords)|Obtém ou define as palavras-chave da pasta de trabalho.|
-||[Gerenciador](/javascript/api/excel/excel.documentproperties#manager)|Obtém ou define o gerenciador da pasta de trabalho.|
+||[manager](/javascript/api/excel/excel.documentproperties#manager)|Obtém ou define o gerenciador da pasta de trabalho.|
 ||[creationDate](/javascript/api/excel/excel.documentproperties#creationdate)|Obtém a data de criação da pasta de trabalho. Somente leitura.|
 ||[cliente](/javascript/api/excel/excel.documentproperties#custom)|Obtém a coleção de propriedades personalizadas da pasta de trabalho. Somente leitura.|
 ||[lastAuthor](/javascript/api/excel/excel.documentproperties#lastauthor)|Obtém o último autor da pasta de trabalho. Somente leitura.|
@@ -237,7 +237,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[documentReference](/javascript/api/excel/excel.rangehyperlink#documentreference)|Representa o destino de referência de documento para o hiperlink.|
 ||[Dica](/javascript/api/excel/excel.rangehyperlink#screentip)|Representa a cadeia exibida ao passar o mouse sobre o hiperlink.|
 ||[textToDisplay](/javascript/api/excel/excel.rangehyperlink#texttodisplay)|Representa a cadeia de caracteres exibida na parte superior esquerda da maioria das células no intervalo.|
-|[Estilo](/javascript/api/excel/excel.style)|[autoIndent](/javascript/api/excel/excel.style#autoindent)|Indica se o texto é automaticamente indentado quando o alinhamento de texto em uma célula é definido como distribuição igual.|
+|[Style](/javascript/api/excel/excel.style)|[autoIndent](/javascript/api/excel/excel.style#autoindent)|Indica se o texto é automaticamente indentado quando o alinhamento de texto em uma célula é definido como distribuição igual.|
 ||[delete()](/javascript/api/excel/excel.style#delete--)|Exclui este estilo.|
 ||[formulaHidden](/javascript/api/excel/excel.style#formulahidden)|Indica se a fórmula ficará oculta quando a planilha estiver protegida.|
 ||[horizontalAlignment](/javascript/api/excel/excel.style#horizontalalignment)|Representa o alinhamento horizontal para o estilo. Consulte Excel. HorizontalAlignment para obter detalhes.|
@@ -280,7 +280,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[tableId](/javascript/api/excel/excel.tableselectionchangedeventargs#tableid)|Obtém o id da tabela na qual a seleção foi alterada.|
 ||[tipo](/javascript/api/excel/excel.tableselectionchangedeventargs#type)|Obtém o tipo do evento. Para saber detalhes, confira Excel.EventType. Somente leitura.|
 ||[worksheetId](/javascript/api/excel/excel.tableselectionchangedeventargs#worksheetid)|Obtém o id da planilha na qual a seleção foi alterada.|
-|[Workbook](/javascript/api/excel/excel.workbook)|[getActiveCell()](/javascript/api/excel/excel.workbook#getactivecell--)|Obtém a célula ativa no momento da pasta de trabalho.|
+|[Pasta de trabalho](/javascript/api/excel/excel.workbook)|[getActiveCell()](/javascript/api/excel/excel.workbook#getactivecell--)|Obtém a célula ativa no momento da pasta de trabalho.|
 ||[dataConnections](/javascript/api/excel/excel.workbook#dataconnections)|Representa todas as conexões de dados na pasta de trabalho. Somente leitura.|
 ||[name](/javascript/api/excel/excel.workbook#name)|Obtém o nome da pasta de trabalho. Somente leitura.|
 ||[properties](/javascript/api/excel/excel.workbook#properties)|Obtém as propriedades da pasta de trabalho. Somente leitura.|
@@ -289,7 +289,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 |[WorkbookProtection](/javascript/api/excel/excel.workbookprotection)|[proteger (senha?: cadeia de caracteres)](/javascript/api/excel/excel.workbookprotection#protect-password-)|Protege uma pasta de trabalho. Falhará se a pasta de trabalho estiver protegida.|
 ||[protegido](/javascript/api/excel/excel.workbookprotection#protected)|Indica se a pasta de trabalho está protegida. Somente Leitura.|
 ||[desproteger (senha?: cadeia de caracteres)](/javascript/api/excel/excel.workbookprotection#unprotect-password-)|Desprotege uma pasta de trabalho.|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[Copy (PositionType?: Excel. WorksheetPositionType, relativeTo?: Excel. Worksheet)](/javascript/api/excel/excel.worksheet#copy-positiontype--relativeto-)|Copia uma planilha e a coloca na posição especificada. Retorna à planilha copiada.|
+|[Planilha](/javascript/api/excel/excel.worksheet)|[Copy (PositionType?: Excel. WorksheetPositionType, relativeTo?: Excel. Worksheet)](/javascript/api/excel/excel.worksheet#copy-positiontype--relativeto-)|Copia uma planilha e a coloca na posição especificada. Retorna à planilha copiada.|
 ||[getRangeByIndexes (startRow: Number, startColumn: Number, rowCount: Number, columnCount: Number)](/javascript/api/excel/excel.worksheet#getrangebyindexes-startrow--startcolumn--rowcount--columncount-)|Obtém o objeto Range que começa em um determinado índice de linha e índice de coluna e que abrange um determinado número de linhas e colunas.|
 ||[freezePanes](/javascript/api/excel/excel.worksheet#freezepanes)|Obtém um objeto que pode ser usado para manipular painéis congelados na planilha. Somente leitura.|
 ||[onActivated](/javascript/api/excel/excel.worksheet#onactivated)|Ocorre quando a planilha é ativada.|
@@ -336,5 +336,5 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.7)
+- [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.7&preserve-view=true)
 - [Conjuntos de requisitos da API JavaScript do Excel](./excel-api-requirement-sets.md)

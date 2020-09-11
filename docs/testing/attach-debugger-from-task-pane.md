@@ -3,21 +3,21 @@ title: Anexar um depurador do painel de tarefas
 description: Saiba como anexar um depurador do painel de tarefas
 ms.date: 06/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 53cfce211241dbdf3d16e8a126e059a2f2db3f23
-ms.sourcegitcommit: b939312ffdeb6e0a0dfe085db7efe0ff143ef873
+ms.openlocfilehash: 2ebbf32c6df6a9f2eb71ae933a9378efe2c1d2f2
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "44810839"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430531"
 ---
 # <a name="attach-a-debugger-from-the-task-pane"></a>Anexar um depurador do painel de tarefas
 
-No Office 2016 no Windows, Build 77xx.xxxx ou posterior, é possível anexar o depurador do painel de tarefas. O recurso de anexar o depurador anexará diretamente o depurador ao processo correto do Internet Explorer. É possível anexar um depurador independentemente de você estar utilizando Yeoman Generator, Visual Studio Code, Node.js, Angular ou outra ferramenta. 
+No Office 2016 no Windows, Build 77xx.xxxx ou posterior, é possível anexar o depurador do painel de tarefas. O recurso de anexar o depurador anexará diretamente o depurador ao processo correto do Internet Explorer. É possível anexar um depurador independentemente de você estar utilizando Yeoman Generator, Visual Studio Code, Node.js, Angular ou outra ferramenta.
 
-Para iniciar a ferramenta **Anexar Depurador**, escolha o canto superior direito do painel de tarefas para ativar o menu **Personalidade** (conforme mostrado no círculo vermelho na imagem a seguir).   
+Para iniciar a ferramenta **Anexar Depurador**, escolha o canto superior direito do painel de tarefas para ativar o menu **Personalidade** (conforme mostrado no círculo vermelho na imagem a seguir).
 
 > [!NOTE]
-> - Atualmente, a única ferramenta de depurador é o [Visual Studio 2015](https://www.visualstudio.com/downloads/) com a [Atualização 3](https://msdn.microsoft.com/library/mt752379.aspx) ou posterior. Se você não tiver o Visual Studio instalado, selecionar a opção **anexar depurador** não resultará em nenhuma ação.   
+> - Atualmente, a única ferramenta de depurador é o [Visual Studio 2015](https://www.visualstudio.com/downloads/) com a [Atualização 3](https://msdn.microsoft.com/library/mt752379.aspx) ou posterior. Se você não tiver o Visual Studio instalado, selecionar a opção **anexar depurador** não resultará em nenhuma ação.
 > - Só é possível depurar o JavaScript do lado do cliente com a ferramenta **Anexar Depurador**. Para depurar o código do lado do servidor, como com um servidor Node.js, há várias opções. Confira informações sobre como depurar com o Visual Studio Code em [Depuração do Node.js no VS Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging). Se você não estiver usando o Visual Studio Code, pesquise por "depurar Node.js" ou "depurar {nome do servidor}".
 
 ![Captura de tela do menu Anexar Depurador](../images/attach-debugger.png)
@@ -36,13 +36,13 @@ No Visual Studio, você verá os arquivos de código no **Gerenciador de Soluç�
 
 Veja mais informações sobre depuração no Visual Studio, em:
 
--    Para iniciar e usar o Explorador do DOM no Visual Studio, confira a Dica 4 na seção [Dicas e Truques](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates/#tips_tricks) da publicação [Building great-looking apps for Office using the new project templates](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates) (Criar aplicativos atraentes para o Office usando os novos modelos de projeto) do blog.
--    Para definir pontos de interrupção, confira [Usar Pontos de Interrupção](/visualstudio/debugger/using-breakpoints?view=vs-2015).
--    Para usar o F12, confira o artigo [Usando as ferramentas de desenvolvedor F12](/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85)).
--   Para usar as ferramentas de desenvolvedor do Microsoft Edge, confira [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab).
+- Para iniciar e usar o Explorador do DOM no Visual Studio, confira a Dica 4 na seção [Dicas e Truques](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates/#tips_tricks) da publicação [Building great-looking apps for Office using the new project templates](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates) (Criar aplicativos atraentes para o Office usando os novos modelos de projeto) do blog.
+- Para definir pontos de interrupção, confira [Usar Pontos de Interrupção](/visualstudio/debugger/using-breakpoints?view=vs-2015&preserve-view=true).
+- Para usar o F12, confira o artigo [Usando as ferramentas de desenvolvedor F12](/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85)).
+- Para usar as ferramentas de desenvolvedor do Microsoft Edge, confira [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab).
 
 ## <a name="see-also"></a>Confira também
 
 - [Depurar Suplementos do Office no Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md)
 - [Publicar seu Suplemento do Office](../publish/publish.md)
-- [Extensão do depurador de suplementos do Microsoft Office para o Visual Studio Code](debug-with-vs-extension.md)
+- [Extensão de depuração de suplementos do Microsoft Office para o Visual Studio Code](debug-with-vs-extension.md)

@@ -3,12 +3,12 @@ title: Publicar seu suplemento usando o Visual Studio
 description: Como implantar seu projeto Web e empacotar seu suplemento usando o Visual Studio 2019.
 ms.date: 12/02/2019
 localization_priority: Normal
-ms.openlocfilehash: 49b8b53b665b887e4f8dba20e085c3350e7711f8
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5c6b21c3712f396d382ab64fb1f756e84745962b
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612049"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47431182"
 ---
 # <a name="publish-your-add-in-using-visual-studio"></a>Publicar seu suplemento usando o Visual Studio
 
@@ -28,7 +28,7 @@ Conclua as etapas a seguir para implantar seu projeto Web usando o Visual Studio
     > [!NOTE]
     > A escolha de um destino de publicação especifica o servidor que você está implantando, as credenciais necessárias para fazer logon no servidor, os bancos de dados para implantar e outras opções de implantação.
 
-3. Para obter mais informações sobre as etapas de implantação de cada opção de destino de publicação, confira [Primeiro contato com a implantação no Visual Studio](/visualstudio/deployment/deploying-applications-services-and-components?view=vs-2019).
+3. Para obter mais informações sobre as etapas de implantação de cada opção de destino de publicação, confira [Primeiro contato com a implantação no Visual Studio](/visualstudio/deployment/deploying-applications-services-and-components?view=vs-2019&preserve-view=true).
 
 ## <a name="to-package-and-publish-your-add-in-using-iis-ftp-or-web-deploy-using-visual-studio-2019"></a>Para empacotar e publicar seu suplemento usando IIS, FTP ou implantação da Web usando o Visual Studio 2019
 

@@ -3,12 +3,12 @@ title: Namespace do Office – conjunto de requisitos 1,6
 description: Membros de namespace do Office disponíveis para suplementos do Outlook usando o conjunto de requisitos de API da caixa de correio 1,6.
 ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: b0d1643727055c6b7ddb4d03c0488b82b24f3fad
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 97b866a11ad96dbbbebdde6c5ed46c67406441fd
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611453"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47431441"
 ---
 # <a name="office-mailbox-requirement-set-16"></a>Office (conjunto de requisitos de caixa de correio 1,6)
 
@@ -23,22 +23,22 @@ O namespace do Office fornece interfaces compartilhadas que são usadas pelos su
 
 ##### <a name="properties"></a>Propriedades
 
-| Propriedade | Modelos | Tipo de retorno | Mínimo<br>conjunto de requisitos |
+| Propriedade | Modelos | Tipo de retorno | Minimum<br>conjunto de requisitos |
 |---|---|---|:---:|
-| [context](office.context.md) | Escrever<br>Read | [Context](/javascript/api/office/office.context?view=outlook-js-1.6) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [context](office.context.md) | Escrever<br>Ler | [Context](/javascript/api/office/office.context?view=outlook-js-1.6&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ##### <a name="enumerations"></a>Enumerações
 
-| Enumeração | Modelos | Tipo de retorno | Mínimo<br>conjunto de requisitos |
+| Enumeração | Modelos | Tipo de retorno | Minimum<br>conjunto de requisitos |
 |---|---|---|:---:|
-| [AsyncResultStatus](#asyncresultstatus-string) | Escrever<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [CoercionType](#coerciontype-string) | Escrever<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [EventType](#eventtype-string) | Escrever<br>Read | String | [1,5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [SourceProperty](#sourceproperty-string) | Escrever<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [AsyncResultStatus](#asyncresultstatus-string) | Escrever<br>Ler | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | Escrever<br>Ler | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [EventType](#eventtype-string) | Escrever<br>Ler | String | [1,5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [SourceProperty](#sourceproperty-string) | Escrever<br>Ler | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ### <a name="namespaces"></a>Namespaces
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.6): inclui uma série de enumerações específicas do Outlook, por exemplo,,,,, `ItemType` `EntityType` `AttachmentType` `RecipientType` `ResponseType` e `ItemNotificationMessageType` .
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.6&preserve-view=true): inclui uma série de enumerações específicas do Outlook, por exemplo,,,,, `ItemType` `EntityType` `AttachmentType` `RecipientType` `ResponseType` e `ItemNotificationMessageType` .
 
 ## <a name="enumeration-details"></a>Detalhes da enumeração
 
@@ -135,7 +135,7 @@ Especifica a origem dos dados retornados pelo método chamado.
 |Nome| Tipo| Descrição|
 |---|---|---|
 |`Body`| String|A origem dos dados é o corpo de uma mensagem.|
-|`Subject`| Cadeia de caracteres|A origem dos dados é o assunto de uma mensagem.|
+|`Subject`| String|A origem dos dados é o assunto de uma mensagem.|
 
 ##### <a name="requirements"></a>Requisitos
 
