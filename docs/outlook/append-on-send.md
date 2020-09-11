@@ -2,14 +2,14 @@
 title: Implementar Append-on-Send no suplemento do Outlook (visualização)
 description: Saiba como implementar o recurso Append-on-Send em seu suplemento do Outlook.
 ms.topic: article
-ms.date: 08/24/2020
+ms.date: 09/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 951f42b82a956d43796144ed94f086d9fb078ca4
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 2199f837351c1030e6f6d0d23db7bf81e498d433
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293986"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430930"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a>Implementar Append-on-Send no suplemento do Outlook (visualização)
 
@@ -28,7 +28,7 @@ Para visualizar esse recurso:
 
 - Faça referência à biblioteca **beta** na CDN ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) . O [arquivo de definição de tipo](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) para compilação TypeScript e IntelliSense é encontrado em CDN e [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Você pode instalar esses tipos com o `npm install --save-dev @types/office-js-preview` .
 - Para o Windows, talvez seja necessário participar do [programa Office Insider](https://insider.office.com) para acessar versões mais recentes do Office.
-- Para o Outlook na Web, [Configure o lançamento direcionado no seu locatário do Microsoft 365](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide#set-up-the-release-option-in-the-admin-center).
+- Para o Outlook na Web, [Configure o lançamento direcionado no seu locatário do Microsoft 365](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center).
 
 ## <a name="set-up-your-environment"></a>Configurar seu ambiente
 
@@ -182,11 +182,8 @@ Para este cenário, você implementará o acréscimo de um aviso de isenção de
 1. Execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor Web local será iniciado se ainda não estiver em execução.
 
     ```command&nbsp;line
-    npm start
+    npm run dev-server
     ```
-
-    > [!IMPORTANT]
-    > Se você vir um erro "Sideload não é suportado", você pode ignorá-lo e prosseguir.
 
 1. Siga as instruções em [Sideload suplementos do Outlook para teste](sideload-outlook-add-ins-for-testing.md).
 

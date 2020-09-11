@@ -4,12 +4,12 @@ description: Detalhes sobre as futuras APIs JavaScript do Excel
 ms.date: 06/29/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 2c547524fcb630ecb1b02fede829cf0a9a4e173f
-ms.sourcegitcommit: 065bf4f8e0d26194cee9689f7126702b391340cc
+ms.openlocfilehash: d1701ad393b96e33f0007bfcb5609c93c13608a2
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "45006462"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430762"
 ---
 # <a name="excel-javascript-preview-apis"></a>APIs de visualização do JavaScript para Excel
 
@@ -28,12 +28,12 @@ A primeira tabela fornece um resumo conciso das APIs e, a tabela subsequente, fo
 
 ## <a name="api-list"></a>Lista de APIs
 
-A tabela a seguir lista as APIs JavaScript do Excel atualmente em versão prévia. Para ver uma lista completa de todas as APIs JavaScript do Excel (incluindo APIs de visualização e APIs previamente lançadas), consulte [todas as APIs JavaScript do Excel](/javascript/api/excel?view=excel-js-preview).
+A tabela a seguir lista as APIs JavaScript do Excel atualmente em versão prévia. Para ver uma lista completa de todas as APIs JavaScript do Excel (incluindo APIs de visualização e APIs previamente lançadas), consulte [todas as APIs JavaScript do Excel](/javascript/api/excel?view=excel-js-preview&preserve-view=true).
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
 |[ChartSeries](/javascript/api/excel/excel.chartseries)|[getDimensionValues (dimensão: Excel. ChartSeriesDimension)](/javascript/api/excel/excel.chartseries#getdimensionvalues-dimension-)|Obtém os valores de uma única dimensão da série de gráficos. Podem ser valores de categoria ou valores de dados, dependendo da dimensão especificada e de como os dados são mapeados para a série de gráficos.|
-|[Comment](/javascript/api/excel/excel.comment)|[contentType](/javascript/api/excel/excel.comment#contenttype)|Obtém o tipo de conteúdo do comentário.|
+|[Comentário](/javascript/api/excel/excel.comment)|[contentType](/javascript/api/excel/excel.comment#contenttype)|Obtém o tipo de conteúdo do comentário.|
 |[CommentAddedEventArgs](/javascript/api/excel/excel.commentaddedeventargs)|[commentDetails](/javascript/api/excel/excel.commentaddedeventargs#commentdetails)|Obtém a `CommentDetail` matriz que contém a ID de comentário e IDs de suas respostas relacionadas.|
 ||[source](/javascript/api/excel/excel.commentaddedeventargs#source)|Especifica a origem do evento. Confira `Excel.EventSource` para obter detalhes.|
 ||[tipo](/javascript/api/excel/excel.commentaddedeventargs#type)|Obtém o tipo do evento. Confira `Excel.EventType` para obter detalhes.|
@@ -90,7 +90,7 @@ A tabela a seguir lista as APIs JavaScript do Excel atualmente em versão prévi
 ||[condição](/javascript/api/excel/excel.pivotlabelfilter#condition)|Especifica a condição para o filtro, que define os critérios de filtragem necessários.|
 ||[Exclude](/javascript/api/excel/excel.pivotlabelfilter#exclusive)|Se true, Filter *excluirá* itens que atendem aos critérios. O padrão é false (filtrar para incluir itens que atendam aos critérios).|
 ||[lowerBound](/javascript/api/excel/excel.pivotlabelfilter#lowerbound)|O limite inferior do intervalo para a condição de filtro between.|
-||[Subcadeia](/javascript/api/excel/excel.pivotlabelfilter#substring)|A subcadeia de caracteres usada para as `BeginsWith` `EndsWith` condições de filtro, e `Contains` .|
+||[substring](/javascript/api/excel/excel.pivotlabelfilter#substring)|A subcadeia de caracteres usada para as `BeginsWith` `EndsWith` condições de filtro, e `Contains` .|
 ||[upperBound](/javascript/api/excel/excel.pivotlabelfilter#upperbound)|O limite superior do intervalo para a condição de filtro entre.|
 |[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[getCell(dataHierarchy: DataPivotHierarchy \| string, rowItems: Array<PivotItem \| string>, columnItems: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotlayout#getcell-datahierarchy--rowitems--columnitems-)|Obtém uma célula exclusiva na tabela dinâmica com base em uma hierarquia de dados, bem como os itens de linha e coluna de suas respectivas hierarquias. A célula retornada é a interseção da linha e coluna fornecidas que contém os dados da hierarquia especificada. Esse método é o inverso de chamar getPivotItems e getDataHierarchy em uma célula específica.|
 ||[tabela dinâmica](/javascript/api/excel/excel.pivotlayout#pivotstyle)|O estilo aplicado à tabela dinâmica.|
@@ -130,14 +130,14 @@ A tabela a seguir lista as APIs JavaScript do Excel atualmente em versão prévi
 |[TableFilteredEventArgs](/javascript/api/excel/excel.tablefilteredeventargs)|[tableId](/javascript/api/excel/excel.tablefilteredeventargs#tableid)|Obtém a ID da tabela na qual o filtro é aplicado.|
 ||[tipo](/javascript/api/excel/excel.tablefilteredeventargs#type)|Obtém o tipo do evento. Para saber detalhes, confira Excel.EventType.|
 ||[worksheetId](/javascript/api/excel/excel.tablefilteredeventargs#worksheetid)|Obtém a ID da planilha que contém a tabela.|
-|[Workbook](/javascript/api/excel/excel.workbook)|[showPivotFieldList](/javascript/api/excel/excel.workbook#showpivotfieldlist)|Especifica se o painel de lista de campos da tabela dinâmica é mostrado no nível da pasta de trabalho.|
+|[Pasta de trabalho](/javascript/api/excel/excel.workbook)|[showPivotFieldList](/javascript/api/excel/excel.workbook#showpivotfieldlist)|Especifica se o painel de lista de campos da tabela dinâmica é mostrado no nível da pasta de trabalho.|
 ||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904datesystem)|True se a pasta de trabalho usar o sistema de dados 1904.|
 |[WorkbookRangeAreas](/javascript/api/excel/excel.workbookrangeareas)|[getRangeAreasBySheet (Key: String)](/javascript/api/excel/excel.workbookrangeareas#getrangeareasbysheet-key-)|Retorna o `RangeAreas` objeto com base na ID ou no nome da planilha na coleção.|
 ||[getRangeAreasOrNullObjectBySheet (Key: String)](/javascript/api/excel/excel.workbookrangeareas#getrangeareasornullobjectbysheet-key-)|Retorna o `RangeAreas` objeto com base no nome ou na ID da planilha na coleção. Se a planilha não existir, retornará um objeto null.|
-||[endereços](/javascript/api/excel/excel.workbookrangeareas#addresses)|Retorna uma matriz de endereço em estilo a1. O valor de endereço conterá o nome da planilha para cada bloco retangular de células (por exemplo, "Planilha1! A1: B4, Planilha1! D1: D4 "). Somente leitura.|
+||[addresses](/javascript/api/excel/excel.workbookrangeareas#addresses)|Retorna uma matriz de endereço em estilo a1. O valor de endereço conterá o nome da planilha para cada bloco retangular de células (por exemplo, "Planilha1! A1: B4, Planilha1! D1: D4 "). Somente leitura.|
 ||[areas](/javascript/api/excel/excel.workbookrangeareas#areas)|Retorna o objeto RangeAreasCollection, cada RangeAreas na coleção representa um ou mais intervalos de retângulo em uma planilha.|
 ||[variações](/javascript/api/excel/excel.workbookrangeareas#ranges)|Retorna uma coleção de intervalos que inclui este objeto.|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[customProperties](/javascript/api/excel/excel.worksheet#customproperties)|Obtém uma coleção de propriedades personalizadas no nível da planilha.|
+|[Planilha](/javascript/api/excel/excel.worksheet)|[customProperties](/javascript/api/excel/excel.worksheet#customproperties)|Obtém uma coleção de propriedades personalizadas no nível da planilha.|
 ||[namedSheetViews](/javascript/api/excel/excel.worksheet#namedsheetviews)|Retorna uma coleção de modos de exibição de planilha que estão presentes na planilha.|
 ||[onFiltered](/javascript/api/excel/excel.worksheet#onfiltered)|Ocorre quando o filtro é aplicado em uma planilha específica.|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addfrombase64-base64file--sheetnamestoinsert--positiontype--relativeto-)|Insere as planilhas especificadas de uma pasta de trabalho na pasta de trabalho atual.|
@@ -153,7 +153,7 @@ A tabela a seguir lista as APIs JavaScript do Excel atualmente em versão prévi
 |[WorksheetFilteredEventArgs](/javascript/api/excel/excel.worksheetfilteredeventargs)|[tipo](/javascript/api/excel/excel.worksheetfilteredeventargs#type)|Obtém o tipo do evento. Para saber detalhes, confira Excel.EventType.|
 ||[worksheetId](/javascript/api/excel/excel.worksheetfilteredeventargs#worksheetid)|Obtém a ID da planilha na qual o filtro é aplicado.|
 
-## <a name="see-also"></a>Também consulte
+## <a name="see-also"></a>Confira também
 
-- [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-preview)
+- [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-preview&preserve-view=true)
 - [Conjuntos de requisitos da API JavaScript do Excel](./excel-api-requirement-sets.md)

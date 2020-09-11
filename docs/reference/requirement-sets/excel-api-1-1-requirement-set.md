@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos ExcelApi 1,1
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 0b1c1cc6cb6b21609a716210c832b4b1cb325438
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 815b90b18135be22632c39a9824f862149852a84
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612105"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430916"
 ---
 # <a name="excel-javascript-api-requirement-set-11"></a>Conjunto de requisitos de API JavaScript do Excel 1,1
 
@@ -17,7 +17,7 @@ A API JavaScript do Excel 1.1 é a primeira versão da API. É o único conjunto
 
 ## <a name="api-list"></a>Lista de APIs
 
-A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do Excel 1,1. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Excel 1,1, confira [APIs do Excel no conjunto de requisitos 1,1](/javascript/api/excel?view=excel-js-1.1).
+A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do Excel 1,1. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Excel 1,1, confira [APIs do Excel no conjunto de requisitos 1,1](/javascript/api/excel?view=excel-js-1.1&preserve-view=true).
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
@@ -32,7 +32,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[getItemAt(index: number)](/javascript/api/excel/excel.bindingcollection#getitemat-index-)|Obtém um objeto de associação com base em sua posição na matriz dos itens.|
 ||[Count](/javascript/api/excel/excel.bindingcollection#count)|Retorna o número de associações da coleção. Somente leitura.|
 ||[items](/javascript/api/excel/excel.bindingcollection#items)|Obtém os itens filhos carregados nesta coleção.|
-|[Chart](/javascript/api/excel/excel.chart)|[delete()](/javascript/api/excel/excel.chart#delete--)|Exclui o objeto de gráfico.|
+|[Gráfico](/javascript/api/excel/excel.chart)|[delete()](/javascript/api/excel/excel.chart#delete--)|Exclui o objeto de gráfico.|
 ||[height](/javascript/api/excel/excel.chart#height)|Representa a altura, em pontos, do objeto Chart.|
 ||[left](/javascript/api/excel/excel.chart#left)|A distância, em pontos, da esquerda do gráfico à origem da planilha.|
 ||[name](/javascript/api/excel/excel.chart#name)|Representa o nome de um objeto Chart.|
@@ -218,13 +218,13 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[getItemAt(index: number)](/javascript/api/excel/excel.tablerowcollection#getitemat-index-)|Obtém uma linha com base em sua posição na coleção.|
 ||[Count](/javascript/api/excel/excel.tablerowcollection#count)|Retorna o número de linhas na tabela. Somente leitura.|
 ||[items](/javascript/api/excel/excel.tablerowcollection#items)|Obtém os itens filhos carregados nesta coleção.|
-|[Workbook](/javascript/api/excel/excel.workbook)|[getSelectedRange()](/javascript/api/excel/excel.workbook#getselectedrange--)|Obtém o intervalo único selecionado atualmente da pasta de trabalho. Se houver vários intervalos selecionados, este método gerará um erro.|
+|[Pasta de trabalho](/javascript/api/excel/excel.workbook)|[getSelectedRange()](/javascript/api/excel/excel.workbook#getselectedrange--)|Obtém o intervalo único selecionado atualmente da pasta de trabalho. Se houver vários intervalos selecionados, este método gerará um erro.|
 ||[aplicativo](/javascript/api/excel/excel.workbook#application)|Representa a instância do aplicativo Excel que contém esta pasta de trabalho. Somente leitura.|
 ||[bindings](/javascript/api/excel/excel.workbook#bindings)|Representa uma coleção de ligações que fazem parte da pasta de trabalho. Somente leitura.|
 ||[names](/javascript/api/excel/excel.workbook#names)|Representa uma coleção de itens denominados de escopo da pasta de trabalho (chamados intervalos e constantes). Somente leitura.|
 ||[tabelas](/javascript/api/excel/excel.workbook#tables)|Representa uma coleção de tabelas associadas à pasta de trabalho. Somente leitura.|
 ||[planilhas](/javascript/api/excel/excel.workbook#worksheets)|Representa uma coleção de planilhas associadas à pasta de trabalho. Somente leitura.|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[activate()](/javascript/api/excel/excel.worksheet#activate--)|Ative a planilha na interface do usuário do Excel.|
+|[Planilha](/javascript/api/excel/excel.worksheet)|[activate()](/javascript/api/excel/excel.worksheet#activate--)|Ative a planilha na interface do usuário do Excel.|
 ||[delete()](/javascript/api/excel/excel.worksheet#delete--)|Exclui a planilha da pasta de trabalho. Observe que, se a visibilidade da planilha estiver definida como "VeryHidden", a operação de exclusão falhará com uma Generalexception.|
 ||[getCell(row: number, column: number)](/javascript/api/excel/excel.worksheet#getcell-row--column-)|Obtém o objeto de intervalo que contém a célula única com base nos números de linha e de coluna. A célula pode estar fora dos limites de seu intervalo pai, desde que ela permaneça dentro da grade da planilha.|
 ||[GetRange (endereço?: cadeia de caracteres)](/javascript/api/excel/excel.worksheet#getrange-address-)|Obtém o objeto Range, representando um único bloco retangular de células, especificado pelo endereço ou nome.|
@@ -241,5 +241,5 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.1)
+- [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.1&preserve-view=true)
 - [Conjuntos de requisitos da API JavaScript do Excel](./excel-api-requirement-sets.md)

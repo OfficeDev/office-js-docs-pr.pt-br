@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos WordApi 1,2
 ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 6fd2672462037d445c854bbc0c533c4dc5404b86
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: a71dc9b5954faaab7317d398d5e4453ecb979721
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611299"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430524"
 ---
 # <a name="whats-new-in-word-javascript-api-12"></a>Quais são as novidades na API JavaScript do Word 1.2
 
@@ -17,7 +17,7 @@ WordApi 1,2 adicionado suporte para imagens embutidas.
 
 ## <a name="api-list"></a>Lista de APIs
 
-A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do Word, 1,2. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Word 1,2 ou anterior, confira [APIs do Word no conjunto de requisitos 1,2 ou anterior](/javascript/api/word?view=word-js-1.2).
+A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do Word, 1,2. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Word 1,2 ou anterior, confira [APIs do Word no conjunto de requisitos 1,2 ou anterior](/javascript/api/word?view=word-js-1.2&preserve-view=true).
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|

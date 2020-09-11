@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos ExcelApi 1,10
 ms.date: 10/22/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 50d38f610606b4d172d3f79f6a968ad7b1e8e344
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 890d198f238e29d39744d87d754381543ebcaf6a
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612098"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47431231"
 ---
 # <a name="whats-new-in-excel-javascript-api-110"></a>O que há de novo na API JavaScript do Excel 1,10
 
@@ -24,7 +24,7 @@ O ExcelApi 1,10 introduziu os principais recursos, como comentários, contornos 
 
 ## <a name="api-list"></a>Lista de APIs
 
-A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do Excel 1,10. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Excel 1,10 ou anterior, confira [APIs do Excel no conjunto de requisitos 1,10 ou anterior](/javascript/api/excel?view=excel-js-1.10).
+A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do Excel 1,10. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Excel 1,10 ou anterior, confira [APIs do Excel no conjunto de requisitos 1,10 ou anterior](/javascript/api/excel?view=excel-js-1.10&preserve-view=true).
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
@@ -175,5 +175,5 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.10)
+- [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.10&preserve-view=true)
 - [Conjuntos de requisitos da API JavaScript do Excel](./excel-api-requirement-sets.md)

@@ -2,14 +2,14 @@
 title: Configurar seu suplemento do Outlook para ativação baseada em evento (visualização)
 description: Saiba como configurar seu suplemento do Outlook para ativação baseada em eventos.
 ms.topic: article
-ms.date: 08/24/2020
+ms.date: 09/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 0131cafa8315315d63b6319ecad4fd41b1168073
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 69f14748a898c2c963c9d049b2c40c28f3aec725
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293923"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47431245"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>Configurar seu suplemento do Outlook para ativação baseada em evento (visualização)
 
@@ -191,11 +191,8 @@ Neste cenário, você adicionará o tratamento para compor novos itens.
 1. Execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).
 
     ```command&nbsp;line
-    npm start
+    npm run dev-server
     ```
-
-    > [!IMPORTANT]
-    > Se você vir um erro "Sideload não é suportado", você pode ignorá-lo e prosseguir.
 
 1. Siga as instruções [Realizar sideload dos suplementos do Outlook para teste](sideload-outlook-add-ins-for-testing.md)para realizar o sideload do suplemento do Outlook.
 

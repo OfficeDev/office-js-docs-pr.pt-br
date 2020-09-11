@@ -4,12 +4,12 @@ description: Detalhes sobre as APIs JavaScript do Word futuro
 ms.date: 08/15/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: bde7ff45c8352277b9aec38ecccb41333544172a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 90d60e1a6ef24907af7b0bff14fa43ee5c312beb
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611271"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430517"
 ---
 # <a name="word-javascript-preview-apis"></a>APIs de visualização JavaScript do Word
 
@@ -19,7 +19,7 @@ Novas APIs JavaScript do Word são primeiro introduzidas em "Preview" e mais tar
 
 ## <a name="api-list"></a>Lista de APIs
 
-A tabela a seguir lista as APIs JavaScript do Word atualmente em versão prévia. Para ver uma lista completa de todas as APIs JavaScript do Word (incluindo APIs de visualização e APIs previamente lançadas), confira [todas as APIs JavaScript do Word](/javascript/api/word?view=word-js-preview).
+A tabela a seguir lista as APIs JavaScript do Word atualmente em versão prévia. Para ver uma lista completa de todas as APIs JavaScript do Word (incluindo APIs de visualização e APIs previamente lançadas), confira [todas as APIs JavaScript do Word](/javascript/api/word?view=word-js-preview&preserve-view=true).
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|

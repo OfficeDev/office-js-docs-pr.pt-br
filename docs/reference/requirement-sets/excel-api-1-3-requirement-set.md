@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos ExcelApi 1,3
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 482d04a951acc48d34838a758834adfba273bd19
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 71bad9fae630a11688458e4cb76ded2fa523a563
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611432"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430867"
 ---
 # <a name="whats-new-in-excel-javascript-api-13"></a>Quais são as novidades na API JavaScript do Excel 1.3
 
@@ -17,7 +17,7 @@ ExcelApi 1,3 adicionado suporte para associação de dados e acesso básico de t
 
 ## <a name="api-list"></a>Lista de APIs
 
-A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do Excel 1,3. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Excel 1,3 ou anterior, confira [APIs do Excel no conjunto de requisitos 1,3 ou anterior](/javascript/api/excel?view=excel-js-1.3).
+A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do Excel 1,3. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Excel 1,3 ou anterior, confira [APIs do Excel no conjunto de requisitos 1,3 ou anterior](/javascript/api/excel?view=excel-js-1.3&preserve-view=true).
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
@@ -52,10 +52,10 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[showBandedColumns](/javascript/api/excel/excel.table#showbandedcolumns)|Indica se as colunas mostram formatação em faixas nas quais as colunas ímpares são realçadas de modo diferente das colunas pares, tornando a leitura da tabela mais fácil.|
 ||[showBandedRows](/javascript/api/excel/excel.table#showbandedrows)|Indica se as linhas mostram formatação em faixas nas quais as linhas ímpares são realçadas de modo diferente das colunas pares, tornando a leitura da tabela mais fácil.|
 ||[showFilterButton](/javascript/api/excel/excel.table#showfilterbutton)|Indica se os botões de filtro estão visíveis na parte superior de cada cabeçalho da coluna. Essa configuração só será permitida se a tabela tiver uma linha de cabeçalho.|
-|[Workbook](/javascript/api/excel/excel.workbook)|[Tabelas dinâmicas](/javascript/api/excel/excel.workbook#pivottables)|Representa uma coleção de Tabelas Dinâmicas associadas à pasta de trabalho. Somente leitura.|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[Tabelas dinâmicas](/javascript/api/excel/excel.worksheet#pivottables)|Coleção de Tabelas Dinâmicas que fazem parte da planilha. Somente leitura.|
+|[Pasta de trabalho](/javascript/api/excel/excel.workbook)|[Tabelas dinâmicas](/javascript/api/excel/excel.workbook#pivottables)|Representa uma coleção de Tabelas Dinâmicas associadas à pasta de trabalho. Somente leitura.|
+|[Planilha](/javascript/api/excel/excel.worksheet)|[Tabelas dinâmicas](/javascript/api/excel/excel.worksheet#pivottables)|Coleção de Tabelas Dinâmicas que fazem parte da planilha. Somente leitura.|
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.3)
+- [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.3&preserve-view=true)
 - [Conjuntos de requisitos da API JavaScript do Excel](./excel-api-requirement-sets.md)

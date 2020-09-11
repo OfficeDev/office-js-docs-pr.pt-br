@@ -3,12 +3,12 @@ title: Depurar suplementos do Office no Visual Studio
 description: Use o Visual Studio para depurar suplementos do Office na área de trabalho do cliente Office no Windows
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 8086eaeeb3556edcef40bdf9fea980bd4ae640cc
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 7c49e3019c22af0b5d44a382b33187e5d2de4ceb
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292838"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430475"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Depurar suplementos do Office no Visual Studio
 
@@ -119,7 +119,7 @@ Depois, o Visual Studio faz o seguinte:
 
 3. Abre o aplicativo do Office.
 
-O Visual Studio não mostra erros de validação na janela de **saída** quando você cria o projeto. O Visual Studio relata erros e avisos na janela **ERRORLIST** à medida que eles ocorrem. O Visual Studio também relata erros de validação mostrando sublinhados ondulados (conhecidos como rabiscos) de cores diferentes no editor de código e texto. Essas marcas o notificam de problemas que o Visual Studio detectou no código. Para saber mais sobre como habilitar ou desabilitar a validação, confira: [Opções, Editor de texto, JavaScript, IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019).
+O Visual Studio não mostra erros de validação na janela de **saída** quando você cria o projeto. O Visual Studio relata erros e avisos na janela **ERRORLIST** à medida que eles ocorrem. O Visual Studio também relata erros de validação mostrando sublinhados ondulados (conhecidos como rabiscos) de cores diferentes no editor de código e texto. Essas marcas o notificam de problemas que o Visual Studio detectou no código. Para saber mais sobre como habilitar ou desabilitar a validação, confira: [Opções, Editor de texto, JavaScript, IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019&preserve-view=true).
 
 Para examinar as regras de validação do arquivo de manifesto XML no projeto, confira [Manifesto XML de suplementos do Office](../develop/add-in-manifests.md).
 

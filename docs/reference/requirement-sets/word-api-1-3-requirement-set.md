@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos WordApi 1,3
 ms.date: 07/25/2019
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 15ec2129f53d0b408191ceb595f1fe115feb0d1a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 6402543ddfb2feaa116de40982dcb61c30c8597b
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611292"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430496"
 ---
 # <a name="whats-new-in-word-javascript-api-13"></a>Quais são as novidades na API JavaScript do Word 1.3
 
@@ -17,7 +17,7 @@ WordApi 1,3 adicionou mais suporte para controles de conteúdo, XML personalizad
 
 ## <a name="api-list"></a>Lista de APIs
 
-A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do Word, 1,3. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Word 1,3 ou anterior, confira [APIs do Word no conjunto de requisitos 1,3 ou anterior](/javascript/api/word?view=word-js-1.3).
+A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do Word, 1,3. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Word 1,3 ou anterior, confira [APIs do Word no conjunto de requisitos 1,3 ou anterior](/javascript/api/word?view=word-js-1.3&preserve-view=true).
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
@@ -75,7 +75,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos de API JavaScript do W
 ||[company](/javascript/api/word/word.documentproperties#company)|Obtém ou define a empresa do documento.|
 ||[format](/javascript/api/word/word.documentproperties#format)|Obtém ou define o formato do documento.|
 ||[Palavras-chave](/javascript/api/word/word.documentproperties#keywords)|Obtém ou define as palavras-chave do documento.|
-||[Gerenciador](/javascript/api/word/word.documentproperties#manager)|Obtém ou define o gerenciador do documento.|
+||[manager](/javascript/api/word/word.documentproperties#manager)|Obtém ou define o gerenciador do documento.|
 ||[applicationName](/javascript/api/word/word.documentproperties#applicationname)|Obtém o nome do aplicativo do documento. Somente leitura.|
 ||[creationDate](/javascript/api/word/word.documentproperties#creationdate)|Obtém a data de criação do documento. Somente leitura.|
 ||[customProperties](/javascript/api/word/word.documentproperties#customproperties)|Obtém a coleção de propriedades personalizadas do documento. Somente leitura.|

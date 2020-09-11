@@ -3,12 +3,12 @@ title: Habilitar e Desabilitar Comandos de Suplemento
 description: Aprenda a alterar o status habilitado ou desabilitado dos botões da faixa de opções personalizados e itens de menu no seu Suplemento da Web do Office.
 ms.date: 08/26/2020
 localization_priority: Normal
-ms.openlocfilehash: 54bfa06a3acfbea561d20a1b327f093429d725fc
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: fac62b20dc67db591ba2de73f96526b8a3dfdf9e
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292971"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430412"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>Habilitar e Desabilitar Comandos de Suplemento
 
@@ -23,7 +23,7 @@ Você também pode especificar se o comando está habilitado ou desabilitado qua
 
 ## <a name="office-application-and-platform-support-only"></a>Suporte apenas a aplicativos e plataformas do Office
 
-As APIs descritas neste artigo estão disponíveis apenas no Excel e apenas no Office no Windows e no Office no Mac.
+As APIs descritas neste artigo estão disponíveis apenas no Excel e apenas no Office no Windows e no Mac.
 
 ### <a name="test-for-platform-support-with-requirement-sets"></a>Teste se há suporte à plataforma com conjuntos de requisitos
 
@@ -77,7 +77,7 @@ Por padrão, qualquer comando de suplemento é habilitado quando o aplicativo do
 As etapas essenciais para alterar o status habilitado de um Comando de Suplemento são:
 
 1. Criar um objeto [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) que (1) especifique o comando e sua guia pai por seus IDs, conforme especificado no manifesto; e (2) especifica o estado habilitado ou desabilitado do comando.
-2. Passe o objeto **RibbonUpdaterData** para o método [OfficeRuntime.Ribbon.requestUpdate()](/javascript/api/office/office.ribbon?view=common-js#requestupdate-input-).
+2. Passe o objeto **RibbonUpdaterData** para o método [OfficeRuntime.Ribbon.requestUpdate()](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestupdate-input-).
 
 Apresentamos um exemplo simples a seguir. Observe que "MyButton" e "OfficeAddinTab1" são copiados do manifesto.
 
@@ -204,7 +204,7 @@ function disableChartFormat() {
 
 ## <a name="test-for-platform-support-with-requirement-sets"></a>Teste se há suporte à plataforma com conjuntos de requisitos
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office oferece suporte a APIs necessárias para um suplemento. Para obter mais informações, consulte [versões do Office e conjuntos de requisitos](../develop/office-versions-and-requirement-sets.md).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../develop/office-versions-and-requirement-sets.md).
 
 As APIs de ativação/desativação requerem suporte do seguinte conjunto de requisitos:
 

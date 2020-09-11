@@ -3,12 +3,12 @@ title: Converter um projeto de Suplemento do Office no Visual Studio para TypeSc
 description: Saiba como converter um projeto de suplemento do Office no Visual Studio para usar TypeScript.
 ms.date: 09/01/2020
 localization_priority: Normal
-ms.openlocfilehash: 716222998666b014ab014298a4165678cf747165
-ms.sourcegitcommit: 4adfc368a366f00c3f3d7ed387f34aaecb47f17c
+ms.openlocfilehash: e05861e3fef79f87afc820eb62b2a52aaa953f31
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "47326293"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430482"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Converter um projeto de Suplemento do Office no Visual Studio para TypeScript
 
@@ -25,12 +25,12 @@ Você pode usar o modelo de Suplemento do Office no Visual Studio para criar um 
 - [Visual Studio 2019](https://www.visualstudio.com/vs/) com a carga de trabalho de **desenvolvimento do Office/SharePoint** instalada
 
     > [!TIP]
-    > Se você já instalou o Visual Studio 2019, [use o Instalador do Visual Studio](/visualstudio/install/modify-visual-studio) para garantir que a carga de trabalho de **desenvolvimento do Office/SharePoint** seja instalada. Se essa carga de trabalho ainda não estiver instalada, use o instalador do Visual Studio para [instalá-la](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-workloads).
+    > Se você já instalou o Visual Studio 2019, [use o Instalador do Visual Studio](/visualstudio/install/modify-visual-studio) para garantir que a carga de trabalho de **desenvolvimento do Office/SharePoint** seja instalada. Se essa carga de trabalho ainda não estiver instalada, use o instalador do Visual Studio para [instalá-la](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-workloads).
 
 - TypeScript SDK versão 2.3 ou posterior (para o Visual Studio 2019)
 
     > [!TIP]
-    > No [Instalador do Visual Studio](/visualstudio/install/modify-visual-studio), selecione a guia **Componentes individuais** e role a tela para baixo até a seção **SDKs, bibliotecas e estruturas**. Nessa seção, verifique se pelo menos um dos componentes do **SDK do TypeScript** (versão 2.3 ou posterior) está selecionado. Se nenhum dos componentes do **SDK do TypeScript** estiver selecionado, selecione a versão mais recente do SDK disponível e, em seguida, escolha o botão **Modificar** para [instalar esse componente individual](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-individual-components). 
+    > No [Instalador do Visual Studio](/visualstudio/install/modify-visual-studio), selecione a guia **Componentes individuais** e role a tela para baixo até a seção **SDKs, bibliotecas e estruturas**. Nessa seção, verifique se pelo menos um dos componentes do **SDK do TypeScript** (versão 2.3 ou posterior) está selecionado. Se nenhum dos componentes do **SDK do TypeScript** estiver selecionado, selecione a versão mais recente do SDK disponível e, em seguida, escolha o botão **Modificar** para [instalar esse componente individual](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-individual-components). 
 
 - Excel 2016 ou posterior
 

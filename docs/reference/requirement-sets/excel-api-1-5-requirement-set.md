@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos ExcelApi 1,5
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: a722498f264ac8a681e91231d737451274b01c48
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 346b5192d6d68046b9365d3159df9c3964a59271
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611418"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430846"
 ---
 # <a name="whats-new-in-excel-javascript-api-15"></a>Quais são as novidades na API JavaScript do Excel 1.5
 
@@ -30,7 +30,7 @@ ExcelApi 1,5 adiciona partes XML personalizadas. Eles podem ser acessados por me
 
 ## <a name="api-list"></a>Lista de APIs
 
-A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do Excel 1,5. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Excel 1,5 ou anterior, confira [APIs do Excel no conjunto de requisitos 1,5 ou anterior](/javascript/api/excel?view=excel-js-1.5).
+A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do Excel 1,5. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Excel 1,5 ou anterior, confira [APIs do Excel no conjunto de requisitos 1,5 ou anterior](/javascript/api/excel?view=excel-js-1.5&preserve-view=true).
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
@@ -52,8 +52,8 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[getOnlyItemOrNullObject()](/javascript/api/excel/excel.customxmlpartscopedcollection#getonlyitemornullobject--)|Se o conjunto contiver exatamente um item, esse método o retornará.|
 ||[items](/javascript/api/excel/excel.customxmlpartscopedcollection#items)|Obtém os itens filhos carregados nesta coleção.|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[id](/javascript/api/excel/excel.pivottable#id)|Id da Tabela Dinâmica. Somente leitura.|
-|[Tempo de execução](/javascript/api/excel/excel.runtime)||[Workbook](/javascript/api/excel/excel.workbook)|[customXmlParts](/javascript/api/excel/excel.workbook#customxmlparts)|Representa a coleção de partes XML personalizadas contidas por esta pasta de trabalho. Somente leitura.|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[getNext (visibleOnly?: Boolean)](/javascript/api/excel/excel.worksheet#getnext-visibleonly-)|Obtém a planilha que segue esta. Se não houver planilhas após esta, este método gerará um erro.|
+|[Tempo de execução](/javascript/api/excel/excel.runtime)||[Pasta de trabalho](/javascript/api/excel/excel.workbook)|[customXmlParts](/javascript/api/excel/excel.workbook#customxmlparts)|Representa a coleção de partes XML personalizadas contidas por esta pasta de trabalho. Somente leitura.|
+|[Planilha](/javascript/api/excel/excel.worksheet)|[getNext (visibleOnly?: Boolean)](/javascript/api/excel/excel.worksheet#getnext-visibleonly-)|Obtém a planilha que segue esta. Se não houver planilhas após esta, este método gerará um erro.|
 ||[getNextOrNullObject (visibleOnly?: Boolean)](/javascript/api/excel/excel.worksheet#getnextornullobject-visibleonly-)|Obtém a planilha que segue esta. Se não houver planilhas após esta, este método retornará um objeto NULL.|
 ||[getprevious (visibleOnly?: Boolean)](/javascript/api/excel/excel.worksheet#getprevious-visibleonly-)|Obtém a planilha que precede esta. Se não houver planilhas anteriores, este método gerará um erro.|
 ||[getPreviousOrNullObject (visibleOnly?: Boolean)](/javascript/api/excel/excel.worksheet#getpreviousornullobject-visibleonly-)|Obtém a planilha que precede esta. Se não houver planilhas anteriores, este método retornará um objeto NULL.|
@@ -62,5 +62,5 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.5)
+- [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.5&preserve-view=true)
 - [Conjuntos de requisitos da API JavaScript do Excel](./excel-api-requirement-sets.md)

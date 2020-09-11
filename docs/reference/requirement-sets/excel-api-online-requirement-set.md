@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos ExcelApiOnline
 ms.date: 05/06/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f4a39406328605e11d8108ddee454c339bf3919f
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: aa497ff97533ff3a414905547a949fa8430c3efe
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294238"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430811"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>O conjunto de requisitos somente online da API JavaScript do Excel
 
@@ -54,6 +54,6 @@ As seguintes APIs estão atualmente disponíveis para o Excel na Web como parte 
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-online)
+- [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-online&preserve-view=true)
 - [APIs de visualização do JavaScript para Excel](./excel-preview-apis.md)
 - [Conjuntos de requisitos da API JavaScript do Excel](./excel-api-requirement-sets.md)

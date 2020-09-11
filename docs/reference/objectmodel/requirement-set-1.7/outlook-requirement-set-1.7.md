@@ -3,12 +3,12 @@ title: Conjunto de requisitos de API para suplementos do Outlook versão 1.7
 description: Visão geral da API de suplemento do Outlook (conjunto de requisitos 1,7)
 ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 5af422db674eb882bef97181fbc58ae7ebd644d6
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f8dc9fe097b56d3e940a5d7d945c5ccc50e07077
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612189"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47431385"
 ---
 # <a name="outlook-add-in-api-requirement-set-17"></a>Conjunto de requisitos de API para suplementos do Outlook versão 1.7
 
@@ -27,22 +27,22 @@ O conjunto de requisitos versão 1.7 inclui todos os recursos do [Conjunto de re
 
 ### <a name="change-log"></a>Log de mudanças
 
-- Adicionado o [From](/javascript/api/outlook/office.from?view=outlook-js-1.7): adiciona um novo objeto que fornece um método para obter o valor from.
-- Adicionado o [Organizer](/javascript/api/outlook/office.organizer?view=outlook-js-1.7): adiciona um novo objeto que fornece um método para obter o valor organizer.
-- Adicionado o [Recurrence](/javascript/api/outlook/office.recurrence?view=outlook-js-1.7): adiciona um novo objeto que fornece métodos para obter e definir o padrão de recorrência de compromissos, mas obtém apenas o padrão de recorrência de mensagens de solicitações de reunião.
-- Adicionado o [RecurrenceTimeZone](/javascript/api/outlook/office.recurrencetimezone?view=outlook-js-1.7): adiciona um novo objeto que representa a configuração de fuso horário do padrão de recorrência.
-- Adicionado o [SeriesTime](/javascript/api/outlook/office.seriestime?view=outlook-js-1.7): adiciona um novo objeto que fornece métodos para obter e definir as datas e horas de compromissos em uma série recorrente e obter as datas e horas de solicitações de reunião em uma série recorrente.
+- Adicionado o [From](/javascript/api/outlook/office.from?view=outlook-js-1.7&preserve-view=true): adiciona um novo objeto que fornece um método para obter o valor from.
+- Adicionado o [Organizer](/javascript/api/outlook/office.organizer?view=outlook-js-1.7&preserve-view=true): adiciona um novo objeto que fornece um método para obter o valor organizer.
+- Adicionado o [Recurrence](/javascript/api/outlook/office.recurrence?view=outlook-js-1.7&preserve-view=true): adiciona um novo objeto que fornece métodos para obter e definir o padrão de recorrência de compromissos, mas obtém apenas o padrão de recorrência de mensagens de solicitações de reunião.
+- Adicionado o [RecurrenceTimeZone](/javascript/api/outlook/office.recurrencetimezone?view=outlook-js-1.7&preserve-view=true): adiciona um novo objeto que representa a configuração de fuso horário do padrão de recorrência.
+- Adicionado o [SeriesTime](/javascript/api/outlook/office.seriestime?view=outlook-js-1.7&preserve-view=true): adiciona um novo objeto que fornece métodos para obter e definir as datas e horas de compromissos em uma série recorrente e obter as datas e horas de solicitações de reunião em uma série recorrente.
 - Adicionado o [Office.context.mailbox.item.addHandlerAsync](office.context.mailbox.item.md#methods): adiciona um novo método que adiciona um manipulador de eventos para um evento com suporte.
 - Modificado [Office.context.mailbox.item.from](office.context.mailbox.item.md#properties): Adiciona a capacidade de adquirir o valor from no modo de Redação.
 - Modificado [Office.context.mailbox.item.organizer](office.context.mailbox.item.md#properties): Adiciona a capacidade de adquirir o valor organizer no modo de Redação.
 - Adicionado o [Office.context.mailbox.item.recurrence](office.context.mailbox.item.md#properties): adiciona uma nova propriedade que obtém ou define um objeto que fornece métodos de gerenciamento do padrão de recorrência de um item de compromisso. Essa propriedade também pode ser usada para obter o padrão de recorrência de um item de solicitação de reunião.
 - Adicionado o [Office.context.mailbox.item.removeHandlerAsync](office.context.mailbox.item.md#methods): adiciona um novo método que remove um manipulador de eventos.
 - Adicionado o [Office.context.mailbox.item.seriesId](office.context.mailbox.item.md#properties): adiciona uma nova propriedade que obtém a ID da série à qual uma ocorrência pertence.
-- Adicionado o [Office.MailboxEnums.Days](/javascript/api/outlook/office.mailboxenums.days?view=outlook-js-1.7): adiciona uma nova enumeração que especifica o dia da semana ou o tipo de dia.
-- Adicionado o [Office.MailboxEnums.Month](/javascript/api/outlook/office.mailboxenums.month?view=outlook-js-1.7): adiciona uma nova enumeração que especifica o mês.
-- Adicionado o [Office.MailboxEnums.RecurrenceTimeZone](/javascript/api/outlook/office.mailboxenums.recurrencetimezone?view=outlook-js-1.7): adiciona uma nova enumeração que especifica o fuso horário aplicado à recorrência.
-- Adicionado o [Office.MailboxEnums.RecurrenceType](/javascript/api/outlook/office.mailboxenums.recurrencetype?view=outlook-js-1.7): adiciona uma nova enumeração que especifica o tipo de recorrência.
-- Adicionado o [Office.MailboxEnums.WeekNumber](/javascript/api/outlook/office.mailboxenums.weeknumber?view=outlook-js-1.7): adiciona uma nova enumeração que especifica a semana do mês.
+- Adicionado o [Office.MailboxEnums.Days](/javascript/api/outlook/office.mailboxenums.days?view=outlook-js-1.7&preserve-view=true): adiciona uma nova enumeração que especifica o dia da semana ou o tipo de dia.
+- Adicionado o [Office.MailboxEnums.Month](/javascript/api/outlook/office.mailboxenums.month?view=outlook-js-1.7&preserve-view=true): adiciona uma nova enumeração que especifica o mês.
+- Adicionado o [Office.MailboxEnums.RecurrenceTimeZone](/javascript/api/outlook/office.mailboxenums.recurrencetimezone?view=outlook-js-1.7&preserve-view=true): adiciona uma nova enumeração que especifica o fuso horário aplicado à recorrência.
+- Adicionado o [Office.MailboxEnums.RecurrenceType](/javascript/api/outlook/office.mailboxenums.recurrencetype?view=outlook-js-1.7&preserve-view=true): adiciona uma nova enumeração que especifica o tipo de recorrência.
+- Adicionado o [Office.MailboxEnums.WeekNumber](/javascript/api/outlook/office.mailboxenums.weeknumber?view=outlook-js-1.7&preserve-view=true): adiciona uma nova enumeração que especifica a semana do mês.
 - Modificado [Office.EventType](/javascript/api/office/office.eventtype): Adiciona suporte para eventos `RecurrenceChanged`, `RecipientsChanged`, e `AppointmentTimeChanged`.
 
 ## <a name="see-also"></a>Confira também

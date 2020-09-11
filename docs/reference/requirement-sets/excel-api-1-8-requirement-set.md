@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos ExcelApi 1,8
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: e5d40df0ec9e6b5fb307f834c239c7fa895af42e
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: ad8c67fddffeec7937b66d43fb58a8608d662be1
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611397"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430832"
 ---
 # <a name="whats-new-in-excel-javascript-api-18"></a>O que há de novo na API JavaScript do Excel 1,8
 
@@ -33,14 +33,14 @@ Mais [eventos](../../excel/excel-add-ins-events.md) foram adicionados para os gr
 
 ## <a name="api-list"></a>Lista de APIs
 
-A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do Excel 1,8. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Excel 1,8 ou anterior, confira [APIs do Excel no conjunto de requisitos 1,8 ou anterior](/javascript/api/excel?view=excel-js-1.8).
+A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do Excel 1,8. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Excel 1,8 ou anterior, confira [APIs do Excel no conjunto de requisitos 1,8 ou anterior](/javascript/api/excel?view=excel-js-1.8&preserve-view=true).
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
 |[BasicDataValidation](/javascript/api/excel/excel.basicdatavalidation)|[Formula1](/javascript/api/excel/excel.basicdatavalidation#formula1)|Especifica o operando direito quando a Propriedade Operator é definida como um operador binário como GreaterThan (o operando esquerdo é o valor que o usuário tenta inserir na célula). Com os operadores ternários between e não between, especifica o operando de limite inferior.|
 ||[Formula2](/javascript/api/excel/excel.basicdatavalidation#formula2)|Com os operadores ternários between e não between, especifica o operando de limite superior. Não é usado com os operadores binários, como GreaterThan.|
-||[operador](/javascript/api/excel/excel.basicdatavalidation#operator)|O operador a ser usado para validar os dados.|
-|[Chart](/javascript/api/excel/excel.chart)|[categoryLabelLevel](/javascript/api/excel/excel.chart#categorylabellevel)|Retorna ou define uma constante de enumeração ChartCategoryLabelLevel que se refere a|
+||[operator](/javascript/api/excel/excel.basicdatavalidation#operator)|O operador a ser usado para validar os dados.|
+|[Gráfico](/javascript/api/excel/excel.chart)|[categoryLabelLevel](/javascript/api/excel/excel.chart#categorylabellevel)|Retorna ou define uma constante de enumeração ChartCategoryLabelLevel que se refere a|
 ||[displayBlanksAs](/javascript/api/excel/excel.chart#displayblanksas)|Retorna ou define a maneira como as células em branco são plotadas em um gráfico. Leitura/gravação.|
 ||[plotBy](/javascript/api/excel/excel.chart#plotby)|Retorna ou define como as colunas ou linhas são usadas como séries de dados no gráfico. Leitura/gravação.|
 ||[plotVisibleOnly](/javascript/api/excel/excel.chart#plotvisibleonly)|Verdadeiro se apenas as células visíveis forem plotadas.Falso se ambas as células visíveis e ocultas forem plotadas.. Leitura/gravação.|
@@ -185,7 +185,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[wholeNumber](/javascript/api/excel/excel.datavalidationrule#wholenumber)|Critérios de validação de dados WholeNumber.|
 |[Datetimedatavalidationcomo](/javascript/api/excel/excel.datetimedatavalidation)|[Formula1](/javascript/api/excel/excel.datetimedatavalidation#formula1)|Especifica o operando direito quando a Propriedade Operator é definida como um operador binário como GreaterThan (o operando esquerdo é o valor que o usuário tenta inserir na célula). Com os operadores ternários between e não between, especifica o operando de limite inferior.|
 ||[Formula2](/javascript/api/excel/excel.datetimedatavalidation#formula2)|Com os operadores ternários between e não between, especifica o operando de limite superior. Não é usado com os operadores binários, como GreaterThan.|
-||[operador](/javascript/api/excel/excel.datetimedatavalidation#operator)|O operador a ser usado para validar os dados.|
+||[operator](/javascript/api/excel/excel.datetimedatavalidation#operator)|O operador a ser usado para validar os dados.|
 |[FilterPivotHierarchy](/javascript/api/excel/excel.filterpivothierarchy)|[enableMultipleFilterItems](/javascript/api/excel/excel.filterpivothierarchy#enablemultiplefilteritems)|Determina se deseja permitir vários itens de filtro.|
 ||[name](/javascript/api/excel/excel.filterpivothierarchy#name)|Nome do FilterPivotHierarchy.|
 ||[position](/javascript/api/excel/excel.filterpivothierarchy#position)|Posição do FilterPivotHierarchy.|
@@ -258,7 +258,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 |[ShowAsRule](/javascript/api/excel/excel.showasrule)|[baseField](/javascript/api/excel/excel.showasrule#basefield)|O PivotField base para basear o cálculo ShowAs, se aplicável com base no tipo ShowAsCalculation, caso contrário, null.|
 ||[baseItem](/javascript/api/excel/excel.showasrule#baseitem)|O Item base para basear o cálculo ShowAs, se aplicável com base no tipo ShowAsCalculation, caso contrário, null.|
 ||[cálculo](/javascript/api/excel/excel.showasrule#calculation)|O cálculo de ShowAs a ser usado para o Data PivotField. Consulte Excel. ShowAsCalculation para obter detalhes.|
-|[Estilo](/javascript/api/excel/excel.style)|[autoIndent](/javascript/api/excel/excel.style#autoindent)|Indica se o texto é automaticamente indentado quando o alinhamento de texto em uma célula é definido como distribuição igual.|
+|[Style](/javascript/api/excel/excel.style)|[autoIndent](/javascript/api/excel/excel.style#autoindent)|Indica se o texto é automaticamente indentado quando o alinhamento de texto em uma célula é definido como distribuição igual.|
 ||[textOrientation](/javascript/api/excel/excel.style#textorientation)|A orientação de texto para o estilo.|
 |[Subtotals](/javascript/api/excel/excel.subtotals)|[automatic](/javascript/api/excel/excel.subtotals#automatic)|Se Automatic for definido como true, todos os outros valores serão ignorados ao definir os subtotais.|
 ||[normal](/javascript/api/excel/excel.subtotals#average)||
@@ -275,8 +275,8 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 |[Table](/javascript/api/excel/excel.table)|[legacyId](/javascript/api/excel/excel.table#legacyid)|Retorna uma ID numérica.|
 |[TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs)|[getRange(ctx: Excel.RequestContext)](/javascript/api/excel/excel.tablechangedeventargs#getrange-ctx-)|Obtém o intervalo que representa a área alterada de uma tabela em uma planilha específica.|
 ||[getRangeOrNullObject(ctx: Excel.RequestContext)](/javascript/api/excel/excel.tablechangedeventargs#getrangeornullobject-ctx-)|Obtém o intervalo que representa a área alterada de uma tabela em uma planilha específica. Pode retornar o objeto null.|
-|[Workbook](/javascript/api/excel/excel.workbook)|[readOnly](/javascript/api/excel/excel.workbook#readonly)|True se a pasta de trabalho estiver aberta no modo somente leitura. Somente leitura.|
-|[WorkbookCreated](/javascript/api/excel/excel.workbookcreated)||[Worksheet](/javascript/api/excel/excel.worksheet)|[oncalculado](/javascript/api/excel/excel.worksheet#oncalculated)|Ocorre quando a planilha é calculada.|
+|[Pasta de trabalho](/javascript/api/excel/excel.workbook)|[readOnly](/javascript/api/excel/excel.workbook#readonly)|True se a pasta de trabalho estiver aberta no modo somente leitura. Somente leitura.|
+|[WorkbookCreated](/javascript/api/excel/excel.workbookcreated)||[Planilha](/javascript/api/excel/excel.worksheet)|[oncalculado](/javascript/api/excel/excel.worksheet#oncalculated)|Ocorre quando a planilha é calculada.|
 ||[Linhas de grade](/javascript/api/excel/excel.worksheet#showgridlines)|Obtém ou define um sinalizador de linhas de grade da planilha.|
 ||[meus títulos](/javascript/api/excel/excel.worksheet#showheadings)|É ou define um sinalizador de cabeçalhos da planilha.|
 |[WorksheetCalculatedEventArgs](/javascript/api/excel/excel.worksheetcalculatedeventargs)|[tipo](/javascript/api/excel/excel.worksheetcalculatedeventargs#type)|Obtém o tipo do evento. Para saber detalhes, confira Excel.EventType.|
@@ -287,5 +287,5 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.8)
+- [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.8&preserve-view=true)
 - [Conjuntos de requisitos da API JavaScript do Excel](./excel-api-requirement-sets.md)

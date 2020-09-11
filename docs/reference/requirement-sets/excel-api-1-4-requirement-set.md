@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos ExcelApi 1,4
 ms.date: 07/28/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 3e2ad776383caf66c12e1402afe49962381dab61
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: a0a7be48e8a17ebcd650185519b7330ddb6041e0
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294266"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430748"
 ---
 # <a name="whats-new-in-excel-javascript-api-14"></a>Quais são as novidades na API JavaScript do Excel 1.4
 
@@ -48,7 +48,7 @@ worksheet.getItemOrNullObject("itemName")
 
 ## <a name="api-list"></a>Lista de APIs
 
-A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do Excel 1,4. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Excel 1,4 ou anterior, confira [APIs do Excel no conjunto de requisitos 1,4 ou anterior](/javascript/api/excel?view=excel-js-1.4).
+A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do Excel 1,4. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Excel 1,4 ou anterior, confira [APIs do Excel no conjunto de requisitos 1,4 ou anterior](/javascript/api/excel?view=excel-js-1.4&preserve-view=true).
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
@@ -96,5 +96,5 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.4)
+- [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.4&preserve-view=true)
 - [Conjuntos de requisitos da API JavaScript do Excel](./excel-api-requirement-sets.md)

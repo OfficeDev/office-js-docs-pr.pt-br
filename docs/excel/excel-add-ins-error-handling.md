@@ -3,12 +3,12 @@ title: Tratamento de erros
 description: Saiba mais sobre a lógica de tratamento de erro da API JavaScript do Excel para considerar os erros de tempo de execução.
 ms.date: 06/25/2020
 localization_priority: Normal
-ms.openlocfilehash: 189c92a4e960c8f9f1668f67f10472fdcdf84868
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: cb06ab890fc10afd327bde0eb708ff97fabbcdca
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408450"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430552"
 ---
 # <a name="error-handling"></a>Tratamento de erros
 
@@ -77,4 +77,4 @@ A tabela a seguir é uma lista de erros que a API pode retornar.
 ## <a name="see-also"></a>Confira também
 
 - [Modelo de objeto do JavaScript do Excel em suplementos do Office](excel-add-ins-core-concepts.md)
-- [Objeto OfficeExtension.Error (API JavaScript para Excel)](/javascript/api/office/officeextension.error?view=excel-js-preview)
+- [Objeto OfficeExtension.Error (API JavaScript para Excel)](/javascript/api/office/officeextension.error?view=excel-js-preview&preserve-view=true)

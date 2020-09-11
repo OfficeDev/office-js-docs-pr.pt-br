@@ -1,14 +1,14 @@
 ---
 title: Usar o Office UI Fabric React em Suplementos do Office
 description: Aprenda a usar o Office UI Fabric React em suplementos do Office.
-ms.date: 01/16/2020
+ms.date: 09/09/2020
 localization_priority: Normal
-ms.openlocfilehash: d0c46b30f361fcc9d2d7c08170b70c66f513bdae
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1d1e89d51c4e5efa0ead1b1716e0f1014a63e85f
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608466"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430580"
 ---
 # <a name="use-office-ui-fabric-react-in-office-add-ins"></a>Usar o Office UI Fabric React em Suplementos do Office
 
@@ -53,7 +53,7 @@ Depois que você concluir o assistente, o gerador criará o projeto e instalará
 2. Conclua as etapas a seguir para iniciar o servidor Web local e fazer o sideload do seu suplemento.
 
     > [!NOTE]
-    > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
+    > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se você for solicitado a instalar um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer. Você também pode ter que executar o prompt de comando ou o terminal como administrador para que as alterações sejam feitas.
 
     > [!TIP]
     > Se você estiver testando o seu suplemento no Mac, execute o seguinte comando antes de continuar. O servidor Web local é iniciado quando este comando é executado.

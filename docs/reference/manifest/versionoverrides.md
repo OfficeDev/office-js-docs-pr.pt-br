@@ -3,12 +3,12 @@ title: Elemento VersionOverrides no arquivo de manifesto
 description: Documentação de referência do elemento VersionOverrides para arquivos de manifesto de suplementos do Office (XML).
 ms.date: 03/05/2020
 localization_priority: Normal
-ms.openlocfilehash: 588f0074941b41a617dd912d78ed2ef2c59f0886
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 979a75c3ea8b4d600a2c43fc4edfcb0d4e96930e
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293832"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47431539"
 ---
 # <a name="versionoverrides-element"></a>Elemento VersionOverrides
 
@@ -45,7 +45,7 @@ A seguir, a lista o valor necessário do valor **xmlns** , dependendo do valor *
 |  [EquivalentAddins](equivalentaddins.md)    |  Não  | Especifica os suplementos nativos (COM/XLL) equivalentes ao suplemento Web. O suplemento Web não será ativado se um suplemento nativo equivalente estiver instalado.|
 |  **VersionOverrides**    |  Não  | Define comandos de suplemento em uma versão mais recente do esquema. Para saber mais, confira o tópico [Implementar várias versões](#implementing-multiple-versions). |
 |  [WebApplicationInfo](webapplicationinfo.md)    |  Não  | Especifica detalhes sobre o registro do suplemento com emissores de token seguros, como o Azure Active Directory V 2.0. |
-|  [ExtendedPermissions](extendedpermissions.md) |  Não  |  Especifica uma coleção de permissões estendidas.<br><br>**Importante**: como a API [Office. Body. appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview#appendonsendasync-data--options--callback-) está atualmente em versão prévia, os suplementos que usam o `ExtendedPermissions` elemento não podem ser publicados no AppSource ou implantados por meio da implantação centralizada. |
+|  [ExtendedPermissions](extendedpermissions.md) |  Não  |  Especifica uma coleção de permissões estendidas.<br><br>**Importante**: como a API [Office. Body. appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#appendonsendasync-data--options--callback-) está atualmente em versão prévia, os suplementos que usam o `ExtendedPermissions` elemento não podem ser publicados no AppSource ou implantados por meio da implantação centralizada. |
 
 ### <a name="versionoverrides-example"></a>Exemplo de VersionOverrides
 

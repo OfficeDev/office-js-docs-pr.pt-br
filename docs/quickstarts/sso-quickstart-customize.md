@@ -1,15 +1,15 @@
 ---
 title: Personalizar o suplemento habilitado para SSO do Node.js.
 description: Saiba mais sobre como personalizar o suplemento habilitado para SSO que você criou com o gerador Yeoman.
-ms.date: 07/07/2020
+ms.date: 09/09/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 41644ce28040f96ff2e4a22cac33ef2d45f1dc81
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 45c069cbcc861fa5881b7e69cdd789071d398926
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294301"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430993"
 ---
 # <a name="customize-your-nodejs-sso-enabled-add-in"></a>Personalizar o suplemento habilitado para SSO do Node.js.
 
@@ -608,10 +608,10 @@ Execute as etapas a seguir para experimentar um suplemento do Outlook.
 1. Na pasta raiz do projeto, execute o seguinte comando para compilar o projeto e iniciar o servidor Web local.
 
     > [!NOTE]
-    > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se for solicitado a instalação de um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
+    > Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se for solicitado a instalação de um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer. Você também pode ter que executar o prompt de comando ou o terminal como administrador para que as alterações sejam feitas.
 
     ```command&nbsp;line
-    npm start
+    npm run dev-server
     ```
 
 2. Siga as instruções [Realizar sideload dos suplementos do Outlook para teste](/outlook/add-ins/sideload-outlook-add-ins-for-testing)para realizar o sideload do suplemento do Outlook. Certifique-se de que você está conectado ao Outlook com um usuário que é membro da mesma organização do Microsoft 365 que a conta de administrador do Microsoft 365 que você usou para se conectar ao Azure durante a [configuração do SSO](sso-quickstart.md#configure-sso) para o aplicativo. Isso estabelecerá as condições apropriadas para que o SSO seja bem-sucedido. 

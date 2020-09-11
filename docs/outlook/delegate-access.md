@@ -3,19 +3,19 @@ title: Habilitar cenários de acesso de representante em um suplemento do Outloo
 description: Descreve brevemente o acesso de representante e discute como configurar o suporte a suplementos.
 ms.date: 09/03/2020
 localization_priority: Normal
-ms.openlocfilehash: 965798995638c9ec518d1e69ed23763d845fb7ec
-ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
+ms.openlocfilehash: 68b912d35f68cbf1177dd0b809994840092330a9
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "47363825"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430979"
 ---
 # <a name="enable-delegate-access-scenarios-in-an-outlook-add-in"></a>Habilitar cenários de acesso de representante em um suplemento do Outlook
 
 Um proprietário de caixa de correio pode usar o recurso de acesso de representante para [permitir que outra pessoa gerencie seus emails e calendários](https://support.office.com/article/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926). Este artigo especifica a quais permissões de representante a API JavaScript do Office oferece suporte e descreve como habilitar cenários de acesso de representante no suplemento do Outlook.
 
 > [!IMPORTANT]
-> O acesso de representante não está disponível atualmente no Outlook no Android e iOS. Além disso, esse recurso não está disponível atualmente com [caixas de correio compartilhadas em grupo](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide#shared-mailboxes) no Outlook na Web. Essa funcionalidade pode ser disponibilizada no futuro.
+> O acesso de representante não está disponível atualmente no Outlook no Android e iOS. Além disso, esse recurso não está disponível atualmente com [caixas de correio compartilhadas em grupo](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes) no Outlook na Web. Essa funcionalidade pode ser disponibilizada no futuro.
 >
 > O suporte para esse recurso foi introduzido no conjunto de requisitos 1,8. Confira, [clientes e plataformas](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
 

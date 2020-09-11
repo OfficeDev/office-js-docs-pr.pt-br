@@ -3,12 +3,12 @@ title: Criar um suplemento de Project que usa REST com um serviço OData local d
 description: Saiba como criar um suplemento de painel de tarefas para o Project Professional 2013 que compara os dados de custo e trabalho no projeto ativo com as médias de todos os projetos na instância atual do Project Web App.
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: ca5c33815b4f47ba8aa88625725b3b235853c7fb
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 17325b9a59c502d5d7331702584292579b36dc50
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611894"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47431196"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>Criar um suplemento do Project que usa REST com um serviço OData local do Project Server
 
@@ -101,7 +101,7 @@ A pasta **AddIn** (consulte a captura de tela a seguir) contém o arquivo app. C
 
 ![Exibir os arquivos do projeto Web no Gerenciador de Soluções](../images/pj15-hello-project-o-data-initial-solution-explorer.png)
 
-O manifesto do projeto **HelloProjectOData** é o arquivo HelloProjectOData. xml. Opcionalmente, você pode modificar o manifesto para adicionar uma descrição do suplemento, uma referência a um ícone, informações de linguagem adicionais e outras configurações. O Procedimento 3 simplesmente modifica o nome de exibição e a descrição do suplemento e adiciona um ícone.
+O manifesto do projeto **HelloProjectOData** é o arquivo HelloProjectOData.xml. Opcionalmente, você pode modificar o manifesto para adicionar uma descrição do suplemento, uma referência a um ícone, informações de linguagem adicionais e outras configurações. O Procedimento 3 simplesmente modifica o nome de exibição e a descrição do suplemento e adiciona um ícone.
 
 Para saber mais sobre o manifesto, confira [Manifesto XML de suplementos do Office](../develop/add-in-manifests.md) e [Referência de esquema para manifestos de suplementos do Office (versão 1.1)](../develop/add-in-manifests.md#see-also).
 
@@ -125,7 +125,7 @@ As etapas a seguir mostram como adicionar um arquivo de ícone à solução do V
 
     ![Ícone do aplicativo HelloProjectOData ](../images/pj15-hello-project-data-new-icon.jpg)
 
-3. No manifesto HelloProjectOData. xml, adicione um elemento **IconUrl** abaixo do elemento **Description** , onde o valor da URL do ícone é o caminho relativo para o arquivo de ícone 32x32. Por exemplo, adicione a seguinte linha: **<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />**. O arquivo de manifesto HelloProjectOData. xml agora contém o seguinte (o valor de **ID** será diferente):
+3. No manifesto de HelloProjectOData.xml, adicione um elemento **IconUrl** abaixo do elemento **Description** , onde o valor da URL do ícone é o caminho relativo para o arquivo de ícone 32x32. Por exemplo, adicione a seguinte linha: **<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />**. O arquivo de manifesto HelloProjectOData.xml agora contém o seguinte (o valor de **ID** será diferente):
 
     ```XML
     <?xml version="1.0" encoding="UTF-8"?>
@@ -171,16 +171,16 @@ O painel de tarefas mostra o nome de exibição do suplemento na parte superior,
 
 ### <a name="procedure-4-to-create-the-html-content"></a>Procedimento 4. Para criar o conteúdo HTML
 
-1. No elemento **Head** do arquivo Home. html, adicione quaisquer elementos de **link** adicionais para arquivos CSS que seu suplemento usa. O modelo de projeto do Visual Studio inclui um link para o arquivo App.css que você pode usar para os estilos CSS personalizados.
+1. No elemento **Head** do arquivo Home.html, adicione quaisquer elementos de **link** adicionais para arquivos CSS que seu suplemento usa. O modelo de projeto do Visual Studio inclui um link para o arquivo App.css que você pode usar para os estilos CSS personalizados.
 
-2. Adicione qualquer elemento de **script** adicional para bibliotecas JavaScript que seu suplemento usa. O modelo de projeto inclui links para os arquivos jQuery- _[Version]_. js, Office. js e MicrosoftAjax. js na pasta **scripts** .
+2. Adicione qualquer elemento de **script** adicional para bibliotecas JavaScript que seu suplemento usa. O modelo de projeto inclui links para os arquivos jQuery- _[Version]_. js, office.js e MicrosoftAjax.js na pasta **scripts** .
 
     > [!NOTE]
     > Antes de implantar o suplemento, mude a referência office.js e a referência jQuery para a referência CDN (rede de distribuição de conteúdo). A referência CDN fornece a versão mais recente e melhora o desempenho.
 
-    O suplemento **HelloProjectOData** também usa o arquivo SurfaceErrors. js, que exibe erros em uma mensagem pop-up. Você pode copiar o código da seção de _programação robusta_ de [criar seu primeiro suplemento de painel de tarefas para o Project 2013 usando um editor de texto](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)e, em seguida, adicionar um arquivo SurfaceErrors. js na pasta **Scripts\Office** do projeto **HelloProjectODataWeb** .
+    O suplemento do **HelloProjectOData** também usa o arquivo SurfaceErrors.js, que exibe erros em uma mensagem pop-up. Você pode copiar o código da seção de _programação robusta_ de [criar seu primeiro suplemento de painel de tarefas para o Project 2013 usando um editor de texto](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)e, em seguida, adicionar um arquivo de SurfaceErrors.js na pasta **Scripts\Office** do projeto **HelloProjectODataWeb** .
 
-    A seguir está o código HTML atualizado para o elemento **Head** , com a linha adicional para o arquivo SurfaceErrors. js:
+    A seguir está o código HTML atualizado para o elemento **Head** , com a linha adicional para o arquivo SurfaceErrors.js:
 
     ```HTML
     <!DOCTYPE html>
@@ -218,7 +218,7 @@ O painel de tarefas mostra o nome de exibição do suplemento na parte superior,
 
 3. No elemento **Body** , exclua o código existente do modelo e, em seguida, adicione o código para a interface do usuário. Se um elemento deve ser preenchido com os dados ou manipulado por uma instrução jQuery, deve incluir um atributo **id** exclusivo. No código a seguir, os atributos de **ID** para os elementos **Button**, **span**e **td** (definição de célula de tabela) que as funções jQuery usam são mostrados em negrito.
 
-   The following HTML adds a graphic image, which could be a company logo. Você pode usar um logotipo de sua escolha ou copiar o arquivo NewLogo. png do download do SDK do Project 2013 e, em seguida, usar o **Gerenciador de soluções** para adicionar o arquivo à `HelloProjectODataWeb\Images` pasta.
+   The following HTML adds a graphic image, which could be a company logo. Você pode usar um logotipo de sua escolha ou copiar o arquivo NewLogo.png do download do SDK do Project 2013 e, em seguida, usar o **Gerenciador de soluções** para adicionar o arquivo à `HelloProjectODataWeb\Images` pasta.
 
     ```HTML
     <body>
@@ -276,15 +276,15 @@ O painel de tarefas mostra o nome de exibição do suplemento na parte superior,
 
 ## <a name="creating-the-javascript-code-for-the-add-in"></a>Criar o código JavaScript para o suplemento
 
-O modelo para um suplemento de painel de tarefas do Project inclui código de inicialização padrão que foi projetado para demonstrar ações get e set básicas para dados em um documento no caso de um suplemento típico do Office 2013. Como o Project 2013 não oferece suporte a ações que gravam no projeto ativo e o suplemento do **HelloProjectOData** não usa o `getSelectedDataAsync` método, você pode excluir o script dentro da `Office.initialize` função e excluir a `setData` função e `getData` a função no arquivo HelloProjectOData. js padrão.
+O modelo para um suplemento de painel de tarefas do Project inclui código de inicialização padrão que foi projetado para demonstrar ações get e set básicas para dados em um documento no caso de um suplemento típico do Office 2013. Como o Project 2013 não oferece suporte a ações que gravam no projeto ativo e o suplemento do **HelloProjectOData** não usa o `getSelectedDataAsync` método, você pode excluir o script dentro da `Office.initialize` função e excluir a `setData` função e `getData` a função no arquivo de HelloProjectOData.js padrão.
 
 O JavaScript inclui constantes globais para a consulta REST e variáveis globais que são usadas em várias funções. O botão **Get ProjectData Endpoint** chama a `setOdataUrl` função, que inicializa as variáveis globais e determina se o projeto está conectado ao Project Web App.
 
-O restante do arquivo HelloProjectOData. js inclui duas funções: a `retrieveOData` função é chamada quando o usuário seleciona **comparar todos os projetos**; e a `parseODataResult` função calcula médias e, em seguida, preenche a tabela de comparação com valores que são formatados para cor e unidades.
+O restante do arquivo de HelloProjectOData.js inclui duas funções: a `retrieveOData` função é chamada quando o usuário seleciona **comparar todos os projetos**; e a `parseODataResult` função calcula a média e, em seguida, preenche a tabela de comparação com valores que são formatados para cor e unidades.
 
 ### <a name="procedure-5-to-create-the-javascript-code"></a>Procedimento 5. Para criar o código JavaScript
 
-1. Exclua todo o código no arquivo HelloProjectOData. js padrão e, em seguida, adicione a função global Variables e `**` Office. Initialize. Os nomes de variáveis que são todas as letras maiúsculas sugerem que são constantes; Eles são usados posteriormente com a variável **_pwa** para criar a consulta REST neste exemplo.
+1. Exclua todo o código no arquivo de HelloProjectOData.js padrão e, em seguida, adicione as variáveis globais e a `**` funçãoOffice.initialize. Os nomes de variáveis que são todas as letras maiúsculas sugerem que são constantes; Eles são usados posteriormente com a variável **_pwa** para criar a consulta REST neste exemplo.
 
     ```js
     var PROJDATA = "/_api/ProjectData";
@@ -306,10 +306,10 @@ O restante do arquivo HelloProjectOData. js inclui duas funções: a `retrieveOD
     }
     ```
 
-2. Adicionar `setOdataUrl` funções relacionadas. As `setOdataUrl` chamadas de função `getProjectGuid` e `getDocumentUrl` para inicializar as variáveis globais. No [método getProjectFieldAsync](/javascript/api/office/office.document), a função anônima para o parâmetro _callback_ habilita o botão **comparar todos os projetos** usando o `removeAttr` método na biblioteca jQuery e, em seguida, exibe a URL do serviço **ProjectData** . Se o Project não estiver conectado ao Project Web App, a função gera um erro e exibe uma mensagem de erro pop-up. O arquivo SurfaceErrors. js inclui o `throwError` método.
+2. Adicionar `setOdataUrl` funções relacionadas. As `setOdataUrl` chamadas de função `getProjectGuid` e `getDocumentUrl` para inicializar as variáveis globais. No [método getProjectFieldAsync](/javascript/api/office/office.document), a função anônima para o parâmetro  _callback_ habilita o botão **comparar todos os projetos** usando o `removeAttr` método na biblioteca jQuery e, em seguida, exibe a URL do serviço **ProjectData** . Se o Project não estiver conectado ao Project Web App, a função gera um erro e exibe uma mensagem de erro pop-up. O arquivo SurfaceErrors.js inclui o `throwError` método.
 
    > [!NOTE]
-   > Se você executar o Visual Studio no computador do Project Server, para usar a depuração **F5** , descomente o código após a linha que inicializa a variável global **_pwa** . Para habilitar o uso do `ajax` método jQuery ao depurar no computador do Project Server, você deve definir o `localhost` valor para a URL do PWA. Se você executar o Visual Studio em um computador remoto, a `localhost` URL não será necessária. Before you deploy the add-in, comment out that code.
+   > Se você executar o Visual Studio no computador do Project Server, para usar a depuração **F5** , descomente o código após a linha que inicializa a variável global **_pwa** . Para habilitar o uso do `ajax` método jQuery ao depurar no computador do Project Server, você deve definir o `localhost` valor para a URL do PWA. Se você executar o Visual Studio em um computador remoto, a  `localhost` URL não será necessária. Before you deploy the add-in, comment out that code.
 
     ```js
     function setOdataUrl() {
@@ -372,7 +372,7 @@ O restante do arquivo HelloProjectOData. js inclui duas funções: a `retrieveOD
    > [!NOTE]
    > O seguinte código funciona com uma instalação no local do Project Server 2013. Para o Project na Web, use o OAuth para autenticação baseada em token. Para saber mais, confira [Como lidar com limitações de política de mesma origem nos Suplementos do Office](../develop/addressing-same-origin-policy-limitations.md).
 
-   Na `ajax` chamada, você pode usar o parâmetro _Headers_ ou o parâmetro _BeforeSend_ . O parâmetro _Complete_ é uma função anônima para que fique no mesmo escopo das variáveis no `retrieveOData` . A função para o parâmetro _Complete_ exibe resultados no `odataText` controle e também chama o `parseODataResult` método para analisar e exibir a resposta JSON. O parâmetro _Error_ especifica a `getProjectDataErrorHandler` função nomeada, que grava uma mensagem de erro no `odataText` controle e também usa o `throwError` método para exibir uma mensagem pop-up.
+   Na `ajax` chamada, você pode usar o parâmetro _Headers_ ou o parâmetro _BeforeSend_ . O parâmetro _Complete_ é uma função anônima para que fique no mesmo escopo das variáveis no `retrieveOData` . A função para o parâmetro  _Complete_ exibe resultados no `odataText` controle e também chama o `parseODataResult` método para analisar e exibir a resposta JSON. O parâmetro _Error_ especifica a `getProjectDataErrorHandler` função nomeada, que grava uma mensagem de erro no `odataText` controle e também usa o `throwError` método para exibir uma mensagem pop-up.
 
     ```js
     // Functions to get and parse the Project Server reporting data./
@@ -1111,7 +1111,7 @@ Se você modificar o suplemento **HelloProjectOData** para uso em produção, si
 
   `~/ProjectData/Projects()?skip= [numSkipped]&amp;$top=100&amp;$filter=[filter]&amp;$select=[field1,field2, ???????]`
 
-  For more information, see [OData System Query Options Using the REST Endpoint](/previous-versions/dynamicscrm-2015/developers-guide/gg309461(v=crm.7)). You can also use the [Set-SPProjectOdataConfiguration](/powershell/module/sharepoint-server/Set-SPProjectOdataConfiguration?view=sharepoint-ps) command in Windows PowerShell to override the default page size for a query of the **Projects** entity set (or any of the 33 entity sets). See [ProjectData - Project OData service reference](/previous-versions/office/project-odata/jj163015(v=office.15)).
+  For more information, see [OData System Query Options Using the REST Endpoint](/previous-versions/dynamicscrm-2015/developers-guide/gg309461(v=crm.7)). You can also use the [Set-SPProjectOdataConfiguration](/powershell/module/sharepoint-server/Set-SPProjectOdataConfiguration?view=sharepoint-ps&preserve-view=true) command in Windows PowerShell to override the default page size for a query of the **Projects** entity set (or any of the 33 entity sets). See [ProjectData - Project OData service reference](/previous-versions/office/project-odata/jj163015(v=office.15)).
 
 - Para implantar o suplemento, confira [Publicar seu suplemento do Office](../publish/publish.md).
 

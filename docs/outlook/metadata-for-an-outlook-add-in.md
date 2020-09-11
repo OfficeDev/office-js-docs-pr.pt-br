@@ -3,12 +3,12 @@ title: Obter e definir metadados em um suplemento do Outlook
 description: Gerencie dados personalizados no suplemento do Outlook usando configurações de roaming ou propriedades personalizadas.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 526be452d4d75a902f859f4cde20b02f5fc7f300
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: abcae0766079f090ec15b9d11ec66c43355bfb0f
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609038"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47431238"
 ---
 # <a name="get-and-set-add-in-metadata-for-an-outlook-add-in"></a>Obter e definir metadados de suplemento para um suplemento do Outlook
 
@@ -69,7 +69,7 @@ Office.initialize = function () {
 
 Continuando com o exemplo anterior, a função JavaScript a seguir, `setAddInSetting`, mostra como usar o método [RoamingSettings.set](/javascript/api/outlook/office.RoamingSettings) para definir uma configuração denominada `cookie` com a data de hoje e manter os dados usando o método [RoamingSettings.saveAsync](/javascript/api/outlook/office.RoamingSettings#saveasync-callback-) para salvar todas as configurações de roaming de volta no servidor.
 
-O `set` método cria a configuração se a configuração ainda não existir e atribui a configuração ao valor especificado. O `saveAsync` método salva as configurações de roaming de forma assíncrona. Este exemplo de código passa um método de retorno de chamada, `saveMyAddInSettingsCallback` , para `saveAsync` quando a chamada assíncrona é concluída, `saveMyAddInSettingsCallback` é chamado usando um parâmetro, _AsyncResult_. Esse parâmetro é um objeto [AsyncResult](/javascript/api/office/office.asyncresult) que contém o resultado e detalhes sobre a chamada assíncrona. Você pode usar o parâmetro opcional _userContext_ para passar as informações de estado de chamada assíncrona à função de retorno de chamada.
+O `set` método cria a configuração se a configuração ainda não existir e atribui a configuração ao valor especificado. O `saveAsync` método salva as configurações de roaming de forma assíncrona. Este exemplo de código passa um método de retorno de chamada, `saveMyAddInSettingsCallback` , para `saveAsync` quando a chamada assíncrona é concluída,  `saveMyAddInSettingsCallback` é chamado usando um parâmetro, _AsyncResult_. Esse parâmetro é um objeto [AsyncResult](/javascript/api/office/office.asyncresult) que contém o resultado e detalhes sobre a chamada assíncrona. Você pode usar o parâmetro opcional _userContext_ para passar as informações de estado de chamada assíncrona à função de retorno de chamada.
 
 ```js
 // Set a roaming setting.
@@ -273,7 +273,7 @@ GET https://outlook.office.com/api/v2.0/Me/Events?$filter=SingleValueExtendedPro
   {00020329-0000-0000-C000-000000000046} Name cecp-<app-guid>')
 ```
 
-Outros exemplos que usam o REST para obter um único valor com base MAPI estendida, confira [Obter singleValueExtendedProperty](/graph/api/singlevaluelegacyextendedproperty-get?view=graph-rest-1.0).
+Outros exemplos que usam o REST para obter um único valor com base MAPI estendida, confira [Obter singleValueExtendedProperty](/graph/api/singlevaluelegacyextendedproperty-get?view=graph-rest-1.0&preserve-view=true).
 
 O exemplo a seguir mostra como acessar um item e suas propriedades personalizadas. Na função retorno de chamada para o `done` método `item.SingleValueExtendedProperties` contém uma lista das propriedades personalizadas solicitadas.
 

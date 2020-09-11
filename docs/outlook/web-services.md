@@ -3,12 +3,12 @@ title: Usar os Serviços Web do Exchange a partir de um suplemento do Outlook
 description: Fornece um exemplo que mostra como um suplemento do Outlook pode solicitar informações dos Serviços Web do Exchange.
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: a8299b3e96db48c296fe0e61b36668a788fb8799
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: f9cf2a41ce5da325ae17812e89d9d8ecd315e573
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292479"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430986"
 ---
 # <a name="call-web-services-from-an-outlook-add-in"></a>Chamar serviços Web de um suplemento do Outlook
 
@@ -197,7 +197,7 @@ A tabela a seguir lista as operações dos EWS compatíveis com suplementos. Par
 Quando você usa o `makeEwsRequestAsync` método, a solicitação é autenticada usando as credenciais da conta de email do usuário atual. O `makeEwsRequestAsync` método gerencia as credenciais para você para que você não precise fornecer credenciais de autenticação com a solicitação.
 
 > [!NOTE]
-> O administrador do servidor deve usar o cmdlet [New-WebServicesVirtualDirectory](/powershell/module/exchange/client-access-servers/New-WebServicesVirtualDirectory?view=exchange-ps) ou [Set-WebServicesVirtualDirectory](/powershell/module/exchange/client-access-servers/Set-WebServicesVirtualDirectory?view=exchange-ps) para definir o parâmetro _OAUTHAUTHENTICATION_ como **true** no diretório EWS do servidor de acesso para cliente a fim de habilitar o `makeEwsRequestAsync` método para fazer solicitações do EWS.
+> O administrador do servidor deve usar o cmdlet [New-WebServicesVirtualDirectory](/powershell/module/exchange/client-access-servers/New-WebServicesVirtualDirectory?view=exchange-ps&preserve-view=true) ou [Set-WebServicesVirtualDirectory](/powershell/module/exchange/client-access-servers/Set-WebServicesVirtualDirectory?view=exchange-ps&preserve-view=true) para definir o parâmetro _OAUTHAUTHENTICATION_ como **true** no diretório EWS do servidor de acesso para cliente a fim de habilitar o `makeEwsRequestAsync` método para fazer solicitações do EWS.
 
 O suplemento deve especificar a `ReadWriteMailbox` permissão em seu manifesto do suplemento para usar o `makeEwsRequestAsync` método. Para saber mais sobre como usar a `ReadWriteMailbox` permissão, confira a seção [ReadWriteMailbox permissão](understanding-outlook-add-in-permissions.md#readwritemailbox-permission) em [noções básicas sobre permissões de suplemento do Outlook](understanding-outlook-add-in-permissions.md).
 

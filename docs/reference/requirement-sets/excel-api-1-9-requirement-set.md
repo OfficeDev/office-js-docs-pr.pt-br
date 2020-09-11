@@ -4,12 +4,12 @@ description: Detalhes sobre o conjunto de requisitos ExcelApi 1,9
 ms.date: 07/26/2019
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 6e5de61328ef3e02bc4fcd39848c0f0ecdfff533
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 77e8ed886344f3761d7dfbb982a54a878a554980
+ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611390"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "47430853"
 ---
 # <a name="whats-new-in-excel-javascript-api-19"></a>O que há de novo na API JavaScript do Excel 1,9
 
@@ -29,7 +29,7 @@ Mais de 500 novas APIs do Excel foram introduzidas com o conjunto de requisitos 
 
 ## <a name="api-list"></a>Lista de APIs
 
-A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do Excel 1,9. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Excel 1,9 ou anterior, confira [APIs do Excel no conjunto de requisitos 1,9 ou anterior](/javascript/api/excel?view=excel-js-1.9).
+A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do Excel 1,9. Para exibir a documentação de referência da API para todas as APIs suportadas pelo conjunto de requisitos de API JavaScript do Excel 1,9 ou anterior, confira [APIs do Excel no conjunto de requisitos 1,9 ou anterior](/javascript/api/excel?view=excel-js-1.9&preserve-view=true).
 
 | Classe | Campos | Descrição |
 |:---|:---|:---|
@@ -69,7 +69,7 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 |[CellPropertiesFont](/javascript/api/excel/excel.cellpropertiesfont)|[bold](/javascript/api/excel/excel.cellpropertiesfont#bold)|Representa a propriedade `format.font.bold`.|
 ||[color](/javascript/api/excel/excel.cellpropertiesfont#color)|Representa a propriedade `format.font.color`.|
 ||[italic](/javascript/api/excel/excel.cellpropertiesfont#italic)|Representa a propriedade `format.font.italic`.|
-||[name](/javascript/api/excel/excel.cellpropertiesfont#name)|Representa a propriedade `format.font.name`.|
+||[name](/javascript/api/excel/excel.cellpropertiesfont#name)|Representa a propriedade`format.font.name`.|
 ||[size](/javascript/api/excel/excel.cellpropertiesfont#size)|Representa a propriedade`format.font.size`.|
 ||[strikethrough](/javascript/api/excel/excel.cellpropertiesfont#strikethrough)|Representa a propriedade `format.font.strikethrough`.|
 ||[subscript](/javascript/api/excel/excel.cellpropertiesfont#subscript)|Representa a propriedade `format.font.subscript`.|
@@ -484,5 +484,5 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 
 ## <a name="see-also"></a>Confira também
 
-- [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.9)
+- [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-1.9&preserve-view=true)
 - [Conjuntos de requisitos da API JavaScript do Excel](./excel-api-requirement-sets.md)
