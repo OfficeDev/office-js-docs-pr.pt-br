@@ -3,12 +3,12 @@ title: Crie um Suplemento do Office com Node.js que use logon único
 description: Aprenda a criar um suplemento baseado em node.js que usa o logon único do Office
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 2ca1cf37bade124498c99b0b25171871522c2bc7
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: a587f6a1ad596f4006734e0d850e009c3fc145b0
+ms.sourcegitcommit: 6e6de48f746416ec68b2cf4c298253986486fbfd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292873"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "47651934"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>Crie um Suplemento do Office com Node.js que use logon único
 
@@ -67,7 +67,7 @@ Este artigo apresenta o processo passo a passo de habilitação do logon único 
 1. Na página **Office-Add-in-NodeJS-SSO**, copie e salve os valores para a **ID do aplicativo (cliente)** e a **ID do diretório (locatário)**. Use ambos os valores nos procedimentos posteriores.
 
     > [!NOTE]
-    > Essa ID é o valor "Audience" quando outros aplicativos, como o aplicativo cliente do Office (por exemplo, PowerPoint, Word, Excel), procuram acesso autorizado ao aplicativo. Também é a "ID do cliente" do aplicativo quando ela, por sua vez, busca acesso autorizado ao Microsoft Graph.
+    > Este **aplicativo (cliente) ID** é o valor de "audiência" quando outros aplicativos, como o aplicativo cliente do Office (por exemplo, PowerPoint, Word, Excel), procuram acesso autorizado ao aplicativo. Também é a "ID do cliente" do aplicativo quando ela, por sua vez, busca acesso autorizado ao Microsoft Graph.
 
 1. Selecione **Autenticação** em **Gerenciar**. Na seção **concessão implícita** , habilite as caixas de seleção para token de **acesso** e **token de ID**. O exemplo tem um sistema de autorização de fallback que é chamado quando o SSO não está disponível. Esse sistema usa o fluxo implícito.
 

@@ -3,12 +3,12 @@ title: Criar um Suplemento do Office com ASP.NET que use logon único
 description: Um guia passo a passo sobre como criar (ou converter) um suplemento do Office com um back-end do ASP.NET para usar o logon único (SSO).
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 591761c9831109cb6900cb418e83d3240ddad29d
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: a72cef54083499cbf1f772dd7258a1cac1fd42c6
+ms.sourcegitcommit: 6e6de48f746416ec68b2cf4c298253986486fbfd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292866"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "47651948"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>Criar um Suplemento do Office com ASP.NET que use logon único
 
@@ -57,7 +57,7 @@ Clone ou baixe o repositório em [SSO com Suplemento ASPNET do Office](https://g
 1. Na página **Office-Add-in-ASPNET-SSO** , copie e salve os valores para a **ID do aplicativo (cliente)** e a **ID do diretório (locatário)**. Use ambos os valores nos procedimentos posteriores.
 
     > [!NOTE]
-    > Essa ID é o valor "Audience" quando outros aplicativos, como o aplicativo cliente do Office (por exemplo, PowerPoint, Word, Excel), procuram acesso autorizado ao aplicativo. Também é a "ID do cliente" do aplicativo quando ela, por sua vez, busca acesso autorizado ao Microsoft Graph.
+    > Este **aplicativo (cliente) ID** é o valor de "audiência" quando outros aplicativos, como o aplicativo cliente do Office (por exemplo, PowerPoint, Word, Excel), procuram acesso autorizado ao aplicativo. Também é a "ID do cliente" do aplicativo quando ela, por sua vez, busca acesso autorizado ao Microsoft Graph.
 
 1. Em **Gerenciar**, selecione **Certificados e segredos**. Selecione o botão **Novo segredo do cliente**. Insira um valor para **Descrição** e, em seguida, selecione uma opção adequada para **Expira** e escolha **Adicionar**. *Copiar o valor de segredo do cliente imediatamente e salvá-lo com a ID de aplicativo* antes de prosseguir, pois ele será necessário em um procedimento posterior.
 
