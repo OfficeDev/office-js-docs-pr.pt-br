@@ -3,12 +3,12 @@ title: Trabalhar com intervalos usando a API JavaScript do Excel (avançado)
 description: Funções e cenários de objetos de intervalo avançados, como células especiais, remoção de duplicatas e trabalho com datas.
 ms.date: 08/26/2020
 localization_priority: Normal
-ms.openlocfilehash: b3854d15a85db20e1c544ebfa6e8a63712e958d9
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: 485fb34c11774045308c6ed9053d01097cdc3f5b
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408443"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819571"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Trabalhar com intervalos usando a API JavaScript do Excel (avançado)
 
@@ -327,10 +327,7 @@ Excel.run(function (context) {
 
 Para desagrupar um grupo de linhas ou colunas, use o método [Range. Ungroup](/javascript/api/excel/excel.range#ungroup-groupoption-) . Isso remove o nível mais externo da estrutura de tópicos. Se vários grupos do mesmo tipo de linha ou coluna estiverem no mesmo nível no intervalo especificado, todos esses grupos serão desagrupados.
 
-## <a name="handle-dynamic-arrays-and-spilling-preview"></a>Manipular matrizes dinâmicas e derramamento (visualização)
-
-> [!NOTE]
-> As APIs de despejo dinâmico de matriz e intervalo estão atualmente em versão prévia. [!INCLUDE [Information about using preview Excel APIs](../includes/using-excel-preview-apis.md)]
+## <a name="handle-dynamic-arrays-and-spilling"></a>Manipular matrizes dinâmicas e derramamento
 
 Algumas fórmulas do Excel retornam [matrizes dinâmicas](https://support.microsoft.com/office/dynamic-array-formulas-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531). Eles preenchem os valores de várias células fora da célula original da fórmula. Esse estouro de valor é chamado de "derramar". O suplemento pode localizar o intervalo usado para um despejo com o método [Range. getSpillingToRange](/javascript/api/excel/excel.range#getspillingtorange--) . Há também uma [versão do * OrNullObject](..//develop/application-specific-api-model.md#ornullobject-methods-and-properties), `Range.getSpillingToRangeOrNullObject` .
 

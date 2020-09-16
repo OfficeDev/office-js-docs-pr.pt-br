@@ -3,16 +3,16 @@ title: Elemento VersionOverrides no arquivo de manifesto
 description: Documentação de referência do elemento VersionOverrides para arquivos de manifesto de suplementos do Office (XML).
 ms.date: 03/05/2020
 localization_priority: Normal
-ms.openlocfilehash: 979a75c3ea8b4d600a2c43fc4edfcb0d4e96930e
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: a744772c01c57c41a9dc20ee0accea5f070c3ff3
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431539"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819823"
 ---
 # <a name="versionoverrides-element"></a>Elemento VersionOverrides
 
-O elemento raiz que contém informações para os comandos de suplemento implementados pelo suplemento. **VersionOverrides** é um elemento filho do elemento [OfficeApp](./officeapp.md) no manifesto. Ele recebe suporte no esquema de manifesto v1.1 e posterior, mas é definido no esquema VersionOverrides v1.0 ou v1.1.
+O elemento raiz que contém informações para os comandos de suplemento implementados pelo suplemento. **VersionOverrides** é um elemento filho do elemento [OfficeApp](officeapp.md) no manifesto. Ele recebe suporte no esquema de manifesto v1.1 e posterior, mas é definido no esquema VersionOverrides v1.0 ou v1.1.
 
 ## <a name="attributes"></a>Atributos
 

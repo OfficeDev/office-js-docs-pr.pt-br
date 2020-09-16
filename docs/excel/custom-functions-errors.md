@@ -1,16 +1,16 @@
 ---
-ms.date: 05/06/2020
-description: 'Manipular e retornar erros como #NULL! da sua função personalizada'
-title: Manipular e retornar erros da sua função personalizada (visualização)
+ms.date: 09/15/2020
+description: 'Manipular e retornar erros como #NULL! a partir de sua função personalizada.'
+title: Manipular e retornar erros de sua função personalizada
 localization_priority: Normal
-ms.openlocfilehash: 5b1efcdc22a4efc59304bbe76f8d3f2d09979bc1
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 5da68417aa52f1d14340c8c8a46f4943ffd2d223
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093466"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819529"
 ---
-# <a name="handle-and-return-errors-from-your-custom-function-preview"></a>Manipular e retornar erros da sua função personalizada (visualização)
+# <a name="handle-and-return-errors-from-your-custom-function"></a>Manipular e retornar erros de sua função personalizada
 
 > [!NOTE]
 > Os recursos descritos neste artigo estão atualmente em visualização, estando sujeitos a alterações. No momento, eles não têm suporte para utilização em ambientes de produção. Você precisará participar do programa [Office Insider](https://insider.office.com/join) para experimentar os recursos de visualização.  Uma boa maneira de experimentar recursos de visualização é usar uma assinatura do Microsoft 365. Se você ainda não tem uma assinatura do Microsoft 365, é possível obter uma assinatura gratuita, de 90 dias, redimensionada pela Microsoft 365, participando do [programa de desenvolvedor do microsoft 365](https://developer.microsoft.com/office/dev-program).

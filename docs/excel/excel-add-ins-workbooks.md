@@ -3,12 +3,12 @@ title: Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 description: Exemplos de código que mostram como executar tarefas comuns com pastas de trabalho ou recursos de nível de aplicativo usando a API JavaScript do Excel.
 ms.date: 08/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 1da664b5ebbc8bd44b1c4e558a48997291e8967e
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: f0af6cc889a110406d987664575a6f3d1b30aa7b
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408695"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819501"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Trabalhar com pastas de trabalho usando a API JavaScript do Excel
 
@@ -171,10 +171,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-#### <a name="worksheet-level-custom-properties-preview"></a>Propriedades personalizadas no nível da planilha (versão prévia)
-
-> [!NOTE]
-> As propriedades personalizadas em nível de planilha estão atualmente em versão prévia. [!INCLUDE [Information about using preview Excel APIs](../includes/using-excel-preview-apis.md)]
+#### <a name="worksheet-level-custom-properties"></a>Propriedades personalizadas no nível da planilha
 
 As propriedades personalizadas também podem ser definidas no nível da planilha. Eles são semelhantes às propriedades personalizadas no nível do documento, exceto pelo fato de que a mesma chave pode ser repetida em diferentes planilhas. O exemplo a seguir mostra como criar uma propriedade **personalizada chamada** MySheet com o valor "Alpha" na planilha atual e, em seguida, recuperá-la.
 

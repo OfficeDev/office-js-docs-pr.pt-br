@@ -1,14 +1,14 @@
 ---
 title: Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 description: Recursos e APIs que estão atualmente em versão prévia para suplementos do Outlook.
-ms.date: 09/02/2020
+ms.date: 09/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 24cad394f0f3ffb95a05a81ccb38ee4aa72a3797
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: c5663946a12eddf1f076a8656a6daecae9186919
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431063"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819830"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Conjunto de requisitos do modo de visualização de API para suplementos do Outlook
 
@@ -307,20 +307,6 @@ Adicionado um novo objeto que representa os dados de sessão de um item.
 Adicionada uma nova propriedade para gerenciar os dados de sessão de um item no modo de composição.
 
 **Disponível no**: Outlook no Windows (conectado a uma assinatura do Microsoft 365)
-
-<br>
-
----
-
----
-
-### <a name="single-sign-on-sso"></a>SSO (logon único)
-
-#### <a name="officeruntimeauthgetaccesstoken"></a>[OfficeRuntime.auth.getAccessToken](../../../develop/sso-in-office-add-ins.md#sso-api-reference)
-
-Foi adicionado acesso ao `getAccessToken`, que permite que os suplementos [obtenham um token de acesso](../../../outlook/authenticate-a-user-with-an-sso-token.md) da API do Microsoft Graph.
-
-**Disponível em**: Outlook no Windows (conectado a uma assinatura do Microsoft 365), Outlook no Mac (conectado a uma assinatura do Microsoft 365), Outlook na Web (moderno), Outlook na Web (clássico)
 
 ## <a name="see-also"></a>Confira também
 

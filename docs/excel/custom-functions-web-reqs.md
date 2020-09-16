@@ -3,12 +3,12 @@ ms.date: 04/29/2020
 description: Solicite, transmita e cancele o fluxo de dados externos para sua pasta de trabalho com funções personalizadas no Excel
 title: Receber e tratar dados com funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: c53ad94c798f787447ab353201a245cd4f20d463
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: cd9a3eb3456cfd32d55d3caa6ccc36f2e05ed004
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44610458"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819508"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>Receber e tratar dados com funções personalizadas
 
@@ -29,7 +29,7 @@ Se uma função personalizada recupera dados de uma fonte externa como na web, e
 
 No exemplo de código a seguir, a `webRequest` função chega à API hipotética "número de pessoas no espaço" da Contoso, que acompanha o número de pessoas atualmente na estação de espaço internacional. A função retorna uma promessa de JavaScript e usa fetch para solicitar informações da API. Os dados resultantes são transformados em JSON e a`names` propriedade é convertida em uma cadeia de caracteres, que é usada para resolver a promessa.
 
-Ao desenvolver suas próprias funções, talvez você queira executar uma ação caso a solicitação da Web não tenha sido concluída de maneira oportuna ou considere [o envio de várias solicitações](./custom-functions-batching.md)da API.
+Ao desenvolver suas próprias funções, talvez você queira executar uma ação caso a solicitação da Web não tenha sido concluída de maneira oportuna ou considere [o envio de várias solicitações](custom-functions-batching.md)da API.
 
 ```JS
 /**

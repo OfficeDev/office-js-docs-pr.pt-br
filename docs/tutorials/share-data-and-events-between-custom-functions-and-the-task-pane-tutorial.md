@@ -4,12 +4,12 @@ description: Aprenda como compartilhar dados e eventos no Excel entre as funçõ
 ms.date: 08/13/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: e4dfb8afc57dc9590d47d927d1f540431d9c8838
-ms.sourcegitcommit: 3efa932b70035dde922929d207896e1a6007f620
+ms.openlocfilehash: 02cd2269965019efb4b9ac9851103924e6c5cc2c
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "46757377"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819627"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Tutorial: Compartilhar dados e eventos entre as funções personalizadas do Excel e do painel de tarefas
 
@@ -17,7 +17,7 @@ Você pode configurar o suplemento do Excel para usar um tempo de execução com
 
 Para a maioria dos cenários de funções personalizadas, recomendamos usar um tempo de execução compartilhada, a menos que você tenha uma razão específica para usar uma função personalizada fora do painel de tarefa (sem IU).
 
-Este tutorial presume que você esteja familiarizado com o uso do gerador Yo do Office para criar adicionais no projetos de. Considere concluir o [Tutorial de funções personalizadas do Excel](./excel-tutorial-create-custom-functions.md), se ainda não o fez.
+Este tutorial presume que você esteja familiarizado com o uso do gerador Yo do Office para criar adicionais no projetos de. Considere concluir o [Tutorial de funções personalizadas do Excel](excel-tutorial-create-custom-functions.md), se ainda não o fez.
 
 ## <a name="create-the-add-in-project"></a>Criar o projeto do suplemento
 

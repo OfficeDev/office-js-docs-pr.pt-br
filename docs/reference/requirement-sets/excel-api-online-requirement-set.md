@@ -1,15 +1,15 @@
 ---
 title: O conjunto de requisitos somente online da API JavaScript do Excel
-description: Detalhes sobre o conjunto de requisitos ExcelApiOnline
-ms.date: 05/06/2020
+description: Detalhes sobre o conjunto de requisitos ExcelApiOnline.
+ms.date: 09/15/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: aa497ff97533ff3a414905547a949fa8430c3efe
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 29f5826ba2adbf18b79033b83254b046210015fe
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430811"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819802"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>O conjunto de requisitos somente online da API JavaScript do Excel
 
@@ -40,20 +40,10 @@ Depois que a API estiver em um conjunto de requisitos de plataforma cruzada, voc
 
 ## <a name="api-list"></a>Lista de APIs
 
-As seguintes APIs estão atualmente disponíveis para o Excel na Web como parte do `ExcelApiOnline 1.1` conjunto de requisitos.
-
-| Classe | Campos | Descrição |
-|:---|:---|:---|
-|[ChartAxisTitle](/javascript/api/excel/excel.chartaxistitle)|[textOrientation](/javascript/api/excel/excel.chartaxistitle#textorientation)|Especifica o ângulo no qual o texto é orientado para o título do eixo do gráfico. O valor deve ser um inteiro de-90 a 90 ou o inteiro 180 para texto orientado verticalmente.|
-|[PivotTableScopedCollection](/javascript/api/excel/excel.pivottablescopedcollection)|[getCount()](/javascript/api/excel/excel.pivottablescopedcollection#getcount--)|Obtém o número de tabelas dinâmicas na coleção.|
-||[getFirst()](/javascript/api/excel/excel.pivottablescopedcollection#getfirst--)|Obtém a primeira tabela dinâmica na coleção. As tabelas dinâmicas da coleção são classificadas de cima para baixo e da esquerda para a direita, de forma que a tabela superior esquerda seja a primeira tabela dinâmica na coleção.|
-||[getItem(key: string)](/javascript/api/excel/excel.pivottablescopedcollection#getitem-key-)|Obtém uma Tabela Dinâmica por nome.|
-||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.pivottablescopedcollection#getitemornullobject-name-)|Obtém uma Tabela Dinâmica por nome. Se a tabela dinâmica não existir, retornará um objeto null.|
-||[items](/javascript/api/excel/excel.pivottablescopedcollection#items)|Obtém os itens filhos carregados nesta coleção.|
-|[Range](/javascript/api/excel/excel.range)|[getpivotrs (fullyContained?: Boolean)](/javascript/api/excel/excel.range#getpivottables-fullycontained-)|Obtém uma coleção com escopo de tabelas dinâmicas que se sobrepõe ao intervalo.|
+No momento, não há nenhuma API no `ExcelApiOnline` conjunto de requisitos. Todas as APIs que anteriormente faziam parte deste conjunto graduaram para um conjunto de requisitos numerados e estão disponíveis em todas as plataformas.
 
 ## <a name="see-also"></a>Confira também
 
 - [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel?view=excel-js-online&preserve-view=true)
-- [APIs de visualização do JavaScript para Excel](./excel-preview-apis.md)
-- [Conjuntos de requisitos da API JavaScript do Excel](./excel-api-requirement-sets.md)
+- [APIs de visualização do JavaScript para Excel](excel-preview-apis.md)
+- [Conjuntos de requisitos da API JavaScript do Excel](excel-api-requirement-sets.md)

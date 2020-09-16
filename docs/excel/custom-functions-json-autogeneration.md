@@ -3,12 +3,12 @@ ms.date: 05/06/2020
 description: Use tags JSDoc para criar dinamicamente seus metadados JSON de funções personalizadas.
 title: Gerar metadados JSON automaticamente para funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: f09fbbfcd028d773b9e9e25eb5eb43eb1d5a93cd
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 8138e738188e50d2a1369c359fbca3e1574db32f
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609307"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819515"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Gerar metadados JSON automaticamente para funções personalizadas
 
@@ -156,8 +156,8 @@ No exemplo a seguir, o `helpurl` é `www.contoso.com/weatherhelp` .
 
 Sintaxe de JavaScript: @param {type} nome _descrição_
 
-* `{type}`Especifica as informações de tipo nas chaves. Confira a seção [Tipos](#types) para mais informações sobre os tipos que podem ser usados. Se nenhum tipo for especificado, o tipo padrão `any` será usado.
-* `name`Especifica o parâmetro ao qual a marca @param se aplica. É necessário.
+* `{type}` Especifica as informações de tipo nas chaves. Confira a seção [Tipos](#types) para mais informações sobre os tipos que podem ser usados. Se nenhum tipo for especificado, o tipo padrão `any` será usado.
+* `name` Especifica o parâmetro ao qual a marca @param se aplica. É necessário.
 * `description` fornece a descrição que aparece no Excel para o parâmetro de função. É opcional.
 
 Para denotar um parâmetro de função personalizado como opcional:
@@ -183,7 +183,7 @@ O exemplo a seguir mostra uma função ADD que adiciona dois ou três números, 
 
 Sintaxe de TypeScript: @param nome _descrição_
 
-* `name`Especifica o parâmetro ao qual a marca @param se aplica. É necessário.
+* `name` Especifica o parâmetro ao qual a marca @param se aplica. É necessário.
 * `description` fornece a descrição que aparece no Excel para o parâmetro de função. É opcional.
 
 Confira a seção [Tipos](#types) para mais informações sobre os tipos de parâmetros de função que podem ser usados.
@@ -256,7 +256,7 @@ A função retorna `void` .
 
 As funções de streaming não retornam valores diretamente, em vez de chamarem `setResult(result: ResultType)` usando o último parâmetro.
 
-Exceções lançadas por uma função de streaming são ignoradas. `setResult()` pode ser chamado com Erro para indicar um resultado de erro. Para obter um exemplo de uma função de streaming e mais informações, confira [, criar uma função de streaming](./custom-functions-web-reqs.md#make-a-streaming-function).
+Exceções lançadas por uma função de streaming são ignoradas. `setResult()` pode ser chamado com Erro para indicar um resultado de erro. Para obter um exemplo de uma função de streaming e mais informações, confira [, criar uma função de streaming](custom-functions-web-reqs.md#make-a-streaming-function).
 
 As funções de streaming não podem ser marcadas como [@volatile](#volatile).
 
