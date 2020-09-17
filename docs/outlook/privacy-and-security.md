@@ -1,28 +1,28 @@
 ---
 title: Privacidade, permissões e segurança de suplementos do Outlook
 description: Saiba como gerenciar a privacidade, as permissões e a segurança em um suplemento do Outlook.
-ms.date: 08/18/2020
+ms.date: 09/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 8a95330059de39506a8f9ece6bdd10246b6c212d
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 3bad5cc3080d67cdfab8639d9140b9bfa3e25559
+ms.sourcegitcommit: 6e6de48f746416ec68b2cf4c298253986486fbfd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294294"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "47651941"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Privacidade, permissões e segurança de suplementos do Outlook
 
 Usuários finais, desenvolvedores e administradores podem usar os níveis de permissões em camadas do modelo de segurança para suplementos do Outlook a fim de controlar a privacidade e o desempenho.
 
-Este artigo descreve as possíveis permissões que os suplementos do Outlook podem solicitar e examina o modelo de segurança das seguintes perspectivas:
+Esse artigo descreve as possíveis permissões que os suplementos do Outlook podem solicitar e examina o modelo de segurança das seguintes perspectivas.
 
-- **AppSource**: integridade do suplemento
+- **AppSource**: Integridade do suplemento
 
-- **Usuários finais**: questões de privacidade e desempenho
+- **End-users**: Questões de privacidade e desempenho
 
-- **Desenvolvedores**: opções de permissões e limites de uso do recurso
+- **Developers**: Opções de permissões e limites de uso do recurso
 
-- **Administradores**: privilégios para definir limites de desempenho
+- **Administrators**: Privilégios para definir limites de desempenho
 
 ## <a name="permissions-model"></a>Modelo de permissões
 
@@ -47,28 +47,38 @@ A figura a seguir mostra os quatro níveis de permissões e descreve os recursos
 
 ![Modelo de permissões de quatro camadas para o esquema de aplicativos de correio v1.1](../images/add-in-permission-tiers.png)
 
-## <a name="appsource-add-in-integrity"></a>AppSource: integridade do suplemento
+## <a name="appsource-add-in-integrity"></a>AppSource: Integridade do suplemento
 
-A [AppSource](https://appsource.microsoft.com) hospeda suplementos que podem ser instalados por usuários finais e administradores. A AppSource impõe as seguintes medidas para manter a integridade desses suplementos do Outlook:
+A [AppSource](https://appsource.microsoft.com) hospeda suplementos que podem ser instalados por usuários finais e administradores. A AppSource impõe as seguintes medidas para manter a integridade desses suplementos do Outlook.
 
 - Requer que o servidor host de um suplemento sempre use o protocolo SSL para se comunicar.
 
-- Requer que um desenvolvedor forneça uma prova de identidade, um acordo contratual e uma política de privacidade compatível para enviar suplementos. 
+- Requer que um desenvolvedor forneça uma prova de identidade, um acordo contratual e uma política de privacidade compatível para enviar suplementos.
 
 - Suplementos de arquivos morto no modo somente leitura.
 
 - Dá suporte a um sistema de revisão pelo usuário para os suplementos disponíveis para promover uma comunidade autovigilante.
 
-## <a name="end-users-privacy-and-performance-concerns"></a>Usuários finais: questões de privacidade e desempenho.
+## <a name="optional-connected-experiences"></a>Experiências conectadas opcionais
 
-O modelo de segurança aborda questões de segurança, privacidade e desempenho de usuários finais das seguintes maneiras:
+Os usuários finais e administradores de TI podem desativar as [experiências conectadas opcionais nos clientes móveis e na área de trabalho do Office](/deployoffice/privacy/optional-connected-experiences). Para suplementos do Outlook, o impacto da desabilitação da configuração das **experiências conectadas opcionais** depende do cliente, mas geralmente significa que os suplementos instalados pelo usuário e o acesso à Office Store não são permitidos. Alguns suplementos da Microsoft que são considerados essenciais ou fundamentais para os negócios e suplementos implantados por um administrador de TI da organização pela [Implantação Centralizada](../publish/centralized-deployment.md) ainda estarão disponíveis.
+
+- Windows, Mac: o botão **Obter suplementos** não é exibido, para que os usuários não possam mais gerenciar seus suplementos ou acessar a Office Store.
+- Android, iOS: a caixa de diálogo **Obter suplementos** mostra somente suplementos implantados pelo administrador.
+- Navegador: a disponibilidade de suplementos e o acesso ao repositório não são afetadas, para que os usuários possam continuar a [gerenciar seus suplementos](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce), incluindo aqueles implantados pelo administrador.
+
+Para obter o comportamento geral do suplemento, confira [privacidade e segurança dos Suplementos do Office](../concepts/privacy-and-security.md#optional-connected-experiences).
+
+## <a name="end-users-privacy-and-performance-concerns"></a>End-users: Questões de privacidade e desempenho
+
+O modelo de segurança aborda questões de segurança, privacidade e desempenho de usuários finais das seguintes maneiras.
 
 - Mensagens do usuário final no Outlook que são protegidas por IRM (Gerenciamento de Direitos de Informação) não interagem com os suplementos do Outlook.
 
   > [!IMPORTANT]
   > - Os suplementos são ativados em mensagens assinadas digitalmente no Outlook associadas a uma assinatura do Microsoft 365. No Windows, esse suporte foi introduzido com a compilação 8711.1000.
   >
-  > - A partir do Outlook, compilação 13120.1000, no Windows, os suplementos agora podem ser ativados nos itens protegidos por IRM. Para obter mais informações sobre esse recurso na visualização, consulte [Ativação de suplementos em itens protegidos pela Gestão de Direitos de Informação (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
+  > - A partir do Outlook, build 13229.10000, no Windows, os suplementos agora podem ser ativados nos itens protegidos por IRM. Para obter mais informações sobre esse recurso na visualização, consulte [Ativação de suplementos em itens protegidos pela Gestão de Direitos de Informação (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
 
 - Antes de instalar um suplemento da AppSource, os usuários finais podem ver o acesso e as ações que o suplemento pode realizar em seus dados e deve confirmá-los explicitamente para prosseguir. Nenhum suplemento do Outlook é automaticamente enviado por push a um computador cliente sem validação manual pelo usuário ou administrador.
 
@@ -82,7 +92,7 @@ O modelo de segurança aborda questões de segurança, privacidade e desempenho 
 
 - Dados comunicados com servidores que hospedam os Suplementos do Office são sempre criptografados de acordo com o protocolo SSL (Secure Socket Layer).
 
-- Aplicável apenas aos clientes avançados do Outlook: Os clientes avançados do Outlook monitoram o desempenho de suplementos do Outlook instalados, exercem controle de governança e desabilitam os suplementos do Outlook que excedem os limites nas seguintes áreas:
+- Aplicável apenas aos clientes avançados do Outlook: Os clientes avançados do Outlook monitoram o desempenho de suplementos do Outlook instalados, exercem controle de governança e desabilitam os suplementos do Outlook que excedem os limites nas seguintes áreas.
 
   - Tempo de resposta para ativação
 
@@ -102,7 +112,7 @@ O modelo de segurança fornece aos desenvolvedores níveis granulares de permiss
 
 ### <a name="tiered-permissions-increases-transparency"></a>Permissões hierárquicas aumentam a transparência
 
-Os desenvolvedores devem seguir o modelo de permissões hierárquico para dar transparência e aliviar as preocupações dos usuários em relação ao que os suplementos podem fazer por seus dados e caixa de correio, promovendo indiretamente a adoção do suplemento:
+Os desenvolvedores devem seguir o modelo de permissões hierárquico para dar transparência e aliviar as preocupações dos usuários em relação ao que os suplementos podem fazer por seus dados e caixa de correio, promovendo indiretamente a adoção do suplemento.
 
 - Os desenvolvedores solicitam um nível adequado de permissão para um suplemento do Outlook, com base em como o suplemento do Outlook deve ser ativado e na sua necessidade de ler ou gravar determinadas propriedades de um item, ou de criar e enviar um item.
 
@@ -135,7 +145,7 @@ Os desenvolvedores devem seguir o modelo de permissões hierárquico para dar tr
 
 - Os desenvolvedores devem solicitar a permissão **read/write item** quando o suplemento do Outlook precisa gravar propriedades do item redigido, como nomes, endereços de email, corpo e assunto, ou precisa adicionar ou remover anexos do item.
 
-- Os desenvolvedores solicitam a permissão **read/write mailbox** somente quando o suplemento do Outlook precisa fazer uma ou mais das seguintes ações usando o método [mailbox.makeEWSRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods):
+- Os desenvolvedores solicitam a permissão **read/write mailbox** somente quando o suplemento do Outlook precisa fazer uma ou mais das seguintes ações usando o método [mailbox.makeEWSRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods).
 
   - Ler ou gravar em propriedades de itens na caixa de correio.
   - Criar, ler, gravar ou enviar itens na caixa de correio.
@@ -147,11 +157,11 @@ Os desenvolvedores devem estar cientes dos limites de uso do recurso para a ativ
 
 ### <a name="other-measures-to-promote-user-security"></a>Outras medidas para promover a segurança do usuário
 
-Os desenvolvedores devem estar atentos e planejar o seguinte:
+Os desenvolvedores devem estar atentos e planejar o seguinte.
 
 - Desenvolvedores não podem usar controles ActiveX em suplementos porque esses não têm suporte.
 
-- Os desenvolvedores devem fazer o seguinte ao enviar um suplemento do Outlook à AppSource:
+- Os desenvolvedores devem fazer o seguinte ao enviar um suplemento do Outlook à AppSource.
 
   - Criar um certificado SSL EV (validação estendida) como prova de identidade.
 
@@ -163,7 +173,7 @@ Os desenvolvedores devem estar atentos e planejar o seguinte:
 
 ## <a name="administrators-privileges"></a>Administradores: privilégios
 
-O modelo de segurança fornece os seguintes direitos e responsabilidades aos administradores:
+O modelo de segurança fornece os seguintes direitos e responsabilidades aos administradores.
 
 - Podem impedir que os usuários finais instalem suplementos do Outlook, incluindo suplementos da AppSource.
 
@@ -174,5 +184,6 @@ O modelo de segurança fornece os seguintes direitos e responsabilidades aos adm
 ## <a name="see-also"></a>Confira também
 
 - [Privacidade e segurança para Suplementos do Office](../concepts/privacy-and-security.md)
+- [Controles de privacidade para Microsoft 365 Apps](/deployoffice/privacy/overview-privacy-controls)
 - [APIs de suplemento do Outlook](apis.md)
 - [Limites para ativação e API JavaScript para suplementos do Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)

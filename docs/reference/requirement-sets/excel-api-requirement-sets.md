@@ -1,15 +1,15 @@
 ---
 title: Conjuntos de requisitos da API JavaScript do Excel
 description: Informações do conjunto de requisitos do Suplemento do Office para builds do Excel.
-ms.date: 07/10/2020
+ms.date: 09/15/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: aa2eb78063d3ae63efa725e13892e24596ebfceb
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 3c3057dd27b571e9c4faa09cfc7415667d1c612b
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294245"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819795"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Excel
 
@@ -27,7 +27,8 @@ Os suplementos do Excel são executados em várias versões do Office, incluindo
 |  Conjunto de requisitos  |  Office no Windows<br>(conectado a uma assinatura do Microsoft 365)  |  Office no iPad<br>(conectado a uma assinatura do Microsoft 365)  |  Office no Mac<br>(conectado a uma assinatura do Microsoft 365)  | Office na Web |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [Visualização](excel-preview-apis.md)  | Use a versão mais recente do Office para testar as APIs de visualização (talvez seja exigido ser membro do [programa Office Insider](https://insider.office.com)) |
-| [ExcelApiOnline](excel-api-online-requirement-set.md) | Não disponível | N/D | Não disponível | Mais recente (confira a [página conjunto de requisitos](./excel-api-online-requirement-set.md)) |
+| [ExcelApiOnline](excel-api-online-requirement-set.md) | Não disponível | N/D | Não disponível | Mais recente (confira a [página conjunto de requisitos](excel-api-online-requirement-set.md)) |
+| [ExcelApi 1.12](excel-api-1-12-requirement-set.md) | Versão 2008 (Build 13127.20408) ou posterior | 16.40 ou posterior | 16.40 ou posterior | Setembro de 2020 |
 | [ExcelApi 1.11](excel-api-1-11-requirement-set.md) | Versão 2002 (Build 12527.20470) ou posterior | 16.35 ou posterior | 16.33 ou posterior | Maio de 2020 |
 | [ExcelApi 1.10](excel-api-1-10-requirement-set.md) | Versão 1907 (Build 11929.20306) ou posterior | 16.0 ou posterior | 16.30 ou posterior | Outubro de 2019 |
 | [ExcelApi 1.9](excel-api-1-9-requirement-set.md)  | Versão 1903 (Build 11425.20204) ou posterior | 16.0 ou posterior | 16.24 ou posterior | Maio de 2019 |
@@ -52,10 +53,41 @@ Para saber mais sobre as versões do Office e os números de build, confira:
 
 [!INCLUDE [Links to get Office versions and how to find Office client version](../../includes/links-get-office-versions-builds.md)]
 
-## <a name="see-also"></a>Também consulte
+## <a name="how-to-use-excel-requirement-sets-at-runtime-and-in-the-manifest"></a>Como usar os conjuntos de requisitos do Excel no tempo de execução e no manifesto
+
+> [!NOTE]
+> Esta seção pressupõe que você esteja familiarizado com a visão geral dos conjuntos de requisitos das [versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md) e com [Especificar os requisitos de API e aplicativos do Office](../../develop/specify-office-hosts-and-api-requirements.md).
+
+Os conjuntos de requisitos são grupos nomeados de membros da API. Um Suplemento do Office pode executar uma verificação de tempo de execução ou usar conjuntos de requisitos especificados no manifesto para determinar se um aplicativo do Office dá suporte às APIs necessárias ao suplemento.
+
+### <a name="checking-for-requirement-set-support-at-runtime"></a>Verificando o suporte ao conjunto de requisitos no tempo de execução
+
+O exemplo de código a seguir mostra como determinar se o aplicativo do Office, onde o suplemento está em execução, dá suporte ao conjunto de requisitos da API especificado.
+
+```js
+if (Office.context.requirements.isSetSupported('ExcelApi', '1.3')) {
+  /// perform actions
+}
+else {
+  /// provide alternate flow/logic
+}
+```
+
+### <a name="defining-requirement-set-support-in-the-manifest"></a>Definindo o suporte ao conjunto de requisitos no manifesto
+
+Você pode usar o [elemento Requirements](../manifest/requirements.md) no manifesto do suplemento para especificar os conjuntos de requisitos mínimos e/ou os métodos de API exigidos pelo suplemento para ser ativado. Se a plataforma ou o aplicativo do Office não for compatível com os conjuntos de requisitos ou métodos de API especificados no `Requirements` elemento do manifesto, o suplemento não será executado nesse aplicativo ou plataforma, e não será exibido na lista de suplementos mostrados no **Meus suplementos**. Se o seu suplemento exige um conjunto específico de requisitos para funcionalidade total, mas pode fornecer um valor mesmo para os usuários nas plataformas que não têm suporte para o conjunto de requisitos, recomendamos verificar o suporte a requisitos no tempo de execução conforme descrito acima, em vez de definir o suporte ao conjunto de requisitos no manifesto.
+
+O exemplo de código a seguir mostra o elemento `Requirements` em um manifesto de suplemento que especifica se o suplemento deve ser carregado em todos os aplicativos cliente do Office que dão suporte ao conjunto de requisitos ExcelApi, versão 1.3 ou superior.
+
+```xml
+<Requirements>
+   <Sets DefaultMinVersion="1.3">
+      <Set Name="ExcelApi" MinVersion="1.3"/>
+   </Sets>
+</Requirements>
+```
+
+## <a name="see-also"></a>Confira também
 
 - [Documentação deReferência da API JavaScript do Excel](/javascript/api/excel)
-- [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md)
-- [Especificar requisitos da API e de aplicativos do Office](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Manifesto XML dos Suplementos do Office](../../develop/add-in-manifests.md)
-- [Visão geral sobre o Servidor do Office Online](/officeonlineserver/office-online-server-overview)

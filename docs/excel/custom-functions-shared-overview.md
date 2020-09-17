@@ -1,16 +1,16 @@
 ---
-ms.date: 05/17/2020
+ms.date: 08/13/2020
 description: Aprenda a executar funções personalizadas, botões da faixa de opções e código do painel de tarefas no mesmo tempo de execução do JavaScript para coordenar cenários em seu suplemento.
-title: Executar o código do suplemento em um tempo de execução de JavaScript compartilhado
+title: Execute seu código de suplemento em um tempo de execução do Javascript compartilhado.
 localization_priority: Priority
-ms.openlocfilehash: e179d8cdff06b397c9998a6a18a506a0a6df1b42
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
-ms.translationtype: MT
+ms.openlocfilehash: 04932bcf292686fd9d0abf2ff99c19f062f21456
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609223"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819543"
 ---
-# <a name="overview-run-your-add-in-code-in-a-shared-javascript-runtimes"></a>Visão geral: executar o código do suplemento em um ambiente de tempo de execução JavaScript compartilhado
+# <a name="overview-run-your-add-in-code-in-a-shared-javascript-runtimes"></a>Visão geral: Execute seu código de suplemento em um tempo de execução do Javascript compartilhado
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -26,17 +26,17 @@ A configuração de um tempo de execução compartilhado permite os seguintes ce
 - Seu suplemento pode executar o código assim que o documento for aberto.
 - Seu suplemento pode continuar executando o código após o fechamento do painel de tarefas.
 
-Quando você executa funções personalizadas em um tempo de execução compartilhado com o painel de tarefas, ele será executado em uma instância do navegador em plataformas diferentes, conforme explicado em [Navegadores usados pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md). Além disso, todos os botões exibidos pelo suplemento do Excel na faixa de opções serão executados no mesmo tempo de execução compartilhado. A imagem a seguir mostra como as funções personalizadas, a interface do usuário da faixa de opções e o código do painel de tarefas serão executados no mesmo tempo de execução JavaScript.
+Quando você executa funções personalizadas em um tempo de execução compartilhado com o painel de tarefas, seu suplemento será executado em uma instância do navegador Microsoft Internet Explorer 11, conforme explicado em [Navegadores usados pelos Suplementos do Office](../concepts/browsers-used-by-office-web-add-ins.md). Além disso, todos os botões exibidos pelo suplemento do Excel na faixa de opções serão executados no mesmo tempo de execução compartilhado. A imagem a seguir mostra como as funções personalizadas, a interface do usuário da faixa de opções e o código do painel de tarefas serão executados no mesmo tempo de execução JavaScript.
 
-![Funções personalizadas em execução em um tempo de execução compartilhado com botões de faixa de opções e o painel de tarefas no Excel](../images/custom-functions-in-browser-runtime.png)
+![Funções personalizadas em execução em um tempo de execução compartilhado com botões da faixa de opções e o painel de tarefas no Excel](../images/custom-functions-in-browser-runtime.png)
 
 ## <a name="set-up-a-shared-runtime"></a>Configurar um tempo de execução compartilhado
 
-Consulte o [artigo Configurando um tempo de execução compartilhado](./configure-your-add-in-to-use-a-shared-runtime.md) para saber como configurar suas funções personalizadas para usar um tempo de execução compartilhado.
+Confira o [ artigo configurando um de tempo de execução compartilhado](configure-your-add-in-to-use-a-shared-runtime.md) para saber como configurar suas funções personalizadas para usar o tempo de execução compartilhado.
 
 ### <a name="debugging"></a>Depuração
 
-Ao usar um tempo de execução compartilhado, não é possível usar o Código do Visual Studio para depurar funções personalizadas no Excel no Windows no momento. Em vez disso, você precisará usar as ferramentas de desenvolvedor. Para obter mais informações, consulte [Depurar suplementos usando ferramentas de desenvolvedor no Windows 10](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md).
+Ao usar um tempo de execução compartilhado, não é possível usar o Código do Visual Studio para depurar funções personalizadas no Excel no Windows no momento. Em vez disso, você precisará usar as ferramentas de desenvolvedor. Para obter mais informações, consulte [Depurar suplementos usando as ferramentas de desenvolvedor no Windows 10](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md).
 
 ## <a name="give-us-feedback"></a>Envie-nos seus comentários
 
@@ -44,5 +44,5 @@ Adoraríamos ouvir seus comentários sobre esse recurso. Se você encontrar algu
 
 ## <a name="see-also"></a>Confira também
 
-- [Tutorial: compartilhar dados e eventos entre as funções personalizadas do Excel e o painel de tarefas](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
-- [Chamar as APIs do Excel a partir de sua função personalizada](call-excel-apis-from-custom-function.md)
+- [Tutorial: Compartilhar dados e eventos entre as funções personalizadas do Excel e do painel de tarefas](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
+- [Chame APIs do Excel JS a partir da sua função personalizada](call-excel-apis-from-custom-function.md)
