@@ -1,68 +1,46 @@
 ---
-title: Conceitos fundamentais de programação com a API JavaScript do Word
-description: Use as APIs JavaScript do Word para criar suplementos para o Word.
-ms.date: 07/28/2020
+title: Modelo de objeto de JavaScript do Word em Suplementos do Office
+description: Aprenda as classes mais importantes no modelo de objeto de JavaScript específico do Word.
+ms.date: 09/04/2020
 localization_priority: Priority
-ms.openlocfilehash: 1e7a90d4be378ed9b2c1f30ebebd4a0beec45a11
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 7424ee83bde0c19a574233c64811ecbb55763d93
+ms.sourcegitcommit: 0844ca7589ad3a6b0432fe126ca4e0ac9dbb80ce
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293090"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "47963833"
 ---
-# <a name="fundamental-programming-concepts-with-the-word-javascript-api"></a>Conceitos fundamentais de programação com a API JavaScript do Word
+# <a name="word-javascript-object-model-in-office-add-ins"></a>Modelo de objeto de JavaScript do Word em Suplementos do Office
 
-Este artigo descreve conceitos fundamentais para o uso da [API JavaScript do Word](../reference/overview/word-add-ins-reference-overview.md) para criar suplementos para o Word 2016 ou posterior.
+Este artigo descreve conceitos fundamentais para o uso da [API JavaScript do Word](../reference/overview/word-add-ins-reference-overview.md) para criar suplementos. Ele introduz os principais conceitos fundamentais para o sua da API.
 
-## <a name="referencing-officejs"></a>Referenciando Office.js
+> [!IMPORTANT]
+> Confira [Usar o modelo da API específica do aplicativo](../develop/application-specific-api-model.md) para saber mais sobre a natureza assíncrona das APIs do Word e como elas funcionam com o documento.
 
-Você pode obter referência do Office.js nos seguintes locais:
+## <a name="officejs-apis-for-word"></a>APIs Office.js para Word
 
-- `https://appsforoffice.microsoft.com/lib/1/hosted/office.js`: use esse recurso para os suplementos de produção.
+Um suplemento do Word interage com objetos no Excel usando a API JavaScript do Office, que inclui dois modelos de objetos JavaScript:
 
-- `https://appsforoffice.microsoft.com/lib/beta/hosted/office.js` - use esse recurso para experimentar recursos de visualização.
+* **API JavaScript do Word**: A [API JavaScript do Word](../reference/overview/word-add-ins-reference-overview.md) fornece objetos fortemente tipados que você pode usar para acessar documentos, intervalos, tabelas, listas, formatação e mais.
 
-## <a name="word-javascript-api-requirement-sets"></a>Conjuntos de requisitos da API JavaScript do Word
+* **As APIs Comuns**: A [API Comum](/javascript/api/office) pode ser usada para acessar recursos como interface de usuário, caixas de diálogo e configurações de cliente, que são comuns entre vários tipos de aplicativos do Office.
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office oferece suporte para as APIs necessárias para um suplemento. Para saber mais sobre conjuntos de requisitos da API JavaScript do Word, consulte conjuntos de requisitos da [API JavaScript do Word](../reference/requirement-sets/word-api-requirement-sets.md).
+Enquanto você provavelmente use a API JavaScript do Word para desenvolver a maioria das funcionalidades em suplementos que visam o Word, você também usará objetos na API comum. Por exemplo:
 
-## <a name="running-word-add-ins"></a>Execução de suplementos do Word
+* [Context](/javascript/api/office/office.context): O `Context`objeto representa o ambiente de tempo de execução do suplemento e fornece acesso a objetos principais da API. Ele consiste em configuração do documento, como `contentLanguage` e `officeTheme`, além de fornecer informações sobre o ambiente de tempo de execução do suplemento, como `host` e `platform`. Além disso, ele fornece o método `requirements.isSetSupported()`, que você pode usar para verificar se um conjunto de requisitos especificado é suportado pelo aplicativo Excel onde o suplemento está sendo executado.
+* [Documento](/javascript/api/office/office.document): o `Document` objeto fornece o método `getFileAsync()`, que você pode usar para baixar o arquivo do Word em que o suplemento está sendo executado.
 
-Para executar seu suplemento, use um manipulador de eventos `Office.initialize`. Confira [Entendendo a API](../develop/understanding-the-javascript-api-for-office.md) para saber mais sobre a inicialização do suplemento.
+![Imagem das diferentes entre a API JS do Word e as APIs comuns](../images/word-js-api-common-api.png)
 
-Os suplementos que visam o Word 2016 ou posterior podem usar as APIs específicas do Word. Eles passam a lógica de interação do Word como uma função no método `Word.run()`. Confira [Usando o modelo de API específico do aplicativo](../develop/application-specific-api-model.md) para saber mais sobre como interagir com o documento do Word neste modelo de programação.
+## <a name="word-specific-object-model"></a>Modelo de objeto específico do Word
 
-O exemplo a seguir mostra como inicializar e executar um suplemento do Word usando o método `Word.run()`.
+Para entender as APIs do Word, você deve entender como os componentes de um documento estão relacionados entre si.
 
-```js
-(function () {
-    "use strict";
-
-    // The initialize event handler must be run on each page to initialize Office JS.
-    // You can add optional custom initialization code that will run after OfficeJS
-    // has initialized.
-    Office.initialize = function (reason) {
-        // The reason object tells how the add-in was initialized. The values can be:
-        // inserted - the add-in was inserted to an open document.
-        // documentOpened - the add-in was already inserted in to the document and the document was opened.
-
-        // Checks for the DOM to load using the jQuery ready function.
-        $(document).ready(function () {
-            // Set your optional initialization code.
-            // You can also load saved settings from the Office object.
-        });
-    };
-
-    // Run a batch operation against the Word JavaScript API object model.
-    // Use the context argument to get access to the Word document.
-    Word.run(function (context) {
-
-        // Create a proxy object for the document.
-        var thisDocument = context.document;
-        // ...
-    })
-})();
-```
+* O **documento** contém as **seções**, e entidades no nível de documento, como as configurações e partes XML Personalizadas.
+* Uma **seção** contém um**corpo**.
+* Um **corpo** dá acesso a **parágrafo**s, **ContentControl**s e aos objetos do **intervalo**, entre outros.
+* Um **intervalo** representa uma área contínua de conteúdo, incluindo texto, espaço em branco, **tabela**s e imagens. Ele também contém a maioria dos métodos de manipulação de texto.
+* Uma **Lista** representa o texto em uma lista numerada ou em lista com marcadores.
 
 ## <a name="see-also"></a>Confira também
 

@@ -1,15 +1,15 @@
 ---
 title: Conjunto de requisitos de API JavaScript do Excel 1,12
 description: Detalhes sobre o conjunto de requisitos do ExcelApi 1,12.
-ms.date: 09/15/2020
+ms.date: 09/16/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: a88c511e90fe48e1a9997d19cb4a2851cb718f6b
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 2f2fb04c914e26aacbd8815a1d173c8af9c09342
+ms.sourcegitcommit: 0844ca7589ad3a6b0432fe126ca4e0ac9dbb80ce
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819837"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "47963819"
 ---
 # <a name="whats-new-in-excel-javascript-api-112"></a>O que há de novo na API JavaScript do Excel 1,12
 
@@ -79,7 +79,6 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 ||[lowerBound](/javascript/api/excel/excel.pivotlabelfilter#lowerbound)|O limite inferior do intervalo para a condição de filtro between.|
 ||[substring](/javascript/api/excel/excel.pivotlabelfilter#substring)|A subcadeia de caracteres usada para as `BeginsWith` `EndsWith` condições de filtro, e `Contains` .|
 ||[upperBound](/javascript/api/excel/excel.pivotlabelfilter#upperbound)|O limite superior do intervalo para a condição de filtro entre.|
-|[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[tabela dinâmica](/javascript/api/excel/excel.pivotlayout#pivotstyle)|O estilo aplicado à tabela dinâmica.|
 |[PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter)|[selectedItems](/javascript/api/excel/excel.pivotmanualfilter#selecteditems)|Uma lista de itens selecionados a serem filtrados manualmente. Eles devem ser itens válidos e existentes do campo escolhido.|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[allowMultipleFiltersPerField](/javascript/api/excel/excel.pivottable#allowmultiplefiltersperfield)|Especifica se a tabela dinâmica permite o aplicativo de vários PivotFilters em um determinado campo PivotField na tabela.|
 |[PivotTableScopedCollection](/javascript/api/excel/excel.pivottablescopedcollection)|[getCount()](/javascript/api/excel/excel.pivottablescopedcollection#getcount--)|Obtém o número de tabelas dinâmicas na coleção.|
@@ -107,7 +106,6 @@ A tabela a seguir lista as APIs no conjunto de requisitos da API JavaScript do E
 |[RangeAreasCollection](/javascript/api/excel/excel.rangeareascollection)|[getCount()](/javascript/api/excel/excel.rangeareascollection#getcount--)|Obtém o número de objetos RangeAreas nesta coleção.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.rangeareascollection#getitemat-index-)|Retorna o objeto RangeAreas com base na posição na coleção.|
 ||[items](/javascript/api/excel/excel.rangeareascollection#items)|Obtém os itens filhos carregados nesta coleção.|
-|[Segmentação de dados](/javascript/api/excel/excel.slicer)|[slicerStyle](/javascript/api/excel/excel.slicer#slicerstyle)|O estilo aplicado à segmentação de,.|
 |[WorkbookRangeAreas](/javascript/api/excel/excel.workbookrangeareas)|[getRangeAreasBySheet (Key: String)](/javascript/api/excel/excel.workbookrangeareas#getrangeareasbysheet-key-)|Retorna o `RangeAreas` objeto com base na ID ou no nome da planilha na coleção.|
 ||[getRangeAreasOrNullObjectBySheet (Key: String)](/javascript/api/excel/excel.workbookrangeareas#getrangeareasornullobjectbysheet-key-)|Retorna o `RangeAreas` objeto com base no nome ou na ID da planilha na coleção. Se a planilha não existir, retornará um objeto null.|
 ||[addresses](/javascript/api/excel/excel.workbookrangeareas#addresses)|Retorna uma matriz de endereço em estilo a1. O valor de endereço conterá o nome da planilha para cada bloco retangular de células (por exemplo, "Planilha1! A1: B4, Planilha1! D1: D4 "). Somente leitura.|

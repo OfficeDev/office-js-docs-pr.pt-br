@@ -1,19 +1,19 @@
 ---
 title: Conjuntos de requisitos da API Comum do Office
 description: Saiba mais sobre os conjuntos de requisitos da API comum do Office.
-ms.date: 07/07/2020
+ms.date: 09/17/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: f9929cb2f3de6499145540e12d1d96c55b24b1aa
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: d5fd33a2c44cb85e8279a970d4d7443783f049ff
+ms.sourcegitcommit: 2479812e677d1a7337765fe8f1c8345061d4091a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293517"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "48135218"
 ---
-# <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API Comum do Office
+# <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos da API comum do Office
 
-Os conjuntos de requisitos são grupos nomeados de membros da API. Os suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office oferece suporte a APIs necessárias para um suplemento. Para obter mais informações, consulte [versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
+Os conjuntos de requisitos são grupos nomeados de membros da API. Os Suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office dá suporte para as APIs necessárias para um suplemento. Para saber mais, confira [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md).
 
 > [!TIP]
 > Procurando conjuntos de requisitos de API *específicos do aplicativo* ? Confira os seguintes conjuntos de requisitos de API:
@@ -152,6 +152,14 @@ Confira [Conjuntos de requisitos de comandos de suplementos](add-in-commands-req
 
 ---
 
+### <a name="openbrowserwindowapi"></a>OpenBrowserWindowApi
+
+|**Hosts do Office**|**Métodos no conjunto**|
+|:-----|:-----|
+| Confira [abrir conjuntos de requisitos da API da janela do navegador](open-browser-window-api-requirement-sets.md). | Office. Context. UI. openBrowserWindow |
+
+---
+
 ### <a name="partialtablebindings"></a>PartialTableBindings
 
 |**Aplicativos do Office**|**Métodos no conjunto**|
@@ -266,5 +274,5 @@ Os seguintes métodos na API JavaScript do Office não fazem parte de um conjunt
 ## <a name="see-also"></a>Confira também
 
 - [Versões do Office e conjuntos de requisitos](../../develop/office-versions-and-requirement-sets.md)
-- [Especificar aplicativos do Office e requisitos de API](../../develop/specify-office-hosts-and-api-requirements.md)
+- [Especificar requisitos da API e de aplicativos do Office](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Manifesto XML dos Suplementos do Office](../../develop/add-in-manifests.md)

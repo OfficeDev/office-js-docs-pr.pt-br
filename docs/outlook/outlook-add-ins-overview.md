@@ -1,15 +1,15 @@
 ---
 title: Visão geral dos suplementos do Outlook
 description: Os suplementos do Outlook são integrações criadas por terceiros para o Outlook usando nossa plataforma baseada na Web.
-ms.date: 08/18/2020
+ms.date: 09/14/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 006b19af1f7c9186e9247a3b45a3c8ac109c446a
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 09f410ccbddb4cffadc700036a4da3c45d2fb6e3
+ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294315"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "47819564"
 ---
 # <a name="outlook-add-ins-overview"></a>Visão geral dos suplementos do Outlook
 
@@ -41,9 +41,6 @@ Pontos de extensão são as formas usadas pelos suplementos para se integrar ao 
 
     ![Mostra um aplicativo contextual em um cartão](../images/outlook-detected-entity-card.png)
 
-> [!NOTE]
-> [Os painéis personalizados foram preteridos](https://developer.microsoft.com/outlook/blogs/make-your-add-ins-available-in-the-office-ribbon/), portanto certifique-se de que você está usando um ponto de extensão com suporte.
-
 ## <a name="mailbox-items-available-to-add-ins"></a>Itens de caixa de correio disponíveis para suplementos
 
 Os suplementos do Outlook estão disponíveis nas mensagens ou compromissos durante a redação ou leitura, mas não em outros tipos de itens. O Outlook não ativa os suplementos se o item de mensagem atual, em um formato de redação ou de leitura, estiver em uma das seguintes situações:
@@ -53,7 +50,7 @@ Os suplementos do Outlook estão disponíveis nas mensagens ou compromissos dura
   > [!IMPORTANT]
   > - Os suplementos são ativados em mensagens assinadas digitalmente no Outlook associadas a uma assinatura do Microsoft 365. No Windows, esse suporte foi introduzido com a compilação 8711.1000.
   >
-  > - A partir do Outlook, compilação 13120.1000, no Windows, os suplementos agora podem ser ativados nos itens protegidos por IRM. Para obter mais informações sobre esse recurso na visualização, consulte [Ativação de suplementos em itens protegidos pela Gestão de Direitos de Informação (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
+  > - A partir do Outlook, build 13229.10000, no Windows, os suplementos agora podem ser ativados nos itens protegidos por IRM. Para obter mais informações sobre esse recurso na visualização, consulte [Ativação de suplementos em itens protegidos pela Gestão de Direitos de Informação (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
 
 - Um relatório de entrega ou notificação que tem a classe de mensagem IPM.Report.*, incluindo NDRs (notificações de falha na entrega) e notificações de leitura, falha na leitura e atraso.
 
