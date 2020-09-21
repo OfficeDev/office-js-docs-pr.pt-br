@@ -1,72 +1,50 @@
 ---
-title: Conceitos fundamentais de programação com a API JavaScript do Word
-description: Use as APIs JavaScript do Word para criar suplementos para o Word.
-ms.date: 07/28/2020
+title: Modelo de objeto de JavaScript do Word em Suplementos do Office
+description: Aprenda as classes mais importantes no modelo de objeto de JavaScript específico do Word.
+ms.date: 09/04/2020
 localization_priority: Priority
-ms.openlocfilehash: 1e7a90d4be378ed9b2c1f30ebebd4a0beec45a11
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 7424ee83bde0c19a574233c64811ecbb55763d93
+ms.sourcegitcommit: 0844ca7589ad3a6b0432fe126ca4e0ac9dbb80ce
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293090"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "47963833"
 ---
-# <a name="fundamental-programming-concepts-with-the-word-javascript-api"></a><span data-ttu-id="72bb4-103">Conceitos fundamentais de programação com a API JavaScript do Word</span><span class="sxs-lookup"><span data-stu-id="72bb4-103">Fundamental programming concepts with the Word JavaScript API</span></span>
+# <a name="word-javascript-object-model-in-office-add-ins"></a><span data-ttu-id="6b19e-103">Modelo de objeto de JavaScript do Word em Suplementos do Office</span><span class="sxs-lookup"><span data-stu-id="6b19e-103">Word JavaScript object model in Office Add-ins</span></span>
 
-<span data-ttu-id="72bb4-104">Este artigo descreve conceitos fundamentais para o uso da [API JavaScript do Word](../reference/overview/word-add-ins-reference-overview.md) para criar suplementos para o Word 2016 ou posterior.</span><span class="sxs-lookup"><span data-stu-id="72bb4-104">This article describes concepts that are fundamental to using the [Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md) to build add-ins for Word 2016 or later.</span></span>
+<span data-ttu-id="6b19e-104">Este artigo descreve conceitos fundamentais para o uso da [API JavaScript do Word](../reference/overview/word-add-ins-reference-overview.md) para criar suplementos. Ele introduz os principais conceitos fundamentais para o sua da API.</span><span class="sxs-lookup"><span data-stu-id="6b19e-104">This article describes concepts that are fundamental to using the [Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md) to build add-ins. It introduces core concepts that are fundamental to using the API.</span></span>
 
-## <a name="referencing-officejs"></a><span data-ttu-id="72bb4-105">Referenciando Office.js</span><span class="sxs-lookup"><span data-stu-id="72bb4-105">Referencing Office.js</span></span>
+> [!IMPORTANT]
+> <span data-ttu-id="6b19e-105">Confira [Usar o modelo da API específica do aplicativo](../develop/application-specific-api-model.md) para saber mais sobre a natureza assíncrona das APIs do Word e como elas funcionam com o documento.</span><span class="sxs-lookup"><span data-stu-id="6b19e-105">See [Using the application-specific API model](../develop/application-specific-api-model.md) to learn about the asynchronous nature of the Word APIs and how they work with the document.</span></span>
 
-<span data-ttu-id="72bb4-106">Você pode obter referência do Office.js nos seguintes locais:</span><span class="sxs-lookup"><span data-stu-id="72bb4-106">You can reference Office.js from the following locations:</span></span>
+## <a name="officejs-apis-for-word"></a><span data-ttu-id="6b19e-106">APIs Office.js para Word</span><span class="sxs-lookup"><span data-stu-id="6b19e-106">Office.js APIs for Word</span></span>
 
-- <span data-ttu-id="72bb4-107">`https://appsforoffice.microsoft.com/lib/1/hosted/office.js`: use esse recurso para os suplementos de produção.</span><span class="sxs-lookup"><span data-stu-id="72bb4-107">`https://appsforoffice.microsoft.com/lib/1/hosted/office.js` - use this resource for production add-ins.</span></span>
+<span data-ttu-id="6b19e-107">Um suplemento do Word interage com objetos no Excel usando a API JavaScript do Office, que inclui dois modelos de objetos JavaScript:</span><span class="sxs-lookup"><span data-stu-id="6b19e-107">A Word add-in interacts with objects in Excel by using the Office JavaScript API, which includes two JavaScript object models:</span></span>
 
-- <span data-ttu-id="72bb4-108">`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js` - use esse recurso para experimentar recursos de visualização.</span><span class="sxs-lookup"><span data-stu-id="72bb4-108">`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js` - use this resource to try out preview features.</span></span>
+* <span data-ttu-id="6b19e-108">**API JavaScript do Word**: A [API JavaScript do Word](../reference/overview/word-add-ins-reference-overview.md) fornece objetos fortemente tipados que você pode usar para acessar documentos, intervalos, tabelas, listas, formatação e mais.</span><span class="sxs-lookup"><span data-stu-id="6b19e-108">**Word JavaScript API**: The [Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md) provides strongly-typed objects that you can use to access the document, ranges, tables, lists, formatting, and more.</span></span>
 
-## <a name="word-javascript-api-requirement-sets"></a><span data-ttu-id="72bb4-109">Conjuntos de requisitos da API JavaScript do Word</span><span class="sxs-lookup"><span data-stu-id="72bb4-109">Word JavaScript API requirement sets</span></span>
+* <span data-ttu-id="6b19e-109">**As APIs Comuns**: A [API Comum](/javascript/api/office) pode ser usada para acessar recursos como interface de usuário, caixas de diálogo e configurações de cliente, que são comuns entre vários tipos de aplicativos do Office.</span><span class="sxs-lookup"><span data-stu-id="6b19e-109">**Common APIs**: The [Common API](/javascript/api/office) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications.</span></span>
 
-<span data-ttu-id="72bb4-110">Os conjuntos de requisitos são grupos nomeados de membros da API.</span><span class="sxs-lookup"><span data-stu-id="72bb4-110">Requirement sets are named groups of API members.</span></span> <span data-ttu-id="72bb4-111">Os Suplementos do Office usam conjuntos de requisitos especificados no manifesto ou usam uma verificação de tempo de execução para determinar se um aplicativo do Office oferece suporte para as APIs necessárias para um suplemento.</span><span class="sxs-lookup"><span data-stu-id="72bb4-111">Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office application supports APIs that an add-in needs.</span></span> <span data-ttu-id="72bb4-112">Para saber mais sobre conjuntos de requisitos da API JavaScript do Word, consulte conjuntos de requisitos da [API JavaScript do Word](../reference/requirement-sets/word-api-requirement-sets.md).</span><span class="sxs-lookup"><span data-stu-id="72bb4-112">For detailed information about Word JavaScript API requirement sets, see [Word JavaScript API requirement sets](../reference/requirement-sets/word-api-requirement-sets.md).</span></span>
+<span data-ttu-id="6b19e-110">Enquanto você provavelmente use a API JavaScript do Word para desenvolver a maioria das funcionalidades em suplementos que visam o Word, você também usará objetos na API comum.</span><span class="sxs-lookup"><span data-stu-id="6b19e-110">While you'll likely use the Word JavaScript API to develop the majority of functionality in add-ins that target Word, you'll also use objects in the Common API.</span></span> <span data-ttu-id="6b19e-111">Por exemplo:</span><span class="sxs-lookup"><span data-stu-id="6b19e-111">For example:</span></span>
 
-## <a name="running-word-add-ins"></a><span data-ttu-id="72bb4-113">Execução de suplementos do Word</span><span class="sxs-lookup"><span data-stu-id="72bb4-113">Running Word add-ins</span></span>
+* <span data-ttu-id="6b19e-112">[Context](/javascript/api/office/office.context): O `Context`objeto representa o ambiente de tempo de execução do suplemento e fornece acesso a objetos principais da API.</span><span class="sxs-lookup"><span data-stu-id="6b19e-112">[Context](/javascript/api/office/office.context): The `Context` object represents the runtime environment of the add-in and provides access to key objects of the API.</span></span> <span data-ttu-id="6b19e-113">Ele consiste em configuração do documento, como `contentLanguage` e `officeTheme`, além de fornecer informações sobre o ambiente de tempo de execução do suplemento, como `host` e `platform`.</span><span class="sxs-lookup"><span data-stu-id="6b19e-113">It consists of document configuration details such as `contentLanguage` and `officeTheme` and also provides information about the add-in's runtime environment such as `host` and `platform`.</span></span> <span data-ttu-id="6b19e-114">Além disso, ele fornece o método `requirements.isSetSupported()`, que você pode usar para verificar se um conjunto de requisitos especificado é suportado pelo aplicativo Excel onde o suplemento está sendo executado.</span><span class="sxs-lookup"><span data-stu-id="6b19e-114">Additionally, it provides the `requirements.isSetSupported()` method, which you can use to check whether a specified requirement set is supported by the Excel application where the add-in is running.</span></span>
+* <span data-ttu-id="6b19e-115">[Documento](/javascript/api/office/office.document): o `Document` objeto fornece o método `getFileAsync()`, que você pode usar para baixar o arquivo do Word em que o suplemento está sendo executado.</span><span class="sxs-lookup"><span data-stu-id="6b19e-115">[Document](/javascript/api/office/office.document): The `Document` object provides the `getFileAsync()` method, which you can use to download the Word file where the add-in is running.</span></span>
 
-<span data-ttu-id="72bb4-114">Para executar seu suplemento, use um manipulador de eventos `Office.initialize`.</span><span class="sxs-lookup"><span data-stu-id="72bb4-114">To run your add-in, use an `Office.initialize` event handler.</span></span> <span data-ttu-id="72bb4-115">Confira [Entendendo a API](../develop/understanding-the-javascript-api-for-office.md) para saber mais sobre a inicialização do suplemento.</span><span class="sxs-lookup"><span data-stu-id="72bb4-115">For more information about add-in initialization, see [Understanding the API](../develop/understanding-the-javascript-api-for-office.md).</span></span>
+![Imagem das diferentes entre a API JS do Word e as APIs comuns](../images/word-js-api-common-api.png)
 
-<span data-ttu-id="72bb4-116">Os suplementos que visam o Word 2016 ou posterior podem usar as APIs específicas do Word.</span><span class="sxs-lookup"><span data-stu-id="72bb4-116">Add-ins that target Word 2016 or later can use the Word-specific APIs.</span></span> <span data-ttu-id="72bb4-117">Eles passam a lógica de interação do Word como uma função no método `Word.run()`.</span><span class="sxs-lookup"><span data-stu-id="72bb4-117">They pass the Word-interaction logic as a function into the `Word.run()` method.</span></span> <span data-ttu-id="72bb4-118">Confira [Usando o modelo de API específico do aplicativo](../develop/application-specific-api-model.md) para saber mais sobre como interagir com o documento do Word neste modelo de programação.</span><span class="sxs-lookup"><span data-stu-id="72bb4-118">See [Using the application-specific API model](../develop/application-specific-api-model.md) to learn about how to interact with the Word document in this programming model.</span></span>
+## <a name="word-specific-object-model"></a><span data-ttu-id="6b19e-117">Modelo de objeto específico do Word</span><span class="sxs-lookup"><span data-stu-id="6b19e-117">Word-specific object model</span></span>
 
-<span data-ttu-id="72bb4-119">O exemplo a seguir mostra como inicializar e executar um suplemento do Word usando o método `Word.run()`.</span><span class="sxs-lookup"><span data-stu-id="72bb4-119">The following example shows how to initialize and run a Word add-in by using the `Word.run()` method.</span></span>
+<span data-ttu-id="6b19e-118">Para entender as APIs do Word, você deve entender como os componentes de um documento estão relacionados entre si.</span><span class="sxs-lookup"><span data-stu-id="6b19e-118">To understand the Word APIs, you must understand how the components of a document are related to one another.</span></span>
 
-```js
-(function () {
-    "use strict";
+* <span data-ttu-id="6b19e-119">O **documento** contém as **seções**, e entidades no nível de documento, como as configurações e partes XML Personalizadas.</span><span class="sxs-lookup"><span data-stu-id="6b19e-119">The **Document** contains the **Section**s, and document-level entities such as settings and custom XML parts.</span></span>
+* <span data-ttu-id="6b19e-120">Uma **seção** contém um**corpo**.</span><span class="sxs-lookup"><span data-stu-id="6b19e-120">A **Section** contains a **Body**.</span></span>
+* <span data-ttu-id="6b19e-121">Um **corpo** dá acesso a **parágrafo**s, **ContentControl**s e aos objetos do **intervalo**, entre outros.</span><span class="sxs-lookup"><span data-stu-id="6b19e-121">A **Body** gives access to **Paragraph**s, **ContentControl**s, and **Range** objects, among others.</span></span>
+* <span data-ttu-id="6b19e-122">Um **intervalo** representa uma área contínua de conteúdo, incluindo texto, espaço em branco, **tabela**s e imagens.</span><span class="sxs-lookup"><span data-stu-id="6b19e-122">A **Range** represents a contiguous area of content, including text, white space, **Table**s, and images.</span></span> <span data-ttu-id="6b19e-123">Ele também contém a maioria dos métodos de manipulação de texto.</span><span class="sxs-lookup"><span data-stu-id="6b19e-123">It also contains most of the text manipulation methods.</span></span>
+* <span data-ttu-id="6b19e-124">Uma **Lista** representa o texto em uma lista numerada ou em lista com marcadores.</span><span class="sxs-lookup"><span data-stu-id="6b19e-124">A **List** represents text in a numbered or bulleted list.</span></span>
 
-    // The initialize event handler must be run on each page to initialize Office JS.
-    // You can add optional custom initialization code that will run after OfficeJS
-    // has initialized.
-    Office.initialize = function (reason) {
-        // The reason object tells how the add-in was initialized. The values can be:
-        // inserted - the add-in was inserted to an open document.
-        // documentOpened - the add-in was already inserted in to the document and the document was opened.
+## <a name="see-also"></a><span data-ttu-id="6b19e-125">Confira também</span><span class="sxs-lookup"><span data-stu-id="6b19e-125">See also</span></span>
 
-        // Checks for the DOM to load using the jQuery ready function.
-        $(document).ready(function () {
-            // Set your optional initialization code.
-            // You can also load saved settings from the Office object.
-        });
-    };
-
-    // Run a batch operation against the Word JavaScript API object model.
-    // Use the context argument to get access to the Word document.
-    Word.run(function (context) {
-
-        // Create a proxy object for the document.
-        var thisDocument = context.document;
-        // ...
-    })
-})();
-```
-
-## <a name="see-also"></a><span data-ttu-id="72bb4-120">Confira também</span><span class="sxs-lookup"><span data-stu-id="72bb4-120">See also</span></span>
-
-- [<span data-ttu-id="72bb4-121">Visão geral da API JavaScript do Word</span><span class="sxs-lookup"><span data-stu-id="72bb4-121">Word JavaScript API overview</span></span>](../reference/overview/word-add-ins-reference-overview.md)
-- [<span data-ttu-id="72bb4-122">Criar seu primeiro suplemento do Word</span><span class="sxs-lookup"><span data-stu-id="72bb4-122">Build your first Word add-in</span></span>](../quickstarts/word-quickstart.md)
-- [<span data-ttu-id="72bb4-123">Tutorial de suplemento do Word</span><span class="sxs-lookup"><span data-stu-id="72bb4-123">Word add-in tutorial</span></span>](../tutorials/word-tutorial.md)
-- [<span data-ttu-id="72bb4-124">Referências da API JavaScript do Word</span><span class="sxs-lookup"><span data-stu-id="72bb4-124">Word JavaScript API reference</span></span>](/javascript/api/word)
+- [<span data-ttu-id="6b19e-126">Visão geral da API JavaScript do Word</span><span class="sxs-lookup"><span data-stu-id="6b19e-126">Word JavaScript API overview</span></span>](../reference/overview/word-add-ins-reference-overview.md)
+- [<span data-ttu-id="6b19e-127">Criar seu primeiro suplemento do Word</span><span class="sxs-lookup"><span data-stu-id="6b19e-127">Build your first Word add-in</span></span>](../quickstarts/word-quickstart.md)
+- [<span data-ttu-id="6b19e-128">Tutorial de suplemento do Word</span><span class="sxs-lookup"><span data-stu-id="6b19e-128">Word add-in tutorial</span></span>](../tutorials/word-tutorial.md)
+- [<span data-ttu-id="6b19e-129">Referências da API JavaScript do Word</span><span class="sxs-lookup"><span data-stu-id="6b19e-129">Word JavaScript API reference</span></span>](/javascript/api/word)
