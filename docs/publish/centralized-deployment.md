@@ -3,16 +3,16 @@ title: Publicar suplementos do Office usando a implantação centralizada por me
 description: Saiba como usar a implantação centralizada para implantar suplementos internos, bem como suplementos fornecidos por ISVs.
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 0e99742be87b477b7c78295d08539de924f02466
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: e3f0bca5605d48d7b6c2ead49591546561dadffe
+ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094250"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "48175553"
 ---
 # <a name="publish-office-add-ins-using-centralized-deployment-via-the-microsoft-365-admin-center"></a>Publicar suplementos do Office usando a implantação centralizada por meio do centro de administração do Microsoft 365
 
-O centro de administração do Microsoft 365 facilita para um administrador implantar os suplementos do Office para usuários e grupos dentro de sua organização. Os suplementos implantados por meio do Centro de administração ficam disponíveis imediatamente para os usuários nos aplicativos do Office, sem a necessidade de configuração do cliente. É possível usar a Implantação Centralizada para implantar suplementos internos, além de suplementos fornecidos por ISVs.
+O centro de administração do Microsoft 365 facilita para um administrador implantar os suplementos do Office para usuários e grupos dentro de sua organização. Os suplementos implantados por meio do Centro de administração ficam disponíveis imediatamente para os usuários nos aplicativos do Office, sem a necessidade de configuração do cliente. Você pode usar a Implantação Centralizada para implantar suplementos internos, além de suplementos fornecidos por ISVs.
 
 O centro de administração do Microsoft 365 atualmente oferece suporte aos seguintes cenários.
 
@@ -78,7 +78,7 @@ Se sua organização atender aos requisitos, conclua as etapas a seguir para pub
     ![Gerenciar quem tem acesso e método de implantação no centro de administração do Microsoft 365](../images/manage-users-deployment-admin-center.png)
 
     > [!NOTE]
-    > Um sistema de [logon único (SSO)](../develop/sso-in-office-add-ins.md) para suplementos está atualmente em versão prévia e não deve ser usado para suplementos de produção. Quando for implantado um suplemento que use o SSO, os usuários e grupos atribuídos também são compartilhados com suplementos que compartilham a mesma ID de aplicativo Azure. Todas as alterações nas atribuições do usuário também são aplicadas a esses suplementos. Os suplementos relacionados serão mostrados nessa página. Apenas em suplementos de SSO, essa página exibe a lista de permissões do Microsoft Graph exigida pelo suplemento.
+    > Os suplementos que utilizam [logon único (SSO)](../develop/sso-in-office-add-ins.md) solicitarão que o administrador concorde com os escopos listados no manifesto do suplemento.  Se o mesmo serviço de backup for usado em vários suplementos (a mesma ID de aplicativo do Azure é usada com SSO em suplementos diferentes), os escopos de cada suplemento serão solicitados a fornecer o consentimento de cada implantação. Esta página também exibirá a lista de permissões que o suplemento requer.
 
 11. Quando terminar, escolha **implantar**. Este processo pode levar até três minutos. Conclua a passo a passo, pressionando **Avançar**. Você verá o suplemento juntamente com outros aplicativos no Office 365.
 

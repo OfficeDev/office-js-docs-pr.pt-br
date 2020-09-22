@@ -2,14 +2,14 @@
 title: Configurar seu suplemento do Outlook para ativação baseada em evento (visualização)
 description: Saiba como configurar seu suplemento do Outlook para ativação baseada em eventos.
 ms.topic: article
-ms.date: 09/09/2020
+ms.date: 09/21/2020
 localization_priority: Normal
-ms.openlocfilehash: 69f14748a898c2c963c9d049b2c40c28f3aec725
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 1ddf5cd17934df261ef0002f38d92ed0dc40ca00
+ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431245"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "48175546"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>Configurar seu suplemento do Outlook para ativação baseada em evento (visualização)
 
@@ -35,7 +35,7 @@ Convidamos você a experimentar o recurso de ativação baseada em eventos! Info
 Para visualizar esse recurso:
 
 - Faça referência à biblioteca **beta** na CDN ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) . O [arquivo de definição de tipo](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) para compilação TypeScript e IntelliSense é encontrado em CDN e [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Você pode instalar esses tipos com o `npm install --save-dev @types/office-js-preview` .
-- Solicite acesso aos bits de visualização do Outlook na Web usando sua conta do Microsoft 365, concluindo e enviando [este formulário de solicitação](https://aka.ms/OWAPreview). Vamos informar quando o locatário está pronto.
+- [Configure o lançamento direcionado no seu locatário do Microsoft 365](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center).
 
 ## <a name="set-up-your-environment"></a>Configurar seu ambiente
 

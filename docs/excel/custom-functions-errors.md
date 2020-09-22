@@ -1,25 +1,22 @@
 ---
-ms.date: 09/15/2020
+ms.date: 09/21/2020
 description: 'Manipular e retornar erros como #NULL! a partir de sua função personalizada.'
 title: Manipular e retornar erros de sua função personalizada
 localization_priority: Normal
-ms.openlocfilehash: 5da68417aa52f1d14340c8c8a46f4943ffd2d223
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 58c2ab432a4525f660e2d89735fd3add6e76fa7f
+ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819529"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "48175525"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function"></a>Manipular e retornar erros de sua função personalizada
-
-> [!NOTE]
-> Os recursos descritos neste artigo estão atualmente em visualização, estando sujeitos a alterações. No momento, eles não têm suporte para utilização em ambientes de produção. Você precisará participar do programa [Office Insider](https://insider.office.com/join) para experimentar os recursos de visualização.  Uma boa maneira de experimentar recursos de visualização é usar uma assinatura do Microsoft 365. Se você ainda não tem uma assinatura do Microsoft 365, é possível obter uma assinatura gratuita, de 90 dias, redimensionada pela Microsoft 365, participando do [programa de desenvolvedor do microsoft 365](https://developer.microsoft.com/office/dev-program).
 
 Se algo der errado enquanto sua função personalizada é executada, retorne um erro para informar ao usuário. Se você tiver requisitos de parâmetros específicos, como apenas números positivos, teste os parâmetros e acione um erro se eles não estiverem corretos. Você também pode usar um bloco `try`-`catch` para detectar quaisquer erros que ocorram enquanto sua função personalizada é executada.
 
 ## <a name="detect-and-throw-an-error"></a>Detectar e lançar um erro
 
-Vamos examinar um caso em que você precisa garantir que um parâmetro de CEP esteja no formato correto para que a função personalizada funcione. A função personalizada a seguir usa uma expressão regular para verificar o CEP. Se estiver correto, ele pesquisará a cidade usando outra função e retornará o valor. Se ele não estiver correto, retornará um `#VALUE!` erro à célula.
+Vamos examinar um caso em que você precisa garantir que um parâmetro de CEP esteja no formato correto para que a função personalizada funcione. A função personalizada a seguir usa uma expressão regular para verificar o CEP. Se o formato do CEP estiver correto, ele pesquisará a cidade usando outra função e retornará o valor. Se o formato não for válido, a função retornará um `#VALUE!` erro à célula.
 
 ```typescript
 /**
@@ -38,15 +35,17 @@ function getCity(zipCode: string): string {
 
 ## <a name="the-customfunctionserror-object"></a>O objeto CustomFunctions.Error
 
-O objeto `CustomFunctions.Error` é usado para retornar um erro de volta à célula. Ao criar o objeto, especifique qual erro você deseja usar usando um dos seguintes valores de enumeração `ErrorCode`.
+O objeto [CustomFunctions. Error](/javascript/api/custom-functions-runtime/customfunctions.error) é usado para retornar um erro de volta para a célula. Ao criar o objeto, especifique o erro que você deseja usar, escolhendo um dos seguintes valores de `ErrorCode` enumeração.
 
 
 |Valor de enumeração ErrorCode  |Valor da célula do Excel  |Significado  |
 |---------------|---------|---------|
-|`invalidValue`   | `#VALUE!` | Um valor usado na fórmula é de tipo incorreto. |
-|`notAvailable`   | `#N/A`    | A função ou o serviço não está disponível. |
 |`divisionByZero` | `#DIV/0`  | Esteja ciente de que o JavaScript permite a divisão por zero, portanto, você precisa escrever um manipulador de erros com cuidado para detectar essa condição. |
-|`invalidNumber`  | `#NUM!`   | Há um problema com o número usado na fórmula |
+|`invalidName`    | `#NAME?`  | Há um erro de digitação no nome da função. Observe que esse erro é suportado como um erro de entrada de função personalizada, mas não como um erro de saída de função personalizada. | 
+|`invalidNumber`  | `#NUM!`   | Há um problema com um número na fórmula. |
+|`invalidReference` | `#REF!` | A função se refere a uma célula inválida. Observe que esse erro é suportado como um erro de entrada de função personalizada, mas não como um erro de saída de função personalizada.|
+|`invalidValue`   | `#VALUE!` | Um valor na fórmula é do tipo incorreto. |
+|`notAvailable`   | `#N/A`    | A função ou o serviço não está disponível. |
 |`nullReference`  | `#NULL!`  | Os intervalos na fórmula não fazem interseção. |
 
 O exemplo de código a seguir mostra como criar e retornar um erro para um número inválido (`#NUM!`).
@@ -56,19 +55,19 @@ let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidNumber);
 throw error;
 ```
 
-Quando você retorna um erro `#VALUE!`, também pode incluir uma mensagem personalizada que será mostrada em um pop-up quando o usuário passar o mouse sobre a célula. O exemplo a seguir mostra como retornar uma mensagem de erro personalizada.
+O `#VALUE!` e os `#N/A` erros também dão suporte a mensagens de erro personalizadas. As mensagens de erro personalizadas são exibidas no menu indicador de erro, que é acessado ao passar o sinalizador de erro em cada célula com um erro. O exemplo a seguir mostra como retornar uma mensagem de erro personalizada com o `#VALUE!` erro.
 
 ```typescript
-// You can only return a custom error message with the #VALUE! error
+// You can only return a custom error message with the #VALUE! and #N/A errors.
 let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidValue, "The parameter can only contain lowercase characters.");
 throw error;
 ```
 
 ## <a name="use-try-catch-blocks"></a>Use blocos try-catch
 
-Em geral, use `try` - `catch` blocos em sua função personalizada para detectar quaisquer possíveis erros que ocorram. Se você não tratar exceções no seu código, elas serão retornadas ao Excel. Por padrão, o Excel retorna `#VALUE!` para uma exceção não tratada.
+Em geral, use `try` - `catch` blocos em sua função personalizada para detectar quaisquer possíveis erros que ocorram. Se você não tratar exceções no seu código, elas serão retornadas ao Excel. Por padrão, o Excel retorna `#VALUE!` para erros ou exceções não manipuladas.
 
-No exemplo de código a seguir, a função personalizada faz uma chamada de busca para um serviço REST. É possível que a chamada falhe, por exemplo, se o serviço REST retornar um erro ou a rede cair. Se isso acontecer, a função personalizada retornará `#N/A` para indicar que a chamada Web falhou.
+No exemplo de código a seguir, a função personalizada faz uma chamada de busca para um serviço REST. É possível que a chamada falhe, por exemplo, se o serviço REST retornar um erro ou a rede cair. Se isso acontecer, a função personalizada retornará `#N/A` para indicar que a chamada da Web falhou.
 
 
 ```typescript

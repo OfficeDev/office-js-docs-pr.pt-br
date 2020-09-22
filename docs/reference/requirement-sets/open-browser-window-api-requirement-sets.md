@@ -4,12 +4,12 @@ description: Especifica quais plataformas e compilações do Office suportam a A
 ms.date: 09/16/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 8f6966f5bdcecd9c55a20f2d640d066906c1b6a3
-ms.sourcegitcommit: 2479812e677d1a7337765fe8f1c8345061d4091a
+ms.openlocfilehash: 8bc26525bf64ed87d46d85cd1248f79696d67f2b
+ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "48135232"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "48175504"
 ---
 # <a name="open-browser-window-api-requirement-sets"></a>Abrir conjuntos de requisitos da API da janela do navegador
 
@@ -38,7 +38,7 @@ Para saber mais sobre conjuntos de requisitos comuns da API, confira [Conjuntos 
 
 ## <a name="openbrowserwindowapi-11"></a>OpenBrowserWindowApi 1,1
 
-O OpenBrowserWindowApi 1,1 é a primeira versão da API. Para obter detalhes sobre a API, consulte o tópico de referência do [Office. Context. UI](/javascript/api/office/office.context.ui) .
+O OpenBrowserWindowApi 1,1 é a primeira versão da API. Para obter detalhes sobre a API, consulte o tópico de referência do [Office. Context. UI](/javascript/api/office/office.context#ui) .
 
 ## <a name="see-also"></a>Confira também
 

@@ -1,14 +1,14 @@
 ---
 title: Realizar sideload de suplementos do Office no Office na Web para teste
 description: Teste seu suplemento do Office no Office na Web por meio de Sideload.
-ms.date: 07/10/2020
+ms.date: 09/21/2020
 localization_priority: Normal
-ms.openlocfilehash: 2f9a0d058fc972316da964dd5af03b5733dc7b60
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 709461d19fbf4602db3ba5bd9c40f495d0dbbd52
+ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159287"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "48175532"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>Realizar sideload de suplementos do Office no Office na Web para teste
 
@@ -42,13 +42,7 @@ O vídeo a seguir oferece orientações para o processo de sideload do seu suple
 6. Verifique se o suplemento está instalado. Por exemplo, se for um comando do suplemento, ele deve aparecer na faixa de opções ou no menu de contexto. Se for um suplemento de painel de tarefas, o painel deve ser exibido.
 
 > [!NOTE]
->Para testar o suplemento do Office com o Microsoft Edge, são necessárias duas etapas de configuração: 
->
-> - Em um prompt de comando do Windows, execute a seguinte linha: `CheckNetIsolation LoopbackExempt -a -n="Microsoft.MicrosoftEdge_8wekyb3d8bbwe"`
->
-> - Digite "**about: flags**" na barra de pesquisa do Microsoft Edge para exibir as opções de configurações do desenvolvedor.  Marque a opção "**permitir auto-retorno de localhost**" e reinicie o Microsoft Edge.
-
->    ![A opção “Permitir loopback do localhost” do Microsoft Edge com a caixa marcada.](../images/allow-localhost-loopback.png)
+> Para testar o suplemento do Office com o Microsoft Edge, é necessária uma etapa de configuração adicional. Em um prompt de comando do Windows, execute a seguinte linha: `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes`
 
 ## <a name="sideload-an-office-add-in-in-office-365"></a>Realizar sideload de um suplemento do Office no Office 365
 
