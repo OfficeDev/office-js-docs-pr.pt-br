@@ -1145,6 +1145,9 @@
           displayName: Word
 - name: Padrões e práticas
   items:
+    - name: Abrir no Excel
+      href: excel/pnp-open-in-excel.md
+      displayName: Excel
     - name: Chamadas remotas de funções personalizadas de envio em lote
       href: excel/custom-functions-batching.md
       displayName: 'Excel, Custom Functions'
