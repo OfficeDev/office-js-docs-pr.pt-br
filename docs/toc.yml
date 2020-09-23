@@ -1145,6 +1145,8 @@
           displayName: Word
 - name: Padrões e práticas
   items:
+    - name: Visão Geral
+      href: overview/patterns-and-practices-overview.md
     - name: Abrir no Excel
       href: excel/pnp-open-in-excel.md
       displayName: Excel
