@@ -1,14 +1,14 @@
 ---
 title: Regras de ativação para suplementos do Outlook
 description: O Outlook ativa alguns tipos de suplementos se a mensagem ou o compromisso que o usuário está lendo ou redigindo satisfaz as regras de ativação do suplemento.
-ms.date: 12/10/2019
+ms.date: 09/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 7a3ed48f77146a25725d46b3e06296cb0eb5616a
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: cdcdfbf3961ad9f627ba00f7366f49c77bba435d
+ms.sourcegitcommit: fd110305c2be8660ab8a47c1da3e3969bd1ede86
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294049"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "48214593"
 ---
 # <a name="activation-rules-for-contextual-outlook-add-ins"></a>Regras de ativação para suplementos contextuais do Outlook
 
@@ -141,7 +141,7 @@ O `ItemHasRegularExpressionMatch` tipo complexo define uma regra que usa uma exp
 O exemplo a seguir mostra um `ItemHasRegularExpressionMatch` que ativa o suplemento quando o corpo do item selecionado contém "Apple", "banana" ou "Coconut", ignorando maiúsculas e minúsculas.
 
 ```xml
-<Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="fruits" RegExValue="apple|banana|coconut" pPropertyName="BodyAsPlaintext" IgnoreCase="true" />
+<Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="fruits" RegExValue="apple|banana|coconut" PropertyName="BodyAsPlaintext" IgnoreCase="true" />
 ```
 
 Para obter mais informações sobre como usar a `ItemHasRegularExpressionMatch` regra, confira [usar regras de ativação de expressões regulares para mostrar um suplemento do Outlook](use-regular-expressions-to-show-an-outlook-add-in.md).
