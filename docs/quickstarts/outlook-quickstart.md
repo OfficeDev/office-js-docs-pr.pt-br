@@ -1,15 +1,15 @@
 ---
 title: Criar seu primeiro suplemento do Outlook
 description: Saiba como criar um Suplemento do Outlook simples usando a API JS do Office.
-ms.date: 08/24/2020
+ms.date: 09/22/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 6ce09b3b2f60cd4c77e966f6b920aa63caab299c
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: f4a3827b630ccee7cd8cef6222bfe6bac82f8ba2
+ms.sourcegitcommit: fd110305c2be8660ab8a47c1da3e3969bd1ede86
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294329"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "48214607"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Criar seu primeiro suplemento do Outlook
 
@@ -96,20 +96,17 @@ O projeto de suplemento que você criou com o gerador do Yeoman contém um exemp
 ### <a name="try-it-out"></a>Experimente
 
 > [!NOTE]
-> Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se for solicitado a instalação de um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer.
+> Os Suplementos do Office devem usar HTTPS, e não HTTP, mesmo durante o desenvolvimento. Se for solicitado a instalação de um certificado após executar um dos seguintes comandos, aceite a solicitação para instalar o certificado que o gerador do Yeoman fornecer. Você também pode executar o prompt de comando ou terminal como administrador para que as alterações sejam feitas.
 
 1. Execute o seguinte comando no diretório raiz do seu projeto. Quando você executar este comando, o servidor da Web local será iniciado (se ainda não estiver em execução).
 
     ```command&nbsp;line
-    npm start
+    npm run dev-server
     ```
-
-    > [!IMPORTANT]
-    > Se você vir um erro "Sideload não tem suporte", ignore-o e continue.
 
 1. Siga as instruções [Realizar sideload dos suplementos do Outlook para teste](../outlook/sideload-outlook-add-ins-for-testing.md)para realizar o sideload do suplemento do Outlook.
 
-1. No Outlook, escolha ou abra uma mensagem.
+1. No Outlook, exiba uma mensagem no [Painel de leitura](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0) ou abra a mensagem em sua própria janela.
 
 1. Escolha a guia **Página Inicial** (ou a guia **Mensagem**, se você abriu a mensagem em uma nova janela), e em seguida o botão **Mostrar Painel de Tarefas** na faixa de opções para abrir o painel de tarefas do suplemento.
 
