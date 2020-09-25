@@ -1,14 +1,14 @@
 ---
 title: Use as APIs REST do Outlook de um suplemento do Outlook
 description: Saiba como usar APIs REST do Outlook a partir de um suplemento do Outlook para obter um token de acesso.
-ms.date: 10/31/2019
+ms.date: 09/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 7cd26c26e277d7d5fe93664494eb84b4e94bcc47
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 067934f18b02d5106b58a7ec2a0de11a6ea35581
+ms.sourcegitcommit: 09e1d8ff14b3c09a3eb11c91432c224a539181a4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611614"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "48268548"
 ---
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>Use as APIs REST do Outlook de um suplemento do Outlook
 
@@ -82,6 +82,9 @@ var restHost = Office.context.mailbox.restUrl;
 ## <a name="call-the-api"></a>Chamar a API
 
 Depois que seu suplemento tiver o token de acesso, a ID do item e a URL da API REST, ele poderá passar essas informações para um serviço de back-end que chama a API REST ou pode chamá-la diretamente usando o AJAX. O exemplo a seguir chama a API REST do Email do Outlook para obter a mensagem atual.
+
+> [!IMPORTANT]
+> Para implantações locais do Exchange, as solicitações do cliente usando AJAX ou bibliotecas similares falham porque o CORS não é suportado na configuração do servidor.
 
 ```js
 function getCurrentItem(accessToken) {

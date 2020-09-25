@@ -1,14 +1,14 @@
 ---
-ms.date: 09/21/2020
+ms.date: 09/23/2020
 description: 'Manipular e retornar erros como #NULL! a partir de sua função personalizada.'
 title: Manipular e retornar erros de sua função personalizada
 localization_priority: Normal
-ms.openlocfilehash: 58c2ab432a4525f660e2d89735fd3add6e76fa7f
-ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
+ms.openlocfilehash: b3d3b325649a0775d3375c9f5285bba7cde0aa16
+ms.sourcegitcommit: 09e1d8ff14b3c09a3eb11c91432c224a539181a4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "48175525"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "48268541"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function"></a>Manipular e retornar erros de sua função personalizada
 
@@ -38,9 +38,9 @@ function getCity(zipCode: string): string {
 O objeto [CustomFunctions. Error](/javascript/api/custom-functions-runtime/customfunctions.error) é usado para retornar um erro de volta para a célula. Ao criar o objeto, especifique o erro que você deseja usar, escolhendo um dos seguintes valores de `ErrorCode` enumeração.
 
 
-|Valor de enumeração ErrorCode  |Valor da célula do Excel  |Significado  |
+|Valor de enumeração ErrorCode  |Valor da célula do Excel  |Descrição  |
 |---------------|---------|---------|
-|`divisionByZero` | `#DIV/0`  | Esteja ciente de que o JavaScript permite a divisão por zero, portanto, você precisa escrever um manipulador de erros com cuidado para detectar essa condição. |
+|`divisionByZero` | `#DIV/0`  | A função está tentando dividir por zero. |
 |`invalidName`    | `#NAME?`  | Há um erro de digitação no nome da função. Observe que esse erro é suportado como um erro de entrada de função personalizada, mas não como um erro de saída de função personalizada. | 
 |`invalidNumber`  | `#NUM!`   | Há um problema com um número na fórmula. |
 |`invalidReference` | `#REF!` | A função se refere a uma célula inválida. Observe que esse erro é suportado como um erro de entrada de função personalizada, mas não como um erro de saída de função personalizada.|
