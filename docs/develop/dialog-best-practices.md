@@ -1,14 +1,14 @@
 ---
 title: Práticas recomendadas e regras para a API da caixa de diálogo do Office
 description: Fornece regras e práticas recomendadas para a API de caixa de diálogo do Office, como as práticas recomendadas para um aplicativo de página única (SPA)
-ms.date: 01/29/2020
+ms.date: 09/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 5e0854137b27d8b8ae33fff8943421cc0c488abe
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 5c80b18f7eb6448de23c692683b7c991b9d95ef5
+ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292754"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "48279494"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Práticas recomendadas e regras para a API da caixa de diálogo do Office
 
@@ -51,7 +51,7 @@ Se, por qualquer motivo, você deseja desativar esse recurso, o código deve ser
 
 ### <a name="do-not-use-the-_host_info-value"></a>Não usar o \_ valor de \_ informações do host
 
-O Office adiciona automaticamente um parâmetro de consulta chamado `_host_info` à URL que é transmitida para `displayDialogAsync` . Ele é acrescentado após os parâmetros de consulta personalizados, se houver. Ele não é acrescentado a quaisquer URLs subsequentes às quais a caixa de diálogo navega. A Microsoft pode alterar o conteúdo desse valor ou removê-lo totalmente, portanto seu código não deve lê-lo. O mesmo valor é adicionado ao armazenamento da sessão da caixa de diálogo. Novamente, *seu código não deve ser lido nem gravado para esse valor*.
+O Office adiciona automaticamente um parâmetro de consulta chamado `_host_info` à URL que é transmitida para `displayDialogAsync` . Ele é acrescentado após os parâmetros de consulta personalizados, se houver. Ele não é acrescentado a quaisquer URLs subsequentes às quais a caixa de diálogo navega. A Microsoft pode alterar o conteúdo desse valor ou removê-lo totalmente, portanto seu código não deve lê-lo. O mesmo valor é adicionado ao armazenamento de sessão da caixa de diálogo (ou seja, a propriedade [Window. sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) ). Novamente, *seu código não deve ser lido nem gravado para esse valor*.
 
 ### <a name="best-practices-for-using-the-office-dialog-api-in-an-spa"></a>Práticas recomendadas para usar a API de caixa de diálogo do Office em um SPA
 
@@ -62,7 +62,7 @@ Se seu suplemento usa o roteamento do lado do cliente, como aplicativos de pági
 
 #### <a name="problems-with-spas-and-the-office-dialog-api"></a>Problemas com o spas usam e a API de caixa de diálogo do Office
 
-A caixa de diálogo do Office está em uma nova janela com sua própria instância do mecanismo JavaScript e, portanto, é o contexto de execução completo. Se você passar uma rota, sua página de base e todos os seus códigos de inicialização e Bootstrap serão executados novamente neste novo contexto, e qualquer variável será definida para seus valores iniciais na caixa de diálogo. Portanto, essa técnica baixa e inicia uma segunda instância do aplicativo na janela da caixa, que anula parcialmente a finalidade de um SPA. Além disso, o código que altera as variáveis na janela da caixa de diálogo não altera a versão do painel de tarefas das mesmas variáveis. Da mesma forma, a janela da caixa de diálogo tem seu próprio armazenamento de sessão, que não é acessível a partir do código no painel de tarefas. A caixa de diálogo e a página host na qual o `displayDialogAsync` foi chamado têm a aparência de dois clientes diferentes para o seu servidor. (Para obter um lembrete sobre o que é uma página de host, consulte [abrir uma caixa de diálogo em uma página de host](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page).)
+A caixa de diálogo do Office está em uma nova janela com sua própria instância do mecanismo JavaScript e, portanto, é o contexto de execução completo. Se você passar uma rota, sua página de base e todos os seus códigos de inicialização e Bootstrap serão executados novamente neste novo contexto, e qualquer variável será definida para seus valores iniciais na caixa de diálogo. Portanto, essa técnica baixa e inicia uma segunda instância do aplicativo na janela da caixa, que anula parcialmente a finalidade de um SPA. Além disso, o código que altera as variáveis na janela da caixa de diálogo não altera a versão do painel de tarefas das mesmas variáveis. Da mesma forma, a janela da caixa de diálogo tem seu próprio armazenamento de sessão (a propriedade [Window. sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) ), que não é acessível a partir do código no painel de tarefas. A caixa de diálogo e a página host na qual o `displayDialogAsync` foi chamado têm a aparência de dois clientes diferentes para o seu servidor. (Para obter um lembrete sobre o que é uma página de host, consulte [abrir uma caixa de diálogo em uma página de host](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page).)
 
 Portanto, se você passou uma rota para o `displayDialogAsync` método, você realmente não tem um spa; você teria *duas instâncias do mesmo Spa*. Além disso, grande parte do código na instância do painel de tarefas nunca seria usada nessa instância, e grande parte do código na instância da caixa de diálogo nunca seria usada nessa instância. Seria como ter dois SPAs no mesmo grupo.
 

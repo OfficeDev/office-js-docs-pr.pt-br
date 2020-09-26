@@ -1,14 +1,14 @@
 ---
-ms.date: 05/17/2020
+ms.date: 09/25/2020
 description: Entenda as funções personalizadas do Excel que não usam um painel de tarefas e seu tempo de execução JavaScript específico.
 title: Tempo de execução para funções personalizadas do Excel sem interface do usuário
 localization_priority: Normal
-ms.openlocfilehash: 5cb9aa480d6923d31434d58a9683e9a9f5d48458
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 94254dfb5a0d03b7c9fec392b2377aff91b58af4
+ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609640"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "48279513"
 ---
 # <a name="runtime-for-ui-less-excel-custom-functions"></a>Tempo de execução para funções personalizadas do Excel sem interface do usuário
 
@@ -30,7 +30,7 @@ Uma implementação CORS simples não pode usar cookies e só oferece suporte a 
 
 ## <a name="storing-and-accessing-data"></a>Como armazenar e acessar os dados
 
-Dentro de uma função personalizada sem interface do usuário, você pode armazenar e acessar dados usando o `OfficeRuntime.storage` objeto. `Storage`é um sistema de armazenamento de valor chave persistente, não criptografado que fornece uma alternativa para o [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), que não pode ser usado por funções personalizadas sem interface do usuário. `Storage`o oferece 10 MB de dados por domínio. Os domínios podem ser compartilhados por mais de um suplemento.
+Dentro de uma função personalizada sem interface do usuário, você pode armazenar e acessar dados usando o `OfficeRuntime.storage` objeto. `Storage` é um sistema de armazenamento de valor chave persistente, não criptografado que fornece uma alternativa para o [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), que não pode ser usado por funções personalizadas sem interface do usuário. `Storage` o oferece 10 MB de dados por domínio. Os domínios podem ser compartilhados por mais de um suplemento.
 
 `Storage` é uma solução de armazenamento compartilhado, o que significa que várias partes de um suplemento podem acessar os mesmos dados. Por exemplo, os tokens para autenticação de usuário podem ser armazenados em `storage` porque podem ser acessados por uma função personalizada sem interface e elementos de interface do usuário de suplemento, como um painel de tarefas. Da mesma forma, se dois suplementos compartilham o mesmo domínio (por exemplo, `www.contoso.com/addin1` `www.contoso.com/addin2` ), eles também podem compartilhar informações de frente e para trás `storage` . Observe que os suplementos que possuem subdomínios diferentes terão instâncias diferentes `storage` (por exemplo, `subdomain.contoso.com/addin1` , `differentsubdomain.contoso.com/addin2` ).
 
@@ -46,7 +46,7 @@ Os métodos a seguir estão disponíveis no objeto `storage`:
  - `removeItems`
  - `getKeys`
 
-.[!NOTE]
+> [!NOTE]
 > Não há nenhum método para limpar todas as informações (como `clear` ). Em vez disso, use `removeItems` para remover várias entradas de uma só vez.
 
 ### <a name="officeruntimestorage-example"></a>Exemplo de OfficeRuntime. Storage

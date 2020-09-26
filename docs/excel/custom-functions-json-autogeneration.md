@@ -1,14 +1,14 @@
 ---
-ms.date: 05/06/2020
+ms.date: 09/25/2020
 description: Use tags JSDoc para criar dinamicamente seus metadados JSON de funções personalizadas.
 title: Gerar metadados JSON automaticamente para funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: 8138e738188e50d2a1369c359fbca3e1574db32f
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 995f323b24efdc1964e6e9643f6dad8a999a6d39
+ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819515"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "48279506"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Gerar metadados JSON automaticamente para funções personalizadas
 
@@ -38,7 +38,9 @@ No exemplo a seguir, a frase "Calcula o volume de uma esfera." é a descrição 
 
 
 ## <a name="jsdoc-tags"></a>Marcações JSDoc
-As seguintes marcações JSDoc possuem suporte em funções personalizadas do Excel:
+
+As seguintes marcas JSDoc são suportadas nas funções personalizadas do Excel.
+
 * [@cancelable](#cancelable)
 * [@customfunction](#customfunction) nome de identificação
 * [@helpurl](#helpurl) url
@@ -50,7 +52,7 @@ As seguintes marcações JSDoc possuem suporte em funções personalizadas do Ex
 
 ---
 ### <a name="cancelable"></a>@cancelable
-<a id="cancelable"/>
+<a id="cancelable"></a>
 
 Indica que uma função personalizada executa uma ação quando a função é cancelada.
 
@@ -62,7 +64,7 @@ Uma função não pode ter as tags `@cancelable` e `@streaming` ao mesmo tempo.
 
 ---
 ### <a name="customfunction"></a>@customfunction
-<a id="customfunction"/>
+<a id="customfunction"></a>
 
 Sintaxe: @customfunction _id_ _nome_
 
@@ -131,7 +133,7 @@ No exemplo a seguir, a frase "Uma função que soma dois números" é a descriç
 
 ---
 ### <a name="helpurl"></a>@helpurl
-<a id="helpurl"/>
+<a id="helpurl"></a>
 
 Sintaxe: @helpurl _url_
 
@@ -150,7 +152,7 @@ No exemplo a seguir, o `helpurl` é `www.contoso.com/weatherhelp` .
 
 ---
 ### <a name="param"></a>@param
-<a id="param"/>
+<a id="param"></a>
 
 #### <a name="javascript"></a>JavaScript
 
@@ -161,6 +163,7 @@ Sintaxe de JavaScript: @param {type} nome _descrição_
 * `description` fornece a descrição que aparece no Excel para o parâmetro de função. É opcional.
 
 Para denotar um parâmetro de função personalizado como opcional:
+
 * Coloque colchetes ao redor do nome do parâmetro. Por exemplo: `@param {string} [text] Optional text`.
 
 > [!NOTE]
@@ -189,6 +192,7 @@ Sintaxe de TypeScript: @param nome _descrição_
 Confira a seção [Tipos](#types) para mais informações sobre os tipos de parâmetros de função que podem ser usados.
 
 Para denotar um parâmetro de função personalizado como opcional, siga um destes procedimentos:
+
 * Use um parâmetro opcional. Por exemplo: `function f(text?: string)`
 * Dê ao parâmetro um valor padrão. Por exemplo: `function f(text: string = "abc")`
 
@@ -214,7 +218,7 @@ function add(first: number, second: number): number {
 
 ---
 ### <a name="requiresaddress"></a>@requiresAddress
-<a id="requiresAddress"/>
+<a id="requiresAddress"></a>
 
 Indica que o endereço da célula onde a função está sendo avaliada deve ser fornecido.
 
@@ -222,7 +226,7 @@ O último parâmetro da função deve ser do tipo `CustomFunctions.Invocation` o
 
 ---
 ### <a name="returns"></a>@returns
-<a id="returns"/>
+<a id="returns"></a>
 
 Sintaxe: @returns {_type_}
 
@@ -247,7 +251,7 @@ function add(first: number, second: number): number {
 
 ---
 ### <a name="streaming"></a>@streaming
-<a id="streaming"/>
+<a id="streaming"></a>
 
 Usado para indicar que uma função personalizada é uma função de streaming. 
 
@@ -262,7 +266,7 @@ As funções de streaming não podem ser marcadas como [@volatile](#volatile).
 
 ---
 ### <a name="volatile"></a>@volatile
-<a id="volatile"/>
+<a id="volatile"></a>
 
 Uma função volátil é aquela cujo resultado não é o mesmo de um momento para o outro, mesmo que não receba argumentos ou os argumentos não mudem. O Excel reavalia células que contenham funções voláteis, juntamente com todos os dependentes, sempre que um cálculo é feito. Por esse motivo, confiar demais em funções voláteis pode retardar o tempo de recálculo; portanto, use-as com moderação.
 
@@ -272,7 +276,7 @@ A função a seguir é volátil e usa `@volatile` a marca.
 
 ```js
 /**
- * Simulates rolling a 6-sided dice.
+ * Simulates rolling a 6-sided die.
  * @customfunction
  * @volatile
  */
@@ -310,6 +314,7 @@ Uma função pode retornar uma promessa, que fornece o valor quando a promessa �
 Qualquer outro tipo será tratado como um erro.
 
 ## <a name="next-steps"></a>Próximas etapas
+
 Saiba mais sobre [convenções de nomenclatura para funções personalizadas](custom-functions-naming.md). Como alternativa, saiba como [localizar as funções](custom-functions-localize.md) que requerem a [gravação do arquivo JSON à mão](custom-functions-json.md).
 
 ## <a name="see-also"></a>Confira também
