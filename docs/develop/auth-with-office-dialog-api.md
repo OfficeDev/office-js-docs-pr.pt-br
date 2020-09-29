@@ -1,14 +1,14 @@
 ---
 title: Autenticação e autorização com a API da caixa de diálogo do Office
 description: Aprenda a usar a API da caixa de diálogo do Office para permitir que os usuários entrem no Google, no Facebook, no Microsoft 365 e em outros serviços protegidos pela Plataforma de Identidade da Microsoft.
-ms.date: 07/07/2020
+ms.date: 09/24/2020
 localization_priority: Priority
-ms.openlocfilehash: 22242b3e54a63b76a44f8e610be2194a1fc5f00b
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: bc0d092dad105cbdff09a5826632baa6fd4f7021
+ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293342"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "48279489"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Autenticação e autorização com a API da caixa de diálogo do Office
 
@@ -23,7 +23,7 @@ A caixa de diálogo que é aberta com essa API tem as seguintes características
 - É uma instância do navegador completamente separada do painel de tarefas, ou seja:
   - Tem o seu próprio ambiente de tempo de execução do JavaScript, objeto de janela e variáveis globais.
   - Não há nenhum ambiente de execução compartilhado com o painel de tarefas.
-  - Não compartilha o mesmo armazenamento de sessão que o painel de tarefas.
+  - Não compartilha o mesmo armazenamento de sessão (a propriedade [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)) como o painel de tarefas.
 - A primeira página aberta na caixa de diálogo deve estar hospedada no mesmo domínio que o painel de tarefas, incluindo o protocolo, os subdomínios e a porta, se houver.
 - A caixa de diálogo pode enviar informações de volta para o painel de tarefas usando o método [messageParent](/javascript/api/office/office.ui#messageparent-message-), porém esse método só pode ser chamado a partir de uma página hospedada no mesmo domínio que o painel de tarefas, incluindo o protocolo, os subdomínios e a porta.
 
