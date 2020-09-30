@@ -3,12 +3,12 @@ title: Abrir o Excel a partir da sua página da Web e incorporar o suplemento do
 description: Abra o Excel a partir da sua página da Web e insira seu suplemento do Office.
 ms.date: 09/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 49df253c714f3ad84d2523b87e7df894b9027355
-ms.sourcegitcommit: ea03e4ea2e8537d5f6d52477816209f6c1a6579c
+ms.openlocfilehash: 00846ca5ca05e65fd75629f5aad0e4fb3d947ab1
+ms.sourcegitcommit: 42202d7e2ac24dffa77cf937f5697a1cd79ee790
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "48166915"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "48308541"
 ---
 # <a name="open-excel-from-your-web-page-and-embed-your-office-add-in"></a>Abrir o Excel a partir da sua página da Web e incorporar o suplemento do Office
 
@@ -27,7 +27,7 @@ Primeiro, vamos aprender como criar um documento do Excel a partir de uma págin
 1. Extraia o código de exemplo de  https://github.com/OfficeDev/Office-OOXML-EmbedAddin/archive/master.zip uma pasta no seu computador.
 2. Para criar e executar o exemplo, siga as etapas na seção **para usar o projeto** do Leiame.
 3. Quando você executar o exemplo, será exibida uma página da Web semelhante à captura de tela a seguir. Use a página da Web para criar um novo documento do Excel que contém o laboratório de script quando ele é aberto.
-:::image type="content" source="../images/embed-script-lab-sample-ui.png" alt-text="Captura de tela da página da Web que o exemplo de laboratório de script incorporado exibe para selecionar um arquivo do Excel e incorporar o suplemento do laboratório de scripts a ele.":::
+:::image type="content" source="../images/embed-script-lab-sample-ui.png" alt-text="Imagem do botão do Excel na página da Web que está abrindo um novo documento do Excel com seu suplemento incorporado e de abertura automática.":::
 
 ### <a name="how-the-sample-works"></a>Como funciona o exemplo
 
@@ -72,7 +72,7 @@ O valor **storetype** é "FileSystem".
 
 ## <a name="use-the-fluent-ui"></a>Usar a interface do usuário fluente
 
-:::image type="content" source="../images/fluent-ui-wxp.png" alt-text="Ícones de interface do usuário fluente para Word, Excel e PowerPoint.":::
+:::image type="content" source="../images/fluent-ui-wxp.png" alt-text="Imagem do botão do Excel na página da Web que está abrindo um novo documento do Excel com seu suplemento incorporado e de abertura automática.":::
 
 Uma prática recomendada é usar a interface do usuário fluente para ajudar os usuários a fazer a transição entre os produtos da Microsoft. Você deve sempre usar um ícone do Office para indicar qual aplicativo do Office será iniciado na sua página da Web. Vamos modificar o código de exemplo para usar o ícone do Excel para indicar que ele inicia o aplicativo Excel.
 
@@ -186,16 +186,9 @@ Há uma versão JavaScript do SDK do OOXML disponível no [Open XML SDK para Jav
 
 Você pode colocar o código OOXML em uma função do Azure para separar o código .NET do restante do seu aplicativo Web. Em seguida, chame a função do Azure (para gerar o documento do Excel) a partir do seu aplicativo Web. Para obter mais informações sobre as funções do Azure, consulte [introdução às funções do Azure](https://docs.microsoft.com/azure/azure-functions/functions-overview).
 
-### <a name="simplify-authentication"></a>Simplificar a autenticação
+### <a name="use-single-sign-on"></a>Usar logon único
 
-Normalmente, o cliente será autenticado e conectado quando estiver trabalhando no seu aplicativo Web. Uma prática recomendada é permitir que eles permaneçam conectados quando abrirem o documento para que não precisem entrar novamente para usar o suplemento do Office. Uma boa maneira de lidar com isso é passar por um token de autenticação de vida curta para o suplemento.
-
-1. Use o SDK do OOXML para salvar o token de autenticação como uma propriedade personalizada no documento.
-1. Leia o token do documento quando o suplemento for iniciado.
-1. O suplemento pode, então, se conectar aos seus serviços sem exigir nenhuma etapa de autenticação adicional do cliente.
-
-> [!WARNING]
-> A inserção de um token de autenticação no documento representa um risco de segurança em que um usuário não autorizado pode obter o token. Recomendamos que você use um token de autenticação de vida curta. Quando o suplemento usa o token de vida curta, ele deve solicitar imediatamente um novo token de autenticação que não é salvo no documento.
+Para simplificar a autenticação, recomendamos que seu suplemento implemente o logon único. Para obter mais informações, consulte [habilitar o logon único para suplementos do Office](../develop/sso-in-office-add-ins.md)
 
 ## <a name="see-also"></a>Confira também
 

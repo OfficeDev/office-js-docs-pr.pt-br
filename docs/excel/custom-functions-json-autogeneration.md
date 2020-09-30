@@ -3,12 +3,12 @@ ms.date: 09/25/2020
 description: Use tags JSDoc para criar dinamicamente seus metadados JSON de funções personalizadas.
 title: Gerar metadados JSON automaticamente para funções personalizadas
 localization_priority: Normal
-ms.openlocfilehash: 995f323b24efdc1964e6e9643f6dad8a999a6d39
-ms.sourcegitcommit: b47318a24a50443b0579e05e178b3bb5433c372f
+ms.openlocfilehash: 151dc7c97b2a98743906b7e0a920fdc1eff62e7f
+ms.sourcegitcommit: 42202d7e2ac24dffa77cf937f5697a1cd79ee790
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "48279506"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "48308534"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Gerar metadados JSON automaticamente para funções personalizadas
 
@@ -51,8 +51,9 @@ As seguintes marcas JSDoc são suportadas nas funções personalizadas do Excel.
 * [@volatile](#volatile)
 
 ---
-### <a name="cancelable"></a>@cancelable
 <a id="cancelable"></a>
+
+### <a name="cancelable"></a>@cancelable
 
 Indica que uma função personalizada executa uma ação quando a função é cancelada.
 
@@ -63,8 +64,9 @@ Se o último parâmetro da função for do tipo `CustomFunctions.CancelableInvoc
 Uma função não pode ter as tags `@cancelable` e `@streaming` ao mesmo tempo.
 
 ---
-### <a name="customfunction"></a>@customfunction
 <a id="customfunction"></a>
+
+### <a name="customfunction"></a>@customfunction
 
 Sintaxe: @customfunction _id_ _nome_
 
@@ -132,8 +134,9 @@ No exemplo a seguir, a frase "Uma função que soma dois números" é a descriç
 ```
 
 ---
-### <a name="helpurl"></a>@helpurl
 <a id="helpurl"></a>
+
+### <a name="helpurl"></a>@helpurl
 
 Sintaxe: @helpurl _url_
 
@@ -151,8 +154,9 @@ No exemplo a seguir, o `helpurl` é `www.contoso.com/weatherhelp` .
 ```
 
 ---
-### <a name="param"></a>@param
 <a id="param"></a>
+
+### <a name="param"></a>@param
 
 #### <a name="javascript"></a>JavaScript
 
@@ -217,16 +221,18 @@ function add(first: number, second: number): number {
 ```
 
 ---
-### <a name="requiresaddress"></a>@requiresAddress
 <a id="requiresAddress"></a>
+
+### <a name="requiresaddress"></a>@requiresAddress
 
 Indica que o endereço da célula onde a função está sendo avaliada deve ser fornecido.
 
 O último parâmetro da função deve ser do tipo `CustomFunctions.Invocation` ou de um tipo derivado. Quando a função é chamada, a propriedade `address` conterá o endereço.
 
 ---
-### <a name="returns"></a>@returns
 <a id="returns"></a>
+
+### <a name="returns"></a>@returns
 
 Sintaxe: @returns {_type_}
 
@@ -250,8 +256,9 @@ function add(first: number, second: number): number {
 ```
 
 ---
-### <a name="streaming"></a>@streaming
 <a id="streaming"></a>
+
+### <a name="streaming"></a>@streaming
 
 Usado para indicar que uma função personalizada é uma função de streaming. 
 
@@ -265,8 +272,9 @@ Exceções lançadas por uma função de streaming são ignoradas. `setResult()`
 As funções de streaming não podem ser marcadas como [@volatile](#volatile).
 
 ---
-### <a name="volatile"></a>@volatile
 <a id="volatile"></a>
+
+### <a name="volatile"></a>@volatile
 
 Uma função volátil é aquela cujo resultado não é o mesmo de um momento para o outro, mesmo que não receba argumentos ou os argumentos não mudem. O Excel reavalia células que contenham funções voláteis, juntamente com todos os dependentes, sempre que um cálculo é feito. Por esse motivo, confiar demais em funções voláteis pode retardar o tempo de recálculo; portanto, use-as com moderação.
 
