@@ -1,14 +1,14 @@
 ---
 title: Habilitar cenários de acesso de representante em um suplemento do Outlook
 description: Descreve brevemente o acesso de representante e discute como configurar o suporte a suplementos.
-ms.date: 09/03/2020
+ms.date: 09/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 68b912d35f68cbf1177dd0b809994840092330a9
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 68e9c8003f8d223a591283fd1a73f0a38bd3c8a4
+ms.sourcegitcommit: 6c3a04acde57832feeaaa599148f93af7e3e36ea
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430979"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "48336416"
 ---
 # <a name="enable-delegate-access-scenarios-in-an-outlook-add-in"></a>Habilitar cenários de acesso de representante em um suplemento do Outlook
 
@@ -26,7 +26,7 @@ A tabela a seguir descreve as permissões de representante que a API JavaScript 
 |Permissão|Valor|Descrição|
 |---|---:|---|
 |Ler|1 (000001)|Pode ler itens.|
-|Gravar|2 (000010)|Pode criar itens.|
+|Gravação|2 (000010)|Pode criar itens.|
 |DeleteOwn|4 (000100)|Só pode excluir os itens que eles criaram.|
 |DeleteAll|8 (001000)|Pode excluir qualquer item.|
 |EditOwn|16 (010000)|Só pode editar os itens que eles criaram.|
@@ -83,9 +83,6 @@ O exemplo a seguir mostra o `SupportsSharedFolders` elemento definido como `true
 
 Você pode obter as propriedades compartilhadas de um item no modo de redação ou leitura chamando o método [Item. getSharedPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) . Isso retorna um objeto [SharedProperties](/javascript/api/outlook/office.sharedproperties) que atualmente fornece as permissões do representante, o endereço de email do proprietário, a URL base da API REST e a caixa de correio de destino.
 
-> [!IMPORTANT]
-> Em um cenário de representante, o suplemento pode usar REST, mas não EWS, e a permissão do suplemento deve ser definida para `ReadWriteMailbox` habilitar o acesso REST à caixa de correio do proprietário.
-
 O exemplo a seguir mostra como obter as propriedades compartilhadas de uma mensagem ou compromisso, verificar se o representante tem permissão de **gravação** e fazer uma chamada REST.
 
 ```js
@@ -139,6 +136,46 @@ function performOperation() {
 
 > [!TIP]
 > Como representante, você pode usar o REST para [obter o conteúdo de uma mensagem do Outlook anexada a um item do Outlook ou a uma postagem de grupo](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post).
+
+## <a name="handle-calling-rest-on-shared-and-non-shared-items"></a>Gerenciar o resto de chamadas em itens compartilhados e não compartilhados
+
+Se você quiser chamar uma operação REST em um item, se o item é ou não compartilhado, você pode usar a `getSharedPropertiesAsync` API para determinar se o item é compartilhado. Depois, você pode construir a URL REST para a operação usando o objeto apropriado.
+
+```js
+if (item.getSharedPropertiesAsync) {
+  // In Windows, Mac, and the web client, this indicates a shared item so use SharedProperties properties to construct the REST URL.
+  // Add-ins don't activate on shared items in mobile so no need to handle.
+
+  // Perform operation for shared item.
+} else {
+  // In general, this is not a shared item, so construct the REST URL using info from the Call REST APIs article:
+  // https://docs.microsoft.com/office/dev/add-ins/outlook/use-rest-api
+
+  // Perform operation for non-shared item.
+}
+```
+
+## <a name="limitations"></a>Limitações
+
+Dependendo dos cenários do seu suplemento, há algumas limitações a serem consideradas ao lidar com as situações de representante.
+
+### <a name="rest-and-ews"></a>REST e EWS
+
+O suplemento pode usar REST, mas não EWS, e a permissão do suplemento deve ser definida para `ReadWriteMailbox` habilitar o acesso REST à caixa de correio do proprietário.
+
+### <a name="message-compose-mode"></a>Modo de redação de mensagem
+
+No modo de redação de mensagens, o [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#getsharedpropertiesasync-options--callback-) não é suportado no Outlook na Web ou no Windows, a menos que as seguintes condições sejam atendidas.
+
+1. O proprietário compartilha pelo menos uma pasta de caixa de correio com o representante.
+1. O representante esboça uma mensagem na pasta compartilhada.
+
+    Exemplos:
+
+    - O representante responde ou encaminha um email na pasta compartilhada.
+    - O representante salva uma mensagem de rascunho e, em seguida, move-a da pasta **rascunhos** para a pasta compartilhada. O representante abre o rascunho da pasta compartilhada e continua a redigir.
+
+Depois que a mensagem foi enviada, ela geralmente é encontrada na pasta **itens enviados** do representante.
 
 ## <a name="see-also"></a>Confira também
 
