@@ -1,14 +1,14 @@
 ---
 title: Privacidade, permissões e segurança de suplementos do Outlook
 description: Saiba como gerenciar a privacidade, as permissões e a segurança em um suplemento do Outlook.
-ms.date: 09/14/2020
+ms.date: 10/05/2020
 localization_priority: Priority
-ms.openlocfilehash: 3bad5cc3080d67cdfab8639d9140b9bfa3e25559
-ms.sourcegitcommit: 6e6de48f746416ec68b2cf4c298253986486fbfd
+ms.openlocfilehash: 93eee06659b6452e6dd0961837715be5557e6c2c
+ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "47651941"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "48370511"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Privacidade, permissões e segurança de suplementos do Outlook
 
@@ -63,9 +63,12 @@ A [AppSource](https://appsource.microsoft.com) hospeda suplementos que podem ser
 
 Os usuários finais e administradores de TI podem desativar as [experiências conectadas opcionais nos clientes móveis e na área de trabalho do Office](/deployoffice/privacy/optional-connected-experiences). Para suplementos do Outlook, o impacto da desabilitação da configuração das **experiências conectadas opcionais** depende do cliente, mas geralmente significa que os suplementos instalados pelo usuário e o acesso à Office Store não são permitidos. Alguns suplementos da Microsoft que são considerados essenciais ou fundamentais para os negócios e suplementos implantados por um administrador de TI da organização pela [Implantação Centralizada](../publish/centralized-deployment.md) ainda estarão disponíveis.
 
-- Windows, Mac: o botão **Obter suplementos** não é exibido, para que os usuários não possam mais gerenciar seus suplementos ou acessar a Office Store.
+- Windows\*, Mac: O botão **Obter suplementos** não é exibido para que os usuários não possam mais gerenciar seus suplementos ou acessar a Office Store.
 - Android, iOS: a caixa de diálogo **Obter suplementos** mostra somente suplementos implantados pelo administrador.
 - Navegador: a disponibilidade de suplementos e o acesso ao repositório não são afetadas, para que os usuários possam continuar a [gerenciar seus suplementos](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce), incluindo aqueles implantados pelo administrador.
+
+  > [!NOTE]
+  > \* Para Windows, o suporte para essa experiência/comportamento está disponível na versão 2009 (Build 13127.20296). Para obter mais detalhes em relação à sua versão, consulte a página do histórico de atualizações do [Microsoft 365](/officeupdates/update-history-office365-proplus-by-date) e de como [encontrar a versão do cliente do Office e atualizar o canal](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19).
 
 Para obter o comportamento geral do suplemento, confira [privacidade e segurança dos Suplementos do Office](../concepts/privacy-and-security.md#optional-connected-experiences).
 

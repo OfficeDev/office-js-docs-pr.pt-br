@@ -1,14 +1,14 @@
 ---
 title: Conceitos básicos para comandos de suplemento
 description: Aprenda a adicionar botões e itens de menu personalizados da faixa de opções ao Office como parte de um suplemento do Office.
-ms.date: 07/10/2020
+ms.date: 10/03/2020
 localization_priority: Priority
-ms.openlocfilehash: 13db2191d9691a699c5976b812e1ca6d8f3bf1ae
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: eea1983d8c45d13ca48594c108e2992a1bec0d02
+ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293349"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "48370504"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Comandos de suplemento para Excel, Word e PowerPoint
 
@@ -52,12 +52,12 @@ Os seguintes recursos de comando são compatíveis no momento.
 - ShowTaskpane: exibe um ou vários painéis que carregam páginas HTML personalizadas dentro deles.
 - ExecuteFunction: carrega uma página HTML invisível e executa uma função JavaScript dentro dela. Para mostrar a interface do usuário dentro de sua função (como erros, progresso ou entrada adicional), você pode usar a API [displayDialog](/javascript/api/office/office.ui).  
 
-### <a name="default-enabled-or-disabled-status-preview"></a>Status padrão Habilitado ou Desabilitado (visualização)
+### <a name="default-enabled-or-disabled-status"></a>Status padrão Habilitado ou Desabilitado
 
 Você pode especificar se o comando está ativado ou desativado quando o suplemento é iniciado e alterar programaticamente a configuração.
 
 > [!NOTE]
-> Esse recurso está em visualização e não tem suporte em todos os aplicativos ou cenários do Office. Para obter mais informações, consulte [Ativar e Desativar Comandos de Suplemento](disable-add-in-commands.md).
+> Esse recurso não tem suporte em todos os aplicativos ou cenários do Office. Para obter mais informações, consulte [Ativar e Desativar Comandos de Suplemento](disable-add-in-commands.md).
 
 ## <a name="supported-platforms"></a>Plataformas compatíveis
 
