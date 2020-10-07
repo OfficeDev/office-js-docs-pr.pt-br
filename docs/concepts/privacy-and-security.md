@@ -1,14 +1,14 @@
 ---
 title: Privacidade e segurança para suplementos do Office
 description: Saiba mais sobre os aspectos de privacidade e segurança da plataforma de suplementos do Office.
-ms.date: 09/14/2020
+ms.date: 10/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 4e17463ee7293c74d905238904baef1344a6e6b3
-ms.sourcegitcommit: 7f25a4a15c91e173c11c2cea03bfb605d4d5a98d
+ms.openlocfilehash: 58380145add425b90a2ab2c9011db3c7709973b6
+ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "47652577"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "48370518"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Privacidade e segurança para suplementos do Office
 
@@ -69,13 +69,11 @@ Você pode disponibilizar seus suplementos do Office para o público publicando-
 
 - Requer que um desenvolvedor forneça uma prova de identidade, um acordo contratual e uma política de privacidade compatível para enviar suplementos.
 
-- Garante que a origem dos suplementos seja acessível no modo somente leitura.
-
 - Dá suporte a um sistema de revisão pelo usuário para os suplementos disponíveis para promover uma comunidade autovigilante.
 
 ## <a name="optional-connected-experiences"></a>Experiências conectadas opcionais
 
-Usuários finais e administradores de ti podem desativar [experiências conectadas opcionais em](/deployoffice/privacy/optional-connected-experiences) clientes móveis e de área de trabalho do Office. Para suplementos do Office, o impacto da desativação da configuração de **experiências opcional conectada** é que os usuários não podem mais acessar suplementos ou a Office Store por meio desses clientes. No entanto, determinados suplementos da Microsoft considerados essenciais ou críticos para os negócios, e suplementos implantados pelo administrador de ti da organização por meio da [implantação centralizada](../publish/centralized-deployment.md) ainda estarão disponíveis. Além disso, os suplementos e a loja permanecem disponíveis no Outlook na Web, independentemente do status da configuração.
+Os usuários finais e administradores de TI podem desativar as [experiências conectadas opcionais nos clientes móveis e na área de trabalho do Office](/deployoffice/privacy/optional-connected-experiences). Para suplementos do Office, o impacto da desativação da configuração de **experiências opcional conectada** é que os usuários não podem mais acessar suplementos ou a Office Store por meio desses clientes. No entanto, determinados suplementos da Microsoft considerados essenciais ou críticos para os negócios, e suplementos implantados pelo administrador de ti da organização por meio da [implantação centralizada](../publish/centralized-deployment.md) ainda estarão disponíveis. Além disso, os suplementos e a loja permanecem disponíveis no Outlook na Web, independentemente do status da configuração.
 
 Para saber mais sobre o comportamento específico do Outlook, confira [privacidade, permissões e segurança para suplementos do Outlook](../outlook/privacy-and-security.md#optional-connected-experiences).
 
@@ -275,4 +273,4 @@ O gerenciamento e a execução das configurações do Office são feitos com as 
 - [Política de Mesma Origem Parte 1: Sem Inspecionar](/archive/blogs/ieinternals/same-origin-policy-part-1-no-peeking)
 - [Política de mesma origem para JavaScript](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)
 - [Modo Protegido do IE](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)
-- [Controles de privacidade para os aplicativos do Microsoft 365](/deployoffice/privacy/overview-privacy-controls)
+- [Controles de privacidade para Microsoft 365 Apps](/deployoffice/privacy/overview-privacy-controls)
