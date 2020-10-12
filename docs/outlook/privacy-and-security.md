@@ -1,14 +1,14 @@
 ---
 title: Privacidade, permissões e segurança de suplementos do Outlook
 description: Saiba como gerenciar a privacidade, as permissões e a segurança em um suplemento do Outlook.
-ms.date: 10/05/2020
+ms.date: 10/07/2020
 localization_priority: Priority
-ms.openlocfilehash: 93eee06659b6452e6dd0961837715be5557e6c2c
-ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
+ms.openlocfilehash: aa30b4c9aff9a07761d06ae538d56a01f2c30e0d
+ms.sourcegitcommit: 4bfef315102bd5b4333ff9aeaa6537cffb5bca9e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "48370511"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "48398413"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Privacidade, permissões e segurança de suplementos do Outlook
 
@@ -68,7 +68,7 @@ Os usuários finais e administradores de TI podem desativar as [experiências co
 - Navegador: a disponibilidade de suplementos e o acesso ao repositório não são afetadas, para que os usuários possam continuar a [gerenciar seus suplementos](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce), incluindo aqueles implantados pelo administrador.
 
   > [!NOTE]
-  > \* Para Windows, o suporte para essa experiência/comportamento está disponível na versão 2009 (Build 13127.20296). Para obter mais detalhes em relação à sua versão, consulte a página do histórico de atualizações do [Microsoft 365](/officeupdates/update-history-office365-proplus-by-date) e de como [encontrar a versão do cliente do Office e atualizar o canal](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19).
+  > \* Para Windows, o suporte para essa experiência/comportamento está disponível na versão 2008 (Build 13127.20296). Para obter mais detalhes em relação à sua versão, consulte a página do histórico de atualizações do [Microsoft 365](/officeupdates/update-history-office365-proplus-by-date) e de como [encontrar a versão do cliente do Office e atualizar o canal](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19).
 
 Para obter o comportamento geral do suplemento, confira [privacidade e segurança dos Suplementos do Office](../concepts/privacy-and-security.md#optional-connected-experiences).
 
