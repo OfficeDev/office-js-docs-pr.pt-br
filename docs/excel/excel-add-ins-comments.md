@@ -1,14 +1,14 @@
 ---
 title: Trabalhar com comentários usando a API JavaScript do Excel
 description: Informações sobre como usar as APIs para adicionar, remover e editar comentários e encadeamentos de comentários.
-ms.date: 03/17/2020
+ms.date: 10/09/2020
 localization_priority: Normal
-ms.openlocfilehash: f0be13cc666ed4b6b5b3cfac59f299c872139f4c
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: 85312cbd92aa6c9d0f82fd167e8a372c2eff8c85
+ms.sourcegitcommit: b50eebd303adcc22eb86e65756ce7e9a82f41a57
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408569"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "48456549"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>Trabalhar com comentários usando a API JavaScript do Excel
 
@@ -202,8 +202,123 @@ Excel.run(function (context) {
 });
 ```
 
+## <a name="comment-events"></a>Eventos de comentários
+
+O suplemento pode ouvir adições, alterações e exclusões de comentários. [Eventos de comentários](/javascript/api/excel/excel.commentcollection#event-details) ocorrem no `CommentCollection` objeto. Para ouvir eventos de comentários, registre o `onAdded` , `onChanged` ou o `onDeleted` manipulador de eventos comment. Quando um evento Comment é detectado, use este manipulador de eventos para recuperar dados sobre o Comentário adicionado, alterado ou excluído. O `onChanged` evento também trata de adições de comentários, alterações e exclusões. 
+
+Cada evento de comentário é acionado apenas uma vez quando várias adições, alterações ou exclusões são realizadas ao mesmo tempo. Todos os objetos [CommentAddedEventArgs](/javascript/api/excel/excel.commentaddedeventargs), [CommentChangedEventArgs](/javascript/api/excel/excel.commentchangedeventarg)e [CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs) contêm matrizes de IDs de comentários para mapear as ações de evento de volta para as coleções de comentários.
+
+Confira o artigo [trabalhar com eventos usando o Excel JavaScript API](excel-add-ins-events.md) para obter mais informações sobre como registrar manipuladores de eventos, manipular eventos e remover manipuladores de eventos. 
+
+### <a name="comment-addition-events"></a>Eventos de adição de comentários 
+O `onAdded` evento é disparado quando um ou mais comentários novos são adicionados à coleção comment. Esse evento *não* é disparado quando as respostas são adicionadas a um thread de comentários (consulte comentários sobre eventos de [alteração](#comment-change-events) para saber mais sobre eventos de resposta de comentários).
+
+O exemplo a seguir mostra como registrar o `onAdded` manipulador de eventos e, em seguida, usar o `CommentAddedEventArgs` objeto para recuperar a `commentDetails` matriz do Comentário adicionado.
+
+> [!NOTE]
+> Este exemplo só funciona quando um único comentário é adicionado. 
+
+```js
+Excel.run(function (context) {
+    var comments = context.workbook.worksheets.getActiveWorksheet().comments;
+
+    // Register the onAdded comment event handler.
+    comments.onAdded.add(commentAdded);
+
+    return context.sync();
+});
+
+function commentAdded() {
+    Excel.run(function (context) {
+        // Retrieve the added comment using the comment ID.
+        // Note: This method assumes only a single comment is added at a time. 
+        var addedComment = context.workbook.comments.getItem(event.commentDetails[0].commentId);
+
+        // Load the added comment's data.
+        addedComment.load(["content", "authorName"]);
+
+        return context.sync().then(function () {
+            // Print out the added comment's data.
+            console.log(`A comment was added. ID: ${event.commentDetails[0].commentId}. Comment content:${addedComment.content}. Comment author:${addedComment.authorName}`);
+            return context.sync();
+        });            
+    });
+}
+```
+
+### <a name="comment-change-events"></a>Eventos de alteração de comentário 
+O `onChanged` evento Comment é disparado nos cenários a seguir.
+
+- O conteúdo de um comentário é atualizado.
+- Um thread de comentários é resolvido.
+- Um thread de comentários é reaberto.
+- Uma resposta é adicionada a um thread de comentários.
+- Uma resposta é atualizada em um thread de comentários.
+- Uma resposta é excluída em um thread de comentários.
+
+O exemplo a seguir mostra como registrar o `onChanged` manipulador de eventos e, em seguida, usar o `CommentChangedEventArgs` objeto para recuperar a `commentDetails` matriz do comentário alterado.
+
+> [!NOTE]
+> Este exemplo só funciona quando um único comentário é alterado. 
+
+```js
+Excel.run(function (context) {
+    var comments = context.workbook.worksheets.getActiveWorksheet().comments;
+
+    // Register the onChanged comment event handler.
+    comments.onChanged.add(commentChanged);
+
+    return context.sync();
+});    
+
+function commentChanged() {
+    Excel.run(function (context) {
+        // Retrieve the changed comment using the comment ID.
+        // Note: This method assumes only a single comment is changed at a time. 
+        var changedComment = context.workbook.comments.getItem(event.commentDetails[0].commentId);
+
+        // Load the changed comment's data.
+        changedComment.load(["content", "authorName"]);
+
+        return context.sync().then(function () {
+            // Print out the changed comment's data.
+            console.log(`A comment was changed. ID: ${event.commentDetails[0].commentId}`. Updated comment content: ${changedComment.content}`. Comment author: ${changedComment.authorName}`);
+            return context.sync();
+        });
+    });
+}
+```
+
+### <a name="comment-deletion-events"></a>Eventos de exclusão de comentários
+O `onDeleted` evento é disparado quando um comentário é excluído da coleção comment. Após a exclusão de um comentário, seus metadados não estão mais disponíveis. O objeto [CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs) fornece IDs de comentários, caso o suplemento esteja gerenciando Comentários individuais.
+
+O exemplo a seguir mostra como registrar o `onDeleted` manipulador de eventos e, em seguida, usar o `CommentDeletedEventArgs` objeto para recuperar a `commentDetails` matriz do comentário excluído.
+
+> [!NOTE]
+> Este exemplo só funciona quando um único comentário é excluído. 
+
+```js
+Excel.run(function (context) {
+    var comments = context.workbook.worksheets.getActiveWorksheet().comments;
+
+    // Register the onDeleted comment event handler.
+    comments.onDeleted.add(commentDeleted);
+
+    return context.sync();
+});
+
+function commentDeleted() {
+    Excel.run(function (context) {
+        // Print out the deleted comment's ID.
+        // Note: This method assumes only a single comment is deleted at a time. 
+        console.log(`A comment was deleted. ID: ${event.commentDetails[0].commentId}`);
+    });
+}
+```
+
 ## <a name="see-also"></a>Confira também
 
 - [Modelo de objeto do JavaScript do Excel em suplementos do Office](excel-add-ins-core-concepts.md)
 - [Trabalhar com pastas de trabalho usando a API JavaScript do Excel](excel-add-ins-workbooks.md)
+- [Trabalhar com eventos usando a API JavaScript do Excel](excel-add-ins-events.md)
 - [Inserir comentários e anotações no Excel](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)
