@@ -1,14 +1,14 @@
 ---
 title: Trabalhar com intervalos usando a API JavaScript do Excel (avançado)
 description: Funções e cenários de objetos de intervalo avançados, como células especiais, remoção de duplicatas e trabalho com datas.
-ms.date: 08/26/2020
+ms.date: 10/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 485fb34c11774045308c6ed9053d01097cdc3f5b
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 144012177e0e070149f6cef825c63392a468773d
+ms.sourcegitcommit: 6fa29989dfaec4dfa0f8df3fe5fb038d7afbae30
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819571"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "48487884"
 ---
 # <a name="work-with-ranges-using-the-excel-javascript-api-advanced"></a>Trabalhar com intervalos usando a API JavaScript do Excel (avançado)
 
@@ -354,6 +354,45 @@ Excel.run(function (context) {
 ```
 
 Você também pode encontrar a célula responsável por despejar em uma determinada célula usando o método [Range. getSpillParent](/javascript/api/excel/excel.range#getspillparent--) . Observe que `getSpillParent` só funciona quando o objeto Range é uma única célula. A chamada `getSpillParent` em um intervalo com várias células resultará em um erro que será lançado (ou um intervalo nulo que está sendo retornado `Range.getSpillParentOrNullObject` ).
+
+## <a name="get-formula-precedents"></a>Obter precedentes de fórmulas
+
+Uma fórmula do Excel freqüentemente se refere a outras células. Quando uma célula fornece dados para uma fórmula, ela é conhecida como uma fórmula "precedente". Para saber mais sobre os recursos do Excel relacionados às relações entre as células, confira o artigo [exibir as relações entre fórmulas e células](https://support.microsoft.com/office/display-the-relationships-between-formulas-and-cells-a59bef2b-3701-46bf-8ff1-d3518771d507) . 
+
+Com [Range. getDirectPrecedents](/javascript/api/excel/excel.range#getdirectprecedents--), seu suplemento pode localizar as células precedentes de uma fórmula. `Range.getDirectPrecedents` Retorna um `WorkbookRangeAreas` objeto. Este objeto contém os endereços de todos os precedentes na pasta de trabalho. Ele tem um `RangeAreas` objeto separado para cada planilha que contém pelo menos uma fórmula precedente. Confira [trabalhar com vários intervalos simultaneamente em suplementos do Excel](excel-add-ins-multiple-ranges.md) para obter mais informações sobre como trabalhar com o `RangeAreas` objeto.
+
+Na interface do usuário do Excel, o botão **rastrear precedentes** desenha uma seta de células precedentes à fórmula selecionada. Ao contrário do botão de interface do usuário do Excel, o `getDirectPrecedents` método não Desenha setas. 
+
+> [!IMPORTANT]
+> O `getDirectPrecedents` método não pode recuperar células precedentes entre pastas de trabalho. 
+
+O exemplo a seguir obtém os precedentes diretos do intervalo ativo e altera a cor do plano de fundo dessas células precedentes para amarelo. 
+
+> [!NOTE]
+> O intervalo ativo deve conter uma fórmula que faz referência a outras células na mesma pasta de trabalho para que o realce funcione corretamente. 
+
+```js
+Excel.run(function (context) {
+    // Precedents are cells that provide data to the selected formula.
+    var range = context.workbook.getActiveCell();
+    var directPrecedents = range.getDirectPrecedents();
+    range.load("address");
+    directPrecedents.areas.load("address");
+    
+    return context.sync()
+        .then(function () {
+            console.log(`Direct precedent cells of ${range.address}:`);
+
+            // Use the direct precedents API to loop through precedents of the active cell.
+            for (var i = 0; i < directPrecedents.areas.items.length; i++) {
+              // Highlight and print out the address of each precedent cell.
+              directPrecedents.areas.items[i].format.fill.color = "Yellow";
+              console.log(`  ${directPrecedents.areas.items[i].address}`);
+            }
+        })
+        .then(context.sync);
+}).catch(errorHandlerFunction);
+```
 
 ## <a name="see-also"></a>Confira também
 
