@@ -1,21 +1,21 @@
 ---
 title: Elemento ExtendedPermissions no arquivo de manifesto
 description: Define o conjunto de permissões estendidas que o suplemento precisa para acessar as APIs ou recursos associados.
-ms.date: 03/05/2020
+ms.date: 10/15/2020
 localization_priority: Normal
-ms.openlocfilehash: cf59d13d794f8f303da6cc0ca39066584bc3f56c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1e3aa16c160613d34ef2c4f9c25bc2ffe4970816
+ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611530"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "48626439"
 ---
 # <a name="extendedpermissions-element"></a>Elemento ExtendedPermissions
 
 Define o conjunto de permissões estendidas que o suplemento precisa para acessar as APIs ou recursos associados. O `ExtendedPermissions` elemento é um elemento filho de [VersionOverrides](versionoverrides.md).
 
 > [!IMPORTANT]
-> Esse elemento só está disponível no [conjunto de requisitos de visualização](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) de suplementos do Outlook em relação ao Exchange Online. Os suplementos que usam esse elemento não podem ser publicados no AppSource nem implantados por meio da implantação centralizada.
+> O suporte para este elemento foi introduzido no conjunto de requisitos 1,9. Confira, [clientes e plataformas](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
 
 ## <a name="child-elements"></a>Elementos filho
 
@@ -23,7 +23,7 @@ Define o conjunto de permissões estendidas que o suplemento precisa para acessa
 |:-----|:-----:|:-----|
 |  [ExtendedPermission](extendedpermission.md)    |  Não   | Define uma permissão estendida necessária para que o suplemento acesse a API ou o recurso associado. |
 
-## <a name="extendedpermissions-example"></a>`ExtendedPermissions`como
+## <a name="extendedpermissions-example"></a>`ExtendedPermissions` como
 
 Veja a seguir um exemplo do `ExtendedPermissions` elemento.
 

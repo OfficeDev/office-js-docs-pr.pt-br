@@ -1,34 +1,22 @@
 ---
-title: Implementar Append-on-Send no suplemento do Outlook (visualização)
+title: Implementar Append-on-Send no suplemento do Outlook
 description: Saiba como implementar o recurso Append-on-Send em seu suplemento do Outlook.
 ms.topic: article
-ms.date: 09/09/2020
+ms.date: 10/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 2199f837351c1030e6f6d0d23db7bf81e498d433
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 62234f580f6ff6be418f1c252510f234e297b0c6
+ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430930"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "48626453"
 ---
-# <a name="implement-append-on-send-in-your-outlook-add-in-preview"></a>Implementar Append-on-Send no suplemento do Outlook (visualização)
+# <a name="implement-append-on-send-in-your-outlook-add-in"></a>Implementar Append-on-Send no suplemento do Outlook
 
 Ao final deste passo a passo, você terá um suplemento do Outlook que pode inserir um aviso de isenção de responsabilidade quando uma mensagem for enviada.
 
-> [!IMPORTANT]
-> No momento, esse recurso tem suporte para [Visualização](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) no Outlook na Web e no Windows com uma assinatura do Microsoft 365. Veja [como visualizar o recurso Append-on-Send](#how-to-preview-the-append-on-send-feature) neste artigo para obter mais detalhes.
->
-> Como os recursos de visualização estão sujeitos a alterações sem aviso prévio, eles não devem ser usados em suplementos de produção.
-
-## <a name="how-to-preview-the-append-on-send-feature"></a>Como visualizar o recurso Append-on-Send
-
-Convidamos você a experimentar o recurso Append-on-Send! Informe-nos seus cenários e saiba como podemos melhorar enviando seus comentários por meio do GitHub (consulte a seção **comentários** no final desta página).
-
-Para visualizar esse recurso:
-
-- Faça referência à biblioteca **beta** na CDN ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) . O [arquivo de definição de tipo](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) para compilação TypeScript e IntelliSense é encontrado em CDN e [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Você pode instalar esses tipos com o `npm install --save-dev @types/office-js-preview` .
-- Para o Windows, talvez seja necessário participar do [programa Office Insider](https://insider.office.com) para acessar versões mais recentes do Office.
-- Para o Outlook na Web, [Configure o lançamento direcionado no seu locatário do Microsoft 365](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center).
+> [!NOTE]
+> O suporte para esse recurso foi introduzido no conjunto de requisitos 1,9. Confira, [clientes e plataformas](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
 
 ## <a name="set-up-your-environment"></a>Configurar seu ambiente
 

@@ -1,14 +1,14 @@
 ---
 title: Usar a API da Caixa de Diálogo do Office nos suplementos do Office
 description: Conhecer as noções básicas da criação de uma caixa de diálogo em um suplemento do Office
-ms.date: 08/20/2020
+ms.date: 10/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 9d333c12d629232ece39bc30948318fbcafa3aa0
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 5220d4876d0a8de9c731d2879f0bcb5e669066cd
+ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292788"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "48626460"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Usar a API de diálogo do Office em suplementos do Office
 
@@ -214,9 +214,6 @@ function processMessage(arg) {
 ## <a name="pass-information-to-the-dialog-box"></a>Transmitir informações para a caixa diálogo
 
 O suplemento pode enviar mensagens da [página de host](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page) para uma caixa de diálogo usando [Dialog. messageChild](/javascript/api/office/office.dialog#messagechild-message-).
-
-> [!NOTE]
-> Essas APIs de caixa de diálogo têm suporte apenas no Excel, PowerPoint e Word. O suporte para Outlook está em desenvolvimento.
 
 ### <a name="use-messagechild-from-the-host-page"></a>Usar `messageChild()` na página host
 

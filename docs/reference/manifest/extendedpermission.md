@@ -1,21 +1,21 @@
 ---
 title: Elemento ExtendedPermission no arquivo de manifesto
 description: Define uma permissão estendida que o suplemento precisa para acessar a API ou o recurso associado.
-ms.date: 03/05/2020
+ms.date: 10/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 138acafb359e2b6e386b34fde7201b1b2c4b3177
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 996cac59c44220d05165c7be6ae7c3d79d853271
+ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430923"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "48626397"
 ---
 # <a name="extendedpermission-element"></a>`ExtendedPermission` pseudoelemento
 
 Define uma permissão estendida que o suplemento precisa para acessar a API ou o recurso associado. O `ExtendedPermission` elemento é um elemento filho de [ExtendedPermissions](extendedpermissions.md).
 
 > [!IMPORTANT]
-> Esse elemento só está disponível no [conjunto de requisitos de visualização](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) de suplementos do Outlook em relação ao Exchange Online. Os suplementos que usam esse elemento não podem ser publicados no AppSource nem implantados por meio da implantação centralizada.
+> O suporte para este elemento foi introduzido no conjunto de requisitos 1,9. Confira, [clientes e plataformas](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) que oferecem suporte a esse conjunto de requisitos.
 
 ## <a name="available-extended-permissions"></a>Permissões estendidas disponíveis
 

@@ -1,18 +1,21 @@
 ---
 title: Conjunto de requisitos 1.8 da API de suplemento do Outlook
-description: Conjunto de requisitos 1,8 para a API do suplemento do Outlook
-ms.date: 05/20/2020
+description: Conjunto de requisitos 1,8 para a API do suplemento do Outlook.
+ms.date: 10/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 6da1de2529f48fa15d93846d4afcca0718b81165
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: d175cc84aa123c6a941ea57cfe4ff2114d693d32
+ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431532"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "48626586"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Conjunto de requisitos 1.8 da API de suplemento do Outlook
 
 O subconjunto de APIs de suplemento do Outlook da API JavaScript do Office inclui objetos, métodos, propriedades e eventos que você pode usar em um suplemento do Outlook.
+
+> [!NOTE]
+> Esta documentação destina-se a um [conjunto de requisitos](../../requirement-sets/outlook-api-requirement-sets.md) que não seja o mais recente.
 
 ## <a name="whats-new-in-18"></a>O que há de novo no 1.8?
 
