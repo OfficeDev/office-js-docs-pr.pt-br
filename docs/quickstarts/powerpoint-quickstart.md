@@ -1,15 +1,15 @@
 ---
 title: Crie o seu primeiro suplemento do painel de tarefas do PowerPoint
 description: Saiba como criar um Suplemento do PowerPoint simples usando a API JS do Office.
-ms.date: 04/03/2020
+ms.date: 10/14/2020
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 9bab9c0c05ace89a1d5dc89b62108f34b49cf679
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: e2720ce1c894f2692e797c5c1ae76c09fb3d5d72
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294336"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741194"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>Crie o seu primeiro suplemento do painel de tarefas do PowerPoint
 
@@ -263,5 +263,4 @@ Parabéns, você criou com êxito um suplemento do painel de tarefas do PowerPoi
 ## <a name="see-also"></a>Confira também
 
 * [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
-* [Criando Suplementos do Office ](../overview/office-add-ins-fundamentals.md)
 * [Desenvolver Suplementos do Office ](../develop/develop-overview.md)

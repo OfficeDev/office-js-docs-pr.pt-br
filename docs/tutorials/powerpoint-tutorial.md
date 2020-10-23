@@ -1,15 +1,15 @@
 ---
 title: Tutorial de suplemento do PowerPoint
 description: Neste tutorial, você criará um suplemento do PowerPoint que insere imagem, texto, obtém metadados do slide e navega entre slides.
-ms.date: 12/24/2019
+ms.date: 10/14/2020
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 4693b8a5a2f4bd7c63f76532585113db5b0805bb
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: eed21235a2de78a160bf9df9253dcabe43bac366
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293377"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48740907"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>Tutorial: Criar um Suplemento do Painel de Tarefas
 
@@ -511,5 +511,5 @@ Neste tutorial, você criou um suplemento do PowerPoint que insere imagem, texto
 ## <a name="see-also"></a>Confira também
 
 * [Visão geral da plataforma Suplementos do Office](../overview/office-add-ins.md)
-* [Criando Suplementos do Office ](../overview/office-add-ins-fundamentals.md)
 * [Desenvolver Suplementos do Office ](../develop/develop-overview.md)
+

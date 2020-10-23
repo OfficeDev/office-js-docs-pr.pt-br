@@ -3,12 +3,12 @@ title: Disponibilidade de aplicativos e plataformas do cliente Office para Suple
 description: Conjuntos de requisitos com suporte para o Excel, OneNote, Outlook, PowerPoint, Project e Word.
 ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 8cd6ccf45cd63a99f70155035d4062e22fa1cbcf
-ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
+ms.openlocfilehash: a179eebcb39107633e6ca265bbc89be822ffb63b
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "48626558"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48741054"
 ---
 # <a name="office-client-application-and-platform-availability-for-office-add-ins"></a>Disponibilidade de aplicativos e plataformas do cliente Office para Suplementos do Office
 
@@ -1172,4 +1172,4 @@ Seu Suplemento do Office pode depender de um aplicativo específico do Office, u
 - [Histórico de atualizações do Office 2010, 2013, e 2016 (MSI)](/officeupdates/office-updates-msi)
 - [Histórico de atualizações do Outlook 2010, 2013, e 2016 (MSI)](/officeupdates/outlook-updates-msi)
 - [Histórico de atualizações do Office para Mac](/officeupdates/update-history-office-for-mac)
-- [Desenvolvimento de Complementos do Office](../develop/develop-overview.md)
+- [Desenvolver Suplementos do Office ](../develop/develop-overview.md)
