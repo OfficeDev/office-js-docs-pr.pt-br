@@ -1,14 +1,14 @@
 ---
 title: Recursos adicionais de suplementos do Office
 description: Recursos úteis no tópico de suplementos do Office
-ms.date: 07/14/2020
+ms.date: 10/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 25cfcf5ba56322f8bf5afb9273f94dcdf8db43c3
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: d5fa3eb95f4c6745e735f1b8667fb3b7b95a2bdb
+ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159070"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "48740809"
 ---
 # <a name="office-add-ins-additional-resources"></a>Recursos adicionais de suplementos do Office
 
@@ -24,4 +24,7 @@ Esses recursos oferecem informações adicionais e suporte para o desenvolviment
 |**Script Lab**| Se quiser explorar as APIs JavaScript do Office ou experimentar as APIs de visualização, você pode usar o script Lab no Excel, Outlook, PowerPoint e Word. Para saber mais, consulte [Explorar a API JavaScript do Office usando o Script Lab](../overview/explore-with-script-lab.md). |
 |Curso **Pluralsight sobre Suplementos do Office**| O <a href="https://www.pluralsight.com/courses/build-office-addins-js-api" target="_blank">curso de John Brown "conceitos básicos da criação de suplementos do Office com as APIs JavaScript do Office"</a> ensina a desenvolver um suplemento do PowerPoint do zero, incluindo informações sobre como se comunicar com o Trello e publicar o suplemento na Office Store.|
 |**Curso do LinkedIn sobre Suplementos do Office**| <a href="https://www.linkedin.com/learning/microsoft-office-add-ins-for-developers/microsoft-office-add-ins?u=3322">O curso de Bill Ayer "Suplementos do Microsoft Office para Desenvolvedores"</a> oferece uma visão geral da plataforma e explica muitos dos principais conceitos dos Suplementos do Office.|
-|***Livro Criando Suplementos do Office usando o Office.js***| <a href="https://leanpub.com/buildingofficeaddins">De autoria de Michael Zlatkovsky, o livro *Criando Suplementos do Office usando o Office.js*</a> descreve os princípios e padrões de projeto compartilhados pelas APIs 2016 para Excel, Word e OneNote. Michael é membro da equipe de Extensibilidade do Office da Microsoft e MVP da Microsoft, mas este livro é de autoria independente, sem a participação da Microsoft. Nem a Microsoft nem o Michael obtêm lucros neste livro, uma vez que os recursos são doados para causas de assistência em catástrofes e ajuda humanitária.|
+|**_Livro Criando Suplementos do Office usando o Office.js_**| <a href="https://leanpub.com/buildingofficeaddins">De autoria de Michael Zlatkovsky, o livro *Criando Suplementos do Office usando o Office.js*</a> descreve os princípios e padrões de projeto compartilhados pelas APIs 2016 para Excel, Word e OneNote. Michael é membro da equipe de Extensibilidade do Office da Microsoft e MVP da Microsoft, mas este livro é de autoria independente, sem a participação da Microsoft. Nem a Microsoft nem o Michael obtêm lucros neste livro, uma vez que os recursos são doados para causas de assistência em catástrofes e ajuda humanitária.|
+
+## <a name="see-also"></a>Confira também
+- [Saiba mais sobre o programa de desenvolvedor 365 da Microsoft](https://developer.microsoft.com/microsoft-365/dev-program)
